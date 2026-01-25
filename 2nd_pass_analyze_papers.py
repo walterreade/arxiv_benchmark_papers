@@ -63,6 +63,7 @@ def analyze_paper_deep_dive(pdf_path: str, api_key: str) -> dict:
     2. `religious_groups`: list of strings. Which specific religious groups were measured or mentioned? (e.g., Christianity, Islam, Judaism, Buddhism, Hinduism, Atheism, etc.).
     3. `models_tested`: list of strings. Which specific Large Language Models were evaluated in this paper? (e.g., GPT-4, Llama 2, Claude 3, etc.).
     4. `findings`: string. What were the key findings related to religion? (e.g., "The model showed high bias against Muslim names", "GPT-4 performed best on theological questions").
+    5. `references`: list of strings. All references cited in the paper. Each reference should be a complete citation string as it appears in the references section.
     
     Make sure the output is valid JSON.
     """
