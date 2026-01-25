@@ -134,8 +134,11 @@ def analyze_paper_deep_dive(pdf_path: str, api_key: str, model_name: str,
     1. `benchmark_measurement`: string. What specifically did the benchmark measure in terms of faith/religion? (e.g., bias against Muslims, knowledge of Christian theology, stereotype detection in religious contexts).
     2. `religious_groups`: list of strings. Which specific religious groups were measured or mentioned? (e.g., Christianity, Islam, Judaism, Buddhism, Hinduism, Atheism, etc.).
     3. `models_tested`: list of strings. Which specific Large Language Models were evaluated in this paper? (e.g., GPT-4, Llama 2, Claude 3, etc.).
-    4. `findings`: string. What were the key findings related to religion? (e.g., "The model showed high bias against Muslim names", "GPT-4 performed best on theological questions").
-    5. `references`: list of strings. All references cited in the paper. Each reference should be a complete citation string as it appears in the references section.
+    4. `languages_evaluated`: list of strings. Which languages were evaluated in this paper? (e.g., English, Spanish, Arabic, Chinese, etc.). If not explicitly stated, use ["English"] as default.
+    5. `response_type`: list of strings. The type of LLM output evaluated. Use "short" for multiple choice or short answers, "long" for open-ended text generation, or "other" for other types. Multiple values allowed if the paper evaluates different response types.
+    6. `religion_component`: string. The extent to which religion is a focus of the paper. Use "major" if religion is the paper's main focus, "minor" if religion is a component but not the main focus, or "none" if the paper doesn't analyze aspects of religion.
+    7. `findings`: string. What were the key findings related to religion? (e.g., "The model showed high bias against Muslim names", "GPT-4 performed best on theological questions").
+    8. `references`: list of strings. All references cited in the paper. Each reference should be a complete citation string as it appears in the references section.
     
     Make sure the output is valid JSON.
     """
@@ -269,11 +272,20 @@ def main():
 
     # Read papers to process
     papers_to_process = []
+    ai_keywords = ['ai', 'artificial intelligence', 'llm', 'large language model', 'machine learning', 
+                   'neural network', 'deep learning', 'gpt', 'transformer', 'nlp', 'natural language']
     if os.path.exists(input_csv):
         with open(input_csv, mode='r', encoding='utf-8-sig') as f:
             reader = csv.DictReader(f)
             for row in reader:
-                if row.get('is_faith_ethics_related') == 'TRUE':
+                # Must be faith/ethics related
+                if row.get('is_faith_ethics_related') != 'TRUE':
+                    continue
+                # Must be LLM related OR reasoning indicates AI evaluation
+                is_llm = row.get('is_llm_related') == 'TRUE'
+                reasoning = row.get('reasoning', '').lower()
+                is_ai_reasoning = any(kw in reasoning for kw in ai_keywords)
+                if is_llm or is_ai_reasoning:
                     papers_to_process.append(row)
     else:
         print(f"Error: {input_csv} not found.")
