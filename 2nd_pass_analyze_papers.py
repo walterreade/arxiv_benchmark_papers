@@ -279,10 +279,10 @@ def main():
             reader = csv.DictReader(f)
             for row in reader:
                 # Must be faith/ethics related
-                if row.get('is_faith_ethics_related') != 'TRUE':
+                if row.get('is_faith_ethics_related') != 'True':
                     continue
                 # Must be LLM related OR reasoning indicates AI evaluation
-                is_llm = row.get('is_llm_related') == 'TRUE'
+                is_llm = row.get('is_llm_related') == 'True'
                 reasoning = row.get('reasoning', '').lower()
                 is_ai_reasoning = any(kw in reasoning for kw in ai_keywords)
                 if is_llm or is_ai_reasoning:
