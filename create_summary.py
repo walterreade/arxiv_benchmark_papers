@@ -182,10 +182,10 @@ def load_csv_metadata(csv_path: str) -> dict:
 
 
 def get_arxiv_url(filename: str) -> str:
-    """Convert filename to arxiv URL."""
+    """Convert filename to arxiv PDF URL."""
     # Filename format: 2601.15267.pdf -> arxiv ID: 2601.15267
     arxiv_id = filename.replace('.pdf', '')
-    return f"https://arxiv.org/abs/{arxiv_id}"
+    return f"https://arxiv.org/pdf/{arxiv_id}"
 
 
 def check_mormon_mention(paper: dict) -> bool:
