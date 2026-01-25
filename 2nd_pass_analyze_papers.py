@@ -234,8 +234,8 @@ def main():
     parser.add_argument("--reprocess", action="store_true", help="Re-analyze all files, ignoring existing results")
     parser.add_argument("--rpm", type=int, default=10, help="Requests per minute (API rate limit). Default 10.")
     parser.add_argument("--workers", type=int, default=4, help="Number of worker threads. Default 4.")
-    parser.add_argument("--model", default="gemini-2.5-pro-preview-05-06", help="Gemini model name.")
-    parser.add_argument("--max-errors", type=int, default=5, help="Max resource exhausted errors before exit. Default 5.")
+    parser.add_argument("--model", default="gemini-2.5-pro", help="Gemini model name.")
+    parser.add_argument("--max-errors", type=int, default=3, help="Max resource exhausted errors before exit. Default 5.")
     
     args = parser.parse_args()
     
