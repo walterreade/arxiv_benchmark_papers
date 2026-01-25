@@ -138,7 +138,7 @@ def analyze_paper_deep_dive(pdf_path: str, api_key: str, model_name: str,
     5. `response_type`: list of strings. The type of LLM output evaluated. Use "short" for multiple choice or short answers, "long" for open-ended text generation, or "other" for other types. Multiple values allowed if the paper evaluates different response types.
     6. `religion_component`: string. The extent to which religion is a focus of the paper. Use "major" if religion is the paper's main focus, "minor" if religion is a component but not the main focus, or "none" if the paper doesn't analyze aspects of religion.
     7. `findings`: string. What were the key findings related to religion? (e.g., "The model showed high bias against Muslim names", "GPT-4 performed best on theological questions").
-    8. `references`: list of strings. All references cited in the paper. Each reference should be a complete citation string as it appears in the references section.
+    8. `references`: list of strings. All references cited in the paper. Each reference should be a complete citation string as it appears in the references section. Do not include reference numbers (e.g., [1], [2], 1., 2.) that precede the citation.
     
     Make sure the output is valid JSON.
     """
