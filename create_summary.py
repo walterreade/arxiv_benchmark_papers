@@ -306,6 +306,14 @@ def count_religious_groups(data: list[dict]) -> Counter:
     return counter
 
 
+def normalize_model_name(model: str) -> str:
+    """Normalize model names to combine variants."""
+    # GPT-40 is a common typo/OCR error for GPT-4o
+    if model.upper() == 'GPT-40':
+        return 'GPT-4o'
+    return model
+
+
 def count_models_tested(data: list[dict]) -> Counter:
     """Count occurrences of each model tested across all papers."""
     counter = Counter()
@@ -313,7 +321,8 @@ def count_models_tested(data: list[dict]) -> Counter:
         models = paper.get('models_tested', [])
         if isinstance(models, list):
             for model in models:
-                counter[model] += 1
+                normalized = normalize_model_name(model)
+                counter[normalized] += 1
     return counter
 
 
