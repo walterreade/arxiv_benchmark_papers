@@ -188,6 +188,12 @@ def get_arxiv_url(filename: str) -> str:
     return f"https://arxiv.org/abs/{arxiv_id}"
 
 
+def check_mormon_mention(paper: dict) -> bool:
+    """Check if paper mentions Mormon or Latter-day Saints."""
+    text_to_check = json.dumps(paper).lower()
+    return 'mormon' in text_to_check or 'latter-day saints' in text_to_check
+
+
 def generate_benchmark_learnings(data: list[dict], csv_metadata: dict, output_path: str):
     """Generate benchmark_learnings.md with paper entries."""
     # Sort all papers by filename descending
@@ -209,7 +215,10 @@ def generate_benchmark_learnings(data: list[dict], csv_metadata: dict, output_pa
         # Combine benchmark_measurement and findings into a paragraph
         combined = f"{benchmark_measurement} {findings}".strip()
         
-        lines.append(f"## {title}\n")
+        # Check for Mormon/Latter-day Saints mention
+        mormon_tag = " #Mormon" if check_mormon_mention(paper) else ""
+        
+        lines.append(f"## {title}{mormon_tag}\n")
         lines.append(f"[{arxiv_url}]({arxiv_url})\n")
         lines.append(f"**Date:** {date}\n")
         lines.append(f"{combined}\n")
