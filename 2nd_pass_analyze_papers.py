@@ -232,8 +232,8 @@ def main():
     parser.add_argument("--json_dir", default="2nd_pass_json", help="Directory to save JSON analysis")
     parser.add_argument("--failures", default="2nd_pass_failures.csv", help="CSV file to track failed files")
     parser.add_argument("--reprocess", action="store_true", help="Re-analyze all files, ignoring existing results")
-    parser.add_argument("--rpm", type=int, default=10, help="Requests per minute (API rate limit). Default 10.")
-    parser.add_argument("--workers", type=int, default=4, help="Number of worker threads. Default 4.")
+    parser.add_argument("--rpm", type=int, default=50, help="Requests per minute (API rate limit). Default 10.")
+    parser.add_argument("--workers", type=int, default=10, help="Number of worker threads. Default 4.")
     parser.add_argument("--model", default="gemini-2.5-pro", help="Gemini model name.")
     parser.add_argument("--max-errors", type=int, default=3, help="Max resource exhausted errors before exit. Default 5.")
     
