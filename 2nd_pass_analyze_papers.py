@@ -88,12 +88,14 @@ def main():
     parser.add_argument("--csv", default="1st_pass_results.csv", help="Input CSV file")
     parser.add_argument("--pdf_dir", default="pdf", help="Directory containing PDFs")
     parser.add_argument("--json_dir", default="2nd_pass_json", help="Directory to save JSON analysis")
+    parser.add_argument("--reprocess", action="store_true", help="Re-analyze all files, ignoring existing results")
     
     args = parser.parse_args()
     
     input_csv = args.csv
     pdf_dir = args.pdf_dir
     json_dir = args.json_dir
+    reprocess = args.reprocess
     
     # Create json output directory
     if not os.path.exists(json_dir):
@@ -119,15 +121,18 @@ def main():
     print(f"Found {len(papers_to_process)} papers to analyze.")
     
     # Check for already processed by looking for existing JSON files
-    processed_filenames = set()
-    if os.path.exists(json_dir):
-        existing_jsons = glob.glob(os.path.join(json_dir, "*.json"))
-        for jp in existing_jsons:
-            processed_filenames.add(Path(jp).stem + ".pdf")
-    
-    print(f"Already processed: {len(processed_filenames)}")
-    
-    remaining = [p for p in papers_to_process if p['filename'] not in processed_filenames]
+    if reprocess:
+        print("Reprocess flag set - will re-analyze all files.")
+        remaining = papers_to_process
+    else:
+        processed_filenames = set()
+        if os.path.exists(json_dir):
+            existing_jsons = glob.glob(os.path.join(json_dir, "*.json"))
+            for jp in existing_jsons:
+                processed_filenames.add(Path(jp).stem + ".pdf")
+        
+        print(f"Already processed: {len(processed_filenames)}")
+        remaining = [p for p in papers_to_process if p['filename'] not in processed_filenames]
     
     for paper in tqdm(remaining, desc="Analyzing papers"):
         filename = paper['filename']
