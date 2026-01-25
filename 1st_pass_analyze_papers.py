@@ -1,4 +1,3 @@
-
 import os
 import argparse
 import csv
@@ -30,8 +29,8 @@ class RateLimiter:
 
     def wait_for_token(self):
         """Blocks until a token is available."""
-        with self.lock:
-            while True:
+        while True:
+            with self.lock:
                 now = time.time()
                 # Remove calls older than period
                 self.calls = [t for t in self.calls if now - t < self.period]
@@ -40,14 +39,15 @@ class RateLimiter:
                     self.calls.append(now)
                     return
                 
-                # Wait for the oldest call to expire
+                # Calculate sleep time while holding lock
                 if self.calls:
                     sleep_time = self.calls[0] + self.period - now
-                    if sleep_time > 0:
-                        time.sleep(sleep_time)
                 else:
-                    # Should not happen if max_calls > 0
-                    time.sleep(1)
+                    sleep_time = 1
+            
+            # Sleep outside the lock to allow other threads to proceed
+            if sleep_time > 0:
+                time.sleep(sleep_time)
 
 def get_page_count(pdf_path: str) -> int:
     """Get the total number of pages in the PDF."""
