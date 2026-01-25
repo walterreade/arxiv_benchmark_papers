@@ -15,6 +15,9 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
+# TODO: add model, rate, etc., options similar to 1st pass
+# TODO: save to json instead of md
+
 MODEL = 'gemini-3-pro-preview'
 
 def analyze_paper_deep_dive(pdf_path: str, api_key: str) -> dict:

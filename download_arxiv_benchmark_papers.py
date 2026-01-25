@@ -17,9 +17,9 @@ from datetime import datetime
 # Searches for papers with "benchmark", "evaluate", "quantify", "measure", or "dataset" in the title, 2017-2026
 BASE_URL = "https://arxiv.org"
 # Template for yearly search - we will format with {year}
-SEARCH_URL_TEMPLATE = "https://arxiv.org/search/advanced?advanced=&terms-0-operator=AND&terms-0-term=benchmark&terms-0-field=title&terms-1-operator=OR&terms-1-term=evaluate&terms-1-field=title&terms-2-operator=OR&terms-2-term=quantify&terms-2-field=title&terms-3-operator=OR&terms-3-term=measure&terms-3-field=title&terms-4-operator=OR&terms-4-term=dataset&terms-4-field=title&classification-computer_science=y&classification-physics_archives=all&classification-include_cross_list=include&date-filter_by=date_range&date-year=&date-from_date={year}-01-01&date-to_date={year}-12-31&date-date_type=submitted_date&abstracts=hide&size=200&order=-submitted_date"
+SEARCH_URL_TEMPLATE = "https://arxiv.org/search/advanced?advanced=&terms-0-operator=AND&terms-0-term=benchmark&terms-0-field=title&terms-1-operator=OR&terms-1-term=evaluate&terms-1-field=title&terms-2-operator=OR&terms-2-term=quantify&terms-2-field=title&terms-3-operator=OR&terms-3-term=measure&terms-3-field=title&terms-4-operator=OR&terms-4-term=dataset&terms-4-field=title&terms-5-operator=OR&terms-5-term=benchmark&terms-5-field=abstract&classification-computer_science=y&classification-physics_archives=all&classification-include_cross_list=include&date-filter_by=date_range&date-year=&date-from_date={year}-01-01&date-to_date={year}-12-31&date-date_type=submitted_date&abstracts=hide&size=200&order=-submitted_date"
 OUTPUT_DIR = "pdf"
-MAX_PAPERS = 50_000
+MAX_PAPERS = 200
 RESULTS_PER_PAGE = 200
 DELAY_BETWEEN_DOWNLOADS = 3  # seconds (be respectful to arXiv servers)
 DELAY_BETWEEN_PAGES = 10  # seconds
