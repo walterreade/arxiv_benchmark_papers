@@ -190,46 +190,30 @@ def get_arxiv_url(filename: str) -> str:
 
 def generate_benchmark_learnings(data: list[dict], csv_metadata: dict, output_path: str):
     """Generate benchmark_learnings.md with paper entries."""
-    # Sort papers: major first (desc filename), then minor (desc filename)
-    major_papers = [p for p in data if p.get('religion_component', '').lower() == 'major']
-    minor_papers = [p for p in data if p.get('religion_component', '').lower() == 'minor']
-    
-    # Sort each group by filename descending
-    major_papers.sort(key=lambda p: p.get('_filename', ''), reverse=True)
-    minor_papers.sort(key=lambda p: p.get('_filename', ''), reverse=True)
+    # Sort all papers by filename descending
+    sorted_papers = sorted(data, key=lambda p: p.get('_filename', ''), reverse=True)
     
     lines = ["# Benchmark Learnings\n"]
     
-    def add_paper_entries(papers: list[dict], lines: list[str]):
-        for paper in papers:
-            filename = paper.get('_filename', '')
-            meta = csv_metadata.get(filename, {})
-            
-            title = meta.get('title', 'Unknown Title')
-            date = meta.get('date', 'Unknown Date')
-            arxiv_url = get_arxiv_url(filename)
-            
-            benchmark_measurement = paper.get('benchmark_measurement', '')
-            findings = paper.get('findings', '')
-            
-            # Combine benchmark_measurement and findings into a paragraph
-            combined = f"{benchmark_measurement} {findings}".strip()
-            
-            lines.append(f"### {title}\n")
-            lines.append(f"[{arxiv_url}]({arxiv_url})\n")
-            lines.append(f"**Date:** {date}\n")
-            lines.append(f"{combined}\n")
-            lines.append("")  # Blank line between entries
-    
-    # Major Religion Focus section
-    if major_papers:
-        lines.append("## Major Religion Focus\n")
-        add_paper_entries(major_papers, lines)
-    
-    # Minor Religion Focus section
-    if minor_papers:
-        lines.append("## Minor Religion Focus\n")
-        add_paper_entries(minor_papers, lines)
+    for paper in sorted_papers:
+        filename = paper.get('_filename', '')
+        meta = csv_metadata.get(filename, {})
+        
+        title = meta.get('title', 'Unknown Title')
+        date = meta.get('date', 'Unknown Date')
+        arxiv_url = get_arxiv_url(filename)
+        
+        benchmark_measurement = paper.get('benchmark_measurement', '')
+        findings = paper.get('findings', '')
+        
+        # Combine benchmark_measurement and findings into a paragraph
+        combined = f"{benchmark_measurement} {findings}".strip()
+        
+        lines.append(f"## {title}\n")
+        lines.append(f"[{arxiv_url}]({arxiv_url})\n")
+        lines.append(f"**Date:** {date}\n")
+        lines.append(f"{combined}\n")
+        lines.append("")  # Blank line between entries
     
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write("\n".join(lines))

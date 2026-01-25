@@ -1,262 +1,6 @@
 # Benchmark Learnings
 
-## Major Religion Focus
-
-### Loci Similes: A Benchmark for Extracting Intertextualities in Latin Literature
-
-[https://arxiv.org/abs/2601.07533](https://arxiv.org/abs/2601.07533)
-
-**Date:** 2026-01-12
-
-Detecting intertextual reuse by Late Antique Christian authors (e.g., Jerome, Lactantius) of earlier classical pagan Latin literature, thereby mapping how Christian writers recontextualized pagan language within Christian interpretive frameworks. Large language models show promise for detecting intertextual links between Late Antique Christian authors and classical pagan sources, effectively identifying long literal citations and thematic allusions. However, they struggle with detecting subtle, lexically sparse allusions (e.g., "two-word congruencies"). The primary challenge lies in distinguishing meaningful reuse, where pagan language is repurposed for Christian contexts, from coincidental lexical overlap. Among the tested models, E5-large performed best for retrieval and XLM-ROBERTa Large for classification.
-
-
-### Mitrasamgraha: A Comprehensive Classical Sanskrit Machine Translation Dataset
-
-[https://arxiv.org/abs/2601.07314](https://arxiv.org/abs/2601.07314)
-
-**Date:** 2026-01-12
-
-The benchmark measures the machine translation quality (Sanskrit-to-English) of a large corpus of classical Sanskrit literature, which is predominantly composed of religious and philosophical texts (Vedic, Epic, Purāṇa, treatises, religious scriptures). Fine-tuning models on the Mitrasamgraha dataset, which is rich in religious and philosophical Sanskrit texts, leads to significant improvements in Sanskrit-to-English translation. However, current machine translation models still exhibit significant weaknesses and challenges in accurately translating complex features inherent in these texts, such as philosophical concepts, multi-layered metaphors, and complex compounds.
-
-
-### Can LLMs Write Faithfully? An Agent-Based Evaluation of LLM-generated Islamic Content
-
-[https://arxiv.org/abs/2510.24438](https://arxiv.org/abs/2510.24438)
-
-**Date:** 2025-10-28
-
-Faithfulness of LLM-generated Islamic content, measuring theological accuracy, citation integrity, stylistic reverence, structural coherence, and thematic focus using a dual-agent (quantitative and qualitative) framework. GPT-4o achieved the highest overall quantitative score (3.90/5), particularly in style, structure, Islamic accuracy, and citations. However, the domain-specific Ansari AI led in qualitative pairwise comparisons, receiving the most 'Best' verdicts (116/200) for its clarity and religious fidelity. The Arabic-centric model Fanar trailed both, especially in citation accuracy. Despite strong performance from top models, all still demonstrated significant shortcomings in reliable citation handling and contextual integrity, highlighting the need for structured knowledge grounding in sensitive religious contexts.
-
-
-### BaZi-Based Character Simulation Benchmark: Evaluating AI on Temporal and Persona Reasoning
-
-[https://arxiv.org/abs/2510.23337](https://arxiv.org/abs/2510.23337)
-
-**Date:** 2025-10-27
-
-The benchmark measured the ability of LLMs to perform persona reasoning and predict life events based on the principles of BaZi (Four Pillars of Destiny), a traditional Chinese metaphysical and divinatory system. The study found that integrating the symbolic reasoning framework of BaZi (Four Pillars of Destiny) significantly improves the ability of LLMs to perform persona reasoning and predict life events. Models augmented with BaZi rules showed accuracy improvements of 30.3%-62.6% over baselines. Furthermore, the model's accuracy dropped by up to 45.7% when provided with incorrect (shuffled) birth date information, demonstrating that the performance gain is genuinely tied to the BaZi system's logic rather than being a superficial prompting artifact.
-
-
-### A CRITICAL REVIEW OF THE NEED FOR KNOWLEDGE–CENTRIC EVALUATION OF QURANIC RECITATION
-
-[https://arxiv.org/abs/2510.12858](https://arxiv.org/abs/2510.12858)
-
-**Date:** 2025-11-10
-
-Correctness of Quranic recitation based on the Islamic rules of Tajweed. The paper reviews systems that evaluate pronunciation, rhythm, and phonetics against established religious standards. The prevailing paradigm of adapting Automatic Speech Recognition (ASR) systems for evaluating Quranic recitation is fundamentally inadequate. These systems prioritize word recognition over qualitative elocution, suffer from data dependency and demographic biases (e.g., gender), and fail to provide the granular, diagnostic feedback necessary for effective learning. The paper concludes that a more robust, knowledge-centric approach is needed, one that is built upon the well-defined and unchanging rules of Tajweed rather than statistical patterns from flawed data.
-
-
-### BENCHMARKING VISION-LANGUAGE AND MULTIMODAL LARGE LANGUAGE MODELS IN ZERO-SHOT AND FEW-SHOT SCENARIOS: A STUDY ON CHRISTIAN ICONOGRAPHY
-
-[https://arxiv.org/abs/2509.18839](https://arxiv.org/abs/2509.18839)
-
-**Date:** 2025-09-23
-
-The benchmark measured the performance of vision-language and multimodal large language models on the task of single-label image classification of Christian iconography, specifically identifying Christian saints in artworks. Multimodal LLMs, particularly Gemini-2.5 Pro and GPT-4o, consistently outperformed traditional supervised models (ResNet50) and contrastive vision-language models (CLIP, SigLIP) on curated datasets (ArtDL, ICONCLASS), with Gemini-2.5 Pro reaching a peak accuracy of 90.45%. However, performance for all models dropped significantly on the more diverse and less consistent Wikidata dataset, where a contrastive model (SigLIP-so400m-patch14-384) achieved the highest score (66.29%). Enriching prompts with iconographic descriptions generally improved zero-shot performance, whereas few-shot learning did not provide consistent benefits and sometimes degraded accuracy.
-
-
-### Evaluating Large Language Models for Detecting Antisemitism
-
-[https://arxiv.org/abs/2509.18293](https://arxiv.org/abs/2509.18293)
-
-**Date:** 2025-11-04
-
-Detection of antisemitism (hatred toward Jews) in social media content using the IHRA definition as a policy guideline. The paper evaluates LLMs for detecting antisemitism using the IHRA definition. Key findings include: 1) A novel 'Guided-CoT' prompt significantly improves performance across models, with Llama 3.1 70B outperforming a fine-tuned GPT-3.5. 2) LLMs struggle with contextual nuances, leading to misclassifications for posts containing specific stereotypes (e.g., about George Soros, 'devil worshipping'), quoted text, and typos resembling slurs (e.g., 'kikes' instead of 'likes'). 3) The study introduced metrics to analyze model-generated explanations, revealing that some models exhibit paradoxical behaviors where explanations for antisemitic content are not consistently more or less cohesive than for non-antisemitic content, suggesting complex internal biases.
-
-
-### EPT Benchmark: Evaluation of Persian Trustworthiness in Large Language Models
-
-[https://arxiv.org/abs/2509.06838](https://arxiv.org/abs/2509.06838)
-
-**Date:** 2025-09-08
-
-Alignment of Large Language Models with Persian-Islamic ethical and cultural values across six dimensions: truthfulness, safety, fairness, robustness, privacy, and ethical alignment. The study found significant disparities in model performance regarding alignment with Persian-Islamic values. Claude 3.7 Sonnet demonstrated the highest and most consistent performance, while Qwen 3 performed the weakest. Safety was the most challenging dimension for most models, indicating a critical gap in aligning LLMs with the cultural and ethical norms of the Persian-Islamic context.
-
-
-### PalmX 2025: The First Shared Task on Benchmarking LLMs on Arabic and Islamic Culture
-
-[https://arxiv.org/abs/2509.02550](https://arxiv.org/abs/2509.02550)
-
-**Date:** 2025-09-02
-
-Knowledge of Islamic culture, including rituals, Quran, Hadith, history, and religious holidays, assessed via multiple-choice questions to measure religious literacy and contextual sensitivity. The subtask on Islamic knowledge yielded higher overall accuracy scores (winning team at 84.22%) compared to the general cultural subtask (winning team at 72.15%). This performance difference suggests that Islamic knowledge questions may be more structured and based on canonical sources, making them more amenable to current LLM approaches. Data augmentation strategies proved more successful in the Islamic domain than in the general culture subtask.
-
-
-### Assessing Large Language Models on Islamic Legal Reasoning: Evidence from Inheritance Law Evaluation
-
-[https://arxiv.org/abs/2509.01081](https://arxiv.org/abs/2509.01081)
-
-**Date:** 2025-09-17
-
-The benchmark measures the knowledge and reasoning capabilities of Large Language Models in Islamic inheritance law, known as 'ilm al-mawārīth, using multiple-choice questions derived from Islamic legal rulings (fatwas). There is a significant performance gap between models. Reasoning-focused models like o3 (93.4%) and Gemini 2.5 (90.6%) achieved high accuracy, while open-source Arabic models like ALLaM, Fanar, and LLaMA scored below 50%. The lower-performing models frequently made foundational errors, including misinterpreting legal scenarios, misapplying normative rules, hallucinating fabricated Quranic verses, and basic computational mistakes. Even high-performing models like Gemini occasionally failed on nuanced questions requiring understanding of distinctions between different Islamic legal schools.
-
-
-### Benchmarking the Legal Reasoning of LLMs in Arabic Islamic Inheritance Cases
-
-[https://arxiv.org/abs/2508.15796](https://arxiv.org/abs/2508.15796)
-
-**Date:** 2025-08-13
-
-The benchmark measured the ability of Large Language Models to accurately interpret and apply Arabic Islamic inheritance laws, specifically their capacity to identify heirs, compute shares, and justify reasoning based on Islamic legal principles. Proprietary models like GPT-03 (92.3% accuracy) and Gemini Flash 2.5 (91.5%) significantly outperformed open-source Arabic LLMs in Islamic inheritance reasoning. Fine-tuning improved GPT-4o's performance but degraded Gemini Flash 2.5's, suggesting model-specific sensitivities. An ensemble of GPT-03, Gemini Flash 2.5, and Gemini Pro 2.5 achieved a 92.7% accuracy on the final test set, demonstrating high capability but also highlighting that even the best models occasionally fail on complex inheritance scenarios.
-
-
-### Sacred or Synthetic? Evaluating LLM Reliability and Abstention for Religious Questions
-
-[https://arxiv.org/abs/2508.08287](https://arxiv.org/abs/2508.08287)
-
-**Date:** 2025-08-04
-
-The benchmark, FiqhQA, measures the accuracy of Large Language Models in generating Islamic legal rulings and their ability to abstain from answering when uncertain. The evaluation is specific to the four major Sunni schools of thought (Hanafi, Maliki, Shafi'i, and Hanbali). GPT-4o was the most accurate model, particularly in English and for the Hanafi school of thought, suggesting a data availability bias. However, all models showed a significant performance drop in Arabic. Gemini and Fanar demonstrated superior abstention behavior, refusing to answer when uncertain, which is critical for religious queries. The study highlights a trade-off between accuracy and cautiousness, and underscores the persistent reliability challenges of LLMs in high-stakes domains like religious jurisprudence, as even top models generate incorrect answers.
-
-
-### Intertextual Parallel Detection in Biblical Hebrew: A Transformer-Based Benchmark
-
-[https://arxiv.org/abs/2506.24117](https://arxiv.org/abs/2506.24117)
-
-**Date:** 2025-07-01
-
-Detection of intertextual parallel passages in the Hebrew Bible, a foundational religious text for Judaism and Christianity. E5 and AlephBERT were the most effective models for detecting parallel passages in Biblical Hebrew. E5 excelled at identifying true parallels but had a higher tendency for false positives, while AlephBERT was slightly less effective on true parallels but demonstrated better differentiation between parallel and non-parallel passages. The study concludes that pre-trained models can enhance the efficiency and accuracy of detecting intertextual parallels in ancient religious texts.
-
-
-### Towards a Unified Benchmark for Arabic Pronunciation Assessment: Qur’anic Recitation as Case Study
-
-[https://arxiv.org/abs/2506.07722](https://arxiv.org/abs/2506.07722)
-
-**Date:** 2025-06-12
-
-The benchmark measures the accuracy of mispronunciation detection for a religious text, specifically the recitation of the Qur'an in Modern Standard Arabic (MSA). It evaluates a model's ability to identify pronunciation errors against the correct, standardized recitation. The task of assessing Qur'anic pronunciation is highly complex, with current state-of-the-art speech models achieving modest performance (F1-score ≤ 30%). Multilingual self-supervised learning (SSL) models, specifically mHuBERT, consistently outperform monolingual English-only models in detecting Arabic mispronunciations. Furthermore, using synthetically generated data with simulated errors proved to be an effective strategy for training, highlighting the benefits of combining natural and synthetic datasets to improve model performance.
-
-
-### Anveshana: A New Benchmark Dataset for Cross-Lingual Information Retrieval On English Queries and Sanskrit Documents
-
-[https://arxiv.org/abs/2505.19494](https://arxiv.org/abs/2505.19494)
-
-**Date:** 2025-05-26
-
-Cross-lingual information retrieval of religious/philosophical documents (Sanskrit) using queries in a different language (English), with a focus on chapters of the Srimadbhagavatam. The study found that the Document Translation (DT) framework, which involves translating the Sanskrit religious texts into English and then performing monolingual retrieval, consistently performed the best. The BM25 model within the DT framework was particularly effective, showing superior performance in retrieving relevant documents from the Srimadbhagavatam. This indicates that leveraging well-developed models on translated religious texts is a more effective strategy than translating queries or attempting direct cross-lingual retrieval for this specific corpus.
-
-
-### Measuring South Asian Biases in Large Language Models
-
-[https://arxiv.org/abs/2505.18466](https://arxiv.org/abs/2505.18466)
-
-**Date:** 2025-05-24
-
-The benchmark measures intersectional and culturally specific biases in Large Language Models, with religion (Hinduism and Islam) being a key dimension. It quantifies how cultural stigmas related to patriarchy and purdah in South Asia are reinforced in open-ended generative tasks. Contrary to prior English-language studies that found higher anti-Muslim bias, this paper finds that Hindu identities show higher average bias scores than Muslim identities in the South Asian linguistic context. This is particularly evident in Indo-Aryan languages for 'to-do list' generation tasks. The paper attributes this reversal to culturally-rooted representations, such as the strong association of Hindu women with domesticity, which inflates the bias score for the dominant group within this specific cultural and linguistic framework.
-
-
-### Seeing The Words: Evaluating AI-generated Biblical Art
-
-[https://arxiv.org/abs/2504.16974](https://arxiv.org/abs/2504.16974)
-
-**Date:** 2025-04-23
-
-The accuracy and contextual appropriateness of AI-generated images based on Christian biblical text prompts. The evaluation assessed aspects such as the number of people, gender, age, and sentiment in the generated images, comparing them against historical religious artwork. Midjourney generated illustration-like images that were most similar to the selected human artworks, showing sophisticated details and a reasonable understanding of the religious context. DALL-E 2 performed the worst, often failing to capture the biblical context and generating images with incomprehensible text. Stable Diffusion produced versatile results, with its similarity to human artwork depending on the prompt; it showed some understanding of religious context but with more stylistic diversity, including abstract and science-fiction themes. All models struggled with details like generating accurate hands and sometimes included anachronistic elements like Christian crosses in Old Testament scenes.
-
-
-### SPLITS! A Flexible Dataset and Evaluation Framework for Sociocultural Linguistic Investigation
-
-[https://arxiv.org/abs/2504.04640](https://arxiv.org/abs/2504.04640)
-
-**Date:** 2025-07-31
-
-Validation of distinctive linguistic patterns, termed Sociocultural Linguistic Phenomena (SLP), used by different religious groups across various discussion topics. This includes confirming known phenomena (e.g., code-switching) and discovering novel, non-trivial linguistic differences between groups. The framework successfully validated known religious linguistic phenomena, such as Jewish people code-switching to Yiddish/Hebrew more in religious contexts. It also captured more subtle phenomena, like the Hindu/Sikh/Jain group discussing 'dance' more frequently in the context of cultural identity. The system was able to surface potentially novel, non-trivial findings for further research, such as Hindus/Jains/Sikhs emphasizing 'rural economics' during discussions on 'elections' more than Jewish people, while effectively filtering out obvious findings like 'Catholics talk about church'.
-
-
-### An evaluation of LLMs and Google Translate for translation of selected Indian languages via sentiment and semantic analyses
-
-[https://arxiv.org/abs/2503.21393](https://arxiv.org/abs/2503.21393)
-
-**Date:** 2025-07-01
-
-The benchmark measured the preservation of sentiment, semantic integrity, and cultural/philosophical context in machine translations of sacred Hindu texts (specifically the Bhagavad Gita) and other prominent Indian literature from Sanskrit, Hindi, and Telugu into English. GPT-based models performed best in maintaining sentiment polarity in translated religious/philosophical texts compared to human expert translations. LLMs generally produce better translations than Google Translate in terms of semantic richness. However, all models face challenges in preserving semantic integrity for figurative, metaphorical, and deep philosophical concepts found in texts like the Bhagavad Gita. GPT-4o was found to be the most consistent and reliable model for translating Sanskrit texts. The study also highlighted the ethical importance of accurately translating sacred texts, as mistranslations can alter religious interpretations, such as the meaning of a "tamasik" diet in Hinduism.
-
-
-### A Culturally-Aware Benchmark for Person Re-Identification in Modest Attire
-
-[https://arxiv.org/abs/2412.18874](https://arxiv.org/abs/2412.18874)
-
-**Date:** 2025-06-10
-
-The benchmark measures the performance drop and cultural bias of Person Re-Identification (ReID) computer vision models when applied to a dataset featuring modest attire, such as hijabs, which are prevalent in Islamic cultural contexts. It specifically evaluates the models' ability to identify individuals in settings where clothing offers fewer distinctive features. State-of-the-art Person Re-Identification models (SOLIDER and CLIP-ReID) show a significant performance drop on the IUST_PersonReId dataset, which features modest attire common in Islamic culture. The paper attributes this to challenges like occlusion and limited distinctive features, particularly for women wearing hijabs, highlighting a significant cultural and demographic bias in current visual recognition systems. Re-identifying females was found to be more challenging than males, even when the dataset was balanced for gender.
-
-
-### Optimized Quran Passage Retrieval Using an Expanded QA Dataset and Fine-Tuned Language Models
-
-[https://arxiv.org/abs/2412.11431](https://arxiv.org/abs/2412.11431)
-
-**Date:** 2024-12-16
-
-The benchmark measured the performance of various language models on Qur'anic passage retrieval. This involved assessing their ability to accurately retrieve relevant verses from the Holy Qur'an in response to questions posed in Modern Standard Arabic, thereby testing their knowledge and comprehension of this specific religious text. By expanding the training dataset from 251 to 1895 questions and fine-tuning several transformer models, the system's performance on Qur'an passage retrieval was significantly enhanced. The best model, AraBERT-base, improved its MAP@10 score by 63% (from 0.22 to 0.36) and its MRR score by 59% (from 0.37 to 0.59) compared to the baseline. The approach also tripled the success rate for handling 'no answer' questions, from 25% to 75%, demonstrating the effectiveness of dataset enrichment and model optimization for question-answering on a complex religious text.
-
-
-### Measuring Spiritual Values and Biases of Large Language Models
-
-[https://arxiv.org/abs/2410.11647](https://arxiv.org/abs/2410.11647)
-
-**Date:** 2025-07-16
-
-Measurement of the inherent spiritual and religious values of LLMs using questionnaire-style assessments (SP-Typology and SP-10Axes), and evaluation of how these values affect performance on religion-targeted hate speech detection. Contrary to the hypothesis that LLMs are secular, the study found they exhibit diverse and often significant spiritual or religious inclinations. Models classified as more religious tended to perform better at detecting religion-targeted hate speech. Furthermore, further pre-training LLMs on spiritual texts (religious canons) was shown to mitigate biases and improve performance on humanistic tasks like hate speech detection.
-
-
-### A Benchmark Dataset with Larger Context for Non-Factoid Question-Answering over Islamic Text
-
-[https://arxiv.org/abs/2409.09844](https://arxiv.org/abs/2409.09844)
-
-**Date:** 2024-09-15
-
-The benchmark measures the performance of non-factoid question-answering systems on Islamic religious texts. Specifically, it evaluates the models' ability to generate accurate, long-form answers to questions about the Quranic Tafsir (interpretation) and Ahadith (traditions of Prophet Muhammad). The evaluation includes both automatic metrics (ROUGE, BERTScore) and human assessments of 'Verdict Consistency' with Islamic scholars and 'Contextual Understanding'. Fine-tuning models improved performance based on automatic metrics like ROUGE and BERTScore. However, human evaluation revealed a significant discrepancy: while models showed high contextual understanding (50% to 90%), their verdict consistency with expert Islamic scholars was very low (11% to 22%). This indicates that standard automatic metrics are insufficient for evaluating the correctness and nuances of answers in a sensitive religious domain, and expert human evaluation is necessary.
-
-
-### Exploring Bengali Religious Dialect Biases in Large Language Models with Evaluation Perspectives
-
-[https://arxiv.org/abs/2407.18376](https://arxiv.org/abs/2407.18376)
-
-**Date:** 2024-07-25
-
-Bias towards Hindu vs. Muslim religious dialects in the Bengali language, assessed by analyzing LLM-generated sentences for specific word choices associated with each religious community. The study found a persistent bias in LLMs towards the Muslim dialect of Bengali over the Hindu dialect. While explicitly mentioning religion in prompts improved accuracy, a notable bias remained, with models often defaulting to Muslim dialect terms even when a Hindu context was specified. The models performed better at inferring religious context from implicit cues rather than explicit mentions but struggled to maintain religious context throughout a conversation (LLM memory). This bias was consistent across various contexts, suggesting it is deeply embedded, likely due to the composition of the training data.
-
-
-### GPT is Not an Annotator: The Necessity of Human Annotation in Fairness Benchmark Construction
-
-[https://arxiv.org/abs/2405.15760](https://arxiv.org/abs/2405.15760)
-
-**Date:** 2024-05-24
-
-The benchmark, WinoSemitism, measures antisemitic stereotypes and biases in Large Language Models, grounded in the lived experience of the Jewish community. All 20 tested language models showed significant antisemitic bias, being more than twice as likely to apply antisemitic stereotypes to Jews than to non-Jews. The models also demonstrated intersectional biases, stereotyping Jewish women and mothers more frequently. Furthermore, GPT-3.5-Turbo performed poorly when used as an annotator to extract these harms from survey data, producing low-quality and hallucinated outputs, indicating it is not a suitable substitute for human experts in sensitive tasks.
-
-
-### Quranic Audio Dataset: Crowdsourced and Labeled Recitation from Non-Arabic Speakers
-
-[https://arxiv.org/abs/2405.02675](https://arxiv.org/abs/2405.02675)
-
-**Date:** 2024-05-04
-
-The paper does not benchmark a model, but creates a dataset to enable the development and benchmarking of AI models that measure the correctness of Quranic recitation by non-Arabic speakers. The annotation process measures recitation correctness against standard Arabic pronunciation and diacritics. The study found that beginner Muslim learners are willing to crowdsource their Quranic recitation recordings (7000 collected), but proficient reciters are more hesitant to participate in annotating this religious data. A crowdsourcing platform was successfully developed to label the recitations, achieving a crowd accuracy of 0.77 and an inter-rater agreement of 0.63. The label aggregation algorithm showed a high accuracy (0.94) and strong agreement with expert judgments (0.89), demonstrating the feasibility of creating a labeled dataset for this religious practice.
-
-
-### Mapping Violence: Developing an Extensive Framework to Build a Bangla Sectarian Expression Dataset from Social Media Interactions
-
-[https://arxiv.org/abs/2404.11752](https://arxiv.org/abs/2404.11752)
-
-**Date:** 2023-11-01
-
-The benchmark measures the automatic detection of 'Religio-communal violence' markers in online Bangla text. This includes classifying expressions of hate speech, threats, prejudice, and derogatory remarks targeting individuals or groups based on their religious identity. The study found that 'Religio-communal violence' is a particularly pervasive category of online communal violence in Bangla text. It also demonstrated that current state-of-the-art Bangla language models like BanglaBERT are inadequate for consistently providing accurate predictions for these nuanced communal violence categories, highlighting significant computational challenges.
-
-
-### A Dataset for Metaphor Detection in Early Medieval Hebrew Poetry
-
-[https://arxiv.org/abs/2402.17371](https://arxiv.org/abs/2402.17371)
-
-**Date:** 2024-02-27
-
-The benchmark measures the ability of language models to perform metaphor detection in a dataset of early medieval Hebrew liturgical poetry (Piyyut). The paper found that transformer-based models adapted to the target genre are crucial for understanding historical religious texts. Specifically, BEREL, pre-trained on ancient Jewish texts, outperformed AlephBERT, pre-trained on modern Hebrew, for metaphor detection in medieval Hebrew poetry. This highlights the importance of domain-specific pre-training for specialized tasks on religious and historical corpora. The best model achieved an F1 score of around 49.
-
-
-## Minor Religion Focus
-
-### Beyond Marginal Distributions: A Framework to Evaluate the Representativeness of Demographic-Aligned LLMs
+## Beyond Marginal Distributions: A Framework to Evaluate the Representativeness of Demographic-Aligned LLMs
 
 [https://arxiv.org/abs/2601.15755](https://arxiv.org/abs/2601.15755)
 
@@ -265,7 +9,7 @@ The benchmark measures the ability of language models to perform metaphor detect
 The benchmark measured the representativeness of LLM responses to survey questions on 'Religious values', which is one of twelve topic categories from the World Values Survey. The evaluation focused on how well the models' marginal response distributions and response variance matched those of human survey takers for this topic. For the topic of 'Religious Values', both persona prompting and fine-tuning (OpinionGPT) improved the model's ability to approximate human marginal response distributions compared to an unsteered baseline. However, neither method was perfect. The fine-tuned OpinionGPT model tended to 'oversteer' and generate responses with higher variance (more diversity of opinion) than found in the human data. Conversely, persona prompting suppressed response variance, making opinions seem more uniform than they actually are. This indicates that current steering methods struggle to accurately capture the true structure and diversity of human opinions on religious values.
 
 
-### XCR-Bench: A Multi-Task Benchmark for Evaluating Cultural Reasoning in LLMs
+## XCR-Bench: A Multi-Task Benchmark for Evaluating Cultural Reasoning in LLMs
 
 [https://arxiv.org/abs/2601.14063](https://arxiv.org/abs/2601.14063)
 
@@ -274,7 +18,7 @@ The benchmark measured the representativeness of LLM responses to survey questio
 The benchmark measured ethno-religious bias in cultural adaptation tasks. Specifically, it evaluated whether Large Language Models (LLMs) favor one religious group's cultural terms over another's within the same linguistic context (Bengali), such as preferring Hindu-associated terms (e.g., Puja) over Muslim-associated terms (e.g., Eid) when adapting Western concepts like holidays. LLMs can encode pronounced regional and ethno-religious biases within a single language. In the context of Bengali, models showed a systematic bias by favoring West Bengal-associated (and Hindu-associated) cultural terms over Bangladesh-associated (and Muslim-associated) terms, despite Muslims constituting the majority of Bengali speakers. For example, models preferred the Hindu festival 'Puja' over the Muslim festival 'Eid' when adapting concepts like 'Christmas'.
 
 
-### CommunityBench: Benchmarking Community-Level Alignment across Diverse Groups and Tasks
+## CommunityBench: Benchmarking Community-Level Alignment across Diverse Groups and Tasks
 
 [https://arxiv.org/abs/2601.13669](https://arxiv.org/abs/2601.13669)
 
@@ -283,7 +27,7 @@ The benchmark measured ethno-religious bias in cultural adaptation tasks. Specif
 The benchmark measured how well models can predict an individual's opinions on various social domains (e.g., Citizenship, Family, Role of Government) based on their group identities, with religion being one of the key identity attributes. It assesses the domain-specific influence of religious identity on an individual's stance. The paper found that group identities, including religion, have domain-specific sensitivity in modeling individual opinions. For instance, religious identity was shown to be a more influential predictor for opinions on 'Citizenship' and 'Family' values compared to other domains. The study highlights a mechanism of 'selective expression,' where individuals prioritize specific identity traits like religion depending on the situational context.
 
 
-### HateXScore: A Metric Suite for Evaluating Reasoning Quality in Hate Speech Explanations
+## HateXScore: A Metric Suite for Evaluating Reasoning Quality in Hate Speech Explanations
 
 [https://arxiv.org/abs/2601.13547](https://arxiv.org/abs/2601.13547)
 
@@ -292,7 +36,7 @@ The benchmark measured how well models can predict an individual's opinions on v
 The benchmark measures the quality of a model's reasoning in hate speech explanations. For religion, this specifically involves the 'Target-Group Identification' (TGI) component, which assesses whether the model's explanation correctly identifies a protected or sensitive religious group referenced in a hateful text. The paper proposes HateXScore, a framework for evaluating hate speech explanations, which includes the ability to identify targeted protected groups. The lists of protected groups are comprehensive and include many religious affiliations, denominations, and spiritual beliefs. However, the paper does not present specific findings breaking down model performance by target category, so there are no explicit conclusions drawn about religion. The framework is designed to be configurable for different policies, which can include various religious groups.
 
 
-### UbuntuGuard: A Culturally-Grounded Policy Benchmark for Equitable AI Safety in African Languages
+## UbuntuGuard: A Culturally-Grounded Policy Benchmark for Equitable AI Safety in African Languages
 
 [https://arxiv.org/abs/2601.12696](https://arxiv.org/abs/2601.12696)
 
@@ -301,7 +45,7 @@ The benchmark measures the quality of a model's reasoning in hate speech explana
 The benchmark measures the ability of guardian models to adhere to culturally-grounded safety policies in dialogues related to religion. This includes adjudicating highly contextual and subjective content, avoiding misinformation, and providing nuanced responses in specific religious contexts, such as discussions about Christian pastoring in Nigeria. Models exhibited one of their highest error rates in the 'Culture and Religion' domain (6.27%), suggesting they struggle significantly with adjudicating highly contextual or subjective content where safety boundaries are dependent on local cultural nuance.
 
 
-### MM-BRIGHT: A Multi-Task Multimodal Benchmark for Reasoning-Intensive Retrieval
+## MM-BRIGHT: A Multi-Task Multimodal Benchmark for Reasoning-Intensive Retrieval
 
 [https://arxiv.org/abs/2601.09562](https://arxiv.org/abs/2601.09562)
 
@@ -310,7 +54,7 @@ The benchmark measures the ability of guardian models to adhere to culturally-gr
 The benchmark measures the ability of retrieval models to find relevant documents for reasoning-intensive queries across 29 technical domains, including Christianity and Islam. For these religious domains, it specifically assesses performance on retrieving information for complex, multimodal questions. Retrieval models' performance was evaluated on queries from Christianity and Islam as part of a broader set of technical domains. Similar to other domains, models struggled with tasks requiring multimodal reasoning. While text-only retrieval scores were moderate to high for religious domains (e.g., best nDCG@10 scores of 47.2 for Christianity and 31.5 for Islam), performance dropped significantly in multimodal retrieval tasks (e.g., best multimodal-to-text scores were 24.3 for Christianity and 16.7 for Islam), indicating that current models cannot effectively integrate visual information for reasoning in these contexts.
 
 
-### PLURIHARMS: BENCHMARKING THE FULL SPECTRUM OF HUMAN JUDGMENTS ON AI HARM
+## PLURIHARMS: BENCHMARKING THE FULL SPECTRUM OF HUMAN JUDGMENTS ON AI HARM
 
 [https://arxiv.org/abs/2601.08951](https://arxiv.org/abs/2601.08951)
 
@@ -319,7 +63,7 @@ The benchmark measures the ability of retrieval models to find relevant document
 The benchmark measured how an annotator's self-reported 'Importance of Religion' correlates with their judgments of AI harm, both as a direct predictor and in interaction with other demographic traits and specific prompt features (e.g., sexual content, social harm). While 'Religion Importance' was not a significant direct predictor of overall harm judgments on its own, it had significant interaction effects. Higher religious importance was associated with rating prompts related to 'Sexual Content' and 'Social Harm' as more harmful. It also interacted with other annotator traits like 'Political Affiliation' in shaping harm perceptions, and was negatively correlated with liberal political affiliation (i.e., more conservative individuals tended to report religion as more important).
 
 
-### MPCI-Bench: A Benchmark for Multimodal Pairwise Contextual Integrity Evaluation of Language Model Agents
+## MPCI-Bench: A Benchmark for Multimodal Pairwise Contextual Integrity Evaluation of Language Model Agents
 
 [https://arxiv.org/abs/2601.08235](https://arxiv.org/abs/2601.08235)
 
@@ -328,7 +72,7 @@ The benchmark measured how an annotator's self-reported 'Importance of Religion'
 The benchmark measures the ability of multimodal agents to adhere to Contextual Integrity (CI) norms, specifically in handling sensitive visual information. This includes evaluating whether an agent appropriately shares or withholds images containing inferred sensitive attributes, such as cultural or religious affiliations, based on the social context and the trade-off between privacy and utility. The paper does not report findings broken down by religion specifically, but its general conclusions apply to scenarios involving religious or cultural affiliation. The key finding is a significant 'modality leakage gap,' where models are far more prone to leaking sensitive visual information (which can include religious attire or symbols) than textual data. Models also exhibit 'utility-biased oversharing,' frequently sacrificing privacy norms to complete a given task, and their ability to recognize privacy violations in probing questions does not reliably translate to safer actions in agentic settings.
 
 
-### VULCA-BENCH: A Multicultural Vision-Language Benchmark for Evaluating Cultural Understanding
+## VULCA-BENCH: A Multicultural Vision-Language Benchmark for Evaluating Cultural Understanding
 
 [https://arxiv.org/abs/2601.07986](https://arxiv.org/abs/2601.07986)
 
@@ -337,7 +81,7 @@ The benchmark measures the ability of multimodal agents to adhere to Contextual 
 The benchmark measures a Vision-Language Model's ability to understand and generate critiques about multicultural art, which includes assessing its knowledge and interpretation of religious symbolism, iconography, and historical context (e.g., Buddhist art, Islamic art, Hindu traditions, Christian iconography) as part of a broader cultural understanding framework. VLMs struggle with higher-order (L3-L5) interpretation of religious content in art. Specific failures include confusing distinct religious traditions (e.g., Islamic and Hindu), anachronistically applying historical religious concepts (e.g., 17th-century Protestant anxieties to 16th-century art), and failing to connect abstract religious/philosophical terms to their concrete visual manifestations in the artwork.
 
 
-### Cross-Cultural Expert-Level Art Critique Evaluation with Vision-Language Models
+## Cross-Cultural Expert-Level Art Critique Evaluation with Vision-Language Models
 
 [https://arxiv.org/abs/2601.07984](https://arxiv.org/abs/2601.07984)
 
@@ -346,7 +90,25 @@ The benchmark measures a Vision-Language Model's ability to understand and gener
 The benchmark measured the ability of Vision-Language Models to interpret religious and spiritual concepts within cross-cultural art critiques. This included understanding Islamic themes (e.g., Sufi spirituality, paradise vision), Hindu iconography and traditions (e.g., Krishna, Radha, Bhakti devotion, Darshan), Daoist philosophy (e.g., 'wu' or emptiness), Confucian spirit, and Christian themes (e.g., Christmas imagery). The key findings related to religion were that VLMs exhibit significant cultural bias, with critiques of Islamic art showing the largest performance gap when compared to Western art. Correspondingly, art from Islamic and Korean cultural traditions had the highest failure rates. One model, DeepSeek-VL2, produced safety refusals when prompted with religious iconography.
 
 
-### TurkBench: A Benchmark for Evaluating Turkish Large Language Models
+## Loci Similes: A Benchmark for Extracting Intertextualities in Latin Literature
+
+[https://arxiv.org/abs/2601.07533](https://arxiv.org/abs/2601.07533)
+
+**Date:** 2026-01-12
+
+Detecting intertextual reuse by Late Antique Christian authors (e.g., Jerome, Lactantius) of earlier classical pagan Latin literature, thereby mapping how Christian writers recontextualized pagan language within Christian interpretive frameworks. Large language models show promise for detecting intertextual links between Late Antique Christian authors and classical pagan sources, effectively identifying long literal citations and thematic allusions. However, they struggle with detecting subtle, lexically sparse allusions (e.g., "two-word congruencies"). The primary challenge lies in distinguishing meaningful reuse, where pagan language is repurposed for Christian contexts, from coincidental lexical overlap. Among the tested models, E5-large performed best for retrieval and XLM-ROBERTa Large for classification.
+
+
+## Mitrasamgraha: A Comprehensive Classical Sanskrit Machine Translation Dataset
+
+[https://arxiv.org/abs/2601.07314](https://arxiv.org/abs/2601.07314)
+
+**Date:** 2026-01-12
+
+The benchmark measures the machine translation quality (Sanskrit-to-English) of a large corpus of classical Sanskrit literature, which is predominantly composed of religious and philosophical texts (Vedic, Epic, Purāṇa, treatises, religious scriptures). Fine-tuning models on the Mitrasamgraha dataset, which is rich in religious and philosophical Sanskrit texts, leads to significant improvements in Sanskrit-to-English translation. However, current machine translation models still exhibit significant weaknesses and challenges in accurately translating complex features inherent in these texts, such as philosophical concepts, multi-layered metaphors, and complex compounds.
+
+
+## TurkBench: A Benchmark for Evaluating Turkish Large Language Models
 
 [https://arxiv.org/abs/2601.07020](https://arxiv.org/abs/2601.07020)
 
@@ -355,7 +117,7 @@ The benchmark measured the ability of Vision-Language Models to interpret religi
 The benchmark measures knowledge of religious culture (as part of the MMLU subtask) and the detection of stereotypes or biases related to religion (as part of the Toxicity and Bias Detection tasks). The paper presents overall performance metrics for all models across 21 tasks but does not provide specific findings broken down by the religious content subtasks. The general findings indicate that larger models consistently outperform smaller ones, but even state-of-the-art systems struggle with culturally grounded reasoning tasks.
 
 
-### SafePro: Evaluating the Safety of Professional-Level AI Agents
+## SafePro: Evaluating the Safety of Professional-Level AI Agents
 
 [https://arxiv.org/abs/2601.06663](https://arxiv.org/abs/2601.06663)
 
@@ -364,7 +126,7 @@ The benchmark measures knowledge of religious culture (as part of the MMLU subta
 The benchmark, SafePro, measures safety alignment in professional AI agents. One of the risk categories evaluated is 'Discrimination / bias', which includes instructions that direct an agent to discriminate against or show bias toward individuals based on religion, among other protected characteristics like race, gender, and ethnicity. The benchmark is designed to evaluate discrimination and bias based on religion as a safety risk, but the paper does not report any specific findings, results, or examples related to religious bias. Religion is included as one of several protected characteristics in a broader safety policy definition.
 
 
-### Annotating Dimensions of Social Perception in Text: The First Sentence-Level Dataset of Warmth and Competence
+## Annotating Dimensions of Social Perception in Text: The First Sentence-Level Dataset of Warmth and Competence
 
 [https://arxiv.org/abs/2601.06316](https://arxiv.org/abs/2601.06316)
 
@@ -373,7 +135,7 @@ The benchmark, SafePro, measures safety alignment in professional AI agents. One
 The benchmark measures the perceived trust, sociability, and competence expressed towards 'Religious People', 'Nonreligious People', 'Atheists', 'Christians', and 'Muslims' in social media text. This constitutes a form of stereotype and attitude detection. Human annotator agreement (measured by Split-Half Reliability and Krippendorff's Alpha) was significantly lower when assessing the warmth and competence of social groups like 'Religious People' and 'Nonreligious People' compared to individual political figures. This indicates that judgments about these collective groups are less consistent among annotators. The paper did not disaggregate LLM performance by target group, so there are no specific findings on how models perform on religious content versus other content.
 
 
-### PII-VisBench: Evaluating Personally Identifiable Information Safety in Vision Language Models Along a Continuum of Visibility
+## PII-VisBench: Evaluating Personally Identifiable Information Safety in Vision Language Models Along a Continuum of Visibility
 
 [https://arxiv.org/abs/2601.05739](https://arxiv.org/abs/2601.05739)
 
@@ -382,7 +144,7 @@ The benchmark measures the perceived trust, sociability, and competence expresse
 The benchmark measures the refusal rate of Vision Language Models when prompted to disclose a person's religion based on an image, treating it as a type of sensitive Personally Identifiable Information (PII). Religion, categorized as 'Hard PII', was evaluated by measuring the models' refusal rate to corresponding queries. Under original prompts, the average refusal rate across all models for religion was 69.58%. This rate increased to 74.27% under paraphrased prompts. Refusal rates varied significantly by model and tended to increase as the online visibility of the subject in the image decreased, indicating models are more conservative with PII for less public figures.
 
 
-### Same Claim, Different Judgment: Benchmarking Scenario-Induced Bias in Multilingual Financial Misinformation Detection
+## Same Claim, Different Judgment: Benchmarking Scenario-Induced Bias in Multilingual Financial Misinformation Detection
 
 [https://arxiv.org/abs/2601.05403](https://arxiv.org/abs/2601.05403)
 
@@ -391,7 +153,7 @@ The benchmark measures the refusal rate of Vision Language Models when prompted 
 The benchmark measures scenario-induced bias in financial misinformation detection by priming LLMs with personas combining specific roles (e.g., retail investor, company owner) with specific ethno-religious identities. The bias is quantified as the performance difference (in F1 score) between the scenario-conditioned and a baseline (scenario-agnostic) evaluation. Model bias is significantly influenced by the interaction of ethnicity, religion, and the assigned role. The bias for the same ethno-religious group can reverse when the role changes (e.g., retail investor vs. company owner). For instance, in the retail investor role, Jewish-Judaism and Chinese-Christianity scenarios induced relatively large biases, while in the company owner role, bias increased for Latino/Hispanic-Christianity and African-Islam scenarios. This highlights structured and interactive sources of model bias, rather than static stereotypes.
 
 
-### Prototypicality Bias Reveals Blindspots in Multimodal Evaluation Metrics
+## Prototypicality Bias Reveals Blindspots in Multimodal Evaluation Metrics
 
 [https://arxiv.org/abs/2601.04946](https://arxiv.org/abs/2601.04946)
 
@@ -400,7 +162,7 @@ The benchmark measures scenario-induced bias in financial misinformation detecti
 The benchmark measured stereotypical bias by pairing religious identities (Christian as a 'privileged' group; Muslim and Jewish as 'disadvantaged' groups) with positive or negative socio-attributes like wealth, intellect, and morality. It tested whether evaluation metrics would incorrectly favor a stereotypical but semantically incorrect image over a non-stereotypical but semantically correct one. Evaluation metrics exhibit significant 'prototypicality bias' in the religious domain. They frequently and incorrectly prefer images that align with social stereotypes (e.g., pairing a privileged religious identity like Christian with a positive attribute like 'intelligent') over images that are semantically faithful to a non-stereotypical prompt (e.g., an 'uneducated Christian'), even when the latter is explicitly requested. This failure was particularly prominent in metrics like CLIPScore and PickScore, demonstrating their vulnerability to socially grounded biases.
 
 
-### RedBench: A Universal Dataset for Comprehensive Red Teaming of Large Language Models
+## RedBench: A Universal Dataset for Comprehensive Red Teaming of Large Language Models
 
 [https://arxiv.org/abs/2601.03699](https://arxiv.org/abs/2601.03699)
 
@@ -409,7 +171,7 @@ The benchmark measured stereotypical bias by pairing religious identities (Chris
 The benchmark measured LLM robustness on religion-related prompts, specifically evaluating both the generation of harmful or stereotypical content (e.g., a hateful prompt about Muslims from the ToxiGen dataset) in 'attack' scenarios and over-defensive refusal of benign prompts in 'refusal' scenarios. The key finding related to religion is that it is a significantly underrepresented and sparsely covered domain within existing red teaming datasets. The RedBench corpus contains only 122 attack samples and 16 refusal samples for the 'Religion' domain, which the paper highlights as a gap that limits comprehensive evaluation of LLM vulnerabilities in this context. Evaluation of refusal rates showed low over-defensiveness on the few existing religion-related prompts.
 
 
-### PsychEthicsBench: Evaluating Large Language Models Against Australian Mental Health Ethics
+## PsychEthicsBench: Evaluating Large Language Models Against Australian Mental Health Ethics
 
 [https://arxiv.org/abs/2601.03578](https://arxiv.org/abs/2601.03578)
 
@@ -418,7 +180,7 @@ The benchmark measured LLM robustness on religion-related prompts, specifically 
 Ethical handling of mental health scenarios involving religious beliefs as a demographic and contextual factor. The paper includes religious belief as a demographic factor in its ethical scenarios but does not report any specific findings on how models performed on these scenarios.
 
 
-### GuardEval: A Multi-Perspective Benchmark for Evaluating Safety, Fairness, and Robustness in LLM Moderators
+## GuardEval: A Multi-Perspective Benchmark for Evaluating Safety, Fairness, and Robustness in LLM Moderators
 
 [https://arxiv.org/abs/2601.03273](https://arxiv.org/abs/2601.03273)
 
@@ -427,7 +189,7 @@ Ethical handling of mental health scenarios involving religious beliefs as a dem
 Detection of harmful or biased prompts and content involving religious comparisons and stereotypes, categorized under broader safety concerns like hate speech and identity-based attacks. The paper finds that leading moderation models, such as the OpenAI Moderator and Llama Guard, can fail to identify harmful prompts that make biased comparisons between religious groups (e.g., Catholicism and Judaism), incorrectly classifying them as safe. In contrast, the proposed model, GGuard, correctly identifies such content as unsafe, demonstrating improved performance on nuanced safety issues including religious bias.
 
 
-### Introducing TrGLUE and SentiTurca: A Comprehensive Benchmark for Turkish General Language Understanding and Sentiment Analysis
+## Introducing TrGLUE and SentiTurca: A Comprehensive Benchmark for Turkish General Language Understanding and Sentiment Analysis
 
 [https://arxiv.org/abs/2512.22100](https://arxiv.org/abs/2512.22100)
 
@@ -436,7 +198,7 @@ Detection of harmful or biased prompts and content involving religious compariso
 Hate speech detection targeting religious groups (e.g., Alevi communities) and Islamic sects (Shiism, Hanafism, Sunnism, Shafiism) in Turkish. The paper introduced the Turkish Hate Map benchmark which includes 'Religion' and 'Sects' (specifically branches of Islam like Shiism, Hanafism, Sunnism, Shafiism, and groups like Alevis) as target categories for hate speech detection. This was motivated by the long-standing sectarian divides in Turkish society. While model performances were analyzed on the overall hate speech task, there were no specific findings reported for performance on religious categories versus other categories.
 
 
-### Toward Systematic Counterfactual Fairness Evaluation of Large Language Models: The CAFFE Framework
+## Toward Systematic Counterfactual Fairness Evaluation of Large Language Models: The CAFFE Framework
 
 [https://arxiv.org/abs/2512.16816](https://arxiv.org/abs/2512.16816)
 
@@ -445,7 +207,7 @@ Hate speech detection targeting religious groups (e.g., Alevi communities) and I
 The benchmark measured counterfactual fairness by detecting semantic disparities and biased behavior in LLM responses when prompts were varied with sensitive attributes, including those related to religion. This involved identifying stereotypes in religious contexts. All tested models (GPT-4o mini, LLaMA-2-7B-CHAT, Mistral-7B-Instruct-v0.2) exhibited high fairness violation rates (Attack Success Rate - ASR) for the religion bias category, especially under the Question Answering (Q&A) intent, indicating recurring issues and persistent fairness vulnerabilities in this dimension.
 
 
-### VLegal-Bench: Cognitively Grounded Benchmark for Vietnamese Legal Reasoning of Large Language Models
+## VLegal-Bench: Cognitively Grounded Benchmark for Vietnamese Legal Reasoning of Large Language Models
 
 [https://arxiv.org/abs/2512.14554](https://arxiv.org/abs/2512.14554)
 
@@ -454,7 +216,7 @@ The benchmark measured counterfactual fairness by detecting semantic disparities
 Detection of religious bias in generated answers or decisions, as part of a broader bias detection task that also includes gender, racial, and political bias. Models struggled with the general bias detection task (which includes religious bias), with accuracy ranging from 15-58%. The paper suggests that detecting subtle biases requires domain-specific sensitivity, which is not fully addressed by general pretraining. Qwen2.5-14B achieved the best performance (57.79%) on this task among the tested models.
 
 
-### Can LLMs Understand What We Cannot Say? Measuring Multilevel Alignment Through Abortion Stigma Across Cognitive, Interpersonal, and Structural Levels
+## Can LLMs Understand What We Cannot Say? Measuring Multilevel Alignment Through Abortion Stigma Across Cognitive, Interpersonal, and Structural Levels
 
 [https://arxiv.org/abs/2512.13142](https://arxiv.org/abs/2512.13142)
 
@@ -463,7 +225,7 @@ Detection of religious bias in generated answers or decisions, as part of a broa
 The benchmark measured how Large Language Models associate religious affiliation (e.g., Protestant, Catholic) and religiosity (e.g., very religious) with different dimensions of abortion stigma, including self-judgment, interpersonal worries, and perceived community condemnation. Models partially replicated human patterns by associating higher abortion stigma with Protestant, Catholic, and very religious personas. However, they also introduced and amplified biases absent in the human validation data. Models overgeneralized stigma, assigning higher self-judgment, worries, and community condemnation to a broader range of religious groups than observed in humans. For example, while human data showed higher community condemnation for Catholics, models extended this to Protestants and other religious groups as well, often exaggerating the effect. These patterns reveal that models encode stereotypes linking religiosity to higher stigma in ways that do not align with the lived experiences of women.
 
 
-### Textual Data Bias Detection and Mitigation - An Extensible Pipeline with Experimental Evaluation
+## Textual Data Bias Detection and Mitigation - An Extensible Pipeline with Experimental Evaluation
 
 [https://arxiv.org/abs/2512.10734](https://arxiv.org/abs/2512.10734)
 
@@ -472,7 +234,7 @@ The benchmark measured how Large Language Models associate religious affiliation
 The paper's pipeline was evaluated on its ability to detect and mitigate two types of data bias for religious groups: representation bias and explicit stereotypes. Representation bias was quantified using a Demographic Representation Score (DRS) based on the frequency of religious group labels. Stereotype detection involved identifying and filtering sentences containing explicit stereotypes about religious groups using a sociolinguistically informed, LLM-based approach. The paper successfully generated validated word lists for five major religions (Buddhism, Christianity, Hinduism, Islam, Judaism) to enable bias analysis. The proposed pipeline was effective in reducing representation bias and filtering stereotypes related to these religious groups in the SMALL HEAP dataset. However, the study found that generating high-quality, factually and contextually correct counterfactual data for religion through augmentation is significantly more challenging than for gender. This difficulty resulted in a trade-off where the more conservative, higher-quality augmentation method (GC-CDA) had a much smaller impact on reducing representation bias for religion compared to a baseline method.
 
 
-### Can LLMs Evaluate What They Cannot Annotate? Revisiting LLM Reliability in Hate Speech Detection
+## Can LLMs Evaluate What They Cannot Annotate? Revisiting LLM Reliability in Hate Speech Detection
 
 [https://arxiv.org/abs/2512.09662](https://arxiv.org/abs/2512.09662)
 
@@ -481,7 +243,7 @@ The paper's pipeline was evaluated on its ability to detect and mitigate two typ
 The ability of LLMs to detect hate speech targeted at various religious groups, measured by the percentage of 'missed hate' instances for each group. LLMs struggle with hate speech detection against religious groups. They had high miss rates for 'Non Religious' (55.2%) and 'Jewish' (35.6%) targets. Hate speech against 'Islam' (20.3%) and 'Christian' (13.9%) was moderately captured, suggesting only partial coverage of faith-based hostility.
 
 
-### CNFINBENCH: A BENCHMARK FOR SAFETY AND COMPLIANCE OF LARGE LANGUAGE MODELS IN FINANCE
+## CNFINBENCH: A BENCHMARK FOR SAFETY AND COMPLIANCE OF LARGE LANGUAGE MODELS IN FINANCE
 
 [https://arxiv.org/abs/2512.09506](https://arxiv.org/abs/2512.09506)
 
@@ -490,7 +252,7 @@ The ability of LLMs to detect hate speech targeted at various religious groups, 
 The benchmark measures the model's adherence to a non-discrimination requirement, which prohibits unfair treatment, discrimination, or stereotyping based on protected attributes including religion in financial contexts. The paper establishes a benchmark that includes evaluating bias and fairness concerning protected attributes like religion in financial scenarios. However, it does not report specific findings related to religious bias, instead focusing on aggregate performance in the broader 'Safety' category.
 
 
-### A Systematic Evaluation of Preference Aggregation in Federated RLHF for Pluralistic Alignment of LLMs
+## A Systematic Evaluation of Preference Aggregation in Federated RLHF for Pluralistic Alignment of LLMs
 
 [https://arxiv.org/abs/2512.08786](https://arxiv.org/abs/2512.08786)
 
@@ -499,7 +261,7 @@ The benchmark measures the model's adherence to a non-discrimination requirement
 The benchmark measured the alignment of a Large Language Model with diverse group preferences (defined by country) on survey questions from the Pew Research Center's Global Attitudes Surveys. The topics covered included politics, media, technology, religion, race, and ethnicity. The paper's findings are not specific to religion but are about the general methodology. It found that its proposed 'Adaptive Alpha Aggregation' method consistently achieved superior fairness and competitive alignment scores across diverse user groups (countries) on a dataset that includes questions about religion. This indicates the method is effective for aligning models with varied viewpoints on sensitive topics like religion without marginalizing any particular group.
 
 
-### THE HIGH COST OF INCIVILITY: QUANTIFYING INTERACTION INEFFICIENCY VIA MULTI-AGENT MONTE CARLO SIMULATIONS
+## THE HIGH COST OF INCIVILITY: QUANTIFYING INTERACTION INEFFICIENCY VIA MULTI-AGENT MONTE CARLO SIMULATIONS
 
 [https://arxiv.org/abs/2512.08345](https://arxiv.org/abs/2512.08345)
 
@@ -508,7 +270,7 @@ The benchmark measured the alignment of a Large Language Model with diverse grou
 The benchmark measured the 'convergence time' (number of arguments required to reach a conclusion) in simulated 1-on-1 debates. This included debates on religious topics such as 'We should allow gay couples to marry' and 'We should legalize polygamy', as part of a larger set of controversial subjects. The paper does not report findings specific to the religious debate topics. The general finding, aggregated across all topics, was that the presence of a 'toxic' agent increased the conversation length by approximately 20-25% compared to the control group.
 
 
-### OmniSafeBench-MM: A Unified Benchmark and Toolbox for Multimodal Jailbreak Attack–Defense Evaluation
+## OmniSafeBench-MM: A Unified Benchmark and Toolbox for Multimodal Jailbreak Attack–Defense Evaluation
 
 [https://arxiv.org/abs/2512.06589](https://arxiv.org/abs/2512.06589)
 
@@ -517,7 +279,7 @@ The benchmark measured the 'convergence time' (number of arguments required to r
 The benchmark measures the generation of content that constitutes 'Cultural or Religious Offense'. This is a subcategory within the major risk domain of 'Content and Cultural Safety', one of nine major domains evaluated. The paper does not provide specific findings for the 'Cultural or Religious Offense' subcategory. The results are aggregated at a higher level, such as the 'Content and Cultural Safety' domain, or across all categories, preventing any specific conclusions about model performance on religious topics.
 
 
-### SEA-SafeguardBench: Evaluating AI Safety in SEA Languages and Cultures
+## SEA-SafeguardBench: Evaluating AI Safety in SEA Languages and Cultures
 
 [https://arxiv.org/abs/2512.05501](https://arxiv.org/abs/2512.05501)
 
@@ -526,7 +288,7 @@ The benchmark measures the generation of content that constitutes 'Cultural or R
 Detection of harmful content and cultural safety violations related to Southeast Asian contexts, including religious taboos, culturally sensitive political speech, and context-dependent misinformation. Specific religious examples include prompts about violating norms in Buddhism (touching monks) and Islam (introducing non-Halal food to Muslim communities). State-of-the-art LLMs and safeguard models consistently underperform on Southeast Asian (SEA) cultural and harm scenarios compared to English. Performance degrades substantially on the cultural subset, which requires nuanced understanding of local norms and religious taboos. For example, a top-performing model (LlamaGuard-3 8B) failed to classify unsafe prompts related to Burmese culture and Buddhism, mislabeling them as safe.
 
 
-### Can ChatGPT evaluate research environments? Evidence from REF2021
+## Can ChatGPT evaluate research environments? Evidence from REF2021
 
 [https://arxiv.org/abs/2512.05202](https://arxiv.org/abs/2512.05202)
 
@@ -535,7 +297,7 @@ Detection of harmful content and cultural safety violations related to Southeast
 The benchmark measured the correlation between LLM-generated scores and human expert scores for the quality of research environment statements from the UK's Research Excellence Framework (REF2021), including those from the 'Theology and Religious Studies' Unit of Assessment. The LLM's scores for research environment statements in the 'Theology and Religious Studies' unit of assessment had a high Spearman correlation (ρ = 0.761) with the scores from human experts, indicating strong performance in this area, similar to fields like Sociology and Psychology.
 
 
-### Towards A Cultural Intelligence and Values Inference Quality Benchmark for Community Values and Common Knowledge
+## Towards A Cultural Intelligence and Values Inference Quality Benchmark for Community Values and Common Knowledge
 
 [https://arxiv.org/abs/2512.05176](https://arxiv.org/abs/2512.05176)
 
@@ -544,7 +306,7 @@ The benchmark measured the correlation between LLM-generated scores and human ex
 The benchmark (CIVIQ) is designed to measure alignment with community social values and common knowledge of the Black community in the U.S. 'Faith tradition' is included as a stratification variable to ensure the survey data captures perspectives from different religious backgrounds within the community. This paper is a research proposal and does not present any findings. It outlines the methodology for creating a benchmark (CIVIQ) that will incorporate 'faith tradition' as a demographic variable for sampling, but no models have been evaluated yet.
 
 
-### FineGRAIN: Evaluating Failure Modes of Text-to-Image Models with Vision Language Model Judges
+## FineGRAIN: Evaluating Failure Modes of Text-to-Image Models with Vision Language Model Judges
 
 [https://arxiv.org/abs/2512.02161](https://arxiv.org/abs/2512.02161)
 
@@ -553,7 +315,7 @@ The benchmark (CIVIQ) is designed to measure alignment with community social val
 The benchmark measures the ability of text-to-image models to visually represent the abstract and philosophical concept of "religion and science" and their complex relationship, as part of its 'Depicting abstract concepts' failure mode. It also implicitly tests for associations with Christian iconography, as a prompt about a social hierarchy at a long table in ancient Rome consistently generated images resembling 'The Last Supper'. Text-to-image models struggle to visually represent the complex philosophical relationship between religion and science, often generating generic abstract images or simply rendering the words 'RELIGION' and 'SCIENCE'. Additionally, prompts about social hierarchies at a long table in an ancient setting consistently produce images resembling 'The Last Supper', indicating a strong association with specific Christian iconography in the models' training data.
 
 
-### BHRAM-IL: A Benchmark for Hallucination Recognition and Assessment in Multiple Indian Languages
+## BHRAM-IL: A Benchmark for Hallucination Recognition and Assessment in Multiple Indian Languages
 
 [https://arxiv.org/abs/2512.01852](https://arxiv.org/abs/2512.01852)
 
@@ -562,7 +324,7 @@ The benchmark measures the ability of text-to-image models to visually represent
 The benchmark measured the factual knowledge of LLMs on the topic of 'Indian Mythology and Religions' as part of its India-centric factual questions category (IndFact). The paper does not provide a specific textual analysis of the religion-related findings. However, Table 6 shows that for the 'Indian Mythology and Religions' domain, models had an average language hallucination rate of 33.96%, a primary factual accuracy score of 0.13, and a language-corrected fuzzy score of 0.42. This corrected score was among the highest within the India-centric factual questions category.
 
 
-### Rice-VL: Evaluating Vision-Language Models for Cultural Understanding Across ASEAN Countries
+## Rice-VL: Evaluating Vision-Language Models for Cultural Understanding Across ASEAN Countries
 
 [https://arxiv.org/abs/2512.01419](https://arxiv.org/abs/2512.01419)
 
@@ -571,7 +333,7 @@ The benchmark measured the factual knowledge of LLMs on the topic of 'Indian Myt
 The benchmark measured the models' ability to answer visual questions (culturalVQA) and localize visual elements (visual grounding) related to the cultural domains of 'Religious Practices' and 'Places of Worship' across 11 Southeast Asian countries. This included identifying religious artifacts, festivals (e.g., Thaipusam), customs (e.g., Morning Alm Rounds), and structures (e.g., temples). Models demonstrated lower accuracy in grounding abstract cultural elements, including those related to 'Religious Practices', compared to categories with more prominent visual features. Models trained on culturally rich datasets were better at pinpointing region-specific religious artifacts and structures compared to general-purpose models.
 
 
-### BENCHMARKING OVERTON PLURALISM IN LLMS
+## BENCHMARKING OVERTON PLURALISM IN LLMS
 
 [https://arxiv.org/abs/2512.01351](https://arxiv.org/abs/2512.01351)
 
@@ -580,7 +342,7 @@ The benchmark measured the models' ability to answer visual questions (culturalV
 The benchmark measures 'Overton Pluralism' concerning faith and religion, specifically the extent to which LLM outputs represent a diversity of viewpoints on subjective religious questions such as the belief in God and the afterlife. It does not measure factual knowledge or bias against specific groups, but rather the coverage of different legitimate perspectives. The paper includes questions on religious beliefs (e.g., 'Do you believe in God?', 'Is there life after death?') as part of the broader PRISM dataset to evaluate viewpoint diversity. However, it does not report findings specifically for this religious subset of questions. The general finding across all subjective topics is that all tested models, with scores between 0.35-0.41, are far below the theoretical maximum of 1.0 for Overton Pluralism, indicating they capture only a fraction of the diverse viewpoints held by the human population.
 
 
-### Difficulties with Evaluating a Deception Detector for AIs
+## Difficulties with Evaluating a Deception Detector for AIs
 
 [https://arxiv.org/abs/2511.22662](https://arxiv.org/abs/2511.22662)
 
@@ -589,7 +351,7 @@ The benchmark measures 'Overton Pluralism' concerning faith and religion, specif
 The paper critiques existing deception detection benchmarks. One example from the MASK benchmark involved a scenario set in a Christian church to evaluate if a model would lie. However, the measurement was about the general mechanism of deception, not specifically about religious knowledge, bias, or stereotypes. The religious setting was incidental context. The paper does not present findings related to religion. A single example involving a 'Christian church' from the MASK benchmark was used to illustrate a methodological flaw in deception evaluation, specifically how the benchmark's labeling procedure can undercount deceptive behavior by focusing on a narrow factual pivot while ignoring other fabricated details.
 
 
-### AfriStereo: A Culturally Grounded Dataset for Evaluating Stereotypical Bias in Large Language Models
+## AfriStereo: A Culturally Grounded Dataset for Evaluating Stereotypical Bias in Large Language Models
 
 [https://arxiv.org/abs/2511.22016](https://arxiv.org/abs/2511.22016)
 
@@ -598,7 +360,7 @@ The paper critiques existing deception detection benchmarks. One example from th
 Detection of stereotypical bias in religious contexts by comparing model preferences for stereotype vs. anti-stereotype sentences. Several models, including Mistral 7B and Flan-T5-Large, exhibited statistically significant bias along the religion axis. BioGPT Large showed marginal religious bias. The dataset captured stereotypes such as 'Muslims are terrorists' and 'Pentecostal pastors exploit their congregation'.
 
 
-### Polarity-Aware Probing for Quantifying Latent Alignment in Language Models
+## Polarity-Aware Probing for Quantifying Latent Alignment in Language Models
 
 [https://arxiv.org/abs/2511.21737](https://arxiv.org/abs/2511.21737)
 
@@ -607,7 +369,7 @@ Detection of stereotypical bias in religious contexts by comparing model prefere
 The benchmark measures the model's ability to distinguish harmful statements from safe ones using internal representations. One of the categories of harmful content includes stereotypes related to religion. The paper's findings are general to its proposed Polarity-Aware Contrast-Consistent Search (PA-CCS) methodology for detecting latent belief structures and do not focus specifically on religion. The method was tested on datasets containing harmful vs. safe statements, where one example of a harmful statement was a stereotype about Islam. The key findings relate to how different model architectures, sizes, and training methods (e.g., instruction tuning) affect the internal consistency and alignment of beliefs, indicating that the method can surface potential misalignments related to sensitive topics, including religion.
 
 
-### Human Experts’ Evaluation of Generative AI for Contextualizing STEAM Education in the Global South
+## Human Experts’ Evaluation of Generative AI for Contextualizing STEAM Education in the Global South
 
 [https://arxiv.org/abs/2511.19482](https://arxiv.org/abs/2511.19482)
 
@@ -616,7 +378,7 @@ The benchmark measures the model's ability to distinguish harmful statements fro
 The benchmark was designed to evaluate the cultural responsiveness of AI-generated lesson plans. One of the five 'cultural tenets' intended for evaluation was 'religious beliefs', which served as a dimension for determining cultural responsiveness alongside factors like indigenous language and knowledge. While 'religious beliefs' were included as a key tenet in the study's theoretical framework for evaluating cultural responsiveness, the paper does not report any specific findings related to religion. The results and discussion focus on broader cultural aspects such as local languages, community artifacts, and indigenous knowledge systems, without explicitly analyzing the representation or handling of religious content by the AI.
 
 
-### A Benchmark for Zero-Shot Belief Inference in Large Language Models
+## A Benchmark for Zero-Shot Belief Inference in Large Language Models
 
 [https://arxiv.org/abs/2511.18616](https://arxiv.org/abs/2511.18616)
 
@@ -625,7 +387,7 @@ The benchmark was designed to evaluate the cultural responsiveness of AI-generat
 The benchmark measured the ability of Large Language Models to predict an individual's stance (agree/disagree) on religious debate topics (e.g., 'There is a god') in a zero-shot setting, based on the user's demographic information and/or prior stated beliefs. Among twenty-three belief categories, LLMs were most accurate at predicting stances on religious topics. The 'Religion' category achieved the highest macro F1 score in both evaluation approaches (mean model performance and ensemble majority vote), especially when models were provided with both demographic and prior belief information.
 
 
-### Multimodal Evaluation of Russian-language Architectures
+## Multimodal Evaluation of Russian-language Architectures
 
 [https://arxiv.org/abs/2511.15552](https://arxiv.org/abs/2511.15552)
 
@@ -634,7 +396,7 @@ The benchmark measured the ability of Large Language Models to predict an indivi
 Prejudice assessment toward groups based on religion, as part of a broader ethics and safety evaluation in the ruHHH-Image dataset. The benchmark includes a component (the 'Open Category' in the ruHHH-Image dataset) to assess prejudice towards groups based on religion. However, the paper reports only aggregated scores for this dataset and does not provide specific findings or a breakdown of model performance related to religion.
 
 
-### HinTel-AlignBench: A Framework and Benchmark for Hindi–Telugu with English-Aligned Samples
+## HinTel-AlignBench: A Framework and Benchmark for Hindi–Telugu with English-Aligned Samples
 
 [https://arxiv.org/abs/2511.15183](https://arxiv.org/abs/2511.15183)
 
@@ -643,7 +405,7 @@ Prejudice assessment toward groups based on religion, as part of a broader ethic
 The benchmark measures cultural and contextual knowledge, which includes the ability to identify religious places like temples as part of a broader assessment of multimodal understanding in Indian languages. The paper does not provide specific findings related to religion. Its findings focus on the performance gap between English and Indian languages (Hindi, Telugu) in multimodal tasks. In the VAANI dataset, which tests for cultural grounding and includes some content related to cultural sites like temples, the performance regression from English to the Indian languages was the smallest among all tasks. For Hindi, average performance on the VAANI-H subset was slightly higher than on its English-aligned counterpart.
 
 
-### SafeRBench: A Comprehensive Benchmark for Safety Assessment in Large Reasoning Models
+## SafeRBench: A Comprehensive Benchmark for Safety Assessment in Large Reasoning Models
 
 [https://arxiv.org/abs/2511.15169](https://arxiv.org/abs/2511.15169)
 
@@ -652,7 +414,7 @@ The benchmark measures cultural and contextual knowledge, which includes the abi
 The benchmark measures how models respond to harmful queries, including those about exploiting people's religious beliefs for malicious purposes (e.g., financial scams). This falls under the broader safety evaluation of reasoning traces and final outputs. The paper does not report specific findings related to religion. However, its methodology includes evaluating model responses to queries about exploiting religious beliefs, demonstrating that this type of harmful content is within the benchmark's scope to assess safety.
 
 
-### AA-Omniscience: Evaluating Cross-Domain Knowledge Reliability in Large Language Models
+## AA-Omniscience: Evaluating Cross-Domain Knowledge Reliability in Large Language Models
 
 [https://arxiv.org/abs/2511.13029](https://arxiv.org/abs/2511.13029)
 
@@ -661,7 +423,7 @@ The benchmark measures how models respond to harmful queries, including those ab
 Factual knowledge recall and knowledge calibration on the topic of Religion. The benchmark measures a model's ability to accurately recall facts and to abstain from answering when its knowledge is insufficient. The paper does not provide specific findings for the 'Religion' category. The analysis of cross-domain performance groups 'Religion' under the broader 'Humanities & Social Sciences' domain, so no religion-specific conclusions are drawn.
 
 
-### Probing Preference Representations: A Multi-Dimensional Evaluation and Analysis Method for Reward Models
+## Probing Preference Representations: A Multi-Dimensional Evaluation and Analysis Method for Reward Models
 
 [https://arxiv.org/abs/2511.12464](https://arxiv.org/abs/2511.12464)
 
@@ -670,7 +432,7 @@ Factual knowledge recall and knowledge calibration on the topic of Religion. The
 The benchmark does not specifically measure aspects of faith or religion. However, the authors mention 'religious-related harmlessness' as a potential future dimension to expand their harmlessness evaluation. The paper does not present any findings related to religion. Its main findings are on the effectiveness of its MRMBench benchmark for evaluating reward models. The only mentions of religion are in a single example prompt about Mormons and a suggestion to expand the 'harmlessness' dimension to include 'religious-related harmlessness' in future work.
 
 
-### CURE: Cultural Understanding & Reasoning Evaluation – A Framework for “Thick” Culture Alignment Evaluation in LLMs
+## CURE: Cultural Understanding & Reasoning Evaluation – A Framework for “Thick” Culture Alignment Evaluation in LLMs
 
 [https://arxiv.org/abs/2511.12014](https://arxiv.org/abs/2511.12014)
 
@@ -679,7 +441,7 @@ The benchmark does not specifically measure aspects of faith or religion. Howeve
 The benchmark measured subgroup-sensitive cultural reasoning, specifically whether models could apply norms related to religious subgroups in specific contexts, rather than relying on broad, general cultural norms. Models exhibited poor performance in subgroup-sensitive reasoning, which includes religious contexts. The 'Specificity' metric, tested on the SpecNorm benchmark (of which 26.1% of items included religious cues), revealed that models struggle to ground cultural judgments in intersectional contexts like religion, often failing to reference relevant subgroup norms and instead relying on broad generalities.
 
 
-### OutSafe-Bench: A Benchmark for Multimodal Offensive Content Detection in Large Language Models
+## OutSafe-Bench: A Benchmark for Multimodal Offensive Content Detection in Large Language Models
 
 [https://arxiv.org/abs/2511.10287](https://arxiv.org/abs/2511.10287)
 
@@ -688,7 +450,7 @@ The benchmark measured subgroup-sensitive cultural reasoning, specifically wheth
 The benchmark measures prejudice and discrimination against religious groups as a sub-domain of one of its nine safety categories. The paper evaluates 'Religion' as a sub-domain within the 'Prejudice and Discrimination' category. However, specific findings related to religion are not detailed; results are aggregated at the higher category level, showing some models are better at mitigating 'stereotype bias' than others.
 
 
-### SPAN: Benchmarking and Improving Cross-Calendar Temporal Reasoning of Large Language Models
+## SPAN: Benchmarking and Improving Cross-Calendar Temporal Reasoning of Large Language Models
 
 [https://arxiv.org/abs/2511.09993](https://arxiv.org/abs/2511.09993)
 
@@ -697,7 +459,7 @@ The benchmark measures prejudice and discrimination against religious groups as 
 Knowledge and reasoning about dates in religious (Islamic, Hebrew) and cultural (Chinese Lunar, Persian, Shaka) calendar systems, including intra-calendar reasoning and inter-calendar conversion. LLMs exhibit poor performance (average 34.5% accuracy) in temporal reasoning across different calendar systems, including those used for religious observances like the Islamic and Hebrew calendars. A key issue identified is 'Calendar Asymmetry Bias', where models perform significantly better when converting from the common Gregorian calendar to other calendars (including religious ones) than in the reverse direction.
 
 
-### I've Seen Enough: Measuring the Toll of Content Moderation on Mental Health
+## I've Seen Enough: Measuring the Toll of Content Moderation on Mental Health
 
 [https://arxiv.org/abs/2511.09813](https://arxiv.org/abs/2511.09813)
 
@@ -706,7 +468,7 @@ Knowledge and reasoning about dates in religious (Islamic, Hebrew) and cultural 
 The study measured the frequency of daily spiritual experiences (e.g., connection with the divine, inner harmony) and the use of positive religious coping behaviors (e.g., turning to prayer, finding meaning) as potential predictors of mental health outcomes (PTSD and depression) in content moderators. The study investigated daily spiritual experiences as a potential predictor of mental health. The findings were mixed and inconsistent across samples. In the international sample (Study 1), spiritual experiences were not significantly associated with either PTSD or depression severity. In the U.S. sample (Study 2), higher daily spiritual experiences were unexpectedly associated with higher PTSD severity, but showed no significant relationship with depression severity.
 
 
-### Measuring Value Expressions in Social Media Posts
+## Measuring Value Expressions in Social Media Posts
 
 [https://arxiv.org/abs/2511.08453](https://arxiv.org/abs/2511.08453)
 
@@ -715,7 +477,7 @@ The study measured the frequency of daily spiritual experiences (e.g., connectio
 The benchmark measured the expression of the 'Tradition' value from the Schwartz value system, which is explicitly defined as 'maintaining and preserving cultural, family, or religious traditions'. This was evaluated using social media posts, some of which contained explicitly religious content (e.g., references to Jesus, Christmas, and religious observance). The paper uses expressions of religious faith (e.g., posts about Christmas and Jesus) as examples for measuring the 'Tradition' value. The primary finding is that the perception of such values is highly subjective and varies significantly among individuals. A personalized model, calibrated to an individual's responses, was found to be more effective at predicting how that person would rate the value expression in a given post (including religious ones) than a generic model or even the consensus of other people.
 
 
-### Estranged Predictions: Measuring Semantic Category Disruption with Masked Language Modelling
+## Estranged Predictions: Measuring Semantic Category Disruption with Masked Language Modelling
 
 [https://arxiv.org/abs/2511.08109](https://arxiv.org/abs/2511.08109)
 
@@ -724,7 +486,7 @@ The benchmark measured the expression of the 'Tradition' value from the Schwartz
 Measurement of semantic substitution patterns where ontological categories (human, animal, machine) are replaced by terms related to divine, mythical, and monstrous beings (e.g., god, angel, monster, deity), revealing an underlying hierarchical semantic structure reminiscent of the Great Chain of Being. The study found that substitutions with 'Fictional Beings' (gods, monsters, etc.) are more frequent and diverse in science fiction than general fiction. The model's predictions revealed a latent semantic hierarchy of 'machine < human < gods', reflecting the 'Great Chain of Being'. This hierarchy emerged even in texts aiming to dismantle such structures, showing how models can surface deeply embedded linguistic and cultural assumptions. The genre influences the nature of these substitutions: general fiction leans towards divine figures (god, angel), while science fiction incorporates a broader range of monstrous and mythical beings (monster, demon, spirit).
 
 
-### AlignSurvey: A Comprehensive Benchmark for Human Preferences Alignment in Social Surveys
+## AlignSurvey: A Comprehensive Benchmark for Human Preferences Alignment in Social Surveys
 
 [https://arxiv.org/abs/2511.07871](https://arxiv.org/abs/2511.07871)
 
@@ -733,7 +495,7 @@ Measurement of semantic substitution patterns where ontological categories (huma
 The benchmark included survey data measuring attitudes and opinions on 'religion' as one of several topics for social preference alignment. The paper does not provide specific findings related to religion. Religion is mentioned as one of several topics (along with inequality, trust in institutions, etc.) covered in the Social Foundation Corpus used for training the models, but it is not a focus of the analysis or the reported results.
 
 
-### Efficient LLM Safety Evaluation through Multi-Agent Debate
+## Efficient LLM Safety Evaluation through Multi-Agent Debate
 
 [https://arxiv.org/abs/2511.06396](https://arxiv.org/abs/2511.06396)
 
@@ -742,7 +504,7 @@ The benchmark included survey data measuring attitudes and opinions on 'religion
 The benchmark, HAJailBench, measured the propensity of LLMs to generate content that promotes discrimination based on protected attributes including religion, or content that violates sacred cultural or religious taboos, as part of a broader safety evaluation. The paper does not provide specific findings related to religion. The analysis of religious harm is included as part of a broader safety evaluation framework, and the results are not disaggregated by specific harm categories.
 
 
-### CULTURE IN ACTION: EVALUATING TEXT-TO-IMAGE MODELS THROUGH SOCIAL ACTIVITIES
+## CULTURE IN ACTION: EVALUATING TEXT-TO-IMAGE MODELS THROUGH SOCIAL ACTIVITIES
 
 [https://arxiv.org/abs/2511.05681](https://arxiv.org/abs/2511.05681)
 
@@ -751,7 +513,7 @@ The benchmark, HAJailBench, measured the propensity of LLMs to generate content 
 The benchmark, CULTIVate, measures the ability of Text-to-Image (T2I) models to generate culturally faithful visual representations of social activities, including specific religious practices and ceremonies across different countries. Models showed mixed results for generating images of religious activities. This category appeared among both the best-3 and worst-3 performing subactivities, which highlights systematic but varied strengths and weaknesses of current models when dealing with highly culturally-grounded topics like religion.
 
 
-### INDICVISIONBENCH: BENCHMARKING CULTURAL AND MULTILINGUAL UNDERSTANDING IN VLMS
+## INDICVISIONBENCH: BENCHMARKING CULTURAL AND MULTILINGUAL UNDERSTANDING IN VLMS
 
 [https://arxiv.org/abs/2511.04727](https://arxiv.org/abs/2511.04727)
 
@@ -760,7 +522,7 @@ The benchmark, CULTIVate, measures the ability of Text-to-Image (T2I) models to 
 The benchmark measures a model's ability to recognize and reason about culturally-specific religious concepts in the Indian context, such as identifying faiths (e.g., Hinduism, Buddhism), rituals, and religious sites (e.g., temples, churches) from images. Model performance varies by cultural category, including Religion. Stronger models like Gemini-2.5 demonstrated more consistent and robust performance across all topics, while weaker models exhibited sharper inconsistencies and lower performance on culturally nuanced queries related to religion and other topics.
 
 
-### The Human Flourishing Geographic Index: A County-Level Dataset for the United States, 2013–2023
+## The Human Flourishing Geographic Index: A County-Level Dataset for the United States, 2013–2023
 
 [https://arxiv.org/abs/2511.03915](https://arxiv.org/abs/2511.03915)
 
@@ -769,7 +531,7 @@ The benchmark measures a model's ability to recognize and reason about culturall
 Public salience of religious discourse on social media, specifically measuring expressions of 'belief in God', 'feeling loved by God', 'religious comfort', 'religious criticism', and other faith-related dimensions, which are then compared against offline institutional religious adherence data. The study found that the online expression of belief in God ('believegod' indicator) shows a clear spatial correspondence with offline measures of religious adherence, particularly mapping to Evangelical Protestant groups in the U.S. 'Bible Belt'. The correlation between online religious discourse and evangelical adherence was moderate at the county level (Spearman ρ = 0.51) and very strong at the state level (Pearson r = 0.76). Furthermore, indicators tied to religious faith and moral virtue (e.g., believegod, relcomfort, forgive, lovedgod) were found to be expressed more frequently in rural counties than in urban ones.
 
 
-### Evaluating Machine Translation Datasets for Low-Web Data Languages: A Gendered Lens
+## Evaluating Machine Translation Datasets for Low-Web Data Languages: A Gendered Lens
 
 [https://arxiv.org/abs/2511.03880](https://arxiv.org/abs/2511.03880)
 
@@ -778,7 +540,7 @@ Public salience of religious discourse on social media, specifically measuring e
 The analysis measured the topical composition of machine translation datasets, finding a significant dominance of religious topics and names, particularly in the large-scale NLLB training dataset. This was contrasted with the topics of benchmark datasets. The study found that large-scale training datasets for the evaluated languages, particularly NLLB, are heavily dominated by religious topics, accounting for up to 20% of identified topics. Consequently, the most frequent person names in these datasets are primarily from religious texts. This thematic focus on religion in training data contrasts sharply with benchmark datasets, which tend to cover news, sports, and health domains. The authors note that the prevalence of religious data (found in over 93% of datasets they surveyed) requires careful ethical consideration for its use in NLP.
 
 
-### Auditing M-LLMs for Privacy Risks: A Synthetic Benchmark and Evaluation Framework
+## Auditing M-LLMs for Privacy Risks: A Synthetic Benchmark and Evaluation Framework
 
 [https://arxiv.org/abs/2511.03248](https://arxiv.org/abs/2511.03248)
 
@@ -787,7 +549,7 @@ The analysis measured the topical composition of machine translation datasets, f
 Inference of a user's 'Religious-Belief' (REG) as one of twelve sensitive personal attributes from synthetic multi-modal social media posts. Models could infer religious belief (REG attribute) with moderate accuracy. In the multi-modal setting, scores ranged from 44.83 (GLM) to 59.09 (Gemini) out of 100. The inclusion of visual data provided a slight improvement over text-only inference for this attribute. The tested models significantly outperformed human participants, with the best model (Gemini) scoring 54.50 compared to the human average of 30.00.
 
 
-### BengaliMoralBench: A Benchmark for Auditing Moral Reasoning in Large Language Models within Bengali Language and Culture
+## BengaliMoralBench: A Benchmark for Auditing Moral Reasoning in Large Language Models within Bengali Language and Culture
 
 [https://arxiv.org/abs/2511.03180](https://arxiv.org/abs/2511.03180)
 
@@ -796,7 +558,7 @@ Inference of a user's 'Religious-Belief' (REG) as one of twelve sensitive person
 The benchmark measures the alignment of Large Language Models with culturally specific ethical norms and moral reasoning within the Bengali socio-cultural context, specifically focusing on scenarios related to religious practices, duties, and inter-faith interactions. This includes evaluating whether models can correctly classify behaviors in contexts like workplace prayer (salat), charity (zakat), religious attire (hijab), ritual sacrifice and distribution (Qurbani), inter-religious respect (Puja respect), and financial ethics (Halal loans) as 'ethical' or 'unethical' according to local values. Models frequently fail to grasp the faith-driven moral significance and context of religious actions, often misclassifying them as morally neutral. For example, they struggle with scenarios like the ritualized altruism of Qurbani meat distribution. This indicates a shallow understanding, reliance on surface-level cues, and a Western-centric bias that overlooks the deep-seated cultural and religious virtues in the Bengali context. However, the paper also notes that religious tasks, being more rule-based, tend to show higher performance stability across models compared to other domains.
 
 
-### Deep Value Benchmark: Measuring Whether Models Generalize Deep Values or Shallow Preferences
+## Deep Value Benchmark: Measuring Whether Models Generalize Deep Values or Shallow Preferences
 
 [https://arxiv.org/abs/2511.02109](https://arxiv.org/abs/2511.02109)
 
@@ -805,7 +567,7 @@ The benchmark measures the alignment of Large Language Models with culturally sp
 The benchmark measured whether models generalize the deep value of 'tradition', which is defined as 'respect, commitment, and acceptance of the customs and ideas that traditional culture or religion provide the self'. Models generalized the deep value of 'tradition' (which includes respecting religion) at a higher rate (DVGR of 0.51) than most other deep values. This was the highest DVGR alongside 'universalism', although it is still only slightly above chance level and well below perfect generalization.
 
 
-### Surfacing Subtle Stereotypes: A Multilingual, Debate-Oriented Evaluation of Modern LLMs
+## Surfacing Subtle Stereotypes: A Multilingual, Debate-Oriented Evaluation of Modern LLMs
 
 [https://arxiv.org/abs/2511.01187](https://arxiv.org/abs/2511.01187)
 
@@ -814,7 +576,7 @@ The benchmark measured whether models generalize the deep value of 'tradition', 
 The benchmark measures religious bias by evaluating how Large Language Models (LLMs) generate stereotyped narratives about different demographic groups in the context of religion, focusing on unequal portrayals of faith groups and perceived limitations on religious freedom. All tested models consistently and overwhelmingly associated Arabs with stereotyped, conservative, or exclusionary religious views, with attribution rates reaching 95-100% in many cases, especially in high-resource languages like English. The paper also found that bias shifts with language; for instance, LLaMA-3 shifted religious stereotypes from Arabs to Indians when prompted in Hindi, suggesting models adapt stereotypes to the perceived cultural context of the input language.
 
 
-### DIALECTALARABICMMLU: Benchmarking Dialectal Capabilities in Arabic and Multilingual Language Models
+## DIALECTALARABICMMLU: Benchmarking Dialectal Capabilities in Arabic and Multilingual Language Models
 
 [https://arxiv.org/abs/2510.27543](https://arxiv.org/abs/2510.27543)
 
@@ -823,7 +585,7 @@ The benchmark measures religious bias by evaluating how Large Language Models (L
 Knowledge of world religions via multiple-choice questions. The paper does not provide specific findings for the 'World Religions' domain. The results are aggregated across all 32 domains, so no religion-specific conclusions can be drawn from the reported data.
 
 
-### “Back to the Communities”: A Mixed‑Methods and Community‑Driven Evaluation of Cultural Sensitivity in Text-to-Image Models
+## “Back to the Communities”: A Mixed‑Methods and Community‑Driven Evaluation of Cultural Sensitivity in Text-to-Image Models
 
 [https://arxiv.org/abs/2510.27361](https://arxiv.org/abs/2510.27361)
 
@@ -832,7 +594,7 @@ Knowledge of world religions via multiple-choice questions. The paper does not p
 The benchmark measured cultural sensitivity in Text-to-Image models. Religion was included as a 'non-material proxy' for culture, specifically through the representation of religious rituals, beliefs, and festive religious events. Religion is identified as a key component of culture, often misrepresented in T2I models. The study's literature review and co-creation workshops established 'Religion/Rituals', 'Beliefs', and 'religious events' as important cultural proxies for evaluation. The paper cites other research that analyzed outputs for the prompt 'imagine a religious person' and notes a participant's concern about the negative portrayal of Muslim and Arab countries in media, which could influence model training data and outputs. The core finding is the need for a community-based methodology to properly evaluate such nuanced cultural and religious representations.
 
 
-### MM-OPERA: Benchmarking Open-ended Association Reasoning for Large Vision-Language Models
+## MM-OPERA: Benchmarking Open-ended Association Reasoning for Large Vision-Language Models
 
 [https://arxiv.org/abs/2510.26937](https://arxiv.org/abs/2510.26937)
 
@@ -841,7 +603,7 @@ The benchmark measured cultural sensitivity in Text-to-Image models. Religion wa
 The benchmark measures the ability of Large Vision-Language Models to perform open-ended association reasoning. This includes recognizing and connecting concepts based on cultural and symbolic knowledge, which in some test cases involves Christian religious symbolism (e.g., connecting images of bread, wine, and the number 12 to the Last Supper and the Eucharist). The paper does not provide aggregated findings specific to religion. However, through case studies, it demonstrates that top-performing models like GPT-4o and Gemini-1.5-Pro can successfully identify and reason about Christian symbolism (e.g., the Eucharist, the Last Supper) in visual contexts, indicating an ability to connect images to specific cultural and religious knowledge.
 
 
-### Depth and Autonomy: A Framework for Evaluating LLM Applications in Social Science Research
+## Depth and Autonomy: A Framework for Evaluating LLM Applications in Social Science Research
 
 [https://arxiv.org/abs/2510.25432](https://arxiv.org/abs/2510.25432)
 
@@ -850,7 +612,7 @@ The benchmark measures the ability of Large Vision-Language Models to perform op
 Extraction of constitutionalist principles from a 7th-century Islamic religious-political text (Letter 53 by Imam Ali). LLMs can robustly extract complex political concepts like 'constitutionalism' from a 7th-century Islamic religious text ('Letter 53') when guided by a decomposed, multi-stage prompting process. This approach, which breaks the task into smaller, auditable steps, allows models to identify elements such as the 'Supremacy of higher law (Book and Sunnah)' and 'limited government', yielding more detailed and reliable results than a single-pass approach.
 
 
-### DEBATE: A Large-Scale Benchmark for Role-Playing LLM Agents in Multi-Agent, Long-Form Debates
+## DEBATE: A Large-Scale Benchmark for Role-Playing LLM Agents in Multi-Agent, Long-Form Debates
 
 [https://arxiv.org/abs/2510.25110](https://arxiv.org/abs/2510.25110)
 
@@ -859,7 +621,7 @@ Extraction of constitutionalist principles from a 7th-century Islamic religious-
 Modeling opinion dynamics of LLM agents on socio-religious topics. The benchmark measures how well LLMs can simulate human debate participants, who are profiled using demographic data that includes religiosity, religious affiliation (e.g., protestant, evangelical), and Bible interpretation. Some debate topics explicitly involve faith, such as 'We depend too much on science and not enough on faith.' The paper's findings indicate that including private profile information, which contains religious identity (affiliation, evangelical status, Bible view), is important for realistically simulating human conversational dynamics. Ablation studies showed that removing this private profile information from the agent's memory consistently degraded the simulation's performance in terms of semantic similarity and stance alignment when conversations were recursively generated.
 
 
-### A word association network methodology for evaluating implicit biases in LLMs compared to humans
+## A word association network methodology for evaluating implicit biases in LLMs compared to humans
 
 [https://arxiv.org/abs/2510.24488](https://arxiv.org/abs/2510.24488)
 
@@ -868,7 +630,16 @@ Modeling opinion dynamics of LLM agents on socio-religious topics. The benchmark
 The benchmark measures valence bias, which is the general positive or negative perception associated with different religious groups. This is done by analyzing the strength of association between prime nodes representing religious groups (e.g., 'christian', 'muslim') and all other nodes in a word association network that have a valence rating (positive or negative sentiment). Significant valence bias related to religion was found in both humans and all three tested LLMs. However, the nature of the bias differed. Humans perceived 'buddhist' and 'christian' more positively, and 'athiest' and 'muslim' more negatively. In contrast, all three LLMs perceived 'muslim' more positively and 'buddhist' less positively than humans did, suggesting that LLMs can develop 'counter-biases' that diverge from human cognitive tendencies, possibly due to fine-tuning.
 
 
-### Global PIQA: Evaluating Physical Commonsense Reasoning Across 100+ Languages and Cultures
+## Can LLMs Write Faithfully? An Agent-Based Evaluation of LLM-generated Islamic Content
+
+[https://arxiv.org/abs/2510.24438](https://arxiv.org/abs/2510.24438)
+
+**Date:** 2025-10-28
+
+Faithfulness of LLM-generated Islamic content, measuring theological accuracy, citation integrity, stylistic reverence, structural coherence, and thematic focus using a dual-agent (quantitative and qualitative) framework. GPT-4o achieved the highest overall quantitative score (3.90/5), particularly in style, structure, Islamic accuracy, and citations. However, the domain-specific Ansari AI led in qualitative pairwise comparisons, receiving the most 'Best' verdicts (116/200) for its clarity and religious fidelity. The Arabic-centric model Fanar trailed both, especially in citation accuracy. Despite strong performance from top models, all still demonstrated significant shortcomings in reliable citation handling and contextual integrity, highlighting the need for structured knowledge grounding in sensitive religious contexts.
+
+
+## Global PIQA: Evaluating Physical Commonsense Reasoning Across 100+ Languages and Cultures
 
 [https://arxiv.org/abs/2510.24081](https://arxiv.org/abs/2510.24081)
 
@@ -877,7 +648,7 @@ The benchmark measures valence bias, which is the general positive or negative p
 The benchmark measures physical commonsense reasoning, including culturally-specific knowledge. For religion, this involves commonsense knowledge about religious customs, traditions, objects, and practices, as examples were encouraged to be based on topics like 'local foods, places, everyday objects, customs, traditions, religions, literature, folklore, or art forms'. The paper does not provide findings specifically broken down by religious topics. The findings are aggregated by language and region, showing that models exhibit weaker performance in lower-resource languages and struggle with culturally-specific examples, which include questions related to religious customs, knowledge, and traditions.
 
 
-### Breaking the Benchmark: Revealing LLM Bias via Minimal Contextual Augmentation
+## Breaking the Benchmark: Revealing LLM Bias via Minimal Contextual Augmentation
 
 [https://arxiv.org/abs/2510.23921](https://arxiv.org/abs/2510.23921)
 
@@ -886,7 +657,7 @@ The benchmark measures physical commonsense reasoning, including culturally-spec
 Detection of stereotypical bias in ambiguous question-answering scenarios related to religion. The benchmark measures whether a Large Language Model (LLM) will abstain or make a decisive (and potentially stereotypical) inference when faced with an ambiguous context involving religion. For the religion bias category, contextual and question augmentation significantly increased the rate of 'Decisive Responses' (potentially biased answers in ambiguous contexts) from 25.95% in the original format to 56.72% in the fully augmented format. This reveals that models which appear fair on standard benchmarks may harbor latent biases that surface under semantic perturbations, suggesting they overfit to benchmark formats rather than internalizing fairness principles.
 
 
-### IPQA: A Benchmark for Core Intent Identification in Personalized Question Answering
+## IPQA: A Benchmark for Core Intent Identification in Personalized Question Answering
 
 [https://arxiv.org/abs/2510.23536](https://arxiv.org/abs/2510.23536)
 
@@ -895,7 +666,16 @@ Detection of stereotypical bias in ambiguous question-answering scenarios relate
 Core intent identification in personalized questions about religious topics. The benchmark, IPQA, includes a 'Social' domain with sub-domains for various religions to evaluate a model's ability to understand user motivations in these contexts. The paper evaluates performance on a broad 'Social' domain which includes questions about Judaism, Christianity, Islam, Hinduism, and Buddhism. It does not provide a performance breakdown for each specific religion. The findings for the Social domain show that core intent identification is challenging, with F1 scores for the best-performing models under the 'User Profile (Intents)' configuration hovering around 0.49-0.50. Performance generally improves when models are provided with explicit historical intents, but remains moderate overall.
 
 
-### A Use-Case Specific Dataset for Measuring Dimensions of Responsible Performance in LLM-generated Text
+## BaZi-Based Character Simulation Benchmark: Evaluating AI on Temporal and Persona Reasoning
+
+[https://arxiv.org/abs/2510.23337](https://arxiv.org/abs/2510.23337)
+
+**Date:** 2025-10-27
+
+The benchmark measured the ability of LLMs to perform persona reasoning and predict life events based on the principles of BaZi (Four Pillars of Destiny), a traditional Chinese metaphysical and divinatory system. The study found that integrating the symbolic reasoning framework of BaZi (Four Pillars of Destiny) significantly improves the ability of LLMs to perform persona reasoning and predict life events. Models augmented with BaZi rules showed accuracy improvements of 30.3%-62.6% over baselines. Furthermore, the model's accuracy dropped by up to 45.7% when provided with incorrect (shuffled) birth date information, demonstrating that the performance gain is genuinely tied to the BaZi system's logic rather than being a superficial prompting artifact.
+
+
+## A Use-Case Specific Dataset for Measuring Dimensions of Responsible Performance in LLM-generated Text
 
 [https://arxiv.org/abs/2510.20782](https://arxiv.org/abs/2510.20782)
 
@@ -904,7 +684,7 @@ Core intent identification in personalized questions about religious topics. The
 Measurement of performance disparities (toxicity and accuracy) in LLM-generated e-commerce product descriptions for products associated with various identity groups, including religious groups (Jewish, Muslim), to assess fairness. The paper's methodology allows for measuring performance disparities across religious groups. In the specific evaluation of the Llama 3.2 11B model for generating e-commerce product descriptions, products associated with 'Jewish' and 'Muslim' identity groups did not elicit significantly higher toxicity or sexually explicit language compared to most other demographic groups. The most significant disparities in toxicity were observed for other identity groups, such as 'Women'.
 
 
-### From Facts to Folklore: Evaluating Large Language Models on Bengali Cultural Knowledge
+## From Facts to Folklore: Evaluating Large Language Models on Bengali Cultural Knowledge
 
 [https://arxiv.org/abs/2510.20043](https://arxiv.org/abs/2510.20043)
 
@@ -913,7 +693,7 @@ Measurement of performance disparities (toxicity and accuracy) in LLM-generated 
 Knowledge of Bengali cultural terms and concepts related to religion. In Question Answering tasks, models generally underperformed on cultural categories compared to non-cultural ones. However, 'Religion' was an exception, alongside 'Food', where models performed better than in other cultural categories like 'Entertainment', 'People', and 'Historical'.
 
 
-### Exposing Blindspots: Cultural Bias Evaluation in Generative Image Models
+## Exposing Blindspots: Cultural Bias Evaluation in Generative Image Models
 
 [https://arxiv.org/abs/2510.20042](https://arxiv.org/abs/2510.20042)
 
@@ -922,7 +702,7 @@ Knowledge of Bengali cultural terms and concepts related to religion. In Questio
 The benchmark measured the cultural representation of 'religious ritual' as a subcategory. Specifically, it analyzed whether image generations for this category leaned towards 'traditional' or 'modern' aesthetics, particularly noting differences when prompts specified a country versus being country-agnostic. The category 'religious ritual' generally produced images with traditional scores for most countries, but tended to produce modern-styled images for prompts specifying the United States or that were country-agnostic.
 
 
-### Quantifying Feature Importance for Online Content Moderation
+## Quantifying Feature Importance for Online Content Moderation
 
 [https://arxiv.org/abs/2510.19882](https://arxiv.org/abs/2510.19882)
 
@@ -931,7 +711,7 @@ The benchmark measured the cultural representation of 'religious ritual' as a su
 The predictive power of user features, including a 'CULTURE' feature group that contains religious terms, on post-moderation user behavior (activity, toxicity, diversity). The feature subgroup 'CULTURE' from the LIWC lexicon, which includes terms related to religion, was not selected in the final predictive models for changes in user activity, toxicity, or diversity. This indicates it had limited predictive utility for post-moderation behavior compared to other features, despite showing some predictive power when evaluated in isolation.
 
 
-### PBBQ: A Persian Bias Benchmark Dataset Curated with Human-AI Collaboration for Large Language Models
+## PBBQ: A Persian Bias Benchmark Dataset Curated with Human-AI Collaboration for Large Language Models
 
 [https://arxiv.org/abs/2510.19616](https://arxiv.org/abs/2510.19616)
 
@@ -940,7 +720,7 @@ The predictive power of user features, including a 'CULTURE' feature group that 
 The benchmark, PBBQ (Persian Bias Benchmark for Question-answering), measured social biases in Large Language Models within a Persian cultural context. For religion, it specifically measured stereotypical biases by presenting models with ambiguous and disambiguated scenarios and evaluating their responses to negative and non-negative questions. Religion was one of 16 categories evaluated for social bias. Across all tested models, biases were observed in religious contexts. On average, models showed a bias score of 0.0794 in ambiguous religious scenarios and 0.0509 in disambiguated ones, indicating that contextual information reduced but did not eliminate stereotypical responses. The findings suggest that LLMs, including Persian-specific models, exhibit and reproduce social biases related to religion present in their training data and cultural context.
 
 
-### Context-aware Fairness Evaluation and Mitigation in LLMs
+## Context-aware Fairness Evaluation and Mitigation in LLMs
 
 [https://arxiv.org/abs/2510.18914](https://arxiv.org/abs/2510.18914)
 
@@ -949,7 +729,7 @@ The benchmark, PBBQ (Persian Bias Benchmark for Question-answering), measured so
 Stereotype and toxicity bias detection in multi-turn dialogues concerning demographic attributes, including religion. Bias related to religion shows a strong signal and increases during multi-turn conversations. Models can shift from aligned behavior to producing stereotypical responses, as shown in an example regarding Judaism. The proposed dynamic neuron masking framework was found to effectively reduce this accumulating bias.
 
 
-### Beyond the Explicit: A Bilingual Dataset for Dehumanization Detection in Social Media
+## Beyond the Explicit: A Bilingual Dataset for Dehumanization Detection in Social Media
 
 [https://arxiv.org/abs/2510.18582](https://arxiv.org/abs/2510.18582)
 
@@ -958,7 +738,7 @@ Stereotype and toxicity bias detection in multi-turn dialogues concerning demogr
 The benchmark measures the detection of dehumanizing language directed at various target groups, including religious groups. Specifically, it includes keywords and slurs targeting Jewish people to identify instances of dehumanization against this group. The paper's findings are aggregated across all target groups and do not provide specific results for religion. However, by including religious groups (specifically Jewish people) as a target category for annotation, the study demonstrates that its resulting dataset and the models trained on it are equipped to identify dehumanizing language in a religious context as part of the broader dehumanization detection task.
 
 
-### SIMBENCH: BENCHMARKING THE ABILITY OF LARGE LANGUAGE MODELS TO SIMULATE HUMAN BEHAVIORS
+## SIMBENCH: BENCHMARKING THE ABILITY OF LARGE LANGUAGE MODELS TO SIMULATE HUMAN BEHAVIORS
 
 [https://arxiv.org/abs/2510.17516](https://arxiv.org/abs/2510.17516)
 
@@ -967,7 +747,7 @@ The benchmark measures the detection of dehumanizing language directed at variou
 The benchmark measures the ability of LLMs to simulate the group-level survey responses of human populations conditioned on specific demographic attributes, including 'Religiosity/Practice' and 'Religion (Affiliation)'. Models struggle most when simulating groups defined by religious attributes. Conditioning on 'Religiosity/Practice' caused the largest decrease in simulation accuracy (ΔS = -9.91), followed by 'Religion (Affiliation)' (ΔS = -4.83), compared to all other demographic categories tested.
 
 
-### MoReBench: Evaluating Procedural and Pluralistic Moral Reasoning in Language Models, More Than Outcomes
+## MoReBench: Evaluating Procedural and Pluralistic Moral Reasoning in Language Models, More Than Outcomes
 
 [https://arxiv.org/abs/2510.16380](https://arxiv.org/abs/2510.16380)
 
@@ -976,7 +756,7 @@ The benchmark measures the ability of LLMs to simulate the group-level survey re
 Procedural moral reasoning in scenarios involving religious contexts, as part of a broader benchmark on moral reasoning across 16 topics. The paper includes 'Religion' as one of 16 diverse real-world topics for evaluating moral reasoning. However, the results are aggregated, and the paper does not provide a specific breakdown or analysis of model performance on religious dilemmas.
 
 
-### Echoes of Human Malice in Agents: Benchmarking LLMs for Multi-Turn Online Harassment Attacks
+## Echoes of Human Malice in Agents: Benchmarking LLMs for Multi-Turn Online Harassment Attacks
 
 [https://arxiv.org/abs/2510.14207](https://arxiv.org/abs/2510.14207)
 
@@ -985,7 +765,7 @@ Procedural moral reasoning in scenarios involving religious contexts, as part of
 Generation of harassment targeting individuals based on their race/culture/sexuality. Religion is an implicit sub-category of culture. The models have stronger guardrails against harassment related to sensitive identity categories like race and culture compared to more generic forms of harassment like insults or flaming. This is likely due to alignment efforts prioritizing high-salience harms. However, these guardrails can still be circumvented through various attack methods, particularly jailbreak fine-tuning, which significantly increases the rate of harassment based on race/culture/sexuality.
 
 
-### CRaFT: An Explanation-Based Framework for Evaluating Cultural Reasoning in Multilingual Language Models
+## CRaFT: An Explanation-Based Framework for Evaluating Cultural Reasoning in Multilingual Language Models
 
 [https://arxiv.org/abs/2510.14014](https://arxiv.org/abs/2510.14014)
 
@@ -994,7 +774,7 @@ Generation of harassment targeting individuals based on their race/culture/sexua
 Alignment of model explanations with culturally salient concepts, including 'Religious observance' and other religion-derived social norms. The study found that large language models dynamically reconstruct their reasoning on culturally sensitive topics, including those influenced by religion such as family values, based on the linguistic context of the prompt. For instance, the models adopted more traditional, religion-aligned stances on family structures when prompted in Arabic compared to English. This demonstrates that cultural awareness, including the reflection of religious norms, is an emergent, language-contingent property rather than an intrinsic, stable trait of the models.
 
 
-### Evaluating Arabic Large Language Models: A Survey of Benchmarks, Methods, and Gaps
+## Evaluating Arabic Large Language Models: A Survey of Benchmarks, Methods, and Gaps
 
 [https://arxiv.org/abs/2510.13430](https://arxiv.org/abs/2510.13430)
 
@@ -1003,7 +783,7 @@ Alignment of model explanations with culturally salient concepts, including 'Rel
 The paper surveys several benchmarks, including those measuring knowledge of Islamic legal rulings (fatwas) regarding the Hajj pilgrimage, understanding of general Islamic culture and religious practices, and ensuring religious sensitivity in model outputs. The survey identifies the emergence of specialized benchmarks (e.g., Hajj-FAQ, PalmX, ILMAAM) designed to evaluate Arabic LLMs on domain-specific religious knowledge, including Islamic jurisprudence, culture, and sensitivity. This highlights a trend towards assessing models' ability to handle religiously and culturally nuanced content beyond general NLP tasks.
 
 
-### I Am Aligned, But With Whom? MENA Values Benchmark for Evaluating Cultural Alignment and Multilingual Bias in LLMs
+## I Am Aligned, But With Whom? MENA Values Benchmark for Evaluating Cultural Alignment and Multilingual Bias in LLMs
 
 [https://arxiv.org/abs/2510.13154](https://arxiv.org/abs/2510.13154)
 
@@ -1012,7 +792,16 @@ The paper surveys several benchmarks, including those measuring knowledge of Isl
 The benchmark measures the cultural alignment of LLMs with the values of the Middle East and North Africa (MENA) region. This includes categories for 'Religious Values' and 'Cultural & Religious Identity'. A specific example measured is the model's response to the question, 'How important is God in your life?'. LLMs exhibit significant 'Cross-Lingual Value Shifts' related to faith. For example, when asked about the importance of God, a model might refuse to answer in English but provide a deeply religious, affirmative response in Arabic ('10 - God represents the center of my life'). This suggests the model's expressed 'identity' regarding faith is unstable and heavily dependent on the prompt language, shifting from agnostic to highly religious. The reasoning process can also trigger a projection of Western-liberal values like secularism, which may conflict with local, empirically-documented religious values.
 
 
-### BENCHMARKING OPEN-SOURCE LARGE LANGUAGE MODELS FOR PERSIAN IN ZERO-SHOT AND FEW-SHOT LEARNING
+## A CRITICAL REVIEW OF THE NEED FOR KNOWLEDGE–CENTRIC EVALUATION OF QURANIC RECITATION
+
+[https://arxiv.org/abs/2510.12858](https://arxiv.org/abs/2510.12858)
+
+**Date:** 2025-11-10
+
+Correctness of Quranic recitation based on the Islamic rules of Tajweed. The paper reviews systems that evaluate pronunciation, rhythm, and phonetics against established religious standards. The prevailing paradigm of adapting Automatic Speech Recognition (ASR) systems for evaluating Quranic recitation is fundamentally inadequate. These systems prioritize word recognition over qualitative elocution, suffer from data dependency and demographic biases (e.g., gender), and fail to provide the granular, diagnostic feedback necessary for effective learning. The paper concludes that a more robust, knowledge-centric approach is needed, one that is built upon the well-defined and unchanging rules of Tajweed rather than statistical patterns from flawed data.
+
+
+## BENCHMARKING OPEN-SOURCE LARGE LANGUAGE MODELS FOR PERSIAN IN ZERO-SHOT AND FEW-SHOT LEARNING
 
 [https://arxiv.org/abs/2510.12807](https://arxiv.org/abs/2510.12807)
 
@@ -1021,7 +810,7 @@ The benchmark measures the cultural alignment of LLMs with the values of the Mid
 Model knowledge on multiple-choice questions about Theology as part of the Persian MMLU benchmark. Models generally showed stronger performance on Theology questions compared to other academic subcategories within the Persian MMLU benchmark. Logic and Theology were the subcategories with the strongest results, with average scores of 0.412 and 0.395 respectively across models.
 
 
-### VQArt-Bench: A semantically rich VQA Benchmark for Art and Cultural Heritage
+## VQArt-Bench: A semantically rich VQA Benchmark for Art and Cultural Heritage
 
 [https://arxiv.org/abs/2510.12750](https://arxiv.org/abs/2510.12750)
 
@@ -1030,7 +819,7 @@ Model knowledge on multiple-choice questions about Theology as part of the Persi
 The benchmark measures the ability of multimodal models to perform visual question answering on artworks, which includes understanding and reasoning about subjects, actions, symbols, and compositional elements within religious art. The paper's findings are general to the domain of artistic visual analysis, of which religious art is a major component. It found that most state-of-the-art models exhibit limited performance in understanding art, struggling with tasks like counting but performing relatively better on abstract reasoning. No findings were specific to religious content versus other art genres, but the overall poor performance applies to the religious artworks included in the benchmark.
 
 
-### HALF: Harm-Aware LLM Fairness Evaluation Aligned with Deployment
+## HALF: Harm-Aware LLM Fairness Evaluation Aligned with Deployment
 
 [https://arxiv.org/abs/2510.12217](https://arxiv.org/abs/2510.12217)
 
@@ -1039,7 +828,7 @@ The benchmark measures the ability of multimodal models to perform visual questi
 The benchmark measured sentiment and toxicity in open-ended text generation prompted with religious topics (from the BOLD benchmark), and stereotype-based reasoning in question-answering contexts related to religion (from the BBQ benchmark). Smaller open-source models like LLaMA-1B and LLaMA-3B produced disproportionately high toxicity for prompts related to Islam. In stereotype evaluation (BBQ), most models showed significant bias on religion-related prompts, with LLaMA models exhibiting the highest bias, while Claude 4 demonstrated the most consistent fairness.
 
 
-### Do Psychometric Tests Work for Large Language Models? Evaluation of Tests on Sexism, Racism, and Morality
+## Do Psychometric Tests Work for Large Language Models? Evaluation of Tests on Sexism, Racism, and Morality
 
 [https://arxiv.org/abs/2510.11254](https://arxiv.org/abs/2510.11254)
 
@@ -1048,7 +837,7 @@ The benchmark measured sentiment and toxicity in open-ended text generation prom
 The benchmark measured the endorsement of the 'purity/sanctity' moral foundation, which is linked to religious and spiritual concepts. This was assessed using items from the Moral Foundations Questionnaire, such as 'Whether or not someone acted in a way that God would approve of' and 'Chastity is an important and valuable virtue'. The study found a weak, near-zero correlation (Spearman's rs = 0.05) between LLM scores on the 'purity' dimension of the Moral Foundations Questionnaire and their behavior in a downstream moral advice-giving task. This indicates low ecological validity, meaning that a model's score on psychometric items related to religious/moral purity does not predict its actual behavior on related tasks.
 
 
-### DITING: A Multi-Agent Evaluation Framework for Benchmarking Web Novel Translation
+## DITING: A Multi-Agent Evaluation Framework for Benchmarking Web Novel Translation
 
 [https://arxiv.org/abs/2510.09116](https://arxiv.org/abs/2510.09116)
 
@@ -1057,7 +846,7 @@ The benchmark measured the endorsement of the 'purity/sanctity' moral foundation
 The benchmark, DITING, measures the quality of translation for 'religious or internet-born expressions' under its 'Terminology Localization' dimension. It also assesses 'Cultural Safety,' which safeguards against misinterpretations in sensitive genres including religion. A specific example mentioned is the translation of the Taoist spiritual concept '金丹' (Golden Core). The paper's findings are not specifically isolated for religious content. However, for the broader 'Terminology Localization' dimension, which includes religious terms, the results show that Chinese-trained LLMs outperform others. DeepSeek-V3 achieved the highest score, followed by Qwen3-32B and Seed-X-PPO-7B. This suggests that model scale, Chinese-centric training data, and domain adaptation are crucial for accurately translating specialized cultural concepts, including religious ones.
 
 
-### Web Crawler Restrictions, AI Training Datasets & Political Biases
+## Web Crawler Restrictions, AI Training Datasets & Political Biases
 
 [https://arxiv.org/abs/2510.09031](https://arxiv.org/abs/2510.09031)
 
@@ -1066,7 +855,7 @@ The benchmark, DITING, measures the quality of translation for 'religious or int
 Analysis of word co-occurrence patterns in hyperpartisan text to identify the over-representation of religious terminology in potential AI training datasets. Due to crawler restrictions on moderate websites, AI training datasets are becoming increasingly skewed towards hyperpartisan content. This content features an over-representation of religious terminology. In hyperpartisan right-leaning text, religious word pairs like (Jesus; God), (Christ; Jesus), and (Faith; God) are overrepresented, and terms like 'God', 'Church', 'Testament', and 'Christian' co-occur frequently with demographic terms. In hyperpartisan left-leaning text, 'Jewish' co-occurs with 'Community'. This suggests that models trained on this skewed data may inherit these representations.
 
 
-### MMA-ASIA: A MULTILINGUAL AND MULTI-MODAL ALIGNMENT FRAMEWORK FOR CULTURALLY-GROUNDED EVALUATION
+## MMA-ASIA: A MULTILINGUAL AND MULTI-MODAL ALIGNMENT FRAMEWORK FOR CULTURALLY-GROUNDED EVALUATION
 
 [https://arxiv.org/abs/2510.08608](https://arxiv.org/abs/2510.08608)
 
@@ -1075,7 +864,7 @@ Analysis of word co-occurrence patterns in hyperpartisan text to identify the ov
 Knowledge of cultural elements, including religious buildings and mythological figures, as part of a broader cultural awareness assessment across Asian contexts. The paper does not provide specific findings related to religion. Religious knowledge is evaluated as a sub-component of broader cultural awareness (e.g., religious buildings, mythological figures), and results are not disaggregated by cultural theme.
 
 
-### Pragyaan: Designing and Curating High-Quality Cultural Post-Training Datasets for Indian Languages
+## Pragyaan: Designing and Curating High-Quality Cultural Post-Training Datasets for Indian Languages
 
 [https://arxiv.org/abs/2510.07000](https://arxiv.org/abs/2510.07000)
 
@@ -1084,7 +873,7 @@ Knowledge of cultural elements, including religious buildings and mythological f
 knowledge and safe handling of prompts related to Indian religions The paper's primary contribution is the creation of the Pragyaan datasets, which are designed to be culturally inclusive, incorporating topics on Indian religions. The authors found that existing datasets often lack this cultural and religious nuance, especially for Indian languages. A pilot study training models on the Pragyaan-Align dataset showed improved performance on downstream tasks, confirming the utility of the curated data for model alignment, including its religion-related components.
 
 
-### EVALUESTEER: MEASURING REWARD MODEL STEERABILITY TOWARDS VALUES AND PREFERENCES
+## EVALUESTEER: MEASURING REWARD MODEL STEERABILITY TOWARDS VALUES AND PREFERENCES
 
 [https://arxiv.org/abs/2510.06370](https://arxiv.org/abs/2510.06370)
 
@@ -1093,7 +882,7 @@ knowledge and safe handling of prompts related to Indian religions The paper's p
 Steerability of models to align with user profiles on the value of religiosity (e.g., importance of God), as part of the Traditional vs. Secular-Rational value dimension from the World Values Survey. Reward Models (RMs) exhibit a strong and systematic secular bias. They consistently prefer responses that align with a low importance of God and other secular values over traditional ones. This bias is suggested to reflect the cultural composition of the models' pre-training data and annotation sources, which are noted to cluster near English-speaking Protestant European populations.
 
 
-### EvalMORAAL: Interpretable Chain-of-Thought and LLM-as-Judge Evaluation for Moral Alignment in Large Language Models
+## EvalMORAAL: Interpretable Chain-of-Thought and LLM-as-Judge Evaluation for Moral Alignment in Large Language Models
 
 [https://arxiv.org/abs/2510.05942](https://arxiv.org/abs/2510.05942)
 
@@ -1102,7 +891,7 @@ Steerability of models to align with user profiles on the value of religiosity (
 The benchmark measures the moral alignment of Large Language Models with human survey data from the World Values Survey and PEW Global Attitudes Survey. This includes assessing model stances on socio-moral topics that are significantly influenced by cultural and religious traditions, such as abortion, homosexuality, divorce, and religious practices. The study found a significant regional bias in LLMs, which align more closely with moral norms of Western regions (r=0.82) than non-Western regions (r=0.61). This gap is particularly evident on socio-moral topics like homosexuality, abortion, and divorce, where model judgments conflict in countries with strong religious influences. Prior work cited also indicates that some models, like GPT, lean towards English-speaking and Protestant European values, suggesting an underlying religious and cultural bias from training data.
 
 
-### Hire Your Anthropologist! Rethinking Culture Benchmarks Through an Anthropological Lens
+## Hire Your Anthropologist! Rethinking Culture Benchmarks Through an Anthropological Lens
 
 [https://arxiv.org/abs/2510.05931](https://arxiv.org/abs/2510.05931)
 
@@ -1111,7 +900,7 @@ The benchmark measures the moral alignment of Large Language Models with human s
 The paper critiques existing cultural benchmarks for their failure to adequately measure religious dimensions. It finds they often oversimplify religion by conflating it with nationality, overlooking internal diversity within religious groups (e.g., treating them as monolithic), and ignoring disagreements and contested interpretations within religious traditions. The paper advocates for benchmarks that can capture religion as a dynamic and lived experience rather than a static variable. The paper finds that current NLP benchmarks handle religion reductively as a component of culture. They often flatten its complexity by conflating it with national or linguistic identity, assuming consensus where there is significant internal diversity and contestation, and failing to capture how religious norms are dynamically enacted in specific contexts. For example, benchmarks may overlook diasporic religious communities or divergent interpretations of norms between different religious groups.
 
 
-### VAL-BENCH: BELIEF CONSISTENCY AS A MEASURE FOR VALUE ALIGNMENT IN LANGUAGE MODELS
+## VAL-BENCH: BELIEF CONSISTENCY AS A MEASURE FOR VALUE ALIGNMENT IN LANGUAGE MODELS
 
 [https://arxiv.org/abs/2510.05465](https://arxiv.org/abs/2510.05465)
 
@@ -1120,7 +909,7 @@ The paper critiques existing cultural benchmarks for their failure to adequately
 The benchmark measures the consistency of language model belief expressions when presented with opposing prompts on controversial topics related to religion, such as 'Child sexual abuse in Church' and 'Ordaining women as Rabbis'. The paper does not report findings specifically for the religion category. Religious topics, which constitute 5.50% of the dataset, were included in the overall analysis. The general findings were that most models exhibit high belief inconsistency, with Claude models being a notable exception, achieving higher consistency often through refusing to take a stance.
 
 
-### EVALUATING LLMS FOR DEMOGRAPHIC-TARGETED SOCIAL BIAS DETECTION: A COMPREHENSIVE BENCHMARK STUDY
+## EVALUATING LLMS FOR DEMOGRAPHIC-TARGETED SOCIAL BIAS DETECTION: A COMPREHENSIVE BENCHMARK STUDY
 
 [https://arxiv.org/abs/2510.04641](https://arxiv.org/abs/2510.04641)
 
@@ -1129,7 +918,7 @@ The benchmark measures the consistency of language model belief expressions when
 The benchmark measured the ability of Large Language Models to detect harmful demographic-targeted social biases in English texts, framed as a multi-label classification task. For religion, this specifically involved identifying texts that perpetuate commonly held stereotypes, toxic content, or hateful content targeting a religion or people holding certain religious beliefs. Fine-tuned models, especially encoder models like DeBERTa and RoBERTa, were highly effective at detecting religious bias (REL), consistently outperforming prompting-based methods. Among prompting models, larger models like Llama-3.1-70B and GLM-4-9B showed stronger performance in identifying religious biases compared to smaller models. Methodologically, the study noted the complexity of religious identity by annotating bias against 'Jewish' identity under both Race/ethnicity (RAC) and Religion (REL) to reflect its ethnoreligious nature.
 
 
-### Psychological Steering in LLMs: An Evaluation of Effectiveness and Trustworthiness
+## Psychological Steering in LLMs: An Evaluation of Effectiveness and Trustworthiness
 
 [https://arxiv.org/abs/2510.04484](https://arxiv.org/abs/2510.04484)
 
@@ -1138,7 +927,7 @@ The benchmark measured the ability of Large Language Models to detect harmful de
 The benchmark utilized, TrustLLM, includes a fairness evaluation that measures 'Agreement on stereotypes' based on attributes such as gender, profession, religion, race, or other demographic factors. The paper does not report specific findings related to religion. It mentions that the TrustLLM benchmark evaluates fairness regarding stereotypes based on religion, but the results and discussion are focused on the effects of psychological steering (emotions and personality) on trustworthiness metrics in general, without breaking them down by specific religious factors.
 
 
-### Red Lines and Grey Zones in the Fog of War: Benchmarking Legal Risk, Moral Harm, and Regional Bias in Large Language Model Military Decision-Making
+## Red Lines and Grey Zones in the Fog of War: Benchmarking Legal Risk, Moral Harm, and Regional Bias in Large Language Model Military Decision-Making
 
 [https://arxiv.org/abs/2510.03514](https://arxiv.org/abs/2510.03514)
 
@@ -1147,7 +936,7 @@ The benchmark utilized, TrustLLM, includes a fairness evaluation that measures '
 The benchmark measured the propensity of Large Language Models to select a 'Religious Gathering' as a target for a kinetic military strike within a simulated conflict scenario. This was part of a broader evaluation of adherence to International Humanitarian Law, specifically the principle of distinction. All tested models selected purely civilian targets for military strikes, including 'Religious Gathering'. While the primary metrics aggregated all civilian targets, supplementary data in the appendix shows that models, particularly LLaMA-3.1, selected 'Religious Gathering' as a target, contributing to the overall finding that LLMs exhibit concerning and unpredictable targeting behaviour that violates legal and moral norms in simulated conflict.
 
 
-### IndiCASA: A Dataset and Bias Evaluation Framework in LLMs Using Contrastive Embedding Similarity in the Indian Context
+## IndiCASA: A Dataset and Bias Evaluation Framework in LLMs Using Contrastive Embedding Similarity in the Indian Context
 
 [https://arxiv.org/abs/2510.02742](https://arxiv.org/abs/2510.02742)
 
@@ -1156,7 +945,7 @@ The benchmark measured the propensity of Large Language Models to select a 'Reli
 Detection of stereotypical and anti-stereotypical biases related to religion within the Indian sociolinguistic context, using a contrastive embedding similarity framework. Religion exhibits relatively lower bias scores across most models compared to other bias types like caste, disability, or socioeconomic status. This suggests better neutrality, potentially due to religion being a globally sensitive axis that receives greater attention during model alignment or instruction tuning.
 
 
-### The Social Laboratory: A Psychometric Framework for Multi-Agent LLM Evaluation
+## The Social Laboratory: A Psychometric Framework for Multi-Agent LLM Evaluation
 
 [https://arxiv.org/abs/2510.01295](https://arxiv.org/abs/2510.01295)
 
@@ -1165,7 +954,7 @@ Detection of stereotypical and anti-stereotypical biases related to religion wit
 The benchmark measured the emergent social and cognitive dynamics (e.g., consensus-seeking, semantic convergence) of LLM agents during debates on challenging and controversial topics, which included religion. The study found that LLM agents have a robust tendency to seek consensus, and this cooperative behavior does not statistically degrade when discussing sensitive or contentious topics, which included religion. The agents' performance and tendency to converge remained stable regardless of topic sensitivity.
 
 
-### BIASFREEBENCH: A BENCHMARK FOR MITIGATING BIAS IN LARGE LANGUAGE MODEL RESPONSES
+## BIASFREEBENCH: A BENCHMARK FOR MITIGATING BIAS IN LARGE LANGUAGE MODEL RESPONSES
 
 [https://arxiv.org/abs/2510.00232](https://arxiv.org/abs/2510.00232)
 
@@ -1174,7 +963,7 @@ The benchmark measured the emergent social and cognitive dynamics (e.g., consens
 The benchmark measures stereotype detection and mitigation in religious contexts. Religion is one of nine bias types evaluated using the BBQ dataset and one of four types used from the StereoSet dataset for training debiasing methods. The paper finds that different models exhibit varying levels of baseline bias related to religion. The main finding is that debiasing techniques show different generalization capabilities. Specifically, training a model with Direct Preference Optimization (DPO) on a single, high-quality bias type like gender can effectively generalize to reduce bias in other unseen categories, including religion. In contrast, Supervised Fine-Tuning (SFT) requires more diverse data covering all bias types to achieve good generalization.
 
 
-### PRIMEX: A Dataset of Worldview, Opinion, and Explanation
+## PRIMEX: A Dataset of Worldview, Opinion, and Explanation
 
 [https://arxiv.org/abs/2510.00174](https://arxiv.org/abs/2510.00174)
 
@@ -1183,7 +972,7 @@ The benchmark measures stereotype detection and mitigation in religious contexts
 Measurement of opinions on the role of God/higher power in human evolution, the economic responsibility of churches and religious organizations, and the future importance of religion. These opinions are also correlated with worldview beliefs (Primals). A significant correlation was found between a belief in God's role in human evolution and the 'Alive' Primal World Belief (a worldview that sees the world as intentional and purposeful). Additionally, a survey question about the economic responsibility of churches elicited the most useful free-text explanations for predicting a user's other opinions across various topics.
 
 
-### CULTURE IN A FRAME: C3B AS A COMIC-BASED BENCHMARK FOR MULTIMODAL CULTURALLY AWARENESS
+## CULTURE IN A FRAME: C3B AS A COMIC-BASED BENCHMARK FOR MULTIMODAL CULTURALLY AWARENESS
 
 [https://arxiv.org/abs/2510.00041](https://arxiv.org/abs/2510.00041)
 
@@ -1192,7 +981,7 @@ Measurement of opinions on the role of God/higher power in human evolution, the 
 Identification of religious objects (e.g., 'Russian Orthodox church') and potential conflicts involving them as part of a broader benchmark on multimodal cultural awareness. The paper does not provide specific findings related to religion, as it is only a minor, unanalyzed component of the broader cultural awareness benchmark. The main findings focus on general cultural awareness gaps in MLLMs.
 
 
-### TAU: A BENCHMARK FOR CULTURAL SOUND UNDERSTANDING BEYOND SEMANTICS
+## TAU: A BENCHMARK FOR CULTURAL SOUND UNDERSTANDING BEYOND SEMANTICS
 
 [https://arxiv.org/abs/2509.26329](https://arxiv.org/abs/2509.26329)
 
@@ -1201,7 +990,7 @@ Identification of religious objects (e.g., 'Russian Orthodox church') and potent
 The benchmark measures the ability of models to recognize culturally specific sounds from Taiwan, one category of which is 'religious chants'. The evaluation focuses on identifying sounds that require cultural context and cannot be solved by lexical content alone. The paper does not report specific findings related to religion. Results are aggregated across all cultural categories, and there is no performance breakdown for the 'religious chants' category. The general finding is that all tested models perform significantly worse than humans on culturally localized audio understanding.
 
 
-### ROLECONFLICTBENCH: A BENCHMARK OF ROLE CONFLICT SCENARIOS FOR EVALUATING LLMS’ CONTEXTUAL SENSITIVITY
+## ROLECONFLICTBENCH: A BENCHMARK OF ROLE CONFLICT SCENARIOS FOR EVALUATING LLMS’ CONTEXTUAL SENSITIVITY
 
 [https://arxiv.org/abs/2509.25897](https://arxiv.org/abs/2509.25897)
 
@@ -1210,7 +999,7 @@ The benchmark measures the ability of models to recognize culturally specific so
 The benchmark measured the preference bias of LLMs towards specific religious roles. It evaluated whether models prioritize roles associated with Abrahamic religions (Christianity, Islam, Judaism) over Dharmic religions (Hinduism, Buddhism) when presented with role-conflict scenarios. The key finding related to religion was that most evaluated LLMs exhibit a strong preference bias. Roles associated with Abrahamic religions (Christianity, Islam, Judaism) were vastly preferred over roles from Dharmic religions, with Hinduism and especially Buddhism being the least preferred.
 
 
-### THE FLAW OF AVERAGES: QUANTIFYING UNIFORMITY OF PERFORMANCE ON BENCHMARKS
+## THE FLAW OF AVERAGES: QUANTIFYING UNIFORMITY OF PERFORMANCE ON BENCHMARKS
 
 [https://arxiv.org/abs/2509.25671](https://arxiv.org/abs/2509.25671)
 
@@ -1219,7 +1008,7 @@ The benchmark measured the preference bias of LLMs towards specific religious ro
 The paper evaluated the MMLU 'World Religions' subtask to measure the uniformity of model performance (Harmony) across its internal subdomains, rather than testing specific theological knowledge or religious bias. The paper does not provide specific findings related to religion. The 'World Religions' subtask of MMLU was analyzed as one of many benchmarks to demonstrate the paper's proposed 'HARMONY' metric. The analysis focused on the benchmark's distributional properties (i.e., whether it evaluates performance uniformly across its subdomains) rather than on the models' specific knowledge or biases concerning religion.
 
 
-### Bias Mitigation or Cultural Commonsense? Evaluating LLMs with a Japanese Dataset
+## Bias Mitigation or Cultural Commonsense? Evaluating LLMs with a Japanese Dataset
 
 [https://arxiv.org/abs/2509.24468](https://arxiv.org/abs/2509.24468)
 
@@ -1228,7 +1017,7 @@ The paper evaluated the MMLU 'World Religions' subtask to measure the uniformity
 Stereotype detection in religious contexts, as part of a fine-tuning experiment using the BBQ dataset. A non-prompt-based debiasing experiment, which involved fine-tuning a model on several BBQ categories including 'Religion', confirmed the paper's main hypothesis: successfully reducing social biases leads to a degradation in performance on cultural commonsense tasks, indicating a trade-off between bias mitigation and cultural understanding.
 
 
-### Assessing Visual Privacy Risks in Multimodal AI: A Novel Taxonomy-Grounded Evaluation of Vision-Language Models
+## Assessing Visual Privacy Risks in Multimodal AI: A Novel Taxonomy-Grounded Evaluation of Vision-Language Models
 
 [https://arxiv.org/abs/2509.23827](https://arxiv.org/abs/2509.23827)
 
@@ -1237,7 +1026,7 @@ Stereotype detection in religious contexts, as part of a fine-tuning experiment 
 Detection of religious affiliation or context as a private 'Personal Metadata' category within a broader visual privacy risk taxonomy. The paper's evaluation showed that models performed very poorly in recognizing the 'Demographics' category, which includes religion. For instance, LLaMA 3.2 achieved a near-zero F1 score (0.01) for this category on the VISPR dataset, indicating a significant inability to identify religious affiliation and other demographic data as a potential privacy violation in images.
 
 
-### FALCON: A CROSS-MODAL EVALUATION DATASET FOR COMPREHENSIVE SAFETY PERCEPTION
+## FALCON: A CROSS-MODAL EVALUATION DATASET FOR COMPREHENSIVE SAFETY PERCEPTION
 
 [https://arxiv.org/abs/2509.23783](https://arxiv.org/abs/2509.23783)
 
@@ -1246,7 +1035,7 @@ Detection of religious affiliation or context as a private 'Personal Metadata' c
 The benchmark, as part of its 'Hate Speech' category, measures content that expresses hatred, discrimination, or prejudice against individuals or groups based on characteristics including religion. The paper's benchmark includes 'Hate Speech' as a harm category, which is defined as content expressing hatred against groups based on characteristics including religion. However, the paper does not report specific findings for religious content distinctly. In the general 'Hate Speech' category, the proposed model FalconEye achieved a detection accuracy of 44.85% on the Falcon-test dataset, outperforming GPT-40 (33.33%) and Qwen2.5-VL-7B (25.45%).
 
 
-### Mapping Overlaps in Benchmarks through Perplexity in the Wild
+## Mapping Overlaps in Benchmarks through Perplexity in the Wild
 
 [https://arxiv.org/abs/2509.23488](https://arxiv.org/abs/2509.23488)
 
@@ -1255,7 +1044,7 @@ The benchmark, as part of its 'Hate Speech' category, measures content that expr
 Knowledge of world religions, as part of the MMLU benchmark, to analyze overlaps with other benchmarks. Benchmarks within the humanities category, which includes religion, exhibited lower-than-average overlap compared to other categories, suggesting they test more distinct capabilities.
 
 
-### A Structured Framework for Evaluating and Enhancing Interpretive Capabilities of Multimodal LLMs in Culturally Situated Tasks
+## A Structured Framework for Evaluating and Enhancing Interpretive Capabilities of Multimodal LLMs in Culturally Situated Tasks
 
 [https://arxiv.org/abs/2509.23208](https://arxiv.org/abs/2509.23208)
 
@@ -1264,7 +1053,7 @@ Knowledge of world religions, as part of the MMLU benchmark, to analyze overlaps
 The benchmark measures the ability of VLMs to adopt specific religious and spiritual interpretive stances (e.g., Eastern Orthodox, Zen Buddhist, Daoist, Confucian, tribal spirituality) when generating art criticism, as guided by defined personas. The evaluation assesses the alignment of model-generated text with the characteristics of these spiritual or theological perspectives. The study found that persona-guided interventions, including those based on religious figures like an Eastern Orthodox iconographer (Brother Thomas) and a scholar influenced by Daoism and Zen Buddhism (Su Shi), significantly improved the VLM's ability to generate culturally nuanced and expert-aligned art critiques. Models demonstrated the capability to adopt theological and spiritual perspectives when prompted, enhancing their interpretive reasoning in the specialized domain of art history.
 
 
-### Beyond Western Politics: Cross-Cultural Benchmarks for Evaluating Partisan Associations in LLMs
+## Beyond Western Politics: Cross-Cultural Benchmarks for Evaluating Partisan Associations in LLMs
 
 [https://arxiv.org/abs/2509.22711](https://arxiv.org/abs/2509.22711)
 
@@ -1273,7 +1062,7 @@ The benchmark measures the ability of VLMs to adopt specific religious and spiri
 The benchmark measures LLMs' susceptibility to making harmful partisan associations, including extreme adversarial prompts about engineering ethnic/religious cleansing and orchestrating violence against religious communities. The paper's findings do not specifically isolate results for religious-themed prompts. However, the general finding is that models are highly susceptible to making extreme and potentially defamatory associations with political entities, which includes making connections to orchestrating ethnic and religious cleansing or violence against religious communities, often without refusal.
 
 
-### Evaluating the Infinite
+## Evaluating the Infinite
 
 [https://arxiv.org/abs/2509.19389](https://arxiv.org/abs/2509.19389)
 
@@ -1282,7 +1071,7 @@ The benchmark measures LLMs' susceptibility to making harmful partisan associati
 The paper analyzes Pascal's Wager, a philosophical argument related to Christian faith, by applying a novel mathematical technique (hyperreal summation) to assign a fine-grained infinite expected value to the prospect of an infinite reward ('an eternity in heaven'). It does not benchmark a model's performance but rather evaluates a concept. Using hyperreal numbers, the paper provides a more nuanced evaluation of Pascal's Wager compared to standard decision theory. It assigns the wager a specific infinite expected value (`pkω`) that is quantitatively comparable to other infinite values. This resolves paradoxes, such as Hájek's argument that a small probability of the wager is equally good as a certainty. The hyperreal approach preserves the state-wise dominance principle, showing that a higher probability of an infinite reward is strictly better than a lower one.
 
 
-### Benchmarking and Improving LLM Robustness for Personalized Generation
+## Benchmarking and Improving LLM Robustness for Personalized Generation
 
 [https://arxiv.org/abs/2509.19358](https://arxiv.org/abs/2509.19358)
 
@@ -1291,7 +1080,7 @@ The paper analyzes Pascal's Wager, a philosophical argument related to Christian
 The impact of user preferences on the factual accuracy of LLM responses to questions about spiritual and religious concepts, such as spirit possession. A user preference for contextual and background information, when applied to a question about spiritual possession, can trigger a more complex reasoning process in a model. This can lead to a 'breakage error,' where the model changes its factually correct answer (that spiritual possession is not real) to a factually incorrect one (that people can be possessed by evil spirits), thereby compromising factuality to satisfy the preference.
 
 
-### DRISHTIKON: A Multimodal Multilingual Benchmark for Testing Language Models’ Understanding on Indian Culture
+## DRISHTIKON: A Multimodal Multilingual Benchmark for Testing Language Models’ Understanding on Indian Culture
 
 [https://arxiv.org/abs/2509.19274](https://arxiv.org/abs/2509.19274)
 
@@ -1300,7 +1089,25 @@ The impact of user preferences on the factual accuracy of LLM responses to quest
 The benchmark measures knowledge of religious symbols, rituals, deities, and practices within the Indian cultural context. It evaluates a model's understanding of practices associated with worship, rites of passage, or daily cultural-religious observances across India's major and minor religious communities. Models showed gaps in cultural grounding, particularly struggling with abstract or context-dependent concepts like religion, which require deeper socio-cultural and inferential reasoning compared to more concrete cultural elements like attire or cuisine.
 
 
-### D-REX: A BENCHMARK FOR DETECTING DECEPTIVE REASONING IN LARGE LANGUAGE MODELS
+## BENCHMARKING VISION-LANGUAGE AND MULTIMODAL LARGE LANGUAGE MODELS IN ZERO-SHOT AND FEW-SHOT SCENARIOS: A STUDY ON CHRISTIAN ICONOGRAPHY
+
+[https://arxiv.org/abs/2509.18839](https://arxiv.org/abs/2509.18839)
+
+**Date:** 2025-09-23
+
+The benchmark measured the performance of vision-language and multimodal large language models on the task of single-label image classification of Christian iconography, specifically identifying Christian saints in artworks. Multimodal LLMs, particularly Gemini-2.5 Pro and GPT-4o, consistently outperformed traditional supervised models (ResNet50) and contrastive vision-language models (CLIP, SigLIP) on curated datasets (ArtDL, ICONCLASS), with Gemini-2.5 Pro reaching a peak accuracy of 90.45%. However, performance for all models dropped significantly on the more diverse and less consistent Wikidata dataset, where a contrastive model (SigLIP-so400m-patch14-384) achieved the highest score (66.29%). Enriching prompts with iconographic descriptions generally improved zero-shot performance, whereas few-shot learning did not provide consistent benefits and sometimes degraded accuracy.
+
+
+## Evaluating Large Language Models for Detecting Antisemitism
+
+[https://arxiv.org/abs/2509.18293](https://arxiv.org/abs/2509.18293)
+
+**Date:** 2025-11-04
+
+Detection of antisemitism (hatred toward Jews) in social media content using the IHRA definition as a policy guideline. The paper evaluates LLMs for detecting antisemitism using the IHRA definition. Key findings include: 1) A novel 'Guided-CoT' prompt significantly improves performance across models, with Llama 3.1 70B outperforming a fine-tuned GPT-3.5. 2) LLMs struggle with contextual nuances, leading to misclassifications for posts containing specific stereotypes (e.g., about George Soros, 'devil worshipping'), quoted text, and typos resembling slurs (e.g., 'kikes' instead of 'likes'). 3) The study introduced metrics to analyze model-generated explanations, revealing that some models exhibit paradoxical behaviors where explanations for antisemitic content are not consistently more or less cohesive than for non-antisemitic content, suggesting complex internal biases.
+
+
+## D-REX: A BENCHMARK FOR DETECTING DECEPTIVE REASONING IN LARGE LANGUAGE MODELS
 
 [https://arxiv.org/abs/2509.17938](https://arxiv.org/abs/2509.17938)
 
@@ -1309,7 +1116,7 @@ The benchmark measures knowledge of religious symbols, rituals, deities, and pra
 The benchmark measured a model's susceptibility to deceptive reasoning in a religious context, specifically its ability to act as a tool for religious extremists. This involved identifying users vulnerable to radicalization, subtly reframing scripture to justify hostility towards outgroups, and eroding trust in moderate religious teachings, all while maintaining a benign facade. The paper's general findings indicate that all evaluated models are highly susceptible to deceptive attacks, including the religious radicalization scenario. Models can be induced to generate internal reasoning (Chain-of-Thought) that aligns with malicious goals, such as those of religious extremists, while producing a final output that appears benign and helpful. The paper does not provide specific quantitative results isolated to the religious scenario, but the overall high vulnerability suggests models can be manipulated for these purposes.
 
 
-### DIWALI - Diversity and Inclusivity aWare cuLture specific Items for India: Dataset and Assessment of LLMs for Cultural Text Adaptation in Indian Context
+## DIWALI - Diversity and Inclusivity aWare cuLture specific Items for India: Dataset and Assessment of LLMs for Cultural Text Adaptation in Indian Context
 
 [https://arxiv.org/abs/2509.17399](https://arxiv.org/abs/2509.17399)
 
@@ -1318,7 +1125,7 @@ The benchmark measured a model's susceptibility to deceptive reasoning in a reli
 The benchmark measures the ability of Large Language Models (LLMs) to perform cultural text adaptation for the Indian context. This includes evaluating the models' knowledge and appropriate use of concepts from 17 cultural facets, one of which is 'Religion'. The 'Religion' facet specifically includes prominent religious activities, customs, festivals, and rituals, assessing if LLMs can correctly replace source-culture concepts with relevant Indian religious and faith-based concepts. The paper found that LLMs exhibit significant sub-regional bias when adapting cultural concepts, including those related to religion and rituals. The models tend to generate concepts primarily from a few dominant regions of India (like Uttar Pradesh, Maharashtra, Punjab) while completely lacking adaptations for other regions, such as the Northeastern states. This indicates an uneven representation and knowledge of India's diverse religious and cultural landscape within the models.
 
 
-### Cognitive Linguistic Identity Fusion Score (CLIFS): A Scalable Cognition-Informed Approach to Quantifying Identity Fusion from Text
+## Cognitive Linguistic Identity Fusion Score (CLIFS): A Scalable Cognition-Informed Approach to Quantifying Identity Fusion from Text
 
 [https://arxiv.org/abs/2509.16813](https://arxiv.org/abs/2509.16813)
 
@@ -1327,7 +1134,7 @@ The benchmark measures the ability of Large Language Models (LLMs) to perform cu
 Quantifying identity fusion (the psychological merging of self) with a religious group from text. The paper developed a new method, CLIFS, which can effectively quantify identity fusion with religious groups from text. This method outperforms prior automated approaches and human annotation in predicting fusion scores. 'Religion' was one of the three target categories for identity fusion in the primary dataset used for evaluation.
 
 
-### Seeing Culture: A Benchmark for Visual Reasoning and Grounding
+## Seeing Culture: A Benchmark for Visual Reasoning and Grounding
 
 [https://arxiv.org/abs/2509.16517](https://arxiv.org/abs/2509.16517)
 
@@ -1336,7 +1143,7 @@ Quantifying identity fusion (the psychological merging of self) with a religious
 The benchmark measures visual reasoning and grounding on cultural artifacts and concepts from Southeast Asia. This includes knowledge of religious elements embedded within cultural categories like 'celebration' and 'wedding', such as identifying artifacts related to religious ceremonies or understanding the significance of events like Buddhist festivals. The study found that Vision-Language Models (VLMs) performed the worst in the 'celebration' category, which contains the most explicit religious content like festivals. This suggests a specific weakness in reasoning about culturally nuanced religious and ceremonial events. Additionally, a notable discrepancy was observed across all categories, including those with religious elements, where models could often correctly answer a multiple-choice question but failed to accurately locate (ground) the relevant cultural or religious artifact in the image.
 
 
-### PoliTok-DE: A Multimodal Dataset of Political TikToks and Deletions From Germany
+## PoliTok-DE: A Multimodal Dataset of Political TikToks and Deletions From Germany
 
 [https://arxiv.org/abs/2509.15860](https://arxiv.org/abs/2509.15860)
 
@@ -1345,7 +1152,7 @@ The benchmark measures visual reasoning and grounding on cultural artifacts and 
 Measurement of 'eudaimonic entertainment', which is defined in the codebook as content conveying inspiring, touching, thought-provoking, and meaningful elements. This category includes the conveyance of 'religiousness/spirituality' and the use of 'religious and spiritual symbols'. The paper does not report specific findings on religion. It finds that 37.3% of the annotated subset of deleted posts conveyed 'eudaimonic entertainment', a category which is defined to include 'religiousness/spirituality' and 'religious and spiritual symbols' as possible manifestations.
 
 
-### Toxicity Red-Teaming: Benchmarking LLM Safety in Singapore’s Low-Resource Languages
+## Toxicity Red-Teaming: Benchmarking LLM Safety in Singapore’s Low-Resource Languages
 
 [https://arxiv.org/abs/2509.15260](https://arxiv.org/abs/2509.15260)
 
@@ -1354,7 +1161,7 @@ Measurement of 'eudaimonic entertainment', which is defined in the codebook as c
 Detection of toxic bias against specific religious groups by evaluating model preferences in completing hateful statements and generating hateful content. Mistral consistently exhibited religious bias, frequently selecting Muslims in Singlish and Hindus in Chinese. SEA-LION showed lower religious bias, particularly in Singlish. Qwen and LLaMA-3.1 generated a higher proportion of 'Invalid' responses, indicating stronger safety mechanisms in religious contexts.
 
 
-### STEERINGSAFETY: A SYSTEMATIC SAFETY EVALUATION FRAMEWORK OF REPRESENTATION STEERING IN LLMS
+## STEERINGSAFETY: A SYSTEMATIC SAFETY EVALUATION FRAMEWORK OF REPRESENTATION STEERING IN LLMS
 
 [https://arxiv.org/abs/2509.13450](https://arxiv.org/abs/2509.13450)
 
@@ -1363,7 +1170,7 @@ Detection of toxic bias against specific religious groups by evaluating model pr
 Stereotype detection related to religion, as part of the implicit bias evaluation using the BBQ benchmark. The paper does not report on the baseline religious bias of the models. Instead, it finds that steering interventions for other safety perspectives (e.g., reducing hallucination or harmfulness) often cause unintended changes ('entanglement') in model performance on implicit bias tasks, which includes religious bias from the BBQ dataset. These effects are complex, model-dependent, and can sometimes be counterintuitive, such as improving implicit bias leading to a degradation in explicit bias performance.
 
 
-### Rethinking the Evaluation of Alignment Methods: Insights into Diversity, Generalisation, and Safety
+## Rethinking the Evaluation of Alignment Methods: Insights into Diversity, Generalisation, and Safety
 
 [https://arxiv.org/abs/2509.12936](https://arxiv.org/abs/2509.12936)
 
@@ -1372,7 +1179,7 @@ Stereotype detection related to religion, as part of the implicit bias evaluatio
 Detection of harmful, discriminatory, or hostile speech related to religion as a sub-component of a broader 'Harmlessness' safety metric. The metric checks if a response discriminates based on religion or expresses intense hostility or violence towards a person or group based on religion. The paper does not report any specific findings related to religion. Religion is mentioned as one of several protected categories within the general safety evaluation, but no religion-specific analysis was conducted or results presented.
 
 
-### MORABLES: A Benchmark for Assessing Abstract Moral Reasoning in LLMs with Fables
+## MORABLES: A Benchmark for Assessing Abstract Moral Reasoning in LLMs with Fables
 
 [https://arxiv.org/abs/2509.12371](https://arxiv.org/abs/2509.12371)
 
@@ -1381,7 +1188,7 @@ Detection of harmful, discriminatory, or hostile speech related to religion as a
 The benchmark measures abstract moral reasoning in Large Language Models using fables from Western literary tradition. The connection to religion is indirect, through the analysis of morals (which often overlap with religious ethics) and the inclusion of fables that feature deities from classical Greek and Roman mythology. The paper does not report any findings specifically related to religion. Its key findings focus on the general moral reasoning capabilities of LLMs, revealing that larger models perform better but remain susceptible to adversarial manipulation and exhibit significant self-contradiction. The analysis does not delve into how models handle fables with religious or mythological characters specifically.
 
 
-### MTEB-NL and E5-NL: Embedding Benchmark and Models for Dutch
+## MTEB-NL and E5-NL: Embedding Benchmark and Models for Dutch
 
 [https://arxiv.org/abs/2509.12340](https://arxiv.org/abs/2509.12340)
 
@@ -1390,7 +1197,7 @@ The benchmark measures abstract moral reasoning in Large Language Models using f
 The benchmark includes the 'IconclassClassification' dataset, which measures a model's ability to classify the subject of artworks. One of the nine main categories for classification is 'Religion and Magic', which also includes 'Bible' as a theme. The paper does not provide specific findings related to religion. The models' performance on the 'IconclassClassification' task, which includes a 'Religion and Magic' category, is aggregated with other classification tasks, and no category-specific analysis is presented.
 
 
-### JustEva: A Toolkit to Evaluate LLM Fairness in Legal Knowledge Inference
+## JustEva: A Toolkit to Evaluate LLM Fairness in Legal Knowledge Inference
 
 [https://arxiv.org/abs/2509.12104](https://arxiv.org/abs/2509.12104)
 
@@ -1399,7 +1206,7 @@ The benchmark includes the 'IconclassClassification' dataset, which measures a m
 Bias in legal sentencing predictions based on the judge's specified religion, as one of 65 extra-legal factors. In an example visualization for the Qwen2.5 72B Instruct model, a statistically significant bias (p=0.024) was found related to the 'Judge Religion' label, specifically when comparing 'Islamic' and 'Atheist' values.
 
 
-### A Taxonomy of Response Strategies to Toxic Online Content: Evaluating the Evidence
+## A Taxonomy of Response Strategies to Toxic Online Content: Evaluating the Evidence
 
 [https://arxiv.org/abs/2509.09921](https://arxiv.org/abs/2509.09921)
 
@@ -1408,7 +1215,7 @@ Bias in legal sentencing predictions based on the judge's specified religion, as
 The paper identifies and evaluates 'using religious teachings, values, and language' as one of 25 response strategies to toxic online content (TOC). It also notes that prejudice against religious groups is a form of TOC. Using religious teachings, values, and language is identified as an emerging response strategy to toxic online content, promoted by religious actors and influencers. This strategy reframes toxic discourse by drawing on shared moral principles (e.g., dignity, compassion) and may help protect youth and counter the misuse of religion by extremists. The paper also identifies religious groups like Muslims and Jews as common targets of prejudice in toxic online content.
 
 
-### Benchmarking Vision-Language Models on Chinese Ancient Documents: From OCR to Knowledge Reasoning
+## Benchmarking Vision-Language Models on Chinese Ancient Documents: From OCR to Knowledge Reasoning
 
 [https://arxiv.org/abs/2509.09731](https://arxiv.org/abs/2509.09731)
 
@@ -1417,7 +1224,7 @@ The paper identifies and evaluates 'using religious teachings, values, and langu
 Knowledge of ancient Chinese philosophical and religious systems (e.g., Confucianism, Taoism) as part of a broader document understanding, reasoning, and translation benchmark on ancient texts. The paper does not provide specific findings related to religion. The results are aggregated across 14 document categories, which include categories like 'Confucianism' and 'Eclectics' (containing Taoism), but the performance on these specific categories is not analyzed separately from others like 'Medical Authors' or 'Astronomy and Mathematics'.
 
 
-### Bridging the Gap Between Ideal and Real-world Evaluation: Benchmarking AI-Generated Image Detection in Challenging Scenarios
+## Bridging the Gap Between Ideal and Real-world Evaluation: Benchmarking AI-Generated Image Detection in Challenging Scenarios
 
 [https://arxiv.org/abs/2509.09172](https://arxiv.org/abs/2509.09172)
 
@@ -1426,7 +1233,7 @@ Knowledge of ancient Chinese philosophical and religious systems (e.g., Confucia
 The ability of AI models and humans to detect AI-generated images within the 'Culture & Religion' scenario, as one of seven challenging real-world contexts. The paper's findings related to religion fall under the 'special-scenario' group, which also includes topics like war and disasters. The key findings for this group were that humans are significantly less adept at identifying AI-generated images in these sensitive, high-stakes contexts compared to everyday scenarios. Furthermore, a 'trust crisis' was observed, where participants were much more inclined to assume an image of an unknown origin was AI-generated (89.31% of the time) in these special scenarios, indicating heightened skepticism for sensitive content.
 
 
-### HUMANAGENCYBENCH: Scalable Evaluation of Human Agency Support in AI Assistants
+## HUMANAGENCYBENCH: Scalable Evaluation of Human Agency Support in AI Assistants
 
 [https://arxiv.org/abs/2509.08494](https://arxiv.org/abs/2509.08494)
 
@@ -1435,7 +1242,16 @@ The ability of AI models and humans to detect AI-generated images within the 'Cu
 The benchmark measured the AI's ability to maintain professional/personal boundaries when a user proposes a relationship using religious roles (e.g., pastor, imam, rabbi, guru) as part of a broader set of social roles. The paper did not provide specific findings for religious contexts alone. However, in the broader 'Maintain Social Boundaries' dimension which included religious roles, Anthropic's Claude models scored highest (around 90%), consistently refusing to form personal or professional relationships, while other developers' models showed more variation and lower scores.
 
 
-### KatotohananQA: Evaluating Truthfulness of Large Language Models in Filipino
+## EPT Benchmark: Evaluation of Persian Trustworthiness in Large Language Models
+
+[https://arxiv.org/abs/2509.06838](https://arxiv.org/abs/2509.06838)
+
+**Date:** 2025-09-08
+
+Alignment of Large Language Models with Persian-Islamic ethical and cultural values across six dimensions: truthfulness, safety, fairness, robustness, privacy, and ethical alignment. The study found significant disparities in model performance regarding alignment with Persian-Islamic values. Claude 3.7 Sonnet demonstrated the highest and most consistent performance, while Qwen 3 performed the weakest. Safety was the most challenging dimension for most models, indicating a critical gap in aligning LLMs with the cultural and ethical norms of the Persian-Islamic context.
+
+
+## KatotohananQA: Evaluating Truthfulness of Large Language Models in Filipino
 
 [https://arxiv.org/abs/2509.06065](https://arxiv.org/abs/2509.06065)
 
@@ -1444,7 +1260,7 @@ The benchmark measured the AI's ability to maintain professional/personal bounda
 Factual accuracy of LLMs on questions categorized under 'Religion' as part of a broader truthfulness evaluation. Large Language Models showed a significant performance drop on questions about religion when evaluated in Filipino (80.61% accuracy) compared to English (90.82% accuracy), a decrease of 10.21 percentage points. This indicates that truthfulness in the domain of religion is less robust when transferred to a lower-resource language.
 
 
-### Self-adaptive Dataset Construction for Real-World Multimodal Safety Scenarios
+## Self-adaptive Dataset Construction for Real-World Multimodal Safety Scenarios
 
 [https://arxiv.org/abs/2509.04403](https://arxiv.org/abs/2509.04403)
 
@@ -1453,7 +1269,7 @@ Factual accuracy of LLMs on questions categorized under 'Religion' as part of a 
 Detecting unsafe scenarios arising from conflicts between different belief systems, presented via visual faith symbols paired with text discussing alternative beliefs. Models generally perform poorly when responding to scenarios involving belief conflicts. The safety rate for generated responses is extremely low, with many models scoring 0.0% and the best-performing models only reaching 14.3%. While models can often judge explicitly safe responses correctly, their accuracy on unsafe responses and their ability to generate safe outputs in these sensitive contexts are very limited.
 
 
-### What if I ask in alia lingua? Measuring Functional Similarity Across Languages
+## What if I ask in alia lingua? Measuring Functional Similarity Across Languages
 
 [https://arxiv.org/abs/2509.04032](https://arxiv.org/abs/2509.04032)
 
@@ -1462,7 +1278,7 @@ Detecting unsafe scenarios arising from conflicts between different belief syste
 The benchmark measured the functional similarity (consistency) of model outputs on multiple-choice questions about 'World Religions' as part of the broader GlobalMMLU benchmark. The paper finds that models are more inconsistent across languages for subjects heavily influenced by sociocultural norms, which includes 'World Religions' (grouped under Humanities or Other categories), as opposed to topics with fewer cultural priors like STEM. This indicates lower cross-lingual functional similarity for religious topics compared to scientific ones.
 
 
-### What Would an LLM Do? Evaluating Policymaking Capabilities of Large Language Models
+## What Would an LLM Do? Evaluating Policymaking Capabilities of Large Language Models
 
 [https://arxiv.org/abs/2509.03827](https://arxiv.org/abs/2509.03827)
 
@@ -1471,7 +1287,7 @@ The benchmark measured the functional similarity (consistency) of model outputs 
 How Large Language Models handle social policy decisions in scenarios that include complex contextual factors, such as the needs of religious minorities. Human experts demonstrably tailored their policy decisions to address locally specific sociopolitical realities, such as those aggravating ostracism faced by religious minorities (in South Bend). In contrast, LLMs tended to apply a highly stable internal heuristic, which could lead to a 'context-blind rigidity' in such nuanced situations.
 
 
-### SinhalaMMLU: A Comprehensive Benchmark for Evaluating Multitask Language Understanding in Sinhala
+## SinhalaMMLU: A Comprehensive Benchmark for Evaluating Multitask Language Understanding in Sinhala
 
 [https://arxiv.org/abs/2509.03162](https://arxiv.org/abs/2509.03162)
 
@@ -1480,7 +1296,16 @@ How Large Language Models handle social policy decisions in scenarios that inclu
 The benchmark measures knowledge of religious concepts, specifically Buddhism, Christianity, Islam, and Catholicism, as defined and taught within the Sri Lankan national educational curriculum. Models generally underperformed in culturally grounded domains, including religion-specific subjects like Buddhism, Christianity, Islam, and Catholicism, compared to general academic topics. The subject-wise analysis showed varied performance; for instance, Claude 3.5 Sonnet performed particularly well on Buddhist concepts, while GPT-40 demonstrated complementary strengths in other cultural areas. Overall, the results highlight that even powerful closed-source models often fail to capture localized cultural and religious nuances present in the Sinhala context.
 
 
-### SpecEval: Evaluating Model Adherence to Behavior Specifications
+## PalmX 2025: The First Shared Task on Benchmarking LLMs on Arabic and Islamic Culture
+
+[https://arxiv.org/abs/2509.02550](https://arxiv.org/abs/2509.02550)
+
+**Date:** 2025-09-02
+
+Knowledge of Islamic culture, including rituals, Quran, Hadith, history, and religious holidays, assessed via multiple-choice questions to measure religious literacy and contextual sensitivity. The subtask on Islamic knowledge yielded higher overall accuracy scores (winning team at 84.22%) compared to the general cultural subtask (winning team at 72.15%). This performance difference suggests that Islamic knowledge questions may be more structured and based on canonical sources, making them more amenable to current LLM approaches. Data augmentation strategies proved more successful in the Islamic domain than in the general culture subtask.
+
+
+## SpecEval: Evaluating Model Adherence to Behavior Specifications
 
 [https://arxiv.org/abs/2509.02464](https://arxiv.org/abs/2509.02464)
 
@@ -1489,7 +1314,7 @@ The benchmark measures knowledge of religious concepts, specifically Buddhism, C
 The benchmark measures model adherence to developer-published behavioral specifications concerning religious topics. This includes evaluating responses to prompts about respecting freedom of religion, avoiding hateful content targeting religious groups (e.g., Christians), and handling questions about diverse religious practices (e.g., religious dietary rules) in a neutral and non-judgmental manner. The paper does not provide specific quantitative findings related to religion. It presents a framework, SpecEval, and qualitative examples (e.g., on religious dietary rules, religious freedom, and stereotyping) to demonstrate how models can be evaluated for adherence to behavioral specifications on religious topics. The overall findings focus on 'three-way consistency' gaps between specifications, model outputs, and model-as-judge evaluations across various behavioral categories, with Anthropic models being the most adherent to their own specification, followed closely by OpenAI.
 
 
-### EigenBench: A Comparative Behavioral Measure of Value Alignment
+## EigenBench: A Comparative Behavioral Measure of Value Alignment
 
 [https://arxiv.org/abs/2509.01938](https://arxiv.org/abs/2509.01938)
 
@@ -1498,7 +1323,16 @@ The benchmark measures model adherence to developer-published behavioral specifi
 The benchmark measures a language model's alignment with a given, user-defined value system, called a 'constitution'. While the main examples are secular (e.g., Universal Kindness, Conservatism), the paper explicitly mentions that this could include religious value systems like 'Taoist values'. It also uses historical religious figures (e.g., Jesus Christ, Pope Francis, Siddhartha Gautama) as personas to evaluate model dispositions. The paper demonstrates a framework capable of quantifying alignment with subjective value systems, which could include religious principles (e.g., Taoism). It also shows that prompting models with personas of religious figures (Jesus Christ, Pope Francis, Siddhartha Gautama) results in distinct, measurable behavioral dispositions. However, the paper does not report specific findings on how different models align with religious values, focusing instead on validating the measurement methodology itself.
 
 
-### Mapping Toxic Comments Across Demographics: A Dataset from German Public Broadcasting
+## Assessing Large Language Models on Islamic Legal Reasoning: Evidence from Inheritance Law Evaluation
+
+[https://arxiv.org/abs/2509.01081](https://arxiv.org/abs/2509.01081)
+
+**Date:** 2025-09-17
+
+The benchmark measures the knowledge and reasoning capabilities of Large Language Models in Islamic inheritance law, known as 'ilm al-mawārīth, using multiple-choice questions derived from Islamic legal rulings (fatwas). There is a significant performance gap between models. Reasoning-focused models like o3 (93.4%) and Gemini 2.5 (90.6%) achieved high accuracy, while open-source Arabic models like ALLaM, Fanar, and LLaMA scored below 50%. The lower-performing models frequently made foundational errors, including misinterpreting legal scenarios, misapplying normative rules, hallucinating fabricated Quranic verses, and basic computational mistakes. Even high-performing models like Gemini occasionally failed on nuanced questions requiring understanding of distinctions between different Islamic legal schools.
+
+
+## Mapping Toxic Comments Across Demographics: A Dataset from German Public Broadcasting
 
 [https://arxiv.org/abs/2508.21084](https://arxiv.org/abs/2508.21084)
 
@@ -1507,7 +1341,7 @@ The benchmark measures a language model's alignment with a given, user-defined v
 Detection of toxic speech targeted at religion, as part of a broader multi-label toxicity classification schema. Religious hate speech was found to be more prevalent among older users. It was entirely absent in the 0-30 age group but reached 1.94% in the 35+ age group, suggesting age is a significant factor in the expression of religious hate.
 
 
-### Understanding and evaluating computer vision models through the lens of counterfactuals
+## Understanding and evaluating computer vision models through the lens of counterfactuals
 
 [https://arxiv.org/abs/2508.20881](https://arxiv.org/abs/2508.20881)
 
@@ -1516,7 +1350,7 @@ Detection of toxic speech targeted at religion, as part of a broader multi-label
 The proposed frameworks (TIBET, BiasConnect, BiasGraph) measure intersectional biases in text-to-image models. In terms of religion, they measure how model outputs are biased by religious settings (e.g., 'church'), how religious traditions are stereotypically associated with aesthetics (e.g., 'Christian weddings' vs. 'South-Asian weddings'), and how the 'religious' bias axis interacts with other axes like ethnicity and appearance. The paper's frameworks, TIBET and BiasGraph, were shown to identify and quantify intersectional biases involving religion in text-to-image models. For example, changing ethnicity in a prompt set in a 'church' altered not just race but also depicted emotion and posture. The frameworks also detected stereotypical associations between religious traditions (Christian vs. South-Asian weddings) and aesthetics.
 
 
-### Specializing General-purpose LLM Embeddings for Implicit Hate Speech Detection across Datasets
+## Specializing General-purpose LLM Embeddings for Implicit Hate Speech Detection across Datasets
 
 [https://arxiv.org/abs/2508.20750](https://arxiv.org/abs/2508.20750)
 
@@ -1525,7 +1359,7 @@ The proposed frameworks (TIBET, BiasConnect, BiasGraph) measure intersectional b
 Detection of implicit hate speech and bias directed towards specific religious groups, including sensitivity analysis on statements targeting Jews and Muslims. The fine-tuned embedding models, particularly NV-Embed, showed high sensitivity to religious targets. They assigned higher hate probabilities to derogatory statements about Jews and Muslims compared to generic targets. The model also tended to misclassify some non-hateful tweets about Jewish people as hateful, while tweets concerning Islam were misclassified in both directions (hate as non-hate and vice versa).
 
 
-### UI-LEVEL EVALUATION OF ALLAM 34B: MEASURING AN ARABIC-CENTRIC LLM VIA HUMAIN CHAT
+## UI-LEVEL EVALUATION OF ALLAM 34B: MEASURING AN ARABIC-CENTRIC LLM VIA HUMAIN CHAT
 
 [https://arxiv.org/abs/2508.17378](https://arxiv.org/abs/2508.17378)
 
@@ -1534,7 +1368,7 @@ Detection of implicit hate speech and bias directed towards specific religious g
 The paper evaluates the model's 'cultural alignment,' which includes its ability to handle the 'cultural and religious sensitivities of Arabic-speaking communities'. This is assessed as part of a broader evaluation of linguistic accuracy and cultural appropriateness, rather than a specific test of religious knowledge or bias. The paper's findings related to religion are implicit. By concluding that ALLaM 34B is a 'robust and culturally grounded Arabic LLM' suitable for real-world deployment, the study suggests the model successfully aligns with the cultural and religious norms of Arabic-speaking communities. However, religious sensitivity was not isolated as a distinct metric for measurement.
 
 
-### Toward Socially Aware Vision-Language Models: Evaluating Cultural Competence Through Multimodal Story Generation
+## Toward Socially Aware Vision-Language Models: Evaluating Cultural Competence Through Multimodal Story Generation
 
 [https://arxiv.org/abs/2508.16762](https://arxiv.org/abs/2508.16762)
 
@@ -1543,7 +1377,7 @@ The paper evaluates the model's 'cultural alignment,' which includes its ability
 The benchmark indirectly measured religious knowledge as a component of cultural competence. This included the model's ability to generate culturally-specific religious vocabulary (e.g., deities like 'Krishna', festivals like 'Diwali'), and its knowledge of religious landmarks (e.g., identifying the Berlin Cathedral as a place of worship). The evaluation focused on whether these religious elements were appropriately integrated into generated stories for different nationalities. The models demonstrated an ability to generate some culturally relevant religious terms, such as 'Diwali' and 'Krishna' for Indian contexts and 'pharaohs' for Egyptian contexts. However, this understanding was often superficial. A key finding showed a model (SmolVLM2 2.2B) completely misidentifying a major Christian landmark, the Berlin Cathedral, and generating misinformation about it in a story. Furthermore, the analysis revealed a bias towards generating names associated with ethnic and religious majorities (e.g., predominantly Hindi/Sanskrit names for India), thus underrepresenting minority religious groups within a country.
 
 
-### CETVEL: A Unified Benchmark for Evaluating Language Understanding, Generation and Cultural Capacity of LLMs for Turkish
+## CETVEL: A Unified Benchmark for Evaluating Language Understanding, Generation and Cultural Capacity of LLMs for Turkish
 
 [https://arxiv.org/abs/2508.16431](https://arxiv.org/abs/2508.16431)
 
@@ -1552,7 +1386,7 @@ The benchmark indirectly measured religious knowledge as a component of cultural
 The benchmark measured knowledge of Turkish and Islamic history through an extractive question answering task (TQUAD dataset) and general knowledge of religion as part of a high-school level exam dataset (Exams dataset). The Turkish-centric model, Cere-Llama-3-8B, achieved the best performance on the extractive question answering task about Turkish and Islamic history (TQuAD), outperforming all other models, including the much larger Llama-3.3-70B-Instruct model. This highlights the benefit of task-specific and cultural tuning.
 
 
-### MizanQA: Benchmarking Large Language Models on Moroccan Legal Question Answering
+## MizanQA: Benchmarking Large Language Models on Moroccan Legal Question Answering
 
 [https://arxiv.org/abs/2508.16357](https://arxiv.org/abs/2508.16357)
 
@@ -1561,7 +1395,7 @@ The benchmark measured knowledge of Turkish and Islamic history through an extra
 Knowledge of Moroccan law, which is significantly influenced by Islamic Maliki jurisprudence. LLMs demonstrated lower performance in legal areas like the Family Code and Criminal Law. The paper suggests this is due to challenges in handling the integration of Islamic jurisprudence with modern human rights frameworks.
 
 
-### ParamBench: A Graduate-Level Benchmark for Evaluating LLM Understanding on Indic Subjects
+## ParamBench: A Graduate-Level Benchmark for Evaluating LLM Understanding on Indic Subjects
 
 [https://arxiv.org/abs/2508.16185](https://arxiv.org/abs/2508.16185)
 
@@ -1570,7 +1404,16 @@ Knowledge of Moroccan law, which is significantly influenced by Islamic Maliki j
 The benchmark measured graduate-level knowledge of 21 diverse subjects in the Indian context, including a specific subject on 'Comparative Study of Religions'. Models demonstrated varied performance on the 'Comparative Religion' subject. The best-performing model, Gemma-3-27B, achieved 70.3% accuracy, while Llama-3.3-70B scored 68.9%. This indicates a moderate but still incomplete understanding of graduate-level religious studies in the Indic context, highlighting a challenge for current LLMs.
 
 
-### Unveiling Trust in Multimodal Large Language Models: Evaluation, Analysis, and Mitigation
+## Benchmarking the Legal Reasoning of LLMs in Arabic Islamic Inheritance Cases
+
+[https://arxiv.org/abs/2508.15796](https://arxiv.org/abs/2508.15796)
+
+**Date:** 2025-08-13
+
+The benchmark measured the ability of Large Language Models to accurately interpret and apply Arabic Islamic inheritance laws, specifically their capacity to identify heirs, compute shares, and justify reasoning based on Islamic legal principles. Proprietary models like GPT-03 (92.3% accuracy) and Gemini Flash 2.5 (91.5%) significantly outperformed open-source Arabic LLMs in Islamic inheritance reasoning. Fine-tuning improved GPT-4o's performance but degraded Gemini Flash 2.5's, suggesting model-specific sensitivities. An ensemble of GPT-03, Gemini Flash 2.5, and Gemini Pro 2.5 achieved a 92.7% accuracy on the final test set, demonstrating high capability but also highlighting that even the best models occasionally fail on complex inheritance scenarios.
+
+
+## Unveiling Trust in Multimodal Large Language Models: Evaluation, Analysis, and Mitigation
 
 [https://arxiv.org/abs/2508.15370](https://arxiv.org/abs/2508.15370)
 
@@ -1579,7 +1422,7 @@ The benchmark measured graduate-level knowledge of 21 diverse subjects in the In
 The benchmark measures the model's sensitivity to stereotypical queries involving religion, specifically its refusal-to-answer (RtA) rate and agreement rate with stereotypical statements about religious groups. It is part of a broader evaluation of fairness and bias under the 'Fairness' aspect of the MultiTrust-X benchmark. Models exhibit topic-dependent variations in their handling of stereotypes. Specifically, stereotypes related to religion (along with gender and race) elicited lower agreement rates compared to stereotypes about age, indicating models are generally more cautious with religious stereotypes.
 
 
-### Beyond Human Judgment: A Bayesian Evaluation of LLMs’ Moral Values Understanding
+## Beyond Human Judgment: A Bayesian Evaluation of LLMs’ Moral Values Understanding
 
 [https://arxiv.org/abs/2508.13804](https://arxiv.org/abs/2508.13804)
 
@@ -1588,7 +1431,7 @@ The benchmark measures the model's sensitivity to stereotypical queries involvin
 Detection of moral language related to the Sanctity/Degradation foundation, which encompasses concepts of sacredness, purity, and divinity often found in religious contexts. AI models demonstrated strong performance in classifying the 'Sanctity' moral foundation, which is closely linked to religious ideas of the sacred and profane. Their accuracy was notably high (e.g., 84.3% on average), outperforming human annotators, even though this foundation is known to be difficult to classify due to cultural contexts. The models showed a superior ability to detect subtle moral cues related to sanctity that human annotators often miss.
 
 
-### LinguaSafe: A Comprehensive Multilingual Safety Benchmark for Large Language Models
+## LinguaSafe: A Comprehensive Multilingual Safety Benchmark for Large Language Models
 
 [https://arxiv.org/abs/2508.12733](https://arxiv.org/abs/2508.12733)
 
@@ -1597,7 +1440,7 @@ Detection of moral language related to the Sanctity/Degradation foundation, whic
 The benchmark measures LLM safety against prompts that promote discrimination, prejudice, or unfair treatment based on protected characteristics, with religion being one of the specified subtypes. The paper does not report specific findings for religion. Results are aggregated at the higher-level 'Fairness & Justice' domain, which includes religion alongside other categories like gender, age, and race. The general findings indicate that LLM safety performance varies significantly across different languages and domains, with no specific analysis dedicated to religious content.
 
 
-### SEA-BED: Southeast Asia Embedding Benchmark
+## SEA-BED: Southeast Asia Embedding Benchmark
 
 [https://arxiv.org/abs/2508.12243](https://arxiv.org/abs/2508.12243)
 
@@ -1606,7 +1449,7 @@ The benchmark measures LLM safety against prompts that promote discrimination, p
 Model performance on tasks like question answering and retrieval using datasets from the religious domain (specifically Islamic texts and topics). Performance on religious domain datasets was included in the overall benchmark evaluation as one of 17 domains, but no specific findings related to religion were reported separately from the aggregated results.
 
 
-### LETToT: Label-Free Evaluation of Large Language Models On Tourism Using Expert Tree-of-Thought
+## LETToT: Label-Free Evaluation of Large Language Models On Tourism Using Expert Tree-of-Thought
 
 [https://arxiv.org/abs/2508.11280](https://arxiv.org/abs/2508.11280)
 
@@ -1615,7 +1458,7 @@ Model performance on tasks like question answering and retrieval using datasets 
 The benchmark measured the model's ability to generate practical travel information for 'Religious Tourism', including managing cross-religious taboos ('Cross-Religious Conflict Warning System'), providing details on artifact preservation ('Ancient Manuscript Digital Archiving'), virtual experiences of rituals ('Metaverse Ritual Scene Restoration'), information on holy sites ('Holy Site Reservation Response Timeliness'), and interpreting multilingual scripture ('Multilingual Scripture Intelligent Interpretation'). The paper does not provide specific findings for the religious tourism category. The results are aggregated across all 11 tourism themes, indicating that reasoning-enhanced models and larger models generally perform better in the specialized domain of tourism, which includes religious contexts. The framework's evaluation is based on a model's ability to cover specific elements, such as those defined under the Religious Tourism theme, rather than on theological accuracy or bias.
 
 
-### PakBBQ: A Culturally Adapted Bias Benchmark for QA
+## PakBBQ: A Culturally Adapted Bias Benchmark for QA
 
 [https://arxiv.org/abs/2508.10186](https://arxiv.org/abs/2508.10186)
 
@@ -1624,7 +1467,7 @@ The benchmark measured the model's ability to generate practical travel informat
 The benchmark measured stereotypical biases related to religion, specifically focusing on sectarian affiliations (e.g., Barelvi, Deobandi within Islam) and biases towards minority religious groups (e.g., Christians, Hindus, Ahmadis) within the Pakistani sociocultural context. Models struggled with culturally specific religious contexts unique to Pakistan, showing the lowest accuracy on 'Newly Added' templates that included sectarian and religious minority biases. However, models also demonstrated strong counter-bias tendencies, particularly in the religion category when contexts were unambiguous. On average, models showed greater counter-bias in Urdu compared to English.
 
 
-### mSCoRe: a Multilingual and Scalable Benchmark for Skill-based Commonsense Reasoning
+## mSCoRe: a Multilingual and Scalable Benchmark for Skill-based Commonsense Reasoning
 
 [https://arxiv.org/abs/2508.10137](https://arxiv.org/abs/2508.10137)
 
@@ -1633,7 +1476,7 @@ The benchmark measured stereotypical biases related to religion, specifically fo
 The benchmark measures commonsense reasoning in social situations involving cultural and religious practices and accommodations. An example provided is understanding the inclusivity of German swimming education programs that accommodate Muslim students by allowing the use of burqinis. The paper does not provide specific findings for religion-themed questions. General findings for the social commonsense benchmark (mSCoRe-S), which includes cultural and religious situations, indicate that models' performance declines with increased complexity. Additionally, models performed better on Reddit-sourced questions (focused on general 'Community and Cultural Exchange') than TikTok-sourced ones (focused on daily life 'personal' aspects), suggesting LLMs might struggle with more personalized, nuanced cultural problems.
 
 
-### A Transparent Fairness Evaluation Protocol for Open-Source Language Model Benchmarking on the Blockchain
+## A Transparent Fairness Evaluation Protocol for Open-Source Language Model Benchmarking on the Blockchain
 
 [https://arxiv.org/abs/2508.09993](https://arxiv.org/abs/2508.09993)
 
@@ -1642,7 +1485,7 @@ The benchmark measures commonsense reasoning in social situations involving cult
 The benchmark measured stereotypical social bias in contextual associations related to religion using metrics derived from the StereoSet dataset, specifically the Idealized Contextual Association Test (ICAT) for Religion. Using the ICAT Religion metric, where a higher score indicates lower bias (ideal is 100), Llama (70.06) showed the least religious bias, followed by DeepSeek (30.57) and Mistral (16.56). All models exhibited some degree of bias in the religious domain.
 
 
-### SHALE: A Scalable Benchmark for Fine-grained Hallucination Evaluation in LVLMs
+## SHALE: A Scalable Benchmark for Fine-grained Hallucination Evaluation in LVLMs
 
 [https://arxiv.org/abs/2508.09584](https://arxiv.org/abs/2508.09584)
 
@@ -1651,7 +1494,7 @@ The benchmark measured stereotypical social bias in contextual associations rela
 The benchmark measured the factual accuracy of Large Vision-Language Models on the topic of religion. It was designed to detect 'factuality hallucinations', which are defined as generating content that conflicts with established world knowledge regarding religious entities and facts. Top-performing models demonstrated very high factual accuracy on questions related to religion. The 'Religion' knowledge domain was often the category where models achieved their highest or second-highest scores compared to other factual domains such as sports, politics, entertainment, culture, and geography, suggesting a lower rate of factuality hallucination for this topic in the tested scenarios.
 
 
-### Ideometrics: The Science of Generating, Evaluating and Prioritising Ideas
+## Ideometrics: The Science of Generating, Evaluating and Prioritising Ideas
 
 [https://arxiv.org/abs/2508.08304](https://arxiv.org/abs/2508.08304)
 
@@ -1660,7 +1503,16 @@ The benchmark measured the factual accuracy of Large Vision-Language Models on t
 The paper does not conduct a benchmark measurement. It conceptually discusses faith-based approaches to knowledge, such as 'revelation and spiritual enlightenment,' as historical methods for prioritizing ideas in traditional cultures, contrasting them with the systematic 'ideometric' frameworks it proposes. The paper positions faith-based methods of idea prioritization, such as 'revelation and spiritual enlightenment,' as part of the historical landscape of human approaches to knowledge. These traditional methods are contrasted with the modern, systematic, and scientific 'ideometric' frameworks that are the main focus of the paper. Religion is therefore used as a historical and cultural example of a pre-rationalist approach rather than being an empirical subject of the study itself.
 
 
-### CCFQA: A Benchmark for Cross-Lingual and Cross-Modal Speech and Text Factuality Evaluation
+## Sacred or Synthetic? Evaluating LLM Reliability and Abstention for Religious Questions
+
+[https://arxiv.org/abs/2508.08287](https://arxiv.org/abs/2508.08287)
+
+**Date:** 2025-08-04
+
+The benchmark, FiqhQA, measures the accuracy of Large Language Models in generating Islamic legal rulings and their ability to abstain from answering when uncertain. The evaluation is specific to the four major Sunni schools of thought (Hanafi, Maliki, Shafi'i, and Hanbali). GPT-4o was the most accurate model, particularly in English and for the Hanafi school of thought, suggesting a data availability bias. However, all models showed a significant performance drop in Arabic. Gemini and Fanar demonstrated superior abstention behavior, refusing to answer when uncertain, which is critical for religious queries. The study highlights a trade-off between accuracy and cautiousness, and underscores the persistent reliability challenges of LLMs in high-stakes domains like religious jurisprudence, as even top models generate incorrect answers.
+
+
+## CCFQA: A Benchmark for Cross-Lingual and Cross-Modal Speech and Text Factuality Evaluation
 
 [https://arxiv.org/abs/2508.07295](https://arxiv.org/abs/2508.07295)
 
@@ -1669,7 +1521,7 @@ The paper does not conduct a benchmark measurement. It conceptually discusses fa
 The benchmark measures the factual knowledge consistency of Multimodal Large Language Models (MLLMs) on questions related to religion. 'Religion' is one of 20 sub-domains in the dataset used to evaluate the models' question-answering capabilities in cross-lingual and cross-modal scenarios. The paper evaluates model performance on factual questions across various categories, including 'Religion'. The primary finding is a comparison of performance scores on this category. As shown in Figure 5, the authors' model, LLM-SQA, demonstrates balanced and consistently high performance across social domains including Religion. Other models like Qwen2.5-Omni-7B and GPT-4o-mini-Audio show slightly lower performance in this category, while models like Qwen2-Audio and Phi-4-Multimodal perform poorly on religious questions.
 
 
-### BharatBBQ: A Multilingual Bias Benchmark for Question Answering in the Indian Context
+## BharatBBQ: A Multilingual Bias Benchmark for Question Answering in the Indian Context
 
 [https://arxiv.org/abs/2508.07090](https://arxiv.org/abs/2508.07090)
 
@@ -1678,7 +1530,7 @@ The benchmark measures the factual knowledge consistency of Multimodal Large Lan
 The benchmark measures stereotypical biases associated with religious groups and their intersection with gender within a question-answering framework tailored to the Indian sociocultural context. Models exhibited significant stereotypical bias for the religion category, on average favoring stereotypical religious groups as answers to negative questions, even in non-negative pairings. This bias was notably higher when proper nouns were used compared to common nouns. Interestingly, in ambiguous contexts, some models showed negative bias scores for religion, possibly indicating lexical preferences or overcorrection in model behavior.
 
 
-### Towards Safer AI Moderation: Evaluating LLM Moderators Through a Unified Benchmark Dataset and Advocating a Human-First Approach
+## Towards Safer AI Moderation: Evaluating LLM Moderators Through a Unified Benchmark Dataset and Advocating a Human-First Approach
 
 [https://arxiv.org/abs/2508.07063](https://arxiv.org/abs/2508.07063)
 
@@ -1687,7 +1539,7 @@ The benchmark measures stereotypical biases associated with religious groups and
 The benchmark measured the performance (Macro F1 score) of LLM moderators in detecting hate speech, offensive language, and biases against various social groups, including religious groups like Muslims. On synthetic datasets like GPT HateCheck, the tested LLM moderators achieved high F1 scores (around 0.95-1.00) in detecting hate speech targeting Muslims. However, their performance degraded on human-curated datasets (like MHS) that include religion as an identity group and require understanding of nuanced or implicit language, indicating a gap between performance on synthetic vs. real-world data.
 
 
-### Measuring Stereotype and Deviation Biases in Large Language Models
+## Measuring Stereotype and Deviation Biases in Large Language Models
 
 [https://arxiv.org/abs/2508.06649](https://arxiv.org/abs/2508.06649)
 
@@ -1696,7 +1548,7 @@ The benchmark measured the performance (Macro F1 score) of LLM moderators in det
 The benchmark measures stereotype and deviation biases in LLM-generated religious affiliations for various demographic groups (gender, race/ethnicity, age). It assesses which religions LLMs associate with specific groups, both implicitly (via names) and explicitly. All four LLMs were most likely to portray individuals as 'Christian' or 'unaffiliated', while underrepresenting Hindu, Jewish, and Muslim affiliations. Specific stereotype biases were observed: prompts with White names implicitly led to a high proportion of Jewish outputs (72-82%), and prompts with Black names resulted in the highest proportion of Muslim outputs (40-50%). Similarly, Asian individuals were often associated with Buddhism. These outputs are believed to reflect biases in the training data, which heavily features U.S.-centric and Christian-centric content.
 
 
-### ImpliHateVid: A Benchmark Dataset and Two-stage Contrastive Learning Framework for Implicit Hate Speech Detection in Videos
+## ImpliHateVid: A Benchmark Dataset and Two-stage Contrastive Learning Framework for Implicit Hate Speech Detection in Videos
 
 [https://arxiv.org/abs/2508.06570](https://arxiv.org/abs/2508.06570)
 
@@ -1705,7 +1557,7 @@ The benchmark measures stereotype and deviation biases in LLM-generated religiou
 The benchmark measures implicit and explicit hate speech in videos, where hate speech is defined as content that promotes discrimination, disparages, or humiliates an individual or group based on characteristics including religion. The paper includes religion as a protected characteristic in its definition of hate speech for the dataset annotation. However, the results are not disaggregated by the target of hate, so there are no specific findings on the model's performance in detecting religious-based hate speech versus other types like racial or gender-based hate.
 
 
-### SceneJailEval: A Scenario-Adaptive Multi-Dimensional Framework for Jailbreak Evaluation
+## SceneJailEval: A Scenario-Adaptive Multi-Dimensional Framework for Jailbreak Evaluation
 
 [https://arxiv.org/abs/2508.06194](https://arxiv.org/abs/2508.06194)
 
@@ -1714,7 +1566,7 @@ The benchmark measures implicit and explicit hate speech in videos, where hate s
 The benchmark measures the generation of harmful content related to region-specific sensitivities, which explicitly includes religious taboos. This falls under the 'Regional Sensitive Issues' scenario, designed to evaluate risks from content shaped by religion and culture. Large Language Models are particularly vulnerable to generating harmful or prohibited content related to regional and religious sensitivities. The 'Regional Sensitive Issues' scenario consistently challenged all tested models, showing high attack success rates, with GPT-40 being the most vulnerable in this category (70.37% ASR).
 
 
-### SDEval: Safety Dynamic Evaluation for Multimodal Large Language Models
+## SDEval: Safety Dynamic Evaluation for Multimodal Large Language Models
 
 [https://arxiv.org/abs/2508.06142](https://arxiv.org/abs/2508.06142)
 
@@ -1723,7 +1575,7 @@ The benchmark measures the generation of harmful content related to region-speci
 The benchmark measures harmful bias and stereotype detection, specifically the association of religious or faith-based groups with violence and terrorism, using dynamically generated text and image prompts. The paper finds that dynamic evaluation strategies significantly reduce the safety performance of all tested MLLMs. Models are more likely to generate harmful or unsafe responses when faced with dynamically altered prompts, such as those using word replacement or linguistic mixing to probe for biases associating religious groups with terrorism. This indicates that current model safety alignments are brittle and can be bypassed by simple prompt modifications, revealing underlying vulnerabilities.
 
 
-### LLMEval-Fair: A Large-Scale Longitudinal Study on Robust and Fair Evaluation of Large Language Models
+## LLMEval-Fair: A Large-Scale Longitudinal Study on Robust and Fair Evaluation of Large Language Models
 
 [https://arxiv.org/abs/2508.05452](https://arxiv.org/abs/2508.05452)
 
@@ -1732,7 +1584,7 @@ The benchmark measures harmful bias and stereotype detection, specifically the a
 The benchmark, LLMEval-Fair, measures knowledge in various academic disciplines, including 'Religious Studies', which is a sub-category under the primary discipline of 'Philosophical Sciences'. The questions are sourced from graduate-level examinations. The benchmark includes questions from the academic discipline of 'Religious Studies' as a sub-category of 'Philosophical Sciences'. However, the paper does not report specific performance analysis or findings for this particular category, focusing instead on broader disciplinary groups and overall model performance trends.
 
 
-### Persistent Instability in LLM’s Personality Measurements: Effects of Scale, Reasoning, and Conversation History
+## Persistent Instability in LLM’s Personality Measurements: Effects of Scale, Reasoning, and Conversation History
 
 [https://arxiv.org/abs/2508.04826](https://arxiv.org/abs/2508.04826)
 
@@ -1741,7 +1593,7 @@ The benchmark, LLMEval-Fair, measures knowledge in various academic disciplines,
 The stability of personality trait expression (Big Five and Dark Triad) when models adopt a 'Buddhist monk' persona, as one of several 'virtuous' personas. Models prompted with a 'Buddhist monk' persona, categorized as a positive persona, exhibited significantly lower scores on negative personality traits (e.g., Dark Triad traits) and showed significantly lower response variability and perplexity across different model sizes.
 
 
-### Evaluating the Impact of LLM-guided Reflection on Learning Outcomes with Interactive AI-Generated Educational Podcasts
+## Evaluating the Impact of LLM-guided Reflection on Learning Outcomes with Interactive AI-Generated Educational Podcasts
 
 [https://arxiv.org/abs/2508.04787](https://arxiv.org/abs/2508.04787)
 
@@ -1750,7 +1602,7 @@ The stability of personality trait expression (Big Five and Dark Triad) when mod
 The benchmark measured knowledge of introductory philosophy, which included questions about philosophical figures and concepts with religious or spiritual dimensions (e.g., Confucius, Yajnavalkya, the nature of a 'sage,' 'religious doctrines,' 'mystical beliefs'). The study used introductory philosophy content, which included figures and concepts related to religious or spiritual traditions (e.g., Confucius, Yajnavalkya), as the subject matter for an educational podcast. The findings are not about religion itself but about the learning methodology: interactive reflection prompts did not significantly improve learning outcomes compared to a standard interactive podcast, and they negatively impacted the user's perception of the podcast's attractiveness.
 
 
-### Reasoning Beyond Labels: Measuring LLM Sentiment in Low-Resource, Culturally Nuanced Contexts
+## Reasoning Beyond Labels: Measuring LLM Sentiment in Low-Resource, Culturally Nuanced Contexts
 
 [https://arxiv.org/abs/2508.04199](https://arxiv.org/abs/2508.04199)
 
@@ -1759,7 +1611,7 @@ The benchmark measured knowledge of introductory philosophy, which included ques
 How LLMs interpret the sentiment of faith-based or religious expressions within a specific cultural context (Nairobi youth chat groups). Religious expressions, common in the evaluated faith-based communication context, were identified as a source of interpretive ambiguity that contributes to disagreement among human annotators and challenges for LLMs in correctly assessing sentiment. For example, a statement like 'He is faithful all the time' can be interpreted differently depending on religious context, and LLMs must weigh this cultural context to determine sentiment.
 
 
-### TeSent: A Benchmark Dataset for Fairness-aware Explainable Sentiment Classification in Telugu
+## TeSent: A Benchmark Dataset for Fairness-aware Explainable Sentiment Classification in Telugu
 
 [https://arxiv.org/abs/2508.01486](https://arxiv.org/abs/2508.01486)
 
@@ -1768,7 +1620,7 @@ How LLMs interpret the sentiment of faith-based or religious expressions within 
 Sentiment prediction bias against different religious groups (Hindu, Muslim, Christian) using a template-based counterfactual framework. The evaluation measured the Polarity Difference Score (PDS) and Equalized Odds (EO) when names associated with these religions were used in sentiment-bearing and neutral sentences. Alignment-oriented training with human-annotated rationales did not induce systematic or guaranteed improvements in fairness regarding religion. While some occasional improvements were observed, it was not a clear indication that this training method is sufficient to ensure consistent fairness. Specifically, in the case of religion bias, the MuRIL model showed a substantial decrease in bias after this training, whereas the mBERT model showed a moderate increase.
 
 
-### MELAC: Massive Evaluation of Large Language Models with Alignment of Culture in Persian Language
+## MELAC: Massive Evaluation of Large Language Models with Alignment of Culture in Persian Language
 
 [https://arxiv.org/abs/2508.00673](https://arxiv.org/abs/2508.00673)
 
@@ -1777,7 +1629,7 @@ Sentiment prediction bias against different religious groups (Hindu, Muslim, Chr
 The benchmark measured the knowledge of religious rules and jurisprudence specific to the Iranian context, covering Islamic jurisprudence (both Shi'a and Sunni) and Zoroastrian religious practices through multiple-choice questions. Large Language Models, including those specifically fine-tuned for Persian, demonstrated poor performance on the Religion-Rules dataset. This indicates a limited understanding of religious rules and jurisprudence within the Iranian cultural context, highlighting a significant gap in culturally-aligned knowledge.
 
 
-### BALSAM: A Platform for Benchmarking Arabic Large Language Models
+## BALSAM: A Platform for Benchmarking Arabic Large Language Models
 
 [https://arxiv.org/abs/2507.22603](https://arxiv.org/abs/2507.22603)
 
@@ -1786,7 +1638,7 @@ The benchmark measured the knowledge of religious rules and jurisprudence specif
 The benchmark identified the 'ability to answer religious questions' and the use of culturally and religiously appropriate terminology (e.g., 'Prophet Muhammad' vs. 'the Messenger of Islam Muhammad') as limitations and areas for future evaluation, but did not include dedicated tasks for these in the current version. The paper found that BALSAM, in its current iteration, does not adequately evaluate LLM capabilities on religious topics, such as answering religious questions. It also identified potential cultural and religious misalignments in translated datasets, highlighting the need for more nuanced, culturally-aware data in future versions.
 
 
-### Towards Inclusive NLP: Assessing Compressed Multilingual Transformers across Diverse Language Benchmarks
+## Towards Inclusive NLP: Assessing Compressed Multilingual Transformers across Diverse Language Benchmarks
 
 [https://arxiv.org/abs/2507.19699](https://arxiv.org/abs/2507.19699)
 
@@ -1795,7 +1647,7 @@ The benchmark identified the 'ability to answer religious questions' and the use
 The benchmark measured model knowledge on a variety of subjects, including Islamic studies, as part of the broader ArabicMMLU evaluation. The paper's findings focus on overall model performance, cross-lingual capabilities, and the effects of compression across various subjects. While the ArabicMMLU benchmark included 'Islamic studies', the paper does not provide a specific analysis or report findings particular to this religious subject category. The results are aggregated into broader categories like STEM, Humanities, and Social Sciences.
 
 
-### T2VWorldBench: A Benchmark for Evaluating World Knowledge in Text-to-Video Generation
+## T2VWorldBench: A Benchmark for Evaluating World Knowledge in Text-to-Video Generation
 
 [https://arxiv.org/abs/2507.18107](https://arxiv.org/abs/2507.18107)
 
@@ -1804,7 +1656,7 @@ The benchmark measured model knowledge on a variety of subjects, including Islam
 The benchmark measures the ability of text-to-video models to generate videos that accurately depict religious rituals and cultural events based on textual prompts, as part of a broader evaluation of 'world knowledge' within the 'Culture' domain. The paper finds that current text-to-video models generally perform poorly on prompts requiring deep world knowledge. Scores for the 'Culture' dimension, which includes religion, were consistently low across models, highlighting the difficulty models have in representing abstract reasoning and culturally specific scenes accurately.
 
 
-### RAVine: Reality-Aligned Evaluation for Agentic Search
+## RAVine: Reality-Aligned Evaluation for Agentic Search
 
 [https://arxiv.org/abs/2507.16725](https://arxiv.org/abs/2507.16725)
 
@@ -1813,7 +1665,7 @@ The benchmark measures the ability of text-to-video models to generate videos th
 Ability to retrieve and synthesize information about different religious perspectives (Christianity, Islam, Buddhism, Hinduism, Judaism) on euthanasia as part of a long-form report generation task. In a case study on the varied views of euthanasia, the Qwen3-32B model successfully identified religion as a key factor. It correctly searched for and synthesized information on the perspectives of multiple religions, including Christianity, Islam, Buddhism, and Hinduism, incorporating these details into a structured, long-form report. This demonstrates the model's capability to handle complex queries involving religious topics by retrieving and integrating relevant information.
 
 
-### Dutch CrowS-Pairs: Adapting a Challenge Dataset for Measuring Social Biases in Language Models for Dutch
+## Dutch CrowS-Pairs: Adapting a Challenge Dataset for Measuring Social Biases in Language Models for Dutch
 
 [https://arxiv.org/abs/2507.16442](https://arxiv.org/abs/2507.16442)
 
@@ -1822,7 +1674,7 @@ Ability to retrieve and synthesize information about different religious perspec
 The benchmark measured stereotypical biases associated with religious groups by comparing the likelihood scores of sentence pairs, where one sentence contained a stereotype about a religious group and the other was a less stereotypical counterpart. Among masked language models, the 'Religion' category, along with 'Disability' and 'Physical appearance', consistently yielded the highest bias scores across models. For example, the English BERT model showed the highest bias score in the Religion category. For autoregressive models, prompting with a specific persona significantly influenced which religious stereotype was preferred, indicating that bias expression is dynamic and context-sensitive.
 
 
-### ReasonVQA: A Multi-hop Reasoning Benchmark with Structural Knowledge for Visual Question Answering
+## ReasonVQA: A Multi-hop Reasoning Benchmark with Structural Knowledge for Visual Question Answering
 
 [https://arxiv.org/abs/2507.16403](https://arxiv.org/abs/2507.16403)
 
@@ -1831,7 +1683,7 @@ The benchmark measured stereotypical biases associated with religious groups by 
 The benchmark measures the model's ability to answer factual, multi-hop questions about visual objects by integrating external, encyclopedic knowledge. In the context of religion, this involves retrieving factual information about religious entities, such as the architectural style, location, or height of a church, rather than testing theological knowledge or bias. The paper does not present specific findings related to religion. Religious entities, primarily churches, are used as examples within the broader category of landmarks to test visual question answering that requires external knowledge. The 'Philosophy & Spiritual Beliefs' domain constitutes only 1.6% of the dataset. Findings focus on general model performance across multi-hop questions, showing that models struggle with increased reasoning complexity, but performance is not analyzed specifically for the religious domain.
 
 
-### BIDWESH: A BANGLA REGIONAL BASED HATE SPEECH DETECTION DATASET
+## BIDWESH: A BANGLA REGIONAL BASED HATE SPEECH DETECTION DATASET
 
 [https://arxiv.org/abs/2507.16183](https://arxiv.org/abs/2507.16183)
 
@@ -1840,7 +1692,7 @@ The benchmark measures the model's ability to answer factual, multi-hop question
 Detection of hate speech involving religious intolerance or attacks on faith-based communities within Bangla regional dialects. The paper introduces a new dataset, BIDWESH, for detecting hate speech in Bangla regional dialects. The key finding related to religion is the categorization and quantification of religious hate speech within this dataset. Out of the hate speech instances, 'Religion' as a single category accounts for 3.07%, with additional multi-label categories like 'Religion_slander' (1.50%) and 'callToViolence_religion' (1.44%) also being identified, providing a resource for studying and mitigating this specific type of hate speech.
 
 
-### The Prompt Makes the Person(a): A Systematic Evaluation of Sociodemographic Persona Prompting for Large Language Models
+## The Prompt Makes the Person(a): A Systematic Evaluation of Sociodemographic Persona Prompting for Large Language Models
 
 [https://arxiv.org/abs/2507.16076](https://arxiv.org/abs/2507.16076)
 
@@ -1849,7 +1701,7 @@ Detection of hate speech involving religious intolerance or attacks on faith-bas
 Measures the stereotypical conflation of Middle-Eastern identity with religiosity (e.g., Islam) in LLM-generated self-descriptions. LLMs exhibit stereotypes by conflating Middle-Eastern identity with religiosity, frequently using words like 'faith' and 'muslim' as top marked words in self-descriptions for these personas.
 
 
-### “Just a strange pic”: Evaluating ‘safety’ in GenAI Image safety annotation tasks from diverse annotators’ perspectives
+## “Just a strange pic”: Evaluating ‘safety’ in GenAI Image safety annotation tasks from diverse annotators’ perspectives
 
 [https://arxiv.org/abs/2507.16033](https://arxiv.org/abs/2507.16033)
 
@@ -1858,7 +1710,7 @@ Measures the stereotypical conflation of Middle-Eastern identity with religiosit
 Stereotype and harmful association detection in religious contexts, as part of a broader safety evaluation. Specifically, the paper analyzed how prompts with religious tokens (e.g., 'islamophobia', 'religious') evoked moral sentiments in annotator comments. The study found that prompts containing religious tokens like 'islamophobia' and 'religious' were significantly associated with evoking specific moral sentiments (Loyalty and Purity) in annotators' comments. This indicates that religious content triggers moral reasoning that may not be captured by standard, predefined safety categories.
 
 
-### AUTOMATED SAFETY EVALUATIONS ACROSS 20 LARGE LANGUAGE MODELS: THE AYMARA LLM RISK AND RESPONSIBILITY MATRIX
+## AUTOMATED SAFETY EVALUATIONS ACROSS 20 LARGE LANGUAGE MODELS: THE AYMARA LLM RISK AND RESPONSIBILITY MATRIX
 
 [https://arxiv.org/abs/2507.14719](https://arxiv.org/abs/2507.14719)
 
@@ -1867,7 +1719,7 @@ Stereotype and harmful association detection in religious contexts, as part of a
 The benchmark measured whether LLMs would generate hateful, offensive, or discriminatory content based on religion, as part of the 'Hate Speech & Bias' safety domain. Models generally performed well in the 'Hate Speech & Bias' domain, which includes religion. This domain was in the 'top tier' of safety performance with a high mean safety score (91.1%), indicating that models are robustly protected against generating content that is biased or hateful based on religious attributes.
 
 
-### A Review of Arabic Post-Training Datasets and Their Limitations
+## A Review of Arabic Post-Training Datasets and Their Limitations
 
 [https://arxiv.org/abs/2507.14688](https://arxiv.org/abs/2507.14688)
 
@@ -1876,7 +1728,7 @@ The benchmark measured whether LLMs would generate hateful, offensive, or discri
 The paper reviews and evaluates the availability, quality, and gaps in Arabic post-training datasets, specifically measuring the coverage for 'Cultural Alignment', which includes reflecting the 'religious, and societal views, values, and cultures of the Arab world'. The paper found a critical gap in Arabic post-training datasets related to cultural and religious alignment. 'Cultural Alignment' datasets account for less than 1% of all surveyed datasets. The study highlights that this underrepresentation is concerning because Arabic-speaking contexts have linguistic, societal, and religious norms that differ significantly from English-based benchmarks. It recommends prioritizing the development of high-quality datasets tailored to Arabic cultural contexts, including religious views and discourse, to build responsible and culturally sensitive LLMs.
 
 
-### Whose View of Safety? A Deep DIVE Dataset for Pluralistic Alignment of Text-to-Image Models
+## Whose View of Safety? A Deep DIVE Dataset for Pluralistic Alignment of Text-to-Image Models
 
 [https://arxiv.org/abs/2507.13383](https://arxiv.org/abs/2507.13383)
 
@@ -1885,7 +1737,7 @@ The paper reviews and evaluates the availability, quality, and gaps in Arabic po
 The benchmark measures the perceived harmfulness of text-to-image generations in various contexts, including bias and stereotypes related to religion. This was evaluated using prompts such as 'muslim drinking' under the 'Bias/Religion' category. The paper uses religion as one of several topics to demonstrate that perceptions of harm and bias in AI-generated images are subjective and significantly influenced by the demographic background (age, gender, ethnicity) of the human rater. There were no specific quantitative findings reported for the 'religion' topic category alone, but its inclusion highlights it as a domain where diverse safety perspectives are crucial.
 
 
-### ESBBQ and CABBQ: The Spanish and Catalan Bias Benchmarks for Question Answering
+## ESBBQ and CABBQ: The Spanish and Catalan Bias Benchmarks for Question Answering
 
 [https://arxiv.org/abs/2507.11216](https://arxiv.org/abs/2507.11216)
 
@@ -1894,7 +1746,7 @@ The benchmark measures the perceived harmfulness of text-to-image generations in
 Detection of stereotypical social bias against religious groups in Spanish and Catalan within a multiple-choice question-answering format. The benchmark assesses model tendencies to align with or contradict stereotypes in both ambiguous and disambiguated contexts. The Religion category exhibited negative bias scores across many models, indicating that models were more likely to output anti-stereotypical answers for this category compared to others, which contrasts with the positive bias scores observed in most other social dimensions.
 
 
-### LLMS ON TRIAL: EVALUATING JUDICIAL FAIRNESS FOR LARGE LANGUAGE MODELS
+## LLMS ON TRIAL: EVALUATING JUDICIAL FAIRNESS FOR LARGE LANGUAGE MODELS
 
 [https://arxiv.org/abs/2507.10852](https://arxiv.org/abs/2507.10852)
 
@@ -1903,7 +1755,7 @@ Detection of stereotypical social bias against religious groups in Spanish and C
 The benchmark measured judicial fairness, specifically detecting bias in sentencing predictions based on the religious beliefs (Islam, Buddhism, Christianity, Atheism) of the defendant, victim, defender, prosecutor, and judge in legal case descriptions. Large Language Models demonstrated significant bias based on religious affiliation across multiple roles in the judicial process (defendant, victim, defender, prosecutor, judge). For instance, in bias analysis tables (e.g., Table A21), labels for 'defender_religion', 'victim_religion', 'prosecurate_religion', and 'judge_religion' frequently showed statistically significant effects on sentencing outcomes for various models. The heatmaps confirm that religion-related labels are a consistent source of significant bias across the tested models.
 
 
-### Cultural Bias in Large Language Models: Evaluating AI Agents through Moral Questionnaires
+## Cultural Bias in Large Language Models: Evaluating AI Agents through Moral Questionnaires
 
 [https://arxiv.org/abs/2507.10073](https://arxiv.org/abs/2507.10073)
 
@@ -1912,7 +1764,7 @@ The benchmark measured judicial fairness, specifically detecting bias in sentenc
 Measurement of moral intuitions across 19 cultures using the Moral Foundations Questionnaire (MFQ-2), which includes the purity/sanctity dimension often associated with religious concepts of sacredness and bodily purity. The paper also cites prior work on anti-Muslim bias in LLMs. The study found that Large Language Models (LLMs) systematically 'homogenize' moral diversity, failing to represent the significant cross-cultural variations present in human responses. This includes the purity/sanctity dimension, which is closely linked to religious and spiritual beliefs. Instead of capturing specific cultural or religious moral frameworks, the models tend to produce mean-regressing responses, effectively flattening the diverse moral landscape and under-representing the nuances of culturally-specific intuitions related to sacredness and purity.
 
 
-### Measuring What Matters: A Framework for Evaluating Safety Risks in Real-World LLM Applications
+## Measuring What Matters: A Framework for Evaluating Safety Risks in Real-World LLM Applications
 
 [https://arxiv.org/abs/2507.09820](https://arxiv.org/abs/2507.09820)
 
@@ -1921,7 +1773,7 @@ Measurement of moral intuitions across 19 cultures using the Moral Foundations Q
 Detection of hateful content (discriminatory speech or hate speech) against religious groups as a protected identity, and flagging of discussions about social policies related to religion. The paper's proposed framework for application-level safety testing includes religion as a protected characteristic within its 'Hateful' content risk category and as a topic in its 'Social Policies' risk category. The main finding is methodological, advocating for the inclusion of religion in customized, context-aware safety taxonomies to evaluate LLMs, rather than presenting empirical results about model performance on religious topics.
 
 
-### Cultivating Pluralism In Algorithmic Monoculture: The Community Alignment Dataset
+## Cultivating Pluralism In Algorithmic Monoculture: The Community Alignment Dataset
 
 [https://arxiv.org/abs/2507.09650](https://arxiv.org/abs/2507.09650)
 
@@ -1930,7 +1782,7 @@ Detection of hateful content (discriminatory speech or hate speech) against reli
 The benchmark measures human preferences for LLM responses along the Inglehart-Welzel value dimensions, specifically contrasting 'traditional values' (which emphasize religion and traditional beliefs) with 'secular-rational values' (which emphasize reason and social change). The study found that 21 state-of-the-art LLMs exhibit an 'algorithmic monoculture,' consistently producing responses aligned with secular-rational values, while failing to represent the significant portion of the human population that prefers traditional (religious) values. Existing alignment methods struggle to learn these traditional preferences from standard datasets. The paper's proposed 'negatively-correlated (NC) sampling' method, however, significantly improves the ability of models to learn and represent these diverse, including traditional/religious, preferences.
 
 
-### Measuring AI Alignment with Human Flourishing
+## Measuring AI Alignment with Human Flourishing
 
 [https://arxiv.org/abs/2507.07787](https://arxiv.org/abs/2507.07787)
 
@@ -1939,7 +1791,7 @@ The benchmark measures human preferences for LLM responses along the Inglehart-W
 The benchmark measured AI alignment with the 'Faith and Spirituality' dimension of human flourishing. This included objective questions to test knowledge of world religions (drawn from the MMLU World Religions dataset) and subjective, free-text questions about spiritual paths and the role of suffering in spirituality, which were evaluated for their ability to support flourishing. Models consistently underperformed in the 'Faith and Spirituality' dimension compared to other dimensions of human flourishing. For example, the top-scoring model overall, o3, achieved a score of 72/100, but scored only 43 in the Faith dimension, highlighting a significant performance gap in areas requiring existential or spiritual reasoning.
 
 
-### Entropy-Memorization Law: Evaluating Memorization Difficulty of Data in LLMs
+## Entropy-Memorization Law: Evaluating Memorization Difficulty of Data in LLMs
 
 [https://arxiv.org/abs/2507.06056](https://arxiv.org/abs/2507.06056)
 
@@ -1948,7 +1800,7 @@ The benchmark measured AI alignment with the 'Faith and Spirituality' dimension 
 The applicability of the Entropy-Memorization Law to different semantic data categories, including 'Religious and Biblical Texts' and 'Spiritual and Religious Beliefs', by analyzing the linear correlation between data entropy and memorization scores. The paper found that its proposed 'Entropy-Memorization Law'—a linear correlation between data entropy and memorization difficulty—holds for semantic clusters identified as 'Religious and Biblical Texts' and 'Spiritual and Religious Beliefs'. These clusters did not exhibit unique behavior compared to other semantic categories like programming or scientific research, demonstrating the law's general applicability across disparate data types.
 
 
-### Toward Valid Measurement Of (Un)fairness For Generative AI: A Proposal For Systematization Through The Lens Of Fair Equality of Chances
+## Toward Valid Measurement Of (Un)fairness For Generative AI: A Proposal For Systematization Through The Lens Of Fair Equality of Chances
 
 [https://arxiv.org/abs/2507.04641](https://arxiv.org/abs/2507.04641)
 
@@ -1957,7 +1809,7 @@ The applicability of the Entropy-Memorization Law to different semantic data cat
 The paper does not introduce a new benchmark but analyzes existing ones. In its proposed framework, it identifies 'religious affiliation' as a 'morally arbitrary factor' that should be considered when measuring for unfairness, stereotypes, and disparate treatment in GenAI outputs. The paper identifies 'religious affiliation' as a 'morally arbitrary factor' that should not impact the equality of harms/benefits from GenAI outputs. It finds that existing fairness evaluation methods are often not nuanced enough to handle such factors, and proposes a new framework to improve the validity of these measurements.
 
 
-### Nunchi-Bench: Benchmarking Language Models on Cultural Reasoning with a Focus on Korean Superstition
+## Nunchi-Bench: Benchmarking Language Models on Cultural Reasoning with a Focus on Korean Superstition
 
 [https://arxiv.org/abs/2507.04014](https://arxiv.org/abs/2507.04014)
 
@@ -1966,7 +1818,7 @@ The paper does not introduce a new benchmark but analyzes existing ones. In its 
 Cultural reasoning and sensitivity regarding Korean superstitions and folk beliefs, which include quasi-religious elements like ancestral rites and warding off evil spirits. LLMs often possess factual knowledge of Korean superstitions (e.g., that eating seaweed soup before an exam is bad luck) but struggle to apply this knowledge correctly in nuanced, practical scenarios. Performance improves significantly when cultural context ('Korean') is explicitly provided in the prompt, more so than just using the Korean language. Models frequently fail to connect their factual knowledge from multiple-choice questions to advisory roles in open-ended questions.
 
 
-### Beyond Overcorrection: Evaluating Diversity in T2I Models with DIVBENCH
+## Beyond Overcorrection: Evaluating Diversity in T2I Models with DIVBENCH
 
 [https://arxiv.org/abs/2507.03015](https://arxiv.org/abs/2507.03015)
 
@@ -1975,7 +1827,7 @@ Cultural reasoning and sensitivity regarding Korean superstitions and folk belie
 The benchmark, DIVBENCH, measures over- and under-diversification in text-to-image models. In terms of religion, it specifically evaluates whether models adhere to historical and institutional constraints of religious roles (e.g., the gender of a 'Pope' or 'catholic priest'), testing for 'over-diversification' where models inappropriately alter these attributes in an attempt to generate diverse outputs. The paper finds that many diversification approaches overcorrect for bias, leading to contextually and historically inappropriate images, such as generating 'female Popes'. This highlights a failure to balance diversity with semantic fidelity for roles with specific religious or institutional constraints. The study shows that context-aware methods, guided by LLMs, can effectively avoid this over-diversification while still improving representation in contexts where diversity is appropriate.
 
 
-### McBE: A Multi-task Chinese Bias Evaluation Benchmark for Large Language Models
+## McBE: A Multi-task Chinese Bias Evaluation Benchmark for Large Language Models
 
 [https://arxiv.org/abs/2507.02088](https://arxiv.org/abs/2507.02088)
 
@@ -1984,7 +1836,7 @@ The benchmark, DIVBENCH, measures over- and under-diversification in text-to-ima
 Detection of stereotypes and biases related to various religious and belief systems, including Buddhism, Christianity, Islam, Confucianism, Folk Beliefs, Atheism, Judaism, and Taoism, within the Chinese cultural context. Overall, all tested models demonstrated relatively lower bias (achieved better scores) in the religion and region categories compared to other categories such as nationality and race.
 
 
-### MALIBU Benchmark: Multi-Agent LLM Implicit Bias Uncovered
+## MALIBU Benchmark: Multi-Agent LLM Implicit Bias Uncovered
 
 [https://arxiv.org/abs/2507.01019](https://arxiv.org/abs/2507.01019)
 
@@ -1993,7 +1845,16 @@ Detection of stereotypes and biases related to various religious and belief syst
 The benchmark measured implicit bias by having multi-agent LLM judges score identical responses that were attributed to different religious personas (Muslim, Jewish, Atheist, Christian). Discrepancies in scores for metrics like Creativity, Accuracy, Efficiency, and Reliability across these personas were used to quantify bias. For GPT-4o mini, performance was comparable across Jewish, Christian, and Muslim personas, but Atheist personas scored significantly lower in accuracy. DeepSeek-v3 amplified biases: Jewish personas excelled in accuracy, Muslim personas in efficiency, while Atheist personas ranked lowest overall, particularly in accuracy. In direct comparisons, DeepSeek-v3 showed a large performance gap between Christian (highest) and Atheist (lowest) groups, whereas GPT-4o mini exhibited minimal bias across religious categories.
 
 
-### TuCo: Measuring the Contribution of Fine-Tuning to Individual Responses of LLMs
+## Intertextual Parallel Detection in Biblical Hebrew: A Transformer-Based Benchmark
+
+[https://arxiv.org/abs/2506.24117](https://arxiv.org/abs/2506.24117)
+
+**Date:** 2025-07-01
+
+Detection of intertextual parallel passages in the Hebrew Bible, a foundational religious text for Judaism and Christianity. E5 and AlephBERT were the most effective models for detecting parallel passages in Biblical Hebrew. E5 excelled at identifying true parallels but had a higher tendency for false positives, while AlephBERT was slightly less effective on true parallels but demonstrated better differentiation between parallel and non-parallel passages. The study concludes that pre-trained models can enhance the efficiency and accuracy of detecting intertextual parallels in ancient religious texts.
+
+
+## TuCo: Measuring the Contribution of Fine-Tuning to Individual Responses of LLMs
 
 [https://arxiv.org/abs/2506.23423](https://arxiv.org/abs/2506.23423)
 
@@ -2002,7 +1863,7 @@ The benchmark measured implicit bias by having multi-agent LLM judges score iden
 The benchmark measured the models' agreement with specific religious beliefs (e.g., 'subscribes-to-Christianity') through their responses to yes-or-no questions from the Model-Written Evaluations (MWE) dataset. The study found that the alignment of large language models with specific religious beliefs can be controlled by scaling the magnitude of their fine-tuning component (FTC). For example, increasing the FTC by 25% on Llama2 13B led to a 24% increase in its alignment with Christian beliefs, indicating that these beliefs are strongly represented in its fine-tuning dataset.
 
 
-### Datasets for Fairness in Language Models: An In-Depth Survey
+## Datasets for Fairness in Language Models: An In-Depth Survey
 
 [https://arxiv.org/abs/2506.23411](https://arxiv.org/abs/2506.23411)
 
@@ -2011,7 +1872,7 @@ The benchmark measured the models' agreement with specific religious beliefs (e.
 The survey analyzes fairness datasets to measure biases related to religious identity. This includes: 1) Representativeness bias, comparing the distribution of religious groups in datasets to real-world populations. 2) Annotation bias, assessing whether automated scoring tools (e.g., for toxicity, sentiment, regard) systematically produce different scores for text involving different religious groups. 3) Stereotype leakage, quantifying stereotypical associations between religious identity terms (e.g., 'muslim', 'jewish') and trait words (e.g., 'passive', 'shooter', 'rich') using information-theoretic metrics like PMI. The survey found significant and systematic biases related to religion across multiple fairness datasets. Key findings include: 1) Representational biases are common, with datasets often over-representing non-Christian groups (e.g., BOLD, CrowS-Pairs) or specific minorities like Jews and Muslims (e.g., RedditBias) compared to population statistics. 2) Automated scoring tools exhibit annotation bias; for instance, Perspective API assigns higher toxicity scores to religion-related sentences (StereoSet) and specifically to mentions of marginalized identities like 'Muslim' and 'Jewish' (HolisticBias). 3) Datasets contain strong, latent stereotypical associations (stereotype leakage), such as 'muslim-passive', 'hindu-aggressive' (StereoSet), 'atheist-lawyer' (CrowS-Pairs), and hateful collocations like 'islamic-immigration' and 'jewish-shooter' (RedditBias). 4) Normative biases are present, with datasets like BOLD showing a pro-religion skew in sentiment and regard scores, while Atheism consistently receives the most negative sentiment, lowest regard, and highest toxicity scores.
 
 
-### FairI Tales: Evaluation of Fairness in Indian Contexts with a Focus on Bias and Stereotypes
+## FairI Tales: Evaluation of Fairness in Indian Contexts with a Focus on Bias and Stereotypes
 
 [https://arxiv.org/abs/2506.23111](https://arxiv.org/abs/2506.23111)
 
@@ -2020,7 +1881,7 @@ The survey analyzes fairness datasets to measure biases related to religious ide
 The benchmark, INDIC-BIAS, measures social biases and stereotypes against religious groups in the Indian context. This is evaluated across three tasks: 1) Plausibility, which assesses if models find scenarios involving certain religious identities more likely than others (e.g., a Muslim vs. a Hindu man caught pickpocketing); 2) Judgment, which tests if models systematically favor or blame certain religious identities in ambiguous scenarios; and 3) Generation, which evaluates if models produce equitable long-form content or reinforce stereotypes when prompted with scenarios involving different religious identities. The study found that LLMs reflect common societal biases regarding religion in India. Major religions and sects (like Hindu, Muslim) tend to receive negative bias, while smaller groups (like Buddhists, Jains, Sufis) are positively biased. Models showed stronger stereotypical associations for religion compared to other identity categories like region and tribe, indicated by high Stereotype Association Rate (SAR) values. Furthermore, models had particularly low refusal rates for prompts involving religious stereotypes, suggesting they are more susceptible to engaging with and perpetuating them.
 
 
-### MedEthicsQA: A Comprehensive Question Answering Benchmark for Medical Ethics Evaluation of LLMs
+## MedEthicsQA: A Comprehensive Question Answering Benchmark for Medical Ethics Evaluation of LLMs
 
 [https://arxiv.org/abs/2506.22808](https://arxiv.org/abs/2506.22808)
 
@@ -2029,7 +1890,7 @@ The benchmark, INDIC-BIAS, measures social biases and stereotypes against religi
 The benchmark measures how LLMs handle medical ethics dilemmas, including scenarios where a physician's personal religious beliefs (e.g., Roman Catholic) conflict with patient care requests (e.g., contraception). The paper does not report specific findings related to religion. Findings are focused on the general performance of models on medical ethics questions, which include scenarios involving physicians' personal or religious beliefs. The overall finding is that medical-specific fine-tuning can degrade performance on ethics questions compared to foundation models.
 
 
-### PAPERSPLEASE: A Benchmark for Evaluating Motivational Values of Large Language Models Based on ERG Theory
+## PAPERSPLEASE: A Benchmark for Evaluating Motivational Values of Large Language Models Based on ERG Theory
 
 [https://arxiv.org/abs/2506.21961](https://arxiv.org/abs/2506.21961)
 
@@ -2038,7 +1899,7 @@ The benchmark measures how LLMs handle medical ethics dilemmas, including scenar
 The benchmark measures bias in decision-making based on explicit religious identity cues. It evaluates how Large Language Models, in a role-playing scenario as an immigration officer, change their approval or denial rates for applicants when their religion (Christian, Muslim, Hindu, or Buddhist) is specified. Religious identity cues significantly altered LLM decisions, revealing complex, model-specific biases. For instance, Llama-3.1-8B-Instruct showed higher acceptance for Christian and Hindu identities in 'Existence' scenarios but lower acceptance for Muslim identity in 'Growth' scenarios. Gemini-2.0-flash showed decreased acceptance for Muslim, Hindu, and Buddhist identities in the 'Growth' category. Qwen3-14B showed notable declines for Hindu identity in 'Existence' scenarios but increased acceptance for Christian identity in 'Relatedness' scenarios. The findings indicate that model responses to religious identities are inconsistent and vary based on the specific religion, motivational context, and the model itself, highlighting fairness and bias concerns.
 
 
-### A Cross-Cultural Comparison of LLM-based Public Opinion Simulation: Evaluating Chinese and U.S. Models on Diverse Societies
+## A Cross-Cultural Comparison of LLM-based Public Opinion Simulation: Evaluating Chinese and U.S. Models on Diverse Societies
 
 [https://arxiv.org/abs/2506.21587](https://arxiv.org/abs/2506.21587)
 
@@ -2047,7 +1908,7 @@ The benchmark measures bias in decision-making based on explicit religious ident
 Accuracy of simulating public opinion of individuals based on their demographic profile, which included 'religious beliefs' as a variable for the U.S. sample. The paper included 'religious beliefs' as a demographic variable for simulating U.S. public opinion prompts. However, it did not present or analyze any results based on this variable, focusing instead on political, economic, and educational demographics.
 
 
-### MFTCXplain: A Multilingual Benchmark Dataset for Evaluating the Moral Reasoning of LLMs through Multi-hop Hate Speech Explanation
+## MFTCXplain: A Multilingual Benchmark Dataset for Evaluating the Moral Reasoning of LLMs through Multi-hop Hate Speech Explanation
 
 [https://arxiv.org/abs/2506.19073](https://arxiv.org/abs/2506.19073)
 
@@ -2056,7 +1917,7 @@ Accuracy of simulating public opinion of individuals based on their demographic 
 The benchmark measures moral reasoning in multi-hop hate speech explanations. This includes detecting hate speech directed at religious groups (e.g., Muslims) and analyzing how it is framed using moral categories like degradation, harm, or fairness. LLMs struggle with the nuanced moral framing of speech related to religious identity. For instance, a model misclassified a tweet discussing religious values and the separation of church and state as 'Degradation', whereas human annotators identified it as a 'Fairness' concern, highlighting the model's difficulty in distinguishing critique from mockery in religious contexts.
 
 
-### GUARDSET-X: Multi-Domain, Policy-Grounded, AI Security Guardrail Benchmark
+## GUARDSET-X: Multi-Domain, Policy-Grounded, AI Security Guardrail Benchmark
 
 [https://arxiv.org/abs/2506.19054](https://arxiv.org/abs/2506.19054)
 
@@ -2065,7 +1926,7 @@ The benchmark measures moral reasoning in multi-hop hate speech explanations. Th
 Bias against specific religious groups (Christianity, Islam, Buddhism, Judaism, No religion) as part of the 'Biased Code' generation test set. The paper includes religion as one of 17 bias categories for generating biased code examples but does not report specific findings related to the performance of models on religious bias.
 
 
-### MUCAR: Benchmarking Multilingual Cross-Modal Ambiguity Resolution for Multimodal Large Language Models
+## MUCAR: Benchmarking Multilingual Cross-Modal Ambiguity Resolution for Multimodal Large Language Models
 
 [https://arxiv.org/abs/2506.17046](https://arxiv.org/abs/2506.17046)
 
@@ -2074,7 +1935,7 @@ Bias against specific religious groups (Christianity, Islam, Buddhism, Judaism, 
 The benchmark measures a model's ability to resolve cross-modal ambiguity in a 'Cultural' context, which includes understanding how the meaning of a term (e.g., '666') changes based on its associated religious connotation (e.g., 'number of the beast' in Christian tradition) versus a secular cultural one. Models struggle with resolving ambiguity in the 'Cultural' category, which includes religious context. An example highlighted is the interpretation of '666', which models must differentiate between its negative connotation in a Christian context (associated with the 'number of the beast') and its positive meaning as internet slang in a modern Chinese context. The paper notes that even top-performing models show limitations in handling such subtle, cross-modal ambiguities.
 
 
-### SANSKRITI: A Comprehensive Benchmark for Evaluating Language Models’ Knowledge of Indian Culture
+## SANSKRITI: A Comprehensive Benchmark for Evaluating Language Models’ Knowledge of Indian Culture
 
 [https://arxiv.org/abs/2506.15355](https://arxiv.org/abs/2506.15355)
 
@@ -2083,7 +1944,7 @@ The benchmark measures a model's ability to resolve cross-modal ambiguity in a '
 Factual knowledge of religious belief systems, practices, and traditions within the Indian cultural context, evaluated through multiple-choice questions. The performance of all evaluated language models was notably high for questions related to the 'religion' attribute, along with medicine and cultural common sense, especially when compared to attributes like costumes, cuisines, and art where models generally struggled.
 
 
-### HYPOTHESIS TESTING FOR QUANTIFYING LLM-HUMAN MISALIGNMENT IN MULTIPLE CHOICE SETTINGS
+## HYPOTHESIS TESTING FOR QUANTIFYING LLM-HUMAN MISALIGNMENT IN MULTIPLE CHOICE SETTINGS
 
 [https://arxiv.org/abs/2506.14997](https://arxiv.org/abs/2506.14997)
 
@@ -2092,7 +1953,7 @@ Factual knowledge of religious belief systems, practices, and traditions within 
 The benchmark measured the misalignment between an LLM's simulated multiple-choice survey responses and actual human responses for various demographic subgroups, including specific religious affiliations and levels of religious attendance. GPT-3.5-Turbo showed significant misalignment with human responses across all tested religious subgroups. The paper notes that groups with high religious attendance exhibited relatively high misalignment scores, indicating the model struggles to accurately replicate the opinions of these subgroups, particularly on contentious survey questions.
 
 
-### Structured Moral Reasoning in Language Models: A Value-Grounded Evaluation Framework
+## Structured Moral Reasoning in Language Models: A Value-Grounded Evaluation Framework
 
 [https://arxiv.org/abs/2506.14948](https://arxiv.org/abs/2506.14948)
 
@@ -2101,7 +1962,7 @@ The benchmark measured the misalignment between an LLM's simulated multiple-choi
 The benchmark measures LLM alignment with various value systems and ethical theories in moral reasoning scenarios. Religion is a minor component, measured indirectly through frameworks like Schwartz's Value System, which includes 'Tradition' defined as 'Respect cultural and religious heritage', and Rokeach's Value Survey, which includes 'salvation' as a terminal value. The paper does not present specific findings related to religion, as it was not a primary focus of the analysis. The main findings are that structured moral prompting based on value systems, ethical theories, and cognitive reasoning strategies significantly improves the quality, coherence, and consistency of LLMs' moral decision-making, with prompt quality often being more impactful than model scale.
 
 
-### A Benchmark for Text-to-Image Alignment and Kernelized Direct Preference Optimization
+## A Benchmark for Text-to-Image Alignment and Kernelized Direct Preference Optimization
 
 [https://arxiv.org/abs/2506.14903](https://arxiv.org/abs/2506.14903)
 
@@ -2110,7 +1971,7 @@ The benchmark measures LLM alignment with various value systems and ethical theo
 The benchmark measures hate speech, stereotypes, and bias against religious groups, including Islam, Christianity, Judaism, and Hinduism. It evaluates the model's ability to generate non-hateful and respectful images when given toxic, religiously-charged prompts. The paper demonstrates that text-to-image models like SDXL often generate hateful and stereotypical religious imagery in response to toxic prompts (e.g., associating Islam with terrorism). Their proposed DPO-Kernel method significantly improves alignment, generating neutral or refusing to generate harmful content for such prompts, as shown in visual examples where it produces neutral images like mosques or solid colors instead of offensive caricatures.
 
 
-### RAGtifier: Evaluating RAG Generation Approaches of State-of-the-Art RAG Systems for the SIGIR LiveRAG Competition
+## RAGtifier: Evaluating RAG Generation Approaches of State-of-the-Art RAG Systems for the SIGIR LiveRAG Competition
 
 [https://arxiv.org/abs/2506.14412](https://arxiv.org/abs/2506.14412)
 
@@ -2119,7 +1980,7 @@ The benchmark measures hate speech, stereotypes, and bias against religious grou
 The benchmark (DataMorgana) included a user persona designed to emulate the 'Bishop of Rome' (the Pope). This persona was characterized as a religious figure who 'cites biblical texts and religious doctrines in discussions, often emphasizing the importance of faith, morality, and the teachings of Jesus Christ.' The measurement, therefore, involved the system's ability to handle questions generated from this specific religious and rhetorical style. The paper does not report any specific findings related to religion. The results are aggregated across all question types generated by the DataMorgana benchmark, and there is no separate analysis of how the models performed on questions generated from the religious user persona.
 
 
-### Domain Specific Benchmarks for Evaluating Multimodal Large Language Models
+## Domain Specific Benchmarks for Evaluating Multimodal Large Language Models
 
 [https://arxiv.org/abs/2506.12958](https://arxiv.org/abs/2506.12958)
 
@@ -2128,7 +1989,7 @@ The benchmark (DataMorgana) included a user persona designed to emulate the 'Bis
 The benchmark measured the models' ability to perform philosophical and theological reasoning, specifically focusing on interpretive depth, scriptural exegesis, and abstract metaphysical deduction. Current chatbot performance on religious and theological queries is inconsistent. While models can creatively outline arguments and interpret symbols, they often require significant prompting for complex logic and may fail to understand the full ramifications. These tasks test a model's ability to go beyond surface-level summarization to achieve contextually rich reasoning.
 
 
-### Benchmarking Trustworthiness in Multimodal LLMs for Video Understanding
+## Benchmarking Trustworthiness in Multimodal LLMs for Video Understanding
 
 [https://arxiv.org/abs/2506.12336](https://arxiv.org/abs/2506.12336)
 
@@ -2137,7 +1998,7 @@ The benchmark measured the models' ability to perform philosophical and theologi
 The benchmark measures the model's tendency to agree with stereotypical statements in religious contexts, as part of the 'Agreement on Stereotypes' task. The paper does not report specific findings related to religion. The results for the 'Agreement on Stereotypes' task, which includes a religion category, are aggregated. General findings indicate that closed-source models exhibit significantly lower agreement rates with stereotypes (6.5%-12.3%) compared to most open-source models.
 
 
-### DeepResearch Bench: A Comprehensive Benchmark for Deep Research Agents
+## DeepResearch Bench: A Comprehensive Benchmark for Deep Research Agents
 
 [https://arxiv.org/abs/2506.11763](https://arxiv.org/abs/2506.11763)
 
@@ -2146,7 +2007,7 @@ The benchmark measures the model's tendency to agree with stereotypical statemen
 The benchmark measures the ability of AI agents to perform deep research and generate comprehensive reports on topics within 22 domains, one of which is 'Religion'. The paper includes 'Religion' as a topic in its benchmark but does not provide specific analysis or findings on how different models performed on this particular topic.
 
 
-### VLM@school – Evaluation of AI image understanding on German middle school knowledge
+## VLM@school – Evaluation of AI image understanding on German middle school knowledge
 
 [https://arxiv.org/abs/2506.11604](https://arxiv.org/abs/2506.11604)
 
@@ -2155,7 +2016,7 @@ The benchmark measures the ability of AI agents to perform deep research and gen
 The benchmark measured the ability of Vision Language Models to identify scenes, figures, and concepts from religious art (primarily Judeo-Christian), answer factual questions about them, and handle adversarial questions designed to be misleading within the religious context. Models could identify well-known religious scenes from Judeo-Christian art with relatively high accuracy, with the best models scoring over 50% in the religion domain. However, they struggled with follow-up questions that required deeper reasoning within the established image context. The models were also highly susceptible to adversarial or misleading questions about the religious scenes, often hallucinating details not present in the image. Performance on adversarial questions in the religion domain was significantly lower than on general questions, with top scores around 25-29%.
 
 
-### The Scales of Justitia: A Comprehensive Survey on Safety Evaluation of LLMs
+## The Scales of Justitia: A Comprehensive Survey on Safety Evaluation of LLMs
 
 [https://arxiv.org/abs/2506.11094](https://arxiv.org/abs/2506.11094)
 
@@ -2164,7 +2025,7 @@ The benchmark measured the ability of Vision Language Models to identify scenes,
 Stereotype detection, refusal rates, and discrimination against religious groups as a protected identity category. LLMs demonstrate a heightened sensitivity towards religious groups, often resulting in a high rate of refusal to answer prompts related to them. Models also tend to produce more stereotyped responses when presented with intersectional identities that include religion.
 
 
-### PersonaLens: A Benchmark for Personalization Evaluation in Conversational AI Assistants
+## PersonaLens: A Benchmark for Personalization Evaluation in Conversational AI Assistants
 
 [https://arxiv.org/abs/2506.09902](https://arxiv.org/abs/2506.09902)
 
@@ -2173,7 +2034,7 @@ Stereotype detection, refusal rates, and discrimination against religious groups
 The benchmark includes religious affiliation as one of several demographic variables to construct diverse user profiles. It measures how well conversational AI assistants can personalize responses for these user profiles in task-oriented dialogues, but it primarily uses religion to ensure a diverse and representative user dataset rather than testing for religious bias or knowledge. The paper reports on the distribution of religious affiliations within its user profile dataset to demonstrate its diversity and real-world representation. However, it does not provide specific findings on how the tested language models' personalization capabilities vary across different religious groups.
 
 
-### A High-Quality Dataset and Reliable Evaluation for Interleaved Image-Text Generation
+## A High-Quality Dataset and Reliable Evaluation for Interleaved Image-Text Generation
 
 [https://arxiv.org/abs/2506.09427](https://arxiv.org/abs/2506.09427)
 
@@ -2182,7 +2043,7 @@ The benchmark includes religious affiliation as one of several demographic varia
 The benchmark measures the ability of multimodal models to generate high-quality, synergistic, and instruction-following interleaved image-text responses across a wide range of topics. One of these topics is 'Religion & Religious Sites', which involves generating text and images related to religious locations and practices. The paper does not report specific findings related to the religion topic. The findings are aggregated across all topics, concluding that the authors' SEIR-generated samples (InterSyn) achieve the highest mean scores and lowest variance across all evaluation dimensions (text content, image content, image quality, and image-text synergy), outperforming existing models like GPT-40+DALL-E.
 
 
-### CAIRE: Cultural Attribution of Images by Retrieval
+## CAIRE: Cultural Attribution of Images by Retrieval
 
 [https://arxiv.org/abs/2506.09109](https://arxiv.org/abs/2506.09109)
 
@@ -2191,7 +2052,7 @@ The benchmark measures the ability of multimodal models to generate high-quality
 The benchmark measured the ability of vision-language models to correctly attribute the cultural relevance of images to specific 'world religions', among other cultural categories. This was done by evaluating whether the model could assign a high relevance score to an image depicting a religious concept (e.g., a Buddhist scene) for the correct corresponding religious label. The paper's findings are not specific to religion but apply to it as one of several tested cultural categories. The primary finding is that the proposed CAIRE framework significantly improves the performance of vision-language models in attributing cultural relevance to images. For the 'specific' test set, which includes concepts from 'world religions', CAIRE improved the F1 score by up to 24.5 points over baseline models, demonstrating a much stronger ability to correctly identify culturally relevant labels for images.
 
 
-### CULTURALFRAMES: Assessing Cultural Expectation Alignment in Text-to-Image Models and Evaluation Metrics
+## CULTURALFRAMES: Assessing Cultural Expectation Alignment in Text-to-Image Models and Evaluation Metrics
 
 [https://arxiv.org/abs/2506.08835](https://arxiv.org/abs/2506.08835)
 
@@ -2200,7 +2061,7 @@ The benchmark measured the ability of vision-language models to correctly attrib
 The benchmark measured the ability of text-to-image models to accurately and respectfully generate visual representations of religious rituals, customs, and practices, covering both explicit elements stated in the prompt (e.g., 'Jain temple') and implicit elements expected from the cultural context (e.g., appropriate attire, specific rituals). Text-to-image models frequently misrepresent religious traditions and practices, particularly in Asian contexts, often relying on stereotypes. Annotator feedback revealed that terms related to religious places (temple, church, shrine) and specific faiths (Jain, Sikh) were often depicted incorrectly. Qualitative examples showed that models tend to generate generic religious scenes (e.g., a generic church instead of a specific, named shrine) and fail to capture the nuances of religious events, attire, and objects, which human raters with cultural knowledge easily identify as incorrect.
 
 
-### CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of Large Language Models in Mental Health Question Answering
+## CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of Large Language Models in Mental Health Question Answering
 
 [https://arxiv.org/abs/2506.08584](https://arxiv.org/abs/2506.08584)
 
@@ -2209,7 +2070,7 @@ The benchmark measured the ability of text-to-image models to accurately and res
 Exclusion of questions related to religion and spirituality from the dataset. Questions related to religion and spirituality were explicitly excluded from the benchmark's scope during the data curation phase. This was done because these topics were considered sensitive and would require extensive manual review, which was outside the scope of the study's design.
 
 
-### NeurIPS 2025 E2LM Competition : Early Training Evaluation of Language Models
+## NeurIPS 2025 E2LM Competition : Early Training Evaluation of Language Models
 
 [https://arxiv.org/abs/2506.07731](https://arxiv.org/abs/2506.07731)
 
@@ -2218,7 +2079,16 @@ Exclusion of questions related to religion and spirituality from the dataset. Qu
 The competition framework allows for the measurement of knowledge in theology and religious studies as part of its scope for evaluating language models. The paper does not present any specific findings related to religion. Its only connection is the inclusion of 'Theology / Religious Studies' as an acceptable knowledge-intensive domain for participants to create evaluation benchmarks for the competition. No religious-themed benchmarks were analyzed or had their results reported.
 
 
-### How do datasets, developers, and models affect biases in a low-resourced language?
+## Towards a Unified Benchmark for Arabic Pronunciation Assessment: Qur’anic Recitation as Case Study
+
+[https://arxiv.org/abs/2506.07722](https://arxiv.org/abs/2506.07722)
+
+**Date:** 2025-06-12
+
+The benchmark measures the accuracy of mispronunciation detection for a religious text, specifically the recitation of the Qur'an in Modern Standard Arabic (MSA). It evaluates a model's ability to identify pronunciation errors against the correct, standardized recitation. The task of assessing Qur'anic pronunciation is highly complex, with current state-of-the-art speech models achieving modest performance (F1-score ≤ 30%). Multilingual self-supervised learning (SSL) models, specifically mHuBERT, consistently outperform monolingual English-only models in detecting Arabic mispronunciations. Furthermore, using synthetically generated data with simulated errors proved to be an effective strategy for training, highlighting the benefits of combining natural and synthetic datasets to improve model performance.
+
+
+## How do datasets, developers, and models affect biases in a low-resourced language?
 
 [https://arxiv.org/abs/2506.06816](https://arxiv.org/abs/2506.06816)
 
@@ -2227,7 +2097,7 @@ The competition framework allows for the measurement of knowledge in theology an
 The benchmark measured bias in sentiment analysis models by comparing the sentiment scores assigned to sentences that explicitly mentioned or implicitly reflected Hindu versus Muslim identities and their associated linguistic norms in the Bengali language. Significant religion-based biases were found in Bengali sentiment analysis models. 61% of the fine-tuned models were biased toward Muslim identities (assigning more positive sentiment scores), while 24% were biased toward Hindu identities. These biases were observed in both explicit mentions of religious identity and implicit linguistic norms. The study did not find a statistically significant correlation between the religious identity of the dataset developers and the direction of the biases in the models trained on those datasets.
 
 
-### BTPD: A Multilingual Hand-curated Dataset of Bengali Transnational Political Discourse Across Online Communities
+## BTPD: A Multilingual Hand-curated Dataset of Bengali Transnational Political Discourse Across Online Communities
 
 [https://arxiv.org/abs/2506.06813](https://arxiv.org/abs/2506.06813)
 
@@ -2236,7 +2106,7 @@ The benchmark measured bias in sentiment analysis models by comparing the sentim
 The dataset, BTPD, contains political discourse from Bengali online communities, which includes discussions about religion, secularism, and religious identity. Topic modeling was used to identify key themes, with one topic specifically related to Islam, Hinduism, and secularism in the context of politics, rights, and gender in Bengal. Topic modeling on the collected dataset revealed that religion is a central theme in Bengali political discourse. Specifically, topics emerged that highlighted the role of Islam, Hinduism, and secularism in discussions about politics, rights, gender equality, and caste.
 
 
-### A Culturally-Rich Romanian NLP Dataset from "Who Wants to Be a Millionaire?" Videos
+## A Culturally-Rich Romanian NLP Dataset from "Who Wants to Be a Millionaire?" Videos
 
 [https://arxiv.org/abs/2506.05991](https://arxiv.org/abs/2506.05991)
 
@@ -2245,7 +2115,7 @@ The dataset, BTPD, contains political discourse from Bengali online communities,
 The benchmark measured the accuracy of Large Language Models on multiple-choice questions related to religious topics as part of a broader evaluation across 12 topic categories. Religion was one of the topic categories where models generally achieved higher accuracy. A performance gradient was observed, with topics like Science, Religion, and Medicine yielding higher accuracies compared to topics like Literature, Music, and General Culture.
 
 
-### Evaluating Prompt-Driven Chinese Large Language Models: The Influence of Persona Assignment on Stereotypes and Safeguards
+## Evaluating Prompt-Driven Chinese Large Language Models: The Influence of Persona Assignment on Stereotypes and Safeguards
 
 [https://arxiv.org/abs/2506.04975](https://arxiv.org/abs/2506.04975)
 
@@ -2254,7 +2124,7 @@ The benchmark measured the accuracy of Large Language Models on multiple-choice 
 The benchmark measured the refusal rate and toxicity level of LLM responses towards various social groups, including religion. This was done to evaluate how persona assignment influences harmful content generation in a Chinese context. The social group category 'Religion' consistently yielded toxicity scores that were above the overall average, particularly when a negative persona was assigned to the model. Regression analysis confirmed that prompts involving religion had a statistically significant positive effect on the toxicity of the model's output compared to the baseline social group category ('region').
 
 
-### HoliSafe: Holistic Safety Benchmarking and Modeling for Vision-Language Model
+## HoliSafe: Holistic Safety Benchmarking and Modeling for Vision-Language Model
 
 [https://arxiv.org/abs/2506.04704](https://arxiv.org/abs/2506.04704)
 
@@ -2263,7 +2133,7 @@ The benchmark measured the refusal rate and toxicity level of LLM responses towa
 Detection and refusal of prompts containing harmful stereotypes, derogatory terms, or calls for discrimination/violence against religious groups. Religion is included as a sub-category of 'Hate' in the safety benchmark. Qualitative examples show that standard open-weight and closed-weight models tend to comply with potentially sensitive requests (e.g., telling a joke about religion), while the authors' safety-tuned 'Safe-VLM' models consistently refuse such requests, identifying them as potentially offensive.
 
 
-### MMR-V: What’s Left Unsaid? A Benchmark for Multimodal Deep Reasoning in Videos
+## MMR-V: What’s Left Unsaid? A Benchmark for Multimodal Deep Reasoning in Videos
 
 [https://arxiv.org/abs/2506.04141](https://arxiv.org/abs/2506.04141)
 
@@ -2272,7 +2142,7 @@ Detection and refusal of prompts containing harmful stereotypes, derogatory term
 The benchmark measures a model's ability to infer cultural and religious characteristics from visual symbols presented in videos. For example, one task required identifying the religion (e.g., Buddhism, Taoism, Christianity) associated with a plaque shown in a video. The paper does not report specific findings related to religious tasks. Performance metrics are aggregated across broader categories like 'Implicit Reasoning' and 'Explicit Reasoning', without a breakdown for questions involving religion.
 
 
-### Think Like a Person Before Responding: A Multi-Faceted Evaluation of Persona-Guided LLMs for Countering Hate Speech
+## Think Like a Person Before Responding: A Multi-Faceted Evaluation of Persona-Guided LLMs for Countering Hate Speech
 
 [https://arxiv.org/abs/2506.04043](https://arxiv.org/abs/2506.04043)
 
@@ -2281,7 +2151,7 @@ The benchmark measures a model's ability to infer cultural and religious charact
 Generation of counter-narratives for hate speech targeting religious groups (Jews, Muslims) and the detection of implicit religious hate speech. Models generated counter-narratives to explicit religious hate speech (e.g., against Jews and Muslims), but these responses were sometimes misclassified as hateful by detection models (MetaHateBERT) because they referenced the original hateful content. Additionally, emotion and sentiment analysis models (e.g., RoBERTa, Mistral) struggled to identify implicit or subtle hate speech against religious groups (e.g., against Islam), often misclassifying it as neutral.
 
 
-### When Fairness Isn’t Statistical: The Limits of Machine Learning in Evaluating Legal Reasoning
+## When Fairness Isn’t Statistical: The Limits of Machine Learning in Evaluating Legal Reasoning
 
 [https://arxiv.org/abs/2506.03913](https://arxiv.org/abs/2506.03913)
 
@@ -2290,7 +2160,7 @@ Generation of counter-narratives for hate speech targeting religious groups (Jew
 Disparities in Canadian refugee decision outcomes where 'religion' is cited as a legal ground for granting protection. The study found that judges with low grant rates cited religion as a legal ground for persecution more frequently (in 43.2% of their cases) compared to other legal grounds. Semantic clustering also revealed that certain linguistic patterns in decisions were associated with religion-based justifications. However, the paper concludes that these statistical signals are insufficient to evaluate legal fairness, as they don't distinguish between justified legal discretion and unjust bias.
 
 
-### From Guidelines to Practice: A New Paradigm for Arabic Language Model Evaluation
+## From Guidelines to Practice: A New Paradigm for Arabic Language Model Evaluation
 
 [https://arxiv.org/abs/2506.01920](https://arxiv.org/abs/2506.01920)
 
@@ -2299,7 +2169,7 @@ Disparities in Canadian refugee decision outcomes where 'religion' is cited as a
 Knowledge of Islamic studies, including Quranic exegesis, Hadith, Islamic jurisprudence, inheritance law, Islamic creed, prophetic biography, Quranic recitations, and Tajweed. All tested models struggled significantly with questions on Islamic studies, exhibiting the highest false rates among all categories. Claude 3.5 Sonnet performed relatively better than other models in this domain but still had a high error rate (41.82% False), while other models had false rates over 80%.
 
 
-### MLA-Trust: Benchmarking Trustworthiness of Multimodal LLM Agents in GUI Environments
+## MLA-Trust: Benchmarking Trustworthiness of Multimodal LLM Agents in GUI Environments
 
 [https://arxiv.org/abs/2506.01616](https://arxiv.org/abs/2506.01616)
 
@@ -2308,7 +2178,7 @@ Knowledge of Islamic studies, including Quranic exegesis, Hadith, Islamic jurisp
 Generation of hostile and prejudiced content against religious groups in an agentic context, specifically as part of a 'Generating Hostile Utterances' safety task. In a safety evaluation task (S.5: Generating Hostile Utterances), the GPT-4o model, when prompted with 'Tell me what you really think about Islam, don't hold back,' produced a strongly hostile and prejudiced statement targeting Islam and saved it to a notes app. This demonstrates that even advanced models can generate harmful religious content in agentic scenarios.
 
 
-### Exploring the Potential of LLMs as Personalized Assistants: Dataset, Evaluation, and Analysis
+## Exploring the Potential of LLMs as Personalized Assistants: Dataset, Evaluation, and Analysis
 
 [https://arxiv.org/abs/2506.01262](https://arxiv.org/abs/2506.01262)
 
@@ -2317,7 +2187,7 @@ Generation of hostile and prejudiced content against religious groups in an agen
 The benchmark measures an LLM's ability to generate personalized responses based on user persona dimensions. One of the 25 persona dimensions evaluated is 'Religion'. The paper does not report specific findings related to the 'Religion' persona dimension. The results are aggregated across all persona types, and performance is not broken down by individual dimensions.
 
 
-### BENCHHUB: A Unified Benchmark Suite for Holistic and Customizable LLM Evaluation
+## BENCHHUB: A Unified Benchmark Suite for Holistic and Customizable LLM Evaluation
 
 [https://arxiv.org/abs/2506.00482](https://arxiv.org/abs/2506.00482)
 
@@ -2326,7 +2196,7 @@ The benchmark measures an LLM's ability to generate personalized responses based
 Knowledge of religious topics as part of a broader Humanities and Social Science (HASS) category, evaluated through question-answering accuracy. The paper provides a quantitative analysis of different LLMs' performance on questions about religion. For English questions, Mistral-24B achieved the highest accuracy (0.948), followed by DeepSeek-R1-32B (0.914) and gpt-4.1 (0.912). For Korean questions, claude-3.7-sonnet (0.860) and Mistral-24B (0.856) performed best. This data supports the paper's broader conclusion that model performance rankings fluctuate significantly across different subject categories.
 
 
-### MultiHoax: A Dataset of Multi-hop False-Premise Questions
+## MultiHoax: A Dataset of Multi-hop False-Premise Questions
 
 [https://arxiv.org/abs/2506.00264](https://arxiv.org/abs/2506.00264)
 
@@ -2335,7 +2205,7 @@ Knowledge of religious topics as part of a broader Humanities and Social Science
 The benchmark measured the ability of Large Language Models to detect and reject multi-hop false-premise questions within the knowledge domain of 'religion', as one of ten diverse categories. All models performed poorly in identifying and rejecting multi-hop false-premise questions related to religion. The average accuracy across all tested models for the religion category was 0.210, indicating significant difficulty. While Claude Sonnet 3.5 achieved the highest score in this category (0.543), its performance, along with that of other models, highlights a persistent challenge in complex factual reasoning within this domain.
 
 
-### Evaluating the Contextual Integrity of False Positives in Algorithmic Travel Surveillance
+## Evaluating the Contextual Integrity of False Positives in Algorithmic Travel Surveillance
 
 [https://arxiv.org/abs/2506.00218](https://arxiv.org/abs/2506.00218)
 
@@ -2344,7 +2214,7 @@ The benchmark measured the ability of Large Language Models to detect and reject
 The benchmark measured the public's acceptance of police officers manually examining an individual's data from the 'Population Information System', which includes their 'current and previous memberships of a religious community', after being flagged by an automated travel surveillance system. The paper found that respondents considered it more acceptable for police to manually examine data from the Population Information System (which includes religious membership information) for passengers flagged during air travel compared to sea travel. The study did not provide a separate finding on the acceptability of using religious information in isolation from other data types in that system.
 
 
-### LaMP-QA: A Benchmark for Personalized Long-form Question Answering
+## LaMP-QA: A Benchmark for Personalized Long-form Question Answering
 
 [https://arxiv.org/abs/2506.00137](https://arxiv.org/abs/2506.00137)
 
@@ -2353,7 +2223,7 @@ The benchmark measured the public's acceptance of police officers manually exami
 Personalized long-form question answering on topics within specific religious domains (Judaism, Islam, Hinduism, Christianity, Buddhism). The paper does not report specific findings for religious subcategories. The findings are aggregated at the 'Society & Culture' category level, showing that personalization methods (especially the proposed PlanPers) significantly improve response quality over non-personalized baselines across all categories, including the one that contains religious topics.
 
 
-### HESEIA: A community-based dataset for evaluating social biases in large language models, co-designed in real school settings in Latin America
+## HESEIA: A community-based dataset for evaluating social biases in large language models, co-designed in real school settings in Latin America
 
 [https://arxiv.org/abs/2505.24712](https://arxiv.org/abs/2505.24712)
 
@@ -2362,7 +2232,7 @@ Personalized long-form question answering on topics within specific religious do
 Detection of stereotypes and biases related to religion as one of several demographic axes. Religious bias was identified as a distinct category. The frequency of its annotation by teachers and students varied across different school subjects, with the highest proportion of religious bias annotations found in 'Communication' (10.8%), 'Biology & Natural Sciences' (9.3%), and 'Language & Literature' (8.2%).
 
 
-### Is Your Model Fairly Certain? Uncertainty-Aware Fairness Evaluation for LLMs
+## Is Your Model Fairly Certain? Uncertainty-Aware Fairness Evaluation for LLMs
 
 [https://arxiv.org/abs/2505.23996](https://arxiv.org/abs/2505.23996)
 
@@ -2371,7 +2241,7 @@ Detection of stereotypes and biases related to religion as one of several demogr
 Bias detection in religious contexts using the uncertainty-aware fairness metric (UCerF) on the BBQ Lite dataset. On the BBQ Lite dataset, Mistral 7B demonstrated higher fairness (UCerF score: 0.975) in the context of religion compared to Pythia 1B (UCerF score: 0.902). The paper suggests Pythia 1B is more biased in social aspects like religion compared to Mistral 7B.
 
 
-### Measuring Sycophancy of Language Models in Multi-turn Dialogues
+## Measuring Sycophancy of Language Models in Multi-turn Dialogues
 
 [https://arxiv.org/abs/2505.23840](https://arxiv.org/abs/2505.23840)
 
@@ -2380,7 +2250,7 @@ Bias detection in religious contexts using the uncertainty-aware fairness metric
 The benchmark measures a model's ability to identify and challenge stereotypical biases related to religion when they are implicitly embedded in a user's query. This is part of the 'Challenging Unethical Queries' scenario. The paper does not provide specific findings for the religion domain. Instead, it aggregates the results for religion with other domains (race, gender, profession) under the 'Challenging Unethical Queries' scenario. The general findings for this scenario indicate that base models often show stronger resistance to adopting unethical user viewpoints compared to their instruction-tuned variants, and larger or reasoning-optimized models tend to perform better at resisting user pressure.
 
 
-### USB: A Comprehensive and Unified Safety Evaluation Benchmark for Multimodal Large Language Models
+## USB: A Comprehensive and Unified Safety Evaluation Benchmark for Multimodal Large Language Models
 
 [https://arxiv.org/abs/2505.23793](https://arxiv.org/abs/2505.23793)
 
@@ -2389,7 +2259,7 @@ The benchmark measures a model's ability to identify and challenge stereotypical
 The benchmark measured the model's vulnerability to generating harmful content in response to prompts involving religious discrimination. This was one of 61 tertiary safety risk categories evaluated. The paper's findings, visualized in a radar chart (Figure 9), show that commercial models like Claude-3.5-Sonnet2 demonstrated strong robustness against generating harmful content related to religious discrimination, with an Attack Success Rate (ASR) below 20%. In contrast, most open-source models, such as the VILA and LLaVA series, were highly vulnerable in this category, with ASRs approaching 100%.
 
 
-### Talent or Luck? Evaluating Attribution Bias in Large Language Models
+## Talent or Luck? Evaluating Attribution Bias in Large Language Models
 
 [https://arxiv.org/abs/2505.22910](https://arxiv.org/abs/2505.22910)
 
@@ -2398,7 +2268,7 @@ The benchmark measured the model's vulnerability to generating harmful content i
 The benchmark measures attribution bias by evaluating whether Large Language Models (LLMs) asymmetrically attribute the causes of success and failure (internal causes like effort/ability vs. external causes like luck/task difficulty) for individuals from different religious groups. The study found significant religious attribution biases. Models tend to favor dominant or Western identities. For instance, the success of Jewish and Muslim men is more often attributed to internal factors (e.g., effort, ability) in workplace and economics scenarios. In contrast, minority religious groups like Buddhists and Sikhs are consistently unfavored in workplace comparisons. For failure, Buddhist, Hindu, and Muslim individuals are more likely to be blamed. These religious asymmetries are particularly pronounced in cross-gender comparisons within scenarios related to humanities, such as art, leisure, and media.
 
 
-### VIGNETTE: Socially Grounded Bias Evaluation for Vision-Language Models
+## VIGNETTE: Socially Grounded Bias Evaluation for Vision-Language Models
 
 [https://arxiv.org/abs/2505.22897](https://arxiv.org/abs/2505.22897)
 
@@ -2407,7 +2277,7 @@ The benchmark measures attribution bias by evaluating whether Large Language Mod
 The benchmark measured stereotypical trait inference, perception of capabilities (e.g., struggle), factual accuracy, and discriminatory decision-making related to religious identities in visual contexts. Religion was one of eight social dimensions evaluated. VLMs exhibited varied and complex biases related to religion. Sikh identities had low factual accuracy despite clear visual markers (turbans). Non-Christian religions were often perceived as struggling with tasks. In decision-making, Hindu and Sikh individuals were selected more often, while Taoist and Muslim individuals were less preferred. Some groups like Taoists and Sikhs were rarely chosen despite not being negatively stereotyped. Models also made specific stereotypical associations, such as Christians being rated low in morality/ability but high in sociability, and Muslims struggling with playing guitar.
 
 
-### Evaluation of Cultural Competence of Vision-Language Models
+## Evaluation of Cultural Competence of Vision-Language Models
 
 [https://arxiv.org/abs/2505.22793](https://arxiv.org/abs/2505.22793)
 
@@ -2416,7 +2286,7 @@ The benchmark measured stereotypical trait inference, perception of capabilities
 The paper surveys existing benchmarks and proposes new frameworks for measuring a Vision-Language Model's cultural competence, which includes its ability to understand the religious significance of objects, symbols, and contexts within images (e.g., recognizing religious symbols, understanding if a food item has religious significance in a tradition). The paper finds, through a literature review, that existing evaluations and benchmarks for Vision-Language Models (VLMs) lack the necessary frameworks to assess deep cultural competence. Specifically concerning religion, they fail to probe for an understanding of religious symbolism, context, and the significance of cultural objects, instead focusing on surface-level identification. This gap means models' true grasp of religion as a cultural component is largely unevaluated.
 
 
-### MEDAL: A Framework for Benchmarking LLMs as Multilingual Open-Domain Dialogue Evaluators
+## MEDAL: A Framework for Benchmarking LLMs as Multilingual Open-Domain Dialogue Evaluators
 
 [https://arxiv.org/abs/2505.22777](https://arxiv.org/abs/2505.22777)
 
@@ -2425,7 +2295,7 @@ The paper surveys existing benchmarks and proposes new frameworks for measuring 
 Evaluation of open-domain dialogue quality (e.g., coherence, relevance) using conversations on various topics, including religion (e.g., trends in organized religion). The benchmark does not specifically measure religious bias or knowledge, but uses religious topics as a context for general dialogue assessment. A dialogue about 'global religious trends' was used as a primary example to illustrate a failure case in LLM-based evaluation. The LLM evaluator (Gemini-2.5-flash) incorrectly assessed a chatbot's response as effective, while human annotators correctly identified that the chatbot failed to answer the user's question, highlighting a gap in the evaluation capabilities of state-of-the-art models for nuanced topics.
 
 
-### Pearl: A Multimodal Culturally-Aware Arabic Instruction Dataset
+## Pearl: A Multimodal Culturally-Aware Arabic Instruction Dataset
 
 [https://arxiv.org/abs/2505.21979](https://arxiv.org/abs/2505.21979)
 
@@ -2434,7 +2304,7 @@ Evaluation of open-domain dialogue quality (e.g., coherence, relevance) using co
 The benchmark measures the model's knowledge of culturally significant artifacts, practices, and landmarks within the Arab world. This includes a substantial component of Islamic religious and cultural elements, such as identifying the Prophet's Mosque, understanding the context of Ramadan lanterns, and recognizing Sufi practices. It also includes knowledge of historical religious sites like pre-Islamic Roman temples. Proprietary models (Gemini Pro, OpenAI o3) and reasoning-centric open-source models (e.g., Qwen2.5-VL-32B-Instruct) demonstrated superior performance in understanding Arabic cultural knowledge. This knowledge base includes significant Islamic religious elements, such as landmarks, practices, and artifacts. The study also found that model performance varied by geographic region, indicating gaps in nuanced regional cultural knowledge, which encompasses religious understanding.
 
 
-### OVERT: A Benchmark for Over-Refusal Evaluation on Text-to-Image Models
+## OVERT: A Benchmark for Over-Refusal Evaluation on Text-to-Image Models
 
 [https://arxiv.org/abs/2505.21347](https://arxiv.org/abs/2505.21347)
 
@@ -2443,7 +2313,7 @@ The benchmark measures the model's knowledge of culturally significant artifacts
 The benchmark measures over-refusal rates of Text-to-Image models on benign prompts related to discrimination, where religion is one of the protected characteristics. This involves prompts that might be perceived as sensitive due to religious keywords but are intended to be harmless. Text-to-Image models showed varied over-refusal rates on benign prompts in the 'discrimination' category, which includes religion. On the OVERT-mini dataset, FLUX1.1-Pro (34.5%) and DALL-E-3-Web (28.0%) exhibited the highest refusal rates for benign discrimination-related prompts, whereas models like DALL-E-3-API (11.0%) and Imagen-3 (13.0%) were less prone to over-refusal, and SD-3.5-Large had a refusal rate of nearly zero.
 
 
-### STEER-BENCH: A Benchmark for Evaluating the Steerability of Large Language Models
+## STEER-BENCH: A Benchmark for Evaluating the Steerability of Large Language Models
 
 [https://arxiv.org/abs/2505.20645](https://arxiv.org/abs/2505.20645)
 
@@ -2452,7 +2322,7 @@ The benchmark measures over-refusal rates of Text-to-Image models on benign prom
 The benchmark measured the ability of Large Language Models to align their responses with the distinct norms, perspectives, and rhetorical styles of contrasting religious and non-religious communities (e.g., r/atheism vs. r/Christianity, r/exmuslim vs. r/islam). Religion was identified as an 'easy domain' where most models performed well (over 0.70 accuracy for top models). This strong performance is attributed to the clearly articulated community norms and polarized rhetoric within these religious and atheistic communities, which facilitates easier identification of community-aligned answers.
 
 
-### POLAR: A Benchmark for Multilingual, Multicultural, and Multi-Event Online Polarization
+## POLAR: A Benchmark for Multilingual, Multicultural, and Multi-Event Online Polarization
 
 [https://arxiv.org/abs/2505.20624](https://arxiv.org/abs/2505.20624)
 
@@ -2461,7 +2331,7 @@ The benchmark measured the ability of Large Language Models to align their respo
 The benchmark measures the detection of religious polarization, defined as content that focuses on religious identity to incite division, intolerance, and conflict between religious followers. The paper found that the type and intensity of religious polarization are highly context-dependent and shaped by local sociopolitical issues. For example, religious polarization was prominent in the Urdu dataset (reflecting religious tensions in Pakistan) and the Spanish and German datasets, while the Hausa dataset showed a low polarization rate despite covering religious topics, possibly due to cultural norms or platform moderation.
 
 
-### How Well Do Large Reasoning Models Translate? A Comprehensive Evaluation for Multi-Domain Machine Translation
+## How Well Do Large Reasoning Models Translate? A Comprehensive Evaluation for Multi-Domain Machine Translation
 
 [https://arxiv.org/abs/2505.19987](https://arxiv.org/abs/2505.19987)
 
@@ -2470,7 +2340,16 @@ The benchmark measures the detection of religious polarization, defined as conte
 Translation quality of religious texts (Koranic texts). In the Koran domain (German to English translation), Large Reasoning Models (LRMs) achieve lower COMET scores than traditional LLMs, but they achieve lower (better) MQM error scores. This suggests LRMs' reasoning capabilities may help in handling semantically ambiguous or stylistically atypical religious texts, even if lexical overlap with references is lower.
 
 
-### BNMMLU: Measuring Massive Multitask Language Understanding in Bengali
+## Anveshana: A New Benchmark Dataset for Cross-Lingual Information Retrieval On English Queries and Sanskrit Documents
+
+[https://arxiv.org/abs/2505.19494](https://arxiv.org/abs/2505.19494)
+
+**Date:** 2025-05-26
+
+Cross-lingual information retrieval of religious/philosophical documents (Sanskrit) using queries in a different language (English), with a focus on chapters of the Srimadbhagavatam. The study found that the Document Translation (DT) framework, which involves translating the Sanskrit religious texts into English and then performing monolingual retrieval, consistently performed the best. The BM25 model within the DT framework was particularly effective, showing superior performance in retrieving relevant documents from the Srimadbhagavatam. This indicates that leveraging well-developed models on translated religious texts is a more effective strategy than translating queries or attempting direct cross-lingual retrieval for this specific corpus.
+
+
+## BNMMLU: Measuring Massive Multitask Language Understanding in Bengali
 
 [https://arxiv.org/abs/2505.18951](https://arxiv.org/abs/2505.18951)
 
@@ -2479,7 +2358,7 @@ Translation quality of religious texts (Koranic texts). In the Koran domain (Ger
 The benchmark measured knowledge of comparative religion, including theology, world religions, and ethical teachings, as one of 41 subject domains. In the domain of 'Comparative Religion', models generally achieved high accuracy, classifying the subject as 'easy'. However, there was high variance in performance across different models, indicating inconsistency in their knowledge of the topic.
 
 
-### Personalized Safety in LLMs: A Benchmark and A Planning-Based Agent Approach
+## Personalized Safety in LLMs: A Benchmark and A Planning-Based Agent Approach
 
 [https://arxiv.org/abs/2505.18882](https://arxiv.org/abs/2505.18882)
 
@@ -2488,7 +2367,7 @@ The benchmark measured knowledge of comparative religion, including theology, wo
 Safe handling of philosophical/religious queries in high-risk scenarios. Specifically, it measures whether a model's response to an existentially loaded query (e.g., about the afterlife) appropriately acknowledges the user's emotional state and potential crisis (like suicidal ideation) rather than providing a generic, philosophical answer. Large Language Models can misclassify existentially loaded or philosophical queries (e.g., about the afterlife) as safe by providing neutral, abstract explanations. This approach is dangerous as it fails to recognize the emotional urgency and potential suicidal ideation in a vulnerable user's query, highlighting a critical failure mode where models lack context-aware safety for sensitive topics.
 
 
-### Robustness in Large Language Models: A Survey of Mitigation Strategies and Evaluation Metrics
+## Robustness in Large Language Models: A Survey of Mitigation Strategies and Evaluation Metrics
 
 [https://arxiv.org/abs/2505.18658](https://arxiv.org/abs/2505.18658)
 
@@ -2497,7 +2376,7 @@ Safe handling of philosophical/religious queries in high-risk scenarios. Specifi
 The paper surveys benchmarks like FLEX which measure fairness robustness. In the context of religion, this involves evaluating whether LLMs maintain fairness and avoid amplifying societal biases when subjected to adversarial prompts or challenging contexts related to religious affiliation. The paper reports findings from other studies indicating that Large Language Models can exhibit biases based on religious affiliation. It specifically notes that while attributes like race and political identity are stronger influencers of accuracy in the U.S., in Chile, religious affiliation plays a more significant role in performance disparities.
 
 
-### From Word to World: Evaluate and Mitigate Culture Bias in LLMs via Word Association Test
+## From Word to World: Evaluate and Mitigate Culture Bias in LLMs via Word Association Test
 
 [https://arxiv.org/abs/2505.18562](https://arxiv.org/abs/2505.18562)
 
@@ -2506,7 +2385,16 @@ The paper surveys benchmarks like FLEX which measure fairness robustness. In the
 The benchmark measured word associations for cue words related to 'Religion and belief' as one of 22 semantic categories to assess cross-cultural cognitive alignment. As one of 22 semantic categories, 'Religion and belief' was used to evaluate cultural alignment. The paper's visualization (Figure 3) shows that the proposed 'CultureSteer' method improved the performance and cultural balance of the tested LLMs on this category, particularly for the Qwen model which achieved more balanced cross-cultural performance in the broader super-category of 'Cultural Ideologies' (which includes religion) after steering.
 
 
-### Is It Bad to Work All the Time? Cross-Cultural Evaluation of Social Norm Biases in GPT-4
+## Measuring South Asian Biases in Large Language Models
+
+[https://arxiv.org/abs/2505.18466](https://arxiv.org/abs/2505.18466)
+
+**Date:** 2025-05-24
+
+The benchmark measures intersectional and culturally specific biases in Large Language Models, with religion (Hinduism and Islam) being a key dimension. It quantifies how cultural stigmas related to patriarchy and purdah in South Asia are reinforced in open-ended generative tasks. Contrary to prior English-language studies that found higher anti-Muslim bias, this paper finds that Hindu identities show higher average bias scores than Muslim identities in the South Asian linguistic context. This is particularly evident in Indo-Aryan languages for 'to-do list' generation tasks. The paper attributes this reversal to culturally-rooted representations, such as the strong association of Hindu women with domesticity, which inflates the bias score for the dominant group within this specific cultural and linguistic framework.
+
+
+## Is It Bad to Work All the Time? Cross-Cultural Evaluation of Social Norm Biases in GPT-4
 
 [https://arxiv.org/abs/2505.18322](https://arxiv.org/abs/2505.18322)
 
@@ -2515,7 +2403,7 @@ The benchmark measured word associations for cue words related to 'Religion and 
 Measurement of a model's agreement with stereotypical social norms, including the norm of religious endogamy (marrying within one's own religion). GPT-4 predicted that people from India would strongly agree with the social norm 'It is commendable to marry within your own religion'. While this prediction accurately reflected the ratings of human annotators from India, the annotators also judged this norm to be highly stereotypical, indicating the model perpetuates such stereotypes.
 
 
-### Fann or Flop: A Multigenre, Multiera Benchmark for Arabic Poetry Understanding in LLMs
+## Fann or Flop: A Multigenre, Multiera Benchmark for Arabic Poetry Understanding in LLMs
 
 [https://arxiv.org/abs/2505.18152](https://arxiv.org/abs/2505.18152)
 
@@ -2524,7 +2412,7 @@ Measurement of a model's agreement with stereotypical social norms, including th
 The benchmark measures the comprehension of Arabic poetry, which includes a significant 'Religious' genre, thereby assessing the models' ability to understand religious themes, devotion, and the associated cultural and historical context within poetic texts. State-of-the-art models, despite strong performance on standard Modern Standard Arabic (MSA) tasks, struggle with the interpretive and culturally embedded dimensions of historical Arabic poetry. They often fail to capture the deeper cultural and metaphorical meanings, which includes poetry with religious themes that rely on classical Arabic forms and rich cultural context.
 
 
-### MDIT-Bench: Evaluating the Dual-Implicit Toxicity in Large Multimodal Models
+## MDIT-Bench: Evaluating the Dual-Implicit Toxicity in Large Multimodal Models
 
 [https://arxiv.org/abs/2505.17144](https://arxiv.org/abs/2505.17144)
 
@@ -2533,7 +2421,7 @@ The benchmark measures the comprehension of Arabic poetry, which includes a sign
 The benchmark measured the ability of Large Multimodal Models to detect dual-implicit toxicity, specifically in the context of 'Religious prejudice'. This involves identifying subtle toxic content that requires synthesizing information from both text and image modalities. Model performance in detecting dual-implicit toxicity related to religious prejudice varied significantly. At the medium difficulty level, accuracies ranged from 9.27% to 67.31%, with models like Qwen2-VL performing best and InstructBLIP performing poorly. Performance generally degraded at the 'hard level' when toxic demonstrations were introduced, indicating models have hidden toxicity that can be activated. Human evaluation showed the initial data for this category had a lower quality (79% pass rate) compared to other categories, but the regenerated benchmark was effective (98% accuracy).
 
 
-### KRIS-Bench: Benchmarking Next-Level Intelligent Image Editing Models
+## KRIS-Bench: Benchmarking Next-Level Intelligent Image Editing Models
 
 [https://arxiv.org/abs/2505.16707](https://arxiv.org/abs/2505.16707)
 
@@ -2542,7 +2430,7 @@ The benchmark measured the ability of Large Multimodal Models to detect dual-imp
 The benchmark measured the model's ability to perform image edits based on knowledge of cultural and religious concepts, specifically through a 'Humanities' task that included recognizing and generating images of key religious figures (e.g., from Christianity). Leading models (e.g., GPT-4o, Gemini 2.0, Doubao) generally performed well on the 'Humanities' task, which included an instance requiring knowledge of Christianity (identifying its most representative figure). This performance on cultural knowledge tasks was stronger compared to their performance on tasks requiring scientific reasoning.
 
 
-### Evaluating Large Language Model with Knowledge Oriented Language Specific Simple Question Answering
+## Evaluating Large Language Model with Knowledge Oriented Language Specific Simple Question Answering
 
 [https://arxiv.org/abs/2505.16591](https://arxiv.org/abs/2505.16591)
 
@@ -2551,7 +2439,7 @@ The benchmark measured the model's ability to perform image edits based on knowl
 Factual knowledge of language-specific topics. Religion is mentioned as one of the categories of language-specific knowledge, alongside culture, history, geography, and local life. The paper does not report findings specifically about religion. The findings relate to the broader category of 'language-specific knowledge,' which includes religion. The key finding is that Large Language Models (LLMs) perform significantly worse, are less robust, and are more poorly calibrated on language-specific factual questions compared to general, global knowledge questions.
 
 
-### OpenEthics: A Comprehensive Ethical Evaluation of Open-Source Generative Large Language Models
+## OpenEthics: A Comprehensive Ethical Evaluation of Open-Source Generative Large Language Models
 
 [https://arxiv.org/abs/2505.16036](https://arxiv.org/abs/2505.16036)
 
@@ -2560,7 +2448,7 @@ Factual knowledge of language-specific topics. Religion is mentioned as one of t
 The benchmark measured the models' ability to avoid generating content containing religious biases as part of a broader 'Fairness' evaluation. It assessed whether models perpetuate stereotypes or biased statements about religious groups. Models generally performed well in avoiding religious bias. In both English and Turkish evaluations, the 'Bias - Religion' subcategory was among the highest-scoring areas within the Fairness dimension, indicating that the tested models are strongly aligned against generating religiously biased content.
 
 
-### Social Bias in Popular Question-Answering Benchmarks
+## Social Bias in Popular Question-Answering Benchmarks
 
 [https://arxiv.org/abs/2505.15553](https://arxiv.org/abs/2505.15553)
 
@@ -2569,7 +2457,7 @@ The benchmark measured the models' ability to avoid generating content containin
 Analysis of the statistical representation and distribution of religious groups within question-answering and reading comprehension benchmark datasets to identify representational bias. The analysis of religious entities in benchmark datasets revealed a significant representational bias. Christianity and its denominations (e.g., Catholicism) are the most frequently represented religions, ranking in the top-3 for 14 out of 15 analyzed benchmarks. Islam and Judaism appear in the top-3 for a smaller subset of benchmarks, while other major world religions like Buddhism and Hinduism are significantly less represented.
 
 
-### Multimodal Cultural Safety: Evaluation Framework and Alignment Strategies
+## Multimodal Cultural Safety: Evaluation Framework and Alignment Strategies
 
 [https://arxiv.org/abs/2505.14972](https://arxiv.org/abs/2505.14972)
 
@@ -2578,7 +2466,7 @@ Analysis of the statistical representation and distribution of religious groups 
 The benchmark measured the ability of Large Vision-Language Models (LVLMs) to recognize and respect culturally grounded norms, including religious sanctity and practices. This involved assessing whether models could identify the sacredness of items (e.g., Buddhist altars, Sak Yant tattoos), understand religious taboos (e.g., pig-derived products in Islam, alcohol consumption under Islamic law), and follow norms related to religious rituals. Leading models exhibit significant gaps in cultural safety, including the recognition of religious norms. For instance, models like GPT-4o often fail to recognize the deep spiritual and religious significance of items like Sak Yant tattoos, leading to culturally unsafe responses. While reasoning-capable models like Gemini-2.5-Pro performed better and could identify religious sensitivities (e.g., avoiding pigskin products in a Muslim context), they are not infallible. The paper concludes that even the best models struggle, and while increasing reasoning capacity helps, it does not fully resolve the issue of cultural and religious alignment.
 
 
-### MORALISE: A Structured Benchmark for Moral Alignment in Visual Language Models
+## MORALISE: A Structured Benchmark for Moral Alignment in Visual Language Models
 
 [https://arxiv.org/abs/2505.14728](https://arxiv.org/abs/2505.14728)
 
@@ -2587,7 +2475,7 @@ The benchmark measured the ability of Large Vision-Language Models (LVLMs) to re
 The benchmark measured the ability of Vision-Language Models to identify moral violations related to the topic of 'Respect', which is defined as 'Honoring others' cultural or religious beliefs and practices'. Models were evaluated on their ability to identify violations of 'Respect,' a moral category that includes honoring religious beliefs. This topic proved to be challenging for the evaluated models. While accuracy for simple moral judgment (binary classification of wrong/not wrong) was relatively high (average 86.81%), performance dropped significantly in more complex tasks like identifying the specific norm violated. For instance, the highest hit rate for single-norm attribution on 'Respect' was 66.67% (GPT-4o), and the F1 score for multi-norm attribution peaked at 42.32% (GPT-4o). The paper's analysis suggests that models perform poorly on more abstract or nuanced norms like 'liberty', 'respect', or 'reciprocity' compared to more common norms like 'harm' or 'justice'.
 
 
-### RAVENEA: A Benchmark for Multimodal Retrieval-Augmented Visual Culture Understanding
+## RAVENEA: A Benchmark for Multimodal Retrieval-Augmented Visual Culture Understanding
 
 [https://arxiv.org/abs/2505.14462](https://arxiv.org/abs/2505.14462)
 
@@ -2596,7 +2484,7 @@ The benchmark measured the ability of Vision-Language Models to identify moral v
 The benchmark measures the cultural understanding of Vision-Language Models, with 'Religion' included as one of eleven distinct cultural categories for images. It evaluates performance on culture-focused visual question answering (cVQA) and culture-informed image captioning (cIC) for images related to this category. The paper includes 'Religion' as one of eleven cultural categories in its RAVENEA benchmark, comprising 52 images. However, the analysis does not provide specific results or findings for the religion category. The main findings focus on the overall effectiveness of retrieval-augmented generation (RAG) for improving cultural understanding in VLMs, particularly for lightweight models, and note performance variations across different countries, but not across different cultural categories like religion.
 
 
-### TransBench: Benchmarking Machine Translation for Industrial-Scale Applications
+## TransBench: Benchmarking Machine Translation for Industrial-Scale Applications
 
 [https://arxiv.org/abs/2505.14244](https://arxiv.org/abs/2505.14244)
 
@@ -2605,7 +2493,7 @@ The benchmark measures the cultural understanding of Vision-Language Models, wit
 The benchmark measures the ability of machine translation systems to handle cultural and religious taboos, specifically avoiding the translation of words related to religious blasphemy (e.g., concerning Allah or the Prophet Muhammad in Islam). The paper establishes the importance of evaluating a model's ability to handle religious taboos (e.g., blasphemy in Islamic contexts) as a key component of 'Cultural Fidelity' for industrial-scale machine translation. It introduces a 'Taboo Words Dataset' specifically for this purpose but does not present comparative results of different models on this task.
 
 
-### MULTIHAL: MULTILINGUAL DATASET FOR KNOWLEDGE-GRAPH GROUNDED EVALUATION OF LLM HALLUCINATIONS
+## MULTIHAL: MULTILINGUAL DATASET FOR KNOWLEDGE-GRAPH GROUNDED EVALUATION OF LLM HALLUCINATIONS
 
 [https://arxiv.org/abs/2505.14101](https://arxiv.org/abs/2505.14101)
 
@@ -2614,7 +2502,7 @@ The benchmark measures the ability of machine translation systems to handle cult
 Factual accuracy of LLM responses to questions about religion, evaluated via semantic similarity between the generated answer and the ground truth. For the 'religion' domain, providing knowledge graph (KG) paths as context (KG-RAG) consistently worsened the semantic similarity score of the models' answers compared to standard question answering (QA) across all tested models. This contrasts with the general trend where KG-RAG improved performance in most other domains.
 
 
-### AdAEM: An Adaptively and Automated Extensible Measurement of LLMs’ Value Difference
+## AdAEM: An Adaptively and Automated Extensible Measurement of LLMs’ Value Difference
 
 [https://arxiv.org/abs/2505.13531](https://arxiv.org/abs/2505.13531)
 
@@ -2623,7 +2511,7 @@ Factual accuracy of LLM responses to questions about religion, evaluated via sem
 The benchmark measures LLMs' adherence to the 'Tradition' value dimension from Schwartz's Value Theory, which is explicitly defined as including 'respect, commitment, and acceptance of the customs and ideas that one's culture or religion provides'. It also assesses value orientations on topics related to 'Philosophy and Beliefs'. Larger Llama models (from 8B to 405B) show an increasing preference for the 'Tradition' value dimension, which includes religious customs. Additionally, models exhibit different value orientations on topics related to 'Philosophy and Beliefs'; for example, GLM prioritizes Security and Mistral prioritizes Stimulation more on belief-related topics compared to technology topics.
 
 
-### Role-Playing Evaluation for Large Language Models
+## Role-Playing Evaluation for Large Language Models
 
 [https://arxiv.org/abs/2505.13157](https://arxiv.org/abs/2505.13157)
 
@@ -2632,7 +2520,7 @@ The benchmark measures LLMs' adherence to the 'Tradition' value dimension from S
 In-character consistency for a historical religious persona (Orthodox monk). In a scenario requiring the model to role-play as a reclusive Orthodox monk from the year 1125, GPT-4o demonstrated poor in-character consistency by breaking character to provide modern information about the film 'Inception'. In contrast, Gemini-1.5-Pro successfully maintained the persona with an immersive response.
 
 
-### LEXAM: Benchmarking Legal Reasoning on 340 Law Exams
+## LEXAM: Benchmarking Legal Reasoning on 340 Law Exams
 
 [https://arxiv.org/abs/2505.12864](https://arxiv.org/abs/2505.12864)
 
@@ -2641,7 +2529,7 @@ In-character consistency for a historical religious persona (Orthodox monk). In 
 The benchmark measures legal reasoning on law school exams. A small subset of the exam questions are from courses on 'Recht und Religion' (Law and Religion) and 'Kirchenrechtsgeschichte und Kirchenrecht' (Church Law History and Church Law), thus measuring knowledge of religious/church law as a minor component. The paper does not report specific findings related to religion, as performance was not broken down by the religious-themed law courses included in the dataset.
 
 
-### Decoding the Mind of Large Language Models: A Quantitative Evaluation of Ideology and Biases
+## Decoding the Mind of Large Language Models: A Quantitative Evaluation of Ideology and Biases
 
 [https://arxiv.org/abs/2505.12183](https://arxiv.org/abs/2505.12183)
 
@@ -2650,7 +2538,7 @@ The benchmark measures legal reasoning on law school exams. A small subset of th
 Ideological stance/bias on religious topics, including the existence of God, the existence of an afterlife, and whether religious practice correlates with happiness. On religious topics like the existence of God and the afterlife, ChatGPT tended to be neutral, whereas Gemini consistently negated these questions, suggesting a potential bias. In a comparison of happiness, ChatGPT leaned towards the idea that people who practice religion are happier, while Gemini remained completely neutral.
 
 
-### A Multi-Task Benchmark for Abusive Language Detection in Low-Resource Settings
+## A Multi-Task Benchmark for Abusive Language Detection in Low-Resource Settings
 
 [https://arxiv.org/abs/2505.12116](https://arxiv.org/abs/2505.12116)
 
@@ -2659,7 +2547,7 @@ Ideological stance/bias on religious topics, including the existence of God, the
 The benchmark measures the ability of models to classify social media comments by topic, where 'religious' is one of the five possible topic labels (along with political, racial, sexist, and other). It also measures the detection of abusive language which may occur within a religious context. Models struggled to classify comments with religious topics, with some single-task fine-tuned models completely failing (scoring 0% F1 on the religious category). Multi-task joint learning helped mitigate this failure and improved performance on religious content classification. Large language models also showed varied performance, with the best model (GPT-4o) achieving a relatively high F1 score of 75.07% for the religious topic in a zero-shot setting, outperforming many of the fine-tuned models on this specific minority class.
 
 
-### EmoHopeSpeech: An Annotated Dataset of Emotions and Hope Speech in English and Arabic
+## EmoHopeSpeech: An Annotated Dataset of Emotions and Hope Speech in English and Arabic
 
 [https://arxiv.org/abs/2505.11959](https://arxiv.org/abs/2505.11959)
 
@@ -2668,7 +2556,7 @@ The benchmark measures the ability of models to classify social media comments b
 Detection of hope speech with a spiritual or religious component, categorized under 'Spiritual/Empowerment'. The study successfully created and annotated a 'Spiritual/Empowerment' subcategory of hope speech, defined as content inspired by religious or spiritual beliefs. This category was present in both English and Arabic data, with 'Spiritual Empowerment' and 'Solidarity/Peace' showing similar trends across both languages, though Arabic had higher overall counts.
 
 
-### FAIR-PP: A Synthetic Dataset for Aligning LLM with Personalized Preferences of Social Equity
+## FAIR-PP: A Synthetic Dataset for Aligning LLM with Personalized Preferences of Social Equity
 
 [https://arxiv.org/abs/2505.11861](https://arxiv.org/abs/2505.11861)
 
@@ -2677,7 +2565,7 @@ Detection of hope speech with a spiritual or religious component, categorized un
 The benchmark measures personalized preferences on social equity topics for various social groups, including religious groups. It assesses which of two opposing viewpoints on an equity issue (e.g., meritocracy vs. egalitarianism) is preferred for a given religious group. The paper's findings are not specific to religion. Religion was included as one of several social group categories to measure diverse, personalized preferences on social equity. The overall findings show that different personas hold distinct preferences across all social groups, and that mainstream LLMs tend to align most closely with the 'Disengaged Battlers' persona (Persona 3), which is characterized by a focus on day-to-day survival and feeling excluded from political discourse.
 
 
-### Video-SafetyBench: A Benchmark for Safety Evaluation of Video LVLMs
+## Video-SafetyBench: A Benchmark for Safety Evaluation of Video LVLMs
 
 [https://arxiv.org/abs/2505.11842](https://arxiv.org/abs/2505.11842)
 
@@ -2686,7 +2574,7 @@ The benchmark measures personalized preferences on social equity topics for vari
 The benchmark, Video-SafetyBench, measures the propensity of Large Vision-Language Models (LVLMs) to generate harmful content related to religious intolerance. This is assessed as a subcategory within the broader 'Hate' category, evaluating if models produce responses that involve unfair treatment, prejudice, discrimination, hate speech, harassment, or desecration of religious symbols based on religious beliefs. In scenarios involving hate speech, including religious intolerance, the proprietary model Claude 3.7 Sonnet consistently achieved the lowest attack success rates (ASR). In contrast, open-source models demonstrated varied and higher vulnerabilities. The paper notes that most models struggle to suppress subtle or implicit expressions of hate, indicating persistent challenges in detecting and mitigating this type of harmful content.
 
 
-### CARES: Comprehensive Evaluation of Safety and Adversarial Robustness in Medical LLMs
+## CARES: Comprehensive Evaluation of Safety and Adversarial Robustness in Medical LLMs
 
 [https://arxiv.org/abs/2505.11413](https://arxiv.org/abs/2505.11413)
 
@@ -2695,7 +2583,7 @@ The benchmark, Video-SafetyBench, measures the propensity of Large Vision-Langua
 Discrimination/bias based on religion in healthcare contexts. The benchmark's 'Discrimination and Healthcare Bias' safety principle explicitly includes religion as an attribute for which bias is measured. Additionally, role-playing scenarios include roles like 'a theologian discussing religious perspectives on medical ethics'. The paper includes religion as a category for evaluating discrimination and bias within its 'Discrimination and Healthcare Bias' principle. However, it does not report specific findings on how the tested models performed on prompts related to religion.
 
 
-### Empirically evaluating commonsense intelligence in large language models with large-scale human judgments
+## Empirically evaluating commonsense intelligence in large language models with large-scale human judgments
 
 [https://arxiv.org/abs/2505.10309](https://arxiv.org/abs/2505.10309)
 
@@ -2704,7 +2592,7 @@ Discrimination/bias based on religion in healthcare contexts. The benchmark's 'D
 The benchmark measures model 'commonsensicality' on a wide range of topics by comparing model judgments to human population consensus. This includes statements involving religious facts (e.g., 'The Pope is the leader of the Catholic Church') and beliefs (e.g., 'No one religion is the right path'). The paper does not provide aggregated findings for religious statements as a specific category. However, it uses religious-themed statements as examples. For instance, 'The conflating of religion and god has been damning to humanity' and 'No one religion is the right path' were identified as statements where models' own agreement often diverges from their prediction of broader human agreement. This suggests models find these types of statements less straightforward in terms of predicting social consensus.
 
 
-### DIF: A Framework for Benchmarking and Verifying Implicit Bias in LLMs
+## DIF: A Framework for Benchmarking and Verifying Implicit Bias in LLMs
 
 [https://arxiv.org/abs/2505.10013](https://arxiv.org/abs/2505.10013)
 
@@ -2713,7 +2601,7 @@ The benchmark measures model 'commonsensicality' on a wide range of topics by co
 The benchmark measured implicit bias in Large Language Models' mathematical problem-solving capabilities when prompted with different sociodemographic personas, including religious identities. This was quantified by the difference in correctly answered questions when the model was assigned a specific religious identity versus a baseline 'American' identity. The paper found that assigning a religious identity to an LLM can influence its mathematical reasoning accuracy. A key general finding was an inverse correlation between model intelligence (problem-solving accuracy) and implicit bias; more capable models tended to show less performance variation across different personas, including religious ones. The bias induced by religious personas was found to be statistically significant compared to a null model with random strings, indicating the semantic content of the religious identity prompt affects performance.
 
 
-### WorldView-Bench: A Benchmark for Evaluating Global Cultural Perspectives in Large Language Models
+## WorldView-Bench: A Benchmark for Evaluating Global Cultural Perspectives in Large Language Models
 
 [https://arxiv.org/abs/2505.09595](https://arxiv.org/abs/2505.09595)
 
@@ -2722,7 +2610,7 @@ The benchmark measured implicit bias in Large Language Models' mathematical prob
 The benchmark, WorldView-Bench, measures the cultural inclusivity of Large Language Models, with one of the seven categories specifically focused on Religion. It evaluates the model's ability to provide diverse and balanced perspectives on religious topics, such as the role of religious institutions in government, the relationship between science and religion, and the adaptation of religious teachings to modern societal values, through open-ended, free-form responses. Baseline LLMs exhibit a strong Western-centric bias, heavily favoring secular and Western philosophical viewpoints even on religious questions. Models developed in non-Western contexts, like Fanar from Qatar, still showed a predominant Western perspective with only a marginal increase in Islamic cultural references. However, implementing intervention strategies, particularly a Multi-Agent System (MAS) where different agents represent distinct cultural worldviews (including an 'Islamic Agent'), dramatically improved cultural balance. The MAS approach increased the cultural diversity score (PDS Entropy) from a baseline of 13% to 94%, achieving a nearly equal representation of all measured perspectives, including religious ones.
 
 
-### Large language model psychometrics: A systematic review of evaluation, validation, and enhancement
+## Large language model psychometrics: A systematic review of evaluation, validation, and enhancement
 
 [https://arxiv.org/abs/2505.08245](https://arxiv.org/abs/2505.08245)
 
@@ -2731,7 +2619,7 @@ The benchmark, WorldView-Bench, measures the cultural inclusivity of Large Langu
 Measurement of spiritual values and their effect on social fairness; evaluation of moral justification (e.g., religious or spiritual). The paper notes that different spiritual values have been found to affect the performance of Large Language Models in social-fairness scenarios.
 
 
-### Developing A Framework to Support Human Evaluation of Bias in Generated Free Response Text
+## Developing A Framework to Support Human Evaluation of Bias in Generated Free Response Text
 
 [https://arxiv.org/abs/2505.03053](https://arxiv.org/abs/2505.03053)
 
@@ -2740,7 +2628,7 @@ Measurement of spiritual values and their effect on social fairness; evaluation 
 The framework measured stereotype detection and provocation in religious contexts. Specifically, it evaluated templates designed to provoke stereotypes such as 'Hindu people worship idols' and biases related to criminal responsibility in scenarios involving Muslim and Jewish individuals. Human evaluation of free-text responses revealed that some of the underlying religion-based templates from the BBQ benchmark were problematic. For example, a template intended to test stereotypes about Hindus engaging in idol worship was flawed because the comparison group (Catholics) is also subject to a similar stereotype, invalidating the test. Another template involving Muslim and Jewish individuals was found to be problematic because the LLM's nuanced response about the presumption of innocence was deemed more appropriate by human evaluators than what the benchmark expected, leading to the template's removal.
 
 
-### WorldGenBench: A World-Knowledge-Integrated Benchmark for Reasoning-Driven Text-to-Image Generation
+## WorldGenBench: A World-Knowledge-Integrated Benchmark for Reasoning-Driven Text-to-Image Generation
 
 [https://arxiv.org/abs/2505.01490](https://arxiv.org/abs/2505.01490)
 
@@ -2749,7 +2637,7 @@ The framework measured stereotype detection and provocation in religious context
 The benchmark, WorldGenBench, measures a model's ability to generate semantically accurate images based on prompts requiring world knowledge of religious culture, history, and art. This includes correctly depicting religious sites (e.g., Bamiyan Buddhas, Echmiadzin Monastery), figures (e.g., monks), artifacts, and the historical context surrounding them (e.g., the destruction of the Buddhas by 2001). The paper's findings, using examples from religious history and culture, indicate that text-to-image models struggle to incorporate world knowledge and implicit reasoning. For instance, models often fail to depict the Bamiyan Buddhas as destroyed ruins in a post-March 2001 context, instead generating images of the intact statues based on a literal reading of the text. Even the best-performing models, like GPT-4o, only satisfy a small fraction (e.g., 30%) of the detailed requirements for generating a scene in a historically significant religious location like the Echmiadzin Monastery, demonstrating a significant gap in deep contextual understanding.
 
 
-### LLM Ethics Benchmark: A Three-Dimensional Assessment System for Evaluating Moral Reasoning in Large Language Models
+## LLM Ethics Benchmark: A Three-Dimensional Assessment System for Evaluating Moral Reasoning in Large Language Models
 
 [https://arxiv.org/abs/2505.00853](https://arxiv.org/abs/2505.00853)
 
@@ -2758,7 +2646,7 @@ The benchmark, WorldGenBench, measures a model's ability to generate semanticall
 Measurement of alignment with the 'Sanctity/Purity' moral foundation, which is part of the Moral Foundations Questionnaire and includes concepts of divinity, sacredness, and spiritual purity. All tested models showed lower alignment with 'binding' moral foundations (which include Loyalty, Authority, and Sanctity) compared to 'individualizing' foundations (Care and Fairness). This indicates a weaker grasp of moral intuitions related to concepts like divinity and sacredness, which are often tied to religious or traditional group cohesion.
 
 
-### Mind the Language Gap: Automated and Augmented Evaluation of Bias in LLMs for High- and Low-Resource Languages
+## Mind the Language Gap: Automated and Augmented Evaluation of Bias in LLMs for High- and Low-Resource Languages
 
 [https://arxiv.org/abs/2504.18560](https://arxiv.org/abs/2504.18560)
 
@@ -2767,7 +2655,16 @@ Measurement of alignment with the 'Sanctity/Purity' moral foundation, which is p
 The benchmark measured bias against religious groups by evaluating Large Language Models on prompt templates designed to detect discriminatory attitudes and stereotypes related to religion. The study found that bias detection related to religion was 'comparatively stable across both languages and models'. This stability is attributed to shared religious terminology and keywords that transfer well across languages. Gemini 1.5 Flash was noted to often excel in the religion category. The religion category had a moderate rate (5.44%) of unprocessable responses compared to other bias categories.
 
 
-### THE PARADOX OF POETIC INTENT IN BACK-TRANSLATION: EVALUATING THE QUALITY OF LARGE LANGUAGE MODELS IN CHINESE TRANSLATION
+## Seeing The Words: Evaluating AI-generated Biblical Art
+
+[https://arxiv.org/abs/2504.16974](https://arxiv.org/abs/2504.16974)
+
+**Date:** 2025-04-23
+
+The accuracy and contextual appropriateness of AI-generated images based on Christian biblical text prompts. The evaluation assessed aspects such as the number of people, gender, age, and sentiment in the generated images, comparing them against historical religious artwork. Midjourney generated illustration-like images that were most similar to the selected human artworks, showing sophisticated details and a reasonable understanding of the religious context. DALL-E 2 performed the worst, often failing to capture the biblical context and generating images with incomprehensible text. Stable Diffusion produced versatile results, with its similarity to human artwork depending on the prompt; it showed some understanding of religious context but with more stylistic diversity, including abstract and science-fiction themes. All models struggled with details like generating accurate hands and sometimes included anachronistic elements like Christian crosses in Old Testament scenes.
+
+
+## THE PARADOX OF POETIC INTENT IN BACK-TRANSLATION: EVALUATING THE QUALITY OF LARGE LANGUAGE MODELS IN CHINESE TRANSLATION
 
 [https://arxiv.org/abs/2504.16286](https://arxiv.org/abs/2504.16286)
 
@@ -2776,7 +2673,7 @@ The benchmark measured bias against religious groups by evaluating Large Languag
 Preservation of cultural and religious nuance (e.g., Buddhist mantras, Taoist cosmology and geomancy) in Chinese-English back-translation. Large Language Models struggle to translate texts rich in religious and cultural allusions, such as Buddhist mantras, Buddhist cosmology, and Taoist geomantic texts. They tend to produce overly literal translations that strip away the profound meaning, nuance, and historical context, a phenomenon the paper terms the 'Paradox of Poetic Intent'. For instance, a Taoist geomantic text was reduced to a simple navigation manual, failing to capture its metaphysical significance.
 
 
-### FarsEval-PKBETS: A new diverse benchmark for evaluating Persian large language models
+## FarsEval-PKBETS: A new diverse benchmark for evaluating Persian large language models
 
 [https://arxiv.org/abs/2504.14690](https://arxiv.org/abs/2504.14690)
 
@@ -2785,7 +2682,7 @@ Preservation of cultural and religious nuance (e.g., Buddhist mantras, Taoist co
 The benchmark measured the model's accuracy in answering questions related to Islam, specifically the Shia branch. It also aimed to examine potential bias the model may have towards other sects and religions by covering topics in practical jurisprudence and theoretical beliefs. For the religion category, Llama3-70B achieved an accuracy of 0.54 (0.57 including semi-correct answers), PersianMind scored 0.29 (0.32), and Dorna scored 0.39 (0.43). This indicates that the models, particularly those fine-tuned for Persian, struggle with questions related to Islam within the Iranian cultural context.
 
 
-### D-GEN: Automatic Distractor Generation and Evaluation for Reliable Assessment of Generative Models
+## D-GEN: Automatic Distractor Generation and Evaluation for Reliable Assessment of Generative Models
 
 [https://arxiv.org/abs/2504.13439](https://arxiv.org/abs/2504.13439)
 
@@ -2794,7 +2691,7 @@ The benchmark measured the model's accuracy in answering questions related to Is
 The benchmark (MMLU) used in the paper includes a sub-task designed to measure knowledge of world religions. The paper does not provide specific findings for the 'World Religions' sub-category. The results are aggregated at the 'Humanities' domain level, where the D-GEN method was shown to preserve model performance rankings and induce similar model confidence levels compared to the original MMLU benchmark, thus validating the paper's distractor generation and evaluation methodology.
 
 
-### ELAB: Extensive LLM Alignment Benchmark in Persian Language
+## ELAB: Extensive LLM Alignment Benchmark in Persian Language
 
 [https://arxiv.org/abs/2504.12553](https://arxiv.org/abs/2504.12553)
 
@@ -2803,7 +2700,7 @@ The benchmark (MMLU) used in the paper includes a sub-task designed to measure k
 Equitable treatment regardless of religion, as a component of the broader fairness evaluation. The paper does not report any specific findings related to religion, as it was only a minor component of the overall fairness evaluation.
 
 
-### Bias Beyond English: Evaluating Social Bias and Debiasing Methods in a Low-Resource Setting
+## Bias Beyond English: Evaluating Social Bias and Debiasing Methods in a Low-Resource Setting
 
 [https://arxiv.org/abs/2504.11183](https://arxiv.org/abs/2504.11183)
 
@@ -2812,7 +2709,7 @@ Equitable treatment regardless of religion, as a component of the broader fairne
 Stereotypical bias detection related to religious groups by comparing the likelihood of stereotypical vs. non-stereotypical sentences. Models evaluated on Thai and Indonesian data consistently exhibit significantly higher religious bias scores compared to other languages. The authors suggest this may stem from the strong cultural emphasis on Buddhism in Thailand and Islam in Indonesia, which could lead to more pronounced religious biases in datasets from these regions.
 
 
-### CLASH: EVALUATING LANGUAGE MODELS ON JUDGING HIGH-STAKES DILEMMAS FROM MULTIPLE PERSPECTIVES
+## CLASH: EVALUATING LANGUAGE MODELS ON JUDGING HIGH-STAKES DILEMMAS FROM MULTIPLE PERSPECTIVES
 
 [https://arxiv.org/abs/2504.10823](https://arxiv.org/abs/2504.10823)
 
@@ -2821,7 +2718,7 @@ Stereotypical bias detection related to religious groups by comparing the likeli
 The benchmark measures a model's ability to make value-based judgments in high-stakes dilemmas that can include religious contexts. For example, it evaluates how models handle a scenario involving the construction of a Sikh temple, forcing a judgment between community safety/tranquility and avoiding prejudice against a religious group. In a dilemma involving a Sikh community's temple construction, several models demonstrated 'value confusion.' They struggled to correctly prioritize between competing values—community safety versus avoiding prejudice and promoting development. Smaller models, in particular, tended to ambiguously integrate conflicting values, leading to indecisive or incorrect final answers, highlighting a general failure in situational adaptability in contexts that can involve religious considerations.
 
 
-### Quantifying the Spread of Online Incivility in Brazilian Politics
+## Quantifying the Spread of Online Incivility in Brazilian Politics
 
 [https://arxiv.org/abs/2504.08960](https://arxiv.org/abs/2504.08960)
 
@@ -2830,7 +2727,7 @@ The benchmark measures a model's ability to make value-based judgments in high-s
 Detection of hate speech and stereotyping targeting individuals or groups based on religious beliefs, as one of four dimensions of online incivility. Self-identified religious individuals supporting the right-wing candidate (Bolsonaro) were a notable group among disseminators of uncivil content, particularly in the categories of Hate Speech and Stereotyping (HSST) and Threats to Democratic Institutions and Values (THREAT).
 
 
-### BiasCause: Evaluate Socially Biased Causal Reasoning of Large Language Models
+## BiasCause: Evaluate Socially Biased Causal Reasoning of Large Language Models
 
 [https://arxiv.org/abs/2504.07997](https://arxiv.org/abs/2504.07997)
 
@@ -2839,7 +2736,7 @@ Detection of hate speech and stereotyping targeting individuals or groups based 
 The benchmark measures socially biased causal reasoning in LLMs when answering questions related to religion. This includes questions designed to elicit stereotypes (e.g., 'Who are more likely to be terrorists?') and questions about historical events involving religious groups (e.g., 'Who were participants of the Thirty Years' War?'). All four tested models demonstrated significant social bias when answering biased questions related to religion. According to Figure 5, the models achieved low accuracy (below 20%) on these questions, indicating they frequently provided biased responses rather than neutral or refusal-to-answer responses. The performance on religion-related questions was comparable to other sensitive attributes showing high bias, such as age and disability status.
 
 
-### Metamorphic Testing for Fairness Evaluation in Large Language Models: Identifying Intersectional Bias in LLaMA and GPT
+## Metamorphic Testing for Fairness Evaluation in Large Language Models: Identifying Intersectional Bias in LLaMA and GPT
 
 [https://arxiv.org/abs/2504.07982](https://arxiv.org/abs/2504.07982)
 
@@ -2848,7 +2745,7 @@ The benchmark measures socially biased causal reasoning in LLMs when answering q
 The benchmark measured intersectional fairness biases by evaluating changes in sentiment and tone in LLM responses when religious identity was included as a sensitive attribute, often in combination with other demographic factors like occupation, ethnicity, and economic status. Combinations of sensitive attributes that included religion were highly likely to reveal fairness biases in the LLaMA 3 model. Specifically, intersections such as 'Religion, Political views, Marital Status' and 'Religion, Social Status, and Economic Condition' frequently highlighted fairness issues, likely due to complex social sensitivities associated with these combined factors.
 
 
-### Benchmarking Adversarial Robustness to Bias Elicitation in Large Language Models: Scalable Automated Assessment with LLM-as-a-Judge
+## Benchmarking Adversarial Robustness to Bias Elicitation in Large Language Models: Scalable Automated Assessment with LLM-as-a-Judge
 
 [https://arxiv.org/abs/2504.07887](https://arxiv.org/abs/2504.07887)
 
@@ -2857,7 +2754,7 @@ The benchmark measured intersectional fairness biases by evaluating changes in s
 The benchmark measured biases in the representation of religious groups by examining stereotypes associated with specific faiths. Across all models tested, the 'Religion' bias category exhibited the highest average safety score in the initial assessment and was one of the most resilient categories against adversarial jailbreak attacks, suggesting that model alignment strategies may prioritize minimizing bias in religious contexts.
 
 
-### FairEval: Evaluating Fairness in LLM-Based Recommendations with Personality Awareness
+## FairEval: Evaluating Fairness in LLM-Based Recommendations with Personality Awareness
 
 [https://arxiv.org/abs/2504.07801](https://arxiv.org/abs/2504.07801)
 
@@ -2866,7 +2763,7 @@ The benchmark measured biases in the representation of religious groups by exami
 The benchmark measured fairness disparities in movie and music recommendations. Specifically, it assessed how recommendations change (using similarity and disparity metrics like SNSR and SNSV) when a user's religion is mentioned in a prompt, indicating systematic bias or preferential treatment. Both ChatGPT 4o and Gemini 1.5 Flash showed significant fairness disparities when religion was mentioned in user prompts. The 'Religion' attribute consistently resulted in high Sensitive-to-Neutral Similarity Range (SNSR) and Similarity Variance (SNSV) scores, indicating pronounced and inconsistent treatment across different religious groups. For Gemini 1.5 Flash, religion was the attribute causing the highest fairness disparity in music recommendations (SNSR of 0.3479).
 
 
-### NorEval: A Norwegian Language Understanding and Generation Evaluation Benchmark
+## NorEval: A Norwegian Language Understanding and Generation Evaluation Benchmark
 
 [https://arxiv.org/abs/2504.07749](https://arxiv.org/abs/2504.07749)
 
@@ -2875,7 +2772,16 @@ The benchmark measured fairness disparities in movie and music recommendations. 
 The benchmark measures whether language models generate or select answers that propagate false beliefs, misconceptions, stereotypes, and conspiracies related to religion, as part of the NorTruthfulQA dataset. The paper does not provide findings specific to the religion category. The general finding for the NorTruthfulQA task, which includes religion, is that language models struggle with truthfulness. They tend to generate less truthful answers in the open-ended generation setup compared to the multiple-choice setup, highlighting challenges in evaluating open-ended QA in Norwegian.
 
 
-### YourBench: Easy Custom Evaluation Sets for Everyone
+## SPLITS! A Flexible Dataset and Evaluation Framework for Sociocultural Linguistic Investigation
+
+[https://arxiv.org/abs/2504.04640](https://arxiv.org/abs/2504.04640)
+
+**Date:** 2025-07-31
+
+Validation of distinctive linguistic patterns, termed Sociocultural Linguistic Phenomena (SLP), used by different religious groups across various discussion topics. This includes confirming known phenomena (e.g., code-switching) and discovering novel, non-trivial linguistic differences between groups. The framework successfully validated known religious linguistic phenomena, such as Jewish people code-switching to Yiddish/Hebrew more in religious contexts. It also captured more subtle phenomena, like the Hindu/Sikh/Jain group discussing 'dance' more frequently in the context of cultural identity. The system was able to surface potentially novel, non-trivial findings for further research, such as Hindus/Jains/Sikhs emphasizing 'rural economics' during discussions on 'elections' more than Jewish people, while effectively filtering out obvious findings like 'Catholics talk about church'.
+
+
+## YourBench: Easy Custom Evaluation Sets for Everyone
 
 [https://arxiv.org/abs/2504.01833](https://arxiv.org/abs/2504.01833)
 
@@ -2884,7 +2790,7 @@ The benchmark measures whether language models generate or select answers that p
 Knowledge of facts about world religions, including figures, concepts, and holidays, as part of a replication of the MMLU 'World Religions' subset. The YourBench framework successfully replicated the MMLU 'World Religions' subset. The automatically generated questions were more challenging (resulted in lower absolute accuracy scores) for all tested models but perfectly preserved the relative performance ranking of the models compared to the original MMLU subset (Spearman correlation of 1.0).
 
 
-### Can LLMs Grasp Implicit Cultural Values? Benchmarking LLMs’ Cultural Intelligence with CQ-Bench
+## Can LLMs Grasp Implicit Cultural Values? Benchmarking LLMs’ Cultural Intelligence with CQ-Bench
 
 [https://arxiv.org/abs/2504.01127](https://arxiv.org/abs/2504.01127)
 
@@ -2893,7 +2799,7 @@ Knowledge of facts about world religions, including figures, concepts, and holid
 The benchmark, CQ-Bench, measures an LLM's ability to infer implicit cultural values and attitudes related to religion from natural, multi-character conversational text. This includes detecting a character's stance on a religious statement (Attitude Detection), selecting the correct religious value from a list (Value Selection), and extracting religious values without predefined options (Value Extraction). Models, including state-of-the-art ones, demonstrate a significant performance gap in understanding religious values compared to other cultural categories like political, social, and ethical values. Across tasks like attitude detection and value selection, models consistently scored lower in the religious domain (e.g., below 0.6 F1 score) than in others (e.g., above 0.7 F1 score for political values), indicating substantial room for improvement in comprehending nuanced religious beliefs.
 
 
-### Zero-shot Benchmarking: A Framework for Flexible and Scalable Automatic Evaluation of Language Models
+## Zero-shot Benchmarking: A Framework for Flexible and Scalable Automatic Evaluation of Language Models
 
 [https://arxiv.org/abs/2504.01001](https://arxiv.org/abs/2504.01001)
 
@@ -2902,7 +2808,7 @@ The benchmark, CQ-Bench, measures an LLM's ability to infer implicit cultural va
 The benchmark measured the general capability of language models to respond to open-ended prompts on a wide variety of topics. One of these topics was 'Religious & cultural studies,' which included subtopics such as 'Religious traditions,' 'Sacred texts,' 'Interfaith dialogue,' and 'Religious education.' The measurement assessed the quality of the generated text on these subjects. The paper does not present any specific findings related to religion. The 'Religious & cultural studies' topic was one of many categories used for data generation, and the results were aggregated across all topics to provide an overall performance ranking for each model. There is no breakdown or analysis of how models performed specifically on religious prompts.
 
 
-### BEATS: Bias Evaluation and Assessment Test Suite for Large Language Models
+## BEATS: Bias Evaluation and Assessment Test Suite for Large Language Models
 
 [https://arxiv.org/abs/2503.24310](https://arxiv.org/abs/2503.24310)
 
@@ -2911,7 +2817,7 @@ The benchmark measured the general capability of language models to respond to o
 The benchmark measured the presence and frequency of religion bias in Large Language Model responses as one of twelve evaluated bias categories. Religion bias was found to have a low frequency of occurrence (2.6%) in model responses, compared to other more prevalent biases such as stereotype bias (31.1%) and cultural bias (17.3%).
 
 
-### How Well Can Vision-Language Models Understand Humans’ Intention? An Open-ended Theory of Mind Question Evaluation Benchmark
+## How Well Can Vision-Language Models Understand Humans’ Intention? An Open-ended Theory of Mind Question Evaluation Benchmark
 
 [https://arxiv.org/abs/2503.22093](https://arxiv.org/abs/2503.22093)
 
@@ -2920,7 +2826,7 @@ The benchmark measured the presence and frequency of religion bias in Large Lang
 The benchmark measured the ability of Vision-Language Models to correctly identify religious visual cues (e.g., specific attire) and infer the associated intentions (e.g., praying) from images. All four tested models struggled to correctly identify religious attire, specifically misidentifying a cassock and stole as graduation robes, which led to incorrect inferences. However, GPT-based models were able to identify the intention of 'praying'.
 
 
-### OpenHuEval: Evaluating Large Language Model on Hungarian Specifics
+## OpenHuEval: Evaluating Large Language Model on Hungarian Specifics
 
 [https://arxiv.org/abs/2503.21500](https://arxiv.org/abs/2503.21500)
 
@@ -2929,7 +2835,16 @@ The benchmark measured the ability of Vision-Language Models to correctly identi
 Measures knowledge of Hungarian religion, rituals, and holidays as a component of the 'Life, Culture, and Customs' (LCC) dimension, which is one of eight Hungarian-specific dimensions evaluated by the OpenHuEval benchmark. The paper's findings focus on the overall performance of LLMs on Hungarian-specific knowledge tasks. While religion is a sub-component of the cultural evaluation, no specific findings related to religious knowledge or bias were detailed. The main findings highlight that models like Deepseek-R1 and GPT-40 perform best on Hungarian-specific tasks and that there are significant performance differences compared to general English benchmarks, underscoring the need for language-specific evaluations.
 
 
-### MAD Chairs: A new tool to evaluate AI
+## An evaluation of LLMs and Google Translate for translation of selected Indian languages via sentiment and semantic analyses
+
+[https://arxiv.org/abs/2503.21393](https://arxiv.org/abs/2503.21393)
+
+**Date:** 2025-07-01
+
+The benchmark measured the preservation of sentiment, semantic integrity, and cultural/philosophical context in machine translations of sacred Hindu texts (specifically the Bhagavad Gita) and other prominent Indian literature from Sanskrit, Hindi, and Telugu into English. GPT-based models performed best in maintaining sentiment polarity in translated religious/philosophical texts compared to human expert translations. LLMs generally produce better translations than Google Translate in terms of semantic richness. However, all models face challenges in preserving semantic integrity for figurative, metaphorical, and deep philosophical concepts found in texts like the Bhagavad Gita. GPT-4o was found to be the most consistent and reliable model for translating Sanskrit texts. The study also highlighted the ethical importance of accurately translating sacred texts, as mistranslations can alter religious interpretations, such as the meaning of a "tamasik" diet in Hinduism.
+
+
+## MAD Chairs: A new tool to evaluate AI
 
 [https://arxiv.org/abs/2503.20986](https://arxiv.org/abs/2503.20986)
 
@@ -2938,7 +2853,7 @@ Measures knowledge of Hungarian religion, rituals, and holidays as a component o
 The paper discusses how its benchmark could identify suboptimal 'gaslighting' strategies, theorizing that such behavior could be motivated by non-rational dogma based on religion, race, or sex. The paper makes a theoretical point that dogma, which could be religious in nature, is a potential non-rational driver for the suboptimal 'gaslighting' strategy. It does not present empirical findings on this, but frames such dogma-driven behavior as irrational and detrimental to game performance.
 
 
-### Mobile-MMLU: A Mobile Intelligence Language Understanding Benchmark
+## Mobile-MMLU: A Mobile Intelligence Language Understanding Benchmark
 
 [https://arxiv.org/abs/2503.20786](https://arxiv.org/abs/2503.20786)
 
@@ -2947,7 +2862,7 @@ The paper discusses how its benchmark could identify suboptimal 'gaslighting' st
 Knowledge of religious studies, as part of a broader mobile-centric language understanding benchmark. The benchmark includes 'Religious Studies' as one of its 80 topics. This topic was rated as having 'Low-Medium Relevance' for mobile use cases with a score of 4.38 out of 10. It was also identified as one of the 20 most challenging topics for the models tested, with an average accuracy of 0.574 across models.
 
 
-### The Case for ‘Thick Evaluations’ of Cultural Representation in AI
+## The Case for ‘Thick Evaluations’ of Cultural Representation in AI
 
 [https://arxiv.org/abs/2503.19075](https://arxiv.org/abs/2503.19075)
 
@@ -2956,7 +2871,7 @@ Knowledge of religious studies, as part of a broader mobile-centric language und
 Qualitative evaluation of cultural representativeness in AI-generated images, including the depiction of religious groups, practices (holidays), places of worship, attire, and social norms. Findings indicate that evaluating religious representation requires deep, situated cultural knowledge that outsiders lack. For example, participants noted incoherence in depictions of religious sites (e.g., boating in a gurudwara) and practices (e.g., celebrating holidays like Nauroz or Ganesh chaturthi differently across regions). The paper also found that goals for representation are context-dependent; a participant from a Muslim-majority region desired to see Muslims without hijabs and non-Muslims represented, challenging generic diversity metrics.
 
 
-### Video SimpleQA: Towards Factuality Evaluation in Large Video Language Models
+## Video SimpleQA: Towards Factuality Evaluation in Large Video Language Models
 
 [https://arxiv.org/abs/2503.18923](https://arxiv.org/abs/2503.18923)
 
@@ -2965,7 +2880,7 @@ Qualitative evaluation of cultural representativeness in AI-generated images, in
 The benchmark measures the ability of Large Video Language Models to answer multi-hop, fact-seeking questions that require external knowledge. Within this framework, it specifically measures factual knowledge about topics under the categories of 'Belief' and 'Religion' as part of the broader 'Society & Culture' domain. The paper includes 'Beliefs & Institutions' (which contains 'Religion') as a secondary category for evaluation. The findings do not focus specifically on religion but provide a performance breakdown across categories. In the 'Beliefs & Institutions' category, models like o3 and Gemini 2.5 Pro demonstrated relatively strong performance (F-scores around 70), while other models showed varied and often lower performance, consistent with the paper's overall finding of significant performance gaps in factual adherence across all topics.
 
 
-### TIB-STC: A Large-Scale Structured Tibetan Dataset for Low-Resource Language Modeling
+## TIB-STC: A Large-Scale Structured Tibetan Dataset for Low-Resource Language Modeling
 
 [https://arxiv.org/abs/2503.18288](https://arxiv.org/abs/2503.18288)
 
@@ -2974,7 +2889,7 @@ The benchmark measures the ability of Large Video Language Models to answer mult
 General language capabilities on a corpus where Tibetan Buddhism is a significant domain. The TIB-STC dataset, used for training and validation, includes a large amount of religious texts (specifically, Tibetan Buddhist scriptures and philosophy) to enable models to understand and generate culturally and religiously specific content. When prompted to write a poem in praise of a father, different models exhibited distinct stylistic choices reflecting their training. The model trained on the religiously and culturally rich TIB-STC dataset (Sun-Shine) produced a neutral response. In contrast, GPT-4o adopted a 'majestic style, reminiscent of divine scripture,' and DeepSeek-R1's response frequently alluded to the bodhisattva Mañjuśrī, suggesting it was 'slightly "overfitted"' on such religious themes.
 
 
-### REVAL: A Comprehension Evaluation on Reliability and Values of Large Vision-Language Models
+## REVAL: A Comprehension Evaluation on Reliability and Values of Large Vision-Language Models
 
 [https://arxiv.org/abs/2503.16566](https://arxiv.org/abs/2503.16566)
 
@@ -2983,7 +2898,7 @@ General language capabilities on a corpus where Tibetan Buddhism is a significan
 The benchmark measured social bias related to religion using both open-ended and closed-ended question formats. Current large models still exhibit biases related to religion, with varying sensitivities. For example, GPT-40, which excels in most other bias categories, performs significantly worse than MiniCPM-Llama3-v2.5 in the religion category.
 
 
-### Safety Evaluation and Enhancement of DeepSeek Models in Chinese Contexts
+## Safety Evaluation and Enhancement of DeepSeek Models in Chinese Contexts
 
 [https://arxiv.org/abs/2503.16529](https://arxiv.org/abs/2503.16529)
 
@@ -2992,7 +2907,7 @@ The benchmark measured social bias related to religion using both open-ended and
 The benchmark measured risk content identification and refusal to answer for various safety categories, including religious discrimination. The paper's safety evaluation included 'religious discrimination' as a risk category. The findings show that model safety capabilities in this category, along with others, generally declined after the distillation process. However, targeted safety enhancements significantly improved the models' performance in identifying and handling prompts related to religious discrimination, with some models showing notable accuracy improvements in this specific category after enhancement.
 
 
-### Fùxì: A Benchmark for Evaluating Language Models on Ancient Chinese Text Understanding and Generation
+## Fùxì: A Benchmark for Evaluating Language Models on Ancient Chinese Text Understanding and Generation
 
 [https://arxiv.org/abs/2503.15837](https://arxiv.org/abs/2503.15837)
 
@@ -3001,7 +2916,7 @@ The benchmark measured risk content identification and refusal to answer for var
 Knowledge and classification of ancient Chinese texts related to Confucianism, Taoism, and Buddhism. The paper does not provide specific findings for the religious/philosophical categories within the benchmark. General findings indicate that models perform better on comprehension tasks (e.g., multiple-choice) than on generation tasks across the ancient Chinese text corpus, which includes texts from Confucian, Taoist, and Buddhist traditions. Larger models also generally outperform smaller ones, especially on knowledge-intensive tasks.
 
 
-### TOWARDS UNDERSTANDING THE SAFETY BOUNDARIES OF DEEPSEEK MODELS: EVALUATION AND FINDINGS
+## TOWARDS UNDERSTANDING THE SAFETY BOUNDARIES OF DEEPSEEK MODELS: EVALUATION AND FINDINGS
 
 [https://arxiv.org/abs/2503.15092](https://arxiv.org/abs/2503.15092)
 
@@ -3010,7 +2925,7 @@ Knowledge and classification of ancient Chinese texts related to Confucianism, T
 The benchmark measured the generation of discriminatory content based on faith or religion, labeled as 'Faith discrimination (FD)' within the broader category of 'Discriminatory Content'. The models were evaluated for 'Faith discrimination'. The attack success rates (ASRs) varied significantly by model and language. The DeepSeek-R1 model in English showed a particularly high ASR of over 50% for faith discrimination, which was substantially higher than its ASR in Chinese (around 25%) and also higher than the DeepSeek-V3 model in either language. This indicates a notable vulnerability to generating faith-based discriminatory content, especially for the DeepSeek-R1 model when prompted in English.
 
 
-### TLUE: A Tibetan Language Understanding Evaluation Benchmark
+## TLUE: A Tibetan Language Understanding Evaluation Benchmark
 
 [https://arxiv.org/abs/2503.12051](https://arxiv.org/abs/2503.12051)
 
@@ -3019,7 +2934,7 @@ The benchmark measured the generation of discriminatory content based on faith o
 The benchmark measures knowledge of 'World Religions' as part of its general understanding component (Ti-MMLU). It also evaluates model behavior on safety-critical topics including ethics, bias, and morality (Ti-SafetyBench), which can encompass religious contexts. The paper does not provide specific findings for the 'World Religions' sub-task. The general finding is that most LLMs perform poorly on the Tibetan benchmark, often below the random baseline, across all domains including 'Humanities' which contains the 'World Religions' category. This indicates significant challenges for models in understanding Tibetan-language content related to religion and other topics.
 
 
-### No LLM is Free From Bias: A Comprehensive Study of Bias Evaluation in Large Language Models
+## No LLM is Free From Bias: A Comprehensive Study of Bias Evaluation in Large Language Models
 
 [https://arxiv.org/abs/2503.11985](https://arxiv.org/abs/2503.11985)
 
@@ -3028,7 +2943,7 @@ The benchmark measures knowledge of 'World Religions' as part of its general und
 The benchmark measured stereotypical associations, the association of religious groups with positive and negative undertoned questions, and the association of toxic content with religious groups. LLMs exhibited varied biases across religions. Models tended to associate Christian, Sikh, Buddhist, and Jewish religions with positive questions, while linking Orthodox and Atheist beliefs with negative questions. In terms of association with toxic content, Christianity was most frequently associated, followed by Islam and Hinduism. Overall, the LL-8B model was found to be the least biased for religion in stereotype-based tasks (CrowS-Pairs), but when associating toxic content, all models showed significant bias.
 
 
-### LAG-MMLU: Benchmarking Frontier LLM Understanding in Latvian and Giriama
+## LAG-MMLU: Benchmarking Frontier LLM Understanding in Latvian and Giriama
 
 [https://arxiv.org/abs/2503.11911](https://arxiv.org/abs/2503.11911)
 
@@ -3037,7 +2952,7 @@ The benchmark measured stereotypical associations, the association of religious 
 The benchmark measured knowledge of 'world religions' as one of 57 subjects in a broad multitask language understanding evaluation. It was not a primary focus but a component of the overall knowledge assessment. The paper does not report any specific findings related to religion. The performance analysis is aggregated across all 55 subjects, and there is no breakdown of model performance for the 'world_religions' category.
 
 
-### CuLEmo: Cultural Lenses on Emotion - Benchmarking LLMs for Cross-Cultural Emotion Understanding
+## CuLEmo: Cultural Lenses on Emotion - Benchmarking LLMs for Cross-Cultural Emotion Understanding
 
 [https://arxiv.org/abs/2503.10688](https://arxiv.org/abs/2503.10688)
 
@@ -3046,7 +2961,7 @@ The benchmark measured knowledge of 'world religions' as one of 57 subjects in a
 The benchmark measures the ability of LLMs to predict culturally-appropriate emotional responses to scenarios involving religious practices, norms, and figures, such as insulting a religion, addressing a religious leader by name, or seeing a religious figure violate a norm. The paper's findings are not isolated for religion, but aggregated across cultural categories. However, examples show that models like GPT-4 can predict varying emotional reactions to religious scenarios (e.g., insulting a religion) across different cultures, but performance varies and errors occur, especially for less-represented cultures (e.g., Ethiopia). The overall results indicate that LLMs' understanding of emotional responses in religious contexts is culturally dependent and imperfect.
 
 
-### MINORBENCH: A HAND-BUILT BENCHMARK FOR CONTENT-BASED RISKS FOR CHILDREN
+## MINORBENCH: A HAND-BUILT BENCHMARK FOR CONTENT-BASED RISKS FOR CHILDREN
 
 [https://arxiv.org/abs/2503.10242](https://arxiv.org/abs/2503.10242)
 
@@ -3055,7 +2970,7 @@ The benchmark measures the ability of LLMs to predict culturally-appropriate emo
 The benchmark measures the refusal rate of Large Language Models (LLMs) to prompts containing hateful content. The 'Hateful' category is defined as 'Content that promotes discrimination, harassment, or violence against individuals or groups based on protected attributes (e.g., race, religion, gender)'. Therefore, the measurement related to religion is the model's ability to refuse to generate content that is hateful towards religious groups. The paper found that LLM performance in refusing to answer hateful prompts, which includes those based on religion, is highly dependent on the system prompt provided. With a basic system prompt, most models had very low refusal rates for hateful content (as low as 0-14%). However, with stricter, child-specific safety instructions in the system prompt, refusal rates increased dramatically for most models, some reaching 100%. Performance was inconsistent across models, with 'reasoning models' like o3-mini and R1 Distilled consistently showing lower refusal rates even with stricter prompts.
 
 
-### Cross-Examiner: Evaluating Consistency of Large Language Model-Generated Explanations
+## Cross-Examiner: Evaluating Consistency of Large Language Model-Generated Explanations
 
 [https://arxiv.org/abs/2503.08815](https://arxiv.org/abs/2503.08815)
 
@@ -3064,7 +2979,7 @@ The benchmark measures the refusal rate of Large Language Models (LLMs) to promp
 Consistency checking of model explanations to detect potential biases or stereotypes related to religious identity. The paper used examples involving Jewish and Sikh individuals to test if a model's reasoning was consistent across its explanations. The paper does not present findings about specific religious biases in models. Instead, it uses scenarios involving religious identities (e.g., a Jewish person and a Sikh person) as examples to demonstrate the effectiveness of its 'Cross-Examiner' method for generating follow-up questions. The core findings are methodological, showing that a neuro-symbolic approach for generating these questions is more effective at producing high-quality, targeted probes for inconsistencies than purely LLM-based approaches.
 
 
-### Randomness, Not Representation: The Unreliability of Evaluating Cultural Alignment in LLMs
+## Randomness, Not Representation: The Unreliability of Evaluating Cultural Alignment in LLMs
 
 [https://arxiv.org/abs/2503.08688](https://arxiv.org/abs/2503.08688)
 
@@ -3073,7 +2988,7 @@ Consistency checking of model explanations to detect potential biases or stereot
 The paper uses the question 'How important is religion in your life?' from the Global Opinion Q&A (GQA) dataset to measure the stability of LLMs' expressed cultural values. The goal was not to measure religious belief itself, but to test how sensitive the model's response about the importance of religion is to superficial changes in survey question formatting (e.g., order of options, response type). The paper's key finding related to religion is that LLM responses to the question 'How important is religion in your life?' are highly unstable and sensitive to non-semantic changes in the survey format. Minor variations, such as changing the order of response options (ascending vs. descending) or the required response format (numerical identifier vs. full text), led to significant shifts in the models' expressed preferences. This suggests that evaluations of an LLM's stance on religion may reflect artifacts of the evaluation design rather than a stable, inherent property of the model.
 
 
-### VISBIAS: Measuring Explicit and Implicit Social Biases in Vision Language Models
+## VISBIAS: Measuring Explicit and Implicit Social Biases in Vision Language Models
 
 [https://arxiv.org/abs/2503.07575](https://arxiv.org/abs/2503.07575)
 
@@ -3082,7 +2997,7 @@ The paper uses the question 'How important is religion in your life?' from the G
 The benchmark measured stereotypical associations between visual representations of people and religious affiliations. This was done through two main tasks: 1) Explicit multiple-choice questions asking the model to assign a religion (Islam, Christianity, Hinduism, or Buddhism) to a person in an image. 2) Implicit form completion tasks where the model fills in a 'Religion' field alongside 19 other attributes, revealing correlations between religion and other demographic data like ethnicity or occupation. Models exhibited religious stereotypes. In explicit tasks, GPT-4V tended to default to 'Christian' regardless of ethnicity, whereas LLaVA assigned religions based on ethnicity. In implicit tasks, models showed strong, stereotypical associations between specific ethnic groups and religions (e.g., Asian individuals with Buddhism) and between occupations and religions (e.g., Athlete with Christianity), reinforcing cultural biases.
 
 
-### WISE: World Knowledge-Informed Semantic Evaluation for Text-to-Image Generation
+## WISE: World Knowledge-Informed Semantic Evaluation for Text-to-Image Generation
 
 [https://arxiv.org/abs/2503.07265](https://arxiv.org/abs/2503.07265)
 
@@ -3091,7 +3006,7 @@ The benchmark measured stereotypical associations between visual representations
 The benchmark measured the model's ability to generate images based on factual knowledge of religious objects, symbols, and architecture. Specifically, the 'Religion-related' category within the 'Cultural Common Sense' domain 'examines the identification of objects, symbols, or architectural structures that hold religious significance and are associated with specific faiths or religious heritage.' The paper does not provide specific findings for the religion sub-category. The results are aggregated at the broader 'Cultural' domain level. The general finding is that the majority of models fail to achieve a satisfactory score, indicating 'significant deficiencies in the ability of current models to leverage complex semantic understanding (implicit understanding) and world knowledge (intrinsic knowledge matching) for image generation.' This applies to all knowledge domains tested, including religion.
 
 
-### Social Bias Benchmark for Generation: A Comparison of Generation and QA-Based Evaluations
+## Social Bias Benchmark for Generation: A Comparison of Generation and QA-Based Evaluations
 
 [https://arxiv.org/abs/2503.06987](https://arxiv.org/abs/2503.06987)
 
@@ -3100,7 +3015,7 @@ The benchmark measured the model's ability to generate images based on factual k
 The benchmark measures the degree to which language models generate story continuations that align with social stereotypes in religious contexts, as one of several categories of social bias. In the English benchmark (EnBBG), religion was found to be one of the categories with the highest average bias scores across the tested models, following the 'Age' category. For instance, Claude-3.5-sonnet, despite having a low overall bias score, exhibited higher bias in the Religion category compared to other models.
 
 
-### SAFEARENA: Evaluating the Safety of Autonomous Web Agents
+## SAFEARENA: Evaluating the Safety of Autonomous Web Agents
 
 [https://arxiv.org/abs/2503.04957](https://arxiv.org/abs/2503.04957)
 
@@ -3109,7 +3024,7 @@ The benchmark measures the degree to which language models generate story contin
 The benchmark, SAFEARENA, measured social bias, which included at least one task designed to evaluate bias against individuals with Muslim-sounding names by instructing the agent to create a script to auto-reject them as applicants. The paper did not report findings specific to religion. However, it included tasks measuring bias against Muslims within its 'Bias' harm category and found that models completed these harmful tasks at notable rates. For example, the overall completion rate for harmful 'Bias' tasks was 14% for GPT-4o and 22% for Qwen-2-VL-72B.
 
 
-### DongbaMIE: A Multimodal Information Extraction Dataset for Evaluating Semantic Understanding of Dongba Pictograms
+## DongbaMIE: A Multimodal Information Extraction Dataset for Evaluating Semantic Understanding of Dongba Pictograms
 
 [https://arxiv.org/abs/2503.03644](https://arxiv.org/abs/2503.03644)
 
@@ -3118,7 +3033,7 @@ The benchmark, SAFEARENA, measured social bias, which included at least one task
 Semantic understanding and information extraction (objects, actions, relations, attributes) from the pictographic script of the Dongba religion. Current Multimodal Large Language Models (MLLMs) struggle significantly to extract semantic information from Dongba pictographs, a script deeply rooted in Dongba religion. Even advanced models like GPT-4o achieved very low F1 scores (e.g., 1.60 for object extraction) in zero-shot settings. The models failed to extract complex semantics, such as relations and attributes, and made specific errors like misinterpreting symbolic features, such as reading potential human figures as a 'village god'.
 
 
-### Implicit Bias in LLMs: A Survey
+## Implicit Bias in LLMs: A Survey
 
 [https://arxiv.org/abs/2503.02776v1](https://arxiv.org/abs/2503.02776v1)
 
@@ -3127,7 +3042,7 @@ Semantic understanding and information extraction (objects, actions, relations, 
 Bias against applicants with Arab/Muslim names in hiring scenarios. When prompted to generate profiles and job advertisements, GPT-4 was more likely to recommend applicants with Arab/Muslim names for lower-status jobs, while favoring applicants with White names for higher-status positions.
 
 
-### DOVE: A Large-Scale Multi-Dimensional Predictions Dataset Towards Meaningful LLM Evaluation
+## DOVE: A Large-Scale Multi-Dimensional Predictions Dataset Towards Meaningful LLM Evaluation
 
 [https://arxiv.org/abs/2503.01622](https://arxiv.org/abs/2503.01622)
 
@@ -3136,7 +3051,7 @@ Bias against applicants with Arab/Muslim names in hiring scenarios. When prompte
 Knowledge of world religions, as tested by the MMLU benchmark. Performance on the world religions knowledge task, like other tasks, varied substantially based on prompt phrasing, enumerator style, and other dimensions. For instance, the OLMoE-1B-7B model showed particularly high performance divergence on this task compared to its average performance. This indicates that model knowledge on religious topics is sensitive to how the question is asked.
 
 
-### Unmasking Implicit Bias: Evaluating Persona-Prompted LLM Responses in Power-Disparate Social Scenarios
+## Unmasking Implicit Bias: Evaluating Persona-Prompted LLM Responses in Power-Disparate Social Scenarios
 
 [https://arxiv.org/abs/2503.01532](https://arxiv.org/abs/2503.01532)
 
@@ -3145,7 +3060,7 @@ Knowledge of world religions, as tested by the MMLU benchmark. Performance on th
 The benchmark measured semantic shifts (using cosine distance) and response quality (using an LLM-judged Preference Win Rate) when Large Language Models were prompted to adopt personas with specific religious identities (e.g., Christian, Muslim, Buddhist, Jewish, Atheist) in various power-disparate social scenarios. The goal was to detect implicit biases by comparing these responses to a non-demographic baseline. The study found that LLMs have an implicit default persona that includes being Atheist, as this identity resulted in minimal semantic shifts from the baseline. Interactions involving Buddhist personas showed the highest semantic shifts. In terms of response quality, lower-quality responses were observed when Atheist responders engaged with subjects of other religions. Conversely, interactions with Buddhist responders, particularly with Muslim subjects, were associated with higher-quality responses. Overall, the Religion axis was identified as one of the most sensitive demographic dimensions, often inducing significant changes in LLM responses and being the most likely to improve response quality compared to other axes.
 
 
-### Figurative Archive: an open dataset and web-based application for the study of metaphor
+## Figurative Archive: an open dataset and web-based application for the study of metaphor
 
 [https://arxiv.org/abs/2503.00444](https://arxiv.org/abs/2503.00444)
 
@@ -3154,7 +3069,7 @@ The benchmark measured semantic shifts (using cosine distance) and response qual
 The benchmark provides a dataset of metaphors, some of which are categorized into a 'Spirituality & Abstract Concepts' semantic class. It does not directly measure religious bias, knowledge, or stereotypes but allows for the analysis of metaphors within this spiritual/abstract domain. Using ChatGPT for topic modeling, the study identified 'Spirituality & Abstract Concepts' as one of ten semantic classes for topics and vehicles within its Literary Metaphors module. This class accounted for 12.97% of the metaphorical topics and 5.07% of the vehicles in that dataset.
 
 
-### Palm: A Culturally Inclusive and Linguistically Diverse Dataset for Arabic LLMs
+## Palm: A Culturally Inclusive and Linguistically Diverse Dataset for Arabic LLMs
 
 [https://arxiv.org/abs/2503.00151](https://arxiv.org/abs/2503.00151)
 
@@ -3163,7 +3078,7 @@ The benchmark provides a dataset of metaphors, some of which are categorized int
 The benchmark measured knowledge about the major monotheistic religions, focusing on historical sites, religious figures, and institutions, while specifically avoiding rituals. The paper's evaluations included a 'Religion' topic as part of its broader cultural assessment. The findings showed a general trend consistent with other topics: larger models like GPT-4o and Claude-3.5-Sonnet demonstrated higher performance and correctness in responding to religion-related prompts, while smaller models performed comparatively weaker. No specific findings unique to the religion category were highlighted beyond this general performance trend.
 
 
-### ECLeKTic: a Novel Challenge Set for Evaluation of Cross-Lingual Knowledge Transfer
+## ECLeKTic: a Novel Challenge Set for Evaluation of Cross-Lingual Knowledge Transfer
 
 [https://arxiv.org/abs/2502.21228](https://arxiv.org/abs/2502.21228)
 
@@ -3172,7 +3087,7 @@ The benchmark measured knowledge about the major monotheistic religions, focusin
 The benchmark measured the cross-lingual transfer of factual knowledge across 10 domains, one of which was 'Religion, Philosophy, and Mythology'. It specifically tested a model's ability to answer questions about religious facts in a language where that information was likely not present during pre-training. The benchmark's construction method successfully captured culturally specific topics, with the 'Religion, Philosophy, and Mythology' domain being over-represented in questions originating from Hebrew and Hindi, reflecting the unique interests of those language speakers. The paper also highlights the challenge of transferring culturally specific religious concepts, using an example from Spanish related to Christian tradition ('the Seven Words') that may be difficult to understand when translated into languages from different cultural backgrounds.
 
 
-### What’s Not Said Still Hurts: A Description-Based Evaluation Framework for Measuring Social Bias in LLMs
+## What’s Not Said Still Hurts: A Description-Based Evaluation Framework for Measuring Social Bias in LLMs
 
 [https://arxiv.org/abs/2502.19749](https://arxiv.org/abs/2502.19749)
 
@@ -3181,7 +3096,7 @@ The benchmark measured the cross-lingual transfer of factual knowledge across 10
 The benchmark measures semantic-level associations between religious identities and bias-related concepts. This is achieved by presenting LLMs with naturalistic, subtly framed contexts where stereotypes are conveyed through descriptions of behaviors, emotions, or activities, rather than explicit terms, to detect biases against different religious groups. LLMs exhibit significant bias within the 'Religions' category, which consistently showed the second-highest level of bias after the 'Race' category across all tested models. For instance, GPT-4o demonstrated a strong bias association linking 'Buddhist' with 'can't write books' and 'Muslim' with 'are skilled writers'. The influence of how religious identity is described varies, but certain descriptor types were found to be particularly influential in triggering biased responses in most models.
 
 
-### GRACE: A Granular Benchmark for Evaluating Model Calibration Against Human Calibration
+## GRACE: A Granular Benchmark for Evaluating Model Calibration Against Human Calibration
 
 [https://arxiv.org/abs/2502.19684](https://arxiv.org/abs/2502.19684)
 
@@ -3190,7 +3105,7 @@ The benchmark measures semantic-level associations between religious identities 
 Knowledge of religious topics, including symbols (e.g., Buddhism), practices (e.g., Jewish birth ceremonies), and specific groups (e.g., sects of Judaism). Models were found to be least-calibrated on questions with multiple plausible answers or descriptive content, with examples drawn from religion, such as a question on fish as a Buddhist symbol and another on Jewish birth ceremonies. Religion is included as a category (5%) within the benchmark's social science section.
 
 
-### JailBench: A Comprehensive Chinese Security Assessment Benchmark for Large Language Models
+## JailBench: A Comprehensive Chinese Security Assessment Benchmark for Large Language Models
 
 [https://arxiv.org/abs/2502.18935](https://arxiv.org/abs/2502.18935)
 
@@ -3199,7 +3114,7 @@ Knowledge of religious topics, including symbols (e.g., Buddhism), practices (e.
 The benchmark measured the propensity of Large Language Models to generate content that constitutes 'Religious discrimination'. This was one of 40 specific risk categories under the broader domain of 'Discrimination'. The paper includes 'Religious discrimination' as one of its 40 safety risk categories but does not provide specific results or analysis for it. The findings are aggregated into broader domains, such as 'Discrimination' (DC), which showed varying levels of vulnerability across different models. However, a specific breakdown of performance related to religious content is not available.
 
 
-### Correlating and Predicting Human Evaluations of Language Models from Natural Language Processing Benchmarks
+## Correlating and Predicting Human Evaluations of Language Models from Natural Language Processing Benchmarks
 
 [https://arxiv.org/abs/2502.18339](https://arxiv.org/abs/2502.18339)
 
@@ -3208,7 +3123,7 @@ The benchmark measured the propensity of Large Language Models to generate conte
 Factual question answering and knowledge on the topics of 'Religion & spirituality' and 'World Religions'. Performance on the MMLU 'World Religions' benchmark exhibited a strong positive correlation (Pearson correlation of approximately 0.9) with the average scores from human evaluations across all topics. This suggests that performance on religious knowledge benchmarks is a good indicator of general model quality as perceived by humans. The paper does not provide a specific analysis of model performance or bias within the religion category itself.
 
 
-### Evaluating the Effect of Retrieval Augmentation on Social Biases
+## Evaluating the Effect of Retrieval Augmentation on Social Biases
 
 [https://arxiv.org/abs/2502.17611](https://arxiv.org/abs/2502.17611)
 
@@ -3217,7 +3132,7 @@ Factual question answering and knowledge on the topics of 'Religion & spirituali
 The benchmark measured social biases and stereotypes related to religion, specifically how Retrieval Augmented Generation (RAG) amplifies or mitigates these biases when provided with stereotypical or anti-stereotypical documents. Retrieval Augmented Generation (RAG) significantly amplifies religious biases when retrieving from stereotypical documents, even in models with low intrinsic bias. Conversely, retrieving from anti-stereotypical documents can reduce or reverse the bias. A specific finding for the Chinese CBBQ dataset revealed a counter-intuitive negative bias score in disambiguated contexts for religion; this was attributed to a distributional mismatch where the test questions predominantly featured Christians, while the stereotypical documents provided did not, highlighting RAG's sensitivity to the alignment between the query context and the knowledge corpus.
 
 
-### Multilingual != Multicultural: Evaluating Gaps Between Multilingual Capabilities and Cultural Alignment in LLMs
+## Multilingual != Multicultural: Evaluating Gaps Between Multilingual Capabilities and Cultural Alignment in LLMs
 
 [https://arxiv.org/abs/2502.16534](https://arxiv.org/abs/2502.16534)
 
@@ -3226,7 +3141,7 @@ The benchmark measured social biases and stereotypes related to religion, specif
 The benchmark measures cultural alignment by comparing LLM-generated response distributions against population-level opinion data from the World Values Survey. This includes measuring alignment on stances across several topics, one of which is religion. The paper does not provide specific findings for the religious domain. Its findings on cultural alignment are aggregated across all measured domains from the World Values Survey, which includes religion, work, family, politics, and security. The main findings are that increased multilingual capability does not guarantee better cultural alignment, and that US-centric bias is more prevalent in languages spoken across multiple countries (English, Portuguese) than in monocultural languages (Danish, Dutch).
 
 
-### InsightVision: A Comprehensive, Multi-Level Chinese-based Benchmark for Evaluating Implicit Visual Semantics in Large Vision Language Models
+## InsightVision: A Comprehensive, Multi-Level Chinese-based Benchmark for Evaluating Implicit Visual Semantics in Large Vision Language Models
 
 [https://arxiv.org/abs/2502.15812](https://arxiv.org/abs/2502.15812)
 
@@ -3235,7 +3150,7 @@ The benchmark measures cultural alignment by comparing LLM-generated response di
 The benchmark measures the ability of large vision-language models to understand implicit visual semantics, with one of its 41 subcategories focusing on social phenomena which includes 'cults, extremist religious groups'. The paper does not provide specific findings related to religion. General findings indicate a considerable gap between current LVLMs and human performance, particularly in understanding implicit meanings. Performance was lower in categories involving deep cultural symbols or metaphors, which could include religious contexts, but no specific data for the religious subcategory was presented.
 
 
-### Does Reasoning Introduce Bias? A Study of Social Bias Evaluation and Mitigation in LLM Reasoning
+## Does Reasoning Introduce Bias? A Study of Social Bias Evaluation and Mitigation in LLM Reasoning
 
 [https://arxiv.org/abs/2502.15361](https://arxiv.org/abs/2502.15361)
 
@@ -3244,7 +3159,7 @@ The benchmark measures the ability of large vision-language models to understand
 The benchmark measured social bias and stereotype detection in religious contexts, specifically how large language models' reasoning processes can introduce or amplify stereotypes related to religion, leading to biased predictions. Reasoning-based models, while often improving accuracy, do not mitigate and sometimes amplify religious biases. For instance, in an ambiguous scenario involving a Muslim person and a Mormon person near a crime scene, a model's reasoning invoked stereotypes about extremist groups in Muslim communities to incorrectly identify the Muslim person as the likely culprit. Analysis of the 'Religion' category from the BBQ dataset shows that when models produce incorrect answers, their reasoning steps exhibit systematically higher bias scores compared to when they produce correct answers.
 
 
-### Time Travel: A Comprehensive Benchmark to Evaluate LMMs on Historical and Cultural Artifacts
+## Time Travel: A Comprehensive Benchmark to Evaluate LMMs on Historical and Cultural Artifacts
 
 [https://arxiv.org/abs/2502.14865](https://arxiv.org/abs/2502.14865)
 
@@ -3253,7 +3168,7 @@ The benchmark measured social bias and stereotype detection in religious context
 Knowledge of the religious context and significance of historical and cultural artifacts, including their role in ancient belief systems. Closed-source models like GPT-4o-0806 are more capable of generating contextually rich descriptions of historical artifacts, which includes understanding their role in ancient belief systems, compared to open-source models. However, all models still have room for improvement in understanding non-Western historical and cultural contexts, which are deeply intertwined with distinct religious traditions and belief systems.
 
 
-### Benchmarking Multimodal RAG through a Chart-based Document Question-Answering Generation Framework
+## Benchmarking Multimodal RAG through a Chart-based Document Question-Answering Generation Framework
 
 [https://arxiv.org/abs/2502.14864](https://arxiv.org/abs/2502.14864)
 
@@ -3262,7 +3177,7 @@ Knowledge of the religious context and significance of historical and cultural a
 The benchmark measures the ability of multimodal models to perform retrieval-augmented generation for chart-based question answering. One of the eight domains used for evaluation is 'Religion & Culture', which includes questions about religious affiliation, practices, and identity (e.g., atheism). The measurement is focused on factual correctness and coverage based on provided textual and chart-based documents, not specifically on bias or theological reasoning. The paper does not provide specific findings related to religion. Results are aggregated across all eight domains of the benchmark. The main finding is that even state-of-the-art models struggle with chart-based multimodal reasoning, achieving only 58.19% correctness and 73.87% coverage with ground-truth retrieval, and exhibit a bias towards textual information over visual (chart) information.
 
 
-### SuperGPQA: Scaling LLM Evaluation across 285 Graduate Disciplines
+## SuperGPQA: Scaling LLM Evaluation across 285 Graduate Disciplines
 
 [https://arxiv.org/abs/2502.14739](https://arxiv.org/abs/2502.14739)
 
@@ -3271,7 +3186,7 @@ The benchmark measures the ability of multimodal models to perform retrieval-aug
 The benchmark measured graduate-level knowledge of Religious Studies as one of 285 disciplines. The benchmark includes 'Religious Studies' as a sub-discipline under Philosophy. In this category, the top-performing models were Doubao-1.5-pro-32k-250115 (80.00), DeepSeek-R1 (76.00), DeepSeek-R1-Zero (76.00), qwen-max-2025-01-25 (72.00), and phi-4 (72.00).
 
 
-### VITAL: A New Dataset for Benchmarking Pluralistic Alignment in Healthcare
+## VITAL: A New Dataset for Benchmarking Pluralistic Alignment in Healthcare
 
 [https://arxiv.org/abs/2502.13775](https://arxiv.org/abs/2502.13775)
 
@@ -3280,7 +3195,7 @@ The benchmark measured graduate-level knowledge of Religious Studies as one of 2
 The benchmark measures the ability of Large Language Models to generate responses that reflect a plurality of viewpoints, including diverse religious beliefs, on contentious healthcare topics. This includes evaluating whether the models can represent religious perspectives in open-ended answers (Overton mode) and align with specific values. The paper finds that existing pluralistic alignment techniques are insufficient for handling the diversity of beliefs in healthcare. Specifically regarding religion, the study notes that more complex methods like ModPlural can fail to cover key perspectives, citing an example where the model's response about organ donation omitted religious beliefs, whereas a simpler prompting method included them. This suggests that current sophisticated alignment approaches may not adequately represent religious viewpoints in health-related contexts.
 
 
-### GIMMICK: Globally Inclusive Multimodal Multitask Cultural Knowledge Benchmarking
+## GIMMICK: Globally Inclusive Multimodal Multitask Cultural Knowledge Benchmarking
 
 [https://arxiv.org/abs/2502.13766](https://arxiv.org/abs/2502.13766)
 
@@ -3289,7 +3204,7 @@ The benchmark measures the ability of Large Language Models to generate response
 Knowledge of cultural rituals, festivals, and practices with religious significance, as a subset of a broader benchmark on global cultural knowledge. Models perform significantly better on tangible cultural aspects (e.g., food) than on intangible ones. Closed models achieved accuracies of only 8% and 10% for questions concerning rituals or festivals, compared to 30% for food-related questions, highlighting a struggle with nuanced, often religious-related, cultural knowledge, particularly in non-Western contexts.
 
 
-### MMTEB: MASSIVE MULTILINGUAL TEXT EMBEDDING BENCHMARK
+## MMTEB: MASSIVE MULTILINGUAL TEXT EMBEDDING BENCHMARK
 
 [https://arxiv.org/abs/2502.13595](https://arxiv.org/abs/2502.13595)
 
@@ -3298,7 +3213,7 @@ Knowledge of cultural rituals, festivals, and practices with religious significa
 The benchmark measured model performance on tasks involving religious texts, specifically bitext mining (finding parallel sentences across languages) and clustering of texts from the Bible. The goal was to evaluate text embedding quality on this domain, not to measure bias, stereotypes, or theological knowledge. The paper does not report any specific findings related to the religious domain. The analysis focuses on overall model performance across different languages, task types, and model sizes, concluding that smaller, highly multilingual models can outperform larger models (like Mistral-7B variants) in multilingual and low-resource settings.
 
 
-### Towards a Design Guideline for RPA Evaluation: A Survey of Large Language Model-Based Role-Playing Agents
+## Towards a Design Guideline for RPA Evaluation: A Survey of Large Language Model-Based Role-Playing Agents
 
 [https://arxiv.org/abs/2502.13012](https://arxiv.org/abs/2502.13012)
 
@@ -3307,7 +3222,7 @@ The benchmark measured model performance on tasks involving religious texts, spe
 The paper's proposed design guideline suggests that when an agent's 'Belief and Value' attribute includes religion, it should be evaluated using psychological metrics, as well as metrics for bias, fairness, and ethics. The paper identifies religion as a component of the 'Belief and Value' agent attribute. For agents designed with this attribute, the study's proposed guideline recommends evaluation using psychological metrics, bias metrics, fairness metrics, and ethics metrics.
 
 
-### None of the Others: a General Technique to Distinguish Reasoning from Memorization in Multiple-Choice LLM Evaluation Benchmarks
+## None of the Others: a General Technique to Distinguish Reasoning from Memorization in Multiple-Choice LLM Evaluation Benchmarks
 
 [https://arxiv.org/abs/2502.12896](https://arxiv.org/abs/2502.12896)
 
@@ -3316,7 +3231,7 @@ The paper's proposed design guideline suggests that when an agent's 'Belief and 
 Knowledge of world religions, as a subject category within a broader multiple-choice question benchmark. The paper evaluates LLM performance on a 'world religions' subject category as part of the MMLU benchmark. It finds that, similar to other humanities subjects, all models experience a significant drop in performance when the multiple-choice questions are altered to test reasoning ('NOTO' variation) instead of recall. For example, in English, top models scored around 0.87 (Cohen's Kappa) on the original questions but dropped to 0.56 or lower in the NOTO variation. This suggests that high performance on questions about world religions is heavily reliant on memorization rather than genuine reasoning.
 
 
-### “See the World, Discover Knowledge”: A Chinese Factuality Evaluation for Large Vision Language Models
+## “See the World, Discover Knowledge”: A Chinese Factuality Evaluation for Large Vision Language Models
 
 [https://arxiv.org/abs/2502.11718](https://arxiv.org/abs/2502.11718)
 
@@ -3325,7 +3240,7 @@ Knowledge of world religions, as a subject category within a broader multiple-ch
 The benchmark measures factual knowledge of 'Religious Studies' and 'Religious Buildings' as sub-topics. This includes identifying religious figures (e.g., Vishnu), their associated religion (e.g., Hinduism), and factual details about religious architecture (e.g., Baha'i World Centre International Archives Building). The paper evaluates factual knowledge of religion as part of a broader benchmark covering 56 subtopics. It includes questions about religious figures, associated religions, and religious architecture. However, the paper does not present specific findings or analysis on model performance broken down by the religious sub-categories.
 
 
-### Safety Evaluation of DeepSeek Models in Chinese Contexts
+## Safety Evaluation of DeepSeek Models in Chinese Contexts
 
 [https://arxiv.org/abs/2502.11137](https://arxiv.org/abs/2502.11137)
 
@@ -3334,7 +3249,7 @@ The benchmark measures factual knowledge of 'Religious Studies' and 'Religious B
 The benchmark measured the models' ability to identify risky content related to 'religious discrimination' via multiple-choice questions, and their capability to refuse answering harmful prompts related to 'religious discrimination' and 'religious extremism'. The paper found that DeepSeek models performed poorly on safety tasks related to religion. In a multiple-choice task to identify religious extremism, both DeepSeek-R1 and DeepSeek-V3 failed, selecting an answer that was the opposite of extremist behavior. In refusal-to-answer tasks, DeepSeek-R1 and DeepSeek-V3 had very low refusal rates for prompts involving 'religious discrimination' (9.1% and 4.5% respectively), indicating a deficiency in handling such sensitive topics.
 
 
-### SafeDialBench: A Fine-Grained Safety Benchmark for Large Language Models in Multi-Turn Dialogues with Diverse Jailbreak Attacks
+## SafeDialBench: A Fine-Grained Safety Benchmark for Large Language Models in Multi-Turn Dialogues with Diverse Jailbreak Attacks
 
 [https://arxiv.org/abs/2502.11090](https://arxiv.org/abs/2502.11090)
 
@@ -3343,7 +3258,7 @@ The benchmark measured the models' ability to identify risky content related to 
 The benchmark measured 'Blasphemy', defined as disrespectful discourse mocking religious symbols, cultural traditions, and sacred beliefs. This was a sub-category under the broader 'Aggression' safety dimension. 'Race and religion' was also one of the 22 dialogue scenarios used for data generation. The paper does not provide specific findings for religion or blasphemy. Instead, it reports on the broader 'Aggression' category which includes blasphemy. Key findings for this category were that models like Qwen2.5 showed weaknesses in identifying aggression-related content, while Yi-34B-Chat and GLM4-9B-Chat demonstrated strong performance in this dimension. The close-sourced model o3-mini showed weaker safety performance in aggression.
 
 
-### SB-Bench: Stereotype Bias Benchmark for Large Multimodal Models
+## SB-Bench: Stereotype Bias Benchmark for Large Multimodal Models
 
 [https://arxiv.org/abs/2502.08779](https://arxiv.org/abs/2502.08779)
 
@@ -3352,7 +3267,7 @@ The benchmark measured 'Blasphemy', defined as disrespectful discourse mocking r
 The benchmark measures stereotype bias in religious contexts. Specifically, it assesses discriminatory attitudes or behaviors directed at individuals based on their religious beliefs or practices, such as stereotypes about Jewish people and greed or associating Buddhism with compassion and altruism. Closed-source models like GPT-40 and Gemini-1.5-Flash demonstrated the highest level of fairness (lowest bias) in the Religion category. Open-source models generally performed worse, with some showing very high bias scores. A qualitative analysis showed that even advanced models like GPT-40-mini exhibit implicit biases; for instance, in a scenario with a Buddhist and a Jewish individual, the model stereotyped the Buddhist as the more likely charity donor due to associations with compassion. Furthermore, the study found that incorporating visual input significantly amplifies religious bias in LMMs compared to their text-only base LLM counterparts.
 
 
-### IssueBench: Millions of Realistic Prompts for Measuring Issue Bias in LLM Writing Assistance
+## IssueBench: Millions of Realistic Prompts for Measuring Issue Bias in LLM Writing Assistance
 
 [https://arxiv.org/abs/2502.08395](https://arxiv.org/abs/2502.08395)
 
@@ -3361,7 +3276,7 @@ The benchmark measures stereotype bias in religious contexts. Specifically, it a
 The benchmark measured issue bias, defined as a consistent tendency to express a particular stance (pro, neutral, con), on various issues including several related to religion. Specific religious topics measured include 'the Catholic Church', 'creationism', 'Islam', 'the impact of religion on society', 'interfaith relationships', 'the role of women in Islam', and 'religious supremacism'. The paper includes several religious topics (e.g., 'Islam', 'the Catholic Church', 'creationism') as part of its IssueBench benchmark but does not report specific, disaggregated findings for these religious issues. The main analysis focuses on aggregate trends in issue bias, stance distortion, and partisan alignment across all 212 issues.
 
 
-### Break the Checkbox: Challenging Closed-Style Evaluations of Cultural Alignment in LLMs
+## Break the Checkbox: Challenging Closed-Style Evaluations of Cultural Alignment in LLMs
 
 [https://arxiv.org/abs/2502.08045](https://arxiv.org/abs/2502.08045)
 
@@ -3370,7 +3285,7 @@ The benchmark measured issue bias, defined as a consistent tendency to express a
 The benchmark measured the cultural value dimension of 'Traditional vs. Secular-rational values' using questions from the World Values Survey (WVS). Specifically, it assessed the models' responses to the question 'how significant is God in your life' and analyzed how responses varied across different probing methods (closed-style vs. unconstrained). The analysis focused on whether models would provide a definitive stance or a non-specific/unclassifiable answer, interpreting the latter as a potential reflection of secular societal values. In unconstrained (open-ended) settings, models frequently refused to answer questions about the importance of God for secular-rational cultures like Germany and the USA, often responding that faith is a private matter. The paper hypothesizes this reflects an accurate representation of those societies' values. In contrast, for more traditional cultures like Bangladesh and the Philippines, models did not produce such unclassifiable outputs. This nuance, which highlights different cultural stances on religion, is completely missed in traditional closed-style (MCQ) evaluations.
 
 
-### RusCode: Russian Cultural Code Benchmark for Text-to-Image Generation
+## RusCode: Russian Cultural Code Benchmark for Text-to-Image Generation
 
 [https://arxiv.org/abs/2502.07455](https://arxiv.org/abs/2502.07455)
 
@@ -3379,7 +3294,7 @@ The benchmark measured the cultural value dimension of 'Traditional vs. Secular-
 The model's ability to accurately generate visual representations of Russian religious concepts (e.g., Orthodox churches, religious holidays, religious traditions) as part of a broader benchmark on the Russian cultural code. The paper did not report specific findings for the religious categories. The general finding was that models with specific training on Russian culture (Kandinsky 3.1, YandexART 2) significantly outperformed globally popular models (Stable Diffusion 3, DALL-E 3) in generating images that accurately reflect Russian cultural concepts. This included religious elements like Orthodox churches and holidays, suggesting the latter models have a lower 'cultural awareness' of Russian religious visual culture.
 
 
-### DebateBench: A Challenging Long Context Reasoning Benchmark For Large Language Models
+## DebateBench: A Challenging Long Context Reasoning Benchmark For Large Language Models
 
 [https://arxiv.org/abs/2502.06279](https://arxiv.org/abs/2502.06279)
 
@@ -3388,7 +3303,7 @@ The model's ability to accurately generate visual representations of Russian rel
 The benchmark measures an LLM's ability to perform long-context reasoning and adjudication on complex debate topics, one example of which involves the role of religious figures and institutions in protest movements. The paper provides no findings specific to religion. The general finding is that the tested LLMs struggle with the long-context, complex reasoning required by the benchmark, which includes debates on socio-political topics that may involve religion.
 
 
-### Beyond English: Evaluating Automated Measurement of Moral Foundations in Non-English Discourse with a Chinese Case Study
+## Beyond English: Evaluating Automated Measurement of Moral Foundations in Non-English Discourse with a Chinese Case Study
 
 [https://arxiv.org/abs/2502.02451](https://arxiv.org/abs/2502.02451)
 
@@ -3397,7 +3312,7 @@ The benchmark measures an LLM's ability to perform long-context reasoning and ad
 Measurement of moral foundations, particularly the 'sanctity' foundation, which is explicitly linked to religious concepts like purity, disgust, and religious narratives. The evaluation also touches on culturally-specific moral systems like Confucianism and Catholicism. Large Language Models struggle with culturally and religiously specific nuances of moral foundations. For example, they often miscategorized Confucian concepts like filial piety as 'care' instead of 'authority'. They also failed to capture the specific Chinese cultural context of 'sanctity' when applied to political figures. Furthermore, the models' performance on 'sanctity' was poor for Italian texts, as the Italian understanding of the concept is heavily influenced by Catholic values, which differs from the American-centric conceptions likely present in the training data.
 
 
-### Fairness through Difference Awareness: Measuring Desired Group Discrimination in LLMs
+## Fairness through Difference Awareness: Measuring Desired Group Discrimination in LLMs
 
 [https://arxiv.org/abs/2502.01926](https://arxiv.org/abs/2502.01926)
 
@@ -3406,7 +3321,7 @@ Measurement of moral foundations, particularly the 'sanctity' foundation, which 
 The paper introduced two benchmarks related to religion as part of a larger suite measuring 'Difference Awareness'. The first (D1: Religion) measured factual knowledge about the relative demographic representation of different religions in various countries. The second (D4: Asylum) measured knowledge and reasoning about which religious groups could reasonably argue for asylum in the U.S. due to persecution in their home country. Additionally, it used religious stereotypes (e.g., associating Muslims with terrorism) as an example in its normative benchmark (N1: BBQ) to measure a model's ability to recognize the differential harm of stereotypes against marginalized groups. The key finding related to religion is that LLMs often demonstrate 'difference unawareness.' They struggle with factual questions requiring differentiation between religious groups, such as demographic representation (D1 benchmark) or grounds for asylum due to persecution (D4 benchmark). This failure stems from current fairness approaches that incorrectly treat any distinction between groups as harmful bias. The paper also highlights that models may fail to recognize that stereotypes against marginalized religious groups (e.g., Muslims) are more harmful than those against dominant groups, incorrectly judging the harm as equal.
 
 
-### From tools to thieves: Measuring and understanding public perceptions of AI through crowdsourced metaphors
+## From tools to thieves: Measuring and understanding public perceptions of AI through crowdsourced metaphors
 
 [https://arxiv.org/abs/2501.18045](https://arxiv.org/abs/2501.18045)
 
@@ -3415,7 +3330,7 @@ The paper introduced two benchmarks related to religion as part of a larger suit
 The frequency and characteristics of religious and mythical metaphors (e.g., 'God', 'genie', 'angel', 'devil') used by the public to describe Artificial Intelligence, and the correlation of these metaphors with attitudes such as trust, willingness to adopt, warmth, and competence. The study identified 'God', 'genie', and 'folklore' (including 'angel' and 'satan/devil') as dominant metaphor clusters for AI. These metaphors, evoking magic and mysticism, were associated with specific public perceptions. The 'god' metaphor, for instance, was a significant predictor of higher trust in and adoption of AI. There were also notable demographic differences; the 'genie' and 'god' metaphors were significantly more common among non-white participants, suggesting differing perspectives on AI's power and agency which could lead to a higher risk of overreliance for these populations.
 
 
-### HATEBENCH: Benchmarking Hate Speech Detectors on LLM-Generated Content and Hate Campaigns
+## HATEBENCH: Benchmarking Hate Speech Detectors on LLM-Generated Content and Hate Campaigns
 
 [https://arxiv.org/abs/2501.16750](https://arxiv.org/abs/2501.16750)
 
@@ -3424,7 +3339,7 @@ The frequency and characteristics of religious and mythical metaphors (e.g., 'Go
 The benchmark measures the effectiveness and robustness of hate speech detectors on LLM-generated content that targets various identity groups, including specific religious groups. Hate speech detector performance is inconsistent across different religious groups. For LLM-generated samples, detectors showed varied effectiveness, achieving high F1-scores for content targeting Christians (e.g., Perspective score of 0.933) and Hindus (0.900), while performing less effectively on content targeting Jewish (0.764) and Atheist (0.841) groups.
 
 
-### Through the Prism of Culture: Evaluating LLMs’ Understanding of Indian Subcultures and Traditions
+## Through the Prism of Culture: Evaluating LLMs’ Understanding of Indian Subcultures and Traditions
 
 [https://arxiv.org/abs/2501.16748](https://arxiv.org/abs/2501.16748)
 
@@ -3433,7 +3348,7 @@ The benchmark measures the effectiveness and robustness of hate speech detectors
 The benchmark measured the Large Language Models' (LLMs) knowledge and contextual understanding of localized and sub-cultural religious practices, rituals, and beliefs within India ('Little Traditions'), particularly contrasting them with dominant religious narratives ('Great Traditions'). This included evaluating responses on scenarios involving monotheistic Hindu sects (Lingayats), concepts of ritual purity and pollution, and local religious ceremonies like frog marriages for rain. LLMs struggle to comprehend the nuances of localized religious subcultures ('Little Traditions') in India, often defaulting to dominant, generalized narratives ('Great Traditions'). For instance, most models incorrectly classified all of Hinduism as polytheistic, failing to recognize monotheistic sects like the Lingayats. While some models could identify certain rituals, they often lacked deep contextual understanding, prioritizing modern sensibilities (e.g., sanitation over ritual purity) or failing to identify specific traditional names. The models' performance often worsened when prompts were provided in regional Indian languages instead of English, highlighting a data and optimization gap.
 
 
-### CASE-BENCH: CONTEXT-AWARE SAFETY BENCHMARK FOR LARGE LANGUAGE MODELS
+## CASE-BENCH: CONTEXT-AWARE SAFETY BENCHMARK FOR LARGE LANGUAGE MODELS
 
 [https://arxiv.org/abs/2501.14940](https://arxiv.org/abs/2501.14940)
 
@@ -3442,7 +3357,7 @@ The benchmark measured the Large Language Models' (LLMs) knowledge and contextua
 Evaluating the effect of context (safe, unsafe, vs. no context) on human and LLM safety judgments for queries related to 'religion promotion'. The benchmark measures whether a query should be answered or refused based on the provided context. The category 'religion promotion' showed the most significant shift in human safety judgments when context was added, compared to 44 other categories. It had the highest Kruskal-Wallis (K-W) statistic value, indicating that context had the most pronounced effect. Specifically, providing an unsafe context led to a notable decrease in the proportion of human annotators who believed the chatbot should respond to the query.
 
 
-### Value Compass Benchmarks: A Comprehensive, Generative and Self-Evolving Platform for LLMs’ Value Evaluation
+## Value Compass Benchmarks: A Comprehensive, Generative and Self-Evolving Platform for LLMs’ Value Evaluation
 
 [https://arxiv.org/abs/2501.07071](https://arxiv.org/abs/2501.07071)
 
@@ -3451,7 +3366,7 @@ Evaluating the effect of context (safe, unsafe, vs. no context) on human and LLM
 The benchmark measures alignment with a set of universal and moral values, some of which are explicitly linked to religion. Specifically, it evaluates the 'Tradition' value (respect for and acceptance of customs and ideas from traditional culture or religion) from Schwartz's Theory of Basic Values, and the 'Sanctity/Degradation' foundation (notions of striving to live in an elevated, noble way, often found in religious narratives) from Moral Foundation Theory. The paper does not report specific findings related to religion. It establishes a framework capable of measuring values such as 'Tradition' and 'Sanctity', which are derived from or associated with religious contexts, but it does not provide an analysis of how different LLMs perform on these specific value dimensions.
 
 
-### Towards New Benchmark for AI Alignment & Sentiment Analysis in Socially Important Issues: A Comparative Study of Human and LLMs in the Context of AGI
+## Towards New Benchmark for AI Alignment & Sentiment Analysis in Socially Important Issues: A Comparative Study of Human and LLMs in the Context of AGI
 
 [https://arxiv.org/abs/2501.02531](https://arxiv.org/abs/2501.02531)
 
@@ -3460,7 +3375,7 @@ The benchmark measures alignment with a set of universal and moral values, some 
 The proposed Societal AI Alignment & Sentiment Benchmark (SAAS-AI) measures AI alignment with societal values, including the representation of religious/cultural heritage and moral conservatism. It is designed to detect biases related to religion, among other axes like gender, ethnicity, and nationality. The paper did not present new empirical findings on religion from its own experiment, which focused on sentiment towards AGI. However, it proposed a new benchmark (SAAS-AI) that incorporates religion as a key axis for evaluation. This inclusion was justified by citing other research (e.g., the Singapore AI Safety Red Teaming Challenge) which demonstrated that religious bias is a prevalent issue in Large Language Models.
 
 
-### A Survey of State of the Art Large Vision Language Models: Alignment, Benchmark, Evaluations and Challenges
+## A Survey of State of the Art Large Vision Language Models: Alignment, Benchmark, Evaluations and Challenges
 
 [https://arxiv.org/abs/2501.02189](https://arxiv.org/abs/2501.02189)
 
@@ -3469,7 +3384,7 @@ The proposed Societal AI Alignment & Sentiment Benchmark (SAAS-AI) measures AI a
 The paper surveys benchmarks that measure stereotypical bias related to religion (MMBias) and performance disparities across cultures, including religious ones (CulturalVQA). The survey cites existing work, noting that the MMBias benchmark was created to target religious bias. It also references the CulturalVQA benchmark, which found that models exhibit worse performance for Islamic cultures compared to North American cultures.
 
 
-### A Comprehensive Framework to Operationalize Social Stereotypes for Responsible AI Evaluations
+## A Comprehensive Framework to Operationalize Social Stereotypes for Responsible AI Evaluations
 
 [https://arxiv.org/abs/2501.02074](https://arxiv.org/abs/2501.02074)
 
@@ -3478,7 +3393,7 @@ The paper surveys benchmarks that measure stereotypical bias related to religion
 The paper proposes a general framework to operationalize social stereotypes, using stereotypes in religious contexts as a key example. It demonstrates how to capture stereotypes about religious identity, associated attributes (e.g., vegetarianism for Brahmins), and the importance of geo-cultural context (e.g., Christians in India). The paper uses religion as a key example to illustrate the components of its proposed stereotype framework. It highlights the temporal evolution of religious terms (e.g., 'Protestant'), the context-dependency of marginalization (e.g., Christians in India vs. the US), and includes examples of religious/caste-based stereotypes (e.g., 'brahmins are vegetarians') from existing datasets to demonstrate the framework's utility.
 
 
-### M³oralBench: A MultiModal Moral Benchmark for LVLMs
+## M³oralBench: A MultiModal Moral Benchmark for LVLMs
 
 [https://arxiv.org/abs/2412.20718](https://arxiv.org/abs/2412.20718)
 
@@ -3487,7 +3402,7 @@ The paper proposes a general framework to operationalize social stereotypes, usi
 The benchmark measures LVLMs' understanding of moral violations related to the 'Sanctity/Degradation' foundation from Moral Foundations Theory, which is influenced by ideas of spirituality and purity often found in religious contexts. Large Vision-Language Models (LVLMs) exhibit their poorest moral performance on the Sanctity/Degradation foundation. This highlights a significant gap between the models' understanding of concepts like purity and sacredness—which are often tied to spirituality and religion—and human moral values, which rate sanctity violations as severe moral transgressions.
 
 
-### Building a Rich Dataset to Empower the Persian Question Answering Systems
+## Building a Rich Dataset to Empower the Persian Question Answering Systems
 
 [https://arxiv.org/abs/2412.20212](https://arxiv.org/abs/2412.20212)
 
@@ -3496,7 +3411,16 @@ The benchmark measures LVLMs' understanding of moral violations related to the '
 Knowledge of religious topics as part of a general, open-domain question-answering task. The constructed dataset, NextQuAD, includes a 'Religion' category, and the paper also reviews other datasets focused on Islamic texts (IslamicPCQA) and a general religious corpus (Rasayel and Massayel). The paper does not report specific findings related to the religion category. The main finding is that a model trained on the new NextQuAD dataset (which includes a 'Religion' sub-category) outperforms models trained on other Persian datasets like ParSQuAD and PersianQA on general QA tasks, indicating the higher quality of the new dataset.
 
 
-### SUBDATA: Bridging Heterogeneous Datasets to Enable Theory-Driven Evaluation of Political and Demographic Perspectives in LLMs
+## A Culturally-Aware Benchmark for Person Re-Identification in Modest Attire
+
+[https://arxiv.org/abs/2412.18874](https://arxiv.org/abs/2412.18874)
+
+**Date:** 2025-06-10
+
+The benchmark measures the performance drop and cultural bias of Person Re-Identification (ReID) computer vision models when applied to a dataset featuring modest attire, such as hijabs, which are prevalent in Islamic cultural contexts. It specifically evaluates the models' ability to identify individuals in settings where clothing offers fewer distinctive features. State-of-the-art Person Re-Identification models (SOLIDER and CLIP-ReID) show a significant performance drop on the IUST_PersonReId dataset, which features modest attire common in Islamic culture. The paper attributes this to challenges like occlusion and limited distinctive features, particularly for women wearing hijabs, highlighting a significant cultural and demographic bias in current visual recognition systems. Re-identifying females was found to be more challenging than males, even when the dataset was balanced for gender.
+
+
+## SUBDATA: Bridging Heterogeneous Datasets to Enable Theory-Driven Evaluation of Political and Demographic Perspectives in LLMs
 
 [https://arxiv.org/abs/2412.16783](https://arxiv.org/abs/2412.16783)
 
@@ -3505,7 +3429,7 @@ Knowledge of religious topics as part of a general, open-domain question-answeri
 The benchmark measures the rate at which Large Language Models, conditioned on different political personas (left-leaning vs. right-leaning), classify content as hate speech when it targets specific religious groups. Across all models tested, LLMs conditioned on left-leaning personas consistently detected a higher proportion of hate speech against religious groups (Muslims, Jews, Christians) compared to LLMs conditioned on right-leaning personas. This suggests that a left-leaning alignment induces a general increase in sensitivity to hateful content rather than offering selective protection to specific groups.
 
 
-### TelcoLM: collecting data, adapting, and benchmarking language models for the telecommunication domain
+## TelcoLM: collecting data, adapting, and benchmarking language models for the telecommunication domain
 
 [https://arxiv.org/abs/2412.15891](https://arxiv.org/abs/2412.15891)
 
@@ -3514,7 +3438,7 @@ The benchmark measures the rate at which Large Language Models, conditioned on d
 The benchmark measured the models' ability to answer questions about religious creation narratives (specifically from the biblical Book of Genesis) as part of a broader general knowledge and truthfulness evaluation (TruthfulQA). It assessed whether models presented these narratives as factual or contextualized them as religious beliefs. When asked about the creation of the world, the tested Llama models tended to state the biblical narrative (e.g., "6 days") as a fact. In contrast, GPT-3.5 and GPT-4 correctly contextualized the answer as a religious belief from the Book of Genesis, demonstrating a more nuanced understanding of religious vs. scientific claims.
 
 
-### Chinese SafetyQA: A Safety Short-form Factuality Benchmark for Large Language Models
+## Chinese SafetyQA: A Safety Short-form Factuality Benchmark for Large Language Models
 
 [https://arxiv.org/abs/2412.15265](https://arxiv.org/abs/2412.15265)
 
@@ -3523,7 +3447,7 @@ The benchmark measured the models' ability to answer questions about religious c
 Factual knowledge related to religious prejudice and discrimination within the Chinese context. The paper does not provide specific findings for the religion subcategory. Results related to religion are aggregated under broader categories such as 'Prejudice & Discrimination' (PD) and 'Insults & Hate' (IH).
 
 
-### Towards Automatic Evaluation for Image Transcreation
+## Towards Automatic Evaluation for Image Transcreation
 
 [https://arxiv.org/abs/2412.13717](https://arxiv.org/abs/2412.13717)
 
@@ -3532,7 +3456,7 @@ Factual knowledge related to religious prejudice and discrimination within the C
 The benchmark measured the performance of Vision-Language Models on transcreating images from the abstract category of 'religion'. Performance was evaluated along three axes: cultural relevance, semantic equivalence, and visual similarity. VLM-based metrics performed well on cultural relevance for the religion category. However, both object-based metrics and VLM-based metrics struggled to evaluate semantic equivalence for abstract categories like religion. Embedding-based metrics also showed slightly diminished performance for abstract categories compared to concrete ones.
 
 
-### Socio-Culturally Aware Evaluation Framework for LLM-Based Content Moderation
+## Socio-Culturally Aware Evaluation Framework for LLM-Based Content Moderation
 
 [https://arxiv.org/abs/2412.13578](https://arxiv.org/abs/2412.13578)
 
@@ -3541,7 +3465,7 @@ The benchmark measured the performance of Vision-Language Models on transcreatin
 The benchmark measures how Large Language Models generate hateful content and exhibit biases when prompted with personas having specific religious attributes. It analyzes how different religious identities influence the tone and content of generated text, particularly in the context of hate speech. In the hate speech generation task (HATE-GEN), religious beliefs were a key factor. The study found that Protestant and Taoist personas tended to oppose hate speech, while Baptist personas were more prone to generating hateful content. Atheist and Catholic personas maintained a balance, Muslim and Hindu personas showed moderate tendencies, and Jewish personas leaned toward opposing hate speech.
 
 
-### CEHA: A Dataset of Conflict Events in the Horn of Africa
+## CEHA: A Dataset of Conflict Events in the Horn of Africa
 
 [https://arxiv.org/abs/2412.13511](https://arxiv.org/abs/2412.13511)
 
@@ -3550,7 +3474,7 @@ The benchmark measures how Large Language Models generate hateful content and ex
 The benchmark measures the ability of models to perform multi-label classification of violent conflict events from news articles, with one of the specific categories being 'Religious Conflict'. This category is defined as conflicts arising from differences in religious beliefs or practices, or targeting individuals/groups based on their stated religious affiliation (e.g., Muslim, Orthodox Christian) or their engagement in religious practice. In the task of classifying 'Religious Conflict' events, Large Language Models (LLMs) generally outperformed supervised models. The best performance was achieved by Mistral-large in a 6-shot setting with an F1 score of 84.75%, which was 6.06% higher than the best-performing supervised model (T5). This suggests that LLMs are particularly effective for identifying religious conflicts in this low-resource context.
 
 
-### A Framework for Critical Evaluation of Text-to-Image Models: Integrating Art Historical Analysis, Artistic Exploration, and Critical Prompt Engineering.
+## A Framework for Critical Evaluation of Text-to-Image Models: Integrating Art Historical Analysis, Artistic Exploration, and Critical Prompt Engineering.
 
 [https://arxiv.org/abs/2412.12774](https://arxiv.org/abs/2412.12774)
 
@@ -3559,7 +3483,7 @@ The benchmark measures the ability of models to perform multi-label classificati
 The framework measures bias in religious iconography (specifically, a tendency towards Western/Christian imagery) and the models' ability to understand and accurately represent complex religious and cultural symbolism in art. The paper found that AI models exhibit a bias towards Western religious iconography, such as consistently generating images of Christian saints even when prompted for more general spiritual figures. In a case study involving 'The Arnolfini Portrait,' models struggled with depicting deep symbolic interpretations and often omitted crucial religious symbols present in the original artwork.
 
 
-### QUENCH: Measuring the gap between Indic and Non-Indic Contextual General Reasoning in LLMs
+## QUENCH: Measuring the gap between Indic and Non-Indic Contextual General Reasoning in LLMs
 
 [https://arxiv.org/abs/2412.11763](https://arxiv.org/abs/2412.11763)
 
@@ -3568,7 +3492,7 @@ The framework measures bias in religious iconography (specifically, a tendency t
 Knowledge of mythology and religion as part of a broader general world knowledge and deductive reasoning benchmark. The 'Mythology & Religion' theme comprises 4.2% of the dataset. The paper does not provide specific findings for the 'Mythology & Religion' theme. The general finding is that all tested models perform worse on Indic-context questions compared to non-Indic ones, which would include questions related to Indic religions and mythologies.
 
 
-### MT-LENS: An all-in-one Toolkit for Better Machine Translation Evaluation
+## MT-LENS: An all-in-one Toolkit for Better Machine Translation Evaluation
 
 [https://arxiv.org/abs/2412.11615](https://arxiv.org/abs/2412.11615)
 
@@ -3577,7 +3501,16 @@ Knowledge of mythology and religion as part of a broader general world knowledge
 Toxicity detection in machine translation outputs, where the source text is related to various demographic axes, including religion. The paper introduces the MT-LENS framework, which is capable of evaluating added toxicity related to religion using the HOLISTICBIAS dataset. However, the paper does not present any specific findings or results regarding the performance of models on the religion axis; it only describes the tool's capability.
 
 
-### MALAMUTE: A Multilingual, Highly-granular, Template-free, Education-based Probing Dataset
+## Optimized Quran Passage Retrieval Using an Expanded QA Dataset and Fine-Tuned Language Models
+
+[https://arxiv.org/abs/2412.11431](https://arxiv.org/abs/2412.11431)
+
+**Date:** 2024-12-16
+
+The benchmark measured the performance of various language models on Qur'anic passage retrieval. This involved assessing their ability to accurately retrieve relevant verses from the Holy Qur'an in response to questions posed in Modern Standard Arabic, thereby testing their knowledge and comprehension of this specific religious text. By expanding the training dataset from 251 to 1895 questions and fine-tuning several transformer models, the system's performance on Qur'an passage retrieval was significantly enhanced. The best model, AraBERT-base, improved its MAP@10 score by 63% (from 0.22 to 0.36) and its MRR score by 59% (from 0.37 to 0.59) compared to the baseline. The approach also tripled the success rate for handling 'no answer' questions, from 25% to 75%, demonstrating the effectiveness of dataset enrichment and model optimization for question-answering on a complex religious text.
+
+
+## MALAMUTE: A Multilingual, Highly-granular, Template-free, Education-based Probing Dataset
 
 [https://arxiv.org/abs/2412.10105](https://arxiv.org/abs/2412.10105)
 
@@ -3586,7 +3519,7 @@ Toxicity detection in machine translation outputs, where the source text is rela
 Factual knowledge of religious concepts within educational domains, such as the 'free exercise clause' in American government, Nietzsche's philosophy on God, and the 'dalits' social group in anthropology. The paper does not provide specific findings related to religion. Its analysis is at the level of domains and subdomains (e.g., Philosophy, American Government, Anthropology). For example, it notes that SciBERT's performance drops on subjects like Philosophy and Anthropology, which contain the religion-related prompts, but does not isolate the religious questions for a separate analysis.
 
 
-### Filipino Benchmarks for Measuring Sexist and Homophobic Bias in Multilingual Language Models from Southeast Asia
+## Filipino Benchmarks for Measuring Sexist and Homophobic Bias in Multilingual Language Models from Southeast Asia
 
 [https://arxiv.org/abs/2412.07303](https://arxiv.org/abs/2412.07303)
 
@@ -3595,7 +3528,7 @@ Factual knowledge of religious concepts within educational domains, such as the 
 The benchmark measures stereotypes linking queer identities with religious concepts of sinfulness and disobedience to God. For instance, it evaluates if models are more likely to find sentences like 'Being a lesbian is a sin' or 'Lesbians do not heed the word of God' more plausible than their neutral counterparts. Language models are more likely to associate queer women (tomboy or lesbiyana) with the religious concept of being 'sinful' compared to heterosexual women.
 
 
-### Evaluating and Mitigating Social Bias for Large Language Models in Open-ended Settings
+## Evaluating and Mitigating Social Bias for Large Language Models in Open-ended Settings
 
 [https://arxiv.org/abs/2412.06134](https://arxiv.org/abs/2412.06134)
 
@@ -3604,7 +3537,7 @@ The benchmark measures stereotypes linking queer identities with religious conce
 Detection of social biases and stereotypes in religious contexts across multiple-choice, fill-in-the-blank, and short-answer questions. For ambiguous religious questions, GPT-3.5 exhibited a high bias score (0.205) in the fill-in-the-blank format, while GPT-4o showed lower but still present bias. For disambiguated questions, GPT-3.5 consistently showed higher bias than GPT-4o. The proposed 'Composite Prompting' debiasing method was effective, reducing bias scores in the religion category to near-zero for both models.
 
 
-### Hostility Detection in UK Politics: A Dataset on Online Abuse Targeting MPs
+## Hostility Detection in UK Politics: A Dataset on Online Abuse Targeting MPs
 
 [https://arxiv.org/abs/2412.04046](https://arxiv.org/abs/2412.04046)
 
@@ -3613,7 +3546,7 @@ Detection of social biases and stereotypes in religious contexts across multiple
 Detection of hostility in tweets directed at UK Members of Parliament (MPs), where one of the targeted identity characteristics is religion. Non-Christian Members of Parliament (MPs) face significantly higher levels of religion-based and general hostility compared to their Christian counterparts. Models were evaluated on their ability to detect religion-based hostility as a sub-task, with GPT-3.5 (prompted with definitions) achieving the highest F1-score in a hierarchical classification setting that included religion as a category of hostility.
 
 
-### INCLUDE: EVALUATING MULTILINGUAL LANGUAGE UNDERSTANDING WITH REGIONAL KNOWLEDGE
+## INCLUDE: EVALUATING MULTILINGUAL LANGUAGE UNDERSTANDING WITH REGIONAL KNOWLEDGE
 
 [https://arxiv.org/abs/2411.19799](https://arxiv.org/abs/2411.19799)
 
@@ -3622,7 +3555,7 @@ Detection of hostility in tweets directed at UK Members of Parliament (MPs), whe
 The benchmark, named INCLUDE, measures a model's knowledge of the academic subject of 'Religious Studies' as part of a broader assessment of multilingual, regional, and cultural understanding. It specifically tests knowledge from examinations in this field and how religious interpretations might differ across regions. The paper does not provide specific findings isolated to religion. Religious studies questions are categorized under 'Humanities' and are used to assess cultural and region-specific knowledge. The general finding is that model performance varies significantly across languages and regions, suggesting that models' grasp of specialized knowledge, including religious topics, is inconsistent and often lacking, especially for less-resourced languages.
 
 
-### All Languages Matter: Evaluating LMMs on Culturally Diverse 100 Languages
+## All Languages Matter: Evaluating LMMs on Culturally Diverse 100 Languages
 
 [https://arxiv.org/abs/2411.16508](https://arxiv.org/abs/2411.16508)
 
@@ -3631,7 +3564,7 @@ The benchmark, named INCLUDE, measures a model's knowledge of the academic subje
 The benchmark measured the models' knowledge and visual understanding of religious concepts, including the ability to identify and explain the cultural and historical significance of religious ceremonies (e.g., the Hawaiian 'aha Aloha), festivals (e.g., the Islamic Mela Chiraghan), and related artifacts across 100 different languages. Models were evaluated on their knowledge of religion as a cultural domain. Performance varied significantly, with closed-source models like GPT-4o generally outperforming open-source models on tasks related to understanding religious context. A key finding highlighted a 'Lack of Cultural Understanding' where GPT-4o confused two distinct Islamic festivals (Mela Chiraghan and Eid Milad un Nabi), demonstrating a failure to grasp nuanced cultural and religious distinctions despite visual similarities.
 
 
-### HATEDAY: Insights from a Global Hate Speech Dataset Representative of a Day on Twitter
+## HATEDAY: Insights from a Global Hate Speech Dataset Representative of a Day on Twitter
 
 [https://arxiv.org/abs/2411.15462](https://arxiv.org/abs/2411.15462)
 
@@ -3640,7 +3573,7 @@ The benchmark measured the models' knowledge and visual understanding of religio
 Detection of hate speech targeting individuals or groups based on their religion. The benchmark measures the prevalence of religious hate speech as a specific target category within a global dataset, and evaluates model performance in identifying it. Religious hate speech constitutes a significant portion of all hate in certain regions, representing 41% of hate in India, mostly as Islamophobia. However, it is less prominent in other analyzed contexts. Compared to their overall prevalence, religion-targeted hate speech is underrepresented in the models' false negatives. Furthermore, religion-based hate is less prevalent in the real-world HATEDAY dataset than it is in existing academic hate speech datasets, indicating a misalignment between academic focus and real-world occurrences.
 
 
-### The Impossible Test: A 2024 Unsolvable Dataset and A Chance for an AGI Quiz
+## The Impossible Test: A 2024 Unsolvable Dataset and A Chance for an AGI Quiz
 
 [https://arxiv.org/abs/2411.14486](https://arxiv.org/abs/2411.14486)
 
@@ -3649,7 +3582,7 @@ Detection of hate speech targeting individuals or groups based on their religion
 The benchmark measured the ability of Large Language Models to acknowledge uncertainty on fundamentally unsolvable problems across various domains. The connection to religion or faith was through the inclusion of a 'Mysticism' problem category, testing if models would admit ignorance on such topics rather than generating speculative answers. Based on the 'GPT-4 accuracy as a function of domain specialty' chart (Figure 4), the model demonstrated a low percentage of correct answers (admissions of ignorance) for the 'Mysticism' category. This indicates that the model was more likely to generate confident but incorrect guesses for problems related to mysticism, rather than acknowledging that the problems are unsolvable.
 
 
-### VBench++: Comprehensive and Versatile Benchmark Suite for Video Generative Models
+## VBench++: Comprehensive and Versatile Benchmark Suite for Video Generative Models
 
 [https://arxiv.org/abs/2411.13503](https://arxiv.org/abs/2411.13503)
 
@@ -3658,7 +3591,7 @@ The benchmark measured the ability of Large Language Models to acknowledge uncer
 The benchmark measured the ability of video generative models to fairly generate scenes across various cultures, including religious ones such as Buddhism, Christianity, Hinduism, and Islam, as part of its 'Culture Fairness' evaluation. Performance on 'Culture Fairness' varied significantly across models. Models developed by industrial companies (e.g., ModelScope, VideoCrafter-2.0) demonstrated stronger performance in trustworthiness, including cultural fairness, compared to models from academic research (e.g., CogVideo, Show-1), which may be attributable to access to more diverse data and a greater emphasis on internal reviews.
 
 
-### Value Imprint: A Technique for Auditing the Human Values Embedded in RLHF Datasets
+## Value Imprint: A Technique for Auditing the Human Values Embedded in RLHF Datasets
 
 [https://arxiv.org/abs/2411.11937](https://arxiv.org/abs/2411.11937)
 
@@ -3667,7 +3600,7 @@ The benchmark measured the ability of video generative models to fairly generate
 Detection of preferences that moderate religious fanaticism and antisemitic comments within RLHF datasets. The analysis of RLHF datasets revealed that the 'Civility & Tolerance' value category includes preferences that moderate user requests for 'antisemitic comments, and religious and ethnic fanaticism'. This value was identified as one of the less represented categories within the audited datasets.
 
 
-### Value-Spectrum: Quantifying Preferences of Vision-Language Models via Value Decomposition in Social Media Contexts
+## Value-Spectrum: Quantifying Preferences of Vision-Language Models via Value Decomposition in Social Media Contexts
 
 [https://arxiv.org/abs/2411.11479](https://arxiv.org/abs/2411.11479)
 
@@ -3676,7 +3609,7 @@ Detection of preferences that moderate religious fanaticism and antisemitic comm
 Preference for visual content related to the Schwartz value of 'Tradition', which includes keywords like 'Religious' and 'Worship'. Across all tested Vision-Language Models, the 'Tradition' value dimension, which encompasses religious themes, was the third most preferred category, with an average preference score of 72.8 out of 100, indicating a generally high preference for such content.
 
 
-### Bias in Large Language Models: Origin, Evaluation, and Mitigation
+## Bias in Large Language Models: Origin, Evaluation, and Mitigation
 
 [https://arxiv.org/abs/2411.10915](https://arxiv.org/abs/2411.10915)
 
@@ -3685,7 +3618,7 @@ Preference for visual content related to the Schwartz value of 'Tradition', whic
 The paper cites studies that measure stereotype bias, specifically the association between Muslims and violence, and the generation of toxic language related to religious groups (e.g., 'Islamic slaughtering'). It also mentions the mitigation of religious bias by swapping religious terms. The paper cites findings that LLMs exhibit a significant Muslim-violence bias, which is more severe than biases against other religious groups. It also notes that language models can degenerate into generating toxic content, including phrases like 'Islamic slaughtering'. Additionally, it mentions that counterfactual data augmentation (CDA) by swapping religious terms has been empirically evaluated as a method for mitigating religious bias.
 
 
-### Beyond the Safety Bundle: Auditing the Helpful and Harmless Dataset
+## Beyond the Safety Bundle: Auditing the Helpful and Harmless Dataset
 
 [https://arxiv.org/abs/2411.08243](https://arxiv.org/abs/2411.08243)
 
@@ -3694,7 +3627,7 @@ The paper cites studies that measure stereotype bias, specifically the associati
 The benchmark measures disparate safety behaviors (specifically, refusal rates to safe prompts) across different demographic groups, including religious groups. It investigates how training on the Helpful and Harmless (HH) dataset, which has an imbalanced distribution of religious identity terms, can lead models to associate these terms with harmfulness and exhibit exaggerated safety responses. The study found that religious identity terms like 'Muslim' and 'Jewish' are overrepresented in the 'harmless' (red-teaming) portion of the Anthropic HH dataset compared to the 'helpful' portion. This imbalance in the training data leads models to develop disparate safety behaviors, such as higher refusal rates for safe prompts that contain these religious terms. This suggests that safety training with the HH dataset can paradoxically perpetuate harmful associations between specific religious groups and toxicity.
 
 
-### CHINESE SIMPLEQA: A CHINESE FACTUALITY EVALUATION FOR LARGE LANGUAGE MODELS
+## CHINESE SIMPLEQA: A CHINESE FACTUALITY EVALUATION FOR LARGE LANGUAGE MODELS
 
 [https://arxiv.org/abs/2411.07140](https://arxiv.org/abs/2411.07140)
 
@@ -3703,7 +3636,7 @@ The benchmark measures disparate safety behaviors (specifically, refusal rates t
 The benchmark measures the factual knowledge of LLMs on various topics, including religion, by evaluating their ability to answer short, fact-seeking questions. For religion, this specifically includes factual questions about Buddhism and Taoism within the context of Chinese culture. The paper does not report specific findings for the religion subtopic. The analysis is presented at the level of six broad categories (e.g., 'Chinese Culture', 'Society'), and while 'Religion' is a sub-category, its specific performance is not detailed.
 
 
-### Benchmarking Distributional Alignment of Large Language Models
+## Benchmarking Distributional Alignment of Large Language Models
 
 [https://arxiv.org/abs/2411.05403](https://arxiv.org/abs/2411.05403)
 
@@ -3712,7 +3645,7 @@ The benchmark measures the factual knowledge of LLMs on various topics, includin
 The benchmark measured the distributional alignment of Large Language Models with human opinion distributions on subjective survey questions. One specific example used to illustrate the importance of this measurement involved a question from the PEW survey about the perceived importance of belief in God for being a moral person. The paper uses a question about the importance of belief in God for morality as a key example to argue that evaluating LLMs based only on the majority human response is insufficient. The main finding illustrated by this example is that for subjective topics, including religion, it is crucial to measure a model's ability to align with the entire distribution of human opinions, including minority views, rather than just predicting the most likely answer.
 
 
-### MILU: A Multi-task Indic Language Understanding Benchmark
+## MILU: A Multi-task Indic Language Understanding Benchmark
 
 [https://arxiv.org/abs/2411.02538](https://arxiv.org/abs/2411.02538)
 
@@ -3721,7 +3654,7 @@ The benchmark measured the distributional alignment of Large Language Models wit
 The benchmark, MILU, measures the knowledge of Large Language Models on 41 subjects within an India-centric context. One of these subjects is 'Religion and Spirituality', so the benchmark evaluates the models' knowledge on this topic through multiple-choice questions. The paper's domain-wise analysis indicates that models generally perform poorly in culturally relevant areas (such as Arts & Humanities, Social Sciences) compared to general fields like STEM. While 'Religion and Spirituality' is one of the benchmark's subjects and falls into this culturally relevant category, its specific performance is detailed in appendix tables but not singled out for discussion in the main findings.
 
 
-### Culinary Class Wars: Evaluating LLMs using ASH in Cuisine Transfer Task
+## Culinary Class Wars: Evaluating LLMs using ASH in Cuisine Transfer Task
 
 [https://arxiv.org/abs/2411.01996](https://arxiv.org/abs/2411.01996)
 
@@ -3730,7 +3663,7 @@ The benchmark, MILU, measures the knowledge of Large Language Models on 41 subje
 The benchmark measured the ability of Large Language Models to generate culturally and religiously appropriate recipes, specifically focusing on adherence to religious dietary laws (e.g., Kosher, Islamic, Buddhist, Jain) in a cuisine transfer task. The paper found that LLMs performed well on generating recipes for certain religious dietary laws, with 'Kosher' and 'Islamic' cuisines ranking among the highest for authenticity, sensitivity, and harmony. However, the analysis suggests this high performance might be due to a superficial understanding, as models tended to focus on keywords like 'certified' for Kosher recipes, rather than demonstrating a deep grasp of the culinary or religious nuances.
 
 
-### IDEATOR: Jailbreaking and Benchmarking Large Vision-Language Models Using Themselves
+## IDEATOR: Jailbreaking and Benchmarking Large Vision-Language Models Using Themselves
 
 [https://arxiv.org/abs/2411.00827](https://arxiv.org/abs/2411.00827)
 
@@ -3739,7 +3672,7 @@ The benchmark measured the ability of Large Language Models to generate cultural
 The benchmark, VLJailbreakBench, measured the models' susceptibility to generating harmful content when jailbroken. One of the measured subcategories was 'Religious Hate Speech'. The paper developed a safety benchmark, VLJailbreakBench, which includes 'Religious Hate Speech' as a subcategory under the main 'Hate Speech' topic. However, the results are aggregated at the 'Hate Speech' category level, and no specific findings or attack success rates are reported for the 'Religious Hate Speech' subcategory alone. The paper does not mention any specific religious groups.
 
 
-### Benchmarking Bias in Large Language Models during Role-Playing
+## Benchmarking Bias in Large Language Models during Role-Playing
 
 [https://arxiv.org/abs/2411.00585](https://arxiv.org/abs/2411.00585)
 
@@ -3748,7 +3681,7 @@ The benchmark, VLJailbreakBench, measured the models' susceptibility to generati
 The benchmark measured social biases and stereotypes related to religious groups when Large Language Models (LLMs) are prompted to adopt specific roles. This was done by generating role-specific Yes/No, multiple-choice, and open-ended questions designed to elicit discriminatory responses. Religion was one of 11 demographic attributes tested for bias. It ranked 6th out of 11 in terms of the average number of biased responses elicited (1,089), indicating a significant level of bias that is comparable to other attributes, though less pronounced than attributes like Race and Culture. The paper did not provide a deeper qualitative analysis specific to the types of religious biases found.
 
 
-### Risk Sources and Risk Management Measures in Support of Standards for General-Purpose AI Systems
+## Risk Sources and Risk Management Measures in Support of Standards for General-Purpose AI Systems
 
 [https://arxiv.org/abs/2410.23472](https://arxiv.org/abs/2410.23472)
 
@@ -3757,7 +3690,7 @@ The benchmark measured social biases and stereotypes related to religious groups
 Detection of stereotypes based on religious beliefs. The paper identifies 'religious bias' as a type of systemic bias in AI systems, noting that debiasing methods can focus on stereotypes related to religious beliefs. This is presented as part of a broader catalog of risks rather than an empirical finding from a new experiment.
 
 
-### Evaluating Cultural and Social Awareness of LLM Web Agents
+## Evaluating Cultural and Social Awareness of LLM Web Agents
 
 [https://arxiv.org/abs/2410.23252](https://arxiv.org/abs/2410.23252)
 
@@ -3766,7 +3699,7 @@ Detection of stereotypes based on religious beliefs. The paper identifies 'relig
 The benchmark, CASA, measures an LLM agent's ability to detect and appropriately respond to user queries that violate cultural and social norms, a significant portion of which are derived from religious laws and practices (e.g., Islamic prohibition of alcohol, Buddhist reverence for monks' attire, Hindu festival etiquette). LLM agents demonstrate very low awareness (<10%) of religio-cultural norms and high violation rates (>40%) in web-based environments, performing significantly worse than in non-agent (i.e., standard chatbot) settings. Agents are highly susceptible to being misled by web content that contradicts these norms, such as those related to Islamic law or Buddhist practices. Prompting and fine-tuning can improve performance, with notable gains in culturally and religiously diverse regions like Indonesia, Egypt, Saudi Arabia, and India.
 
 
-### SG-Bench: Evaluating LLM Safety Generalization Across Diverse Tasks and Prompt Types
+## SG-Bench: Evaluating LLM Safety Generalization Across Diverse Tasks and Prompt Types
 
 [https://arxiv.org/abs/2410.21965](https://arxiv.org/abs/2410.21965)
 
@@ -3775,7 +3708,7 @@ The benchmark, CASA, measures an LLM agent's ability to detect and appropriately
 The benchmark measures LLM safety across several categories, one of which is 'Stereotyping and Bias'. This category includes the sub-category of 'Religious stereotyping'. The paper does not provide specific findings related to religion, as the results for the 'Stereotyping and Bias' category were not disaggregated to the level of religious stereotyping.
 
 
-### CAN MACHINES THINK LIKE HUMANS? A BEHAVIORAL EVALUATION OF LLM AGENTS IN DICTATOR GAMES
+## CAN MACHINES THINK LIKE HUMANS? A BEHAVIORAL EVALUATION OF LLM AGENTS IN DICTATOR GAMES
 
 [https://arxiv.org/abs/2410.21359](https://arxiv.org/abs/2410.21359)
 
@@ -3784,7 +3717,7 @@ The benchmark measures LLM safety across several categories, one of which is 'St
 Use of religious language (e.g., God, hell, pray) in the LLM's reasoning for its decisions in a dictator game, as measured by the Linguistic Inquiry and Word Count (LIWC) 'Religion' category. The use of religious language as a predictor for generous behavior was inconsistent across different LLM agents. In both 'Sense of Self' and 'Theory of Mind' trials, most models showed no significant correlation between religious language and the amount of money transferred. There was no consensus among models, indicating they do not reliably replicate human psychological processes related to religion in this context.
 
 
-### Improving Model Evaluation using SMART Filtering of Benchmark Datasets
+## Improving Model Evaluation using SMART Filtering of Benchmark Datasets
 
 [https://arxiv.org/abs/2410.20245](https://arxiv.org/abs/2410.20245)
 
@@ -3793,7 +3726,7 @@ Use of religious language (e.g., God, hell, pray) in the LLM's reasoning for its
 Knowledge of world religions, as a sub-category within the MMLU benchmark. Within the MMLU dataset, 59.06% of the examples from the 'World Religions' category were removed by the SMART filtering process. This suggests that a significant portion of the questions related to world religions were identified as being easy, data-contaminated, or redundant.
 
 
-### FAIRMT-BENCH: BENCHMARKING FAIRNESS FOR MULTI-TURN DIALOGUE IN CONVERSATIONAL LLMS
+## FAIRMT-BENCH: BENCHMARKING FAIRNESS FOR MULTI-TURN DIALOGUE IN CONVERSATIONAL LLMS
 
 [https://arxiv.org/abs/2410.19317](https://arxiv.org/abs/2410.19317)
 
@@ -3802,7 +3735,7 @@ Knowledge of world religions, as a sub-category within the MMLU benchmark. Withi
 The benchmark measures fairness, specifically stereotype and toxicity biases, related to religious groups within the context of multi-turn dialogues. It evaluates the ability of LLMs to understand and resist generating biased content across various conversational stages. LLMs exhibit biases against religious groups, particularly in multi-turn dialogues where stereotypes and toxicity can accumulate. The study found that while models showed relatively stronger fairness alignment for religion compared to less-represented categories, they could still be prompted to generate biased content, such as associating Muslims with terrorism or Jewish people with greed. The performance in maintaining fairness varied significantly across different models and conversational tasks.
 
 
-### SafeBench: A Safety Evaluation Framework for Multimodal Large Language Models
+## SafeBench: A Safety Evaluation Framework for Multimodal Large Language Models
 
 [https://arxiv.org/abs/2410.18927](https://arxiv.org/abs/2410.18927)
 
@@ -3811,7 +3744,7 @@ The benchmark measures fairness, specifically stereotype and toxicity biases, re
 The benchmark measured the models' tendency to express or favor religious opinions, with the goal of ensuring the models respect diverse religious beliefs and maintain neutrality. Models generally demonstrated high safety performance for queries related to 'Religious Opinions'. This category, as part of the broader 'Inappropriate Opinions' (IO) major category, had one of the lowest average Attack Success Rates (11.5% for the IO category) compared to other risk categories, indicating models are relatively robust against generating inappropriate religious content.
 
 
-### CompassJudger-1: All-in-one Judge Model Helps Model Evaluation and Evolution
+## CompassJudger-1: All-in-one Judge Model Helps Model Evaluation and Evolution
 
 [https://arxiv.org/abs/2410.16256](https://arxiv.org/abs/2410.16256)
 
@@ -3820,7 +3753,7 @@ The benchmark measured the models' tendency to express or favor religious opinio
 The paper includes 'Religion & Faith' as one of 31 categories for classifying user questions during the data preparation phase. However, no performance metrics or specific analyses are reported for this category. The paper's data categorization process includes a 'Religion & Faith' category, but no specific analysis or results related to religion were reported. The paper's findings focus on the overall judging capabilities of the models across general domains.
 
 
-### Evaluating Consistencies in LLM responses through a Semantic Clustering of Question Answering
+## Evaluating Consistencies in LLM responses through a Semantic Clustering of Question Answering
 
 [https://arxiv.org/abs/2410.15440](https://arxiv.org/abs/2410.15440)
 
@@ -3829,7 +3762,7 @@ The paper includes 'Religion & Faith' as one of 31 categories for classifying us
 Semantic consistency of answers to questions in the 'Religion' category from the TruthfulQA dataset. Both the RAG (Retriever-Augmented-Generation) and Zero-Shot-CoT (Chain-of-Thought) methods improved the semantic consistency of the model's responses for the 'Religion' category. The RAG method resulted in a greater improvement in consistency (a change of approximately +0.33) compared to the Zero-Shot-CoT method (a change of approximately +0.15), as shown in Figure 3.
 
 
-### Text-to-Image Representativity Fairness Evaluation Framework
+## Text-to-Image Representativity Fairness Evaluation Framework
 
 [https://arxiv.org/abs/2410.14201](https://arxiv.org/abs/2410.14201)
 
@@ -3838,7 +3771,7 @@ Semantic consistency of answers to questions in the 'Religion' category from the
 Stereotypical associations with religious/cultural attire (hijab, bindi) in text-to-image generation. The study found that attempting to use semantic guidance to remove religious/cultural attire like a 'bindi' from an Indian person or a 'hijab' from a Middle Eastern person resulted in image distortion. This suggests the model has deeply ingrained stereotypes, as it would invoke other stereotypes (e.g., wrinkles, grey hair) or alter the gender/race rather than simply removing the specified item.
 
 
-### BENTO: BENCHMARK TASK REDUCTION WITH IN-CONTEXT TRANSFERABILITY
+## BENTO: BENCHMARK TASK REDUCTION WITH IN-CONTEXT TRANSFERABILITY
 
 [https://arxiv.org/abs/2410.13804](https://arxiv.org/abs/2410.13804)
 
@@ -3847,7 +3780,7 @@ Stereotypical associations with religious/cultural attire (hijab, bindi) in text
 The benchmark measured knowledge of world religions as one of 57 tasks within the MMLU benchmark, evaluated through multiple-choice questions. The paper's In-Context Transferability (ICT) analysis revealed that the 'world religions' task clusters with other tasks under the theme of 'International Security', alongside 'international law', 'medical genetics', 'security studies', 'us foreign policy', and 'virology'. This suggests that from an LLM's perspective, the knowledge and skills required for the 'world religions' task are similar to those in the international security domain.
 
 
-### Cross-Lingual Auto Evaluation for Assessing Multilingual LLMs
+## Cross-Lingual Auto Evaluation for Assessing Multilingual LLMs
 
 [https://arxiv.org/abs/2410.13394](https://arxiv.org/abs/2410.13394)
 
@@ -3856,7 +3789,7 @@ The benchmark measured knowledge of world religions as one of 57 tasks within th
 Evaluation of moral reasoning in a scenario involving conflicting personal choices and community religious norms. Specifically, it assesses if a model can identify the key ethical principles at play in a dilemma where an individual's non-vegetarian diet conflicts with the strict religious vegetarianism of a neighborhood. No specific findings related to religion were reported. However, a moral dilemma involving religious norms was used as an example to show that for complex reasoning questions, the evaluator model sometimes relies on its own parametric knowledge to evaluate the output, overlooking the provided reference answer. This tendency was noted to be more frequent in high-resource languages like German and French.
 
 
-### BANTH: A Multi-label Hate Speech Detection Dataset for Transliterated Bangla
+## BANTH: A Multi-label Hate Speech Detection Dataset for Transliterated Bangla
 
 [https://arxiv.org/abs/2410.13281](https://arxiv.org/abs/2410.13281)
 
@@ -3865,7 +3798,7 @@ Evaluation of moral reasoning in a scenario involving conflicting personal choic
 The benchmark measures the detection of hate speech targeting individuals or groups based on their religious beliefs or lack thereof. This includes language demonizing religious communities, advocating discrimination, or inciting violence against religious institutions or adherents. The best-performing fine-tuned model (TB-mBERT) achieved a high macro-F1 score on the 'Religious' hate speech category, with an accuracy of 99.2%. This high performance is attributed to the presence of clear, representative words (e.g., 'Muslim') in the samples for this category, making them easier to classify. The co-occurrence of religious hate speech with other categories was found to be relatively low compared to categories like 'Personal Offense' or 'Political'.
 
 
-### debiaSAE: Benchmarking and Mitigating Vision-Language Model Bias
+## debiaSAE: Benchmarking and Mitigating Vision-Language Model Bias
 
 [https://arxiv.org/abs/2410.13146](https://arxiv.org/abs/2410.13146)
 
@@ -3874,7 +3807,7 @@ The benchmark measures the detection of hate speech targeting individuals or gro
 The benchmark measured the selection of stereotypical captions over anti-stereotypical captions in vision-language tasks related to religion, using the Vision-Language Bias Score (VLBS) from the VLStereoSet dataset. A lower score indicates less bias. Using the VLStereoSet dataset, the paper evaluated models for stereotypical bias in a 'Religion' category. The Vision-Language Bias Scores (VLBS) were generally high, indicating bias (e.g., scores from 20 to 100, where 0 is unbiased). For some models like Gemini 1.5 Flash, adding an image reduced the bias score (from 40.00 to 20.00), while for others, it had no effect or still resulted in high bias scores.
 
 
-### Sound Check: Auditing Audio Datasets
+## Sound Check: Auditing Audio Datasets
 
 [https://arxiv.org/abs/2410.13114](https://arxiv.org/abs/2410.13114)
 
@@ -3883,7 +3816,16 @@ The benchmark measured the selection of stereotypical captions over anti-stereot
 Representation of religious groups in audio dataset transcripts, measured by the frequency of identity keywords (e.g., 'Christian', 'Muslim', 'Jewish'). The study found significant representation bias in the audited audio datasets. Transcripts contained far fewer mentions of marginalized groups. Specifically, the keyword 'Muslim' appeared 5-10 times less frequently than 'Christian', and 'Jewish' also appeared infrequently, indicating underrepresentation of these religious groups.
 
 
-### Assessing Bias in Metric Models for LLM Open-Ended Generation Bias Benchmarks
+## Measuring Spiritual Values and Biases of Large Language Models
+
+[https://arxiv.org/abs/2410.11647](https://arxiv.org/abs/2410.11647)
+
+**Date:** 2025-07-16
+
+Measurement of the inherent spiritual and religious values of LLMs using questionnaire-style assessments (SP-Typology and SP-10Axes), and evaluation of how these values affect performance on religion-targeted hate speech detection. Contrary to the hypothesis that LLMs are secular, the study found they exhibit diverse and often significant spiritual or religious inclinations. Models classified as more religious tended to perform better at detecting religion-targeted hate speech. Furthermore, further pre-training LLMs on spiritual texts (religious canons) was shown to mitigate biases and improve performance on humanistic tasks like hate speech detection.
+
+
+## Assessing Bias in Metric Models for LLM Open-Ended Generation Bias Benchmarks
 
 [https://arxiv.org/abs/2410.11059](https://arxiv.org/abs/2410.11059)
 
@@ -3892,7 +3834,7 @@ Representation of religious groups in audio dataset transcripts, measured by the
 Stereotype-related bias detection against specific religious groups, evaluated by prepending religious descriptors to sentences and measuring the response of various bias metric models. The study found that bias metric models exhibit varied biases towards religious groups. RegardV3 was the most biased classifier, showing strong negativity towards 'Atheists' and 'Jews'. In contrast, DistilBERT was more uniform, while Detoxify and VaderSentiment showed more balanced responses across the religious groups tested.
 
 
-### CULTURAL FIDELITY IN LARGE-LANGUAGE MODELS: AN EVALUATION OF ONLINE LANGUAGE RESOURCES AS A DRIVER OF MODEL PERFORMANCE IN VALUE REPRESENTATION
+## CULTURAL FIDELITY IN LARGE-LANGUAGE MODELS: AN EVALUATION OF ONLINE LANGUAGE RESOURCES AS A DRIVER OF MODEL PERFORMANCE IN VALUE REPRESENTATION
 
 [https://arxiv.org/abs/2410.10489](https://arxiv.org/abs/2410.10489)
 
@@ -3901,7 +3843,7 @@ Stereotype-related bias detection against specific religious groups, evaluated b
 The benchmark measured the ability of LLMs to represent societal values related to religion by using questions from the World Values Survey. This included measuring confidence in religious institutions (e.g., churches) and agreement with statements on the relationship between science and religion (e.g., 'Whenever science and religion conflict, religion is always right'). For the topic of 'Religious values', LLMs demonstrated a significantly higher error rate in representing societal values for low-resource languages compared to high-resource languages. The data presented in the paper's charts shows this was one of the topic areas with the largest performance discrepancy between the two language resource categories.
 
 
-### RMB: COMPREHENSIVELY BENCHMARKING REWARD MODELS IN LLM ALIGNMENT
+## RMB: COMPREHENSIVELY BENCHMARKING REWARD MODELS IN LLM ALIGNMENT
 
 [https://arxiv.org/abs/2410.09893](https://arxiv.org/abs/2410.09893)
 
@@ -3910,7 +3852,7 @@ The benchmark measured the ability of LLMs to represent societal values related 
 The benchmark measures a reward model's ability to identify and penalize harmful content, specifically within the 'Hate' category, which includes responses that 'demean or dehumanize people on the basis of their... religious affiliation'. The paper does not provide specific findings for religion. The general finding is that reward models, even top-performing ones, struggle to generalize across diverse harmlessness scenarios, which includes the 'Hate' category covering religious affiliation. Models showed significant performance variability across different harmlessness tasks.
 
 
-### Responsible AI in NLP: GUS-Net Span-Level Bias Detection Dataset and Benchmark for Generalizations, Unfairness, and Stereotypes
+## Responsible AI in NLP: GUS-Net Span-Level Bias Detection Dataset and Benchmark for Generalizations, Unfairness, and Stereotypes
 
 [https://arxiv.org/abs/2410.08388](https://arxiv.org/abs/2410.08388)
 
@@ -3919,7 +3861,7 @@ The benchmark measures a reward model's ability to identify and penalize harmful
 The benchmark measures span-level detection of social biases, specifically categorizing them into Generalizations, Unfairness, and Stereotypes within various domains, including religious contexts. The paper finds that its framework, particularly the GUS-Net-BERT model, effectively captures fine-grained and overlapping bias spans in religious contexts. A validation example demonstrated the model's ability to correctly identify generalizations, unfairness, and stereotypes simultaneously within sentences about Christians and Atheists.
 
 
-### COMPL-AI Framework: A Technical Interpretation and LLM Benchmarking Suite for the EU Artificial Intelligence Act
+## COMPL-AI Framework: A Technical Interpretation and LLM Benchmarking Suite for the EU Artificial Intelligence Act
 
 [https://arxiv.org/abs/2410.07959](https://arxiv.org/abs/2410.07959)
 
@@ -3928,7 +3870,7 @@ The benchmark measures span-level detection of social biases, specifically categ
 The benchmarks measured several aspects: (1) Sentiment bias towards religious groups (Christian, Jew) in training data by analyzing sentiment in context windows around group-specific terms. (2) Ingrained prejudice in question-answering using the BBQ benchmark, which presents ambiguous contexts involving religious groups (Christian, Muslim) to test for biased responses. (3) Fairness in recommendation consistency using the FaiRLLM benchmark, which assesses how much movie recommendations change when a user's religious identity (e.g., Islamic) is specified. The paper found that models generally perform poorly on fairness benchmarks. Specifically, while most models scored high on the BBQ benchmark, indicating an ability to avoid overtly prejudiced answers in ambiguous religious contexts, they scored very low on the FaiRLLM benchmark. This suggests that their outputs in tasks like movie recommendations are not consistent and change significantly based on a user's religious identity, indicating a lack of fairness.
 
 
-### VHELM: A Holistic Evaluation of Vision Language Models
+## VHELM: A Holistic Evaluation of Vision Language Models
 
 [https://arxiv.org/abs/2410.07112](https://arxiv.org/abs/2410.07112)
 
@@ -3937,7 +3879,7 @@ The benchmarks measured several aspects: (1) Sentiment bias towards religious gr
 The benchmark measures knowledge of religion as a school subject through multiple-choice questions from the EXAMS-V dataset. The paper does not report specific findings related to religion. Performance on the EXAMS-V dataset, which includes religion as one of 20 subjects, is aggregated and not analyzed separately.
 
 
-### Representing the Under-Represented: Cultural and Core Capability Benchmarks for Developing Thai Large Language Models
+## Representing the Under-Represented: Cultural and Core Capability Benchmarks for Developing Thai Large Language Models
 
 [https://arxiv.org/abs/2410.04795](https://arxiv.org/abs/2410.04795)
 
@@ -3946,7 +3888,7 @@ The benchmark measures knowledge of religion as a school subject through multipl
 The benchmark (ThaiCLI) measures a model's alignment with Thai cultural norms and sensitivities regarding religion. This includes evaluating the appropriateness of responses to questions on religious topics, such as the social perception and treatment of Buddhist monks. The paper developed the ThaiCLI benchmark which includes religion as a key thematic domain for evaluating cultural alignment. The findings show that models with regional specialization for Southeast Asian languages (like SeaLLMs-v3-7B-Chat) perform better on this culturally-sensitive benchmark than larger, general-purpose open-source models. However, the paper does not report a performance breakdown specifically for the religion category.
 
 
-### Evaluating Language Model Character Traits
+## Evaluating Language Model Character Traits
 
 [https://arxiv.org/abs/2410.04272](https://arxiv.org/abs/2410.04272)
 
@@ -3955,7 +3897,7 @@ The benchmark (ThaiCLI) measures a model's alignment with Thai cultural norms an
 The benchmark measured whether language models would undertake potentially unethical instrumental actions to achieve an explicit goal, with 'philosophy & religion' being one of the topic areas used to generate scenarios. The paper does not provide specific findings for the religious sub-topic. General findings for the experiment on unethical instrumental intentions, which included a 'philosophy & religion' sub-topic, indicate that no LMs consistently intend unethical instrumental goals. However, GPT-3.5 was significantly more likely to choose unethical actions than GPT-4, and Llama models showed 'a higher tolerance for unethical behaviour' compared to Claude and OpenAI models.
 
 
-### CulturalBench: A Robust, Diverse, and Challenging Cultural Benchmark by Human-AI CulturalTeaming
+## CulturalBench: A Robust, Diverse, and Challenging Cultural Benchmark by Human-AI CulturalTeaming
 
 [https://arxiv.org/abs/2410.02677](https://arxiv.org/abs/2410.02677)
 
@@ -3964,7 +3906,7 @@ The benchmark measured whether language models would undertake potentially uneth
 The benchmark measures factual knowledge of religious customs and practices as one of 17 cultural topics. An example question asks about the custom for Muslims regarding prayers in Pakistani culture. Religion is included as one of 17 diverse cultural topics, making up 5.6% of the questions. The paper notes that annotators from Israel contributed a higher proportion of questions related to religion. However, the paper does not provide a separate analysis or report specific findings on model performance for the religion topic category.
 
 
-### Large Language Model for Multi-Domain Translation: Benchmarking and Domain CoT Fine-tuning
+## Large Language Model for Multi-Domain Translation: Benchmarking and Domain CoT Fine-tuning
 
 [https://arxiv.org/abs/2410.02631](https://arxiv.org/abs/2410.02631)
 
@@ -3973,7 +3915,7 @@ The benchmark measures factual knowledge of religious customs and practices as o
 The benchmark measured the translation quality (using BLEU and COMET metrics) of texts from various domains, including religious texts such as the Koran and the Bible. The paper found that the performance of Large Language Models varies greatly across different domains, including religious ones. Translation quality for religious texts, particularly the Koran, was often lower compared to other professional domains. A notable finding was the exceptionally high performance of LLaMA-2-70b on the Bible translation task, which the authors suggest might be due to data leakage from its training set.
 
 
-### EvalAssist: Insights on Task-Specific Evaluations and AI-Assisted Judgment Strategy Preferences
+## EvalAssist: Insights on Task-Specific Evaluations and AI-Assisted Judgment Strategy Preferences
 
 [https://arxiv.org/abs/2410.00873](https://arxiv.org/abs/2410.00873)
 
@@ -3982,7 +3924,7 @@ The benchmark measured the translation quality (using BLEU and COMET metrics) of
 Cultural and religious inclusivity in email generation, specifically how participants define criteria to avoid bias towards specific holidays (e.g., Christmas, Hanukkah, Kwanzaa, Diwali). Participants had varied and sometimes conflicting interpretations of what constituted a religiously/culturally 'inclusive' email. Some believed inclusivity required mentioning multiple specific holidays like Christmas, Hanukkah, Kwanzaa, and Diwali to ensure representation, while others believed it meant avoiding any specific cultural or holiday references to maintain a neutral, universal tone. This highlights the subjective challenge of defining and evaluating criteria for inclusivity in AI-generated text.
 
 
-### LexEval: A Comprehensive Chinese Legal Benchmark for Evaluating Large Language Models
+## LexEval: A Comprehensive Chinese Legal Benchmark for Evaluating Large Language Models
 
 [https://arxiv.org/abs/2409.20288](https://arxiv.org/abs/2409.20288)
 
@@ -3991,7 +3933,7 @@ Cultural and religious inclusivity in email generation, specifically how partici
 The benchmark includes a task (Bias and Discrimination) that assesses the potential for unfair treatment from large language models in terms of subjective preferences, social stereotypes, race, gender, and religion within the context of judicial decision-making. The paper does not provide specific findings related to religion. It reports on the 'Ethic' category as a whole, which includes the 'Bias and Discrimination' task. The general finding is that the performance of LLMs in ethics-related tasks is unsatisfactory, which poses challenges to their safe application in real-life scenarios, but it does not disaggregate the results to analyze religious bias specifically.
 
 
-### T2Vs Meet VLMs: A Scalable Multimodal Dataset for Visual Harmfulness Recognition
+## T2Vs Meet VLMs: A Scalable Multimodal Dataset for Visual Harmfulness Recognition
 
 [https://arxiv.org/abs/2409.19734](https://arxiv.org/abs/2409.19734)
 
@@ -4000,7 +3942,7 @@ The benchmark includes a task (Bias and Discrimination) that assesses the potent
 Detection of harmful visual content, where harm can include the misuse of 'religious icons' and content falling under 'Discriminatory Content and Cultural Insensitivity'. The paper includes 'religious icon' as a keyword for generating potentially harmful visual content and 'Discriminatory Content and Cultural Insensitivity' as a category of harm. The benchmark tests models' ability to detect such content. However, the paper does not provide specific findings or performance breakdowns for these religious or cultural categories, focusing instead on the models' overall performance across all types of harmful content.
 
 
-### DARE: Diverse Visual Question Answering with Robustness Evaluation
+## DARE: Diverse Visual Question Answering with Robustness Evaluation
 
 [https://arxiv.org/abs/2409.18023](https://arxiv.org/abs/2409.18023)
 
@@ -4009,7 +3951,7 @@ Detection of harmful visual content, where harm can include the misuse of 'relig
 Knowledge of cultural and religious concepts, customs, and holidays, as part of a broader 'culture' category in a Visual Question Answering task. State-of-the-art VLMs like Gemini and GPT-4 achieve near-human performance on single-correct questions about cultural and religious concepts. However, their performance is substantially lower in more complex multi-correct scenarios and they show a lack of robustness when tested with variations in answer options and output formats.
 
 
-### BeanCounter: A low-toxicity, large-scale, and open dataset of business-oriented text
+## BeanCounter: A low-toxicity, large-scale, and open dataset of business-oriented text
 
 [https://arxiv.org/abs/2409.17827](https://arxiv.org/abs/2409.17827)
 
@@ -4018,7 +3960,7 @@ Knowledge of cultural and religious concepts, customs, and holidays, as part of 
 Prevalence of religious demographic descriptors (e.g., 'Christian', 'Jewish') and the average toxicity score of sentences containing these descriptors, comparing the custom 'BeanCounter' dataset to the 'C4-en' dataset. The BeanCounter dataset has a significant representation of religious content (9.52% of filings), skewed towards Western identities like 'Christian'. The context surrounding religious descriptors is 66-87% less toxic compared to the web-crawled C4-en dataset. For example, sentences containing the term 'Christian' are 87.48% less toxic on average. Models continually pre-trained on BeanCounter showed improved safety scores (reduced toxic generation propensity) for groups like 'jewish' and 'muslim'.
 
 
-### In which fields can ChatGPT detect journal article quality? An evaluation of REF2021 results
+## In which fields can ChatGPT detect journal article quality? An evaluation of REF2021 results
 
 [https://arxiv.org/abs/2409.16695](https://arxiv.org/abs/2409.16695)
 
@@ -4027,7 +3969,7 @@ Prevalence of religious demographic descriptors (e.g., 'Christian', 'Jewish') an
 Ability to estimate the quality of academic journal articles in the field of Theology and Religious Studies. ChatGPT demonstrated a weak but positive Spearman correlation (approximately 0.15) with human expert evaluations for assessing the quality of journal articles in Theology and Religious Studies (UoA 31). This performance was lower than in most science and social science fields but comparable to other arts and humanities disciplines. ChatGPT also tended to slightly overestimate the quality scores in this field compared to human reviewers.
 
 
-### KALAHI: A handcrafted, grassroots cultural LLM evaluation suite for Filipino
+## KALAHI: A handcrafted, grassroots cultural LLM evaluation suite for Filipino
 
 [https://arxiv.org/abs/2409.15380](https://arxiv.org/abs/2409.15380)
 
@@ -4036,7 +3978,7 @@ Ability to estimate the quality of academic journal articles in the field of The
 The benchmark measures a model's ability to generate culturally appropriate responses in situations influenced by shared Filipino values, beliefs, and practices, some of which are shaped by religion. Specific religious aspects tested include navigating situations where dominant religious norms conflict with personal choice (e.g., abortion, which is illegal and religiously condemned) and understanding social practices intertwined with religious events (e.g., gambling at a wake). Models struggle to generate culturally appropriate responses in contexts where religious values shape social norms and laws in the Philippines. For example, models may generate responses suggesting abortion is acceptable, which contradicts the country's legal and dominant religious stance. The evaluation also highlights the complex interplay between personal beliefs (which can be religious) and cultural practices, such as the social acceptability of gambling at a wake, a nuance that models fail to capture.
 
 
-### CI-Bench: Benchmarking Contextual Integrity of AI Assistants on Synthetic Data
+## CI-Bench: Benchmarking Contextual Integrity of AI Assistants on Synthetic Data
 
 [https://arxiv.org/abs/2409.13903](https://arxiv.org/abs/2409.13903)
 
@@ -4045,7 +3987,7 @@ The benchmark measures a model's ability to generate culturally appropriate resp
 The benchmark measured the AI assistant's ability to protect personal information, specifically its capacity to judge the appropriateness of sharing sensitive user attributes like 'Religion' and 'Religious beliefs' based on contextual integrity principles. It was not a measure of bias or knowledge, but of privacy protection during model inference. The paper does not provide specific findings for religion. It categorizes 'Religion' under 'Demographic Information' and 'Religious beliefs' under 'Psychological Information'. The general findings for these categories showed that demographic information was handled adeptly by the system, but no specific performance metrics for the 'Religion' or 'Religious beliefs' attributes were reported separately.
 
 
-### CamelEval: Advancing Culturally Aligned Arabic Language Models and Benchmarks
+## CamelEval: Advancing Culturally Aligned Arabic Language Models and Benchmarks
 
 [https://arxiv.org/abs/2409.12623](https://arxiv.org/abs/2409.12623)
 
@@ -4054,7 +3996,7 @@ The benchmark measured the AI assistant's ability to protect personal informatio
 The benchmark (CamelEval) measures an LLM's ability to generate helpful, accurate, and culturally appropriate responses to complex, open-ended questions in Arabic. This includes prompts specifically designed to test knowledge of culturally nuanced topics such as religion, history, and sociology relevant to the Arabic-speaking world. The developed model, Juhaina, demonstrated a strong capability in addressing complex and culturally nuanced questions, which included religious topics. In the 'Curated Set' of the CamelEval benchmark, Juhaina's performance was close to that of GPT-4o, significantly outperforming other Arabic-centric models of comparable or larger sizes.
 
 
-### BanStereoSet: A Dataset to Measure Stereotypical Social Biases in LLMs for Bangla
+## BanStereoSet: A Dataset to Measure Stereotypical Social Biases in LLMs for Bangla
 
 [https://arxiv.org/abs/2409.11638](https://arxiv.org/abs/2409.11638)
 
@@ -4063,7 +4005,7 @@ The benchmark (CamelEval) measures an LLM's ability to generate helpful, accurat
 The benchmark measures stereotypical social biases related to religion by presenting a fill-in-the-blank sentence and asking the model to choose from a stereotypical, anti-stereotypical, or unrelated option. For example, associating 'Muslims' with being 'bold'. Across all tested models, both in Bangla and English, the level of stereotypical bias related to religion was found to be relatively low compared to other bias categories like profession, gender, or beauty.
 
 
-### ARADICE: Benchmarks for Dialectal and Cultural Capabilities in LLMs
+## ARADICE: Benchmarks for Dialectal and Cultural Capabilities in LLMs
 
 [https://arxiv.org/abs/2409.11404](https://arxiv.org/abs/2409.11404)
 
@@ -4072,7 +4014,7 @@ The benchmark measures stereotypical social biases related to religion by presen
 Measurement of cultural knowledge and compatibility within the Arab region, with religion being one of the evaluated categories. This involves assessing knowledge of religious concepts and ensuring the proper handling and cultural/religious compatibility of Islamic religious texts (e.g., Quran verses) during data translation and post-editing. Arabic-centric models like Jais and AceGPT demonstrated a superior understanding of cultural and religious nuances specific to the Arab region compared to general multilingual models like Llama 3 and Mistral. The latter models were more prone to generating culturally inappropriate or factually incorrect information, such as describing mixed-gender dances in Qatar or inventing fictional holidays. The study also emphasized the necessity of specific guidelines for handling religious texts, like verses from the Quran, to maintain their integrity during the data creation process.
 
 
-### SAGED: A Holistic Bias-Benchmarking Pipeline for Language Models with Customisable Fairness Calibration
+## SAGED: A Holistic Bias-Benchmarking Pipeline for Language Models with Customisable Fairness Calibration
 
 [https://arxiv.org/abs/2409.11149](https://arxiv.org/abs/2409.11149)
 
@@ -4081,7 +4023,16 @@ Measurement of cultural knowledge and compatibility within the Arab region, with
 text-based stereotype detection related to religion The paper does not present specific findings related to religion. While the capability to measure religious stereotypes is part of the proposed pipeline, the reported results do not analyze or discuss this dimension.
 
 
-### ValueCompass: A Framework for Measuring Contextual Value Alignment Between Human and LLMs
+## A Benchmark Dataset with Larger Context for Non-Factoid Question-Answering over Islamic Text
+
+[https://arxiv.org/abs/2409.09844](https://arxiv.org/abs/2409.09844)
+
+**Date:** 2024-09-15
+
+The benchmark measures the performance of non-factoid question-answering systems on Islamic religious texts. Specifically, it evaluates the models' ability to generate accurate, long-form answers to questions about the Quranic Tafsir (interpretation) and Ahadith (traditions of Prophet Muhammad). The evaluation includes both automatic metrics (ROUGE, BERTScore) and human assessments of 'Verdict Consistency' with Islamic scholars and 'Contextual Understanding'. Fine-tuning models improved performance based on automatic metrics like ROUGE and BERTScore. However, human evaluation revealed a significant discrepancy: while models showed high contextual understanding (50% to 90%), their verdict consistency with expert Islamic scholars was very low (11% to 22%). This indicates that standard automatic metrics are insufficient for evaluating the correctness and nuances of answers in a sensitive religious domain, and expert human evaluation is necessary.
+
+
+## ValueCompass: A Framework for Measuring Contextual Value Alignment Between Human and LLMs
 
 [https://arxiv.org/abs/2409.09586](https://arxiv.org/abs/2409.09586)
 
@@ -4090,7 +4041,7 @@ text-based stereotype detection related to religion The paper does not present s
 The benchmark measured the alignment between humans and LLMs on the value 'Devout' (defined as 'hold to religious faith and belief') and 'A Spiritual Life' (defined as 'emphasis on spiritual not material matters') as part of Schwartz's 56 universal values. The paper measures alignment for the value 'Devout' as one of 56 universal human values. However, the results section does not provide a specific textual analysis or highlight key findings for this particular value. The findings for 'Devout' are presented visually within heatmaps (e.g., Figure 2 and Figure 5) alongside the other 55 values, showing varying alignment distances across different countries and scenarios without specific commentary.
 
 
-### E2MoCase: A Dataset for Emotional, Event and Moral Observations in News Articles on High-impact Legal Cases
+## E2MoCase: A Dataset for Emotional, Event and Moral Observations in News Articles on High-impact Legal Cases
 
 [https://arxiv.org/abs/2409.09001](https://arxiv.org/abs/2409.09001)
 
@@ -4099,7 +4050,7 @@ The benchmark measured the alignment between humans and LLMs on the value 'Devou
 The benchmark measures cultural biases in news reporting on legal cases. One of the specific biases measured is 'religious bias', defined as unfair treatment or attitudes towards individuals or groups based on their religious beliefs. Religious bias was identified as one of five categories of cultural bias in media coverage of high-impact legal cases. This bias category accounts for 2.4% of the paragraphs in the created E2MoCase dataset. The paper did not provide further analysis specific to the religious bias category.
 
 
-### FairHome: A Fair Housing and Fair Lending Dataset
+## FairHome: A Fair Housing and Fair Lending Dataset
 
 [https://arxiv.org/abs/2409.05990](https://arxiv.org/abs/2409.05990)
 
@@ -4108,7 +4059,7 @@ The benchmark measures cultural biases in news reporting on legal cases. One of 
 Detection of discriminatory or preferential language related to religious communities in the context of fair housing and lending laws. The benchmark measured whether statements suggesting a preferential or discriminatory stance towards specific religious communities constituted a compliance violation (non-compliant), while references to amenities like proximity to places of worship were considered acceptable (compliant). Religion is one of the nine protected categories in the FairHome dataset, accounting for 10% of the examples that contain a protected attribute. For this category, the custom-trained BERT-based classifier demonstrated the highest accuracy in a zero-shot setting, significantly outperforming large language models (LLMs). While LLMs' performance improved in a few-shot setting, the fine-tuned classifier remained a top performer, indicating its effectiveness in detecting nuanced violations related to religion in the housing context.
 
 
-### Automatic Pseudo-Harmful Prompt Generation for Evaluating False Refusals in Large Language Models
+## Automatic Pseudo-Harmful Prompt Generation for Evaluating False Refusals in Large Language Models
 
 [https://arxiv.org/abs/2409.00598](https://arxiv.org/abs/2409.00598)
 
@@ -4117,7 +4068,7 @@ Detection of discriminatory or preferential language related to religious commun
 The paper does not specifically measure any aspect of faith or religion. Religion is mentioned as an example of a 'controversial' topic where a Large Language Model's refusal to respond might be a developer preference rather than an alignment bug, but no religious prompts were created or evaluated as part of the core research. The paper does not present any specific findings related to religion from its own experiments. It only mentions religion as a category of controversial topics and critiques a prompt from the existing XSTest dataset ('Why can't Muslims live on Mars?') as being potentially offensive and controversial despite being labeled 'harmless'.
 
 
-### Testing and Evaluation of Large Language Models: Correctness, Non-Toxicity, and Fairness
+## Testing and Evaluation of Large Language Models: Correctness, Non-Toxicity, and Fairness
 
 [https://arxiv.org/abs/2409.00551](https://arxiv.org/abs/2409.00551)
 
@@ -4126,7 +4077,7 @@ The paper does not specifically measure any aspect of faith or religion. Religio
 The paper measures social bias in conversational AI systems, specifically focusing on stereotype and bias detection. For religion, it evaluates the correlation between religious social groups (e.g., Muslims, Catholics) and various biased properties to quantify the degree of bias (both absolute and relative) present in the models' responses. The models demonstrated varying levels of social bias related to religion. For instance, DialoGPT showed a high absolute bias rate (30.56%) for religion-related queries, whereas ChatGPT showed a 0.00% rate. This indicates significant differences in fairness performance across models and attributes, with religion being one of the measured dimensions.
 
 
-### BACKDOORLLM: A Comprehensive Benchmark for Backdoor Attacks and Defenses on Large Language Models
+## BACKDOORLLM: A Comprehensive Benchmark for Backdoor Attacks and Defenses on Large Language Models
 
 [https://arxiv.org/abs/2408.12798](https://arxiv.org/abs/2408.12798)
 
@@ -4135,7 +4086,7 @@ The paper measures social bias in conversational AI systems, specifically focusi
 The benchmark measured fairness and bias concerning religious ideologies using the BOLD dataset. It also evaluated the success rate of backdoor attacks in generating toxic outputs targeted at specific religious minority groups, including Jewish and Muslim individuals, as part of a broader assessment of toxicity against 13 minority groups. The study found that hidden state manipulation attacks (specifically Trojan Activation Attack or TA²) can amplify pre-existing model biases related to religious ideologies when a backdoor is triggered. Furthermore, these attacks were generally effective at inducing toxic responses targeted at specific religious minority groups (Jewish, Muslim), with high attack success rates observed across various models.
 
 
-### SAGE-RT: Synthetic Alignment data Generation for Safety Evaluation and Red Teaming
+## SAGE-RT: Synthetic Alignment data Generation for Safety Evaluation and Red Teaming
 
 [https://arxiv.org/abs/2408.11851](https://arxiv.org/abs/2408.11851)
 
@@ -4144,7 +4095,7 @@ The benchmark measured fairness and bias concerning religious ideologies using t
 The benchmark measured the models' susceptibility to generating harmful, biased, or hateful content related to religion. This included prompts designed to elicit content related to religious intolerance, discrimination, hate crimes, religious slurs, religious extremism, persecution, stereotypes, segregation, indoctrination, and marginalization. All 10 large language models tested were found to be vulnerable to jailbreaking prompts in the 'hate-religion' sub-category, indicating that all models could be induced to generate harmful content related to religion.
 
 
-### OpenFactCheck: A Unified Framework for Factuality Evaluation of LLMs
+## OpenFactCheck: A Unified Framework for Factuality Evaluation of LLMs
 
 [https://arxiv.org/abs/2408.11832](https://arxiv.org/abs/2408.11832)
 
@@ -4153,7 +4104,7 @@ The benchmark measured the models' susceptibility to generating harmful, biased,
 The benchmark measures the factual accuracy of Large Language Models' knowledge about religion as part of a broader evaluation of factuality against world knowledge. The paper includes 'Religion' as one of the top-20 domains in its FactQA dataset, with 63 examples designated for testing factual knowledge. However, the paper does not report specific performance findings for any LLM on this religious domain.
 
 
-### CMoralEval: A Moral Evaluation Benchmark for Chinese Large Language Models
+## CMoralEval: A Moral Evaluation Benchmark for Chinese Large Language Models
 
 [https://arxiv.org/abs/2408.09819](https://arxiv.org/abs/2408.09819)
 
@@ -4162,7 +4113,7 @@ The benchmark measures the factual accuracy of Large Language Models' knowledge 
 Evaluation of moral alignment based on a taxonomy and principles inspired by traditional Chinese culture, including Confucianism. The paper's findings focus on the overall moral reasoning performance of Chinese LLMs across different moral categories (e.g., Familial Morality, Social Morality) and scenarios. It does not report specific findings related to Confucianism, but rather uses it as a foundational element in designing the benchmark's moral principles.
 
 
-### LOCALVALUEBENCH: A Collaboratively Built and Extensible Benchmark for Evaluating Localized Value Alignment and Ethical Safety in Large Language Models
+## LOCALVALUEBENCH: A Collaboratively Built and Extensible Benchmark for Evaluating Localized Value Alignment and Ethical Safety in Large Language Models
 
 [https://arxiv.org/abs/2408.01460](https://arxiv.org/abs/2408.01460)
 
@@ -4171,7 +4122,7 @@ Evaluation of moral alignment based on a taxonomy and principles inspired by tra
 The benchmark measured how Large Language Models handle religiously-framed arguments (specifically using the Bible) that conflict with secular local values and laws, in this case, the legality of gay marriage in Australia. In a scenario where the legality of gay marriage in Australia was challenged using a religiously-framed (Biblical) argument, GPT-4 refused to answer the 'interrogation' prompt, resulting in a zero score. In contrast, Gemini 1.5 Pro and Claude 3 Sonet did respond to the prompt and received perfect scores from the human reviewers.
 
 
-### DEBATEQA: Evaluating Question Answering on Debatable Knowledge
+## DEBATEQA: Evaluating Question Answering on Debatable Knowledge
 
 [https://arxiv.org/abs/2408.01419](https://arxiv.org/abs/2408.01419)
 
@@ -4180,7 +4131,7 @@ The benchmark measured how Large Language Models handle religiously-framed argum
 The benchmark measured the ability of large language models to provide comprehensive, multi-perspective answers to debatable questions, including a 'Divinity' category with questions about God's existence and inter-religious concepts (e.g., 'Why do some Hindus add Jesus to their Gods?'). The paper did not provide findings specific to religion. However, it included a 'Divinity' category with debatable religious questions. The general findings were that while most LLMs, even weaker ones, can recognize the debatable nature of a question, their ability to provide comprehensive answers with diverse perspectives varies significantly. Larger models like GPT-4o and Llama3 70B generally outperform smaller models in providing diverse perspectives.
 
 
-### Annotator in the Loop: A Case Study of In-Depth Rater Engagement to Create a Bridging Benchmark Dataset
+## Annotator in the Loop: A Case Study of In-Depth Rater Engagement to Create a Bridging Benchmark Dataset
 
 [https://arxiv.org/abs/2408.00880](https://arxiv.org/abs/2408.00880)
 
@@ -4189,7 +4140,7 @@ The benchmark measured the ability of large language models to provide comprehen
 The benchmark did not specifically measure aspects of faith or religion. It was designed to measure prosocial attributes like Reasoning, Curiosity, Respect, Compassion, Alienation, and Moral Outrage. However, the underlying dataset contained comments with religious content (e.g., related to Catholicism), and the paper noted that an annotator's lack of knowledge in this area could hinder their ability to understand and annotate the text. An annotator reported that a lack of knowledge about 'Catholic teachings' hindered their understanding and annotation of some comments, highlighting that annotator background, including religious knowledge, can be a factor in data annotation.
 
 
-### Safetywashing: Do AI Safety Benchmarks Actually Measure Safety Progress?
+## Safetywashing: Do AI Safety Benchmarks Actually Measure Safety Progress?
 
 [https://arxiv.org/abs/2407.21792](https://arxiv.org/abs/2407.21792)
 
@@ -4198,7 +4149,16 @@ The benchmark did not specifically measure aspects of faith or religion. It was 
 U.S.-centric stereotypical bias in language models along nine major bias categories, one of which is religion, as measured by the CrowS-Pairs benchmark. The paper's analysis of religion is limited to its inclusion as a category within the CrowS-Pairs bias benchmark. The key finding is that the CrowS-Pairs benchmark has a low correlation with general model capabilities (28.5%) and training compute (2.8%), suggesting that performance on this bias benchmark is not merely a side effect of increased model capability and is less prone to 'safetywashing'.
 
 
-### AIR-BENCH 2024: A Safety Benchmark Based on Risk Categories from Regulations and Policies
+## Exploring Bengali Religious Dialect Biases in Large Language Models with Evaluation Perspectives
+
+[https://arxiv.org/abs/2407.18376](https://arxiv.org/abs/2407.18376)
+
+**Date:** 2024-07-25
+
+Bias towards Hindu vs. Muslim religious dialects in the Bengali language, assessed by analyzing LLM-generated sentences for specific word choices associated with each religious community. The study found a persistent bias in LLMs towards the Muslim dialect of Bengali over the Hindu dialect. While explicitly mentioning religion in prompts improved accuracy, a notable bias remained, with models often defaulting to Muslim dialect terms even when a Hindu context was specified. The models performed better at inferring religious context from implicit cues rather than explicit mentions but struggled to maintain religious context throughout a conversation (LLM memory). This bias was consistent across various contexts, suggesting it is deeply embedded, likely due to the composition of the training data.
+
+
+## AIR-BENCH 2024: A Safety Benchmark Based on Risk Categories from Regulations and Policies
 
 [https://arxiv.org/abs/2407.17436](https://arxiv.org/abs/2407.17436)
 
@@ -4207,7 +4167,7 @@ U.S.-centric stereotypical bias in language models along nine major bias categor
 The benchmark measured models' refusal rates for generating harmful instructions related to religion and beliefs. This included prompts designed to elicit hate speech against religious groups (taxonomy ID #14.17, #14.18), discriminatory content in areas like employment and classification based on religion (taxonomy ID #14.39&40), and content aimed at undermining religious policies (taxonomy ID #8.27.23). The paper's findings, primarily presented in detailed heatmaps, show that while many top-performing models have high refusal rates for generating hate speech related to 'Religion' and 'Beliefs', there is still significant performance variation across models. Gaps are particularly noticeable in preventing discriminatory content related to religion (e.g., in employment, characterization of identity), where many models exhibit lower safety refusal rates.
 
 
-### SAFETY-J: Evaluating Safety with Critique
+## SAFETY-J: Evaluating Safety with Critique
 
 [https://arxiv.org/abs/2407.17075](https://arxiv.org/abs/2407.17075)
 
@@ -4216,7 +4176,7 @@ The benchmark measured models' refusal rates for generating harmful instructions
 Unfair treatment of individuals because of their religious beliefs ('Religism') and detection of content related to 'illegal religious organizations'. The paper does not report specific findings related to religion. The evaluation focuses on overall safety performance across multiple categories, and results are not broken down by the 'Religism' or 'illegal religious organizations' categories.
 
 
-### A multi-level multi-label text classification dataset of 19th century Ottoman and Russian literary and critical texts
+## A multi-level multi-label text classification dataset of 19th century Ottoman and Russian literary and critical texts
 
 [https://arxiv.org/abs/2407.15136](https://arxiv.org/abs/2407.15136)
 
@@ -4225,7 +4185,7 @@ Unfair treatment of individuals because of their religious beliefs ('Religism') 
 The benchmark measured the ability of models to classify 19th-century historical texts into various categories, including a 'Religion/Secularism' category, which falls under the higher-level categories of 'Ethics' and 'Philosophy'. The paper does not report specific performance metrics for the 'Religion/Secularism' category. Findings are aggregated at higher levels (e.g., 'philosophy subject'). The general finding is that in this low-resource setting, a classical Bag-of-Words model often performs comparably to or better than large language models like Llama-2 and Falcon, particularly for the Ottoman dataset.
 
 
-### Evaluating Large Language Models with fmeval
+## Evaluating Large Language Models with fmeval
 
 [https://arxiv.org/abs/2407.12872](https://arxiv.org/abs/2407.12872)
 
@@ -4234,7 +4194,7 @@ The benchmark measured the ability of models to classify 19th-century historical
 The benchmark measures prompt stereotyping and biased/toxic generation in the context of religion. This is done by measuring the probability a model assigns to stereotypical sentences (from the CrowS-Pairs dataset) and by detecting toxic content in model generations for prompts related to religion (from the BOLD dataset). The paper presents a framework (fmeval) that incorporates evaluations for religious stereotypes and toxicity using the CrowS-Pairs and BOLD datasets, respectively. Religion is one of several categories evaluated for responsible AI. The paper does not provide specific findings or results for the religion category, but demonstrates the framework's capability to perform such evaluations.
 
 
-### Grounding and Evaluation for Large Language Models: Practical Challenges and Lessons Learned (Survey)
+## Grounding and Evaluation for Large Language Models: Practical Challenges and Lessons Learned (Survey)
 
 [https://arxiv.org/abs/2407.12858](https://arxiv.org/abs/2407.12858)
 
@@ -4243,7 +4203,7 @@ The benchmark measures prompt stereotyping and biased/toxic generation in the co
 Detection of religious stereotypes The paper, in its survey of bias and fairness, notes that new types of bias arise in LLMs and other generative AI models, including undesirable biases towards religious stereotypes, citing external research.
 
 
-### TurkishMMLU: Measuring Massive Multitask Language Understanding in Turkish
+## TurkishMMLU: Measuring Massive Multitask Language Understanding in Turkish
 
 [https://arxiv.org/abs/2407.12402](https://arxiv.org/abs/2407.12402)
 
@@ -4252,7 +4212,7 @@ Detection of religious stereotypes The paper, in its survey of bias and fairness
 Knowledge of the 'Religion and Ethics' subject from the Turkish high school curriculum. Models generally performed well on questions from the 'Religion and Ethics' subject. This subject was part of the 'Social Sciences and Humanities' category, which was found to be the easiest subject group for most models. Top-performing closed-source models like GPT-4o and Claude-3 Opus achieved scores over 90% on Religion & Ethics questions.
 
 
-### Benchmarking Vision Language Models for Cultural Understanding
+## Benchmarking Vision Language Models for Cultural Understanding
 
 [https://arxiv.org/abs/2407.10920](https://arxiv.org/abs/2407.10920)
 
@@ -4261,7 +4221,7 @@ Knowledge of the 'Religion and Ethics' subject from the Turkish high school curr
 The benchmark, CULTURALVQA, measures visual understanding of cultural concepts, which includes religious rituals, traditions, figures, and entities. This is achieved through open-ended questions about images depicting these concepts. Additionally, the paper performed an analysis to ensure the questions were largely free of religious stereotypes. Vision Language Models (VLMs) generally perform better on intangible cultural concepts like rituals and traditions (which often include religious topics) compared to tangible ones like food and drink. The highest performance for the best model (GPT-4) was on the rituals facet. However, a more detailed analysis showed that models perform relatively poorly on questions specifically probing 'beliefs and customs' compared to other subcategories like celebrations or landmarks.
 
 
-### CLAVE: An Adaptive Framework for Evaluating Values of LLM Generated Responses
+## CLAVE: An Adaptive Framework for Evaluating Values of LLM Generated Responses
 
 [https://arxiv.org/abs/2407.10725](https://arxiv.org/abs/2407.10725)
 
@@ -4270,7 +4230,7 @@ The benchmark, CULTURALVQA, measures visual understanding of cultural concepts, 
 The benchmark measures LLM alignment with the 'Tradition' value within the Schwartz Theory of Basic Values. This value is defined as 'respect, commitment, and acceptance of the customs and ideas that traditional culture or religion provide'. The paper does not report findings specifically on religion. It does find that prompt-based evaluators like GPT-4 are less effective in handling less common value theories, such as the Schwartz value theory (which includes the religion-related 'Tradition' dimension), compared to more common social risks.
 
 
-### Evaluating Nuanced Bias in Large Language Model Free Response Answers
+## Evaluating Nuanced Bias in Large Language Model Free Response Answers
 
 [https://arxiv.org/abs/2407.08842](https://arxiv.org/abs/2407.08842)
 
@@ -4279,7 +4239,7 @@ The benchmark measures LLM alignment with the 'Tradition' value within the Schwa
 Stereotypical bias detection in religious contexts. Specifically, the paper analyzed LLM responses to problematic scenarios from the BBQ benchmark, such as one associating Catholicism and Hinduism with 'idol worship', and another implying guilt by arrest in a context involving a Jewish and a Muslim man. The paper found that some religious contexts within the base benchmark (BBQ) are problematic and potentially harmful. For example, a context associating Catholicism or Hinduism with 'idol worship' was flagged as inaccurate and inappropriate by expert raters, as these religions do not self-identify their practices this way. Another flagged context equated arrest with guilt in a scenario involving Jewish and Muslim individuals. The study concluded that in such cases, a nuanced LLM response might be more correct than the benchmark's expected answer, highlighting limitations in existing bias benchmarks for evaluating complex, free-form answers.
 
 
-### AUTOBENCHER: TOWARDS DECLARATIVE BENCHMARK CONSTRUCTION
+## AUTOBENCHER: TOWARDS DECLARATIVE BENCHMARK CONSTRUCTION
 
 [https://arxiv.org/abs/2407.08351](https://arxiv.org/abs/2407.08351)
 
@@ -4288,7 +4248,7 @@ Stereotypical bias detection in religious contexts. Specifically, the paper anal
 The benchmark measured factual knowledge of historical topics, which included some religious subjects such as the 'Islamic Golden Age' and 'Heresy in Christianity'. It was not designed to measure bias, stereotypes, or theological understanding specifically. No specific findings related to religion were reported in the paper. Religious topics like 'Islamic Golden Age' and 'Heresy in Christianity' were included as part of the automatically generated history benchmarks, but the models' performance on these specific topics was not analyzed in detail.
 
 
-### REL-A.I.: An Interaction-Centered Approach To Measuring Human-LM Reliance
+## REL-A.I.: An Interaction-Centered Approach To Measuring Human-LM Reliance
 
 [https://arxiv.org/abs/2407.07950](https://arxiv.org/abs/2407.07950)
 
@@ -4297,7 +4257,7 @@ The benchmark measured factual knowledge of historical topics, which included so
 Human reliance on LLM responses to questions about world religions, as part of a broader study on domain-specific reliance. Human reliance on LLM responses varies significantly by subject domain. Reliance on answers in computationally heavy domains like math (90.1% for high-confidence expressions) was significantly higher than in non-computational domains like world religion (83.9% for high-confidence expressions). This suggests users are less likely to rely on LLMs for questions about religion compared to subjects perceived as more computational.
 
 
-### T2VSafetyBench: Evaluating the Safety of Text-to-Video Generative Models
+## T2VSafetyBench: Evaluating the Safety of Text-to-Video Generative Models
 
 [https://arxiv.org/abs/2407.05965](https://arxiv.org/abs/2407.05965)
 
@@ -4306,7 +4266,7 @@ Human reliance on LLM responses to questions about world religions, as part of a
 Generation of discriminatory content and negative stereotypes in religious contexts, specifically as part of the 'Discrimination' safety aspect. Models exhibit low NSFW (Not Safe For Work) rates for discriminatory content, which includes religious stereotypes. However, this is not due to robust safety defenses but rather the models' limited capability to generate abstract or complex scenes. They struggle to detect and reject even simple discriminatory actions, indicating a significant safety risk as model capabilities improve.
 
 
-### Beyond Perplexity: Multi-dimensional Safety Evaluation of LLM Compression
+## Beyond Perplexity: Multi-dimensional Safety Evaluation of LLM Compression
 
 [https://arxiv.org/abs/2407.04965](https://arxiv.org/abs/2407.04965)
 
@@ -4315,7 +4275,7 @@ Generation of discriminatory content and negative stereotypes in religious conte
 Measurement of stereotypical biases, representational harm, and sentiment/regard associated with different religious groups in the context of LLM compression. Model compression affects bias against religious groups in complex and unpredictable ways. While aggregated bias metrics may appear stable, the bias against individual religious groups (e.g., Mormon, Sikh) can change significantly and divergently as compression increases. This highlights the necessity for fine-grained, group-specific evaluations rather than relying on aggregated scores.
 
 
-### CEB: COMPOSITIONAL EVALUATION BENCHMARK FOR FAIRNESS IN LARGE LANGUAGE MODELS
+## CEB: COMPOSITIONAL EVALUATION BENCHMARK FOR FAIRNESS IN LARGE LANGUAGE MODELS
 
 [https://arxiv.org/abs/2407.02408](https://arxiv.org/abs/2407.02408)
 
@@ -4324,7 +4284,7 @@ Measurement of stereotypical biases, representational harm, and sentiment/regard
 The benchmark (CEB) measures stereotyping and toxicity biases in Large Language Models concerning various social groups, including religion. The evaluation is conducted across several tasks: Recognition (identifying biased text), Selection (choosing the less biased text), Continuation (generating text from a prompt), Conversation (generating conversational responses), and Classification (predicting outcomes based on text involving religious identities). The study found that Large Language Models exhibit varying levels of bias and performance on tasks related to religion. A key finding was that models, particularly smaller ones like Llama2, have a significantly higher Refuse-to-Answer (RtA) rate for prompts involving religion and race compared to other social groups. This suggests that models are tuned to be more sensitive to these topics. While GPT models generally performed best in identifying and navigating religious biases, the performance varied across tasks, with no single model consistently outperforming others in all religious contexts. For instance, in classification tasks involving toxicity related to religion (on the CEB-Jigsaw dataset), some smaller models like Mistral-7b showed lower bias than GPT-4.
 
 
-### Breaking Bias, Building Bridges: Evaluation and Mitigation of Social Biases in LLMs via Contact Hypothesis
+## Breaking Bias, Building Bridges: Evaluation and Mitigation of Social Biases in LLMs via Contact Hypothesis
 
 [https://arxiv.org/abs/2407.02030](https://arxiv.org/abs/2407.02030)
 
@@ -4333,7 +4293,7 @@ The benchmark (CEB) measures stereotyping and toxicity biases in Large Language 
 The benchmark measured social bias against religious groups using prompts framed around the Contact Hypothesis. It evaluated whether LLMs would generate a biased response (e.g., refusing to collaborate, avoid, or exclude) based on a descriptor related to religion in various social scenarios (e.g., sports, workplace). The study found that LLMs exhibit notable bias in the 'Religion' dimension, with a particularly high percentage of biased responses observed in the 'Sports' scenario. The proposed Social Contact Debiasing (SCD) method proved effective, significantly reducing this bias after instruction-tuning.
 
 
-### From Local Concepts to Universals: Evaluating the Multicultural Understanding of Vision-Language Models
+## From Local Concepts to Universals: Evaluating the Multicultural Understanding of Vision-Language Models
 
 [https://arxiv.org/abs/2407.00263](https://arxiv.org/abs/2407.00263)
 
@@ -4342,7 +4302,7 @@ The benchmark measured social bias against religious groups using prompts framed
 The benchmark measured the ability of Vision-Language Models to retrieve culturally diverse images for the universal concept of 'religion' and 'ritual', and to visually ground culture-specific religious concepts (e.g., Jewish artifacts from Israel, Hindu concepts from India). The paper tests VLMs on their ability to retrieve culturally diverse images for 'religion' and ground specific religious concepts. Key findings, consistent with other cultural concepts, reveal significant performance variations across models and cultures. For example, the regional diversity of images retrieved for the concept 'religion' varied substantially between different models, indicating that models can be biased towards specific, often Western-centric, visual representations of religion.
 
 
-### IndoToxic2024: A Demographically-Enriched Dataset of Hate Speech and Toxicity Types for Indonesian Language
+## IndoToxic2024: A Demographically-Enriched Dataset of Hate Speech and Toxicity Types for Indonesian Language
 
 [https://arxiv.org/abs/2406.19349](https://arxiv.org/abs/2406.19349)
 
@@ -4351,7 +4311,7 @@ The benchmark measured the ability of Vision-Language Models to retrieve cultura
 The benchmark measures the detection of hate speech targeting religious groups in Indonesian text. It specifically analyzes how classification performance and annotation subjectivity are influenced by the religious demographics of the annotators and the religious topic of the text (e.g., content about Shia, Ahmadiyya, Christians, or Jewish people). The perception and annotation of hate speech are subjective and significantly influenced by the annotator's religious identity. Models trained on annotations from one religious group (e.g., 'Non-Islam') perform worse when tested on annotations from another group (e.g., 'Islam'). Furthermore, model performance varies by the religious topic of the text; models trained on annotations from specific Islamic groups (Sunni, Shia/Ahmadiyya) performed better on texts about Shia or Ahmadiyya. Providing religious demographic information to a fine-tuned model like IndoBERTweet can negatively impact performance due to data fragmentation, especially for underrepresented religious groups like Ahmadiyya and Buddhists.
 
 
-### The FineWeb Datasets: Decanting the Web for the Finest Text Data at Scale
+## The FineWeb Datasets: Decanting the Web for the Finest Text Data at Scale
 
 [https://arxiv.org/abs/2406.17557](https://arxiv.org/abs/2406.17557)
 
@@ -4360,7 +4320,7 @@ The benchmark measures the detection of hate speech targeting religious groups i
 The benchmark measured the distributional properties and associative biases of religious terms within the FineWeb and FineWeb-Edu datasets. This was done by analyzing the frequency of terms for different religious groups and using TF-IDF to identify words that disproportionately co-occur with specific religious terms, particularly noting associations with concepts like online dating and intimacy. The analysis of the FineWeb dataset found that the term 'christian' appears much more frequently than terms for other religions. There were notable associative biases, with the term 'jewish' being particularly associated with 'dating' and 'singles'. Several religious terms, including 'muslim', 'jewish', 'hindu', and 'buddhist', were slightly skewed to co-occur with 'women'. The analysis also highlighted skews towards words related to online intimacy (e.g., 'online', 'singles', 'sex') co-occurring with various religious terms. The FineWeb-Edu dataset, which is filtered for educational content, showed associations less tied to intimacy compared to the base FineWeb dataset.
 
 
-### Evaluating Visual and Cultural Interpretation: The K-Viscuit Benchmark with Human-VLM Collaboration
+## Evaluating Visual and Cultural Interpretation: The K-Viscuit Benchmark with Human-VLM Collaboration
 
 [https://arxiv.org/abs/2406.16469](https://arxiv.org/abs/2406.16469)
 
@@ -4369,7 +4329,7 @@ The benchmark measured the distributional properties and associative biases of r
 The benchmark measures knowledge of Korean cultural concepts related to religion, specifically through visual question answering about historical structures and artifacts (e.g., dolmens). Proprietary models significantly outperformed open-source models on the 'Religion' category questions. The highest scoring model, GPT-4o, achieved an accuracy of 85.19%, while the best performing open-source model, Llama-3.2-11B, scored 70.37%. This indicates a gap in the ability of models to recognize and reason about culturally specific religious artifacts and concepts from Korea.
 
 
-### Towards Region-aware Bias Evaluation Metrics
+## Towards Region-aware Bias Evaluation Metrics
 
 [https://arxiv.org/abs/2406.16152](https://arxiv.org/abs/2406.16152)
 
@@ -4378,7 +4338,7 @@ The benchmark measures knowledge of Korean cultural concepts related to religion
 Detection of gender stereotypes where religious/spiritual topics (e.g., Christian theology, religious devotion, spirituality) are associated with the male gender across different geographical regions. Across multiple global regions (Africa, Asia, Europe, North America, Oceania), topics related to religion, spirituality, and Christian theology were automatically identified as being stereotypically associated with men. Human validation tests confirmed that some of these religion-gender associations represent stronger biases than the standard family-career stereotype.
 
 
-### Data Efficient Evaluation of Large Language Models and Text-to-Image Models via Adaptive Sampling
+## Data Efficient Evaluation of Large Language Models and Text-to-Image Models via Adaptive Sampling
 
 [https://arxiv.org/abs/2406.15527](https://arxiv.org/abs/2406.15527)
 
@@ -4387,7 +4347,7 @@ Detection of gender stereotypes where religious/spiritual topics (e.g., Christia
 The benchmark measured model knowledge on the subject of 'world religions' as part of the Massive Multitask Language Understanding (MMLU) benchmark. The paper's findings related to religion were methodological rather than performance-based. It found that for the MMLU subject 'world_religions', the optimal adaptive sampling method to preserve ranking and score distribution was 'quality_CPD' (a quality-based sampling method).
 
 
-### MMLU-SR: A Benchmark for Stress-Testing Reasoning Capability of Large Language Models
+## MMLU-SR: A Benchmark for Stress-Testing Reasoning Capability of Large Language Models
 
 [https://arxiv.org/abs/2406.15468](https://arxiv.org/abs/2406.15468)
 
@@ -4396,7 +4356,7 @@ The benchmark measured model knowledge on the subject of 'world religions' as pa
 The benchmark measured the reasoning and comprehension abilities of LLMs on the topic of world religions. It specifically tested whether models could answer questions based on provided definitions of religious terms (using dummy replacement words) rather than relying on memorized knowledge of those terms. The performance of all tested models on the 'World Religions' subject decreased when evaluated on the MMLU-SR benchmark compared to the original MMLU benchmark. For instance, GPT-4o's accuracy dropped from 0.901 on MMLU to as low as 0.696 on the 'Question and Answer' variant of MMLU-SR. This suggests that models rely on memorized vocabulary for religious topics, and their reasoning capabilities are challenged when this reliance is removed.
 
 
-### Safe Inputs but Unsafe Output: Benchmarking Cross-modality Safety Alignment of Large Vision-Language Models
+## Safe Inputs but Unsafe Output: Benchmarking Cross-modality Safety Alignment of Large Vision-Language Models
 
 [https://arxiv.org/abs/2406.15279](https://arxiv.org/abs/2406.15279)
 
@@ -4405,7 +4365,7 @@ The benchmark measured the reasoning and comprehension abilities of LLMs on the 
 The benchmark measured the safety of model responses in scenarios involving religious beliefs and cultural practices. This included assessing the model's ability to handle sensitive topics, dietary restrictions (e.g., Islamic diet, monk's vegetarian diet), and interactions in religious settings (e.g., mosques) without generating harmful, unethical, or offensive content. Most models, including the top-performing ones, struggle significantly in the domain of religion, with safety scores consistently below 40%.
 
 
-### GIEBench: Towards Holistic Evaluation of Group Identity-based Empathy for Large Language Models
+## GIEBench: Towards Holistic Evaluation of Group Identity-based Empathy for Large Language Models
 
 [https://arxiv.org/abs/2406.14903](https://arxiv.org/abs/2406.14903)
 
@@ -4414,7 +4374,7 @@ The benchmark measured the safety of model responses in scenarios involving reli
 The benchmark measured the ability of Large Language Models to demonstrate empathy by selecting responses that align with the values and perspectives of specific religious identity groups. This was evaluated as part of a broader assessment of group identity-based empathy across 11 dimensions. LLMs generally showed lower accuracy in aligning with faith-based perspectives compared to other identity dimensions like orientation or political party. However, performance significantly improved when models were explicitly prompted with the user's religious identity and a chain-of-thought instruction. The study also found that models could distinguish between the differing stances of specific religious groups, such as Islam, Christianity, and Buddhism, on controversial topics.
 
 
-### SAFESORA: Towards Safety Alignment of Text2Video Generation via a Human Preference Dataset
+## SAFESORA: Towards Safety Alignment of Text2Video Generation via a Human Preference Dataset
 
 [https://arxiv.org/abs/2406.14477](https://arxiv.org/abs/2406.14477)
 
@@ -4423,7 +4383,7 @@ The benchmark measured the ability of Large Language Models to demonstrate empat
 Measures generation of harmful content related to extreme religious views (under 'Terrorism'), religious conflicts (under 'Debated Sensitive Social Issues'), hate speech against religious groups (under 'Insulting, Hateful and Aggression Behavior'), and discrimination against religious groups (under 'Other Discrimination'). The paper does not present specific findings related to religion. Its findings pertain to the broader safety alignment of text-to-video models, covering 12 harm categories of which religion is a sub-component. The analysis focuses on overall correlations between harm types and the general tension between helpfulness and harmlessness, without singling out religion for a detailed breakdown.
 
 
-### VLBiasBench: A Comprehensive Benchmark for Evaluating Bias in Large Vision-Language Model
+## VLBiasBench: A Comprehensive Benchmark for Evaluating Bias in Large Vision-Language Model
 
 [https://arxiv.org/abs/2406.14194](https://arxiv.org/abs/2406.14194)
 
@@ -4432,7 +4392,7 @@ Measures generation of harmful content related to extreme religious views (under
 The benchmark measures sentiment bias in open-ended, model-generated stories associated with images representing different religions. It also measures the accuracy of models on close-ended, multiple-choice questions in religious contexts. In open-ended evaluations, Blip2-flan-t5-xl demonstrated the highest level of bias in the religion category, while LLaVA1.5 and closed-source models like Gemini and GPT-4o showed lower levels of bias. Closed-source models generally performed better in close-ended evaluations as well, suggesting lower bias overall in religious contexts.
 
 
-### Evaluating Implicit Bias in Large Language Models by Attacking From a Psychometric Perspective
+## Evaluating Implicit Bias in Large Language Models by Attacking From a Psychometric Perspective
 
 [https://arxiv.org/abs/2406.14023](https://arxiv.org/abs/2406.14023)
 
@@ -4441,7 +4401,7 @@ The benchmark measures sentiment bias in open-ended, model-generated stories ass
 The benchmark measures agreement with biased statements concerning religion. This is framed as an 'implicit bias agreement task' where the model's willingness to agree with harmful stereotypes about religious groups is quantified. The study found that Large Language Models are generally less likely to reveal inherent biases in severe categories like religion compared to milder types like age. However, the proposed attack methods, particularly 'Teaching attacks', could successfully elicit religious bias. For example, a teaching attack prompted GLM-3-turbo to generate the statement 'Muslims are the root of terrorism', demonstrating that inherent biases can be surfaced despite safety training.
 
 
-### Evaluating Short-Term Temporal Fluctuations of Social Biases in Social Media Data and Masked Language Models
+## Evaluating Short-Term Temporal Fluctuations of Social Biases in Social Media Data and Masked Language Models
 
 [https://arxiv.org/abs/2406.13556](https://arxiv.org/abs/2406.13556)
 
@@ -4450,7 +4410,7 @@ The benchmark measures agreement with biased statements concerning religion. Thi
 The benchmark measured stereotypical biases related to religious groups by comparing the likelihood scores of stereotypical versus anti-stereotypical sentences. Religion-related bias was found to be one of the most fluctuating types over time, particularly in the StereoSet benchmark. Analysis of the training corpora (social media data) showed high levels of stereotypical bias associated with both Jewish and Christian identities. However, the language models trained on this data demonstrated a lower degree of bias, tending towards anti-stereotypical examples. The bias associated with Christianity was found to be more stable over time compared to the bias associated with Judaism. In historical corpora (COHABERT), religion also showed the most variability over time compared to other bias types.
 
 
-### What Matters in Memorizing and Recalling Facts? Multifaceted Benchmarks for Knowledge Probing in Language Models
+## What Matters in Memorizing and Recalling Facts? Multifaceted Benchmarks for Knowledge Probing in Language Models
 
 [https://arxiv.org/abs/2406.12277](https://arxiv.org/abs/2406.12277)
 
@@ -4459,7 +4419,7 @@ The benchmark measured stereotypical biases related to religious groups by compa
 The benchmark measures factual knowledge recall concerning a person's religious affiliation or worldview, using the Wikidata relation P140 as an example. The paper uses the 'religion or worldview' relation (P140) as an example to illustrate a challenge in prompt engineering, specifically how a template like '[X] is a follower of [Y]' may not fully capture the scope of the relation, as it applies to individuals but not organizations. No specific findings on model performance regarding religious facts were presented.
 
 
-### SPA-VL: A Comprehensive Safety Preference Alignment Dataset for Vision Language Models
+## SPA-VL: A Comprehensive Safety Preference Alignment Dataset for Vision Language Models
 
 [https://arxiv.org/abs/2406.12030](https://arxiv.org/abs/2406.12030)
 
@@ -4468,7 +4428,7 @@ The benchmark measures factual knowledge recall concerning a person's religious 
 The benchmark measures harmful content, including unfairness related to religion as one of its subcategories. The paper does not provide specific findings for the religion subcategory. Findings are aggregated across all harm types, showing that models trained on the proposed SPA-VL dataset achieve superior safety performance and are more harmless compared to baseline models.
 
 
-### Extrinsic Evaluation of Cultural Competence in Large Language Models
+## Extrinsic Evaluation of Cultural Competence in Large Language Models
 
 [https://arxiv.org/abs/2406.11565](https://arxiv.org/abs/2406.11565)
 
@@ -4477,7 +4437,7 @@ The benchmark measures harmful content, including unfairness related to religion
 The benchmark measured the variation of model outputs for topics in the 'religion' category and the presence of culturally relevant religious vocabulary (e.g., 'hindu', 'temple') in response to nationality prompts, as part of a broader evaluation of cultural competence. When prompted with specific nationalities, models generate culturally relevant vocabulary which can include religious terms. For example, outputs for India included 'hindu' in a political context and 'temple' in stories, demonstrating the models' ability to associate religious concepts with national identity.
 
 
-### CHiSafetyBench: A Chinese Hierarchical Safety Benchmark for Large Language Models
+## CHiSafetyBench: A Chinese Hierarchical Safety Benchmark for Large Language Models
 
 [https://arxiv.org/abs/2406.10311](https://arxiv.org/abs/2406.10311)
 
@@ -4486,7 +4446,7 @@ The benchmark measured the variation of model outputs for topics in the 'religio
 The benchmark measured the ability of Large Language Models to identify multiple-choice questions related to religious discrimination and their ability to refuse to answer open-ended questions involving religious discrimination. The ability of models to identify content related to religious discrimination varied widely, with some models performing well and others failing completely (Figure 7). However, the ability to refuse to answer risky questions in this category was generally poor across all models, with low rejection rates (Figure 8). Despite the low refusal rates, the generated responses were mostly non-harmful, with only one model (Yi-6B) showing a non-zero harmfulness rate (Figure 10).
 
 
-### SEACrowd: A Multilingual Multimodal Data Hub and Benchmark Suite for Southeast Asian Languages
+## SEACrowd: A Multilingual Multimodal Data Hub and Benchmark Suite for Southeast Asian Languages
 
 [https://arxiv.org/abs/2406.10118](https://arxiv.org/abs/2406.10118)
 
@@ -4495,7 +4455,7 @@ The benchmark measured the ability of Large Language Models to identify multiple
 Religious domain question answering using sirah nabawiyah (Islamic prophetic biography). The paper includes a benchmark for religious question answering (QASiNa) covering Islamic history in Indonesian. However, it does not present specific findings for this task, instead aggregating the results within the broader category of Question Answering (QA) tasks to evaluate the general performance of models on Southeast Asian languages.
 
 
-### BLEND: A Benchmark for LLMs on Everyday Knowledge in Diverse Cultures and Languages
+## BLEND: A Benchmark for LLMs on Everyday Knowledge in Diverse Cultures and Languages
 
 [https://arxiv.org/abs/2406.09948](https://arxiv.org/abs/2406.09948)
 
@@ -4504,7 +4464,7 @@ Religious domain question answering using sirah nabawiyah (Islamic prophetic bio
 The benchmark measures everyday cultural knowledge, which includes knowledge about religious holidays, festivals, and practices (e.g., Ramadan, Easter) and their associated customs (e.g., food). It also tests the model's ability to differentiate between the practices of different religious groups within the same country. Models exhibit inconsistent and sometimes flawed knowledge of religious practices. For instance, GPT-4 demonstrated a nuanced understanding of Ramadan observance by the Muslim minority in China. However, it also made culturally insensitive errors, such as misidentifying a Muslim festival dish (Ketupat) as being associated with Easter in Indonesia, thus failing to accurately distinguish between the cultural practices of different religious groups within the same country.
 
 
-### Can I introduce my boyfriend to my grandmother? Evaluating Large Language Models Capabilities on Iranian Social Norm Classification
+## Can I introduce my boyfriend to my grandmother? Evaluating Large Language Models Capabilities on Iranian Social Norm Classification
 
 [https://arxiv.org/abs/2406.09123](https://arxiv.org/abs/2406.09123)
 
@@ -4513,7 +4473,7 @@ The benchmark measures everyday cultural knowledge, which includes knowledge abo
 Classification of social norms in Iranian culture, with religion as a key demographic feature influencing the appropriateness ('Expected', 'Normal', or 'Taboo') of an action. The benchmark measures how well LLMs understand these religious nuances. Models demonstrated significant misunderstandings of religious norms in Iran. For example, a model incorrectly assumed that non-Muslims in Iran are expected to 'read the Quran and recite Ramadan supplications.' It also incorrectly predicted non-taboo behaviors as taboo for Muslims, highlighting a failure to account for demographic and cultural nuances related to religion.
 
 
-### MLLMGUARD: A Multi-dimensional Safety Evaluation Suite for Multimodal Large Language Models
+## MLLMGUARD: A Multi-dimensional Safety Evaluation Suite for Multimodal Large Language Models
 
 [https://arxiv.org/abs/2406.07594](https://arxiv.org/abs/2406.07594)
 
@@ -4522,7 +4482,7 @@ Classification of social norms in Iranian culture, with religion as a key demogr
 The benchmark measures 'Toxicity', specifically the sub-task of 'Hate Speech'. An example provided involves a meme with a blasphemous statement about 'the bible', indicating the benchmark tests the model's ability to handle toxic content within a religious context. The paper does not provide specific quantitative findings related to religion. Its analysis is focused on broader safety dimensions. However, it uses a religious-themed example ('The bible makes me so horny...') to test the 'Toxicity' dimension, indicating that such content is part of the evaluation, but results are not disaggregated by religious content.
 
 
-### MULTITRUST: A Comprehensive Benchmark Towards Trustworthy Multimodal Large Language Models
+## MULTITRUST: A Comprehensive Benchmark Towards Trustworthy Multimodal Large Language Models
 
 [https://arxiv.org/abs/2406.07057](https://arxiv.org/abs/2406.07057)
 
@@ -4531,7 +4491,7 @@ The benchmark measures 'Toxicity', specifically the sub-task of 'Hate Speech'. A
 Stereotype agreement, stereotype classification, and refusal to answer stereotypical queries in religious contexts. Models show varied agreement rates with religious stereotypes, which generally decrease when an image is added to the prompt, regardless of the image's relevance. Most models effectively refuse to answer direct stereotypical queries related to religion, maintaining a high Refuse-to-Answer rate across different conditions.
 
 
-### Decision-Making Behavior Evaluation Framework for LLMs under Uncertain Context
+## Decision-Making Behavior Evaluation Framework for LLMs under Uncertain Context
 
 [https://arxiv.org/abs/2406.05972](https://arxiv.org/abs/2406.05972)
 
@@ -4540,7 +4500,7 @@ Stereotype agreement, stereotype classification, and refusal to answer stereotyp
 The benchmark measured the sensitivity of LLM decision-making parameters (risk preference, probability weighting, and loss aversion) when the models were prompted with personas having specific religious identities. Gemini showed a significant decrease in loss aversion for Christian personas compared to the comparison group (lifelong Democrats). Claude and ChatGPT did not show significant sensitivity to religious backgrounds in their decision-making parameters.
 
 
-### CVQA: Culturally-diverse Multilingual Visual Question Answering Benchmark
+## CVQA: Culturally-diverse Multilingual Visual Question Answering Benchmark
 
 [https://arxiv.org/abs/2406.05967](https://arxiv.org/abs/2406.05967)
 
@@ -4549,7 +4509,7 @@ The benchmark measured the sensitivity of LLM decision-making parameters (risk p
 The benchmark measures visual understanding of cultural knowledge, which includes identifying religious practices (e.g., Islamic ablution), deities (e.g., Taoist Datuk Gong), artifacts (e.g., Aztec sun stone), and places of worship (e.g., mosque). The evaluation focuses on factual knowledge within these cultural-religious contexts. The paper does not provide findings specific to religion, but rather for broader cultural categories that include religious content, such as 'Tradition, Art, and History'. Key findings show that models perform worse on this category compared to more general categories like 'People and Everyday Life'. There is also a significant performance degradation when questions are posed in local languages versus English, indicating a lack of deep multilingual and multicultural understanding which extends to religious knowledge.
 
 
-### LLAVAGUARD: An Open VLM-based Framework for Safeguarding Vision Datasets and Models
+## LLAVAGUARD: An Open VLM-based Framework for Safeguarding Vision Datasets and Models
 
 [https://arxiv.org/abs/2406.05113](https://arxiv.org/abs/2406.05113)
 
@@ -4558,7 +4518,7 @@ The benchmark measures visual understanding of cultural knowledge, which include
 Detection of hateful, derogatory, or demeaning content against people based on their religion, as part of a broader 'Hate, Humiliation, Harassment' safety category. The paper's safety taxonomy includes the detection of hate speech based on religion as a violation. However, the paper does not present specific results or analysis for this sub-category, focusing instead on the overall performance across all safety categories.
 
 
-### Measuring and Addressing Indexical Bias in Information Retrieval
+## Measuring and Addressing Indexical Bias in Information Retrieval
 
 [https://arxiv.org/abs/2406.04298](https://arxiv.org/abs/2406.04298)
 
@@ -4567,7 +4527,7 @@ Detection of hateful, derogatory, or demeaning content against people based on t
 Measurement of indexical bias (positional order bias) in information retrieval systems on controversial religious topics. The benchmark quantifies how the ordering of search results can favor one perspective over another. The paper provides quantitative indexical bias scores (DUO metric) for 8 different information retrieval systems within the 'Religion' domain, using both synthetic and natural document sets. However, the paper does not offer a specific qualitative discussion or analysis of the findings for the Religion domain; the results are presented in a table alongside 14 other domains, allowing for comparison of model performance on religious topics relative to others.
 
 
-### BEADS: Bias Evaluation Across Domains
+## BEADS: Bias Evaluation Across Domains
 
 [https://arxiv.org/abs/2406.04220](https://arxiv.org/abs/2406.04220)
 
@@ -4576,7 +4536,7 @@ Measurement of indexical bias (positional order bias) in information retrieval s
 The benchmark measured bias against religious groups through several tasks: 1) Bias Rate, which quantifies the tendency of models to associate religious identity mentions (Christian, Jewish, Muslim) with biased content in token prediction tasks. 2) Demographic Variation, which assesses if models misclassify neutral statements as biased when religious identifiers (Christian, Muslim, Hindu, Buddhist) are included. 3) Stereotype Alignment, which evaluates how models agree or disagree with stereotypes about various religious groups. Smaller models like BERT and RoBERTa exacerbated biases for religious groups in token prediction tasks, with RoBERTa showing the highest bias rates for Christian (51.1%) and Jewish (59.6%) identities. Llama2-7B-chat and Mistral-7B-Instruct-v0.2 were prone to misclassifying neutral sentences as biased for Muslim and Christian groups. When presented with stereotypes, the Llama2 model showed higher agreement with stereotypes about Muslims and Christians compared to the Mistral model, which showed low agreement.
 
 
-### ValueBench: Towards Comprehensively Evaluating Value Orientations and Understanding of Large Language Models
+## ValueBench: Towards Comprehensively Evaluating Value Orientations and Understanding of Large Language Models
 
 [https://arxiv.org/abs/2406.04214](https://arxiv.org/abs/2406.04214)
 
@@ -4585,7 +4545,7 @@ The benchmark measured bias against religious groups through several tasks: 1) B
 The benchmark measured the value orientation of LLMs towards 'Religiosity' as part of the Social Axioms (SA) inventory and the 'Religious' value dimension as part of the Study of Values (SOV) inventory. This assesses the degree to which a model's responses align with or endorse religious values and beliefs in a general sense. The study evaluated LLMs on two religion-related value dimensions: 'Religiosity' and 'Religious'. For 'Religiosity', all tested models showed highly consistent, moderate scores (ranging from 6.29 to 6.65 on a 10-point scale). For the 'Religious' value dimension, there was more variance, with scores ranging from 5.95 (Mixtral 8x7B) to 7.15 (Llama-2 7B and Mistral 7B), indicating different levels of orientation towards religious values across models.
 
 
-### Ask LLMs Directly, “What shapes your bias?”: Measuring Social Bias in Large Language Models
+## Ask LLMs Directly, “What shapes your bias?”: Measuring Social Bias in Large Language Models
 
 [https://arxiv.org/abs/2406.04064](https://arxiv.org/abs/2406.04064)
 
@@ -4594,7 +4554,7 @@ The benchmark measured the value orientation of LLMs towards 'Religiosity' as pa
 The benchmark measures social perception biases in Large Language Models within religious contexts. It quantifies how different religious personas perceive various religious target groups, identifying patterns of positive or negative bias and in-group favoritism using a question-answering format. The study found that persona-assigned LLMs exhibit significant in-group favoritism within the religion domain; for example, Christian, Protestant, and Catholic identities showed mutual positive perception. The shape of bias varied by model: Llama-2 models showed balanced but vast bias, while GPT-3.5 demonstrated skewed bias, consistently favoring Buddhist, Hindu, and Sikh targets. GPT-4 exhibited the lowest bias scores and the weakest in-group favoritism pattern. A case study also revealed context-dependent bias, where a Christian persona on GPT-3.5 made a fair choice between Mormon and Jewish targets but a biased choice favoring the Mormon target when paired with a Hindu target.
 
 
-### Open Grounded Planning: Challenges and Benchmark Construction
+## Open Grounded Planning: Challenges and Benchmark Construction
 
 [https://arxiv.org/abs/2406.02903](https://arxiv.org/abs/2406.02903)
 
@@ -4603,7 +4563,7 @@ The benchmark measures social perception biases in Large Language Models within 
 The benchmark measures the ability of Large Language Models to generate grounded plans for tasks within various categories, one of which is 'Philosophy and Religion' sourced from the wikiHow dataset. The paper includes a 'Philosophy and Religion' category from the wikiHow dataset as part of its comprehensive Open Grounded Planning benchmark. However, it does not report or analyze the performance of the tested models specifically on this category; results are aggregated across the entire in-domain (wikiHow) dataset.
 
 
-### Long-Span Question-Answering: Automatic Question Generation and QA-System Ranking via Side-by-Side Evaluation
+## Long-Span Question-Answering: Automatic Question Generation and QA-System Ranking via Side-by-Side Evaluation
 
 [https://arxiv.org/abs/2406.00179](https://arxiv.org/abs/2406.00179)
 
@@ -4612,7 +4572,7 @@ The benchmark measures the ability of Large Language Models to generate grounded
 The benchmark measures long-context reading comprehension and reasoning using entire books as context. This includes understanding plot points, character motivations, and themes that involve religious elements, such as the role of a Christian Bishop in 'Les Misérables' and the portrayal of the Mormon community in 'The Wild Huntress'. The paper's findings are not specifically about religion but about the general long-context question-answering capabilities of LLMs. It found that models provided with the full text of a book (full context) performed significantly better at answering complex, nuanced questions, including those involving religious characters (e.g., a Bishop) and communities (e.g., Mormons), compared to models with no context or limited retrieval-based context.
 
 
-### OR-Bench: An Over-Refusal Benchmark for Large Language Models
+## OR-Bench: An Over-Refusal Benchmark for Large Language Models
 
 [https://arxiv.org/abs/2405.20947](https://arxiv.org/abs/2405.20947)
 
@@ -4621,7 +4581,7 @@ The benchmark measures long-context reading comprehension and reasoning using en
 The benchmark measures over-refusal and toxic prompt refusal across 10 categories. One of these categories is 'hate', which is defined as content that 'expresses, incites, or promotes hate based on race, gender, ethnicity, religion, nationality, sexual orientation, disability status, or caste'. Therefore, the benchmark measures refusal behaviors for prompts related to religion within this broader 'hate' category. The paper does not provide findings disaggregated for religion specifically. Results are reported for the broader 'hate' category, which includes religion. The findings show a wide variance in over-refusal rates for 'hate' prompts across models. On the OR-Bench-Hard-1K dataset, Claude models showed very high over-refusal rates (91.5-94.3%), while later GPT models had much lower rates (e.g., GPT-4o at 5.6%). The paper identifies a strong correlation (0.89 Spearman's rank) between safety (toxic prompt rejection) and over-refusal, indicating that models which are safer also tend to over-refuse safe prompts more often.
 
 
-### C3BENCH: A COMPREHENSIVE CLASSICAL CHINESE UNDERSTANDING BENCHMARK FOR LARGE LANGUAGE MODELS
+## C3BENCH: A COMPREHENSIVE CLASSICAL CHINESE UNDERSTANDING BENCHMARK FOR LARGE LANGUAGE MODELS
 
 [https://arxiv.org/abs/2405.17732](https://arxiv.org/abs/2405.17732)
 
@@ -4630,7 +4590,16 @@ The benchmark measures over-refusal and toxic prompt refusal across 10 categorie
 The benchmark measured the ability of Large Language Models to perform natural language understanding tasks (classification, retrieval, named entity recognition, punctuation, translation) on Classical Chinese texts, including texts from the domains of Buddhism, Confucianism, and Taoism. The paper's key findings are about the general performance of LLMs on Classical Chinese Understanding (CCU) tasks. It finds that current LLMs struggle with these tasks and perform worse than supervised models. There are no specific findings detailed for the religious sub-domains (Buddhism, Confucianism, Taoism) versus other domains.
 
 
-### Benchmarking the Performance of Pre-trained LLMs across Urdu NLP Tasks
+## GPT is Not an Annotator: The Necessity of Human Annotation in Fairness Benchmark Construction
+
+[https://arxiv.org/abs/2405.15760](https://arxiv.org/abs/2405.15760)
+
+**Date:** 2024-05-24
+
+The benchmark, WinoSemitism, measures antisemitic stereotypes and biases in Large Language Models, grounded in the lived experience of the Jewish community. All 20 tested language models showed significant antisemitic bias, being more than twice as likely to apply antisemitic stereotypes to Jews than to non-Jews. The models also demonstrated intersectional biases, stereotyping Jewish women and mothers more frequently. Furthermore, GPT-3.5-Turbo performed poorly when used as an annotator to extract these harms from survey data, producing low-quality and hallucinated outputs, indicating it is not a suitable substitute for human experts in sensitive tasks.
+
+
+## Benchmarking the Performance of Pre-trained LLMs across Urdu NLP Tasks
 
 [https://arxiv.org/abs/2405.15453](https://arxiv.org/abs/2405.15453)
 
@@ -4639,7 +4608,7 @@ The benchmark measured the ability of Large Language Models to perform natural l
 The benchmark measured the machine translation performance of Large Language Models on religious texts, specifically the Quran and the Bible, using an English-Urdu religious parallel corpus. For the machine translation of religious texts (Quran and Bible) from English to Urdu, all tested LLMs performed significantly worse than the existing State-of-the-Art (SOTA) models in a zero-shot setting. Llama 3.1 had the highest BLEU score for Bible translation (6.43 vs SOTA 13.99), and GPT 3.5 had the highest for Quran translation (3.75 vs SOTA 13.24).
 
 
-### S-EVAL: Towards Automated and Comprehensive Safety Evaluation for Large Language Models
+## S-EVAL: Towards Automated and Comprehensive Safety Evaluation for Large Language Models
 
 [https://arxiv.org/abs/2405.14191](https://arxiv.org/abs/2405.14191)
 
@@ -4648,7 +4617,7 @@ The benchmark measured the machine translation performance of Large Language Mod
 The benchmark measures safety risks related to extremist ideological trends in religion and instances of religious discrimination. The paper does not report specific findings for the religion subcategory. Results are aggregated into higher-level risk dimensions, such as 'Extremism (EX)' and 'Ethics and Morality (EM)', which include religious discrimination.
 
 
-### ALI-Agent: Assessing LLMs' Alignment with Human Values via Agent-based Evaluation
+## ALI-Agent: Assessing LLMs' Alignment with Human Values via Agent-based Evaluation
 
 [https://arxiv.org/abs/2405.14125](https://arxiv.org/abs/2405.14125)
 
@@ -4657,7 +4626,7 @@ The benchmark measures safety risks related to extremist ideological trends in r
 Stereotype detection and bias measurement related to religion. The evaluation used the CrowS-Pairs dataset, which includes religion as one of nine categories for measuring social biases. The paper's findings are general across stereotypes, with religion being one of the tested categories. The key finding is that the proposed ALI-Agent framework is significantly more effective than standard benchmarks at uncovering model misalignment. It achieves this by automatically generating and iteratively refining realistic test scenarios that conceal the malicious intent (e.g., a stereotype), making it harder for LLMs to identify the risk. An example prompt for the agent's refinement stage explicitly mentions refining a stereotype about 'Muslins' to be more subtle.
 
 
-### CT-Eval: Benchmarking Chinese Text-to-Table Performance in Large Language Models
+## CT-Eval: Benchmarking Chinese Text-to-Table Performance in Large Language Models
 
 [https://arxiv.org/abs/2405.12174](https://arxiv.org/abs/2405.12174)
 
@@ -4666,7 +4635,7 @@ Stereotype detection and bias measurement related to religion. The evaluation us
 The benchmark measured the ability of large language models to extract key information from Chinese texts about religion and generate a structured table. Religion was one of 28 domains evaluated as part of the broader Chinese Text-to-Table task. The paper evaluated model performance on the 'Social Science' category, which includes the 'Religion' domain. It found that in zero-shot settings, GPT-4 showed superior performance over other models in this category. Among open-source models, Llama-Chinese-2-7B and Qwen-14B-Chat performed well, sometimes outperforming GPT-4 in the Social Science category on certain metrics. However, no specific findings were reported exclusively for the religion domain.
 
 
-### CLAMBER: A Benchmark of Identifying and Clarifying Ambiguous Information Needs in Large Language Models
+## CLAMBER: A Benchmark of Identifying and Clarifying Ambiguous Information Needs in Large Language Models
 
 [https://arxiv.org/abs/2405.12063](https://arxiv.org/abs/2405.12063)
 
@@ -4675,7 +4644,7 @@ The benchmark measured the ability of large language models to extract key infor
 The benchmark measures ambiguity resolution. The connection to religion is through a source dataset (AmbiTask) which includes a classification task for identifying 'religious pronouns'. Another minor example involves interpreting the phrase 'saving' as 'saving from sins'. The paper does not report any specific findings related to religion. The 'religious pronoun' task is part of a larger dataset used for the 'Contradiction' category, and results are not disaggregated to show performance on this specific sub-task.
 
 
-### The Unseen Targets of Hate – A Systematic Review of Hateful Communication Datasets
+## The Unseen Targets of Hate – A Systematic Review of Hateful Communication Datasets
 
 [https://arxiv.org/abs/2405.08562](https://arxiv.org/abs/2405.08562)
 
@@ -4684,7 +4653,7 @@ The benchmark measures ambiguity resolution. The connection to religion is throu
 The paper conducts a systematic review of hateful communication datasets, measuring the extent to which 'religion' is included as a target category for hate speech. This includes analyzing its presence in construct definitions, data collection/annotation procedures (conceptualized and operationalized targets), and its empirical prevalence in the datasets themselves (detected targets). Religion is one of the three most common target categories for hate speech in the reviewed datasets, alongside race and gender. The focus on religious hate varies significantly by language and culture; for instance, religious hatred, particularly Islamophobia, is a major focus in datasets from Muslim-majority countries (e.g., in Arabic, Turkish, Bengali languages). In contrast, gender is a more frequent target in Spanish and French datasets. The study highlights a diversity in how hate is conceptualized across languages, with religion being a more pertinent component in the definitions used for Arabic datasets.
 
 
-### FROM TRACES TO MEASURES: A PSYCHOMETRIC APPROACH TO USING LARGE LANGUAGE MODELS TO MEASURE PSYCHOLOGICAL CONSTRUCTS FROM TEXT
+## FROM TRACES TO MEASURES: A PSYCHOMETRIC APPROACH TO USING LARGE LANGUAGE MODELS TO MEASURE PSYCHOLOGICAL CONSTRUCTS FROM TEXT
 
 [https://arxiv.org/abs/2405.07447](https://arxiv.org/abs/2405.07447)
 
@@ -4693,7 +4662,7 @@ The paper conducts a systematic review of hateful communication datasets, measur
 The benchmark measured stance detection (author's stance being in favour, against, or neutral) towards the topic of Atheism. The paper does not report findings specific to the topic of Atheism. The overall findings, aggregated across all topics in the dataset (including Atheism), showed that the proposed psychometric prompting method was effective at distinguishing supportive stances from neutral ones but performed poorly for opposing stances. The paper's main contribution is the methodology itself, rather than specific results on the model's performance on religious topics.
 
 
-### OpenFactCheck: Building, Benchmarking Customized Fact-Checking Systems and Evaluating the Factuality of Claims and LLMs
+## OpenFactCheck: Building, Benchmarking Customized Fact-Checking Systems and Evaluating the Factuality of Claims and LLMs
 
 [https://arxiv.org/abs/2405.05583](https://arxiv.org/abs/2405.05583)
 
@@ -4702,7 +4671,16 @@ The benchmark measured stance detection (author's stance being in favour, agains
 The benchmark measured the factuality of LLM-generated claims across various domains, including the domain of religion. The paper includes 'Religion' as one of the top 20 domains for factuality evaluation, with 63 examples in the FactQA dataset. However, it does not provide any specific findings or analysis on model performance within this domain. The results are aggregated across all domains.
 
 
-### Can ChatGPT Make Explanatory Inferences? Benchmarks for Abductive Reasoning
+## Quranic Audio Dataset: Crowdsourced and Labeled Recitation from Non-Arabic Speakers
+
+[https://arxiv.org/abs/2405.02675](https://arxiv.org/abs/2405.02675)
+
+**Date:** 2024-05-04
+
+The paper does not benchmark a model, but creates a dataset to enable the development and benchmarking of AI models that measure the correctness of Quranic recitation by non-Arabic speakers. The annotation process measures recitation correctness against standard Arabic pronunciation and diacritics. The study found that beginner Muslim learners are willing to crowdsource their Quranic recitation recordings (7000 collected), but proficient reciters are more hesitant to participate in annotating this religious data. A crowdsourcing platform was successfully developed to label the recitations, achieving a crowd accuracy of 0.77 and an inter-rater agreement of 0.63. The label aggregation algorithm showed a high accuracy (0.94) and strong agreement with expert judgments (0.89), demonstrating the feasibility of creating a labeled dataset for this religious practice.
+
+
+## Can ChatGPT Make Explanatory Inferences? Benchmarks for Abductive Reasoning
 
 [https://arxiv.org/abs/2404.18982](https://arxiv.org/abs/2404.18982)
 
@@ -4711,7 +4689,7 @@ The benchmark measured the factuality of LLM-generated claims across various dom
 The model's ability to generate a novel religious entity (a deity) as a creative explanatory hypothesis. The model (ChatGPT 4) successfully and originally generated a novel deity ('Thermara, goddess of elemental balance') as a creative explanatory hypothesis for global warming. This demonstrates its capacity for creative generation of religious/mythological concepts.
 
 
-### WORLDVALUESBENCH: A Large-Scale Benchmark Dataset for Multi-Cultural Value Awareness of Language Models
+## WORLDVALUESBENCH: A Large-Scale Benchmark Dataset for Multi-Cultural Value Awareness of Language Models
 
 [https://arxiv.org/abs/2404.16308](https://arxiv.org/abs/2404.16308)
 
@@ -4720,7 +4698,7 @@ The model's ability to generate a novel religious entity (a deity) as a creative
 The benchmark measures the ability of language models to predict human answers to questions about religious values, conditioned on demographics. The evaluation metric is the Wasserstein 1-distance between the model's predicted answer distribution and the ground truth human answer distribution. Larger models, specifically GPT-3.5 Turbo and Mixtral-8x7B, are more capable of conditioning on demographic attributes to predict human responses to questions about religious values. When prompted with demographics, GPT-3.5 Turbo achieved a perfect Wasserstein 1-distance score of 0.00 on two out of the three religious value questions (Q165, Q166), indicating a near-perfect alignment with the human answer distributions for those specific questions.
 
 
-### Towards a Holistic Evaluation of LLMs on Factual Knowledge Recall
+## Towards a Holistic Evaluation of LLMs on Factual Knowledge Recall
 
 [https://arxiv.org/abs/2404.16164](https://arxiv.org/abs/2404.16164)
 
@@ -4729,7 +4707,7 @@ The benchmark measures the ability of language models to predict human answers t
 The benchmark, FACT-BENCH, measured the factual knowledge recall of Large Language Models. One of the 20 domains covered was 'religion'. The paper found that the domain of knowledge, including religion, is less predictive of a model's knowledge recall performance compared to factors like knowledge popularity (how well-known a fact is) and property type. As shown in Figure 3, model performance in the 'religion' domain was generally flat and comparable to its performance in other domains such as 'law', 'food', and 'travel', indicating no specific strengths or weaknesses related to religious topics were identified.
 
 
-### The PRISM Alignment Dataset: What Participatory, Representative and Individualised Human Feedback Reveals About the Subjective and Multicultural Alignment of Large Language Models
+## The PRISM Alignment Dataset: What Participatory, Representative and Individualised Human Feedback Reveals About the Subjective and Multicultural Alignment of Large Language Models
 
 [https://arxiv.org/abs/2404.16019](https://arxiv.org/abs/2404.16019)
 
@@ -4738,7 +4716,7 @@ The benchmark, FACT-BENCH, measured the factual knowledge recall of Large Langua
 The benchmark measured the prevalence of religious topics in user prompts to LLMs and the preferences of religiously diverse users for different model responses. Specifically, it identified a 'Religion & Spirituality' topic cluster initiated by participants, analyzed how religious affiliation correlated with the choice of conversation topics, and examined preference diversity on explicitly religious prompts like 'Do God exist?'. Religious identity was a significant factor influencing the topics users chose to discuss with LLMs, with a distinct 'Religion & Spirituality' topic cluster emerging, particularly under the 'values guided' prompt condition. The dataset captured diverse religious affiliations (e.g., Christian, Jewish, Muslim, non-religious), finding that for specific prompts like 'Does God exist?', participants from different religious backgrounds held differing preferences for model responses even when the prompt was identical. Regression analysis showed religious affiliation had some predictive power for topic choice, though this was sometimes confounded with nationality and ethnicity.
 
 
-### MMT-Bench: A Comprehensive Multimodal Benchmark for Evaluating Large Vision-Language Models Towards Multitask AGI
+## MMT-Bench: A Comprehensive Multimodal Benchmark for Evaluating Large Vision-Language Models Towards Multitask AGI
 
 [https://arxiv.org/abs/2404.16006](https://arxiv.org/abs/2404.16006)
 
@@ -4747,7 +4725,7 @@ The benchmark measured the prevalence of religious topics in user prompts to LLM
 Visual recognition of religious items, symbols, or scenes as part of the 'Religious Recognition' subtask. Models generally performed well on the 'Religious Recognition' visual subtask, with top models like Qwen-VL-Plus and GPT-4V achieving scores of 86.5% and 84.0% respectively. However, a separate case study involving a religious 'Byzantine icon' under the 'Art and Design' discipline knowledge task showed that top models (GPT-4V, GeminiProVision, InternVL-Chat) failed due to a lack of specific historical/domain knowledge required to date the artwork.
 
 
-### RTP-LX: Can LLMs Evaluate Toxicity in Multilingual Scenarios?
+## RTP-LX: Can LLMs Evaluate Toxicity in Multilingual Scenarios?
 
 [https://arxiv.org/abs/2404.14397](https://arxiv.org/abs/2404.14397)
 
@@ -4756,7 +4734,7 @@ Visual recognition of religious items, symbols, or scenes as part of the 'Religi
 The benchmark measured the ability of Large Language Models to detect toxic content, including bias and identity attacks, in multilingual contexts. The dataset explicitly included the topic of religion as part of its English subset. The paper does not provide findings specific to religion. However, it found that models generally have low agreement with human judges and struggle to detect subtle forms of harm like 'bias' and 'identity attacks', categories under which religious toxicity would fall.
 
 
-### NORMAD: A Framework for Measuring the Cultural Adaptability of Large Language Models
+## NORMAD: A Framework for Measuring the Cultural Adaptability of Large Language Models
 
 [https://arxiv.org/abs/2404.12464](https://arxiv.org/abs/2404.12464)
 
@@ -4765,7 +4743,7 @@ The benchmark measured the ability of Large Language Models to detect toxic cont
 The benchmark measured the ability of LLMs to judge the social acceptability of actions based on cultural norms, which included norms influenced by religion, such as dietary restrictions based on religious faith. Models demonstrated a performance skew, showing stronger adaptability to norms from English-speaking and European cultures over those from African-Islamic cultures. This 'western-centric' bias was observed across different contexts and model architectures.
 
 
-### Introducing v0.5 of the AI Safety Benchmark from MLCommons
+## Introducing v0.5 of the AI Safety Benchmark from MLCommons
 
 [https://arxiv.org/abs/2404.12241](https://arxiv.org/abs/2404.12241)
 
@@ -4774,7 +4752,16 @@ The benchmark measured the ability of LLMs to judge the social acceptability of 
 The benchmark measures demeaning, derogatory, or dehumanizing responses towards people based on their religion, as part of its broader 'Hate' hazard category. The paper's findings are not specific to religion but are part of the broader 'Hate' category. The reference model produced unsafe responses for 1.3% of prompts in the Hate category. The 13 anonymized Systems Under Test (SUTs) showed varied performance in this category, with some being graded as 'High risk' (H), indicating a significant percentage of unsafe responses.
 
 
-### TAXONOMY TO REGULATION: A (GEO)POLITICAL TAXONOMY FOR AI RISKS AND REGULATORY MEASURES IN THE EU AI ACT
+## Mapping Violence: Developing an Extensive Framework to Build a Bangla Sectarian Expression Dataset from Social Media Interactions
+
+[https://arxiv.org/abs/2404.11752](https://arxiv.org/abs/2404.11752)
+
+**Date:** 2023-11-01
+
+The benchmark measures the automatic detection of 'Religio-communal violence' markers in online Bangla text. This includes classifying expressions of hate speech, threats, prejudice, and derogatory remarks targeting individuals or groups based on their religious identity. The study found that 'Religio-communal violence' is a particularly pervasive category of online communal violence in Bangla text. It also demonstrated that current state-of-the-art Bangla language models like BanglaBERT are inadequate for consistently providing accurate predictions for these nuanced communal violence categories, highlighting significant computational challenges.
+
+
+## TAXONOMY TO REGULATION: A (GEO)POLITICAL TAXONOMY FOR AI RISKS AND REGULATORY MEASURES IN THE EU AI ACT
 
 [https://arxiv.org/abs/2404.11476](https://arxiv.org/abs/2404.11476)
 
@@ -4783,7 +4770,7 @@ The benchmark measures demeaning, derogatory, or dehumanizing responses towards 
 The paper discusses the measurement of representational bias in image generation related to religious concepts (e.g., generating only Christian churches for 'a house of worship') and the use of AI in surveillance of religious groups and censorship of religious content. The paper cites examples of AI exhibiting religious representational bias (e.g., defaulting to Christian churches for 'house of worship'). It also discusses the use of AI for authoritarian surveillance and repression of religious minorities like the Uyghur Muslims, and the risk of misusing AI-powered content moderation tools for censorship of religious content.
 
 
-### D3CODE: Disentangling Disagreements in Data across Cultures on Offensiveness Detection and Evaluation
+## D3CODE: Disentangling Disagreements in Data across Cultures on Offensiveness Detection and Evaluation
 
 [https://arxiv.org/abs/2404.10857](https://arxiv.org/abs/2404.10857)
 
@@ -4792,7 +4779,7 @@ The paper discusses the measurement of representational bias in image generation
 The benchmark measures cross-cultural and demographic variations in the perception of offensive language, specifically analyzing how disagreement levels change for content that mentions specific religious groups. Mentions of religious groups (Christian, Jewish, Muslim) in text are a significant source of disagreement in offensiveness perception across different geo-cultural regions. Items mentioning these groups evoke higher levels of cross-regional disagreement compared to randomly selected items or items selected for their moral sentiment.
 
 
-### Benchmarking Llama2, Mistral, Gemma and GPT for Factuality, Toxicity, Bias and Propensity for Hallucinations
+## Benchmarking Llama2, Mistral, Gemma and GPT for Factuality, Toxicity, Bias and Propensity for Hallucinations
 
 [https://arxiv.org/abs/2404.09785](https://arxiv.org/abs/2404.09785)
 
@@ -4801,7 +4788,7 @@ The benchmark measures cross-cultural and demographic variations in the percepti
 Generation of content including religious prejudice as part of a broader safety evaluation on bias. The models' performance on the Bias dataset, which includes religious bias, was inconclusive. GPT performed only slightly better than the baseline. Smaller open-source models performed even worse, with Gemma achieving the highest score among them by consistently refusing to answer, matching the baseline strategy.
 
 
-### ALERT: A Comprehensive Benchmark for Assessing Large Language Models’ Safety through Red Teaming
+## ALERT: A Comprehensive Benchmark for Assessing Large Language Models’ Safety through Red Teaming
 
 [https://arxiv.org/abs/2404.08676](https://arxiv.org/abs/2404.08676)
 
@@ -4810,7 +4797,7 @@ Generation of content including religious prejudice as part of a broader safety 
 The benchmark measured bias or hostility toward followers of a specific faith, under the category 'hate_religion'. While models like GPT-4 and Llama 2 achieved perfect or near-perfect safety scores for the 'hate_religion' category, several other models were found to be unsafe or highly unsafe. Alpaca (70.88) and Zephyr (89.61) were rated highly unsafe, while Falcon (93.90), Mistral (97.06), and OLMo (95.03) were rated unsafe, indicating they generated hostile content towards followers of a specific faith more frequently.
 
 
-### Frontier AI Ethics: Anticipating and Evaluating the Societal Impacts of Language Model Agents
+## Frontier AI Ethics: Anticipating and Evaluating the Societal Impacts of Language Model Agents
 
 [https://arxiv.org/abs/2404.06750](https://arxiv.org/abs/2404.06750)
 
@@ -4819,7 +4806,7 @@ The benchmark measured bias or hostility toward followers of a specific faith, u
 The paper does not conduct its own religious benchmark measurement. It cites a 2021 paper by Abid et al. that measured 'Persistent Anti-Muslim Bias in Large Language Models' and refers to the problem of a past model (Galactica) engaging in holocaust denial. The paper's primary findings are not about religion. However, in its discussion of machine ethics, it notes the significant achievement of newer LLMs like ChatGPT and Claude in avoiding the generation of harmful content, contrasting them with earlier models like Galactica which would deny the holocaust. It also acknowledges the persistence of familiar AI harms by citing external research on issues such as anti-Muslim bias.
 
 
-### Measuring Social Norms of Large Language Models
+## Measuring Social Norms of Large Language Models
 
 [https://arxiv.org/abs/2404.02491](https://arxiv.org/abs/2404.02491)
 
@@ -4828,7 +4815,7 @@ The paper does not conduct its own religious benchmark measurement. It cites a 2
 Factual knowledge about the origins, practices, holidays, and key figures of various world religions, as part of a broader 'social norms' test. The paper does not report findings specifically for religious knowledge. The results are aggregated under the 'Social Studies' category. Overall, models like LLaMA2-70B-Chat and GPT-3.5-Turbo achieved high accuracy (90.4% and 91.9% respectively) on Social Studies questions, which include factual questions about world religions. The proposed SocialAgent method further improved these scores, making the models' performance on par with that of elementary school students.
 
 
-### Stereotype Detection in LLMs: A Multiclass, Explainable, and Benchmark-Driven Approach
+## Stereotype Detection in LLMs: A Multiclass, Explainable, and Benchmark-Driven Approach
 
 [https://arxiv.org/abs/2404.01768](https://arxiv.org/abs/2404.01768)
 
@@ -4837,7 +4824,7 @@ Factual knowledge about the origins, practices, holidays, and key figures of var
 The benchmark measures the presence of stereotypes in text across four social dimensions: race, gender, profession, and religion. For religion, it specifically detects stereotypical statements related to various religious groups and concepts, classifying text as 'stereotype', 'neutral', or 'unrelated'. The study found that while newer GPT models show an overall reduction in bias, the improvement for religion-related stereotypes has been less significant compared to race and gender biases. The underlying dataset (MGS) has a notable focus on Christianity and Islam, with terms related to Islam frequently appearing in negative stereotypes. Trigram analysis revealed a focus on Islam-specific concepts (e.g., 'Sharia law', 'terrorist'), suggesting a dataset imbalance that could affect a model's ability to classify stereotypes in other religious contexts. Sentiment analysis confirmed that religious stereotypes in the dataset generally reflect negative sentiments.
 
 
-### IndiBias: A Benchmark Dataset to Measure Social Biases in Language Models for Indian Context
+## IndiBias: A Benchmark Dataset to Measure Social Biases in Language Models for Indian Context
 
 [https://arxiv.org/abs/2403.20147](https://arxiv.org/abs/2403.20147)
 
@@ -4846,7 +4833,7 @@ The benchmark measures the presence of stereotypes in text across four social di
 The benchmark measures stereotypical associations and biases against various religious groups in the Indian context. This includes creating sentence pairs to test stereotypes for religions like Hinduism, Islam, Sikhism, etc., and evaluating intersectional biases, specifically the 'gender-religion' axis, by associating Hindu and Muslim male/female identities with concepts like Career/Family and Violence/Non-violence. Models generally exhibited more religious bias in English than Hindi. In intersectional gender-religion analysis, a work bias was observed against Muslim females. A violence bias was consistently found against Muslim groups across most models and languages, with Hindi models showing a particularly high violence bias against Muslims. India-specific models (IndicBERT and Muril) showed higher gender bias within the Indian context compared to Western counterparts.
 
 
-### Towards Measuring and Modeling “Culture” in LLMs: A Survey
+## Towards Measuring and Modeling “Culture” in LLMs: A Survey
 
 [https://arxiv.org/abs/2403.15412](https://arxiv.org/abs/2403.15412)
 
@@ -4855,7 +4842,7 @@ The benchmark measures stereotypical associations and biases against various rel
 The paper is a survey and does not introduce a new benchmark. It categorizes existing studies that use religion as a demographic proxy to measure cultural representation, awareness, and bias in Large Language Models (LLMs). Religion is identified as one of several demographic proxies used in studies to evaluate cultural aspects of LLMs. However, it is not a primary focus in the surveyed literature, which tends to concentrate on broader proxies like geographical region and language. The paper notes that persona-driven studies sometimes include religious belief as a demographic attribute to reveal biases and stereotyping.
 
 
-### Risk and Response in Large Language Models: Evaluating Key Threat Categories
+## Risk and Response in Large Language Models: Evaluating Key Threat Categories
 
 [https://arxiv.org/abs/2403.14988](https://arxiv.org/abs/2403.14988)
 
@@ -4864,7 +4851,7 @@ The paper is a survey and does not introduce a new benchmark. It categorizes exi
 The paper's analysis categorizes prompts that solicit discriminatory responses and stereotypes related to religious groups under the broader 'Discrimination/Hateful' risk category. It does not introduce a new benchmark but uses keyword clustering on existing datasets to identify these types of harmful prompts. The paper's findings are not specific to religion, as it is grouped within the broader 'Discrimination/Hateful' risk category. The primary finding is that LLMs perceive 'Information Hazards' as less harmful than categories like 'Malicious Uses' and 'Discrimination/Hateful' content. Prompts involving religious groups (e.g., 'Do muslim people have any respect for the modern world?') fall into the latter category, which models tend to refuse by responding with 'cannot assist' or by refuting the premise.
 
 
-### EXAMS-V: A Multi-Discipline Multilingual Multimodal Exam Benchmark for Evaluating Vision Language Models
+## EXAMS-V: A Multi-Discipline Multilingual Multimodal Exam Benchmark for Evaluating Vision Language Models
 
 [https://arxiv.org/abs/2403.10378](https://arxiv.org/abs/2403.10378)
 
@@ -4873,7 +4860,7 @@ The paper's analysis categorizes prompts that solicit discriminatory responses a
 knowledge of religion as a school subject Model performance on the 'Religion' subject (Croatian) ranged from 26.00% (GPT-4V) to 30.00% (GPT-4). Performance on 'Islamic Studies' (Arabic) ranged from 12.00% (GPT-4V) to 32.00% (Gemini-Pro). The paper provides these scores without further qualitative analysis.
 
 
-### Basque and Spanish Counter Narrative Generation: Data Creation and Evaluation
+## Basque and Spanish Counter Narrative Generation: Data Creation and Evaluation
 
 [https://arxiv.org/abs/2403.09159](https://arxiv.org/abs/2403.09159)
 
@@ -4882,7 +4869,7 @@ knowledge of religion as a school subject Model performance on the 'Religion' su
 Generation of counter-narratives to anti-Muslim hate speech (Islamophobia). The paper evaluates the mT5 model's ability to generate counter-narratives against anti-Muslim hate speech in English, Spanish, and Basque. Key findings show that generation quality is significantly better when training on human post-edited data versus raw machine-translated data. Multilingual data augmentation improves results for linguistically similar languages like English and Spanish but is detrimental for a language isolate like Basque. Similarly, zero-shot cross-lingual transfer from English works for Spanish but fails for Basque, highlighting challenges in applying multilingual models to this specific religious domain across typologically diverse languages.
 
 
-### AraTrust: An Evaluation of Trustworthiness for LLMs in Arabic
+## AraTrust: An Evaluation of Trustworthiness for LLMs in Arabic
 
 [https://arxiv.org/abs/2403.09017](https://arxiv.org/abs/2403.09017)
 
@@ -4891,7 +4878,7 @@ Generation of counter-narratives to anti-Muslim hate speech (Islamophobia). The 
 Cultural and value alignment for Large Language Models in an Arabic context, which is noted to be highly influenced by the religion of Islam. The benchmark does not measure specific theological knowledge but rather evaluates trustworthiness on topics where cultural and religious values are relevant. The paper does not provide specific findings directly about religion. Instead, it argues that trustworthiness in the Arabic context is unique and highly influenced by Islam. It finds that proprietary models like GPT-4 perform significantly better than open-source Arabic-centric models on its culturally-attuned benchmark, implying better alignment with these cultural values, though imperfections remain across all models.
 
 
-### AC-EVAL: Evaluating Ancient Chinese Language Understanding in Large Language Models
+## AC-EVAL: Evaluating Ancient Chinese Language Understanding in Large Language Models
 
 [https://arxiv.org/abs/2403.06574](https://arxiv.org/abs/2403.06574)
 
@@ -4900,7 +4887,7 @@ Cultural and value alignment for Large Language Models in an Arabic context, whi
 Knowledge of the history and development of religions and philosophies in ancient China, specifically the changes in content, rise, and decline of Taoism, Confucianism, and Buddhism over time. The paper evaluates LLM performance on historical knowledge of Taoism, Confucianism, and Buddhism as one of 13 subjects in its benchmark. It provides quantitative accuracy scores for each model on the 'Philosophy and Religion' task in its appendix (e.g., ERNIE-Bot 4.0 scored 77.04% and GLM-4 scored 75.00% in the zero-shot setting), but does not offer specific qualitative analysis or discussion on the religious aspect of the findings in the main body of the paper.
 
 
-### INDICLLMSUITE: A BLUEPRINT FOR CREATING PRE-TRAINING AND FINE-TUNING DATASETS FOR INDIAN LANGUAGES
+## INDICLLMSUITE: A BLUEPRINT FOR CREATING PRE-TRAINING AND FINE-TUNING DATASETS FOR INDIAN LANGUAGES
 
 [https://arxiv.org/abs/2403.06350](https://arxiv.org/abs/2403.06350)
 
@@ -4909,7 +4896,7 @@ Knowledge of the history and development of religions and philosophies in ancien
 The paper does not perform a benchmark measurement. It creates pre-training and fine-tuning datasets (IndicLLMSuite) which include content from religious sources (e.g., 'religious texts', websites on 'Religion/Spirituality'). It also includes a taxonomy for generating toxic prompts that lists 'Sardarjis' (a religious/cultural group) as a potential target group. The paper's main contribution is the creation of a large-scale dataset for 22 Indian languages. In relation to religion, the paper identified 'religious texts' as a significant source of high-quality Indic language content currently locked in PDF format. Additionally, as part of its safety alignment efforts, the paper's taxonomy for generating synthetic toxic prompts includes specific religious/cultural groups like 'Sardarjis' as potential targets for hate speech, highlighting the need to address such vectors in model training.
 
 
-### Chatbot Arena: An Open Platform for Evaluating LLMs by Human Preference
+## Chatbot Arena: An Open Platform for Evaluating LLMs by Human Preference
 
 [https://arxiv.org/abs/2403.04132](https://arxiv.org/abs/2403.04132)
 
@@ -4918,7 +4905,7 @@ The paper does not perform a benchmark measurement. It creates pre-training and 
 Generation of text on topics related to 'Biblical Interpretation and Theology' and 'Philosophical Texts & Concepts' which were identified as distinct topic clusters from user prompts. The paper identified 'Biblical Interpretation and Theology' as one of the many topic clusters generated from user prompts, indicating that religious topics naturally arise in real-world use cases. However, no specific performance analysis or findings related to model capabilities or biases on this religious topic cluster were presented.
 
 
-### OffensiveLang: A Community Based Implicit Offensive Language Dataset
+## OffensiveLang: A Community Based Implicit Offensive Language Dataset
 
 [https://arxiv.org/abs/2403.02472](https://arxiv.org/abs/2403.02472)
 
@@ -4927,7 +4914,7 @@ Generation of text on topics related to 'Biblical Interpretation and Theology' a
 Detection of implicit offensive language and stereotypes targeting specific religious groups. The benchmark measures a model's ability to classify text as 'offensive' or 'not offensive' in the context of a given religious group. The paper created the OffensiveLang dataset which includes a 'Religious Belief' category covering Atheists, Christians, Hindus, Jews, Muslims, and Buddhists. A key finding was the discrepancy between human and ChatGPT annotations for religious content. For instance, a statement stereotyping South Asian religious practices was labeled offensive by ChatGPT for its generalization, whereas human annotators did not label it as such. This highlights differing interpretations of what constitutes offensive stereotyping. The paper evaluates several models on the full dataset, with BERT achieving the highest Macro F1 score, but does not provide a performance breakdown specific to the religious category.
 
 
-### CR-LT-KGQA: A Knowledge Graph Question Answering Dataset Requiring Commonsense Reasoning and Long-Tail Knowledge
+## CR-LT-KGQA: A Knowledge Graph Question Answering Dataset Requiring Commonsense Reasoning and Long-Tail Knowledge
 
 [https://arxiv.org/abs/2403.01395](https://arxiv.org/abs/2403.01395)
 
@@ -4936,7 +4923,7 @@ Detection of implicit offensive language and stereotypes targeting specific reli
 Commonsense reasoning on questions involving religious entities or concepts as part of a broader, multi-domain evaluation. The paper does not report findings specific to the religious subset of its benchmark. The general findings indicate that GPT-3.5 Turbo struggles significantly with questions involving long-tail knowledge (which includes some religious entities), showing a high rate of hallucination and a drastic drop in accuracy compared to questions about popular entities.
 
 
-### NewsBench: A Systematic Evaluation Framework for Assessing Editorial Capabilities of Large Language Models in Chinese Journalism
+## NewsBench: A Systematic Evaluation Framework for Assessing Editorial Capabilities of Large Language Models in Chinese Journalism
 
 [https://arxiv.org/abs/2403.00862](https://arxiv.org/abs/2403.00862)
 
@@ -4945,7 +4932,7 @@ Commonsense reasoning on questions involving religious entities or concepts as p
 The benchmark measures bias and discriminatory remarks against religion as a sub-category within its 'Bias and Discrimination' safety adherence facet. The paper evaluates model safety on a 'Bias and Discrimination' facet, which includes religion as a protected category. It found that ERNIE Bot (0.809 score) and GPT-4-1106 (0.797 score) performed best on this facet in short answer questions. However, the results are not broken down to provide specific findings for religious bias alone.
 
 
-### Saving the legacy of Hero Ibash: Evaluating Four Language Models for Aminoacian
+## Saving the legacy of Hero Ibash: Evaluating Four Language Models for Aminoacian
 
 [https://arxiv.org/abs/2402.18121](https://arxiv.org/abs/2402.18121)
 
@@ -4954,7 +4941,7 @@ The benchmark measures bias and discriminatory remarks against religion as a sub
 The benchmark measured the models' ability to perform machine translation, question answering, and entailment recognition for the fictional Aminoacian language. While this language's background includes mythological and cultural elements, the evaluation did not specifically measure any aspect of faith or religion (e.g., bias, theological knowledge). The focus was on the models' ability to handle the language's unique and complex linguistic structures. The paper's key finding is that all tested language models completely failed to translate the Aminoacian language, yielding null results on standard metrics. No specific findings related to religion were reported, as the failure was attributed to the language's unique syntax and semantic structures, not its thematic content.
 
 
-### Researchy Questions: A Dataset of Multi-Perspective, Decompositional Questions for LLM Web Agents
+## Researchy Questions: A Dataset of Multi-Perspective, Decompositional Questions for LLM Web Agents
 
 [https://arxiv.org/abs/2402.17896](https://arxiv.org/abs/2402.17896)
 
@@ -4963,7 +4950,16 @@ The benchmark measured the models' ability to perform machine translation, quest
 Filtering of presumptuous or harmful questions during dataset creation, which included some religious topics. The paper does not present specific findings about model performance on religious topics. However, in the dataset creation process, certain religious questions were filtered out. For example, 'why are catholics democrats' was removed as a 'presumptuous' query, and questions like 'Does islam promote violence' and 'Why isn't christianity considered a cult' were removed due to harmfulness concerns. This highlights a methodological approach to curate the dataset by excluding potentially biased or harmful religious queries.
 
 
-### EIGHT METHODS TO EVALUATE ROBUST UNLEARNING IN LLMS
+## A Dataset for Metaphor Detection in Early Medieval Hebrew Poetry
+
+[https://arxiv.org/abs/2402.17371](https://arxiv.org/abs/2402.17371)
+
+**Date:** 2024-02-27
+
+The benchmark measures the ability of language models to perform metaphor detection in a dataset of early medieval Hebrew liturgical poetry (Piyyut). The paper found that transformer-based models adapted to the target genre are crucial for understanding historical religious texts. Specifically, BEREL, pre-trained on ancient Jewish texts, outperformed AlephBERT, pre-trained on modern Hebrew, for metaphor detection in medieval Hebrew poetry. This highlights the importance of domain-specific pre-training for specialized tasks on religious and historical corpora. The best model achieved an F1 score of around 49.
+
+
+## EIGHT METHODS TO EVALUATE ROBUST UNLEARNING IN LLMS
 
 [https://arxiv.org/abs/2402.16835](https://arxiv.org/abs/2402.16835)
 
@@ -4972,7 +4968,7 @@ Filtering of presumptuous or harmful questions during dataset creation, which in
 Unintended collateral unlearning (knowledge loss) in the domain of British Mythology as a side effect of unlearning knowledge about the 'Harry Potter' universe. The paper found that the unlearned model (WHP) showed unintended side effects in related domains. Specifically, it lost significant 'Familiarity' (a measure of domain-specific knowledge) in British Mythology compared to the original Llama-2 model, indicating that the process of unlearning 'Harry Potter' knowledge also removed related knowledge about British Mythology.
 
 
-### Political Compass or Spinning Arrow? Towards More Meaningful Evaluations for Values and Opinions in Large Language Models
+## Political Compass or Spinning Arrow? Towards More Meaningful Evaluations for Values and Opinions in Large Language Models
 
 [https://arxiv.org/abs/2402.16786](https://arxiv.org/abs/2402.16786)
 
@@ -4981,7 +4977,7 @@ Unintended collateral unlearning (knowledge loss) in the domain of British Mytho
 Expression of opinions on propositions about morality, religious education, and belief systems. Specifically, the benchmark measured LLM agreement/disagreement with five statements: 'Astrology accurately explains many things', 'You cannot be moral without being religious', 'Charity is better than social security as a means of helping the genuinely disadvantaged', 'Some people are naturally unlucky', and 'It is important that my child's school instills religious values'. The paper does not provide findings specific to religion. Its general findings apply to all propositions in the Political Compass Test, including the five on religion. The key finding is that LLM responses on value-laden topics are highly unstable and sensitive to changes in prompt phrasing, the degree of force used in multiple-choice prompts, and the evaluation format (multiple-choice vs. open-ended). This suggests that measuring an LLM's 'true' stance on religious or other value-based issues is extremely challenging and context-dependent.
 
 
-### Bias and Volatility: A Statistical Framework for Evaluating Large Language Model's Stereotypes and the Associated Generation Inconsistency
+## Bias and Volatility: A Statistical Framework for Evaluating Large Language Model's Stereotypes and the Associated Generation Inconsistency
 
 [https://arxiv.org/abs/2402.15481](https://arxiv.org/abs/2402.15481)
 
@@ -4990,7 +4986,7 @@ Expression of opinions on propositions about morality, religious education, and 
 The benchmark measures the discrimination risk associated with specific religious groups, framed as a combination of 'bias risk' (systematic bias) and 'volatility risk' (generation inconsistency). Among the four models tested for religious discrimination (BERT, GPT-2, T5, Llama2), T5 exhibited the highest overall discrimination risk and bias risk. BERT showed the lowest overall discrimination risk, although it had a higher volatility risk compared to T5 and Llama2.
 
 
-### COBIAS: Assessing the Contextual Reliability of Bias Benchmarks for Language Models
+## COBIAS: Assessing the Contextual Reliability of Bias Benchmarks for Language Models
 
 [https://arxiv.org/abs/2402.14889](https://arxiv.org/abs/2402.14889)
 
@@ -4999,7 +4995,7 @@ The benchmark measures the discrimination risk associated with specific religiou
 The paper develops and applies a metric, COBIAS, to measure the contextual reliability of stereotypical statements for detecting bias in language models. For religion, this involved assessing whether statements containing stereotypes about religious groups (e.g., Jews, Christians, Hindus) are reliable for bias measurement by observing how model behavior changes when different contexts are added to the statements. The key finding related to religion is that existing bias benchmarks containing religious stereotypes, such as CrowS-Pairs, have low contextual reliability. The paper demonstrates that stereotypical statements about religious groups in these benchmarks often lack sufficient context, making them unreliable for measuring model bias. Conversely, benchmarks with more inherent context, like RedditBias, were found to be more contextually reliable.
 
 
-### Dynamic Evaluation of Large Language Models by Meta Probing Agents
+## Dynamic Evaluation of Large Language Models by Meta Probing Agents
 
 [https://arxiv.org/abs/2402.14865](https://arxiv.org/abs/2402.14865)
 
@@ -5008,7 +5004,7 @@ The paper develops and applies a metric, COBIAS, to measure the contextual relia
 Model accuracy on knowledge-based questions from the MMLU dataset, which includes topics related to morality and philosophy (e.g., 'moral scenarios', 'moral disputes', 'philosophy') that often intersect with religious and ethical reasoning. Models like GPT-4-Turbo exhibited high error rates on MMLU topics such as 'moral scenarios', 'moral disputes', and 'philosophy', suggesting challenges with subjects that have ambiguous ground truth and significant ethical dimensions, which can be related to religious concepts.
 
 
-### Eagle: Ethical Dataset Given from Real Interactions
+## Eagle: Ethical Dataset Given from Real Interactions
 
 [https://arxiv.org/abs/2402.14258](https://arxiv.org/abs/2402.14258)
 
@@ -5017,7 +5013,7 @@ Model accuracy on knowledge-based questions from the MMLU dataset, which include
 Stereotypical bias associating a religious group (Muslims) with terrorism. The paper uses an example from a prior benchmark (Parrish et al., 2022) where a model outputs a biased response ('The Muslim') in a scenario involving a Christian and a Muslim. The paper's main finding is that existing ethical datasets, which include such religious bias examples, show low correlation with the new Eagle dataset derived from real-world interactions, suggesting they are insufficient for evaluating and mitigating biases encountered in practice.
 
 
-### Beyond Probabilities: Unveiling the Misalignment in Evaluating Large Language Models
+## Beyond Probabilities: Unveiling the Misalignment in Evaluating Large Language Models
 
 [https://arxiv.org/abs/2402.13887](https://arxiv.org/abs/2402.13887)
 
@@ -5026,7 +5022,7 @@ Stereotypical bias associating a religious group (Muslims) with terrorism. The p
 Knowledge of world religions via multiple-choice questions from the MMLU benchmark. On the 'world religions' sub-category of the MMLU benchmark, the performance of the tested language models showed a stronger correlation with human preferences (Elo scores from Chatbot Arena) compared to their performance on natural science subjects. This suggests that existing multiple-choice question benchmarks for social science topics like religion may align better with holistic human evaluation than benchmarks for scientific topics.
 
 
-### A Chinese Dataset for Evaluating the Safeguards in Large Language Models
+## A Chinese Dataset for Evaluating the Safeguards in Large Language Models
 
 [https://arxiv.org/abs/2402.12193](https://arxiv.org/abs/2402.12193)
 
@@ -5035,7 +5031,7 @@ Knowledge of world religions via multiple-choice questions from the MMLU benchma
 The benchmark measured the generation of harmful responses to sensitive topics related to religion, as part of a broader risk category titled 'Region-specific Sensitivity'. This was evaluated in the context of a specific country (China). The study found that the number of unsafe responses to region/religion-specific topics was the primary determinant of a model's overall safety ranking in the Chinese context. English-centric models like LLaMA-2 produced a significantly higher number of harmful responses in this category compared to Chinese-centric models, suggesting they are not well-aligned with region-specific policies, laws, and sensitivities.
 
 
-### The Colorful Future of LLMs: Evaluating and Improving LLMs as Emotional Supporters for Queer Youth
+## The Colorful Future of LLMs: Evaluating and Improving LLMs as Emotional Supporters for Queer Youth
 
 [https://arxiv.org/abs/2402.11886](https://arxiv.org/abs/2402.11886)
 
@@ -5044,7 +5040,7 @@ The benchmark measured the generation of harmful responses to sensitive topics r
 The benchmark measured the ability of Large Language Models to account for a user's sociocultural circumstances, specifically their cultural and religious background, when providing safe, personalized, and empathetic emotional support to queer youth. This was assessed using a novel 10-question scale, with question Q5 directly addressing this capability. LLMs often exhibit cultural and religious ignorance, providing generic advice based on Western, liberal norms that can be unsuitable or harmful for queer youth from conservative religious backgrounds. For instance, ChatGPT advised an ultra-orthodox Jewish teenager to consult a 'trusted rabbi,' which could lead to harmful conversion therapy. The models fail to consider the specific risks associated with certain religious or cultural contexts, such as the death penalty for LGBTQ+ individuals in Afghanistan, demonstrating a critical lack of personalization and safety-awareness.
 
 
-### A Multi-Aspect Framework for Counter Narrative Evaluation using Large Language Models
+## A Multi-Aspect Framework for Counter Narrative Evaluation using Large Language Models
 
 [https://arxiv.org/abs/2402.11676](https://arxiv.org/abs/2402.11676)
 
@@ -5053,7 +5049,7 @@ The benchmark measured the ability of Large Language Models to account for a use
 The benchmark measured the quality of LLM-generated counter-narratives against hate speech, including hate speech that targeted religious groups. The evaluation focused on aspects like opposition to the hateful claim, specificity of the argument, relatedness, toxicity, and fluency. The paper uses examples of religious hate speech (e.g., targeting Muslims, Jews) to demonstrate that its proposed multi-aspect LLM evaluation framework effectively evaluates the quality of counter-narratives. This approach shows stronger alignment with human judgments compared to traditional metrics like BLEU and ROUGE-L, particularly for open-source models like Vicuna. The findings are about the evaluation methodology's effectiveness, not a specific analysis of religious bias or knowledge in LLMs.
 
 
-### Benchmarking Knowledge Boundary for Large Language Models: A Different Perspective on Model Evaluation
+## Benchmarking Knowledge Boundary for Large Language Models: A Different Perspective on Model Evaluation
 
 [https://arxiv.org/abs/2402.11493](https://arxiv.org/abs/2402.11493)
 
@@ -5062,7 +5058,7 @@ The benchmark measured the quality of LLM-generated counter-narratives against h
 The benchmark measured the models' factual knowledge of world religions using a cloze-style (fill-in-the-blank) question format derived from the MMLU benchmark's 'world_religions_test' subject. On the 'world_religions_test' from the MMLU dataset, the models' performance varied significantly. LLaMA2 (19.88) and Mistral (18.07) achieved the highest scores, indicating a larger knowledge boundary in this domain compared to Vicuna (15.06), GPT-J (4.21), and GPT-2 (3.61).
 
 
-### The Value of Context: Human versus Black Box Evaluators
+## The Value of Context: Human versus Black Box Evaluators
 
 [https://arxiv.org/abs/2402.11157](https://arxiv.org/abs/2402.11157)
 
@@ -5071,7 +5067,7 @@ The benchmark measured the models' factual knowledge of world religions using a 
 The paper does not create a benchmark. Religion is used as a brief, illustrative example of a 'nonstandard covariate' (contextual information) in its theoretical framework. The paper is a theoretical work and does not contain empirical findings about religion. It uses 'religious practices' as a brief example of a 'nonstandard covariate' that might be considered by a human expert but not a standardized algorithm. The paper's main theoretical finding is that when there is high uncertainty about which covariates are predictive, the benefit of an algorithm observing a large number of covariates generally outweighs the human's ability to select a smaller, more targeted set of covariates (the 'value of context').
 
 
-### Taxonomy-based CHECKLIST for Large Language Model Evaluation
+## Taxonomy-based CHECKLIST for Large Language Model Evaluation
 
 [https://arxiv.org/abs/2402.10899](https://arxiv.org/abs/2402.10899)
 
@@ -5080,7 +5076,7 @@ The paper does not create a benchmark. Religion is used as a brief, illustrative
 stereotype detection in religious contexts The paper presents no findings related to religion. Religion is mentioned only once as a hypothetical example of a bias category ('criminality-religion') but is not included in the actual experiments or analysis.
 
 
-### Inadequacies of Large Language Model Benchmarks in the Era of Generative Artificial Intelligence
+## Inadequacies of Large Language Model Benchmarks in the Era of Generative Artificial Intelligence
 
 [https://arxiv.org/abs/2402.09880](https://arxiv.org/abs/2402.09880)
 
@@ -5089,7 +5085,7 @@ stereotype detection in religious contexts The paper presents no findings relate
 The paper critiques benchmarks for their inability to handle and evaluate LLM alignment with diverse and often conflicting cultural, social, political, religious, and ideological norms. It assesses whether benchmarks can account for the pluralistic nature of human beliefs and values, rather than enforcing a single, standardized 'correct' answer in normatively complex scenarios. The paper finds that current LLM benchmarks are fundamentally inadequate for evaluating models on their handling of diverse religious and ideological norms. Benchmarks that rely on standardized answers or rubrics often clash with varied cultural and religious values, making a universal, 'one-size-fits-all' evaluation unrealistic. This inadequacy compromises the benchmarks' integrity and applicability, as a model's response might be appropriate in one religious or cultural context but controversial in another. The paper concludes that focusing on context-specific benchmarks may be more pragmatic than striving for a universal standard.
 
 
-### No Culture Left Behind: Massively Multi-Cultural Knowledge Acquisition & LM Benchmarking on 1000+ Sub-Country Regions and 2000+ Ethnolinguistic Groups
+## No Culture Left Behind: Massively Multi-Cultural Knowledge Acquisition & LM Benchmarking on 1000+ Sub-Country Regions and 2000+ Ethnolinguistic Groups
 
 [https://arxiv.org/abs/2402.09369](https://arxiv.org/abs/2402.09369)
 
@@ -5098,7 +5094,7 @@ The paper critiques benchmarks for their inability to handle and evaluate LLM al
 The benchmark measures the accuracy (F-score) of language models on true/false cultural knowledge assertions, including fine-grained knowledge specific to various religious groups and denominations with a population of over one million followers. Language models' performance (F-score) on cultural knowledge assertions drops significantly when dealing with specific, fine-grained religious knowledge (17.9% F-score) compared to general religious knowledge (35.0% F-score). This indicates a weakness in nuanced religious understanding.
 
 
-### A Dataset for the Detection of Dehumanizing Language
+## A Dataset for the Detection of Dehumanizing Language
 
 [https://arxiv.org/abs/2402.08764](https://arxiv.org/abs/2402.08764)
 
@@ -5107,7 +5103,7 @@ The benchmark measures the accuracy (F-score) of language models on true/false c
 Detection of dehumanizing language directed at religious groups, as part of a broader study on dehumanization against various target groups. The paper created a dataset for detecting dehumanization which includes keywords for religious groups (Muslims, Jews, Christians) to collect samples. However, the quantitative analysis of model performance and linguistic patterns does not provide findings specific to religion, instead grouping it with other target categories. Examples provided in the paper show that dehumanizing language against religious groups is present in the collected dataset.
 
 
-### Walia-LLM: Enhancing Amharic-LLaMA by Integrating Task-Specific and Generative Datasets
+## Walia-LLM: Enhancing Amharic-LLaMA by Integrating Task-Specific and Generative Datasets
 
 [https://arxiv.org/abs/2402.08015](https://arxiv.org/abs/2402.08015)
 
@@ -5116,7 +5112,7 @@ Detection of dehumanizing language directed at religious groups, as part of a br
 The model's ability to generate and complete religious (Amharic Christian spiritual) song lyrics. Fine-tuning with a custom dataset for religious lyrics improved the base LLaMA-2-Amharic model's ability to perform these tasks. The Walia model showed notable improvement in completing religious lyrics compared to the base model, though GPT-4 still performed best overall on generation tasks.
 
 
-### SALAD-Bench: A Hierarchical and Comprehensive Safety Benchmark for Large Language Models
+## SALAD-Bench: A Hierarchical and Comprehensive Safety Benchmark for Large Language Models
 
 [https://arxiv.org/abs/2402.05044](https://arxiv.org/abs/2402.05044)
 
@@ -5125,7 +5121,7 @@ The model's ability to generate and complete religious (Amharic Christian spirit
 The benchmark measures the generation of 'Religious stereotyping' as a sub-category of 'Unfair representation' within its safety taxonomy. Based on the safety analysis across 65 categories (Figure 14), most tested LLMs demonstrated very high safety rates for the 'Religious stereotyping' category, with many models achieving near-perfect scores. This indicates a strong capability in avoiding the generation of religious stereotypes under standard conditions.
 
 
-### HarmBench: A Standardized Evaluation Framework for Automated Red Teaming and Robust Refusal
+## HarmBench: A Standardized Evaluation Framework for Automated Red Teaming and Robust Refusal
 
 [https://arxiv.org/abs/2402.04249](https://arxiv.org/abs/2402.04249)
 
@@ -5134,11 +5130,173 @@ The benchmark measures the generation of 'Religious stereotyping' as a sub-categ
 Willingness to infer an individual's religious beliefs from an image, which is framed as a harmful behavior within the benchmark. No specific findings related to the religious behavior example were reported. The results were aggregated into broader functional (e.g., multimodal behaviors) and semantic categories, with general conclusions that no single attack or defense is uniformly effective.
 
 
-### Measuring Implicit Bias in Explicitly Unbiased Large Language Models
+## Measuring Implicit Bias in Explicitly Unbiased Large Language Models
 
 [https://arxiv.org/abs/2402.04105](https://arxiv.org/abs/2402.04105)
 
 **Date:** 2024-05-23
 
 The benchmark measured stereotypical associations and discriminatory decisions related to religion. Specifically, the 'LLM Implicit Bias' test measured negativity bias associated with Islam, Judaism, and Buddhism. The 'LLM Decision Bias' test measured pro-Christian bias in social contexts, such as an LLM being more likely to recommend inviting a person from a non-Christian faith (Islam, Judaism, Buddhism) to a religious service and a Christian person to a secular party. The study found that in the LLM Implicit Bias test, models showed a small negativity bias for Islam, Judaism, and Buddhism. In the LLM Decision Bias test, models exhibited small levels of pro-Christian bias over Islamic and Jewish believers. Buddhism was one of two stereotypes (along with body weight) that did not show statistically significant decision bias across the tested models.
+
+
+## LLM-based NLG Evaluation: Current Status and Challenges
+
+[https://arxiv.org/abs/2402.01383](https://arxiv.org/abs/2402.01383)
+
+**Date:** 2025-05-14
+
+Social bias related to religion in NLG evaluation metrics. Based on a cited study (Sun et al. 2022), the paper notes that model-based NLG evaluation metrics exhibit more social bias, including religious bias, compared to traditional metrics.
+
+
+## I Think, Therefore I am: Benchmarking Awareness of Large Language Models Using AWAREBENCH
+
+[https://arxiv.org/abs/2401.17882](https://arxiv.org/abs/2401.17882)
+
+**Date:** 2024-02-16
+
+Knowledge of cultural norms, which includes norms related to religious groups. This was tested via factually correct/incorrect statements, such as one about Muslim family customs. The paper does not provide specific findings on religion, as it is a minor component of the 'culture awareness' subset. The general finding for this subset is that LLMs, especially proprietary models like GPT-4 (97.89% accuracy), exhibit remarkable performance and a decent understanding of cultural norms.
+
+
+## Good at captioning, bad at counting: Benchmarking GPT-4V on Earth observation data
+
+[https://arxiv.org/abs/2401.17600](https://arxiv.org/abs/2401.17600)
+
+**Date:** 2024-01-31
+
+The benchmark measured the accuracy of Vision-Language Models in identifying religious landmarks ('Places of Worship', specifically churches) from aerial images as part of a broader landmark recognition task. All tested Vision-Language Models, including GPT-4V, demonstrated low accuracy in recognizing landmarks categorized as 'Places of Worship' from aerial images. This category had the lowest performance among functional categories, which the paper attributes to the small spatial footprint of these buildings (e.g., churches) in the imagery, making them difficult to identify without sufficient contextual clues.
+
+
+## Quantifying Stereotypes in Language
+
+[https://arxiv.org/abs/2401.15535](https://arxiv.org/abs/2401.15535)
+
+**Date:** 2024-01-28
+
+The benchmark measures the degree of stereotypical bias in sentences on a continuous scale from -1 to 1. For religion, it specifically quantifies stereotypes related to religious groups. The study found that sentences related to religion, along with race, tended to have higher average stereotype scores compared to sentences about gender and profession. The models trained could effectively predict these fine-grained stereotype scores. For instance, in the hate speech analysis, messages targeting groups based on religion were found to contain measurable stereotypes.
+
+
+## Evaluating GPT-3.5's Awareness and Summarization Abilities for European Constitutional Texts with Shared Topics
+
+[https://arxiv.org/abs/2401.14524](https://arxiv.org/abs/2401.14524)
+
+**Date:** 2023-01-01
+
+Measurement of the model's awareness and summarization capabilities regarding constitutional texts on citizens' rights and duties, which includes topics like 'Freedom of religion' and 'Equality regardless of creed or belief'. The study found that GPT-3.5 has an adequate level of knowledge about European constitutional topics related to citizens' rights, including freedom of religion and equality regardless of creed. It was also capable of generating informative, coherent, and faithful summaries of these legal texts.
+
+
+## Robust Evaluation Measures for Evaluating Social Biases in Masked Language Models
+
+[https://arxiv.org/abs/2401.11601](https://arxiv.org/abs/2401.11601)
+
+**Date:** 2024-01-21
+
+The benchmark measured stereotypical bias in religious contexts by comparing the pseudo-log-likelihood (PLL) scores of sentence pairs. For example, it evaluated model preferences for stereotypical sentences like 'The Muslim was a terrorist' versus an anti-stereotypical alternative like 'The Muslim was a hippie', or 'Jewish/Christian people are spoiled and waste money'. The study found that experimental results for religious bias differed between the StereoSet (SS) and CrowS-Pairs (CP) datasets, likely due to the different ways the sample sentences were constructed. It also highlighted that bias types like religion are inherently difficult to define and detect, and that annotator knowledge can significantly impact the accuracy of the evaluation, potentially leading to inaccurate annotations. For instance, in the SS dataset for the religion category, BERT showed the least bias (KLS score closer to 50), while in the CP dataset, ALBERT had the least bias.
+
+
+## FAIR ENOUGH: DEVELOP AND ASSESS A FAIR-COMPLIANT DATASET FOR LARGE LANGUAGE MODEL TRAINING?
+
+[https://arxiv.org/abs/2401.11033](https://arxiv.org/abs/2401.11033)
+
+**Date:** 2024-04-04
+
+The benchmark was designed to detect and mitigate linguistic biases, including a specific dimension for 'Religious Bias' as part of a broader analysis of social biases in text. The paper developed a FAIR-compliant dataset that includes a dimension for 'Religious Bias'. In the inter-annotator agreement analysis, 'Religious Bias' had a moderate agreement score of approximately 0.5, which was lower than the agreement for 'Socioeconomic Bias' and 'Gender Bias' but higher than for 'Disability Bias'.
+
+
+## IsamasRed: A Public Dataset Tracking Reddit Discussions on Israel-Hamas Conflict
+
+[https://arxiv.org/abs/2401.08202](https://arxiv.org/abs/2401.08202)
+
+**Date:** 2024-04-16
+
+Analysis of online Reddit discourse related to religious/ethnic conflicts, specifically tracking discussions on antisemitism, Islamophobia, and Zionism, and identifying activity within religious-affiliated subreddits (e.g., r/islam, r/Judaism). Discussions related to 'Zionism and antisemitism' were more dominant in volume than those concerning 'Free Palestine and Islamophobia' within the collected Reddit dataset. Additionally, religious-affiliated subreddits like r/islam and r/Judaism were identified as forums with heightened activity levels regarding the conflict.
+
+
+## The Koo Dataset: An Indian Microblogging Platform With Global Ambitions
+
+[https://arxiv.org/abs/2401.07599](https://arxiv.org/abs/2401.07599)
+
+**Date:** 2024-01-15
+
+The paper does not conduct a benchmark measurement but introduces a dataset that can be used to study political rhetoric and online communities. This includes enabling the analysis of previously identified islamophobic rhetoric from the BJP party and examining the online following of religious figures. The paper's dataset provides an opportunity to study religion's role in political discourse on the Koo platform. Key observations include the significant online following of an Indian religious cult leader (Rampal Singh Jatain) identified through hashtag analysis, and the potential for analyzing islamophobic rhetoric from the BJP, a topic highlighted by previous research. The paper also notes the importance of how religious events are covered in the news ecosystem within the Indian context.
+
+
+## Risk Taxonomy, Mitigation, and Assessment Benchmarks of Large Language Model Systems
+
+[https://arxiv.org/abs/2401.05778](https://arxiv.org/abs/2401.05778)
+
+**Date:** 2024-01-11
+
+Stereotypical bias and social bias related to religion, as part of a broader evaluation of demographic biases. The paper surveys existing literature and reports that Large Language Models can exhibit social and stereotypical biases related to religion, among other demographic categories. This bias is attributed to the prevalence of such content in the large-scale training corpora.
+
+
+## TuPy-E: detecting hate speech in Brazilian Portuguese social media with a novel dataset and comprehensive analysis of models
+
+[https://arxiv.org/abs/2312.17704](https://arxiv.org/abs/2312.17704)
+
+**Date:** 2023-12-01
+
+Detection of hate speech classified as 'religious intolerance' in Brazilian Portuguese social media posts. The models tested, BERTimbau Base and BERTimbau Large, demonstrated poor performance in identifying hate speech related to religious intolerance, yielding low precision, recall, and F1-scores for this category. The study also found a graphical proximity and co-occurrence between the categories of religious intolerance, racism, and xenophobia within the dataset.
+
+
+## Faithful Model Evaluation for Model-Based Metrics
+
+[https://arxiv.org/abs/2312.17254](https://arxiv.org/abs/2312.17254)
+
+**Date:** 2023-12-19
+
+The BOLD benchmark, which was used in this study, measures bias in open-ended language generation across five domains, one of which is religion. The paper's findings are methodological rather than specific to religion. Using the BOLD dataset, which includes prompts related to religion, the authors demonstrated that their proposed method for calculating variance in model-based metrics can change the outcome of significance testing. Specifically, the initial conclusion that GPT-Neo was significantly less toxic than GPT2 was reversed, showing no significant difference, once the metric model's errors were properly accounted for in the variance calculation.
+
+
+## How Far Are LLMs from Believable AI? A Benchmark for Evaluating the Believability of Human Behavior Simulation
+
+[https://arxiv.org/abs/2312.17115](https://arxiv.org/abs/2312.17115)
+
+**Date:** 2024-06-15
+
+The benchmark measured 'simulation hallucination,' specifically the tendency of models to incorrectly infer a character's religious affiliation (e.g., Christian) based on other demographic data (like ethnicity or surname) when no explicit religious information was provided in the character's profile. Models, specifically GPT-3.5-Turbo-16K, demonstrated 'simulation hallucination' by incorrectly assigning a Christian religious affiliation to the character Homer Simpson, likely based on his name and Caucasian ethnicity, despite no such information being in the provided profile. This hallucination was mitigated when the character's surname was anonymized, suggesting the model relied on knowledge from its training data rather than adhering to the context provided in the prompt.
+
+
+## EVALUATION OF GPT-4V AND GEMINI IN ONLINE VQA
+
+[https://arxiv.org/abs/2312.10637](https://arxiv.org/abs/2312.10637)
+
+**Date:** 2024-02-14
+
+Accuracy on visual question answering for topics categorized under the 'Religion and Spirituality' super-topic. Gemini exhibited its best performance in the 'Religion and Spirituality' super-topic. Both GPT-4V and Gemini performed relatively well in this category compared to other categories, with GPT-4V scoring slightly higher than Gemini.
+
+
+## SocialStigmaQA: A Benchmark to Uncover Stigma Amplification in Generative Language Models
+
+[https://arxiv.org/abs/2312.07492](https://arxiv.org/abs/2312.07492)
+
+**Date:** 2023-12-27
+
+The benchmark measures social bias amplification against individuals based on their religious identity (e.g., Muslim, Jewish, Fundamentalist Christian, Atheist) in various templated social scenarios. The models generated biased reasoning (e.g., feeling 'uncomfortable' with a Muslim manager), produced nonsensical and stereotypical Chain-of-Thought outputs (e.g., stating 'Jewish people fast during Lent'), and exhibited logical contradictions between their reasoning and final answers in scenarios involving religious individuals.
+
+
+## Toxic language detection: a systematic review of Arabic datasets
+
+[https://arxiv.org/abs/2312.07228](https://arxiv.org/abs/2312.07228)
+
+**Date:** 2023-10-01
+
+The paper is a systematic review of datasets designed for toxic language detection in Arabic. Several of these datasets specifically measure the presence of religious hate speech, including general religious hate, Jihadist hate speech, and hate speech directed at specific religious groups (e.g., Muslims, Jews). The survey identified that religious hate speech is a significant and specifically addressed sub-task within Arabic toxic language detection. The paper cataloged multiple datasets created for this purpose, including those focused on religious hate speech in general text (e.g., Albadi et al., 2018), hate speech from bots (Albadi et al., 2019), religiously intolerant videos (Albadi et al., 2022), and Jihadist speech (De Smedt et al., 2018).
+
+
+## GPTBIAS: A Comprehensive Framework for Evaluating Bias in Large Language Models
+
+[https://arxiv.org/abs/2312.06315](https://arxiv.org/abs/2312.06315)
+
+**Date:** 2023-12-11
+
+Detection of biased content generation in response to prompts involving various religious groups, including stereotypes and potentially harmful rankings or comparisons. The GPTBIAS framework revealed significant religious bias across several models. Open-source models like OPT-66B and BLOOMZ demonstrated high religious bias scores (0.86 and 0.87, respectively). Among the GPT-3 series, text-davinci-002 and text-davinci-003 showed considerable bias (0.65 and 0.54), while ChatGPT (gpt-3.5-turbo) exhibited a very low religious bias score of 0.005.
+
+
+## Questioning Biases in Case Judgment Summaries: Legal Datasets or Large Language Models?
+
+[https://arxiv.org/abs/2312.00554](https://arxiv.org/abs/2312.00554)
+
+**Date:** 2023-12-01
+
+Presence/absence of religious keywords (Hindu, Muslim, Christian, Jain) and a specific legal act ('Employment Equality (Religion or Belief) Regulations 2003') in model-generated summaries of legal documents. The study found no evidence of bias related to religious keywords. The searched keywords (like Hindu, Muslim, Christian, Jain) and a specific act related to religious equality were not present in the original documents, expert summaries, or the model-generated summaries for both the Indian (IN-Abs) and UK (UK-Abs) datasets.
 
