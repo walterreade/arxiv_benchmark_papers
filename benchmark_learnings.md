@@ -2,7 +2,7 @@
 
 ## Beyond Marginal Distributions: A Framework to Evaluate the Representativeness of Demographic-Aligned LLMs
 
-[https://arxiv.org/abs/2601.15755](https://arxiv.org/abs/2601.15755)
+[https://arxiv.org/pdf/2601.15755](https://arxiv.org/pdf/2601.15755)
 
 **Date:** 2026-01-22
 
@@ -11,7 +11,7 @@ The benchmark measured the representativeness of LLM responses to survey questio
 
 ## Multi-Persona Thinking for Bias Mitigation in Large Language Models
 
-[https://arxiv.org/abs/2601.15488](https://arxiv.org/abs/2601.15488)
+[https://arxiv.org/pdf/2601.15488](https://arxiv.org/pdf/2601.15488)
 
 **Date:** 2026-01-21
 
@@ -20,7 +20,7 @@ The benchmarks measured stereotype bias in religious contexts through multiple-c
 
 ## Language Models Entangle Language and Culture
 
-[https://arxiv.org/abs/2601.15337](https://arxiv.org/abs/2601.15337)
+[https://arxiv.org/pdf/2601.15337](https://arxiv.org/pdf/2601.15337)
 
 **Date:** 2026-01-20
 
@@ -29,7 +29,7 @@ Classification of LLM responses into cultural contexts, where some of the cultur
 
 ## The Side Effects of Being Smart: Safety Risks in MLLMs' Multi-Image Reasoning
 
-[https://arxiv.org/abs/2601.14127](https://arxiv.org/abs/2601.14127)
+[https://arxiv.org/pdf/2601.14127](https://arxiv.org/pdf/2601.14127)
 
 **Date:** 2026-01-20
 
@@ -38,7 +38,7 @@ The benchmark measures the models' propensity to generate hate speech against re
 
 ## XCR-Bench: A Multi-Task Benchmark for Evaluating Cultural Reasoning in LLMs
 
-[https://arxiv.org/abs/2601.14063](https://arxiv.org/abs/2601.14063)
+[https://arxiv.org/pdf/2601.14063](https://arxiv.org/pdf/2601.14063)
 
 **Date:** 2026-01-20
 
@@ -47,7 +47,7 @@ The benchmark measured ethno-religious bias in cultural adaptation tasks. Specif
 
 ## CommunityBench: Benchmarking Community-Level Alignment across Diverse Groups and Tasks
 
-[https://arxiv.org/abs/2601.13669](https://arxiv.org/abs/2601.13669)
+[https://arxiv.org/pdf/2601.13669](https://arxiv.org/pdf/2601.13669)
 
 **Date:** 2026-01-20
 
@@ -56,7 +56,7 @@ The benchmark measured how well models can predict an individual's opinions on v
 
 ## HateXScore: A Metric Suite for Evaluating Reasoning Quality in Hate Speech Explanations #Mormon
 
-[https://arxiv.org/abs/2601.13547](https://arxiv.org/abs/2601.13547)
+[https://arxiv.org/pdf/2601.13547](https://arxiv.org/pdf/2601.13547)
 
 **Date:** 2026-01-20
 
@@ -65,7 +65,7 @@ The benchmark measures the quality of a model's reasoning in hate speech explana
 
 ## Bi-Attention HateXplain : Taking into account the sequential aspect of data during explainability in a multi-task context
 
-[https://arxiv.org/abs/2601.13018](https://arxiv.org/abs/2601.13018)
+[https://arxiv.org/pdf/2601.13018](https://arxiv.org/pdf/2601.13018)
 
 **Date:** 2026-01-19
 
@@ -74,7 +74,7 @@ The benchmark measured hate speech and unintentional bias against specific commu
 
 ## Injecting Knowledge from Social Science Journals to Improve Indonesian Cultural Understanding by LLMs
 
-[https://arxiv.org/abs/2601.12921](https://arxiv.org/abs/2601.12921)
+[https://arxiv.org/pdf/2601.12921](https://arxiv.org/pdf/2601.12921)
 
 **Date:** 2026-01-19
 
@@ -83,7 +83,7 @@ The benchmark measures Large Language Models' understanding of Indonesian cultur
 
 ## UbuntuGuard: A Culturally-Grounded Policy Benchmark for Equitable AI Safety in African Languages
 
-[https://arxiv.org/abs/2601.12696](https://arxiv.org/abs/2601.12696)
+[https://arxiv.org/pdf/2601.12696](https://arxiv.org/pdf/2601.12696)
 
 **Date:** 2026-01-19
 
@@ -92,7 +92,7 @@ The benchmark measures the ability of guardian models to adhere to culturally-gr
 
 ## INCENTIVIZING IN-DEPTH REASONING OVER LONG CONTEXTS WITH PROCESS ADVANTAGE SHAPING
 
-[https://arxiv.org/abs/2601.12465](https://arxiv.org/abs/2601.12465)
+[https://arxiv.org/pdf/2601.12465](https://arxiv.org/pdf/2601.12465)
 
 **Date:** 2026-01-18
 
@@ -101,7 +101,7 @@ Knowledge of religious/philosophical systems and their historical influence. The
 
 ## Preserving Fairness and Safety in Quantized LLMs Through Critical Weight Protection
 
-[https://arxiv.org/abs/2601.12033](https://arxiv.org/abs/2601.12033)
+[https://arxiv.org/pdf/2601.12033](https://arxiv.org/pdf/2601.12033)
 
 **Date:** 2026-01-17
 
@@ -110,7 +110,7 @@ The paper uses the Jigsaw benchmark, which measures unintended bias in toxicity 
 
 ## When Personalization Misleads: Understanding and Mitigating Hallucinations in Personalized LLMS
 
-[https://arxiv.org/abs/2601.11000](https://arxiv.org/abs/2601.11000)
+[https://arxiv.org/pdf/2601.11000](https://arxiv.org/pdf/2601.11000)
 
 **Date:** 2026-01-16
 
@@ -119,7 +119,7 @@ The benchmark (PFQABench) measures the trade-off between factual accuracy and pe
 
 ## A Safety Report on GPT-5.2, Gemini 3 Pro, Qwen3-VL, Grok 4.1 Fast, Nano Banana Pro, and Seedream 4.5
 
-[https://arxiv.org/abs/2601.10527](https://arxiv.org/abs/2601.10527)
+[https://arxiv.org/pdf/2601.10527](https://arxiv.org/pdf/2601.10527)
 
 **Date:** 2026-01-16
 
@@ -128,7 +128,7 @@ The paper measures several aspects related to religion and faith as part of a br
 
 ## Routing with Generated Data: Annotation-Free LLM Skill Estimation and Expert Selection
 
-[https://arxiv.org/abs/2601.09692](https://arxiv.org/abs/2601.09692)
+[https://arxiv.org/pdf/2601.09692](https://arxiv.org/pdf/2601.09692)
 
 **Date:** 2026-01-14
 
@@ -137,7 +137,7 @@ The benchmark (SuperGPQA) measured knowledge in comparative and interpretive phi
 
 ## MM-BRIGHT: A Multi-Task Multimodal Benchmark for Reasoning-Intensive Retrieval
 
-[https://arxiv.org/abs/2601.09562](https://arxiv.org/abs/2601.09562)
+[https://arxiv.org/pdf/2601.09562](https://arxiv.org/pdf/2601.09562)
 
 **Date:** 2026-01-14
 
@@ -146,7 +146,7 @@ The benchmark measures the ability of retrieval models to find relevant document
 
 ## RISER: Orchestrating Latent Reasoning Skills for Adaptive Activation Steering
 
-[https://arxiv.org/abs/2601.09269](https://arxiv.org/abs/2601.09269)
+[https://arxiv.org/pdf/2601.09269](https://arxiv.org/pdf/2601.09269)
 
 **Date:** 2026-01-19
 
@@ -155,7 +155,7 @@ Performance on ethical reasoning problems, measuring alignment with shared human
 
 ## Identity-Robust Language Model Generation via Content Integrity Preservation
 
-[https://arxiv.org/abs/2601.09141](https://arxiv.org/abs/2601.09141)
+[https://arxiv.org/pdf/2601.09141](https://arxiv.org/pdf/2601.09141)
 
 **Date:** 2026-01-14
 
@@ -164,7 +164,7 @@ The benchmark measured identity-dependent degradation of core response quality, 
 
 ## Seeking Human Security Consensus: A Unified Value Scale for Generative AI Value Safety
 
-[https://arxiv.org/abs/2601.09112](https://arxiv.org/abs/2601.09112)
+[https://arxiv.org/pdf/2601.09112](https://arxiv.org/pdf/2601.09112)
 
 **Date:** 2026-01-14
 
@@ -173,7 +173,7 @@ The benchmark measured the models' ability to identify and refuse harmful or sen
 
 ## Mi:dm 2.0 Korea-centric Bilingual Language Models
 
-[https://arxiv.org/abs/2601.09066](https://arxiv.org/abs/2601.09066)
+[https://arxiv.org/pdf/2601.09066](https://arxiv.org/pdf/2601.09066)
 
 **Date:** 2026-01-14
 
@@ -182,7 +182,7 @@ The paper measured social bias related to religion using the KoBBQ benchmark, wh
 
 ## PLURIHARMS: BENCHMARKING THE FULL SPECTRUM OF HUMAN JUDGMENTS ON AI HARM
 
-[https://arxiv.org/abs/2601.08951](https://arxiv.org/abs/2601.08951)
+[https://arxiv.org/pdf/2601.08951](https://arxiv.org/pdf/2601.08951)
 
 **Date:** 2026-01-13
 
@@ -191,7 +191,7 @@ The benchmark measured how an annotator's self-reported 'Importance of Religion'
 
 ## MPCI-Bench: A Benchmark for Multimodal Pairwise Contextual Integrity Evaluation of Language Model Agents
 
-[https://arxiv.org/abs/2601.08235](https://arxiv.org/abs/2601.08235)
+[https://arxiv.org/pdf/2601.08235](https://arxiv.org/pdf/2601.08235)
 
 **Date:** 2026-01-13
 
@@ -200,7 +200,7 @@ The benchmark measures the ability of multimodal agents to adhere to Contextual 
 
 ## VULCA-BENCH: A Multicultural Vision-Language Benchmark for Evaluating Cultural Understanding
 
-[https://arxiv.org/abs/2601.07986](https://arxiv.org/abs/2601.07986)
+[https://arxiv.org/pdf/2601.07986](https://arxiv.org/pdf/2601.07986)
 
 **Date:** 2026-01-12
 
@@ -209,7 +209,7 @@ The benchmark measures a Vision-Language Model's ability to understand and gener
 
 ## Cross-Cultural Expert-Level Art Critique Evaluation with Vision-Language Models
 
-[https://arxiv.org/abs/2601.07984](https://arxiv.org/abs/2601.07984)
+[https://arxiv.org/pdf/2601.07984](https://arxiv.org/pdf/2601.07984)
 
 **Date:** 2026-01-12
 
@@ -218,7 +218,7 @@ The benchmark measured the ability of Vision-Language Models to interpret religi
 
 ## Loci Similes: A Benchmark for Extracting Intertextualities in Latin Literature
 
-[https://arxiv.org/abs/2601.07533](https://arxiv.org/abs/2601.07533)
+[https://arxiv.org/pdf/2601.07533](https://arxiv.org/pdf/2601.07533)
 
 **Date:** 2026-01-12
 
@@ -227,7 +227,7 @@ Detecting intertextual reuse by Late Antique Christian authors (e.g., Jerome, La
 
 ## Mitrasamgraha: A Comprehensive Classical Sanskrit Machine Translation Dataset
 
-[https://arxiv.org/abs/2601.07314](https://arxiv.org/abs/2601.07314)
+[https://arxiv.org/pdf/2601.07314](https://arxiv.org/pdf/2601.07314)
 
 **Date:** 2026-01-12
 
@@ -236,7 +236,7 @@ The benchmark measures the machine translation quality (Sanskrit-to-English) of 
 
 ## TurkBench: A Benchmark for Evaluating Turkish Large Language Models
 
-[https://arxiv.org/abs/2601.07020](https://arxiv.org/abs/2601.07020)
+[https://arxiv.org/pdf/2601.07020](https://arxiv.org/pdf/2601.07020)
 
 **Date:** 2026-01-11
 
@@ -245,7 +245,7 @@ The benchmark measures knowledge of religious culture (as part of the MMLU subta
 
 ## SafePro: Evaluating the Safety of Professional-Level AI Agents
 
-[https://arxiv.org/abs/2601.06663](https://arxiv.org/abs/2601.06663)
+[https://arxiv.org/pdf/2601.06663](https://arxiv.org/pdf/2601.06663)
 
 **Date:** 2026-01-13
 
@@ -254,7 +254,7 @@ The benchmark, SafePro, measures safety alignment in professional AI agents. One
 
 ## Annotating Dimensions of Social Perception in Text: The First Sentence-Level Dataset of Warmth and Competence
 
-[https://arxiv.org/abs/2601.06316](https://arxiv.org/abs/2601.06316)
+[https://arxiv.org/pdf/2601.06316](https://arxiv.org/pdf/2601.06316)
 
 **Date:** 2026-01-09
 
@@ -263,7 +263,7 @@ The benchmark measures the perceived trust, sociability, and competence expresse
 
 ## PII-VisBench: Evaluating Personally Identifiable Information Safety in Vision Language Models Along a Continuum of Visibility
 
-[https://arxiv.org/abs/2601.05739](https://arxiv.org/abs/2601.05739)
+[https://arxiv.org/pdf/2601.05739](https://arxiv.org/pdf/2601.05739)
 
 **Date:** 2026-01-09
 
@@ -272,7 +272,7 @@ The benchmark measures the refusal rate of Vision Language Models when prompted 
 
 ## Same Claim, Different Judgment: Benchmarking Scenario-Induced Bias in Multilingual Financial Misinformation Detection
 
-[https://arxiv.org/abs/2601.05403](https://arxiv.org/abs/2601.05403)
+[https://arxiv.org/pdf/2601.05403](https://arxiv.org/pdf/2601.05403)
 
 **Date:** 2026-01-08
 
@@ -281,7 +281,7 @@ The benchmark measures scenario-induced bias in financial misinformation detecti
 
 ## Prototypicality Bias Reveals Blindspots in Multimodal Evaluation Metrics
 
-[https://arxiv.org/abs/2601.04946](https://arxiv.org/abs/2601.04946)
+[https://arxiv.org/pdf/2601.04946](https://arxiv.org/pdf/2601.04946)
 
 **Date:** 2026-01-10
 
@@ -290,7 +290,7 @@ The benchmark measured stereotypical bias by pairing religious identities (Chris
 
 ## RedBench: A Universal Dataset for Comprehensive Red Teaming of Large Language Models
 
-[https://arxiv.org/abs/2601.03699](https://arxiv.org/abs/2601.03699)
+[https://arxiv.org/pdf/2601.03699](https://arxiv.org/pdf/2601.03699)
 
 **Date:** 2026-01-07
 
@@ -299,7 +299,7 @@ The benchmark measured LLM robustness on religion-related prompts, specifically 
 
 ## PsychEthicsBench: Evaluating Large Language Models Against Australian Mental Health Ethics
 
-[https://arxiv.org/abs/2601.03578](https://arxiv.org/abs/2601.03578)
+[https://arxiv.org/pdf/2601.03578](https://arxiv.org/pdf/2601.03578)
 
 **Date:** 2026-01-07
 
@@ -308,7 +308,7 @@ Ethical handling of mental health scenarios involving religious beliefs as a dem
 
 ## GuardEval: A Multi-Perspective Benchmark for Evaluating Safety, Fairness, and Robustness in LLM Moderators
 
-[https://arxiv.org/abs/2601.03273](https://arxiv.org/abs/2601.03273)
+[https://arxiv.org/pdf/2601.03273](https://arxiv.org/pdf/2601.03273)
 
 **Date:** 2025-12-22
 
@@ -317,7 +317,7 @@ Detection of harmful or biased prompts and content involving religious compariso
 
 ## Introducing TrGLUE and SentiTurca: A Comprehensive Benchmark for Turkish General Language Understanding and Sentiment Analysis
 
-[https://arxiv.org/abs/2512.22100](https://arxiv.org/abs/2512.22100)
+[https://arxiv.org/pdf/2512.22100](https://arxiv.org/pdf/2512.22100)
 
 **Date:** 2025-12-26
 
@@ -326,7 +326,7 @@ Hate speech detection targeting religious groups (e.g., Alevi communities) and I
 
 ## Toward Systematic Counterfactual Fairness Evaluation of Large Language Models: The CAFFE Framework
 
-[https://arxiv.org/abs/2512.16816](https://arxiv.org/abs/2512.16816)
+[https://arxiv.org/pdf/2512.16816](https://arxiv.org/pdf/2512.16816)
 
 **Date:** 2025-12-18
 
@@ -335,7 +335,7 @@ The benchmark measured counterfactual fairness by detecting semantic disparities
 
 ## VLegal-Bench: Cognitively Grounded Benchmark for Vietnamese Legal Reasoning of Large Language Models
 
-[https://arxiv.org/abs/2512.14554](https://arxiv.org/abs/2512.14554)
+[https://arxiv.org/pdf/2512.14554](https://arxiv.org/pdf/2512.14554)
 
 **Date:** 2025-12-24
 
@@ -344,7 +344,7 @@ Detection of religious bias in generated answers or decisions, as part of a broa
 
 ## Can LLMs Understand What We Cannot Say? Measuring Multilevel Alignment Through Abortion Stigma Across Cognitive, Interpersonal, and Structural Levels
 
-[https://arxiv.org/abs/2512.13142](https://arxiv.org/abs/2512.13142)
+[https://arxiv.org/pdf/2512.13142](https://arxiv.org/pdf/2512.13142)
 
 **Date:** 2026-01-15
 
@@ -353,7 +353,7 @@ The benchmark measured how Large Language Models associate religious affiliation
 
 ## Textual Data Bias Detection and Mitigation - An Extensible Pipeline with Experimental Evaluation
 
-[https://arxiv.org/abs/2512.10734](https://arxiv.org/abs/2512.10734)
+[https://arxiv.org/pdf/2512.10734](https://arxiv.org/pdf/2512.10734)
 
 **Date:** 2025-12-12
 
@@ -362,7 +362,7 @@ The paper's pipeline was evaluated on its ability to detect and mitigate two typ
 
 ## Can LLMs Evaluate What They Cannot Annotate? Revisiting LLM Reliability in Hate Speech Detection
 
-[https://arxiv.org/abs/2512.09662](https://arxiv.org/abs/2512.09662)
+[https://arxiv.org/pdf/2512.09662](https://arxiv.org/pdf/2512.09662)
 
 **Date:** 2025-12-10
 
@@ -371,7 +371,7 @@ The ability of LLMs to detect hate speech targeted at various religious groups, 
 
 ## CNFINBENCH: A BENCHMARK FOR SAFETY AND COMPLIANCE OF LARGE LANGUAGE MODELS IN FINANCE
 
-[https://arxiv.org/abs/2512.09506](https://arxiv.org/abs/2512.09506)
+[https://arxiv.org/pdf/2512.09506](https://arxiv.org/pdf/2512.09506)
 
 **Date:** 2025-12-19
 
@@ -380,7 +380,7 @@ The benchmark measures the model's adherence to a non-discrimination requirement
 
 ## A Systematic Evaluation of Preference Aggregation in Federated RLHF for Pluralistic Alignment of LLMs
 
-[https://arxiv.org/abs/2512.08786](https://arxiv.org/abs/2512.08786)
+[https://arxiv.org/pdf/2512.08786](https://arxiv.org/pdf/2512.08786)
 
 **Date:** 2025-12-15
 
@@ -389,7 +389,7 @@ The benchmark measured the alignment of a Large Language Model with diverse grou
 
 ## THE HIGH COST OF INCIVILITY: QUANTIFYING INTERACTION INEFFICIENCY VIA MULTI-AGENT MONTE CARLO SIMULATIONS
 
-[https://arxiv.org/abs/2512.08345](https://arxiv.org/abs/2512.08345)
+[https://arxiv.org/pdf/2512.08345](https://arxiv.org/pdf/2512.08345)
 
 **Date:** 2025-12-09
 
@@ -398,7 +398,7 @@ The benchmark measured the 'convergence time' (number of arguments required to r
 
 ## OmniSafeBench-MM: A Unified Benchmark and Toolbox for Multimodal Jailbreak Attack–Defense Evaluation
 
-[https://arxiv.org/abs/2512.06589](https://arxiv.org/abs/2512.06589)
+[https://arxiv.org/pdf/2512.06589](https://arxiv.org/pdf/2512.06589)
 
 **Date:** 2025-12-06
 
@@ -407,7 +407,7 @@ The benchmark measures the generation of content that constitutes 'Cultural or R
 
 ## SEA-SafeguardBench: Evaluating AI Safety in SEA Languages and Cultures
 
-[https://arxiv.org/abs/2512.05501](https://arxiv.org/abs/2512.05501)
+[https://arxiv.org/pdf/2512.05501](https://arxiv.org/pdf/2512.05501)
 
 **Date:** 2025-12-05
 
@@ -416,7 +416,7 @@ Detection of harmful content and cultural safety violations related to Southeast
 
 ## Can ChatGPT evaluate research environments? Evidence from REF2021
 
-[https://arxiv.org/abs/2512.05202](https://arxiv.org/abs/2512.05202)
+[https://arxiv.org/pdf/2512.05202](https://arxiv.org/pdf/2512.05202)
 
 **Date:** 2025-08-07
 
@@ -425,7 +425,7 @@ The benchmark measured the correlation between LLM-generated scores and human ex
 
 ## Towards A Cultural Intelligence and Values Inference Quality Benchmark for Community Values and Common Knowledge
 
-[https://arxiv.org/abs/2512.05176](https://arxiv.org/abs/2512.05176)
+[https://arxiv.org/pdf/2512.05176](https://arxiv.org/pdf/2512.05176)
 
 **Date:** 2025-12-04
 
@@ -434,7 +434,7 @@ The benchmark (CIVIQ) is designed to measure alignment with community social val
 
 ## FineGRAIN: Evaluating Failure Modes of Text-to-Image Models with Vision Language Model Judges
 
-[https://arxiv.org/abs/2512.02161](https://arxiv.org/abs/2512.02161)
+[https://arxiv.org/pdf/2512.02161](https://arxiv.org/pdf/2512.02161)
 
 **Date:** 2025-12-01
 
@@ -443,7 +443,7 @@ The benchmark measures the ability of text-to-image models to visually represent
 
 ## BHRAM-IL: A Benchmark for Hallucination Recognition and Assessment in Multiple Indian Languages
 
-[https://arxiv.org/abs/2512.01852](https://arxiv.org/abs/2512.01852)
+[https://arxiv.org/pdf/2512.01852](https://arxiv.org/pdf/2512.01852)
 
 **Date:** 
 
@@ -452,7 +452,7 @@ The benchmark measured the factual knowledge of LLMs on the topic of 'Indian Myt
 
 ## Rice-VL: Evaluating Vision-Language Models for Cultural Understanding Across ASEAN Countries
 
-[https://arxiv.org/abs/2512.01419](https://arxiv.org/abs/2512.01419)
+[https://arxiv.org/pdf/2512.01419](https://arxiv.org/pdf/2512.01419)
 
 **Date:** 2025-12-01
 
@@ -461,7 +461,7 @@ The benchmark measured the models' ability to answer visual questions (culturalV
 
 ## BENCHMARKING OVERTON PLURALISM IN LLMS
 
-[https://arxiv.org/abs/2512.01351](https://arxiv.org/abs/2512.01351)
+[https://arxiv.org/pdf/2512.01351](https://arxiv.org/pdf/2512.01351)
 
 **Date:** 2025-12-01
 
@@ -470,7 +470,7 @@ The benchmark measures 'Overton Pluralism' concerning faith and religion, specif
 
 ## Difficulties with Evaluating a Deception Detector for AIs
 
-[https://arxiv.org/abs/2511.22662](https://arxiv.org/abs/2511.22662)
+[https://arxiv.org/pdf/2511.22662](https://arxiv.org/pdf/2511.22662)
 
 **Date:** 2025-12-16
 
@@ -479,7 +479,7 @@ The paper critiques existing deception detection benchmarks. One example from th
 
 ## AfriStereo: A Culturally Grounded Dataset for Evaluating Stereotypical Bias in Large Language Models
 
-[https://arxiv.org/abs/2511.22016](https://arxiv.org/abs/2511.22016)
+[https://arxiv.org/pdf/2511.22016](https://arxiv.org/pdf/2511.22016)
 
 **Date:** 2025-11-27
 
@@ -488,7 +488,7 @@ Detection of stereotypical bias in religious contexts by comparing model prefere
 
 ## Polarity-Aware Probing for Quantifying Latent Alignment in Language Models
 
-[https://arxiv.org/abs/2511.21737](https://arxiv.org/abs/2511.21737)
+[https://arxiv.org/pdf/2511.21737](https://arxiv.org/pdf/2511.21737)
 
 **Date:** 2025-11-21
 
@@ -497,7 +497,7 @@ The benchmark measures the model's ability to distinguish harmful statements fro
 
 ## Human Experts’ Evaluation of Generative AI for Contextualizing STEAM Education in the Global South
 
-[https://arxiv.org/abs/2511.19482](https://arxiv.org/abs/2511.19482)
+[https://arxiv.org/pdf/2511.19482](https://arxiv.org/pdf/2511.19482)
 
 **Date:** 
 
@@ -506,7 +506,7 @@ The benchmark was designed to evaluate the cultural responsiveness of AI-generat
 
 ## A Benchmark for Zero-Shot Belief Inference in Large Language Models
 
-[https://arxiv.org/abs/2511.18616](https://arxiv.org/abs/2511.18616)
+[https://arxiv.org/pdf/2511.18616](https://arxiv.org/pdf/2511.18616)
 
 **Date:** 2025-11-23
 
@@ -515,7 +515,7 @@ The benchmark measured the ability of Large Language Models to predict an indivi
 
 ## GEOMETRIC-DISENTANGLEMENT UNLEARNING
 
-[https://arxiv.org/abs/2511.17100](https://arxiv.org/abs/2511.17100)
+[https://arxiv.org/pdf/2511.17100](https://arxiv.org/pdf/2511.17100)
 
 **Date:** 2026-01-17
 
@@ -524,7 +524,7 @@ Thematic drift and the unnecessary introduction of religious specificity in a te
 
 ## Multimodal Evaluation of Russian-language Architectures
 
-[https://arxiv.org/abs/2511.15552](https://arxiv.org/abs/2511.15552)
+[https://arxiv.org/pdf/2511.15552](https://arxiv.org/pdf/2511.15552)
 
 **Date:** 2025-11-20
 
@@ -533,7 +533,7 @@ Prejudice assessment toward groups based on religion, as part of a broader ethic
 
 ## HinTel-AlignBench: A Framework and Benchmark for Hindi–Telugu with English-Aligned Samples
 
-[https://arxiv.org/abs/2511.15183](https://arxiv.org/abs/2511.15183)
+[https://arxiv.org/pdf/2511.15183](https://arxiv.org/pdf/2511.15183)
 
 **Date:** 2025-11-19
 
@@ -542,7 +542,7 @@ The benchmark measures cultural and contextual knowledge, which includes the abi
 
 ## SafeRBench: A Comprehensive Benchmark for Safety Assessment in Large Reasoning Models
 
-[https://arxiv.org/abs/2511.15169](https://arxiv.org/abs/2511.15169)
+[https://arxiv.org/pdf/2511.15169](https://arxiv.org/pdf/2511.15169)
 
 **Date:** 2025-11-20
 
@@ -551,7 +551,7 @@ The benchmark measures how models respond to harmful queries, including those ab
 
 ## AA-Omniscience: Evaluating Cross-Domain Knowledge Reliability in Large Language Models
 
-[https://arxiv.org/abs/2511.13029](https://arxiv.org/abs/2511.13029)
+[https://arxiv.org/pdf/2511.13029](https://arxiv.org/pdf/2511.13029)
 
 **Date:** 2025-11-17
 
@@ -560,7 +560,7 @@ Factual knowledge recall and knowledge calibration on the topic of Religion. The
 
 ## Probing Preference Representations: A Multi-Dimensional Evaluation and Analysis Method for Reward Models #Mormon
 
-[https://arxiv.org/abs/2511.12464](https://arxiv.org/abs/2511.12464)
+[https://arxiv.org/pdf/2511.12464](https://arxiv.org/pdf/2511.12464)
 
 **Date:** 2025-11-16
 
@@ -569,7 +569,7 @@ The benchmark does not specifically measure aspects of faith or religion. Howeve
 
 ## CURE: Cultural Understanding & Reasoning Evaluation – A Framework for “Thick” Culture Alignment Evaluation in LLMs
 
-[https://arxiv.org/abs/2511.12014](https://arxiv.org/abs/2511.12014)
+[https://arxiv.org/pdf/2511.12014](https://arxiv.org/pdf/2511.12014)
 
 **Date:** 2025-11-15
 
@@ -578,7 +578,7 @@ The benchmark measured subgroup-sensitive cultural reasoning, specifically wheth
 
 ## OutSafe-Bench: A Benchmark for Multimodal Offensive Content Detection in Large Language Models
 
-[https://arxiv.org/abs/2511.10287](https://arxiv.org/abs/2511.10287)
+[https://arxiv.org/pdf/2511.10287](https://arxiv.org/pdf/2511.10287)
 
 **Date:** 2025-12-11
 
@@ -587,7 +587,7 @@ The benchmark measures prejudice and discrimination against religious groups as 
 
 ## SPAN: Benchmarking and Improving Cross-Calendar Temporal Reasoning of Large Language Models
 
-[https://arxiv.org/abs/2511.09993](https://arxiv.org/abs/2511.09993)
+[https://arxiv.org/pdf/2511.09993](https://arxiv.org/pdf/2511.09993)
 
 **Date:** 2026-01-09
 
@@ -596,7 +596,7 @@ Knowledge and reasoning about dates in religious (Islamic, Hebrew) and cultural 
 
 ## I've Seen Enough: Measuring the Toll of Content Moderation on Mental Health
 
-[https://arxiv.org/abs/2511.09813](https://arxiv.org/abs/2511.09813)
+[https://arxiv.org/pdf/2511.09813](https://arxiv.org/pdf/2511.09813)
 
 **Date:** 2025-11-12
 
@@ -605,7 +605,7 @@ The study measured the frequency of daily spiritual experiences (e.g., connectio
 
 ## Measuring Value Expressions in Social Media Posts
 
-[https://arxiv.org/abs/2511.08453](https://arxiv.org/abs/2511.08453)
+[https://arxiv.org/pdf/2511.08453](https://arxiv.org/pdf/2511.08453)
 
 **Date:** 2025-11-12
 
@@ -614,7 +614,7 @@ The benchmark measured the expression of the 'Tradition' value from the Schwartz
 
 ## Estranged Predictions: Measuring Semantic Category Disruption with Masked Language Modelling
 
-[https://arxiv.org/abs/2511.08109](https://arxiv.org/abs/2511.08109)
+[https://arxiv.org/pdf/2511.08109](https://arxiv.org/pdf/2511.08109)
 
 **Date:** 2025-11-11
 
@@ -623,7 +623,7 @@ Measurement of semantic substitution patterns where ontological categories (huma
 
 ## AlignSurvey: A Comprehensive Benchmark for Human Preferences Alignment in Social Surveys
 
-[https://arxiv.org/abs/2511.07871](https://arxiv.org/abs/2511.07871)
+[https://arxiv.org/pdf/2511.07871](https://arxiv.org/pdf/2511.07871)
 
 **Date:** 2025-11-13
 
@@ -632,7 +632,7 @@ The benchmark included survey data measuring attitudes and opinions on 'religion
 
 ## Efficient LLM Safety Evaluation through Multi-Agent Debate
 
-[https://arxiv.org/abs/2511.06396](https://arxiv.org/abs/2511.06396)
+[https://arxiv.org/pdf/2511.06396](https://arxiv.org/pdf/2511.06396)
 
 **Date:** 2025-11-09
 
@@ -641,7 +641,7 @@ The benchmark, HAJailBench, measured the propensity of LLMs to generate content 
 
 ## CULTURE IN ACTION: EVALUATING TEXT-TO-IMAGE MODELS THROUGH SOCIAL ACTIVITIES
 
-[https://arxiv.org/abs/2511.05681](https://arxiv.org/abs/2511.05681)
+[https://arxiv.org/pdf/2511.05681](https://arxiv.org/pdf/2511.05681)
 
 **Date:** 2025-11-07
 
@@ -650,7 +650,7 @@ The benchmark, CULTIVate, measures the ability of Text-to-Image (T2I) models to 
 
 ## INDICVISIONBENCH: BENCHMARKING CULTURAL AND MULTILINGUAL UNDERSTANDING IN VLMS
 
-[https://arxiv.org/abs/2511.04727](https://arxiv.org/abs/2511.04727)
+[https://arxiv.org/pdf/2511.04727](https://arxiv.org/pdf/2511.04727)
 
 **Date:** 2025-11-06
 
@@ -659,7 +659,7 @@ The benchmark measures a model's ability to recognize and reason about culturall
 
 ## The Human Flourishing Geographic Index: A County-Level Dataset for the United States, 2013–2023
 
-[https://arxiv.org/abs/2511.03915](https://arxiv.org/abs/2511.03915)
+[https://arxiv.org/pdf/2511.03915](https://arxiv.org/pdf/2511.03915)
 
 **Date:** 2025-11-05
 
@@ -668,7 +668,7 @@ Public salience of religious discourse on social media, specifically measuring e
 
 ## Evaluating Machine Translation Datasets for Low-Web Data Languages: A Gendered Lens
 
-[https://arxiv.org/abs/2511.03880](https://arxiv.org/abs/2511.03880)
+[https://arxiv.org/pdf/2511.03880](https://arxiv.org/pdf/2511.03880)
 
 **Date:** 
 
@@ -677,7 +677,7 @@ The analysis measured the topical composition of machine translation datasets, f
 
 ## Auditing M-LLMs for Privacy Risks: A Synthetic Benchmark and Evaluation Framework
 
-[https://arxiv.org/abs/2511.03248](https://arxiv.org/abs/2511.03248)
+[https://arxiv.org/pdf/2511.03248](https://arxiv.org/pdf/2511.03248)
 
 **Date:** 2025-11-09
 
@@ -686,7 +686,7 @@ Inference of a user's 'Religious-Belief' (REG) as one of twelve sensitive person
 
 ## BengaliMoralBench: A Benchmark for Auditing Moral Reasoning in Large Language Models within Bengali Language and Culture
 
-[https://arxiv.org/abs/2511.03180](https://arxiv.org/abs/2511.03180)
+[https://arxiv.org/pdf/2511.03180](https://arxiv.org/pdf/2511.03180)
 
 **Date:** 2025-11-05
 
@@ -695,7 +695,7 @@ The benchmark measures the alignment of Large Language Models with culturally sp
 
 ## Deep Value Benchmark: Measuring Whether Models Generalize Deep Values or Shallow Preferences
 
-[https://arxiv.org/abs/2511.02109](https://arxiv.org/abs/2511.02109)
+[https://arxiv.org/pdf/2511.02109](https://arxiv.org/pdf/2511.02109)
 
 **Date:** 2026-01-11
 
@@ -704,7 +704,7 @@ The benchmark measured whether models generalize the deep value of 'tradition', 
 
 ## Surfacing Subtle Stereotypes: A Multilingual, Debate-Oriented Evaluation of Modern LLMs
 
-[https://arxiv.org/abs/2511.01187](https://arxiv.org/abs/2511.01187)
+[https://arxiv.org/pdf/2511.01187](https://arxiv.org/pdf/2511.01187)
 
 **Date:** 2025-11-03
 
@@ -713,7 +713,7 @@ The benchmark measures religious bias by evaluating how Large Language Models (L
 
 ## DIALECTALARABICMMLU: Benchmarking Dialectal Capabilities in Arabic and Multilingual Language Models
 
-[https://arxiv.org/abs/2510.27543](https://arxiv.org/abs/2510.27543)
+[https://arxiv.org/pdf/2510.27543](https://arxiv.org/pdf/2510.27543)
 
 **Date:** 2025-10-31
 
@@ -722,7 +722,7 @@ Knowledge of world religions via multiple-choice questions. The paper does not p
 
 ## “Back to the Communities”: A Mixed‑Methods and Community‑Driven Evaluation of Cultural Sensitivity in Text-to-Image Models
 
-[https://arxiv.org/abs/2510.27361](https://arxiv.org/abs/2510.27361)
+[https://arxiv.org/pdf/2510.27361](https://arxiv.org/pdf/2510.27361)
 
 **Date:** 
 
@@ -731,7 +731,7 @@ The benchmark measured cultural sensitivity in Text-to-Image models. Religion wa
 
 ## MM-OPERA: Benchmarking Open-ended Association Reasoning for Large Vision-Language Models
 
-[https://arxiv.org/abs/2510.26937](https://arxiv.org/abs/2510.26937)
+[https://arxiv.org/pdf/2510.26937](https://arxiv.org/pdf/2510.26937)
 
 **Date:** 2025-10-30
 
@@ -740,7 +740,7 @@ The benchmark measures the ability of Large Vision-Language Models to perform op
 
 ## Depth and Autonomy: A Framework for Evaluating LLM Applications in Social Science Research
 
-[https://arxiv.org/abs/2510.25432](https://arxiv.org/abs/2510.25432)
+[https://arxiv.org/pdf/2510.25432](https://arxiv.org/pdf/2510.25432)
 
 **Date:** 2025-10-29
 
@@ -749,7 +749,7 @@ Extraction of constitutionalist principles from a 7th-century Islamic religious-
 
 ## DEBATE: A Large-Scale Benchmark for Role-Playing LLM Agents in Multi-Agent, Long-Form Debates
 
-[https://arxiv.org/abs/2510.25110](https://arxiv.org/abs/2510.25110)
+[https://arxiv.org/pdf/2510.25110](https://arxiv.org/pdf/2510.25110)
 
 **Date:** 2025-10-29
 
@@ -758,7 +758,7 @@ Modeling opinion dynamics of LLM agents on socio-religious topics. The benchmark
 
 ## A word association network methodology for evaluating implicit biases in LLMs compared to humans
 
-[https://arxiv.org/abs/2510.24488](https://arxiv.org/abs/2510.24488)
+[https://arxiv.org/pdf/2510.24488](https://arxiv.org/pdf/2510.24488)
 
 **Date:** 2025-10-28
 
@@ -767,7 +767,7 @@ The benchmark measures valence bias, which is the general positive or negative p
 
 ## Can LLMs Write Faithfully? An Agent-Based Evaluation of LLM-generated Islamic Content
 
-[https://arxiv.org/abs/2510.24438](https://arxiv.org/abs/2510.24438)
+[https://arxiv.org/pdf/2510.24438](https://arxiv.org/pdf/2510.24438)
 
 **Date:** 2025-10-28
 
@@ -776,7 +776,7 @@ Faithfulness of LLM-generated Islamic content, measuring theological accuracy, c
 
 ## Global PIQA: Evaluating Physical Commonsense Reasoning Across 100+ Languages and Cultures
 
-[https://arxiv.org/abs/2510.24081](https://arxiv.org/abs/2510.24081)
+[https://arxiv.org/pdf/2510.24081](https://arxiv.org/pdf/2510.24081)
 
 **Date:** 2025-10-28
 
@@ -785,7 +785,7 @@ The benchmark measures physical commonsense reasoning, including culturally-spec
 
 ## Breaking the Benchmark: Revealing LLM Bias via Minimal Contextual Augmentation
 
-[https://arxiv.org/abs/2510.23921](https://arxiv.org/abs/2510.23921)
+[https://arxiv.org/pdf/2510.23921](https://arxiv.org/pdf/2510.23921)
 
 **Date:** 2025-10-27
 
@@ -794,7 +794,7 @@ Detection of stereotypical bias in ambiguous question-answering scenarios relate
 
 ## IPQA: A Benchmark for Core Intent Identification in Personalized Question Answering
 
-[https://arxiv.org/abs/2510.23536](https://arxiv.org/abs/2510.23536)
+[https://arxiv.org/pdf/2510.23536](https://arxiv.org/pdf/2510.23536)
 
 **Date:** 2025-10-27
 
@@ -803,7 +803,7 @@ Core intent identification in personalized questions about religious topics. The
 
 ## BaZi-Based Character Simulation Benchmark: Evaluating AI on Temporal and Persona Reasoning
 
-[https://arxiv.org/abs/2510.23337](https://arxiv.org/abs/2510.23337)
+[https://arxiv.org/pdf/2510.23337](https://arxiv.org/pdf/2510.23337)
 
 **Date:** 2025-10-27
 
@@ -812,7 +812,7 @@ The benchmark measured the ability of LLMs to perform persona reasoning and pred
 
 ## A Use-Case Specific Dataset for Measuring Dimensions of Responsible Performance in LLM-generated Text
 
-[https://arxiv.org/abs/2510.20782](https://arxiv.org/abs/2510.20782)
+[https://arxiv.org/pdf/2510.20782](https://arxiv.org/pdf/2510.20782)
 
 **Date:** 2025-10-23
 
@@ -821,7 +821,7 @@ Measurement of performance disparities (toxicity and accuracy) in LLM-generated 
 
 ## From Facts to Folklore: Evaluating Large Language Models on Bengali Cultural Knowledge
 
-[https://arxiv.org/abs/2510.20043](https://arxiv.org/abs/2510.20043)
+[https://arxiv.org/pdf/2510.20043](https://arxiv.org/pdf/2510.20043)
 
 **Date:** 2025-04-16
 
@@ -830,7 +830,7 @@ Knowledge of Bengali cultural terms and concepts related to religion. In Questio
 
 ## Exposing Blindspots: Cultural Bias Evaluation in Generative Image Models
 
-[https://arxiv.org/abs/2510.20042](https://arxiv.org/abs/2510.20042)
+[https://arxiv.org/pdf/2510.20042](https://arxiv.org/pdf/2510.20042)
 
 **Date:** 2025-10-22
 
@@ -839,7 +839,7 @@ The benchmark measured the cultural representation of 'religious ritual' as a su
 
 ## Quantifying Feature Importance for Online Content Moderation
 
-[https://arxiv.org/abs/2510.19882](https://arxiv.org/abs/2510.19882)
+[https://arxiv.org/pdf/2510.19882](https://arxiv.org/pdf/2510.19882)
 
 **Date:** 2025-10-22
 
@@ -848,7 +848,7 @@ The predictive power of user features, including a 'CULTURE' feature group that 
 
 ## PBBQ: A Persian Bias Benchmark Dataset Curated with Human-AI Collaboration for Large Language Models
 
-[https://arxiv.org/abs/2510.19616](https://arxiv.org/abs/2510.19616)
+[https://arxiv.org/pdf/2510.19616](https://arxiv.org/pdf/2510.19616)
 
 **Date:** 2025-10-22
 
@@ -857,7 +857,7 @@ The benchmark, PBBQ (Persian Bias Benchmark for Question-answering), measured so
 
 ## Context-aware Fairness Evaluation and Mitigation in LLMs
 
-[https://arxiv.org/abs/2510.18914](https://arxiv.org/abs/2510.18914)
+[https://arxiv.org/pdf/2510.18914](https://arxiv.org/pdf/2510.18914)
 
 **Date:** 2025-10-21
 
@@ -866,7 +866,7 @@ Stereotype and toxicity bias detection in multi-turn dialogues concerning demogr
 
 ## Beyond the Explicit: A Bilingual Dataset for Dehumanization Detection in Social Media
 
-[https://arxiv.org/abs/2510.18582](https://arxiv.org/abs/2510.18582)
+[https://arxiv.org/pdf/2510.18582](https://arxiv.org/pdf/2510.18582)
 
 **Date:** 2025-10-21
 
@@ -875,7 +875,7 @@ The benchmark measures the detection of dehumanizing language directed at variou
 
 ## SIMBENCH: BENCHMARKING THE ABILITY OF LARGE LANGUAGE MODELS TO SIMULATE HUMAN BEHAVIORS
 
-[https://arxiv.org/abs/2510.17516](https://arxiv.org/abs/2510.17516)
+[https://arxiv.org/pdf/2510.17516](https://arxiv.org/pdf/2510.17516)
 
 **Date:** 2025-10-27
 
@@ -884,7 +884,7 @@ The benchmark measures the ability of LLMs to simulate the group-level survey re
 
 ## MoReBench: Evaluating Procedural and Pluralistic Moral Reasoning in Language Models, More Than Outcomes
 
-[https://arxiv.org/abs/2510.16380](https://arxiv.org/abs/2510.16380)
+[https://arxiv.org/pdf/2510.16380](https://arxiv.org/pdf/2510.16380)
 
 **Date:** 2025-10-18
 
@@ -893,7 +893,7 @@ Procedural moral reasoning in scenarios involving religious contexts, as part of
 
 ## Echoes of Human Malice in Agents: Benchmarking LLMs for Multi-Turn Online Harassment Attacks
 
-[https://arxiv.org/abs/2510.14207](https://arxiv.org/abs/2510.14207)
+[https://arxiv.org/pdf/2510.14207](https://arxiv.org/pdf/2510.14207)
 
 **Date:** 2025-10-20
 
@@ -902,7 +902,7 @@ Generation of harassment targeting individuals based on their race/culture/sexua
 
 ## CRaFT: An Explanation-Based Framework for Evaluating Cultural Reasoning in Multilingual Language Models
 
-[https://arxiv.org/abs/2510.14014](https://arxiv.org/abs/2510.14014)
+[https://arxiv.org/pdf/2510.14014](https://arxiv.org/pdf/2510.14014)
 
 **Date:** 2025-06-01
 
@@ -911,7 +911,7 @@ Alignment of model explanations with culturally salient concepts, including 'Rel
 
 ## Evaluating Arabic Large Language Models: A Survey of Benchmarks, Methods, and Gaps
 
-[https://arxiv.org/abs/2510.13430](https://arxiv.org/abs/2510.13430)
+[https://arxiv.org/pdf/2510.13430](https://arxiv.org/pdf/2510.13430)
 
 **Date:** 2025-10-16
 
@@ -920,7 +920,7 @@ The paper surveys several benchmarks, including those measuring knowledge of Isl
 
 ## I Am Aligned, But With Whom? MENA Values Benchmark for Evaluating Cultural Alignment and Multilingual Bias in LLMs
 
-[https://arxiv.org/abs/2510.13154](https://arxiv.org/abs/2510.13154)
+[https://arxiv.org/pdf/2510.13154](https://arxiv.org/pdf/2510.13154)
 
 **Date:** 2025-10-15
 
@@ -929,7 +929,7 @@ The benchmark measures the cultural alignment of LLMs with the values of the Mid
 
 ## A CRITICAL REVIEW OF THE NEED FOR KNOWLEDGE–CENTRIC EVALUATION OF QURANIC RECITATION
 
-[https://arxiv.org/abs/2510.12858](https://arxiv.org/abs/2510.12858)
+[https://arxiv.org/pdf/2510.12858](https://arxiv.org/pdf/2510.12858)
 
 **Date:** 2025-11-10
 
@@ -938,7 +938,7 @@ Correctness of Quranic recitation based on the Islamic rules of Tajweed. The pap
 
 ## BENCHMARKING OPEN-SOURCE LARGE LANGUAGE MODELS FOR PERSIAN IN ZERO-SHOT AND FEW-SHOT LEARNING
 
-[https://arxiv.org/abs/2510.12807](https://arxiv.org/abs/2510.12807)
+[https://arxiv.org/pdf/2510.12807](https://arxiv.org/pdf/2510.12807)
 
 **Date:** 2025-10-05
 
@@ -947,7 +947,7 @@ Model knowledge on multiple-choice questions about Theology as part of the Persi
 
 ## VQArt-Bench: A semantically rich VQA Benchmark for Art and Cultural Heritage
 
-[https://arxiv.org/abs/2510.12750](https://arxiv.org/abs/2510.12750)
+[https://arxiv.org/pdf/2510.12750](https://arxiv.org/pdf/2510.12750)
 
 **Date:** 2025-10-14
 
@@ -956,7 +956,7 @@ The benchmark measures the ability of multimodal models to perform visual questi
 
 ## HALF: Harm-Aware LLM Fairness Evaluation Aligned with Deployment
 
-[https://arxiv.org/abs/2510.12217](https://arxiv.org/abs/2510.12217)
+[https://arxiv.org/pdf/2510.12217](https://arxiv.org/pdf/2510.12217)
 
 **Date:** 2025-10-16
 
@@ -965,7 +965,7 @@ The benchmark measured sentiment and toxicity in open-ended text generation prom
 
 ## Do Psychometric Tests Work for Large Language Models? Evaluation of Tests on Sexism, Racism, and Morality
 
-[https://arxiv.org/abs/2510.11254](https://arxiv.org/abs/2510.11254)
+[https://arxiv.org/pdf/2510.11254](https://arxiv.org/pdf/2510.11254)
 
 **Date:** 2025-10-13
 
@@ -974,7 +974,7 @@ The benchmark measured the endorsement of the 'purity/sanctity' moral foundation
 
 ## DITING: A Multi-Agent Evaluation Framework for Benchmarking Web Novel Translation
 
-[https://arxiv.org/abs/2510.09116](https://arxiv.org/abs/2510.09116)
+[https://arxiv.org/pdf/2510.09116](https://arxiv.org/pdf/2510.09116)
 
 **Date:** 2025-10-13
 
@@ -983,7 +983,7 @@ The benchmark, DITING, measures the quality of translation for 'religious or int
 
 ## Web Crawler Restrictions, AI Training Datasets & Political Biases
 
-[https://arxiv.org/abs/2510.09031](https://arxiv.org/abs/2510.09031)
+[https://arxiv.org/pdf/2510.09031](https://arxiv.org/pdf/2510.09031)
 
 **Date:** 2025-10-10
 
@@ -992,7 +992,7 @@ Analysis of word co-occurrence patterns in hyperpartisan text to identify the ov
 
 ## MMA-ASIA: A MULTILINGUAL AND MULTI-MODAL ALIGNMENT FRAMEWORK FOR CULTURALLY-GROUNDED EVALUATION
 
-[https://arxiv.org/abs/2510.08608](https://arxiv.org/abs/2510.08608)
+[https://arxiv.org/pdf/2510.08608](https://arxiv.org/pdf/2510.08608)
 
 **Date:** 2025-10-07
 
@@ -1001,7 +1001,7 @@ Knowledge of cultural elements, including religious buildings and mythological f
 
 ## Pragyaan: Designing and Curating High-Quality Cultural Post-Training Datasets for Indian Languages
 
-[https://arxiv.org/abs/2510.07000](https://arxiv.org/abs/2510.07000)
+[https://arxiv.org/pdf/2510.07000](https://arxiv.org/pdf/2510.07000)
 
 **Date:** 2025-10-08
 
@@ -1010,7 +1010,7 @@ knowledge and safe handling of prompts related to Indian religions The paper's p
 
 ## EVALUESTEER: MEASURING REWARD MODEL STEERABILITY TOWARDS VALUES AND PREFERENCES
 
-[https://arxiv.org/abs/2510.06370](https://arxiv.org/abs/2510.06370)
+[https://arxiv.org/pdf/2510.06370](https://arxiv.org/pdf/2510.06370)
 
 **Date:** 2025-10-09
 
@@ -1019,7 +1019,7 @@ Steerability of models to align with user profiles on the value of religiosity (
 
 ## EvalMORAAL: Interpretable Chain-of-Thought and LLM-as-Judge Evaluation for Moral Alignment in Large Language Models
 
-[https://arxiv.org/abs/2510.05942](https://arxiv.org/abs/2510.05942)
+[https://arxiv.org/pdf/2510.05942](https://arxiv.org/pdf/2510.05942)
 
 **Date:** 2025-10-08
 
@@ -1028,7 +1028,7 @@ The benchmark measures the moral alignment of Large Language Models with human s
 
 ## Hire Your Anthropologist! Rethinking Culture Benchmarks Through an Anthropological Lens
 
-[https://arxiv.org/abs/2510.05931](https://arxiv.org/abs/2510.05931)
+[https://arxiv.org/pdf/2510.05931](https://arxiv.org/pdf/2510.05931)
 
 **Date:** 2025-10-22
 
@@ -1037,7 +1037,7 @@ The paper critiques existing cultural benchmarks for their failure to adequately
 
 ## VAL-BENCH: BELIEF CONSISTENCY AS A MEASURE FOR VALUE ALIGNMENT IN LANGUAGE MODELS
 
-[https://arxiv.org/abs/2510.05465](https://arxiv.org/abs/2510.05465)
+[https://arxiv.org/pdf/2510.05465](https://arxiv.org/pdf/2510.05465)
 
 **Date:** 2026-01-14
 
@@ -1046,7 +1046,7 @@ The benchmark measures the consistency of language model belief expressions when
 
 ## EVALUATING LLMS FOR DEMOGRAPHIC-TARGETED SOCIAL BIAS DETECTION: A COMPREHENSIVE BENCHMARK STUDY
 
-[https://arxiv.org/abs/2510.04641](https://arxiv.org/abs/2510.04641)
+[https://arxiv.org/pdf/2510.04641](https://arxiv.org/pdf/2510.04641)
 
 **Date:** 2025-10-13
 
@@ -1055,7 +1055,7 @@ The benchmark measured the ability of Large Language Models to detect harmful de
 
 ## Psychological Steering in LLMs: An Evaluation of Effectiveness and Trustworthiness
 
-[https://arxiv.org/abs/2510.04484](https://arxiv.org/abs/2510.04484)
+[https://arxiv.org/pdf/2510.04484](https://arxiv.org/pdf/2510.04484)
 
 **Date:** 2025-10-06
 
@@ -1064,7 +1064,7 @@ The benchmark utilized, TrustLLM, includes a fairness evaluation that measures '
 
 ## Red Lines and Grey Zones in the Fog of War: Benchmarking Legal Risk, Moral Harm, and Regional Bias in Large Language Model Military Decision-Making
 
-[https://arxiv.org/abs/2510.03514](https://arxiv.org/abs/2510.03514)
+[https://arxiv.org/pdf/2510.03514](https://arxiv.org/pdf/2510.03514)
 
 **Date:** 2025-10-03
 
@@ -1073,7 +1073,7 @@ The benchmark measured the propensity of Large Language Models to select a 'Reli
 
 ## IndiCASA: A Dataset and Bias Evaluation Framework in LLMs Using Contrastive Embedding Similarity in the Indian Context
 
-[https://arxiv.org/abs/2510.02742](https://arxiv.org/abs/2510.02742)
+[https://arxiv.org/pdf/2510.02742](https://arxiv.org/pdf/2510.02742)
 
 **Date:** 2025-10-03
 
@@ -1082,7 +1082,7 @@ Detection of stereotypical and anti-stereotypical biases related to religion wit
 
 ## The Social Laboratory: A Psychometric Framework for Multi-Agent LLM Evaluation
 
-[https://arxiv.org/abs/2510.01295](https://arxiv.org/abs/2510.01295)
+[https://arxiv.org/pdf/2510.01295](https://arxiv.org/pdf/2510.01295)
 
 **Date:** 2025-10-01
 
@@ -1091,7 +1091,7 @@ The benchmark measured the emergent social and cognitive dynamics (e.g., consens
 
 ## BIASFREEBENCH: A BENCHMARK FOR MITIGATING BIAS IN LARGE LANGUAGE MODEL RESPONSES
 
-[https://arxiv.org/abs/2510.00232](https://arxiv.org/abs/2510.00232)
+[https://arxiv.org/pdf/2510.00232](https://arxiv.org/pdf/2510.00232)
 
 **Date:** 2025-09-30
 
@@ -1100,7 +1100,7 @@ The benchmark measures stereotype detection and mitigation in religious contexts
 
 ## PRIMEX: A Dataset of Worldview, Opinion, and Explanation
 
-[https://arxiv.org/abs/2510.00174](https://arxiv.org/abs/2510.00174)
+[https://arxiv.org/pdf/2510.00174](https://arxiv.org/pdf/2510.00174)
 
 **Date:** 2025-09-30
 
@@ -1109,7 +1109,7 @@ Measurement of opinions on the role of God/higher power in human evolution, the 
 
 ## CULTURE IN A FRAME: C3B AS A COMIC-BASED BENCHMARK FOR MULTIMODAL CULTURALLY AWARENESS
 
-[https://arxiv.org/abs/2510.00041](https://arxiv.org/abs/2510.00041)
+[https://arxiv.org/pdf/2510.00041](https://arxiv.org/pdf/2510.00041)
 
 **Date:** 2025-09-27
 
@@ -1118,7 +1118,7 @@ Identification of religious objects (e.g., 'Russian Orthodox church') and potent
 
 ## TAU: A BENCHMARK FOR CULTURAL SOUND UNDERSTANDING BEYOND SEMANTICS
 
-[https://arxiv.org/abs/2509.26329](https://arxiv.org/abs/2509.26329)
+[https://arxiv.org/pdf/2509.26329](https://arxiv.org/pdf/2509.26329)
 
 **Date:** 2025-09-30
 
@@ -1127,7 +1127,7 @@ The benchmark measures the ability of models to recognize culturally specific so
 
 ## ROLECONFLICTBENCH: A BENCHMARK OF ROLE CONFLICT SCENARIOS FOR EVALUATING LLMS’ CONTEXTUAL SENSITIVITY
 
-[https://arxiv.org/abs/2509.25897](https://arxiv.org/abs/2509.25897)
+[https://arxiv.org/pdf/2509.25897](https://arxiv.org/pdf/2509.25897)
 
 **Date:** 2025-09-30
 
@@ -1136,7 +1136,7 @@ The benchmark measured the preference bias of LLMs towards specific religious ro
 
 ## THE FLAW OF AVERAGES: QUANTIFYING UNIFORMITY OF PERFORMANCE ON BENCHMARKS
 
-[https://arxiv.org/abs/2509.25671](https://arxiv.org/abs/2509.25671)
+[https://arxiv.org/pdf/2509.25671](https://arxiv.org/pdf/2509.25671)
 
 **Date:** 2025-09-30
 
@@ -1145,7 +1145,7 @@ The paper evaluated the MMLU 'World Religions' subtask to measure the uniformity
 
 ## Bias Mitigation or Cultural Commonsense? Evaluating LLMs with a Japanese Dataset
 
-[https://arxiv.org/abs/2509.24468](https://arxiv.org/abs/2509.24468)
+[https://arxiv.org/pdf/2509.24468](https://arxiv.org/pdf/2509.24468)
 
 **Date:** 2025-09-29
 
@@ -1154,7 +1154,7 @@ Stereotype detection in religious contexts, as part of a fine-tuning experiment 
 
 ## Assessing Visual Privacy Risks in Multimodal AI: A Novel Taxonomy-Grounded Evaluation of Vision-Language Models
 
-[https://arxiv.org/abs/2509.23827](https://arxiv.org/abs/2509.23827)
+[https://arxiv.org/pdf/2509.23827](https://arxiv.org/pdf/2509.23827)
 
 **Date:** 2025-09-28
 
@@ -1163,7 +1163,7 @@ Detection of religious affiliation or context as a private 'Personal Metadata' c
 
 ## FALCON: A CROSS-MODAL EVALUATION DATASET FOR COMPREHENSIVE SAFETY PERCEPTION
 
-[https://arxiv.org/abs/2509.23783](https://arxiv.org/abs/2509.23783)
+[https://arxiv.org/pdf/2509.23783](https://arxiv.org/pdf/2509.23783)
 
 **Date:** 2025-09-28
 
@@ -1172,7 +1172,7 @@ The benchmark, as part of its 'Hate Speech' category, measures content that expr
 
 ## Mapping Overlaps in Benchmarks through Perplexity in the Wild
 
-[https://arxiv.org/abs/2509.23488](https://arxiv.org/abs/2509.23488)
+[https://arxiv.org/pdf/2509.23488](https://arxiv.org/pdf/2509.23488)
 
 **Date:** 2025-11-03
 
@@ -1181,7 +1181,7 @@ Knowledge of world religions, as part of the MMLU benchmark, to analyze overlaps
 
 ## A Structured Framework for Evaluating and Enhancing Interpretive Capabilities of Multimodal LLMs in Culturally Situated Tasks
 
-[https://arxiv.org/abs/2509.23208](https://arxiv.org/abs/2509.23208)
+[https://arxiv.org/pdf/2509.23208](https://arxiv.org/pdf/2509.23208)
 
 **Date:** 2025-09-27
 
@@ -1190,7 +1190,7 @@ The benchmark measures the ability of VLMs to adopt specific religious and spiri
 
 ## Beyond Western Politics: Cross-Cultural Benchmarks for Evaluating Partisan Associations in LLMs
 
-[https://arxiv.org/abs/2509.22711](https://arxiv.org/abs/2509.22711)
+[https://arxiv.org/pdf/2509.22711](https://arxiv.org/pdf/2509.22711)
 
 **Date:** 2025-09-24
 
@@ -1199,7 +1199,7 @@ The benchmark measures LLMs' susceptibility to making harmful partisan associati
 
 ## Evaluating the Infinite
 
-[https://arxiv.org/abs/2509.19389](https://arxiv.org/abs/2509.19389)
+[https://arxiv.org/pdf/2509.19389](https://arxiv.org/pdf/2509.19389)
 
 **Date:** 
 
@@ -1208,7 +1208,7 @@ The paper analyzes Pascal's Wager, a philosophical argument related to Christian
 
 ## Benchmarking and Improving LLM Robustness for Personalized Generation
 
-[https://arxiv.org/abs/2509.19358](https://arxiv.org/abs/2509.19358)
+[https://arxiv.org/pdf/2509.19358](https://arxiv.org/pdf/2509.19358)
 
 **Date:** 2025-09-18
 
@@ -1217,7 +1217,7 @@ The impact of user preferences on the factual accuracy of LLM responses to quest
 
 ## DRISHTIKON: A Multimodal Multilingual Benchmark for Testing Language Models’ Understanding on Indian Culture
 
-[https://arxiv.org/abs/2509.19274](https://arxiv.org/abs/2509.19274)
+[https://arxiv.org/pdf/2509.19274](https://arxiv.org/pdf/2509.19274)
 
 **Date:** 2025-09-23
 
@@ -1226,7 +1226,7 @@ The benchmark measures knowledge of religious symbols, rituals, deities, and pra
 
 ## BENCHMARKING VISION-LANGUAGE AND MULTIMODAL LARGE LANGUAGE MODELS IN ZERO-SHOT AND FEW-SHOT SCENARIOS: A STUDY ON CHRISTIAN ICONOGRAPHY
 
-[https://arxiv.org/abs/2509.18839](https://arxiv.org/abs/2509.18839)
+[https://arxiv.org/pdf/2509.18839](https://arxiv.org/pdf/2509.18839)
 
 **Date:** 2025-09-23
 
@@ -1235,7 +1235,7 @@ The benchmark measured the performance of vision-language and multimodal large l
 
 ## Evaluating Large Language Models for Detecting Antisemitism
 
-[https://arxiv.org/abs/2509.18293](https://arxiv.org/abs/2509.18293)
+[https://arxiv.org/pdf/2509.18293](https://arxiv.org/pdf/2509.18293)
 
 **Date:** 2025-11-04
 
@@ -1244,7 +1244,7 @@ Detection of antisemitism (hatred toward Jews) in social media content using the
 
 ## D-REX: A BENCHMARK FOR DETECTING DECEPTIVE REASONING IN LARGE LANGUAGE MODELS
 
-[https://arxiv.org/abs/2509.17938](https://arxiv.org/abs/2509.17938)
+[https://arxiv.org/pdf/2509.17938](https://arxiv.org/pdf/2509.17938)
 
 **Date:** 2025-09-22
 
@@ -1253,7 +1253,7 @@ The benchmark measured a model's susceptibility to deceptive reasoning in a reli
 
 ## DIWALI - Diversity and Inclusivity aWare cuLture specific Items for India: Dataset and Assessment of LLMs for Cultural Text Adaptation in Indian Context
 
-[https://arxiv.org/abs/2509.17399](https://arxiv.org/abs/2509.17399)
+[https://arxiv.org/pdf/2509.17399](https://arxiv.org/pdf/2509.17399)
 
 **Date:** 2025-12-16
 
@@ -1262,7 +1262,7 @@ The benchmark measures the ability of Large Language Models (LLMs) to perform cu
 
 ## Cognitive Linguistic Identity Fusion Score (CLIFS): A Scalable Cognition-Informed Approach to Quantifying Identity Fusion from Text
 
-[https://arxiv.org/abs/2509.16813](https://arxiv.org/abs/2509.16813)
+[https://arxiv.org/pdf/2509.16813](https://arxiv.org/pdf/2509.16813)
 
 **Date:** 2025-09-20
 
@@ -1271,7 +1271,7 @@ Quantifying identity fusion (the psychological merging of self) with a religious
 
 ## Seeing Culture: A Benchmark for Visual Reasoning and Grounding
 
-[https://arxiv.org/abs/2509.16517](https://arxiv.org/abs/2509.16517)
+[https://arxiv.org/pdf/2509.16517](https://arxiv.org/pdf/2509.16517)
 
 **Date:** 2025-09-20
 
@@ -1280,7 +1280,7 @@ The benchmark measures visual reasoning and grounding on cultural artifacts and 
 
 ## PoliTok-DE: A Multimodal Dataset of Political TikToks and Deletions From Germany
 
-[https://arxiv.org/abs/2509.15860](https://arxiv.org/abs/2509.15860)
+[https://arxiv.org/pdf/2509.15860](https://arxiv.org/pdf/2509.15860)
 
 **Date:** 2025-09-19
 
@@ -1289,7 +1289,7 @@ Measurement of 'eudaimonic entertainment', which is defined in the codebook as c
 
 ## Toxicity Red-Teaming: Benchmarking LLM Safety in Singapore’s Low-Resource Languages
 
-[https://arxiv.org/abs/2509.15260](https://arxiv.org/abs/2509.15260)
+[https://arxiv.org/pdf/2509.15260](https://arxiv.org/pdf/2509.15260)
 
 **Date:** 2025-09-23
 
@@ -1298,7 +1298,7 @@ Detection of toxic bias against specific religious groups by evaluating model pr
 
 ## STEERINGSAFETY: A SYSTEMATIC SAFETY EVALUATION FRAMEWORK OF REPRESENTATION STEERING IN LLMS
 
-[https://arxiv.org/abs/2509.13450](https://arxiv.org/abs/2509.13450)
+[https://arxiv.org/pdf/2509.13450](https://arxiv.org/pdf/2509.13450)
 
 **Date:** 2025-10-16
 
@@ -1307,7 +1307,7 @@ Stereotype detection related to religion, as part of the implicit bias evaluatio
 
 ## Rethinking the Evaluation of Alignment Methods: Insights into Diversity, Generalisation, and Safety
 
-[https://arxiv.org/abs/2509.12936](https://arxiv.org/abs/2509.12936)
+[https://arxiv.org/pdf/2509.12936](https://arxiv.org/pdf/2509.12936)
 
 **Date:** 2025-09-16
 
@@ -1316,7 +1316,7 @@ Detection of harmful, discriminatory, or hostile speech related to religion as a
 
 ## MORABLES: A Benchmark for Assessing Abstract Moral Reasoning in LLMs with Fables
 
-[https://arxiv.org/abs/2509.12371](https://arxiv.org/abs/2509.12371)
+[https://arxiv.org/pdf/2509.12371](https://arxiv.org/pdf/2509.12371)
 
 **Date:** 2025-09-15
 
@@ -1325,7 +1325,7 @@ The benchmark measures abstract moral reasoning in Large Language Models using f
 
 ## MTEB-NL and E5-NL: Embedding Benchmark and Models for Dutch
 
-[https://arxiv.org/abs/2509.12340](https://arxiv.org/abs/2509.12340)
+[https://arxiv.org/pdf/2509.12340](https://arxiv.org/pdf/2509.12340)
 
 **Date:** 2025-09-15
 
@@ -1334,7 +1334,7 @@ The benchmark includes the 'IconclassClassification' dataset, which measures a m
 
 ## JustEva: A Toolkit to Evaluate LLM Fairness in Legal Knowledge Inference
 
-[https://arxiv.org/abs/2509.12104](https://arxiv.org/abs/2509.12104)
+[https://arxiv.org/pdf/2509.12104](https://arxiv.org/pdf/2509.12104)
 
 **Date:** 2025-09-15
 
@@ -1343,7 +1343,7 @@ Bias in legal sentencing predictions based on the judge's specified religion, as
 
 ## A Taxonomy of Response Strategies to Toxic Online Content: Evaluating the Evidence
 
-[https://arxiv.org/abs/2509.09921](https://arxiv.org/abs/2509.09921)
+[https://arxiv.org/pdf/2509.09921](https://arxiv.org/pdf/2509.09921)
 
 **Date:** 2025-01-01
 
@@ -1352,7 +1352,7 @@ The paper identifies and evaluates 'using religious teachings, values, and langu
 
 ## Benchmarking Vision-Language Models on Chinese Ancient Documents: From OCR to Knowledge Reasoning
 
-[https://arxiv.org/abs/2509.09731](https://arxiv.org/abs/2509.09731)
+[https://arxiv.org/pdf/2509.09731](https://arxiv.org/pdf/2509.09731)
 
 **Date:** 2025-09-10
 
@@ -1361,7 +1361,7 @@ Knowledge of ancient Chinese philosophical and religious systems (e.g., Confucia
 
 ## Bridging the Gap Between Ideal and Real-world Evaluation: Benchmarking AI-Generated Image Detection in Challenging Scenarios
 
-[https://arxiv.org/abs/2509.09172](https://arxiv.org/abs/2509.09172)
+[https://arxiv.org/pdf/2509.09172](https://arxiv.org/pdf/2509.09172)
 
 **Date:** 2025-09-11
 
@@ -1370,7 +1370,7 @@ The ability of AI models and humans to detect AI-generated images within the 'Cu
 
 ## HUMANAGENCYBENCH: Scalable Evaluation of Human Agency Support in AI Assistants
 
-[https://arxiv.org/abs/2509.08494](https://arxiv.org/abs/2509.08494)
+[https://arxiv.org/pdf/2509.08494](https://arxiv.org/pdf/2509.08494)
 
 **Date:** 2025-09-10
 
@@ -1379,7 +1379,7 @@ The benchmark measured the AI's ability to maintain professional/personal bounda
 
 ## EPT Benchmark: Evaluation of Persian Trustworthiness in Large Language Models
 
-[https://arxiv.org/abs/2509.06838](https://arxiv.org/abs/2509.06838)
+[https://arxiv.org/pdf/2509.06838](https://arxiv.org/pdf/2509.06838)
 
 **Date:** 2025-09-08
 
@@ -1388,7 +1388,7 @@ Alignment of Large Language Models with Persian-Islamic ethical and cultural val
 
 ## KatotohananQA: Evaluating Truthfulness of Large Language Models in Filipino
 
-[https://arxiv.org/abs/2509.06065](https://arxiv.org/abs/2509.06065)
+[https://arxiv.org/pdf/2509.06065](https://arxiv.org/pdf/2509.06065)
 
 **Date:** 2025-09-07
 
@@ -1397,7 +1397,7 @@ Factual accuracy of LLMs on questions categorized under 'Religion' as part of a 
 
 ## Self-adaptive Dataset Construction for Real-World Multimodal Safety Scenarios
 
-[https://arxiv.org/abs/2509.04403](https://arxiv.org/abs/2509.04403)
+[https://arxiv.org/pdf/2509.04403](https://arxiv.org/pdf/2509.04403)
 
 **Date:** 2025-09-04
 
@@ -1406,7 +1406,7 @@ Detecting unsafe scenarios arising from conflicts between different belief syste
 
 ## What if I ask in alia lingua? Measuring Functional Similarity Across Languages
 
-[https://arxiv.org/abs/2509.04032](https://arxiv.org/abs/2509.04032)
+[https://arxiv.org/pdf/2509.04032](https://arxiv.org/pdf/2509.04032)
 
 **Date:** 2025-10-02
 
@@ -1415,7 +1415,7 @@ The benchmark measured the functional similarity (consistency) of model outputs 
 
 ## What Would an LLM Do? Evaluating Policymaking Capabilities of Large Language Models
 
-[https://arxiv.org/abs/2509.03827](https://arxiv.org/abs/2509.03827)
+[https://arxiv.org/pdf/2509.03827](https://arxiv.org/pdf/2509.03827)
 
 **Date:** 
 
@@ -1424,7 +1424,7 @@ How Large Language Models handle social policy decisions in scenarios that inclu
 
 ## SinhalaMMLU: A Comprehensive Benchmark for Evaluating Multitask Language Understanding in Sinhala
 
-[https://arxiv.org/abs/2509.03162](https://arxiv.org/abs/2509.03162)
+[https://arxiv.org/pdf/2509.03162](https://arxiv.org/pdf/2509.03162)
 
 **Date:** 2025-09-03
 
@@ -1433,7 +1433,7 @@ The benchmark measures knowledge of religious concepts, specifically Buddhism, C
 
 ## PalmX 2025: The First Shared Task on Benchmarking LLMs on Arabic and Islamic Culture
 
-[https://arxiv.org/abs/2509.02550](https://arxiv.org/abs/2509.02550)
+[https://arxiv.org/pdf/2509.02550](https://arxiv.org/pdf/2509.02550)
 
 **Date:** 2025-09-02
 
@@ -1442,7 +1442,7 @@ Knowledge of Islamic culture, including rituals, Quran, Hadith, history, and rel
 
 ## SpecEval: Evaluating Model Adherence to Behavior Specifications
 
-[https://arxiv.org/abs/2509.02464](https://arxiv.org/abs/2509.02464)
+[https://arxiv.org/pdf/2509.02464](https://arxiv.org/pdf/2509.02464)
 
 **Date:** 2025-10-22
 
@@ -1451,7 +1451,7 @@ The benchmark measures model adherence to developer-published behavioral specifi
 
 ## EigenBench: A Comparative Behavioral Measure of Value Alignment
 
-[https://arxiv.org/abs/2509.01938](https://arxiv.org/abs/2509.01938)
+[https://arxiv.org/pdf/2509.01938](https://arxiv.org/pdf/2509.01938)
 
 **Date:** 2025-09-26
 
@@ -1460,7 +1460,7 @@ The benchmark measures a language model's alignment with a given, user-defined v
 
 ## Assessing Large Language Models on Islamic Legal Reasoning: Evidence from Inheritance Law Evaluation
 
-[https://arxiv.org/abs/2509.01081](https://arxiv.org/abs/2509.01081)
+[https://arxiv.org/pdf/2509.01081](https://arxiv.org/pdf/2509.01081)
 
 **Date:** 2025-09-17
 
@@ -1469,7 +1469,7 @@ The benchmark measures the knowledge and reasoning capabilities of Large Languag
 
 ## Mapping Toxic Comments Across Demographics: A Dataset from German Public Broadcasting
 
-[https://arxiv.org/abs/2508.21084](https://arxiv.org/abs/2508.21084)
+[https://arxiv.org/pdf/2508.21084](https://arxiv.org/pdf/2508.21084)
 
 **Date:** 2025-08-26
 
@@ -1478,7 +1478,7 @@ Detection of toxic speech targeted at religion, as part of a broader multi-label
 
 ## Understanding and evaluating computer vision models through the lens of counterfactuals
 
-[https://arxiv.org/abs/2508.20881](https://arxiv.org/abs/2508.20881)
+[https://arxiv.org/pdf/2508.20881](https://arxiv.org/pdf/2508.20881)
 
 **Date:** 2025-08-28
 
@@ -1487,7 +1487,7 @@ The proposed frameworks (TIBET, BiasConnect, BiasGraph) measure intersectional b
 
 ## Specializing General-purpose LLM Embeddings for Implicit Hate Speech Detection across Datasets
 
-[https://arxiv.org/abs/2508.20750](https://arxiv.org/abs/2508.20750)
+[https://arxiv.org/pdf/2508.20750](https://arxiv.org/pdf/2508.20750)
 
 **Date:** 2025-08-28
 
@@ -1496,7 +1496,7 @@ Detection of implicit hate speech and bias directed towards specific religious g
 
 ## How Quantization Shapes Bias in Large Language Models
 
-[https://arxiv.org/abs/2508.18088](https://arxiv.org/abs/2508.18088)
+[https://arxiv.org/pdf/2508.18088](https://arxiv.org/pdf/2508.18088)
 
 **Date:** 2026-01-15
 
@@ -1505,7 +1505,7 @@ The benchmarks measured stereotype detection, fairness, and toxicity/sentiment d
 
 ## UI-LEVEL EVALUATION OF ALLAM 34B: MEASURING AN ARABIC-CENTRIC LLM VIA HUMAIN CHAT
 
-[https://arxiv.org/abs/2508.17378](https://arxiv.org/abs/2508.17378)
+[https://arxiv.org/pdf/2508.17378](https://arxiv.org/pdf/2508.17378)
 
 **Date:** 2025-08-24
 
@@ -1514,7 +1514,7 @@ The paper evaluates the model's 'cultural alignment,' which includes its ability
 
 ## Toward Socially Aware Vision-Language Models: Evaluating Cultural Competence Through Multimodal Story Generation
 
-[https://arxiv.org/abs/2508.16762](https://arxiv.org/abs/2508.16762)
+[https://arxiv.org/pdf/2508.16762](https://arxiv.org/pdf/2508.16762)
 
 **Date:** 2025-08-22
 
@@ -1523,7 +1523,7 @@ The benchmark indirectly measured religious knowledge as a component of cultural
 
 ## CETVEL: A Unified Benchmark for Evaluating Language Understanding, Generation and Cultural Capacity of LLMs for Turkish
 
-[https://arxiv.org/abs/2508.16431](https://arxiv.org/abs/2508.16431)
+[https://arxiv.org/pdf/2508.16431](https://arxiv.org/pdf/2508.16431)
 
 **Date:** 2025-08-22
 
@@ -1532,7 +1532,7 @@ The benchmark measured knowledge of Turkish and Islamic history through an extra
 
 ## MizanQA: Benchmarking Large Language Models on Moroccan Legal Question Answering
 
-[https://arxiv.org/abs/2508.16357](https://arxiv.org/abs/2508.16357)
+[https://arxiv.org/pdf/2508.16357](https://arxiv.org/pdf/2508.16357)
 
 **Date:** 2025-08-22
 
@@ -1541,7 +1541,7 @@ Knowledge of Moroccan law, which is significantly influenced by Islamic Maliki j
 
 ## ParamBench: A Graduate-Level Benchmark for Evaluating LLM Understanding on Indic Subjects
 
-[https://arxiv.org/abs/2508.16185](https://arxiv.org/abs/2508.16185)
+[https://arxiv.org/pdf/2508.16185](https://arxiv.org/pdf/2508.16185)
 
 **Date:** 2025-01-01
 
@@ -1550,7 +1550,7 @@ The benchmark measured graduate-level knowledge of 21 diverse subjects in the In
 
 ## Benchmarking the Legal Reasoning of LLMs in Arabic Islamic Inheritance Cases
 
-[https://arxiv.org/abs/2508.15796](https://arxiv.org/abs/2508.15796)
+[https://arxiv.org/pdf/2508.15796](https://arxiv.org/pdf/2508.15796)
 
 **Date:** 2025-08-13
 
@@ -1559,7 +1559,7 @@ The benchmark measured the ability of Large Language Models to accurately interp
 
 ## Unveiling Trust in Multimodal Large Language Models: Evaluation, Analysis, and Mitigation
 
-[https://arxiv.org/abs/2508.15370](https://arxiv.org/abs/2508.15370)
+[https://arxiv.org/pdf/2508.15370](https://arxiv.org/pdf/2508.15370)
 
 **Date:** 2025-08-21
 
@@ -1568,7 +1568,7 @@ The benchmark measures the model's sensitivity to stereotypical queries involvin
 
 ## Beyond Human Judgment: A Bayesian Evaluation of LLMs’ Moral Values Understanding
 
-[https://arxiv.org/abs/2508.13804](https://arxiv.org/abs/2508.13804)
+[https://arxiv.org/pdf/2508.13804](https://arxiv.org/pdf/2508.13804)
 
 **Date:** 2025-11-20
 
@@ -1577,7 +1577,7 @@ Detection of moral language related to the Sanctity/Degradation foundation, whic
 
 ## LinguaSafe: A Comprehensive Multilingual Safety Benchmark for Large Language Models
 
-[https://arxiv.org/abs/2508.12733](https://arxiv.org/abs/2508.12733)
+[https://arxiv.org/pdf/2508.12733](https://arxiv.org/pdf/2508.12733)
 
 **Date:** 2025-08-27
 
@@ -1586,7 +1586,7 @@ The benchmark measures LLM safety against prompts that promote discrimination, p
 
 ## SEA-BED: Southeast Asia Embedding Benchmark
 
-[https://arxiv.org/abs/2508.12243](https://arxiv.org/abs/2508.12243)
+[https://arxiv.org/pdf/2508.12243](https://arxiv.org/pdf/2508.12243)
 
 **Date:** 2025-08-25
 
@@ -1595,7 +1595,7 @@ Model performance on tasks like question answering and retrieval using datasets 
 
 ## LETToT: Label-Free Evaluation of Large Language Models On Tourism Using Expert Tree-of-Thought
 
-[https://arxiv.org/abs/2508.11280](https://arxiv.org/abs/2508.11280)
+[https://arxiv.org/pdf/2508.11280](https://arxiv.org/pdf/2508.11280)
 
 **Date:** 2025-08-25
 
@@ -1604,7 +1604,7 @@ The benchmark measured the model's ability to generate practical travel informat
 
 ## PakBBQ: A Culturally Adapted Bias Benchmark for QA
 
-[https://arxiv.org/abs/2508.10186](https://arxiv.org/abs/2508.10186)
+[https://arxiv.org/pdf/2508.10186](https://arxiv.org/pdf/2508.10186)
 
 **Date:** 2025-09-28
 
@@ -1613,7 +1613,7 @@ The benchmark measured stereotypical biases related to religion, specifically fo
 
 ## mSCoRe: a Multilingual and Scalable Benchmark for Skill-based Commonsense Reasoning
 
-[https://arxiv.org/abs/2508.10137](https://arxiv.org/abs/2508.10137)
+[https://arxiv.org/pdf/2508.10137](https://arxiv.org/pdf/2508.10137)
 
 **Date:** 2025-08-13
 
@@ -1622,7 +1622,7 @@ The benchmark measures commonsense reasoning in social situations involving cult
 
 ## A Transparent Fairness Evaluation Protocol for Open-Source Language Model Benchmarking on the Blockchain
 
-[https://arxiv.org/abs/2508.09993](https://arxiv.org/abs/2508.09993)
+[https://arxiv.org/pdf/2508.09993](https://arxiv.org/pdf/2508.09993)
 
 **Date:** 2025-07-29
 
@@ -1631,7 +1631,7 @@ The benchmark measured stereotypical social bias in contextual associations rela
 
 ## SHALE: A Scalable Benchmark for Fine-grained Hallucination Evaluation in LVLMs
 
-[https://arxiv.org/abs/2508.09584](https://arxiv.org/abs/2508.09584)
+[https://arxiv.org/pdf/2508.09584](https://arxiv.org/pdf/2508.09584)
 
 **Date:** 2025-08-14
 
@@ -1640,7 +1640,7 @@ The benchmark measured the factual accuracy of Large Vision-Language Models on t
 
 ## Ideometrics: The Science of Generating, Evaluating and Prioritising Ideas
 
-[https://arxiv.org/abs/2508.08304](https://arxiv.org/abs/2508.08304)
+[https://arxiv.org/pdf/2508.08304](https://arxiv.org/pdf/2508.08304)
 
 **Date:** 
 
@@ -1649,7 +1649,7 @@ The paper does not conduct a benchmark measurement. It conceptually discusses fa
 
 ## Sacred or Synthetic? Evaluating LLM Reliability and Abstention for Religious Questions
 
-[https://arxiv.org/abs/2508.08287](https://arxiv.org/abs/2508.08287)
+[https://arxiv.org/pdf/2508.08287](https://arxiv.org/pdf/2508.08287)
 
 **Date:** 2025-08-04
 
@@ -1658,7 +1658,7 @@ The benchmark, FiqhQA, measures the accuracy of Large Language Models in generat
 
 ## CCFQA: A Benchmark for Cross-Lingual and Cross-Modal Speech and Text Factuality Evaluation
 
-[https://arxiv.org/abs/2508.07295](https://arxiv.org/abs/2508.07295)
+[https://arxiv.org/pdf/2508.07295](https://arxiv.org/pdf/2508.07295)
 
 **Date:** 2025-12-01
 
@@ -1667,7 +1667,7 @@ The benchmark measures the factual knowledge consistency of Multimodal Large Lan
 
 ## BharatBBQ: A Multilingual Bias Benchmark for Question Answering in the Indian Context
 
-[https://arxiv.org/abs/2508.07090](https://arxiv.org/abs/2508.07090)
+[https://arxiv.org/pdf/2508.07090](https://arxiv.org/pdf/2508.07090)
 
 **Date:** 2025-08-09
 
@@ -1676,7 +1676,7 @@ The benchmark measures stereotypical biases associated with religious groups and
 
 ## Towards Safer AI Moderation: Evaluating LLM Moderators Through a Unified Benchmark Dataset and Advocating a Human-First Approach
 
-[https://arxiv.org/abs/2508.07063](https://arxiv.org/abs/2508.07063)
+[https://arxiv.org/pdf/2508.07063](https://arxiv.org/pdf/2508.07063)
 
 **Date:** 2025-08-09
 
@@ -1685,7 +1685,7 @@ The benchmark measured the performance (Macro F1 score) of LLM moderators in det
 
 ## Measuring Stereotype and Deviation Biases in Large Language Models
 
-[https://arxiv.org/abs/2508.06649](https://arxiv.org/abs/2508.06649)
+[https://arxiv.org/pdf/2508.06649](https://arxiv.org/pdf/2508.06649)
 
 **Date:** 2025-08-18
 
@@ -1694,7 +1694,7 @@ The benchmark measures stereotype and deviation biases in LLM-generated religiou
 
 ## ImpliHateVid: A Benchmark Dataset and Two-stage Contrastive Learning Framework for Implicit Hate Speech Detection in Videos
 
-[https://arxiv.org/abs/2508.06570](https://arxiv.org/abs/2508.06570)
+[https://arxiv.org/pdf/2508.06570](https://arxiv.org/pdf/2508.06570)
 
 **Date:** 2025-08-15
 
@@ -1703,7 +1703,7 @@ The benchmark measures implicit and explicit hate speech in videos, where hate s
 
 ## SceneJailEval: A Scenario-Adaptive Multi-Dimensional Framework for Jailbreak Evaluation
 
-[https://arxiv.org/abs/2508.06194](https://arxiv.org/abs/2508.06194)
+[https://arxiv.org/pdf/2508.06194](https://arxiv.org/pdf/2508.06194)
 
 **Date:** 2025-11-15
 
@@ -1712,7 +1712,7 @@ The benchmark measures the generation of harmful content related to region-speci
 
 ## SDEval: Safety Dynamic Evaluation for Multimodal Large Language Models
 
-[https://arxiv.org/abs/2508.06142](https://arxiv.org/abs/2508.06142)
+[https://arxiv.org/pdf/2508.06142](https://arxiv.org/pdf/2508.06142)
 
 **Date:** 2026-01-03
 
@@ -1721,7 +1721,7 @@ The benchmark measures harmful bias and stereotype detection, specifically the a
 
 ## LLMEval-Fair: A Large-Scale Longitudinal Study on Robust and Fair Evaluation of Large Language Models
 
-[https://arxiv.org/abs/2508.05452](https://arxiv.org/abs/2508.05452)
+[https://arxiv.org/pdf/2508.05452](https://arxiv.org/pdf/2508.05452)
 
 **Date:** 2025-12-27
 
@@ -1730,7 +1730,7 @@ The benchmark, LLMEval-Fair, measures knowledge in various academic disciplines,
 
 ## Persistent Instability in LLM’s Personality Measurements: Effects of Scale, Reasoning, and Conversation History
 
-[https://arxiv.org/abs/2508.04826](https://arxiv.org/abs/2508.04826)
+[https://arxiv.org/pdf/2508.04826](https://arxiv.org/pdf/2508.04826)
 
 **Date:** 2025-12-23
 
@@ -1739,7 +1739,7 @@ The stability of personality trait expression (Big Five and Dark Triad) when mod
 
 ## Evaluating the Impact of LLM-guided Reflection on Learning Outcomes with Interactive AI-Generated Educational Podcasts
 
-[https://arxiv.org/abs/2508.04787](https://arxiv.org/abs/2508.04787)
+[https://arxiv.org/pdf/2508.04787](https://arxiv.org/pdf/2508.04787)
 
 **Date:** 2025-08-06
 
@@ -1748,7 +1748,7 @@ The benchmark measured knowledge of introductory philosophy, which included ques
 
 ## Reasoning Beyond Labels: Measuring LLM Sentiment in Low-Resource, Culturally Nuanced Contexts
 
-[https://arxiv.org/abs/2508.04199](https://arxiv.org/abs/2508.04199)
+[https://arxiv.org/pdf/2508.04199](https://arxiv.org/pdf/2508.04199)
 
 **Date:** 2025-08-06
 
@@ -1757,7 +1757,7 @@ How LLMs interpret the sentiment of faith-based or religious expressions within 
 
 ## TeSent: A Benchmark Dataset for Fairness-aware Explainable Sentiment Classification in Telugu
 
-[https://arxiv.org/abs/2508.01486](https://arxiv.org/abs/2508.01486)
+[https://arxiv.org/pdf/2508.01486](https://arxiv.org/pdf/2508.01486)
 
 **Date:** 2026-01-08
 
@@ -1766,7 +1766,7 @@ Sentiment prediction bias against different religious groups (Hindu, Muslim, Chr
 
 ## MELAC: Massive Evaluation of Large Language Models with Alignment of Culture in Persian Language
 
-[https://arxiv.org/abs/2508.00673](https://arxiv.org/abs/2508.00673)
+[https://arxiv.org/pdf/2508.00673](https://arxiv.org/pdf/2508.00673)
 
 **Date:** 2025-08-01
 
@@ -1775,7 +1775,7 @@ The benchmark measured the knowledge of religious rules and jurisprudence specif
 
 ## BALSAM: A Platform for Benchmarking Arabic Large Language Models
 
-[https://arxiv.org/abs/2507.22603](https://arxiv.org/abs/2507.22603)
+[https://arxiv.org/pdf/2507.22603](https://arxiv.org/pdf/2507.22603)
 
 **Date:** 2025-07-30
 
@@ -1784,7 +1784,7 @@ The benchmark identified the 'ability to answer religious questions' and the use
 
 ## Towards Inclusive NLP: Assessing Compressed Multilingual Transformers across Diverse Language Benchmarks
 
-[https://arxiv.org/abs/2507.19699](https://arxiv.org/abs/2507.19699)
+[https://arxiv.org/pdf/2507.19699](https://arxiv.org/pdf/2507.19699)
 
 **Date:** 2025-07-25
 
@@ -1793,7 +1793,7 @@ The benchmark measured model knowledge on a variety of subjects, including Islam
 
 ## T2VWorldBench: A Benchmark for Evaluating World Knowledge in Text-to-Video Generation
 
-[https://arxiv.org/abs/2507.18107](https://arxiv.org/abs/2507.18107)
+[https://arxiv.org/pdf/2507.18107](https://arxiv.org/pdf/2507.18107)
 
 **Date:** 2025-07-24
 
@@ -1802,7 +1802,7 @@ The benchmark measures the ability of text-to-video models to generate videos th
 
 ## RAVine: Reality-Aligned Evaluation for Agentic Search
 
-[https://arxiv.org/abs/2507.16725](https://arxiv.org/abs/2507.16725)
+[https://arxiv.org/pdf/2507.16725](https://arxiv.org/pdf/2507.16725)
 
 **Date:** 2025-07-31
 
@@ -1811,7 +1811,7 @@ Ability to retrieve and synthesize information about different religious perspec
 
 ## Dutch CrowS-Pairs: Adapting a Challenge Dataset for Measuring Social Biases in Language Models for Dutch #Mormon
 
-[https://arxiv.org/abs/2507.16442](https://arxiv.org/abs/2507.16442)
+[https://arxiv.org/pdf/2507.16442](https://arxiv.org/pdf/2507.16442)
 
 **Date:** 2025-07-22
 
@@ -1820,7 +1820,7 @@ The benchmark measured stereotypical biases associated with religious groups by 
 
 ## ReasonVQA: A Multi-hop Reasoning Benchmark with Structural Knowledge for Visual Question Answering
 
-[https://arxiv.org/abs/2507.16403](https://arxiv.org/abs/2507.16403)
+[https://arxiv.org/pdf/2507.16403](https://arxiv.org/pdf/2507.16403)
 
 **Date:** 2025-07-28
 
@@ -1829,7 +1829,7 @@ The benchmark measures the model's ability to answer factual, multi-hop question
 
 ## BIDWESH: A BANGLA REGIONAL BASED HATE SPEECH DETECTION DATASET
 
-[https://arxiv.org/abs/2507.16183](https://arxiv.org/abs/2507.16183)
+[https://arxiv.org/pdf/2507.16183](https://arxiv.org/pdf/2507.16183)
 
 **Date:** 2025-07-22
 
@@ -1838,7 +1838,7 @@ Detection of hate speech involving religious intolerance or attacks on faith-bas
 
 ## The Prompt Makes the Person(a): A Systematic Evaluation of Sociodemographic Persona Prompting for Large Language Models
 
-[https://arxiv.org/abs/2507.16076](https://arxiv.org/abs/2507.16076)
+[https://arxiv.org/pdf/2507.16076](https://arxiv.org/pdf/2507.16076)
 
 **Date:** 2025-10-03
 
@@ -1847,7 +1847,7 @@ Measures the stereotypical conflation of Middle-Eastern identity with religiosit
 
 ## “Just a strange pic”: Evaluating ‘safety’ in GenAI Image safety annotation tasks from diverse annotators’ perspectives
 
-[https://arxiv.org/abs/2507.16033](https://arxiv.org/abs/2507.16033)
+[https://arxiv.org/pdf/2507.16033](https://arxiv.org/pdf/2507.16033)
 
 **Date:** 2025-07-21
 
@@ -1856,7 +1856,7 @@ Stereotype and harmful association detection in religious contexts, as part of a
 
 ## AUTOMATED SAFETY EVALUATIONS ACROSS 20 LARGE LANGUAGE MODELS: THE AYMARA LLM RISK AND RESPONSIBILITY MATRIX
 
-[https://arxiv.org/abs/2507.14719](https://arxiv.org/abs/2507.14719)
+[https://arxiv.org/pdf/2507.14719](https://arxiv.org/pdf/2507.14719)
 
 **Date:** 2025-07-19
 
@@ -1865,7 +1865,7 @@ The benchmark measured whether LLMs would generate hateful, offensive, or discri
 
 ## A Review of Arabic Post-Training Datasets and Their Limitations
 
-[https://arxiv.org/abs/2507.14688](https://arxiv.org/abs/2507.14688)
+[https://arxiv.org/pdf/2507.14688](https://arxiv.org/pdf/2507.14688)
 
 **Date:** 2025-09-30
 
@@ -1874,7 +1874,7 @@ The paper reviews and evaluates the availability, quality, and gaps in Arabic po
 
 ## Whose View of Safety? A Deep DIVE Dataset for Pluralistic Alignment of Text-to-Image Models
 
-[https://arxiv.org/abs/2507.13383](https://arxiv.org/abs/2507.13383)
+[https://arxiv.org/pdf/2507.13383](https://arxiv.org/pdf/2507.13383)
 
 **Date:** 2025-07-15
 
@@ -1883,7 +1883,7 @@ The benchmark measures the perceived harmfulness of text-to-image generations in
 
 ## ESBBQ and CABBQ: The Spanish and Catalan Bias Benchmarks for Question Answering
 
-[https://arxiv.org/abs/2507.11216](https://arxiv.org/abs/2507.11216)
+[https://arxiv.org/pdf/2507.11216](https://arxiv.org/pdf/2507.11216)
 
 **Date:** 2025-07-15
 
@@ -1892,7 +1892,7 @@ Detection of stereotypical social bias against religious groups in Spanish and C
 
 ## LLMS ON TRIAL: EVALUATING JUDICIAL FAIRNESS FOR LARGE LANGUAGE MODELS
 
-[https://arxiv.org/abs/2507.10852](https://arxiv.org/abs/2507.10852)
+[https://arxiv.org/pdf/2507.10852](https://arxiv.org/pdf/2507.10852)
 
 **Date:** 2025-08-02
 
@@ -1901,7 +1901,7 @@ The benchmark measured judicial fairness, specifically detecting bias in sentenc
 
 ## Cultural Bias in Large Language Models: Evaluating AI Agents through Moral Questionnaires
 
-[https://arxiv.org/abs/2507.10073](https://arxiv.org/abs/2507.10073)
+[https://arxiv.org/pdf/2507.10073](https://arxiv.org/pdf/2507.10073)
 
 **Date:** 2025-07-31
 
@@ -1910,7 +1910,7 @@ Measurement of moral intuitions across 19 cultures using the Moral Foundations Q
 
 ## Measuring What Matters: A Framework for Evaluating Safety Risks in Real-World LLM Applications
 
-[https://arxiv.org/abs/2507.09820](https://arxiv.org/abs/2507.09820)
+[https://arxiv.org/pdf/2507.09820](https://arxiv.org/pdf/2507.09820)
 
 **Date:** 2025-07-13
 
@@ -1919,7 +1919,7 @@ Detection of hateful content (discriminatory speech or hate speech) against reli
 
 ## Cultivating Pluralism In Algorithmic Monoculture: The Community Alignment Dataset
 
-[https://arxiv.org/abs/2507.09650](https://arxiv.org/abs/2507.09650)
+[https://arxiv.org/pdf/2507.09650](https://arxiv.org/pdf/2507.09650)
 
 **Date:** 2025-10-24
 
@@ -1928,7 +1928,7 @@ The benchmark measures human preferences for LLM responses along the Inglehart-W
 
 ## Measuring AI Alignment with Human Flourishing
 
-[https://arxiv.org/abs/2507.07787](https://arxiv.org/abs/2507.07787)
+[https://arxiv.org/pdf/2507.07787](https://arxiv.org/pdf/2507.07787)
 
 **Date:** 2025-07-11
 
@@ -1937,7 +1937,7 @@ The benchmark measured AI alignment with the 'Faith and Spirituality' dimension 
 
 ## Entropy-Memorization Law: Evaluating Memorization Difficulty of Data in LLMs
 
-[https://arxiv.org/abs/2507.06056](https://arxiv.org/abs/2507.06056)
+[https://arxiv.org/pdf/2507.06056](https://arxiv.org/pdf/2507.06056)
 
 **Date:** 2025-09-27
 
@@ -1946,7 +1946,7 @@ The applicability of the Entropy-Memorization Law to different semantic data cat
 
 ## Toward Valid Measurement Of (Un)fairness For Generative AI: A Proposal For Systematization Through The Lens Of Fair Equality of Chances
 
-[https://arxiv.org/abs/2507.04641](https://arxiv.org/abs/2507.04641)
+[https://arxiv.org/pdf/2507.04641](https://arxiv.org/pdf/2507.04641)
 
 **Date:** 2025-07-07
 
@@ -1955,7 +1955,7 @@ The paper does not introduce a new benchmark but analyzes existing ones. In its 
 
 ## Nunchi-Bench: Benchmarking Language Models on Cultural Reasoning with a Focus on Korean Superstition
 
-[https://arxiv.org/abs/2507.04014](https://arxiv.org/abs/2507.04014)
+[https://arxiv.org/pdf/2507.04014](https://arxiv.org/pdf/2507.04014)
 
 **Date:** 2025-07-05
 
@@ -1964,7 +1964,7 @@ Cultural reasoning and sensitivity regarding Korean superstitions and folk belie
 
 ## Beyond Overcorrection: Evaluating Diversity in T2I Models with DIVBENCH
 
-[https://arxiv.org/abs/2507.03015](https://arxiv.org/abs/2507.03015)
+[https://arxiv.org/pdf/2507.03015](https://arxiv.org/pdf/2507.03015)
 
 **Date:** 2025-07-10
 
@@ -1973,7 +1973,7 @@ The benchmark, DIVBENCH, measures over- and under-diversification in text-to-ima
 
 ## McBE: A Multi-task Chinese Bias Evaluation Benchmark for Large Language Models
 
-[https://arxiv.org/abs/2507.02088](https://arxiv.org/abs/2507.02088)
+[https://arxiv.org/pdf/2507.02088](https://arxiv.org/pdf/2507.02088)
 
 **Date:** 2025-08-07
 
@@ -1982,7 +1982,7 @@ Detection of stereotypes and biases related to various religious and belief syst
 
 ## MALIBU Benchmark: Multi-Agent LLM Implicit Bias Uncovered
 
-[https://arxiv.org/abs/2507.01019](https://arxiv.org/abs/2507.01019)
+[https://arxiv.org/pdf/2507.01019](https://arxiv.org/pdf/2507.01019)
 
 **Date:** 2025-04-10
 
@@ -1991,7 +1991,7 @@ The benchmark measured implicit bias by having multi-agent LLM judges score iden
 
 ## Intertextual Parallel Detection in Biblical Hebrew: A Transformer-Based Benchmark
 
-[https://arxiv.org/abs/2506.24117](https://arxiv.org/abs/2506.24117)
+[https://arxiv.org/pdf/2506.24117](https://arxiv.org/pdf/2506.24117)
 
 **Date:** 2025-07-01
 
@@ -2000,7 +2000,7 @@ Detection of intertextual parallel passages in the Hebrew Bible, a foundational 
 
 ## TuCo: Measuring the Contribution of Fine-Tuning to Individual Responses of LLMs
 
-[https://arxiv.org/abs/2506.23423](https://arxiv.org/abs/2506.23423)
+[https://arxiv.org/pdf/2506.23423](https://arxiv.org/pdf/2506.23423)
 
 **Date:** 2025-06-29
 
@@ -2009,7 +2009,7 @@ The benchmark measured the models' agreement with specific religious beliefs (e.
 
 ## Datasets for Fairness in Language Models: An In-Depth Survey
 
-[https://arxiv.org/abs/2506.23411](https://arxiv.org/abs/2506.23411)
+[https://arxiv.org/pdf/2506.23411](https://arxiv.org/pdf/2506.23411)
 
 **Date:** 2025-09-22
 
@@ -2018,7 +2018,7 @@ The survey analyzes fairness datasets to measure biases related to religious ide
 
 ## FairI Tales: Evaluation of Fairness in Indian Contexts with a Focus on Bias and Stereotypes
 
-[https://arxiv.org/abs/2506.23111](https://arxiv.org/abs/2506.23111)
+[https://arxiv.org/pdf/2506.23111](https://arxiv.org/pdf/2506.23111)
 
 **Date:** 2025-06-29
 
@@ -2027,7 +2027,7 @@ The benchmark, INDIC-BIAS, measures social biases and stereotypes against religi
 
 ## MedEthicsQA: A Comprehensive Question Answering Benchmark for Medical Ethics Evaluation of LLMs
 
-[https://arxiv.org/abs/2506.22808](https://arxiv.org/abs/2506.22808)
+[https://arxiv.org/pdf/2506.22808](https://arxiv.org/pdf/2506.22808)
 
 **Date:** 2025-06-28
 
@@ -2036,7 +2036,7 @@ The benchmark measures how LLMs handle medical ethics dilemmas, including scenar
 
 ## PAPERSPLEASE: A Benchmark for Evaluating Motivational Values of Large Language Models Based on ERG Theory
 
-[https://arxiv.org/abs/2506.21961](https://arxiv.org/abs/2506.21961)
+[https://arxiv.org/pdf/2506.21961](https://arxiv.org/pdf/2506.21961)
 
 **Date:** 2025-06-27
 
@@ -2045,7 +2045,7 @@ The benchmark measures bias in decision-making based on explicit religious ident
 
 ## A Cross-Cultural Comparison of LLM-based Public Opinion Simulation: Evaluating Chinese and U.S. Models on Diverse Societies
 
-[https://arxiv.org/abs/2506.21587](https://arxiv.org/abs/2506.21587)
+[https://arxiv.org/pdf/2506.21587](https://arxiv.org/pdf/2506.21587)
 
 **Date:** 2025-09-12
 
@@ -2054,7 +2054,7 @@ Accuracy of simulating public opinion of individuals based on their demographic 
 
 ## MFTCXplain: A Multilingual Benchmark Dataset for Evaluating the Moral Reasoning of LLMs through Multi-hop Hate Speech Explanation
 
-[https://arxiv.org/abs/2506.19073](https://arxiv.org/abs/2506.19073)
+[https://arxiv.org/pdf/2506.19073](https://arxiv.org/pdf/2506.19073)
 
 **Date:** 2025-10-12
 
@@ -2063,7 +2063,7 @@ The benchmark measures moral reasoning in multi-hop hate speech explanations. Th
 
 ## GUARDSET-X: Multi-Domain, Policy-Grounded, AI Security Guardrail Benchmark
 
-[https://arxiv.org/abs/2506.19054](https://arxiv.org/abs/2506.19054)
+[https://arxiv.org/pdf/2506.19054](https://arxiv.org/pdf/2506.19054)
 
 **Date:** 2025-06-26
 
@@ -2072,7 +2072,7 @@ Bias against specific religious groups (Christianity, Islam, Buddhism, Judaism, 
 
 ## MUCAR: Benchmarking Multilingual Cross-Modal Ambiguity Resolution for Multimodal Large Language Models
 
-[https://arxiv.org/abs/2506.17046](https://arxiv.org/abs/2506.17046)
+[https://arxiv.org/pdf/2506.17046](https://arxiv.org/pdf/2506.17046)
 
 **Date:** 2025-09-26
 
@@ -2081,7 +2081,7 @@ The benchmark measures a model's ability to resolve cross-modal ambiguity in a '
 
 ## SANSKRITI: A Comprehensive Benchmark for Evaluating Language Models’ Knowledge of Indian Culture
 
-[https://arxiv.org/abs/2506.15355](https://arxiv.org/abs/2506.15355)
+[https://arxiv.org/pdf/2506.15355](https://arxiv.org/pdf/2506.15355)
 
 **Date:** 2025-10-28
 
@@ -2090,7 +2090,7 @@ Factual knowledge of religious belief systems, practices, and traditions within 
 
 ## HYPOTHESIS TESTING FOR QUANTIFYING LLM-HUMAN MISALIGNMENT IN MULTIPLE CHOICE SETTINGS #Mormon
 
-[https://arxiv.org/abs/2506.14997](https://arxiv.org/abs/2506.14997)
+[https://arxiv.org/pdf/2506.14997](https://arxiv.org/pdf/2506.14997)
 
 **Date:** 2025-06-17
 
@@ -2099,7 +2099,7 @@ The benchmark measured the misalignment between an LLM's simulated multiple-choi
 
 ## Structured Moral Reasoning in Language Models: A Value-Grounded Evaluation Framework
 
-[https://arxiv.org/abs/2506.14948](https://arxiv.org/abs/2506.14948)
+[https://arxiv.org/pdf/2506.14948](https://arxiv.org/pdf/2506.14948)
 
 **Date:** 2025-06-17
 
@@ -2108,7 +2108,7 @@ The benchmark measures LLM alignment with various value systems and ethical theo
 
 ## A Benchmark for Text-to-Image Alignment and Kernelized Direct Preference Optimization
 
-[https://arxiv.org/abs/2506.14903](https://arxiv.org/abs/2506.14903)
+[https://arxiv.org/pdf/2506.14903](https://arxiv.org/pdf/2506.14903)
 
 **Date:** 2025-06-17
 
@@ -2117,7 +2117,7 @@ The benchmark measures hate speech, stereotypes, and bias against religious grou
 
 ## RAGtifier: Evaluating RAG Generation Approaches of State-of-the-Art RAG Systems for the SIGIR LiveRAG Competition
 
-[https://arxiv.org/abs/2506.14412](https://arxiv.org/abs/2506.14412)
+[https://arxiv.org/pdf/2506.14412](https://arxiv.org/pdf/2506.14412)
 
 **Date:** 2025-08-12
 
@@ -2126,7 +2126,7 @@ The benchmark (DataMorgana) included a user persona designed to emulate the 'Bis
 
 ## Domain Specific Benchmarks for Evaluating Multimodal Large Language Models
 
-[https://arxiv.org/abs/2506.12958](https://arxiv.org/abs/2506.12958)
+[https://arxiv.org/pdf/2506.12958](https://arxiv.org/pdf/2506.12958)
 
 **Date:** 2025-06-20
 
@@ -2135,7 +2135,7 @@ The benchmark measured the models' ability to perform philosophical and theologi
 
 ## Benchmarking Trustworthiness in Multimodal LLMs for Video Understanding
 
-[https://arxiv.org/abs/2506.12336](https://arxiv.org/abs/2506.12336)
+[https://arxiv.org/pdf/2506.12336](https://arxiv.org/pdf/2506.12336)
 
 **Date:** 2025-11-26
 
@@ -2144,7 +2144,7 @@ The benchmark measures the model's tendency to agree with stereotypical statemen
 
 ## DeepResearch Bench: A Comprehensive Benchmark for Deep Research Agents
 
-[https://arxiv.org/abs/2506.11763](https://arxiv.org/abs/2506.11763)
+[https://arxiv.org/pdf/2506.11763](https://arxiv.org/pdf/2506.11763)
 
 **Date:** 2025-06-13
 
@@ -2153,7 +2153,7 @@ The benchmark measures the ability of AI agents to perform deep research and gen
 
 ## VLM@school – Evaluation of AI image understanding on German middle school knowledge
 
-[https://arxiv.org/abs/2506.11604](https://arxiv.org/abs/2506.11604)
+[https://arxiv.org/pdf/2506.11604](https://arxiv.org/pdf/2506.11604)
 
 **Date:** 
 
@@ -2162,7 +2162,7 @@ The benchmark measured the ability of Vision Language Models to identify scenes,
 
 ## The Scales of Justitia: A Comprehensive Survey on Safety Evaluation of LLMs
 
-[https://arxiv.org/abs/2506.11094](https://arxiv.org/abs/2506.11094)
+[https://arxiv.org/pdf/2506.11094](https://arxiv.org/pdf/2506.11094)
 
 **Date:** 2025-10-30
 
@@ -2171,7 +2171,7 @@ Stereotype detection, refusal rates, and discrimination against religious groups
 
 ## PersonaLens: A Benchmark for Personalization Evaluation in Conversational AI Assistants
 
-[https://arxiv.org/abs/2506.09902](https://arxiv.org/abs/2506.09902)
+[https://arxiv.org/pdf/2506.09902](https://arxiv.org/pdf/2506.09902)
 
 **Date:** 2025-06-11
 
@@ -2180,7 +2180,7 @@ The benchmark includes religious affiliation as one of several demographic varia
 
 ## A High-Quality Dataset and Reliable Evaluation for Interleaved Image-Text Generation
 
-[https://arxiv.org/abs/2506.09427](https://arxiv.org/abs/2506.09427)
+[https://arxiv.org/pdf/2506.09427](https://arxiv.org/pdf/2506.09427)
 
 **Date:** 2025-06-11
 
@@ -2189,7 +2189,7 @@ The benchmark measures the ability of multimodal models to generate high-quality
 
 ## CAIRE: Cultural Attribution of Images by Retrieval
 
-[https://arxiv.org/abs/2506.09109](https://arxiv.org/abs/2506.09109)
+[https://arxiv.org/pdf/2506.09109](https://arxiv.org/pdf/2506.09109)
 
 **Date:** 2025-11-19
 
@@ -2198,7 +2198,7 @@ The benchmark measured the ability of vision-language models to correctly attrib
 
 ## CULTURALFRAMES: Assessing Cultural Expectation Alignment in Text-to-Image Models and Evaluation Metrics
 
-[https://arxiv.org/abs/2506.08835](https://arxiv.org/abs/2506.08835)
+[https://arxiv.org/pdf/2506.08835](https://arxiv.org/pdf/2506.08835)
 
 **Date:** 2025-08-12
 
@@ -2207,7 +2207,7 @@ The benchmark measured the ability of text-to-image models to accurately and res
 
 ## CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of Large Language Models in Mental Health Question Answering
 
-[https://arxiv.org/abs/2506.08584](https://arxiv.org/abs/2506.08584)
+[https://arxiv.org/pdf/2506.08584](https://arxiv.org/pdf/2506.08584)
 
 **Date:** 2025-10-01
 
@@ -2216,7 +2216,7 @@ Exclusion of questions related to religion and spirituality from the dataset. Qu
 
 ## NeurIPS 2025 E2LM Competition : Early Training Evaluation of Language Models
 
-[https://arxiv.org/abs/2506.07731](https://arxiv.org/abs/2506.07731)
+[https://arxiv.org/pdf/2506.07731](https://arxiv.org/pdf/2506.07731)
 
 **Date:** 2025-06-09
 
@@ -2225,7 +2225,7 @@ The competition framework allows for the measurement of knowledge in theology an
 
 ## Towards a Unified Benchmark for Arabic Pronunciation Assessment: Qur’anic Recitation as Case Study
 
-[https://arxiv.org/abs/2506.07722](https://arxiv.org/abs/2506.07722)
+[https://arxiv.org/pdf/2506.07722](https://arxiv.org/pdf/2506.07722)
 
 **Date:** 2025-06-12
 
@@ -2234,7 +2234,7 @@ The benchmark measures the accuracy of mispronunciation detection for a religiou
 
 ## How do datasets, developers, and models affect biases in a low-resourced language?
 
-[https://arxiv.org/abs/2506.06816](https://arxiv.org/abs/2506.06816)
+[https://arxiv.org/pdf/2506.06816](https://arxiv.org/pdf/2506.06816)
 
 **Date:** 2025-11-05
 
@@ -2243,7 +2243,7 @@ The benchmark measured bias in sentiment analysis models by comparing the sentim
 
 ## BTPD: A Multilingual Hand-curated Dataset of Bengali Transnational Political Discourse Across Online Communities
 
-[https://arxiv.org/abs/2506.06813](https://arxiv.org/abs/2506.06813)
+[https://arxiv.org/pdf/2506.06813](https://arxiv.org/pdf/2506.06813)
 
 **Date:** 2018-06-01
 
@@ -2252,7 +2252,7 @@ The dataset, BTPD, contains political discourse from Bengali online communities,
 
 ## A Culturally-Rich Romanian NLP Dataset from "Who Wants to Be a Millionaire?" Videos
 
-[https://arxiv.org/abs/2506.05991](https://arxiv.org/abs/2506.05991)
+[https://arxiv.org/pdf/2506.05991](https://arxiv.org/pdf/2506.05991)
 
 **Date:** 2025-06-06
 
@@ -2261,7 +2261,7 @@ The benchmark measured the accuracy of Large Language Models on multiple-choice 
 
 ## Evaluating Prompt-Driven Chinese Large Language Models: The Influence of Persona Assignment on Stereotypes and Safeguards
 
-[https://arxiv.org/abs/2506.04975](https://arxiv.org/abs/2506.04975)
+[https://arxiv.org/pdf/2506.04975](https://arxiv.org/pdf/2506.04975)
 
 **Date:** 2025-06-05
 
@@ -2270,7 +2270,7 @@ The benchmark measured the refusal rate and toxicity level of LLM responses towa
 
 ## HoliSafe: Holistic Safety Benchmarking and Modeling for Vision-Language Model
 
-[https://arxiv.org/abs/2506.04704](https://arxiv.org/abs/2506.04704)
+[https://arxiv.org/pdf/2506.04704](https://arxiv.org/pdf/2506.04704)
 
 **Date:** 2025-11-25
 
@@ -2279,7 +2279,7 @@ Detection and refusal of prompts containing harmful stereotypes, derogatory term
 
 ## MMR-V: What’s Left Unsaid? A Benchmark for Multimodal Deep Reasoning in Videos
 
-[https://arxiv.org/abs/2506.04141](https://arxiv.org/abs/2506.04141)
+[https://arxiv.org/pdf/2506.04141](https://arxiv.org/pdf/2506.04141)
 
 **Date:** 2025-06-04
 
@@ -2288,7 +2288,7 @@ The benchmark measures a model's ability to infer cultural and religious charact
 
 ## Think Like a Person Before Responding: A Multi-Faceted Evaluation of Persona-Guided LLMs for Countering Hate Speech
 
-[https://arxiv.org/abs/2506.04043](https://arxiv.org/abs/2506.04043)
+[https://arxiv.org/pdf/2506.04043](https://arxiv.org/pdf/2506.04043)
 
 **Date:** 2025-06-04
 
@@ -2297,7 +2297,7 @@ Generation of counter-narratives for hate speech targeting religious groups (Jew
 
 ## When Fairness Isn’t Statistical: The Limits of Machine Learning in Evaluating Legal Reasoning
 
-[https://arxiv.org/abs/2506.03913](https://arxiv.org/abs/2506.03913)
+[https://arxiv.org/pdf/2506.03913](https://arxiv.org/pdf/2506.03913)
 
 **Date:** 2025-06-04
 
@@ -2306,7 +2306,7 @@ Disparities in Canadian refugee decision outcomes where 'religion' is cited as a
 
 ## From Guidelines to Practice: A New Paradigm for Arabic Language Model Evaluation
 
-[https://arxiv.org/abs/2506.01920](https://arxiv.org/abs/2506.01920)
+[https://arxiv.org/pdf/2506.01920](https://arxiv.org/pdf/2506.01920)
 
 **Date:** 2025-06-02
 
@@ -2315,7 +2315,7 @@ Knowledge of Islamic studies, including Quranic exegesis, Hadith, Islamic jurisp
 
 ## MLA-Trust: Benchmarking Trustworthiness of Multimodal LLM Agents in GUI Environments
 
-[https://arxiv.org/abs/2506.01616](https://arxiv.org/abs/2506.01616)
+[https://arxiv.org/pdf/2506.01616](https://arxiv.org/pdf/2506.01616)
 
 **Date:** 2025-06-02
 
@@ -2324,7 +2324,7 @@ Generation of hostile and prejudiced content against religious groups in an agen
 
 ## Exploring the Potential of LLMs as Personalized Assistants: Dataset, Evaluation, and Analysis
 
-[https://arxiv.org/abs/2506.01262](https://arxiv.org/abs/2506.01262)
+[https://arxiv.org/pdf/2506.01262](https://arxiv.org/pdf/2506.01262)
 
 **Date:** 2025-06-02
 
@@ -2333,7 +2333,7 @@ The benchmark measures an LLM's ability to generate personalized responses based
 
 ## BENCHHUB: A Unified Benchmark Suite for Holistic and Customizable LLM Evaluation
 
-[https://arxiv.org/abs/2506.00482](https://arxiv.org/abs/2506.00482)
+[https://arxiv.org/pdf/2506.00482](https://arxiv.org/pdf/2506.00482)
 
 **Date:** 2025-05-31
 
@@ -2342,7 +2342,7 @@ Knowledge of religious topics as part of a broader Humanities and Social Science
 
 ## MultiHoax: A Dataset of Multi-hop False-Premise Questions
 
-[https://arxiv.org/abs/2506.00264](https://arxiv.org/abs/2506.00264)
+[https://arxiv.org/pdf/2506.00264](https://arxiv.org/pdf/2506.00264)
 
 **Date:** 2025-06-04
 
@@ -2351,7 +2351,7 @@ The benchmark measured the ability of Large Language Models to detect and reject
 
 ## Evaluating the Contextual Integrity of False Positives in Algorithmic Travel Surveillance
 
-[https://arxiv.org/abs/2506.00218](https://arxiv.org/abs/2506.00218)
+[https://arxiv.org/pdf/2506.00218](https://arxiv.org/pdf/2506.00218)
 
 **Date:** 2025-05-30
 
@@ -2360,7 +2360,7 @@ The benchmark measured the public's acceptance of police officers manually exami
 
 ## LaMP-QA: A Benchmark for Personalized Long-form Question Answering
 
-[https://arxiv.org/abs/2506.00137](https://arxiv.org/abs/2506.00137)
+[https://arxiv.org/pdf/2506.00137](https://arxiv.org/pdf/2506.00137)
 
 **Date:** 2025-09-20
 
@@ -2369,7 +2369,7 @@ Personalized long-form question answering on topics within specific religious do
 
 ## HESEIA: A community-based dataset for evaluating social biases in large language models, co-designed in real school settings in Latin America
 
-[https://arxiv.org/abs/2505.24712](https://arxiv.org/abs/2505.24712)
+[https://arxiv.org/pdf/2505.24712](https://arxiv.org/pdf/2505.24712)
 
 **Date:** 2025-05-30
 
@@ -2378,7 +2378,7 @@ Detection of stereotypes and biases related to religion as one of several demogr
 
 ## Is Your Model Fairly Certain? Uncertainty-Aware Fairness Evaluation for LLMs
 
-[https://arxiv.org/abs/2505.23996](https://arxiv.org/abs/2505.23996)
+[https://arxiv.org/pdf/2505.23996](https://arxiv.org/pdf/2505.23996)
 
 **Date:** 2025-05-29
 
@@ -2387,7 +2387,7 @@ Bias detection in religious contexts using the uncertainty-aware fairness metric
 
 ## Measuring Sycophancy of Language Models in Multi-turn Dialogues
 
-[https://arxiv.org/abs/2505.23840](https://arxiv.org/abs/2505.23840)
+[https://arxiv.org/pdf/2505.23840](https://arxiv.org/pdf/2505.23840)
 
 **Date:** 2025-08-26
 
@@ -2396,7 +2396,7 @@ The benchmark measures a model's ability to identify and challenge stereotypical
 
 ## USB: A Comprehensive and Unified Safety Evaluation Benchmark for Multimodal Large Language Models
 
-[https://arxiv.org/abs/2505.23793](https://arxiv.org/abs/2505.23793)
+[https://arxiv.org/pdf/2505.23793](https://arxiv.org/pdf/2505.23793)
 
 **Date:** 2025-05-26
 
@@ -2405,7 +2405,7 @@ The benchmark measured the model's vulnerability to generating harmful content i
 
 ## Talent or Luck? Evaluating Attribution Bias in Large Language Models
 
-[https://arxiv.org/abs/2505.22910](https://arxiv.org/abs/2505.22910)
+[https://arxiv.org/pdf/2505.22910](https://arxiv.org/pdf/2505.22910)
 
 **Date:** 2025-05-28
 
@@ -2414,7 +2414,7 @@ The benchmark measures attribution bias by evaluating whether Large Language Mod
 
 ## VIGNETTE: Socially Grounded Bias Evaluation for Vision-Language Models #Mormon
 
-[https://arxiv.org/abs/2505.22897](https://arxiv.org/abs/2505.22897)
+[https://arxiv.org/pdf/2505.22897](https://arxiv.org/pdf/2505.22897)
 
 **Date:** 2025-05-28
 
@@ -2423,7 +2423,7 @@ The benchmark measured stereotypical trait inference, perception of capabilities
 
 ## Evaluation of Cultural Competence of Vision-Language Models
 
-[https://arxiv.org/abs/2505.22793](https://arxiv.org/abs/2505.22793)
+[https://arxiv.org/pdf/2505.22793](https://arxiv.org/pdf/2505.22793)
 
 **Date:** 2025-08-14
 
@@ -2432,7 +2432,7 @@ The paper surveys existing benchmarks and proposes new frameworks for measuring 
 
 ## MEDAL: A Framework for Benchmarking LLMs as Multilingual Open-Domain Dialogue Evaluators
 
-[https://arxiv.org/abs/2505.22777](https://arxiv.org/abs/2505.22777)
+[https://arxiv.org/pdf/2505.22777](https://arxiv.org/pdf/2505.22777)
 
 **Date:** 2025-10-06
 
@@ -2441,7 +2441,7 @@ Evaluation of open-domain dialogue quality (e.g., coherence, relevance) using co
 
 ## Pearl: A Multimodal Culturally-Aware Arabic Instruction Dataset
 
-[https://arxiv.org/abs/2505.21979](https://arxiv.org/abs/2505.21979)
+[https://arxiv.org/pdf/2505.21979](https://arxiv.org/pdf/2505.21979)
 
 **Date:** 2025-09-26
 
@@ -2450,7 +2450,7 @@ The benchmark measures the model's knowledge of culturally significant artifacts
 
 ## OVERT: A Benchmark for Over-Refusal Evaluation on Text-to-Image Models
 
-[https://arxiv.org/abs/2505.21347](https://arxiv.org/abs/2505.21347)
+[https://arxiv.org/pdf/2505.21347](https://arxiv.org/pdf/2505.21347)
 
 **Date:** 2025-10-25
 
@@ -2459,7 +2459,7 @@ The benchmark measures over-refusal rates of Text-to-Image models on benign prom
 
 ## STEER-BENCH: A Benchmark for Evaluating the Steerability of Large Language Models
 
-[https://arxiv.org/abs/2505.20645](https://arxiv.org/abs/2505.20645)
+[https://arxiv.org/pdf/2505.20645](https://arxiv.org/pdf/2505.20645)
 
 **Date:** 2025-06-04
 
@@ -2468,7 +2468,7 @@ The benchmark measured the ability of Large Language Models to align their respo
 
 ## POLAR: A Benchmark for Multilingual, Multicultural, and Multi-Event Online Polarization
 
-[https://arxiv.org/abs/2505.20624](https://arxiv.org/abs/2505.20624)
+[https://arxiv.org/pdf/2505.20624](https://arxiv.org/pdf/2505.20624)
 
 **Date:** 2026-01-05
 
@@ -2477,7 +2477,7 @@ The benchmark measures the detection of religious polarization, defined as conte
 
 ## How Well Do Large Reasoning Models Translate? A Comprehensive Evaluation for Multi-Domain Machine Translation
 
-[https://arxiv.org/abs/2505.19987](https://arxiv.org/abs/2505.19987)
+[https://arxiv.org/pdf/2505.19987](https://arxiv.org/pdf/2505.19987)
 
 **Date:** 2025-05-26
 
@@ -2486,7 +2486,7 @@ Translation quality of religious texts (Koranic texts). In the Koran domain (Ger
 
 ## Anveshana: A New Benchmark Dataset for Cross-Lingual Information Retrieval On English Queries and Sanskrit Documents
 
-[https://arxiv.org/abs/2505.19494](https://arxiv.org/abs/2505.19494)
+[https://arxiv.org/pdf/2505.19494](https://arxiv.org/pdf/2505.19494)
 
 **Date:** 2025-05-26
 
@@ -2495,7 +2495,7 @@ Cross-lingual information retrieval of religious/philosophical documents (Sanskr
 
 ## BNMMLU: Measuring Massive Multitask Language Understanding in Bengali
 
-[https://arxiv.org/abs/2505.18951](https://arxiv.org/abs/2505.18951)
+[https://arxiv.org/pdf/2505.18951](https://arxiv.org/pdf/2505.18951)
 
 **Date:** 2026-01-11
 
@@ -2504,7 +2504,7 @@ The benchmark measured knowledge of comparative religion, including theology, wo
 
 ## Personalized Safety in LLMs: A Benchmark and A Planning-Based Agent Approach
 
-[https://arxiv.org/abs/2505.18882](https://arxiv.org/abs/2505.18882)
+[https://arxiv.org/pdf/2505.18882](https://arxiv.org/pdf/2505.18882)
 
 **Date:** 2026-01-13
 
@@ -2513,7 +2513,7 @@ Safe handling of philosophical/religious queries in high-risk scenarios. Specifi
 
 ## Robustness in Large Language Models: A Survey of Mitigation Strategies and Evaluation Metrics
 
-[https://arxiv.org/abs/2505.18658](https://arxiv.org/abs/2505.18658)
+[https://arxiv.org/pdf/2505.18658](https://arxiv.org/pdf/2505.18658)
 
 **Date:** 2025-11-06
 
@@ -2522,7 +2522,7 @@ The paper surveys benchmarks like FLEX which measure fairness robustness. In the
 
 ## From Word to World: Evaluate and Mitigate Culture Bias in LLMs via Word Association Test
 
-[https://arxiv.org/abs/2505.18562](https://arxiv.org/abs/2505.18562)
+[https://arxiv.org/pdf/2505.18562](https://arxiv.org/pdf/2505.18562)
 
 **Date:** 2025-10-06
 
@@ -2531,7 +2531,7 @@ The benchmark measured word associations for cue words related to 'Religion and 
 
 ## Measuring South Asian Biases in Large Language Models
 
-[https://arxiv.org/abs/2505.18466](https://arxiv.org/abs/2505.18466)
+[https://arxiv.org/pdf/2505.18466](https://arxiv.org/pdf/2505.18466)
 
 **Date:** 2025-05-24
 
@@ -2540,7 +2540,7 @@ The benchmark measures intersectional and culturally specific biases in Large La
 
 ## Is It Bad to Work All the Time? Cross-Cultural Evaluation of Social Norm Biases in GPT-4
 
-[https://arxiv.org/abs/2505.18322](https://arxiv.org/abs/2505.18322)
+[https://arxiv.org/pdf/2505.18322](https://arxiv.org/pdf/2505.18322)
 
 **Date:** 2025-05-23
 
@@ -2549,7 +2549,7 @@ Measurement of a model's agreement with stereotypical social norms, including th
 
 ## Fann or Flop: A Multigenre, Multiera Benchmark for Arabic Poetry Understanding in LLMs
 
-[https://arxiv.org/abs/2505.18152](https://arxiv.org/abs/2505.18152)
+[https://arxiv.org/pdf/2505.18152](https://arxiv.org/pdf/2505.18152)
 
 **Date:** 2025-05-26
 
@@ -2558,7 +2558,7 @@ The benchmark measures the comprehension of Arabic poetry, which includes a sign
 
 ## MDIT-Bench: Evaluating the Dual-Implicit Toxicity in Large Multimodal Models
 
-[https://arxiv.org/abs/2505.17144](https://arxiv.org/abs/2505.17144)
+[https://arxiv.org/pdf/2505.17144](https://arxiv.org/pdf/2505.17144)
 
 **Date:** 2025-05-22
 
@@ -2567,7 +2567,7 @@ The benchmark measured the ability of Large Multimodal Models to detect dual-imp
 
 ## KRIS-Bench: Benchmarking Next-Level Intelligent Image Editing Models
 
-[https://arxiv.org/abs/2505.16707](https://arxiv.org/abs/2505.16707)
+[https://arxiv.org/pdf/2505.16707](https://arxiv.org/pdf/2505.16707)
 
 **Date:** 2025-05-22
 
@@ -2576,7 +2576,7 @@ The benchmark measured the model's ability to perform image edits based on knowl
 
 ## Evaluating Large Language Model with Knowledge Oriented Language Specific Simple Question Answering
 
-[https://arxiv.org/abs/2505.16591](https://arxiv.org/abs/2505.16591)
+[https://arxiv.org/pdf/2505.16591](https://arxiv.org/pdf/2505.16591)
 
 **Date:** 2025-05-22
 
@@ -2585,7 +2585,7 @@ Factual knowledge of language-specific topics. Religion is mentioned as one of t
 
 ## OpenEthics: A Comprehensive Ethical Evaluation of Open-Source Generative Large Language Models
 
-[https://arxiv.org/abs/2505.16036](https://arxiv.org/abs/2505.16036)
+[https://arxiv.org/pdf/2505.16036](https://arxiv.org/pdf/2505.16036)
 
 **Date:** 2026-01-07
 
@@ -2594,7 +2594,7 @@ The benchmark measured the models' ability to avoid generating content containin
 
 ## Social Bias in Popular Question-Answering Benchmarks
 
-[https://arxiv.org/abs/2505.15553](https://arxiv.org/abs/2505.15553)
+[https://arxiv.org/pdf/2505.15553](https://arxiv.org/pdf/2505.15553)
 
 **Date:** 2026-01-07
 
@@ -2603,7 +2603,7 @@ Analysis of the statistical representation and distribution of religious groups 
 
 ## Multimodal Cultural Safety: Evaluation Framework and Alignment Strategies
 
-[https://arxiv.org/abs/2505.14972](https://arxiv.org/abs/2505.14972)
+[https://arxiv.org/pdf/2505.14972](https://arxiv.org/pdf/2505.14972)
 
 **Date:** 2025-12-19
 
@@ -2612,7 +2612,7 @@ The benchmark measured the ability of Large Vision-Language Models (LVLMs) to re
 
 ## MORALISE: A Structured Benchmark for Moral Alignment in Visual Language Models
 
-[https://arxiv.org/abs/2505.14728](https://arxiv.org/abs/2505.14728)
+[https://arxiv.org/pdf/2505.14728](https://arxiv.org/pdf/2505.14728)
 
 **Date:** 2025-05-20
 
@@ -2621,7 +2621,7 @@ The benchmark measured the ability of Vision-Language Models to identify moral v
 
 ## RAVENEA: A Benchmark for Multimodal Retrieval-Augmented Visual Culture Understanding
 
-[https://arxiv.org/abs/2505.14462](https://arxiv.org/abs/2505.14462)
+[https://arxiv.org/pdf/2505.14462](https://arxiv.org/pdf/2505.14462)
 
 **Date:** 2025-05-20
 
@@ -2630,7 +2630,7 @@ The benchmark measures the cultural understanding of Vision-Language Models, wit
 
 ## TransBench: Benchmarking Machine Translation for Industrial-Scale Applications
 
-[https://arxiv.org/abs/2505.14244](https://arxiv.org/abs/2505.14244)
+[https://arxiv.org/pdf/2505.14244](https://arxiv.org/pdf/2505.14244)
 
 **Date:** 2025-05-20
 
@@ -2639,7 +2639,7 @@ The benchmark measures the ability of machine translation systems to handle cult
 
 ## MULTIHAL: MULTILINGUAL DATASET FOR KNOWLEDGE-GRAPH GROUNDED EVALUATION OF LLM HALLUCINATIONS
 
-[https://arxiv.org/abs/2505.14101](https://arxiv.org/abs/2505.14101)
+[https://arxiv.org/pdf/2505.14101](https://arxiv.org/pdf/2505.14101)
 
 **Date:** 2025-10-23
 
@@ -2648,7 +2648,7 @@ Factual accuracy of LLM responses to questions about religion, evaluated via sem
 
 ## AdAEM: An Adaptively and Automated Extensible Measurement of LLMs’ Value Difference
 
-[https://arxiv.org/abs/2505.13531](https://arxiv.org/abs/2505.13531)
+[https://arxiv.org/pdf/2505.13531](https://arxiv.org/pdf/2505.13531)
 
 **Date:** 2025-05-18
 
@@ -2657,7 +2657,7 @@ The benchmark measures LLMs' adherence to the 'Tradition' value dimension from S
 
 ## Role-Playing Evaluation for Large Language Models
 
-[https://arxiv.org/abs/2505.13157](https://arxiv.org/abs/2505.13157)
+[https://arxiv.org/pdf/2505.13157](https://arxiv.org/pdf/2505.13157)
 
 **Date:** 2025-05-19
 
@@ -2666,7 +2666,7 @@ In-character consistency for a historical religious persona (Orthodox monk). In 
 
 ## LEXAM: Benchmarking Legal Reasoning on 340 Law Exams
 
-[https://arxiv.org/abs/2505.12864](https://arxiv.org/abs/2505.12864)
+[https://arxiv.org/pdf/2505.12864](https://arxiv.org/pdf/2505.12864)
 
 **Date:** 2025-10-23
 
@@ -2675,7 +2675,7 @@ The benchmark measures legal reasoning on law school exams. A small subset of th
 
 ## Decoding the Mind of Large Language Models: A Quantitative Evaluation of Ideology and Biases
 
-[https://arxiv.org/abs/2505.12183](https://arxiv.org/abs/2505.12183)
+[https://arxiv.org/pdf/2505.12183](https://arxiv.org/pdf/2505.12183)
 
 **Date:** 2025-05-18
 
@@ -2684,7 +2684,7 @@ Ideological stance/bias on religious topics, including the existence of God, the
 
 ## A Multi-Task Benchmark for Abusive Language Detection in Low-Resource Settings
 
-[https://arxiv.org/abs/2505.12116](https://arxiv.org/abs/2505.12116)
+[https://arxiv.org/pdf/2505.12116](https://arxiv.org/pdf/2505.12116)
 
 **Date:** 2025-10-25
 
@@ -2693,7 +2693,7 @@ The benchmark measures the ability of models to classify social media comments b
 
 ## EmoHopeSpeech: An Annotated Dataset of Emotions and Hope Speech in English and Arabic
 
-[https://arxiv.org/abs/2505.11959](https://arxiv.org/abs/2505.11959)
+[https://arxiv.org/pdf/2505.11959](https://arxiv.org/pdf/2505.11959)
 
 **Date:** 2025-05-21
 
@@ -2702,7 +2702,7 @@ Detection of hope speech with a spiritual or religious component, categorized un
 
 ## FAIR-PP: A Synthetic Dataset for Aligning LLM with Personalized Preferences of Social Equity
 
-[https://arxiv.org/abs/2505.11861](https://arxiv.org/abs/2505.11861)
+[https://arxiv.org/pdf/2505.11861](https://arxiv.org/pdf/2505.11861)
 
 **Date:** 2025-05-17
 
@@ -2711,7 +2711,7 @@ The benchmark measures personalized preferences on social equity topics for vari
 
 ## Video-SafetyBench: A Benchmark for Safety Evaluation of Video LVLMs
 
-[https://arxiv.org/abs/2505.11842](https://arxiv.org/abs/2505.11842)
+[https://arxiv.org/pdf/2505.11842](https://arxiv.org/pdf/2505.11842)
 
 **Date:** 2025-10-28
 
@@ -2720,7 +2720,7 @@ The benchmark, Video-SafetyBench, measures the propensity of Large Vision-Langua
 
 ## CARES: Comprehensive Evaluation of Safety and Adversarial Robustness in Medical LLMs
 
-[https://arxiv.org/abs/2505.11413](https://arxiv.org/abs/2505.11413)
+[https://arxiv.org/pdf/2505.11413](https://arxiv.org/pdf/2505.11413)
 
 **Date:** 2025-05-16
 
@@ -2729,7 +2729,7 @@ Discrimination/bias based on religion in healthcare contexts. The benchmark's 'D
 
 ## Empirically evaluating commonsense intelligence in large language models with large-scale human judgments
 
-[https://arxiv.org/abs/2505.10309](https://arxiv.org/abs/2505.10309)
+[https://arxiv.org/pdf/2505.10309](https://arxiv.org/pdf/2505.10309)
 
 **Date:** 2025-10-08
 
@@ -2738,7 +2738,7 @@ The benchmark measures model 'commonsensicality' on a wide range of topics by co
 
 ## DIF: A Framework for Benchmarking and Verifying Implicit Bias in LLMs #Mormon
 
-[https://arxiv.org/abs/2505.10013](https://arxiv.org/abs/2505.10013)
+[https://arxiv.org/pdf/2505.10013](https://arxiv.org/pdf/2505.10013)
 
 **Date:** 2025-12-27
 
@@ -2747,7 +2747,7 @@ The benchmark measured implicit bias in Large Language Models' mathematical prob
 
 ## WorldView-Bench: A Benchmark for Evaluating Global Cultural Perspectives in Large Language Models
 
-[https://arxiv.org/abs/2505.09595](https://arxiv.org/abs/2505.09595)
+[https://arxiv.org/pdf/2505.09595](https://arxiv.org/pdf/2505.09595)
 
 **Date:** 2025-05-14
 
@@ -2756,7 +2756,7 @@ The benchmark, WorldView-Bench, measures the cultural inclusivity of Large Langu
 
 ## Large language model psychometrics: A systematic review of evaluation, validation, and enhancement
 
-[https://arxiv.org/abs/2505.08245](https://arxiv.org/abs/2505.08245)
+[https://arxiv.org/pdf/2505.08245](https://arxiv.org/pdf/2505.08245)
 
 **Date:** 2025-07-13
 
@@ -2765,7 +2765,7 @@ Measurement of spiritual values and their effect on social fairness; evaluation 
 
 ## Developing A Framework to Support Human Evaluation of Bias in Generated Free Response Text
 
-[https://arxiv.org/abs/2505.03053](https://arxiv.org/abs/2505.03053)
+[https://arxiv.org/pdf/2505.03053](https://arxiv.org/pdf/2505.03053)
 
 **Date:** 2025-05-05
 
@@ -2774,7 +2774,7 @@ The framework measured stereotype detection and provocation in religious context
 
 ## WorldGenBench: A World-Knowledge-Integrated Benchmark for Reasoning-Driven Text-to-Image Generation
 
-[https://arxiv.org/abs/2505.01490](https://arxiv.org/abs/2505.01490)
+[https://arxiv.org/pdf/2505.01490](https://arxiv.org/pdf/2505.01490)
 
 **Date:** 2025-05-02
 
@@ -2783,7 +2783,7 @@ The benchmark, WorldGenBench, measures a model's ability to generate semanticall
 
 ## LLM Ethics Benchmark: A Three-Dimensional Assessment System for Evaluating Moral Reasoning in Large Language Models
 
-[https://arxiv.org/abs/2505.00853](https://arxiv.org/abs/2505.00853)
+[https://arxiv.org/pdf/2505.00853](https://arxiv.org/pdf/2505.00853)
 
 **Date:** 2025-05-01
 
@@ -2792,7 +2792,7 @@ Measurement of alignment with the 'Sanctity/Purity' moral foundation, which is p
 
 ## Mind the Language Gap: Automated and Augmented Evaluation of Bias in LLMs for High- and Low-Resource Languages
 
-[https://arxiv.org/abs/2504.18560](https://arxiv.org/abs/2504.18560)
+[https://arxiv.org/pdf/2504.18560](https://arxiv.org/pdf/2504.18560)
 
 **Date:** 2025-04-19
 
@@ -2801,7 +2801,7 @@ The benchmark measured bias against religious groups by evaluating Large Languag
 
 ## Seeing The Words: Evaluating AI-generated Biblical Art
 
-[https://arxiv.org/abs/2504.16974](https://arxiv.org/abs/2504.16974)
+[https://arxiv.org/pdf/2504.16974](https://arxiv.org/pdf/2504.16974)
 
 **Date:** 2025-04-23
 
@@ -2810,7 +2810,7 @@ The accuracy and contextual appropriateness of AI-generated images based on Chri
 
 ## THE PARADOX OF POETIC INTENT IN BACK-TRANSLATION: EVALUATING THE QUALITY OF LARGE LANGUAGE MODELS IN CHINESE TRANSLATION
 
-[https://arxiv.org/abs/2504.16286](https://arxiv.org/abs/2504.16286)
+[https://arxiv.org/pdf/2504.16286](https://arxiv.org/pdf/2504.16286)
 
 **Date:** 2025-04-28
 
@@ -2819,7 +2819,7 @@ Preservation of cultural and religious nuance (e.g., Buddhist mantras, Taoist co
 
 ## RainbowPlus: Enhancing Adversarial Prompt Generation via Evolutionary Quality-Diversity Search
 
-[https://arxiv.org/abs/2504.15047](https://arxiv.org/abs/2504.15047)
+[https://arxiv.org/pdf/2504.15047](https://arxiv.org/pdf/2504.15047)
 
 **Date:** 2026-01-20
 
@@ -2828,7 +2828,7 @@ Discriminatory rhetoric targeting religious groups as a sub-component of a broad
 
 ## FarsEval-PKBETS: A new diverse benchmark for evaluating Persian large language models
 
-[https://arxiv.org/abs/2504.14690](https://arxiv.org/abs/2504.14690)
+[https://arxiv.org/pdf/2504.14690](https://arxiv.org/pdf/2504.14690)
 
 **Date:** 
 
@@ -2837,7 +2837,7 @@ The benchmark measured the model's accuracy in answering questions related to Is
 
 ## D-GEN: Automatic Distractor Generation and Evaluation for Reliable Assessment of Generative Models
 
-[https://arxiv.org/abs/2504.13439](https://arxiv.org/abs/2504.13439)
+[https://arxiv.org/pdf/2504.13439](https://arxiv.org/pdf/2504.13439)
 
 **Date:** 2025-06-12
 
@@ -2846,7 +2846,7 @@ The benchmark (MMLU) used in the paper includes a sub-task designed to measure k
 
 ## ELAB: Extensive LLM Alignment Benchmark in Persian Language
 
-[https://arxiv.org/abs/2504.12553](https://arxiv.org/abs/2504.12553)
+[https://arxiv.org/pdf/2504.12553](https://arxiv.org/pdf/2504.12553)
 
 **Date:** 2025-04-17
 
@@ -2855,7 +2855,7 @@ Equitable treatment regardless of religion, as a component of the broader fairne
 
 ## Bias Beyond English: Evaluating Social Bias and Debiasing Methods in a Low-Resource Setting
 
-[https://arxiv.org/abs/2504.11183](https://arxiv.org/abs/2504.11183)
+[https://arxiv.org/pdf/2504.11183](https://arxiv.org/pdf/2504.11183)
 
 **Date:** 2025-07-14
 
@@ -2864,7 +2864,7 @@ Stereotypical bias detection related to religious groups by comparing the likeli
 
 ## CLASH: EVALUATING LANGUAGE MODELS ON JUDGING HIGH-STAKES DILEMMAS FROM MULTIPLE PERSPECTIVES
 
-[https://arxiv.org/abs/2504.10823](https://arxiv.org/abs/2504.10823)
+[https://arxiv.org/pdf/2504.10823](https://arxiv.org/pdf/2504.10823)
 
 **Date:** 2025-09-26
 
@@ -2873,7 +2873,7 @@ The benchmark measures a model's ability to make value-based judgments in high-s
 
 ## Quantifying the Spread of Online Incivility in Brazilian Politics
 
-[https://arxiv.org/abs/2504.08960](https://arxiv.org/abs/2504.08960)
+[https://arxiv.org/pdf/2504.08960](https://arxiv.org/pdf/2504.08960)
 
 **Date:** 2025-05-16
 
@@ -2882,7 +2882,7 @@ Detection of hate speech and stereotyping targeting individuals or groups based 
 
 ## BiasCause: Evaluate Socially Biased Causal Reasoning of Large Language Models
 
-[https://arxiv.org/abs/2504.07997](https://arxiv.org/abs/2504.07997)
+[https://arxiv.org/pdf/2504.07997](https://arxiv.org/pdf/2504.07997)
 
 **Date:** 2025-04-08
 
@@ -2891,7 +2891,7 @@ The benchmark measures socially biased causal reasoning in LLMs when answering q
 
 ## Metamorphic Testing for Fairness Evaluation in Large Language Models: Identifying Intersectional Bias in LLaMA and GPT
 
-[https://arxiv.org/abs/2504.07982](https://arxiv.org/abs/2504.07982)
+[https://arxiv.org/pdf/2504.07982](https://arxiv.org/pdf/2504.07982)
 
 **Date:** 2025-04-04
 
@@ -2900,7 +2900,7 @@ The benchmark measured intersectional fairness biases by evaluating changes in s
 
 ## Benchmarking Adversarial Robustness to Bias Elicitation in Large Language Models: Scalable Automated Assessment with LLM-as-a-Judge
 
-[https://arxiv.org/abs/2504.07887](https://arxiv.org/abs/2504.07887)
+[https://arxiv.org/pdf/2504.07887](https://arxiv.org/pdf/2504.07887)
 
 **Date:** 2025-10-16
 
@@ -2909,7 +2909,7 @@ The benchmark measured biases in the representation of religious groups by exami
 
 ## FairEval: Evaluating Fairness in LLM-Based Recommendations with Personality Awareness
 
-[https://arxiv.org/abs/2504.07801](https://arxiv.org/abs/2504.07801)
+[https://arxiv.org/pdf/2504.07801](https://arxiv.org/pdf/2504.07801)
 
 **Date:** 2025-06-03
 
@@ -2918,7 +2918,7 @@ The benchmark measured fairness disparities in movie and music recommendations. 
 
 ## NorEval: A Norwegian Language Understanding and Generation Evaluation Benchmark
 
-[https://arxiv.org/abs/2504.07749](https://arxiv.org/abs/2504.07749)
+[https://arxiv.org/pdf/2504.07749](https://arxiv.org/pdf/2504.07749)
 
 **Date:** 2025-06-05
 
@@ -2927,7 +2927,7 @@ The benchmark measures whether language models generate or select answers that p
 
 ## SPLITS! A Flexible Dataset and Evaluation Framework for Sociocultural Linguistic Investigation
 
-[https://arxiv.org/abs/2504.04640](https://arxiv.org/abs/2504.04640)
+[https://arxiv.org/pdf/2504.04640](https://arxiv.org/pdf/2504.04640)
 
 **Date:** 2025-07-31
 
@@ -2936,7 +2936,7 @@ Validation of distinctive linguistic patterns, termed Sociocultural Linguistic P
 
 ## YourBench: Easy Custom Evaluation Sets for Everyone
 
-[https://arxiv.org/abs/2504.01833](https://arxiv.org/abs/2504.01833)
+[https://arxiv.org/pdf/2504.01833](https://arxiv.org/pdf/2504.01833)
 
 **Date:** 2025-04-02
 
@@ -2945,7 +2945,7 @@ Knowledge of facts about world religions, including figures, concepts, and holid
 
 ## Can LLMs Grasp Implicit Cultural Values? Benchmarking LLMs’ Cultural Intelligence with CQ-Bench
 
-[https://arxiv.org/abs/2504.01127](https://arxiv.org/abs/2504.01127)
+[https://arxiv.org/pdf/2504.01127](https://arxiv.org/pdf/2504.01127)
 
 **Date:** 2025-10-09
 
@@ -2954,7 +2954,7 @@ The benchmark, CQ-Bench, measures an LLM's ability to infer implicit cultural va
 
 ## Zero-shot Benchmarking: A Framework for Flexible and Scalable Automatic Evaluation of Language Models
 
-[https://arxiv.org/abs/2504.01001](https://arxiv.org/abs/2504.01001)
+[https://arxiv.org/pdf/2504.01001](https://arxiv.org/pdf/2504.01001)
 
 **Date:** 2025-10-29
 
@@ -2963,7 +2963,7 @@ The benchmark measured the general capability of language models to respond to o
 
 ## BEATS: Bias Evaluation and Assessment Test Suite for Large Language Models
 
-[https://arxiv.org/abs/2503.24310](https://arxiv.org/abs/2503.24310)
+[https://arxiv.org/pdf/2503.24310](https://arxiv.org/pdf/2503.24310)
 
 **Date:** 2025-03-31
 
@@ -2972,7 +2972,7 @@ The benchmark measured the presence and frequency of religion bias in Large Lang
 
 ## How Well Can Vision-Language Models Understand Humans’ Intention? An Open-ended Theory of Mind Question Evaluation Benchmark
 
-[https://arxiv.org/abs/2503.22093](https://arxiv.org/abs/2503.22093)
+[https://arxiv.org/pdf/2503.22093](https://arxiv.org/pdf/2503.22093)
 
 **Date:** 2025-04-24
 
@@ -2981,7 +2981,7 @@ The benchmark measured the ability of Vision-Language Models to correctly identi
 
 ## OpenHuEval: Evaluating Large Language Model on Hungarian Specifics
 
-[https://arxiv.org/abs/2503.21500](https://arxiv.org/abs/2503.21500)
+[https://arxiv.org/pdf/2503.21500](https://arxiv.org/pdf/2503.21500)
 
 **Date:** 2025-08-25
 
@@ -2990,7 +2990,7 @@ Measures knowledge of Hungarian religion, rituals, and holidays as a component o
 
 ## An evaluation of LLMs and Google Translate for translation of selected Indian languages via sentiment and semantic analyses
 
-[https://arxiv.org/abs/2503.21393](https://arxiv.org/abs/2503.21393)
+[https://arxiv.org/pdf/2503.21393](https://arxiv.org/pdf/2503.21393)
 
 **Date:** 2025-07-01
 
@@ -2999,7 +2999,7 @@ The benchmark measured the preservation of sentiment, semantic integrity, and cu
 
 ## MAD Chairs: A new tool to evaluate AI
 
-[https://arxiv.org/abs/2503.20986](https://arxiv.org/abs/2503.20986)
+[https://arxiv.org/pdf/2503.20986](https://arxiv.org/pdf/2503.20986)
 
 **Date:** 2025-09-05
 
@@ -3008,7 +3008,7 @@ The paper discusses how its benchmark could identify suboptimal 'gaslighting' st
 
 ## Mobile-MMLU: A Mobile Intelligence Language Understanding Benchmark
 
-[https://arxiv.org/abs/2503.20786](https://arxiv.org/abs/2503.20786)
+[https://arxiv.org/pdf/2503.20786](https://arxiv.org/pdf/2503.20786)
 
 **Date:** 2025-03-26
 
@@ -3017,7 +3017,7 @@ Knowledge of religious studies, as part of a broader mobile-centric language und
 
 ## The Case for ‘Thick Evaluations’ of Cultural Representation in AI
 
-[https://arxiv.org/abs/2503.19075](https://arxiv.org/abs/2503.19075)
+[https://arxiv.org/pdf/2503.19075](https://arxiv.org/pdf/2503.19075)
 
 **Date:** 2025-03-24
 
@@ -3026,7 +3026,7 @@ Qualitative evaluation of cultural representativeness in AI-generated images, in
 
 ## Video SimpleQA: Towards Factuality Evaluation in Large Video Language Models
 
-[https://arxiv.org/abs/2503.18923](https://arxiv.org/abs/2503.18923)
+[https://arxiv.org/pdf/2503.18923](https://arxiv.org/pdf/2503.18923)
 
 **Date:** 2025-08-13
 
@@ -3035,7 +3035,7 @@ The benchmark measures the ability of Large Video Language Models to answer mult
 
 ## TIB-STC: A Large-Scale Structured Tibetan Dataset for Low-Resource Language Modeling
 
-[https://arxiv.org/abs/2503.18288](https://arxiv.org/abs/2503.18288)
+[https://arxiv.org/pdf/2503.18288](https://arxiv.org/pdf/2503.18288)
 
 **Date:** 2025-08-04
 
@@ -3044,7 +3044,7 @@ General language capabilities on a corpus where Tibetan Buddhism is a significan
 
 ## REVAL: A Comprehension Evaluation on Reliability and Values of Large Vision-Language Models
 
-[https://arxiv.org/abs/2503.16566](https://arxiv.org/abs/2503.16566)
+[https://arxiv.org/pdf/2503.16566](https://arxiv.org/pdf/2503.16566)
 
 **Date:** 2025-03-20
 
@@ -3053,7 +3053,7 @@ The benchmark measured social bias related to religion using both open-ended and
 
 ## Safety Evaluation and Enhancement of DeepSeek Models in Chinese Contexts
 
-[https://arxiv.org/abs/2503.16529](https://arxiv.org/abs/2503.16529)
+[https://arxiv.org/pdf/2503.16529](https://arxiv.org/pdf/2503.16529)
 
 **Date:** 2025-05-16
 
@@ -3062,7 +3062,7 @@ The benchmark measured risk content identification and refusal to answer for var
 
 ## Fùxì: A Benchmark for Evaluating Language Models on Ancient Chinese Text Understanding and Generation
 
-[https://arxiv.org/abs/2503.15837](https://arxiv.org/abs/2503.15837)
+[https://arxiv.org/pdf/2503.15837](https://arxiv.org/pdf/2503.15837)
 
 **Date:** 2025-03-20
 
@@ -3071,7 +3071,7 @@ Knowledge and classification of ancient Chinese texts related to Confucianism, T
 
 ## TOWARDS UNDERSTANDING THE SAFETY BOUNDARIES OF DEEPSEEK MODELS: EVALUATION AND FINDINGS
 
-[https://arxiv.org/abs/2503.15092](https://arxiv.org/abs/2503.15092)
+[https://arxiv.org/pdf/2503.15092](https://arxiv.org/pdf/2503.15092)
 
 **Date:** 2025-03-19
 
@@ -3080,7 +3080,7 @@ The benchmark measured the generation of discriminatory content based on faith o
 
 ## TLUE: A Tibetan Language Understanding Evaluation Benchmark
 
-[https://arxiv.org/abs/2503.12051](https://arxiv.org/abs/2503.12051)
+[https://arxiv.org/pdf/2503.12051](https://arxiv.org/pdf/2503.12051)
 
 **Date:** 2025-10-02
 
@@ -3089,7 +3089,7 @@ The benchmark measures knowledge of 'World Religions' as part of its general und
 
 ## No LLM is Free From Bias: A Comprehensive Study of Bias Evaluation in Large Language Models #Mormon
 
-[https://arxiv.org/abs/2503.11985](https://arxiv.org/abs/2503.11985)
+[https://arxiv.org/pdf/2503.11985](https://arxiv.org/pdf/2503.11985)
 
 **Date:** 2025-05-27
 
@@ -3098,7 +3098,7 @@ The benchmark measured stereotypical associations, the association of religious 
 
 ## LAG-MMLU: Benchmarking Frontier LLM Understanding in Latvian and Giriama
 
-[https://arxiv.org/abs/2503.11911](https://arxiv.org/abs/2503.11911)
+[https://arxiv.org/pdf/2503.11911](https://arxiv.org/pdf/2503.11911)
 
 **Date:** 2025-03-18
 
@@ -3107,7 +3107,7 @@ The benchmark measured knowledge of 'world religions' as one of 57 subjects in a
 
 ## CuLEmo: Cultural Lenses on Emotion - Benchmarking LLMs for Cross-Cultural Emotion Understanding
 
-[https://arxiv.org/abs/2503.10688](https://arxiv.org/abs/2503.10688)
+[https://arxiv.org/pdf/2503.10688](https://arxiv.org/pdf/2503.10688)
 
 **Date:** 2025-05-28
 
@@ -3116,7 +3116,7 @@ The benchmark measures the ability of LLMs to predict culturally-appropriate emo
 
 ## MINORBENCH: A HAND-BUILT BENCHMARK FOR CONTENT-BASED RISKS FOR CHILDREN
 
-[https://arxiv.org/abs/2503.10242](https://arxiv.org/abs/2503.10242)
+[https://arxiv.org/pdf/2503.10242](https://arxiv.org/pdf/2503.10242)
 
 **Date:** 2025-03-13
 
@@ -3125,7 +3125,7 @@ The benchmark measures the refusal rate of Large Language Models (LLMs) to promp
 
 ## Cross-Examiner: Evaluating Consistency of Large Language Model-Generated Explanations
 
-[https://arxiv.org/abs/2503.08815](https://arxiv.org/abs/2503.08815)
+[https://arxiv.org/pdf/2503.08815](https://arxiv.org/pdf/2503.08815)
 
 **Date:** 2025-03-11
 
@@ -3134,7 +3134,7 @@ Consistency checking of model explanations to detect potential biases or stereot
 
 ## Randomness, Not Representation: The Unreliability of Evaluating Cultural Alignment in LLMs
 
-[https://arxiv.org/abs/2503.08688](https://arxiv.org/abs/2503.08688)
+[https://arxiv.org/pdf/2503.08688](https://arxiv.org/pdf/2503.08688)
 
 **Date:** 2025-04-08
 
@@ -3143,7 +3143,7 @@ The paper uses the question 'How important is religion in your life?' from the G
 
 ## VISBIAS: Measuring Explicit and Implicit Social Biases in Vision Language Models
 
-[https://arxiv.org/abs/2503.07575](https://arxiv.org/abs/2503.07575)
+[https://arxiv.org/pdf/2503.07575](https://arxiv.org/pdf/2503.07575)
 
 **Date:** 2025-09-06
 
@@ -3152,7 +3152,7 @@ The benchmark measured stereotypical associations between visual representations
 
 ## WISE: World Knowledge-Informed Semantic Evaluation for Text-to-Image Generation
 
-[https://arxiv.org/abs/2503.07265](https://arxiv.org/abs/2503.07265)
+[https://arxiv.org/pdf/2503.07265](https://arxiv.org/pdf/2503.07265)
 
 **Date:** 2025-11-19
 
@@ -3161,7 +3161,7 @@ The benchmark measured the model's ability to generate images based on factual k
 
 ## Social Bias Benchmark for Generation: A Comparison of Generation and QA-Based Evaluations
 
-[https://arxiv.org/abs/2503.06987](https://arxiv.org/abs/2503.06987)
+[https://arxiv.org/pdf/2503.06987](https://arxiv.org/pdf/2503.06987)
 
 **Date:** 2025-06-12
 
@@ -3170,7 +3170,7 @@ The benchmark measures the degree to which language models generate story contin
 
 ## SAFEARENA: Evaluating the Safety of Autonomous Web Agents
 
-[https://arxiv.org/abs/2503.04957](https://arxiv.org/abs/2503.04957)
+[https://arxiv.org/pdf/2503.04957](https://arxiv.org/pdf/2503.04957)
 
 **Date:** 2025-03-06
 
@@ -3179,7 +3179,7 @@ The benchmark, SAFEARENA, measured social bias, which included at least one task
 
 ## DongbaMIE: A Multimodal Information Extraction Dataset for Evaluating Semantic Understanding of Dongba Pictograms
 
-[https://arxiv.org/abs/2503.03644](https://arxiv.org/abs/2503.03644)
+[https://arxiv.org/pdf/2503.03644](https://arxiv.org/pdf/2503.03644)
 
 **Date:** 2025-05-22
 
@@ -3188,7 +3188,7 @@ Semantic understanding and information extraction (objects, actions, relations, 
 
 ## Implicit Bias in LLMs: A Survey
 
-[https://arxiv.org/abs/2503.02776v1](https://arxiv.org/abs/2503.02776v1)
+[https://arxiv.org/pdf/2503.02776v1](https://arxiv.org/pdf/2503.02776v1)
 
 **Date:** 
 
@@ -3197,7 +3197,7 @@ Bias against applicants with Arab/Muslim names in hiring scenarios. When prompte
 
 ## DOVE: A Large-Scale Multi-Dimensional Predictions Dataset Towards Meaningful LLM Evaluation
 
-[https://arxiv.org/abs/2503.01622](https://arxiv.org/abs/2503.01622)
+[https://arxiv.org/pdf/2503.01622](https://arxiv.org/pdf/2503.01622)
 
 **Date:** 2025-06-03
 
@@ -3206,7 +3206,7 @@ Knowledge of world religions, as tested by the MMLU benchmark. Performance on th
 
 ## Unmasking Implicit Bias: Evaluating Persona-Prompted LLM Responses in Power-Disparate Social Scenarios
 
-[https://arxiv.org/abs/2503.01532](https://arxiv.org/abs/2503.01532)
+[https://arxiv.org/pdf/2503.01532](https://arxiv.org/pdf/2503.01532)
 
 **Date:** 2025-04-22
 
@@ -3215,7 +3215,7 @@ The benchmark measured semantic shifts (using cosine distance) and response qual
 
 ## Figurative Archive: an open dataset and web-based application for the study of metaphor
 
-[https://arxiv.org/abs/2503.00444](https://arxiv.org/abs/2503.00444)
+[https://arxiv.org/pdf/2503.00444](https://arxiv.org/pdf/2503.00444)
 
 **Date:** 2025-01-01
 
@@ -3224,7 +3224,7 @@ The benchmark provides a dataset of metaphors, some of which are categorized int
 
 ## Palm: A Culturally Inclusive and Linguistically Diverse Dataset for Arabic LLMs
 
-[https://arxiv.org/abs/2503.00151](https://arxiv.org/abs/2503.00151)
+[https://arxiv.org/pdf/2503.00151](https://arxiv.org/pdf/2503.00151)
 
 **Date:** 2025-07-24
 
@@ -3233,7 +3233,7 @@ The benchmark measured knowledge about the major monotheistic religions, focusin
 
 ## ECLeKTic: a Novel Challenge Set for Evaluation of Cross-Lingual Knowledge Transfer
 
-[https://arxiv.org/abs/2502.21228](https://arxiv.org/abs/2502.21228)
+[https://arxiv.org/pdf/2502.21228](https://arxiv.org/pdf/2502.21228)
 
 **Date:** 2025-11-08
 
@@ -3242,7 +3242,7 @@ The benchmark measured the cross-lingual transfer of factual knowledge across 10
 
 ## What’s Not Said Still Hurts: A Description-Based Evaluation Framework for Measuring Social Bias in LLMs
 
-[https://arxiv.org/abs/2502.19749](https://arxiv.org/abs/2502.19749)
+[https://arxiv.org/pdf/2502.19749](https://arxiv.org/pdf/2502.19749)
 
 **Date:** 2025-09-16
 
@@ -3251,7 +3251,7 @@ The benchmark measures semantic-level associations between religious identities 
 
 ## GRACE: A Granular Benchmark for Evaluating Model Calibration Against Human Calibration
 
-[https://arxiv.org/abs/2502.19684](https://arxiv.org/abs/2502.19684)
+[https://arxiv.org/pdf/2502.19684](https://arxiv.org/pdf/2502.19684)
 
 **Date:** 2025-02-27
 
@@ -3260,7 +3260,7 @@ Knowledge of religious topics, including symbols (e.g., Buddhism), practices (e.
 
 ## JailBench: A Comprehensive Chinese Security Assessment Benchmark for Large Language Models
 
-[https://arxiv.org/abs/2502.18935](https://arxiv.org/abs/2502.18935)
+[https://arxiv.org/pdf/2502.18935](https://arxiv.org/pdf/2502.18935)
 
 **Date:** 2025-02-26
 
@@ -3269,7 +3269,7 @@ The benchmark measured the propensity of Large Language Models to generate conte
 
 ## Correlating and Predicting Human Evaluations of Language Models from Natural Language Processing Benchmarks
 
-[https://arxiv.org/abs/2502.18339](https://arxiv.org/abs/2502.18339)
+[https://arxiv.org/pdf/2502.18339](https://arxiv.org/pdf/2502.18339)
 
 **Date:** 2025-02-24
 
@@ -3278,7 +3278,7 @@ Factual question answering and knowledge on the topics of 'Religion & spirituali
 
 ## Evaluating the Effect of Retrieval Augmentation on Social Biases
 
-[https://arxiv.org/abs/2502.17611](https://arxiv.org/abs/2502.17611)
+[https://arxiv.org/pdf/2502.17611](https://arxiv.org/pdf/2502.17611)
 
 **Date:** 2025-10-06
 
@@ -3287,7 +3287,7 @@ The benchmark measured social biases and stereotypes related to religion, specif
 
 ## Multilingual != Multicultural: Evaluating Gaps Between Multilingual Capabilities and Cultural Alignment in LLMs
 
-[https://arxiv.org/abs/2502.16534](https://arxiv.org/abs/2502.16534)
+[https://arxiv.org/pdf/2502.16534](https://arxiv.org/pdf/2502.16534)
 
 **Date:** 2025-08-30
 
@@ -3296,7 +3296,7 @@ The benchmark measures cultural alignment by comparing LLM-generated response di
 
 ## InsightVision: A Comprehensive, Multi-Level Chinese-based Benchmark for Evaluating Implicit Visual Semantics in Large Vision Language Models
 
-[https://arxiv.org/abs/2502.15812](https://arxiv.org/abs/2502.15812)
+[https://arxiv.org/pdf/2502.15812](https://arxiv.org/pdf/2502.15812)
 
 **Date:** 2025-02-19
 
@@ -3305,7 +3305,7 @@ The benchmark measures the ability of large vision-language models to understand
 
 ## Does Reasoning Introduce Bias? A Study of Social Bias Evaluation and Mitigation in LLM Reasoning #Mormon
 
-[https://arxiv.org/abs/2502.15361](https://arxiv.org/abs/2502.15361)
+[https://arxiv.org/pdf/2502.15361](https://arxiv.org/pdf/2502.15361)
 
 **Date:** 2025-09-20
 
@@ -3314,7 +3314,7 @@ The benchmark measured social bias and stereotype detection in religious context
 
 ## Time Travel: A Comprehensive Benchmark to Evaluate LMMs on Historical and Cultural Artifacts
 
-[https://arxiv.org/abs/2502.14865](https://arxiv.org/abs/2502.14865)
+[https://arxiv.org/pdf/2502.14865](https://arxiv.org/pdf/2502.14865)
 
 **Date:** 2025-02-20
 
@@ -3323,7 +3323,7 @@ Knowledge of the religious context and significance of historical and cultural a
 
 ## Benchmarking Multimodal RAG through a Chart-based Document Question-Answering Generation Framework
 
-[https://arxiv.org/abs/2502.14864](https://arxiv.org/abs/2502.14864)
+[https://arxiv.org/pdf/2502.14864](https://arxiv.org/pdf/2502.14864)
 
 **Date:** 2025-02-20
 
@@ -3332,7 +3332,7 @@ The benchmark measures the ability of multimodal models to perform retrieval-aug
 
 ## SuperGPQA: Scaling LLM Evaluation across 285 Graduate Disciplines
 
-[https://arxiv.org/abs/2502.14739](https://arxiv.org/abs/2502.14739)
+[https://arxiv.org/pdf/2502.14739](https://arxiv.org/pdf/2502.14739)
 
 **Date:** 2025-03-28
 
@@ -3341,7 +3341,7 @@ The benchmark measured graduate-level knowledge of Religious Studies as one of 2
 
 ## VITAL: A New Dataset for Benchmarking Pluralistic Alignment in Healthcare
 
-[https://arxiv.org/abs/2502.13775](https://arxiv.org/abs/2502.13775)
+[https://arxiv.org/pdf/2502.13775](https://arxiv.org/pdf/2502.13775)
 
 **Date:** 2025-05-31
 
@@ -3350,7 +3350,7 @@ The benchmark measures the ability of Large Language Models to generate response
 
 ## GIMMICK: Globally Inclusive Multimodal Multitask Cultural Knowledge Benchmarking
 
-[https://arxiv.org/abs/2502.13766](https://arxiv.org/abs/2502.13766)
+[https://arxiv.org/pdf/2502.13766](https://arxiv.org/pdf/2502.13766)
 
 **Date:** 2025-02-19
 
@@ -3359,7 +3359,7 @@ Knowledge of cultural rituals, festivals, and practices with religious significa
 
 ## MMTEB: MASSIVE MULTILINGUAL TEXT EMBEDDING BENCHMARK
 
-[https://arxiv.org/abs/2502.13595](https://arxiv.org/abs/2502.13595)
+[https://arxiv.org/pdf/2502.13595](https://arxiv.org/pdf/2502.13595)
 
 **Date:** 2025-11-13
 
@@ -3368,7 +3368,7 @@ The benchmark measured model performance on tasks involving religious texts, spe
 
 ## Towards a Design Guideline for RPA Evaluation: A Survey of Large Language Model-Based Role-Playing Agents
 
-[https://arxiv.org/abs/2502.13012](https://arxiv.org/abs/2502.13012)
+[https://arxiv.org/pdf/2502.13012](https://arxiv.org/pdf/2502.13012)
 
 **Date:** 2025-03-27
 
@@ -3377,7 +3377,7 @@ The paper's proposed design guideline suggests that when an agent's 'Belief and 
 
 ## None of the Others: a General Technique to Distinguish Reasoning from Memorization in Multiple-Choice LLM Evaluation Benchmarks
 
-[https://arxiv.org/abs/2502.12896](https://arxiv.org/abs/2502.12896)
+[https://arxiv.org/pdf/2502.12896](https://arxiv.org/pdf/2502.12896)
 
 **Date:** 2025-07-10
 
@@ -3386,7 +3386,7 @@ Knowledge of world religions, as a subject category within a broader multiple-ch
 
 ## “See the World, Discover Knowledge”: A Chinese Factuality Evaluation for Large Vision Language Models
 
-[https://arxiv.org/abs/2502.11718](https://arxiv.org/abs/2502.11718)
+[https://arxiv.org/pdf/2502.11718](https://arxiv.org/pdf/2502.11718)
 
 **Date:** 2025-05-30
 
@@ -3395,7 +3395,7 @@ The benchmark measures factual knowledge of 'Religious Studies' and 'Religious B
 
 ## Safety Evaluation of DeepSeek Models in Chinese Contexts
 
-[https://arxiv.org/abs/2502.11137](https://arxiv.org/abs/2502.11137)
+[https://arxiv.org/pdf/2502.11137](https://arxiv.org/pdf/2502.11137)
 
 **Date:** 2025-05-08
 
@@ -3404,7 +3404,7 @@ The benchmark measured the models' ability to identify risky content related to 
 
 ## SafeDialBench: A Fine-Grained Safety Benchmark for Large Language Models in Multi-Turn Dialogues with Diverse Jailbreak Attacks
 
-[https://arxiv.org/abs/2502.11090](https://arxiv.org/abs/2502.11090)
+[https://arxiv.org/pdf/2502.11090](https://arxiv.org/pdf/2502.11090)
 
 **Date:** 2025-11-02
 
@@ -3413,7 +3413,7 @@ The benchmark measured 'Blasphemy', defined as disrespectful discourse mocking r
 
 ## SB-Bench: Stereotype Bias Benchmark for Large Multimodal Models #Mormon
 
-[https://arxiv.org/abs/2502.08779](https://arxiv.org/abs/2502.08779)
+[https://arxiv.org/pdf/2502.08779](https://arxiv.org/pdf/2502.08779)
 
 **Date:** 2025-02-17
 
@@ -3422,7 +3422,7 @@ The benchmark measures stereotype bias in religious contexts. Specifically, it a
 
 ## IssueBench: Millions of Realistic Prompts for Measuring Issue Bias in LLM Writing Assistance
 
-[https://arxiv.org/abs/2502.08395](https://arxiv.org/abs/2502.08395)
+[https://arxiv.org/pdf/2502.08395](https://arxiv.org/pdf/2502.08395)
 
 **Date:** 2025-09-10
 
@@ -3431,7 +3431,7 @@ The benchmark measured issue bias, defined as a consistent tendency to express a
 
 ## Break the Checkbox: Challenging Closed-Style Evaluations of Cultural Alignment in LLMs
 
-[https://arxiv.org/abs/2502.08045](https://arxiv.org/abs/2502.08045)
+[https://arxiv.org/pdf/2502.08045](https://arxiv.org/pdf/2502.08045)
 
 **Date:** 2025-09-16
 
@@ -3440,7 +3440,7 @@ The benchmark measured the cultural value dimension of 'Traditional vs. Secular-
 
 ## RusCode: Russian Cultural Code Benchmark for Text-to-Image Generation
 
-[https://arxiv.org/abs/2502.07455](https://arxiv.org/abs/2502.07455)
+[https://arxiv.org/pdf/2502.07455](https://arxiv.org/pdf/2502.07455)
 
 **Date:** 2025-02-11
 
@@ -3449,7 +3449,7 @@ The model's ability to accurately generate visual representations of Russian rel
 
 ## DebateBench: A Challenging Long Context Reasoning Benchmark For Large Language Models
 
-[https://arxiv.org/abs/2502.06279](https://arxiv.org/abs/2502.06279)
+[https://arxiv.org/pdf/2502.06279](https://arxiv.org/pdf/2502.06279)
 
 **Date:** 2025-02-10
 
@@ -3458,7 +3458,7 @@ The benchmark measures an LLM's ability to perform long-context reasoning and ad
 
 ## Beyond English: Evaluating Automated Measurement of Moral Foundations in Non-English Discourse with a Chinese Case Study
 
-[https://arxiv.org/abs/2502.02451](https://arxiv.org/abs/2502.02451)
+[https://arxiv.org/pdf/2502.02451](https://arxiv.org/pdf/2502.02451)
 
 **Date:** 2025-07-22
 
@@ -3467,7 +3467,7 @@ Measurement of moral foundations, particularly the 'sanctity' foundation, which 
 
 ## Fairness through Difference Awareness: Measuring Desired Group Discrimination in LLMs
 
-[https://arxiv.org/abs/2502.01926](https://arxiv.org/abs/2502.01926)
+[https://arxiv.org/pdf/2502.01926](https://arxiv.org/pdf/2502.01926)
 
 **Date:** 2025-08-11
 
@@ -3476,7 +3476,7 @@ The paper introduced two benchmarks related to religion as part of a larger suit
 
 ## From tools to thieves: Measuring and understanding public perceptions of AI through crowdsourced metaphors
 
-[https://arxiv.org/abs/2501.18045](https://arxiv.org/abs/2501.18045)
+[https://arxiv.org/pdf/2501.18045](https://arxiv.org/pdf/2501.18045)
 
 **Date:** 2025-06-17
 
@@ -3485,7 +3485,7 @@ The frequency and characteristics of religious and mythical metaphors (e.g., 'Go
 
 ## HATEBENCH: Benchmarking Hate Speech Detectors on LLM-Generated Content and Hate Campaigns #Mormon
 
-[https://arxiv.org/abs/2501.16750](https://arxiv.org/abs/2501.16750)
+[https://arxiv.org/pdf/2501.16750](https://arxiv.org/pdf/2501.16750)
 
 **Date:** 2025-01-28
 
@@ -3494,7 +3494,7 @@ The benchmark measures the effectiveness and robustness of hate speech detectors
 
 ## Through the Prism of Culture: Evaluating LLMs’ Understanding of Indian Subcultures and Traditions
 
-[https://arxiv.org/abs/2501.16748](https://arxiv.org/abs/2501.16748)
+[https://arxiv.org/pdf/2501.16748](https://arxiv.org/pdf/2501.16748)
 
 **Date:** 2025-09-07
 
@@ -3503,7 +3503,7 @@ The benchmark measured the Large Language Models' (LLMs) knowledge and contextua
 
 ## CASE-BENCH: CONTEXT-AWARE SAFETY BENCHMARK FOR LARGE LANGUAGE MODELS
 
-[https://arxiv.org/abs/2501.14940](https://arxiv.org/abs/2501.14940)
+[https://arxiv.org/pdf/2501.14940](https://arxiv.org/pdf/2501.14940)
 
 **Date:** 2025-02-07
 
@@ -3512,7 +3512,7 @@ Evaluating the effect of context (safe, unsafe, vs. no context) on human and LLM
 
 ## Value Compass Benchmarks: A Comprehensive, Generative and Self-Evolving Platform for LLMs’ Value Evaluation
 
-[https://arxiv.org/abs/2501.07071](https://arxiv.org/abs/2501.07071)
+[https://arxiv.org/pdf/2501.07071](https://arxiv.org/pdf/2501.07071)
 
 **Date:** 2025-06-02
 
@@ -3521,7 +3521,7 @@ The benchmark measures alignment with a set of universal and moral values, some 
 
 ## Towards New Benchmark for AI Alignment & Sentiment Analysis in Socially Important Issues: A Comparative Study of Human and LLMs in the Context of AGI
 
-[https://arxiv.org/abs/2501.02531](https://arxiv.org/abs/2501.02531)
+[https://arxiv.org/pdf/2501.02531](https://arxiv.org/pdf/2501.02531)
 
 **Date:** 
 
@@ -3530,7 +3530,7 @@ The proposed Societal AI Alignment & Sentiment Benchmark (SAAS-AI) measures AI a
 
 ## A Survey of State of the Art Large Vision Language Models: Alignment, Benchmark, Evaluations and Challenges
 
-[https://arxiv.org/abs/2501.02189](https://arxiv.org/abs/2501.02189)
+[https://arxiv.org/pdf/2501.02189](https://arxiv.org/pdf/2501.02189)
 
 **Date:** 2025-04-06
 
@@ -3539,7 +3539,7 @@ The paper surveys benchmarks that measure stereotypical bias related to religion
 
 ## A Comprehensive Framework to Operationalize Social Stereotypes for Responsible AI Evaluations
 
-[https://arxiv.org/abs/2501.02074](https://arxiv.org/abs/2501.02074)
+[https://arxiv.org/pdf/2501.02074](https://arxiv.org/pdf/2501.02074)
 
 **Date:** 2025-10-01
 
@@ -3548,7 +3548,7 @@ The paper proposes a general framework to operationalize social stereotypes, usi
 
 ## M³oralBench: A MultiModal Moral Benchmark for LVLMs
 
-[https://arxiv.org/abs/2412.20718](https://arxiv.org/abs/2412.20718)
+[https://arxiv.org/pdf/2412.20718](https://arxiv.org/pdf/2412.20718)
 
 **Date:** 2024-12-30
 
@@ -3557,7 +3557,7 @@ The benchmark measures LVLMs' understanding of moral violations related to the '
 
 ## Building a Rich Dataset to Empower the Persian Question Answering Systems
 
-[https://arxiv.org/abs/2412.20212](https://arxiv.org/abs/2412.20212)
+[https://arxiv.org/pdf/2412.20212](https://arxiv.org/pdf/2412.20212)
 
 **Date:** 
 
@@ -3566,7 +3566,7 @@ Knowledge of religious topics as part of a general, open-domain question-answeri
 
 ## A Culturally-Aware Benchmark for Person Re-Identification in Modest Attire
 
-[https://arxiv.org/abs/2412.18874](https://arxiv.org/abs/2412.18874)
+[https://arxiv.org/pdf/2412.18874](https://arxiv.org/pdf/2412.18874)
 
 **Date:** 2025-06-10
 
@@ -3575,7 +3575,7 @@ The benchmark measures the performance drop and cultural bias of Person Re-Ident
 
 ## SUBDATA: Bridging Heterogeneous Datasets to Enable Theory-Driven Evaluation of Political and Demographic Perspectives in LLMs #Mormon
 
-[https://arxiv.org/abs/2412.16783](https://arxiv.org/abs/2412.16783)
+[https://arxiv.org/pdf/2412.16783](https://arxiv.org/pdf/2412.16783)
 
 **Date:** 2025-10-12
 
@@ -3584,7 +3584,7 @@ The benchmark measures the rate at which Large Language Models, conditioned on d
 
 ## TelcoLM: collecting data, adapting, and benchmarking language models for the telecommunication domain
 
-[https://arxiv.org/abs/2412.15891](https://arxiv.org/abs/2412.15891)
+[https://arxiv.org/pdf/2412.15891](https://arxiv.org/pdf/2412.15891)
 
 **Date:** 2024-12-20
 
@@ -3593,7 +3593,7 @@ The benchmark measured the models' ability to answer questions about religious c
 
 ## Chinese SafetyQA: A Safety Short-form Factuality Benchmark for Large Language Models
 
-[https://arxiv.org/abs/2412.15265](https://arxiv.org/abs/2412.15265)
+[https://arxiv.org/pdf/2412.15265](https://arxiv.org/pdf/2412.15265)
 
 **Date:** 2024-12-23
 
@@ -3602,7 +3602,7 @@ Factual knowledge related to religious prejudice and discrimination within the C
 
 ## Towards Automatic Evaluation for Image Transcreation
 
-[https://arxiv.org/abs/2412.13717](https://arxiv.org/abs/2412.13717)
+[https://arxiv.org/pdf/2412.13717](https://arxiv.org/pdf/2412.13717)
 
 **Date:** 2025-03-20
 
@@ -3611,7 +3611,7 @@ The benchmark measured the performance of Vision-Language Models on transcreatin
 
 ## Socio-Culturally Aware Evaluation Framework for LLM-Based Content Moderation
 
-[https://arxiv.org/abs/2412.13578](https://arxiv.org/abs/2412.13578)
+[https://arxiv.org/pdf/2412.13578](https://arxiv.org/pdf/2412.13578)
 
 **Date:** 2024-12-18
 
@@ -3620,7 +3620,7 @@ The benchmark measures how Large Language Models generate hateful content and ex
 
 ## CEHA: A Dataset of Conflict Events in the Horn of Africa
 
-[https://arxiv.org/abs/2412.13511](https://arxiv.org/abs/2412.13511)
+[https://arxiv.org/pdf/2412.13511](https://arxiv.org/pdf/2412.13511)
 
 **Date:** 2024-12-18
 
@@ -3629,7 +3629,7 @@ The benchmark measures the ability of models to perform multi-label classificati
 
 ## A Framework for Critical Evaluation of Text-to-Image Models: Integrating Art Historical Analysis, Artistic Exploration, and Critical Prompt Engineering.
 
-[https://arxiv.org/abs/2412.12774](https://arxiv.org/abs/2412.12774)
+[https://arxiv.org/pdf/2412.12774](https://arxiv.org/pdf/2412.12774)
 
 **Date:** 2024-12-17
 
@@ -3638,7 +3638,7 @@ The framework measures bias in religious iconography (specifically, a tendency t
 
 ## QUENCH: Measuring the gap between Indic and Non-Indic Contextual General Reasoning in LLMs
 
-[https://arxiv.org/abs/2412.11763](https://arxiv.org/abs/2412.11763)
+[https://arxiv.org/pdf/2412.11763](https://arxiv.org/pdf/2412.11763)
 
 **Date:** 2024-12-16
 
@@ -3647,7 +3647,7 @@ Knowledge of mythology and religion as part of a broader general world knowledge
 
 ## MT-LENS: An all-in-one Toolkit for Better Machine Translation Evaluation
 
-[https://arxiv.org/abs/2412.11615](https://arxiv.org/abs/2412.11615)
+[https://arxiv.org/pdf/2412.11615](https://arxiv.org/pdf/2412.11615)
 
 **Date:** 2024-12-16
 
@@ -3656,7 +3656,7 @@ Toxicity detection in machine translation outputs, where the source text is rela
 
 ## Optimized Quran Passage Retrieval Using an Expanded QA Dataset and Fine-Tuned Language Models
 
-[https://arxiv.org/abs/2412.11431](https://arxiv.org/abs/2412.11431)
+[https://arxiv.org/pdf/2412.11431](https://arxiv.org/pdf/2412.11431)
 
 **Date:** 2024-12-16
 
@@ -3665,7 +3665,7 @@ The benchmark measured the performance of various language models on Qur'anic pa
 
 ## MALAMUTE: A Multilingual, Highly-granular, Template-free, Education-based Probing Dataset
 
-[https://arxiv.org/abs/2412.10105](https://arxiv.org/abs/2412.10105)
+[https://arxiv.org/pdf/2412.10105](https://arxiv.org/pdf/2412.10105)
 
 **Date:** 2025-05-25
 
@@ -3674,7 +3674,7 @@ Factual knowledge of religious concepts within educational domains, such as the 
 
 ## Filipino Benchmarks for Measuring Sexist and Homophobic Bias in Multilingual Language Models from Southeast Asia
 
-[https://arxiv.org/abs/2412.07303](https://arxiv.org/abs/2412.07303)
+[https://arxiv.org/pdf/2412.07303](https://arxiv.org/pdf/2412.07303)
 
 **Date:** 2024-12-11
 
@@ -3683,7 +3683,7 @@ The benchmark measures stereotypes linking queer identities with religious conce
 
 ## Evaluating and Mitigating Social Bias for Large Language Models in Open-ended Settings
 
-[https://arxiv.org/abs/2412.06134](https://arxiv.org/abs/2412.06134)
+[https://arxiv.org/pdf/2412.06134](https://arxiv.org/pdf/2412.06134)
 
 **Date:** 2025-10-15
 
@@ -3692,7 +3692,7 @@ Detection of social biases and stereotypes in religious contexts across multiple
 
 ## Hostility Detection in UK Politics: A Dataset on Online Abuse Targeting MPs
 
-[https://arxiv.org/abs/2412.04046](https://arxiv.org/abs/2412.04046)
+[https://arxiv.org/pdf/2412.04046](https://arxiv.org/pdf/2412.04046)
 
 **Date:** 2024-12-05
 
@@ -3701,7 +3701,7 @@ Detection of hostility in tweets directed at UK Members of Parliament (MPs), whe
 
 ## INCLUDE: EVALUATING MULTILINGUAL LANGUAGE UNDERSTANDING WITH REGIONAL KNOWLEDGE
 
-[https://arxiv.org/abs/2411.19799](https://arxiv.org/abs/2411.19799)
+[https://arxiv.org/pdf/2411.19799](https://arxiv.org/pdf/2411.19799)
 
 **Date:** 2024-11-29
 
@@ -3710,7 +3710,7 @@ The benchmark, named INCLUDE, measures a model's knowledge of the academic subje
 
 ## All Languages Matter: Evaluating LMMs on Culturally Diverse 100 Languages
 
-[https://arxiv.org/abs/2411.16508](https://arxiv.org/abs/2411.16508)
+[https://arxiv.org/pdf/2411.16508](https://arxiv.org/pdf/2411.16508)
 
 **Date:** 2025-05-01
 
@@ -3719,7 +3719,7 @@ The benchmark measured the models' knowledge and visual understanding of religio
 
 ## HATEDAY: Insights from a Global Hate Speech Dataset Representative of a Day on Twitter
 
-[https://arxiv.org/abs/2411.15462](https://arxiv.org/abs/2411.15462)
+[https://arxiv.org/pdf/2411.15462](https://arxiv.org/pdf/2411.15462)
 
 **Date:** 2025-06-03
 
@@ -3728,7 +3728,7 @@ Detection of hate speech targeting individuals or groups based on their religion
 
 ## The Impossible Test: A 2024 Unsolvable Dataset and A Chance for an AGI Quiz
 
-[https://arxiv.org/abs/2411.14486](https://arxiv.org/abs/2411.14486)
+[https://arxiv.org/pdf/2411.14486](https://arxiv.org/pdf/2411.14486)
 
 **Date:** 2024-11-01
 
@@ -3737,7 +3737,7 @@ The benchmark measured the ability of Large Language Models to acknowledge uncer
 
 ## VBench++: Comprehensive and Versatile Benchmark Suite for Video Generative Models
 
-[https://arxiv.org/abs/2411.13503](https://arxiv.org/abs/2411.13503)
+[https://arxiv.org/pdf/2411.13503](https://arxiv.org/pdf/2411.13503)
 
 **Date:** 2024-11-20
 
@@ -3746,7 +3746,7 @@ The benchmark measured the ability of video generative models to fairly generate
 
 ## Value Imprint: A Technique for Auditing the Human Values Embedded in RLHF Datasets
 
-[https://arxiv.org/abs/2411.11937](https://arxiv.org/abs/2411.11937)
+[https://arxiv.org/pdf/2411.11937](https://arxiv.org/pdf/2411.11937)
 
 **Date:** 2024-11-18
 
@@ -3755,7 +3755,7 @@ Detection of preferences that moderate religious fanaticism and antisemitic comm
 
 ## Value-Spectrum: Quantifying Preferences of Vision-Language Models via Value Decomposition in Social Media Contexts
 
-[https://arxiv.org/abs/2411.11479](https://arxiv.org/abs/2411.11479)
+[https://arxiv.org/pdf/2411.11479](https://arxiv.org/pdf/2411.11479)
 
 **Date:** 2025-06-03
 
@@ -3764,7 +3764,7 @@ Preference for visual content related to the Schwartz value of 'Tradition', whic
 
 ## Bias in Large Language Models: Origin, Evaluation, and Mitigation
 
-[https://arxiv.org/abs/2411.10915](https://arxiv.org/abs/2411.10915)
+[https://arxiv.org/pdf/2411.10915](https://arxiv.org/pdf/2411.10915)
 
 **Date:** 2024-11-16
 
@@ -3773,7 +3773,7 @@ The paper cites studies that measure stereotype bias, specifically the associati
 
 ## Beyond the Safety Bundle: Auditing the Helpful and Harmless Dataset
 
-[https://arxiv.org/abs/2411.08243](https://arxiv.org/abs/2411.08243)
+[https://arxiv.org/pdf/2411.08243](https://arxiv.org/pdf/2411.08243)
 
 **Date:** 2025-06-03
 
@@ -3782,7 +3782,7 @@ The benchmark measures disparate safety behaviors (specifically, refusal rates t
 
 ## CHINESE SIMPLEQA: A CHINESE FACTUALITY EVALUATION FOR LARGE LANGUAGE MODELS
 
-[https://arxiv.org/abs/2411.07140](https://arxiv.org/abs/2411.07140)
+[https://arxiv.org/pdf/2411.07140](https://arxiv.org/pdf/2411.07140)
 
 **Date:** 2024-11-13
 
@@ -3791,7 +3791,7 @@ The benchmark measures the factual knowledge of LLMs on various topics, includin
 
 ## Benchmarking Distributional Alignment of Large Language Models
 
-[https://arxiv.org/abs/2411.05403](https://arxiv.org/abs/2411.05403)
+[https://arxiv.org/pdf/2411.05403](https://arxiv.org/pdf/2411.05403)
 
 **Date:** 2024-11-08
 
@@ -3800,7 +3800,7 @@ The benchmark measured the distributional alignment of Large Language Models wit
 
 ## MILU: A Multi-task Indic Language Understanding Benchmark
 
-[https://arxiv.org/abs/2411.02538](https://arxiv.org/abs/2411.02538)
+[https://arxiv.org/pdf/2411.02538](https://arxiv.org/pdf/2411.02538)
 
 **Date:** 2025-02-04
 
@@ -3809,7 +3809,7 @@ The benchmark, MILU, measures the knowledge of Large Language Models on 41 subje
 
 ## Culinary Class Wars: Evaluating LLMs using ASH in Cuisine Transfer Task
 
-[https://arxiv.org/abs/2411.01996](https://arxiv.org/abs/2411.01996)
+[https://arxiv.org/pdf/2411.01996](https://arxiv.org/pdf/2411.01996)
 
 **Date:** 2024-11-04
 
@@ -3818,7 +3818,7 @@ The benchmark measured the ability of Large Language Models to generate cultural
 
 ## IDEATOR: Jailbreaking and Benchmarking Large Vision-Language Models Using Themselves
 
-[https://arxiv.org/abs/2411.00827](https://arxiv.org/abs/2411.00827)
+[https://arxiv.org/pdf/2411.00827](https://arxiv.org/pdf/2411.00827)
 
 **Date:** 2025-09-25
 
@@ -3827,7 +3827,7 @@ The benchmark, VLJailbreakBench, measured the models' susceptibility to generati
 
 ## Benchmarking Bias in Large Language Models during Role-Playing
 
-[https://arxiv.org/abs/2411.00585](https://arxiv.org/abs/2411.00585)
+[https://arxiv.org/pdf/2411.00585](https://arxiv.org/pdf/2411.00585)
 
 **Date:** 2024-11-01
 
@@ -3836,7 +3836,7 @@ The benchmark measured social biases and stereotypes related to religious groups
 
 ## Risk Sources and Risk Management Measures in Support of Standards for General-Purpose AI Systems
 
-[https://arxiv.org/abs/2410.23472](https://arxiv.org/abs/2410.23472)
+[https://arxiv.org/pdf/2410.23472](https://arxiv.org/pdf/2410.23472)
 
 **Date:** 2024-11-15
 
@@ -3845,7 +3845,7 @@ Detection of stereotypes based on religious beliefs. The paper identifies 'relig
 
 ## Evaluating Cultural and Social Awareness of LLM Web Agents
 
-[https://arxiv.org/abs/2410.23252](https://arxiv.org/abs/2410.23252)
+[https://arxiv.org/pdf/2410.23252](https://arxiv.org/pdf/2410.23252)
 
 **Date:** 2025-03-08
 
@@ -3854,7 +3854,7 @@ The benchmark, CASA, measures an LLM agent's ability to detect and appropriately
 
 ## SG-Bench: Evaluating LLM Safety Generalization Across Diverse Tasks and Prompt Types
 
-[https://arxiv.org/abs/2410.21965](https://arxiv.org/abs/2410.21965)
+[https://arxiv.org/pdf/2410.21965](https://arxiv.org/pdf/2410.21965)
 
 **Date:** 2024-10-29
 
@@ -3863,7 +3863,7 @@ The benchmark measures LLM safety across several categories, one of which is 'St
 
 ## CAN MACHINES THINK LIKE HUMANS? A BEHAVIORAL EVALUATION OF LLM AGENTS IN DICTATOR GAMES
 
-[https://arxiv.org/abs/2410.21359](https://arxiv.org/abs/2410.21359)
+[https://arxiv.org/pdf/2410.21359](https://arxiv.org/pdf/2410.21359)
 
 **Date:** 2025-11-17
 
@@ -3872,7 +3872,7 @@ Use of religious language (e.g., God, hell, pray) in the LLM's reasoning for its
 
 ## Improving Model Evaluation using SMART Filtering of Benchmark Datasets
 
-[https://arxiv.org/abs/2410.20245](https://arxiv.org/abs/2410.20245)
+[https://arxiv.org/pdf/2410.20245](https://arxiv.org/pdf/2410.20245)
 
 **Date:** 2025-02-10
 
@@ -3881,7 +3881,7 @@ Knowledge of world religions, as a sub-category within the MMLU benchmark. Withi
 
 ## FAIRMT-BENCH: BENCHMARKING FAIRNESS FOR MULTI-TURN DIALOGUE IN CONVERSATIONAL LLMS
 
-[https://arxiv.org/abs/2410.19317](https://arxiv.org/abs/2410.19317)
+[https://arxiv.org/pdf/2410.19317](https://arxiv.org/pdf/2410.19317)
 
 **Date:** 2025-06-10
 
@@ -3890,7 +3890,7 @@ The benchmark measures fairness, specifically stereotype and toxicity biases, re
 
 ## SafeBench: A Safety Evaluation Framework for Multimodal Large Language Models
 
-[https://arxiv.org/abs/2410.18927](https://arxiv.org/abs/2410.18927)
+[https://arxiv.org/pdf/2410.18927](https://arxiv.org/pdf/2410.18927)
 
 **Date:** 2024-10-24
 
@@ -3899,7 +3899,7 @@ The benchmark measured the models' tendency to express or favor religious opinio
 
 ## CompassJudger-1: All-in-one Judge Model Helps Model Evaluation and Evolution
 
-[https://arxiv.org/abs/2410.16256](https://arxiv.org/abs/2410.16256)
+[https://arxiv.org/pdf/2410.16256](https://arxiv.org/pdf/2410.16256)
 
 **Date:** 2024-10-21
 
@@ -3908,7 +3908,7 @@ The paper includes 'Religion & Faith' as one of 31 categories for classifying us
 
 ## Evaluating Consistencies in LLM responses through a Semantic Clustering of Question Answering
 
-[https://arxiv.org/abs/2410.15440](https://arxiv.org/abs/2410.15440)
+[https://arxiv.org/pdf/2410.15440](https://arxiv.org/pdf/2410.15440)
 
 **Date:** 
 
@@ -3917,7 +3917,7 @@ Semantic consistency of answers to questions in the 'Religion' category from the
 
 ## Text-to-Image Representativity Fairness Evaluation Framework
 
-[https://arxiv.org/abs/2410.14201](https://arxiv.org/abs/2410.14201)
+[https://arxiv.org/pdf/2410.14201](https://arxiv.org/pdf/2410.14201)
 
 **Date:** 2024-10-18
 
@@ -3926,7 +3926,7 @@ Stereotypical associations with religious/cultural attire (hijab, bindi) in text
 
 ## BENTO: BENCHMARK TASK REDUCTION WITH IN-CONTEXT TRANSFERABILITY
 
-[https://arxiv.org/abs/2410.13804](https://arxiv.org/abs/2410.13804)
+[https://arxiv.org/pdf/2410.13804](https://arxiv.org/pdf/2410.13804)
 
 **Date:** 2024-10-21
 
@@ -3935,7 +3935,7 @@ The benchmark measured knowledge of world religions as one of 57 tasks within th
 
 ## Cross-Lingual Auto Evaluation for Assessing Multilingual LLMs
 
-[https://arxiv.org/abs/2410.13394](https://arxiv.org/abs/2410.13394)
+[https://arxiv.org/pdf/2410.13394](https://arxiv.org/pdf/2410.13394)
 
 **Date:** 2025-07-18
 
@@ -3944,7 +3944,7 @@ Evaluation of moral reasoning in a scenario involving conflicting personal choic
 
 ## BANTH: A Multi-label Hate Speech Detection Dataset for Transliterated Bangla
 
-[https://arxiv.org/abs/2410.13281](https://arxiv.org/abs/2410.13281)
+[https://arxiv.org/pdf/2410.13281](https://arxiv.org/pdf/2410.13281)
 
 **Date:** 2025-05-31
 
@@ -3953,7 +3953,7 @@ The benchmark measures the detection of hate speech targeting individuals or gro
 
 ## debiaSAE: Benchmarking and Mitigating Vision-Language Model Bias
 
-[https://arxiv.org/abs/2410.13146](https://arxiv.org/abs/2410.13146)
+[https://arxiv.org/pdf/2410.13146](https://arxiv.org/pdf/2410.13146)
 
 **Date:** 2025-03-30
 
@@ -3962,7 +3962,7 @@ The benchmark measured the selection of stereotypical captions over anti-stereot
 
 ## Sound Check: Auditing Audio Datasets
 
-[https://arxiv.org/abs/2410.13114](https://arxiv.org/abs/2410.13114)
+[https://arxiv.org/pdf/2410.13114](https://arxiv.org/pdf/2410.13114)
 
 **Date:** 2024-10-17
 
@@ -3971,7 +3971,7 @@ Representation of religious groups in audio dataset transcripts, measured by the
 
 ## Measuring Spiritual Values and Biases of Large Language Models
 
-[https://arxiv.org/abs/2410.11647](https://arxiv.org/abs/2410.11647)
+[https://arxiv.org/pdf/2410.11647](https://arxiv.org/pdf/2410.11647)
 
 **Date:** 2025-07-16
 
@@ -3980,7 +3980,7 @@ Measurement of the inherent spiritual and religious values of LLMs using questio
 
 ## Assessing Bias in Metric Models for LLM Open-Ended Generation Bias Benchmarks
 
-[https://arxiv.org/abs/2410.11059](https://arxiv.org/abs/2410.11059)
+[https://arxiv.org/pdf/2410.11059](https://arxiv.org/pdf/2410.11059)
 
 **Date:** 2024-10-14
 
@@ -3989,7 +3989,7 @@ Stereotype-related bias detection against specific religious groups, evaluated b
 
 ## CULTURAL FIDELITY IN LARGE-LANGUAGE MODELS: AN EVALUATION OF ONLINE LANGUAGE RESOURCES AS A DRIVER OF MODEL PERFORMANCE IN VALUE REPRESENTATION
 
-[https://arxiv.org/abs/2410.10489](https://arxiv.org/abs/2410.10489)
+[https://arxiv.org/pdf/2410.10489](https://arxiv.org/pdf/2410.10489)
 
 **Date:** 2024-10-14
 
@@ -3998,7 +3998,7 @@ The benchmark measured the ability of LLMs to represent societal values related 
 
 ## RMB: COMPREHENSIVELY BENCHMARKING REWARD MODELS IN LLM ALIGNMENT
 
-[https://arxiv.org/abs/2410.09893](https://arxiv.org/abs/2410.09893)
+[https://arxiv.org/pdf/2410.09893](https://arxiv.org/pdf/2410.09893)
 
 **Date:** 2025-04-04
 
@@ -4007,7 +4007,7 @@ The benchmark measures a reward model's ability to identify and penalize harmful
 
 ## Responsible AI in NLP: GUS-Net Span-Level Bias Detection Dataset and Benchmark for Generalizations, Unfairness, and Stereotypes
 
-[https://arxiv.org/abs/2410.08388](https://arxiv.org/abs/2410.08388)
+[https://arxiv.org/pdf/2410.08388](https://arxiv.org/pdf/2410.08388)
 
 **Date:** 2025-09-15
 
@@ -4016,7 +4016,7 @@ The benchmark measures span-level detection of social biases, specifically categ
 
 ## COMPL-AI Framework: A Technical Interpretation and LLM Benchmarking Suite for the EU Artificial Intelligence Act
 
-[https://arxiv.org/abs/2410.07959](https://arxiv.org/abs/2410.07959)
+[https://arxiv.org/pdf/2410.07959](https://arxiv.org/pdf/2410.07959)
 
 **Date:** 2025-02-03
 
@@ -4025,7 +4025,7 @@ The benchmarks measured several aspects: (1) Sentiment bias towards religious gr
 
 ## VHELM: A Holistic Evaluation of Vision Language Models
 
-[https://arxiv.org/abs/2410.07112](https://arxiv.org/abs/2410.07112)
+[https://arxiv.org/pdf/2410.07112](https://arxiv.org/pdf/2410.07112)
 
 **Date:** 2024-10-24
 
@@ -4034,7 +4034,7 @@ The benchmark measures knowledge of religion as a school subject through multipl
 
 ## Representing the Under-Represented: Cultural and Core Capability Benchmarks for Developing Thai Large Language Models
 
-[https://arxiv.org/abs/2410.04795](https://arxiv.org/abs/2410.04795)
+[https://arxiv.org/pdf/2410.04795](https://arxiv.org/pdf/2410.04795)
 
 **Date:** 2024-10-08
 
@@ -4043,7 +4043,7 @@ The benchmark (ThaiCLI) measures a model's alignment with Thai cultural norms an
 
 ## Evaluating Language Model Character Traits
 
-[https://arxiv.org/abs/2410.04272](https://arxiv.org/abs/2410.04272)
+[https://arxiv.org/pdf/2410.04272](https://arxiv.org/pdf/2410.04272)
 
 **Date:** 2024-10-05
 
@@ -4052,7 +4052,7 @@ The benchmark measured whether language models would undertake potentially uneth
 
 ## CulturalBench: A Robust, Diverse, and Challenging Cultural Benchmark by Human-AI CulturalTeaming
 
-[https://arxiv.org/abs/2410.02677](https://arxiv.org/abs/2410.02677)
+[https://arxiv.org/pdf/2410.02677](https://arxiv.org/pdf/2410.02677)
 
 **Date:** 2025-06-03
 
@@ -4061,7 +4061,7 @@ The benchmark measures factual knowledge of religious customs and practices as o
 
 ## Large Language Model for Multi-Domain Translation: Benchmarking and Domain CoT Fine-tuning
 
-[https://arxiv.org/abs/2410.02631](https://arxiv.org/abs/2410.02631)
+[https://arxiv.org/pdf/2410.02631](https://arxiv.org/pdf/2410.02631)
 
 **Date:** 2024-10-03
 
@@ -4070,7 +4070,7 @@ The benchmark measured the translation quality (using BLEU and COMET metrics) of
 
 ## EvalAssist: Insights on Task-Specific Evaluations and AI-Assisted Judgment Strategy Preferences
 
-[https://arxiv.org/abs/2410.00873](https://arxiv.org/abs/2410.00873)
+[https://arxiv.org/pdf/2410.00873](https://arxiv.org/pdf/2410.00873)
 
 **Date:** 2025-08-06
 
@@ -4079,7 +4079,7 @@ Cultural and religious inclusivity in email generation, specifically how partici
 
 ## LexEval: A Comprehensive Chinese Legal Benchmark for Evaluating Large Language Models
 
-[https://arxiv.org/abs/2409.20288](https://arxiv.org/abs/2409.20288)
+[https://arxiv.org/pdf/2409.20288](https://arxiv.org/pdf/2409.20288)
 
 **Date:** 2024-11-26
 
@@ -4088,7 +4088,7 @@ The benchmark includes a task (Bias and Discrimination) that assesses the potent
 
 ## T2Vs Meet VLMs: A Scalable Multimodal Dataset for Visual Harmfulness Recognition
 
-[https://arxiv.org/abs/2409.19734](https://arxiv.org/abs/2409.19734)
+[https://arxiv.org/pdf/2409.19734](https://arxiv.org/pdf/2409.19734)
 
 **Date:** 2024-10-02
 
@@ -4097,7 +4097,7 @@ Detection of harmful visual content, where harm can include the misuse of 'relig
 
 ## DARE: Diverse Visual Question Answering with Robustness Evaluation
 
-[https://arxiv.org/abs/2409.18023](https://arxiv.org/abs/2409.18023)
+[https://arxiv.org/pdf/2409.18023](https://arxiv.org/pdf/2409.18023)
 
 **Date:** 2025-07-21
 
@@ -4106,7 +4106,7 @@ Knowledge of cultural and religious concepts, customs, and holidays, as part of 
 
 ## BeanCounter: A low-toxicity, large-scale, and open dataset of business-oriented text
 
-[https://arxiv.org/abs/2409.17827](https://arxiv.org/abs/2409.17827)
+[https://arxiv.org/pdf/2409.17827](https://arxiv.org/pdf/2409.17827)
 
 **Date:** 2024-09-27
 
@@ -4115,7 +4115,7 @@ Prevalence of religious demographic descriptors (e.g., 'Christian', 'Jewish') an
 
 ## In which fields can ChatGPT detect journal article quality? An evaluation of REF2021 results
 
-[https://arxiv.org/abs/2409.16695](https://arxiv.org/abs/2409.16695)
+[https://arxiv.org/pdf/2409.16695](https://arxiv.org/pdf/2409.16695)
 
 **Date:** 
 
@@ -4124,7 +4124,7 @@ Ability to estimate the quality of academic journal articles in the field of The
 
 ## KALAHI: A handcrafted, grassroots cultural LLM evaluation suite for Filipino
 
-[https://arxiv.org/abs/2409.15380](https://arxiv.org/abs/2409.15380)
+[https://arxiv.org/pdf/2409.15380](https://arxiv.org/pdf/2409.15380)
 
 **Date:** 2025-06-28
 
@@ -4133,7 +4133,7 @@ The benchmark measures a model's ability to generate culturally appropriate resp
 
 ## CI-Bench: Benchmarking Contextual Integrity of AI Assistants on Synthetic Data
 
-[https://arxiv.org/abs/2409.13903](https://arxiv.org/abs/2409.13903)
+[https://arxiv.org/pdf/2409.13903](https://arxiv.org/pdf/2409.13903)
 
 **Date:** 2024-09-20
 
@@ -4142,7 +4142,7 @@ The benchmark measured the AI assistant's ability to protect personal informatio
 
 ## CamelEval: Advancing Culturally Aligned Arabic Language Models and Benchmarks
 
-[https://arxiv.org/abs/2409.12623](https://arxiv.org/abs/2409.12623)
+[https://arxiv.org/pdf/2409.12623](https://arxiv.org/pdf/2409.12623)
 
 **Date:** 2024-09-24
 
@@ -4151,7 +4151,7 @@ The benchmark (CamelEval) measures an LLM's ability to generate helpful, accurat
 
 ## BanStereoSet: A Dataset to Measure Stereotypical Social Biases in LLMs for Bangla
 
-[https://arxiv.org/abs/2409.11638](https://arxiv.org/abs/2409.11638)
+[https://arxiv.org/pdf/2409.11638](https://arxiv.org/pdf/2409.11638)
 
 **Date:** 2025-05-29
 
@@ -4160,7 +4160,7 @@ The benchmark measures stereotypical social biases related to religion by presen
 
 ## ARADICE: Benchmarks for Dialectal and Cultural Capabilities in LLMs
 
-[https://arxiv.org/abs/2409.11404](https://arxiv.org/abs/2409.11404)
+[https://arxiv.org/pdf/2409.11404](https://arxiv.org/pdf/2409.11404)
 
 **Date:** 2024-12-17
 
@@ -4169,7 +4169,7 @@ Measurement of cultural knowledge and compatibility within the Arab region, with
 
 ## SAGED: A Holistic Bias-Benchmarking Pipeline for Language Models with Customisable Fairness Calibration
 
-[https://arxiv.org/abs/2409.11149](https://arxiv.org/abs/2409.11149)
+[https://arxiv.org/pdf/2409.11149](https://arxiv.org/pdf/2409.11149)
 
 **Date:** 2025-01-30
 
@@ -4178,7 +4178,7 @@ text-based stereotype detection related to religion The paper does not present s
 
 ## A Benchmark Dataset with Larger Context for Non-Factoid Question-Answering over Islamic Text
 
-[https://arxiv.org/abs/2409.09844](https://arxiv.org/abs/2409.09844)
+[https://arxiv.org/pdf/2409.09844](https://arxiv.org/pdf/2409.09844)
 
 **Date:** 2024-09-15
 
@@ -4187,7 +4187,7 @@ The benchmark measures the performance of non-factoid question-answering systems
 
 ## ValueCompass: A Framework for Measuring Contextual Value Alignment Between Human and LLMs
 
-[https://arxiv.org/abs/2409.09586](https://arxiv.org/abs/2409.09586)
+[https://arxiv.org/pdf/2409.09586](https://arxiv.org/pdf/2409.09586)
 
 **Date:** 2024-11-04
 
@@ -4196,7 +4196,7 @@ The benchmark measured the alignment between humans and LLMs on the value 'Devou
 
 ## E2MoCase: A Dataset for Emotional, Event and Moral Observations in News Articles on High-impact Legal Cases
 
-[https://arxiv.org/abs/2409.09001](https://arxiv.org/abs/2409.09001)
+[https://arxiv.org/pdf/2409.09001](https://arxiv.org/pdf/2409.09001)
 
 **Date:** 
 
@@ -4205,7 +4205,7 @@ The benchmark measures cultural biases in news reporting on legal cases. One of 
 
 ## FairHome: A Fair Housing and Fair Lending Dataset
 
-[https://arxiv.org/abs/2409.05990](https://arxiv.org/abs/2409.05990)
+[https://arxiv.org/pdf/2409.05990](https://arxiv.org/pdf/2409.05990)
 
 **Date:** 2024-09-09
 
@@ -4214,7 +4214,7 @@ Detection of discriminatory or preferential language related to religious commun
 
 ## Automatic Pseudo-Harmful Prompt Generation for Evaluating False Refusals in Large Language Models
 
-[https://arxiv.org/abs/2409.00598](https://arxiv.org/abs/2409.00598)
+[https://arxiv.org/pdf/2409.00598](https://arxiv.org/pdf/2409.00598)
 
 **Date:** 2025-06-11
 
@@ -4223,7 +4223,7 @@ The paper does not specifically measure any aspect of faith or religion. Religio
 
 ## Testing and Evaluation of Large Language Models: Correctness, Non-Toxicity, and Fairness
 
-[https://arxiv.org/abs/2409.00551](https://arxiv.org/abs/2409.00551)
+[https://arxiv.org/pdf/2409.00551](https://arxiv.org/pdf/2409.00551)
 
 **Date:** 2024-08-31
 
@@ -4232,7 +4232,7 @@ The paper measures social bias in conversational AI systems, specifically focusi
 
 ## BACKDOORLLM: A Comprehensive Benchmark for Backdoor Attacks and Defenses on Large Language Models
 
-[https://arxiv.org/abs/2408.12798](https://arxiv.org/abs/2408.12798)
+[https://arxiv.org/pdf/2408.12798](https://arxiv.org/pdf/2408.12798)
 
 **Date:** 2025-05-19
 
@@ -4241,7 +4241,7 @@ The benchmark measured fairness and bias concerning religious ideologies using t
 
 ## SAGE-RT: Synthetic Alignment data Generation for Safety Evaluation and Red Teaming
 
-[https://arxiv.org/abs/2408.11851](https://arxiv.org/abs/2408.11851)
+[https://arxiv.org/pdf/2408.11851](https://arxiv.org/pdf/2408.11851)
 
 **Date:** 2024-08-14
 
@@ -4250,7 +4250,7 @@ The benchmark measured the models' susceptibility to generating harmful, biased,
 
 ## OpenFactCheck: A Unified Framework for Factuality Evaluation of LLMs
 
-[https://arxiv.org/abs/2408.11832](https://arxiv.org/abs/2408.11832)
+[https://arxiv.org/pdf/2408.11832](https://arxiv.org/pdf/2408.11832)
 
 **Date:** 2025-10-28
 
@@ -4259,7 +4259,7 @@ The benchmark measures the factual accuracy of Large Language Models' knowledge 
 
 ## CMoralEval: A Moral Evaluation Benchmark for Chinese Large Language Models
 
-[https://arxiv.org/abs/2408.09819](https://arxiv.org/abs/2408.09819)
+[https://arxiv.org/pdf/2408.09819](https://arxiv.org/pdf/2408.09819)
 
 **Date:** 2024-08-19
 
@@ -4268,7 +4268,7 @@ Evaluation of moral alignment based on a taxonomy and principles inspired by tra
 
 ## LOCALVALUEBENCH: A Collaboratively Built and Extensible Benchmark for Evaluating Localized Value Alignment and Ethical Safety in Large Language Models
 
-[https://arxiv.org/abs/2408.01460](https://arxiv.org/abs/2408.01460)
+[https://arxiv.org/pdf/2408.01460](https://arxiv.org/pdf/2408.01460)
 
 **Date:** 2024-07-27
 
@@ -4277,7 +4277,7 @@ The benchmark measured how Large Language Models handle religiously-framed argum
 
 ## DEBATEQA: Evaluating Question Answering on Debatable Knowledge
 
-[https://arxiv.org/abs/2408.01419](https://arxiv.org/abs/2408.01419)
+[https://arxiv.org/pdf/2408.01419](https://arxiv.org/pdf/2408.01419)
 
 **Date:** 2024-08-02
 
@@ -4286,7 +4286,7 @@ The benchmark measured the ability of large language models to provide comprehen
 
 ## Annotator in the Loop: A Case Study of In-Depth Rater Engagement to Create a Bridging Benchmark Dataset
 
-[https://arxiv.org/abs/2408.00880](https://arxiv.org/abs/2408.00880)
+[https://arxiv.org/pdf/2408.00880](https://arxiv.org/pdf/2408.00880)
 
 **Date:** 2024-08-01
 
@@ -4295,7 +4295,7 @@ The benchmark did not specifically measure aspects of faith or religion. It was 
 
 ## Safetywashing: Do AI Safety Benchmarks Actually Measure Safety Progress?
 
-[https://arxiv.org/abs/2407.21792](https://arxiv.org/abs/2407.21792)
+[https://arxiv.org/pdf/2407.21792](https://arxiv.org/pdf/2407.21792)
 
 **Date:** 2024-12-27
 
@@ -4304,7 +4304,7 @@ U.S.-centric stereotypical bias in language models along nine major bias categor
 
 ## Exploring Bengali Religious Dialect Biases in Large Language Models with Evaluation Perspectives
 
-[https://arxiv.org/abs/2407.18376](https://arxiv.org/abs/2407.18376)
+[https://arxiv.org/pdf/2407.18376](https://arxiv.org/pdf/2407.18376)
 
 **Date:** 2024-07-25
 
@@ -4313,7 +4313,7 @@ Bias towards Hindu vs. Muslim religious dialects in the Bengali language, assess
 
 ## AIR-BENCH 2024: A Safety Benchmark Based on Risk Categories from Regulations and Policies
 
-[https://arxiv.org/abs/2407.17436](https://arxiv.org/abs/2407.17436)
+[https://arxiv.org/pdf/2407.17436](https://arxiv.org/pdf/2407.17436)
 
 **Date:** 2024-08-05
 
@@ -4322,7 +4322,7 @@ The benchmark measured models' refusal rates for generating harmful instructions
 
 ## SAFETY-J: Evaluating Safety with Critique
 
-[https://arxiv.org/abs/2407.17075](https://arxiv.org/abs/2407.17075)
+[https://arxiv.org/pdf/2407.17075](https://arxiv.org/pdf/2407.17075)
 
 **Date:** 2024-08-13
 
@@ -4331,7 +4331,7 @@ Unfair treatment of individuals because of their religious beliefs ('Religism') 
 
 ## A multi-level multi-label text classification dataset of 19th century Ottoman and Russian literary and critical texts
 
-[https://arxiv.org/abs/2407.15136](https://arxiv.org/abs/2407.15136)
+[https://arxiv.org/pdf/2407.15136](https://arxiv.org/pdf/2407.15136)
 
 **Date:** 2024-07-21
 
@@ -4340,7 +4340,7 @@ The benchmark measured the ability of models to classify 19th-century historical
 
 ## Evaluating Large Language Models with fmeval
 
-[https://arxiv.org/abs/2407.12872](https://arxiv.org/abs/2407.12872)
+[https://arxiv.org/pdf/2407.12872](https://arxiv.org/pdf/2407.12872)
 
 **Date:** 2024-07-15
 
@@ -4349,7 +4349,7 @@ The benchmark measures prompt stereotyping and biased/toxic generation in the co
 
 ## Grounding and Evaluation for Large Language Models: Practical Challenges and Lessons Learned (Survey)
 
-[https://arxiv.org/abs/2407.12858](https://arxiv.org/abs/2407.12858)
+[https://arxiv.org/pdf/2407.12858](https://arxiv.org/pdf/2407.12858)
 
 **Date:** 2024-07-10
 
@@ -4358,7 +4358,7 @@ Detection of religious stereotypes The paper, in its survey of bias and fairness
 
 ## TurkishMMLU: Measuring Massive Multitask Language Understanding in Turkish
 
-[https://arxiv.org/abs/2407.12402](https://arxiv.org/abs/2407.12402)
+[https://arxiv.org/pdf/2407.12402](https://arxiv.org/pdf/2407.12402)
 
 **Date:** 2024-10-03
 
@@ -4367,7 +4367,7 @@ Knowledge of the 'Religion and Ethics' subject from the Turkish high school curr
 
 ## Benchmarking Vision Language Models for Cultural Understanding
 
-[https://arxiv.org/abs/2407.10920](https://arxiv.org/abs/2407.10920)
+[https://arxiv.org/pdf/2407.10920](https://arxiv.org/pdf/2407.10920)
 
 **Date:** 2024-10-14
 
@@ -4376,7 +4376,7 @@ The benchmark, CULTURALVQA, measures visual understanding of cultural concepts, 
 
 ## CLAVE: An Adaptive Framework for Evaluating Values of LLM Generated Responses
 
-[https://arxiv.org/abs/2407.10725](https://arxiv.org/abs/2407.10725)
+[https://arxiv.org/pdf/2407.10725](https://arxiv.org/pdf/2407.10725)
 
 **Date:** 2024-07-15
 
@@ -4385,7 +4385,7 @@ The benchmark measures LLM alignment with the 'Tradition' value within the Schwa
 
 ## Evaluating Nuanced Bias in Large Language Model Free Response Answers
 
-[https://arxiv.org/abs/2407.08842](https://arxiv.org/abs/2407.08842)
+[https://arxiv.org/pdf/2407.08842](https://arxiv.org/pdf/2407.08842)
 
 **Date:** 2024-07-11
 
@@ -4394,7 +4394,7 @@ Stereotypical bias detection in religious contexts. Specifically, the paper anal
 
 ## AUTOBENCHER: TOWARDS DECLARATIVE BENCHMARK CONSTRUCTION
 
-[https://arxiv.org/abs/2407.08351](https://arxiv.org/abs/2407.08351)
+[https://arxiv.org/pdf/2407.08351](https://arxiv.org/pdf/2407.08351)
 
 **Date:** 2025-02-28
 
@@ -4403,7 +4403,7 @@ The benchmark measured factual knowledge of historical topics, which included so
 
 ## REL-A.I.: An Interaction-Centered Approach To Measuring Human-LM Reliance
 
-[https://arxiv.org/abs/2407.07950](https://arxiv.org/abs/2407.07950)
+[https://arxiv.org/pdf/2407.07950](https://arxiv.org/pdf/2407.07950)
 
 **Date:** 2024-10-03
 
@@ -4412,7 +4412,7 @@ Human reliance on LLM responses to questions about world religions, as part of a
 
 ## T2VSafetyBench: Evaluating the Safety of Text-to-Video Generative Models
 
-[https://arxiv.org/abs/2407.05965](https://arxiv.org/abs/2407.05965)
+[https://arxiv.org/pdf/2407.05965](https://arxiv.org/pdf/2407.05965)
 
 **Date:** 2024-09-08
 
@@ -4421,7 +4421,7 @@ Generation of discriminatory content and negative stereotypes in religious conte
 
 ## Beyond Perplexity: Multi-dimensional Safety Evaluation of LLM Compression #Mormon
 
-[https://arxiv.org/abs/2407.04965](https://arxiv.org/abs/2407.04965)
+[https://arxiv.org/pdf/2407.04965](https://arxiv.org/pdf/2407.04965)
 
 **Date:** 2024-10-11
 
@@ -4430,7 +4430,7 @@ Measurement of stereotypical biases, representational harm, and sentiment/regard
 
 ## CEB: COMPOSITIONAL EVALUATION BENCHMARK FOR FAIRNESS IN LARGE LANGUAGE MODELS #Mormon
 
-[https://arxiv.org/abs/2407.02408](https://arxiv.org/abs/2407.02408)
+[https://arxiv.org/pdf/2407.02408](https://arxiv.org/pdf/2407.02408)
 
 **Date:** 2025-02-22
 
@@ -4439,7 +4439,7 @@ The benchmark (CEB) measures stereotyping and toxicity biases in Large Language 
 
 ## Breaking Bias, Building Bridges: Evaluation and Mitigation of Social Biases in LLMs via Contact Hypothesis
 
-[https://arxiv.org/abs/2407.02030](https://arxiv.org/abs/2407.02030)
+[https://arxiv.org/pdf/2407.02030](https://arxiv.org/pdf/2407.02030)
 
 **Date:** 2024-07-02
 
@@ -4448,7 +4448,7 @@ The benchmark measured social bias against religious groups using prompts framed
 
 ## From Local Concepts to Universals: Evaluating the Multicultural Understanding of Vision-Language Models
 
-[https://arxiv.org/abs/2407.00263](https://arxiv.org/abs/2407.00263)
+[https://arxiv.org/pdf/2407.00263](https://arxiv.org/pdf/2407.00263)
 
 **Date:** 2024-06-28
 
@@ -4457,7 +4457,7 @@ The benchmark measured the ability of Vision-Language Models to retrieve cultura
 
 ## IndoToxic2024: A Demographically-Enriched Dataset of Hate Speech and Toxicity Types for Indonesian Language
 
-[https://arxiv.org/abs/2406.19349](https://arxiv.org/abs/2406.19349)
+[https://arxiv.org/pdf/2406.19349](https://arxiv.org/pdf/2406.19349)
 
 **Date:** 2025-06-12
 
@@ -4466,7 +4466,7 @@ The benchmark measures the detection of hate speech targeting religious groups i
 
 ## The FineWeb Datasets: Decanting the Web for the Finest Text Data at Scale
 
-[https://arxiv.org/abs/2406.17557](https://arxiv.org/abs/2406.17557)
+[https://arxiv.org/pdf/2406.17557](https://arxiv.org/pdf/2406.17557)
 
 **Date:** 2024-10-31
 
@@ -4475,7 +4475,7 @@ The benchmark measured the distributional properties and associative biases of r
 
 ## Evaluating Visual and Cultural Interpretation: The K-Viscuit Benchmark with Human-VLM Collaboration
 
-[https://arxiv.org/abs/2406.16469](https://arxiv.org/abs/2406.16469)
+[https://arxiv.org/pdf/2406.16469](https://arxiv.org/pdf/2406.16469)
 
 **Date:** 2025-05-30
 
@@ -4484,7 +4484,7 @@ The benchmark measures knowledge of Korean cultural concepts related to religion
 
 ## Towards Region-aware Bias Evaluation Metrics
 
-[https://arxiv.org/abs/2406.16152](https://arxiv.org/abs/2406.16152)
+[https://arxiv.org/pdf/2406.16152](https://arxiv.org/pdf/2406.16152)
 
 **Date:** 2025-10-14
 
@@ -4493,7 +4493,7 @@ Detection of gender stereotypes where religious/spiritual topics (e.g., Christia
 
 ## Data Efficient Evaluation of Large Language Models and Text-to-Image Models via Adaptive Sampling
 
-[https://arxiv.org/abs/2406.15527](https://arxiv.org/abs/2406.15527)
+[https://arxiv.org/pdf/2406.15527](https://arxiv.org/pdf/2406.15527)
 
 **Date:** 2024-06-21
 
@@ -4502,7 +4502,7 @@ The benchmark measured model knowledge on the subject of 'world religions' as pa
 
 ## MMLU-SR: A Benchmark for Stress-Testing Reasoning Capability of Large Language Models
 
-[https://arxiv.org/abs/2406.15468](https://arxiv.org/abs/2406.15468)
+[https://arxiv.org/pdf/2406.15468](https://arxiv.org/pdf/2406.15468)
 
 **Date:** 2024-10-04
 
@@ -4511,7 +4511,7 @@ The benchmark measured the reasoning and comprehension abilities of LLMs on the 
 
 ## Safe Inputs but Unsafe Output: Benchmarking Cross-modality Safety Alignment of Large Vision-Language Models
 
-[https://arxiv.org/abs/2406.15279](https://arxiv.org/abs/2406.15279)
+[https://arxiv.org/pdf/2406.15279](https://arxiv.org/pdf/2406.15279)
 
 **Date:** 2025-02-17
 
@@ -4520,7 +4520,7 @@ The benchmark measured the safety of model responses in scenarios involving reli
 
 ## GIEBench: Towards Holistic Evaluation of Group Identity-based Empathy for Large Language Models
 
-[https://arxiv.org/abs/2406.14903](https://arxiv.org/abs/2406.14903)
+[https://arxiv.org/pdf/2406.14903](https://arxiv.org/pdf/2406.14903)
 
 **Date:** 2024-06-24
 
@@ -4529,7 +4529,7 @@ The benchmark measured the ability of Large Language Models to demonstrate empat
 
 ## SAFESORA: Towards Safety Alignment of Text2Video Generation via a Human Preference Dataset
 
-[https://arxiv.org/abs/2406.14477](https://arxiv.org/abs/2406.14477)
+[https://arxiv.org/pdf/2406.14477](https://arxiv.org/pdf/2406.14477)
 
 **Date:** 2024-06-20
 
@@ -4538,7 +4538,7 @@ Measures generation of harmful content related to extreme religious views (under
 
 ## VLBiasBench: A Comprehensive Benchmark for Evaluating Bias in Large Vision-Language Model
 
-[https://arxiv.org/abs/2406.14194](https://arxiv.org/abs/2406.14194)
+[https://arxiv.org/pdf/2406.14194](https://arxiv.org/pdf/2406.14194)
 
 **Date:** 2024-12-25
 
@@ -4547,7 +4547,7 @@ The benchmark measures sentiment bias in open-ended, model-generated stories ass
 
 ## Evaluating Implicit Bias in Large Language Models by Attacking From a Psychometric Perspective
 
-[https://arxiv.org/abs/2406.14023](https://arxiv.org/abs/2406.14023)
+[https://arxiv.org/pdf/2406.14023](https://arxiv.org/pdf/2406.14023)
 
 **Date:** 2025-07-11
 
@@ -4556,7 +4556,7 @@ The benchmark measures agreement with biased statements concerning religion. Thi
 
 ## Evaluating Short-Term Temporal Fluctuations of Social Biases in Social Media Data and Masked Language Models
 
-[https://arxiv.org/abs/2406.13556](https://arxiv.org/abs/2406.13556)
+[https://arxiv.org/pdf/2406.13556](https://arxiv.org/pdf/2406.13556)
 
 **Date:** 2024-06-19
 
@@ -4565,7 +4565,7 @@ The benchmark measured stereotypical biases related to religious groups by compa
 
 ## What Matters in Memorizing and Recalling Facts? Multifaceted Benchmarks for Knowledge Probing in Language Models
 
-[https://arxiv.org/abs/2406.12277](https://arxiv.org/abs/2406.12277)
+[https://arxiv.org/pdf/2406.12277](https://arxiv.org/pdf/2406.12277)
 
 **Date:** 2024-10-08
 
@@ -4574,7 +4574,7 @@ The benchmark measures factual knowledge recall concerning a person's religious 
 
 ## SPA-VL: A Comprehensive Safety Preference Alignment Dataset for Vision Language Models
 
-[https://arxiv.org/abs/2406.12030](https://arxiv.org/abs/2406.12030)
+[https://arxiv.org/pdf/2406.12030](https://arxiv.org/pdf/2406.12030)
 
 **Date:** 2025-05-21
 
@@ -4583,16 +4583,25 @@ The benchmark measures harmful content, including unfairness related to religion
 
 ## Extrinsic Evaluation of Cultural Competence in Large Language Models
 
-[https://arxiv.org/abs/2406.11565](https://arxiv.org/abs/2406.11565)
+[https://arxiv.org/pdf/2406.11565](https://arxiv.org/pdf/2406.11565)
 
 **Date:** 2024-10-03
 
 The benchmark measured the variation of model outputs for topics in the 'religion' category and the presence of culturally relevant religious vocabulary (e.g., 'hindu', 'temple') in response to nationality prompts, as part of a broader evaluation of cultural competence. When prompted with specific nationalities, models generate culturally relevant vocabulary which can include religious terms. For example, outputs for India included 'hindu' in a political context and 'temple' in stories, demonstrating the models' ability to associate religious concepts with national identity.
 
 
+## The Potential and Challenges of Evaluating Attitudes, Opinions, and Values in Large Language Models
+
+[https://arxiv.org/pdf/2406.11096](https://arxiv.org/pdf/2406.11096)
+
+**Date:** 2024-10-03
+
+The paper is a survey and does not introduce a new benchmark. It reviews works that use religious affiliation (e.g., 'Roman Catholic') as a demographic variable in persona-based prompts to simulate the attitudes, opinions, and values of specific human subpopulations. The paper surveys existing literature and notes that religious affiliation is one of the demographic variables (alongside age, income, political ideology, etc.) used in persona-based prompting to steer LLMs to simulate the opinions of specific subgroups. The paper does not provide specific findings on model performance or bias related to religion.
+
+
 ## CHiSafetyBench: A Chinese Hierarchical Safety Benchmark for Large Language Models
 
-[https://arxiv.org/abs/2406.10311](https://arxiv.org/abs/2406.10311)
+[https://arxiv.org/pdf/2406.10311](https://arxiv.org/pdf/2406.10311)
 
 **Date:** 2024-09-02
 
@@ -4601,7 +4610,7 @@ The benchmark measured the ability of Large Language Models to identify multiple
 
 ## SEACrowd: A Multilingual Multimodal Data Hub and Benchmark Suite for Southeast Asian Languages
 
-[https://arxiv.org/abs/2406.10118](https://arxiv.org/abs/2406.10118)
+[https://arxiv.org/pdf/2406.10118](https://arxiv.org/pdf/2406.10118)
 
 **Date:** 2025-03-11
 
@@ -4610,7 +4619,7 @@ Religious domain question answering using sirah nabawiyah (Islamic prophetic bio
 
 ## BLEND: A Benchmark for LLMs on Everyday Knowledge in Diverse Cultures and Languages
 
-[https://arxiv.org/abs/2406.09948](https://arxiv.org/abs/2406.09948)
+[https://arxiv.org/pdf/2406.09948](https://arxiv.org/pdf/2406.09948)
 
 **Date:** 2025-01-16
 
@@ -4619,7 +4628,7 @@ The benchmark measures everyday cultural knowledge, which includes knowledge abo
 
 ## Can I introduce my boyfriend to my grandmother? Evaluating Large Language Models Capabilities on Iranian Social Norm Classification
 
-[https://arxiv.org/abs/2406.09123](https://arxiv.org/abs/2406.09123)
+[https://arxiv.org/pdf/2406.09123](https://arxiv.org/pdf/2406.09123)
 
 **Date:** 2024-10-01
 
@@ -4628,7 +4637,7 @@ Classification of social norms in Iranian culture, with religion as a key demogr
 
 ## MLLMGUARD: A Multi-dimensional Safety Evaluation Suite for Multimodal Large Language Models
 
-[https://arxiv.org/abs/2406.07594](https://arxiv.org/abs/2406.07594)
+[https://arxiv.org/pdf/2406.07594](https://arxiv.org/pdf/2406.07594)
 
 **Date:** 2024-06-13
 
@@ -4637,7 +4646,7 @@ The benchmark measures 'Toxicity', specifically the sub-task of 'Hate Speech'. A
 
 ## MULTITRUST: A Comprehensive Benchmark Towards Trustworthy Multimodal Large Language Models
 
-[https://arxiv.org/abs/2406.07057](https://arxiv.org/abs/2406.07057)
+[https://arxiv.org/pdf/2406.07057](https://arxiv.org/pdf/2406.07057)
 
 **Date:** 2024-12-06
 
@@ -4646,7 +4655,7 @@ Stereotype agreement, stereotype classification, and refusal to answer stereotyp
 
 ## Decision-Making Behavior Evaluation Framework for LLMs under Uncertain Context
 
-[https://arxiv.org/abs/2406.05972](https://arxiv.org/abs/2406.05972)
+[https://arxiv.org/pdf/2406.05972](https://arxiv.org/pdf/2406.05972)
 
 **Date:** 2024-11-01
 
@@ -4655,7 +4664,7 @@ The benchmark measured the sensitivity of LLM decision-making parameters (risk p
 
 ## CVQA: Culturally-diverse Multilingual Visual Question Answering Benchmark
 
-[https://arxiv.org/abs/2406.05967](https://arxiv.org/abs/2406.05967)
+[https://arxiv.org/pdf/2406.05967](https://arxiv.org/pdf/2406.05967)
 
 **Date:** 2024-11-04
 
@@ -4664,7 +4673,7 @@ The benchmark measures visual understanding of cultural knowledge, which include
 
 ## LLAVAGUARD: An Open VLM-based Framework for Safeguarding Vision Datasets and Models
 
-[https://arxiv.org/abs/2406.05113](https://arxiv.org/abs/2406.05113)
+[https://arxiv.org/pdf/2406.05113](https://arxiv.org/pdf/2406.05113)
 
 **Date:** 2025-06-06
 
@@ -4673,7 +4682,7 @@ Detection of hateful, derogatory, or demeaning content against people based on t
 
 ## Measuring and Addressing Indexical Bias in Information Retrieval
 
-[https://arxiv.org/abs/2406.04298](https://arxiv.org/abs/2406.04298)
+[https://arxiv.org/pdf/2406.04298](https://arxiv.org/pdf/2406.04298)
 
 **Date:** 2024-06-06
 
@@ -4682,7 +4691,7 @@ Measurement of indexical bias (positional order bias) in information retrieval s
 
 ## BEADS: Bias Evaluation Across Domains
 
-[https://arxiv.org/abs/2406.04220](https://arxiv.org/abs/2406.04220)
+[https://arxiv.org/pdf/2406.04220](https://arxiv.org/pdf/2406.04220)
 
 **Date:** 2025-06-19
 
@@ -4691,7 +4700,7 @@ The benchmark measured bias against religious groups through several tasks: 1) B
 
 ## ValueBench: Towards Comprehensively Evaluating Value Orientations and Understanding of Large Language Models
 
-[https://arxiv.org/abs/2406.04214](https://arxiv.org/abs/2406.04214)
+[https://arxiv.org/pdf/2406.04214](https://arxiv.org/pdf/2406.04214)
 
 **Date:** 2024-06-06
 
@@ -4700,7 +4709,7 @@ The benchmark measured the value orientation of LLMs towards 'Religiosity' as pa
 
 ## Ask LLMs Directly, “What shapes your bias?”: Measuring Social Bias in Large Language Models #Mormon
 
-[https://arxiv.org/abs/2406.04064](https://arxiv.org/abs/2406.04064)
+[https://arxiv.org/pdf/2406.04064](https://arxiv.org/pdf/2406.04064)
 
 **Date:** 2024-06-06
 
@@ -4709,7 +4718,7 @@ The benchmark measures social perception biases in Large Language Models within 
 
 ## Open Grounded Planning: Challenges and Benchmark Construction
 
-[https://arxiv.org/abs/2406.02903](https://arxiv.org/abs/2406.02903)
+[https://arxiv.org/pdf/2406.02903](https://arxiv.org/pdf/2406.02903)
 
 **Date:** 2024-06-05
 
@@ -4718,7 +4727,7 @@ The benchmark measures the ability of Large Language Models to generate grounded
 
 ## Long-Span Question-Answering: Automatic Question Generation and QA-System Ranking via Side-by-Side Evaluation #Mormon
 
-[https://arxiv.org/abs/2406.00179](https://arxiv.org/abs/2406.00179)
+[https://arxiv.org/pdf/2406.00179](https://arxiv.org/pdf/2406.00179)
 
 **Date:** 2024-05-31
 
@@ -4727,7 +4736,7 @@ The benchmark measures long-context reading comprehension and reasoning using en
 
 ## OR-Bench: An Over-Refusal Benchmark for Large Language Models
 
-[https://arxiv.org/abs/2405.20947](https://arxiv.org/abs/2405.20947)
+[https://arxiv.org/pdf/2405.20947](https://arxiv.org/pdf/2405.20947)
 
 **Date:** 2025-06-15
 
@@ -4736,7 +4745,7 @@ The benchmark measures over-refusal and toxic prompt refusal across 10 categorie
 
 ## C3BENCH: A COMPREHENSIVE CLASSICAL CHINESE UNDERSTANDING BENCHMARK FOR LARGE LANGUAGE MODELS
 
-[https://arxiv.org/abs/2405.17732](https://arxiv.org/abs/2405.17732)
+[https://arxiv.org/pdf/2405.17732](https://arxiv.org/pdf/2405.17732)
 
 **Date:** 2024-05-30
 
@@ -4745,7 +4754,7 @@ The benchmark measured the ability of Large Language Models to perform natural l
 
 ## GPT is Not an Annotator: The Necessity of Human Annotation in Fairness Benchmark Construction
 
-[https://arxiv.org/abs/2405.15760](https://arxiv.org/abs/2405.15760)
+[https://arxiv.org/pdf/2405.15760](https://arxiv.org/pdf/2405.15760)
 
 **Date:** 2024-05-24
 
@@ -4754,7 +4763,7 @@ The benchmark, WinoSemitism, measures antisemitic stereotypes and biases in Larg
 
 ## Benchmarking the Performance of Pre-trained LLMs across Urdu NLP Tasks
 
-[https://arxiv.org/abs/2405.15453](https://arxiv.org/abs/2405.15453)
+[https://arxiv.org/pdf/2405.15453](https://arxiv.org/pdf/2405.15453)
 
 **Date:** 2024-12-31
 
@@ -4763,7 +4772,7 @@ The benchmark measured the machine translation performance of Large Language Mod
 
 ## S-EVAL: Towards Automated and Comprehensive Safety Evaluation for Large Language Models
 
-[https://arxiv.org/abs/2405.14191](https://arxiv.org/abs/2405.14191)
+[https://arxiv.org/pdf/2405.14191](https://arxiv.org/pdf/2405.14191)
 
 **Date:** 2025-04-07
 
@@ -4772,7 +4781,7 @@ The benchmark measures safety risks related to extremist ideological trends in r
 
 ## ALI-Agent: Assessing LLMs' Alignment with Human Values via Agent-based Evaluation
 
-[https://arxiv.org/abs/2405.14125](https://arxiv.org/abs/2405.14125)
+[https://arxiv.org/pdf/2405.14125](https://arxiv.org/pdf/2405.14125)
 
 **Date:** 2024-11-07
 
@@ -4781,7 +4790,7 @@ Stereotype detection and bias measurement related to religion. The evaluation us
 
 ## CT-Eval: Benchmarking Chinese Text-to-Table Performance in Large Language Models
 
-[https://arxiv.org/abs/2405.12174](https://arxiv.org/abs/2405.12174)
+[https://arxiv.org/pdf/2405.12174](https://arxiv.org/pdf/2405.12174)
 
 **Date:** 2024-05-20
 
@@ -4790,7 +4799,7 @@ The benchmark measured the ability of large language models to extract key infor
 
 ## CLAMBER: A Benchmark of Identifying and Clarifying Ambiguous Information Needs in Large Language Models
 
-[https://arxiv.org/abs/2405.12063](https://arxiv.org/abs/2405.12063)
+[https://arxiv.org/pdf/2405.12063](https://arxiv.org/pdf/2405.12063)
 
 **Date:** 2024-06-01
 
@@ -4799,7 +4808,7 @@ The benchmark measures ambiguity resolution. The connection to religion is throu
 
 ## The Unseen Targets of Hate – A Systematic Review of Hateful Communication Datasets
 
-[https://arxiv.org/abs/2405.08562](https://arxiv.org/abs/2405.08562)
+[https://arxiv.org/pdf/2405.08562](https://arxiv.org/pdf/2405.08562)
 
 **Date:** 2024-05-14
 
@@ -4808,7 +4817,7 @@ The paper conducts a systematic review of hateful communication datasets, measur
 
 ## FROM TRACES TO MEASURES: A PSYCHOMETRIC APPROACH TO USING LARGE LANGUAGE MODELS TO MEASURE PSYCHOLOGICAL CONSTRUCTS FROM TEXT
 
-[https://arxiv.org/abs/2405.07447](https://arxiv.org/abs/2405.07447)
+[https://arxiv.org/pdf/2405.07447](https://arxiv.org/pdf/2405.07447)
 
 **Date:** 
 
@@ -4817,7 +4826,7 @@ The benchmark measured stance detection (author's stance being in favour, agains
 
 ## OpenFactCheck: Building, Benchmarking Customized Fact-Checking Systems and Evaluating the Factuality of Claims and LLMs
 
-[https://arxiv.org/abs/2405.05583](https://arxiv.org/abs/2405.05583)
+[https://arxiv.org/pdf/2405.05583](https://arxiv.org/pdf/2405.05583)
 
 **Date:** 2025-10-28
 
@@ -4826,7 +4835,7 @@ The benchmark measured the factuality of LLM-generated claims across various dom
 
 ## Quranic Audio Dataset: Crowdsourced and Labeled Recitation from Non-Arabic Speakers
 
-[https://arxiv.org/abs/2405.02675](https://arxiv.org/abs/2405.02675)
+[https://arxiv.org/pdf/2405.02675](https://arxiv.org/pdf/2405.02675)
 
 **Date:** 2024-05-04
 
@@ -4835,7 +4844,7 @@ The paper does not benchmark a model, but creates a dataset to enable the develo
 
 ## Can ChatGPT Make Explanatory Inferences? Benchmarks for Abductive Reasoning
 
-[https://arxiv.org/abs/2404.18982](https://arxiv.org/abs/2404.18982)
+[https://arxiv.org/pdf/2404.18982](https://arxiv.org/pdf/2404.18982)
 
 **Date:** 2024-09-19
 
@@ -4844,7 +4853,7 @@ The model's ability to generate a novel religious entity (a deity) as a creative
 
 ## WORLDVALUESBENCH: A Large-Scale Benchmark Dataset for Multi-Cultural Value Awareness of Language Models
 
-[https://arxiv.org/abs/2404.16308](https://arxiv.org/abs/2404.16308)
+[https://arxiv.org/pdf/2404.16308](https://arxiv.org/pdf/2404.16308)
 
 **Date:** 2024-04-25
 
@@ -4853,7 +4862,7 @@ The benchmark measures the ability of language models to predict human answers t
 
 ## Towards a Holistic Evaluation of LLMs on Factual Knowledge Recall
 
-[https://arxiv.org/abs/2404.16164](https://arxiv.org/abs/2404.16164)
+[https://arxiv.org/pdf/2404.16164](https://arxiv.org/pdf/2404.16164)
 
 **Date:** 2024-04-24
 
@@ -4862,7 +4871,7 @@ The benchmark, FACT-BENCH, measured the factual knowledge recall of Large Langua
 
 ## The PRISM Alignment Dataset: What Participatory, Representative and Individualised Human Feedback Reveals About the Subjective and Multicultural Alignment of Large Language Models
 
-[https://arxiv.org/abs/2404.16019](https://arxiv.org/abs/2404.16019)
+[https://arxiv.org/pdf/2404.16019](https://arxiv.org/pdf/2404.16019)
 
 **Date:** 2024-12-03
 
@@ -4871,7 +4880,7 @@ The benchmark measured the prevalence of religious topics in user prompts to LLM
 
 ## MMT-Bench: A Comprehensive Multimodal Benchmark for Evaluating Large Vision-Language Models Towards Multitask AGI
 
-[https://arxiv.org/abs/2404.16006](https://arxiv.org/abs/2404.16006)
+[https://arxiv.org/pdf/2404.16006](https://arxiv.org/pdf/2404.16006)
 
 **Date:** 2024-04-24
 
@@ -4880,7 +4889,7 @@ Visual recognition of religious items, symbols, or scenes as part of the 'Religi
 
 ## RTP-LX: Can LLMs Evaluate Toxicity in Multilingual Scenarios?
 
-[https://arxiv.org/abs/2404.14397](https://arxiv.org/abs/2404.14397)
+[https://arxiv.org/pdf/2404.14397](https://arxiv.org/pdf/2404.14397)
 
 **Date:** 2024-12-16
 
@@ -4889,7 +4898,7 @@ The benchmark measured the ability of Large Language Models to detect toxic cont
 
 ## NORMAD: A Framework for Measuring the Cultural Adaptability of Large Language Models
 
-[https://arxiv.org/abs/2404.12464](https://arxiv.org/abs/2404.12464)
+[https://arxiv.org/pdf/2404.12464](https://arxiv.org/pdf/2404.12464)
 
 **Date:** 2025-07-08
 
@@ -4898,7 +4907,7 @@ The benchmark measured the ability of LLMs to judge the social acceptability of 
 
 ## Introducing v0.5 of the AI Safety Benchmark from MLCommons
 
-[https://arxiv.org/abs/2404.12241](https://arxiv.org/abs/2404.12241)
+[https://arxiv.org/pdf/2404.12241](https://arxiv.org/pdf/2404.12241)
 
 **Date:** 2024-05-13
 
@@ -4907,7 +4916,7 @@ The benchmark measures demeaning, derogatory, or dehumanizing responses towards 
 
 ## Mapping Violence: Developing an Extensive Framework to Build a Bangla Sectarian Expression Dataset from Social Media Interactions
 
-[https://arxiv.org/abs/2404.11752](https://arxiv.org/abs/2404.11752)
+[https://arxiv.org/pdf/2404.11752](https://arxiv.org/pdf/2404.11752)
 
 **Date:** 2023-11-01
 
@@ -4916,7 +4925,7 @@ The benchmark measures the automatic detection of 'Religio-communal violence' ma
 
 ## TAXONOMY TO REGULATION: A (GEO)POLITICAL TAXONOMY FOR AI RISKS AND REGULATORY MEASURES IN THE EU AI ACT
 
-[https://arxiv.org/abs/2404.11476](https://arxiv.org/abs/2404.11476)
+[https://arxiv.org/pdf/2404.11476](https://arxiv.org/pdf/2404.11476)
 
 **Date:** 2024-04-17
 
@@ -4925,7 +4934,7 @@ The paper discusses the measurement of representational bias in image generation
 
 ## D3CODE: Disentangling Disagreements in Data across Cultures on Offensiveness Detection and Evaluation
 
-[https://arxiv.org/abs/2404.10857](https://arxiv.org/abs/2404.10857)
+[https://arxiv.org/pdf/2404.10857](https://arxiv.org/pdf/2404.10857)
 
 **Date:** 2024-04-16
 
@@ -4934,7 +4943,7 @@ The benchmark measures cross-cultural and demographic variations in the percepti
 
 ## Benchmarking Llama2, Mistral, Gemma and GPT for Factuality, Toxicity, Bias and Propensity for Hallucinations
 
-[https://arxiv.org/abs/2404.09785](https://arxiv.org/abs/2404.09785)
+[https://arxiv.org/pdf/2404.09785](https://arxiv.org/pdf/2404.09785)
 
 **Date:** 2024-04-15
 
@@ -4943,7 +4952,7 @@ Generation of content including religious prejudice as part of a broader safety 
 
 ## ALERT: A Comprehensive Benchmark for Assessing Large Language Models’ Safety through Red Teaming
 
-[https://arxiv.org/abs/2404.08676](https://arxiv.org/abs/2404.08676)
+[https://arxiv.org/pdf/2404.08676](https://arxiv.org/pdf/2404.08676)
 
 **Date:** 2024-06-24
 
@@ -4952,7 +4961,7 @@ The benchmark measured bias or hostility toward followers of a specific faith, u
 
 ## Frontier AI Ethics: Anticipating and Evaluating the Societal Impacts of Language Model Agents
 
-[https://arxiv.org/abs/2404.06750](https://arxiv.org/abs/2404.06750)
+[https://arxiv.org/pdf/2404.06750](https://arxiv.org/pdf/2404.06750)
 
 **Date:** 
 
@@ -4961,7 +4970,7 @@ The paper does not conduct its own religious benchmark measurement. It cites a 2
 
 ## Measuring Social Norms of Large Language Models
 
-[https://arxiv.org/abs/2404.02491](https://arxiv.org/abs/2404.02491)
+[https://arxiv.org/pdf/2404.02491](https://arxiv.org/pdf/2404.02491)
 
 **Date:** 2024-05-22
 
@@ -4970,7 +4979,7 @@ Factual knowledge about the origins, practices, holidays, and key figures of var
 
 ## Stereotype Detection in LLMs: A Multiclass, Explainable, and Benchmark-Driven Approach
 
-[https://arxiv.org/abs/2404.01768](https://arxiv.org/abs/2404.01768)
+[https://arxiv.org/pdf/2404.01768](https://arxiv.org/pdf/2404.01768)
 
 **Date:** 2024-11-16
 
@@ -4979,7 +4988,7 @@ The benchmark measures the presence of stereotypes in text across four social di
 
 ## IndiBias: A Benchmark Dataset to Measure Social Biases in Language Models for Indian Context
 
-[https://arxiv.org/abs/2403.20147](https://arxiv.org/abs/2403.20147)
+[https://arxiv.org/pdf/2403.20147](https://arxiv.org/pdf/2403.20147)
 
 **Date:** 2024-04-03
 
@@ -4988,7 +4997,7 @@ The benchmark measures stereotypical associations and biases against various rel
 
 ## Towards Measuring and Modeling “Culture” in LLMs: A Survey
 
-[https://arxiv.org/abs/2403.15412](https://arxiv.org/abs/2403.15412)
+[https://arxiv.org/pdf/2403.15412](https://arxiv.org/pdf/2403.15412)
 
 **Date:** 2024-09-04
 
@@ -4997,7 +5006,7 @@ The paper is a survey and does not introduce a new benchmark. It categorizes exi
 
 ## Risk and Response in Large Language Models: Evaluating Key Threat Categories
 
-[https://arxiv.org/abs/2403.14988](https://arxiv.org/abs/2403.14988)
+[https://arxiv.org/pdf/2403.14988](https://arxiv.org/pdf/2403.14988)
 
 **Date:** 2024-03-22
 
@@ -5006,7 +5015,7 @@ The paper's analysis categorizes prompts that solicit discriminatory responses a
 
 ## EXAMS-V: A Multi-Discipline Multilingual Multimodal Exam Benchmark for Evaluating Vision Language Models
 
-[https://arxiv.org/abs/2403.10378](https://arxiv.org/abs/2403.10378)
+[https://arxiv.org/pdf/2403.10378](https://arxiv.org/pdf/2403.10378)
 
 **Date:** 2024-03-15
 
@@ -5015,7 +5024,7 @@ knowledge of religion as a school subject Model performance on the 'Religion' su
 
 ## Basque and Spanish Counter Narrative Generation: Data Creation and Evaluation
 
-[https://arxiv.org/abs/2403.09159](https://arxiv.org/abs/2403.09159)
+[https://arxiv.org/pdf/2403.09159](https://arxiv.org/pdf/2403.09159)
 
 **Date:** 2024-03-14
 
@@ -5024,7 +5033,7 @@ Generation of counter-narratives to anti-Muslim hate speech (Islamophobia). The 
 
 ## AraTrust: An Evaluation of Trustworthiness for LLMs in Arabic
 
-[https://arxiv.org/abs/2403.09017](https://arxiv.org/abs/2403.09017)
+[https://arxiv.org/pdf/2403.09017](https://arxiv.org/pdf/2403.09017)
 
 **Date:** 2024-11-05
 
@@ -5033,7 +5042,7 @@ Cultural and value alignment for Large Language Models in an Arabic context, whi
 
 ## AC-EVAL: Evaluating Ancient Chinese Language Understanding in Large Language Models
 
-[https://arxiv.org/abs/2403.06574](https://arxiv.org/abs/2403.06574)
+[https://arxiv.org/pdf/2403.06574](https://arxiv.org/pdf/2403.06574)
 
 **Date:** 2024-03-11
 
@@ -5042,7 +5051,7 @@ Knowledge of the history and development of religions and philosophies in ancien
 
 ## INDICLLMSUITE: A BLUEPRINT FOR CREATING PRE-TRAINING AND FINE-TUNING DATASETS FOR INDIAN LANGUAGES
 
-[https://arxiv.org/abs/2403.06350](https://arxiv.org/abs/2403.06350)
+[https://arxiv.org/pdf/2403.06350](https://arxiv.org/pdf/2403.06350)
 
 **Date:** 2024-11-29
 
@@ -5051,7 +5060,7 @@ The paper does not perform a benchmark measurement. It creates pre-training and 
 
 ## Chatbot Arena: An Open Platform for Evaluating LLMs by Human Preference
 
-[https://arxiv.org/abs/2403.04132](https://arxiv.org/abs/2403.04132)
+[https://arxiv.org/pdf/2403.04132](https://arxiv.org/pdf/2403.04132)
 
 **Date:** 2024-03-07
 
@@ -5060,7 +5069,7 @@ Generation of text on topics related to 'Biblical Interpretation and Theology' a
 
 ## OffensiveLang: A Community Based Implicit Offensive Language Dataset
 
-[https://arxiv.org/abs/2403.02472](https://arxiv.org/abs/2403.02472)
+[https://arxiv.org/pdf/2403.02472](https://arxiv.org/pdf/2403.02472)
 
 **Date:** 2024-12-15
 
@@ -5069,7 +5078,7 @@ Detection of implicit offensive language and stereotypes targeting specific reli
 
 ## CR-LT-KGQA: A Knowledge Graph Question Answering Dataset Requiring Commonsense Reasoning and Long-Tail Knowledge
 
-[https://arxiv.org/abs/2403.01395](https://arxiv.org/abs/2403.01395)
+[https://arxiv.org/pdf/2403.01395](https://arxiv.org/pdf/2403.01395)
 
 **Date:** 2024-03-03
 
@@ -5078,7 +5087,7 @@ Commonsense reasoning on questions involving religious entities or concepts as p
 
 ## NewsBench: A Systematic Evaluation Framework for Assessing Editorial Capabilities of Large Language Models in Chinese Journalism
 
-[https://arxiv.org/abs/2403.00862](https://arxiv.org/abs/2403.00862)
+[https://arxiv.org/pdf/2403.00862](https://arxiv.org/pdf/2403.00862)
 
 **Date:** 2024-06-04
 
@@ -5087,7 +5096,7 @@ The benchmark measures bias and discriminatory remarks against religion as a sub
 
 ## Saving the legacy of Hero Ibash: Evaluating Four Language Models for Aminoacian
 
-[https://arxiv.org/abs/2402.18121](https://arxiv.org/abs/2402.18121)
+[https://arxiv.org/pdf/2402.18121](https://arxiv.org/pdf/2402.18121)
 
 **Date:** 2024-02-28
 
@@ -5096,7 +5105,7 @@ The benchmark measured the models' ability to perform machine translation, quest
 
 ## Researchy Questions: A Dataset of Multi-Perspective, Decompositional Questions for LLM Web Agents
 
-[https://arxiv.org/abs/2402.17896](https://arxiv.org/abs/2402.17896)
+[https://arxiv.org/pdf/2402.17896](https://arxiv.org/pdf/2402.17896)
 
 **Date:** 2024-02-27
 
@@ -5105,7 +5114,7 @@ Filtering of presumptuous or harmful questions during dataset creation, which in
 
 ## A Dataset for Metaphor Detection in Early Medieval Hebrew Poetry
 
-[https://arxiv.org/abs/2402.17371](https://arxiv.org/abs/2402.17371)
+[https://arxiv.org/pdf/2402.17371](https://arxiv.org/pdf/2402.17371)
 
 **Date:** 2024-02-27
 
@@ -5114,7 +5123,7 @@ The benchmark measures the ability of language models to perform metaphor detect
 
 ## EIGHT METHODS TO EVALUATE ROBUST UNLEARNING IN LLMS
 
-[https://arxiv.org/abs/2402.16835](https://arxiv.org/abs/2402.16835)
+[https://arxiv.org/pdf/2402.16835](https://arxiv.org/pdf/2402.16835)
 
 **Date:** 2024-02-26
 
@@ -5123,7 +5132,7 @@ Unintended collateral unlearning (knowledge loss) in the domain of British Mytho
 
 ## Political Compass or Spinning Arrow? Towards More Meaningful Evaluations for Values and Opinions in Large Language Models
 
-[https://arxiv.org/abs/2402.16786](https://arxiv.org/abs/2402.16786)
+[https://arxiv.org/pdf/2402.16786](https://arxiv.org/pdf/2402.16786)
 
 **Date:** 2024-06-05
 
@@ -5132,7 +5141,7 @@ Expression of opinions on propositions about morality, religious education, and 
 
 ## Bias and Volatility: A Statistical Framework for Evaluating Large Language Model's Stereotypes and the Associated Generation Inconsistency
 
-[https://arxiv.org/abs/2402.15481](https://arxiv.org/abs/2402.15481)
+[https://arxiv.org/pdf/2402.15481](https://arxiv.org/pdf/2402.15481)
 
 **Date:** 2025-05-26
 
@@ -5141,7 +5150,7 @@ The benchmark measures the discrimination risk associated with specific religiou
 
 ## COBIAS: Assessing the Contextual Reliability of Bias Benchmarks for Language Models
 
-[https://arxiv.org/abs/2402.14889](https://arxiv.org/abs/2402.14889)
+[https://arxiv.org/pdf/2402.14889](https://arxiv.org/pdf/2402.14889)
 
 **Date:** 2025-05-20
 
@@ -5150,7 +5159,7 @@ The paper develops and applies a metric, COBIAS, to measure the contextual relia
 
 ## Dynamic Evaluation of Large Language Models by Meta Probing Agents
 
-[https://arxiv.org/abs/2402.14865](https://arxiv.org/abs/2402.14865)
+[https://arxiv.org/pdf/2402.14865](https://arxiv.org/pdf/2402.14865)
 
 **Date:** 2024-06-07
 
@@ -5159,7 +5168,7 @@ Model accuracy on knowledge-based questions from the MMLU dataset, which include
 
 ## Eagle: Ethical Dataset Given from Real Interactions
 
-[https://arxiv.org/abs/2402.14258](https://arxiv.org/abs/2402.14258)
+[https://arxiv.org/pdf/2402.14258](https://arxiv.org/pdf/2402.14258)
 
 **Date:** 2024-02-22
 
@@ -5168,7 +5177,7 @@ Stereotypical bias associating a religious group (Muslims) with terrorism. The p
 
 ## Beyond Probabilities: Unveiling the Misalignment in Evaluating Large Language Models
 
-[https://arxiv.org/abs/2402.13887](https://arxiv.org/abs/2402.13887)
+[https://arxiv.org/pdf/2402.13887](https://arxiv.org/pdf/2402.13887)
 
 **Date:** 2024-07-09
 
@@ -5177,7 +5186,7 @@ Knowledge of world religions via multiple-choice questions from the MMLU benchma
 
 ## A Chinese Dataset for Evaluating the Safeguards in Large Language Models
 
-[https://arxiv.org/abs/2402.12193](https://arxiv.org/abs/2402.12193)
+[https://arxiv.org/pdf/2402.12193](https://arxiv.org/pdf/2402.12193)
 
 **Date:** 2024-08-04
 
@@ -5186,7 +5195,7 @@ The benchmark measured the generation of harmful responses to sensitive topics r
 
 ## The Colorful Future of LLMs: Evaluating and Improving LLMs as Emotional Supporters for Queer Youth
 
-[https://arxiv.org/abs/2402.11886](https://arxiv.org/abs/2402.11886)
+[https://arxiv.org/pdf/2402.11886](https://arxiv.org/pdf/2402.11886)
 
 **Date:** 2024-02-19
 
@@ -5195,7 +5204,7 @@ The benchmark measured the ability of Large Language Models to account for a use
 
 ## A Multi-Aspect Framework for Counter Narrative Evaluation using Large Language Models
 
-[https://arxiv.org/abs/2402.11676](https://arxiv.org/abs/2402.11676)
+[https://arxiv.org/pdf/2402.11676](https://arxiv.org/pdf/2402.11676)
 
 **Date:** 2024-03-29
 
@@ -5204,7 +5213,7 @@ The benchmark measured the quality of LLM-generated counter-narratives against h
 
 ## Benchmarking Knowledge Boundary for Large Language Models: A Different Perspective on Model Evaluation
 
-[https://arxiv.org/abs/2402.11493](https://arxiv.org/abs/2402.11493)
+[https://arxiv.org/pdf/2402.11493](https://arxiv.org/pdf/2402.11493)
 
 **Date:** 2024-05-29
 
@@ -5213,7 +5222,7 @@ The benchmark measured the models' factual knowledge of world religions using a 
 
 ## The Value of Context: Human versus Black Box Evaluators
 
-[https://arxiv.org/abs/2402.11157](https://arxiv.org/abs/2402.11157)
+[https://arxiv.org/pdf/2402.11157](https://arxiv.org/pdf/2402.11157)
 
 **Date:** 2024-06-29
 
@@ -5222,7 +5231,7 @@ The paper does not create a benchmark. Religion is used as a brief, illustrative
 
 ## Taxonomy-based CHECKLIST for Large Language Model Evaluation
 
-[https://arxiv.org/abs/2402.10899](https://arxiv.org/abs/2402.10899)
+[https://arxiv.org/pdf/2402.10899](https://arxiv.org/pdf/2402.10899)
 
 **Date:** 2023-12-15
 
@@ -5231,7 +5240,7 @@ stereotype detection in religious contexts The paper presents no findings relate
 
 ## Inadequacies of Large Language Model Benchmarks in the Era of Generative Artificial Intelligence
 
-[https://arxiv.org/abs/2402.09880](https://arxiv.org/abs/2402.09880)
+[https://arxiv.org/pdf/2402.09880](https://arxiv.org/pdf/2402.09880)
 
 **Date:** 2024-10-14
 
@@ -5240,7 +5249,7 @@ The paper critiques benchmarks for their inability to handle and evaluate LLM al
 
 ## No Culture Left Behind: Massively Multi-Cultural Knowledge Acquisition & LM Benchmarking on 1000+ Sub-Country Regions and 2000+ Ethnolinguistic Groups
 
-[https://arxiv.org/abs/2402.09369](https://arxiv.org/abs/2402.09369)
+[https://arxiv.org/pdf/2402.09369](https://arxiv.org/pdf/2402.09369)
 
 **Date:** 2024-02-14
 
@@ -5249,7 +5258,7 @@ The benchmark measures the accuracy (F-score) of language models on true/false c
 
 ## A Dataset for the Detection of Dehumanizing Language
 
-[https://arxiv.org/abs/2402.08764](https://arxiv.org/abs/2402.08764)
+[https://arxiv.org/pdf/2402.08764](https://arxiv.org/pdf/2402.08764)
 
 **Date:** 2024-02-13
 
@@ -5258,7 +5267,7 @@ Detection of dehumanizing language directed at religious groups, as part of a br
 
 ## Walia-LLM: Enhancing Amharic-LLaMA by Integrating Task-Specific and Generative Datasets
 
-[https://arxiv.org/abs/2402.08015](https://arxiv.org/abs/2402.08015)
+[https://arxiv.org/pdf/2402.08015](https://arxiv.org/pdf/2402.08015)
 
 **Date:** 2024-04-29
 
@@ -5267,7 +5276,7 @@ The model's ability to generate and complete religious (Amharic Christian spirit
 
 ## SALAD-Bench: A Hierarchical and Comprehensive Safety Benchmark for Large Language Models
 
-[https://arxiv.org/abs/2402.05044](https://arxiv.org/abs/2402.05044)
+[https://arxiv.org/pdf/2402.05044](https://arxiv.org/pdf/2402.05044)
 
 **Date:** 2024-06-07
 
@@ -5276,7 +5285,7 @@ The benchmark measures the generation of 'Religious stereotyping' as a sub-categ
 
 ## HarmBench: A Standardized Evaluation Framework for Automated Red Teaming and Robust Refusal
 
-[https://arxiv.org/abs/2402.04249](https://arxiv.org/abs/2402.04249)
+[https://arxiv.org/pdf/2402.04249](https://arxiv.org/pdf/2402.04249)
 
 **Date:** 2024-02-27
 
@@ -5285,7 +5294,7 @@ Willingness to infer an individual's religious beliefs from an image, which is f
 
 ## Measuring Implicit Bias in Explicitly Unbiased Large Language Models
 
-[https://arxiv.org/abs/2402.04105](https://arxiv.org/abs/2402.04105)
+[https://arxiv.org/pdf/2402.04105](https://arxiv.org/pdf/2402.04105)
 
 **Date:** 2024-05-23
 
@@ -5294,7 +5303,7 @@ The benchmark measured stereotypical associations and discriminatory decisions r
 
 ## LLM-based NLG Evaluation: Current Status and Challenges
 
-[https://arxiv.org/abs/2402.01383](https://arxiv.org/abs/2402.01383)
+[https://arxiv.org/pdf/2402.01383](https://arxiv.org/pdf/2402.01383)
 
 **Date:** 2025-05-14
 
@@ -5303,7 +5312,7 @@ Social bias related to religion in NLG evaluation metrics. Based on a cited stud
 
 ## I Think, Therefore I am: Benchmarking Awareness of Large Language Models Using AWAREBENCH
 
-[https://arxiv.org/abs/2401.17882](https://arxiv.org/abs/2401.17882)
+[https://arxiv.org/pdf/2401.17882](https://arxiv.org/pdf/2401.17882)
 
 **Date:** 2024-02-16
 
@@ -5312,7 +5321,7 @@ Knowledge of cultural norms, which includes norms related to religious groups. T
 
 ## Good at captioning, bad at counting: Benchmarking GPT-4V on Earth observation data
 
-[https://arxiv.org/abs/2401.17600](https://arxiv.org/abs/2401.17600)
+[https://arxiv.org/pdf/2401.17600](https://arxiv.org/pdf/2401.17600)
 
 **Date:** 2024-01-31
 
@@ -5321,7 +5330,7 @@ The benchmark measured the accuracy of Vision-Language Models in identifying rel
 
 ## Quantifying Stereotypes in Language
 
-[https://arxiv.org/abs/2401.15535](https://arxiv.org/abs/2401.15535)
+[https://arxiv.org/pdf/2401.15535](https://arxiv.org/pdf/2401.15535)
 
 **Date:** 2024-01-28
 
@@ -5330,7 +5339,7 @@ The benchmark measures the degree of stereotypical bias in sentences on a contin
 
 ## Evaluating GPT-3.5's Awareness and Summarization Abilities for European Constitutional Texts with Shared Topics
 
-[https://arxiv.org/abs/2401.14524](https://arxiv.org/abs/2401.14524)
+[https://arxiv.org/pdf/2401.14524](https://arxiv.org/pdf/2401.14524)
 
 **Date:** 2023-01-01
 
@@ -5339,7 +5348,7 @@ Measurement of the model's awareness and summarization capabilities regarding co
 
 ## Robust Evaluation Measures for Evaluating Social Biases in Masked Language Models
 
-[https://arxiv.org/abs/2401.11601](https://arxiv.org/abs/2401.11601)
+[https://arxiv.org/pdf/2401.11601](https://arxiv.org/pdf/2401.11601)
 
 **Date:** 2024-01-21
 
@@ -5348,7 +5357,7 @@ The benchmark measured stereotypical bias in religious contexts by comparing the
 
 ## FAIR ENOUGH: DEVELOP AND ASSESS A FAIR-COMPLIANT DATASET FOR LARGE LANGUAGE MODEL TRAINING?
 
-[https://arxiv.org/abs/2401.11033](https://arxiv.org/abs/2401.11033)
+[https://arxiv.org/pdf/2401.11033](https://arxiv.org/pdf/2401.11033)
 
 **Date:** 2024-04-04
 
@@ -5357,7 +5366,7 @@ The benchmark was designed to detect and mitigate linguistic biases, including a
 
 ## IsamasRed: A Public Dataset Tracking Reddit Discussions on Israel-Hamas Conflict
 
-[https://arxiv.org/abs/2401.08202](https://arxiv.org/abs/2401.08202)
+[https://arxiv.org/pdf/2401.08202](https://arxiv.org/pdf/2401.08202)
 
 **Date:** 2024-04-16
 
@@ -5366,7 +5375,7 @@ Analysis of online Reddit discourse related to religious/ethnic conflicts, speci
 
 ## The Koo Dataset: An Indian Microblogging Platform With Global Ambitions
 
-[https://arxiv.org/abs/2401.07599](https://arxiv.org/abs/2401.07599)
+[https://arxiv.org/pdf/2401.07599](https://arxiv.org/pdf/2401.07599)
 
 **Date:** 2024-01-15
 
@@ -5375,7 +5384,7 @@ The paper does not conduct a benchmark measurement but introduces a dataset that
 
 ## Risk Taxonomy, Mitigation, and Assessment Benchmarks of Large Language Model Systems
 
-[https://arxiv.org/abs/2401.05778](https://arxiv.org/abs/2401.05778)
+[https://arxiv.org/pdf/2401.05778](https://arxiv.org/pdf/2401.05778)
 
 **Date:** 2024-01-11
 
@@ -5384,7 +5393,7 @@ Stereotypical bias and social bias related to religion, as part of a broader eva
 
 ## TuPy-E: detecting hate speech in Brazilian Portuguese social media with a novel dataset and comprehensive analysis of models
 
-[https://arxiv.org/abs/2312.17704](https://arxiv.org/abs/2312.17704)
+[https://arxiv.org/pdf/2312.17704](https://arxiv.org/pdf/2312.17704)
 
 **Date:** 2023-12-01
 
@@ -5393,7 +5402,7 @@ Detection of hate speech classified as 'religious intolerance' in Brazilian Port
 
 ## Faithful Model Evaluation for Model-Based Metrics
 
-[https://arxiv.org/abs/2312.17254](https://arxiv.org/abs/2312.17254)
+[https://arxiv.org/pdf/2312.17254](https://arxiv.org/pdf/2312.17254)
 
 **Date:** 2023-12-19
 
@@ -5402,7 +5411,7 @@ The BOLD benchmark, which was used in this study, measures bias in open-ended la
 
 ## How Far Are LLMs from Believable AI? A Benchmark for Evaluating the Believability of Human Behavior Simulation
 
-[https://arxiv.org/abs/2312.17115](https://arxiv.org/abs/2312.17115)
+[https://arxiv.org/pdf/2312.17115](https://arxiv.org/pdf/2312.17115)
 
 **Date:** 2024-06-15
 
@@ -5411,7 +5420,7 @@ The benchmark measured 'simulation hallucination,' specifically the tendency of 
 
 ## EVALUATION OF GPT-4V AND GEMINI IN ONLINE VQA
 
-[https://arxiv.org/abs/2312.10637](https://arxiv.org/abs/2312.10637)
+[https://arxiv.org/pdf/2312.10637](https://arxiv.org/pdf/2312.10637)
 
 **Date:** 2024-02-14
 
@@ -5420,7 +5429,7 @@ Accuracy on visual question answering for topics categorized under the 'Religion
 
 ## SocialStigmaQA: A Benchmark to Uncover Stigma Amplification in Generative Language Models
 
-[https://arxiv.org/abs/2312.07492](https://arxiv.org/abs/2312.07492)
+[https://arxiv.org/pdf/2312.07492](https://arxiv.org/pdf/2312.07492)
 
 **Date:** 2023-12-27
 
@@ -5429,7 +5438,7 @@ The benchmark measures social bias amplification against individuals based on th
 
 ## Toxic language detection: a systematic review of Arabic datasets
 
-[https://arxiv.org/abs/2312.07228](https://arxiv.org/abs/2312.07228)
+[https://arxiv.org/pdf/2312.07228](https://arxiv.org/pdf/2312.07228)
 
 **Date:** 2023-10-01
 
@@ -5438,7 +5447,7 @@ The paper is a systematic review of datasets designed for toxic language detecti
 
 ## GPTBIAS: A Comprehensive Framework for Evaluating Bias in Large Language Models
 
-[https://arxiv.org/abs/2312.06315](https://arxiv.org/abs/2312.06315)
+[https://arxiv.org/pdf/2312.06315](https://arxiv.org/pdf/2312.06315)
 
 **Date:** 2023-12-11
 
@@ -5447,7 +5456,7 @@ Detection of biased content generation in response to prompts involving various 
 
 ## NLEBench+NorGLM: A Comprehensive Empirical Analysis and Benchmark Dataset for Generative Language Models in Norwegian
 
-[https://arxiv.org/abs/2312.01314](https://arxiv.org/abs/2312.01314)
+[https://arxiv.org/pdf/2312.01314](https://arxiv.org/pdf/2312.01314)
 
 **Date:** 2024-10-01
 
@@ -5456,7 +5465,7 @@ Perplexity-based stereotype and bias detection in the context of religion, by co
 
 ## Questioning Biases in Case Judgment Summaries: Legal Datasets or Large Language Models?
 
-[https://arxiv.org/abs/2312.00554](https://arxiv.org/abs/2312.00554)
+[https://arxiv.org/pdf/2312.00554](https://arxiv.org/pdf/2312.00554)
 
 **Date:** 2023-12-01
 
@@ -5465,7 +5474,7 @@ Presence/absence of religious keywords (Hindu, Muslim, Christian, Jain) and a sp
 
 ## Navigating News Narratives: A Media Bias Analysis Dataset
 
-[https://arxiv.org/abs/2312.00168](https://arxiv.org/abs/2312.00168)
+[https://arxiv.org/pdf/2312.00168](https://arxiv.org/pdf/2312.00168)
 
 **Date:** 2023-12-07
 
@@ -5474,7 +5483,7 @@ The dataset is designed to measure media bias in various news categories, includ
 
 ## Introducing Rhetorical Parallelism Detection: A New Task with Datasets, Metrics, and Baselines
 
-[https://arxiv.org/abs/2312.00100](https://arxiv.org/abs/2312.00100)
+[https://arxiv.org/pdf/2312.00100](https://arxiv.org/pdf/2312.00100)
 
 **Date:** 2023-11-30
 
@@ -5483,7 +5492,7 @@ Detection of the rhetorical device of parallelism in Christian theological texts
 
 ## FFT: Towards Evaluating Large Language Models with Factuality, Fairness, Toxicity
 
-[https://arxiv.org/abs/2311.18580](https://arxiv.org/abs/2311.18580)
+[https://arxiv.org/pdf/2311.18580](https://arxiv.org/pdf/2311.18580)
 
 **Date:** 2024-12-23
 
@@ -5492,7 +5501,7 @@ The benchmark measured fairness, specifically the disparity in predictions and p
 
 ## Automatic Construction of a Korean Toxic Instruction Dataset for Ethical Tuning of Large Language Models
 
-[https://arxiv.org/abs/2311.18215](https://arxiv.org/abs/2311.18215)
+[https://arxiv.org/pdf/2311.18215](https://arxiv.org/pdf/2311.18215)
 
 **Date:** 2023-11-30
 
@@ -5501,7 +5510,7 @@ detection of and appropriate response to toxic instructions targeting religious 
 
 ## ROBBIE: Robust Bias Evaluation of Large Generative Language Models
 
-[https://arxiv.org/abs/2311.18140](https://arxiv.org/abs/2311.18140)
+[https://arxiv.org/pdf/2311.18140](https://arxiv.org/pdf/2311.18140)
 
 **Date:** 2023-11-29
 
@@ -5510,7 +5519,7 @@ The benchmark measured bias against religious groups by evaluating the frequency
 
 ## Fully Authentic Visual Question Answering Dataset from Online Communities
 
-[https://arxiv.org/abs/2311.15562](https://arxiv.org/abs/2311.15562)
+[https://arxiv.org/pdf/2311.15562](https://arxiv.org/pdf/2311.15562)
 
 **Date:** 2024-07-17
 
@@ -5519,7 +5528,7 @@ Performance of Vision-Language Models on visual questions related to religious t
 
 ## UNMASKING AND IMPROVING DATA CREDIBILITY: A STUDY WITH DATASETS FOR TRAINING HARMLESS LANGUAGE MODELS
 
-[https://arxiv.org/abs/2311.11202](https://arxiv.org/abs/2311.11202)
+[https://arxiv.org/pdf/2311.11202](https://arxiv.org/pdf/2311.11202)
 
 **Date:** 2024-03-24
 
@@ -5528,7 +5537,7 @@ Detection of toxic content and negative stereotypes in a religious context, as a
 
 ## Latent Feature-based Data Splits to Improve Generalisation Evaluation: A Hate Speech Detection Case Study
 
-[https://arxiv.org/abs/2311.10236](https://arxiv.org/abs/2311.10236)
+[https://arxiv.org/pdf/2311.10236](https://arxiv.org/pdf/2311.10236)
 
 **Date:** 2023-11-16
 
@@ -5537,7 +5546,7 @@ Detection of hate speech targeted at religious groups. The paper's findings focu
 
 ## Measuring Moral Dimensions in Social Media with Mformer
 
-[https://arxiv.org/abs/2311.10219](https://arxiv.org/abs/2311.10219)
+[https://arxiv.org/pdf/2311.10219](https://arxiv.org/pdf/2311.10219)
 
 **Date:** 2024-04-19
 
@@ -5546,7 +5555,7 @@ The association of moral foundations (including 'sanctity', a concept related to
 
 ## Evaluating and Improving Value Judgments in AI: A Scenario-Based Study on Large Language Models' Depiction of Social Conventions
 
-[https://arxiv.org/abs/2311.09230](https://arxiv.org/abs/2311.09230)
+[https://arxiv.org/pdf/2311.09230](https://arxiv.org/pdf/2311.09230)
 
 **Date:** 2023-03-23
 
@@ -5555,7 +5564,7 @@ The paper's primary benchmark did not measure faith/religion. However, it refere
 
 ## Social Bias Probing: Fairness Benchmarking for Language Models #Mormon
 
-[https://arxiv.org/abs/2311.09090](https://arxiv.org/abs/2311.09090)
+[https://arxiv.org/pdf/2311.09090](https://arxiv.org/pdf/2311.09090)
 
 **Date:** 2024-10-07
 
@@ -5564,7 +5573,7 @@ The benchmark measures disparate treatment of religious groups by assessing the 
 
 ## Instruction-Following Evaluation for Large Language Models
 
-[https://arxiv.org/abs/2311.07911](https://arxiv.org/abs/2311.07911)
+[https://arxiv.org/pdf/2311.07911](https://arxiv.org/pdf/2311.07911)
 
 **Date:** 2023-11-14
 
@@ -5573,7 +5582,7 @@ The benchmark measures the ability of LLMs to follow verifiable instructions wit
 
 ## Toxicity Detection is NOT all you Need: Measuring the Gaps to Supporting Volunteer Content Moderators through a User-Centric Method
 
-[https://arxiv.org/abs/2311.07879](https://arxiv.org/abs/2311.07879)
+[https://arxiv.org/pdf/2311.07879](https://arxiv.org/pdf/2311.07879)
 
 **Date:** 2024-11-13
 
@@ -5582,7 +5591,7 @@ Detecting violations of community rules in the r/Atheism subreddit, such as pros
 
 ## Western, Religious or Spiritual: An Evaluation of Moral Justification in Large Language Models
 
-[https://arxiv.org/abs/2311.07792](https://arxiv.org/abs/2311.07792)
+[https://arxiv.org/pdf/2311.07792](https://arxiv.org/pdf/2311.07792)
 
 **Date:** 2023-11-13
 
@@ -5591,7 +5600,7 @@ The benchmark measures the moral perspectives embedded in LLMs by asking them to
 
 ## FLAMES: Benchmarking Value Alignment of LLMs in Chinese
 
-[https://arxiv.org/abs/2311.06899](https://arxiv.org/abs/2311.06899)
+[https://arxiv.org/pdf/2311.06899](https://arxiv.org/pdf/2311.06899)
 
 **Date:** 2024-05-22
 
@@ -5600,7 +5609,7 @@ The benchmark measures bias and discrimination against faith, as part of its 'Fa
 
 ## THOS: A Benchmark Dataset for Targeted Hate and Offensive Speech
 
-[https://arxiv.org/abs/2311.06446](https://arxiv.org/abs/2311.06446)
+[https://arxiv.org/pdf/2311.06446](https://arxiv.org/pdf/2311.06446)
 
 **Date:** 2023-11-11
 
@@ -5609,7 +5618,7 @@ Detection of fine-grained hate and offensive speech targeted at specific religio
 
 ## The Iron(ic) Melting Pot: Reviewing Human Evaluation in Humour, Irony and Sarcasm Generation
 
-[https://arxiv.org/abs/2311.05552](https://arxiv.org/abs/2311.05552)
+[https://arxiv.org/pdf/2311.05552](https://arxiv.org/pdf/2311.05552)
 
 **Date:** 2023-11-09
 
@@ -5618,18 +5627,180 @@ The paper does not introduce a new benchmark, but critically surveys existing hu
 
 ## DialogBench: Evaluating LLMs as Human-like Dialogue Systems
 
-[https://arxiv.org/abs/2311.01677](https://arxiv.org/abs/2311.01677)
+[https://arxiv.org/pdf/2311.01677](https://arxiv.org/pdf/2311.01677)
 
 **Date:** 2024-03-29
 
 The benchmark measured the performance of LLMs on multi-turn dialogue tasks within the domain of 'Philosophy', which explicitly includes 'religious philosophy' as a sub-topic. The evaluation was conducted through multi-choice questions assessing comprehension and reasoning in conversations related to this domain. The paper found that the average performance of supervised instruction-tuning LLMs in professional knowledge domains (56.07%) was higher than in daily life domains (52.14%). Within the professional domains, 'Philosophy' (which includes religious philosophy) was one of the evaluated topics. For this specific domain on the Chinese DialogBench, models like GPT-4 (77.64%) and ChatGPT (65.97%) performed significantly better than open-source models, whose scores ranged from approximately 25% to 64%.
 
 
+## People Make Better Edits: Measuring the Efficacy of LLM-Generated Counterfactually Augmented Data for Harmful Language Detection
+
+[https://arxiv.org/pdf/2311.01270](https://arxiv.org/pdf/2311.01270)
+
+**Date:** 2024-02-25
+
+Detection of hate speech targeting individuals or groups based on their religion, as part of a broader harmful language detection benchmark. The paper's findings are general to hate speech detection rather than specific to religion. However, religion is an explicit category within the hate speech definition used for training and evaluation. Examples show that blatant counterfactuals creating religious hate speech (e.g., turning 'My mate is muslim' into 'My mate is a filthy muslim scum') are considered 'easy-to-learn' instances for models.
+
+
 ## Chinese Web Text: LARGE-SCALE HIGH-QUALITY CHINESE WEB TEXT EXTRACTED WITH EFFECTIVE EVALUATION MODEL
 
-[https://arxiv.org/abs/2311.01149](https://arxiv.org/abs/2311.01149)
+[https://arxiv.org/pdf/2311.01149](https://arxiv.org/pdf/2311.01149)
 
 **Date:** 2023-11-10
 
 Filtering of texts containing religious terms as part of a broader 'sensitive words' list to prevent models from generating toxic content. The paper's data filtering process identifies and removes texts containing terms related to 'religion' as part of a broader 'sensitive words' list. This is done to avoid large language models generating potentially toxic content.
+
+
+## JADE: A Linguistics-based Safety Evaluation Platform for Large Language Models
+
+[https://arxiv.org/pdf/2311.00286](https://arxiv.org/pdf/2311.00286)
+
+**Date:** 2023-12-10
+
+The benchmark measures the generation of harmful content in response to unsafe questions. One of the categories of harm measured is 'Bias', which is further broken down into subcategories including 'Gender, Race, Religion, Job'. The paper's findings are aggregated across four main categories of harm (crime, tort, bias, core values). While 'religion' is a sub-category of bias, the results are not broken down to provide specific findings for religion alone. The general finding is that the JADE method, which increases the linguistic complexity of prompts, is highly effective at bypassing the safety guardrails of various LLMs and eliciting unsafe content across all tested categories, including bias.
+
+
+## DeSIQ: Towards an Unbiased, Challenging Benchmark for Social Intelligence Understanding
+
+[https://arxiv.org/pdf/2310.18359](https://arxiv.org/pdf/2310.18359)
+
+**Date:** 2023-10-24
+
+The benchmark measures the ability to understand human emotions and intents within social interactions that may incidentally involve the topic of religion. For example, it tests if a model can correctly infer a person's sadness is due to a disagreement over the religious upbringing of children. In a specific example involving a disagreement over religious upbringing, the Delphi model (which was pretrained on social and moral commonsense) was able to correctly identify the reason for a character's sadness from the transcript, while the T5-small and LSTM models failed. This suggests that explicit pretraining on social and moral norms is beneficial for understanding such nuanced social contexts.
+
+
+## INCHARACTER: Evaluating Personality Fidelity in Role-Playing Agents through Psychological Interviews
+
+[https://arxiv.org/pdf/2310.17976](https://arxiv.org/pdf/2310.17976)
+
+**Date:** 2024-06-07
+
+The benchmark measured the alignment of a role-playing agent's personality with its target character's personality. In the context of religion, this specifically involved evaluating the character's interest in 'Religious Activities' as a dimension within the Comprehensive Assessment of Basic Interests (CABIN) scale, and examining 'religious values' as a facet of the Openness to Experience dimension in the Big Five Inventory (BFI). The paper's findings related to religion were quantitative performance metrics. On the 'Religious Activities' dimension of the CABIN personality scale, the state-of-the-art role-playing agents (RPAs) achieved a dimensional accuracy (AccDim) of 70.59% and a mean absolute error (MAE) of 11.84% in aligning with the target characters' personalities.
+
+
+## Evaluation of large language models using an Indian language LGBTI+ lexicon
+
+[https://arxiv.org/pdf/2310.17787](https://arxiv.org/pdf/2310.17787)
+
+**Date:** 2023-10-26
+
+Understanding of culturally and religiously rooted terminology within the Indian LGBTI+ context, specifically through analysis of terms with origins in religious epics. The models struggled to understand the nuanced context of terms rooted in religious culture. For instance, GPT-J provided an inappropriate description ('unclean') for 'stripumsa', a term for a character who identifies as both man and woman in the Hindu epic Mahābhārata, indicating a failure to grasp the specific religious and cultural context.
+
+
+## Evaluating the Knowledge Base Completion Potential of GPT
+
+[https://arxiv.org/pdf/2310.14771](https://arxiv.org/pdf/2310.14771)
+
+**Date:** 2023-10-23
+
+Knowledge of an entity's religious affiliation, tested via the 'hasReligion' relation in a knowledge base completion task. In a retain-all setting, GPT-3 (text-davinci-003) achieved a precision of 0.73 for the 'hasReligion' relation, but in a high-precision setting (R@P90), its recall dropped to 0.02, indicating difficulty in generating high-confidence facts about religion.
+
+
+## NORMDIAL: A Comparable Bilingual Synthetic Dialogue Dataset for Modeling Social Norm Adherence and Violation
+
+[https://arxiv.org/pdf/2310.14563](https://arxiv.org/pdf/2310.14563)
+
+**Date:** 2023-10-25
+
+Generation of dialogues and evaluation of social norm adherence/violation in situations involving religious contexts like temples and churches. The paper does not present findings specific to religion. It identifies 'Religion & Temple' as one of 30 topics for the situations in which social norms are evaluated, using tokens such as 'temple', 'church', and 'buddhist' to generate contexts. However, the analysis of model performance is aggregated across all topics, with no specific results or conclusions drawn about the religious contexts.
+
+
+## STEREOMAP: Quantifying the Awareness of Human-like Stereotypes in Large Language Models
+
+[https://arxiv.org/pdf/2310.13673](https://arxiv.org/pdf/2310.13673)
+
+**Date:** 2023-10-31
+
+The benchmark measures how Large Language Models perceive religious groups based on the Stereotype Content Model (SCM). Specifically, it quantifies stereotypes along the two dimensions of Warmth (e.g., trustworthy, friendly) and Competence (e.g., skilled, capable) to map out the models' awareness of societal stereotypes. The models placed religious groups into different stereotype clusters, which varied across models. BARD and GPT-3.5 consistently placed 'Jews' in a high-competence, lower-warmth cluster (a stereotype often associated with envy). The BARD model, however, placed 'Christians' and 'Muslims' in an 'in-group' cluster characterized by high warmth and high competence (a perception associated with admiration and pride). This indicates that the models have encoded distinct, human-like stereotypes for various religious groups.
+
+
+## Evaluating the Fairness of Discriminative Foundation Models in Computer Vision
+
+[https://arxiv.org/pdf/2310.11867](https://arxiv.org/pdf/2310.11867)
+
+**Date:** 2023-10-18
+
+The benchmark measured classification bias between 'Muslim' and 'atheist'. It also identified potential fairness concerns in image retrieval, hypothesizing that searches for terms like 'beautiful building' might be biased towards Christian churches and omit buildings associated with other religions like mosques and temples. The paper included a binary classification task to evaluate bias between 'Muslim' and 'atheist' as one of its fairness evaluations. Additionally, it raised concerns that models might exhibit bias in subjective, non-human-centric tasks, such as a search for a 'beautiful building' being biased towards Christian churches, though this was noted as difficult to evaluate due to a lack of data and ground truth labels.
+
+
+## BanglaNLP at BLP-2023 Task 1: Benchmarking different Transformer Models for Violence Inciting Text Detection in Bangla
+
+[https://arxiv.org/pdf/2310.10781](https://arxiv.org/pdf/2310.10781)
+
+**Date:** 
+
+The benchmark measures the ability of models to correctly classify text in Bangla as non-violent, passive violence, or direct violence. A specific challenge highlighted is the correct contextual understanding of text containing religious terms (e.g., related to religious practices, attire, or festivals), to distinguish between neutral descriptions and actual incitement of violence. The error analysis revealed that the best-performing model (multilingual-e5-base) struggled with contextual understanding of religious phrases. It was often confused by sentences containing neutral references to religious practices, such as 'Saraswati Puja in college/university' (Hinduism) or 'women wear hijab/burqa' (Islam), leading to incorrect classifications. This indicates the model has difficulty distinguishing benign religious mentions from actual violent or hateful content.
+
+
+## Enhancing Stance Classification on Social Media Using Quantified Moral Foundations
+
+[https://arxiv.org/pdf/2310.09848](https://arxiv.org/pdf/2310.09848)
+
+**Date:** 2024-09-29
+
+The benchmark measured the stance (Favor, Against, None) towards the topic of 'Atheism'. The primary finding is that incorporating moral foundations enhances stance detection models' performance. This was demonstrated across various targets, including 'Atheism'. Figures in the paper visualize the different moral foundation biases associated with 'Favor', 'Against', and 'None' stances toward atheism, but the text does not offer specific interpretations of these findings, focusing instead on the methodological improvements.
+
+
+## Evaluating Machine Perception of Indigeneity: An Analysis of ChatGPT's Perceptions of Indigenous Roles in Diverse Scenarios
+
+[https://arxiv.org/pdf/2310.09237](https://arxiv.org/pdf/2310.09237)
+
+**Date:** 2023-10-13
+
+Detection of stereotypes related to Indigenous peoples, including spiritual stereotypes such as 'mysticism', 'magical shaman', and being 'overly spiritual'. The LLM strongly stereotyped Indigenous individuals by reinforcing tropes of deep nature connections, ancestral practices, and exoticized spiritual depictions, aligning with 'noble savage' and 'magical shaman' stereotypes.
+
+
+## TRACE: A COMPREHENSIVE BENCHMARK FOR CONTINUAL LEARNING IN LARGE LANGUAGE MODELS
+
+[https://arxiv.org/pdf/2310.06762](https://arxiv.org/pdf/2310.06762)
+
+**Date:** 2023-10-10
+
+The benchmark measured knowledge of world religions as a sub-task within the MMLU dataset, which was used to evaluate the general abilities of language models and assess catastrophic forgetting after continual learning. The paper's findings, detailed in appendix tables, show that language models' performance on the 'world_religions' knowledge task (part of the MMLU benchmark) significantly decreased after undergoing continual learning on new tasks. For instance, LLaMA-13b-chat's accuracy dropped from a baseline of 71.93% to as low as 59.65% after sequential fine-tuning, demonstrating that catastrophic forgetting affects the domain of religious knowledge similarly to other general knowledge areas.
+
+
+## Simulating Social Media Using Large Language Models to Evaluate Alternative News Feed Algorithms
+
+[https://arxiv.org/pdf/2310.05984](https://arxiv.org/pdf/2310.05984)
+
+**Date:** 2023-10-11
+
+The simulation measured agent behavior in different social media environments, where agent personas were created using demographic data that included religious affiliation (e.g., Evangelical Protestant, Christians). Religion was included as a demographic attribute (e.g., 'Evangelical Protestant') in the agent personas created from the American National Election Study data. However, the paper does not report any specific findings or analyses related to the behavior of agents based on their religious affiliation. The analysis focuses on political partisanship and toxicity.
+
+
+## Are Personalized Stochastic Parrots More Dangerous? Evaluating Persona Biases in Dialogue Systems
+
+[https://arxiv.org/pdf/2310.05280](https://arxiv.org/pdf/2310.05280)
+
+**Date:** 2023-11-02
+
+The benchmark measured the sensitivity of harmful model behaviors (Offensiveness, Toxic Continuation, Regard, Stereotype Agreement, and Toxic Agreement) when dialogue models adopt personas representing different religious groups. Models exhibited significant persona biases related to religion. The harmfulness level varied considerably when models adopted different religious personas (e.g., Sikhism, Judaism, Islam, Hinduism, Christianity, Buddhism, Atheism). The study found that models are most biased in the Stereotype Agreement dimension. For example, ChatGPT's regard score was significantly lower for Atheism (38.40) compared to Christianity (85.80), and its stereotype agreement score for Christianity was particularly low (20.40), indicating high bias.
+
+
+## A New Dataset for End-to-End Sign Language Translation: The Greek Elementary School Dataset
+
+[https://arxiv.org/pdf/2310.04753](https://arxiv.org/pdf/2310.04753)
+
+**Date:** 2023-10-07
+
+Translation accuracy (BLEU-4 score) of Greek Sign Language to Greek text, where the source content is derived from multiple elementary school subjects, including 'Religion Study'. The study introduced a new dataset for sign language translation derived from the Greek elementary school curriculum, which includes 'Religion Study' as one of its subjects. The paper evaluates translation model performance on the entire multi-subject dataset but does not provide specific findings or performance breakdowns for the religious content versus other subjects.
+
+
+## EVALUATING HALLUCINATIONS IN CHINESE LARGE LANGUAGE MODELS
+
+[https://arxiv.org/pdf/2310.03368](https://arxiv.org/pdf/2310.03368)
+
+**Date:** 2023-10-25
+
+The paper evaluates LLMs on their truthfulness and tendency to hallucinate when answering questions related to religion, as one of several categories within the TruthfulQA benchmark. The goal was to measure falsehoods on religious topics. Based on an analysis of the TruthfulQA benchmark, the paper found that for Llama-2 models, both alignment (instruction tuning) and scaling up model size led to a moderate improvement in truthfulness on questions related to religion. Alignment had a more significant positive impact than simply scaling the model size.
+
+
+## ValueDCG: Measuring Comprehensive Human Value Understanding Ability of Language Models
+
+[https://arxiv.org/pdf/2310.00378](https://arxiv.org/pdf/2310.00378)
+
+**Date:** 2024-06-17
+
+The benchmark, ValueDCG, measures the understanding of thirteen human values, one of which is 'Tradition'. This value is defined as 'Respect, commitment, and acceptance of the customs and ideas that traditional culture or religion provide', thus directly measuring the model's grasp of values related to religion. The paper evaluated LLMs' understanding of the value of 'Tradition', which is defined to include respect for religious ideas. According to the results in Table 2, the models' performance on understanding 'Tradition' was not among the best (like 'Benevolence') or the worst (like 'Self-direction'), placing it in a middle tier of comprehension ability across the Llama 2 and Llama 3 models tested.
 
