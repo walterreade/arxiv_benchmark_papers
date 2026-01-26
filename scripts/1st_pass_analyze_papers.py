@@ -201,6 +201,25 @@ def load_processed_files(output_csv: str) -> Set[str]:
                 processed.add(row['filename'])
     return processed
 
+
+def load_failed_files(failures_csv: str) -> Set[str]:
+    """Load filenames that previously failed with non-retryable errors."""
+    if not os.path.exists(failures_csv):
+        return set()
+    
+    failed = set()
+    with open(failures_csv, mode='r', encoding='utf-8') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            filename = row.get('filename', '')
+            error = row.get('error', '').lower()
+            # Skip resource exhausted errors - these should be retried
+            if 'resource exhausted' in error or '429' in error or 'quota' in error:
+                continue
+            if filename:
+                failed.add(filename)
+    return failed
+
 def save_json(data: dict, output_dir: str, filename: str):
     """Save the analysis JSON to a file."""
     if not os.path.exists(output_dir):
@@ -292,7 +311,9 @@ def main():
         return
 
     processed_files = load_processed_files(output_csv)
+    failed_files = load_failed_files(failures_csv)
     print(f"Found {len(processed_files)} already processed files.")
+    print(f"Found {len(failed_files)} previously failed files (will skip).")
     
     fieldnames = ["filename", "date", "title", "page_count", "is_benchmark", "is_llm_related", "is_bias_related", "is_faith_ethics_related", "is_survey_review", "reference_count", "appendix_length", "reasoning"]
     
@@ -314,15 +335,16 @@ def main():
     
     # Gather files
     pdfs_to_process = []
+    skip_files = processed_files | failed_files  # Union of processed and failed
     if os.path.isdir(input_path):
         all_pdfs = sorted(glob.glob(os.path.join(input_path, "*.pdf")), reverse=True)
-        pdfs_to_process = [p for p in all_pdfs if Path(p).name not in processed_files]
-        print(f"Found {len(all_pdfs)} PDFs. {len(processed_files)} processed. {len(pdfs_to_process)} remaining.")
+        pdfs_to_process = [p for p in all_pdfs if Path(p).name not in skip_files]
+        print(f"Found {len(all_pdfs)} PDFs. {len(processed_files)} processed. {len(failed_files)} failed. {len(pdfs_to_process)} remaining.")
     elif os.path.isfile(input_path):
-        if Path(input_path).name not in processed_files:
+        if Path(input_path).name not in skip_files:
             pdfs_to_process = [input_path]
         else:
-            print(f"{input_path} already processed.")
+            print(f"{input_path} already processed or previously failed.")
             pdfs_to_process = []
     else:
         print(f"Error: {input_path} is not a valid file or directory.")

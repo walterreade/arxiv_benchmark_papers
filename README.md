@@ -13,19 +13,22 @@ This project provides tools to:
 ## Project Structure
 
 ```
-├── scripts/                    # Python scripts
+├── scripts/                    # Python analysis scripts
 │   ├── download_arxiv_benchmark_papers.py
 │   ├── 1st_pass_analyze_papers.py
 │   ├── 2nd_pass_analyze_papers.py
 │   ├── create_summary.py
-│   └── check_lds_mentions.py
+│   ├── check_lds_mentions.py
+│   ├── generate_update.py
+│   └── update_analysis.sh
 ├── json/                       # JSON analysis output
 │   ├── 1st_pass_json/
 │   └── 2nd_pass_json/
 ├── analysis/                   # Generated markdown reports
 │   ├── benchmark_analysis.md
 │   ├── benchmark_learnings.md
-│   └── benchmark_summary.md
+│   ├── benchmark_summary.md
+│   └── updates/                # Timestamped update files
 ├── csv/                        # CSV data files
 │   ├── 1st_pass_results.csv
 │   ├── 1st_pass_failures.csv
@@ -82,6 +85,20 @@ uv run scripts/create_summary.py
 ### `scripts/check_lds_mentions.py`
 Utility script to check for Latter-day Saint/Mormon mentions in analyzed papers.
 
+### `scripts/update_analysis.sh`
+Automated pipeline that runs the full analysis workflow:
+1. Downloads new papers from arXiv
+2. Runs 1st pass analysis
+3. Runs 2nd pass analysis for qualifying papers
+4. Generates a timestamped update file for newly analyzed papers
+
+```bash
+./scripts/update_analysis.sh
+```
+
+### `scripts/generate_update.py`
+Helper script to generate timestamped update markdown files for specific papers.
+
 ## Output Files
 
 | File | Description |
@@ -93,6 +110,7 @@ Utility script to check for Latter-day Saint/Mormon mentions in analyzed papers.
 | `analysis/benchmark_analysis.md` | Summary tables with counts of religious groups, models, benchmarks, etc. |
 | `analysis/benchmark_learnings.md` | Detailed findings from each analyzed paper |
 | `analysis/benchmark_summary.md` | AI-generated comprehensive summary of the field |
+| `analysis/updates/` | Timestamped update files from `update_analysis.sh` runs |
 
 ## Setup
 

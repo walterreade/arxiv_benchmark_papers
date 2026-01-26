@@ -81,6 +81,25 @@ class RateLimiter:
         with self.condition:
             self.condition.notify_all()
 
+def load_failed_files(failures_csv: str) -> set:
+    """Load filenames that previously failed with non-retryable errors."""
+    if not os.path.exists(failures_csv):
+        return set()
+    
+    failed = set()
+    with open(failures_csv, mode='r', encoding='utf-8') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            filename = row.get('filename', '')
+            error = row.get('error', '').lower()
+            # Skip resource exhausted errors - these should be retried
+            if 'resource exhausted' in error or '429' in error or 'quota' in error:
+                continue
+            if filename:
+                failed.add(filename)
+    return failed
+
+
 def save_json(data: dict, output_dir: str, filename: str):
     """Save the analysis data to a JSON file."""
     if not os.path.exists(output_dir):
@@ -295,6 +314,10 @@ def main():
 
     print(f"Found {len(papers_to_process)} papers to analyze.")
     
+    # Load previously failed files (excluding resource exhausted errors)
+    failed_files = load_failed_files(failures_csv)
+    print(f"Previously failed (will skip): {len(failed_files)}")
+    
     # Check for already processed by looking for existing JSON files
     if reprocess:
         print("Reprocess flag set - will re-analyze all files.")
@@ -306,8 +329,9 @@ def main():
             for jp in existing_jsons:
                 processed_filenames.add(Path(jp).stem + ".pdf")
         
+        skip_files = processed_filenames | failed_files
         print(f"Already processed: {len(processed_filenames)}")
-        remaining = [p for p in papers_to_process if p['filename'] not in processed_filenames]
+        remaining = [p for p in papers_to_process if p['filename'] not in skip_files]
     
     # Filter out papers where PDF doesn't exist
     valid_papers = []

@@ -19,6 +19,7 @@ BASE_URL = "https://arxiv.org"
 # Template for yearly search - we will format with {year}
 SEARCH_URL_TEMPLATE = "https://arxiv.org/search/advanced?advanced=&terms-0-operator=AND&terms-0-term=benchmark&terms-0-field=title&terms-1-operator=OR&terms-1-term=evaluate&terms-1-field=title&terms-2-operator=OR&terms-2-term=quantify&terms-2-field=title&terms-3-operator=OR&terms-3-term=measure&terms-3-field=title&terms-4-operator=OR&terms-4-term=dataset&terms-4-field=title&terms-5-operator=OR&terms-5-term=benchmark&terms-5-field=abstract&classification-computer_science=y&classification-physics_archives=all&classification-include_cross_list=include&date-filter_by=date_range&date-year=&date-from_date={year}-01-01&date-to_date={year}-12-31&date-date_type=submitted_date&abstracts=hide&size=200&order=-submitted_date"
 OUTPUT_DIR = "pdf"
+PROCESSED_CHECK_DIR = "json/1st_pass_json"  # Check for previously processed papers here
 MAX_PAPERS = 200
 RESULTS_PER_PAGE = 200
 DELAY_BETWEEN_DOWNLOADS = 3  # seconds (be respectful to arXiv servers)
@@ -154,10 +155,11 @@ def main():
     
     create_output_directory()
     
-    # Check for existing files
-    existing_files = list(Path(OUTPUT_DIR).glob("*.pdf"))
-    if existing_files:
-        print(f"Found {len(existing_files)} existing PDF files in {OUTPUT_DIR}")
+    # Check for previously processed papers (by checking JSON files)
+    existing_json = list(Path(PROCESSED_CHECK_DIR).glob("*.json")) if Path(PROCESSED_CHECK_DIR).exists() else []
+    processed_ids = {f.stem for f in existing_json}  # arxiv_id without extension
+    if processed_ids:
+        print(f"Found {len(processed_ids)} previously processed papers in {PROCESSED_CHECK_DIR}")
         print("These will be skipped (resuming download)\n")
     
     downloaded_count = 0
@@ -213,13 +215,12 @@ def main():
                 arxiv_id = paper['arxiv_id']
                 print(f"[{downloaded_count + skipped_count + 1}/{MAX_PAPERS}] ({year}) ", end='')
                 
-                # Check if file already exists
+                # Check if paper was already processed (JSON exists)
                 output_path = os.path.join(OUTPUT_DIR, f"{arxiv_id}.pdf")
                 was_downloaded = False
                 
-                if os.path.exists(output_path) and os.path.getsize(output_path) > 1000:
-                    file_size = os.path.getsize(output_path)
-                    print(f"  Skipping {arxiv_id} (already exists, {file_size / 1024:.1f} KB)")
+                if arxiv_id in processed_ids:
+                    print(f"  Skipping {arxiv_id} (already processed)")
                     skipped_count += 1
                 else:
                     result = download_pdf(arxiv_id, OUTPUT_DIR)
