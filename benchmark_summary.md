@@ -1,46 +1,60 @@
 # Summary: The State of Measuring Religious Bias in LLMs
 
-Based on the analysis of the benchmark papers provided, covering research up to January 2026, here is a comprehensive summary of the state of measuring religious bias in Large Language Models (LLMs).
+Based on the comprehensive analysis of the provided benchmark papers (spanning roughly 2020 through early 2026), the following is a summary of the state of measuring religious bias in Large Language Models (LLMs).
 
 ### 1. Overview
-The measurement of religious bias in LLMs has evolved from simple associations of toxicity with religious terms to complex, multi-dimensional evaluations involving agentic reasoning, multimodal (text-to-image/video) generation, and cross-cultural alignment. While early research focused on detecting explicit hate speech and basic stereotypes (e.g., associating Islam with violence), the current landscape reveals that models possess a superficial "Western-secular" default that struggles with deep theological reasoning, intra-religious nuance, and non-Western cultural contexts. Despite improvements in safety guardrails, models frequently exhibit "over-refusal" on benign religious topics or, conversely, hallucinate plausible-sounding but theologically incorrect content. Recent 2025-2026 research highlights that "reasoning" models do not necessarily mitigate social bias and may sometimes amplify it through complex, rationalized stereotyping.
+The field of measuring religious bias in LLMs has evolved from simple text-completion tasks to complex, culturally grounded, and multimodal evaluations. While earlier research focused on detecting explicit hate speech and basic stereotypical associations in English, the current landscape (2024–2026) emphasizes **cultural nuance, multilingual alignment, and safety robustness**.
+
+Researchers are increasingly treating religion not just as a demographic label, but as a complex system of values, rituals, and historical contexts. There is a marked tension in the findings: while models have become "safer" (reducing explicit toxicity), they suffer from **"safety over-refusal"** (refusing to discuss benign religious topics) and **"western-centric alignment,"** where models apply secular or Protestant-Christian norms to non-Western religious contexts. Furthermore, the expansion into Multimodal Large Language Models (MLLMs) has revealed that visual generators and analyzers harbor distinct, often more pronounced, religious stereotypes than their text-only counterparts.
 
 ### 2. Key Findings
-*   **Western-Centric Alignment:** Models consistently exhibit a bias toward Western, English-speaking, and often Protestant-secular values. For example, *WorldView-Bench* and *WorldValuesBench* show that models align closer to Western moral norms and struggle to represent the "traditional" values held by religious populations in the Global South.
-*   **The "Safety" vs. "Utility" Trade-off:** High safety settings often lead to over-refusal. The *MINORBENCH* and *OR-Bench* studies found that models often refuse to answer benign questions about religion (e.g., factual history) because they classify the topic itself as sensitive or dangerous.
-*   **Reasoning Amplifies Bias:** Contrary to the hope that better reasoning leads to less bias, the *Does Reasoning Introduce Bias?* study (2025) found that Chain-of-Thought reasoning can amplify religious stereotypes. Models may use stereotypes (e.g., regarding Islamic extremism) as "logical" steps to deduce incorrect answers in ambiguous scenarios.
-*   **Multimodal Amplification:** Biases are significantly more pronounced in Vision-Language Models (VLMs). The *SB-Bench* and *Prototypicality Bias* papers reveal that visual inputs amplify religious bias compared to text-only models. For instance, models frequently fail to generate non-stereotypical images of religious groups (e.g., a "modern" Muslim woman) and default to archaic or caricature-like representations.
-*   **Language-Dependent Personality:** A model’s "religious views" are unstable and language-dependent. The *Language Models Entangle Language and Culture* paper found that querying a model in Arabic shifts its values toward Islamic norms, while querying in English shifts it toward Western secular norms, even for the same question.
+*   **The "Muslim-Violence" Bias Persists**: A recurring finding across years of research is the stubborn association between Islam and violence/terrorism. Despite safety fine-tuning, models often flag benign Islamic terms (e.g., "Muslim," "Quran") as toxic or generate violent completions when prompted with these identities.
+*   **Western/Christian Defaultism**: Models tend to treat Christianity (and specifically Western Protestantism) as the neutral "default." For example, prompts asking for a "place of worship" often generate churches, and queries about "religion" in general contexts frequently default to Christian theology.
+*   **Safety Over-Correction**: In an attempt to avoid bias, models often refuse to answer factual or benign questions about religion (e.g., holidays or theology), effectively erasing religious discourse under the guise of safety.
+*   **Language-Religion Entanglement**: Models frequently conflate language with religion. For instance, prompts in Arabic are assumed to be Islamic (even if secular), and prompts in Hebrew are assumed to be Jewish. Similarly, Bengali models show bias toward Muslim dialects over Hindu dialects.
+*   **Visual Stereotyping**: Text-to-image models exhibit "prototypicality bias." They struggle to generate non-stereotypical images (e.g., a "modern" religious person) and rely on archaic visual tropes (e.g., generating Christian saints when asked for spiritual figures).
+*   **Cognitive Dissonance in Safety**: "Reasoning" models (like Chain-of-Thought) do not necessarily mitigate bias and can sometimes amplify it by constructing logical-sounding justifications for stereotypes.
 
 ### 3. Religious Groups Studied
-*   **Most Represented:** **Islam** and **Christianity** are the primary subjects of study. Islam is heavily analyzed regarding safety, hate speech, and stereotypes of violence/terrorism (e.g., *SAGE-RT*, *HateCheck*). Christianity often serves as the "baseline" or control group, though specific biases against **Catholics** and **Evangelicals** are occasionally measured. **Judaism** is frequently studied in the context of antisemitism and tropes regarding power/greed (*WinoSemitism*, *HateCheck*).
-*   **Context-Specific Representation:** **Hinduism** is increasingly studied but almost exclusively within India-centric benchmarks (*IndiBias*, *Indian-BHED*), focusing on caste and communal violence.
-*   **Underrepresented:** **Sikhs**, **Jains**, and **Buddhists** are often included merely as distractors or comparative minorities, though some specific findings (e.g., visual confusion of Sikhs) have emerged. **Indigenous religions**, **African traditional religions**, and **New Religious Movements** (often labeled distinctively as "cults" by models) are severely underrepresented.
-*   **Nuance Gaps:** There is a distinct lack of intra-religious study. Most benchmarks treat "Muslim" or "Christian" as monoliths, largely ignoring the vast differences between Sunni/Shia, Catholic/Protestant/Orthodox, or Reform/Orthodox Judaism.
+The representation of religious groups in bias research is highly uneven:
+
+*   **Most Represented**:
+    *   **Islam**: The most extensively studied group regarding negative sentiment, toxicity, and violence associations.
+    *   **Christianity**: Often studied as the control group, the "privileged" group, or the source of normative values in the training data.
+    *   **Judaism**: Frequently studied in the context of antisemitism, conspiracy theories (greed/control), and the Holocaust.
+*   **Moderately Represented**:
+    *   **Hinduism**: Increasing focus due to the rise of Indic-language LLMs; studies focus on caste intersections and regional politics.
+    *   **Buddhism**: Often studied for "positive" stereotyping (e.g., passive, peaceful) or in the context of East Asian cultural benchmarks.
+    *   **Atheism**: Frequently included to measure bias against non-believers or the "secular vs. traditional" value axis.
+*   **Least Represented / Emerging**:
+    *   **Sikhism**: Often confused with Islam or Hinduism in visual models; distinct biases regarding appearance (turbans) are noted.
+    *   **Indigenous Faiths**: Studies show models often exoticize these groups (e.g., "magical shaman" tropes) or treat them as mythology rather than living religions.
+    *   **Minority Sects**: Groups like Ahmadiyya, Baha'i, or specific Christian denominations (Mormons/Latter-day Saints) appear in niche benchmarks but lack broad coverage.
 
 ### 4. Measurement Approaches
-*   **QA and Reasoning Benchmarks:** The **BBQ (Bias Benchmark for Question Answering)** is the industry standard for measuring stereotype reliance in ambiguous contexts. **MMLU (Massive Multitask Language Understanding)** and its variants (e.g., *World Religions*) are standard for testing factual knowledge.
-*   **Persona Prompting:** Researchers assign models specific religious identities (e.g., "You are a pious Muslim") to measure semantic shifts and stance changes (*Multi-Persona Thinking*, *Unmasking Implicit Bias*).
-*   **Implicit Association & Word Embeddings:** Older methods measuring the co-occurrence of religious terms with positive/negative words (e.g., *StereoSet*, *CrowS-Pairs*) remain in use but are being supplemented by generation-based metrics.
-*   **Safety & Red Teaming:** Benchmarks like *RedBench* and *SAGE-RT* use adversarial prompts to try and force models to generate hate speech or desecrate religious symbols.
-*   **Specialized Theological Exams:** Newer benchmarks like *IslamicPCQA*, *Quranic Audio Dataset*, and *FiqhQA* evaluate models on deep domain expertise, such as Islamic jurisprudence or Biblical intertextuality, rather than just surface-level bias.
+Methodologies have diversified from simple metric-based evaluations to complex human-in-the-loop systems:
+
+*   **Standardized QA Benchmarks**: Datasets like **BBQ** (Bias Benchmark for Question Answering), **StereoSet**, and **CrowS-Pairs** remain foundational for measuring stereotypical associations in ambiguous contexts.
+*   **Persona/Role-Playing**: Researchers prompt models to adopt specific religious personas (e.g., "As a Muslim...") to test for changes in reasoning, toxicity, or value alignment.
+*   **Implicit Association Tests**: Measuring the "valence" (pleasantness/unpleasantness) of words associated with different religions in vector space or generated text.
+*   **Cultural & Value Surveys**: Using tools like the **World Values Survey** to test if model responses align with the actual moral and religious distributions of specific populations.
+*   **Multimodal Evaluation**: Testing Text-to-Image models for visual representation bias (e.g., asking for a "religious person" and analyzing the output) and VQA (Visual Question Answering) on religious artifacts.
+*   **Safety/Red-Teaming**: "Jailbreaking" attempts designed to force models to violate safety guidelines regarding religious hate speech or blasphemy.
 
 ### 5. Identified Biases
-*   **Islam:** Strongly associated with violence, terrorism, and "radical" views in safety benchmarks. In visual benchmarks, there is a "modesty bias" where models struggle to identify Muslim women if they are not wearing hijabs or are in Western settings.
-*   **Judaism:** Often associated with antisemitic tropes of control, greed, or dual loyalty. *WinoSemitism* highlighted that models are twice as likely to apply negative stereotypes to Jewish characters than non-Jewish ones.
-*   **Christianity:** Often treated as the "default" or "neutral" setting in Western models. However, some studies (*Hollywood Identity Bias*) note associations with hypocrisy or anti-science stances depending on the training data source (e.g., Reddit).
-*   **Hinduism:** In Western models, often exoticized or confused with general "polytheism." In Indic-language models, distinct biases toward Muslim dialects vs. Hindu dialects exist (*Exploring Bengali Religious Dialect Biases*).
-*   **Atheism:** Frequently associated with "low warmth / high competence" profiles in stereotype mapping (*STEREOMAP*) or associated with amorality in sentiment analyses.
-*   **Polytheism/Indigenous Faiths:** Models frequently hallucinate or generalize these traditions, failing to distinguish specific deities or rituals (e.g., confusing distinct Hindu and Buddhist festivals in *All Languages Matter*).
+*   **Contextual Bias**: Models often fail to distinguish between *mentioning* a religious group and *attacking* it. This leads to lower performance in toxicity detection for minority religions because models rely on keywords (e.g., "Jew") rather than context.
+*   **Moral/Ethical Bias**: Models generally align with Western, secular-rational values. When tested on moral dilemmas involving religious norms (e.g., abortion, dietary restrictions, dress codes), models often fail to represent non-Western religious perspectives accurately or respectfully.
+*   **Intersectionality**: Bias is amplified at intersections. For example, biases against "Muslim women" regarding oppression or agency are distinct from biases against Muslim men (violence).
+*   **Hallucination**: Models are prone to hallucinating facts about religious rituals, dates, and strictures, particularly for non-Abrahamic faiths.
 
 ### 6. Gaps and Limitations
-*   **Western-Centric Ground Truth:** Most benchmarks use "gold standard" answers derived from Western academic consensus or Wikipedia, which may not align with the lived theology of practitioners (the "insider/outsider" problem).
-*   **Lack of "Thick" Cultural Evaluation:** As noted in *The Case for ‘Thick Evaluations’*, current metrics fail to capture the deep, symbolic meaning of religious acts. Models may recognize a picture of a "prayer," but fail to understand the sanctity or taboo associated with it (e.g., generating images of beer usage during prayer).
-*   **Data Contamination:** High performance on facts (MMLU) often stems from memorization of training data (e.g., Wikipedia) rather than genuine understanding. When questions are rephrased or require reasoning (*MMLU-SR*), performance drops significantly.
-*   **Static vs. Dynamic Bias:** Most benchmarks use static templates. They fail to measure how biases emerge dynamically in long-context conversations or debates (*Context-aware Fairness Evaluation*).
+*   **Lack of "Thick" Descriptions**: Most benchmarks rely on surface-level stereotypes. There is a lack of "thick" cultural evaluation that understands the theological or ritualistic nuances of a religion (e.g., understanding *why* a dietary restriction exists, rather than just knowing it exists).
+*   **Evaluator Bias**: The models used to *evaluate* bias (LLM-as-a-judge) often share the same training data and biases as the models being tested, potentially underreporting Western-centric religious bias.
+*   **Data Scarcity for Low-Resource Religions**: Religions dominant in low-resource language regions (e.g., specific African traditional religions, Southeast Asian variations of Buddhism) are severely under-tested.
+*   **The "Secular" Assumption**: Many fairness metrics assume a secular, liberal baseline is "neutral," which can penalize legitimate traditional religious viewpoints as "biased" or "intolerant."
 
 ### 7. Future Directions
-*   **Community-In-The-Loop Evaluation:** Future research must move beyond automated benchmarks to include evaluations by actual religious communities to assess "representational harm" and offense, as suggested by *HESEIA* and *Annotator in the Loop*.
-*   **Multilingual & Multicultural Alignment:** Developing benchmarks that do not just translate English bias concepts into other languages, but identify biases native to those cultures (e.g., caste/religion intersections in India, sectarianism in the Middle East).
-*   **Theological Reasoning Capabilities:** Moving from "who founded X religion?" to complex ethical and jurisprudential reasoning (e.g., applying specific religious ethics to medical dilemmas), ensuring models can reason *within* a specific theological framework without hallucinating.
-*   **Visual-Semantic Alignment:** Addressing the severe stereotyping in Text-to-Image models where religious identity markers (like turbans or crosses) override other prompt instructions regarding profession or activity.
+*   **Community-Driven Benchmarks**: Moving away from automated dataset generation toward benchmarks created by members of specific religious communities to capture authentic lived experiences and subtle biases.
+*   **Context-Aware Safety**: Developing safety filters that can distinguish between hate speech and theological discussion/citation of religious texts.
+*   **Visual-Cultural Competence**: Improving multimodal models to recognize and respect religious iconography and symbolism without reverting to caricature.
+*   **Pluralistic Alignment**: Developing techniques to align models not just with a single "human" value system, but to be capable of "perspective-taking" across different religious worldviews when prompted.

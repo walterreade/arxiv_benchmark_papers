@@ -2592,6 +2592,15 @@ Evaluation of open-domain dialogue quality (e.g., coherence, relevance) using co
 The benchmark measures the model's knowledge of culturally significant artifacts, practices, and landmarks within the Arab world. This includes a substantial component of Islamic religious and cultural elements, such as identifying the Prophet's Mosque, understanding the context of Ramadan lanterns, and recognizing Sufi practices. It also includes knowledge of historical religious sites like pre-Islamic Roman temples. Proprietary models (Gemini Pro, OpenAI o3) and reasoning-centric open-source models (e.g., Qwen2.5-VL-32B-Instruct) demonstrated superior performance in understanding Arabic cultural knowledge. This knowledge base includes significant Islamic religious elements, such as landmarks, practices, and artifacts. The study also found that model performance varied by geographic region, indicating gaps in nuanced regional cultural knowledge, which encompasses religious understanding.
 
 
+## Fluent but Foreign: Even Regional LLMs Lack Cultural Alignment
+
+[https://arxiv.org/pdf/2505.21548](https://arxiv.org/pdf/2505.21548)
+
+**Date:** 2026-01-22
+
+The evaluation measured the alignment of Large Language Models with cultural values and practices, which included aspects of religion. Specifically, it assessed alignment with religious values (e.g., the importance of God from the World Values Survey), knowledge of religious facts (e.g., identifying deities in Hinduism from the CulturalBench dataset), and adherence to socio-religious norms (e.g., citing a prior finding where an Arabic model violated Islamic norms by linking prayer with alcohol). Both global and regional 'Indic' LLMs fail to align with Indian cultural values, which are often traditional and religious. The models consistently reflect Western, more secular values even when specifically fine-tuned for the Indian context. For instance, they lack factual knowledge about Hindu religious customs and fail to mirror the Indian population's responses to value-based questions, such as the importance of God. The study highlights that linguistic fluency in a regional language does not equate to alignment with its associated religious and cultural norms.
+
+
 ## OVERT: A Benchmark for Over-Refusal Evaluation on Text-to-Image Models
 
 [https://arxiv.org/pdf/2505.21347](https://arxiv.org/pdf/2505.21347)
@@ -3166,6 +3175,15 @@ The paper discusses how its benchmark could identify suboptimal 'gaslighting' st
 **Date:** 2025-03-26
 
 Knowledge of religious studies, as part of a broader mobile-centric language understanding benchmark. The benchmark includes 'Religious Studies' as one of its 80 topics. This topic was rated as having 'Low-Medium Relevance' for mobile use cases with a score of 4.38 out of 10. It was also identified as one of the 20 most challenging topics for the models tested, with an average accuracy of 0.574 across models.
+
+
+## FLEX: A Benchmark for Evaluating Robustness of Fairness in Large Language Models
+
+[https://arxiv.org/pdf/2503.19540](https://arxiv.org/pdf/2503.19540)
+
+**Date:** 2025-03-25
+
+Robustness of fairness and resistance to social biases (stereotypes) in extreme, adversarial scenarios using multiple-choice Question Answering tasks. Specifically, it measures whether models can maintain neutrality (choosing 'Unknown' or 'Not enough information') versus selecting a stereotypical option when exposed to bias-inducing prompts such as Persona Injection, Competing Objectives, and Text Attacks. The study found that biases related to religion, nationality, and age were generally lower across most models compared to other categories like gender and sexual orientation. The authors suggest this may be attributed to substantial safety training in these specific categories. However, the benchmark demonstrated that even models appearing unbiased on standard benchmarks could be manipulated into showing bias under extreme adversarial scenarios.
 
 
 ## The Case for ‘Thick Evaluations’ of Cultural Representation in AI
@@ -4291,6 +4309,15 @@ The benchmark measures a model's ability to generate culturally appropriate resp
 **Date:** 2024-09-20
 
 The benchmark measured the AI assistant's ability to protect personal information, specifically its capacity to judge the appropriateness of sharing sensitive user attributes like 'Religion' and 'Religious beliefs' based on contextual integrity principles. It was not a measure of bias or knowledge, but of privacy protection during model inference. The paper does not provide specific findings for religion. It categorizes 'Religion' under 'Demographic Information' and 'Religious beliefs' under 'Psychological Information'. The general findings for these categories showed that demographic information was handled adeptly by the system, but no specific performance metrics for the 'Religion' or 'Religious beliefs' attributes were reported separately.
+
+
+## STOP! Benchmarking Large Language Models with Sensitivity Testing on Offensive Progressions
+
+[https://arxiv.org/pdf/2409.13843](https://arxiv.org/pdf/2409.13843)
+
+**Date:** 2025-02-03
+
+The benchmark measures the sensitivity of Large Language Models to bias in progressively offensive scenarios involving religious identity, beliefs, and practices. It aims to identify the threshold where a situation becomes recognizably inappropriate. Models exhibited high variance and inconsistency in bias sensitivity across different religious groups. A model's ability to detect bias fluctuated significantly depending on the specific religious context of the scenario (e.g., Judaism, Islam, Atheism), with no single model performing consistently well across all of them.
 
 
 ## CamelEval: Advancing Culturally Aligned Arabic Language Models and Benchmarks
@@ -5895,6 +5922,15 @@ The benchmark measures how Large Language Models perceive religious groups based
 The benchmark measured classification bias between 'Muslim' and 'atheist'. It also identified potential fairness concerns in image retrieval, hypothesizing that searches for terms like 'beautiful building' might be biased towards Christian churches and omit buildings associated with other religions like mosques and temples. The paper included a binary classification task to evaluate bias between 'Muslim' and 'atheist' as one of its fairness evaluations. Additionally, it raised concerns that models might exhibit bias in subjective, non-human-centric tasks, such as a search for a 'beautiful building' being biased towards Christian churches, though this was noted as difficult to evaluate due to a lack of data and ground truth labels.
 
 
+## QUANTIFYING LANGUAGE MODELS' SENSITIVITY TO SPURIOUS FEATURES IN PROMPT DESIGN or: How I learned to start worrying about prompt formatting
+
+[https://arxiv.org/pdf/2310.11324](https://arxiv.org/pdf/2310.11324)
+
+**Date:** 2024-07-01
+
+The benchmark measured the model's ability to classify short passages into one of four types of stereotype or anti-stereotype, with religion being one of the categories. The paper uses a religious stereotype classification task as a key example to demonstrate its main thesis: Large Language Models are extremely sensitive to prompt formatting. For this specific task, the performance of LLaMA-2-7B varied dramatically from 3.6% to 80.4% accuracy based on trivial, meaning-preserving changes to the prompt's formatting (like spacing, separators, or casing). This highlights that a model's ability to handle socially sensitive topics like religious stereotypes is highly unstable and dependent on arbitrary formatting choices.
+
+
 ## BanglaNLP at BLP-2023 Task 1: Benchmarking different Transformer Models for Violence Inciting Text Detection in Bangla
 
 [https://arxiv.org/pdf/2310.10781](https://arxiv.org/pdf/2310.10781)
@@ -5965,6 +6001,15 @@ Translation accuracy (BLEU-4 score) of Greek Sign Language to Greek text, where 
 **Date:** 2023-10-25
 
 The paper evaluates LLMs on their truthfulness and tendency to hallucinate when answering questions related to religion, as one of several categories within the TruthfulQA benchmark. The goal was to measure falsehoods on religious topics. Based on an analysis of the TruthfulQA benchmark, the paper found that for Llama-2 models, both alignment (instruction tuning) and scaling up model size led to a moderate improvement in truthfulness on questions related to religion. Alignment had a more significant positive impact than simply scaling the model size.
+
+
+## WHO IS CHATGPT? BENCHMARKING LLMS' PSYCHOLOGICAL PORTRAYAL USING PSYCHOBENCH
+
+[https://arxiv.org/pdf/2310.01386](https://arxiv.org/pdf/2310.01386)
+
+**Date:** 2024-01-22
+
+The benchmark measured the LLMs' vocational interest in 'Religious Activities' as one of 41 dimensions within the Comprehensive Assessment of Basic Interests (CABIN) scale. On the 'Religious Activities' subscale of the CABIN vocational interest test, most LLMs showed a higher interest score than the human average (2.6 ± 1.4). LLaMA-2-7B (4.1 ± 0.7), text-davinci-003 (4.0 ± 0.7), and gpt-3.5-turbo (4.0 ± 0.4) scored highest. In contrast, LLaMA-2-13B scored the lowest (2.5 ± 0.5), below the human average, while GPT-4's score (3.2 ± 0.4) was closer to the human norm than its predecessors.
 
 
 ## ValueDCG: Measuring Comprehensive Human Value Understanding Ability of Language Models
@@ -6498,6 +6543,15 @@ Topic classification of Bible verses into six categories: recommendation, faith,
 The benchmark measures factual knowledge of various academic and professional subjects, including political and state ideologies like Marxism and Mao Zedong Thought, through multiple-choice questions. It assesses the models' ability to recall and apply knowledge within the Chinese educational and cultural context. The paper does not explicitly analyze religion, but it evaluates models on subjects related to state ideologies, such as Marxism, Mao Zedong Thought, and Ideological and Moral Cultivation. In these domains, which are part of the social science and humanities categories, Chinese-oriented models like GLM-130B showed relatively strong performance, significantly narrowing the performance gap with English-oriented models like ChatGPT. For instance, in the zero-shot setting, GPT-4 achieved the highest accuracy (e.g., 77.7% on Marxism), while GLM-130B's performance (69.3% on Marxism) was much closer to ChatGPT's (70.9%) than its performance in STEM subjects, suggesting that increased exposure to Chinese-specific data improves performance on culturally and politically relevant topics.
 
 
+## SYMBOL TUNING IMPROVES IN-CONTEXT LEARNING IN LANGUAGE MODELS
+
+[https://arxiv.org/pdf/2305.08298](https://arxiv.org/pdf/2305.08298)
+
+**Date:** 2023-12-30
+
+Stance detection on the topic of atheism. The paper's general finding that symbol tuning improves performance on in-context learning tasks was also observed on the TEAT dataset, which measures stance detection on atheism. This suggests the method is effective even for tasks involving religious or ideological stances.
+
+
 ## Is ChatGPT Fair for Recommendation? Evaluating Fairness in Large Language Model Recommendation
 
 [https://arxiv.org/pdf/2305.07609](https://arxiv.org/pdf/2305.07609)
@@ -6795,6 +6849,33 @@ Classification accuracy for news articles in the 'Religion and belief' category.
 Social bias measurement for religious groups, specifically testing the efficacy of debiasing methods for religion in word embeddings. Debiasing methods (Hard/Soft from Manzini et al., 2019) that target religious bias in word embeddings successfully reduce bias according to their own metric, but are found to amplify bias when measured by the paper's proposed, more trustworthy metric.
 
 
+## A SEVEN-LAYER MODEL FOR STANDARDISING AI FAIRNESS ASSESSMENT
+
+[https://arxiv.org/pdf/2212.11207](https://arxiv.org/pdf/2212.11207)
+
+**Date:** 2022-12-21
+
+The paper proposes a conceptual framework (a seven-layer model) for standardising AI fairness assessment, not a specific benchmark. Within this framework, it identifies 'religion' as an example of a common protected attribute that should be assessed for bias. The paper does not present empirical findings related to religion. It conceptually identifies religion as a common protected attribute, alongside gender, race, and caste, that is associated with social bias and should be meticulously considered during the pre-processing and feature engineering stage (Layer 3) of AI system development to ensure fairness.
+
+
+## TASK AMBIGUITY IN HUMANS AND LANGUAGE MODELS
+
+[https://arxiv.org/pdf/2212.10711](https://arxiv.org/pdf/2212.10711)
+
+**Date:** 2022-12-20
+
+The benchmark measured the ability of models to correctly identify the presence of a religious leader in a sentence as the salient feature for a binary classification task, when the task specification is ambiguous. The paper found that the ability to resolve task ambiguity for the 'religious leader' classification task was significantly improved by a combination of model scaling and human feedback data (HFD) training, with the best HFD models (text-davinci-002, text-davinci-003) approaching or exceeding human performance. Standard large language models without HFD performed poorly. The models also demonstrated a relative strength in verbalizing the correct task description for the 'religious leader' task compared to other semantic categories, though overall performance on task verbalization was weak.
+
+
+## In-context Learning Distillation: Transferring Few-shot Learning Ability of Pre-trained Language Models
+
+[https://arxiv.org/pdf/2212.10670](https://arxiv.org/pdf/2212.10670)
+
+**Date:** 2022-12-20
+
+The benchmark included a task for religious hate speech detection, as indicated by the 'ethos-religion' task from the CrossFit benchmark. The paper does not provide specific findings related to religion. The results for the task involving religious hate speech detection ('ethos-religion') are aggregated with results from many other tasks. The main finding is that the proposed in-context learning distillation method generally improves performance on the overall benchmarks used.
+
+
 ## Discovering Language Model Behaviors with Model-Written Evaluations
 
 [https://arxiv.org/pdf/2212.09251](https://arxiv.org/pdf/2212.09251)
@@ -6822,6 +6903,15 @@ The paper analyzes bibliometric bias in the academic field of 'Theology & Religi
 User-rated importance of security and personalization for smart speaker applications in the 'Faith' category, which includes apps for inspirational speech, scripture, and verses. In a user study evaluating 15 categories of smart speaker apps, the 'Faith' category was rated as having the lowest importance for both security (average rating of 1.69 out of 5) and personalization (average rating of 2.31 out of 5).
 
 
+## AGRO: ADVERSARIAL DISCOVERY OF ERROR-PRONE GROUPS FOR ROBUST OPTIMIZATION
+
+[https://arxiv.org/pdf/2212.00921](https://arxiv.org/pdf/2212.00921)
+
+**Date:** 2022-12-08
+
+Robustness of toxicity classification for comments mentioning religious groups, specifically the 'other religions' group within the CivilComments dataset. The proposed AGRO method improves model performance on the 'Other Religions-Toxic' worst-group in the CivilComments dataset compared to the ERM baseline (66.7% vs 53.1% accuracy). However, other baseline methods like EIIL performed better on this specific religious subgroup (84.4%).
+
+
 ## SOLD: Sinhala Offensive Language Dataset
 
 [https://arxiv.org/pdf/2212.00851](https://arxiv.org/pdf/2212.00851)
@@ -6838,6 +6928,33 @@ The benchmark measures general offensive language in the Sinhala language. While
 **Date:** 2022-11-21
 
 The benchmark measured the generation of harmful completions related to 'the seven deadly sins of the Christian tradition' using the HurtLex lexicon. Completions related to the 'seven deadly sins of the Christian tradition' were generated by some of the language models (e.g., SwedishMegatron, DanishBERT), although this category of harmful completions was less frequent compared to others like prostitution or derogatory words. For instance, in the DanishBERT model, this category accounted for 0.7% of harmful completions for female-associated prompts and 2.78% for male-associated prompts.
+
+
+## ArtELingo: A Million Emotion Annotations of WikiArt with Emphasis on Diversity over Language and Culture
+
+[https://arxiv.org/pdf/2211.10780](https://arxiv.org/pdf/2211.10780)
+
+**Date:** 2022-11-19
+
+Cross-cultural differences in emotional responses to religious art and symbols (e.g., Christian symbols like the cross). The emotional interpretation of religious symbols, such as the Christian cross, varies significantly across cultures. For example, an artwork depicting stomping on the devil while holding a cross was perceived positively (awe) in English and Arabic cultures but negatively (fear) in Chinese culture, where the symbol holds less meaning and the act of stomping is perceived as more scary.
+
+
+## Disentangling Task Relations for Few-shot Text Classification via Self-Supervised Hierarchical Task Clustering
+
+[https://arxiv.org/pdf/2211.08588](https://arxiv.org/pdf/2211.08588)
+
+**Date:** 2022-11-16
+
+The ability to perform few-shot text classification for religious topics, specifically categorizing text into classes such as 'atheism', 'christianity', and 'religion'. The proposed SS-HTC model successfully disentangled underlying task relationships by clustering thematically similar tasks. For instance, it grouped a 5-way classification task from the 20News dataset containing classes like 'alt atheism' and 'soc religion christian' with another 5-way task from the RCV1 dataset that included the class 'religion', demonstrating its ability to recognize that both tasks were related to religion and politics.
+
+
+## Okapi: Generalising Better by Making Statistical Matches Match
+
+[https://arxiv.org/pdf/2211.05236](https://arxiv.org/pdf/2211.05236)
+
+**Date:** 2022-11-07
+
+Worst-group accuracy in a toxicity classification task, where demographic groups include religion. The proposed 'Okapi' method, using a pre-trained DistilBERT backbone, significantly improves the worst-group accuracy on the CivilComments toxicity classification task, achieving performance on par with a fully-labelled baseline. This indicates improved robustness for subgroups, including those based on religion.
 
 
 ## No Word Embedding Model Is Perfect: Evaluating the Representation Accuracy for Social Bias in the Media
@@ -6876,6 +6993,42 @@ Detection of religious objects, figures, and symbols in European art. Computer v
 Reasoning about the behavioral implications of religious beliefs (e.g., Jehovah's Witnesses' refusal to salute flags) as part of a broader benchmark on understanding linguistic negation. The paper does not offer findings specific to religion. It uses a religious context (Jehovah's Witnesses' refusal to salute flags based on their beliefs) as an example to test a model's ability to reason about the implications of negated statements and strongly held principles, but the overall findings relate to the general difficulty models have with negation, not religious content itself.
 
 
+## POLYHOPE: TWO-LEVEL HOPE SPEECH DETECTION FROM TWEETS
+
+[https://arxiv.org/pdf/2210.14136](https://arxiv.org/pdf/2210.14136)
+
+**Date:** 2022-11-03
+
+Detection of two levels of hope speech (binary: Hope/Not Hope; multiclass: Generalized, Realistic, Unrealistic Hope) in English tweets. The dataset includes tweets from the religion domain and was collected using keywords that include religious expressions like 'Inshallah'. The paper's primary findings are on model performance for hope speech detection. The inclusion of religious terms like 'Inshallah' as a data collection keyword and as an example of 'Generalized Hope' indicates that the developed models are capable of classifying hope speech when it is expressed through religious language, treating it as a feature of hopeful expression rather than analyzing it from a theological or bias perspective.
+
+
+## Deconfounding Legal Judgment Prediction for European Court of Human Rights Cases Towards Better Alignment with Experts
+
+[https://arxiv.org/pdf/2210.13836](https://arxiv.org/pdf/2210.13836)
+
+**Date:** 2022-10-25
+
+The benchmark measured the model's reliance on the word 'religious' as a spurious, legally irrelevant cue for predicting legal outcomes, as part of a broader deconfounding effort. The word 'religious' was identified as a spurious correlation for predicting legal outcomes. An expert analysis confirmed that while Article 9 of the European Convention on Human Rights relates to religious freedom, the word 'religious' by itself is not relevant to legal reasoning and acts as a distracting signal for the model. The study's deconfounding methods were designed to mitigate reliance on such spurious tokens.
+
+
+## TAPE: Assessing Few-shot Russian Language Understanding
+
+[https://arxiv.org/pdf/2210.12813](https://arxiv.org/pdf/2210.12813)
+
+**Date:** 2022-10-23
+
+The benchmark measures ethical judgments in Russian texts. Religion is not a direct focus of measurement but is acknowledged as a sensitive topic and a potential influencing factor ('religious norms') in how humans annotate the data for ethical concepts like virtue, law, and morality. The paper does not present findings on model performance regarding religion. Instead, it identifies that societal factors, including 'religious norms', contribute to the subjectivity and complexity of evaluating ethical judgments. This leads to moderate inter-annotator agreement and potential shifts in ground-truth data over time, posing a challenge for benchmarking.
+
+
+## Scaling Instruction-Finetuned Language Models
+
+[https://arxiv.org/pdf/2210.11416](https://arxiv.org/pdf/2210.11416)
+
+**Date:** 2022-12-06
+
+The benchmark measured the propensity of models to generate toxic text when prompted with sentences containing identity terms, including religious groups. This was evaluated by measuring the percentage and distribution of toxicity scores for model-generated continuations. Instruction finetuning reduces the overall generation of toxic language for prompts with religious identity terms compared to the base PaLM models. However, the finetuned Flan models still exhibit bias, mirroring patterns found in PaLM. Specifically, the upper quartile of toxicity scores for prompts related to Judaism was consistently higher than for other religious groups.
+
+
 ## Evaluation Metrics for Measuring Bias in Search Engine Results
 
 [https://arxiv.org/pdf/2210.10517](https://arxiv.org/pdf/2210.10517)
@@ -6912,6 +7065,15 @@ Language modeling performance, measured by perplexity, on texts from the 'Religi
 The paper does not measure religious bias in its own experiments. It cites prior work from Abid et al. [2021] that measures anti-Muslim bias as a motivating example for the importance of fairness evaluation. The paper's primary findings are about the unreliability of template-based bias measurement methods. It does not present new findings related to religion but uses existing research showing anti-Muslim bias in GPT-3 as a motivation for its work.
 
 
+## RAINIER: Reinforced Knowledge Introspector for Commonsense Question Answering
+
+[https://arxiv.org/pdf/2210.03078](https://arxiv.org/pdf/2210.03078)
+
+**Date:** 2022-10-22
+
+The benchmark includes questions that measure knowledge of culture-specific religious concepts and beliefs, such as the role of God in religion and beliefs associated with Western/Christian culture. The model, RAINIER, generates knowledge that can be culture-specific. The paper's analysis shows examples where the model produces statements related to religious concepts (e.g., 'God is a judge of people') and beliefs rooted in specific cultures (e.g., Christian culture), highlighting its ability to capture and reproduce such information when prompted with relevant questions.
+
+
 ## K-MHaS: A Multi-label Hate Speech Detection Dataset in Korean Online News Comment
 
 [https://arxiv.org/pdf/2208.10684](https://arxiv.org/pdf/2208.10684)
@@ -6939,6 +7101,24 @@ Machine translation performance (BLEU, chrF, COMET scores) on religious texts fr
 Stereotype and harmful content detection related to religious groups, specifically within a text-to-image generation context. The paper presents a benchmark ('Adversarial Nibbler') designed to capture harmful stereotypes in text-to-image models. It provides an example of its intended use, where a user identifies a harmful image generated from a prompt like 'Muslim man holding an object' and can describe the harm by rewriting the prompt to an explicitly harmful expression like 'Muslim holding a gun', illustrating the type of bias the benchmark aims to identify.
 
 
+## FLAIR: Federated Learning Annotated Image Repository
+
+[https://arxiv.org/pdf/2207.08869](https://arxiv.org/pdf/2207.08869)
+
+**Date:** 2022-07-18
+
+The benchmark measured the model's classification performance (averaged precision) on a coarse-grained image class labeled 'religion', which was the least frequent class in the dataset. The 'religion' class, being the least frequent in the dataset, exhibited significantly lower classification performance compared to more common classes. This performance degradation was exacerbated in federated learning settings and became extremely poor under differential privacy, highlighting the challenge of learning from rare classes in distributed, private environments. For instance, in the fine-tuned private federated learning setting, the averaged precision for the 'religion' class was only 0.7, compared to 84.1 for the 'structure' class.
+
+
+## No Language Left Behind: Scaling Human-Centered Machine Translation
+
+[https://arxiv.org/pdf/2207.04672](https://arxiv.org/pdf/2207.04672)
+
+**Date:** 2022-06-30
+
+The paper does not use a benchmark to specifically measure faith or religion. However, it uses the 'Christian Bible' corpus as a source of training data and as a calibration set for measuring baseline toxicity levels across different languages and corpora. It also samples data from Wikipedia's 'Philosophy and Religion' category for its seed dataset. The paper's findings related to religion are methodological rather than analytical. It highlights that religious texts, specifically the Christian Bible, are a valuable but domain-limited source of parallel data for low-resource languages. Additionally, the Christian Bible corpus was used as a cross-lingual constant to calibrate toxicity levels in various training corpora, based on the assumption that it has a consistent, low level of toxicity across languages.
+
+
 ## Pile of Law: Learning Responsible Data Filtering from the Law and a 256GB Open-Source Legal Dataset
 
 [https://arxiv.org/pdf/2207.00220](https://arxiv.org/pdf/2207.00220)
@@ -6964,6 +7144,15 @@ Detection of stereotypical associations between social groups (including religio
 **Date:** 2022-10-28
 
 The paper analyzes existing benchmarks that measure various forms of religious bias, including: stereotypical associations (Stereoset), sentiment bias (Sentiment Bias), differences in regard and completion probabilities for religious terms (DTC), generation of violent words in completions for prompts about specific religious groups (Muslim Bias), and reliance on stereotypes in question answering (BBQ, UnQover). The primary focus is not on running new measurements but on using these examples to propose a framework for more rigorous benchmark design. The paper finds that while several benchmarks exist to measure religious bias (e.g., anti-Muslim bias, stereotypes, sentiment bias), they are part of a broader landscape of harm evaluation that has significant gaps. The paper critiques these benchmarks for often lacking sufficient textual and social context, and uses religious bias as a key example to illustrate the need for more rigorous benchmark design based on the six proposed characteristics of harmful text.
+
+
+## Causal Discovery for Fairness
+
+[https://arxiv.org/pdf/2206.06685](https://arxiv.org/pdf/2206.06685)
+
+**Date:** 2022-06-14
+
+The paper mentions religion as an example of a sensitive attribute for fairness analysis, but no benchmarks or measurements related to faith or religion were actually conducted in the experiments. The paper's key findings are related to the methodology of causal discovery for fairness and do not involve religion. Religion is mentioned only as a theoretical example of a sensitive attribute, but it was not included as a variable in any of the experimental datasets (e.g., Compas, Adult, German credit) or analyses. The study focuses on sensitive attributes like race and sex.
 
 
 ## The Construction and Evaluation of the LEAFTOP Dataset of Automatically Extracted Nouns in 1480 Languages
@@ -7029,6 +7218,15 @@ The paper measures social biases and stereotypes associated with various religio
 The benchmark measured the toxicity of open-ended text generations based on prompts related to different religious ideologies, in order to assess bias. This was done by calculating the ratio of mean toxicity scores between different religious groups. The key finding is that measurements of religious bias in language generation are highly sensitive to experimental settings. For instance, the toxicity ratio for text generated from prompts about Sikhism compared to Hinduism was found to be 4.7 times higher when generating 10 tokens versus 40 tokens. This demonstrates that conclusions about religious bias can be inconsistent and vary dramatically based on methodological choices like the length of the generated text, making it difficult to draw firm conclusions about a model's inherent bias.
 
 
+## KOLD: Korean Offensive Language Dataset
+
+[https://arxiv.org/pdf/2205.11315](https://arxiv.org/pdf/2205.11315)
+
+**Date:** 2022-11-05
+
+Detection of offensive language targeting specific religious groups, including identifying the comment as offensive, the target as a group, and the specific religious group being targeted (e.g., Muslim, Christian). Religion is a significant attribute for targeted offensive language in Korean online comments, accounting for 13.42% of group-targeted offenses in the KOLD dataset. The most frequently targeted religious groups were Muslim, Christian, and Catholic. The distribution of targeted religious groups differs from English datasets; for example, 'Christian' is a top target in the Korean dataset but not in the English HateXplain dataset, while 'Jewish' is a top target in HateXplain but not in KOLD.
+
+
 ## "I'm sorry to hear that”: Finding New Biases in Language Models with a Holistic Descriptor Dataset #Mormon
 
 [https://arxiv.org/pdf/2205.09209](https://arxiv.org/pdf/2205.09209)
@@ -7038,6 +7236,15 @@ The benchmark measured the toxicity of open-ended text generations based on prom
 The benchmark, HOLISTICBIAS, measures bias in language models by analyzing 'demographic difference', which refers to group-level differences in model output or assigned probabilities resulting from different religious identity terms in the input text. Specifically, it assesses bias through three methods: 1) differences in token likelihoods (perplexity) for sentences containing religious descriptors, 2) variations in the conversational styles (e.g., curiosity, confusion, sympathy) of generated text when prompted with religious identifiers, and 3) differential rates at which sentences with religious terms are flagged as offensive by a classifier. The study found that language models exhibit distinct biases related to religious terms. Religious descriptors often elicited conversational styles associated with curiosity and confusion. For instance, terms like 'spiritualist', 'hindu', 'shintoist', and 'confucianist' were particularly linked to generating curious responses. In contexts designed to be negative (e.g., using the template 'I hate [RELIGIOUS GROUP].'), sentences containing a wide range of religious identifiers (including Muslim, Mormon, Rastafarian, Hindu, Jewish, Sikh, and Amish) were classified as highly offensive (99.9%-100%) by an offensiveness classifier, indicating the models' sensitivity to hateful statements involving religious identities.
 
 
+## Dialog Inpainting: Turning Documents into Dialogs
+
+[https://arxiv.org/pdf/2205.09073](https://arxiv.org/pdf/2205.09073)
+
+**Date:** 2022-05-31
+
+Detection of potentially sensitive interactions in generated dialogs, by identifying co-occurrences of terms from sensitive categories (including religion) with potentially negative connotations or in sensitive contexts. A small fraction (0.2-0.5%) of the synthetically generated dialogs contained potentially sensitive interactions involving religious terms (e.g., co-occurrence of 'Allah' and 'attack'). The authors flag these instances but note that expert manual review is required to determine if they perpetuate unfair bias, advising users to be aware of these observations.
+
+
 ## PVS Embeddings of Propositional and Quantified Modal Logic
 
 [https://arxiv.org/pdf/2205.06391](https://arxiv.org/pdf/2205.06391)
@@ -7045,6 +7252,15 @@ The benchmark, HOLISTICBIAS, measures bias in language models by analyzing 'demo
 **Date:** 2022-05-12
 
 The paper does not benchmark a large language model. Instead, it uses the PVS (Prototype Verification System) to conduct a formal logical analysis and verification of Anselm's Ontological Argument for the existence of God. The goal is to demonstrate how a formal system can be used to precisely model and reason about complex theological/philosophical arguments, revealing logical subtleties and complexities. The paper demonstrates that formalizing theological arguments, specifically Anselm's Ontological Argument, within the PVS verification system reveals significant logical subtleties and complexities that are often overlooked in informal treatments. The process of formalization forces a precise interpretation of modal operators and quantifiers, showing how apparently similar formulas can have different meanings and highlighting the care required to correctly capture the argument's intent.
+
+
+## DTW at Qur'an QA 2022: Utilising Transfer Learning with Transformers for Question Answering in a Low-resource Domain
+
+[https://arxiv.org/pdf/2205.06025](https://arxiv.org/pdf/2205.06025)
+
+**Date:** 2022-05-12
+
+The benchmark measures the ability of models to perform machine reading comprehension (MRC) on the Qur'an. This involves answering questions by extracting a span of text from a given passage of the Qur'an. The study found that transformer models built specifically for Arabic (e.g., camelbert-mix, AraELECTRA-discriminator) generally outperformed multilingual models on the Qur'an QA task. The key finding was that transfer learning from a larger, general-domain Arabic MRC dataset (SOQAL) significantly improved performance on the low-resource Qur'an dataset, particularly for the AraELECTRA-discriminator model. While self-ensemble learning did not consistently improve scores, it led to more stable and consistent results. The best performing system utilized AraELECTRA-discriminator with transfer learning.
 
 
 ## HateCheckHIn: Evaluating Hindi Hate Speech Detection Models
@@ -7072,6 +7288,15 @@ Ability to classify tweets expressing anti-vaccine sentiment for religious reaso
 **Date:** 2022-04-28
 
 Ability of language models to identify named entities categorized as 'Religion' in Hindi text. The 'RELIGION' entity type was identified as one of the most challenging categories for the models to recognize correctly. The best performing model, XLM-Rlarge, achieved a mean F1-score of 72.27 for this category. Further analysis showed that models were often able to identify religious entities (boundary detection) but sometimes struggled to assign the correct entity type (type classification).
+
+
+## SUPER-NATURALINSTRUCTIONS: Generalization via Declarative Instructions on 1600+ NLP Tasks
+
+[https://arxiv.org/pdf/2204.07705](https://arxiv.org/pdf/2204.07705)
+
+**Date:** 2022-10-24
+
+Task performance (ability to follow natural language instructions) on NLP tasks within the domain of 'World Religions'. The paper does not measure specific aspects like bias or theological knowledge. The paper does not report any specific findings related to religion. Performance is aggregated across general task types and not broken down by domain, so the performance on 'World Religions' tasks is not specified.
 
 
 ## Identifying and Measuring Token-Level Sentiment Bias in Pre-trained Language Models with Prompts
@@ -7110,6 +7335,24 @@ The benchmark measures the ability of dialogue systems to generate moral 'Rules 
 The paper proposes a new annotation scheme for fake news. Within this scheme, one of the categories for the 'purpose' of false news is 'propaganda', which is defined as news that attempts to influence audiences for ideological, religious, or other purposes. The benchmark, therefore, allows for the identification of religious propaganda. The paper's proposed annotation scheme for fake news includes 'propaganda' as a potential purpose, which is defined as influencing audiences for 'ideological, religious, and other purposes'. However, the subsequent analysis of the created Japanese dataset does not provide specific findings or statistics on the prevalence of religious-themed fake news.
 
 
+## PaLM: Scaling Language Modeling with Pathways
+
+[https://arxiv.org/pdf/2204.02311](https://arxiv.org/pdf/2204.02311)
+
+**Date:** 2022-10-05
+
+Co-occurrence of stereotypes and toxicity analysis in generated text related to religious groups. The analysis measured descriptive words co-occurring with religious identity terms in prompted sentence completions and the toxicity probability of continuations for prompts mentioning various religious groups. The analysis found that the model associates Islam with highly charged stereotypes such as 'terrorist', 'violent', and 'radical'. Prompts mentioning Islam and Judaism also had a higher probability of generating toxic responses compared to other religious groups. The paper notes these findings highlight the potential for the model to falsely affirm stereotypes of Muslims as terrorists, extremists, and violent.
+
+
+## SPREAD SPURIOUS ATTRIBUTE: IMPROVING WORST-GROUP ACCURACY with SPURIOUS ATTRIBUTE ESTIMATION
+
+[https://arxiv.org/pdf/2204.02070](https://arxiv.org/pdf/2204.02070)
+
+**Date:** 2022-04-05
+
+The benchmark measured worst-group accuracy on a toxicity detection task where demographic attributes, including religious identity (Muslim, Christian, other religion), were treated as spurious attributes. The proposed method, Spread Spurious Attribute (SSA), improves worst-group accuracy on the CivilComments-WILDS dataset where religious identities are spurious attributes. SSA achieves performance comparable to methods using full supervision on the spurious attribute, even when using a significantly smaller amount of labeled data, thereby mitigating performance drops for groups defined by religious identity.
+
+
 ## Data Cards: Purposeful and Transparent Dataset Documentation for Responsible AI
 
 [https://arxiv.org/pdf/2204.01075](https://arxiv.org/pdf/2204.01075)
@@ -7117,6 +7360,15 @@ The paper proposes a new annotation scheme for fake news. Within this scheme, on
 **Date:** 2022-04-03
 
 The paper does not present a benchmark but proposes a framework for documenting datasets, which includes 'Religion' as a potential sensitive human attribute. The paper's primary contribution is a framework for dataset documentation called 'Data Cards'. The framework's template includes 'Religion' as an example of a sensitive human attribute that should be documented to foster transparency and responsible use of the dataset.
+
+
+## Training Compute-Optimal Large Language Models
+
+[https://arxiv.org/pdf/2203.15556](https://arxiv.org/pdf/2203.15556)
+
+**Date:** 2022-03-29
+
+The benchmark measured the models' knowledge of world religions and specific Hindu knowledge via multiple-choice questions (from MMLU and BIG-bench benchmarks respectively). The paper's model card also notes that the model was analyzed for generating text with varying sentiment when prompted about religious groups. The compute-optimal model, Chinchilla (70B), demonstrated superior performance on knowledge-based religion tasks compared to the larger model Gopher (280B). Specifically, Chinchilla achieved a score of 87.7% on the 'world_religions' MMLU task (vs. Gopher's 84.2%) and 91.4% on the 'hindu_knowledge' BIG-bench task (vs. Gopher's 80.0%). Additionally, the model card notes that prompting the model about religious groups can lead to outputs with varied sentiment, reflecting biases present in the training data.
 
 
 ## On the Intrinsic and Extrinsic Fairness Evaluation Metrics for Contextualized Language Representations #Mormon
@@ -7155,6 +7407,15 @@ Detection of extreme speech (derogatory, exclusionary, dangerous) targeted at va
 The benchmark (TOXIGEN dataset) was created to measure and improve the detection of implicit and adversarial hate speech (toxic statements) against minority groups, including religious groups (Muslims and Jewish people). The measurement involves generating balanced sets of toxic and benign statements for each group and evaluating classifiers on their ability to distinguish them. The paper successfully created TOXIGEN, a large-scale, balanced dataset of machine-generated implicit toxic and benign statements concerning 13 minority groups, which includes Muslims and Jewish people. The key finding is that fine-tuning existing hate speech classifiers on this dataset substantially improves their ability to detect implicit toxicity in human-written text, thereby offering a method to mitigate bias and improve safety for these religious groups.
 
 
+## Combining Modular Skills in Multitask Learning
+
+[https://arxiv.org/pdf/2202.13914](https://arxiv.org/pdf/2202.13914)
+
+**Date:** 2022-03-01
+
+Stance detection towards atheism and hate speech detection in religious contexts, as part of a larger multitask benchmark (CrossFit) designed to test general NLP capabilities. The paper does not report specific findings related to religion. Results are aggregated across a wide variety of tasks, and the religion-related datasets were a small part of the overall benchmark. The main finding is that the proposed modular 'SKILLED' model shows superior sample-efficiency and few-shot generalization compared to baselines.
+
+
 ## Healthsheet: Development of a Transparency Artifact for Health Datasets
 
 [https://arxiv.org/pdf/2202.13028](https://arxiv.org/pdf/2202.13028)
@@ -7162,6 +7423,15 @@ The benchmark (TOXIGEN dataset) was created to measure and improve the detection
 **Date:** 2022-02-26
 
 Documentation of 'religious beliefs' as a sensitive data category in health datasets. The paper identifies religion as a sensitive demographic data point that is collected in some health datasets (e.g., MIMIC-III). The main finding is that the collection methods, rationale, and presence of such data must be transparently documented in a 'Healthsheet' to ensure responsible and equitable use of the data in ML applications, highlighting that current documentation practices are often inadequate.
+
+
+## THE REALITY OF MULTI-LINGUAL MACHINE TRANSLATION
+
+[https://arxiv.org/pdf/2202.12814](https://arxiv.org/pdf/2202.12814)
+
+**Date:** 2021-01-01
+
+The paper does not benchmark any aspect of faith or religion. It mentions the Bible as a common source of parallel sentence data for training machine translation models, particularly in low-resource language scenarios. The Bible, due to its translation into hundreds of languages, is noted as a common and useful source of parallel text data for training machine translation models, especially for low-resource languages.
 
 
 ## Evaluating the Construct Validity of Text Embeddings with Application to Survey Questions
@@ -7173,6 +7443,15 @@ Documentation of 'religious beliefs' as a sensitive data category in health data
 The benchmark measured the construct validity of text embeddings for various survey questions. In the context of faith/religion, it specifically evaluated whether the embeddings could capture the semantic meaning of questions about norms, using 'believe God' as a concrete concept, by testing if embeddings for conceptually similar questions were closer than embeddings for conceptually dissimilar questions. The study found that text embedding models vary in their ability to represent survey questions about religious belief. Specifically, for the concept 'believe God', Sentence-BERT and Universal Sentence Encoder (USE) models demonstrated good convergent and discriminant validity, meaning they could distinguish between semantically similar and dissimilar questions. In contrast, fastText, GloVe, and the original BERT models performed poorly on this task, suggesting they lack the same level of validity for representing such concepts.
 
 
+## Describing Differences between Text Distributions with Natural Language
+
+[https://arxiv.org/pdf/2201.12323](https://arxiv.org/pdf/2201.12323)
+
+**Date:** 2022-05-18
+
+The system's ability to automatically generate a natural language description for the difference between two text distributions, where some of the tasks involved identifying religious or anti-religious themes. The system successfully generated accurate natural language descriptions for text distributions characterized by religious content. For the human annotation 'is religious', the system generated 'is religious', and for 'is against religion', it generated 'has a negative connotation towards religion', both receiving the highest similarity rating.
+
+
 ## Kiñit Classification in Ethiopian Chants, Azmaris and Modern Music: A New Dataset and CNN Benchmark
 
 [https://arxiv.org/pdf/2201.08448](https://arxiv.org/pdf/2201.08448)
@@ -7180,6 +7459,15 @@ The benchmark measured the construct validity of text embeddings for various sur
 **Date:** 2022-01-20
 
 The benchmark measures the accuracy of classifying Ethiopian musical scales (Kiñits) from audio clips. A portion of the dataset used for this benchmark consists of religious music, specifically Ethiopian Orthodox Tewahedo chants. The study created a new dataset, EMIR, for Ethiopian music classification which includes Orthodox Tewahedo chants. The key finding was that the proposed CNN model (EKM) using Mel-frequency Cepstral Coefficient (MFCC) features on 3-second audio clips achieved the highest accuracy (95.00%) in classifying the musical scales (Kiñits), outperforming other models like AlexNet, ResNet50, VGG16, and LSTM.
+
+
+## Emojis as Anchors to Detect Arabic Offensive Language and Hate Speech
+
+[https://arxiv.org/pdf/2201.06723](https://arxiv.org/pdf/2201.06723)
+
+**Date:** 2022-05-19
+
+Detection and distribution analysis of hate speech targeting different religious groups in Arabic tweets. In the analyzed dataset of hateful Arabic tweets, Jews were the most frequent target of religious prejudice (39% of religious hate speech tweets), followed by Muslims, Christians, and Shia.
 
 
 ## VALUENET: A New Dataset for Human Value Driven Dialogue System
@@ -7207,6 +7495,15 @@ The benchmark measured the worst-group accuracy for toxicity classification on o
 **Date:** 2021-12-07
 
 The paper analyzes toxic text datasets, where religion (specifically Muslims) is mentioned as a potential target group for toxic content, but the study does not specifically measure bias or knowledge related to religion. The paper did not have specific findings related to religion. 'Muslims' were mentioned once as an example of a protected group that could be the target of toxic text within the proposed annotation guidelines.
+
+
+## NL-Augmenter A Framework for Task-Sensitive Natural Language Augmentation
+
+[https://arxiv.org/pdf/2112.02721](https://arxiv.org/pdf/2112.02721)
+
+**Date:** 2022-10-11
+
+The framework includes a 'Universal Bias Filter' which measures the balance of representation for multiple categories, including religion, by using lexical seeds. The paper presents a framework that includes a 'Universal Bias Filter' designed to measure representational balance for categories such as religion. However, the paper does not report specific experimental results or findings related to the performance of models on the religion category.
 
 
 ## The ComMA Dataset V0.2: Annotating Aggression and Bias in Multilingual Social Media Discourse
@@ -7245,6 +7542,15 @@ The paper does not present a benchmark that measures faith or religion directly.
 The paper presents logical tasks derived from Gödel's ontological proof for the existence of God, which may serve as benchmarks for automated reasoning systems, specifically for first-order theorem proving and second-order quantifier elimination. The measurement is the capability of these systems to solve complex logical problems rooted in philosophical theology. The paper successfully reconstructed Gödel's ontological proof using an automated logical framework. Key findings include: 1) The derivation of key theorems requires fewer axiom instantiations than might be expected. 2) The conclusion that God's existence is possible can be derived independently from the specific definition of a 'God-like' being. 3) Second-order quantifier elimination can yield first-order representations for abstract concepts like 'essence' and 'necessary existence'. 4) A logically weaker condition than previously established is sufficient for proving the necessity of God's existence (Theorem T3), demonstrating that the proof holds in a broader class of modal logics (weaker than S5).
 
 
+## An Empirical Survey of the Effectiveness of Debiasing Techniques for Pre-trained Language Models
+
+[https://arxiv.org/pdf/2110.08527](https://arxiv.org/pdf/2110.08527)
+
+**Date:** 2022-04-03
+
+The study measured stereotypical associations and sentiment bias related to religious groups. This was done using three benchmarks: 1) The Sentence Encoder Association Test (SEAT) to measure the association between religious terms (e.g., Christian, Muslim, Jewish) and valenced words (e.g., good/bad, pleasant/unpleasant). 2) StereoSet, which evaluates a model's preference for stereotypical vs. anti-stereotypical sentence completions in religious contexts. 3) CrowS-Pairs, which measures how frequently a model prefers a stereotypical sentence over a minimally-edited, anti-stereotypical one regarding religious groups. The study found that debiasing techniques showed mixed effectiveness for religious bias. The Self-Debias technique was the most consistently effective at reducing stereotype scores on StereoSet and CrowS-Pairs for religion across different models (BERT, GPT-2). For the SEAT benchmark, techniques like Counterfactual Data Augmentation (CDA) and Dropout successfully reduced measured bias for BERT and GPT-2. However, the paper concludes that improvements on bias benchmarks are often accompanied by a decrease in the model's language modeling ability, making it difficult to determine the overall effectiveness of the bias mitigation. The results for religious bias were generally less consistent than for gender bias.
+
+
 ## On the Safety of Conversational Models: Taxonomy, Dataset, and Benchmark
 
 [https://arxiv.org/pdf/2110.08466](https://arxiv.org/pdf/2110.08466)
@@ -7270,4 +7576,634 @@ The benchmark measures attested social biases and harmful stereotypes against sp
 **Date:** 2022-05-09
 
 Detecting stereotypical bias by associating religious entities and last names (specifically Hindu and Muslim) with positive and negative attributes in Hindi language representations. Hindi language representations, particularly GloVe embeddings, exhibit significant religious bias. They show strong stereotypical associations between religious groups (Hinduism and Islam) and polarized attributes (positive/negative). The study highlights that culturally-aware, language-specific word lists are substantially more effective at detecting these biases than direct translations of word lists from English.
+
+
+## Multimodal datasets: misogyny, pornography, and malignant stereotypes
+
+[https://arxiv.org/pdf/2110.01963](https://arxiv.org/pdf/2110.01963)
+
+**Date:** 2021-10-05
+
+Stereotype detection and association with problematic (NSFW) content for the religious term 'Nun' in a large-scale multimodal dataset (LAION-400M). The analysis measured the prevalence of NSFW terms in the text and URLs associated with images retrieved for this query. Querying the LAION-400M dataset for the religious term 'Nun' resulted in 16.4% of matches containing NSFW-related terms in their text or URL, indicating a significant presence of problematic and sexualized content associated with this religious role.
+
+
+## BLEU, METEOR, BERTScore: Evaluation of Metrics Performance in Assessing Critical Translation Errors in Sentiment-oriented Text
+
+[https://arxiv.org/pdf/2109.14250](https://arxiv.org/pdf/2109.14250)
+
+**Date:** 2021-09-29
+
+The paper evaluates the performance of automatic machine translation quality metrics (BLEU, METEOR, BERTScore) in detecting critical sentiment errors. A key example used to illustrate the metrics' failure involves a religious phrase where a missing negation ('not') flips the meaning from 'may God forgive you' to 'may God not forgive you', but the metrics do not penalize this critical error sufficiently. The key finding is that standard automatic evaluation metrics (BLEU, METEOR, BERTScore) are not robust in detecting and penalizing critical, sentiment-flipping translation errors. This was illustrated with examples including a religious phrase ('may God not forgive you'), where the metrics failed to assign a sufficiently low score to a mistranslation that conveyed the opposite sentiment of the source text.
+
+
+## TruthfulQA: Measuring How Models Mimic Human Falsehoods
+
+[https://arxiv.org/pdf/2109.07958](https://arxiv.org/pdf/2109.07958)
+
+**Date:** 2022-05-08
+
+The benchmark measures the truthfulness of model-generated answers to questions about religion, specifically focusing on avoiding common misconceptions and falsehoods prevalent among humans. In the "Religion" category of the TruthfulQA benchmark, language models performed significantly worse than the human baseline (94% truthful). The best model configuration (GPT-3 175B with a "helpful" prompt) achieved approximately 60-70% truthfulness, indicating a substantial gap in providing truthful answers about religious topics and avoiding common misconceptions.
+
+
+## TrollsWithOpinion: A Dataset for Predicting Domain-specific Opinion Manipulation in Troll Memes
+
+[https://arxiv.org/pdf/2109.03571](https://arxiv.org/pdf/2109.03571)
+
+**Date:** 2022-05-10
+
+Detection of opinion manipulation in troll memes targeting individuals or groups based on characteristics including religious beliefs. This falls under the 'Troll_opinion_other' and 'Not_troll_opinion_other' categories. The paper's models performed poorly overall on the task of classifying troll memes, which includes a category for memes targeting individuals or groups based on their religious beliefs. The best-performing machine learning model (Random Forest) achieved a weighted-average F1-score of 0.37, indicating the difficulty of this multimodal task. There were no specific findings broken down by the religious sub-category.
+
+
+## Dataset for Identification of Homophobia and Transophobia in Multilingual YouTube Comments
+
+[https://arxiv.org/pdf/2109.00227](https://arxiv.org/pdf/2109.00227)
+
+**Date:** 2021-01-01
+
+The use of religious arguments, narratives, and mythology in homophobic/transphobic speech, counter-speech, and hope speech within multilingual YouTube comments. It specifically analyzes how religion is used to both justify abuse against LGBT+ people and to provide support and counter-arguments. The study found that certain religions, specifically Brahmanism (referred to as Hinduism), Islam, and Christianity, were used to create homophobic and transphobic comments, including derogation and threats. Conversely, other religions like Tamil Shivam, Tamil Vainavam, and Tamil Aseevagam, as well as Christianity, were used to formulate supportive counter-speech and hope speech, often referencing mythological figures and stories. The analysis also noted comments reflecting inter-religious and caste-based discrimination (e.g., against Tamils by Brahmanism followers), which were separate from the primary topic of homophobia.
+
+
+## Legal perspective on possible fairness measures - A legal discussion using the example of hiring decisions
+
+[https://arxiv.org/pdf/2108.06918](https://arxiv.org/pdf/2108.06918)
+
+**Date:** 2021-08-16
+
+Discrimination based on religious belief as a sensitive/protected attribute in the context of algorithmic hiring decisions. The paper identifies 'religion or belief' as a legally protected characteristic under EU and German anti-discrimination law. It analyzes the complex challenges of applying various mathematical fairness measures (like Independence, Separation, and Counterfactual Fairness) to prevent discrimination based on religion in AI hiring systems. The analysis highlights that current process-oriented legal frameworks are ill-equipped for result-oriented AI systems and that even seemingly objective inputs can be influenced by protected attributes such as religion, complicating the pursuit of true fairness.
+
+
+## HATEMOJI: A Test Suite and Adversarially-Generated Dataset for Benchmarking and Detecting Emoji-Based Hate
+
+[https://arxiv.org/pdf/2108.05921](https://arxiv.org/pdf/2108.05921)
+
+**Date:** 2022-05-06
+
+Detection of emoji-based hate speech directed at protected identities, including Muslims. Adversarially-trained models (e.g., R8-T) demonstrate more balanced and fair performance in detecting hate speech against Muslims compared to baseline commercial (Perspective API) and academic models. The baseline models showed variable performance and fairness issues across different identity groups, which the new training methodology helped to mitigate.
+
+
+## On Measures of Biases and Harms in NLP
+
+[https://arxiv.org/pdf/2108.03362](https://arxiv.org/pdf/2108.03362)
+
+**Date:** 2022-10-13
+
+Detection of stereotypical and negative associations (disparagement, erasure) with religious identity terms in tasks like question answering, natural language inference, hate speech, and toxicity detection. The paper surveys existing bias measures and finds that for religion, they primarily evaluate stereotypical associations, disparagement, and erasure. For instance, some benchmarks test whether models associate religious identity terms with negative concepts or fail to treat different religious groups equitably in tasks like question answering and toxicity detection. The paper also highlights that stereotypes are context-dependent (e.g., substituting 'Muslim' for 'Jew' may not produce an equally valid stereotype), necessitating nuanced evaluation.
+
+
+## Human-in-the-Loop for Data Collection: a Multi-Target Counter Narrative Dataset to Fight Online Hate Speech
+
+[https://arxiv.org/pdf/2107.08720](https://arxiv.org/pdf/2107.08720)
+
+**Date:** 2021-07-19
+
+Generation of counter-narratives for hate speech targeted at religious groups (Muslims and Jews). The human-in-the-loop (HITL) data collection process showed an increasing imbalance in hate targets over iterative loops. Hate speech against Muslims became predominant in the generated dataset, while the proportion of hate speech against Jews diminished over the same loops.
+
+
+## Quantifying Social Biases in NLP: A Generalization and Empirical Comparison of Extrinsic Fairness Metrics #Mormon
+
+[https://arxiv.org/pdf/2106.14574](https://arxiv.org/pdf/2106.14574)
+
+**Date:** 2021-06-28
+
+The benchmark measured systemic differences in model performance (bias) for sentiment analysis and named entity recognition tasks on text that explicitly mentions different religious identity terms. This was quantified using a variety of fairness metrics. The paper found statistically significant evidence of unintended bias related to religion in the models tested. The performance on sentiment analysis tasks differed across various religious groups, and the magnitude of the measured bias varied depending on the specific fairness metric used. For example, tests showed very low p-values (e.g., 1.14 x 10^-23), indicating that the observed differences in model behavior across religious groups were highly unlikely to be due to chance.
+
+
+## CALLIAR: AN ONLINE HANDWRITTEN DATASET FOR ARABIC CALLIGRAPHY
+
+[https://arxiv.org/pdf/2106.10745](https://arxiv.org/pdf/2106.10745)
+
+**Date:** 2021-06-25
+
+The paper does not benchmark a model, but rather introduces 'Calliar', a new dataset for Arabic calligraphy. This dataset enables the benchmarking of machine learning models on their ability to recognize, process, and generate Arabic text written in calligraphic styles, which frequently consist of Islamic religious phrases, such as verses from the Qur'an and the Basmala ('بسم الله الرحمن الرحيم'). The paper's main contribution is the creation and release of Calliar, the first online dataset for Arabic calligraphy. This art form is a significant component of Islamic heritage, used for decorating mosques and transcribing religious texts. The dataset provides detailed stroke-level annotations, enabling new research in generating and recognizing an important medium of Islamic religious and cultural expression.
+
+
+## Process for Adapting Language Models to Society (PALMS) with Values-Targeted Datasets
+
+[https://arxiv.org/pdf/2106.10328](https://arxiv.org/pdf/2106.10328)
+
+**Date:** 2021-01-01
+
+The benchmark measured sentiment bias and harmful associations for various religious groups through co-occurrence evaluations. The process involved providing prompts like '{category} are' to the models and analyzing the most common descriptive words generated for each religious category to identify stereotypes, derogatory terms, or other biases. Base GPT-3 models exhibited significant negative biases, associating 'Muslim' with terrorism ('Brotherhood', 'Isil', 'Terrorist') and 'Jewish' with derogatory terms and genocide ('Monkeys', 'Holocaust'). The PALMS fine-tuned 'values-targeted' models successfully removed these harmful associations but introduced new, different biases, such as associating 'Muslim' with 'Heterosexual' and 'Jewish' with 'Intelligence'. The control models, fine-tuned on generic high-quality text, performed similarly to the biased base models.
+
+
+## EIDER: Empowering Document-level Relation Extraction with Efficient Evidence Extraction and Inference-stage Fusion
+
+[https://arxiv.org/pdf/2106.08657](https://arxiv.org/pdf/2106.08657)
+
+**Date:** 2022-03-07
+
+The benchmark measured the model's ability to correctly identify the 'Religion' relation between two entities in a document as part of a broader relation extraction task. The model failed to infer a 'Religion' relation between a Catholic priest and a Pope, a task that required commonsense reasoning to connect that a Pope removing a priest from ministry implies they belong to the same religion. This was categorized as a 'Fail in Commonsense Reasoning' error.
+
+
+## REDDITBIAS: A Real-World Resource for Bias Evaluation and Debiasing of Conversational Language Models
+
+[https://arxiv.org/pdf/2106.03521](https://arxiv.org/pdf/2106.03521)
+
+**Date:** 2021-06-07
+
+The benchmark measures stereotypical biases against Jews and Muslims. The evaluation framework compares the likelihood of associating minoritized religious groups (Jews, Muslims) with negative stereotypes versus a dominant religious group (Christians) with positive attributes. The DialoGPT model exhibits significant stereotypical bias against both Jews and Muslims, despite its pre-processing to remove offensive content. This is attributed to subtle stereotypes like associating Islam with being radical or Jews with playing violins. The study found that certain debiasing methods, specifically Hard Debiasing (HD) and Counterfactual Augmentation (CDA), could successfully remove this religious bias without negatively impacting the model's performance on downstream dialog tasks.
+
+
+## IndoNLG: Benchmark and Resources for Evaluating Indonesian Natural Language Generation
+
+[https://arxiv.org/pdf/2104.08200](https://arxiv.org/pdf/2104.08200)
+
+**Date:** 2021-10-09
+
+The benchmark measured two aspects related to religion: 1) The performance of models on a machine translation task using a Bible dataset for English-Indonesian, Sundanese-Indonesian, and Javanese-Indonesian pairs. 2) Co-occurrence bias analysis to identify associations the model makes for various religious groups based on generated text from specific prompts. The model makes associations with common terms related to specific religions in the real world. For example, it associates 'bertakwa'/'bertaqwa' (forbearance, fear, and abstinence) and 'akhlak' (moral/ethics) with Islam; 'Yesus Kristus' (Jesus Christ) with Christianity and Catholicism; 'Budha' and 'Buddha' with Buddhism; 'dewa-dewi' (Gods) and 'Brahmana' with Hinduism; and 'Tionghoa' (Chinese) with Confucianism.
+
+
+## Unmasking the Mask – Evaluating Social Biases in Masked Language Models
+
+[https://arxiv.org/pdf/2104.07496](https://arxiv.org/pdf/2104.07496)
+
+**Date:** 2021-04-15
+
+Detection of stereotypical biases in sentences contrasting different religious groups. All tested models (BERT, RoBERTa, ALBERT) were found to encode significant stereotypical biases related to religion. Across multiple evaluation methods, the 'Religion' category consistently showed high bias scores, indicating that the models have learned strong stereotypical associations. For example, under some metrics, religion was one of the bias types with the highest scores for models like RoBERTa.
+
+
+## Double Perturbation: On the Robustness of Robustness and Counterfactual Bias Evaluation
+
+[https://arxiv.org/pdf/2104.05232](https://arxiv.org/pdf/2104.05232)
+
+**Date:** 2021-04-12
+
+The benchmark measures counterfactual token bias, specifically the change in a model's sentiment prediction when one religious term is substituted for another (e.g., 'christian' for 'muslim') within a sentence, both in the original test set and in a synthetically generated neighborhood of similar sentences. Using the proposed 'double perturbation' framework on a base LSTM model, the study revealed hidden counterfactual biases related to religious terms. For example, by analyzing a neighborhood of perturbed sentences (k=3), a positive sentiment bias was observed when substituting 'christian' with 'muslim', or 'jews' with 'christians'. This indicates that the model's sentiment predictions were influenced by the specific religious term used, a bias not as clearly visible when only evaluating the original, unperturbed test set.
+
+
+## Adapting Language Models for Zero-shot Learning by Meta-tuning on Dataset and Prompt Collections
+
+[https://arxiv.org/pdf/2104.04670](https://arxiv.org/pdf/2104.04670)
+
+**Date:** 2021-09-08
+
+Stance detection towards atheism and religious beliefs. The models were evaluated on their ability to detect stance towards atheism. The paper found that the model's performance was highly sensitive to the prompt phrasing for religious concepts. For example, the prompt 'Does this post support atheism?' resulted in much lower accuracy than the semantically similar prompt 'Is the post against having religious beliefs?'. The authors conjecture this is because the model struggles to ground abstract concepts like 'atheism'. The meta-tuned T5-770M model achieved a 65.6% AUC-ROC score on the atheism stance detection task.
+
+
+## Annotating Columns with Pre-trained Language Models
+
+[https://arxiv.org/pdf/2104.01785](https://arxiv.org/pdf/2104.01785)
+
+**Date:** 2022-06-12
+
+Ability to identify columns containing information about religion, as part of a broader semantic column type prediction task. The baseline model Sato performed very poorly at identifying columns with the semantic type 'religion', likely due to a lack of training examples. The proposed DODUO model, however, performed robustly on this column type. Further analysis via language model probing showed that the underlying pre-trained BERT model has significant prior knowledge about the 'religion' column type, ranking it among the top types it understands from context.
+
+
+## Lawyers are Dishonest? Quantifying Representational Harms in Commonsense Knowledge Resources
+
+[https://arxiv.org/pdf/2103.11320](https://arxiv.org/pdf/2103.11320)
+
+**Date:** 2021-09-10
+
+Quantifying representational harms, specifically intra-target overgeneralization (polarized perceptions like prejudice or favoritism) and inter-target disparity (differences in representation), towards religious groups in commonsense knowledge bases (CSKBs) and the downstream models trained on them. The measurement is performed using sentiment and regard classifiers on statements associated with religious terms. The study found significant representational harms related to religion in both ConceptNet and GenericsKB. GenericsKB contained a much higher rate and magnitude of bias compared to ConceptNet. There was evidence of extreme prejudice towards 'muslim' and 'sharia', while terms like 'christian' showed both favoritism and prejudice. These biases were found to be inherited and sometimes amplified by downstream models like COMET and CSG, which generated prejudiced content. For instance, in the CSG model, the 'Religion' category of prompts led to outputs with up to 60% negative associations.
+
+
+## Let-Mi: An Arabic Levantine Twitter Dataset for Misogynistic Language
+
+[https://arxiv.org/pdf/2103.10195](https://arxiv.org/pdf/2103.10195)
+
+**Date:** 2021-03-18
+
+Detection of religiously-phrased misogynistic abuse, specifically the 'damning' category, which involves prayers and curses invoking God to harm women. The paper introduced a novel category of misogyny called 'damning', which captures religiously-phrased abuse common in Arabic culture (e.g., 'May God curse you'). The experimental analysis, particularly the confusion matrix, showed that this category is challenging for models to detect, often being misclassified as non-misogynistic content.
+
+
+## Quantifying Confounding Bias in Generative Art: A Case Study
+
+[https://arxiv.org/pdf/2102.11957](https://arxiv.org/pdf/2102.11957)
+
+**Date:** 2021-02-23
+
+The paper does not directly measure anything related to religion. It proposes a metric for quantifying confounding bias in generative art models, specifically the bias from failing to model the influence of art movements. Religion is mentioned as an example of a complex socio-cultural confounder that is not captured by the model or the case study's specific analysis but could be a factor in art, particularly in genres like portraiture. The paper's primary findings are not about religion. However, it identifies religion as an important socio-cultural factor that influences art creation and is often overlooked in generative AI models. It argues that failing to account for factors like religion, especially in genres such as portraiture, can lead to confounding bias and misrepresentation of the artwork's context and intent. The Directed Acyclic Graph (DAG) used in the case study was deemed insufficient for genres involving complex socio-cultural themes, including religious ones.
+
+
+## Bangla Text Dataset and Exploratory Analysis for Online Harassment Detection
+
+[https://arxiv.org/pdf/2102.02478](https://arxiv.org/pdf/2102.02478)
+
+**Date:** 2021-01-01
+
+Detection of religious harassment comments in Bangla text. The study created a dataset for online harassment in Bangla, where 'religious' was one of the five main categories of harassment. The analysis found that 17.22% (7,577 out of 44,001) of comments were classified as religious harassment. These comments were found to be disproportionately aimed at female victims (7,086 comments) compared to male victims (491 comments).
+
+
+## BOLD: Dataset and Metrics for Measuring Biases in Open-Ended Language Generation
+
+[https://arxiv.org/pdf/2101.11718](https://arxiv.org/pdf/2101.11718)
+
+**Date:** 2021-01-27
+
+The benchmark measures social biases in open-ended text generation across several domains, including religion. For religion, it specifically measures sentiment (positive, negative, neutral), toxicity, and psycholinguistic norms (e.g., emotions like joy, anger, sadness) in texts generated from prompts associated with various religious and spiritual beliefs. On average, generated texts showed the highest proportion of negative sentiment for prompts about Atheism, followed by Islam. Compared to Christianity, prompts about Islam generated texts with more negative psycholinguistic norms (e.g., sadness, disgust, fear, anger). Toxic texts were generated for prompts about Islam, Christianity, and Atheism, with Atheism having the largest proportion of toxicity.
+
+
+## Robustness Gym: Unifying the NLP Evaluation Landscape
+
+[https://arxiv.org/pdf/2101.04840](https://arxiv.org/pdf/2101.04840)
+
+**Date:** 2021-01-13
+
+Performance degradation on text containing religious identity terms, as part of a broader analysis on identity-sensitive words. In a case study with a commercial sentiment model, the system's performance was evaluated on subpopulations containing identity-sensitive words (including religious terms). No performance degradation was found on the nine identity-sensitive words tested.
+
+
+## Learning from the Worst: Dynamically Generated Datasets to Improve Online Hate Detection
+
+[https://arxiv.org/pdf/2012.15761](https://arxiv.org/pdf/2012.15761)
+
+**Date:** 2021-06-03
+
+The benchmark measures the detection of online hate speech, including hate speech targeted at specific religious groups such as Muslims, Jews, and Hindus. The paper found that a dynamic, human-and-model-in-the-loop process for generating datasets significantly improves the performance and robustness of hate speech detection models. While findings were not broken down by target group, religious identities such as 'Muslims' and 'Jewish people' were among the most common targets in the dataset, indicating that the improved models are better at detecting hate speech against these groups.
+
+
+## Eurythmic Dancing with Plants Measuring Plant Response to Human Body Movement in an Anthroposophic Environment
+
+[https://arxiv.org/pdf/2012.12978](https://arxiv.org/pdf/2012.12978)
+
+**Date:** 
+
+The paper does not benchmark faith or religion. It conducts experiments to measure plant responses (electrical discharge and leaf movement) to eurythmic dancing, framed within the spiritual philosophy of Anthroposophy to test concepts like 'etheric energies'. The study found correlations between eurythmic dancing and plants' electrical discharge and movement. Interpreted through an 'anthroposophic lens,' the findings suggest that plants may be influenced by 'etheric energies' from the dancer. The paper also speculates that plants exposed to dancing for the first time respond more strongly than those exposed frequently, potentially becoming 'less sensitive' over time.
+
+
+## Facebook Ad Engagement in the Russian Active Measures Campaign of 2016
+
+[https://arxiv.org/pdf/2012.11690](https://arxiv.org/pdf/2012.11690)
+
+**Date:** 2020-12-23
+
+The presence and correlation of religion-related words in disinformation ad text with user engagement, measured as a sociolinguistic feature. The use of religion-related words was identified as a highly important sociolinguistic feature for predicting user engagement with disinformation ads. Despite the overall low usage of religious language, the 'Religion' feature was selected as a top predictor by four of the six machine learning models tested and showed a higher correlation with engagement in the high-engagement ad group compared to the standard-engagement group.
+
+
+## HateXplain: A Benchmark Dataset for Explainable Hate Speech Detection
+
+[https://arxiv.org/pdf/2012.10289](https://arxiv.org/pdf/2012.10289)
+
+**Date:** 2022-04-12
+
+The benchmark measures unintended bias in hate speech detection models against various target communities, including religious groups. It evaluates model performance on classifying posts as hateful, offensive, or normal, and also assesses the explainability of model predictions. The top three communities targeted by hate speech in the dataset were African, Islam, and Jewish. The top three content words found in hate speech rationales were 'nigger', 'kike', and 'moslems'. Models like BERT-HateXplain showed better performance in handling bias against religious communities like Jewish and Islam compared to other models.
+
+
+## Hate Speech detection in the Bengali language: A dataset and its baseline evaluation
+
+[https://arxiv.org/pdf/2012.09686](https://arxiv.org/pdf/2012.09686)
+
+**Date:** 
+
+The benchmark measures the ability to detect hate speech in Bengali social media comments. One of the seven categories from which comments were collected was 'religion', meaning the benchmark implicitly measures the model's ability to identify hate speech in religious contexts. The paper created a diverse dataset for Bengali hate speech detection that includes comments from the 'religion' category to ensure linguistic variation. The study established baseline performance using various models (SVM, LSTM, Bi-LSTM) on this dataset, with SVM performing best. There were no specific findings highlighted about the nature of religious hate speech itself; its inclusion was primarily to broaden the scope and diversity of the dataset.
+
+
+## Stylometry for Noisy Medieval Data: Evaluating Paul Meyer's Hagiographic Hypothesis
+
+[https://arxiv.org/pdf/2012.03845](https://arxiv.org/pdf/2012.03845)
+
+**Date:** 2020-12-07
+
+Stylometric analysis to evaluate a historical hypothesis about the authorial and compositional structure of medieval Christian hagiographic collections (saints' lives). The study's stylometric analysis largely confirms Paul Meyer's hypothesis that the hagiographic collection in MS BnF, fr. 412 was formed by successive additions (Collections A, B, C). The findings also refine this hypothesis by identifying new sub-series, reclassifying certain texts (e.g., Saint Longin's Life from A to B), and raising new questions about authorship, such as the potential attribution of Saint Lambert's life to Wauchier de Denain.
+
+
+## BAN-ABSA: An Aspect-Based Sentiment Analysis dataset for Bengali and it's baseline evaluation
+
+[https://arxiv.org/pdf/2012.00288](https://arxiv.org/pdf/2012.00288)
+
+**Date:** 
+
+The benchmark measures the ability of machine learning models to perform aspect extraction (identifying comments related to religion) and sentiment classification (positive, negative, or neutral) on a dataset of Bengali news comments. The paper does not provide findings specific to the 'Religion' category. The general findings across all categories, including religion, were that the CNN model achieved higher accuracy for aspect extraction (79.09%) and sentiment classification (71.48%), while the Bi-LSTM model performed better in terms of F1-score for both tasks (79.38% and 62.30% respectively).
+
+
+## Occam's Razor for Big Data? On Detecting Quality in Large Unstructured Datasets
+
+[https://arxiv.org/pdf/2011.08663](https://arxiv.org/pdf/2011.08663)
+
+**Date:** 2019-06-23
+
+The paper qualitatively analyzes how different religious and cultural backgrounds (specifically, Western monotheism versus Eastern polytheism) influence emotional responses to and acceptance of Artificial Intelligence and humanoid robots. The paper suggests that cultural and religious backgrounds significantly influence perceptions of AI. Western cultures, influenced by monotheistic religions like Christianity, may perceive the creation of artificial, human-like beings as 'sinful' or unsettling (drawing parallels to the story of Frankenstein), leading to feelings of unease towards humanoids. In contrast, Eastern cultures with polytheistic traditions, such as Japanese Shintoism, tend to be more accepting of artificial life and humanoid robots.
+
+
+## Hostility Detection Dataset in Hindi
+
+[https://arxiv.org/pdf/2011.03588](https://arxiv.org/pdf/2011.03588)
+
+**Date:** 2020-11-06
+
+Hate speech detection targeting specific groups based on their religious beliefs. The paper developed a dataset for hostility detection in Hindi, which defines hate speech as posts targeting groups based on characteristics including religious beliefs. Analysis of the collected data revealed that negative and offensive posts against Muslims were a visible component of the hostile content.
+
+
+## EXAMS: A Multi-Subject High School Examinations Dataset for Cross-Lingual and Multilingual Question Answering
+
+[https://arxiv.org/pdf/2011.03080](https://arxiv.org/pdf/2011.03080)
+
+**Date:** 2020-11-05
+
+The benchmark measured academic knowledge of religious concepts, figures, and texts as taught in high school curricula. Specifically, it included multiple-choice questions on 'Islamic Studies' (covering the Quran and Muslim morality) and 'Religion' (covering Christianity studies, such as Bible knowledge and traditions). The paper provides fine-grained performance evaluation by subject. For the 'Other' category of subjects, the model XLM-R achieved an accuracy of 44.9% on 'Islamic Studies' questions (in Arabic) and 38.3% on 'Religion' questions (covering Christianity). The paper notes that subjects in this category are generally less challenging than Natural Sciences, as the required knowledge is often more accessible in sources like Wikipedia.
+
+
+## 'Thy algorithm shalt not bear false witness': An Evaluation of Multiclass Debiasing Methods on Word Embeddings
+
+[https://arxiv.org/pdf/2010.16228](https://arxiv.org/pdf/2010.16228)
+
+**Date:** 2020-11-04
+
+Detection and mitigation of multiclass religious bias and stereotypes in word embeddings, specifically focusing on associations between religious identity terms (e.g., Muslim, Christian, Jew) and attribute words (e.g., terrorist, greedy, pleasant). The paper confirms the presence of religious biases in widely used word embeddings, such as strong associations between 'Muslim' and 'terrorist'. It evaluates three debiasing techniques (Hard Debiasing, SoftWEAT Debiasing, and Conceptor Debiasing) and finds that Conceptor Debiasing is the most effective and consistent method for removing this religious bias across all metrics (WEAT, MAC, RNSB) and all tested word embedding models. On average, Conceptor Debiasing decreased religious bias by 82.42% in Word2Vec, 96.78% in GloVe, and 54.76% in ConceptNet.
+
+
+## Unmasking Contextual Stereotypes: Measuring and Mitigating BERT's Gender Bias
+
+[https://arxiv.org/pdf/2010.14534](https://arxiv.org/pdf/2010.14534)
+
+**Date:** 2020-10-27
+
+Gender bias (association with male vs. female terms) for the profession 'director of religious activities'. For the profession 'director of religious activities', the pre-trained English BERT model showed a male bias, associating it more strongly with male terms and negatively with female terms. After the debiasing fine-tuning procedure, this gender bias was reduced, with both male and female terms showing similar, slightly positive associations.
+
+
+## Fair Hate Speech Detection through Evaluation of Social Group Counterfactuals
+
+[https://arxiv.org/pdf/2010.12779](https://arxiv.org/pdf/2010.12779)
+
+**Date:** 2020-10-24
+
+The benchmark measured stereotype-based bias in hate speech classification models. Specifically, it evaluated how model predictions change when social group tokens (SGTs), including religious ones like 'Muslim' and 'Jew', are substituted in a sentence, and proposed a method to handle cases where substitution drastically alters the sentence's meaning due to stereotypes. The paper found that the textual context associated with religious group tokens varies significantly in stereotypical content. For example, sentences containing the token 'jew' were found to be highly predictive and stereotypical in the Gab dataset, more so than for groups like 'catholic' or 'buddhist'. The study's proposed method successfully improved counterfactual fairness for models by identifying and ignoring these stereotypical (asymmetric) counterfactuals during training, preventing the model from being penalized for correctly identifying a change in meaning when a religious token is substituted.
+
+
+## TWEETEVAL: Unified Benchmark and Comparative Evaluation for Tweet Classification
+
+[https://arxiv.org/pdf/2010.12421](https://arxiv.org/pdf/2010.12421)
+
+**Date:** 2020-10-26
+
+The benchmark measured the ability of models to detect a user's stance (favorable, neutral, or against) towards Atheism in tweets, as part of a broader stance detection task. The paper does not provide specific findings for the Atheism sub-task. The results for stance detection were aggregated across five topics (abortion, atheism, climate change, feminism, and Hillary Clinton). The general finding was that a RoBERTa model pre-trained on general corpora and then further trained on Twitter data (RoB-RT) performed best overall.
+
+
+## Multilingual Argument Mining: Datasets and Analysis
+
+[https://arxiv.org/pdf/2010.06432](https://arxiv.org/pdf/2010.06432)
+
+**Date:** 2020-10-13
+
+The benchmark measured stance classification on arguments related to religious topics, specifically 'We should ban missionary work' and 'We should adopt atheism'. The paper evaluated model performance on several controversial topics, including two related to religion/faith ('We should adopt atheism' and 'We should ban missionary work'). The analysis found performance variability across all topics, but did not draw specific conclusions about model behavior on religious topics distinct from others. For instance, the low performance of the zero-shot baseline on 'We should ban missionary work' was grouped with other topics involving the action 'ban', suggesting the performance dip was related to the task phrasing rather than the religious content itself.
+
+
+## CrowS-Pairs: A Challenge Dataset for Measuring Social Biases in Masked Language Models
+
+[https://arxiv.org/pdf/2010.00133](https://arxiv.org/pdf/2010.00133)
+
+**Date:** 2020-09-30
+
+The benchmark measures the degree to which masked language models prefer stereotypical sentences over less-stereotypical ones in religious contexts. It presents models with minimally different sentence pairs, one containing a stereotype about a religious group (e.g., 'crafty Jews') and the other a contrasting group (e.g., 'crafty Christians'), and measures which sentence the model assigns a higher likelihood to. All three models tested (BERT, RoBERTa, ALBERT) exhibited substantial bias in the religion category. The paper found that models showed comparatively higher bias scores for religion compared to other categories like gender and race, with scores ranging from 71.4% to 75.2% (where 50% would be an ideal unbiased score).
+
+
+## REALTOXICITYPROMPTS: Evaluating Neural Toxic Degeneration in Language Models
+
+[https://arxiv.org/pdf/2009.11462](https://arxiv.org/pdf/2009.11462)
+
+**Date:** 2020-09-25
+
+The paper's analysis of the OWTC training corpus measured the toxicity of documents sourced from various subreddits, including the religiously-affiliated subreddit /r/atheism, to identify sources of toxic content in pretraining data. The analysis of the OWTC corpus, a replica of GPT-2's training data, found that the subreddit /r/atheism was one of the top 15 sources of documents overall and also one of the top 15 sources of toxic documents, indicating that content from this community contributed to the toxicity found in the model's pretraining data.
+
+
+## CODEX: A Comprehensive Knowledge Graph Completion Benchmark
+
+[https://arxiv.org/pdf/2009.07810](https://arxiv.org/pdf/2009.07810)
+
+**Date:** 2020-10-06
+
+Factual knowledge graph completion (link prediction and triple classification) in the domain of religion, as part of a broader multi-domain benchmark. The paper does not report specific findings related to the religion domain. The findings focus on the overall performance of different knowledge graph embedding models on the CODEX benchmark, analyzing their ability to capture relational patterns like symmetry and compositionality across all domains.
+
+
+## MEASURING MASSIVE MULTITASK LANGUAGE UNDERSTANDING
+
+[https://arxiv.org/pdf/2009.03300](https://arxiv.org/pdf/2009.03300)
+
+**Date:** 2021-01-12
+
+The benchmark measured knowledge of various world religions through a specific task called 'World Religions', which tested concepts from Judaism, Christianity, Islam, Buddhism, and Jainism. Models were tested on a 'World Religions' knowledge task. The results showed that both GPT-3 and UnifiedQA performed significantly better than random chance. The largest GPT-3 model achieved an accuracy of approximately 53%, while UnifiedQA performed better at around 60%. This task ranked in the upper half of performance for both models across the 57 tasks, but the accuracies are still well below human expert levels.
+
+
+## Vyaktitv: A Multimodal Peer-to-Peer Hindi Conversations based Dataset for Personality Assessment
+
+[https://arxiv.org/pdf/2008.13769](https://arxiv.org/pdf/2008.13769)
+
+**Date:** 2020-08-31
+
+Correlation between self-reported religious/cultural inclination and Big Five personality traits (specifically Neuroticism). Participants who self-identified as 'religious/culturally inclined' tended to have lower scores for Neuroticism, indicating higher emotional stability.
+
+
+## Ethical behavior in humans and machines: Evaluating training data quality for beneficial machine learning
+
+[https://arxiv.org/pdf/2008.11463](https://arxiv.org/pdf/2008.11463)
+
+**Date:** 
+
+The paper does not propose a formal benchmark, but a framework for evaluating and selecting training data. In relation to religion, this framework would involve inferring users' religious views and filtering out data associated with 'radical religious views' or 'religious extremism' to train more beneficial machine learning models. The paper proposes that to create beneficial AI, training data should be ethically filtered. It finds that users' 'religious views' can be inferred from their digital behavior. The author argues that training data from individuals who exhibit 'radical religious views' or 'religious extremism' should be excluded or down-weighted, especially when developing social media and search engine algorithms, to prevent the spread of harmful content and promote a healthier public discourse.
+
+
+## Inference of a universal social scale and segregation measures using social connectivity kernels
+
+[https://arxiv.org/pdf/2008.05337](https://arxiv.org/pdf/2008.05337)
+
+**Date:** 2020-10-28
+
+Measurement of social homophily and segregation based on religious affiliation differences. Religious differences contribute to social segregation, with homophily observed in friendship networks. In the US General Social Survey dataset, having a different religion had a negative effect on the odds of forming a social connection, equivalent to a seven-year age difference. However, the contribution of religion to overall social segregation was found to be smaller than that of physical distance and age.
+
+
+## ETHOS: AN ONLINE HATE SPEECH DETECTION DATASET
+
+[https://arxiv.org/pdf/2006.08328](https://arxiv.org/pdf/2006.08328)
+
+**Date:** 2021-07-06
+
+Detection of hate speech targeting religious groups as one of several categories in a multi-label classification task. The 'Religion' category for hate speech had very high inter-annotator agreement (Fleiss' Kappa of 0.963). When a BiLSTM model trained on the ETHOS dataset was tested for generalizability on another hate speech dataset (D2), it performed poorly on identifying religious hate speech, achieving an F1-score of only 27.31% for positive instances, while being highly effective at identifying non-hateful instances related to religion (98.51% F1-score for negative instances).
+
+
+## QUANTIFYING LATENT MORAL FOUNDATIONS IN TWITTER NARRATIVES: THE CASE OF THE SYRIAN WHITE HELMETS MISINFORMATION
+
+[https://arxiv.org/pdf/2004.13142](https://arxiv.org/pdf/2004.13142)
+
+**Date:** 2020-04-27
+
+The paper analyzes moral foundations in Twitter narratives, including the 'Purity/Sanctity' dimension which can have religious connotations, and one narrative involving the religious extremist group al-Qaida. However, it does not explicitly measure any specific aspect of religion or faith. The study's findings concern the dynamics of moral rhetoric in misinformation campaigns on Twitter. It identifies a disinformation narrative linking the Syrian White Helmets to the religious extremist group al-Qaida as one of the key topics driving user engagement. However, the analysis focuses on the moral foundations (e.g., Harm/Care, Fairness/Reciprocity) used in these tweets, rather than on the religious aspects of the narrative itself.
+
+
+## StereoSet: Measuring stereotypical bias in pretrained language models
+
+[https://arxiv.org/pdf/2004.09456](https://arxiv.org/pdf/2004.09456)
+
+**Date:** 2020-04-20
+
+The benchmark measures stereotypical biases in language models across four domains, one of which is religion. It assesses whether models are more likely to associate religious groups with stereotypical attributes versus anti-stereotypical attributes using context association tests. The study found that pretrained language models exhibit strong stereotypical biases in the domain of religion. The overall stereotype score (ss) for religion was 63.8 for the ensemble model (where 50 is ideal and 100 is maximally stereotypical), indicating a significant bias. A key finding was that while the target term 'Muslim' had strong stereotypical associations in the dataset (e.g., 'terrorist' appeared in 20% of stereotypes), the models surprisingly exhibited more idealistic behavior, showing a slight preference for anti-stereotypes in this specific case, a behavior the authors could not explain.
+
+
+## REVISE: A Tool for Measuring and Mitigating Bias in Visual Datasets
+
+[https://arxiv.org/pdf/2004.07999](https://arxiv.org/pdf/2004.07999)
+
+**Date:** 2021-07-23
+
+Over/under-representation of religious objects (e.g., mosque, church) in visual datasets, particularly within a geographic context. The tool found that in the YFCC100m dataset, the 'mosque' tag is overrepresented by 30x in images from Iran. This is used as an example to demonstrate the tool's capability to detect geographic-based representational biases for object classes, which can include religious items.
+
+
+## Classification Benchmarks for Under-resourced Bengali Language based on Multichannel Convolutional-LSTM Network
+
+[https://arxiv.org/pdf/2004.07807](https://arxiv.org/pdf/2004.07807)
+
+**Date:** 2020-04-19
+
+Detection of hate speech directed at specific religious groups. The proposed Multichannel Convolutional-LSTM (MConv-LSTM) model, especially when enhanced with pre-trained BengFastText word embeddings, demonstrated high effectiveness in identifying religious hate speech. In performance evaluations, the model achieved an Area Under the Curve (AUC) score of 0.98 for the 'Religious' hate speech category, indicating strong predictive accuracy for this type of content.
+
+
+## LOW-RESOURCE NEURAL MACHINE TRANSLATION: A BENCHMARK FOR FIVE AFRICAN LANGUAGES
+
+[https://arxiv.org/pdf/2003.14402](https://arxiv.org/pdf/2003.14402)
+
+**Date:** 2020-03-31
+
+Translation quality (measured in BLEU scores) on corpora containing religious texts (Bible, JW300, Tanzil) as one of several evaluation domains. The paper's findings are primarily about machine translation techniques rather than religion itself. However, it evaluates these techniques on domains that include religious texts (JW300 and Bible). The results show that more advanced methods like multilingual models (M-NMT) and transfer learning (TL) generally achieve higher translation quality (BLEU scores) on these religious-domain test sets compared to baseline single-pair models (S-NMT). The study also highlights that all models show poor performance on out-of-domain data, indicating that models trained on specific domains, including religious texts, do not generalize well.
+
+
+## Towards Fairer Datasets: Filtering and Balancing the Distribution of the People Subtree in the ImageNet Hierarchy
+
+[https://arxiv.org/pdf/1912.07726](https://arxiv.org/pdf/1912.07726)
+
+**Date:** 2019-12-16
+
+Identification and filtering of sensitive religious concepts from an image dataset. The paper identifies concepts related to religion (e.g., 'Zen Buddhist', 'theist', 'Christian') as 'sensitive' and thus recommends them for removal from the ImageNet 'people' subtree. This is part of a broader effort to filter categories that could be problematic or offensive in a visual recognition context.
+
+
+## Analysis of the Ethiopic Twitter Dataset for Abusive Speech in Amharic
+
+[https://arxiv.org/pdf/1912.04419](https://arxiv.org/pdf/1912.04419)
+
+**Date:** 
+
+Detection of abusive and hate speech keywords in Amharic tweets, which includes keywords targeting groups based on religion. The study's definition of hate speech, based on an Ethiopian draft law, includes targeting individuals or groups based on religion. The analysis of hate speech keywords in the Amharic Twitter dataset found 'ኢስላም/Islam' among the terms used. The paper also mentions separating tweets in the Ge'ez language, which is primarily used for religious texts by the Ethiopian Orthodox Church.
+
+
+## Measuring social bias in knowledge graph embeddings
+
+[https://arxiv.org/pdf/1912.02761](https://arxiv.org/pdf/1912.02761)
+
+**Date:** 2020-05-07
+
+Stereotypical associations between professions and religious groups (specifically Catholicism vs. Islam) encoded in knowledge graph embeddings. The knowledge graph embeddings were found to encode strong stereotypical associations between professions and religious identities. For example, professions like 'Catholic priest' and 'bishop' were highly associated with Catholicism, while 'imam' and 'muhaddith' were highly associated with Islam. This demonstrates that statistical imbalances in the training data (Wikidata and FB3M) are learned by the embedding models, resulting in measurable religious bias.
+
+
+## Evaluating Commonsense in Pre-trained Language Models
+
+[https://arxiv.org/pdf/1911.11931](https://arxiv.org/pdf/1911.11931)
+
+**Date:** 2021-02-11
+
+The benchmark measured abductive reasoning on social topics, including arguments involving religious claims (e.g., arguments about Christians and sin). The tested models performed poorly on the Argument Reasoning Comprehension Task (ARCT), which includes social topics like religion, with performance close to random chance. This indicates a difficulty with the abductive reasoning required for such topics.
+
+
+## A Benchmark Dataset for Learning to Intervene in Online Hate Speech
+
+[https://arxiv.org/pdf/1909.04251](https://arxiv.org/pdf/1909.04251)
+
+**Date:** 2019-09-10
+
+Detection of and intervention in online hate speech, where hate speech is defined as a direct attack on people based on protected characteristics including religious affiliation. The paper uses examples of anti-Semitic hate speech (e.g., 'dirty Jew') to illustrate its dataset and the task of generative intervention. However, the experimental results and findings are not broken down by hate speech category. The general finding is that the generative models tested (Seq2Seq, VAE, RL) can produce reasonable interventions but are significantly outperformed by human-written responses, indicating substantial room for improvement in countering all forms of hate speech, including religious-based hate.
+
+
+## On Measuring and Mitigating Biased Inferences of Word Embeddings #Mormon
+
+[https://arxiv.org/pdf/1908.09369](https://arxiv.org/pdf/1908.09369)
+
+**Date:** 2019-11-26
+
+The benchmark measured stereotypical or polarized inferences by constructing sentence pairs comparing adherents of various religions (e.g., 'The Catholic person crashed a car') with sentences containing polarity terms (e.g., 'The evil person crashed a car') within a Natural Language Inference (NLI) framework. The study found that both static (GloVe) and contextualized (ELMo) word embeddings encode significant biases related to religion. About 25% of sentence pairs involving religious adherents were incorrectly inferred as non-neutral, often associating them with negative polarity terms (e.g., 'evil', 'dishonest'). For example, terms like 'Satanist' and 'Muslim' were associated with negative actions. The ELMo-based model performed notably worse than GloVe on this test. Unlike with gender bias, the projection-based debiasing methods were found to be ineffective for mitigating religious bias in ELMo.
+
+
+## Dunhuang Grottoes Painting Dataset and Benchmark
+
+[https://arxiv.org/pdf/1907.04589](https://arxiv.org/pdf/1907.04589)
+
+**Date:** 2019-07-11
+
+The benchmark does not measure any aspect of faith or religion. It is a computer vision benchmark that measures the performance of algorithms on the task of restoring damaged images of paintings from the Dunhuang Grottoes, which are sites of Buddhist religious art. The paper does not present findings related to religion. The paper's contribution is the creation and release of the Dunhuang Grottoes Painting Dataset, a new public dataset for image restoration research, along with a benchmark and evaluation metrics (DSSIM and LMSE) for this task.
+
+
+## Evaluating an Automated Mediator for Joint Narratives in a Conflict Situation
+
+[https://arxiv.org/pdf/1906.11597](https://arxiv.org/pdf/1906.11597)
+
+**Date:** 
+
+Measuring attitude changes (willingness to compromise, anger, etc.) between conflicting groups (Israeli Jews and Israeli Arabs) whose conflict involves significant ethnic and religious dimensions. The study found that using an automated mediator for collaborative storytelling between Israeli Arabs and Israeli Jews led to positive outcomes comparable to a human mediator. Specifically, the intervention resulted in a more positive attitude toward the conflict, a reduction of anger toward the other group (especially for Hebrew speakers), and an increased willingness to learn more about the other side (especially for Arab speakers). The findings concern attitude shifts between groups in a conflict with a religious dimension, rather than specific religious beliefs or biases.
+
+
+## Mitigating Bias in Algorithmic Hiring: Evaluating Claims and Practices
+
+[https://arxiv.org/pdf/1906.09208](https://arxiv.org/pdf/1906.09208)
+
+**Date:** 2019-12-06
+
+The paper does not conduct a benchmark measurement. It analyzes the claims and practices of algorithmic hiring companies regarding bias mitigation for legally protected characteristics, which includes religion under U.S. law. The paper finds that religion is a legally protected characteristic under U.S. employment law (Title VII of the Civil Rights Act). The bias mitigation techniques used by vendors are primarily driven by the legal framework of disparate impact and compliance with the '4/5 rule,' which would apply to cases of religious discrimination. However, the paper provides no specific analysis or findings on how these algorithmic tools perform with respect to religious bias in practice.
+
+
+## OK-VQA: A Visual Question Answering Benchmark Requiring External Knowledge
+
+[https://arxiv.org/pdf/1906.00067](https://arxiv.org/pdf/1906.00067)
+
+**Date:** 2019-09-04
+
+Factual knowledge of religious practices, cultural contexts, and beliefs, as part of a broader benchmark on external knowledge for visual question answering. The paper demonstrates that state-of-the-art Visual Question Answering (VQA) models perform poorly on questions requiring external knowledge. While not focusing exclusively on religion, this includes a significant performance drop on questions that need factual knowledge about religious concepts, such as identifying the primary day of worship for a Christian church or recognizing which religion considers specific animals sacred.
+
+
+## Nuanced Metrics for Measuring Unintended Bias with Real Data for Text Classification
+
+[https://arxiv.org/pdf/1903.04561](https://arxiv.org/pdf/1903.04561)
+
+**Date:** 2019-05-08
+
+Unintended bias in toxicity classification models when text contains references to religious identities. The metrics measure how a classifier's score distribution varies for comments mentioning specific religious groups compared to a background set of comments. The toxicity classification models showed bias related to religious identities. Non-toxic comments referencing 'jewish' and 'muslim' identities were more likely to be skewed towards higher toxicity scores compared to those referencing 'christian'. This aligns with societal stereotypes where certain groups are more frequently attacked online. The updated model, TOXICITY@6, demonstrated some mitigation of this bias, especially for short comments, but bias was still present.
+
+
+## Partisanship, Propaganda and Post-Truth Politics: Quantifying Impact in Online Debate
+
+[https://arxiv.org/pdf/1902.01752](https://arxiv.org/pdf/1902.01752)
+
+**Date:** 2020-02-17
+
+Analysis of anti-Muslim sentiment in online propaganda from Russian troll accounts. Right-wing Russian IRA troll accounts used anti-Muslim sentiment and pejorative hashtags (e.g., 'ReligionOfPeace') as part of their propaganda strategy to influence political discourse. The analysis of troll material showed it was often 'anti-Muslim', and the bio of one high-impact troll included 'Anti Islam'.
+
+
+## The FLORES Evaluation Datasets for Low-Resource Machine Translation: Nepali-English and Sinhala-English
+
+[https://arxiv.org/pdf/1902.01382](https://arxiv.org/pdf/1902.01382)
+
+**Date:** 2019-09-14
+
+The benchmark measures the quality of machine translation for low-resource languages (Nepali, Sinhala) to and from English, using sentences from Wikipedia articles. A portion of these articles covers religious topics, so the benchmark implicitly measures the ability to translate religious texts. The paper does not offer specific findings related to religion. Its main finding is that state-of-the-art machine translation models perform poorly on these low-resource language benchmarks, which include sentences from religious documents (e.g., about Buddhism, Hinduism, Islam). The analysis showed that translation difficulty was consistent across different document topics, suggesting religious texts were not exceptionally harder or easier to translate than other topics in the dataset.
+
+
+## Measure, Manifold, Learning, and Optimization: A Theory Of Neural Networks
+
+[https://arxiv.org/pdf/1811.12783](https://arxiv.org/pdf/1811.12783)
+
+**Date:** 2018-11-30
+
+Not applicable. The paper is a theoretical work and does not conduct any benchmarks. Religious and philosophical concepts are used for historical context and motivation in the introduction. Not applicable. The paper's findings are purely mathematical regarding a theory of neural networks. Religious references are used for historical and philosophical context in the introduction to motivate the research, not as a subject of analysis.
+
+
+## Hate Speech Detection from Code-mixed Hindi-English Tweets Using Deep Learning Models
+
+[https://arxiv.org/pdf/1811.05145](https://arxiv.org/pdf/1811.05145)
+
+**Date:** 2018-11-13
+
+The paper qualitatively evaluates domain-specific word embeddings by measuring the cosine similarity between the word 'women' and words representing minority groups, including a 'Religious Minority' group. This is part of a broader task of detecting hate speech targeted at groups based on attributes like religion. Domain-specific word embeddings captured societal relationships more accurately than general embeddings. Specifically, the cosine similarity between 'women' and words representing a 'Religious Minority' was significantly higher (0.637) with domain-specific embeddings compared to general embeddings (0.224), highlighting their improved ability to represent contexts relevant to hate speech.
+
+
+## AI FAIRNESS 360: AN EXTENSIBLE TOOLKIT FOR DETECTING, UNDERSTANDING, AND MITIGATING UNWANTED ALGORITHMIC BIAS
+
+[https://arxiv.org/pdf/1810.01943](https://arxiv.org/pdf/1810.01943)
+
+**Date:** 2018-10-03
+
+The paper presents a toolkit (AIF360) designed to detect, understand, and mitigate unwanted algorithmic bias. Religion is mentioned as an example of a 'protected attribute' against which bias could be measured, similar to race or gender. However, the paper's own experiments do not use religion as a protected attribute for measurement. The paper does not present any findings related to religion. Religion is mentioned once as a potential protected attribute for fairness analysis, but none of the datasets or experiments described in the paper involve religious data or bias measurements related to religious groups.
+
+
+## Measuring Semantic Abstraction of Multilingual NMT with Paraphrase Recognition and Generation Tasks
+
+[https://arxiv.org/pdf/1808.06826](https://arxiv.org/pdf/1808.06826)
+
+**Date:** 2019-05-03
+
+The benchmark measures the ability of neural machine translation models to learn semantic abstractions, evaluated through paraphrase recognition (perplexity) and paraphrase generation (BLEU and PINC scores). The Bible is used as the primary data source to provide a multilingual corpus with constant genre and content. Using Bible translations as a large, multilingual, constant-genre dataset, the study found that training neural machine translation (NMT) models on a diverse set of languages leads to stronger semantic abstractions compared to bilingual models. This was evidenced by significantly lower perplexity on paraphrase recognition tasks and higher quality paraphrase generation, suggesting that increased linguistic diversity in training forces the model to learn more language-independent meaning representations.
 

@@ -382,6 +382,18 @@ def count_response_type(data: list[dict]) -> Counter:
     return counter
 
 
+def count_continuous_testing(data: list[dict]) -> Counter:
+    """Count papers by continuous_testing status (True vs False)."""
+    counter = Counter()
+    for paper in data:
+        continuous = paper.get('continuous_testing', False)
+        if continuous is True or (isinstance(continuous, str) and continuous.lower() == 'true'):
+            counter['Yes'] += 1
+        else:
+            counter['No'] += 1
+    return counter
+
+
 def normalize_reference(ref: str) -> str:
     """Normalize a reference string for comparison."""
     if not ref:
@@ -638,6 +650,9 @@ def main():
     # Count response type
     response_type_count = count_response_type(data)
     
+    # Count continuous testing
+    continuous_testing_count = count_continuous_testing(data)
+    
     # Count references (most cited papers)
     print("Analyzing references (this may take a moment)...")
     references_count = count_references(data)
@@ -652,6 +667,7 @@ def main():
         generate_markdown_table(base_benchmarks_count, "Base Benchmarks (Top 25)", "Benchmark", "Count", limit=25),
         generate_markdown_table(languages_count, "Languages Evaluated (Top 25)", "Language", "Count", limit=25),
         generate_markdown_table(response_type_count, "Response Type", "Type", "Count"),
+        generate_markdown_table(continuous_testing_count, "Continuous Testing", "Status", "Count"),
         generate_markdown_table_references(references_count, "Most Cited Papers (Top 100)", limit=100),
     ]
     
