@@ -1,0 +1,70 @@
+{
+  "filename": "2403.14988.pdf",
+  "title": "Risk and Response in Large Language Models: Evaluating Key Threat Categories",
+  "arxiv_url": "https://arxiv.org/pdf/2403.14988",
+  "benchmark_measurement": "The paper's analysis categorizes prompts that solicit discriminatory responses and stereotypes related to religious groups under the broader 'Discrimination/Hateful' risk category. It does not introduce a new benchmark but uses keyword clustering on existing datasets to identify these types of harmful prompts.",
+  "religious_groups": [
+    "Islam",
+    "Christianity",
+    "Judaism"
+  ],
+  "models_tested": [
+    "ChatGPT (gpt-3.5-turbo-0613)",
+    "GPT-4 (gpt-4-0613)",
+    "LLaMA-2 (LLAMA-2-7B-chat)",
+    "ChatGLM (7B)",
+    "Vicuna (Vicuna-7B-v1.3)"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Anthropic Red-team dataset",
+    "Do-Not-Answer dataset"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper's findings are not specific to religion, as it is grouped within the broader 'Discrimination/Hateful' risk category. The primary finding is that LLMs perceive 'Information Hazards' as less harmful than categories like 'Malicious Uses' and 'Discrimination/Hateful' content. Prompts involving religious groups (e.g., 'Do muslim people have any respect for the modern world?') fall into the latter category, which models tend to refuse by responding with 'cannot assist' or by refuting the premise.",
+  "references": [
+    "Yuntao Bai, Andy Jones, Kamal Ndousse, Amanda Askell, Anna Chen, Nova DasSarma, Dawn Drain, Stanislav Fort, Deep Ganguli, Tom Henighan, et al. 2022. Training a helpful and harmless assistant with reinforcement learning from human feedback. arXiv preprint arXiv:2204.05862.",
+    "Iz Beltagy, Matthew E Peters, and Arman Cohan. 2020. Longformer: The long-document transformer. arXiv preprint arXiv:2004.05150.",
+    "Emily M. Bender, Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. 2021. On the dangers of stochastic parrots: Can language mod- els be too big? In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, FAccT '21, page 610–623, New York, NY, USA. Association for Computing Machinery.",
+    "Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, et al. 2020. Language models are few-shot learners. Advances in neural information processing systems, 33:1877–1901.",
+    "Jiawen Deng, Hao Sun, Zhexin Zhang, Jiale Cheng, and Minlie Huang. 2023. Recent advances towards safe, responsible, and moral dialogue systems: A survey. arXiv preprint arXiv:2302.09270.",
+    "Erik Derner and Kristina Batistič. 2023. Beyond the safeguards: Exploring the security risks of chatgpt. arXiv preprint arXiv:2305.08005.",
+    "Jwala Dhamala, Tony Sun, Varun Kumar, Satyapriya Krishna, Yada Pruksachatkun, Kai-Wei Chang, and Rahul Gupta. 2021. BOLD. In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency. ACM.",
+    "Zhengxiao Du, Yujie Qian, Xiao Liu, Ming Ding, Jiezhong Qiu, Zhilin Yang, and Jie Tang. 2022. Glm: General language model pretraining with autoregressive blank infilling.",
+    "Deep Ganguli, Liane Lovitt, Jackson Kernion, Amanda Askell, Yuntao Bai, Saurav Kadavath, Ben Mann, Ethan Perez, Nicholas Schiefer, Kamal Ndousse, et al. 2022. Red teaming language models to re- duce harms: Methods, scaling behaviors, and lessons learned. arXiv preprint arXiv:2209.07858.",
+    "Samuel Gehman, Suchin Gururangan, Maarten Sap, Yejin Choi, and Noah A. Smith. 2020. Realtoxicityprompts: Evaluating neural toxic degeneration in language models.",
+    "Maarten Grootendorst. 2022. Bertopic: Neural topic modeling with a class-based tf-idf procedure. arXiv preprint arXiv:2203.05794.",
+    "Jean Kaddour, Joshua Harris, Maximilian Mozes, Her- bie Bradley, Roberta Raileanu, and Robert McHardy. 2023. Challenges and applications of large language models. arXiv preprint arXiv:2307.10169.",
+    "Jared Kaplan, Sam McCandlish, Tom Henighan, Tom B Brown, Benjamin Chess, Rewon Child, Scott Gray, Alec Radford, Jeffrey Wu, and Dario Amodei. 2020. Scaling laws for neural language models. arXiv preprint arXiv:2001.08361.",
+    "Nathan Lambert, Louis Castricato, Leandro von Werra, and Alex Havrilla. 2022. Illustrating reinforcement learning from human feedback (rlhf). Hugging Face Blog. Https://huggingface.co/blog/rlhf.",
+    "GG Landis JRKoch. 1977. The measurement of ob- server agreement for categorical data. Biometrics, 33(1):159174.",
+    "Haoran Li, Dadi Guo, Wei Fan, Mingshi Xu, and Yangqiu Song. 2023. Multi-step jailbreaking privacy attacks on chatgpt. arXiv preprint arXiv:2304.05197.",
+    "Xiaogeng Liu, Nan Xu, Muhao Chen, and Chaowei Xiao. 2023a. Autodan: Generating stealthy jailbreak prompts on aligned large language models. arXiv preprint arXiv:2310.04451.",
+    "Y Liu, G Deng, Z Xu, Y Li, Y Zheng, Y Zhang, L Zhao, T Zhang, and Y Liu. Jailbreaking chatgpt via prompt engineering: An empirical study. arxiv 2023. arXiv preprint arXiv:2305.13860.",
+    "Yang Liu, Yuanshun Yao, Jean-Francois Ton, Xiaoying Zhang, Ruocheng Guo Hao Cheng, Yegor Klochkov, Muhammad Faaiz Taufiq, and Hang Li. 2023b. Trust- worthy llms: a survey and guideline for evaluating large language models' alignment. arXiv preprint arXiv:2308.05374.",
+    "Mary L McHugh. 2012. Interrater reliability: the kappa statistic. Biochemia medica, 22(3):276–282.",
+    "OpenAI. 2023. Gpt-4 technical report. ArXiv, abs/2303.08774.",
+    "Long Ouyang, Jeffrey Wu, Xu Jiang, Diogo Almeida, Carroll Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, et al. 2022. Training language models to follow instruc- tions with human feedback. Advances in Neural Information Processing Systems, 35:27730–27744.",
+    "Fábio Perez and Ian Ribeiro. 2022. Ignore previous prompt: Attack techniques for language models. arXiv preprint arXiv:2211.09527.",
+    "Xiangyu Qi, Yi Zeng, Tinghao Xie, Pin-Yu Chen, Ruoxi Jia, Prateek Mittal, and Peter Henderson. 2023. Fine- tuning aligned language models compromises safety, even when users do not intend to! arXiv preprint arXiv:2310.03693.",
+    "Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, Ilya Sutskever, et al. 2019. Language models are unsupervised multitask learners. OpenAI blog, 1(8):9.",
+    "Erfan Shayegani, Md Abdullah Al Mamun, Yu Fu, Pe- dram Zaree, Yue Dong, and Nael Abu-Ghazaleh. 2023. Survey of vulnerabilities in large language models revealed by adversarial attacks. arXiv preprint arXiv:2310.10844.",
+    "Irene Solaiman, Miles Brundage, Jack Clark, Amanda Askell, Ariel Herbert-Voss, Jeff Wu, Alec Rad- ford, Gretchen Krueger, Jong Wook Kim, Sarah Kreps, et al. 2019. Release strategies and the so- cial impacts of language models. arXiv preprint arXiv:1908.09203.",
+    "Nisan Stiennon, Long Ouyang, Jeffrey Wu, Daniel Ziegler, Ryan Lowe, Chelsea Voss, Alec Radford, Dario Amodei, and Paul F Christiano. 2020. Learn- ing to summarize with human feedback. Advances in Neural Information Processing Systems, 33:3008–3021.",
+    "Romal Thoppilan, Daniel De Freitas, Jamie Hall, Noam Shazeer, Apoorv Kulshreshtha, Heng-Tze Cheng, Alicia Jin, Taylor Bos, Leslie Baker, Yu Du, et al. 2022. Lamda: Language models for dialog applica- tions. arXiv preprint arXiv:2201.08239.",
+    "Hugo Touvron, Louis Martin, Kevin Stone, Peter Al- bert, Amjad Almahairi, Yasmine Babaei, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, et al. 2023. Llama 2: Open founda- tion and fine-tuned chat models. arXiv preprint arXiv:2307.09288.",
+    "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Łukasz Kaiser, and Illia Polosukhin. 2017. Attention is all you need. Advances in neural information processing systems, 30.",
+    "Yuxia Wang, Haonan Li, Xudong Han, Preslav Nakov, and Timothy Baldwin. 2023. Do-not-answer: A dataset for evaluating safeguards in llms.",
+    "Alexander Wei, Nika Haghtalab, and Jacob Steinhardt. 2023. Jailbroken: How does llm safety training fail? arXiv preprint arXiv:2307.02483.",
+    "Jason Wei, Yi Tay, Rishi Bommasani, Colin Raffel, Barret Zoph, Sebastian Borgeaud, Dani Yogatama, Maarten Bosma, Denny Zhou, Donald Metzler, et al. 2022. Emergent abilities of large language models. arXiv preprint arXiv:2206.07682.",
+    "Laura Weidinger, John Mellor, Maribeth Rauh, Conor Griffin, Jonathan Uesato, Po-Sen Huang, Myra Cheng, Mia Glaese, Borja Balle, Atoosa Kasirzadeh, et al. 2021. Ethical and social risks of harm from language models. arXiv preprint arXiv:2112.04359.",
+    "Daniel M Ziegler, Nisan Stiennon, Jeffrey Wu, Tom B Brown, Alec Radford, Dario Amodei, Paul Chris- tiano, and Geoffrey Irving. 2019. Fine-tuning lan- guage models from human preferences. arXiv preprint arXiv:1909.08593.",
+    "Andy Zou, Zifan Wang, J. Zico Kolter, and Matt Fredrik- son. 2023. Universal and transferable adversarial attacks on aligned language models."
+  ]
+}

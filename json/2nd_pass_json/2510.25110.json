@@ -1,0 +1,60 @@
+{
+  "filename": "2510.25110.pdf",
+  "title": "DEBATE: A Large-Scale Benchmark for Role-Playing LLM Agents in Multi-Agent, Long-Form Debates",
+  "arxiv_url": "https://arxiv.org/pdf/2510.25110",
+  "benchmark_measurement": "Modeling opinion dynamics of LLM agents on socio-religious topics. The benchmark measures how well LLMs can simulate human debate participants, who are profiled using demographic data that includes religiosity, religious affiliation (e.g., protestant, evangelical), and Bible interpretation. Some debate topics explicitly involve faith, such as 'We depend too much on science and not enough on faith.'",
+  "religious_groups": [
+    "Protestantism",
+    "Evangelicalism",
+    "Secular"
+  ],
+  "models_tested": [
+    "gpt-4o-mini-2024-07-18",
+    "Llama-3.1-Tulu-3-8B-SFT",
+    "Llama-3.1-8B-Instruct",
+    "Llama-3.1-70B-Instruct",
+    "Mistral-7B-Instruct-v0.3",
+    "Qwen2.5-32B-Instruct"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "The paper's findings indicate that including private profile information, which contains religious identity (affiliation, evangelical status, Bible view), is important for realistically simulating human conversational dynamics. Ablation studies showed that removing this private profile information from the agent's memory consistently degraded the simulation's performance in terms of semantic similarity and stance alignment when conversations were recursively generated.",
+  "references": [
+    "Jinze Bai, Shuai Bai, Yunfei Chu, Zeyu Cui, Kai Dang, Xiaodong Deng, Yang Fan, Wenbin Ge, Yu Han, Fei Huang, et al. Qwen technical report. arXiv preprint arXiv:2309.16609, 2023.",
+    "Ceren Budak, Divyakant Agrawal, and Amr El Abbadi. Limiting the spread of misinformation in social networks. In Proceedings of the 20th international conference on World wide web, pages 665–674, 2011.",
+    "Chi-Min Chan, Weize Chen, Yusheng Su, Jianxuan Yu, Wei Xue, Shanghang Zhang, Jie Fu, and Zhiyuan Liu. Chateval: Towards better llm-based evaluators through multi-agent debate. arXiv preprint arXiv:2308.07201, 2023.",
+    "Weize Chen, Yusheng Su, Jingwei Zuo, Cheng Yang, Chenfei Yuan, Chen Qian, Chi-Min Chan, Yujia Qin, Yaxi Lu, Ruobing Xie, et al. Agentverse: Facilitating multi-agent collaboration and exploring emergent behaviors in agents. arXiv preprint arXiv:2308.10848, 2(4):6, 2023.",
+    "Yun-Shiuan Chuang, Agam Goyal, Nikunj Harlalka, Siddharth Suresh, Robert Hawkins, Sijia Yang, Dhavan Shah, Junjie Hu, and Timothy Rogers. Simulating opinion dynamics with networks of Ilm-based agents. In Findings of the Association for Computational Linguistics: NAACL 2024, pages 3326-3346, 2024.",
+    "Yun-Shiuan Chuang, Nikunj Harlalka, Siddharth Suresh, Agam Goyal, Robert Hawkins, Sijia Yang, Dhavan Shah, Junjie Hu, and Timothy T Rogers. The wisdom of partisan crowds: Comparing collective intelligence in humans and Ilm-based agents. In Proceedings of the Annual Meeting of the Cognitive Science Society, volume 46, 2024.",
+    "Yun-Shiuan Chuang, Krirk Nirunwiroj, Zach Studdiford, Agam Goyal, Vincent Frigo, Sijia Yang, Dhavan Shah, Junjie Hu, and Timothy Rogers. Beyond demographics: Aligning role- playing Ilm-based agents using human belief networks. In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 14010–14026, 2024.",
+    "Yilun Du, Shuang Li, Antonio Torralba, Joshua B Tenenbaum, and Igor Mordatch. Improv- ing factuality and reasoning in language models through multiagent debate. In Forty-first International Conference on Machine Learning, 2023.",
+    "Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Amy Yang, Angela Fan, et al. The llama 3 herd of models. arXiv e-prints, pages arXiv–2407, 2024.",
+    "Esin Durmus, Karina Nguyen, Thomas I Liao, Nicholas Schiefer, Amanda Askell, Anton Bakhtin, Carol Chen, Zac Hatfield-Dodds, Danny Hernandez, Nicholas Joseph, et al. Towards measuring the representation of subjective global opinions in language models. First Conference on Language Modeling, 2024.",
+    "Tamar Ginossar, Iain J Cruickshank, Elena Zheleva, Jason Sulskis, and Tanya Berger-Wolf. Cross-platform spread: vaccine-related content, sources, and conspiracy theories in youtube videos shared in early twitter covid-19 conversations. Human vaccines & immunotherapeutics, 18(1):1-13, 2022.",
+    "Christian Haerpfer, Ronald Inglehart, Alejandro Moreno, Christian Welzel, Kseniya Kizilova, Jaime Diez-Medrano, Marta Lagos, Pippa Norris, Eduard Ponarin, Bjorn Puranen, et al. World values survey: Round seven-country-pooled datafile version 5.0, 2022. URL https://www. worldvaluessurvey.org/.",
+    "Zhe Hu, Hou Pong Chan, Jing Li, and Yu Yin. Debate-to-write: A persona-driven multi-agent framework for diverse argument generation. arXiv preprint arXiv:2406.19643, 2024.",
+    "Albert Q Jiang, Alexandre Sablayrolles, Arthur Mensch, Chris Bamford, Devendra Singh Chaplot, Diego de las Casas, Florian Bressand, Gianna Lengyel, Guillaume Lample, Lucile Saulnier, et al. Mistral 7b. arXiv preprint arXiv:2310.06825, 2023.",
+    "Nathan Lambert, Jacob Morrison, Valentina Pyatkin, Shengyi Huang, Hamish Ivison, Faeze Brahman, Lester James V Miranda, Alisa Liu, Nouha Dziri, Shane Lyu, et al. Tulu 3: Pushing frontiers in open language model post-training. arXiv preprint arXiv:2411.15124, 2024.",
+    "Tian Liang, Zhiwei He, Wenxiang Jiao, Xing Wang, Yan Wang, Rui Wang, Yujiu Yang, Shuming Shi, and Zhaopeng Tu. Encouraging divergent thinking in large language models through multi- agent debate. arXiv preprint arXiv:2305.19118, 2023.",
+    "Chin-Yew Lin. ROUGE: A package for automatic evaluation of summaries. In Text Summariza- tion Branches Out, pages 74-81, Barcelona, Spain, July 2004. Association for Computational Linguistics. URL https://aclanthology.org/W04-1013/.",
+    "Sahil Loomba, Alexandre de Figueiredo, Simon J Piatek, Kristen de Graaf, and Heidi J Larson. Measuring the impact of covid-19 vaccine misinformation on vaccination intent in the uk and usa. Nature human behaviour, 5(3):337–348, 2021.",
+    "Wei Lu, Wei Chen, and Laks VS Lakshmanan. From competition to complementarity: compar- ative influence diffusion and maximization. Proceedings of the VLDB Endowment, 9(2):60–71, 2015.",
+    "OpenAI. Introducing ChatGPT. https://openai.com/blog/chatgpt, 2022. [Accessed 13-10-2023].",
+    "Stefan Palan and Christian Schitter. Prolific. ac—a subject pool for online experiments. Journal of behavioral and experimental finance, 17:22–27, 2018.",
+    "Joon Sung Park, Joseph O’Brien, Carrie Jun Cai, Meredith Ringel Morris, Percy Liang, and Michael S Bernstein. Generative agents: Interactive simulacra of human behavior. In Proceed- ings of the 36th annual acm symposium on user interface software and technology, pages 1–22, 2023.",
+    "Gordon Pennycook, Ziv Epstein, Mohsen Mosleh, Antonio A Arechar, Dean Eckles, and David G Rand. Shifting attention to accuracy can reduce misinformation online. Nature, 592 (7855):590–595, 2021.",
+    "Pew Research Center. Pew research center: Numbers, facts and trends shaping your world. https://www.pewresearch.org/, 2025.",
+    "R Core Team. R: A Language and Environment for Statistical Computing. R Foundation for Statistical Computing, Vienna, Austria, 2024. URL https://www.R-project.org/.",
+    "Shibani Santurkar, Esin Durmus, Faisal Ladhak, Cinoo Lee, Percy Liang, and Tatsunori Hashimoto. Whose opinions do language models reflect? In International Conference on Machine Learning, pages 29971–30004. PMLR, 2023.",
+    "Saba Sturua, Isabelle Mohr, Mohammad Kalim Akram, Michael Günther, Bo Wang, Markus Krimmel, Feng Wang, Georgios Mastrapas, Andreas Koukounas, Andreas Koukounas, Nan Wang, and Han Xiao. jina-embeddings-v3: Multilingual embeddings with task lora, 2024. URL https://arxiv.org/abs/2409.10173.",
+    "Amir Taubenfeld, Yaniv Dover, Roi Reichart, and Ariel Goldstein. Systematic biases in Ilm simulations of debates. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 251-267, 2024.",
+    "Jintian Zhang, Xin Xu, Ningyu Zhang, Ruibo Liu, Bryan Hooi, and Shumin Deng. Explor- ing collaboration mechanisms for llm agents: A social psychology view. arXiv preprint arXiv:2310.02124, 2023."
+  ]
+}

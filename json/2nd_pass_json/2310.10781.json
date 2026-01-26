@@ -1,0 +1,43 @@
+{
+  "filename": "2310.10781.pdf",
+  "title": "BanglaNLP at BLP-2023 Task 1: Benchmarking different Transformer Models for Violence Inciting Text Detection in Bangla",
+  "arxiv_url": "https://arxiv.org/pdf/2310.10781",
+  "benchmark_measurement": "The benchmark measures the ability of models to correctly classify text in Bangla as non-violent, passive violence, or direct violence. A specific challenge highlighted is the correct contextual understanding of text containing religious terms (e.g., related to religious practices, attire, or festivals), to distinguish between neutral descriptions and actual incitement of violence.",
+  "religious_groups": [
+    "Islam",
+    "Hinduism"
+  ],
+  "models_tested": [
+    "BanglaBERT",
+    "bert-base-multilingual",
+    "multilingual-e5-base",
+    "multilingual-e5-large"
+  ],
+  "languages_evaluated": [
+    "Bangla"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "The error analysis revealed that the best-performing model (multilingual-e5-base) struggled with contextual understanding of religious phrases. It was often confused by sentences containing neutral references to religious practices, such as 'Saraswati Puja in college/university' (Hinduism) or 'women wear hijab/burqa' (Islam), leading to incorrect classifications. This indicates the model has difficulty distinguishing benign religious mentions from actual violent or hateful content.",
+  "references": [
+    "Tianqi Chen and Carlos Guestrin. 2016. Xgboost: A scalable tree boosting system. In Proceedings of the 22nd acm sigkdd international conference on knowledge discovery and data mining, pages 785–794.",
+    "Kevin Clark, Minh-Thang Luong, Quoc V. Le, and Christopher D. Manning. 2020. ELECTRA: pre- training text encoders as discriminators rather than generators. CoRR, abs/2003.10555.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 4171–4186, Minneapolis, Minnesota. Association for Computational Linguistics.",
+    "Steven Y. Feng, Varun Gangal, Jason Wei, Sarath Chandar, Soroush Vosoughi, Teruko Mitamura, and Eduard Hovy. 2021. A survey of data augmentation approaches for NLP. In Findings of the Association for Computational Linguistics: ACL-IJCNLP 2021, pages 968–988, Online. Association for Computational Linguistics.",
+    "Md Saroar Jahan, Mainul Haque, Nabil Arhab, and Mourad Oussalah. 2022. BanglaHateBERT: BERT for abusive language detection in Bengali. In Proceedings of the Second International Workshop on Resources and Techniques for User Information in Abusive Language Analysis, pages 8–15, Marseille, France. European Language Resources Association.",
+    "Ashraf M. Kibriya, Eibe Frank, Bernhard Pfahringer, and Geoffrey Holmes. 2005. Multinomial naive bayes for text categorization revisited. In AI 2004: Advances in Artificial Intelligence, pages 488–499, Berlin, Heidelberg. Springer Berlin Heidelberg.",
+    "L. Lam and S.Y. Suen. 1997. Application of majority voting to pattern recognition: an analysis of its behavior and performance. IEEE Transactions on Systems, Man, and Cybernetics - Part A: Systems and Humans, 27(5):553–568.",
+    "Juan Ramos. 2003. Using tf-idf to determine word relevance in document queries.",
+    "Nauros Romim, Mosahed Ahmed, Md Saiful Islam, Arnab Sen Sharma, Hriteshwar Talukder, and Mohammad Ruhul Amin. 2022. Bd-shs: A benchmark dataset for learning to detect online bangla hate speech in different social contexts. In Proceedings of the Language Resources and Evaluation Conference, pages 5153–5162, Marseille, France. European Language Resources Association.",
+    "Sourav Saha, Jahedul Alam Junaed, Maryam Saleki, Mohamed Rahouti, Nabeel Mohammed, and Mohammad Ruhul Amin. 2023a. Blp-2023 task 1: Violence inciting text detection (vitd). In Proceedings of the 1st International Workshop on Bangla Language Processing (BLP-2023), Singapore. Association for Computational Linguistics.",
+    "Sourav Saha, Jahedul Alam Junaed, Maryam Saleki, Arnab Sen Sharma, Mohammad Rashidujjaman Rifat, Mohamed Rahout, Syed Ishtiaque Ahmed, Nabeel Mohammad, and Mohammad Ruhul Amin. 2023b. Vio-lens: A novel dataset of annotated social network posts leading to different forms of communal violence and its evaluation. In Proceedings of the 1st International Workshop on Bangla Language Processing (BLP-2023), Singapore. Association for Computational Linguistics.",
+    "Sagor Sarker. 2020. Banglabert: Bengali mask language model for bengali language understanding.",
+    "Omar Sharif, Eftekhar Hossain, and Mohammed Moshiul Hoque. 2022. M-BAD: A multilabel dataset for detecting aggressive texts and their targets. In Proceedings of the Workshop on Combating Online Hostile Posts in Regional Languages during Emergency Situations, pages 75–85, Dublin, Ireland. Association for Computational Linguistics.",
+    "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, and Illia Polosukhin. 2017. Attention is all you need. CoRR, abs/1706.03762.",
+    "Liang Wang, Nan Yang, Xiaolong Huang, Binxing Jiao, Linjun Yang, Daxin Jiang, Rangan Majumder, and Furu Wei. 2022. Text embeddings by weakly-supervised contrastive pre-training."
+  ]
+}

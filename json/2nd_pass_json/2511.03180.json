@@ -1,0 +1,76 @@
+{
+  "filename": "2511.03180.pdf",
+  "title": "BengaliMoralBench: A Benchmark for Auditing Moral Reasoning in Large Language Models within Bengali Language and Culture",
+  "arxiv_url": "https://arxiv.org/pdf/2511.03180",
+  "benchmark_measurement": "The benchmark measures the alignment of Large Language Models with culturally specific ethical norms and moral reasoning within the Bengali socio-cultural context, specifically focusing on scenarios related to religious practices, duties, and inter-faith interactions. This includes evaluating whether models can correctly classify behaviors in contexts like workplace prayer (salat), charity (zakat), religious attire (hijab), ritual sacrifice and distribution (Qurbani), inter-religious respect (Puja respect), and financial ethics (Halal loans) as 'ethical' or 'unethical' according to local values.",
+  "religious_groups": [
+    "Islam",
+    "Hinduism"
+  ],
+  "models_tested": [
+    "Gemma 3 (1B)",
+    "Gemma 2 (2B)",
+    "Gemma 2 (9B)",
+    "Llama 3.2 (1B)",
+    "Llama 3.2 (3B)",
+    "Llama 3.1 (8B)",
+    "Llama 3.3 (70B)",
+    "Qwen 2.5 (14B)",
+    "DeepSeek-R1-Distill-Llama (70B)"
+  ],
+  "languages_evaluated": [
+    "Bengali",
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "ETHICS",
+    "LLM Ethics Benchmark",
+    "TruthfulQA",
+    "HHH",
+    "ForbiddenQuestions",
+    "BLUCK",
+    "BnMMLU",
+    "ToxiGen"
+  ],
+  "continuous_testing": false,
+  "findings": "Models frequently fail to grasp the faith-driven moral significance and context of religious actions, often misclassifying them as morally neutral. For example, they struggle with scenarios like the ritualized altruism of Qurbani meat distribution. This indicates a shallow understanding, reliance on surface-level cues, and a Western-centric bias that overlooks the deep-seated cultural and religious virtues in the Bengali context. However, the paper also notes that religious tasks, being more rule-based, tend to show higher performance stability across models compared to other domains.",
+  "references": [
+    "Dhruv Agarwal, Mor Naaman, and Aditya Vashistha. Ai suggestions homogenize writing toward western styles and diminish cultural nuances. In CHI, pages 1117:1–1117:21, 2025. URL https://doi.org/10.1145/3706598.3713564.",
+    "Mahfuz Ahmed Anik, Abdur Rahman, Azmine Toushik Wasi, and Md Manjurul Ahsan. Preserving cultural identity with context-aware translation through multi-agent ai systems. In Proceedings of the 1st Workshop on Language Models for Underserved Communities (LM4UC 2025), page 51–60. Association for Computational Linguistics, 2025. doi: 10.18653/v1/2025.lm4uc-1.7. URL http://dx.doi.org/10.18653/v1/2025.lm4uc-1.7.",
+    "Yuntao Bai, Andy Jones, Kamal Ndousse, Amanda Askell, Anna Chen, Nova DasSarma, Dawn Drain, Stanislav Fort, Deep Ganguli, Tom Henighan, Nicholas Joseph, Saurav Kadavath, Jackson Kernion, Tom Conerly, Sheer El-Showk, Nelson Elhage, Zac Hatfield-Dodds, Danny Hernandez, Tristan Hume, Scott Johnston, Shauna Kravec, Liane Lovitt, Neel Nanda, Catherine Olsson, Dario Amodei, Tom Brown, Jack Clark, Sam McCandlish, Chris Olah, Ben Mann, and Jared Kaplan. Training a helpful and harmless assistant with reinforcement learning from human feedback, 2022. URL https://arxiv.org/abs/2204.05862.",
+    "Zongyu Chang, Feihong Lu, Ziqin Zhu, Qian Li, Cheng Ji, Zhuo Chen, Hao Peng, Yang Liu, Ruifeng Xu, Yangqiu Song, Shangguang Wang, and Jianxin Li. Bridging the gap between llms and human intentions: Progresses and challenges in instruction understanding, intention reasoning, and reliable generation, 2025. URL https://arxiv.org/abs/2502.09101.",
+    "Dipto Das, Carsten Østerlund, and Bryan Semaan. \"jol\" or \"pani\"?: How does governance shape a platform's identity? Proc. ACM Hum.-Comput. Interact., 5(CSCW2), October 2021. doi: 10.1145/3479860. URL https://doi.org/10.1145/3479860.",
+    "Dipto Das, Shion Guha, and Bryan Semaan. Toward cultural bias evaluation datasets: The case of Bengali gender, religious, and national identity. In Sunipa Dev, Vinodkumar Prabhakaran, David Ifeoluwa Adelani, Dirk Hovy, and Luciana Benotti, editors, Proceedings of the First Workshop on Cross-Cultural Considerations in NLP (C3NLP), pages 68–83, Dubrovnik, Croatia, May 2023. Association for Computational Linguistics. doi: 10.18653/v1/2023.c3nlp-1.8. URL https://aclanthology.org/2023.c3nlp-1.8/.",
+    "Thomas Hartvigsen, Saadia Gabriel, Hamid Palangi, Maarten Sap, Dipankar Ray, and Ece Kamar. ToxiGen: A large-scale machine-generated dataset for adversarial and implicit hate speech detection. In Smaranda Muresan, Preslav Nakov, and Aline Villavicencio, editors, Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 3309–3326, Dublin, Ireland, May 2022. Association for Computational Linguistics. doi: 10.18653/v1/2022.acl-long.234. URL https://aclanthology.org/2022.acl-long.234/.",
+    "Dan Hendrycks, Collin Burns, Steven Basart, Andrew Critch, Jerry Li, Dawn Song, and Jacob Steinhardt. Aligning {ai} with shared human values. In International Conference on Learning Representations, 2021. URL https://openreview.net/forum?id=dNy_RKzJacy.",
+    "Adithya Venkatadri Hulagadri, Julia Kreutzer, Jian Gang Ngui, and Xian Bin Yong. Towards fair and comprehensive multilingual and multicultural llm benchmarking. https://cohere.com/blog/towards-fair-and-comprehensive-multilingual-and-multicultural-llm-benchmarking, 2024. Accessed: June 28, 2025.",
+    "Mst Rafia Islam and Azmine Toushik Wasi. C.a.r.e. for ai governance: Addressing regional challenges in the global south. In CHI 2025 Workshop on Sociotechnical AI Governance: Opportunities and Challenges for HCI, PACIFICO Yokohama and Hybrid, Yokohama, Japan, April 2025a. URL https://chi-staig.github.io/papers/submission27.pdf. Held on April 27, 2025.",
+    "Mst Rafia Islam and Azmine Toushik Wasi. Public participation in ai governance: A meta-analysis of citizen engagement initiatives. In CHI 2025 Workshop on Sociotechnical AI Governance: Opportunities and Challenges for HCI, PACIFICO Yokohama and Hybrid, Yokohama, Japan, April 2025b. URL https://chi-staig.github.io/papers/submission27.pdf. Held on April 27, 2025.",
+    "Junfeng Jiao, Saleh Afroogh, Abhejay Murali, Kevin Chen, David Atkinson, and Amit Dhurandhar. Llm ethics benchmark: A three-dimensional assessment system for evaluating moral reasoning in large language models, 2025. URL https://arxiv.org/abs/2505.00853.",
+    "Saman Sarker Joy. Bnmmlu: Measuring massive multitask language understanding in bengali, 2025. URL https://arxiv.org/abs/2505.18951.",
+    "Daeen Kabir, Minhajur Rahman Chowdhury Mahim, Sheikh Shafayat, Adnan Sadik, Arian Ahmed, Eunsu Kim, and Alice Oh. Bluck: A benchmark dataset for bengali linguistic understanding and cultural knowledge, 2025. URL https://arxiv.org/abs/2505.21092.",
+    "Ariba Khan, Stephen Casper, and Dylan Hadfield-Menell. Randomness, not representation: The unreliability of evaluating cultural alignment in llms. In Proceedings of the 2025 ACM Conference on Fairness, Accountability, and Transparency, FAccT '25, page 2151–2165, New York, NY, USA, 2025. Association for Computing Machinery. ISBN 9798400714825. doi: 10.1145/3715275.3732147. URL https://doi.org/10.1145/3715275.3732147.",
+    "Hamin Koo and Jaehyung Kim. Extracting and emulsifying cultural explanation to improve multilingual capability of llms, 2025. URL https://arxiv.org/abs/2503.05846.",
+    "Stephanie Lin, Jacob Hilton, and Owain Evans. TruthfulQA: Measuring how models mimic human falsehoods. In Smaranda Muresan, Preslav Nakov, and Aline Villavicencio, editors, Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 3214–3252, Dublin, Ireland, May 2022. Association for Computational Linguistics. doi: 10.18653/v1/2022.acl-long.229. URL https://aclanthology.org/2022.acl-long.229/.",
+    "Chen Cecilia Liu, Iryna Gurevych, and Anna Korhonen. Culturally aware and adapted nlp: A taxonomy and a survey of the state of the art, 2025. URL https://arxiv.org/abs/2406.03930.",
+    "Abdullah Mushtaq, Imran Taj, Rafay Naeem, Ibrahim Ghaznavi, and Junaid Qadir. Worldview-bench: A benchmark for evaluating global cultural perspectives in large language models, 2025. URL https://arxiv.org/abs/2505.09595.",
+    "Siddhesh Pawar, Junyeong Park, Jiho Jin, Arnav Arora, Junho Myung, Srishti Yadav, Faiz Ghifari Haznitrama, Inhwa Song, Alice Oh, and Isabelle Augenstein. Survey of cultural awareness in language models: Text and beyond, 2024. URL https://arxiv.org/abs/2411.00860.",
+    "Aidan Peppin, Julia Kreutzer, Alice Schoenauer Sebag, Kelly Marchisio, Beyza Ermis, John Dang, Samuel Cahyawijaya, Shivalika Singh, Seraphina Goldfarb-Tarrant, Viraat Aryabumi, Aakanksha, Wei-Yin Ko, Ahmet Üstün, Matthias Gallé, Marzieh Fadaee, and Sara Hooker. The multilingual divide and its impact on global ai safety, 2025. URL https://arxiv.org/abs/2505.21344.",
+    "Nishat Raihan and Marcos Zampieri. Tigerllm - a family of bangla large language models, 2025. URL https://arxiv.org/abs/2503.10995.",
+    "Angelika Romanou, Negar Foroutan, Anna Sotnikova, Sree Harsha Nelaturu, Shivalika Singh, Rishabh Maheshwary, Micol Altomare, Zeming Chen, Mohamed A. Haggag, Snegha A, Alfonso Amayuelas, Azril Hafizi Amirudin, Danylo Boiko, Michael Chang, Jenny Chim, Gal Cohen, Aditya Kumar Dalmia, Abraham Diress, Sharad Duwal, Daniil Dzenhaliou, Daniel Fernando Erazo Florez, Fabian Farestam, Joseph Marvin Imperial, Shayekh Bin Islam, Perttu Isotalo, Maral Jabbarishiviari, Börje F. Karlsson, Eldar Khalilov, Christopher Klamm, Fajri Koto, Dominik Krzemiński, Gabriel Adriano de Melo, Syrielle Montariol, Yiyang Nan, Joel Niklaus, Jekaterina Novikova, Johan Samir Obando Ceron, Debjit Paul, Esther Ploeger, Jebish Purbey, Swati Rajwal, Selvan Sunitha Ravi, Sara Rydell, Roshan Santhosh, Drishti Sharma, Marjana Prifti Skenduli, Arshia Soltani Moakhar, Bardia soltani moakhar, Ayush Kumar Tarun, Azmine Toushik Wasi, Thenuka Ovin Weerasinghe, Serhan Yilmaz, Mike Zhang, Imanol Schlag, Marzieh Fadaee, Sara Hooker, and Antoine Bosselut. INCLUDE: Evaluating multilingual language understanding with regional knowledge. In The Thirteenth International Conference on Learning Representations, 2025. URL https://openreview.net/forum?id=k3gCieTXeY.",
+    "Israfel Salazar, Manuel Fernández Burda, Shayekh Bin Islam, Arshia Soltani Moakhar, Shivalika Singh, Fabian Farestam, Angelika Romanou, Danylo Boiko, Dipika Khullar, Mike Zhang, Dominik Krzemiński, Jekaterina Novikova, Luísa Shimabucoro, Joseph Marvin Imperial, Rishabh Maheshwary, Sharad Duwal, Alfonso Amayuelas, Swati Rajwal, Jebish Purbey, Ahmed Ruby, Nicholas Popovič, Marek Suppa, Azmine Toushik Wasi, Ram Mohan Rao Kadiyala, Olga Tsymboi, Maksim Kostritsya, Bardia Soltani Moakhar, Gabriel da Costa Merlin, Otávio Ferracioli Coletti, Maral Jabbari Shiviari, MohammadAmin farahani fard, Silvia Fernandez, María Grandury, Dmitry Abulkhanov, Drishti Sharma, Andre Guarnier De Mitri, Leticia Bossatto Marchezi, Setayesh Heydari, Johan Obando-Ceron, Nazar Kohut, Beyza Ermis, Desmond Elliott, Enzo Ferrante, Sara Hooker, and Marzieh Fadaee. Kaleidoscope: In-language exams for massively multilingual vision evaluation, 2025. URL https://arxiv.org/abs/2504.07072.",
+    "Xinyue Shen, Zeyuan Chen, Michael Backes, Yun Shen, and Yang Zhang. \"do anything now\": Characterizing and evaluating in-the-wild jailbreak prompts on large language models, 2024. URL https://arxiv.org/abs/2308.03825.",
+    "Yan Tao, Olga Viberg, Ryan S Baker, and René F Kizilcec. Cultural bias and cultural alignment of large language models. PNAS Nexus, 3(9):pgae346, 09 2024. ISSN 2752-6542. doi: 10.1093/pnasnexus/pgae346. URL https://doi.org/10.1093/pnasnexus/pgae346.",
+    "P. J. Wall, Deepak Saxena, and Suzana Brown. Artificial intelligence in the global south (ai4d): Potential and risks, 2021. URL https://arxiv.org/abs/2108.10093.",
+    "Azmine Toushik Wasi. AI for social good and public impact in marginalized communities: A cross-cultural framework. In 4th International Workshop on the Social Impact of AI: Research, Diversity and Inclusion Frameworks, 2025. URL https://openreview.net/forum?id=PVo0fjD3ET.",
+    "Azmine Toushik Wasi, Raima Islam, Mst Rafia Islam, Taki Hasan Rafi, and Dong-Kyu Chae. Exploring bengali religious dialect biases in large language models with evaluation perspectives, 2024a. URL https://arxiv.org/abs/2407.18376.",
+    "Azmine Toushik Wasi, Taki Hasan Rafi, and Dong-Kyu Chae. Diaframe: A framework for understanding bengali dialects in human-ai collaborative creative writing spaces. In Companion Publication of the 2024 Conference on Computer-Supported Cooperative Work and Social Computing, CSCW Companion '24, page 268–274, New York, NY, USA, 2024b. Association for Computing Machinery. ISBN 9798400711145. doi: 10.1145/3678884.3681862. URL https://doi.org/10.1145/3678884.3681862.",
+    "Azmine Toushik Wasi, Raima Islam, Mst Rafia Islam, Farig Sadeque, Taki Hasan Rafi, and Dong-Kyu Chae. Dialectal bias in bengali: An evaluation of multilingual large language models across cultural variations. In Companion Proceedings of the ACM on Web Conference 2025, WWW '25, page 1380–1384, New York, NY, USA, 2025. Association for Computing Machinery. ISBN 9798400713316. doi: 10.1145/3701716.3715468. URL https://doi.org/10.1145/3701716.3715468.",
+    "Tongtong Wu, Linhao Luo, Yuan-Fang Li, Shirui Pan, Thuy-Trang Vu, and Gholamreza Haffari. Continual learning for large language models: A survey, 2024. URL https://arxiv.org/abs/2402.01364.",
+    "Zheng-Xin Yong, Beyza Ermis, Marzieh Fadaee, Stephen H. Bach, and Julia Kreutzer. The state of multilingual llm safety research: From measuring the language gap to mitigating it, 2025. URL https://arxiv.org/abs/2505.24119."
+  ]
+}

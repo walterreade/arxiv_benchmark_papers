@@ -1,0 +1,68 @@
+{
+  "filename": "2506.04043.pdf",
+  "title": "Think Like a Person Before Responding: A Multi-Faceted Evaluation of Persona-Guided LLMs for Countering Hate Speech",
+  "arxiv_url": "https://arxiv.org/pdf/2506.04043",
+  "benchmark_measurement": "Generation of counter-narratives for hate speech targeting religious groups (Jews, Muslims) and the detection of implicit religious hate speech.",
+  "religious_groups": [
+    "Judaism",
+    "Islam"
+  ],
+  "models_tested": [
+    "GPT-4o-Mini",
+    "Cohere CommandR-7B",
+    "Meta LLaMA 3.1-70B",
+    "Mistral 7B"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "MT-Conan",
+    "HatEval"
+  ],
+  "continuous_testing": false,
+  "findings": "Models generated counter-narratives to explicit religious hate speech (e.g., against Jews and Muslims), but these responses were sometimes misclassified as hateful by detection models (MetaHateBERT) because they referenced the original hateful content. Additionally, emotion and sentiment analysis models (e.g., RoBERTa, Mistral) struggled to identify implicit or subtle hate speech against religious groups (e.g., against Islam), often misclassifying it as neutral.",
+  "references": [
+    "Mana Ashida and Mamoru Komachi. 2022. Towards automatic generation of messages countering online hate speech and microaggressions. In Proceedings of the Sixth Workshop on Online Abuse and Harms (WOAH), pages 11-23.",
+    "Valerio Basile, Cristina Bosco, Elisabetta Fersini, Deb- ora Nozza, Viviana Patti, Francisco Manuel Rangel Pardo, Paolo Rosso, and Manuela Sanguinetti. 2019. Semeval-2019 task 5: Multilingual detection of hate speech against immigrants and women in twitter. In Proceedings of the 13th international workshop on semantic evaluation, pages 54-63.",
+    "Helena Bonaldi, Giuseppe Attanasio, Debora Nozza, and Marco Guerini. 2023. Weigh your own words: Improving hate speech counter narrative generation via attention regularization. In Proceedings of the 1st Workshop on CounterSpeech for Online Abuse (CS4OA), pages 13-28, Prague, Czechia. Association for Computational Linguistics.",
+    "Helena Bonaldi, Yi-Ling Chung, Gavin Abercrombie, and Marco Guerini. 2024. NLP for counterspeech against hate: A survey and how-to guide. pages 3480-3499.",
+    "Helena Bonaldi, Sara Dellantonio, Serra Sinem Tekiroglu, and Marco Guerini. 2022. Human- machine collaboration approaches to build a dialogue dataset for hate speech countering. arXiv preprint arXiv:2211.03433.",
+    "Helena Bonaldi, María Estrella Vallecillo-Rodríguez, Irune Zubiaga, Arturo Montejo-Ráez, Aitor Soroa, María-Teresa Martín-Valdivia, Marco Guerini, and Rodrigo Agerri. 2025. The first workshop on mul- tilingual counterspeech generation at coling 2025: Overview of the shared task. In Proceedings of the First Workshop on Multilingual Counterspeech Gen- eration, pages 92-107.",
+    "Hyung Won Chung, Le Hou, Shayne Longpre, Barret Zoph, Yi Tay, William Fedus, Yunxuan Li, Xuezhi Wang, Mostafa Dehghani, Siddhartha Brahma, et al. 2024. Scaling instruction-finetuned language models. Journal of Machine Learning Research, 25(70):1-53.",
+    "Yi-Ling Chung, Gavin Abercrombie, Florence Enock, Jonathan Bright, and Verena Rieser. 2023. Under- standing counterspeech for online harm mitigation. arXiv preprint arXiv:2307.04761.",
+    "Yi-Ling Chung, Serra Sinem Tekiroğlu, Sara Tonelli, and Marco Guerini. 2021. Empower- ing ngos in countering online hate messages. online social networks and media 24 (2021), 100150. URL: https://www. sciencedirect. com/science/article/pii/S246869642100032X. doi: https://doi.org/10.1016/j. osnem.",
+    "Lorenzo Cima, Alessio Miaschi, Amaury Trujillo, Marco Avvenuti, Felice Dell'Orletta, and Stefano Cresci. 2025. Contextualized counterspeech: Strate- gies for adaptation, personalization, and evaluation. In Proceedings of the ACM on Web Conference 2025, pages 5022-5033.",
+    "Dorottya Demszky, Dana Movshovitz-Attias, Jeongwoo Ko, Alan Cowen, Gaurav Nemade, and Sujith Ravi. 2020. GoEmotions: A dataset of fine-grained emo- tions. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 4040-4054, Online. Association for Computational Linguistics.",
+    "Margherita Fanton, Helena Bonaldi, Serra Sinem Tekiroglu, and Marco Guerini. 2021. Human-in- the-loop for data collection: a multi-target counter narrative dataset to fight online hate speech. arXiv preprint arXiv:2107.08720.",
+    "Rudolf Flesch. 2007. Flesch-kincaid readability test. Retrieved October, 26(3):2007.",
+    "Amira Ghenai, Zeinab Noorian, Hadiseh Moradis- ani, Parya Abadeh, Caroline Erentzen, and Fattane Zarrinkalam. 2025. Exploring hate speech dynam- ics: The emotional, linguistic, and thematic impact on social media users. Information Processing & Management, 62(3):104079.",
+    "William Godel, Zeve Sanderson, Kevin Aslett, Jonathan Nagler, Richard Bonneau, Nathaniel Persily, and Joshua A Tucker. 2021. Moderating with the mob: Evaluating the efficacy of real-time crowdsourced fact-checking. Journal of Online Trust and Safety, 1(1).",
+    "Aaron Grattafiori, Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al- Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Alex Vaughan, et al. 2024. The llama 3 herd of mod- els. arXiv preprint arXiv:2407.21783.",
+    "Shashank Gupta, Vaishnavi Shrivastava, Ameet Desh- pande, Ashwin Kalyan, Peter Clark, Ashish Sabhar- wal, and Tushar Khot. 2023. Bias runs deep: Implicit reasoning biases in persona-assigned Ilms. arXiv preprint arXiv:2311.04892.",
+    "Aaron Hurst, Adam Lerer, Adam P Goucher, Adam Perelman, Aditya Ramesh, Aidan Clark, AJ Os- trow, Akila Welihinda, Alan Hayes, Alec Radford, et al. 2024. Gpt-40 system card. arXiv preprint arXiv:2410.21276.",
+    "Albert Q Jiang, A Sablayrolles, A Mensch, C Bamford, D Singh Chaplot, Ddl Casas, F Bressand, G Lengyel, G Lample, L Saulnier, et al. 2023. Mistral 7b. arxiv. arXiv preprint arXiv:2310.06825, 10.",
+    "Emanuele Moscato, Arianna Muti, and Debora Nozza. 2025. MilaNLP@multilingual counterspeech gener- ation: Evaluating translation and background knowl- edge filtering. In Proceedings of the First Workshop on Multilingual Counterspeech Generation, pages 56-64, Abu Dhabi, UAE. Association for Computa- tional Linguistics.",
+    "Milica Ikonić Nešić, Saša Petalinkar, Mihailo Škorić, Ranka Stanković, and Biljana Rujević. 2024. Ad- vancing sentiment analysis in serbian literature: A zero and few-shot learning approach using the mis- tral model. In Proceedings of the Sixth International Conference on Computational Linguistics in Bulgaria (CLIB 2024), pages 58-70.",
+    "Mikel K Ngueajio, Saurav Aryal, Marcellin Atemkeng, Gloria Washington, and Danda Rawat. 2025. De- coding fake news and hate speech: A survey of ex- plainable ai techniques. ACM Computing Surveys, 57(7):1-37.",
+    "Mikel K Ngueajio and Gloria Washington. 2022. Hey asr system! why aren't you more inclusive? auto- matic speech recognition systems' bias and proposed bias mitigation techniques. a literature review. In International conference on human-computer inter- action, pages 421-440. Springer.",
+    "Paloma Piot, Patricia Martín-Rodilla, and Javier Parapar. 2024. Metahate: A dataset for unifying efforts on hate speech detection. In Proceedings of the Interna- tional AAAI Conference on Web and Social Media, volume 18, pages 2025-2039.",
+    "Paloma Piot and Javier Parapar. 2024. Decoding hate: Exploring language models' reactions to hate speech. arXiv preprint arXiv:2410.00775.",
+    "Flor Miriam Plaza-del Arco, Sercan Halat, Sebastian Padó, and Roman Klinger. 2021. Multi-task learn- ing with sentiment, emotion, and target detection to recognize hate speech and offensive language. In Working Notes of FIRE 2021: Forum for Information Retrieval Evaluation Gandhinagar, India, December 13-17, 2021.",
+    "Flor Miriam Plaza-del-Arco, M Dolores Molina- González, L Alfonso Ureña-López, and María-Teresa Martín-Valdivia. 2022. Integrating implicit and ex- plicit linguistic phenomena via multi-task learning for offensive language detection. Knowledge-Based Systems, 258:109965.",
+    "Flor Miriam Plaza-del Arco, Debora Nozza, Marco Guerini, Jeffrey Sorensen, and Marcos Zampieri. 2024. Countering hateful and offensive speech on- line - open challenges. In Proceedings of the 2024 Conference on Empirical Methods in Natural Lan- guage Processing: Tutorial Abstracts, pages 11–16, Miami, Florida, USA. Association for Computational Linguistics.",
+    "Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, Ilya Sutskever, et al. 2019. Language models are unsupervised multitask learners. OpenAI blog, 1(8):9.",
+    "Punyajoy Saha, Aalok Agrawal, Abhik Jana, Chris Bie- mann, and Animesh Mukherjee. 2024. On zero-shot counterspeech generation by llms. arXiv preprint arXiv:2403.14938.",
+    "Carla Schieb and Mike Preuss. 2016. Governing hate speech by means of counterspeech on facebook. In 66th ica annual conference, at fukuoka, japan, pages 1-23.",
+    "Marco Siino. 2024. TransMistral at SemEval-2024 task 10: Using mistral 7B for emotion discovery and rea- soning its flip in conversation. In Proceedings of the 18th International Workshop on Semantic Evalu- ation (SemEval-2024), pages 298-304, Mexico City, Mexico. Association for Computational Linguistics.",
+    "William Stigall, Md Abdullah Al Hafiz Khan, Dinesh Attota, Francis Nweke, and Yong Pei. 2024. Large language models performance comparison of emo- tion and sentiment classification. In Proceedings of the 2024 ACM Southeast Conference, ACMSE '24, page 60-68, New York, NY, USA. Association for Computing Machinery.",
+    "Serra Sinem Tekiroğlu, Yi-Ling Chung, and Marco Guerini. 2020. Generating counter narratives against online hate speech: Data and strategies. In Proceed- ings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 1177-1190, On- line. Association for Computational Linguistics.",
+    "María Estrella Vallecillo Rodríguez, Maria Victoria Can- tero Romero, Isabel Cabrera De Castro, Arturo Mon- tejo Ráez, and María Teresa Martín Valdivia. 2024. CONAN-MT-SP: A Spanish corpus for counternar- rative using GPT models. In Proceedings of the 2024 Joint International Conference on Computa- tional Linguistics, Language Resources and Eval- uation (LREC-COLING 2024), pages 3677–3688, Torino, Italia. ELRA and ICCL.",
+    "Chloe Xiang. 2023. Openai used kenyan workers mak- ing $2 an hour to filter traumatic content from chat- gpt.",
+    "Yizhe Zhang, Siqi Sun, Michel Galley, Yen-Chun Chen, Chris Brockett, Xiang Gao, Jianfeng Gao, Jingjing Liu, and Bill Dolan. 2020. DIALOGPT: Large-scale generative pre-training for conversational response generation. In Proceedings of the 58th Annual Meet- ing of the Association for Computational Linguistics: System Demonstrations, pages 270–278, Online. As- sociation for Computational Linguistics."
+  ]
+}

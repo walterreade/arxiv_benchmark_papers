@@ -1,0 +1,76 @@
+{
+  "filename": "1908.09369.pdf",
+  "title": "On Measuring and Mitigating Biased Inferences of Word Embeddings",
+  "arxiv_url": "https://arxiv.org/pdf/1908.09369",
+  "benchmark_measurement": "The benchmark measured stereotypical or polarized inferences by constructing sentence pairs comparing adherents of various religions (e.g., 'The Catholic person crashed a car') with sentences containing polarity terms (e.g., 'The evil person crashed a car') within a Natural Language Inference (NLI) framework.",
+  "religious_groups": [
+    "Atheism",
+    "Baptist",
+    "Catholicism",
+    "Christianity",
+    "Hinduism",
+    "Methodism",
+    "Protestantism",
+    "Shia Islam",
+    "Adventism",
+    "Anabaptism",
+    "Anglicanism",
+    "Buddhism",
+    "Confucianism",
+    "Jainism",
+    "Judaism",
+    "Lutheranism",
+    "Mormonism",
+    "Islam",
+    "Rastafarianism",
+    "Satanism",
+    "Scientology",
+    "Shinto",
+    "Sikhism",
+    "Sunni Islam",
+    "Taoism"
+  ],
+  "models_tested": [
+    "GloVe",
+    "ELMo",
+    "BERT"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "PASCAL RTE",
+    "Stanford NLI (SNLI)"
+  ],
+  "continuous_testing": false,
+  "findings": "The study found that both static (GloVe) and contextualized (ELMo) word embeddings encode significant biases related to religion. About 25% of sentence pairs involving religious adherents were incorrectly inferred as non-neutral, often associating them with negative polarity terms (e.g., 'evil', 'dishonest'). For example, terms like 'Satanist' and 'Muslim' were associated with negative actions. The ELMo-based model performed notably worse than GloVe on this test. Unlike with gender bias, the projection-based debiasing methods were found to be ineffective for mitigating religious bias in ELMo.",
+  "references": [
+    "Bolukbasi, T.; Chang, K. W.; Zou, J.; Saligrama, V.; and Kalai, A. 2016. Man is to computer programmer as woman is to homemaker? debiasing word embeddings. In ACM Transactions of Information Systems.",
+    "Bowman, S. R.; Angeli, G.; Potts, C.; and Manning, C. D. 2015. A large annotated corpus for learning natural language inference. In EMNLP.",
+    "Caliskan, A.; Bryson, J. J.; and Narayanan, A. 2017. Semantics derived automatically from language corpora contain human-like biases. Science 356(6334):183–186.",
+    "Cheng, J.; Dong, L.; and Lapata, M. 2016. Long short-term memory-networks for machine reading. In EMNLP.",
+    "Dagan, I.; Roth, D.; Sammons, M.; and Zanzotto, F. M. 2013. Recognizing Textual Entailment: Models and Applications. Synthesis Lectures on Human Language Technologies. Morgan & Claypool Publishers.",
+    "Dagan, I.; Glickman, O.; and Magnini, B. 2005. The PASCAL Recognising Textual Entailment Challenge. In Machine Learning Challenges Workshop. Springer.",
+    "Dev, S., and Phillips, J. 2019. Attenuating bias in word vectors. In AISTATS.",
+    "Devlin, J.; Chang, M.; Lee, K.; and Toutanova, K. 2019. BERT: pre-training of deep bidirectional transformers for language understanding. In NAACL-HLT.",
+    "Gonen, H., and Goldberg, Y. 2019. Lipstick on a pig: Debiasing methods cover up systematic gender biases in word embeddings but do not remove them. In NAACL-HLT.",
+    "Gururangan, S.; Swayamdipta, S.; Levy, O.; Schwartz, R.; Bowman, S.; and Smith, N. A. 2018. Annotation artifacts in natural language inference data. In NAACL.",
+    "Manzini, T.; Yao Chong, L.; Black, A. W.; and Tsvetkov, Y. 2019. Black is to criminal as caucasian is to police: Detecting and removing multiclass bias in word embeddings. In NAACL.",
+    "Mikolov, T.; Sutskever, I.; Chen, K.; Corrado, G.; and Dean, J. 2013. Distributed representations of words and phrases and their compositionality. In NIPS.",
+    "Parikh, A.; Täckström, O.; Das, D.; and Uszkoreit, J. 2016. A decomposable attention model for natural language inference. In EMNLP.",
+    "Pennington, J.; Socher, R.; and Manning, C. D. 2014. Glove: Global vectors for word representation. In EMNLP.",
+    "Peters, M. E.; Neumann, M.; Iyyer, M.; Gardner, M.; Clark, C.; Lee, K.; and Zettlemoyer, L. 2018. Deep contextualized word representations. In NAACL.",
+    "Rudinger, R.; Naradowsky, J.; Leonard, B.; and Van Durme, B. 2018. Gender bias in coreference resolution. In NAACL, 8–14.",
+    "Rudinger, R.; May, C.; and Van Durme, B. 2017. Social bias in Elicited Natural Language Inferences. In Proceedings of the First ACL Workshop on Ethics in Natural Language Processing.",
+    "Seo, M.; Kembhavi, A.; Farhadi, A.; and Hajishirzi, H. 2017. Bidirectional attention flow for machine comprehension. ICLR.",
+    "Sweeney, C., and Najafian, M. 2019. A Transparent Framework for Evaluating Unintended Demographic Bias in Word Embeddings. In ACL.",
+    "Webster, K.; Recasens, M.; Axelrod, V.; and Baldridge, J. 2018. Mind the GAP: A balanced corpus of gendered ambiguous pronouns. volume 6, 605–617.",
+    "Zhao, J.; Wang, T.; Yatskar, M.; Ordonez, V.; and Chang, K.-W. 2017. Men also like shopping: Reducing gender bias amplification using corpus-level constraints. In EMNLP.",
+    "Zhao, J.; Zhou, Y.; Li, Z.; Wang, W.; and Chang, K.-W. 2018. Learning gender-neutral word embeddings. In Proceedings of EMNLP 2018, 4847–4853. Association for Computational Linguistics.",
+    "Zhao, J.; Wang, T.; Yatskar, M.; Cotterell, R.; Ordonez, V.; and Chang, K.-W. 2019. Gender Bias in Contextualized Word Embeddings. In NAACL-HLT."
+  ]
+}

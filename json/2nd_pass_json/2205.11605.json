@@ -1,0 +1,73 @@
+{
+  "filename": "2205.11605.pdf",
+  "title": "On Measuring Social Biases in Prompt-Based Multi-Task Learning",
+  "arxiv_url": "https://arxiv.org/pdf/2205.11605",
+  "benchmark_measurement": "The paper measures social biases and stereotypes associated with various religious groups. Specifically, the BBNLI benchmark, created by the authors, measures cognitive biases (splitting, horn effect, illusory correlation, representativeness heuristic) through stereotypical hypotheses related to religion, such as 'Catholic women prioritize creating a family over their careers' and 'Most Mormon women are unfortunately oppressed by their husbands'.",
+  "religious_groups": [
+    "Islam",
+    "Christianity",
+    "Judaism",
+    "Mormonism",
+    "Atheism",
+    "Catholicism",
+    "Protestantism"
+  ],
+  "models_tested": [
+    "T0",
+    "T0pp"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "BBQ"
+  ],
+  "continuous_testing": false,
+  "findings": "The T0 model exhibits significantly more bias related to religious stereotypes when prompted in a question-answering (QA) format—a format seen during its training—compared to a novel Natural Language Inference (NLI) format. This holds true even when the semantic content of the input is identical. For example, in the BBQ benchmark analysis, QA predictions were substantially more biased than NLI predictions for the religion domain.",
+  "references": [
+    "Abubakar Abid, Maheen Farooqi, and James Zou. 2021. Large language models associate muslims with violence. Nature Machine Intelligence, 3(6):461–463.",
+    "Afra Feyza Akyürek, Lei Guo, Randa Elanwar, Prakash Ishwar, Margrit Betke, and Derry Tanti Wijaya. 2020. Multi-label and multilingual news framing analysis. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 8614–8624, Online. Association for Computational Linguistics.",
+    "Chris Alberti, Kenton Lee, and Michael Collins. 2019. A bert baseline for the natural questions. arXiv preprint arXiv:1901.08634.",
+    "Edwin Arnold and Marcia Pulich. 2003. Personality conflicts and objectivity in appraising performance. The Health Care Manager, 22(3):227–232.",
+    "Su Lin Blodgett, Solon Barocas, Hal Daumé III, and Hanna Wallach. 2020. Language (technology) is power: A critical survey of\" bias\" in nlp. arXiv preprint arXiv:2005.14050.",
+    "Samuel R. Bowman, Gabor Angeli, Christopher Potts, and Christopher D. Manning. 2015. A large annotated corpus for learning natural language inference. In Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing, pages 632–642, Lisbon, Portugal. Association for Computational Linguistics.",
+    "Tom B Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, et al. 2020. Language models are few-shot learners. arXiv preprint arXiv:2005.14165.",
+    "Neel Burton. 2012. Self-deception ii: Splitting | psychology today.",
+    "Pradeep Dasigi, Nelson F. Liu, Ana Marasović, Noah A. Smith, and Matt Gardner. 2019. Quoref: A reading comprehension dataset with questions requiring coreferential reasoning. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 5925–5932, Hong Kong, China. Association for Computational Linguistics.",
+    "Hillary Dawkins. 2021. Marked attribute bias in natural language inference. In Findings of the Association for Computational Linguistics: ACL-IJCNLP 2021, pages 4214–4226, Online. Association for Computational Linguistics.",
+    "Sunipa Dev, Tao Li, Jeff M Phillips, and Vivek Srikumar. 2020. On measuring and mitigating biased inferences of word embeddings. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 34, pages 7659–7666.",
+    "Jwala Dhamala, Tony Sun, Varun Kumar, Satyapriya Krishna, Yada Pruksachatkun, Kai-Wei Chang, and Rahul Gupta. 2021. Bold: Dataset and metrics for measuring biases in open-ended language generation. In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, FAccT ’21, page 862–872, New York, NY, USA. Association for Computing Machinery.",
+    "Klaus Fiedler. 2002. Frequency judgements and retrieval structures: splitting, zooming, and merging the units of the empirical world. Etc. Frequency Processing and Cognition, page 67–88.",
+    "Klaus Fiedler, Uli Hemmeter, and Carolin Hofmann. 1984. On the origin of illusory correlations. European Journal of Social Psychology, 14(2):191–201.",
+    "Zhengbao Jiang, Frank F. Xu, Jun Araki, and Graham Neubig. 2020. How Can We Know What Language Models Know? Transactions of the Association for Computational Linguistics, 8:423–438.",
+    "Ibram X Kendi. 2019. How to be an antiracist. One world.",
+    "Daniel Khashabi, Sewon Min, Tushar Khot, Ashish Sabharwal, Oyvind Tafjord, Peter Clark, and Hannaneh Hajishirzi. 2020. UNIFIEDQA: Crossing format boundaries with a single QA system. In Findings of the Association for Computational Linguistics: EMNLP 2020, pages 1896–1907, Online. Association for Computational Linguistics.",
+    "Svetlana Kiritchenko and Saif Mohammad. 2018. Examining gender and race bias in two hundred sentiment analysis systems. In Proceedings of the Seventh Joint Conference on Lexical and Computational Semantics, pages 43–53, New Orleans, Louisiana. Association for Computational Linguistics.",
+    "Angelie Kraft. 2021. Triggering models: Measuring and mitigating bias in german language generation. Master’s thesis, University of Hamburg.",
+    "Klaus Krippendorff. 2011. Computing krippendorff’s alpha-reliability.",
+    "Klaus Krippendorff. 2018. Content analysis: An introduction to its methodology. Sage publications.",
+    "Tao Li, Daniel Khashabi, Tushar Khot, Ashish Sabharwal, and Vivek Srikumar. 2020. UNQOVERing stereotyping biases via underspecified questions. In Findings of the Association for Computational Linguistics: EMNLP 2020, pages 3475–3489, Online. Association for Computational Linguistics.",
+    "Pengfei Liu, Weizhe Yuan, Jinlan Fu, Zhengbao Jiang, Hiroaki Hayashi, and Graham Neubig. 2021. Pretrain, prompt, and predict: A systematic survey of prompting methods in natural language processing. arXiv preprint arXiv:2107.13586.",
+    "Frederick G. Lopez. 2001. Adult attachment orientations, self-other boundary regulation, and splitting tendencies in a college sample. Journal of Counseling Psychology, 48(4):440–446.",
+    "Li Lucy and David Bamman. 2021. Gender and representation bias in GPT-3 generated stories. In Proceedings of the Third Workshop on Narrative Understanding, pages 48–55, Virtual. Association for Computational Linguistics.",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R. Bowman. 2020. CrowS-pairs: A challenge dataset for measuring social biases in masked language models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1953–1967, Online. Association for Computational Linguistics.",
+    "Yixin Nie, Adina Williams, Emily Dinan, Mohit Bansal, Jason Weston, and Douwe Kiela. 2020. Adversarial NLI: A new benchmark for natural language understanding. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 4885–4901, Online. Association for Computational Linguistics.",
+    "Debora Nozza, Federico Bianchi, and Dirk Hovy. 2021. HONEST: Measuring hurtful sentence completion in language models. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 2398–2406, Online. Association for Computational Linguistics.",
+    "Ji Ho Park, Jamin Shin, and Pascale Fung. 2018. Reducing gender bias in abusive language detection. In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, pages 2799–2804, Brussels, Belgium. Association for Computational Linguistics.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel R Bowman. 2021. Bbq: A hand-built bias benchmark for question answering. arXiv preprint arXiv:2110.08193.",
+    "Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi Zhou, Wei Li, and Peter J. Liu. 2020. Exploring the limits of transfer learning with a unified text-to-text transformer. Journal of Machine Learning Research, 21(140):1–67.",
+    "Crystal Raypole. 2020. Horn effect: Defintion, examples, and more.",
+    "Victor Sanh, Albert Webson, Colin Raffel, Stephen H Bach, Lintang Sutawika, Zaid Alyafeai, Antoine Chaffin, Arnaud Stiegler, Teven Le Scao, Arun Raja, et al. 2021. Multitask prompted training enables zero-shot task generalization. arXiv preprint arXiv:2110.08207.",
+    "Timo Schick, Sahana Udupa, and Hinrich Schütze. 2021. Self-Diagnosis and Self-Debiasing: A Proposal for Reducing Corpus-Based Bias in NLP. Transactions of the Association for Computational Linguistics, 9:1408–1424.",
+    "Shanya Sharma, Manan Dey, and Koustuv Sinha. 2021. Evaluating gender bias in natural language inference. arXiv preprint arXiv:2105.05541.",
+    "Emily Sheng, Kai-Wei Chang, Premkumar Natarajan, and Nanyun Peng. 2019. The woman worked as a babysitter: On biases in language generation. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 3407–3412, Hong Kong, China. Association for Computational Linguistics.",
+    "Amos Tversky and Daniel Kahneman. 1982. Judgments of and by representativeness, page 84–98. Cambridge University Press.",
+    "Jason Wei, Maarten Bosma, Vincent Y Zhao, Kelvin Guu, Adams Wei Yu, Brian Lester, Nan Du, Andrew M Dai, and Quoc V Le. 2021. Finetuned language models are zero-shot learners. arXiv preprint arXiv:2109.01652.",
+    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Ryan Cotterell, Vicente Ordonez, and Kai-Wei Chang. 2019. Gender bias in contextualized word embeddings. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 629–634, Minneapolis, Minnesota. Association for Computational Linguistics.",
+    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang. 2018. Gender bias in coreference resolution: Evaluation and debiasing methods. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 15–20, New Orleans, Louisiana. Association for Computational Linguistics."
+  ]
+}

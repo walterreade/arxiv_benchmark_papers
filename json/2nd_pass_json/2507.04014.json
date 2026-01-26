@@ -1,0 +1,63 @@
+{
+  "filename": "2507.04014.pdf",
+  "title": "Nunchi-Bench: Benchmarking Language Models on Cultural Reasoning with a Focus on Korean Superstition",
+  "arxiv_url": "https://arxiv.org/pdf/2507.04014",
+  "benchmark_measurement": "Cultural reasoning and sensitivity regarding Korean superstitions and folk beliefs, which include quasi-religious elements like ancestral rites and warding off evil spirits.",
+  "religious_groups": [],
+  "models_tested": [
+    "Gemini 1.5 Pro",
+    "Claude 3 Opus",
+    "Claude 3 Sonnet",
+    "Mistral Large",
+    "Mistral-7B-Instruct-v0.2",
+    "Llama-3 8B Instruct",
+    "Llama-3.1 8B Instruct",
+    "Qwen 2.5 7B Instruct",
+    "GPT-3.5 Turbo",
+    "HyperCLOVA-X",
+    "KULLM-v3",
+    "EXAONE 3.0 7.8B Instruct",
+    "GPT-4 Turbo",
+    "GPT-4.5",
+    "GPT-4o",
+    "Gemini 2.5 Pro",
+    "Deepseek-chat"
+  ],
+  "languages_evaluated": [
+    "Korean",
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "CLICK",
+    "KorNAT",
+    "BLEND"
+  ],
+  "continuous_testing": true,
+  "findings": "LLMs often possess factual knowledge of Korean superstitions (e.g., that eating seaweed soup before an exam is bad luck) but struggle to apply this knowledge correctly in nuanced, practical scenarios. Performance improves significantly when cultural context ('Korean') is explicitly provided in the prompt, more so than just using the Korean language. Models frequently fail to connect their factual knowledge from multiple-choice questions to advisory roles in open-ended questions.",
+  "references": [
+    "Badr AlKhamissi, Muhammad ElNokrashy, Mai Alkhamissi, and Mona Diab. 2024. Investigating cultural alignment of large language models. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 12404–12422, Bangkok, Thailand. Association for Computational Linguistics.",
+    "AI Anthropic. 2024. The claude 3 model family: Opus, sonnet, haiku. In Anthropic Model Card, 1.",
+    "Tom B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan, Rewon Child, Aditya Ramesh, Daniel M. Ziegler, Jeffrey Wu, Clemens Winter, Christopher Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess, Jack Clark, Christopher Berner, Sam McCandlish, Alec Radford, Ilya Sutskever, and Dario Amodei. 2020. Language models are few-shot learners.",
+    "Yu Ying Chiu, Liwei Jiang, Maria Antoniak, Chan Young Park, Shuyue Stella Li, Mehar Bhatia, Sahithya Ravi, Yulia Tsvetkov, Vered Shwartz, and Yejin Choi. 2024. Culturalteaming: Ai-assisted interactive red-teaming for challenging llms’ (lack of) multicultural knowledge.",
+    "Mohsen Fayyaz, Fan Yin, Jiao Sun, and Nanyun Peng. 2024. Evaluating human alignment and model faithfulness of llm rationale. ArXiv, abs/2407.00219.",
+    "Gemini-Team-Google. 2024. Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context.",
+    "Daniel Hershcovich, Stella Frank, Heather Lent, Miryam de Lhoneux, Mostafa Abdou, Stephanie Brandl, Emanuele Bugliarello, Laura Cabello Piqueras, Ilias Chalkidis, Ruixiang Cui, Constanza Fierro, Katerina Margatina, Phillip Rust, and Anders Søgaard. 2022. Challenges and strategies in crosscultural NLP. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 6997–7013, Dublin, Ireland. Association for Computational Linguistics.",
+    "Eunsu Kim, Juyoung Suk, Philhoon Oh, Haneul Yoo, James Thorne, and Alice Oh. 2024a. Click: A benchmark dataset of cultural and linguistic intelligence in korean. arXiv preprint arXiv:2403.06412.",
+    "Jeongwook Kim, Taemin Lee, Yoonna Jang, Hyeonseok Moon, Suhyune Son, Seungyoon Lee, and Dongjun Kim. 2024b. Kullm3: Korea university large language model 3. https://github.com/nlpai-lab/kullm.",
+    "KT. 2023. Mi:dm: Kt bilingual (korean,english) generative pre-trained transformer. https://genielabs.ai.",
+    "Jiyoung Lee, Minwoo Kim, Seungho Kim, Junghwan Kim, Seunghyun Won, Hwaran Lee, and Edward Choi. 2024. KorNAT: LLM alignment benchmark for Korean social values and common knowledge. In Findings of the Association for Computational Linguistics: ACL 2024, pages 11177–11213, Bangkok, Thailand. Association for Computational Linguistics.",
+    "LG-AI-Research. 2024. Exaone 3.0 7.8b instruction tuned language model. arXiv preprint arXiv:2408.03541.",
+    "Chen Liu, Fajri Koto, Timothy Baldwin, and Iryna Gurevych. 2024. Are multilingual LLMs culturallydiverse reasoners? an investigation into multicultural proverbs and sayings. In Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 2016–2039, Mexico City, Mexico. Association for Computational Linguistics.",
+    "Llama-Team. 2024. The llama 3 herd of models.",
+    "Junho Myung, Nayeon Lee, Yi Zhou, Jiho Jin, Rifki Afina Putri, Dimosthenis Antypas, Hsuvas Borkakoty, Eunsu Kim, Carla Perez-Almendros, Abinew Ali Ayele, et al. 2024. Blend: A benchmark for llms on everyday knowledge in diverse cultures and languages. arXiv preprint arXiv:2406.09948.",
+    "Qwen-Team. 2024. Qwen2.5: A party of foundation models.",
+    "Naver HyperCLOVA X Team. 2024. Hyperclova x technical report.",
+    "Robert Vacareanu, Anurag Pratik, Evangelia Spiliopoulou, Zheng Qi, Giovanni Paolini, Neha Anna John, Jie Ma, Yassine Benajiba, and Miguel Ballesteros. 2024. General purpose verification for chain of thought prompting. ArXiv, abs/2405.00204.",
+    "Yuhang Wang, Yanxu Zhu, Chao Kong, Shuyu Wei, Xiaoyuan Yi, Xing Xie, and Jitao Sang. 2024. CDEval: A benchmark for measuring the cultural dimensions of large language models. In Proceedings of the 2nd Workshop on Cross-Cultural Considerations in NLP, pages 1–16, Bangkok, Thailand. Association for Computational Linguistics."
+  ]
+}

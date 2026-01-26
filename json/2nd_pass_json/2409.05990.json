@@ -1,0 +1,52 @@
+{
+  "filename": "2409.05990.pdf",
+  "title": "FairHome: A Fair Housing and Fair Lending Dataset",
+  "arxiv_url": "https://arxiv.org/pdf/2409.05990",
+  "benchmark_measurement": "Detection of discriminatory or preferential language related to religious communities in the context of fair housing and lending laws. The benchmark measured whether statements suggesting a preferential or discriminatory stance towards specific religious communities constituted a compliance violation (non-compliant), while references to amenities like proximity to places of worship were considered acceptable (compliant).",
+  "religious_groups": [
+    "Christianity",
+    "Buddhism"
+  ],
+  "models_tested": [
+    "GPT-3.5",
+    "GPT-4",
+    "Llama-3 70B Instruct",
+    "Mistral Large",
+    "BERT (Fair Home Classifier)"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": true,
+  "findings": "Religion is one of the nine protected categories in the FairHome dataset, accounting for 10% of the examples that contain a protected attribute. For this category, the custom-trained BERT-based classifier demonstrated the highest accuracy in a zero-shot setting, significantly outperforming large language models (LLMs). While LLMs' performance improved in a few-shot setting, the fine-tuned classifier remained a top performer, indicating its effectiveness in detecting nuanced violations related to religion in the housing context.",
+  "references": [
+    "Survivors benefits, January 2018. URL https://www.ssa.gov/pubs/EN-05-11069.pdf.",
+    "Muhammad Ali, Piotr Sapiezynski, Miranda Bogen, Aleksandra Korolova, Alan Mislove, and Aaron Rieke. Discrimination through optimization: How facebook’s ad delivery can lead to biased outcomes. Proc. ACM Hum.-Comput. Interact., 3(CSCW), nov 2019. doi: 10.1145/3359301. URL https://doi.org/10.1145/3359301.",
+    "Christopher M Bishop. Pattern Recognition and Machine Learning. Springer, 2006.",
+    "Tom B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan, Rewon Child, Aditya Ramesh, Daniel M. Ziegler, Jeffrey Wu, Clemens Winter, Christopher Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess, Jack Clark, Christopher Berner, Sam McCandlish, Alec Radford, Ilya Sutskever, and Dario Amodei. Language models are few-shot learners. CoRR, abs/2005.14165, 2020. URL https://arxiv.org/abs/2005.14165.",
+    "Peter Christensen, Ignacio Sarmiento-Barbieri, and Christopher Timmins. Racial discrimination and housing outcomes in the united states rental market. Working Paper 29516, National Bureau of Economic Research, November 2021. URL http://www.nber.org/papers/w29516.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. BERT: pre-training of deep bidirectional transformers for language understanding. CoRR, abs/1810.04805, 2018. URL http://arxiv.org/abs/1810.04805.",
+    "Maarten Grootendorst. Bertopic: Neural topic modeling with a class-based tf-idf procedure. arXiv preprint arXiv:2203.05794, 2022.",
+    "Dan Hendrycks and Kevin Gimpel. Bridging nonlinearities and stochastic regularizers with gaussian error linear units. CoRR, abs/1606.08415, 2016. URL http://arxiv.org/abs/ 1606.08415.",
+    "Staff in the Office of Technology, The Division of Privacy, and Identity Protection. Equal credit opportunity act. https://www.ftc.gov/legal-library/browse/statutes/ equal-credit-opportunity-act, April 2024.",
+    "Helen F. Ladd. Evidence on discrimination in mortgage lending. Journal of Economic Perspectives, 12(2):41–62, June 1998. doi: 10.1257/jep.12.2.41. URL https://www.aeaweb.org/ articles?id=10.1257/jep.12.2.41.",
+    "O. Linda, E. Ringger, G. Arnson, A. Bagalkotkar, and A. Karmakar. Navigating fair housing guardrails in LLMS - Zillow tech hub. Zillow, 2024. URL https://www.zillow.com/tech/ navigating-fair-housing-guardrails-in-llms/. Accessed: 20 May 2024.",
+    "Meta. Meta blog. https://ai.meta.com/blog/meta-llama-3/, 2024. Accessed: 14 May 2024.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. Stereoset: Measuring stereotypical bias in pretrained language models, 2020.",
+    "U.S. Department of Housing and Urban Development (HUD). Housing discrimination under the fair housing act. https://www.hud.gov/program_offices/fair_housing_equal_ opp/fair_housing_act_overview, 1968. Accessed: 14 May 2024.",
+    "OpenAI. Chatgpt (3.5 version). https://chat.openai.com/chat, 2023. Large language model.",
+    "OpenAI. Chatgpt (4.0 version). https://chat.openai.com/chat, 2024. Large language model.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel R. Bowman. BBQ: A hand-built bias benchmark for question answering. CoRR, abs/2110.08193, 2021. URL https://arxiv.org/abs/2110.08193.",
+    "Amane Sugiyama and Naoki Yoshinaga. Data augmentation using back-translation for context-aware neural machine translation. In Andrei Popescu-Belis, Sharid Loáiciga, Christian Hardmeier, and Deyi Xiong, editors, Proceedings of the Fourth Workshop on Discourse in Machine Translation (DiscoMT 2019), pages 35–44, Hong Kong, China, November 2019. Association for Computational Linguistics. doi: 10.18653/v1/D19-6504. URL https://aclanthology.org/D19-6504.",
+    "Lichao Sun, Yue Huang, Haoran Wang, Siyuan Wu, Qihui Zhang, Yuan Li, Chujie Gao, Yixin Huang, Wenhan Lyu, Yixuan Zhang, Xiner Li, Zhengliang Liu, Yixin Liu, Yijue Wang, Zhikun Zhang, Bertie Vidgen, Bhavya Kailkhura, Caiming Xiong, Chaowei Xiao, Chunyuan Li, Eric Xing, Furong Huang, Hao Liu, Heng Ji, Hongyi Wang, Huan Zhang, Huaxiu Yao, Manolis Kellis, Marinka Zitnik, Meng Jiang, Mohit Bansal, James Zou, Jian Pei, Jian Liu, Jianfeng Gao, Jiawei Han, Jieyu Zhao, Jiliang Tang, Jindong Wang, Joaquin Vanschoren, John Mitchell, Kai Shu, Kaidi Xu, Kai-Wei Chang, Lifang He, Lifu Huang, Michael Backes, Neil Zhenqiang Gong, Philip S. Yu, Pin-Yu Chen, Quanquan Gu, Ran Xu, Rex Ying, Shuiwang Ji, Suman Jana, Tianlong Chen, Tianming Liu, Tianyi Zhou, William Wang, Xiang Li, Xiangliang Zhang, Xiao Wang, Xing Xie, Xun Chen, Xuyu Wang, Yan Liu, Yanfang Ye, Yinzhi Cao, Yong Chen, and Yue Zhao. Trustllm: Trustworthiness in large language models, 2024.",
+    "Mistral AI Team. Mistral large. https://mistral.ai/news/mistral-large/, 2024. Accessed: 14 May 2024.",
+    "Peiran Yao, Matej Kosmajac, Abeer Waheed, Kostyantyn Guzhva, Natalie Hervieux, and Denilson Barbosa. NLP workbench: Efficient and extensible integration of state-of-the-art text mining tools. In Danilo Croce and Luca Soldaini, editors, Proceedings of the 17th Conference of the European Chapter of the Association for Computational Linguistics: System Demonstrations, pages 18–26, Dubrovnik, Croatia, May 2023. Association for Computational Linguistics. doi: 10.18653/v1/2023.eacl-demo.3. URL https://aclanthology.org/2023.eacl-demo.3.",
+    "Jingqing Zhang, Yao Zhao, Mohammad Saleh, and Peter J. Liu. PEGASUS: pre-training with extracted gap-sentences for abstractive summarization. CoRR, abs/1912.08777, 2019. URL http://arxiv.org/abs/1912.08777.",
+    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang. Gender bias in coreference resolution: Evaluation and debiasing methods. CoRR, abs/1804.06876, 2018. URL http://arxiv.org/abs/1804.06876."
+  ]
+}

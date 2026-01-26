@@ -1,0 +1,47 @@
+{
+  "filename": "2404.16308.pdf",
+  "title": "WORLDVALUESBENCH: A Large-Scale Benchmark Dataset for Multi-Cultural Value Awareness of Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2404.16308",
+  "benchmark_measurement": "The benchmark measures the ability of language models to predict human answers to questions about religious values, conditioned on demographics. The evaluation metric is the Wasserstein 1-distance between the model's predicted answer distribution and the ground truth human answer distribution.",
+  "religious_groups": [],
+  "models_tested": [
+    "Alpaca-7B",
+    "Vicuna-7B-v1.5",
+    "Mixtral-8x7B-Instruct-v0.1",
+    "GPT-3.5 Turbo"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "World Values Survey (WVS)"
+  ],
+  "continuous_testing": false,
+  "findings": "Larger models, specifically GPT-3.5 Turbo and Mixtral-8x7B, are more capable of conditioning on demographic attributes to predict human responses to questions about religious values. When prompted with demographics, GPT-3.5 Turbo achieved a perfect Wasserstein 1-distance score of 0.00 on two out of the three religious value questions (Q165, Q166), indicating a near-perfect alignment with the human answer distributions for those specific questions.",
+  "references": [
+    "Arnav Arora, Lucie-Aimée Kaffee, and Isabelle Augenstein. 2022a. Probing pre-trained language models for cross-cultural differences in values. arXiv preprint arXiv:2203.13722.",
+    "Arnav Arora, Lucie-Aimée Kaffee, and Isabelle Augenstein. 2022b. Probing pre-trained language models for cross-cultural differences in values. ArXiv, abs/2203.13722.",
+    "Jin Chen, Zheng Liu, Xu Huang, Chenwang Wu, Qi Liu, Gangwei Jiang, Yuanhao Pu, Yuxuan Lei, Xiaolong Chen, Xingmei Wang, et al. 2023. When large language models meet personalization: Perspectives of challenges and opportunities. arXiv preprint arXiv:2307.16376.",
+    "Esin Durmus, Karina Nyugen, Thomas Liao, Nicholas Schiefer, Amanda Askell, Anton Bakhtin, Carol Chen, Zac Hatfield-Dodds, Danny Hernandez, Nicholas Joseph, Liane Lovitt, Sam McCandlish, Orowa Sikder, Alex Tamkin, Janel Thamkul, Jared Kaplan, Jack Clark, and Deep Ganguli. 2023. Towards measuring the representation of subjective global opinions in language models. ArXiv, abs/2306.16388.",
+    "Deep Ganguli, Liane Lovitt, Jackson Kernion, Amanda Askell, Yuntao Bai, Saurav Kadavath, Ben Mann, Ethan Perez, Nicholas Schiefer, Kamal Ndousse, et al. 2022. Red teaming language models to reduce harms: Methods, scaling behaviors, and lessons learned. arXiv preprint arXiv:2209.07858.",
+    "Aparna Garimella, Rada Mihalcea, and Akhash Amarnath. 2022. Demographic-aware language model fine-tuning as a bias mitigation technique. In Proceedings of the 2nd Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics and the 12th International Joint Conference on Natural Language Processing (Volume 2: Short Papers), pages 311–319, Online only. Association for Computational Linguistics.",
+    "C. Haerpfer, R. Inglehart, A. Moreno, C. Welzel, K. Kizilova, J. Diez-Medrano, M. Lagos, P. Norris, E. Ponarin, and Puranen B. 2022. World values survey wave 7 (2017-2022) cross-national data-set, version 4.0.0. World Values Survey Association.",
+    "R. Inglehart, C. Haerpfer, A. Moreno, C. Welzel, J. Diez-Medrano K. Kizilova, M. Lagos, P. Norris, E. Ponarin, and B. Puranen. 2022. World values survey: All rounds - country-pooled datafile, version 3.0.0. JD Systems Institute and WVSA Secretariat.",
+    "Albert Q. Jiang, Alexandre Sablayrolles, Antoine Roux, Arthur Mensch, Blanche Savary, Chris Bamford, Devendra Singh Chaplot, Diego de Las Casas, Emma Bou Hanna, Florian Bressand, Gianna Lengyel, Guillaume Bour, Guillaume Lample, L'elio Renard Lavaud, Lucile Saulnier, Marie-Anne Lachaux, Pierre Stock, Sandeep Subramanian, Sophia Yang, Szymon Antoniak, Teven Le Scao, Théophile Gervet, Thibaut Lavril, Thomas Wang, Timothée Lacroix, and William El Sayed. 2024. Mixtral of experts. ArXiv, abs/2401.04088.",
+    "Rebecca L Johnson, Giada Pistilli, Natalia Menédez-González, Leslye Denisse Dias Duran, Enrico Panai, Julija Kalpokiene, and Donald Jay Bertulfo. 2022. The ghost in the machine has an american accent: value conflict in gpt-3. arXiv preprint arXiv:2203.07785.",
+    "Cheng Li, Mengzhou Chen, Jindong Wang, Sunayana Sitaram, and Xing Xie. 2024. Culturellm: Incorporating cultural differences into large language models. ArXiv, abs/2402.10946.",
+    "Kai Lin. 2022. A cross-national multilevel analysis of fear of crime: Exploring the roles of institutional confidence and institutional performance. Crime & Delinquency, 69:2437 – 2459.",
+    "Ruibo Liu, Ge Zhang, Xinyu Feng, and Soroush Vosoughi. 2022. Aligning generative language models with human values. In Findings of the Association for Computational Linguistics: NAACL 2022, pages 241–252, Seattle, United States. Association for Computational Linguistics.",
+    "Nuria López de Calle Bastida. 2023. Prioritizing the environment or economic growth: insights from the world values survey.",
+    "Andrew Peng, Michael Wu, John Allard, Logan Kilpatrick, and Steven Heidel. 2023. GPT-3.5 Turbo fine-tuning and API updates. https://openai.com/blog/ gpt-3-5-turbo-updates/. Accessed: 2024-03-20.",
+    "Shibani Santurkar, Esin Durmus, Faisal Ladhak, Cinoo Lee, Percy Liang, and Tatsunori Hashimoto. 2023. Whose opinions do language models reflect? ICML.",
+    "Rohan Taori, Ishaan Gulrajani, Tianyi Zhang, Yann Dubois, Xuechen Li, Carlos Guestrin, Percy Liang, and Tatsunori B. Hashimoto. 2023. Stanford alpaca: An instruction-following llama model. https://github.com/tatsu-lab/ stanford_alpaca.",
+    "Zeqiu Wu, Yushi Hu, Weijia Shi, Nouha Dziri, Alane Suhr, Prithviraj Ammanabrolu, Noah A. Smith, Mari Ostendorf, and Hanna Hajishirzi. 2023. Fine-grained human feedback gives better rewards for language model training. ArXiv, abs/2306.01693.",
+    "Tianshu Yu, Ting-En Lin, Yuchuan Wu, Min Yang, Fei Huang, and Yongbin Li. 2023. Constructive large language models alignment with diverse feedback.",
+    "Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric P. Xing, Haotong Zhang, Joseph Gonzalez, and lon Stoica. 2023. Judging Ilm-as-a-judge with mt-bench and chatbot arena. ArXiv, abs/2306.05685."
+  ]
+}

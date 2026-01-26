@@ -1,0 +1,71 @@
+{
+  "filename": "2601.15755.pdf",
+  "title": "Beyond Marginal Distributions: A Framework to Evaluate the Representativeness of Demographic-Aligned LLMs",
+  "arxiv_url": "https://arxiv.org/pdf/2601.15755",
+  "benchmark_measurement": "The benchmark measured the representativeness of LLM responses to survey questions on 'Religious values', which is one of twelve topic categories from the World Values Survey. The evaluation focused on how well the models' marginal response distributions and response variance matched those of human survey takers for this topic.",
+  "religious_groups": [],
+  "models_tested": [
+    "phi-3",
+    "OpinionGPT",
+    "phi-3 with persona prompting"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "World Values Survey (WVS)"
+  ],
+  "continuous_testing": false,
+  "findings": "For the topic of 'Religious Values', both persona prompting and fine-tuning (OpinionGPT) improved the model's ability to approximate human marginal response distributions compared to an unsteered baseline. However, neither method was perfect. The fine-tuned OpinionGPT model tended to 'oversteer' and generate responses with higher variance (more diversity of opinion) than found in the human data. Conversely, persona prompting suppressed response variance, making opinions seem more uniform than they actually are. This indicates that current steering methods struggle to accurately capture the true structure and diversity of human opinions on religious values.",
+  "references": [
+    "Marah Abdin, Jyoti Aneja, Hany Awadalla, Ahmed Awadallah, Ammar Ahmad Awan, Nguyen Bach, Amit Bahree, Arash Bakhtiari, Jianmin Bao, Harkirat Behl, Alon Benhaim, Misha Bilenko, Johan Bjorck, Sébastien Bubeck, Martin Cai, Qin Cai, Vishrav Chaudhary, Dong Chen, Dongdong Chen, and 110 others. 2024. Phi-3 Technical Report: A Highly Capable Language Model Locally on Your Phone. arXiv preprint. Version Number: 4.",
+    "Lisa P. Argyle, Ethan C. Busby, Nancy Fulda, Joshua R. Gubler, Christopher Rytting, and David Wingate. 2023. Out of One, Many: Using Language Models to Simulate Human Samples. Political Analysis, 31(3):337–351.",
+    "James Bisbee, Joshua D. Clinton, Cassy Dorff, Brenton Kenkel, and Jennifer M. Larson. 2024. Synthetic Replacements for Human Survey Data? The Perils of Large Language Models. Political Analysis, 32(4):401–416.",
+    "Tanise Ceron, Neele Falk, Ana Barić, Dmitry Nikolaev, and Sebastian Padó. 2024. Beyond Prompt Brittleness: Evaluating the Reliability and Consistency of Political Worldviews in LLMs. Transactions of the Association for Computational Linguistics, 12:1378–1400.",
+    "Ricardo Dominguez-Olmedo, Moritz Hardt, and Celestine Mendler-Dünner. 2024. Questioning the Survey Responses of Large Language Models. Advances in Neural Information Processing Systems, pages 45850–45878.",
+    "Esin Durmus, Karina Nguyen, Thomas Liao, Nicholas Schiefer, Amanda Askell, Anton Bakhtin, Carol Chen, Zac Hatfield-Dodds, Danny Hernandez, Nicholas Joseph, Liane Lovitt, Sam McCandlish, Orowa Sikder, Alex Tamkin, Janel Thamkul, Jared Kaplan, Jack Clark, and Deep Ganguli. 2024. Towards Measuring the Representation of Subjective Global Opinions in Language Models. arXiv preprint. ArXiv:2306.16388 [cs.CL].",
+    "Shangbin Feng, Chan Young Park, Yuhan Liu, and Yulia Tsvetkov. 2023. From Pretraining Data to Language Models to Downstream Tasks: Tracking the Trails of Political Biases Leading to Unfair NLP Models. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 11737–11762, Toronto, Canada. Association for Computational Linguistics.",
+    "Sasuke Fujimoto and Kazuhiro Takemoto. 2023. Revisiting the political biases of ChatGPT. Frontiers in Artificial Intelligence, 6:1232003.",
+    "Iason Gabriel. 2020. Artificial Intelligence, Values, and Alignment. Minds and Machines, 30(3):411–437.",
+    "Jamie Lynn Goodwin, Andrew Lloyd Williams, and Patricia Snell Herzog. 2020. Cross-Cultural Values: A Meta-Analysis of Major Quantitative Studies in the Last Decade (2010–2020). Religions, 11(8):396. Publisher: Multidisciplinary Digital Publishing Institute.",
+    "Suriya Gunasekar, Yi Zhang, Jyoti Aneja, Caio César Teodoro Mendes, Allie Del Giorno, Sivakanth Gopi, Mojan Javaheripi, Piero Kauffmann, Gustavo de Rosa, Olli Saarikivi, Adil Salim, Shital Shah, Harkirat Singh Behl, Xin Wang, Sébastien Bubeck, Ronen Eldan, Adam Tauman Kalai, Yin Tat Lee, and Yuanzhi Li. 2023. Textbooks Are All You Need. arXiv preprint. Version Number: 2.",
+    "Shashank Gupta, Vaishnavi Shrivastava, Ameet Deshpande, Ashwin Kalyan, Peter Clark, Ashish Sabharwal, and Tushar Khot. 2024. Bias Runs Deep: Implicit Reasoning Biases in Persona-Assigned LLMs. In The Twelfth International Conference on Learning Representations. ArXiv:2311.04892 [cs].",
+    "Christian Haerpfer, Ronald Inglehart, Alejandro Moreno, Christian Welzel, Kseniya Kizilova, Jaime Diez-Medrano, Marta Lagos, Pippa Norris, Eduard Ponarin, and Bi Puranen. 2020. World Values Survey Wave 7 (2017–2020) Cross-National Data-Set.",
+    "Patrick Haller, Ansar Aynetdinov, and Alan Akbik. 2024. OpinionGPT: Modelling Explicit Biases in Instruction-Tuned LLMs. In Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 3: System Demonstrations), pages 78–86, Mexico City, Mexico. Association for Computational Linguistics.",
+    "Jochen Hartmann, Jasper Schwenzow, and Maximilian Witte. 2023. The political ideology of conversational AI: Converging evidence on ChatGPT's pro-environmental, left-libertarian orientation. arXiv preprint. ArXiv:2301.01768 [cs].",
+    "Geert Hofstede. 1980. Culture's Consequences: International Differences in Work-Related Values. Sage.",
+    "Allyson L. Holbrook, Jon A. Krosnick, David Moore, and Roger Tourangeau. 2007. Response Order Effects in Dichotomous Categorical Questions Presented Orally: The Impact of Question and Respondent Attributes. The Public Opinion Quarterly, 71(3):325–348. Publisher: [Oxford University Press, American Association for Public Opinion Research].",
+    "Geoff Hollis, Chris Westbury, and Lianne Lefsrud. 2017. Extrapolating human judgments from skip-gram vector representations of word meaning. Quarterly Journal of Experimental Psychology, 70(8):1603–1619.",
+    "Ari Holtzman, Jan Buys, Li Du, Maxwell Forbes, and Yejin Choi. 2020. The Curious Case of Neural Text Degeneration. In 8th International Conference on Learning Representations (ICLR 2020). ArXiv:1904.09751 [cs].",
+    "Edward J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, and Weizhu Chen. 2021. LoRA: Low-Rank Adaptation of Large Language Models. In 10th International Conference on Learning Representations.",
+    "Ronald Inglehart. 2000. Globalization and postmodern values. The Washington Quarterly, 23(1):215–228.",
+    "Ronald Inglehart and Christian Welzel. 2023. The Inglehart-Welzel World Cultural Map. World Values Survey 7.",
+    "Shariar Kabir, Kevin Esterling, and Yue Dong. 2025. Testing Conviction: An Argumentative Framework for Measuring LLM Political Stability. arXiv preprint. ArXiv:2504.17052 [cs].",
+    "Robert Kirk, Ishita Mediratta, Christoforos Nalmpantis, Jelena Luketina, Eric Hambro, Edward Grefenstette, and Roberta Raileanu. 2024. Understanding the Effects of RLHF on LLM Generalisation and Diversity. In 12th International Conference on Learning Representations.",
+    "Jon A. Krosnick and Duane F. Alwin. 1987. An Evaluation of a Cognitive Theory of Response-Order Effects in Survey Measurement. Public Opinion Quarterly, 51(2):201.",
+    "Alina Leidinger, Robert Van Rooij, and Ekaterina Shutova. 2023. The language of prompting: What linguistic properties make a prompt successful? In Findings of the Association for Computational Linguistics: EMNLP 2023, pages 9210–9232, Singapore. Association for Computational Linguistics.",
+    "Cheng Li, Mengzhuo Chen, Jindong Wang, Sunayana Sitaram, and Xing Xie. 2025. CultureLLM: incorporating cultural differences into large language models. In Proceedings of the 38th International Conference on Neural Information Processing Systems, pages 84799–84838, Red Hook, NY, USA. Curran Associates Inc.",
+    "Percy Liang, Rishi Bommasani, Tony Lee, Dimitris Tsipras, Dilara Soylu, Michihiro Yasunaga, Yian Zhang, Deepak Narayanan, Yuhuai Wu, Ananya Kumar, Benjamin New-Man, Binhang Yuan, Bobby Yan, Ce Zhang, Christian Cosgrove, Christopher D. Manning, Christopher Ré, Diana Acosta-Navas, Drew A. Hudson, and 31 others. 2023. Holistic Evaluation of Language Models. Transactions on Machine Learning Research, 2023-August.",
+    "Christina Lu and Max Van Kleek. 2024. Model Plurality: A Taxonomy for Pluralistic AI. In Pluralistic Alignment Workshop at NeurIPS 2024.",
+    "John Levi Martin. 2023. The Ethico-Political Universe of ChatGPT. Journal of Social Computing, 4(1):1–11.",
+    "Rudra Murthy, Prince Kumar, Praveen Venkateswaran, and Danish Contractor. 2024. Evaluating the Instruction-following Abilities of Language Models using Knowledge Tasks. arXiv preprint. ArXiv:2410.12972 [cs] version: 1.",
+    "Simon Münker. 2025. Fingerprinting LLMs through Survey Item Factor Correlation: A Case Study on Humor Style Questionnaire. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing, pages 245–258, Suzhou, China. Association for Computational Linguistics.",
+    "Ethan Perez, Sam Ringer, Kamile Lukosiute, Karina Nguyen, Edwin Chen, Scott Heiner, Craig Pettit, Catherine Olsson, Sandipan Kundu, Saurav Kadavath, Andy Jones, Anna Chen, Benjamin Mann, Brian Israel, Bryan Seethor, Cameron McKinnon, Christopher Olah, Da Yan, Daniela Amodei, and 44 others. 2023. Discovering language model behaviors with model-written evaluations. In Findings of the Association for Computational Linguistics: ACL 2023, pages 13387–13434, Toronto, Canada. Association for Computational Linguistics.",
+    "Pew Research Center. 2024. Social Media Fact Sheet.",
+    "Shibani Santurkar, Esin Durmus, Faisal Ladhak, Cinoo Lee, Percy Liang, and Tatsunori Hashimoto. 2023. Whose Opinions Do Language Models Reflect? In Proceedings of the 40th International Conference on Machine Learning, pages 29971–30004. PMLR. ISSN: 2640-3498.",
+    "Shalom H. Schwartz. 1992. Universals in the Content and Structure of Values: Theoretical Advances and Empirical Tests in 20 Countries. In Advances in Experimental Social Psychology, volume 25, pages 1–65. Elsevier.",
+    "Indira Sen, Marlene Lutz, Elisa Rogers, David Garcia, and Markus Strohmaier. 2025. Missing the Margins: A Systematic Literature Review on the Demographic Representativeness of LLMs. In Findings of the Association for Computational Linguistics: ACL 2025, pages 24263–24289, Vienna, Austria. Association for Computational Linguistics.",
+    "Taylor Sorensen, Jared Moore, Jillian Fisher, Mitchell Gordon, Niloofar Mireshghallah, Christopher Michael Rytting, Andre Ye, Liwei Jiang, Ximing Lu, Nouha Dziri, Tim Althoff, and Yejin Choi. 2024. Position: a roadmap to pluralistic alignment. In Proceedings of the 41st International Conference on Machine Learning, pages 46280–46302, Vienna, Austria. JMLR.org.",
+    "Joseph Suh, Erfan Jahanparast, Suhong Moon, Minwoo Kang, and Serina Chang. 2025. Language Model Fine-Tuning on Scaled Survey Data for Predicting Distributions of Public Opinions. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 21147–21170, Vienna, Austria. Association for Computational Linguistics.",
+    "Yan Tao, Olga Viberg, Ryan S Baker, and René F Kizilcec. 2024. Cultural Bias and Cultural Alignment of Large Language Models. PNAS Nexus, 3(9):pgae346.",
+    "Cédric Villani. 2009. The Wasserstein distances. In Cédric Villani, editor, Optimal Transport: Old and New, pages 93–111. Springer, Berlin, Heidelberg.",
+    "Franziska Weeber, Tanise Ceron, and Sebastian Padó. 2025. Do Political Opinions Transfer Between Western Languages? An Analysis of Unaligned and Aligned Multilingual LLMs. arXiv preprint. ArXiv:2508.05553 [cs].",
+    "Laura Weidinger, Jonathan Uesato, Maribeth Rauh, Conor Griffin, Po-Sen Huang, John Mellor, Amelia Glaese, Myra Cheng, Borja Balle, Atoosa Kasirzadeh, Courtney Biles, Sasha Brown, Zac Kenton, Will Hawkins, Tom Stepleton, Abeba Birhane, Lisa Anne Hendricks, Laura Rimell, William Isaac, and 4 others. 2022. Taxonomy of Risks posed by Language Models. In Proceedings of the 2022 ACM Conference on Fairness, Accountability, and Transparency, FAccT '22, pages 214–229, New York, NY, USA. Association for Computing Machinery.",
+    "Jiancong Xiao, Ziniu Li, Xingyu Xie, Emily Getzen, Cong Fang, Qi Long, and Weijie J. Su. 2024. On the algorithmic bias of aligning large language models with rlhf: Preference collapse and matching regularization. Journal of the American Statistical Association, 0(ja):1–21.",
+    "Mingqian Zheng, Jiaxin Pei, Lajanugen Logeswaran, Moontae Lee, and David Jurgens. 2024. When 'A Helpful Assistant' Is Not Really Helpful: Personas in System Prompts Do Not Improve Performances of Large Language Models. In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 15126–15154, Miami, Florida, USA. Association for Computational Linguistics."
+  ]
+}

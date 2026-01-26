@@ -1,0 +1,64 @@
+{
+  "filename": "2401.11601.pdf",
+  "title": "Robust Evaluation Measures for Evaluating Social Biases in Masked Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2401.11601",
+  "benchmark_measurement": "The benchmark measured stereotypical bias in religious contexts by comparing the pseudo-log-likelihood (PLL) scores of sentence pairs. For example, it evaluated model preferences for stereotypical sentences like 'The Muslim was a terrorist' versus an anti-stereotypical alternative like 'The Muslim was a hippie', or 'Jewish/Christian people are spoiled and waste money'.",
+  "religious_groups": [
+    "Islam",
+    "Judaism",
+    "Christianity"
+  ],
+  "models_tested": [
+    "BERT",
+    "RoBERTa",
+    "ALBERT"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "StereoSet",
+    "CrowS-Pairs"
+  ],
+  "continuous_testing": false,
+  "findings": "The study found that experimental results for religious bias differed between the StereoSet (SS) and CrowS-Pairs (CP) datasets, likely due to the different ways the sample sentences were constructed. It also highlighted that bias types like religion are inherently difficult to define and detect, and that annotator knowledge can significantly impact the accuracy of the evaluation, potentially leading to inaccurate annotations. For instance, in the SS dataset for the religion category, BERT showed the least bias (KLS score closer to 50), while in the CP dataset, ALBERT had the least bias.",
+  "references": [
+    "Blodgett, S. L.; Lopez, G.; Olteanu, A.; Sim, R.; and Wallach, H. 2021. Stereotyping Norwegian salmon: An inventory of pitfalls in fairness benchmark datasets. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), 1004–1015.",
+    "Bolukbasi, T.; Chang, K.-W.; Zou, J. Y.; Saligrama, V.; and Kalai, A. T. 2016. Man is to computer programmer as woman is to homemaker? debiasing word embeddings. Advances in neural information processing systems, 29.",
+    "Brown, T.; Mann, B.; Ryder, N.; Subbiah, M.; Kaplan, J. D.; Dhariwal, P.; Neelakantan, A.; Shyam, P.; Sastry, G.; Askell, A.; et al. 2020. Language models are few-shot learners. Advances in neural information processing systems, 33: 1877–1901.",
+    "Caliskan, A.; Bryson, J. J.; and Narayanan, A. 2017. Semantics derived automatically from language corpora contain human-like biases. Science, 356(6334): 183–186.",
+    "De-Arteaga, M.; Romanov, A.; Wallach, H.; Chayes, J.; Borgs, C.; Chouldechova, A.; Geyik, S.; Kenthapadi, K.; and Kalai, A. T. 2019. Bias in Bios: A Case Study of Semantic Representation Bias in a High-Stakes Setting. In Proceedings of the Conference on Fairness, Accountability, and Transparency, FAT* '19, 120–128. New York, NY, USA: Association for Computing Machinery. ISBN 9781450361255.",
+    "Devlin, J.; Chang, M.-W.; Lee, K.; and Toutanova, K. 2019. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), 4171–4186. Minneapolis, Minnesota: Association for Computational Linguistics.",
+    "Endres, D. M.; and Schindelin, J. E. 2003. A new metric for probability distributions. IEEE Transactions on Information theory, 49(7): 1858–1860.",
+    "Fuglede, B.; and Topsoe, F. 2004. Jensen-Shannon divergence and Hilbert space embedding. In International Symposium onInformation Theory, 2004. ISIT 2004. Proceedings., 31. IEEE.",
+    "Howard, J.; and Ruder, S. 2018. Universal Language Model Fine-tuning for Text Classification. In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), 328–339. Melbourne, Australia: Association for Computational Linguistics.",
+    "Kaneko, M.; and Bollegala, D. 2022. Unmasking the mask-evaluating social biases in masked language models. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 36, 11954–11962.",
+    "Kozachenko, L. F.; and Leonenko, N. N. 1987. Sample estimate of the entropy of a random vector. Problemy Peredachi Informatsii, 23(2): 9–16.",
+    "Kraskov, A.; Stögbauer, H.; and Grassberger, P. 2004. Estimating mutual information. Physical review E, 69(6): 066138.",
+    "Kullback, S.; and Leibler, R. A. 1951. On information and sufficiency. The annals of mathematical statistics, 22(1): 79–86.",
+    "Lan, Z.; Chen, M.; Goodman, S.; Gimpel, K.; Sharma, P.; and Soricut, R. 2019. ALBERT: A Lite BERT for Self-supervised Learning of Language Representations. In International Conference on Learning Representations.",
+    "Liu, Y.; and Hou, Y. 2023. Mining Effective Features Using Quantum Entropy for Humor Recognition. In Findings of the Association for Computational Linguistics: EACL 2023, 2048–2053. Dubrovnik, Croatia: Association for Computational Linguistics.",
+    "Liu, Y.; Ott, M.; Goyal, N.; Du, J.; Joshi, M.; Chen, D.; Levy, O.; Lewis, M.; Zettlemoyer, L.; and Stoyanov, V. 2019. Roberta: A robustly optimized bert pretraining approach. arXiv preprint arXiv:1907.11692.",
+    "May, C.; Wang, A.; Bordia, S.; Bowman, S.; and Rudinger, R. 2019. On Measuring Social Biases in Sentence Encoders. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), 622–628.",
+    "May, J.; Knight, K.; and Vogler, H. 2010. Efficient inference through cascades of weighted tree transducers. In Proceedings of the 48th Annual Meeting of the Association for Computational Linguistics, 1058–1066.",
+    "Nadeem, M.; Bethke, A.; and Reddy, S. 2021. StereoSet: Measuring stereotypical bias in pretrained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), 5356–5371.",
+    "Nangia, N.; Vania, C.; Bhalerao, R.; and Bowman, S. 2020. CrowS-Pairs: A Challenge Dataset for Measuring Social Biases in Masked Language Models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), 1953–1967.",
+    "Parzen, E. 1962. On estimation of a probability density function and mode. The annals of mathematical statistics, 33(3): 1065–1076.",
+    "Pennington, J.; Socher, R.; and Manning, C. D. 2014. Glove: Global vectors for word representation. In Proceedings of the 2014 conference on empirical methods in natural language processing (EMNLP), 1532–1543.",
+    "Peters, M. E.; Neumann, M.; Iyyer, M.; Gardner, M.; Clark, C.; Lee, K.; and Zettlemoyer, L. 2018. Deep Contextualized Word Representations. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers), 2227–2237. New Orleans, Louisiana: Association for Computational Linguistics.",
+    "Radford, A.; Wu, J.; Child, R.; Luan, D.; Amodei, D.; Sutskever, I.; et al. 2019. Language models are unsupervised multitask learners. OpenAI blog, 1(8): 9.",
+    "Rosenblatt, M. 1956. Remarks on some nonparametric estimates of a density function. The annals of mathematical statistics, 832–837.",
+    "Ross, B. C. 2014. Mutual information between discrete and continuous data sets. PloS one, 9(2): e87357.",
+    "Rozado, D. 2020. Wide range screening of algorithmic bias in word embedding models using large sentiment lexicons reveals underreported bias types. PloS one, 15(4): e0231189.",
+    "Salazar, J.; Liang, D.; Nguyen, T. Q.; and Kirchhoff, K. 2020. Masked Language Model Scoring. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, 2699–2712. Online: Association for Computational Linguistics.",
+    "Sarmas, E.; Dimitropoulos, N.; Marinakis, V.; Mylona, Z.; and Doukas, H. 2022. Transfer learning strategies for solar power forecasting under data scarcity. Scientific Reports, 12(1): 14643.",
+    "Shapiro, S. S.; and Wilk, M. B. 1965. An analysis of variance test for normality (complete samples)†. Biometrika, 52(3-4): 591–611.",
+    "Wang, A.; and Cho, K. 2019. BERT has a Mouth, and It Must Speak: BERT as a Markov Random Field Language Model. In Proceedings of the Workshop on Methods for Optimizing and Evaluating Neural Language Generation, 30–36. Minneapolis, Minnesota: Association for Computational Linguistics.",
+    "Webster, K.; Wang, X.; Tenney, I.; Beutel, A.; Pitler, E.; Pavlick, E.; Chen, J.; Chi, E.; and Petrov, S. 2020. Measuring and reducing gendered correlations in pre-trained models. arXiv preprint arXiv:2010.06032.",
+    "Zhao, J.; Wang, T.; Yatskar, M.; Ordonez, V.; and Chang, K.-W. 2018. Gender Bias in Coreference Resolution: Evaluation and Debiasing Methods. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), 15–20."
+  ]
+}

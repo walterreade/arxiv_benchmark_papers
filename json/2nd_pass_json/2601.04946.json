@@ -1,0 +1,72 @@
+{
+  "filename": "2601.04946.pdf",
+  "title": "Prototypicality Bias Reveals Blindspots in Multimodal Evaluation Metrics",
+  "arxiv_url": "https://arxiv.org/pdf/2601.04946",
+  "benchmark_measurement": "The benchmark measured stereotypical bias by pairing religious identities (Christian as a 'privileged' group; Muslim and Jewish as 'disadvantaged' groups) with positive or negative socio-attributes like wealth, intellect, and morality. It tested whether evaluation metrics would incorrectly favor a stereotypical but semantically incorrect image over a non-stereotypical but semantically correct one.",
+  "religious_groups": [
+    "Christianity",
+    "Islam",
+    "Judaism"
+  ],
+  "models_tested": [
+    "CLIPScore",
+    "PickScore",
+    "VQAScore",
+    "GPT-4o",
+    "GPT-5",
+    "PROTOSCORE",
+    "Qwen2.5-VL-7B-Instruct"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "MMBIAS",
+    "FAIRPIVARA"
+  ],
+  "continuous_testing": false,
+  "findings": "Evaluation metrics exhibit significant 'prototypicality bias' in the religious domain. They frequently and incorrectly prefer images that align with social stereotypes (e.g., pairing a privileged religious identity like Christian with a positive attribute like 'intelligent') over images that are semantically faithful to a non-stereotypical prompt (e.g., an 'uneducated Christian'), even when the latter is explicitly requested. This failure was particularly prominent in metrics like CLIPScore and PickScore, demonstrating their vulnerability to socially grounded biases.",
+  "references": [
+    "Joy Buolamwini and Timnit Gebru. 2018. Gender shades: Intersectional accuracy disparities in com- mercial gender classification. In Proceedings of the 1st Conference on Fairness, Accountability and Transparency, volume 81 of Proceedings of Machine Learning Research, pages 77–91. PMLR.",
+    "Yanran Chen and Steffen Eger. 2023. Menli: Robust evaluation metrics from natural language inference. Preprint, arXiv:2208.07316.",
+    "Juan Manuel Contreras. 2025. Automated evaluation of gender bias across 13 large multimodal models. 2509.07050v1.",
+    "Xiang Dai, Sarvnaz Karimi, and Biaoyan Fang. 2024. A critical look at meta-evaluating summarisation evalu- ation metrics. 2409.19507v1.",
+    "Wentao Ge, Shunian Chen, Guiming Hardy Chen, Jun- ying Chen, Zhihong Chen, Nuo Chen, Wenya Xie, Shuo Yan, Chenghao Zhu, Ziyue Lin, Song Dingjie, Xidong Wang, Anningzhe Gao, Zhang Zhiyi, Jian- quan Li, Xiang Wan, and Benyou Wang. 2023. Mllm- bench: Evaluating multimodal llms with per-sample criteria. 2311.13951v3.",
+    "Leander Girrbach, Stephan Alaniz, Genevieve Smith, Trevor Darrell, and Zeynep Akata. 2025. Person- centric annotations of laion-400m: Auditing bias and its transfer to models. 2510.03721v1.",
+    "Tianxing He, Jingyu Zhang, Tianle Wang, Sachin Kumar, Kyunghyun Cho, James Glass, and Yulia Tsvetkov. 2023. On the blind spots of model-based evaluation metrics for text generation. In Proceed- ings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 12067-12097, Toronto, Canada. Association for Computational Linguistics.",
+    "Jack Hessel, Ari Holtzman, Maxwell Forbes, Ronan Le Bras, and Yejin Choi. 2022. Clipscore: A reference- free evaluation metric for image captioning. Preprint, arXiv:2104.08718.",
+    "Yusuke Hirota, Ryo Hachiuma, Boyi Li, Ximing Lu, Michael Ross Boone, Boris Ivanovic, Yejin Choi, Marco Pavone, Yu-Chiang Frank Wang, Noa Garcia, Yuta Nakashima, and Chao-Han Huck Yang. 2025. Bias in gender bias benchmarks: How spurious fea- tures distort evaluation. 2509.07596v2.",
+    "Yerin Hwang, Dongryeol Lee, Kyungmin Min, Taeg- wan Kang, Yong il Kim, and Kyomin Jung. 2025. Fooling the lvlm judges: Visual biases in lvlm-based evaluation. 2505.15249v1.",
+    "Sepehr Janghorbani and Gerard de Melo. 2023. Multi- modal bias: Introducing a framework for stereotypi- cal bias assessment beyond gender and race in vision language models. Preprint, arXiv:2303.12734.",
+    "Yukun Jiang, Zheng Li, Xinyue Shen, Yugeng Liu, Michael Backes, and Yang Zhang. 2024. ModSCAN: Measuring stereotypical bias in large vision-language models from vision and language modalities. 2410.06967v1.",
+    "Yuval Kirstain, Adam Polyak, Uriel Singer, Shahbuland Matiana, Joe Penna, and Omer Levy. 2023. Pick-a- pic: An open dataset of user preferences for text-to- image generation. Preprint, arXiv:2305.01569.",
+    "Tony Lee, Haoqin Tu, Chi Heem Wong, Zijun Wang, Siwei Yang, Yifan Mai, Yuyin Zhou, Cihang Xie, and Percy Liang. 2025. Ahelm: A holistic evaluation of audio-language models. 2508.21376v2.",
+    "Christoph Leiter, Yuki M. Asano, Margret Keuper, and Steffen Eger. 2025. Croc: Evaluating and training t2i metrics with pseudo- and human-labeled contrastive robustness checks. arXiv preprint arXiv:2505.11314.",
+    "Christoph Leiter and Steffen Eger. 2024. PrExMe! large scale prompt exploration of open source LLMs for machine translation and summarization evaluation. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, Miami, Florida, USA. Association for Computational Lin- guistics.",
+    "Zhiqiu Lin, Deepak Pathak, Baiqi Li, Jiayao Li, Xide Xia, Graham Neubig, Pengchuan Zhang, and Deva Ramanan. 2024. Evaluating text-to-visual gen- eration with image-to-text generation. Preprint, arXiv:2404.01291.",
+    "Hanjun Luo, Haoyu Huang, Ziye Deng, Xinfeng Li, Hewei Wang, Yingbin Jin, Yang Liu, Wenyuan Xu, and Zuozhu Liu. 2024. Bigbench: A unified bench- mark for evaluating multi-dimensional social biases in text-to-image models. 2407.15240v6.",
+    "Debbie S. Ma and Joshua Correll. 2011. Target pro- totypicality moderates racial bias in the decision to shoot. Journal of Experimental Social Psychology, 47(2):391-396.",
+    "Divyam Madaan, Varshan Muhunthan, Kyunghyun Cho, and Sumit Chopra. 2025. Multi-modal data spec- trum: Multi-modal datasets are multi-dimensional. 2509.23499v1.",
+    "P. McIntosh. 1988. White Privilege and Male Privilege: A Personal Account of Coming to See Correspon- dences Through Work in Women's Studies. Working paper (Wellesley College. Center for Research on Women). Wellesley College, Center for Research on Women.",
+    "Ninareh Mehrabi, Fred Morstatter, Nripsuta Saxena, Kristina Lerman, and Aram Galstyan. 2022. A survey on bias and fairness in machine learning. Preprint, arXiv:1908.09635.",
+    "Diego A. B. Moreira, Alef Iury Ferreira, Jhessica Silva, Gabriel Oliveira dos Santos, Luiz Pereira, João Medrado Gondim, Gustavo Bonil, Helena Maia, Nádia da Silva, Simone Tiemi Hashiguti, Je- fersson A. dos Santos, Helio Pedrini, and Sandra Avila. 2024. Fairpivara: Reducing and assessing biases in clip-based multimodal models. Preprint, arXiv:2409.19474.",
+    "Rahul Nair, Bhanu Tokas, and Hannah Kerner. 2025. A woman with a knife or a knife with a woman? measuring directional bias amplification in image captions. 2503.07878v4.",
+    "Aravind Narayanan, Vahid Reza Khazaie, and Shaina Raza. 2025. Bias in the picture: Benchmarking vlms with social-cue news images and Ilm-as-judge assess- ment. 2509.19659v1.",
+    "Vishal Narnaware, Ashmal Vayani, Rohit Gupta, Sirnam Swetha, and Mubarak Shah. 2025. Sb-bench: Stereo- type bias benchmark for large multimodal models. 2502.08779v2.",
+    "Chahat Raj, Bowen Wei, Aylin Caliskan, Antonios Anas- tasopoulos, and Ziwei Zhu. 2025. Vignette: Socially grounded bias evaluation for vision-language models. 2505.22897v1.",
+    "Adrienne Rich. 1980. Compulsory heterosexuality and lesbian existence. Signs: Journal of Women in Cul- ture and Society, 5(4):631-660.",
+    "Eleanor Rosch. 1975. Cognitive representations of se- mantic categories. Journal of Experimental Psychol- ogy: General, 104(3):192–233.",
+    "Muna Numan Said, Aarib Zaidi, Rabia Usman, Sonia Okon, Praneeth Medepalli, Kevin Zhu, Vasu Sharma, and Sean O'Brien. 2025. Deconstructing bias: A multifaceted framework for diagnosing cultural and compositional inequities in text-to-image generative models. 2505.01430v1.",
+    "Huichan Seo, Sieun Choi, Minki Hong, Yi Zhou, Junseo Kim, Lukman Ismaila, Naome Etori, Mehul Agarwal, Zhixuan Liu, Jihie Kim, and Jean Oh. 2025. Expos- ing blindspots: Cultural bias evaluation in generative image models. 2510.20042v1.",
+    "Zhihong Shao, Peiyi Wang, Qihao Zhu, Runxin Xu, Junxiao Song, Xiao Bi, Haowei Zhang, Mingchuan Zhang, Y. K. Li, Y. Wu, and Daya Guo. 2024. Deepseekmath: Pushing the limits of mathemati- cal reasoning in open language models. Preprint, arXiv:2402.03300.",
+    "Yifan Shen, Yangyang Shu, Hye young Paik, and Yulei Sui. 2025. Metalogic: Robustness evaluation of text- to-image models via logically equivalent prompts. Preprint, arXiv:2510.00796.",
+    "Eric Slyman, Mehrab Tanjim, Kushal Kafle, and Stefan Lee. 2025. Calibrating mllm-as-a-judge via multi- modal bayesian prompt ensembles. 2509.08777v1.",
+    "Yixin Wan, Arjun Subramonian, Anaelia Ovalle, Zongyu Lin, Ashima Suvarna, Christina Chance, Hritik Bansal, Rebecca Pattichis, and Kai-Wei Chang. 2024. Survey of bias in text-to-image generation: Definition, evaluation, and mitigation. 2404.01030v3.",
+    "Youze Wang, Zijun Chen, Ruoyu Chen, Shishen Gu, Wenbo Hu, Jiayang Liu, Yinpeng Dong, Hang Su, Jun Zhu, Meng Wang, and Richang Hong. 2025. Understanding and benchmarking the trustworthi- ness in multimodal llms for video understanding. 2506.12336v2.",
+    "Wenqian Ye, Guangtao Zheng, Yunsheng Ma, Xu Cao, Bolin Lai, James M. Rehg, and Aidong Zhang. 2024. Mm-spubench: Towards better understanding of spu- rious biases in multimodal llms. 2406.17126v1."
+  ]
+}

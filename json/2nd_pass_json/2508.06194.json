@@ -1,0 +1,82 @@
+{
+  "filename": "2508.06194.pdf",
+  "title": "SceneJailEval: A Scenario-Adaptive Multi-Dimensional Framework for Jailbreak Evaluation",
+  "arxiv_url": "https://arxiv.org/pdf/2508.06194",
+  "benchmark_measurement": "The benchmark measures the generation of harmful content related to region-specific sensitivities, which explicitly includes religious taboos. This falls under the 'Regional Sensitive Issues' scenario, designed to evaluate risks from content shaped by religion and culture.",
+  "religious_groups": [
+    "Religion (general)"
+  ],
+  "models_tested": [
+    "GPT-40",
+    "Claude-3.5",
+    "Gemini-2.5",
+    "Llama-3-8b",
+    "Llama-2-7b"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "MLCommons AILuminate v1.0",
+    "JBB",
+    "JailJudge",
+    "Safe-RLHF"
+  ],
+  "continuous_testing": false,
+  "findings": "Large Language Models are particularly vulnerable to generating harmful or prohibited content related to regional and religious sensitivities. The 'Regional Sensitive Issues' scenario consistently challenged all tested models, showing high attack success rates, with GPT-40 being the most vulnerable in this category (70.37% ASR).",
+  "references": [
+    "Abdin, M.; Aneja, J.; Behl, H.; Bubeck, S.; Eldan, R.; Gunasekar, S.; Harrison, M.; Hewett, R. J.; Javaheripi, M.; Kauffmann, P.; et al. 2024. Phi-4 technical report. arXiv preprint arXiv:2412.08905.",
+    "Banerjee, S.; Layek, S.; Hazra, R.; and Mukherjee, A. 2025. How (un) ethical are instruction-centric responses of llms? unveiling the vulnerabilities of safety guardrails to harmful queries. In Proceedings of the International AAAI Conference on Web and Social Media, volume 19, 193–205.",
+    "Cai, H.; Arunasalam, A.; Lin, L. Y.; Bianchi, A.; and Celik, Z. B. 2024. Rethinking how to evaluate language model jailbreak. arXiv preprint arXiv:2404.06407.",
+    "Chao, P.; Debenedetti, E.; Robey, A.; Andriushchenko, M.; Croce, F.; Sehwag, V.; Dobriban, E.; Flammarion, N.; Pappas, G. J.; Tramer, F.; et al. 2024. Jailbreakbench: An open robustness benchmark for jailbreaking large language models. Advances in Neural Information Processing Systems, 37: 55005–55029.",
+    "Chao, P.; Robey, A.; Dobriban, E.; Hassani, H.; Pappas, G. J.; and Wong, E. 2025. Jailbreaking black box large language models in twenty queries. In 2025 IEEE Conference on Secure and Trustworthy Machine Learning (SaTML), 23–42. IEEE.",
+    "Cheng, Z.; Wu, X.; Yu, J.; Han, S.; Cai, X.-Q.; and Xing, X. 2024. Soft-label integration for robust toxicity classification. Advances in Neural Information Processing Systems, 37: 94776–94807.",
+    "Chi, J.; Karn, U.; Zhan, H.; Smith, E.; Rando, J.; Zhang, Y.; Plawiak, K.; Coudert, Z. D.; Upasani, K.; and Pasupuleti, M. 2024. Llama Guard 3 Vision: Safeguarding Human-AI Image Understanding Conversations. arXiv:2411.10414.",
+    "Dai, J.; Pan, X.; Sun, R.; Ji, J.; Xu, X.; Liu, M.; Wang, Y.; and Yang, Y. 2024. Safe RLHF: Safe Reinforcement Learning from Human Feedback. In The Twelfth International Conference on Learning Representations.",
+    "Dalkey, N.; and Helmer, O. 1963. An experimental application of the Delphi method to the use of experts. Management science, 9(3): 458–467.",
+    "Ding, P.; Kuang, J.; Ma, D.; Cao, X.; Xian, Y.; Chen, J.; and Huang, S. 2023. A wolf in sheep’s clothing: Generalized nested jailbreak prompts can fool large language models easily. arXiv preprint arXiv:2311.08268.",
+    "Du, Y.; Zhao, S.; Ma, M.; Chen, Y.; and Qin, B. 2023. Analyzing the inherent response tendency of llms: Real-world instructions-driven jailbreak. arXiv preprint arXiv:2312.04127.",
+    "EU. 2024. Artificial Intelligence Act. Retrieved from https://artificialintelligenceact.eu/.",
+    "Fu, J.; Ng, S.-K.; Jiang, Z.; and Liu, P. 2023. Gptscore: Evaluate as you desire. arXiv preprint arXiv:2302.04166.",
+    "Gehman, S.; Gururangan, S.; Sap, M.; Choi, Y.; and Smith, N. A. 2020. Realtoxicityprompts: Evaluating neural toxic degeneration in language models. arXiv preprint arXiv:2009.11462.",
+    "Ghosh, S.; Frase, H.; Williams, A.; Luger, S.; Röttger, P.; Barez, F.; McGregor, S.; Fricklas, K.; Kumar, M.; Bollacker, K.; et al. 2025. Ailuminate: Introducing v1. 0 of the ai risk and reliability benchmark from mlcommons. arXiv preprint arXiv:2503.05731.",
+    "Howard, M.; and LeBlanc, D. 2003. Writing secure code. Pearson Education.",
+    "Huang, R.; Wang, X.; Li, Z.; Wu, D.; and Wang, S. 2025. Guidedbench: Equipping jailbreak evaluation with guidelines. arXiv preprint arXiv:2502.16903.",
+    "Huang, Y.; Gupta, S.; Xia, M.; Li, K.; and Chen, D. 2023. Catastrophic jailbreak of open-source llms via exploiting generation. arXiv preprint arXiv:2310.06987.",
+    "Inan, H.; Upasani, K.; Chi, J.; Rungta, R.; Iyer, K.; Mao, Y.; Tontchev, M.; Hu, Q.; Fuller, B.; Testuggine, D.; and Khabsa, M. 2023. Llama Guard: LLM-based Input-Output Safeguard for Human-AI Conversations. arXiv:2312.06674.",
+    "Ji, J.; Liu, M.; Dai, J.; Pan, X.; Zhang, C.; Bian, C.; Chen, B.; Sun, R.; Wang, Y.; and Yang, Y. 2023. BeaverTails: Towards Improved Safety Alignment of LLM via a Human-Preference Dataset. In Oh, A.; Naumann, T.; Globerson, A.; Saenko, K.; Hardt, M.; and Levine, S., eds., Advances in Neural Information Processing Systems, volume 36, 24678–24704. Curran Associates, Inc.",
+    "Lapid, R.; Langberg, R.; and Sipper, M. 2023. Open sesame! universal black box jailbreaking of large language models. arXiv preprint arXiv:2309.01446.",
+    "Liao, Z.; and Sun, H. 2024. Amplegcg: Learning a universal and transferable generative model of adversarial suffixes for jailbreaking both open and closed Ilms. arXiv preprint arXiv:2404.07921.",
+    "Liu, F.; Feng, Y.; Xu, Z.; Su, L.; Ma, X.; Yin, D.; and Liu, H. 2024a. JAILJUDGE: A Comprehensive Jailbreak Judge Benchmark with Multi-Agent Enhanced Explanation Evaluation Framework. arXiv:2410.12855.",
+    "Liu, T.; Zhang, Y.; Zhao, Z.; Dong, Y.; Meng, G.; and Chen, K. 2024b. Making them ask and answer: Jailbreaking large language models in few queries via disguise and reconstruction. In 33rd USENIX Security Symposium (USENIX Security 24), 4711–4728.",
+    "Liu, X.; Xu, N.; Chen, M.; and Xiao, C. 2023a. Autodan: Generating stealthy jailbreak prompts on aligned large language models. arXiv preprint arXiv:2310.04451.",
+    "Liu, Y.; Cong, T.; Zhao, Z.; Backes, M.; Shen, Y.; and Zhang, Y. 2023b. Robustness Over Time: Understanding Adversarial Examples’ Effectiveness on Longitudinal Versions of Large Language Models. arXiv preprint arXiv:2308.07847.",
+    "Mazeika, M.; Phan, L.; Yin, X.; Zou, A.; Wang, Z.; Mu, N.; Sakhaee, E.; Li, N.; Basart, S.; Li, B.; et al. 2024. Harmbench: A standardized evaluation framework for automated red teaming and robust refusal. arXiv preprint arXiv:2402.04249.",
+    "Mell, P.; Scarfone, K.; and Romanosky, S. 2007. Common vulnerability scoring system. IEEE Security & Privacy, 4(6): 85–89.",
+    "Nalic, D.; Mihalj, T.; Bäumler, M.; Lehmann, M.; Eichberger, A.; and Bernsteiner, S. 2020. Scenario based testing of automated driving systems: A literature survey. In FISITA web Congress, volume 10.",
+    "NIST. 2023. Artificial Intelligence Risk Management Framework. Retrieved from https://www.nist.gov/itl/ai-risk-management-framework.",
+    "Paulus, A.; Zharmagambetov, A.; Guo, C.; Amos, B.; and Tian, Y. 2024. Advprompter: Fast adaptive adversarial prompting for llms. arXiv preprint arXiv:2404.16873.",
+    "Qi, X.; Huang, K.; Panda, A.; Henderson, P.; Wang, M.; and Mittal, P. 2024. Visual Adversarial Examples Jailbreak Aligned Large Language Models. Proceedings of the AAAI Conference on Artificial Intelligence, 38(19): 21527–21536. Publisher Copyright: Copyright © 2024, Association for the Advancement of Artificial Intelligence (www.aaai.org). All rights reserved.; 38th AAAI Conference on Artificial Intelligence, AAAI 2024 ; Conference date: 20-02-2024 Through 27-02-2024.",
+    "Qiu, H.; Zhang, S.; Li, A.; He, H.; and Lan, Z. 2023. Latent jailbreak: A benchmark for evaluating text safety and output robustness of large language models. arXiv preprint arXiv:2307.08487.",
+    "Rauh, M.; Mellor, J.; Uesato, J.; Huang, P.-S.; Welbl, J.; Weidinger, L.; Dathathri, S.; Glaese, A.; Irving, G.; Gabriel, I.; et al. 2022. Characteristics of harmful text: Towards rigorous benchmarking of language models. Advances in Neural Information Processing Systems, 35: 24720–24739.",
+    "Ryser, J.; and Glinz, M. 1999. A scenario-based approach to validating and testing software systems using statecharts.",
+    "Saaty, T. L. 1980. The analytic hierarchy process mcgraw hill, New York. Agricultural Economics Review, 70(804): 10–21236.",
+    "Shen, X.; Chen, Z.; Backes, M.; Shen, Y.; and Zhang, Y. 2024. “do anything now”: Characterizing and evaluating in-the-wild jailbreak prompts on large language models. In Proceedings of the 2024 on ACM SIGSAC Conference on Computer and Communications Security, 1671–1685.",
+    "Shu, D.; Zhang, C.; Jin, M.; Zhou, Z.; and Li, L. 2025. Attackeval: How to evaluate the effectiveness of jailbreak attacking on large language models. ACM SIGKDD Explorations Newsletter, 27(1): 10–19.",
+    "Souly, A.; Lu, Q.; Bowen, D.; Trinh, T.; Hsieh, E.; Pandey, S.; Abbeel, P.; Svegliato, J.; Emmons, S.; Watkins, O.; et al. 2024. A strongreject for empty jailbreaks. Advances in Neural Information Processing Systems, 37: 125416–125440.",
+    "Sun, J.; Zhang, H.; Zhou, H.; Yu, R.; and Tian, Y. 2021. Scenario-based test automation for highly automated vehicles: A review and paving the way for systematic safety assurance. IEEE transactions on intelligent transportation systems, 23(9): 14088–14103.",
+    "Sutcliffe, A. G.; Maiden, N. A.; Minocha, S.; and Manuel, D. 1998. Supporting scenario-based requirements engineering. IEEE Transactions on software engineering, 24(12): 1072–1088.",
+    "Xiao, Z.; Yang, Y.; Chen, G.; and Chen, Y. 2024. Distract large language models for automatic jailbreak attack. arXiv preprint arXiv:2403.08424.",
+    "Yu, X.; Blanco, E.; and Hong, L. 2022. Hate speech and counter speech detection: Conversational context does matter. arXiv preprint arXiv:2206.06423.",
+    "Yuan, Z.; Xiong, Z.; Zeng, Y.; Yu, N.; Jia, R.; Song, D.; and Li, B. 2024. Rigorllm: Resilient guardrails for large language models against undesired content. arXiv preprint arXiv:2403.13031.",
+    "Zeng, Y.; Wu, Y.; Zhang, X.; Wang, H.; and Wu, Q. 2024. Autodefense: Multi-agent Ilm defense against jailbreak attacks. arXiv preprint arXiv:2403.04783.",
+    "Zhang, H.; Guo, Z.; Zhu, H.; Cao, B.; Lin, L.; Jia, J.; Chen, J.; and Wu, D. 2024a. Jailbreak open-sourced large language models via enforced decoding. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), 5475–5493.",
+    "Zhang, Y.; Ding, L.; Zhang, L.; and Tao, D. 2024b. Intention analysis makes llms a good jailbreak defender. arXiv preprint arXiv:2401.06561.",
+    "Zheng, L.; Chiang, W.-L.; Sheng, Y.; Zhuang, S.; Wu, Z.; Zhuang, Y.; Lin, Z.; Li, Z.; Li, D.; Xing, E.; et al. 2023. Judging Ilm-as-a-judge with mt-bench and chatbot arena. Advances in neural information processing systems, 36: 46595–46623.",
+    "Zou, A.; Wang, Z.; Carlini, N.; Nasr, M.; Kolter, J. Z.; and Fredrikson, M. 2023. Universal and transferable adversarial attacks on aligned language models. arXiv preprint arXiv:2307.15043."
+  ]
+}

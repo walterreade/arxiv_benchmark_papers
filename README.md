@@ -10,12 +10,35 @@ This project provides tools to:
 3. Perform a deep-dive second-pass analysis on relevant papers
 4. Generate summary statistics and learnings from the analysis
 
+## Project Structure
+
+```
+├── scripts/                    # Python scripts
+│   ├── download_arxiv_benchmark_papers.py
+│   ├── 1st_pass_analyze_papers.py
+│   ├── 2nd_pass_analyze_papers.py
+│   ├── create_summary.py
+│   └── check_lds_mentions.py
+├── json/                       # JSON analysis output
+│   ├── 1st_pass_json/
+│   └── 2nd_pass_json/
+├── analysis/                   # Generated markdown reports
+│   ├── benchmark_analysis.md
+│   ├── benchmark_learnings.md
+│   └── benchmark_summary.md
+├── csv/                        # CSV data files
+│   ├── 1st_pass_results.csv
+│   ├── 1st_pass_failures.csv
+│   └── 2nd_pass_failures.csv
+└── pdf/                        # Downloaded PDF papers
+```
+
 ## Scripts
 
-### `download_arxiv_benchmark_papers.py`
+### `scripts/download_arxiv_benchmark_papers.py`
 Downloads PDF papers from arXiv based on configured search parameters.
 
-### `1st_pass_analyze_papers.py`
+### `scripts/1st_pass_analyze_papers.py`
 Performs initial analysis on downloaded PDFs using the Gemini API to determine:
 - Whether the paper is benchmark-related
 - Whether it's LLM-related
@@ -24,7 +47,7 @@ Performs initial analysis on downloaded PDFs using the Gemini API to determine:
 
 **Output:** `1st_pass_results.csv`
 
-### `2nd_pass_analyze_papers.py`
+### `scripts/2nd_pass_analyze_papers.py`
 Performs deep-dive analysis on papers identified as faith/ethics-related in the first pass. Extracts:
 - Religious groups studied
 - Models tested
@@ -38,35 +61,38 @@ Performs deep-dive analysis on papers identified as faith/ethics-related in the 
 
 **Usage:**
 ```bash
-uv run 2nd_pass_analyze_papers.py [--rpm 10] [--workers 5] [--model gemini-2.5-pro] [--reprocess]
+uv run scripts/2nd_pass_analyze_papers.py [--rpm 10] [--workers 5] [--model gemini-2.5-pro] [--reprocess]
 ```
 
-**Output:** JSON files in `2nd_pass_json/`
+**Output:** JSON files in `json/2nd_pass_json/`
 
-### `create_summary.py`
+### `scripts/create_summary.py`
 Processes the JSON analysis files and generates markdown summaries.
 
 **Usage:**
 ```bash
-uv run create_summary.py [--json_dir 2nd_pass_json] [--output benchmark_analysis.md] [--learnings benchmark_learnings.md] [--summary benchmark_summary.md] [--summary-model gemini-3-pro-preview]
+uv run scripts/create_summary.py
 ```
 
 **Outputs:**
-- `benchmark_analysis.md` - Statistical tables (religious groups, models, benchmarks, languages, etc.)
-- `benchmark_learnings.md` - Individual paper entries with findings
-- `benchmark_summary.md` - AI-generated summary of the state of religious bias measurement in LLMs
+- `analysis/benchmark_analysis.md` - Statistical tables (religious groups, models, benchmarks, languages, etc.)
+- `analysis/benchmark_learnings.md` - Individual paper entries with findings
+- `analysis/benchmark_summary.md` - AI-generated summary of the state of religious bias measurement in LLMs
+
+### `scripts/check_lds_mentions.py`
+Utility script to check for Latter-day Saint/Mormon mentions in analyzed papers.
 
 ## Output Files
 
 | File | Description |
 |------|-------------|
-| `1st_pass_results.csv` | Results from initial paper screening |
-| `1st_pass_failures.csv` | Papers that failed first-pass analysis |
-| `2nd_pass_json/` | Directory containing detailed JSON analysis for each paper |
-| `2nd_pass_failures.csv` | Papers that failed second-pass analysis |
-| `benchmark_analysis.md` | Summary tables with counts of religious groups, models, benchmarks, etc. |
-| `benchmark_learnings.md` | Detailed findings from each analyzed paper |
-| `benchmark_summary.md` | AI-generated comprehensive summary of the field |
+| `csv/1st_pass_results.csv` | Results from initial paper screening |
+| `csv/1st_pass_failures.csv` | Papers that failed first-pass analysis |
+| `json/2nd_pass_json/` | Directory containing detailed JSON analysis for each paper |
+| `csv/2nd_pass_failures.csv` | Papers that failed second-pass analysis |
+| `analysis/benchmark_analysis.md` | Summary tables with counts of religious groups, models, benchmarks, etc. |
+| `analysis/benchmark_learnings.md` | Detailed findings from each analyzed paper |
+| `analysis/benchmark_summary.md` | AI-generated comprehensive summary of the field |
 
 ## Setup
 

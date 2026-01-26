@@ -1,0 +1,72 @@
+{
+  "filename": "2503.18288.pdf",
+  "title": "TIB-STC: A Large-Scale Structured Tibetan Dataset for Low-Resource Language Modeling",
+  "arxiv_url": "https://arxiv.org/pdf/2503.18288",
+  "benchmark_measurement": "General language capabilities on a corpus where Tibetan Buddhism is a significant domain. The TIB-STC dataset, used for training and validation, includes a large amount of religious texts (specifically, Tibetan Buddhist scriptures and philosophy) to enable models to understand and generate culturally and religiously specific content.",
+  "religious_groups": [
+    "Buddhism"
+  ],
+  "models_tested": [
+    "Sun-Shine",
+    "GPT-4o",
+    "GPT-4o-mini",
+    "GPT-3.5-turbo",
+    "LLaMA-3 18B",
+    "Qwen-2.5 72B",
+    "DeepSeek-R1"
+  ],
+  "languages_evaluated": [
+    "Tibetan",
+    "Chinese",
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "CMMLU",
+    "SafetyBench"
+  ],
+  "continuous_testing": true,
+  "findings": "When prompted to write a poem in praise of a father, different models exhibited distinct stylistic choices reflecting their training. The model trained on the religiously and culturally rich TIB-STC dataset (Sun-Shine) produced a neutral response. In contrast, GPT-4o adopted a 'majestic style, reminiscent of divine scripture,' and DeepSeek-R1's response frequently alluded to the bodhisattva Mañjuśrī, suggesting it was 'slightly \"overfitted\"' on such religious themes.",
+  "references": [
+    "Achiam, J.; Adler, S.; Agarwal, S.; Ahmad, L.; Akkaya, I.; Aleman, F. L.; Almeida, D.; Altenschmidt, J.; Altman, S.; Anadkat, S.; and et al. 2023. GPT-4 Technical Report. arXiv preprint arXiv:2303.08774.",
+    "Bai, Y.; Jones, A.; Ndousse, K.; Askell, A.; Chen, A.; Das-Sarma, N.; Drain, D.; Fort, S.; Ganguli, D.; Henighan, T.; and et al. 2022. Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback. arXiv preprint arXiv:2204.05862.",
+    "Bi, X.; and et al. 2024. Deepseek LLM: Scaling Open-Source Language Models with Longtermism. arXiv preprint arXiv:2401.02954.",
+    "Blodgett, S. L.; Barocas, S.; III, H. D.; and Wallach, H. 2020. Language (Technology) is Power: A Critical Survey of 'Bias' in NLP. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics (ACL), 5454-5476.",
+    "Brown, T. B.; Mann, B.; Ryder, N.; Subbiah, M.; Kaplan, J.; Dhariwal, P.; Neelakantan, A.; Shyam, P.; Sastry, G.; Askell, A.; and et al. 2020. Language Models are Few-Shot Learners. In Proceedings of the 34th International Conference on Neural Information Processing Systems (NeurIPS), 1–25. Red Hook, NY, USA: Curran Associates Inc.",
+    "Chao, P.; Debenedetti, E.; Robey, A.; Andriushchenko, M.; Croce, F.; Sehwag, V.; Dobriban, E.; Flammarion, N.; Pap-pas, G. J.; Tramèr, F.; Hassani, H.; and Wong, E. 2024. JailbreakBench: An Open Robustness Benchmark for Jail-breaking Large Language Models. In NeurIPS Datasets and Benchmarks Track.",
+    "Dubey, A.; Jauhri, A.; Pandey, A.; Kadian, A.; Al-Dahle, A.; Letman, A.; Mathur, A.; Schelten, A.; Yang, A.; Fan, A.; and et al. 2024. The LLaMA 3 Herd of Models. arXiv preprint arXiv:2407.21783.",
+    "Gao, F.; Huang, C.; Tashi, N.; Wang, X.; Tashi, T.; Ma-bao, B.; Duojie, R.; Luosang, G.; Dongrub, R.; Tashi, D.; and et al. 2025. TLUE: A Tibetan Language Understanding Evaluation Benchmark. arXiv preprint arXiv:2503.12051.",
+    "GLM, T.; Zeng, A.; Xu, B.; Wang, B.; Zhang, C.; Yin, D.; Rojas, D.; Feng, G.; Zhao, H.; Lai, H.; and et al. 2024. ChatGLM: A Family of Large Language Models from GLM-130B to GLM-4 All Tools. arXiv preprint arXiv:2406.12793.",
+    "Guo, D.; and et al. 2025. Deepseek-r1: Incentivizing Rea-soning Capability in LLMs via Reinforcement Learning. arXiv preprint arXiv:2501.12948.",
+    "Hu, E. J.; Wallis, P.; Allen-Zhu, Z.; Li, Y.; Wang, S.; Wang, L.; Chen, W.; and et al. 2021. LoRA: Low-Rank Adaptation of Large Language Models. In Proceedings of the Interna-tional Conference on Learning Representations (ICLR).",
+    "Khysru, K.; Jin, D.; Huang, Y.; Feng, H.; and Dang, J. 2021. A Tibetan Language Model That Considers the Relationship Between Suffixes and Functional Words. IEEE Signal Processing Letters, 28: 459-463.",
+    "Kirk, R.; Mediratta, I.; Nalmpantis, C.; Luketina, J.; Ham-bro, E.; Grefenstette, E.; and Raileanu, R. 2024. Under-standing the Effects of RLHF on LLM Generalisation and Diversity. In Proceedings of the 12th International Confer-ence on Learning Representations (ICLR).",
+    "Li, H.; Zhang, Y.; Koto, F.; Yang, Y.; Zhao, H.; Gong, Y.; Duan, N.; and Baldwin, T. 2024. CMMLU: Measuring Mas-sive Multitask Language Understanding in Chinese. In Find-ings of the Association for Computational Linguistics: ACL 2024, 11260-11285.",
+    "Liang, Y.; Lv, H.; Li, Y.; Duo, L.; Liu, C.; and Zhou, Q. 2024. Tibetan-BERT-wwm: A Tibetan Pretrained Model with Whole Word Masking for Text Classification. IEEE Transactions on Computational Social Systems, 11(5): 6268-6277.",
+    "Lin, C.-Y. 2004. ROUGE: A Package for Automatic Evalu-ation of Summaries. In Proceedings of the Workshop on Text Summarization Branches Out (WAS 2004), 74–81.",
+    "Liu, Y.; Shen, J.; Yu, Y.; Ma-Bao, B.; Tsering, T.; Wang, X.; Huang, C.; and Tashi, N. 2024. Tibetan Syllable Component Recognization with Memristor. In 2024 International Con-ference on Neuromorphic Computing (ICNC), 1–6. IEEE.",
+    "Liu, Y.; Xiao, F.; Zhang, Z.; Yu, Y.; Huang, C.; Gao, F.; Wang, X.; and et al. 2025a. TiSpell: A Semi-Masked Methodology for Tibetan Spelling Correction Covering Multi-Level Error with Data Augmentation. arXiv preprint arXiv:2505.08037.",
+    "Liu, Y.; Zhang, Z.; Ma-bao, B.; Cai, Y.; Yu, Y.; Duo-jie, R.; Wang, X.; Gao, F.; Huang, C.; and Tashi, N. 2025b. FMSD-TTS: Few-Shot Multi-Speaker Multi-Dialect Text-to-Speech Synthesis for \"U-Tsang, Amdo and Kham\" Speech Dataset Generation. arXiv preprint arXiv:2505.14351.",
+    "Minaee, S. M.; Mikolov, T.; Nikzad, N.; Chenaghlu, M.; Socher, R.; Amatriain, X.; and Gao, J. 2024. Large Lan-guage Models: A Survey. arXiv preprint arXiv:2402.06196.",
+    "Moore, J.; Deshpande, T.; and Yang, D. 2024. Are Large Language Models Consistent over Value-Laden Questions? In Findings of the Association for Computational Linguis-tics: EMNLP 2024, 15185–15221. Miami, Florida, USA.",
+    "Papineni, K.; Roukos, S.; Ward, T.; and Zhu, W.-J. 2002. BLEU: A Method for Automatic Evaluation of Machine Translation. In Proceedings of the 40th Annual Meeting of the Association for Computational Linguistics (ACL), 311–318.",
+    "Rafailov, R.; Sharma, A.; Mitchell, E.; Manning, C. D.; Er-mon, S.; and Finn, C. 2024. Direct Preference Optimization: Your Language Model is Secretly a Reward Model. Advances in Neural Information Processing Systems, 36.",
+    "Rozen, N.; Elidan, G.; Globerson, A.; and Ben-David, E. 2024. Do LLMs Have Consistent Values? CoRR.",
+    "Sun, H.; Zhang, Z.; Deng, J.; Cheng, J.; and Huang, M. 2023. Safety Assessment of Chinese Large Language Mod-els. arXiv preprint arXiv:2304.10436.",
+    "Taori, R.; Gulrajani, I.; Zhang, T.; Dubois, Y.; Li, X.; Guestrin, C.; Liang, P.; and Hashimoto, T. B. 2023a. Al-paca: A Strong, Replicable Instruction-Following Model. https://crfm.stanford.edu/2023/03/13/alpaca.html.",
+    "Taori, R.; Gulrajani, I.; Zhang, T.; Dubois, Y.; Li, X.; Guestrin, C.; Liang, P.; and Hashimoto, T. B. 2023b. Stan-ford Alpaca: An Instruction-Following LLaMA Model. https://github.com/tatsu-lab/stanford_alpaca.",
+    "Touvron, H.; Lavril, T.; Izacard, G.; Martinet, X.; Lachaux, M.-A.; Lacroix, T.; Rozière, B.; Goyal, N.; Hambro, E.; Azhar, F.; and et al. 2023. LLaMA: Open and Ef-ficient Foundation Language Models. arXiv preprint arXiv:2302.13971.",
+    "UCLA International Institute. 2014. Tibetan Language and Education in China. https://www.international.ucla.edu/asia/article/149245. Accessed: Jan. 7, 2025.",
+    "Üstün, A.; Aryabumi, V.; Yong, Z.; Ko, W.-Y.; D'souza, D.; Onilude, G.; Bhandari, N.; Singh, S.; Ooi, H.-L.; Kayid, A.; and et al. 2024. Aya Model: An Instruction Finetuned Open-Access Multilingual Language Model. In Proceedings of the 62nd Annual Meeting of the Association for Computa-tional Linguistics (Volume 1: Long Papers), 15894–15939. Bangkok, Thailand.",
+    "Wang, H.; Liu, C.; Xi, N.; Qiang, Z.; Zhao, S.; Qin, B.; and Liu, T. 2023. Huatuo: Tuning LLaMA Model with Chinese Medical Knowledge. arXiv preprint arXiv:2304.06975.",
+    "Xu, G.; Liu, J.; Yan, M.; Xu, H.; Si, J.; Zhou, Z.; Yi, P.; Gao, X.; Sang, J.; Zhang, R.; Zhang, J.; Peng, C.; Huang, F.; and Zhou, J. 2023. CValues: Measuring the Values of Chi-nese Large Language Models from Safety to Responsibility. arXiv preprint arXiv:2307.09705.",
+    "Yang, A.; and et al. 2024. Qwen2 Technical Report. arXiv preprint arXiv:2407.10671.",
+    "Yu, Y.; Zuo, S.; Jiang, H.; Ren, W.; Zhao, T.; and Zhang, C. 2021. Fine-Tuning Pre-Trained Language Model with Weak Supervision: A Contrastive-Regularized Self-Training Approach. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computa-tional Linguistics: Human Language Technologies (NAACL-HLT), 1063-1077.",
+    "Zhang, Z.; and et al. 2024. SafetyBench: Evaluating the Safety of Large Language Models. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), 15537–15553.",
+    "Zheng, C.; Yin, F.; Zhou, H.; Meng, F.; Zhou, J.; Chang, K.-W.; Huang, M.; and Peng, N. 2024. On Prompt-Driven Safeguarding for Large Language Models. In Proceedings of the International Conference on Machine Learning (ICML)."
+  ]
+}

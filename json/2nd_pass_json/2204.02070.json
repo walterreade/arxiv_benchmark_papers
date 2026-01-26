@@ -1,0 +1,63 @@
+{
+  "filename": "2204.02070.pdf",
+  "title": "SPREAD SPURIOUS ATTRIBUTE: IMPROVING WORST-GROUP ACCURACY with SPURIOUS ATTRIBUTE ESTIMATION",
+  "arxiv_url": "https://arxiv.org/pdf/2204.02070",
+  "benchmark_measurement": "The benchmark measured worst-group accuracy on a toxicity detection task where demographic attributes, including religious identity (Muslim, Christian, other religion), were treated as spurious attributes.",
+  "religious_groups": [
+    "Muslim",
+    "Christian",
+    "other religion"
+  ],
+  "models_tested": [
+    "ResNet-50",
+    "BERT"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Waterbirds",
+    "CelebA",
+    "MultiNLI",
+    "CivilComments-WILDS"
+  ],
+  "continuous_testing": false,
+  "findings": "The proposed method, Spread Spurious Attribute (SSA), improves worst-group accuracy on the CivilComments-WILDS dataset where religious identities are spurious attributes. SSA achieves performance comparable to methods using full supervision on the spurious attribute, even when using a significantly smaller amount of labeled data, thereby mitigating performance drops for groups defined by religious identity.",
+  "references": [
+    "Sara Beery, Grant Van Horn, and Pietro Perona. Recognition in terra incognita. In European Conference on Computer Vision, 2018.",
+    "Daniel Borkan, Lucas Dixon, Jeffrey Sorensen, Nithum Thain, and Lucy Vasserman. Nuanced metrics for measuring unintended bias with real data for text classification. In Companion Proceedings of the 2019 World Wide Web Conference, 2019.",
+    "Nitesh V. Chawla, Kevin W. Bowyer, Lawrence O. Hall, and W. Philip Kegelmeyer. Smote: Synthetic minority over-sampling technique. Journal of Artificial Intelligence Research, 2002.",
+    "Elliot Creager, Jörn-Henrik Jacobsen, and Richard Zemel. Environment inference for invariant learning. In Proceedings of International Conference on Machine Learning, 2021.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. BERT: Pre-training of deep bi-directional transformer for language understanding. In Proceedings of the Conference of the North American Chapter of the Association for Computational Linguistics, 2019.",
+    "Robert Geirhos, Jörn-Henrik Jacobsen, Claudio Michaelis, Richard Zemel, Wieland Brendel, Matthias Bethge, and Felix A. Wichmann. Shortcut learning in deep neural networks. Nature Machine Intelligence, 2(11):665–673, 2020.",
+    "Haibo He and Edwardo A. Garcia. Learning from imbalanced data. IEEE Transactions on Knowledge and Data Engineering, 2009.",
+    "Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. Deep residual learning for image recognition. In IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2016.",
+    "Chen Huang, Yining Li, Chen Change Loy, and Xiaoou Tang. Learning deep representation for imbalanced classification. In IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2016.",
+    "Nathalie Japkowicz. The class imbalance problem: Significance and strategies. In Proceedings of the International Conference on Artificial Intelligence, 2000.",
+    "Justin M. Johnson and Taghi M. Khoshgoftaar. Survey on deep learning with class imbalance. Journal of Big Data, 2019.",
+    "Salman H. Khan, Munawar Hayat, Mohammed Bennamoun, Ferdous A. Sohel, and Roberto Togneri. Cost-sensitive learning of deep feature representations from imbalanced data. IEEE Transactions on Neural Networks and Learning Systems, 2017.",
+    "Prannay Khosla, Piotr Teterwak, Chen Wang, Aaron Sarna, Yonglong Tian, Phillip Isola, Aaron Maschinot, Ce Liu, and Dilip Krishnan. Supervised contrastive learning. In Advances in Neural Information Processing Systems, 2020.",
+    "Jaehyung Kim, Youngbum Hur, Sejun Park, Eunho Yang, Sung Ju Hwang, and Jinwoo Shin. Distribution aligning refinery of pseudo-label for imbalanced semi-supervised learning. In Advances in Neural Information Processing Systems, 2020.",
+    "Pang Wei Koh, Shiori Sagawa, Henrik Marklund, Sang Michael Xie, Marvin Zhang, Akshay Balsubramani, Weihua Hu, Michihiro Yasunaga, Richard Lanas Phillips, Irena Gao, Tony Lee, Etienne David, Ian Stavness, Wei Guo, Berton A. Earnshaw, Imran S. Haque, Sara Beery, Jure Leskovec, Anshul Kundaje, Emma Pierson, Sergey Levine, Chelsea Finn, and Percy Liang. WILDS: A benchmark of in-the-wild distribution shifts. In Proceedings of International Conference on Machine Learning, 2021.",
+    "Alex Krizhevsky, Geoffrey Hinton, et al. Learning multiple layers of features from tiny images. 2009.",
+    "Dong-Hyun Lee. Pseudo-label: The simple and efficient semi-supervised learning method for deep neural networks. In Workshop on challenges in representation learning, ICML, 2013.",
+    "Daniel Levy, Yair Carmon, John Duchi, and Aaron Sidford. Large-scale methods for distributionally robust optimization. In Advances in Neural Information Processing Systems, 2020.",
+    "Evan Zheran Liu, Behzad Haghgoo, Anni S. Chen, Aditi Raghunathan, Pang Wei Koh, Shiori Sagawa, Percy Liang, and Chelsea Finn. Just train twice: Improving group robustness without training group information. In Proceedings of International Conference on Machine Learning, 2021.",
+    "Ziwei Liu, Ping Luo, Xiaogang Wang, and Xiaoou Tang. Deep learning face attributes in the wild. In IEEE International Conference on Computer Vision, 2015.",
+    "Junhyun Nam, Hyuntak Cha, Sungsoo Ahn, Jaeho Lee, and Jinwoo Shin. Learning from failure: Training debiased classifier from biased classifier. In Advances in Neural Information Processing Systems, 2020.",
+    "Mengye Ren, Wenyuan Zeng, Bin Yang, and Raquel Urtasun. Learning to reweight examples for robust deep learning. In Proceedings of International Conference on Machine Learning, 2018.",
+    "Shiori Sagawa, Pang Wei Koh, Tatsunori B. Hashimoto, and Percy Liang. Distributionally robust neural networks for group shifts: On the importance of regularizations for worst-case generalization. In International Conference on Learning Representations, 2020.",
+    "Jun Shu, Qi Xie, Lixuan Yi, Qian Zhao, Sanping Zhou, Zongben Xu, and Deyu Meng. Meta-weight-net: Learning an explicit mapping for sample weighting. In Advances in Neural Information Processing Systems, 2019.",
+    "Kihyuk Sohn, David Berthelot, Chun-Liang Li, Zizhao Zhang, Nicholas Carlini, Ekin D. Cubuk, Alex Kurakin, Han Zhang, and Colin Raffel. FixMatch: Simplifying semi-supervised learning with consistency and confidence. In Advances in Neural Information Processing Systems, 2020.",
+    "Nimit S. Sohoni, Jared A. Dunnmon, Geoffrey Angus, Albert Gu, and Christopher Ré. No subclass left behind: Fine-grained robustness in coarse-grained classification problems. In Advances in Neural Information Processing Systems, 2020.",
+    "Catherine Wah, Steve Branson, Peter Welinder, Pietro Perona, and Serge Belongie. The caltech-UCSD birds-200-2011 dataset. Technical Report CNS-TR-2011-001, California Institute of Technology, 2011.",
+    "Chen Wei, Kihyuk Sohn, Clayton Mellina, Alan Yuille, and Fan Yang. Crest: A class-rebalancing self-training framework for imbalanced semi-supervised learning. In IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2021.",
+    "Adina Williams, Nikita Nangia, and Samuel R. Bowman. A broad-coverage challenge corpus for sentence understanding through inference. In Annual Meeting of the Association for Computational Linguistics, 2018.",
+    "Michael Zhang, Nimit S. Sohoni, Hongyang R. Zhang, Chelsea Finn, and Christopher Ré. Correct-n-contrast: A constrastive approach for improving robustness to spurious correlations. In ICML Workshop on Uncertainty & robustness in Deep Learning (UDL), 2021.",
+    "Bolei Zhou, Agata Lapedriza, Aditya Khosla, Aude Oliva, and Antonia Torralba. Places: A 10 million image database for scene recognition. IEEE Transactions on Pattern Analysis and Machine Intelligence, 2017."
+  ]
+}

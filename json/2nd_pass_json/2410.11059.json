@@ -1,0 +1,47 @@
+{
+  "filename": "2410.11059.pdf",
+  "title": "Assessing Bias in Metric Models for LLM Open-Ended Generation Bias Benchmarks",
+  "arxiv_url": "https://arxiv.org/pdf/2410.11059",
+  "benchmark_measurement": "Stereotype-related bias detection against specific religious groups, evaluated by prepending religious descriptors to sentences and measuring the response of various bias metric models.",
+  "religious_groups": [
+    "Atheists",
+    "Christians",
+    "Jews",
+    "Muslims"
+  ],
+  "models_tested": [
+    "Detoxify",
+    "RegardV3",
+    "DistilBERTSentiment",
+    "vaderSentiment"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "BOLD",
+    "SAGED",
+    "MULTI-GRAIN STEREOTYPE DATASET (MGSD)"
+  ],
+  "continuous_testing": false,
+  "findings": "The study found that bias metric models exhibit varied biases towards religious groups. RegardV3 was the most biased classifier, showing strong negativity towards 'Atheists' and 'Jews'. In contrast, DistilBERT was more uniform, while Detoxify and VaderSentiment showed more balanced responses across the religious groups tested.",
+  "references": [
+    "Bender, Emily M., Gebru, Timnit, McMillan-Major, Angelina, & Shmitchell, Shmargaret. 2021. On the Dangers of Stochastic Parrots: Can Language Models Be Too Big? Page 610–623 of: Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency. FAccT ’21. New York, NY, USA: Association for Computing Machinery.",
+    "Dhamala, Jwala, Sun, Tony, Kumar, Varun, Krishna, Satyapriya, Pruksachatkun, Yada, Chang, Kai- Wei, & Gupta, Rahul. 2021. BOLD: Dataset and Metrics for Measuring Biases in Open-Ended Language Generation. In: Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency. ACM.",
+    "Forbes, Maxwell, Hwang, Jena D., Shwartz, Vered, Sap, Maarten, & Choi, Yejin. 2021. Social Chemistry 101: Learning to Reason about Social and Moral Norms.",
+    "Gallegos, Isabel O., Rossi, Ryan A., Barrow, Joe, Tanjim, Md Mehrab, Kim, Sungchul, Dernoncourt, Franck, Yu, Tong, Zhang, Ruiyi, & Ahmed, Nesreen K. 2024. Bias and Fairness in Large Language Models: A Survey.",
+    "Guan, Xin, Demchak, Nathaniel, Gupta, Saloni, Wang, Ze, au2, Ediz Ertekin Jr., Koshiyama, Adriano, Kazim, Emre, & Wu, Zekun. 2024. SAGED: A Holistic Bias-Benchmarking Pipeline for Language Models with Customisable Fairness Calibration.",
+    "Hanu, Laura, & Unitary team. 2020. Detoxify. Github. https://github.com/unitaryai/detoxify.",
+    "Hutto, C., & Gilbert, Eric. 2014. VADER: A Parsimonious Rule-Based Model for Sentiment Analysis of Social Media Text. Proceedings of the International AAAI Conference on Web and Social Media, 8(1), 216–225.",
+    "Lik Xun Yuan. 2023. distilbert-base-multilingual-cased-sentiments-student (Revision 2e33845).",
+    "Lundberg, Scott, & Lee, Su-In. 2017. A Unified Approach to Interpreting Model Predictions.",
+    "Nadeem, Moin, Bethke, Anna, & Reddy, Siva. 2020. StereoSet: Measuring stereotypical bias in pretrained language models.",
+    "Nangia, Nikita, Vania, Clara, Bhalerao, Rasika, & Bowman, Samuel R. 2020. CrowS-Pairs: A Challenge Dataset for Measuring Social Biases in Masked Language Models. Pages 1953–1967 of: Webber, Bonnie, Cohn, Trevor, He, Yulan, & Liu, Yang (eds), Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP). Online: Association for Computational Linguistics.",
+    "Sheng, Emily, Chang, Kai-Wei, Natarajan, Premkumar, & Peng, Nanyun. 2019. The woman worked as a babysitter: On biases in language generation. arXiv preprint arXiv:1909.01326.",
+    "Zekun, Wu, Bulathwela, Sahan, & Koshiyama, Adriano Soares. 2023. Towards Auditing Large Language Models: Improving Text-based Stereotype Detection."
+  ]
+}

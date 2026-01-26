@@ -1,0 +1,81 @@
+{
+  "filename": "2412.06134.pdf",
+  "title": "Evaluating and Mitigating Social Bias for Large Language Models in Open-ended Settings",
+  "arxiv_url": "https://arxiv.org/pdf/2412.06134",
+  "benchmark_measurement": "Detection of social biases and stereotypes in religious contexts across multiple-choice, fill-in-the-blank, and short-answer questions.",
+  "religious_groups": [
+    "Buddhism",
+    "Christianity"
+  ],
+  "models_tested": [
+    "GPT-3.5",
+    "GPT-4o"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "BBQ"
+  ],
+  "continuous_testing": false,
+  "findings": "For ambiguous religious questions, GPT-3.5 exhibited a high bias score (0.205) in the fill-in-the-blank format, while GPT-4o showed lower but still present bias. For disambiguated questions, GPT-3.5 consistently showed higher bias than GPT-4o. The proposed 'Composite Prompting' debiasing method was effective, reducing bias scores in the religion category to near-zero for both models.",
+  "references": [
+    "Su Lin Blodgett, Solon Barocas, Hal Daumé III, and Hanna Wallach. 2020. Language (technology) is power: A critical survey of \"bias\" in nlp. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5454–5476.",
+    "Shikha Bordia and Samuel R. Bowman. 2019. Identifying and reducing gender bias in word-level language models. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Student Research Workshop, pages 7-15, Minneapolis, Minnesota. Association for Computational Linguistics.",
+    "Tom B Brown. 2020. Language models are few-shot learners. arXiv preprint arXiv:2005.14165.",
+    "Aylin Caliskan, Joanna J. Bryson, and Arvind Narayanan. 2017. Semantics derived automatically from language corpora contain human-like biases. Science, 356(6334):183–186.",
+    "Ruoxi Cheng, Haoxuan Ma, Shuirong Cao, and Tianyu Shi. 2024. Rlrf: Reinforcement learning from reflection through debates as feedback for bias mitigation in llms.",
+    "Garima Chhikara, Anurag Sharma, Kripabandhu Ghosh, and Abhijnan Chakraborty. 2024. Few-shot fairness: Unveiling llm's potential for fairness-aware classification. arXiv preprint arXiv:2402.18502.",
+    "Andrei-Victor Chisca, Andrei-Cristian Rad, and Camelia Lemnaru. 2024. Prompting fairness: Learning prompts for debiasing large language models. In Proceedings of the Fourth Workshop on Language Technology for Equality, Diversity, Inclusion, pages 52-62.",
+    "Thomas Davidson, Debasmita Bhattacharya, and Ingmar Weber. 2019. Racial bias in hate speech and abusive language detection datasets. In Proceedings of the Third Workshop on Abusive Language Online, pages 25-35, Florence, Italy. Association for Computational Linguistics.",
+    "Sunipa Dev, Emily Sheng, Jieyu Zhao, Jiao Sun, Yu Hou, Mattie Sanseverino, Jiin Kim, Nanyun Peng, and Kai-Wei Chang. 2021. What do bias measures measure? arXiv preprint arXiv:2108.03362.",
+    "Satyam Dwivedi, Sanjukta Ghosh, and Shivam Dwivedi. 2023. Breaking the bias: Gender fairness in Ilms using prompt engineering and in-context learning. Rupkatha Journal on Interdisciplinary Studies in Humanities, 15(4).",
+    "Sana Ebrahimi, Kaiwen Chen, Abolfazl Asudeh, Gautam Das, and Nick Koudas. 2024. Axolotl: Fairness through assisted self-debiasing of large language model outputs. arXiv preprint arXiv:2403.00198.",
+    "Jessica Echterhoff, Yao Liu, Abeer Alessa, Julian McAuley, and Zexue He. 2024. Cognitive bias in high-stakes decision-making with llms. arXiv preprint arXiv:2403.00811.",
+    "David Esiobu, Xiaoqing Tan, Saghar Hosseini, Megan Ung, Yuchen Zhang, Jude Fernandes, Jane Dwivedi-Yu, Eleonora Presani, Adina Williams, and Eric Michael Smith. 2023. Robbie: Robust bias evaluation of large generative language models. arXiv preprint arXiv:2311.18140.",
+    "Chenhao Fang, Xiaohan Li, Zezhong Fan, Jianpeng Xu, Kaushiki Nag, Evren Korpeoglu, Sushant Kumar, and Kannan Achan. 2024. Llm-ensemble: Optimal large language model ensemble method for e-commerce product attribute value extraction. arXiv preprint arXiv:2403.00863.",
+    "Shaz Furniturewala, Surgan Jandial, Abhinav Java, Simra Shahid, Pragyan Banerjee, Balaji Krishnamurthy, Sumit Bhatia, and Kokil Jaidka. 2024. Evaluating the efficacy of prompting techniques for debiasing language model outputs (student abstract). In Proceedings of the AAAI Conference on Artificial Intelligence, volume 38, pages 23492-23493.",
+    "Isabel O. Gallegos and et al. 2024. Self-debiasing large language models: Zero-shot recognition and reduction of stereotypes. arXiv preprint arXiv:2402.01981.",
+    "Aparna Garimella, Rada Mihalcea, and Akhash Amarnath. 2022. Demographic-aware language model fine-tuning as a bias mitigation technique. In Proceedings of the 2nd Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics and the 12th International Joint Conference on Natural Language Processing, pages 311-319.",
+    "Somayeh Ghanbarzadeh, Yan Huang, Hamid Palangi, Radames Cruz Moreno, and Hamed Khanpour. 2022. Debiasing the pre-trained language model through fine-tuning the downstream tasks.",
+    "Umang Gupta, Jwala Dhamala, Varun Kumar, Apurv Verma, Yada Pruksachatkun, Satyapriya Krishna, Rahul Gupta, Kai-Wei Chang, Greg Ver Steeg, and Aram Galstyan. 2022. Mitigating gender bias in distilled language models via counterfactual role reversal. arXiv preprint arXiv:2203.12574.",
+    "Pengrui Han, Rafal Kocielnik, Adhithya Saravanan, Roy Jiang, Or Sharir, and Anima Anandkumar. 2024. Chatgpt based data augmentation for improved parameter-efficient debiasing of llms. arXiv preprint arXiv:2402.11764.",
+    "Dong Huang, Qingwen Bu, Jie Zhang, Xiaofei Xie, Junjie Chen, and Heming Cui. 2023a. Bias assessment and mitigation in Ilm-based code generation. arXiv preprint arXiv:2309.14345.",
+    "Dong Huang, Qingwen Bu, Jie Zhang, Xiaofei Xie, Junjie Chen, and Heming Cui. 2023b. Bias assessment and mitigation in Ilm-based code generation. arXiv preprint arXiv:2309.14345.",
+    "Jiaming Ji, Donghai Hong, Borong Zhang, Boyuan Chen, Josef Dai, Boren Zheng, Tianyi Qiu, Boxun Li, and Yaodong Yang. 2024a. Pku-saferlhf: Towards multi-level safety alignment for llms with human preference. arXiv preprint arXiv:2406.15513.",
+    "Jiaming Ji, Mickel Liu, Josef Dai, Xuehai Pan, Chi Zhang, Ce Bian, Boyuan Chen, Ruiyang Sun, Yizhou Wang, and Yaodong Yang. 2024b. Beavertails: Towards improved safety alignment of Ilm via a human-preference dataset. Advances in Neural Information Processing Systems, 36.",
+    "Przemyslaw Joniak and Akiko Aizawa. 2022. Gender biases and where to find them: Exploring gender bias in pre-trained transformer-based language models using movement pruning. arXiv preprint arXiv:2207.02463.",
+    "Mahammed Kamruzzaman, Md Minul Islam Shovon, and Gene Louis Kim. 2023. Investigating subtler biases in llms: Ageism, beauty, institutional, and nationality bias in generative models. arXiv preprint arXiv:2309.08902.",
+    "Masahiro Kaneko, Danushka Bollegala, Naoaki Okazaki, and Timothy Baldwin. 2024. Evaluating gender bias in large language models via chain-of-thought prompting. arXiv preprint arXiv:2401.15585.",
+    "Jared Kaplan, Sam McCandlish, Tom Henighan, Tom B Brown, Benjamin Chess, Rewon Child, Scott Gray, Alec Radford, Jeffrey Wu, and Dario Amodei. 2020. Scaling laws for neural language models. arXiv preprint arXiv:2001.08361.",
+    "Seungone Kim, Juyoung Suk, Shayne Longpre, Bill Yuchen Lin, Jamin Shin, Sean Welleck, Graham Neubig, Moontae Lee, Kyungjae Lee, and Minjoon Seo. 2024. Prometheus 2: An open source language model specialized in evaluating other language models. arXiv preprint arXiv:2405.01535.",
+    "Jingling Li, Zeyu Tang, Xiaoyu Liu, Peter Spirtes, Kun Zhang, Liu Leqi, and Yang Liu. 2024a. Steering llms towards unbiased responses: A causality-guided debiasing framework. arXiv preprint arXiv:2403.08743.",
+    "Tao Li, Daniel Khashabi, Tushar Khot, Ashish Sabharwal, and Vivek Srikumar. 2020. Unqovering stereotyping biases via underspecified questions. In Findings of the Association for Computational Linguistics: EMNLP 2020, pages 3475–3489, Online. Association for Computational Linguistics.",
+    "Yingji Li, Mengnan Du, Rui Song, Xin Wang, Mingchen Sun, and Ying Wang. 2024b. Mitigating social biases of pre-trained language models via contrastive selfdebiasing with double data augmentation. Artificial Intelligence, 332:104143.",
+    "Paul Pu Liang, Chiyu Wu, Louis-Philippe Morency, and Ruslan Salakhutdinov. 2021. Towards understanding and mitigating social biases in language models. In International Conference on Machine Learning, pages 6565-6576. PMLR.",
+    "Stephanie Lin, Jacob Hilton, and Owain Evans. 2021. Truthfulqa: Measuring how models mimic human falsehoods. arXiv preprint arXiv:2109.07958.",
+    "Ruibo Liu, Chenyan Jia, Jason Wei, Guangxuan Xu, and Soroush Vosoughi. 2022a. Quantifying and alleviating political bias in language models. Artificial Intelligence, 304:103654.",
+    "Yiran Liu, Xiao Liu, Haotian Chen, and Yang Yu. 2022b. Does debiasing inevitably degrade the model performance. arXiv preprint arXiv:2211.07350.",
+    "Zhongkun Liu, Zheng Chen, Mengqi Zhang, Zhaochun Ren, Zhumin Chen, and Pengjie Ren. 2024. Zeroshot position debiasing for large language models. arXiv preprint arXiv:2401.01218.",
+    "Hanjun Luo, Haoyu Huang, Ziye Deng, Xuecheng Liu, Ruizhe Chen, and Zuozhu Liu. 2024. Bigbench: A unified benchmark for social bias in text-to-image generative models based on multi-modal llm. arXiv preprint arXiv:2407.15240.",
+    "Huan Ma, Changqing Zhang, Yatao Bian, Lemao Liu, Zhirui Zhang, Peilin Zhao, Shu Zhang, Huazhu Fu, Qinghua Hu, and Bingzhe Wu. 2024. Fairness-guided few-shot prompting for large language models. In Advances in Neural Information Processing Systems, volume 36.",
+    "Liam Magee, Lida Ghahremanlou, Karen Soldatic, and Shanthi Robertson. 2021. Intersectional bias in causal language models. arXiv preprint arXiv:2107.07691.",
+    "Chandler May, Alex Wang, Shikha Bordia, Samuel R. Bowman, and Rachel Rudinger. 2019. On measuring social biases in sentence encoders. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 622-628, Minneapolis, Minnesota. Association for Computational Linguistics.",
+    "Hadas Orgad, Seraphina Goldfarb-Tarrant, and Yonatan Belinkov. 2022. How gender debiasing affects internal model representations, and why it matters. arXiv preprint arXiv:2204.06827.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, and Samuel R. Bowman. 2022. Bbas: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2086–2101, Dublin, Ireland. Association for Computational Linguistics.",
+    "Mohammed Rameez Qureshi, Luis Galárraga, and Miguel Couceiro. 2023. A reinforcement learning approach to mitigating stereotype biases in language models.",
+    "Emily Sheng, Kai-Wei Chang, Premkumar Natarajan, and Nanyun Peng. 2019. The woman worked as a babysitter: On biases in language generation. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 3407–3412, Hong Kong, China. Association for Computational Linguistics.",
+    "Carson Sue, Adam Miyauchi, Kunal S Kasodekar, Sai Prabhu, Mandyak, Piyush Padheriya, and Aesha Shah. 2022. Fairness in machine learning: On removing and gender bias in language models.",
+    "Hugo Touvron, Thibaut Lavril, Gautier Izacard, Xavier Martinet, Marie-Anne Lachaux, Timothée Lacroix, Baptiste Rozière, Naman Goyal, Eric Hambro, Faisal Azhar, et al. 2023. Llama: Open and efficient foundation language models. arXiv preprint arXiv:2302.13971.",
+    "Eddie L Ungless, Amy Rafferty, Hrichika Nag, and Björn Ross. 2022. A robust bias mitigation procedure based on the stereotype content model. arXiv preprint arXiv:2210.14352.",
+    "Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Fei Xia, Ed Chi, Quoc V. Le, Denny Zhou, et al. 2022. Chain-of-thought prompting elicits reasoning in large language models. Advances in neural information processing systems, 35:24824–24837.",
+    "Chenrui Zhang, Lin Liu, Chuyuankai Wang, Xiao Sun, Hongyu Wang, and Jinpeng Wang. 2024a. Reflect, then select: A preference-learning prompting strategy via feedback-reflect-refine. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 38, pages 19525–19532.",
+    "Congzhi Zhang, Linhai Zhang, Deyu Zhou, and Guoqing Li. 2024b. Calm prompting: Debiasing large language model prompting based on from post adjustment. arXiv preprint arXiv:2403.02738.",
+    "Yi-Fan Zhang, Weichen Yu, Qingsong Wen, Xue Wang, Zhaoyang Liu, Liang Wang, Rong Jin, and Tieniu Tan. 2024c. Debiasing large foundation models. arXiv preprint arXiv:2403.05262.",
+    "Zhengyang Zhang, Fan Yang, Ziyan Jiang, Zheng Chen, Zhengyang Zhao, Chengyuan Ma, Liang Zhao, and Yang Liu. 2024d. Position-aware parameter efficient fine-tuning approach for reducing positional bias in llms. arXiv preprint arXiv:2404.01430."
+  ]
+}

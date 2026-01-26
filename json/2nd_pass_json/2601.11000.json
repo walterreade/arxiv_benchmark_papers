@@ -1,0 +1,70 @@
+{
+  "filename": "2601.11000.pdf",
+  "title": "When Personalization Misleads: Understanding and Mitigating Hallucinations in Personalized LLMS",
+  "arxiv_url": "https://arxiv.org/pdf/2601.11000",
+  "benchmark_measurement": "The benchmark (PFQABench) measures the trade-off between factual accuracy and personalization in LLMs. It uses examples where a user's personal history, including religious activities (e.g., attending a church service), can cause the model to generate factually incorrect answers ('hallucinations') to unrelated questions.",
+  "religious_groups": [
+    "Christianity"
+  ],
+  "models_tested": [
+    "LLaMA-3.1-8B-IT",
+    "Qwen2.5-7B-IT",
+    "Qwen2.5-14B-IT",
+    "LLaMA-3.2-1B",
+    "LLaMA-3.2-3B",
+    "Qwen-2.5-32B",
+    "QWEN2.5-32B-INSTRUCT"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "LongMemEval",
+    "HotpotQA",
+    "2WikiMultiHopQA"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper's key finding is that personalization can induce factual hallucinations in LLMs. A religious example is used for illustration, where a user's profile identifying them as 'An Episcopalian' who attended a 'Maundy Thursday service' is part of the context that can mislead a personalized model on an unrelated factual query. This demonstrates that personal details, including religious identity and activities, can become entangled with the model's factual reasoning, degrading its reliability.",
+  "references": [
+    "Anthropic. 2025. Using claude's chat, search, and memory to build on previous context.",
+    "Jianlv Chen, Shitao Xiao, Peitian Zhang, Kun Luo, Defu Lian, and Zheng Liu. 2024. Bge m3-embedding: Multi-lingual, multi-functionality, multi-granularity text embeddings through self-knowledge distillation. Preprint, arXiv:2402.03216.",
+    "Yung-Sung Chuang, Yujia Xie, Hongyin Luo, Yoon Kim, James R Glass, and Pengcheng He. 2023. Dola: Decoding by contrasting layers improves factuality in large language models. In The Twelfth International Conference on Learning Representations.",
+    "Nelson Elhage, Tristan Hume, Catherine Olsson, Nicholas Schiefer, Tom Henighan, Shauna Kravec, Zac Hatfield-Dodds, Robert Lasenby, Dawn Drain, Carol Chen, and 1 others. 2022. Toy models of superposition. arXiv preprint arXiv:2209.10652.",
+    "Google. 2025. Gemini: Personalization overview.",
+    "Aaron Grattafiori, Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Alex Vaughan, and 1 others. 2024. The llama 3 herd of models. arXiv preprint arXiv:2407.21783.",
+    "Xanh Ho, Anh-Khoa Duong Nguyen, Saku Sugawara, and Akiko Aizawa. 2020. Constructing a multi-hop qa dataset for comprehensive evaluation of reasoning steps. In Proceedings of the 28th International Conference on Computational Linguistics, pages 6609–6625.",
+    "Lei Huang, Weijiang Yu, Weitao Ma, Weihong Zhong, Zhangyin Feng, Haotian Wang, Qianglong Chen, Weihua Peng, Xiaocheng Feng, Bing Qin, and 1 others. 2025. A survey on hallucination in large language models: Principles, taxonomy, challenges, and open questions. ACM Transactions on Information Systems, 43(2):1–55.",
+    "Jennifer King, Kevin Klyman, Emily Capstick, Tiffany Saade, and Victoria Hsieh. 2025. User privacy and large language models: An analysis of frontier developers' privacy policies. In Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society, volume 8, pages 1465-1477.",
+    "Ishita Kumar, Snigdha Viswanathan, Sushrita Yerra, Alireza Salemi, Ryan A. Rossi, Franck Dernon-court, Hanieh Deilamsalehy, Xiang Chen, Ruiyi Zhang, Shubham Agarwal, Nedim Lipka, and Hamed Zamani. 2024a. Longlamp: A benchmark for personalized long-form text generation. ArXiv, abs/2407.11016.",
+    "Ishita Kumar, Snigdha Viswanathan, Sushrita Yerra, Alireza Salemi, Ryan A Rossi, Franck Dernoncourt, Hanieh Deilamsalehy, Xiang Chen, Ruiyi Zhang, Shubham Agarwal, and 1 others. 2024b. Longlamp: A benchmark for personalized long-form text generation. arXiv preprint arXiv:2407.11016.",
+    "Tomo Lazovich. 2023. Filter bubbles and affective polarization in user-personalized large language model outputs. In Proceedings on, pages 29-37. PMLR.",
+    "Stephanie Lin, Jacob Hilton, and Owain Evans. 2022. Truthfulqa: Measuring how models mimic human falsehoods. In Proceedings of the 60th annual meeting of the association for computational linguistics (volume 1: long papers), pages 3214-3252.",
+    "Fuxiao Liu, Kevin Lin, Linjie Li, Jianfeng Wang, Yaser Yacoob, and Lijuan Wang. Mitigating hallucination in large multi-modal models via robust instruction tuning. In The Twelfth International Conference on Learning Representations.",
+    "Jiahong Liu, Zexuan Qiu, Zhongyang Li, Quanyu Dai, Wenhao Yu, Jieming Zhu, Minda Hu, Menglin Yang, Tat-Seng Chua, and Irwin King. 2025. A survey of personalized large language models: Progress and future directions. arXiv preprint arXiv:2502.11528.",
+    "Potsawee Manakul, Adian Liusie, and Mark Gales. 2023. Selfcheckgpt: Zero-resource black-box hallucination detection for generative large language models. In Proceedings of the 2023 conference on empirical methods in natural language processing, pages 9004-9017.",
+    "Chimaobi Okite, Naihao Deng, Kiran Bodipati, Huaidian Hou, Joyce Chai, and Rada Mihalcea. 2025. Benchmarking and improving Ilm robustness for personalized generation. arXiv preprint arXiv:2509.19358.",
+    "OpenAI. 2025. Memory and new controls for chatgpt.",
+    "Yilun Qiu, Xiaoyan Zhao, Yang Zhang, Yimeng Bai, Wenjie Wang, Hong Cheng, Fuli Feng, and Tat-Seng Chua. 2025a. Measuring what makes you unique: Difference-aware user modeling for enhancing Ilm personalization. arXiv preprint arXiv:2503.02450.",
+    "Yilun Qiu, Xiaoyan Zhao, Yang Zhang, Yimeng Bai, Wenjie Wang, Hong Cheng, Fuli Feng, and Tat-Seng Chua. 2025b. Measuring what makes you unique: Difference-aware user modeling for enhancing Ilm personalization. ArXiv, abs/2503.02450.",
+    "Reddit. 2025. Geminis new personal context is not just better.",
+    "Chris Richardson, Yao Zhang, Kellen Gillespie, Sudipta Kar, Arshdeep Singh, Zeynab Raeesy, Omar Zia Khan, and Abhinav Sethy. 2023a. Integrating summarization and retrieval for enhanced personalization via large language models. arXiv preprint arXiv:2310.20081.",
+    "Chris Richardson, Yao Zhang, Kellen Gillespie, Sudipta Kar, Arshdeep Singh, Zeynab Raeesy, Omar Zia Khan, and Abhinav Sethy. 2023b. Integrating summarization and retrieval for enhanced personalization via large language models. ArXiv, abs/2310.20081.",
+    "Nina Rimsky, Nick Gabrieli, Julian Schulz, Meg Tong, Evan Hubinger, and Alexander Turner. 2024. Steering llama 2 via contrastive activation addition. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 15504–15522.",
+    "Zhongxiang Sun, Zihua Si, Xiaoxue Zang, Kai Zheng, Yang Song, Xiao Zhang, and Jun Xu. 2025. Largepig for hallucination-free query generation: Your large language model is secretly a pointer generator. In Proceedings of the ACM on Web Conference 2025, pages 4766-4779.",
+    "ZhongXiang Sun, Xiaoxue Zang, Kai Zheng, Jun Xu, Xiao Zhang, Weijie Yu, Yang Song, and Han Li. Redeep: Detecting hallucination in retrieval-augmented generation via mechanistic interpretability. In The Thirteenth International Conference on Learning Representations.",
+    "Alexander Matt Turner, Lisa Thiergart, Gavin Leech, David Udell, Juan J Vazquez, Ulisse Mini, and Monte MacDiarmid. 2023. Steering language models with activation engineering. arXiv preprint arXiv:2308.10248.",
+    "Anvesh Rao Vijjini, Somnath Basu Roy Chowdhury, and Snigdha Chaturvedi. 2025. Exploring safety-utility trade-offs in personalized language models. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 11316–11340.",
+    "Bin Wu, Zhengyan Shi, Hossein A Rahmani, Varsha Ramineni, and Emine Yilmaz. 2024. Understanding the role of user profile in the personalization of large language models. arXiv preprint arXiv:2406.17803.",
+    "Di Wu, Hongwei Wang, Wenhao Yu, Yuwei Zhang, Kai-Wei Chang, and Dong Yu. 2025. Longmemeval: Benchmarking chat assistants on long-term interactive memory. In The Thirteenth International Conference on Learning Representations.",
+    "An Yang, Anfeng Li, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chang Gao, Chengen Huang, Chenxu Lv, and 1 others. 2024. Qwen2.5 technical report. arXiv preprint arXiv:2412.15115.",
+    "Zhilin Yang, Peng Qi, Saizheng Zhang, Yoshua Bengio, William Cohen, Ruslan Salakhutdinov, and Christopher D Manning. 2018. Hotpotqa: A dataset for diverse, explainable multi-hop question answering. In Proceedings of the 2018 conference on empirical methods in natural language processing, pages 2369-2380.",
+    "Linhai Zhang, Jialong Wu, Deyu Zhou, and Yulan He. 2025. Proper: A progressive learning framework for personalized large language models with group-level adaptation. arXiv preprint arXiv:2503.01303.",
+    "You Zhang, Jin Wang, Liang-Chih Yu, Dan Xu, and Xuejie Zhang. 2024. Personalized lora for human-centered text understanding. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 38, pages 19588-19596.",
+    "Zhaowei Zhang, Fengshuo Bai, Qizhi Chen, Cheng-dong Ma, Mingzhi Wang, Haoran Sun, Zilong Zheng, and Yaodong Yang. Amulet: Realignment during test time for personalized preference adaptation of Ilms. In The Thirteenth International Conference on Learning Representations.",
+    "Zhi Zheng, WenShuo Chao, Zhaopeng Qiu, Hengshu Zhu, and Hui Xiong. 2024. Harnessing large language models for text-rich sequential recommendation. Proceedings of the ACM Web Conference 2024."
+  ]
+}

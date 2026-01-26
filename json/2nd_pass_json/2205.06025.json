@@ -1,0 +1,77 @@
+{
+  "filename": "2205.06025.pdf",
+  "title": "DTW at Qur'an QA 2022: Utilising Transfer Learning with Transformers for Question Answering in a Low-resource Domain",
+  "arxiv_url": "https://arxiv.org/pdf/2205.06025",
+  "benchmark_measurement": "The benchmark measures the ability of models to perform machine reading comprehension (MRC) on the Qur'an. This involves answering questions by extracting a span of text from a given passage of the Qur'an.",
+  "religious_groups": [
+    "Islam"
+  ],
+  "models_tested": [
+    "camelbert-mix",
+    "camelbert-ca",
+    "mbert-cased",
+    "mbert-uncased",
+    "AraELECTRA-generator",
+    "AraELECTRA-discriminator",
+    "AraBERTv2"
+  ],
+  "languages_evaluated": [
+    "Arabic"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "major",
+  "base_benchmarks": [
+    "QRCD (Quran Reading Comprehension Dataset)",
+    "SOQAL",
+    "SQuAD (Stanford Question Answering Dataset)",
+    "ARCD (Arabic Reading Comprehension Dataset)"
+  ],
+  "continuous_testing": false,
+  "findings": "The study found that transformer models built specifically for Arabic (e.g., camelbert-mix, AraELECTRA-discriminator) generally outperformed multilingual models on the Qur'an QA task. The key finding was that transfer learning from a larger, general-domain Arabic MRC dataset (SOQAL) significantly improved performance on the low-resource Qur'an dataset, particularly for the AraELECTRA-discriminator model. While self-ensemble learning did not consistently improve scores, it led to more stable and consistent results. The best performing system utilized AraELECTRA-discriminator with transfer learning.",
+  "references": [
+    "Abadani, N., Mozafari, J., Fatemi, A., Nematbakhsh, M. A., and Kazemi, A. (2021). Parsquad: Machine translated squad dataset for persian question answer- ing. In 2021 7th International Conference on Web Research (ICWR), pages 163–168.",
+    "Antoun, W., Baly, F., and Hajj, H. (2020). AraBERT: Transformer-based model for Arabic language un- derstanding. In Proceedings of the 4th Workshop on Open-Source Arabic Corpora and Processing Tools, with a Shared Task on Offensive Language Detec- tion, pages 9–15, Marseille, France, May. European Language Resource Association.",
+    "Antoun, W., Baly, F., and Hajj, H. (2021). Ara- ELECTRA: Pre-training text discriminators for Ara- bic language understanding. In Proceedings of the Sixth Arabic Natural Language Processing Work- shop, pages 191–195, Kyiv, Ukraine (Virtual), April. Association for Computational Linguistics.",
+    "Baradaran, R., Ghiasi, R., and Amirkhani, H. (2022). A survey on machine reading comprehension sys- tems. Natural Language Engineering, page 1–50.",
+    "Charniak, E., Altun, Y., Braz, R. d. S., Garrett, B., Kosmala, M., Moscovich, T., Pang, L., Pyo, C., Sun, Y., Wy, W., Yang, Z., Zeller, S., and Zorn, L. (2000). Reading comprehension programs in a statistical-language-processing class. In Pro- ceedings of the 2000 ANLP/NAACL Workshop on Reading Comprehension Tests as Evaluation for Computer-Based Language Understanding Sytems - Volume 6, ANLP/NAACL-ReadingComp '00, page 1–5, USA. Association for Computational Linguis- tics.",
+    "Dasigi, P., Lo, K., Beltagy, I., Cohan, A., Smith, N. A., and Gardner, M. (2021). A dataset of information- seeking questions and answers anchored in research papers. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Tech- nologies, pages 4599–4610, Online, June. Associa- tion for Computational Linguistics.",
+    "Devlin, J., Chang, M.-W., Lee, K., and Toutanova, K. (2019). BERT: Pre-training of deep bidirec- tional transformers for language understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computa- tional Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 4171- 4186, Minneapolis, Minnesota, June. Association for Computational Linguistics.",
+    "d'Hoffschmidt, M., Belblidia, W., Heinrich, Q., Brendlé, T., and Vidal, M. (2020). FQuAD: French question answering dataset. In Findings of the As- sociation for Computational Linguistics: EMNLP 2020, pages 1193–1208, Online, November. Asso- ciation for Computational Linguistics.",
+    "Efimov, P., Chertok, A., Boytsov, L., and Braslavski, P. (2020). Sberquad - russian reading comprehen- sion dataset: Description and analysis. In Avi Aram- patzis, et al., editors, Experimental IR Meets Multi- linguality, Multimodality, and Interaction, pages 3– 15, Cham. Springer International Publishing.",
+    "Giorgi, S., Zavarella, V., Tanev, H., Stefanovitch, N., Hwang, S., Hettiarachchi, H., Ranasinghe, T., Kalyan, V., Tan, P., Tan, S., Andrews, M., Hu, T., Stoehr, N., Re, F. I., Vegh, D., Atzenhofer, D., Cur- tis, B., and Hürriyetoğlu, A. (2021). Discovering black lives matter events in the United States: Shared task 3, CASE 2021. In Proceedings of the 4th Work- shop on Challenges and Applications of Automated Extraction of Socio-political Events from Text (CASE 2021), pages 218–227, Online, August. Association for Computational Linguistics.",
+    "Hermann, K. M., Kocisky, T., Grefenstette, E., Espe- holt, L., Kay, W., Suleyman, M., and Blunsom, P. (2015). Teaching machines to read and comprehend. In C. Cortes, et al., editors, Advances in Neural In- formation Processing Systems, volume 28. Curran Associates, Inc.",
+    "Hettiarachchi, H. and Ranasinghe, T. (2020). In- foMiner at WNUT-2020 task 2: Transformer-based covid-19 informative tweet extraction. In Pro- ceedings of the Sixth Workshop on Noisy User- generated Text (W-NUT 2020), pages 359–365, On- line, November. Association for Computational Lin- guistics.",
+    "Hirschman, L., Light, M., Breck, E., and Burger, J. D. (1999). Deep read: A reading comprehension sys- tem. ACL '99, page 325–332, USA. Association for Computational Linguistics.",
+    "Inoue, G., Alhafni, B., Baimukan, N., Bouamor, H., and Habash, N. (2021). The interplay of variant, size, and task type in Arabic pre-trained language models. In Proceedings of the Sixth Arabic Natu- ral Language Processing Workshop, pages 92–104, Kyiv, Ukraine (Virtual), April. Association for Com- putational Linguistics.",
+    "Jayakody, J. A. T. K., Gamlath, T. S. K., Lasantha, W. A. N., Premachandra, K. M. K. P., Nugaliyadde, A., and Mallawarachchi, Y. (2016). “mahoshadha”, the sinhala tagged corpus based question answering system. In Suresh Chandra Satapathy et al., editors, Proceedings of First International Conference on In- formation and Communication Technology for Intel- ligent Systems: Volume 1, pages 313–322, Cham. Springer International Publishing.",
+    "Lan, Z., Chen, M., Goodman, S., Gimpel, K., Sharma, P., and Soricut, R. (2020). Albert: A lite bert for self-supervised learning of language representations. In International Conference on Learning Represen- tations.",
+    "Lee, J. Y., Dernoncourt, F., and Szolovits, P. (2018). Transfer learning for named-entity recognition with neural networks. In Proceedings of the Eleventh In- ternational Conference on Language Resources and Evaluation (LREC 2018), Miyazaki, Japan, May. European Language Resources Association (ELRA).",
+    "Lehnert, W. G. (1977). The process of question an- swering. Yale University.",
+    "Liu, S., Zhang, X., Zhang, S., Wang, H., and Zhang, W. (2019). Neural machine reading comprehension: Methods and trends. Applied Sciences, 9(18).",
+    "Malhas, R. and Elsayed, T. (2020). Ayatec: Build- ing a reusable verse-based test collection for arabic question answering on the holy qur'an. ACM Trans. Asian Low-Resour. Lang. Inf. Process., 19(6), oct.",
+    "Malhas, R., Mansour, W., and Elsayed, T. (2022). Qur'an QA 2022: Overview of the first shared task on question answering over the holy qur'an. In Pro- ceedings of the 5th Workshop on Open-Source Ara- bic Corpora and Processing Tools (OSACT5) at the 13th Language Resources and Evaluation Confer- ence (LREC 2022).",
+    "Mozannar, H., Maamary, E., El Hajal, K., and Hajj, H. (2019). Neural Arabic question answering. In Proceedings of the Fourth Arabic Natural Language Processing Workshop, pages 108–118, Florence, Italy, August. Association for Computational Lin- guistics.",
+    "Nguyen, T. Q. and Chiang, D. (2017). Transfer learn- ing across low-resource, related languages for neu- ral machine translation. In Proceedings of the Eighth International Joint Conference on Natural Language Processing (Volume 2: Short Papers), pages 296– 301, Taipei, Taiwan, November. Asian Federation of Natural Language Processing.",
+    "Plum, A., Ranasinghe, T., Jones, S., Orasan, C., and Mitkov, R. (2022). Biographical: A semi- supervised relation extraction dataset. In Proceed- ings of the 45th International ACM SIGIR Confer- ence on Research and Development in Information Retrieval, Madrid, Spain. Association for Comput- ing Machinery.",
+    "Rajpurkar, P., Zhang, J., Lopyrev, K., and Liang, P. (2016). SQUAD: 100,000+ questions for machine comprehension of text. In Proceedings of the 2016 Conference on Empirical Methods in Natural Lan- guage Processing, pages 2383–2392, Austin, Texas, November. Association for Computational Linguis- tics.",
+    "Ranasinghe, T. and Hettiarachchi, H. (2020). BRUMS at SemEval-2020 task 12: Transformer based mul- tilingual offensive language identification in social media. In Proceedings of the Fourteenth Work- shop on Semantic Evaluation, pages 1906–1915, Barcelona (online), December. International Com- mittee for Computational Linguistics.",
+    "Ranasinghe, T. and Zampieri, M. (2020). Multilingual offensive language identification with cross-lingual embeddings. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Process- ing (EMNLP), pages 5838–5844, Online, November. Association for Computational Linguistics.",
+    "Ranasinghe, T., Orasan, C., and Mitkov, R. (2021). An exploratory analysis of multilingual word-level quality estimation with cross-lingual transformers. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Lan- guage Processing (Volume 2: Short Papers), pages 434–440, Online, August. Association for Computa- tional Linguistics.",
+    "Richardson, M., Burges, C. J., and Renshaw, E. (2013). MCTest: A challenge dataset for the open-domain machine comprehension of text. In Proceedings of the 2013 Conference on Empirical Methods in Nat- ural Language Processing, pages 193–203, Seattle, Washington, USA, October. Association for Compu- tational Linguistics.",
+    "Riloff, E. and Thelen, M. (2000). A rule-based question answering system for reading comprehen- sion tests. In Proceedings of the 2000 ANLP/- NAACL Workshop on Reading Comprehension Tests as Evaluation for Computer-Based Language Un- derstanding Sytems Volume 6, ANLP/NAACL- ReadingComp '00, page 13–19, USA. Association for Computational Linguistics.",
+    "Rouws, N. J., Vakulenko, S., and Katrenko, S. (2022). Dutch squad and ensemble learning for question an- swering from labour agreements. In Luis A. Leiva, et al., editors, Artificial Intelligence and Machine Learning, pages 155–169, Cham. Springer Interna- tional Publishing.",
+    "Sagi, O. and Rokach, L. (2018). Ensemble learning: A survey. WIREs Data Mining and Knowledge Dis- covery, 8(4):e1249.",
+    "Suzuki, J., Sasaki, Y., and Maeda, E. (2002). SVM an- swer selection for open-domain question answering. In COLING 2002: The 19th International Confer- ence on Computational Linguistics.",
+    "Trischler, A., Wang, T., Yuan, X., Harris, J., Sor- doni, A., Bachman, P., and Suleman, K. (2017). NewsQA: A machine comprehension dataset. In Proceedings of the 2nd Workshop on Representa- tion Learning for NLP, pages 191–200, Vancouver, Canada, August. Association for Computational Lin- guistics.",
+    "Uyangodage, L., Ranasinghe, T., and Hettiarachchi, H. (2021). Transformers to fight the COVID-19 info- demic. In Proceedings of the Fourth Workshop on NLP for Internet Freedom: Censorship, Disinforma- tion, and Propaganda, pages 130–135, Online, June. Association for Computational Linguistics.",
+    "Welbl, J., Liu, N. F., and Gardner, M. (2017). Crowdsourcing multiple choice science questions. In Proceedings of the 3rd Workshop on Noisy User- generated Text, pages 94–106, Copenhagen, Den- mark, September. Association for Computational Linguistics.",
+    "Wolf, T., Debut, L., Sanh, V., Chaumond, J., Delangue, C., Moi, A., Cistac, P., Rault, T., Louf, R., Funtow- icz, M., Davison, J., Shleifer, S., von Platen, P., Ma, C., Jernite, Y., Plu, J., Xu, C., Le Scao, T., Gug- ger, S., Drame, M., Lhoest, Q., and Rush, A. (2020). Transformers: State-of-the-art natural language pro- cessing. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Process- ing: System Demonstrations, pages 38–45, Online, October. Association for Computational Linguistics.",
+    "Yamada, I., Asai, A., Shindo, H., Takeda, H., and Mat- sumoto, Y. (2020). LUKE: Deep contextualized en- tity representations with entity-aware self-attention. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 6442–6454, Online, November. Association for Computational Linguistics.",
+    "Yen, S.-J., Wu, Y.-C., Yang, J.-C., Lee, Y.-S., Lee, C.- J., and Liu, J.-J. (2013). A support vector machine- based context-ranking model for question answer- ing. Information Sciences, 224:77–87.",
+    "Zeng, C., Li, S., Li, Q., Hu, J., and Hu, J. (2020). A survey on machine reading comprehension—tasks, evaluation metrics and benchmark datasets. Applied Sciences, 10(21).",
+    "Zhang, Z., Wu, Y., Zhou, J., Duan, S., Zhao, H., and Wang, R. (2020). Sg-net: Syntax-guided machine reading comprehension. Proceedings of the AAAI Conference on Artificial Intelligence, 34(05):9636– 9643, Apr.",
+    "Zhang, Z., Yang, J., and Zhao, H. (2021). Retro- spective reader for machine reading comprehension. Proceedings of the AAAI Conference on Artificial In- telligence, 35(16):14506–14514, May."
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "filename": "2211.03634.pdf",
+  "title": "No Word Embedding Model Is Perfect: Evaluating the Representation Accuracy for Social Bias in the Media",
+  "arxiv_url": "https://arxiv.org/pdf/2211.03634",
+  "benchmark_measurement": "Implicit bias against Christianity compared to Islam, measured by associating religious terms (e.g., Christianity, Islam) with pleasant/unpleasant attributes using the Word Embedding Association Test (WEAT).",
+  "religious_groups": [
+    "Christianity",
+    "Islam"
+  ],
+  "models_tested": [
+    "word2vec (Static)",
+    "FRAGE (Frequency-Agnostic)",
+    "Fine-Tuned BERT",
+    "Decontextualized BERT"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "WEAT"
+  ],
+  "continuous_testing": false,
+  "findings": "The study found that different word embedding algorithms produce highly variable results when measuring religious bias (Islam vs. Christianity). Models trained on conservative news corpora were expected to show more bias against Islam than models trained on liberal corpora, but this was not consistently observed across all algorithms. The Decontextualized and Frequency-Agnostic models, designed to be more robust, showed little difference between liberal and conservative corpora. A temporal analysis using the decontextualized model suggested that religious bias in the news corpus increased over the 12-year period from 2010 to 2021.",
+  "references": [
+    "Alan Akbik, Tanja Bergmann, Duncan Blythe, Kashif Rasul, Stefan Schweter, and Roland Vollgraf. 2019. FLAIR: An Easy-to-Use Framework for State-of-the-Art NLP. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics (Demonstrations), pages 54–59, Minneapolis, Minnesota. Association for Computational Linguistics.",
+    "Awais Ashfaq, Markus Lingman, and Slawomir Nowaczyk. 2022. KAFE: Knowledge and Frequency Adapted Embeddings. In Machine Learning, Optimization, and Data Science, pages 132-146, Cham. Springer International Publishing.",
+    "Pablo Badilla, Felipe Bravo-Marquez, and Jorge Pérez. 2020. WEFE: The Word Embeddings Fairness Evaluation Framework. volume 1, pages 430-436.",
+    "Nichole M. Bauer. 2015. Who stereotypes female candidates? Identifying individual differences in feminine stereotype reliance. Politics, Groups, and Identities, 3(1):94-110.",
+    "Emily M. Bender, Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. 2021. On the Dangers of Stochastic Parrots: Can Language Models Be Too Big? In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, FAccT '21, pages 610-623, New York, NY, USA. Association for Computing Machinery.",
+    "Rishi Bommasani, Kelly Davis, and Claire Cardie. 2020. Interpreting Pretrained Contextualized Representations via Reductions to Static Embeddings. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 4758–4781, Online. Association for Computational Linguistics.",
+    "E. Bruni, N. K. Tran, and M. Baroni. 2014. Multimodal Distributional Semantics. Journal of Artificial Intelligence Research, 49:1-47.",
+    "Aylin Caliskan, Joanna J. Bryson, and Arvind Narayanan. 2017. Semantics derived automatically from language corpora contain human-like biases. Science, 356(6334):183–186.",
+    "Kaytlin Chaloner and Alfredo Maldonado. 2019. Measuring Gender Bias in Word Embeddings across Domains and Discovering New Gender Bias Word Categories. In Proceedings of the First Workshop on Gender Bias in Natural Language Processing, pages 25-32, Florence, Italy. Association for Computational Linguistics.",
+    "Wei-Fan Chen, Khalid Al Khatib, Benno Stein, and Henning Wachsmuth. 2021. Controlled neural sentence-level reframing of news articles. In Findings of the Association for Computational Linguistics: EMNLP 2021, pages 2683-2693, Punta Cana, Dominican Republic. Association for Computational Linguistics.",
+    "Wei-Fan Chen, Khalid Al Khatib, Henning Wachsmuth, and Benno Stein. 2020. Analyzing Political Bias and Unfairness in News Articles at Different Levels of Granularity. In Proceedings of the Fourth Workshop on Natural Language Processing and Computational Social Science, pages 149–154, Online. Association for Computational Linguistics.",
+    "Antonio Chirumbolo, Luigi Leone, and Marta Desimoni. 2016. The interpersonal roots of politics: Social value orientation, socio-political attitudes and prejudice. Personality and Individual Differences, 91:144-153.",
+    "Scott Clifford. 2020. Compassionate Democrats and Tough Republicans: How Ideology Shapes Partisan Stereotypes. Political Behavior, 42(4):1269–1293.",
+    "Sunipa Dev and Jeff Phillips. 2019. Attenuating Bias in Word vectors. In Proceedings of the 22nd International Conference on Artificial Intelligence and Statistics, pages 879-887.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 4171-4186, Minneapolis, Minnesota. Association for Computational Linguistics.",
+    "David Domke, Kelley McCoy, and Marcos Torres. 1999. News Media, Racial Perceptions, and Political Cognition. Communication Research, 26(5):570-607.",
+    "John Duckitt and Chris G. Sibley. 2010. Personality, Ideology, Prejudice, and Politics: A Dual-Process Motivational Model. Journal of Personality, 78(6):1861-1894.",
+    "Kawin Ethayarajh, David Duvenaud, and Graeme Hirst. 2019. Understanding Undesirable Word Embedding Associations. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 1696–1705, Florence, Italy. Association for Computational Linguistics.",
+    "Manaal Faruqui, Yulia Tsvetkov, Pushpendre Rastogi, and Chris Dyer. 2016. Problems With Evaluation of Word Embeddings Using Word Similarity Tasks. In Proceedings of the 1st Workshop on Evaluating Vector-Space Representations for NLP, pages 30-35, Berlin, Germany. Association for Computational Linguistics.",
+    "Lev Finkelstein, Evgeniy Gabrilovich, Yossi Matias, Ehud Rivlin, Zach Solan, Gadi Wolfman, and Eytan Ruppin. 2001. Placing search in context: the concept revisited. In Proceedings of the 10th international conference on World Wide Web, WWW '01, pages 406-414, New York, NY, USA. Association for Computing Machinery.",
+    "Susan T. Fiske. 1998. Stereotyping, prejudice, and discrimination. In The handbook of social psychology, 4 edition, volume 1-2, pages 357-411. McGraw-Hill, New York, NY, US.",
+    "Nikhil Garg, Londa Schiebinger, Dan Jurafsky, and James Zou. 2018. Word embeddings quantify 100 years of gender and ethnic stereotypes. Proceedings of the National Academy of Sciences, 115(16):E3635-E3644.",
+    "Chengyue Gong, Di He, Xu Tan, Tao Qin, Liwei Wang, and Tie-Yan Liu. 2018. FRAGE: Frequency-Agnostic Word Representation. In Advances in Neural Information Processing Systems, volume 31. Curran Associates, Inc.",
+    "Felix Hamborg, Norman Meuschke, Corinna Breitinger, and Bela Gipp. 2017. news-please: A Generic News Crawler and Extractor. In Everything Changes, Everything Stays the Same? Understanding Information Spaces. Proceedings of the 15th International Symposium of Information Science (ISI 2017), pages 218-223. Humboldt-Universität zu Berlin.",
+    "Danny Hayes. 2011. When Gender and Party Collide: Stereotyping in Candidate Trait Attribution. Politics & Gender, 7(2):133-165.",
+    "Kenneth Joseph and Jonathan Morgan. 2020. When do Word Embeddings Accurately Reflect Surveys on our Beliefs About People? In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 4392-4415, Online. Association for Computational Linguistics.",
+    "Rafael-Michael Karampatsis, Hlib Babii, Romain Robbes, Charles Sutton, and Andrea Janes. 2020. Big Code != Big Vocabulary: Open-Vocabulary Models for Source Code. In 2020 IEEE/ACM 42nd International Conference on Software Engineering (ICSE), pages 1073-1085.",
+    "Linda Jean Kenix and Reza Jarvandi. 2019. The role of ideology in the international mainstream news media framing of refugees: A comparison between conservative and liberal newspapers in United States, United Kingdom and Australia. Journal of Applied Journalism & Media Studies, 8(3):349–365.",
+    "Markus Knoche, Radomir Popović, Florian Lemmerich, and Markus Strohmaier. 2019. Identifying Biases in Politically Biased Wikis through Word Embeddings. In Proceedings of the 30th ACM Conference on Hypertext and Social Media, HT '19, pages 253-257, New York, NY, USA. Association for Computing Machinery.",
+    "Thomas Manzini, Lim Yao Chong, Alan W Black, and Yulia Tsvetkov. 2019. Black is to Criminal as Caucasian is to Police: Detecting and Removing Multiclass Bias in Word Embeddings. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 615–621, Minneapolis, Minnesota. Association for Computational Linguistics.",
+    "Stephen Merity, Caiming Xiong, James Bradbury, and Richard Socher. 2016. Pointer Sentinel Mixture Models. arXiv:1609.07843 [cs]. ArXiv: 1609.07843.",
+    "Tomás Mikolov, Kai Chen, Greg Corrado, and Jeffrey Dean. 2013. Efficient estimation of word representations in vector space. In 1st International Conference on Learning Representations.",
+    "Jeffrey Pennington, Richard Socher, and Christopher Manning. 2014. GloVe: Global Vectors for Word Representation. In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1532-1543, Doha, Qatar. Association for Computational Linguistics.",
+    "Navid Rekabsaz, Robert West, James Henderson, and Allan Hanbury. 2021. Measuring Societal Biases from Text Corpora with Smoothed First-Order Co-occurrence. Proceedings of the International AAAI Conference on Web and Social Media, 15:549-560.",
+    "Anthony Rios, Reenam Joshi, and Hejin Shin. 2020. Quantifying 60 Years of Gender Bias in Biomedical Research with Word Embeddings. In Proceedings of the 19th SIGBioMed Workshop on Biomedical Language Processing, pages 1-13, Online. Association for Computational Linguistics.",
+    "Sarah Schröder, Alexander Schulz, Philip Kenneweg, Robert Feldhans, Fabian Hinder, and Barbara Hammer. 2021. Evaluating Metrics for Bias in Word Embeddings. arXiv:2111.07864 [cs].",
+    "Norbert Schwarz and Madeline Jalbert. 2020. When (Fake) News Feels True: Intuitions of truth and the acceptance and correction of misinformation. In The Psychology of Fake News, 1 edition, pages 73-89. Routledge.",
+    "Ellen Seiter. 1986. Stereotypes and the Media: A Re-evaluation. Journal of Communication, 36(2):14-26.",
+    "Deven Santosh Shah, H. Andrew Schwartz, and Dirk Hovy. 2020. Predictive Biases in Natural Language Processing Models: A Conceptual Framework and Overview. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5248-5264, Online. Association for Computational Linguistics.",
+    "Noam Slonim, Yonatan Bilu, Carlos Alzate, Roy Bar-Haim, Ben Bogin, Francesca Bonin, Leshem Choshen, Edo Cohen-Karlik, Lena Dankin, Lilach Edelstein, et al. 2021. An autonomous debating system. Nature, 591(7850):379-384.",
+    "Timo Spinde, Lada Rudnitckaia, Felix Hamborg, and Bela Gipp. 2021. Identification of Biased Terms in News Articles by Comparison of Outlet-Specific Word Embeddings. In Diversity, Divergence, Dialogue, Lecture Notes in Computer Science, pages 215-224, Cham. Springer International Publishing.",
+    "Maximilian Spliethöver and Henning Wachsmuth. 2020. Argument from old man's view: Assessing social bias in argumentation. In Proceedings of the 7th Workshop on Argument Mining, pages 76–87, Online. Association for Computational Linguistics.",
+    "Maximilian Spliethöver and Henning Wachsmuth. 2021. Bias silhouette analysis: Towards assessing the quality of bias metrics for word embedding models. In Proceedings of the Thirtieth International Joint Conference on Artificial Intelligence, IJCAI 2021, Virtual Event / Montreal, Canada, 19-27 August 2021, pages 552-559. ijcai.org.",
+    "Chris Sweeney and Maryam Najafian. 2019. A Transparent Framework for Evaluating Unintended Demographic Bias in Word Embeddings. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 1662–1667, Florence, Italy. Association for Computational Linguistics.",
+    "Karolina Sylwester and Matthew Purver. 2015. Twitter Language Use Reflects Psychological Differences between Democrats and Republicans. PLOS ONE, 10(9):e0137422.",
+    "Nicholas A. Valentino and David O. Sears. 2005. Old Times There Are Not Forgotten: Race and Partisan Realignment in the Contemporary South. American Journal of Political Science, 49(3):672-688.",
+    "Albert Webson, Zhizhong Chen, Carsten Eickhoff, and Ellie Pavlick. 2020. Are \"Undocumented Workers\" the Same as \"Illegal Aliens\"? Disentangling Denotation and Connotation in Vector Spaces. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 4090-4105, Online. Association for Computational Linguistics.",
+    "Russell J. Webster, Mason D. Burns, Margot Pickering, and Donald A. Saucier. 2014. The Suppression and Justification of Prejudice as A Function of Political Orientation. European Journal of Personality, 28(1):44-59.",
+    "Ruth Wodak. 2008. The contribution of critical linguistics to the analysis of discriminatory prejudices and stereotypes in the language of politics. In Handbook of Communication in the Public Sphere, volume 4, pages 291-316. De Gruyter Mouton.",
+    "Robert Wolfe and Aylin Caliskan. 2021. Low Frequency Names Exhibit Bias and Overfitting in Contextualizing Language Models. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 518-532, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics.",
+    "Sangwon Yu, Jongyoon Song, Heeseung Kim, Seong-min Lee, Woo-Jong Ryu, and Sungroh Yoon. 2022. Rare Tokens Degenerate All Tokens: Improving Neural Text Generation via Adaptive Gradient Gating for Rare Token Embeddings. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 29-45, Dublin, Ireland. Association for Computational Linguistics."
+  ]
+}

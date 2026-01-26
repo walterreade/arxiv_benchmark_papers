@@ -1,0 +1,78 @@
+{
+  "filename": "2503.11985.pdf",
+  "title": "No LLM is Free From Bias: A Comprehensive Study of Bias Evaluation in Large Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2503.11985",
+  "benchmark_measurement": "The benchmark measured stereotypical associations, the association of religious groups with positive and negative undertoned questions, and the association of toxic content with religious groups.",
+  "religious_groups": [
+    "Christianity",
+    "Islam",
+    "Hinduism",
+    "Buddhism",
+    "Judaism",
+    "Taoism",
+    "Orthodox",
+    "Mormon",
+    "Catholic",
+    "Protestant",
+    "Sikh",
+    "Atheist"
+  ],
+  "models_tested": [
+    "TinyLLaMA-1.1B-Instruct (TL-1.1B)",
+    "Phi3-5B-mini-Instruct (PHI-3.5B)",
+    "LLaMA3-8B-Instruct (LL-8B)",
+    "Mistral-7B-Instruct (MST-7B)"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "StereoSet",
+    "WinoBias",
+    "UnQover",
+    "CrowS-Pairs",
+    "Real Toxicity Prompts (RTP)",
+    "Equity Evaluation Corpus (EEC)"
+  ],
+  "continuous_testing": false,
+  "findings": "LLMs exhibited varied biases across religions. Models tended to associate Christian, Sikh, Buddhist, and Jewish religions with positive questions, while linking Orthodox and Atheist beliefs with negative questions. In terms of association with toxic content, Christianity was most frequently associated, followed by Islam and Hinduism. Overall, the LL-8B model was found to be the least biased for religion in stereotype-based tasks (CrowS-Pairs), but when associating toxic content, all models showed significant bias.",
+  "references": [
+    "Marah Abdin, Jyoti Aneja, Hany Awadalla, Ahmed Awadallah, Ammar Ahmad Awan, Nguyen Bach, Amit Bahree, Arash Bakhtiari, Jianmin Bao, Harkirat Behl, et al. 2024. Phi-3 technical report: A highly capable language model locally on your phone. arXiv preprint arXiv:2404.14219.",
+    "Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia Leoni Aleman, Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat, et al. 2023. Gpt-4 technical report. arXiv preprint arXiv:2303.08774.",
+    "Emily M Bender, Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. 2021. On the dangers of stochastic parrots: Can language models be too big? In Proceedings of the 2021 ACM conference on fairness, accountability, and transparency, pages 610–623.",
+    "Su Lin Blodgett, Solon Barocas, Hal Daumé III, and Hanna Wallach. 2020. Language (technology) is power: A critical survey of \"bias\" in NLP. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5454-5476, Online. Association for Computational Linguistics.",
+    "Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Amy Yang, Angela Fan, et al. 2024. The llama 3 herd of models. arXiv preprint arXiv:2407.21783.",
+    "Zhiting Fan, Ruizhe Chen, Ruiling Xu, and Zuozhu Liu. 2024. BiasAlert: A plug-and-play tool for social bias detection in LLMs. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 14778–14790, Miami, Florida, USA. Association for Computational Linguistics.",
+    "Isabel O. Gallegos, Ryan A. Rossi, Joe Barrow, Md Mehrab Tanjim, Sungchul Kim, Franck Dernoncourt, Tong Yu, Ruiyi Zhang, and Nesreen K. Ahmed. 2024. Bias and fairness in large language models: A survey. Computational Linguistics, 50(3):1097-1179.",
+    "Samuel Gehman, Suchin Gururangan, Maarten Sap, Yejin Choi, and Noah A. Smith. 2020. RealToxicityPrompts: Evaluating neural toxic degeneration in language models. In Findings of the Association for Computational Linguistics: EMNLP 2020, pages 3356–3369, Online. Association for Computational Linguistics.",
+    "Michael Gira, Ruisu Zhang, and Kangwook Lee. 2022. Debiasing pre-trained language models via efficient fine-tuning. In Proceedings of the second workshop on language technology for equality, diversity and inclusion, pages 59–69.",
+    "Albert Q Jiang, Alexandre Sablayrolles, Arthur Mensch, Chris Bamford, Devendra Singh Chaplot, Diego de las Casas, Florian Bressand, Gianna Lengyel, Guillaume Lample, Lucile Saulnier, et al. 2023. Mistral 7b. arXiv preprint arXiv:2310.06825.",
+    "Svetlana Kiritchenko and Saif Mohammad. 2018. Examining gender and race bias in two hundred sentiment analysis systems. In Proceedings of the Seventh Joint Conference on Lexical and Computational Semantics, pages 43–53, Online. Association for Computational Linguistics.",
+    "Tao Li, Daniel Khashabi, Tushar Khot, Ashish Sabharwal, and Vivek Srikumar. 2020. UNQOVERing stereotyping biases via underspecified questions. In Findings of the Association for Computational Linguistics: EMNLP 2020, pages 3475–3489, Online. Association for Computational Linguistics.",
+    "Aixin Liu, Bei Feng, Bing Xue, Bingxuan Wang, Bochao Wu, Chengda Lu, Chenggang Zhao, Chengqi Deng, Chenyu Zhang, Chong Ruan, et al. 2024. Deepseek-v3 technical report. arXiv preprint arXiv:2412.19437.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2021. StereoSet: Measuring stereotypical bias in pretrained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 5356–5371, Online. Association for Computational Linguistics.",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R. Bowman. 2020. CrowS-pairs: A challenge dataset for measuring social biases in masked language models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1953–1967, Online. Association for Computational Linguistics.",
+    "Tarek Naous, Michael J Ryan, Alan Ritter, and Wei Xu. 2024. Having beer after prayer? measuring cultural bias in large language models. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 16366–16393, Bangkok, Thailand. Association for Computational Linguistics.",
+    "Roberto Navigli, Simone Conia, and Björn Ross. 2023. Biases in large language models: origins, inventory, and discussion. ACM Journal of Data and Information Quality, 15(2):1–21.",
+    "Debora Nozza, Federico Bianchi, and Dirk Hovy. 2022. Pipelines for social bias testing of large language models. In Proceedings of BigScience Episode #5 Workshop on Challenges & Perspectives in Creating Large Language Models, pages 68–74, virtual+Dublin. Association for Computational Linguistics.",
+    "Daisuke Oba, Masahiro Kaneko, and Danushka Bollegala. 2024. In-contextual gender bias suppression for large language models. In Findings of the Association for Computational Linguistics: EACL 2024, pages 1722–1742, St. Julian's, Malta. Association for Computational Linguistics.",
+    "Flor Miriam Plaza-del Arco, Amanda Cercas Curry, Susanna Paoli, Alba Cercas Curry, and Dirk Hovy. 2024. Divine LLaMAs: Bias, stereotypes, stigmatization, and emotion representation of religion in large language models. In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 4346–4366, Miami, Florida, USA. Association for Computational Linguistics.",
+    "Yao Qu and Jue Wang. 2024. Performance and biases of large language models in public opinion simulation. Humanities and Social Sciences Communications, 11(1):1–13.",
+    "Leonardo Ranaldi, Elena Ruzzetti, Davide Venditti, Dario Onorati, and Fabio Massimo Zanzotto. 2024. A trip towards fairness: Bias and de-biasing in large language models. In Proceedings of the 13th Joint Conference on Lexical and Computational Semantics (* SEM 2024), pages 372–384.",
+    "Rachel Rudinger, Jason Naradowsky, Brian Leonard, and Benjamin Van Durme. 2018. Gender bias in coreference resolution. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 8–14, New Orleans, Louisiana. Association for Computational Linguistics.",
+    "Eric Michael Smith, Melissa Hall, Melanie Kambadur, Eleonora Presani, and Adina Williams. 2022. \"I'm sorry to hear that”: Finding new biases in language models with a holistic descriptor dataset. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 9180–9211, Online. Association for Computational Linguistics.",
+    "Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine Babaei, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, et al. 2023. Llama 2: Open foundation and fine-tuned chat models. arXiv preprint arXiv:2307.09288.",
+    "Ashok Urlana, Charaka Vinayak Kumar, Ajeet Kumar Singh, Bala Mallikarjunarao Garlapati, Srinivasa Rao Chalamala, and Rahul Mishra. 2024. Llms with industrial lens: Deciphering the challenges and prospects-a survey. arXiv preprint arXiv:2402.14558.",
+    "Ashok Urlana, Charaka Vinayak Kumar, Bala Mallikarjunarao Garlapati, Ajeet Kumar Singh, and Rahul Mishra. 2025. No size fits all: The perils and pitfalls of leveraging LLMs vary with company size. In Proceedings of the 31st International Conference on Computational Linguistics: Industry Track, pages 187–203, Abu Dhabi, UAE. Association for Computational Linguistics.",
+    "Fei Wang, Wenjie Mo, Yiwei Wang, Wenxuan Zhou, and Muhao Chen. 2023. A causal view of entity bias in (large) language models. In Findings of the Association for Computational Linguistics: EMNLP 2023, pages 15173–15184, Singapore. Association for Computational Linguistics.",
+    "Yifan Yang, Xiaoyu Liu, Qiao Jin, Furong Huang, and Zhiyong Lu. 2024. Unmasking and quantifying racial bias of large language models in medical report generation. Communications Medicine, 4(1):176.",
+    "Zhiwen You, HaeJin Lee, Shubhanshu Mishra, Sullam Jeoung, Apratim Mishra, Jinseok Kim, and Jana Diesner. 2024. Beyond binary gender labels: Revealing gender bias in LLMs through gender-neutral name predictions. In Proceedings of the 5th Workshop on Gender Bias in Natural Language Processing (GeBNLP), pages 255–268, Bangkok, Thailand. Association for Computational Linguistics.",
+    "Peiyuan Zhang, Guangtao Zeng, Tianduo Wang, and Wei Lu. 2024. Tinyllama: An open-source small language model. arXiv preprint arXiv:2401.02385.",
+    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang. 2018. Gender bias in coreference resolution: Evaluation and debiasing methods. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 15–20.",
+    "Shucheng Zhu, Weikang Wang, and Ying Liu. 2024. Quite good, but not enough: Nationality bias in large language models - a case study of ChatGPT. In Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024), pages 13489-13502, Torino, Italia. ELRA and ICCL."
+  ]
+}
