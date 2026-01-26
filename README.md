@@ -1,0 +1,87 @@
+# ArXiv Benchmark Papers Analysis
+
+A pipeline for downloading, analyzing, and summarizing academic papers from arXiv that relate to religious bias evaluation in Large Language Models (LLMs).
+
+## Overview
+
+This project provides tools to:
+1. Download papers from arXiv based on search criteria
+2. Perform a first-pass analysis to identify faith/ethics-related papers
+3. Perform a deep-dive second-pass analysis on relevant papers
+4. Generate summary statistics and learnings from the analysis
+
+## Scripts
+
+### `download_arxiv_benchmark_papers.py`
+Downloads PDF papers from arXiv based on configured search parameters.
+
+### `1st_pass_analyze_papers.py`
+Performs initial analysis on downloaded PDFs using the Gemini API to determine:
+- Whether the paper is benchmark-related
+- Whether it's LLM-related
+- Whether it discusses bias
+- Whether it's faith/ethics-related
+
+**Output:** `1st_pass_results.csv`
+
+### `2nd_pass_analyze_papers.py`
+Performs deep-dive analysis on papers identified as faith/ethics-related in the first pass. Extracts:
+- Religious groups studied
+- Models tested
+- Benchmark measurements and findings
+- Languages evaluated
+- Response types (short/long)
+- Religion component (major/minor focus)
+- Base benchmarks used
+- References cited
+- Whether testing is continuous
+
+**Usage:**
+```bash
+uv run 2nd_pass_analyze_papers.py [--rpm 10] [--workers 5] [--model gemini-2.5-pro] [--reprocess]
+```
+
+**Output:** JSON files in `2nd_pass_json/`
+
+### `create_summary.py`
+Processes the JSON analysis files and generates markdown summaries.
+
+**Usage:**
+```bash
+uv run create_summary.py [--json_dir 2nd_pass_json] [--output benchmark_analysis.md] [--learnings benchmark_learnings.md] [--summary benchmark_summary.md] [--summary-model gemini-3-pro-preview]
+```
+
+**Outputs:**
+- `benchmark_analysis.md` - Statistical tables (religious groups, models, benchmarks, languages, etc.)
+- `benchmark_learnings.md` - Individual paper entries with findings
+- `benchmark_summary.md` - AI-generated summary of the state of religious bias measurement in LLMs
+
+## Output Files
+
+| File | Description |
+|------|-------------|
+| `1st_pass_results.csv` | Results from initial paper screening |
+| `1st_pass_failures.csv` | Papers that failed first-pass analysis |
+| `2nd_pass_json/` | Directory containing detailed JSON analysis for each paper |
+| `2nd_pass_failures.csv` | Papers that failed second-pass analysis |
+| `benchmark_analysis.md` | Summary tables with counts of religious groups, models, benchmarks, etc. |
+| `benchmark_learnings.md` | Detailed findings from each analyzed paper |
+| `benchmark_summary.md` | AI-generated comprehensive summary of the field |
+
+## Setup
+
+1. Create a `.env` file with your Google API key:
+   ```
+   GOOGLE_API_KEY=your_api_key_here
+   ```
+
+2. Install dependencies:
+   ```bash
+   uv sync
+   ```
+
+## Requirements
+
+- Python 3.10+
+- Google Gemini API access
+- Dependencies managed via `uv` (see `pyproject.toml`)
