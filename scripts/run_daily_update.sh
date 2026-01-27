@@ -76,11 +76,11 @@ echo "Step 5: Generating update file..."
 echo "----------------------------------------"
 
 # Create updates directory if needed
-mkdir -p analysis/updates
+mkdir -p analysis/daily_updates
 
 # Generate the update file
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
-OUTPUT_FILE="analysis/updates/update_${TIMESTAMP}.md"
+OUTPUT_FILE="analysis/daily_updates/update_${TIMESTAMP}.md"
 
 # Pass the new JSON files to the generate_update script
 echo "$NEW_PAPERS" | xargs uv run python scripts/generate_daily_update.py --output "$OUTPUT_FILE" --json-files

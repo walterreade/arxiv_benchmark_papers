@@ -11,6 +11,8 @@ import argparse
 import re
 import csv
 import unicodedata
+import shutil
+from datetime import datetime
 from collections import Counter
 from pathlib import Path
 from dotenv import load_dotenv
@@ -259,6 +261,7 @@ Your summary should cover:
 5. **Identified Biases**: What specific biases have been identified (e.g., which religions are favored/disfavored)
 6. **Gaps and Limitations**: What is missing from current research, underrepresented areas
 7. **Future Directions**: Recommendations for future research based on the gaps identified
+8. **Recommendations for Measuring Latter-day Saint Bias**: Based on your analysis of the papers and methodologies, provide specific, actionable recommendations for how one could best measure explicit or implicit bias towards Latter-day Saints (Mormons) in modern LLMs. Include suggested benchmark types, prompt templates, evaluation metrics, and any unique considerations for this religious group.
 
 Write in a scholarly but accessible tone. Use specific examples from the papers where relevant.
 
@@ -682,6 +685,20 @@ def main():
     
     # Generate benchmark summary using LLM
     generate_benchmark_summary(learnings_file, summary_file, summary_model)
+    
+    # Create versioned copies in analysis/versions
+    versions_dir = "analysis/versions"
+    os.makedirs(versions_dir, exist_ok=True)
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    
+    for src_file in [output_file, learnings_file, summary_file]:
+        if os.path.exists(src_file):
+            base_name = Path(src_file).stem
+            ext = Path(src_file).suffix
+            versioned_name = f"{base_name}_{timestamp}{ext}"
+            versioned_path = os.path.join(versions_dir, versioned_name)
+            shutil.copy2(src_file, versioned_path)
+            print(f"Versioned copy saved to {versioned_path}")
 
 
 if __name__ == "__main__":

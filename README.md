@@ -28,7 +28,8 @@ This project provides tools to:
 │   ├── benchmark_analysis.md
 │   ├── benchmark_learnings.md
 │   ├── benchmark_summary.md
-│   └── updates/                # Timestamped update files
+│   ├── daily_updates/          # Timestamped daily update files
+│   └── versions/               # Versioned copies with timestamps
 ├── csv/                        # CSV data files
 │   ├── 1st_pass_results.csv
 │   ├── 1st_pass_failures.csv
@@ -110,7 +111,8 @@ Helper script to generate timestamped update markdown files for specific papers.
 | `analysis/benchmark_analysis.md` | Summary tables with counts of religious groups, models, benchmarks, etc. |
 | `analysis/benchmark_learnings.md` | Detailed findings from each analyzed paper |
 | `analysis/benchmark_summary.md` | AI-generated comprehensive summary of the field |
-| `analysis/updates/` | Timestamped update files from `run_daily_update.sh` runs |
+| `analysis/daily_updates/` | Timestamped update files from `run_daily_update.sh` runs |
+| `analysis/versions/` | Versioned copies of analysis files with timestamps |
 
 ## Setup
 
