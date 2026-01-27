@@ -17,10 +17,10 @@ This project provides tools to:
 │   ├── download_arxiv_benchmark_papers.py
 │   ├── 1st_pass_analyze_papers.py
 │   ├── 2nd_pass_analyze_papers.py
-│   ├── create_summary.py
+│   ├── generate_full_analysis.py
 │   ├── check_lds_mentions.py
-│   ├── generate_update.py
-│   └── update_analysis.sh
+│   ├── generate_daily_update.py
+│   └── run_daily_update.sh
 ├── json/                       # JSON analysis output
 │   ├── 1st_pass_json/
 │   └── 2nd_pass_json/
@@ -69,12 +69,12 @@ uv run scripts/2nd_pass_analyze_papers.py [--rpm 10] [--workers 5] [--model gemi
 
 **Output:** JSON files in `json/2nd_pass_json/`
 
-### `scripts/create_summary.py`
+### `scripts/generate_full_analysis.py`
 Processes the JSON analysis files and generates markdown summaries.
 
 **Usage:**
 ```bash
-uv run scripts/create_summary.py
+uv run scripts/generate_full_analysis.py
 ```
 
 **Outputs:**
@@ -85,7 +85,7 @@ uv run scripts/create_summary.py
 ### `scripts/check_lds_mentions.py`
 Utility script to check for Latter-day Saint/Mormon mentions in analyzed papers.
 
-### `scripts/update_analysis.sh`
+### `scripts/run_daily_update.sh`
 Automated pipeline that runs the full analysis workflow:
 1. Downloads new papers from arXiv
 2. Runs 1st pass analysis
@@ -93,10 +93,10 @@ Automated pipeline that runs the full analysis workflow:
 4. Generates a timestamped update file for newly analyzed papers
 
 ```bash
-./scripts/update_analysis.sh
+./scripts/run_daily_update.sh
 ```
 
-### `scripts/generate_update.py`
+### `scripts/generate_daily_update.py`
 Helper script to generate timestamped update markdown files for specific papers.
 
 ## Output Files
@@ -110,7 +110,7 @@ Helper script to generate timestamped update markdown files for specific papers.
 | `analysis/benchmark_analysis.md` | Summary tables with counts of religious groups, models, benchmarks, etc. |
 | `analysis/benchmark_learnings.md` | Detailed findings from each analyzed paper |
 | `analysis/benchmark_summary.md` | AI-generated comprehensive summary of the field |
-| `analysis/updates/` | Timestamped update files from `update_analysis.sh` runs |
+| `analysis/updates/` | Timestamped update files from `run_daily_update.sh` runs |
 
 ## Setup
 

@@ -36,6 +36,12 @@ def check_mormon_mention(paper: dict) -> bool:
     return 'mormon' in text_to_check or 'latter-day saints' in text_to_check
 
 
+
+def filter_religion_papers(data: list[dict]) -> list[dict]:
+    """Filter papers to only include those with religion_component of 'major' or 'minor'."""
+    return [p for p in data if p.get('religion_component', '').lower() in ('major', 'minor')]
+
+
 def generate_update_file(json_files: list[str], csv_file: str, output_path: str):
     """Generate update markdown file for the specified JSON files."""
     csv_metadata = load_csv_metadata(csv_file)
@@ -52,9 +58,12 @@ def generate_update_file(json_files: list[str], csv_file: str, output_path: str)
                 papers.append(paper)
         except (json.JSONDecodeError, IOError) as e:
             print(f"Error loading {json_path}: {e}")
+            
+    # Filter papers to only include those with religion_component of 'major' or 'minor'
+    papers = filter_religion_papers(papers)
     
     if not papers:
-        print("No papers to include in update.")
+        print("No relevant papers (major/minor religion component) to include in update.")
         return False
     
     # Sort by filename descending

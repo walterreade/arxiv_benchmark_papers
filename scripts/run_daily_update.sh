@@ -83,7 +83,7 @@ TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 OUTPUT_FILE="analysis/updates/update_${TIMESTAMP}.md"
 
 # Pass the new JSON files to the generate_update script
-echo "$NEW_PAPERS" | xargs uv run python scripts/generate_update.py --json-files --output "$OUTPUT_FILE"
+echo "$NEW_PAPERS" | xargs uv run python scripts/generate_daily_update.py --output "$OUTPUT_FILE" --json-files
 
 echo ""
 echo "========================================"
