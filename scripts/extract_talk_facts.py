@@ -305,7 +305,7 @@ def main():
     parser.add_argument("--pdf-dir", default="pdf", help="Directory containing original PDFs")
     parser.add_argument("--output", default="analysis/talk_facts.md", help="Output file")
     parser.add_argument("--format", choices=['markdown', 'json'], default='markdown', help="Output format")
-    parser.add_argument("--model", default="gemini-2.5-pro", help="Model for fact extraction")
+    parser.add_argument("--model", default="gemini-3-pro-preview", help="Model for fact extraction")
     parser.add_argument("--months", type=int, default=24, help="Only include papers from last N months")
     parser.add_argument("--no-verify", action="store_true", help="Skip PDF verification step")
     
@@ -365,6 +365,17 @@ def main():
         f.write(output)
     
     print(f"\nFacts saved to {args.output}")
+    
+    # Save timestamped version
+    versions_dir = os.path.join(os.path.dirname(args.output) or '.', 'versions')
+    os.makedirs(versions_dir, exist_ok=True)
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    base_name = os.path.splitext(os.path.basename(args.output))[0]
+    ext = os.path.splitext(args.output)[1]
+    versioned_path = os.path.join(versions_dir, f"{base_name}_{timestamp}{ext}")
+    with open(versioned_path, 'w', encoding='utf-8') as f:
+        f.write(output)
+    print(f"Versioned copy saved to {versioned_path}")
     
     # Summary
     verified = sum(1 for f in facts if f.get('verified', False))
