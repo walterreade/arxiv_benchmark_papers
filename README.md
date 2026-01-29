@@ -100,6 +100,25 @@ Automated pipeline that runs the full analysis workflow:
 ### `scripts/generate_daily_update.py`
 Helper script to generate timestamped update markdown files for specific papers.
 
+### `scripts/extract_talk_facts.py`
+Extracts impactful, quotable facts for talks/papers about religious bias in LLMs.
+
+```bash
+uv run python scripts/extract_talk_facts.py
+```
+
+**Features:**
+- Extracts 15-20 high-impact facts from analysis files
+- Filters for recent papers (default: last 24 months) to avoid stale information
+- Verifies key facts against original PDFs for accuracy
+- Categorizes facts (quantitative, surprising, bias patterns, methodology, gaps, trends)
+- Outputs concise, presentation-ready statements
+
+**Options:**
+- `--months N` - Include papers from last N months (default: 24)
+- `--no-verify` - Skip PDF verification (faster but less accurate)
+- `--format json` - Output as JSON instead of markdown
+
 ## Output Files
 
 | File | Description |
@@ -113,6 +132,7 @@ Helper script to generate timestamped update markdown files for specific papers.
 | `analysis/benchmark_summary.md` | AI-generated comprehensive summary of the field |
 | `analysis/daily_updates/` | Timestamped update files from `run_daily_update.sh` runs |
 | `analysis/versions/` | Versioned copies of analysis files with timestamps |
+| `analysis/talk_facts.md` | Extracted impactful facts for presentations |
 
 ## Setup
 
