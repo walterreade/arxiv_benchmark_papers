@@ -13,9 +13,19 @@ from typing import Optional, List, Dict
 from tqdm import tqdm
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
+from dotenv import load_dotenv
+
+import warnings
+
+# Filter the specific warning message
+warnings.filterwarnings(
+    "ignore",
+    message="Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.",
+    category=UserWarning # The category might be different, UserWarning is a common one
+)
+
 from google import genai
 from google.genai import types
-from dotenv import load_dotenv
 
 # Load environment variables
 load_dotenv()
@@ -24,6 +34,13 @@ load_dotenv()
 class ResourceExhaustedError(Exception):
     """Raised when API returns resource exhausted error."""
     pass
+
+
+class IterationTimeoutError(Exception):
+    """Raised when a single iteration takes too long."""
+    pass
+
+ITERATION_TIMEOUT = 120  # 2 minutes
 
 
 class ErrorTracker:
@@ -138,8 +155,11 @@ def analyze_paper_deep_dive(pdf_path: str, api_key: str, model_name: str,
                 )
             )
         
-        # Wait for processing
+        # Wait for processing with timeout
+        processing_start = time.time()
         while sample_file.state.name == "PROCESSING":
+            if time.time() - processing_start > ITERATION_TIMEOUT:
+                raise IterationTimeoutError(f"File processing timed out after {ITERATION_TIMEOUT}s")
             time.sleep(1)
             sample_file = client.files.get(name=sample_file.name)
             

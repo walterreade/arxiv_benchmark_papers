@@ -12,10 +12,20 @@ from tqdm import tqdm
 import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-from google import genai
-from google.genai import types
 from pypdf import PdfReader
 from dotenv import load_dotenv
+
+import warnings
+
+# Filter the specific warning message
+warnings.filterwarnings(
+    "ignore",
+    message="Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.",
+    category=UserWarning # The category might be different, UserWarning is a common one
+)
+
+from google import genai
+from google.genai import types
 
 # Load environment variables: GOOGLE_API_KEY=<your_api_key>
 load_dotenv()
@@ -24,6 +34,12 @@ load_dotenv()
 class ResourceExhaustedError(Exception):
     """Raised when API returns resource exhausted error."""
     pass
+
+class IterationTimeoutError(Exception):
+    """Raised when a single iteration takes too long."""
+    pass
+
+ITERATION_TIMEOUT = 120  # 2 minutes
 
 class ErrorTracker:
     """Thread-safe error counter."""
@@ -114,8 +130,11 @@ def analyze_content(pdf_path: str, api_key: str, rate_limiter: RateLimiter, mode
                 )
             )
         
-        # Wait for processing
+        # Wait for processing with timeout
+        processing_start = time.time()
         while sample_file.state.name == "PROCESSING":
+            if time.time() - processing_start > ITERATION_TIMEOUT:
+                raise IterationTimeoutError(f"File processing timed out after {ITERATION_TIMEOUT}s")
             time.sleep(1)
             sample_file = client.files.get(name=sample_file.name)
             

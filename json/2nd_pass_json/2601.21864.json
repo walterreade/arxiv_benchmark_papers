@@ -1,0 +1,79 @@
+{
+  "filename": "2601.21864.pdf",
+  "title": "KnowBias: Mitigating Social Bias in LLMs via Know-Bias Neuron Enhancement",
+  "arxiv_url": "https://arxiv.org/pdf/2601.21864",
+  "benchmark_measurement": "The paper measures stereotypical biases associated with religion as a demographic category. The evaluation uses existing social bias benchmarks (BBQ, CrowS-Pairs, StereoSet) to quantify the extent of stereotypical associations in language models and assesses the effectiveness of the proposed 'KnowBias' method in mitigating them.",
+  "religious_groups": [
+    "Religion (as a general demographic category)"
+  ],
+  "models_tested": [
+    "Llama-3.2-3B-Instruct",
+    "Llama-3.1-8B-Instruct",
+    "Qwen-3-4B-Instruct-2507"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "BBQ",
+    "CrowS-Pairs",
+    "StereoSet"
+  ],
+  "continuous_testing": false,
+  "findings": "The proposed 'KnowBias' method effectively and consistently reduces social biases related to religion across multiple LLMs and benchmarks. The method achieved one of the top ranks for debiasing performance on the religion dimension, demonstrating its ability to mitigate stereotypes while largely preserving the models' general reasoning capabilities.",
+  "references": [
+    "Blodgett, S. L., Barocas, S., Daumé III, H., and Wallach, H. Language (technology) is power: A critical survey of \"bias\" in NLP. In Jurafsky, D., Chai, J., Schluter, N., and Tetreault, J. (eds.), Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pp. 5454–5476, Online, July 2020. Association for Computational Linguistics. doi: 10.18653/v1/2020.acl-main. 485. URL https://aclanthology.org/2020. acl-main.485/.",
+    "Cheng, X., Chen, R., Zan, H., Jia, Y., and Peng, M. BiasFilter: An inference-time debiasing framework for large language models. In Christodoulopoulos, C., Chakraborty, T., Rose, C., and Peng, V. (eds.), Findings of the Association for Computational Linguistics: EMNLP 2025, pp. 15187–15205, Suzhou, China, November 2025. Association for Computational Linguistics. ISBN 979-8- 89176-335-7. doi: 10.18653/v1/2025.findings-emnlp. 821. URL https://aclanthology.org/2025. findings-emnlp.821/.",
+    "Clark, P., Cowhey, I., Etzioni, O., Khot, T., Sabharwal, A., Schoenick, C., and Tafjord, O. Think you have solved question answering? try arc, the ai2 reasoning challenge. arXiv:1803.05457v1, 2018.",
+    "Crawford, K. The trouble with bias. Talk at NeurIPS, December 2017. URL http://youtube.com/ watch?v=fMym_BKWQzk.",
+    "Cui, T., Wang, Y., Fu, C., Xiao, Y., Li, S., Deng, X., Liu, Y., Zhang, Q., Qiu, Z., Li, P., et al. Risk taxonomy, mitigation, and assessment benchmarks of large language model systems. arXiv preprint arXiv:2401.05778, 2024.",
+    "Dai, D., Dong, L., Hao, Y., Sui, Z., Chang, B., and Wei, F. Knowledge neurons in pretrained transformers. In Muresan, S., Nakov, P., and Villavicencio, A. (eds.), Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 8493–8502, Dublin, Ireland, May 2022. Association for Computational Linguistics. doi: 10.18653/v1/2022. acl-long.581. URL https://aclanthology.org/ 2022.acl-long.581/.",
+    "Devine, P. G. Stereotypes and prejudice: Their automatic and controlled components. Journal of personality and social psychology, 56(1):5, 1989.",
+    "Duan, X., Zhou, X., Xiao, B., and Cai, Z. Unveiling language competence neurons: A psycholinguistic approach to model interpretability. In Rambow, O., Wanner, L., Apidianaki, M., Al-Khalifa, H., Eugenio, B. D., and Schockaert, S. (eds.), Proceedings of the 31st International Conference on Computational Linguistics, pp. 10148–10157, Abu Dhabi, UAE, January 2025. Association for Computational Linguistics. URL https://aclanthology.org/2025. coling-main.677/.",
+    "Dwivedi, S., Ghosh, S., and Dwivedi, S. Breaking the bias: Gender fairness in llms using prompt engineering and in-context learning. Rupkatha Journal on Interdisciplinary Studies in Humanities, 15(4), 2023.",
+    "Elhage, N., Hume, T., Olsson, C., Schiefer, N., Henighan, T., Kravec, S., Hatfield-Dodds, Z., Lasenby, R., Drain, D., Chen, C., et al. Toy models of superposition. arXiv preprint arXiv:2209.10652, 2022.",
+    "Gallegos, I. O., Rossi, R. A., Barrow, J., Tanjim, M. M., Kim, S., Dernoncourt, F., Yu, T., Zhang, R., and Ahmed, N. K. Bias and fairness in large language models: A survey. Computational Linguistics, pp. 1–79, 2024.",
+    "Gallegos, I. O., Aponte, R., Rossi, R. A., Barrow, J., Tanjim, M., Yu, T., Deilamsalehy, H., Zhang, R., Kim, S., Dernoncourt, F., Lipka, N., Owens, D., and Gu, J. Self-debiasing large language models: Zero-shot recognition and reduction of stereotypes. In Chiruzzo, L., Ritter, A., and Wang, L. (eds.), Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 2: Short Papers), pp. 873–888, Albuquerque, New Mexico, April 2025. Association for Computational Linguistics. ISBN 979-8-89176-190-2. doi: 10.18653/v1/2025.naacl-short. 74. URL https://aclanthology.org/2025. naacl-short.74/.",
+    "Geva, M., Schuster, R., Berant, J., and Levy, O. Transformer feed-forward layers are key-value memories. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pp. 5484–5495, 2021.",
+    "Gonçalves, G. and Strubell, E. Understanding the effect of model compression on social bias in large language models. In Bouamor, H., Pino, J., and Bali, K. (eds.), Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, pp. 2663–2675, Singapore, December 2023. Association for Computational Linguistics. doi: 10.18653/v1/2023.emnlp-main. 161. URL https://aclanthology.org/2023. emnlp-main.161/.",
+    "Grattafiori, A., Dubey, A., Jauhri, A., Pandey, A., Kadian, A., Al-Dahle, A., Letman, A., Mathur, A., Schelten, A., Vaughan, A., et al. The llama 3 herd of models. arXiv preprint arXiv:2407.21783, 2024.",
+    "Hofmann, V., Kalluri, P. R., Jurafsky, D., and King, S. Ai generates covertly racist decisions about people based on their dialect. Nature, 633(8028):147–154, 2024.",
+    "Kabra, S., Jha, A., and Reddy, C. K. Reasoning towards fairness: Mitigating bias in language models through reasoning-guided fine-tuning. arXiv preprint arXiv:2504.05632, 2025.",
+    "Kaneko, M., Bollegala, D., Okazaki, N., and Baldwin, T. Evaluating gender bias in large language models via chain-of-thought prompting, 2024. URL https: //arxiv.org/abs/2401.15585.",
+    "Kavumba, P., Inoue, N., Heinzerling, B., Singh, K., Reisert, P., and Inui, K. When choosing plausible alternatives, clever hans can be clever. In Proceedings of the First Workshop on Commonsense Inference in Natural Language Processing, pp. 33–42, Hong Kong, China, November 2019. Association for Computational Linguistics. doi: 10.18653/v1/D19-6004. URL https: //aclanthology.org/D19-6004.",
+    "Kilbertus, N., Rojas Carulla, M., Parascandolo, G., Hardt, M., Janzing, D., and Schölkopf, B. Avoiding discrimination through causal reasoning. Advances in neural information processing systems, 30, 2017.",
+    "Knobe, J. Intentional action and side effects in ordinary language. Analysis, 63(3):190–194, 2003.",
+    "Lee, H., Phatale, S., Mansoor, H., Mesnard, T., Ferret, J., Lu, K., Bishop, C., Hall, E., Carbune, V., Rastogi, A., et al. Rlaif vs. rlhf: Scaling reinforcement learning from human feedback with ai feedback. arXiv preprint arXiv:2309.00267, 2023.",
+    "Li, Y., Fan, Z., Chen, R., Gai, X., Gong, L., Zhang, Y., and Liu, Z. FairSteer: Inference time debiasing for LLMs with dynamic activation steering. In Che, W., Nabende, J., Shutova, E., and Pilehvar, M. T. (eds.), Findings of the Association for Computational Linguistics: ACL 2025, pp. 11293–11312, Vienna, Austria, July 2025. Association for Computational Linguistics. ISBN 979-8-89176-256-5. doi: 10.18653/v1/2025.findings-acl. 589. URL https://aclanthology.org/2025. findings-acl.589/.",
+    "Ma, X., Liu, Q., Jiang, D., Zhang, G., Ma, Z., and Chen, W. General-reasoner: Advancing Ilm reasoning across all domains, 2025. URL https://arxiv.org/abs/ 2505.14652.",
+    "Mihaylov, T., Clark, P., Khot, T., and Sabharwal, A. Can a suit of armor conduct electricity? a new dataset for open book question answering. In EMNLP, 2018.",
+    "Mu, J. and Andreas, J. Compositional explanations of neurons. Advances in Neural Information Processing Systems, 33:17153–17163, 2020.",
+    "Nadeem, M., Bethke, A., and Reddy, S. StereoSet: Measuring stereotypical bias in pretrained language models. In Zong, C., Xia, F., Li, W., and Navigli, R. (eds.), Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pp. 5356–5371, Online, August 2021. Association for Computational Linguistics. doi: 10.18653/v1/2021.acl-long.416. URL https: //aclanthology.org/2021.acl-long.416/.",
+    "Nangia, N., Vania, C., Bhalerao, R., and Bowman, S. R. CrowS-pairs: A challenge dataset for measuring social biases in masked language models. In Webber, B., Cohn, T., He, Y., and Liu, Y. (eds.), Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pp. 1953– 1967, Online, November 2020. Association for Computational Linguistics. doi: 10.18653/v1/2020.emnlp-main. 154. URL https://aclanthology.org/2020. emnlp-main.154/.",
+    "Navigli, R., Conia, S., and Ross, B. Biases in large language models: Origins, inventory, and discussion. ACM Journal of Data and Information Quality, 15(2):10:1–10:21, 2023. URL https://doi.org/10.1145/3597307.",
+    "Niu, J., Liu, A., Zhu, Z., and Penn, G. What does the knowledge neuron thesis have to do with knowledge? In The Twelfth International Conference on Learning Representations, 2024. URL https://openreview. net/forum?id=2HJRwwbV3G.",
+    "Novikov, A., Vũ, N., Eisenberger, M., Dupont, E., Huang, P.-S., Wagner, A. Z., Shirobokov, S., Kozlovskii, B., Ruiz, F. J. R., Mehrabian, A., Kumar, M. P., See, A., Chaudhuri, S., Holland, G., Davies, A., Nowozin, S., Kohli, P., and Balog, M. Alphaevolve: A coding agent for scientific and algorithmic discovery, 2025. URL https://arxiv. org/abs/2506.13131.",
+    "Ouyang, L., Wu, J., Jiang, X., Almeida, D., Wainwright, C., Mishkin, P., Zhang, C., Agarwal, S., Slama, K., Ray, A., et al. Training language models to follow instructions with human feedback. Advances in neural information processing systems, 35:27730–27744, 2022.",
+    "Pan, J., Raj, C., Yao, Z., and Zhu, Z. What’s not said still hurts: A description-based evaluation framework for measuring social bias in LLMs, November 2025a. URL https://aclanthology.org/ 2025.findings-emnlp.76/.",
+    "Pan, J., Raj, C., and Zhu, Z. Discovering bias associations through open-ended Ilm generations, 2025b. URL https://arxiv.org/abs/2508.01412.",
+    "Parrish, A., Chen, A., Nangia, N., Padmakumar, V., Phang, J., Thompson, J., Htut, P. M., and Bowman, S. BBQ: A hand-built bias benchmark for question answering. In Muresan, S., Nakov, P., and Villavicen- cio, A. (eds.), Findings of the Association for Computational Linguistics: ACL 2022, pp. 2086–2105, Dublin, Ireland, May 2022. Association for Computational Linguistics. doi: 10.18653/v1/2022.findings-acl. 165. URL https://aclanthology.org/2022. findings-acl.165/.",
+    "Qin, Z., Ding, Y., Liu, D., Liu, Q., Cai, J., Chen, X., Tu, Z., Chu, D., Gao, C., and Sui, D. Lftf: Locating first and then fine-tuning for mitigating gender bias in large language models. arXiv preprint arXiv:2505.15475, 2025a.",
+    "Qin, Z., Lyu, K., Yu, Q., Sun, Y., and Fan, Z. The achilles’ heel of llms: How altering a handful of neurons can cripple language abilities. arXiv preprint arXiv:2510.10238, 2025b.",
+    "Roemmele, M., Bejan, C. A., and Gordon, A. S. Choice of plausible alternatives: An evaluation of commonsense causal reasoning. In 2011 AAAI Spring Symposium Series, 2011. URL https://people.ict.usc.edu/~gordon/ publications/AAAI-SPRING11A.PDF.",
+    "Schneider, D. J. The psychology of stereotyping. Guilford Press, 2005.",
+    "Team, Q. Qwen3 technical report, 2025. URL https: //arxiv.org/abs/2505.09388.",
+    "Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., and Polosukhin, I. Attention is all you need. Advances in neural information processing systems, 30, 2017.",
+    "Xu, X., Xu, W., Zhang, N., and McAuley, J. BiasEdit: Debiasing stereotyped language models via model editing. In Cao, T., Das, A., Kumarage, T., Wan, Y., Krishna, S., Mehrabi, N., Dhamala, J., Ramakrishna, A., Galystan, A., Kumar, A., Gupta, R., and Chang, K.-W. (eds.), Proceedings of the 5th Workshop on Trustworthy NLP (TrustNLP 2025), pp. 166–184, Albuquerque, New Mexico, May 2025. Association for Computational Linguistics. ISBN 979-8-89176-233-6. doi: 10.18653/v1/2025. trustnlp-main.13. URL https://aclanthology. org/2025.trustnlp-main.13/.",
+    "Yang, J., Jin, H., Tang, R., Han, X., Feng, Q., Jiang, H., Zhong, S., Yin, B., and Hu, X. Harnessing the power of Ilms in practice: A survey on chatgpt and beyond. ACM Transactions on Knowledge Discovery from Data, 18(6): 1–32, 2024a.",
+    "Yang, N., Jang, Y., Lee, H., Jeong, S., and Jung, K. Taskspecific compression for multi-task language models using attribution-based pruning. In Vlachos, A. and Augenstein, I. (eds.), Findings of the Association for Computational Linguistics: EACL 2023, pp. 594–604, Dubrovnik, Croatia, May 2023. Association for Computational Linguistics. doi: 10.18653/v1/2023.findings-eacl. 43. URL https://aclanthology.org/2023. findings-eacl.43/.",
+    "Yang, N., Kang, T., Choi, S. J., Lee, H., and Jung, K. Mitigating biases for instruction-following language models via bias neurons elimination. In Ku, L.-W., Martins, A., and Srikumar, V. (eds.), Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 9061–9073, Bangkok, Thailand, August 2024b. Association for Computational Linguistics. doi: 10.18653/v1/2024.acl-long. 490. URL https://aclanthology.org/2024. acl-long.490/.",
+    "Yu, Z. and Ananiadou, S. Neuron-level knowledge attribution in large language models. In Al-Onaizan, Y., Bansal, M., and Chen, Y.-N. (eds.), Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pp. 3267–3280, Miami, Florida, USA, November 2024. Association for Computational Linguistics. doi: 10.18653/v1/2024.emnlp-main. 191. URL https://aclanthology.org/2024. emnlp-main.191/.",
+    "Yu, Z. and Ananiadou, S. Understanding and mitigating gender bias in llms via interpretable neuron editing. arXiv preprint arXiv:2501.14457, 2025.",
+    "Zhang, Z., Zhao, J., Zhang, Q., Gui, T., and Huang, X. Unveiling linguistic regions in large language models. In Ku, L.-W., Martins, A., and Srikumar, V. (eds.), Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 6228–6247, Bangkok, Thailand, August 2024. Association for Computational Linguistics. doi: 10.18653/v1/ 2024.acl-long.338. URL https://aclanthology. org/2024.acl-long.338/.",
+    "Zhao, D., Yang, X., and Chen, H. Debiasing the fine-grained classification task in LLMs with bias-aware PEFT. In Che, W., Nabende, J., Shutova, E., and Pilehvar, M. T. (eds.), Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 14731–14746, Vienna, Austria, July 2025. Association for Computational Linguistics. ISBN 979-8-89176-251-0. doi: 10.18653/v1/2025.acl-long. 717. URL https://aclanthology.org/2025. acl-long.717/."
+  ]
+}

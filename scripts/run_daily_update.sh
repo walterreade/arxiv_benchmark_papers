@@ -85,6 +85,18 @@ OUTPUT_FILE="analysis/daily_updates/update_${TIMESTAMP}.md"
 # Pass the new JSON files to the generate_update script
 echo "$NEW_PAPERS" | xargs uv run python scripts/generate_daily_update.py --output "$OUTPUT_FILE" --json-files
 
+# Copy new pdf files to GCS
+gsutil -m cp -r -n pdf gs://inversion
+
+# Commit and push changes to git
+echo ""
+echo "Step 6: Committing changes to git..."
+echo "----------------------------------------"
+git add -A
+git commit -m "Update: ${TIMESTAMP}"
+git pull --rebase
+git push
+
 echo ""
 echo "========================================"
 echo "Pipeline Complete!"
