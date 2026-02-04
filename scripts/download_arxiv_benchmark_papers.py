@@ -155,11 +155,19 @@ def main():
     
     create_output_directory()
     
-    # Check for previously processed papers (by checking JSON files)
+    # Check for previously processed papers (by checking JSON files and existing PDFs)
     existing_json = list(Path(PROCESSED_CHECK_DIR).glob("*.json")) if Path(PROCESSED_CHECK_DIR).exists() else []
-    processed_ids = {f.stem for f in existing_json}  # arxiv_id without extension
+    json_ids = {f.stem for f in existing_json}  # arxiv_id without extension
+    
+    existing_pdf = list(Path(OUTPUT_DIR).glob("*.pdf")) if Path(OUTPUT_DIR).exists() else []
+    pdf_ids = {f.stem for f in existing_pdf}  # arxiv_id without extension
+    
+    processed_ids = json_ids | pdf_ids  # Union of both sets
+    
     if processed_ids:
-        print(f"Found {len(processed_ids)} previously processed papers in {PROCESSED_CHECK_DIR}")
+        print(f"Found {len(json_ids)} previously processed papers in {PROCESSED_CHECK_DIR}")
+        print(f"Found {len(pdf_ids)} existing PDFs in {OUTPUT_DIR}")
+        print(f"Total unique papers to skip: {len(processed_ids)}")
         print("These will be skipped (resuming download)\n")
     
     downloaded_count = 0
