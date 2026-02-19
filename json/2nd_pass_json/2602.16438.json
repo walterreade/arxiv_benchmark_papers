@@ -1,0 +1,71 @@
+{
+  "filename": "2602.16438.pdf",
+  "title": "Intra-Fairness Dynamics: The Bias Spillover Effect in Targeted LLM Alignment",
+  "arxiv_url": "https://arxiv.org/pdf/2602.16438",
+  "benchmark_measurement": "The benchmark measured social biases against individuals from protected classes, including religion. The evaluation was done using multiple-choice questions designed to detect if the model's responses were biased in ambiguous and disambiguous contexts.",
+  "religious_groups": [
+    "Religion"
+  ],
+  "models_tested": [
+    "Mistral 7B Instruct v0.2",
+    "Llama 3.1 8B Instruct",
+    "Qwen 2.5 7B Instruct"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "BBQ"
+  ],
+  "continuous_testing": false,
+  "findings": "Targeted gender alignment generally led to a statistically significant improvement in fairness for the religion attribute across all three models (Mistral 7B, Llama 3.1 8B, Qwen 2.5 7B). Unlike other sensitive attributes such as physical appearance or sexual orientation, religion did not show significant fairness degradation (bias spillover) in ambiguous contexts.",
+  "references": [
+    "Avinash Amballa, Durga Sandeep Saluru, Gayathri Akkinapalli, Abhishek Sureddy, and Akshay Kumar Sureddy. 2024. Safe to Serve: Aligning Instruction-Tuned Models for Safety and Helpfulness. arXiv preprint arXiv:2412.00074 (2024).",
+    "Anonymous. 2025. Bias Spillover in Language Models: A Review of Political Alignment, Regional Fragility, and Multi-Axis Risks. Submitted to Transactions on Machine Learning Research (2025). https://openreview.net/forum?id=hv82NTjEhs Rejected.",
+    "Xuechunzi Bai, Angelina Wang, Ilia Sucholutsky, and Thomas L Griffiths. 2025. Explicitly unbiased large language models still form biased associations. Proceedings of the National Academy of Sciences 122, 8 (2025), e2416228122.",
+    "Yuntao Bai, Saurav Kadavath, Sandipan Kundu, Amanda Askell, Jackson Kernion, Andy Jones, Anna Chen, Anna Goldie, Azalia Mirhoseini, Cameron McKinnon, et al. 2022. Constitutional ai: Harmlessness from ai feedback. arXiv preprint arXiv:2212.08073 (2022).",
+    "Solon Barocas, Moritz Hardt, and Arvind Narayanan. 2023. Fairness and machine learning: Limitations and opportunities. MIT press.",
+    "Shireen Chand, Faith Baca, and Emilio Ferrara. 2025. No Free Lunch in Language Model Bias Mitigation? Targeted Bias Reduction Can Exacerbate Unmitigated LLM Biases. arXiv preprint arXiv:2511.18635 (2025).",
+    "Zhenpeng Chen, Jie M Zhang, Federica Sarro, and Mark Harman. 2024. Fairness improvement with multiple protected attributes: How far are we?. In Proceedings of the IEEE/ACM 46th international conference on software engineering. 1–13.",
+    "Valeriia Cherepanova, Vedant Nanda, Micah Goldblum, John P Dickerson, and Tom Goldstein. 2021. Technical challenges for training fair neural networks. arXiv preprint arXiv:2102.06764 (2021).",
+    "Yu Ying Chiu, Liwei Jiang, and Yejin Choi. 2024. Dailydilemmas: Revealing value preferences of llms with quandaries of daily life. arXiv preprint arXiv:2410.02683 (2024).",
+    "Charles J Clopper and Egon S Pearson. 1934. The use of confidence or fiducial limits illustrated in the case of the binomial. Biometrika 26, 4 (1934), 404–413.",
+    "Vien Ngoc Dang, Víctor M Campello, Jerónimo Hernández-González, and Karim Lekadir. 2025. Empirical comparison of post-processing debiasing methods for machine learning classifiers in healthcare. Journal of Healthcare Informatics Research (2025), 1–29.",
+    "Tim Dettmers, Artidoro Pagnoni, Ari Holtzman, and Luke Zettlemoyer. 2023. Qlora: Efficient finetuning of quantized Ilms. Advances in neural information processing systems 36 (2023), 10088–10115.",
+    "Tianqi Du, Zeming Wei, Quan Chen, Chenheng Zhang, and Yisen Wang. 2025. Advancing llm safe alignment with safety representation ranking. arXiv preprint arXiv:2505.15710 (2025).",
+    "Smilla Due, Sneha Das, Marianne Andersen, Berta Plandolit López, Sniff Andersen Nexø, and Line Clemmensen. 2024. Evaluation of Large Language Models: STEM education and Gender Stereotypes. arXiv preprint arXiv:2406.10133 (2024).",
+    "Allen L Edwards. 1948. Note on the 'correction for continuity' in testing the significance of the difference between correlated proportions. Psychometrika 13, 3 (1948), 185–187.",
+    "Melody Y Guan, Manas Joglekar, Eric Wallace, Saachi Jain, Boaz Barak, Alec Helyar, Rachel Dias, Andrea Vallone, Hongyu Ren, Jason Wei, et al. 2024. Deliberative alignment: Reasoning enables safer language models. arXiv preprint arXiv:2412.16339 (2024).",
+    "Tiancheng Hu, Yara Kyrychenko, Steve Rathje, Nigel Collier, Sander van der Linden, and Jon Roozenbeek. 2025. Generative language models exhibit social identity biases. Nature Computational Science 5, 1 (2025), 65–75.",
+    "Chengyi Ju, Weijie Shi, Chengzhong Liu, Jiaming Ji, Jipeng Zhang, Ruiyuan Zhang, Jiajie Xu, Yaodong Yang, Sirui Han, and Yike Guo. 2025. Benchmarking multi-national value alignment for large language models. In Findings of the Association for Computational Linguistics: ACL 2025. 20042–20058.",
+    "Seorin Kim, Dongyoung Lee, and Jaejin Lee. 2025. KLAAD: Refining Attention Mechanisms to Reduce Societal Bias in Generative Language Models. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing. 15324–15345.",
+    "Aran Komatsuzaki. 2019. One epoch is all you need. arXiv preprint arXiv:1906.06669 (2019).",
+    "Yang Liu and Chenhui Chu. 2025. Do LLMs Align Human Values Regarding Social Biases? Judging and Explaining Social Biases with LLMs. arXiv preprint arXiv:2509.13869 (2025).",
+    "Xinyu Lu, Bowen Yu, Yaojie Lu, Hongyu Lin, Haiyang Yu, Le Sun, Xianpei Han, and Yongbin Li. 2024. Sofa: Shielded on-the-fly alignment via priority rule following. arXiv preprint arXiv:2402.17358 (2024).",
+    "Quinn McNemar. 1947. Note on the sampling error of the difference between correlated proportions or percentages. Psychometrika 12, 2 (1947), 153–157.",
+    "Ninareh Mehrabi, Fred Morstatter, Nripsuta Saxena, Kristina Lerman, and Aram Galstyan. 2021. A survey on bias and fairness in machine learning. ACM computing surveys (CSUR) 54, 6 (2021), 1–35.",
+    "Yazmine Mijalli, Paul C Price, and Samantha P Navarro. 2023. Spillover bias in social and nonsocial judgments of diversity and variability. Psychonomic Bulletin & Review 30, 5 (2023), 1829–1839.",
+    "Long Ouyang, Jeffrey Wu, Xu Jiang, Diogo Almeida, Carroll Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, et al. 2022. Training language models to follow instructions with human feedback. Advances in neural information processing systems 35 (2022), 27730–27744.",
+    "Xianghe Pang, Shuo Tang, Rui Ye, Yuxin Xiong, Bolun Zhang, Yanfeng Wang, and Siheng Chen. 2024. Self-alignment of large language models via monopolylogue-based social scene simulation. arXiv preprint arXiv:2402.05699 (2024).",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel Bowman. 2022. BBQ: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022. 2086–2105.",
+    "Chen Qian, Dongrui Liu, Jie Zhang, Yong Liu, and Jing Shao. 2025. The tug of war within: Mitigating the fairness-privacy conflicts in large language models. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 12066–12095.",
+    "Rafael Rafailov, Archit Sharma, Eric Mitchell, Christopher D Manning, Stefano Ermon, and Chelsea Finn. 2023. Direct preference optimization: Your language model is secretly a reward model. Advances in neural information processing systems 36 (2023), 53728–53741.",
+    "Hua Shen, Tiffany Knearem, Reshmi Ghosh, Kenan Alkiek, Kundan Krishna, Yachuan Liu, Savvas Petridis, Yi-Hao Peng, Li Qiwei, Chenglei Si, et al. [n. d.]. Position: Towards Bidirectional Human-AI Alignment. In The Thirty-Ninth Annual Conference on Neural Information Processing Systems Position Paper Track.",
+    "Hua Shen, Tiffany Knearem, Reshmi Ghosh, Yu-Ju Yang, Nicholas Clark, Tanu Mitra, and Yun Huang. 2025. Valuecompass: A framework for measuring contextual value alignment between human and llms. In Proceedings of the 9th Widening NLP Workshop. 75–86.",
+    "Yi Sheng, Junhuan Yang, Lei Yang, Yiyu Shi, Jingtong Hu, and Weiwen Jiang. 2023. Muffin: A framework toward multi-dimension AI fairness by uniting off-the-shelf models. In 2023 60th ACM/IEEE Design Automation Conference (DAC). IEEE, 1–6.",
+    "Edward H Simpson. 1951. The interpretation of interaction in contingency tables. Journal of the Royal Statistical Society: Series B (Methodological) 13, 2 (1951), 238–241.",
+    "Lihao Sun, Chengzhi Mao, Valentin Hofmann, and Xuechunzi Bai. 2025. Aligned but blind: Alignment increases implicit bias by reducing awareness of race. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 22167–22184.",
+    "Richard S Sutton, Andrew G Barto, et al. 1998. Reinforcement learning: An introduction. Vol. 1. MIT press Cambridge.",
+    "Mina Taraghi, Yann Pequignot, Amin Nikanjam, Mohamed Amine Merzouk, and Foutse Khomh. 2025. Efficiency vs. Alignment: Investigating Safety and Fairness Risks in Parameter-Efficient Fine-Tuning of LLMs. arXiv preprint arXiv:2511.00382 (2025).",
+    "Lewis Tunstall, Edward Beeching, Nathan Lambert, Nazneen Rajani, Kashif Rasul, Younes Belkada, Shengyi Huang, Leandro Von Werra, Clémentine Fourrier, Nathan Habib, et al. 2023. Zephyr: Direct distillation of Im alignment. arXiv preprint arXiv:2310.16944 (2023).",
+    "Xiaoyang Wang and Christopher C Yang. 2025. Enhancing Multi-Attribute Fairness in Healthcare Predictive Modeling. arXiv preprint arXiv:2501.13219 (2025).",
+    "Yifei Wang, Yuyang Wu, Zeming Wei, Stefanie Jegelka, and Yisen Wang. 2024. A theoretical understanding of self-correction through in-context alignment. Advances in Neural Information Processing Systems 37 (2024), 89869–89912.",
+    "Kangda Wei, Hasnat Md Abdullah, and Ruihong Huang. 2025. Mitigating Gender Bias via Fostering Exploratory Thinking in LLMs. arXiv preprint arXiv:2505.17217 (2025).",
+    "Laura Weidinger, John Mellor, Maribeth Rauh, Conor Griffin, Jonathan Uesato, Po-Sen Huang, Myra Cheng, Mia Glaese, Borja Balle, Atoosa Kasirzadeh, et al. 2021. Ethical and social risks of harm from language models. arXiv preprint arXiv:2112.04359 (2021).",
+    "Tao Zhang, Ziqian Zeng, YuxiangXiao YuxiangXiao, Huiping Zhuang, Cen Chen, James R Foulds, and Shimei Pan. 2025. Genderalign: An alignment dataset for mitigating gender bias in large language models. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 11293–11311."
+  ]
+}
