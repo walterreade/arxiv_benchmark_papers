@@ -147,7 +147,6 @@ def main():
     print("=" * 70)
     print(f"Target: {MAX_PAPERS} papers (global limit)")
     print(f"Query: benchmark (in title)")
-    print(f"Query: benchmark (in title)")
     print(f"Years: {START_YEAR}-{END_YEAR}")
     print(f"Delay between downloads: {DELAY_BETWEEN_DOWNLOADS}s")
     print("=" * 70)

@@ -9,27 +9,21 @@ This script:
 4. Adds the bias_targets list to the JSON file
 """
 
-import os
 import argparse
 import json
 import re
+import random
 import time
-import threading
-import warnings
-import logging
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-from dotenv import load_dotenv
-load_dotenv()
-
-# Remove GEMINI_API_KEY if both are set to avoid the warning message
-if os.environ.get("GOOGLE_API_KEY") and os.environ.get("GEMINI_API_KEY"):
-    del os.environ["GEMINI_API_KEY"]
-
 from tqdm import tqdm
-from google import genai
-from google.genai import types
+
+from shared import (
+    genai, types,
+    ResourceExhaustedError, IterationTimeoutError, ITERATION_TIMEOUT,
+    ErrorTracker, RateLimiter,
+)
 
 # Directories
 SCRIPT_DIR = Path(__file__).parent
@@ -39,38 +33,6 @@ PDF_DIR = PROJECT_DIR / "pdf"
 
 # Model configuration
 MODEL_NAME = "gemini-3-flash-preview"
-ITERATION_TIMEOUT = 120  # 2 minutes
-
-
-class RateLimiter:
-    """Thread-safe rate limiter using Condition for efficient waiting."""
-    def __init__(self, max_calls: int, period: float = 60.0):
-        self.max_calls = max_calls
-        self.period = period
-        self.calls = []
-        self.lock = threading.Lock()
-        self.condition = threading.Condition(self.lock)
-
-    def wait_for_token(self):
-        """Blocks until a token is available."""
-        with self.condition:
-            while True:
-                now = time.time()
-                # Remove calls older than period
-                self.calls = [t for t in self.calls if now - t < self.period]
-                
-                if len(self.calls) < self.max_calls:
-                    self.calls.append(now)
-                    return
-                
-                # Calculate wait time until oldest call expires
-                if self.calls:
-                    wait_time = self.calls[0] + self.period - now + 0.1
-                else:
-                    wait_time = 1
-                
-                # Wait with timeout, releases lock while waiting
-                self.condition.wait(timeout=max(0.1, wait_time))
 
 
 EXTRACTION_PROMPT = """Analyze this academic paper and identify what types of bias are being measured or evaluated.
@@ -120,9 +82,15 @@ def get_filtered_papers():
     return filtered
 
 
-def extract_bias_targets(pdf_path: Path, rate_limiter: RateLimiter) -> list:
-    """Extract bias targets from a PDF using Gemini."""
+def extract_bias_targets(pdf_path: Path, rate_limiter: RateLimiter,
+                         error_tracker: ErrorTracker, max_retries: int = 3) -> list:
+    """Extract bias targets from a PDF using Gemini with retry logic."""
     client = genai.Client()
+    sample_file = None
+    
+    # Check if we should exit before starting
+    if error_tracker.check_exit():
+        raise ResourceExhaustedError("Too many resource exhausted errors, stopping.")
     
     # Wait for rate limit token
     rate_limiter.wait_for_token()
@@ -135,63 +103,100 @@ def extract_bias_targets(pdf_path: Path, rate_limiter: RateLimiter) -> list:
         start_time = time.time()
         while sample_file.state.name == "PROCESSING":
             if time.time() - start_time > ITERATION_TIMEOUT:
-                raise TimeoutError(f"File processing timed out after {ITERATION_TIMEOUT}s")
+                raise IterationTimeoutError(f"File processing timed out after {ITERATION_TIMEOUT}s")
             time.sleep(2)
             sample_file = client.files.get(name=sample_file.name)
         
         if sample_file.state.name == "FAILED":
             raise ValueError(f"File processing failed: {sample_file.state.name}")
         
-        # Generate content
-        response = client.models.generate_content(
-            model=MODEL_NAME,
-            contents=[
-                types.Content(
-                    role="user",
-                    parts=[
-                        types.Part.from_uri(
-                            file_uri=sample_file.uri,
-                            mime_type=sample_file.mime_type,
+        # Retry logic with exponential backoff
+        last_exception = None
+        for attempt in range(max_retries):
+            try:
+                if error_tracker.check_exit():
+                    raise ResourceExhaustedError("Too many resource exhausted errors, stopping.")
+                
+                # Generate content
+                response = client.models.generate_content(
+                    model=MODEL_NAME,
+                    contents=[
+                        types.Content(
+                            role="user",
+                            parts=[
+                                types.Part.from_uri(
+                                    file_uri=sample_file.uri,
+                                    mime_type=sample_file.mime_type,
+                                ),
+                                types.Part.from_text(text=EXTRACTION_PROMPT),
+                            ],
                         ),
-                        types.Part.from_text(text=EXTRACTION_PROMPT),
                     ],
-                ),
-            ],
-            config=types.GenerateContentConfig(
-                temperature=0.1,
-                max_output_tokens=1024,
-            ),
-        )
+                    config=types.GenerateContentConfig(
+                        temperature=0.1,
+                        max_output_tokens=1024,
+                    ),
+                )
+                
+                # Parse response
+                response_text = response.text.strip()
+                
+                # Clean up response if wrapped in markdown
+                if response_text.startswith("```json"):
+                    response_text = response_text[7:]
+                if response_text.startswith("```"):
+                    response_text = response_text[3:]
+                if response_text.endswith("```"):
+                    response_text = response_text[:-3]
+                response_text = response_text.strip()
+                
+                try:
+                    result = json.loads(response_text)
+                    return result.get("bias_targets", [])
+                except json.JSONDecodeError:
+                    # Fallback: try to extract bias_targets array using regex
+                    match = re.search(r'"bias_targets"\s*:\s*\[(.*?)\]', response_text, re.DOTALL)
+                    if match:
+                        items_str = match.group(1)
+                        # Extract quoted strings
+                        items = re.findall(r'"([^"]+)"', items_str)
+                        return items
+                    return []
+                    
+            except (ResourceExhaustedError, json.JSONDecodeError):
+                raise
+            except Exception as e:
+                last_exception = e
+                error_str = str(e).lower()
+                
+                if "resource exhausted" in error_str or "429" in error_str or "quota" in error_str:
+                    tqdm.write(f"  Resource exhausted on {pdf_path.name}, attempt {attempt + 1}/{max_retries}")
+                    if error_tracker.record_resource_exhausted():
+                        raise ResourceExhaustedError("Too many resource exhausted errors, stopping.")
+                    backoff = (2 ** attempt) + random.uniform(0, 1)
+                    time.sleep(backoff)
+                elif "500" in error_str or "503" in error_str or "server" in error_str:
+                    tqdm.write(f"  Server error on {pdf_path.name}, attempt {attempt + 1}/{max_retries}")
+                    backoff = (2 ** attempt) + random.uniform(0, 1)
+                    time.sleep(backoff)
+                else:
+                    raise
         
-        # Parse response
-        response_text = response.text.strip()
-        
-        # Clean up response if wrapped in markdown
-        if response_text.startswith("```json"):
-            response_text = response_text[7:]
-        if response_text.startswith("```"):
-            response_text = response_text[3:]
-        if response_text.endswith("```"):
-            response_text = response_text[:-3]
-        response_text = response_text.strip()
-        
+        # All retries exhausted
+        raise last_exception
+
+    finally:
+        # Clean up uploaded file from Gemini file store
         try:
-            result = json.loads(response_text)
-            return result.get("bias_targets", [])
-        except json.JSONDecodeError:
-            # Fallback: try to extract bias_targets array using regex
-            match = re.search(r'"bias_targets"\s*:\s*\[(.*?)\]', response_text, re.DOTALL)
-            if match:
-                items_str = match.group(1)
-                # Extract quoted strings
-                items = re.findall(r'"([^"]+)"', items_str)
-                return items
-            return []
-    except Exception as e:
-        raise e
+            if sample_file is not None:
+                client.files.delete(name=sample_file.name)
+        except Exception:
+            pass
+        rate_limiter.release_slot()
 
 
-def process_single_paper(json_path: Path, rate_limiter: RateLimiter) -> tuple:
+def process_single_paper(json_path: Path, rate_limiter: RateLimiter,
+                         error_tracker: ErrorTracker) -> tuple:
     """Process a single paper and return (arxiv_id, bias_targets, success, error)."""
     arxiv_id = json_path.stem
     pdf_path = PDF_DIR / f"{arxiv_id}.pdf"
@@ -200,7 +205,7 @@ def process_single_paper(json_path: Path, rate_limiter: RateLimiter) -> tuple:
         return arxiv_id, [], False, "PDF not found"
     
     try:
-        bias_targets = extract_bias_targets(pdf_path, rate_limiter)
+        bias_targets = extract_bias_targets(pdf_path, rate_limiter, error_tracker)
         
         # Update JSON file
         with open(json_path, 'r') as f:
@@ -269,8 +274,9 @@ def main():
     print(f"Processing {len(papers)} papers...")
     print("-" * 70)
     
-    # Initialize rate limiter
+    # Initialize rate limiter and error tracker
     rate_limiter = RateLimiter(max_calls=args.rpm, period=60.0)
+    error_tracker = ErrorTracker(max_errors=5)
     
     success = 0
     failed = 0
@@ -278,7 +284,7 @@ def main():
     # Use ThreadPoolExecutor for parallel processing
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
         future_to_paper = {
-            executor.submit(process_single_paper, json_path, rate_limiter): json_path
+            executor.submit(process_single_paper, json_path, rate_limiter, error_tracker): json_path
             for json_path in papers
         }
         

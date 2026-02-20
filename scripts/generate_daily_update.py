@@ -6,40 +6,9 @@ Generate a timestamped update markdown file for newly analyzed papers.
 import argparse
 import json
 import os
-import csv
 from datetime import datetime
 
-
-def load_csv_metadata(csv_file: str) -> dict:
-    """Load CSV file and return dict mapping filename to metadata."""
-    metadata = {}
-    if not os.path.exists(csv_file):
-        return metadata
-    
-    with open(csv_file, 'r', encoding='utf-8') as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            filename = row.get('filename', '')
-            metadata[filename] = row
-    return metadata
-
-
-def get_arxiv_url(filename: str) -> str:
-    """Convert filename to arxiv PDF URL."""
-    arxiv_id = filename.replace('.pdf', '').replace('.json', '')
-    return f"https://arxiv.org/pdf/{arxiv_id}"
-
-
-def check_mormon_mention(paper: dict) -> bool:
-    """Check if paper mentions Mormon or Latter-day Saints."""
-    text_to_check = json.dumps(paper).lower()
-    return 'mormon' in text_to_check or 'latter-day saints' in text_to_check
-
-
-
-def filter_religion_papers(data: list[dict]) -> list[dict]:
-    """Filter papers to only include those with religion_component of 'major' or 'minor'."""
-    return [p for p in data if p.get('religion_component', '').lower() in ('major', 'minor')]
+from shared import load_csv_metadata, get_arxiv_url, check_mormon_mention, filter_religion_papers
 
 
 def generate_update_file(json_files: list[str], csv_file: str, output_path: str):

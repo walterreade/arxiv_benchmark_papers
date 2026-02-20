@@ -17,12 +17,8 @@ import re
 import time
 from datetime import datetime
 from itertools import combinations
-from statistics import mean
 
-from google import genai
-from dotenv import load_dotenv
-
-load_dotenv()
+from shared import genai
 
 RELIGIONS = ["Catholic", "Mormon", "Presbyterian", "Lutheran", "Evangelical"]
 

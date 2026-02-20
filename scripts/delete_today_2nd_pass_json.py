@@ -1,7 +1,6 @@
 import os
 import glob
 import datetime
-import time
 
 def main():
     target_dir = os.path.join("json", "2nd_pass_json")

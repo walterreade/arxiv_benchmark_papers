@@ -6,18 +6,16 @@ Filters for recency to avoid presenting outdated information.
 """
 
 import os
+import csv
 import json
 import glob
 import argparse
 import re
+import time
 from datetime import datetime, timedelta
 from pathlib import Path
-from dotenv import load_dotenv
 
-from google import genai
-from google.genai import types
-
-load_dotenv()
+from shared import genai, load_csv_metadata
 
 
 def load_analysis_files(analysis_dir: str) -> dict:
@@ -49,19 +47,6 @@ def load_json_data(json_dir: str) -> list[dict]:
     return data
 
 
-def load_csv_metadata(csv_file: str) -> dict:
-    """Load CSV metadata mapping filename to paper info."""
-    import csv
-    metadata = {}
-    if not os.path.exists(csv_file):
-        return metadata
-    
-    with open(csv_file, 'r', encoding='utf-8-sig') as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            filename = row.get('filename', '')
-            metadata[filename] = row
-    return metadata
 
 
 def filter_recent_papers(papers: list[dict], csv_metadata: dict, months: int = 24) -> list[dict]:
@@ -75,19 +60,19 @@ def filter_recent_papers(papers: list[dict], csv_metadata: dict, months: int = 2
         date_str = meta.get('date', '')
         
         if date_str:
-            try:
-                # Try parsing various date formats
-                for fmt in ['%Y-%m-%d', '%Y-%m', '%Y']:
-                    try:
-                        paper_date = datetime.strptime(date_str[:len(fmt.replace('%', '').replace('-', '') + '-' * (fmt.count('-')))], fmt)
-                        if paper_date >= cutoff:
-                            paper['_date'] = date_str
-                            paper['_title'] = meta.get('title', 'Unknown')
-                            recent.append(paper)
-                        break
-                    except ValueError:
-                        continue
-            except:
+            parsed = False
+            for fmt in ['%Y-%m-%d', '%Y-%m', '%Y']:
+                try:
+                    paper_date = datetime.strptime(date_str, fmt)
+                    if paper_date >= cutoff:
+                        paper['_date'] = date_str
+                        paper['_title'] = meta.get('title', 'Unknown')
+                        recent.append(paper)
+                    parsed = True
+                    break
+                except ValueError:
+                    continue
+            if not parsed:
                 # If date parsing fails, include it anyway
                 paper['_date'] = date_str
                 paper['_title'] = meta.get('title', 'Unknown')
@@ -113,7 +98,6 @@ def get_pdf_context(pdf_path: str, query: str, api_key: str, model_name: str) ->
         sample_file = client.files.upload(file=pdf_path)
         
         # Wait for processing
-        import time
         while sample_file.state.name == "PROCESSING":
             time.sleep(1)
             sample_file = client.files.get(name=sample_file.name)

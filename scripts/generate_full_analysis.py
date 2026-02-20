@@ -9,15 +9,15 @@ import json
 import glob
 import argparse
 import re
-import csv
 import unicodedata
 import shutil
 from datetime import datetime
 from collections import Counter
 from pathlib import Path
-from dotenv import load_dotenv
 
-load_dotenv()
+from shared import (
+    load_csv_metadata, get_arxiv_url, check_mormon_mention, filter_religion_papers,
+)
 
 
 # Mapping of variations to canonical names
@@ -164,38 +164,6 @@ def load_json_files(json_dir: str) -> list[dict]:
     return data
 
 
-def load_csv_metadata(csv_path: str) -> dict:
-    """Load metadata from 1st pass CSV file, keyed by filename."""
-    metadata = {}
-    if not os.path.exists(csv_path):
-        print(f"Warning: CSV file {csv_path} not found.")
-        return metadata
-    
-    with open(csv_path, 'r', encoding='utf-8-sig') as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            filename = row.get('filename', '')
-            if filename:
-                metadata[filename] = {
-                    'title': row.get('title', ''),
-                    'date': row.get('date', ''),
-                }
-    return metadata
-
-
-def get_arxiv_url(filename: str) -> str:
-    """Convert filename to arxiv PDF URL."""
-    # Filename format: 2601.15267.pdf -> arxiv ID: 2601.15267
-    arxiv_id = filename.replace('.pdf', '')
-    return f"https://arxiv.org/pdf/{arxiv_id}"
-
-
-def check_mormon_mention(paper: dict) -> bool:
-    """Check if paper mentions Mormon or Latter-day Saints."""
-    text_to_check = json.dumps(paper).lower()
-    return 'mormon' in text_to_check or 'latter-day saints' in text_to_check
-
-
 def generate_benchmark_learnings(data: list[dict], csv_metadata: dict, output_path: str):
     """Generate benchmark_learnings.md with paper entries."""
     # Sort all papers by filename descending
@@ -234,7 +202,7 @@ def generate_benchmark_learnings(data: list[dict], csv_metadata: dict, output_pa
 
 def generate_benchmark_summary(learnings_path: str, summary_path: str, model_name: str = "gemini-3-pro-preview"):
     """Generate a summary of the overall state of measuring religious bias in LLMs."""
-    from google import genai
+    from shared import genai
     
     api_key = os.getenv("GOOGLE_API_KEY")
     if not api_key:
@@ -290,11 +258,6 @@ Here are the benchmark papers and their findings:
         
     except Exception as e:
         print(f"Error generating summary: {e}")
-
-
-def filter_religion_papers(data: list[dict]) -> list[dict]:
-    """Filter papers to only include those with religion_component of 'major' or 'minor'."""
-    return [p for p in data if p.get('religion_component', '').lower() in ('major', 'minor')]
 
 
 def count_religious_groups(data: list[dict]) -> Counter:
