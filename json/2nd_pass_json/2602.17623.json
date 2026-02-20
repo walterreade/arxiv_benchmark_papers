@@ -1,0 +1,74 @@
+{
+  "filename": "2602.17623.pdf",
+  "title": "Unmasking the Factual-Conceptual Gap in Persian Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2602.17623",
+  "benchmark_measurement": "The benchmark measures knowledge of and reasoning about Persian cultural concepts, which include a syncretic blend of ancient Zoroastrian beliefs (e.g., Chaharshanbe Suri fire-jumping), Islamic traditions (e.g., nazri vow offerings, ghorbani sacrifice), and folk cosmology.",
+  "religious_groups": [
+    "Islam",
+    "Zoroastrianism"
+  ],
+  "models_tested": [
+    "Aya-8B",
+    "Dorna2-8B",
+    "Gemma2-9B",
+    "Gemma3-12B",
+    "Llama3.1-8B",
+    "Qwen2-7B",
+    "Qwen2.5-7B"
+  ],
+  "languages_evaluated": [
+    "Persian"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "PARSINLU",
+    "FARSTAIL",
+    "PERSIANMEDQA",
+    "PersianMMLU",
+    "PersianMMMU",
+    "PERCUL",
+    "TAAROFBENCH",
+    "ELAB",
+    "NUNCHI-BENCH"
+  ],
+  "continuous_testing": false,
+  "findings": "Models failed to reason about cultural norms rooted in Zoroastrian and Islamic traditions, despite being able to retrieve factual information about them. Most models exhibited a severe 'acquiescence bias,' accepting culturally-themed statements without discerning clear violations. The study also found that continuous pretraining on Persian data amplified this surface-level pattern matching, which degraded critical reasoning rather than improving deep cultural understanding.",
+  "references": [
+    "Hossein Amirkhani, Mohammad AzariJafari, Zohreh Pourjafari, Soroush Faridan-Jahromi, Zeinab Kouhkan, and Azadeh Amirak. 2021. Farstail: A persian natural language inference dataset. Preprint, arXiv:2009.08820.",
+    "Yonatan Bisk, Ari Holtzman, Jesse Thomason, Jacob Andreas, Yoshua Bengio, Joyce Chai, and 1 others. 2020. Experience grounds language. Proceedings of EMNLP.",
+    "Yong Cao, Li Zhou, Seolhwa Lee, Laura Cabello, Min Chen, and Daniel Hershcovich. 2023. Assessing cross-cultural alignment between chatgpt and human societies: An empirical study. arXiv preprint arXiv:2303.17466.",
+    "Yupeng Chang, Xu Wang, Jindong Wang, Yuan Wu, and 1 others. 2024. A survey on evaluation of large language models. ACM Transactions on Intelligent Systems and Technology.",
+    "Cohere For AI. 2024. Aya model: An instruction finetuned open-access multilingual language model. arXiv preprint arXiv:2402.07827.",
+    "Xunlian Dai, Li Zhou, Benyou Wang, and Haizhou Li. 2025. From word to world: Evaluate and mitigate culture bias in llms via word association test. Preprint, arXiv:2505.18562.",
+    "Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, and 1 others. 2024. The llama 3 herd of models. arXiv preprint arXiv:2407.21783.",
+    "Esin Durmus, Karina Nguyen, Thomas I. Liao, Nicholas Schiefer, Amanda Askell, Anton Bakhtin, and 1 others. 2024. Towards measuring the representation of subjective global opinions in language models. Preprint, arXiv:2306.16388.",
+    "Esin Durmus, Karina Nguyen, Thomas I. Liao, Nicholas Schiefer, and 1 others. 2023. Towards measuring the representation of subjective global opinions in language models. arXiv preprint arXiv:2306.16388.",
+    "Gemini Team. 2023. Gemini: A family of highly capable multimodal models. arXiv preprint arXiv:2312.11805.",
+    "Omid Ghahroodi, Arshia Hemmat, Marzia Nouri, Seyed Mohammad Hadi Hosseini, Doratossadat Dastgheib, Mohammad Vali Sanian, Alireza Sahebi, Reihaneh Zohrabi, Mohammad Hossein Rohban, Ehsaneddin Asgari, and Mahdieh Soleymani Baghshah. 2025. Meena (persianmmmu): Multimodal-multilingual educational exams for n-level assessment. Preprint, arXiv:2508.17290.",
+    "Omid Ghahroodi, Marzia Nouri, Mohammad Vali Sanian, Alireza Sahebi, Doratossadat Dastgheib, Ehsaneddin Asgari, Mahdieh Soleymani Baghshah, and Mohammad Hossein Rohban. 2024. Khayyam challenge (persianmmlu): Is your llm truly wise to the persian language? Preprint, arXiv:2404.06644.",
+    "Nikta Gohari Sadr, Sahar Heidariasl, Karine Megerdoomian, Laleh Seyyed-Kalantari, and Ali Emami. 2025. We politely insist: Your Ilm must learn the persian art of taarof. Preprint, arXiv:2509.01035.",
+    "Shehenaz Hossain and Haithem Afli. 2025. Craft: An explanation-based framework for evaluating cultural reasoning in multilingual language models. Preprint, arXiv:2510.14014.",
+    "Daniel Khashabi, Arman Cohan, Siamak Shakeri, Pedram Hosseini, Pouya Pezeshkpour, Graham Neubig, and 1 others. 2020. Parsinlu: A suite of language understanding challenges for persian. arXiv preprint arXiv:2012.06154.",
+    "Kyuhee Kim and Sangah Lee. 2025. Nunchi-bench: Benchmarking language models on cultural reasoning with a focus on Korean superstition. In Findings of the Association for Computational Linguistics: ACL 2025, pages 15328-15342, Vienna, Austria. Association for Computational Linguistics.",
+    "Yoonjoo Ko, Hyungjoo Lee, Taehwan Lee, Jaewook Jung, Jinhyeok Park, and Jaihoon Choi. 2023. From language modeling to instruction following: Understanding the behavior shift in llms after instruction tuning. arXiv preprint arXiv:2310.00492.",
+    "Hector J. Levesque, Ernest Davis, and Leora Morgenstern. 2012. The winograd schema challenge. In Proceedings of KR.",
+    "Erfan Moosavi Monazzah, Vahid Rahimzadeh, Yadollah Yaghoobzadeh, Azadeh Shakery, and Mohammad Taher Pilehvar. 2025. Percul: A story-driven cultural evaluation of llms in persian. Preprint, arXiv:2502.07459.",
+    "OpenPersian Team. 2024. Openpersian leaderboard: Benchmarking persian language models. https://huggingface.co/spaces/OpenPersian/leaderboard.",
+    "PartAI Team. 2024. Dorna: Persian-optimized language models. https://huggingface.co/PartAI/Dorna-Llama3-8B-Instruct.",
+    "Zahra Pourbahman, Fatemeh Rajabi, Mohammadhossein Sadeghi, Omid Ghahroodi, Somaye Bakhshaei, Arash Amini, Reza Kazemi, and Mahdieh Soleymani Baghshah. 2025. Elab: Extensive llm alignment benchmark in persian language. Preprint, arXiv:2504.12553.",
+    "Qwen Team. 2024. Qwen2 technical report. Preprint, arXiv:2407.10671.",
+    "Mohammad Javad Ranjbar Kalahroodi, Amirhossein Sheikholselami, Sepehr Karimi, Sepideh Ranjbar Kalahroodi, Heshaam Faili, and Azadeh Shakery. 2025. Persianmedqa: Evaluating large language models on a persian-english bilingual medical question answering benchmark. Preprint, arXiv:2506.00250.",
+    "Maarten Sap, Ronan LeBras, Daniel Fried, and Yejin Choi. 2022. Neural theory-of-mind? on the limits of social intelligence in large lms. arXiv preprint arXiv:2210.13312.",
+    "Maarten Sap, Hannah Rashkin, Derek Chen, Ronan LeBras, and Yejin Choi. 2019. Social iqa: Commonsense reasoning about social interactions. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing, pages 4463–4473.",
+    "Bradd Shore. 1996. Culture in Mind: Cognition, Culture, and the Problem of Meaning. Oxford University Press.",
+    "Chenglei Si, Zihan Gan, Zhengyuan Yang, Shuohang Wang, Jingfeng Wang, Jordan Boyd-Graber, and Lijuan Wang. 2023. Prompting gpt-3 to be reliable. In Proceedings of ICLR.",
+    "Claudia Strauss and Naomi Quinn. 1997. A Cognitive Theory of Cultural Meaning. Cambridge University Press.",
+    "Eric Wallace, Pedro Rodriguez, Shi Feng, Ikuya Yamada, and Jordan Boyd-Graber. 2019. Trick me if you can: Human-in-the-loop generation of adversarial examples for question answering. In Transactions of the Association for Computational Linguistics, volume 7, pages 387-401.",
+    "Lean Wang, Lei Li, Damai Dai, Deli Chen, Zhifang Sui, and 1 others. 2023. Label words are anchors: An information flow perspective for understanding in-context learning. In Proceedings of EMNLP, pages 9840-9855.",
+    "Jinghao Zhang, Sihang Jiang, Shiwei Guo, Shisong Chen, Yanghua Xiao, Hongwei Feng, Jiaqing Liang, Minggui HE, Shimin Tao, and Hongxia Ma. 2025. Culturescope: A dimensional lens for probing cultural understanding in llms. Preprint, arXiv:2509.16188.",
+    "Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, and 1 others. 2023. Judging llm-as-a-judge with mt-bench and chatbot arena. arXiv preprint arXiv:2306.05685."
+  ]
+}

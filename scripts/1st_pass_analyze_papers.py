@@ -6,29 +6,24 @@ import time
 import glob
 import random
 import sys
+import threading
 from pathlib import Path
 from typing import Optional, Set
 from tqdm import tqdm
-import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from pypdf import PdfReader
 from dotenv import load_dotenv
 
-import warnings
+# Load environment variables first
+load_dotenv()
 
-# Filter the specific warning message
-warnings.filterwarnings(
-    "ignore",
-    message="Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.",
-    category=UserWarning # The category might be different, UserWarning is a common one
-)
+# Remove GEMINI_API_KEY if both are set to avoid the warning message
+if os.environ.get("GOOGLE_API_KEY") and os.environ.get("GEMINI_API_KEY"):
+    del os.environ["GEMINI_API_KEY"]
 
 from google import genai
 from google.genai import types
-
-# Load environment variables: GOOGLE_API_KEY=<your_api_key>
-load_dotenv()
 
 # Global error tracking
 class ResourceExhaustedError(Exception):
