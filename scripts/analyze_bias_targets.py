@@ -322,6 +322,72 @@ Methodologies:
     return strategies
 
 
+def print_co_measurement(target: str, papers_data: list):
+    """Print a histogram of biases co-measured alongside the given target."""
+    co_counter = Counter()
+    target_paper_count = 0
+    
+    for paper in papers_data:
+        targets = set(paper['normalized_targets'])
+        if target in targets:
+            target_paper_count += 1
+            for t in targets:
+                if t != target:
+                    co_counter[t] += 1
+    
+    if not target_paper_count:
+        print(f"\n No papers measure {target}.")
+        return
+    
+    print(f"\n{'=' * 80}")
+    print(f" CO-MEASUREMENT: What else is measured alongside {target}?")
+    print(f" ({target_paper_count} papers measure {target})")
+    print(f"{'=' * 80}")
+    print(f"\n {'Rank':>4}  {'Count':>5}  {'%':>6}  Category")
+    print(f" {'':->4}  {'':->5}  {'':->6}  {'':->40}")
+    for i, (cat, count) in enumerate(co_counter.most_common(25), 1):
+        pct = count / target_paper_count * 100
+        bar = '#' * max(1, int(pct / 2))
+        print(f" {i:4d}  {count:5d}  {pct:5.1f}%  {cat}  {bar}")
+    print()
+
+
+def print_focus_table(papers_data: list, all_counter: Counter):
+    """Print top 25 bias targets sorted by % that are exclusive or primary focus."""
+    total_counter = Counter()
+    focused_counter = Counter()
+    
+    for paper in papers_data:
+        targets = set(paper['normalized_targets'])
+        primary = paper['primary_bias_target']
+        is_exclusive = len(targets) == 1
+        
+        for t in targets:
+            total_counter[t] += 1
+            if is_exclusive or t == primary:
+                focused_counter[t] += 1
+    
+    top25 = all_counter.most_common(25)
+    rows = []
+    for cat, total in top25:
+        focus = focused_counter.get(cat, 0)
+        pct = focus / total * 100 if total else 0
+        rows.append((cat, total, focus, pct))
+    
+    rows.sort(key=lambda r: -r[3])
+    
+    print(f"\n{'=' * 80}")
+    print(f" FOCUS ANALYSIS: Top 25 targets by % exclusive or primary")
+    print(f" (Focus = paper studies this target exclusively OR as its primary target)")
+    print(f"{'=' * 80}")
+    print(f"\n {'Rank':>4}  {'Total':>5}  {'Focus':>5}  {'% Focus':>7}  Category")
+    print(f" {'':->4}  {'':->5}  {'':->5}  {'':->7}  {'':->35}")
+    for i, (cat, total, focus, pct) in enumerate(rows, 1):
+        bar = '#' * max(1, int(pct / 2)) if focus > 0 else '.'
+        print(f" {i:4d}  {total:5d}  {focus:5d}  {pct:6.1f}%  {cat}  {bar}")
+    print()
+
+
 def print_table(title: str, data: list, headers: tuple = ("Rank", "Count", "Category")):
     """Print a formatted table."""
     print(f"\n{'=' * 60}")
@@ -423,6 +489,13 @@ def main():
     # Top 25 primary targets
     top_25_primary = primary_targets.most_common(25)
     print_table("TOP 25 PRIMARY BIAS TARGETS", top_25_primary)
+    
+    # Focus analysis (exclusive or primary, sorted by %)
+    print_focus_table(papers_data, all_counter)
+    
+    # Co-measurement histograms
+    print_co_measurement("Gender bias", papers_data)
+    print_co_measurement("Religious bias", papers_data)
     
     # Religious bias specific stats
     religious_count = all_counter.get("Religious bias", 0)
