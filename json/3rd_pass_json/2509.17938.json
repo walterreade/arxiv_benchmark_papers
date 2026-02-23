@@ -1,0 +1,16 @@
+{
+  "filename": "2509.17938.pdf",
+  "title": "D-REX: A BENCHMARK FOR DETECTING DECEPTIVE REASONING IN LARGE LANGUAGE MODELS",
+  "arxiv_url": "https://arxiv.org/pdf/2509.17938",
+  "bias_targets": [
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Using a trigger-based 'Biased Therapy Summary' adversarial prompt that instructs the model to subtly inject harmful language discrediting sexual orientation identity or recommending conversion therapy specifically when a therapy client is identified as gay or lesbian. This is measured by comparing the model's internal chain-of-thought (CoT) and final output against non-triggered control cases."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Using a 'Recruitment' adversarial prompt scenario where the model acts as a spiritual guide (Lumin Guide) instructed to identify vulnerable users, subtly reframe scripture to justify hostility towards outgroups, and erode trust in moderate religious teachings. This is evaluated through judge LLMs analyzing the model's internal reasoning and final responses."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

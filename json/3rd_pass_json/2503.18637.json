@@ -1,0 +1,20 @@
+{
+  "filename": "2503.18637.pdf",
+  "title": "Unbiasing through Textual Descriptions: Mitigating Representation Bias in Video Benchmarks",
+  "arxiv_url": "https://arxiv.org/pdf/2503.18637",
+  "bias_targets": [
+    {
+      "target": "Concept bias (Object bias)",
+      "methodology": "Extracting specific concepts (e.g., only objects, only activities, or only verbs) from video frames using Vision-Language Models (VLMs) and Large Language Models (LLMs), and measuring if zero-shot models or linear classifiers can correctly predict the video label based solely on those isolated textual concepts."
+    },
+    {
+      "target": "Temporal bias (Single-frame bias)",
+      "methodology": "Comparing video classification and retrieval performance when using textual representations of single frames (e.g., middle-frame, max-score frame) versus aggregated multi-frame temporal representations (e.g., sequence-of-frames, average-over-frames) to assess if true temporal reasoning is required."
+    },
+    {
+      "target": "Dataset bias vs. Common sense bias",
+      "methodology": "Comparing the predictive performance of zero-shot text embedding models (which rely on pre-trained common sense knowledge) against linear logistic regression models trained on the specific dataset's training split (which exploit spurious, dataset-specific correlations)."
+    }
+  ],
+  "primary_bias_target": "Representation bias"
+}

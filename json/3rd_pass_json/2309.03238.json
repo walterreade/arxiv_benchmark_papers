@@ -1,0 +1,20 @@
+{
+  "filename": "2309.03238.pdf",
+  "title": "Implicit Design Choices and Their Impact on Emotion Recognition Model Development and Evaluation",
+  "arxiv_url": "https://arxiv.org/pdf/2309.03238",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Training an auxiliary 'attacker' network to predict gender from the target model's generated embeddings (measuring demographic leakage) and computing a Human-Centered Metric (HCM) that evaluates the intersection between the model's feature saliency weights and gender-associated sociolinguistic wordlists."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Computing a sensitive information reduction metric (HCMsirRace) by measuring the intersection and reliance of the model's feature saliency weights on race-associated sociological wordlists derived from the Implicit Association Test."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Computing a sensitive information reduction metric (HCMsirAge) by measuring the intersection of the model's feature saliency weights with age-associated sociolinguistic wordlists (e.g., vocabulary grade levels and word trends)."
+    }
+  ],
+  "primary_bias_target": "Gender bias"
+}

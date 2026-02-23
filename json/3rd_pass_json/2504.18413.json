@@ -1,0 +1,24 @@
+{
+  "filename": "2504.18413.pdf",
+  "title": "An Empirical Study of Evaluating Long-form Question Answering",
+  "arxiv_url": "https://arxiv.org/pdf/2504.18413",
+  "bias_targets": [
+    {
+      "target": "Response length bias",
+      "methodology": "Dividing answers into length bins and analyzing the correlation between answer length and automatic evaluation metric scores."
+    },
+    {
+      "target": "Question type bias",
+      "methodology": "Classifying questions into different categories (e.g., reasoning, instruction, evidence-based) and calculating the correlation consistency between human evaluators' scores and various metrics for each category."
+    },
+    {
+      "target": "Self-reinforcement bias",
+      "methodology": "Using Large Language Models as both evaluators and generators to conduct pairwise comparisons, measuring whether evaluators assign higher scores or win rates to their own generated answers."
+    },
+    {
+      "target": "Word expression bias",
+      "methodology": "Computing the average inverse document frequency (IDF) of words within answers and examining its correlation with evaluation scores to determine if evaluators favor verbose or lexically rare content."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

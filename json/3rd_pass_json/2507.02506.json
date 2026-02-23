@@ -1,0 +1,20 @@
+{
+  "filename": "2507.02506.pdf",
+  "title": "IndianBailJudgments-1200: A Multi-Attribute Legal NLP Dataset for Bail Order Understanding in India",
+  "arxiv_url": "https://arxiv.org/pdf/2507.02506",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Annotating real-world legal judgments with the accused's gender and a boolean 'bias_flag' using an LLM-based extraction pipeline (GPT-4o) and expert verification, enabling downstream correlation studies between gender and bail outcomes."
+    },
+    {
+      "target": "Caste bias",
+      "methodology": "Extracting a boolean 'bias_flag' from unstructured court judgments via an LLM annotation pipeline to explicitly identify and flag cases where caste-based judicial bias is potentially present."
+    },
+    {
+      "target": "Identity bias",
+      "methodology": "Extracting a boolean 'bias_flag' from court judgments via an LLM annotation pipeline to capture and flag broader identity-based biases in legal reasoning and bail decisions."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

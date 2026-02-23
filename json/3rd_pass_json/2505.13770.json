@@ -1,0 +1,20 @@
+{
+  "filename": "2505.13770.pdf",
+  "title": "Ice Cream Doesn’t Cause Drowning: Benchmarking LLMs Against Statistical Pitfalls in Causal Inference",
+  "arxiv_url": "https://arxiv.org/pdf/2505.13770",
+  "bias_targets": [
+    {
+      "target": "Statistical bias",
+      "methodology": "Evaluating LLMs on synthetic datasets structured around classical causal inference pitfalls such as confounding biases, Simpson's paradox, and selection bias (Berkson's paradox) using both direct and code-assisted prompting."
+    },
+    {
+      "target": "Semantic bias",
+      "methodology": "Adversarial sensitivity testing by altering variable names (e.g., changing a beverage brand name from 'HealthPlus' to 'UltraSugar') while keeping the underlying dataset and true causal effect identical, observing if the model's conclusion changes based on superficial semantic cues."
+    },
+    {
+      "target": "Prior knowledge bias",
+      "methodology": "Comparing model evaluations on datasets with intuitively correlated variable names (e.g., temperature, ice cream sales, drowning) where the data is either generated with a real causal structure or as pure independent noise, to check if LLMs ignore empirical data in favor of intuitive prior beliefs."
+    }
+  ],
+  "primary_bias_target": "Statistical bias"
+}

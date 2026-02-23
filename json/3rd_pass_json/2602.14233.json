@@ -1,0 +1,28 @@
+{
+  "filename": "2602.14233.pdf",
+  "title": "Evaluating LLMs in Finance Requires Explicit Bias Consideration",
+  "arxiv_url": "https://arxiv.org/pdf/2602.14233",
+  "bias_targets": [
+    {
+      "target": "Look-ahead bias",
+      "methodology": "Evaluated via temporal sanitation: enforcing knowledge cutoff dates, using strictly point-in-time data retrieval (avoiding live web searches or mutable wikis), and requiring full trace logging to ensure the model only uses information available at the simulated historical time."
+    },
+    {
+      "target": "Survivorship bias",
+      "methodology": "Evaluated through dynamic universe construction: ensuring the simulation uses a time-indexed tradable universe that explicitly includes delisted, merged, or failed entities, and requiring performance to be reported separately for surviving versus non-surviving entities."
+    },
+    {
+      "target": "Narrative bias",
+      "methodology": "Assessed through rationale robustness checks: requiring evidence grounding and auditing of generated explanations, alongside negative controls and entity substitution tests (e.g., swapping entity identifiers or scrambling inputs) to detect if the model fabricates causal stories based on memorized patterns."
+    },
+    {
+      "target": "Objective bias",
+      "methodology": "Measured by testing epistemic calibration: evaluating whether the system outputs a predictive distribution or calibrated confidence score, and checking if the model includes and properly scores explicit abstention options (e.g., 'No Trade' or 'Do Not Know')."
+    },
+    {
+      "target": "Cost bias",
+      "methodology": "Evaluated by enforcing realistic implementation constraints: requiring latency-aware execution (accounting for slippage) and reporting net utility strictly after deducting transaction costs, market impact, and operational inference costs."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

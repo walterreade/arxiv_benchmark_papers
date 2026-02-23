@@ -1,0 +1,20 @@
+{
+  "filename": "2206.07558.pdf",
+  "title": "CONTEXTUALIZATION AND GENERALIZATION IN ENTITY AND RELATION EXTRACTION",
+  "arxiv_url": "https://arxiv.org/pdf/2206.07558",
+  "bias_targets": [
+    {
+      "target": "Lexical overlap bias",
+      "methodology": "Partitioning test set instances (entity mentions and relations) into categories based on their overlap with the training set (e.g., exact match, partial match, and new/unseen) to measure the performance discrepancy and over-reliance on seen facts."
+    },
+    {
+      "target": "Retention bias",
+      "methodology": "Conducting behavioral testing by swapping the head and tail arguments of asymmetric relations in test sentences to evaluate if models stubbornly predict the original training relation rather than the newly expressed reversed relation."
+    },
+    {
+      "target": "Representation bias",
+      "methodology": "Evaluating the drop in model performance for out-of-vocabulary or rare named entities (e.g., uncommon locations or people's names) that are absent or underrepresented in the training data."
+    }
+  ],
+  "primary_bias_target": "Lexical overlap bias"
+}

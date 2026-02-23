@@ -1,0 +1,36 @@
+{
+  "filename": "2401.03946.pdf",
+  "title": "TEXTMACHINA: Seamless Generation of Machine-Generated Text Datasets",
+  "arxiv_url": "https://arxiv.org/pdf/2401.03946",
+  "bias_targets": [
+    {
+      "target": "Length bias",
+      "methodology": "Mitigated using length constrainers to automatically infer token lengths and a truncation algorithm in post-processing to ensure similar token-length distributions between human and generated texts."
+    },
+    {
+      "target": "Topic bias",
+      "methodology": "Addressed by using prompt templates and extractors to inject specific topics from human sources into the generated texts to ensure content similarity."
+    },
+    {
+      "target": "Structure bias",
+      "methodology": "Identified in strongly-structured domains (e.g., legal documents) and mitigated by guiding the generation formats to align with human text structures."
+    },
+    {
+      "target": "Disclosure bias",
+      "methodology": "Removed during post-processing by stripping explicit LLM disclosure patterns (e.g., 'As an AI...') and special tokens like [BOS] or [EOS] from the generated text."
+    },
+    {
+      "target": "Encoding bias",
+      "methodology": "Addressed during post-processing by correcting mojibake and Unicode errors using the ftfy library."
+    },
+    {
+      "target": "Language bias",
+      "methodology": "Mitigated by using fastText language identification models to filter out and discard texts generated in a language different from that of the human texts."
+    },
+    {
+      "target": "Context bias",
+      "methodology": "Prevented by removing the extracted prefix from the original human sources so that both the human text and the machine-generated text are evaluated as continuations of the same prefix."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

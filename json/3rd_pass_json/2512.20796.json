@@ -1,0 +1,20 @@
+{
+  "filename": "2512.20796.pdf",
+  "title": "Measuring Mechanistic Independence: Can Bias Be Removed Without Erasing Demographics?",
+  "arxiv_url": "https://arxiv.org/pdf/2512.20796",
+  "bias_targets": [
+    {
+      "target": "Racial bias",
+      "methodology": "Prompting the model to assign racial labels (Black, White, Asian, Hispanic) to professions and measuring the KL divergence of the output distribution against a uniform distribution, combined with mechanistic feature ablations using Sparse Autoencoders (SAEs)."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Prompting the model to assign gender labels (Male, Female) to professions and measuring the KL divergence from a uniform distribution. The authors also evaluate gender bias using the WinoGender coreference resolution task (measuring pronoun-occupation stereotype reliance), alongside mechanistic SAE feature ablations."
+    },
+    {
+      "target": "Educational bias",
+      "methodology": "Prompting the model to assign educational attainment levels (High school, Associate, Bachelor, Master, Doctoral) to professions and calculating the KL divergence of the predictions against empirical U.S. Bureau of Labor Statistics reference distributions, combined with causal SAE feature ablations."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

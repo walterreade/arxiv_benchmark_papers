@@ -1,0 +1,20 @@
+{
+  "filename": "2112.07566.pdf",
+  "title": "VALSE: A Task-Independent Benchmark for Vision and Language Models Centered on Linguistic Phenomena",
+  "arxiv_url": "https://arxiv.org/pdf/2112.07566",
+  "bias_targets": [
+    {
+      "target": "Distributional bias",
+      "methodology": "Analyzing and balancing word and token frequency distributions between correct captions and foiled captions to ensure V&L models cannot solve the tasks by exploiting vocabulary imbalances."
+    },
+    {
+      "target": "Plausibility bias (Language bias)",
+      "methodology": "Evaluating text-only unimodal models (e.g., GPT-1, GPT-2) by comparing perplexity scores of correct versus foiled captions to detect if models can identify foils simply because they are linguistically unnatural or implausible, independently of the visual input."
+    },
+    {
+      "target": "Class frequency bias",
+      "methodology": "Constructing adversarial test sets (e.g., for counting tasks) where correct answers belong to infrequent classes (e.g., numbers >= 4) and foils belong to highly frequent classes (e.g., numbers 0-3), penalizing models that rely on frequency priors from the training data."
+    }
+  ],
+  "primary_bias_target": "Linguistic bias"
+}

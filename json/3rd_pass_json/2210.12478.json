@@ -1,0 +1,16 @@
+{
+  "filename": "2210.12478.pdf",
+  "title": "DISCOSENSE: Commonsense Reasoning with Discourse Connectives",
+  "arxiv_url": "https://arxiv.org/pdf/2210.12478",
+  "bias_targets": [
+    {
+      "target": "Dataset bias (Annotation artifacts)",
+      "methodology": "Using Conditional Adversarial Filtering (CAF) to measure and mitigate models' reliance on unintended linguistic signals (e.g., lexical overlap/similarity). The methodology iteratively trains discriminator models to identify and replace easily solvable synthetic options, evaluating whether baseline language models exploit superficial cues rather than performing true commonsense reasoning."
+    },
+    {
+      "target": "Length bias",
+      "methodology": "Applying a length penalty during conditional text generation to match the average length of synthetic options to the ground truth, preventing language models from exploiting option length as a heuristic to guess the correct answer."
+    }
+  ],
+  "primary_bias_target": "Dataset bias (Annotation artifacts)"
+}

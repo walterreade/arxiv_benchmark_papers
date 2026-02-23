@@ -1,0 +1,20 @@
+{
+  "filename": "2503.07496.pdf",
+  "title": "Securing External Deeper-than-black-box GPAI Evaluations",
+  "arxiv_url": "https://arxiv.org/pdf/2503.07496",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "The paper does not empirically measure this bias itself, but outlines grey-box evaluation methodologies such as Causal Mediation Analysis (measuring how interventions on model activations mediate changes in outputs) and Concept Erasure (removing specific features from representations) for external evaluators to detect it."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "The paper theoretically discusses evaluating this bias using Concept Erasure, which removes specified features from a model's representation to test the causal role of the concept and prevent a classifier from using protected attributes like race."
+    },
+    {
+      "target": "Implicit bias",
+      "methodology": "The paper proposes using Gradient-Based Attribution to investigate how the sensitivity of outputs to changes in inputs or parameters can reveal implicit biases, specifically by determining if sensitive attributes consistently rank high in influencing a model's decision."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

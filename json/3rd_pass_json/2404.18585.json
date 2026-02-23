@@ -1,0 +1,20 @@
+{
+  "filename": "2404.18585.pdf",
+  "title": "FREB-TQA: A Fine-Grained Robustness Evaluation Benchmark for Table Question Answering",
+  "arxiv_url": "https://arxiv.org/pdf/2404.18585",
+  "bias_targets": [
+    {
+      "target": "Positional bias",
+      "methodology": "Shifting the target rows or columns (the ones containing the answer) to different partitions of the table (top, middle, bottom, front, back) and measuring the variation in model performance to see if it favors specific table locations."
+    },
+    {
+      "target": "Shortcut bias (Model-internal knowledge bias)",
+      "methodology": "Removing relevant cells or replacing the entire table with a dummy table to evaluate whether the model relies on the provided evidence or bypasses it to use pre-trained implicit knowledge and shortcuts."
+    },
+    {
+      "target": "Value distribution bias",
+      "methodology": "Modifying cell values (e.g., changing a number from 15 to 1500) without changing the correct answer to check if models articulate answers based on their bias toward certain value distributions seen during pre-training rather than performing actual aggregation/comparison."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

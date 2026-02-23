@@ -1,0 +1,28 @@
+{
+  "filename": "2602.07442.pdf",
+  "title": "Echoes in the Loop: Diagnosing Risks in LLM-Powered Recommender Systems under Feedback Loops",
+  "arxiv_url": "https://arxiv.org/pdf/2602.07442",
+  "bias_targets": [
+    {
+      "target": "Popularity bias",
+      "methodology": "Measuring the 'popularity gap' by computing the difference between the average popularity score (historical interaction counts) of LLM-recommended items and the items actually consumed by users in the ground truth, and tracking this gap across simulated feedback loops."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Comparing the frequency distribution of LLM-inferred gender attributes in generated user profiles against the empirical ground-truth distributions to detect bias amplification (e.g., an inflated proportion of male users)."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Analyzing the frequency distribution of LLM-inferred age groups compared to actual ground-truth age distributions to identify systematic skews or imbalances."
+    },
+    {
+      "target": "Occupational bias",
+      "methodology": "Evaluating the distribution of LLM-generated user occupations against real ground-truth data to detect distributional shifts and the over-representation of specific or domain-specific occupations (e.g., 'film critic')."
+    },
+    {
+      "target": "Item attribute/Genre bias",
+      "methodology": "Examining the frequency distributions of genres and categories in LLM-augmented item interactions to identify disproportionate skews toward a narrow subset of popular genres and categories."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

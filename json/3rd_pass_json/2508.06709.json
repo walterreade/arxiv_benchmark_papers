@@ -1,0 +1,20 @@
+{
+  "filename": "2508.06709.pdf",
+  "title": "Play Favorites: A Statistical Method to Measure Self-Bias in LLM-as-a-Judge",
+  "arxiv_url": "https://arxiv.org/pdf/2508.06709",
+  "bias_targets": [
+    {
+      "target": "Self-bias",
+      "methodology": "Using a statistical linear regression framework to compare an LLM evaluator's scores on its own generated completions against completions from other models, while explicitly controlling for the underlying completion quality using independent human reference scores."
+    },
+    {
+      "target": "Family-bias",
+      "methodology": "Incorporating a family-indicator term in the regression model to quantify an LLM judge's systematic tendency to assign higher ratings to outputs produced by other distinct models that belong to the same model family (e.g., Claude, GPT), adjusting for baseline human-rated quality."
+    },
+    {
+      "target": "Length bias (Verbosity bias)",
+      "methodology": "Evaluating the correlation between completion length and judge ratings by adding a normalized token-length control term to the regression equation to check if the LLM-as-a-judge inherently prefers longer outputs once reference quality is accounted for."
+    }
+  ],
+  "primary_bias_target": "Self-bias"
+}

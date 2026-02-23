@@ -1,0 +1,16 @@
+{
+  "filename": "2311.09605.pdf",
+  "title": "Measuring and Improving Attentiveness to Partial Inputs with Counterfactuals",
+  "arxiv_url": "https://arxiv.org/pdf/2311.09605",
+  "bias_targets": [
+    {
+      "target": "Partial-input bias (Spurious correlations)",
+      "methodology": "Evaluating model attentiveness using the Counterfactual Attentiveness Test (CAT), which replaces one part of a paired input (e.g., the premise in NLI, the paragraph in Reading Comprehension, or the image in Visual Question Answering) with a randomly sampled counterpart from another instance. This tests whether the model relies solely on dataset artifacts and partial inputs (like hypothesis-only heuristics) rather than reasoning over the full input."
+    },
+    {
+      "target": "Modality bias (Language bias in Vision-Language models)",
+      "methodology": "Comparing the performance of multimodal models (like BLIP and ViLT) on partial inputs (text-only vs. image-only) and applying counterfactual perturbations to individual modalities to measure if models disproportionately rely on textual language priors rather than visual grounding."
+    }
+  ],
+  "primary_bias_target": "Partial-input bias (Spurious correlations)"
+}

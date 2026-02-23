@@ -1,0 +1,20 @@
+{
+  "filename": "2407.10633.pdf",
+  "title": "Evaluating Model Bias Requires Characterizing its Mistakes",
+  "arxiv_url": "https://arxiv.org/pdf/2407.10633",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Calculating the SKEWSIZE metric (based on Cramér's V effect size) to measure the association between gender and model predictions for occupations or sports. This was evaluated on Vision-Language Models (VLMs) using synthetically generated image datasets with prompts like 'A {GENDER} {OCCUPATION}'."
+    },
+    {
+      "target": "Background bias",
+      "methodology": "Measuring the effect size of the interaction between image backgrounds and predicted object classes in ImageNet classifiers. The evaluation used a synthetic dataset generated via Stable Diffusion to place objects across 23 different background types."
+    },
+    {
+      "target": "Color bias",
+      "methodology": "Evaluating spurious feature correlation in a controlled setting using the dSprites dataset by intentionally removing specific color-shape combinations during training, and then measuring the effect size of color on the model's shape predictions."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

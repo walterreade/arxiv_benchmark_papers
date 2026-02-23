@@ -1,0 +1,28 @@
+{
+  "filename": "2505.16522.pdf",
+  "title": "Benchmarking and Pushing the Multi-Bias Elimination Boundary of LLMs via Causal Effect Estimation-guided Debiasing",
+  "arxiv_url": "https://arxiv.org/pdf/2505.16522",
+  "bias_targets": [
+    {
+      "target": "Gender-occupation bias",
+      "methodology": "Evaluating Natural Language Inference (NLI) model predictions on premise-hypothesis pairs constructed using templates that combine unisex names with statistically male-biased or female-biased occupations."
+    },
+    {
+      "target": "Lexical overlap bias",
+      "methodology": "Evaluating NLI model predictions on premise-hypothesis pairs with artificially controlled high or low word overlap rates to see if models spuriously associate overlap with specific labels."
+    },
+    {
+      "target": "Sentence length bias",
+      "methodology": "Evaluating NLI model predictions on premise-hypothesis pairs where the hypothesis is strictly controlled to be significantly shorter or longer than the premise (by more than five words)."
+    },
+    {
+      "target": "Semantic similarity bias",
+      "methodology": "Evaluating NLI model predictions on premise-hypothesis pairs engineered to have specific high or low BERTScore semantic similarities."
+    },
+    {
+      "target": "Speculative word bias",
+      "methodology": "Evaluating NLI model predictions on premise-hypothesis pairs where specific speculative words (e.g., 'might', 'could', 'probably') are purposefully injected to test if the model associates them with specific inference labels."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

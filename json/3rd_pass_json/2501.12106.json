@@ -1,0 +1,20 @@
+{
+  "filename": "2501.12106.pdf",
+  "title": "Can open source large language models be used for tumor documentation in Germany? - An evaluation on urological doctors’ notes",
+  "arxiv_url": "https://arxiv.org/pdf/2501.12106",
+  "bias_targets": [
+    {
+      "target": "Majority label bias",
+      "methodology": "Using a balanced number of positive (containing tumor diagnoses) and negative (containing none) examples in few-shot prompts to evaluate whether the model systematically skews its predictions toward the predominant class."
+    },
+    {
+      "target": "Recency bias (Positional bias)",
+      "methodology": "Structuring few-shot prompts with unpredictable patterns of positive and negative examples (e.g., PN, PNNP, PNNPNP) to test whether models are disproportionately influenced by the final examples in the prompt sequence."
+    },
+    {
+      "target": "Domain-label bias",
+      "methodology": "Comparing model performance when prompted with examples from the target domain (urology) versus a different medical domain (fictitious gynecology examples) to examine how well the models generalize task concepts without over-relying on domain-specific vocabulary."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

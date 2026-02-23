@@ -1,0 +1,16 @@
+{
+  "filename": "2310.07641.pdf",
+  "title": "EVALUATING LARGE LANGUAGE MODELS AT EVALUATING INSTRUCTION FOLLOWING",
+  "arxiv_url": "https://arxiv.org/pdf/2310.07641",
+  "bias_targets": [
+    {
+      "target": "Superficial quality bias",
+      "methodology": "Constructing an adversarial dataset (LLMBar) containing pairs of outputs where the incorrect output exhibits superior superficial qualities (e.g., more engaging tone, better formatting, polished style) to test if the LLM evaluator is misled into preferring it over the objectively correct, instruction-following output."
+    },
+    {
+      "target": "Positional bias",
+      "methodology": "Querying the LLM evaluator twice with swapped presentation orders of the two candidate outputs (O1, O2 and O2, O1) and measuring the positional agreement rate (Agr.) to determine if the model favors an output simply based on its position in the prompt."
+    }
+  ],
+  "primary_bias_target": "Superficial quality bias"
+}

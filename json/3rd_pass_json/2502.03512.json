@@ -1,0 +1,20 @@
+{
+  "filename": "2502.03512.pdf",
+  "title": "YinYang-Align: Benchmarking Contradictory Objectives and Proposing Multi-Objective Optimization based DPO for Text-to-Image Alignment",
+  "arxiv_url": "https://arxiv.org/pdf/2502.03512",
+  "bias_targets": [
+    {
+      "target": "Cultural bias",
+      "methodology": "Evaluated using Simulated Cultural Context Matching (SCCM), which dynamically generates culturally specific sub-prompts using LLMs and compares their CLIP embeddings with the generated image to measure cultural accuracy, diversity, and the presence of stereotyping."
+    },
+    {
+      "target": "Emotional bias",
+      "methodology": "Evaluated using an Emotional Impact Score (EIS) and a Neutrality Score, which utilize pretrained emotion detection models (e.g., DeepEmotion) to measure the degree of emotional dominance versus impartial, unbiased representation in the generated images."
+    },
+    {
+      "target": "Representation bias (Gender and Ethnic)",
+      "methodology": "Evaluated qualitatively as a sub-component of the Cultural Sensitivity objective by inspecting generated images for gender balance and ethnic diversity (e.g., analyzing demographic variations in prompts like 'Images of Vikings')."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

@@ -1,0 +1,16 @@
+{
+  "filename": "2208.04125.pdf",
+  "title": "Is this Change the Answer to that Problem? Correlating Descriptions of Bug and Code Changes for Evaluating Patch Correctness",
+  "arxiv_url": "https://arxiv.org/pdf/2208.04125",
+  "bias_targets": [
+    {
+      "target": "Data leakage bias",
+      "methodology": "Comparing the performance (AUC and F1 scores) of a random forest classifier using a traditional 10-fold cross-validation scheme (which allows duplicate/semantically-equivalent patches in train and test sets) versus a custom 10-group cross-validation scheme grouped by bug IDs to measure the inflated performance caused by data leakage."
+    },
+    {
+      "target": "Class imbalance bias",
+      "methodology": "Mitigating and evaluating the impact of an imbalanced dataset (83% incorrect vs. 17% correct patches) by stressing the AUC metric over the F1 score, and testing the classifier's performance on a re-balanced 1:1 test set to observe changes in the F1 score."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

@@ -1,0 +1,20 @@
+{
+  "filename": "2508.14146.pdf",
+  "title": "MMReview: A Multidisciplinary and Multimodal Benchmark for LLM-Based Peer Review Automation",
+  "arxiv_url": "https://arxiv.org/pdf/2508.14146",
+  "bias_targets": [
+    {
+      "target": "Positional bias",
+      "methodology": "Repeating pairwise comparisons of academic papers with reversed input orders in the Pairwise Rank task to measure the model's tendency to favor the first or second presented option."
+    },
+    {
+      "target": "Length bias",
+      "methodology": "Analyzing the average peer review scores assigned by LLMs across different input context lengths (measured in tokens or number of rendered PDF pages) to observe if models inherently overvalue longer inputs."
+    },
+    {
+      "target": "Sycophancy bias",
+      "methodology": "Using the 'Fake Strengths' and 'Fake Weaknesses' tasks, where the polarity of actual human review comments is reversed, to test if models uncritically align with fabricated, adversarial premises rather than making objective evaluations."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

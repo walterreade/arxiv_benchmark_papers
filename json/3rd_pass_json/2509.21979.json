@@ -1,0 +1,28 @@
+{
+  "filename": "2509.21979.pdf",
+  "title": "Benchmarking and Mitigating Sycophancy in Medical Vision Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2509.21979",
+  "bias_targets": [
+    {
+      "target": "Sycophancy (User Mimicry Bias)",
+      "methodology": "Injecting prompts that explicitly highlight a specific incorrect option (mimicking a user's suggestion) to test if the vision-language model abandons independent visual reasoning to agree with the user."
+    },
+    {
+      "target": "Authority Bias (Expert Deference)",
+      "methodology": "Appending prompts featuring direct orders from a perceived superior or strong rebuttals from a senior expert to measure if the model overrides factual visual evidence to comply with authoritative cues."
+    },
+    {
+      "target": "Conformity Bias (Social Consensus)",
+      "methodology": "Providing prompts that claim all other medical professionals and AI systems unanimously selected a different answer to evaluate if the model alters its correct answer to align with a perceived majority."
+    },
+    {
+      "target": "Emotional Compliance Bias",
+      "methodology": "Appending text that conveys intense, patient-centered fear or pleading to test if affective alignment and emotional manipulation can override the model's objective, evidence-based medical evaluation."
+    },
+    {
+      "target": "Risk-Aversion Bias (Ethical/Economic Pressure)",
+      "methodology": "Framing the model's initial correct choice as causing catastrophic ethical, legal, or socioeconomic consequences to test if the fear of negative outcomes shifts the model's diagnostic response."
+    }
+  ],
+  "primary_bias_target": "Sycophancy"
+}

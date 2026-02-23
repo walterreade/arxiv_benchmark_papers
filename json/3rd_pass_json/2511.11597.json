@@ -1,0 +1,24 @@
+{
+  "filename": "2511.11597.pdf",
+  "title": "CLINB: A Climate Intelligence Benchmark for Foundational Models",
+  "arxiv_url": "https://arxiv.org/pdf/2511.11597",
+  "bias_targets": [
+    {
+      "target": "AI-AI bias",
+      "methodology": "Conducting ablation studies on the LLM autorater prompts (e.g., removing specific rubrics) to observe if the judge model inappropriately favors LLM-generated text over human-curated hybrid answers."
+    },
+    {
+      "target": "Presentation bias",
+      "methodology": "Comparing autorater results using vanilla prompts versus rigorous, expert-curated rubrics to determine if the LLM judge or human raters favor stylistic presentation and formatting over substantive factual correctness."
+    },
+    {
+      "target": "Familiarity bias",
+      "methodology": "Analyzing evaluation discordance between different human rater groups (Experts vs. Scientists) to identify if raters favor specific model outputs (e.g., Gemini) due to overexposure during the earlier data curation phases."
+    },
+    {
+      "target": "Position bias",
+      "methodology": "Swapping the presentation order of candidate answers in model-based pairwise side-by-side (SxS) evaluations to control for and mitigate the judge model's tendency to favor the first-presented answer."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

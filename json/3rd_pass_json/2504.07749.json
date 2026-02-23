@@ -1,0 +1,24 @@
+{
+  "filename": "2504.07749.pdf",
+  "title": "NorEval: A Norwegian Language Understanding and Generation Evaluation Benchmark",
+  "arxiv_url": "https://arxiv.org/pdf/2504.07749",
+  "bias_targets": [
+    {
+      "target": "Self-preference bias",
+      "methodology": "Analyzing pairwise comparisons to measure how often an LLM acting as a judge favors its own generated outputs over those of other models."
+    },
+    {
+      "target": "Language bias",
+      "methodology": "Using language identification tools (GlotLID) to analyze if instruction-tuned models and LLM judges exhibit a preference for English or related Scandinavian languages instead of generating the requested Norwegian."
+    },
+    {
+      "target": "Position bias",
+      "methodology": "Evaluating response pairs twice with switched positions to measure if the LLM-as-a-judge prefers a response based purely on its presentation order (first vs. second)."
+    },
+    {
+      "target": "Stereotype bias",
+      "methodology": "Using the NorTruthfulQA dataset in multiple-choice and open-ended generative setups to evaluate whether models propagate false beliefs and stereotypes across categories like religion, politics, and demographic traits."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

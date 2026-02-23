@@ -1,0 +1,28 @@
+{
+  "filename": "2311.08705.pdf",
+  "title": "Evaluating Robustness of Dialogue Summarization Models in the Presence of Naturally Occurring Variations",
+  "arxiv_url": "https://arxiv.org/pdf/2311.08705",
+  "bias_targets": [
+    {
+      "target": "Repetition bias",
+      "methodology": "Injecting synthetic utterances requesting repetition and paraphrased repeated responses into dialogues to test if models inappropriately consider repeated information to be more significant."
+    },
+    {
+      "target": "Lead bias",
+      "methodology": "Adding synthetic greeting remarks at the beginning of dialogues to examine if the model exhibits a preference for extracting summary information from the first utterance."
+    },
+    {
+      "target": "Recency bias",
+      "methodology": "Adding synthetic closing remarks at the end of dialogues to investigate if the model inappropriately prefers to include information from the last utterance."
+    },
+    {
+      "target": "Length bias (Long bias)",
+      "methodology": "Splitting and combining consecutive utterances to simulate variations in message length, evaluating if the model prefers to include long utterances over shorter ones even when short ones contain salient information."
+    },
+    {
+      "target": "Dialect bias (Language-use variation)",
+      "methodology": "Applying lexical and morphosyntactic transformation rules to convert standard English utterances into synthetic African American Vernacular English (AAVE) and evaluating the summarization model's performance drop."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

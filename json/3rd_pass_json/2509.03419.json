@@ -1,0 +1,28 @@
+{
+  "filename": "2509.03419.pdf",
+  "title": "Curse of Knowledge: When Complex Evaluation Context Benefits yet Biases LLM Judges",
+  "arxiv_url": "https://arxiv.org/pdf/2509.03419",
+  "bias_targets": [
+    {
+      "target": "Format Bias",
+      "methodology": "Adversarial targeted attacks that transplant reference answer styles and structural features into candidate responses while keeping content quality constant, measuring the Attack Success Rate (ASR) to see if models overvalue formulaic expressions."
+    },
+    {
+      "target": "Solution Fixation Bias",
+      "methodology": "Adversarial targeted attacks that repackage flawed target steps using the reference methodology while retaining original errors, measuring ASR to evaluate if models penalize valid but alternative solutions or favor flawed but reference-aligned ones."
+    },
+    {
+      "target": "Stereotype Amplification Bias",
+      "methodology": "Adversarial targeted attacks that extract stereotypical traits from auxiliary character profiles and introduce context-contradictory but stereotype-aligned behaviors into the text, measuring ASR to see if auxiliary info exacerbates inherent cognitive biases."
+    },
+    {
+      "target": "Criteria Loophole Bias",
+      "methodology": "Adversarial targeted attacks that modify responses to artificially inflate rubric scores through minimal, superficial adjustments that exploit incomplete scoring criteria without meaningful quality improvements."
+    },
+    {
+      "target": "Criteria Entanglement Bias",
+      "methodology": "Adversarial targeted attacks that modify text to maximize scores on a single specific rubric dimension while strictly maintaining actual performance in other dimensions, observing whether the judge model exhibits a 'halo effect' by assigning similar scores across all dimensions."
+    }
+  ],
+  "primary_bias_target": "Auxiliary Information Induced Bias"
+}

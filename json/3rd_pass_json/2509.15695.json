@@ -1,0 +1,20 @@
+{
+  "filename": "2509.15695.pdf",
+  "title": "ORIC: Benchmarking Object Recognition under Contextual Incongruity in Large Vision-Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2509.15695",
+  "bias_targets": [
+    {
+      "target": "Contextual bias (Co-occurrence bias)",
+      "methodology": "Evaluating object recognition performance drops (misidentifications and hallucinations) by testing models on incongruous object-context pairs where local visual evidence contradicts strong scene-level priors, comparing the results against context-consistent benchmarks."
+    },
+    {
+      "target": "Class bias (Yes/No prediction bias)",
+      "methodology": "Tracking the proportion of 'yes' predictions (YP) and analyzing class-wise precision, recall, and F1 scores to determine if models systematically favor affirmative or negative responses when faced with visual uncertainty."
+    },
+    {
+      "target": "Object size bias",
+      "methodology": "Comparing model recall metrics across specific object scale tiers (small, medium, and large objects) based on bounding box pixel areas to assess performance disparities linked to visual scale."
+    }
+  ],
+  "primary_bias_target": "Contextual bias (Co-occurrence bias)"
+}

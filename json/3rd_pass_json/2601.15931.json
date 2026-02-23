@@ -1,0 +1,20 @@
+{
+  "filename": "2601.15931.pdf",
+  "title": "ICON: Invariant Counterfactual Optimization with Neuro-Symbolic Priors for Text-Based Person Search",
+  "arxiv_url": "https://arxiv.org/pdf/2601.15931",
+  "bias_targets": [
+    {
+      "target": "Environmental/Context Bias",
+      "methodology": "Evaluating the model's reliance on background contexts (e.g., pavement) rather than target features by generating counterfactual samples via semantic-driven background transplantation (Counterfactual Context Disentanglement)."
+    },
+    {
+      "target": "Local Saliency Bias",
+      "methodology": "Measuring the model's over-reliance on dominant visual features (e.g., bright clothing) while ignoring holistic completeness by systematically masking top salient tokens and forcing cross-modal counterfactual reconstruction."
+    },
+    {
+      "target": "Geometric Sensitivity/Localization Bias",
+      "methodology": "Testing the model's sensitivity to precise bounding box positions by applying adversarial spatial interventions like discrete shifting and scaling to region proposals."
+    }
+  ],
+  "primary_bias_target": "Spurious Correlations (Algorithmic Bias)"
+}

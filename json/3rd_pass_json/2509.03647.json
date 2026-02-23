@@ -1,0 +1,16 @@
+{
+  "filename": "2509.03647.pdf",
+  "title": "Breaking the Mirror: Activation-Based Mitigation of Self-Preference in LLM Evaluators",
+  "arxiv_url": "https://arxiv.org/pdf/2509.03647",
+  "bias_targets": [
+    {
+      "target": "Self-preference bias",
+      "methodology": "Pairwise evaluation where a model acts as a judge comparing its own generated summary against another model's summary. The evaluating model's selections are compared against ground-truth consensus from a panel of independent 'gold' judge models to separate illegitimate self-preference from legitimate quality differences."
+    },
+    {
+      "target": "Positional bias",
+      "methodology": "Running pairwise evaluation prompts twice with different candidate orderings to detect and discard evaluation items where the model's preference is dictated by the presentation order."
+    }
+  ],
+  "primary_bias_target": "Self-preference bias"
+}

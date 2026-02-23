@@ -1,0 +1,20 @@
+{
+  "filename": "2512.20159.pdf",
+  "title": "AXIOM: Benchmarking LLM-as-a-Judge for Code via Rule-Based Perturbation and Multisource Quality Calibration",
+  "arxiv_url": "https://arxiv.org/pdf/2512.20159",
+  "bias_targets": [
+    {
+      "target": "Systematic grading bias",
+      "methodology": "Comparing LLM-as-a-judge generated scores against human-verified ground-truth scores using statistical metrics (mean, standard deviation, and Krippendorff's alpha) to identify deviations such as overly pessimistic/harsh grading."
+    },
+    {
+      "target": "Defect detection bias",
+      "methodology": "Evaluating LLM performance on fine-grained binary classification tasks (defective vs. non-defective code) using precision, recall, and Matthews Correlation Coefficient (MCC) to detect a disproportionate tendency to hallucinate defects and produce false positives."
+    },
+    {
+      "target": "Refinement effort overestimation bias",
+      "methodology": "Isolating correctly evaluated programs and comparing the LLM's classification of required refinement (minor tweak vs. major refactoring) against the ground truth to identify a pronounced tendency to overestimate the scope of localized corrections."
+    }
+  ],
+  "primary_bias_target": "Systematic grading bias"
+}

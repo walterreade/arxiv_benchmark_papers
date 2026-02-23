@@ -1,0 +1,16 @@
+{
+  "filename": "2505.00744.pdf",
+  "title": "Localizing Before Answering: A Benchmark for Grounded Medical Visual Question Answering",
+  "arxiv_url": "https://arxiv.org/pdf/2505.00744",
+  "bias_targets": [
+    {
+      "target": "Language bias",
+      "methodology": "Textual Perturbation Test (TPT): Swapping key textual entities (such as anatomy or disease terms) in the prompt to evaluate whether the model relies on learned linguistic co-occurrences (shortcuts) rather than the actual visual evidence."
+    },
+    {
+      "target": "Visual bias",
+      "methodology": "Visual Perturbation Test (VPT): Replacing the queried anatomical region in the image with the same region from an image of a different diagnostic class to test if the model relies on spurious visual shortcuts and irrelevant image areas instead of grounding its answer on the specific region of interest."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

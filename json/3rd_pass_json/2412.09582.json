@@ -1,0 +1,20 @@
+{
+  "filename": "2412.09582.pdf",
+  "title": "NEPTUNE: THE LONG ORBIT TO BENCHMARKING LONG VIDEO UNDERSTANDING",
+  "arxiv_url": "https://arxiv.org/pdf/2412.09582",
+  "bias_targets": [
+    {
+      "target": "Linguistic bias",
+      "methodology": "Evaluated using a text-only 'blind baseline' where models are fed only the question, answer, and decoys (without any video or audio context) to determine if the correct answer can be inferred from language priors, subtle cues in the options, or common sense."
+    },
+    {
+      "target": "Single-frame bias",
+      "methodology": "Evaluated by testing image-only models (like BLIP2) and video models restricted to a single center frame to ensure questions genuinely require temporal reasoning over long video horizons rather than just static image recognition."
+    },
+    {
+      "target": "Generator bias",
+      "methodology": "Evaluated by comparing the performance of the model used to generate the dataset (Gemini-1.5-Pro) against other frontier models (like GPT-4o), as well as comparing its performance on automatically generated questions versus a fully human-proposed question (HPQ) subset to detect any model-specific advantage."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

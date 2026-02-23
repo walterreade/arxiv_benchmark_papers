@@ -1,0 +1,20 @@
+{
+  "filename": "2511.04655.pdf",
+  "title": "Benchmark Designers Should “Train on the Test Set” to Expose Exploitable Non-Visual Shortcuts",
+  "arxiv_url": "https://arxiv.org/pdf/2511.04655",
+  "bias_targets": [
+    {
+      "target": "Non-visual bias",
+      "methodology": "Applying a 'Test-set Stress-Test' (TsT) using k-fold cross-validation to train blind diagnostic models (an LLM via LoRA and a Random Forest) exclusively on the textual, non-visual inputs of multimodal test sets to derive a quantitative exploitability measure and sample-level bias scores."
+    },
+    {
+      "target": "Statistical benchmark bias",
+      "methodology": "Analyzing hand-crafted non-visual features (such as answer distribution skews, predictable object sizes, and target-position correlations) using a Random Forest classifier to extract feature importance (Gini importance) and identify spurious correlations embedded in benchmark structures."
+    },
+    {
+      "target": "Language prior bias",
+      "methodology": "Evaluating zero-shot and fine-tuned 'blind' (vision-disabled) language models on multimodal questions to quantify the extent to which world knowledge acquired during LLM pretraining allows models to bypass visual reasoning."
+    }
+  ],
+  "primary_bias_target": "Non-visual bias"
+}

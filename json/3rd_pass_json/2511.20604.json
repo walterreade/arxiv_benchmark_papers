@@ -1,0 +1,20 @@
+{
+  "filename": "2511.20604.pdf",
+  "title": "On Evaluating LLM Alignment by Evaluating LLMs as Judges",
+  "arxiv_url": "https://arxiv.org/pdf/2511.20604",
+  "bias_targets": [
+    {
+      "target": "Self-preference bias",
+      "methodology": "Comparing the rankings produced by a specific LLM evaluator (e.g., GPT-4o, Claude 3.5 Sonnet) against a gold standard to observe if the LLM disproportionately favors its own generated outputs or those from its own model family."
+    },
+    {
+      "target": "Position bias (Order bias)",
+      "methodology": "Evaluating LLM-as-judge consistency by swapping the presentation order of the two outputs in pairwise comparison prompts and identifying/filtering instances where the model's preference changes solely based on the order."
+    },
+    {
+      "target": "Style and Length bias",
+      "methodology": "Using length-controlled (e.g., AlpacaEval-LC) and style-controlled (e.g., Arena-Hard-SC, ChatBot Arena style-controlled) rankings to evaluate models while mitigating human or LLM-judge preferences for specific formatting styles or longer response lengths."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

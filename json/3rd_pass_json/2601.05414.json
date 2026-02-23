@@ -1,0 +1,24 @@
+{
+  "filename": "2601.05414.pdf",
+  "title": "Large Language Models Are Bad Dice Players: LLMs Struggle to Generate Random Numbers from Statistical Distributions",
+  "arxiv_url": "https://arxiv.org/pdf/2601.05414",
+  "bias_targets": [
+    {
+      "target": "Statistical/Distributional bias",
+      "methodology": "Benchmarking models' native capability to sample random numbers across 15 probability distributions (e.g., Uniform, Gaussian, Cauchy) by generating 1000 samples and evaluating their distributional fidelity using Wasserstein-1 distance, Kolmogorov-Smirnov tests, and Chi-square goodness-of-fit tests."
+    },
+    {
+      "target": "Positional bias",
+      "methodology": "Prompting models to generate medical multiple-choice questions with explicit instructions to uniformly distribute the correct answer across options A, B, C, and D, and measuring the resulting answer position distributions using Chi-square tests to detect position-favoring biases."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Prompting models to generate text-to-image prompts of people while explicitly instructing them to follow precise U.S. Census gender distribution targets (49.5% Male, 50.5% Female), and measuring the resulting demographic skews."
+    },
+    {
+      "target": "Racial/Ethnic bias",
+      "methodology": "Prompting models to generate text-to-image prompts of people with explicit instructions to follow U.S. Census race and ethnicity distribution targets, and measuring deviations from these statistical constraints using Chi-square tests."
+    }
+  ],
+  "primary_bias_target": "Statistical/Distributional bias"
+}

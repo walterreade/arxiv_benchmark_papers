@@ -1,0 +1,16 @@
+{
+  "filename": "2512.01786.pdf",
+  "title": "Who Judges the Judge? LLM Jury-on-Demand: Building Trustworthy LLM Evaluation Systems",
+  "arxiv_url": "https://arxiv.org/pdf/2512.01786",
+  "bias_targets": [
+    {
+      "target": "Evaluation Scoring Bias",
+      "methodology": "Comparing LLM-generated evaluation scores (for tasks like summarization and RAG) with human expert annotations using Kendall's Tau correlation, and analyzing score differences to identify judges that consistently assign higher or lower scores than humans (mitigated via isotonic calibration)."
+    },
+    {
+      "target": "Content Structure Bias",
+      "methodology": "Analyzing feature distributions (e.g., factual density, named entities, character count, and token entropy) across correct and incorrect LLM evaluations to identify systematic errors and performance degradation caused by the text's length, complexity, or specific linguistic patterns."
+    }
+  ],
+  "primary_bias_target": "Evaluation Scoring Bias"
+}

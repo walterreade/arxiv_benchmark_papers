@@ -1,0 +1,24 @@
+{
+  "filename": "2504.11829.pdf",
+  "title": "Déjà Vu: Multilingual LLM Evaluation through the Lens of Machine Translation Evaluation",
+  "arxiv_url": "https://arxiv.org/pdf/2504.11829",
+  "bias_targets": [
+    {
+      "target": "Translation artifact bias",
+      "methodology": "Round-trip translating evaluation prompts to simulate 'translationese' and measuring how these translation artifacts systematically alter LLM-as-a-judge win rates between models across different languages."
+    },
+    {
+      "target": "Positional bias",
+      "methodology": "Varying the presentation order of compared systems in LLM-as-a-judge evaluation prompts to measure inconsistencies and systematic shifts in pairwise win rates."
+    },
+    {
+      "target": "Judge bias",
+      "methodology": "Comparing the pairwise preferences of different automatic LLM judges (e.g., GPT-4o vs Gemini 1.5 Pro) on the same outputs to identify discrepancies in model evaluation outcomes."
+    },
+    {
+      "target": "Verbosity/Length bias",
+      "methodology": "Bucketing pairwise model win rates by prompt length to analyze if certain models have a systematic advantage on shorter or longer text generations."
+    }
+  ],
+  "primary_bias_target": "Evaluation bias"
+}

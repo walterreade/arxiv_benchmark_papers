@@ -1,0 +1,24 @@
+{
+  "filename": "2504.19076.pdf",
+  "title": "LLM-Evaluation Tropes: Perspectives on the Validity of LLM-Evaluations",
+  "arxiv_url": "https://arxiv.org/pdf/2504.19076",
+  "bias_targets": [
+    {
+      "target": "Circularity bias (Evaluation signal leakage)",
+      "methodology": "Simulating circular evaluation setups by re-ranking TREC RAG 2024 retrieval systems with an LLM evaluator (UMBRELA) and comparing the resulting system rankings and NDCG scores under both LLM evaluation and manual human evaluation to observe score inflation."
+    },
+    {
+      "target": "Self-preference bias (LLM Narcissism)",
+      "methodology": "Analyzing the preference of LLM evaluators for text or system outputs aligned with their own generation patterns, evaluated by measuring the drop in Kendall's tau correlation and the increase in discordant system pairs when an LLM evaluates systems that share its underlying model."
+    },
+    {
+      "target": "Automation bias (Rubber-Stamp Effect)",
+      "methodology": "Evaluating the lack of critical human oversight when humans verify LLM labels by proposing the comparison of fully manual relevance labels against human-verified LLM labels, and embedding vigilance tests (e.g., intentionally flipped labels) to quantify conformity."
+    },
+    {
+      "target": "Homogenization bias (Loss of Variety of Opinion)",
+      "methodology": "Qualitatively assessing how the use of a single or dominant LLM evaluator explicitly sets a ceiling for retrieval systems, penalizing diverse, novel, or unconventional responses that fall outside the LLM's implicit norms."
+    }
+  ],
+  "primary_bias_target": "Circularity bias (Evaluation signal leakage)"
+}

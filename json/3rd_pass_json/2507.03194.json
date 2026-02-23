@@ -1,0 +1,20 @@
+{
+  "filename": "2507.03194.pdf",
+  "title": "Quantifying Cognitive Bias Induction in LLM-Generated Content",
+  "arxiv_url": "https://arxiv.org/pdf/2507.03194",
+  "bias_targets": [
+    {
+      "target": "Framing bias",
+      "methodology": "Classifying the sentiment (positive, negative, or neutral) of both the original source text and the LLM-generated summary using an LLM-as-a-judge, then calculating the fraction of instances where the summary's framing shifts from the original."
+    },
+    {
+      "target": "Primacy bias",
+      "methodology": "Dividing the source context into three equal segments (beginning, middle, end) and measuring the cosine similarity between text embeddings of the generated summary and each segment to detect disproportionate focus on initial information."
+    },
+    {
+      "target": "Authority and Confirmation bias",
+      "methodology": "Quantifying model hallucinations by testing the LLM's strict accuracy in fact-checking pairs of real and falsified (counterfactual) news items, specifically comparing performance on events before and after the model's knowledge cutoff date."
+    }
+  ],
+  "primary_bias_target": "Cognitive bias"
+}

@@ -1,0 +1,28 @@
+{
+  "filename": "2311.07723.pdf",
+  "title": "Generalization Analogies (GENIES): A Testbed for Generalizing AI Oversight to Hard-To-Measure Domains",
+  "arxiv_url": "https://arxiv.org/pdf/2311.07723",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluated using a specific probing distribution shift (alpaca_mmlu to gender_bias) to test whether reward models misgeneralize by preferring responses that exhibit gender bias."
+    },
+    {
+      "target": "Sycophancy bias",
+      "methodology": "Evaluated using probing distribution shifts (e.g., sycophancy_mimicry, sycophancy_are_you_sure) to test if models prefer responses that pander to user opinions or exhibit agreeable personas rather than accurately following instructions."
+    },
+    {
+      "target": "Length bias",
+      "methodology": "Evaluated using spurious cue distribution shifts (e.g., alpaca_short to alpaca_long) to determine if reward models rely on a 'length heuristic' (preferring longer or shorter responses) rather than evaluating task completion."
+    },
+    {
+      "target": "Perplexity bias",
+      "methodology": "Evaluated by comparing the fine-tuned reward model's judgments against a zero-shot policy to test if models spuriously favor low-perplexity, internet-like text over actual instruction-following."
+    },
+    {
+      "target": "Cognitive bias",
+      "methodology": "Evaluated using Cognitive Reflection Test (CRT) datasets to test whether reward models prefer responses that imitate human logical misconceptions and cognitive biases."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

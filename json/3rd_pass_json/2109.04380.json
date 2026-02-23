@@ -1,0 +1,16 @@
+{
+  "filename": "2109.04380.pdf",
+  "title": "ESimCSE: Enhanced Sample Building Method for Contrastive Learning of Unsupervised Sentence Embedding",
+  "arxiv_url": "https://arxiv.org/pdf/2109.04380",
+  "bias_targets": [
+    {
+      "target": "Sentence length bias",
+      "methodology": "Partitioning sentence pairs into groups based on their length difference (e.g., <= 3 vs > 3) and measuring the gap between the model-predicted cosine similarities and the normalized ground truths."
+    },
+    {
+      "target": "Lexical overlap bias",
+      "methodology": "Calculating the similarity of a query sentence against candidate sentences with artificially repeated overlap tokens to see if the word repetition method misleads the model to inappropriately favor repeated overlaps."
+    }
+  ],
+  "primary_bias_target": "Sentence length bias"
+}

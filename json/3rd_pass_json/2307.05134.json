@@ -1,0 +1,20 @@
+{
+  "filename": "2307.05134.pdf",
+  "title": "TIAM - A Metric for Evaluating Alignment in Text-to-Image Generation",
+  "arxiv_url": "https://arxiv.org/pdf/2307.05134",
+  "bias_targets": [
+    {
+      "target": "Positional bias",
+      "methodology": "Comparing the generation occurrence rates of specific objects based on their sequential position (e.g., first, second, third, or fourth) within the text prompt templates."
+    },
+    {
+      "target": "Seed bias (Initial noise bias)",
+      "methodology": "Generating multiple images per prompt using different initial Gaussian noise seeds and calculating alignment scores to quantify the systematic performance disparity between 'good' and 'bad' starting seeds."
+    },
+    {
+      "target": "Semantic proximity bias",
+      "methodology": "Evaluating the success rate of generating two distinct objects in the same image and correlating this alignment score with the semantic distance (e.g., Wu-Palmer distance, CLIPscore) between the objects to determine if closely related objects are harder to generate together."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

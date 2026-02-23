@@ -1,0 +1,20 @@
+{
+  "filename": "2501.15708.pdf",
+  "title": "StaICC: Standardized Evaluation for Classification Task in In-context Learning",
+  "arxiv_url": "https://arxiv.org/pdf/2501.15708",
+  "bias_targets": [
+    {
+      "target": "Contextual prediction bias",
+      "methodology": "Calculating the entropy of the model's output label probability distribution when provided with a meaningless or empty pseudo query, measuring the model's inherent baseline tendency toward specific label tokens."
+    },
+    {
+      "target": "Domainal prediction bias",
+      "methodology": "Calculating the entropy of the model's output label probability distribution when prompted with a pseudo query constructed by randomly sampling tokens according to the frequency distribution of the calibration dataset."
+    },
+    {
+      "target": "Empirical prediction bias",
+      "methodology": "Calculating the Kullback-Leibler (KL) divergence between the model's averaged output probability distributions on real test inputs and the actual ground-truth label frequency counted from the test set."
+    }
+  ],
+  "primary_bias_target": "Prediction bias"
+}

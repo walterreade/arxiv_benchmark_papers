@@ -1,0 +1,32 @@
+{
+  "filename": "2505.16222.pdf",
+  "title": "Don’t Judge Code by Its Cover: Exploring Biases in LLM Judges for Code Evaluation",
+  "arxiv_url": "https://arxiv.org/pdf/2505.16222",
+  "bias_targets": [
+    {
+      "target": "Authority bias",
+      "methodology": "Inserting single-line comments into the source code that falsely imply the code was written by an expert developer."
+    },
+    {
+      "target": "Self-declared correctness bias",
+      "methodology": "Adding explicit assertions of correctness, such as the comment '# correct code', at the beginning of the code snippet."
+    },
+    {
+      "target": "Variable change bias",
+      "methodology": "Applying an automated code transformation that systematically replaces semantically meaningful variable names and function parameters with randomized alphabetic strings."
+    },
+    {
+      "target": "Reverse authority bias",
+      "methodology": "Inserting single-line comments implying that the author of the code lacks expertise (e.g., stating it was written by a beginner)."
+    },
+    {
+      "target": "Misleading task bias",
+      "methodology": "Using an LLM to generate and insert single-line comments that inaccurately describe the functionality of the original code, anchoring the judge to a false internal description."
+    },
+    {
+      "target": "Illusory complexity bias",
+      "methodology": "Artificially inflating the perceived complexity and length of the code by declaring dummy functions at the beginning that are never actually called or used within the logic."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

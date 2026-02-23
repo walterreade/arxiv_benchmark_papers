@@ -1,0 +1,24 @@
+{
+  "filename": "2510.12255.pdf",
+  "title": "Shallow Robustness, Deep Vulnerabilities: Multi-Turn Evaluation of Medical LLMs",
+  "arxiv_url": "https://arxiv.org/pdf/2510.12255",
+  "bias_targets": [
+    {
+      "target": "Authority Bias",
+      "methodology": "Evaluating model robustness in a multi-turn setting by introducing follow-up prompts where an authoritative figure (e.g., a 'senior clinician' or an 'answer checker') explicitly suggests an incorrect multiple-choice answer."
+    },
+    {
+      "target": "Social Conformity Bias",
+      "methodology": "Testing if models change their initial correct answers when presented with a follow-up prompt stating that 'several colleagues initially chose' an incorrect option (social proof)."
+    },
+    {
+      "target": "Contextual / Distractor Bias",
+      "methodology": "Injecting misleading, RAG-style, alternative, or edge-case contextual paragraphs into multi-turn dialogues that implicitly support an incorrect diagnostic option without explicitly asserting it."
+    },
+    {
+      "target": "Cognitive Bias",
+      "methodology": "Replicating single-turn benchmarks (BiasMedQA) and applying multi-turn adaptations (e.g., 'recency-prior' mentioning a similar recent case) to trigger standard human cognitive biases such as confirmation, frequency, and status quo bias."
+    }
+  ],
+  "primary_bias_target": "Cognitive and Social Bias"
+}

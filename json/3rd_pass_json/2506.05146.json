@@ -1,0 +1,20 @@
+{
+  "filename": "2506.05146.pdf",
+  "title": "CIVET: Systematic Evaluation of Understanding in VLMs",
+  "arxiv_url": "https://arxiv.org/pdf/2506.05146",
+  "bias_targets": [
+    {
+      "target": "Positional bias",
+      "methodology": "Evaluating model accuracy across systematically generated visual scenes where the absolute and relative positions of objects are systematically varied in a grid to detect spatial performance disparities and dataset-induced biases (e.g., center bias or corner bias)."
+    },
+    {
+      "target": "Order bias",
+      "methodology": "Shuffling the sequence of multiple-choice answer options in the textual prompt to ensure each order appears uniformly, controlling for models' tendency to favor certain positions in the textual input."
+    },
+    {
+      "target": "Label bias",
+      "methodology": "Analyzing VLM predictions on relational tasks (e.g., relative size) to identify model tendencies to disproportionately favor and over-predict a specific class (e.g., defaulting to 'same' size regardless of the actual visual input)."
+    }
+  ],
+  "primary_bias_target": "Positional bias"
+}

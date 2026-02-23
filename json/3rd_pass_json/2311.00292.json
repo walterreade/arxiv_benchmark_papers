@@ -1,0 +1,20 @@
+{
+  "filename": "2311.00292.pdf",
+  "title": "IBADR: an Iterative Bias-Aware Dataset Refinement Framework for Debiasing NLU models",
+  "arxiv_url": "https://arxiv.org/pdf/2311.00292",
+  "bias_targets": [
+    {
+      "target": "Syntactic and word-overlap bias",
+      "methodology": "Evaluating model performance on specialized Natural Language Inference (NLI) challenge sets, specifically HANS and the Scramble Test, which are explicitly designed to assess whether models rely on structural syntactic patterns or word-overlap heuristics rather than semantic understanding."
+    },
+    {
+      "target": "Hypothesis-only / Claim-only bias",
+      "methodology": "Evaluating model performance on fact verification and NLI datasets using challenge sets like FeverSymmetric V1 and V2, which assess if models make predictions relying solely on spurious patterns in the hypothesis or claim (such as negation words) without considering the premise or evidence."
+    },
+    {
+      "target": "Heuristic and logical inference biases",
+      "methodology": "Assessing model robustness against distinct unknown biases using an NLI adversarial test benchmark that measures reliance on partial input heuristics, inter-sentence heuristics, and stress tests through strategies like text swapping, synonym substitution, and paraphrasing."
+    }
+  ],
+  "primary_bias_target": "Dataset bias (Spurious correlations)"
+}

@@ -1,0 +1,16 @@
+{
+  "filename": "2602.06763.pdf",
+  "title": "R-Align: Enhancing Generative Reward Models through Rationale-Centric Meta-Judging",
+  "arxiv_url": "https://arxiv.org/pdf/2602.06763",
+  "bias_targets": [
+    {
+      "target": "Stylistic and Formatting bias",
+      "methodology": "Evaluating Generative Reward Models (GenRMs) using a new metric called Spurious Correctness (S-Corr), which measures the fraction of correct preference decisions that are justified by superficial formatting features (e.g., the presence of bullet points) rather than valid semantic reasoning or core content quality."
+    },
+    {
+      "target": "Length bias",
+      "methodology": "Implementing a strict, dynamic length penalty during Proximal Policy Optimization (PPO) training, which penalizes the reward signal if the generated response length exceeds a specific threshold relative to the reference answer, preventing the model from exploiting the reward model's preference for longer text."
+    }
+  ],
+  "primary_bias_target": "Stylistic and Formatting bias"
+}

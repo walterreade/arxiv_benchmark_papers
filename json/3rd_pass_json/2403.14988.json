@@ -1,0 +1,32 @@
+{
+  "filename": "2403.14988.pdf",
+  "title": "Risk and Response in Large Language Models: Evaluating Key Threat Categories",
+  "arxiv_url": "https://arxiv.org/pdf/2403.14988",
+  "bias_targets": [
+    {
+      "target": "Discrimination and Hateful Content (General)",
+      "methodology": "Clustering red-team dialogue transcripts into a 'Discrimination/Hateful' category using BERTopic, analyzing the preference model's average harmlessness scores, and evaluating LLM refusal/compliance rates using the Do-Not-Answer benchmark with and without jailbreak templates."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Identifying prompts related to racism and racial discrimination through topic modeling (e.g., BERTopic keyword extraction) to evaluate preference model harmlessness scores and LLM safety behavior as part of the broader Discrimination/Hateful risk category."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Extracting red-team transcripts targeting specific religious groups (such as Jewish and Muslim communities) via topic modeling to map them into the Discrimination risk category and measure how the reward model scores their harmfulness."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Using BERTopic clustering to identify red-team attacks involving homophobia and anti-LGBTQ sentiment, analyzing how these threats are scored by the preference model and handled by language model guardrails."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Clustering red-team prompts involving sexism and gender-based discrimination to assess reward model harmlessness evaluations and LLM response action categories."
+    },
+    {
+      "target": "Physical appearance bias (Body Shaming)",
+      "methodology": "Categorizing prompts containing fat-shaming and insults based on physical characteristics to evaluate preference model harmlessness scores and language model refusal rates."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

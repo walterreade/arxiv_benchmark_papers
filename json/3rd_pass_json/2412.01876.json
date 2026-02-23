@@ -1,0 +1,20 @@
+{
+  "filename": "2412.01876.pdf",
+  "title": "Understanding Bias in Large-Scale Visual Datasets",
+  "arxiv_url": "https://arxiv.org/pdf/2412.01876",
+  "bias_targets": [
+    {
+      "target": "Semantic dataset bias",
+      "methodology": "Isolating semantic information by transforming images into semantic segmentation masks, object bounding boxes, and natural language captions, then evaluating dataset classification accuracy. Also includes analyzing object-level distributions and applying topic modeling (LDA) and LLM-based summarization to extract semantic themes."
+    },
+    {
+      "target": "Structural dataset bias",
+      "methodology": "Isolating object shapes and spatial geometry by transforming images using Canny edge detection, SAM contours, depth estimation, and spatial permutations (pixel/patch shuffling), and measuring the accuracy of a model trained to predict the dataset origin."
+    },
+    {
+      "target": "Low-level visual dataset bias (Color and Frequency)",
+      "methodology": "Applying low-level image transformations, such as averaging RGB color channels and applying high-pass or low-pass frequency filters, followed by evaluating dataset classification accuracy to measure domain-specific statistical artifacts."
+    }
+  ],
+  "primary_bias_target": "Visual dataset bias"
+}

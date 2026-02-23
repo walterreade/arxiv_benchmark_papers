@@ -1,24 +1,27 @@
 #!/usr/bin/env python3
 """
-Analyze bias targets extracted from papers.
+Analyze bias targets from 3rd pass analysis.
 
 This script:
 1. Normalizes bias target categories (handles case, synonyms)
-2. Creates a table of top 25 most frequent bias targets
-3. Creates a table of top 25 singleton targets (only target in list)
-4. Provides statistics about list lengths, papers analyzed, etc.
+2. Reports how often each bias target is measured
+3. Reports how often each target is measured in isolation (singleton)
+4. Reports how often each target is the primary bias target
+5. For religious bias, uses Gemini to group methodologies into strategies
 """
 
 import json
+import os
 from pathlib import Path
 from collections import Counter
-import re
+
+from shared import genai
 
 
 # Directories
 SCRIPT_DIR = Path(__file__).parent
 PROJECT_DIR = SCRIPT_DIR.parent
-JSON_DIR = PROJECT_DIR / "json" / "1st_pass_json"
+JSON_DIR = PROJECT_DIR / "json" / "3rd_pass_json"
 
 
 # Normalization mappings - maps variations to canonical form
@@ -27,18 +30,27 @@ NORMALIZATION_MAP = {
     "gender bias": "Gender bias",
     "gender": "Gender bias",
     "sex bias": "Gender bias",
+    "sex/gender bias": "Gender bias",
     "sexism": "Gender bias",
+    "sexism and gender bias": "Gender bias",
+    "misogyny and gender bias": "Gender bias",
+    "gender bias (sexism)": "Gender bias",
+    "gender bias (misogyny)": "Gender bias",
     
-    # Racial
-    "racial bias": "Racial bias",
-    "race bias": "Racial bias",
-    "racism": "Racial bias",
-    "ethnic bias": "Racial bias",
-    "ethnicity bias": "Racial bias",
+    # Racial/Ethnic
+    "racial bias": "Racial/Ethnic bias",
+    "race bias": "Racial/Ethnic bias",
+    "racism": "Racial/Ethnic bias",
+    "ethnic bias": "Racial/Ethnic bias",
+    "ethnicity bias": "Racial/Ethnic bias",
+    "racial/ethnic bias": "Racial/Ethnic bias",
+    "racial and ethnic bias": "Racial/Ethnic bias",
+    "racial, ethnic, and nationality bias": "Racial/Ethnic bias",
     
     # Religious
     "religious bias": "Religious bias",
     "religion bias": "Religious bias",
+    "cultural and religious bias": "Religious bias",
     
     # Age
     "age bias": "Age bias",
@@ -47,6 +59,9 @@ NORMALIZATION_MAP = {
     # Political
     "political bias": "Political bias",
     "politics bias": "Political bias",
+    "geopolitical bias": "Political bias",
+    "ideological and political bias": "Political bias",
+    "socio-political bias": "Political bias",
     
     # Nationality
     "nationality bias": "Nationality bias",
@@ -56,10 +71,18 @@ NORMALIZATION_MAP = {
     # Cultural
     "cultural bias": "Cultural bias",
     "culture bias": "Cultural bias",
+    "geo-cultural bias": "Cultural bias",
+    
+    # Geographic
+    "geographic bias": "Geographic bias",
+    "geographical bias": "Geographic bias",
+    "geographic/nationality bias": "Geographic bias",
     
     # Language/Linguistic
     "language bias": "Language bias",
     "linguistic bias": "Language bias",
+    "dialect bias": "Language bias",
+    "dialect/language bias": "Language bias",
     
     # Position/Positional
     "position bias": "Position bias",
@@ -70,40 +93,81 @@ NORMALIZATION_MAP = {
     "lgbtq+ bias": "Sexual orientation bias",
     "lgbtq bias": "Sexual orientation bias",
     "homophobia": "Sexual orientation bias",
+    "gender and sexual orientation bias": "Sexual orientation bias",
+    "gender/sexual orientation bias": "Sexual orientation bias",
+    "orientation bias": "Sexual orientation bias",
     
     # Socioeconomic
     "socioeconomic bias": "Socioeconomic bias",
     "socio-economic bias": "Socioeconomic bias",
     "economic bias": "Socioeconomic bias",
     "class bias": "Socioeconomic bias",
+    "class and socioeconomic bias": "Socioeconomic bias",
     
     # Disability
     "disability bias": "Disability bias",
     "ableism": "Disability bias",
     
-    # Hate speech
-    "hate speech detection": "Hate speech",
-    "hate speech detection (general toxic or hateful content)": "Hate speech",
-    "toxic content": "Hate speech",
-    "toxicity": "Hate speech",
+    # Physical appearance
+    "physical appearance bias": "Physical appearance bias",
+    "appearance bias": "Physical appearance bias",
+    
+    # Occupational
+    "occupational bias": "Occupational bias",
+    "profession bias": "Occupational bias",
+    "occupational/socioeconomic bias": "Occupational bias",
+    
+    # Hate speech / Toxicity
+    "hate speech detection": "Hate speech/Toxicity",
+    "hate speech detection (general toxic or hateful content)": "Hate speech/Toxicity",
+    "toxic content": "Hate speech/Toxicity",
+    "toxicity": "Hate speech/Toxicity",
+    "toxicity bias": "Hate speech/Toxicity",
     
     # Stereotyping
     "stereotyping": "Stereotyping",
     "stereotype bias": "Stereotyping",
     "stereotypes": "Stereotyping",
+    "social bias": "Stereotyping",
     
     # Fairness
     "fairness in outcomes": "Fairness",
     "fairness": "Fairness",
     "outcome fairness": "Fairness",
     
-    # Length bias
+    # Length / Verbosity
     "length bias": "Length bias",
     "verbosity bias": "Length bias",
     
     # Self-preference
     "self-preference bias": "Self-preference bias",
     "self preference bias": "Self-preference bias",
+    "self-enhancement bias": "Self-preference bias",
+    
+    # Regional
+    "regional bias": "Regional bias",
+    "regional language bias": "Regional bias",
+    
+    # Annotation/Annotator
+    "annotator bias": "Annotator bias",
+    "annotation bias": "Annotator bias",
+    
+    # Educational
+    "educational bias": "Educational bias",
+    "education bias": "Educational bias",
+    
+    # Sycophancy
+    "sycophancy bias": "Sycophancy bias",
+    "sycophancy": "Sycophancy bias",
+    
+    # Cognitive
+    "cognitive bias": "Cognitive bias",
+    "cognitive biases": "Cognitive bias",
+    
+    # Primary target normalization
+    "none": "No Primary Bias Target",
+    "no primary bias target": "No Primary Bias Target",
+    "n/a": "No Primary Bias Target",
 }
 
 
@@ -119,7 +183,7 @@ def normalize_target(target: str) -> str:
 
 
 def load_bias_data():
-    """Load all bias target data from JSON files."""
+    """Load all bias target data from 3rd pass JSON files."""
     papers_data = []
     
     for json_file in JSON_DIR.glob("*.json"):
@@ -127,19 +191,135 @@ def load_bias_data():
             with open(json_file, 'r') as f:
                 data = json.load(f)
             
-            if 'bias_targets' in data:
-                raw_targets = data['bias_targets']
-                normalized = [normalize_target(t) for t in raw_targets]
-                papers_data.append({
-                    'arxiv_id': json_file.stem,
-                    'raw_targets': raw_targets,
-                    'normalized_targets': normalized,
-                    'count': len(normalized)
-                })
+            if 'bias_targets' not in data:
+                continue
+            
+            raw_targets = data['bias_targets']
+            # Handle both object format [{target, methodology}] and legacy string format
+            normalized = []
+            methodologies = []
+            for entry in raw_targets:
+                if isinstance(entry, dict):
+                    normalized.append(normalize_target(entry.get('target', '')))
+                    methodologies.append(entry.get('methodology', ''))
+                else:
+                    normalized.append(normalize_target(entry))
+                    methodologies.append('')
+            
+            primary = data.get('primary_bias_target', '')
+            if primary:
+                primary = normalize_target(primary)
+            
+            papers_data.append({
+                'arxiv_id': json_file.stem,
+                'title': data.get('title', ''),
+                'normalized_targets': normalized,
+                'methodologies': methodologies,
+                'primary_bias_target': primary,
+                'count': len(normalized)
+            })
         except (json.JSONDecodeError, IOError):
             continue
     
     return papers_data
+
+
+def classify_methodologies(methodologies: list[tuple[str, str, str]],
+                           model_name: str = "gemini-3.1-pro-preview") -> dict:
+    """Use Gemini to classify raw methodology descriptions into strategy categories.
+    
+    Args:
+        methodologies: list of (methodology, arxiv_id, title) tuples
+        model_name: Gemini model to use
+    
+    Returns:
+        dict mapping strategy name to list of (methodology, arxiv_id, title) tuples
+    """
+    api_key = os.getenv("GOOGLE_API_KEY")
+    if not api_key:
+        print("Warning: GOOGLE_API_KEY not set, skipping methodology classification.")
+        return {}
+    
+    # Build the list of methodology descriptions
+    method_texts = [m for m, _, _ in methodologies]
+    
+    prompt = f"""Below is a list of {len(method_texts)} methodology descriptions for how academic papers measure religious bias in Large Language Models.
+
+Classify each methodology into ONE of these high-level measurement strategy categories. Assign the category that best fits the core approach.
+
+Categories:
+- "Sentiment/Regard Analysis" - Measuring sentiment, regard, or toxicity scores across religious groups
+- "Stereotype Association Tests" - Using sentence pairs or word associations to test stereotypical associations (e.g., StereoSet, CrowS-Pairs)
+- "Question Answering / BBQ" - Multiple-choice or QA-based evaluation of biased reasoning (e.g., BBQ benchmark)
+- "Counterfactual / Template Substitution" - Swapping religious identity terms in templates or prompts and comparing outputs
+- "Open-Ended Generation Analysis" - Analyzing free-form text generated by models for bias signals
+- "Embedding / Representation Analysis" - Measuring bias in word embeddings or internal representations
+- "Downstream Task Fairness" - Measuring performance disparities across groups on tasks like classification, detection, etc.
+- "Benchmark Suite / Multi-Method" - Papers using established multi-method benchmark suites
+- "Survey / Literature Review" - Reviewing or surveying existing bias measurement approaches
+- "Red Teaming / Adversarial" - Using adversarial prompts, jailbreaks, or red-teaming to elicit biased outputs
+- "Human Evaluation" - Using human annotators to assess bias in outputs
+- "Other" - Anything that doesn't fit the above categories
+
+Return a JSON array where each element is a string — the category name for the corresponding methodology (same order as input). Output ONLY the JSON array.
+
+Methodologies:
+{json.dumps(method_texts, indent=2)}
+"""
+    
+    client = genai.Client(api_key=api_key)
+    
+    # Chunk if too many (each chunk ≤ 200 to stay within context limits)
+    CHUNK_SIZE = 200
+    all_labels = []
+    
+    for i in range(0, len(method_texts), CHUNK_SIZE):
+        chunk = method_texts[i:i + CHUNK_SIZE]
+        chunk_prompt = f"""Below is a list of {len(chunk)} methodology descriptions for how academic papers measure religious bias in Large Language Models.
+
+Classify each methodology into ONE of these high-level measurement strategy categories. Assign the category that best fits the core approach.
+
+Categories:
+- "Sentiment/Regard Analysis" - Measuring sentiment, regard, or toxicity scores across religious groups
+- "Stereotype Association Tests" - Using sentence pairs or word associations to test stereotypical associations (e.g., StereoSet, CrowS-Pairs)
+- "Question Answering / BBQ" - Multiple-choice or QA-based evaluation of biased reasoning (e.g., BBQ benchmark)
+- "Counterfactual / Template Substitution" - Swapping religious identity terms in templates or prompts and comparing outputs
+- "Open-Ended Generation Analysis" - Analyzing free-form text generated by models for bias signals
+- "Embedding / Representation Analysis" - Measuring bias in word embeddings or internal representations
+- "Downstream Task Fairness" - Measuring performance disparities across groups on tasks like classification, detection, etc.
+- "Benchmark Suite / Multi-Method" - Papers using established multi-method benchmark suites
+- "Survey / Literature Review" - Reviewing or surveying existing bias measurement approaches
+- "Red Teaming / Adversarial" - Using adversarial prompts, jailbreaks, or red-teaming to elicit biased outputs
+- "Human Evaluation" - Using human annotators to assess bias in outputs
+- "Other" - Anything that doesn't fit the above categories
+
+Return a JSON array where each element is a string — the category name for the corresponding methodology (same order as input). Output ONLY the JSON array.
+
+Methodologies:
+{json.dumps(chunk, indent=2)}
+"""
+        try:
+            response = client.models.generate_content(
+                model=model_name,
+                contents=[chunk_prompt],
+                config={"response_mime_type": "application/json"}
+            )
+            labels = json.loads(response.text)
+            if len(labels) != len(chunk):
+                print(f"  Warning: Got {len(labels)} labels for {len(chunk)} methods in chunk {i//CHUNK_SIZE + 1}")
+                # Pad or truncate
+                labels = (labels + ["Other"] * len(chunk))[:len(chunk)]
+            all_labels.extend(labels)
+        except Exception as e:
+            print(f"  Error classifying chunk {i//CHUNK_SIZE + 1}: {e}")
+            all_labels.extend(["Other"] * len(chunk))
+    
+    # Group by strategy
+    strategies = {}
+    for label, (method, arxiv_id, title) in zip(all_labels, methodologies):
+        strategies.setdefault(label, []).append((method, arxiv_id, title))
+    
+    return strategies
 
 
 def print_table(title: str, data: list, headers: tuple = ("Rank", "Count", "Category")):
@@ -159,16 +339,14 @@ def print_table(title: str, data: list, headers: tuple = ("Rank", "Count", "Cate
     
     # Data rows
     for i, (category, count) in enumerate(data, 1):
-        bar_len = int((count / data[0][1]) * 20) if data else 0
-        bar = "█" * bar_len
-        print(f" {i:<{col1_width}} | {count:<{col2_width}} | {category} {bar}")
+        print(f" {i:<{col1_width}} | {count:<{col2_width}} | {category}")
     
     print()
 
 
 def main():
     print("\n" + "=" * 60)
-    print(" BIAS TARGET ANALYSIS")
+    print(" BIAS TARGET ANALYSIS (3rd Pass)")
     print("=" * 60)
     
     # Load data
@@ -178,18 +356,34 @@ def main():
         print("No papers with bias_targets found.")
         return
     
-    # Collect all normalized targets
+    # Collect all normalized targets, singletons, primaries, and religious methodologies
     all_targets = []
     singleton_targets = []
+    primary_targets = Counter()
     list_lengths = []
+    religious_methodologies = []  # (methodology, arxiv_id, title)
     
     for paper in papers_data:
         targets = paper['normalized_targets']
+        methods = paper['methodologies']
         all_targets.extend(targets)
         list_lengths.append(paper['count'])
         
         if len(targets) == 1:
             singleton_targets.append(targets[0])
+        
+        primary = paper['primary_bias_target']
+        if primary:
+            primary_targets[primary] += 1
+        
+        # Collect religious bias methodologies
+        for target, method in zip(targets, methods):
+            if target == "Religious bias" and method:
+                religious_methodologies.append((
+                    method,
+                    paper['arxiv_id'],
+                    paper['title']
+                ))
     
     # Count frequencies
     all_counter = Counter(all_targets)
@@ -216,26 +410,93 @@ def main():
     print(" List Length Frequency:")
     for length in sorted(length_counter.keys()):
         count = length_counter[length]
-        bar = "█" * min(count // 2, 40)
-        print(f"   {length:2d} targets: {count:4d} papers {bar}")
+        print(f"   {length:2d} targets: {count:4d} papers")
     
     # Top 25 overall
     top_25_all = all_counter.most_common(25)
-    print_table("TOP 25 BIAS TARGET CATEGORIES (Overall)", top_25_all)
+    print_table("TOP 25 BIAS TARGETS (How often measured)", top_25_all)
     
     # Top 25 singletons
     top_25_singleton = singleton_counter.most_common(25)
-    print_table("TOP 25 SINGLETON BIAS TARGETS (Only target in list)", top_25_singleton)
+    print_table("TOP 25 SINGLETON BIAS TARGETS (Measured in isolation)", top_25_singleton)
+    
+    # Top 25 primary targets
+    top_25_primary = primary_targets.most_common(25)
+    print_table("TOP 25 PRIMARY BIAS TARGETS", top_25_primary)
     
     # Religious bias specific stats
     religious_count = all_counter.get("Religious bias", 0)
     religious_singleton = singleton_counter.get("Religious bias", 0)
-    print("-" * 60)
+    religious_primary = primary_targets.get("Religious bias", 0)
+    religious_rank = next(
+        (i for i, (cat, _) in enumerate(all_counter.most_common(), 1) if cat == "Religious bias"),
+        None
+    )
+    print("=" * 80)
     print(" RELIGIOUS BIAS FOCUS")
-    print("-" * 60)
-    print(f" Total mentions:      {religious_count}")
-    print(f" As singleton:        {religious_singleton}")
-    print(f" Rank (overall):      {[i for i, (cat, _) in enumerate(all_counter.most_common(), 1) if cat == 'Religious bias'][0] if religious_count else 'N/A'}")
+    print("=" * 80)
+    print(f" Total mentions:         {religious_count}")
+    print(f" As singleton:           {religious_singleton}")
+    print(f" As primary target:      {religious_primary}")
+    print(f" Rank (overall):         {religious_rank if religious_rank else 'N/A'}")
+    
+    # Religious bias methodology report
+    if religious_methodologies:
+        print()
+        print("=" * 80)
+        print(f" RELIGIOUS BIAS MEASUREMENT STRATEGIES ({len(religious_methodologies)} papers)")
+        print("=" * 80)
+        print()
+        print(" Classifying methodologies using Gemini...")
+        strategies = classify_methodologies(religious_methodologies)
+        
+        if strategies:
+            # Sort strategies by count
+            sorted_strategies = sorted(strategies.items(), key=lambda x: -len(x[1]))
+            
+            for strategy, entries in sorted_strategies:
+                count = len(entries)
+                pct = count / len(religious_methodologies) * 100
+                print(f"\n {'-' * 76}")
+                print(f" {strategy}: {count} papers ({pct:.1f}%)")
+                print(f" {'-' * 76}")
+                # Show up to 3 example methodologies
+                for method, arxiv_id, title in entries[:3]:
+                    print(f"   - [{arxiv_id}] {method[:120]}")
+                if count > 3:
+                    print(f"   ... and {count - 3} more")
+    
+    # List papers with Religious bias as primary or singleton
+    religious_primary_papers = []
+    religious_singleton_papers = []
+    for paper in papers_data:
+        is_primary = paper['primary_bias_target'] == "Religious bias"
+        is_singleton = len(paper['normalized_targets']) == 1 and "Religious bias" in paper['normalized_targets']
+        if is_primary:
+            religious_primary_papers.append(paper)
+        if is_singleton and not is_primary:
+            religious_singleton_papers.append(paper)
+    
+    print()
+    print("=" * 80)
+    print(" PAPERS WITH RELIGIOUS BIAS AS PRIMARY TARGET OR SINGLETON")
+    print("=" * 80)
+    
+    if religious_primary_papers:
+        print(f"\n Primary target ({len(religious_primary_papers)} papers):")
+        for paper in sorted(religious_primary_papers, key=lambda p: p['arxiv_id']):
+            title = paper['title'] or 'Unknown'
+            print(f"   {paper['arxiv_id']:20s}  {title}")
+    
+    if religious_singleton_papers:
+        print(f"\n Singleton only ({len(religious_singleton_papers)} papers):")
+        for paper in sorted(religious_singleton_papers, key=lambda p: p['arxiv_id']):
+            title = paper['title'] or 'Unknown'
+            print(f"   {paper['arxiv_id']:20s}  {title}")
+    
+    if not religious_primary_papers and not religious_singleton_papers:
+        print("\n No papers found.")
+    
     print()
 
 

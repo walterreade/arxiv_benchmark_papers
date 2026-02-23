@@ -1,0 +1,20 @@
+{
+  "filename": "2411.07472.pdf",
+  "title": "Semi-Truths: A Large-Scale Dataset of AI-Augmented Images for Evaluating Robustness of AI-Generated Image detectors",
+  "arxiv_url": "https://arxiv.org/pdf/2411.07472",
+  "bias_targets": [
+    {
+      "target": "Data distribution bias",
+      "methodology": "Evaluating detector performance across various semantic segmentation benchmarks (e.g., CityScapes, SUN-RGBD, CelebA-HQ) to identify performance drops and sensitivities tied to specific source datasets and scene types (e.g., human faces vs. outdoor scenes)."
+    },
+    {
+      "target": "Semantic subject bias",
+      "methodology": "Using 'Directional Semantic Edits' to group augmented images by specific entity changes (e.g., edits to human faces, cars, or vegetation) and calculating recall to reveal which subjects detectors struggle to evaluate."
+    },
+    {
+      "target": "Augmentation methodology bias",
+      "methodology": "Stress-testing detectors across varying types of perturbations (conditional inpainting vs. prompt-based-editing), different diffusion models, and varying magnitudes of change (surface area and semantic changes) to uncover model sensitivities."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

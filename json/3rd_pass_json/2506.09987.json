@@ -1,0 +1,24 @@
+{
+  "filename": "2506.09987.pdf",
+  "title": "A Shortcut-aware Video-QA Benchmark for Physical Understanding via Minimal Video Pairs",
+  "arxiv_url": "https://arxiv.org/pdf/2506.09987",
+  "bias_targets": [
+    {
+      "target": "Language bias",
+      "methodology": "Evaluating models using language-only baselines (providing questions and answer candidates without video input) to detect reliance on textual priors and marginal likelihoods."
+    },
+    {
+      "target": "Single-frame bias",
+      "methodology": "Evaluating models using single-frame baselines (providing one key frame instead of the full video) to detect if tasks purportedly requiring temporal reasoning can be solved with static images."
+    },
+    {
+      "target": "Visual bias",
+      "methodology": "Evaluating models using video-only baselines (providing the video and answer choices without the question) to see if answer candidates are distinguishable based solely on visual content."
+    },
+    {
+      "target": "Low-bandwidth caption bias",
+      "methodology": "Evaluating models using simple Socratic LLMs (providing a short generic text caption instead of the video) to test reliance on coarse-grained visual features rather than fine-grained video understanding."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

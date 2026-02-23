@@ -1,0 +1,20 @@
+{
+  "filename": "2210.06799.pdf",
+  "title": "Benchmarking Long-tail Generalization with Likelihood Splits",
+  "arxiv_url": "https://arxiv.org/pdf/2210.06799",
+  "bias_targets": [
+    {
+      "target": "Frequency bias (Long-tail generalization)",
+      "methodology": "Splitting existing datasets (SPIDER, SNLI, BoolQ) based on the likelihood assigned to examples by a pre-trained language model (GPT-2), placing high-likelihood (common) examples in the training set and low-likelihood (rare) examples in the test set to measure performance drops on the long tail of the distribution."
+    },
+    {
+      "target": "Length bias",
+      "methodology": "Creating 'Length splits' by placing examples with the longest inputs into the evaluation set and the remaining shorter examples in the training set to evaluate the models' ability to generalize to longer, out-of-distribution utterances."
+    },
+    {
+      "target": "Syntactic complexity bias",
+      "methodology": "Analyzing model performance across different splits by measuring input syntactic complexity using parse tree depth (mean and max) and Yngve scores, testing if models disproportionately struggle with more complex sentence structures."
+    }
+  ],
+  "primary_bias_target": "Frequency bias (Long-tail generalization)"
+}

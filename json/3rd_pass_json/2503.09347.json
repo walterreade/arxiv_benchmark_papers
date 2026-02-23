@@ -1,0 +1,28 @@
+{
+  "filename": "2503.09347.pdf",
+  "title": "Safer or Luckier? LLMs as Safety Evaluators Are Not Robust to Artifacts",
+  "arxiv_url": "https://arxiv.org/pdf/2503.09347",
+  "bias_targets": [
+    {
+      "target": "Apology bias",
+      "methodology": "Prepending apologetic phrasing to a completion and measuring the shift in safety preference from LLM judges using sample-level Tie Detection and model-level Winrate Shift tests."
+    },
+    {
+      "target": "Authority bias",
+      "methodology": "Adding fake authoritative sources or citations to a completion to evaluate if LLM judges improperly correlate citations with higher safety."
+    },
+    {
+      "target": "Halo bias",
+      "methodology": "Appending a helpful, chatty closing sentence (e.g., 'Is there anything else I can help you with?') to a completion to test if this positive persona skews the judge's safety assessment."
+    },
+    {
+      "target": "Verbosity bias",
+      "methodology": "Rephrasing completions to be longer without changing their core meaning or safety, and measuring if LLM judges inherently prefer more verbose responses."
+    },
+    {
+      "target": "Position bias",
+      "methodology": "Swapping the presentation order of the two completions (A vs. B) in the evaluator's prompt to measure if the LLM judge systematically favors the first or second position."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

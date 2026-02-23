@@ -1,0 +1,20 @@
+{
+  "filename": "2504.15253.pdf",
+  "title": "Evaluating Judges as Evaluators: The JETTS Benchmark of LLM-as-Judges as Test-Time Scaling Evaluators",
+  "arxiv_url": "https://arxiv.org/pdf/2504.15253",
+  "bias_targets": [
+    {
+      "target": "Positional bias",
+      "methodology": "Employing a consistency-based pairwise evaluation setup where each comparison is run twice with the order of responses swapped to detect and mitigate order preference."
+    },
+    {
+      "target": "Length bias",
+      "methodology": "Evaluating judge performance by comparing standard non-length-controlled win rates against length-controlled win rates on the AlpacaEval dataset to assess improper preference for longer responses."
+    },
+    {
+      "target": "Stylistic bias",
+      "methodology": "Qualitatively analyzing over 100 critique-response pairs to identify instances where judge models over-emphasize surface-level stylistic details (e.g., ease of reading, formatting, or response length) rather than evaluating actual logical correctness."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

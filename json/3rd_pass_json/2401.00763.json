@@ -1,0 +1,20 @@
+{
+  "filename": "2401.00763.pdf",
+  "title": "New Job, New Gender? Measuring the Social Bias in Image Generation Models",
+  "arxiv_url": "https://arxiv.org/pdf/2401.00763",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Editing seed images of individuals using gender-neutral text prompts, then applying a commercial face analysis API (Face++) to detect unauthorized binary gender shifts between the original and generated images."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Editing seed images using race-neutral text prompts, extracting facial regions with Dlib, and measuring significant shifts in skin tone by calculating the difference in average grayscale pixel values between the source and generated images."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Editing seed images using age-neutral text prompts, then applying a commercial face analysis API (Face++) to predict and calculate significant age differences between the original and generated images."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

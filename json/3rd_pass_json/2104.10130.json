@@ -1,0 +1,20 @@
+{
+  "filename": "2104.10130.pdf",
+  "title": "Hidden Biases in Unreliable News Detection Datasets",
+  "arxiv_url": "https://arxiv.org/pdf/2104.10130",
+  "bias_targets": [
+    {
+      "target": "Selection bias (Lexical artifacts)",
+      "methodology": "Training a Bag-of-Words Logistic Regression model to extract the most salient word features (e.g., celebrity names versus neutral words) and comparing its accuracy against state-of-the-art transformer models to expose underlying dataset artifacts."
+    },
+    {
+      "target": "Source bias (Site memorization)",
+      "methodology": "Comparing model accuracy on standard random train/test splits versus source-disjoint splits, alongside conducting random label permutation experiments to prove models memorize arbitrary site-label mappings rather than detecting unreliable news."
+    },
+    {
+      "target": "Temporal bias",
+      "methodology": "Evaluating model performance on temporally disjoint datasets by splitting testing data across consecutive months to test if models exploit time-specific events."
+    }
+  ],
+  "primary_bias_target": "Dataset selection bias"
+}

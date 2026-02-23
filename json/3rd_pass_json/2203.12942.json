@@ -1,0 +1,20 @@
+{
+  "filename": "2203.12942.pdf",
+  "title": "Generating Data to Mitigate Spurious Correlations in Natural Language Inference Datasets",
+  "arxiv_url": "https://arxiv.org/pdf/2203.12942",
+  "bias_targets": [
+    {
+      "target": "Hypothesis-only bias",
+      "methodology": "Evaluating models on the SNLI-hard and MNLI-hard challenge subsets, which filter out test instances that can be correctly guessed by a model that only has access to the hypothesis text."
+    },
+    {
+      "target": "Syntactic bias",
+      "methodology": "Evaluating model robustness on the HANS dataset, which contains adversarial examples designed to test whether models rely on fallible syntactic heuristics like lexical overlap, subsequence, and constituent features."
+    },
+    {
+      "target": "Lexical and Heuristic biases",
+      "methodology": "Evaluating models on a suite of adversarial test sets for NLI (from Liu et al., 2020b) that target distinct biases such as partial-input heuristics, surface patterns, lexically misleading instances, and stress tests involving word-overlap, negation, and length mismatch."
+    }
+  ],
+  "primary_bias_target": "Spurious correlations (Dataset artifact bias)"
+}

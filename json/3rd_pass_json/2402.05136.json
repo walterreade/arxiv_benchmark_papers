@@ -1,0 +1,16 @@
+{
+  "filename": "2402.05136.pdf",
+  "title": "LV-EVAL: A BALANCED LONG-CONTEXT BENCHMARK WITH 5 LENGTH LEVELS UP TO 256K",
+  "arxiv_url": "https://arxiv.org/pdf/2402.05136",
+  "bias_targets": [
+    {
+      "target": "Evaluation bias (Knowledge leakage)",
+      "methodology": "Comparing model performance on original queries versus contexts where key entities and phrases have been manually replaced (Keyword and Phrase Replacement, or KPR) to quantify how much models rely on pre-trained memorization rather than actual context comprehension."
+    },
+    {
+      "target": "Evaluation bias (Metric inaccuracy)",
+      "methodology": "Evaluating the score inflation caused by traditional N-gram metrics (like the vanilla F1 score) by comparing them against a proposed two-stage keyword-recall-based metric that filters out a blacklist of common, non-informative words."
+    }
+  ],
+  "primary_bias_target": "Evaluation bias"
+}

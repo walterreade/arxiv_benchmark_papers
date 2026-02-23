@@ -1,0 +1,20 @@
+{
+  "filename": "2509.00496.pdf",
+  "title": "RESEARCHQA: Evaluating Scholarly Question Answering at Scale Across 75 Fields with Survey-Mined Questions and Rubrics",
+  "arxiv_url": "https://arxiv.org/pdf/2509.00496",
+  "bias_targets": [
+    {
+      "target": "Length bias",
+      "methodology": "Comparing the Coverage % metric of generated answers with and without a 250-word length constraint to determine if the recall-based metric artificially favors models that generate longer responses."
+    },
+    {
+      "target": "Information recency bias",
+      "methodology": "Examining if systems unfairly gain higher Coverage % by relying on sources published after the instructed knowledge cut-off date (the distilled survey article's publication year)."
+    },
+    {
+      "target": "Positional bias",
+      "methodology": "Prompting the LLM-as-a-Judge with both possible answer orderings during pairwise preference evaluation to reduce the model's bias toward the first or second presented option."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

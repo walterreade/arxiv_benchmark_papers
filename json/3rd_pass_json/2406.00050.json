@@ -1,0 +1,24 @@
+{
+  "filename": "2406.00050.pdf",
+  "title": "An Empirical Analysis on Large Language Models in Debate Evaluation",
+  "arxiv_url": "https://arxiv.org/pdf/2406.00050",
+  "bias_targets": [
+    {
+      "target": "Positional bias",
+      "methodology": "Switching the presentation order of candidate responses (Pro vs. Con) in the evaluation prompt to measure the model's preference for the first or second position using statistical tests like McNemar's test."
+    },
+    {
+      "target": "Lexical bias",
+      "methodology": "Altering the label verbalizers (e.g., A/B, P/C, 1/-1, Pro/Con, M/N) assigned to represent the debate sides in the prompt to evaluate the model's sensitivity and inherent preference for specific characters, numbers, or words."
+    },
+    {
+      "target": "Order bias (End-of-discussion bias)",
+      "methodology": "Analyzing the correlation between the model's predicted debate winner and the side that concludes or makes the final argument in the debate using Chi-square tests."
+    },
+    {
+      "target": "Stance bias",
+      "methodology": "Testing for an inherent model preference towards the 'Pro' or 'Con' stance of a debate by shuffling label sets and positions to neutralize positional, lexical, and order biases."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

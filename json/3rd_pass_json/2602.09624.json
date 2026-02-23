@@ -1,0 +1,20 @@
+{
+  "filename": "2602.09624.pdf",
+  "title": "MILE-RefHumEval: A Reference-Free, Multi-Independent LLM Framework for Human-Aligned Evaluation",
+  "arxiv_url": "https://arxiv.org/pdf/2602.09624",
+  "bias_targets": [
+    {
+      "target": "Interaction bias (Consensus bias)",
+      "methodology": "Comparing the evaluation metrics (Accuracy, F1, Cohen's Kappa) of independent, isolated LLM evaluators against conversational, multi-agent setups to detect artificially inflated agreement caused by cross-agent influence."
+    },
+    {
+      "target": "Order bias (Directional bias / Positional bias)",
+      "methodology": "Varying the speaking order of LLM evaluators in conversational chains to measure how early-stage outputs or the first speaker disproportionately shape subsequent evaluations and sway the final consensus."
+    },
+    {
+      "target": "General social bias",
+      "methodology": "Using a 'Bias and Fairness' zero-shot prompt criterion (within a 12-dimension evaluation schema) requiring the LLM judge to evaluate candidate responses for neutrality, unfairness, and imbalanced perspectives."
+    }
+  ],
+  "primary_bias_target": "Interaction bias (Consensus bias)"
+}

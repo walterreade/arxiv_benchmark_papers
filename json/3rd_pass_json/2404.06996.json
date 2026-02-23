@@ -1,0 +1,24 @@
+{
+  "filename": "2404.06996.pdf",
+  "title": "XNLIeu: a dataset for cross-lingual NLI in Basque",
+  "arxiv_url": "https://arxiv.org/pdf/2404.06996",
+  "bias_targets": [
+    {
+      "target": "Annotation artifacts (Negation and word frequency bias)",
+      "methodology": "Analyzing word frequency per label in the datasets to identify if specific words, particularly negations like 'no', 'nobody', or 'never', appear disproportionately in 'contradiction' instances and act as shortcut learning features."
+    },
+    {
+      "target": "Lexical overlap bias",
+      "methodology": "Calculating the lexical overlap between the premise and hypothesis using cosine similarity of their TF-IDF vector representations, to determine if models rely on the shortcut that highly overlapping sentence pairs typically represent 'entailment'."
+    },
+    {
+      "target": "Translation bias (Translationese)",
+      "methodology": "Comparing model evaluation results and linguistic features between machine-translated datasets, human post-edited translated datasets, and a natively authored Basque dataset to assess the impact of translation-induced artifacts and structural mismatches."
+    },
+    {
+      "target": "Sentence length bias",
+      "methodology": "Calculating and comparing the average token length for hypotheses across each semantic relation type (entailment, neutral, contradiction) to identify structural imbalances."
+    }
+  ],
+  "primary_bias_target": "Dataset and annotation artifacts"
+}

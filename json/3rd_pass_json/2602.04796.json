@@ -1,0 +1,16 @@
+{
+  "filename": "2602.04796.pdf",
+  "title": "LALM-as-a-Judge: Benchmarking Large Audio-Language Models for Safety Evaluation in Multi-Turn Spoken Dialogues",
+  "arxiv_url": "https://arxiv.org/pdf/2602.04796",
+  "bias_targets": [
+    {
+      "target": "Position bias",
+      "methodology": "Perturbing the turn location of the unsafe content within multi-turn spoken dialogues (e.g., placing it in the first versus the last turn) and measuring the resulting difference in the models' sensitivity and specificity to evaluate turn-location instability."
+    },
+    {
+      "target": "TTS-induced bias",
+      "methodology": "Applying a single-turn replacement protocol to resynthesize original human audio into Text-to-Speech (TTS) audio, then comparing the safety evaluation scores between the original and synthesized versions to isolate systematic scoring shifts caused by the synthesis pipeline."
+    }
+  ],
+  "primary_bias_target": "Position bias"
+}

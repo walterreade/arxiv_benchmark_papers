@@ -1,0 +1,20 @@
+{
+  "filename": "2309.09369.pdf",
+  "title": "Embrace Divergence for Richer Insights: A Multi-document Summarization Benchmark and a Case Study on Summarizing Diverse Information from News Articles",
+  "arxiv_url": "https://arxiv.org/pdf/2309.09369",
+  "bias_targets": [
+    {
+      "target": "Position bias",
+      "methodology": "Evaluating whether an LLM acting as a judge favors a summary based on its order in the prompt by swapping the positions of two summaries in a pairwise comparison and measuring the consistency of the LLM's preference."
+    },
+    {
+      "target": "Verbosity bias",
+      "methodology": "Assessing whether the LLM evaluator prefers shorter or longer texts by having it score original summaries against artificially extended summaries (created by duplicating the text to maintain the same semantic meaning)."
+    },
+    {
+      "target": "Coverage bias",
+      "methodology": "Analyzing generated summaries to determine if LLMs systematically favor extracting information based on its location in the input context (e.g., favoring the first and last source articles), the semantic category of the question, or the frequency of the information across multiple source articles."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

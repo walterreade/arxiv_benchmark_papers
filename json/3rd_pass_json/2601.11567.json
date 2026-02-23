@@ -1,0 +1,20 @@
+{
+  "filename": "2601.11567.pdf",
+  "title": "Measuring Stability Beyond Accuracy in Small Open-Source Medical Large Language Models for Pediatric Endocrinology",
+  "arxiv_url": "https://arxiv.org/pdf/2601.11567",
+  "bias_targets": [
+    {
+      "target": "Self-assessment bias (Self-preference bias)",
+      "methodology": "Asking the LLM to act as a judge and select the most clinically correct reasoning between its own previously generated explanation and a gold-standard explanation provided by medical experts."
+    },
+    {
+      "target": "Positional bias",
+      "methodology": "Prompting the model with two candidate explanations in both possible orders (e.g., gold-standard first then model-generated, and vice versa) to evaluate if its preference is dependent on the sequence of the options."
+    },
+    {
+      "target": "Option selection bias (Label bias)",
+      "methodology": "Comparing model accuracy, consistency, and response distribution on multiple-choice questions with standard option letters (A-E) versus when the letters are omitted, as well as tracking baseline tendencies to disproportionately guess specific options (e.g., option A)."
+    }
+  ],
+  "primary_bias_target": "Self-assessment bias (Self-preference bias)"
+}

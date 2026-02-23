@@ -1,0 +1,16 @@
+{
+  "filename": "2512.06781.pdf",
+  "title": "From Description to Score: Can LLMs Quantify Vulnerabilities?",
+  "arxiv_url": "https://arxiv.org/pdf/2512.06781",
+  "bias_targets": [
+    {
+      "target": "Majority class bias",
+      "methodology": "Evaluating model classification performance on highly imbalanced CVSS metric datasets using confusion matrices, weighted precision, recall, and F1-scores to measure the tendency of models to over-predict majority classes (e.g., predicting NETWORK over LOCAL)."
+    },
+    {
+      "target": "Training bias",
+      "methodology": "Prompting the LLM (GPT-4o) to explain its own misclassifications for a small sample of CVEs to identify if the model overgeneralizes from similar past training examples and applies incorrect heuristics."
+    }
+  ],
+  "primary_bias_target": "Majority class bias"
+}

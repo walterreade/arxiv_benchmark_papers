@@ -1,0 +1,16 @@
+{
+  "filename": "2509.16805.pdf",
+  "title": "Benchmarking and Mitigating MCQA Selection Bias of Large Vision-Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2509.16805",
+  "bias_targets": [
+    {
+      "target": "Positional bias",
+      "methodology": "Evaluating model prediction distributions on multiple-choice question answering (MCQA) tasks by varying the order of options (e.g., standard ABCD vs. reversed DCBA formats) to detect systematic preferences for specific spatial positions (e.g., favoring the first presented option) regardless of the content."
+    },
+    {
+      "target": "Token bias (Option identity bias)",
+      "methodology": "Analyzing model answer distributions on balanced fine-grained visual MCQA datasets across different option orderings and alternative numeric identifiers (e.g., 1/2/3/4 instead of A/B/C/D) to detect intrinsic preferences for specific option labels (e.g., defaulting to 'A') irrespective of semantic content or structural position."
+    }
+  ],
+  "primary_bias_target": "Selection bias"
+}

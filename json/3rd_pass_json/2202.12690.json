@@ -1,0 +1,16 @@
+{
+  "filename": "2202.12690.pdf",
+  "title": "On Modality Bias Recognition and Reduction",
+  "arxiv_url": "https://arxiv.org/pdf/2202.12690",
+  "bias_targets": [
+    {
+      "target": "Modality bias",
+      "methodology": "Evaluating model performance degradation on newly constructed Out-of-Distribution (OoD) datasets (e.g., OoD Colored MNIST, OoD Kinetics) where the spurious correlations between a specific modality (such as color or static object frames) and the target label are removed. The paper also evaluates the predictions of wrong instances by computing the Jensen-Shannon Divergence between the model's output distribution and the biased training label distribution."
+    },
+    {
+      "target": "Language bias",
+      "methodology": "Measuring the accuracy of Visual Question Answering (VQA) models on VQA-CP (Changing Priors) datasets, where the language prior shortcut is severed by ensuring the answer distribution for each question type is significantly different between the training and testing sets."
+    }
+  ],
+  "primary_bias_target": "Modality bias"
+}

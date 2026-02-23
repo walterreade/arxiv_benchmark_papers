@@ -1,0 +1,20 @@
+{
+  "filename": "2504.14716.pdf",
+  "title": "Pairwise or Pointwise? Evaluating Feedback Protocols for Bias in LLM-Based Evaluation",
+  "arxiv_url": "https://arxiv.org/pdf/2504.14716",
+  "bias_targets": [
+    {
+      "target": "Distractor feature bias (Assertiveness, Prolixity, Sycophancy)",
+      "methodology": "Modifying base responses to inject stylistic distractor features (confident/authoritative phrasing, increased verbosity/lexical complexity, or overly agreeable/flattering tone) while maintaining the original factual content or instruction-following quality, and then measuring how frequently LLM evaluators inappropriately favor the modified responses under pairwise versus absolute scoring protocols."
+    },
+    {
+      "target": "Intransitivity bias",
+      "methodology": "Examining cyclic preferences in LLM evaluations (e.g., A is preferred over B, B over C, but A is not preferred over C) by varying the order in which alternatives are presented in datasets like Ultrafeedback."
+    },
+    {
+      "target": "Choice set sensitivity",
+      "methodology": "Testing whether the relative preference between two options reverses when a third, unrelated alternative is introduced or swapped within a choice set, violating the independence of irrelevant alternatives (IIA)."
+    }
+  ],
+  "primary_bias_target": "Distractor feature bias (Assertiveness, Prolixity, Sycophancy)"
+}

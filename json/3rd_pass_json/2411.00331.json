@@ -1,0 +1,24 @@
+{
+  "filename": "2411.00331.pdf",
+  "title": "Beyond Utility: Evaluating LLM as Recommender",
+  "arxiv_url": "https://arxiv.org/pdf/2411.00331",
+  "bias_targets": [
+    {
+      "target": "Candidate Position Bias",
+      "methodology": "Comparing the model's recommendation accuracy when positive target items are placed randomly in the input prompt's candidate list versus when they are consistently placed at the first position."
+    },
+    {
+      "target": "Popularity Bias",
+      "methodology": "Measuring the exposure of niche items using the Average Percentage of Long Tail Items (APLT) metric and comparing the true positive rates of items with different levels of popularity using the PopREO metric."
+    },
+    {
+      "target": "Item-side Fairness",
+      "methodology": "Calculating the Gini Coefficient on the recommendation frequencies of items in the output lists to measure the equality of item exposure."
+    },
+    {
+      "target": "User-side Fairness (Activity Bias)",
+      "methodology": "Using the Demographic Parity Difference (DPD) to evaluate group-level utility fairness between active and inactive users (separated by median interaction history length), and applying Jain's Index to measure whether users obtain consistently high utility at the individual level."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

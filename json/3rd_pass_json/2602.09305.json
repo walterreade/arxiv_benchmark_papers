@@ -1,0 +1,32 @@
+{
+  "filename": "2602.09305.pdf",
+  "title": "Reward Modeling for Reinforcement Learning-Based LLM Reasoning: Design, Challenges, and Evaluation",
+  "arxiv_url": "https://arxiv.org/pdf/2602.09305",
+  "bias_targets": [
+    {
+      "target": "Length bias",
+      "methodology": "Evaluating the relationship between accuracy and verbosity using token-efficiency metrics, and applying length penalties, budget-based rewards, or dynamic target lengths to penalize redundant overthinking."
+    },
+    {
+      "target": "Position bias",
+      "methodology": "Quantifying positional favoritism in LLM-as-a-judge frameworks using metrics like position consistency (the stability of a judgment after option-swapping) and preference fairness."
+    },
+    {
+      "target": "Faithfulness bias",
+      "methodology": "Enriching reward model inputs with causal attributions to detect inconsistencies between a model's actual internal reasoning processes and its superficially generated post-hoc explanations."
+    },
+    {
+      "target": "Social bias (Gender and Racial bias)",
+      "methodology": "Employing fairness-oriented reward models with binary cross-entropy loss to identify biased reasoning at each step, and using evaluation metrics that capture fairness and representational balance in social and decision-making contexts."
+    },
+    {
+      "target": "Sycophancy bias",
+      "methodology": "Evaluating over-conformity to user beliefs by measuring the reduction in the policy model's own uncertainty (entropy) about the correct answer using information gain as a step-by-step training signal."
+    },
+    {
+      "target": "Credit assignment bias",
+      "methodology": "Addressing structural evaluation biases in RL by using min-form credit assignment to evaluate a sequence's overall value based on its least-correct step, preventing models from exploiting repetitive patterns."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

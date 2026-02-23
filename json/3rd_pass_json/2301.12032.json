@@ -1,0 +1,16 @@
+{
+  "filename": "2301.12032.pdf",
+  "title": "BinaryVQA: A Versatile Test Set to Evaluate the Out-of-Distribution Generalization of VQA Models",
+  "arxiv_url": "https://arxiv.org/pdf/2301.12032",
+  "bias_targets": [
+    {
+      "target": "Positive answer bias",
+      "methodology": "Evaluating model performance using a newly introduced metric called 'ShuffleAcc', which calculates accuracy over randomly selected, perfectly balanced subsets of 'yes' and 'no' questions to counteract the models' statistical tendency to guess 'yes'."
+    },
+    {
+      "target": "Out-of-distribution bias",
+      "methodology": "Testing pre-trained VQA models on a novel, highly diverse dataset (BinaryVQA) that intentionally lacks a paired training set, in order to measure the performance degradation caused by models overfitting to the statistics of standard training datasets (like VQA v2)."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

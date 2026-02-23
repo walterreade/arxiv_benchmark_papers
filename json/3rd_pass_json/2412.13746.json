@@ -1,0 +1,20 @@
+{
+  "filename": "2412.13746.pdf",
+  "title": "RAG-RewardBench: Benchmarking Reward Models in Retrieval Augmented Generation for Preference Alignment",
+  "arxiv_url": "https://arxiv.org/pdf/2412.13746",
+  "bias_targets": [
+    {
+      "target": "Positional bias",
+      "methodology": "Evaluating generative reward models twice by swapping the positions of the chosen and rejected responses in the prompt to detect and mitigate positional preference."
+    },
+    {
+      "target": "Length bias",
+      "methodology": "Analyzing the token length difference distribution between chosen and rejected responses to ensure the evaluation dataset does not inadvertently reward model verbosity."
+    },
+    {
+      "target": "Retriever bias",
+      "methodology": "Using a diverse set of six different retrievers (including BM25, DPR, E5, BGE, GTR, and Google Search) to synthesize candidate responses, preventing the evaluation from being skewed by the artifacts or behaviors of a single retrieval model."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

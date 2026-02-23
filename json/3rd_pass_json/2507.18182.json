@@ -1,0 +1,20 @@
+{
+  "filename": "2507.18182.pdf",
+  "title": "SCOPE: Stochastic and Counterbiased Option Placement for Evaluating Large Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2507.18182",
+  "bias_targets": [
+    {
+      "target": "Position bias",
+      "methodology": "Estimating the model's intrinsic positional preferences by repeatedly querying it with 'null prompts' that lack semantic content and recording the baseline frequency of selection for each multiple-choice answer slot."
+    },
+    {
+      "target": "Label bias",
+      "methodology": "Measuring changes in the model's selection distribution and accuracy when standard multiple-choice option labels (e.g., A, B, C, D) are removed or replaced with identical neutral placeholders."
+    },
+    {
+      "target": "Semantic proximity bias",
+      "methodology": "Evaluating the likelihood of near-miss guesses by tracking selection rates when semantically similar distractors (identified via Sentence-BERT cosine similarity) are forcibly placed adjacent to versus distant from the correct answer."
+    }
+  ],
+  "primary_bias_target": "Position bias"
+}

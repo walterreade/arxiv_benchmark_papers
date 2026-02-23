@@ -1,0 +1,20 @@
+{
+  "filename": "2408.13831.pdf",
+  "title": "Guardians of the Machine Translation Meta-Evaluation: Sentinel Metrics Fall In!",
+  "arxiv_url": "https://arxiv.org/pdf/2408.13831",
+  "bias_targets": [
+    {
+      "target": "Trained metric bias",
+      "methodology": "Evaluating the impact of different grouping strategies (No Grouping, System Grouping, Segment Grouping) on metric rankings using sentinel metrics to demonstrate that certain strategies unfairly favor metrics trained to mimic human judgments by allowing them to exploit spurious correlations."
+    },
+    {
+      "target": "Continuous metric bias",
+      "methodology": "Analyzing how tie calibration algorithms (acceq) unfairly advantage continuous metrics over discrete ones by comparing their ranking performance across datasets with varying percentages of tied human judgments, including the use of perturbed continuous sentinel metrics."
+    },
+    {
+      "target": "Translation length bias",
+      "methodology": "Plotting metric scores against the length of candidate translations (in characters) and comparing them with human judgment distributions to reveal that state-of-the-art regression-based metrics systematically assign lower scores to longer translations regardless of their actual quality."
+    }
+  ],
+  "primary_bias_target": "Evaluation framework bias"
+}

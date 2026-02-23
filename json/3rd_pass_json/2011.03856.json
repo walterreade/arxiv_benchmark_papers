@@ -1,0 +1,24 @@
+{
+  "filename": "2011.03856.pdf",
+  "title": "Learning to Model and Ignore Dataset Bias with Mixed Capacity Ensembles",
+  "arxiv_url": "https://arxiv.org/pdf/2011.03856",
+  "bias_targets": [
+    {
+      "target": "Background-class bias",
+      "methodology": "Evaluating image recognition models on an ImageNet-derived dataset (ImageNet Animals) that includes an out-of-domain test set with misleading backgrounds (e.g., a fish photographed on dry land) to penalize models relying on object-background correlations."
+    },
+    {
+      "target": "Question-type bias",
+      "methodology": "Testing visual question answering models on the VQA-CP v2 dataset, which uses different correlations between question types and answers in the training versus testing splits to penalize models relying on language priors rather than visual evidence."
+    },
+    {
+      "target": "Lexical overlap and hypothesis-only bias",
+      "methodology": "Evaluating natural language inference models on the MNLI Hard and HANS adversarial datasets to penalize models that exploit superficial word associations (like the word 'not' implying contradiction) or premise-hypothesis word overlap."
+    },
+    {
+      "target": "Synthetic artifact bias",
+      "methodology": "Injecting superficial visual modifications (background colors, patches, splits) into the MNIST dataset to create a training correlation, and testing the models on out-of-domain sets where these artifact correlations are altered or removed."
+    }
+  ],
+  "primary_bias_target": "Dataset bias (Spurious correlations)"
+}

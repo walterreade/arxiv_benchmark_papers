@@ -1,0 +1,20 @@
+{
+  "filename": "2408.05968.pdf",
+  "title": "Nob-MIAs: Non-biased Membership Inference Attacks Assessment on Large Language Models with Ex-Post Dataset Construction",
+  "arxiv_url": "https://arxiv.org/pdf/2408.05968",
+  "bias_targets": [
+    {
+      "target": "N-gram overlap bias",
+      "methodology": "Calculating the Kolmogorov-Smirnov (KS) distance to compare the n-gram overlap distributions of candidate member and non-member sets with respect to a reference set of left-out members."
+    },
+    {
+      "target": "Temporal bias (Time-shift bias)",
+      "methodology": "Restricting the selection of both member and non-member documents to a specific historical publication timeframe (e.g., books published between 1850 and 1910) to prevent the models from relying on chronological metadata or evolving vocabulary."
+    },
+    {
+      "target": "Residual classifier-detectable bias",
+      "methodology": "Training LLM-agnostic classifiers (e.g., a Bayes algorithm on multinomially distributed 1- to 3-grams) to distinguish between members and non-members, and evaluating the bias by measuring the classifiers' Area Under the Receiver Operating Characteristic Curve (AUC-ROC) and True Positive Rates."
+    }
+  ],
+  "primary_bias_target": "Distributional dataset bias in Membership Inference Attacks"
+}

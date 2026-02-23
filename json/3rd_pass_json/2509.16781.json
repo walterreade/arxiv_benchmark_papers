@@ -1,0 +1,20 @@
+{
+  "filename": "2509.16781.pdf",
+  "title": "MoRoVoc: A Large Dataset for Geographical Variation Identification of the Spoken Romanian Language",
+  "arxiv_url": "https://arxiv.org/pdf/2509.16781",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating and mitigating the model's reliance on speaker gender by using it as an adversarial target during fine-tuning. The approach employs gradient reversal and meta-learning to adapt adversarial coefficients, forcing the model to learn speech representations that are invariant to gender while performing primary tasks like dialect or age classification."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Evaluating and mitigating the model's reliance on speaker age by setting it as an adversarial objective during training. Gradient reversal and dynamically adjusted coefficients via meta-learning are used to ensure the model's representations remain invariant to age when predicting dialect or gender."
+    },
+    {
+      "target": "Dialect/Regional bias",
+      "methodology": "Measuring and mitigating the influence of regional language variations (standard Romanian vs. Moldavian dialect) by using dialect identification as an adversarial target when the model's primary classification tasks are gender or age prediction."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

@@ -1,0 +1,24 @@
+{
+  "filename": "2410.21159.pdf",
+  "title": "CURATE: BENCHMARKING PERSONALISED ALIGNMENT OF CONVERSATIONAL AI ASSISTANTS",
+  "arxiv_url": "https://arxiv.org/pdf/2410.21159",
+  "bias_targets": [
+    {
+      "target": "Sycophancy / Agreeableness bias",
+      "methodology": "Evaluating whether the model prioritizes user safety constraints (e.g., severe allergies, physical constraints, trauma triggers) over the conflicting desires and soft preferences of other simulated actors, testing if the model agrees with unsafe activities just to be helpful or accommodating."
+    },
+    {
+      "target": "Primacy bias",
+      "methodology": "Conducting ablation studies that shift the placement of the user's safety-critical constraints from the beginning (first turn) to the middle of the conversation history to measure its effect on the model's context retention and safety compliance."
+    },
+    {
+      "target": "Bandwagon effect / Majority bias",
+      "methodology": "Progressively increasing the number of actors (from one to three) who hold preferences that conflict with the user's safety constraints to test if the model inappropriately prioritizes the desires of the many over the safety of the individual."
+    },
+    {
+      "target": "Leading question bias",
+      "methodology": "Comparing the model's safety recommendation performance when presented with neutral requests versus biased, enthusiastic requests (e.g., 'Should we seize this rare opportunity to...') to measure susceptibility to the user's tone."
+    }
+  ],
+  "primary_bias_target": "Sycophancy / Agreeableness bias"
+}

@@ -1,0 +1,20 @@
+{
+  "filename": "2512.20595.pdf",
+  "title": "Cube Bench: A Benchmark for Spatial Visual Reasoning in MLLMs",
+  "arxiv_url": "https://arxiv.org/pdf/2512.20595",
+  "bias_targets": [
+    {
+      "target": "Label selection bias",
+      "methodology": "Calculating the absolute difference between the 'Yes' prediction rate and 0.5 (|Yes rate - 0.5|) in a balanced Yes/No cross-modal verification task to measure systematic defaults to affirmative answers."
+    },
+    {
+      "target": "Answer-position bias",
+      "methodology": "Evaluating and mitigating the tendency of models to favor specific multiple-choice letters by tracking per-slot frequencies and uniformly shuffling A-D answer options."
+    },
+    {
+      "target": "Class prior bias",
+      "methodology": "Using chance-corrected Cohen's kappa (κ) in causal move-effect predictions to adjust for skewed prediction mixes (e.g., models over-predicting 'INCREASE') and depth-dependent label distributions."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

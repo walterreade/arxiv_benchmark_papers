@@ -1,0 +1,20 @@
+{
+  "filename": "2508.00726.pdf",
+  "title": "MIHBench: Benchmarking and Mitigating Multi-Image Hallucinations in Multimodal Large Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2508.00726",
+  "bias_targets": [
+    {
+      "target": "Attention bias",
+      "methodology": "Visualizing and computing the distribution of attention weights across different input images to identify if the model disproportionately focuses on a single image while ignoring others, leading to multi-image hallucinations."
+    },
+    {
+      "target": "Positional bias",
+      "methodology": "Evaluating model performance and hallucination rates by systematically varying the placement of negative sample (distractor) images from the first to the last position in an input sequence."
+    },
+    {
+      "target": "Input proportion bias",
+      "methodology": "Systematically altering the ratio of positive to negative images per query to evaluate how an overrepresentation of positive examples biases the model toward assuming object identity consistency."
+    }
+  ],
+  "primary_bias_target": "Attention bias"
+}

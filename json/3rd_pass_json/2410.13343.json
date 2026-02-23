@@ -1,0 +1,20 @@
+{
+  "filename": "2410.13343.pdf",
+  "title": "Do LLMs Overcome Shortcut Learning? An Evaluation of Shortcut Challenges in Large Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2410.13343",
+  "bias_targets": [
+    {
+      "target": "Dataset bias (Shortcut learning)",
+      "methodology": "Evaluating LLMs using a custom benchmark called Shortcut Suite, which introduces six types of spurious correlations (Lexical Overlap, Subsequence, Constituent, Negation, Position, and Style) to measure models' reliance on heuristic shortcuts versus true semantic understanding across Natural Language Inference, Sentiment Analysis, and Paraphrase Identification tasks."
+    },
+    {
+      "target": "Label bias",
+      "methodology": "Analyzing the label distribution of LLM predictions under zero-shot prompting to identify whether models exhibit an inherent preference for specific output classes (e.g., disproportionately predicting 'entailment' or 'neutral') despite a balanced ground-truth distribution."
+    },
+    {
+      "target": "In-context learning (ICL) bias",
+      "methodology": "Comparing zero-shot and few-shot prompting performance to observe how LLMs acquire and are influenced by biases, formatting, or spurious mappings present in the in-context demonstration examples."
+    }
+  ],
+  "primary_bias_target": "Dataset bias (Shortcut learning)"
+}

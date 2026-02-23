@@ -1,0 +1,24 @@
+{
+  "filename": "2406.13975.pdf",
+  "title": "MR-Ben: A Meta-Reasoning Benchmark for Evaluating System-2 Thinking in LLMs",
+  "arxiv_url": "https://arxiv.org/pdf/2406.13975",
+  "bias_targets": [
+    {
+      "target": "False positive bias",
+      "methodology": "Qualitative error analysis of sampled failure cases to determine the proportion of Type I errors (overlooking mistakes and mislabeling them as correct) made by the LLM acting as an evaluator."
+    },
+    {
+      "target": "Input bias",
+      "methodology": "Qualitative observation of the model's inherent tendency to follow prompt inputs, which artificially skews its labeling threshold toward positive judgments when evaluating Chain-of-Thought steps."
+    },
+    {
+      "target": "Self-preference bias",
+      "methodology": "Theoretical and qualitative discussion of the phenomenon where an LLM evaluator inherently favors its own generated output over texts from other models or humans during self-evaluation methods."
+    },
+    {
+      "target": "Length bias",
+      "methodology": "Quantitative assessment computing Pearson Correlation Coefficients between the length of solutions and their correctness across different disciplines to identify dataset artifacts."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

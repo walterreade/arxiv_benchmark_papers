@@ -1,0 +1,20 @@
+{
+  "filename": "2207.07180.pdf",
+  "title": "Contrastive Adapters for Foundation Model Group Robustness",
+  "arxiv_url": "https://arxiv.org/pdf/2207.07180",
+  "bias_targets": [
+    {
+      "target": "Spurious correlation bias",
+      "methodology": "Evaluating the performance gap between average accuracy and worst-group accuracy on datasets where classes are heavily correlated with specific but irrelevant attributes, such as backgrounds in Waterbirds or gender labels in CelebA."
+    },
+    {
+      "target": "Demographic identity bias",
+      "methodology": "Measuring worst-group classification accuracy in toxicity detection tasks using the CivilComments-WILDS dataset, where text samples are organized into 8 groups based on the mention of demographic identities (e.g., female, LGBTQ)."
+    },
+    {
+      "target": "Subpopulation shift bias",
+      "methodology": "Assessing worst-group accuracy across different fine-grained subclasses (e.g., BREEDS dataset), geographical continental regions (e.g., FMoW-WILDS dataset), product categories (Amazon-WILDS), or varying data sources (e.g., CIFAR) to test robustness against intra-class variations."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

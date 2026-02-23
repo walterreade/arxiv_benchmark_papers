@@ -1,0 +1,20 @@
+{
+  "filename": "2503.21699.pdf",
+  "title": "MAVERIX: Multimodal Audio-Visual Evaluation and Recognition IndeX",
+  "arxiv_url": "https://arxiv.org/pdf/2503.21699",
+  "bias_targets": [
+    {
+      "target": "Unimodal bias",
+      "methodology": "Conducting ablation tests using single-modality inputs (text-only, video-only, audio-only) during dataset construction to detect and eliminate questions where models can bypass multimodal synthesis and rely on single-modality shortcuts."
+    },
+    {
+      "target": "Positional bias",
+      "methodology": "Uniformly redistributing the correct multiple-choice answer labels across all eight available options (A-H) to prevent models from artificially inflating scores through inherent preferences for specific option positions."
+    },
+    {
+      "target": "Instructional bias",
+      "methodology": "Implementing a standardized prompt template across all evaluated multimodal models to ensure that performance metrics reflect true capabilities rather than biases introduced by prompt engineering or phrasing."
+    }
+  ],
+  "primary_bias_target": "Unimodal bias"
+}

@@ -1,0 +1,16 @@
+{
+  "filename": "2503.20786.pdf",
+  "title": "Mobile-MMLU: A Mobile Intelligence Language Understanding Benchmark",
+  "arxiv_url": "https://arxiv.org/pdf/2503.20786",
+  "bias_targets": [
+    {
+      "target": "Selection order bias (Positional bias)",
+      "methodology": "Testing model performance variations by systematically placing the ground truth answer in different multiple-choice positions (A, B, C, D) and comparing the results against randomized distributions to measure inherent positional preferences."
+    },
+    {
+      "target": "Option length bias",
+      "methodology": "Observing the tendency of models (especially mobile-level LLMs) to select the longest option more frequently, which was evaluated during dataset construction and mitigated by ensuring incorrect options are equal to or longer than the correct answers."
+    }
+  ],
+  "primary_bias_target": "Selection order bias (Positional bias)"
+}

@@ -1,0 +1,20 @@
+{
+  "filename": "2508.10541.pdf",
+  "title": "Driving Accurate Allergen Prediction with Protein Language Models and Generalization-Focused Evaluation",
+  "arxiv_url": "https://arxiv.org/pdf/2508.10541",
+  "bias_targets": [
+    {
+      "target": "Sequence similarity bias",
+      "methodology": "Developing a similarity-aware cross-validation pipeline to systematically control for inter-split (training vs. test) and inter-class (allergen vs. non-allergen) sequence similarities to evaluate how uncontrolled homology inflates predictive performance."
+    },
+    {
+      "target": "Sequence length bias",
+      "methodology": "Comparing model performance using a 'Length Control' strategy that explicitly matches the length distributions of positive and negative training sequences to prevent the model from using length differences as a simplistic heuristic or shortcut."
+    },
+    {
+      "target": "Class imbalance bias",
+      "methodology": "Evaluating the effect of skewed negative-to-positive sample ratios by training and testing models under various dataset balancing strategies (e.g., 'No Balance', 'Hard Balance', 'Minimal')."
+    }
+  ],
+  "primary_bias_target": "Sequence similarity bias"
+}

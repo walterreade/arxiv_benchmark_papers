@@ -1,0 +1,24 @@
+{
+  "filename": "2510.05710.pdf",
+  "title": "FinReflectKG - EvalBench: Benchmarking Financial KG with Multi-Dimensional Evaluation",
+  "arxiv_url": "https://arxiv.org/pdf/2510.05710",
+  "bias_targets": [
+    {
+      "target": "Leniency bias",
+      "methodology": "Implementing a principle of conservatism in the LLM-as-a-judge prompt, instructing it to default to a negative decision (0) whenever the evidence is uncertain or ambiguous."
+    },
+    {
+      "target": "World knowledge bias",
+      "methodology": "Enforcing strict locality by prompting the LLM evaluator to not infer or add any information beyond the provided source text."
+    },
+    {
+      "target": "Position bias",
+      "methodology": "Explicitly instructing the LLM judge to not let the order or placement of sentences in the source text affect its evaluation decisions."
+    },
+    {
+      "target": "Verbosity bias",
+      "methodology": "Instructing the LLM judge to ensure that the length or surface form of the candidate triples does not influence the evaluation outcome."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

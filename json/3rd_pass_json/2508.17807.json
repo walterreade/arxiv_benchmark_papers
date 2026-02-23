@@ -1,0 +1,16 @@
+{
+  "filename": "2508.17807.pdf",
+  "title": "Attention Debiasing for Token Pruning in Vision-Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2508.17807",
+  "bias_targets": [
+    {
+      "target": "Recency bias (Positional bias)",
+      "methodology": "Quantifying token selection frequency across visual token indices and modeling positional trends in attention scores using exponential fitting to measure the model's disproportionate preference for tokens appearing later in a sequence."
+    },
+    {
+      "target": "Padding-induced attention bias (Attention sinks)",
+      "methodology": "Visualizing retained visual tokens mapped to input images, analyzing hidden-state activations, and comparing pruning behavior across different padding modes (Mean, Constant, Random, Mirror) to evaluate inflated attention assigned to semantically empty padding tokens."
+    }
+  ],
+  "primary_bias_target": "Algorithmic attention bias"
+}

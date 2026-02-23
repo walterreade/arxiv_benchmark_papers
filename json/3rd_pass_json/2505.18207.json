@@ -1,0 +1,28 @@
+{
+  "filename": "2505.18207.pdf",
+  "title": "BAGELS: Benchmarking the Automated Generation and Extraction of Limitations from Scholarly Text",
+  "arxiv_url": "https://arxiv.org/pdf/2505.18207",
+  "bias_targets": [
+    {
+      "target": "Contamination bias",
+      "methodology": "Prompting the LLM with only the paper's title to summarize the content and checking if it outputs a disclaimer of unfamiliarity, ensuring the evaluation data was not present in the model's training set."
+    },
+    {
+      "target": "Positional bias",
+      "methodology": "Swapping the input order when comparing texts using an LLM-as-a-judge to ensure consistent results and prevent the model from arbitrarily favoring the first input."
+    },
+    {
+      "target": "Self-validation bias",
+      "methodology": "Cross-referencing the LLM's judgments with human evaluations and using multiple different models to prevent a single model from circularly favoring its own generated outputs."
+    },
+    {
+      "target": "Confirmation bias",
+      "methodology": "Using a Retrieval-Augmented Generation (RAG) framework to introduce diverse evidence and source content, reducing the model's tendency to generate generic or overly 'safe' limitation statements."
+    },
+    {
+      "target": "Fluency and verbosity bias",
+      "methodology": "Grounding all generated limitations in source content and peer reviews via a RAG framework to prioritize factuality over the model's preference for longer or well-written outputs."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

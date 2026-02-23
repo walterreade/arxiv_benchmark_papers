@@ -1,0 +1,24 @@
+{
+  "filename": "2504.00487.pdf",
+  "title": "FortisAVQA and MAVEN: a Benchmark Dataset and Debiasing Framework for Robust Multimodal Reasoning",
+  "arxiv_url": "https://arxiv.org/pdf/2504.00487",
+  "bias_targets": [
+    {
+      "target": "Language/Text bias",
+      "methodology": "Rephrasing test questions to increase linguistic diversity, evaluating models' reliance on spurious statistical correlations between key question words and answers, and employing a language-only bias learner to isolate text-based dependencies."
+    },
+    {
+      "target": "Visual/Video bias",
+      "methodology": "Employing a video-only bias learner during training to capture and subsequently penalize predictions that rely solely on visual inputs without proper multimodal reasoning."
+    },
+    {
+      "target": "Audio bias",
+      "methodology": "Employing an audio-only bias learner during training to capture and mitigate the model's reliance on isolated audio cues, ensuring predictions require multimodal context."
+    },
+    {
+      "target": "Statistical/Label distribution bias",
+      "methodology": "Categorizing the dataset's questions into frequent (head) and rare (tail) answer distributions using conformal-inspired optimization to evaluate the models' robustness in both in-distribution and out-of-distribution scenarios."
+    }
+  ],
+  "primary_bias_target": "Unimodal dataset bias"
+}

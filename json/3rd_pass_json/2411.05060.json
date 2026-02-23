@@ -1,0 +1,20 @@
+{
+  "filename": "2411.05060.pdf",
+  "title": "A Guide to Misinformation Detection Data and Evaluation",
+  "arxiv_url": "https://arxiv.org/pdf/2411.05060",
+  "bias_targets": [
+    {
+      "target": "Spurious keyword bias (Lexical bias)",
+      "methodology": "Training a random forest classifier using the 40 most frequent words in each dataset (after removing stop-words) to evaluate if specific lexical features unrealistically over-predict veracity labels compared to a random class distribution baseline."
+    },
+    {
+      "target": "Spurious temporal bias",
+      "methodology": "Training a random forest classifier using temporal features (such as the first three digits of a tweet ID or integer-encoded dates) to detect whether data collection timeframes artificially leak the veracity labels."
+    },
+    {
+      "target": "Political bias",
+      "methodology": "Analyzing the distribution of veracity labels associated with specific political entity keywords (e.g., 'Trump', 'Biden', 'Harris', 'POTUS') to demonstrate how datasets can be heavily skewed, such as automatically associating mentions of politicians with 'false' labels."
+    }
+  ],
+  "primary_bias_target": "Spurious correlation bias"
+}

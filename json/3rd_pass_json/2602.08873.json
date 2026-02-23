@@ -1,0 +1,20 @@
+{
+  "filename": "2602.08873.pdf",
+  "title": "Whose Name Comes Up? Benchmarking and Intervention-Based Auditing of LLM-Based Scholar Recommendation",
+  "arxiv_url": "https://arxiv.org/pdf/2602.08873",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating the demographic diversity (Shannon entropy) and parity (Total Variation Distance relative to the APS ground truth population) of recommended scholars' perceived genders, which are inferred from their names using the gender-guesser tool. Also tested via representation-constrained prompting (e.g., asking for female-only lists)."
+    },
+    {
+      "target": "Racial/Ethnic bias",
+      "methodology": "Evaluating the diversity and parity of recommended scholars' perceived ethnicities (Asian, Black, White, Hispanic, American Indian), inferred from their names using the demographicx and ethnicolr tools, and comparing them to baseline population distributions. Also tested via representation-constrained prompting."
+    },
+    {
+      "target": "Prominence/Seniority bias",
+      "methodology": "Measuring the diversity and parity of recommended scholars across publication and citation quantiles (low, mid, high, elite) using APS and OpenAlex bibliometric data. Also evaluated through specific prompts targeting early-career versus senior scholars and through prominence-constrained prompting."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

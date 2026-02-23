@@ -1,0 +1,36 @@
+{
+  "filename": "2407.06551.pdf",
+  "title": "OffsetBias: Leveraging Debiased Data for Tuning Evaluators",
+  "arxiv_url": "https://arxiv.org/pdf/2407.06551",
+  "bias_targets": [
+    {
+      "target": "Length bias",
+      "methodology": "Evaluating judge models using EVALBIASBENCH test cases to measure the tendency of models to prefer longer but incorrect responses over shorter, correct ones."
+    },
+    {
+      "target": "Concreteness bias",
+      "methodology": "Evaluating judge models using EVALBIASBENCH to measure the preference for incorrect responses that contain specific details, fake authoritative citations, or complex terminology."
+    },
+    {
+      "target": "Empty reference bias",
+      "methodology": "Evaluating judge models using EVALBIASBENCH to measure the preference for hallucinated responses over appropriate clarification or uncertainty statements when given incomplete instructions."
+    },
+    {
+      "target": "Content continuation bias",
+      "methodology": "Evaluating judge models using EVALBIASBENCH to measure the preference for responses that act as story completions of the input text rather than properly executing the given instruction."
+    },
+    {
+      "target": "Nested instruction bias",
+      "methodology": "Evaluating judge models using EVALBIASBENCH to measure the preference for responses that answer an embedded question within the input text rather than addressing the main instruction."
+    },
+    {
+      "target": "Familiar knowledge bias",
+      "methodology": "Evaluating judge models using EVALBIASBENCH to measure the preference for familiar real-world facts or idioms over responses that precisely meet the actual instruction."
+    },
+    {
+      "target": "Position bias",
+      "methodology": "Measuring pairwise swap accuracy and positional agreement rate by swapping the order of the presented good and bad responses in the prompt."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

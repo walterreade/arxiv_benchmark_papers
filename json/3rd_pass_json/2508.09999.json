@@ -1,0 +1,16 @@
+{
+  "filename": "2508.09999.pdf",
+  "title": "XFACTA: CONTEMPORARY, REAL-WORLD DATASET AND EVALUATION FOR MULTIMODAL MISINFORMATION DETECTION WITH MULTIMODAL LLMS",
+  "arxiv_url": "https://arxiv.org/pdf/2508.09999",
+  "bias_targets": [
+    {
+      "target": "Evaluation bias (Dataset bias)",
+      "methodology": "Curating a contemporary dataset with events occurring after model knowledge cutoffs to prevent memorization, and explicitly aligning the distributions of real and fake posts by topic and image features (using optimal transport on extracted visual features) to prevent models from relying on dataset artifacts."
+    },
+    {
+      "target": "Model-specific prediction bias",
+      "methodology": "Testing multimodal LLMs (e.g., GPT-4o, Gemini, Qwen) in a zero-shot, no-evidence baseline setting to measure their default behavioral tendencies (e.g., strictly conservative/skeptical versus naturally trusting) when classifying news as real or fake."
+    }
+  ],
+  "primary_bias_target": "Evaluation bias (Dataset bias)"
+}

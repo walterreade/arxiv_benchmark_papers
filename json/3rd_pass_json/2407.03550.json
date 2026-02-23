@@ -1,0 +1,20 @@
+{
+  "filename": "2407.03550.pdf",
+  "title": "CoMix: A Comprehensive Benchmark for Multi-Task Comic Understanding",
+  "arxiv_url": "https://arxiv.org/pdf/2407.03550",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Classifying extracted character image crops into gender categories (Male, Female, Animals, Other) using a state-of-the-art open-source Multimodal Large Language Model (MLLM) to calculate representation percentages."
+    },
+    {
+      "target": "Cultural bias",
+      "methodology": "Analyzing dataset composition and explicitly balancing the inclusion of different comic styles and origins (Japanese manga, American comics, and French Bandes Dessinées) to mitigate the over-representation of specific cultural styles."
+    },
+    {
+      "target": "Racial and Sexist bias (Harmful Content)",
+      "methodology": "Using a Large Language Model (Llama3-80B) to automatically classify panel-level textual content into varying levels of offensiveness, including a specific category for 'Highly Offensive/Racist/Sexist' content, followed by manual verification of the flagged panels."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

@@ -1,0 +1,20 @@
+{
+  "filename": "2506.05440.pdf",
+  "title": "BYO-Eval: Build Your Own Dataset for Fine-Grained Visual Assessment of Multimodal Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2506.05440",
+  "bias_targets": [
+    {
+      "target": "Linguistic/Prompt bias",
+      "methodology": "Comparing model performance across various instruction formats (Declarative vs. Missing Word) and preprompts (Helpful, Neutral, Chain-of-Thought) to measure how much models rely on textual/reasoning priors rather than actual visual perception."
+    },
+    {
+      "target": "Contextual/Prior Knowledge bias",
+      "methodology": "Testing spatial localization on non-standard configurations (e.g., asking models to locate a piece on a 4x4 chessboard) to reveal if models hallucinate out-of-bounds coordinates based on real-world priors (e.g., a standard 8x8 chessboard)."
+    },
+    {
+      "target": "Counting/Directional Error bias",
+      "methodology": "Analyzing the mean error and distribution of prediction errors in visual object counting tasks to identify systematic tendencies of specific models to either overestimate or underestimate counts, especially under stress conditions like blur or horizontal overlap."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

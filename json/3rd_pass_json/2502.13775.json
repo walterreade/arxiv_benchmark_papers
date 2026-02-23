@@ -1,0 +1,24 @@
+{
+  "filename": "2502.13775.pdf",
+  "title": "VITAL: A New Dataset for Benchmarking Pluralistic Alignment in Healthcare",
+  "arxiv_url": "https://arxiv.org/pdf/2502.13775",
+  "bias_targets": [
+    {
+      "target": "Demographic bias",
+      "methodology": "Evaluating the model's ability to steer its responses to reflect specific user demographics (Steerable mode) using accuracy metrics on survey questions, and measuring how well its output distributions match real-world demographic populations (Distributional mode) using Jensen-Shannon distance to explicitly counteract WEIRD (White, American, Wealthy, and Male) bias."
+    },
+    {
+      "target": "Cultural bias",
+      "methodology": "Measuring whether model outputs cover diverse cultural perspectives in subjective health scenarios (Overton mode) using an NLI model for value coverage, and evaluating the model's alignment with localized country distributions (Distributional mode)."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Assessing the inclusion and representation of varying religious viewpoints in generated responses to value-laden healthcare dilemmas (e.g., end-of-life care, contraceptives) using NLI-based Overton window coverage and human/LLM-as-a-judge evaluations."
+    },
+    {
+      "target": "Value/Ideological bias",
+      "methodology": "Calculating the percentage of diverse human values and moral frameworks covered in open-ended health scenarios (Overton mode) via Natural Language Inference (NLI) entailment, and evaluating if the model can be accurately steered toward a specific moral value."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

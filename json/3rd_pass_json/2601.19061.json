@@ -1,0 +1,20 @@
+{
+  "filename": "2601.19061.pdf",
+  "title": "Thought-Transfer: Indirect Targeted Poisoning Attacks on Chain-of-Thought Reasoning Models",
+  "arxiv_url": "https://arxiv.org/pdf/2601.19061",
+  "bias_targets": [
+    {
+      "target": "Advertisement bias",
+      "methodology": "Measuring the Attack Success Rate (ASR) by evaluating if the model systematically injects specific target product recommendations (e.g., NordVPN, a fictional textbook) into its responses for unseen target tasks after being trained on poisoned reasoning traces."
+    },
+    {
+      "target": "Conceptual bias",
+      "methodology": "Measuring the model's tendency to output systematically flawed reasoning or incorrect factual concepts (e.g., incorrectly defining aromaticity or overstating VPN anonymity guarantees) that were intentionally embedded in the training data's chain-of-thought traces."
+    },
+    {
+      "target": "Code generation bias",
+      "methodology": "Evaluating the percentage of generated code snippets that systematically import a targeted, unverified library ('bs5' instead of the legitimate 'bs4') when the model is prompted for web scraping code, as a result of poisoned training examples."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

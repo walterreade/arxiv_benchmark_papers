@@ -1,0 +1,20 @@
+{
+  "filename": "2504.14620.pdf",
+  "title": "A Hierarchical Framework for Measuring Scientific Paper Innovation via Large Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2504.14620",
+  "bias_targets": [
+    {
+      "target": "Section-type scoring bias",
+      "methodology": "Analyzing LLM-generated novelty scores across different sections of scientific papers (e.g., Abstract, Introduction, Related Work) using box plots to identify systematic scoring tendencies and score variance."
+    },
+    {
+      "target": "Verbosity bias (Central tendency bias)",
+      "methodology": "Comparing the distribution of LLM-predicted innovation scores against ground-truth peer review scores to observe the model's tendency to assign moderate scores, avoid extreme values (e.g., 5.0), and favor longer inputs."
+    },
+    {
+      "target": "Data contamination bias (Knowledge base bias)",
+      "methodology": "Conceptually evaluating the risk of LLMs assigning inflated scores to papers already present in their training data, which is addressed by implementing QA augmentation to force the model to focus on the provided text."
+    }
+  ],
+  "primary_bias_target": "Section-type scoring bias"
+}

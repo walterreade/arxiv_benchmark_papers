@@ -1,0 +1,20 @@
+{
+  "filename": "2506.00723.pdf",
+  "title": "Pitfalls in Evaluating Language Model Forecasters",
+  "arxiv_url": "https://arxiv.org/pdf/2506.00723",
+  "bias_targets": [
+    {
+      "target": "Retrieval Bias",
+      "methodology": "Qualitatively analyzing search engine queries with strict date restrictions to demonstrate that search algorithms leak future information by highly ranking documents that only became culturally or historically significant after the evaluation cutoff date (e.g., pre-2020 searches for 'January 6th' or pre-2018 searches for 'Wuhan')."
+    },
+    {
+      "target": "Survivorship Bias",
+      "methodology": "Evaluating synthetic backtesting datasets generated from news articles to show they disproportionately feature events that actually occurred. This is quantified by fine-tuning a weak DeBERTa classifier (without retrieval) that achieves up to 80% accuracy merely by exploiting these dataset shortcuts and event specificities rather than performing actual forecasting."
+    },
+    {
+      "target": "Distributional Bias",
+      "methodology": "Categorizing and analyzing the distribution of questions in human and AI forecasting benchmarks (such as ForecastBench) to reveal extreme skews toward specific, narrow topics like Security & Defense, cryptocurrency, and US-centric political events, rather than a generalized distribution of real-world forecasting tasks."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

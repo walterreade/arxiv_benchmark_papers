@@ -1,0 +1,16 @@
+{
+  "filename": "2602.06013.pdf",
+  "title": "GenArena: How Can We Achieve Human-Aligned Evaluation for Visual Generation Tasks?",
+  "arxiv_url": "https://arxiv.org/pdf/2602.06013",
+  "bias_targets": [
+    {
+      "target": "Position bias",
+      "methodology": "Measured by querying the VLM judge twice with the image order swapped (A vs B, then B vs A) to detect if the judge's preference is influenced by the sequence or position of the generated images."
+    },
+    {
+      "target": "Laziness bias",
+      "methodology": "Evaluated by comparing the VLM judge's performance when provided an 'Explicit Tie' option versus a 'Forced Choice' setting, measuring the frequency with which the model defaults to a neutral judgment (tie) to avoid complex reasoning."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

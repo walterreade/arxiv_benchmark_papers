@@ -1,0 +1,20 @@
+{
+  "filename": "1908.10763.pdf",
+  "title": "Unlearn Dataset Bias in Natural Language Inference by Fitting the Residual",
+  "arxiv_url": "https://arxiv.org/pdf/1908.10763",
+  "bias_targets": [
+    {
+      "target": "Word overlap bias",
+      "methodology": "Evaluating Natural Language Inference (NLI) models on the HANS challenge dataset (which tests lexical, subsequence, and constituent overlap) and the MNLI Overlap Stress Test to determine if models spuriously associate high word overlap between premise and hypothesis with the 'entailment' label."
+    },
+    {
+      "target": "Negation bias",
+      "methodology": "Evaluating models on the MNLI Negation Stress Test, which appends distractor phrases containing negation words (e.g., 'false is not true') to test if models rely on a superficial heuristic of predicting 'contradiction' whenever a negation word is present."
+    },
+    {
+      "target": "Length bias",
+      "methodology": "Assessing model performance on the MNLI Length Stress Test to evaluate if the model relies on sentence length differences as a superficial shortcut for classification."
+    }
+  ],
+  "primary_bias_target": "Dataset bias"
+}

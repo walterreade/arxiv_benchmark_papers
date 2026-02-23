@@ -1,0 +1,16 @@
+{
+  "filename": "2507.14615.pdf",
+  "title": "Retrieval-Augmented Clinical Benchmarking for Contextual Model Testing in Kenyan Primary Care: A Methodology Paper",
+  "arxiv_url": "https://arxiv.org/pdf/2507.14615",
+  "bias_targets": [
+    {
+      "target": "Cognitive bias",
+      "methodology": "Two-stage bias-priming vignettes (anchor-and-flip scenarios) where an LLM is initially given a case that implies a plausible but incorrect diagnosis, followed by new, disconfirming evidence. A BERT-based scoring harness then evaluates whether the model updates its differential diagnosis to test for anchoring, confirmation bias, premature closure, and availability bias."
+    },
+    {
+      "target": "Geographic bias",
+      "methodology": "Pairing identical clinical vignettes that differ only by a geographic or resource tag (e.g., Johannesburg vs. Kisumu, or urban hospital vs. rural dispensary). Model responses are evaluated against local national schedules to see if it defaults to generic or Western-centric advice rather than adapting to local epidemiology and resource availability."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

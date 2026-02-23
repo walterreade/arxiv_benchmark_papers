@@ -1,0 +1,28 @@
+{
+  "filename": "2503.05587.pdf",
+  "title": "Quantifying and Improving the Robustness of Retrieval-Augmented Language Models Against Spurious Features in Grounding Data",
+  "arxiv_url": "https://arxiv.org/pdf/2503.05587",
+  "bias_targets": [
+    {
+      "target": "Style/Readability bias",
+      "methodology": "Modifying the readability of grounding data (using simple vs. complex vocabulary and sentence structures) and measuring the impact on the model's answer accuracy to evaluate bias towards specific text complexities."
+    },
+    {
+      "target": "Source bias",
+      "methodology": "Replacing original human-authored grounding documents with LLM-generated and self-generated paraphrases to measure the model's inherent preference/bias towards lower perplexity, machine-generated text."
+    },
+    {
+      "target": "Formatting bias",
+      "methodology": "Presenting the exact same semantic content in different structural data formats (HTML, Markdown, YAML, JSON) to measure the language model's sensitivity and bias toward specific prompt formats."
+    },
+    {
+      "target": "Logic/Ordering bias",
+      "methodology": "Reordering sentences within retrieved documents (Random, Reverse, LLM-reranked) to test the model's robustness and positional bias regarding sentence order."
+    },
+    {
+      "target": "Metadata bias",
+      "methodology": "Injecting artificial metadata into the context, such as timestamps (pre/post LLM knowledge cutoff) and data source domains (e.g., Wikipedia vs. Twitter), to evaluate if models are biased by non-causal contextual clues."
+    }
+  ],
+  "primary_bias_target": "Spurious Feature Bias"
+}

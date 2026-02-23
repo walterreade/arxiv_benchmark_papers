@@ -1,0 +1,16 @@
+{
+  "filename": "2602.04064.pdf",
+  "title": "The CitizenQuery Benchmark: A Novel Dataset and Evaluation Pipeline for Measuring LLM Performance in Citizen Query Tasks",
+  "arxiv_url": "https://arxiv.org/pdf/2602.04064",
+  "bias_targets": [
+    {
+      "target": "Demographic and Nationality bias",
+      "methodology": "The authors used Cleanlab Studio's proprietary closed-source tool to generate bias scores (ranging from 0 to 1) for the synthetically generated dataset prompts. The tool flagged queries containing topics related to age, named countries (e.g., Ireland, Ukraine), and workplace discrimination. However, the authors determined these were false positives related to benign advice-seeking and deemed the bias scores irrelevant to their actual evaluation objectives."
+    },
+    {
+      "target": "Self-preference bias (LLM-as-a-judge)",
+      "methodology": "The paper identifies a potential methodological bias where the evaluation scores for Llama-3.1-8B-Instruct might be artificially inflated (upward biased) because the exact same model was utilized as the automated judge (adjudicator) in the evaluation pipeline. This was noted as a caveat rather than formally quantified."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

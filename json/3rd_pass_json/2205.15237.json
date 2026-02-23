@@ -1,0 +1,20 @@
+{
+  "filename": "2205.15237.pdf",
+  "title": "VLUE: A Multi-Task Benchmark for Evaluating Vision-Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2205.15237",
+  "bias_targets": [
+    {
+      "target": "Cultural bias",
+      "methodology": "Evaluating the generalization gap of vision-language models by comparing their performance on standard in-domain datasets (which are predominantly derived from English-language culture, such as COCO) against newly annotated out-of-distribution (OOD) test sets containing images collected across diverse cultures and geographical locations (the MaRVL dataset)."
+    },
+    {
+      "target": "Language bias",
+      "methodology": "Mitigating textual statistical priors in Visual Question Answering (VQA) by presenting annotators with a pair of images representing the same concept and requiring them to write a question that yields different answers for the two images. This ensures the model must rely on visual clues rather than learned linguistic biases."
+    },
+    {
+      "target": "In-distribution dataset bias",
+      "methodology": "Testing fine-tuned vision-language models on OOD data where the label distribution remains identical to the training set, but the underlying image distribution shifts to real-world, in-the-wild distributions unseen during pre-training."
+    }
+  ],
+  "primary_bias_target": "Cultural bias"
+}

@@ -1,0 +1,20 @@
+{
+  "filename": "2502.07346.pdf",
+  "title": "BenchMAX: A Comprehensive Multilingual Evaluation Suite for Large Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2502.07346",
+  "bias_targets": [
+    {
+      "target": "Language bias",
+      "methodology": "Evaluating model performance across 17 diverse languages on multiple tasks (reasoning, code generation, etc.) and calculating the performance gap (GAP metric) between English and non-English languages to reveal systematic bias towards high-resource languages."
+    },
+    {
+      "target": "Self-bias",
+      "methodology": "Comparing win-rates in model-based evaluations (LLM-as-a-judge) to measure the tendency of models (e.g., DeepSeek-V3) to disproportionately prefer and rank their own generated outputs higher than those of other models."
+    },
+    {
+      "target": "Positional bias",
+      "methodology": "Swapping the order of translated samples in pairwise evaluations (two battles per pair) to detect and mitigate the tendency of human annotators and LLM judges to arbitrarily favor the first presented option."
+    }
+  ],
+  "primary_bias_target": "Language bias"
+}

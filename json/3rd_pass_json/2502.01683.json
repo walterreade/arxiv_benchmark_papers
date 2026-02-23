@@ -1,0 +1,16 @@
+{
+  "filename": "2502.01683.pdf",
+  "title": "LLM-Powered Benchmark Factory: Reliable, Generic, and Efficient",
+  "arxiv_url": "https://arxiv.org/pdf/2502.01683",
+  "bias_targets": [
+    {
+      "target": "LLM-as-a-judge Bias (Length Bias)",
+      "methodology": "Calculating Pearson and partial correlations between LLM judge scores and evaluation factors like sample difficulty, sample length, and the length of the judge's rationale to identify bias, then using a multiple regression model with judge length as a covariate to compute debiased scores."
+    },
+    {
+      "target": "Self-enhancement Bias",
+      "methodology": "Substituting the benchmark generator models with a completely different, independent LLM (Qwen-Plus) to serve as the judge during evaluations, mitigating the tendency of models to favorably rate their own outputs."
+    }
+  ],
+  "primary_bias_target": "LLM-as-a-judge Bias (Length Bias)"
+}

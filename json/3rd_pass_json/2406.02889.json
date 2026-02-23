@@ -1,0 +1,20 @@
+{
+  "filename": "2406.02889.pdf",
+  "title": "Language-guided Detection and Mitigation of Unknown Dataset Bias",
+  "arxiv_url": "https://arxiv.org/pdf/2406.02889",
+  "bias_targets": [
+    {
+      "target": "Color bias (Spurious correlation)",
+      "methodology": "Evaluating digit classification accuracy on the CMNIST dataset, where specific colors are strongly correlated with specific digits, causing the model to overfit to the color attribute."
+    },
+    {
+      "target": "Background/Context bias (Spurious correlation)",
+      "methodology": "Evaluating bird species classification on the Waterbirds dataset, where backgrounds (water or land) are strongly correlated with bird types, testing the model's reliance on context rather than the actual object."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating hair color classification (blonde vs. non-blonde) on the CelebA facial image dataset, where gender is spuriously correlated with the target attribute (e.g., blonde hair is predominantly associated with females in the dataset)."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

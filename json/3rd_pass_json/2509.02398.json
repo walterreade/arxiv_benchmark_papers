@@ -1,0 +1,20 @@
+{
+  "filename": "2509.02398.pdf",
+  "title": "TTA-Bench: A Comprehensive Benchmark for Evaluating Text-to-Audio Models",
+  "arxiv_url": "https://arxiv.org/pdf/2509.02398",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluated using two approaches: 1) Fairness evaluation by constructing paired prompts with gender-specific pronouns to assess quality consistency across male and female subgroups, and 2) Bias evaluation by providing explicitly gender-neutral prompts and measuring skewed associations or gender favoritism in the generated audio outputs using Median Absolute Deviation (MAD)."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Evaluated by systematically replacing subject terms in prompts with age-specific words to create demographic subgroups (Old, Middle-aged, Youth, and Child) and measuring the variation in quality evaluation metrics across these groups."
+    },
+    {
+      "target": "Language bias",
+      "methodology": "Evaluated by constructing prompt templates specifying different target languages (English, Chinese, and various low-resource languages like German, Spanish, Korean, Arabic, and Hindi) to compare the consistency of model performance and output fairness across languages."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

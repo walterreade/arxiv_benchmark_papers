@@ -1,0 +1,32 @@
+{
+  "filename": "2202.04800.pdf",
+  "title": "The Abduction of Sherlock Holmes: A Dataset for Visual Abductive Reasoning",
+  "arxiv_url": "https://arxiv.org/pdf/2202.04800",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Manual close reading of a random sample of 250 dataset inferences to identify assumptions about perceived gender and pronoun usage, as well as filtering 30K samples through the Perspective API to find sexualized or non-traditionally-gendered commentary."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Manual examination of dataset inferences to identify speculation about an individual's race or color based on visual clues (e.g., guessing race based on a sweater logo)."
+    },
+    {
+      "target": "Nationality bias",
+      "methodology": "Manual review of sampled annotations to find assumptions about a person's country-of-origin based on visual items (e.g., assuming an individual is from Morocco because they are wearing a fez)."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Manual qualitative inspection of annotator inferences to identify age-related assumptions and language (e.g., assuming someone is an 'old man' based on visual context)."
+    },
+    {
+      "target": "Weight bias",
+      "methodology": "Passing 30K samples through the Perspective API for toxicity detection, followed by a manual review of the top 50 most toxic instances, which revealed cases of weight stigmatization."
+    },
+    {
+      "target": "Mental health bias",
+      "methodology": "Passing 30K samples through the Perspective API and manually reviewing the most toxic outputs to identify insensitivity towards mental illness."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

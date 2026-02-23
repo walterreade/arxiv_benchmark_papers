@@ -1,0 +1,32 @@
+{
+  "filename": "2506.16724.pdf",
+  "title": "The Role of Model Confidence on Bias Effects in Measured Uncertainties for Vision-Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2506.16724",
+  "bias_targets": [
+    {
+      "target": "Phrasing bias",
+      "methodology": "Evaluating model sensitivity to arbitrary linguistic choices by rephrasing prompts while preserving the underlying semantic meaning."
+    },
+    {
+      "target": "Positional bias",
+      "methodology": "Measuring the model's preference for certain option locations by shuffling the positions of input options in multiple-choice formats."
+    },
+    {
+      "target": "Label bias",
+      "methodology": "Assessing the model's reliance on specific token assignments by shuffling the categorical labels (e.g., 0, 1, 2, 3) assigned to the options."
+    },
+    {
+      "target": "Shape bias",
+      "methodology": "Testing vision-language models' reliance on shape cues by intentionally distorting the shapes of objects through resizing images with varying length-to-width ratios."
+    },
+    {
+      "target": "Orientation bias",
+      "methodology": "Evaluating the effect of image orientation on model predictions by rotating input images by varying degrees (e.g., -45° to 45°)."
+    },
+    {
+      "target": "Low-level feature bias",
+      "methodology": "Measuring the model's reliance on low-level visual features like texture and lighting by injecting random Gaussian noise into the images to disrupt local features."
+    }
+  ],
+  "primary_bias_target": "Prompt-introduced bias"
+}

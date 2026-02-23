@@ -1,0 +1,24 @@
+{
+  "filename": "2602.17445.pdf",
+  "title": "ABCD: All Biases Come Disguised",
+  "arxiv_url": "https://arxiv.org/pdf/2602.17445",
+  "bias_targets": [
+    {
+      "target": "Label bias",
+      "methodology": "Evaluating model performance fluctuations when standard letter labels (e.g., A, B, C, D) are replaced with uniform, unordered labels like dashes or emojis across various benchmarks."
+    },
+    {
+      "target": "Position bias",
+      "methodology": "Executing answer-moving attacks by permuting the position of the ground-truth answer in multiple-choice questions and measuring the resulting variance in model accuracy."
+    },
+    {
+      "target": "Few-shot prompt distribution bias",
+      "methodology": "Analyzing model reliance on the pattern or distribution of correct answers in few-shot exemplars, specifically using a synthetic diagnostic dataset (NonsenseQA) composed of random words."
+    },
+    {
+      "target": "Prediction-mode bias",
+      "methodology": "Comparing model performance and robustness when required to output a single choice symbol versus generating a full-text answer that is then mapped to candidate options using semantic similarity."
+    }
+  ],
+  "primary_bias_target": "Multiple-Choice Question (MCQ) Evaluation Bias"
+}

@@ -1,0 +1,48 @@
+{
+  "filename": "2510.12462.pdf",
+  "title": "Evaluating and Mitigating LLM-as-a-judge Bias in Communication Systems",
+  "arxiv_url": "https://arxiv.org/pdf/2510.12462",
+  "bias_targets": [
+    {
+      "target": "Rich Content (Elaboration) Bias",
+      "methodology": "Injecting unnecessary elaboration, extensive context, or flowery language into clean Q&A answers using GPT-4o, and measuring how point-wise scores from LLM judges change compared to concise answers."
+    },
+    {
+      "target": "Verbosity (Length) Bias",
+      "methodology": "Iteratively lengthening answers without adding new semantic value to evaluate if LLM judges assign higher scores simply based on response volume."
+    },
+    {
+      "target": "Chain-of-Thought (CoT) Bias",
+      "methodology": "Formatting answers with explicit, step-by-step reasoning processes to test whether judges preferentially score them differently than direct conclusions."
+    },
+    {
+      "target": "Sentiment (Tone) Bias",
+      "methodology": "Modifying the emotional tone of answers to be overly positive, polite, or empathetic to assess if LLM judges confuse emotional wording with higher answer quality."
+    },
+    {
+      "target": "Authority (Reference) Bias",
+      "methodology": "Introducing formal citations or references to expert sources (even if fabricated or irrelevant) to test if judges over-rely on authority cues."
+    },
+    {
+      "target": "Factual Error (Misinformation) Bias",
+      "methodology": "Injecting subtle factual mistakes into confidently phrased answers to determine if LLM judges fail to penalize incorrect content."
+    },
+    {
+      "target": "Diversity and Gender Bias",
+      "methodology": "Adding cues regarding the responder's demographic group or gender into the text to observe if LLM judges alter their scores based on ingrained stereotypes or identity representations."
+    },
+    {
+      "target": "Bandwagon (Popularity) Bias",
+      "methodology": "Aligning answers with majority opinions or stating that 'most people think X' to evaluate if judges give extra credit for perceived consensus."
+    },
+    {
+      "target": "Distraction (Irrelevant Detail) Bias",
+      "methodology": "Adding off-topic facts, extraneous anecdotes, or unrelated descriptions to see if judges are subconsciously impressed and reward the distracted content."
+    },
+    {
+      "target": "Compassion-Fade (Source Identity) Bias",
+      "methodology": "Attributing identical answers to different sources (e.g., a reputed AI model vs. an unknown model) to test if judges unfairly score based on the perceived reputation of the author."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

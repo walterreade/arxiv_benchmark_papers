@@ -1,0 +1,20 @@
+{
+  "filename": "2510.10846.pdf",
+  "title": "DUAL-Bench: Measuring Over-Refusal and Robustness in Vision-Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2510.10846",
+  "bias_targets": [
+    {
+      "target": "Refusal bias",
+      "methodology": "Evaluating 'over-refusal' by measuring the rate at which models unnecessarily refuse benign instructions that are accompanied by sensitive or harmful visual contexts, using automated LLM-as-a-Judge pipelines to compute Refusal Rates (RR) and Safe Completion Rates (SCR)."
+    },
+    {
+      "target": "Language bias",
+      "methodology": "Applying cross-lingual text perturbations (translating instructions into Urdu, Arabic, and Chinese) to measure disparities and degradation in the models' safety alignment, robustness, and refusal behaviors compared to English prompts."
+    },
+    {
+      "target": "Topic bias",
+      "methodology": "Comparing model over-refusal and direct answer rates across 12 distinct hazard categories (e.g., Suicide & Self-Harm vs. Intellectual Property) to identify disproportionate alignment sensitivity, over-caution, or under-sensitivity in specific topical domains."
+    }
+  ],
+  "primary_bias_target": "Refusal bias"
+}

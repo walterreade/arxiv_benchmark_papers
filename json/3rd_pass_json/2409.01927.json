@@ -1,0 +1,16 @@
+{
+  "filename": "2409.01927.pdf",
+  "title": "From Grounding to Planning: Benchmarking Bottlenecks in Web Agents",
+  "arxiv_url": "https://arxiv.org/pdf/2409.01927",
+  "bias_targets": [
+    {
+      "target": "Text length bias",
+      "methodology": "Analyzing the distribution of word counts in ground truth candidates and implementing a length-aware sampling strategy (grouping by 1-3, 4-6, and 7+ words) to counteract the LLM's tendency to disproportionately favor candidate elements with longer texts."
+    },
+    {
+      "target": "Spatial bias",
+      "methodology": "Observing the physical coordinates of ground truth elements on web pages to identify a clustering effect towards the top and left sides, and countering this by splitting candidates based on their Y-axis position and applying an over-sampling strategy for elements located in the upper 700 pixels."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

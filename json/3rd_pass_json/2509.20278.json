@@ -1,0 +1,20 @@
+{
+  "filename": "2509.20278.pdf",
+  "title": "Quantifying LLM Biases Across Instruction Boundary in Mixed Question Forms",
+  "arxiv_url": "https://arxiv.org/pdf/2509.20278",
+  "bias_targets": [
+    {
+      "target": "Label Bias",
+      "methodology": "Measuring the output distribution (Output Rate) and accuracy difference between frequently seen 'Dense' labels (e.g., True/False, Single Option) and infrequent 'Sparse' labels (e.g., Unknown, None Correct, Multiple Options) across mixed question forms."
+    },
+    {
+      "target": "Instruction Bias",
+      "methodology": "Systematically modifying user prompts across an 'Instruction Boundary' framework (Sufficient, Redundant, and Insufficient settings) to evaluate how prompt variations (like vagueness, missing options, or prompt-polishing) induce reasoning errors and output shifts."
+    },
+    {
+      "target": "Conformity Bias",
+      "methodology": "Testing how models adapt their answers when user instructions explicitly suggest a specific label (dense or sparse) or when exposed to redundant, misleading information and skewed few-shot examples."
+    }
+  ],
+  "primary_bias_target": "Instruction Bias"
+}

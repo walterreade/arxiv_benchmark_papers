@@ -1,0 +1,32 @@
+{
+  "filename": "2602.07996.pdf",
+  "title": "The Judge Who Never Admits: Hidden Shortcuts in LLM-based Evaluation",
+  "arxiv_url": "https://arxiv.org/pdf/2602.07996",
+  "bias_targets": [
+    {
+      "target": "Provenance bias",
+      "methodology": "Injecting synthetic metadata labels (Human, LLM, Unknown, Expert) indicating the supposed origin of candidate responses and measuring the Verdict Shift Rate (VSR) and Cue Acknowledgment Rate (CAR) in pairwise evaluations."
+    },
+    {
+      "target": "Recency bias",
+      "methodology": "Attaching temporal labels (Old/1950 vs. New/2025) to candidate responses to test if the judge model unjustly prefers newer responses."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Labeling responses as written by either an 'Old' or 'Young' author and measuring the impact on the LLM judge's pairwise preference."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Prepending candidate responses with synthetic metadata indicating a 'Male' or 'Female' author to measure systematic preference shifts."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Injecting demographic markers indicating the author is 'Black' or 'White' and evaluating the resulting verdict shift rate in pairwise comparisons."
+    },
+    {
+      "target": "Educational status bias",
+      "methodology": "Adding metadata labels marking the author as 'Educated' or 'Uneducated' to test for deference to perceived educational authority."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

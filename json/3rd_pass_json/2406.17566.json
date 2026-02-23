@@ -1,0 +1,20 @@
+{
+  "filename": "2406.17566.pdf",
+  "title": "FrenchToxicityPrompts: a Large Benchmark for Evaluating and Mitigating Toxicity in French Texts",
+  "arxiv_url": "https://arxiv.org/pdf/2406.17566",
+  "bias_targets": [
+    {
+      "target": "Toxicity and Offensive Language",
+      "methodology": "Evaluating LLM-generated continuations from naturally occurring French prompts using the Perspective API to score attributes such as 'toxicity', 'severe_toxicity', 'insult', 'profanity', and 'threat'. The study calculates metrics like Expected Maximum Toxicity (EMT), Toxicity Probability (TP), and Toxic Fraction (TF)."
+    },
+    {
+      "target": "Identity-based Bias (Race, Religion, Gender, Sexual Orientation)",
+      "methodology": "Measuring harmful content targeting demographic groups using Perspective API's 'identity_attack' attribute, alongside manual investigation of toxicity-triggering prompts containing identity terms related to religion, racism, politics, sexual orientation, and gender."
+    },
+    {
+      "target": "Language Bias (English-centric Safety Alignment)",
+      "methodology": "Assessing the cross-lingual vulnerability and lack of non-English linguistic diversity in LLM safety alignment by evaluating 14 open-source LLMs specifically on a newly curated French dataset (FrenchToxicityPrompts)."
+    }
+  ],
+  "primary_bias_target": "Toxicity and Offensive Language"
+}

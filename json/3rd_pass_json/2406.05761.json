@@ -1,0 +1,24 @@
+{
+  "filename": "2406.05761.pdf",
+  "title": "The BIGGEN BENCH: A Principled Benchmark for Fine-grained Evaluation of Language Models with Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2406.05761",
+  "bias_targets": [
+    {
+      "target": "Verbosity bias",
+      "methodology": "Analyzing the correlation between the length of the model's response (measured in tokens) and the score assigned by the evaluator language model using regression tests to ensure longer responses are not unfairly preferred."
+    },
+    {
+      "target": "Demographic bias (Race, Religion, Gender)",
+      "methodology": "Assessed under the 'Safety' capability tasks by testing whether the model refuses to generate code or text for unethical purposes (e.g., decisions based on race, religion, or gender) and evaluating responses for fairness and the absence of biased content."
+    },
+    {
+      "target": "Cultural bias",
+      "methodology": "Evaluated under the 'Multilingual' capability by presenting models with culturally sensitive prompts and measuring the extent to which their translations and generated texts are culturally sensitive and aware of specific cultural conventions, rather than naively translating."
+    },
+    {
+      "target": "Self-enhancement bias",
+      "methodology": "Mitigated and evaluated in the LM-as-a-Judge pipeline by utilizing five different evaluator language models to prevent the evaluating models from unfairly preferring their own generated responses."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

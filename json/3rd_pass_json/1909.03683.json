@@ -1,0 +1,28 @@
+{
+  "filename": "1909.03683.pdf",
+  "title": "Don't Take the Easy Way Out: Ensemble Based Methods for Avoiding Known Dataset Biases",
+  "arxiv_url": "https://arxiv.org/pdf/1909.03683",
+  "bias_targets": [
+    {
+      "target": "Spurious correlation bias",
+      "methodology": "Evaluating models on a synthetic MNLI dataset where artificially added indicator tokens correlate strongly with labels in the training set but are randomized in the test set."
+    },
+    {
+      "target": "Language prior bias",
+      "methodology": "Evaluating on the VQA-CP v2.0 dataset, where correlations between question types and answers differ between train and test sets, forcing models to overcome reliance on question-type text priors instead of image evidence."
+    },
+    {
+      "target": "Lexical overlap bias",
+      "methodology": "Evaluating on the HANS dataset to challenge NLI models that naively rely on word overlap heuristics, using adversarial test examples where premises and hypotheses share words but do not entail each other."
+    },
+    {
+      "target": "Distractor bias (Lexical matching)",
+      "methodology": "Evaluating on Adversarial SQuAD by adding distractor sentences to the context that have high word overlap with the question but do not contain the answer, testing the model's reliance on simple TF-IDF or keyword matching."
+    },
+    {
+      "target": "Entity-type prior bias",
+      "methodology": "Evaluating on TriviaQA-CP, a changing-prior QA dataset built by holding out specific entity types (Person or Location) during training, measuring the model's reliance on learned Named Entity Recognition (NER) priors rather than reading comprehension."
+    }
+  ],
+  "primary_bias_target": "Dataset bias (Spurious correlations)"
+}

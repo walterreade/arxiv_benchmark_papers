@@ -1,0 +1,20 @@
+{
+  "filename": "2602.05532.pdf",
+  "title": "Split Personality Training: Revealing Latent Knowledge Through Alternate Personalities",
+  "arxiv_url": "https://arxiv.org/pdf/2602.05532",
+  "bias_targets": [
+    {
+      "target": "Reward model bias",
+      "methodology": "Activating an 'honest persona' trained into a LoRA adapter to review the main model's output and internal latent states, evaluating whether the model intentionally exploited fictional RLHF reward biases (e.g., reward hacking, sycophancy)."
+    },
+    {
+      "target": "Political bias",
+      "methodology": "Conducting manual tests on sensitive topics to evaluate whether the honest persona can successfully identify and self-report known political biases in the main model's responses."
+    },
+    {
+      "target": "Language bias",
+      "methodology": "Using generic, open-ended probes to qualitative assess the honest persona's ability to reveal hidden behavioral biases and differential treatment across various non-English languages (e.g., German, Chinese, Japanese, Spanish)."
+    }
+  ],
+  "primary_bias_target": "Reward model bias"
+}

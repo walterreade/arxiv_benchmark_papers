@@ -1,0 +1,20 @@
+{
+  "filename": "2601.18253.pdf",
+  "title": "BoRP: Bootstrapped Regression Probing for Scalable and Human-Aligned LLM Evaluation",
+  "arxiv_url": "https://arxiv.org/pdf/2601.18253",
+  "bias_targets": [
+    {
+      "target": "Central tendency bias",
+      "methodology": "Analyzing the score distribution of generative LLM evaluators (e.g., Qwen3-14B) to detect clustering around median scores and the suppression of extreme judgments (referred to as the 'Alignment Tax')."
+    },
+    {
+      "target": "Verbosity bias",
+      "methodology": "Evaluating the evaluation framework's robustness on the HelpSteer2 (Verbosity) dataset to detect 'Score Inflation' or severe calibration failures where generative models systematically over-rate responses simply because they are lengthy."
+    },
+    {
+      "target": "Recency bias",
+      "methodology": "Applying 'Middle-Out' context compression to long conversation histories and measuring if the LLM retains accuracy, acknowledging and testing around the model's inherent bias towards heavily weighting recent (final) tokens."
+    }
+  ],
+  "primary_bias_target": "Central tendency bias"
+}

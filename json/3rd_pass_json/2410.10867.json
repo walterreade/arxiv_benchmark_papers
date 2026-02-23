@@ -1,0 +1,20 @@
+{
+  "filename": "2410.10867.pdf",
+  "title": "Mitigating the Impact of Reference Quality on Evaluation of Summarization Systems with Reference-Free Metrics",
+  "arxiv_url": "https://arxiv.org/pdf/2410.10867",
+  "bias_targets": [
+    {
+      "target": "Reference quality bias",
+      "methodology": "Evaluating the robustness of standard and proposed evaluation metrics by gradually replacing reference summaries with noisy, altered references (random, lead, or tail sentences from the source document) and measuring the resulting drop in correlation with human judgment."
+    },
+    {
+      "target": "Length bias",
+      "methodology": "Computing summary-level Pearson and Spearman correlations between evaluation metrics and spurious correlates, specifically summary length, to ensure the metric is not artificially rewarding verbosity."
+    },
+    {
+      "target": "Extractiveness bias",
+      "methodology": "Measuring the correlation of the metric against summary coverage, density, and compression ratio to determine if the score spuriously rewards summaries purely based on lexical overlap or extractive extraction rather than true relevance."
+    }
+  ],
+  "primary_bias_target": "Reference quality bias"
+}

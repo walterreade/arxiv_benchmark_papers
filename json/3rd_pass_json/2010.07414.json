@@ -1,0 +1,20 @@
+{
+  "filename": "2010.07414.pdf",
+  "title": "On Cross-Dataset Generalization in Automatic Detection of Online Abuse",
+  "arxiv_url": "https://arxiv.org/pdf/2010.07414",
+  "bias_targets": [
+    {
+      "target": "Topic bias (Selection bias)",
+      "methodology": "Used unsupervised topic modeling (Latent Dirichlet Allocation) to extract and categorize topics from the training dataset. Evaluated how the distribution of domain-specific versus general/identity-related topics impacts a BERT classifier's cross-dataset generalization on out-of-domain offensive language datasets."
+    },
+    {
+      "target": "Task formulation bias",
+      "methodology": "Trained a toxicity classifier on a dataset with a broad, general definition of toxicity (Wikipedia Detox) and measured its zero-shot generalization performance on out-of-domain test sets annotated with different, specific definitions of abuse, such as sexism, racism, and hate speech."
+    },
+    {
+      "target": "Class imbalance bias (Selection bias)",
+      "methodology": "Re-sampled the training dataset to create subsets with varying ratios of toxic to normal instances (e.g., balanced 1:1 vs. imbalanced 1:10) and measured the resulting trade-off between True Positive and True Negative rates on out-of-domain evaluation datasets."
+    }
+  ],
+  "primary_bias_target": "Topic bias (Selection bias)"
+}

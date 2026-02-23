@@ -1,0 +1,20 @@
+{
+  "filename": "2601.03699.pdf",
+  "title": "RedBench: A Universal Dataset for Comprehensive Red Teaming of Large Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2601.03699",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluated by prompting models with adversarial inputs from aggregated datasets like DeMET and GEST, calculating the Attack Success Rate (ASR) of generating gender stereotypes or biased decisions using an LLM judge (Llama-Guard-3-8B)."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Measured as part of the broader 'Bias Content' risk category using adversarial prompts designed to elicit racial stereotypes and unfair treatment, with successful bypasses of safety mechanisms identified by an LLM judge (Llama-Guard-3-8B)."
+    },
+    {
+      "target": "Protected characteristic bias",
+      "methodology": "Assessed under the general 'Bias Content' category by measuring the Attack Success Rate (ASR) of adversarial prompts that promote or reinforce stereotypes based on various protected characteristics, utilizing Llama-Guard-3-8B as an automated safety evaluator."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

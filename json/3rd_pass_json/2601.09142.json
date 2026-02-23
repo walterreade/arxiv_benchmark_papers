@@ -1,0 +1,16 @@
+{
+  "filename": "2601.09142.pdf",
+  "title": "EvasionBench: Detecting Evasive Answers in Financial Q&A via Multi-Model Consensus and LLM-as-Judge",
+  "arxiv_url": "https://arxiv.org/pdf/2601.09142",
+  "bias_targets": [
+    {
+      "target": "Self-preference bias",
+      "methodology": "Calculating the selection frequency of the LLM judge (Claude Opus 4.5) choosing its own independently generated labels versus a different model's labels (Gemini-3-Flash) during disagreement resolution to check if the judge unfairly favors its own outputs."
+    },
+    {
+      "target": "Single-model annotation bias",
+      "methodology": "Comparing the training loss and held-out test accuracy of a student model trained purely on a single teacher's labels (Opus-only baseline) versus a model trained on multi-model consensus labels to demonstrate how distillation from a single model causes overfitting to that specific model's idiosyncrasies."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

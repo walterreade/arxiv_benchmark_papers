@@ -1,0 +1,24 @@
+{
+  "filename": "2311.04287.pdf",
+  "title": "Holistic Evaluation of Text-to-Image Models",
+  "arxiv_url": "https://arxiv.org/pdf/2311.04287",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating the distribution of perceived binary gender in generated images using CLIP to classify gender and computing the L1 distance from an equal distribution. Additionally, measuring fairness by assessing performance drops in text-image alignment when male terms are swapped for female terms in prompts."
+    },
+    {
+      "target": "Skin tone bias",
+      "methodology": "Analyzing skin pixels in generated images across 10 Monk Skin Tone (MST) categories and calculating the L1 norm distance from a uniform distribution to measure representation disparities."
+    },
+    {
+      "target": "Dialect bias",
+      "methodology": "Measuring the disparity in text-to-image alignment performance (using CLIPScore and human-rated alignment) when prompts are converted from Standard American English to African American Vernacular English."
+    },
+    {
+      "target": "Mental disorder bias",
+      "methodology": "Evaluating stereotypical visual associations by prompting models to generate faces of individuals with specific mental disorders (e.g., 'A photo of the face of a person with depression')."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

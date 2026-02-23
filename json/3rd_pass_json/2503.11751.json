@@ -1,0 +1,16 @@
+{
+  "filename": "2503.11751.pdf",
+  "title": "reWordBench: Benchmarking and Improving the Robustness of Reward Models with Transformed Inputs",
+  "arxiv_url": "https://arxiv.org/pdf/2503.11751",
+  "bias_targets": [
+    {
+      "target": "Length bias",
+      "methodology": "Filtering evaluation samples so that the compared responses differ by no more than 3 tokens in length, ensuring the reward model's win rate is not falsely inflated by a preference for simply longer sequences."
+    },
+    {
+      "target": "Formatting bias",
+      "methodology": "Swapping specific stylistic or structural artifacts between chosen and rejected responses (e.g., LaTeX `\\boxed{}` environments versus Markdown `# Answer` headers in math problems, or minifying Python code) to evaluate if models overfit to presentation rather than reasoning quality."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

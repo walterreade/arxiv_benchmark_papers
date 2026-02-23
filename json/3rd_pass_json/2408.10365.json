@@ -1,0 +1,24 @@
+{
+  "filename": "2408.10365.pdf",
+  "title": "AI-Driven Review Systems: Evaluating LLMs in Scalable and Bias-Aware Academic Reviews",
+  "arxiv_url": "https://arxiv.org/pdf/2408.10365",
+  "bias_targets": [
+    {
+      "target": "Position bias",
+      "methodology": "Creating augmented datasets by switching the order of the response columns in the prompt to mitigate bias related to the sequence in which responses are presented during inference."
+    },
+    {
+      "target": "Verbosity bias",
+      "methodology": "Modifying the predicted probabilities post-processing by applying penalties based on the length of the responses to counteract the model's preference for longer text."
+    },
+    {
+      "target": "Sentiment bias",
+      "methodology": "Using a fine-tuned DistilBERT model to penalize responses with negative sentiment or refusal patterns (e.g., 'I am sorry', 'I cannot provide') during post-processing."
+    },
+    {
+      "target": "Self-enhancement bias",
+      "methodology": "Training the adjudicator model on a curated dataset and incorporating alignment techniques to prevent it from unfairly favoring its own outputs, similar LLMs, or self-promoting responses."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

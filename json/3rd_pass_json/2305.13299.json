@@ -1,0 +1,28 @@
+{
+  "filename": "2305.13299.pdf",
+  "title": "Measuring Inductive Biases of In-Context Learning with Underspecified Demonstrations",
+  "arxiv_url": "https://arxiv.org/pdf/2305.13299",
+  "bias_targets": [
+    {
+      "target": "Inductive bias / Feature bias",
+      "methodology": "Constructing underspecified demonstrations where two distinct text features (e.g., sentiment vs. punctuation, entailment vs. lexical overlap) perfectly predict the label, and testing on disambiguating examples to determine which feature the model inherently prefers (measured via h-accuracy)."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating if models rely on gender features (mentions of female vs. male) instead of actual toxicity by prompting them with underspecified examples where gender perfectly correlates with toxicity labels, and measuring predictions on disambiguating test sets."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Evaluating if models erroneously rely on sexual orientation features (mentions of LGBTQ vs. non-LGBTQ) over actual toxicity using underspecified in-context demonstrations and disambiguating test examples."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluating if models rely on religious identity features (mentions of Muslim vs. Christian/Jewish) over actual toxicity using underspecified in-context demonstrations and disambiguating test examples."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluating if models rely on racial identity features (mentions of Black vs. White, Asian vs. White) over actual toxicity using underspecified in-context demonstrations and disambiguating test examples."
+    }
+  ],
+  "primary_bias_target": "Inductive bias / Feature bias"
+}

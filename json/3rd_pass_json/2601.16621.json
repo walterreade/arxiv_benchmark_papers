@@ -1,0 +1,20 @@
+{
+  "filename": "2601.16621.pdf",
+  "title": "How Does Personalized Memory Shape LLM Behavior? Benchmarking Rational Preference Utilization in Personalized Assistants",
+  "arxiv_url": "https://arxiv.org/pdf/2601.16621",
+  "bias_targets": [
+    {
+      "target": "Attraction bias",
+      "methodology": "Mechanistic analysis of next-token probability distributions to measure how the presence of irrelevant preference tokens in the context window artificially inflates the probability of conceptually related tokens during response generation."
+    },
+    {
+      "target": "Underpersonalization bias (UPB)",
+      "methodology": "Generative evaluation using an LLM-as-a-judge and human annotators to assign a severity score (0-5) based on whether the model incorrectly outputs standard, non-personalized content when user preferences should have been applied."
+    },
+    {
+      "target": "Over-personalization bias (Filter Bubble / Redundant Information)",
+      "methodology": "Multi-granularity evaluation involving discriminative intent classification and generative error-pattern analysis to detect when a model inappropriately forces irrelevant user preferences into responses."
+    }
+  ],
+  "primary_bias_target": "Attraction bias"
+}

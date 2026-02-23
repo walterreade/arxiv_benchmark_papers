@@ -1,0 +1,20 @@
+{
+  "filename": "2601.23204.pdf",
+  "title": "TSAQA: Time Series Analysis Question And Answering Benchmark",
+  "arxiv_url": "https://arxiv.org/pdf/2601.23204",
+  "bias_targets": [
+    {
+      "target": "Smoothness bias",
+      "methodology": "Calculating the 'Smoothness Gap' by comparing the boundary distance (Euclidean distance between the last time step of a preceding patch and the first time step of its succeeding patch) of ground truth sequences versus model-predicted sequences to evaluate if models over-smooth legitimate temporal discontinuities."
+    },
+    {
+      "target": "Positional bias (Choice selection bias)",
+      "methodology": "Analyzing the frequency distribution of the first letters (A, B, C, D) in model outputs for puzzling (PZ) format questions to detect if models exhibit unwarranted preferences for specific choices (e.g., choosing 'A' or 'C' disproportionately) when answering incorrectly."
+    },
+    {
+      "target": "Magnitude bias",
+      "methodology": "Evaluating if models exploit absolute scale differences (magnitude variance) across heterogeneous domains as shortcuts to identify the source domain rather than performing genuine structural reasoning. The authors mitigate this bias using z-score normalization."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

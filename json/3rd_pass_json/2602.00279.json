@@ -1,0 +1,20 @@
+{
+  "filename": "2602.00279.pdf",
+  "title": "Benchmarking Uncertainty Calibration in Large Language Model Long-Form Question Answering",
+  "arxiv_url": "https://arxiv.org/pdf/2602.00279",
+  "bias_targets": [
+    {
+      "target": "Selection bias",
+      "methodology": "Comparing the aggregated probability mass assigned to each multiple-choice label (e.g., A, B, C, D) across datasets against the ground truth distribution to identify systematic model preferences for specific answers regardless of semantic content."
+    },
+    {
+      "target": "Positional bias",
+      "methodology": "Evaluating systematic preferences for certain label positions in multiple-choice formats, which the researchers isolate and mitigate using the APriCoT counterfactual prompting strategy."
+    },
+    {
+      "target": "Response bias",
+      "methodology": "Analyzing the distribution of confidence scores assigned by methods like P(True) and Verbalized Uncertainty to identify overwhelming polarization, such as a model's tendency to default to near 1.0 confidence scores irrespective of actual accuracy."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

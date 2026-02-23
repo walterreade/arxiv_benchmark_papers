@@ -1,0 +1,20 @@
+{
+  "filename": "2405.17814.pdf",
+  "title": "FAIntbench: A Holistic and Precise Benchmark for Bias Evaluation in Text-to-Image Models",
+  "arxiv_url": "https://arxiv.org/pdf/2405.17814",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Generating images from implicit and explicit prompts covering occupations, characteristics, and social relations, then classifying the gender (male/female) of the depicted individuals using an optimized CLIP model. Implicit bias is measured by comparing the gender distribution of generated images to real-world demographic statistics, while explicit bias is measured by the model's adherence to explicitly requested gender traits."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Generating images from diverse prompts and classifying the race (European, African, East-Asian, South-Asian, Latino) of depicted individuals using an optimized CLIP model. Implicit bias is quantified by calculating the cosine similarity between the generated racial distribution and real-world demographic statistics, while explicit bias is measured by the model's ability to correctly generate the specifically requested race."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Generating images from diverse prompts and classifying the age (young, middle-aged, elderly) of depicted individuals using an optimized CLIP model. Implicit bias is evaluated by comparing the generation distribution against real-world demographic statistics, while explicit bias is measured by the proportion of images that correctly adhere to specifically requested age attributes."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

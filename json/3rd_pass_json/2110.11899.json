@@ -1,0 +1,20 @@
+{
+  "filename": "2110.11899.pdf",
+  "title": "Challenges in Procedural Multimodal Machine Comprehension: A Novel Way To Benchmark",
+  "arxiv_url": "https://arxiv.org/pdf/2110.11899",
+  "bias_targets": [
+    {
+      "target": "Dataset bias (Question overlap)",
+      "methodology": "Evaluating model reliance on overlapping information by comparing performance on datasets generated with strict constraints on the maximum number of questions sampled from a single context (recipe) and minimizing step overlap."
+    },
+    {
+      "target": "Dataset bias (Lack of hard negatives)",
+      "methodology": "Measuring the exploitation of naive visual cues by evaluating models on datasets where negative choices are sampled from varying distances to the correct choice in latent feature space, specifically enforcing semantically similar 'hard' negatives."
+    },
+    {
+      "target": "Dataset bias (Spurious feature proximity)",
+      "methodology": "Evaluating model reliance on odd-one-out shortcuts by testing performance on datasets where at least one incorrect choice is constrained to be closer or similarly close to the question in feature space as the correct choice."
+    }
+  ],
+  "primary_bias_target": "Dataset bias"
+}

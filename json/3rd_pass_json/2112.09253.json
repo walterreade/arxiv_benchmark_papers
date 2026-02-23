@@ -1,0 +1,20 @@
+{
+  "filename": "2112.09253.pdf",
+  "title": "Logically at Factify 2022: Multimodal Fact Verification",
+  "arxiv_url": "https://arxiv.org/pdf/2112.09253",
+  "bias_targets": [
+    {
+      "target": "Source Bias (Image Domain Bias)",
+      "methodology": "Extracting image link domains from document samples in the training set and analyzing their distribution and correlation across the five entailment categories to identify if specific sources disproportionately predict specific labels."
+    },
+    {
+      "target": "Hypothesis-only Bias (Annotation Bias)",
+      "methodology": "Conducting a hypothesis-only reliance test by training a baseline model using only the hypothesis (claim) information without the premise. The resulting accuracy is measured to verify the presence of data artifacts that allow the model to guess the correct label better than random chance."
+    },
+    {
+      "target": "Word Overlap Bias",
+      "methodology": "Computing and comparing the word overlap ratio distribution between textual claims and evidence documents across different entailment categories in the training and validation sets."
+    }
+  ],
+  "primary_bias_target": "Dataset Bias"
+}

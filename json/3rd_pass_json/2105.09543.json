@@ -1,0 +1,20 @@
+{
+  "filename": "2105.09543.pdf",
+  "title": "Manual Evaluation Matters: Reviewing Test Protocols of Distantly Supervised Relation Extraction",
+  "arxiv_url": "https://arxiv.org/pdf/2105.09543",
+  "bias_targets": [
+    {
+      "target": "Evaluation bias",
+      "methodology": "Comparing model performance on noisy, distantly supervised (auto-labeled) test sets against manually human-annotated test sets to expose the performance skew and false-positive errors inherent in the standard automatic evaluation protocols."
+    },
+    {
+      "target": "Entity heuristic bias",
+      "methodology": "Masking entity mentions during training and inference (e.g., using a BERT-M variant) to verify whether models overfit to shallow heuristics and prior knowledge associated with entity names rather than learning actual relational semantics from the text."
+    },
+    {
+      "target": "Class imbalance bias",
+      "methodology": "Reporting and analyzing both Macro F1 and Micro F1 scores to evaluate whether model performance is disproportionately skewed by heavily populated majority relation classes."
+    }
+  ],
+  "primary_bias_target": "Evaluation bias"
+}

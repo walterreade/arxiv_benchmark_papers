@@ -1,0 +1,24 @@
+{
+  "filename": "2406.08598.pdf",
+  "title": "Language Model Council: Democratically Benchmarking Foundation Models on Highly Subjective Tasks",
+  "arxiv_url": "https://arxiv.org/pdf/2406.08598",
+  "bias_targets": [
+    {
+      "target": "Position bias",
+      "methodology": "Calculating how often an LLM judge favors a specific position (first or second) by evaluating pairwise positional consistency across order-swapped response pairings."
+    },
+    {
+      "target": "Self-enhancement bias",
+      "methodology": "Measuring the difference between an LLM's rating of its own generated responses (affinity to itself) and the overall council's consensus score for that same model."
+    },
+    {
+      "target": "Length bias",
+      "methodology": "Calculating the R-squared value of a linear regression model that predicts the evaluation score assigned by an LLM judge based on the average word length of the evaluated responses."
+    },
+    {
+      "target": "Successor bias",
+      "methodology": "Observing how the selection of a specific reference model in arena-style pairwise evaluations inadvertently inflates the win rates of newer or larger models from the same model family."
+    }
+  ],
+  "primary_bias_target": "LLM Judge Bias"
+}

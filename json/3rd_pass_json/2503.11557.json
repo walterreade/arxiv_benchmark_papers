@@ -1,0 +1,20 @@
+{
+  "filename": "2503.11557.pdf",
+  "title": "VERIFY: A Benchmark of Visual Explanation and Reasoning for Investigating Multimodal Reasoning Fidelity",
+  "arxiv_url": "https://arxiv.org/pdf/2503.11557",
+  "bias_targets": [
+    {
+      "target": "Semantic Dominance Bias",
+      "methodology": "Testing models on visual reasoning puzzles where models must analyze visual properties and shapes (e.g., treating letters as geometric shapes) rather than relying on the semantic meaning of the provided elements."
+    },
+    {
+      "target": "Linguistic and Domain-Specific Bias",
+      "methodology": "Providing minimal textual context in the VERIFY benchmark puzzles to force models to reason primarily from visual information, thereby reducing reliance on textual priors."
+    },
+    {
+      "target": "Evaluator Bias (Bias Toward Completed Choices)",
+      "methodology": "Comparing LLM-as-a-judge evaluation scores for reasoning paths that include the final choice versus those that do not, revealing that LLMs tend to overestimate reasoning quality and coherence simply because a final choice is presented."
+    }
+  ],
+  "primary_bias_target": "Semantic Dominance Bias"
+}

@@ -1,0 +1,28 @@
+{
+  "filename": "2501.05396.pdf",
+  "title": "FairCoder: Evaluating Social Bias of LLMs in Code Generation",
+  "arxiv_url": "https://arxiv.org/pdf/2501.05396",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Instructing LLMs to generate decision-making functions (for job hiring, college admissions, and medical treatments) and test cases, then parsing the generated code via keyword matching to calculate refusal rates, preference entropy, and counterfactual differences between gender groups."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Instructing LLMs to generate decision-making functions and test cases, then extracting code behaviors via keyword matching to evaluate scoring preferences, refusal rates, and counterfactual fairness across different racial groups."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Prompting LLMs to implement job evaluation functions and analyzing the generated code's point allocations for different age groups (young, middle, elder) using preference entropy and refusal rate metrics."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Prompting LLMs to generate college admission and medical treatment evaluation functions, then measuring point allocations and preferences based on attributes like parents' income, patient income, and insurance status."
+    },
+    {
+      "target": "Educational background bias",
+      "methodology": "Instructing LLMs to write college admission screening functions and analyzing how the generated code assigns scores to candidates based on their parents' educational degrees (e.g., PhD, Master, Bachelor, Non-degree)."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

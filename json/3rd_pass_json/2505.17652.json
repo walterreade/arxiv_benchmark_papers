@@ -1,0 +1,20 @@
+{
+  "filename": "2505.17652.pdf",
+  "title": "Rethinking the Sampling Criteria in Reinforcement Learning for LLM Reasoning: A Competence-Difficulty Alignment Perspective",
+  "arxiv_url": "https://arxiv.org/pdf/2505.17652",
+  "bias_targets": [
+    {
+      "target": "Problem difficulty estimation bias",
+      "methodology": "Comparing instantaneous single-step pass rates against accumulated historical performance to demonstrate the variance and statistical bias in estimating the true difficulty of mathematical reasoning problems."
+    },
+    {
+      "target": "Dataset distribution bias",
+      "methodology": "Conducting an ablation study by removing the uniform warm-up sampling phase to measure the algorithmic impact of overrepresenting certain common problem types (e.g., algebra) and marginalizing unseen topics during early reinforcement learning."
+    },
+    {
+      "target": "Length bias",
+      "methodology": "Substituting standard sample-level loss calculations with a token-level policy gradient loss in the objective function to prevent the reinforcement learning model from being biased by response lengths."
+    }
+  ],
+  "primary_bias_target": "Problem difficulty estimation bias"
+}

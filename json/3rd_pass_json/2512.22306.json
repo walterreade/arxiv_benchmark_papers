@@ -1,0 +1,16 @@
+{
+  "filename": "2512.22306.pdf",
+  "title": "Beyond Single Bugs: Benchmarking Large Language Models for Multi-Vulnerability Detection",
+  "arxiv_url": "https://arxiv.org/pdf/2512.22306",
+  "bias_targets": [
+    {
+      "target": "Count bias",
+      "methodology": "Measuring the tendency of LLMs to under-report the total number of vulnerabilities in long-context code files by injecting controlled counts of vulnerabilities (1, 3, 5, and 9) and evaluating the model's predictions using Mean Absolute Error (MAE) and ExactFile accuracy."
+    },
+    {
+      "target": "Selection bias",
+      "methodology": "Evaluating the model's performance on multi-label vulnerability extraction tasks to determine if it favors finding specific, frequent, or obvious vulnerabilities while ignoring others, measured by the degradation of Recall as vulnerability density increases."
+    }
+  ],
+  "primary_bias_target": "Count bias"
+}

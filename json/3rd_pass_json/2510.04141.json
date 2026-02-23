@@ -1,0 +1,32 @@
+{
+  "filename": "2510.04141.pdf",
+  "title": "The Artificial Intelligence Cognitive Examination: A Survey on the Evolution of Multimodal Evaluation From Recognition to Reasoning",
+  "arxiv_url": "https://arxiv.org/pdf/2510.04141",
+  "bias_targets": [
+    {
+      "target": "Language prior and Shortcut bias",
+      "methodology": "Altering the distribution of question-answer pairs between training and testing splits (e.g., VQA-CP benchmark) to penalize models that rely on statistical text correlations rather than genuine visual grounding."
+    },
+    {
+      "target": "Position bias",
+      "methodology": "Permuting multiple-choice options during evaluation (e.g., CircularEval in MMBench) to measure whether a model disproportionately prefers certain answer positions (e.g., defaulting to Option A)."
+    },
+    {
+      "target": "Cultural and Geographic bias",
+      "methodology": "Analyzing model accuracy disparities on non-Western images, non-English contexts, and cross-cultural visual concepts to expose Western-centric dataset representations."
+    },
+    {
+      "target": "Affirmation bias",
+      "methodology": "Evaluating model performance on explicitly negated prompts and statements (e.g., using NegBench or NegVQA) to test if models systematically fail to correctly interpret negative phrasing and default to affirmative responses."
+    },
+    {
+      "target": "Texture bias",
+      "methodology": "Applying out-of-distribution (OOD) visual perturbations and image corruptions (e.g., ImageNet-C) to expose and measure a model's reliance on superficial texture features over semantic shape."
+    },
+    {
+      "target": "Social and Stereotype bias",
+      "methodology": "Employing human-in-the-loop red-teaming, analyzing responses to violence-provoking speech, and utilizing embodied simulators with controlled diversity variables (e.g., varying avatar skin tones) to probe toxic or stereotypical outputs."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

@@ -1,0 +1,20 @@
+{
+  "filename": "2306.09341.pdf",
+  "title": "Human Preference Score v2: A Solid Benchmark for Evaluating Human Preferences of Text-to-Image Synthesis",
+  "arxiv_url": "https://arxiv.org/pdf/2306.09341",
+  "bias_targets": [
+    {
+      "target": "Prompt style bias",
+      "methodology": "Analyzing user-written evaluation prompts for overrepresented style words, artist names (e.g., 'Greg Rutkowski'), and platform references (e.g., 'ArtStation'), and using ChatGPT to rewrite and remove these modifiers to ensure fair evaluation across models trained on different datasets."
+    },
+    {
+      "target": "Image source bias",
+      "methodology": "Collecting and comparing images generated from 9 different text-to-image models (alongside real COCO images) to ensure that the human preference prediction model generalizes across diverse image distributions, rather than overfitting to a single model family like Stable Diffusion."
+    },
+    {
+      "target": "Annotator bias",
+      "methodology": "Measuring inter-annotator agreement on pairwise image comparisons and assigning 10 distinct annotators per image group in the test set to capture human preference diversity and mitigate individual subjective bias."
+    }
+  ],
+  "primary_bias_target": "Evaluation dataset bias"
+}

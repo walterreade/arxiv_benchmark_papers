@@ -1,0 +1,16 @@
+{
+  "filename": "2412.07825.pdf",
+  "title": "3DSRBench: A Comprehensive 3D Spatial Reasoning Benchmark",
+  "arxiv_url": "https://arxiv.org/pdf/2412.07825",
+  "bias_targets": [
+    {
+      "target": "Spatial left/right bias",
+      "methodology": "Evaluating models using a novel FlipEval strategy that horizontally flips images to create paired visual questions, testing whether models rely on real-world statistical priors (e.g., drivers usually sitting on the left side of a car) rather than performing true 3D spatial reasoning."
+    },
+    {
+      "target": "Choice ordering bias",
+      "methodology": "Using CircularEval to feed the same multiple-choice question to the model multiple times with different permutations of the answer choices, ensuring the model's prediction is consistent and not influenced by the position of the option."
+    }
+  ],
+  "primary_bias_target": "Spatial left/right bias"
+}

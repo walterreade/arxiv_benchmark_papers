@@ -1,0 +1,20 @@
+{
+  "filename": "2409.20565.pdf",
+  "title": "Ranking Over Scoring: Towards Reliable and Robust Automated Evaluation of LLM-Generated Medical Explanatory Arguments",
+  "arxiv_url": "https://arxiv.org/pdf/2409.20565",
+  "bias_targets": [
+    {
+      "target": "Self-enhancement bias",
+      "methodology": "Evaluating whether models favor their own generated outputs by comparing the rankings of medical explanatory arguments produced by the proposed discriminative evaluators against human expert rankings and typical generative LLM judges."
+    },
+    {
+      "target": "Verbosity bias",
+      "methodology": "Analyzing the length of the generated arguments (e.g., identifying models that produce the longest texts) and evaluating whether the automated evaluator artificially prioritizes lengthier responses over concise ones, comparing the results to human judgments."
+    },
+    {
+      "target": "Positional bias",
+      "methodology": "Creating multiple versions of multiple-choice question instances by varying the position of the correct answer in the prompt to ensure the evaluators predict based on content rather than answer order."
+    }
+  ],
+  "primary_bias_target": "LLM-as-a-judge bias"
+}

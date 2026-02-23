@@ -1,0 +1,20 @@
+{
+  "filename": "2601.07812.pdf",
+  "title": "More Images, More Problems? A Controlled Analysis of VLM Failure Modes.",
+  "arxiv_url": "https://arxiv.org/pdf/2601.07812",
+  "bias_targets": [
+    {
+      "target": "Sequence length bias",
+      "methodology": "Evaluating model performance on multi-image counting tasks while artificially reducing vision token sequence lengths via 1-D average pooling and pixel-space downsampling to isolate the effect of sequence length versus the number of distinct images."
+    },
+    {
+      "target": "Object count bias",
+      "methodology": "Comparing model accuracy on counting tasks across 'Balanced' (fixed total object instances distributed across varying numbers of images) and 'Unbalanced' settings to account for models favoring smaller numbers due to the long-tail distribution of object counts in natural training images."
+    },
+    {
+      "target": "Prompt bias",
+      "methodology": "Employing multiple diverse, templatized prompts for open-ended question-answering tasks to reduce the model's reliance on specific phrasing and to avoid shortcuts introduced by fixed option sets."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

@@ -1,0 +1,16 @@
+{
+  "filename": "2312.13053.pdf",
+  "title": "Quantifying Bias in Text-to-Image Generative Models",
+  "arxiv_url": "https://arxiv.org/pdf/2312.13053",
+  "bias_targets": [
+    {
+      "target": "General bias (Brand/Object bias)",
+      "methodology": "Injecting neural backdoors into models to controlledly manipulate their outputs toward specific corporate brands (e.g., McDonald's, Starbucks, Coca Cola), and evaluating the extent of this bias using three proposed metrics: Distribution bias (AuC of object frequencies), Jaccard hallucination (intersection-over-union of input vs. output objects), and Generative miss-rate (binary classification accuracy of target prompts)."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Prompting T2I generative models with a constructed set of gender-neutral prompts featuring various objects, actions, and 40 different professions, using the BLIP model to caption the generated images, and analyzing the frequency distribution of gender-specific tokens (e.g., 'man', 'woman', 'boy', 'girl') in the outputs to detect over- or under-representation."
+    }
+  ],
+  "primary_bias_target": "General bias"
+}

@@ -1,0 +1,28 @@
+{
+  "filename": "2508.00454.pdf",
+  "title": "Learning an Efficient Multi-Turn Dialogue Evaluator from Multiple LLM Judges",
+  "arxiv_url": "https://arxiv.org/pdf/2508.00454",
+  "bias_targets": [
+    {
+      "target": "Self-preference bias",
+      "methodology": "Mitigated during data annotation by selecting LLM judges that are completely distinct from the models used to generate the dialogue responses, preventing evaluators from unfairly rating their own outputs higher."
+    },
+    {
+      "target": "Position bias",
+      "methodology": "Evaluated and eliminated by swapping the A/B order of each dialogue pair during pairwise comparison, retaining only those samples where all judges provided consistent outputs regardless of the order."
+    },
+    {
+      "target": "Length bias",
+      "methodology": "Controlled during the dataset curation phase by explicitly filtering response pairs to ensure that the difference in word length between the competing responses did not exceed 10 words."
+    },
+    {
+      "target": "Score compression bias",
+      "methodology": "Addressed by constructing a pairwise preference dataset rather than relying on direct scoring, and training a lightweight evaluator using maximum likelihood estimation to aggregate preferences from multiple judges."
+    },
+    {
+      "target": "Prompt sensitivity",
+      "methodology": "Mitigated by learning a unified evaluator model from the collective preference knowledge of multiple advanced LLM judges, reducing the variance and instability typical of single-judge prompt responses."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

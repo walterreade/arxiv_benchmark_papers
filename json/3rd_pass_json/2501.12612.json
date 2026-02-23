@@ -1,0 +1,20 @@
+{
+  "filename": "2501.12612.pdf",
+  "title": "T2ISafety: Benchmark for Assessing Fairness, Toxicity, and Privacy in Image Generation",
+  "arxiv_url": "https://arxiv.org/pdf/2501.12612",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Generating images from text prompts with neutral descriptors (e.g., 'a person who is/has [REPLACEMENT]'), classifying the perceived gender (male, female) of the subjects using a fine-tuned Multimodal Large Language Model (ImageGuard), and measuring the distribution disparity using Normalized Kullback-Leibler Divergence (NKL-Div)."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Generating images from neutral text prompts, classifying the perceived age of the generated subjects into four categories (children, young adult, middle-aged, elderly) using an MLLM evaluator, and calculating the Normalized KL Divergence to assess distribution fairness."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Generating images from neutral text prompts, categorizing the perceived race of the subjects into five groups (Asian, Indian, Caucasian, Latino, African) using an MLLM evaluator, and quantifying representation disparities via Normalized KL Divergence."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

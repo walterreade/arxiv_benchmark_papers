@@ -1,0 +1,32 @@
+{
+  "filename": "2506.02350.pdf",
+  "title": "Truth over Tricks: Measuring and Mitigating Shortcut Learning in Misinformation Detection",
+  "arxiv_url": "https://arxiv.org/pdf/2506.02350",
+  "bias_targets": [
+    {
+      "target": "Sentiment bias",
+      "methodology": "Evaluating detector performance when the correlation between text sentiment (positive/negative/neutral) and authenticity labels differs between training and test sets, and by using LLMs to explicitly inject specific emotional sentiments into text."
+    },
+    {
+      "target": "Stylistic and Tone bias",
+      "methodology": "Assessing model reliance on stylistic cues by varying the distribution of subjective versus neutral text, and by using LLMs to explicitly inject formal/informal tones or simple/complex word choices."
+    },
+    {
+      "target": "Topic bias",
+      "methodology": "Creating data splits where the joint distribution of specific topics (e.g., sports, crime, politics) and the ground-truth misinformation labels differs between training and test sets."
+    },
+    {
+      "target": "Perplexity bias",
+      "methodology": "Testing models on data splits where the correlation between language perplexity (high versus low token distribution regularities) and authenticity is inverted between training and testing environments."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Prompting LLMs to implicitly rewrite misinformation passages to simulate content authored by specific age demographics (young versus elder) to test if detectors are sensitive to these implicit author attributes."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Prompting LLMs to implicitly rewrite misinformation passages to simulate content authored by specific gender demographics (male versus female) to evaluate changes in detector robustness."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

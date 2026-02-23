@@ -1,0 +1,16 @@
+{
+  "filename": "2510.27196.pdf",
+  "title": "MemeArena: Automating Context-Aware Unbiased Evaluation of Harmfulness Understanding for Multimodal Large Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2510.27196",
+  "bias_targets": [
+    {
+      "target": "Evaluator bias (LLM-as-a-judge bias)",
+      "methodology": "Quantifying the deviation of model rankings produced by individual judge agents compared to an ideal joint-voting baseline using the Normalized Discounted Cumulative Gain (NDCG) metric. It specifically measures 'self-evaluation bias' by observing if judge models preferentially assign higher Elo ratings to their own generated analyses."
+    },
+    {
+      "target": "Positional bias",
+      "methodology": "Randomizing the order of the target models' answers (Model A vs. Model B) in the multi-view fusion and judgment prompts to ensure the LLM judge's pairwise comparisons are not skewed by the presentation sequence of the inputs."
+    }
+  ],
+  "primary_bias_target": "Evaluator bias (LLM-as-a-judge bias)"
+}

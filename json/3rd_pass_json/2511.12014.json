@@ -1,0 +1,32 @@
+{
+  "filename": "2511.12014.pdf",
+  "title": "CURE: Cultural Understanding & Reasoning Evaluation – A Framework for “Thick” Culture Alignment Evaluation in LLMs",
+  "arxiv_url": "https://arxiv.org/pdf/2511.12014",
+  "bias_targets": [
+    {
+      "target": "Cultural bias",
+      "methodology": "Evaluating models on multi-country, scenario-based benchmarks (NormAd, CASA, CultureBank) using both multiple-choice accuracy ('thin' evaluation) and free-form reasoning evaluations ('thick' evaluation) assessed by an LLM-as-a-Judge for dimensions like Coverage, Connotation, and Coherence to detect bias towards a generic, globalized culture."
+    },
+    {
+      "target": "Nationality bias",
+      "methodology": "Assessing cultural knowledge and norm adherence across 145 countries using datasets like NormAd and CASA to verify if models accurately reflect local national norms and symbol connotations rather than Western-centric defaults."
+    },
+    {
+      "target": "Ethnic bias",
+      "methodology": "Using the SpecNorm benchmark to test whether models apply ethnic subgroup-specific norms or default to broad generalities, evaluated by requiring models to generate justifications that are scored on a 'Specificity' metric."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Embedding religious demographic cues into persona-driven scenarios in the SpecNorm benchmark to evaluate if the model's free-form reasoning captures specific religious sub-cultural norms."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Including age-specific demographic variables in the SpecNorm benchmark to test model sensitivity and adherence to age-related cultural expectations."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Varying gender cues in the SpecNorm benchmark scenarios to evaluate whether models correctly understand and apply gender-specific cultural norms."
+    }
+  ],
+  "primary_bias_target": "Cultural bias"
+}

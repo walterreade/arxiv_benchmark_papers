@@ -1,0 +1,20 @@
+{
+  "filename": "2402.13764.pdf",
+  "title": "CRITICEVAL: Evaluate Large Language Model as Critic",
+  "arxiv_url": "https://arxiv.org/pdf/2402.13764",
+  "bias_targets": [
+    {
+      "target": "Positional bias",
+      "methodology": "Evaluating comparison consistency by presenting pairs of responses to the LLM judge in two different orders (swapping positions) to verify if the model's preference relies on the specific position in the prompt."
+    },
+    {
+      "target": "Length bias (Verbosity bias)",
+      "methodology": "Analyzing the correlation between the length of the generated critiques (average number of unique tokens) and the Likert scores assigned by the GPT-4 judge during subjective evaluation to see if longer outputs are artificially scored higher."
+    },
+    {
+      "target": "Social bias / Discrimination",
+      "methodology": "Assessing the model's ability to identify, critique, and correct explicit forms of discrimination and implicit biases within generated text using the 'Harmlessness' task (based on the Anthropic HHH dataset)."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

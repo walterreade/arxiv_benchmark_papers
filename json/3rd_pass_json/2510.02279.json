@@ -1,0 +1,20 @@
+{
+  "filename": "2510.02279.pdf",
+  "title": "Addressing Pitfalls in the Evaluation of Uncertainty Estimation Methods for Natural Language Generation",
+  "arxiv_url": "https://arxiv.org/pdf/2510.02279",
+  "bias_targets": [
+    {
+      "target": "Evaluation Metric Bias",
+      "methodology": "Analyzing the statistical bias and variance of approximate correctness functions (e.g., LLM-as-a-judge, BLEU, ROUGE) by mathematically modeling sample-dependent distortions and label noise, and measuring their impact on the AUROC rankings of uncertainty estimation methods."
+    },
+    {
+      "target": "Judge Model Bias",
+      "methodology": "Evaluating the inconsistency and systematic biases of LLM-as-a-judge evaluators by comparing their correctness assessments across different prompts, sampling temperatures, and model families. The paper proposes Selective Prediction using Mixture of Judges and Instructions (SP-MoJI) to marginalize out these biases."
+    },
+    {
+      "target": "Length Bias",
+      "methodology": "Observing how the length of generated responses interacts with uncertainty estimation heuristics and correctness metrics, noting that length normalization affects uncertainty measures and highlighting spurious correlations driven by sequence length."
+    }
+  ],
+  "primary_bias_target": "Evaluation Metric Bias"
+}

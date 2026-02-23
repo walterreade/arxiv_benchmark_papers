@@ -1,0 +1,16 @@
+{
+  "filename": "2402.07116.pdf",
+  "title": "Q-BENCH+: A Benchmark for Multi-modal Foundation Models on Low-level Vision from Single Images to Pairs",
+  "arxiv_url": "https://arxiv.org/pdf/2402.07116",
+  "bias_targets": [
+    {
+      "target": "Response bias (Affirmation bias / Yes-bias)",
+      "methodology": "Calculating and comparing model accuracy on Yes/No visual questions grouped by their ground truth answers ('Yes' vs. 'No') to quantify the models' statistical preference for answering affirmatively regardless of the image content."
+    },
+    {
+      "target": "Token / Label bias (Positivity and Extreme value bias)",
+      "methodology": "Analyzing the frequency distribution of output tokens (e.g., predicting 'good' vs. 'poor', or scoring 1 vs. 5) to identify inherent statistical biases towards positive or extreme vocabulary when assessing image quality, which is then mitigated via softmax pooling and prompt ensembling."
+    }
+  ],
+  "primary_bias_target": "Response bias (Affirmation bias / Yes-bias)"
+}

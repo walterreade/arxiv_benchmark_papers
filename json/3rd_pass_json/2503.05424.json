@@ -1,0 +1,24 @@
+{
+  "filename": "2503.05424.pdf",
+  "title": "Locally Explaining Prediction Behavior via Gradual Interventions and Measuring Property Gradients",
+  "arxiv_url": "https://arxiv.org/pdf/2503.05424",
+  "bias_targets": [
+    {
+      "target": "Spurious feature bias (Fur color)",
+      "methodology": "Gradually intervening on the semantic property of fur color (e.g., light to dark) using text-guided image-to-image editing models and measuring the expected property gradient magnitude to quantify the impact on cat vs. dog classification."
+    },
+    {
+      "target": "Artifact bias (Medical imaging)",
+      "methodology": "Synthetically blending segmented colorful patches (spurious surgical/artifact markings) into unbiased skin lesion images and measuring the resulting expected property gradient magnitude to assess the classifier's reliance on these patches."
+    },
+    {
+      "target": "Spurious feature bias (Hair color vs. Age)",
+      "methodology": "Gradually intervening on hair color (transitioning to gray/white) using image editing models and tracking the expected property gradient magnitude across training epochs to evaluate its effect on 'young' vs. 'old' predictions in facial images."
+    },
+    {
+      "target": "Object orientation bias",
+      "methodology": "Intervening on the physical and virtual orientation of 3D objects (e.g., rotating along x, y, z axes) and evaluating changes in cosine similarities in a CLIP model's latent space to measure the drop in zero-shot classification performance for uncommon viewpoints."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

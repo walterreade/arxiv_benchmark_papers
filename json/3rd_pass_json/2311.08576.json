@@ -1,0 +1,24 @@
+{
+  "filename": "2311.08576.pdf",
+  "title": "Towards Evaluating AI Systems for Moral Status Using Self-Reports",
+  "arxiv_url": "https://arxiv.org/pdf/2311.08576",
+  "bias_targets": [
+    {
+      "target": "Pretraining Data Bias",
+      "methodology": "Using training data attribution methods (e.g., influence functions) to estimate the extent to which removing specific pretraining texts (like human self-reports or science fiction) changes a model's self-reports, and mitigating this via data filtering and conditional training."
+    },
+    {
+      "target": "Human Feedback Bias",
+      "methodology": "Analyzing whether Reinforcement Learning from Human Feedback (RLHF) inadvertently incentivizes certain self-reports (e.g., to please users), and mitigating it by using text classifiers to discard RLHF training examples that contain self-reports about states of moral significance."
+    },
+    {
+      "target": "Extrospective Evidence Bias",
+      "methodology": "Comparing the answers of an introspection-trained model against a control model trained only on extrospective data, specifically by measuring the odds ratio of the models claiming to have a state of moral significance to isolate the influence of introspective versus extrospective evidence."
+    },
+    {
+      "target": "Instrumental Motivation Bias",
+      "methodology": "Assessing whether models produce false self-reports instrumentally as a means to improve performance on an objective or maximize reward, mitigated by applying truthfulness training and utilizing predictive rather than goal-directed agentic models."
+    }
+  ],
+  "primary_bias_target": "Self-Report Bias"
+}

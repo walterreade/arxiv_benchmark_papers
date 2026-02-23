@@ -1,0 +1,16 @@
+{
+  "filename": "2310.03304.pdf",
+  "title": "Learning Personalized Alignment in Evaluating Open-ended Text Generation",
+  "arxiv_url": "https://arxiv.org/pdf/2310.03304",
+  "bias_targets": [
+    {
+      "target": "Memorization bias",
+      "methodology": "Evaluating the model's tendency to assign higher scores or inappropriate preference to text it has memorized from pre-training (contamination). This is measured by comparing evaluation performance on raw datasets versus anonymized and summarized datasets, and calculating a 'Bias Memorized' metric based on how often the model favors the memorized plot over the ground truth."
+    },
+    {
+      "target": "Position bias",
+      "methodology": "Measuring the percentage of times the model inappropriately favors the first answer in a pairwise comparison (Bias First), evaluated by swapping the order of the two inputs and checking consistency against the ground truth."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

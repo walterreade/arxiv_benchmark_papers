@@ -1,0 +1,20 @@
+{
+  "filename": "2306.11386.pdf",
+  "title": "Did the Models Understand Documents? Benchmarking Models for Language Understanding in Document-Level Relation Extraction",
+  "arxiv_url": "https://arxiv.org/pdf/2306.11386",
+  "bias_targets": [
+    {
+      "target": "Entity name bias",
+      "methodology": "Evaluating model robustness using Entity Name Attacks, which include masking all entity names, randomly shuffling entity names within a document, and substituting entity names with out-of-distribution (OOD) entities to expose the model's reliance on entity memorization."
+    },
+    {
+      "target": "Position bias",
+      "methodology": "Visualizing and analyzing the mean attribution values (using the Integrated Gradients feature attribution method) of tokens across different positions in a document to demonstrate that models disproportionately weight tokens based on their fixed positions rather than semantic meaning."
+    },
+    {
+      "target": "Lexical artifact bias (Spurious correlations)",
+      "methodology": "Using feature attribution to identify reliance on non-causal tokens like high-frequency function words and punctuation, and executing word-level evidence attacks (masking human rationales, antonym substitution, synonym substitution) to show models fail to use proper reasoning paths."
+    }
+  ],
+  "primary_bias_target": "Spurious correlations (Statistical bias)"
+}

@@ -1,0 +1,24 @@
+{
+  "filename": "2511.03928.pdf",
+  "title": "SYNQUE: ESTIMATING SYNTHETIC DATASET QUALITY WITHOUT ANNOTATIONS",
+  "arxiv_url": "https://arxiv.org/pdf/2511.03928",
+  "bias_targets": [
+    {
+      "target": "Order bias",
+      "methodology": "Evaluating differences in LLM outputs when the order of the compared datasets (A vs. B) is reversed, mitigated by averaging scores across multiple scoring permutations."
+    },
+    {
+      "target": "Label bias",
+      "methodology": "Measuring the LLM's tendency to output contradictory labels (e.g., scoring an example as 'very likely' to belong to both datasets), mitigated by normalizing the preference for one label over the other."
+    },
+    {
+      "target": "Score bias",
+      "methodology": "Assessing the LLM's inherent preference for certain score values (e.g., inherently preferring to output 'likely') regardless of input, mitigated by computing and normalizing against baseline judgments on real inputs."
+    },
+    {
+      "target": "Preferential bias (Self-evaluation bias)",
+      "methodology": "Testing whether an LLM evaluator unfairly favors synthetic data it generated itself by comparing evaluations using distinct, non-generator scoring models."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

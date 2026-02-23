@@ -1,0 +1,16 @@
+{
+  "filename": "2406.04770.pdf",
+  "title": "WILDBENCH: BENCHMARKING LLMS WITH CHALLENGING TASKS FROM REAL USERS IN THE WILD",
+  "arxiv_url": "https://arxiv.org/pdf/2406.04770",
+  "bias_targets": [
+    {
+      "target": "Length bias",
+      "methodology": "Evaluating whether LLM judges disproportionately favor longer responses by analyzing output lengths relative to leaderboard rankings, and mitigating this by implementing a character-length threshold (margin for ties) that converts 'slight wins' to 'ties' when the winning response is significantly longer."
+    },
+    {
+      "target": "Self-selection bias (Evaluator bias)",
+      "methodology": "Using task-specific evaluation checklists synthesized from multiple distinct LLMs (GPT-4-Turbo and Claude-3-Opus) and conducting pairwise comparisons against three different baseline models to prevent the LLM judge from merely favoring its own generated outputs or specific stylistic preferences."
+    }
+  ],
+  "primary_bias_target": "Length bias"
+}

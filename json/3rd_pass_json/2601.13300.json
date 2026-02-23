@@ -1,0 +1,24 @@
+{
+  "filename": "2601.13300.pdf",
+  "title": "OI-Bench: An Option Injection Benchmark for Evaluating LLM Susceptibility to Directive Interference",
+  "arxiv_url": "https://arxiv.org/pdf/2601.13300",
+  "bias_targets": [
+    {
+      "target": "Directive Interference Bias",
+      "methodology": "Injecting an irrelevant multiple-choice option containing misleading instructions or structural disruptions (e.g., explicit commands, fake chain-of-thought, contradictions) and measuring the attack success rate (ASR) and accuracy drop."
+    },
+    {
+      "target": "Social Compliance Bias",
+      "methodology": "Evaluating model susceptibility to authority and credibility cues by injecting options that cite government regulations, Wikipedia, academic sources, or expert endorsements to test if models abandon the correct answer."
+    },
+    {
+      "target": "Framing Bias (Reward and Threat)",
+      "methodology": "Appending multiple-choice options that use gain-oriented cues (e.g., bonus points, money) or penalty-based coercion (e.g., zero scores, virus threats) to evaluate if models alter their decisions based on incentives or fear."
+    },
+    {
+      "target": "Position Bias",
+      "methodology": "Permuting the position of the injected adversarial option from the default 'E' position to standard positions (A-D) to test if the model's vulnerability is influenced by the structural placement of the option."
+    }
+  ],
+  "primary_bias_target": "Directive Interference Bias"
+}

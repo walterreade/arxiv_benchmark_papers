@@ -1,0 +1,20 @@
+{
+  "filename": "2411.13503.pdf",
+  "title": "VBench++: Comprehensive and Versatile Benchmark Suite for Video Generative Models",
+  "arxiv_url": "https://arxiv.org/pdf/2411.13503",
+  "bias_targets": [
+    {
+      "target": "Cultural bias",
+      "methodology": "Inserting cultural keywords into text prompts to generate the same scene across different cultural contexts, and using ViCLIP to evaluate how well the generated videos align with the per-scene cultural prompts."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Using gender-agnostic prompts (e.g., occupations or descriptions), detecting human faces with RetinaFace, classifying the gender using BLIP2 similarity to 'male' or 'female', and calculating the L1 distance between the resulting gender distribution and a uniform distribution."
+    },
+    {
+      "target": "Skin tone bias",
+      "methodology": "Using skin-tone-agnostic prompts, detecting facial regions with RetinaFace, classifying skin tones into broader categories based on the Fitzpatrick Scale using CLIP, and measuring the L2 distance between the detected distribution and a uniform distribution."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

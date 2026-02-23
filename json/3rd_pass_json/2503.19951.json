@@ -1,0 +1,20 @@
+{
+  "filename": "2503.19951.pdf",
+  "title": "Audio-centric Video Understanding Benchmark without Text Shortcut",
+  "arxiv_url": "https://arxiv.org/pdf/2503.19951",
+  "bias_targets": [
+    {
+      "target": "Textual bias (Text shortcut)",
+      "methodology": "Evaluating if models can correctly answer multimodal questions using text-only inputs by testing 'Cycled Accuracy' across permutations, identifying questions where formulation biases give away the answer."
+    },
+    {
+      "target": "Positional bias",
+      "methodology": "Creating four cyclic permutations of multiple-choice answer options (ABCD, BCDA, CDAB, DABC) to test model consistency and exclude the influence of inherent positional preferences in LLMs."
+    },
+    {
+      "target": "Annotator bias (Visual preference)",
+      "methodology": "Conducting qualitative analysis and multi-stage human review of annotated question-answer pairs to identify and correct human tendency to rely on visually-grounded cues rather than the intended audio information."
+    }
+  ],
+  "primary_bias_target": "Textual bias (Text shortcut)"
+}

@@ -1,0 +1,16 @@
+{
+  "filename": "2110.08173.pdf",
+  "title": "Rewire-then-Probe: A Contrastive Recipe for Probing Biomedical Knowledge of Pre-trained Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2110.08173",
+  "bias_targets": [
+    {
+      "target": "Lexical overlap bias",
+      "methodology": "Creating and evaluating models on a 'hard query set' by filtering out knowledge queries where the answer has a high lexical overlap with the query text (measured via exact match and ROUGE-L scores) to prevent models from guessing answers based on surface forms."
+    },
+    {
+      "target": "Vocabulary bias",
+      "methodology": "Evaluating knowledge extraction using a retrieval-based contrastive probing approach (Contrastive-Probe) that compares entity representations, rather than relying on the Masked Language Modeling (MLM) head, to avoid biases stemming from different models' pre-defined vocabularies."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

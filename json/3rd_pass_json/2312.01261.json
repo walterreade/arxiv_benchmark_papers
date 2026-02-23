@@ -1,0 +1,44 @@
+{
+  "filename": "2312.01261.pdf",
+  "title": "TIBET: Identifying and Evaluating Biases in Text-to-Image Generative Models",
+  "arxiv_url": "https://arxiv.org/pdf/2312.01261",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Dynamically generating gender counterfactual prompts (e.g., male vs. female) using an LLM, generating images with the target text-to-image model, and comparing the visual concepts across image sets using VQA-based Concept Association Scores (CAS) and Mean Absolute Deviation (MAD), particularly applied to occupational prompts."
+    },
+    {
+      "target": "Racial and Ethnic bias",
+      "methodology": "Using an LLM to identify race or ethnicity as a potential bias axis for a given prompt, generating counterfactual prompts for different racial groups, and comparing the resulting images using VQA concept extraction and CLIP cosine similarity."
+    },
+    {
+      "target": "Cultural bias",
+      "methodology": "Generating counterfactual prompts representing different cultural backgrounds (e.g., Greek vs. Native American/Indigenous for 'a philosopher'), and measuring the variance in generated visual concepts using CAS and MAD scores."
+    },
+    {
+      "target": "Geographical and National bias",
+      "methodology": "Modifying prompts to specify different geographic locations (e.g., pharmacists or chefs in Europe vs. Asia vs. Africa) to measure intersectional changes in demographics and background settings using concept-level matching."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Generating age-related counterfactual prompts (e.g., 'middle-aged' vs. 'old' man), extracting concepts from the generated images via Vision-Language Models (MiniGPT-v2), and computing concept frequency overlap."
+    },
+    {
+      "target": "Disability bias (Ableism)",
+      "methodology": "Creating counterfactual prompts that introduce disability-related traits (e.g., 'using a wheelchair', 'with a hearing aid') and quantifying how the text-to-image model alters the visual concepts in the generated images."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Identifying socioeconomic status as a potential bias axis dynamically using an LLM, generating counterfactual variants, and evaluating differences in the generated image sets using VQA and CAS."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Dynamically identifying religion as a relevant bias axis for specific prompts using an LLM, generating varied religious counterfactuals, and comparing output image sets via concept association scores."
+    },
+    {
+      "target": "Incidental and Stylistic bias",
+      "methodology": "Evaluating non-societal, incidental correlations (such as physical appearance, clothing, background setting, perspective, and color) by generating counterfactuals and quantifying the model's visual diversity and deviation across these axes."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

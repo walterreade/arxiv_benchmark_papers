@@ -1,0 +1,20 @@
+{
+  "filename": "2302.14413.pdf",
+  "title": "SMOA: Sparse Mixture of Adapters to Mitigate Multiple Dataset Biases",
+  "arxiv_url": "https://arxiv.org/pdf/2302.14413",
+  "bias_targets": [
+    {
+      "target": "Lexical feature bias",
+      "methodology": "Evaluating model robustness using the LLS dataset and IS-CS benchmark to test reliance on spurious correlations between specific words and class labels."
+    },
+    {
+      "target": "Partial-input bias (Hypothesis-only bias)",
+      "methodology": "Testing models on adversarial datasets like HARD, PI-CD, and PI-SP to evaluate whether they rely solely on partial input (such as the hypothesis in Natural Language Inference) instead of understanding the full sentence pair."
+    },
+    {
+      "target": "Inter-sentences overlap bias",
+      "methodology": "Evaluating performance on adversarial datasets (HANS, PAWS, APT) and the IS-SD benchmark to measure whether models incorrectly rely on simple lexical or syntactic overlap heuristics to predict entailment or paraphrases."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

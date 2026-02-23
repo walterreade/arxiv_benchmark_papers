@@ -1,0 +1,24 @@
+{
+  "filename": "2509.01209.pdf",
+  "title": "Measuring Image-Relation Alignment: Reference-Free Evaluation of VLMs and Synthetic Pre-training for Open-Vocabulary Scene Graph Generation",
+  "arxiv_url": "https://arxiv.org/pdf/2509.01209",
+  "bias_targets": [
+    {
+      "target": "Object size imbalance bias",
+      "methodology": "Evaluating VLM performance on subsets of object pairs with high size imbalance (bounding box size ratio > 1:5) compared to pairs of similar sizes."
+    },
+    {
+      "target": "Spatial proximity bias",
+      "methodology": "Comparing relation prediction metrics (such as RelCLIPScore) on intersecting object pairs (IoU > 0) versus distant object pairs separated by at least 20% of the image size."
+    },
+    {
+      "target": "Relational directionality bias",
+      "methodology": "Qualitatively evaluating model confusion when prompted with inverse relation directionalities that are less frequent in training data (e.g., <surfboard, person> instead of <person, surfboard>)."
+    },
+    {
+      "target": "Predicate frequency bias",
+      "methodology": "Analyzing the distribution of generated relationship predicates to identify over-representation of coarse, high-frequency relations (e.g., 'with', 'on') versus fine-grained, long-tail relations."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

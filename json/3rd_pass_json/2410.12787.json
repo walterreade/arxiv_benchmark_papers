@@ -1,0 +1,20 @@
+{
+  "filename": "2410.12787.pdf",
+  "title": "The Curse of Multi-Modalities: Evaluating Hallucinations of Large Multimodal Models Across Language, Visual, and Audio",
+  "arxiv_url": "https://arxiv.org/pdf/2410.12787",
+  "bias_targets": [
+    {
+      "target": "Language bias",
+      "methodology": "Probing models with video or audio inputs depicting anti-common-sense scenarios and measuring whether the model's generated responses incorrectly default to linguistic priors and common-sense expectations rather than factual multimodal inputs."
+    },
+    {
+      "target": "Modality bias",
+      "methodology": "Evaluating model overreliance on a single dominant modality (Visual Dominance or Audio Dominance) by progressively degrading the input of that modality (e.g., blurring video frames or adding noise to audio) and tracking the resulting change in hallucination rates via binary existence queries."
+    },
+    {
+      "target": "Spurious correlation bias",
+      "methodology": "Testing for erroneous cross-modal associations by prompting models with yes-or-no questions about non-existent objects or events that have high global appearance or co-occurrence frequencies in the pre-training datasets relative to the actually present elements."
+    }
+  ],
+  "primary_bias_target": "Modality bias"
+}

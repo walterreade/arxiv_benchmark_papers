@@ -1,0 +1,20 @@
+{
+  "filename": "2412.05167.pdf",
+  "title": "Benchmarking Open-ended Audio Dialogue Understanding for Large Audio-Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2412.05167",
+  "bias_targets": [
+    {
+      "target": "Positional bias",
+      "methodology": "Swapping the order of references and generated responses in the LLM-as-a-judge (GPT-4) evaluation prompts and comparing the resulting scores to measure the evaluator's undue preference based on text position."
+    },
+    {
+      "target": "Evaluator bias",
+      "methodology": "Comparing the evaluation scores produced by GPT-4 with human judgments and scores from other open-source LLMs (LLaMA-3-70B-Instruct and Qwen-2-72B-Instruct) to identify and mitigate bias stemming from relying on a single LLM-as-a-judge."
+    },
+    {
+      "target": "Language bias",
+      "methodology": "Evaluating model performance on audio dialogue understanding across 9 different languages (e.g., English, Chinese, Arabic, French, etc.) to highlight capability disparities stemming from English-dominated training data versus other linguistic contexts."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

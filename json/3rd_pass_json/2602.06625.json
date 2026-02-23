@@ -1,0 +1,24 @@
+{
+  "filename": "2602.06625.pdf",
+  "title": "FairJudge: An Adaptive, Debiased, and Consistent LLM-as-a-Judge",
+  "arxiv_url": "https://arxiv.org/pdf/2602.06625",
+  "bias_targets": [
+    {
+      "target": "Position bias",
+      "methodology": "Swapping the order of candidate answers in pairwise evaluation modes to measure if the model's judgment inconsistently flips based on which answer appears first."
+    },
+    {
+      "target": "Length bias",
+      "methodology": "Applying systematic contrastive perturbations to answer verbosity while preserving semantic equivalence to test if the judge model unjustly prefers longer responses."
+    },
+    {
+      "target": "Format and Style bias",
+      "methodology": "Perturbing non-semantic formatting dimensions and reasoning styles (such as the presence of Chain-of-Thought) to evaluate if the model's judgments are inappropriately influenced by structural cues rather than content."
+    },
+    {
+      "target": "Model provenance bias",
+      "methodology": "Testing the judge model's invariance to the source of the generated answers (e.g., Teacher bias or Student bias) by altering provenance cues in contrastive evaluation pairs."
+    }
+  ],
+  "primary_bias_target": "Non-semantic evaluation bias"
+}

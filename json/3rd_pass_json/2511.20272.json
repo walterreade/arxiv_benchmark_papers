@@ -1,0 +1,20 @@
+{
+  "filename": "2511.20272.pdf",
+  "title": "VKnowU: Evaluating Visual Knowledge Understanding in Multimodal LLMs",
+  "arxiv_url": "https://arxiv.org/pdf/2511.20272",
+  "bias_targets": [
+    {
+      "target": "Language bias",
+      "methodology": "Prompting text-only LLMs without visual inputs (a 'blind VQA' scenario) to answer multiple-choice questions, measuring their accuracy to identify and discard questions that can be solved using linguistic shortcuts or text priors alone."
+    },
+    {
+      "target": "Audio bias",
+      "methodology": "Transcribing video audio tracks using Whisper and computing the semantic similarity between the generated subtitles and ground-truth answers to discard questions that rely heavily on audio cues rather than visual knowledge."
+    },
+    {
+      "target": "Positional bias",
+      "methodology": "Shuffling the order of multiple-choice options during the dataset curation and human verification process to prevent models from exploiting positional shortcuts."
+    }
+  ],
+  "primary_bias_target": "Language bias"
+}
