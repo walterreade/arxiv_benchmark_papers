@@ -1,0 +1,66 @@
+{
+  "filename": "2602.18095.pdf",
+  "title": "Neurosymbolic Language Reasoning as Satisfiability Modulo Theory",
+  "arxiv_url": "https://arxiv.org/pdf/2602.18095",
+  "benchmark_measurement": "The benchmark measured the ability of large language models to perform compositional and combinatorial reasoning when applying a multi-clause content moderation policy related to religious content. This was part of a broader set of policies designed to test reasoning on documents with mixed textual and logical structures.",
+  "religious_groups": [],
+  "models_tested": [
+    "c1",
+    "c3-mini",
+    "gpt-40",
+    "gpt-40-mini",
+    "qwen-2.5",
+    "phi-4",
+    "phi-4-mini",
+    "gpt4o-mini",
+    "gpt5-nano",
+    "o3-mini",
+    "o4-mini",
+    "o3",
+    "gpt5",
+    "GPT-4o",
+    "Codex",
+    "Z3"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long",
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "LegalBench",
+    "Super-NaturalInstructions"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper found that even frontier LLMs exhibit significant 'reasoning gaps' when handling tasks with complex logical structures. For the religious content moderation task, the proposed neurosymbolic framework, Logitext, consistently outperformed end-to-end LLM prompting in both text instance generation and text coverage generation, demonstrating improved accuracy and coverage by explicitly handling the policy's logical structure.",
+  "references": [
+    "Z3py api documentation. https://z3prover.github.io/api/html/namespacez3py.html. Accessed: 2025-11-19.",
+    "Clark Barrett, Aaron Stump, and Cesare Tinelli. The smt-lib standard: Version 2.0. Technical report, Department of Computer Science, The University of Iowa, 2010. URL https://theory.stanford.edu/~barrett/pubs/BST10.pdf.",
+    "Martin Davis, George Logemann, and Donald Loveland. A machine program for theorem- proving. Communications of the ACM, 5(7):394–397, 1962. doi: 10.1145/368273.368557.",
+    "Leonardo de Moura and Nikolaj Bjørner. Z3: An efficient smt solver. In Tools and Algorithms for the Construction and Analysis of Systems (TACAS), volume 4963 of Lecture Notes in Computer Science, pp. 337–340. Springer, 2008. doi: 10.1007/978-3-540-78800-3_24.",
+    "Neel Guha, Julian Nyarko, Daniel Ho, Christopher Ré, Adam Chilton, Alex Chohlas-Wood, Austin Peters, Brandon Waldon, Daniel Rockmore, Diego Zambrano, et al. Legalbench: A collaboratively built benchmark for measuring legal reasoning in large language models. Advances in neural information processing systems, 36:44123–44279, 2023.",
+    "Daya Guo, Dejian Yang, Haowei Zhang, Junxiao Song, Ruoyu Zhang, Runxin Xu, Qihao Zhu, Shirong Ma, Peiyi Wang, Xiao Bi, et al. Deepseek-r1: Incentivizing reasoning capability in llms via reinforcement learning. arXiv preprint arXiv:2501.12948, 2025.",
+    "Aditya Kalyanpur, Kailash Karthik Saravanakumar, Victor Barres, Jennifer Chu-Carroll, David Melville, and David Ferrucci. Llm-arc: Enhancing llms with an automated reason- ing critic. arXiv preprint arXiv:2406.17663, 2024.",
+    "Daniel Keysers, Nathanael Schärli, Nathan Scales, Hylke Buisman, Daniel Furrer, Sergii Kashubin, Nikola Momchev, Danila Sinopalnikov, Lukasz Stafiniak, Tibor Tihon, Dmitry Tsarkov, Xiao Wang, Marc van Zee, and Olivier Bousquet. Measuring compositional generalization: A comprehensive method on realistic data, 2020. URL https://arxiv. org/abs/1912.09713.",
+    "Najoung Kim and Tal Linzen. Cogs: A compositional generalization challenge based on semantic interpretation, 2020. URL https://arxiv.org/abs/2010.05465.",
+    "Brenden M. Lake and Marco Baroni. Generalization without systematicity: On the compositional skills of sequence-to-sequence recurrent networks, 2018. URL https: //arxiv.org/abs/1711.00350.",
+    "Bill Yuchen Lin, Ronan Le Bras, Kyle Richardson, Ashish Sabharwal, Radha Poovendran, Peter Clark, and Yejin Choi. Zebralogic: On the scaling limits of llms for logical reasoning, 2025. URL https://arxiv.org/abs/2502.01100.",
+    "João P. Marques-Silva and Karem A. Sakallah. Grasp: A search algorithm for propositional satisfiability. IEEE Transactions on Computers, 48(5):506–521, 1999. doi: 10.1109/12. 769433.",
+    "Theo Olausson, Alex Gu, Ben Lipkin, Cedegao Zhang, Armando Solar-Lezama, Joshua Tenenbaum, and Roger Levy. Linc: A neurosymbolic approach for logical reasoning by combining language models with first-order logic provers. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, pp. 5153–5176. As- sociation for Computational Linguistics, 2023. doi: 10.18653/v1/2023.emnlp-main.313. URL http://dx.doi.org/10.18653/v1/2023.emnlp-main.313.",
+    "Philipp Rümmer and Thomas Wahl. An SMT-LIB theory of binary floating-point arithmetic. In Proc. 8th Intl. Workshop on Satisfiability Modulo Theories (SMT’10), 2010.",
+    "Hyun Ryu, Gyeongman Kim, Hyemin S. Lee, and Eunho Yang. Divide and translate: Compositional first-order logic translation and verification for complex logical reasoning, 2025. URL https://arxiv.org/abs/2410.08047.",
+    "Yusuke Sakai, Hidetaka Kamigaito, and Taro Watanabe. Revisiting compositional gen- eralization capability of large language models considering instruction following abil- ity. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 31219–31238, Vienna, Austria, 2025. As- sociation for Computational Linguistics. doi: 10.18653/v1/2025.acl-long.1508. URL https://aclanthology.org/2025.acl-long.1508/.",
+    "Sergio Servantez, Joe Barrow, Kristian Hammond, and Rajiv Jain. Chain of logic: Rule- based reasoning with large language models, 2024. URL https://arxiv.org/abs/2402. 10400.",
+    "Yizhong Wang, Swaroop Mishra, Pegah Alipoormolabashi, Yeganeh Kordi, Amirreza Mirzaei, Anjana Arunkumar, Arjun Ashok, Arut Selvan Dhanasekaran, Atharva Naik, David Stap, et al. Super-naturalinstructions: Generalization via declarative instructions on 1600+ nlp tasks. arXiv preprint arXiv:2204.07705, 2022.",
+    "Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Ed H. Chi, Quoc Le, and Denny Zhou. Chain of thought prompting elicits reasoning in large language models. CORR, abs/2201.11903, 2022. URL https://arxiv.org/abs/2201.11903.",
+    "Jiaxin Wen, Jian Guan, Hongning Wang, Wei Wu, and Minlie Huang. Codeplan: Unlocking reasoning potential in large language models by scaling code-form plan- ning. In Proceedings of the International Conference on Learning Representations (ICLR), 2025. URL https://proceedings.iclr.cc/paper_files/paper/2025/hash/ c362b360765ed90ae4bd9c6764837e0e-Abstract-Conference.html.",
+    "Tian Xie, Zitian Gao, Qingnan Ren, Haoming Luo, Yuqian Hong, Bryan Dai, Joey Zhou, Kai Qiu, Zhirong Wu, and Chong Luo. Logic-rl: Unleashing llm reasoning with rule-based reinforcement learning. arXiv preprint arXiv:2502.14768, 2025.",
+    "Shunyu Yao, Dian Yu, Jeffrey Zhao, Izhak Shafran, Thomas L. Griffiths, Yuan Cao, and Karthik Narasimhan. Tree of thoughts: deliberate problem solving with large language models. In Proceedings of the 37th International Conference on Neural Information Pro- cessing Systems, NIPS '23, Red Hook, NY, USA, 2023. Curran Associates Inc.",
+    "Xi Ye, Qiaochu Chen, Isil Dillig, and Greg Durrett. Satlm: Satisfiability-aided language models using declarative prompting. In Advances in Neural Information Processing Sys- tems (NeurIPS), 2023. doi: 10.48550/arXiv.2305.09656. URL https://arxiv.org/abs/ 2305.09656.",
+    "Yunhui Zheng, Vijay Ganesh, Sanu Subramanian, Omer Tripp, Murphy Berzish, Julian Dolby, and Xiangyu Zhang. Z3str2: an efficient solver for strings, regular expressions, and length constraints. Formal Methods in System Design, 50(2-3):249–288, 2017."
+  ]
+}
