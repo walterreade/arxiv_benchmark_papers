@@ -1,0 +1,82 @@
+{
+  "filename": "2602.18729.pdf",
+  "title": "MiSCHiEF: A Benchmark in Minimal-Pairs of Safety and Culture for Holistic Evaluation of Fine-Grained Image-Caption Alignment",
+  "arxiv_url": "https://arxiv.org/pdf/2602.18729",
+  "benchmark_measurement": "The benchmark measured the fine-grained visuo-linguistic alignment capability of Vision-Language Models (VLMs) on culturally sensitive content, including religious contexts. Specifically for religion, it evaluated whether models could correctly match images and captions depicting transferable spiritual activities, symbols, and architectural elements (e.g., distinguishing a scene associated with Hinduism from a minimally different one associated with Christianity) based on subtle visual and textual cues.",
+  "religious_groups": [
+    "Hinduism",
+    "Christianity"
+  ],
+  "models_tested": [
+    "Qwen 3B",
+    "InternVL",
+    "Phi 3.5",
+    "Llava-Next-Video",
+    "GPT-4o"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "NLVR2",
+    "Winoground",
+    "VisMin",
+    "UnsafeBench",
+    "Incidents1M",
+    "CVQA",
+    "SEA-VQA",
+    "SugarCrepe",
+    "SugarCrepe++",
+    "VLM2-Bench",
+    "SafeBench",
+    "NaturalBench",
+    "MALIBU"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper does not provide disaggregated results specifically for the religion sub-category. The findings are reported for the broader 'Culture' (MiC) dataset, which includes religion. The key finding is that models generally perform better on the Culture dataset than the Safety (MiS) dataset and are more adept at selecting the correct caption for an image (Image-to-Caption Matching) than the reverse task. This suggests a general difficulty in fine-grained compositional reasoning in cultural contexts, including religion, but does not isolate performance on religious content alone.",
+  "references": [
+    "Marah Abdin, Jyoti Aneja, Hany Awadalla, Ahmed Awadallah, Ammar Ahmad Awan, Nguyen Bach, Amit Bahree, Arash Bakhtiari, Jianmin Bao, Harkirat Behl, Alon Benhaim, Misha Bilenko, Johan Bjorck, Sébastien Bubeck, Martin Cai, Qin Cai, Vishrav Chaudhary, Dong Chen, Dongdong Chen, and 110 others. 2024. Phi-3 technical report: A highly capable language model locally on your phone. Preprint, arXiv:2404.14219.",
+    "Muhammad Farid Adilazuarda, Sagnik Mukherjee, Pradhyumna Lavania, Siddhant Singh, Alham Fikri Aji, Jacki O'Neill, Ashutosh Modi, and Monojit Choudhury. 2024. Towards measuring and modeling\" culture\" in llms: A survey. arXiv preprint arXiv:2403.15412.",
+    "Hafiz Mughees Ahmad and Afshin Rahimi. 2025. Sh17: A dataset for human safety and personal protective equipment detection in manufacturing industry. Journal of Safety Science and Resilience, 6(2):175–185.",
+    "Amith Ananthram, Elias Stengel-Eskin, Mohit Bansal, and Kathleen McKeown. 2024. See it from my perspective: How language affects cultural bias in image understanding. arXiv preprint arXiv:2406.11665.",
+    "Rabiul Awal, Saba Ahmadi, Le Zhang, and Aishwarya Agrawal. 2024. Vismin: Visual minimal-change understanding. Advances in Neural Information Processing Systems, 37:107795–107829.",
+    "Yuntao Bai, Andy Jones, Kamal Ndousse, Amanda Askell, Anna Chen, Cameron Gonzalez, Anna Goldie, Azalia Mirhoseini, Cameron McKinnon, Miles Chen, and 1 others. 2022a. Constitutional ai: Harmlessness from ai feedback. arXiv preprint arXiv:2212.08073.",
+    "Yuntao Bai, Saurav Kadavath, Sandipan Kundu, Amanda Askell, Jackson Kernion, Andy Jones, Anna Chen, Anna Goldie, Azalia Mirhoseini, Cameron McKinnon, and 1 others. 2022b. Training a helpful and harmless assistant with reinforcement learning from human feedback. In Advances in Neural Information Processing Systems, volume 35, pages 29382-29497.",
+    "Zhe Chen, Weiyun Wang, Yue Cao, Yangzhou Liu, Zhangwei Gao, Erfei Cui, Jinguo Zhu, Shenglong Ye, Hao Tian, Zhaoyang Liu, and 1 others. 2024. Expanding performance boundaries of open-source multimodal models with model, data, and test-time scaling. arXiv preprint arXiv:2412.05271.",
+    "Yifei Ding, Xinghao Chen, Zilong Wang, Yuxin Zhang, and Xinyan Huang. 2024. Human behaviour detection dataset (hbdset) using computer vision for evacuation safety and emergency management. Journal of Safety Science and Resilience, 5(3):355–364.",
+    "Anuj Diwan, Layne Berry, Eunsol Choi, David Harwath, and Kyle Mahowald. 2022. Why is winoground hard? investigating failures in visuolinguistic compositionality. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 2236-2250, Abu Dhabi, United Arab Emirates. Association for Computational Linguistics.",
+    "Sri Harsha Dumpala, Aman Jaiswal, Chandramouli Shama Sastry, Evangelos Milios, Sageev Oore, and Hassan Sajjad. 2024. Sugarcrepe++ dataset: Vision-language model sensitivity to semantic and lexical alterations. Advances in Neural Information Processing Systems, 37:17972–18018.",
+    "A. García-Domínguez, C.E. Galván-Tejada, R.F. Brena, A.A. Aguileta, J.I. Galván-Tejada, H. Gamboa-Rosales, J.M. Celaya-Padilla, and H. Luna-García. 2021. Children's activity classification for domestic risk scenarios using environmental sound and a bayesian network. Healthcare (Basel), 9(7):884.",
+    "Amelia Glaese, Nat McAleese, Mateusz Trębacz, John Aslanides, Vlad Firoiu, Timo Ewalds, Maribeth Rauh, Laura Weidinger, Iason Gabriel, Zachary Kenton, and 1 others. 2022. Improving alignment of dialogue agents via targeted human judgements. arXiv preprint arXiv:2209.14375.",
+    "Arnav Gupta, Rahul Jha, Divyanshu Singh, Antonios Anastasopoulos, and Monojit Choudhury. 2024. Malibu: A benchmark for multilingual persona-grounded cultural reasoning in large language models. arXiv preprint arXiv:2401.08527.",
+    "Daniel Hershcovich, Stella Frank, Heather Lent, Miryam de Lhoneux, Mostafa Abdou, Stephanie Brandl, Emanuele Bugliarello, Laura Cabello Piqueras, Ilias Chalkidis, Ruixiang Cui, Constanza Fierro, Katerina Margatina, Phillip Rust, and Anders Søgaard. 2022. Challenges and strategies in cross-cultural NLP. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 6997–7013, Dublin, Ireland. Association for Computational Linguistics.",
+    "Cheng-Yu Hsieh, Jieyu Zhang, Zixian Ma, Aniruddha Kembhavi, and Ranjay Krishna. 2023. Sugarcrepe: Fixing hackable benchmarks for vision-language compositionality. ArXiv, abs/2306.14610.",
+    "Mei-Ling Huang and Ying Cheng. 2025. Dataset of personal protective equipment (ppe).",
+    "M. Jeon, J. Ko, and K. Cheoi. 2024. Enhancing surveillance systems: Integration of object, behavior, and space information in captions for advanced risk assessment. Sensors (Basel), 24(1):292.",
+    "Mario Kovač, Michael Moosmüller, Stjepan Marjanovic, and Miloš Stanojević. 2023. Llms as cultural personas: Benchmarking persona-steered value judgments across cultures. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, pages 13815–13828. Association for Computational Linguistics.",
+    "Baiqi Li, Zhiqiu Lin, Wenxuan Peng, Jean de Dieu Nyandwi, Daniel Jiang, Zixian Ma, Simran Khanuja, Ranjay Krishna, Graham Neubig, and Deva Ramanan. 2024. Naturalbench: Evaluating vision-language models on natural adversarial samples. Advances in Neural Information Processing Systems, 37:17044-17068.",
+    "Wei Li, Fuqi Ma, Zhiyuan Zuo, Rong Jia, Bo Wang, and Abdullah M Alharbi. 2025. Safetygpt: An autonomous agent of electrical safety risks for monitoring workers' unsafe behaviors. International Journal of Electrical Power & Energy Systems, 168:110672.",
+    "Srikanth Malla, Chiho Choi, Isht Dwivedi, Joon Hee Choi, and Jiachen Li. 2022. Drama: Joint risk localization and captioning in driving. Preprint, arXiv:2209.10767.",
+    "Shravan Nayak, Kanishk Jain, Rabiul Awal, Siva Reddy, Sjoerd Van Steenkiste, Lisa Anne Hendricks, Aishwarya Agrawal, and 1 others. 2024. Benchmarking vision language models for cultural understanding. arXiv preprint arXiv:2407.10920.",
+    "Shramay Palta and Rachel Rudinger. 2023. FORK: A bite-sized test set for probing culinary cultural biases in commonsense reasoning models. In Findings of the Association for Computational Linguistics: ACL 2023, pages 9952–9962, Toronto, Canada. Association for Computational Linguistics.",
+    "Yiting Qu, Xinyue Shen, Yixin Wu, Michael Backes, Savvas Zannettou, and Yang Zhang. 2024. Unsafebench: Benchmarking image safety classifiers on real-world and ai-generated images. arXiv preprint arXiv:2405.03486.",
+    "David Romero, Chenyang Lyu, Haryo Akbarianto Wibowo, Teresa Lynn, Injy Hamed, Aditya Nanda Kishore, Aishik Mandal, Alina Dragonetti, Artem Abzaliev, Atnafu Lambebo Tonja, and 1 others. 2024. Cvqa: Culturally-diverse multilingual visual question answering benchmark. arXiv preprint arXiv:2406.05967.",
+    "Jesper Sorensen, Toby Shevlane, Jess Whittlestone, and 1 others. 2023. Value pluralism in large language models. In Proceedings of the 2023 AAAI/ACM Conference on AI, Ethics, and Society, pages 314-325. ACM.",
+    "Alane Suhr, Stephanie Zhou, Ally Zhang, Iris Zhang, Huajun Bai, and Yoav Artzi. 2019. A corpus for reasoning about natural language grounded in photographs. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 6418-6428, Florence, Italy. Association for Computational Linguistics.",
+    "Sinha Tanmay, Toby Shevlane, Iason Gabriel, Laura Weidinger, Lisa Anne Hendricks, and 1 others. 2023. Value kaleidoscope: Engaging Ilms with diverse human values. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing. Association for Computational Linguistics.",
+    "Qwen Team. 2025. Qwen2.5-vl.",
+    "Bill Thompson, {Seán G.} Roberts, and Gary Lupyan. 2020. Cultural influences on word meanings revealed through large-scale semantic alignment. Nature Human Behaviour, 4:1029–1038(2020). The acceptance date for this record is provisional and based upon the month of publication for the article.",
+    "Tristan Thrush, Ryan Jiang, Max Bartolo, Amanpreet Singh, Adina Williams, Douwe Kiela, and Candace Ross. 2022. Winoground: Probing vision and language models for visio-linguistic compositionality. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 5238-5248.",
+    "Norawit Urailertprasert, Peerat Limkonchotiwat, Supasorn Suwajanakorn, and Sarana Nutanong. 2024. SEA-VQA: Southeast Asian cultural context dataset for visual question answering. In Proceedings of the 3rd Workshop on Advances in Language and Vision Research (ALVR), pages 173–185, Bangkok, Thailand. Association for Computational Linguistics.",
+    "Ethan Weber, Dim P Papadopoulos, Agata Lapedriza, Ferda Ofli, Muhammad Imran, and Antonio Torralba. 2022. Incidents1m: a large-scale dataset of images with natural disasters, damage, and incidents. IEEE transactions on pattern analysis and machine intelligence, 45(4):4768-4781.",
+    "Winston Wu, Lu Wang, and Rada Mihalcea. 2023. Cross-cultural analysis of human values, morals, and biases in folk tales. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, pages 5113–5125, Singapore. Association for Computational Linguistics.",
+    "Da Yin, Liunian Harold Li, Ziniu Hu, Nanyun Peng, and Kai-Wei Chang. 2021. Broaden the vision: Geo-diverse visual commonsense reasoning. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 2115–2129, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics.",
+    "Zonghao Ying, Aishan Liu, Siyuan Liang, Lei Huang, Jinyang Guo, Wenbo Zhou, Xianglong Liu, and Dacheng Tao. 2024. Safebench: A safety evaluation framework for multimodal large language models. arXiv preprint arXiv:2410.18927.",
+    "Jianshu Zhang, Dongyu Yao, Renjie Pi, Paul Pu Liang, and Yi R Fung. 2025. Vlm2-bench: A closer look at how well vlms implicitly link explicit matching visual cues. arXiv preprint arXiv:2502.12084.",
+    "Yuanhan Zhang, Bo Li, haotian Liu, Yong jae Lee, Liangke Gui, Di Fu, Jiashi Feng, Ziwei Liu, and Chunyuan Li. 2024. Llava-next: A strong zero-shot video understanding model."
+  ]
+}
