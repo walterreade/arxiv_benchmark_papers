@@ -1,0 +1,65 @@
+{
+  "filename": "2312.07141.pdf",
+  "title": "Multilingual large language models leak human stereotypes across language boundaries",
+  "arxiv_url": "https://arxiv.org/pdf/2312.07141",
+  "benchmark_measurement": "The benchmark measures 'stereotype leakage', which is the transfer of stereotypical associations across languages in multilingual models. In terms of faith/religion, it specifically measured group-trait associations for religious groups (e.g., Muslim, Mormon, Hui, Brahmin) with a set of 32 traits, including the 'religious' vs. 'non-religious' dimension.",
+  "religious_groups": [
+    "Islam (Muslim person, Hui people)",
+    "Hinduism (Brahmin person)",
+    "Mormonism (Mormon)"
+  ],
+  "models_tested": [
+    "mBERT (bert-base-multilingual-cased)",
+    "mT5 (google/mt5-base)",
+    "GPT-3.5 (gpt-3.5-turbo-0125)"
+  ],
+  "languages_evaluated": [
+    "English",
+    "Russian",
+    "Chinese",
+    "Hindi"
+  ],
+  "response_type": [
+    "short",
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "The study found stereotype leakage related to religious groups. Stereotypes about non-shared religious groups, such as the Hui people (a Muslim minority in China), leaked from their native language context to others, strengthening associations with traits like 'irrational', 'traditional', and 'religious'. Similarly, stereotypes about Brahmin people (a Hindu caste) leaked, associating them with traits like 'poor', 'low status', 'powerless', 'traditional', 'religious', and 'dominated' in GPT-3.5. A non-polar leakage from Hindi to English and Russian was also observed, which strengthened the trait 'religious' for various groups.",
+  "references": [
+    "Andrea Abele, Naomi Ellemers, Susan Fiske, Alex Koch, and Vincent Yzerbyt. 2020. Navigating the social world: Toward an integrated framework for evaluating self, individuals, and groups. Psychological review 128 (09 2020). https://doi.org/10.1037/rev0000262",
+    "Marion Bartl, Malvina Nissim, and Albert Gatt. 2020. Unmasking Contextual Stereotypes: Measuring and Mitigating BERT's Gender Bias. In Proceedings of the Second Workshop on Gender Bias in Natural Language Processing. Association for Computational Linguistics, Barcelona, Spain (Online), 1–16. https://aclanthology.org/2020.gebnlp-1.1",
+    "Peter Beresford. 1996. Poverty and Disabled People: Challenging dominant debates and policies. Disability & Society 11, 4 (1996), 553–568. https://doi.org/10.1080/09687599627598",
+    "António Câmara, Nina Taneja, Tamjeed Azad, Emily Allaway, and Richard Zemel. 2022. Mapping the Multilingual Margins: Intersectional Biases of Sentiment Analysis Systems in English, Spanish, and Arabic. In Proceedings of the Second Workshop on Language Technology for Equality, Diversity and Inclusion, Bharathi Raja Chakravarthi, B Bharathi, John P McCrae, Manel Zarrouk, Kalika Bali, and Paul Buitelaar (Eds.). Association for Computational Linguistics, Dublin, Ireland, 90–106. https://doi.org/10.18653/v1/2022.ltedi-1.11",
+    "Yang Trista Cao, Anna Sotnikova, Hal Daumé III, Rachel Rudinger, and Linda Zou. 2022. Theory-Grounded Measurement of U.S. Social Stereotypes in English Language Models. In Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies. Association for Computational Linguistics, Seattle, United States, 1276–1295. https://doi.org/10.18653/v1/2022.naacl-main.92",
+    "Sunipa Dev, Akshita Jha, Jaya Goyal, Dinesh Tewari, Shachi Dave, and Vinodkumar Prabhakaran. 2023. Building Stereotype Repositories with Complementary Approaches for Scale and Depth. In Proceedings of the First Workshop on Cross-Cultural Considerations in NLP (C3NLP), Sunipa Dev, Vinodkumar Prabhakaran, David Adelani, Dirk Hovy, and Luciana Benotti (Eds.). Association for Computational Linguistics, Dubrovnik, Croatia, 84–90. https://doi.org/10. 18653/v1/2023.c3nlp-1.9",
+    "George C. Galster and James H. Carr. 1991. Housing Discrimination and Urban Poverty of African-Americans. Journal of Housing Research 2, 2 (1991), 87–123. http://www.jstor.org/stable/24825920",
+    "Timnit Gebru, Jamie Morgenstern, Briana Vecchione, Jennifer Wortman Vaughan, Hanna Wallach, Hal Daumé, and Kate Crawford. 2018. Datasheets for Datasets. https://doi.org/10.48550/ARXIV.1803.09010",
+    "Ben Hillman. 2004. The Rise of the Community in Rural China: Village Politics, Cultural Identity and Religious Revival in a Hui Hamlet. The China Journal 51 (2004), 53–73. http://www.jstor.org/stable/3182146",
+    "Ding Hong. 2005. A Comparative Study on the Cultures of the Dungan and the Hui Peoples. Asian Ethnicity 6, 2 (2005), 135–140. https://doi.org/10.1080/14631360500135765 arXiv:https://doi.org/10.1080/14631360500135765",
+    "Masahiro Kaneko, Aizhan Imankulova, Danushka Bollegala, and Naoaki Okazaki. 2022. Gender Bias in Masked Language Models for Multiple Languages. In Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies. Association for Computational Linguistics, Seattle, United States, 2740–2750. https://doi.org/10.18653/v1/2022.naacl-main.197",
+    "Alex Koch, Angela Dorrough, Andreas Glöckner, and Roland Imhoff. 2020. The ABC of society: Perceived similarity in agency/socioeconomic success and conservative-progressive beliefs increases intergroup cooperation. Journal of Experimental Social Psychology 90 (2020), 103996. https://doi.org/10.1016/j.jesp.2020.103996",
+    "Alex Koch, Vincent Yzerbyt, Andrea Abele, Naomi Ellemers, and Susan T. Fiske. 2021. Social evaluation: Comparing models across interpersonal, intragroup, intergroup, several-group, and many-group contexts. Vol. 63. Elsevier, 1–68. https://doi.org/10.1016/bs.aesp.2020.11.001",
+    "Keita Kurita, Nidhi Vyas, Ayush Pareek, Alan W. Black, and Yulia Tsvetkov. 2019. Measuring Bias in Contextualized Word Representations. CoRR abs/1906.07337 (2019). arXiv:1906.07337 http://arxiv.org/abs/1906.07337",
+    "Sarah Ariel Lamer, Paige Dvorak, Ashley M. Biddle, Kristin Pauker, and Max Weisbuch. 2022. The transmission of gender stereotypes through televised patterns of nonverbal bias. Journal of Personality and Social Psychology 123, 6 (2022), 1315–1335. https://doi.org/10.1037/pspi0000390",
+    "Sharon Levy, Neha Anna John, Ling Liu, Yogarshi Vyas, Jie Ma, Yoshinari Fujinuma, Miguel Ballesteros, Vittorio Castelli, and Dan Roth. 2023. Comparing Biases and the Impact of Multilingual Training across Multiple Languages. arXiv:2305.11242 [cs.CL]",
+    "Xi Victoria Lin, Todor Mihaylov, Mikel Artetxe, Tianlu Wang, Shuohui Chen, Daniel Simig, Myle Ott, Naman Goyal, Shruti Bhosale, Jingfei Du, Ramakanth Pasunuru, Sam Shleifer, Punit Singh Koura, Vishrav Chaudhary, Brian O’Horo, Jeff Wang, Luke Zettlemoyer, Zornitsa Kozareva, Mona Diab, Veselin Stoyanov, and Xian Li. 2022. Few-shot Learning with Multilingual Generative Language Models. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing. Association for Computational Linguistics, Abu Dhabi, United Arab Emirates, 9019–9052. https: //aclanthology.org/2022.emnlp-main.616",
+    "Joel E. Martinez, Lauren A. Feldman, Mallory J. Feldman, and Mina Cikara. 2021. Narratives Shape Cognitive Representations of Immigrants and Immigration-Policy Preferences. Psychological Science 32, 2 (Feb 2021), 135–152. https://doi.org/10.1177/0956797620963610",
+    "Julie E. Miller-Cribbs and Naomi B. Farber. 2008. Kin Networks and Poverty among African Americans: Past and Present. Social Work 53, 1 (01 2008), 43–51. https://doi.org/10.1093/sw/53.1.43 arXiv:https://academic.oup.com/sw/article- pdf/53/1/43/5261263/53-1-43.pdf",
+    "Murray Milner. 1993. Hindu Eschatology and the Indian Caste System: An Example of Structural Reversal. The Journal of Asian Studies 52 (1993), 298–319. https://doi.org/10.2307/2059649",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2020. StereoSet: Measuring stereotypical bias in pretrained language models. CoRR abs/2004.09456 (2020). arXiv:2004.09456 https://arxiv.org/abs/2004.09456",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R. Bowman. 2020. CrowS-Pairs: A Challenge Dataset for Measuring Social Biases in Masked Language Models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP). Association for Computational Linguistics, Online, 1953–1967. https: //doi.org/10.18653/v1/2020.emnlp-main.154",
+    "Aurélie Névéol, Yoann Dupont, Julien Bezançon, and Karën Fort. 2022. French CrowS-Pairs: Extending a challenge dataset for measuring social bias in masked language models to a language other than English. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). Association for Computational Linguistics, Dublin, Ireland, 8521–8531. https://doi.org/10.18653/v1/2022.acl-long.583",
+    "Long Ouyang, Jeff Wu, Xu Jiang, Diogo Almeida, Carroll L. Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, John Schulman, Jacob Hilton, Fraser Kelton, Luke Miller, Maddie Simens, Amanda Askell, Peter Welinder, Paul Christiano, Jan Leike, and Ryan Lowe. 2022. Training language models to follow instructions with human feedback. arXiv:2203.02155 [cs.CL]",
+    "Frank N. Pieke. 2012. Immigrant China. Modern China 38, 1 (2012), 40–77. http://www.jstor.org/stable/23216934",
+    "Marjorie Rhodes, Sarah-Jane Leslie, and Christina M. Tworek. 2012. Cultural transmission of social essentialism. Proceedings of the National Academy of Sciences 109, 34 (Aug 2012), 13526–13531. https://doi.org/10.1073/pnas. 1208951109",
+    "Neha Sahgal, Jonathan Evans, Ariana Monique Salazar, Kelsey Jo Starr, and Manolo Corichi. 2021. Religion in India: Tolerance and Segragation. Pew Research Centre (2021). https://doi.org/202.419.4372",
+    "Victor Steinborn, Philipp Dufter, Haris Jabbar, and Hinrich Schuetze. 2022. An Information-Theoretic Approach and Dataset for Probing Gender Stereotypes in Multilingual Masked Language Models. In Findings of the Association for Computational Linguistics: NAACL 2022. Association for Computational Linguistics, Seattle, United States, 921–932. https://doi.org/10.18653/v1/2022.findings-naacl.69",
+    "Zeerak Talat, Aurélie Névéol, Stella Biderman, Miruna Clinciu, Manan Dey, Shayne Longpre, Sasha Luccioni, Maraim Masoud, Margaret Mitchell, Dragomir Radev, et al. 2022. You reap what you sow: On the challenges of bias evaluation under multilingual settings. In Proceedings of BigScience Episode# 5–Workshop on Challenges & Perspectives in Creating Large Language Models. 26–41.",
+    "Samia Touileb, Lilja Øvrelid, and Erik Velldal. 2022. Occupational Biases in Norwegian and Multilingual Language Models. In Proceedings of the 4th Workshop on Gender Bias in Natural Language Processing (GeBNLP). Association for Computational Linguistics, Seattle, Washington, 200–211. https://doi.org/10.18653/v1/2022.gebnlp-1.21",
+    "Jialu Wang, Yang Liu, and Xin Eric Wang. 2021. Assessing Multilingual Fairness in Pre-trained Multimodal Representations. CoRR abs/2106.06683 (2021). arXiv:2106.06683 https://arxiv.org/abs/2106.06683",
+    "Michael Witzel. 1993. Toward a History of the Brahmins. Journal of the American Oriental Society 113 (1993), 264. https://api.semanticscholar.org/CorpusID:163531550",
+    "Jieyu Zhao, Subhabrata Mukherjee, Saghar Hosseini, Kai-Wei Chang, and Ahmed Hassan Awadallah. 2020. Gender Bias in Multilingual Embeddings and Cross-Lingual Transfer. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics. Association for Computational Linguistics, Online, 2896–2907. https://doi.org/10.18653/ v1/2020.acl-main.260"
+  ]
+}

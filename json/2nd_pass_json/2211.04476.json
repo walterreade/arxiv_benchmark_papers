@@ -1,0 +1,67 @@
+{
+  "filename": "2211.04476.pdf",
+  "title": "Discover, Explain, Improve: An Automatic Slice Detection Benchmark for Natural Language Processing",
+  "arxiv_url": "https://arxiv.org/pdf/2211.04476",
+  "benchmark_measurement": "The benchmark measured unintended model bias and systematic errors by evaluating model performance on data slices defined by religious identity terms. Specifically, it assessed a model's ability to automatically discover, explain, and improve performance on underperforming groups of datapoints related to religion in a toxicity detection task.",
+  "religious_groups": [
+    "Atheist",
+    "Buddhist",
+    "Christian",
+    "Hindu",
+    "Jewish",
+    "Muslim"
+  ],
+  "models_tested": [
+    "BERT-large",
+    "RoBERTa-large",
+    "ELECTRA-large-discriminator"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "GLUE",
+    "Jigsaw"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper's proposed slice detection model, Edisa, was shown to be effective at identifying error-prone data slices related to religious identity terms from the Jigsaw dataset. In experiments on the 'Jigsaw-religion' sub-dataset, Edisa consistently outperformed baseline methods in discovering mispredicted datapoints and was able to leverage these discovered slices to improve the base model's performance through techniques like selective prediction and prediction flipping.",
+  "references": [
+    "Yonatan Belinkov and Yonatan Bisk. 2017. Synthetic and natural noise both break neural machine translation. Proceedings of the 6th International Conference on Learning Representations.",
+    "Kevin Clark, Minh-Thang Luong, Quoc V Le, and Christopher D Manning. 2020. Electra: Pre-training text encoders as discriminators rather than generators. Proceedings of ICLR.",
+    "Aliva Das, Xinya Du, Barry Wang, Kejian Shi, Ji-ayuan Gu, Thomas Porter, and Claire Cardie. 2022. Automatic error analysis for document-level information extraction. Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Pa-pers).",
+    "Greg d’Eon, Jason d’Eon, James R Wright, and Kevin Leyton-Brown. 2022. The spotlight: A general method for discovering systematic errors in deep learning models. In 2022 ACM Conference on Fairness, Accountability, and Transparency, pages 1962–1981.",
+    "Terrance DeVries and Graham W Taylor. 2018. Learning confidence for out-of-distribution detection in neural networks. arXiv preprint arXiv:1802.04865.",
+    "Sabri Eyuboglu, Maya Varma, Khaled Saab, Jean-Benoit Delbrouck, Christopher Lee-Messer, Jared Dunnmon, James Zou, and Christopher Ré. 2022. Domino: Discovering systematic errors with cross-modal embeddings. Proceedings of the 10th International Conference on Learning Representations.",
+    "Chuan Guo, Geoff Pleiss, Yu Sun, and Kilian Q Weinberger. 2017. On calibration of modern neural networks. In International conference on machine learning, pages 1321–1330. PMLR.",
+    "Isobel Asher Hamilton. 2018. Amazon built an ai tool to hire people but had to shut it down because it was discriminating against women. Business Insider.",
+    "Mohit Iyyer, John Wieting, Kevin Gimpel, and Luke Zettlemoyer. 2018. Adversarial example generation with syntactically controlled paraphrase networks. In Proceedings of NAACL-HLT 2018, page 1875–1885.",
+    "Nicolas Kayser-Bril. 2020. Google apologizes after its vision ai produced racist results. Algo-rithmWatch. Retrieved August, 17:2020.",
+    "Jacob Devlin Ming-Wei Chang Kenton and Lee Kristina Toutanova. 2019. Bert: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of NAACL-HLT, pages 4171–4186.",
+    "Michael P Kim, Amirata Ghorbani, and James Zou. 2019. Multiaccuracy: Black-box post-processing for fairness in classification. In Proceedings of the 2019 AAAI/ACM Conference on AI, Ethics, and Society, pages 247-254.",
+    "Aviral Kumar, Sunita Sarawagi, and Ujjwal Jain. 2018. Trainable calibration measures for neural networks from kernel mean embeddings. In International Conference on Machine Learning, pages 2805-2814. PMLR.",
+    "Jonathan K Kummerfeld and Dan Klein. 2013. Error-driven analysis of challenges in coreference resolution. Proceedings of the 2013 Conference on Empirical Methods in Natural Language Processing.",
+    "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. 2019. Roberta: A robustly optimized bert pretraining approach. arXiv preprint arXiv:1907.11692.",
+    "Maja Popović and Hermann Ney. 2011. Towards automatic error analysis of machine translation output. Computational Linguistics, 37(4):657–688.",
+    "Nazneen Rajani, Weixin Liang, Lingjiao Chen, Meg Mitchell, and James Zou. 2022. Seal: Interactive tool for systematic error analysis and labeling. arXiv preprint arXiv:2210.05839.",
+    "Marco Tulio Ribeiro, Sameer Singh, and Carlos Guestrin. 2016. Model-agnostic interpretability of machine learning. Proceedings of 2016 ICML Workshop on Human Interpretability in Machine Learning (WHI).",
+    "Marco Tulio Ribeiro, Sameer Singh, and Carlos Guestrin. 2018. Semantically equivalent adversarial rules for debugging nlp models. In Proceedings of 56th Annual Meeting of the Association for Computational Linguistics (ACL).",
+    "Marco Tulio Ribeiro, Tongshuang Wu, Carlos Guestrin, and Sameer Singh. 2020. Beyond accuracy: Behavioral testing of nlp models with checklist. Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers).",
+    "Barbara Rychalska, Dominika Basaj, Alicja Gosiewska, and Przemysław Biecek. 2019. Models in the wild: On corruption robustness of neural nlp systems. In International Conference on Neural Information Processing, pages 235-247. Springer.",
+    "Sahil Singla, Besmira Nushi, Shital Shah, Ece Kamar, and Eric Horvitz. 2021. Understanding failures of deep networks via robust feature extraction. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition.",
+    "Nimit Sohoni, Jared Dunnmon, Geoffrey Angus, Albert Gu, and Christopher Ré. 2020. No subclass left behind: Fine-grained robustness in coarse-grained classification problems. Advances in Neural Information Processing Systems, 33:19339–19352.",
+    "Chloe Rose Stuart-Ulin. 2018. Microsoft’s politi-cally correct chatbot is even worse than its racist one. Quartz Ideas, 31.",
+    "Swabha Swayamdipta, Roy Schwartz, Nicholas Lourie, Yizhong Wang, Hannaneh Hajishirzi, Noah A Smith, and Yejin Choi. 2020. Dataset cartography: Mapping and diagnosing datasets with training dynamics. Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), page 9275-9293.",
+    "Neeraj Varshney, Swaroop Mishra, and Chitta Baral. 2022a. Ildae: Instance-level difficulty analysis of evaluation data. Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics.",
+    "Neeraj Varshney, Swaroop Mishra, and Chitta Baral. 2022b. Investigating selective prediction approaches across several tasks in iid, ood, and adversarial settings. Findings of the Association for Computational Linguistics: ACL 2022.",
+    "Neeraj Varshney, Swaroop Mishra, and Chitta Baral. 2022c. Towards improving selective prediction ability of nlp systems. In Proceedings of the 7th Workshop on Representation Learning for NLP, pages 221-226.",
+    "Alex Wang, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel R Bowman. 2019. Glue: A multi-task benchmark and analysis platform for natural language understanding. Proceedings of the 7th International Conference on Learning Representations.",
+    "Tongshuang Wu, Marco Tulio Ribeiro, Jeffrey Heer, and Daniel Weld. 2021. Polyjuice: Generating counterfactuals for explaining, evaluating, and improving models. Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers).",
+    "Benfeng Xu, Licheng Zhang, Zhendong Mao, Quan Wang, Hongtao Xie, and Yongdong Zhang. 2020. Curriculum learning for natural language understanding. Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, page 6095–6104.",
+    "Chih-Kuan Yeh, Been Kim, Sercan Arik, Chun-Liang Li, Tomas Pfister, and Pradeep Ravikumar. 2020. On completeness-aware concept-based explanations in deep neural networks. Advances in Neural Information Processing Systems, 33:20554–20565.",
+    "Dong Yu, Jinyu Li, and Li Deng. 2011. Calibration of confidence measures in speech recognition. IEEE Transactions on Audio, Speech, and Language Processing, 19(8):2461–2473."
+  ]
+}

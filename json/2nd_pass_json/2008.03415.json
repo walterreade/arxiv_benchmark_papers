@@ -1,0 +1,57 @@
+{
+  "filename": "2008.03415.pdf",
+  "title": "Assessing Demographic Bias in Named Entity Recognition",
+  "arxiv_url": "https://arxiv.org/pdf/2008.03415",
+  "benchmark_measurement": "Bias in Named Entity Recognition (NER) models against names commonly associated with Muslims.",
+  "religious_groups": [
+    "Islam"
+  ],
+  "models_tested": [
+    "BILSTM CRF (with GloVe, CNET, ELMo embeddings)",
+    "spaCy (spacy_sm, spacy_lg)",
+    "Stanford CoreNLP"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Winogender",
+    "CoNLL 2003"
+  ],
+  "continuous_testing": false,
+  "findings": "The study found that most Named Entity Recognition (NER) models exhibited lower accuracy for Muslim names compared to White names. For example, in the 'Winogender' dataset, the CNET model had accuracies of 0.8537 and 0.7791 for Muslim Female and Male names respectively, compared to 0.9627 and 0.9644 for White names. An exception was the character-based ELMo model, which showed the least bias across demographics and achieved the highest accuracy on Muslim Male names among all groups.",
+  "references": [
+    "Solon Barocas, Kate Crawford, Aaron Shapiro, and Hanna Wallach. 2017. The Problem With Bias: Allocative Versus Representational Harms in Machine Learning. In Proceedings of the 9th Annual Conference of the Special Interest Group for Computing, Information and Society (Philadelphia, PA, USA). http://meetings.sigcis.org/uploads/6/3/6/8/6368912/program.pdf",
+    "Marianne Bertrand and Sendhil Mullainathan. 2004. Are Emily and Greg More Employable Than Lakisha and Jamal? A Field Experiment on Labor Market Discrimination. American Economic Review 94, 4 (September 2004), 991-1013. https://doi.org/10.1257/0002828042002561",
+    "Tolga Bolukbasi, Kai-Wei Chang, James Zou, Venkatesh Saligrama, and Adam Kalai. 2016. Man is to Computer Programmer As Woman is to Homemaker? Debiasing Word Embeddings. In Proceedings of the 30th International Conference on Neural Information Processing Systems (Barcelona, Spain) (NIPS'16). Curran Associates Inc., USA, 4356-4364. http://dl.acm.org/citation.cfm?id=3157382. 3157584",
+    "Aylin Caliskan, Joanna J Bryson, and Arvind Narayanan. 2017. Semantics derived automatically from language corpora contain human-like biases. Science 356 (2017), 183-186.",
+    "Aron Culotta and Andrew McCallum. 2004. Confidence Estimation for Information Extraction. In Proceedings of HLT-NAACL 2004: Short Papers. Association for Computational Linguistics, Boston, Massachusetts, USA, 109-112. https://www.aclweb.org/anthology/N04-4028",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers). Association for Computational Linguistics, Minneapolis, Minnesota, 4171-4186. https://doi.org/10.18653/v1/N19-1423",
+    "Hila Gonen and Yoav Goldberg. 2019. Lipstick on a Pig: Debiasing Methods Cover up Systematic Gender Biases in Word Embeddings But do not Remove Them. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers). Association for Computational Linguistics, Minneapolis, Minnesota, 609-614. https://doi.org/10.18653/v1/N19-1061",
+    "Anthony G Greenwald, Debbie E. McGhee, and Joe L. Schwartz. 1998. Measuring individual differences in implicit cognition: the implicit association test. Journal of personality and social psychology 74 6 (1998), 1464-80.",
+    "Weiwei Guo, Huiji Gao, Jun Shi, and Bo Long. 2019. Deep Natural Language Processing for Search Systems. In Proceedings of the 42Nd International ACM SIGIR Conference on Research and Development in Information Retrieval (Paris, France) (SIGIR'19). ACM, New York, NY, USA, 1405-1406. https://doi.org/10. 1145/3331184.3331381",
+    "Zhiheng Huang, Wei Xu, and Kai Yu. 2015. Bidirectional LSTM-CRF Models for Sequence Tagging. ArXiv abs/1508.01991 (2015).",
+    "John D. Lafferty, Andrew McCallum, and Fernando C. N. Pereira. 2001. Conditional Random Fields: Probabilistic Models for Segmenting and Labeling Sequence Data. In Proceedings of the Eighteenth International Conference on Machine Learning (ICML '01). Morgan Kaufmann Publishers Inc., San Francisco, CA, USA, 282-289. http://dl.acm.org/citation.cfm?id=645530.655813",
+    "Guillaume Lample, Miguel Ballesteros, Sandeep Subramanian, Kazuya Kawakami, and Chris Dyer. 2016. Neural Architectures for Named Entity Recognition. In Proceedings of the 2016 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies. Association for Computational Linguistics, San Diego, California, 260-270. https://doi.org/10. 18653/v1/N16-1030",
+    "Christopher Manning, Mihai Surdeanu, John Bauer, Jenny Finkel, Steven Bethard, and David McClosky. 2014. The Stanford CoreNLP Natural Language Processing Toolkit. In Proceedings of 52nd Annual Meeting of the Association for Computational Linguistics: System Demonstrations. Association for Computational Linguistics, Baltimore, Maryland, 55-60. https://doi.org/10.3115/v1/P14-5010",
+    "Thomas Manzini, Yao Chong Lim, Yulia Tsvetkov, and Alan W. Black. 2019. Black is to Criminal as Caucasian is to Police: Detecting and Removing Multiclass Bias in Word Embeddings. In NAACL-HLT.",
+    "Shubhanshu Mishra. 2019. Multi-Dataset-Multi-Task Neural Sequence Tagging for Information Extraction from Tweets. In Proceedings of the 30th ACM Conference on Hypertext and Social Media (Hof, Germany) (HT '19). Association for Computing Machinery, New York, NY, USA, 283-284. https://doi.org/10.1145/ 3342220.3344929",
+    "Shubhanshu Mishra and Jana Diesner. 2016. Semi-supervised Named Entity Recognition in noisy-text. In Proceedings of the 2nd Workshop on Noisy User-generated Text (WNUT). The COLING 2016 Organizing Committee, Osaka, Japan, 203-212. https://www.aclweb.org/anthology/W16-3927",
+    "Shubhanshu Mishra, Brent D. Fegley, Jana Diesner, and Vetle I. Torvik. 2018. Self-citation is the hallmark of productive authors, of any gender. PLOS ONE 13, 9 (sep 2018), e0195773. https://doi.org/10.1371/journal.pone.0195773",
+    "Safiya Umoja Noble. 2018. Algorithms of Oppression: How Search Engines Reinforce Racism (first ed.). New York University Press.",
+    "Jeffrey Pennington, Richard Socher, and Christopher Manning. 2014. Glove: Global Vectors for Word Representation. In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP). Association for Computational Linguistics, Doha, Qatar, 1532-1543. https://doi.org/10.3115/v1/D14-1162",
+    "Matthew Peters, Waleed Ammar, Chandra Bhagavatula, and Russell Power. 2017. Semi-supervised sequence tagging with bidirectional language models. In Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). Association for Computational Linguistics, Vancouver, Canada, 1756-1765. https://doi.org/10.18653/v1/P17-1161",
+    "Jay Pujara and Sameer Singh. 2018. Mining Knowledge Graphs From Text. In Proceedings of the Eleventh ACM International Conference on Web Search and Data Mining (Marina Del Rey, CA, USA) (WSDM '18). ACM, New York, NY, USA, 789-790. https://doi.org/10.1145/3159652.3162011",
+    "Rachel Rudinger, Chandler May, and Benjamin Van Durme. 2017. Social Bias in Elicited Natural Language Inferences. In Proceedings of the First ACL Workshop on Ethics in Natural Language Processing. Association for Computational Linguistics, Valencia, Spain, 74-79. https://doi.org/10.18653/v1/W17-1609",
+    "Rachel Rudinger, Jason Naradowsky, Brian Leonard, and Benjamin Van Durme. 2018. Gender Bias in Coreference Resolution. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers). Association for Computational Linguistics, New Orleans, Louisiana, 8-14. https://doi.org/10.18653/v1/N18-2002",
+    "Brittany N. Smith, Mamta Singh, and Vetle I. Torvik. 2013. A Search Engine Approach to Estimating Temporal Changes in Gender Orientation of First Names. In Proceedings of the 13th ACM/IEEE-CS Joint Conference on Digital Libraries (Indianapolis, Indiana, USA) (JCDL '13). ACM, New York, NY, USA, 199-208. https://doi.org/10.1145/2467696.2467720",
+    "Robyn Speer, Joshua Chin, and Catherine Havasi. 2017. ConceptNet 5.5: An Open Multilingual Graph of General Knowledge. In Proceedings of the Thirty-First AAAI Conference on Artificial Intelligence (San Francisco, California, USA) (AAAI'17). AAAI Press, 4444-4451. http://dl.acm.org/citation.cfm?id=3298023.3298212",
+    "Chris Sweeney and Maryam Najafian. 2019. A Transparent Framework for Evaluating Unintended Demographic Bias in Word Embeddings. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics. Association for Computational Linguistics, Florence, Italy, 1662-1667. https://doi.org/10.18653/v1/P19-1162",
+    "Erik F. Tjong Kim Sang and Fien De Meulder. 2003. Introduction to the CoNLL-2003 Shared Task: Language-Independent Named Entity Recognition. In Proceedings of the Seventh Conference on Natural Language Learning at HLT-NAACL 2003. 142-147. https://www.aclweb.org/anthology/W03-0419",
+    "Yonghui Wu, Mike Schuster, Zhifeng Chen, Quoc V. Le, Mohammad Norouzi, Wolfgang Macherey, Maxim Krikun, Yuan Cao, Qin Gao, Klaus Macherey, Jeff Klingner, Apurva Shah, Melvin Johnson, Xiaobing Liu, Lukasz Kaiser, Stephan Gouws, Yoshikiyo Kato, Taku Kudo, Hideto Kazawa, Keith Stevens, George Kurian, Nishant Patil, Wei Wang, Cliff Young, Jason Smith, Jason Riesa, Alex Rudnick, Oriol Vinyals, Greg Corrado, Macduff Hughes, and Jeffrey Dean. 2016. Google's Neural Machine Translation System: Bridging the Gap between Human and Machine Translation. CoRR abs/1609.08144 (2016). arXiv:1609.08144 http://arxiv.org/abs/1609.08144"
+  ]
+}

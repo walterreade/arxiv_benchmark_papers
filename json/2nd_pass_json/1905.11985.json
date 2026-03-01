@@ -1,0 +1,61 @@
+{
+  "filename": "1905.11985.pdf",
+  "title": "Wide range screening of algorithmic bias in word embedding models using large sentiment lexicons reveals underreported bias types",
+  "arxiv_url": "https://arxiv.org/pdf/1905.11985",
+  "benchmark_measurement": "The benchmark measured sentiment bias by analyzing the correlation between positive/negative sentiment words and cultural axes representing religious groups. Specifically, it evaluated associations on a 'Christians to Muslims' axis and a 'religiosity' axis (Christian/Muslim vs. atheist/nonreligious).",
+  "religious_groups": [
+    "Christianity",
+    "Islam",
+    "Atheism",
+    "Non-religiosity"
+  ],
+  "models_tested": [
+    "Word2vec (Skip-Gram trained on Google News)",
+    "Glove (trained on Wikipedia + Gigaword)",
+    "Glove (trained on Twitter)",
+    "Glove (trained on Common Crawl - small)",
+    "Glove (trained on Common Crawl - large)",
+    "FastText (trained on Common Crawl)",
+    "FastText (trained on Wikipedia, UMBC, statmt.org)"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "WEAT"
+  ],
+  "continuous_testing": false,
+  "findings": "Popular word embedding models showed a consistent mild to moderate association of negative sentiment terms with the pole representing Muslims on a 'Christians to Muslims' axis. Additionally, several models displayed a negative bias against a lack of religious faith (non-religiosity/atheism).",
+  "references": [
+    "Buolamwini J, Gebru T. Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Classification. In: Conference on Fairness, Accountability and Transparency, FAT 2018, 23-24 February 2018, New York, NY, USA [Internet]. 2018. p. 77–91. Available from: http://proceedings.mlr.press/v81/buolamwini18a.html",
+    "Courtland R. Bias detectives: the researchers striving to make algorithms fair. Nature. 2018 Jun 20;558:357.",
+    "Bolukbasi T, Chang K-W, Zou J, Saligrama V, Kalai A. Man is to Computer Programmer As Woman is to Homemaker? Debiasing Word Embeddings. In: Proceedings of the 30th International Conference on Neural Information Processing Systems [Internet]. USA: Curran Associates Inc.; 2016 [cited 2019 Mar 21]. p. 4356–4364. (NIPS'16). Available from: http://dl.acm.org/citation.cfm?id=3157382.3157584",
+    "Mikolov T, Sutskever I, Chen K, Corrado GS, Dean J. Distributed Representations of Words and Phrases and their Compositionality. In: Burges CJC, Bottou L, Welling M, Ghahramani Z, Weinberger KQ, editors. Advances in Neural Information Processing Systems 26 [Internet]. Curran Associates, Inc.; 2013 [cited 2017 May 11]. p. 3111–3119. Available from: http://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf",
+    "Kozlowski AC, Taddy M, Evans JA. The Geometry of Culture: Analyzing Meaning through Word Embeddings. arXiv:180309288 [cs] [Internet]. 2018 Mar 25 [cited 2019 Mar 20]; Available from: http://arxiv.org/abs/1803.09288",
+    "Camacho-Collados J, Pilehvar MT. From Word To Sense Embeddings: A Survey on Vector Representations of Meaning. 1. 2018 Dec 6;63:743–88.",
+    "Garg N, Schiebinger L, Jurafsky D, Zou J. Word embeddings quantify 100 years of gender and ethnic stereotypes. PNAS. 2018 Apr 17;115(16):E3635–44.",
+    "Caliskan A, Bryson JJ, Narayanan A. Semantics derived automatically from language corpora contain human-like biases. Science. 2017 Apr 14;356(6334):183–6.",
+    "Pennington J, Socher R, Manning C. Glove: Global Vectors for Word Representation. In: Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP) [Internet]. Association for Computational Linguistics; 2014 [cited 2019 Mar 25]. p. 1532–1543. Available from: http://aclweb.org/anthology/D14-1162",
+    "Bojanowski P, Grave E, Joulin A, Mikolov T. Enriching Word Vectors with Subword Information. Transactions of the Association for Computational Linguistics. 2017;5:135–146.",
+    "Gladkova A, Drozd A, Matsuoka S. Analogy-based detection of morphological and semantic relations with word embeddings: what works and what doesn't. In: Proceedings of the NAACL Student Research Workshop [Internet]. San Diego, California: Association for Computational Linguistics; 2016 [cited 2019 Mar 25]. p. 8–15. Available from: http://www.aclweb.org/anthology/N16-2002",
+    "Kozlowski AC, Taddy M, Evans JA. The Geometry of Culture: Analyzing the Meanings of Class through Word Embeddings. Am Sociol Rev. 2019 Oct 1;84(5):905–49.",
+    "Garg N, Schiebinger L, Jurafsky D, Zou J. Word embeddings quantify 100 years of gender and ethnic stereotypes. PNAS. 2018 Apr 17;115(16):E3635–44.",
+    "Stone PJ, Dunphy DC, Smith MS. The general inquirer: A computer approach to content analysis. Oxford, England: M.I.T. Press; 1966. 651 p. (The general inquirer: A computer approach to content analysis).",
+    "Knoche M, Popović R, Lemmerich F, Strohmaier M. Identifying Biases in Politically Biased Wikis Through Word Embeddings. In: Proceedings of the 30th ACM Conference on Hypertext and Social Media [Internet]. New York, NY, USA: ACM; 2019 [cited 2019 Dec 10]. p. 253-257. (HT '19). Available from: http://doi.acm.org/10.1145/3342220.3343658",
+    "Swinger N, De-Arteaga M, Heffernan IV NT, Leiserson MD, Kalai AT. What Are the Biases in My Word Embedding? In: Proceedings of the 2019 AAAI/ACM Conference on AI, Ethics, and Society [Internet]. New York, NY, USA: ACM; 2019 [cited 2019 Dec 10]. p. 305-311. (AIES '19). Available from: http://doi.acm.org/10.1145/3306618.3314270",
+    "Solomon S, Greenberg J, Pyszczynski T. Pride and Prejudice: Fear of Death and Social Behavior. Curr Dir Psychol Sci. 2000 Dec 1;9(6):200–4.",
+    "Seefeldt C, Ahn UR. Children's Attitudes Toward the Elderly in Korea and the United States. International Journal of Comparative Sociology. 1990 Jan 1;31(3–4):248–56.",
+    "Puts DA. Beauty and the beast: mechanisms of sexual selection in humans. Evolution and Human Behavior. 2010 May 1;31(3):157–75.",
+    "Nettle D, Pollet TV. Natural Selection on Male Wealth in Humans. The American Naturalist. 2008 Nov 1;172(5):658–66.",
+    "Chouldechova A. Fair Prediction with Disparate Impact: A Study of Bias in Recidivism Prediction Instruments. Big Data. 2017 Jun 1;5(2):153–63.",
+    "Corbett-Davies S, Pierson E, Feller A, Goel S, Huq A. Algorithmic Decision Making and the Cost of Fairness. In: Proceedings of the 23rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining [Internet]. New York, NY, USA: ACM; 2017 [cited 2018 Sep 21]. p. 797–806. (KDD '17). Available from: http://doi.acm.org/10.1145/3097983.3098095",
+    "Cardiff CF, Klein DB. Faculty partisan affiliations in all disciplines: A voter-registration study. Critical Review. 2005 Jun 1;17(3–4):237–55.",
+    "Langbert M. Homogenous: The Political Affiliations of Elite Liberal Arts College Faculty. Academic Questions. 2018 Apr 1;31:1–12.",
+    "Graham J, Haidt J, Nosek BA. Liberals and conservatives rely on different sets of moral foundations. J Pers Soc Psychol. 2009 May;96(5):1029–46.",
+    "Duarte JL, Crawford JT, Stern C, Haidt J, Jussim L, Tetlock PE. Political Diversity Will Improve Social Psychological Science. Behavioral and Brain Sciences. 2014 Jul 18;1–54."
+  ]
+}

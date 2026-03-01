@@ -1,0 +1,78 @@
+{
+  "filename": "2406.05902.pdf",
+  "title": "Whose Preferences? Differences in Fairness Preferences and Their Impact on the Fairness of AI Utilizing Human Feedback",
+  "arxiv_url": "https://arxiv.org/pdf/2406.05902",
+  "benchmark_measurement": "The benchmark measures human annotators' fairness preferences for pairs of sentences that differ along a sensitive attribute, including religion. Specifically, it assesses whether two semantically similar, often toxic, comments referencing different religious groups should receive the same treatment from a content moderator.",
+  "religious_groups": [
+    "Islam",
+    "Christianity",
+    "Catholicism",
+    "Judaism",
+    "Buddhism"
+  ],
+  "models_tested": [
+    "BERT",
+    "RoBERTa",
+    "DeBERTa"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Dorner et al., 2022"
+  ],
+  "continuous_testing": false,
+  "findings": "The sensitive attribute mentioned in sentence pairs, including religion, significantly impacts annotators' fairness judgments. Compared to sentence pairs where the sensitive attribute was race, pairs differing by religion were slightly less likely to be judged as deserving different treatment when annotators predicted the average American's opinion (Odds ratio 0.91, p=0.02). The effect on annotators' personal opinions was not statistically significant.",
+  "references": [
+    "Sohail Akhtar, Valerio Basile, and Viviana Patti. 2020. Modeling annotator perspective and polarized opinions to improve hate speech detection. In Proceedings of the AAAI Conference on Human Computation and Crowdsourcing, volume 8, pages 151–154.",
+    "Hala Al Kuwatly, Maximilian Wich, and Georg Groh. 2020. Identifying and measuring annotator bias based on annotators' demographic characteristics. In Proceedings of the Fourth Workshop on Online Abuse and Harms, pages 184-190.",
+    "Kofi Arhin, Ioana Baldini, Dennis Wei, Karthikeyan Natesan Ramamurthy, and Moninder Singh. 2021. Ground-truth, whose truth?-examining the challenges with annotating toxic text datasets. arXiv preprint arXiv:2112.03529.",
+    "Richard A Armstrong. 2014. When to use the bonferroni correction. Ophthalmic and Physiological Optics, 34(5):502-508.",
+    "Lora Aroyo, Lucas Dixon, Nithum Thain, Olivia Redfield, and Rachel Rosen. 2019. Crowdsourcing subjective tasks: the case study of understanding toxicity in online discussions. In Companion proceedings of the 2019 world wide web conference, pages 1100–1105.",
+    "Lora Aroyo, Alex Taylor, Mark Diaz, Christopher Homan, Alicia Parrish, Gregory Serapio-García, Vinodkumar Prabhakaran, and Ding Wang. 2024. Dices dataset: Diversity in conversational ai evaluation for safety. Advances in Neural Information Processing Systems, 36.",
+    "Lora Aroyo and Chris Welty. 2015. Truth is a lie: Crowd truth and the seven myths of human annotation. Al Magazine, 36(1):15–24.",
+    "Yuntao Bai, Andy Jones, Kamal Ndousse, Amanda Askell, Anna Chen, Nova DasSarma, Dawn Drain, Stanislav Fort, Deep Ganguli, Tom Henighan, et al. 2022. Training a helpful and harmless assistant with reinforcement learning from human feedback. arXiv preprint arXiv:2204.05862.",
+    "Reuben Binns, Michael Veale, Max Van Kleek, and Nigel Shadbolt. 2017. Like trainer, like bot? inheritance of bias in algorithmic content moderation. In Social Informatics: 9th International Conference, SocInfo 2017, Oxford, UK, September 13-15, 2017, Proceedings, Part II 9, pages 405–415. Springer.",
+    "Aida Mostafazadeh Davani, Mark Díaz, and Vinodkumar Prabhakaran. 2022. Dealing with disagreements: Looking beyond the majority vote in subjective annotations. Transactions of the Association for Computational Linguistics, 10:92–110.",
+    "Emily Denton, Mark Díaz, Ian Kivlichan, Vinodkumar Prabhakaran, and Rachel Rosen. 2021. Whose ground truth? accounting for individual and collective identities underlying dataset annotation. arXiv preprint arXiv:2112.04554.",
+    "Jacob Devlin, Chang Ming-Wei, Kenton, and Kristina Toutanova. 2019. Bert: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of NAACL-HLT, pages 4171–4186.",
+    "Florian E Dorner, Momchil Peychev, Nikola Konstantinov, Naman Goel, Elliott Ash, and Martin Vechev. 2022. Human-guided fair classification for natural language processing. In The Eleventh International Conference on Learning Representations.",
+    "Esin Durmus, Karina Nyugen, Thomas I Liao, Nicholas Schiefer, Amanda Askell, Anton Bakhtin, Carol Chen, Zac Hatfield-Dodds, Danny Hernandez, Nicholas Joseph, et al. 2023. Towards measuring the representation of subjective global opinions in language models. arXiv preprint arXiv:2306.16388.",
+    "Cynthia Dwork, Moritz Hardt, Toniann Pitassi, Omer Reingold, and Richard Zemel. 2012. Fairness through awareness. In Proceedings of the 3rd innovations in theoretical computer science conference, pages 214-226.",
+    "European Commission. 2021. Proposal for a regulation of the european parliament and of the council laying down harmonised rules on artificial intelligence (artificial intelligence act) and amending certain union legislative acts (com/2021/206 final). https://eur-lex.europa.eu/legal-content/ EN/TXT/?uri=celex%3A52021PC0206. Accessed: 2023-11-21.",
+    "Eve Fleisig, Rediet Abebe, and Dan Klein. 2023. When the majority is wrong: Modeling annotator disagreement for subjective tasks. Preprint, arXiv:2305.06626.",
+    "Deep Ganguli, Saffron Huang, Liane Lovitt, Divya Siddarth, Thomas Liao, Amanda Askell, Yuntao Bai, Saurav Kadavath, Jackson Kernion, Cam McKinnon, Karina Nguyen, and Esin Durmus. 2023. Collective constitutional ai: Aligning a language model with public input. https://www.anthropic.com/index/ collective-constitutional-ai-aligning-a- language-model-with-public-input. Accessed: 2023-11-21.",
+    "Sahaj Garg, Vincent Perot, Nicole Limtiaco, Ankur Taly, Ed H Chi, and Alex Beutel. 2019. Counterfactual fairness in text classification through robustness. In Proceedings of the 2019 AAAI/ACM Conference on AI, Ethics, and Society, pages 219-226.",
+    "Mitchell L Gordon, Michelle S Lam, Joon Sung Park, Kayur Patel, Jeff Hancock, Tatsunori Hashimoto, and Michael S Bernstein. 2022. Jury learning: Integrating dissenting voices into machine learning models. In Proceedings of the 2022 CHI Conference on Human Factors in Computing Systems, pages 1–19.",
+    "Nitesh Goyal, Ian D Kivlichan, Rachel Rosen, and Lucy Vasserman. 2022. Is your toxicity my toxicity? exploring the impact of rater identity on toxicity annotation. Proceedings of the ACM on Human-Computer Interaction, 6(CSCW2):1–28.",
+    "Oana Inel, Khalid Khamkham, Tatiana Cristea, Anca Dumitrache, Arne Rutjes, Jelle van der Ploeg, Lukasz Romaszko, Lora Aroyo, and Robert-Jan Sips. 2014. Crowdtruth: Machine-human computation framework for harnessing disagreement in gathering annotated data. In The Semantic Web-ISWC 2014: 13th International Semantic Web Conference, Riva del Garda, Italy, October 19-23, 2014. Proceedings, Part II 13, pages 486-504. Springer.",
+    "Christopher Jung, Michael Kearns, Seth Neel, Aaron Roth, Logan Stapleton, and Zhiwei Steven Wu. 2021. An algorithmic framework for fairness elicitation. In 2nd Symposium on Foundations of Responsible Computing, volume 31, page 21.",
+    "Gary D Kader and Mike Perry. 2007. Variability for categorical variables. Journal of statistics education, 15(2).",
+    "Ryan Kennedy, Scott Clifford, Tyler Burleigh, Philip D Waggoner, Ryan Jewell, and Nicholas JG Winter. 2020. The shape of and solutions to the mturk quality crisis. Political Science Research and Methods, 8(4):614-629.",
+    "Hannah Kirk, Andrew Bean, Bertie Vidgen, Paul Rottger, and Scott Hale. 2023. The past, present and better future of feedback learning in large language models for subjective human preferences and values. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, pages 2409-2430, Singapore. Association for Computational Linguistics.",
+    "Kolmogorov-Smirnov Test. 2008. Kolmogorov- Smirnov Test, pages 283-287. Springer New York, New York, NY.",
+    "Deepak Kumar, Patrick Gage Kelley, Sunny Consolvo, Joshua Mason, Elie Bursztein, Zakir Durumeric, Kurt Thomas, and Michael Bailey. 2021. Designing toxic content classification for a diversity of perspectives. Preprint, arXiv:2106.04511.",
+    "Savannah Larimore, Ian Kennedy, Breon Haskett, and Alina Arseniev-Koehler. 2021. Reconsidering annotator disagreement about racist language: Noise or signal? In Proceedings of the Ninth International Workshop on Natural Language Processing for Social Media, pages 81-90, Online. Association for Computational Linguistics.",
+    "Kevin E Levay, Jeremy Freese, and James N Druckman. 2016. The demographic and political composition of mechanical turk samples. Sage Open, 6(1):2158244016636433.",
+    "Chandler May, Alex Wang, Shikha Bordia, Samuel R Bowman, and Rachel Rudinger. 2019. On measuring social biases in sentence encoders. arXiv preprint arXiv:1903.10561.",
+    "Aaron Moss and Leib Litman. 2018. After the bot scare: Understanding what's been happening with data collection on mturk and how to stop it. Retrieved February, 4:2019.",
+    "Mike Perry and Gary Kader. 2005. Variation as unalikeability. Teaching Statistics, 27(2):58–60.",
+    "Barbara Plank. 2022. The 'problem' of human label variation: On ground truth in data, modeling and evaluation. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 10671-10682.",
+    "R Core Team. 2021. R: A Language and Environment for Statistical Computing. R Foundation for Statistical Computing, Vienna, Austria.",
+    "Anthony Rios. 2020. Fuzze: Fuzzy fairness evaluation of offensive language classifiers on african-american english. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 34, pages 881–889.",
+    "Michael J Ryan, William Held, and Diyi Yang. 2024. Unintended impacts of Ilm alignment on global representation. arXiv preprint arXiv:2402.15018.",
+    "Shibani Santurkar, Esin Durmus, Faisal Ladhak, Cinoo Lee, Percy Liang, and Tatsunori Hashimoto. 2023. Whose opinions do language models reflect? In International Conference on Machine Learning, pages 29971-30004. PMLR.",
+    "Maarten Sap, Swabha Swayamdipta, Laura Vianna, Xuhui Zhou, Yejin Choi, and Noah A Smith. 2022. Annotators with attitudes: How annotator beliefs and identities bias toxic language detection. In Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 5884-5906.",
+    "sklearn. 2007. Metrics and scoring: quantifying the quality of predictions. https:// scikit-learn.org/stable/modules/generated/ sklearn.metrics.balanced_accuracy_score.html. Accessed: 2024-02-15.",
+    "Student. 1908. The probable error of a mean. Biometrika, pages 1-25.",
+    "American National Election Studies. 2021. Anes 2020 time series study full release [dataset and documentation]. Technical report, American National Election Studies.",
+    "Yi Chern Tan and L Elisa Celis. 2019. Assessing social and intersectional biases in contextualized word representations. Advances in neural information processing systems, 32.",
+    "The UK Government. 2023. The Bletchley Declaration by Countries Attending the AI Safety Summit, 1-2 November 2023. https://www.gov.uk/government/ publications/ai-safety-summit-2023-the- bletchley-declaration/the-bletchley- declaration-by-countries-attending-the- ai-safety-summit-1-2-november-2023. Accessed: 2023-11-21.",
+    "Jiaheng Wei, Zhaowei Zhu, Tianyi Luo, Ehsan Amid, Abhishek Kumar, and Yang Liu. 2023. To aggregate or not? learning with separate noisy labels. In Proceedings of the 29th ACM SIGKDD Conference on Knowledge Discovery and Data Mining, pages 2523-2535.",
+    "The White House. 2023. President Biden Issues Executive Order on Safe, Secure, and Trustworthy Artificial Intelligence. https://www.whitehouse.gov/ briefing-room/statements-releases/2023/ 10/30/fact-sheet-president-biden-issues- executive-order-on-safe-secure-and- trustworthy-artificial-intelligence/. Accessed: 2023-11-21."
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "filename": "2505.03563.pdf",
+  "title": "Say It Another Way: Auditing LLMs with a User-Grounded Automated Paraphrasing Framework",
+  "arxiv_url": "https://arxiv.org/pdf/2505.03563",
+  "benchmark_measurement": "The benchmark measured stereotypical bias in model outputs related to the social category of religion, using the 'Religion' subset of the BBQ dataset.",
+  "religious_groups": [
+    "Religion (unspecified)"
+  ],
+  "models_tested": [
+    "MPT-7B",
+    "MPT-7B-Inst",
+    "Falcon-7B",
+    "Falcon-7B-Inst",
+    "Llama-3-8B",
+    "Llama-3-8B-Inst",
+    "Gemma3-1B",
+    "Gemma3-4B",
+    "Gemma3-12B"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "BBQ",
+    "MMLU"
+  ],
+  "continuous_testing": false,
+  "findings": "Using the Gemma3-12B model on the BBQ dataset, performance on the 'Religion' subset was sensitive to the type of paraphrase applied. For example, 'Synonym' substitution decreased accuracy by -2.03% while 'Voice Change' increased it by +0.34%. This demonstrates that model behavior in religious contexts is not stable under linguistic variations, and that these specific sensitivities are often masked when using unconstrained or aggregated paraphrasing methods.",
+  "references": [
+    "Michael Aerni, Javier Rando, Edoardo Debenedetti, Nicholas Carlini, Daphne Ippolito, and Florian Tramèr. 2025. Measuring non-adversarial reproduction of training data in large language models. In The Thirteenth International Conference on Learning Representations.",
+    "Ebtesam Almazrouei, Hamza Alobeidli, Abdulaziz Al-shamsi, Alessandro Cappelli, Ruxandra Cojocaru, Mérouane Debbah, Étienne Goffinet, Daniel Hesslow, Julien Launay, Quentin Malartic, Daniele Mazzotta, Badreddine Noune, Baptiste Pannier, and Guilherme Penedo. 2023. The falcon series of open language models.",
+    "Norah Alzahrani, Hisham Alyahya, Yazeed Alnumay, Sultan AlRashed, Shaykhah Alsubaie, Yousef Al-mushayqih, Faisal Mirza, Nouf Alotaibi, Nora Al-Twairesh, Areeb Alowisheq, M Saiful Bari, and Haidar Khan. 2024. When benchmarks are targets: Revealing the sensitivity of large language model leaderboards. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 13787–13805, Bangkok, Thailand. Association for Computational Linguistics.",
+    "Maryam Amirizaniani, Elias Martin, Tanya Roosta, Aman Chadha, and Chirag Shah. 2024. Auditllm: a tool for auditing large language models using multiprobe approach. In Proceedings of the 33rd ACM International Conference on Information and Knowledge Management, pages 5174-5179.",
+    "Ion Androutsopoulos and Prodromos Malakasiotis. 2010. A survey of paraphrasing and textual entailment methods. Journal of Artificial Intelligence Research, 38:135-187.",
+    "Pulkit Arora, Akbar Karimi, and Lucie Flek. 2025. Exploring robustness of llms to sociodemographically-conditioned paraphrasing. arXiv preprint arXiv:2501.08276.",
+    "Rahul Bhagat and Eduard Hovy. 2013. Squibs: What is a paraphrase? Computational Linguistics, 39(3):463-472.",
+    "Abeba Birhane, Ryan Steed, Victor Ojewale, Briana Vecchione, and Inioluwa Deborah Raji. 2024. Ai auditing: The broken bus on the road to ai accountability. In 2024 IEEE Conference on Secure and Trustworthy Machine Learning (SaTML), pages 612-643. IEEE.",
+    "DeepSeek-AI. 2025. Deepseek-v3 technical report.",
+    "Daryna Dementieva, Nikolay Babakov, and Alexander Panchenko. 2023. Detecting text formality: A study of text classification approaches. In Proceedings of the 14th International Conference on Recent Advances in Natural Language Processing, pages 274-284, Varna, Bulgaria. INCOMA Ltd., Shoumen, Bulgaria.",
+    "Prakhar Ganesh, Reza Shokri, and Golnoosh Farnadi. 2025. Rethinking hallucinations: Correctness, consistency, and prompt multiplicity. In ICLR 2025 Workshop on Building Trust in Language Models and Applications.",
+    "Marcel Gohsen, Matthias Hagen, Martin Potthast, and Benno Stein. 2024. Task-oriented paraphrase analytics. In Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024), pages 15640-15654, Torino, Italia. ELRA and ICCL.",
+    "Hila Gonen and Yoav Goldberg. 2019. Lipstick on a pig: Debiasing methods cover up systematic gender biases in word embeddings but do not remove them. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 609-614, Minneapolis, Minnesota. Association for Computational Linguistics.",
+    "Aaron Grattafiori et al. 2024. The llama 3 herd of models.",
+    "Camille Harris, Matan Halevy, Ayanna Howard, Amy Bruckman, and Diyi Yang. 2022. Exploring the Role of Grammar and Word Choice in Bias Toward African American English (AAE) in Hate Speech Classification. In 2022 ACM Conference on Fairness, Accountability, and Transparency, pages 789–798, Seoul Republic of Korea. ACM.",
+    "Dan Hendrycks, Collin Burns, Steven Basart, Andy Zou, Mantas Mazeika, Dawn Song, and Jacob Steinhardt. 2021. Measuring massive multitask language understanding. In International Conference on Learning Representations.",
+    "Rem Hida, Masahiro Kaneko, and Naoaki Okazaki. 2024. Social bias evaluation for large language models requires prompt variations.",
+    "Itay Itzhak, Gabriel Stanovsky, Nir Rosenfeld, and Yonatan Belinkov. 2024. Instructed to bias: Instruction-tuned language models exhibit emergent cognitive bias. Transactions of the Association for Computational Linguistics, 12:771–785.",
+    "Jiho Jin, Jiseon Kim, Nayeon Lee, Haneul Yoo, Alice Oh, and Hwaran Lee. 2024. KoBBQ: Korean bias benchmark for question answering. Transactions of the Association for Computational Linguistics, 12:507-524.",
+    "Quentin Lemesle, Jonathan Chevelu, Philippe Martin, Damien Lolive, Arnaud Delhay, and Nelly Barbot. 2025. Paraphrase generation evaluation powered by an LLM: A semantic metric, not a lexical one. In Proceedings of the 31st International Conference on Computational Linguistics, pages 8057–8087, Abu Dhabi, UAE. Association for Computational Linguistics.",
+    "Chin-Yew Lin. 2004. ROUGE: A package for automatic evaluation of summaries. In Text Summarization Branches Out, pages 74-81, Barcelona, Spain. Association for Computational Linguistics.",
+    "Dominik Meier, Jan Philip Wahle, Terry Lima Ruas, and Bela Gipp. 2025. Towards human understanding of paraphrase types in large language models. In Proceedings of the 31st International Conference on Computational Linguistics, pages 6298-6316, Abu Dhabi, UAE. Association for Computational Linguistics.",
+    "Jakob Mökander, Jonas Schuett, Hannah Rose Kirk, and Luciano Floridi. 2024. Auditing large language models: a three-layered approach. Al and Ethics, 4(4):1085-1115.",
+    "OpenAI. 2024. Gpt-4 technical report.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel Bowman. 2022. BBQ: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2086–2105, Dublin, Ireland. Association for Computational Linguistics.",
+    "Nils Reimers and Iryna Gurevych. 2019. Sentence-BERT: Sentence embeddings using Siamese BERT-networks. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 3982-3992, Hong Kong, China. Association for Computational Linguistics.",
+    "Melanie Sclar, Yejin Choi, Yulia Tsvetkov, and Alane Suhr. 2024. Quantifying language models' sensitivity to spurious features in prompt design or: How i learned to start worrying about prompt formatting. In The Twelfth International Conference on Learning Representations.",
+    "Amir Sepehri, Mitra Sadat Mirshafiee, and David M Markowitz. 2023. Passivepy: A tool to automatically identify passive voice in big text data. Journal of Consumer Psychology, 33(4):714–727.",
+    "Maximilian Spliethöver, Sai Nikhil Menon, and Henning Wachsmuth. 2024. Disentangling dialect from social bias via multitask learning to improve fairness. In Findings of the Association for Computational Linguistics: ACL 2024, pages 9294-9313, Bangkok, Thailand. Association for Computational Linguistics.",
+    "Samson Tan, Shafiq Joty, Kathy Baxter, Araz Taeihagh, Gregory A Bennett, and Min-Yen Kan. 2021a. Reliability testing for natural language processing systems. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 4153-4169.",
+    "Samson Tan, Shafiq Joty, Kathy Baxter, Araz Taeihagh, Gregory A. Bennett, and Min-Yen Kan. 2021b. Reliability testing for natural language processing systems. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 4153-4169, Online. Association for Computational Linguistics.",
+    "Gemma Team. 2025. Gemma 3 technical report.",
+    "MosaicML NLP Team. 2023. Introducing mpt-7b: A new standard for open-source, commercially usable Ilms. Accessed: 2023-05-05.",
+    "Marta Vila, M Antònia Martí, Horacio Rodríguez, et al. 2014. Is this a paraphrase? what kind? paraphrase boundaries and typology. Open Journal of Modern Linguistics, 4(01):205.",
+    "Jan Philip Wahle, Bela Gipp, and Terry Ruas. 2023. Paraphrase types for generation and detection. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, pages 12148-12164, Singapore. Association for Computational Linguistics.",
+    "Jan Philip Wahle, Terry Ruas, Yang Xu, and Bela Gipp. 2024. Paraphrase types elicit prompt engineering capabilities. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 11004-11033, Miami, Florida, USA. Association for Computational Linguistics.",
+    "Abdelrahman Zayed, Goncalo Mordido, Ioana Baldini, and Sarath Chandar. 2024. Why don't prompt-based fairness metrics correlate? In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 9002-9019, Bangkok, Thailand. Association for Computational Linguistics.",
+    "Shuo Zhang and Krisztian Balog. 2020. Evaluating conversational recommender systems via user simulation. In Proceedings of the 26th acm sigkdd international conference on knowledge discovery & data mining, pages 1512-1520.",
+    "Tianyi Zhang, Varsha Kishore, Felix Wu, Kilian Q Weinberger, and Yoav Artzi. 2020. Bertscore: Evaluating text generation with bert. In International Conference on Learning Representations."
+  ]
+}

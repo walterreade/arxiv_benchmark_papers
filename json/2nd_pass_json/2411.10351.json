@@ -1,0 +1,68 @@
+{
+  "filename": "2411.10351.pdf",
+  "title": "Bias Unveiled: Investigating Social Bias in LLM-Generated Code",
+  "arxiv_url": "https://arxiv.org/pdf/2411.10351",
+  "benchmark_measurement": "The benchmark, SocialBias-Bench, measures whether LLM-generated code produces inconsistent or biased outcomes for individuals based on their religious affiliation in various human-centered tasks, such as eligibility for social benefits, university admissions, and employment.",
+  "religious_groups": [
+    "Christianity",
+    "Islam",
+    "Atheism",
+    "Hinduism",
+    "Buddhism"
+  ],
+  "models_tested": [
+    "GPT-3.5-turbo-0125",
+    "codechat-bison@002",
+    "CodeLlama-70b-instruct-hf",
+    "claude-3-haiku-20240307"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": true,
+  "findings": "All four tested LLMs were found to generate code that exhibits social bias based on religion. The Code Bias Score (CBS) for religion ranged from 5.48% (claude-3-haiku-20240307) to 16.44% (GPT-3.5-turbo-0125). However, the study also found that iterative prompting as a mitigation strategy could effectively eliminate religious bias in the generated code for GPT-3.5-turbo, reducing its CBS for religion to 0%.",
+  "references": [
+    "Anthropic. 2024. Claude Models. https://docs.anthropic. com/en/docs/about-claude/models. Accessed: 2024-06-20.",
+    "Austin, J.; Odena, A.; Nye, M.; Bosma, M.; Michalewski, H.; Dohan, D.; Jiang, E.; Cai, C.; Terry, M.; Le, Q.; et al. 2021. Program synthesis with large language models. arXiv preprint arXiv:2108.07732.",
+    "Bai, Y.; Zhao, J.; Shi, J.; Wei, T.; Wu, X.; and He, L. 2023. FairBench: A Four-Stage Automatic Framework for De- tecting Stereotypes and Biases in Large Language Models. arXiv preprint arXiv:2308.10397.",
+    "Chen, M.; Tworek, J.; Jun, H.; Yuan, Q.; de Oliveira Pinto, H. P.; Kaplan, J.; Edwards, H.; Burda, Y.; Joseph, N.; Brock- man, G.; Ray, A.; Puri, R.; Krueger, G.; Petrov, M.; Khlaaf, H.; Sastry, G.; Mishkin, P.; Chan, B.; Gray, S.; Ryder, N.; Pavlov, M.; Power, A.; Kaiser, L.; Bavarian, M.; Winter, C.; Tillet, P.; Such, F. P.; Cummings, D.; Plappert, M.; Chantzis, F.; Barnes, E.; Herbert-Voss, A.; Guss, W. H.; Nichol, A.; Paino, A.; Tezak, N.; Tang, J.; Babuschkin, I.; Balaji, S.; Jain, S.; Saunders, W.; Hesse, C.; Carr, A. N.; Leike, J.; Achiam, J.; Misra, V.; Morikawa, E.; Radford, A.; Knight, M.; Brundage, M.; Murati, M.; Mayer, K.; Welinder, P.; Mc- Grew, B.; Amodei, D.; McCandlish, S.; Sutskever, I.; and Zaremba, W. 2021. Evaluating Large Language Models Trained on Code. arXiv:2107.03374.",
+    "Chen, T. Y.; Cheung, S. C.; and Yiu, S. M. 2020. Metamor- phic testing: a new approach for generating next test cases. arXiv preprint arXiv:2002.12543.",
+    "Chen, Z.; Zhang, J. M.; Sarro, F.; and Harman, M. 2024. Fairness Improvement with Multiple Protected Attributes: How Far Are We? In Proceedings of the IEEE/ACM 46th In- ternational Conference on Software Engineering, ICSE ’24.",
+    "Corbett-Davies, S.; Pierson, E.; Feller, A.; Goel, S.; and Huq, A. 2017. Algorithmic decision making and the cost of fairness. In Proceedings of the 23rd acm sigkdd interna- tional conference on knowledge discovery and data mining, 797–806.",
+    "Dejanović, I.; Vaderna, R.; Milosavljević, G.; and Vuković, Ž. 2017. Textx: a python tool for domain-specific languages implementation. Knowledge-based systems, 115: 1–4.",
+    "Dhamala, J.; Sun, T.; Kumar, V.; Krishna, S.; Pruksachatkun, Y.; Chang, K.-W.; and Gupta, R. 2021. Bold: Dataset and metrics for measuring biases in open-ended language gener- ation. In Proceedings of the 2021 ACM conference on fair- ness, accountability, and transparency, 862–872.",
+    "Díaz, M.; Johnson, I.; Lazar, A.; Piper, A. M.; and Gergle, D. 2018. Addressing age-related bias in sentiment analysis. In Proceedings of the 2018 chi conference on human factors in computing systems, 1–14.",
+    "Galhotra, S.; Brun, Y.; and Meliou, A. 2017. Fairness test- ing: testing software for discrimination. In Proceedings of the 2017 11th Joint meeting on foundations of software en- gineering, 498–510.",
+    "Gallegos, I. O.; Rossi, R. A.; Barrow, J.; Tanjim, M. M.; Kim, S.; Dernoncourt, F.; Yu, T.; Zhang, R.; and Ahmed, N. K. 2023. Bias and fairness in large language models: A survey. arXiv preprint arXiv:2309.00770.",
+    "Google. 2023. Code Chat. https://cloud.google.com/vertex- ai/generative-ai/docs/model-reference/code-chat. Ac- cessed: 2024-06-20.",
+    "Huang, D.; Bu, Q.; Zhang, J.; Xie, X.; Chen, J.; and Cui, H. 2023. Bias Testing and Mitigation in LLM-based Code Generation. https://api.semanticscholar.org/CorpusID:262824773.",
+    "Li, R.; Allal, L. B.; Zi, Y.; Muennighoff, N.; Kocetkov, D.; Mou, C.; Marone, M.; Akiki, C.; Li, J.; Chim, J.; et al. 2023. StarCoder: may the source be with you! arXiv preprint arXiv:2305.06161.",
+    "Liang, P. P.; Wu, C.; Morency, L.-P.; and Salakhutdinov, R. 2021. Towards understanding and mitigating social biases in language models. In International Conference on Machine Learning, 6565–6576. PMLR.",
+    "Liu, H.; Dacon, J.; Fan, W.; Liu, H.; Liu, Z.; and Tang, J. 2019. Does gender matter? towards fairness in dialogue sys- tems. arXiv preprint arXiv:1910.10486.",
+    "Liu, Y.; Chen, X.; Gao, Y.; Su, Z.; Zhang, F.; Zan, D.; Lou, J.-G.; Chen, P.-Y.; and Ho, T.-Y. 2023. Uncovering and quantifying social biases in code generation. Advances in Neural Information Processing Systems, 36.",
+    "Meade, N.; Poole-Dayan, E.; and Reddy, S. 2021. An empirical survey of the effectiveness of debiasing tech- niques for pre-trained language models. arXiv preprint arXiv:2110.08527.",
+    "Měchura, M. 2022. A taxonomy of bias-causing ambiguities in machine translation. In Proceedings of the 4th Workshop on Gender Bias in Natural Language Processing (GeBNLP), 168–173.",
+    "Meta. 2024. Code Llama 70B Instruct HF. https: //huggingface.co/meta-llama/CodeLlama-70b-Instruct-hf. Accessed: 2024-06-20.",
+    "Mozafari, M.; Farahbakhsh, R.; and Crespi, N. 2020. Hate speech detection and racial bias mitigation in social media based on BERT model. PloS one, 15(8): e0237861.",
+    "Nadeem, M.; Bethke, A.; and Reddy, S. 2020. StereoSet: Measuring stereotypical bias in pretrained language models. arXiv preprint arXiv:2004.09456.",
+    "Nangia, N.; Vania, C.; Bhalerao, R.; and Bowman, S. R. 2020. CrowS-pairs: A challenge dataset for measuring so- cial biases in masked language models. arXiv preprint arXiv:2010.00133.",
+    "Nijkamp, E.; Pang, B.; Hayashi, H.; Tu, L.; Wang, H.; Zhou, Y.; Savarese, S.; and Xiong, C. 2022. Codegen: An open large language model for code with multi-turn program syn- thesis. arXiv preprint arXiv:2203.13474.",
+    "OpenAI. 2022. GPT-3.5 Turbo Models. https://platform. openai.com/docs/models/gpt-3-5-turbo. Accessed: 2024- 06-20.",
+    "Parrish, A.; Chen, A.; Nangia, N.; Padmakumar, V.; Phang, J.; Thompson, J.; Htut, P. M.; and Bowman, S. R. 2021. BBQ: A hand-built bias benchmark for question answering. arXiv preprint arXiv:2110.08193.",
+    "Rekabsaz, N.; and Schedl, M. 2020. Do neural ranking mod- els intensify gender bias? In Proceedings of the 43rd Inter- national ACM SIGIR Conference on Research and Develop- ment in Information Retrieval, 2065–2068.",
+    "Roziere, B.; Gehring, J.; Gloeckle, F.; Sootla, S.; Gat, I.; Tan, X. E.; Adi, Y.; Liu, J.; Remez, T.; Rapin, J.; et al. 2023. Code llama: Open foundation models for code. arXiv preprint arXiv:2308.12950.",
+    "Sap, M.; Card, D.; Gabriel, S.; Choi, Y.; and Smith, N. A. 2019. The risk of racial bias in hate speech detection. In Proceedings of the 57th annual meeting of the association for computational linguistics, 1668–1678.",
+    "Sheng, E.; Chang, K.-W.; Natarajan, P.; and Peng, N. 2020. Towards controllable biases in language generation. arXiv preprint arXiv:2005.00268.",
+    "Steed, R.; Panda, S.; Kobren, A.; and Wick, M. 2022. Up- stream mitigation is not all you need: Testing the bias trans- fer hypothesis in pre-trained language models. In Proceed- ings of the 60th Annual Meeting of the Association for Com- putational Linguistics (Volume 1: Long Papers), 3524–3542.",
+    "Wan, Y.; Wang, W.; He, P.; Gu, J.; Bai, H.; and Lyu, M. R. 2023. Biasasker: Measuring the bias in conversational ai system. In Proceedings of the 31st ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering, 515–527.",
+    "Wikipedia. 2024. Student’s t-test. https://en.wikipedia.org/ wiki/Student%27s_t-test. Accessed: 2024-06-20.",
+    "Yang, Z.; Yi, X.; Li, P.; Liu, Y.; and Xie, X. 2022. Unified detoxifying and debiasing in language generation via inference-time adaptive optimization. arXiv preprint arXiv:2210.04492.",
+    "Zhang, M.; Sun, J.; Wang, J.; and Sun, B. 2023. TESTSGD: Interpretable testing of neural networks against subtle group discrimination. ACM Transactions on Software Engineering and Methodology, 32(6): 1–24.",
+    "Zhao, J.; Fang, M.; Pan, S.; Yin, W.; and Pechenizkiy, M. 2023. GPTBIAS: A comprehensive framework for evaluating bias in large language models. arXiv preprint arXiv:2312.06315."
+  ]
+}

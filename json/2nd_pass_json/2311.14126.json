@@ -1,0 +1,69 @@
+{
+  "filename": "2311.14126.pdf",
+  "title": "Towards Auditing Large Language Models: Improving Text-based Stereotype Detection",
+  "arxiv_url": "https://arxiv.org/pdf/2311.14126",
+  "benchmark_measurement": "Detection of stereotypic text related to religion, as one of four societal dimensions analyzed (along with race, profession, and gender).",
+  "religious_groups": [
+    "Islam",
+    "Christianity",
+    "Hinduism"
+  ],
+  "models_tested": [
+    "GPT2",
+    "GPT-3.5-turbo",
+    "GPT-4"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "StereoSet",
+    "CrowS-Pairs"
+  ],
+  "continuous_testing": true,
+  "findings": "The study's multi-class stereotype detection model consistently outperformed single-class models across all dimensions, including religion (F1 Score of 0.810 for multi-class vs. 0.718 for single-class). When auditing GPT series models, a trend of decreasing stereotypic bias was observed in newer models. Specifically for religion, GPT-3.5-turbo had the lowest bias score (0.6284), followed by GPT-4 (0.6537), while GPT-2 had the highest (0.8225).",
+  "references": [
+    "Brown, T. B. et al. Language Models are Few-Shot Learners 2020. arXiv: 2005. 14165 [cs.CL].",
+    "Radford, A. et al. Language Models are Unsupervised Multitask Learners (2019).",
+    "OpenAI. GPT-4 Technical Report 2023. arXiv: 2303.08774 [cs.CL].",
+    "Touvron, H. et al. LLaMA: Open and Efficient Foundation Language Models 2023. arXiv: 2302.13971 [cs.CL].",
+    "Touvron, H. et al. Llama 2: Open Foundation and Fine-Tuned Chat Models 2023. arXiv: 2307.09288 [cs.CL].",
+    "Almazrouei, E. et al. Falcon-40B: an open large language model with state-of-the-art performance (2023).",
+    "Wei, J. et al. Emergent Abilities of Large Language Models 2022. arXiv: 2206.07682 [cs.CL].",
+    "Zhu, Y. et al. Aligning books and movies: Towards story-like visual explanations by watching movies and reading books in Proceedings of the IEEE International Conference on Computer Vision (IEEE Computer Society, 2015).",
+    "Foundation, W. Wikipedia: The Free Encyclopedia 2021.https://www.wikipedia.org/.",
+    "Foundation, C. C. The Common Crawl Corpus 2021. https://commoncrawl.org/.",
+    "May, C., Wang, A., Bordia, S., Bowman, S. R. & Rudinger, R. On measuring social biases in sentence encoders in Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers) (Minneapolis, Minnesota, 2019), 622–628.",
+    "Bordia, S. & Bowman, S. R. Identifying and reducing gender bias in word-level language models in Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Student Research Workshop (Minneapolis, Minnesota, 2019), 7–15.",
+    "Davidson, T., Bhattacharya, D. & Weber, I. Racial bias in hate speech and abusive language detection datasets in Proceedings of the Third Workshop on Abusive Language Online (Florence, Italy, 2019), 25–35.",
+    "Magee, L., Ghahremanlou, L., Soldatic, K. & Robertson, S. Intersectional bias in causal language models. arXiv preprint arXiv:2107.07691 (2021).",
+    "Bakshy, E., Messing, S. & Adamic, L. A. Exposure to ideologically diverse news and opinion on Facebook. Science 348, 1130–1132 (2015).",
+    "Angwin, J., Larson, J., Kirchner, L. & Mattu, S. Machine Bias https://www.propublica. org/article/machine-bias-risk-assessments-in-criminal-sentencing.",
+    "Prates, M. O. R., Avelar, P. H. C. & Lamb, L. Assessing Gender Bias in Machine Translation – A Case Study with Google Translate 2019. arXiv: 1809.02208 [cs.CY].",
+    "Neff, G. & Nagy, P. Talking to Bots: Symbiotic Agency and the Case of Tay. International Journal of Communication 10, 4915–4931 (Oct. 2016).",
+    "Nadeem, M., Bethke, A. & Reddy, S. StereoSet: Measuring stereotypical bias in pretrained language models 2020. arXiv: 2004.09456 [cs.CL].",
+    "Raza, S., Reji, D. J. & Ding, C. Dbias: Detecting biases and ensuring Fairness in news articles 2022. arXiv: 2208.05777 [cs.IR].",
+    "Dinan, E. et al. Multi-Dimensional Gender Bias Classification. arXiv preprint arXiv:2005.00614 (2020).",
+    "JongyoonSong. JongyoonSong/K-StereoSet https://github.com/JongyoonSong / K- StereoSet.",
+    "Nangia, N., Vania, C., Bhalerao, R. & Bowman, S. R. CrowS-Pairs: A Challenge Dataset for Measuring Social Biases in Masked Language Models 2020. arXiv: 2010.00133 [cs.CL].",
+    "Felkner, V. K., Chang, H.-C. H., Jang, E. & May, J. WinoQueer: A Community-in-the-Loop Benchmark for Anti-LGBTQ+ Bias in Large Language Models 2023. arXiv: 2306.15087 [cs.CL].",
+    "Jha, A. et al. SeeGULL: A Stereotype Benchmark with Broad Geo-Cultural Coverage Leveraging Generative Models 2023. arXiv: 2305.11840 [cs.CL].",
+    "Caliskan, A., Bryson, J. J. & Narayanan, A. Semantics derived automatically from language corpora contain human-like biases. Science 356, 183–186 (2017).",
+    "May, C., Wang, A., Bordia, S., Bowman, S. R. & Rudinger, R. On Measuring Social Biases in Sentence Encoders in Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers) (Association for Computational Linguistics, Minneapolis, Minnesota, June 2019), 622-628.https://aclanthology.org/N19-1063.",
+    "Parrish, A. et al. BBQ: A hand-built bias benchmark for question answering in Findings of the Association for Computational Linguistics: ACL 2022 (Association for Computational Linguistics, Dublin, Ireland, May 2022), 2086–2105.https://aclanthology.org/2022. findings-acl.165.",
+    "Dhamala, J. et al. BOLD: Dataset and Metrics for Measuring Biases in Open-Ended Language Generation in Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency (Association for Computing Machinery, Virtual Event, Canada, 2021), 862–872. ISBN: 9781450383097.https://doi.org/10.1145/3442188.3445924.",
+    "Bolukbasi, T., Chang, K.-W., Zou, J. Y., Saligrama, V. & Kalai, A. T. Man is to computer programmer as woman is to homemaker? Debiasing word embeddings in Advances in Neural Information Processing Systems (2016).",
+    "Team, C. A. DeepEval: A Benchmarking Framework for Language Learning Models https: //github.com/confident-ai/deepeval. 2023.",
+    "Liang, P. et al. Holistic Evaluation of Language Models 2022. arXiv: 2211.09110 [cs.CL].",
+    "whylabs. LangKit: An Open-Source Text Metrics Toolkit for Monitoring Language Models https://github.com/whylabs/langkit. 2023.",
+    "Sileo, D. tasksource: Structured Dataset Preprocessing Annotations for Frictionless Extreme Multi-Task Learning and Evaluation. arXiv preprint arXiv:2301.05948. https://arxiv.org/ abs/2301.05948 (2023).",
+    "Swamy, V., Radmehr, B., Krco, N., Marras, M. & Käser, T. Evaluating the Explainers: Black-Box Explainable Machine Learning for Student Success Prediction in MOOCs 2022. arXiv: 2207.00551 [cs.LG].",
+    "Lundberg, S. M. & Lee, S.-I. A Unified Approach to Interpreting Model Predictions in Advances in Neural Information Processing Systems (2017), 4768–4777.",
+    "Tulio, M., Singh, S. & Guestrin, C. \"Why should I trust you?\" Explaining the predictions of any classifier in Proceedings of the 22nd ACM SIGKDD international conference on knowledge discovery and data mining (2016), 1135–1144.",
+    "Vig, J. A Multiscale Visualization of Attention in the Transformer Model in Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics: System Demonstrations (Association for Computational Linguistics, Florence, Italy, July 2019), 37–42. https://www. aclweb.org/anthology/P19-3007."
+  ]
+}

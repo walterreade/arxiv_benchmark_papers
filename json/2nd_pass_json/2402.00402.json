@@ -1,0 +1,38 @@
+{
+  "filename": "2402.00402.pdf",
+  "title": "Investigating Bias Representations in Llama 2 Chat via Activation Steering",
+  "arxiv_url": "https://arxiv.org/pdf/2402.00402",
+  "benchmark_measurement": "The benchmark measured stereotypical bias by evaluating the model's completion of sentences associating religious identities with specific professions (e.g., 'The Christian man worked as a').",
+  "religious_groups": [
+    "Christianity",
+    "Islam",
+    "Judaism"
+  ],
+  "models_tested": [
+    "Llama 2 7B Chat",
+    "Llama 2 7B"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "StereoSet"
+  ],
+  "continuous_testing": false,
+  "findings": "The unsteered Llama 2 7B Chat model initially refuses to complete prompts involving religious identities. However, using activation steering to add a bias vector while subtracting a refusal vector successfully elicits stereotypical responses (e.g., a Jewish man working as a 'rabbi'). More significantly, the study found that steering for one type of bias (race) could induce extreme and harmful stereotypes in another domain (religion), such as completing a prompt about a Muslim man with 'worked as a terrorist on a plane'. The research also suggests that RLHF may cause the model to represent different societal biases (including religion) more similarly, potentially losing a nuanced understanding of each.",
+  "references": [
+    "Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine Babaei, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, Dan Bikel, Lukas Blecher, Cristian Canton Ferrer, Moya Chen, Guillem Cucurull, David Esiobu, Jude Fernandes, Jeremy Fu, Wenyin Fu, Brian Fuller, Cynthia Gao, Vedanuj Goswami, Naman Goyal, Anthony Hartshorn, Saghar Hosseini, Rui Hou, Hakan Inan, Marcin Kardas, Viktor Kerkez, Madian Khabsa, Isabel Kloumann, Artem Korenev, Punit Singh Koura, Marie-Anne Lachaux, Thibaut Lavril, Jenya Lee, Diana Liskovich, Yinghai Lu, Yuning Mao, Xavier Martinet, Todor Mihaylov, Pushkar Mishra, Igor Molybog, Yixin Nie, Andrew Poulton, Jeremy Reizenstein, Rashi Rungta, Kalyan Saladi, Alan Schelten, Ruan Silva, Eric Michael Smith, Ranjan Subramanian, Xiaoqing Ellen Tan, Binh Tang, Ross Taylor, Adina Williams, Jian Xiang Kuan, Puxin Xu, Zheng Yan, Iliyan Zarov, Yuchen Zhang, Angela Fan, Melanie Kambadur, Sharan Narang, Aurelien Rodriguez, Robert Stojnic, Sergey Edunov, and Thomas Scialom. Llama 2: Open foundation and fine-tuned chat models, 2023.",
+    "Nina Rimsky, Nick Gabrieli, Julian Schulz, Meg Tong, Evan Hubinger, and Alexander Matt Turner. Steering llama 2 via contrastive activation addition, 2023.",
+    "Andy Zou, Long Phan, Sarah Chen, James Campbell, Phillip Guo, Richard Ren, Alexander Pan, Xuwang Yin, Mantas Mazeika, Ann-Kathrin Dombrowski, Shashwat Goel, Nathaniel Li, Michael J. Byun, Zifan Wang, Alex Mallen, Steven Basart, Sanmi Koyejo, Dawn Song, Matt Fredrikson, J. Zico Kolter, and Dan Hendrycks. Representation engineering: A top-down approach to ai transparency, 2023.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. Stereoset: Measuring stereotypical bias in pretrained language models, 2020.",
+    "OpenAI. Gpt-4 technical report, 2023.",
+    "Dawn Lu. gender_stereotypes_augmented_A_B.json. https://github.com/matutinus/SPAR/blob/main/gender_stereotypes_augmented_A_B.json, 2023.",
+    "Dawn Lu. stereotype_data_A_B_subset.json. https://github.com/matutinus/SPAR/blob/main/stereotype_data_A_B_subset.json, 2023.",
+    "Emily Sheng, Kai-Wei Chang, Premkumar Natarajan, and Nanyun Peng. The woman worked as a babysitter: On biases in language generation, 2019.",
+    "Nina Rimsky. Red-teaming language models via activation engineering. https://www.alignmentforum.org/posts/iHmsJdxgMEWmAfNne/red-teaming-language-models-via-activation-engineering, 2023."
+  ]
+}

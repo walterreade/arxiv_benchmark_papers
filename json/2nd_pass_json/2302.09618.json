@@ -1,0 +1,77 @@
+{
+  "filename": "2302.09618.pdf",
+  "title": "Multilingual Content Moderation: A Case Study on Reddit",
+  "arxiv_url": "https://arxiv.org/pdf/2302.09618",
+  "benchmark_measurement": "The performance of content moderation models, specifically their ability to predict comment removal, within and across subreddits dedicated to specific religions (r/judaism, r/islam, r/christianity). The study tested if grouping these subreddits improves classifier performance.",
+  "religious_groups": [
+    "Judaism",
+    "Islam",
+    "Christianity"
+  ],
+  "models_tested": [
+    "ROBERTa",
+    "XLM-ROBERTa",
+    "bert-base-german-uncased",
+    "flaubert-base-uncased",
+    "bert-base-spanish-uncased",
+    "roberta-base",
+    "bert-base-multilingual-cased (M-BERT)",
+    "sentence-transformers (all-mpnet-base-v2)"
+  ],
+  "languages_evaluated": [
+    "English",
+    "German",
+    "Spanish",
+    "French"
+  ],
+  "response_type": [
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "OLID",
+    "SWAD",
+    "OffensEval",
+    "HatEval",
+    "CDUC",
+    "CONAN",
+    "Norms"
+  ],
+  "continuous_testing": false,
+  "findings": "Grouping subreddits by similar topics, such as religion (e.g., r/judaism + r/islam), can improve the performance of moderation classifiers. However, adding more subreddits to a group (e.g., adding r/christianity) does not guarantee further improvement and can sometimes slightly decrease performance, suggesting that proper partitioning is crucial.",
+  "references": [
+    "Mikel Artetxe, Gorka Labaka, and Eneko Agirre. 2020. Translation artifacts in cross-lingual transfer learning. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 7674–7684, Online. Association for Computational Linguistics.",
+    "Katherine Atwell, Sabit Hassan, and Malihe Alikhani. 2022. Appdia: A discourse-aware transformer-based style transfer model for offensive social media conversations. ArXiv, abs/2209.08207.",
+    "Valerio Basile, Cristina Bosco, Elisabetta Fersini, Nozza Debora, Viviana Patti, Francisco Manuel Rangel Pardo, Paolo Rosso, Manuela Sanguinetti, et al. 2019. Semeval-2019 task 5: Multilingual detection of hate speech against immigrants and women in twitter. In 13th International Workshop on Semantic Evaluation, pages 54-63. Association for Computational Linguistics.",
+    "Shiladitya Bhattacharya, Siddharth Singh, Ritesh Kumar, Akanksha Bansal, Akash Bhagat, Yogesh Dawer, Bornini Lahiri, and Atul Kr Ojha. 2020. Developing a multilingual annotated corpus of misogyny and aggression. arXiv preprint arXiv:2003.07428.",
+    "Eshwar Chandrasekharan, Mattia Samory, Shagun Jhaver, Hunter Charvat, Amy Bruckman, Cliff Lampe, Jacob Eisenstein, and Eric Gilbert. 2018. The internet's hidden rules: An empirical study of reddit norm violations at micro, meso, and macro scales. Proceedings of the ACM on Human-Computer Interaction, 2(CSCW):1–25.",
+    "Mudit Chaudhary, Chandni Saxena, and Helen Meng. 2021. Countering online hate speech: An nlp perspective. arXiv preprint arXiv:2109.02941.",
+    "Yi-Ling Chung, Elizaveta Kuzmenko, Serra Sinem Tekiroglu, and Marco Guerini. 2019. CONAN Counter NArratives through nichesourcing: a multilingual dataset of responses to fight online hate speech. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 2819–2829, Florence, Italy. Association for Computational Linguistics.",
+    "Maral Dadvar, Dolf Trieschnigg, Roeland Ordelman, and Franciska de Jong. 2013. Improving cyberbullying detection with user context. In European Conference on Information Retrieval, pages 693-696. Springer.",
+    "Karthik Dinakar, Roi Reichart, and Henry Lieberman. 2011. Modeling the detection of textual cyberbullying. In Proceedings of the International AAAI Conference on Web and Social Media, volume 5, pages 11-17.",
+    "Bryan Dosono and Bryan Semaan. 2019. Moderation practices as emotional labor in sustaining online communities: The case of aapi identity work on reddit. In Proceedings of the 2019 CHI conference on human factors in computing systems, pages 1–13.",
+    "Casey Fiesler, Joshua McCann, Kyle Frye, Jed R Brubaker, et al. 2018. Reddit rules! characterizing an ecosystem of governance. In Twelfth International AAAI Conference on Web and Social Media.",
+    "Akash Gautam, Puneet Mathur, Rakesh Gosangi, Debanjan Mahata, Ramit Sawhney, and Rajiv Ratn Shah. 2020. #metooma: Multi-aspect annotations of tweets related to the metoo movement. In Proceedings of the International AAAI Conference on Web and Social Media, volume 14, pages 209-216.",
+    "R Stuart Geiger and David Ribes. 2010. The work of sustaining order in wikipedia: The banning of a vandal. In Proceedings of the 2010 ACM conference on Computer supported cooperative work, pages 117-126.",
+    "Tarleton Gillespie. 2020. Content moderation, ai, and the question of scale. Big Data & Society, 7(2):2053951720943234.",
+    "Jennifer Golbeck, Zahra Ashktorab, Rashad O Banjo, Alexandra Berlinger, Siddharth Bhagwan, Cody Buntain, Paul Cheakalos, Alicia A Geller, Rajesh Kumar Gnanasekaran, Raja Rajan Gunasekaran, et al. 2017. A large labeled corpus for online harassment research. In Proceedings of the 2017 ACM on web science conference, pages 229-233.",
+    "Sabit Hassan, Katherine J Atwell, and Malihe Alikhani. 2022. Studying the effect of moderator biases on the diversity of online discussions: A computational cross-linguistic study. In Proceedings of the Annual Meeting of the Cognitive Science Society, volume 44.",
+    "Shagun Jhaver, Pranil Vora, and Amy Bruckman. 2017. Designing for civil conversations: Lessons learned from changemyview. Technical report, Georgia Institute of Technology.",
+    "George Kennedy, Andrew McCollough, Edward Dixon, Alexei Bastidas, John Ryan, Chris Loo, and Saurav Sahay. 2017. Technology solutions to combat online harassment. In Proceedings of the first workshop on abusive language online, pages 73–77.",
+    "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. 2019. Roberta: A robustly optimized bert pretraining approach. arXiv preprint arXiv:1907.11692.",
+    "Thomas Mandl, Sandip Modha, Gautam Kishore Shahi, Amit Kumar Jaiswal, Durgesh Nandini, Daksh Patel, Prasenjit Majumder, and Johannes Schäfer. 2021. Overview of the HASOC track at FIRE 2020: Hate speech and offensive content identification in indo-european languages. CoRR, abs/2108.05927.",
+    "Hamdy Mubarak, Sabit Hassan, and Shammur A. Chowdhury. 2022. Emojis as anchors to detect arabic offensive language and hate speech. ArXiv, abs/2201.06723.",
+    "Endang Wahyu Pamungkas, Valerio Basile, and Viviana Patti. 2020. Do you really want to hurt me? predicting abusive swearing in social media. In The 12th Language Resources and Evaluation Conference, pages 6237–6246. European Language Resources Association.",
+    "Jing Qian, Anna Bethke, Yinyin Liu, Elizabeth Belding, and William Yang Wang. 2019. A benchmark dataset for learning to intervene in online hate speech. arXiv preprint arXiv:1909.04251.",
+    "Tharindu Ranasinghe and Marcos Zampieri. 2021. Multilingual offensive language identification for low-resource languages. Transactions on Asian and Low-Resource Language Information Processing, 21(1):1-13.",
+    "Nils Reimers and Iryna Gurevych. 2019. Sentence-bert: Sentence embeddings using siamese bert-networks. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing. Association for Computational Linguistics.",
+    "Sarah T Roberts. 2014. Behind the screen: The hidden digital labor of commercial content moderation. University of Illinois at Urbana-Champaign.",
+    "Mattia Samory. 2021. On positive moderation decisions. In ICWSM, pages 585-596.",
+    "Jörg Tiedemann and Santhosh Thottingal. 2020. OPUS-MT - Building open translation services for the World. In Proceedings of the 22nd Annual Conferenec of the European Association for Machine Translation (EAMT), Lisbon, Portugal.",
+    "Bertie Vidgen, Dong Nguyen, Helen Margetts, Patricia Rossini, and Rebekah Tromble. 2021. Introducing CAD: the contextual abuse dataset. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 2289–2303, Online. Association for Computational Linguistics.",
+    "Hannah M Wang, Beril Bulat, Stephen Fujimoto, and Seth Frey. 2022. Governing for free: Rule process effects on reddit moderator motivations. In International Conference on Human-Computer Interaction, pages 97-105. Springer.",
+    "Donghee Yvette Wohn. 2019. Volunteer moderators in twitch micro communities: How they get involved, the roles they play, and the emotional labor they experience. In Proceedings of the 2019 CHI conference on human factors in computing systems, pages 1-13.",
+    "Marcos Zampieri, Shervin Malmasi, Preslav Nakov, Sara Rosenthal, Noura Farra, and Ritesh Kumar. 2019. Predicting the type and target of offensive posts in social media. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 1415–1420, Minneapolis, Minnesota. Association for Computational Linguistics.",
+    "Marcos Zampieri, Preslav Nakov, Sara Rosenthal, Pepa Atanasova, Georgi Karadzhov, Hamdy Mubarak, Leon Derczynski, Zeses Pitenis, and Çağrı Çöltekin. 2020. SemEval-2020 Task 12: Multilingual Offensive Language Identification in Social Media (OffensEval 2020). In Proceedings of SemEval."
+  ]
+}

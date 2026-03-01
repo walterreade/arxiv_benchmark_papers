@@ -1,0 +1,59 @@
+{
+  "filename": "2601.12868.pdf",
+  "title": "Race, Ethnicity and Their Implication on Bias in Large Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2601.12868",
+  "benchmark_measurement": "The study measures how religious identities (specifically Jewish and Muslim) are encoded within LLMs at the neuron level. It identifies neurons that represent religious concepts and associated stereotypes, often as a facet of the 'Middle Eastern' ethnic category, and analyzes how these internal representations are activated and influence model behavior.",
+  "religious_groups": [
+    "Islam",
+    "Judaism",
+    "Christianity",
+    "Buddhism"
+  ],
+  "models_tested": [
+    "Llama-3.1-8B-IT",
+    "Mistral-7B-IT-v0.3",
+    "Qwen2.5-7B-IT"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "ToxiGen",
+    "C-REACT"
+  ],
+  "continuous_testing": false,
+  "findings": "LLMs encode religious identities, such as Jewish and Muslim, into specific, interpretable neurons, often as part of a broader 'Middle Eastern' ethnic representation. These neurons project to religious identifiers (e.g., 'Jewish', 'Judaism', 'Islam', 'Jerusalem') and are selectively activated by related text. The paper demonstrates that these religious concepts are decomposed into distinct semantic facets within the model, and their presence suggests that bias mitigation requires model-specific localization rather than a universal approach.",
+  "references": [
+    "Hiba Ahsan, Arnab Sen Sharma, Silvio Amir, David Bau, and Byron C Wallace. 2025. Elucidating mechanisms of demographic bias in llms for healthcare. arXiv preprint arXiv:2502.13319.",
+    "Hiba Ahsan and Byron C Wallace. 2025. Can saes reveal and mitigate racial biases of llms in healthcare? arXiv preprint arXiv:2511.00177.",
+    "Oliver Bear Don't Walk IV, Adrienne Pichon, Harry Reyes Nieva, Tony Sun, Jaan Li, Joshua Winston Joseph, Sivan Kinberg, Lauren R. Richter, Salvatore Crusco, Kyle Kulas, Shaan Ahmed, Daniel Snyder, Ashkon Rahbari, Benjamin Ranard, Pallavi Juneja, Dina Demner-Fushman, and Noemie Elhadad. 2024. C-REACT: Contextualized race and ethnicity annotations for clinical text. PhysioNet. Version 1.0.0.",
+    "Nathaniel Demchak, Xin Guan, Zekun Wu, Ziyi Xu, Adriano Koshiyama, and Emre Kazim. 2024. Assessing bias in metric models for Ilm openended generation bias benchmarks. arXiv preprint arXiv:2410.11059.",
+    "Kathleen Fraser and Svetlana Kiritchenko. 2024. Examining gender and racial bias in large vision-language models using a novel dataset of parallel images. In Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers), pages 690–713, St. Julian's, Malta. Association for Computational Linguistics.",
+    "Mor Geva, Roei Schuster, Jonathan Berant, and Omer Levy. 2021a. Transformer feed-forward layers are key-value memories. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 5484–5495.",
+    "Mor Geva, Roei Schuster, Jonathan Berant, and Omer Levy. 2021b. Transformer feed-forward layers are key-value memories. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 5484–5495, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics.",
+    "Aaron Grattafiori, Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, and et al. 2024. The Llama 3 herd of models. arXiv preprint arXiv:2407.21783.",
+    "Xin Guan, Nate Demchak, Saloni Gupta, Ze Wang, Ediz Ertekin Jr., Adriano Koshiyama, Emre Kazim, and Zekun Wu. 2025. SAGED: A holistic bias-benchmarking pipeline for language models with customisable fairness calibration. In Proceedings of the 31st International Conference on Computational Linguistics, pages 3002-3026, Abu Dhabi, UAE. Association for Computational Linguistics.",
+    "Thomas Hartvigsen, Saadia Gabriel, Hamid Palangi, Maarten Sap, Dipankar Ray, and Ece Kamar. 2022. ToxiGen: A large-scale machine-generated dataset for adversarial and implicit hate speech detection. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 3309-3326, Dublin, Ireland. Association for Computational Linguistics.",
+    "Albert Q. Jiang, Alexandre Sablayrolles, Arthur Mensch, Chris Bamford, Devendra Singh Chaplot, Diego de las Casas, Florian Bressand, Gianna Lengyel, Guillaume Lample, Lucile Saulnier, Lélio Renard Lavaud, Marie-Anne Lachaux, Pierre Stock, Teven Le Scao, Thibaut Lavril, Thomas Wang, Timothée Lacroix, and William El Sayed. 2023. Mistral 7B. arXiv preprint arXiv:2310.06825.",
+    "Adam Karvonen and Samuel Marks. 2025. Robustly improving llm fairness in realistic settings via interpretability. arXiv preprint arXiv:2506.10922.",
+    "Michelle Kim, Junghwan Kim, and Kristen Johnson. 2023. Race, gender, and age biases in biomedical masked language models. In Findings of the Association for Computational Linguistics: ACL 2023, pages 11806-11815, Toronto, Canada. Association for Computational Linguistics.",
+    "Asaf Levartovsky, Mahmud Omar, Girish N Nadkarni, Uri Kopylov, and Eyal Klang. 2025. Sociodemographic bias in large language model-assisted gastroenterology. JAMA Network Open, 8(9):e2532692-e2532692.",
+    "Yichen Li, Zhiting Fan, Ruizhe Chen, Xiaotang Gai, Luqi Gong, Yan Zhang, and Zuozhu Liu. 2025. Fairsteer: Inference time debiasing for llms with dynamic activation steering. arXiv preprint arXiv:2504.14492.",
+    "Afrozah Nadeem, Mark Dras, and Usman Naseem. 2025. Context-aware fairness evaluation and mitigation in llms. arXiv preprint arXiv:2510.18914.",
+    "nostalgebraist. 2020. interpreting GPT: the logit lens. https://www.lesswrong.com/posts/AcKRB8wDpdaN6v6ru/interpreting-gpt-the-logit-lens. Accessed: 2025-12-23.",
+    "Raphael Poulain, Hamed Fayyaz, and Rahmatollah Beheshti. 2024. Bias patterns in the application of Ilms for clinical decision support: A comprehensive study. arXiv preprint arXiv:2404.15149.",
+    "Qwen Team. 2024. Qwen2.5: A party of foundation models.",
+    "Noam Shazeer. 2020. Glu variants improve transformer. arXiv preprint arXiv:2002.05202.",
+    "Bryan Chen Zhengyu Tan and Roy Ka-Wei Lee. 2025. Unmasking implicit bias: Evaluating persona-prompted LLM responses in power-disparate social scenarios. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 1075-1108, Albuquerque, New Mexico. Association for Computational Linguistics.",
+    "Angelina Wang, Michelle Phan, Daniel E. Ho, and Sanmi Koyejo. 2025. Fairness through difference awareness: Measuring Desired group discrimination in LLMs. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 6867–6893, Vienna, Austria. Association for Computational Linguistics.",
+    "Zeping Yu and Sophia Ananiadou. 2025. Understanding and mitigating gender bias in Ilms via interpretable neuron editing. arXiv preprint arXiv:2501.14457.",
+    "Travis Zack, Eric Lehman, Mirac Suzgun, Jorge A Rodriguez, Leo Anthony Celi, Judy Gichoya, Dan Jurafsky, Peter Szolovits, David W Bates, Raja-Elie E Abdulnour, and 1 others. 2024. Assessing the potential of gpt-4 to perpetuate racial and gender biases in health care: a model evaluation study. The Lancet Digital Health, 6(1):e12–e22.",
+    "Angela Zhang, Mert Yuksekgonul, Joshua Guild, James Zou, and Joseph C Wu. 2023. Chatgpt exhibits gender and racial biases in acute coronary syndrome management. arXiv preprint arXiv:2311.14703.",
+    "Yachao Zhao, Bo Wang, Yan Wang, Dongming Zhao, Ruifang He, and Yuexian Hou. 2025. Explicit vs. implicit: Investigating social bias in large language models through self-reflection. In Findings of the Association for Computational Linguistics: ACL 2025, pages 1-12, Vienna, Austria. Association for Computational Linguistics.",
+    "Hanzhang Zhou, Zijian Feng, Zixiao Zhu, Junlang Qian, and Kezhi Mao. 2024. Unibias: Unveiling and mitigating llm bias through internal attention and ffn manipulation. Advances in Neural Information Processing Systems, 37:102173–102196."
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "filename": "2512.02689.pdf",
+  "title": "An Empirical Survey of Model Merging Algorithms for Social Bias Mitigation",
+  "arxiv_url": "https://arxiv.org/pdf/2512.02689",
+  "benchmark_measurement": "The benchmarks measured the extent to which models exhibit negative biases and rely on stereotypical priors toward various social attributes, including religion. Specifically, the BOLD dataset measured the sentiment (positive, neutral, negative) of text generated in response to prompts involving religious subgroups, and the StereoSet dataset was used to measure stereotypical associations related to religion.",
+  "religious_groups": [
+    "religion (as a general category)"
+  ],
+  "models_tested": [
+    "GPT2-small",
+    "GPT2-medium",
+    "GPT2-large",
+    "GPT2-xl",
+    "GPT-neo-2.7B",
+    "LLaMA-2-7B",
+    "LLaMA-3-8B",
+    "LLaMA-3.1-8B",
+    "LLaMA-3.2-1B",
+    "LLaMA-3.2-3B",
+    "QWEN2-0.5B",
+    "QWEN2-1.5B",
+    "QWEN2-7B"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "BBQ",
+    "BOLD",
+    "HONEST",
+    "SuperGLUE",
+    "StereoSet"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper does not provide findings specific to religion, but rather groups it with other social biases (gender, race, etc.). The general findings indicate a trade-off between bias reduction and downstream task performance. Among the tested methods, Linear, SLERP, and Nearswap were found to consistently reduce social bias, including religious bias, while maintaining overall performance. SLERP with moderate interpolation weights (α = 0.2-0.3) was identified as the most balanced approach.",
+  "references": [
+    "Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia Leoni Aleman, Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat, and 1 others. 2023. Gpt-4 technical report. arXiv preprint arXiv:2303.08774.",
+    "Elisa Bassignana, Valerio Basile, Viviana Patti, and 1 others. 2018. Hurtlex: A multilingual lexicon of words to hurt. In CEUR Workshop proceedings, volume 2253, pages 1–6. CEUR-WS.",
+    "Tolga Bolukbasi, Kai-Wei Chang, James Zou, Venkatesh Saligrama, and Adam Kalai. 2016. Man is to computer programmer as woman is to homemaker? debiasing word embeddings. In Proceedings of the 30th International Conference on Neural Information Processing Systems, NIPS’16, page 4356–4364, Red Hook, NY, USA. Curran Associates Inc.",
+    "Pala Tej Deep, Rishabh Bhardwaj, and Soujanya Poria. 2024. Della-merging: Reducing interference in model merging through magnitude-based sampling. Preprint, arXiv:2406.11617.",
+    "Jwala Dhamala, Tony Sun, Varun Kumar, Satyapriya Krishna, Yada Pruksachatkun, Kai-Wei Chang, and Rahul Gupta. 2021. Bold: Dataset and metrics for measuring biases in open-ended language generation. In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, FAccT '21, page 862–872, New York, NY, USA. Association for Computing Machinery.",
+    "Omkar Dige, Diljot Arneja, Tsz Fung Yau, Qixuan Zhang, Mohammad Bolandraftar, Xiaodan Zhu, and Faiza Khan Khattak. 2024. Can machine unlearning reduce social bias in language models? In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing: Industry Track, pages 954–969, Miami, Florida, US. Association for Computational Linguistics.",
+    "Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Amy Yang, Angela Fan, and 1 others. 2024. The llama 3 herd of models. arXiv e-prints, pages arXiv-2407.",
+    "Isabel O. Gallegos, Ryan A. Rossi, Joe Barrow, Md Mehrab Tanjim, Sungchul Kim, Franck Dernoncourt, Tong Yu, Ruiyi Zhang, and Nesreen K. Ahmed. 2024. Bias and fairness in large language models: A survey. Computational Linguistics, 50(3):1097–1179.",
+    "Lei Gao, Yue Niu, Tingting Tang, Salman Avestimehr, and Murali Annavaram. 2024. Ethos: Rectifying language models in orthogonal parameter space. In Findings of the Association for Computational Linguistics: NAACL 2024, pages 2054–2068, Mexico City, Mexico. Association for Computational Linguistics.",
+    "Leo Gao, Stella Biderman, Sid Black, Laurence Golding, Travis Hoppe, Charles Foster, Jason Phang, Horace He, Anish Thite, Noa Nabeshima, and 1 others. 2020. The pile: An 800gb dataset of diverse text for language modeling. arXiv preprint arXiv:2101.00027.",
+    "Guillaume Garnier. 2024. Decompounding with unknown noise through several independents channels. Preprint, arXiv:2405.10588.",
+    "Charles Goddard, Shamane Siriwardhana, Malikeh Ehghaghi, Luke Meyers, Vlad Karpukhin, Brian Benedict, Mark McQuade, and Jacob Solawetz. 2024. Arcee's mergekit: A toolkit for merging large language models. arXiv preprint arXiv:2403.13257.",
+    "Karsten Grove and Hermann Karcher. 1973. How to conjugate c 1-close group actions. Mathematische Zeitschrift, 132(1):11–20.",
+    "Gabriel Ilharco, Marco Tulio Ribeiro, Mitchell Wortsman, Suchin Gururangan, Ludwig Schmidt, Hannaneh Hajishirzi, and Ali Farhadi. 2022. Editing models with task arithmetic. arXiv preprint arXiv:2212.04089.",
+    "Kyung Seo Ki, Bugeun Kim, and Gahgene Gweon. 2024. Inspecting soundness of AMR similarity metrics in terms of equivalence and inequivalence. In Proceedings of the 13th Joint Conference on Lexical and Computational Semantics (*SEM 2024), pages 402–409, Mexico City, Mexico. Association for Computational Linguistics.",
+    "Sanwoo Lee, Jiahao Liu, Qifan Wang, Jingang Wang, Xunliang Cai, and Yunfang Wu. 2025. Dynamic fisher-weighted model merging via Bayesian optimization. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 4923–4935, Albuquerque, New Mexico. Association for Computational Linguistics.",
+    "Weishi Li, Yong Peng, Miao Zhang, Liang Ding, Han Hu, and Li Shen. 2023. Deep model fusion: A survey. arXiv preprint arXiv:2309.15698.",
+    "Zheyuan Liu, Guangyao Dou, Zhaoxuan Tan, Yijun Tian, and Meng Jiang. 2024. Towards safer large language models through machine unlearning. In Findings of the Association for Computational Linguistics: ACL 2024, pages 1817–1829, Bangkok, Thailand. Association for Computational Linguistics.",
+    "Marlene Lutz, Rochelle Choenni, Markus Strohmaier, and Anne Lauscher. 2024. Local contrastive editing of gender stereotypes. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 21474–21493, Miami, Florida, USA. Association for Computational Linguistics.",
+    "Michael S Matena and Colin A Raffel. 2022. Merging models with fisher-weighted averaging. Advances in Neural Information Processing Systems, 35:17703–17716.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2021. StereoSet: Measuring stereotypical bias in pretrained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 5356–5371, Online. Association for Computational Linguistics.",
+    "Roberto Navigli, Simone Conia, and Björn Ross. 2023. Biases in large language models: Origins, inventory, and discussion. J. Data and Information Quality, 15(2).",
+    "Debora Nozza, Federico Bianchi, and Dirk Hovy. 2021. HONEST: Measuring hurtful sentence completion in language models. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 2398–2406, Online. Association for Computational Linguistics.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel Bowman. 2022. Bbq: A hand-built bias benchmark for question answering. Findings of the Association for Computational Linguistics: ACL 2022.",
+    "Zhanyue Qin, Yue Ding, Deyuan Liu, Qingbin Liu, Junxian Cai, Xi Chen, Zhiying Tu, Dianhui Chu, Cuiyun Gao, and Dianbo Sui. 2025. Lftf: Locating first and then fine-tuning for mitigating gender bias in large language models. arXiv preprint arXiv:2505.15475.",
+    "Team Qwen. 2024. Qwen2 technical report. arXiv preprint arXiv:2407.10671.",
+    "Alec Radford, Jeff Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. 2019. Language models are unsupervised multitask learners.",
+    "Shauli Ravfogel, Yanai Elazar, Hila Gonen, Michael Twiton, and Yoav Goldberg. 2020. Null it out: Guarding protected attributes by iterative nullspace projection. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 7237–7256, Online. Association for Computational Linguistics.",
+    "Rachel Rudinger, Jason Naradowsky, Brian Leonard, and Benjamin Van Durme. 2018. Gender bias in coreference resolution. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 8–14, New Orleans, Louisiana. Association for Computational Linguistics.",
+    "Timo Schick, Sahana Udupa, and Hinrich Schütze. 2021. Self-diagnosis and self-debiasing: A proposal for reducing corpus-based bias in nlp. Transactions of the Association for Computational Linguistics, 9:1408–1424.",
+    "Daiki Shirafuji, Makoto Takenaka, and Shinya Taguchi. 2025. Bias vector: Mitigating biases in language models with task arithmetic approach. In Proceedings of the 31st International Conference on Computational Linguistics, pages 2799–2813, Abu Dhabi, UAE. Association for Computational Linguistics.",
+    "Ken Shoemake. 1985. Animating rotation with quaternion curves. SIGGRAPH Comput. Graph., 19(3):245–254.",
+    "Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine Babaei, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, and 1 others. 2023. Llama 2: Open foundation and fine-tuned chat models. arXiv preprint arXiv:2307.09288.",
+    "Alex Wang, Yada Pruksachatkun, Nikita Nangia, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel R. Bowman. 2019. SuperGLUE: a stickier benchmark for general-purpose language understanding systems. Curran Associates Inc., Red Hook, NY, USA.",
+    "Alex Wang, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel R Bowman. 2018. Glue: A multi-task benchmark and analysis platform for natural language understanding. arXiv preprint arXiv:1804.07461.",
+    "Mitchell Wortsman, Gabriel Ilharco, Samir Ya Gadre, Rebecca Roelofs, Raphael Gontijo-Lopes, Ari S Morcos, Hongseok Namkoong, Ali Farhadi, Yair Carmon, Simon Kornblith, and Ludwig Schmidt. 2022. Model soups: averaging weights of multiple fine-tuned models improves accuracy without increasing inference time. In Proceedings of the 39th International Conference on Machine Learning, volume 162 of Proceedings of Machine Learning Research, pages 23965–23998. PMLR.",
+    "Prateek Yadav, Derek Tam, Leshem Choshen, Colin Raffel, and Mohit Bansal. 2023. Ties-merging: resolving interference when merging models. In Proceedings of the 37th International Conference on Neural Information Processing Systems, NIPS '23, Red Hook, NY, USA. Curran Associates Inc.",
+    "An Yang, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chengyuan Li, Dayiheng Liu, Fei Huang, Haoran Wei, Huan Lin, Jian Yang, Jianhong Tu, Jianwei Zhang, Jianxin Yang, Jiaxi Yang, Jingren Zhou, Junyang Lin, Kai Dang, and 23 others. 2025. Qwen2.5 technical report. Preprint, arXiv:2412.15115.",
+    "Enneng Yang, Li Shen, Guibing Guo, Xingwei Wang, Xiaochun Cao, Jie Zhang, and Dacheng Tao. 2024. Model merging in llms, mllms, and beyond: Methods, theories, applications and opportunities. arXiv preprint arXiv:2408.07666.",
+    "Ran Zmigrod, Sabrina J. Mielke, Hanna Wallach, and Ryan Cotterell. 2019. Counterfactual data augmentation for mitigating gender stereotypes in languages with rich morphology. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 1651–1661, Florence, Italy. Association for Computational Linguistics."
+  ]
+}

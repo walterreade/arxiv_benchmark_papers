@@ -1,0 +1,66 @@
+{
+  "filename": "2202.12058.pdf",
+  "title": "Exploring the Unfairness of DP-SGD Across Settings",
+  "arxiv_url": "https://arxiv.org/pdf/2202.12058",
+  "benchmark_measurement": "Fairness (specifically, F1 scores and δ-Unequal Risk) of toxicity detection models across different demographic groups, including religious groups (Christian, Muslim, other religions).",
+  "religious_groups": [
+    "Christianity",
+    "Islam",
+    "other religions"
+  ],
+  "models_tested": [
+    "Bertweet",
+    "DistilBert"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "CivilComments"
+  ],
+  "continuous_testing": false,
+  "findings": "Baseline toxicity detection models showed significant performance disparities across groups, with the lowest F1 scores for minority religious groups and Christians. The study found a negative, logarithmic correlation between privacy (enforced by DP-SGD) and fairness (δ-Unequal Risk), meaning that as models become more private, they become less fair. This trade-off holds across different settings and affects all demographic subgroups, including the religious ones.",
+  "references": [
+    "Abadi, M.; Chu, A.; Goodfellow, I.; McMahan, H. B.; Mironov, I.; Talwar, K.; and Zhang, L. 2016. Deep learning with differential privacy. In Proceedings of the 2016 ACM SIGSAC Conference on Computer and Communications Security, 308–318.",
+    "Agarwal, S. 2021. Trade-Offs between Fairness and Privacy in Machine Learning. In IJCAI 2021 Workshop on AI for Social Good.",
+    "Aggarwal, C. C. 2005. On k-Anonymity and the Curse of Dimensionality. In Proceedings of the 31st International Conference on Very Large Data Bases, VLDB '05, 901–909. VLDB Endowment. ISBN 1595931546.",
+    "AI, F. 2020. Opacus.",
+    "Bagdasaryan, E.; Poursaeed, O.; and Shmatikov, V. 2019. Differential Privacy Has Disparate Impact on Model Accuracy. In Wallach, H.; Larochelle, H.; Beygelzimer, A.; d'Alché-Buc, F.; Fox, E.; and Garnett, R., eds., Advances in Neural Information Processing Systems, volume 32. Curran Associates, Inc.",
+    "Bertsimas, D.; Farias, V. F.; and Trichakis, N. 2011. The Price of Fairness. Oper. Res., 59(1): 17–31.",
+    "Borkan, D.; Dixon, L.; Sorensen, J.; Thain, N.; and Vasserman, L. 2019. Nuanced metrics for measuring unintended bias with real data for text classification. In Companion Proceedings of The 2019 World Wide Web Conference.",
+    "Chang, H.; and Shokri, R. 2021. On the Privacy Risks of Algorithmic Fairness. arXiv:2011.03731.",
+    "Corbett-Davies, S.; and Goel, S. 2018. The Measure and Mismeasure of Fairness: A Critical Review of Fair Machine Learning. arXiv:1808.00023.",
+    "Croom, A. M. 2015. Slurs, Stereotypes, and in-Equality: A Critical Review of “How Epithets and Stereotypes Are Racially Unequal”. Language Sciences, 52: 139–154.",
+    "Cummings, R.; Gupta, V.; Kimpara, D.; and Morgenstern, J. 2019. On the compatibility of privacy and fairness. In Adjunct Publication of the 27th Conference on User Modeling, Adaptation and Personalization, 309-315.",
+    "Devlin, J.; Chang, M.-W.; Lee, K.; and Toutanova, K. 2019a. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), 4171-4186. Minneapolis, Minnesota: Association for Computational Linguistics.",
+    "Devlin, J.; Chang, M.-W.; Lee, K.; and Toutanova, K. 2019b. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding. arXiv:1810.04805.",
+    "Donini, M.; Oneto, L.; Ben-David, S.; Shawe-Taylor, J. S.; and Pontil, M. 2018. Empirical Risk Minimization Under Fairness Constraints. In Bengio, S.; Wallach, H.; Larochelle, H.; Grauman, K.; Cesa-Bianchi, N.; and Garnett, R., eds., Advances in Neural Information Processing Systems, volume 31. Curran Associates, Inc.",
+    "Dwork, C.; McSherry, F.; Nissim, K.; and Smith, A. 2006. Calibrating Noise to Sensitivity in Private Data Analysis. In Proceedings of the Third Conference on Theory of Cryptography, TCC'06, 265–284. Berlin, Heidelberg: Springer-Verlag. ISBN 3540327312.",
+    "Ekstrand, M. D.; Joshaghani, R.; and Mehrpouyan, H. 2018. Privacy for All: Ensuring Fair and Equitable Privacy Protections. In Friedler, S. A.; and Wilson, C., eds., Proceedings of the 1st Conference on Fairness, Accountability and Transparency, volume 81 of Proceedings of Machine Learning Research, 35–47. New York, NY, USA: PMLR.",
+    "Farrand, T.; Mireshghallah, F.; Singh, S.; and Trask, A. 2020. Neither Private Nor Fair: Impact of Data Imbalance on Utility and Fairness in Differential Privacy. In Proceedings of the 2020 Workshop on Privacy-Preserving Machine Learning in Practice, 15–19.",
+    "Fioretto, F.; Tran, C.; and Hentenryck, P. V. 2021. Decision Making with Differential Privacy under a Fairness Lens. arXiv:2105.07513.",
+    "Hashimoto, T. B.; Srivastava, M.; Namkoong, H.; and Liang, P. 2018. Fairness Without Demographics in Repeated Loss Minimization. arXiv:1806.08010.",
+    "Holohan, N.; Braghin, S.; Aonghusa, P. M.; and Levacher, K. 2019. Diffprivlib: The IBM Differential Privacy Library. arXiv:1907.02444.",
+    "Imtiaz, H.; and Sarwate, A. D. 2016. Symmetric matrix perturbation for differentially-private principal component analysis. In 2016 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2339–2343.",
+    "Kargupta, H.; Datta, S.; Wang, Q.; and Sivakumar, K. 2003. On the Privacy Preserving Properties of Random Data Perturbation Techniques. In Proceedings of the Third IEEE International Conference on Data Mining, ICDM '03, 99. USA: IEEE Computer Society. ISBN 0769519784.",
+    "Koh, P. W.; Sagawa, S.; Marklund, H.; Xie, S. M.; Zhang, M.; Balsubramani, A.; Hu, W.; Yasunaga, M.; Phillips, R. L.; Gao, I.; Lee, T.; David, E.; Stavness, I.; Guo, W.; Earnshaw, B. A.; Haque, I. S.; Beery, S.; Leskovec, J.; Kundaje, A.; Pierson, E.; Levine, S.; Finn, C.; and Liang, P. 2021. WILDS: A Benchmark of in-the-Wild Distribution Shifts. arXiv:2012.07421.",
+    "Liu, W.; Wang, X.; Lu, X.; Cheng, J.; Jin, B.; Wang, X.; and Zha, H. 2021. Fair Differential Privacy Can Mitigate the Disparate Impact on Model Accuracy.",
+    "Liu, Y.; Ott, M.; Goyal, N.; Du, J.; Joshi, M.; Chen, D.; Levy, O.; Lewis, M.; Zettlemoyer, L.; and Stoyanov, V. 2019. Roberta: A robustly optimized bert pretraining approach. arXiv preprint arXiv:1907.11692.",
+    "McMahan, B.; Andrew, G.; Mironov, I.; Papernot, N.; Kairouz, P.; Chien, S.; and Úlfar Erlingsson. 2018. A General Approach to Adding Differential Privacy to Iterative Training Procedures. Workshop on Privacy Preserving Machine Learning (NeurIPS 2018).",
+    "Mironov, I. 2017a. Rényi Differential Privacy. In 2017 IEEE 30th Computer Security Foundations Symposium (CSF), 263-275.",
+    "Mironov, I. 2017b. Rényi Differential Privacy. 2017 IEEE 30th Computer Security Foundations Symposium (CSF).",
+    "Nguyen, D. Q.; Vu, T.; and Nguyen, A. T. 2020. BERTweet: A pre-trained language model for English Tweets. arXiv:2005.10200.",
+    "Rawls, J. 1971. A Theory of Justice. Cambridge, Massachussets: Belknap Press of Harvard University Press, 1 edition. ISBN 0-674-88014-5.",
+    "Sagawa, S.; Koh, P. W.; Hashimoto, T. B.; and Liang, P. 2020. Distributionally Robust Neural Networks for Group Shifts: On the Importance of Regularization for Worst-Case Generalization. arXiv:1911.08731.",
+    "Sanh, V.; Debut, L.; Chaumond, J.; and Wolf, T. 2020. DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter. arXiv:1910.01108.",
+    "Uniyal, A.; Naidu, R.; Kotti, S.; Singh, S.; Kenfack, P. J.; Mireshghallah, F.; and Trask, A. 2021. DP-SGD vs PATE: Which Has Less Disparate Impact on Model Accuracy? arXiv:2106.12576.",
+    "Veale, M.; and Binns, R. 2017. Fairer machine learning in the real world: Mitigating discrimination without collecting sensitive data. Big Data & Society, 4(2): 2053951717743530.",
+    "Williamson, R.; and Menon, A. 2019. Fairness risk measures. In Chaudhuri, K.; and Salakhutdinov, R., eds., Proceedings of the 36th International Conference on Machine Learning, volume 97 of Proceedings of Machine Learning Research, 6786–6797. PMLR.",
+    "Yuan, M.; Kumar, V.; Ahmad, M. A.; and Teredesai, A. 2021. Assessing Fairness in Classification Parity of Machine Learning Models in Healthcare. arXiv:2102.03717.",
+    "Zafar, M. B.; Valera, I.; Rodriguez, M. G.; and Gummadi, K. P. 2017. Fairness Constraints: Mechanisms for Fair Classification."
+  ]
+}

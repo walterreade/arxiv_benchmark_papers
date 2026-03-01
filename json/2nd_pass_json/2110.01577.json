@@ -1,0 +1,49 @@
+{
+  "filename": "2110.01577.pdf",
+  "title": "An Empirical Investigation of Learning from Biased Toxicity Labels",
+  "arxiv_url": "https://arxiv.org/pdf/2110.01577",
+  "benchmark_measurement": "The benchmark measures fairness metrics (Subgroup AUC, Background Positive Subgroup Negative AUC, and Negative Average Equality Gap) for a toxicity classification task. This evaluation specifically assesses unintended bias against 13 different identity groups, which include religion as one of the categories.",
+  "religious_groups": [
+    "Religion (unspecified)"
+  ],
+  "models_tested": [
+    "BERT"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Civil Comments dataset"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper does not provide findings specific to religion, but aggregates results across 13 identity groups, which includes a 'religion' category. The main finding is that there is a trade-off between model accuracy and fairness, with no single training strategy performing best on all metrics. Models fine-tuned on a small amount of clean data (after initial training on large, noisy data) achieved the highest overall accuracy and performed best on accuracy-based fairness metrics. However, a model trained only on the small, clean dataset showed the least bias on the accuracy-agnostic Negative Average Equality Gap metric.",
+  "references": [
+    "Barocas, S., Hardt, M., and Narayanan, A. Fairness in machine learning, chapter Audit studies, pp. 124. 2017.",
+    "Borkan, D., Dixon, L., Sorensen, J., Thain, N., and Vasserman, L. Nuanced metrics for measuring unintended bias with real data for text classification. CoRR, abs/1903.04561, 2019. URL http://arxiv.org/abs/1903.04561.",
+    "Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P., Neelakantan, A., Shyam, P., Sastry, G., Askell, A., et al. Language models are few-shot learners. arXiv preprint arXiv:2005.14165, 2020.",
+    "Conversation AI. Jigsaw unintended bias in toxicity classification, 2019.",
+    "Devlin, J., Chang, M.-W., Lee, K., and Toutanova, K. Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805, 2018.",
+    "Dixon, L., Li, J., Sorensen, J., Thain, N., and Vasserman, L. Measuring and mitigating unintended bias in text classification. In Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society, pp. 67–73, 2018.",
+    "Geva, M., Goldberg, Y., and Berant, J. Are we modeling the task or the annotator? an investigation of annotator bias in natural language understanding datasets. In EMNLP-IJCNLP, pp. 1161–1166, November 2019.",
+    "Gu, K., Masotto, X., Bachani, V., Lakshminarayanan, B., Nikodem, J., and Yin, D. A realistic simulation framework for learning with label noise. Under Review, 2021.",
+    "Hendrycks, D., Mazeika, M., Wilson, D., and Gimpel, K. Using trusted data to train deep networks on labels corrupted by severe noise. CoRR, abs/1802.05300, 2018. URL http://arxiv.org/abs/1802.05300.",
+    "Jiang, H. and Nachum, O. Identifying and correcting label bias in machine learning. CoRR, abs/1901.04966, 2019. URL http://arxiv.org/abs/1901.04966.",
+    "Kurita, K., Vyas, N., Pareek, A., Black, A. W., and Tsvetkov, Y. Measuring bias in contextualized word representations. arXiv preprint arXiv:1906.07337, 2019.",
+    "Lamy, A., Zhong, Z., Menon, A. K., and Verma, N. Noise-tolerant fair classification. In Wallach, H., Larochelle, H., Beygelzimer, A., d'Alché-Buc, F., Fox, E., and Garnett, R. (eds.), Advances in Neural Information Processing Systems, volume 32. Curran Associates, Inc., 2019.",
+    "Nozza, D., Volpetti, C., and Fersini, E. Unintended bias in misogyny detection. In IEEE/WIC/ACM International Conference on Web Intelligence, pp. 149–155, 2019.",
+    "Patrini, G., Rozza, A., Krishna Menon, A., Nock, R., and Qu, L. Making deep neural networks robust to label noise: A loss correction approach. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 1944–1952, 2017.",
+    "Ren, M., Zeng, W., Yang, B., and Urtasun, R. Learning to reweight examples for robust deep learning. In International Conference on Machine Learning, pp. 4334–4343. PMLR, 2018.",
+    "Sap, M., Card, D., Gabriel, S., Choi, Y., and Smith, N. A. The risk of racial bias in hate speech detection. In Proceedings of the 57th annual meeting of the association for computational linguistics, pp. 1668–1678, 2019.",
+    "Song, H., Kim, M., Park, D., Shin, Y., and Lee, J.-G. Learning from noisy labels with deep neural networks: A survey. arXiv preprint arXiv:2007.08199, 2020.",
+    "Stiennon, N., Ouyang, L., Wu, J., Ziegler, D. M., Lowe, R., Voss, C., Radford, A., Amodei, D., and Christiano, P. Learning to summarize from human feedback. arXiv preprint arXiv:2009.01325, 2020.",
+    "Wulczyn, E., Thain, N., and Dixon, L. Ex machina: Personal attacks seen at scale. In Proceedings of the 26th international conference on world wide web, pp. 1391–1399, 2017.",
+    "Xiao, T., Xia, T., Yang, Y., Huang, C., and Wang, X. Learning from massive noisy labeled data for image classification. In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 2691–2699, 2015.",
+    "Yang, Y. and Xu, Z. Rethinking the value of labels for improving class-imbalanced learning. arXiv preprint arXiv:2006.07529, 2020.",
+    "Zhang, Z., Zhang, H., Arik, S. O., Lee, H., and Pfister, T. Distilling effective supervision from severe label noise. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 9294–9303, 2020.",
+    "Zorian, A. A. and Bikkanur, C. S. Debiasing personal identities in toxicity classification. arXiv preprint arXiv:1908.05757, 2019."
+  ]
+}

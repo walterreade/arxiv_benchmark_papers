@@ -1,0 +1,50 @@
+{
+  "filename": "2506.10245.pdf",
+  "title": "ToxSyn: Reducing Bias in Hate Speech Detection via Synthetic Minority Data in Brazilian Portuguese",
+  "arxiv_url": "https://arxiv.org/pdf/2506.10245",
+  "benchmark_measurement": "Detection of hate speech and toxic language directed at specific religious minority groups (Muslims and Jews) in Brazilian Portuguese.",
+  "religious_groups": [
+    "Islam",
+    "Judaism"
+  ],
+  "models_tested": [
+    "BERTimbau"
+  ],
+  "languages_evaluated": [
+    "Portuguese"
+  ],
+  "response_type": [
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "ToxiGen",
+    "HateBR",
+    "OFFCOMBR-3",
+    "OLID-BR",
+    "TuPy-E",
+    "ToLD-BR"
+  ],
+  "continuous_testing": false,
+  "findings": "The study found that toxicity detection is highly domain-dependent. A model trained on the newly created ToxSyn dataset, which includes synthetic data targeting religious minorities, successfully generalized to detect hate speech in other minority-focused datasets. It achieved a Macro Recall of 0.80 for the 'Religious' category on a merged Portuguese test set, and 0.69 for 'Muslim' and 0.76 for 'Jewish' on a translated version of the ToxiGen dataset. This highlights the effectiveness of the synthetic data approach for building models aware of hate speech against religious groups, a task difficult with previously existing corpora that lack non-toxic counterexamples.",
+  "references": [
+    "Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia Leoni Aleman, Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat, et al. 2023. Gpt-4 technical report. arXiv preprint arXiv:2303.08774.",
+    "Aish Albladi, Minarul Islam, Amit Das, Maryam Bigonah, Zheng Zhang, Fatemeh Jamshidi, Mostafa Rahgouy, Nilanjana Raychawdhary, Daniela Marghitu, and Cheryl Seals. 2025. Hate speech detection using large language models: A comprehensive review. IEEE Access.",
+    "Jacob Beck, Stephanie Eckman, Christoph Kern, and Frauke Kreuter. 2025. Bias in the loop: How humans evaluate ai-generated suggestions. arXiv preprint arXiv:2509.08514.",
+    "Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, et al. 2020. Language models are few-shot learners. Advances in neural information processing systems, 33:1877–1901.",
+    "Amanda da Silva Oliveira, Thiago de Carvalho Cecote, João Paulo Reis Alvarenga, Vander Luis de Souza Freitas, and Eduardo José da Silva Luz. 2024. Toxic speech detection in portuguese: A comparative study of large language models. In Proceedings of the 16th International Conference on Computational Processing of Portuguese, pages 108–116.",
+    "Thomas Hartvigsen, Saadia Gabriel, Hamid Palangi, Maarten Sap, Dipankar Ray, and Ece Kamar. 2022. ToxiGen: A large-scale machine-generated dataset for adversarial and implicit hate speech detection. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 3309–3326, Dublin, Ireland. Association for Computational Linguistics.",
+    "AH Kargaran, A Modarressi, N Nikeghbal, J Diesner, F Yvon, and H Schutze. 2024. Mexa: Multilingual evaluation of english-centric Ilms via crosslingual alignment. arxiv. Org, abs/2410.05873.",
+    "Fábio Souza, Rodrigo Nogueira, and Roberto Lotufo. 2020. Bertimbau: pretrained bert models for brazilian portuguese. In Brazilian conference on intelligent systems, pages 403–417. Springer.",
+    "Maheshya Weerasinghe, Shaun Macdonald, Cristina Fiani, Joseph O'Hagan, Mathieu Chollet, Mark McGill, and Mohamed Khamis. 2025. Beyond mute and block: adoption and effectiveness of safety tools in social vr, from ubiquitous harassment to social sculpting. IEEE Transactions on Visualization and Computer Graphics.",
+    "De Pelle, Rogers Prates and Moreira, Viviane P. 2017. Offensive comments in the brazilian web: a dataset and baseline results. SBC.",
+    "Fortuna, Paula and Rocha da Silva, João and Soler-Company, Juan and Wanner, Leo and Nunes, Sérgio. 2019. A Hierarchically-Labeled Portuguese Hate Speech Dataset. Association for Computational Linguistics.",
+    "Hartvigsen, Thomas and Gabriel, Saadia and Palangi, Hamid and Sap, Maarten and Ray, Dipankar and Kamar, Ece. 2022. ToxiGen: A Large-Scale Machine-Generated Dataset for Adversarial and Implicit Hate Speech Detection. Association for Computational Linguistics.",
+    "Hui, Zheng and Guo, Zhaoxiao and Zhao, Hang and Duan, Juanyong and Huang, Congrui. 2024. Toxicraft: A novel framework for synthetic generation of harmful information.",
+    "Jahan, Md Saroar and Oussalah, Mourad. 2023. A systematic review of hate speech automatic detection using natural language processing. Elsevier.",
+    "Leite, João Augusto and Silva, Diego and Bontcheva, Kalina and Scarton, Carolina. 2020. Toxic Language Detection in Social Media for Brazilian Portuguese: New Dataset and Multilingual Analysis. Association for Computational Linguistics.",
+    "Oliveira, Felipe and Reis, Victoria and Ebecken, Nelson. 2023. TuPy-E: detecting hate speech in Brazilian Portuguese social media with a novel dataset and comprehensive analysis of models.",
+    "Trajano, Douglas and Bordini, Rafael H and Vieira, Renata. 2024. OLID-BR: offensive language identification dataset for Brazilian Portuguese. Springer.",
+    "Vargas, Francielle and Carvalho, Isabelle and Rodrigues de Góes, Fabiana and Pardo, Thiago and Benevenuto, Fabrício. 2022. HateBR: A Large Expert Annotated Corpus of Brazilian Instagram Comments for Offensive Language and Hate Speech Detection. European Language Resources Association."
+  ]
+}

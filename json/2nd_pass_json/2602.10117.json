@@ -1,0 +1,80 @@
+{
+  "filename": "2602.10117.pdf",
+  "title": "Biases in the Blind Spot: Detecting What LLMs Fail to Mention",
+  "arxiv_url": "https://arxiv.org/pdf/2602.10117",
+  "benchmark_measurement": "The benchmark measures task-specific unverbalized biases in LLMs related to faith and religion. Specifically, it assesses whether an applicant's stated religious affiliation (e.g., Christian, Hindu, Muslim, Jewish) influences the model's decision in tasks like loan approval, and whether the model cites religion in its reasoning for that decision.",
+  "religious_groups": [
+    "Christianity",
+    "Hinduism",
+    "Islam",
+    "Judaism",
+    "Buddhism",
+    "Atheism"
+  ],
+  "models_tested": [
+    "Gemma 3 12B",
+    "Gemma 3 27B",
+    "Gemini 2.5 Flash",
+    "GPT-4.1",
+    "Grok 4.1 Fast",
+    "QwQ-32B",
+    "Claude Sonnet 4",
+    "GPT-3.5-turbo",
+    "Gemma-2-9B-it",
+    "Qwen2.5-32B-Instruct"
+  ],
+  "languages_evaluated": [
+    "English",
+    "Arabic",
+    "Russian"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "SALT"
+  ],
+  "continuous_testing": false,
+  "findings": "The study found that multiple LLMs exhibit unverbalized biases related to religion. For instance, in a loan approval task, Claude Sonnet 4 demonstrated a bias toward minority religious affiliations (e.g., favoring a Hindu applicant over an identical Christian one) but also a bias favoring the 'majority religion' in a different operationalization, without ever citing religion in its reasoning. Re-evaluating prior studies, the pipeline found that GPT-3.5-turbo showed unverbalized biases favoring Muslim applicants over Jewish and Buddhist applicants, and Buddhist applicants over Christian and Hindu ones in a loan context. These findings demonstrate that models can be systematically influenced by religious cues in their inputs while providing plausible but unfaithful chain-of-thought justifications that omit the religious factor.",
+  "references": [
+    "Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed Chi, Quoc Le, and Denny Zhou. Chain-of-thought prompting elicits reasoning in large language models. In Advances in Neural Information Processing Systems, volume 35, pages 24824–24837, 2022.",
+    "Scott Emmons, Erik Jenner, David K. Elson, Rif A. Saurous, Senthooran Rajamanoharan, Heng Chen, Irhum Shafkat, and Rohin Shah. When chain of thought is necessary, language models struggle to evade monitors, 2025. URL https://arxiv.org/abs/2507.05246.",
+    "Iván Arcuschin, Jett Janiak, Robert Krzyzanowski, Senthooran Rajamanoharan, Neel Nanda, and Arthur Conmy. Chain-of-thought reasoning in the wild is not always faithful. In ICLR 2025 Workshop on Reasoning and Planning for LLMs, 2025. URL https://openreview.net/ forum?id=L8094Whth0.",
+    "Adam Karvonen and Samuel Marks. Robustly improving llm fairness in realistic settings via interpretability, 2025. URL https://arxiv.org/abs/2506.10922.",
+    "Miles Turpin, Julian Michael, Ethan Perez, and Samuel R. Bowman. Language models don't always say what they think: Unfaithful explanations in chain-of-thought prompting. In Advances in Neural Information Processing Systems, volume 36, 2024. URL https://arxiv.org/abs/ 2305.04388.",
+    "Tamera Lanham, Anna Chen, Ansh Radhakrishnan, Benoit Steiner, Carson Denison, Danny Hernandez, Dustin Li, Esin Durmus, Evan Hubinger, Jackson Kernion, Kamilė Lukošiūtė, Karina Nguyen, Newton Cheng, Nicholas Joseph, Nicholas Schiefer, Oliver Rausch, Robin Lar- son, Sam McCandlish, Sandipan Kundu, Saurav Kadavath, Shannon Yang, Thomas Henighan, Timothy Maxwell, Timothy Telleen-Lawton, Tristan Hume, Zac Hatfield-Dodds, Jared Kaplan, Jan Brauner, Samuel R. Bowman, and Ethan Perez. Measuring faithfulness in chain-of-thought reasoning, 2023. URL https://arxiv.org/abs/2307.13702.",
+    "James Chua and Owain Evans. Are DeepSeek R1 and other reasoning models more faithful? In ICLR 2025 Workshop on Foundation Models in the Wild, 2025. URL https://arxiv.org/ abs/2501.08156.",
+    "Pepa Atanasova, Oana-Maria Camburu, Christina Lioma, Thomas Lukasiewicz, Jakob Grue Simonsen, and Isabelle Augenstein. Faithfulness tests for natural language explanations. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Vol- ume 2: Short Papers), pages 283–294, Toronto, Canada, 2023. Association for Computational Linguistics. URL https://aclanthology.org/2023.acl-short.25/.",
+    "Noah Siegel, Oana-Maria Camburu, Nicolas Heess, and Maria Perez-Ortiz. The probabilities also matter: A more faithful metric for faithfulness of free-text explanations in large language models. In Lun-Wei Ku, Andre Martins, and Vivek Srikumar, editors, Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers), pages 530–546, Bangkok, Thailand, August 2024. Association for Computational Linguistics. doi: 10.18653/v1/2024.acl-short.49. URL https://aclanthology.org/2024.acl-short. 49/.",
+    "Su Lin Blodgett, Solon Barocas, Hal Daumé III, and Hanna Wallach. Language (technology) is power: A critical survey of “bias” in NLP. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5454–5476. Association for Computational Linguistics, 2020. URL https://aclanthology.org/2020.acl-main.485/.",
+    "Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric P. Xing, Hao Zhang, Joseph E. Gonzalez, and Ion Stoica. Judging LLM-as-a-judge with MT-Bench and chatbot arena. In Advances in Neural Information Processing Systems, volume 36, 2023.",
+    "Peter C. O’Brien and Thomas R. Fleming. A multiple testing procedure for clinical trials. Biometrics, 35(3):549–556, 1979. doi: 10.2307/2530245.",
+    "Anastasiia Demidova, Hanin Atwany, Nour Rabih, Sanad Shaban, and Muhammad Abdul- Mageed. John vs. ahmed: Debate-induced bias in multilingual LLMs. In Proceedings of The Second Arabic Natural Language Processing Conference (ArabicNLP 2024), 2024. URL https://aclanthology.org/2024.arabicnlp-1.18/.",
+    "Babak Hemmatian, Razan Baltaji, and Lav R. Varshney. Muslim-violence bias persists in debiased GPT models. In NeurIPS 2023 Muslims in ML Workshop, 2023. URL https: //neurips.cc/virtual/2023/78292.",
+    "Fabio Motoki, Valdemar Pinho Neto, and Victor Rodrigues. More human than human: measur- ing ChatGPT political bias. Public Choice, 2023. doi: 10.1007/s11127-023-01097-2. URL https://doi.org/10.1007/s11127-023-01097-2.",
+    "Samee Arif, Zohaib Khan, Maaidah Kaleem, Suhaib Rashid, Agha Ali Raza, and Awais Athar. With a grain of salt: Are llms fair across social dimensions?, 2024. URL https: //arxiv.org/abs/2410.12499.",
+    "Abhishek Mishra08. Loan approval datasets for prediction on kaggle, 3 2025. URL https: //www.kaggle.com/datasets/abhishekmishra08/loan-approval-datasets.",
+    "Educational Testing Service. SAT and GPA data. https://www.openintro.org/data/index. php?data=satgpa, 2024. SAT and GPA data for 1000 students at an unnamed college. Accessed: 2025-01-26.",
+    "Quinn McNemar. Note on the sampling error of the difference between correlated proportions or percentages. Psychometrika, 12(2):153–157, 1947. doi: 10.1007/BF02295996.",
+    "Michael A. Proschan, K. K. Gordon Lan, and Janet Turk Wittes. Statistical Monitoring of Clini- cal Trials: A Unified Approach. Springer, New York, 2006. doi: 10.1007/978-0-387-44970-8.",
+    "Gemma Team. Gemma 3 technical report, 2025. URL https://arxiv.org/abs/2503.19786.",
+    "Google. Start building with gemini 2.5 flash - google developers blog, 4 2025. URL https: //developers.googleblog.com/en/start-building-with-gemini-25-flash/.",
+    "OpenAI. Introducing gpt-4.1 in the api, April 2025. URL https://openai.com/index/ gpt-4-1/.",
+    "xAI. Grok 4.1, November 2025. URLhttps://x.ai/news/grok-4-1.",
+    "Qwen Team. QwQ: Reflect Deeply on the Boundaries of the Unknown. Qwen, November 2024. URL https://qwenlm.github.io/blog/qwq-32b-preview.",
+    "Anthropic. Introducing claude 4, 5 2025. URL https://www.anthropic.com/news/ claude-4.",
+    "OpenAI. New embedding models and API updates, 2024. URL https://openai.com/index/ new-embedding-models-and-api-updates/. Accessed: 2025.",
+    "OpenAI. Introducing openai o3 and o4-mini, April 2025. URL https://openai.com/index/ introducing-03-and-04-mini/.",
+    "OpenAI. Introducing gpt-4.1 in the api, April 2025. URL https://openai.com/index/ gpt-4-1/.",
+    "OpenAI. Introducing gpt-5, 10 2025. URL https://openai.com/index/ introducing-gpt-5/.",
+    "Jacob Cohen. A coefficient of agreement for nominal scales. Educational and Psychological Measurement, 20(1):37–46, 1960. doi: 10.1177/001316446002000104.",
+    "J Richard Landis and Gary G Koch. The measurement of observer agreement for categorical data. Biometrics, pages 159–174, 1977.",
+    "Kerem Zaman and Shashank Srivastava. A causal lens for evaluating faithfulness metrics. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing, pages 29413–29437, Suzhou, China, 2025. Association for Computational Linguistics. URL https://aclanthology.org/2025.emnlp-main.1496/.",
+    "Harry Mayne, Ryan Othniel Kearns, Yushi Yang, Andrew M. Bean, Eoin Delaney, Chris Russell, and Adam Mahdi. LLMs don’t know their own decision boundaries: The unreliability of self-generated counterfactual explanations. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing. Association for Computational Linguistics, 2025.",
+    "Ashwin Kumar, Yuzi He, Aram H. Markosyan, Bobbie Chern, and Imanol Arrieta-Ibarra. Detecting prefix bias in LLM-based reward models. In Proceedings of the 2025 ACM Conference on Fairness, Accountability, and Transparency, Athens, Greece, 2025. ACM. doi: 10.1145/ 3715275.3732204. URL https://dl.acm.org/doi/10.1145/3715275.3732204.",
+    "Xuechunzi Bai, Angelina Wang, Ilia Sucholutsky, and Thomas L. Griffiths. Measuring implicit bias in explicitly unbiased large language models. In NeurIPS 2024 Workshop on Behavioral Machine Learning, 2024. URL https://openreview.net/forum?id=gHq5nPcGvV.",
+    "Marianne Bertrand and Sendhil Mullainathan. Are emily and greg more employable than lakisha and jamal? a field experiment on labor market discrimination. American Economic Review, 94 (4):991–1013, 2004.",
+    "The Political Compass. The political compass test, 2024. URL https://www. politicalcompass.org/test. Accessed: 2024."
+  ]
+}

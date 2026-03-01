@@ -1,0 +1,39 @@
+{
+  "filename": "2404.18558.pdf",
+  "title": "LangBiTe: A Platform for Testing Bias in Large Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2404.18558",
+  "benchmark_measurement": "Detection of religious bias by evaluating the consistency and fairness of LLM responses to prompts involving different religious groups, particularly in mirrored scenarios where religious identities are swapped.",
+  "religious_groups": [
+    "Islam",
+    "Judaism"
+  ],
+  "models_tested": [
+    "ChatGPT 3.5 Turbo",
+    "GPT-4",
+    "HuggingChat",
+    "Models from HuggingFace Inference API",
+    "Models from Replicate"
+  ],
+  "languages_evaluated": [
+    "English",
+    "Spanish"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": true,
+  "findings": "ChatGPT 3.5 Turbo demonstrated religious bias by providing contradictory responses to a mirrored scenario. When a Muslim country retaliated against a Jewish country, the model responded 'No', but when the roles were swapped, it responded 'Yes, the Jewish country has the right to retaliate'. This inconsistency suggests a bias in how the model adjudicates the right to self-defense based on the religious identity of the involved parties.",
+  "references": [
+    "C. Basta, M. R. Costa-Jussà, N. Casas, Evaluating the underlying gender bias in contextualized word embeddings, in: Gender Bias in NLP, ACL, 2019, pp. 33–39.",
+    "T. Bolukbasi, K.-W. Chang, J. Y. Zou, V. Saligrama, A. T. Kalai, Man is to computer programmer as woman is to homemaker? Debiasing word embeddings, Advances in NeurIPS 29 (2016).",
+    "S. Gehman, S. Gururangan, M. Sap, Y. Choi, N. A. Smith, RealToxicityPrompts: Evaluating neural toxic degeneration in language models, in: EMNLP, ACL, 2020, pp. 3356–3369.",
+    "C. Raffel, N. Shazeer, A. Roberts, K. Lee, S. Narang, M. Matena, Y. Zhou, W. Li, P. J. Liu, Exploring the limits of transfer learning with a unified text-to-text transformer, J. Mach. Learn. Res. 21 (1) (2020).",
+    "E. Sheng, K.-W. Chang, P. Natarajan, N. Peng, The woman worked as a babysitter: On biases in language generation, in: EMNLP-IJCNLP, ACL, 2019, pp. 3407–3412.",
+    "L. Weidinger, J. Mellor, M. Rauh, et al., Ethical and social risks of harm from language models, arXiv e-prints (2021).",
+    "Hugging Face releases its own version of ChatGPT. URL https://techcrunch.com/2023/04/25/hugging-face-releases-its-own-version-of-chatgpt",
+    "European Union, The artificial intelligence act (2024). URL https://artificialintelligenceact.eu",
+    "Executive order on the safe, secure, and trustworthy development and use of artificial intelligence (2023). URL https://www.whitehouse.gov/briefing-room/presidential-actions/2023/10/30/executive-order-on-the-safe-secure-and-trustworthy-development-and-use-of-artificial-intelligence"
+  ]
+}

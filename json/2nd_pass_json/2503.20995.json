@@ -1,0 +1,75 @@
+{
+  "filename": "2503.20995.pdf",
+  "title": "ENCORE: Entropy-guided Reward Composition for Multi-head Safety Reward Models",
+  "arxiv_url": "https://arxiv.org/pdf/2503.20995",
+  "benchmark_measurement": "The benchmark includes a safety rule for 'Rejection of Hate Speech', which measures whether a model's response contains insults based on religion, among other attributes like ethnicity and gender.",
+  "religious_groups": [
+    "Religion (general)"
+  ],
+  "models_tested": [
+    "Llama3.1-8B",
+    "Llama3-8B",
+    "Llama3.1-70B",
+    "Llama3-70B-Instruct",
+    "Llama3-8B-Instruct",
+    "GPT4o",
+    "GPT3.5",
+    "Claude3.5",
+    "Claude 3.7-Sonnet",
+    "FsFairX-Llama3-8B",
+    "DeepSeek-V3",
+    "Gemini 2.5-Flash"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "RewardBench",
+    "HH-RLHF",
+    "PKU-SafeRLHF"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper does not report findings specific to religion. Its main finding is that the proposed ENCORE method, which penalizes high-entropy safety rules, improves overall safety alignment. This evaluation was performed on a set of 10 safety rules, one of which was 'Rejection of Hate Speech' that included avoiding insults based on religion. The performance was not broken down by individual rule, so no specific conclusion about religious bias or hate speech can be drawn beyond the aggregate safety score improvement.",
+  "references": [
+    "Allen Institute for AI. 2024. Reward-Bench: A Comprehensive Benchmark for Reward Models. https://huggingface.co/spaces/allenai/reward-bench.",
+    "Anthropic. 2022. HH-RLHF: Anthropic’s Helpful and Harmless Dataset. https://huggingface.co/datasets/Anthropic/hh-rlhf. A dataset for training large language models to be helpful and harmless through human feedback.",
+    "Anthropic. 2024. Introducing Claude 3.5 Sonnet. Introduces Claude 3.5 Sonnet with improved performance in intelligence, vision capabilities, and new Artifacts feature.",
+    "Bai, Y.; Jones, A.; Ndousse, K.; Askell, A.; Chen, A.; Das-Sarma, N.; Drain, D.; Fort, S.; Ganguli, D.; Henighan, T.; et al. 2022a. Training a helpful and harmless assistant with reinforcement learning from human feedback. arXiv preprint arXiv:2204.05862.",
+    "Bai, Y.; Kadavath, S.; Kundu, S.; Askell, A.; Kernion, J.; Jones, A.; Chen, A.; Goldie, A.; Mirhoseini, A.; McKinnon, C.; et al. 2022b. Constitutional AI: harmlessness from AI feedback. arXiv preprint arXiv:2212.08073.",
+    "Bradley, R. A.; and Terry, M. E. 1952. Rank analysis of incomplete block designs: I. The method of paired comparisons. Biometrika, 39(3/4): 324–345.",
+    "Brown, T. B.; Mann, B.; Ryder, N.; Subbiah, M.; Kaplan, J.; Dhariwal, P.; Neelakantan, A.; Shyam, P.; Sastry, G.; Askell, A.; et al. 2020. Language models are few-shot learners. arXiv preprint arXiv:2005.14165.",
+    "Christiano, P. F.; Leike, J.; Brown, T.; Martic, M.; Legg, S.; and Amodei, D. 2017. Deep reinforcement learning from human preferences. Advances in neural information processing systems, 30.",
+    "Dorka, N. 2024. Quantile Regression for Distributional Reward Models in RLHF. arXiv preprint arXiv:2409.10164.",
+    "Du, N.; Huang, Y.; Dai, A. M.; Tong, S.; Lepikhin, D.; Xu, Y.; Krikun, M.; Zhou, Y.; Yu, A. W.; Firat, O.; et al. 2022. GLaM: Efficient scaling of language models with mixture-of-experts. In International Conference on Machine Learning, 5547–5569. PMLR.",
+    "Dubey, A.; Jauhri, A.; Pandey, A.; Kadian, A.; Al-Dahle, A.; Letman, A.; Mathur, A.; Schelten, A.; Yang, A.; Fan, A.; et al. 2024. The Llama 3 herd of models. arXiv preprint arXiv:2407.21783.",
+    "Ganguli, D.; Askell, A.; Schiefer, N.; Liao, T. I.; Lukošiūtė, K.; Chen, A.; Goldie, A.; Mirhoseini, A.; Olsson, C.; Hernandez, D.; et al. 2023. The capacity for moral self-correction in large language models. arXiv preprint arXiv:2302.07459.",
+    "Glaese, A.; McAleese, N.; Trebacz, M.; Aslanides, J.; Firoiu, V.; Ewalds, T.; Rauh, M.; Weidinger, L.; Chadwick, M.; Thacker, P.; et al. 2022. Improving alignment of dialogue agents via targeted human judgements. arXiv preprint arXiv:2209.14375.",
+    "Huang, S.; Siddarth, D.; Lovitt, L.; Liao, T. I.; Durmus, E.; Tamkin, A.; and Ganguli, D. 2024. Collective Constitutional AI: Aligning a Language Model with Public Input. In The 2024 ACM Conference on Fairness, Accountability, and Transparency, 1395–1417.",
+    "Ji, J.; Hong, D.; Zhang, B.; Chen, B.; Dai, J.; Zheng, B.; Qiu, T.; Li, B.; and Yang, Y. 2024. PKU-SafeRLHF: Towards Multi-Level Safety Alignment for LLMs with Human Preference. arXiv preprint arXiv:2406.15513.",
+    "Kundu, S.; Bai, Y.; Kadavath, S.; Askell, A.; Callahan, A.; Chen, A.; Goldie, A.; Balwit, A.; Mirhoseini, A.; McLean, B.; et al. 2023. Specific versus general principles for Constitutional AI. arXiv preprint arXiv:2310.13798.",
+    "Lambert, N.; Pyatkin, V.; Morrison, J.; Miranda, L.; Lin, B. Y.; Chandu, K.; Dziri, N.; Kumar, S.; Zick, T.; Choi, Y.; et al. 2024. RewardBench: Evaluating reward models for language modeling. arXiv preprint arXiv:2403.13787.",
+    "Lee, H.; Phatale, S.; Mansoor, H.; Mesnard, T.; Ferret, J.; Lu, K.; Bishop, C.; Hall, E.; Carbune, V.; Rastogi, A.; and Prakash, S. 2025. RLAIF vs. RLHF: scaling reinforcement learning from human feedback with AI feedback. In International Conference on Machine Learning. PMLR.",
+    "Li, X.; Gao, M.; Zhang, Z.; Fan, J.; and Li, W. 2025a. Data-adaptive Safety Rules for Training Reward Models. arXiv preprint arXiv:2501.15453.",
+    "Li, X.; Gao, M.; Zhang, Z.; Fan, J.; and Li, W. 2025b. RuleAdapter: Dynamic Rules for training Safety Reward Models in RLHF. In Forty-second International Conference on Machine Learning.",
+    "Li, X.; Gao, M.; Zhang, Z.; Yue, C.; and Hu, H. 2024. Rule-based data selection for large language models. arXiv preprint arXiv:2410.04715.",
+    "Liu, A.; Feng, B.; Xue, B.; Wang, B.; Wu, B.; Lu, C.; Zhao, C.; Deng, C.; Zhang, C.; Ruan, C.; et al. 2024a. Deepseek-v3 technical report. arXiv preprint arXiv:2412.19437.",
+    "Liu, C. Y.; Zeng, L.; Liu, J.; Yan, R.; He, J.; Wang, C.; Yan, S.; Liu, Y.; and Zhou, Y. 2024b. Skywork-reward: Bag of tricks for reward modeling in LLMs. arXiv preprint arXiv:2410.18451.",
+    "Malik, S.; Pyatkin, V.; Land, S.; Morrison, J.; Smith, N. A.; Hajishirzi, H.; and Lambert, N. 2025. RewardBench 2: Advancing Reward Model Evaluation. arXiv preprint arXiv:2506.01937.",
+    "Mu, T.; Helyar, A.; Heidecke, J.; Achiam, J.; Vallone, A.; Kivlichan, I. D.; Lin, M.; Beutel, A.; Schulman, J.; and Weng, L. 2024. Rule Based Rewards for Language Model Safety. Advances in Neural Information Processing Systems, 37.",
+    "Ouyang, L.; Wu, J.; Jiang, X.; Almeida, D.; Wainwright, C.; Mishkin, P.; Zhang, C.; Agarwal, S.; Slama, K.; Ray, A.; et al. 2022. Training language models to follow instructions with human feedback. Advances in neural information processing systems, 35.",
+    "Rafailov, R.; Sharma, A.; Mitchell, E.; Manning, C. D.; Er-mon, S.; and Finn, C. 2023. Direct preference optimization: Your language model is secretly a reward model. Advances in Neural Information Processing Systems, 36: 53728–53741.",
+    "Ramamurthy, R.; Ammanabrolu, P.; Brantley, K.; Hessel, J.; Sifa, R.; Bauckhage, C.; Hajishirzi, H.; and Choi, Y. 2022. Is reinforcement learning (not) for natural language processing: Benchmarks, baselines, and building blocks for natural language policy optimization. arXiv preprint arXiv:2210.01241.",
+    "Schulman, J.; Wolski, F.; Dhariwal, P.; Radford, A.; and Klimov, O. 2017. Proximal policy optimization algorithms. arXiv preprint arXiv:1707.06347.",
+    "Shen, W.; Zhang, X.; Yao, Y.; Zheng, R.; Guo, H.; and Liu, Y. 2024. Improving reinforcement learning from human feedback using contrastive rewards. arXiv preprint arXiv:2403.07708.",
+    "Team, G.; Anil, R.; Borgeaud, S.; Alayrac, J.-B.; Yu, J.; Sori-cut, R.; Schalkwyk, J.; Dai, A. M.; Hauth, A.; Millican, K.; et al. 2023. Gemini: a family of highly capable multimodal models. arXiv preprint arXiv:2312.11805.",
+    "Wang, H.; Xiong, W.; Xie, T.; Zhao, H.; and Zhang, T. 2024a. Interpretable Preferences via Multi-Objective Reward Modeling and Mixture-of-Experts. arXiv preprint arXiv:2406.12845.",
+    "Wang, Z.; Dong, Y.; Delalleau, O.; Zeng, J.; Shen, G.; Egert, D.; Zhang, J. J.; Sreedhar, M. N.; and Kuchaiev, O. 2024b. HelpSteer2: Open-source dataset for training top-performing reward models. arXiv preprint arXiv:2406.08673.",
+    "Wang, Z.; Dong, Y.; Zeng, J.; Adams, V.; Sreedhar, M. N.; Egert, D.; Delalleau, O.; Scowcroft, J. P.; Kant, N.; Swope, A.; et al. 2023. HelpSteer: Multi-attribute helpfulness dataset for SteerLM. arXiv preprint arXiv:2311.09528.",
+    "Wu, Z.; Hu, Y.; Shi, W.; Dziri, N.; Suhr, A.; Ammanabrolu, P.; Smith, N. A.; Ostendorf, M.; and Hajishirzi, H. 2023. Fine-grained human feedback gives better rewards for language model training. Advances in Neural Information Processing Systems, 36.",
+    "Yang, A.; Yang, B.; Zhang, B.; Hui, B.; Zheng, B.; Yu, B.; Li, C.; Liu, D.; Huang, F.; Wei, H.; et al. 2024. Qwen2. 5 technical report. arXiv preprint arXiv:2412.15115."
+  ]
+}

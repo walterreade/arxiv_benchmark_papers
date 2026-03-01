@@ -1,0 +1,40 @@
+{
+  "filename": "1908.05757.pdf",
+  "title": "Debiasing Personal Identities in Toxicity Classification",
+  "arxiv_url": "https://arxiv.org/pdf/1908.05757",
+  "benchmark_measurement": "The benchmark measures unintended bias in toxicity classification against specific religious subgroups. It uses metrics like Subgroup AUC, BPSN AUC, and BNSP AUC to evaluate a model's ability to distinguish toxic from non-toxic comments within these subgroups without being unfairly biased.",
+  "religious_groups": [
+    "Christianity",
+    "Islam",
+    "Judaism"
+  ],
+  "models_tested": [
+    "TFIDF",
+    "LSTM",
+    "BERT"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Nuanced Metrics for Measuring Unintended Bias"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper found that a BERT model trained on a dataset that included identity-targeted comments (the 'Mixed Model') performed better at classifying toxic comments targeting religious subgroups (Christian, Jewish, Muslim) than a model trained on a dataset where such comments were removed (the 'Naive Model'). While overall AUCs were similar, the Mixed Model showed higher Subgroup AUCs, indicating that exposure to biased data during training is necessary to accurately identify toxicity directed at specific subgroups.",
+  "references": [
+    "Borkan et al, \"Nuanced Metrics for Measuring Unintended Bias with Real Data for Text Classifi-cation.\", Jigsaw, https://arxiv.org/pdf/1903.04561v2.pdf",
+    "Daniel Borkan, Lucas Dixon, John Li, Jeffrey Sorensen, Nithum Thain, and Lucy Vasserman. 2019. \"Limitations of Pinned AUC for Measuring Unintended Bias.” Google Alphabet, https://arxiv.org/pdf/1903.02088.pdf",
+    "Robertson, Stephen \"Understanding Inverse Document Frequency: on Theoretical Arguments for IDF.\" Journal of Documentation, www.emerald.com/insight/content/doi/10.1108/00220410410560582/full/html.",
+    "Jurgen Schmidhuber Sepp Hochreiter, “Long Short-Term Memory.\" MIT Press Journals, www.mitpressjournals.org/doi/abs/10.1162/neco.1997.9.8.1735",
+    "Devlin, et al. “BERT: Pre-Training of Deep Bidirectional Transformers for Language Understanding.\" ArXiv.org, 24 May 2019, https://arxiv.org/abs/1810.04805",
+    "J. Pennington, R. Socher, C.D. Manning, GloVe: Global Vectors for Word Representation; Computer Science Department, Stanford University https://www.aclweb.org/anthology/D14-1162",
+    "Peters, et al. “Deep Contextualized Word Representations.\" ArXiv.org, 22 Mar. 2018, http://www.arxiv.org/abs/1802.05365",
+    "\"Jigsaw Unintended Bias in Toxicity Classification.\" Kaggle, www.kaggle.com/c/jigsaw-unintended-bias-in-toxicity-classification/data.",
+    "Erik, Hazarika, Devamanyu, Vij. Prateek, A Deeper Look Into Sarcastic Tweets Using Deep Convolutional Neural Networks https://arxiv.org/abs/1610.08815",
+    "Dorison, Mark “Civil Comments”, Civil Comments, https://www.drupal.org/project/civil-comments"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "filename": "2601.20757.pdf",
+  "title": "Persona Prompting as a Lens on LLM Social Reasoning",
+  "arxiv_url": "https://arxiv.org/pdf/2601.20757",
+  "benchmark_measurement": "The study measured how prompting Large Language Models with personas based on religious identity (among other demographic attributes) affects their performance on hate speech detection, commonsense reasoning, and sentiment analysis tasks. This included evaluating changes in classification accuracy, rationale selection quality, and the model's tendency to over-flag content as harmful.",
+  "religious_groups": [
+    "Christianity",
+    "Islam",
+    "Judaism",
+    "Atheism",
+    "Hinduism"
+  ],
+  "models_tested": [
+    "GPT-OSS-120B",
+    "Mistral-Medium",
+    "Qwen3-32B"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "HateXplain",
+    "BRWRR",
+    "CoS-E",
+    "SST-2"
+  ],
+  "continuous_testing": false,
+  "findings": "Prompting with religious personas, as with other demographic attributes, had varied effects. For hate speech detection, some religious personas improved classification for certain models (e.g., Atheist persona for Mistral-Medium) but often degraded the quality of the selected rationales. Models showed significant disagreement in their predictions when prompted with different religious personas, with the 'Religion' and 'Political View' categories showing the most divergence. Furthermore, the study found that simulated personas (including religious ones) often fail to align with their real-world counterparts and that models exhibit consistent biases regardless of the persona prompt, such as a strong tendency to over-flag content as harmful.",
+  "references": [
+    "Lisa P. Argyle, Ethan C. Busby, Nancy Fulda, Joshua R. Gubler, Christopher Rytting, and David Wingate. 2023. Out of one, many: Using language models to simulate human samples. Political Analysis, 31(3):337–351.",
+    "Louis Castricato, Nathan Lile, Rafael Rafailov, Jan-Philipp Fränken, and Chelsea Finn. 2025. PERSONA: A reproducible testbed for pluralistic alignment. In Proceedings of the 31st International Conference on Computational Linguistics, pages 11348–11368, Abu Dhabi, UAE. Association for Computational Linguistics.",
+    "Myra Cheng, Esin Durmus, and Dan Jurafsky. 2023. Marked personas: Using natural language prompts to measure stereotypes in language models. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 1504–1532, Toronto, Canada. Association for Computational Linguistics.",
+    "Ameet Deshpande, Vishvak Murahari, Tanmay Rajpurohit, Ashwin Kalyan, and Karthik Narasimhan. 2023. Toxicity in chatgpt: Analyzing persona-assigned language models. In Findings of the Association for Computational Linguistics: EMNLP 2023, pages 1236–1270, Singapore. Association for Computational Linguistics.",
+    "Torrence S Farmer and Chien-Ju Ho. 2025. Examining interactions between user characteristics and explanation modalities on inducing complementarity. In Proceedings of the Extended Abstracts of the CHI Conference on Human Factors in Computing Systems, CHI EA ’25, New York, NY, USA. Association for Computing Machinery.",
+    "Shashank Gupta, Vaishnavi Shrivastava, Ameet Deshpande, Ashwin Kalyan, Peter Clark, Ashish Sabharwal, and Tushar Khot. 2024. Bias runs deep: Implicit reasoning biases in persona-assigned LLMs. In The Twelfth International Conference on Learning Representations.",
+    "Tiancheng Hu and Nigel Collier. 2024. Quantifying the persona effect in LLM simulations. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 10289–10307, Bangkok, Thailand. Association for Computational Linguistics.",
+    "Jakub Jeck, Florian Leiser, Anne Hüsges, and Ali Sunyaev. 2025. Tell-me: Toward personalized explanations of large language models. In Proceedings of the Extended Abstracts of the CHI Conference on Human Factors in Computing Systems, CHI EA ’25, New York, NY, USA. Association for Computing Machinery.",
+    "Brihi Joshi, Xiang Ren, Swabha Swayamdipta, Rik Koncel-Kedziorski, and Tim Paek. 2025. Improving language model personas via rationalization with psychological scaffolds. In Findings of the Association for Computational Linguistics: EMNLP 2025, pages 21747–21770, Suzhou, China. Association for Computational Linguistics.",
+    "Malik Khadar, Amoligha Timma, Luka Ludden, and Harmanpreet Kaur. 2025. Explain it like i’m me: User characteristics in xai decision-making. In Proceedings of the 2025 ACM Conference on Fairness, Accountability, and Transparency, FAccT ’25, page 1729–1744, New York, NY, USA. Association for Computing Machinery.",
+    "Junseok Kim, Nakyeong Yang, and Kyomin Jung. 2024. Persona is a double-edged sword: Mitigating the negative impact of role-playing prompts in zero-shot reasoning tasks. arXiv, abs/2408.08631.",
+    "Hannah Rose Kirk, Bertie Vidgen, Paul Röttger, and Scott A Hale. 2024. The benefits, risks and bounds of personalizing the alignment of large language models to individuals. Nature Machine Intelligence, 6(4):383–392.",
+    "Andy Liu, Mona Diab, and Daniel Fried. 2024. Evaluating large language model biases in persona-steered generation. In Findings of the Association for Computational Linguistics: ACL 2024, pages 9832–9850, Bangkok, Thailand. Association for Computational Linguistics.",
+    "Binny Mathew, Punyajoy Saha, Seid Muhie Yimam, Chris Biemann, Pawan Goyal, and Animesh Mukherjee. 2021. Hatexplain: A benchmark dataset for explainable hate speech detection. Proceedings of the AAAI Conference on Artificial Intelligence, 35(17):14867–14875.",
+    "Robert Nimmo, Marios Constantinides, Ke Zhou, Daniele Quercia, and Simone Stumpf. 2024. User characteristics in explainable ai: The rabbit hole of personalization? In Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems, CHI ’24, New York, NY, USA. Association for Computing Machinery.",
+    "Vishakh Padmakumar and He He. 2024. Does writing with language models reduce content diversity? In The Twelfth International Conference on Learning Representations.",
+    "Pengshuo Qiu, Frank Rudzicz, and Zining Zhu. 2024. Scenarios and approaches for situated natural language explanations. arXiv, abs/2406.05035.",
+    "Nazneen Fatema Rajani, Bryan McCann, Caiming Xiong, and Richard Socher. 2019. Explain yourself! leveraging language models for commonsense reasoning. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 4932–4942, Florence, Italy. Association for Computational Linguistics.",
+    "Richard Rogers and Xiaoke Zhang. 2025. A bias towards neutrality? how llm guardrail sensitivity affects classification. Communication and Change, 1(1):1–18.",
+    "Leonard Salewski, Stephan Alaniz, Isabel Rio-Torto, Eric Schulz, and Zeynep Akata. 2023. In-context impersonation reveals large language models’ strengths and biases. In Thirty-seventh Conference on Neural Information Processing Systems, volume 36, pages 72044–72057.",
+    "Richard Socher, Alex Perelygin, Jean Wu, Jason Chuang, Christopher D. Manning, Andrew Ng, and Christopher Potts. 2013. Recursive deep models for semantic compositionality over a sentiment treebank. In Proceedings of the 2013 Conference on Empirical Methods in Natural Language Processing, pages 1631–1642, Seattle, Washington, USA. Association for Computational Linguistics.",
+    "Kacper Sokol and Peter Flach. 2020. One explanation does not fit all. KI - Künstliche Intelligenz, 34(2):235–250.",
+    "Pia Sommerauer, Giulia Rambelli, and Tommaso Caselli. 2025. Simulating identity, propagating bias: Abstraction and stereotypes in LLM-generated text. In Findings of the Association for Computational Linguistics: EMNLP 2025, pages 19812–19831, Suzhou, China. Association for Computational Linguistics.",
+    "Terne-Sasha Thorn Jakobsen, Laura Cabello, and Anders Søgaard. 2023. Being right for whose right reasons? In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 1033–1054, Toronto, Canada. Association for Computational Linguistics."
+  ]
+}

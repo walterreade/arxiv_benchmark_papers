@@ -1,0 +1,60 @@
+{
+  "filename": "2210.03826.pdf",
+  "title": "AN ANALYSIS OF THE EFFECTS OF DECODING ALGORITHMS ON FAIRNESS IN OPEN-ENDED LANGUAGE GENERATION",
+  "arxiv_url": "https://arxiv.org/pdf/2210.03826",
+  "benchmark_measurement": "The benchmark measured fairness by evaluating the proportion of generated texts containing negative sentiment and negative regard towards different demographic groups, including religious groups, in an open-ended language generation task. The focus was on how different decoding algorithms and their hyperparameters affect this bias.",
+  "religious_groups": [
+    "Christianity",
+    "Islam",
+    "Atheism"
+  ],
+  "models_tested": [
+    "GPT-2",
+    "GPT-Neo 1.3B"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "ROPrompt",
+    "BOLD"
+  ],
+  "continuous_testing": false,
+  "findings": "The study found that fairness metrics for religious groups (Christian, Muslim, Atheist) vary significantly depending on the decoding algorithm (top-p, top-k, temperature) and its hyperparameters. For instance, changing the hyper-parameter value could toggle which religious group received more negative sentiment. The paper demonstrated that certain hyper-parameter regions could produce more equitable results between groups, such as similar levels of negative regard for Christian and Muslim prompts. It also found that increasing text diversity often led to a higher proportion of generations with negative regard and sentiment for all groups, including religious ones. The default hyper-parameters used in common libraries were not always the best choice for fairness.",
+  "references": [
+    "Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever, “Language models are unsupervised multitask learners,” OpenAI Blog, 1(8):9, 2019.",
+    "Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, et al., \"Language models are few-shot learners,\" Advances in neural information processing systems, vol. 33, pp. 1877–1901, 2020.",
+    "Ilya Sutskever, Oriol Vinyals, and Quoc V Le, “Sequence to sequence learning with neural networks,\" arXiv preprint arXiv:1409.3215, 2014.",
+    "Chris van der Lee, Albert Gatt, Emiel van Miltenburg, Sander Wubben, and Emiel Krahmer, “Best practices for the human evaluation of automatically generated text,\" in Proceedings of the 12th International Conference on Natural Language Generation, Tokyo, Japan, Oct.-Nov. 2019, pp. 355–368, Association for Computational Linguistics.",
+    "Moin Nadeem, Tianxing He, Kyunghyun Cho, and James Glass, \"A systematic characterization of sampling algorithms for open-ended language generation,\" in Proceedings of the 1st Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics and the 10th International Joint Conference on Natural Language Processing, 2020, pp. 334–346.",
+    "Hugh Zhang, Daniel Duckworth, Daphne Ippolito, and Arvind Neelakantan, \"Trading off diversity and quality in natural language generation,\" EACL 2021, p. 25, 2021.",
+    "Massimo Caccia, Lucas Caccia, William Fedus, Hugo Larochelle, Joelle Pineau, and Laurent Charlin, “Language gans falling short,\" in International Conference on Learning Representations, 2020.",
+    "Angela Fan, Mike Lewis, and Yann Dauphin, “Hierarchical neural story generation,\" in Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), Melbourne, Australia, July 2018, pp. 889–898, Association for Computational Linguistics.",
+    "Ari Holtzman, Jan Buys, Li Du, Maxwell Forbes, and Yejin Choi, \"The curious case of neural text degeneration,\" in International Conference on Learning Representations, 2019.",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel Bowman, “Crows-pairs: A challenge dataset for measuring social biases in masked language models,\" in Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), 2020, pp. 1953–1967.",
+    "Samuel Gehman, Suchin Gururangan, Maarten Sap, Yejin Choi, and Noah A Smith, “Realtoxicityprompts: Evaluating neural toxic degeneration in language models,\" in Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing: Findings, 2020, pp. 3356–3369.",
+    "Emily Sheng, Kai-Wei Chang, Prem Natarajan, and Nanyun Peng, \"The woman worked as a babysitter: On biases in language generation,\" in Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), 2019, pp. 3398–3403.",
+    "Jwala Dhamala, Tony Sun, Varun Kumar, Satyapriya Krishna, Yada Pruksachatkun, Kai-Wei Chang, and Rahul Gupta, \"Bold: Dataset and metrics for measuring biases in open-ended language generation,\" in Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, 2021, pp. 862–872.",
+    "Emily Sheng, Kai-Wei Chang, Prem Natarajan, and Nanyun Peng, “Societal biases in language generation: Progress and challenges,\" in Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), Online, Aug. 2021, pp. 4275–4293, Association for Computational Linguistics.",
+    "Thomas Wolf, Lysandre Debut, Victor Sanh, Julien Chaumond, Clement Delangue, Anthony Moi, Pierric Cistac, Tim Rault, Rémi Louf, Morgan Funtowicz, et al., \"Huggingface's transformers: State-ofthe-art natural language processing,\" arXiv preprint arXiv:1910.03771, 2019.",
+    "Emily Sheng, Kai-Wei Chang, Prem Natarajan, and Nanyun Peng, “Towards controllable biases in language generation,\" in Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing: Findings, 2020, pp. 3239–3254.",
+    "Po-Sen Huang, Huan Zhang, Ray Jiang, Robert Stanforth, Johannes Welbl, Jack Rae, Vishal Maini, Dani Yogatama, and Pushmeet Kohli, \"Reducing sentiment bias in language models via counterfactual evaluation,\" in Findings of the Association for Computational Linguistics: EMNLP 2020, Online, Nov. 2020, pp. 65–83, Association for Computational Linguistics.",
+    "Catherine Yeo and Alyssa Chen, “Defining and evaluating fair natural language generation,\" in Proceedings of the The Fourth Widening Natural Language Processing Workshop, 2020, pp. 107–109.",
+    "Alisa Liu, Maarten Sap, Ximing Lu, Swabha Swayamdipta, Chandra Bhagavatula, Noah A Smith, and Yejin Choi, “Dexperts: Decoding-time controlled text generation with experts and anti-experts,\" in Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), 2021, pp. 6691–6706.",
+    "Clayton J. Hutto and Eric Gilbert, \"Vader: A parsimonious rule-based model for sentiment analysis of social media text,\" in ICWSM, 2014.",
+    "Yizhe Zhang, Michel Galley, Jianfeng Gao, Zhe Gan, Xiujun Li, Chris Brockett, and Bill Dolan, “Generating informative and diverse conversational responses via adversarial information maximization,\" in Proceedings of the 32nd International Conference on Neural Information Processing Systems, Red Hook, NY, USA, 2018, NIPS’18, p. 1815–1825, Curran Associates Inc.",
+    "Leo Gao, Stella Biderman, Sid Black, Laurence Golding, Travis Hoppe, Charles Foster, Jason Phang, Horace He, Anish Thite, Noa Nabeshima, et al., “The pile: An 800gb dataset of diverse text for language modeling,\" arXiv preprint arXiv:2101.00027, 2020.",
+    "David A. Balota, Melvin J Yap, Keith A. Hutchison, Michael J Cortese, Brett Kessler, Bjorn Loftis, James H. Neely, Douglas L. Nelson, Greg B. Simpson, and Rebecca Treiman, \"The english lexicon project,\" Behavior Research Methods, vol. 39, pp. 445–459, 2007.",
+    "Maite Taboada, Julian Brooke, Milan Tofiloski, Kimberly D. Voll, and Manfred Stede, “Lexicon-based methods for sentiment analysis,\" Computational Linguistics, vol. 37, pp. 267–307, 2011.",
+    "Minqing Hu and Bing Liu, “Mining and summarizing customer reviews,\" in Proceedings of the tenth ACM SIGKDD international conference on Knowledge discovery and data mining, 2004, pp. 168–177.",
+    "Bing Liu, “Sentiment analysis and opinion mining,\" Synthesis lectures on human language technologies, vol. 5, no. 1, pp. 1–167, 2012.",
+    "Vered Shwartz, Rachel Rudinger, and Oyvind Tafjord, “''... you are grounded!'': Latent name artifacts in pre-trained language models,\" arXiv preprint arXiv:2004.03012, 2020.",
+    "Ruibo Liu, Chenyan Jia, Jason Wei, Guangxuan Xu, Lili Wang, and Soroush Vosoughi, “Mitigating political bias in language models through reinforced calibration,\" in Proceedings of the AAAI Conference on Artificial Intelligence, 2021, pp. 14857–14866.",
+    "Johannes Welbl, Amelia Glaese, Jonathan Uesato, Sumanth Dathathri, John Mellor, Lisa Anne Hendricks, Kirsty Anderson, Pushmeet Kohli, Ben Coppin, and Po-Sen Huang, “Challenges in detoxifying language models,\" in Findings of the Association for Computational Linguistics: EMNLP 2021, 2021, pp. 2447–2469.",
+    "Afra Feyza Akyürek, Muhammed Yusuf Kocyigit, Sejin Paik, and Derry Wijaya, \"Challenges in measuring bias via open-ended language generation,\" arXiv preprint arXiv:2205.11601, 2022."
+  ]
+}

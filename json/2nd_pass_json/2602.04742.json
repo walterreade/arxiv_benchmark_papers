@@ -1,0 +1,83 @@
+{
+  "filename": "2602.04742.pdf",
+  "title": "Inference-Time Reasoning Selectively Reduces Implicit Social Bias in Large Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2602.04742",
+  "benchmark_measurement": "The benchmark measured implicit bias by adapting the Implicit Association Test (IAT) for LLMs. Specifically for religion, it measured the relative association strength between terms related to Islam or Judaism versus terms related to Christianity, with positive and negative attribute words. A positive bias score indicated a stronger association of Christian terms with positive attributes compared to Islamic or Judaic terms.",
+  "religious_groups": [
+    "Islam",
+    "Judaism",
+    "Christianity"
+  ],
+  "models_tested": [
+    "GPT-4.1",
+    "o3",
+    "Claude Opus 4.1",
+    "Gemini 2.5 Flash",
+    "Llama 3.3 70B Instruct"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "LLM Word Association Test"
+  ],
+  "continuous_testing": false,
+  "findings": "Enabling inference-time reasoning significantly reduced implicit bias scores against Islam and Judaism for some model classes, particularly GPT and Claude models. These models, under standard inference, showed a tendency to associate Christian terms more strongly with positive attributes than Islamic or Judaic terms. The effect of reasoning was less pronounced or non-existent for Gemini and Llama models, which showed less initial bias on these topics and little change with reasoning enabled.",
+  "references": [
+    "Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia Leoni Aleman, Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat, et al. Gpt-4 technical report. arXiv preprint arXiv:2303.08774, 2023.",
+    "Anthropic. Claude opus 4.1, 2025. URL https://www.anthropic.com/news/claude-opus-4-1.",
+    "Molly Apsel and Michael N Jones. Decomposing implicit bias in distributional semantic models: The roles of first-and second-order co-occurrence. In Proceedings of the Annual Meeting of the Cognitive Science Society, volume 47, 2025.",
+    "Richard N Aslin and Elissa L Newport. Distributional language learning: Mechanisms and models of category formation. Language learning, 64(s2):86–105, 2014.",
+    "Jordan R Axt, Charles R Ebersole, and Brian A Nosek. The rules of implicit evaluation by race, religion, and age. Psychological Science, 25(9):1804–1815, 2014.",
+    "Xuechunzi Bai, Angelina Wang, Ilia Sucholutsky, and Thomas L. Griffiths. Explicitly unbiased large language models still form biased associations. Proceedings of the National Academy of Sciences, 122(8):e2416228122, February 2025. ISSN 0027-8424, 1091-6490. doi: 10.1073/pnas.2416228122. URL https://pnas.org/doi/10.1073/pnas.2416228122.",
+    "Mahzarin R Banaji. Implicit attitudes can be measured. The nature of remembering: Essays in honor of Robert G. Crowder, pp. 117–150, 2001. Publisher: Washington.",
+    "John A Bargh. The Case Against the Controllability of Automatic Stereotype Effects. Dual-process theories in social psychology, pp. 361, 1999. Publisher: Guilford Press.",
+    "Emily M Bender, Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. On the dangers of stochastic parrots: Can language models be too big? In Proceedings of the 2021 ACM conference on fairness, accountability, and transparency, pp. 610–623, 2021.",
+    "Sudeep Bhatia and Lukasz Walasek. Predicting implicit attitudes with natural language data. Proceedings of the National Academy of Sciences, 120(25):e2220726120, June 2023. doi: 10.1073/pnas.2220726120. URL https://www.pnas.org/doi/10.1073/pnas.2220726120. Publisher: Proceedings of the National Academy of Sciences.",
+    "Hart Blanton, James Jaccard, Jonathan Klick, Barbara Mellers, Gregory Mitchell, and Philip E Tetlock. Strong claims and weak evidence: reassessing the predictive validity of the iat. Journal of applied Psychology, 94(3): 567, 2009.",
+    "Su Lin Blodgett, Solon Barocas, Hal Daumé III, and Hanna Wallach. Language (technology) is power: A critical survey of \"bias\" in nlp. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pp. 5454–5476, 2020.",
+    "Tolga Bolukbasi, Kai-Wei Chang, James Y Zou, Venkatesh Saligrama, and Adam T Kalai. Man is to computer programmer as woman is to homemaker? debiasing word embeddings. Advances in neural information processing systems, 29, 2016.",
+    "Conrad Borchers, Dalia Gala, Benjamin Gilburt, Eduard Oravkin, Wilfried Bounsi, Yuki M Asano, and Hannah Kirk. Looking for a handsome carpenter! debiasing gpt-3 job advertisements. In Proceedings of the 4th Workshop on Gender Bias in Natural Language Processing (GeBNLP), pp. 212–224, 2022.",
+    "Kevin S. Brown, Eiling Yee, Gitte Joergensen, Melissa Troyer, Elliot Saltzman, Jay Rueckl, James S. Magnuson, and Ken McRae. Investigating the Extent to which Distributional Semantic Models Capture a Broad Range of Semantic Relations. Cognitive Science, 47(5):e13291, 2023. ISSN 1551-6709. doi: 10.1111/cogs.13291. URL https://onlinelibrary.wiley.com/doi/abs/10.1111/cogs.13291. eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/cogs.13291.",
+    "Aylin Caliskan, Joanna J. Bryson, and Arvind Narayanan. Semantics derived automatically from language corpora contain human-like biases. Science, 356(6334):183–186, April 2017. doi: 10.1126/science.aal4230. URL https://www.science.org/doi/full/10.1126/science.aal4230. Publisher: American Association for the Advancement of Science.",
+    "Kai-Wei Chang, Vinodkumar Prabhakaran, and Vicente Ordonez. Bias and fairness in natural language processing. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP): Tutorial Abstracts, 2019.",
+    "Gheorghe Comanici, Eric Bieber, Mike Schaekermann, Ice Pasupat, Noveen Sachdeva, Inderjit Dhillon, Marcel Blistein, Ori Ram, Dan Zhang, Evan Rosen, et al. Gemini 2.5: Pushing the frontier with advanced reasoning, multimodality, long context, and next generation agentic capabilities. arXiv preprint arXiv:2507.06261, 2025.",
+    "Klaus Fiedler, Claude Messner, and Matthias Bluemke. Unresolved problems with the “i”, the “a”, and the \"t\": A logical and psychometric critique of the implicit association test (iat). European review of social psychology, 17(1):74–147, 2006.",
+    "Isabel O Gallegos, Ryan A Rossi, Joe Barrow, Md Mehrab Tanjim, Sungchul Kim, Franck Dernoncourt, Tong Yu, Ruiyi Zhang, and Nesreen K Ahmed. Bias and fairness in large language models: A survey. Computational Linguistics, 50(3):1097–1179, 2024.",
+    "Aparna Garimella, Rada Mihalcea, and Akhash Amarnath. Demographic-aware language model fine-tuning as a bias mitigation technique. In Proceedings of the 2nd Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics and the 12th International Joint Conference on Natural Language Processing (Volume 2: Short Papers), pp. 311-319, 2022.",
+    "Aaron Grattafiori, Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Alex Vaughan, et al. The llama 3 herd of models. arXiv preprint arXiv:2407.21783, 2024.",
+    "Anthony G Greenwald, Debbie E McGhee, and Jordan L K Schwartz. Measuring Individual Differences in Implicit Cognition: The Implicit Association Test. Journal of Personality and Social Psychology, 74(6), 1998.",
+    "Shashank Gupta, Vaishnavi Shrivastava, Ameet Deshpande, Ashwin Kalyan, Peter Clark, Ashish Sabharwal, and Tushar Khot. Bias runs deep: Implicit reasoning biases in persona-assigned llms. In The Twelfth International Conference on Learning Representations, 2024.",
+    "David J. Hauser and Norbert Schwarz. Implicit Bias Reflects the Company That Words Keep. Frontiers in Psychology, 13, 2022. ISSN 1664-1078. URL https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2022.871221.",
+    "John T Jost. The iat is dead, long live the iat: Context-sensitive measures of implicit attitudes are indispensable to social and political psychology. Current Directions in Psychological Science, 28(1):10–19, 2019.",
+    "Masahiro Kaneko, Danushka Bollegala, Naoaki Okazaki, and Timothy Baldwin. Evaluating gender bias in large language models via chain-of-thought prompting. arXiv preprint arXiv:2401.15585, 2024.",
+    "Hyunwoo Kim, Youngjae Yu, Liwei Jiang, Ximing Lu, Daniel Khashabi, Gunhee Kim, Yejin Choi, and Maarten Sap. Prosocialdialog: A prosocial backbone for conversational agents. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pp. 4005–4029, 2022.",
+    "Hadas Kotek, Rikker Dockum, and David Sun. Gender bias and stereotypes in large language models. In Proceedings of the ACM collective intelligence conference, pp. 12–24, 2023.",
+    "Abhilasha A. Kumar. Semantic memory: A review of methods, models, and current challenges. Psychonomic Bulletin & Review, 28(1):40–80, February 2021. ISSN 1069-9384, 1531-5320. doi: 10.3758/s13423-020-01792-x. URL https://link.springer.com/10.3758/s13423-020-01792-x.",
+    "Molly Lewis and Gary Lupyan. Gender stereotypes are reflected in the distributional structure of 25 languages. Nature Human Behaviour, 4(10):1021–1028, October 2020. ISSN 2397-3374. doi: 10.1038/s41562-020-0918-6. URL https://www.nature.com/articles/s41562-020-0918-6. Number: 10 Publisher: Nature Publishing Group.",
+    "Yuxuan Li, Hirokazu Shirado, and Sauvik Das. Actions speak louder than words: Agent decisions reveal implicit biases in language models. In Proceedings of the 2025 ACM Conference on Fairness, Accountability, and Transparency, pp. 3303-3325, 2025.",
+    "Zhong-Zhi Li, Duzhen Zhang, Ming-Liang Zhang, Jiaxin Zhang, Zengyan Liu, Yuxuan Yao, Haotian Xu, Junhao Zheng, Pei-Jie Wang, Xiuyi Chen, et al. From system 1 to system 2: A survey of reasoning large language models. CORR, 2025.",
+    "Ryan Liu, Jiayi Geng, Addison J. Wu, Ilia Sucholutsky, Tania Lombrozo, and Thomas L. Griffiths. Mind Your Step (by Step): Chain-of-Thought can Reduce Performance on Tasks where Thinking Makes Humans Worse. June 2025. URL https://openreview.net/forum?id=J3gzdbYZxS.",
+    "Margo J Monteith, Patricia G Devine, and Julia R Zuwerink. Self-directed versus other-directed affect as a consequence of prejudice-related discrepancies. Journal of personality and social psychology, 64(2):198, 1993.",
+    "OpenAI. o3 Model, 2025. URL https://platform.openai.com/docs/models/o3.",
+    "Frederick L Oswald, Gregory Mitchell, Hart Blanton, James Jaccard, and Philip E Tetlock. Predicting Ethnic and Racial Discrimination: A Meta-Analysis of IAT Criterion Studies. Journal of Personality and Social Psychology, 105(2):171-192, 2013.",
+    "Frederick L. Oswald, Gregory Mitchell, Hart Blanton, James Jaccard, and Philip E. Tetlock. Using the IAT to predict ethnic and racial discrimination: Small effect sizes of unknown societal significance. Journal of Personality and Social Psychology, 108(4):562–571, April 2015. ISSN 1939-1315, 0022-3514. doi: 10.1037/pspa0000023. URL https://doi.apa.org/doi/10.1037/pspa0000023.",
+    "Long Ouyang, Jeffrey Wu, Xu Jiang, Diogo Almeida, Carroll Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, et al. Training language models to follow instructions with human feedback. Advances in neural information processing systems, 35:27730–27744, 2022.",
+    "B. Keith Payne and Jason W. Hannay. Implicit bias reflects systemic racism. Trends in Cognitive Sciences, 25(11):927-936, November 2021. ISSN 1364-6613. doi: 10.1016/j.tics.2021.08.001. URL https://www.sciencedirect.com/science/article/pii/S1364661321002047.",
+    "B. Keith Payne, Heidi A. Vuletich, and Kristjen B. Lundberg. The Bias of Crowds: How Implicit Bias Bridges Personal and Systemic Prejudice. Psychological Inquiry, 28(4):233–248, October 2017. ISSN 1047-840X. doi: 10.1080/1047840X.2017.1335568. Publisher: Taylor & Francis Ltd.",
+    "Arthur S Reber. Implicit learning of synthetic languages: The role of instructional set. Journal of Experimental Psychology: Human Learning and Memory, 2(1):88, 1976.",
+    "Alexa R Romberg and Jenny R Saffran. Statistical learning and language acquisition. Wiley Interdisciplinary Reviews: Cognitive Science, 1(6):906–914, 2010.",
+    "Jenny R. Saffran, Richard N. Aslin, and Elissa L. Newport. Statistical Learning by 8-Month-Old Infants. Science, 274(5294):1926-1928, 1996. ISSN 0036-8075. URL https://www.jstor.org/stable/2891705. Publisher: American Association for the Advancement of Science.",
+    "Omar Shaikh, Hongxin Zhang, William Held, Michael Bernstein, and Diyi Yang. On second thought, let's not think step by step! bias and toxicity in zero-shot reasoning. In Anna Rogers, Jordan Boyd-Graber, and Naoaki Okazaki (eds.), Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 4454–4470, Toronto, Canada, July 2023. Association for Computational Linguistics. doi: 10.18653/v1/2023.acl-long.244. URL https://aclanthology.org/2023.acl-long.244/.",
+    "Irene Solaiman and Christy Dennison. Process for adapting language models to society (palms) with values-targeted datasets. Advances in Neural Information Processing Systems, 34:5861–5873, 2021.",
+    "Zayne Sprague, Fangcong Yin, Juan Diego Rodriguez, Dongwei Jiang, Manya Wadhwa, Prasann Singhal, Xinyu Zhao, Xi Ye, Kyle Mahowald, and Greg Durrett. To cot or not to cot? chain-of-thought helps mainly on math and symbolic reasoning. Proceedings of the International Conference on Learning Representations, 2025.",
+    "Sean Trott. Can large language models help augment English psycholinguistic datasets? Behavior Research Methods, 56(6):6082–6100, September 2024. ISSN 1554-3528. doi: 10.3758/s13428-024-02337-z. URL https://doi.org/10.3758/s13428-024-02337-z.",
+    "Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Fei Xia, Ed Chi, Quoc V Le, Denny Zhou, and others. Chain-of-thought prompting elicits reasoning in large language models. Advances in neural information processing systems, 35:24824–24837, 2022.",
+    "Xuyang Wu, Jinming Nian, Ting-Ruen Wei, Zhiqiang Tao, Hsin-Tai Wu, and Yi Fang. Does reasoning introduce bias? a study of social bias evaluation and mitigation in Ilm reasoning. arXiv preprint arXiv:2502.153612025.",
+    "Dong Yi, Ronghui Mu, Gaojie Jin, Yi Qi, Jinwei Hu, Xingyu Zhao, Jie Meng, Wenjie Ruan, and Xiaowei Huang. Position: building guardrails for large language models requires systematic design. In Forty-first International Conference on Machine Learning, 2024."
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "filename": "2205.14036.pdf",
+  "title": "StereoKG: Data-Driven Knowledge Graph Construction for Cultural Knowledge and Stereotypes",
+  "arxiv_url": "https://arxiv.org/pdf/2205.14036",
+  "benchmark_measurement": "The paper develops and evaluates 'StereoKG', a data-driven knowledge graph of cultural knowledge and stereotypes about social groups, including 5 religious groups and 5 nationalities. The benchmark measures the quality (coherence, completeness, domain-relevance) of these extracted stereotypes and evaluates whether integrating this knowledge into language models can improve performance on knowledge-crucial samples in downstream tasks, specifically hate speech detection and masked stereotype prediction.",
+  "religious_groups": [
+    "Atheism",
+    "Christianity",
+    "Hinduism",
+    "Judaism",
+    "Islam"
+  ],
+  "models_tested": [
+    "RoBERTa",
+    "T5"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "major",
+  "base_benchmarks": [
+    "StereoSet",
+    "CrowS-Pairs",
+    "OLID",
+    "WSF"
+  ],
+  "continuous_testing": false,
+  "findings": "The study found that its data-driven pipeline could successfully extract a knowledge graph of stereotypes for 5 religious groups. Most stereotypes were evaluated as neutral or negative. Atheists had the highest proportion of negative stereotypes (51.0%), while Jews had the lowest (37.2%). Hindus had the smallest proportion of positive stereotypes (2.9%). Integrating this extracted knowledge into a RoBERTa model via intermediate training improved its cultural awareness, leading to better predictions on masked sentences requiring cultural knowledge (e.g., about Muslims and the Quran) and a slight improvement in classifying hate speech that relies on stereotypical knowledge.",
+  "references": [
+    "Anurag Acharya, Kartik Talamadupula, and Mark A. Finlayson. 2020. An atlas of cultural commonsense for machine reasoning. CoRR, abs/2009.05664.",
+    "Oshin Agarwal, Heming Ge, Siamak Shakeri, and Rami Al-Rfou. 2021. Knowledge graph based synthetic corpus generation for knowledge-enhanced language model pre-training. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 3554–3565, Online. Association for Computational Linguistics.",
+    "Junia Anacleto, Henry Lieberman, Marie Tsutsumi, Vânia Neris, Aparecido Carvalho, Jose Espinosa, Muriel Godoi, and Silvia Zem-Mascarenhas. 2006. Can common sense uncover cultural differences in computer applications? In Artificial Intelligence in Theory and Practice, pages 1-10, Boston, MA. Springer US.",
+    "Sören Auer, Christian Bizer, Georgi Kobilarov, Jens Lehmann, Richard Cyganiak, and Zachary Ives. 2007. Dbpedia: A nucleus for a web of open data. In Proceedings of the 6th International The Semantic Web and 2nd Asian Conference on Asian Semantic Web Conference, ISWC'07/ASWC'07, page 722-735, Berlin, Heidelberg. Springer-Verlag.",
+    "Pinkesh Badjatiya, Manish Gupta, and Vasudeva Varma. 2020. Stereotypical bias removal for hate speech detection task using knowledge-based generalizations. CoRR, abs/2001.05495.",
+    "Paul Baker and Amanda Potts. 2013. Why do white people have thin lips? Google and the perpetuation of stereotypes via auto-complete search forms. Critical Discourse Studies, 10(2):187-204.",
+    "Francesco Barbieri, Jose Camacho-Collados, Luis Espinosa Anke, and Leonardo Neves. 2020. TweetEval: Unified benchmark and comparative evaluation for tweet classification. In Findings of the Association for Computational Linguistics: EMNLP 2020, pages 1644-1650, Online. Association for Computational Linguistics.",
+    "Sumithra Bhakthavatsalam, Chloe Anastasiades, and Peter Clark. 2020. Genericskb: A knowledge base of generic statements.",
+    "Kurt D. Bollacker, Colin Evans, Praveen K. Paritosh, Tim Sturge, and Jamie Taylor. 2008. Freebase: a collaboratively created graph database for structuring human knowledge. In SIGMOD Conference.",
+    "Tolga Bolukbasi, Kai-Wei Chang, James Zou, Venkatesh Saligrama, and Adam Kalai. 2016. Man is to computer programmer as woman is to homemaker? debiasing word embeddings. In Proceedings of the 30th International Conference on Neural Information Processing Systems, NIPS'16, page 4356-4364, Red Hook, NY, USA. Curran Associates Inc.",
+    "Antoine Bosselut, Hannah Rashkin, Maarten Sap, Chaitanya Malaviya, Asli Celikyilmaz, and Yejin Choi. 2019. COMET: Commonsense transformers for automatic knowledge graph construction. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 4762–4779, Florence, Italy. Association for Computational Linguistics.",
+    "Emma E. Buchtel. 2014. Cultural sensitivity or cultural stereotyping? positive and negative effects of a cultural psychology class. International Journal of Intercultural Relations, 39:40-52.",
+    "Rochelle Choenni, Ekaterina Shutova, and Robert van Rooij. 2021. Stepmothers are mean and academics are pretentious: What do pretrained language models learn about you? In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 1477-1491, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics.",
+    "Emilie Colin, Claire Gardent, Yassine M'rabet, Shashi Narayan, and Laura Perez-Beltrachini. 2016. The WebNLG challenge: Generating text from DBPedia data. In Proceedings of the 9th International Natural Language Generation conference, pages 163-167, Edinburgh, UK. Association for Computational Linguistics.",
+    "Jeff Da, Ronan Le Bras, Ximing Lu, Yejin Choi, and Antoine Bosselut. 2021. Analyzing commonsense emergence in few-shot knowledge models. In 3rd Conference on Automated Knowledge Base Construction.",
+    "Ona de Gibert, Naiara Perez, Aitor García-Pablos, and Montse Cuadros. 2018. Hate Speech Dataset from a White Supremacy Forum. In Proceedings of the 2nd Workshop on Abusive Language Online (ALW2), pages 11-20, Brussels, Belgium. Association for Computational Linguistics.",
+    "Lucas Dixon, John Li, Jeffrey Sorensen, Nithum Thain, and Lucy Vasserman. 2018. Measuring and mitigating unintended bias in text classification. In Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society. ACM.",
+    "John F. Dovidio, Miles Hewstone, Peter Glick, and Victoria M. Esses. 2010. Prejudice, stereotyping and discrimination: Theoretical and empirical overview. In The SAGE handbook of prejudice, stereotyping and discrimination, pages 3–28. SAGE Publications Ltd.",
+    "Maxwell Forbes and Yejin Choi. 2017. Verb physics: Relative physical knowledge of actions and objects. In Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 266-276, Vancouver, Canada. Association for Computational Linguistics.",
+    "James L. Hilton and William von Hippel. 1996. Stereotypes. Annual Review of Psychology, 47(1):237–271. PMID: 15012482.",
+    "Curt Hoffman and Nancy Hurst. 1990. Gender stereotypes: Perception or rationalization? Journal of Personality and Social Psychology, 58(2):197–208.",
+    "Dirk Hovy and Shannon L. Spruit. 2016. The social impact of natural language processing. In Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers), pages 591–598, Berlin, Germany. Association for Computational Linguistics.",
+    "Anne Lauscher, Olga Majewska, Leonardo F. R. Ribeiro, Iryna Gurevych, Nikolai Rozanov, and Goran Glavaš. 2020. Common sense or world knowledge? investigating adapter-based knowledge injection into pretrained transformers. In Proceedings of Deep Learning Inside Out (DeeLIO): The First Workshop on Knowledge Extraction and Integration for Deep Learning Architectures, pages 43-49, Online. Association for Computational Linguistics.",
+    "Douglas B. Lenat. 1995. Cyc: A large-scale investment in knowledge infrastructure. Commun. ACM, 38(11):33-38.",
+    "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. 2019. Roberta: A robustly optimized bert pretraining approach.",
+    "Peter LoBue and Alexander Yates. 2011. Types of common-sense knowledge needed for recognizing textual entailment. In Proceedings of the 49th Annual Meeting of the Association for Computational Linguistics: Human Language Technologies, pages 329-334, Portland, Oregon, USA. Association for Computational Linguistics.",
+    "Thomas Manzini, Lim Yao Chong, Alan W Black, and Yulia Tsvetkov. 2019. Black is to criminal as caucasian is to police: Detecting and removing multiclass bias in word embeddings. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 615–621, Minneapolis, Minnesota. Association for Computational Linguistics.",
+    "Mausam. 2016. Open information extraction systems and downstream applications. In Proceedings of the Twenty-Fifth International Joint Conference on Artificial Intelligence, IJCAI'16, page 4074-4077. AAAI Press.",
+    "Marzieh Mozafari, Reza Farahbakhsh, and Noël Crespi. 2020. Hate speech detection and racial bias mitigation in social media based on BERT model. PLOS ONE, 15(8):e0237861.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2021. StereoSet: Measuring stereotypical bias in pretrained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 5356–5371, Online. Association for Computational Linguistics.",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R. Bowman. 2020. CrowS-pairs: A challenge dataset for measuring social biases in masked language models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1953–1967, Online. Association for Computational Linguistics.",
+    "Matthew E. Peters, Mark Neumann, Robert Logan, Roy Schwartz, Vidur Joshi, Sameer Singh, and Noah A. Smith. 2019. Knowledge enhanced contextual word representations. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 43–54, Hong Kong, China. Association for Computational Linguistics.",
+    "Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi Zhou, Wei Li, and Peter J. Liu. 2020. Exploring the limits of transfer learning with a unified text-to-text transformer. Journal of Machine Learning Research, 21(140):1-67.",
+    "Nils Reimers and Iryna Gurevych. 2019. Sentence-BERT: Sentence embeddings using Siamese BERT-networks. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 3982-3992, Hong Kong, China. Association for Computational Linguistics.",
+    "Julien Romero, Simon Razniewski, Koninika Pal, Jeff Z. Pan, Archit Sakhadeo, and Gerhard Weikum. 2019. Commonsense properties from query logs and question answering forums. In Proceedings of the 28th ACM International Conference on Information and Knowledge Management, CIKM '19, page 1411-1420, New York, NY, USA. Association for Computing Machinery.",
+    "Maarten Sap, Ronan Le Bras, Emily Allaway, Chandra Bhagavatula, Nicholas Lourie, Hannah Rashkin, Brendan Roof, Noah A. Smith, and Yejin Choi. 2019. Atomic: An atlas of machine commonsense for if-then reasoning. Proceedings of the AAAI Conference on Artificial Intelligence, 33(01):3027–3035.",
+    "Snefjella.B, Schmidtke.D, and Kuperman. V. 2018. National character stereotypes mirror language use: A study of canadian and american tweets. PLoS One.",
+    "Robyn Speer, Joshua Chin, and Catherine Havasi. 2017. Conceptnet 5.5: An open multilingual graph of general knowledge. In Proceedings of the Thirty-First AAAI Conference on Artificial Intelligence, AAAI' 17, page 4444-4451. AAAI Press.",
+    "Fabian M. Suchanek, Gjergji Kasneci, and Gerhard Weikum. 2007. Yago: A core of semantic knowledge. In Proceedings of the 16th International Conference on World Wide Web, WWW '07, page 697-706, New York, NY, USA. Association for Computing Machinery.",
+    "Niket Tandon, Gerard de Melo, Fabian Suchanek, and Gerhard Weikum. 2014. Webchild: Harvesting and organizing commonsense knowledge from the web. In Proceedings of the 7th ACM International Conference on Web Search and Data Mining, WSDM '14, page 523-532, New York, NY, USA. Association for Computing Machinery.",
+    "James Thorne, Majid Yazdani, Marzieh Saeidi, Fabrizio Silvestri, Sebastian Riedel, and Alon Halevy. 2021. From natural language processing to neural databases. Proc. VLDB Endow., 14(6):1033-1039.",
+    "Denny Vrandečić and Markus Krötzsch. 2014. Wikidata: A free collaborative knowledgebase. Commun. ACM, 57(10):78-85.",
+    "Ruize Wang, Duyu Tang, Nan Duan, Zhongyu Wei, Xuanjing Huang, Jianshu Ji, Guihong Cao, Daxin Jiang, and Ming Zhou. 2021. K-Adapter: Infusing Knowledge into Pre-Trained Models with Adapters. In Findings of the Association for Computational Linguistics: ACL-IJCNLP 2021, pages 1405–1418, Online. Association for Computational Linguistics.",
+    "Alex Warstadt, Amanpreet Singh, and Samuel R. Bowman. 2019. Neural network acceptability judgments. Transactions of the Association for Computational Linguistics, 7:625-641.",
+    "Ruiqing Yan, Lanchang Sun, Fang Wang, and Xiaoming Zhang. 2021. K-xlnet: A general method for combining explicit knowledge with language model pretraining. CoRR, abs/2104.10649.",
+    "Marcos Zampieri, Shervin Malmasi, Preslav Nakov, Sara Rosenthal, Noura Farra, and Ritesh Kumar. 2019. Predicting the type and target of offensive posts in social media. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 1415–1420, Minneapolis, Minnesota. Association for Computational Linguistics."
+  ]
+}

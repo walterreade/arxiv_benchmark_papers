@@ -1,0 +1,77 @@
+{
+  "filename": "2302.10893.pdf",
+  "title": "Instructing Text-to-Image Generation Models on Fairness",
+  "arxiv_url": "https://arxiv.org/pdf/2302.10893",
+  "benchmark_measurement": "Stereotype/bias detection, specifically measuring the association between 'Arab-Muslim' people and 'unpleasant' concepts using the image Embedding Association Test (iEAT).",
+  "religious_groups": [
+    "Arab-Muslim"
+  ],
+  "models_tested": [
+    "Stable Diffusion 1.5",
+    "CLIP"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "iEAT (image Embedding Association Test)"
+  ],
+  "continuous_testing": false,
+  "findings": "The CLIP encoder, a core component of the Stable Diffusion pipeline, was found to have cultural biases. It associates images representing 'Arab-Muslim' people more strongly with 'unpleasant' concepts compared to 'pleasant' concepts, indicating a significant stereotype.",
+  "references": [
+    "Rombach R, Blattmann A, Lorenz D, Esser P, Ommer B. High-Resolution Image Synthesis With Latent Diffusion Models. In: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR); 2022. p. 10684-10695.",
+    "Yu J, Xu Y, Koh JY, Luong T, Baid G, Wang Z, et al.: Scaling Autoregressive Models for Content-Rich Text-to-Image Generation. Preprint at https://arxiv.org/abs/2206.10789.",
+    "Ramesh A, Dhariwal P, Nichol A, Chu C, Chen M.: Hierarchical Text-Conditional Image Generation with CLIP Latents. Preprint at https://arxiv.org/abs/2204.06125.",
+    "Nichol AQ, Dhariwal P, Ramesh A, Shyam P, Mishkin P, McGrew B, et al. GLIDE: Towards Photorealistic Image Generation and Editing with Text-Guided Diffusion Models. In: Proceedings of the International Conference on Machine Learning (ICML); 2022. .",
+    "Saharia C, Chan W, Saxena S, Li L, Whang J, Denton E, et al.: Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding. Preprint at https://arxiv.org/abs/2205.11487.",
+    "Schramowski P, Tauchmann C, Kersting K. Can Machines Help Us Answering Question 16 in Datasheets, and In Turn Reflecting on Inappropriate Content? In: Proceedings of the ACM Conference on Fairness, Accountability, and Transparency (FAccT); 2022. .",
+    "Li Z, Hoogs A, Xu C. Discover and Mitigate Unknown Biases with Debiasing Alternate Networks. In: Proceedings of the European Conference on Computer Vision (ECCV); 2022. .",
+    "Berg H, Hall S, Bhalgat Y, Kirk H, Shtedritski A, Bain M. A Prompt Array Keeps the Bias Away: Debiasing Vision-Language Models with Adversarial Learning. In: Proceedings of the Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics and the International Joint Conference on Natural Language Processing (AACL-IJCNLP); 2022. p. 806-822.",
+    "Ouyang L, Wu J, Jiang X, Almeida D, Wainwright CL, Mishkin P, et al. Training language models to follow instructions with human feedback. In: Proceedings of the Advances in Neural Information Processing Systems: Annual Conference on Neural Information Processing Systems (NeurIPS); 2022. .",
+    "Friedrich F, Stammer W, Schramowski P, Kersting K. A typology for exploring the mitigation of shortcut behaviour. Nature Machine Intelligence. 2023;5:319-330.",
+    "Schuhmann C, Beaumont R, Vencu R, Gordon CW, Wightman R, Coombes T, et al. LAION-5B: An open large-scale dataset for training next generation image-text models. In: Proceedings of the Advances in Neural Information Processing Systems: Annual Conference on Neural Information Processing Systems (NeurIPS); 2022.",
+    "Hertz A, Mokady R, Tenenbaum J, Aberman K, Pritch Y, Cohen-Or D.: Prompt-to-Prompt Image Editing with Cross Attention Control. Preprint at https://arxiv.org/abs/2208.01626.",
+    "Liu N, Li S, Du Y, Torralba A, Tenenbaum JB. Compositional Visual Generation with Composable Diffusion Models. In: Proceedings of the European Conference on Computer Vision (ECCV); 2022. .",
+    "Brack M, Friedrich F, Hintersdorf D, Struppek L, Schramowski P, Kersting K.: SEGA: Instructing Diffusion using Semantic Dimensions. Preprint at https://arxiv.org/abs/2301.12247.",
+    "Ho J, Salimans T.: Classifier-Free Diffusion Guidance. Preprint at https://arxiv.org/abs/2207.12598.",
+    "Verma S, Rubin J. Fairness Definitions Explained. In: IEEE/ACM International Workshop on Software Fairness (FairWare); 2018. p. 1-7.",
+    "Mehrabi N, Morstatter F, Saxena N, Lerman K, Galstyan A. A Survey on Bias and Fairness in Machine Learning. ACM Comput Surv. 2021;.",
+    "Binns R. Fairness in Machine Learning: Lessons from Political Philosophy. In: Proceeding of the ACM Conference on Fairness, Accountability, and Transparency (FAccT); 2017. .",
+    "Hutchinson B, Mitchell M. 50 Years of Test (Un) Fairness: Lessons for Machine Learning. In: Proceedings of the Conference on Fairness, Accountability, and Transparency (FAccT); 2019. p. 49-58.",
+    "Dignum V. The Myth of Complete AI-Fairness. In: Artificial Intelligence in Medicine; 2021. p. 3–8.",
+    "Cesare C. Cultural differences determine when kids learn to play fair. Nature. 2015;.",
+    "Yu F, Zhao Y, Yao J, Farina Briamonte M, Profita S, Liu Y. Understanding East-West Cultural Differences on Perceived Compensation Fairness Among Executives: From a Neuroscience Perspective. Frontiers in Psychology. 2022;.",
+    "Xu D, Yuan S, Zhang L, Wu X. FairGAN: Fairness-aware Generative Adversarial Networks. In: Proceedings of the IEEE International Conference on Big Data (Big Data); 2018. p. 570-575.",
+    "Radford A, Kim JW, Hallacy C, Ramesh A, Goh G, Agarwal S, et al. Learning Transferable Visual Models From Natural Language Supervision. In: Proceedings of the International Conference on Machine Learning (ICML); 2021..",
+    "Steed R, Caliskan A. Image Representations Learned With Unsupervised Pre-Training Contain Human-like Biases. In: Proceedings of the ACM Conference on Fairness, Accountability, and Transparency (FAccT); 2021. p. 701-713.",
+    "Wang A, Ramaswamy VV, Russakovsky O. Towards Intersectionality in Machine Learning: Including More Identities, Handling Underrepresentation, and Performing Evaluation. In: Proceedings of the ACM Conference on Fairness, Accountability, and Transparency (FAccT); 2022. p. 336-349.",
+    "Wickham MI, van Nunspeet F, Ellemers N. Gender Identification Beyond the Binary and Its Consequences for Social Well-Being. Archives of Sexual Behavior. 2023;52:1073-1093.",
+    "Wolfe R, Caliskan A. American == White in Multimodal Language-and-Image AI. In: Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society (AIES); 2022. p. 800-812.",
+    "Wolfe R, Caliskan A. Markedness in Visual Semantic AI. In: Proceedings of the ACM Conference on Fairness, Accountability, and Transparency (FAccT); 2022. p. 1269–1279.",
+    "Kärkkäinen K, Joo J. FairFace: Face Attribute Dataset for Balanced Race, Gender, and Age for Bias Measurement and Mitigation. In: Proceedings of the IEEE Winter Conference on Applications of Computer Vision (WACV); 2021. p. 1547-1557.",
+    "Chen Z, Liu G, Zhang BW, Ye F, Yang Q, Wu L.: AltCLIP: Altering the Language Encoder in CLIP for Extended Language Capabilities. Preprint at https://arxiv.org/abs/2211.06679.",
+    "Gal R, Alaluf Y, Atzmon Y, Patashnik O, Bermano AH, Chechik G, et al.: An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion. Preprint at https://arxiv.org/abs/2208. 01618.",
+    "Bellagente M, Brack M, Teufel H, Friedrich F, Deiseroth B, Eichenberg C, et al.: MultiFusion: Fusing Pre-Trained Models for Multi-Lingual, Multi-Modal Image Generation. Preprint at https://arxiv.org/abs/2305.15296.",
+    "Teso S, Kersting K. Explanatory Interactive Machine Learning. In: Conitzer V, Hadfield GK, Vallor S, editors. Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society (AIES). ACM; 2019. p. 239-245.",
+    "Friedrich F, Stammer W, Schramowski P, Kersting K. Revision Transformers: Instructing Language Models to Change their Values. In: Proceedings of the 26th European Conference on Artificial Intelligence (ECAI); 2023. .",
+    "Ju D, Xu J, Boureau YL, Weston J.: Learning from data in the mixed adversarial non-adversarial case: Finding the helpers and ignoring the trolls. Preprint at https://arxiv.org/abs/2208.03295.",
+    "Watson JL, Juergens D, Bennett NR, Trippe BL, Yim J, Eisenach HE, et al.: Broadly applicable and accurate protein design by integrating structure prediction networks and diffusion generative models. Preprint at https://www.biorxiv.org/content/10.1101/2022.12.09.519842v1.",
+    "Shaw A. Identity, Identification, and Media Representation in Video Game Play: An audience reception study. Publicly accessible Penn Dissertations. 2010 08;.",
+    "Caswell M, Migoni AA, Geraci N, Cifor M. 'To Be Able to Imagine Otherwise': community archives and the importance of representation. Archives and Records. 2017;38:26 – 5.",
+    "Elbaba R.: Why on-screen representation matters, according to these teens. PBS NewsHour.",
+    "Bommasani R, Hudson DA, Adeli E, Altman R, Arora S, von Arx S, et al.: On the Opportunities and Risks of Foundation Models. Preprint at https://arxiv.org/abs/2108.07258.",
+    "Luo C.: Understanding Diffusion Models: A Unified Perspective. Preprint at https://arxiv.org/abs/2208. 11970.",
+    "Yang K, Qinami K, Fei-Fei L, Deng J, Russakovsky O. Towards Fairer Datasets: Filtering and Balancing the Distribution of the People Subtree in the ImageNet Hierarchy. In: Proceedings of the ACM Conference on Fairness, Accountability, and Transparency (FAccT); 2020. p. 547-558.",
+    "Prabhu VU, Birhane A. Large image datasets: A pyrrhic win for computer vision? In: Proceeding of the IEEE Winter Conference on Applications of Computer Vision (WACV); 2020. p. 1536-1546.",
+    "Sattigeri P, Hoffman SC, Chenthamarakshan V, Varshney KR. Fairness GAN: Generating datasets with fairness properties using a generative adversarial network. IBM Journal of Research and Development. 2019;p. 3:1-3:9.",
+    "Edwards H, Storkey AJ. Censoring Representations with an Adversary. In: Bengio Y, LeCun Y, editors. Proceedings of the International Conference on Learning Representations (ICLR); 2016. .",
+    "Zhang BH, Lemoine B, Mitchell M. Mitigating Unwanted Biases with Adversarial Learning. In: Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society (AIES); 2018. p. 335-340.",
+    "Schramowski P, Brack M, Deiseroth B, Kersting K. Safe Latent Diffusion: Mitigating Inappropriate Degeneration in Diffusion Models. In: Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR); 2023. .",
+    "Bansal H, Yin D, Monajatipoor M, Chang KW.: How well can Text-to-Image Generative Models understand Ethical Natural Language Interventions? Preprint at https://arxiv.org/abs/2210.15230.",
+    "Schramowski P, Turan C, Andersen N, Rothkopf CA, Kersting K. Large pre-trained language models contain human-like biases of what is right and wrong to do. Nature Machine Intelligence. 2022;4(3)."
+  ]
+}

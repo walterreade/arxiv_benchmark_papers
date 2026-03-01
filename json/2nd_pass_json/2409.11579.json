@@ -1,0 +1,66 @@
+{
+  "filename": "2409.11579.pdf",
+  "title": "HEARTS: A Holistic Framework for Explainable, Sustainable and Robust Text Stereotype Detection",
+  "arxiv_url": "https://arxiv.org/pdf/2409.11579",
+  "benchmark_measurement": "Stereotype detection in religious contexts, specifically by evaluating whether LLM-generated text continuations from neutral religious prompts are stereotypical.",
+  "religious_groups": [
+    "Islam",
+    "Christianity",
+    "Judaism",
+    "Hinduism"
+  ],
+  "models_tested": [
+    "Claude-2",
+    "Claude-3-Sonnet",
+    "Claude-3.5-Sonnet",
+    "Gemini-1.0-Pro",
+    "Gemini-1.5-Pro",
+    "GPT-3.5-Turbo",
+    "GPT-4-Turbo",
+    "GPT-4o",
+    "LLaMA-3-70B-T",
+    "LLaMA-3.1-405B-T",
+    "Mistral-Medium",
+    "Mistral-Large-2"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "StereoSet",
+    "CrowS-Pairs",
+    "WinoQueer",
+    "SeeGULL"
+  ],
+  "continuous_testing": false,
+  "findings": "Across 12 tested LLMs, religion-related prompts elicited stereotypical responses in approximately 55% of cases on average, a higher rate than for gender, race, and LGBTQ+ stereotypes. There was significant variation among models; for instance, LLaMA-3-70B-T exhibited a high propensity for religious stereotypes, while models like Claude-3.5-Sonnet and Gemini-1.5-Pro showed a lower propensity compared to the category average.",
+  "references": [
+    "Shervin Minaee, Tomas Mikolov, Narjes Nikzad, Meysam Chenaghlu, Richard Socher, Xavier Amatriain, and Jianfeng Gao. Large language models: A survey. arXiv preprint arXiv:2402.06196, 2024.",
+    "Lichao Sun, Yue Huang, Haoran Wang, Siyuan Wu, Qihui Zhang, Chujie Gao, Yixin Huang, Wenhan Lyu, Yixuan Zhang, Xiner Li, et al. Trustllm: Trustworthiness in large language models. arXiv preprint arXiv:2401.05561, 2024.",
+    "Wu Zekun, Sahan Bulathwela, and Adriano Soares Koshiyama. Towards auditing large language models: Improving text-based stereotype detection. arXiv preprint arXiv:2311.14126, 2023.",
+    "Isabel O Gallegos, Ryan A Rossi, Joe Barrow, Md Mehrab Tanjim, Sungchul Kim, Franck Dernoncourt, Tong Yu, Ruiyi Zhang, and Nesreen K Ahmed. Bias and fairness in large language models: A survey. Computational Linguistics, pages 1–79, 2024.",
+    "Chengguang Gan, Qinghao Zhang, and Tatsunori Mori. Application of Ilm agents in recruitment: A novel framework for resume screening. arXiv preprint arXiv:2401.08315, 2024.",
+    "Virginia Dignum. Responsible artificial intelligence: how to develop and use AI in a responsible way, volume 2156. Springer, 2019.",
+    "Scott Lundberg. A unified approach to interpreting model predictions. arXiv preprint arXiv:1705.07874, 2017.",
+    "Marco Tulio Ribeiro, Sameer Singh, and Carlos Guestrin. \" why should i trust you?\" explaining the predictions of any classifier. In Proceedings of the 22nd ACM SIGKDD international conference on knowledge discovery and data mining, pages 1135–1144, 2016.",
+    "Jwala Dhamala, Tony Sun, Varun Kumar, Satyapriya Krishna, Yada Pruksachatkun, Kai-Wei Chang, and Rahul Gupta. Bold: Dataset and metrics for measuring biases in open-ended language generation. In Proceedings of the 2021 ACM conference on fairness, accountability, and transparency, pages 862–872, 2021.",
+    "Eric Michael Smith, Melissa Hall, Melanie Kambadur, Eleonora Presani, and Adina Williams. \" i'm sorry to hear that\": Finding new biases in language models with a holistic descriptor dataset. arXiv preprint arXiv:2205.09209, 2022.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel R Bowman. Bbq: A hand-built bias benchmark for question answering. arXiv preprint arXiv:2110.08193, 2021.",
+    "Tao Li, Tushar Khot, Daniel Khashabi, Ashish Sabharwal, and Vivek Srikumar. Unqovering stereotyping biases via underspecified questions. arXiv preprint arXiv:2010.02428, 2020.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. Stereoset: Measuring stereotypical bias in pretrained language models. arXiv preprint arXiv:2004.09456, 2020.",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R Bowman. Crows-pairs: A challenge dataset for measuring social biases in masked language models. arXiv preprint arXiv:2010.00133, 2020.",
+    "Shahar Levy, Koren Lazar, and Gabriel Stanovsky. Collecting a large-scale gender bias dataset for coreference resolution and machine translation. arXiv preprint arXiv:2109.03858, 2021.",
+    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang. Gender bias in coreference resolution: Evaluation and debiasing methods. arXiv preprint arXiv:1804.06876, 2018.",
+    "Soumya Barikeri, Anne Lauscher, Ivan Vulić, and Goran Glavaš. Redditbias: A real-world resource for bias evaluation and debiasing of conversational language models. arXiv preprint arXiv:2106.03521, 2021.",
+    "Thomas Hartvigsen, Saadia Gabriel, Hamid Palangi, Maarten Sap, Dipankar Ray, and Ece Kamar. Toxigen: A large-scale machine-generated dataset for adversarial and implicit hate speech detection. arXiv preprint arXiv:2203.09509, 2022.",
+    "Marco Guevara, Shan Chen, Spencer Thomas, Tafadzwa L Chaunzwa, Idalid Franco, Benjamin H Kann, Shalini Moningi, Jack M Qian, Madeleine Goldstein, Susan Harper, et al. Large language models to identify social determinants of health in electronic health records. NPJ digital medicine, 7(1):6, 2024.",
+    "Virginia K Felkner, Ho-Chun Herbert Chang, Eugene Jang, and Jonathan May. Winoqueer: A community-in-the-loop benchmark for anti-lgbtq+ bias in large language models. arXiv preprint arXiv:2306.15087, 2023.",
+    "Akshita Jha, Aida Davani, Chandan K Reddy, Shachi Dave, Vinodkumar Prabhakaran, and Sunipa Dev. Seegull: A stereotype benchmark with broad geo-cultural coverage leveraging generative models. arXiv preprint arXiv:2305.11840, 2023.",
+    "Codecarbon.io. Available at CodeCarbon, 2021. Accessed on 2024-09-11.",
+    "Mandy Korpusik, Zoe Liu, and James R Glass. A comparison of deep learning methods for language understanding. In Interspeech, pages 849–853, 2019."
+  ]
+}

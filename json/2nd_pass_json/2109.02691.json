@@ -1,0 +1,66 @@
+{
+  "filename": "2109.02691.pdf",
+  "title": "SS-BERT: MITIGATING IDENTITY TERMS BIAS IN TOXIC COMMENT CLASSIFICATION BY UTILISING THE NOTION OF “SUBJECTIVITY” AND “IDENTITY TERMS”",
+  "arxiv_url": "https://arxiv.org/pdf/2109.02691",
+  "benchmark_measurement": "The benchmark measured false positive bias in toxic comment classification, specifically how often non-toxic comments containing identity terms (including religious terms like 'Muslim' and 'Jew') are incorrectly classified as toxic.",
+  "religious_groups": [
+    "Islam",
+    "Judaism"
+  ],
+  "models_tested": [
+    "BERT",
+    "SS-BERT",
+    "BERT+SOC",
+    "SO-BERT",
+    "SS-BERT+SOC",
+    "RoBERTa",
+    "SS-RoBERTa"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "The paper found that standard BERT models exhibit a false positive bias against identity terms, including religious ones such as 'Muslim' and 'Jew', often misclassifying neutral, factual comments as toxic. The proposed SS-BERT model, which incorporates the subjectivity level of a comment when an identity term is present, was shown to consistently outperform baseline models by mitigating this bias and reducing false positive predictions across several datasets.",
+  "references": [
+    "Ji Ho Park, Jamin Shin, and Pascale Fung. Reducing gender bias in abusive language detection. In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, pages 2799–2804, 2018.",
+    "Lucas Dixon, John Li, Jeffrey Sorensen, Nithum Thain, and Lucy Vasserman. Measuring and mitigating unintended bias in text classification. In Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society, pages 67–73, 2018.",
+    "Brendan Kennedy, Xisen Jin, Aida Mostafazadeh Davani, Morteza Dehghani, and Xiang Ren. Contextualizing hate speech classifiers with post-hoc explanation. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5435–5442, 2020.",
+    "Irene Kwok and Yuzhou Wang. Locate the hate: Detecting tweets against blacks. In Twenty-seventh AAAI conference on artificial intelligence, 2013.",
+    "Vikas S Chavan and SS Shylaja. Machine learning approach for detection of cyber-aggressive comments by peers on social media network. In 2015 International Conference on Advances in Computing, Communications and Informatics (ICACCI), pages 2354–2358. IEEE, 2015.",
+    "Pete Burnap, Omer F Rana, Nick Avis, Matthew Williams, William Housley, Adam Edwards, Jeffrey Morgan, and Luke Sloan. Detecting tension in online communities with computational twitter analysis. Technological Forecasting and Social Change, 95:96–108, 2015.",
+    "Paula Fortuna and Sérgio Nunes. A survey on automatic detection of hate speech in text. ACM Computing Surveys (CSUR), 51(4):85, 2018.",
+    "Zeerak Waseem and Dirk Hovy. Hateful symbols or hateful people? predictive features for hate speech detection on twitter. In Proceedings of the NAACL student research workshop, pages 88–93, 2016.",
+    "Ji Ho Park and Pascale Fung. One-step and two-step classification for abusive language detection on twitter. In Proceedings of the First Workshop on Abusive Language Online, pages 41–45, 2017.",
+    "Betty van Aken, Julian Risch, Ralf Krestel, and Alexander Löser. Challenges for toxic comment classification: An in-depth error analysis. In Proceedings of the 2nd Workshop on Abusive Language Online (ALW2), pages 33–42, 2018.",
+    "Anna Schmidt and Michael Wiegand. A survey on hate speech detection using natural language processing. In Proceedings of the Fifth International Workshop on Natural Language Processing for Social Media, pages 1–10, 2017.",
+    "Fabio Del Vigna, Andrea Cimino, Felice Dell'Orletta, Marinella Petrocchi, and Maurizio Tesconi. Hate me, hate me not: Hate speech detection on facebook. In Proceedings of the First Italian Conference on Cybersecurity (ITASEC17), pages 86–95, 2017.",
+    "Zichao Yang, Diyi Yang, Chris Dyer, Xiaodong He, Alex Smola, and Eduard Hovy. Hierarchical attention networks for document classification. In Proceedings of the 2016 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 1480–1489, 2016.",
+    "Ziqi Zhang, David Robinson, and Jonathan Tepper. Detecting hate speech on twitter using a convolution-gru based deep neural network. In European semantic web conference, pages 745–760. Springer, 2018.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. Bert: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 4171-4186, 2019.",
+    "Guillaume Lample and Alexis Conneau. Cross-lingual language model pretraining. arXiv preprint arXiv:1901.07291, 2019.",
+    "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. Roberta: A robustly optimized bert pretraining approach. 2019.",
+    "Marzieh Mozafari, Reza Farahbakhsh, and Noël Crespi. A bert-based transfer learning approach for hate speech detection in online social media. In International Conference on Complex Networks and Their Applications, pages 928-940. Springer, 2019.",
+    "Zhixue Zhao, Ziqi Zhang, and Frank Hopfgartner. A comparative study of using pre-trained language models fortoxic comment classification. In Companion Proceedings of the Web Conference 2021, 2021.",
+    "Njagi Dennis Gitari, Zhang Zuping, Hanyurwimfura Damien, and Jun Long. A lexicon-based approach for hate speech detection. International Journal of Multimedia and Ubiquitous Engineering, 10(4):215–230, 2015.",
+    "Ona de Gibert, Naiara Perez, Aitor García-Pablos, and Montse Cuadros. Hate speech dataset from a white supremacy forum. In Proceedings of the 2nd Workshop on Abusive Language Online (ALW2), pages 11–20, 2018.",
+    "Antigoni Maria Founta, Constantinos Djouvas, Despoina Chatzakou, Ilias Leontiadis, Jeremy Blackburn, Gianluca Stringhini, Athena Vakali, Michael Sirivianos, and Nicolas Kourtellis. Large scale crowdsourcing and characterization of twitter abusive behavior. In Twelfth International AAAI Conference on Web and Social Media, 2018.",
+    "Brendan Kennedy, Drew Kogon, Kris Coombs, Joe Hoover, Christina Park, Gwenyth Portillo-Wightman, Aida Mostafazadeh, Mohammad Atari, and Morteza Dehghani. A typology and coding manual for the study of hate-based rhetoric, 2018.",
+    "ConversationAI. Toxic comment classification challenge: Identify and classify toxic online comments, 2017.",
+    "Ritesh Kumar, Aishwarya N. Reganti, Akshit Bhatia, and Tushar Maheshwari. Aggression-annotated Corpus of Hindi-English Code-mixed Data. In Nicoletta Calzolari (Conference chair), Khalid Choukri, Christopher Cieri, Thierry Declerck, Sara Goggi, Koiti Hasida, Hitoshi Isahara, Bente Maegaard, Joseph Mariani, Hélène Mazo, Asuncion Moreno, Jan Odijk, Stelios Piperidis, and Takenobu Tokunaga, editors, Proceedings of the Eleventh International Conference on Language Resources and Evaluation (LREC 2018), Miyazaki, Japan, May 7-12, 2018 2018. European Language Resources Association (ELRA).",
+    "Zeerak Waseem. Are you a racist or am i seeing things? annotator influence on hate speech detection on twitter. In Proceedings of the First Workshop on NLP and Computational Social Science, pages 138–142, Austin, Texas, November 2016. Association for Computational Linguistics.",
+    "Matthew Purver and Stuart Battersby. Experimenting with distant supervision for emotion classification. In Proceedings of the 13th Conference of the European Chapter of the Association for Computational Linguistics, pages 482-491. Association for Computational Linguistics, 2012.",
+    "Cynthia Van Hee, Gilles Jacobs, Chris Emmery, Bart Desmet, Els Lefever, Ben Verhoeven, Guy De Pauw, Walter Daelemans, and Véronique Hoste. Automatic detection of cyberbullying in social media text. PloS one, 13(10):e0203794, 2018.",
+    "Reid Pryzant, Richard Diehl Martinez, Nathan Dass, Sadao Kurohashi, Dan Jurafsky, and Diyi Yang. Automatically neutralizing subjective bias in text. In Proceedings of the aaai conference on artificial intelligence, volume 34, pages 480-489, 2020.",
+    "Jan Kocoń, Alicja Figas, Marcin Gruza, Daria Puchalska, Tomasz Kajdanowicz, and Przemysław Kazienko. Offensive, aggressive, and hate speech analysis: From data-centric to human-centered approach. Information Processing & Management, 58(5):102643, 2021.",
+    "Chenghua Lin, Yulan He, and Richard Everson. Sentence subjectivity detection with weakly-supervised learning. In Proceedings of 5th International Joint Conference on Natural Language Processing, pages 1153–1161, 2011.",
+    "Hairong Huo and Mizuho Iwaihara. Utilizing bert pretrained models with various fine-tune methods for subjectivity detection. In Asia-Pacific Web (APWeb) and Web-Age Information Management (WAIM) Joint International Conference on Web and Big Data, pages 270–284. Springer, 2020.",
+    "Steven Loria. textblob documentation. Release 0.15, 2, 2018.",
+    "Stefano Baccianella, Andrea Esuli, and Fabrizio Sebastiani. Sentiwordnet 3.0: an enhanced lexical resource for sentiment analysis and opinion mining.",
+    "Arup Baruah, Kaushik Das, Ferdous Barbhuiya, and Kuntal Dey. Aggression identification in english, hindi and bangla text using bert, roberta and svm. In Proceedings of the Second Workshop on Trolling, Aggression and Cyberbullying, pages 76–82, 2020."
+  ]
+}

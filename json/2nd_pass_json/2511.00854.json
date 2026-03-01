@@ -1,0 +1,50 @@
+{
+  "filename": "2511.00854.pdf",
+  "title": "TRICON-FAIR: TRIPLET CONTRASTIVE LEARNING FOR MITIGATING SOCIAL BIAS IN PRE-TRAINED LANGUAGE MODELS",
+  "arxiv_url": "https://arxiv.org/pdf/2511.00854",
+  "benchmark_measurement": "The benchmark measured stereotypical bias related to religion using the Stereotype Score (SS) from the StereoSet dataset, where values closer to 50 indicate less bias.",
+  "religious_groups": [
+    "Religion (general category)"
+  ],
+  "models_tested": [
+    "BERT",
+    "ALBERT",
+    "GPT-2",
+    "Llama2-7B"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "StereoSet",
+    "CrowS-Pairs",
+    "GLUE"
+  ],
+  "continuous_testing": false,
+  "findings": "The proposed TriCon-Fair method successfully reduced religious stereotype scores (Religion SS) across all tested models (BERT, ALBERT, GPT-2, Llama2-7B) on the StereoSet benchmark. For instance, on BERT, the Religion SS was lowered from a baseline of 59.70 to 57.13. This reduction in bias was achieved while maintaining strong performance on general language tasks.",
+  "references": [
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova, \"Bert: Pre-training of deep bidirectional transform- ers for language understanding,\" in Proceedings of the 2019 conference of the North American chapter of the association for computational linguistics: human language technologies, volume 1 (long and short papers), 2019, pp. 4171-4186.",
+    "Aylin Caliskan, Joanna J Bryson, and Arvind Narayanan, \"Semantics derived automatically from language corpora contain human-like biases,\" Science, vol. 356, no. 6334, pp. 183-186, 2017.",
+    "Ran Zmigrod, Sabrina J Mielke, Hanna Wallach, and Ryan Cotterell, \"Counterfactual data augmentation for mitigating gender stereotypes in languages with rich morphology,\" arXiv preprint arXiv:1906.04571, 2019.",
+    "Kellie Webster, Xuezhi Wang, Ian Tenney, Alex Beutel, Emily Pitler, Ellie Pavlick, Jilin Chen, and Slav Petrov, \"Measuring and reducing gendered correlations in pre-trained models,\" CoRR, vol. abs/2010.06032, 2020.",
+    "Shauli Ravfogel, Yanai Elazar, Hila Gonen, Michael Twiton, and Yoav Goldberg, \"Null it out: Guarding protected attributes by iterative nullspace projection,\" in Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, ACL 2020, Online, July 5-10, 2020, Dan Jurafsky, Joyce Chai, Natalie Schluter, and Joel R. Tetreault, Eds. 2020, pp. 7237-7256, Association for Computational Linguistics.",
+    "Timo Schick, Sahana Udupa, and Hinrich Schütze, \"Self-diagnosis and self-debiasing: A proposal for reducing corpus- based bias in nlp,\" Transactions of the Association for Computational Linguistics, vol. 9, pp. 1408-1424, 2021.",
+    "Paul Pu Liang, Irene Mengze Li, Emily Zheng, Yao Chong Lim, Ruslan Salakhutdinov, and Louis-Philippe Morency, \"Towards debiasing sentence representations,\" in Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, ACL 2020, Online, July 5-10, 2020, Dan Jurafsky, Joyce Chai, Natalie Schluter, and Joel R. Tetreault, Eds. 2020, pp. 5502-5515, Association for Computational Linguistics.",
+    "Pengyu Cheng, Weituo Hao, Siyang Yuan, Shijing Si, and Lawrence Carin, \"Fairfil: Contrastive neural debiasing method for pretrained text encoders,\" in 9th International Conference on Learning Representations, ICLR 2021, Virtual Event, Austria, May 3-7, 2021. 2021, OpenReview.net.",
+    "Jacqueline He, Mengzhou Xia, Christiane Fellbaum, and Danqi Chen, \"MABEL: attenuating gender bias using textual entailment data,\" in Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, EMNLP 2022, Abu Dhabi, United Arab Emirates, December 7-11, 2022, Yoav Goldberg, Zornitsa Kozareva, and Yue Zhang, Eds. 2022, pp. 9681–9702, Association for Computational Linguistics.",
+    "Ruizhe Chen, Jianfei Yang, Huimin Xiong, Jianhong Bai, Tianxiang Hu, Jin Hao, Yang Feng, Joey Tianyi Zhou, Jian Wu, and Zuozhu Liu, \"Fast model debias with machine unlearning,\" Advances in Neural Information Processing Systems, vol. 36, pp. 14516-14539, 2023.",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R. Bowman, \"CrowS-pairs: A challenge dataset for measuring social biases in masked language models,\" in Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), Bonnie Webber, Trevor Cohn, Yulan He, and Yang Liu, Eds., Online, Nov. 2020, pp. 1953–1967, Association for Computational Linguistics.",
+    "Aäron van den Oord, Yazhe Li, and Oriol Vinyals, \"Representation learning with contrastive predictive coding,\" CoRR, vol. abs/1807.03748, 2018.",
+    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang, \"Gender bias in coreference resolution: Evaluation and debiasing methods,\" arXiv preprint arXiv:1804.06876, 2018.",
+    "Thomas Wolf, Lysandre Debut, Victor Sanh, Julien Chaumond, Clement Delangue, Anthony Moi, Pierric Cistac, Tim Rault, Remi Louf, Morgan Funtowicz, et al., \"Transformers: State- of-the-art natural language processing,\" in Proceedings of the 2020 conference on empirical methods in natural language processing: system demonstrations, 2020, pp. 38-45.",
+    "Zhenzhong Lan, Mingda Chen, Sebastian Goodman, Kevin Gimpel, Piyush Sharma, and Radu Soricut, \"ALBERT: A lite BERT for self-supervised learning of language representations,\" in 8th International Conference on Learning Representations, ICLR 2020, Addis Ababa, Ethiopia, April 26-30, 2020. 2020, OpenReview.net.",
+    "Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, Ilya Sutskever, et al., “Language models are unsupervised multitask learners,\" OpenAI blog, vol. 1, no. 8, pp. 9, 2019.",
+    "Hugo Touvron, Louis Martin, Kevin Stone, et al., “Llama 2: Open foundation and fine-tuned chat models,\" CoRR, vol. abs/2307.09288, 2023.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy, \"Stereoset: Measuring stereotypical bias in pretrained language models,” arXiv preprint arXiv:2004.09456, 2020.",
+    "Alex Wang, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel R. Bowman, “GLUE: A multi-task benchmark and analysis platform for natural language understanding,\" in 7th International Conference on Learning Representations, ICLR 2019, New Orleans, LA, USA, May 6-9, 2019. 2019, OpenReview.net."
+  ]
+}

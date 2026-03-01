@@ -1,0 +1,67 @@
+{
+  "filename": "2408.12942.pdf",
+  "title": "Causal-Guided Active Learning for Debiasing Large Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2408.12942",
+  "benchmark_measurement": "Stereotypical bias detection, where religion is one of the categories of stereotype, grouped under 'cultural association of a name'.",
+  "religious_groups": [
+    "Buddhism"
+  ],
+  "models_tested": [
+    "llama2-13B-chat",
+    "vicuna-13B-v1.5",
+    "GPT-4",
+    "Qwen1.5-72B-Chat"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Chatbot",
+    "MT-Bench",
+    "MNLI",
+    "HANS",
+    "BBQ",
+    "UNQOVER"
+  ],
+  "continuous_testing": false,
+  "findings": "The proposed method (CAL) can automatically identify 7 out of 9 types of stereotype biases from the BBQ dataset without prior knowledge. Religious bias was one of the categories identified, grouped under 'cultural association of a name'. The method generally improves performance on the BBQ benchmark, suggesting it helps mitigate such stereotype biases.",
+  "references": [
+    "Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia Leoni Aleman, Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat, et al. 2023. Gpt-4 technical report. arXiv preprint arXiv:2303.08774.",
+    "Vamsi Aribandi, Yi Tay, Tal Schuster, Jinfeng Rao, Huaixiu Steven Zheng, Sanket Vaibhav Mehta, Hon- glei Zhuang, Vinh Q Tran, Dara Bahri, Jianmo Ni, et al. 2021. Ext5: Towards extreme multi-task scal- ing for transfer learning. In International Conference on Learning Representations.",
+    "Wei-Lin Chiang, Zhuohan Li, Zi Lin, Ying Sheng, Zhanghao Wu, Hao Zhang, Lianmin Zheng, Siyuan Zhuang, Yonghao Zhuang, Joseph E Gonzalez, et al. 2023. Vicuna: An open-source chatbot impressing gpt-4 with 90%* chatgpt quality. See https://vicuna. lmsys. org (accessed 14 April 2023).",
+    "David Cohn, Zoubin Ghahramani, and Michael Jordan. 1994. Active learning with statistical models. In Advances in Neural Information Processing Systems, volume 7.",
+    "Li Du, Xiao Ding, Zhouhao Sun, Ting Liu, Bing Qin, and Jingshuo Liu. 2023. Towards stable natural lan- guage understanding via information entropy guided debiasing. In Proceedings of the 61st Annual Meet- ing of the Association for Computational Linguistics (Volume 1: Long Papers), pages 2868–2882.",
+    "Deep Ganguli, Amanda Askell, Nicholas Schiefer, Thomas Liao, Kamilė Lukošiūtė, Anna Chen, Anna Goldie, Azalia Mirhoseini, Catherine Olsson, Danny Hernandez, et al. 2023. The capacity for moral self- correction in large language models. arXiv preprint arXiv:2302.07459.",
+    "Yue Huang, Qihui Zhang, Lichao Sun, et al. 2023. Trustgpt: A benchmark for trustworthy and re- sponsible large language models. arXiv preprint arXiv:2306.11507.",
+    "Tao Li, Daniel Khashabi, Tushar Khot, Ashish Sabhar- wal, and Vivek Srikumar. 2020. Unqovering stereo- typing biases via underspecified questions. In Find- ings of the Association for Computational Linguistics: EMNLP 2020, pages 3475–3489.",
+    "Bingchang Liu, Chaoyu Chen, Cong Liao, Zi Gong, Huan Wang, Zhichao Lei, Ming Liang, Dajun Chen, Min Shen, Hailian Zhou, et al. 2023a. Mftcoder: Boosting code llms with multitask fine-tuning. arXiv preprint arXiv:2311.02303.",
+    "Peng Liu, Lizhe Wang, Rajiv Ranjan, Guojin He, and Lei Zhao. 2022. A survey on active deep learning: From model driven to data driven. ACM Comput. Surv., 54.",
+    "Yang Liu, Yuanshun Yao, Jean-Francois Ton, Xiaoying Zhang, Ruocheng Guo, Hao Cheng, Yegor Klochkov, Muhammad Faaiz Taufiq, and Hang Li. 2023b. Trust- worthy llms: a survey and guideline for evaluating large language models' alignment. In Socially Re- sponsible Language Modelling Research.",
+    "Yougang Lyu, Piji Li, Yechang Yang, Maarten de Rijke, Pengjie Ren, Yukun Zhao, Dawei Yin, and Zhaochun Ren. 2023. Feature-level debiased natural language understanding. In Proceedings of the AAAI Con- ference on Artificial Intelligence, volume 37, pages 13353–13361.",
+    "Tom McCoy, Ellie Pavlick, and Tal Linzen. 2019. Right for the wrong reasons: Diagnosing syntactic heuris- tics in natural language inference. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 3428–3448.",
+    "Roberto Navigli, Simone Conia, and Björn Ross. 2023. Biases in large language models: Origins, inventory and discussion. ACM Journal of Data and Informa- tion Quality.",
+    "Yixin Nie, Adina Williams, Emily Dinan, Mohit Bansal, Jason Weston, and Douwe Kiela. 2020. Adversarial nli: A new benchmark for natural language under- standing. In Proceedings of the 58th Annual Meet- ing of the Association for Computational Linguistics, pages 4885–4901.",
+    "Daisuke Oba, Masahiro Kaneko, and Danushka Bolle- gala. 2023. In-contextual bias suppression for large language models. arXiv preprint arXiv:2309.07251.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel Bowman. 2022. Bbq: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2086–2105.",
+    "Judea Pearl. 2009. Causality. Cambridge university press.",
+    "Judea Pearl et al. 2000. Models, reasoning and infer- ence. Cambridge, UK: Cambridge UniversityPress, 19.",
+    "Adam Poliak, Jason Naradowsky, Aparajita Haldar, Rachel Rudinger, and Benjamin Van Durme. 2018. Hypothesis only baselines in natural language infer- ence. In Proceedings of the Seventh Joint Conference on Lexical and Computational Semantics, pages 180– 191.",
+    "Victor Sanh, Thomas Wolf, Yonatan Belinkov, and Alexander M Rush. 2020. Learning from others' mistakes: Avoiding dataset biases without model- ing them. In International Conference on Learning Representations.",
+    "Timo Schick, Sahana Udupa, and Hinrich Schütze. 2021. Self-diagnosis and self-debiasing: A proposal for re- ducing corpus-based bias in nlp. Transactions of the Association for Computational Linguistics, 9:1408– 1424.",
+    "Tal Schuster, Darsh Shah, Yun Jie Serene Yeo, Daniel Roberto Filizzola Ortiz, Enrico Santus, and Regina Barzilay. 2019. Towards debiasing fact verification models. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natu- ral Language Processing (EMNLP-IJCNLP), pages 3419–3425.",
+    "Omar Shaikh, Hongxin Zhang, William Held, Michael Bernstein, and Diyi Yang. 2023. On second thought, let's not think step by step! bias and toxicity in zero- shot reasoning. In Proceedings of the 61st Annual Meeting of the Association for Computational Lin- guistics (Volume 1: Long Papers), pages 4454–4470, Toronto, Canada. Association for Computational Lin- guistics.",
+    "Chenglei Si, Zhe Gan, Zhengyuan Yang, Shuohang Wang, Jianfeng Wang, Jordan Lee Boyd-Graber, and Lijuan Wang. 2023. Prompting gpt-3 to be reliable. In The Eleventh International Conference on Learn- ing Representations.",
+    "Hugo Touvron, Louis Martin, Kevin Stone, Peter Al- bert, Amjad Almahairi, Yasmine Babaei, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, et al. 2023. Llama 2: Open founda- tion and fine-tuned chat models. arXiv preprint arXiv:2307.09288.",
+    "Prasetya Ajie Utama, Nafise Sadat Moosavi, and Iryna Gurevych. 2020. Towards debiasing nlu models from unknown biases. In Proceedings of the 2020 Con- ference on Empirical Methods in Natural Language Processing (EMNLP), pages 7597–7610.",
+    "Adina Williams, Nikita Nangia, and Samuel R Bowman. 2018. A broad-coverage challenge corpus for sen- tence understanding through inference. In NAACL- HLT.",
+    "Xilie Xu, Keyi Kong, Ning Liu, Lizhen Cui, Di Wang, Jingfeng Zhang, and Mohan Kankanhalli. 2023. An llm can fool itself: A prompt-based adversarial attack. arXiv preprint arXiv:2310.13345.",
+    "Xueying Zhan, Qingzhong Wang, Kuan-hao Huang, Haoyi Xiong, Dejing Dou, and Antoni B. Chan. 2022. A comparative survey of deep active learning. arXiv preprint arXiv:2203.13450.",
+    "Zhisong Zhang, Emma Strubell, and Eduard Hovy. 2022. A survey of active learning for natural language pro- cessing. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 6166–6190. Association for Computational Linguistics.",
+    "Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric Xing, Hao Zhang, Joseph E. Gonzalez, and Ion Stoica. 2023. Judging LLM-as-a-judge with MT-bench and chatbot arena. In Thirty-seventh Conference on Neural Information Processing Systems Datasets and Benchmarks Track.",
+    "Lianghui Zhu, Xinggang Wang, and Xinlong Wang. 2023. Judgelm: Fine-tuned large language models are scalable judges. arXiv preprint arXiv:2310.17631."
+  ]
+}

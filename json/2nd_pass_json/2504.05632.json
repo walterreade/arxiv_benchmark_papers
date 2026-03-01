@@ -1,0 +1,66 @@
+{
+  "filename": "2504.05632.pdf",
+  "title": "Reasoning Towards Fairness: Mitigating Bias in Language Models through Reasoning-Guided Fine-Tuning",
+  "arxiv_url": "https://arxiv.org/pdf/2504.05632",
+  "benchmark_measurement": "The benchmark measured stereotypical bias against religious groups in ambiguous and disambiguous question-answering contexts. In ambiguous contexts, a correct answer indicates the model did not default to a stereotype, while in disambiguous contexts, it measures correct contextual reasoning.",
+  "religious_groups": [
+    "Christianity",
+    "Islam"
+  ],
+  "models_tested": [
+    "DeepSeek LLaMA 3.1 8B",
+    "DeepSeek Qwen 2.5 14B",
+    "LLaMA 3.1 8B",
+    "Mistral 7B",
+    "Phi-4 14B",
+    "GPT-4o-mini"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "BBQ",
+    "SQuAD-v2"
+  ],
+  "continuous_testing": false,
+  "findings": "The proposed Reasoning-Guided Fine-Tuning (ReGiFT) method significantly reduces stereotypical bias related to religion. Models fine-tuned with ReGiFT showed substantial improvements in fairness scores on the BBQ benchmark's religion dimension, especially in ambiguous contexts where models are prone to making stereotypical associations. For example, LLaMA 3.1 8B's score in ambiguous religious contexts improved from 12.45 to 90.17, indicating a much lower tendency to generate stereotypical responses after fine-tuning.",
+  "references": [
+    "Marah Abdin, Jyoti Aneja, Harkirat Behl, Sébastien Bubeck, Ronen Eldan, Suriya Gunasekar, Michael Harrison, Russell J. Hewett, Mojan Javaheripi, Piero Kauffmann, James R. Lee, Yin Tat Lee, Yuanzhi Li, Weishung Liu, Caio C. T. Mendes, Anh Nguyen, Eric Price, Gustavo de Rosa, Olli Saarikivi, Adil Salim, Shital Shah, Xin Wang, Rachel Ward, Yue Wu, Dingli Yu, Cyril Zhang, and Yi Zhang. Phi-4 technical report, 2024. URL https: //arxiv.org/abs/2412.08905.",
+    "James Chua, Edward Rees, Hunar Batra, Samuel R. Bowman, Julian Michael, Ethan Perez, and Miles Turpin. Bias-augmented consistency training reduces biased reasoning in chain-of-thought, 2025. URL https://arxiv.org/abs/2403.05518.",
+    "DeepSeek-AI. Deepseek-r1: Incentivizing reasoning capability in llms via reinforcement learning, 2025. URL https://arxiv.org/abs/2501.12948.",
+    "Yao Fu, Hao Peng, Litu Ou, Ashish Sabharwal, and Tushar Khot. Specializing smaller language models towards multi-step reasoning, 2023. URL https://arxiv.org/abs/2301. 12726.",
+    "Shaz Furniturewala, Surgan Jandial, Abhinav Java, Pragyan Banerjee, Simra Shahid, Sumit Bhatia, and Kokil Jaidka. “thinking” fair and slow: On the efficacy of structured prompts for debiasing language models. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, Abu Dhabi, UAE, November 2024. Association for Computational Linguistics. URLhttps://arxiv.org/abs/2405.10431.",
+    "Isabel O. Gallegos, Ryan A. Rossi, Joe Barrow, Md Mehrab Tanjim, Sungchul Kim, Franck Dernoncourt, Tong Yu, Ruiyi Zhang, and Nesreen K. Ahmed. Bias and fairness in large language models: A survey. Computational Linguistics, 50(3):1097–1179, September 2024a. doi: 10.1162/coli_a_00524. URL https://aclanthology.org/2024.cl-3.8/.",
+    "Isabel O. Gallegos, Ryan A. Rossi, Joe Barrow, Md Mehrab Tanjim, Sungchul Kim, Franck Dernoncourt, Tong Yu, Ruiyi Zhang, and Nesreen K. Ahmed. Bias and fairness in large language models: A survey, 2024b. URL https://arxiv.org/abs/2309.00770.",
+    "Deep Ganguli, Amanda Askell, Nicholas Schiefer, Thomas I. Liao, Kamilė Lukošiūtė, Anna Chen, Anna Goldie, Azalia Mirhoseini, Catherine Olsson, Danny Hernandez, Dawn Drain, Dustin Li, Eli Tran-Johnson, Ethan Perez, Jackson Kernion, Jamie Kerr, Jared Mueller, Joshua Landau, Kamal Ndousse, Karina Nguyen, Liane Lovitt, Michael Sellitto, Nelson Elhage, Noemi Mercado, Nova DasSarma, Oliver Rausch, Robert Lasenby, Robin Larson, Sam Ringer, Sandipan Kundu, Saurav Kadavath, Scott Johnston, Shauna Kravec, Sheer El Showk, Tamera Lanham, Timothy Telleen-Lawton, Tom Henighan, Tristan Hume, Yuntao Bai, Zac Hatfield-Dodds, Ben Mann, Dario Amodei, Nicholas Joseph, Sam McCandlish, Tom Brown, Christopher Olah, Jack Clark, Samuel R. Bowman, and Jared Kaplan. The capacity for moral self-correction in large language models, 2023. URL https://arxiv.org/abs/2302.07459.",
+    "Yue Guo, Yi Yang, and Ahmed Abbasi. Auto-debias: Debiasing masked language models with automated biased prompts. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 1012–1023, Dublin, Ireland, May 2022. Association for Computational Linguistics. doi: 10.18653/v1/2022.acl-long.72.",
+    "Akshita Jha, Sanchit Kabra, and Chandan K. Reddy. Biased or flawed? mitigating stereotypes in generative language models by addressing task-specific flaws, 2024. URL https: //arxiv.org/abs/2412.11414.",
+    "Takeshi Kojima, Shixiang Shane Gu, Machel Reid, Yutaka Matsuo, and Yusuke Iwasawa. Large language models are zero-shot reasoners, 2023. URL https://arxiv.org/abs/2205. 11916.",
+    "Labellerr. Exploring the game-changing potential of mistral 7b. Labellerr Blog, 2023. URL https://www.labellerr.com/blog/mistral-7b-potential-by-mistral-ai/.",
+    "Huan Ma, Changqing Zhang, Yatao Bian, Lemao Liu, Zhirui Zhang, Peilin Zhao, Shu Zhang, Huazhu Fu, Qinghua Hu, and Bingzhe Wu. Fairness-guided few-shot prompting for large language models. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, pp. 10123–10138, Singapore, December 2023. Association for Computational Linguistics. URL https://arxiv.org/abs/2303.13217.",
+    "Meta-AI. The llama 3 herd of models, 2024. URL https://arxiv.org/abs/2407.21783.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. StereoSet: Measuring stereotypical bias in pretrained language models. In Chengqing Zong, Fei Xia, Wenjie Li, and Roberto Navigli (eds.), Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pp. 5356–5371, Online, August 2021. Association for Computational Linguistics. doi: 10.18653/v1/2021.acl-long.416. URL https://aclanthology.org/2021.acl-long. 416/.",
+    "Daisuke Oba, Masahiro Kaneko, and Danushka Bollegala. In-contextual gender bias sup- pression for large language models. In Yvette Graham and Matthew Purver (eds.), Findings of the Association for Computational Linguistics: EACL 2024, pp. 1722–1742, St. Julian's, Malta, March 2024. Association for Computational Linguistics. URL https: //aclanthology.org/2024.findings-eacl.121/.",
+    "OpenAI. Gpt-4o system card, 2024. URL https://arxiv.org/abs/2410.21276.",
+    "Long Ouyang, Jeff Wu, Xu Jiang, Diogo Almeida, Carroll L. Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, John Schulman, Jacob Hilton, Fraser Kelton, Luke Miller, Maddie Simens, Amanda Askell, Peter Welinder, Paul Christiano, Jan Leike, and Ryan Lowe. Training language models to follow instructions with human feedback, 2022. URL https://arxiv.org/abs/2203.02155.",
+    "Swetasudha Panda, Ari Kobren, Michael Wick, and Qinlan Shen. Don't just clean it, proxy clean it: Mitigating bias by proxy in pre-trained models. In Yoav Goldberg, Zornitsa Kozareva, and Yue Zhang (eds.), Findings of the Association for Computational Linguistics: EMNLP 2022, pp. 5073–5085, Abu Dhabi, United Arab Emirates, December 2022. Associ- ation for Computational Linguistics. doi: 10.18653/v1/2022.findings-emnlp.372. URL https://aclanthology.org/2022.findings-emnlp.372/.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel Bowman. BBQ: A hand-built bias benchmark for question answering. In Smaranda Muresan, Preslav Nakov, and Aline Villavicencio (eds.), Findings of the Association for Computational Linguistics: ACL 2022, pp. 2086–2105, Dublin, Ireland, May 2022. Association for Computational Linguistics. doi: 10.18653/v1/2022. findings-acl.165. URL https://aclanthology.org/2022.findings-acl.165/.",
+    "Avinash Patil and Aryan Jadon. Advancing reasoning in large language models: Promising methods and approaches, 2025. URL https://arxiv.org/abs/2502.03671.",
+    "Hongye Qiu, Yue Xu, Meikang Qiu, and Wenjie Wang. Dr.gap: Mitigating bias in large language models using gender-aware prompting with demonstration and reasoning. arXiv preprint arXiv:2502.11603, 2025. URL https://arxiv.org/abs/2502.11603.",
+    "Pranav Rajpurkar, Robin Jia, and Percy Liang. Know what you don't know: Unanswerable questions for SQuAD. In Iryna Gurevych and Yusuke Miyao (eds.), Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers), pp. 784-789, Melbourne, Australia, July 2018. Association for Computational Linguistics. doi: 10.18653/v1/P18-2124. URL https://aclanthology.org/P18-2124.",
+    "Shaina Raza, Ananya Raval, and Veronica Chatrath. Mbias: Mitigating bias in large language models while retaining context. arXiv preprint arXiv:2405.11290, 2024. URL https://arxiv. org/abs/2405.11290.",
+    "Timo Schick, Sahana Udupa, and Hinrich Schütze. Self-diagnosis and self-debiasing: A proposal for reducing corpus-based bias in nlp, 2021. URL https://arxiv.org/abs/2103. 00453.",
+    "Omar Shaikh, Hongxin Zhang, William Held, Michael Bernstein, and Diyi Yang. On second thought, let's not think step by step! bias and toxicity in zero-shot reasoning, 2023. URL https://arxiv.org/abs/2212.08061.",
+    "Chenglei Si, Zhe Gan, Zhengyuan Yang, Shuohang Wang, Jianfeng Wang, Jordan Boyd- Graber, and Lijuan Wang. Prompting gpt-3 to be reliable, 2023. URL https://arxiv.org/ abs/2210.09150.",
+    "Tianxiang Sun, Junliang He, Xipeng Qiu, and Xuanjing Huang. BERTScore is unfair: On social bias in language model-based metrics for text generation. In Yoav Goldberg, Zornitsa Kozareva, and Yue Zhang (eds.), Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pp. 3726–3739, Abu Dhabi, United Arab Emirates, December 2022. Association for Computational Linguistics. doi: 10.18653/v1/2022. emnlp-main.245. URL https://aclanthology.org/2022.emnlp-main.245/.",
+    "Jacob-Junqi Tian, Omkar Dige, D. B. Emerson, and Faiza Khan Khattak. On the role of reasoning in the identification of subtle stereotypes in natural language, 2024. URL https://arxiv.org/abs/2308.00071.",
+    "Fangzhi Xu, Qika Lin, Jiawei Han, Tianzhe Zhao, Jun Liu, and Erik Cambria. Are large language models really good logical reasoners? a comprehensive evaluation and beyond, 2024. URL https://arxiv.org/abs/2306.09841.",
+    "Xinyi Yang, Runzhe Zhan, Derek F. Wong, Shu Yang, Junchao Wu, and Lidia S. Chao. Rethinking prompt-based debiasing in large language models, 2025. URL https://arxiv. org/abs/2503.09219.",
+    "Eric Zelikman, Yuhuai Wu, Jesse Mu, and Noah D. Goodman. Star: Bootstrapping reasoning with reasoning, 2022. URL https://arxiv.org/abs/2203.14465.",
+    "Jinman Zhao, Zifan Qian, Linbo Cao, Yining Wang, Yitian Ding, Yulan Hu, Zeyu Zhang, and Zeyong Jin. Role-play paradox in large language models: Reasoning performance gains and ethical dilemmas, 2025. URL https://arxiv.org/abs/2409.13979."
+  ]
+}

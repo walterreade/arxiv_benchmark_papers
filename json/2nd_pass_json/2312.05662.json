@@ -1,0 +1,70 @@
+{
+  "filename": "2312.05662.pdf",
+  "title": "Understanding the Effect of Model Compression on Social Bias in Large Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2312.05662",
+  "benchmark_measurement": "Measurement of stereotype scores and social bias related to religion using sentence-pair comparison (CrowS-Pairs), masked language modeling with candidate answers (StereoSet), and sentence embedding association tests (SEAT).",
+  "religious_groups": [
+    "Not explicitly mentioned, but tested under the general category of 'RELIGION'"
+  ],
+  "models_tested": [
+    "BERT Base",
+    "BERT Large",
+    "DistilBERT",
+    "RoBERTa Base",
+    "RoBERTa Large",
+    "DistilROBERTa",
+    "Pythia (70M, 160M, 410M, 1.4B, 2.8B, 6.9B parameters)"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Bias Bench",
+    "CrowS-Pairs",
+    "StereoSet",
+    "SEAT"
+  ],
+  "continuous_testing": false,
+  "findings": "Model compression techniques, particularly dynamic quantization, can reduce religious bias in LLMs, sometimes performing competitively with explicit debiasing methods. The study found a positive correlation between increased religious bias and both larger model sizes and longer pretraining durations. Quantization acts as a regularizer against this bias, with the best trade-off between model performance (LM Score) and bias reduction often occurring at earlier pretraining checkpoints (around 20% of total pretraining time) for quantized models.",
+  "references": [
+    "Orevaoghene Ahia, Julia Kreutzer, and Sara Hooker. 2021. The Low-Resource Double Bind: An Empirical Study of Pruning for Low-Resource Machine Translation. In EMNLP (Findings), pages 3316–3333. Association for Computational Linguistics.",
+    "Arash Ahmadian, Saurabh Dash, Hongyu Chen, Bharat Venkitesh, Stephen Gou, Phil Blunsom, Ahmet Üstün, and Sara Hooker. 2023. Intriguing Properties of Quantization at Scale. CoRR, abs/2305.19268.",
+    "Stella Biderman, Hailey Schoelkopf, Quentin Anthony, Herbie Bradley, Kyle O’Brien, Eric Hallahan, Mohammad Aflah Khan, Shivanshu Purohit, USVSN Sai Prashanth, Edward Raff, Aviya Skowron, Lintang Sutawika, and Oskar van der Wal. 2023. Pythia: A Suite for Analyzing Large Language Models Across Training and Scaling. CoRR, abs/2304.01373.",
+    "Su Lin Blodgett, Gilsinia Lopez, Alexandra Olteanu, Robert Sim, and Hanna M. Wallach. 2021. Stereotyping Norwegian Salmon: An Inventory of Pitfalls in Fairness Benchmark Datasets. In ACL/IJCNLP (1), pages 1004–1015. Association for Computational Linguistics.",
+    "Tianlong Chen, Jonathan Frankle, Shiyu Chang, Sijia Liu, Yang Zhang, Zhangyang Wang, and Michael Carbin. 2020. The Lottery Ticket Hypothesis for Pre-trained BERT Networks. In NeurIPS.",
+    "Pieter Delobelle and Bettina Berendt. 2022. FairDistillation: Mitigating Stereotyping in Language Models. In ECML/PKDD (2), volume 13714 of Lecture Notes in Computer Science, pages 638–654. Springer.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, NAACL-HLT 2019, Minneapolis, MN, USA, June 2–7, 2019, Volume 1 (Long and Short Papers), pages 4171–4186. Association for Computational Linguistics.",
+    "Maha Elbayad, Jiatao Gu, Edouard Grave, and Michael Auli. 2020. Depth-Adaptive Transformer. In ICLR. OpenReview.net.",
+    "Leo Gao, Stella Biderman, Sid Black, Laurence Golding, Travis Hoppe, Charles Foster, Jason Phang, Horace He, Anish Thite, Noa Nabeshima, Shawn Presser, and Connor Leahy. 2021. The Pile: An 800GB Dataset of Diverse Text for Language Modeling. CoRR, abs/2101.00027.",
+    "Michael Gira, Ruisu Zhang, and Kangwook Lee. 2022. Debiasing Pre-Trained Language Models via Efficient Fine-Tuning. In LT-EDI, pages 59–69. Association for Computational Linguistics.",
+    "Marius Hessenthaler, Emma Strubell, Dirk Hovy, and Anne Lauscher. 2022. Bridging Fairness and Environmental Sustainability in Natural Language Processing. In EMNLP, pages 7817–7836. Association for Computational Linguistics.",
+    "Geoffrey E. Hinton, Oriol Vinyals, and Jeffrey Dean. 2015. Distilling the knowledge in a neural network. In NIPS Workshop on Deep Learning.",
+    "Sara Hooker, Aaron Courville, Gregory Clark, Yann Dauphin, and Andrea Frome. 2021. What Do Compressed Deep Neural Networks Forget?",
+    "Sara Hooker, Nyalleng Moorosi, Gregory Clark, Samy Bengio, and Emily Denton. 2020. Characterising Bias in Compressed Models. CoRR, abs/2010.03058.",
+    "Masahiro Kaneko and Danushka Bollegala. 2021. Debiasing Pre-trained Contextualised Embeddings. In EACL, pages 1256–1266. Association for Computational Linguistics.",
+    "Masahiro Kaneko and Danushka Bollegala. 2022. Unmasking the Mask - Evaluating Social Biases in Masked Language Models. In AAAI, pages 11954–11962. AAAI Press.",
+    "Masahiro Kaneko, Danushka Bollegala, and Naoaki Okazaki. 2022. Debiasing Isn’t Enough! on the Effectiveness of Debiasing MLMs and Their Social Biases in Downstream Tasks. In COLING, pages 1299–1310. International Committee on Computational Linguistics.",
+    "Sneha Kudugunta, Yanping Huang, Ankur Bapna, Maxim Krikun, Dmitry Lepikhin, Minh-Thang Luong, and Orhan Firat. 2021. Beyond Distillation: Task-level Mixture-of-Experts for Efficient Inference. In EMNLP (Findings), pages 3577–3599. Association for Computational Linguistics.",
+    "Keita Kurita, Nidhi Vyas, Ayush Pareek, Alan W. Black, and Yulia Tsvetkov. 2019. Measuring Bias in Contextualized Word Representations. CoRR, abs/1906.07337.",
+    "Faisal Ladhak, Esin Durmus, Mirac Suzgun, Tianyi Zhang, Dan Jurafsky, Kathleen R. McKeown, and Tatsunori Hashimoto. 2023. When Do Pre-Training Biases Propagate to Downstream Tasks? A Case Study in Text Summarization. In EACL, pages 3198–3211. Association for Computational Linguistics.",
+    "Paul Pu Liang, Irene Mengze Li, Emily Zheng, Yao Chong Lim, Ruslan Salakhutdinov, and LouisPhilippe Morency. 2020. Towards Debiasing Sentence Representations. In ACL, pages 5502–5515. Association for Computational Linguistics.",
+    "Lucas Liebenwein, Cenk Baykal, Brandon Carter, David Gifford, and Daniela Rus. 2021. Lost in Pruning: The Effects of Pruning Neural Networks beyond Test Accuracy. In MLSys. mlsys.org.",
+    "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. 2019. ROBERTa: A Robustly Optimized BERT Pretraining Approach. CoRR, abs/1907.11692.",
+    "Nicholas Meade, Elinor Poole-Dayan, and Siva Reddy. 2022. An Empirical Survey of the Effectiveness of Debiasing Techniques for Pre-trained Language Models. In ACL (1), pages 1878–1898. Association for Computational Linguistics.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2021. StereoSet: Measuring stereotypical bias in pretrained language models. In ACL/IJCNLP (1), pages 5356–5371. Association for Computational Linguistics.",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R. Bowman. 2020. CrowS-Pairs: A Challenge Dataset for Measuring Social Biases in Masked Language Models. In EMNLP (1), pages 1953–1967. Association for Computational Linguistics.",
+    "Kelechi Ogueji, Orevaoghene Ahia, Gbemileke Onilude, Sebastian Gehrmann, Sara Hooker, and Julia Kreutzer. 2022. Intriguing Properties of Compression on Multilingual Models. In EMNLP, pages 9092–9110. Association for Computational Linguistics.",
+    "Alec Radford, Jeff Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. 2019. Language models are unsupervised multitask learners.",
+    "Shauli Ravfogel, Yanai Elazar, Hila Gonen, Michael Twiton, and Yoav Goldberg. 2020. Null It Out: Guarding Protected Attributes by Iterative Nullspace Projection. In ACL, pages 7237–7256. Association for Computational Linguistics.",
+    "Victor Sanh, Lysandre Debut, Julien Chaumond, and Thomas Wolf. 2019. DistilBERT, a distilled version of BERT: Smaller, faster, cheaper and lighter. CoRR, abs/1910.01108.",
+    "Timo Schick, Sahana Udupa, and Hinrich Schütze. 2021. Self-Diagnosis and Self-Debiasing: A Proposal for Reducing Corpus-Based Bias in NLP. Trans. Assoc. Comput. Linguistics, 9:1408–1424.",
+    "Kellie Webster, Xuezhi Wang, Ian Tenney, Alex Beutel, Emily Pitler, Ellie Pavlick, Jilin Chen, and Slav Petrov. 2020. Measuring and Reducing Gendered Correlations in Pre-trained Models. CoRR, abs/2010.06032.",
+    "Canwen Xu, Wangchunshu Zhou, Tao Ge, Ke Xu, Julian J. McAuley, and Furu Wei. 2021. Beyond Preserved Accuracy: Evaluating Loyalty and Robustness of BERT Compression. In EMNLP (1), pages 10653–10659. Association for Computational Linguistics.",
+    "Guangxuan Xu and Qingyuan Hu. 2022. Can Model Compression Improve NLP Fairness. CoRR, abs/2201.08542."
+  ]
+}

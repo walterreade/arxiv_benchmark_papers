@@ -1,0 +1,72 @@
+{
+  "filename": "2310.13985.pdf",
+  "title": "HateRephrase: Zero- and Few-Shot Reduction of Hate Intensity in Online Posts using Large Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2310.13985",
+  "benchmark_measurement": "The ability of large language models to rephrase hateful online posts about Islam and Muslims to reduce their hate intensity while preserving the original semantic meaning.",
+  "religious_groups": [
+    "Islam"
+  ],
+  "models_tested": [
+    "LLaMA-1",
+    "LLaMA-2-chat",
+    "Vicuna",
+    "GPT-3.5",
+    "BART-ParaDetox"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Dataset by Masud et al. [21]",
+    "ParaDetox"
+  ],
+  "continuous_testing": false,
+  "findings": "Large Language Models, particularly GPT-3.5, are effective at reducing the intensity of hate speech directed at Muslims. Human evaluations showed that GPT-3.5's rephrased outputs were often preferred over the original human-generated 'ground truth' rephrasings from the dataset. While open-source models like LLaMA-2-chat also performed the task, they were less consistent and sometimes failed by changing the meaning or even increasing the hate intensity of the original text.",
+  "references": [
+    "Vibhor Agarwal, Sagar Joglekar, Anthony P Young, and Nishanth Sastry. 2022. GraphNLI: A Graph-based Natural Language Inference Model for Polarity Prediction in Online Debates. In Proceedings of the ACM Web Conference 2022. 2729-2737.",
+    "Vibhor Agarwal, Anthony P. Young, Sagar Joglekar, and Nishanth Sastry. 2023. A Graph-Based Context-Aware Model to Understand Online Conversations. ACM Trans. Web (sep 2023). https://doi.org/10.1145/3624579",
+    "Mana Ashida and Mamoru Komachi. 2022. Towards automatic generation of messages countering online hate speech and microaggressions. In Proceedings of the Sixth Workshop on Online Abuse and Harms (WOAH). 11-23.",
+    "Mudit Chaudhary, Chandni Saxena, and Helen Meng. 2021. Countering online hate speech: An nlp perspective. arXiv preprint arXiv:2109.02941 (2021).",
+    "Wei-Lin Chiang, Zhuohan Li, Zi Lin, Ying Sheng, Zhanghao Wu, Hao Zhang, Lianmin Zheng, Siyuan Zhuang, Yonghao Zhuang, Joseph E. Gonzalez, Ion Sto-ica, and Eric P. Xing. 2023. Vicuna: An Open-Source Chatbot Impressing GPT-4 with 90%* ChatGPT Quality. https://lmsys.org/blog/2023-03-30-vicuna/",
+    "Thomas Davidson, Dana Warmsley, Michael Macy, and Ingmar Weber. 2017. Automated hate speech detection and the problem of offensive language. In Proceedings of the international AAAI conference on web and social media, Vol. 11. 512-515.",
+    "Bosheng Ding, Chengwei Qin, Linlin Liu, Lidong Bing, Shafiq Joty, and Boyang Li. 2022. Is gpt-3 a good data annotator? arXiv preprint arXiv:2212.10450 (2022).",
+    "Nemanja Djuric, Jing Zhou, Robin Morris, Mihajlo Grbovic, Vladan Radosavlje-vic, and Narayan Bhamidipati. 2015. Hate speech detection with comment embeddings. In Proceedings of the 24th international conference on world wide web. 29-30.",
+    "Paula Fortuna and Sérgio Nunes. 2018. A survey on automatic detection of hate speech in text. ACM Computing Surveys (CSUR) 51, 4 (2018), 1-30.",
+    "Joshua Garland, Keyan Ghazi-Zahedi, Jean-Gabriel Young, Laurent Hébert-Dufresne, and Mirta Galesic. 2020. Countering hate on social media: Large scale classification of hate and counter speech. In Proceedings of the Fourth Workshop on Online Abuse and Harms. 102-112.",
+    "Joshua Garland, Keyan Ghazi-Zahedi, Jean-Gabriel Young, Laurent Hébert-Dufresne, and Mirta Galesic. 2022. Impact and dynamics of hate and counter speech online. EPJ data science 11, 1 (2022), 3.",
+    "Thomas Hartvigsen, Saadia Gabriel, Hamid Palangi, Maarten Sap, Dipankar Ray, and Ece Kamar. 2022. ToxiGen: A Large-Scale Machine-Generated Dataset for Adversarial and Implicit Hate Speech Detection. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 3309-3326.",
+    "Ziwei Ji, Nayeon Lee, Rita Frieske, Tiezheng Yu, Dan Su, Yan Xu, Etsuko Ishii, Ye Jin Bang, Andrea Madotto, and Pascale Fung. 2023. Survey of hallucination in natural language generation. Comput. Surveys 55, 12 (2023), 1-38.",
+    "Google Jigsaw. 2023. Perspective API. https://www.perspectiveapi.com/.",
+    "Yevhen Kostiuk, Atnafu Lambebo Tonja, Grigori Sidorov, and Olga Kolesnikova. 2023. Automatic Translation of Hate Speech to Non-hate Speech in Social Media Texts. arXiv preprint arXiv:2306.01261 (2023).",
+    "Kalpesh Krishna, John Wieting, and Mohit Iyyer. 2020. Reformulating Unsupervised Style Transfer as Paraphrase Generation. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP). 737-762.",
+    "Brian Lester, Rami Al-Rfou, and Noah Constant. 2021. The power of scale for parameter-efficient prompt tuning. arXiv preprint arXiv:2104.08691 (2021).",
+    "Xiang Lisa Li and Percy Liang. 2021. Prefix-tuning: Optimizing continuous prompts for generation. arXiv preprint arXiv:2101.00190 (2021).",
+    "Yiheng Liu, Tianle Han, Siyuan Ma, Jiayue Zhang, Yuanyuan Yang, Jiaming Tian, Hao He, Antong Li, Mengshen He, Zhengliang Liu, et al. 2023. Summary of ChatGPT-Related Research and Perspective Towards the Future of Large Language Models. Meta-Radiology (2023), 100017.",
+    "Varvara Logacheva, Daryna Dementieva, Sergey Ustyantsev, Daniil Moskovskiy, David Dale, Irina Krotova, Nikita Semenov, and Alexander Panchenko. 2022. Paradetox: Detoxification with parallel data. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 6804-6818.",
+    "Sarah Masud, Manjot Bedi, Mohammad Aflah Khan, Md Shad Akhtar, and Tanmoy Chakraborty. 2022. Proactively Reducing the Hate Intensity of Online Posts via Hate Speech Normalization. In Proceedings of the 28th ACM SIGKDD Conference on Knowledge Discovery and Data Mining. 3524-3534.",
+    "Binny Mathew, Punyajoy Saha, Hardik Tharad, Subham Rajgaria, Prajwal Singhania, Suman Kalyan Maity, Pawan Goyal, and Animesh Mukherjee. 2019. Thou shalt not hate: Countering online hate speech. In Proceedings of the international AAAI conference on web and social media, Vol. 13. 369-380.",
+    "Mary L McHugh. 2012. Interrater reliability: the kappa statistic. Biochemia medica 22, 3 (2012), 276-282.",
+    "Long Ouyang, Jeffrey Wu, Xu Jiang, Diogo Almeida, Carroll Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, et al. 2022. Training language models to follow instructions with human feedback. Advances in Neural Information Processing Systems 35 (2022), 27730-27744.",
+    "María Antonia Paz, Julio Montero-Díaz, and Alicia Moreno-Delgado. 2020. Hate speech: A systematized review. Sage Open 10, 4 (2020), 2158244020973022.",
+    "Nils Reimers and Iryna Gurevych. 2019. Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP). 3982-3992.",
+    "Carla Schieb and Mike Preuss. 2016. Governing hate speech by means of counterspeech on Facebook. In 66th ica annual conference, at fukuoka, japan. 1-23.",
+    "Anna Schmidt and Michael Wiegand. 2017. A survey on hate speech detection using natural language processing. In Proceedings of the fifth international workshop on natural language processing for social media. 1-10.",
+    "Ruth Spence, Antonia Bifulco, Paula Bradbury, Elena Martellozzo, and Jeffrey DeMarco. 2023. The psychological impacts of content moderation on content moderators: A qualitative study. Cyberpsychology: Journal of Psychosocial Research on Cyberspace 17, 4 (2023).",
+    "Xiaofei Sun, Xiaoya Li, Jiwei Li, Fei Wu, Shangwei Guo, Tianwei Zhang, and Guoyin Wang. 2023. Text Classification via Large Language Models. arXiv preprint arXiv:2305.08377 (2023).",
+    "Serra Sinem Tekiroğlu, Helena Bonaldi, Margherita Fanton, and Marco Guerini. 2022. Using Pre-Trained Language Models for Producing Counter Narratives Against Hate Speech: a Comparative Study. In Findings of the Association for Computational Linguistics: ACL 2022. 3099-3114.",
+    "Hugo Touvron, Thibaut Lavril, Gautier Izacard, Xavier Martinet, Marie-Anne Lachaux, Timothée Lacroix, Baptiste Rozière, Naman Goyal, Eric Hambro, Faisal Azhar, et al. 2023. Llama: Open and efficient foundation language models. arXiv preprint arXiv:2302.13971 (2023).",
+    "Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine Babaei, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, et al. 2023. Llama 2: Open foundation and fine-tuned chat models. arXiv preprint arXiv:2307.09288 (2023).",
+    "Han Wang, Ming Shan Hee, Md Rabiul Awal, Kenny Tsu Wei Choo, and Roy Ka-Wei Lee. 2023. Evaluating GPT-3 Generated Explanations for Hateful Content Moderation. arXiv preprint arXiv:2305.17680 (2023).",
+    "Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Fei Xia, Ed Chi, Quoc V Le, Denny Zhou, et al. 2022. Chain-of-thought prompting elicits reasoning in large language models. Advances in Neural Information Processing Systems 35 (2022), 24824-24837.",
+    "Richard Ashby Wilson and Molly K Land. 2020. Hate speech on social media: Content moderation in context. Conn. L. Rev. 52 (2020), 1029.",
+    "Wenjie Yin, Vibhor Agarwal, Aiqi Jiang, Arkaitz Zubiaga, and Nishanth Sastry. 2023. Annobert: Effectively representing multiple annotators' label choices to improve hate speech detection. In Proceedings of the International AAAI Conference on Web and Social Media, Vol. 17. 902-913.",
+    "Yue Zhang, Yafu Li, Leyang Cui, Deng Cai, Lemao Liu, Tingchen Fu, Xinting Huang, Enbo Zhao, Yu Zhang, Yulong Chen, et al. 2023. Siren's Song in the AI Ocean: A Survey on Hallucination in Large Language Models. arXiv preprint arXiv:2309.01219 (2023).",
+    "Wayne Xin Zhao, Kun Zhou, Junyi Li, Tianyi Tang, Xiaolei Wang, Yupeng Hou, Yingqian Min, Beichen Zhang, Junjie Zhang, Zican Dong, et al. 2023. A survey of large language models. arXiv preprint arXiv:2303.18223 (2023).",
+    "Wanzheng Zhu and Suma Bhat. 2021. Generate, Prune, Select: A Pipeline for Counterspeech Generation against Online Hate Speech. In Findings of the Association for Computational Linguistics: ACL-IJCNLP 2021. 134-149.",
+    "Yiming Zhu, Peixian Zhang, Ehsan-Ul Haq, Pan Hui, and Gareth Tyson. 2023. Can chatgpt reproduce human-generated labels? a study of social computing tasks. arXiv preprint arXiv:2304.10145 (2023)."
+  ]
+}

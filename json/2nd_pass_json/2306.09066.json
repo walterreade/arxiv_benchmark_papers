@@ -1,0 +1,52 @@
+{
+  "filename": "2306.09066.pdf",
+  "title": "A Bayesian approach to uncertainty in word embedding bias estimation",
+  "arxiv_url": "https://arxiv.org/pdf/2306.09066",
+  "benchmark_measurement": "The benchmark measures stereotypical associations between religious identity terms (e.g., 'muslim', 'jew', 'christian') and sets of attribute words (e.g., 'greedy', 'terrorist', 'familial', 'conservative'). The analysis focuses on the cosine distance between the vector embeddings of these words to quantify bias.",
+  "religious_groups": [
+    "Judaism",
+    "Christianity",
+    "Islam"
+  ],
+  "models_tested": [
+    "Google (GoogleNews word embeddings)",
+    "Glove",
+    "Reddit (Reddit-L2 corpus embeddings)"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Word Embedding Association Test (WEAT)",
+    "Mean Average Cosine Distance (MAC)"
+  ],
+  "continuous_testing": false,
+  "findings": "Using a hierarchical Bayesian model, the paper finds that single-number bias metrics like WEAT and MAC generate false confidence. For religion, the analysis revealed that associated stereotypical attributes are not systematically closer to protected religious terms than attributes from different stereotypes. The posterior density intervals for cosine distances are wide, and differences between associated, different, and neutral predicates are often not very large. Furthermore, debiasing methods were found to have debatable desirability, sometimes reversing proximity orderings for words like 'christian' and 'jew' but failing to change the mistreatment of words like 'muslim'. The overall conclusion is that the landscape of bias is more complex and uncertain than suggested by previous methods.",
+  "references": [
+    "Tolga Bolukbasi, Kai-Wei Chang, James Y. Zou, Venkatesh Saligrama, and Adam Kalai. 2016. Man is to computer programmer as woman is to homemaker? Debiasing word embeddings. CoRR abs/1607.06520, (2016). Retrieved from http://arxiv.org/abs/1607.06520",
+    "Kawin Ethayarajh. 2020. Is your classifier actually biased? Measuring fairness under uncertainty with bernstein bounds. CoRR abs/2004.12332, (2020). Retrieved from https://arxiv.org/abs/2004.12332",
+    "Nikhil Garg, Londa Schiebinger, Dan Jurafsky, and James Zou. 2017. Word embeddings quantify 100 years of gender and ethnic stereotypes. Proceedings of the National Academy of Sciences 115, (November 2017). DOI:https://doi.org/10.1073/pnas.1720347115",
+    "Nikhil Garg, Londa Schiebinger, Dan Jurafsky, and James Zou. 2018. Word embeddings quantify 100 years of gender and ethnic stereotypes. Proceedings of the National Academy of Sciences 115, 16 (April 2018), E3635–E3644. DOI:https://doi.org/10.1073/pnas.1720347115",
+    "Hila Gonen and Yoav Goldberg. 2019. Lipstick on a pig: Debiasing methods cover up systematic gender biases in word embeddings but do not remove them. In Proceedings of the 2019 conference of the north American chapter of the association for computational linguistics: Human language technologies, volume 1 (long and short papers), Association for Computational Linguistics, Minneapolis, Minnesota, 609–614. DOI:https://doi.org/10.18653/v1/N19-1061",
+    "Jonathan Gordon and Benjamin Durme. 2013. Reporting bias and knowledge acquisition. In AKBC 2013 - Proceedings of the 2013 Workshop on Automated Knowledge Base Construction, Co-located with CIKM 2013, 25–30. DOI:https://doi.org/10.1145/2509558.2509563",
+    "Wei Guo and Aylin Caliskan. 2021. Detecting emergent intersectional biases: Contextualized word embeddings contain a distribution of human-like biases. In Proceedings of the 2021 AAAI/ACM conference on AI, ethics, and society, ACM. DOI:https://doi.org/10.1145/3461702.3462536",
+    "Rink Hoekstra, Richard D. Morey, Jeffrey N. Rouder, and Eric-Jan Wagenmakers. 2014. Robust misinterpretation of confidence intervals. Psychonomic Bulletin & Review 21, 5 (October 2014), 1157–1164. DOI:https://doi.org/10.3758/s13423-013-0572-3",
+    "Aylin Caliskan Islam, Joanna J. Bryson, and Arvind Narayanan. 2016. Semantics derived automatically from language corpora necessarily contain human biases. CoRR abs/1608.07187, (2016). Retrieved from http://arxiv.org/abs/16 08.07187",
+    "Gabbrielle Johnson. forthcoming. Are algorithms value-free? Feminist theoretical virtues in machine learning. Journal Moral Philosophy (forthcoming).",
+    "John Kruschke. 2015. Doing bayesian data analysis (second edition). Academic Press, Boston.",
+    "Anne Lauscher and Goran Glavas. 2019. Are we consistently biased? Multidimensional analysis of biases in distributional word vectors. CoRR abs/1904.11783, (2019). Retrieved from http://arxiv.org/abs/1904.11783",
+    "Thomas Manzini, Yao Chong Lim, Yulia Tsvetkov, and Alan W Black. 2019. Black is to criminal as caucasian is to police: Detecting and removing multiclass bias in word embeddings. Retrieved from https://arxiv.org/abs/1904.04047",
+    "Chandler May, Alex Wang, Shikha Bordia, Samuel R. Bowman, and Rachel Rudinger. 2019. On measuring social biases in sentence encoders. In Proceedings of the 2019 conference of the north American chapter of the association for computational linguistics: Human language technologies, volume 1 (long and short papers), Association for Computational Linguistics, Minneapolis, Minnesota, 622–628. DOI:https://doi.org/10.18653/v1/N19-1063",
+    "Richard McElreath. 2020. Statistical rethinking: A bayesian course with examples in r and stan, 2nd edition (2nd ed.). CRC Press. Retrieved from http://xcelab.net/rm/statistical-rethinking/",
+    "Tomas Mikolov, Kai Chen, Greg Corrado, and Jeffrey Dean. 2013. Efficient estimation of word representations in vector space. DOI:https://doi.org/10.48550/ARXIV.1301.3781",
+    "Richard Morey, Rink Hoekstra, Jeffrey Rouder, Michael Lee, and EJ Wagenmakers. 2015. The fallacy of placing confidence in confidence intervals. Psychonomic Bulletin & Review (September 2015).",
+    "Malvina Nissim, Rik van Noord, and Rob van der Goot. 2020. Fair is better than sensational: Man is to doctor as woman is to doctor. Computational Linguistics 46, 2 (June 2020), 487–497. DOI:https://doi.org/10.1162/coli_a_00379",
+    "Brian A. Nosek, Mahzarin R. Banaji, and Anthony G. Greenwald. 2002. Harvesting implicit group attitudes and beliefs from a demonstration web site. Group Dynamics: Theory, Research, and Practice 6, 1 (2002), 101–115. DOI:https://doi.org/10.1037/1089-2699.6.1.101",
+    "Sarah Schröder, Alexander Schulz, Philip Kenneweg, Robert Feldhans, Fabian Hinder, and Barbara Hammer. 2021. Evaluating metrics for bias in word embeddings. Retrieved from https://arxiv.org/abs/2111.07864",
+    "Yijun Xiao and William Yang Wang. 2018. Quantifying uncertainties in natural language processing tasks. CoRR abs/1811.07253, (2018). Retrieved from http://arxiv.org/abs/1811.07253"
+  ]
+}

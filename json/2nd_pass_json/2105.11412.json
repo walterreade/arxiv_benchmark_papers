@@ -1,0 +1,45 @@
+{
+  "filename": "2105.11412.pdf",
+  "title": "Reproducibility Report: Contextualizing Hate Speech Classifiers with Post-hoc Explanation",
+  "arxiv_url": "https://arxiv.org/pdf/2105.11412",
+  "benchmark_measurement": "The benchmark measured the over-sensitivity and bias of hate speech classifiers towards religious group identifiers. It evaluated whether models incorrectly flagged content as hate speech merely due to the presence of terms like 'muslim', 'jews', or 'islam', and assessed methods designed to mitigate this by promoting contextual understanding.",
+  "religious_groups": [
+    "Islam",
+    "Judaism"
+  ],
+  "models_tested": [
+    "BERT",
+    "BERT+WR",
+    "BERT+OC",
+    "BERT+SOC"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "The paper found that hate speech models like BERT are often biased and overly sensitive to religious identifiers such as 'muslim', 'jews', and 'islam', leading to false positives. It reproduced experiments showing that regularization techniques (specifically BERT+SOC) can reduce the models' reliance on these specific words, forcing them to consider the surrounding context. This mitigation technique was shown to decrease the importance score of religious identifiers in the model's decision-making process, although the reproducibility report noted some discrepancies with the original paper's results on specific datasets.",
+  "references": [
+    "Brendan Kennedy, Xisen Jin, Aida Mostafazadeh Davani, Morteza Dehghani, Xiang Ren. 2020. Contextualizing hate speech classifiers with post-hoc explanation. arXiv preprint arXiv:2005.02439.",
+    "Jeremy Waldron. 2012. The harm in hate speech. Harvard University Press.",
+    "Katharine Gelber and Luke McNamara. 2016. Evidencing the harms of hate speech. Social Identities, 22(3):324-341.",
+    "Mainack Mondal, Leandro Araújo Silva, and Fabrício Benevenuto. 2017. A measurement study of hate speech in social media. In Proceedings of the 28th ACM Conference on Hypertext and Social Media, pages 85–94. ACM.",
+    "Leandro Silva, Mainack Mondal, Denzil Correa, Fabrício Benevenuto, and Ingmar Weber. 2016. Analyzing the targets of hate in online social media. In Tenth International AAAI Conference on Web and Social Media.",
+    "Alexandra Olteanu, Carlos Castillo, Jeremy Boy, and Kush R Varshney. 2018. The effect of extremist violence on hateful speech online. In Twelfth International AAAI Conference on Web and Social Media.",
+    "Ona de Gibert, Naiara Perez, Aitor García Pablos, and Montse Cuadros. 2018. Hate speech dataset from a white supremacy forum. In Proceedings of the 2nd Workshop on Abusive Language Online (ALW2), pages 11–20.",
+    "Michael Wiegand, Josef Ruppenhofer, and Thomas Kleinbauer. 2019. Detection of abusive language: the problem of biased datasets. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 602-608.",
+    "Lucas Dixon, John Li, Jeffrey Sorensen, Nithum Thain, and Lucy Vasserman. 2018. Measuring and mitigating unintended bias in text classification. In Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society, pages 67-73. ACM.",
+    "Timothy Niven and Hung-Yu Kao. 2019. Probing neural network comprehension of natural language arguments. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 4658–4664.",
+    "Xisen Jin, Zhongyu Wei, Junyi Du, Xiangyang Xue, and Xiang Ren. 2020. Towards hierarchical importance attribution: Explaining compositional semantics for neural sequence models. In International Conference on Learning Representations.",
+    "Brendan Kennedy, Mohammad Atari, Aida M Davani, Leigh Yeh, Ali Omrani, Yehsong Kim, Kris Coombs Jr., Shreya Havaldar, Gwenyth Portillo-Wightman, Elaine Gonzalez, Joe Hoover, Aida Azatian, Gabriel Cardenas, Alyzeh Hussain, Austin Lara, Adam Omary, Christina Park, Xin Wang, Clarisa Wijaya, Yong Zhang, Beth Meyerowitz, and Morteza Dehghani. 2020. The gab hate corpus: A collection of 27k posts annotated for hate speech.",
+    "Savvas Zannettou, Barry Bradlyn, Emiliano De Cristofaro, Haewoon Kwak, Michael Sirivianos, Gianluca Stringini, and Jeremy Blackburn. 2018. What is gab: A bastion of free speech or an alt-right echo chamber. In Companion Proceedings of the The Web Conference 2018, pages 1007-1014. International World Wide Web Conferences Steering Committee.",
+    "Lucas Lima, Julio CS Reis, Philipe Melo, Fabricio Murai, Leandro Araujo, Pantelis Vikatos, and Fabricio Benevenuto. 2018. Inside the right-leaning echo chambers: Characterizing gab, an unmoderated social system. In 2018 IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining (ASONAM), pages 515–522. IEEE.",
+    "Andrew Anthony. 2016. Inside the hate-filled echo chamber of racism and conspiracy theories. The guardian, 18.",
+    "Thor Benson. 2016. Inside the twitter for racists: Gab the site where milo yiannopoulos goes to troll now.",
+    "Priscilla Marie Meddaugh and Jack Kay. 2009. Hate speech or \"reasonable racism?\" the other in stormfront. Journal of Mass Media Ethics, 24(4):251-268."
+  ]
+}
