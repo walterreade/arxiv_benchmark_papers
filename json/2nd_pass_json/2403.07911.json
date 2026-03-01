@@ -2,66 +2,23 @@
   "filename": "2403.07911.pdf",
   "title": "Standing on FURM ground - A framework for evaluating Fair, Useful, and Reliable AI Models in healthcare systems",
   "arxiv_url": "https://arxiv.org/pdf/2403.07911",
-  "benchmark_measurement": "The framework presented in the paper did not measure any aspects of faith or religion. It is a framework (FURM) designed to evaluate AI models in healthcare settings on the dimensions of fairness, usefulness, and reliability.",
-  "religious_groups": [],
-  "models_tested": [
-    "AI model for Screening for Peripheral Arterial Disease (PAD)",
-    "AI model for Estimating Coronary Artery Calcium (CAC) from Computed Tomography (CT) Scans",
-    "AI model for Avoiding Unplanned Emergency Department (ED) Visits by Oncology Patients",
-    "AI model for Screening for ST-elevation Myocardial Infarction (STEMI) in the ED",
-    "AI model for Improving Documentation and Coding for Inpatient Care",
-    "AI model for Identifying Hospital-Acquired Sepsis"
+  "bias_targets": [
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluating the representativeness of training and deployment data (e.g., identifying majority-white populations) and stratifying model input features, output probabilities, and predicted labels by race and ethnicity to track disparate impacts and ensure adequate power to detect harms in minoritized groups."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Assessing the model's goal and ability to decrease missed diagnoses in non-male patients, and stratifying model outputs and performance tracking by sex."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Stratifying model input features, raw probabilistic outputs, and thresholded predictions by age group during post-deployment monitoring."
+    },
+    {
+      "target": "Socioeconomic/Healthcare access bias",
+      "methodology": "Conducting qualitative ethical reviews to determine if model predictions (e.g., trained on emergency department presentations) disproportionately direct clinical resources to patients with a higher baseline propensity to seek care, thereby exacerbating health disparities."
+    }
   ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "other"
-  ],
-  "religion_component": "none",
-  "base_benchmarks": [
-    "Key Decision Points developed by the Health AI partnership",
-    "Coalition for Health AI's Blueprint for Trustworthy AI Implementation Guidance and Assurance for Healthcare",
-    "Duke Algorithm-Based Clinical Decision Support (ABCDS) Oversight framework"
-  ],
-  "continuous_testing": true,
-  "findings": "The paper does not address religion, faith, or religious groups, and therefore has no findings on this topic.",
-  "references": [
-    "Huang F, Blaschke S, Lucas H. Beyond pilotitis: taking digital health interventions to the national level in China and Uganda. Global Health 2017;13(1):49.",
-    "The White House. Executive order on the safe, secure, and trustworthy development and use of artificial intelligence [Internet]. The White House. 2023 [cited 2024 Jan 29];Available from: https://www.whitehouse.gov/briefing-room/presidential-actions/2023/10/30/executive-order-on-the-safe-secure-and-trustworthy-development-and-use-of-artificial-intelligence/",
-    "The White House. Remarks by president Biden and vice president Harris on the administration's commitment to advancing the safe, secure, and trustworthy development and use of artificial intelligence [Internet]. The White House. 2023 [cited 2024 Jan 29];Available from: https://www.whitehouse.gov/briefing-room/speeches-remarks/2023/10/30/remarks-by-president-biden-and-vice-president-harris-on-the-administrations-commitment-to-advancing-the-safe-secure-and-trustworthy-development-and-use-of-artificial-intelligence/",
-    "Mello MM, Shah NH, Char DS. President Biden's executive order on artificial intelligence-implications for health care organizations. JAMA [Internet] 2023;Available from: http://dx.doi.org/10.1001/jama.2023.25051",
-    "Shah NH, Halamka JD, Saria S, et al. A Nationwide Network of Health Al Assurance Laboratories. Journal of the American medical 2024;331(3):245–9.",
-    "Lu JH, Callahan A, Patel BS, et al. Assessment of adherence to reporting guidelines by commonly used clinical prediction models from a single vendor. JAMA Netw Open 2022;5(8):e2227779.",
-    "de Hond AAH, Leeuwenberg AM, Hooft L, et al. Guidelines and quality criteria for artificial intelligence-based prediction models in healthcare: a scoping review. NPJ Digit Med [Internet] 2022;5(1). Available from: http://dx.doi.org/10.1038/s41746-021-00549-7",
-    "Marwaha JS, Kvedar JC. Crossing the chasm from model performance to clinical impact: the need to improve implementation and evaluation of AI. NPJ Digit Med 2022;5(1):25.",
-    "Wornow M, Gyang Ross E, Callahan A, Shah NH. APLUS: A Python library for usefulness simulations of machine learning models in healthcare. J Biomed Inform 2023;139:104319.",
-    "Baker SG, Cook NR, Vickers A, Kramer BS. Using relative utility curves to evaluate risk prediction. J R Stat Soc Ser A Stat Soc 2009;172(4):729–48.",
-    "Ko M, Chen E, Agrawal A, et al. Improving hospital readmission prediction using individualized utility analysis. J Biomed Inform 2021;119(103826):103826.",
-    "Singh K, Shah NH, Vickers AJ. Assessing the net benefit of machine learning models in the presence of resource constraints. J Am Med Inform Assoc 2023;30(4):668-73.",
-    "Char DS, Abràmoff MD, Feudtner C. Identifying ethical considerations for machine learning healthcare applications. Am J Bioeth 2020;20(11):7–17.",
-    "Cagliero D, Deuitch N, Shah N, Feudtner C, Char D. A framework to identify ethical concerns with ML-guided care workflows: a case study of mortality prediction to guide advance care planning. J Am Med Inform Assoc 2023;30(5):819–27.",
-    "Defense Innovation Board. Al Principles: Recommendations on the ethical use of artificial intelligence by the Department of Defense. Department of Defense; 2019.",
-    "Abràmoff MD, Tobey D, Char DS. Lessons learned about autonomous Al: Finding a safe, efficacious, and ethical path through the development process. Am J Ophthalmol 2020;214:134-42.",
-    "Abràmoff MD, Cunningham B, Patel B, et al. Foundational considerations for artificial intelligence using ophthalmic images. Ophthalmology 2022;129(2):e14–32.",
-    "Price WN II, Gerke S, Cohen IG. Potential liability for physicians using artificial intelligence. JAMA 2019;322(18):1765.",
-    "Rajkomar A, Hardt M, Howell MD, Corrado G, Chin MH. Ensuring fairness in machine learning to advance health equity. Ann Intern Med 2018;169(12):866.",
-    "Funer F. The deception of certainty: How non-interpretable Machine Learning outcomes challenge the epistemic authority of physicians. A deliberative-relational approach. Med Health Care Philos 2022;25(2):167–78.",
-    "Challen R, Denny J, Pitt M, Gompels L, Edwards T, Tsaneva-Atanasova K. Artificial intelligence, bias and clinical safety. BMJ Qual Saf 2019;28(3):231–7.",
-    "Vayena E, Blasimme A. Health research with big data: Time for systemic oversight. J Law Med Ethics 2018;46(1):119–29.",
-    "Watson J, Hutyra CA, Clancy SM, et al. Overcoming barriers to the adoption and implementation of predictive modeling and machine learning in clinical care: what can we learn from US academic medical centers? JAMIA Open 2020;3(2):167–72.",
-    "D'Hondt E, Ashby TJ, Chakroun I, Koninckx T, Wuyts R. Identifying and evaluating barriers for the implementation of machine learning in the intensive care unit. Commun Med (Lond) [Internet] 2022;2(1). Available from: http://dx.doi.org/10.1038/s43856-022-00225-1",
-    "Bauer MS, Kirchner J. Implementation science: What is it and why should I care? Psychiatry Res 2020;283(112376):112376.",
-    "Leeman J, Birken SA, Powell BJ, Rohweder C, Shea CM. Beyond “implementation strategies\": classifying the full range of strategies used in implementation science and practice. Implement Sci [Internet] 2017;12(1). Available from: http://dx.doi.org/10.1186/s13012-017-0657-x",
-    "Davis SE, Lasko TA, Chen G, Siew ED, Matheny ME. Calibration drift in regression and machine learning models for acute kidney injury. J Am Med Inform Assoc 2017;24(6):1052-61.",
-    "Davis SE, Walsh CG, Matheny ME. Open questions and research gaps for monitoring and updating Al-enabled tools in clinical settings. Front Digit Health 2022;4:958284.",
-    "Tonekaboni S, Morgenshtern G, Assadi A, et al. How to validate Machine Learning Models Prior to Deployment: Silent trial protocol for evaluation of real-time models at ICU. In: Flores G, Chen GH, Pollard T, Ho JC, Naumann T, editors. Proceedings of the Conference on Health, Inference, and Learning. PMLR; 07--08 Apr 2022. p. 169–82.",
-    "Nong P, Hamasha R, Singh K, Adler-Milstein J, Platt J. How academic medical centers govern Al prediction tools in the context of uncertainty and evolving regulation. NEJM AI [Internet] 2024;Available from: http://dx.doi.org/10.1056/aip2300048",
-    "Dongarra J, Luszczek P, Feautrier P, et al. Little's Law. In: Encyclopedia of Parallel Computing. Boston, MA: Springer US; 2011. p. 1038–41.",
-    "Key decision points [Internet]. Health Al Partnership. 2023 [cited 2024 Jan 29];Available from: https://healthaipartnership.org/key-decisions-in-adopting-an-ai-solution",
-    "Kim JY, Boag W, Gulamali F, et al. Organizational governance of emerging technologies: Al adoption in healthcare [Internet]. arXiv [cs.Al]. 2023 [cited 2024 Jan 29]; Available from: http://arxiv.org/abs/2304.13081",
-    "Coalition for Health Al. Blueprint for Trustworthy Al Implementation Guidance and Assurance for Healthcare [Internet]. 2023;Available from: https://www.coalitionforhealthai.org/papers/blueprint-for-trustworthy-ai_V1.0.pdf",
-    "Bedoya AD, Economou-Zavlanos NJ, Goldstein BA, et al. A framework for the oversight and local deployment of safe and high-quality prediction models. J Am Med Inform Assoc 2022;29(9):1631-6.",
-    "Sendak MP, Balu S, Schulman KA. Barriers to achieving economies of scale in analysis of EHR data. A cautionary tale. Appl Clin Inform 2017;8(3):826–31."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

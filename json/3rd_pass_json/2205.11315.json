@@ -2,43 +2,89 @@
   "filename": "2205.11315.pdf",
   "title": "KOLD: Korean Offensive Language Dataset",
   "arxiv_url": "https://arxiv.org/pdf/2205.11315",
-  "bias_targets": [
-    {
-      "target": "Gender bias",
-      "methodology": "Annotating offensive Korean comments targeting gender groups (e.g., Women, Men, Feminists) and evaluating the F1 performance of sequence and token classification models (BERT, RoBERTa) on detecting these target categories and offensive spans."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Annotating offensive Korean comments targeting sexual minorities (e.g., LGBTQ+) and evaluating fine-tuned pre-trained language models for their ability to classify this target group and identify relevant text spans."
-    },
-    {
-      "target": "Racial, Ethnic, and Nationality bias",
-      "methodology": "Categorizing hate speech targets by race, ethnicity, and nationality (e.g., Chinese, Korean-Chinese, Black, White, Southeast Asian) and measuring the classification and span prediction performance of Korean language models."
-    },
-    {
-      "target": "Political bias",
-      "methodology": "Identifying offensive language aimed at political affiliations (e.g., Progressive, Conservative) and benchmarking the target classification accuracy of contextual language models."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Evaluating models on their ability to detect offensive language targeted at religious identities (e.g., Muslim, Christian, Catholic, Buddhism) using a hierarchically annotated dataset."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Measuring the capability of multi-task and single-task learning models in detecting agism-related offensive comments within the Korean Offensive Language Dataset."
-    },
-    {
-      "target": "Socioeconomic bias",
-      "methodology": "Annotating comments for offensive language targeting individuals based on socioeconomic status and testing language model detection performance."
-    },
-    {
-      "target": "Disability and Disease bias",
-      "methodology": "Annotating offensive language targeting individuals based on disabilities or diseases (categorized under Miscellaneous target groups) to evaluate context-aware target detection models."
-    },
-    {
-      "target": "Physical appearance bias",
-      "methodology": "Evaluating text classification models on their capability to detect offensive language targeting physical appearance as defined in the dataset's detailed target group taxonomy."
-    }
+  "religious_groups": [
+    "Islam",
+    "Christianity",
+    "Catholicism",
+    "Buddhism",
+    "Judaism"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "Korean BERT (BERTbase)",
+    "Korean RoBERTa (ROBERTabase, ROBERTalarge)",
+    "MUDES (multilingual token classification model)"
+  ],
+  "languages_evaluated": [
+    "Korean",
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "OLID (Offensive Language Identification Dataset)",
+    "HateXplain"
+  ],
+  "continuous_testing": false,
+  "findings": "Religion is a significant attribute for targeted offensive language in Korean online comments, accounting for 13.42% of group-targeted offenses in the KOLD dataset. The most frequently targeted religious groups were Muslim, Christian, and Catholic. The distribution of targeted religious groups differs from English datasets; for example, 'Christian' is a top target in the Korean dataset but not in the English HateXplain dataset, while 'Jewish' is a top target in HateXplain but not in KOLD.",
+  "references": [
+    "Hala Al Kuwatly, Maximilian Wich, and Georg Groh. 2020. Identifying and measuring annotator bias based on annotators' demographic characteristics. In Proceedings of the Fourth Workshop on Online Abuse and Harms, pages 184–190, Online. Association for Computational Linguistics.",
+    "Nuha Albadi, Maram Kurdi, and Shivakant Mishra. 2018. Are they our brothers? analysis and detection of religious hate speech in the arabic twittersphere. In 2018 IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining (ASONAM), pages 69–76. IEEE.",
+    "Jisun An, Haewoon Kwak, Claire Seungeun Lee, Bogang Jun, and Yong-Yeol Ahn. 2021. Predicting anti-Asian hateful users on Twitter during COVID-19. In Findings of the Association for Computational Linguistics: EMNLP 2021, pages 4655-4666, Punta Cana, Dominican Republic. Association for Computational Linguistics.",
+    "Solon Barocas, Kate Crawford, Aaron Shapiro, and Hanna Wallach. 2017. The problem with bias: Allocative versus representational harms in machine learning. In 9th Annual Conference of the Special Interest Group for Computing, Information and Society.",
+    "Ying Chen, Yilu Zhou, Sencun Zhu, and Heng Xu. 2012. Detecting offensive language in social media to protect adolescent online safety. In 2012 International Conference on Privacy, Security, Risk and Trust and 2012 International Confernece on Social Computing, pages 71-80.",
+    "Patricia Chiril, Véronique Moriceau, Farah Benamara, Alda Mari, Gloria Origgi, and Marlène Coulomb-Gully. 2020. An annotated corpus for sexism detection in French tweets. In Proceedings of the 12th Language Resources and Evaluation Conference, pages 1397-1403, Marseille, France. European Language Resources Association.",
+    "Çağrı Çöltekin. 2020. A corpus of turkish offensive language on social media. In Proceedings of the 12th language resources and evaluation conference, pages 6174-6184.",
+    "Giovanni Da San Martino, Seunghak Yu, Alberto Barrón-Cedeño, Rostislav Petrov, and Preslav Nakov. 2019. Fine-grained analysis of propaganda in news article. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 5636-5646, Hong Kong, China. Association for Computational Linguistics.",
+    "Thomas Davidson, Debasmita Bhattacharya, and Ingmar Weber. 2019. Racial bias in hate speech and abusive language detection datasets. In Proceedings of the Third Workshop on Abusive Language Online, pages 25-35, Florence, Italy. Association for Computational Linguistics.",
+    "Thomas Davidson, Dana Warmsley, Michael Macy, and Ingmar Weber. 2017. Automated hate speech detection and the problem of offensive language. In Proceedings of the International AAAI Conference on Web and Social Media, volume 11, pages 512-515.",
+    "Ona de Gibert, Naiara Perez, Aitor García-Pablos, and Montse Cuadros. 2018. Hate speech dataset from a white supremacy forum. In Proceedings of the 2nd Workshop on Abusive Language Online (ALW2), pages 11-20, Brussels, Belgium. Association for Computational Linguistics.",
+    "Jay DeYoung, Sarthak Jain, Nazneen Fatema Rajani, Eric Lehman, Caiming Xiong, Richard Socher, and Byron C. Wallace. 2020. ERASER: A benchmark to evaluate rationalized NLP models. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 4443-4458, Online. Association for Computational Linguistics.",
+    "Lucas Dixon, John Li, Jeffrey Sorensen, Nithum Thain, and Lucy Vasserman. 2018. Measuring and mitigating unintended bias in text classification. In Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society, pages 67-73.",
+    "Mai ElSherief, Caleb Ziems, David Muchlinski, Vaishnavi Anupindi, Jordyn Seybolt, Munmun De Choudhury, and Diyi Yang. 2021. Latent hatred: A benchmark for understanding implicit hate speech. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 345-363, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics.",
+    "Paula Fortuna, João Rocha da Silva, Juan Soler-Company, Leo Wanner, and Sérgio Nunes. 2019. A hierarchically-labeled Portuguese hate speech dataset. In Proceedings of the Third Workshop on Abusive Language Online, pages 94-104, Florence, Italy. Association for Computational Linguistics.",
+    "Lei Gao and Ruihong Huang. 2017. Detecting online hate speech using context aware models. In Proceedings of the International Conference Recent Advances in Natural Language Processing, RANLP 2017, pages 260-266, Varna, Bulgaria. INCOMA Ltd.",
+    "Tommi Gröndahl, Luca Pajola, Mika Juuti, Mauro Conti, and N Asokan. 2018. All you need is\" love\" evading hate speech detection. In Proceedings of the 11th ACM workshop on artificial intelligence and security, pages 2–12.",
+    "Thomas Hartvigsen, Saadia Gabriel, Hamid Palangi, Maarten Sap, Dipankar Ray, and Ece Kamar. 2022. ToxiGen: A large-scale machine-generated dataset for adversarial and implicit hate speech detection. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 3309-3326, Dublin, Ireland. Association for Computational Linguistics.",
+    "Hai Hu, Kyle Richardson, Liang Xu, Lu Li, Sandra Kübler, and Lawrence Moss. 2020. OCNLI: Original Chinese Natural Language Inference. In Findings of the Association for Computational Linguistics: EMNLP 2020, pages 3512-3526, Online. Association for Computational Linguistics.",
+    "Hai Hu, He Zhou, Zuoyu Tian, Yiwen Zhang, Yina Patterson, Yanting Li, Yixin Nie, and Kyle Richardson. 2021. Investigating transfer learning in multilingual pre-trained language models through Chinese natural language inference. In Findings of the Association for Computational Linguistics: ACLIJCNLP 2021, pages 3770–3785, Online. Association for Computational Linguistics.",
+    "Pratik Joshi, Sebastin Santy, Amar Budhiraja, Kalika Bali, and Monojit Choudhury. 2020. The state and fate of linguistic diversity and inclusion in the NLP world. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 6282-6293, Online. Association for Computational Linguistics.",
+    "Mladen Karan and Jan Šnajder. 2018. Cross-domain detection of abusive language online. In Proceedings of the 2nd Workshop on Abusive Language Online (ALW2), pages 132–137, Brussels, Belgium. Association for Computational Linguistics.",
+    "Brendan Kennedy, Xisen Jin, Aida Mostafazadeh Davani, Morteza Dehghani, and Xiang Ren. 2020. Contextualizing hate speech classifiers with post-hoc explanation. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5435-5442, Online. Association for Computational Linguistics.",
+    "Moshe Koppel and Noam Ordan. 2011. Translationese and its dialects. In Proceedings of the 49th annual meeting of the association for computational linguistics: Human language technologies, pages 1318-1326.",
+    "Jenny Lee, Jae-Eun Jon, and Kiyong Byun. 2017. Neoracism and neo-nationalism within east asia: The experiences of international students in south korea. Journal of Studies in International Education, 21(2):136-155.",
+    "Binny Mathew, Punyajoy Saha, Seid Muhie Yimam, Chris Biemann, Pawan Goyal, and Animesh Mukherjee. 2021. Hatexplain: A benchmark dataset for explainable hate speech detection. Proceedings of the AAAI Conference on Artificial Intelligence, 35(17):14867-14875.",
+    "Ioannis Mollas, Zoe Chrysopoulou, Stamatis Karlos, and Grigorios Tsoumakas. 2022. Ethos: a multilabel hate speech detection dataset. Complex & Intelligent Systems.",
+    "Jihyung Moon, Won Ik Cho, and Junbum Lee. 2020. BEEP! Korean corpus of online news comments for toxic speech detection. In Proceedings of the Eighth International Workshop on Natural Language Processing for Social Media, pages 25–31, Online. Association for Computational Linguistics.",
+    "Hamdy Mubarak, Kareem Darwish, and Walid Magdy. 2017. Abusive language detection on Arabic social media. In Proceedings of the First Workshop on Abusive Language Online, pages 52–56, Vancouver, BC, Canada. Association for Computational Linguistics.",
+    "Hamdy Mubarak, Ammar Rashed, Kareem Darwish, Younes Samih, and Ahmed Abdelali. 2021. Arabic offensive language on Twitter: Analysis and experiments. In Proceedings of the Sixth Arabic Natural Language Processing Workshop, pages 126-135, Kyiv, Ukraine (Virtual). Association for Computational Linguistics.",
+    "Debora Nozza. 2021. Exposing the limits of zeroshot cross-lingual hate speech detection. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 2: Short Papers), pages 907–914.",
+    "Nedjma Ousidhoum, Zizheng Lin, Hongming Zhang, Yangqiu Song, and Dit-Yan Yeung. 2019. Multilingual and multi-aspect hate speech analysis. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 4675-4684, Hong Kong, China. Association for Computational Linguistics.",
+    "Sungjoon Park, Jihyung Moon, Sungdong Kim, Won Ik Cho, Ji Yoon Han, Jangwon Park, Chisung Song, Junseong Kim, Youngsook Song, Taehwan Oh, Joohong Lee, Juhyun Oh, Sungwon Lyu, Younghoon Jeong, Inkwon Lee, Sangwoo Seo, Dongjun Lee, Hyunwoo Kim, Myeonghwa Lee, Seongbo Jang, Seungwon Do, Sunkyoung Kim, Kyungtae Lim, Jongwon Lee, Kyumin Park, Jamin Shin, Seonghyun Kim, Lucy Park, Alice Oh, Jung-Woo Ha, and Kyunghyun Cho. 2021. KLUE: Korean language understanding evaluation. In Thirty-fifth Conference on Neural Information Processing Systems Datasets and Benchmarks Track (Round 2).",
+    "John Pavlopoulos, Leo Laugier, Alexandros Xenos, Jeffrey Sorensen, and Ion Androutsopoulos. 2022. From the detection of toxic spans in online discussions to the analysis of toxic-to-civil transfer. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 3721–3734, Dublin, Ireland. Association for Computational Linguistics.",
+    "John Pavlopoulos, Jeffrey Sorensen, Lucas Dixon, Nithum Thain, and Ion Androutsopoulos. 2020. Toxicity detection: Does context really matter? In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 4296-4305, Online. Association for Computational Linguistics.",
+    "John Pavlopoulos, Jeffrey Sorensen, Léo Laugier, and Ion Androutsopoulos. 2021. SemEval-2021 task 5: Toxic spans detection. In Proceedings of the 15th International Workshop on Semantic Evaluation (SemEval-2021), pages 59–69, Online. Association for Computational Linguistics.",
+    "Jing Qian, Hong Wang, Mai ElSherief, and Xifeng Yan. 2021. Lifelong learning of hate speech classification on social media. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 2304-2314, Online. Association for Computational Linguistics.",
+    "Tharindu Ranasinghe and Marcos Zampieri. 2021. MUDES: Multilingual detection of offensive spans. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies: Demonstrations, pages 144–152, Online. Association for Computational Linguistics.",
+    "Ashley Reichelmann, James Hawdon, Matt Costello, John Ryan, Catherine Blaya, Vicente Llorent, Atte Oksanen, Pekka Räsänen, and Izabela Zych. 2020. Hate knows no boundaries: Online hate in six nations. Deviant Behavior, 42:1-12.",
+    "Hammad Rizwan, Muhammad Haroon Shakeel, and Asim Karim. 2020. Hate-speech and offensive language detection in Roman Urdu. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 2512-2522, Online. Association for Computational Linguistics.",
+    "Sara Rosenthal, Pepa Atanasova, Georgi Karadzhov, Marcos Zampieri, and Preslav Nakov. 2021. SOLID: A large-scale semi-supervised dataset for offensive language identification. In Findings of the Association for Computational Linguistics: ACL-IJCNLP 2021, pages 915–928, Online. Association for Computational Linguistics.",
+    "Maarten Sap, Dallas Card, Saadia Gabriel, Yejin Choi, and Noah A. Smith. 2019. The risk of racial bias in hate speech detection. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 1668–1678, Florence, Italy. Association for Computational Linguistics.",
+    "Maarten Sap, Saadia Gabriel, Lianhui Qin, Dan Jurafsky, Noah A. Smith, and Yejin Choi. 2020. Social bias frames: Reasoning about social and power implications of language. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5477-5490, Online. Association for Computational Linguistics.",
+    "Maarten Sap, Swabha Swayamdipta, Laura Vianna, Xuhui Zhou, Yejin Choi, and Noah A. Smith. 2022. Annotators with attitudes: How annotator beliefs and identities bias toxic language detection. In Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 5884-5906, Seattle, United States. Association for Computational Linguistics.",
+    "Nick Seaver. 2015. The nice thing about context is that everyone has it. Media, Culture & Society, 37(7):1101-1109.",
+    "Alexander Shvets, Paula Fortuna, Juan Soler, and Leo Wanner. 2021. Targets and aspects in social media hate speech. In Proceedings of the 5th Workshop on Online Abuse and Harms (WOAH 2021), pages 179-190, Online. Association for Computational Linguistics.",
+    "Bertie Vidgen, Dong Nguyen, Helen Margetts, Patricia Rossini, and Rebekah Tromble. 2021. Introducing CAD: the contextual abuse dataset. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 2289-2303, Online. Association for Computational Linguistics.",
+    "Zeerak Waseem, Thomas Davidson, Dana Warmsley, and Ingmar Weber. 2017. Understanding abuse: A typology of abusive language detection subtasks. In Proceedings of the First Workshop on Abusive Language Online, pages 78–84, Vancouver, BC, Canada. Association for Computational Linguistics.",
+    "Zeerak Waseem and Dirk Hovy. 2016. Hateful symbols or hateful people? predictive features for hate speech detection on twitter. In Proceedings of the NAACL student research workshop, pages 88-93.",
+    "Michael Wiegand, Melanie Siegel, and Josef Ruppenhofer. 2018. Overview of the germeval 2018 shared task on the identification of offensive language.",
+    "Alexandros Xenos, John Pavlopoulos, and Ion Androutsopoulos. 2021. Context sensitivity estimation in toxicity detection. In Proceedings of the 5th Workshop on Online Abuse and Harms (WOAH 2021), pages 140-145, Online. Association for Computational Linguistics.",
+    "Omar Zaidan, Jason Eisner, and Christine Piatko. 2007. Using \"annotator rationales\" to improve machine learning for text categorization. In Human language technologies 2007: The conference of the North American chapter of the association for computational linguistics; proceedings of the main conference, pages 260-267.",
+    "Marcos Zampieri, Shervin Malmasi, Preslav Nakov, Sara Rosenthal, Noura Farra, and Ritesh Kumar. 2019. Predicting the type and target of offensive posts in social media. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 1415–1420, Minneapolis, Minnesota. Association for Computational Linguistics.",
+    "Marcos Zampieri, Preslav Nakov, Sara Rosenthal, Pepa Atanasova, Georgi Karadzhov, Hamdy Mubarak, Leon Derczynski, Zeses Pitenis, and Çağrı Çöltekin. 2020. SemEval-2020 task 12: Multilingual offensive language identification in social media (Offen-sEval 2020). In Proceedings of the Fourteenth Workshop on Semantic Evaluation, pages 1425-1447, Barcelona (online). International Committee for Computational Linguistics.",
+    "Philine Zeinert, Nanna Inie, and Leon Derczynski. 2021. Annotating online misogyny. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 3181–3197, Online. Association for Computational Linguistics.",
+    "Ziqi Zhang and Lei Luo. 2019. Hate speech detection: A solved problem? the challenging case of long tail on twitter. Semantic Web, 10(5):925–945."
+  ],
+  "measurement_description": "Detection of offensive language targeting specific religious groups, including identifying the comment as offensive, the target as a group, and the specific religious group being targeted (e.g., Muslim, Christian)."
 }

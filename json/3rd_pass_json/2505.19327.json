@@ -1,0 +1,61 @@
+{
+  "filename": "2505.19327.pdf",
+  "title": "Paying Alignment Tax with Contrastive Learning",
+  "arxiv_url": "https://arxiv.org/pdf/2505.19327",
+  "religious_groups": [
+    "Not specified, but used as a general category for debiasing"
+  ],
+  "models_tested": [
+    "GPT2",
+    "Phi2",
+    "Llama2-7B"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "TruthfulQA",
+    "RealToxicityPrompts",
+    "MMLU-Pro",
+    "Reddit TL;DR summarization"
+  ],
+  "continuous_testing": false,
+  "findings": "Debiasing methods targeting religion, specifically Counterfactual Data Augmentation (CDA), often create a trade-off, or 'alignment tax'. While these methods can reduce the generation of toxic content, they frequently degrade model performance in other areas. For example, applying CDA for religion consistently decreased faithfulness in a summarization task across all tested models (GPT2, Phi2, Llama2-7B). Furthermore, analysis of the TruthfulQA benchmark showed that after debiasing interventions, models exhibited a decrease in multiple-choice accuracy on questions related to religion.",
+  "references": [
+    "Swapnaja Achintalwar, Adriana Alvarado Garcia, Ateret Anaby-Tavor, Ioana Baldini, Sara E Berger, Bish- wáranjan Bhattacharjee, Djallel Bouneffouf, Subhajit Chaudhury, Pin-Yu Chen, Lamogha Chiazor, et al. 2024. Detectors for safe and reliable llms: Imple- mentations, uses, and limitations. arXiv preprint arXiv:2403.06009.",
+    "Shuyang Cao and Lu Wang. 2021. CLIFF: Contrastive learning for improving faithfulness and factuality in abstractive summarization. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 6633–6649, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics.",
+    "Emily Dinan, Angela Fan, Adina Williams, Jack Ur- banek, Douwe Kiela, and Jason Weston. 2020. Queens are powerful too: Mitigating gender bias in dialogue generation. In Proceedings of the 2020 Con- ference on Empirical Methods in Natural Language Processing (EMNLP), pages 8173–8188, Online. As- sociation for Computational Linguistics.",
+    "Samuel Gehman, Suchin Gururangan, Maarten Sap, Yejin Choi, and Noah A. Smith. 2020. RealToxi- cityPrompts: Evaluating neural toxic degeneration in language models. In Findings of the Association for Computational Linguistics: EMNLP 2020, pages 3356–3369, Online. Association for Computational Linguistics.",
+    "Suriya Gunasekar, Yi Zhang, Jyoti Aneja, Caio César Teodoro Mendes, Allie Del Giorno, Sivakanth Gopi, Mojan Javaheripi, Piero Kauffmann, Gustavo de Rosa, Olli Saarikivi, et al. 2023. Textbooks are all you need. arXiv preprint arXiv:2306.11644.",
+    "Dan Hendrycks, Collin Burns, Steven Basart, Andy Zou, Mantas Mazeika, Dawn Song, and Jacob Steinhardt. 2021. Measuring massive multitask language under- standing. In International Conference on Learning Representations.",
+    "Dan Hendrycks and Kevin Gimpel. 2016. Gaus- sian error linear units (gelus). arXiv preprint arXiv:1606.08415.",
+    "Alkis Koudounas, Flavio Giobergia, Eliana Pastor, and Elena Baralis. 2024. A contrastive learning ap- proach to mitigate bias in speech models. CoRR, abs/2406.14686.",
+    "Yingji Li, Mengnan Du, Xin Wang, and Ying Wang. 2023. Prompt tuning pushes farther, contrastive learn- ing pulls closer: A two-stage approach to mitigate so- cial biases. In Proceedings of the 61st Annual Meet- ing of the Association for Computational Linguis- tics (Volume 1: Long Papers), pages 14254–14267, Toronto, Canada. Association for Computational Lin- guistics.",
+    "Paul Pu Liang, Irene Mengze Li, Emily Zheng, Yao Chong Lim, Ruslan Salakhutdinov, and Louis- Philippe Morency. 2020. Towards debiasing sentence representations. In Proceedings of the 58th Annual Meeting of the Association for Computational Lin- guistics, pages 5502–5515, Online. Association for Computational Linguistics.",
+    "Chin-Yew Lin. 2004. ROUGE: A package for auto- matic evaluation of summaries. In Text Summariza- tion Branches Out, pages 74–81, Barcelona, Spain. Association for Computational Linguistics.",
+    "Stephanie Lin, Jacob Hilton, and Owain Evans. 2022. TruthfulQA: Measuring how models mimic human falsehoods. In Proceedings of the 60th Annual Meet- ing of the Association for Computational Linguistics (Volume 1: Long Papers), pages 3214–3252, Dublin, Ireland. Association for Computational Linguistics.",
+    "Yong Lin, Hangyu Lin, Wei Xiong, Shizhe Diao, Jian- meng Liu, Jipeng Zhang, Rui Pan, Haoxiang Wang, Wenbin Hu, Hanning Zhang, Hanze Dong, Renjie Pi, Han Zhao, Nan Jiang, Heng Ji, Yuan Yao, and Tong Zhang. 2024. Mitigating the alignment tax of RLHF. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 580–606, Miami, Florida, USA. Association for Computational Linguistics.",
+    "Jonathan Mallinson, Rico Sennrich, and Mirella Lapata. 2017. Paraphrasing revisited with neural machine translation. In Proceedings of the 15th Conference of the European Chapter of the Association for Compu- tational Linguistics: Volume 1, Long Papers, pages 881–893, Valencia, Spain. Association for Computa- tional Linguistics.",
+    "Nicholas Meade, Elinor Poole-Dayan, and Siva Reddy. 2022. An empirical survey of the effectiveness of debiasing techniques for pre-trained language models. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 1878–1898, Dublin, Ireland. Association for Computational Linguistics.",
+    "Robert Morabito, Jad Kabbara, and Ali Emami. 2023. Debiasing should be good and bad: Measuring the consistency of debiasing techniques in language mod- els. In Findings of the Association for Computational Linguistics: ACL 2023, pages 4581–4597, Toronto, Canada. Association for Computational Linguistics.",
+    "Kishore Papineni, Salim Roukos, Todd Ward, and Wei- Jing Zhu. 2002. Bleu: a method for automatic evalu- ation of machine translation. In Proceedings of the 40th Annual Meeting of the Association for Compu- tational Linguistics, pages 311–318, Philadelphia, Pennsylvania, USA. Association for Computational Linguistics.",
+    "Kyungmin Park, Sihyun Oh, Daehyun Kim, and Juae Kim. 2024. Contrastive learning as a polarizer: Miti- gating gender bias by fair and biased sentences. In Findings of the Association for Computational Lin- guistics: NAACL 2024, pages 4725–4736, Mexico City, Mexico. Association for Computational Lin- guistics.",
+    "Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, Ilya Sutskever, et al. 2019. Language models are unsupervised multitask learners. OpenAI blog, 1(8):9.",
+    "Shauli Ravfogel, Yanai Elazar, Hila Gonen, Michael Twiton, and Yoav Goldberg. 2020. Null it out: Guard- ing protected attributes by iterative nullspace projec- tion. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 7237–7256, Online. Association for Computational Linguistics.",
+    "Timo Schick, Sahana Udupa, and Hinrich Schütze. 2021. Self-diagnosis and self-debiasing: A proposal for re- ducing corpus-based bias in NLP. Transactions of the Association for Computational Linguistics, 9:1408– 1424.",
+    "Jörg Tiedemann, Mikko Aulamo, Daria Bakshandaeva, Michele Boggia, Stig-Arne Grönroos, Tommi Niem- inen, Alessandro Raganato Yves Scherrer, Raul Vazquez, and Sami Virpioja. 2023. Democratizing neural machine translation with OPUS-MT. Lan- guage Resources and Evaluation, (58):713–755.",
+    "Jörg Tiedemann and Santhosh Thottingal. 2020. OPUS- MT Building open translation services for the World. In Proceedings of the 22nd Annual Confer- enec of the European Association for Machine Trans- lation (EAMT), Lisbon, Portugal.",
+    "Hugo Touvron, Louis Martin, Kevin Stone, Peter Al- bert, Amjad Almahairi, Yasmine Babaei, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, et al. 2023. Llama 2: Open founda- tion and fine-tuned chat models. arXiv preprint arXiv:2307.09288.",
+    "Neeraj Varshney, Wenlin Yao, Hongming Zhang, Jian- shu Chen, and Dong Yu. 2023. A stitch in time saves nine: Detecting and mitigating hallucinations of llms by validating low-confidence generation. Preprint, arXiv:2307.03987.",
+    "Michael Völske, Martin Potthast, Shahbaz Syed, and Benno Stein. 2017. TL;DR: Mining Reddit to learn automatic summarization. In Proceedings of the Workshop on New Frontiers in Summarization, pages 59–63, Copenhagen, Denmark. Association for Com- putational Linguistics.",
+    "Yubo Wang, Xueguang Ma, Ge Zhang, Yuansheng Ni, Abhranil Chandra, Shiguang Guo, Weiming Ren, Aaran Arulraj, Xuan He, Ziyan Jiang, Tianle Li, Max Ku, Kai Wang, Alex Zhuang, Rongqi Fan, Xiang Yue, and Wenhu Chen. 2024. MMLU-pro: A more robust and challenging multi-task language under- standing benchmark. In The Thirty-eight Conference on Neural Information Processing Systems Datasets and Benchmarks Track.",
+    "Kellie Webster, Xuezhi Wang, Ian Tenney, Alex Beutel, Emily Pitler, Ellie Pavlick, Jilin Chen, Ed Chi, and Slav Petrov. 2020. Measuring and reducing gendered correlations in pre-trained models. arXiv preprint arXiv:2010.06032.",
+    "Ran Zmigrod, Sabrina J. Mielke, Hanna Wallach, and Ryan Cotterell. 2019. Counterfactual data augmenta- tion for mitigating gender stereotypes in languages with rich morphology. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 1651–1661, Florence, Italy. Asso- ciation for Computational Linguistics."
+  ],
+  "measurement_description": "The benchmark measured the 'alignment tax' associated with debiasing for religion. Specifically, it evaluated how applying Counterfactual Data Augmentation (CDA) to mitigate religious bias impacted model performance on other tasks, such as factual accuracy on the TruthfulQA benchmark (which includes a 'Religion' category) and faithfulness in the Reddit TL;DR summarization task."
+}

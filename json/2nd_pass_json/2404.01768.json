@@ -2,98 +2,23 @@
   "filename": "2404.01768.pdf",
   "title": "Stereotype Detection in LLMs: A Multiclass, Explainable, and Benchmark-Driven Approach",
   "arxiv_url": "https://arxiv.org/pdf/2404.01768",
-  "benchmark_measurement": "The benchmark measures the presence of stereotypes in text across four social dimensions: race, gender, profession, and religion. For religion, it specifically detects stereotypical statements related to various religious groups and concepts, classifying text as 'stereotype', 'neutral', or 'unrelated'.",
-  "religious_groups": [
-    "Islam",
-    "Christianity",
-    "Hinduism"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating LLM text generations from stereotype-eliciting prompts using a fine-tuned multiclass stereotype classifier (Multi-Grain Stereotype detector) to compute a deviation-based bias score compared to unrelated content."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluating LLM text generations from stereotype-eliciting prompts using a fine-tuned multiclass stereotype classifier (Multi-Grain Stereotype detector) to compute a deviation-based bias score compared to unrelated content."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluating LLM text generations from stereotype-eliciting prompts using a fine-tuned multiclass stereotype classifier (Multi-Grain Stereotype detector) to compute a deviation-based bias score compared to unrelated content."
+    },
+    {
+      "target": "Professional bias",
+      "methodology": "Evaluating LLM text generations from stereotype-eliciting prompts using a fine-tuned multiclass stereotype classifier (Multi-Grain Stereotype detector) to compute a deviation-based bias score compared to unrelated content."
+    }
   ],
-  "models_tested": [
-    "GPT-2",
-    "GPT-3.5",
-    "GPT-4",
-    "Distil-BERT",
-    "Distil-RoBERTa",
-    "ALBERT-V2",
-    "BERT",
-    "XLNet",
-    "RoBERTa",
-    "DeBERTa-v3-base"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "StereoSet",
-    "CrowS-Pairs"
-  ],
-  "continuous_testing": false,
-  "findings": "The study found that while newer GPT models show an overall reduction in bias, the improvement for religion-related stereotypes has been less significant compared to race and gender biases. The underlying dataset (MGS) has a notable focus on Christianity and Islam, with terms related to Islam frequently appearing in negative stereotypes. Trigram analysis revealed a focus on Islam-specific concepts (e.g., 'Sharia law', 'terrorist'), suggesting a dataset imbalance that could affect a model's ability to classify stereotypes in other religious contexts. Sentiment analysis confirmed that religious stereotypes in the dataset generally reflect negative sentiments.",
-  "references": [
-    "Arjun Reddy Akula, S. Todorovic, J. Chai, and Song-Chun Zhu. 2019. Natural language interaction with explainable ai models. ArXiv, abs/1903.05720.",
-    "Malik Tiomoko Ali, Romain Couillet, and Hafız Tiomoko. 2020. Large dimensional analysis and improvement of multi task learning. ArXiv, abs/2009.01591.",
-    "Ebtesam Almazrouei, Hamza Alobeidli, Abdulaziz Al-shamsi, Alessandro Cappelli, Ruxandra Cojocaru, Merouane Debbah, Etienne Goffinet, Daniel Hes-low, Julien Launay, Quentin Malartic, Badreddine Noune, Baptiste Pannier, and Guilherme Penedo. 2023. Falcon-40B: an open large language model with state-of-the-art performance.",
-    "Julia Angwin, Jeff Larson, Lauren Kirchner, and Surya Mattu. 2016. Machine bias.",
-    "Vijay Arya et al. 2020. Ai explainability 360: An ex-tensible toolkit for understanding data and machine learning models. J. Mach. Learn. Res., 21:\"130:1-130:6\".",
-    "Eytan Bakshy, Solomon Messing, and Lada A Adamic. 2015. Exposure to ideologically diverse news and opinion on facebook. Science, 348(6239):1130-1132.",
-    "Tolga Bolukbasi, Kai-Wei Chang, James Y Zou, Venkatesh Saligrama, and Adam T Kalai. 2016. Man is to computer programmer as woman is to home-maker? debiasing word embeddings. In Advances in Neural Information Processing Systems.",
-    "Shikha Bordia and Samuel R. Bowman. 2019. Identify-ing and reducing gender bias in word-level language models. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Com-putational Linguistics: Student Research Workshop, pages 7–15, Minneapolis, Minnesota. Association for Computational Linguistics.",
-    "Tom B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan, Rewon Child, Aditya Ramesh, Daniel M. Ziegler, Jeffrey Wu, Clemens Winter, Christopher Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess, Jack Clark, Christopher Berner, Sam Mc-Candlish, Alec Radford, Ilya Sutskever, and Dario Amodei. 2020. Language models are few-shot learn-ers. Preprint, arXiv:2005.14165.",
-    "Aylin Caliskan, Joanna J Bryson, and Arvind Narayanan. 2017. Semantics derived automatically from lan-guage corpora contain human-like biases. Science, 356(6334):183–186.",
-    "Shixiang Chen, Yuxian Hou, Yunfan Cui, Wanxiang Che, Ting Liu, and Xiaojun Yu. 2020. Recall and learn: Fine-tuning deep pretrained language models with less forgetting. In Proceedings of the 2020 Con-ference on Empirical Methods in Natural Language Processing (EMNLP).",
-    "Kimberle Crenshaw. 1989. Demarginalizing the inter-section of race and sex: A black feminist critique of antidiscrimination doctrine, feminist theory and antiracist politics. U. Chi. Legal f., 1989:139.",
-    "Thomas Davidson, Debasmita Bhattacharya, and Ing-mar Weber. 2019. Racial bias in hate speech and abusive language detection datasets. In Proceedings of the Third Workshop on Abusive Language Online, pages 25–35, Florence, Italy. Association for Com-putational Linguistics.",
-    "J. Dessureault and D. Massicotte. 2023. Ai2: a novel explainable machine learning framework using an nlp interface. In Proceedings of the 2023 8th Inter-national Conference on Machine Learning Technolo-gies.",
-    "Jwala Dhamala, Tony Sun, Varun Kumar, Satyapriya Krishna, Yada Pruksachatkun, Kai-Wei Chang, and Rahul Gupta. 2021. Bold: Dataset and metrics for measuring biases in open-ended language generation. In Proceedings of the 2021 ACM Conference on Fair-ness, Accountability, and Transparency, FAccТ '21, page 862–872, New York, NY, USA. Association for Computing Machinery.",
-    "A. Di Vaio, Rosa Palladino, Rohail Hassan, and Oc-tavio Escobar. 2020. Artificial intelligence and busi-ness models in the sustainable development goals perspective: A systematic literature review. Journal of Business Research, 121:283–314.",
-    "Emily Dinan, Angela Fan, Ledell Wu, Jason We-ston, Douwe Kiela, and Adina Williams. 2020. Multi-dimensional gender bias classification. arXiv preprint arXiv:2005.00614.",
-    "Virginia K. Felkner, Ho-Chun Herbert Chang, Eu-gene Jang, and Jonathan May. 2023. Wino-queer: A community-in-the-loop benchmark for anti-lgbtq+ bias in large language models. Preprint, arXiv:2306.15087.",
-    "Common Crawl Foundation. 2021a. The common crawl corpus.",
-    "Wikipedia Foundation. 2021b. Wikipedia: The free encyclopedia.",
-    "Kathleen C. Fraser, Svetlana Kiritchenko, and Isar Ne-jadgholi. 2022. Computational modeling of stereo-type content in text. Frontiers in Artificial Intelli-gence, 5.",
-    "Sarthak Jain and Byron C. Wallace. 2019. Attention is not explanation. Preprint, arXiv:1902.10186.",
-    "Akshita Jha, Aida Davani, Chandan K. Reddy, Shachi Dave, Vinodkumar Prabhakaran, and Sunipa Dev. 2023. Seegull: A stereotype benchmark with broad geo-cultural coverage leveraging generative models. Preprint, arXiv:2305.11840.",
-    "Jianjie Jin, Fuyi Yin, Yuxiang Xu, and Junying Zhang. 2022. Learning a model with the most generality for small-sample problems. In Proceedings of the 2022 5th International Conference on Algorithms, Computing and Artificial Intelligence. ACM.",
-    "JongyoonSong. Jongyoonsong/k-stereoset.",
-    "Percy Liang, Rishi Bommasani, Tony Lee, Dimitris Tsipras, Dilara Soylu, Michihiro Yasunaga, Yian Zhang, Deepak Narayanan, Yuhuai Wu, Ananya Kumar, Benjamin Newman, Binhang Yuan, Bobby Yan, Ce Zhang, Christian Cosgrove, Christopher D. Manning, Christopher Ré, Diana Acosta-Navas, Drew A. Hudson, Eric Zelikman, Esin Durmus, Faisal Ladhak, Frieda Rong, Hongyu Ren, Huaxiu Yao, Jue Wang, Keshav Santhanam, Laurel Orr, Lucia Zheng, Mert Yuksekgonul, Mirac Suzgun, Nathan Kim, Neel Guha, Niladri Chatterji, Omar Khattab, Peter Henderson, Qian Huang, Ryan Chi, Sang Michael Xie, Shibani Santurkar, Surya Gan-guli, Tatsunori Hashimoto, Thomas Icard, Tianyi Zhang, Vishrav Chaudhary, William Wang, Xuechen Li, Yifan Mai, Yuhui Zhang, and Yuta Koreeda. 2022. Holistic evaluation of language models. Preprint, arXiv:2211.09110.",
-    "Tianyu Liu, Yizhe Zhang, Chris Brockett, Yi Mao, Zhifang Sui, Weizhu Chen, and Bill Dolan. 2021a. A token-level reference-free hallucination detection benchmark for free-form text generation. arXiv preprint arXiv:2104.08704.",
-    "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Man-dar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. 2021b. Roberta: A robustly optimized bert pretraining ap-proach. ArXiv, abs/1907.11692.",
-    "Scott M Lundberg and Su-In Lee. 2017. A unified approach to interpreting model predictions. In Ad-vances in Neural Information Processing Systems, pages 4768–4777.",
-    "Liam Magee, Lida Ghahremanlou, Karen Soldatic, and Shanthi Robertson. 2021. Intersectional bias in causal language models. arXiv preprint arXiv:2107.07691.",
-    "Chandler May, Alex Wang, Shikha Bordia, Samuel R. Bowman, and Rachel Rudinger. 2019a. On measur-ing social biases in sentence encoders. In Proceed-ings of the 2019 Conference of the North American Chapter of the Association for Computational Lin-guistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 622–628, Min-neapolis, Minnesota. Association for Computational Linguistics.",
-    "Chandler May, Alex Wang, Shikha Bordia, Samuel R. Bowman, and Rachel Rudinger. 2019b. On measur-ing social biases in sentence encoders. In Proceed-ings of the 2019 Conference of the North American Chapter of the Association for Computational Lin-guistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 622–628, Min-neapolis, Minnesota. Association for Computational Linguistics.",
-    "Ninareh Mehrabi, Fred Morstatter, Nripsuta Saxena, Kristina Lerman, and Aram Galstyan. 2021. A sur-vey on bias and fairness in machine learning. ACM Computing Surveys (CSUR), 54(6):1–35.",
-    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2020. Stereoset: Measuring stereotypical bias in pretrained language models. Preprint, arXiv:2004.09456.",
-    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R. Bowman. 2020. Crows-pairs: A chal-lenge dataset for measuring social biases in masked language models. Preprint, arXiv:2010.00133.",
-    "Gina Neff and Peter Nagy. 2016. Talking to bots: Sym-biotic agency and the case of tay. International Jour-nal of Communication, 10:4915–4931.",
-    "Gandalf Nicolas, Xuechunzi Bai, and Susan T. Fiske. 2022. A spontaneous stereotype content model: Tax-onomy, properties, and prediction. Journal of Per-sonality and Social Psychology.",
-    "R. Nishant, M. Kennedy, and J. Corbett. 2020. Artificial intelligence for sustainability: Challenges, opportu-nities, and a research agenda. Int. J. Inf. Manag., 53:102104.",
-    "OpenAI. 2023. Gpt-4 technical report. Preprint, arXiv:2303.08774.",
-    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel Bowman. 2022. BBQ: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2086–2105, Dublin, Ireland. Association for Computational Linguistics.",
-    "Marcelo O. R. Prates, Pedro H. C. Avelar, and Luis Lamb. 2019. Assessing gender bias in machine trans-lation - a case study with google translate. Preprint, arXiv:1809.02208.",
-    "Rakesh Pujari, Eric Oveson, Prathamesh Kulkarni, and Ehsan Nouri. 2022. Reinforcement guided multi-task learning framework for low-resource stereotype detection. ArXiv, abs/2203.14349.",
-    "Alec Radford, Jeff Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. 2019. Language models are unsupervised multitask learners.",
-    "Shaina Raza, Deepak John Reji, and Chen Ding. 2022. Dbias: Detecting biases and ensuring fairness in news articles. Preprint, arXiv:2208.05777.",
-    "A. Sheth et al. 2021. Knowledge-intensive language understanding for explainable ai. IEEE Internet Com-puting, 25:19–24.",
-    "Meilin Shi et al. 2023. Thinking geographically about ai sustainability. AGILE: GIScience Series.",
-    "Damien Sileo. 2023. tasksource: Structured dataset preprocessing annotations for frictionless extreme multi-task learning and evaluation. arXiv preprint arXiv:2301.05948.",
-    "Thilo Spinner et al. 2019. explainer: A visual analytics framework for interactive and explainable machine learning. IEEE Transactions on Visualization and Computer Graphics, 26:1064–1074.",
-    "Vinitra Swamy, Bahar Radmehr, Natasa Krco, Mirko Marras, and Tanja Käser. 2022. Evaluating the ex-plainers: Black-box explainable machine learning for student success prediction in moocs. Preprint, arXiv:2207.00551.",
-    "Javier Sánchez-Junquera, Berta Chulvi, Paolo Rosso, and Simone Paolo Ponzetto. 2021. How do you speak about immigrants? taxonomy and stereoimmigrants dataset for identifying stereotypes about immigrants. Applied Sciences, 11:3610.",
-    "Confident AI Team. 2023. Deepeval: A benchmarking framework for language learning models. https: //github.com/confident-ai/deepeval.",
-    "Hugo Touvron, Thibaut Lavril, Gautier Izacard, Xavier Martinet, Marie-Anne Lachaux, Timothée Lacroix, Baptiste Rozière, Naman Goyal, Eric Hambro, Faisal Azhar, Aurelien Rodriguez, Armand Joulin, Edouard Grave, and Guillaume Lample. 2023a. Llama: Open and efficient foundation language models. Preprint, arXiv:2302.13971.",
-    "Hugo Touvron, Louis Martin, Kevin Stone, Peter Al-bert, Amjad Almahairi, Yasmine Babaei, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, Dan Bikel, Lukas Blecher, Cristian Canton Ferrer, Moya Chen, Guillem Cucurull, David Esiobu, Jude Fernandes, Jeremy Fu, Wenyin Fu, Brian Fuller, Cynthia Gao, Vedanuj Goswami, Naman Goyal, An-thony Hartshorn, Saghar Hosseini, Rui Hou, Hakan Inan, Marcin Kardas, Viktor Kerkez, Madian Khabsa, Isabel Kloumann, Artem Korenev, Punit Singh Koura, Marie-Anne Lachaux, Thibaut Lavril, Jenya Lee, Di-ana Liskovich, Yinghai Lu, Yuning Mao, Xavier Mar-tinet, Todor Mihaylov, Pushkar Mishra, Igor Moly-bog, Yixin Nie, Andrew Poulton, Jeremy Reizen-stein, Rashi Rungta, Kalyan Saladi, Alan Schelten, Ruan Silva, Eric Michael Smith, Ranjan Subrama-nian, Xiaoqing Ellen Tan, Binh Tang, Ross Tay-lor, Adina Williams, Jian Xiang Kuan, Puxin Xu, Zheng Yan, Iliyan Zarov, Yuchen Zhang, Angela Fan, Melanie Kambadur, Sharan Narang, Aurelien Ro-driguez, Robert Stojnic, Sergey Edunov, and Thomas Scialom. 2023b. Llama 2: Open foundation and fine-tuned chat models. Preprint, arXiv:2307.09288.",
-    "Marco Tulio, Sameer Singh, and Carlos Guestrin. 2016. \"why should i trust you?\" explaining the predictions of any classifier. In Proceedings of the 22nd ACM SIGKDD international conference on knowledge dis-covery and data mining, pages 1135–1144.",
-    "Jesse Vig. 2019. A multiscale visualization of attention in the transformer model. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics: System Demonstrations, pages 37–42, Florence, Italy. Association for Computational Linguistics.",
-    "R. Vinuesa et al. 2020. The role of artificial intelligence in achieving the sustainable development goals. Na-ture Communications, 11.",
-    "Ricardo Vinuesa and Beril Sirmacek. 2021. Inter-pretable deep-learning models to help achieve the sustainable development goals. Nature Machine In-telligence, 3(11):926–926.",
-    "Jason Wei, Yi Tay, Rishi Bommasani, Colin Raffel, Barret Zoph, Sebastian Borgeaud, Dani Yogatama, Maarten Bosma, Denny Zhou, Donald Metzler, Ed H. Chi, Tatsunori Hashimoto, Oriol Vinyals, Percy Liang, Jeff Dean, and William Fedus. 2022. Emer-gent abilities of large language models. Preprint, arXiv:2206.07682.",
-    "whylabs. 2023. Langkit: An open-source text metrics toolkit for monitoring language models. https:// github.com/whylabs/langkit.",
-    "B. Yoon. 2020. A machine learning approach for ef-ficient multi-dimensional integration. Scientific Re-ports, 11.",
-    "Yukun Zhu, Ryan Kiros, Richard S Zemel, Ruslan Salakhutdinov, Raquel Urtasun, Antonio Torralba, and Sanja Fidler. 2015. Aligning books and movies: Towards story-like visual explanations by watching movies and reading books. In Proceedings of the IEEE International Conference on Computer Vision. IEEE Computer Society."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

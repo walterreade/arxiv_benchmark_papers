@@ -2,69 +2,15 @@
   "filename": "2601.22620.pdf",
   "title": "Layer-wise Swapping for Generalizable Multilingual Safety",
   "arxiv_url": "https://arxiv.org/pdf/2601.22620",
-  "benchmark_measurement": "The paper's benchmarks (MultiJail, MMMLU, BELEBELE, MGSM) measure general multilingual safety, language understanding, reading comprehension, and math reasoning. There is no component that specifically measures any aspect of faith or religion.",
-  "religious_groups": [],
-  "models_tested": [
-    "LLaMA 3.1 8B Instruct",
-    "Qwen 3 8B"
+  "bias_targets": [
+    {
+      "target": "Language bias",
+      "methodology": "Comparing the safety alignment and unsafety ratios of large language models across high-resource (English) and low-resource languages (Korean, Bengali, Swahili, Telugu) using the multilingual MultiJail benchmark to identify and mitigate linguistic disparities."
+    },
+    {
+      "target": "Discrimination and Hate speech",
+      "methodology": "Measuring the model's propensity to generate unsafe responses by evaluating its performance on specific adversarial prompt categories, including discrimination and hate speech, from the MultiJail safety benchmark."
+    }
   ],
-  "languages_evaluated": [
-    "English",
-    "Korean",
-    "Bengali",
-    "Swahili",
-    "Telugu"
-  ],
-  "response_type": [
-    "short",
-    "long"
-  ],
-  "religion_component": "none",
-  "base_benchmarks": [
-    "MultiJail",
-    "MMMLU",
-    "BELEBELE",
-    "MGSM"
-  ],
-  "continuous_testing": false,
-  "findings": "The paper does not analyze or mention religion, faith, or religious groups. Therefore, there are no findings related to these topics.",
-  "references": [
-    "AI @ Meta Llama Team. 2024. The llama 3 herd of models. Preprint, arXiv:2407.21783.",
-    "Anton Alexos, Veselin Raychev, Mark Niklas Müller, Ce Zhang, Martin Vechev, and Kristina Toutanova. 2024. Mitigating catastrophic forgetting in language transfer for model merging. In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 17167–17186, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Lucas Bandarkar, Davis Liang, Benjamin Muller, Mikel Artetxe, Satya Narayan Shukla, Donald Husa, Naman Goyal, Abhinandan Krishnan, Luke Zettlemoyer, and Madian Khabsa. 2024. The belebele benchmark: a parallel reading comprehension dataset in 122 language variants. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), page 749–775. Association for Computational Linguistics.",
-    "Lucas Bandarkar, Benjamin Muller, Pritish Yuvraj, Rui Hou, Nayan Singhal, Hongjiang Lv, and Bing Liu. 2025. Layer swapping for zero-shot cross-lingual transfer in large language models. In The Thirteenth International Conference on Learning Representations, ICLR 2025, Singapore, April 24–28, 2025. OpenReview.net.",
-    "Federico Bianchi, Mirac Suzgun, Giuseppe Attanasio, Paul Röttger, Dan Jurafsky, Tatsunori Hashimoto, and James Zou. 2024. Safety-tuned LLaMAs: Lessons from improving the safety of large language models that follow instructions. In The Twelfth International Conference on Learning Representations.",
-    "Nadezhda Chirkova and Vassilina Nikoulina. 2024. Zero-shot cross-lingual transfer in instruction tuning of large language models. In Proceedings of the 17th International Natural Language Generation Conference, pages 695–708, Tokyo, Japan. Association for Computational Linguistics.",
-    "Alexandra Chronopoulou, Jonas Pfeiffer, Joshua Maynez, Xinyi Wang, Sebastian Ruder, and Priyanka Agrawal. 2024. Language and task arithmetic with parameter-efficient layers for zero-shot summarization. In Proceedings of the Fourth Workshop on Multilingual Representation Learning (MRL 2024), pages 114–126, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Karl Cobbe, Vineet Kosaraju, Mohammad Bavarian, Mark Chen, Heewoo Jun, Lukasz Kaiser, Matthias Plappert, Jerry Tworek, Jacob Hilton, Reiichiro Nakano, Christopher Hesse, and John Schulman. 2021. Training verifiers to solve math word problems. arXiv preprint arXiv:2110.14168.",
-    "Rui Dai, Sile Hu, Xu Shen, Yonggang Zhang, Xinmei Tian, and Jieping Ye. 2025. Leveraging submodule linearity enhances task arithmetic performance in LLMs. In The Thirteenth International Conference on Learning Representations.",
-    "Yue Deng, Wenxuan Zhang, Sinno Jialin Pan, and Lidong Bing. 2024. Multilingual jailbreak challenges in large language models. In The Twelfth International Conference on Learning Representations.",
-    "Jiwoo Hong, Noah Lee, Rodrigo Martínez-Castaño, César Rodríguez, and James Thorne. 2025. Cross-lingual transfer of reward models in multilingual alignment. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 2: Short Papers), pages 82–94, Albuquerque, New Mexico. Association for Computational Linguistics.",
-    "Kaiyu Huang, Peng Li, Jin Ma, Ting Yao, and Yang Liu. 2023. Knowledge transfer in incremental learning for multilingual neural machine translation. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 15286–15304, Toronto, Canada. Association for Computational Linguistics.",
-    "Gabriel Ilharco, Marco Tulio Ribeiro, Mitchell Wortsman, Ludwig Schmidt, Hannaneh Hajishirzi, and Ali Farhadi. 2023. Editing models with task arithmetic. In The Eleventh International Conference on Learning Representations.",
-    "Mohammed Safi Ur Rahman Khan, Priyam Mehta, Ananth Sankar, Umashankar Kumaravelan, Sumanth Doddapaneni, Suriyaprasaad G, Varun Balan G, Sparsh Jain, Anoop Kunchukuttan, Pratyush Kumar, Raj Dabre, and Mitesh M. Khapra. 2024. Indicllmsuite: A blueprint for creating pre-training and fine-tuning datasets for indian languages. arXiv preprint arXiv: 2403.06350.",
-    "Takeshi Kojima, Itsuki Okimura, Yusuke Iwasawa, Hitomi Yanaka, and Yutaka Matsuo. 2024. On the multilingual ability of decoder-based pre-trained language models: Finding and controlling language-specific neurons. In Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 6919–6971, Mexico City, Mexico. Association for Computational Linguistics.",
-    "Shen Li, Liuyi Yao, Lan Zhang, and Yaliang Li. 2025. Safety layers in aligned large language models: The key to LLM security. In The Thirteenth International Conference on Learning Representations.",
-    "Niklas Muennighoff, Thomas Wang, Lintang Sutawika, Adam Roberts, Stella Biderman, Teven Le Scao, M Saiful Bari, Sheng Shen, Zheng-Xin Yong, Hailey Schoelkopf, Xiangru Tang, Dragomir Radev, Alham Fikri Aji, Khalid Almubarak, Samuel Albanie, Zaid Alyafeai, Albert Webson, Edward Raff, and Colin Raffel. 2022. Crosslingual generalization through multitask finetuning. Preprint, arXiv:2211.01786.",
-    "OpenAI, :, Aaron Hurst, Adam Lerer, Adam P. Goucher, Adam Perelman, Aditya Ramesh, Aidan Clark, AJ Ostrow, Akila Welihinda, Alan Hayes, Alec Radford, Aleksander Mądry, Alex Baker-Whitcomb, Alex Beutel, Alex Borzunov, Alex Carney, Alex Chow, Alex Kirillov, and 401 others. 2024. Gpt-4o system card. Preprint, arXiv:2410.21276.",
-    "OpenAI. 2024. Multilingual massive multitask language understanding (mmmlu). https:// huggingface.co/datasets/openai/MMMLU.",
-    "Lingfeng Shen, Weiting Tan, Sihao Chen, Yunmo Chen, Jingyu Zhang, Haoran Xu, Boyuan Zheng, Philipp Koehn, and Daniel Khashabi. 2024. The language barrier: Dissecting safety challenges of LLMs in multilingual contexts. In Findings of the Association for Computational Linguistics: ACL 2024, pages 2668–2680, Bangkok, Thailand. Association for Computational Linguistics.",
-    "Freda Shi, Mirac Suzgun, Markus Freitag, Xuezhi Wang, Suraj Srivats, Soroush Vosoughi, Hyung Won Chung, Yi Tay, Sebastian Ruder, Denny Zhou, Dipanjan Das, and Jason Wei. 2023. Language models are multilingual chain-of-thought reasoners. In The Eleventh International Conference on Learning Representations.",
-    "Shivalika Singh, Freddie Vargus, Daniel Dsouza, Börje F. Karlsson, Abinaya Mahendiran, Wei-Yin Ko, Herumb Shandilya, Jay Patel, Deividas Mataciunas, Laura OMahony, Mike Zhang, Ramith Hettiarachchi, Joseph Wilson, Marina Machado, Luisa Souza Moura, Dominik Krzemiński, Hakimeh Fadaei, Irem Ergün, Ifeoma Okoh, and 14 others. 2024. Aya dataset: An open-access collection for multilingual instruction tuning. Preprint, arXiv:2402.06619.",
-    "Rohan Taori, Ishaan Gulrajani, Tianyi Zhang, Yann Dubois, Xuechen Li, Carlos Guestrin, Percy Liang, and Tatsunori B. Hashimoto. 2023. Stanford alpaca: An instruction-following llama model. https: //github.com/tatsu-lab/stanford_alpaca.",
-    "Gemma Team. 2025a. Gemma 3.",
-    "NLLB Team, Marta R. Costa-jussà, James Cross, Onur Çelebi, Maha Elbayad, Kenneth Heafield, Kevin Heffernan, Elahe Kalbassi, Janice Lam, Daniel Licht, Jean Maillard, Anna Sun, Skyler Wang, Guillaume Wenzek, Al Youngblood, Bapi Akula, Loic Barrault, Gabriel Mejia Gonzalez, Prangthip Hansanti, and 20 others. 2022. No language left behind: Scaling human-centered machine translation. Preprint, arXiv:2207.04672.",
-    "Qwen Team. 2025b. Qwen3 technical report. Preprint, arXiv:2505.09388.",
-    "Qwen Team. 2025c. Qwen3guard technical report.",
-    "Atnafu Lambebo Tonja, Bonaventure FP Dossou, Jessica Ojo, Jenalea Rajab, Fadel Thior, Eric Peter Wairagala, Aremu Anuoluwapo, Pelonomi Moiloa, Jade Abbott, Vukosi Marivate, and 1 others. 2024. Inkubalm: A small language model for low-resource african languages. arXiv preprint arXiv:2408.17024.",
-    "torchtune maintainers and contributors. 2024. torchtune: Pytorch’s finetuning library.",
-    "Wenxuan Wang, Zhaopeng Tu, Chang Chen, Youliang Yuan, Jen-tse Huang, Wenxiang Jiao, and Michael Lyu. 2024. All languages matter: On the multilingual safety of LLMs. In Findings of the Association for Computational Linguistics: ACL 2024, pages 5865–5877, Bangkok, Thailand. Association for Computational Linguistics.",
-    "Prateek Yadav, Derek Tam, Leshem Choshen, Colin A Raffel, and Mohit Bansal. 2023. Ties-merging: Resolving interference when merging models. Advances in Neural Information Processing Systems, 36:7093–7115.",
-    "Enneng Yang, Li Shen, Zhenyi Wang, Guibing Guo, Xiaojun Chen, Xingwei Wang, and Dacheng Tao. 2024. Representation surgery for multi-task model merging. In Proceedings of the 41st International Conference on Machine Learning, volume 235 of Proceedings of Machine Learning Research, pages 56332–56356. PMLR.",
-    "Le Yu, Bowen Yu, Haiyang Yu, Fei Huang, and Yongbin Li. 2024. Language models are super mario: Absorbing abilities from homologous models as a free lunch. In Forty-first International Conference on Machine Learning.",
-    "Yuanchi Zhang, Yile Wang, Zijun Liu, Shuo Wang, Xiaolong Wang, Peng Li, Maosong Sun, and Yang Liu. 2024. Enhancing multilingual capabilities of large language models through self-distillation from resource-rich languages. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 11189–11204, Bangkok, Thailand. Association for Computational Linguistics.",
-    "Wei Zhao, Zhe Li, Yige Li, Ye Zhang, and Jun Sun. 2024a. Defending large language models against jailbreak attacks via layer-specific editing. In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 5094–5109, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Yiran Zhao, Wenxuan Zhang, Guizhen Chen, Kenji Kawaguchi, and Lidong Bing. 2024b. How do large language models handle multilingualism? In The Thirty-eighth Annual Conference on Neural Information Processing Systems.",
-    "Yiran Zhao, Wenxuan Zhang, Yuxi Xie, Anirudh Goyal, Kenji Kawaguchi, and Michael Shieh. 2025. Understanding and enhancing safety mechanisms of LLMs via safety-specific neuron. In The Thirteenth International Conference on Learning Representations."
-  ]
+  "primary_bias_target": "Language bias"
 }

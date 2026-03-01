@@ -2,15 +2,69 @@
   "filename": "2305.17680.pdf",
   "title": "Evaluating GPT-3 Generated Explanations for Hateful Content Moderation",
   "arxiv_url": "https://arxiv.org/pdf/2305.17680",
-  "bias_targets": [
-    {
-      "target": "Hate speech against protected groups",
-      "methodology": "Prompting GPT-3 to generate explanations for hateful and non-hateful tweets (involving attacks based on race, religion, ethnicity, nationality, gender, disability, or sexual orientation) and utilizing human evaluators to assess the text for fluency, informativeness, persuasiveness, and logical soundness."
-    },
-    {
-      "target": "Automation bias (AI reliance)",
-      "methodology": "Comparing human evaluators' hatefulness classifications of tweets with and without prior exposure to GPT-3 generated explanations to measure if the model's output incorrectly persuades or misleads human moderators."
-    }
+  "religious_groups": [
+    "Islam",
+    "Judaism"
   ],
-  "primary_bias_target": "Hate speech against protected groups"
+  "models_tested": [
+    "GPT-3"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "HateXplain"
+  ],
+  "continuous_testing": false,
+  "findings": "GPT-3 can generate high-quality and persuasive explanations for content targeting religious groups (e.g., Muslims, Jews). However, these generated explanations can mislead human evaluators, causing them to misclassify content, for instance, labeling non-hateful tweets as hateful or vice versa.",
+  "references": [
+    "[Ashida and Komachi, 2022] Mana Ashida and Mamoru Komachi. Towards automatic generation of messages countering online hate speech and microaggressions. In Proceedings of the Sixth Workshop on Online Abuse and Harms (WOAH), Stroudsburg, PA, USA, 2022. Association for Computational Linguistics (ACL).",
+    "[Awal et al., 2021] Md Rabiul Awal, Rui Cao, Roy Ka-Wei Lee, and Sandra Mitrovic. Angrybert: Joint learning target and emotion for hate speech detection. arXiv preprint arXiv:2103.11800, 2021.",
+    "[Awal et al., 2023] Md Rabiul Awal, Roy Ka-Wei Lee, Eshaan Tanwar, Tanmay Garg, and Tanmoy Chakraborty. Model-agnostic meta-learning for multilingual hate speech detection. IEEE Transactions on Computational Social Systems, 2023.",
+    "[Badjatiya et al., 2017] Pinkesh Badjatiya, Shashank Gupta, Manish Gupta, and Vasudeva Varma. Deep learning for hate speech detection in tweets. In Proceedings of the 26th international conference on World Wide Web companion, April 2017.",
+    "[Brown et al., 2020] Tom B Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, and Neelakantan et al. Language models are Few-Shot learners. Advances in neural information processing systems, May 2020.",
+    "[Buchanan et al., 2021] Ben Buchanan, Andrew Lohn, Micah Musser, and Katerina Sedova. Truth, lies, and automation. Center for Security and Emerging Technology, 1(1), 2021.",
+    "[Camburu et al., 2018] Oana-Maria Camburu, Tim Rocktäschel, Thomas Lukasiewicz, and Phil Blunsom. e-snli: Natural language inference with natural language explanations. Advances in Neural Information Processing Systems, 31, 2018.",
+    "[Cao and Lee, 2020] Rui Cao and Roy Ka-Wei Lee. Hategan: Adversarial generative-based data augmentation for hate speech detection. In Proceedings of the 28th International Conference on Computational Linguistics, pages 6327–6338, 2020.",
+    "[Cao et al., 2020] Rui Cao, Roy Ka-Wei Lee, and Tuan-Anh Hoang. DeepHate: Hate speech detection via multifaceted text representations. In 12th ACM conference on web science, March 2020.",
+    "[Chiu et al., 2021] Ke-Li Chiu, Annie Collins, and Rohan Alexander. Detecting hate speech with GPT-3. arXiv:2103.12407, March 2021.",
+    "[Davidson et al., 2017] Thomas Davidson, Dana Warmsley, Michael Macy, and Ingmar Weber. Automated hate speech detection and the problem of offensive language. In Proceedings of the international AAAI conference on web and social media, March 2017.",
+    "[Djuric et al., 2015] Nemanja Djuric, Jing Zhou, Robin Morris, Mihajlo Grbovic, Vladan Radosavljevic, and Narayan Bhamidipati. Hate speech detection with comment embeddings. In Proceedings of the 24th International Conference on World Wide Web, New York, NY, USA, May 2015. Association for Computing Machinery (ACM).",
+    "[Dou et al., 2022] Yao Dou, Maxwell Forbes, Rik Koncel-Kedziorski, Noah Smith, and Yejin Choi. Is GPT-3 text indistinguishable from human text? scarecrow: A framework for scrutinizing machine text. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), Stroudsburg, PA, USA, 2022. Association for Computational Linguistics (ACL).",
+    "[ElSherief et al., 2021] Mai ElSherief, Caleb Ziems, David Muchlinski, Vaishnavi Anupindi, Jordyn Seybolt, Munmun De Choudhury, and Diyi Yang. Latent hatred: A benchmark for understanding implicit hate speech. arXiv preprint arXiv:2109.05322, September 2021.",
+    "[Fortuna and Nunes, 2018] Paula Fortuna and Sérgio Nunes. A survey on automatic detection of hate speech in text. ACM Comput. Surv., 51(4):1–30, July 2018.",
+    "[Gillespie, 2018] Tarleton Gillespie. Custodians of the Internet: Platforms, content moderation, and the hidden decisions that shape social media. Yale University Press, 2018.",
+    "[Haimson et al., 2021] Oliver L Haimson, Daniel Delmonaco, Peipei Nie, and Andrea Wegner. Disproportionate removals and differing content moderation experiences for conservative, transgender, and black social media users: Marginalization and moderation gray areas. Proc. ACM Hum. Comput. Interact., 5(CSCW2):1–35, October 2021.",
+    "[Huang et al., 2022] Fan Huang, Haewoon Kwak, and Jisun An. Chain of explanation: New prompting method to generate higher quality natural language explanation for implicit hate speech. arXiv preprint arXiv:2209.04889, September 2022.",
+    "[Kojima et al., 2022] Takeshi Kojima, Shixiang Shane Gu, Machel Reid, Yutaka Matsuo, and Yusuke Iwasawa. Large language models are Zero-Shot reasoners. arXiv preprint arXiv:2205.11916, May 2022.",
+    "[Lampe and Resnick, 2004] Cliff Lampe and Paul Resnick. Slash (dot) and burn: distributed moderation in a large online conversation space. In Proceedings of the SIGCHI conference on Human factors in computing systems, pages 543–550. 2004.",
+    "[Lin et al., 2021] Ken-Yu Lin, Roy Ka-Wei Lee, Wei Gao, and Wen-Chih Peng. Early prediction of hate speech propagation. In 2021 International Conference on Data Mining Workshops (ICDMW), pages 967–974. Institute of Electrical and Electronics Engineers (IEEE), 2021.",
+    "[Markov et al., 2022] Todor Markov, Chong Zhang, Sandhini Agarwal, Tyna Eloundou, Teddy Lee, Steven Adler, Angela Jiang, and Lilian Weng. A holistic approach to undesired content detection in the real world. arXiv preprint arXiv:2208.03274, August 2022.",
+    "[Mathew et al., 2021] Binny Mathew, Punyajoy Saha, Seid Muhie Yimam, Chris Biemann, Pawan Goyal, and Animesh Mukherjee. HateXplain: A benchmark dataset for explainable hate speech detection. Proc. Conf. AAAI Artif. Intell., 35(17):14867–14875, May 2021.",
+    "[Meng et al., 2022] Qing Meng, Tharun Suresh, Roy KaWei Lee, and Tanmoy Chakraborty. Predicting hate intensity of twitter conversation threads. arXiv preprint arXiv:2206.08406, 2022.",
+    "[Park et al., 2018] Ji Ho Park, Jamin Shin, and Pascale Fung. Reducing gender bias in abusive language detection. arXiv preprint arXiv:1808.07231, August 2018.",
+    "[Petroni et al., 2019] Fabio Petroni, Tim Rocktäschel, Patrick Lewis, Anton Bakhtin, Yuxiang Wu, Alexander H Miller, and Sebastian Riedel. Language models as knowledge bases? arXiv preprint arXiv:1909.01066, September 2019.",
+    "[Poletto et al., 2019] Fabio Poletto, Valerio Basile, Cristina Bosco, Viviana Patti, and Maria Stranisci. Annotating hate speech: Three schemes at comparison. In CEUR WORKSHOP PROCEEDINGS, volume 2481, pages 1–8. CEURWS, 2019.",
+    "[Radford et al., 2019] Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. Language models are unsupervised multitask learners. OpenAI blog, 1(8), 2019.",
+    "[Sanh et al., 2021] Victor Sanh, Albert Webson, Colin Raffel, Stephen H Bach, Lintang Sutawika, Zaid Alyafeai, and Chaffin et al. Multitask prompted training enables zeroshot task generalization. arXiv preprint arXiv:2110.08207, October 2021.",
+    "[Sap et al., 2019] Maarten Sap, Dallas Card, Saadia Gabriel, Yejin Choi, and Noah A Smith. The risk of racial bias in hate speech detection. In Proceedings of the 57th annual meeting of the association for computational linguistics, pages 1668–1678. 2019.",
+    "[Sap et al., 2020] Maarten Sap, Saadia Gabriel, Lianhui Qin, Dan Jurafsky, Noah A Smith, and Yejin Choi. Social bias frames: Reasoning about social and power implications of language. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, Stroudsburg, PA, USA, 2020. Association for Computational Linguistics (ACL).",
+    "[Saunders et al., 2022] William Saunders, Catherine Yeh, Jeff Wu, Steven Bills, Long Ouyang, Jonathan Ward, and Jan Leike. Self-critiquing models for assisting human evaluators. arXiv preprint arXiv:2206.05802, June 2022.",
+    "[Schmidt and Wiegand, 2017] Anna Schmidt and Michael Wiegand. A survey on hate speech detection using natural language processing. In Proceedings of the Fifth International Workshop on Natural Language Processing for Social Media, Stroudsburg, PA, USA, 2017. Association for Computational Linguistics (ACL).",
+    "[Steiger et al., 2021] Timir J Steiger, Miriah, Sukrit Bharucha, Martin J Venkatagiri, and Matthew Riedl. The psychological well-being of content moderators: the emotional labor of commercial moderation and avenues for improving support. In Proceedings of the 2021 CHI conference on human factors in computing systems, pages 1–14. 2021.",
+    "[Suzor et al., 2019] Nicolas P Suzor, Andrew West, and Jillian Quodling. What do we mean when we talk about transparency? toward meaningful transparency in commercial content moderation. International Journal of Communication Systems (IJCS), 13, 2019.",
+    "[Tekiroglu et al., 2020] Serra Sinem Tekiroglu, Yi-Ling Chung, and Marco Guerini. Generating counter narratives against online hate speech: Data and strategies. arXiv preprint arXiv:2004.04216, April 2020.",
+    "[Vaccaro et al., 2020] Kristen Vaccaro, Christian Sandvig, and Karrie Karahalios. At the end of the day facebook does what ItWants\" how users experience contesting algorithmic content moderation. Proceedings of the ACM on human-computer interaction, 4(CSCW2):1–22, 2020.",
+    "[Wang, 2022] Yingshan Wang, Yau-Shian. Toxicity detection with generative prompt-based inference. arXiv preprint arXiv:2205.12390, 2022.",
+    "[Watanabe et al., 2018] Hajime Watanabe, Mondher Bouazizi, and Tomoaki Ohtsuki. Hate speech on twitter: A pragmatic approach to collect hateful and offensive expressions and perform hate speech detection. IEEE Access, 6:13825–13835, 2018.",
+    "[Wei et al., 2022] Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Ed Chi, Quoc Le, and Denny Zhou. Chain of thought prompting elicits reasoning in large language models. arXiv preprint arXiv:2201.11903, 2022.",
+    "[Wiegreffe et al., 2022] Sarah Wiegreffe, Jack Hessel, Swabha Swayamdipta, Mark Riedl, and Yejin Choi. Reframing human-AI collaboration for generating free-text explanations. In Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Stroudsburg, PA, USA, 2022. Association for Computational Linguistics (ACL).",
+    "[Zhang et al., 2022] Zhuosheng Zhang, Aston Zhang, Mu Li, and Alex Smola. Automatic chain of thought prompting in large language models. arXiv preprint arXiv:2210.03493, October 2022.",
+    "[Zhao et al., 2021] Tony Z Zhao, Eric Wallace, Shi Feng, Dan Klein, and Sameer Singh. Calibrate before use: Improving few-shot performance of language models. In International Conference on Machine Learning, February 2021."
+  ],
+  "measurement_description": "Generation of explanations for hate speech targeting individuals based on their religion, among other identity characteristics. Specific examples included content targeting Muslims and Jewish people."
 }

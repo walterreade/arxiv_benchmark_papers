@@ -2,55 +2,75 @@
   "filename": "2307.16778.pdf",
   "title": "KoBBQ: Korean Bias Benchmark for Question Answering",
   "arxiv_url": "https://arxiv.org/pdf/2307.16778",
-  "bias_targets": [
-    {
-      "target": "Age bias",
-      "methodology": "Multiple-choice question answering task using ambiguous and disambiguated contexts to measure diff-bias scores based on stereotype adherence."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Multiple-choice question answering task using ambiguous and disambiguated contexts to measure diff-bias scores based on stereotype adherence."
-    },
-    {
-      "target": "Gender identity bias",
-      "methodology": "Multiple-choice question answering task using ambiguous and disambiguated contexts to measure diff-bias scores based on stereotype adherence."
-    },
-    {
-      "target": "Physical appearance bias",
-      "methodology": "Multiple-choice question answering task using ambiguous and disambiguated contexts to measure diff-bias scores based on stereotype adherence."
-    },
-    {
-      "target": "Racial, ethnic, and nationality bias",
-      "methodology": "Multiple-choice question answering task using ambiguous and disambiguated contexts to measure diff-bias scores based on stereotype adherence."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Multiple-choice question answering task using ambiguous and disambiguated contexts to measure diff-bias scores based on stereotype adherence."
-    },
-    {
-      "target": "Socioeconomic bias",
-      "methodology": "Multiple-choice question answering task using ambiguous and disambiguated contexts to measure diff-bias scores based on stereotype adherence."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Multiple-choice question answering task using ambiguous and disambiguated contexts to measure diff-bias scores based on stereotype adherence."
-    },
-    {
-      "target": "Domestic area of origin bias",
-      "methodology": "Multiple-choice question answering task using ambiguous and disambiguated contexts to measure diff-bias scores based on stereotype adherence."
-    },
-    {
-      "target": "Family structure bias",
-      "methodology": "Multiple-choice question answering task using ambiguous and disambiguated contexts to measure diff-bias scores based on stereotype adherence."
-    },
-    {
-      "target": "Political bias",
-      "methodology": "Multiple-choice question answering task using ambiguous and disambiguated contexts to measure diff-bias scores based on stereotype adherence."
-    },
-    {
-      "target": "Educational background bias",
-      "methodology": "Multiple-choice question answering task using ambiguous and disambiguated contexts to measure diff-bias scores based on stereotype adherence."
-    }
+  "religious_groups": [
+    "Religion (as a general category)"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "Claude-v1 (claude-instant-1.2)",
+    "Claude-v2 (claude-2.0)",
+    "GPT-3.5 (gpt-3.5-turbo-0613)",
+    "GPT-4 (gpt-4-0613)",
+    "CLOVA-X",
+    "KoAlpaca (KoAlpaca-Polyglot-12.8B)"
+  ],
+  "languages_evaluated": [
+    "Korean",
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "BBQ",
+    "CBBQ",
+    "Winogender",
+    "WinoBias",
+    "StereoSet",
+    "CrowS-Pairs",
+    "UnQover",
+    "BOLD",
+    "K-StereoSet",
+    "KoSBi"
+  ],
+  "continuous_testing": false,
+  "findings": "Bias related to religion was measured as one of 12 social bias categories. The results, presented graphically, show the diff-bias score for religion in comparison to other categories, but the paper does not provide a specific textual analysis or highlight unique findings for the religion category itself.",
+  "references": [
+    "Yuntao Bai, Saurav Kadavath, Sandipan Kundu, Amanda Askell, Jackson Kernion, Andy Jones, Anna Chen, Anna Goldie, Azalia Mirho-seini, Cameron McKinnon, Carol Chen, Catherine Olsson, Christopher Olah, Danny Her-nandez, Dawn Drain, Deep Ganguli, Dustin Li, Eli Tran-Johnson, Ethan Perez, Jamie Kerr, Jared Mueller, Jeffrey Ladish, Joshua Landau, Kamal Ndousse, Kamile Lukosiute, Liane Lovitt, Michael Sellitto, Nelson El-hage, Nicholas Schiefer, Noemí Mercado, Nova DasSarma, Robert Lasenby, Robin Larson, Sam Ringer, Scott Johnston, Shauna Kravec, Sheer El Showk, Stanislav Fort, Tamera Lan-ham, Timothy Telleen-Lawton, Tom Conerly, Tom Henighan, Tristan Hume, Samuel R. Bowman, Zac Hatfield-Dodds, Ben Mann, Dario Amodei, Nicholas Joseph, Sam McCandlish, Tom Brown, and Jared Kaplan. 2022. Con-stitutional AI: Harmlessness from AI feedback. CoRR, abs/2212.08073v1.",
+    "Jwala Dhamala, Tony Sun, Varun Kumar, Satyapriya Krishna, Yada Pruksachatkun, Kai-Wei Chang, and Rahul Gupta. 2021. BOLD: Dataset and metrics for measuring biases in open-ended language generation. In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, FAccT '21, page 862–872, New York, NY, USA. Associa-tion for Computing Machinery.",
+    "David Esiobu, Xiaoqing Tan, Saghar Hosseini, Megan Ung, Yuchen Zhang, Jude Fernan-des, Jane Dwivedi-Yu, Eleonora Presani, Adina Williams, and Eric Michael Smith. 2023. Robbie: Robust bias evaluation of large generative language models.",
+    "Isabel O. Gallegos, Ryan A. Rossi, Joe Barrow, Md Mehrab Tanjim, Sungchul Kim, Franck Dernoncourt, Tong Yu, Ruiyi Zhang, and Nes-reen K. Ahmed. 2023. Bias and fairness in large language models: A survey.",
+    "Samuel Gehman, Suchin Gururangan, Maarten Sap, Yejin Choi, and Noah A. Smith. 2020. Re-alToxicityPrompts: Evaluating neural toxic de-generation in language models. In Findings of the Association for Computational Linguistics: EMNLP 2020, pages 3356–3369, Online. Asso-ciation for Computational Linguistics.",
+    "Kyung-Koo Han. 2007. The archaeology of the ethnically homogeneous nation-state and multi-culturalism in Korea. Korea Journal, 47(4):8–32.",
+    "Yufei Huang and Deyi Xiong. 2023. CBBQ: A chinese bias benchmark dataset curated with human-ai collaboration for large language models. CoRR, abs/2306.16244v1.",
+    "Kyung Min Im, Tae-Wan Kim, and Jong-Rok Jeon. 2017. Metal-chelation-assisted deposi-tion of polydopamine on human hair: A ready-to-use eumelanin-based hair dyeing methodol-ogy. ACS Biomaterials Science & Engineering, 3(4):628–636. PMID: 33429630.",
+    "Gautier Izacard, Patrick S. H. Lewis, Maria Lomeli, Lucas Hosseini, Fabio Petroni, Timo Schick, Jane Dwivedi-Yu, Armand Joulin, Se-bastian Riedel, and Edouard Grave. 2022. At-las: Few-shot learning with retrieval augmented language models. CoRR, abs/2208.03299v3.",
+    "Younghoon Jeong, Juhyun Oh, Jongwon Lee, Jaimeen Ahn, Jihyung Moon, Sungjoon Park, and Alice Oh. 2022. KOLD: Korean offensive language dataset. In Proceedings of the 2022 Conference on Empirical Methods in Natu-ral Language Processing, pages 10818–10833, Abu Dhabi, United Arab Emirates. Association for Computational Linguistics.",
+    "Hadas Kotek, Rikker Dockum, and David Sun. 2023. Gender bias and stereotypes in large lan-guage models. In Proceedings of The ACM Col-lective Intelligence Conference, CI '23, page 12–24, New York, NY, USA. Association for Computing Machinery.",
+    "Ha-Ryoung Lee. 2007. Study on Social Preju-dice towards Race : Centering on the Rela-tionship of Social Distance to Stereotypes and emotions. Master’s thesis, Hanyang University, Seoul, KR.",
+    "Hwaran Lee, Seokhee Hong, Joonsuk Park, Taky-ong Kim, Taehee Kim, and Sang-goo Ha. 2023a. KoSBi: A dataset for mitigating social bias risks towards safer large language model applications. In Proceedings of the 61st An-nual Meeting of the Association for Computa-tional Linguistics (Volume 2: Industry Tracks), pages 208–224, Toronto, Canada. Association for Computational Linguistics.",
+    "Nayeon Lee, Chani Jung, and Alice Oh. 2023b. Hate speech classifiers are culturally insen-sitive. In Proceedings of the First Work-shop on Cross-Cultural Considerations in NLP (C3NLP), pages 35–46, Dubrovnik, Croatia. Association for Computational Linguistics.",
+    "Tao Li, Daniel Khashabi, Tushar Khot, Ashish Sabharwal, and Vivek Srikumar. 2020. UN-QOVERing stereotyping biases via underspec-ified questions. In Findings of the Associa-tion for Computational Linguistics: EMNLP 2020, pages 3475–3489, Online. Association for Computational Linguistics.",
+    "Percy Liang, Rishi Bommasani, Tony Lee, Dim-itris Tsipras, Dilara Soylu, Michihiro Yasunaga, Yian Zhang, Deepak Narayanan, Yuhuai Wu, Ananya Kumar, Benjamin Newman, Binhang Yuan, Bobby Yan, Ce Zhang, Christian Cos-grove, Christopher D. Manning, Christopher Ré, Diana Acosta-Navas, Drew A. Hudson, Eric Zelikman, Esin Durmus, Faisal Ladhak, Frieda Rong, Hongyu Ren, Huaxiu Yao, Jue Wang, Keshav Santhanam, Laurel J. Orr, Lu-cia Zheng, Mert Yuksekgonul, Mirac Suzgun, Nathan Kim, Neel Guha, Niladri S. Chatterji, Omar Khattab, Peter Henderson, Qian Huang, Ryan Chi, Sang Michael Xie, Shibani San-turkar, Surya Ganguli, Tatsunori Hashimoto, Thomas Icard, Tianyi Zhang, Vishal Chauf-hary, William Wang, Xikun Li, Yifan Mai, Yuhui Zhang, and Yuta Koreeda. 2022. Holis-tic evaluation of language models. CoRR, abs/2211.09110v1.",
+    "Bill Yuchen Lin, Seyeon Lee, Xiaoyang Qiao, and Xiang Ren. 2021. Common sense beyond En-glish: Evaluating and improving multilingual language models for commonsense reasoning. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 1274–1287, Online. Association for Computational Linguistics.",
+    "Bill Yuchen Lin, Frank F. Xu, Kenny Zhu, and Seung-won Hwang. 2018. Mining cross-cultural differences and similarities in social media. In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 709–719, Melbourne, Australia. Association for Computational Linguistics.",
+    "Fangyu Liu, Emanuele Bugliarello, Edoardo Maria Ponti, Siva Reddy, Nigel Collier, and Desmond Elliott. 2021. Visually grounded reasoning across languages and cul-tures. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 10467–10485, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics.",
+    "Fabio Motoki, Valdemar Pinho Neto, and Vic-tor Rodrigues. 2023. More human than hu-man: measuring chatgpt political bias. Public Choice.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2021. StereoSet: Measuring stereotypical bias in pretrained language models. In Proceed-ings of the 59th Annual Meeting of the Asso-ciation for Computational Linguistics and the 11th International Joint Conference on Natu-ral Language Processing (Volume 1: Long Pa-pers), pages 5356–5371, Online. Association for Computational Linguistics.",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R. Bowman. 2020. CrowS-pairs: A challenge dataset for measuring social biases in masked language models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1953–1967, Online. Association for Computa-tional Linguistics.",
+    "Xuan-Phi Nguyen, Wenxuan Zhang, Xin Li, Ma-hani Aljunied, Qingyu Tan, Liying Cheng, Guanzheng Chen, Yue Deng, Sen Yang, Chao-qun Liu, Hang Zhang, and Lidong Bing. 2023. Seallms - large language models for southeast asia.",
+    "Alicia Parrish, Angelica Chen, Nikita Nan-gia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel Bow-man. 2022. BBQ: A hand-built bias benchmark for question answering. In Findings of the As-sociation for Computational Linguistics: ACL 2022, pages 2086–2105, Dublin, Ireland. Asso-ciation for Computational Linguistics.",
+    "Denis Peskov, Viktor Hangya, Jordan Boyd-Graber, and Alexander Fraser. 2021. Adapt-ing entities across languages and cultures. In Findings of the Association for Computational Linguistics: EMNLP 2021, pages 3725–3750, Punta Cana, Dominican Republic. Association for Computational Linguistics.",
+    "Edoardo Maria Ponti, Goran Glavaš, Olga Majew-ska, Qianchu Liu, Ivan Vulić, and Anna Ko-rhonen. 2020. XCOPA: A multilingual dataset for causal commonsense reasoning. In Pro-ceedings of the 2020 Conference on Empiri-cal Methods in Natural Language Processing (EMNLP), pages 2362–2376, Online. Associa-tion for Computational Linguistics.",
+    "Rachel Rudinger, Jason Naradowsky, Brian Leonard, and Benjamin Van Durme. 2018. Gender bias in coreference resolution. In Pro-ceedings of the 2018 Conference of the North American Chapter of the Association for Com-putational Linguistics: Human Language Tech-nologies, Volume 2 (Short Papers), pages 8–14, New Orleans, Louisiana. Association for Com-putational Linguistics.",
+    "Ami D. Sperber, Robert F. Devellis, and Brian Boehlecke. 1994. Cross-cultural translation: Methodology and validation. Journal of Cross-Cultural Psychology, 25(4):501–524.",
+    "Aarohi Srivastava, Abhinav Rastogi, Abhishek Rao, Abu Awal Md Shoeb, Abubakar Abid, Adam Fisch, Adam R. Brown, Adam San-toro, Aditya Gupta, Adrià Garriga-Alonso, Agnieszka Kluska, Aitor Lewkowycz, Ak-shat Agarwal, Alethea Power, Alex Ray, Alex Warstadt, Alexander W. Kocurek, Ali Safaya, Ali Tazarv, Alice Xiang, Alicia Par-rish, Allen Nie, Aman Hussain, Amanda Askell, Amanda Dsouza, Ambrose Slone, Ameet Ra-hane, Anantharaman S. Iyer, Anders Johan An-dreassen, Andrea Madotto, Andrea Santilli, An-dreas Stuhlmüller, Andrew M. Dai, Andrew La, Andrew Lampinen, Andy Zou, Angela Jiang, Angelica Chen, Anh Vuong, Animesh Gupta, Anna Gottardi, Antonio Norelli, Anu Venkatesh, Arash Gholamidavoodi, Arfa Tabas-sum, Arul Menezes, Arun Kirubarajan, Asher Mullokandov, Ashish Sabharwal, Austin Her-rick, Avia Efrat, Aykut Erdem, Ayla Karakaş, B. Ryan Roberts, Bao Sheng Loe, Barret Zoph, Bartłomiej Bojanowski, Batuhan Özyurt, Behnam Hedayatnia, Behnam Neyshabur, Ben-jamin Inden, Benno Stein, Berk Ekmekci, Bill Yuchen Lin, Blake Howald, Bryan Orin-ion, Cameron Diao, Cameron Dour, Cather-ine Stinson, Cedrick Argueta, Cesar Ferri, Chandan Singh, Charles Rathkopf, Chenlin Meng, Chitta Baral, Chiyu Wu, Chris Callison-Burch, Christopher Waites, Christian Voigt, Christopher D Manning, Christopher Potts, Cindy Ramirez, Clara E. Rivera, Clemen-cia Siro, Colin Raffel, Courtney Ashcraft, Cristina Garbacea, Damien Sileo, Dan Gar-rette, Dan Hendrycks, Dan Kilman, Dan Roth, C. Daniel Freeman, Daniel Khashabi, Daniel Levy, Daniel Moseguí González, Danielle Per-szyk, Danny Hernandez, Danqi Chen, Daphne Ippolito, Dar Gilboa, David Dohan, David Drakard, David Jurgens, Debajyoti Datta, Deep Ganguli, Denis Emelin, Denis Kleyko, Deniz Yuret, Derek Chen, Derek Tam, Dieuwke Hupkes, Diganta Misra, Dilyar Buzan, Dim-itri Coelho Mollo, Diyi Yang, Dong-Ho Lee, Dylan Schrader, Ekaterina Shutova, Ekin Do-gus Cubuk, Elad Segal, Eleanor Hagerman, Elizabeth Barnes, Elizabeth Donoway, Ellie Pavlick, Emanuele Rodolà, Emma Lam, Eric Chu, Eric Tang, Erkut Erdem, Ernie Chang, Ethan A Chi, Ethan Dyer, Ethan Jerzak, Ethan Kim, Eunice Engefu Manyasi, Evgenii Zheltonozhskii, Fanyue Xia, Fatemeh Siar, Fernando Martínez-Plumed, Francesca Happé, Francois Chollet, Frieda Rong, Gaurav Mishra, Genta Indra Winata, Gerard de Melo, Ger-mán Kruszewski, Giambattista Parascandolo, Giorgio Mariani, Gloria Xinyue Wang, Gonzalo Jaimovitch-Lopez, Gregor Betz, Guy Gur-Ari, Hana Galijasevic, Hannah Kim, Hannah Rashkin, Hannaneh Hajishirzi, Harsh Mehta, Hayden Bogar, Henry Francis Anthony Shevlin, Hinrich Schuetze, Hiromu Yakura, Hongming Zhang, Hugh Mee Wong, Ian Ng, Isaac No-ble, Jaap Jumelet, Jack Geissinger, Jackson Kernion, Jacob Hilton, Jaehoon Lee, Jaime Fer-nández Fisac, James B Simon, James Kop-pel, James Zheng, James Zou, Jan Kocon, Jana Thompson, Janelle Wingfield, Jared Ka-plan, Jarema Radom, Jascha Sohl-Dickstein, Ja-son Phang, Jason Wei, Jason Yosinski, Jekate-rina Novikova, Jelle Bosscher, Jennifer Marsh, Jeremy Kim, Jeroen Taal, Jesse Engel, Jesu-joba Alabi, Jiacheng Xu, Jiaming Song, Jillian Tang, Joan Waweru, John Burden, John Miller, John U. Balis, Jonathan Batchelder, Jonathan Berant, Jörg Frohberg, Jos Rozen, Jose Hernandez-Orallo, Joseph Boudeman, Joseph Guerr, Joseph Jones, Joshua B. Tenenbaum, Joshua S. Rule, Joyce Chua, Kamil Kanclerz, Karen Livescu, Karl Krauth, Karthik Gopalakr-ishnan, Katerina Ignatyeva, Katja Mark-ert, Kaustubh Dhole, Kevin Gimpel, Kevin Omondi, Kory Wallace Mathewson, Kristen Chiafullo, Ksenia Shkaruta, Kumar Shrid-har, Kyle McDonell, Kyle Richardson, Laria Reynolds, Leo Gao, Li Zhang, Liam Dugan, Lianhui Qin, Lidia Contreras-Ochando, Louis-Philippe Morency, Luca Moschella, Lucas Lam, Lucy Noble, Ludwig Schmidt, Luheng He, Luis Oliveros-Colón, Luke Metz, Lütfi Kerem Senel, Maarten Bosma, Maarten Sap, Maartje Ter Ho-eve, Maheen Farooqi, Manaal Faruqui, Man-tas Mazeika, Marco Baturan, Marco Marelli, Marco Maru, Maria Jose Ramirez-Quintana, Marie Tolkiehn, Mario Giulianelli, Martha Lewis, Martin Potthast, Matthew L Leavitt, Matthias Hagen, Mátyás Schubert, Medina Or-duna Baitemirova, Melody Arnaud, Melvin McElrath, Michael Andrew Yee, Michael Co-hen, Michael Gu, Michael Ivanitskiy, Michael Starritt, Michael Strube, Michał Swędrowski, Michele Bevilacqua, Michihiro Yasunaga, Mi-hir Kale, Mike Cain, Mimee Xu, Mirac Suz-gun, Mitch Walker, Mo Tiwari, Mohit Bansal, Moin Aminnaseri, Mor Geva, Mozhdeh Gheini, Mukund Varma T, Nanyun Peng, Nathan An-drew Chi, Nayeon Lee, Neta Gur-Ari Krakover, Nicholas Cameron, Nicholas Roberts, Nick Do-iron, Nicole Martinez, Nikita Nangia, Niklas Deckers, Niklas Muennighoff, Nitish Shirish Keskar, Niveditha S. Iyer, Noah Constant, Noah Fiedel, Nuan Wen, Oliver Zhang, Omar Agha, Omar Elbaghdadi, Omer Levy, Owain Evans, Pablo Antonio Moreno Casares, Parth Doshi, Pascale Fung, Paul Pu Liang, Paul Vicol, Pegah Alipoormolabashi, Peiyuan Liao, Percy Liang, Peter W Chang, Peter Eckersley, Phu Mon Htut, Pinyu Hwang, Piotr Miłkowski, Piyush Patil, Pouya Pezeshkpour, Priti Oli, Qiaozhu Mei, Qing Lyu, Qinlang Chen, Rabin Ban-jade, Rachel Etta Rudolph, Raefer Gabriel, Rahel Habacker, Ramon Risco, Raphaël Mil-lière, Rhythm Garg, Richard Barnes, Rif A. Saurous, Riku Arakawa, Robbe Raymaekers, Robert Frank, Rohan Sikand, Roman Novak, Roman Sitelew, Ronan Le Bras, Rosanne Liu, Rowan Jacobs, Rui Zhang, Russ Salakhut-dinov, Ryan Andrew Chi, Seungjae Ryan Lee, Ryan Stovall, Ryan Teehan, Rylan Yang, Sahib Singh, Saif M. Mohammad, Sajant Anand, Sam Dillavou, Sam Shleifer, Sam Wiseman, Samuel Gruetter, Samuel R. Bow-man, Samuel Stern Schoenholz, Sanghyun Han, Sanjeev Kwatra, Sarah A. Rous, Sarik Ghazarian, Sayan Ghosh, Sean Casey, Se-bastian Bischoff, Sebastian Gehrmann, Sebas-tian Schuster, Sepideh Sadeghi, Shadi Hamdan, Sharon Zhou, Shashank Srivastava, Sherry Shi, Shikhar Singh, Shima Asaadi, Shixiang Shane Gu, Shubh Pachchigar, Shubham Toshniwal, Shyam Upadhyay, Shyamolima Shammie Deb-nath, Siamak Shakeri, Simon Thormeyer, Si-mone Melzi, Siva Reddy, Sneha Priscilla Makini, Soo-Hwan Lee, Spencer Torene, Sri-harsha Hatwar, Stanislas Dehaene, Stefan Di-vic, Stefano Ermon, Stella Biderman, Stephanie Lin, Stephen Prasad, Steven Piantadosi, Stu-art Shieber, Summer Misherghi, Svetlana Kir-itchenko, Swaroop Mishra, Tal Linzen, Tal Schuster, Tao Li, Tao Yu, Tariq Ali, Tat-sunori Hashimoto, Te-Lin Wu, Théo Desbor-des, Theodore Rothschild, Thomas Phan, Tianle Wang, Tiberius Nkinyili, Timo Schick, Tim-ofei Kornev, Titus Tunduny, Tobias Gersten-berg, Trenton Chang, Trishala Neeraj, Tushar Khot, Tyler Shultz, Uri Shaham, Vedant Misra, Vera Demberg, Victoria Nyamai, Vikas Rau-nak, Vinay Venkatesh Ramasesh, vinay uday prabhu, Vishakh Padmakumar, Vivek Srikumar, William Fedus, William Saunders, William Zhang, Wout Vossen, Xiang Ren, Xiaoyu Tong, Xinran Zhao, Xinyi Wu, Xudong Shen, Yadol-lah Yaghoobzadeh, Yair Lakretz, Yangqiu Song, Yasaman Bahri, Yejin Choi, Yichi Yang, Yid-ing Hao, Yifu Chen, Yonatan Belinkov, Yu Hou, Yufang Hou, Yuntao Bai, Zachary Seid, Zhuoye Zhao, Zijian Wang, Zijie J. Wang, Zirui Wang, and Ziyi Wu. 2023. Beyond the imitation game: Quantifying and extrapolating the capabilities of language models. Transactions on Machine Learning Research.",
+    "Yan Tao, Olga Viberg, Ryan S. Baker, and Rene F. Kizilcec. 2023. Auditing and mitigating cul-tural bias in llms.",
+    "Jean-Paul Vinay and Jean Darbelnet. 1995. Com-parative Stylistics of French and English: A methodology for translation. John Benjamins.",
+    "Mingfeng Xue, Dayiheng Liu, Kexin Yang, Guanting Dong, Wenqiang Lei, Zheng Yuan, Chang Zhou, and Jingren Zhou. 2023. Oc-cuquest: Mitigating occupational bias for inclu-sive large language models.",
+    "Jingfeng Yang, Haoming Jiang, Qingyu Yin, Dan-qing Zhang, Bing Yin, and Diyi Yang. 2022. SEQZERO: Few-shot compositional seman-tic parsing with sequential prompts and zero-shot models. In Findings of the Association for Computational Linguistics: NAACL 2022, pages 49–60, Seattle, United States. Associa-tion for Computational Linguistics.",
+    "Da Yin, Liunian Harold Li, Ziniu Hu, Nanyun Peng, and Kai-Wei Chang. 2021. Broaden the vision: Geo-diverse visual commonsense rea-soning. In Proceedings of the 2021 Confer-ence on Empirical Methods in Natural Lan-guage Processing, pages 2115–2129, Online and Punta Cana, Dominican Republic. Associa-tion for Computational Linguistics.",
+    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang. 2018. Gender bias in coreference resolution: Evaluation and debiasing methods. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguis-tics: Human Language Technologies, Volume 2 (Short Papers), pages 15–20, New Orleans, Louisiana. Association for Computational Lin-guistics."
+  ],
+  "measurement_description": "Stereotypical bias detection related to religious groups in a Korean cultural context, as one of 12 categories of social bias."
 }

@@ -2,19 +2,108 @@
   "filename": "2506.19028.pdf",
   "title": "Quantifying Fairness in LLMs Beyond Tokens: A Semantic and Statistical Perspective",
   "arxiv_url": "https://arxiv.org/pdf/2506.19028",
-  "bias_targets": [
-    {
-      "target": "Gender bias",
-      "methodology": "Substituting names associated with various gender identities in prompts and comparing the semantic consistency of the resulting long-form LLM responses using claim-level entailment checks and statistical hypothesis testing."
-    },
-    {
-      "target": "Racial bias",
-      "methodology": "Substituting names associated with different racial and ethnic groups (e.g., Black, White, Asian, Middle Eastern, North African, Native American) in prompts and comparing the semantic consistency of responses using claim-level entailment checks and statistical hypothesis testing."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Adding explicit age-related cues in prompts to compare outputs for younger versus older individuals, followed by evaluating the semantic consistency of responses using claim-level entailment checks and statistical hypothesis testing."
-    }
+  "religious_groups": [
+    "Islam"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "Jurassic",
+    "Llama3 8B",
+    "Llama3 70B",
+    "Mistral 7B",
+    "Mistral 8x7B",
+    "GPT3.5-Turbo",
+    "GPT4o",
+    "Claude3 Haiku",
+    "Claude3 Sonnet",
+    "DeepSeek V3.1",
+    "Qwen3 235B",
+    "Claude4 Sonnet",
+    "GPT OSS 120B",
+    "AI21 Labs Jurassic models",
+    "Meta Llama series",
+    "Mistral models",
+    "Anthropic Claude 3 models"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "none",
+  "base_benchmarks": [
+    "Winogender",
+    "WinoBias",
+    "StereoSet",
+    "BOLD",
+    "Bias in Bios",
+    "BBQ",
+    "HolisticBias",
+    "Counterfactual Sentiment Bias (CSB)",
+    "FairPair",
+    "Regard",
+    "Toxicity"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper did not evaluate religious bias and therefore presented no findings related to religion. Its findings focused on detecting nuanced biases in long-form text related to gender, race, and age.",
+  "references": [
+    "Abubakar Abid, Maheen Farooqi, and James Zou. Persistent anti-muslim bias in large language models. In Proceedings of the 2021 AAAI/ACM Conference on AI, Ethics, and Society, pp. 298–306, 2021.",
+    "Gati V Aher, Rosa I Arriaga, and Adam Tauman Kalai. Using large language models to simulate multiple humans and replicate human subject studies. In International Conference on Machine Learning, pp. 337–371. PMLR, 2023.",
+    "Soumya Barikeri, Anne Lauscher, Ivan Vulić, and Goran Glavaš. Redditbias: A real-world resource for bias evaluation and debiasing of conversational language models. arXiv preprint arXiv:2106.03521, 2021.",
+    "Houda Bouamor, Juan Pino, and Kalika Bali (eds.). Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, Singapore, December 2023. Association for Computational Linguistics. URL https://aclanthology.org/2023.emnlp-main.0/.",
+    "Dylan Bouchard. An actionable framework for assessing bias and fairness in large language model use cases. arXiv preprint arXiv:2407.10853, 2024.",
+    "Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, et al. Language models are few-shot learners. Advances in neural information processing systems, 33:1877–1901, 2020.",
+    "Lingjiao Chen, Matei Zaharia, and James Zou. How is chatgpt’s behavior changing over time? arXiv preprint arXiv:2307.09009, 2023.",
+    "I-Chun Chern, Steffi Chern, Shiqi Chen, Weizhe Yuan, Kehua Feng, Chunting Zhou, Junxian He, Graham Neubig, Pengfei Liu, et al. Factool: Factuality detection in generative ai–a tool augmented framework for multi-task and multi-domain scenarios. arXiv preprint arXiv:2307.13528, 2023.",
+    "Hyeong Kyu Choi, Weijie Xu, Chi Xue, Stephanie Eckman, and Chandan K Reddy. Mitigating selection bias with node pruning and auxiliary options. arXiv preprint arXiv:2409.18857, 2024.",
+    "Maria De-Arteaga, Alexey Romanov, Hanna Wallach, Jennifer Chayes, Christian Borgs, Alexandra Chouldechova, Sahin Geyik, Krishnaram Kenthapadi, and Adam Tauman Kalai. Bias in bios: A case study of semantic representation bias in a high-stakes setting. In Proceedings of the Conference on Fairness, Accountability, and Transparency, FAT* '19, pp. 120–128. ACM, January 2019. doi: 10.1145/3287560.3287572. URL http://dx.doi.org/10.1145/3287560.3287572.",
+    "Jwala Dhamala, Tony Sun, Varun Kumar, Satyapriya Krishna, Yada Pruksachatkun, Kai-Wei Chang, and Rahul Gupta. Bold: Dataset and metrics for measuring biases in open-ended language generation. In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, FAccT '21, pp. 862–872. ACM, March 2021. doi: 10.1145/3442188.3445924. URL http://dx.doi.org/10.1145/3442188.3445924.",
+    "Jane Dwivedi-Yu, Raaz Dwivedi, and Timo Schick. Fairpair: A robust evaluation of biases in language models through paired perturbations. arXiv preprint arXiv:2404.06619, 2024.",
+    "Tianyu Gao, Xingcheng Yao, and Danqi Chen. Simcse: Simple contrastive learning of sentence embeddings. arXiv preprint arXiv:2104.08821, 2021.",
+    "Samuel Gehman, Suchin Gururangan, Maarten Sap, Yejin Choi, and Noah A Smith. Realtoxicityprompts: Evaluating neural toxic degeneration in language models. arXiv preprint arXiv:2009.11462, 2020.",
+    "Xiaobo Guo, Weicheng Ma, and Soroush Vosoughi. Measuring media bias via masked language modeling. In Proceedings of the International AAAI Conference on Web and Social Media, volume 16, pp. 1404–1408, 2022.",
+    "Xiangkun Hu, Dongyu Ru, Lin Qiu, Qipeng Guo, Tianhang Zhang, Yang Xu, Yun Luo, Pengfei Liu, Yue Zhang, and Zheng Zhang. Refchecker: Reference-based fine-grained hallucination checker and benchmark for large language models. arXiv preprint arXiv:2405.14486, 2024.",
+    "Po-Sen Huang, Huan Zhang, Ray Jiang, Robert Stanforth, Johannes Welbl, Jack Rae, Vishal Maini, Dani Yogatama, and Pushmeet Kohli. Reducing sentiment bias in language models via counterfactual evaluation. arXiv preprint arXiv:1911.03064, 2019.",
+    "Albert Q Jiang, Alexandre Sablayrolles, Antoine Roux, Arthur Mensch, Blanche Savary, Chris Bamford, Devendra Singh Chaplot, Diego de las Casas, Emma Bou Hanna, Florian Bressand, et al. Mixtral of experts. arXiv preprint arXiv:2401.04088, 2024.",
+    "Matt Kusner, Yu Sun, Nicholas Kolkin, and Kilian Weinberger. From word embeddings to document distances. In International conference on machine learning, pp. 957–966. PMLR, 2015.",
+    "Yuan Li, Yue Huang, Hongyi Wang, Xiangliang Zhang, James Zou, and Lichao Sun. Quantifying ai psychology: A psychometrics benchmark for large language models. arXiv preprint arXiv:2406.17675, 2024.",
+    "Percy Liang, Rishi Bommasani, Tony Lee, Dimitris Tsipras, Dilara Soylu, Michihiro Yasunaga, Yian Zhang, Deepak Narayanan, Yuhuai Wu, Ananya Kumar, et al. Holistic evaluation of language models. arXiv preprint arXiv:2211.09110, 2022.",
+    "Tamas Madl, Weijie Xu, Olivia Choudhury, and Matthew Howard. Approximate, adapt, anonymize (3a): A framework for privacy preserving training data release for machine learning. arXiv preprint arXiv:2307.01875, 2023.",
+    "Christopher Manning and Hinrich Schutze. Foundations of statistical natural language processing. MIT press, 1999.",
+    "Justus Mattern, Zhijing Jin, Mrinmaya Sachan, Rada Mihalcea, and Bernhard Schölkopf. Understanding stereotypes in language models: Towards robust measurement and zero-shot debiasing. arXiv preprint arXiv:2212.10678, 2022.",
+    "AI Meta. Introducing meta llama 3: The most capable openly available llm to date. Meta AI, 2024.",
+    "Niklas Muennighoff, Nouamane Tazi, Loïc Magne, and Nils Reimers. Mteb: Massive text embedding benchmark. arXiv preprint arXiv:2210.07316, 2022.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. Stereoset: Measuring stereotypical bias in pretrained language models. arXiv preprint arXiv:2004.09456, 2020.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. StereoSet: Measuring stereotypical bias in pretrained language models. In Chengqing Zong, Fei Xia, Wenjie Li, and Roberto Navigli (eds.), Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pp. 5356–5371, Online, August 2021. Association for Computational Linguistics. doi: 10.18653/v1/2021.acl-long.416. URL https://aclanthology.org/2021.acl-long.416.",
+    "Jianmo Ni, Gustavo Hernandez Abrego, Noah Constant, Ji Ma, Keith B Hall, Daniel Cer, and Yinfei Yang. Sentence-t5: Scalable sentence encoders from pre-trained text-to-text models. arXiv preprint arXiv:2108.08877, 2021.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel Bowman. BBQ: A hand-built bias benchmark for question answering. In Smaranda Muresan, Preslav Nakov, and Aline Villavicencio (eds.), Findings of the Association for Computational Linguistics: ACL 2022, pp. 2086–2105, Dublin, Ireland, May 2022. Association for Computational Linguistics. doi: 10.18653/v1/2022.findings-acl.165. URL https://aclanthology.org/2022.findings-acl.165.",
+    "Tim Räz. Group fairness: Independence revisited. In Proceedings of the 2021 ACM conference on fairness, accountability, and transparency, pp. 129–137, 2021.",
+    "N Reimers. Sentence-bert: Sentence embeddings using siamese bert-networks. arXiv preprint arXiv:1908.10084, 2019.",
+    "Pericles ’asher’ Rospigliosi. Artificial intelligence in teaching and learning: what questions should we ask of chatgpt?, 2023.",
+    "Rachel Rudinger, Jason Naradowsky, Brian Leonard, and Benjamin Van Durme. Gender bias in coreference resolution. arXiv preprint arXiv:1804.09301, 2018.",
+    "Abel Salinas and Fred Morstatter. The butterfly effect of altering prompts: How small changes and jailbreaks affect large language model performance. arXiv preprint arXiv:2401.03729, 2024.",
+    "Gerard Salton. Introduction to modern information retrieval. McGrawHill Book Co, 1983.",
+    "Gerard Salton and Christopher Buckley. Term-weighting approaches in automatic text retrieval. Information processing & management, 24(5):513–523, 1988.",
+    "Emily Sheng, Kai-Wei Chang, Premkumar Natarajan, and Nanyun Peng. The woman worked as a babysitter: On biases in language generation. arXiv preprint arXiv:1909.01326, 2019.",
+    "Eric Michael Smith, Melissa Hall, Melanie Kambadur, Eleonora Presani, and Adina Williams. \"i’m sorry to hear that\": Finding new biases in language models with a holistic descriptor dataset, 2022a. URL https://arxiv.org/abs/2205.09209.",
+    "Eric Michael Smith, Melissa Hall, Melanie Kambadur, Eleonora Presani, and Adina Williams. \" i’m sorry to hear that\": Finding new biases in language models with a holistic descriptor dataset. arXiv preprint arXiv:2205.09209, 2022b.",
+    "Alex Tamkin, Amanda Askell, Liane Lovitt, Esin Durmus, Nicholas Joseph, Shauna Kravec, Karina Nguyen, Jared Kaplan, and Deep Ganguli. Evaluating and mitigating discrimination in language model decisions. arXiv preprint arXiv:2312.03689, 2023.",
+    "Clarence Thomas. The equal employment opportunity commission: Reflection on a new philosophy. Stetson L. Rev., 15:29, 1985.",
+    "Hugo Touvron, Thibaut Lavril, Gautier Izacard, Xavier Martinet, Marie-Anne Lachaux, Timothée Lacroix, Baptiste Rozière, Naman Goyal, Eric Hambro, Faisal Azhar, et al. Llama: Open and efficient foundation language models. arXiv preprint arXiv:2302.13971, 2023.",
+    "B. L. Welch. The generalization of ‘Student’s’ problem when several different population variances are involved. Biometrika, 34(1-2):28–35, 01 1947. ISSN 0006-3444. doi: 10.1093/biomet/34.1-2.28. URL https://doi.org/10.1093/biomet/34.1-2.28.",
+    "Weijie Xu, Wenxiang Hu, Fanyou Wu, and Srinivasan Sengamedu. DeTiME: Diffusion-enhanced topic modeling using encoder-decoder based LLM. In Houda Bouamor, Juan Pino, and Kalika Bali (eds.), Findings of the Association for Computational Linguistics: EMNLP 2023, pp. 9040–9057, Singapore, December 2023a. Association for Computational Linguistics. doi: 10.18653/v1/2023.findings-emnlp.606. URL https://aclanthology.org/2023.findings-emnlp.606/.",
+    "Weijie Xu, Xiaoyu Jiang, Srinivasan Sengamedu Hanumantha Rao, Francis Iannacci, and Jinjin Zhao. vontss: vmf based semi-supervised neural topic modeling with optimal transport. In Findings of the Association for Computational Linguistics: ACL 2023, pp. 4433–4457, 2023b.",
+    "Weijie Xu, Jinjin Zhao, Francis Iannacci, and Bo Wang. Ffpdg: Fast, fair and private data generation. arXiv preprint arXiv:2307.00161, 2023c.",
+    "Weijie Xu, Jay Desai, Srinivasan Sengamedu, Xiaoyu Jiang, and Francis Iannacci. S2vntm: Semi-supervised vmf neural topic modeling, 2024a. URL https://arxiv.org/abs/2307.04804.",
+    "Weijie Xu, Zicheng Huang, Wenxiang Hu, Xi Fang, Rajesh Kumar Cherukuri, Naumaan Nayyar, Lorenzo Malandri, and Srinivasan H Sengamedu. Hr-multiwoz: A task oriented dialogue (tod) dataset for hr llm agent. arXiv preprint arXiv:2402.01018, 2024b.",
+    "Weijie Xu, Xiaoyu Jiang, Jay Desai, Bin Han, Fuqin Yan, and Francis Iannacci. Kdstm: Neural semi-supervised topic modeling with knowledge distillation, 2024c. URL https://arxiv.org/abs/2307.01878.",
+    "Weijie Xu, Shixian Cui, Xi Fang, Chi Xue, Stephanie Eckman, and Chandan Reddy. Sata-bench: Select all that apply benchmark for multiple choice questions. arXiv preprint arXiv:2506.00643, 2025.",
+    "Xiaohao Yang, He Zhao, Weijie Xu, Yuanyuan Qi, Jueqing Lu, Dinh Phung, and Lan Du. Neural topic modeling with large language models in the loop, 2025. URL https://arxiv.org/abs/2411.08534.",
+    "Tianyi Zhang, Varsha Kishore, Felix Wu, Kilian Q Weinberger, and Yoav Artzi. Bertscore: Evaluating text generation with bert. arXiv preprint arXiv:1904.09675, 2019.",
+    "Zhehao Zhang, Weijie Xu, Fanyou Wu, and Chandan K Reddy. Falsereject: A resource for improving contextual safety and mitigating over-refusals in llms via structured reasoning. arXiv preprint arXiv:2505.08054, 2025.",
+    "Zhiping Zhang, Chenxinran Shen, Bingsheng Yao, Dakuo Wang, and Tianshi Li. Secret use of large language model (llm). arXiv preprint arXiv:2409.19450, 2024.",
+    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang. Gender bias in coreference resolution: Evaluation and debiasing methods, 2018. URL https://arxiv.org/abs/1804.06876.",
+    "Jinjin Zhao, Weijie Xu, and Candace Thille. End-to-end question generation to assist formative assessment design for conceptual knowledge learning. Amazon Science, 2021."
+  ],
+  "measurement_description": "The paper's proposed benchmark (FiSCo) was evaluated on gender, race, and age. Religion was mentioned as a dimension in other existing benchmarks discussed, such as StereoSet and BOLD, but was not measured by the new method presented."
 }

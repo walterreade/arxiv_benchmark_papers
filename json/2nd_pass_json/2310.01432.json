@@ -2,82 +2,11 @@
   "filename": "2310.01432.pdf",
   "title": "Split and Merge: Aligning Position Biases in LLM-based Evaluators",
   "arxiv_url": "https://arxiv.org/pdf/2310.01432",
-  "benchmark_measurement": "The benchmark did not measure anything related to faith or religion. It focused on mitigating position bias in LLM-based evaluators across general categories like writing, roleplay, reasoning, math, coding, extraction, STEM, and humanities.",
-  "religious_groups": [],
-  "models_tested": [
-    "GPT-4",
-    "GPT-3.5",
-    "Claude2",
-    "Llama2",
-    "Qwen",
-    "Chatglm2",
-    "Alpaca-13b",
-    "Bard",
-    "Vicuna-7b",
-    "Vicuna-13b",
-    "DeepSeek-v2",
-    "Meta-LLaMA-3-70b-instruct"
+  "bias_targets": [
+    {
+      "target": "Position bias",
+      "methodology": "Swapping the order of the two candidate answers in pairwise comparison prompts and measuring the consistency rate of the LLM evaluator's verdicts to see if it arbitrarily favors the first or second position."
+    }
   ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "long"
-  ],
-  "religion_component": "none",
-  "base_benchmarks": [
-    "MT-Bench"
-  ],
-  "continuous_testing": false,
-  "findings": "This paper does not contain any findings related to religion as it is not a focus of the research.",
-  "references": [
-    "claude2. https://www.anthropic.com/index/claude-2.",
-    "Llama 3. https://llama.meta.com/llama3/.",
-    "qwen. https://github.com/QwenLM/Qwen-7B/blob/main/tech_memo.md.",
-    "treesitter. https://tree-sitter.github.io/tree-sitter/.",
-    "wormgpt. https://wormgpt.ai/.",
-    "Chi-Min Chan, Weize Chen, Yusheng Su, Jianxuan Yu, Wei Xue, Shanghang Zhang, Jie Fu, and Zhiyuan Liu. 2023. Chateval: towards better llm-based evaluators through multi-agent debate. arXiv preprint arXiv:2308.07201.",
-    "Lingjiao Chen, Matei Zaharia, and James Zou. 2023. How is chatgpt's behavior changing over time? arXiv preprint arXiv:2307.09009.",
-    "Cheng-Han Chiang and Hung yi Lee. 2023. Can large language models be an alternative to human evaluations?",
-    "Andrew A Chien, Liuzixuan Lin, Hai Nguyen, Varsha Rao, Tristan Sharma, and Rajini Wijayawardana. 2023. Reducing the carbon impact of generative ai inference (today and in 2035). In Proceedings of the 2nd Workshop on Sustainable Computer Systems, pages 1–7.",
-    "DeepSeek-AI. 2024. Deepseek-v2: A strong, economical, and efficient mixture-of-experts language model.",
-    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of NAACL.",
-    "Shuzheng Gao, Cuiyun Gao, Yulan He, Jichuan Zeng, Lunyiu Nie, Xin Xia, and Michael R. Lyu. 2023. Code structure-guided transformer for source code summarization. ACM Trans. Softw. Eng. Methodol., 32(1):23:1–23:32.",
-    "Rishav Hada, Varun Gumma, Adrian de Wynter, Harshita Diddee, Mohamed Ahmed, Monojit Choudhury, Kalika Bali, and Sunayana Sitaram. 2023. Are large language model-based evaluators the solution to scaling up multilingual evaluation?",
-    "Wenxiang Jiao, Wenxuan Wang, Jen tse Huang, Xing Wang, and Zhaopeng Tu. 2023. Is chatgpt a good translator? a preliminary study. ArXiv, abs/2301.08745.",
-    "Walter Kintsch and Janice Keenan. 1973. Reading rate and retention as a function of the number of propositions in the base structure of sentences. Cognitive Psychology, 5(3):257–274.",
-    "Takeshi Kojima, Shixiang Shane Gu, Machel Reid, Yutaka Matsuo, and Yusuke Iwasawa. 2022. Large language models are zero-shot reasoners. Advances in neural information processing systems, 35:22199–22213.",
-    "Xuechen Li, Tianyi Zhang, Yann Dubois, Rohan Taori, Ishan Misra, Carlos Guestrin, Percy Liang, and Tatsunori B. Hashimoto. 2023a. Alpaca: A strong, replicable instruction-following model. https://github.com/tatsu-lab/alpaca_eval.",
-    "Zongjie Li, Chaozheng Wang, Zhibo Fu, Haoxuan Wang, Dong Chen, Shuai Wang, and Cuiyun Gao. 2023b. CCTEST: testing and repairing code completion systems. In 45th IEEE/ACM international Conference on Software Engineering, ICSE 2023, Melbourne, Australia, May 14-20, 2023, pages 1238–1250. IEEE.",
-    "Zongjie Li, Chaozheng Wang, Pingchuan Ma, Chaowei Liu, Shuai Wang, Daoyuan Wu, Cuiyun Gao, and Yang Liu. 2024. On extracting specified code abilities from large language models: A feasibility study. In Proceedings of the IEEE/ACM 46th International Conference on Software Engineering, ICSE ’24. New York, NY, USA: Association for Computing Machinery.",
-    "Zongjie Li, Chaozheng Wang, Shuai Wang, and Cuiyun Gao. 2023c. Protecting intellectual property of large language model-based code generation via watermarking. In Proceedings of the 2023 ACM SIGSAC Conference on Computer and Communications Security, CCS 2023, Copenhagen, Denmark, November 26-30, 2023.",
-    "Rensis Likert. 1932. A technique for the measurement of attitudes. archives of psychology.",
-    "Chin-Yew Lin. 2004. Rouge: A package for automatic evaluation of summaries. In Text summarization branches out, pages 74–81.",
-    "Yen-Ting Lin and Yun-Nung Chen. 2023. LLM-eval: Unified multi-dimensional automatic evaluation for open-domain conversations with large language models. In Proceedings of the 5th Workshop on NLP for Conversational AI (NLP4ConvAI 2023), pages 47–57, Toronto, Canada. Association for Computational Linguistics.",
-    "Yang Liu, Dan Iter, Yichong Xu, Shuohang Wang, Ruochen Xu, and Chenguang Zhu. 2023a. G-eval: Nlg evaluation using gpt-4 with better human alignment.",
-    "Yang Liu, Dan Iter, Yichong Xu, Shuohang Wang, Ruochen Xu, and Chenguang Zhu. 2023b. Gpteval: Nlg evaluation using gpt-4 with better human alignment. arXiv preprint arXiv:2303.16634.",
-    "OpenAI. 2023. Gpt-4 technical report.",
-    "Kishore Papineni, Salim Roukos, Todd Ward, and WeiJing Zhu. 2002. Bleu: a method for automatic evaluation of machine translation. In Proceedings of the 40th annual meeting of the Association for Computational Linguistics, pages 311–318.",
-    "Kaiping Peng, Richard E Nisbett, and Nancy YC Wong. 1997. Validity problems comparing values across cultures and possible solutions. Psychological methods, 2(4):329.",
-    "Nazneen Rajani, Nathan Lambert, Sheon Han, Jean Wang, Owain Evans, Edward Beeching, and Lewis Tunstall. 2023. Can llms label model data like humans? Hugging Face Blog. https://huggingface.co/blog/llm-can-label.",
-    "Oktavia Novi Ratnasari. 2023. Student difficulties in solving mathematical problems using similar cases.",
-    "Nils Reimers and Iryna Gurevych. 2019. SentenceBERT: Sentence embeddings using siamese BERTnetworks. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), Hong Kong, China. Association for Computational Linguistics.",
-    "Surendrabikram Thapa, Usman Naseem, and Mehwish Nasim. 2023. From humans to machines: can state-of-the-art llms effectively replace human annotators in nlp tasks. In Workshop Proceedings of the 17th International AAAI Conference on Web and Social Media.",
-    "Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine Bazi, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, et al. 2023. Llama 2: Open foundation and fine-tuned chat models. arXiv preprint arXiv:2307.09288.",
-    "Jen tse Huang, Man Ho, Adrian Ian, Eric Li, Shujie Ke, Jun-Yan He, Wenxian Wang, Lao Zhao, Shaopeng Tu, and Michael R. Lyu. 2023. Emotionally numb or empathetic? analyzing how llms feel using emotionbench. arXiv, abs/2308.13658.",
-    "Chaozheng Wang, Zongjie Li, Cuiyun Gao, Wenxuan Wang, Ting Peng, Hailiang Huang, Ruitao Ruan, Deng-Kai Liu, Michael R Lyu. 2024. Exploring multi-lingual bias of large models in code generation. arXiv preprint arXiv:2404.19368.",
-    "Chaozheng Wang, Zongjie Li, Cuiyun Gao, Yifeng Zhang, Shuai Wang, Chenguang Zhu, and Michael R. Lyu. 2023a. Rest: A framework for collecting real-world vulnerabilities and fixes. In 2023 38th IEEE/ACM International Conference on Automated Software Engineering (ASE), pages 1952–1962. IEEE.",
-    "Peiyi Wang, Lei Li, Liang Chen, Daoguang Zan, Binghuai Lin, Yanbin Hao, Qi Liu, Jianbin Lin, and Zhaowei Sun. 2023b. Large language models are not fair evaluators. arXiv preprint arXiv:2305.17926.",
-    "Yidong Wang, Zhuohao Yu, Zhengran Zeng, Linyi Yang, Cunxiang Wang, Hao Chen, Chaoyu Jiang,",
-    "Rui Xie, Jindong Wang, Xing Xie, et al. 2023c. Pandalm: An automatic evaluation benchmark for Ilm instruction tuning optimization. arXiv preprint arXiv:2306.05087.",
-    "Thilini Wijesiriwardene, Ruwan Wickramarachchi, Bimal Gajera, Shreeyash Gowaikar, Chandan Gupta, Aman Chadha, Aishwarya Naresh Reganti, Amit Sheth, and Amitava Das. 2023. Analogical-a novel benchmark for long text analogy evaluation in large language models. In Findings of the Association for Computational Linguistics: ACL 2023, pages 3534–3549.",
-    "Guangxuan Xiao, Yuandong Tian, Beidi Chen, Song Han, and Mike Lewis. 2023. Efficient streaming language models with attention sinks. arXiv preprint arXiv:2309.17453.",
-    "Aohan Zeng, Xiao Liu, Zhengxiao Du, Zihan Wang, Hanyu Lai, Ming Ding, Zhuoyi Yang, Yifan Xu, Wendi Zheng, Xiao Xia, et al. 2022. Glm-130b: An open bilingual pre-trained model. arXiv preprint arXiv:2210.02414.",
-    "Zhiyuan Zeng, Jiatong Yu, Tianyu Gao, Yu Meng, Tanya Goyal, and Danqi Chen. 2023. Evaluating large language models at evaluating instruction following. arXiv preprint arXiv:2310.07641.",
-    "Tianyi Zhang, Varsha Kishore, Felix Wu, Kilian Q Weinberger, and Yoav Artzi. 2019. Bertscore: Evaluating text generation with bert. arXiv preprint arXiv:1904.09675.",
-    "Xinghua Zhang, Bowen Yu, Haiyang Yu, Yangyu Lv, Tingwen Liu, Fei Huang, Hongbo Xu, and Yongbin Li. 2023. Wider and deeper llm networks are fairer Ilm evaluators. arXiv preprint arXiv:2308.01862.",
-    "Zihao Zhao, Eric Wallace, Shi Feng, Dan Klein, and Sameer Singh. 2021. Calibrate before use: Improving few-shot performance of language models. In International Conference on Machine Learning, pages 12697–12706. PMLR.",
-    "Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric P. Xing, Hao Zhang, Joseph E. Gonzalez, and Ion Stoica. 2024. Judging Ilm-as-a-judge with mt-bench and chatbot arena. In Proceedings of the 37th International Conference on Neural Information Processing Systems, NIPS ’23, Red Hook, NY, USA. Curran Associates Inc.",
-    "Kaijie Zhu, Jindong Wang, Jiaheng Zhou, Zichen Wang, Hao Chen, Yidong Wang, Linyi Yang, Wei Ye, Neil Zhenqiang Gong, Yue Zhang, et al. 2023. Promptbench: Towards evaluating the robustness of large language models on adversarial prompts. arXiv preprint arXiv:2306.04528."
-  ]
+  "primary_bias_target": "Position bias"
 }

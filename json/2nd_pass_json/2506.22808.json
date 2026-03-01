@@ -2,96 +2,11 @@
   "filename": "2506.22808.pdf",
   "title": "MedEthicsQA: A Comprehensive Question Answering Benchmark for Medical Ethics Evaluation of LLMs",
   "arxiv_url": "https://arxiv.org/pdf/2506.22808",
-  "benchmark_measurement": "The benchmark measures how LLMs handle medical ethics dilemmas, including scenarios where a physician's personal religious beliefs (e.g., Roman Catholic) conflict with patient care requests (e.g., contraception).",
-  "religious_groups": [
-    "Roman Catholic"
+  "bias_targets": [
+    {
+      "target": "Healthcare fairness and medical ethics bias",
+      "methodology": "Evaluating model responses to multiple-choice and open-ended clinical scenario questions using accuracy metrics and a checklist-based LLM-as-a-Judge, measuring alignment with four pillars of medical ethics (including the pillar of Justice, which specifically covers fair and equal patient treatment, and equitable resource allocation)."
+    }
   ],
-  "models_tested": [
-    "GPT-4o",
-    "o1-mini",
-    "GPT-4o-mini",
-    "Qwen-plus",
-    "Llama3.1-70b",
-    "Llama3-70b",
-    "Llama3.1-8b",
-    "Llama3-8b",
-    "Llama2-13b",
-    "Llama2-7b",
-    "Aloe-70b",
-    "Aloe-8b-alpha",
-    "Aloe-8b-beta",
-    "Med42-70b",
-    "Med42-8b",
-    "Meditron3-70b",
-    "Meditron3-8b",
-    "Huatuo-o1-8b",
-    "Huatuo-o1-70b"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short",
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "MedMCQA",
-    "MedQA",
-    "PubMedQA",
-    "MMLU",
-    "CAREQA",
-    "MedBench",
-    "MedSafetyBench"
-  ],
-  "continuous_testing": false,
-  "findings": "The paper does not report specific findings related to religion. Findings are focused on the general performance of models on medical ethics questions, which include scenarios involving physicians' personal or religious beliefs. The overall finding is that medical-specific fine-tuning can degrade performance on ethics questions compared to foundation models.",
-  "references": [
-    "Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia Leoni Aleman, Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat, and 1 others. 2023. Gpt-4 technical report. arXiv preprint arXiv:2303.08774.",
-    "Tom L. Beauchamp. 1979. Principles of Biomedical Ethics. Oxford University Press, New York.",
-    "Tom L Beauchamp. 2007. The 'four principles' approach to health care ethics. Principles of health care ethics, 29:3–10.",
-    "Junying Chen, Zhenyang Cai, Ke Ji, Xidong Wang, Wanlong Liu, Rongsheng Wang, Jianye Hou, and Benyou Wang. 2024. Huatuogpt-01, towards medical complex reasoning with llms. Preprint, arXiv:2412.18925.",
-    "Zeming Chen, Alejandro Hernández Cano, Angelika Romanou, Antoine Bonnet, Kyle Matoba, Francesco Salvi, Matteo Pagliardini, Simin Fan, Andreas Köpf, Amirkeivan Mohtashami, and 1 others. 2023. Meditron-70b: Scaling medical pretraining for large language models. arXiv preprint arXiv:2311.16079.",
-    "Clément Christophe, Praveen K Kanithi, Tathagata Raha, Shadab Khan, and Marco AF Pimentel. 2024. Med42-v2: A suite of clinical llms. arXiv preprint arXiv:2408.06142.",
-    "Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Amy Yang, Angela Fan, and 1 others. 2024. The llama 3 herd of models. arXiv preprint arXiv:2407.21783.",
-    "Raanan Gillon. 1994. Medical ethics: four principles plus attention to scope. Bmj, 309(6948):184.",
-    "Ashwin Kumar Gururajan, Enrique Lopez-Cuena, Jordi Bayarri-Planas, Adrian Tormos, Daniel Hinjos, Pablo Bernabeu-Perez, Anna Arias-Duart, Pablo Agustin Martin-Torres, Lucia Urcelay-Ganzabal, Marta Gonzalez-Mallo, Sergio Alvarez-Napagao, Eduard Ayguadé-Parra, and Ulises Cortés Dario Garcia-Gasulla. 2024. Aloe: A family of fine-tuned open healthcare Ilms. Preprint, arXiv:2405.01886.",
-    "Tessa Han, Aounon Kumar, Chirag Agarwal, and Himabindu Lakkaraju. 2024a. Medsafetybench: Evaluating and improving the medical safety of large language models. In The Thirty-eight Conference on Neural Information Processing Systems Datasets and Benchmarks Track.",
-    "Tianyu Han, Sven Nebelung, Firas Khader, Tianci Wang, Gustav Müller-Franzes, Christiane Kuhl, Sebastian Försch, Jens Kleesiek, Christoph Haarburger, Keno K Bressem, and 1 others. 2024b. Medical large language models are susceptible to targeted misinformation attacks. NPJ Digital Medicine, 7(1):288.",
-    "Dan Hendrycks, Collin Burns, Steven Basart, Andy Zou, Mantas Mazeika, Dawn Song, and Jacob Steinhardt. 2021. Measuring massive multitask language understanding. Proceedings of the International Conference on Learning Representations (ICLR).",
-    "Lei Huang, Weijiang Yu, Weitao Ma, Weihong Zhong, Zhangyin Feng, Haotian Wang, Qianglong Chen, Weihua Peng, Xiaocheng Feng, Bing Qin, and Ting Liu. 2025. A survey on hallucination in large language models: Principles, taxonomy, challenges, and open questions. ACM Trans. Inf. Syst., 43(2).",
-    "Lubna Abdel Jawad. 2024. Security and privacy in digital healthcare systems: Challenges and mitigation strategies. Abhigyan, 42(1):23–31.",
-    "Di Jin, Eileen Pan, Nassim Oufattole, Wei-Hung Weng, Hanyi Fang, and Peter Szolovits. 2020. What disease does this patient have? a large-scale open domain question answering dataset from medical exams. arXiv preprint arXiv:2009.13081.",
-    "Di Jin, Eileen Pan, Nassim Oufattole, Wei-Hung Weng, Hanyi Fang, and Peter Szolovits. 2021. What disease does this patient have? a large-scale open domain question answering dataset from medical exams. Applied Sciences, 11(14):6421.",
-    "Qiao Jin, Bhuwan Dhingra, Zhengping Liu, William Cohen, and Xinghua Lu. 2019. Pubmedqa: A dataset for biomedical research question answering. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 2567–2577.",
-    "Jared Kaplan, Sam McCandlish, Tom Henighan, Tom B. Brown, Benjamin Chess, Rewon Child, Scott Gray, Alec Radford, Jeffrey Wu, and Dario Amodei. 2020. Scaling laws for neural language models. Preprint, arXiv:2001.08361.",
-    "Chunyuan Li, Cliff Wong, Sheng Zhang, Naoto Usuyama, Haotian Liu, Jianwei Yang, Tristan Naumann, Hoifung Poon, and Jianfeng Gao. 2023a. Llava-med: Training a large language-and-vision assistant for biomedicine in one day. Preprint, arXiv:2306.00890.",
-    "Hanzhou Li, John T Moon, Saptarshi Purkayastha, Leo Anthony Celi, Hari Trivedi, and Judy W Gichoya. 2023b. Ethics of large language models in medicine and medical research. The Lancet Digital Health, 5(6):e333–e335.",
-    "Jiajie Li, Garrett Skinner, Gene Yang, Brian R Quaranto, Steven D Schwaitzberg, Peter C W Kim, and Jinjun Xiong. 2024a. Llava-surg: Towards multimodal surgical assistant via structured surgical video learning. Preprint, arXiv:2408.07981.",
-    "Jianquan Li, Xidong Wang, Xiangbo Wu, Zhiyi Zhang, Xiaolong Xu, Jie Fu, Prayag Tiwari, Xiang Wan, and Benyou Wang. 2023c. Huatuo-26m, a large-scale chinese medical qa dataset. arXiv preprint arXiv:2305.01526.",
-    "Lijun Li, Bowen Dong, Ruohui Wang, Xuhao Hu, Wangmeng Zuo, Dahua Lin, Yu Qiao, and Jing Shao. 2024b. Salad-bench: A hierarchical and comprehensive safety benchmark for large language models. arXiv preprint arXiv:2402.05044.",
-    "Aixin Liu, Bei Feng, Bing Xue, Bingxuan Wang, Bochao Wu, Chengda Lu, Chenggang Zhao, Chengqi Deng, Chenyu Zhang, Chong Ruan, and 1 others. 2024a. Deepseek-v3 technical report. arXiv preprint arXiv:2412.19437.",
-    "Jiaxiang Liu, Yuan Wang, Jiawei Du, Joey Tianyi Zhou, and Zuozhu Liu. 2024b. MedCoT: Medical chain of thought via hierarchical expert. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 17371–17389, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Mianxin Liu, Weiguo Hu, Jinru Ding, Jie Xu, Xiaoyang Li, Lifeng Zhu, Zhian Bai, Xiaoming Shi, Benyou Wang, Haitao Song, Pengfei Liu, Xiaofan Zhang, Shanshan Wang, Kang Li, Haofen Wang, Tong Ruan, Xuanjing Huang, Xin Sun, and Shaoting Zhang. 2024c. Medbench: A comprehensive, standardized, and reliable benchmarking system for evaluating chinese medical large language models. Big Data Mining and Analytics, 7(4):1116–1128.",
-    "Zhengliang Liu, Yue Huang, Xiaowei Yu, Lu Zhang, Zihao Wu, Chao Cao, Haixing Dai, Lin Zhao, Yiwei Li, Peng Shu, and 1 others. 2023. Deid-gpt: Zero-shot medical text de-identification by gpt-4. arXiv preprint arXiv:2303.11032.",
-    "Hiroki Nagai, Etsuko Nakazawa, and Akira Akabayashi. 2022. The creation of the belmont report and its effect on ethical principles: a historical study. Monash Bioethics Review, 40(2):157–170.",
-    "Harsha Nori, Nicholas King, Scott Mayer McKinney, Dean Carignan, and Eric Horvitz. 2023. Capabilities of gpt-4 on medical challenge problems. arXiv preprint arXiv:2303.13375.",
-    "Jesutofunmi A Omiye, Haiwen Gui, Shawheen J Rezaei, James Zou, and Roxana Daneshjou. 2024. Large language models in medicine: the potentials and pitfalls: a narrative review. Annals of Internal Medicine, 177(2):210–220.",
-    "Jasmine Chiat Ling Ong, Shelley Yin-Hsi Chang, Wasswa William, Atul J Butte, Nigam H Shah, Lita Sui Tjien Chew, Nan Liu, Finale Doshi-Velez, Wei Lu, Julian Savulescu, and 1 others. 2024a. Ethical and regulatory challenges of large language models in medicine. The Lancet Digital Health, 6(6):e428–e432.",
-    "Jasmine Chiat Ling Ong, Shelley Yin-Hsi Chang, Wasswa William, Atul J Butte, Nigam H Shah, Lita Sui Tjien Chew, Nan Liu, Finale Doshi-Velez, Wei Lu, Julian Savulescu, and 1 others. 2024b. Medical ethics of large language models in medicine. NEJM Al, page Alra2400038.",
-    "OpenAI. 2024. New embedding models and api updates.",
-    "Ankit Pal, Logesh Kumar Umapathi, and Malaikannan Sankarasubbu. 2022. Medmcqa: A large-scale multi-subject multi-choice dataset for medical domain question answering. In Proceedings of the Conference on Health, Inference, and Learning, volume 174 of Proceedings of Machine Learning Research, pages 248–260. PMLR.",
-    "Yujia Qin, Shihao Liang, Yining Ye, Kunlun Zhu, Lan Yan, Yaxi Lu, Yankai Lin, Xin Cong, Xiangru Tang, Bill Qian, Sihan Zhao, Lauren Hong, Runchu Tian, Ruobing Xie, Jie Zhou, Mark Gerstein, Dahai Li, Zhiyuan Liu, and Maosong Sun. 2023. Toolllm: Facilitating large language models to master 16000+ real-world apis. Preprint, arXiv:2307.16789.",
-    "Haoran Que, Feiyu Duan, Liqun He, Yutao Mou, Wangchunshu Zhou, Jiaheng Liu, Wenge Rong, Zekun Moore Wang, Jian Yang, Ge Zhang, Junran Peng, Zhaoxiang Zhang, Songyang Zhang, and Kai Chen. 2024. Hellobench: Evaluating long text generation capabilities of large language models. Preprint, arXiv:2409.16191.",
-    "T. Templin, M. W. Perez, S. Sylvia, J. Leek, and N. Sinnott-Armstrong. 2024. Addressing 6 challenges in generative ai for digital health: A scoping review. PLOS Digital Health, 3(5):e0000503.",
-    "Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine Babaei, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, and 1 others. 2023. Llama 2: Open foundation and fine-tuned chat models. arXiv preprint arXiv:2307.09288.",
-    "Junda Wang, Zhichao Yang, Zonghai Yao, and Hong Yu. 2024a. Jmlr: Joint medical llm and retrieval training for enhancing reasoning and professional question answering capability. arXiv preprint arXiv:2402.17887.",
-    "Zekun Moore Wang, Zhongyuan Peng, Haoran Que, Jiaheng Liu, Wangchunshu Zhou, Yuhan Wu, Hongcheng Guo, Ruitong Gan, Zehao Ni, Jian Yang, Man Zhang, Zhaoxiang Zhang, Wanli Ouyang, Ke Xu, Stephen W. Huang, Jie Fu, and Junran Peng. 2024b. Rolellm: Benchmarking, eliciting, and enhancing role-playing abilities of large language models. Preprint, arXiv:2310.00746.",
-    "WMA. Wma declaration of geneva [online]. 2017.",
-    "Jiageng Wu, Xian Wu, and Jie Yang. 2024. Guiding clinical reasoning with large language models via knowledge seeds. arXiv preprint arXiv:2403.06609.",
-    "Peng Xia, Ze Chen, Juanxi Tian, Yangrui Gong, Ruibo Hou, Yue Xu, Zhenbang Wu, Zhiyuan Fan, Yiyang Zhou, Kangyu Zhu, and 1 others. 2024. Cares: A comprehensive benchmark of trustworthiness in medical vision language models. arXiv preprint arXiv:2406.06007.",
-    "An Yang, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chengyuan Li, Dayiheng Liu, Fei Huang, Haoran Wei, and 1 others. 2024. Qwen2. 5 technical report. arXiv preprint arXiv:2412.15115.",
-    "Weizhe Yuan, Richard Yuanzhe Pang, Kyunghyun Cho, Sainbayar Sukhbaatar, Jing Xu, and Jason Weston. 2024. Self-rewarding language models. arXiv preprint arXiv:2401.10020.",
-    "Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric P. Xing, Hao Zhang, Joseph E. Gonzalez, and Ion Stoica. 2023. Judging llm-as-a-judge with mt-bench and chatbot arena. Preprint, arXiv:2306.05685."
-  ]
+  "primary_bias_target": "Healthcare fairness and medical ethics bias"
 }

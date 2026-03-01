@@ -2,23 +2,110 @@
   "filename": "2309.08573.pdf",
   "title": "Indian-BHED: A Dataset for Measuring India-Centric Biases in Large Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2309.08573",
-  "bias_targets": [
-    {
-      "target": "Caste bias",
-      "methodology": "Comparing log-likelihoods (All Unmasked Likelihood for encoders and Conditional Log-Likelihood for decoders) of stereotypical versus anti-stereotypical sentence pairs involving Indian caste identities (e.g., Brahmin, Dalit) using the novel Indian-BhED dataset."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Comparing log-likelihoods of stereotypical versus anti-stereotypical sentence pairs involving religious identities in the Indian context (e.g., Hindu, Muslim, Buddhist) using the novel Indian-BhED dataset."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Comparing log-likelihoods of stereotypical versus anti-stereotypical sentence pairs using a manually filtered US-centric subset of the CrowS-Pairs dataset to establish a baseline for comparison."
-    },
-    {
-      "target": "Racial bias",
-      "methodology": "Comparing log-likelihoods of stereotypical versus anti-stereotypical sentence pairs using a manually filtered US-centric subset of the CrowS-Pairs dataset to establish a baseline for comparison."
-    }
+  "religious_groups": [
+    "Hinduism",
+    "Islam",
+    "Buddhism",
+    "Jainism",
+    "Sikhism",
+    "Christianity"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "GPT 3.5",
+    "GPT 2",
+    "GPT 2 Large",
+    "Mistral 7B",
+    "Falcon 7B",
+    "LLaMA-2 7B",
+    "LLaMA-2 13B",
+    "XLM Roberta",
+    "m-BERT Uncased",
+    "BERT Base"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "major",
+  "base_benchmarks": [
+    "CrowS-Pairs"
+  ],
+  "continuous_testing": false,
+  "findings": "The majority of tested LLMs exhibit strong stereotypical biases in the Indian religious context, with the average bias score being highest for religion compared to caste, race, and gender. Models like GPT-2, GPT-2 Large, and GPT 3.5 showed a particularly high propensity (69-72%) for preferring stereotypical outputs, frequently associating Muslims with negative stereotypes such as violence and terrorism.",
+  "references": [
+    "Senthil Kumar B, Pranav Tiwari, Aman Chandra Kumar, and Aravindan Chandrabose. 2022. Casteism in India, but Not Racism - a Study of Bias in Word Embeddings of Indian Languages. In Proceedings of the First Workshop on Language Technology and Resources for a Fair, Inclusive, and Safe Society within the 13th Language Resources and Evaluation Conference, Kolawole Adebayo, Rohan Nanda, Kanishk Verma, and Brian Davis (Eds.). European Language Resources Association, Marseille, France, 1–7. https://aclanthology.org/2022.lateraisse-1.1",
+    "Zaheer Baber. 2004. 'Race', religion and riots: The 'racialization' of communal identity and conflict in India. Sociology 38, 4 (2004), 701–718.",
+    "Christopher A Bayly. 1985. The Pre-history of '; Communalism'? Religious Conflict in India, 1700–1860. Modern Asian Studies 19, 2 (1985), 177–203.",
+    "Hugo Berg, Siobhan Mackenzie Hall, Yash Bhalgat, Wonsuk Yang, Hannah Rose Kirk, Aleksandar Shtedritski, and Max Bain. 2022. A prompt array keeps the bias away: Debiasing vision-language models with adversarial learning. arXiv preprint arXiv:2203.11933 (2022).",
+    "Shaily Bhatt, Sunipa Dev, Partha Talukdar, Shachi Dave, and Vinodkumar Prabhakaran. 2022. Re-contextualizing fairness in NLP: The case of India. arXiv preprint arXiv:2209.12226 (2022).",
+    "Su Lin Blodgett, Solon Barocas, Hal Daumé III, and Hanna Wallach. 2020. Language (technology) is power: A critical survey of\" bias\" in nlp. arXiv preprint arXiv:2005.14050 (2020).",
+    "Tolga Bolukbasi, Kai-Wei Chang, James Y Zou, Venkatesh Saligrama, and Adam T Kalai. 2016. Man is to computer programmer as woman is to homemaker? debiasing word embeddings. Advances in neural information processing systems 29 (2016).",
+    "Tom B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan, Rewon Child, Aditya Ramesh, Daniel M. Ziegler, Jeffrey Wu, Clemens Winter, Christopher Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess, Jack Clark, Christopher Berner, Sam McCandlish, Alec Radford, Ilya Sutskever, and Dario Amodei. 2020. Language Models are Few-Shot Learners. arXiv:2005.14165 [cs.CL]",
+    "Pew Research Center. 2021. Attitudes about Caste. https://www.pewresearch.org/religion/2021/06/29/attitudes-about-caste/ Accessed on 2023-07-07.",
+    "Alexis Conneau, Kartikay Khandelwal, Naman Goyal, Vishrav Chaudhary, Guillaume Wenzek, Francisco Guzmán, Edouard Grave, Myle Ott, Luke Zettlemoyer, and Veselin Stoyanov. 2020. Unsupervised Cross-lingual Representation Learning at Scale. arXiv:1911.02116 [cs.CL]",
+    "Thomas Davidson, Debasmita Bhattacharya, and Ingmar Weber. 2019. Racial bias in hate speech and abusive language detection datasets. arXiv preprint arXiv:1905.12516 (2019).",
+    "Sunipa Dev, Jaya Goyal, Dinesh Tewari, Shachi Dave, and Vinodkumar Prabhakaran. 2023. Building Socio-culturally Inclusive Stereotype Resources with Community Engagement. arXiv preprint arXiv:2307.10514 (2023).",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2018. Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805 (2018).",
+    "Raheel Dhattiwala and Michael Biggs. 2012. The political logic of ethnic violence: The anti-Muslim pogrom in Gujarat, 2002. Politics & Society 40, 4 (2012), 483–516.",
+    "Harnoor Dhingra, Preetiha Jayashanker, Sayali Moghe, and Emma Strubell. 2023. Queer People are People First: Deconstructing Sexual Identity Stereotypes in Large Language Models. arXiv preprint arXiv:2307.00101 (2023).",
+    "Hanze Dong, Wei Xiong, Deepanshu Goyal, Yihan Zhang, Winnie Chow, Rui Pan, Shizhe Diao, Jipeng Zhang, Kashun Shum, and Tong Zhang. 2023. Raft: Reward ranked finetuning for generative foundation model alignment. arXiv preprint arXiv:2304.06767 (2023).",
+    "Yarrow Dunham, Mahesh Srinivasan, Ron Dotsch, and David Barner. 2014. Religion insulates ingroup evaluations: The development of intergroup attitudes in India. Developmental science 17, 2 (2014), 311–319.",
+    "Satyam Dwivedi, Sanjukta Ghosh, and Shivam Dwivedi. 2023. Breaking the Bias: Gender Fairness in LLMs Using Prompt Engineering and In-Context Learning. Rupkatha Journal on Interdisciplinary Studies in Humanities 15, 4 (2023).",
+    "Virginia K Felkner, Ho-Chun Herbert Chang, Eugene Jang, and Jonathan May. 2023. Winoqueer: A community-in-the-loop benchmark for anti-lgbtq+ bias in large language models. arXiv preprint arXiv:2306.15087 (2023).",
+    "Shangbin Feng, Chan Young Park, Yuhan Liu, and Yulia Tsvetkov. 2023. From pretraining data to language models to downstream tasks: Tracking the trails of political biases leading to unfair NLP models. arXiv preprint arXiv:2305.08283 (2023).",
+    "Zihao Fu, Wai Lam, Qian Yu, Anthony Man-Cho So, Shengding Hu, Zhiyuan Liu, and Nigel Collier. 2023. Decoder-only or encoder-decoder? interpreting language model as a regularized encoder-decoder. arXiv preprint arXiv:2304.04052 (2023).",
+    "Deep Ganguli, Amanda Askell, Nicholas Schiefer, Thomas Liao, Kamilė Lukošiūtė, Anna Chen, Anna Goldie, Azalia Mirhoseini, Catherine Olsson, Danny Hernandez, et al. 2023. The capacity for moral self-correction in large language models. arXiv preprint arXiv:2302.07459 (2023).",
+    "Sahaj Garg, Vincent Perot, Nicole Limtiaco, Ankur Taly, Ed H Chi, and Alex Beutel. 2019. Counterfactual fairness in text classification through robustness. In Proceedings of the 2019 AAAI/ACM Conference on AI, Ethics, and Society. 219–226.",
+    "Selvin Raj Gnana. 2018. Caste system, Dalitization and its implications in contemporary India. International Journal of Sociology and Anthropology 10, 7 (2018), 65–71.",
+    "James F Gregory. 1995. The crime of punishment: Racial and gender disparities in the use of corporal punishment in US public schools. Journal of Negro Education (1995), 454–462.",
+    "Charu Gupta. 2008. (MIS) Representing the Dalit Woman: Reification of Caste and Gender Stereotypes in the Hindi Didactic Literature of Colonial India. Indian Historical Review 35, 2 (2008), 101–124.",
+    "Charu Gupta. 2008. (MIS) Representing the Dalit Woman: Reification of Caste and Gender Stereotypes in the Hindi Didactic Literature of Colonial India. Indian Historical Review 35, 2 (2008), 101–124.",
+    "Thomas Hartvigsen, Saadia Gabriel, Hamid Palangi, Maarten Sap, Dipankar Ray, and Ece Kamar. 2022. Toxigen: A large-scale machine-generated dataset for adversarial and implicit hate speech detection. arXiv preprint arXiv:2203.09509 (2022).",
+    "Krystal Hu. 2023. ChatGPT sets record for fastest-growing user base - analyst note. Reuters (2023). https://www.reuters.com/technology/chatgpt-sets-record-fastest-growing-user-base-analyst-note-2023-02-01/",
+    "Ranjodh Jamwal. 2021. TIMUR'S INVASION OF INDIA. DIRECTORATE OF DISTANCE EDUCATION UNIVERSITY OF JAMMU (2021), 124.",
+    "Albert Q Jiang, Alexandre Sablayrolles, Arthur Mensch, Chris Bamford, Devendra Singh Chaplot, Diego de las Casas, Florian Bressand, Gianna Lengyel, Guillaume Lample, Lucile Saulnier, et al. 2023. Mistral 7B. arXiv preprint arXiv:2310.06825 (2023).",
+    "Xisen Jin, Francesco Barbieri, Brendan Kennedy, Aida Mostafazadeh Davani, Leonardo Neves, and Xiang Ren. 2020. On transferability of bias mitigation effects in language model fine-tuning. arXiv preprint arXiv:2010.12864 (2020).",
+    "Satyajit Kamble and Aditya Joshi. 2018. Hate speech detection from code-mixed hindi-english tweets using deep learning models. arXiv preprint arXiv:1811.05145 (2018).",
+    "Masahiro Kaneko and Danushka Bollegala. 2022. Unmasking the mask-evaluating social biases in masked language models. In Proceedings of the AAAI Conference on Artificial Intelligence, Vol. 36. 11954–11962.",
+    "Hannah Rose Kirk, Andrew M Bean, Bertie Vidgen, Paul Röttger, and Scott A Hale. 2023. The past, present and better future of feedback learning in large language models for subjective human preferences and values. arXiv preprint arXiv:2310.07629 (2023).",
+    "Hannah Rose Kirk, Yennie Jun, Filippo Volpin, Haider Iqbal, Elias Benussi, Frederic Dreyer, Aleksandar Shtedritski, and Yuki Asano. 2021. Bias out-of-the-box: An empirical analysis of intersectional occupational biases in popular generative language models. Advances in neural information processing systems 34 (2021), 2611–2624.",
+    "Neeraja Kirtane and Tanvi Anand. 2022. Mitigating gender stereotypes in Hindi and Marathi. arXiv preprint arXiv:2205.05901 (2022).",
+    "Awanish Kumar. 2020. BR Ambedkar on caste and land relations in India. Review of Agrarian Studies 10, 2369-2020-1859 (2020).",
+    "Jingling Li, Zeyu Tang, Xiaoyu Liu, Peter Spirtes, Kun Zhang, Liu Leqi, and Yang Liu. 2024. Steering LLMs Towards Unbiased Responses: A Causality-Guided Debiasing Framework. arXiv preprint arXiv:2403.08743 (2024).",
+    "Rabeeh Karimi Mahabadi, Yonatan Belinkov, and James Henderson. 2019. End-to-end bias mitigation by modelling biases in corpora. arXiv preprint arXiv:1909.06321 (2019).",
+    "Vijit Malik, Sunipa Dev, Akihiro Nishi, Nanyun Peng, and Kai-Wei Chang. 2021. Socially Aware Bias Measurements for Hindi Language Representations. arXiv preprint arXiv:2110.07871 (2021).",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2020. StereoSet: Measuring stereotypical bias in pretrained language models. arXiv preprint arXiv:2004.09456 (2020).",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R Bowman. 2020. CrowS-pairs: A challenge dataset for measuring social biases in masked language models. arXiv preprint arXiv:2010.00133 (2020).",
+    "Guilherme Penedo, Quentin Malartic, Daniel Hesslow, Ruxandra Cojocaru, Alessandro Cappelli, Hamza Alobeidli, Baptiste Pannier, Ebtesam Al-mazrouei, and Julien Launay. 2023. The RefinedWeb dataset for Falcon LLM: outperforming curated corpora with web data, and web data only. arXiv preprint arXiv:2306.01116 (2023). arXiv:2306.01116 https://arxiv.org/abs/2306.01116",
+    "Scott Plous and Dominique Neptune. 1997. Racial and gender biases in magazine advertising: A content-analytic study. Psychology of women quarterly 21, 4 (1997), 627–644.",
+    "Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, Ilya Sutskever, et al. 2019. Language models are unsupervised multitask learners. OpenAI blog 1, 8 (2019), 9.",
+    "Vaidehi Rajam, A Bheemeshwar Reddy, and Sudatta Banerjee. 2021. Explaining caste-based digital divide in India. Telematics and Informatics 65 (2021), 101719.",
+    "Anantanand Rambachan. 2008. Is Caste Intrinsic to Hinduism? Tikkun 23, 1 (2008), 59–61.",
+    "Leonardo Ranaldi, Elena Sofia Ruzzetti, Davide Venditti, Dario Onorati, and Fabio Massimo Zanzotto. 2023. A trip towards fairness: Bias and de-biasing in large language models. arXiv preprint arXiv:2305.13862 (2023).",
+    "R Rath and NC Sircar. 1960. The mental pictures of six Hindu caste groups about each other as reflected in verbal stereotypes. The Journal of Social Psychology 51, 2 (1960), 277–293.",
+    "Rowena Robinson. 2008. Religion, socio-economic backwardness & discrimination: The case of Indian Muslims. Indian Journal of Industrial Relations (2008), 194–200.",
+    "Punyajoy Saha, Binny Mathew, Kiran Garimella, and Animesh Mukherjee. 2021. \"Short is the Road That Leads from Fear to Hate\": Fear Speech in Indian WhatsApp Groups. In Proceedings of the Web Conference 2021 (Ljubljana, Slovenia) (WWW '21). Association for Computing Machinery, New York, NY, USA, 1110–1121. https://doi.org/10.1145/3442381.3450137",
+    "Punyajoy Saha, Binny Mathew, Kiran Garimella, and Animesh Mukherjee. 2021. \"Short is the Road That Leads from Fear to Hate\": Fear Speech in Indian WhatsApp Groups. In Proceedings of the Web Conference 2021 (Ljubljana, Slovenia) (WWW '21). Association for Computing Machinery, New York, NY, USA, 1110–1121. https://doi.org/10.1145/3442381.345013",
+    "Nithya Sambasivan, Erin Arnesen, Ben Hutchinson, Tulsee Doshi, and Vinodkumar Prabhakaran. 2021. Re-imagining algorithmic fairness in india and beyond. In Proceedings of the 2021 ACM conference on fairness, accountability, and transparency. 315–328.",
+    "Shibani Santurkar, Esin Durmus, Faisal Ladhak, Cinoo Lee, Percy Liang, and Tatsunori Hashimoto. 2023. Whose opinions do language models reflect? arXiv preprint arXiv:2303.17548 (2023).",
+    "Ragini Sen and Wolfgang Wagner. 2005. History, emotions and hetero-referential representations in inter-group conflict: The example of Hindu-Muslim relations in India. Papers on Social Representations 14 (2005), 2–1.",
+    "Gopal Sharan Sinha and Ramesh Chandra Sinha. 1967. Exploration in caste stereotypes. Social Forces 46, 1 (1967), 42–47.",
+    "Eric Michael Smith, Melissa Hall, Melanie Kambadur, Eleonora Presani, and Adina Williams. 2022. \"I'm sorry to hear that\": Finding New Biases in Language Models with a Holistic Descriptor Dataset. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing. 9180–9211.",
+    "C Matthew Snipp and Sin Yi Cheung. 2016. Changes in racial and gender inequality since 1970. The ANNALS of the American Academy of Political and Social Science 663, 1 (2016), 80–98.",
+    "Henry Noel Cochran Stevenson. 1954. Status evaluation in the Hindu caste system. The Journal of the Royal Anthropological Institute of Great Britain and Ireland 84, 1/2 (1954), 45–65.",
+    "Neil Stewart. 1951. Divide and rule: British policy in indian history. Science & Society (1951), 49–57.",
+    "Tony Sun, Andrew Gaut, Shirlyn Tang, Yuxin Huang, Mai ElSherief, Jieyu Zhao, Diba Mirza, Elizabeth Belding, Kai-Wei Chang, and William Yang Wang. 2019. Mitigating Gender Bias in Natural Language Processing: Literature Review. arXiv:1906.08976 [cs.CL]",
+    "Zeerak Talat, Aurélie Névéol, Stella Biderman, Miruna Clinciu, Manan Dey, Shayne Longpre, Sasha Luccioni, Maraim Masoud, Margaret Mitchell, Dragomir Radev, et al. 2022. You reap what you sow: On the challenges of bias evaluation under multilingual settings. In Proceedings of BigScience Episode# 5-Workshop on Challenges & Perspectives in Creating Large Language Models. 26–41.",
+    "Cynthia Talbot. 1995. Inscribing the other, inscribing the self: Hindu-Muslim identities in pre-colonial India. Comparative studies in society and history 37, 4 (1995), 692–722.",
+    "Nidhi Tewathia, Anant Kamath, and P Vigneswara Ilavarasan. 2020. Social inequalities, fundamental inequities, and recurring of the digital divide: Insights from India. Technology in Society 61 (2020), 101251.",
+    "Vishesh Thakur. 2023. Unveiling gender bias in terms of profession across LLMs: Analyzing and addressing sociological implications. arXiv preprint arXiv:2307.09162 (2023).",
+    "Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine Babaei, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, Dan Bikel, Lukas Blecher, Cristian Canton Ferrer, Moya Chen, Guillem Cucurull, David Esiobu, Jude Fernandes, Jeremy Fu, Wenyin Fu, Brian Fuller, Cynthia Gao, Vedanuj Goswami, Naman Goyal, Anthony Hartshorn, Saghar Hosseini, Rui Hou, Hakan Inan, Marcin Kardas, Viktor Kerkez, Madian Khabsa, Isabel Kloumann, Artem Korenev, Punit Singh Koura, Marie-Anne Lachaux, Thibaut Lavril, Jenya Lee, Diana Liskovich, Yinghai Lu, Yuning Mao, Xavier Martinet, Todor Mihaylov, Pushkar Mishra, Igor Molybog, Yixin Nie, Andrew Poulton, Jeremy Reizenstein, Rashi Rungta, Kalyan Saladi, Alan Schelten, Ruan Silva, Eric Michael Smith, Ranjan Subramanian, Xiaoqing Ellen Tan, Binh Tang, Ross Taylor, Adina Williams, Jian Xiang Kuan, Puxin Xu, Zheng Yan, Iliyan Zarov, Yuchen Zhang, Angela Fan, Melanie Kambadur, Sharan Narang, Aurelien Rodriguez, Robert Stojnic, Sergey Edunov, and Thomas Scialom. 2023. Llama 2: Open Foundation and Fine-Tuned Chat Models. arXiv:2307.09288 [cs.CL]",
+    "Aniket Vashishtha, Kabir Ahuja, and Sunayana Sitaram. 2023. On evaluating and mitigating gender biases in multilingual settings. arXiv preprint arXiv:2307.01503 (2023).",
+    "Tianyu Yu, Yuan Yao, Haoye Zhang, Taiwen He, Yifeng Han, Ganqu Cui, Jinyi Hu, Zhiyuan Liu, Hai-Tao Zheng, Maosong Sun, et al. 2023. Rlhf-v: Towards trustworthy mllms via behavior alignment from fine-grained correctional human feedback. arXiv preprint arXiv:2312.00849 (2023).",
+    "Angela Zhang, Mert Yuksekgonul, Joshua Guild, James Zou, and Joseph Wu. 2023. ChatGPT exhibits gender and racial biases in acute coronary syndrome management. medRxiv (2023), 2023–11.",
+    "Chen Zheng, Ke Sun, Hang Wu, Chenguang Xi, and Xun Zhou. 2024. Balancing Enhancement, Harmlessness, and General Capabilities: Enhancing Conversational LLMs with Direct RLHF. arXiv preprint arXiv:2403.02513 (2024)."
+  ],
+  "measurement_description": "The benchmark measures stereotypical bias related to religious groups (primarily Hinduism and Islam, with some examples for Sikhism, Buddhism, Christianity, and Jainism) within an Indian socio-cultural context."
 }

@@ -2,86 +2,11 @@
   "filename": "2409.19734.pdf",
   "title": "T2Vs Meet VLMs: A Scalable Multimodal Dataset for Visual Harmfulness Recognition",
   "arxiv_url": "https://arxiv.org/pdf/2409.19734",
-  "benchmark_measurement": "Detection of harmful visual content, where harm can include the misuse of 'religious icons' and content falling under 'Discriminatory Content and Cultural Insensitivity'.",
-  "religious_groups": [
-    "Christianity",
-    "Judaism"
+  "bias_targets": [
+    {
+      "target": "Class prediction bias",
+      "methodology": "Evaluating true positive rates (harmful accuracy) versus true negative rates (unharmful accuracy) across datasets to detect if models disproportionately favor one class over the other due to prompt sensitivity or imbalanced training data."
+    }
   ],
-  "models_tested": [
-    "Q16",
-    "Hive AI",
-    "HOD",
-    "NudeNet",
-    "InstructBLIP",
-    "CogVLM",
-    "GPT-4V",
-    "LLaVA-NeXT",
-    "Llama 3"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "SMID",
-    "HarmBench"
-  ],
-  "continuous_testing": true,
-  "findings": "The paper includes 'religious icon' as a keyword for generating potentially harmful visual content and 'Discriminatory Content and Cultural Insensitivity' as a category of harm. The benchmark tests models' ability to detect such content. However, the paper does not provide specific findings or performance breakdowns for these religious or cultural categories, focusing instead on the models' overall performance across all types of harmful content.",
-  "references": [
-    "Pexels. https://www.pexels.com/.",
-    "AI@Meta. Llama 3 model card. 2024. URL https://github.com/meta-llama/llama3/ blob/main/MODEL_CARD.md.",
-    "A. Blattmann, T. Dockhorn, S. Kulal, D. Mendelevitch, M. Kilian, D. Lorenz, Y. Levi, Z. English, V. Voleti, A. Letts, et al. Stable video diffusion: Scaling latent video diffusion models to large datasets. arXiv preprint arXiv:2311.15127, 2023.",
-    "Y.-M. Chang, C. Yeh, W.-C. Chiu, and N. Yu. Antifakeprompt: Prompt-tuned vision-language models are fake image detectors. arXiv preprint arXiv:2310.17419, 2023.",
-    "H. Chen, Y. Zhang, X. Cun, M. Xia, X. Wang, C. Weng, and Y. Shan. Videocrafter2: Overcoming data limitations for high-quality video diffusion models. arXiv preprint arXiv:2401.09047, 2024.",
-    "W.-L. Chiang, Z. Li, Z. Lin, Y. Sheng, Z. Wu, H. Zhang, L. Zheng, S. Zhuang, Y. Zhuang, J. E. Gonzalez, et al. Vicuna: An open-source chatbot impressing gpt-4 with 90%* chatgpt quality. See https://vicuna. lmsys. org (accessed 14 April 2023), 2023.",
-    "H. W. Chung, L. Hou, S. Longpre, B. Zoph, Y. Tay, W. Fedus, E. Li, X. Wang, M. De- hghani, S. Brahma, et al. Scaling instruction-finetuned language models. arXiv preprint arXiv:2210.11416, 2022.",
-    "D. L. Crone, S. Bode, C. Murawski, and S. M. Laham. The socio-moral image database (smid): A novel stimulus set for the study of social, moral and affective processes. PloS one, 13(1): e0190954, 2018.",
-    "W. Dai, J. Li, D. Li, A. M. H. Tiong, J. Zhao, W. Wang, B. Li, P. Fung, and S. Hoi. Lavis instructblip github page. https://github.com/salesforce/LAVIS/tree/main/ projects/instructblip.",
-    "W. Dai, J. Li, D. Li, A. M. H. Tiong, J. Zhao, W. Wang, B. Li, P. N. Fung, and S. Hoi. Instructblip: Towards general-purpose vision-language models with instruction tuning. Advances in Neural Information Processing Systems, 36, 2024.",
-    "D. N. Eungyeom Ha, Heemook Kim. Hod github page. https://github.com/poori-nuna/ HOD-Benchmark-Dataset/blob/main/codes/HOD_YOLOv5_all.ipynb.",
-    "S. Fabbrizzi, S. Papadopoulos, E. Ntoutsi, and I. Kompatsiaris. A survey on bias in visual datasets. Computer Vision and Image Understanding, 223:103552, 2022.",
-    "Y. Goyal, T. Khot, D. Summers-Stay, D. Batra, and D. Parikh. Making the v in vqa matter: Elevating the role of image understanding in visual question answering. In Proceedings of the IEEE conference on computer vision and pattern recognition, pages 6904–6913, 2017.",
-    "Y. Guo, C. Yang, A. Rao, M. Agrawala, D. Lin, and B. Dai. Sparsectrl: Adding sparse controls to text-to-video diffusion models. arXiv preprint arXiv:2311.16933, 2023.",
-    "E. Ha, H. Kim, and D. Na. Hod: New harmful object detection benchmarks for robust surveillance. In WACV, pages 183–192, 2024.",
-    "R. Henschel, L. Khachatryan, D. Hayrapetyan, H. Poghosyan, V. Tadevosyan, Z. Wang, S. Navasardyan, and H. Shi. Streamingt2v: Consistent, dynamic, and extendable long video generation from text. arXiv preprint arXiv:2403.14773, 2024.",
-    "HiveAI. Hive ai,. https://thehive.ai/.",
-    "HiveAI. Visual moderation service of hive ai.,. https://hivemoderation.com/.",
-    "B. Li, K. Zhang, H. Zhang, D. Guo, R. Zhang, F. Li, Y. Zhang, Z. Liu, and C. Li. Llava- next: Stronger llms supercharge multimodal capabilities in the wild, May 2024. URL https: //llava-vl.github.io/blog/2024-05-10-llava-next-stronger-llms/.",
-    "J. Li, D. Li, C. Xiong, and S. Hoi. Blip: Bootstrapping language-image pre-training for unified vision-language understanding and generation. In International conference on machine learning, pages 12888-12900. PMLR, 2022.",
-    "J. Li, D. Li, S. Savarese, and S. Hoi. Blip-2: Bootstrapping language-image pre-training with frozen image encoders and large language models. In International conference on machine learning, pages 19730–19742. PMLR, 2023.",
-    "F. Liu, K. Lin, L. Li, J. Wang, Y. Yacoob, and L. Wang. Aligning large multi-modal model with robust instruction tuning. arXiv preprint arXiv:2306.14565, 2023.",
-    "H. Liu, C. Li, Q. Wu, and Y. J. Lee. Visual instruction tuning. Advances in neural information processing systems, 36, 2024.",
-    "I. Loshchilov and F. Hutter. Decoupled weight decay regularization. arXiv preprint arXiv:1711.05101, 2017.",
-    "P. Lu, S. Mishra, T. Xia, L. Qiu, K.-W. Chang, S.-C. Zhu, O. Tafjord, P. Clark, and A. Kalyan. Learn to explain: Multimodal reasoning via thought chains for science question answering. Advances in Neural Information Processing Systems, 35:2507-2521, 2022.",
-    "E. LUKAN. 50 video statistics you can't ignore in 2024. https://www.synthesia.io/ post/video-statistics.",
-    "K. Marino, M. Rastegari, A. Farhadi, and R. Mottaghi. Ok-vqa: A visual question answering benchmark requiring external knowledge. In Proceedings of the IEEE/cvf conference on computer vision and pattern recognition, pages 3195-3204, 2019.",
-    "M. Mazeika, L. Phan, X. Yin, A. Zou, Z. Wang, N. Mu, E. Sakhaee, N. Li, S. Basart, B. Li, et al. Harmbench: A standardized evaluation framework for automated red teaming and robust refusal. arXiv preprint arXiv:2402.04249, 2024.",
-    "S. Min, X. Lyu, A. Holtzman, M. Artetxe, M. Lewis, H. Hajishirzi, and L. Zettlemoyer. Rethinking the role of demonstrations: What makes in-context learning work? arXiv preprint arXiv:2202.12837, 2022.",
-    "A. Mishra, S. Shekhar, A. K. Singh, and A. Chakraborty. Ocr-vqa: Visual question answering by reading text in images. In 2019 international conference on document analysis and recognition (ICDAR), pages 947–952. IEEE, 2019.",
-    "F. Motoki, V. Pinho Neto, and V. Rodrigues. More human than human: Measuring chatgpt political bias. Public Choice, 198(1):3–23, 2024.",
-    "notAI tech. Nudenet, 2021. https://github.com/notAI-tech/NudeNet.",
-    "R. Olmos, S. Tabik, and F. Herrera. Automatic handgun detection alarm in videos using deep learning. Neurocomputing, 275:66–72, 2018.",
-    "OpenAI. Gpt-4v, 2023. https://cdn.openai.com/papers/GPTV_System_Card.pdf.",
-    "OpenAI. gpt-4-1106-vision-preview., 2023. https://openai.com/index/ new-models-and-developer-products-announced-at-devday/.",
-    "D. Podell, Z. English, K. Lacey, A. Blattmann, T. Dockhorn, J. Müller, J. Penna, and R. Rombach. Sdxl: Improving latent diffusion models for high-resolution image synthesis. arXiv preprint arXiv:2307.01952, 2023.",
-    "Z. Qing, S. Zhang, J. Wang, X. Wang, Y. Wei, Y. Zhang, C. Gao, and N. Sang. Hierarchical spatio-temporal decoupling for text-to-video generation. arXiv preprint arXiv:2312.04483, 2023.",
-    "R. Rafailov, A. Sharma, E. Mitchell, C. D. Manning, S. Ermon, and C. Finn. Direct preference optimization: Your language model is secretly a reward model. Advances in Neural Information Processing Systems, 36, 2024.",
-    "J. Redmon, S. Divvala, R. Girshick, and A. Farhadi. You only look once: Unified, real-time object detection. In Proceedings of the IEEE conference on computer vision and pattern recognition, pages 779–788, 2016.",
-    "P. Schramowski, C. Tauchmann, and K. Kersting. Q16 official github page. https://github. com/ml-research/Q16.",
-    "P. Schramowski, C. Tauchmann, and K. Kersting. Can machines help us answering question 16 in datasheets, and in turn reflecting on inappropriate content? In Proceedings of the 2022 ACM Conference on Fairness, Accountability, and Transparency, pages 1350–1361, 2022.",
-    "P. Schramowski, M. Brack, B. Deiseroth, and K. Kersting. Safe latent diffusion: Mitigating inappropriate degeneration in diffusion models. In CVPR, pages 22522-22531, 2023.",
-    "A. Singh, V. Natarajan, M. Shah, Y. Jiang, X. Chen, D. Batra, D. Parikh, and M. Rohrbach. Towards vqa models that can read. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, pages 8317-8326, 2019.",
-    "H. Touvron, T. Lavril, G. Izacard, X. Martinet, M.-A. Lachaux, T. Lacroix, B. Rozière, N. Goyal, E. Hambro, F. Azhar, et al. Llama: Open and efficient foundation language models. arXiv preprint arXiv:2302.13971, 2023.",
-    "W. Wang, Q. Lv, W. Yu, W. Hong, J. Qi, Y. Wang, J. Ji, Z. Yang, L. Zhao, X. Song, J. Xu, B. Xu, J. Li, Y. Dong, M. Ding, and J. Tang. Model checkpoints of cogvlm. https://github.com/ THUDM/CogVLM/#model-checkpoints.",
-    "W. Wang, Q. Lv, W. Yu, W. Hong, J. Qi, Y. Wang, J. Ji, Z. Yang, L. Zhao, X. Song, et al. Cogvlm: Visual expert for pretrained language models. arXiv preprint arXiv:2311.03079, 2023.",
-    "Q. Wu, G. Bansal, J. Zhang, Y. Wu, B. Li, E. Zhu, L. Jiang, X. Zhang, S. Zhang, J. Liu, A. H. Awadallah, R. W. White, D. Burger, and C. Wang. Autogen: Enabling next-gen llm applications via multi-agent conversation framework. 2023.",
-    "Q. Ye, H. Xu, J. Ye, M. Yan, H. Liu, Q. Qian, J. Zhang, F. Huang, and J. Zhou. mplug-owl2: Revolutionizing multi-modal large language model with modality collaboration. arXiv preprint arXiv:2311.04257, 2023.",
-    "K.-C. Yeh, J.-A. Chi, D.-C. Lian, and S.-K. Hsieh. Evaluating interfaced Ilm bias. In Proceedings of the 35th Conference on Computational Linguistics and Speech Processing (ROCLING 2023), pages 292-299, 2023.",
-    "Y. Zhang, R. Zhang, J. Gu, Y. Zhou, N. Lipka, D. Yang, and T. Sun. Llavar: Enhanced visual instruction tuning for text-rich image understanding. arXiv preprint arXiv:2306.17107, 2023.",
-    "Y. Zhang, B. Li, h. Liu, Y. j. Lee, L. Gui, D. Fu, J. Feng, Z. Liu, and C. Li. Llava-next: A strong zero-shot video understanding model, April 2024. URL https://llava-vl.github.io/ blog/2024-04-30-llava-next-video/."
-  ]
+  "primary_bias_target": "Class prediction bias"
 }

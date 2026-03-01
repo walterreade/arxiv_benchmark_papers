@@ -2,44 +2,27 @@
   "filename": "2602.14835.pdf",
   "title": "The Global Representativeness Index: A Total Variation Distance Framework for Measuring Demographic Fidelity in Survey Research",
   "arxiv_url": "https://arxiv.org/pdf/2602.14835",
-  "benchmark_measurement": "The benchmark measures the distributional fidelity of a survey sample's religious affiliation composition against global population benchmarks from the Pew Global Religious Landscape. This is evaluated as a cross-classification with country (Country × Religion) to assess how well the joint distribution in a sample matches the target population.",
-  "religious_groups": [
-    "Christianity",
-    "Islam",
-    "Hinduism",
-    "Buddhism",
-    "Judaism",
-    "Folk Religions",
-    "Unaffiliated"
+  "bias_targets": [
+    {
+      "target": "Geographic/Nationality bias",
+      "methodology": "Calculating the Global Representativeness Index (GRI) using Total Variation Distance to measure how closely a survey sample's country, region, and continent distributions match United Nations global population benchmarks."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Calculating the GRI using Total Variation Distance to measure the distributional fidelity between the sample's gender composition and UN global population benchmarks, often cross-tabulated with country and age."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Calculating the GRI using Total Variation Distance to compare the survey sample's age bracket distribution against UN global population benchmarks."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Calculating the GRI using Total Variation Distance to compare the survey sample's religious affiliation distribution against Pew Research Center global religious landscape benchmarks."
+    },
+    {
+      "target": "Urban/Rural bias",
+      "methodology": "Calculating the GRI using Total Variation Distance to evaluate the representativeness of urban versus rural respondents compared to UN World Urbanization Prospects benchmarks."
+    }
   ],
-  "models_tested": [],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [],
-  "religion_component": "minor",
-  "base_benchmarks": [],
-  "continuous_testing": true,
-  "findings": "The paper finds that survey representativeness for the 'Country × Religion' dimension (mean GRI score of ~0.50 for the Global Dialogues survey) is significantly better than for the more granular 'Country × Gender × Age' dimension (mean GRI ~0.34). This is attributed to three structural factors: religion has fewer demographic strata (1,607 vs. 2,699), the major religious groups have large population proportions, and there is a strong geographic correlation (sampling many countries naturally captures a degree of religious diversity). However, the paper also notes a limitation: the religious benchmark data is from 2010 and may overstate religious affiliation due to secularization.",
-  "references": [
-    "Afrobarometer. Afrobarometer round 9 survey data, 2024. URL https://www.afrobarometer. org/data/.",
-    "J. Michael Brick and Douglas Williams. Explaining rising nonresponse rates in cross-sectional surveys. The ANNALS of the American Academy of Political and Social Science, 645(1):36–59, 2013.",
-    "Joy Buolamwini and Timnit Gebru. Gender shades: Intersectional accuracy disparities in commercial gender classification. In Proceedings of the Conference on Fairness, Accountability and Transparency, pages 77–91, 2018.",
-    "Corporación Latinobarómetro. Latinobarómetro survey data 2023–2024, 2024. URL https: //www.latinobarometro.org/.",
-    "European Parliament and Council of the European Union. Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence (AI Act), 2024. URL https://eur-lex. europa.eu/eli/reg/2024/1689/oj/eng. Official Journal of the European Union, L series, 12 July 2024.",
-    "Timnit Gebru, Jamie Morgenstern, Briana Vecchione, Jennifer Wortman Vaughan, Hanna Wallach, Hal Daumé III, and Kate Crawford. Datasheets for datasets. Communications of the ACM, 64(12):86–92, 2021.",
-    "Robert M. Groves. Nonresponse rates and nonresponse bias in household surveys. Public Opinion Quarterly, 70(5):646–675, 2006.",
-    "Robert M. Groves and Emilia Peytcheva. The impact of nonresponse rates on nonresponse bias: A meta-analysis. Public Opinion Quarterly, 72(2):167–189, 2008.",
-    "Christian Haerpfer, Ronald Inglehart, Alejandro Moreno, Christian Welzel, Kseniya Kizilova, Jaime Diez-Medrano, Marta Lagos, Pippa Norris, Eduard Ponarin, and Bi Puranen. World Values Survey: Round Seven — Country-Pooled Datafile Version 5.0. JD Systems Institute & WVSA Secretariat, Madrid, Spain & Vienna, Austria, 2022. doi: 10.14281/18241.24.",
-    "Daniel G. Horvitz and Donovan J. Thompson. A generalization of sampling without replacement from a finite universe. Journal of the American Statistical Association, 47(260):663–685, 1952.",
-    "Leslie Kish. Survey Sampling. John Wiley & Sons, 1965.",
-    "Lucien Le Cam. Asymptotic Methods in Statistical Decision Theory. Springer, 1986.",
-    "Margaret Mitchell, Simone Wu, Andrew Zaldivar, Parker Barnes, Lucy Vasserman, Ben Hutchinson, Elena Spitzer, Inioluwa Deborah Raji, and Timnit Gebru. Model cards for model reporting. In Proceedings of the Conference on Fairness, Accountability, and Transparency, pages 220–229, 2019.",
-    "Jerzy Neyman. On the two different aspects of the representative method: The method of stratified sampling and the method of purposive selection. Journal of the Royal Statistical Society, 97(4):558–625, 1934.",
-    "Donald B. Rubin. Using propensity scores to help design observational studies: Application to the tobacco litigation. Health Services and Outcomes Research Methodology, 2:169–188, 2001.",
-    "Barry Schouten, Fannie Cobben, and Jelke Bethlehem. Indicators for the representativeness of survey response. Survey Methodology, 35(1):101–113, 2009.",
-    "Elizabeth A. Stuart. Matching methods for causal inference: A review and a look forward. Statistical Science, 25(1):1–21, 2010.",
-    "Alexandre B. Tsybakov. Introduction to Nonparametric Estimation. Springer, 2009.",
-    "UNESCO. Recommendation on the ethics of artificial intelligence, 2021. URL https://unesdoc. unesco.org/ark:/48223/pf0000381137. Adopted by the General Conference at its 41st session, 23 November 2021."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

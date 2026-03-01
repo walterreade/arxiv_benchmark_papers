@@ -2,68 +2,15 @@
   "filename": "2601.15337.pdf",
   "title": "Language Models Entangle Language and Culture",
   "arxiv_url": "https://arxiv.org/pdf/2601.15337",
-  "benchmark_measurement": "Classification of LLM responses into cultural contexts, where some of the cultural categories are explicitly religious (e.g., Jewish, Islamic). The benchmark measures if the language of the query influences the cultural (including religious) context of the answer.",
-  "religious_groups": [
-    "Judaism",
-    "Islam"
+  "bias_targets": [
+    {
+      "target": "Language bias",
+      "methodology": "Translating culture-neutral, open-ended advice-seeking queries into multiple languages (English, Hindi, Chinese, Swahili, Hebrew, Brazilian Portuguese), generating responses, and using an LLM-as-a-Judge to score and compare the overall quality of the responses across these languages."
+    },
+    {
+      "target": "Cultural bias",
+      "methodology": "Translating non-English model responses back to English and using an LLM-as-a-Judge to classify the embedded cultural context (e.g., Western, Indian, Chinese). The study also evaluates factual accuracy on a translated subset of the CulturalBench dataset to measure how cultural knowledge performance varies by language."
+    }
   ],
-  "models_tested": [
-    "Qwen3-14B",
-    "Cohere-Aya-32B",
-    "Cohere-Aya-8B",
-    "Magistral-small",
-    "Sarvam-m"
-  ],
-  "languages_evaluated": [
-    "English",
-    "Hindi",
-    "Chinese",
-    "Swahili",
-    "Hebrew",
-    "Brazilian Portuguese"
-  ],
-  "response_type": [
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "WildChat",
-    "CulturalBench"
-  ],
-  "continuous_testing": false,
-  "findings": "The paper found that language and culture are entangled in LLMs. The language of a user's query significantly impacts the cultural context of the generated response. For instance, responses to queries made in certain languages were more frequently classified as having 'Islamic' cultural context, and queries in Hebrew were more likely to elicit responses classified within a 'Jewish' cultural framework, even for generic, culture-neutral questions.",
-  "references": [
-    "Meltem Aksoy. Whose morality do they speak? unraveling cultural bias in multilingual language models, 2024. URL https://arxiv.org/abs/2412.18863.",
-    "Mikel Artetxe, Sebastian Ruder, and Dani Yogatama. On the cross-lingual transferability of monolingual representations. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics. Association for Computational Linguistics, 2020. doi: 10.18653/v1/2020.acl-main.421. URL http://dx.doi. org/10.18653/v1/2020.acl-main.421.",
-    "World Values Survey Association. World values survey wave 7 (2017–2022), 2022. URL https://www. worldvaluessurvey.org/WVSDocumentationWV7.jsp. Version 2.0.0, World Values Survey Association.",
-    "Mohammad Atari, Jonathan Haidt, Jesse Graham, Sena P. Koleva, Sean T. Stevens, and Morteza Dehghani. Morality beyond the weird: How the nomological network of morality varies across cultures. Journal of Personality and Social Psychology, 2023. doi: 10.1037/ pspp0000470. Advance online publication August 17 2023.",
-    "Katarzyna B. M. Bąk, Agata R. B. Błasiak, Joanna B. B. Dębska, Patryk P. B. Kwiatek, Szymon S. B. Pękala, Martyna D. B. Ficek, Weronika A. B. Wójcik, Katarzyna M. B. Czoska, Zuzanna M. B. Rzeszutko, Zofia P. B. Wodniecka, and Magdalena Senderecka. Cross-linguistic differences in the conceptualization of emotions: An investigation of anger, sadness, and joy in english, chinese, and polish. Scientific Reports, 15(16650), 2025. doi: 10.1038/s41598-025-16650-w. URL https://doi.org/10.1038/s41598-025-16650-w.",
-    "Ricardo J. G. B. Campello, Davoud Moulavi, and Joerg Sander. Density-based clustering based on hierarchical density estimates. In Advances in Knowledge Discovery and Data Mining (PAKDD 2013), pages 160-172. Springer, Berlin, Heidelberg, 2013. doi: 10.1007/978-3-642-37456-2_14.",
-    "Nuo Chen, Zinan Zheng, Ning Wu, Ming Gong, Dongmei Zhang, and Jia Li. Breaking language barriers in multilingual mathematical reasoning: Insights and observations. arXiv preprint arXiv:2310.20246, 2023. URL https://arxiv.org/abs/2310.20246.",
-    "Yu Ying Chiu, Liwei Jiang, Bill Yuchen Lin, Chan Young Park, Shuyue Stella Li, Sahithya Ravi, Mehar Bhatia, Maria Antoniak, Yulia Tsvetkov, Vered Shwartz, and Yejin Choi. Culturalbench: A robust, diverse, and challenging cultural benchmark by human-ai culturalteaming, 2025. URL https://arxiv.org/abs/2410.02677.",
-    "Cohere. Introducing command a: Max performance, minimal compute. Cohere Blog, Mar 2025. URL https: //cohere.com/blog/command-a. Accessed 9 Nov 2025.",
-    "John Dang, Shivalika Singh, Daniel D’souza, Arash Ahmadian, Alejandro Salamanca, Madeline Smith, Aidan Peppin, Sungjin Hong, Manoj Govindassamy, Terrence Zhao, Sandra Kublik, Meor Amer, Viraat Aryabumi, Jon Ander Campos, Yi-Chern Tan, Tom Kocmi, Florian Strub, Nathan Grinsztajn, Yannis Flet-Berliac, Acyr Locatelli, Hangyu Lin, Dwarak Talupuru, Bharat Venkitesh, David Cairuz, Bowen Yang, Tim Chung, Wei-Yin Ko, Sylvie Shang Shi, Amir Shukayev, Sammie Bae, Aleksandra Piktus, Roman Castagné, Felipe Cruz-Salinas, Eddie Kim, Lucas Crawhall-Stein, Adrien Morisot, Sudip Roy, Phil Blunsom, Ivan Zhang, Aidan Gomez, Nick Frosst, Marzieh Fadaee, Beyza Ermis, Ahmet Üstün, and Sara Hooker. Aya expanse: Combining research breakthroughs for a new multilingual frontier, 2024. URL https://arxiv.org/abs/2412. 04261.",
-    "Hannah Devinney, Jenny Björklund, and Henrik Björklund. We don't talk about that: Case studies on intersectional analysis of social bias in large language models. In Proceedings of the 5th Workshop on Gender Bias in Natural Language Processing (GeBNLP), pages 33–44, Bangkok, Thailand, August 2024. Association for Computational Linguistics. doi: 10. 18653/v1/2024.gebnlp-1.3. URL https://aclanthology. org/2024.gebnlp-1.3/.",
-    "Dan Hendrycks, Collin Burns, Steven Basart, Andy Zou, Mantas Mazeika, Dawn Song, and Jacob Steinhardt. Measuring massive multitask language understanding, 2021. URL https://arxiv.org/abs/2009.03300.",
-    "Xu Huang, Wenhao Zhu, Hanxu Hu, Conghui He, Lei Li, Shujian Huang, and Fei Yuan. Benchmax: A comprehensive multilingual evaluation suite for large language models, 2025. URL https://arxiv.org/abs/2502.07346.",
-    "Mistral-AI,:, Abhinav Rastogi, Albert Q. Jiang, Andy Lo, Gabrielle Berrada, Guillaume Lample, Jason Rute, Joep Barmentlo, Karmesh Yadav, Kartik Khandelwal, Khyathi Raghavi Chandu, Léonard Blier, Lucile Saulnier, Matthieu Dinot, Maxime Darrin, Neha Gupta, Roman Soletskyi, Sagar Vaze, Teven Le Scao, Yihan Wang, Adam Yang, Alexander H. Liu, Alexandre Sablayrolles, Amélie Héliou, Amélie Martin, Andy Ehrenberg, Anmol Agarwal, Antoine Roux, Arthur Darcet, Arthur Mensch, Baptiste Bout, Baptiste Rozière, Baudouin De Monicault, Chris Bamford, Christian Wallenwein, Christophe Renaudin, Clémence Lanfranchi, Darius Dabert, Devon Mizelle, Diego de las Casas, Elliot Chane-Sane, Emilien Fugier, Emma Bou Hanna, Gauthier Delerce, Gauthier Guinet, Georgii Novikov, Guillaume Martin, Himanshu Jaju, Jan Ludziejewski, Jean-Hadrien Chabran, JeanMalo Delignon, Joachim Studnia, Jonas Amar, Josselin Somerville Roberts, Julien Denize, Karan Saxena, Kush Jain, Lingxiao Zhao, Louis Martin, Luyu Gao, Lélio Renard Lavaud, Marie Pellat, Mathilde Guillaumin, Mathis Felardos, Maximilian Augustin, Mickaël Seznec, Nikhil Raghuraman, Olivier Duchenne, Patricia Wang, Patrick von Platen, Patryk Saffer, Paul Jacob, Paul Wambergue, Paula Kurylowicz, Pavankumar Reddy Muddireddy, Philomène Chagniot, Pierre Stock, Pravesh Agrawal, Romain Sauvestre, Rémi Delacourt, Sanchit Gandhi, Sandeep Subramanian, Shashwat Dalal, Siddharth Gandhi, Soham Ghosh, Srijan Mishra, Sumukh Aithal, Szymon Antoniak, Thibault Schueller, Thibaut Lavril, Thomas Robert, Thomas Wang, Timothée Lacroix, Valeriia Nemychnikova, Victor Paltz, Virgile Richard, Wen-Ding Li, William Marshall, Xuanyu Zhang, and Yunhao Tang. Magistral, 2025. URL https://arxiv.org/abs/2506. 10910.",
-    "Sagnik Mukherjee, Muhammad Farid Adilazuarda, Sunayana Sitaram, Kalika Bali, Alham Fikri Aji, and Monojit Choudhury. Cultural conditioning or placebo? on the effectiveness of socio-demographic prompting, 2024. URL https://arxiv.org/abs/2406.11661.",
-    "OpenAI. Introducing indqa: A new benchmark for evaluating ai systems on indian culture and languages, nov 2025a. URL https://openai.com/index/introducingindqa/. Accessed: YYYY-MM-DD.",
-    "OpenAI. Chatgpt (nov 2025 version). https://chat.openai. com/, 2025b. Accessed: 2025-11-05.",
-    "Elisa Forcada Rodríguez, Olatz Perez de Viñaspre, Jon Ander Campos, Dietrich Klakow, and Vagrant Gautam. Colombian waitresses y jueces canadienses: Gender and country biases in occupation recommendations from llms, 2025. URL https://arxiv.org/abs/2505. 02456.",
-    "Jonathan Rystrøm, Hannah Rose Kirk, and Scott Hale. Multilingual != multicultural: Evaluating gaps between multilingual capabilities and cultural alignment in llms, 2025. URL https://arxiv.org/abs/2502.16534.",
-    "Sarvam. Introducing sarvam m: India's first open multilingual foundation model. https://www.sarvam.ai/ blogs/sarvam-m, 2025. Accessed: 2025-11-05.",
-    "Ipek Baris Schlicht, Burcu Sayin, Zhixue Zhao, Frederik M. Labonté, Cesare Barbera, Marco Viviani, Paolo Rosso, and Lucie Flek. Disparities in multilingual Ilmbased healthcare q&a, 2025. URL https://arxiv.org/abs/ 2510.17476.",
-    "SeatGeek. fuzzywuzzy: Fuzzy string matching in python. https://github.com/seatgeek/fuzzywuzzy, 2024. URL https://github.com/seatgeek/fuzzywuzzy. Version 0.18.0 (now archived; see \"TheFuzz\" fork).",
-    "Freda Shi, Mirac Suzgun, Markus Freitag, Xuezhi Wang, Suraj Srivats, Soroush Vosoughi, Hyung Won Chung, Yi Tay, Sebastian Ruder, Denny Zhou, Dipanjan Das, and Jason Wei. Language models are multilingual chain-of-thought reasoners, 2022. URL https://arxiv. org/abs/2210.03057.",
-    "Abhishek Kumar Singh, Vishwajeet Kumar, Rudra Murthy, Jaydeep Sen, Ashish Mittal, and Ganesh Ramakrishnan. Indic qa benchmark: A multilingual benchmark to evaluate question answering capability of llms for indic languages. In Findings of the Association for Computational Linguistics: NAACL 2025, pages 2607-2626. Association for Computational Linguistics, 2025. URL https://aclanthology.org/2025. findings-naacl.141.pdf.",
-    "European Values Study. European values study 2017-2022: Integrated dataset (evs 2022), 2022. URL https://doi.org/10.4232/1.14021. ZA7500 Data file Version 4.0.0.",
-    "Nicholas Sukiennik, Chen Gao, Fengli Xu, and Yong Li. An evaluation of cultural value alignment in llm, 2025. URL https://arxiv.org/abs/2504.08863.",
-    "Yan Tao, Olga Viberg, Ryan S Baker, and René F Kizilcec. Cultural bias and cultural alignment of large language models. PNAS Nexus, 3(9), September 2024. ISSN 2752-6542. doi: 10.1093/pnasnexus/pgae346. URL http://dx.doi.org/10.1093/pnasnexus/pgae346.",
-    "Yiming Wang, Pei Zhang, Jialong Tang, Haoran Wei, Baosong Yang, Rui Wang, Chenshu Sun, Feitong Sun, Jiran Zhang, Junxuan Wu, Qiqian Cang, Yichang Zhang, Fei Huang, Junyang Lin, Fei Huang, and Jingren Zhou. Polymath: Evaluating mathematical reasoning in multilingual contexts, 2025. URL https: //arxiv.org/abs/2504.18428.",
-    "Weihao Xuan, Rui Yang, Heli Qi, Qingcheng Zeng, Yunze Xiao, Aosong Feng, Dairui Liu, Yun Xing, Junjue Wang, Fan Gao, Jinghui Lu, Yuang Jiang, Huitao Li, Xin Li, Kunyu Yu, Ruihai Dong, Shangding Gu, Yuekang Li, Xiaofei Xie, Felix Juefei-Xu, Foutse Khomh, Osamu Yoshie, Qingyu Chen, Douglas Teodoro, Nan Liu, Randy Goebel, Lei Ma, Edison Marrese-Taylor, Shijian Lu, Yusuke Iwasawa, Yutaka Matsuo, and Irene Li. Mmlu-prox: A multilingual benchmark for advanced large language model evaluation, 2025. URL https://arxiv.org/abs/2503.10497.",
-    "An Yang, Anfeng Li, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chang Gao, Chengen Huang, Chenxu Lv, Chujie Zheng, Dayiheng Liu, Fan Zhou, Fei Huang, Feng Hu, Hao Ge, Haoran Wei, Huan Lin, Jialong Tang, Jian Yang, Jianhong Tu, Jianwei Zhang, Jianxin Yang, Jiaxi Yang, Jing Zhou, Jingren Zhou, Junyang Lin, Kai Dang, Keqin Bao, Kexin Yang, Le Yu, Lianghao Deng, Mei Li, Mingfeng Xue, Mingze Li, Pei Zhang, Peng Wang, Qin Zhu, Rui Men, Ruize Gao, Shixuan Liu, Shuang Luo, Tianhao Li, Tianyi Tang, Wenbiao Yin, Xingzhang Ren, Xinyu Wang, Xinyu Zhang, Xuancheng Ren, Yang Fan, Yang Su, Yichang Zhang, Yinger Zhang, Yu Wan, Yuqiong Liu, Zekun Wang, Zeyu Cui, Zhenru Zhang, Zhipeng Zhou, and Zihan Qiu. Qwen3 technical report, 2025. URL https://arxiv.org/abs/2505.09388.",
-    "Yanzhao Zhang, Mingxin Li, Dingkun Long, Xin Zhang, Huan Lin, Baosong Yang, Pengjun Xie, An Yang, Dayiheng Liu, Junyang Lin, Fei Huang, and Jingren Zhou. Qwen3 embedding: Advancing text embedding and reranking through foundation models, 2025. URL https://arxiv.org/abs/2506.05176.",
-    "Wenting Zhao, Xiang Ren, Jack Hessel, Claire Cardie, Yejin Choi, and Yuntian Deng. Wildchat: 1m chatgpt interaction logs in the wild, 2024. URL https: //arxiv.org/abs/2405.01470."
-  ]
+  "primary_bias_target": "Language bias"
 }

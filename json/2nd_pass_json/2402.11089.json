@@ -2,49 +2,11 @@
   "filename": "2402.11089.pdf",
   "title": "The Male CEO and the Female Assistant: Evaluation and Mitigation of Gender Biases in Text-To-Image Generation of Dual Subjects",
   "arxiv_url": "https://arxiv.org/pdf/2402.11089",
-  "benchmark_measurement": "Not applicable. The benchmark measures gender bias related to occupations and organizational power, not religious bias.",
-  "religious_groups": [],
-  "models_tested": [
-    "DALLE-3",
-    "Stable Diffusion",
-    "gpt-4-vision-preview"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Using the Paired Stereotype Test (PST) framework to prompt Text-to-Image models to generate dual-subject images with contrasting occupational or organizational power roles, and calculating a Stereotype Score (SS) based on human and automated classification of the generated individuals' masculine or feminine traits."
+    }
   ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "other"
-  ],
-  "religion_component": "none",
-  "base_benchmarks": [],
-  "continuous_testing": false,
-  "findings": "The paper does not analyze or mention religion/faith; its findings are focused on gender bias in text-to-image models.",
-  "references": [
-    "Hritik Bansal, Da Yin, Masoud Monajatipoor, and Kai-Wei Chang. 2022. How well can text-to-image generative models understand ethical natural language interventions? In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 1358–1370, Abu Dhabi, United Arab Emirates. Association for Computational Linguistics.",
-    "Federico Bianchi, Pratyusha Kalluri, Esin Durmus, Faisal Ladhak, Myra Cheng, Debora Nozza, Tatsunori Hashimoto, Dan Jurafsky, James Zou, and Aylin Caliskan. 2023. Easily accessible text-to-image generation amplifies demographic stereotypes at large scale. In Proceedings of the 2023 ACM Conference on Fairness, Accountability, and Transparency, FAccT ’23, page 1493–1504, New York, NY, USA. Association for Computing Machinery.",
-    "Jaemin Cho, Abhay Zala, and Mohit Bansal. 2023. Dall-eval: Probing the reasoning skills and social biases of text-to-image generation models. In ICCV.",
-    "David Collinson and Jeff Hearn. 1996. ’men managing leadership? men and women of the corporation revisited’. The International Review of Women and Leadership, 1:1–24.",
-    "Kevin Crowston. 2012. Amazon mechanical turk: A research tool for organizations and information systems scholars. In Shaping the Future of ICT Research. Methods and Approaches, pages 210–221, Berlin, Heidelberg. Springer Berlin Heidelberg.",
-    "Kathleen C. Fraser, Isar Nejadgholi, and Svetlana Kiritchenko. 2023. A friendly face: Do text-to-image systems rely on stereotypes when the input is under-specified? In The AAAI-23 Workshop on Creative AI Across Modalities.",
-    "Felix Friedrich, Manuel Brack, Lukas Struppek, Dominik Hintersdorf, Patrick Schramowski, Sasha Luccioni, and Kristian Kersting. 2023. Fair diffusion: Instructing text-to-image generation models on fairness. arXiv preprint at arXiv:2302.10893.",
-    "Susan Halford and Pauline Leonard. 2001. Gender, Power and Organisation, pages 214–234.",
-    "Kaiyi Huang, Kaiyue Sun, Enze Xie, Zhenguo Li, and Xihui Liu. 2023. T2i-compbench: A comprehensive benchmark for open-world compositional text-to-image generation. Advances in Neural Information Processing Systems, 36:78723–78747.",
-    "Kimmo Kärkkäinen and Jungseock Joo. 2019. Fairface: Face attribute dataset for balanced race, gender, and age. arXiv preprint arXiv:1908.04913.",
-    "Matthew Kay, Cynthia Matuszek, and Sean A. Munson. 2015. Unequal representation and gender stereotypes in image search results for occupations. In Proceedings of the 33rd Annual ACM Conference on Human Factors in Computing Systems, CHI ’15, page 3819–3828, New York, NY, USA. Association for Computing Machinery.",
-    "Heli K. Lahtinen and Fiona M. Wilson. 1994. Women and power in organizations. Executive Development, 7(3):16. Copyright - Copyright MCB University Press Limited 1994.",
-    "Zeqiang Lai, Xizhou Zhu, Jifeng Dai, Yu Qiao, and Wenhai Wang. 2023. Mini-dalle3: Interactive text to image by prompting large language models.",
-    "Donghoon Lee, Jisu Choi Jiseob Kim, Jongmin Kim, Woonhyuk Baek Minwoo Byeon, and Saehoon Kim. 2022. Karlo-v1.0.alpha on coyo-100m and cc15m. https://github.com/kakaobrain/karlo.",
-    "Junnan Li, Dongxu Li, Caiming Xiong, and Steven Hoi. 2022. Blip: Bootstrapping language-image pre-training for unified vision-language understanding and generation.",
-    "Ranjita Naik and Besmira Nushi. 2023. Social biases through the text-to-image generation lens. In Proceedings of the 2023 AAAI/ACM Conference on AI, Ethics, and Society, AIES ’23, page 786–808, New York, NY, USA. Association for Computing Machinery.",
-    "OpenAI. 2023. Dalle 3 system card.",
-    "Hadas Orgad, Bahjat Kawar, and Yonatan Belinkov. 2023. Editing implicit assumptions in text-to-image diffusion models. arXiv:2303.08084.",
-    "Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, Gretchen Krueger, and Ilya Sutskever. 2021. Learning transferable visual models from natural language supervision. In International Conference on Machine Learning.",
-    "Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, and Björn Ommer. 2021. High-resolution image synthesis with latent diffusion models.",
-    "Preethi Seshadri, Sameer Singh, and Yanai Elazar. 2023. The bias amplification paradox in text-to-image generation.",
-    "Vivek K. Singh, Mary Chayko, Raj Inamdar, and Diana Floegel. 2019. Female librarians and male computer programmers? gender bias in occupational images on digital media platforms. Journal of the Association for Information Science and Technology, 71:1281 – 1294.",
-    "U.S. Bureau of Labor Statistics. 2024. Labor force statistics from the current population survey.",
-    "Yixin Wan and Kai-Wei Chang. 2025. Compalign: Improving compositional text-to-image generation with a complex benchmark and fine-grained feedback. arXiv preprint arXiv:2505.11178.",
-    "Jialu Wang, Xinyue Liu, Zonglin Di, Yang Liu, and Xin Wang. 2023. T2IAT: Measuring valence and stereotypical biases in text-to-image generation. In Findings of the Association for Computational Linguistics: ACL 2023, pages 2560–2574, Toronto, Canada. Association for Computational Linguistics.",
-    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang. 2018. Gender bias in coreference resolution: Evaluation and debiasing methods. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 15–20, New Orleans, Louisiana. Association for Computational Linguistics."
-  ]
+  "primary_bias_target": "Gender bias"
 }

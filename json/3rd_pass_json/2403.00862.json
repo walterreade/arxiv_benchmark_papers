@@ -2,27 +2,55 @@
   "filename": "2403.00862.pdf",
   "title": "NewsBench: A Systematic Evaluation Framework for Assessing Editorial Capabilities of Large Language Models in Chinese Journalism",
   "arxiv_url": "https://arxiv.org/pdf/2403.00862",
-  "bias_targets": [
-    {
-      "target": "Racial bias",
-      "methodology": "Evaluated as part of the 'Bias and Discrimination' safety facet by using a GPT-4-based evaluator to detect discriminatory remarks in model-generated short answers and by measuring accuracy on adversarial multiple-choice questions within Chinese journalistic tasks."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Evaluated as part of the 'Bias and Discrimination' safety facet by using a GPT-4-based evaluator to detect discriminatory remarks in model-generated short answers and by measuring accuracy on adversarial multiple-choice questions within Chinese journalistic tasks."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Evaluated as part of the 'Bias and Discrimination' safety facet by using a GPT-4-based evaluator to detect discriminatory remarks in model-generated short answers and by measuring accuracy on adversarial multiple-choice questions within Chinese journalistic tasks."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Evaluated as part of the 'Bias and Discrimination' safety facet by using a GPT-4-based evaluator to detect discriminatory remarks in model-generated short answers and by measuring accuracy on adversarial multiple-choice questions within Chinese journalistic tasks."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Evaluated as part of the 'Bias and Discrimination' safety facet by using a GPT-4-based evaluator to detect discriminatory remarks in model-generated short answers and by measuring accuracy on adversarial multiple-choice questions within Chinese journalistic tasks."
-    }
+  "religious_groups": [],
+  "models_tested": [
+    "GPT-4-1106",
+    "GPT-3.5-turbo",
+    "ERNIE Bot",
+    "Baichuan2-13B",
+    "Baichuan2-53B",
+    "ChatGLM2-6B",
+    "ChatGLM3-6B",
+    "AquilaChat2-34B",
+    "InternLM-20B",
+    "Qwen-14B",
+    "Xverse",
+    "Xinyu2-70B"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "languages_evaluated": [
+    "Chinese"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Safetybench",
+    "CValues"
+  ],
+  "continuous_testing": true,
+  "findings": "The paper evaluates model safety on a 'Bias and Discrimination' facet, which includes religion as a protected category. It found that ERNIE Bot (0.809 score) and GPT-4-1106 (0.797 score) performed best on this facet in short answer questions. However, the results are not broken down to provide specific findings for religious bias alone.",
+  "references": [
+    "Amy Ross Arguedas and Felix M Simon. 2023. Automating democracy: Generative ai, journalism, and the future of democracy.",
+    "Jose Berengueres and Marybeth Sandell. 2023. Applying standards to advance upstream & downstream ethics in large language models. arXiv preprint arXiv:2306.03503.",
+    "Meredith Broussard, Nicholas Diakopoulos, Andrea L Guzman, Rediet Abebe, Michel Dupagne, and Ching-Hua Chuan. 2019. Artificial intelligence and journalism. Journalism & mass communication quarterly, 96(3):673–695.",
+    "Xiangrui Cai, Haidong Xu, Sihan Xu, Ying Zhang, et al. 2022. Badprompt: Backdoor attacks on continuous prompts. Advances in Neural Information Processing Systems, 35:37068–37080.",
+    "Caitlin Chin. 2023. Navigating the risks of artificial intelligence on the digital news landscape.",
+    "Hannes Cools and Nick Diakopoulos. 2023. Towards guidelines for guidelines on the use of generative ai in newsrooms.",
+    "Tianyu Cui, Yanling Wang, Chuanpu Fu, Yong Xiao, Sijia Li, Xinhao Deng, Yunpeng Liu, Qinglin Zhang, Ziyi Qiu, Peiyang Li, et al. 2024. Risk taxonomy, mitigation, and assessment benchmarks of large language model systems. arXiv preprint arXiv:2401.05778.",
+    "Nicholas Diakopoulos, Christoph Trattner, Dietmar Jannach, Irene Costera Meijer, and Enrico Motta. Leveraging professional ethics for responsible ai: Applying ai techniques to journalism. Communications of the ACM.",
+    "Elizabeth Fernandes, Sérgio Moro, and Paulo Cortez. 2023. Data science, machine learning and big data in digital journalism: A survey of state-of-the-art, challenges and opportunities. Expert Systems with Applications, page 119795.",
+    "Jinlan Fu, See-Kiong Ng, Zhengbao Jiang, and Pengfei Liu. 2023. Gptscore: Evaluate as you desire. arXiv preprint arXiv:2302.04166.",
+    "Fiona Fui-Hoon Nah, Ruilin Zheng, Jingyuan Cai, Keng Siau, and Langtao Chen. 2023. Generative ai and chatgpt: Applications, challenges, and ai-human collaboration.",
+    "Wynford Hicks, Adams Sally, Harriett Gilbert, Tim Holmes, and Jane Bentley. 2016. Writing for journalists. Routledge.",
+    "Bronwyn Jones, Ewa Luger, and Rhia Jones. 2023. Generative ai & journalism: A rapid risk-based review.",
+    "OpenAI. 2024. Openai moderation api. https://platform.openai.com/docs/ guides/moderation. Accessed: 2024-02-05.",
+    "Hao Sun, Guangxuan Xu, Jiawen Deng, Jiale Cheng, Chujie Zheng, Hao Zhou, Nanyun Peng, Xiaoyan Zhu, and Minlie Huang. 2022. On the safety of conversational models: Taxonomy, dataset, and benchmark. In Findings of the Association for Computational Linguistics: ACL 2022, pages 3906–3923.",
+    "Hao Sun, Zhexin Zhang, Jiawen Deng, Jiale Cheng, and Minlie Huang. 2023. Safety assessment of chinese large language models. arXiv preprint arXiv:2304.10436.",
+    "Guohai Xu, Jiayi Liu, Ming Yan, Haotian Xu, Jinghui Si, Zhuoran Zhou, Peng Yi, Xing Gao, Jitao Sang, Rong Zhang, et al. 2023. Cvalues: Measuring the values of chinese large language models from safety to responsibility. arXiv preprint arXiv:2307.09705.",
+    "Aiyuan Yang, Bin Xiao, Bingning Wang, Borong Zhang, Ce Bian, Chao Yin, Chenxu Lv, Da Pan, Dian Wang, Dong Yan, Fan Yang, Fei Deng, Feng Wang, Feng Liu, Guangwei Ai, Guosheng Dong, Haizhou Zhao, Hang Xu, Haoze Sun, Hongda Zhang, Hui Liu, Jiaming Ji, Jian Xie, JunTao Dai, Kun Fang, Lei Su, Liang Song, Lifeng Liu, Liyun Ru, Luyao Ma, Mang Wang, Mickel Liu, MingAn Lin, Nuolan Nie, Peidong Guo, Ruiyang Sun, Tao Zhang, Tianpeng Li, Tianyu Li, Wei Cheng, Weipeng Chen, Xiangrong Zeng, Xiaochuan Wang, Xiaoxi Chen, Xin Men, Xin Yu, Xuehai Pan, Yanjun Shen, Yiding Wang, Yiyu Li, Youxin Jiang, Yuchen Gao, Yupeng Zhang, Zenan Zhou, and Zhiying Wu. 2023. Baichuan 2: Open large-scale language models.",
+    "DI Zagorulko. 2023. Chatgpt in newsrooms: Adherence of ai-generated content to journalism standards and prospects for its implementation in digital media. Vcheni zapysky TNU imeni VI Vernadskoho, 34(73):1.",
+    "Zhexin Zhang, Leqi Lei, Lindong Wu, Rui Sun, Yongkang Huang, Chong Long, Xiao Liu, Xuanyu Lei, Jie Tang, and Minlie Huang. 2023. Safetybench: Evaluating the safety of large language models with multiple choice questions. arXiv preprint arXiv:2309.07045."
+  ],
+  "measurement_description": "The benchmark measures bias and discriminatory remarks against religion as a sub-category within its 'Bias and Discrimination' safety adherence facet."
 }

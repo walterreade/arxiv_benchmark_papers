@@ -2,69 +2,19 @@
   "filename": "2212.06295.pdf",
   "title": "Despite \"super-human” performance, current LLMs are unsuited for decisions about ethics and safety",
   "arxiv_url": "https://arxiv.org/pdf/2212.06295",
-  "benchmark_measurement": "The paper does not measure anything specific to faith or religion. The benchmark evaluates 'common sense ethical reasoning' on a subset of the ETHICS dataset, focusing on general scenarios of right and wrong, not theological or faith-based ethical dilemmas.",
-  "religious_groups": [],
-  "models_tested": [
-    "GPT-3 (smallest model, 2019)",
-    "GPT-3 (largest model, 2019)",
-    "GPT-3 (largest model, current)"
+  "bias_targets": [
+    {
+      "target": "Lexical bias",
+      "methodology": "Rewording common-sense ethical scenarios with semantically neutral but statistically loaded features (e.g., \"dangerous-sounding\" or \"helpful-sounding\" language) to evaluate how models rely on surface-level lexical heuristics rather than actual ethical reasoning."
+    },
+    {
+      "target": "Statistical bias",
+      "methodology": "Applying prompt perturbations and analyzing chain-of-thought rationales to reveal that language models hallucinate justifications based on statistical artifacts from their pre-training data rather than the semantics of the prompt."
+    },
+    {
+      "target": "Cultural bias",
+      "methodology": "Manually categorizing human disagreements with the ETHICS dataset ground-truth labels to quantify how often varying ethical judgments stem from cultural differences among annotators."
+    }
   ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short",
-    "long"
-  ],
-  "religion_component": "none",
-  "base_benchmarks": [
-    "ETHICS"
-  ],
-  "continuous_testing": false,
-  "findings": "This paper does not contain any findings related to religion or faith. Its analysis is focused on the general ethical reasoning capabilities of LLMs, their sensitivity to lexical features, adversarial vulnerabilities, and issues with scaling and chain-of-thought prompting.",
-  "references": [
-    "Y. Bang, N. Lee, T. Yu, L. Khalatbari, Y. Xu, D. Su, E. J. Barezi, A. Madotto, H. Kee, and P. Fung. AiSocrates: Towards Answering Ethical Quandary Questions. arXiv e-prints, May 2022.",
-    "E. M. Bender, T. Gebru, A. McMillan-Major, and S. Shmitchell. On the dangers of stochastic parrots: Can language models be too big? In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, FAccT ’21, page 610–623, New York, NY, USA, 2021. Association for Computing Machinery. ISBN 9781450383097. doi: 10.1145/3442188. 3445922. URL https://doi.org/10.1145/3442188.3445922.",
-    "G. Betz, C. Voigt, and K. Richardson. Critical Thinking for Language Models. arXiv e-prints, Sept. 2020.",
-    "R. Bommasani et al. On the Opportunities and Risks of Foundation Models. arXiv e-prints, Aug. 2021.",
-    "H. J. Branch, J. R. Cefalu, J. McHugh, L. Hujer, A. Bahl, D. d. C. Iglesias, R. Heichman, and R. Darwishi. Evaluating the susceptibility of pre-trained language models via handcrafted adversarial examples, 2022. URL https://arxiv.org/abs/2209.02128.",
-    "H. J. Branch, J. Rodriguez Cefalu, J. McHugh, L. Hujer, A. Bahl, D. del Castillo Iglesias, R. Heichman, and R. Darwishi. Evaluating the Susceptibility of Pre-Trained Language Models via Handcrafted Adversarial Examples. arXiv e-prints, Sept. 2022.",
-    "T. B. Brown et al. Language Models are Few-Shot Learners. In 34th Conference on Neural Information Processing Systems, pages 1877–1901, 2020.",
-    "P. Clark, O. Tafjord, and K. Richardson. Transformers as Soft Reasoners over Language. arXiv e-prints, Feb. 2020.",
-    "K. Cobbe, V. Kosaraju, M. Bavarian, M. Chen, H. Jun, L. Kaiser, M. Plappert, J. Tworek, J. Hilton, R. Nakano, C. Hesse, and J. Schulman. Training Verifiers to Solve Math Word Problems. arXiv e-prints, Oct. 2021.",
-    "A. Creswell and M. Shanahan. Faithful reasoning using large language models, 2022. URL https://arxiv.org/abs/2208.14271.",
-    "B. Dalvi, P. Jansen, O. Tafjord, Z. Xie, H. Smith, L. Pipatanangkura, and P. Clark. Explaining Answers with Entailment Trees. arXiv e-prints, Apr. 2021.",
-    "D. Dohan, W. Xu, A. Lewkowycz, J. Austin, D. Bieber, R. G. Lopes, Y. Wu, H. Michalewski, R. A. Saurous, J. Sohl-dickstein, K. Murphy, and C. Sutton. Language model cascades, 2022. URL https://arxiv.org/abs/2207.10342.",
-    "Y. Elazar, N. Kassner, S. Ravfogel, A. Feder, A. Ravichander, M. Mosbach, Y. Belinkov, H. Schütze, and Y. Goldberg. Measuring Causal Effects of Data Statistics on Language Model’s ‘Factual’ Predictions. arXiv e-prints, July 2022.",
-    "M. Forbes, J. D. Hwang, V. Shwartz, M. Sap, and Y. Choi. Social Chemistry 101: Learning to Reason about Social and Moral Norms. arXiv e-prints, Nov. 2020.",
-    "Y. Gu, B. Dalvi Mishra, and P. Clark. DREAM: Improving Situational QA by First Elaborating the Situation. arXiv e-prints, Dec. 2021.",
-    "D. Hendrycks, C. Burns, S. Basart, A. Critch, J. Li, D. Song, and J. Steinhardt. Aligning AI With Shared Human Values. In International Conference on Learning Representations, 2021.",
-    "D. Hendrycks, C. Burns, S. Kadavath, A. Arora, S. Basart, E. Tang, D. Song, and J. Steinhardt. Measuring mathematical problem solving with the math dataset, 2021. URL https://arxiv. org/abs/2103.03874.",
-    "D. Hendrycks, M. Mazeika, A. Zou, S. Patel, C. Zhu, J. Navarro, D. Song, B. Li, and J. Steinhardt. What Would Jiminy Cricket Do? Towards Agents That Behave Morally. arXiv e-prints, Oct. 2021.",
-    "J. Jang, S. Ye, and M. Seo. Can Large Language Models Truly Understand Prompts? A Case Study with Negated Prompts. arXiv e-prints, Sept. 2022.",
-    "H. Jhamtani and P. Clark. Learning to Explain: Datasets and Models for Identifying Valid Reasoning Chains in Multihop Question-Answering. arXiv e-prints, Oct. 2020.",
-    "L. Jiang, J. D. Hwang, C. Bhagavatula, R. Le Bras, J. Liang, J. Dodge, K. Sakaguchi, M. Forbes, J. Borchardt, S. Gabriel, Y. Tsvetkov, O. Etzioni, M. Sap, R. Rini, and Y. Choi. Can Machines Learn Morality? The Delphi Experiment. arXiv e-prints, Oct. 2021.",
-    "P. Johnson-Laird. Mental Models and Human Reasoning. PNAS, 107(43):18243–50, Oct. 2010. doi: 10.1038/10.1073/pnas.1012933107.",
-    "J. Kaplan, S. McCandlish, T. Henighan, T. B. Brown, B. Chess, R. Child, S. Gray, A. Radford, J. Wu, and D. Amodei. Scaling Laws for Neural Language Models. arXiv e-prints, Jan. 2020. doi: 10.48550/ARXIV.2001.08361.",
-    "K. Kurita, P. Michel, and G. Neubig. Weight poisoning attacks on pre-trained models, 2020. URL https://arxiv.org/abs/2004.06660.",
-    "N. Lourie, R. Le Bras, and Y. Choi. Scruples: A Corpus of Community Ethical Judgments on 32,000 Real-Life Anecdotes. arXiv e-prints, Aug. 2020.",
-    "Y. Lu, M. Bartolo, A. Moore, S. Riedel, and P. Stenetorp. Fantastically Ordered Prompts and Where to Find Them: Overcoming Few-Shot Prompt Order Sensitivity. arXiv e-prints, Apr. 2021.",
-    "I. McKenzie, A. Lyzhov, A. Parrish, A. Prabhu, A. Mueller, N. Kim, S. Bowman, and E. Perez. Inverse scaling prize: First round winners, 2022. URL https://irmckenzie. co.uk/round1.",
-    "S. Min, X. Lyu, A. Holtzman, M. Artetxe, M. Lewis, H. Hajishirzi, and L. Zettlemoyer. Rethinking the Role of Demonstrations: What Makes In-Context Learning Work? arXiv e-prints, Feb. 2022.",
-    "M. Nye, A. J. Andreassen, G. Gur-Ari, H. Michalewski, J. Austin, D. Bieber, D. Dohan, A. Lewkowycz, M. Bosma, D. Luan, C. Sutton, and A. Odena. Show Your Work: Scratchpads for Intermediate Computation with Language Models. arXiv e-prints, Nov. 2021.",
-    "Y. Razeghi, I. Logan, Robert L., M. Gardner, and S. Singh. Impact of Pretraining Term Frequencies on Few-Shot Reasoning. arXiv e-prints, Feb. 2022.",
-    "R. Rombach, A. Blattmann, D. Lorenz, P. Esser, and B. Ommer. High-Resolution Image Synthesis with Latent Diffusion Models. arXiv e-prints, Dec. 2021.",
-    "O. Tafjord, B. Dalvi Mishra, and P. Clark. ProofWriter: Generating Implications, Proofs, and Abductive Statements over Natural Language. arXiv e-prints, Dec. 2020.",
-    "Z. Talat, H. Blix, J. Valvoda, M. Indira Ganesh, R. Cotterell, and A. Williams. A Word on Machine Ethics: A Response to Jiang et al. (2021). arXiv e-prints, Nov. 2021.",
-    "E. Wallace, P. Rodriguez, S. Feng, I. Yamada, and J. Boyd-Graber. Trick Me If You Can: Human-in-the-loop Generation of Adversarial Examples for Question Answering. arXiv e-prints, Sept. 2018.",
-    "E. Wallace, T. Z. Zhao, S. Feng, and S. Singh. Concealed data poisoning attacks on nlp models, 2020. URL https://arxiv.org/abs/2010.12563.",
-    "E. Wallace, S. Feng, N. Kandpal, M. Gardner, and S. Singh. Universal adversarial triggers for attacking and analyzing nlp, 2021.",
-    "X. Wang, J. Wei, D. Schuurmans, Q. Le, E. Chi, and D. Zhou. Rationale-Augmented Ensembles in Language Models. arXiv e-prints, July 2022.",
-    "A. Webson and E. Pavlick. Do Prompt-Based Models Really Understand the Meaning of their Prompts? arXiv e-prints, Sept. 2021.",
-    "J. Wei, Y. Tay, R. Bommasani, C. Raffel, B. Zoph, S. Borgeaud, D. Yogatama, M. Bosma, D. Zhou, D. Metzler, E. H. Chi, T. Hashimoto, O. Vinyals, P. Liang, J. Dean, and W. Fedus. Emergent Abilities of Large Language Models. arXiv e-prints, June 2022.",
-    "J. Wei, X. Wang, D. Schuurmans, M. Bosma, B. Ichter, F. Xia, E. Chi, Q. Le, and D. Zhou. Chain of Thought Prompting Elicits Reasoning in Large Language Models. arXiv e-prints, Jan. 2022.",
-    "E. Zelikman, Y. Wu, J. Mu, and N. D. Goodman. STaR: Bootstrapping Reasoning With Reasoning. arXiv e-prints, Mar. 2022.",
-    "T. Z. Zhao, E. Wallace, S. Feng, D. Klein, and S. Singh. Calibrate Before Use: Improving Few-Shot Performance of Language Models. arXiv e-prints, Feb. 2021.",
-    "D. M. Ziegler, S. Nix, L. Chan, T. Bauman, P. Schmidt-Nielsen, T. Lin, A. Scherlis, N. Nabeshima, B. Weinstein-Raun, D. de Haas, B. Shlegeris, and N. Thomas. Takeaways from our robust injury classifier project, 2022. URL https://www.alignmentforum.org/posts/n3LAgnHg6ashQK3fF/ takeaways-from-our-robust-injury-classifier-project-redwood."
-  ]
+  "primary_bias_target": "Lexical bias"
 }

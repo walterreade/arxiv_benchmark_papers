@@ -2,41 +2,31 @@
   "filename": "2312.00168.pdf",
   "title": "Navigating News Narratives: A Media Bias Analysis Dataset",
   "arxiv_url": "https://arxiv.org/pdf/2312.00168",
-  "benchmark_measurement": "The dataset is designed to measure media bias in various news categories, including 'spiritual news'. It allows for the detection and analysis of bias within this specific context.",
-  "religious_groups": [],
-  "models_tested": [],
-  "languages_evaluated": [
-    "English"
+  "bias_targets": [
+    {
+      "target": "Political bias",
+      "methodology": "Curating news articles using political keywords and integrated hyperpartisan datasets, then applying an active learning scheme with manual labeling and human verification to classify bias levels."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Extracting news items related to race and social movements (e.g., Black Lives Matter), then utilizing semi-supervised learning and human annotation to identify biased words and bias levels."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Collecting and labeling news narratives regarding gender equality using a multi-stage active learning annotation framework to determine bias categories."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Incorporating existing age bias and sentiment analysis datasets, integrated into the overall corpus and categorized using an iterative human-in-the-loop annotation process."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Filtering news via LGBTQ rights keywords and leveraging semi-supervised learning with human verification to categorize the level of bias in the text."
+    },
+    {
+      "target": "Occupational bias",
+      "methodology": "Annotating occupational news items to identify bias dimensions, aspects, and specific biased words using a combination of manual and model-assisted labeling."
+    }
   ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "MBIC (media bias)",
-    "Hyperpartisan news detection data",
-    "Toxic comment classification challenge data",
-    "Jigsaw Unintended Bias in Toxicity Classification",
-    "Age Bias and Sentiment Analysis data",
-    "News bias data related to Ukraine",
-    "Social bias frames"
-  ],
-  "continuous_testing": true,
-  "findings": "This paper introduces a dataset for media bias analysis. While it does not present experimental findings, it notes the inclusion of 'spiritual news' as a category, enabling future research into media bias within religious or spiritual contexts.",
-  "references": [
-    "cjadams, Jeffrey Sorensen, Julia Elliott, Lucas Dixon, Mark McDonald, nithum, and Will Cukierski. Toxic comment classification challenge. https://www.kaggle.com/competitions/jigsaw-toxic-comment-classification-challenge, 2017.",
-    "Creative Commons. Creative commons attribution-noncommercial 4.0 international license, 2023. URL https://creativecommons.org/licenses/by-nc/4.0/legalcode. Accessed on November 30, 2023.",
-    "Mark Díaz, Isaac Johnson, Amanda Lazar, Anne Marie Piper, and Darren Gergle. Addressing age-related bias in sentiment analysis. In Proceedings of the 2018 chi conference on human factors in computing systems, pages 1–14, 2018.",
-    "Michael Färber, Victoria Burkard, Adam Jatowt, and Sora Lim. A multidimensional dataset based on crowdsourcing for analyzing and detecting news bias. In Proceedings of the 29th ACM International Conference on Information & Knowledge Management, pages 3007–3014, 2020.",
-    "Johannes Kiesel, Maria Mestre, Rishabh Shukla, Emmanuel Vincent, Payam Adineh, David Corney, Benno Stein, and Martin Potthast. Semeval-2019 task 4: Hyperpartisan news detection. In Proceedings of the 13th International Workshop on Semantic Evaluation, pages 829–839, 2019.",
-    "Ian Kivlichan, Jeffrey Sorensen, Julia Elliott, Lucy Vasserman, Martin Görner, and Phil Culliton. Jigsaw multilingual toxic comment classification. https://www.kaggle.com/competitions/jigsaw-multilingual-toxic-comment-classification, 2020.",
-    "Yuanyuan Lei, Ruihong Huang, Lu Wang, and Nick Beauchamp. Sentence-level media bias analysis informed by discourse structures. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 10040–10050, Abu Dhabi, United Arab Emirates, December 2022. Association for Computational Linguistics. doi: 10.18653/v1/2022.emnlp-main.682. URL https://aclanthology.org/2022.emnlp-main.682.",
-    "Shaina Raza. Automatic fake news detection in political platforms-a transformer-based approach. In Proceedings of the 4th Workshop on Challenges and Applications of Automated Extraction of Socio-political Events from Text (CASE 2021), pages 68–78, 2021.",
-    "Shaina Raza and Chen Ding. News recommender system: a review of recent progress, challenges, and opportunities. Artificial Intelligence Review, pages 1–52, 2022. Publisher: Springer Netherlands.",
-    "Shaina Raza and Brian Schwartz. Constructing a disease database and using natural language processing to capture and standardize free text clinical information. Nature Portfolio, Scientific Reports, 2023.",
-    "Shaina Raza, Parisa Osivand Pour, and Syed Raza Bashir. Fairness in Machine Learning meets with Equity in Healthcare. In AAAI symposium. https://ojs.aaai.org/index.php/AAAI-SS/article/view/27493, 2023.",
-    "Maarten Sap, Saadia Gabriel, Lianhui Qin, Dan Jurafsky, Noah A Smith, and Yejin Choi. Social bias frames: Reasoning about social and power implications of language. arXiv preprint arXiv:1911.03891, 2019.",
-    "Timo Spinde, Manuel Plank, Jan-David Krieger, Terry Ruas, Bela Gipp, and Akiko Aizawa. Neural media bias detection using distant supervision with babe-bias annotations by experts. In Findings of the Association for Computational Linguistics: EMNLP 2021, pages 1166–1177, 2021.",
-    "Ruixuan Xiao, Yiwen Dong, Junbo Zhao, Runze Wu, Minmin Lin, Gang Chen, and Haobo Wang. FreeAL: Towards Human-Free Active Learning in the Era of Large Language Models, November 2023. URL http://arxiv.org/abs/2311.15614. arXiv:2311.15614 [cs]."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

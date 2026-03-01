@@ -2,105 +2,39 @@
   "filename": "2505.23793.pdf",
   "title": "USB: A Comprehensive and Unified Safety Evaluation Benchmark for Multimodal Large Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2505.23793",
-  "benchmark_measurement": "The benchmark measured the model's vulnerability to generating harmful content in response to prompts involving religious discrimination. This was one of 61 tertiary safety risk categories evaluated.",
-  "religious_groups": [
-    "Religious groups (unspecified)"
+  "bias_targets": [
+    {
+      "target": "Ethnic bias",
+      "methodology": "Measuring Attack Success Rate (ASR) and Average Refusal Rate (ARR) by prompting the model with multimodal (image-text) adversarial inputs and using an LLM-as-a-judge (e.g., GPT-4o) to evaluate if the response contains discrimination or improperly refuses safe queries."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Measuring Attack Success Rate (ASR) and Average Refusal Rate (ARR) by prompting the model with multimodal (image-text) adversarial inputs and using an LLM-as-a-judge (e.g., GPT-4o) to evaluate if the response contains discrimination or improperly refuses safe queries."
+    },
+    {
+      "target": "Nationality bias",
+      "methodology": "Measuring Attack Success Rate (ASR) and Average Refusal Rate (ARR) by prompting the model with multimodal (image-text) adversarial inputs and using an LLM-as-a-judge (e.g., GPT-4o) to evaluate if the response contains discrimination or improperly refuses safe queries."
+    },
+    {
+      "target": "Regional bias",
+      "methodology": "Measuring Attack Success Rate (ASR) and Average Refusal Rate (ARR) by prompting the model with multimodal (image-text) adversarial inputs and using an LLM-as-a-judge (e.g., GPT-4o) to evaluate if the response contains discrimination or improperly refuses safe queries."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Measuring Attack Success Rate (ASR) and Average Refusal Rate (ARR) by prompting the model with multimodal (image-text) adversarial inputs and using an LLM-as-a-judge (e.g., GPT-4o) to evaluate if the response contains discrimination or improperly refuses safe queries."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Measuring Attack Success Rate (ASR) and Average Refusal Rate (ARR) by prompting the model with multimodal (image-text) adversarial inputs and using an LLM-as-a-judge (e.g., GPT-4o) to evaluate if the response contains discrimination or improperly refuses safe queries."
+    },
+    {
+      "target": "Occupational bias",
+      "methodology": "Measuring Attack Success Rate (ASR) and Average Refusal Rate (ARR) by prompting the model with multimodal (image-text) adversarial inputs and using an LLM-as-a-judge (e.g., GPT-4o) to evaluate if the response contains discrimination or improperly refuses safe queries."
+    },
+    {
+      "target": "Health bias",
+      "methodology": "Measuring Attack Success Rate (ASR) and Average Refusal Rate (ARR) by prompting the model with multimodal (image-text) adversarial inputs and using an LLM-as-a-judge (e.g., GPT-4o) to evaluate if the response contains discrimination or improperly refuses safe queries."
+    }
   ],
-  "models_tested": [
-    "Claude3.5-Sonnet2",
-    "Gemini-1.5-Pro",
-    "Gemini-2.0-Flash",
-    "GPT-40",
-    "Qwen-VL-Max",
-    "VILA-13B",
-    "VILA-7B",
-    "LLaVA-v1.5-13B",
-    "LLaVA-v1.5-7B",
-    "MiniCPM-V 2.6",
-    "InternVL2-40B",
-    "InternVL2-8B",
-    "Qwen2.5-VL-72B",
-    "Qwen2.5-VL-7B",
-    "Qwen2-VL-72B",
-    "Qwen2-VL-7B",
-    "GLM-4V-9B"
-  ],
-  "languages_evaluated": [
-    "English",
-    "Chinese"
-  ],
-  "response_type": [
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "Hades",
-    "Harmbench",
-    "JailBreakV",
-    "MLLMGuard",
-    "MMSafetybench",
-    "MossBench",
-    "MssBench",
-    "MultiTrust",
-    "RTVLM",
-    "SafeBench",
-    "VLGuard",
-    "VLSafe",
-    "VLSbench"
-  ],
-  "continuous_testing": false,
-  "findings": "The paper's findings, visualized in a radar chart (Figure 9), show that commercial models like Claude-3.5-Sonnet2 demonstrated strong robustness against generating harmful content related to religious discrimination, with an Attack Success Rate (ASR) below 20%. In contrast, most open-source models, such as the VILA and LLaVA series, were highly vulnerable in this category, with ASRs approaching 100%.",
-  "references": [
-    "J. Devlin, M.-W. Chang, K. Lee, and K. Toutanova, “Bert: Pre-training of deep bidirectional transformers for language understanding,\" in Proceedings of the The Annual Conference of the North American Chapter of the Association for Computational Linguistics (NAACL), 2019, pp. 4171-4186.",
-    "J. Achiam, S. Adler, S. Agarwal, L. Ahmad, I. Akkaya, F. L. Aleman, D. Almeida, J. Altenschmidt, S. Altman, S. Anadkat et al., “GPT-4 technical report,\" arXiv preprint arXiv:2303.08774, 2023.",
-    "W. X. Zhao, K. Zhou, J. Li, T. Tang, X. Wang, Y. Hou, Y. Min, B. Zhang, J. Zhang, Z. Dong et al., \"A survey of large language models,\" arXiv preprint arXiv:2303.18223, 2023.",
-    "Q. Zhang, S. Chen, Y. Bei, Z. Yuan, H. Zhou, Z. Hong, J. Dong, H. Chen, Y. Chang, and X. Huang, “A survey of graph retrieval-augmented generation for customized large language models,\" arXiv preprint arXiv:2501.13958, 2025.",
-    "S. Chen, Q. Zhang, J. Dong, W. Hua, Q. Li, and X. Huang, “Entity alignment with noisy annotations from large language models,\" in Proceedings of the Annual Conference on Neural Information Processing Systems (NeurIPS), 2024.",
-    "C. Shengyuan, Y. Cai, H. Fang, X. Huang, and M. Sun, “Differentiable neuro-symbolic reasoning on large-scale knowledge graphs,\" vol. 36, 2023.",
-    "J. Li, W. Lu, H. Fei, M. Luo, M. Dai, M. Xia, Y. Jin, Z. Gan, D. Qi, C. Fu et al., “A survey on benchmarks of multimodal large language models,\" arXiv preprint arXiv:2408.08632, 2024.",
-    "A. Hurst, A. Lerer, A. P. Goucher, A. Perelman, A. Ramesh, A. Clark, A. Ostrow, A. Welihinda, A. Hayes, A. Radford et al., “GPT-40 system card,\" arXiv preprint arXiv:2410.21276, 2024.",
-    "G. Team, P. Georgiev, V. I. Lei, R. Burnell, L. Bai, A. Gulati, G. Tanzer, D. Vincent, Z. Pan, S. Wang et al., “Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context,\" arXiv preprint arXiv:2403.05530, 2024.",
-    "Y. Jiang, Y. Tan, and X. Yue, “RapGuard: Safeguarding multimodal large language models via rationale-aware defensive prompting,” CoRR, vol. abs/2412.18826, 2024.",
-    "K. Zhou, C. Liu, X. Zhao, A. Compalas, D. Song, and X. E. Wang, “Multimodal situational safety,\" CoRR, vol. abs/2410.06172, 2024.",
-    "W. Luo, S. Ma, X. Liu, X. Guo, and C. Xiao, “Jailbreakv-28k: A benchmark for assessing the robustness of multimodal large language models against jailbreak attacks,\" CoRR, vol. abs/2404.03027, 2024.",
-    "X. Liu, Y. Zhu, J. Gu, Y. Lan, C. Yang, and Y. Qiao, “MM-SafetyBench: A benchmark for safety evaluation of multimodal large language models,” in Proceedings of the European Conference on Computer Vision (ECCV), 2024, pp. 386–403.",
-    "Y. Li, H. Guo, K. Zhou, W. X. Zhao, and J. Wen, “Images are achilles' heel of alignment: Exploiting visual vulnerabilities for jailbreaking multimodal large language models,\" in Proceedings of the European Conference on Computer Vision (ECCV), vol. 15131, pp. 174–189.",
-    "M. Mazeika, L. Phan, X. Yin, A. Zou, Z. Wang, N. Mu, E. Sakhaee, N. Li, S. Basart, B. Li et al., \"HarmBench: A standardized evaluation framework for automated red teaming and robust refusal,\" Proceedings of Machine Learning Research, vol. 235, pp. 35 181–35 224, 2024.",
-    "Y. Zhang, Y. Huang, Y. Sun, C. Liu, Z. Zhao, Z. Fang, Y. Wang, H. Chen, X. Yang, X. Wei, H. Su, Y. Dong, and J. Zhu, “Benchmarking trustworthiness of multimodal large language models: A comprehensive study,” CoRR, vol. abs/2406.07057, 2024.",
-    "X. Hu, D. Liu, H. Li, X. Huang, and J. Shao, “VLSBench: Unveiling visual leakage in multimodal safety,” arXiv preprint arXiv:2411.19939, 2024.",
-    "X. Li, H. Zhou, R. Wang, T. Zhou, M. Cheng, and C. Hsieh, “MOSSBench: Is your multimodal language model oversensitive to safe queries?\" CoRR, vol. abs/2406.17806, 2024.",
-    "T. Gu, Z. Zhou, K. Huang, L. Dandan, Y. Wang, H. Zhao, Y. Yao, Y. Yang, Y. Teng, Y. Qiao et al., \"MLLMGuard: A multi-dimensional safety evaluation suite for multimodal large language models,\" Advances in Neural Information Processing Systems, vol. 37, pp. 7256–7295, 2024.",
-    "M. Li, L. Li, Y. Yin, M. Ahmed, Z. Liu, and Q. Liu, “Red teaming visual language models,\" in Proceedings of the Annual Meeting of the Association for Computational Linguistics (ACL), 2024, pp. 3326-3342.",
-    "Y. Chen, K. Sikka, M. Cogswell, H. Ji, and A. Divakaran, \"DRESS : Instructing large vision-language models to align and interact with humans via natural language feedback,” in Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR). IEEE, 2024, pp. 14 239–14 250.",
-    "Y. Zong, O. Bohdal, T. Yu, Y. Yang, and T. Hospedales, \"Safety fine-tuning at (almost) no cost: A baseline for vision large language models,\" in Proceedings of the International Conference on Machine Learning (ICML), 2024, pp. 62 867–62 891.",
-    "Z. Ying, A. Liu, S. Liang, L. Huang, J. Guo, W. Zhou, X. Liu, and D. Tao, “SafeBench: A safety evaluation framework for multimodal large language models,\" arXiv preprint arXiv:2410.18927, 2024.",
-    "H. Tu, C. Cui, Z. Wang, Y. Zhou, B. Zhao, J. Han, W. Zhou, H. Yao, and C. Xie, “How many are in this image a safety evaluation benchmark for vision LLMs,” in Proceedings of the European Conference on Computer Vision (ECCV), 2024, pp. 37–55.",
-    "M. Ye, X. Rong, W. Huang, B. Du, N. Yu, and D. Tao, “A survey of safety on large vision-language models: Attacks, defenses and evaluations,” arXiv preprint arXiv:2502.14881, 2025.",
-    "Y. Tan, B. Zheng, B. Zheng, K. Cao, H. Jing, J. Wei, J. Liu, Y. He, W. Su, X. Zhu et al., “Chinese SafetyQA: A safety short-form factuality benchmark for large language models,\" arXiv preprint arXiv:2412.15265, 2024.",
-    "J. Ji, X. Chen, R. Pan, H. Zhu, C. Zhang, J. Li, D. Hong, B. Chen, J. Zhou, K. Wang, J. Dai, C. Chan, S. Han, Y. Guo, and Y. Yang, “Safe RLHF-V: safe reinforcement learning from human feedback in multimodal large language models,\" CoRR, vol. abs/2503.17682, 2025.",
-    "T. Chakraborty, E. Shayegani, Z. Cai, N. B. Abu-Ghazaleh, M. S. Asif, Y. Dong, A. K. Roy-Chowdhury, and C. Song, \"Cross-Modal safety alignment: Is textual unlearning all you need?\" CoRR, vol. abs/2406.02575, 2024.",
-    "J. Yu, X. Lin, Z. Yu, and X. Xing, \"LLM-Fuzzer: Scaling assessment of large language model jailbreaks,\" in 33rd USENIX Security Symposium (USENIX Security 24), 2024, pp. 4657–4674.",
-    "S. Bai, K. Chen, X. Liu, J. Wang, W. Ge, S. Song, K. Dang, P. Wang, S. Wang, J. Tang, H. Zhong, Y. Zhu, M. Yang, Z. Li, J. Wan, P. Wang, W. Ding, Z. Fu, Y. Xu, J. Ye, X. Zhang, T. Xie, Z. Cheng, H. Zhang, Z. Yang, H. Xu, and J. Lin, “Qwen2.5-VL technical report,\" arXiv preprint arXiv:2502.13923, 2025.",
-    "P. Wang, S. Bai, S. Tan, S. Wang, Z. Fan, J. Bai, K. Chen, X. Liu, J. Wang, W. Ge, Y. Fan, K. Dang, M. Du, X. Ren, R. Men, D. Liu, C. Zhou, J. Zhou, and J. Lin, “Qwen2-VL: Enhancing vision-language model's perception of the world at any resolution,\" arXiv preprint arXiv:2409.12191, 2024.",
-    "Z. Chen, W. Wang, H. Tian, S. Ye, Z. Gao, E. Cui, W. Tong, K. Hu, J. Luo, Z. Ma et al., \"How far are we to GPT-4V? closing the gap to commercial multimodal models with open-source suites,\" arXiv preprint arXiv:2404.16821, 2024.",
-    "Z. Chen, J. Wu, W. Wang, W. Su, G. Chen, S. Xing, M. Zhong, Q. Zhang, X. Zhu, L. Lu et al., \"InternVL: Scaling up vision foundation models and aligning for generic visual-linguistic tasks,” in Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2024, pp. 24 185–24 198.",
-    "T. GLM, A. Zeng, B. Xu, B. Wang, C. Zhang, D. Yin, D. Rojas, G. Feng, H. Zhao, H. Lai, H. Yu, H. Wang, J. Sun, J. Zhang, J. Cheng, J. Gui, J. Tang, J. Zhang, J. Li, L. Zhao, L. Wu, L. Zhong, M. Liu, M. Huang, P. Zhang, Q. Zheng, R. Lu, S. Duan, S. Zhang, S. Cao, S. Yang, W. L. Tam, W. Zhao, X. Liu, X. Xia, X. Zhang, X. Gu, X. Lv, X. Liu, X. Liu, X. Yang, X. Song, X. Zhang, Y. An, Y. Xu, Y. Niu, Y. Yang, Y. Li, Y. Bai, Y. Dong, Z. Qi, Z. Wang, Z. Yang, Z. Du, Z. Hou, and Z. Wang, “ChatGLM: A family of large language models from GLM-130B to GLM-4 all tools,\" 2024.",
-    "W. Wang, Q. Lv, W. Yu, W. Hong, J. Qi, Y. Wang, J. Ji, Z. Yang, L. Zhao, X. Song, J. Xu, B. Xu, J. Li, Y. Dong, M. Ding, and J. Tang, “CogVLM: Visual expert for pretrained language models,\" 2023.",
-    "H. Liu, C. Li, Y. Li, and Y. J. Lee, “Improved baselines with visual instruction tuning,\" in Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2024, pp. 26 296-26 306.",
-    "Y. Yao, T. Yu, A. Zhang, C. Wang, J. Cui, H. Zhu, T. Cai, H. Li, W. Zhao, Z. He et al., “MiniCPM-V: A GPT-4V level MLLM on your phone,” arXiv preprint arXiv:2408.01800, 2024.",
-    "J. Lin, H. Yin, W. Ping, Y. Lu, P. Molchanov, A. Tao, H. Mao, J. Kautz, M. Shoeybi, and S. Han, \"VILA: On pre-training for visual language models,\" 2023.",
-    "Z. Liu, L. Zhu, B. Shi, Z. Zhang, Y. Lou, S. Yang, H. Xi, S. Cao, Y. Gu, D. Li, X. Li, Y. Fang, Y. Chen, C.-Y. Hsieh, D.-A. Huang, A.-C. Cheng, V. Nath, J. Hu, S. Liu, R. Krishna, D. Xu, X. Wang, P. Molchanov, J. Kautz, H. Yin, S. Han, and Y. Lu, “NVILA: Efficient frontier visual language models,\" 2024.",
-    "P. Esser, S. Kulal, A. Blattmann, R. Entezari, J. Müller, H. Saini, Y. Levi, D. Lorenz, A. Sauer, F. Boesel et al., \"Scaling rectified flow transformers for high-resolution image synthesis,\" in Forty-first international conference on machine learning, 2024.",
-    "B. F. Labs, “Flux,\" https://github.com/black-forest-labs/flux, 2024.",
-    "H. Liu, C. Li, Q. Wu, and Y. J. Lee, “Visual instruction tuning,” Advances in neural information processing systems, vol. 36, pp. 34 892–34 916, 2023.",
-    "Y. Tan, Y. Jiang, Y. Li, J. Liu, X. Bu, W. Su, X. Yue, X. Zhu, and B. Zheng, “Equilibrate RLHF: Towards balancing helpfulness-safety trade-off in large language models,\" arXiv preprint arXiv:2502.11555, 2025.",
-    "Z. Zhang, L. Lei, L. Wu, R. Sun, Y. Huang, C. Long, X. Liu, X. Lei, J. Tang, and M. Huang, \"SafetyBench: Evaluating the safety of large language models,” arXiv preprint arXiv:2309.07045, 2023.",
-    "T. Yuan, Z. He, L. Dong, Y. Wang, R. Zhao, T. Xia, L. Xu, B. Zhou, F. Li, Z. Zhang et al., “R-judge: Benchmarking safety risk awareness for LLM agents,” arXiv preprint arXiv:2401.10019, 2024.",
-    "Y. Jiang, X. Gao, T. Peng, Y. Tan, X. Zhu, B. Zheng, and X. Yue, “HiddenDetect: Detecting jailbreak attacks against large vision-language models via monitoring hidden states,\" CoRR, vol. abs/2502.14744, 2025.",
-    "H. Zhang, W. Shao, H. Liu, Y. Ma, P. Luo, Y. Qiao, and K. Zhang, “AVIBench: Towards evaluating the robustness of large vision-language model on adversarial visual-instructions,\" CoRR, vol. abs/2403.09346, 2024.",
-    "Y. Zhang, L. Chen, G. Zheng, Y. Gao, R. Zheng, J. Fu, Z. Yin, S. Jin, Y. Qiao, X. Huang, F. Zhao, T. Gui, and J. Shao, “SPA-VL:A comprehensive safety preference alignment dataset for vision language model,” CoRR, vol. abs/2406.12030, 2024.",
-    "T.-Y. Lin, M. Maire, S. Belongie, J. Hays, P. Perona, D. Ramanan, P. Dollár, and C. L. Zitnick, \"Microsoft CoCo: Common objects in context,” in Proceedings of the European Conference on Computer Vision (ECCV). Springer, 2014, pp. 740-755.",
-    "C. Schuhmann, R. Beaumont, R. Vencu, C. Gordon, R. Wightman, M. Cherti, T. Coombes, A. Katta, C. Mullis, M. Wortsman et al., “Laion-5b: An open large-scale dataset for training next generation image-text models,” Advances in neural information processing systems, vol. 35, pp. 25 278-25 294, 2022.",
-    "Y. Gong, D. Ran, J. Liu, C. Wang, T. Cong, A. Wang, S. Duan, and X. Wang, \"FigStep: Jailbreaking large vision-language models via typographic visual prompts,\" in Proceedings of the AAAI Conference on Artificial Intelligence (AAAI), 2025, pp. 23 951–23 959."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

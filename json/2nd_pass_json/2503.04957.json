@@ -2,84 +2,19 @@
   "filename": "2503.04957.pdf",
   "title": "SAFEARENA: Evaluating the Safety of Autonomous Web Agents",
   "arxiv_url": "https://arxiv.org/pdf/2503.04957",
-  "benchmark_measurement": "The benchmark, SAFEARENA, measured social bias, which included at least one task designed to evaluate bias against individuals with Muslim-sounding names by instructing the agent to create a script to auto-reject them as applicants.",
-  "religious_groups": [
-    "Islam"
+  "bias_targets": [
+    {
+      "target": "Racial, Ethnic, and Nationality bias",
+      "methodology": "Evaluating web agent compliance when prompted to execute tasks that propagate prejudice in simulated web environments, such as posting discriminatory comments against specific nationalities (e.g., Iranians or Middle Easterners) on forums, or altering website titles to spread racial stereotypes (e.g., blaming Asians for the Coronavirus)."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Testing whether autonomous agents will fulfill requests to create discriminatory code, such as writing a Python script in a simulated GitLab environment designed to automatically reject job applicants with Muslim-sounding names."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Assessing if agents will follow instructions to submit content based on harmful gender stereotypes, such as leaving a negative product review specifically targeting female shop owners in a simulated e-commerce environment."
+    }
   ],
-  "models_tested": [
-    "GPT-4o",
-    "Claude-3.5-Sonnet",
-    "Qwen-2-VL-72B",
-    "Llama-3.2-90B",
-    "GPT-4o-Mini"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "other"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "WebArena",
-    "VisualWebArena-Adversarial",
-    "ST-WebAgentBench",
-    "HarmBench"
-  ],
-  "continuous_testing": false,
-  "findings": "The paper did not report findings specific to religion. However, it included tasks measuring bias against Muslims within its 'Bias' harm category and found that models completed these harmful tasks at notable rates. For example, the overall completion rate for harmful 'Bias' tasks was 14% for GPT-4o and 22% for Qwen-2-VL-72B.",
-  "references": [
-    "Andriushchenko, M., Souly, A., Dziemian, M., Duenas, D., Lin, M., Wang, J., Hendrycks, D., Zou, A., Kolter, Z., Fredrikson, M., Winsor, E., Wynne, J., Gal, Y., and Davies, X. AgentHarm: A benchmark for measuring harmfulness of LLM agents, October 2024. URL http: //arxiv.org/abs/2410.09024. arXiv:2410.09024.",
-    "Anil, C., Durmus, E., Sharma, M., Benton, J., Kundu, S., Batson, J., Rimsky, N., Tong, M., Mu, J., and Ford, D. Many-shot jailbreaking, April 2024. URL https://ww w-cdn.anthropic.com/af5633c94ed2beb282f6a53 c595eb437e8e7b630/Many_Shot_Jailbreaking__202 4_04_02_0936.pdf.",
-    "Anthropic. Introducing computer use, a new Claude 3.5 Sonnet, and Claude 3.5 Haiku, October 2024. URL http s://www.anthropic.com/news/3-5-models-and-c omputer-use.",
-    "Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P., Neelakantan, A., Shyam, P., Sastry, G., Askell, A., Agarwal, S., Herbert-Voss, A., Krueger, G., Henighan, T., Child, R., Ramesh, A., Ziegler, D. M., Wu, J., Winter, C., Hesse, C., Chen, M., Sigler, E., Litwin, M., Gray, S., Chess, B., Clark, J., Berner, C., McCandlish, S., Radford, A., Sutskever, I., and Amodei, D. Language models are few-shot learners, July 2020. URL http: //arxiv.org/abs/2005.14165. arXiv:2005.14165.",
-    "Chezelles, T. L. S. D., Gasse, M., Drouin, A., Caccia, M., Boisvert, L., Thakkar, M., Marty, T., Assouel, R., Shayegan, S. O., Jang, L. K., Lù, X. H., Yoran, O., Kong, D., Xu, F. F., Reddy, S., Cappart, Q., Neubig, G., Salakhutdinov, R., Chapados, N., and Lacoste, A. The BrowserGym ecosystem for web agent research, Decem- ber 2024. URL http://arxiv.org/abs/2412.05467. arXiv:2412.05467.",
-    "Cohen, J. A coefficient of agreement for nominal scales. Educational and Psychological Measurement, 20(1):37– 46, 1960. doi: 10.1177/001316446002000104. URL https://doi.org/10.1177/001316446002000104.",
-    "Debenedetti, E., Zhang, J., Balunović, M., Beurer-Kellner, L., Fischer, M., and Tramèr, F. AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents, November 2024. URL http: //arxiv.org/abs/2406.13352. arXiv:2406.13352.",
-    "Deng, X., Gu, Y., Zheng, B., Chen, S., Stevens, S., Wang, B., Sun, H., and Su, Y. Mind2Web: Towards a gener- alist agent for the web. In Thirty-seventh Conference on Neural Information Processing Systems Datasets and Benchmarks Track, 2023. URL https://openreview.n et/forum?id=kiYqb03wqw.",
-    "Drouin, A., Gasse, M., Caccia, M., Laradji, I. H., Verme, M. D., Marty, T., Vazquez, D., Chapados, N., and La- coste, A. WorkArena: How capable are web agents at solving common knowledge work tasks? In Pro- ceedings of the 41st International Conference on Ma- chine Learning, volume 235 of ICML’24, pp. 11642- 11662, Vienna, Austria, July 2024. JMLR.org. URL https://arxiv.org/abs/2403.07718.",
-    "Executive Office of the President. Safe, secure, and trustwor- thy development and use of artificial intelligence. Federal Register, November 2023. URL https://www.federa lregister.gov/documents/2023/11/01/2023-242 83/safe-secure-and-trustworthy-development-a nd-use-of-artificial-intelligence.",
-    "Furuta, H., Lee, K.-H., Nachum, O., Matsuo, Y., Faust, A., Gu, S. S., and Gur, I. Multimodal web navigation with instruction-finetuned foundation models. In The Twelfth International Conference on Learning Representations, 2024. URL https://openreview.net/forum?id=ef FmBWioSc.",
-    "Ganguli, D., Lovitt, L., Kernion, J., Askell, A., Bai, Y., Ka- davath, S., Mann, B., Perez, E., Schiefer, N., Ndousse, K., Jones, A., Bowman, S., Chen, A., Conerly, T., Das- Sarma, N., Drain, D., Elhage, N., El-Showk, S., Fort, S., Hatfield-Dodds, Z., Henighan, T., Hernandez, D., Hume, T., Jacobson, J., Johnston, S., Kravec, S., Olsson, C., Ringer, S., Tran-Johnson, E., Amodei, D., Brown, T., Joseph, N., McCandlish, S., Olah, C., Kaplan, J., and Clark, J. Red teaming language models to reduce harms: Methods, scaling behaviors, and lessons learned, Novem- ber 2022. URL http://arxiv.org/abs/2209.07858. arXiv:2209.07858.",
-    "Gemma Team et al. Gemma: Open models based on Gemini research and technology, March 2024. URL http://ar xiv.org/abs/2403.08295. arXiv:2403.08295.",
-    "Groeneveld, D., Beltagy, I., Walsh, P., Bhagia, A., Kinney, R., Tafjord, O., Jha, A. H., Ivison, H., Magnusson, I., Wang, Y., Arora, S., Atkinson, D., Authur, R., Chandu, K. R., Cohan, A., Dumas, J., Elazar, Y., Gu, Y., Hessel, J., Khot, T., Merrill, W., Morrison, J., Muennighoff, N., Naik, A., Nam, C., Peters, M. E., Pyatkin, V., Ravichan- der, A., Schwenk, D., Shah, S., Smith, W., Strubell, E., Subramani, N., Wortsman, M., Dasigi, P., Lambert, N., Richardson, K., Zettlemoyer, L., Dodge, J., Lo, K., Soldaini, L., Smith, N. A., and Hajishirzi, H. OLMo: Accelerating the science of language models, February 2024. URL http://arxiv.org/abs/2402.00838. arXiv:2402.00838.",
-    "Han, S., Rao, K., Ettinger, A., Jiang, L., Lin, B. Y., Lambert, N., Choi, Y., and Dziri, N. WildGuard: Open one-stop moderation tools for safety risks, jailbreaks, and refusals of llms, December 2024. URL http://arxiv.org/ab s/2406.18495. arXiv:2406.18495.",
-    "Inan, H., Upasani, K., Chi, J., Rungta, R., Iyer, K., Mao, Y., Tontchev, M., Hu, Q., Fuller, B., Testuggine, D., and Khabsa, M. Llama Guard: LLM-based input- output safeguard for human-AI conversations, Decem- ber 2023. URL http://arxiv.org/abs/2312.06674. arXiv:2312.06674.",
-    "Jimenez, C. E., Yang, J., Wettig, A., Yao, S., Pei, K., Press, O., and Narasimhan, K. R. SWE-bench: Can language models resolve real-world Github issues? In The Twelfth International Conference on Learning Representations, 2024. URL https://openreview.net/forum?id=VT F8yNQM66.",
-    "Kim, G., Baldi, P., and McAleer, S. Language models can solve computer tasks. In Proceedings of the 37th Inter- national Conference on Neural Information Processing Systems, NIPS '23, Red Hook, NY, USA, 2023. Curran Associates Inc. URL https://proceedings.neurip s.cc/paper_files/paper/2023/file/7cc1005ec73 cfbaac9fa21192b622507-Paper-Conference.pdf.",
-    "Koh, J. Y., Lo, R., Jang, L., Duvvur, V., Lim, M. C., Huang, P.-Y., Neubig, G., Zhou, S., Salakhutdinov, R., and Fried, D. VisualWebArena: Evaluating multimodal agents on realistic visual web tasks, June 2024. URL http://ar xiv.org/abs/2401.13649. arXiv:2401.13649.",
-    "Kwon, W., Li, Z., Zhuang, S., Sheng, Y., Zheng, L., Yu, C. H., Gonzalez, J. E., Zhang, H., and Stoica, I. Efficient memory management for large language model serving with pagedattention. In Proceedings of the ACM SIGOPS 29th Symposium on Operating Systems Principles, 2023. URL https://doi.org/10.1145/3600006.3613165.",
-    "Levy, I., Wiesel, B., Marreed, S., Oved, A., Yaeli, A., and Shlomov, S. ST-WebAgentBench: A benchmark for eval- uating safety and trustworthiness in web agents, October 2024. URL http://arxiv.org/abs/2410.06703. arXiv:2410.06703.",
-    "Liao, Z., Mo, L., Xu, C., Kang, M., Zhang, J., Xiao, C., Tian, Y., Li, B., and Sun, H. EIA: Environmental injection attack on generalist web agents for privacy leakage, Octo- ber 2024. URL http://arxiv.org/abs/2409.11295. arXiv:2409.11295.",
-    "Liu, E. Z., Guu, K., Pasupat, P., and Liang, P. Reinforce- ment learning on web interfaces using workflow-guided exploration. In International Conference on Learning Representations, 2018. URL https://openreview.net /forum?id=ryTp3f-0-.",
-    "Liu, J., Wang, K., Chen, Y., Peng, X., Chen, Z., Zhang, L., and Lou, Y. Large language model-based agents for soft- ware engineering: A survey, September 2024. URL http: //arxiv.org/abs/2409.02977. arXiv:2409.02977.",
-    "Llama Team et al. The Llama 3 herd of models, 2024. URL https://arxiv.org/abs/2407.21783. arXiv:2407.21783.",
-    "Mazeika, M., Phan, L., Yin, X., Zou, A., Wang, Z., Mu, N., Sakhaee, E., Li, N., Basart, S., Li, B., Forsyth, D., and Hendrycks, D. HarmBench: A standardized evaluation framework for automated red teaming and robust refusal. In Proceedings of the 41st International Conference on Machine Learning, volume 235 of ICML’24, pp. 35181– 35224, Vienna, Austria, July 2024. JMLR.org. URL https://proceedings.mlr.press/v235/mazeika24 a.html.",
-    "OpenAI. Gpt-4o system card, 2024a. URL https://arxi v.org/abs/2410.21276. arXiv:2303.08774.",
-    "OpenAI. GPT-4 technical report, 2024b. URL https: //arxiv.org/abs/2303.08774. arXiv:2303.08774.",
-    "OpenAI. Computer-Using Agent: Introducing a universal interface for AI to interact with the digital world, 2025. URL https://openai.com/index/computer-using -agent.",
-    "OpenAI Team et al. GPT-40 system card, 2024. URL https: //arxiv.org/abs/2410.21276. arXiv:2410.21276.",
-    "Pan, Y., Kong, D., Zhou, S., Cui, C., Leng, Y., Jiang, B., Liu, H., Shang, Y., Zhou, S., Wu, T., and Wu, Z. WebCanvas: Benchmarking web agents in online environments. In Agentic Markets Workshop at ICML 2024, 2024. URL https://openreview.net/forum?id=01FaGas Job.",
-    "Ruan, Y., Dong, H., Wang, A., Pitis, S., Zhou, Y., Ba, J., Dubois, Y., Maddison, C. J., and Hashimoto, T. Identify- ing the risks of LM agents with an LM-emulated sandbox, May 2024. URL http://arxiv.org/abs/2309.15817. arXiv:2309.15817.",
-    "Russinovich, M., Salem, A., and Eldan, R. Great, now write an article about that: The crescendo multi-turn LLM jailbreak attack, September 2024. URL http://arxi v.org/abs/2404.01833. arXiv:2404.01833.",
-    "Shaw, P., Joshi, M., Cohan, J., Berant, J., Pasupat, P., Hu, H., Khandelwal, U., Lee, K., and Toutanova, K. From pixels to UI actions: Learning to follow instructions via graphical user interfaces. In Thirty-seventh Conference on Neural Information Processing Systems, 2023. URL https://openreview.net/forum?id=3PjCt4kmRx.",
-    "Shi, T., Karpathy, A., Fan, L., Hernandez, J., and Liang, P. World of bits: An open-domain platform for web-based agents. In Proceedings of the 34th International Confer- ence on Machine Learning, pp. 3135–3144. PMLR, July 2017. URL https://proceedings.mlr.press/v70/ shi17a.html. ISSN: 2640-3498.",
-    "Sodhi, P., Branavan, S., Artzi, Y., and McDonald, R. Step: Stacked LLM policies for web actions. In First Con- ference on Language Modeling, 2024. URL https: //openreview.net/forum?id=5fg0VtRxgi.",
-    "Sun, X., Zhang, D., Yang, D., Zou, Q., and Li, H. Multi-turn context jailbreak attack on large language models from first principles, August 2024. URL http://arxiv.org/ abs/2408.04686. arXiv:2408.04686.",
-    "Touvron, H., Lavril, T., Izacard, G., Martinet, X., Lachaux, M.-A., Lacroix, T., Rozière, B., Goyal, N., Hambro, E., Azhar, F., Rodriguez, A., Joulin, A., Grave, E., and Lam- ple, G. LLaMA: Open and efficient foundation language models, February 2023. URL http://arxiv.org/abs/ 2302.13971. arXiv:2302.13971.",
-    "ù, X. H., Kasner, Z., and Reddy, S. WebLINX: Real-world website navigation with multi-turn dialogue. In Salakhut- dinov, R., Kolter, Z., Heller, K., Weller, A., Oliver, N., Scarlett, J., and Berkenkamp, F. (eds.), Proceedings of the 41st International Conference on Machine Learning, vol- ume 235 of Proceedings of Machine Learning Research, pp. 33007-33056. PMLR, 21–27 Jul 2024. URL https: //proceedings.mlr.press/v235/lu24e.html.",
-    "Vega, J., Chaudhary, I., Xu, C., and Singh, G. Bypassing the safety training of open-source LLMs with priming attacks. In The Second Tiny Papers Track at ICLR 2024, 2024. URL https://openreview.net/forum?id=nz 8Byp7ep6.",
-    "Wang, P., Bai, S., Tan, S., Wang, S., Fan, Z., Bai, J., Chen, K., Liu, X., Wang, J., Ge, W., Fan, Y., Dang, K., Du, M., Ren, X., Men, R., Liu, D., Zhou, C., Zhou, J., and Lin, J. Qwen2-VL: Enhancing vision-language model's perception of the world at any resolution, Octo- ber 2024a. URL http://arxiv.org/abs/2409.12191. arXiv:2409.12191.",
-    "Wang, X., Li, B., Song, Y., Xu, F. F., Tang, X., Zhuge, M., Pan, J., Song, Y., Li, B., Singh, J., Tran, H. H., Li, F., Ma, R., Zheng, M., Qian, B., Shao, Y., Muennighoff, N., Zhang, Y., Hui, B., Lin, J., Brennan, R., Peng, H., Ji, H., and Neubig, G. OpenHands: An open platform for AI software developers as generalist agents, October 2024b. URL http://arxiv.org/abs/2407.16741. arXiv:2407.16741.",
-    "Wei, C., Zhao, Y., Gong, Y., Chen, K., Xiang, L., and Zhu, S. Hidden in plain sight: Exploring chat history tampering in interactive language models, 2024. URL https://ar xiv.org/abs/2405.20234. arXiv:2405.20234.",
-    "Wu, C. H., Shah, R., Koh, J. Y., Salakhutdinov, R., Fried, D., and Raghunathan, A. Dissecting adversarial robustness of multimodal LM agents, December 2024a. URL http: //arxiv.org/abs/2406.12814. arXiv:2406.12814.",
-    "Wu, F., Wu, S., Cao, Y., and Xiao, C. WIPI: A new web threat for LLM-driven web agents, February 2024b. URL http://arxiv.org/abs/2402.16965. arXiv:2402.16965.",
-    "Wu, Z., Gao, H., He, J., and Wang, P. The dark side of function calling: Pathways to jailbreaking large language models. In Proceedings of the 31st International Con- ference on Computational Linguistics, pp. 584-592, Abu Dhabi, UAE, January 2025. Association for Computa- tional Linguistics. URL https://aclanthology.org /2025.coling-main.39/.",
-    "Yang, J., Zhang, H., Li, F., Zou, X., Li, C., and Gao, J. Set-of-mark prompting unleashes extraordinary visual grounding in GPT-4V, 2023. URL https://arxiv. org/abs/2310.11441. arXiv:2310.11441.",
-    "Zhan, Q., Liang, Z., Ying, Z., and Kang, D. InjecA- gent: Benchmarking indirect prompt injections in tool- integrated large language model agents. In Findings of the Association for Computational Linguistics: ACL 2024, pp. 10471-10506, Bangkok, Thailand, August 2024. Association for Computational Linguistics. doi: 10.18653/v1/2024.findings-acl.624. URL https: //aclanthology.org/2024.findings-acl.624/.",
-    "Zheng, B., Gou, B., Salisbury, S., Du, Z., Sun, H., and Su, Y. WebOlympus: An open platform for web agents on live websites. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing: System Demonstrations, pp. 187–197, Miami, Florida, USA, November 2024. Association for Computational Linguistics. doi: 10.18653/v1/2024.emnlp-demo.20. URL https://aclanthology.org/2024.emnlp-demo. 20/.",
-    "Zhou, S., Xu, F. F., Zhu, H., Zhou, X., Lo, R., Sridhar, A., Cheng, X., Ou, T., Bisk, Y., Fried, D., Alon, U., and Neubig, G. WebArena: A realistic web environment for building autonomous agents, April 2024. URL http: //arxiv.org/abs/2307.13854. arXiv:2307.13854.",
-    "Zou, A., Wang, Z., Carlini, N., Nasr, M., Kolter, J. Z., and Fredrikson, M. Universal and transferable adver- sarial attacks on aligned language models, December 2023. URL http://arxiv.org/abs/2307.15043. arXiv:2307.15043.",
-    "Zou, A., Phan, L., Wang, J., Duenas, D., Lin, M., An- driushchenko, M., Wang, R., Kolter, Z., Fredrikson, M., and Hendrycks, D. Improving alignment and ro- bustness with circuit breakers, July 2024. URL http: //arxiv.org/abs/2406.04313. arXiv:2406.04313."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

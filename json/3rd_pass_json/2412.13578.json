@@ -2,35 +2,90 @@
   "filename": "2412.13578.pdf",
   "title": "Socio-Culturally Aware Evaluation Framework for LLM-Based Content Moderation",
   "arxiv_url": "https://arxiv.org/pdf/2412.13578",
-  "bias_targets": [
-    {
-      "target": "Religious bias",
-      "methodology": "Conditioning LLMs on different religious personas (e.g., Protestant, Taoist, Baptist, Atheist) and categorizing the generated statements to measure the proportion of hateful versus supportive content."
-    },
-    {
-      "target": "Political bias",
-      "methodology": "Prompting LLMs with specific political ideologies and social beliefs (e.g., Right-leaning, Socialist, Libertarian) to analyze variations in the hatefulness of statements and the persuasiveness of generated misinformation."
-    },
-    {
-      "target": "Professional bias",
-      "methodology": "Evaluating the tendency of LLMs to either spread or debunk misinformation when conditioned on different professional roles (e.g., thought leaders, activists, journalists, scientists)."
-    },
-    {
-      "target": "Immigrant status bias",
-      "methodology": "Measuring the influence of a persona's immigrant status on content generation by evaluating how accurately an LLM can predict the immigrant attribute solely from the generated text."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Assessing the impact of a persona's age group on generated content by predicting the age attribute directly from the stylistic and linguistic features of the LLM's outputs."
-    },
-    {
-      "target": "Racial and Ethnic bias",
-      "methodology": "Generating targeted hate speech datasets spanning over 300 socio-cultural targets (including various racial and ethnic groups) and evaluating the zero-shot moderation classification accuracy of different LLMs on these diverse targets."
-    },
-    {
-      "target": "Gender and Sexual Orientation bias",
-      "methodology": "Testing LLM content moderation systems using synthetically generated text that includes implicit and explicit hate speech or sexual content directed at various gender identities and sexual orientations."
-    }
+  "religious_groups": [
+    "Catholic",
+    "Muslim",
+    "Hindu",
+    "Jewish",
+    "Atheist",
+    "Taoist",
+    "Protestant",
+    "Baptist",
+    "Christian",
+    "Secularist",
+    "Sharia",
+    "Non-believer"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "GPT-3-xl (text-davinci-002)",
+    "GPT-3.5 (text-davinci-003)",
+    "ChatGPT",
+    "Mistral (Mistral-7B-Instruct-v0.2)",
+    "Phi3 (Phi-3-mini-4k-instruct)"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long",
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "HateXplain",
+    "Latent Hatred",
+    "MHS",
+    "LOCO"
+  ],
+  "continuous_testing": false,
+  "findings": "In the hate speech generation task (HATE-GEN), religious beliefs were a key factor. The study found that Protestant and Taoist personas tended to oppose hate speech, while Baptist personas were more prone to generating hateful content. Atheist and Catholic personas maintained a balance, Muslim and Hindu personas showed moderate tendencies, and Jewish personas leaned toward opposing hate speech.",
+  "references": [
+    "Marah Abdin, Sam Ade Jacobs, Ammar Ahmad Awan, Jyoti Aneja, Ahmed Awadallah, Hany Awadalla, Nguyen Bach, Amit Bahree, Arash Bakhtiari, Harkirat Behl, et al. 2024. Phi-3 technical report: A highly capable language model locally on your phone. arXiv preprint arXiv:2404.14219.",
+    "Falwah Alhamed, Julia Ive, and Lucia Specia. 2024. Using large language models (LLMs) to extract evidence from pre-annotated social media data. In Proceedings of the 9th Workshop on Computational Linguistics and Clinical Psychology (CLPsych 2024), pages 232–237, St. Julians, Malta. Association for Computational Linguistics.",
+    "Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan, Rewon Child, Aditya Ramesh, Daniel Ziegler, Jeffrey Wu, Clemens Winter, Chris Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess, Jack Clark, Christopher Berner, Sam McCandlish, Alec Radford, Ilya Sutskever, and Dario Amodei. 2020. Language models are few-shot learners. In Advances in Neural Information Processing Systems, volume 33, pages 1877–1901. Curran Associates, Inc.",
+    "Sébastien Bubeck, Varun Chandrasekaran, Ronen Eldan, Johannes Gehrke, Eric Horvitz, Ece Kamar, Peter Lee, Yin Tat Lee, Yuanzhi Li, Scott Lundberg, et al. 2023. Sparks of artificial general intelligence: Early experiments with gpt-4. arXiv preprint arXiv:2303.12712.",
+    "Tommaso Caselli, Valerio Basile, Jelena Mitrović, and Michael Granitzer. 2021. HateBERT: Retraining BERT for abusive language detection in English. In Proceedings of the 5th Workshop on Online Abuse and Harms (WOAH 2021), pages 17–25, Online. Association for Computational Linguistics.",
+    "Myra Cheng, Esin Durmus, and Dan Jurafsky. 2023. Marked personas: Using natural language prompts to measure stereotypes in language models. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 1504–1532, Toronto, Canada. Association for Computational Linguistics.",
+    "Ke-Li Chiu, Annie Collins, and Rohan Alexander. 2022. Detecting hate speech with gpt-3. Preprint, arXiv:2103.12407.",
+    "Thomas Davidson, Debasmita Bhattacharya, and Ingmar Weber. 2019. Racial bias in hate speech and abusive language detection datasets. In Proceedings of the Third Workshop on Abusive Language Online, pages 25–35, Florence, Italy. Association for Computational Linguistics.",
+    "Fabio Del Vigna12, Andrea Cimino23, Felice Dell’Orletta, Marinella Petrocchi, and Maurizio Tesconi. 2017. Hate me, hate me not: Hate speech detection on facebook. In Proceedings of the first Italian conference on cybersecurity (ITASEC17), pages 86–95.",
+    "Thomas Diggelmann, Jordan Boyd-Graber, Jannis Bulian, Massimiliano Ciaramita, and Markus Leippold. 2021. Climate-fever: A dataset for verification of real-world climate claims. Preprint, arXiv:2012.00614.",
+    "Mai ElSherief, Caleb Ziems, David Muchlinski, Vaishnavi Anupindi, Jordyn Seybolt, Munmun De Choudhury, and Diyi Yang. 2021. Latent hatred: A benchmark for understanding implicit hate speech. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 345–363, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics.",
+    "Oliver L. Haimson, Daniel Delmonaco, Peipei Nie, and Andrea Wegner. 2021. Disproportionate removals and differing content moderation experiences for conservative, transgender, and black social media users: Marginalization and moderation gray areas. Proc. ACM Hum.-Comput. Interact., 5(CSCW2).",
+    "Thomas Hartvigsen, Saadia Gabriel, Hamid Palangi, Maarten Sap, Dipankar Ray, and Ece Kamar. 2022. Toxigen: A large-scale machine-generated dataset for implicit and adversarial hate speech detection. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics.",
+    "Beizhe Hu, Qiang Sheng, Juan Cao, Yuhui Shi, Yang Li, Danding Wang, and Peng Qi. 2024. Bad actor, good advisor: Exploring the role of large language models in fake news detection. Proceedings of the AAAI Conference on Artificial Intelligence, 38(20):22105–22113.",
+    "Tao Huang. 2024. Content moderation by llm: From accuracy to legitimacy. Preprint, arXiv:2409.03219.",
+    "Sadar Jaf and Basel Barakat. 2024. Empirical evaluation of public hatespeech datasets. Preprint, arXiv:2407.12018.",
+    "Albert Q Jiang, Alexandre Sablayrolles, Arthur Mensch, Chris Bamford, Devendra Singh Chaplot, Diego de las Casas, Florian Bressand, Gianna Lengyel, Guillaume Lample, Lucile Saulnier, et al. 2023. Mistral 7b. arXiv preprint arXiv:2310.06825.",
+    "Chris J Kennedy, Geoff Bacon, Alexander Sahn, and Claudia von Vacano. 2020. Constructing interval variables via faceted rasch measurement and multitask deep learning: a hate speech application. arXiv preprint arXiv:2009.10277.",
+    "Sahas Koka, Anthony Vuong, and Anish Kataria. 2024. Evaluating the efficacy of large language models in detecting fake news: A comparative analysis. Preprint, arXiv:2406.06584.",
+    "Deepak Kumar, Yousef AbuHashem, and Zakir Durumeric. 2024. Watch your language: Investigating content moderation with large language models. Preprint, arXiv:2309.14517.",
+    "Deepak Kumar, Patrick Gage Kelley, Sunny Consolvo, Joshua Mason, Elie Bursztein, Zakir Durumeric, Kurt Thomas, and Michael Bailey. 2021. Designing toxic content classification for a diversity of perspectives. Preprint, arXiv:2106.04511.",
+    "Soveatin Kuntur, Anna Wróblewska, Marcin Paprzycki, and Maria Ganzha. 2024. Fake news detection: It's all in the data! Preprint, arXiv:2407.02122.",
+    "Louis Kwok, Michal Bravansky, and Lewis D. Griffin. 2024. Evaluating cultural adaptability of a large language model via simulation of synthetic personas. Preprint, arXiv:2408.06929.",
+    "Nayeon Lee, Chani Jung, Junho Myung, Jiho Jin, Juho Kim, and Alice Oh. 2023a. Crehate: Crosscultural re-annotation of english hate speech dataset. arXiv preprint arXiv:2308.16705.",
+    "Nayeon Lee, Chani Jung, and Alice Oh. 2023b. Hate speech classifiers are culturally insensitive. In Proceedings of the First Workshop on Cross-Cultural Considerations in NLP (C3NLP), pages 35–46, Dubrovnik, Croatia. Association for Computational Linguistics.",
+    "Lingyao Li, Lizhou Fan, Shubham Atreja, and Libby Hemphill. 2024. “hot” chatgpt: The promise of chatgpt in detecting and discriminating hateful, offensive, and toxic comments on social media. ACM Transactions on the Web, 18(2):1–36.",
+    "Ye Liu, Jiajun Zhu, Kai Zhang, Haoyu Tang, Yanghai Zhang, Xukai Liu, Qi Liu, and Enhong Chen. 2024a. Detect, investigate, judge and determine: A novel llm-based framework for few-shot fake news detection. Preprint, arXiv:2407.08952.",
+    "Yiqi Liu, Nafise Sadat Moosavi, and Chenghua Lin. 2024b. Llms as narcissistic evaluators: When ego inflates evaluation scores. Preprint, arXiv:2311.09766.",
+    "Huan Ma, Changqing Zhang, Huazhu Fu, Peilin Zhao, and Bingzhe Wu. 2024. Adapting large language models for content moderation: Pitfalls in data engineering and supervised fine-tuning. Preprint, arXiv:2310.03400.",
+    "Binny Mathew, Punyajoy Saha, Seid Muhie Yimam, Chris Biemann, Pawan Goyal, and Animesh Mukherjee. 2021. Hatexplain: A benchmark dataset for explainable hate speech detection. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 35, pages 14867–14875.",
+    "Alessandro Miani, Thomas Hills, and Adrian Bangerter. 2021. Loco: The 88-million-word language of conspiracy corpus. Behavior Research Methods, 54.",
+    "Sagnik Mukherjee, Muhammad Farid Adilazuarda, Sunayana Sitaram, Kalika Bali, Alham Fikri Aji, and Monojit Choudhury. 2024. Cultural conditioning or placebo? on the effectiveness of socio-demographic prompting. Preprint, arXiv:2406.11661.",
+    "Thanh Thi Nguyen, Campbell Wilson, and Janis Dalins. 2023. Fine-tuning llama 2 large language models for detecting online sexual predatory chats and abusive texts. Preprint, arXiv:2308.14683.",
+    "OpenAI. 2023. Gpt-4 technical report. Preprint, arXiv:2303.08774.",
+    "Flor Miriam Plaza-del arco, Debora Nozza, and Dirk Hovy. 2023. Respectful or toxic? using zero-shot learning with language models to detect hate speech. In The 7th Workshop on Online Abuse and Harms (WOAH), pages 60–68, Toronto, Canada. Association for Computational Linguistics.",
+    "Kristina Radivojevic, Nicholas Clark, and Paul Brenner. 2024. Llms among us: Generative ai participating in digital discourse. Preprint, arXiv:2402.07940.",
+    "Maarten Sap, Saadia Gabriel, Lianhui Qin, Dan Jurafsky, Noah A. Smith, and Yejin Choi. 2020. Social bias frames: Reasoning about social and power implications of language. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5477–5490, Online. Association for Computational Linguistics.",
+    "Robin Staab, Mark Vero, Mislav Balunović, and Martin Vechev. 2024. Beyond memorization: Violating privacy via inference with large language models. Preprint, arXiv:2310.07298.",
+    "James Thorne, Andreas Vlachos, Christos Christodoulopoulos, and Arpit Mittal. 2018. Fever: a large-scale dataset for fact extraction and verification. Preprint, arXiv:1803.05355.",
+    "Petter Törnberg, Diliara Valeeva, Justus Uitermark, and Christopher Bail. 2023. Simulating social media using large language models to evaluate alternative news feed algorithms. Preprint, arXiv:2310.05984.",
+    "Collins Udanor and Chinatu C Anyanwu. 2019. Combating the challenges of social media hate speech in a polarized society: A twitter ego lexalytics approach. Data Technologies and Applications, 53(4):501–527.",
+    "Michael Wiegand, Josef Ruppenhofer, and Elisabeth Eder. 2021. Implicitly abusive language what does it actually look like and why are we not getting there? In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 576–587, Online. Association for Computational Linguistics.",
+    "Wenjie Yin and Arkaitz Zubiaga. 2021. Towards generalisable hate speech detection: a review on obstacles and solutions. Preprint, arXiv:2102.08886.",
+    "Zehui Yu, Indira Sen, Dennis Assenmacher, Mattia Samory, Leon Fröhling, Christina Dahn, Debora Nozza, and Claudia Wagner. 2024. The unseen targets of hate: A systematic review of hateful communication datasets. Social Science Computer Review.",
+    "Hanna Yukhymenko, Robin Staab, Mark Vero, and Martin Vechev. 2024. A synthetic dataset for personal attribute inference. Preprint, arXiv:2406.07217.",
+    "Min Zhang, Jianfeng He, Taoran Ji, and Chang-Tien Lu. 2024. Don't go to extremes: Revealing the excessive sensitivity and calibration limitations of llms in implicit hate speech detection. Preprint, arXiv:2402.11406."
+  ],
+  "measurement_description": "The benchmark measures how Large Language Models generate hateful content and exhibit biases when prompted with personas having specific religious attributes. It analyzes how different religious identities influence the tone and content of generated text, particularly in the context of hate speech."
 }

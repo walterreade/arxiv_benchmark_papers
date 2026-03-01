@@ -2,113 +2,23 @@
   "filename": "2512.13142.pdf",
   "title": "Can LLMs Understand What We Cannot Say? Measuring Multilevel Alignment Through Abortion Stigma Across Cognitive, Interpersonal, and Structural Levels",
   "arxiv_url": "https://arxiv.org/pdf/2512.13142",
-  "benchmark_measurement": "The benchmark measured how Large Language Models associate religious affiliation (e.g., Protestant, Catholic) and religiosity (e.g., very religious) with different dimensions of abortion stigma, including self-judgment, interpersonal worries, and perceived community condemnation.",
-  "religious_groups": [
-    "Protestant",
-    "Catholic",
-    "Other Christian",
-    "Other religions",
-    "Not religious"
+  "bias_targets": [
+    {
+      "target": "Age bias",
+      "methodology": "Prompting models with the Individual Level Abortion Stigma Scale (ILAS) questionnaire using demographic personas of varying age groups (e.g., 15-18 vs. older) and using multivariable OLS regression to compare model-assigned stigma scores against human baselines."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Prompting models with the ILAS questionnaire using personas of different racial and ethnic backgrounds (White, Black, Hispanic, Asian/Pacific Islander, Other) and identifying introduced biases via regression analysis compared to human data."
+    },
+    {
+      "target": "Educational bias",
+      "methodology": "Comparing LLM-generated abortion stigma scores across personas with varying levels of educational attainment (e.g., less than high school vs. college degree) to detect deviations from human validation patterns."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluating differences in ILAS stigma scores and secrecy associations assigned by models to personas of different religious affiliations (Protestant, Catholic, etc.) and religiosity levels."
+    }
   ],
-  "models_tested": [
-    "GPT-5 mini",
-    "OSS-20B",
-    "Llama-3.1-8B-Instruct",
-    "Gemma-3-4B-IT",
-    "Llama-3.1-70B-Instruct"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "Individual Level Abortion Stigma (ILAS) scale"
-  ],
-  "continuous_testing": false,
-  "findings": "Models partially replicated human patterns by associating higher abortion stigma with Protestant, Catholic, and very religious personas. However, they also introduced and amplified biases absent in the human validation data. Models overgeneralized stigma, assigning higher self-judgment, worries, and community condemnation to a broader range of religious groups than observed in humans. For example, while human data showed higher community condemnation for Catholics, models extended this to Protestants and other religious groups as well, often exaggerating the effect. These patterns reveal that models encode stereotypes linking religiosity to higher stigma in ways that do not align with the lived experiences of women.",
-  "references": [
-    "Riana Elyse Anderson, Natasha Johnson, Shawn CT Jones, Akilah Patterson, and Nkemka Anyiwo. 2024. Racial socialization and black adolescent mental health and developmental outcomes: A critical review and future directions. Journal of Clinical Child & Adolescent Psychology 53, 5 (2024), 709-732.",
-    "Riana Elyse Anderson and Howard C Stevenson. 2019. RECASTing racial stress and trauma: Theorizing the healing potential of racial socialization in families. American Psychologist 74, 1 (2019), 63.",
-    "Maria Antoniak, Aakanksha Naik, Carla S. Alvarado, Lucy Lu Wang, and Irene Y. Chen. 2024. NLP for Maternal Healthcare: Perspectives and Guiding Principles in the Age of LLMs. In Proceedings of the 2024 ACM Conference on Fairness, Accountability, and Transparency (Rio de Janeiro, Brazil) (FAccT '24). Association for Computing Machinery, New York, NY, USA, 1446-1463. doi:10.1145/3630106.3658982",
-    "Iván Arcuschin, Jett Janiak, Robert Krzyzanowski, Senthooran Rajamanoharan, Neel Nanda, and Arthur Conmy. 2025. Chain-of-thought reasoning in the wild is not always faithful. arXiv preprint arXiv:2503.08679 (2025).",
-    "Bowen Baker, Joost Huizinga, Leo Gao, Zehao Dou, Melody Y Guan, Aleksander Madry, Wojciech Zaremba, Jakub Pachocki, and David Farhi. 2025. Monitoring reasoning models for misbehavior and the risks of promoting obfuscation. arXiv preprint arXiv:2503.11926 (2025).",
-    "Andrew M Bean, Rebecca Payne, Guy Parsons, Hannah Rose Kirk, Juan Ciro, Rafael Mosquera, Sara Hincapié Monsalve, Aruna S Ekanayaka, Lionel Tarassenko, Luc Rocher, et al. 2025. Clinical knowledge in LLMs does not translate to human interactions. arXiv preprint arXiv:2504.18919 (2025).",
-    "Aaron T Beck. 1979. Cognitive therapy and the emotional disorders. Penguin.",
-    "Maciej Besta, Nils Blach, Ales Kubicek, Robert Gerstenberger, Michal Podstawski, Lukas Gianinazzi, Joanna Gajda, Tomasz Lehmann, Hubert Niewiadomski, Piotr Nyczyk, et al. 2024. Graph of thoughts: Solving elaborate problems with large language models. In Proceedings of the AAAI conference on artificial intelligence, Vol. 38. 17682-17690.",
-    "Maciej Besta, Florim Memedi, Zhenyu Zhang, Robert Gerstenberger, Guangyuan Piao, Nils Blach, Piotr Nyczyk, Marcin Copik, Grzegorz Kwaśniewski, Jurgen Müller, et al. 2025. Demystifying chains, trees, and graphs of thoughts. IEEE Transactions on Pattern Analysis and Machine Intelligence (2025).",
-    "M Antonia Biggs, Katherine Brown, and Diana Greene Foster. 2020. Perceived abortion stigma and psychological well-being over five years after receiving or being denied an abortion. PloS one 15, 1 (2020), e0226417.",
-    "Charlotte Blease and Adam Rodman. 2024. Generative artificial intelligence in mental healthcare: an ethical evaluation. Current Treatment Options in Psychiatry 12, 1 (2024), 5.",
-    "Layla Bouzoubaa, Elham Aghakhani, and Rezvaneh Rezapour. 2024. Words matter: Reducing stigma in online conversations about substance use with large language models. arXiv preprint arXiv:2408.07873 (2024).",
-    "California Legislative Information. 2025. SB-53 Artificial intelligence models: large developers. (2025-2026): Bill Text (Chaptered). https://leginfo.legislature.ca. gov/faces/billNavClient.xhtml?bill_id=202520260SB53 Version: 09/29/25 (Chaptered); Chapter 138; date published 09/29/2025 09:00 PM.",
-    "Aaron Chatterji, Thomas Cunningham, David J Deming, Zoe Hitzig, Christopher Ong, Carl Yan Shan, and Kevin Wadman. 2025. How people use chatgpt. Technical Report. National Bureau of Economic Research.",
-    "Shan Chen, Mingye Gao, Kuleen Sasse, Thomas Hartvigsen, Brian Anthony, Lizhou Fan, Hugo Aerts, Jack Gallifant, and Danielle S Bitterman. 2025. When helpfulness backfires: LLMs and the risk of false medical information due to sycophantic behavior. npj Digital Medicine 8, 1 (2025), 605.",
-    "Yanda Chen, Joe Benton, Ansh Radhakrishnan, Jonathan Uesato, Carson Denison, John Schulman, Arushi Somani, Peter Hase, Misha Wagner, Fabien Roger, et al. 2025. Reasoning Models Don't Always Say What They Think. arXiv preprint arXiv:2505.05410 (2025).",
-    "Kate Cockrill and Adina Nack. 2013. \"I'm not that type of person\": managing the stigma of having an abortion. Deviant Behavior 34, 12 (2013), 973-990.",
-    "Kate Cockrill, Ushma D Upadhyay, Janet Turan, and Diana Greene Foster. 2013. The stigma of having an abortion: development of a scale and characteristics of women experiencing abortion stigma. Perspectives on sexual and reproductive health 45, 2 (2013), 79-88.",
-    "Congress.gov. 2025. S.2937 - AI LEAD Act (119th Congress, 2025-2026). https://www.congress.gov/bill/119th-congress/senate-bill/2937 Introduced Sept. 29, 2025; referred to Senate Judiciary.",
-    "Bella M DePaulo. 1992. Nonverbal behavior and self-presentation. Psychological bulletin 111, 2 (1992), 203.",
-    "Roshini Deva, Dhruv Ramani, Tanvi Divate, Suhani Jalota, and Azra Ismail. 2025. \" Kya family planning after marriage hoti hai?\": Integrating Cultural Sensitivity in an LLM Chatbot for Reproductive Health. In Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems. 1-23.",
-    "Esin Durmus and Claire Cardie. 2018. Understanding the effect of gender and stance in opinion expression in debates on \"abortion\". In Proceedings of the Second Workshop on Computational Modeling of People's Opinions, Personality, and Emotions in Social Media. 69-75.",
-    "Hemad Fetrati, Gerry Chan, and Rita Orji. 2025. Leveraging Generative and Rule-Based Models for Persuasive STI Education: A Multi-Chatbot Mobile Application. In Proceedings of the 7th ACM Conference on Conversational User Interfaces. 1-9.",
-    "Vinitha Gadiraju, Shaun Kane, Sunipa Dev, Alex Taylor, Ding Wang, Remi Denton, and Robin Brewer. 2023. \"I wouldn't say offensive but...\": Disability-Centered Perspectives on Large Language Models. In Proceedings of the 2023 ACM Conference on Fairness, Accountability, and Transparency (Chicago, IL, USA) (FAccT '23). Association for Computing Machinery, New York, NY, USA, 205-216. doi:10.1145/3593013.3593989",
-    "Erving Goffman. 2009. Stigma: Notes on the management of spoiled identity. Simon and schuster.",
-    "John O Greene, H Dan O'Hair, Michael J Cody, and Catherine Yen. 1985. Planning and control of behavior during deception. Human Communication Research 11, 3 (1985), 335-364.",
-    "Shashank Gupta, Vaishnavi Shrivastava, Ameet Deshpande, Ashwin Kalyan, Peter Clark, Ashish Sabharwal, and Tushar Khot. 2023. Bias runs deep: Implicit reasoning biases in persona-assigned Ilms. arXiv preprint arXiv:2311.04892 (2023).",
-    "Kazi Saidul Hasan and Vincent Ng. 2013. Stance classification of ideological debates: Data, models, features, and constraints. In Proceedings of the sixth international joint conference on natural language processing. 1348-1356.",
-    "Illinois General Assembly. 2025. Public Act 104-0054: Wellness and Oversight for Psychological Resources Act (enacting HB 1806). https://ilga.gov/Legislation/BillStatus?DocNum=1806&GAID=18&DocTypeID=HB&LegId=159219&SessionID=114 Effective Aug. 1, 2025.",
-    "Guttmacher Institute. 2024. One in four US women expected to have an abortion in their lifetime. (2024).",
-    "Taewan Kim, Donghoon Shin, Young-Ho Kim, and Hwajung Hong. 2024. Diary-Mate: Understanding User Perceptions and Experience in Human-AI Collaboration for Personal Journaling. Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems (2024). https://api.semanticscholar.org/CorpusID:269743104",
-    "Tomek Korbak, Mikita Balesni, Elizabeth Barnes, Yoshua Bengio, Joe Benton, Joseph Bloom, Mark Chen, Alan Cooney, Allan Dafoe, Anca Dragan, et al. 2025. Chain of thought monitorability: A new and fragile opportunity for ai safety. arXiv preprint arXiv:2507.11473 (2025).",
-    "Anuradha Kumar, Leila Hessini, and Ellen MH Mitchell. 2009. Conceptualising abortion stigma. Culture, health & sexuality 11, 6 (2009), 625-639.",
-    "Julie D Lane and Daniel M Wegner. 1995. The cognitive consequences of secrecy. Journal of personality and social psychology 69, 2 (1995), 237.",
-    "Messi H.J. Lee, Jacob M. Montgomery, and Calvin K. Lai. 2024. Large Language Models Portray Socially Subordinate Groups as More Homogeneous, Consistent with a Bias Observed in Humans. In Proceedings of the 2024 ACM Conference on Fairness, Accountability, and Transparency (Rio de Janeiro, Brazil) (FAccT '24). Association for Computing Machinery, New York, NY, USA, 1321-1340. doi:10.1145/3630106.3658975",
-    "Inna Lin, Lucille Njoo, Anjalie Field, Ashish Sharma, Katharina Reinecke, Tim Althoff, and Yulia Tsvetkov. 2022. Gendered mental health stigma in masked language models. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing. 2152-2170.",
-    "Bruce G Link. 1987. Understanding labeling effects in the area of mental disorders: An assessment of the effects of expectations of rejection. American sociological review (1987), 96-112.",
-    "Bruce G Link and Jo C Phelan. 2001. Conceptualizing stigma. Annual review of Sociology 27, 1 (2001), 363-385.",
-    "Kristin Luker. 1984. Abortion and the Politics of Motherhood. Univ of California Press.",
-    "Qing Lyu, Shreya Havaldar, Adam Stein, Li Zhang, Delip Rao, Eric Wong, Marianna Apidianaki, and Chris Callison-Burch. 2023. Faithful chain-of-thought reasoning. In The 13th International Joint Conference on Natural Language Processing and the 3rd Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics (IJCNLP-AACL 2023).",
-    "Zilin Ma, Yiyang Mei, Yinru Long, Zhaoyuan Su, and Krzysztof Z Gajos. 2024. Evaluating the experience of LGBTQ+ people using large language model based chatbots for mental health support. In Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems. 1-15.",
-    "Brenda Major and Richard H Gramzow. 1999. Abortion as stigma: cognitive and emotional implications of concealment. Journal of personality and social psychology 77, 4 (1999), 735.",
-    "Brenda Major, Janet Tomiyama, and Jeffrey M Hunger. 2017. The negative and bidirectional effects of weight stigma on health. (2017).",
-    "Brenda Major, Josephine M Zubek, M Lynne Cooper, Catherine Cozzarelli, and Caroline Richards. 1997. Mixed messages: implications of social conflict and social support within close relationships for adjustment to a stressful life event. Journal of personality and social psychology 72, 6 (1997), 1349.",
-    "Ryan K McBain, Robert Bozick, Melissa Diliberti, Li Ang Zhang, Fang Zhang, Alyssa Burnett, Aaron Kofner, Benjamin Rader, Joshua Breslau, Bradley D Stein, et al. 2025. Use of Generative Al for Mental Health Advice Among US Adolescents and Young Adults. JAMA Network Open 8, 11 (2025), e2542281-e2542281.",
-    "Katelyn Mei, Sonia Fereidooni, and Aylin Caliskan. 2023. Bias Against 93 Stigmatized Groups in Masked Language Models and Downstream Sentiment Classification Tasks. In Proceedings of the 2023 ACM Conference on Fairness, Accountability, and Transparency (Chicago, IL, USA) (FAccT '23). Association for Computing Machinery, New York, NY, USA, 1699-1710. doi:10.1145/3593013.3594109",
-    "Han Meng, Yancan Chen, Yunan Li, Yitian Yang, Jungup Lee, Renwen Zhang, and Yi-Chieh Lee. 2025. What is Stigma Attributed to? A Theory-Grounded, Expert-Annotated Interview Corpus for Demystifying Mental-Health Stigma. arXiv preprint arXiv:2505.12727 (2025).",
-    "Mario Mina, Júlia Falcão, and Aitor Gonzalez-Agirre. 2024. Exploring the relationship between intrinsic stigma in masked language models and training data using the stereotype content model. In Proceedings of the Fifth Workshop on Resources and ProcessIng of linguistic, para-linguistic and extra-linguistic Data from people with various forms of cognitive/psychiatric/developmental impairments@ LREC-COLING 2024. 54-67.",
-    "Kshitij Mishra, Priyanshu Priya, and Asif Ekbal. 2023. Help Me Heal: A Reinforced Polite and Empathetic Mental Health and Legal Counseling Dialogue System for Crime Victims. In AAAI Conference on Artificial Intelligence. https://api.semanticscholar.org/CorpusID:259690313",
-    "Nevada Legislature. 2025. Assembly Bill 406 (83rd Legislature, 2025): Overview. https://legiscan.com/NV/bill/AB406/2025 Approved by the Governor; Chapter 283 (June 6, 2025).",
-    "New York State Senate. 2025. Senate Bill S4506 (2025-2026): Enacts the Stop Addictive Feeds Exploitation (SAFE) for all act. https://www.nysenate.gov/legislation/bills/2025/S4506",
-    "L Nixon, L Seklir, P Mejia, K Cockrill, S Herold, K Woodruff, and L Dorfman. 2017. Issue 23: Shaping stigma: An analysis of mainstream print and online news coverage of abortion, 2014-2015. Berkeley Media Studies Group (2017).",
-    "Alison Norris, Danielle Bessett, Julia R Steinberg, Megan L Kavanaugh, Silvia De Zordo, and Davida Becker. 2011. Abortion stigma: a reconceptualization of constituents, causes, and consequences. Women's health issues 21, 3 (2011), S49-S54.",
-    "Mark Olfson, Samuel H Zuvekas, Chandler McClellan, Melanie M Wall, Sidney H Hankerson, and Carlos Blanco. 2023. Racial-ethnic disparities in outpatient mental health care in the United States. Psychiatric services 74, 7 (2023), 674-683.",
-    "Andreas Opedal, Alessandro Stolfo, Haruki Shirakami, Ying Jiao, Ryan Cotterell, Bernhard Schölkopf, Abulhair Saparov, and Mrinmaya Sachan. 2024. Do language models exhibit the same cognitive biases in problem solving as human learners? arXiv preprint arXiv:2401.18070 (2024).",
-    "OpenAI. 2025. GPT-5 System Card. System Card. OpenAI. PDF.",
-    "OpenAI. 2025. Preparedness Framework. Version 2. Last updated: April 15, 2025.",
-    "John E Pachankis. 2007. The psychological implications of concealing a stigma: a cognitive-affective-behavioral model. Psychological bulletin 133, 2 (2007), 328.",
-    "Linda M Pope, Nancy E Adler, and Jeanne M Tschann. 2001. Postabortion psychological adjustment: are minors at increased risk? Journal of Adolescent Health 29, 1 (2001), 2-11.",
-    "Diane M Quinn and Valerie A Earnshaw. 2013. Concealable stigmatized identities and psychological well-being. Social and personality psychology compass 7, 1 (2013), 40-51.",
-    "Stephanie Ramer. 2024. Abortion Surveillance-United States, 2022. MMWR. Surveillance Summaries 73 (2024).",
-    "Pragnya Ramjee, Mehak Chhokar, Bhuvan Sachdeva, Mahendra Meena, Hamid Abdullah, Aditya Vashistha, Ruchit Nagar, and Mohit Jain. 2025. ASHABot: an LLM-powered chatbot to support the informational needs of community health workers. In Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems. 1-22.",
-    "Corinne H Rocca, Goleen Samari, Diana G Foster, Heather Gould, and Katrina Kimport. 2020. Emotions and decision rightness over five years following an abortion: An examination of decision difficulty and abortion stigma. Social science & medicine 248 (2020), 112704.",
-    "A Sadusky, H Yared, P Patrick, and E Berger. 2024. A systematic review of client's perspectives on the cultural and racial awareness and responsiveness of mental health practitioners. Culture & Psychology 30, 3 (2024), 567-605.",
-    "Woosuk Seo, Chanmo Yang, and Young-Ho Kim. 2024. Chacha: leveraging large language models to prompt children to share their emotions about personal events. In Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems. 1-20.",
-    "Rohin Shah, Alex Irpan, Alexander Matt Turner, Anna Wang, Arthur Conmy, David Lindner, Jonah Brown-Cohen, Lewis Ho, Neel Nanda, Raluca Ada Popa, et al. 2025. An approach to technical agi safety and security. arXiv preprint arXiv:2504.01849 (2025).",
-    "Ashish Sharma, Kevin Rushton, Inna Lin, David Wadden, Khendra Lucas, Adam Miner, Theresa Nguyen, and Tim Althoff. 2023. Cognitive reframing of negative thoughts through human-language model interaction. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 9977-10000.",
-    "Ashish Sharma, Kevin Rushton, Inna Wanyin Lin, Theresa Nguyen, and Tim Althoff. 2024. Facilitating self-guided mental health interventions through human-language model interaction: A case study of cognitive restructuring. In Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems. 1-29.",
-    "Sonali Sharma, Ahmed M Alaa, and Roxana Daneshjou. 2025. A longitudinal analysis of declining medical safety messaging in generative Al models. npj Digital Medicine 8, 1 (2025), 592.",
-    "Gretchen Sisson and Katrina Kimport. 2016. Facts and fictions: Characters seeking abortion on American television, 2005-2014. Contraception 93, 5 (2016), 446-451.",
-    "Nadiya Straton, Hyeju Jang, and Raymond Ng. 2020. Stigma annotation scheme and stigmatized language detection in health-care discussions on social media. In Proceedings of The 12th Language Resources and Evaluation Conference (LREC 2020). European Language Resources Association, 1178-1190.",
-    "Pontus Strimling, Joel Krueger, and Simon Karlsson. 2024. GPT-4's One-Dimensional Mapping of Morality: How the Accuracy of Country-Estimates Depends on Moral Domain. arXiv:2407.16886 [cs.CY] https://arxiv.org/abs/2407.16886",
-    "Beatrice Tosti, Stefano Corrado, and Stefania Mancone. 2024. Using Chatbots and Conversational Agents for the Promotion of Well-being and Mental Health in Adolescents: Limitations and Perspectives. Journal of Inclusive Methodology and Technology in Learning and Teaching 4, 1 (2024).",
-    "Angelina Wang, Jamie Morgenstern, and John P Dickerson. 2025. Large language models that replace human participants can harmfully misportray and flatten identity groups. Nature Machine Intelligence (2025), 1-12.",
-    "Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Fei Xia, Ed Chi, Quoc V Le, Denny Zhou, et al. 2022. Chain-of-thought prompting elicits reasoning in large language models. Advances in neural information processing systems 35 (2022), 24824-24837.",
-    "Laura Weidinger, Jonathan Uesato, Maribeth Rauh, Conor Griffin, Po-Sen Huang, John Mellor, Amelia Glaese, Myra Cheng, Borja Balle, Atoosa Kasirzadeh, et al. 2022. Taxonomy of risks posed by language models. In Proceedings of the 2022 ACM conference on fairness, accountability, and transparency. 214-229.",
-    "Katie Woodruff. 2019. Coverage of abortion in select US newspapers. Women's Health Issues 29, 1 (2019), 80-86.",
-    "Mengxi Xiao, Qianqian Xie, Ziyan Kuang, Zhicheng Liu, Kailai Yang, Min Peng, Weiguang Han, and Jimin Huang. 2024. Healme: Harnessing cognitive reframing in large language models for psychotherapy. arXiv preprint arXiv:2403.05574 (2024).",
-    "X Zhou, H Zhu, L Mathur, R Zhang, H Yu, Z Qi, LP Morency, Y Bisk, D Fried, G Neubig, et al. [n. d.]. SOTOPIA: Interactive Evaluation for Social Intelligence in Language Agents. arXiv 2024. arXiv preprint arXiv:2310.11667 ([n. d.]).",
-    "Caleb Ziems, Minzhi Li, Anthony Zhang, and Diyi Yang. 2022. Inducing positive perspectives with text reframing. arXiv preprint arXiv:2204.02952 (2022)."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

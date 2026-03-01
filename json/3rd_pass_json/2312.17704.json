@@ -2,47 +2,49 @@
   "filename": "2312.17704.pdf",
   "title": "TuPy-E: detecting hate speech in Brazilian Portuguese social media with a novel dataset and comprehensive analysis of models",
   "arxiv_url": "https://arxiv.org/pdf/2312.17704",
-  "bias_targets": [
-    {
-      "target": "Gender bias",
-      "methodology": "Graph-based co-occurrence analysis of gender-specific derogatory terms (misogyny) and evaluation of fine-tuned BERTimbau models using precision, recall, and F1 scores for hierarchical hate speech classification."
-    },
-    {
-      "target": "Political bias",
-      "methodology": "Network graph analysis of terms tied to political figures and ideologies, alongside performance evaluation of BERTimbau models in classifying politically targeted hate speech."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "N-gram and graph analysis of homophobic slurs, followed by evaluating BERTimbau models' classification metrics (precision, recall, F1) for detecting LGBTphobia."
-    },
-    {
-      "target": "Racial bias",
-      "methodology": "Evaluating fine-tuned BERTimbau Base and Large models' precision, recall, and F1 scores in detecting racist hate speech within Brazilian Portuguese tweets."
-    },
-    {
-      "target": "Appearance bias",
-      "methodology": "Analyzing word frequencies related to body shaming and measuring the classification performance of BERTimbau models fine-tuned to detect body-shaming tweets."
-    },
-    {
-      "target": "Socioeconomic bias",
-      "methodology": "Evaluating BERTimbau models' capabilities in classifying aporophobia (prejudice against poor people) using precision, recall, and F1 scores."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Measuring the precision, recall, and F1 scores of BERTimbau models fine-tuned to detect capacitism (ableism) in social media texts."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Evaluating the performance of BERTimbau models in identifying instances of ageism within the annotated Twitter dataset."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Evaluating fine-tuned BERTimbau models on their ability to classify religious intolerance using standard predictive metrics (precision, recall, F1)."
-    },
-    {
-      "target": "Nationality bias",
-      "methodology": "Measuring BERTimbau models' classification metrics for detecting xenophobic hate speech targeting individuals based on geographic origin."
-    }
+  "religious_groups": [
+    "Christianity",
+    "Islam",
+    "Afro-Brazilian religions"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "BERTimbau Base",
+    "BERTimbau Large"
+  ],
+  "languages_evaluated": [
+    "Brazilian Portuguese"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "The models tested, BERTimbau Base and BERTimbau Large, demonstrated poor performance in identifying hate speech related to religious intolerance, yielding low precision, recall, and F1-scores for this category. The study also found a graphical proximity and co-occurrence between the categories of religious intolerance, racism, and xenophobia within the dataset.",
+  "references": [
+    "P. Fortuna, J. Rocha Da Silva, J. Soler-Company, L. Wanner, and S. Nunes, \"A Hierarchically-Labeled Portuguese Hate Speech Dataset,\" 2019. [Online]. Available: https://github.com/t-davidson/hate-s",
+    "C. Nobata, J. Tetreault, A. Thomas, Y. Mehdad, and Y. Chang, \"Abusive language detection in online user content,\" in 25th International World Wide Web Conference, WWW 2016, International World Wide Web Conferences Steering Committee, 2016, pp. 145-153. doi: 10.1145/2872427.2883062.",
+    "F. Vargas, I. Carvalho, F. Góes, T. A. S. Pardo, and F. Benevenuto, \"HateBR: A Large Expert Annotated Corpus of Brazilian Instagram Comments for Offensive Language and Hate Speech Detection,\" 2022. [Online]. Available: https://www.statista.com/",
+    "Z. Waseem and D. Hovy, \"Hateful Symbols or Hateful People? Predictive Features for Hate Speech Detection on Twitter,\" 2016. [Online]. Available: http://github.com/zeerakw/hatespeech",
+    "T. Davidson, D. Warmsley, M. Macy, and I. Weber, \"Automated hate speech detection and the problem of offensive language,\" in Proceedings of the 11th International Conference on Web and Social Media, ICWSM 2017, AAAI Press, 2017, pp. 512-515. doi: 10.1609/icwsm.v11i1.14955.",
+    "O. de Gibert, N. Perez, A. García-Pablos, and M. Cuadros, \"Hate Speech Dataset from a White Supremacy Forum,\" Sep. 2018, [Online]. Available: http://arxiv.org/abs/1809.04444",
+    "I. Mollas, Z. Chrysopoulou, S. Karlos, and G. Tsoumakas, \"ETHOS: an Online Hate Speech Detection Dataset,\" Jun. 2020, doi: 10.1007/s40747-021-00608-2.",
+    "M. Chong, \"Sentiment analysis and topic extraction of the twitter network of #prayforparis,\" Proceedings of the Association for Information Science and Technology, vol. 53, no. 1, pp. 1-4, 2016, doi: 10.1002/pra2.2016.14505301133.",
+    "U. Bretschneider and R. Peters, Detecting Offensive Statements towards Foreigners in Social Media. 2017. [Online]. Available: http://hdl.handle.net/10125/41423",
+    "N. Ousidhoum, Z. Lin, H. Zhang, Y. Song, and D.-Y. Yeung, \"Multilingual and Multi-Aspect Hate Speech Analysis,\" 2019. [Online]. Available: https://www.amnesty.org.uk/press-releases/women-",
+    "H. Madhu, S. Satapara, S. Modha, T. Mandl, and P. Majumder, \"Detecting offensive speech in conversational code-mixed dialogue on social media: A contextual dataset and benchmark experiments,\" Expert Syst Appl, vol. 215, Apr. 2023, doi: 10.1016/j.eswa.2022.119342.",
+    "M. Abdelhakim, B. Liu, and C. Sun, \"Ar-PuFi: A short-text dataset to identify the offensive messages towards public figures in the Arabian community,\" Expert Syst Appl, vol. 233, Dec. 2023, doi: 10.1016/j.eswa.2023.120888.",
+    "N. Albadi, M. Kurdi, and S. Mishra, \"Are they our brothers? analysis and detection of religious hate speech in the Arabic Twittersphere,\" in Proceedings of the 2018 IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining, ASONAM 2018, Institute of Electrical and Electronics Engineers Inc., Oct. 2018, pp. 69-76. doi: 10.1109/ASONAM.2018.8508247.",
+    "I. Alfina, R. Mulia, M. Fanany, and Y. Ekanata, Hate Speech Detection in the Indonesian Language: A Dataset and Preliminary Study. 2017.",
+    "N. L. Ljubeši'c, T. Erjavec, and D. Fišer, \"Datasets of Slovene and Croatian Moderated News Comments,\" 2018. [Online]. Available: https://figshare.com/projects/",
+    "J. Pavlopoulos Straintek and P. Malakasiotis Straintek, \"Deeper Attention to Abusive User Content Moderation,\" 2017. [Online]. Available: https://www.",
+    "Z. Pitenis, M. Zampieri, and T. Ranasinghe, \"Offensive Language Identification in Greek,\" 2020. [Online]. Available: https://www.lighttag.io/",
+    "R. Pelle and V. Moreira, \"Offensive Comments in the Brazilian Web: a dataset and baseline results,\" 2017. [Online]. Available: http://www.novasb.com.br",
+    "J. A. Leite, D. F. Silva, K. Bontcheva, and C. Scarton, \"Toxic Language Detection in Social Media for Brazilian Portuguese: New Dataset and Multilingual Analysis,\" Oct. 2020, [Online]. Available: http://arxiv.org/abs/2010.04543",
+    "P. Fortuna, \"Automatic detection of hate speech in text: an overview of the topic and dataset annotation with hierarchical classes,\" 2017.",
+    "L. Silva and R. Sampaio, \"Impeachment, Facebook e discurso de ódio: A incivilidade e o desrespeito nas fanpages das senadoras da república.,\" 2017.",
+    "I. Kwok and Y. Wang, \"Locate the Hate: Detecting Tweets against Blacks,\" 2013. [Online]. Available: http://tempest.wellesley.edu/~ywang5/aaai/paper.html.",
+    "F. Souza, \"BERTimbau: pretrained BERT models for Brazilian Portuguese,\" Campinas, 2020."
+  ],
+  "measurement_description": "Detection of hate speech classified as 'religious intolerance' in Brazilian Portuguese social media posts."
 }

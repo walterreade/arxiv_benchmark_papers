@@ -2,104 +2,51 @@
   "filename": "2410.08388.pdf",
   "title": "Responsible AI in NLP: GUS-Net Span-Level Bias Detection Dataset and Benchmark for Generalizations, Unfairness, and Stereotypes",
   "arxiv_url": "https://arxiv.org/pdf/2410.08388",
-  "benchmark_measurement": "The benchmark measures span-level detection of social biases, specifically categorizing them into Generalizations, Unfairness, and Stereotypes within various domains, including religious contexts.",
-  "religious_groups": [
-    "Christians",
-    "Muslims",
-    "Jewish people",
-    "Hindus",
-    "Buddhists",
-    "Sikhs",
-    "Atheists",
-    "Agnostics"
+  "bias_targets": [
+    {
+      "target": "Racial bias",
+      "methodology": "Multi-label token-level classification (BIO tagging) to detect spans of text that express generalizations, unfairness, and stereotypes towards racial groups."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Multi-label token-level classification (BIO tagging) to detect spans of text that express generalizations, unfairness, and stereotypes towards religious groups."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Multi-label token-level classification (BIO tagging) to detect spans of text that express generalizations, unfairness, and stereotypes towards genders."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Multi-label token-level classification (BIO tagging) to detect spans of text that express generalizations, unfairness, and stereotypes towards different age groups."
+    },
+    {
+      "target": "Nationality bias",
+      "methodology": "Multi-label token-level classification (BIO tagging) to detect spans of text that express generalizations, unfairness, and stereotypes towards nationalities and immigrants."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Multi-label token-level classification (BIO tagging) to detect spans of text that express generalizations, unfairness, and stereotypes towards different sexualities and LGBTQIA+ individuals."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Multi-label token-level classification (BIO tagging) to detect spans of text that express generalizations, unfairness, and stereotypes towards different socioeconomic classes."
+    },
+    {
+      "target": "Educational bias",
+      "methodology": "Multi-label token-level classification (BIO tagging) to detect spans of text that express generalizations, unfairness, and stereotypes towards people based on their educational background."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Multi-label token-level classification (BIO tagging) to detect spans of text that express generalizations, unfairness, and stereotypes towards people with physical or cognitive disabilities."
+    },
+    {
+      "target": "Political bias",
+      "methodology": "Multi-label token-level classification (BIO tagging) to detect spans of text that express generalizations, unfairness, and stereotypes towards political affiliations."
+    },
+    {
+      "target": "Physical appearance bias",
+      "methodology": "Multi-label token-level classification (BIO tagging) to detect spans of text that express generalizations, unfairness, and stereotypes towards people based on physical attributes."
+    }
   ],
-  "models_tested": [
-    "BERT-base-uncased",
-    "DistilBERT-base-uncased",
-    "ROBERTa-base-uncased",
-    "Llama 3.3-70B-Instruct",
-    "Llama 3.2-3B-Instruct",
-    "Phi-3 Medium-4k-Instruct",
-    "Phi 3.5 Mini-Instruct"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "other"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "BABE",
-    "NBIAS"
-  ],
-  "continuous_testing": false,
-  "findings": "The paper finds that its framework, particularly the GUS-Net-BERT model, effectively captures fine-grained and overlapping bias spans in religious contexts. A validation example demonstrated the model's ability to correctly identify generalizations, unfairness, and stereotypes simultaneously within sentences about Christians and Atheists.",
-  "references": [
-    "Thawakar, O., Vayani, A., Khan, S., Cholakal, H., Anwer, R.M., Felsberg, M., Baldwin, T., Xing, E.P., Khan, F.S.: Mobillama: Towards accurate and lightweight fully transparent gpt. arXiv preprint arXiv:2402.16840 (2024)",
-    "Kumar, S.H., Sahay, S., Mazumder, S., Okur, E., Manuvinakurike, R., Beckage, N., Su, H., Lee, H.-y., Nachman, L.: Decoding biases: Automated methods and llm judges for gender bias detection in language models. arXiv preprint arXiv:2408.03907 (2024)",
-    "Raza, S., Bamgbose, O., Ghuge, S., Tavakoli, F., Reji, D.J.: Developing safe and responsible large language models-a comprehensive framework. arXiv preprint arXiv:2404.01399 (2024)",
-    "Jacobs, A.Z., Blodgett, S.L., Barocas, S., Daumé III, H., Wallach, H.: The meaning and measurement of bias: lessons from natural language processing. In: Proceedings of the 2020 Conference on Fairness, Accountability, and Transparency, pp. 706–706 (2020)",
-    "Cyberey, H., Ji, Y., Evans, D.: Do prevalent bias metrics capture allocational harms from LLMs? In: Drozd, A., Sedoc, J., Tafreshi, S., Akula, A., Shu, R. (eds.) The Sixth Workshop on Insights from Negative Results in NLP, pp. 34–45. Association for Computational Linguistics, Albuquerque, New Mexico (2025). https://doi.org/10.18653/v1/2025.insights-1.5 . https://aclanthology.org/2025.insights-1.5/",
-    "Qureshi, R., Sapkota, R., Shah, A., Muneer, A., Zafar, A., Vayani, A., Shoman, M., Eldaly, A., Zhang, K., Sadak, F., et al.: Thinking beyond tokens: From brain-inspired intelligence to cognitive foundations for artificial general intelligence and its societal impact. arXiv preprint arXiv:2507.00951 (2025)",
-    "Shahbazi, N., Lin, Y., Asudeh, A., Jagadish, H.: Representation bias in data: A survey on identification and resolution techniques. ACM Computing Surveys 55(13s), 1–39 (2023)",
-    "Narnaware, V., Vayani, A., Gupta, R., Swetha, S., Shah, M.: Sb-bench: Stereotype bias benchmark for large multimodal models. arXiv preprint arXiv:2502.08779 (2025)",
-    "Hovy, D., Prabhumoye, S.: Five sources of bias in natural language processing. Language and Linguistics Compass 15(8), 12432 (2021) https://doi.org/10.111 1/lnc3.12432",
-    "Dixon, L., Li, J., Sorensen, J., Thain, N., Vasserman, L.: Measuring and mitigating unintended bias in text classification. In: Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society, pp. 67–73 (2018)",
-    "Raza, S., Bamgbose, O., Chatrath, V., Ghuge, S., Sidyakin, Y., Mohammed Muaad, A.Y.: Unlocking Bias Detection: Leveraging Transformer-Based Models for Content Analysis (2024). https://doi.org/10.1109/TCSS.2024.3392469",
-    "Tokpo, E.K., Delobelle, P., Berendt, B., Calders, T.: How Far Can It Go? On Intrinsic Gender Bias Mitigation for Text Classification. EACL 2023 – 17th Conference of the European Chapter of the Association for Computational Linguistics, Proceedings of the Conference (2021), 3410–3425 (2023). ISBN: 9781959429449_eprint: 2301.12855",
-    "Jigsaw: Toxic Comment Classification Challenge. Kaggle (2018). https://www.kaggle.com/competitions/jigsaw-toxic-comment-classification-challenge/overview",
-    "Devlin, J., Chang, M.-W., Lee, K., Toutanova, K.: Bert: Pre-training of deep bidirectional transformers for language understanding. In: Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pp. 4171–4186 (2019)",
-    "Liu, Y., Ott, M., Goyal, N., Du, J., Joshi, M., Chen, D., Levy, O., Lewis, M., Zettlemoyer, L., Stoyanov, V.: ROBERTa: A Robustly Optimized BERT Pretraining Approach (2019). https://arxiv.org/abs/1907.11692",
-    "He, P., Liu, X., Gao, J., Chen, W.: Deberta: Decoding-enhanced bert with disentangled attention. arXiv preprint arXiv:2006.03654 (2020)",
-    "Raza, S., Paulen-Patterson, D., Ding, C.: Fake news detection: comparative evaluation of bert-like models and large language models with generative ai-annotated data. Knowledge and Information Systems, 1–26 (2025)",
-    "Vayani, A., Dissanayake, D., Watawana, H., Ahsan, N., Sasikumar, N., Thawakar, O., Ademtew, H.B., Hmaiti, Y., Kumar, A., Kukreja, K., et al.: All languages matter: Evaluating Imms on culturally diverse 100 languages. In: Proceedings of the Computer Vision and Pattern Recognition Conference, pp. 19565–19575 (2025)",
-    "Raza, S., Vayani, A., Jain, A., Narayanan, A., Khazaie, V.R., Bashir, S.R., Dolatabadi, E., Uddin, G., Emmanouilidis, C., Qureshi, R., et al.: Vldbench: Vision language models disinformation detection benchmark. arXiv e-prints, 2502 (2025)",
-    "Sharnagat, R.: Named entity recognition: A literature survey. Center For Indian Language Technology 1, 1 (2014)",
-    "Raza, S., Garg, M., Reji, D.J., Bashir, S.R., Ding, C.: Nbias: A natural language processing framework for bias identification in text. Expert Systems with Applications 237, 121542 (2024)",
-    "Spinde, T., Rudnitckaia, L., Sinha, K., Hamborg, F., Gipp, B., Donnay, K.: MBIC A Media Bias Annotation Dataset Including Annotator Characteristics (2021). https://arxiv.org/abs/2105.11910",
-    "Spinde, T., Plank, M., Krieger, J.-D., Ruas, T., Gipp, B., Aizawa, A.: Neural media bias detection using distant supervision with babe-bias annotations by experts. arXiv preprint arXiv:2209.14557 (2022)",
-    "Perera, N., Dehmer, M., Emmert-Streib, F.: Named entity recognition and relation detection for biomedical information extraction. Frontiers in cell and developmental biology 8, 673 (2020)",
-    "Lin, T.-Y., Goyal, P., Girshick, R., He, K., Dollár, P.: Focal Loss for Dense Object Detection (2018). https://arxiv.org/abs/1708.02002",
-    "Zhao, W.X., Zhou, K., Li, J., Tang, T., Wang, X., Hou, Y., Min, Y., Zhang, B., Zhang, J., Dong, Z., et al.: A survey of large language models. arXiv preprint arXiv:2303.18223 (2023)",
-    "Kasneci, E., Seßler, K., Küchemann, S., Bannert, M., Dementieva, D., Fischer, F., Gasser, U., Groh, G., Günnemann, S., Hüllermeier, E., et al.: Chatgpt for good? on opportunities and challenges of large language models for education. Learning and individual differences 103, 102274 (2023)",
-    "Da, L., Liou, K., Chen, T., Zhou, X., Luo, X., Yang, Y., Wei, H.: Open-ti: Open traffic intelligence with augmented language model. International Journal of Machine Learning and Cybernetics, 1–26 (2024)",
-    "Heilman, M.E.: Gender stereotypes and workplace bias. Research in organizational Behavior 32, 113–135 (2012)",
-    "Jin, Y., Jang, E., Cui, J., Chung, J.-W., Lee, Y., Shin, S.: Darkbert: A language model for the dark side of the internet. arXiv preprint arXiv:2305.08596 (2023)",
-    "Raza, S., Reji, D.J., Ding, C.: Dbias: detecting biases and ensuring fairness in news articles. International Journal of Data Science and Analytics 17(1), 39–59 (2024)",
-    "Sun, T., Gaut, A., Tang, S., Huang, Y., ElSherief, M., Zhao, J., Mirza, D., Beld- ing, E., Chang, K., Wang, W.Y.: Mitigating gender bias in natural language processing: Literature review. In: Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics (ACL), pp. 1630–1640. Association for Computational Linguistics, Florence, Italy (2019). https://doi.org/10.18653/v1/P19-1159 . https://aclanthology.org/P19-1159/",
-    "Pavlopoulos, J., Sorensen, J., Laugier, L., Androutsopoulos, I.: SemEval-2021 task 5: Toxic spans detection. In: Proceedings of the 15th International Workshop on Semantic Evaluation (SemEval-2021), pp. 59–69. Association for Computational Linguistics, Online (2021). https://doi.org/10.18653/v1/2021.semeval-1.6 . https://aclanthology.org/2021.semeval-1.6/",
-    "Dhamala, J., Sun, T., Kumar, V., Krishna, S., Pruksachatkun, Y., Chang, K.- W., Gupta, R.: Bold: A dataset and metrics for measuring biases in open-ended language generation. In: Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, pp. 862–872 (2021)",
-    "Nangia, N., Vania, C., Bhalerao, R., Bowman, S.R.: Crows-pairs: A challenge dataset for measuring social biases in masked language models. arXiv preprint arXiv:2010.00133 (2020)",
-    "Smith, E.M., Hall, M., Kambadur, M., Presani, E., Williams, A.: “i’m sorry to hear that”: Finding new biases in language models with a holistic descriptor dataset. arXiv preprint arXiv:2205.09209 (2022)",
-    "Raza, S., Rahman, M., Zhang, M.R.: Beads: Bias evaluation across domains. arXiv preprint arXiv:2406.04220 (2024)",
-    "Mitchell, M., Attanasio, G., Baldini, I., Cincinn, M., Clive, J., Delobelle, P., Dey, M., Hamilton, T., Dili, T., Doughman, J., et al.: Shades: Towards a multilingual assessment of stereotypes in large language models. In: Proceedings of the 2025 Conference of the Nations of the American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pp. 11995–12041 (2025)",
-    "Horych, T., Mandl, C., Ruas, T., Greiner-Petter, A., Gipp, B., Aizawa, A., Spinde, T.: The promises and pitfalls of llm annotations in dataset labeling: A case study on media bias detection. In: Findings of the Association for Computational Linguistics: NAACL 2025, (2024)",
-    "Da, L., Gao, M., Mei, H., Wei, H.: Prompt to transfer: Sim-to-real transfer for traffic signal control with prompt learning. In: Proceedings of the AAAI Conference on Artificial Intelligence, vol. 38, pp. 82–90 (2024)",
-    "Vidgof, M., Bachhofner, S., Mendling, J.: Large language models for business process management: Opportunities and challenges. In: International Conference on Business Process Management, pp. 107–123 (2023). Springer",
-    "Nadeem, M., Bethke, A., Reddy, S.: Stereoset: Measuring stereotypical bias in pretrained language models. arXiv preprint arXiv:2004.09456 (2020)",
-    "Li, J., Sun, A., Han, J., Li, C.: A survey on deep learning for named entity recognition. IEEE transactions on knowledge and data engineering 34(1), 50–70 (2020)",
-    "Raza, S., Schwartz, B.: Constructing a disease database and using natural language processing to capture and standardize free text clinical information. Scientific Reports 13(1), 8591 (2023)",
-    "Wu, Y., Shi, B., Chen, J., Liu, Y., Dong, B., Zheng, Q., Wei, H.: Rethinking sentiment analysis under uncertainty. In: Proceedings of the 32nd ACM International Conference on Information and Knowledge Management, pp. 2775–2784 (2023)",
-    "Jiang, A.Q., Sablayrolles, A., Mensch, A., Bamford, C., Chaplot, D.S., Casas, D., Bressand, F., Lengyel, G., Lample, G., Saulnier, L., Lavaud, L.R., Lachaux, M.-A., Stock, P., Scao, T.L., Lavril, T., Wang, T., Lacroix, T., Sayed, W.E.: Mistral 7B (2023). https://arxiv.org/abs/2310.06825",
-    "Khattab, O., Singhvi, A., Maheshwari, P., Zhang, Z., Santhanam, K., Haq, S., Sharma, A., Joshi, T.T., Moazam, H., Miller, H., Zaharia, M., Potts, C.: Dspy: Compiling declarative language model calls into self-improving pipelines. arXiv preprint arXiv:2310.03714 (2023)",
-    "Rambhatla, S.S., Misra, I.: SelfEval: Leveraging the discriminative nature of generative models for evaluation (2023). https://arxiv.org/abs/2311.10708",
-    "Ramshaw, L.A., Marcus, M.P.: Text Chunking using Transformation-Based Learning (1995). https://arxiv.org/abs/cmp-lg/9505040",
-    "Sutton, C., McCallum, A., et al.: An introduction to conditional random fields. Foundations and TrendsⓇ in Machine Learning 4(4), 267–373 (2012)",
-    "Sanh, V., Debut, L., Chaumond, J., Wolf, T.: DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter (2020). https://arxiv.org/abs/1910.01108",
-    "Liu, Y., Qin, G., Huang, X., Wang, J., Long, M.: Autotimes: Autoregressive time series forecasters via large language models. Advances in Neural Information Processing Systems 37, 122154–122184 (2024)",
-    "Hu, E.J., Shen, Y., Wallis, P., Allen-Zhu, Z., Li, Y., Wang, S., Wang, L., Chen, W.: LORA: Low-Rank Adaptation of Large Language Models (2021). https://arxiv.org/abs/2106.09685",
-    "Dubey, A., Jauhri, A., Pandey, A., Kadian, A., Al-Dahle, A., Letman, A., Mathur, A., Schelten, A., Yang, A., Fan, A., et al.: The llama 3 herd of models. arXiv e-prints, 2407 (2024)",
-    "Abdin, M., Aneja, J., Behl, H., Bubeck, S., Eldan, R., Gunasekar, S., Harrison, M., Hewett, R.J., Javaheripi, M., Kauffmann, P., et al.: Phi-4 technical report. arXiv preprint arXiv:2412.08905 (2024)",
-    "Tsoumakas, G., Katakis, I., Vlahavas, I.: Mining multi-label data. Data mining and knowledge discovery handbook, 667–685 (2010)",
-    "Peng, B., Li, C., He, P., Galley, M., Gao, J.: INSTRUCTION TUNING WITH GPT-4",
-    "Brown, T.B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P., Neelakantan, A., Shyam, P., Sastry, G., Askell, A., Agarwal, S., Herbert-Voss, A., Krueger, G., Henighan, T., Child, R., Ramesh, A., Ziegler, D.M., Wu, J., Winter, C., Hesse, C., Chen, M., Sigler, E., Litwin, M., Gray, S., Chess, B., Clark, J., Berner, C., McCandlish, S., Radford, A., Sutskever, I., Amodei, D.: Language Models are Few-Shot Learners (2020). https://arxiv.org/abs/2005.14165",
-    "Raza, S., Qureshi, R., Zahid, A., Fioresi, J., Sadak, F., Saeed, M., Sapkota, R., Jain, A., Zafar, A., Hassan, M.U., et al.: Who is responsible? the data, models, users or regulations? responsible generative ai for a sustainable future. arXiv preprint arXiv:2502.08650 (2025)",
-    "Gupta, N., Narasimhan, H., Jitkrittum, W., Rawat, A.S., Menon, A.K., Kumar, S.: Language model cascades: Token-level uncertainty and beyond. arXiv preprint arXiv:2404.10136 (2024)",
-    "Raza, S., Dolatabadi, E., Ondrusek, N., Rosella, L., Schwartz, B.: Discovering social determinants of health from case reports using natural language processing: algorithmic development and validation. BMC Digital Health 1(1), 35 (2023)",
-    "Hao, S., Han, W., Jiang, T., Li, Y., Wu, H., Zhong, C., Zhou, Z., Tang, H.: Synthetic data in ai: Challenges, applications, and ethical implications. arXiv preprint arXiv:2401.01629 (2024)",
-    "Sapkota, R., Raza, S., Shoman, M., Paudel, A., Karkee, M.: Image, text, and speech data augmentation using multimodal llms for deep learning: A survey. arXiv preprint arXiv:2501.18648 (2025)",
-    "Hao, S., Gu, Y., Luo, H., Liu, T., Shao, X., Wang, X., Xie, S., Ma, H., Samavedhi, A., Gao, Q., et al.: Llm reasoners: New evaluation, library, and analysis of step-by-step reasoning with large language models. arXiv preprint arXiv:2404.05221 (2024)",
-    "Bender, E.M., Gebru, T., McMillan-Major, A., Shmitchell, S.: On the dangers of stochastic parrots: Can language models be too big? In: Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, pp. 610–623 (2021)"
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

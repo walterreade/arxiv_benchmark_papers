@@ -2,71 +2,89 @@
   "filename": "2510.19616.pdf",
   "title": "PBBQ: A Persian Bias Benchmark Dataset Curated with Human-AI Collaboration for Large Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2510.19616",
-  "bias_targets": [
-    {
-      "target": "Age bias",
-      "methodology": "Evaluated using the PBBQ multiple-choice question-answering dataset. Measures bias through Ambiguous Bias Score (log-probability differences between stereotypical and non-stereotypical choices) and Disambiguated Bias Score (accuracy disparity between stereotype-aligned and opposed scenarios)."
-    },
-    {
-      "target": "Profession bias",
-      "methodology": "Evaluated using the PBBQ multiple-choice question-answering dataset. Measures bias through Ambiguous Bias Score (log-probability differences between stereotypical and non-stereotypical choices) and Disambiguated Bias Score (accuracy disparity between stereotype-aligned and opposed scenarios)."
-    },
-    {
-      "target": "Socio-economic Status bias",
-      "methodology": "Evaluated using the PBBQ multiple-choice question-answering dataset. Measures bias through Ambiguous Bias Score (log-probability differences between stereotypical and non-stereotypical choices) and Disambiguated Bias Score (accuracy disparity between stereotype-aligned and opposed scenarios)."
-    },
-    {
-      "target": "Educational Background bias",
-      "methodology": "Evaluated using the PBBQ multiple-choice question-answering dataset. Measures bias through Ambiguous Bias Score (log-probability differences between stereotypical and non-stereotypical choices) and Disambiguated Bias Score (accuracy disparity between stereotype-aligned and opposed scenarios)."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Evaluated using the PBBQ multiple-choice question-answering dataset. Measures bias through Ambiguous Bias Score (log-probability differences between stereotypical and non-stereotypical choices) and Disambiguated Bias Score (accuracy disparity between stereotype-aligned and opposed scenarios)."
-    },
-    {
-      "target": "Disease bias",
-      "methodology": "Evaluated using the PBBQ multiple-choice question-answering dataset. Measures bias through Ambiguous Bias Score (log-probability differences between stereotypical and non-stereotypical choices) and Disambiguated Bias Score (accuracy disparity between stereotype-aligned and opposed scenarios)."
-    },
-    {
-      "target": "Domestic Area bias",
-      "methodology": "Evaluated using the PBBQ multiple-choice question-answering dataset. Measures bias through Ambiguous Bias Score (log-probability differences between stereotypical and non-stereotypical choices) and Disambiguated Bias Score (accuracy disparity between stereotype-aligned and opposed scenarios)."
-    },
-    {
-      "target": "Ethnicity bias",
-      "methodology": "Evaluated using the PBBQ multiple-choice question-answering dataset. Measures bias through Ambiguous Bias Score (log-probability differences between stereotypical and non-stereotypical choices) and Disambiguated Bias Score (accuracy disparity between stereotype-aligned and opposed scenarios)."
-    },
-    {
-      "target": "Family Structure bias",
-      "methodology": "Evaluated using the PBBQ multiple-choice question-answering dataset. Measures bias through Ambiguous Bias Score (log-probability differences between stereotypical and non-stereotypical choices) and Disambiguated Bias Score (accuracy disparity between stereotype-aligned and opposed scenarios)."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Evaluated using the PBBQ multiple-choice question-answering dataset. Measures bias through Ambiguous Bias Score (log-probability differences between stereotypical and non-stereotypical choices) and Disambiguated Bias Score (accuracy disparity between stereotype-aligned and opposed scenarios)."
-    },
-    {
-      "target": "Property Ownership bias",
-      "methodology": "Evaluated using the PBBQ multiple-choice question-answering dataset. Measures bias through Ambiguous Bias Score (log-probability differences between stereotypical and non-stereotypical choices) and Disambiguated Bias Score (accuracy disparity between stereotype-aligned and opposed scenarios)."
-    },
-    {
-      "target": "Nationality bias",
-      "methodology": "Evaluated using the PBBQ multiple-choice question-answering dataset. Measures bias through Ambiguous Bias Score (log-probability differences between stereotypical and non-stereotypical choices) and Disambiguated Bias Score (accuracy disparity between stereotype-aligned and opposed scenarios)."
-    },
-    {
-      "target": "Physical Appearance bias",
-      "methodology": "Evaluated using the PBBQ multiple-choice question-answering dataset. Measures bias through Ambiguous Bias Score (log-probability differences between stereotypical and non-stereotypical choices) and Disambiguated Bias Score (accuracy disparity between stereotype-aligned and opposed scenarios)."
-    },
-    {
-      "target": "Political Orientation bias",
-      "methodology": "Evaluated using the PBBQ multiple-choice question-answering dataset. Measures bias through Ambiguous Bias Score (log-probability differences between stereotypical and non-stereotypical choices) and Disambiguated Bias Score (accuracy disparity between stereotype-aligned and opposed scenarios)."
-    },
-    {
-      "target": "Religion bias",
-      "methodology": "Evaluated using the PBBQ multiple-choice question-answering dataset. Measures bias through Ambiguous Bias Score (log-probability differences between stereotypical and non-stereotypical choices) and Disambiguated Bias Score (accuracy disparity between stereotype-aligned and opposed scenarios)."
-    },
-    {
-      "target": "Sexual Orientation bias",
-      "methodology": "Evaluated using the PBBQ multiple-choice question-answering dataset. Measures bias through Ambiguous Bias Score (log-probability differences between stereotypical and non-stereotypical choices) and Disambiguated Bias Score (accuracy disparity between stereotype-aligned and opposed scenarios)."
-    }
+  "religious_groups": [
+    "Islam",
+    "Christianity",
+    "Zoroastrianism",
+    "Judaism",
+    "Other religions",
+    "No religion"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "Mistral-7B-Instruct",
+    "Qwen2.5-7B-Instruct",
+    "Qwen3-14B",
+    "Llama-3.1-8B-Instruct",
+    "GPT 40",
+    "Maral-7B-alpha-1",
+    "Dorna-Llama3-8B-Instruct",
+    "Dorna-legacy"
+  ],
+  "languages_evaluated": [
+    "Persian"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "BBQ",
+    "KoBBQ",
+    "BasqBBQ",
+    "CBBQ",
+    "CrowS-Pairs",
+    "StereoSet",
+    "BOLD"
+  ],
+  "continuous_testing": false,
+  "findings": "Religion was one of 16 categories evaluated for social bias. Across all tested models, biases were observed in religious contexts. On average, models showed a bias score of 0.0794 in ambiguous religious scenarios and 0.0509 in disambiguated ones, indicating that contextual information reduced but did not eliminate stereotypical responses. The findings suggest that LLMs, including Persian-specific models, exhibit and reproduce social biases related to religion present in their training data and cultural context.",
+  "references": [
+    "Mostafa Abedinifard. 2016. Structural functions of the targeted joke: Iranian modernity and the qazvini man as predatory homosexual. Humor, 29(3):337–357.",
+    "Mostafa Abedinifard. 2019. Persian 'rashti jokes': Modern iran's palimpsests of gheyrat-based masculinity. British Journal of Middle Eastern Studies, 46(4):564–582.",
+    "Part Al. 2024. Dorna-llama3-8b-instruct: A persian fine-tuned version of meta llama-3. https://huggingface.co/PartAI/ Dorna-Llama3-8B-Instruct.",
+    "Jinze Bai, Shuai Bai, Yunfei Chu, Zeyu Cui, Kai Dang, Xiaodong Deng, Yang Fan, Wenbin Ge, Yu Han, Fei Huang, et al. 2023. Qwen technical report. arXiv preprint arXiv:2309.16609.",
+    "Hyeong Kyu Choi, Weijie Xu, Chi Xue, Stephanie Eckman, and Chandan K. Reddy. 2025. Mitigating selection bias with node pruning and auxiliary options.",
+    "William G. Cochran. 1977. Sampling Techniques, 3rd edition. John Wiley & Sons, New York.",
+    "Jwala Dhamala, Tony Sun, Varun Kumar, Satyapriya Krishna, Yada Pruksachatkun, Kai-Wei Chang, and Rahul Gupta. 2021. Bold: Dataset and metrics for measuring biases in open-ended language generation. In Proceedings of the 2021 ACM conference on fairness, accountability, and transparency, pages 862–872.",
+    "EleutherAl. 2021. Multiple choice normalization in LM evaluation. https://blog.eleuther.ai/ multiple-choice-normalization/. Accessed: 2025-07-08.",
+    "Isabel O Gallegos, Ryan A Rossi, Joe Barrow, Md Mehrab Tanjim, Sungchul Kim, Franck Dernoncourt, Tong Yu, Ruiyi Zhang, and Nesreen K Ahmed. 2024. Bias and fairness in large language models: A survey. Computational Linguistics, 50(3):1097–1179.",
+    "Leo Gao, Jonathan Tow, Baber Abbasi, Stella Biderman, Sid Black, Anthony DiPofi, Charles Foster, Laurence Golding, Jeffrey Hsu, Alain Le Noac'h, Haonan Li, Kyle McDonell, Niklas Muennighoff, Chris Ociepa, Jason Phang, Laria Reynolds, Hailey Schoelkopf, Aviya Skowron, Lintang Sutawika, Eric Tang, Anish Thite, Ben Wang, Kevin Wang, and Andy Zou. 2024. The language model evaluation harness.",
+    "Omid Ghahroodi, Marzia Nouri, Mohammad Vali Sanian, Alireza Sahebi, Doratossadat Dastgheib, Ehsaneddin Asgari, Mahdieh Soleymani Baghshah, and Mohammad Hossein Rohban. 2024. Khayyam challenge (persianmmlu): Is your llm truly wise to the persian language? arXiv preprint arXiv:2404.06644.",
+    "Anand Gokul. 2023. Llms and ai: Understanding its reach and impact.",
+    "Yufei Huang and Deyi Xiong. 2024. CBBQ: A Chinese bias benchmark dataset curated with human-Al collaboration for large language models. In Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LRECCOLING 2024), pages 2917–2929, Torino, Italia. ELRA and ICCL.",
+    "Albert Q. Jiang, Alexandre Sablayrolles, Arthur Mensch, Chris Bamford, Devendra Singh Chaplot, Diego de las Casas, Florian Bressand, Gianna Lengyel, Guillaume Lample, Lucile Saulnier, Lélio Renard Lavaud, Marie-Anne Lachaux, Pierre Stock, Teven Le Scao, Thibaut Lavril, Thomas Wang, Timothée Lacroix, and William El Sayed. 2023. Mistral 7b.",
+    "Jiho Jin, Jiseon Kim, Nayeon Lee, Haneul Yoo, Alice Oh, and Hwaran Lee. 2024. Kobbq: Korean bias benchmark for question answering. Transactions of the Association for Computational Linguistics, 12:507–524.",
+    "Adam Tauman Kalai, Ofir Nachum, Santosh S. Vempala, and Edwin Zhang. 2025. Why language models hallucinate.",
+    "Kartheek Kalluri. 2023. Adapting llms for low resource languages-techniques and ethical considerations. 2023.",
+    "K. S. Kalyan. 2024. A survey of gpt-3 family large language models including chatgpt and gpt-4. Natural Language Processing Journal.",
+    "Kiana Kiashemshaki, Mohammad Jalili Torkamani, Negin Mahmoudi, and Meysam Shirdel Bilehsavar. 2025. Simulating a bias mitigation scenario in large language models. arXiv preprint arXiv:2509.14438.",
+    "Eunsu Kim, Juyoung Suk, Philhoon Oh, Haneul Yoo, James Thorne, and Alice Oh. 2024. CLICK: A benchmark dataset of cultural and linguistic intelligence in Korean. In Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024), pages 3335–3346, Torino, Italia. ELRA and ICCL.",
+    "Tao Li, Daniel Khashabi, Tushar Khot, Ashish Sabharwal, and Vivek Srikumar. 2020. UNQOVERing stereotyping biases via underspecified questions. In Findings of the Association for Computational Linguistics: EMNLP 2020, pages 3475–3489, Online. Association for Computational Linguistics.",
+    "MaralGPT. 2024. Maralgpt / maral-7b-alpha-1: A persian llm based on mistral. https:// huggingface.co/MaralGPT/Maral-7B-alpha-1. Model based on Mistral, fine-tuned on the Alpaca-Persian dataset.",
+    "Mostafa Masumi, Seyed Soroush Majd, Mehrnoush Shamsfard, and Hamid Beigy. 2025. FaBERT: Pre-training BERT on Persian blogs. In Proceedings of the Tenth Workshop on Noisy and User-generated Text, pages 85–96, Albuquerque, New Mexico, USA. Association for Computational Linguistics.",
+    "Clara Meister, Tiago Pimentel, Gian Wiher, and Ryan Cotterell. 2023. Locally typical sampling. Transactions of the Association for Computational Linguistics, 11:102–121.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2021. StereoSet: Measuring stereotypical bias in pretrained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 5356–5371, Online. Association for Computational Linguistics.",
+    "Bakhtiar Naghdipour. 2014. Jokes in iran. Folklore: Electronic Journal of Folklore, (59):105–120.",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R. Bowman. 2020. CrowS-pairs: A challenge dataset for measuring social biases in masked language models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1953–1967, Online. Association for Computational Linguistics.",
+    "Aurélie Névéol, Yoann Dupont, Julien Bezançon, and Karën Fort. 2022. French CrowS-pairs: Extending a challenge dataset for measuring social bias in masked language models to a language other than English. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 8521–8531, Dublin, Ireland. Association for Computational Linguistics.",
+    "Long Ouyang, Jeff Wu, Xu Jiang, Diogo Almeida, Carroll L. Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, John Schulman, Jacob Hilton, Fraser Kelton, Luke Miller, Maddie Simens, Amanda Askell, Peter Welinder, Paul Christiano, Jan Leike, and Ryan Lowe. 2022. Training language models to follow instructions with human feedback.",
+    "Vishakh Padmakumar, Behnam Hedayatnia, Di Jin, Patrick Lange, Seokhwan Kim, Nanyun Peng, Yang Liu, and Dilek Hakkani-Tur. 2023. Investigating the representation of open domain dialogue context for transformer models. In Proceedings of the 24th Annual Meeting of the Special Interest Group on Discourse and Dialogue, pages 538–547, Prague, Czechia. Association for Computational Linguistics.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel Bowman. 2022. BBQ: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2086–2105, Dublin, Ireland. Association for Computational Linguistics.",
+    "Rajesh Ranjan, Shailja Gupta, and Surya Narayan Singh. 2024. A comprehensive survey of bias in llms: Current landscape and future directions. arXiv preprint arXiv:2409.16430.",
+    "Manon Reusens, Philipp Borchert, Margot Mieskes, Jochen De Weerdt, and Bart Baesens. 2023. Investigating bias in multilingual language models: Cross-lingual transfer of debiasing techniques. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, pages 2887–2896, Singapore. Association for Computational Linguistics.",
+    "Rachel Rudinger, Jason Naradowsky, Brian Leonard, and Benjamin Van Durme. 2018. Gender bias in coreference resolution. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 8–14, New Orleans, Louisiana. Association for Computational Linguistics.",
+    "Sadra Sabouri, Elnaz Rahmati, Soroush Gooran, and Hossein Sameti. 2022. naab: A ready-to-use plug-and-play corpus for farsi. arXiv preprint arXiv:2208.13486.",
+    "Hamidreza Saffari, Mohammadamin Shafiei, Donya Rooein, and Debora Nozza. 2025. Measuring gender bias in language models in Farsi. In Proceedings of the 6th Workshop on Gender Bias in Natural Language Processing (GeBNLP), pages 228–241, Vienna, Austria. Association for Computational Linguistics.",
+    "Mehrnoush Shamsfard, Zahra Saaberi, Seyed Mohammad Hossein Hashemi, Zahra Vatankhah, Motahareh Ramezani, Niki Pourazin, Tara Zare, Maryam Azimi, Sarina Chitsaz, Sama Khoraminejad, et al. 2025. Farseval-pkbets: A new diverse benchmark for evaluating persian large language models. arXiv preprint arXiv:2504.14690.",
+    "Claude E Shannon. 1948. A mathematical theory of communication. Bell System Technical Journal, 27(3):379–423.",
+    "Lingfeng Shen, Weiting Tan, Sihao Chen, Yunmo Chen, Jingyu Zhang, Haoran Xu, Boyuan Zheng, Philipp Koehn, and Daniel Khashabi. 2024. The language barrier: Dissecting safety challenges of LLMs in multilingual contexts. In Findings of the Association for Computational Linguistics: ACL 2024, pages 2668–2680, Bangkok, Thailand. Association for Computational Linguistics.",
+    "Hugo Touvron, Thibaut Lavril, Gautier Izacard, Xavier Martinet, Marie-Anne Lachaux, Timothée Lacroix, Baptiste Rozière, Naman Goyal, Eric Hambro, Faisal Azhar, et al. 2023. Llama: Open and efficient foundation language models. arXiv preprint arXiv:2302.13971.",
+    "Elham Vaziripour, Justin Wu, Reza Farahbakhsh, Kent Seamons, Mark O'Neill, and Daniel Zappala. 2018. A survey of the privacy preferences and practices of iranian users of telegram. In Workshop on Usable Security (USEC), volume 1.",
+    "Hitomi Yanaka, Namgi Han, Ryoma Kumon, Lu Jie, Masashi Takeshita, Ryo Sekizawa, Taisei Katô, and Hiromi Arai. 2025. JBBQ: Japanese bias benchmark for analyzing social biases in large language models. In Proceedings of the 6th Workshop on Gender Bias in Natural Language Processing (GeBNLP), pages 1–17, Vienna, Austria. Association for Computational Linguistics.",
+    "Rahul Zalkikar and Kanchan Chandra. 2025. Measuring social biases in masked language models by proxy of prediction quality. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), page 1337–1361. Association for Computational Linguistics.",
+    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang. 2018. Gender bias in coreference resolution: Evaluation and debiasing methods. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 15–20, New Orleans, Louisiana. Association for Computational Linguistics.",
+    "Yaoming Zhu, Sidi Lu, Lei Zheng, Jiaxian Guo, Weinan Zhang, Jun Wang, and Yong Yu. 2018. Texygen: A benchmarking platform for text generation models. The 41st International ACM SIGIR Conference on Research & Development in Information Retrieval.",
+    "Muitze Zulaika and Xabier Saralegi. 2025. BasqBBQ: A QA benchmark for assessing social biases in LLMs for Basque, a low-resource language. In Proceedings of the 31st International Conference on Computational Linguistics, pages 4753–4767, Abu Dhabi, UAE. Association for Computational Linguistics."
+  ],
+  "measurement_description": "The benchmark, PBBQ (Persian Bias Benchmark for Question-answering), measured social biases in Large Language Models within a Persian cultural context. For religion, it specifically measured stereotypical biases by presenting models with ambiguous and disambiguated scenarios and evaluating their responses to negative and non-negative questions."
 }

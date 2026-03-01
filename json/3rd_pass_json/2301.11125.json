@@ -1,0 +1,60 @@
+{
+  "filename": "2301.11125.pdf",
+  "title": "A benchmark for toxic comment classification on Civil Comments dataset",
+  "arxiv_url": "https://arxiv.org/pdf/2301.11125",
+  "religious_groups": [
+    "Christian",
+    "Jewish",
+    "Muslim",
+    "Hindu",
+    "Buddhist",
+    "Atheist"
+  ],
+  "models_tested": [
+    "BERT",
+    "DistilBERT",
+    "ALBERT",
+    "RoBERTa",
+    "XLM RoBERTa",
+    "BERTweet",
+    "HateBERT",
+    "XLNet",
+    "Compact Convolutional Transformer (CCT)",
+    "Bidirectional GRU",
+    "Bidirectional LSTM",
+    "ResNet"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "All tested models exhibited an association bias, tending to incorrectly classify non-toxic comments about certain religious communities as toxic. This bias was particularly noted for comments mentioning 'muslim' and 'jewish' identities. BERT, RNN, and XLNet models were found to be less sensitive to this bias compared to convolution-based models like CNN and CCT.",
+  "references": [
+    "Borkan, D., L. Dixon, J. Sorensen, N. Thain, and L. Vasserman (2019). Nuanced metrics for measuring unintended bias with real data for text classification. pp. 491–500.",
+    "Caselli, T., V. Basile, J. Mitrović, and M. Granitzer (2021). HateBERT: Retraining BERT for abusive language detection in English. In Proceedings of the 5th Workshop on Online Abuse and Harms (WOAH 2021), Online, pp. 17–25. Association for Computational Linguistics.",
+    "Conneau, A., K. Khandelwal, N. Goyal, V. Chaudhary, G. Wenzek, F. Guzmán, E. Grave, M. Ott, L. Zettlemoyer, and V. Stoyanov (2020). Unsupervised cross-lingual representation learning at scale. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, Online, pp. 8440-8451. Association for Computational Linguistics.",
+    "Devlin, J., M.-W. Chang, K. Lee, and K. Toutanova (2019). BERT: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), Minneapolis, Minnesota, pp. 4171-4186. Association for Computational Linguistics.",
+    "Dosovitskiy, A., L. Beyer, A. Kolesnikov, D. Weissenborn, X. Zhai, T. Unterthiner, M. Dehghani, M. Minderer, G. Heigold, S. Gelly, J. Uszkoreit, and N. Houlsby (2021). An image is worth 16x16 words: Transformers for image recognition at scale.",
+    "Hassani, A., S. Walton, N. Shah, A. Abuduweili, J. Li, and H. Shi (2021). Escaping the big data paradigm with compact transformers. CoRR abs/2104.05704.",
+    "He, K., X. Zhang, S. Ren, and J. Sun (2016). Deep residual learning for image recognition. In 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pp. 770–778.",
+    "Hinton, G., O. Vinyals, and J. Dean (2014). Distilling the knowledge in a neural network. In Deep Learning and Representation Learning Workshop, NIPS.",
+    "Isaksen, V. and B. Gambäck (2020). Using transfer-based language models to detect hateful and offensive language online. In Proceedings of the Fourth Workshop on Online Abuse and Harms, Online, pp. 16–27. Association for Computational Linguistics.",
+    "Lan, Z., M. Chen, S. Goodman, K. Gimpel, P. Sharma, and R. Soricut (2019). ALBERT: A lite BERT for self-supervised learning of language representations. CoRR abs/1909.11942.",
+    "Lin, T., P. Goyal, R. Girshick, K. He, and P. Dollar (2017). Focal loss for dense object detection. In 2017 IEEE International Conference on Computer Vision (ICCV), Los Alamitos, CA, USA, pp. 2999–3007. IEEE Computer Society.",
+    "Liu, P., W. Li, and L. Zou (2019). NULI at SemEval-2019 task 6: Transfer learning for offensive language detection using bidirectional transformers. In Proceedings of the 13th International Workshop on Semantic Evaluation, Minneapolis, Minnesota, USA, pp. 87–91. Association for Computational Linguistics.",
+    "Nguyen, D. Q., T. Vu, and A. Tuan Nguyen (2020). BERTweet: A pre-trained language model for English tweets. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing: System Demonstrations, Online, pp. 9-14. Association for Computational Linguistics.",
+    "Pennington, J., R. Socher, and C. Manning (2014). GloVe: Global vectors for word representation. In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP), Doha, Qatar, pp. 1532–1543. Association for Computational Linguistics.",
+    "Sanh, V., L. Debut, J. Chaumond, and T. Wolf (2019). Distilbert, a distilled version of bert: smaller, faster, cheaper and lighter. In NeurIPS EMC2 Workshop.",
+    "Sennrich, R., B. Haddow, and A. Birch (2016). Neural machine translation of rare words with subword units. In Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics, Volume 1, Berlin, Germany, pp. 1715–1725. Association for Computational Linguistics.",
+    "Swamy, S. D., A. Jamatia, and B. Gambäck (2019). Studying generalisability across abusive language detection datasets. In Proceedings of the 23rd Conference on Computational Natural Language Learning (CoNLL), Hong Kong, China, pp. 940–950. Association for Computational Linguistics.",
+    "Vaswani, A., N. Shazeer, N. Parmar, J. Uszkoreit, L. Jones, A. N. Gomez, L. u. Kaiser, and I. Polosukhin (2017). Attention is all you need. In I. Guyon, U. V. Luxburg, S. Bengio, H. Wallach, R. Fergus, S. Vishwanathan, and R. Garnett (Eds.), Advances in Neural Information Processing Systems, Volume 30. Curran Associates, Inc.",
+    "Yang, Z., Z. Dai, Y. Yang, J. Carbonell, R. Salakhutdinov, and Q. V. Le (2019). XLNet: Generalized Autoregressive Pretraining for Language Understanding. Red Hook, NY, USA: Curran Associates Inc.",
+    "Zhuang, L., L. Wayne, S. Ya, and Z. Jun (2021). A robustly optimized BERT pre-training approach with post-training. In Proceedings of the 20th Chinese National Conference on Computational Linguistics, Huhhot, China, pp. 1218–1227. Chinese Information Processing Society of China."
+  ],
+  "measurement_description": "The benchmark measured unintended association bias in toxic comment classification models, specifically how models incorrectly associate religious identities (e.g., Christian, Jewish, Muslim) mentioned in non-toxic comments with toxicity. It used metrics like Subgroup AUC, BPSN AUC, and BNSP AUC for this measurement."
+}

@@ -2,84 +2,27 @@
   "filename": "2411.00827.pdf",
   "title": "IDEATOR: Jailbreaking and Benchmarking Large Vision-Language Models Using Themselves",
   "arxiv_url": "https://arxiv.org/pdf/2411.00827",
-  "benchmark_measurement": "The benchmark, VLJailbreakBench, measured the models' susceptibility to generating harmful content when jailbroken. One of the measured subcategories was 'Religious Hate Speech'.",
-  "religious_groups": [],
-  "models_tested": [
-    "Qwen2-VL",
-    "LLaVA-OneVision",
-    "MiniGPT-v2",
-    "Llama-3.2-11B-Vision",
-    "Llama-3.2-90B-Vision",
-    "GPT-4o Mini",
-    "Gemini-2.0-Flash-Think",
-    "Gemini-2.0-Flash",
-    "Gemini-1.5-Pro",
-    "GPT-4o",
-    "Claude-3.5-Sonnet",
-    "MiniGPT-4",
-    "LLaVA",
-    "InstructBLIP",
-    "Chameleon"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating the Attack Success Rate (ASR) of target Vision-Language Models (VLMs) when subjected to multimodal jailbreak prompts (adversarial image-text pairs) designed to elicit gender discrimination, gender hate speech, or gender-based violence."
+    },
+    {
+      "target": "Cultural bias",
+      "methodology": "Evaluating the Attack Success Rate (ASR) of target Vision-Language Models (VLMs) when subjected to multimodal jailbreak prompts (adversarial image-text pairs) designed to elicit cultural discrimination, cultural attacks, or cross-cultural conflicts."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluating the Attack Success Rate (ASR) of target Vision-Language Models (VLMs) when subjected to multimodal jailbreak prompts (adversarial image-text pairs) designed to elicit racial hate speech."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluating the Attack Success Rate (ASR) of target Vision-Language Models (VLMs) when subjected to multimodal jailbreak prompts (adversarial image-text pairs) designed to elicit religious hate speech."
+    },
+    {
+      "target": "Political bias",
+      "methodology": "Evaluating the Attack Success Rate (ASR) of target Vision-Language Models (VLMs) when subjected to multimodal jailbreak prompts (adversarial image-text pairs) designed to elicit political hate speech, political manipulation, or political violence."
+    }
   ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "AdvBench",
-    "VAJM",
-    "MM-SafetyBench"
-  ],
-  "continuous_testing": false,
-  "findings": "The paper developed a safety benchmark, VLJailbreakBench, which includes 'Religious Hate Speech' as a subcategory under the main 'Hate Speech' topic. However, the results are aggregated at the 'Hate Speech' category level, and no specific findings or attack success rates are reported for the 'Religious Hate Speech' subcategory alone. The paper does not mention any specific religious groups.",
-  "references": [
-    "Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia Leoni Aleman, Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat, et al. Gpt-4 technical report. arXiv preprint arXiv:2303.08774, 2023. 1, 2, 7, 8",
-    "Anthropic. Claude: An ai assistant. https://www.anthropic.com/claude, 2025. Accessed: 2025-02-24. 8",
-    "Eugene Bagdasaryan, Tsung-Yin Hsieh, Ben Nassi, and Vitaly Shmatikov. (ab) using images and sounds for indirect instruction injection in multi-modal llms. arXiv preprint arXiv:2307.10490, 2023. 2",
-    "Luke Bailey, Euan Ong, Stuart Russell, and Scott Emmons. Image hijacks: Adversarial images can control generative models at runtime. arXiv preprint arXiv:2309.00236, 2023. 2",
-    "Tom B Brown. Language models are few-shot learners. arXiv preprint arXiv:2005.14165, 2020. 3",
-    "Nicholas Carlini, Milad Nasr, Christopher A Choquette-Choo, Matthew Jagielski, Irena Gao, Pang Wei W Koh, Daphne Ippolito, Florian Tramer, and Ludwig Schmidt. Are aligned neural networks adversarially aligned? In NeurIPS, 2024. 1, 2",
-    "Patrick Chao, Alexander Robey, Edgar Dobriban, Hamed Hassani, George J Pappas, and Eric Wong. Jailbreaking black box large language models in twenty queries. arXiv preprint arXiv:2310.08419, 2023. 2, 4",
-    "Jun Chen, Deyao Zhu, Xiaoqian Shen, Xiang Li, Zechun Liu, Pengchuan Zhang, Raghuraman Krishnamoorthi, Vikas Chandra, Yunyang Xiong, and Mohamed Elhoseiny. Minigpt-v2: large language model as a unified interface for vision-language multi-task learning. arXiv preprint arXiv:2310.09478, 2023. 8",
-    "Wei-Lin Chiang, Zhuohan Li, Zi Lin, Ying Sheng, Zhanghao Wu, Hao Zhang, Lianmin Zheng, Siyuan Zhuang, Yonghao Zhuang, Joseph E Gonzalez, et al. Vicuna: An open-source chatbot impressing gpt-4 with 90%* chatgpt quality. See https://vicuna. Imsys. org (accessed 14 April 2023), 2023. 2, 4",
-    "Wenliang Dai, Junnan Li, Dongxu Li, Anthony Meng Huat Tiong, Junqi Zhao, Weisheng Wang, Boyang Li, Pascale Fung, and Steven Hoi. Instructblip: Towards general-purpose vision-language models with instruction tuning, 2023. 2, 5",
-    "DeepMind. Gemini: Flash thinking. https://deepmind.google/technologies/gemini/flash-thinking/, 2025. 8",
-    "Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn, Xiaohua Zhai, Thomas Unterthiner, Mostafa Dehghani, Matthias Minderer, Georg Heigold, Sylvain Gelly, et al. An image is worth 16x16 words: Transformers for image recognition at scale. arXiv preprint arXiv:2010.11929, 2020. 2",
-    "Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Amy Yang, Angela Fan, et al. The llama 3 herd of models. arXiv preprint arXiv:2407.21783, 2024. 7, 8",
-    "Erfan Shayegani et al. Jailbreak in pieces: Compositional adversarial attacks on multi-modal language models. arXiv:2307.14539, 2023. 2",
-    "Weidi Luo et al. Jailbreakv: A benchmark for assessing the robustness of multimodal large language models against jailbreak attacks. arXiv:2404.03027, 2024. 6",
-    "Yu Wang et al. Adashield: Safeguarding multimodal large language models from structure-based attack via adaptive shield prompting. In ECCV, 2024. 2, 3",
-    "Oran Gafni, Adam Polyak, Oron Ashual, Shelly Sheynin, Devi Parikh, and Yaniv Taigman. Make-a-scene: Scene-based text-to-image generation with human priors. In ECCV, 2022. 5",
-    "Yichen Gong, Delong Ran, Jinyuan Liu, Conglei Wang, Tianshuo Cong, Anyu Wang, Sisi Duan, and Xiaoyun Wang. Figstep: Jailbreaking large vision-language models via typographic visual prompts. arXiv preprint arXiv:2311.05608, 2023. 2",
-    "Kai Greshake, Sahar Abdelnabi, Shailesh Mishra, Christoph Endres, Thorsten Holz, and Mario Fritz. More than you've asked for: A comprehensive analysis of novel prompt injection threats to application-integrated large language models. arXiv e-prints, pages arXiv-2302, 2023. 2",
-    "Bo Li, Yuanhan Zhang, Dong Guo, Renrui Zhang, Feng Li, Hao Zhang, Kaichen Zhang, Peiyuan Zhang, Yanwei Li, Ziwei Liu, et al. Llava-onevision: Easy visual task transfer. arXiv preprint arXiv:2408.03326, 2024. 8",
-    "Haoran Li, Yulin Chen, Jinglong Luo, Jiecong Wang, Hao Peng, Yan Kang, Xiaojin Zhang, Qi Hu, Chunkit Chan, Zenglin Xu, et al. Privacy in large language models: Attacks, defenses and future directions. arXiv preprint arXiv:2310.10383, 2023. 2",
-    "Daizong Liu, Mingyu Yang, Xiaoye Qu, Pan Zhou, Wei Hu, and Yu Cheng. A survey of attacks on large vision-language models: Resources, advances, and future trends. arXiv preprint arXiv:2407.07403, 2024. 2",
-    "Haotian Liu, Chunyuan Li, Qingyang Wu, and Yong Jae Lee. Visual instruction tuning. In NeurIPS, 2024. 2, 5, 8",
-    "Xin Liu, Yichen Zhu, Jindong Gu, Yunshi Lan, Chao Yang, and Yu Qiao. Mm-safetybench: A benchmark for safety evaluation of multimodal large language models. In ECCV, 2024. 2, 5, 6, 7, 1",
-    "Yi Liu, Chengjun Cai, Xiaoli Zhang, Xingliang Yuan, and Cong Wang. Arondight: Red teaming large vision language models with auto-generated multi-modal jailbreak prompts. In ACM MM, 2024. 2",
-    "Siyuan Ma, Weidi Luo, Yu Wang, Xiaogeng Liu, Muhao Chen, Bo Li, and Chaowei Xiao. Visual-roleplay: Universal jailbreak attack on multimodal large language models via role-playing image characte. arXiv preprint arXiv:2405.20773, 2024. 2",
-    "Xingjun Ma, Yifeng Gao, Yixu Wang, Ruofan Wang, Xin Wang, Ye Sun, Yifan Ding, Hengyuan Xu, Yunhao Chen, Yunhan Zhao, et al. Safety at scale: A comprehensive survey of large model safety. arXiv preprint arXiv:2502.05206, 2025. 2",
-    "Weili Nie, Brandon Guo, Yujia Huang, Chaowei Xiao, Arash Vahdat, and Anima Anandkumar. Diffusion models for adversarial purification. arXiv preprint arXiv:2205.07460, 2022. 2",
-    "Zhenxing Niu, Haodong Ren, Xinbo Gao, Gang Hua, and Rong Jin. Jailbreaking attack against multimodal large language model. arXiv preprint arXiv:2402.02309, 2024. 1, 2",
-    "Xiangyu Qi, Kaixuan Huang, Ashwinee Panda, Peter Henderson, Mengdi Wang, and Prateek Mittal. Visual adversarial examples jailbreak aligned large language models. In AAAI, 2024. 1, 2, 4, 5",
-    "Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, et al. Learning transferable visual models from natural language supervision. In ICML, 2021. 2",
-    "Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, and Björn Ommer. High-resolution image synthesis with latent diffusion models. In CVPR, 2022. 3, 4",
-    "Erfan Shayegani, Md Abdullah Al Mamun, Yu Fu, Pedram Zaree, Yue Dong, and Nael Abu-Ghazaleh. Survey of vulnerabilities in large language models revealed by adversarial attacks. arXiv preprint arXiv:2310.10844, 2023. 2",
-    "Chameleon Team. Chameleon: Mixed-modal early-fusion foundation models. arXiv preprint arXiv:2405.09818, 2024. 5",
-    "Gemini Team, Rohan Anil, Sebastian Borgeaud, Yonghui Wu, Jean-Baptiste Alayrac, Jiahui Yu, Radu Soricut, Johan Schalkwyk, Andrew M Dai, Anja Hauth, et al. Gemini: a family of highly capable multimodal models. arXiv preprint arXiv:2312.11805, 2023. 1, 4",
-    "Gemini Team, Petko Georgiev, Ving Ian Lei, Ryan Burnell, Libin Bai, Anmol Gulati, Garrett Tanzer, Damien Vincent, Zhufeng Pan, Shibo Wang, et al. Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context. arXiv preprint arXiv:2403.05530, 2024. 7, 8",
-    "Hugo Touvron, Thibaut Lavril, Gautier Izacard, Xavier Martinet, Marie-Anne Lachaux, Timothée Lacroix, Baptiste Rozière, Naman Goyal, Eric Hambro, Faisal Azhar, et al. Llama: Open and efficient foundation language models. arXiv preprint arXiv:2302.13971, 2023. 2, 4, 5",
-    "Peng Wang, Shuai Bai, Sinan Tan, Shijie Wang, Zhihao Fan, Jinze Bai, Keqin Chen, Xuejing Liu, Jialin Wang, Wenbin Ge, et al. Qwen2-vl: Enhancing vision-language model's perception of the world at any resolution. arXiv preprint arXiv:2409.12191, 2024. 8",
-    "Ruofan Wang, Xingjun Ma, Hanxu Zhou, Chuanjun Ji, Guangnan Ye, and Yu-Gang Jiang. White-box multimodal jailbreaks against large vision-language models. In ACM MM, 2024. 1, 2, 4, 5",
-    "Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Fei Xia, Ed Chi, Quoc V Le, Denny Zhou, et al. Chain-of-thought prompting elicits reasoning in large language models. In NeurIPS, 2022. 4",
-    "Zonghao Ying, Aishan Liu, Siyuan Liang, Lei Huang, Jinyang Guo, Wenbo Zhou, Xianglong Liu, and Dacheng Tao. Safebench: A safety evaluation framework for multimodal large language models. arXiv preprint arXiv:2410.18927, 2024. 6, 8",
-    "Chiyu Zhang, Xiaogang Xu, Jiafei Wu, Zhe Liu, and Lu Zhou. Adversarial attacks of vision tasks in the past 10 years: A survey. arXiv preprint arXiv:2410.23687, 2024. 2",
-    "Xiaoyu Zhang, Cen Zhang, Tianlin Li, Yihao Huang, Xiaojun Jia, Xiaofei Xie, Yang Liu, and Chao Shen. A mutation-based method for multi-modal jailbreaking attack detection. arXiv preprint arXiv:2312.10766, 2023. 2",
-    "Deyao Zhu, Jun Chen, Xiaoqian Shen, Xiang Li, and Mohamed Elhoseiny. Minigpt-4: Enhancing vision-language understanding with advanced large language models. arXiv preprint arXiv:2304.10592, 2023. 2, 4, 5, 7, 8",
-    "Andy Zou, Zifan Wang, J Zico Kolter, and Matt Fredrikson. Universal and transferable adversarial attacks on aligned language models. arXiv preprint arXiv:2307.15043, 2023. 4, 5, 1"
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

@@ -2,63 +2,39 @@
   "filename": "2309.11830.pdf",
   "title": "Goal-Oriented Prompt Attack and Safety Evaluation for LLMs",
   "arxiv_url": "https://arxiv.org/pdf/2309.11830",
-  "benchmark_measurement": "The benchmark measured the model's susceptibility to generating content that discriminates against a particular religion. This was one sub-category within a broader safety evaluation of harmful content generation.",
-  "religious_groups": [],
-  "models_tested": [
-    "GPT-3.5",
-    "ChatGLM-6B",
-    "Ziya-13B",
-    "ChatYuan-Large-v2",
-    "ChatGLM2-6B",
-    "Baichuan-7B",
-    "Chinese-LLaMa-2-7B",
-    "gpt-3.5-turbo-0301",
-    "Baichuan-13B-Chat"
+  "bias_targets": [
+    {
+      "target": "Religious bias",
+      "methodology": "Measuring the successful attack rate of goal-oriented adversarial prompts designed to induce LLMs to generate discrimination against a particular religion."
+    },
+    {
+      "target": "Occupational bias",
+      "methodology": "Measuring the successful attack rate of goal-oriented adversarial prompts designed to induce LLMs to generate discrimination against specific occupations."
+    },
+    {
+      "target": "Nationality bias",
+      "methodology": "Measuring the successful attack rate of goal-oriented adversarial prompts designed to induce LLMs to generate discrimination against people of a certain country."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Measuring the successful attack rate of goal-oriented adversarial prompts designed to induce LLMs to generate discrimination against people with physical defects."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Measuring the successful attack rate of goal-oriented adversarial prompts designed to induce LLMs to generate discrimination against women."
+    },
+    {
+      "target": "Racial/Ethnic bias",
+      "methodology": "Measuring the successful attack rate of goal-oriented adversarial prompts designed to induce LLMs to generate discrimination against certain ethnic groups."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Measuring the successful attack rate of goal-oriented adversarial prompts designed to induce LLMs to generate discrimination against the poor and people without education."
+    },
+    {
+      "target": "Regional bias",
+      "methodology": "Measuring the successful attack rate of goal-oriented adversarial prompts designed to induce LLMs to generate regional discrimination and bias against rural populations."
+    }
   ],
-  "languages_evaluated": [
-    "Chinese"
-  ],
-  "response_type": [
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "SAFETYPROMPTS",
-    "CVALUES"
-  ],
-  "continuous_testing": false,
-  "findings": "For the category 'Discriminate against a particular religion', the successful attack rate on the Baichuan-13B-Chat model was 67.92% before fine-tuning. After supervised fine-tuning with safe responses, the successful attack rate dropped significantly to 1.89%.",
-  "references": [
-    "Bao, H.; Dong, L.; Wei, F.; Wang, W.; Yang, N.; Liu, X.; Wang, Y.; Piao, S.; Gao, J.; Zhou, M.; and Hon, H.-W. 2020. UniLMv2: Pseudo-Masked Language Models for Unified Language Model Pre-Training. arXiv:2002.12804.",
-    "Brown, T. B.; Mann, B.; Ryder, N.; Subbiah, M.; Kaplan, J.; Dhariwal, P.; Neelakantan, A.; Shyam, P.; Sastry, G.; Askell, A.; Agarwal, S.; Herbert-Voss, A.; Krueger, G.; Henighan, T.; Child, R.; Ramesh, A.; Ziegler, D. M.; Wu, J.; Winter, C.; Hesse, C.; Chen, M.; Sigler, E.; Litwin, M.; Gray, S.; Chess, B.; Clark, J.; Berner, C.; McCandlish, S.; Radford, A.; Sutskever, I.; and Amodei, D. 2020. Language Models are Few-Shot Learners. CoRR, abs/2005.14165.",
-    "Chowdhery, A.; Narang, S.; Devlin, J.; Bosma, M.; Mishra, G.; Roberts, A.; Barham, P.; Chung, H. W.; Sutton, C.; Gehrmann, S.; Schuh, P.; Shi, K.; Tsvyashchenko, S.; Maynez, J.; Rao, A.; Barnes, P.; Tay, Y.; Shazeer, N.; Prabhakaran, V.; Reif, E.; Du, N.; Hutchinson, B.; Pope, R.; Bradbury, J.; Austin, J.; Isard, M.; Gur-Ari, G.; Yin, P.; Duke, T.; Levskaya, A.; Ghemawat, S.; Dev, S.; Michalewski, H.; Garcia, X.; Misra, V.; Robinson, K.; Fedus, L.; Zhou, D.; Ippolito, D.; Luan, D.; Lim, H.; Zoph, B.; Spiridonov, A.; Sepassi, R.; Dohan, D.; Agrawal, S.; Omernick, M.; Dai, A. M.; Pillai, T. S.; Pellat, M.; Lewkowycz, A.; Moreira, E.; Child, R.; Polozov, O.; Lee, K.; Zhou, Z.; Wang, X.; Saeta, B.; Diaz, M.; Firat, O.; Catasta, M.; Wei, J.; Meier-Hellstern, K.; Eck, D.; Dean, J.; Petrov, S.; and Fiedel, N. 2022. PaLM: Scaling Language Modeling with Pathways. arXiv:2204.02311.",
-    "Deng, J.; Sun, H.; Zhang, Z.; Cheng, J.; and Huang, M. 2023. Recent Advances towards Safe, Responsible, and Moral Dialogue Systems: A Survey. arXiv:2302.09270.",
-    "Du, Z.; Qian, Y.; Liu, X.; Ding, M.; Qiu, J.; Yang, Z.; and Tang, J. 2022. GLM: General Language Model Pretraining with Autoregressive Blank Infilling. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), 320–335.",
-    "Greshake, K.; Abdelnabi, S.; Mishra, S.; Endres, C.; Holz, T.; and Fritz, M. 2023. Not what you’ve signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection. arXiv:2302.12173.",
-    "Hartvigsen, T.; Gabriel, S.; Palangi, H.; Sap, M.; Ray, D.; and Kamar, E. 2022. ToxiGen: A Large-Scale Machine-Generated Dataset for Adversarial and Implicit Hate Speech Detection. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), 3309–3326. Dublin, Ireland: Association for Computational Linguistics.",
-    "Hendrycks, D.; Lee, K.; and Mazeika, M. 2019. Using PreTraining Can Improve Model Robustness and Uncertainty. arXiv:1901.09960.",
-    "Keskar, N. S.; McCann, B.; Varshney, L. R.; Xiong, C.; and Socher, R. 2019. CTRL: A Conditional Transformer Language Model for Controllable Generation. arXiv:1909.05858.",
-    "Lambert, N.; Castricato, L.; von Werra, L.; and Havrilla, A. 2022. Illustrating Reinforcement Learning from Human Feedback (RLHF). Hugging Face Blog. Https://huggingface.co/blog/rlhf.",
-    "Li, H.; Guo, D.; Fan, W.; Xu, M.; Huang, J.; Meng, F.; and Song, Y. 2023. Multi-step Jailbreaking Privacy Attacks on ChatGPT. arXiv:2304.05197.",
-    "Liu, Y.; Ott, M.; Goyal, N.; Du, J.; Joshi, M.; Chen, D.; Levy, O.; Lewis, M.; Zettlemoyer, L.; and Stoyanov, V. 2019. RoBERTa: A Robustly Optimized BERT Pretraining Approach. arXiv:1907.11692.",
-    "OpenAI. 2023. GPT-4 Technical Report. arXiv:2303.08774.",
-    "Ouyang, L.; Wu, J.; Jiang, X.; Almeida, D.; Wainwright, C. L.; Mishkin, P.; Zhang, C.; Agarwal, S.; Slama, K.; Ray, A.; Schulman, J.; Hilton, J.; Kelton, F.; Miller, L.; Simens, M.; Askell, A.; Welinder, P.; Christiano, P.; Leike, J.; and Lowe, R. 2022. Training language models to follow instructions with human feedback. arXiv:2203.02155.",
-    "Perez, F.; and Ribeiro, I. 2022. Ignore Previous Prompt: Attack Techniques For Language Models. arXiv:2211.09527.",
-    "Raffel, C.; Shazeer, N.; Roberts, A.; Lee, K.; Narang, S.; Matena, M.; Zhou, Y.; Li, W.; and Liu, P. J. 2020. Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer. arXiv:1910.10683.",
-    "Sun, H.; Zhang, Z.; Deng, J.; Cheng, J.; and Huang, M. 2023. Safety Assessment of Chinese Large Language Models. arXiv:2304.10436.",
-    "Tamkin, A.; Brundage, M.; Clark, J.; and Ganguli, D. 2021. Understanding the Capabilities, Limitations, and Societal Impact of Large Language Models. arXiv:2102.02503.",
-    "Touvron, H.; Lavril, T.; Izacard, G.; Martinet, X.; Lachaux, M.-A.; Lacroix, T.; Rozière, B.; Goyal, N.; Hambro, E.; Azhar, F.; Rodriguez, A.; Joulin, A.; Grave, E.; and Lample, G. 2023a. LLaMA: Open and Efficient Foundation Language Models. arXiv:2302.13971.",
-    "Touvron, H.; Martin, L.; Stone, K.; Albert, P.; Almahairi, A.; Babaei, Y.; Bashlykov, N.; Batra, S.; Bhargava, P.; Bhosale, S.; Bikel, D.; Blecher, L.; Ferrer, C. C.; Chen, M.; Cucurull, G.; Esiobu, D.; Fernandes, J.; Fu, J.; Fu, W.; Fuller, B.; Gao, C.; Goswami, V.; Goyal, N.; Hartshorn, A.; Hosseini, S.; Hou, R.; Inan, H.; Kardas, M.; Kerkez, V.; Khabsa, M.; Kloumann, I.; Korenev, A.; Koura, P. S.; Lachaux, M.-A.; Lavril, T.; Lee, J.; Liskovich, D.; Lu, Y.; Mao, Y.; Martinet, X.; Mihaylov, T.; Mishra, P.; Molybog, I.; Nie, Y.; Poulton, A.; Reizenstein, J.; Rungta, R.; Saladi, K.; Schelten, A.; Silva, R.; Smith, E. M.; Subramanian, R.; Tan, X. E.; Tang, B.; Taylor, R.; Williams, A.; Kuan, J. X.; Xu, P.; Yan, Z.; Zarov, I.; Zhang, Y.; Fan, A.; Kambadur, M.; Narang, S.; Rodriguez, A.; Stojnic, R.; Edunov, S.; and Scialom, T. 2023b. Llama 2: Open Foundation and Fine-Tuned Chat Models. arXiv:2307.09288.",
-    "Wei, J.; Bosma, M.; Zhao, V. Y.; Guu, K.; Yu, A. W.; Lester, B.; Du, N.; Dai, A. M.; and Le, Q. V. 2021. Finetuned language models are zero-shot learners. arXiv preprint arXiv:2109.01652.",
-    "Weidinger, L.; Mellor, J.; Rauh, M.; Griffin, C.; Uesato, J.; Huang, P.-S.; Cheng, M.; Glaese, M.; Balle, B.; Kasirzadeh, A.; Kenton, Z.; Brown, S.; Hawkins, W.; Stepleton, T.; Biles, C.; Birhane, A.; Haas, J.; Rimell, L.; Hendricks, L. A.; Isaac, W.; Legassick, S.; Irving, G.; and Gabriel, I. 2021. Ethical and social risks of harm from Language Models. arXiv:2112.04359.",
-    "Xu, G.; Liu, J.; Yan, M.; Xu, H.; Si, J.; Zhou, Z.; Yi, P.; Gao, X.; Sang, J.; Zhang, R.; Zhang, J.; Peng, C.; Huang, F.; and Zhou, J. 2023. CValues: Measuring the Values of Chinese Large Language Models from Safety to Responsibility. arXiv:2307.09705.",
-    "Xuanwei Zhang, L. X.; and Zhao, K. 2022. ChatYuan: A Large Language Model for Dialogue in Chinese and English.",
-    "Yang, Z.; Dai, Z.; Yang, Y.; Carbonell, J.; Salakhutdinov, R.; and Le, Q. V. 2020. XLNet: Generalized Autoregressive Pretraining for Language Understanding. arXiv:1906.08237.",
-    "Zeng, A.; Liu, X.; Du, Z.; Wang, Z.; Lai, H.; Ding, M.; Yang, Z.; Xu, Y.; Zheng, W.; Xia, X.; et al. 2022. Glm130b: An open bilingual pre-trained model. arXiv preprint arXiv:2210.02414.",
-    "Zhang, J.; Gan, R.; Wang, J.; Zhang, Y.; Zhang, L.; Yang, P.; Gao, X.; Wu, Z.; Dong, X.; He, J.; Zhuo, J.; Yang, Q.; Huang, Y.; Li, X.; Wu, Y.; Lu, J.; Zhu, X.; Chen, W.; Han, T.; Pan, K.; Wang, R.; Wang, H.; Wu, X.; Zeng, Z.; and Chen, C. 2022. Fengshenbang 1.0: Being the Foundation of Chinese Cognitive Intelligence. CoRR, abs/2209.02970.",
-    "Zhuo, T. Y.; Huang, Y.; Chen, C.; and Xing, Z. 2023. Red teaming ChatGPT via Jailbreaking: Bias, Robustness, Reliability and Toxicity. arXiv:2301.12867.",
-    "Ziegler, D. M.; Stiennon, N.; Wu, J.; Brown, T. B.; Radford, A.; Amodei, D.; Christiano, P.; and Irving, G. 2020. Fine-Tuning Language Models from Human Preferences. arXiv:1909.08593.",
-    "Ziegler, D. M.; Stiennon, N.; Wu, J.; Brown, T. B.; Radford, A.; Amodei, D.; Christiano, P. F.; and Irving, G. 2019. Fine-Tuning Language Models from Human Preferences. CoRR, abs/1909.08593.",
-    "Zou, A.; Wang, Z.; Kolter, J. Z.; and Fredrikson, M. 2023. Universal and Transferable Adversarial Attacks on Aligned Language Models. arXiv:2307.15043."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

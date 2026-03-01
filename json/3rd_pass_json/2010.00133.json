@@ -2,43 +2,71 @@
   "filename": "2010.00133.pdf",
   "title": "CrowS-Pairs: A Challenge Dataset for Measuring Social Biases in Masked Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2010.00133",
-  "bias_targets": [
-    {
-      "target": "Racial/Color bias",
-      "methodology": "Comparing pseudo-log-likelihoods of minimally distant sentence pairs in masked language models to measure preference for stereotyping vs. non-stereotyping sentences about racial groups."
-    },
-    {
-      "target": "Gender/Gender identity bias",
-      "methodology": "Comparing pseudo-log-likelihoods of minimally distant sentence pairs in masked language models to measure preference for stereotyping vs. non-stereotyping sentences about gender."
-    },
-    {
-      "target": "Socioeconomic status/Occupation bias",
-      "methodology": "Comparing pseudo-log-likelihoods of minimally distant sentence pairs in masked language models to measure preference for stereotyping vs. non-stereotyping sentences about socioeconomic status and occupations."
-    },
-    {
-      "target": "Nationality bias",
-      "methodology": "Comparing pseudo-log-likelihoods of minimally distant sentence pairs in masked language models to measure preference for stereotyping vs. non-stereotyping sentences about different nationalities."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Comparing pseudo-log-likelihoods of minimally distant sentence pairs in masked language models to measure preference for stereotyping vs. non-stereotyping sentences about religious groups."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Comparing pseudo-log-likelihoods of minimally distant sentence pairs in masked language models to measure preference for stereotyping vs. non-stereotyping sentences about age groups."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Comparing pseudo-log-likelihoods of minimally distant sentence pairs in masked language models to measure preference for stereotyping vs. non-stereotyping sentences regarding sexual orientation."
-    },
-    {
-      "target": "Physical appearance bias",
-      "methodology": "Comparing pseudo-log-likelihoods of minimally distant sentence pairs in masked language models to measure preference for stereotyping vs. non-stereotyping sentences about physical appearance."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Comparing pseudo-log-likelihoods of minimally distant sentence pairs in masked language models to measure preference for stereotyping vs. non-stereotyping sentences about people with disabilities."
-    }
+  "religious_groups": [
+    "Judaism",
+    "Christianity",
+    "Islam"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "BERTBase",
+    "RoBERTaLarge",
+    "ALBERTXXL-v2"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "WinoBias",
+    "StereoSet"
+  ],
+  "continuous_testing": false,
+  "findings": "All three models tested (BERT, RoBERTa, ALBERT) exhibited substantial bias in the religion category. The paper found that models showed comparatively higher bias scores for religion compared to other categories like gender and race, with scores ranging from 71.4% to 75.2% (where 50% would be an ideal unbiased score).",
+  "references": [
+    "Emily M Bender. 2019. A typology of ethical risks in language technology with an eye towards where transparent documentation can help.",
+    "Emily M. Bender and Batya Friedman. 2018. Data statements for natural language processing: Toward mitigating system bias and enabling better science. Transactions of the Association for Computational Linguistics.",
+    "Su Lin Blodgett, Solon Barocas, Hal Daum III, and Hanna Wallach. 2020. Language (technology) is power: A critical survey of \"bias\" in nlp. ArXiv.",
+    "Tolga Bolukbasi, Kai-Wei Chang, James Y Zou, Venkatesh Saligrama, and Adam T Kalai. 2016. Man is to computer programmer as woman is to homemaker? debiasing word embeddings. In D. D. Lee, M. Sugiyama, U. V. Luxburg, I. Guyon, and R. Garnett, editors, Advances in Neural Information Processing Systems 29, pages 4349–4357. Curran Associates, Inc.",
+    "Aylin Caliskan, Joanna J. Bryson, and Arvind Narayanan. 2017. Semantics derived automatically from language corpora contain human-like biases. Science, 356(6334):183–186.",
+    "Patricia Hill Collins. 2005. Black Sexual Politics: African Americans, Gender, and the New Racism. Routledge.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 4171–4186, Minneapolis, Minnesota. Association for Computational Linguistics.",
+    "Emily Dinan, Angela Fan, Ledell Wu, Jason Weston, Douwe Kiela, and Adina Williams. 2020. Multidimensional gender bias classification. ArXiv.",
+    "Shweta Garg, Sudhanshu S Singh, Abhijit Mishra, and Kuntal Dey. 2017. CVBed: Structuring CVs usingWord embeddings. In Proceedings of the Eighth International Joint Conference on Natural Language Processing (Volume 2: Short Papers), pages 349–354, Taipei, Taiwan. Asian Federation of Natural Language Processing.",
+    "Andrew Gaut, Tony Sun, Shirlyn Tang, Yuxin Huang, Jing Qian, Mai ElSherief, Jieyu Zhao, Diba Mirza, Elizabeth Belding, Kai-Wei Chang, and William Yang Wang. 2019. Towards understanding gender bias in relation extraction. ArXiv.",
+    "Andra Gillespie. 2016. Race, perceptions of femininity, and the power of the first lady: A comparative analysis. In Nadia E. Brown and Sarah Allen Gershon, editors, Distinct Identities: Minority Women in U.S. Politics. Routledge.",
+    "Aaron Gokaslan and Vanya Cohen. 2019. OpenWebText corpus.",
+    "Hila Gonen and Yoav Goldberg. 2019. Lipstick on a pig: Debiasing methods cover up systematic gender biases in word embeddings but do not remove them. In Proceedings of the 2019 Workshop on Widening NLP, pages 60–63, Florence, Italy. Association for Computational Linguistics.",
+    "Po-Sen Huang, Huan Zhang, Ray Jiang, Robert Stanforth, Johannes Welbl, Jack Rae, Vishal Maini, Dani Yogatama, and Pushmeet Kohli. 2019. Reducing sentiment bias in language models via counterfactual evaluation. ArXiv.",
+    "Guokun Lai, Qizhe Xie, Hanxiao Liu, Yiming Yang, and Eduard Hovy. 2017. RACE: Large-scale ReAding comprehension dataset from examinations. In Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing, pages 785–794, Copenhagen, Denmark. Association for Computational Linguistics.",
+    "Zhenzhong Lan, Mingda Chen, Sebastian Goodman, Kevin Gimpel, Piyush Sharma, and Radu Soricut. 2020. ALBERT: A lite bert for self-supervised learning of language representations. In International Conference on Learning Representations.",
+    "Paul Pu Liang, Irene Mengze Li, Emily Zheng, Yao Chong Lim, Ruslan Salakhutdinov, and LouisPhilippe Morency. 2020. Towards debiasing sentence representations. In Proceedings of the 2020 Association for Computational Linguistics. Association for Computational Linguistics.",
+    "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. 2019. RoBERTa: A robustly optimized bert pretraining approach. ArXiv.",
+    "D. Soyini Madison. 2009. Crazy patriotism and angry (post)black women. Communication and Critical/Cultural Studies, 6(3):321–326.",
+    "Chandler May, Alex Wang, Shikha Bordia, Samuel R. Bowman, and Rachel Rudinger. 2019. On measuring social biases in sentence encoders. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 622–628, Minneapolis, Minnesota. Association for Computational Linguistics.",
+    "Jonathan May, Kevin Knight, and Heiko Vogler. 2010. Efficient inference through cascades of weighted tree transducers. In Proceedings of the 48th Annual Meeting of the Association for Computational Linguistics, pages 1058–1066, Uppsala, Sweden. Association for Computational Linguistics.",
+    "Nasrin Mostafazadeh, Nathanael Chambers, Xiaodong He, Devi Parikh, Dhruv Batra, Lucy Vanderwende, Pushmeet Kohli, and James Allen. 2016. A corpus and cloze evaluation for deeper understanding of commonsense stories. In Proceedings of the 2016 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 839–849, San Diego, California. Association for Computational Linguistics.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2020. StereoSet: Measuring stereotypical bias in pretrained language models. ArXiv.",
+    "Ellie Pavlick and Tom Kwiatkowski. 2019. Inherent disagreements in human textual inferences. Transactions of the Association for Computational Linguistics.",
+    "Jeffrey Pennington, Richard Socher, and Christopher Manning. 2014. Glove: Global vectors for word representation. In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1532–1543, Doha, Qatar. Association for Computational Linguistics.",
+    "Matthew Peters, Mark Neumann, Mohit Iyyer, Matt Gardner, Christopher Clark, Kenton Lee, and Luke Zettlemoyer. 2018. Deep contextualized word representations. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers), pages 2227–2237, New Orleans, Louisiana. Association for Computational Linguistics.",
+    "Pranav Rajpurkar, Robin Jia, and Percy Liang. 2018. Know what you don't know: Unanswerable questions for SQUAD. In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers), pages 784–789, Melbourne, Australia. Association for Computational Linguistics.",
+    "David Rozado. 2020. Wide range screening of algorithmic bias in word embedding models using large sentiment lexicons reveals underreported bias types. PLOS ONE, 15(4):e0231189.",
+    "Rachel Rudinger, Chandler May, and Benjamin Van Durme. 2017. Social bias in elicited natural language inferences. In Proceedings of the First ACL Workshop on Ethics in Natural Language Processing, pages 74–79, Valencia, Spain. Association for Computational Linguistics.",
+    "Rachel Rudinger, Jason Naradowsky, Brian Leonard, and Benjamin Van Durme. 2018. Gender bias in coreference resolution. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 8–14, New Orleans, Louisiana. Association for Computational Linguistics.",
+    "Keisuke Sakaguchi, Ronan Le Bras, Chandra Bhagavatula, and Yejin Choi. 2019. WinoGrande: An adversarial winograd schema challenge at scale. ArXiv.",
+    "Julian Salazar, Davis Liang, Toan Q. Nguyen, and Katrin Kirchhoff. 2020. Masked language model scoring.",
+    "Alex Wang and Kyunghyun Cho. 2019. BERT has a mouth, and it must speak: BERT as a Markov random field language model. In Proceedings of the Workshop on Methods for Optimizing and Evaluating Neural Language Generation, pages 30–36, Minneapolis, Minnesota. Association for Computational Linguistics.",
+    "Alex Wang, Yada Pruksachatkun, Nikita Nangia, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel Bowman. 2019. SuperGLUE: A stickier benchmark for general-purpose language understanding systems. In H. Wallach, H. Larochelle, A. Beygelzimer, F. dÁlché Buc, E. Fox, and R. Garnett, editors, Advances in Neural Information Processing Systems 32, pages 3266–3280. Curran Associates, Inc.",
+    "Alex Wang, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel Bowman. 2018. GLUE: A multi-task benchmark and analysis platform for natural language understanding. In Proceedings of the 2018 EMNLP Workshop BlackboxNLP: Analyzing and Interpreting Neural Networks for NLP, pages 353–355, Brussels, Belgium. Association for Computational Linguistics.",
+    "Kellie Webster, Marta Recasens, Vera Axelrod, and Jason Baldridge. 2018. Mind the GAP: A balanced corpus of gendered ambiguous pronouns. Transactions of the Association for Computational Linguistics, 6:605–617.",
+    "Mark E Whiting, Grant Hugh, and Michael S Bernstein. 2019. Fair work: Crowd work minimum wage with one line of code. In Proceedings of the AAAI Conference on Human Computation and Crowdsourcing, volume 7, pages 197–206.",
+    "Adina Williams, Nikita Nangia, and Samuel Bowman. 2018. A broad-coverage challenge corpus for sentence understanding through inference. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers), pages 1112–1122, New Orleans, Louisiana. Association for Computational Linguistics.",
+    "Thomas Wolf, Lysandre Debut, Victor Sanh, Julien Chaumond, Clement Delangue, Anthony Moi, Pierric Cistac, Tim Rault, Rémi Louf, Morgan Funtowicz, and Jamie Brew. 2019. HuggingFace's transformers: State-of-the-art natural language processing. ArXiv.",
+    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang. 2018. Gender bias in coreference resolution: Evaluation and debiasing methods. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 15–20, New Orleans, Louisiana. Association for Computational Linguistics.",
+    "Yukun Zhu, Ryan Kiros, Richard S. Zemel, Ruslan Salakhutdinov, Raquel Urtasun, Antonio Torralba, and Sanja Fidler. 2015. Aligning books and movies: Towards story-like visual explanations by watching movies and reading books. 2015 IEEE International Conference on Computer Vision (ICCV), pages 19–27."
+  ],
+  "measurement_description": "The benchmark measures the degree to which masked language models prefer stereotypical sentences over less-stereotypical ones in religious contexts. It presents models with minimally different sentence pairs, one containing a stereotype about a religious group (e.g., 'crafty Jews') and the other a contrasting group (e.g., 'crafty Christians'), and measures which sentence the model assigns a higher likelihood to."
 }

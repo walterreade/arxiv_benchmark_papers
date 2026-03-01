@@ -2,89 +2,31 @@
   "filename": "2201.06723.pdf",
   "title": "Emojis as Anchors to Detect Arabic Offensive Language and Hate Speech",
   "arxiv_url": "https://arxiv.org/pdf/2201.06723",
-  "benchmark_measurement": "Detection and distribution analysis of hate speech targeting different religious groups in Arabic tweets.",
-  "religious_groups": [
-    "Judaism",
-    "Islam",
-    "Christianity",
-    "Shia",
-    "Sunna",
-    "Atheism",
-    "Magi",
-    "Safavids",
-    "Hinduism",
-    "Sufi"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Manual annotation of emoji-anchored offensive tweets to categorize gender-directed hate speech, followed by word valence score analysis to identify common gender-specific target terms."
+    },
+    {
+      "target": "Racial and Nationality bias",
+      "methodology": "Manual annotation of tweets to identify hate speech based on race, ethnicity, or nationality, along with extracting common target terms (e.g., specific countries or ethnic groups) using valence scores."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Categorizing tweets for religion-based hate speech and quantifying the distribution of hateful tweets targeted toward specific religious groups (e.g., Jews, Muslims, Christians, Shia)."
+    },
+    {
+      "target": "Ideological and Political bias",
+      "methodology": "Annotating offensive tweets for hate speech based on ideology and using statistical valence scoring to extract targeted political parties and factional groups."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Human annotation of collected offensive tweets to identify and measure the prevalence of hate speech targeting social class."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Human annotation of collected offensive tweets to identify and measure the prevalence of hate speech targeting disabilities or diseases."
+    }
   ],
-  "models_tested": [
-    "SVM",
-    "mBERT",
-    "XLM-ROBERTa",
-    "AraBERT",
-    "QARiB"
-  ],
-  "languages_evaluated": [
-    "Arabic",
-    "English",
-    "Bengali",
-    "Hindi"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "OffensEval 2020",
-    "MPOLD"
-  ],
-  "continuous_testing": false,
-  "findings": "In the analyzed dataset of hateful Arabic tweets, Jews were the most frequent target of religious prejudice (39% of religious hate speech tweets), followed by Muslims, Christians, and Shia.",
-  "references": [
-    "Abdelali, A., Hassan, S., Mubarak, H., Darwish, K., and Samih, Y. 2021a. Pre-training BERT on arabic tweets: Practical considerations. CoRR, abs/2102.10684.",
-    "Abdelali, A., Mubarak, H., Samih, Y., Hassan, S., and Darwish, K. 2021b. QADI: Arabic dialect identification in the wild. In Proceedings of the Sixth Arabic Natural Language Processing Workshop, pp. 1–10, Kyiv, Ukraine (Virtual). Association for Computational Linguistics.",
-    "Alami, H., Ouatik El Alaoui, S., Benlahbib, A., and En-nahnahi, N. 2020. LISAC FSDM-USMBA team at SemEval-2020 task 12: Overcoming AraBERT’s pretrain-finetune discrepancy for Arabic offensive language identification. In Proceedings of the Fourteenth Workshop on Semantic Evaluation, pp. 2080–2085, Barcelona (online). International Committee for Computational Linguistics.",
-    "Albadi, N., Kurdi, M., and Mishra, S. 2018. Are they our brothers? analysis and detection of religious hate speech in the arabic twittersphere. In 2018 IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining (ASONAM), pp. 69–76. IEEE.",
-    "Alhazbi, S. 2020. Behavior-based machine learning approaches to identify state-sponsored trolls on twitter. IEEE Access, 8:195132–195141.",
-    "Alshaalan, R. and Al-Khalifa, H. 2020. Hate speech detection in saudi twittersphere: A deep learning approach. In Proceedings of the Fifth Arabic Natural Language Processing Workshop, pp. 12–23, Barcelona, Spain (Online). Association for Computational Linguistics.",
-    "Alshehri, A., El Moatez Billah Nagoudi, H. A., and Abdul-Mageed, M. 2018. Think before your click: Data and models for adult content in arabic twitter. In TA-COS 2018: 2nd Workshop on Text Analytics for Cybersecurity and Online Safety, 15.",
-    "Antoun, W., Baly, F., and Hajj, H. 2020. Arabert: Transformer-based model for arabic language understanding. In Proceedings of The 4th Workshop on Open-Source Arabic Corpora and Processing Tools, pp. 9–15.",
-    "Belcastro, L., Cantini, R., Marozzo, F., Talia, D., and Trunfio, P. 2020. Learning political polarization on social media using neural networks. IEEE Access, 8:47177–47187.",
-    "Cheng, H., Xing, X., Liu, X., and Lv, Q. 2014. Isc: An iterative social based classifier for adult account detection on twitter. IEEE Transactions on Knowledge and Data Engineering, 27(4):1045–1056.",
-    "Chowdhury, S. A., Abdelali, A., Darwish, K., Soon-Gyo, J., Salminen, J., and Jansen, B. J. 2020a. Improving arabic text categorization using transformer training diversification. In Proceedings of the Fifth Arabic Natural Language Processing Workshop, pp. 226–236.",
-    "Chowdhury, S. A., Mubarak, H., Abdelali, A., Jung, S.-g., Jansen, B. J., and Salminen, J. 2020b. A multi-platform arabic news comment dataset for offensive language detection. In Proceedings of The 12th Language Resources and Evaluation Conference, pp. 6203–6212.",
-    "Chung, Y.-L., Kuzmenko, E., Tekiroglu, S. S., and Guerini, M. 2019. Conan-counter narratives through nichesourcing: a multilingual dataset of responses to fight online hate speech. arXiv preprint arXiv:1910.03270.",
-    "Conneau, A., Khandelwal, K., Goyal, N., Chaudhary, V., Wenzek, G., Guzmán, F., Grave, E., Ott, M., Zettlemoyer, L., and Stoyanov, V. 2019. Unsupervised cross-lingual representation learning at scale. arXiv preprint arXiv:1911.02116.",
-    "Conover, M., Ratkiewicz, J., Francisco, M. R., Gonçalves, B., Menczer, F., and Flammini, A. 2011. Political polarization on twitter. ICWSM, 133:89–96.",
-    "Darwish, K., Alexandrov, D., Nakov, P., and Mejova, Y. 2017. Seminar users in the arabic twitter sphere. In Ciampaglia, G. L., Mashhadi, A., and Yasseri, T., editors, Social Informatics, pp. 91–108, Cham. Springer International Publishing.",
-    "Davidson, T., Warmsley, D., Macy, M., and Weber, I. 2017. Automated hate speech detection and the problem of offensive language. In Proceedings of the International AAAI Conference on Web and Social Media, volume 11.",
-    "Devlin, J., Chang, M.-W., Lee, K., and Toutanova, K. 2019. BERT: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pp. 4171–4186, Minneapolis, Minnesota. Association for Computational Linguistics.",
-    "Dimitrov, D., Ali, B. B., Shaar, S., Alam, F., Silvestri, F., Firooz, H., Nakov, P., and Da San Martino, G. 2021a. Detecting propaganda techniques in memes. In Proceedings of the Joint Conference of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (ACL-IJCNLP’21).",
-    "Dimitrov, D., Ali, B. B., Shaar, S., Alam, F., Silvestri, F., Firooz, H., Nakov, P., and Da San Martino, G. 2021b. Task 6 at semeval-2021: Detection of persuasion techniques in texts and images. In Proceedings of the 15th International Workshop on Semantic Evaluation, SemEval, volume 21.",
-    "Donato, G. and Paggio, P. 2017. Investigating redundancy in emoji use: Study on a twitter based corpus. In Proceedings of the 8th Workshop on Computational Approaches to Subjectivity, Sentiment and Social Media Analysis, pp. 118–126.",
-    "Dürscheid, C. and Siever, C. M. 2017. Beyond the alphabet-communcataion of emojis. Kurzfassung eines (auf Deutsch) zur Publikation eingereichten Manuskripts.",
-    "Gülaçtı, F. 2010. The effect of perceived social support on subjective well-being. Procedia-Social and Behavioral Sciences, 2(2):3844–3849.",
-    "Hassan, S., Mubarak, H., Abdelali, A., and Darwish, K. 2021a. ASAD: Arabic social media analytics and unDerstanding. In Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics: System Demonstrations, pp. 113–118, Online. Association for Computational Linguistics.",
-    "Hassan, S., Samih, Y., Mubarak, H., and Abdelali, A. 2020. ALT at SemEval-2020 task 12: Arabic and English offensive language identification in social media. In Proceedings of the Fourteenth Workshop on Semantic Evaluation, pp. 1891–1897, Barcelona (online). International Committee for Computational Linguistics.",
-    "Hassan, S., Shaar, S., and Darwish, K. 2021b. Cross-lingual emotion detection. CoRR, abs/2106.06017.",
-    "Husain, F. 2020. Osact4 shared task on offensive language detection: Intensive preprocessing based approach. OSACT, 4.",
-    "Intapong, P., Charoenpit, S., Achalakul, T., and Ohkura, M. 2017. Assessing symptoms of excessive sns usage based on user behavior and emotion: analysis of data obtained by sns apis. In 9th International Conference on Social Computing and Social Media, SCSM 2017 held as part of the 19th International Conference on Human-Computer Interaction, HCI International 2017, pp. 71–83. Springer Verlag.",
-    "Kiela, D., Firooz, H., Mohan, A., Goswami, V., Singh, A., Ringshia, P., and Testuggine, D. 2020. The hateful memes challenge: Detecting hate speech in multimodal memes. arXiv preprint arXiv:2005.04790.",
-    "Landis, J. R. and Koch, G. G. 1977. The measurement of observer agreement for categorical data. Biometrics, 33(1):159–174.",
-    "Mei, Q. 2019. Decoding the new world language: Analyzing the popularity, roles, and utility of emojis. In Companion Proceedings of The 2019 World Wide Web Conference, pp. 417–418.",
-    "Mubarak, H., Abdelali, A., Hassan, S., and Darwish, K. 2020a. Spam detection on arabic twitter. In Social Informatics, pp. 237–251, Cham. Springer International Publishing.",
-    "Mubarak, H. and Darwish, K. 2014. Using twitter to collect a multi-dialectal corpus of arabic. In Proceedings of the EMNLP 2014 Workshop on Arabic Natural Language Processing (ANLP), pp. 1–7.",
-    "Mubarak, H. and Darwish, K. 2016. Demographic surveys of arab annotators on crowdflower. In Weaving Relations of Trust in Crowd Work: Transparency and Reputation across Platforms.",
-    "Mubarak, H., Darwish, K., and Magdy, W. 2017. Abusive language detection on arabic social media. In Proceedings of the first workshop on abusive language online, pp. 52–56.",
-    "Mubarak, H., Darwish, K., Magdy, W., Elsayed, T., and Al-Khalifa, H. 2020b. Overview of osact4 arabic offensive language detection shared task. In Proceedings of the 4th Workshop on Open-Source Arabic Corpora and Processing Tools, with a Shared Task on Offensive Language Detection.",
-    "Mubarak, H., Hassan, S., and Abdelali, A. 2021. Adult content detection on Arabic Twitter: Analysis and experiments. In Proceedings of the Sixth Arabic Natural Language Processing Workshop, pp. 136–144, Kyiv, Ukraine (Virtual). Association for Computational Linguistics.",
-    "Mubarak, H., Rashed, A., Darwish, K., Samih, Y., and Abdelali, A. 2020c. Arabic offensive language on twitter: Analysis and experiments. arXiv preprint arXiv:2004.02192.",
-    "Nakov, P., Nayak, V., Dent, K., Bhatawdekar, A., Sarwar, S. M., Hardalov, M., Dinkov, Y., Zlatkova, D., Bouchard, G., and Augenstein, I. 2021. Detecting abusive language on online platforms: A critical analysis. arXiv preprint arXiv:2103.00153.",
-    "Ousidhoum, N., Lin, Z., Zhang, H., Song, Y., and Yeung, D.-Y. 2019. Multilingual and multi-aspect hate speech analysis. arXiv preprint arXiv:1908.11049.",
-    "Platt, J. 1998. Sequential minimal optimization: A fast algorithm for training support vector machines.",
-    "Polignano, M., Basile, P., de Gemmis, M., Semeraro, G., and Basile, V. 2019. Alberto: Italian bert language understanding model for nlp challenging tasks based on tweets. In CLiC-it.",
-    "Ribeiro, M. T., Singh, S., and Guestrin, C. 2016. \"why should i trust you?\": Explaining the predictions of any classifier. In Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, KDD '16, 1135–1144, New York, NY, USA. Association for Computing Machinery.",
-    "Salminen, J., Hopf, M., Chowdhury, S. A., Jung, S.-g., Almerekhi, H., and Jansen, B. J. 2020. Developing an online hate classifier for multiple social media platforms. Human-centric Computing and Information Sciences, 10(1):1–34.",
-    "Waldron, J. 2012. The harm in hate speech. Harvard University Press.",
-    "Wiegand, M. and Ruppenhofer, J. 2021. Exploiting emojis for abusive language detection. In Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics: Main Volume, pp. 369–380.",
-    "Zampieri, M., Nakov, P., Rosenthal, S., Atanasova, P., Karadzhov, G., Mubarak, H., Derczynski, L., Pitenis, Z., and Çöltekin, c. 2020. SemEval-2020 Task 12: Multilingual Offensive Language Identification in Social Media (OffensEval 2020). In Proceedings of SemEval."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

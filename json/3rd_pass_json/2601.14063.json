@@ -2,15 +2,91 @@
   "filename": "2601.14063.pdf",
   "title": "XCR-Bench: A Multi-Task Benchmark for Evaluating Cultural Reasoning in LLMs",
   "arxiv_url": "https://arxiv.org/pdf/2601.14063",
-  "bias_targets": [
-    {
-      "target": "Cultural bias",
-      "methodology": "Evaluating model performance on cross-cultural reasoning tasks (CSI Identification, Prediction, and Adaptation) using the XCR-Bench dataset to measure how well LLMs handle and adapt Western Culture-Specific Items (CSIs) to non-Western contexts (Arabic, Chinese, and Bengali)."
-    },
-    {
-      "target": "Regional and Ethno-religious bias",
-      "methodology": "Comparing CSI adaptation performance and qualitative lexical choices between two regional and ethno-religious variants of the same language (Bengali for West Bengal/Hindu vs. Bangladesh/Muslim) using BERTScore metrics and Wilcoxon signed-rank tests."
-    }
+  "religious_groups": [
+    "Islam",
+    "Hinduism",
+    "Christianity"
   ],
-  "primary_bias_target": "Cultural bias"
+  "models_tested": [
+    "GPT-40",
+    "Qwen-2.5-Max",
+    "Gemini-2.0-Flash",
+    "Claude-3.7-Sonnet",
+    "DeepSeek-R1",
+    "LLaMA-3.3",
+    "OLMo-2-32B",
+    "DeepSeek-R1-Distill-Qwen-32B"
+  ],
+  "languages_evaluated": [
+    "English",
+    "Chinese",
+    "Arabic",
+    "Bengali"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "ApposCorpus",
+    "Adaption (Peskov et al., 2021)",
+    "IdiomKB",
+    "Cultural Recipes (Cao et al., 2024)",
+    "NormAd (Rao et al., 2025)",
+    "CAMET (Yao et al., 2024)"
+  ],
+  "continuous_testing": false,
+  "findings": "LLMs can encode pronounced regional and ethno-religious biases within a single language. In the context of Bengali, models showed a systematic bias by favoring West Bengal-associated (and Hindu-associated) cultural terms over Bangladesh-associated (and Muslim-associated) terms, despite Muslims constituting the majority of Bengali speakers. For example, models preferred the Hindu festival 'Puja' over the Muslim festival 'Eid' when adapting concepts like 'Christmas'.",
+  "references": [
+    "Muhammad Farid Adilazuarda, Sagnik Mukherjee, Pradhyumna Lavania, Siddhant Singh, Alham Fikri Aji, Jacki O’Neill, Ashutosh Modi, and Monojit Choudhury. 2024. Towards measuring and modeling\" culture\" in llms: A survey. arXiv preprint arXiv:2403.15412.",
+    "Mohammad Atari, Mona Xue, Peter Park, Damián Blasi, and Joseph Henrich. 2023. Which humans? PsyArXiv.",
+    "Bangladesh Statistics Bureau. 2022. Preliminary report on population and housing census 2022. Technical report, Bangladesh Statistics Bureau. English Version.",
+    "John W Berry. 1974. Psychological aspects of cultural pluralism: Unity and identity reconsidered. Topics in culture learning, 2:17–22.",
+    "Sjoerd Beugelsdijk and Chris Welzel. 2018. Dimensions and dynamics of national culture: Synthesizing hofstede with inglehart. Journal of cross-cultural psychology, 49(10):1469–1505.",
+    "Shaily Bhatt and Fernando Diaz. 2024. Extrinsic evaluation of cultural competence in large language models. arXiv preprint arXiv:2406.11565.",
+    "Yong Cao, Yova Kementchedjhieva, Ruixiang Cui, Antonia Karamolegkou, Li Zhou, Megan Dare, Lucia Donatelli, and Daniel Hershcovich. 2024. Cultural adaptation of recipes. Transactions of the Association for Computational Linguistics, 12:80–99.",
+    "Yiming Cui, Wanxiang Che, Ting Liu, Bing Qin, Ziqing Yang, Shijin Wang, and Guoping Hu. 2019. Pre-training with whole word masking for chinese bert. arXiv preprint arXiv:1906.08101.",
+    "Jonathan Dunn, Benjamin Adams, and Harish Tayyar Madabushi. 2024. Pre-trained language models represent some geographic populations better than others. arXiv preprint arXiv:2403.11025.",
+    "Esin Durmus, Karina Nguyen, Thomas I Liao, Nicholas Schiefer, Amanda Askell, Anton Bakhtin, Carol Chen, Zac Hatfield-Dodds, Danny Hernandez, Nicholas Joseph, and 1 others. 2023. Towards measuring the representation of subjective global opinions in language models. arXiv preprint arXiv:2306.16388.",
+    "Shiwei Guo, Sihang Jiang, Qianxi He, Yanghua Xiao, Jiaqing Liang, Bi Yude, Minggui He, Shimin Tao, and Li Zhang. 2025. Do large language models truly understand cross-cultural differences? arXiv preprint arXiv:2512.07075.",
+    "Christian Haerpfer, Ronald Inglehart, Alejandro Moreno, Christian Welzel, Kseniya Kizilova, Jaime Diez-Medrano, Marta Lagos, Pippa Norris, Eduard Ponarin, and Bi Puranen. 2020. World values survey wave 7 (2017-2020) cross-national data-set. (No Title).",
+    "Edward T Hall. 1976. Beyond culture. Garden City.",
+    "Daniel Hershcovich, Stella Frank, Heather Lent, Miryam De Lhoneux, Mostafa Abdou, Stephanie Brandl, Emanuele Bugliarello, Laura Cabello Piqueras, Ilias Chalkidis, Ruixiang Cui, and 1 others. 2022. Challenges and strategies in cross-cultural nlp. arXiv preprint arXiv:2203.10020.",
+    "Geert Hofstede, Gert Jan Hofstede, and Michael Minkov. 2010. Cultures et organisations: Nos programmations mentales. Pearson Education France.",
+    "Jie Huang and Kevin Chen-Chuan Chang. 2023. Towards reasoning in large language models: A survey. In Findings of the association for computational linguistics: ACL 2023, pages 1049-1065.",
+    "Rebecca L Johnson, Giada Pistilli, Natalia Menédez-González, Leslye Denisse Dias Duran, Enrico Panai, Julija Kalpokiene, and Donald Jay Bertulfo. 2022. The ghost in the machine has an american accent: value conflict in gpt-3. arXiv preprint arXiv:2203.07785.",
+    "Mohsinul Kabir, Ajwad Abrar, and Sophia Ananiadou. 2025a. Break the checkbox: Challenging closed-style evaluations of cultural alignment in LLMs. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing, pages 24-51, Suzhou, China. Association for Computational Linguistics.",
+    "Mohsinul Kabir, Tasnim Ahmed, Md Mezbaur Rahman, Polydoros Giannouris, and Sophia Ananiadou. 2025b. Semantic label drift in cross-cultural translation. arXiv preprint arXiv:2510.25967.",
+    "Mohsinul Kabir, Tasfia Tahsin, and Sophia Ananiadou. 2025c. From n-gram to attention: How model architectures learn and propagate bias in language modeling. arXiv preprint arXiv:2505.12381.",
+    "Yova Kementchedjhieva, Di Lu, and Joel Tetreault. 2020. The apposcorpus: A new multilingual, multi-domain dataset for factual appositive generation. arXiv preprint arXiv:2011.03287.",
+    "Julia Kharchenko, Tanya Roosta, Aman Chadha, and Chirag Shah. 2024. How well do llms represent values across cultures? empirical analysis of Ilm responses based on hofstede cultural dimensions. arXiv preprint arXiv:2406.14805.",
+    "Jun Seong Kim, Kyaw Ye Thu, Javad Ismayilzada, Junyeong Park, Eunsu Kim, Huzama Ahmad, Na Min An, James Thorne, and Alice Oh. 2025. When tom eats kimchi: Evaluating cultural bias of multimodal large language models in cultural mixture contexts. arXiv preprint arXiv:2503.16826.",
+    "Jan-Christoph Klie, Richard Eckart de Castilho, and Iryna Gurevych. 2024. Analyzing dataset annotation quality management in the wild. Computational Linguistics, 50(3):817-866.",
+    "Shuang Li, Jiangjie Chen, Siyu Yuan, Xinyi Wu, Hao Yang, Shimin Tao, and Yanghua Xiao. 2024. Translate meanings, not just words: Idiomkb’s role in optimizing idiomatic translation with language models. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 38, pages 18554-18563.",
+    "Chen Cecilia Liu, Iryna Gurevych, and Anna Korhonen. 2025. Culturally aware and adapted NLP: A taxonomy and a survey of the state of the art. Transactions of the Association for Computational Linguistics, 13:652-689.",
+    "Tarek Naous, Michael J Ryan, Alan Ritter, and Wei Xu. 2024. Having beer after prayer? measuring cultural bias in large language models. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 16366-16393.",
+    "Roberto Navigli, Simone Conia, and Björn Ross. 2023. Biases in large language models: origins, inventory, and discussion. ACM Journal of Data and Information Quality, 15(2):1–21.",
+    "Peter Newmark. 1988. A textbook of translation, volume 66. Prentice hall New York.",
+    "Denis Peskov, Viktor Hangya, Jordan Boyd-Graber, and Alexander Fraser. 2021. Adapting entities across languages and cultures. In Findings of the Association for Computational Linguistics: EMNLP 2021, pages 3725–3750.",
+    "Pouya Pezeshkpour and Estevam Hruschka. 2024. Large language models sensitivity to the order of options in multiple-choice questions. In Findings of the Association for Computational Linguistics: NAACL 2024, pages 2006–2017.",
+    "Abhinav Rao, Akhila Yerukola, Vishwa Shah, Katharina Reinecke, and Maarten Sap. 2024. Normad: A framework for measuring the cultural adaptability of large language models. arXiv preprint arXiv:2404.12464.",
+    "Abhinav Sukumar Rao, Akhila Yerukola, Vishwa Shah, Katharina Reinecke, and Maarten Sap. 2025. Normad: A framework for measuring the cultural adaptability of large language models. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 2373–2403.",
+    "Paulius Rauba, Nabeel Seedat, Max Ruiz Luyten, and Mihaela van der Schaar. 2024. Context-aware testing: A new paradigm for model testing with large language models. Advances in Neural Information Processing Systems, 37:112505-112553.",
+    "Paul Röttger, Valentin Hofmann, Valentina Pyatkin, Musashi Hinck, Hannah Kirk, Hinrich Schütze, and Dirk Hovy. 2024. Political compass or spinning arrow? towards more meaningful evaluations for values and opinions in large language models. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 15295-15311.",
+    "Ali Safaya, Moutasem Abdullatif, and Deniz Yuret. 2020. KUISAIL at SemEval-2020 task 12: BERT-CNN for offensive speech identification in social media. In Proceedings of the Fourteenth Workshop on Semantic Evaluation, pages 2054-2059, Barcelona (online). International Committee for Computational Linguistics.",
+    "Sougata Saha, Saurabh Kumar Pandey, Harshit Gupta, and Monojit Choudhury. 2025. Reading between the lines: Can Ilms identify cross-cultural communication gaps? arXiv preprint arXiv:2502.09636.",
+    "Sagor Sarker. 2020. Banglabert: Bengali mask language model for bengali language understanding.",
+    "Christina Schäffner. 1997. Skopos theory, pages 235-238. Routledge.",
+    "Pushpdeep Singh, Mayur Patidar, and Lovekesh Vig. 2024. Translating across cultures: Llms for intralingual cultural adaptation. arXiv preprint arXiv:2406.14504.",
+    "Kaitao Song, Xu Tan, Tao Qin, Jianfeng Lu, and Tie-Yan Liu. 2020. Mpnet: Masked and permuted pre-training for language understanding. Advances in neural information processing systems, 33:16857-16867.",
+    "Yuchen Song, Andong Chen, Wenxin Zhu, Kehai Chen, Xuefeng Bai, Muyun Yang, and Tiejun Zhao. 2025. Culture in a frame: C ^3 b as a comic-based benchmark for multimodal culturally awareness. arXiv preprint arXiv:2510.00041.",
+    "Bill Thompson, Seán G Roberts, and Gary Lupyan. 2020. Cultural influences on word meanings revealed through large-scale semantic alignment. Nature Human Behaviour, 4(10):1029–1038.",
+    "Yuhang Wang, Yanxu Zhu, Chao Kong, Shuyu Wei, Xiaoyuan Yi, Xing Xie, and Jitao Sang. 2024. Cdeval: A benchmark for measuring the cultural dimensions of large language models. In Proceedings of the 2nd Workshop on Cross-Cultural Considerations in NLP, pages 1-16.",
+    "Jincenzi Wu, Jianxun Lian, Dingdong Wang, and Helen Meng. 2025. Socialcc: Interactive evaluation for cultural competence in language agents. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 33242-33271.",
+    "Benfeng Xu, An Yang, Junyang Lin, Quan Wang, Chang Zhou, Yongdong Zhang, and Zhendong Mao. 2023. Expertprompting: Instructing large language models to be distinguished experts. arXiv preprint arXiv:2305.14688.",
+    "Binwei Yao, Ming Jiang, Tara Bobinac, Diyi Yang, and Junjie Hu. 2024. Benchmarking machine translation with cultural awareness. In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 13078-13096.",
+    "Wenlong Zhao, Debanjan Mondal, Niket Tandon, Danica Dillion, Kurt Gray, and Yuling Gu. 2024. Worldvaluesbench: A large-scale benchmark dataset for multi-cultural value awareness of language models. arXiv preprint arXiv:2404.16308."
+  ],
+  "measurement_description": "The benchmark measured ethno-religious bias in cultural adaptation tasks. Specifically, it evaluated whether Large Language Models (LLMs) favor one religious group's cultural terms over another's within the same linguistic context (Bengali), such as preferring Hindu-associated terms (e.g., Puja) over Muslim-associated terms (e.g., Eid) when adapting Western concepts like holidays."
 }

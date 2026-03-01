@@ -2,43 +2,48 @@
   "filename": "2304.06861.pdf",
   "title": "Evaluation of Social Biases in Recent Large Pre-Trained Models",
   "arxiv_url": "https://arxiv.org/pdf/2304.06861",
-  "bias_targets": [
-    {
-      "target": "Racial bias",
-      "methodology": "Evaluating model preference for stereotypical vs. anti-stereotypical associations using pseudo-log-likelihood scoring on sentence pairs (CrowS-Pairs) and Context Association Tests calculating stereotype and language modeling scores (StereoSet)."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Evaluating model preference for stereotypical vs. anti-stereotypical associations using pseudo-log-likelihood scoring on sentence pairs (CrowS-Pairs) and Context Association Tests calculating stereotype and language modeling scores (StereoSet)."
-    },
-    {
-      "target": "Occupational/Socioeconomic bias",
-      "methodology": "Evaluating model preference for stereotypical vs. anti-stereotypical associations using pseudo-log-likelihood scoring on sentence pairs (CrowS-Pairs) and Context Association Tests calculating stereotype and language modeling scores (StereoSet)."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Evaluating model preference for stereotypical vs. anti-stereotypical associations using pseudo-log-likelihood scoring on sentence pairs (CrowS-Pairs) and Context Association Tests calculating stereotype and language modeling scores (StereoSet)."
-    },
-    {
-      "target": "Nationality bias",
-      "methodology": "Measuring the preference for stereotypical over anti-stereotypical statements using pseudo-log-likelihood scoring on crowdsourced sentence pairs (CrowS-Pairs)."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Measuring the preference for stereotypical over anti-stereotypical statements using pseudo-log-likelihood scoring on crowdsourced sentence pairs (CrowS-Pairs)."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Measuring the preference for stereotypical over anti-stereotypical statements using pseudo-log-likelihood scoring on crowdsourced sentence pairs (CrowS-Pairs)."
-    },
-    {
-      "target": "Physical appearance bias",
-      "methodology": "Measuring the preference for stereotypical over anti-stereotypical statements using pseudo-log-likelihood scoring on crowdsourced sentence pairs (CrowS-Pairs)."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Measuring the preference for stereotypical over anti-stereotypical statements using pseudo-log-likelihood scoring on crowdsourced sentence pairs (CrowS-Pairs)."
-    }
+  "religious_groups": [],
+  "models_tested": [
+    "ELECTRA",
+    "DeBERTa",
+    "DistilBERT",
+    "BERT"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "StereoSet",
+    "CrowS-Pairs"
+  ],
+  "continuous_testing": false,
+  "findings": "All models tested exhibited religious bias to some degree. In the CrowS-Pairs benchmark, DeBERTa showed the lowest religious bias score (49.52), while BERT (71.43) and DistilBERT (70.48) showed the highest. In the StereoSet intersentence benchmark, ELECTRA exhibited the highest bias (icat score of 90.02), whereas DeBERTa showed the lowest (30.83), indicating a preference for anti-stereotypical associations. Across the different tests, DeBERTa consistently demonstrated the least religious bias.",
+  "references": [
+    "Jaimeen Ahn and Alice Oh. 2021. Mitigating language-dependent ethnic bias in bert. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 533-549.",
+    "Alex Beutel, Ed H. Chi, Ellie Pavlick, Emily Blythe Pitler, Ian Tenney, Jilin Chen, Kellie Webster, Slav Petrov, and Xuezhi Wang. 2020. Measuring and reducing gendered correlations in pre-trained models. Technical report.",
+    "Rishabh Bhardwaj, Navonil Majumder, and Soujanya Poria. 2021. Investigating gender bias in bert. Cognitive Computation, 13(4):1008-1018.",
+    "Kevin Clark, Minh-Thang Luong, Quoc V. Le, and Christopher D. Manning. 2020. ELECTRA: Pretraining text encoders as discriminators rather than generators. In ICLR.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 4171-4186, Minneapolis, Minnesota. Association for Computational Linguistics.",
+    "Wikimedia Foundation. Wikimedia downloads.",
+    "Pengcheng He, Xiaodong Liu, Jianfeng Gao, and Weizhu Chen. 2020. Deberta: Decoding-enhanced bert with disentangled attention. In International Conference on Learning Representations.",
+    "Keita Kurita, Nidhi Vyas, Ayush Pareek, Alan W Black, and Yulia Tsvetkov. 2019. Measuring bias in contextualized word representations. In Proceedings of the First Workshop on Gender Bias in Natural Language Processing, pages 166–172.",
+    "Zhenzhong Lan, Mingda Chen, Sebastian Goodman, Kevin Gimpel, Piyush Sharma, and Radu Soricut. 2020. Albert: A lite bert for self-supervised learning of language representations. In International Conference on Learning Representations.",
+    "Paul Pu Liang, Irene Mengze Li, Emily Zheng, Yao Chong Lim, Ruslan Salakhutdinov, and Louis-Philippe Morency. 2020. Towards debiasing sentence representations. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5502-5515, Online. Association for Computational Linguistics.",
+    "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. 2019. Roberta: A robustly optimized BERT pretraining approach. CoRR, abs/1907.11692.",
+    "Chandler May, Alex Wang, Shikha Bordia, Samuel R. Bowman, and Rachel Rudinger. 2019. On measuring social biases in sentence encoders. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 622-628, Minneapolis, Minnesota. Association for Computational Linguistics.",
+    "Nicholas Meade, Elinor Poole-Dayan, and Siva Reddy. 2022. An empirical survey of the effectiveness of debiasing techniques for pre-trained language models. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), ACL 2022, Dublin, Ireland, May 22-27, 2022, pages 1878–1898. Association for Computational Linguistics.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2021. StereoSet: Measuring stereotypical bias in pretrained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 5356–5371, Online. Association for Computational Linguistics.",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel Bowman. 2020. Crows-pairs: A challenge dataset for measuring social biases in masked language models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1953–1967.",
+    "Alec Radford, Jeff Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. 2019. Language models are unsupervised multitask learners.",
+    "Shauli Ravfogel, Yanai Elazar, Hila Gonen, Michael Twiton, and Yoav Goldberg. 2020. Null it out: Guarding protected attributes by iterative nullspace projection. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 7237-7256, Online. Association for Computational Linguistics.",
+    "Victor Sanh, Lysandre Debut, Julien Chaumond, and Thomas Wolf. 2019. Distilbert, a distilled version of BERT: smaller, faster, cheaper and lighter. In Fifth Workshop on Energy Efficient Machine Learning and Cognitive Computing - NeurIPS Edition.",
+    "Timo Schick, Sahana Udupa, and Hinrich Schütze. 2021. Self-Diagnosis and Self-Debiasing: A Proposal for Reducing Corpus-Based Bias in NLP. Transactions of the Association for Computational Linguistics, 9:1408-1424.",
+    "Thomas Wolf, Lysandre Debut, Victor Sanh, Julien Chaumond, Clement Delangue, Anthony Moi, Pierric Cistac, Tim Rault, Remi Louf, Morgan Funtowicz, Joe Davison, Sam Shleifer, Patrick von Platen, Clara Ma, Yacine Jernite, Julien Plu, Canwen Xu, Teven Le Scao, Sylvain Gugger, Mariama Drame, Quentin Lhoest, and Alexander Rush. 2020. Transformers: State-of-the-art natural language processing. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing: System Demonstrations, pages 38-45, Online. Association for Computational Linguistics.",
+    "Ran Zmigrod, Sabrina J. Mielke, Hanna Wallach, and Ryan Cotterell. 2019. Counterfactual data augmentation for mitigating gender stereotypes in languages with rich morphology. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 1651–1661, Florence, Italy. Association for Computational Linguistics."
+  ],
+  "measurement_description": "The benchmark measured stereotypical bias related to religion by evaluating a model's preference for stereotypical associations over anti-stereotypical ones in sentence-pair and fill-in-the-blank style tasks."
 }

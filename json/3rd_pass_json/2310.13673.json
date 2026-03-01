@@ -2,43 +2,65 @@
   "filename": "2310.13673.pdf",
   "title": "STEREOMAP: Quantifying the Awareness of Human-like Stereotypes in Large Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2310.13673",
-  "bias_targets": [
-    {
-      "target": "Gender bias",
-      "methodology": "Prompting LLMs to rate gender-based groups (e.g., Men, Women, Housewives, Feminists) on dimensions of Warmth and Competence based on the Stereotype Content Model, followed by clustering, keyword extraction, and reasoning analysis."
-    },
-    {
-      "target": "Racial/Ethnic bias",
-      "methodology": "Evaluating LLM perceptions of racial and ethnic groups (e.g., Asians, Black, White, Native Americans, Hispanics) by obtaining Warmth and Competence ratings, mapping descriptive keywords to stereotype dimensions, and analyzing text rationales."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Assessing model stereotypes by prompting for ratings and rationales regarding religious groups (e.g., Christians, Muslims, Jews, Atheists, Buddhists) on traits like Sociability, Morality, and Competence."
-    },
-    {
-      "target": "Socioeconomic bias",
-      "methodology": "Measuring LLM perceptions of economic and class-based groups (e.g., Rich, Poor, Homeless, Middle-class, Welfare Recipients) by analyzing their Warmth/Competence ratings and explicitly querying the models on the groups' perceived economic success and status."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Prompting models to rate and describe different age demographics (e.g., Elderly, Young, Children, Teenagers) on SCM dimensions and analyzing the resulting emotion and behavioral tendency clusters."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Evaluating stereotypes by collecting LLM ratings, keywords, and reasoning for sexual orientation groups (e.g., Gay, Lesbians, Bisexual, Homosexuals) on SCM dimensions."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Measuring the models' generated stereotypes of disabled groups (e.g., Disabled, Blinds) by mapping their Warmth and Competence ratings into cluster grids and analyzing associated emotional responses like Pity."
-    },
-    {
-      "target": "Political bias",
-      "methodology": "Prompting models to rate and describe political affiliations (e.g., Democrats, Republicans, Liberals, Conservatives) and analyzing keyword associations emphasizing dimensions like Morality versus Agency."
-    },
-    {
-      "target": "Occupational bias",
-      "methodology": "Assessing how models perceive various professions (e.g., Doctors, Nurses, CEOs, House cleaners, Blue-collar workers) by charting them on the Warmth-Competence matrix and extracting reasoning verbalizations."
-    }
+  "religious_groups": [
+    "Atheists",
+    "Buddhists",
+    "Catholics",
+    "Christians",
+    "Hindu",
+    "Jews",
+    "Muslims",
+    "Religious"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "BARD",
+    "text-davinci-003",
+    "gpt-3.5-turbo"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "StereoSet",
+    "CrowS-Pairs"
+  ],
+  "continuous_testing": false,
+  "findings": "The models placed religious groups into different stereotype clusters, which varied across models. BARD and GPT-3.5 consistently placed 'Jews' in a high-competence, lower-warmth cluster (a stereotype often associated with envy). The BARD model, however, placed 'Christians' and 'Muslims' in an 'in-group' cluster characterized by high warmth and high competence (a perception associated with admiration and pride). This indicates that the models have encoded distinct, human-like stereotypes for various religious groups.",
+  "references": [
+    "Abele, Andrea E, Nicole Hauke, Kim Peters, Eva Louvet, Aleksandra Szymkow, and Yanping Duan. 2016. Facets of the fundamental content dimensions: Agency with competence and assertiveness—communion with warmth and morality. Frontiers in psychology, 7:1810.",
+    "Abid, Abubakar, Maheen Farooqi, and James Zou. 2021. Large language models associate muslims with violence. Nature Machine Intelligence, 3(6):461–463.",
+    "Blodgett, Su Lin, Gilsinia Lopez, Alexandra Olteanu, Robert Sim, and Hanna Wallach. 2021. Stereotyping norwegian salmon: An inventory of pitfalls in fairness benchmark datasets. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 1004–1015.",
+    "Bolukbasi, Tolga, Kai-Wei Chang, James Y Zou, Venkatesh Saligrama, and Adam T Kalai. 2016. Man is to computer programmer as woman is to homemaker? debiasing word embeddings. Advances in neural information processing systems, 29.",
+    "Brown, Tom, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, et al. 2020. Language models are few-shot learners. Advances in neural information processing systems, 33:1877–1901.",
+    "Cao, Yang, Anna Sotnikova, Hal Daumé III, Rachel Rudinger, and Linda Zou. 2022. Theory-grounded measurement of us social stereotypes in english language models. In Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 1276–1295.",
+    "Cuddy, Amy JC, Susan T Fiske, and Peter Glick. 2007. The bias map: behaviors from intergroup affect and stereotypes. Journal of personality and social psychology, 92(4):631.",
+    "Dhamala, Jwala, Tony Sun, Varun Kumar, Satyapriya Krishna, Yada Pruksachatkun, Kai-Wei Chang, and Rahul Gupta. 2021. Bold: Dataset and metrics for measuring biases in open-ended language generation. In Proceedings of the 2021 ACM conference on fairness, accountability, and transparency, pages 862–872.",
+    "Fiske, Susan T. 2018. Stereotype content: Warmth and competence endure. Current directions in psychological science, 27(2):67–73.",
+    "Fiske, Susan T, Amy JC Cuddy, Peter Glick, and Jun Xu. 2002. A model of (often mixed) stereotype content: competence and warmth respectively follow from perceived status and competition. Journal of personality and social psychology, 82(6):878.",
+    "Fraser, Kathleen C, Isar Nejadgholi, and Svetlana Kiritchenko. 2021. Understanding and countering stereotypes: A computational approach to the stereotype content model. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 600–616.",
+    "Grootendorst, Maarten. 2020. Keybert: Minimal keyword extraction with bert.",
+    "Kirk, Hannah Rose, Yennie Jun, Filippo Volpin, Haider Iqbal, Elias Benussi, Frederic Dreyer, Aleksandar Shtedritski, and Yuki Asano. 2021. Bias-out-of-the-box: An empirical analysis of intersectional occupational biases in popular generative language models. Advances in neural information processing systems, 34:2611–2624.",
+    "Koch, Alex, Roland Imhoff, Ron Dotsch, Christian Unkelbach, and Hans Alves. 2016. The abc of stereotypes about groups: Agency/socioeconomic success, conservative-progressive beliefs, and communion. Journal of personality and social psychology, 110(5):675.",
+    "Liu, Jiacheng, Alisa Liu, Ximing Lu, Sean Welleck, Peter West, Ronan Le Bras, Yejin Choi, and Hannaneh Hajishirzi. 2022. Generated knowledge prompting for commonsense reasoning. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 3154–3169.",
+    "Liu, Yang and Mirella Lapata. 2019. Text summarization with pretrained encoders. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 3730–3740.",
+    "Nadeem, Moin, Anna Bethke, and Siva Reddy. 2021. Stereoset: Measuring stereotypical bias in pretrained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 5356–5371.",
+    "Nangia, Nikita, Clara Vania, Rasika Bhalerao, and Samuel Bowman. 2020. Crows-pairs: A challenge dataset for measuring social biases in masked language models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1953–1967.",
+    "Nicolas, Gandalf, Xuechunzi Bai, and Susan T Fiske. 2021. Comprehensive stereotype content dictionaries using a semi-automated method. European Journal of Social Psychology, 51(1):178–196.",
+    "Nicolas, Gandalf, Xuechunzi Bai, and Susan T Fiske. 2022. A spontaneous stereotype content model: Taxonomy, properties, and prediction. Journal of personality and social psychology.",
+    "Petroni, Fabio, Tim Rocktäschel, Sebastian Riedel, Patrick Lewis, Anton Bakhtin, Yuxiang Wu, and Alexander Miller. 2019. Language models as knowledge bases? In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 2463–2473.",
+    "Sap, Maarten, Dallas Card, Saadia Gabriel, Yejin Choi, and Noah A Smith. 2019. The risk of racial bias in hate speech detection. In Proceedings of the 57th annual meeting of the association for computational linguistics, pages 1668–1678.",
+    "Schick, Timo, Sahana Udupa, and Hinrich Schütze. 2021. Self-diagnosis and self-debiasing: A proposal for reducing corpus-based bias in nlp. Transactions of the Association for Computational Linguistics, 9:1408–1424.",
+    "Thoppilan, Romal, Daniel De Freitas, Jamie Hall, Noam Shazeer, Apoorv Kulshreshtha, Heng-Tze Cheng, Alicia Jin, Taylor Bos, Leslie Baker, Yu Du, et al. 2022. Lamda: Language models for dialog applications. arXiv preprint arXiv:2201.08239.",
+    "Touileb, Samia, Lilja Øvrelid, and Erik Velldal. 2023. Measuring normative and descriptive biases in language models using census data. In Proceedings of the 17th Conference of the European Chapter of the Association for Computational Linguistics, pages 2234–2240.",
+    "Wei, Jason, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Ed Chi, Quoc Le, and Denny Zhou. 2022. Chain of thought prompting elicits reasoning in large language models. arXiv preprint arXiv:2201.11903.",
+    "Zhang, Yizhe, Michel Galley, Jianfeng Gao, Zhe Gan, Xiujun Li, Chris Brockett, and Bill Dolan. 2018. Generating informative and diverse conversational responses via adversarial information maximization. Advances in Neural Information Processing Systems, 31.",
+    "Zhang, Yizhe, Siqi Sun, Michel Galley, Yen-Chun Chen, Chris Brockett, Xiang Gao, Jianfeng Gao, Jingjing Liu, and William B Dolan. 2020. Dialogpt: Large-scale generative pre-training for conversational response generation. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics: System Demonstrations, pages 270–278.",
+    "Zhu, Yaoming, Sidi Lu, Lei Zheng, Jiaxian Guo, Weinan Zhang, Jun Wang, and Yong Yu. 2018. Texygen: A benchmarking platform for text generation models. In The 41st international ACM SIGIR conference on research & development in information retrieval, pages 1097–1100."
+  ],
+  "measurement_description": "The benchmark measures how Large Language Models perceive religious groups based on the Stereotype Content Model (SCM). Specifically, it quantifies stereotypes along the two dimensions of Warmth (e.g., trustworthy, friendly) and Competence (e.g., skilled, capable) to map out the models' awareness of societal stereotypes."
 }

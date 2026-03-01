@@ -2,19 +2,78 @@
   "filename": "2509.24468.pdf",
   "title": "Bias Mitigation or Cultural Commonsense? Evaluating LLMs with a Japanese Dataset",
   "arxiv_url": "https://arxiv.org/pdf/2509.24468",
-  "bias_targets": [
-    {
-      "target": "Age bias",
-      "methodology": "Multiple-choice question-answering (MCQA) task calculating a bias score based on the frequency of the model selecting stereotypical versus counter-stereotypical answers given an ambiguous background and a bias-inducing context."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Multiple-choice question-answering (MCQA) task calculating a bias score based on the frequency of the model selecting stereotypical versus counter-stereotypical answers given an ambiguous background and a bias-inducing context."
-    },
-    {
-      "target": "Hierarchical relationship bias",
-      "methodology": "Multiple-choice question-answering (MCQA) task calculating a bias score based on the frequency of the model selecting stereotypical versus counter-stereotypical answers regarding social, professional, or hierarchical superiority given an ambiguous context."
-    }
+  "religious_groups": [],
+  "models_tested": [
+    "Swallow-8B",
+    "Swallow-8B-INST",
+    "Swallow-70B",
+    "Swallow-70B-INST",
+    "Llama-8B",
+    "Llama-8B-INST",
+    "Llama-70B",
+    "Llama-70B-INST",
+    "GPT-4o-mini-2024-07-18",
+    "DeepSeek-R1-Distill-Llama-70B"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "languages_evaluated": [
+    "Japanese"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "BBQ",
+    "JCommonsenseQA",
+    "CrowS-Pairs",
+    "StereoSet"
+  ],
+  "continuous_testing": false,
+  "findings": "A non-prompt-based debiasing experiment, which involved fine-tuning a model on several BBQ categories including 'Religion', confirmed the paper's main hypothesis: successfully reducing social biases leads to a degradation in performance on cultural commonsense tasks, indicating a trade-off between bias mitigation and cultural understanding.",
+  "references": [
+    "Rebecca S Bigler and Lynn S Liben. 2007. Developmental intergroup theory: Explaining and reducing children’s social stereotyping and prejudice. Current directions in psychological science, 16(3):162–166.",
+    "Yu Ying Chiu, Liwei Jiang, Bill Yuchen Lin, Chan Young Park, Shuyue Stella Li, Sahithya Ravi, Mehar Bhatia, Maria Antoniak, Yulia Tsvetkov, Vered Shwartz, and Yejin Choi. 2024. Cultural-Bench: a robust, diverse and challenging benchmark on measuring the (lack of) cultural knowledge of llms. Preprint, arXiv:2410.02677. Version 1.",
+    "DeepSeek-AI, Daya Guo, Dejian Yang, Haowei Zhang, Junxiao Song, Ruoyu Zhang, Runxin Xu, Qihao Zhu, Shirong Ma, Peiyi Wang, Xiao Bi, Xiaokang Zhang, Xingkai Yu, Yu Wu, Z. F. Wu, Zhibin Gou, Zhihong Shao, Zhuoshu Li, Ziyi Gao, and 181 others. 2025. Deepseek-R1: Incentivizing reasoning capability in llms via reinforcement learning. Preprint, arXiv:2501.12948. Version 1.",
+    "John F Dovidio, Miles Hewstone, Peter Glick, and Victoria M Esses. 2010. Prejudice, stereotyping and discrimination: Theoretical and empirical overview. Prejudice, stereotyping and discrimination, 12:3–28.",
+    "Susan T. Fiske. 2025. Prejudice, discrimination, and stereotyping. In R. Biswas-Diener and E. Diener, editors, Noba textbook series: Psychology. DEF publishers, Champaign, IL. Retrieved from http://noba.to/jfkx7nrd.",
+    "Kazuki Fujii, Taishi Nakamura, Mengsay Loem, Hiroki Iida, Masanari Ohi, Kakeru Hattori, Hirai Shota, Sakae Mizuki, Rio Yokota, and Naoaki Okazaki. 2024. Continual pre-training for cross-lingual LLM adaptation: Enhancing japanese language capabilities. In First Conference on Language Modeling.",
+    "Shaz Furniturewala, Surgan Jandial, Abhinav Java, Pragyan Banerjee, Simra Shahid, Sumit Bhatia, and Kokil Jaidka. 2024. \"thinking\" fair and slow: On the efficacy of structured prompts for debiasing language models. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 213–227, Miami, Florida, USA. Association for Computational Linguistics.",
+    "Isabel O. Gallegos, Ryan Aponte, Ryan A. Rossi, Joe Barrow, Mehrab Tanjim, Tong Yu, Hanieh Deilamsalehy, Ruiyi Zhang, Sungchul Kim, Franck Dernoncourt, Nedim Lipka, Deonna Owens, and Jiuxiang Gu. 2025. Self-debiasing large language models: Zero-shot recognition and reduction of stereotypes. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 2: Short Papers), pages 873–888, Albuquerque, New Mexico. Association for Computational Linguistics.",
+    "Michael Gira, Ruisu Zhang, and Kangwook Lee. 2022. Debiasing pre-trained language models via efficient fine-tuning. In Proceedings of the Second Workshop on Language Technology for Equality, Diversity and Inclusion, pages 59–69, Dublin, Ireland. Association for Computational Linguistics.",
+    "Aaron Grattafiori, Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad AlDahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Alex Vaughan, Amy Yang, Angela Fan, Anirudh Goyal, Anthony Hartshorn, Aobo Yang, Archi Mitra, Archie Sravankumar, Artem Korenev, Arthur Hinsvark, and 542 others. 2024. The Llama 3 herd of models. Preprint, arXiv:2407.21783. Version 3.",
+    "Rem Hida, Masahiro Kaneko, and Naoaki Okazaki. 2024. Social bias evaluation for large language models requires prompt variations. Preprint, arXiv:2407.03129. Version 1.",
+    "Edward J Hu, yelong shen, Phillip Wallis, Zeyuan AllenZhu, Yuanzhi Li, Shean Wang, Lu Wang, and Weizhu Chen. 2022. LORA: Low-rank adaptation of large language models. In International Conference on Learning Representations.",
+    "Yufei Huang and Deyi Xiong. 2024. CBBQ: A Chinese bias benchmark dataset curated with human-AI collaboration for large language models. In Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024), pages 2917–2929, Torino, Italia. ELRA and ICCL.",
+    "Jiho Jin, Jiseon Kim, Nayeon Lee, Haneul Yoo, Alice Oh, and Hwaran Lee. 2024. KoBBQ: Korean bias benchmark for question answering. Transactions of the Association for Computational Linguistics, 12:507–524.",
+    "Masahiro Kaneko, Danushka Bollegala, and Timothy Baldwin. 2025. The gaps between fine tuning and in-context learning in bias evaluation and debiasing. In Proceedings of the 31st International Conference on Computational Linguistics, pages 2758–2764, Abu Dhabi, UAE. Association for Computational Linguistics.",
+    "Masahiro Kaneko, Danushka Bollegala, and Naoaki Okazaki. 2023. The impact of debiasing on the performance of language models in downstream tasks is underestimated. In Proceedings of the 13th International Joint Conference on Natural Language Processing and the 3rd Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics (Volume 2: Short Papers), pages 29–36, Nusa Dua, Bali. Association for Computational Linguistics.",
+    "Amr Keleg and Walid Magdy. 2023. DLAMA: A framework for curating culturally diverse facts for probing the knowledge of pretrained language models. In Findings of the Association for Computational Linguistics: ACL 2023, pages 6245–6266, Toronto, Canada. Association for Computational Linguistics.",
+    "Kentaro Kurihara, Daisuke Kawahara, and Tomohide Shibata. 2022. JGLUE: Japanese general language understanding evaluation. In Proceedings of the Thirteenth Language Resources and Evaluation Conference, pages 2957–2966, Marseille, France. European Language Resources Association.",
+    "Anne Lauscher, Tobias Lueken, and Goran Glavaš. 2021. Sustainable modular debiasing of language models. In Findings of the Association for Computational Linguistics: EMNLP 2021, pages 4782–4797, Punta Cana, Dominican Republic. Association for Computational Linguistics.",
+    "Nicholas Meade, Elinor Poole-Dayan, and Siva Reddy. 2022. An empirical survey of the effectiveness of debiasing techniques for pre-trained language models. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 1878–1898, Dublin, Ireland. Association for Computational Linguistics.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2021. StereoSet: Measuring stereotypical bias in pretrained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 5356–5371, Online. Association for Computational Linguistics.",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R. Bowman. 2020. CrowS-pairs: A challenge dataset for measuring social biases in masked language models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1953–1967, Online. Association for Computational Linguistics.",
+    "Tarek Naous, Michael J Ryan, Alan Ritter, and Wei Xu. 2024. Having beer after prayer? measuring cultural bias in large language models. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 16366–16393, Bangkok, Thailand. Association for Computational Linguistics.",
+    "Vera Neplenbroek, Arianna Bisazza, and Raquel Fernández. 2024. MBBQ: A dataset for cross-lingual comparison of stereotypes in generative LLMs. In First Conference on Language Modeling.",
+    "Tuan-Phong Nguyen, Simon Razniewski, Aparna Varde, and Gerhard Weikum. 2023. Extracting cultural commonsense knowledge at scale. In Proceedings of the ACM Web Conference 2023, WWW ’23, page 1907–1917. ACM.",
+    "Daisuke Oba, Masahiro Kaneko, and Danushka Bollegala. 2024. In-contextual gender bias suppression for large language models. In Findings of the Association for Computational Linguistics: EACL 2024, pages 1722–1742, St. Julian’s, Malta. Association for Computational Linguistics.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel Bowman. 2022. BBQ: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2086–2105, Dublin, Ireland. Association for Computational Linguistics.",
+    "Abhinav Sukumar Rao, Akhila Yerukola, Vishwa Shah, Katharina Reinecke, and Maarten Sap. 2025. NormAd: A framework for measuring the cultural adaptability of large language models. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 2373–2403, Albuquerque, New Mexico. Association for Computational Linguistics.",
+    "Chara Scroope. 2021. Japanese Culture. The Cultural Atlas. Published by Mosaica. https://culturalatlas.sbs.com.au/japanese-culture.",
+    "Preethi Seshadri, Pouya Pezeshkpour, and Sameer Singh. 2022. Quantifying social biases using templates is unreliable. In Workshop on Trustworthy and Socially Responsible Machine Learning, NeurIPS 2022.",
+    "Siqi Shen, Lajanugen Logeswaran, Moontae Lee, Honglak Lee, Soujanya Poria, and Rada Mihalcea. 2024. Understanding the capabilities and limitations of large language models for cultural commonsense. In Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 5668–5680, Mexico City, Mexico. Association for Computational Linguistics.",
+    "Emily Sheng, Kai-Wei Chang, Premkumar Natarajan, and Nanyun Peng. 2019. The woman worked as a babysitter: On biases in language generation. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 3407–3412, Hong Kong, China. Association for Computational Linguistics.",
+    "Daiki Shirafuji, Makoto Takenaka, and Shinya Taguchi. 2025. Bias vector: Mitigating biases in language models with task arithmetic approach. In Proceedings of the 31st International Conference on Computational Linguistics, pages 2799–2813, Abu Dhabi, UAE. Association for Computational Linguistics.",
+    "Robyn Speer, Joshua Chin, and Catherine Havasi. 2017. Conceptnet 5.5: an open multilingual graph of general knowledge. In Proceedings of the Thirty-First AAAI Conference on Artificial Intelligence, AAAI’17, page 4444–4451. AAAI Press.",
+    "Kellie Webster, Xuezhi Wang, Ian Tenney, Alex Beutel, Emily Pitler, Ellie Pavlick, Jilin Chen, Ed Chi, and Slav Petrov. 2021. Measuring and reducing gendered correlations in pre-trained models. Preprint, arXiv:2010.06032. Version 2.",
+    "Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, brian ichter, Fei Xia, Ed H. Chi, Quoc V Le, and Denny Zhou. 2022. Chain of thought prompting elicits reasoning in large language models. In Advances in Neural Information Processing Systems.",
+    "Hitomi Yanaka, Namgi Han, Ryoma Kumon, Jie Lu, Masashi Takeshita, Ryo Sekizawa, Taisei Kato, and Hiromi Arai. 2024. Analyzing social biases in japanese large language models. Preprint, arXiv:2406.02050. Version 3.",
+    "Nakyeong Yang, Taegwan Kang, Stanley Jungkyu Choi, Honglak Lee, and Kyomin Jung. 2024. Mitigating biases for instruction-following language models via bias neurons elimination. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 9061–9073, Bangkok, Thailand. Association for Computational Linguistics.",
+    "Da Yin, Hritik Bansal, Masoud Monajatipoor, Liunian Harold Li, and Kai-Wei Chang. 2022. GeoMLAMA: Geo-diverse commonsense probing on multilingual pre-trained language models. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 2039–2055, Abu Dhabi, United Arab Emirates. Association for Computational Linguistics.",
+    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang. 2018. Gender bias in coreference resolution: Evaluation and debiasing methods. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 15–20, New Orleans, Louisiana. Association for Computational Linguistics.",
+    "Tony Zhao, Eric Wallace, Shi Feng, Dan Klein, and Sameer Singh. 2021. Calibrate before use: Improving few-shot performance of language models. In International Conference on Machine Learning.",
+    "Chujie Zheng, Hao Zhou, Fandong Meng, Jie Zhou, and Minlie Huang. 2024. Large language models are not robust multiple choice selectors. In The Twelfth International Conference on Learning Representations.",
+    "Muitze Zulaika and Xabier Saralegi. 2025. BasqBBQ: A QA benchmark for assessing social biases in LLMs for Basque, a low-resource language. In Proceedings of the 31st International Conference on Computational Linguistics, pages 4753–4767, Abu Dhabi, UAE. Association for Computational Linguistics."
+  ],
+  "measurement_description": "Stereotype detection in religious contexts, as part of a fine-tuning experiment using the BBQ dataset."
 }

@@ -2,71 +2,39 @@
   "filename": "2504.07997.pdf",
   "title": "BiasCause: Evaluate Socially Biased Causal Reasoning of Large Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2504.07997",
-  "benchmark_measurement": "The benchmark measures socially biased causal reasoning in LLMs when answering questions related to religion. This includes questions designed to elicit stereotypes (e.g., 'Who are more likely to be terrorists?') and questions about historical events involving religious groups (e.g., 'Who were participants of the Thirty Years' War?').",
-  "religious_groups": [
-    "Religion (general category)",
-    "Muslims (example)",
-    "Christianity (implied)"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating LLM responses and generated causal reasoning graphs against open-ended questions, as well as using name-based substitution (feminine vs. masculine) for job/major recommendation and personality derivation tasks."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluating LLM responses and generated causal reasoning graphs against open-ended questions, as well as using name-based substitution across different races (White, Black, Hispanic, Asian) for job/major recommendation and personality derivation tasks."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Prompting models with open-ended choice questions designed to elicit social bias and evaluating their generated answers and causal reasoning graphs."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Prompting models with open-ended choice questions designed to elicit social bias and evaluating their generated answers and causal reasoning graphs."
+    },
+    {
+      "target": "Nationality bias",
+      "methodology": "Prompting models with open-ended choice questions designed to elicit social bias and evaluating their generated answers and causal reasoning graphs."
+    },
+    {
+      "target": "Physical appearance bias",
+      "methodology": "Prompting models with open-ended choice questions designed to elicit social bias and evaluating their generated answers and causal reasoning graphs."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Prompting models with open-ended choice questions designed to elicit social bias and evaluating their generated answers and causal reasoning graphs."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Prompting models with open-ended choice questions designed to elicit social bias and evaluating their generated answers and causal reasoning graphs."
+    }
   ],
-  "models_tested": [
-    "Gemma-27B-IT",
-    "Llama-3.1-70B-Instruct",
-    "gemini-1.5-pro-002",
-    "claude-3.5-sonnet-v2-20241022"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "BBQ"
-  ],
-  "continuous_testing": false,
-  "findings": "All four tested models demonstrated significant social bias when answering biased questions related to religion. According to Figure 5, the models achieved low accuracy (below 20%) on these questions, indicating they frequently provided biased responses rather than neutral or refusal-to-answer responses. The performance on religion-related questions was comparable to other sensitive attributes showing high bias, such as age and disability status.",
-  "references": [
-    "Sravanti Addepalli, Yerram Varun, Arun Suggala, Karthikeyan Shanmugam, and Prateek Jain. 2024. Does safety training of Ilms generalize to semantically related natural prompts? arXiv preprint arXiv:2412.03235.",
-    "Anthropic. Claude 3.5 sonnet v2 model on vertex ai model garden.",
-    "Brian Dean. 2025. Chatgpt statistics 2025: How popular is chatgpt? Accessed: 2025-01-02.",
-    "Cynthia Dwork, Moritz Hardt, Toniann Pitassi, Omer Reingold, and Richard Zemel. 2012. Fairness through awareness. In Proceedings of the 3rd innovations in theoretical computer science conference, pages 214–226.",
-    "Janice L Farlow, Marianne Abouyared, Eleni M Rettig, Alexandra Kejner, Rusha Patel, and Heather A Edwards. 2024. Gender bias in artificial intelligence-written letters of reference. Otolaryngology–Head and Neck Surgery.",
-    "Michael Feldman, Sorelle A Friedler, John Moeller, Carlos Scheidegger, and Suresh Venkatasubramanian. 2015. Certifying and removing disparate impact. In proceedings of the 21th ACM SIGKDD international conference on knowledge discovery and data mining, pages 259–268.",
-    "Google Cloud. Gemma 2 model on vertex ai model garden.",
-    "Google Cloud. 2024a. Gemini 1.5 flash 002 model on vertex ai model garden.",
-    "Google Cloud. 2024b. Gemini 1.5 pro 002 model on vertex ai model garden.",
-    "Google Cloud. 2025. Gemini 2.0 flash 001 model on vertex ai model garden.",
-    "Pengrui Han, Rafal Kocielnik, Adhithya Saravanan, Roy Jiang, Or Sharir, and Anima Anandkumar. 2024. Chatgpt based data augmentation for improved parameter-efficient debiasing of llms. arXiv preprint arXiv:2402.11764.",
-    "Moritz Hardt, Eric Price, and Nati Srebro. 2016. Equality of opportunity in supervised learning. Advances in neural information processing systems, 29.",
-    "Jiaming Ji, Mickel Liu, Josef Dai, Xuehai Pan, Chi Zhang, Ce Bian, Boyuan Chen, Ruiyang Sun, Yizhou Wang, and Yaodong Yang. 2023. Beavertails: Towards improved safety alignment of Ilm via a human-preference dataset. Advances in Neural Information Processing Systems, 36:24678–24704.",
-    "Zhijing Jin, Yuen Chen, Felix Leeb, Luigi Gresele, Ojasv Kamal, Zhiheng Lyu, Kevin Blin, Fernando Gonzalez Adauto, Max Kleiman-Weiner, Mrinmaya Sachan, and 1 others. 2023a. Cladder: Assessing causal reasoning in language models. Advances in Neural Information Processing Systems, 36:31038–31065.",
-    "Zhijing Jin and Sergio Garrido. 2024. Causality for large language models. Presented at NeurIPS 2024 Tutorial.",
-    "Zhijing Jin, Jiarui Liu, Zhiheng Lyu, Spencer Poff, Mrinmaya Sachan, Rada Mihalcea, Mona Diab, and Bernhard Schölkopf. 2023b. Can large language models infer causation from correlation? arXiv preprint arXiv:2306.05836.",
-    "Anna Kawakami, Jordan Taylor, Sarah Fox, Haiyi Zhu, and Ken Holstein. 2024. Ai failure loops in feminized labor: Understanding the interplay of workplace ai and occupational devaluation. Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society, 7(1):683–683.",
-    "Hadas Kotek, Rikker Dockum, and David Sun. 2023. Gender bias and stereotypes in large language models. In Proceedings of The ACM Collective Intelligence Conference, CI ’23, page 12–24, New York, NY, USA. Association for Computing Machinery.",
-    "Matt J Kusner, Joshua Loftus, Chris Russell, and Ricardo Silva. 2017. Counterfactual fairness. Advances in neural information processing systems, 30.",
-    "Xinyue Li, Zhenpeng Chen, Jie M Zhang, Yiling Lou, Tianlin Li, Weisong Sun, Yang Liu, and Xuanzhe Liu. 2024. Benchmarking bias in large language models during role-playing. arXiv preprint arXiv:2411.00585.",
-    "Stephanie Lin, Jacob Hilton, and Owain Evans. 2022. Truthfulqa: Measuring how models mimic human falsehoods. Preprint, arXiv:2109.07958.",
-    "Yiran Liu, Xiao Liu, Haotian Chen, and Yang Yu. 2022. Does debiasing inevitably degrade the model performance. arXiv preprint arXiv:2211.07350.",
-    "Meta. Llama 3.1 70b instruct model on vertex ai model garden.",
-    "Roberto Navigli, Simone Conia, and Björn Ross. 2023. Biases in large language models: origins, inventory, and discussion. ACM Journal of Data and Information Quality, 15(2):1–21.",
-    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel Bowman. 2022. Bbq: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2086–2105, Dublin, Ireland. Association for Computational Linguistics.",
-    "Judea Pearl. 1998. Graphs, causality, and structural equation models. Sociological Methods & Research, 27(2):226–284.",
-    "Judea Pearl. 2009. Causality. Cambridge university press.",
-    "Cheng Peng, Xi Yang, Aokun Chen, Kaleb E Smith, Nima PourNejatian, Anthony B Costa, Cheryl Martin, Mona G Flores, Ying Zhang, Tanja Magoc, and 1 others. 2023. A study of generative large language model for medical research and healthcare. NPJ digital medicine, 6(1):210.",
-    "Rameez Qureshi, Naïm Es-Sebbani, Luis Galárraga, Yvette Graham, Miguel Couceiro, and Zied Bouraoui. 2024. Refine-lm: Mitigating language model stereotypes via reinforcement learning. Preprint, arXiv:2408.09489.",
-    "Rachel Rudinger, Jason Naradowsky, Brian Leonard, and Benjamin Van Durme. 2018. Gender bias in coreference resolution. Preprint, arXiv:1804.09301.",
-    "Abel Salinas, Louis Penafiel, Robert McCormack, and Fred Morstatter. 2023. \" im not racist but...\": Discovering bias in the internal knowledge of large language models. arXiv preprint arXiv:2310.08780.",
-    "Yixin Wan, George Pu, Jiao Sun, Aparna Garimella, Kai-Wei Chang, and Nanyun Peng. 2023a. \"kelly is a warm person, joseph is a role model\": Gender biases in llm-generated reference letters. Preprint, arXiv:2310.09219.",
-    "Yuxuan Wan, Wenxuan Wang, Pinjia He, Jiazhen Gu, Haonan Bai, and Michael R. Lyu. 2023b. Biasasker: Measuring the bias in conversational ai system. In Proceedings of the 31st ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering, ESEC/FSE 2023, page 515–527, New York, NY, USA. Association for Computing Machinery.",
-    "Xuezhi Wang, Jason Wei, Dale Schuurmans, Quoc Le, Ed Chi, Sharan Narang, Aakanksha Chowdhery, and Denny Zhou. 2023. Self-consistency improves chain of thought reasoning in language models. Preprint, arXiv:2203.11171.",
-    "Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Fei Xia, Ed Chi, Quoc V Le, Denny Zhou, and 1 others. 2022. Chain-of-thought prompting elicits reasoning in large language models. Advances in neural information processing systems, 35:24824–24837.",
-    "Shijie Wu, Ozan Irsoy, Steven Lu, Vadim Dabravolski, Mark Dredze, Sebastian Gehrmann, Prabhanjan Kambadur, David Rosenberg, and Gideon Mann. 2023. Bloomberggpt: A large language model for finance. arXiv preprint arXiv:2303.17564.",
-    "Yankun Wu, Yuta Nakashima, and Noa Garcia. 2024. Gender bias evaluation in text-to-image generation: A survey. arXiv preprint arXiv:2408.11358.",
-    "Tian Xie, Pavan Rauch, and Xueru Zhang. 2025. How strategic agents respond: Comparing analytical models with llm-generated responses in strategic classification. arXiv preprint arXiv:2501.16355.",
-    "Cheng Zhang, Stefan Bauer, Paul Bennett, Jiangfeng Gao, Wenbo Gong, Agrin Hilmkil, Joel Jennings, Chao Ma, Tom Minka, Nick Pawlowski, and 1 others. 2023. Understanding causality with large language models: Feasibility and opportunities. arXiv preprint arXiv:2304.05524.",
-    "Jiaxu Zhao, Meng Fang, Zijing Shi, Yitong Li, Ling Chen, and Mykola Pechenizkiy. 2023. Chbias: Bias evaluation and mitigation of chinese conversational language models. arXiv preprint arXiv:2305.11262.",
-    "Zhiqun Zuo, Mahdi Khalili, and Xueru Zhang. 2023. Counterfactually fair representation. In Advances in Neural Information Processing Systems, volume 36, pages 12124–12140. Curran Associates, Inc."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

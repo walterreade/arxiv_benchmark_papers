@@ -2,19 +2,96 @@
   "filename": "2404.14397.pdf",
   "title": "RTP-LX: Can LLMs Evaluate Toxicity in Multilingual Scenarios?",
   "arxiv_url": "https://arxiv.org/pdf/2404.14397",
-  "bias_targets": [
-    {
-      "target": "Language bias",
-      "methodology": "Evaluating model performance (agreement with human annotators via Cohen's kappa) in detecting toxicity across 28 different languages, and explicitly analyzing the correlation between model performance and the language's online data availability (high-resource vs. low-resource languages)."
-    },
-    {
-      "target": "Cultural bias",
-      "methodology": "Assessing models on a human-transcreated and manually curated dataset of culturally-specific toxic prompts to measure their ability to detect subtle, context-dependent harmful content and localisms that are specific to distinct geographical locales."
-    },
-    {
-      "target": "Identity bias",
-      "methodology": "Prompting S/LLMs to classify text for 'Bias', 'Identity Attack', and 'Microaggression' categories to evaluate their capacity to identify stereotyping, denigration, and subtle harms targeting specific demographic groups or ideologies."
-    }
+  "religious_groups": [],
+  "models_tested": [
+    "GPT-4 Turbo (gpt-4-turbo-2024-04-09)",
+    "Llama-3-8b-Instruct",
+    "Llama-3-70b-Instruct",
+    "Llama-2-7b-chat",
+    "Llama-2-70b-chat",
+    "LlamaGuard-7b",
+    "gemma-2b-it",
+    "gemma-7b-it",
+    "Mistral-7B-Instruct-v0.3",
+    "Mistral-7B-Instruct-v0.2"
   ],
-  "primary_bias_target": "Language bias"
+  "languages_evaluated": [
+    "Arabic",
+    "Hebrew",
+    "Indonesian",
+    "Danish",
+    "Norwegian",
+    "Swedish",
+    "Dutch",
+    "English",
+    "German",
+    "Russian",
+    "Ukrainian",
+    "Czech",
+    "Polish",
+    "BCMS",
+    "Spanish",
+    "Portuguese",
+    "French",
+    "Italian",
+    "Hindi",
+    "Thai",
+    "Kiswahili",
+    "Standard Chinese",
+    "Japanese",
+    "Korean",
+    "Turkish",
+    "Finnish",
+    "Hungarian"
+  ],
+  "response_type": [
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Real Toxicity Prompts (RTP)",
+    "FLORES Toxicity-200"
+  ],
+  "continuous_testing": true,
+  "findings": "The paper does not provide findings specific to religion. However, it found that models generally have low agreement with human judges and struggle to detect subtle forms of harm like 'bias' and 'identity attacks', categories under which religious toxicity would fall.",
+  "references": [
+    "Ahuja, S.; Aggarwal, D.; Gumma, V.; Watts, I.; Sathe, A.; Ochieng, M.; Hada, R.; Jain, P.; Ahmed, M.; Bali, K.; and Sitaram, S. 2024. MEGAVERSE: Benchmarking Large Language Models Across Languages, Modalities, Models and Tasks. In Duh, K.; Gomez, H.; and Bethard, S., eds., Proc Conf of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), 2598–2637. Mexico City, Mexico: Association for Computational Linguistics.",
+    "AI@Meta. 2024. Llama 3 Model Card.",
+    "Carlini, N.; Ippolito, D.; Jagielski, M.; Lee, K.; Tramer, F.; and Zhang, C. 2023. Quantifying Memorization Across Neural Language Models. In Int Conf on Learning Representations.",
+    "Chang, Y.; Wang, X.; Wang, J.; Wu, Y.; Yang, L.; Zhu, K.; Chen, H.; Yi, X.; Wang, C.; Wang, Y.; Ye, W.; Zhang, Y.; Chang, Y.; Yu, P. S.; Yang, Q.; and Xie, X. 2024. A Survey on Evaluation of Large Language Models. ACM Trans. Intell. Syst. Technol.",
+    "Costa-jussà, M. R.; Cross, J.; Çelebi, O.; Elbayad, M.; Heafield, K.; Heffernan, K.; Kalbassi, E.; Lam, J.; Licht, D.; Maillard, J.; Sun, A.; Wang, S.; Wenzek, G.; Youngblood, A.; Akula, B.; Barrault, L.; Gonzalez, G. M.; Hansanti, P.; Hoffman, J.; Jarrett, S.; Sadagopan, K. R.; Rowe, D.; Spruit, S.; Tran, C.; Andrews, P.; Ayan, N. F.; Bhosale, S.; Edunov, S.; Fan, A.; Gao, C.; Goswami, V.; Guzmán, F.; Koehn, P.; Mourachko, A.; Ropers, C.; Saleem, S.; Schwenk, H.; and Wang, J. 2022. No Language Left Behind: Scaling Human-Centered Machine Translation.",
+    "Davidson, T.; Bhattacharya, D.; and Weber, I. 2019. Racial Bias in Hate Speech and Abusive Language Detection Datasets. In Roberts, S. T.; Tetreault, J.; Prabhakaran, V.; and Waseem, Z., eds., Proc of the Third Workshop on Abusive Language Online, 25-35. Florence, Italy: Association for Computational Linguistics.",
+    "De Wynter, A.; Wang, X.; Sokolov, A.; Gu, Q.; and Chen, S.-Q. 2023. An evaluation on large language model outputs: Discourse and memorization. Natural Language Processing Journal, 4: 100024.",
+    "Deng, Y.; Zhang, W.; Pan, S. J.; and Bing, L. 2024. Multilingual Jailbreak Challenges in Large Language Models. arXiv:2310.06474.",
+    "Dhamala, J.; Sun, T.; Kumar, V.; Krishna, S.; Pruksachatkun, Y.; Chang, K.-W.; and Gupta, R. 2021. BOLD: Dataset and Metrics for Measuring Biases in Open-Ended Language Generation. In Proc. of the 2021 ACM Conf on Fairness, Accountability, and Transparency, FAccT '21, 862–872. New York, NY, USA: Association for Computing Machinery. ISBN 9781450383097.",
+    "Gehman, S.; Gururangan, S.; Sap, M.; Choi, Y.; and Smith, N. A. 2020. RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models. In Findings of the Association for Computational Linguistics: EMNLP 2020, 3356–3369. Online: Association for Computational Linguistics.",
+    "Hada, R.; Gumma, V.; de Wynter, A.; Diddee, H.; Ahmed, M.; Choudhury, M.; Bali, K.; and Sitaram, S. 2024. Are Large Language Model-based Evaluators the Solution to Scaling Up Multilingual Evaluation? In Graham, Y.; and Purver, M., eds., Findings of the Association for Computational Linguistics: EACL 2024, 1051-1070. St. Julian's, Malta: Association for Computational Linguistics.",
+    "Hamad, N.; Jarrar, M.; Khalilia, M.; and Nashif, N. 2023. Offensive Hebrew Corpus and Detection using BERT. In The 20th ACS/IEEE Int Conf on Computer Systems and Applications. Egypt: IEEE.",
+    "Hartvigsen, T.; Gabriel, S.; Palangi, H.; Sap, M.; Ray, D.; and Kamar, E. 2022. ToxiGen: A Large-Scale Machine-Generated Dataset for Adversarial and Implicit Hate Speech Detection. In Muresan, S.; Nakov, P.; and Villavicencio, A., eds., Proc of the 60th Annual Meeting of the Association for Computational Linguistics, 3309-3326. Dublin, Ireland: Association for Computational Linguistics.",
+    "Holtermann, C.; Röttger, P.; Dill, T.; and Lauscher, A. 2024. Evaluating the Elementary Multilingual Capabilities of Large Language Models with MultiQ. In Ku, L.-W.; Martins, A.; and Srikumar, V., eds., Findings of the Association for Computational Linguistics: ACL 2024, 4476-4494. Bangkok, Thailand: Association for Computational Linguistics.",
+    "Inan, H.; Upasani, K.; Chi, J.; Rungta, R.; Iyer, K.; Mao, Y.; Tontchev, M.; Hu, Q.; Fuller, B.; Testuggine, D.; and Khabsa, M. 2023. Llama Guard: LLM-based Input-Output Safeguard for Human-AI Conversations. ArXiv:2312.06674.",
+    "Jain, D.; Kumar, P.; Gehman, S.; Zhou, X.; Hartvigsen, T.; and Sap, M. 2024. PolygloToxicityPrompts: Multilingual Evaluation of Neural Toxic Degeneration in Large Language Models. In First Conference on Language Modeling.",
+    "Jiang, A. Q.; Sablayrolles, A.; Mensch, A.; Bamford, C.; Chaplot, D. S.; de las Casas, D.; Bressand, F.; Lengyel, G.; Lample, G.; Saulnier, L.; Lavaud, L. R.; Lachaux, M.-A.; Stock, P.; Scao, T. L.; Lavril, T.; Wang, T.; Lacroix, T.; and Sayed, W. E. 2023. Mistral 7B. 2310.06825:arXiv.",
+    "Joshi, P.; Santy, S.; Budhiraja, A.; Bali, K.; and Choudhury, M. 2020. The State and Fate of Linguistic Diversity and Inclusion in the NLP World. In Proc of the 58th Annual Meeting of the Association for Computational Linguistics.",
+    "Lai, V.; Ngo, N.; Pouran Ben Veyseh, A.; Man, H.; Dernoncourt, F.; Bui, T.; and Nguyen, T. 2023a. ChatGPT Beyond English: Towards a Comprehensive Evaluation of Large Language Models in Multilingual Learning. In Bouamor, H.; Pino, J.; and Bali, K., eds., Findings of the Association for Computational Linguistics: EMNLP 2023, 13171-13189. Singapore: Association for Computational Linguistics.",
+    "Lai, V. D.; Ngo, N. T.; Veyseh, A. P. B.; Man, H.; Dernoncourt, F.; Bui, T.; and Nguyen, T. H. 2023b. ChatGPT Beyond English: Towards a Comprehensive Evaluation of Large Language Models in Multilingual Learning. In The 2023 Conference on Empirical Methods in Natural Language Processing.",
+    "Lee, J.; Le, T.; Chen, J.; and Lee, D. 2023. Do Language Models Plagiarize? In Proceedings of the ACM Web Conference 2023, WWW '23, 3637-3647. New York, NY, USA: Association for Computing Machinery. ISBN 9781450394161.",
+    "Leite, J. A.; Silva, D. F.; Bontcheva, K.; and Scarton, C. 2020. Toxic Language Detection in Social Media for Brazilian Portuguese: New Dataset and Multilingual Analysis. In AACL-IJCNLP.",
+    "Li, J.; Wang, J.; Hu, J.; and Jiang, M. 2024. How Well Do LLMs Identify Cultural Unity in Diversity? In First Conference on Language Modeling.",
+    "Moon, J.; Cho, W. I.; and Lee, J. 2020. BEEP! Korean Corpus of Online News Comments for Toxic Speech Detection. In Proc of the Eighth Int Workshop on Natural Language Processing for Social Media, 25-31. Online: Association for Computational Linguistics.",
+    "OpenAI. 2024. GPT-4 Technical Report. arXiv:2403.08295.",
+    "Rauh, M.; Mellor, J.; Uesato, J.; Huang, P.-S.; Welbl, J.; Weidinger, L.; Dathathri, S.; Glaese, A.; Irving, G.; Gabriel, I.; Isaac, W.; and Hendricks, L. A. 2022. Characteristics of harmful text: Towards rigorous benchmarking of language models.",
+    "Sap, M.; Card, D.; Gabriel, S.; Choi, Y.; and Smith, N. A. 2019. The Risk of Racial Bias in Hate Speech Detection. In Korhonen, A.; Traum, D.; and Màrquez, L., eds., Proc. of the 57th Annual Meeting of ACL, 1668–1678. Florence, Italy: Association for Computational Linguistics.",
+    "Sheng, E.; Chang, K.-W.; Natarajan, P.; and Peng, N. 2019. The Woman Worked as a Babysitter: On Biases in Language Generation. In Proc of the 2019 Conf on Empirical Methods in Natural Language Processing and the 9th Int Joint Conf on Natural Language Processing, 3407-3412. Hong Kong, China: Association for Computational Linguistics.",
+    "Sigurbergsson, G. I.; and Derczynski, L. 2020. Offensive Language and Hate Speech Detection for Danish. In Proc of the Twelfth Language Resources and Evaluation Conference, 3498-3508. Marseille, France: European Language Resources Association. ISBN 979-10-95546-34-4.",
+    "Team, G.; Mesnard, T.; Hardin, C.; Dadashi, R.; Bhupatiraju, S.; Pathak, S.; Sifre, L.; Rivière, M.; Kale, M. S.; Love, J.; Tafti, P.; Hussenot, L.; Sessa, P. G.; Chowdhery, A.; Roberts, A.; Barua, A.; Botev, A.; Castro-Ros, A.; Slone, A.; Héliou, A.; Tacchetti, A.; Bulanova, A.; Paterson, A.; Tsai, B.; Shahriari, B.; Lan, C. L.; Choquette-Choo, C. A.; Crepy, C.; Cer, D.; Ippolito, D.; Reid, D.; Buchatskaya, E.; Ni, E.; Noland, E.; Yan, G.; Tucker, G.; Muraru, G.-C.; Rozhdestvenskiy, G.; Michalewski, H.; Tenney, I.; Grishchenko, I.; Austin, J.; Keeling, J.; Labanowski, J.; Lespiau, J.-B.; Stanway, J.; Brennan, J.; Chen, J.; Ferret, J.; Chiu, J.; Mao-Jones, J.; Lee, K.; Yu, K.; Millican, K.; Sjoesund, L. L.; Lee, L.; Dixon, L.; Reid, M.; Mikuła, M.; Wirth, M.; Sharman, M.; Chinaev, N.; Thain, N.; Bachem, O.; Chang, O.; Wahltinez, O.; Bailey, P.; Michel, P.; Yotov, P.; Chaabouni, R.; Comanescu, R.; Jana, R.; Anil, R.; McIlroy, R.; Liu, R.; Mullins, R.; Smith, S. L.; Borgeaud, S.; Girgin, S.; Douglas, S.; Pandya, S.; Shakeri, S.; De, S.; Klimenko, T.; Hennigan, T.; Feinberg, V.; Stokowiec, W.; hui Chen, Y.; Ahmed, Z.; Gong, Z.; Warkentin, T.; Peran, L.; Giang, M.; Farabet, C.; Vinyals, O.; Dean, J.; Kavukcuoglu, K.; Hassabis, D.; Ghahramani, Z.; and et al., D. E. 2024. Gemma: Open Models Based on Gemini Research and Technology. arXiv:2403.08295.",
+    "Touvron, H.; Martin, L.; Stone, K.; Albert, P.; Almahairi, A.; Babaei, Y.; Bashlykov, N.; Batra, S.; Bhargava, P.; Bhosale, S.; Bikel, D.; Blecher, L.; Ferrer, C. C.; Chen, M.; Cucurull, G.; Esiobu, D.; Fernandes, J.; Fu, J.; Fu, W.; Fuller, B.; Gao, C.; Goswami, V.; Goyal, N.; Hartshorn, A.; Hosseini, S.; Hou, R.; Inan, H.; Kardas, M.; Kerkez, V.; Khabsa, M.; Kloumann, I.; Korenev, A.; Koura, P. S.; Lachaux, M.-A.; Lavril, T.; Lee, J.; Liskovich, D.; Lu, Y.; Mao, Y.; Martinet, X.; Mihaylov, T.; Mishra, P.; Molybog, I.; Nie, Y.; Poulton, A.; Reizenstein, J.; Rungta, R.; Saladi, K.; Schelten, A.; Silva, R.; Smith, E. M.; Subramanian, R.; Tan, X. E.; Tang, B.; Taylor, R.; Williams, A.; Kuan, J. X.; Xu, P.; Yan, Z.; Zarov, I.; Zhang, Y.; Fan, A.; Kambadur, M.; Narang, S.; Rodriguez, A.; Stojnic, R.; Edunov, S.; and Scialom, T. 2023. Llama 2: Open Foundation and Fine-Tuned Chat Models. ArXiv, abs/2307.09288.",
+    "Wang, B.; Chen, W.; Pei, H.; Xie, C.; Kang, M.; Zhang, C.; Xu, C.; Xiong, Z.; Dutta, R.; Schaeffer, R.; Truong, S. T.; Arora, S.; Mazeika, M.; Hendrycks, D.; Lin, Z.; Cheng, Y.; Koyejo, S.; Song, D.; and Li, B. 2023. DecodingTrust: A Comprehensive Assessment of Trustworthiness in GPT Models. In NeurIPS 2023.",
+    "Wang, W.; Tu, Z.; Chen, C.; Yuan, Y.; Huang, J.-t.; Jiao, W.; and Lyu, M. 2024a. All Languages Matter: On the Multilingual Safety of LLMs. In Ku, L.-W.; Martins, A.; and Srikumar, V., eds., Findings of the Association for Computational Linguistics: ACL 2024, 5865-5877. Bangkok, Thailand: Association for Computational Linguistics.",
+    "Wang, Y.; Zhai, C.; and Hassan, H. 2020. Multi-task Learning for Multilingual Neural Machine Translation. In Webber, B.; Cohn, T.; He, Y.; and Liu, Y., eds., Proc of the 2020 Conf on Empirical Methods in Natural Language Processing, 1022-1034. Online: Association for Computational Linguistics.",
+    "Wang, Y.; Zhai, Z.; Li, H.; Han, X.; Lin, S.; Zhang, Z.; Zhao, A.; Nakov, P.; and Baldwin, T. 2024b. A Chinese Dataset for Evaluating the Safeguards in Large Language Models. In Ku, L.-W.; Martins, A.; and Srikumar, V., eds., Findings of the Association for Computational Linguistics: ACL 2024, 3106-3119. Bangkok, Thailand: Association for Computational Linguistics.",
+    "Wei, F.; Chen, X.; and Luo, L. 2024. Rethinking Generative Large Language Model Evaluation for Semantic Comprehension. ArXiv, abs/2403.07872.",
+    "Zheng, L.; Chiang, W.-L.; Sheng, Y.; Zhuang, S.; Wu, Z.; Zhuang, Y.; Lin, Z.; Li, Z.; Li, D.; Xing, E.; Zhang, H.; Gonzalez, J. E.; and Stoica, I. 2023. Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena. In Oh, A.; Neumann, T.; Globerson, A.; Saenko, K.; Hardt, M.; and Levine, S., eds., NeurIPS, volume 36, 46595-46623. Curran Associates, Inc."
+  ],
+  "measurement_description": "The benchmark measured the ability of Large Language Models to detect toxic content, including bias and identity attacks, in multilingual contexts. The dataset explicitly included the topic of religion as part of its English subset."
 }

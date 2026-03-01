@@ -2,71 +2,15 @@
   "filename": "2512.01419.pdf",
   "title": "Rice-VL: Evaluating Vision-Language Models for Cultural Understanding Across ASEAN Countries",
   "arxiv_url": "https://arxiv.org/pdf/2512.01419",
-  "benchmark_measurement": "The benchmark measured the models' ability to answer visual questions (culturalVQA) and localize visual elements (visual grounding) related to the cultural domains of 'Religious Practices' and 'Places of Worship' across 11 Southeast Asian countries. This included identifying religious artifacts, festivals (e.g., Thaipusam), customs (e.g., Morning Alm Rounds), and structures (e.g., temples).",
-  "religious_groups": [
-    "Hinduism",
-    "Buddhism"
+  "bias_targets": [
+    {
+      "target": "Cultural bias",
+      "methodology": "Evaluating Vision-Language Models (VLMs) using the RICE-VL benchmark, which consists of cultural Visual Question Answering (VQA) and Cultural Visual Grounding tasks based on images of traditions, artifacts, and practices from Southeast Asian cultures. Model responses are scored using the SEA-LAVE metric to assess cultural appropriateness, textual relevance, and sub-culture identification."
+    },
+    {
+      "target": "Geographic bias",
+      "methodology": "Comparing model performance (VQA scores and bounding box Intersection over Union) across 11 distinct ASEAN countries to identify representation and accuracy gaps between high-resource nations (e.g., Singapore, Malaysia) and low-resource nations (e.g., Timor-Leste, Laos)."
+    }
   ],
-  "models_tested": [
-    "Claude-3-Opus",
-    "GPT-4O",
-    "LLaMA 3.2 (11B)",
-    "Ola (7B)",
-    "Ovis 2 (8B)",
-    "Qwen-VL 2.5 (7B)",
-    "Paligemma2 3B",
-    "Paligemma2 10B",
-    "Qwen2.5 VL 3B",
-    "Kosmos2",
-    "GroundingDino"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short",
-    "long",
-    "other"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "culturalVQA",
-    "globalRG",
-    "LAVE metric"
-  ],
-  "continuous_testing": true,
-  "findings": "Models demonstrated lower accuracy in grounding abstract cultural elements, including those related to 'Religious Practices', compared to categories with more prominent visual features. Models trained on culturally rich datasets were better at pinpointing region-specific religious artifacts and structures compared to general-purpose models.",
-  "references": [
-    "Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia Leoni Aleman, Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat, and 1 others. 2023. Gpt-4 technical report. arXiv preprint arXiv:2303.08774.",
-    "Alham Fikri Aji, Genta Indra Winata, Fajri Koto, Samuel Cahyawijaya, Ade Romadhony, Rahmad Mahendra, Kemal Kurniawan, David Moeljadi, Radityo Eko Prasojo, Timothy Baldwin, and 1 others. 2022. One country, 700+ languages: Nlp challenges for underrepresented languages and dialects in indonesia. arXiv preprint arXiv:2203.13357.",
-    "Jinze Bai, Shuai Bai, Yunfei Chu, Zeyu Cui, Kai Dang, Xiaodong Deng, Yang Fan, Wenbin Ge, Yu Han, Fei Huang, and 1 others. 2023. Qwen technical report. arXiv preprint arXiv:2309.16609.",
-    "Lucas Beyer, Andreas Steiner, André Susano Pinto, Alexander Kolesnikov, Xiao Wang, Daniel Salz, Maxim Neumann, Ibrahim Alabdulmohsin, Michael Tschannen, Emanuele Bugliarello, and 1 others. 2024. Paligemma: A versatile 3b vlm for transfer. arXiv preprint arXiv:2407.07726.",
-    "Mehar Bhatia, Sahithya Ravi, Aditya Chinchure, Eunjeong Hwang, and Vered Shwartz. 2024. From local concepts to universals: Evaluating the multicultural understanding of vision-language models. arXiv preprint arXiv:2407.00263.",
-    "Samuel Cahyawijaya, Holy Lovenia, Joel Ruben Antony Moniz, Tack Hwa Wong, Mohammad Rifqi Farhansyah, Thant Thiri Maung, Frederikus Hudi, David Anugraha, Muhammad Ravi Shulthan Habibi, Muhammad Reza Qorib, and 1 others. 2025. Crowdsource, crawl, or generate? creating sea-vl, a multicultural vision-language dataset for southeast asia. arXiv preprint arXiv:2503.07920.",
-    "Haodong Duan, Junming Yang, Yuxuan Qiao, Xinyu Fang, Lin Chen, Yuan Liu, Xiaoyi Dong, Yuhang Zang, Pan Zhang, Jiaqi Wang, and 1 others. 2024. Vlmevalkit: An open-source toolkit for evaluating large multi-modality models. In Proceedings of the 32nd ACM International Conference on Multimedia, pages 11198–11201.",
-    "Aaron Grattafiori, Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad AlDahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Alex Vaughan, and 1 others. 2024. The llama 3 herd of models. arXiv preprint arXiv:2407.21783.",
-    "Laura Gustafson, Chloe Rolland, Nikhila Ravi, Quentin Duval, Aaron Adcock, Cheng-Yang Fu, Melissa Hall, and Candace Ross. 2023. Facet: Fairness in computer vision evaluation benchmark. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 20370–20382.",
-    "Mohammed Safi Ur Rahman Khan, Priyam Mehta, Ananth Sankar, Umashankar Kumaravelan, Sumanth Doddapaneni, Sparsh Jain, Anoop Kunchukuttan, Pratyush Kumar, Raj Dabre, Mitesh M Khapra, and 1 others. 2024. Indicllmsuite: a blueprint for creating pre-training and fine-tuning datasets for indian languages. arXiv preprint arXiv:2403.06350.",
-    "Shaharukh Khan, Ayush Tarun, Abhinav Ravi, Ali Faraz, Praveen Kumar Pokala, Anagha Bhangare, Raja Kolla, Chandra Khatri, and Shubham Agarwal. 2025. Chitrarth: Bridging vision and language for a billion people. In ICASSP 2025-2025 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 1–5. IEEE.",
-    "Ranjay Krishna, Yuke Zhu, Oliver Groth, Justin Johnson, Kenji Hata, Joshua Kravitz, Stephanie Chen, Yannis Kalantidis, Li-Jia Li, David A Shamma, and 1 others. 2017. Visual genome: Connecting language and vision using crowdsourced dense image annotations. International journal of computer vision, 123:32–73.",
-    "Tsung-Yi Lin, Michael Maire, Serge Belongie, James Hays, Pietro Perona, Deva Ramanan, Piotr Dollár, and C Lawrence Zitnick. 2014. Microsoft coco: Common objects in context. In Computer visionECCV 2014: 13th European conference, zurich, Switzerland, September 6-12, 2014, proceedings, part v 13, pages 740–755. Springer.",
-    "Fangyu Liu, Emanuele Bugliarello, Edoardo Maria Ponti, Siva Reddy, Nigel Collier, and Desmond Elliott. 2021. Visually grounded reasoning across languages and cultures. arXiv preprint arXiv:2109.13238.",
-    "Haotian Liu, Chunyuan Li, Qingyang Wu, and Yong Jae Lee. 2023. Visual instruction tuning. Advances in neural information processing systems, 36:34892–34916.",
-    "Shilong Liu, Zhaoyang Zeng, Tianhe Ren, Feng Li, Hao Zhang, Jie Yang, Qing Jiang, Chunyuan Li, Jianwei Yang, Hang Su, and 1 others. 2024. Grounding dino: Marrying dino with grounded pre-training for open-set object detection. In European conference on computer vision, pages 38–55. Springer.",
-    "Zuyan Liu, Yuhao Dong, Jiahui Wang, Ziwei Liu, Winston Hu, Jiwen Lu, and Yongming Rao. 2025. Ola: Pushing the frontiers of omni-modal language model with progressive modality alignment. arXiv preprint arXiv:2502.04328.",
-    "Holy Lovenia, Rahmad Mahendra, Salsabil Maulana Akbar, Lester James V Miranda, Jennifer Santoso, Elyanah Aco, Akhdan Fadhilah, Jonibek Mansurov, Joseph Marvin Imperial, Onno P Kampman, and 1 others. 2024. Seacrowd: A multilingual multimodal data hub and benchmark suite for southeast asian languages. arXiv preprint arXiv:2406.10118.",
-    "Shiyin Lu, Yang Li, Qing-Guo Chen, Zhao Xu, Weihua Luo, Kaifu Zhang, and Han-Jia Ye. 2024. Ovis: Structural embedding alignment for multimodal large language model. arXiv preprint arXiv:2405.20797.",
-    "Oscar Mañas, Benno Krojer, and Aishwarya Agrawal. 2024. Improving automatic vqa evaluation using large language models. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 38, pages 4171–4179.",
-    "Junho Myung, Nayeon Lee, Yi Zhou, Jiho Jin, Rifki Putri, Dimosthenis Antypas, Hsuvas Borkakoty, Eunsu Kim, Carla Perez-Almendros, Abinew Ali Ayele, and 1 others. 2024. Blend: A benchmark for llms on everyday knowledge in diverse cultures and languages. Advances in Neural Information Processing Systems, 37:78104–78146.",
-    "Oikantik Nath, Hanani Bathina, Mohammed Safi Ur Rahman Khan, and Mitesh M. Khapra. 2025. Can vision-language models evaluate handwritten math? arXiv preprint arXiv: 2501.07244.",
-    "Shravan Nayak, Kanishk Jain, Rabiul Awal, Siva Reddy, Sjoerd Van Steenkiste, Lisa Anne Hendricks, Aishwarya Agrawal, and 1 others. 2024. Benchmarking vision language models for cultural understanding. arXiv preprint arXiv:2407.10920.",
-    "Zhiliang Peng, Wenhui Wang, Li Dong, Yaru Hao, Shaohan Huang, Shuming Ma, and Furu Wei. 2023. Kosmos-2: Grounding multimodal large language models to the world. arXiv preprint arXiv:2306.14824.",
-    "Huy Quang Pham, Thang Kien-Bao Nguyen, Quan Van Nguyen, Dan Quang Tran, Nghia Hieu Nguyen, Kiet Van Nguyen, and Ngan Luu-Thuy Nguyen. 2025. Viocrvqa: novel benchmark dataset and visionreader for visual question answering by understanding vietnamese text in images. Multimedia Systems, 31(2):106.",
-    "Soon Chang Poh, Sze Jue Yang, Jeraelyn Ming Li Tan, Lawrence Leroy Tze Yao Chieng, Jia Xuan Tan, Zhenyu Yu, Foong Chee Mun, and Chee Seng Chan. 2024. MalayMMLU: A multitask benchmark for the low-resource Malay language. In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 650–669, Miami, Florida, USA. Association for Computational Linguistics.",
-    "David Romero, Chenyang Lyu, Haryo Akbarianto Wibowo, Teresa Lynn, Injy Hamed, Aditya Nanda Kishore, Aishik Mandal, Alina Dragonetti, Artem Abzaliev, Atnafu Lambebo Tonja, and 1 others. 2024. Cvqa: Culturally-diverse multilingual visual question answering benchmark. arXiv preprint arXiv:2406.05967.",
-    "Shreya Shankar, Yoni Halpern, Eric Breck, James Atwood, Jimbo Wilson, and D Sculley. 2017. No classification without representation: Assessing geodiversity issues in open data sets for the developing world. arXiv preprint arXiv:1711.08536.",
-    "Zhi Rui Tam, Ya-Ting Pai, Yen-Wei Lee, and YunNung Chen. 2025. Vistw: Benchmarking visionlanguage models for traditional chinese in taiwan. arXiv preprint arXiv:2503.10427.",
-    "Yuxuan Wang, Yijun Liu, Fei Yu, Chen Huang, Kexin Li, Zhiguo Wan, Wanxiang Che, and Hongyang Chen. 2025. Cvlue: A new benchmark dataset for chinese vision-language understanding evaluation. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 39, pages 8196–8204.",
-    "Zheng-Xin Yong, Ruochen Zhang, Jessica Zosa Forde, Skyler Wang, Arjun Subramonian, Holy Lovenia, Samuel Cahyawijaya, Genta Indra Winata, Lintang Sutawika, Jan Christian Blaise Cruz, and 1 others. 2023. Prompting multilingual large language models to generate code-mixed texts: The case of south east asian languages. arXiv preprint arXiv:2303.13592."
-  ]
+  "primary_bias_target": "Cultural bias"
 }

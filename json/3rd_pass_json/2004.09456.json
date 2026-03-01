@@ -2,23 +2,56 @@
   "filename": "2004.09456.pdf",
   "title": "StereoSet: Measuring stereotypical bias in pretrained language models",
   "arxiv_url": "https://arxiv.org/pdf/2004.09456",
-  "bias_targets": [
-    {
-      "target": "Gender bias",
-      "methodology": "Intrasentence and intersentence Context Association Tests (CATs) comparing language model probabilities for stereotypical, anti-stereotypical, and unrelated associations."
-    },
-    {
-      "target": "Profession bias",
-      "methodology": "Intrasentence and intersentence Context Association Tests (CATs) comparing language model probabilities for stereotypical, anti-stereotypical, and unrelated associations."
-    },
-    {
-      "target": "Racial bias",
-      "methodology": "Intrasentence and intersentence Context Association Tests (CATs) comparing language model probabilities for stereotypical, anti-stereotypical, and unrelated associations."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Intrasentence and intersentence Context Association Tests (CATs) comparing language model probabilities for stereotypical, anti-stereotypical, and unrelated associations."
-    }
+  "religious_groups": [
+    "Christianity",
+    "Islam",
+    "Hinduism",
+    "Atheism"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "BERT",
+    "GPT-2",
+    "RoBERTa",
+    "XLNet"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "WEAT",
+    "SEAT"
+  ],
+  "continuous_testing": true,
+  "findings": "The study found that pretrained language models exhibit strong stereotypical biases in the domain of religion. The overall stereotype score (ss) for religion was 63.8 for the ensemble model (where 50 is ideal and 100 is maximally stereotypical), indicating a significant bias. A key finding was that while the target term 'Muslim' had strong stereotypical associations in the dataset (e.g., 'terrorist' appeared in 20% of stereotypes), the models surprisingly exhibited more idealistic behavior, showing a slight preference for anti-stereotypes in this specific case, a behavior the authors could not explain.",
+  "references": [
+    "Tolga Bolukbasi, Kai-Wei Chang, James Y. Zou, Venkatesh Saligrama, and Adam T. Kalai. 2016. Man is to computer programmer as woman is to homemaker? debiasing word embeddings. In Proceedings of Neural Information Processing Systems (NeurIPS), pages 4349–4357.",
+    "Aylin Caliskan, Joanna J. Bryson, and Arvind Narayanan. 2017. Semantics derived automatically from language corpora contain human-like biases. Science, 356(6334):183–186.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of North American Chapter of the Association for Computational Linguistics, pages 4171–4186, Minneapolis, Minnesota. Association for Computational Linguistics.",
+    "Djellel Difallah, Elena Filatova, and Panos Ipeirotis. 2018. Demographics and dynamics of mechanical turk workers. In Proceedings of the ACM International Conference on Web Search and Data Mining, WSDM ’18, pages 135 – 143, New York, NY, USA. Association for Computing Machinery.",
+    "Jeremy Howard and Sebastian Ruder. 2018. Universal Language Model Fine-tuning for Text Classification. In Proceedings of the Association for Computational Linguistics, pages 328–339, Melbourne, Australia. Association for Computational Linguistics.",
+    "Milos Jakubicek, Adam Kilgarriff, Vojtech Kovar, Pavel Rychly, and Vit Suchomel. 2013. The tenten corpus family. In Proceedings of the International Corpus Linguistics Conference CL.",
+    "Adam Kilgarriff. 2009. Simple maths for keywords. In Proceedings of the Corpus Linguistics Conference 2009 (CL2009),, page 171.",
+    "Svetlana Kiritchenko and Saif Mohammad. 2018. Examining Gender and Race Bias in Two Hundred Sentiment Analysis Systems. In Proceedings of Joint Conference on Lexical and Computational Semantics, pages 43–53.",
+    "Keita Kurita, Nidhi Vyas, Ayush Pareek, Alan W Black, and Yulia Tsvetkov. 2019. Measuring bias in contextualized word representations. In Proceedings of the First Workshop on Gender Bias in Natural Language Processing, pages 166–172, Florence, Italy. Association for Computational Linguistics.",
+    "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. 2019. Roberta: A robustly optimized bert pretraining approach. arXiv preprint arXiv:1907.11692.",
+    "Andrew L. Maas, Raymond E. Daly, Peter T. Pham, Dan Huang, Andrew Y. Ng, and Christopher Potts. 2011. Learning word vectors for sentiment analysis. In Proceedings of the Association for Computational Linguistics, pages 142–150, Portland, Oregon, USA. Association for Computational Linguistics.",
+    "Thomas Manzini, Lim Yao Chong, Alan W Black, and Yulia Tsvetkov. 2019. Black is to criminal as caucasian is to police: Detecting and removing multiclass bias in word embeddings. In Proceedings of the North American Chapter of the Association for Computational Linguistics, pages 615–621, Minneapolis, Minnesota. Association for Computational Linguistics.",
+    "Chandler May, Alex Wang, Shikha Bordia, Samuel R. Bowman, and Rachel Rudinger. 2019. On measuring social biases in sentence encoders. In Proceedings of the North American Chapter of the Association for Computational Linguistics, pages 622–628, Minneapolis, Minnesota. Association for Computational Linguistics.",
+    "Tomas Mikolov, Ilya Sutskever, Kai Chen, Greg Corrado, and Jeffrey Dean. 2013. Distributed representations of words and phrases and their compositionality. In Proceedings of Neural Information Processing Systems (NeurIPS), NIPS 13, pages 3111–3119, Red Hook, NY, USA. Curran Associates Inc.",
+    "Brian Nosek, Mahzarin Banaji, and Anthony Greenwald. 2002. Math = male, me = female, therefore math != me. Journal of personality and social psychology, 83:44–59.",
+    "Jeffrey Pennington, Richard Socher, and Christopher D. Manning. 2014. Glove: Global vectors for word representation. In Proceedings of Empirical Methods in Natural Language Processing (EMNLP), pages 1532–1543.",
+    "Matthew Peters, Mark Neumann, Mohit Iyyer, Matt Gardner, Christopher Clark, Kenton Lee, and Luke Zettlemoyer. 2018. Deep Contextualized Word Representations. In Proceedings of the North American Chapter of the Association for Computational Linguistics), pages 2227–2237. Association for Computational Linguistics.",
+    "Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. 2019. Language models are unsupervised multitask learners. OpenAI Blog, 1(8).",
+    "Rachel Rudinger, Jason Naradowsky, Brian Leonard, and Benjamin Van Durme. 2018. Gender bias in coreference resolution. In Proceedings of North American Chapter of the Association for Computational Linguistics (NAACL), pages 8–14.",
+    "Emily Sheng, Kai-Wei Chang, Premkumar Natarajan, and Nanyun Peng. 2019. The woman worked as a babysitter: On biases in language generation. In Proceedings of the Empirical Methods in Natural Language Processing and the International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 3407–3412, Hong Kong, China. Association for Computational Linguistics.",
+    "Denny Vrandečić and Markus Krötzsch. 2014. Wikidata: A free collaborative knowledgebase. Commun. ACM, 57(10):78–85.",
+    "Zhilin Yang, Zihang Dai, Yiming Yang, Jaime Carbonell, Russ R Salakhutdinov, and Quoc V Le. 2019. Xlnet: Generalized autoregressive pretraining for language understanding. In H. Wallach, H. Larochelle, A. Beygelzimer, F. d’e Buc, E. Fox, and R. Garnett, editors, Proceedings of Neural Information Processing Systems (NeurIPS), pages 5753–5763. Curran Associates, Inc.",
+    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang. 2018. Gender Bias in Coreference Resolution: Evaluation and Debiasing Methods. In Proceedings of North American Chapter of the Association for Computational Linguistics, pages 15–20.",
+    "Yukun Zhu, Ryan Kiros, Rich Zemel, Ruslan Salakhutdinov, Raquel Urtasun, Antonio Torralba, and Sanja Fidler. 2015. Aligning books and movies: Towards story-like visual explanations by watching movies and reading books. In Proceedings of the IEEE International Conference on Computer Vision (ICCV), ICCV 15, pages 19–27, USA. IEEE Computer Society."
+  ],
+  "measurement_description": "The benchmark measures stereotypical biases in language models across four domains, one of which is religion. It assesses whether models are more likely to associate religious groups with stereotypical attributes versus anti-stereotypical attributes using context association tests."
 }

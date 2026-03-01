@@ -2,27 +2,87 @@
   "filename": "2511.01187.pdf",
   "title": "Surfacing Subtle Stereotypes: A Multilingual, Debate-Oriented Evaluation of Modern LLMs",
   "arxiv_url": "https://arxiv.org/pdf/2511.01187",
-  "bias_targets": [
-    {
-      "target": "Cultural/Ethnic bias",
-      "methodology": "Debate-style prompting where LLMs assign specific demographic groups (Western, Arabs, South Asians, Indians, Africans) to progressive ('Modern') or regressive ('Stereotyped') expert roles, evaluated via automated LLM-as-a-judge classification."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Open-ended generation of debates focusing on women's rights (e.g., bodily autonomy, mobility), tracking which demographic groups the model defaults to patriarchal or restrictive ('Stereotyped') roles."
-    },
-    {
-      "target": "Socioeconomic bias",
-      "methodology": "Prompting LLMs to simulate debates on socioeconomic development and quantifying how often certain demographics (e.g., Africans) are stereotyped as 'backward', 'dependent', or 'underdeveloped'."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Evaluating model responses to debate prompts about religious coexistence and freedom, measuring the frequency with which specific groups are cast in exclusionary or extremist religious roles."
-    },
-    {
-      "target": "Language bias",
-      "methodology": "Translating the 8,400 debate prompts into seven languages of varying resource levels (e.g., English, Swahili, Nigerian Pidgin) and comparing how the severity and targets of stereotype attributions shift based on the input language."
-    }
+  "religious_groups": [
+    "Islam"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "GPT-4o",
+    "Claude 3.5 Haiku",
+    "DeepSeek-Chat",
+    "LLaMA 3 70B"
+  ],
+  "languages_evaluated": [
+    "English",
+    "Chinese",
+    "Arabic",
+    "Hindi",
+    "Korean",
+    "Swahili",
+    "Nigerian Pidgin"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "BBQ",
+    "KoBBQ",
+    "BasqBBQ",
+    "StereoSet",
+    "CrowS-Pairs",
+    "WinoBias"
+  ],
+  "continuous_testing": false,
+  "findings": "All tested models consistently and overwhelmingly associated Arabs with stereotyped, conservative, or exclusionary religious views, with attribution rates reaching 95-100% in many cases, especially in high-resource languages like English. The paper also found that bias shifts with language; for instance, LLaMA-3 shifted religious stereotypes from Arabs to Indians when prompted in Hindi, suggesting models adapt stereotypes to the perceived cultural context of the input language.",
+  "references": [
+    "Muhammad Abdul-Mageed, Abdel Rahim El-madany, and El Moatez Billah Nagoudi. 2021. ARBERT & MARBERT: Deep bidirectional transformers for Arabic. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 7088–7105, Online. Association for Computational Linguistics.",
+    "Abubakar Abid, Maheen Farooqi, and James Zou. 2021. Persistent anti-muslim bias in large lan- guage models. In Proceedings of the 2021 AAAI/ACM Conference on Al, Ethics, and So- ciety, AIES '21, page 298–306, New York, NY, USA. Association for Computing Machinery.",
+    "J. Achiam, S. Adler, S. Agarwal, L. Ahmad, I. Akkaya, et al. 2023. Gpt-4 technical report. arXiv preprint arXiv:2303.08774.",
+    "Maksym Andriushchenko and Nicolas Flammarion. 2024. Does refusal training in Ilms generalize to the past tense? arXiv preprint arXiv:2407.11969.",
+    "Anthropic. 2024. Introducing claude 3.5 sonnet. Model overview and evaluations.",
+    "Wissam Antoun, Fady Baly, and Hazem Hajj. 2020. AraBERT: Transformer-based model for Arabic language understanding. In Proceedings of the 4th Workshop on Open-Source Arabic Corpora and Processing Tools, with a Shared Task on Of- fensive Language Detection, pages 9–15, Mar- seille, France. European Language Resource Association.",
+    "Su Lin Blodgett, Solon Barocas, Hal Daumé III, and Hanna Wallach. 2020. Language (technology) is power: A critical survey of \"bias\" in NLP. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5454–5476, Online. Association for Computa- tional Linguistics.",
+    "Alexis Conneau, Kartikay Khandelwal, Naman Goyal, Vishrav Chaudhary, Guillaume Wenzek, Francisco Guzmán, Edouard Grave, Myle Ott, Luke Zettlemoyer, and Veselin Stoyanov. 2020. Unsupervised cross-lingual representation learn- ing at scale. In Proceedings of the 58th Annual Meeting of the Association for Computational Lin- guistics, pages 8440–8451, Online. Association for Computational Linguistics.",
+    "Adrian de Wynter. 2025. Is in-context learning learn- ing?",
+    "DeepSeek-Al. 2024. Deepseek-v2: A strong, economical, and efficient mixture-of-experts lan- guage model.",
+    "Sepehr Dehdashtian, Gautam Sreekumar, and Vishnu Naresh Boddeti. 2025. Oasis uncovers: High-quality t2i models, same old stereotypes. arXiv preprint arXiv:2501.00962.",
+    "Yue Deng, Wenxuan Zhang, Sinno Jialin Pan, and Lidong Bing. 2023. Multilingual jailbreak chal- lenges in large language models. arXiv preprint arXiv:2310.06474.",
+    "Felix Friedrich, Katharina Hämmerl, Patrick Schramowski, Manuel Brack, Jindrich Libovicky, Kristian Kersting, and Alexander Fraser. 2024. Multilingual text-to-image generation magnifies gender stereotypes and prompt engineering may not help you. arXiv preprint arXiv:2401.16092.",
+    "Alexandra Garfinkle. 2023. 90% of online content could be 'generated by ai by 2025,' expert says. Yahoo Finance.",
+    "Akshita Jha, Vinodkumar Prabhakaran, Remi Den- ton, Sarah Laszlo, Shachi Dave, Rida Qadri, Chandan Reddy, and Sunipa Dev. 2024. VISAGe: A global-scale analysis of visual stereotypes in text-to-image generation. In Proceedings of the 62nd Annual Meeting of the Association for Com- putational Linguistics (Volume 1: Long Papers), pages 12333–12347, Bangkok, Thailand. Asso- ciation for Computational Linguistics.",
+    "Jiho Jin, Jiseon Kim, Nayeon Lee, Haneul Yoo, Al- ice Oh, and Hwaran Lee. 2024. KoBBQ: Korean bias benchmark for question answering. Trans- actions of the Association for Computational Lin- guistics, 12:507–524.",
+    "Pin-Jie Lin, Merel Scholman, Muhammed Saeed, and Vera Demberg. 2024. Modeling orthographic variation improves NLP performance for Nigerian Pidgin. In Proceedings of the 2024 Joint Interna- tional Conference on Computational Linguistics, Language Resources and Evaluation (LREC- COLING 2024), pages 11510–11522, Torino, Italia. ELRA and ICCL.",
+    "Ninareh Mehrabi, Fred Morstatter, Nripsuta Saxena, Kristina Lerman, and Aram Galstyan. 2021. A survey on bias and fairness in machine learning. ACM Comput. Surv., 54(6).",
+    "Meta Al. 2024. Llama 3.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2021. StereoSet: Measuring stereotypical bias in pre- trained language models. In Proceedings of the 59th Annual Meeting of the Association for Com- putational Linguistics and the 11th International Joint Conference on Natural Language Process- ing (Volume 1: Long Papers), pages 5356–5371, Online. Association for Computational Linguis- tics.",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R. Bowman. 2020. CrowS-pairs: A challenge dataset for measuring social biases in masked language models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1953–1967, Online. Association for Computa- tional Linguistics.",
+    "Tarek Naous, Michael J. Ryan, Alan Ritter, and Wei Xu. 2024. Having beer after prayer? measuring cultural bias in large language models. In Pro- ceedings of the 62nd Annual Meeting of the As- sociation for Computational Linguistics (Volume 1: Long Papers), pages 16366–16393, Bangkok, Thailand. Association for Computational Linguis- tics.",
+    "Roberto Navigli, Simone Conia, and Björn Ross. 2023a. Biases in large language models: Origins, inventory, and discussion. J. Data and Informa- tion Quality, 15(2).",
+    "Roberto Navigli, Simone Conia, and Björn Ross. 2023b. Biases in large language models: Origins, inventory, and discussion. J. Data and Informa- tion Quality, 15(2).",
+    "Michelle Benedetto Neitz. 2013. Socioeconomic bias in the judiciary. Cleveland State Law Review, 61:137–160.",
+    "OpenAI. 2024. Gpt-4o system card.",
+    "OpenAI. 2025. How people are using chatgpt. Ac- cessed: YYYY-MM-DD.",
+    "Long Ouyang, Jeff Wu, Xu Jiang, Diogo Almeida, Carroll L. Wainwright, Pamela Mishkin, Chong- zhang D. Sandini, Adam Gleave, Katarina Slama, Alex Ray, John Schulman, Jacob Hilton, Fraser Kel- ton, Luke Miller, Maddie Simens, Amanda Askell, Peter Welinder, Paul Christiano, Jan Leike, and Ryan Lowe. 2024. Training language models to follow instructions with human feedback. In Pro- ceedings of the 36th International Conference on Neural Information Processing Systems, NIPS '22, Red Hook, NY, USA. Curran Associates Inc.",
+    "Ankit Pal and Malaikannan Sankarasubbu. 2024. Gemini goes to medical school: Exploring the ca- pabilities of multimodal large language models on medical challenge problems & hallucinations. In Proceedings of the 6th Clinical Natural Lan- guage Processing Workshop, pages 21–34, Mex- ico City, Mexico. Association for Computational Linguistics.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel Bowman. 2022. BBQ: A hand-built bias benchmark for question answering. In Findings of the Associ- ation for Computational Linguistics: ACL 2022, pages 2086–2105, Dublin, Ireland. Association for Computational Linguistics.",
+    "Rida Qadri, Renee Shelby, Cynthia L Bennett, and Emily Denton. 2023. Ai’s regimes of represen- tation: A community-centered study of text-to- image models in south asia. In Proceedings of the 2023 ACM Conference on Fairness, Account- ability, and Transparency, pages 506–517.",
+    "Rafael Rafailov, Archit Sharma, Eric Mitchell, Christopher D Manning, Stefano Ermon, and Chelsea Finn. 2023. Direct preference opti- mization: Your language model is secretly a re- ward model. In Advances in Neural Information Processing Systems, volume 36, pages 53728– 53741. Curran Associates, Inc.",
+    "Shaina Raza, Rizwan Qureshi, Anam Zahid, Joseph Floryan, Fariha Sadiq, Muhammad Saeed, Ranjan Sapkota, Aditya Jain, Anas Zafar, Muneeb Ul Hassan, et al. 2025. Who is respon- sible? the people, models, users or regulations? responsible generative ai for south asia. arXiv preprint arXiv:2502.08650.",
+    "Shaina Raza, Arash Shaban-Nejad, Elham Dolatabadi, and Hiroshi Hiraiyama. 2024. Exploring bias and prediction metrics to characterize the fairness of machine learning for equity-centered public health decision-making: A narrative re- view. IEEE Access.",
+    "David Restrepo, Chenwei Wu, Zhengxu Tang, Zhao Shuai, Thuy-Nguyen Minh Phan, Jun-En Ding, Cong-Tinh Dao, Jack Gallifant, Robyn Gayle Dy- chiao, Joao Carlos Ariza, et al. 2024. Multi- ophthalmologue: A multilingual benchmark for as- sessing and debiasing llm ophthalmological qa. in lmics. arXiv preprint arXiv:2412.14304.",
+    "Muhammed Saeed, Peter Bourgonje, and Vera Demberg. 2025a. Implicit discourse relation clas- sification for nigerian pidgin. In Proceedings of the 31st International Conference on Computa- tional Linguistics, pages 2561–2574, Abu Dhabi, UAE. Association for Computational Linguistics.",
+    "Muhammed Saeed, Elegal Ghoulem, Mukhtar Muhammed, Shaina Raza, Shady Shehata, and Muhammad Abdul-Mageed. 2024. Desert camels and oil sheikhs: Arab-centric red teaming of frontier llms. arXiv preprint arXiv:2410.24049.",
+    "Muhammed Saeed, Shaina Raza, Ashish Vayani, Muhammad Abdul-Mageed, Ali Emami, and Shady Shehata. 2025b. Beyond content: How grammatical gender shapes visual representa- tion in text-to-image models. arXiv preprint arXiv:2505.03199.",
+    "Nihar Sahoo, Pranamya Kulkarni, Arif Ahmed, Tanu Goyal, Narjis Asad, Aparna Garimella, and Push- pak Bhattacharyya. 2024. IndiBias: A bench- mark dataset to measure social biases in lan- guage models for indian context. In Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Lin- guistics: Human Language Technologies (Vol- ume 1: Long Papers), pages 8786–8806, Mexico City, Mexico. Association for Computational Lin- guistics.",
+    "Lingfeng Shen, Weiting Tan, Sihao Chen, Yunmo Chen, Jingyu Zhang, Haoran Xu, Boyuan Zheng, Philipp Koehn, and Daniel Khashabi. 2024. The language barrier: Dissecting safety challenges of LLMs in multilingual contexts. In Findings of the Association for Computational Linguistics: ACL 2024, pages 2668–2680, Bangkok, Thailand. As- sociation for Computational Linguistics.",
+    "Emily Sheng, Kai-Wei Chang, Prem Natarajan, and Nanyun Peng. 2021. Societal biases in language generation: Progress and challenges. In Pro- ceedings of the 59th Annual Meeting of the As- sociation for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 4275–4293, Online. Association for Com- putational Linguistics.",
+    "Dan Shi, Tianhao Shen, Yufei Huang, Zhigen Li, Yongqi Leng, Renren Jin, Chuang Liu, Xinwei Wu, Zishan Guo, Linhao Yu, et al. 2024. Large language model safety: A holistic survey. arXiv preprint arXiv:2412.17686.",
+    "Jisu Shin, Hoyun Song, Huije Lee, Soyeong Jeong, and Jong Park. 2024. Ask LLMs directly, 'what shapes your bias?': Measuring social bias in large language models. In Findings of the Asso- ciation for Computational Linguistics: ACL 2024, pages 16122–16143, Bangkok, Thailand. Asso- ciation for Computational Linguistics.",
+    "U.S. Equal Employment Opportunity Commission. 2024. Equal employment opportunity commis- sion (eeoc). Accessed: 2024-12-16.",
+    "Mo Yu, Lemao Liu, Junjie Wu, Tsz Ting Chung, Shunchi Zhang, Jiangnan Li, Dit-Yan Yeung, and Jie Zhou. 2025. The stochastic parrot on LLM's shoulder: A summative assessment of physical concept understanding. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Lin- guistics: Human Language Technologies (Vol- ume 1: Long Papers), pages 11416–11431, Al- buquerque, New Mexico. Association for Com- putational Linguistics.",
+    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang. 2018. Gender bias in coreference resolution: Evaluation and debiasing methods. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Hu- man Language Technologies, Volume 2 (Short Papers), pages 15–20, New Orleans, Louisiana. Association for Computational Linguistics.",
+    "Shucheng Zhu, Weikang Wang, and Ying Liu. 2024. Quite good, but not enough: Nationality bias in large language models–a case study of chatgpt. arXiv preprint arXiv:2405.06996.",
+    "Muitze Zulaika and Xabier Saralegi. 2025. BasqBBQ: A QA benchmark for assessing social biases in LLMs for Basque, a low-resource lan- guage. In Proceedings of the 31st International Conference on Computational Linguistics, pages 4753–4767, Abu Dhabi, UAE. Association for Computational Linguistics."
+  ],
+  "measurement_description": "The benchmark measures religious bias by evaluating how Large Language Models (LLMs) generate stereotyped narratives about different demographic groups in the context of religion, focusing on unequal portrayals of faith groups and perceived limitations on religious freedom."
 }

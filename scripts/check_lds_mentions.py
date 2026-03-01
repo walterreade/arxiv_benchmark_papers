@@ -5,7 +5,7 @@ import os
 import json
 import glob
 
-def check_lds_mentions(json_dir: str = "json/2nd_pass_json"):
+def check_lds_mentions(json_dir: str = "json/3rd_pass_json"):
     """Check all JSON files for Latter-day Saint or Mormon mentions."""
     json_files = glob.glob(os.path.join(json_dir, "*.json"))
     

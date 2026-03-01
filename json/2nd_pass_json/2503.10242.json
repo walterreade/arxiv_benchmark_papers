@@ -2,50 +2,15 @@
   "filename": "2503.10242.pdf",
   "title": "MINORBENCH: A HAND-BUILT BENCHMARK FOR CONTENT-BASED RISKS FOR CHILDREN",
   "arxiv_url": "https://arxiv.org/pdf/2503.10242",
-  "benchmark_measurement": "The benchmark measures the refusal rate of Large Language Models (LLMs) to prompts containing hateful content. The 'Hateful' category is defined as 'Content that promotes discrimination, harassment, or violence against individuals or groups based on protected attributes (e.g., race, religion, gender)'. Therefore, the measurement related to religion is the model's ability to refuse to generate content that is hateful towards religious groups.",
-  "religious_groups": [
-    "Religion (general)"
+  "bias_targets": [
+    {
+      "target": "Age-appropriate safety",
+      "methodology": "Evaluating LLM refusal rates on the MinorBench dataset, which contains child-unsafe queries across categories like danger, sexual content, profanities, self-harm, and substance use, testing how models handle risky interactions from minors under varying system prompts."
+    },
+    {
+      "target": "Hateful content (Racial, Religious, Gender bias)",
+      "methodology": "Measuring the refusal rates of LLMs when presented with queries from a child's perspective that promote discrimination, harassment, or violence based on protected attributes (e.g., asking for permission to use racial slurs)."
+    }
   ],
-  "models_tested": [
-    "GPT-4o-mini",
-    "o3-mini",
-    "Gemini 2.0 Flash",
-    "Claude 3.5 Haiku",
-    "Llama 3.3 70B",
-    "R1 Distilled (Llama 3.3 70B)"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "MIT's AI Risk Repository",
-    "MLCommons' AILuminate",
-    "AIR-Bench 2024"
-  ],
-  "continuous_testing": false,
-  "findings": "The paper found that LLM performance in refusing to answer hateful prompts, which includes those based on religion, is highly dependent on the system prompt provided. With a basic system prompt, most models had very low refusal rates for hateful content (as low as 0-14%). However, with stricter, child-specific safety instructions in the system prompt, refusal rates increased dramatically for most models, some reaching 100%. Performance was inconsistent across models, with 'reasoning models' like o3-mini and R1 Distilled consistently showing lower refusal rates even with stricter prompts.",
-  "references": [
-    "Daniel Buck. Ai is a serious threat to student privacy, May 2023. URL https://fordhaminstitute.org/national/commentary/ai-serious-threat-student-privacy. Accessed: 2025-02-18.",
-    "Common Sense Media. New poll finds parents lag behind kids on ai. September 2024. URL https://www.commonsensemedia.org/press-releases/new-poll-finds-parents-lag-behind-. Accessed: 2025-02-18.",
-    "Alejandro Cuadron, Dacheng Li, Wenjie Ma, Xingyao Wang, Yichuan Wang, Siyuan Zhuang, Shu Liu, Luis Gaspar Schroeder, Tian Xia, Huanzhi Mao, Nicholas Thumiger, Aditya Desai, Ion Sto-ica, Ana Klimovic, Graham Neubig, and Joseph E. Gonzalez. The danger of overthinking: Ex- amining the reasoning-action dilemma in agentic tasks. arXiv preprint arXiv:2502.08235, 2025. URL https://arxiv.org/abs/2502.08235. Accessed: 2025-02-18.",
-    "House Standing Committee on Employment, Education and Training. Chapter 3 - risks and re- sponses. https://www.aph.gov.au/Parliamentary_Business/Committees/House/Employment_Edu 2024. Accessed: 2025-02-18.",
-    "Junfeng Jiao, Saleh Afroogh, Kevin Chen, Abhejay Murali, David Atkinson, and Amit Dhu-randhar. LLMs and Childhood Safety: Identifying Risks and Proposing a Protection Frame-work for Safe Child-LLM Interaction. arXiv preprint arXiv:2502.11242, 2025. URL https://arxiv.org/abs/2502.11242. Accessed: 2025-02-18.",
-    "Nomisha Kurian. 'no, alexa, no!': designing child-safe ai and protecting children from the risks of the 'empathy gap' in large language models. Learning, Media and Technology, 0(0):1-14, 2024. doi: 10.1080/17439884.2024.2367052. URL https://doi.org/10.1080/17439884.2024.2367052.",
-    "Weilin Li and Kristen Harper. Recommendations for regulating artificial intelligence to minimize risks to children and their families. Child Trends, April 2024. URL https://www.childtrends.org/publications/regulating-artificial-intelligence-minimi.",
-    "Meta AI. LlamaGuard 3 Documentation, 2024. URL https://huggingface.co/meta-llama/Llama-Guard-3-8B. Accessed: 2025-02-18.",
-    "MLCommons. AILuminate v1.0 Benchmark. https://ailuminate.mlcommons.org/benchmarks, 2024. Accessed: 2025-02-18.",
-    "OpenAI. Is chatgpt safe for all ages? https://help.openai.com/en/articles/8313401-is-chatgpt-safe-2023. Accessed: 2025-02-18.",
-    "OpenAI. OpenAI Moderation API Documentation, 2024a. URL https://platform.openai.com/docs/guides/moderation. Accessed: 2025-02-18.",
-    "OpenAI. Reasoning best practices. https://platform.openai.com/docs/guides/reasoning-best-practi 2024b. Accessed: 2025-02-18.",
-    "Peter Slattery, Alexander K. Saeri, Emily A. C. Grundy, Jess Graham, Michael Noetel, Risto Uuk, James Dao, Soroush Pour, Stephen Casper, and Neil Thompson. The AI risk repository: A comprehensive meta-review, database, and taxonomy of risks from artificial intelligence. arXiv preprint arXiv:2408.12622, 2024. URL https://arxiv.org/abs/2408.12622. Accessed: 2025-02-18.",
-    "UNICEF Innocenti. Generative ai: Risks and opportunities for children, 2024. URL https://www.unicef.org/innocenti/generative-ai-risks-and-opportunities-children. Accessed: 2025-02-18.",
-    "Maisy Watkins. The 4 cs of online safety: online safety risk for children, September 2024. URL https://learning.nspcc.org.uk/news/2023/september/4-cs-of-online-safety. Accessed: 2025-02-18.",
-    "Wenjun Zeng, Yuchi Liu, Ryan Mullins, Ludovic Peran, Joe Fernandez, Hamza Harkous, Karthik Narasimhan, Drew Proud, Piyush Kumar, Bhaktipriya Radharapu, Olivia Sturman, and Oscar Wahltinez. Shieldgemma: Generative ai content moderation based on gemma. arXiv preprint arXiv:2407.21772, 2024a. URL https://arxiv.org/abs/2407.21772. Accessed: 2025-02-18.",
-    "Yi Zeng, Kevin Klyman, Andy Zhou, Yu Yang, Minzhou Pan, Ruoxi Jia, Dawn Song, Percy Liang, and Bo Li. AI risk categorization decoded (AIR 2024): From govern- ment regulations to corporate policies. arXiv preprint arXiv:2406.17864, 2024b. URL https://arxiv.org/abs/2406.17864. Accessed: 2025-02-18.",
-    "Yi Zeng, Yu Yang, Andy Zhou, Jeffrey Ziwei Tan, Yuheng Tu, Yifan Mai, Kevin Klyman, Minzhou Pan, Ruoxi Jia, Dawn Song, Percy Liang, and Bo Li. AIR-Bench 2024: A safety benchmark based on risk categories from regulations and policies. arXiv preprint arXiv:2407.17436, 2024c. URL https://arxiv.org/abs/2407.17436. Accessed: 2025-02-18."
-  ]
+  "primary_bias_target": "Age-appropriate safety"
 }

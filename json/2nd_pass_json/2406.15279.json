@@ -2,89 +2,39 @@
   "filename": "2406.15279.pdf",
   "title": "Safe Inputs but Unsafe Output: Benchmarking Cross-modality Safety Alignment of Large Vision-Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2406.15279",
-  "benchmark_measurement": "The benchmark measured the safety of model responses in scenarios involving religious beliefs and cultural practices. This included assessing the model's ability to handle sensitive topics, dietary restrictions (e.g., Islamic diet, monk's vegetarian diet), and interactions in religious settings (e.g., mosques) without generating harmful, unethical, or offensive content.",
-  "religious_groups": [
-    "Islam",
-    "Christianity",
-    "Buddhism",
-    "Hinduism"
+  "bias_targets": [
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluating model responses to cross-modal inputs (a safe image and safe text that semantically combine to create an unsafe context) to detect racism, slurs, and racially insensitive outputs via text generation and multiple-choice QA tasks."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Assessing models on cross-modal queries designed to trigger sexism, gender marketing stereotypes, and gender-based hobby stereotyping to measure the rate of safe and effective responses."
+    },
+    {
+      "target": "Cultural bias",
+      "methodology": "Testing models with cross-modal inputs to measure the occurrence of cultural stereotyping, caste-based prejudice, and the misrepresentation of cultural symbolism."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Evaluating model responses to cross-modal scenarios involving disadvantaged groups to detect unfair treatment, prejudice, or disparaging remarks against people with disabilities."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Using cross-modal inputs to test for unfair treatment or disparaging outputs regarding socioeconomically disadvantaged or marginalized groups, such as the homeless."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Prompting models with cross-modal queries involving religious beliefs, dietary restrictions, sensitive topics, and rituals to evaluate whether the output is disrespectful, insensitive, or offensive."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Assessing cross-modal queries related to employment discrimination to detect unfair or unequal treatment in the workplace based on age."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Evaluating cross-modal employment scenarios to detect discriminatory outputs or unequal treatment based on sexual orientation."
+    }
   ],
-  "models_tested": [
-    "GPT-4V",
-    "GPT-4o",
-    "Gemini-1.0",
-    "Gemini-1.5",
-    "InstructBLIP2-FlanT5-XL",
-    "InstructBLIP2-FlanT5-XXL",
-    "InstructBLIP2-7B",
-    "InstructBLIP2-13B",
-    "LLaVAv1.5-7B",
-    "LLaVAv1.5-13B",
-    "LLaVAv1.6-34B",
-    "mPLUG-Owl2",
-    "MiniGPT4-v2",
-    "Qwen-VL",
-    "CogVLM"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "long",
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "VLSafe",
-    "GOAT-Bench",
-    "Auto-Bench",
-    "Ch³Ef",
-    "RTVLM",
-    "FigStep",
-    "MM-Safetybench",
-    "HADES"
-  ],
-  "continuous_testing": true,
-  "findings": "Most models, including the top-performing ones, struggle significantly in the domain of religion, with safety scores consistently below 40%.",
-  "references": [
-    "GPT-4o. https://openai.com/index/ hello-gpt-4o/.",
-    "2024. Usage policies - openai. https://openai.com/ policies/usage-policies. Accessed: 2024-01- 12.",
-    "Pranav Agarwal, Alejandro Betancourt, Vana Pana- giotou, and Natalia Díaz-Rodríguez. 2020. Egoshots, an ego-vision life-logging dataset and semantic fi- delity metric to evaluate diversity in image captioning models. In Machine Learning in Real Life (ML-IRL) Workshop at the International Conference on Learn- ing Representations (ICLR).",
-    "Jinze Bai, Shuai Bai, Shusheng Yang, Shijie Wang, Sinan Tan, Peng Wang, Junyang Lin, Chang Zhou, and Jingren Zhou. 2023. Qwen-vl: A frontier large vision-language model with versatile abilities. arXiv preprint arXiv:2308.12966.",
-    "Trishna Chakraborty, Erfan Shayegani, Zikui Cai, Nael Abu-Ghazaleh, M Salman Asif, Yue Dong, Amit K Roy-Chowdhury, and Chengyu Song. 2024. Cross- modal safety alignment: Is textual unlearning all you need? arXiv preprint arXiv:2406.02575.",
-    "Jun Chen, Deyao Zhu, Xiaoqian Shen, Xiang Li, Zechun Liu, Pengchuan Zhang, Raghuraman Krishnamoor- thi, Vikas Chandra, Yunyang Xiong, and Mohamed Elhoseiny. 2023a. Minigpt-v2: large language model as a unified interface for vision-language multi-task learning. arXiv preprint arXiv:2310.09478.",
-    "Shuo Chen, Zhen Han, Bailan He, Zifeng Ding, Wen- qian Yu, Philip Torr, Volker Tresp, and Jindong Gu. 2024. Red teaming gpt-4v: Are gpt-4v safe against uni/multi-modal jailbreak attacks?",
-    "Yangyi Chen, Karan Sikka, Michael Cogswell, Heng Ji, and Ajay Divakaran. 2023b. Dress: Instructing large vision-language models to align and interact with humans via natural language feedback. ArXiv, abs/2311.10081.",
-    "Wenliang Dai, Junnan Li, Dongxu Li, Anthony Meng Huat Tiong, Junqi Zhao, Weisheng Wang, Boyang Albert Li, Pascale Fung, and Steven C. H. Hoi. 2023. Instructblip: Towards general-purpose vision-language models with instruction tuning. ArXiv, abs/2305.06500.",
-    "Yichen Gong, Delong Ran, Jinyuan Liu, Conglei Wang, Tianshuo Cong, Anyu Wang, Sisi Duan, and Xiaoyun Wang. 2023. Figstep: Jailbreaking large vision- language models via typographic visual prompts. ArXiv, abs/2311.05608.",
-    "Yuanfeng Ji, Chongjian Ge, Weikai Kong, Enze Xie, Zhengying Liu, Zhengguo Li, and Ping Luo. 2023. Large language models as automated aligners for benchmarking vision-language models. ArXiv, abs/2311.14580.",
-    "Alina Kuznetsova, Hassan Rom, Neil Alldrin, Jasper Ui- jlings, Ivan Krasin, Jordi Pont-Tuset, Shahab Kamali, Stefan Popov, Matteo Malloci, Alexander Kolesnikov, Tom Duerig, and Vittorio Ferrari. 2020. The open im- ages dataset v4: Unified image classification, object detection, and visual relationship detection at scale. IJCV.",
-    "Mukai Li, Lei Li, Yuwei Yin, Masood Ahmed, Zhen- guang Liu, and Qi Liu. 2024a. Red teaming visual language models. ArXiv, abs/2401.12915.",
-    "Yifan Li, Hangyu Guo, Kun Zhou, Wayne Xin Zhao, and Ji-Rong Wen. 2024b. Images are achilles’ heel of alignment: Exploiting visual vulnerabilities for jail- breaking multimodal large language models. ArXiv, abs/2403.09792.",
-    "Hongzhan Lin, Ziyang Luo, Bo Wang, Ruichao Yang, and Jing Ma. 2024. Goat-bench: Safety insights to large multimodal models through meme-based social abuse. ArXiv, abs/2401.01523.",
-    "Haotian Liu, Chunyuan Li, Qingyang Wu, and Yong Jae Lee. 2023a. Visual instruction tuning. arXiv preprint arXiv:2304.08485.",
-    "Xin Liu, Yichen Zhu, Jindong Gu, Yunshi Lan, Chao Yang, and Yu Qiao. 2023b. Mm-safetybench: A benchmark for safety evaluation of multimodal large language models.",
-    "Xin Liu, Yichen Zhu, Yunshi Lan, Chao Yang, and Yu Qiao. 2024. Safety of multimodal large language models on images and text. ArXiv, abs/2402.00357.",
-    "Weidi Luo, Siyuan Ma, Xiaogeng Liu, Xiaoyu Guo, and Chaowei Xiao. 2024. Jailbreakv-28k: A benchmark for assessing the robustness of multimodal large lan- guage models against jailbreak attacks.",
-    "Meta AI. 2024. Llama 2 acceptable use policy. https://ai.meta.com/llama/use-policy/. Ac- cessed: 2024-01-19.",
-    "OpenAI. 2023. Gpt-4 technical report. ArXiv, abs/2303.08774.",
-    "Georgios Pantazopoulos, Amit Parekh, Malvina Nikan- drou, and Alessandro Suglia. 2024. Learning to see but forgetting to follow: Visual instruction tuning makes llms more prone to jailbreak attacks.",
-    "Renjie Pi, Tianyang Han, Yueqi Xie, Rui Pan, Qing Lian, Hanze Dong, Jipeng Zhang, and Tong Zhang. 2024. Mllm-protector: Ensuring mllm’s safety with- out hurting performance. ArXiv, abs/2401.02906.",
-    "Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sas- try, Amanda Askell, Pamela Mishkin, Jack Clark, et al. 2021. Learning transferable visual models from natural language supervision. In International confer- ence on machine learning, pages 8748–8763. PMLR.",
-    "Zhelun Shi, Zhipin Wang, Hongxing Fan, Zaibin Zhang, Lijun Li, Yongting Zhang, Zhen fei Yin, Lu Sheng, Yu Qiao, and Jing Shao. 2024. Assessment of mul- timodal large language models in alignment with human values. ArXiv, abs/2403.17830.",
-    "Gemini Team. 2024. Gemini 1.5: Unlocking multi- modal understanding across millions of tokens of context. ArXiv, abs/2403.05530.",
-    "Gemini Team, Rohan Anil, Sebastian Borgeaud, Yonghui Wu, Jean-Baptiste Alayrac, Jiahui Yu, Radu Soricut, Johan Schalkwyk, Andrew M Dai, Anja Hauth, et al. 2023. Gemini: a family of highly capable multimodal models. arXiv preprint arXiv:2312.11805.",
-    "Hugo Touvron, Thibaut Lavril, Gautier Izacard, Xavier Martinet, Marie-Anne Lachaux, Timothée Lacroix, Baptiste Rozière, Naman Goyal, Eric Hambro, Faisal Azhar, et al. 2023. Llama: Open and effi- cient foundation language models. arXiv preprint arXiv:2302.13971.",
-    "Haoqin Tu, Chenhang Cui, Zijun Wang, Yiyang Zhou, Bingchen Zhao, Junlin Han, Wangchunshu Zhou, Huaxiu Yao, and Cihang Xie. 2023. How many uni- corns are in this image? a safety evaluation bench- mark for vision llms. ArXiv, abs/2311.16101.",
-    "Pengyu Wang, Dong Zhang, Linyang Li, Chenkun Tan, Xinghao Wang, Ke Ren, Botian Jiang, and Xipeng Qiu. 2024. Inferaligner: Inference-time align- ment for harmlessness through cross-model guidance. ArXiv, abs/2401.11206.",
-    "Weihan Wang, Qingsong Lv, Wenmeng Yu, Wenyi Hong, Ji Qi, Yan Wang, Junhui Ji, Zhuoyi Yang, Lei Zhao, Xixuan Song, Jiazheng Xu, Bin Xu, Juanzi Li, Yuxiao Dong, Ming Ding, and Jie Tang. 2023a. Cogvlm: Visual expert for pretrained language mod- els. ArXiv, abs/2311.03079.",
-    "Weihan Wang, Qingsong Lv, Wenmeng Yu, Wenyi Hong, Ji Qi, Yan Wang, Junhui Ji, Zhuoyi Yang, Lei Zhao, Xixuan Song, et al. 2023b. Cogvlm: Vi- sual expert for pretrained language models. arXiv preprint arXiv:2311.03079.",
-    "Qinghao Ye, Haiyang Xu, Guohai Xu, Jiabo Ye, Ming Yan, Yiyang Zhou, Junyang Wang, An- wen Hu, Pengcheng Shi, Yaya Shi, et al. 2023a. mplug-owl: Modularization empowers large lan- guage models with multimodality. arXiv preprint arXiv:2304.14178.",
-    "Qinghao Ye, Haiyang Xu, Jiabo Ye, Mingshi Yan, An- wen Hu, Haowei Liu, Qi Qian, Ji Zhang, Fei Huang, and Jingren Zhou. 2023b. mplug-owl2: Revolutioniz- ing multi-modal large language model with modality collaboration. ArXiv, abs/2311.04257.",
-    "01.AI Alex Young, Bei Chen, Chao Li, Chengen Huang, Ge Zhang, Guanwei Zhang, Heng Li, Jiangcheng Zhu, Jianqun Chen, Jing Chang, Kaidong Yu, Peng Liu, Qiang Liu, Shawn Yue, Senbin Yang, Shiming Yang, Tao Yu, Wen Xie, Wenhao Huang, Xiaohui Hu, Xiaoyi Ren, Xinyao Niu, Pengcheng Nie, Yuchi Xu, Yudong Liu, Yue Wang, Yuxuan Cai, Zhenyu Gu, Zhiyuan Liu, and Zonghong Dai. 2024. Yi: Open foundation models by 01.ai. ArXiv, abs/2403.04652.",
-    "Xiang Yue, Yuansheng Ni, Kai Zhang, Tianyu Zheng, Ruoqi Liu, Ge Zhang, Samuel Stevens, Dongfu Jiang, Weiming Ren, Yuxuan Sun, Cong Wei, Botao Yu, Ruibin Yuan, Renliang Sun, Ming Yin, Boyuan Zheng, Zhenzhu Yang, Yibo Liu, Wenhao Huang, Huan Sun, Yu Su, and Wenhu Chen. 2023. Mmmu: A massive multi-discipline multimodal understand- ing and reasoning benchmark for expert agi. ArXiv, abs/2311.16502.",
-    "Hao Zhang, Wenqi Shao, Hong Liu, Yongqiang Ma, Ping Luo, Yu Qiao, and Kaipeng Zhang. 2024. Avibench: Towards evaluating the robustness of large vision-language model on adversarial visual- instructions. ArXiv, abs/2403.09346.",
-    "Yunqing Zhao, Tianyu Pang, Chao Du, Xiao Yang, Chongxuan Li, Ngai-Man Cheung, and Min Lin. 2023. On evaluating adversarial robustness of large vision-language models. ArXiv, abs/2305.16934.",
-    "Yongshuo Zong, Ondrej Bohdal, Tingyang Yu, Yongxin Yang, and Timothy M. Hospedales. 2024. Safety fine-tuning at (almost) no cost: A baseline for vision large language models. ArXiv, abs/2402.02207."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

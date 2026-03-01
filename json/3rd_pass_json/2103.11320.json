@@ -2,23 +2,80 @@
   "filename": "2103.11320.pdf",
   "title": "Lawyers are Dishonest? Quantifying Representational Harms in Commonsense Knowledge Resources",
   "arxiv_url": "https://arxiv.org/pdf/2103.11320",
-  "bias_targets": [
-    {
-      "target": "Origin bias",
-      "methodology": "Converting commonsense knowledge graph triples and downstream generative model outputs into natural language statements, masking the target origin words (e.g., nationalities), and applying sentiment and regard classifiers to quantify intra-target overgeneralization (prejudice/favoritism) and inter-target disparity."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Converting commonsense knowledge graph triples and downstream generative model outputs into natural language statements, masking the target gender words, and applying sentiment and regard classifiers to quantify intra-target overgeneralization (prejudice/favoritism) and inter-target disparity."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Converting commonsense knowledge graph triples and downstream generative model outputs into natural language statements, masking the target religion words, and applying sentiment and regard classifiers to quantify intra-target overgeneralization (prejudice/favoritism) and inter-target disparity."
-    },
-    {
-      "target": "Occupational bias",
-      "methodology": "Converting commonsense knowledge graph triples and downstream generative model outputs into natural language statements, masking the target profession words, and applying sentiment and regard classifiers to quantify intra-target overgeneralization (prejudice/favoritism) and inter-target disparity."
-    }
+  "religious_groups": [
+    "Christianity",
+    "Islam",
+    "Hinduism",
+    "Sharia",
+    "Jihad",
+    "Christian",
+    "Muslim",
+    "Mohammed",
+    "church",
+    "Quran",
+    "Bible",
+    "Brahmin",
+    "Holy Trinity"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "COMET",
+    "CommonsenseStoryGen (CSG)"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long",
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "StereoSet"
+  ],
+  "continuous_testing": false,
+  "findings": "The study found significant representational harms related to religion in both ConceptNet and GenericsKB. GenericsKB contained a much higher rate and magnitude of bias compared to ConceptNet. There was evidence of extreme prejudice towards 'muslim' and 'sharia', while terms like 'christian' showed both favoritism and prejudice. These biases were found to be inherited and sometimes amplified by downstream models like COMET and CSG, which generated prejudiced content. For instance, in the CSG model, the 'Religion' category of prompts led to outputs with up to 60% negative associations.",
+  "references": [
+    "Solon Barocas, Kate Crawford, Aaron Shapiro, and Hanna Wallach. 2017. The problem with bias: Allocative versus representational harms in machine learning. In 9th Annual Conference of the Special Interest Group for Computing, Information and Society.",
+    "Sumithra Bhakthavatsalam, Chloe Anastasiades, and Peter Clark. 2020. Genericskb: A knowledge base of generic statements. arXiv preprint arXiv:2005.00660.",
+    "Su Lin Blodgett, Solon Barocas, Hal Daumé III, and Hanna Wallach. 2020. Language (technology) is power: A critical survey of \"bias\" in NLP. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5454-5476, Online. Association for Computational Linguistics.",
+    "Tolga Bolukbasi, Kai-Wei Chang, James Y Zou, Venkatesh Saligrama, and Adam T Kalai. 2016. Man is to computer programmer as woman is to homemaker? debiasing word embeddings. In Advances in neural information processing systems, pages 4349–4357.",
+    "Antoine Bosselut, Hannah Rashkin, Maarten Sap, Chaitanya Malaviya, Asli Celikyilmaz, and Yejin Choi. 2019. Comet: Commonsense transformers for knowledge graph construction. In Association for Computational Linguistics (ACL).",
+    "Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan, Rewon Child, Aditya Ramesh, Daniel Ziegler, Jeffrey Wu, Clemens Winter, Chris Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess, Jack Clark, Christopher Berner, Sam McCandlish, Alec Radford, Ilya Sutskever, and Dario Amodei. 2020. Language models are few-shot learners. In Advances in Neural Information Processing Systems, volume 33, pages 1877–1901. Curran Associates, Inc.",
+    "Tuhin Chakrabarty, Debanjan Ghosh, Smaranda Muresan, and Nanyun Peng. 2020. R^3: Reverse, retrieve, and rank for sarcasm generation with commonsense knowledge. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 7976–7986, Online. Association for Computational Linguistics.",
+    "Ting-Yun Chang, Yang Liu, Karthik Gopalakrishnan, Behnam Hedayatnia, Pei Zhou, and Dilek Hakkani-Tur. 2020. Incorporating commonsense knowledge graph in pretrained models for social commonsense tasks. In Proceedings of Deep Learning Inside Out (DeeLIO): The First Workshop on Knowledge Extraction and Integration for Deep Learning Architectures, pages 74–79, Online. Association for Computational Linguistics.",
+    "Kate Crawford. 2017. The trouble with bias. In Conference on Neural Information Processing Systems, invited speaker.",
+    "Jwala Dhamala, Tony Sun, Varun Kumar, Satyapriya Krishna, Yada Pruksachatkun, Kai-Wei Chang, and Rahul Gupta. 2021. Bold: Dataset and metrics for measuring biases in open-ended language generation. In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, pages 862–872.",
+    "Ethan Fast, Binbin Chen, and Michael S. Bernstein. 2016. Empath: Understanding topic signals in large-scale text. In Proceedings of the 2016 CHI Conference on Human Factors in Computing Systems, CHI '16, page 4647–4657, New York, NY, USA. Association for Computing Machinery.",
+    "Joseph L Fleiss. 1971. Measuring nominal scale agreement among many raters. Psychological bulletin, 76(5):378.",
+    "Joel Escudé Font and Marta R Costa-jussà. 2019. Equalizing gender bias in neural machine translation with word embeddings techniques. In Proceedings of the First Workshop on Gender Bias in Natural Language Processing, pages 147–154.",
+    "CHE Gilbert and Erric Hutto. 2014. Vader: A parsimonious rule-based model for sentiment analysis of social media text. In Eighth International Conference on Weblogs and Social Media (ICWSM-14). Available at (20/04/16) http://comp. social. gatech. edu/papers/icwsm14. vader. hutto. pdf, volume 81, page 82.",
+    "Jian Guan, Fei Huang, Zhihao Zhao, Xiaoyan Zhu, and Minlie Huang. 2020. A knowledge-enhanced pre-training model for commonsense story generation. Transactions of the Association for Computational Linguistics, 8:93–108.",
+    "Tao Li, Tushar Khot, Daniel Khashabi, Ashish Sabharwal, and Vivek Srikumar. 2020. UnQovering stereotyping biases via underspecified questions. In Findings of EMNLP.",
+    "Xiang Li, Aynaz Taheri, Lifu Tu, and Kevin Gimpel. 2016. Commonsense knowledge base completion. In Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 1445–1455.",
+    "Bill Yuchen Lin, Xinyue Chen, Jamin Chen, and Xiang Ren. 2019. KagNet: Knowledge-aware graph networks for commonsense reasoning. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 2829–2839, Hong Kong, China. Association for Computational Linguistics.",
+    "Gardner Ed Lindzey and Elliot Ed Aronson. 1968. The handbook of social psychology.",
+    "Ninareh Mehrabi, Thamme Gowda, Fred Morstatter, Nanyun Peng, and Aram Galstyan. 2020. Man is to person as woman is to location: Measuring gender bias in named entity recognition. In Proceedings of the 31st ACM Conference on Hypertext and Social Media, pages 231–232.",
+    "Ninareh Mehrabi, Fred Morstatter, Nripsuta Saxena, Kristina Lerman, and Aram Galstyan. 2021. A survey on bias and fairness in machine learning. ACM Comput. Surv., 54(6).",
+    "George A Miller. 1995. Wordnet: a lexical database for english. Communications of the ACM, 38(11):39-41.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2020. Stereoset: Measuring stereotypical bias in pretrained language models. arXiv preprint arXiv:2004.09456.",
+    "Alec Radford, Karthik Narasimhan, Tim Salimans, and Ilya Sutskever. 2018. Improving language understanding by generative pre-training.",
+    "Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. 2019. Language models are unsupervised multitask learners. OpenAI blog, 1(8):9.",
+    "Maarten Sap, Ronan Le Bras, Emily Allaway, Chandra Bhagavatula, Nicholas Lourie, Hannah Rashkin, Brendan Roof, Noah A Smith, and Yejin Choi. 2019. Atomic: An atlas of machine commonsense for if-then reasoning. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 33, pages 3027–3035.",
+    "Emily Sheng, Kai-Wei Chang, Prem Natarajan, and Nanyun Peng. 2019. The woman worked as a babysitter: On biases in language generation. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 3398–3403.",
+    "Emily Sheng, Kai-Wei Chang, Prem Natarajan, and Nanyun Peng. 2020. Towards Controllable Biases in Language Generation. In Findings of the Association for Computational Linguistics: EMNLP 2020, pages 3239–3254, Online. Association for Computational Linguistics.",
+    "Vered Shwartz, Peter West, Ronan Le Bras, Chandra Bhagavatula, and Yejin Choi. 2020. Unsupervised commonsense question answering with self-talk. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 4615–4629.",
+    "Push Singh, Thomas Lin, Erik T Mueller, Grace Lim, Travell Perkins, and Wan Li Zhu. 2002. Open mind common sense: Knowledge acquisition from the general public. In OTM Confederated International Conferences\" On the Move to Meaningful Internet Systems\", pages 1223–1237. Springer.",
+    "Robyn Speer. 2017. Conceptnet numberbatch 17.04: better, less-stereotyped word vectors. ConceptNet blog. April, 24.",
+    "Robyn Speer, Joshua Chin, and Catherine Havasi. 2017. Conceptnet 5.5: an open multilingual graph of general knowledge. In Proceedings of the Thirty-First AAAI Conference on Artificial Intelligence, pages 4444–4451.",
+    "Shane Storks, Qiaozi Gao, and Joyce Y Chai. 2019. Commonsense reasoning for natural language understanding: A survey of benchmarks, resources, and approaches. arXiv preprint arXiv:1904.01172, pages 1–60.",
+    "Tony Sun, Andrew Gaut, Shirlyn Tang, Yuxin Huang, Mai ElSherief, Jieyu Zhao, Diba Mirza, Elizabeth Belding, Kai-Wei Chang, and William Yang Wang. 2019. Mitigating gender bias in natural language processing: Literature review. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 1630–1640.",
+    "Chris Sweeney and Maryam Najafian. 2019. A transparent framework for evaluating unintended demographic bias in word embeddings. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 1662–1667, Florence, Italy. Association for Computational Linguistics.",
+    "Yla R. Tausczik and James W. Pennebaker. 2010. The psychological meaning of words: Liwc and computerized text analysis methods. Journal of Language and Social Psychology, 29(1):24–54.",
+    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang. 2018a. Gender bias in coreference resolution: Evaluation and debiasing methods. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 15–20.",
+    "Jieyu Zhao, Yichao Zhou, Zeyu Li, Wei Wang, and Kai-Wei Chang. 2018b. Learning gender-neutral word embeddings. In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, pages 4847–4853.",
+    "Hao Zhou, Tom Young, Minlie Huang, Haizhou Zhao, Jingfang Xu, and Xiaoyan Zhu. 2018. Commonsense knowledge aware conversation generation with graph attention. In Proceedings of the Twenty-Seventh International Joint Conference on Artificial Intelligence, IJCAI-18, pages 4623–4629. International Joint Conferences on Artificial Intelligence Organization.",
+    "Pei Zhou, Karthik Gopalakrishnan, Behnam Hedayatnia, Seokhwan Kim, Jay Pujara, Xiang Ren, Yang Liu, and Dilek Hakkani-Tur. 2021. Commonsense-focused dialogues for response generation: An empirical study. In Proceedings of the 22nd Annual Meeting of the Special Interest Group on Discourse and Dialogue, pages 121–132, Singapore and Online. Association for Computational Linguistics.",
+    "Pei Zhou, Weijia Shi, Jieyu Zhao, Kuan-Hao Huang, Muhao Chen, Ryan Cotterell, and Kai-Wei Chang. 2019. Examining gender bias in languages with grammatical gender. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 5276–5284."
+  ],
+  "measurement_description": "Quantifying representational harms, specifically intra-target overgeneralization (polarized perceptions like prejudice or favoritism) and inter-target disparity (differences in representation), towards religious groups in commonsense knowledge bases (CSKBs) and the downstream models trained on them. The measurement is performed using sentiment and regard classifiers on statements associated with religious terms."
 }

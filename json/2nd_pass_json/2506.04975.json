@@ -2,92 +2,59 @@
   "filename": "2506.04975.pdf",
   "title": "Evaluating Prompt-Driven Chinese Large Language Models: The Influence of Persona Assignment on Stereotypes and Safeguards",
   "arxiv_url": "https://arxiv.org/pdf/2506.04975",
-  "benchmark_measurement": "The benchmark measured the refusal rate and toxicity level of LLM responses towards various social groups, including religion. This was done to evaluate how persona assignment influences harmful content generation in a Chinese context.",
-  "religious_groups": [
-    "Buddhism",
-    "Taoism"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Comparing the refusal rates and toxicity levels of LLM responses when assigned male versus female personas (e.g., male vs. female journalists or politicians), as well as prompting the model to discuss gender-based target social groups."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Analyzing refusal rates (via fine-tuned BERT classifier) and toxicity scores (via Perspective API) of model outputs when prompted to generate statements about age-related social groups (e.g., teenagers, old men)."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Analyzing refusal rates and toxicity scores of model outputs when prompted to generate statements about people with disabilities (e.g., deaf and mute people)."
+    },
+    {
+      "target": "Disease/Health status bias",
+      "methodology": "Analyzing refusal rates and toxicity scores of model outputs when prompted to generate statements about patients with specific diseases or health conditions (e.g., Hepatitis B, depression)."
+    },
+    {
+      "target": "Educational bias",
+      "methodology": "Analyzing refusal rates and toxicity scores of model outputs when prompted to generate statements about groups based on educational qualifications (e.g., part-time graduates, doctoral graduates)."
+    },
+    {
+      "target": "Ethnicity bias",
+      "methodology": "Analyzing refusal rates and toxicity scores of model outputs when prompted to generate statements about different ethnic groups (e.g., Han Chinese, Tibetan)."
+    },
+    {
+      "target": "Nationality bias",
+      "methodology": "Analyzing refusal rates and toxicity scores of model outputs when prompted to generate statements about different nationalities (e.g., Japanese, Koreans)."
+    },
+    {
+      "target": "Physical appearance bias",
+      "methodology": "Analyzing refusal rates and toxicity scores of model outputs when prompted to generate statements about individuals based on their physical appearance (e.g., fat man, fat woman)."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Analyzing refusal rates and toxicity scores of model outputs when prompted to generate statements about different racial groups (e.g., Africans, Europeans)."
+    },
+    {
+      "target": "Regional bias",
+      "methodology": "Analyzing refusal rates and toxicity scores of model outputs when prompted to generate statements about people from different geographic regions (e.g., Northeasterners, Shanghainese, rural people)."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Analyzing refusal rates and toxicity scores of model outputs when prompted to generate statements about religious groups (e.g., Buddhists, Taoists)."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Analyzing refusal rates and toxicity scores of model outputs when prompted to generate statements about specific sexual orientation groups (e.g., homosexual, bisexual)."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Analyzing refusal rates and toxicity scores of model outputs when prompted to generate statements about different socioeconomic classes (e.g., wealthier families, working-class families)."
+    }
   ],
-  "models_tested": [
-    "Qwen-Turbo",
-    "ERNIE-Character-8K"
-  ],
-  "languages_evaluated": [
-    "Chinese",
-    "English"
-  ],
-  "response_type": [
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [],
-  "continuous_testing": false,
-  "findings": "The social group category 'Religion' consistently yielded toxicity scores that were above the overall average, particularly when a negative persona was assigned to the model. Regression analysis confirmed that prompts involving religion had a statistically significant positive effect on the toxicity of the model's output compared to the baseline social group category ('region').",
-  "references": [
-    "Mahyar Abbasian, Iman Azimi, Amir M Rahmani, and Ramesh Jain. 2023. Conversational health agents: A personalized Ilm-powered agent framework. arXiv preprint arXiv:2310.02374 (2023).",
-    "Janice Ahn, Rishu Verma, Renze Lou, Di Liu, Rui Zhang, and Wenpeng Yin. 2024. Large Language Models for Mathematical Reasoning: Progresses and Challenges. In Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics: Student Research Workshop, Neele Falk, Sara Papi, and Mike Zhang (Eds.). Association for Computational Linguistics, St. Julian's, Malta, 225-237. https://aclanthology.org/2024.eacl-srw.17/",
-    "Andy Arditi, Oscar Obeso, Aaquib Syed, Daniel Paleka, Nina Panickssery, Wes Gurnee, and Neel Nanda. 2024. Refusal in language models is mediated by a single direction. URL https://arxiv. org/abs/2406.11717 (2024).",
-    "Emily M. Bender, Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. 2021. On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?. In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency (Virtual Event, Canada) (FAccT '21). Association for Computing Machinery, New York, NY, USA, 610-623. doi:10.1145/3442188.3445922",
-    "Daniel Berrar et al. 2019. Cross-validation.",
-    "Andrew Blair-Stanek, Nils Holzenberger, and Benjamin Van Durme. 2023. Can GPT-3 perform statutory reasoning?. In Proceedings of the Nineteenth International Conference on Artificial Intelligence and Law. 22-31.",
-    "Rishi Bommasani, Percy Liang, and Tony Lee. 2023. Holistic evaluation of language models. Annals of the New York Academy of Sciences 1525, 1 (2023), 140-146.",
-    "Angana Borah and Rada Mihalcea. 2024. Towards Implicit Bias Detection and Mitigation in Multi-Agent LLM Interactions. In Findings of the Association for Computational Linguistics: EMNLP 2024, Yaser Al-Onaizan, Mohit Bansal, and Yun-Nung Chen (Eds.). Association for Computational Linguistics, Miami, Florida, USA, 9306-9326. doi:10.18653/v1/2024.findings-emnlp.545",
-    "Myra Cheng, Tiziano Piccardi, and Diyi Yang. 2023. CoMPosT: Characterizing and Evaluating Caricature in LLM Simulations. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, Houda Bouamor, Juan Pino, and Kalika Bali (Eds.). Association for Computational Linguistics, Singapore, 10853-10875. doi:10.18653/v1/2023.emnlp-main.669",
-    "Yujun Cheng, Weiting Zhang, Zhewei Zhang, Chuan Zhang, Shengjin Wang, and Shiwen Mao. 2024. Towards Federated Large Language Models: Motivations, Methods, and Future Directions. IEEE Communications Surveys & Tutorials (2024), 1-1. doi:10.1109/COMST.2024.3503680",
-    "Jonathan H Choi, Kristin E Hickman, Amy B Monahan, and Daniel Schwarcz. 2021. ChatGPT goes to law school. J. Legal Educ. 71 (2021), 387.",
-    "Jiawen Deng, Jingyan Zhou, Hao Sun, Chujie Zheng, Fei Mi, Helen Meng, and Minlie Huang. 2022. COLD: A Benchmark for Chinese Offensive Language Detection. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, Yoav Goldberg, Zornitsa Kozareva, and Yue Zhang (Eds.). Association for Computational Linguistics, Abu Dhabi, United Arab Emirates, 11580–11599. doi:10.18653/v1/2022.emnlp-main.796",
-    "Erik Derner, Kristina Batistič, Jan Zahálka, and Robert Babuška. 2024. A security risk taxonomy for prompt-based interaction with large language models. IEEE Access (2024).",
-    "Ameet Deshpande, Vishvak Murahari, Tanmay Rajpurohit, Ashwin Kalyan, and Karthik Narasimhan. 2023. Toxicity in chatgpt: Analyzing persona-assigned language models. In Findings of the Association for Computational Linguistics: EMNLP 2023, Houda Bouamor, Juan Pino, and Kalika Bali (Eds.). Association for Computational Linguistics, Singapore, 1236-1270. doi:10.18653/v1/2023.findings-emnlp.88",
-    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), Jill Burstein, Christy Doran, and Thamar Solorio (Eds.). Association for Computational Linguistics, Minneapolis, Minnesota, 4171-4186. doi:10.18653/v1/N19-1423",
-    "Sumanth Doddapaneni, Mohammed Safi Ur Rahman Khan, Sshubam Verma, and Mitesh M Khapra. 2024. Finding Blind Spots in Evaluator LLMs with Interpretable Checklists. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, Yaser Al-Onaizan, Mohit Bansal, and Yun-Nung Chen (Eds.). Association for Computational Linguistics, Miami, Florida, USA, 16279-16309. doi:10.18653/v1/2024.emnlp-main.911",
-    "Zane Durante, Qiuyuan Huang, Naoki Wake, Ran Gong, Jae Sung Park, Bidipta Sarkar, Rohan Taori, Yusuke Noda, Demetri Terzopoulos, Yejin Choi, et al. 2024. Agent ai: Surveying the horizons of multimodal interaction. arXiv preprint arXiv:2401.03568 (2024).",
-    "Farshid Faal, Ketra Schmitt, and Jia Yuan Yu. 2023. Reward modeling for mitigating toxicity in transformer-based language models. Applied Intelligence 53, 7 (2023), 8421-8435.",
-    "Shangbin Feng, Chan Young Park, Yuhan Liu, and Yulia Tsvetkov. 2023. From Pretraining Data to Language Models to Downstream Tasks: Tracking the Trails of Political Biases Leading to Unfair NLP Models. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), Anna Rogers, Jordan Boyd-Graber, and Naoaki Okazaki (Eds.). Association for Computational Linguistics, Toronto, Canada, 11737-11762. doi:10.18653/v1/2023.acl-long.656",
-    "Apostolos Filippas, John J. Horton, and Benjamin S. Manning. 2024. Large Language Models as Simulated Economic Agents: What Can We Learn from Homo Silicus?. In Proceedings of the 25th ACM Conference on Economics and Computation (New Haven, CT, USA) (EC '24). Association for Computing Machinery, New York, NY, USA, 614-615. doi:10.1145/3670865.3673513",
-    "Nicoló Fontana, Francesco Pierri, and Luca Maria Aiello. 2024. Nicer Than Humans: How do Large Language Models Behave in the Prisoner's Dilemma? arXiv preprint arXiv:2406.13605 (2024).",
-    "Jonas Freiknecht and Wolfgang Effelsberg. 2020. Procedural Generation of Interactive Stories using Language Models. In Proceedings of the 15th International Conference on the Foundations of Digital Games (Bugibba, Malta) (FDG '20). Association for Computing Machinery, New York, NY, USA, Article 97, 8 pages. doi:10.1145/3402942.3409599",
-    "Isabel O. Gallegos, Ryan A. Rossi, Joe Barrow, Md Mehrab Tanjim, Sungchul Kim, Franck Dernoncourt, Tong Yu, Ruiyi Zhang, and Nesreen K. Ahmed. 2024. Bias and Fairness in Large Language Models: A Survey. Computational Linguistics 50, 3 (Sept. 2024), 1097-1179. doi:10.1162/coli_a_00524",
-    "Samuel Gehman, Suchin Gururangan, Maarten Sap, Yejin Choi, and Noah A. Smith. 2020. RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models. In Findings of the Association for Computational Linguistics: EMNLP 2020, Trevor Cohn, Yulan He, and Yang Liu (Eds.). Association for Computational Linguistics, Online, 3356-3369. doi:10.18653/v1/2020.findings-emnlp.301",
-    "Taicheng Guo, Xiuying Chen, Yaqi Wang, Ruidi Chang, Shichao Pei, Nitesh V Chawla, Olaf Wiest, and Xiangliang Zhang. 2024. Large language model based multi-agents: A survey of progress and challenges. arXiv preprint arXiv:2402.01680 (2024).",
-    "Shashank Gupta, Vaishnavi Shrivastava, Ameet Deshpande, Ashwin Kalyan, Peter Clark, Ashish Sabharwal, and Tushar Khot. 2024. Bias Runs Deep: Implicit Reasoning Biases in Persona-Assigned LLMs. In The Twelfth International Conference on Learning Representations.",
-    "Suchin Gururangan, Ana Marasović, Swabha Swayamdipta, Kyle Lo, Iz Beltagy, Doug Downey, and Noah A. Smith. 2020. Don't Stop Pretraining: Adapt Language Models to Domains and Tasks. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, Dan Jurafsky, Joyce Chai, Natalie Schluter, and Joel Tetreault (Eds.). Association for Computational Linguistics, Online, 8342-8360. doi:10.18653/v1/2020.acl-main.740",
-    "Vojtěch Hudeček and Ondrej Dusek. 2023. Are Large Language Models All You Need for Task-Oriented Dialogue?. In Proceedings of the 24th Annual Meeting of the Special Interest Group on Discourse and Dialogue, Svetlana Stoyanchev, Shafiq Joty, David Schlangen, Ondrej Dusek, Casey Kennington, and Malihe Alikhani (Eds.). Association for Computational Linguistics, Prague, Czechia, 216-228. doi:10.18653/v1/2023.sigdial-1.21",
-    "Hannah Kirk, Abeba Birhane, Bertie Vidgen, and Leon Derczynski. 2022. Handling and Presenting Harmful Text in NLP Research. In Findings of the Association for Computational Linguistics: EMNLP 2022, Yoav Goldberg, Zornitsa Kozareva, and Yue Zhang (Eds.). Association for Computational Linguistics, Abu Dhabi, United Arab Emirates, 497-510. doi:10.18653/v1/2022.findings-emnlp.35",
-    "Hadas Kotek, Rikker Dockum, and David Sun. 2023. Gender bias and stereotypes in Large Language Models. In Proceedings of The ACM Collective Intelligence Conference (Delft, Netherlands) (CI '23). Association for Computing Machinery, New York, NY, USA, 12-24. doi:10.1145/3582269.3615599",
-    "Ben Krause, Akhilesh Deepak Gotmare, Bryan McCann, Nitish Shirish Keskar, Shafiq Joty, Richard Socher, and Nazneen Fatema Rajani. 2021. GeDi: Generative Discriminator Guided Sequence Generation. In Findings of the Association for Computational Linguistics: EMNLP 2021, Marie-Francine Moens, Xuanjing Huang, Lucia Specia, and Scott Wen-tau Yih (Eds.). Association for Computational Linguistics, Punta Cana, Dominican Republic, 4929-4952. doi:10.18653/v1/2021.findings-emnlp.424",
-    "Peter A Lachenbruch. 2014. McNemar test. Wiley StatsRef: Statistics Reference Online (2014).",
-    "Alina Leidinger and Richard Rogers. 2024. How Are LLMs Mitigating Stereotyping Harms? Learning from Search Engine Studies. In Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society, Vol. 7. 839-854.",
-    "Rui Li, Deji Fu, Chunyu Shi, Zhilan Huang, and Gang Lu. 2024. Efficient LLMs Training and Inference: An Introduction. IEEE Access (2024).",
-    "Yaqiong Li, Peng Zhang, Hansu Gu, Tun Lu, Siyuan Qiao, Yubo Shu, Yiyang Shao, and Ning Gu. 2024. DeMod: A Holistic Tool with Explainable Detection and Personalized Modification for Toxicity Censorship. arXiv preprint arXiv:2411.01844 (2024).",
-    "Paul Pu Liang, Chiyu Wu, Louis-Philippe Morency, and Ruslan Salakhutdinov. 2021. Towards understanding and mitigating social biases in language models. In International Conference on Machine Learning. PMLR, 6565–6576.",
-    "Lizhi Lin, Honglin Mu, Zenan Zhai, Minghan Wang, Yuxia Wang, Renxi Wang, Junjie Gao, Yixuan Zhang, Wanxiang Che, Timothy Baldwin, et al. 2025. Against The Achilles' Heel: A Survey on Red Teaming for Generative Models. Journal of Artificial Intelligence Research 82 (2025), 687-775.",
-    "Geng Liu, Carlo Alberto Bono, and Francesco Pierri. 2025. Comparing diversity, negativity, and stereotypes in Chinese-language AI technologies: an investigation of Baidu, Ernie and Qwen. Peer Computer Science 11 (2025), e2694.",
-    "Xiao Liu, Hao Yu, Hanchen Zhang, Yifan Xu, Xuanyu Lei, Hanyu Lai, Yu Gu, Hangliang Ding, Kaiwen Men, Kejuan Yang, et al. 2023. Agentbench: Evaluating llms as agents. arXiv preprint arXiv:2308.03688 (2023).",
-    "Yi Liu, Junzhe Yu, Huijia Sun, Ling Shi, Gelei Deng, Yuqi Chen, and Yang Liu. 2024. Efficient Detection of Toxic Prompts in Large Language Models. In Proceedings of the 39th IEEE/ACM International Conference on Automated Software Engineering (Sacramento, CA, USA) (ASE '24). Association for Computing Machinery, New York, NY, USA, 455-467. doi:10.1145/3691620.3695018",
-    "Tinh Luong, Thanh-Thien Le, Linh Ngo, and Thien Nguyen. 2024. Realistic Evaluation of Toxicity in Large Language Models. In Findings of the Association for Computational Linguistics: ACL 2024, Lun-Wei Ku, Andre Martins, and Vivek Srikumar (Eds.). Association for Computational Linguistics, Bangkok, Thailand, 1038-1047. doi:10.18653/v1/2024. findings-acl.61",
-    "Manuj Malik, Jing Jiang, and Kian Ming Chai. 2024. An Empirical Analysis of the Writing Styles of Persona-Assigned LLMs. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing. 19369–19388.",
-    "Akito Nakanishi, Yukie Sano, Geng Liu, and Francesco Pierri. 2025. Analyzing the Safety of Japanese Large Language Models in Stereotype-Triggering Prompts. arXiv preprint arXiv:2503.01947 (2025).",
-    "Humza Naveed, Asad Ullah Khan, Shi Qiu, Muhammad Saqib, Saeed Anwar, Muhammad Usman, Naveed Akhtar, Nick Barnes, and Ajmal Mian. 2023. A comprehensive overview of large language models. arXiv preprint arXiv:2307.06435 (2023).",
-    "Gianluca Nogara, Francesco Pierri, Stefano Cresci, Luca Luceri, Petter Törnberg, and Silvia Giordano. 2023. Toxic Bias: Perspective API misreads German as more toxic. arXiv preprint arXiv:2312.12651 (2023).",
-    "Deonna M Owens, Ryan A Rossi, Sungchul Kim, Tong Yu, Franck Dernoncourt, Xiang Chen, Ruiyi Zhang, Jiuxiang Gu, Hanieh Deilamsalehy, and Nedim Lipka. 2024. A multi-llm debiasing framework. arXiv preprint arXiv:2409.13884 (2024).",
-    "Joon Sung Park, Joseph O'Brien, Carrie Jun Cai, Meredith Ringel Morris, Percy Liang, and Michael S Bernstein. 2023. Generative agents: Interactive simulacra of human behavior. In Proceedings of the 36th annual acm symposium on user interface software and technology. 1-22.",
-    "Joon Sung Park, Lindsay Popowski, Carrie Cai, Meredith Ringel Morris, Percy Liang, and Michael S. Bernstein. 2022. Social Simulacra: Creating Populated Prototypes for Social Computing Systems. In Proceedings of the 35th Annual ACM Symposium on User Interface Software and Technology (Bend, OR, USA) (UIST '22). Association for Computing Machinery, New York, NY, USA, Article 74, 18 pages. doi:10.1145/3526113.3545616",
-    "Damian Pascual, Beni Egressy, Clara Meister, Ryan Cotterell, and Roger Wattenhofer. 2021. A Plug-and-Play Method for Controlled Text Generation. In Findings of the Association for Computational Linguistics: EMNLP 2021, Marie-Francine Moens, Xuanjing Huang, Lucia Specia, and Scott Wen-tau Yih (Eds.). Association for Computational Linguistics, Punta Cana, Dominican Republic, 3973-3997. doi:10.18653/v1/2021.findings-emnlp.334",
-    "Siddhesh Pawar, Junyeong Park, Jiho Jin, Arnav Arora, Junho Myung, Srishti Yadav, Faiz Ghifari Haznitrama, Inhwa Song, Alice Oh, and Isabelle Augenstein. 2024. Survey of cultural awareness in language models: Text and beyond. arXiv preprint arXiv:2411.00860 (2024).",
-    "Parijat Rai, Saumil Sood, Vijay K Madisetti, and Arshdeep Bahga. 2024. Guardian: A multi-tiered defense architecture for thwarting prompt injection attacks on llms. Journal of Software Engineering and Applications 17, 1 (2024), 43-68.",
-    "Paul Röttger, Fabio Pernisi, Bertie Vidgen, and Dirk Hovy. 2024. Safetyprompts: a systematic review of open datasets for evaluating and improving large language model safety. arXiv preprint arXiv:2404.05399 (2024).",
-    "Joni Salminen, Chang Liu, Wenjing Pian, Jianxing Chi, Essi Häyhänen, and Bernard J Jansen. 2024. Deus Ex Machina and Personas from Large Language Models: Investigating the Composition of AI-Generated Persona Descriptions. In Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems (Honolulu, HI, USA) (CHI '24). Association for Computing Machinery, New York, NY, USA, Article 510, 20 pages. doi:10.1145/3613904.3642036",
-    "Yingshui Tan, Boren Zheng, Baihui Zheng, Kerui Cao, Huiyun Jing, Jincheng Wei, Jiaheng Liu, Yancheng He, Wenbo Su, Xiangyong Zhu, and Bo Zheng. 2024. Chinese SafetyQA: A Safety Short-form Factuality Benchmark for Large Language Models. arXiv:2412.15265 [cs.CL] https://arxiv.org/abs/2412.15265",
-    "Yu-Min Tseng, Yu-Chao Huang, Teng-Yun Hsiao, Yu-Ching Hsu, Jia-Yin Foo, Chao-Wei Huang, and Yun-Nung Chen. 2024. Two tales of persona in llms: A survey of role-playing and personalization. arXiv preprint arXiv:2406.01171 (2024).",
-    "Bertie Vidgen and Leon Derczynski. 2020. Directions in abusive language training data, a systematic review: Garbage in, garbage out. Plos one 15, 12 (2020), e0243300.",
-    "Lei Wang and Ee-Peng Lim. 2023. Zero-Shot Next-Item Recommendation using Large Pretrained Language Models. arXiv preprint arXiv:2304.03153 (2023).",
-    "Alexander Wei, Nika Haghtalab, and Jacob Steinhardt. 2023. Jailbroken: How does llm safety training fail? Advances in Neural Information Processing Systems 36 (2023), 80079-80110.",
-    "Joel Wester, Tim Schrills, Henning Pohl, and Niels van Berkel. 2024. \"As an AI language model, I cannot\": Investigating LLM Denials of User Requests. In Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems (Honolulu, HI, USA) (CHI '24). Association for Computing Machinery, New York, NY, USA, Article 979, 14 pages. doi:10.1145/3613904.3642135",
-    "Yifan Yao, Jinhao Duan, Kaidi Xu, Yuanfang Cai, Zhibo Sun, and Yue Zhang. 2024. A survey on large language model (llm) security and privacy: The good, the bad, and the ugly. High-Confidence Computing (2024), 100211.",
-    "Chao Yu and Drew Margolin. 2024. Topic territoriality and the cost of civility: examining the impact of IP address disclosure on Weibo. Journal of Computer-Mediated Communication 29, 6 (2024), zmae018.",
-    "Zhiyuan Yu, Xiaogeng Liu, Shunning Liang, Zach Cameron, Chaowei Xiao, and Ning Zhang. 2024. Don't Listen To Me: Understanding and Exploring Jailbreak Prompts of Large Language Models. In 33rd USENIX Security Symposium (USENIX Security 24). USENIX Association, Philadelphia, PA.",
-    "Wayne Xin Zhao, Kun Zhou, Junyi Li, Tianyi Tang, Xiaolei Wang, Yupeng Hou, Yingqian Min, Beichen Zhang, Junjie Zhang, Zican Dong, et al. 2023. A survey of large language models. arXiv preprint arXiv:2303.18223 (2023).",
-    "Di Zhou and Yinxian Zhang. 2024. Political biases and inconsistencies in bilingual GPT models-the cases of the US and China. Scientific Reports 14, 1 (2024), 25048.",
-    "Xinyu Zhu, Junjie Wang, Lin Zhang, Yuxiang Zhang, Yongfeng Huang, Ruyi Gan, Jiaxing Zhang, and Yujiu Yang. 2023. Solving Math Word Problems via Cooperative Reasoning induced Language Models. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), Anna Rogers, Jordan Boyd-Graber, and Naoaki Okazaki (Eds.). Association for Computational Linguistics, Toronto, Canada, 4471-4485. doi:10.18653/v1/2023.acl-long.245",
-    "Noah Ziems, Wenhao Yu, Zhihan Zhang, and Meng Jiang. 2023. Large Language Models are Built-in Autoregressive Search Engines. In Findings of the Association for Computational Linguistics: ACL 2023, Anna Rogers, Jordan Boyd-Graber, and Naoaki Okazaki (Eds.). Association for Computational Linguistics, Toronto, Canada, 2666-2678. doi:10. 18653/v1/2023.findings-acl.167"
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

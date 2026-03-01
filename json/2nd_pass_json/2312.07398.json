@@ -2,72 +2,11 @@
   "filename": "2312.07398.pdf",
   "title": "LLMEval: A Preliminary Study on How to Evaluate Large Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2312.07398",
-  "benchmark_measurement": "The paper does not measure any aspects of faith or religion. Its benchmarks, LLMEval-1 and LLMEval-2, focus on general cognitive abilities (e.g., reasoning, translation, summarization) and knowledge in 12 academic subjects (e.g., chemistry, law, computer science), none of which include religious studies or theology.",
-  "religious_groups": [],
-  "models_tested": [
-    "GPT4.0",
-    "GPT3.5",
-    "Xunfei-xinghuo",
-    "Baichuan-7B-Align",
-    "ChatGLM-6B",
-    "Chinese-LLAMA-7B",
-    "Ali-Tongyiqianwen",
-    "NewBing",
-    "MOSS-16B",
-    "Linly-ChatFlow-13B",
-    "ChatYuan-Large",
-    "MOSS-w-Plugin-16B",
-    "Baichuan-13B-Chat",
-    "MiniMax-abab5",
-    "Claude",
-    "moss-mars",
-    "Kunlun-Tiangong",
-    "Ziya-LLaMA-13B-v1",
-    "360",
-    "CIIC-Zhigong",
-    "ChatGLM2-6B",
-    "Vicuna-33B",
-    "InternLM-7B",
-    "ChatGLM-130B",
-    "TigerBot-180B",
-    "AquilaChat-7b",
-    "BELLE-7B-2M"
+  "bias_targets": [
+    {
+      "target": "Length bias",
+      "methodology": "Comparing the selection frequency of human evaluators versus GPT-4 when judging pairs of LLM responses with significant length differences (e.g., over 100 or 300 characters) to measure the tendency of the evaluator to favor longer, more verbose texts."
+    }
   ],
-  "languages_evaluated": [
-    "Chinese"
-  ],
-  "response_type": [
-    "long"
-  ],
-  "religion_component": "none",
-  "base_benchmarks": [
-    "HELM",
-    "MMLU",
-    "C-Eval",
-    "AGIEval",
-    "BERTScore",
-    "AlpacaFarm",
-    "Chatbot Arena"
-  ],
-  "continuous_testing": false,
-  "findings": "The paper does not contain any analysis or findings related to religion or faith.",
-  "references": [
-    "Askell, A.; Bai, Y.; Chen, A.; Drain, D.; Ganguli, D.; Henighan, T.; Jones, A.; Joseph, N.; Mann, B.; DasSarma, N.; Elhage, N.; Hatfield-Dodds, Z.; Hernandez, D.; Kernion, J.; Ndousse, K.; Olsson, C.; Amodei, D.; Brown, T.; Clark, J.; McCandlish, S.; Olah, C.; and Kaplan, J. 2021. A General Language Assistant as a Laboratory for Alignment. arXiv:2112.00861.",
-    "Chang, Y.; Wang, X.; Wang, J.; Wu, Y.; Zhu, K.; Chen, H.; Yang, L.; Yi, X.; Wang, C.; Wang, Y.; Ye, W.; Zhang, Y.; and Yu, P. 2023. A Survey on Evaluation of Large Language Models.",
-    "Dubois, Y.; Li, X.; Taori, R.; Zhang, T.; Gulrajani, I.; Ba, J.; Guestrin, C.; Liang, P.; and Hashimoto, T. B. 2023. AlpacaFarm: A Simulation Framework for Methods that Learn from Human Feedback. arXiv:2305.14387.",
-    "Fu, J.; Ng, S.-K.; Jiang, Z.; and Liu, P. 2023. GPTScore: Evaluate as You Desire. arXiv:2302.04166.",
-    "Hendrycks, D.; Burns, C.; Basart, S.; Zou, A.; Mazeika, M.; Song, D.; and Steinhardt, J. 2021. Measuring Massive Multitask Language Understanding. arXiv:2009.03300.",
-    "Huang, Y.; Bai, Y.; Zhu, Z.; Zhang, J.; Zhang, J.; Su, T.; Liu, J.; Lv, C.; Zhang, Y.; Lei, J.; Fu, Y.; Sun, M.; and He, J. 2023. C-Eval: A Multi-Level Multi-Discipline Chinese Evaluation Suite for Foundation Models. arXiv:2305.08322.",
-    "Kusner, M. J.; Sun, Y.; Kolkin, N. I.; and Weinberger, K. Q. 2015. From Word Embeddings To Document Distances. In International Conference on Machine Learning.",
-    "Liang, P.; Bommasani, R.; Lee, T.; Tsipras, D.; Soylu, D.; Yasunaga, M.; Zhang, Y.; Narayanan, D.; Wu, Y.; Kumar, A.; Newman, B.; Yuan, B.; Yan, B.; Zhang, C.; Cosgrove, C.; Manning, C. D.; Ré, C.; Acosta-Navas, D.; Hudson, D. A.; Zelikman, E.; Durmus, E.; Ladhak, F.; Rong, F.; Ren, H.; Yao, H.; Wang, J.; Santhanam, K.; Orr, L.; Zheng, L.; Yuksekgonul, M.; Suzgun, M.; Kim, N.; Guha, N.; Chatterji, N.; Khattab, O.; Henderson, P.; Huang, Q.; Chi, R.; Xie, S. M.; Santurkar, S.; Ganguli, S.; Hashimoto, T.; Icard, T.; Zhang, T.; Chaudhary, V.; Wang, W.; Li, X.; Mai, Y.; Zhang, Y.; and Koreeda, Y. 2022. Holistic Evaluation of Language Models. arXiv:2211.09110.",
-    "Lin, C.-Y. 2004. ROUGE: A Package for Automatic Evaluation of Summaries. In Annual Meeting of the Association for Computational Linguistics.",
-    "Liu, Y.; Iter, D.; Xu, Y.; Wang, S.; Xu, R.; and Zhu, C. 2023. G-Eval: NLG Evaluation using GPT-4 with Better Human Alignment. arXiv:2303.16634.",
-    "Papineni, K.; Roukos, S.; Ward, T.; and Zhu, W.-J. 2002. Bleu: a Method for Automatic Evaluation of Machine Translation. In Proceedings of the 40th Annual Meeting of the Association for Computational Linguistics, 311-318. Philadelphia, Pennsylvania, USA: Association for Computational Linguistics.",
-    "Wang, J.; Liang, Y.; Meng, F.; Sun, Z.; Shi, H.; Li, Z.; Xu, J.; Qu, J.; and Zhou, J. 2023a. Is ChatGPT a Good NLG Evaluator? A Preliminary Study. arXiv:2303.04048.",
-    "Wang, P.; Li, L.; Chen, L.; Zhu, D.; Lin, B.; Cao, Y.; Liu, Q.; Liu, T.; and Sui, Z. 2023b. Large Language Models are not Fair Evaluators. arXiv:2305.17926.",
-    "Zhang, T.; Kishore, V.; Wu, F.; Weinberger, K. Q.; and Artzi, Y. 2020. BERTScore: Evaluating Text Generation with BERT. arXiv:1904.09675.",
-    "Zhao, W.; Peyrard, M.; Liu, F.; Gao, Y.; Meyer, C. M.; and Eger, S. 2019. MoverScore: Text Generation Evaluating with Contextualized Embeddings and Earth Mover Distance. arXiv:1909.02622.",
-    "Zheng, L.; Chiang, W.-L.; Sheng, Y.; Zhuang, S.; Wu, Z.; Zhuang, Y.; Lin, Z.; Li, Z.; Li, D.; Xing, E. P.; Zhang, H.; Gonzalez, J. E.; and Stoica, I. 2023. Judging LLM-as-a-judge with MT-Bench and Chatbot Arena. arXiv:2306.05685.",
-    "Zhong, W.; Cui, R.; Guo, Y.; Liang, Y.; Lu, S.; Wang, Y.; Saied, A.; Chen, W.; and Duan, N. 2023. AGIEval: A Human-Centric Benchmark for Evaluating Foundation Models. arXiv:2304.06364."
-  ]
+  "primary_bias_target": "Length bias"
 }

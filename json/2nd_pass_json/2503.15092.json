@@ -2,89 +2,43 @@
   "filename": "2503.15092.pdf",
   "title": "TOWARDS UNDERSTANDING THE SAFETY BOUNDARIES OF DEEPSEEK MODELS: EVALUATION AND FINDINGS",
   "arxiv_url": "https://arxiv.org/pdf/2503.15092",
-  "benchmark_measurement": "The benchmark measured the generation of discriminatory content based on faith or religion, labeled as 'Faith discrimination (FD)' within the broader category of 'Discriminatory Content'.",
-  "religious_groups": [],
-  "models_tested": [
-    "DeepSeek-R1",
-    "DeepSeek-V3",
-    "DeepSeek-VL2",
-    "Janus-Pro-7B",
-    "Doubao-1.5-pro-32k-250115",
-    "Hunyuan-turbo-latest",
-    "Moonshot-v1-8k",
-    "Qwen-Max",
-    "QwQ-32B",
-    "Stable-Diffusion-3.5-Large"
+  "bias_targets": [
+    {
+      "target": "Ethnic bias",
+      "methodology": "Evaluating the Attack Success Rate (ASR) of models generating discriminatory content using the CNSafe safety evaluation benchmark, assessed via a hybrid approach of LLM-as-Judge and human evaluation."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluating the Attack Success Rate (ASR) of models generating discriminatory content using the CNSafe safety evaluation benchmark, assessed via a hybrid approach of LLM-as-Judge and human evaluation."
+    },
+    {
+      "target": "Nationality bias",
+      "methodology": "Evaluating the Attack Success Rate (ASR) of models generating discriminatory content using the CNSafe safety evaluation benchmark, assessed via a hybrid approach of LLM-as-Judge and human evaluation."
+    },
+    {
+      "target": "Regional bias",
+      "methodology": "Evaluating the Attack Success Rate (ASR) of models generating discriminatory content using the CNSafe safety evaluation benchmark, assessed via a hybrid approach of LLM-as-Judge and human evaluation."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating the Attack Success Rate (ASR) of models generating discriminatory content using the CNSafe safety evaluation benchmark, assessed via a hybrid approach of LLM-as-Judge and human evaluation."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Evaluating the Attack Success Rate (ASR) of models generating discriminatory content using the CNSafe safety evaluation benchmark, assessed via a hybrid approach of LLM-as-Judge and human evaluation."
+    },
+    {
+      "target": "Occupational bias",
+      "methodology": "Evaluating the Attack Success Rate (ASR) of models generating discriminatory content using the CNSafe safety evaluation benchmark, assessed via a hybrid approach of LLM-as-Judge and human evaluation."
+    },
+    {
+      "target": "Health status bias",
+      "methodology": "Evaluating the Attack Success Rate (ASR) of models generating discriminatory content using the CNSafe safety evaluation benchmark, assessed via a hybrid approach of LLM-as-Judge and human evaluation."
+    },
+    {
+      "target": "Language bias",
+      "methodology": "Comparing the Attack Success Rates (ASR) of models across safety benchmarks when receiving identical test queries in Chinese versus English to identify cross-lingual disparities."
+    }
   ],
-  "languages_evaluated": [
-    "Chinese",
-    "English"
-  ],
-  "response_type": [
-    "long",
-    "other"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "CNSafe",
-    "CNSafe_RT",
-    "SafeBench",
-    "MM-SafetyBench",
-    "I2P"
-  ],
-  "continuous_testing": true,
-  "findings": "The models were evaluated for 'Faith discrimination'. The attack success rates (ASRs) varied significantly by model and language. The DeepSeek-R1 model in English showed a particularly high ASR of over 50% for faith discrimination, which was substantially higher than its ASR in Chinese (around 25%) and also higher than the DeepSeek-V3 model in either language. This indicates a notable vulnerability to generating faith-based discriminatory content, especially for the DeepSeek-R1 model when prompted in English.",
-  "references": [
-    "Razii Abraham. Democratizing ai's frontiers: A critical review of deepseek ai's open-source ecosys- tem. 2025.",
-    "Stability AI. Stable diffusion 3.5 large. Hugging Face Model Repository, 2024. URL https: //huggingface.co/stabilityai/stable-diffusion-3.5-large. Accessed: 2025-03-15.",
-    "Haozhe An, Christabel Acquaye, Colin Wang, Zongxia Li, and Rachel Rudinger. Do large language models discriminate in hiring decisions on the basis of race, ethnicity, and gender? arXiv preprint arXiv:2406.10486, 2024.",
-    "Aitor Arrieta, Miriam Ugarte, Pablo Valle, José Antonio Parejo, and Sergio Segura. 03-mini vs deepseek-r1: Which one is safer? arXiv preprint arXiv:2501.18438, 2025.",
-    "Weilin Cai, Juyong Jiang, Fan Wang, Jing Tang, Sunghun Kim, and Jiayi Huang. A survey on mixture of experts, 2024. URL https://arxiv.org/abs/2407.06204.",
-    "Xiaokang Chen, Zhiyu Wu, Xingchao Liu, Zizheng Pan, Wen Liu, Zhenda Xie, Xingkai Yu, and Chong Ruan. Janus-pro: Unified multimodal understanding and generation with data and model scaling. arXiv preprint arXiv:2501.17811, 2025.",
-    "Yingkai Dong, Zheng Li, Xiangtao Meng, Ning Yu, and Shanqing Guo. Jailbreaking text-to-image models with llm-based agents, 2024. URL https://arxiv.org/abs/2408.00523.",
-    "Lisle Faray de Paiva, Gijs Luijten, Behrus Puladi, and Jan Egger. How does deepseek-r1 perform on usmle? medRxiv, pp. 2025-02, 2025.",
-    "Sensen Gao, Xiaojun Jia, Yihao Huang, Ranjie Duan, Jindong Gu, Yang Bai, Yang Liu, and Qing Guo. Hts-attack: Heuristic token search for jailbreaking text-to-image models, 2024. URL https://arxiv.org/abs/2408.13896.",
-    "Daya Guo, Dejian Yang, Haowei Zhang, Junxiao Song, Ruoyu Zhang, Runxin Xu, Qihao Zhu, Shirong Ma, Peiyi Wang, Xiao Bi, et al. Deepseek-r1: Incentivizing reasoning capability in Ilms via reinforcement learning. arXiv preprint arXiv:2501.12948, 2025.",
-    "Jun Guo, Wei Bao, Jiakai Wang, Yuqing Ma, Xinghai Gao, Gang Xiao, Aishan Liu, Jian Dong, Xi- anglong Liu, and Wenjun Wu. A comprehensive evaluation framework for deep model robustness. Pattern Recognition, 2023.",
-    "Zonglei Jing, Zonghao Ying, Le Wang, Siyuan Liang, Aishan Liu, Xianglong Liu, and Dacheng Tao. Cogmorph: Cognitive morphing attacks for text-to-image models, 2025. URL https: //arxiv.org/abs/2501.11815.",
-    "Minseon Kim, Hyomin Lee, Boqing Gong, Huishuai Zhang, and Sung Ju Hwang. Automatic jail- breaking of the text-to-image generative ai systems, 2024. URL https://arxiv.org/abs/ 2405.16567.",
-    "Aishan Liu, Xianglong Liu, Jiaxin Fan, Yuqing Ma, Anlan Zhang, Huiyuan Xie, and Dacheng Tao. Perceptual-sensitive gan for generating adversarial patches. In AAAI, 2019.",
-    "Aishan Liu, Tairan Huang, Xianglong Liu, Yitao Xu, Yuqing Ma, Xinyun Chen, Stephen J Maybank, and Dacheng Tao. Spatiotemporal attacks for embodied agents. In ECCV, 2020a.",
-    "Aishan Liu, Jiakai Wang, Xianglong Liu, Bowen Cao, Chongzhi Zhang, and Hang Yu. Bias-based universal adversarial patch attack for automatic check-out. In ECCV, 2020b.",
-    "Aishan Liu, Xianglong Liu, Hang Yu, Chongzhi Zhang, Qiang Liu, and Dacheng Tao. Training robust deep neural networks via adversarial noise propagation. TIP, 2021.",
-    "Aishan Liu, Jun Guo, Jiakai Wang, Siyuan Liang, Renshuai Tao, Wenbo Zhou, Cong Liu, Xianglong Liu, and Dacheng Tao. X-adv: Physical adversarial object attacks against x-ray prohibited item detection. In USENIX Security Symposium, 2023a.",
-    "Aishan Liu, Shiyu Tang, Xinyun Chen, Lei Huang, Haotong Qin, Xianglong Liu, and Dacheng Tao. Towards defending multiple lp-norm bounded adversarial perturbations via gated batch normalization. International Journal of Computer Vision, 2023b.",
-    "Aishan Liu, Shiyu Tang, Siyuan Liang, Ruihao Gong, Boxi Wu, Xianglong Liu, and Dacheng Tao. Exploring the relationship between architecture and adversarially robust generalization. In CVPR, 2023c.",
-    "Aixin Liu, Bei Feng, Bing Xue, Bingxuan Wang, Bochao Wu, Chengda Lu, Chenggang Zhao, Chengqi Deng, Chenyu Zhang, Chong Ruan, et al. Deepseek-v3 technical report. arXiv preprint arXiv:2412.19437, 2024a.",
-    "Shunchang Liu, Jiakai Wang, Aishan Liu, Yingwei Li, Yijie Gao, Xianglong Liu, and Dacheng Tao. Harnessing perceptual adversarial patches for crowd counting. In ACM CCS, 2022.",
-    "Xin Liu, Yichen Zhu, Jindong Gu, Yunshi Lan, Chao Yang, and Yu Qiao. Mm-safetybench: A benchmark for safety evaluation of multimodal large language models, 2024b. URL https: //arxiv.org/abs/2311.17600.",
-    "Weidi Luo, Siyuan Ma, Xiaogeng Liu, Xiaoyu Guo, and Chaowei Xiao. Jailbreakv: A benchmark for assessing the robustness of multimodal large language models against jailbreak attacks, 2024. URL https://arxiv.org/abs/2404.03027.",
-    "Jiachen Ma, Anda Cao, Zhiqing Xiao, Yijiang Li, Jie Zhang, Chao Ye, and Junbo Zhao. Jailbreak- ing prompt attack: A controllable adversarial attack against diffusion models. arXiv preprint arXiv:2404.02928, 2024.",
-    "David Mikhail, Andrew Farah, Jason Milad, Wissam Nassrallah, Andrew Mihalache, Daniel Milad, Fares Antaki, Michael Balas, Marko M Popovic, Alessandro Feo, et al. Performance of deepseek- r1 in ophthalmology: An evaluation of clinical decision-making and cost-effectiveness. medRxiv, pp. 2025-02, 2025.",
-    "Zhenxing Niu, Haodong Ren, Xinbo Gao, Gang Hua, and Rong Jin. Jailbreaking attack against multimodal large language model, 2024. URL https://arxiv.org/abs/2402.02309.",
-    "OpenAI,:, Aaron Hurst, Adam Lerer, Adam P. Goucher, Adam Perelman, Aditya Ramesh, et al. Gpt-40 system card, 2024a. URL https://arxiv.org/abs/2410.21276.",
-    "OpenAI, :, Aaron Jaech, Adam Kalai, Adam Lerer, Adam Richardson, et al. Openai ol system card, 2024b. URL https://arxiv.org/abs/2412.16720.",
-    "Manojkumar Parmar and Yuvaraj Govindarajulu. Challenges in ensuring ai safety in deepseek-r1 models: The shortcomings of reinforcement learning strategies. arXiv preprint arXiv:2501.17030, 2025.",
-    "Qwen, :, An Yang, Baosong Yang, Beichen Zhang, Binyuan Hui, et al. Qwen2.5 technical report, 2025. URL https://arxiv.org/abs/2412.15115.",
-    "Paul Röttger, Fabio Pernisi, Bertie Vidgen, and Dirk Hovy. Safetyprompts: a systematic review of open datasets for evaluating and improving large language model safety. arXiv preprint arXiv:2404.05399, 2024.",
-    "Patrick Schramowski, Manuel Brack, Björn Deiseroth, and Kristian Kersting. Safe latent diffu- sion: Mitigating inappropriate degeneration in diffusion models, 2023. URLhttps://arxiv. org/abs/2211.05105.",
-    "Zeyang Sha, Zheng Li, Ning Yu, and Yang Zhang. De-fake: Detection and attribution of fake images generated by text-to-image generation models, 2023. URL https://arxiv.org/ abs/2210.06998.",
-    "Xinyue Shen, Zeyuan Chen, Michael Backes, Yun Shen, and Yang Zhang. \"do anything now\": Char- acterizing and evaluating in-the-wild jailbreak prompts on large language models, 2024. URL https://arxiv.org/abs/2308.03825.",
-    "Shiyu Tang, Ruihao Gong, Yan Wang, Aishan Liu, Jiakai Wang, Xinyun Chen, Fengwei Yu, Xian- glong Liu, Dawn Song, Alan Yuille, et al. Robustart: Benchmarking robustness on architecture design and training techniques. ArXiv, 2021.",
-    "Jiakai Wang, Aishan Liu, Zixin Yin, Shunchang Liu, Shiyu Tang, and Xianglong Liu. Dual attention suppression attack: Generate adversarial camouflage in physical world. In CVPR, 2021.",
-    "Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Fei Xia, Ed Chi, Quoc V Le, Denny Zhou, et al. Chain-of-thought prompting elicits reasoning in large language models. Advances in neural information processing systems, 35:24824–24837, 2022.",
-    "Zhiyu Wu, Xiaokang Chen, Zizheng Pan, Xingchao Liu, Wen Liu, Damai Dai, Huazuo Gao, Yiyang Ma, Chengyue Wu, Bingxuan Wang, et al. Deepseek-vl2: Mixture-of-experts vision-language models for advanced multimodal understanding. arXiv preprint arXiv:2412.10302, 2024.",
-    "Zhiyuan Xu, Joseph Gardiner, and Sana Belguith. The dark deep side of deepseek: Fine-tuning attacks against the safety alignment of cot-enabled models. arXiv preprint arXiv:2502.01225, 2025.",
-    "Zonghao Ying and Bin Wu. Nba: defensive distillation for backdoor removal via neural behavior alignment. Cybersecurity, 6(1), July 2023a. ISSN 2523-3246. doi: 10.1186/s42400-023-00154-z. URL http://dx.doi.org/10.1186/s42400-023-00154-z.",
-    "Zonghao Ying and Bin Wu. Dlp: towards active defense against backdoor attacks with decou- pled learning process. Cybersecurity, 6(1), May 2023b. ISSN 2523-3246. doi: 10.1186/ s42400-023-00141-4. URL http://dx.doi.org/10.1186/s42400-023-00141-4.",
-    "Zonghao Ying, Aishan Liu, Siyuan Liang, Lei Huang, Jinyang Guo, Wenbo Zhou, Xianglong Liu, and Dacheng Tao. Safebench: A safety evaluation framework for multimodal large language models. arXiv preprint arXiv:2410.18927, 2024a.",
-    "Zonghao Ying, Aishan Liu, Xianglong Liu, and Dacheng Tao. Unveiling the safety of gpt-40: An empirical study using jailbreak attacks. arXiv preprint arXiv:2406.06302, 2024b.",
-    "Zonghao Ying, Aishan Liu, Tianyuan Zhang, Zhengmin Yu, Siyuan Liang, Xianglong Liu, and Dacheng Tao. Jailbreak vision language models via bi-modal adversarial prompt. arXiv preprint arXiv:2406.04031, 2024c.",
-    "Zonghao Ying, Deyue Zhang, Zonglei Jing, Yisong Xiao, Quanchen Zou, Aishan Liu, Siyuan Liang, Xiangzheng Zhang, Xianglong Liu, and Dacheng Tao. Reasoning-augmented conversation for multi-turn jailbreak attacks on large language models. arXiv preprint arXiv:2502.11054, 2025.",
-    "Tongxin Yuan, Zhiwei He, Lingzhong Dong, Yiming Wang, Ruijie Zhao, Tian Xia, Lizhen Xu, Binglin Zhou, Fangqi Li, Zhuosheng Zhang, et al. R-judge: Benchmarking safety risk awareness for llm agents. arXiv preprint arXiv:2401.10019, 2024a.",
-    "Xiaohan Yuan, Jinfeng Li, Dongxia Wang, Yuefeng Chen, Xiaofeng Mao, Longtao Huang, Hui Xue, Wenhai Wang, Kui Ren, and Jingyi Wang. S-eval: Automatic and adaptive test generation for benchmarking safety evaluation of large language models. arXiv preprint arXiv:2405.14191, 2024b.",
-    "Chongzhi Zhang, Aishan Liu, Xianglong Liu, Yitao Xu, Hang Yu, Yuqing Ma, and Tianlin Li. Interpreting and improving adversarial robustness of deep neural networks with neuron sensitivity. IEEE Transactions on Image Processing, 2021.",
-    "Kaiwen Zhou, Chengzhi Liu, Xuandong Zhao, Shreedhar Jangam, Jayanth Srinivasa, Gaowen Liu, Dawn Song, and Xin Eric Wang. The hidden risks of large reasoning models: A safety assessment of r1. arXiv preprint arXiv:2502.12659 2025.",
-    "Andy Zou, Zifan Wang, Nicholas Carlini, Milad Nasr, J. Zico Kolter, and Matt Fredrikson. Universal and transferable adversarial attacks on aligned language models, 2023. URL https://arxiv. org/abs/2307.15043."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

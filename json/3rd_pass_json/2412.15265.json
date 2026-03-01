@@ -2,39 +2,114 @@
   "filename": "2412.15265.pdf",
   "title": "Chinese SafetyQA: A Safety Short-form Factuality Benchmark for Large Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2412.15265",
-  "bias_targets": [
-    {
-      "target": "Racial bias",
-      "methodology": "Evaluating the model's factual knowledge of Chinese laws, policies, and social norms regarding racial prejudice and discrimination using short-form question-answering and multiple-choice questions."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Evaluating the model's factual knowledge of Chinese laws, policies, and social norms regarding religious prejudice and discrimination using short-form question-answering and multiple-choice questions."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Evaluating the model's factual knowledge of Chinese laws, policies, and social norms regarding sexual orientation prejudice and discrimination using short-form question-answering and multiple-choice questions."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Evaluating the model's factual knowledge of Chinese laws, policies, and social norms regarding gender prejudice and discrimination using short-form question-answering and multiple-choice questions."
-    },
-    {
-      "target": "Socioeconomic bias",
-      "methodology": "Evaluating the model's factual knowledge of Chinese laws, policies, and social norms regarding socioeconomic status prejudice and discrimination using short-form question-answering and multiple-choice questions."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Evaluating the model's factual knowledge of Chinese laws, policies, and social norms regarding age prejudice and discrimination using short-form question-answering and multiple-choice questions."
-    },
-    {
-      "target": "Regional bias",
-      "methodology": "Evaluating the model's factual knowledge of Chinese laws, policies, and social norms regarding regional prejudice and discrimination using short-form question-answering and multiple-choice questions."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Evaluating the model's factual knowledge of Chinese laws, policies, and social norms regarding discrimination against disabled individuals using short-form question-answering and multiple-choice questions."
-    }
+  "religious_groups": [],
+  "models_tested": [
+    "o1-preview",
+    "Qwen-Max",
+    "Doubao-pro-32k",
+    "GPT-4o",
+    "GLM-4-Plus",
+    "Claude-3.5-Sonnet",
+    "moonshot-v1-8k",
+    "DeepSeek-V2.5",
+    "Baichuan3-turbo",
+    "Gemini-1.5-pro",
+    "GPT-4",
+    "GPT-4-turbo",
+    "Yi-Large",
+    "o1-mini",
+    "GPT-4o mini",
+    "Gemini-1.5-flash",
+    "GPT-3.5",
+    "Qwen2.5-72B",
+    "Qwen2.5-32B",
+    "Qwen2.5-14B",
+    "Qwen2.5-7B",
+    "Qwen2.5-3B",
+    "Qwen2.5-1.5B",
+    "DeepSeek-67B",
+    "DeepSeek-V2-Lite",
+    "DeepSeek-7B",
+    "Yi-1.5-34B",
+    "Yi-1.5-9B",
+    "Yi-1.5-6B",
+    "LLAMA3.1-70B",
+    "LLaMA3.1-8B",
+    "GLM4-9B",
+    "ChatGLM3-6B",
+    "InternLM2.5-20B",
+    "InternLM2.5-7B",
+    "Baichuan2-13B",
+    "Baichuan2-7B",
+    "Mistral-7B-Instruct-v0.3"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "languages_evaluated": [
+    "Chinese"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "CValues",
+    "Do-Not-Answer",
+    "Do-Anything-Now",
+    "SafetyBench",
+    "ToxicChat",
+    "SecQA",
+    "CyberMetric",
+    "SALAD-Bench",
+    "SimpleQA",
+    "Chinese SimpleQA"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper does not provide specific findings for the religion subcategory. Results related to religion are aggregated under broader categories such as 'Prejudice & Discrimination' (PD) and 'Insults & Hate' (IH).",
+  "references": [
+    "Asai, A., Wu, Z., Wang, Y., Sil, A., and Hajishirzi, H. Self-rag: Learning to retrieve, generate, and critique through self-reflection. arXiv preprint arXiv:2310.11511, 2023.",
+    "Baichuan. Baichuan 2: Open large-scale language models. arXiv preprint arXiv:2309.10305, 2023. URL https://arxiv.org/abs/2309.10305.",
+    "Brown, R. and McNeill, D. The “tip of the tongue” phenomenon. Journal of verbal learning and verbal behavior, 5(4):325–337, 1966.",
+    "Brown, T., Mann, B., Ryder, N., Subbiah, M., Kaplan, J. D., Dhariwal, P., Neelakantan, A., Shyam, P., Sastry, G., Askell, A., et al. Language models are few-shot learners. Advances in neural information processing systems, 33: 1877–1901, 2020.",
+    "DeepSeek-AI. Deepseek llm: Scaling open-source language models with longtermism. arXiv preprint arXiv:2401.02954, 2024a. URL https://github. com/deepseek-ai/DeepSeek-LLM.",
+    "DeepSeek-AI. Deepseek-v2: A strong, economical, and efficient mixture-of-experts language model, 2024b.",
+    "Du, Z., Qian, Y., Liu, X., Ding, M., Qiu, J., Yang, Z., and Tang, J. Glm: General language model pretraining with autoregressive blank infilling. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 320–335, 2022.",
+    "Dubey, A., Jauhri, A., Pandey, A., Kadian, A., Al-Dahle, A., Letman, A., Mathur, A., Schelten, A., Yang, A., Fan, A., Goyal, A., Hartshorn, A., Yang, A., Mitra, A., Sravankumar, A., Korenev, A., Hinsvark, A., Rao, A., Zhang, A., Rodriguez, A., Gregerson, A., Spataru, A., Roziere, B., Biron, B., Tang, B., Chern, B., Caucheteux, C., Nayak, C., Bi, C., Marra, C., McConnell, C., Keller, C., Touret, C., Wu, C., Wong, C., Ferrer, C. C., Nikolaidis, C., Allonsius, D., Song, D., Pintz, D., Livshits, D., Esiobu, D., Choudhary, D., Mahajan, D., Garcia-Olano, D., Perino, D., Hupkes, D., Lakomkin, E., AlBadawy, E., Lobanova, E., Dinan, E., Smith, E. M., Radenovic, F., Zhang, F., Synnaeve, G., Lee, G., Anderson, G. L., Nail, G., Mialon, G., Pang, G., Cucurell, G., Nguyen, H., Korevaar, H., Xu, H., Touvron, H., Zarov, I., Ibarra, I. A., Kloumann, I., Misra, I., Evtimov, I., Copet, J., Lee, J., Geffert, J., Vranes, J., Park, J., Mahadeokar, J., Shah, J., van der Linde, J., Billock, J., Hong, J., Lee, J., Fu, J., Chi, J., Huang, J., Liu, J., Wang, J., Yu, J., Bitton, J., Spisak, J., Park, J., Rocca, J., Johnstun, J., Saxe, J., Jia, J., Alwala, K. V., Upasani, K., Plawiak, K., Li, K., Heafield, K., Stone, K., El-Arini, K., Iyer, K., Malik, K., Chiu, K., Bhalla, K., Rantala-Yeary, L., van der Maaten, L., Chen, L., Tan, L., Jenkins, L., Martin, L., Madaan, L., Malo, L., Blecher, L., Landzaat, L., de Oliveira, L., Muzzi, M., Pasupuleti, M., Singh, M., Paluri, M., Kardas, M., Oldham, M., Rita, M., Pavlova, M., Kambadur, M., Lewis, M., Si, M., Singh, M. K., Hassan, M., Goyal, N., Torabi, N., Bashlykov, N., Bogoychev, N., Chatterji, N., Duchenne, O., Çelebi, O., Alrassy, P., Zhang, P., Li, P., Vasic, P., Weng, P., Bhargava, P., Dubal, P., Krishnan, P., Koura, P. S., Xu, P., He, Q., Dong, Q., Srinivasan, R., Ganapathy, R., Calderer, R., Cabral, R. S., Stojnic, R., Raileanu, R., Girdhar, R., Patel, R., Sauvestre, R., Polidoro, R., Sumbaly, R., Taylor, R., Silva, R., Hou, R., Wang, R., Hosseini, S., Chennabasappa, S., Singh, S., Bell, S., Kim, S. S., Edunov, S., Nie, S., Narang, S., Raparthy, S., Shen, S., Wan, S., Bhosale, S., Zhang, S., Vandenhende, S., Batra, S., Whitman, S., Sootla, S., Collot, S., Gururangan, S., Borodinsky, S., Herman, T., Fowler, T., Sheasha, T., Georgiou, T., Scialom, T., Speckbacher, T., Mihaylov, T., Xiao, T., Karn, U., Goswami, V., Gupta, V., Ramanathan, V., Kerkez, V., Gonguet, V., Do, V., Vogeti, V., Petrovic, V., Chu, W., Xiong, W., Fu, W., Meers, W., Martinet, X., Wang, X., Tan, X. E., Xie, X., Jia, X., Wang, X., Goldschlag, Y., Gaur, Y., Babaei, Y., Wen, Y., Song, Y., Zhang, Y., Li, Y., Mao, Y., Coudert, Z. D., Yan, Z., Chen, Z., Papakipos, Z., Singh, A., Grattafiori, A., Jain, A., Kelsey, A., Shajnfeld, A., Gangidi, A., Victoria, A., Goldstand, A., Menon, A., Sharma, A., Boesenberg, A., Vaughan, A., Baevski, A., Feinstein, A., Kallet, A., Sangani, A., Yunus, A., Lupu, A., Alvarado, A., Caples, A., Gu, A., Ho, A., Poulton, A., Ryan, A., Ramchandani, A., Franco, A., Saraf, A., Chowdhury, A., Gabriel, A., Bharambe, A., Eisenman, A., Yazdan, A., James, B., Maurer, B., Leonhardi, B., Huang, B., Loyd, B., Paola, B. D., Paranjape, B., Liu, B., Wu, B., Ni, B., Hancock, B., Wasti, B., Spence, B., Stojkovic, B., Gamido, B., Montalvo, B., Parker, C., Burton, C., Mejia, C., Wang, C., Kim, C., Zhou, C., Hu, C., Chu, C.-H., Cai, C., Tindal, C., Feichtenhofer, C., Civin, D., Beaty, D., Kreymer, D., Li, D., Wyatt, D., Adkins, D., Xu, D., Testuggine, D., David, D., Parikh, D., Liskovich, D., Foss, D., Wang, D., Le, D., Holland, D., Dowling, E., Jamil, E., Montgomery, E., Presani, E., Hahn, E., Wood, E., Brinkman, E., Arcaute, E., Dunbar, E., Smothers, E., Sun, F., Kreuk, F., Tian, F., Ozgenel, F., Caggioni, F., Guzmán, F., Kanayet, F., Seide, F., Florez, G. M., Schwarz, G., Badeer, G., Swee, G., Halpern, G., Thattai, G., Herman, G., Sizov, G., Guangyi, Zhang, Lakshminarayanan, G., Shojanazeri, H., Zou, H., Wang, H., Zha, H., Habeeb, H., Rudolph, H., Suk, H., Aspegren, H., Goldman, H., Molybog, I., Tufanov, I., Veliche, I.-E., Gat, I., Weissman, J., Geboski, J., Kohli, J., Asher, J., Gaya, J.-B., Marcus, J., Tang, J., Chan, J., Zhen, J., Reizenstein, J., Teboul, J., Zhong, J., Jin, J., Yang, J., Cummings, J., Carvill, J., Shepard, J., McPhie, J., Torres, J., Ginsburg, J., Wang, J., Wu, K., U, K. H., Saxena, K., Prasad, K., Khandelwal, K., Zand, K., Matosich, K., Veeraraghavan, K., Michelena, K., Li, K., Huang, K., Chawla, K., Lakhotia, K., Huang, K., Chen, L., Garg, L., A, L., Silva, L., Bell, L., Zhang, L., Guo, L., Yu, L., Moshkovich, L., Wehrstedt, L., Khabsa, M., Avalani, M., Bhatt, M., Tsimpoukelli, M., Mankus, M., Hasson, M., Lennie, M., Reso, M., Groshev, M., Naumov, M., Lathi, M., Keneally, M., Seltzer, M. L., Valko, M., Restrepo, M., Patel, M., Vyatskov, M., Samvelyan, M., Clark, M., Macey, M., Wang, M., Hermoso, M. J., Metanat, M., Rastegari, M., Bansal, M., Santhanam, N., Parks, N., White, N., Bawa, N., Singhal, N., Egebo, N., Usunier, N., Laptev, N. P., Dong, N., Zhang, N., Cheng, N., Chernoguz, O., Hart, O., Salpekar, O., Kalinli, O., Kent, P., Parekh, P., Saab, P., Balaji, P., Rittner, P., Bontrager, P., Roux, P., Dollar, P., Zvyagina, P., Ratanchandani, P., Yuvraj, P., Liang, Q., Alao, R., Rodriguez, R., Ayub, R., Murthy, R., Nayani, R., Mitra, R., Li, R., Hogan, R., Battey, R., Wang, R., Maheswari, R., Howes, R., Rinott, R., Bondu, S. J., Datta, S., Chugh, S., Hunt, S., Dhillon, S., Sidorov, S., Pan, S., Verma, S., Yamamoto, S., Ramaswamy, S., Lindsay, S., Lindsay, S., Feng, S., Lin, S., Zha, S. C., Shankar, S., Zhang, S., Zhang, S., Wang, S., Agarwal, S., Sajuyigbe, S., Chintala, S., Max, S., Chen, S., Kehoe, S., Satterfield, S., Govindaprasad, S., Gupta, S., Cho, S., Virk, S., Subramanian, S., Choudhury, S., Goldman, S., Remez, T., Glaser, T., Best, T., Kohler, T., Robinson, T., Li, T., Zhang, T., Matthews, T., Chou, T., Shaked, T., Vontimitta, V., Ajayi, V., Montanez, V., Mohan, V., Kumar, V. S., Mangla, V., Ionescu, V., Poenaru, V., Mihailescu, V. T., Ivanov, V., Li, W., Wang, W., Jiang, W., Bouaziz, W., Constable, W., Tang, X., Wang, X., Wu, X., Wang, X., Xia, X., Wu, X., Gao, X., Chen, Y., Hu, Y., Jia, Y., Qi, Y., Li, Y., Zhang, Y., Zhang, Y., Adi, Y., Nam, Y., Yu, Wang, Hao, Y., Qian, Y., He, Y., Rait, Z., DeVito, Z., Rosnbrick, Z., Wen, Z., Yang, Z., and Zhao, Z. The llama 3 herd of models. arXiv preprint arXiv: 2407.21783, 2024.",
+    "Fan, W., Ding, Y., Ning, L., Wang, S., Li, H., Yin, D., Chua, T.-S., and Li, Q. A survey on rag meeting llms: Towards retrieval-augmented large language models. In Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining, pp. 6491–6501, 2024.",
+    "Farquhar, S., Varma, V., Kenton, Z., Gasteiger, J., Mikulik, V., and Shah, R. Challenges with unsupervised llm knowledge discovery. arXiv preprint arXiv:2312.10029, 2023.",
+    "GLM, T., Zeng, A., Xu, B., Wang, B., Zhang, C., Yin, D., Rojas, D., Feng, G., Zhao, H., Lai, H., Yu, H., Wang, H., Sun, J., Zhang, J., Cheng, J., Gui, J., Tang, J., Zhang, J., Li, J., Zhao, L., Wu, L., Zhong, L., Liu, M., Huang, M., Zhang, P., Zheng, Q., Lu, R., Duan, S., Zhang, S., Cao, S., Yang, S., Tam, W. L., Zhao, W., Liu, X., Xia, X., Zhang, X., Gu, X., Lv, X., Liu, X., Liu, X., Yang, X., Song, X., Zhang, X., An, Y., Xu, Y., Niu, Y., Yang, Y., Li, Y., Bai, Y., Dong, Y., Qi, Z., Wang, Z., Yang, Z., Du, Z., Hou, Z., and Wang, Z. Chatglm: A family of large language models from glm-130b to glm-4 all tools, 2024.",
+    "He, Y., Li, S., Liu, J., Tan, Y., Wang, W., Huang, H., Bu, X., Guo, H., Hu, C., Zheng, B., Lin, Z., Liu, X., Sun, D., Lin, S., Zheng, Z., Zhu, X., Su, W., and Zheng, B. Chinese simpleqa: A chinese factuality evaluation for large language models, 2024a. URL https://arxiv. org/abs/2411.07140.",
+    "He, Y., Li, S., Liu, J., Tan, Y., Wang, W., Huang, H., Bu, X., Guo, H., Hu, C., Zheng, B., et al. Chinese simpleqa: A chinese factuality evaluation for large language models. arXiv preprint arXiv:2411.07140, 2024b.",
+    "Hendrycks, D., Burns, C., Basart, S., Zou, A., Mazeika, M., Song, D., and Steinhardt, J. Measuring massive multitask language understanding. Proceedings of the International Conference on Learning Representations (ICLR), 2021.",
+    "Huang, Y., Bai, Y., Zhu, Z., Zhang, J., Zhang, J., Su, T., Liu, J., Lv, C., Zhang, Y., Lei, J., Fu, Y., Sun, M., and He, J. C-eval: A multi-level multi-discipline chinese evaluation suite for foundation models. arXiv preprint arXiv:2305.08322, 2023.",
+    "Ji, J., Liu, M., Dai, J., Pan, X., Zhang, C., Bian, C., Chen, B., Sun, R., Wang, Y., and Yang, Y. Beavertails: Towards improved safety alignment of Ilm via a human-preference dataset. Advances in Neural Information Processing Systems, 36, 2024.",
+    "Ji, Z., Lee, N., Frieske, R., Yu, T., Su, D., Xu, Y., Ishii, E., Bang, Y. J., Madotto, A., and Fung, P. Survey of hallucination in natural language generation. ACM Computing Surveys, 55(12):1–38, 2023a.",
+    "Ji, Z., Yu, T., Xu, Y., Lee, N., Ishii, E., and Fung, P. Towards mitigating Ilm hallucination via self reflection. In Findings of the Association for Computational Linguistics: EMNLP 2023, pp. 1827–1843, 2023b.",
+    "Jiang, A. Q., Sablayrolles, A., Mensch, A., Bamford, C., Chaplot, D. S., Casas, D. d. 1., Bressand, F., Lengyel, G., Lample, G., Saulnier, L., et al. Mistral 7b. arXiv preprint arXiv:2310.06825, 2023a.",
+    "Jiang, Z., Xu, F. F., Gao, L., Sun, Z., Liu, Q., Dwivedi-Yu, J., Yang, Y., Callan, J., and Neubig, G. Active retrieval augmented generation. arXiv preprint arXiv:2305.06983, 2023b.",
+    "Jiao, J., Afroogh, S., Xu, Y., and Phillips, C. Navigating Ilm ethics: Advancements, challenges, and future directions. arXiv preprint arXiv:2406.18841, 2024.",
+    "Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N., Küttler, H., Lewis, M., Yih, W.-t., Rocktäschel, T., et al. Retrieval-augmented generation for knowledge-intensive nlp tasks. Advances in Neural Information Processing Systems, 33:9459–9474, 2020.",
+    "Li, H., Zhang, Y., Koto, F., Yang, Y., Zhao, H., Gong, Y., Duan, N., and Baldwin, T. Cmmlu: Measuring massive multitask language understanding in chinese, 2023.",
+    "Li, L., Dong, B., Wang, R., Hu, X., Zuo, W., Lin, D., Qiao, Y., and Shao, J. Salad-bench: A hierarchical and comprehensive safety benchmark for large language models, 2024. URL https://arxiv.org/abs/2402. 05044.",
+    "Lin, Z., Wang, Z., Tong, Y., Wang, Y., Guo, Y., Wang, Y., and Shang, J. Toxicchat: Unveiling hidden challenges of toxicity detection in real-world user-ai conversation, 2023. URL https://arxiv.org/abs/2310.17389.",
+    "Liu, Z. Secqa: A concise question-answering dataset for evaluating large language models in computer security, 2023. URL https://arxiv.org/abs/2312. 15838.",
+    "OpenAI. Gpt-4 technical report. PREPRINT, 2023.",
+    "Shen, X., Chen, Z., Backes, M., Shen, Y., and Zhang, Y. “do anything now”: Characterizing and evaluating in-the-wild jailbreak prompts on large language models, 2024. URL https://arxiv.org/abs/2308.03825.",
+    "Srivastava, A., Rastogi, A., Rao, A., Shoeb, A. A. M., Abid, A., Fisch, A., Brown, A. R., Santoro, A., Gupta, A., Garriga-Alonso, A., et al. Beyond the imitation game: Quantifying and extrapolating the capabilities of language models. Transactions on Machine Learning Research, 2023. ISSN 2835-8856. URL https: //openreview.net/forum?id=uyTL5Bvosj.",
+    "Sun, H., Zhang, Z., Deng, J., Cheng, J., and Huang, M. Safety assessment of chinese large language models. arXiv preprint arXiv:2304.10436, 2023.",
+    "Team, G. Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context, 2024a. URLhttps: //arxiv.org/abs/2403.05530.",
+    "Team, I. Internlm2 technical report, 2024b.",
+    "Team, Q. Introducing qwen1.5, February 2024c. URL https://qwenlm.github.io/blog/qwen1. 5/.",
+    "Team, Q. Qwen2.5: A party of foundation models, September 2024d. URL https://qwenlm.github.io/ blog/qwen2.5/.",
+    "Tihanyi, N., Ferrag, M. A., Jain, R., Bisztray, T., and Debbah, M. Cybermetric: A benchmark dataset based on retrieval-augmented generation for evaluating llms in cybersecurity knowledge, 2024. URL https://arxiv. org/abs/2402.07688.",
+    "Wang, C., Liu, X., Yue, Y., Tang, X., Zhang, T., Jiayang, C., Yao, Y., Gao, W., Hu, X., Qi, Z., et al. Survey on factuality in large language models: Knowledge, retrieval and domain-specificity. arXiv preprint arXiv:2310.07521, 2023a.",
+    "Wang, Y., Li, H., Han, X., Nakov, P., and Baldwin, T. Do-not-answer: A dataset for evaluating safeguards in llms, 2023b. URL https://arxiv.org/abs/ 2308.13387.",
+    "Wang, Y., Wang, M., Iqbal, H., Georgiev, G., Geng, J., and Nakov, P. Openfactcheck: A unified framework for factuality evaluation of llms. arXiv preprint arXiv:2405.05583, 2024a.",
+    "Wang, Y., Wang, M., Manzoor, M. A., Liu, F., Georgiev, G., Das, R., and Nakov, P. Factuality of large language models: A survey. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pp. 19519–19529, 2024b.",
+    "Wei, J., Karina, N., Chung, H. W., Jiao, Y. J., Papay, S., Glaese, A., Schulman, J., and Fedus, W. Measuring short-form factuality in large language models. 2024. URL https://api.semanticscholar. org/CorpusID:273877483.",
+    "Xu, G., Liu, J., Yan, M., Xu, H., Si, J., Zhou, Z., Yi, P., Gao, X., Sang, J., Zhang, R., Zhang, J., Peng, C., Huang, F., and Zhou, J. Cvalues: Measuring the values of chinese large language models from safety to responsibility, 2023. URL https://arxiv.org/abs/2307.09705.",
+    "Yang, Z., Qi, P., Zhang, S., Bengio, Y., Cohen, W. W., Salakhutdinov, R., and Manning, C. D. Hotpotqa: A dataset for diverse, explainable multi-hop question an swering. arXiv preprint arXiv: Arxiv-1809.09600, 2018.",
+    "Zhang, Z., Lei, L., Wu, L., Sun, R., Huang, Y., Long, C., Liu, X., Lei, X., Tang, J., and Huang, M. Safetybench: Evaluating the safety of large language models, 2024. URL https://arxiv.org/abs/2309.07045.",
+    "Zhao, Y., Zhang, J., Chern, I., Gao, S., Liu, P., He, J., et al. Felm: Benchmarking factuality evaluation of large language models. Advances in Neural Information Processing Systems, 36, 2024.",
+    "Zhong, W., Cui, R., Guo, Y., Liang, Y., Lu, S., Wang, Y., Saied, A., Chen, W., and Duan, N. Agieval: A human-centric benchmark for evaluating foundation models, 2023."
+  ],
+  "measurement_description": "Factual knowledge related to religious prejudice and discrimination within the Chinese context."
 }

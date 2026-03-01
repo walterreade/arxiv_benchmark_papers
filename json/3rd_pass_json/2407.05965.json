@@ -2,31 +2,106 @@
   "filename": "2407.05965.pdf",
   "title": "T2VSafetyBench: Evaluating the Safety of Text-to-Video Generative Models",
   "arxiv_url": "https://arxiv.org/pdf/2407.05965",
-  "bias_targets": [
-    {
-      "target": "Racial bias",
-      "methodology": "Evaluating text-to-video models by generating videos from malicious prompts and using GPT-4 alongside human reviewers to assess if the multi-frame outputs contain content that demeans, mocks, or insults negative stereotypes based on race."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Evaluating text-to-video models by generating videos from malicious prompts and using GPT-4 alongside human reviewers to assess if the multi-frame outputs contain content that demeans, mocks, or insults negative stereotypes based on gender."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Evaluating text-to-video models by generating videos from malicious prompts and using GPT-4 alongside human reviewers to assess if the multi-frame outputs contain content that demeans, mocks, or insults negative stereotypes based on sexual orientation."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Evaluating text-to-video models by generating videos from malicious prompts and using GPT-4 alongside human reviewers to assess if the multi-frame outputs contain content that demeans, mocks, or insults negative stereotypes based on religion."
-    },
-    {
-      "target": "Nationality bias",
-      "methodology": "Evaluating text-to-video models by generating videos from malicious prompts and using GPT-4 alongside human reviewers to assess if the multi-frame outputs contain content that demeans, mocks, or insults negative stereotypes based on nationality or ethnicity."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Evaluating text-to-video models by generating videos from malicious prompts and using GPT-4 alongside human reviewers to assess if the multi-frame outputs contain content that demeans, mocks, or insults negative stereotypes based on disability."
-    }
+  "religious_groups": [
+    "Islam"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "Pika",
+    "Gen2",
+    "Stable Video Diffusion",
+    "Open-Sora 1.1",
+    "Gen3",
+    "Kling",
+    "Vidu",
+    "Ying (Zhipu)",
+    "Open-Sora-Plan v1.2.0",
+    "OpenSora 1.0",
+    "OpenSora 1.2"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "VidProM",
+    "HEIM",
+    "PromptBench",
+    "DecodingTrust"
+  ],
+  "continuous_testing": false,
+  "findings": "Models exhibit low NSFW (Not Safe For Work) rates for discriminatory content, which includes religious stereotypes. However, this is not due to robust safety defenses but rather the models' limited capability to generate abstract or complex scenes. They struggle to detect and reject even simple discriminatory actions, indicating a significant safety risk as model capabilities improve.",
+  "references": [
+    "Pika ai - free ai video generator, 2024. URL https://pikartai.com.",
+    "Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia Leoni Aleman, Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat, et al. Gpt-4 technical report. arXiv preprint arXiv:2303.08774, 2023.",
+    "Fan Bao, Chendong Xiang, Gang Yue, Guande He, Hongzhou Zhu, Kaiwen Zheng, Min Zhao, Shilong Liu, Yaole Wang, and Jun Zhu. Vidu: a highly consistent, dynamic and skilled text-to-video generator with diffusion models. arXiv preprint arXiv:2405.04233, 2024.",
+    "Clark Barrett, Brad Boyd, Elie Bursztein, Nicholas Carlini, Brad Chen, Jihye Choi, Amrita Roy Chowdhury, Mihai Christodorescu, Anupam Datta, Soheil Feizi, et al. Identifying and mitigating the security risks of generative ai. Foundations and TrendsⓇ in Privacy and Security, 6(1):1–52, 2023.",
+    "Rishabh Bhardwaj and Soujanya Poria. Red-teaming large language models using chain of utterances for safety-alignment. arXiv preprint arXiv:2308.09662, 2023.",
+    "Andreas Blattmann, Tim Dockhorn, Sumith Kulal, Daniel Mendelevitch, Maciej Kilian, Dominik Lorenz, Yam Levi, Zion English, Vikram Voleti, Adam Letts, et al. Stable video diffusion: Scaling latent video diffusion models to large datasets. arXiv preprint arXiv:2311.15127, 2023.",
+    "Andreas Blattmann, Robin Rombach, Huan Ling, Tim Dockhorn, Seung Wook Kim, Sanja Fidler, and Karsten Kreis. Align your latents: High-resolution video synthesis with latent diffusion models. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 22563–22575, 2023.",
+    "Patrick Chao, Alexander Robey, Edgar Dobriban, Hamed Hassani, George J Pappas, and Eric Wong. Jailbreaking black box large language models in twenty queries. arXiv preprint arXiv:2310.08419, 2023.",
+    "Elizabeth A Daniels and Eileen L Zurbriggen. \"it's not the right way to do stuff on facebook:\" an investigation of adolescent girls' and young women's attitudes toward sexualized photos on social media. Sexuality & Culture, 20(4):936–964, 2016.",
+    "Patrick Esser, Johnathan Chiu, Parmida Atighehchian, Jonathan Granskog, and Anastasis Germanidis. Structure and content-guided video synthesis with diffusion models. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 7346–7356, 2023.",
+    "Lili Fan, Chao Guo, Yonglin Tian, Hui Zhang, Jun Zhang, and Fei-Yue Wang. Sora for foundation robots with parallel intelligence: Three world models, three robotic systems. Frontiers of Information Technology & Electronic Engineering, pages 1–7, 2024.",
+    "Rohit Gandikota, Joanna Materzynska, Jaden Fiotto-Kaufman, and David Bau. Erasing concepts from diffusion models. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 2426–2436, 2023.",
+    "GIGAZINE. Over 20,000 github projects received deletion notices for copyright violations in one year, 2024. URL https://gigazine.net/gsc_news/en/20240318-github-dmca/.",
+    "Laura Hanu and Unitary team. Detoxify, 2020. URL https://github.com/unitaryai/detoxify.",
+    "Laura Hanu and Unitary team. Detoxify, 2020. URL https://github.com/unitaryai/detoxify.",
+    "Yingqing He, Tianyu Yang, Yong Zhang, Ying Shan, and Qifeng Chen. Latent video diffusion models for high-fidelity long video generation. arXiv preprint arXiv:2211.13221, 2022.",
+    "Jonathan Ho, Ajay Jain, and Pieter Abbeel. Denoising diffusion probabilistic models. Advances in neural information processing systems, 33:6840–6851, 2020.",
+    "Jonathan Ho, William Chan, Chitwan Saharia, Jay Whang, Ruiqi Gao, Alexey Gritsenko, Diederik P Kingma, Ben Poole, Mohammad Norouzi, David J Fleet, et al. Imagen video: High definition video generation with diffusion models. arXiv preprint arXiv:2210.02303, 2022.",
+    "Hpcaitech. Open-sora: Democratizing efficient video production for all, 2024. URL https://github. com/hpcaitech/Open-Sora.",
+    "Kaiyi Huang, Kaiyue Sun, Enze Xie, Zhenguo Li, and Xihui Liu. T2i-compbench: A comprehensive benchmark for open-world compositional text-to-image generation. Advances in Neural Information Processing Systems, 36:78723–78747, 2023.",
+    "Ziqi Huang, Yinan He, Jiashuo Yu, Fan Zhang, Chenyang Si, Yuming Jiang, Yuanhan Zhang, Tianxing Wu, Qingyang Jin, Nattapol Chanpaisit, et al. Vbench: Comprehensive benchmark suite for video generative models. arXiv preprint arXiv:2311.17982, 2023.",
+    "Jiaming Ji, Mickel Liu, Josef Dai, Xuehai Pan, Chi Zhang, Ce Bian, Boyuan Chen, Ruiyang Sun, Yizhou Wang, and Yaodong Yang. Beavertails: Towards improved safety alignment of Ilm via a human-preference dataset. Advances in Neural Information Processing Systems, 36, 2024.",
+    "Levon Khachatryan, Andranik Movsisyan, Vahram Tadevosyan, Roberto Henschel, Zhangyang Wang, Shant Navasardyan, and Humphrey Shi. Text2video-zero: Text-to-image diffusion models are zero-shot video generators. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 15954–15964, 2023.",
+    "Dan Kondratyuk, Lijun Yu, Xiuye Gu, José Lezama, Jonathan Huang, Rachel Hornung, Hartwig Adam, Hassan Akbari, Yair Alon, Vighnesh Birodkar, et al. Videopoet: A large language model for zero-shot video generation. arXiv preprint arXiv:2312.14125, 2023.",
+    "Kwai. Kling, 2024. URL https://kling.kuaishou.com.",
+    "PKU-Yuan Lab and Tuzhan AI. Open-sora-plan, 2024. URL https://github.com/PKU-YuanGroup/ Open-Sora-Plan.",
+    "Tony Lee, Michihiro Yasunaga, Chenlin Meng, Yifan Mai, Joon Sung Park, Agrim Gupta, Yunzhi Zhang, Deepak Narayanan, Hannah Teufel, Marco Bellagente, et al. Holistic evaluation of text-to-image models. Advances in Neural Information Processing Systems, 36, 2023.",
+    "Xin Liu, Yichen Zhu, Jindong Gu, Yunshi Lan, Chao Yang, and Yu Qiao. Mm-safetybench: A benchmark for safety evaluation of multimodal large language models. arXiv preprint arXiv:2311.17600, 2023.",
+    "Yaofang Liu, Xiaodong Cun, Xuebo Liu, Xintao Wang, Yong Zhang, Haoxin Chen, Yang Liu, Tieyong Zeng, Raymond Chan, and Ying Shan. Evalcrafter: Benchmarking and evaluating large video generation models. arXiv preprint arXiv:2310.11440, 2023.",
+    "Yixin Liu, Kai Zhang, Yuan Li, Zhiling Yan, Chujie Gao, Ruoxi Chen, Zhengqing Yuan, Yue Huang, Hanchi Sun, Jianfeng Gao, et al. Sora: A review on background, technology, limitations, and opportunities of large vision models. arXiv preprint arXiv:2402.17177, 2024.",
+    "Yuanxin Liu, Lei Li, Shuhuai Ren, Rundong Gao, Shicheng Li, Sishuo Chen, Xu Sun, and Lu Hou. Fetv: A benchmark for fine-grained evaluation of open-domain text-to-video generation. Advances in Neural Information Processing Systems, 36, 2023.",
+    "Weidi Luo, Siyuan Ma, Xiaogeng Liu, Xiaoyu Guo, and Chaowei Xiao. Jailbreakv-28k: A benchmark for assessing the robustness of multimodal large language models against jailbreak attacks. arXiv preprint arXiv:2404.03027, 2024.",
+    "Jiachen Ma, Anda Cao, Zhiqing Xiao, Jie Zhang, Chao Ye, and Junbo Zhao. Jailbreaking prompt attack: A controllable adversarial attack against diffusion models. arXiv preprint arXiv:2404.02928, 2024.",
+    "Mantas Mazeika, Long Phan, Xuwang Yin, Andy Zou, Zifan Wang, Norman Mu, Elham Sakhaee, Nathaniel Li, Steven Basart, Bo Li, et al. Harmbench: A standardized evaluation framework for automated red teaming and robust refusal. arXiv preprint arXiv:2402.04249, 2024.",
+    "OpenAI. Sora: Creating video from text, 2024. URL https://openai.com/sora.",
+    "Yong-Hyun Park, Sangdoo Yun, Jin-Hwa Kim, Junho Kim, Geonhui Jang, Yonghyun Jeong, Junghyo Jo, and Gayoung Lee. Direct unlearning optimization for robust and safe text-to-image models. arXiv preprint arXiv:2407.21035, 2024.",
+    "William Peebles and Saining Xie. Scalable diffusion models with transformers. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 4195–4205, 2023.",
+    "The Washington Post. These fake images reveal how ai amplifies our worst stereotypes, 2023. URL https://www.washingtonpost.com/technology/interactive/2023/ ai-generated-images-bias-racism-sexism-stereotypes/.",
+    "Huachuan Qiu, Shuai Zhang, Anqi Li, Hongliang He, and Zhenzhong Lan. Latent jailbreak: A benchmark for evaluating text safety and output robustness of large language models. arXiv preprint arXiv:2307.08487, 2023.",
+    "Yiting Qu, Xinyue Shen, Xinlei He, Michael Backes, Savvas Zannettou, and Yang Zhang. Unsafe diffusion: On the generation of unsafe images and hateful memes from text-to-image models. In Proceedings of the 2023 ACM SIGSAC Conference on Computer and Communications Security, pages 3403–3417, 2023.",
+    "Javier Rando, Daniel Paleka, David Lindner, Lennart Heim, and Florian Tramèr. Red-teaming the stable diffusion safety filter. arXiv preprint arXiv:2210.04610, 2022.",
+    "Partha Pratim Ray. Chatgpt: A comprehensive review on background, applications, key challenges, bias, ethics, limitations and future scope. Internet of Things and Cyber-Physical Systems, 2023.",
+    "Richard Ren, Steven Basart, Adam Khoja, Alice Gatti, Long Phan, Xuwang Yin, Mantas Mazeika, Alexander Pan, Gabriel Mukobi, Ryan H Kim, et al. Safetywashing: Do ai safety benchmarks actually measure safety progress? arXiv preprint arXiv:2407.21792, 2024.",
+    "Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, and Björn Ommer. High-resolution image synthesis with latent diffusion models. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, pages 10684–10695, 2022.",
+    "Runway. Gen-3, 2024. URL https://runwayml.com/blog/introducing-gen-3-alpha.",
+    "Uriel Singer, Adam Polyak, Thomas Hayes, Xi Yin, Jie An, Songyang Zhang, Qiyuan Hu, Harry Yang, Oron Ashual, Oran Gafni, et al. Make-a-video: Text-to-video generation without text-video data. arXiv preprint arXiv:2209.14792, 2022.",
+    "Kaiyue Sun, Kaiyi Huang, Xian Liu, Yue Wu, Zihan Xu, Zhenguo Li, and Xihui Liu. T2v-compbench: A comprehensive benchmark for compositional text-to-video generation. arXiv preprint arXiv:2407.14505, 2024.",
+    "Yu Tian, Xiao Yang, Yinpeng Dong, Heming Yang, Hang Su, and Jun Zhu. Bspa: Exploring black-box stealthy prompt attacks against image generators. arXiv preprint arXiv:2402.15218, 2024.",
+    "Marika Tiggemann and Amy Slater. Netgirls: The internet, facebook, and body image concern in adolescent girls. International Journal of Eating Disorders, 46(6):630–633, 2013.",
+    "TIME. Why some people see more disturbing content on facebook than others, according to leaked documents, 2019. URL https://time.com/6111310/facebook-papers-disturbing-content/.",
+    "Yu-Lin Tsai, Chia-Yi Hsu, Chulin Xie, Chih-Hsun Lin, Jia-You Chen, Bo Li, Pin-Yu Chen, Chia-Mu Yu, and Chun-Ying Huang. Ring-a-bell! how reliable are concept removal methods for diffusion models? arXiv preprint arXiv:2310.10012, 2023.",
+    "Boxin Wang, Weixin Chen, Hengzhi Pei, Chulin Xie, Mintong Kang, Chenhui Zhang, Chejian Xu, Zidi Xiong, Ritik Dutta, Rylan Schaeffer, et al. Decodingtrust: A comprehensive assessment of trustworthiness in gpt models. arXiv preprint arXiv:2306.11698, 2023.",
+    "Wenhao Wang and Yi Yang. Vidprom: A million-scale real prompt-gallery dataset for text-to-video diffusion models. arXiv preprint arXiv:2403.06098, 2024.",
+    "Yikai Wang, Xinzhou Wang, Zilong Chen, Zhengyi Wang, Fuchun Sun, and Jun Zhu. Vidu4d: Single generated video to high-fidelity 4d reconstruction with dynamic gaussian surfels. arXiv preprint arXiv:2405.16822, 2024.",
+    "Yizhong Wang, Yeganeh Kordi, Swaroop Mishra, Alisa Liu, Noah A Smith, Daniel Khashabi, and Hannaneh Hajishirzi. Self-instruct: Aligning language models with self-generated instructions. arXiv preprint arXiv:2212.10560, 2022.",
+    "Jin Xu, Xiaojiang Liu, Jianhao Yan, Deng Cai, Huayang Li, and Jian Li. Learning to break the loop: Analyzing and mitigating repetitions for neural text generation. Advances in Neural Information Processing Systems, 35:3082–3095, 2022.",
+    "Linyi Yang, Shuibai Zhang, Libo Qin, Yafu Li, Yidong Wang, Hanmeng Liu, Jindong Wang, Xing Xie, and Yue Zhang. Glue-x: Evaluating natural language understanding models from an out-of-distribution generalization perspective. arXiv preprint arXiv:2211.08073, 2022.",
+    "Yijun Yang, Ruiyuan Gao, Xiaosen Wang, Nan Xu, and Qiang Xu. Mma-diffusion: Multimodal attack on diffusion models. arXiv preprint arXiv:2311.17516, 2023.",
+    "Yomiuni. Fake video of japan prime minister kishida triggers fears of ai being used to spread misinformation, 2023. URL https://japannews.yomiuri.co.jp/politics/politics-government/ 20231104-147695/.",
+    "Hao Zhang, Wenqi Shao, Hong Liu, Yongqiang Ma, Ping Luo, Yu Qiao, and Kaipeng Zhang. Avibench: Towards evaluating the robustness of large vision-language model on adversarial visual-instructions. arXiv preprint arXiv:2403.09346, 2024.",
+    "Yichi Zhang, Yao Huang, Yitong Sun, Chang Liu, Zhe Zhao, Zhengwei Fang, Yifan Wang, Huanran Chen, Xiao Yang, Xingxing Wei, et al. Benchmarking trustworthiness of multimodal large language models: A comprehensive study. arXiv preprint arXiv:2406.07057, 2024.",
+    "Zhexin Zhang, Leqi Lei, Lindong Wu, Rui Sun, Yongkang Huang, Chong Long, Xiao Liu, Xuanyu Lei, Jie Tang, and Minlie Huang. Safetybench: Evaluating the safety of large language models with multiple choice questions. arXiv preprint arXiv:2309.07045, 2023.",
+    "Zhipu. Ying, 2024. URL https://chatglm.cn/video?lang=zh.",
+    "Daquan Zhou, Weimin Wang, Hanshu Yan, Weiwei Lv, Yizhe Zhu, and Jiashi Feng. Magicvideo: Efficient video generation with latent diffusion models. arXiv preprint arXiv:2211.11018, 2022.",
+    "Junchen Zhu, Huan Yang, Huiguo He, Wenjing Wang, Zixi Tuo, Wen-Huang Cheng, Lianli Gao, Jingkuan Song, and Jianlong Fu. Moviefactory: Automatic movie creation from text using large generative models for language and images. In Proceedings of the 31st ACM International Conference on Multimedia, pages 9313–9319, 2023.",
+    "Kaijie Zhu, Jindong Wang, Jiaheng Zhou, Zichen Wang, Hao Chen, Yidong Wang, Linyi Yang, Wei Ye, Neil Zhenqiang Gong, Yue Zhang, et al. Promptbench: Towards evaluating the robustness of large language models on adversarial prompts. arXiv preprint arXiv:2306.04528, 2023.",
+    "Zheng Zhu, Xiaofeng Wang, Wangbo Zhao, Chen Min, Nianchen Deng, Min Dou, Yuqi Wang, Botian Shi, Kai Wang, Chi Zhang, et al. Is sora a world simulator? a comprehensive survey on general world models and beyond. arXiv preprint arXiv:2405.03520, 2024.",
+    "Andy Zou, Zifan Wang, J Zico Kolter, and Matt Fredrikson. Universal and transferable adversarial attacks on aligned language models. arXiv preprint arXiv:2307.15043, 2023."
+  ],
+  "measurement_description": "Generation of discriminatory content and negative stereotypes in religious contexts, specifically as part of the 'Discrimination' safety aspect."
 }

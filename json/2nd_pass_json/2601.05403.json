@@ -2,107 +2,31 @@
   "filename": "2601.05403.pdf",
   "title": "Same Claim, Different Judgment: Benchmarking Scenario-Induced Bias in Multilingual Financial Misinformation Detection",
   "arxiv_url": "https://arxiv.org/pdf/2601.05403",
-  "benchmark_measurement": "The benchmark measures scenario-induced bias in financial misinformation detection by priming LLMs with personas combining specific roles (e.g., retail investor, company owner) with specific ethno-religious identities. The bias is quantified as the performance difference (in F1 score) between the scenario-conditioned and a baseline (scenario-agnostic) evaluation.",
-  "religious_groups": [
-    "Christianity",
-    "Islam",
-    "Buddhism",
-    "Judaism"
+  "bias_targets": [
+    {
+      "target": "Cognitive/Behavioral bias",
+      "methodology": "Comparing F1 scores for financial misinformation detection between scenario-agnostic baselines and prompts conditioned on specific investor roles and behavioral finance traits (overconfidence, loss aversion, herding, anchoring, confirmation bias)."
+    },
+    {
+      "target": "Regional/Geographic bias",
+      "methodology": "Measuring the deviation in model verification performance (F1 scores) when conditioned on different regional financial market contexts (e.g., Europe, USA, Asia Pacific, China Mainland, UAE) compared to a baseline."
+    },
+    {
+      "target": "Racial/Ethnic bias",
+      "methodology": "Evaluating changes in F1 scores when the LLM is prompted with different ethnic backgrounds (e.g., American, Chinese, Indian, Arab, Latino/Hispanic, African) combined with specific investor roles."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluating changes in F1 scores when the LLM is prompted with different religious beliefs (e.g., Christianity, Islam, Buddhism, Judaism) combined with specific investor roles."
+    },
+    {
+      "target": "Language bias",
+      "methodology": "Comparing financial misinformation detection performance (accuracy and F1 scores) and the magnitude of behavioral biases across high-resource (English, Chinese) and low-resource (Greek, Bengali) languages."
+    },
+    {
+      "target": "Occupational bias",
+      "methodology": "Measuring differences in model judgment and bias manifestations when prompted with distinct financial decision-maker roles (Retail Investor, Professional, Company Owner)."
+    }
   ],
-  "models_tested": [
-    "GPT-5-mini",
-    "DeepSeek-V3.2-Reasoner",
-    "Claude-Sonnet-4.5",
-    "Gemini-2.5-Flash",
-    "Qwen3-8B-R",
-    "Qwen3-14B-R",
-    "Qwen3-32B-R",
-    "GPT-4.1",
-    "Claude-3.5-Haiku",
-    "Gemini-2.0-Flash",
-    "DeepSeek-V3.2-Chat",
-    "Qwen3-8B",
-    "Qwen3-14B",
-    "Qwen3-32B",
-    "Qwen2.5-72B-Instruct",
-    "Llama-3.3-70B-Instruct",
-    "Mistral-7B-Instruct-v0.3",
-    "Mistral-Large-Instruct-2411",
-    "Mistral-NEMO-Instruct-2407",
-    "Mistral-Small-24B-Instruct-2501",
-    "Mixtral-8x7B-Instruct-v0.1",
-    "Mixtral-8x22B-Instruct-v0.1"
-  ],
-  "languages_evaluated": [
-    "English",
-    "Chinese",
-    "Greek",
-    "Bengali"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "FinFact",
-    "MDFEND",
-    "CHEF",
-    "BanMANI"
-  ],
-  "continuous_testing": false,
-  "findings": "Model bias is significantly influenced by the interaction of ethnicity, religion, and the assigned role. The bias for the same ethno-religious group can reverse when the role changes (e.g., retail investor vs. company owner). For instance, in the retail investor role, Jewish-Judaism and Chinese-Christianity scenarios induced relatively large biases, while in the company owner role, bias increased for Latino/Hispanic-Christianity and African-Islam scenarios. This highlights structured and interactive sources of model bias, rather than static stereotypes.",
-  "references": [
-    "Anthropic. 2025. Introducing claude sonnet 4.5. Official Vertex AI documentation for Claude Sonnet 4.5.",
-    "Association of Statisticians of American Religious Bodies (ASARB). 2023. 2020 u.s. religion census. https://www.usreligioncensus.org/sites/ default/files/2023-10/2020_US_Religion_ Census.pdf.",
-    "Brad M Barber and Terrance Odean. 2001. Boys will be boys: Gender, overconfidence, and common stock investment. The Quarterly Journal of Economics, 116(1):261–292.",
-    "Pietro Bini, Lin William Cong, Xing Huang, and Lawrence J Jin. 2025. Behavioral economics of ai: Llm biases and corrections. Available at SSRN 5213130.",
-    "Yupeng Cao, Haohang Li, Yangyang Yu, and Shashidhar Reddy Javaji. 2025. Capybara at the financial misinformation detection challenge task: chain-of-thought enhanced financial misinformation detection. In Proceedings of the Joint Workshop of the 9th Financial Technology and Natural Language Processing (FinNLP), the 6th Financial Narrative Processing (FNP), and the 1st Workshop on Large Language Models for Finance and Legal (LLMFinLegal), pages 321–325.",
-    "Census of India 2011. 2021. Distribution of population by religions. htt1s://censusindia.gov.in/ nada/index.php/catalog/40443/download/ 44077/DROP_IN_ARTICLE-04.pdf.",
-    "Gheorghe Comanici, Eric Bieber, Mike Schaekermann, Ice Pasupat, Noveen Sachdeva, Inderjit Dhillon, Marcel Blistein, Ori Ram, Dan Zhang, Evan Rosen, and 1 others. 2025. Gemini 2.5: Pushing the frontier with advanced reasoning, multimodality, long context, and next generation agentic capabilities. arXiv preprint arXiv:2507.06261.",
-    "Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Amy Yang, Angela Fan, and 1 others. 2024. The llama 3 herd of models. arXiv preprint arXiv:2407.21783.",
-    "Jessica Maria Echterhoff, Yao Liu, Abeer Alessa, Julian McAuley, and Zexue He. 2024. Cognitive bias in decision-making with llms. In Findings of the association for computational linguistics: EMNLP 2024, pages 12640–12653.",
-    "Dinesh Gabhane, A Sharma, and Rupam Mukherjee. 2023. Behavioral finance: exploring the influence of cognitive biases on investment decisions. Boletin de Literatura Oral-The Literary Journal, 10(1):3133–3141.",
-    "Thomas Gilovich, Dale Griffin, and Daniel Kahneman. 2002. Heuristics and Biases: The Psychology of Intuitive Judgment. Cambridge University Press.",
-    "Patrick Haller, Jannis Vamvas, Rico Sennrich, and Lena Ann Jäger. 2025. Leveraging in-context learning for political bias testing of llms. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 24718–24738.",
-    "Md Zobaer Hossain, Md Ashraful Rahman, Md Saiful Islam, and Sudipta Kar. 2020. Banfakenews: A dataset for detecting fake news in bangla. arXiv preprint arXiv:2004.08789.",
-    "Xuming Hu, Zhijiang Guo, GuanYu Wu, Aiwei Liu, Lijie Wen, and Philip S Yu. 2022. Chef: A pilot chinese dataset for evidence-based fact-checking. In Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 3362–3376.",
-    "Kung-Hsiang Huang, Hou Pong Chan, Kathleen McKeown, and Heng Ji. 2025. Manitweet: A new benchmark for identifying manipulation of news on social media. In Proceedings of the 31st International Conference on Computational Linguistics, pages 11161–11180.",
-    "International Monetary Fund. 2025a. Regional economic outlook.",
-    "International Monetary Fund. 2025b. Regional economic outlook for asia and pacific.",
-    "Albert Q Jiang, Alexandre Sablayrolles, Arthur Mensch, Chris Bamford, Devendra Singh Chaplot, Diego de las Casas, Florian Bressand, Gianna Lengyel, Guillaume Lample, Lucile Saulnier, and 1 others. 2023. Mistral 7b. arXiv preprint arXiv:2310.06825.",
-    "Albert Q Jiang, Alexandre Sablayrolles, Antoine Roux, Arthur Mensch, Blanche Savary, Chris Bamford, Devendra Singh Chaplot, Diego de las Casas, Emma Bou Hanna, Florian Bressand, and 1 others. 2024. Mixtral of experts. arXiv preprint arXiv:2401.04088.",
-    "Daniel Kahneman and Amos Tversky. 1979. Prospect theory: An analysis of decision under risk. Econometrica, 47(2):263–292.",
-    "Mahammed Kamruzzaman, Md Minul Islam Shovon, and Gene Kim. 2023. Banmani: A dataset to identify manipulated social media news in bangla. In Proceedings of the Workshop on Computational Terminology in NLP and Translation Studies (ConTeNTS) Incorporating the 16th Workshop on Building and Using Comparable Corpora (BUCC), pages 51–58.",
-    "Haein Kong, Yongsu Ahn, Sangyub Lee, and Yunho Maeng. 2024. Gender bias in llm-generated interview responses. arXiv preprint arXiv:2410.20739.",
-    "Dongjun Lee and Heesoo Park. 2025. Dunamu ml at the financial misinformation detection challenge task: improving supervised fine-tuning with llm-based data augmentation. In Proceedings of the Joint Workshop of the 9th Financial Technology and Natural Language Processing (FinNLP), the 6th Financial Narrative Processing (FNP), and the 1st Workshop on Large Language Models for Finance and Legal (LLMFinLegal), pages 297–301.",
-    "Aixin Liu, Aoxue Mei, Bangcai Lin, Bing Xue, Bingxuan Wang, Bingzheng Xu, Bochao Wu, Bowei Zhang, Chaofan Lin, Chen Dong, and 1 others. 2025a. Deepseek-v3. 2: Pushing the frontier of open large language models. arXiv preprint arXiv:2512.02556.",
-    "Zhiwei Liu, Keyi Wang, Zhuo Bao, Xin Zhang, Jiping Dong, Kailai Yang, Mohsinul Kabir, Polydoros Giannouris, Rui Xing, Park Seongchan, and 1 others. 2025b. Finnlp-fnp-llmfinlegal-2025 shared task: financial misinformation detection challenge task. In Proceedings of the Joint Workshop of the 9th Financial Technology and Natural Language Processing (FinNLP), the 6th Financial Narrative Processing (FNP), and the 1st Workshop on Large Language Models for Finance and Legal (LLMFinLegal), pages 271–276.",
-    "Zhiwei Liu, Xin Zhang, Kailai Yang, Qianqian Xie, Jimin Huang, and Sophia Ananiadou. 2025c. Fmdllama: Financial misinformation detection based on large language models. In Companion Proceedings of the ACM on Web Conference 2025, pages 1153–1157.",
-    "Zheyang Luo, Guangbin Zhang, Jiahao Xiao, Xuankang Zhang, Yulin Dou, and Jiangming Liu. 2025. Fmdmllama at the financial misinformation detection challenge task: multimodal reasoning and evidence generation. In Proceedings of the Joint Workshop of the 9th Financial Technology and Natural Language Processing (FinNLP), the 6th Financial Narrative Processing (FNP), and the 1st Workshop on Large Language Models for Finance and Legal (LLMFinLegal), pages 277–282.",
-    "Ulrike Malmendier and Geoffrey Tate. 2005. Ceo overconfidence and corporate policies. Journal of Finance, 60(6):2661–2700.",
-    "Qiong Nan, Juan Cao, Yongchun Zhu, Yanyan Wang, and Jintao Li. 2021. Mdfend: Multi-domain fake news detection. In Proceedings of the 30th ACM international conference on information & knowledge management, pages 3343–3347.",
-    "OpenAI. 2025. Gpt-5 system card. Official OpenAI announcement for the GPT-5 model family.",
-    "OpenAI. 2025. Introducing gpt-4.1 in the api. Official OpenAI announcement for the GPT-4.1.",
-    "JaeHong Park, Prabhudev Konana, Bin Gu, Alok Kumar, and Rajagopal Raghunathan. 2010. Confirmation bias, overconfidence, and investment performance: Evidence from stock message boards.",
-    "Pew Research Center. 2017. Europe’s growing muslim population.",
-    "Pew Research Center. 2021. Population growth and religious composition. https://www. pewresearch.org/religion/2021/09/21/ population-growth-and-religious-composition/.",
-    "Pew Research Center. 2023. Measuring religion in china. https://www.pewresearch.org/ wp-content/uploads/sites/20/2023/08/PF_ 2023.08.30_religion-china_REPORT.pdf.",
-    "Qwen, :, An Yang, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chengyuan Li, Dayiheng Liu, Fei Huang, Haoran Wei, Huan Lin, Jian Yang, Jianhong Tu, Jianwei Zhang, Jianxin Yang, Jiaxi Yang, Jingren Zhou, and 25 others. 2025. Qwen2.5 technical report. Preprint, arXiv:2412.15115.",
-    "Aman Rangapur, Haoran Wang, Ling Jian, and Kai Shu. 2025. Fin-fact: A benchmark dataset for multimodal financial fact-checking and explanation generation. In Companion Proceedings of the ACM on Web Conference 2025, pages 785–788.",
-    "Aman Rangapur, Haoran Wang, and Kai Shu. 2023. Investigating online financial misinformation and its consequences: A computational perspective. arXiv preprint arXiv:2309.12363.",
-    "Rajesh Ranjan, Shailja Gupta, and Surya Narayan Singh. 2024. A comprehensive survey of bias in llms: Current landscape and future directions. arXiv preprint arXiv:2409.16430.",
-    "Sunil Sharma and Sushil Bikhchandani. 2000. Herd Behavior in Financial Markets: A Review. IMF Working Papers, 00(48):1.",
-    "Yan Tao, Olga Viberg, Ryan S Baker, and René F Kizilcec. 2024. Cultural bias and cultural alignment of large language models. PNAS nexus, 3(9):pgae346.",
-    "Amir Taubenfeld, Yaniv Dover, Roi Reichart, and Ariel Goldstein. 2024. Systematic biases in Ilm simulations of debates. arXiv preprint arXiv:2402.04049.",
-    "Ivo Vlaev, Nick Chater, and Neil Stewart. 2007. Relativistic financial decisions: Context effects on retirement saving and investment risk preferences. Judgment and Decision Making, 2(5):292–311.",
-    "Wikipedia contributors. Christianity in the middle east. https://en.wikipedia.org/wiki/ Christianity_in_the_Middle_East.",
-    "World Bank. 2024. Gulf economic update: Fall 2023. https://openknowledge. worldbank.org/entities/publication/ 2c0e4380-b9c4-427e-ba67-5a234ea377e3.",
-    "World Bank Group. 2022. Global financial development report.",
-    "Shijie Wu, Ozan Irsoy, Steven Lu, Vadim Dabravolski, Mark Dredze, Sebastian Gehrmann, Prabhanjan Kambadur, David Rosenberg, and Gideon Mann. 2023. Bloomberggpt: A large language model for finance. arXiv preprint arXiv:2303.17564.",
-    "Qianqian Xie, Weiguang Han, Zhengyu Chen, Ruoyu Xiang, Xiao Zhang, Yueru He, Mengxi Xiao, Dong Li, Yongfu Dai, Duanyu Feng, and 1 others. 2024. Finben: A holistic financial benchmark for large language models. Advances in Neural Information Processing Systems, 37:95716–95743.",
-    "Qianqian Xie, Weiguang Han, Xiao Zhang, Yanzhao Lai, Min Peng, Alejandro Lopez-Lira, and Jimin Huang. 2023. Pixiu: a large language model, instruction data and evaluation benchmark for finance. In Proceedings of the 37th International Conference on Neural Information Processing Systems, pages 33469–33484.",
-    "An Yang, Anfeng Li, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chang Gao, Chengen Huang, Chenxu Lv, and 1 others. 2025. Qwen3 technical report. arXiv preprint arXiv:2505.09388.",
-    "Minji Yoo. 2024. How much should we trust Ilm-based measures for accounting and finance research? Available at SSRN.",
-    "Yilun Zhao, Yitao Long, Tintin Jiang, Chengye Wang, Weiyuan Chen, Hongjun Liu, Xiangru Tang, Yiming Zhang, Chen Zhao, and Arman Cohan. 2024. Findver: Explainable claim verification over long and hybrid-content financial documents. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 14739–14752."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

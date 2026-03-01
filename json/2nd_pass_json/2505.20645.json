@@ -2,85 +2,23 @@
   "filename": "2505.20645.pdf",
   "title": "STEER-BENCH: A Benchmark for Evaluating the Steerability of Large Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2505.20645",
-  "benchmark_measurement": "The benchmark measured the ability of Large Language Models to align their responses with the distinct norms, perspectives, and rhetorical styles of contrasting religious and non-religious communities (e.g., r/atheism vs. r/Christianity, r/exmuslim vs. r/islam).",
-  "religious_groups": [
-    "Christianity",
-    "Islam",
-    "Atheism",
-    "Ex-Muslims"
+  "bias_targets": [
+    {
+      "target": "Political bias",
+      "methodology": "Steering models using instruction-response demonstrations from contrasting political subreddits (e.g., AskALiberal vs. AskConservatives) and evaluating alignment using community-specific multiple-choice questions."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Steering models using instruction-response demonstrations from contrasting gender-focused subreddits (e.g., AskWomen vs. AskMen, Feminism vs. MensRights) and evaluating alignment using community-specific multiple-choice questions."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Steering models using instruction-response demonstrations from contrasting religious subreddits (e.g., atheism vs. Christianity, exmuslim vs. islam) and evaluating alignment using community-specific multiple-choice questions."
+    },
+    {
+      "target": "Cultural bias",
+      "methodology": "Steering models using instruction-response demonstrations from contrasting lifestyle, interest, and social subreddits (e.g., diet, parenting, technology, sports) to evaluate alignment with distinct community norms and viewpoints via multiple-choice questions."
+    }
   ],
-  "models_tested": [
-    "Llama-3-3B",
-    "Llama-3-8B",
-    "Llama-3-70B",
-    "Qwen-2.5-3B",
-    "Qwen-2.5-7B",
-    "Qwen-2.5-14B",
-    "Qwen-2.5-32B",
-    "Qwen-2.5-72B",
-    "Mistral-7B",
-    "DeepSeek-v3",
-    "Claude-3.5-Haiku",
-    "Claude-3.7-Sonnet",
-    "GPT-4o-Mini"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "COMMUNITY-CROSS-INSTRUCT",
-    "COMPO"
-  ],
-  "continuous_testing": false,
-  "findings": "Religion was identified as an 'easy domain' where most models performed well (over 0.70 accuracy for top models). This strong performance is attributed to the clearly articulated community norms and polarized rhetoric within these religious and atheistic communities, which facilitates easier identification of community-aligned answers.",
-  "references": [
-    "Duarte Alves, Nuno Guerreiro, João Alves, José Pombal, Ricardo Rei, José de Souza, Pierre Colombo, and Andre Martins. 2023. Steering large language models for machine translation with finetuning and in-context learning. In Findings of the Association for Computational Linguistics: EMNLP 2023, pages 11127–11148, Singapore. Association for Computational Linguistics.",
-    "Reza Bayat, Ali Rahimi-Kalahroudi, Mohammad Pezeshki, Sarath Chandar, and Pascal Vincent. 2025. Steering large language model activations in sparse spaces. arXiv preprint arXiv:2503.00177.",
-    "Yuanpu Cao, Tianrong Zhang, Bochuan Cao, Ziyi Yin, Lu Lin, Fenglong Ma, and Jinghui Chen. 2024. Personalized steering of large language models: Versatile steering vectors through bi-directional preference optimization. In Advances in Neural Information Processing Systems, volume 37, pages 49519–49551. Curran Associates, Inc.",
-    "Kai Chen, Zihao He, Rong-Ching Chang, Jonathan May, and Kristina Lerman. 2023. Anger breeds controversy: analyzing controversy and emotions on reddit. In International conference on social computing, behavioral-cultural modeling and prediction and behavior representation in modeling and simulation, pages 44–53. Springer.",
-    "Kai Chen, Zihao He, Jun Yan, Taiwei Shi, and Kristina Lerman. 2024a. How susceptible are large language models to ideological manipulation? In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 17140–17161, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Nuo Chen, Yan Wang, Yang Deng, and Jia Li. 2024b. The oscars of ai theater: A survey on role-playing with language models. arXiv preprint arXiv:2407.11484.",
-    "Yi Dong, Zhilin Wang, Makesh Sreedhar, Xianchao Wu, and Oleksii Kuchaiev. 2023. SteerLM: Attribute conditioned SFT as an (user-steerable) alternative to RLHF. In Findings of the Association for Computational Linguistics: EMNLP 2023, pages 11275–11288, Singapore. Association for Computational Linguistics.",
-    "Dheeru Dua, Yizhong Wang, Pradeep Dasigi, Gabriel Stanovsky, Sameer Singh, and Matt Gardner. 2019. Drop: A reading comprehension benchmark requiring discrete reasoning over paragraphs. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 2368–2378.",
-    "Aleksandra Edwards and Jose Camacho-Collados. 2024. Language models for text classification: Is in-context learning enough? In Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024), pages 10058–10072, Torino, Italia. ELRA and ICCL.",
-    "Hamideh Ghanadian, Isar Nejadgholi, and Hussein Al Osman. 2024. Socially aware synthetic data generation for suicidal ideation detection using large language models. IEEe Access, 12:14350–14363.",
-    "Maarten Grootendorst. 2022. Bertopic: Neural topic modeling with a class-based tf-idf procedure. arXiv preprint arXiv:2203.05794.",
-    "Ping Guo, Yubing Ren, Yue Hu, Yanan Cao, Yunpeng Li, and Heyan Huang. 2024. Steering large language models for cross-lingual information retrieval. In Proceedings of the 47th International ACM SIGIR Conference on Research and Development in Information Retrieval, SIGIR ’24, page 585–596, New York, NY, USA. Association for Computing Machinery.",
-    "Perttu Hämäläinen, Mikke Tavast, and Anton Kunnari. 2023. Evaluating large language models in generating synthetic hci research data: a case study. In Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems, pages 1–19.",
-    "Qianyu He, Jie Zeng, Qianxi He, Jiaqing Liang, and Yanghua Xiao. 2024a. From complex to simple: Enhancing multi-constraint complex instruction following ability of large language models. arXiv preprint arXiv:2404.15846.",
-    "Zihao He, Minh Duc Chu, Rebecca Dorn, Siyi Guo, and Kristina Lerman. 2024b. Community-crossinstruct: Unsupervised instruction generation for aligning large language models to online communities. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 17001–17019, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Zihao He, Siyi Guo, Ashwin Rao, and Kristina Lerman. 2024c. Whose emotions and moral sentiments do language models reflect? In Findings of the Association for Computational Linguistics: ACL 2024, pages 6611–6631, Bangkok, Thailand. Association for Computational Linguistics.",
-    "Dan Hendrycks, Collin Burns, Steven Basart, Andrew Critch, Jerry Li, Dawn Song, and Jacob Steinhardt. Aligning ai with shared human values. In International Conference on Learning Representations.",
-    "Sachin Kumar, Chan Young Park, Yulia Tsvetkov, Noah A. Smith, and Hannaneh Hajishirzi. 2025. ComPO: Community preferences for language model personalization. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 8246–8279, Albuquerque, New Mexico. Association for Computational Linguistics.",
-    "Cheng Li, Mengzhuo Chen, Jindong Wang, Sunayana Sitaram, and Xing Xie. 2024a. Culturellm: Incorporating cultural differences into large language models. Advances in Neural Information Processing Systems, 37:84799–84838.",
-    "Junyi Li, Charith Peris, Ninareh Mehrabi, Palash Goyal, Kai-Wei Chang, Aram Galstyan, Richard Zemel, and Rahul Gupta. 2024b. The steerability of large language models toward data-driven personas. In Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 7290–7305, Mexico City, Mexico. Association for Computational Linguistics.",
-    "Xian Li, Ping Yu, Chunting Zhou, Timo Schick, Omer Levy, Luke Zettlemoyer, Jason E Weston, and Mike Lewis. 2024c. Self-alignment with instruction backtranslation. In The Twelfth International Conference on Learning Representations.",
-    "Ziyi Liu, Priyanka Dey, Zhenyu Zhao, Jen-tse Huang, Rahul Gupta, Yang Liu, and Jieyu Zhao. 2025. Can llms grasp implicit cultural values? benchmarking llms’ metacognitive cultural intelligence with cqbench. arXiv preprint arXiv:2504.01127.",
-    "Renze Lou, Kai Zhang, and Wenpeng Yin. 2024. Large language model instruction following: A survey of progresses and challenges. Computational Linguistics, 50(3):1053–1095.",
-    "Keming Lu, Bowen Yu, Chang Zhou, and Jingren Zhou. 2024. Large language models are superpositions of all characters: Attaining arbitrary role-play via self-alignment. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 7828–7840, Bangkok, Thailand. Association for Computational Linguistics.",
-    "Long Ouyang, Jeffrey Wu, Xu Jiang, Diogo Almeida, Carroll Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, John Schulman, Jacob Hilton, Fraser Kelton, Luke Miller, Maddie Simens, Amanda Askell, Peter Welinder, Paul F Christiano, Jan Leike, and Ryan Lowe. 2022. Training language models to follow instructions with human feedback. In Advances in Neural Information Processing Systems, volume 35, pages 27730–27744. Curran Associates, Inc.",
-    "Pranav Rajpurkar, Jian Zhang, Konstantin Lopyrev, and Percy Liang. 2016. Squad: 100,000+ questions for machine comprehension of text. In Proceedings of the 2016 Conference on Empirical Methods in Natural Language Processing, pages 2383–2392.",
-    "Yiting Ran, Xintao Wang, Rui Xu, Xinfeng Yuan, Jiaqing Liang, Yanghua Xiao, and Deqing Yang. 2024. Capturing minds, not just words: Enhancing roleplaying language models with personality-indicative data. In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 14566–14576, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Shibani Santurkar, Esin Durmus, Faisal Ladhak, Cinoo Lee, Percy Liang, and Tatsunori Hashimoto. 2023. Whose opinions do language models reflect? In Proceedings of the 40th International Conference on Machine Learning, volume 202 of Proceedings of Machine Learning Research, pages 29971–30004. PMLR.",
-    "Murray Shanahan, Kyle McDonell, and Laria Reynolds. 2023. Role play with large language models. Nature, 623(7987):493–498.",
-    "Yunfan Shao, Linyang Li, Junqi Dai, and Xipeng Qiu. 2023. Character-LLM: A trainable agent for roleplaying. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, pages 13153–13187, Singapore. Association for Computational Linguistics.",
-    "Taiwei Shi, Kai Chen, and Jieyu Zhao. 2024a. Saferinstruct: Aligning language models with automated preference data. In Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 7636–7651, Mexico City, Mexico. Association for Computational Linguistics.",
-    "Weiyan Shi, Ryan Li, Yutong Zhang, Caleb Ziems, Sunny Yu, Raya Horesh, Rogério Abreu De Paula, and Diyi Yang. 2024b. CultureBank: An online community-driven knowledge base towards culturally aware language technologies. In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 4996–5025, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Haoran Sun, Lixin Liu, Junjie Li, Fengyu Wang, Baohua Dong, Ran Lin, and Ruohui Huang. 2024. Conifer: Improving complex constrained instructionfollowing ability of large language models. arXiv preprint arXiv:2404.02823.",
-    "Zhi Rui Tam, Cheng-Kuang Wu, Yi-Lin Tsai, Chieh-Yen Lin, Hung-yi Lee, and Yun-Nung Chen. 2024. Let me speak freely? a study on the impact of format restrictions on large language model performance. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing: Industry Track, pages 1218–1236, Miami, Florida, US. Association for Computational Linguistics.",
-    "Noah Wang, Z.y. Peng, Haoran Que, Jiaheng Liu, Wangchunshu Zhou, Yuhan Wu, Hongcheng Guo, Ruitong Gan, Zehao Ni, Jian Yang, Man Zhang, Zhaoxiang Zhang, Wanli Ouyang, Ke Xu, Wenhao Huang, Jie Fu, and Junran Peng. 2024a. RoleLLM: Benchmarking, eliciting, and enhancing role-playing abilities of large language models. In Findings of the Association for Computational Linguistics: ACL 2024, pages 14743–14777, Bangkok, Thailand. Association for Computational Linguistics.",
-    "Yizhong Wang, Yeganeh Kordi, Swaroop Mishra, Alisa Liu, Noah A. Smith, Daniel Khashabi, and Hannaneh Hajishirzi. 2023. Self-instruct: Aligning language models with self-generated instructions. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 13484–13508, Toronto, Canada. Association for Computational Linguistics.",
-    "Zifeng Wang, Chun-Liang Li, Vincent Perot, Long Le, Jin Miao, Zizhao Zhang, Chen-Yu Lee, and Tomas Pfister. 2024b. CodecLM: Aligning language models with tailored synthetic data. In Findings of the Association for Computational Linguistics: NAACL 2024, pages 3712–3729, Mexico City, Mexico. Association for Computational Linguistics.",
-    "Can Xu, Qingfeng Sun, Kai Zheng, Xiubo Geng, Pu Zhao, Jiazhan Feng, Chongyang Tao, Qingwei Lin, and Daxin Jiang. 2024. WizardLM: Empowering large pre-trained language models to follow complex instructions. In The Twelfth International Conference on Learning Representations.",
-    "Zhiyuan Zeng, Jiatong Yu, Tianyu Gao, Yu Meng, Tanya Goyal, and Danqi Chen. 2024. Evaluating large language models at evaluating instruction following. In The Twelfth International Conference on Learning Representations.",
-    "Shengyu Zhang, Linfeng Dong, Xiaoya Li, Sen Zhang, Xiaofei Sun, Shuhe Wang, Jiwei Li, Runyi Hu, Tianwei Zhang, Fei Wu, and 1 others. 2023. Instruction tuning for large language models: A survey. arXiv preprint arXiv:2308.10792.",
-    "Tao Zhang, Yanjun Shen, Wenjing Luo, Yan Zhang, Hao Liang, Fan Yang, Mingan Lin, Yujing Qiao, Weipeng Chen, Bin Cui, and 1 others. 2024. Cfbench: A comprehensive constraints-following benchmark for llms. arXiv preprint arXiv:2408.01122.",
-    "Hao Zhao, Maksym Andriushchenko, Francesco Croce, and Nicolas Flammarion. 2025. Is in-context learning sufficient for instruction following in LLMs? In The Thirteenth International Conference on Learning Representations.",
-    "Zijie Zhong, Linqing Zhong, Zhaoze Sun, Qingyun Jin, Zengchang Qin, and Xiaofan Zhang. 2025. SyntheT2C: Generating synthetic data for fine-tuning large language models on the Text2Cypher task. In Proceedings of the 31st International Conference on Computational Linguistics, pages 672–692, Abu Dhabi, UAE. Association for Computational Linguistics.",
-    "Jeffrey Zhou, Tianjian Lu, Swaroop Mishra, Siddhartha Brahma, Sujoy Basu, Yi Luan, Denny Zhou, and Le Hou. 2023. Instruction-following evaluation for large language models. arXiv preprint arXiv:2311.07911."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

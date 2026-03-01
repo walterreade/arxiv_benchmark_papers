@@ -2,35 +2,15 @@
   "filename": "2301.13771.pdf",
   "title": "The Touché23-ValueEval Dataset for Identifying Human Values behind Arguments",
   "arxiv_url": "https://arxiv.org/pdf/2301.13771",
-  "benchmark_measurement": "The benchmark measures the ability of models to identify human values in arguments, including the value 'Be holding religious faith', using a dataset that incorporates arguments from Islamic religious texts (Nahj al-Balagha).",
-  "religious_groups": [
-    "Islam"
+  "bias_targets": [
+    {
+      "target": "Cultural bias",
+      "methodology": "Analyzing and comparing the distribution of human value categories across arguments collected from diverse geographic and cultural sources (e.g., Chinese Q&A platforms, Indian discussion boards, European democracy platforms, and US newspapers) to mitigate the Western-centric bias of previous datasets and evaluate cross-cultural representation."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluating the distribution of human values in arguments extracted specifically from Islamic religious texts (Nahj al-Balagha) to ensure the representation of diverse moral and ethical reasoning, comparing these value distributions against secular sources."
+    }
   ],
-  "models_tested": [
-    "BERT",
-    "1-Baseline"
-  ],
-  "languages_evaluated": [
-    "English",
-    "Arabic",
-    "Farsi",
-    "Chinese"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "Webis-ArgValues-22"
-  ],
-  "continuous_testing": false,
-  "findings": "Arguments sourced from the Islamic religious text 'Nahj al-Balagha' showed a significantly higher frequency of appealing to the value 'Be holding religious faith' (frequency of 0.100) compared to most other secular sources in the dataset, such as those from the Conference on the Future of Europe (0.008).",
-  "references": [
-    "Valentin Barriere, Guillaume Guillaume Jacquet, and Leo Hemamou. 2022. CoFE: A new dataset of intra- multilingual multi-target stance classification from an online European participatory democracy plat- form. In Proceedings of the 2nd Conference of the Asia-Pacific Chapter of the Association for Compu- tational Linguistics and the 12th International Joint Conference on Natural Language Processing (Vol- ume 2: Short Papers), pages 418–422, Online only. Association for Computational Linguistics.",
-    "Mehrdad Farahani, Mohammad Gharachorloo, Marzieh Farahani, and Mohammad Manthouri. 2021. ParsBERT: Transformer-based model for Persian language understanding. Neural Processing Letters.",
-    "Shai Gretz, Roni Friedman, Edo Cohen-Karlik, As- saf Toledo, Dan Lahav, Ranit Aharonov, and Noam Slonim. 2020. A large-scale dataset for argument quality ranking: Construction and analysis. In 34th AAAI Conference on Artificial Intelligence (AAAI 2020), pages 7805–7813. AAAI Press.",
-    "Dirk Hovy, Taylor Berg-Kirkpatrick, Ashish Vaswani, and Eduard Hovy. 2013. Learning whom to trust with mace. In Conference of the North American Chapter of the Association for Computational Lin- guistics: Human Language Technologies (NAACL- HLT 2013), pages 1120–1130. Association for Com- putational Linguistics.",
-    "Johannes Kiesel, Milad Alshomary, Nicolas Handke, Xiaoni Cai, Henning Wachsmuth, and Benno Stein. 2022. Identifying the Human Values behind Argu- ments. In 60th Annual Meeting of the Association for Computational Linguistics (ACL 2022), pages 4459–4471. Association for Computational Linguis- tics.",
-    "Shalom H Schwartz. 1994. Are there universal aspects in the structure and contents of human values? Jour- nal of Social Issues, 50:19–45."
-  ]
+  "primary_bias_target": "Cultural bias"
 }

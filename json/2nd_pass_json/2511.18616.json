@@ -2,72 +2,15 @@
   "filename": "2511.18616.pdf",
   "title": "A Benchmark for Zero-Shot Belief Inference in Large Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2511.18616",
-  "benchmark_measurement": "The benchmark measured the ability of Large Language Models to predict an individual's stance (agree/disagree) on religious debate topics (e.g., 'There is a god') in a zero-shot setting, based on the user's demographic information and/or prior stated beliefs.",
-  "religious_groups": [
-    "Atheism",
-    "Agnosticism"
+  "bias_targets": [
+    {
+      "target": "Demographic bias",
+      "methodology": "Evaluating belief prediction accuracy by providing LLMs with user demographic attributes (age, gender, ethnicity, income, relationship status) in an informational ablation framework to measure the models' reliance on population-level statistical priors and demographic stereotypes."
+    },
+    {
+      "target": "Ideological bias",
+      "methodology": "Providing users' political and religious ideologies as background context to test how well models infer individual stances on varied debate propositions based on ideological associations and sociopolitical framing."
+    }
   ],
-  "models_tested": [
-    "DeepSeek R1 Distill Llama:8b",
-    "DeepSeek R1 Distill Qwen:7b",
-    "Gemma 3:4b",
-    "Gemma 3:12b",
-    "Llama 3.1:8b",
-    "Llama 3.2:3b",
-    "Mistral:7b",
-    "Phi 4:14B",
-    "Qwen3:8b"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [],
-  "continuous_testing": false,
-  "findings": "Among twenty-three belief categories, LLMs were most accurate at predicting stances on religious topics. The 'Religion' category achieved the highest macro F1 score in both evaluation approaches (mean model performance and ensemble majority vote), especially when models were provided with both demographic and prior belief information.",
-  "references": [
-    "J. L. Usó-Doménech and J. Nescolarde-Selva. “What are Belief Systems?” In: Foundations of Science 21.1 (2016), pp. 147–152. ISSN: 1572-8471. DOI: 10.1007/s10699-015-9409-z. URL: https://doi.org/10.1007/s10699-015-9409-z.",
-    "Daniel DellaPosta, Yongren Shi, and Michael Macy. “Why do liberals drink lattes?\" In: American Journal of Sociology 120 (2015), pp. 1473–1511. DOI: 10.1086/681254.",
-    "Nicholas A. Christakis and James H. Fowler. “The Spread of Obesity in a Large Social Network over 32 Years\". In: New England Journal of Medicine 357.4 (July 2007), pp. 370-379. ISSN: 1533-4406. DOI: 10.1056/nejmsa066082. URL: http://dx.doi.org/10.1056/nejmsa066082.",
-    "Andrew V. Papachristos. “Murder by Structure: Dominance Relations and the Social Structure of Gang Homicide”. In: American Journal of Sociology 115.1 (2009), pp. 74–128. ISSN: 00029602, 15375390. URL: http://www.jstor.org/stable/10.1086/597791 (visited on 11/05/2025).",
-    "Amir Goldberg and Sarah K. Stein. “Beyond Social Contagion: Associative Diffusion and the Emergence of Cultural Variation”. In: American Sociological Review 83.5 (2018), pp. 897–932. DOI: 10.1177/0003122418797576. eprint: https://doi.org/10.1177/0003122418797576. URL: https://doi.org/10.1177/0003122418797576.",
-    "Michael Macy et al. “Opinion cascades and the unpredictability of partisan polarization\". In: Science Advances 5.8 (Aug. 2019), eaax0754. DOI: 10.1126/sciadv.aax0754. URL: https://advances.sciencemag.org/content/5/8/eaax0754.",
-    "Christopher A. Bail. “Can Generative AI improve social science?” In: Proceedings of the National Academy of Sciences 121.21 (2024), e2314021121. DOI: 10.1073/pnas.2314021121. eprint: https://www.pnas.org/doi/pdf/10.1073/pnas.2314021121. URL: https://www.pnas.org/doi/abs/10.1073/pnas.2314021121.",
-    "Lisa P. Argyle et al. “Out of One, Many: Using Language Models to Simulate Human Samples\". In: Political Analysis 31.3 (Feb. 2023), pp. 337-351. ISSN: 1476-4989. DOI: 10.1017/pan.2023.2. URL: http://dx.doi.org/10.1017/pan.2023.2.",
-    "Danica Dillion et al. “Can AI Language Models Replace Human Participants?” In: Trends in Cognitive Sciences (2023). DOI: 10.1016/j.tics.2023.04.008.",
-    "Gati Aher, Rosa I. Arriaga, and Adam Tauman Kalai. “Using large language models to simulate multiple humans and replicate human subject studies\". In: Proceedings of the 40th International Conference on Machine Learning. ICML’23. Honolulu, Hawaii, USA: JMLR.org, 2023.",
-    "Apostolos Filippas, John J. Horton, and Benjamin S. Manning. “Large Language Models as Simulated Economic Agents: What Can We Learn from Homo Silicus?” In: Proceedings of the 25th ACM Conference on Economics and Computation. EC '24. New Haven, CT, USA: Association for Computing Machinery, 2024, pp. 614–615. ISBN: 9798400707049. DOI: 10.1145/3670865.3673513. URL: https://doi.org/10.1145/3670865.3673513.",
-    "Eric Chu et al. Language Models Trained on Media Diets Can Predict Public Opinion. 2023. arXiv: 2303.16779 [cs.CL]. URL: https://arxiv.org/abs/2303.16779.",
-    "Junsol Kim and Byungkyu Lee. “AI-Augmented Surveys: Leveraging Large Language Models for Opinion Prediction in Nationally Representative Surveys”. In: ArXiv abs/2305.09620 (2023). URL: https://api.semanticscholar.org/CorpusID:258715208.",
-    "Perttu Hämäläinen, Mikke Tavast, and Anton Kunnari. “Evaluating Large Language Models in Generating Synthetic HCI Research Data: a Case Study\". In: Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems. CHI '23. Hamburg, Germany: Association for Computing Machinery, 2023. ISBN: 9781450394215. DOI: 10.1145 / 3544548.3580688. URL: https://doi.org/10.1145/3544548 .3580688.",
-    "Hang Jiang et al. “CommunityLM: Probing Partisan Worldviews from Language Models\". In: Proceedings of the 29th International Conference on Computational Linguistics. Ed. by Nicoletta Calzolari et al. Gyeongju, Republic of Korea: International Committee on Computational Linguistics, Oct. 2022, pp. 6818-6826. URL: https://aclanthology.org/2022.coling-1.593/.",
-    "Rachith Aiyappa et al. Benchmarking zero-shot stance detection with FlanT5-XXL: Insights from training data, prompting, and decoding strategies into its near-SoTA performance. 2024. arXiv: 2403.00236 [cs.CL]. URL: https://arxiv.org/abs/2403.00236.",
-    "Lei Huang et al. “A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions\". In: ACM Transactions on Information Systems (Nov. 2024). ISSN: 1558-2868. DOI: 10.1145/3703155. URL: http://dx.doi.org/10.1145/3703155.",
-    "Yejin Bang et al. “A Multitask, Multilingual, Multimodal Evaluation of ChatGPT on Reasoning, Hallucination, and Interactivity”. In: Proceedings of the 13th International Joint Conference on Natural Language Processing and the 3rd Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics (Volume 1: Long Papers). Ed. by Jong C. Park et al. Nusa Dua, Bali: Association for Computational Linguistics, Nov. 2023, pp. 675–718. DOI: 10.18653/v1/2023.ijcnlp-main.45. URL: https://aclanthology.org/2023.ijcnlp-main.45.",
-    "Jochen Hartmann, Jasper Schwenzow, and Maximilian Witte. “The political ideology of conversational AI: Converging evidence on ChatGPT's pro-environmental, left-libertarian orientation”. In: ArXiv abs/2301.01768 (2023). URL:https://api.semanticscholar.org/CorpusID:255440573.",
-    "Weihong Qi, Hanjia Lyu, and Jiebo Luo. “Representation Bias in Political Sample Simulations with Large Language Models\". In: Companion Proceedings of the ACM on Web Conference 2025. WWW '25. Sydney NSW, Australia: Association for Computing Machinery, 2025, pp. 1264-1267. ISBN: 9798400713316. DOI: 10.1145/3701716.3715591. URL: https://doi.org/10.1145/3701716.3715591.",
-    "Iyad Rahwan et al. “Machine behaviour”. In: Nature 568.7753 (Apr. 2019), pp. 477-486. DOI: 10.1038/s41586-019-1138-y.",
-    "Canyu Chen and Kai Shu. \"Combating misinformation in the age of LLMs: Opportunities and challenges\". In: AI Magazine 45.3 (2024), pp. 354-368. DOI: https://doi.org/10.1002/aaai.12188. eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1002/aaai.12188. URL: https://onlinelibrary.wiley.com/doi/abs/10.1002/aaai.12188.",
-    "Hanjia Lyu et al. “LLM-Rec: Personalized Recommendation via Prompting Large Language Models”. In: Findings of the Association for Computational Linguistics: NAACL 2024. Ed. by Kevin Duh, Helena Gomez, and Steven Bethard. Mexico City, Mexico: Association for Computational Linguistics, June 2024, pp. 583–612. DOI: 10.18653/v1/2024.findings-naacl.39. URL: https://aclanthology.org/2024.findings-naacl.39/.",
-    "Esin Durmus and Claire Cardie. “A Corpus for Modeling User and Language Effects in Argumentation on Online Debating\". In: Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics. Association for Computational Linguistics, 2019, pp. 602-607. DOI: 10.18653/v1/p19-1057. URL: http://dx.doi.org/10.18653/v1/P19-1057.",
-    "Shibani Santurkar et al. “Whose opinions do language models reflect?” In: Proceedings of the 40th International Conference on Machine Learning. ICML’23. Honolulu, Hawaii, USA: JMLR.org, 2023.",
-    "Nils Reimers and Iryna Gurevych. “Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks”. In: ArXiv abs/1908.10084 (2019). URL: https://api.semanticscholar.org/CorpusID:201646309.",
-    "Byunghwee Lee et al. “A semantic embedding space based on large language models for modelling human beliefs”. In: Nature Human Behaviour (June 2025). ISSN: 2397-3374. DOI: 10.1038/s41562-025-02228-z. URL: http://dx.doi.org/10.1038/s41562-025-02228-z.",
-    "Caleb Ziems et al. “Can Large Language Models Transform Computational Social Science?\" In: Computational Linguistics 50.1 (Mar. 2024), pp. 237–291. DOI: 10.1162/coli_a_00502. URL: https://aclanthology.org/2024.cl-1.8/.",
-    "Yida Mu et al. “Navigating Prompt Complexity for Zero-Shot Classification: A Study of Large Language Models in Computational Social Science\". In: Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024). Ed. by Nicoletta Calzolari et al. Torino, Italia: ELRA and ICCL, May 2024, pp. 12074-12086. URL: https://aclanthology.org/2024.lrec-main.1055/.",
-    "Eric Schwitzgebel. “Belief”. In: The Stanford Encyclopedia of Philosophy. Ed. by Edward N. Zalta. Accessed: 2024-10-25. Stanford University, 2010.",
-    "DeepSeek-AI et al. DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning. 2025. arXiv: 2501.12948 [cs.CL]. URL: https://arxiv.org/abs/2501.12948.",
-    "Gemma Team et al. Gemma 3 Technical Report. 2025. arXiv: 2503.19786 [cs.CL]. URL: https://arxiv.org/abs/2503.19786.",
-    "Abhimanyu Dubey et al. The Llama 3 Herd of Models. 2024. arXiv: 2407 . 21783 [cs.AI]. URL: https://arxiv.org/abs/2407.21783.",
-    "Albert Q. Jiang et al. Mistral 7B. 2023. arXiv: 2310.06825 [cs.CL]. URL: https://arxiv.org/abs/2310.06825.",
-    "Marah Abdin et al. Phi-4 Technical Report. 2024. arXiv: 2412.08905 [cs.CL]. URL: https://arxiv.org/abs/2412.08905.",
-    "An Yang et al. Qwen3 Technical Report. 2025. arXiv:2505.09388 [cs.CL]. URL: https://arxiv.org/abs/2505.09388.",
-    "Jason Wei et al. Chain-of-Thought Prompting Elicits Reasoning in Large Language Models. 2023. arXiv: 2201.11903 [cs.CL]. URL: https://arxiv.org/abs/2201.11903.",
-    "Jingming Zhuo et al. “ProSA: Assessing and Understanding the Prompt Sensitivity of LLMs”. In: Findings of the Association for Computational Linguistics: EMNLP 2024. Ed. by Yaser Al-Onaizan, Mohit Bansal, and Yun-Nung Chen. Miami, Florida, USA: Association for Computational Linguistics, Nov. 2024, pp. 1950–1976. DOI: 10.18653/v1/2024.findings-emnlp.108. URL: https://aclanthology.org/2024.findings-emnlp.108/.",
-    "Arnav Singhvi et al. DSPy Assertions: Computational Constraints for Self-Refining Language Model Pipelines. 2024. arXiv: 2312.13382 [cs.CL]. URL: https://arxiv.org/abs/2312.13382.",
-    "Kelly Hong, Anton Troynikov, and Jeff Huber. Context Rot: How Increasing Input Tokens Impacts LLM Performance. Tech. rep. Chroma, July 2025. URL: https://research.trychroma.com/context-rot."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

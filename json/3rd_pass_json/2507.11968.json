@@ -2,15 +2,80 @@
   "filename": "2507.11968.pdf",
   "title": "Watch, Listen, Understand, Mislead: Tri-modal Adversarial Attacks on Short Videos for Content Appropriateness Evaluation",
   "arxiv_url": "https://arxiv.org/pdf/2507.11968",
-  "bias_targets": [
-    {
-      "target": "Bias against Vulnerable Populations",
-      "methodology": "Using an LLM-as-a-Judge (Mistral 7B) to score whether the target model's ethical reasoning considers the impact on vulnerable or marginalized groups (evaluated under the 'Vulnerable Population Awareness' metric) when processing tri-modal adversarial videos containing explicit/implicit attacks, derogatory references, or harmful stereotypes."
-    },
-    {
-      "target": "Cultural bias",
-      "methodology": "Using an LLM-as-a-Judge to evaluate whether the model's reasoning demonstrates cultural and social awareness (evaluated under the 'Contextual Sensitivity' metric) when classifying appropriate versus inappropriate short-form video content."
-    }
+  "religious_groups": [],
+  "models_tested": [
+    "GPT-4o mini",
+    "LLaMA-4 Scout",
+    "Qwen2.5-VL 3B",
+    "Gemma 3 4B",
+    "LLaVA 7B",
+    "GPT-4.1 mini",
+    "LLaMA 4 Maverick",
+    "Qwen2.5-VL 7B",
+    "Gemma 3 12B",
+    "LLaVA 13B",
+    "Mistral 7B"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long",
+    "short"
+  ],
+  "religion_component": "none",
+  "base_benchmarks": [
+    "RTVLM",
+    "VIDEOJAIL"
+  ],
+  "continuous_testing": false,
+  "findings": "This paper does not contain any findings related to religion, as it was not a focus of the study.",
+  "references": [
+    "Sher Badshah and Hassan Sajjad. Reference-guided verdict: Llms-as-judges in automatic evaluation of free-form text. arXiv preprint arXiv:2408.09235, 2024.",
+    "Jinze Bai, Shuai Bai, Yunfei Chu, Zeyu Cui, Kai Dang, Xiaodong Deng, Yang Fan, Wenbin Ge, Yu Han, Fei Huang, et al. Qwen technical report. arXiv preprint arXiv:2309.16609, 2023.",
+    "Shuai Bai, Keqin Chen, Xuejing Liu, Jialin Wang, Wenbin Ge, Sibo Song, Kai Dang, Peng Wang, Shijie Wang, Jun Tang, Humen Zhong, Yuanzhi Zhu, Mingkun Yang, Zhaohai Li, Jianqiang Wan, Pengfei Wang, Wei Ding, Zheren Fu, Yiheng Xu, Jiabo Ye, Xi Zhang, Tianbao Xie, Zesen Cheng, Hang Zhang, Zhibo Yang, Haiyang Xu, and Junyang Lin. Qwen2.5-vl technical report, 2025.",
+    "Junxi Chen, Junhao Dong, and Xiaohua Xie. Mind the trojan horse: Image prompt adapter enabling scalable and deceptive jailbreaking. In Proceedings of the Computer Vision and Pattern Recognition Conference, pages 23785-23794, 2025.",
+    "Weixing Chen, Yang Liu, Binglin Chen, Jiandong Su, Yongsen Zheng, and Liang Lin. Cross-modal causal relation alignment for video question grounding. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2025.",
+    "Chun Wai Chiu, Linghan Huang, Bo Li, and Huaming Chen. From compliance to exploitation: Jailbreak prompt attacks on multimodal llms. arXiv preprint arXiv:2502.00735, 2025.",
+    "Thomas Davidson, Dana Warmsley, Michael Macy, and Ingmar Weber. Automated hate speech detection and the problem of offensive language. In Proceedings of the international AAAI conference on web and social media, pages 512-515, 2017.",
+    "Dazhen Deng, Chuhan Zhang, Huawei Zheng, Yuwen Pu, Shouling Ji, and Yingcai Wu. Adversaflow: Visual red teaming for large language models with multi-level adversarial flow. IEEE Transactions on Visualization and Computer Graphics, 2024.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. BERT: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 4171-4186, Minneapolis, Minnesota, 2019. Association for Computational Linguistics.",
+    "Yichen Gong, Delong Ran, Jinyuan Liu, Conglei Wang, Tianshuo Cong, Anyu Wang, Sisi Duan, and Xiaoyun Wang. Figstep: Jailbreaking large vision-language models via typographic visual prompts. In Proceedings of the AAAI Conference on Artificial Intelligence, pages 23951-23959, 2025.",
+    "Xiangming Gu, Xiaosen Zheng, Tianyu Pang, Chao Du, Qian Liu, Ye Wang, Jing Jiang, and Min Lin. Agent smith: a single image can jailbreak one million multimodal llm agents exponentially fast. JMLR.org, 2024.",
+    "Shuyang Hao, Bryan Hooi, Jun Liu, Kai-Wei Chang, Zi Huang, and Yujun Cai. Exploring visual vulnerabilities via multi-loss adversarial search for jailbreaking vision-language models. arXiv preprint arXiv:2411.18000, 2024.",
+    "Xanh Ho, Jiahao Huang, Florian Boudin, and Akiko Aizawa. Llm-as-a-judge: Reassessing the performance of llms in extractive qa. arXiv preprint arXiv:2504.11972, 2025.",
+    "Zhang-Wei Hong, Idan Shenfeld, Tsun-Hsuan Wang, Yung-Sung Chuang, Aldo Pareja, James Glass, Akash Srivastava, and Pulkit Agrawal. Curiosity-driven red-teaming for large language models. arXiv preprint arXiv:2402.19464, 2024.",
+    "Wenbo Hu, Shishen Gu, Youze Wang, and Richang Hong. Videojail: Exploiting video-modality vulnerabilities for jailbreak attacks on multimodal large language models. In ICLR 2025 Workshop on Building Trust in Language Models and Applications, 2025.",
+    "Aaron Hurst, Adam Lerer, Adam P Goucher, Adam Perelman, Aditya Ramesh, Aidan Clark, AJ Ostrow, Akila Welihinda, Alan Hayes, Alec Radford, et al. Gpt-40 system card. arXiv preprint arXiv:2410.21276, 2024.",
+    "Joonhyun Jeong, Seyun Bae, Yeonsung Jung, Jaeryong Hwang, and Eunho Yang. Playing the fool: Jailbreaking Ilms and multimodal llms with out-of-distribution strategy. In Proceedings of the Computer Vision and Pattern Recognition Conference, pages 29937-29946, 2025.",
+    "Albert Q. Jiang, Alexandre Sablayrolles, Arthur Mensch, Chris Bamford, Devendra Singh Chaplot, Diego de las Casas, Florian Bressand, Gianna Lengyel, Guillaume Lample, Lucile Saulnier, Lélio Renard Lavaud, Marie-Anne Lachaux, Pierre Stock, Teven Le Scao, Thibaut Lavril, Thomas Wang, Timothée Lacroix, and William El Sayed. Mistral 7b, 2023.",
+    "Albert Q Jiang, Alexandre Sablayrolles, Antoine Roux, Arthur Mensch, Blanche Savary, Chris Bamford, Devendra Singh Chaplot, Diego de las Casas, Emma Bou Hanna, Florian Bressand, et al. Mixtral of experts. arXiv preprint arXiv:2401.04088, 2024.",
+    "Jaehun Jung, Faeze Brahman, and Yejin Choi. Trust or escalate: Llm judges with provable guarantees for human agreement. arXiv preprint arXiv:2407.18370, 2024.",
+    "Douwe Kiela, Hamed Firooz, Aravind Mohan, Vedanuj Goswami, Amanpreet Singh, Pratik Ringshia, and Davide Testuggine. The hateful memes challenge: Detecting hate speech in multimodal memes. Advances in neural information processing systems, 33:2611-2624, 2020.",
+    "Seanie Lee, Minsu Kim, Lynn Cherif, David Dobre, Juho Lee, Sung Ju Hwang, Kenji Kawaguchi, Gauthier Gidel, Yoshua Bengio, Nikolay Malkin, et al. Learning diverse attacks on large language models for robust red-teaming and safety tuning. arXiv preprint arXiv:2405.18540, 2024.",
+    "Jinmin Li, Kuofeng Gao, Yang Bai, Jingyun Zhang, Shutao Xia, and Yisen Wang. Fmm-attack: A flow-based multimodal adversarial attack on video-based Ilms. arXiv preprint arXiv:2403.13507, 2024.",
+    "Mukai Li, Lei Li, Yuwei Yin, Masood Ahmed, Zhenguang Liu, and Qi Liu. Red teaming visual language models. arXiv preprint arXiv:2401.12915, 2024.",
+    "Yifan Li, Hangyu Guo, Kun Zhou, Wayne Xin Zhao, and JiRong Wen. Images are achilles' heel of alignment: Exploiting visual vulnerabilities for jailbreaking multimodal large language models. In European Conference on Computer Vision, pages 174–189. Springer, 2024.",
+    "Zhaowei Li, Qi Xu, Dong Zhang, Hang Song, YiQing Cai, Qi Qi, Ran Zhou, Junting Pan, Zefeng Li, Vu Tu, Zhida Huang, and Tao Wang. GroundingGPT: Language enhanced multi-modal grounding model. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 6657-6678, Bangkok, Thailand, 2024. Association for Computational Linguistics.",
+    "Bin Lin, Yang Ye, Bin Zhu, Jiaxi Cui, Munan Ning, Peng Jin, and Li Yuan. Video-llava: Learning united visual representation by alignment before projection. arXiv preprint arXiv:2311.10122, 2023.",
+    "Haotian Liu, Chunyuan Li, Qingyang Wu, and Yong Jae Lee. Visual instruction tuning, 2023.",
+    "Yi Liu, Gelei Deng, Yuekang Li, Kailong Wang, Zihao Wang, Xiaofeng Wang, Tianwei Zhang, Yepang Liu, Haoyu Wang, Yan Zheng, et al. Prompt injection attack against Ilm-integrated applications. arXiv preprint arXiv:2306.05499, 2023.",
+    "Yi Liu, Chengjun Cai, Xiaoli Zhang, Xingliang Yuan, and Cong Wang. Arondight: Red teaming large vision language models with auto-generated multi-modal jailbreak prompts. In Proceedings of the 32nd ACM International Conference on Multimedia, pages 3578-3586, 2024.",
+    "Meta AI. LLaMA 4: Advancing Multimodal Intelligence. https://ai.meta.com/blog/llama-4-multimodal-intelligence/, 2024. Accessed: 2025-06-27.",
+    "Zhenxing Niu, Haodong Ren, Xinbo Gao, Gang Hua, and Rong Jin. Jailbreaking attack against multimodal large language model. arXiv preprint arXiv:2402.02309, 2024.",
+    "OpenAI. Gpt-40 system card, 2024.",
+    "Rohan Pandey, Rulin Shao, Paul Pu Liang, Ruslan Salakhutdinov, and Louis-Philippe Morency. Cross-modal attention congruence regularization for vision-language relation alignment. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 5444-5455, Toronto, Canada, 2023. Association for Computational Linguistics.",
+    "Maan Qraitem, Nazia Tasnim, Piotr Teterwak, Kate Saenko, and Bryan A Plummer. Vision-llms can fool themselves with self-generated typographic attacks. arXiv preprint arXiv:2402.00626, 2024.",
+    "Christian Schlarmann and Matthias Hein. On the adversarial robustness of multi-modal foundation models. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 3677-3685, 2023.",
+    "Gemini Team. Gemini: A family of highly capable multimodal models, 2025.",
+    "Gemma Team. Gemma 3 technical report, 2025.",
+    "Hugo Touvron, Thibaut Lavril, Gautier Izacard, Xavier Martinet, Marie-Anne Lachaux, Timothée Lacroix, Baptiste Rozière, Naman Goyal, Eric Hambro, Faisal Azhar, et al. Llama: Open and efficient foundation language models. arXiv preprint arXiv:2302.13971, 2023.",
+    "Zefeng Wang, Zhen Han, Shuo Chen, Fan Xue, Zifeng Ding, Xun Xiao, Volker Tresp, Philip Torr, and Jindong Gu. Stop reasoning! when multimodal llm with chain-of-thought reasoning meets adversarial image, 2024.",
+    "Hao Yang, Lizhen Qu, Ehsan Shareghi, and Gholamreza Haffari. Audio is the achilles' heel: Red teaming audio large multimodal models. arXiv preprint arXiv:2410.23861, 2024.",
+    "Zuopeng Yang, Jiluan Fan, Anli Yan, Erdun Gao, Xin Lin, Tao Li, Kanghua Mo, and Changyu Dong. Distraction is all you need for multimodal large language model jailbreaking. In Proceedings of the Computer Vision and Pattern Recognition Conference, pages 9467–9476, 2025.",
+    "Jiahao Yu, Xingwei Lin, Zheng Yu, and Xinyu Xing. Gptfuzzer: Red teaming large language models with auto-generated jailbreak prompts. arXiv preprint arXiv:2309.10253, 2023.",
+    "Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric Xing, et al. Judging Ilm-as-a-judge with mt-bench and chatbot arena. Advances in Neural Information Processing Systems, 36:46595-46623, 2023.",
+    "Andy Zou, Zifan Wang, J Zico Kolter, and Matt Fredrikson. Universal and transferable adversarial attacks on aligned language models, 2023. URL https://arxiv.org/abs/2307.15043, 19, 2024."
+  ],
+  "measurement_description": "The benchmark did not measure anything specific to faith or religion. It focused on general content appropriateness, defining inappropriateness as 'Explicit or implicit attacks, derogatory references, or harmful stereotypes targeting individuals or groups based on their identity, culture, race, ethnicity, or disabilities.'"
 }

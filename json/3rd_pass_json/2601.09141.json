@@ -2,31 +2,85 @@
   "filename": "2601.09141.pdf",
   "title": "Identity-Robust Language Model Generation via Content Integrity Preservation",
   "arxiv_url": "https://arxiv.org/pdf/2601.09141",
-  "bias_targets": [
-    {
-      "target": "Educational bias",
-      "methodology": "Injecting explicit educational identity cues (e.g., high school, college, PhD) into user prompts and measuring the Personalization Bias (PB) score, which quantifies the variance in objective response qualities like factual accuracy, utility, and safety across standard benchmarks."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Injecting explicit religious identity cues (e.g., Muslim, Hindu, Jewish, Christian) into user prompts and measuring the Personalization Bias (PB) score, which quantifies the variance in objective response qualities like factual accuracy, utility, and safety across standard benchmarks."
-    },
-    {
-      "target": "Racial bias",
-      "methodology": "Injecting explicit racial identity cues (e.g., African, Caucasian, Asian) into user prompts and measuring the Personalization Bias (PB) score, which quantifies the variance in objective response qualities like factual accuracy, utility, and safety across standard benchmarks."
-    },
-    {
-      "target": "Occupational bias",
-      "methodology": "Injecting explicit career/employment status cues (e.g., full-time, unemployed) into user prompts and measuring the Personalization Bias (PB) score, which quantifies the variance in objective response qualities like factual accuracy, utility, and safety across standard benchmarks."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Injecting explicit age-related identity cues (e.g., teenager, middle-aged person, senior citizen) into user prompts and measuring the Personalization Bias (PB) score, which quantifies the variance in objective response qualities like factual accuracy, utility, and safety across standard benchmarks."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Injecting explicit gender identity cues (e.g., woman, man, nonbinary) into user prompts and measuring the Personalization Bias (PB) score, which quantifies the variance in objective response qualities like factual accuracy, utility, and safety across standard benchmarks."
-    }
+  "religious_groups": [
+    "Christianity",
+    "Hinduism",
+    "Islam",
+    "Judaism"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "Llama3.3-70B-Instruct",
+    "gpt-oss-20B",
+    "Qwen3-8B"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "TruthfulQA",
+    "MMLU-Pro",
+    "AmbigQA",
+    "StrongReject",
+    "WildChat"
+  ],
+  "continuous_testing": false,
+  "findings": "Large Language Models exhibit significant performance variance across different user religious identities (Muslim, Hindu, Jewish, Christian) on objective tasks related to factuality, utility, and safety. This bias arises from the generation process rather than distorted internal knowledge. The proposed identity-robust generation framework effectively reduces this performance disparity by neutralizing irrelevant identity cues in prompts.",
+  "references": [
+    "Sandhini Agarwal, Lama Ahmad, Jason Ai, Sam Altman, Andy Applebaum, Edwin Arbus, Rahul K Arora, Yu Bai, Bowen Baker, Haiming Bao, and 1 others. 2025. gpt-oss-120b & gpt-oss-20b model card. arXiv preprint arXiv:2508.10925.",
+    "Haozhe An, Connor Baumler, Abhilasha Sancheti, and Rachel Rudinger. 2025. On the mutual influence of gender and occupation in LLM representations. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 1663–1680, Vienna, Austria. Association for Computational Linguistics.",
+    "Amos Azaria and Tom Mitchell. 2023. The internal state of an LLM knows when it’s lying. In Findings of the Association for Computational Linguistics: EMNLP 2023, pages 967–976, Singapore. Association for Computational Linguistics.",
+    "Pragyan Banerjee, Abhinav Java, Surgan Jandial, Simra Shahid, Shaz Furniturewala, Balaji Krishnamurthy, and Sumit Bhatia. 2024. All should be equal in the eyes of lms: Counterfactually aware fair text generation. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 38, pages 17673–17681.",
+    "Tilman Beck, Hendrik Schuff, Anne Lauscher, and Iryna Gurevych. 2024. Sensitivity, performance, robustness: Deconstructing the effect of sociodemographic prompting. In Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers), pages 2589–2615, St. Julian’s, Malta. Association for Computational Linguistics.",
+    "Camilla Casula, Sebastiano Vecellio Salto, Elisa Leonardelli, and Sara Tonelli. 2025. Job unfair: An investigation of gender and occupational bias in freeform text completions by LLMs. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing, pages 22770–22788, Suzhou, China. Association for Computational Linguistics.",
+    "Ruoxi Cheng, Haoxuan Ma, Shuirong Cao, Jiaqi Li, Aihua Pei, Zhiqiang Wang, Pengliang Ji, Haoyu Wang, and Jiaqi Huo. 2024. Reinforcement learning from multi-role debates as feedback for bias mitigation in lms. arXiv preprint arXiv:2404.10160.",
+    "A. Dubey, A. Jauhri, A. Pandey, A. Kadian, A. AlDahle, A. Letman, R. Ganapathy, and 1 others. 2024. The llama 3 herd of models. arXiv preprint arXiv:2407.21783.",
+    "Shaz Furniturewala, Surgan Jandial, Abhinav Java, Pragyan Banerjee, Simra Shahid, Sumit Bhatia, and Kokil Jaidka. 2024. “thinking” fair and slow: On the efficacy of structured prompts for debiasing language models. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 213–227, Miami, Florida, USA. Association for Computational Linguistics.",
+    "Isabel O. Gallegos, Ryan Aponte, Ryan A. Rossi, Joe Barrow, Mehrab Tanjim, Tong Yu, Hanieh Deilamsalehy, Ruiyi Zhang, Sungchul Kim, Franck Dernoncourt, Nedim Lipka, Deonna Owens, and Jiuxiang Gu. 2025. Self-debiasing large language models: Zero-shot recognition and reduction of stereotypes. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 2: Short Papers), pages 873–888, Albuquerque, New Mexico. Association for Computational Linguistics.",
+    "Isabel O Gallegos, Ryan A Rossi, Joe Barrow, Md Mehrab Tanjim, Sungchul Kim, Franck Dernoncourt, Tong Yu, Ruiyi Zhang, and Nesreen K Ahmed. 2024. Bias and fairness in large language models: A survey. Computational Linguistics, 50(3):1097–1179.",
+    "Zorik Gekhman, Eyal Ben David, Hadas Orgad, Eran Ofek, Yonatan Belinkov, Idan Szpektor, Jonathan Herzig, and Roi Reichart. 2025. Inside-out: Hidden factual knowledge in lms. In Conference on Language Modeling (COLM) 2025.",
+    "Asma Ghandeharioun, Ann Yuan, Marius Guerard, Emily Reif, Michael Lepori, and Lucas Dixon. 2024. Who’s asking? user personas and the mechanics of latent misalignment. Advances in Neural Information Processing Systems, 37:125967–126003.",
+    "Farsheed Haque, Zhe Fu, Depeng Xu, Shuhan Yuan, and Xi Niu. 2025. Fine-tuning LLMs with crossattention-based weight decay for bias mitigation. In Findings of the Association for Computational Linguistics: EMNLP 2025, pages 15785–15798, Suzhou, China. Association for Computational Linguistics.",
+    "Jen-tse Huang, Yuhang Yan, Linqi Liu, Yixin Wan, Wenxuan Wang, Kai-Wei Chang, and Michael R. Lyu. 2025. Where fact ends and fairness begins: Redefining AI bias evaluation through cognitive biases. In Findings of the Association for Computational Linguistics: EMNLP 2025, pages 10974–10993, Suzhou, China. Association for Computational Linguistics.",
+    "Yeonjun In, Wonjoong Kim, Kanghoon Yoon, Sungchul Kim, Mehrab Tanjim, Sangwu Park, Kibum Kim, and Chanyoung Park. 2025. Is safety standard same for everyone? user-specific safety evaluation of large language models. In Findings of the Association for Computational Linguistics: EMNLP 2025, pages 6652–6671, Suzhou, China. Association for Computational Linguistics.",
+    "Jingru Jessica Jia, Zehua Yuan, Junhao Pan, Paul McNamara, and Deming Chen. 2024. Decision-making behavior evaluation framework for lms under uncertain context. Advances in Neural Information Processing Systems, 37:113360–113382.",
+    "J Peter Kincaid, Robert P Fishburne Jr, Richard L Rogers, and Brad S Chissom. 1975. Derivation of new readability formulas (automated readability index, fog count and flesch reading ease formula) for navy enlisted personnel. Technical report.",
+    "Tomo Lazovich. 2023. Filter bubbles and affective polarization in user-personalized large language model outputs. In Proceedings on, pages 29–37. PMLR.",
+    "Jingling Li, Zeyu Tang, Xiaoyu Liu, Peter Spirtes, Kun Zhang, Liu Leqi, and Yang Liu. 2024. Prompting fairness: Integrating causality to debias large language models. arXiv preprint arXiv:2403.08743.",
+    "Kenneth Li, Oam Patel, Fernanda Viégas, Hanspeter Pfister, and Martin Wattenberg. 2023a. Inference-time intervention: Eliciting truthful answers from a language model. Advances in Neural Information Processing Systems, 36:41451–41530.",
+    "Yingji Li, Mengnan Du, Rui Song, Xin Wang, and Ying Wang. 2023b. A survey on fairness in large language models. arXiv preprint arXiv:2308.10149.",
+    "Stephanie Lin, Jacob Hilton, and Owain Evans. 2022. Truthfulqa: Measuring how models mimic human falsehoods. In Proceedings of the 60th annual meeting of the association for computational linguistics (volume 1: long papers), pages 3214–3252.",
+    "Dianqing Liu, Yi Liu, Guoqing Jin, and Zhendong Mao. 2025. Mitigating biases in language models via bias unlearning. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing, pages 4160–4178, Suzhou, China. Association for Computational Linguistics.",
+    "Siyang Liu, Trisha Maturi, Bowen Yi, Siqi Shen, and Rada Mihalcea. 2024. The generation gap: Exploring age bias in the value systems of large language models. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 19617–19634, Miami, Florida, USA. Association for Computational Linguistics.",
+    "Marlene Lutz, Indira Sen, Georg Ahnert, Elisa Rogers, and Markus Strohmaier. 2025. The prompt makes the person(a): A systematic evaluation of sociodemographic persona prompting for large language models. In Findings of the Association for Computational Linguistics: EMNLP 2025, pages 23212–23237, Suzhou, China. Association for Computational Linguistics.",
+    "Orfeas Menis Mastromichalakis, Giorgos Filandrianos, Maria Symeonaki, and Giorgos Stamou. 2025. Assumed identities: Quantifying gender bias in machine translation of gender-ambiguous occupational terms. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing, pages 32221–32237, Suzhou, China. Association for Computational Linguistics.",
+    "Sewon Min, Julian Michael, Hannaneh Hajishirzi, and Luke Zettlemoyer. 2020. AmbigQA: Answering ambiguous open-domain questions. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 5783–5797, Online. Association for Computational Linguistics.",
+    "Vera Neplenbroek, Arianna Bisazza, and Raquel Fernández. 2025. Reading between the prompts: How stereotypes shape LLM’s implicit personalization. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing, pages 20378–20411, Suzhou, China. Association for Computational Linguistics.",
+    "Anna Neumann, Elisabeth Kirsten, Muhammad Bilal Zafar, and Jatinder Singh. 2025. Position is power: System prompts as a mechanism of bias in large language models (llms). In Proceedings of the 2025 ACM Conference on Fairness, Accountability, and Transparency, pages 573–598.",
+    "Hadas Orgad, Michael Toker, Zorik Gekhman, Roi Reichart, Idan Szpektor, Hadas Kotek, and Yonatan Belinkov. 2025. Llms know more than they show: On the intrinsic representation of llm hallucinations. In International Conference on Learning Representations (ICLR 2025).",
+    "Ingroj Shrestha and Padmini Srinivasan. 2025. LLM bias detection and mitigation through the lens of desired distributions. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing, pages 1464–1480, Suzhou, China. Association for Computational Linguistics.",
+    "Alexandra Souly, Qingyuan Lu, Dillon Bowen, Tu Trinh, Elvis Hsieh, Sana Pandey, Pieter Abbeel, Justin Svegliato, Scott Emmons, Olivia Watkins, and 1 others. 2024. A strongreject for empty jailbreaks. Advances in Neural Information Processing Systems, 37:125416–125440.",
+    "Lihao Sun, Chengzhi Mao, Valentin Hofmann, and Xuechunzi Bai. 2025. Aligned but blind: Alignment increases implicit bias by reducing awareness of race. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 22167–22184, Vienna, Austria. Association for Computational Linguistics.",
+    "Hugo Touvron, Thibaut Lavril, Gautier Izacard, Xavier Martinet, Marie-Anne Lachaux, Timothée Lacroix, Baptiste Rozière, Naman Goyal, Eric Hambro, Faisal Azhar, and 1 others. 2023. Llama: Open and efficient foundation language models. arXiv preprint arXiv:2302.13971.",
+    "Takuma Udagawa, Yang Zhao, Hiroshi Kanayama, and Bishwaranjan Bhattacharjee. 2025. Bias analysis and mitigation through protected attribute detection and regard classification. In Findings of the Association for Computational Linguistics: EMNLP 2025, pages 16–25, Suzhou, China. Association for Computational Linguistics.",
+    "Anvesh Rao Vijjini, Somnath Basu Roy Chowdhury, and Snigdha Chaturvedi. 2025. Exploring safety-utility trade-offs in personalized language models. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 11316–11340.",
+    "Yixin Wan and Kai-Wei Chang. 2025a. The male CEO and the female assistant: Evaluation and mitigation of gender biases in text-to-image generation of dual subjects. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 9174–9190, Vienna, Austria. Association for Computational Linguistics.",
+    "Yixin Wan and Kai-Wei Chang. 2025b. White men lead, black women help? benchmarking and mitigating language agency social biases in LLMs. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 9082–9108, Vienna, Austria. Association for Computational Linguistics.",
+    "Keyu Wang, Jin Li, Shu Yang, Zhuoran Zhang, and Di Wang. 2025. When truth is overridden: Uncovering the internal origins of sycophancy in large language models. arXiv preprint arXiv:2508.02087.",
+    "Yubo Wang, Xueguang Ma, Ge Zhang, Yuansheng Ni, Abhranil Chandra, Shiguang Guo, Weiming Ren, Aaran Arulraj, Xuan He, Ziyan Jiang, and 1 others. 2024a. Mmlu-pro: A more robust and challenging multi-task language understanding benchmark. Advances in Neural Information Processing Systems, 37:95266–95290.",
+    "Yuxia Wang, Haonan Li, Xudong Han, Preslav Nakov, and Timothy Baldwin. 2024b. Do-not-answer: Evaluating safeguards in LLMs. In Findings of the Association for Computational Linguistics: EACL 2024, pages 896–911, St. Julian’s, Malta. Association for Computational Linguistics.",
+    "Kangda Wei, Hasnat Md Abdullah, and Ruihong Huang. 2025. Mitigating gender bias via fostering exploratory thinking in LLMs. In Findings of the Association for Computational Linguistics: EMNLP 2025, pages 6895–6917, Suzhou, China. Association for Computational Linguistics.",
+    "Iain Weissburg, Sathvika Anand, Sharon Levy, and Haewon Jeong. 2025. LLMs are biased teachers: Evaluating LLM bias in personalized education. In Findings of the Association for Computational Linguistics: NAACL 2025, pages 5650–5698, Albuquerque, New Mexico. Association for Computational Linguistics.",
+    "Kyra Wilson and Aylin Caliskan. 2024. Gender, race, and intersectional bias in resume screening via language model retrieval. In Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society, volume 7, pages 1578–1590.",
+    "An Yang, Anfeng Li, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chang Gao, Chengen Huang, Chenxu Lv, and 1 others. 2025. Qwen3 technical report. arXiv preprint arXiv:2505.09388.",
+    "Urchade Zaratiana, Gil Pasternak, Oliver Boyd, George Hurn-Maloney, and Ash Lewis. 2025. GLiNER2: Schema-driven multi-task learning for structured information extraction. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing: System Demonstrations, pages 130–140, Suzhou, China. Association for Computational Linguistics.",
+    "Tao Zhang, Ziqian Zeng, YuxiangXiao YuxiangXiao, Huiping Zhuang, Cen Chen, James R. Foulds, and Shimei Pan. 2025. GenderAlign: An alignment dataset for mitigating gender bias in large language models. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 11293–11311, Vienna, Austria. Association for Computational Linguistics.",
+    "Wenting Zhao, Xiang Huang, Zhibin Shen, Jieyu Wu, Yuqing Li, Qianzhen Qi, Tianxiang Sun, Yonatan Bisk, Denny Yu, Linlin Song, and 1 others. 2024. Wildchat: 1m chatgpt interaction logs in the wild. In The Twelfth International Conference on Learning Representations (ICLR).",
+    "Hanzhang Zhou, Zijian Feng, Zixiao Zhu, Junlang Qian, and Kezhi Mao. 2024. Unibias: Unveiling and mitigating lm bias through internal attention and ffn manipulation. Advances in Neural Information Processing Systems, 37:102173–102196."
+  ],
+  "measurement_description": "The benchmark measured identity-dependent degradation of core response quality, specifically performance variations in factuality, utility, ambiguity resolution, and safety when user prompts included religious identity cues."
 }

@@ -2,92 +2,47 @@
   "filename": "2307.04657.pdf",
   "title": "BEAVERTAILS: Towards Improved Safety Alignment of LLM via a Human-Preference Dataset",
   "arxiv_url": "https://arxiv.org/pdf/2307.04657",
-  "benchmark_measurement": "Detection of hate speech, discrimination, and stereotypes based on religion, as part of a broader safety evaluation across 14 harm categories.",
-  "religious_groups": [
-    "Judaism"
+  "bias_targets": [
+    {
+      "target": "Racial/ethnic bias",
+      "methodology": "Human annotation and GPT-4 evaluation of model responses to red-teaming prompts, classifying outputs under the 'Discrimination, Stereotype, Injustice' and 'Hate Speech' harm categories based on safety guidelines."
+    },
+    {
+      "target": "Gender identity bias",
+      "methodology": "Human annotation and GPT-4 evaluation of model responses to red-teaming prompts, classifying outputs under the 'Discrimination, Stereotype, Injustice' harm category."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Human annotation and GPT-4 evaluation of model responses to red-teaming prompts, classifying outputs under the 'Discrimination, Stereotype, Injustice' harm category."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Human annotation and GPT-4 evaluation of model responses to red-teaming prompts, classifying outputs under the 'Discrimination, Stereotype, Injustice' harm category."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Human annotation and GPT-4 evaluation of model responses to red-teaming prompts, classifying outputs under the 'Discrimination, Stereotype, Injustice' harm category."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Human annotation and GPT-4 evaluation of model responses to red-teaming prompts, classifying outputs under the 'Discrimination, Stereotype, Injustice' harm category."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Human annotation and GPT-4 evaluation of model responses to red-teaming prompts, classifying outputs under the 'Discrimination, Stereotype, Injustice' harm category."
+    },
+    {
+      "target": "Nationality bias",
+      "methodology": "Human annotation and GPT-4 evaluation of model responses to red-teaming prompts, classifying outputs under the 'Discrimination, Stereotype, Injustice' harm category."
+    },
+    {
+      "target": "Physical appearance bias",
+      "methodology": "Human annotation and GPT-4 evaluation of model responses to red-teaming prompts, classifying outputs under the 'Discrimination, Stereotype, Injustice' harm category."
+    },
+    {
+      "target": "Political bias",
+      "methodology": "Human annotation and GPT-4 evaluation of model responses to red-teaming prompts, classifying outputs under the 'Controversial Topics, Politics' harm category to check for neutral positioning."
+    }
   ],
-  "models_tested": [
-    "Alpaca-7B",
-    "Alpaca-13B",
-    "Vicuna-7b",
-    "gpt-3.5-turbo",
-    "GPT-4"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "HH-RLHF",
-    "Safety-Prompts"
-  ],
-  "continuous_testing": true,
-  "findings": "The paper does not report specific quantitative results for religion. Its primary finding is that its method, Safe-RLHF, improves overall safety alignment. Religion is included as a vector for harm under the 'Hate Speech, Offensive Language' and 'Discrimination, Stereotype, Injustice' categories. The annotation guidelines use an antisemitic statement ('Jews control the global financial system') as a clear example of unsafe content the benchmark is designed to identify and penalize.",
-  "references": [
-    "OpenAI. Gpt-4 technical report, 2023.",
-    "Rohan Anil, Andrew M. Dai, and et. al. Palm 2 technical report, 2023.",
-    "Hugo Touvron, Thibaut Lavril, Gautier Izacard, Xavier Martinet, Marie-Anne Lachaux, Timo-thée Lacroix, Baptiste Rozière, Naman Goyal, Eric Hambro, Faisal Azhar, Aurelien Rodriguez, Armand Joulin, Edouard Grave, and Guillaume Lample. Llama: Open and efficient foundation language models, 2023.",
-    "Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine Babaei, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, et al. Llama 2: Open foundation and fine-tuned chat models. arXiv preprint arXiv:2307.09288, 2023.",
-    "Aiyuan Yang, Bin Xiao, Bingning Wang, Borong Zhang, Chao Yin, Chenxu Lv, Da Pan, Dian Wang, Dong Yan, Fan Yang, et al. Baichuan 2: Open large-scale language models. arXiv preprint arXiv:2309.10305, 2023.",
-    "Xi Yang, Aokun Chen, Nima PourNejatian, Hoo Chang Shin, Kaleb E Smith, Christopher Parisien, Colin Compas, Cheryl Martin, Anthony B Costa, Mona G Flores, et al. A large language model for electronic health records. npj Digital Medicine, 5(1):194, 2022.",
-    "Michael Moor, Oishi Banerjee, Zahra Shakeri Hossein Abad, Harlan M Krumholz, Jure Leskovec, Eric J Topol, and Pranav Rajpurkar. Foundation models for generalist medical artificial intelligence. Nature, 616(7956):259–265, 2023.",
-    "Anmol Arora and Ananya Arora. The promise of large language models in health care. The Lancet, 401(10377):641, 2023.",
-    "Tiffany H Kung, Morgan Cheatham, Arielle Medenilla, Czarina Sillos, Lorie De Leon, Camille Elepaño, Maria Madriaga, Rimel Aggabao, Giezel Diaz-Candido, James Maningo, et al. Perfor- mance of chatgpt on usmle: Potential for ai-assisted medical education using large language models. PLoS digital health, 2(2):e0000198, 2023.",
-    "Enkelejda Kasneci, Kathrin Seßler, Stefan Küchemann, Maria Bannert, Daryna Dementieva, Frank Fischer, Urs Gasser, Georg Groh, Stephan Günnemann, Eyke Hüllermeier, et al. Chatgpt for good? on opportunities and challenges of large language models for education. Learning and Individual Differences, 103:102274, 2023.",
-    "Daniel Martin Katz, Michael James Bommarito, Shang Gao, and Pablo Arredondo. Gpt-4 passes the bar exam. Available at SSRN 4389233, 2023.",
-    "Sai Vemprala, Rogerio Bonatti, Arthur Bucker, and Ashish Kapoor. Chatgpt for robotics: Design principles and model abilities. Microsoft Auton. Syst. Robot. Res, 2:20, 2023.",
-    "Dhruv Shah, Błażej Osiński, Sergey Levine, et al. Lm-nav: Robotic navigation with large pre-trained models of language, vision, and action. In Conference on Robot Learning, pages 492–504. PMLR, 2023.",
-    "Jimmy Wu, Rika Antonova, Adam Kan, Marion Lepert, Andy Zeng, Shuran Song, Jeannette Bohg, Szymon Rusinkiewicz, and Thomas Funkhouser. Tidybot: Personalized robot assistance with large language models. arXiv preprint arXiv:2305.05658, 2023.",
-    "ChatGPT plugins. https://openai.com/blog/chatgpt-plugins. Accessed: 2023-6-7.",
-    "Samuel Gehman, Suchin Gururangan, Maarten Sap, Yejin Choi, and Noah A Smith. RealTox- icityPrompts: Evaluating neural toxic degeneration in language models. In Findings of the Association for Computational Linguistics: EMNLP 2020, pages 3356–3369, Online, November 2020. Association for Computational Linguistics.",
-    "Laura Weidinger, John Mellor, Maribeth Rauh, Conor Griffin, Jonathan Uesato, Po-Sen Huang, Myra Cheng, Mia Glaese, Borja Balle, Atoosa Kasirzadeh, et al. Ethical and social risks of harm from language models. arXiv preprint arXiv:2112.04359, 2021.",
-    "Deep Ganguli, Liane Lovitt, Jackson Kernion, Amanda Askell, Yuntao Bai, Saurav Kadavath, Ben Mann, Ethan Perez, Nicholas Schiefer, Kamal Ndousse, et al. Red teaming language models to reduce harms: Methods, scaling behaviors, and lessons learned. arXiv preprint arXiv:2209.07858, 2022.",
-    "Ameet Deshpande, Vishvak Murahari, Tanmay Rajpurohit, Ashwin Kalyan, and Karthik Narasimhan. Toxicity in chatgpt: Analyzing persona-assigned language models. arXiv preprint arXiv:2304.05335, 2023.",
-    "Jon Christian. Amazing “jailbreak” bypasses ChatGPT’s ethics safeguards. https:// futurism.com/amazing-jailbreak-chatgpt, February 2023. Accessed: 2023-6-7.",
-    "Jim Chilton. The new risks ChatGPT poses to cybersecurity. Harvard Business Review, April 2023.",
-    "Lily Hay Newman. ChatGPT scams are infiltrating the app store and google play. Wired, May 2023.",
-    "Ethan Perez, Saffron Huang, Francis Song, Trevor Cai, Roman Ring, John Aslanides, Amelia Glaese, Nat McAleese, and Geoffrey Irving. Red teaming language models with language models. arXiv preprint arXiv:2202.03286, 2022.",
-    "Long Ouyang, Jeffrey Wu, Xu Jiang, Diogo Almeida, Carroll Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, et al. Training language models to follow instructions with human feedback. Advances in Neural Information Processing Systems, 35:27730–27744, 2022.",
-    "Yuntao Bai, Andy Jones, Kamal Ndousse, Amanda Askell, Anna Chen, Nova DasSarma, Dawn Drain, Stanislav Fort, Deep Ganguli, Tom Henighan, et al. Training a helpful and harmless assistant with reinforcement learning from human feedback. arXiv preprint arXiv:2204.05862, 2022.",
-    "Josef Dai, Xuehai Pan, Ruiyang Sun, Jiaming Ji, Xinbo Xu, Mickel Liu, Yizhou Wang, and Yaodong Yang. Safe rlhf: Safe reinforcement learning from human feedback, 2023.",
-    "Rohan Taori, Ishaan Gulrajani, Tianyi Zhang, Yann Dubois, Xuechen Li, Carlos Guestrin, Percy Liang, and Tatsunori B. Hashimoto. Stanford alpaca: An instruction-following llama model. https://github.com/tatsu-lab/stanford_alpaca, 2023.",
-    "Amanda Askell, Yuntao Bai, Anna Chen, Dawn Drain, Deep Ganguli, Tom Henighan, Andy Jones, Nicholas Joseph, Ben Mann, Nova DasSarma, et al. A general language assistant as a laboratory for alignment. arXiv preprint arXiv:2112.00861, 2021.",
-    "Jing Xu, Da Ju, Margaret Li, Y-Lan Boureau, Jason Weston, and Emily Dinan. Bot-Adversarial dialogue for safe conversational agents. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Tech- nologies, pages 2950–2968, Online, June 2021. Association for Computational Linguistics.",
-    "Google Jigsaw. Perspective API. https://www.perspectiveapi.com/, 2017. Accessed: 2023-06-05.",
-    "Alyssa Lees, Vinh Q Tran, Yi Tay, Jeffrey Sorensen, Jai Gupta, Donald Metzler, and Lucy Vasserman. A new generation of perspective api: Efficient multilingual character-level trans- formers. In Proceedings of the 28th ACM SIGKDD Conference on Knowledge Discovery and Data Mining, pages 3197–3207, 2022.",
-    "Kawin Ethayarajh, Heidi Zhang, Yizhong Wang, and Dan Jurafsky. Stanford human preferences dataset, 2023.",
-    "Po-Sen Huang, Huan Zhang, Ray Jiang, Robert Stanforth, Johannes Welbl, Jack Rae, Vishal Maini, Dani Yogatama, and Pushmeet Kohli. Reducing sentiment bias in language models via counterfactual evaluation. arXiv preprint arXiv:1911.03064, 2019.",
-    "Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, et al. Language models are few-shot learners. Advances in neural information processing systems, 33:1877–1901, 2020.",
-    "Aarohi Srivastava, Abhinav Rastogi, Abhishek Rao, and et. al. Beyond the imitation game: Quantifying and extrapolating the capabilities of language models, 2022.",
-    "Nedjma Ousidhoum, Xinran Zhao, Tianqing Fang, Yangqiu Song, and Dit-Yan Yeung. Probing toxic content in large pre-trained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 4262–4274, 2021.",
-    "Maribeth Rauh, John Mellor, Jonathan Uesato, Po-Sen Huang, Johannes Welbl, Laura Weidinger, Sumanth Dathathri, Amelia Glaese, Geoffrey Irving, Iason Gabriel, et al. Characteristics of harmful text: Towards rigorous benchmarking of language models. Advances in Neural Information Processing Systems, 35:24720–24739, 2022.",
-    "Toby Shevlane, Sebastian Farquhar, Ben Garfinkel, Mary Phuong, Jess Whittlestone, Jade Leung, Daniel Kokotajlo, Nahema Marchal, Markus Anderljung, Noam Kolt, et al. Model evaluation for extreme risks. arXiv preprint arXiv:2305.15324, 2023.",
-    "Stephanie Lin, Jacob Hilton, and Owain Evans. TruthfulQA: Measuring how models mimic human falsehoods. In Proceedings of the 60th Annual Meeting of the Association for Compu- tational Linguistics (Volume 1: Long Papers), pages 3214–3252, Dublin, Ireland, May 2022. Association for Computational Linguistics.",
-    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thomp- son, Phu Mon Htut, and Samuel R Bowman. Bbq: A hand-built bias benchmark for question answering. arXiv preprint arXiv:2110.08193, 2021.",
-    "OpenAI. Moderation API. https://platform.openai.com/docs/guides/moderation/ overview, 2023. Accessed: 2023-6-5.",
-    "Yang Liu and Mirella Lapata. Text summarization with pretrained encoders. arXiv preprint arXiv:1908.08345, 2019.",
-    "Nisan Stiennon, Long Ouyang, Jeffrey Wu, Daniel Ziegler, Ryan Lowe, Chelsea Voss, Alec Radford, Dario Amodei, and Paul F Christiano. Learning to summarize with human feedback. Advances in Neural Information Processing Systems, 33:3008–3021, 2020.",
-    "Aniket Deroy, Kripabandhu Ghosh, and Saptarshi Ghosh. How ready are pre-trained abstractive models and Ilms for legal case judgement summarization?, 2023.",
-    "Yizhong Wang, Yeganeh Kordi, Swaroop Mishra, Alisa Liu, Noah A Smith, Daniel Khashabi, and Hannaneh Hajishirzi. Self-instruct: Aligning language model with self generated instruc- tions. arXiv preprint arXiv:2212.10560, 2022.",
-    "Tianjun Zhang, Fangchen Liu, Justin Wong, Pieter Abbeel, and Joseph E Gonzalez. The wisdom of hindsight makes language models better instruction followers. arXiv preprint arXiv:2302.05206, 2023.",
-    "Yuntao Bai, Saurav Kadavath, Sandipan Kundu, Amanda Askell, Jackson Kernion, Andy Jones, Anna Chen, Anna Goldie, Azalia Mirhoseini, Cameron McKinnon, et al. Constitutional ai: Harmlessness from ai feedback. arXiv preprint arXiv:2212.08073, 2022.",
-    "John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, and Oleg Klimov. Proximal policy optimization algorithms. arXiv preprint arXiv:1707.06347, 2017.",
-    "Zeqiu Wu, Yushi Hu, Weijia Shi, Nouha Dziri, Alane Suhr, Prithviraj Ammanabrolu, Noah A. Smith, Mari Ostendorf, and Hannaneh Hajishirzi. Fine-grained human feedback gives better rewards for language model training, 2023.",
-    "Hai Ci, Mickel Liu, Xuehai Pan, Yizhou Wang, et al. Proactive multi-camera collaboration for 3d human pose estimation. In The Eleventh International Conference on Learning Representations, 2022.",
-    "Xuehai Pan, Mickel Liu, Fangwei Zhong, Yaodong Yang, Song-Chun Zhu, and Yizhou Wang. Mate: Benchmarking multi-agent reinforcement learning in distributed target coverage control. Advances in Neural Information Processing Systems, 35:27862–27879, 2022.",
-    "Rahul Tallamraju, Nitin Saini, Elia Bonetto, Michael Pabst, Yu Tang Liu, Michael J Black, and Aamir Ahmad. AirCapRL: Autonomous aerial human motion capture using deep reinforcement learning. IEEE Robotics and Automation Letters, 5(4):6678–6685, October 2020.",
-    "OpenAI, Ilge Akkaya, Marcin Andrychowicz, Maciek Chociej, Mateusz Litwin, Bob McGrew, Arthur Petron, Alex Paino, Matthias Plappert, Glenn Powell, Raphael Ribas, Jonas Schneider, Nikolas Tezak, Jerry Tworek, Peter Welinder, Lilian Weng, Qiming Yuan, Wojciech Zaremba, and Lei Zhang. Solving rubik's cube with a robot hand. arXiv preprint arXiv:1910.07113, 2019.",
-    "Takahiro Miki, Joonho Lee, Jemin Hwangbo, Lorenz Wellhausen, Vladlen Koltun, and Marco Hutter. Learning robust perceptive locomotion for quadrupedal robots in the wild. Science Robotics, 7(62):eabk2822, 2022.",
-    "OpenAI: Marcin Andrychowicz, Bowen Baker, Maciek Chociej, Rafal Jozefowicz, Bob Mc- Grew, Jakub Pachocki, Arthur Petron, Matthias Plappert, Glenn Powell, Alex Ray, et al. Learning dexterous in-hand manipulation. The International Journal of Robotics Research, 39(1):3–20, 2020.",
-    "Hao Sun, Zhexin Zhang, Jiawen Deng, Jiale Cheng, and Minlie Huang. Safety assessment of chinese large language models. arXiv preprint arXiv:2304.10436, 2023.",
-    "Eitan Altman. Constrained Markov decision processes. Routledge, 2021.",
-    "Jiaming Ji, Jiayi Zhou, Borong Zhang, Juntao Dai, Xuehai Pan, Ruiyang Sun, Weidong Huang, Yiran Geng, Mickel Liu, and Yaodong Yang. Omnisafe: An infrastructure for accelerating safe reinforcement learning research, 2023.",
-    "Alex Ray, Joshua Achiam, and Dario Amodei. Benchmarking safe exploration in deep rein- forcement learning. arXiv preprint arXiv:1910.01708, 7(1):2, 2019.",
-    "Jiaming Ji, Borong Zhang, Jiayi Zhou, Xuehai Pan, Weidong Huang, Ruiyang Sun, Yiran Geng, Yifan Zhong, Juntao Dai, and Yaodong Yang. Safety-gymnasium: A unified safe reinforcement learning benchmark, 2023.",
-    "Amelia Glaese, Nat McAleese, Maja Trębacz, John Aslanides, Vlad Firoiu, Timo Ewalds, Maribeth Rauh, Laura Weidinger, Martin Chadwick, Phoebe Thacker, et al. Improving alignment of dialogue agents via targeted human judgements. arXiv preprint arXiv:2209.14375, 2022.",
-    "China: hourly minimum wage by region 2023. https://www.statista.com/statistics/ 233886/minimum-wage-per-hour-in-china-by-city-and-province/. Accessed: 2023-6-7."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

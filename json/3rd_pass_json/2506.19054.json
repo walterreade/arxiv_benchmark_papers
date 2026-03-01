@@ -2,55 +2,143 @@
   "filename": "2506.19054.pdf",
   "title": "GUARDSET-X: Multi-Domain, Policy-Grounded, AI Security Guardrail Benchmark",
   "arxiv_url": "https://arxiv.org/pdf/2506.19054",
-  "bias_targets": [
-    {
-      "target": "Age bias",
-      "methodology": "Evaluating the moderation performance (F1, Recall, FPR) of guardrail models on prompt-response pairs generated to explicitly exhibit bias against different age groups across various real-world application scenarios."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Evaluating the moderation performance of guardrail models on prompt-response pairs generated to explicitly exhibit bias based on disability status in various real-world application scenarios."
-    },
-    {
-      "target": "Nationality bias",
-      "methodology": "Evaluating the moderation performance of guardrail models on prompt-response pairs generated to explicitly exhibit bias based on domestic or foreign nationality."
-    },
-    {
-      "target": "Physical appearance bias",
-      "methodology": "Evaluating the moderation performance of guardrail models on prompt-response pairs generated to explicitly exhibit bias based on body type, facial features, or hairstyle."
-    },
-    {
-      "target": "Racial/Ethnic bias",
-      "methodology": "Evaluating the moderation performance of guardrail models on prompt-response pairs generated to explicitly exhibit bias against different racial and ethnic groups."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Evaluating the moderation performance of guardrail models on prompt-response pairs generated to explicitly exhibit bias against various religious affiliations."
-    },
-    {
-      "target": "Socioeconomic bias",
-      "methodology": "Evaluating the moderation performance of guardrail models on prompt-response pairs generated to explicitly exhibit bias based on income levels and socioeconomic status."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Evaluating the moderation performance of guardrail models on prompt-response pairs generated to explicitly exhibit bias against specific sexual orientations."
-    },
-    {
-      "target": "Gender identity/Sex bias",
-      "methodology": "Evaluating the moderation performance of guardrail models on prompt-response pairs generated to explicitly exhibit bias based on biological sex and gender identity."
-    },
-    {
-      "target": "Educational bias",
-      "methodology": "Evaluating the moderation performance of guardrail models on prompt-response pairs generated to explicitly exhibit bias based on a person's level of education."
-    },
-    {
-      "target": "Marital/Relationship status bias",
-      "methodology": "Evaluating the moderation performance of guardrail models on prompt-response pairs generated to explicitly exhibit bias based on relationship or marital status."
-    },
-    {
-      "target": "Occupational bias",
-      "methodology": "Evaluating the moderation performance of guardrail models on prompt-response pairs generated to explicitly exhibit bias based on occupation, workclass, or working hours."
-    }
+  "religious_groups": [
+    "Christianity",
+    "Islam",
+    "Buddhism",
+    "Judaism",
+    "No religion"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "LlamaGuard 1",
+    "LlamaGuard 2",
+    "LlamaGuard 3 (1B)",
+    "LlamaGuard 3 (8B)",
+    "LlamaGuard 4",
+    "ShieldGemma (2B)",
+    "ShieldGemma (9B)",
+    "TextMod API",
+    "OmniMod API",
+    "MDJudge 1",
+    "MDJudge 2",
+    "WildGuard",
+    "Aegis Permissive",
+    "Aegis Defensive",
+    "Granite Guardian (3B)",
+    "Granite Guardian (5B)",
+    "Azure Content Safety",
+    "Bedrock Guardrail",
+    "LLM Guard with GPT-4o backend"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "DecodingTrust",
+    "HarmBench",
+    "AdvBench",
+    "HEXPHI",
+    "MaliciousInstruct",
+    "Q-Harm",
+    "StrongReject",
+    "OpenAI Mod",
+    "ToxicChat",
+    "CatQA",
+    "BeaverTails",
+    "HarmfulQA",
+    "DICES",
+    "XSTest",
+    "OKTest",
+    "AIRBench",
+    "CyberSecEval",
+    "Do-not-answer",
+    "Do-anything-now",
+    "SALAD-Bench",
+    "JailbreakBench",
+    "GuardBench",
+    "Privaci-bench"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper includes religion as one of 17 bias categories for generating biased code examples but does not report specific findings related to the performance of models on religious bias.",
+  "references": [
+    "Ai content moderation by microsoft azure. https://azure.microsoft.com/en-us/products/ai services/ai-content-safety.",
+    "Bedrock guardrail api. https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-use independent-api.html.",
+    "Llamaguard 2. https://huggingface.co/meta-llama/Meta-Llama-Guard-2-8B.",
+    "Llamaguard 4. https://huggingface.co/meta-llama/Llama-Guard-4-12B.",
+    "Openai content moderation api. https://platform.openai.com/docs/guides/moderation.",
+    "EU Artificial Intelligence Act. The eu artificial intelligence act, 2024.",
+    "Lora Aroyo, Alex Taylor, Mark Diaz, Christopher Homan, Alicia Parrish, Gregory Serapio García, Vinodkumar Prabhakaran, and Ding Wang. Dices dataset: Diversity in conversational ai evaluation for safety. Advances in Neural Information Processing Systems, 36:53330–53342, 2023.",
+    "Elias Bassani and Ignacio Sanchez. Guardbench: A large-scale benchmark for guardrail models. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 18393–18409, 2024.",
+    "Rishabh Bhardwaj, Do Duc Anh, and Soujanya Poria. Language models are homer simpson! safety re-alignment of fine-tuned language models through task arithmetic. arXiv preprint arXiv:2402.11746, 2024.",
+    "Rishabh Bhardwaj and Soujanya Poria. Red-teaming large language models using chain of utterances for safety-alignment. arXiv preprint arXiv:2308.09662, 2023.",
+    "Manish Bhatt, Sahana Chennabasappa, Yue Li, Cyrus Nikolaidis, Daniel Song, Shengye Wan, Faizan Ahmad, Cornelius Aschermann, Yaohui Chen, Dhaval Kapil, et al. Cyberseceval 2: A wide-ranging cybersecurity evaluation suite for large language models. arXiv preprint arXiv:2404.13161, 2024.",
+    "Federico Bianchi, Mirac Suzgun, Giuseppe Attanasio, Paul Röttger, Dan Jurafsky, Tatsunori Hashimoto, and James Zou. Safety-tuned llamas: Lessons from improving the safety of large language models that follow instructions. arXiv preprint arXiv:2309.07875, 2023.",
+    "Patrick Chao, Edoardo Debenedetti, Alexander Robey, Maksym Andriushchenko, Francesco Croce, Vikash Sehwag, Edgar Dobriban, Nicolas Flammarion, George J Pappas, Florian Tramer, et al. Jailbreakbench: An open robustness benchmark for jailbreaking large language models. arXiv preprint arXiv:2404.01318, 2024.",
+    "Patrick Chao, Alexander Robey, Edgar Dobriban, Hamed Hassani, George J Pappas, and Eric Wong. Jailbreaking black box large language models in twenty queries. arXiv preprint arXiv:2310.08419, 2023.",
+    "Canyu Chen, Baixiang Huang, Zekun Li, Zhaorun Chen, Shiyang Lai, Xiongxiao Xu, Jia-Chen Gu, Jindong Gu, Huaxiu Yao, Chaowei Xiao, et al. Can editing llms inject harm? arXiv preprint arXiv:2407.20224, 2024.",
+    "Jiachi Chen, Qingyuan Zhong, Yanlin Wang, Kaiwen Ning, Yongkun Liu, Zenan Xu, Zhe Zhao, Ting Chen, and Zibin Zheng. Rmcbench: Benchmarking large language models’ resistance to malicious code. In Proceedings of the 39th IEEE/ACM International Conference on Automated Software Engineering, pages 995–1006, 2024.",
+    "Zhaorun Chen, Mintong Kang, and Bo Li. Shieldagent: Shielding agents via verifiable safety policy reasoning. arXiv preprint arXiv:2503.22738, 2025.",
+    "Zhaorun Chen, Francesco Pinto, Minzhou Pan, and Bo Li. Safewatch: An efficient safety-policy following video guardrail model with transparent explanations. In The Thirteenth International Conference on Learning Representations.",
+    "Zhaorun Chen, Zhen Xiang, Chaowei Xiao, Dawn Song, and Bo Li. Agentpoison: Red teaming llm agents via poisoning memory or knowledge bases. Advances in Neural Information Processing Systems, 37:130185–130213, 2024.",
+    "Zhaorun Chen, Zhuokai Zhao, Hongyin Luo, Huaxiu Yao, Bo Li, and Jiawei Zhou. Halc: object hallucination reduction via adaptive focal-contrast decoding. In Proceedings of the 41st International Conference on Machine Learning, pages 7824–7846, 2024.",
+    "Zhaorun Chen, Zhuokai Zhao, Wenjie Qu, Zichen Wen, Zhiguang Han, Zhihong Zhu, Jiaheng Zhang, and Huaxiu Yao. Pandora: Detailed llm jailbreaking via collaborated phishing agents with decomposed reasoning. In ICLR 2024 Workshop on Secure and Trustworthy Large Language Models, 2024.",
+    "Jianfeng Chi, Ujjwal Karn, Hongyuan Zhan, Eric Smith, Javier Rando, Yiming Zhang, Kate Plawiak, Zacharie Delpierre Coudert, Kartikeya Upasani, and Mahesh Pasupuleti. Llama guard 3 vision: Safeguarding human-ai image understanding conversations. arXiv preprint arXiv:2411.10414, 2024.",
+    "Wei-Lin Chiang, Lianmin Zheng, Ying Sheng, Anastasios Nikolas Angelopoulos, Tianle Li, Dacheng Li, Hao Zhang, Banghua Zhu, Michael Jordan, Joseph E Gonzalez, et al. Chatbot arena: An open platform for evaluating llms by human preference. arXiv preprint arXiv:2403.04132, 2024.",
+    "Xiang Deng, Yu Gu, Boyuan Zheng, Shijie Chen, Sam Stevens, Boshi Wang, Huan Sun, and Yu Su. Mind2web: Towards a generalist agent for the web. Advances in Neural Information Processing Systems, 36, 2024.",
+    "European Commission. The eu artificial intelligence act. https:// artificialintelligenceact.eu/, 2024.",
+    "Shaona Ghosh, Prasoon Varshney, Erick Galinkin, and Christopher Parisien. Aegis: Online adap tive ai content safety moderation with ensemble of llm experts. arXiv preprint arXiv:2404.05993, 2024.",
+    "Chengquan Guo, Xun Liu, Chulin Xie, Andy Zhou, Yi Zeng, Zinan Lin, Dawn Song, and Bo Li. Redcode: Multi-dimensional safety benchmark for code agents. In The Thirty-eight Conference on Neural Information Processing Systems Datasets and Benchmarks Track, 2024.",
+    "Seungju Han, Kavel Rao, Allyson Ettinger, Liwei Jiang, Bill Yuchen Lin, Nathan Lambert, Yejin Choi, and Nouha Dziri. Wildguard: Open one-stop moderation tools for safety risks, jailbreaks, and refusals of llms. arXiv preprint arXiv:2406.18495, 2024.",
+    "Yangsibo Huang, Samyak Gupta, Mengzhou Xia, Kai Li, and Danqi Chen. Catastrophic jailbreak of open-source llms via exploiting generation. arXiv preprint arXiv:2310.06987, 2023.",
+    "Hakan Inan, Kartikeya Upasani, Jianfeng Chi, Rashi Rungta, Krithika Iyer, Yuning Mao, Michael Tontchev, Qing Hu, Brian Fuller, Davide Testuggine, et al. Llama guard: Llm-based input-output safeguard for human-ai conversations. arXiv preprint arXiv:2312.06674, 2023.",
+    "Jiaming Ji, Mickel Liu, Josef Dai, Xuehai Pan, Chi Zhang, Ce Bian, Boyuan Chen, Ruiyang Sun, Yizhou Wang, and Yaodong Yang. Beavertails: Towards improved safety alignment of llm via a human-preference dataset. Advances in Neural Information Processing Systems, 36:24678–24704, 2023.",
+    "Jiaming Ji, Mickel Liu, Josef Dai, Xuehai Pan, Chi Zhang, Ce Bian, Boyuan Chen, Ruiyang Sun, Yizhou Wang, and Yaodong Yang. Beavertails: Towards improved safety alignment of llm via a human-preference dataset. Advances in Neural Information Processing Systems, 36, 2024.",
+    "Mintong Kang and Bo Li. r2-guard: Robust reasoning enabled llm guardrail via knowledge enhanced logical reasoning. ICLR, 2025.",
+    "Mintong Kang, Chejian Xu, and Bo Li. Advwave: Stealthy adversarial jailbreak attack against large audio-language models. ICLR, 2025.",
+    "Haoran Li, Wenbin Hu, Huihao Jing, Yulin Chen, Qi Hu, Sirui Han, Tianshu Chu, Peizhao Hu, and Yangqiu Song. Privaci-bench: Evaluating privacy with contextual integrity and legal compliance. arXiv preprint arXiv:2502.17041, 2025.",
+    "Lijun Li, Bowen Dong, Ruohui Wang, Xuhao Hu, Wangmeng Zuo, Dahua Lin, Yu Qiao, and Jing Shao. Salad-bench: A hierarchical and comprehensive safety benchmark for large language models. arXiv preprint arXiv:2402.05044, 2024.",
+    "Zeyi Liao, Lingbo Mo, Chejian Xu, Mintong Kang, Jiawei Zhang, Chaowei Xiao, Yuan Tian, Bo Li, and Huan Sun. Eia: Environmental injection attack on generalist web agents for privacy leakage. arXiv preprint arXiv:2409.11295, 2024.",
+    "Zi Lin, Zihan Wang, Yongqi Tong, Yangkun Wang, Yuxin Guo, Yujia Wang, and Jingbo Shang. Toxicchat: Unveiling hidden challenges of toxicity detection in real-world user-ai conversation. arXiv preprint arXiv:2310.17389, 2023.",
+    "Jiawei Liu, Chunqiu Steven Xia, Yuyao Wang, and Lingming Zhang. Is your code generated by chatgpt really correct? rigorous evaluation of large language models for code generation. Advances in Neural Information Processing Systems, 36, 2024.",
+    "Xiaogeng Liu, Nan Xu, Muhao Chen, and Chaowei Xiao. Autodan: Generating stealthy jailbreak prompts on aligned large language models. arXiv preprint arXiv:2310.04451, 2023.",
+    "Todor Markov, Chong Zhang, Sandhini Agarwal, Florentine Eloundou Nekoul, Theodore Lee, Steven Adler, Angela Jiang, and Lilian Weng. A holistic approach to undesired content detection in the real world. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 37, pages 15009–15018, 2023.",
+    "Mantas Mazeika, Long Phan, Xuwang Yin, Andy Zou, Zifan Wang, Norman Mu, Elham Sakhaee, Nathaniel Li, Steven Basart, Bo Li, et al. Harmbench: A standardized evaluation framework for automated red teaming and robust refusal. arXiv preprint arXiv:2402.04249, 2024.",
+    "The MITRE Corporation (MITRE). Common weakness enumeration (cwe) list version 4.14, a community-developed dictionary of software weaknesses types. 2024.",
+    "National Institute of Standards and Technology (NIST). Security and privacy controls for information systems and organizations (nist sp 800-53 rev. 5). Technical report, U.S. Department of Commerce, 2020. Accessed May 2025.",
+    "OpenAI. Openai usage policies (current), 2024.",
+    "Long Ouyang, Jeffrey Wu, Xu Jiang, Diogo Almeida, Carroll Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, et al. Training language models to follow instructions with human feedback. Advances in neural information processing systems, 35:27730–27744, 2022.",
+    "OWASP Foundation. Owasp top ten web application security risks. https://owasp.org/ www-project-top-ten/, 2023. Accessed May 2025.",
+    "Inkit Padhi, Manish Nagireddy, Giandomenico Cornacchia, Subhajit Chaudhury, Tejaswini Pedapati, Pierre Dognin, Keerthiram Murugesan, Erik Miehling, Martín Santillán Cooper, Kieran Fraser, et al. Granite guardian. arXiv preprint arXiv:2412.07724, 2024.",
+    "Xiangyu Qi, Ashwinee Panda, Kaifeng Lyu, Xiao Ma, Subhrajit Roy, Ahmad Beirami, Prateek Mittal, and Peter Henderson. Safety alignment should be made more than just a few tokens deep. arXiv preprint arXiv:2406.05946, 2024.",
+    "Xiangyu Qi, Yi Zeng, Tinghao Xie, Pin-Yu Chen, Ruoxi Jia, Prateek Mittal, and Peter Henderson. Fine-tuning aligned language models compromises safety, even when users do not intend to! arXiv preprint arXiv:2310.03693, 2023.",
+    "Rafael Rafailov, Archit Sharma, Eric Mitchell, Christopher D Manning, Stefano Ermon, and Chelsea Finn. Direct preference optimization: Your language model is secretly a reward model. Advances in Neural Information Processing Systems, 36, 2024.",
+    "Paul Röttger, Hannah Rose Kirk, Bertie Vidgen, Giuseppe Attanasio, Federico Bianchi, and Dirk Hovy. Xstest: A test suite for identifying exaggerated safety behaviours in large language models. arXiv preprint arXiv:2308.01263, 2023.",
+    "Baptiste Roziere, Jonas Gehring, Fabian Gloeckle, Sten Sootla, Itai Gat, Xiaoqing Ellen Tan, Yossi Adi, Jingyu Liu, Tal Remez, Jérémy Rapin, et al. Code llama: Open foundation models for code. arXiv preprint arXiv:2308.12950, 2023.",
+    "Xinyue Shen, Zeyuan Chen, Michael Backes, Yun Shen, and Yang Zhang. \" do anything now\": Characterizing and evaluating in-the-wild jailbreak prompts on large language models. arXiv preprint arXiv:2308.03825, 2023.",
+    "Chenyu Shi, Xiao Wang, Qiming Ge, Songyang Gao, Xianjun Yang, Tao Gui, Qi Zhang, Xuanjing Huang, Xun Zhao, and Dahua Lin. Navigating the overkill in large language models. arXiv preprint arXiv:2401.17633, 2024.",
+    "Alexandra Souly, Qingyuan Lu, Dillon Bowen, Tu Trinh, Elvis Hsieh, Sana Pandey, Pieter Abbeel, Justin Svegliato, Scott Emmons, Olivia Watkins, et al. A strongreject for empty jailbreaks. arXiv preprint arXiv:2402.10260, 2024.",
+    "The MITRE Corporation. Cve – common vulnerabilities and exposures. https://cve.mitre. org/, 2024. Accessed May 2025.",
+    "The MITRE Corporation. Mitre att&ck framework. https://attack.mitre.org/, 2024. Accessed May 2025.",
+    "European Union. General data protection regulation, 2018.",
+    "Boxin Wang, Weixin Chen, Hengzhi Pei, Chulin Xie, Mintong Kang, Chenhui Zhang, Chejian Xu, Zidi Xiong, Ritik Dutta, Rylan Schaeffer, et al. Decodingtrust: A comprehensive assessment of trustworthiness in gpt models. arXiv preprint arXiv:2306.11698, 2023.",
+    "Boxin Wang, Chejian Xu, Shuohang Wang, Zhe Gan, Yu Cheng, Jianfeng Gao, Ahmed Hassan Awadallah, and Bo Li. Adversarial glue: A multi-task benchmark for robustness evaluation of language models. In Thirty-fifth Conference on Neural Information Processing Systems Datasets and Benchmarks Track (Round 2).",
+    "Yuxia Wang, Haonan Li, Xudong Han, Preslav Nakov, and Timothy Baldwin. Do-not-answer: A dataset for evaluating safeguards in llms. arXiv preprint arXiv:2308.13387, 2023.",
+    "Chejian Xu, Mintong Kang, Jiawei Zhang, Zeyi Liao, Lingbo Mo, Mengqi Yuan, Huan Sun, and Bo Li. Advagent: Controllable blackbox red-teaming on web agents. arXiv preprint arXiv:2410.17401, 2024.",
+    "Chejian Xu, Jiawei Zhang, Zhaorun Chen, Chulin Xie, Mintong Kang, Yujin Potter, Zhun Wang, Zhuowen Yuan, Alexander Xiong, Zidi Xiong, et al. Mmdt: Decoding the trustworthiness and safety of multimodal foundation models. In The Thirteenth International Conference on Learning Representations.",
+    "Wenjun Zeng, Yuchi Liu, Ryan Mullins, Ludovic Peran, Joe Fernandez, Hamza Harkous, Karthik Narasimhan, Drew Proud, Piyush Kumar, Bhaktipriya Radharapu, et al. Shieldgemma: Generative ai content moderation based on gemma. arXiv preprint arXiv:2407.21772, 2024.",
+    "Yi Zeng, Yu Yang, Andy Zhou, Jeffrey Ziwei Tan, Yuheng Tu, Yifan Mai, Kevin Klyman, Minzhou Pan, Ruoxi Jia, Dawn Song, et al. Air-bench 2024: A safety benchmark based on risk categories from regulations and policies. arXiv preprint arXiv:2407.17436, 2024.",
+    "Jiawei Zhang, Linyi Li, Ce Zhang, and Bo Li. CARE: Certifiably robust learning with reasoning via variational inference. In First IEEE Conference on Secure and Trustworthy Machine Learning, 2023.",
+    "Jiawei Zhang, Chejian Xu, and Bo Li. Chatscene: Knowledge-enabled safety-critical scenario generation for autonomous vehicles. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 15459–15469, 2024.",
+    "Jiawei Zhang, Shuang Yang, and Bo Li. Udora: A unified red teaming framework against llm agents by dynamically hijacking their own reasoning. Forty-Second International Conference on Machine Learning, 2025.",
+    "Jiawei Zhang, Xuan Yang, Taiqi Wang, Yu Yao, Aleksandr Petiushko, and Bo Li. Safeauto: Knowledge-enhanced safe autonomous driving with multimodal foundation models. Forty Second International Conference on Machine Learning, 2025.",
+    "Boyuan Zheng, Boyu Gou, Jihyung Kil, Huan Sun, and Yu Su. Gpt-4v (ision) is a generalist web agent, if grounded. arXiv preprint arXiv:2401.01614, 2024.",
+    "Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric Xing, et al. Judging llm-as-a-judge with mt-bench and chatbot arena. Advances in Neural Information Processing Systems, 36, 2024.",
+    "Andy Zhou, Kevin Wu, Francesco Pinto, Zhaorun Chen, Yi Zeng, Yu Yang, Shuang Yang, Sanmi Koyejo, James Zou, and Bo Li. Autoredteamer: Autonomous red teaming with lifelong attack integration. arXiv preprint arXiv:2503.15754, 2025.",
+    "Andy Zou, Zifan Wang, J Zico Kolter, and Matt Fredrikson. Universal and transferable adversarial attacks on aligned language models. arXiv preprint arXiv:2307.15043, 2023."
+  ],
+  "measurement_description": "Bias against specific religious groups (Christianity, Islam, Buddhism, Judaism, No religion) as part of the 'Biased Code' generation test set."
 }

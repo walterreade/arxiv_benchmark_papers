@@ -2,35 +2,92 @@
   "filename": "2509.02464.pdf",
   "title": "SpecEval: Evaluating Model Adherence to Behavior Specifications",
   "arxiv_url": "https://arxiv.org/pdf/2509.02464",
-  "bias_targets": [
-    {
-      "target": "Gender bias",
-      "methodology": "Synthesizing test cases based on developer behavioral specifications (e.g., 'avoid discrimination', 'avoid toxicity bias') that explicitly prohibit sexism, and using an LLM-as-a-judge to score candidate model responses for policy adherence."
-    },
-    {
-      "target": "Racial bias",
-      "methodology": "Generating targeted prompts to elicit potential racial discrimination, hate speech, or stereotypes, and assessing the model's adherence to anti-racism specifications using an automated LLM judge."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Creating synthetic scenarios querying religious beliefs, traditions, or restrictions, and evaluating the model's respect for religious diversity and freedom of thought via an LLM evaluator."
-    },
-    {
-      "target": "Political bias",
-      "methodology": "Testing models with prompts designed to elicit political manipulation or bias against specific political opinions, scoring adherence to neutrality and non-discrimination guidelines using an LLM judge."
-    },
-    {
-      "target": "Cultural and Nationality bias",
-      "methodology": "Translating specifications like 'respect non-western audiences', 'respect non-western traditions', and 'respect less industrialized nations' into conversational test cases, and judging responses for cultural sensitivity."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Evaluating model compliance with 'recognize universal equality' and anti-discrimination guidelines by generating queries about disability accommodations and using an LLM to grade the responses."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Generating prompts regarding sexual orientation to test adherence to 'avoid hateful content' and 'avoid discrimination' specifications, scored by an LLM judge."
-    }
+  "religious_groups": [
+    "Christianity",
+    "Judaism",
+    "Islam",
+    "Buddhism",
+    "Hinduism"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "gpt-4.1",
+    "gpt-4o-mini",
+    "gpt-4o",
+    "gpt-4.1-mini",
+    "gpt-4.1-nano",
+    "claude-3-5-haiku",
+    "claude-3-5-sonnet",
+    "claude-3-7-sonnet",
+    "gemini-1.5-pro",
+    "gemini-2.0-flash",
+    "DeepSeek-V3",
+    "Qwen3-235B",
+    "Qwen2.5-72B-Instruct",
+    "Qwen2-72B-Instruct",
+    "Llama-4-Maverick",
+    "Llama-3.1-405B-Instruct"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "AutoBencher"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper does not provide specific quantitative findings related to religion. It presents a framework, SpecEval, and qualitative examples (e.g., on religious dietary rules, religious freedom, and stereotyping) to demonstrate how models can be evaluated for adherence to behavioral specifications on religious topics. The overall findings focus on 'three-way consistency' gaps between specifications, model outputs, and model-as-judge evaluations across various behavioral categories, with Anthropic models being the most adherent to their own specification, followed closely by OpenAI.",
+  "references": [
+    "Anthropic. Claude’s constitution. https://www.anthropic.com/news/ claudes-constitution, May 2023. Accessed: 2025-05-14.",
+    "Anthropic. System card: Claude opus 4 & claude sonnet 4, May 2025. URL https://www-cdn. anthropic.com/07b2a3f9902ee19fe39a36ca638e5ae987bc64dd.pdf.",
+    "Yuntao Bai, Saurav Kadavath, Sandipan Kundu, Amanda Askell, Jackson Kernion, Andy Jones, Anna Chen, Anna Goldie, Azalia Mirhoseini, Cameron McKinnon, Carol Chen, Catherine Olsson, Christopher Olah, Danny Hernandez, Dawn Drain, Deep Ganguli, Dustin Li, Eli Tran-Johnson, Ethan Perez, Jamie Kerr, Jared Mueller, Jeffrey Ladish, Joshua Landau, Kamal Ndousse, Kamile Lukosuite, Liane Lovitt, Michael Sellitto, Nelson Elhage, Nicholas Schiefer, Noemi Mercado, Nova DasSarma, Robert Lasenby, Robin Larson, Sam Ringer, Scott Johnston, Shauna Kravec, Sheer El Showk, Stanislav Fort, Tamera Lanham, Timothy Telleen-Lawton, Tom Conerly, Tom Henighan, Tristan Hume, Samuel R. Bowman, Zac Hatfield-Dodds, Ben Mann, Dario Amodei, Nicholas Joseph, Sam McCandlish, Tom Brown, and Jared Kaplan. Constitutional ai: Harmlessness from ai feedback, 2022. URL https://arxiv.org/abs/2212.08073.",
+    "Edward Beeching, Clémentine Fourrier, Nathan Habib, Sheon Han, Nathan Lambert, Nazneen Rajani, Omar Sanseviero, Lewis Tunstall, and Thomas Wolf. Open llm leaderboard. https:// huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard, 2023. Accessed: 2025- 05-13.",
+    "BIG-bench authors. Beyond the imitation game: Quantifying and extrapolating the capabilities of language models. Transactions on Machine Learning Research, 2023. ISSN 2835-8856. URL https://openreview.net/forum?id=uyTL5Bvosj.",
+    "Abeba Birhane, Ryan Steed, Victor Ojewale, Briana Vecchione, and Inioluwa Deborah Raji. Ai auditing: The broken bus on the road to ai accountability. In 2024 IEEE Conference on Secure and Trustworthy Machine Learning (SaTML), pp. 612–643, 2024. doi: 10.1109/SaTML59370.2024. 00037.",
+    "Rishi Bommasani, Kevin Klyman, Shayne Longpre, Sayash Kapoor, Nestor Maslej, Betty Xiong, Daniel Zhang, and Percy Liang. The foundation model transparency index, 2023. URL https: //arxiv.org/abs/2310.12941.",
+    "Rishi Bommasani, Kevin Klyman, Sayash Kapoor, Shayne Longpre, Betty Xiong, Nestor Maslej, and Percy Liang. The 2024 foundation model transparency index, 2025. URL https://arxiv. org/abs/2407.12929.",
+    "Will Cai, Tianneng Shi, Xuandong Zhao, and Dawn Song. Are you getting what you pay for? auditing model substitution in llm apis. arXiv preprint arXiv:2504.04715, 2025. Submitted Apr 2025.",
+    "Stephen Casper, Carson Ezell, Charlotte Siegmann, Noam Kolt, Taylor Lynn Curtis, Benjamin Bucknall, Andreas Haupt, Kevin Wei, Jérémy Scheurer, Marius Hobbhahn, Lee Sharkey, Satyapriya Krishna, Marvin Von Hagen, Silas Alberti, Alan Chan, Qinyi Sun, Michael Gerovitch, David Bau, Max Tegmark, David Krueger, and Dylan Hadfield-Menell. Black-box access is insufficient for rigorous ai audits. In Proceedings of the 2024 ACM Conference on Fairness, Accountability, and Transparency, FAccT ’24, pp. 2254–2272, New York, NY, USA, 2024. Association for Computing Machinery. ISBN 9798400704505. doi: 10.1145/3630106.3659037. URL https: //doi.org/10.1145/3630106.3659037.",
+    "Sasha Costanza-Chock, Inioluwa Deborah Raji, and Joy Buolamwini. Who audits the auditors? recommendations from a field scan of the algorithmic auditing ecosystem. In Proceedings of the 2022 ACM Conference on Fairness, Accountability, and Transparency, FAccT ’22, pp. 1571–1583, New York, NY, USA, 2022. Association for Computing Machinery. ISBN 9781450393522. doi: 10.1145/3531146.3533213. URL https://doi.org/10.1145/3531146.3533213.",
+    "Yann Dubois, Xuechen Li, Rohan Taori, Tianyi Zhang, Ishaan Gulrajani, Jimmy Ba, Carlos Guestrin, Percy Liang, and Tatsunori Hashimoto. Alpacafarm: A simulation framework for methods that learn from human feedback. In Thirty-seventh Conference on Neural Information Processing Systems, 2023. URL https://openreview.net/forum?id=4hturzLcKX.",
+    "Lisa Dunlap, Krishna Mandal, Trevor Darrell, Jacob Steinhardt, and Joseph E Gonzalez. Vibecheck: Discover and quantify qualitative differences in large language models. International Conference on Learning Representations, 2025. URL https://arxiv.org/abs/2410.12851.",
+    "Irena Gao, Percy Liang, and Carlos Guestrin. Model equality testing: Which model is this api serving? arXiv preprint arXiv:2410.20247, 2025. v2 revised Apr 8, 2025.",
+    "Leo Gao, John Schulman, and Jacob Hilton. Scaling laws for reward model overoptimization, 2022. URL https://arxiv.org/abs/2210.10760.",
+    "Sebastian Gehrmann, Tosin Adewumi, Karmanya Aggarwal, Pawan Sasanka Ammanamanchi, An uoluwapo Aremu, Antoine Bosselut, Khyathi Raghavi Chandu, Miruna-Adriana Clinciu, Dipanjan Das, Kaustubh Dhole, Wanyu Du, Esin Durmus, Ondˇrej Dušek, Chris Chinenye Emezue, Varun Gangal, Cristina Garbacea, Tatsunori Hashimoto, Yufang Hou, Yacine Jernite, Harsh Jhamtani, Yangfeng Ji, Shailza Jolly, Mihir Kale, Dhruv Kumar, Faisal Ladhak, Aman Madaan, Mounica Maddela, Khyati Mahajan, Saad Mahamood, Bodhisattwa Prasad Majumder, Pedro Henrique Martins, Angelina McMillan-Major, Simon Mille, Emiel van Miltenburg, Moin Nadeem, Shashi Narayan, Vitaly Nikolaev, Andre Niyongabo Rubungo, Salomey Osei, Ankur Parikh, Laura Perez-Beltrachini, Niranjan Ramesh Rao, Vikas Raunak, Juan Diego Rodriguez, Sashank San thanam, João Sedoc, Thibault Sellam, Samira Shaikh, Anastasia Shimorina, Marco Antonio Sobrevilla Cabezudo, Hendrik Strobelt, Nishant Subramani, Wei Xu, Diyi Yang, Akhila Yerukola, and Jiawei Zhou. The GEM benchmark: Natural language generation, its evaluation and metrics. In Antoine Bosselut, Esin Durmus, Varun Prashant Gangal, Sebastian Gehrmann, Yacine Jernite, Laura Perez-Beltrachini, Samira Shaikh, and Wei Xu (eds.), Proceedings of the 1st Workshop on Natural Language Generation, Evaluation, and Metrics (GEM 2021), pp. 96–120, Online, August 2021. Association for Computational Linguistics. doi: 10.18653/v1/2021.gem-1.10. URL https://aclanthology.org/2021.gem-1.10/.",
+    "Amelia Glaese, Nat McAleese, Maja Tr˛ebacz, John Aslanides, Vlad Firoiu, Timo Ewalds, Maribeth Rauh, Laura Weidinger, Martin Chadwick, Phoebe Thacker, Lucy Campbell-Gillingham, Jonathan Uesato, Po-Sen Huang, Ramona Comanescu, Fan Yang, Abigail See, Sumanth Dathathri, Rory Greig, Charlie Chen, Doug Fritz, Jaume Sanchez Elias, Richard Green, Sona Mokrá, Nicholas ˇ Fernando, Boxi Wu, Rachel Foley, Susannah Young, Iason Gabriel, William Isaac, John Mellor, Demis Hassabis, Koray Kavukcuoglu, Lisa Anne Hendricks, and Geoffrey Irving. Improving alignment of dialogue agents via targeted human judgements, 2022. URL https://arxiv.org/ abs/2209.14375.",
+    "Chenchen Gu, Xiang Lisa Li, Rohith Kuditipudi, Percy Liang, and Tatsunori Hashimoto. Auditing prompt caching in language model apis. arXiv preprint arXiv:2502.07776, 2025. v2 revised Jul 13, 2025.",
+    "Dan Hendrycks, Collin Burns, Steven Basart, Andy Zou, Mantas Mazeika, Dawn Song, and Jacob Steinhardt. Measuring massive multitask language understanding, 2021. URL https://arxiv. org/abs/2009.03300.",
+    "Ben Hutchinson, Negar Rostamzadeh, Christina Greer, Katherine Heller, and Vinodkumar Prab hakaran. Evaluation gaps in machine learning practice, 2022. URL https://arxiv.org/abs/ 2205.05256.",
+    "Seungone Kim, Juyoung Suk, Xiang Yue, Vijay Viswanathan, Seongyun Lee, Yizhong Wang, Kiril Gashteovski, Carolin Lawrence, Sean Welleck, and Graham Neubig. Evaluating language models as synthetic data generators, 2024. URL https://arxiv.org/abs/2412.03679.",
+    "Kevin Klyman. Acceptable use policies for foundation models. Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society, 7(1):752–767, Oct. 2024. doi: 10.1609/aies.v7i1.31677. URL https://ojs.aaai.org/index.php/AIES/article/view/31677.",
+    "Nathan Lambert. A post-training approach to ai regulation with model specs, 2024. URL https: //www.interconnects.ai/p/a-post-training-approach-to-ai-regulation.",
+    "Xiang Lisa Li, Vaishnavi Shrivastava, Siyan Li, Tatsunori Hashimoto, and Percy Liang. Benchmarking and improving generator-validator consistency of language models. In The Twelfth International Conference on Learning Representations, 2024. URL https://openreview.net/forum?id= phBS6YpTzC.",
+    "Xiang Lisa Li, Farzaan Kaiyom, Evan Zheran Liu, Yifan Mai, Percy Liang, and Tatsunori Hashimoto. Autobencher: Towards declarative benchmark construction. In The Thirteenth International Conference on Learning Representations, 2025. URL https://openreview.net/forum?id= ymt4crbbXh.",
+    "Percy Liang, Rishi Bommasani, Tony Lee, Dimitris Tsipras, Dilara Soylu, Michihiro Yasunaga, Yian Zhang, Deepak Narayanan, Yuhuai Wu, Ananya Kumar, Benjamin Newman, Binhang Yuan, Bobby Yan, Ce Zhang, Christian Cosgrove, Christopher D Manning, Christopher Re, Diana Acosta Navas, Drew A. Hudson, Eric Zelikman, Esin Durmus, Faisal Ladhak, Frieda Rong, Hongyu Ren, Huaxiu Yao, Jue WANG, Keshav Santhanam, Laurel Orr, Lucia Zheng, Mert Yuksekgonul, Mirac Suzgun, Nathan Kim, Neel Guha, Niladri S. Chatterji, Omar Khattab, Peter Henderson, Qian Huang, Ryan Andrew Chi, Sang Michael Xie, Shibani Santurkar, Surya Ganguli, Tatsunori Hashimoto, Thomas Icard, Tianyi Zhang, Vishrav Chaudhary, William Wang, Xuechen Li, Yifan Mai, Yuhui Zhang, and Yuta Koreeda. Holistic evaluation of language models. Transactions on Machine Learning Research, 2023. ISSN 2835-8856. URL https://openreview.net/forum? id=iO4LZibEqW. Featured Certification, Expert Certification, Outstanding Certification.",
+    "Mantas Mazeika, Long Phan, Xuwang Yin, Andy Zou, Zifan Wang, Norman Mu, Elham Sakhaee, Nathaniel Li, Steven Basart, Bo Li, David Forsyth, and Dan Hendrycks. Harmbench: A stan dardized evaluation framework for automated red teaming and robust refusal, 2024. URL https://arxiv.org/abs/2402.04249.",
+    "Subhabrata Mukherjee, Arindam Mitra, Ganesh Jawahar, Sahaj Agarwal, Hamid Palangi, and Ahmed Awadallah. Orca: Progressive learning from complex explanation traces of gpt-4, 2023. URL https://arxiv.org/abs/2306.02707.",
+    "Victor Ojewale, Ryan Steed, Briana Vecchione, Abeba Birhane, and Inioluwa Deborah Raji. Towards ai accountability infrastructure: Gaps and opportunities in ai audit tooling. In Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems, CHI ’25, New York, NY, USA, 2025. Association for Computing Machinery. ISBN 9798400713941. doi: 10.1145/3706598. 3713301. URL https://doi.org/10.1145/3706598.3713301.",
+    "OpenAI. OpenAI Model Spec (2024/05/08), May 2024. URL https://cdn.openai.com/spec/ model-spec-2024-05-08.html. Accessed: 2025-05-13.",
+    "OpenAI. OpenAI Model Spec (2025/04/11), April 2025a. URL https://model-spec.openai. com/2025-04-11.html. Accessed: 2025-05-13.",
+    "OpenAI. OpenAI Model Spec (2025/02/12), February 2025b. URL https://model-spec.openai. com/2025-02-12.html. Accessed: 2025-05-13.",
+    "OpenAI. Expanding on what we missed with sycophancy, May 2025c. URL https://openai. com/index/expanding-on-sycophancy/. Accessed: 2025-05-13.",
+    "ChaeHun Park, Minseok Choi, Dohyun Lee, and Jaegul Choo. Paireval: Open-domain dialogue evaluation metric with pairwise comparisons. In First Conference on Language Modeling, 2024. URL https://openreview.net/forum?id=y6aGT625Lk.",
+    "Ethan Perez, Saffron Huang, Francis Song, Trevor Cai, Roman Ring, John Aslanides, Amelia Glaese, Nat McAleese, and Geoffrey Irving. Red teaming language models with language models. In Yoav Goldberg, Zornitsa Kozareva, and Yue Zhang (eds.), Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pp. 3419–3448, Abu Dhabi, United Arab Emirates, December 2022. Association for Computational Linguistics. doi: 10.18653/v1/2022. emnlp-main.225. URL https://aclanthology.org/2022.emnlp-main.225/.",
+    "Inioluwa Deborah Raji and Joy Buolamwini. Actionable auditing: Investigating the impact of publicly naming biased performance results of commercial ai products. In Proceedings of the 2019 AAAI/ACM Conference on AI, Ethics, and Society, AIES ’19, pp. 429–435, New York, NY, USA, 2019. Association for Computing Machinery. ISBN 9781450363242. doi: 10.1145/3306618. 3314244. URL https://doi.org/10.1145/3306618.3314244.",
+    "David Rein, Betty Li Hou, Asa Cooper Stickland, Jackson Petty, Richard Yuanzhe Pang, Julien Dirani, Julian Michael, and Samuel R. Bowman. Gpqa: A graduate-level google-proof q&a benchmark, 2023. URL https://arxiv.org/abs/2311.12022.",
+    "Rohan Taori, Ishaan Gulrajani, Tianyi Zhang, Yann Dubois, Xuechen Li, Carlos Guestrin, Percy Liang, and Tatsunori B. Hashimoto. Stanford alpaca: An instruction-following llama model. https://github.com/tatsu-lab/stanford_alpaca, 2023.",
+    "Manya Wadhwa, Zayne Sprague, Chaitanya Malaviya, Philippe Laban, Junyi Jessy Li, and Greg Durrett. Evalagent: Discovering implicit evaluation criteria from the web, 2025. URL https: //arxiv.org/abs/2504.15219.",
+    "Hanna Wallach, Meera Desai, A. Feder Cooper, Angelina Wang, Chad Atalla, Solon Barocas, Su Lin Blodgett, Alexandra Chouldechova, Emily Corvi, P. Alex Dow, Jean Garcia-Gathright, Alexandra Olteanu, Nicholas Pangakis, Stefanie Reed, Emily Sheng, Dan Vann, Jennifer Wortman Vaughan, Matthew Vogel, Hannah Washington, and Abigail Z. Jacobs. Position: Evaluating Generative AI Systems Is a Social Science Measurement Challenge. arXiv preprint arXiv:2502.00561, 2025.",
+    "Boxin Wang, Weixin Chen, Hengzhi Pei, Chulin Xie, Mintong Kang, Chenhui Zhang, Chejian Xu, Zidi Xiong, Ritik Dutta, Rylan Schaeffer, Sang T. Truong, Simran Arora, Mantas Mazeika, Dan Hendrycks, Zinan Lin, Yu Cheng, Sanmi Koyejo, Dawn Song, and Bo Li. Decodingtrust: A comprehensive assessment of trustworthiness in GPT models. In Thirty-seventh Conference on Neural Information Processing Systems Datasets and Benchmarks Track, 2023. URL https: //openreview.net/forum?id=kaHpo8OZw2.",
+    "Laura Weidinger, Maribeth Rauh, Nahema Marchal, Arianna Manzini, Lisa Anne Hendricks, Juan Mateos-Garcia, Stevie Bergman, Jackie Kay, Conor Griffin, Ben Bariach, Iason Gabriel, Verena Rieser, and William Isaac. Sociotechnical safety evaluation of generative ai systems, 2023. URL https://arxiv.org/abs/2310.11986.",
+    "Zhangchen Xu, Fengqing Jiang, Luyao Niu, Yuntian Deng, Radha Poovendran, Yejin Choi, and Bill Yuchen Lin. Magpie: Alignment data synthesis from scratch by prompting aligned LLMs with nothing. In The Thirteenth International Conference on Learning Representations, 2025. URL https://openreview.net/forum?id=Pnk7vMbznK.",
+    "Yi Zeng, Kevin Klyman, Andy Zhou, Yu Yang, Minzhou Pan, Ruoxi Jia, Dawn Song, Percy Liang, and Bo Li. Ai risk categorization decoded (air 2024): From government regulations to corporate policies, 2024. URL https://arxiv.org/abs/2406.17864.",
+    "Yian Zhang, Yifan Mai, Josselin Somerville Roberts, Rishi Bommasani, Yann Dubois, and Percy Liang. Helm instruct: A multidimensional instruction following evaluation framework with absolute ratings, February 2024. URL https://crfm.stanford.edu/2024/02/18/ helm-instruct.html.",
+    "Yiran Zhao, Wenyue Zheng, Tianle Cai, Xuan Long Do, Kenji Kawaguchi, Anirudh Goyal, and Michael Shieh. Accelerating greedy coordinate gradient and general prompt optimization via probe sampling, 2024. URL https://arxiv.org/abs/2403.01251.",
+    "Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric P. Xing, Hao Zhang, Joseph E. Gonzalez, and Ion Stoica. Judging llm-as-a-judge with mt-bench and chatbot arena. In Advances in Neural Information Processing Systems (NeurIPS), 2023.",
+    "Xiang Zheng, Longxiang Wang, Yi Liu, Xingjun Ma, Chao Shen, and Cong Wang. Calm: Curiosity driven auditing for large language models. arXiv preprint arXiv:2501.02997, 2025. Submitted Jan 6, 2025."
+  ],
+  "measurement_description": "The benchmark measures model adherence to developer-published behavioral specifications concerning religious topics. This includes evaluating responses to prompts about respecting freedom of religion, avoiding hateful content targeting religious groups (e.g., Christians), and handling questions about diverse religious practices (e.g., religious dietary rules) in a neutral and non-judgmental manner."
 }

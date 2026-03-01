@@ -2,96 +2,51 @@
   "filename": "2407.12872.pdf",
   "title": "Evaluating Large Language Models with fmeval",
   "arxiv_url": "https://arxiv.org/pdf/2407.12872",
-  "benchmark_measurement": "The benchmark measures prompt stereotyping and biased/toxic generation in the context of religion. This is done by measuring the probability a model assigns to stereotypical sentences (from the CrowS-Pairs dataset) and by detecting toxic content in model generations for prompts related to religion (from the BOLD dataset).",
-  "religious_groups": [
-    "Religion"
+  "bias_targets": [
+    {
+      "target": "Racial bias",
+      "methodology": "Measured via prompt stereotyping by comparing model probabilities for more versus less stereotypical sentences (using the CrowS-Pairs dataset), and by assessing toxic text generation rates across different demographic prompts using toxicity classifiers (using the BOLD and ToxiGen datasets)."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Measured via prompt stereotyping by comparing model probabilities for more versus less stereotypical sentences (using the CrowS-Pairs dataset), and by assessing toxic text generation rates across different demographic prompts using toxicity classifiers (using the BOLD dataset)."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Measured via prompt stereotyping by comparing language model probabilities assigned to more versus less stereotypical sentences using the CrowS-Pairs dataset."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Measured via prompt stereotyping by comparing model probabilities for more versus less stereotypical sentences (using the CrowS-Pairs dataset), and by assessing toxic text generation rates across different demographic prompts using toxicity classifiers (using the BOLD dataset)."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Measured via prompt stereotyping by comparing language model probabilities assigned to more versus less stereotypical sentences using the CrowS-Pairs dataset."
+    },
+    {
+      "target": "Nationality bias",
+      "methodology": "Measured via prompt stereotyping by comparing language model probabilities assigned to more versus less stereotypical sentences using the CrowS-Pairs dataset."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Measured via prompt stereotyping by comparing language model probabilities assigned to more versus less stereotypical sentences using the CrowS-Pairs dataset."
+    },
+    {
+      "target": "Physical appearance bias",
+      "methodology": "Measured via prompt stereotyping by comparing language model probabilities assigned to more versus less stereotypical sentences using the CrowS-Pairs dataset."
+    },
+    {
+      "target": "Socioeconomic status bias",
+      "methodology": "Measured via prompt stereotyping by comparing language model probabilities assigned to more versus less stereotypical sentences using the CrowS-Pairs dataset."
+    },
+    {
+      "target": "Political ideology bias",
+      "methodology": "Assessed by measuring toxic and biased text generation rates across prompts targeting different political ideologies using toxicity detector models (the BOLD dataset)."
+    },
+    {
+      "target": "Occupational bias",
+      "methodology": "Assessed by measuring toxic and biased text generation rates across prompts targeting different professions using toxicity detector models (the BOLD dataset)."
+    }
   ],
-  "models_tested": [
-    "model-1",
-    "model-2",
-    "model-3",
-    "model-4",
-    "model-5",
-    "model-6",
-    "model-7"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short",
-    "long",
-    "other"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "HELM",
-    "HuggingFace Evaluate",
-    "OpenAI Evals",
-    "EleutherAI LM Evaluation Harness",
-    "DecodingTrust",
-    "CrowS-Pairs",
-    "BOLD",
-    "Real Toxicity Prompts"
-  ],
-  "continuous_testing": true,
-  "findings": "The paper presents a framework (fmeval) that incorporates evaluations for religious stereotypes and toxicity using the CrowS-Pairs and BOLD datasets, respectively. Religion is one of several categories evaluated for responsible AI. The paper does not provide specific findings or results for the religion category, but demonstrates the framework's capability to perform such evaluations.",
-  "references": [
-    "2020. HuggingFace Evaluate: A library for easily evaluating machine learning models and datasets. Github. https://github.com/huggingface/evaluate",
-    "2023. OpenAI Evals. Github. https://github.com/openai/evals.",
-    "Abubakar Abid, Maheen Farooqi, and James Zou. 2021. Persistent anti-muslim bias in large language models. In Proceedings of the 2021 AAAI/ACM Conference on AI, Ethics, and Society. 298-306.",
-    "Satanjeev Banerjee and Alon Lavie. 2005. METEOR: An automatic metric for MT evaluation with improved correlation with human judgments. In Proceedings of the acl workshop on intrinsic and extrinsic evaluation measures for machine translation and/or summarization. 65-72.",
-    "Emily M Bender, Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. 2021. On the dangers of stochastic parrots: Can language models be too big?. In Proceedings of the 2021 ACM conference on fairness, accountability, and transparency. 610-623.",
-    "Su Lin Blodgett, Solon Barocas, Hal Daumé III, and Hanna Wallach. 2020. Language (technology) is power: A critical survey of \"bias\"\" in nlp. arXiv preprint arXiv:2005.14050 (2020).",
-    "Su Lin Blodgett, Gilsinia Lopez, Alexandra Olteanu, Robert Sim, and Hanna Wallach. 2021. Stereotyping Norwegian salmon: An inventory of pitfalls in fairness benchmark datasets. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers). 1004-1015.",
-    "Daniel Borkan, Lucas Dixon, Jeffrey Sorensen, Nithum Thain, and Lucy Vasserman. 2019. Nuanced metrics for measuring unintended bias with real data for text classification. In Companion proceedings of the 2019 world wide web conference. 491-500.",
-    "Christopher Clark, Kenton Lee, Ming-Wei Chang, Tom Kwiatkowski, Michael Collins, and Kristina Toutanova. 2019. BoolQ: Exploring the surprising difficulty of natural yes/no questions. arXiv preprint arXiv:1905.10044 (2019).",
-    "Alexis Conneau and Douwe Kiela. 2018. Senteval: An evaluation toolkit for universal sentence representations. arXiv preprint arXiv:1803.05449 (2018).",
-    "Jwala Dhamala, Tony Sun, Varun Kumar, Satyapriya Krishna, Yada Pruk-sachatkun, Kai-Wei Chang, and Rahul Gupta. 2021. Bold: Dataset and metrics for measuring biases in open-ended language generation. In Proceedings of the 2021 ACM conference on fairness, accountability, and transparency. 862-872.",
-    "Kaustubh D Dhole, Varun Gangal, Sebastian Gehrmann, Aadesh Gupta, Zhenhao Li, Saad Mahamood, Abinaya Mahendiran, Simon Mille, Ashish Shrivastava, Samson Tan, et al. 2021. Nl-augmenter: A framework for task-sensitive natural language augmentation. arXiv preprint arXiv:2112.02721 (2021).",
-    "Lucas Dixon, John Li, Jeffrey Sorensen, Nithum Thain, and Lucy Vasserman. 2018. Measuring and mitigating unintended bias in text classification. In Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society. 67-73.",
-    "Hady Elsahar, Pavlos Vougiouklis, Arslen Remaci, Christophe Gravier, Jonathon Hare, Frederique Laforest, and Elena Simperl. 2018. T-REx: A Large Scale Alignment of Natural Language with Knowledge Base Triples. In Proceedings of the Eleventh International Conference on Language Resources and Evaluation (LREC 2018), Nicoletta Calzolari, Khalid Choukri, Christopher Cieri, Thierry Declerck, Sara Goggi, Koiti Hasida, Hitoshi Isahara, Bente Maegaard, Joseph Mariani, Hélène Mazo, Asuncion Moreno, Jan Odijk, Stelios Piperidis, and Takenobu Tokunaga (Eds.). European Language Resources Association (ELRA), Miyazaki, Japan. https://aclanthology.org/L18-1544",
-    "Shahul Es, Jithin James, Luis Espinosa-Anke, and Steven Schockaert. 2023. Ragas: Automated evaluation of retrieval augmented generation. arXiv preprint arXiv:2309.15217 (2023).",
-    "Alexander R Fabbri, Wojciech Kryściński, Bryan McCann, Caiming Xiong, Richard Socher, and Dragomir Radev. 2021. Summeval: Re-evaluating summarization evaluation. Transactions of the Association for Computational Linguistics 9 (2021), 391-409.",
-    "Alexander R Fabbri, Chien-Sheng Wu, Wenhao Liu, and Caiming Xiong. 2021. QAFactEval: Improved QA-based factual consistency evaluation for summarization. arXiv preprint arXiv:2112.08542 (2021).",
-    "Leo Gao, Jonathan Tow, Baber Abbasi, Stella Biderman, Sid Black, Anthony DiPofi, Charles Foster, Laurence Golding, Jeffrey Hsu, Alain Le Noac'h, Haonan Li, Kyle McDonell, Niklas Muennighoff, Chris Ociepa, Jason Phang, Laria Reynolds, Hailey Schoelkopf, Aviya Skowron, Lintang Sutawika, Eric Tang, Anish Thite, Ben Wang, Kevin Wang, and Andy Zou. 2021. A framework for few-shot language model evaluation. https://doi.org/10.5281/zenodo.5371628",
-    "Samuel Gehman, Suchin Gururangan, Maarten Sap, Yejin Choi, and Noah A Smith. 2020. Realtoxicityprompts: Evaluating neural toxic degeneration in language models. arXiv preprint arXiv:2009.11462 (2020).",
-    "Laura Hanu and Unitary team. 2020. Detoxify. Github. https://github.com/unitaryai/detoxify.",
-    "Thomas Hartvigsen, Saadia Gabriel, Hamid Palangi, Maarten Sap, Dipankar Ray, and Ece Kamar. 2022. Toxigen: A large-scale machine-generated dataset for adversarial and implicit hate speech detection. arXiv preprint arXiv:2203.09509 (2022).",
-    "Luyang Huang, Shuyang Cao, Nikolaus Parulian, Heng Ji, and Lu Wang. 2021. Efficient attentions for long document summarization. arXiv preprint arXiv:2104.02112 (2021).",
-    "Po-Sen Huang, Huan Zhang, Ray Jiang, Robert Stanforth, Johannes Welbl, Jack Rae, Vishal Maini, Dani Yogatama, and Pushmeet Kohli. 2019. Reducing sentiment bias in language models via counterfactual evaluation. arXiv preprint arXiv:1911.03064 (2019).",
-    "Ziwei Ji, Nayeon Lee, Rita Frieske, Tiezheng Yu, Dan Su, Yan Xu, Etsuko Ishii, Ye Jin Bang, Andrea Madotto, and Pascale Fung. 2023. Survey of hallucination in natural language generation. Comput. Surveys 55, 12 (2023), 1-38.",
-    "Mandar Joshi, Eunsol Choi, Daniel S Weld, and Luke Zettlemoyer. 2017. Triviaqa: A large scale distantly supervised challenge dataset for reading comprehension. arXiv preprint arXiv:1705.03551 (2017).",
-    "Tom Kwiatkowski, Jennimaria Palomaki, Olivia Redfield, Michael Collins, Ankur Parikh, Chris Alberti, Danielle Epstein, Illia Polosukhin, Jacob Devlin, Kenton Lee, et al. 2019. Natural questions: a benchmark for question answering research. Transactions of the Association for Computational Linguistics 7 (2019), 453-466.",
-    "Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich Küttler, Mike Lewis, Wen-tau Yih, Tim Rocktäschel, et al. 2020. Retrieval-augmented generation for knowledge-intensive nlp tasks. Advances in Neural Information Processing Systems 33 (2020), 9459-9474.",
-    "Percy Liang, Rishi Bommasani, Tony Lee, Dimitris Tsipras, Dilara Soylu, Michi-hiro Yasunaga, Yian Zhang, Deepak Narayanan, Yuhuai Wu, Ananya Kumar, et al. 2022. Holistic evaluation of language models. arXiv preprint arXiv:2211.09110 (2022).",
-    "Chin-Yew Lin. 2004. Rouge: A package for automatic evaluation of summaries. In Text summarization branches out. 74-81.",
-    "Stephanie Lin, Jacob Hilton, and Owain Evans. 2021. Truthfulqa: Measuring how models mimic human falsehoods. arXiv preprint arXiv:2109.07958 (2021).",
-    "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. 2019. Roberta: A robustly optimized bert pretraining approach. arXiv preprint arXiv:1907.11692 (2019).",
-    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2020. StereoSet: Measuring stereotypical bias in pretrained language models. arXiv preprint arXiv:2004.09456 (2020).",
-    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R Bowman. 2020. CrowS-pairs: A challenge dataset for measuring social biases in masked language models. arXiv preprint arXiv:2010.00133 (2020).",
-    "Debora Nozza, Federico Bianchi, Dirk Hovy, et al. 2021. HONEST: Measuring hurtful sentence completion in language models. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies. Association for Computational Linguistics.",
-    "Long Ouyang, Jeffrey Wu, Xu Jiang, Diogo Almeida, Carroll Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, et al. 2022. Training language models to follow instructions with human feedback. Advances in Neural Information Processing Systems 35 (2022), 27730-27744.",
-    "Bo Pang, Lillian Lee, et al. 2008. Opinion mining and sentiment analysis. Foundations and Trends in information retrieval 2, 1-2 (2008), 1-135.",
-    "Bo Pang, Lillian Lee, and Shivakumar Vaithyanathan. 2002. Thumbs up? Sentiment classification using machine learning techniques. arXiv preprint cs/0205070 (2002).",
-    "Fabio Petroni, Tim Rocktäschel, Sebastian Riedel, Patrick Lewis, Anton Bakhtin, Yuxiang Wu, and Alexander Miller. 2019. Language Models as Knowledge Bases?. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), Kentaro Inui, Jing Jiang, Vincent Ng, and Xiaojun Wan (Eds.). Association for Computational Linguistics, Hong Kong, China, 2463-2473. https://doi.org/10.18653/v1/D19-1250",
-    "Martin F Porter. 1980. An algorithm for suffix stripping. Program 14, 3 (1980), 130-137.",
-    "Jack W Rae, Sebastian Borgeaud, Trevor Cai, Katie Millican, Jordan Hoffmann, Francis Song, John Aslanides, Sarah Henderson, Roman Ring, Susannah Young, et al. 2021. Scaling language models: Methods, analysis & insights from training gopher. arXiv preprint arXiv:2112.11446 (2021).",
-    "Anna Rogers, Matt Gardner, and Isabelle Augenstein. 2023. Qa dataset explosion: A taxonomy of nlp resources for question answering and reading comprehension. Comput. Surveys 55, 10 (2023), 1-45.",
-    "Rachel Rudinger, Jason Naradowsky, Brian Leonard, and Benjamin Van Durme. 2018. Gender bias in coreference resolution. arXiv preprint arXiv:1804.09301 (2018).",
-    "Pola Schwöbel, Jacek Golebiowski, Michele Donini, Cédric Archambeau, and Danish Pruthi. 2023. Geographical Erasure in Language Generation. arXiv preprint arXiv:2310.14777 (2023).",
-    "Emily Sheng, Kai-Wei Chang, Premkumar Natarajan, and Nanyun Peng. 2021. Societal biases in language generation: Progress and challenges. arXiv preprint arXiv:2105.04054 (2021).",
-    "Richard Socher, Alex Perelygin, Jean Wu, Jason Chuang, Christopher D Manning, Andrew Y Ng, and Christopher Potts. 2013. Recursive deep models for semantic compositionality over a sentiment treebank. In Proceedings of the 2013 conference on empirical methods in natural language processing. 1631-1642.",
-    "Hugo Touvron, Thibaut Lavril, Gautier Izacard, Xavier Martinet, Marie-Anne Lachaux, Timothée Lacroix, Baptiste Rozière, Naman Goyal, Eric Hambro, Faisal Azhar, et al. 2023. Llama: Open and efficient foundation language models. arXiv preprint arXiv:2302.13971 (2023).",
-    "Peter D Turney. 2002. Thumbs up or thumbs down? Semantic orientation applied to unsupervised classification of reviews. arXiv preprint cs/0212032 (2002).",
-    "Bertie Vidgen, Alex Harris, Dong Nguyen, Rebekah Tromble, Scott Hale, and Helen Margetts. 2019. Challenges and frontiers in abusive content detection. In Proceedings of the third workshop on abusive language online. Association for Computational Linguistics.",
-    "Alex Wang, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel R Bowman. 2018. GLUE: A multi-task benchmark and analysis platform for natural language understanding. arXiv preprint arXiv:1804.07461 (2018).",
-    "Boxin Wang, Weixin Chen, Hengzhi Pei, Chulin Xie, Mintong Kang, Chenhui Zhang, Chejian Xu, Zidi Xiong, Ritik Dutta, Rylan Schaeffer, et al. 2023. DecodingTrust: A Comprehensive Assessment of Trustworthiness in GPT Models. arXiv preprint arXiv:2306.11698 (2023).",
-    "Alex Warstadt, Amanpreet Singh, and Samuel R Bowman. 2019. Neural network acceptability judgments. Transactions of the Association for Computational Linguistics 7 (2019), 625-641.",
-    "Janyce Wiebe, Theresa Wilson, and Claire Cardie. 2005. Annotating expressions of opinions and emotions in language. Language resources and evaluation 39 (2005), 165-210.",
-    "BigScience Workshop, Teven Le Scao, Angela Fan, Christopher Akiki, Ellie Pavlick, Suzana Ilić, Daniel Hesslow, Roman Castagné, Alexandra Sasha Luccioni, François Yvon, et al. 2022. Bloom: A 176b-parameter open-access multilingual language model. arXiv preprint arXiv:2211.05100 (2022).",
-    "Tianyi Zhang, Varsha Kishore, Felix Wu, Kilian Q Weinberger, and Yoav Artzi. 2019. Bertscore: Evaluating text generation with bert. arXiv preprint arXiv:1904.09675 (2019).",
-    "Tianyi Zhang, Faisal Ladhak, Esin Durmus, Percy Liang, Kathleen McKeown, and Tatsunori B Hashimoto. 2023. Benchmarking large language models for news summarization. arXiv preprint arXiv:2301.13848 (2023).",
-    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang. 2018. Gender bias in coreference resolution: Evaluation and debiasing methods. arXiv preprint arXiv:1804.06876 (2018)."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

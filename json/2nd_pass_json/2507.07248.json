@@ -2,75 +2,19 @@
   "filename": "2507.07248.pdf",
   "title": "MedRiskEval: Medical Risk Evaluation Benchmark of Language Models, On the Importance of User Perspectives in Healthcare Settings",
   "arxiv_url": "https://arxiv.org/pdf/2507.07248",
-  "benchmark_measurement": "The benchmark did not measure any aspects of faith or religion. Its focus is on medical safety risks, including a 'Discrimination' category that, based on the provided examples, pertains to gender and weight, not religion.",
-  "religious_groups": [],
-  "models_tested": [
-    "gpt-4.1",
-    "gpt-4.1-mini",
-    "gpt-4.1-nano",
-    "Phi-3.5-Instruct",
-    "Llama 3",
-    "Gemma 3",
-    "Med42",
-    "MedGemma",
-    "MP-PMC",
-    "MP-Clinical",
-    "MP-Guideline",
-    "MP-MedWiki",
-    "MP-MedCode",
-    "MP-BC",
-    "MP-Instruct"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating model responses to synthetic patient queries from the PatientSafetyBench that contain gender-based medical stereotypes (e.g., questioning if women overreact to menstrual pain), scored by an LLM-as-a-judge on a 5-point scale from refusal to full violation."
+    },
+    {
+      "target": "Weight bias",
+      "methodology": "Evaluating model responses to queries that propose medical discrimination based on body size (e.g., asking if overweight people deserve less medical care), scored for safety and refusal behavior using an LLM-as-a-judge."
+    },
+    {
+      "target": "Demographic bias",
+      "methodology": "Prompting models with the 'Discrimination in Medical Context' subset of the PatientSafetyBench to test for stereotypes, assumptions, or stigmatizing language regarding any demographic group, evaluated via an LLM-as-a-judge."
+    }
   ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "long"
-  ],
-  "religion_component": "none",
-  "base_benchmarks": [
-    "PatientSafetyBench",
-    "MedSafetyBench",
-    "XSTest",
-    "JBB (JailBreakBench)",
-    "FACTS",
-    "AdvBench",
-    "Safer-Instruct",
-    "WildJailbreak",
-    "OR-Bench"
-  ],
-  "continuous_testing": false,
-  "findings": "This paper does not contain any findings related to religion, as its focus is on medical risk evaluation.",
-  "references": [
-    "Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia Leoni Aleman, Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat, and 1 others. 2023. Gpt-4 technical report. arXiv preprint arXiv:2303.08774.",
-    "Vahid Balazadeh, Michael Cooper, David Pellow, Atousa Assadi, Jennifer Bell, Mark Coastworth, Kaivalya Deshpande, Jim Fackler, Gabriel Funingana, Spencer Gable-Cook, and 1 others. 2025. Red teaming large language models for healthcare. arXiv preprint arXiv:2505.00467.",
-    "Felix Busch, Lena Hoffmann, Christopher Rueger, Elon HC van Dijk, Rawen Kader, Esteban Ortiz-Prado, Marcus R Makowski, Luca Saba, Martin Hadamitzky, Jakob Nikolas Kather, and 1 others. 2025. Current applications and challenges in large language models for patient care: a systematic review. Communications Medicine, 5(1):26.",
-    "Crystal T Chang, Hodan Farah, Haiwen Gui, Shawheen Justin Rezaei, Charbel Bou-Khalil, YeJean Park, Akshay Swaminathan, Jesutofunmi A Omiye, Akaash Kolluri, Akash Chaurasia, and 1 others. 2025. Red teaming chatgpt in medicine to yield real-world insights on model behavior. npj Digital Medicine, 8(1):149.",
-    "Patrick Chao, Edoardo Debenedetti, Alexander Robey, Maksym Andriushchenko, Francesco Croce, Vikash Sehwag, Edgar Dobriban, Nicolas Flammarion, George J Pappas, Florian Tramèr, and 1 others. 2024. Jailbreakbench: An open robustness benchmark for jailbreaking large language models. In Conference on Neural Information Processing Systems (NeurIPS).",
-    "Clément Christophe, Praveen K Kanithi, Tathagata Raha, Shadab Khan, and Marco AF Pimentel. 2024. Med42-v2: A suite of clinical llms. arXiv preprint arXiv:2408.06142.",
-    "Jean-Philippe Corbeil, Amin Dada, Jean-Michel Attendu, Asma Ben Abacha, Alessandro Sordoni, Lucas Caccia, François Beaulieu, Thomas Lin, Jens Kleesiek, and Paul Vozila. 2025. A modular approach for clinical slms driven by synthetic data with pre-instruction tuning, model merging, and clinicaltasks alignment. arXiv preprint arXiv:2505.10717.",
-    "Justin Cui, Wei-Lin Chiang, Ion Stoica, and Cho-Jui Hsieh. 2024. Or-bench: An over-refusal benchmark for large language models. arXiv preprint arXiv:2405.20947.",
-    "Amin Dada, Osman Alperen Koraş, Marie Bauer, Jean-Philippe Corbeil, Amanda Butler Contreras, Constantin Marc Seibold, Kaleb E Smith, Julian Friedrich, and Jens Kleesiek. 2025. Does biomedical training lead to better medical performance? In Proceedings of the Fourth Workshop on Generation, Evaluation and Metrics (GEM²), pages 46–59, Vienna, Austria and virtual meeting. Association for Computational Linguistics.",
-    "MohammadReza Davari and Eugene Belilovsky. 2024. Model breadcrumbs: Scaling multi-task model merging with sparse masks. In European Conference on Computer Vision, pages 270–287. Springer.",
-    "Kathleen C Fraser, Hillary Dawkins, Isar Nejadgholi, and Svetlana Kiritchenko. 2025. Fine-tuning lowers safety and disrupts evaluation consistency. arXiv preprint arXiv:2506.17209.",
-    "Oscar Freyer, Isabella Catharina Wiest, Jakob Nikolas Kather, and Stephen Gilbert. 2024. A future role for health applications of large language models depends on regulators enforcing safety standards. The Lancet Digital Health, 6(9):e662-e672.",
-    "Charles Goddard, Shamane Siriwardhana, Malikeh Ehghaghi, Luke Meyers, Vladimir Karpukhin, Brian Benedict, Mark McQuade, and Jacob Solawetz. 2024. Arcee's mergekit: A toolkit for merging large language models. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing: Industry Track, pages 477–485.",
-    "Jia Yi Goh, Shaun Khoo, Nyx Iskandar, Gabriel Chua, Leanne Tan, and Jessica Foo. 2025. Measuring what matters: A framework for evaluating safety risks in real-world ilm applications. In ICML Workshop on Technical AI Governance (TAIG).",
-    "Yichen Gong, Delong Ran, Xinlei He, Tianshuo Cong, Anyu Wang, and Xiaoyun Wang. 2025. Safety misalignment against large language models. In Proceedings of the 2025 Annual Network and Distributed System Security Symposium (NDSS).",
-    "Aaron Grattafiori, Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad AlDahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Alex Vaughan, and 1 others. 2024. The llama 3 herd of models. arXiv preprint arXiv:2407.21783.",
-    "Emman Haider, Daniel Perez-Becker, Thomas Portet, Piyush Madan, Amit Garg, Atabak Ashfaq, David Majercak, Wen Wen, Dongwoo Kim, Ziyi Yang, and 1 others. 2024. Phi-3 safety post-training: Aligning language models with a\" break-fix\" cycle. arXiv preprint arXiv:2407.13833.",
-    "Tessa Han, Aounon Kumar, Chirag Agarwal, and Himabindu Lakkaraju. 2024. Medsafetybench: Evaluating and improving the medical safety of large language models. arXiv preprint arXiv:2403.03744.",
-    "Alon Jacovi, Andrew Wang, Chris Alberti, Connie Tao, Jon Lipovetz, Kate Olszewska, Lukas Haas, Michelle Liu, Nate Keating, Adam Bloniarz, and 1 others. 2025. The facts grounding leaderboard: Benchmarking llms' ability to ground responses to long-form input. arXiv preprint arXiv:2501.03200.",
-    "Liwei Jiang, Kavel Rao, Seungju Han, Allyson Ettinger, Faeze Brahman, Sachin Kumar, Niloofar Mireshghallah, Ximing Lu, Maarten Sap, Yejin Choi, and 1 others. 2024. Wildteaming at scale: From in-the-wild jailbreaks to (adversarially) safer language models. Advances in Neural Information Processing Systems, 37:47094-47165.",
-    "Praveen K Kanithi, Clément Christophe, Marco AF Pimentel, Tathagata Raha, Nada Saadi, Hamza Javed, Svetlana Maslenkova, Nasir Hayat, Ronnie Rajan, and Shadab Khan. 2024. Medic: Towards a comprehensive framework for evaluating llms in clinical applications. arXiv preprint arXiv:2409.07314.",
-    "Anqi Lin, Zhihan Wang, Aimin Jiang, Li Chen, Chang Qi, Lingxuan Zhu, Weiming Mou, Wenyi Gan, Dongqiang Zeng, Mingjia Xiao, and 1 others. 2025. Large language models in clinical trials: applications, technical advances, and future directions. BMC medicine, 23(1):563.",
-    "Marley Presiado, Alex Montero, Lunna Lopes, and Liz Hamel. 2024. Kff health misinformation tracking poll: Artificial intelligence and health information. Online report, KFF (Kaiser Family Foundation). Accessed: 2025-11-17.",
-    "Xiangyu Qi, Yi Zeng, Tinghao Xie, Pin-Yu Chen, Ruoxi Jia, Prateek Mittal, and Peter Henderson. 2024. Fine-tuning aligned language models compromises safety, even when users do not intend to! In International Conference on Learning Representations.",
-    "Paul Röttger, Hannah Kirk, Bertie Vidgen, Giuseppe Attanasio, Federico Bianchi, and Dirk Hovy. 2024. Xstest: A test suite for identifying exaggerated safety behaviours in large language models. In Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 5377-5400.",
-    "Andrew Sellergren, Sahar Kazemzadeh, Tiam Jaroensri, Atilla Kiraly, Madeleine Traverse, Timo Kohlberger, Shawn Xu, Fayaz Jamil, Cían Hughes, Charles Lau, and 1 others. 2025. Medgemma technical report. arXiv preprint arXiv:2507.05201.",
-    "Taiwei Shi, Kai Chen, and Jieyu Zhao. 2024. Saferinstruct: Aligning language models with automated preference data. In Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 7629-7644.",
-    "Gemma Team, Aishwarya Kamath, Johan Ferret, Shreya Pathak, Nino Vieillard, Ramona Merhej, Sarah Perrin, Tatiana Matejovicova, Alexandre Ramé, Morgane Rivière, and 1 others. 2025. Gemma 3 technical report. arXiv preprint arXiv:2503.19786.",
-    "Yuyou Zhang, Miao Li, William Han, Yihang Yao, Zhepeng Cen, and Ding Zhao. 2025. Safety is not only about refusal: Reasoning-enhanced fine-tuning for interpretable LLM safety. In Findings of the Association for Computational Linguistics: ACL 2025, pages 18727-18746, Vienna, Austria. Association for Computational Linguistics.",
-    "Andy Zou, Zifan Wang, J. Zico Kolter, and Matt Fredrikson. 2023. Universal and transferable adversarial attacks on aligned language models. Preprint, arXiv:2307.15043."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

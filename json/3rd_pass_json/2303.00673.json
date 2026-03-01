@@ -2,43 +2,105 @@
   "filename": "2303.00673.pdf",
   "title": "Fairness Evaluation in Text Classification: Machine Learning Practitioner Perspectives of Individual and Group Fairness",
   "arxiv_url": "https://arxiv.org/pdf/2303.00673",
-  "bias_targets": [
-    {
-      "target": "Racial and Ethnic bias",
-      "methodology": "Evaluating group fairness via performance metrics (accuracy, false positive/negative rates) on text subgroups containing racial/ethnic identity terms, and evaluating individual fairness via counterfactual substitution of these terms in sentence templates."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Evaluating group fairness via performance metrics on text subgroups containing sexual orientation identity terms (e.g., gay, lesbian, bisexual), and evaluating individual fairness via counterfactual substitution of these terms."
-    },
-    {
-      "target": "Gender and Gender identity bias",
-      "methodology": "Evaluating group fairness via performance metrics on text subgroups containing gender identity terms (e.g., transgender, nonbinary, male, female), and evaluating individual fairness via counterfactual substitution of these terms."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Evaluating group fairness via performance metrics on text subgroups containing religious identity terms (e.g., muslim, christian, jewish), and evaluating individual fairness via counterfactual substitution of these terms."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Evaluating group fairness via performance metrics on text subgroups containing disability-related identity terms (e.g., blind, deaf, paralyzed), and evaluating individual fairness via counterfactual substitution of these terms."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Evaluating group fairness via performance metrics on text subgroups containing age-related identity terms (e.g., elderly, young, millennial), and evaluating individual fairness via counterfactual substitution of these terms."
-    },
-    {
-      "target": "Nationality bias",
-      "methodology": "Evaluating group fairness via performance metrics on text subgroups containing nationality identity terms (e.g., american, canadian, european), and evaluating individual fairness via counterfactual substitution of these terms."
-    },
-    {
-      "target": "Political bias",
-      "methodology": "Evaluated during the exploration phase through custom user inputs comparing model performance and counterfactual sentence substitutions using political identity terms (e.g., democrat, communist)."
-    },
-    {
-      "target": "Socioeconomic bias",
-      "methodology": "Evaluated during the exploration phase through custom user inputs comparing model performance and counterfactual sentence substitutions using socioeconomic status terms (e.g., poor, lower-class)."
-    }
+  "religious_groups": [
+    "Atheism",
+    "Buddhism",
+    "Christianity",
+    "Catholicism",
+    "Protestantism",
+    "Mormonism",
+    "Hinduism",
+    "Islam",
+    "Judaism",
+    "Sikhism",
+    "Taoism"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "BERT (standard fine-tuning)",
+    "BERT (fine-tuned with SenSel for individual fairness)",
+    "BERT (fine-tuned with TFCO for group fairness)"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "The study found that practitioners use religious identity terms (e.g., 'christian', 'muslim', 'jewish') to create custom groups and test for fairness in toxic text classification. The primary finding is that the way fairness metrics are presented (e.g., overall accuracy vs. fairness metrics for specific identity groups including religious ones) significantly influences which model practitioners deem 'fair'. When shown performance breakdowns by group, practitioners were more likely to choose a group-fair model, aiming to avoid misclassifying non-toxic comments that mention minority religious groups.",
+  "references": [
+    "Alekh Agarwal, Alina Beygelzimer, Miroslav Dudík, John Langford, and Hanna Wallach. 2018. A reductions approach to fair classification. In ICML.",
+    "Julia Angwin, Jeff Larson, Surya Mattu, and Lauren Kirchner. 2016. Machine bias. In Ethics of Data and Analytics. Auerbach Publications, 254-264.",
+    "Ari Ball-Burack, Michelle Seng Ah Lee, Jennifer Cobbe, and Jatinder Singh. 2021. Differential tweetment: Mitigating racial dialect bias in harmful tweet detection. In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency. 116-128.",
+    "Solon Barocas, Moritz Hardt, and Arvind Narayanan. 2019. Fairness and Machine Learning. fairmlbook.org.",
+    "Rachel KE Bellamy, Kuntal Dey, Michael Hind, Samuel C Hoffman, Stephanie Houde, Kalapriya Kannan, Pranay Lohia, Jacquelyn Martino, Sameep Mehta, Aleksandra Mojsilović, et al. 2019. AI Fairness 360: An extensible toolkit for detecting and mitigating algorithmic bias. IBM Journal of Research and Development 63, 4/5 (2019), 4-1.",
+    "Richard Berk, Hoda Heidari, Shahin Jabbari, Michael Kearns, and Aaron Roth. 2021. Fairness in criminal justice risk assessments: The state of the art. Sociological Methods & Research 50, 1 (2021), 3-44.",
+    "Marianne Bertrand and Sendhil Mullainathan. 2004. Are Emily and Greg more employable than Lakisha and Jamal? A field experiment on labor market discrimination. American Economic Review 94, 4 (2004), 991-1013.",
+    "Sarah Bird, Miro Dudík, Richard Edgar, Brandon Horn, Roman Lutz, Vanessa Milan, Mehrnoosh Sameki, Hanna Wallach, and Kathleen Walker. 2020. Fairlearn: A toolkit for assessing and improving fairness in AI. Microsoft, Tech. Rep. MSR-TR-2020-32 (2020).",
+    "Daniel Borkan, Lucas Dixon, Jeffrey Sorensen, Nithum Thain, and Lucy Vasserman. 2019. Nuanced metrics for measuring unintended bias with real data for text classification. In Companion proceedings of the 2019 world wide web conference. 491-500.",
+    "Flavio Calmon, Dennis Wei, Bhanukiran Vinzamuri, Karthikeyan Natesan Ramamurthy, and Kush R Varshney. 2017. Optimized pre-processing for discrimination prevention. Advances in neural information processing systems 30 (2017).",
+    "Richard J Chen, Tiffany Y Chen, Jana Lipkova, Judy J Wang, Drew FK Williamson, Ming Y Lu, Sharifa Sahai, and Faisal Mahmood. 2021. Algorithm fairness in ai for medicine and healthcare. arXiv preprint arXiv:2110.00603 (2021).",
+    "Alexandra Chouldechova. 2017. Fair prediction with disparate impact: A study of bias in recidivism prediction instruments. Big data 5, 2 (2017), 153-163.",
+    "Alexandra Chouldechova and Aaron Roth. 2020. A snapshot of the frontiers of fairness in machine learning. Commun. ACM 63, 5 (2020), 82-89.",
+    "Andrew Cotter, Heinrich Jiang, and Karthik Sridharan. 2019. Two-player games for efficient non-convex constrained optimization. In Algorithmic Learning Theory. PMLR, 300-332.",
+    "Kate Crawford. 2017. The trouble with bias. keynote at neurips. (2017).",
+    "Maria De-Arteaga, Alexey Romanov, Hanna Wallach, Jennifer Chayes, Christian Borgs, Alexandra Chouldechova, Sahin Geyik, Krishnaram Kenthapadi, and Adam Tauman Kalai. 2019. Bias in bios: A case study of semantic representation bias in a high-stakes setting. In proceedings of the Conference on Fairness, Accountability, and Transparency. 120-128.",
+    "Wesley Hanwen Deng, Manish Nagireddy, Michelle Seng Ah Lee, Jatinder Singh, Zhiwei Steven Wu, Kenneth Holstein, and Haiyi Zhu. 2022. Exploring How Machine Learning Practitioners (Try To) Use Fairness Toolkits. In 2022 ACM Conference on Fairness, Accountability, and Transparency (Seoul, Republic of Korea) (FAccT '22). Association for Computing Machinery, New York, NY, USA, 473-484. https://doi.org/10.1145/3531146.3533113",
+    "Sunipa Dev, Emily Sheng, Jieyu Zhao, Aubrie Amstutz, Jiao Sun, Yu Hou, Mattie Sanseverino, Jiin Kim, Akihiro Nishi, Nanyun Peng, et al. 2022. On Measures of Biases and Harms in NLP. In Findings of the Association for Computational Linguistics: AACL-IJCNLP 2022. 246-267.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2018. Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805 (2018).",
+    "Lucas Dixon, John Li, Jeffrey Sorensen, Nithum Thain, and Lucy Vasserman. 2018. Measuring and mitigating unintended bias in text classification. In Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society. 67-73.",
+    "Cynthia Dwork, Moritz Hardt, Toniann Pitassi, Omer Reingold, and Richard Zemel. 2012. Fairness through awareness. In ITCS.",
+    "Will Fleisher. 2021. What's Fair about Individual Fairness?. In Proceedings of the 2021 AAAI/ACM Conference on AI, Ethics, and Society. 480-490.",
+    "Sorelle A Friedler, Carlos Scheidegger, Suresh Venkatasubramanian, Sonam Choudhary, Evan P Hamilton, and Derek Roth. 2019. A comparative study of fairness-enhancing interventions in machine learning. In Proceedings of the conference on fairness, accountability, and transparency. 329-338.",
+    "Sahaj Garg, Vincent Perot, Nicole Limtiaco, Ankur Taly, Ed H Chi, and Alex Beutel. 2019. Counterfactual fairness in text classification through robustness. In Proceedings of the 2019 AAAI/ACM Conference on AI, Ethics, and Society. 219-226.",
+    "Andrew Gaut, Tony Sun, Shirlyn Tang, Yuxin Huang, Jing Qian, Mai ElSherief, Jieyu Zhao, Diba Mirza, Elizabeth Belding, Kai-Wei Chang, et al. 2019. Towards understanding gender bias in relation extraction. arXiv preprint arXiv:1911.03642 (2019).",
+    "Moritz Hardt, Eric Price, and Nati Srebro. 2016. Equality of opportunity in supervised learning. Advances in neural information processing systems 29 (2016).",
+    "Geert Hofstede. 2011. Dimensionalizing cultures: The Hofstede model in context. Online readings in psychology and culture 2, 1 (2011), 2307-0919.",
+    "Kenneth Holstein, Jennifer Wortman Vaughan, Hal Daumé III, Miro Dudik, and Hanna Wallach. 2019. Improving fairness in machine learning systems: What do industry practitioners need?. In Proceedings of the 2019 CHI conference on human factors in computing systems. 1-16.",
+    "Christina Ilvento. 2019. Metric learning for individual fairness. arXiv preprint arXiv:1906.00250 (2019).",
+    "Alankar Jain, Florian Pecune, Yoichi Matsuyama, and Justine Cassell. 2018. A user simulator architecture for socially-aware conversational agents. In Proceedings of the 18th International Conference on Intelligent Virtual Agents. 133-140.",
+    "Jialun Aaron Jiang, Morgan Klaus Scheuerman, Casey Fiesler, and Jed R Brubaker. 2021. Understanding international perceptions of the severity of harmful content online. PloS one 16, 8 (2021), e0256762.",
+    "Jean-Marie John-Mathews, Dominique Cardon, and Christine Balagué. 2022. From reality to world. A critical perspective on Al fairness. Journal of Business Ethics (2022), 1-15.",
+    "Jon Kleinberg, Sendhil Mullainathan, and Manish Raghavan. 2016. Inherent trade-offs in the fair determination of risk scores. arXiv preprint arXiv:1609.05807 (2016).",
+    "Pang Wei Koh, Shiori Sagawa, Henrik Marklund, Sang Michael Xie, Marvin Zhang, Akshay Balsubramani, Weihua Hu, Michihiro Yasunaga, Richard Lanas Phillips, Irena Gao, et al. 2021. Wilds: A benchmark of in-the-wild distribution shifts. In International Conference on Machine Learning. PMLR, 5637-5664.",
+    "KS Krishnapriya, Vítor Albiero, Kushal Vangara, Michael C King, and Kevin W Bowyer. 2020. Issues related to face recognition accuracy varying based on race and skin tone. IEEE Transactions on Technology and Society 1, 1 (2020), 8-20.",
+    "Owen Kufandirimbwa and Richard Gotora. 2012. Spam detection using artificial neural networks (perceptron learning rule). Online Journal of Physical and Environmental Science Research 1, 2 (2012), 22-29.",
+    "Deepak Kumar, Patrick Gage Kelley, Sunny Consolvo, Joshua Mason, Elie Bursztein, Zakir Durumeric, Kurt Thomas, and Michael Bailey. 2021. Designing Toxic Content Classification for a Diversity of Perspectives.. In SOUPS@ USENIX Security Symposium. 299-318.",
+    "Tao Li, Tushar Khot, Daniel Khashabi, Ashish Sabharwal, and Vivek Srikumar. 2020. UNQOVERing stereotyping biases via underspecified questions. arXiv preprint arXiv:2010.02428 (2020).",
+    "Michael Madaio, Lisa Egede, Hariharan Subramonyam, Jennifer Wortman Vaughan, and Hanna Wallach. 2022. Assessing the Fairness of AI Systems: AI Practitioners' Processes, Challenges, and Needs for Support. Proc. ACM Hum.-Comput. Interact. 6, CSCW1, Article 52 (apr 2022), 26 pages. https://doi.org/10.1145/3512899",
+    "Michael A Madaio, Luke Stark, Jennifer Wortman Vaughan, and Hanna Wallach. 2020. Co-designing checklists to understand organizational challenges and opportunities around fairness in AI. In Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems. 1-14.",
+    "Subha Maity, Songkai Xue, Mikhail Yurochkin, and Yuekai Sun. 2021. Statistical inference for individual fairness. arXiv preprint arXiv:2103.16714 (2021).",
+    "Mykola Makhortykh, Aleksandra Urman, and Roberto Ulloa. 2021. Detecting race and gender bias in visual representation of Al on web search engines. In International Workshop on Algorithmic Bias in Search and Recommendation. Springer, 36-50.",
+    "Keri Mallari, Kori Inkpen, Paul Johns, Sarah Tan, Divya Ramesh, and Ece Kamar. 2020. Do i look like a criminal? examining how race presentation impacts human judgement of recidivism. In Proceedings of the 2020 Chi conference on human factors in computing systems. 1-13.",
+    "Brandeis Marshall. 2021. Algorithmic misogynoir in content moderation practice. Heinrich-Böll-Stiftung European Union (2021).",
+    "Debarghya Mukherjee, Mikhail Yurochkin, Moulinath Banerjee, and Yuekai Sun. 2020. Two simple ways to learn individual fairness metrics from data. In ICML.",
+    "Yuri Nakao, Lorenzo Strappelli, Simone Stumpf, Aisha Naseer, Daniele Regoli, and Giulia Del Gamba. 2022. Towards Responsible AI: A Design Space Exploration of Human-Centered Artificial Intelligence User Interfaces to Investigate Fairness. International Journal of Human-Computer Interaction (2022), 1-27.",
+    "Yuri Nakao, Simone Stumpf, Subeida Ahmed, Aisha Naseer, and Lorenzo Strappelli. 2022. Towards Involving End-users in Interactive Human-in-the-loop AI Fairness. ACM Transactions on Interactive Intelligent Systems (TiiS) (2022).",
+    "Ji Ho Park, Jamin Shin, and Pascale Fung. 2018. Reducing Gender Bias in Abusive Language Detection. In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, EMNLP 2018.",
+    "Felix Petersen, Debarghya Mukherjee, Yuekai Sun, and Mikhail Yurochkin. 2021. Post-processing for individual fairness. Advances in Neural Information Processing Systems 34 (2021), 25944-25955.",
+    "David MW Powers. 2020. Evaluation: from precision, recall and F-measure to ROC, informedness, markedness and correlation. arXiv preprint arXiv:2010.16061 (2020).",
+    "Flavien Prost, Nithum Thain, and Tolga Bolukbasi. 2019. Debiasing embeddings for reduced gender bias in text classification. arXiv preprint arXiv:1908.02810 (2019).",
+    "Yada Pruksachatkun, Satyapriya Krishna, Jwala Dhamala, Rahul Gupta, and Kai-Wei Chang. 2021. Does robustness improve fairness? Approaching fairness with word substitution robustness methods for text classification. In ACL-IJCNLP 2021. https://www.amazon.science/publications/does-robustness-improve-fairness-approaching-fairness-with-word-substitution-robustness-methods-for-text-classification",
+    "Tim Räz. 2022. Gerrymandering Individual Fairness. arXiv preprint arXiv:2204.11615 (2022).",
+    "Brianna Richardson, Jean Garcia-Gathright, Samuel F Way, Jennifer Thom, and Henriette Cramer. 2021. Towards Fairness in Practice: A Practitioner-Oriented Rubric for Evaluating Fair ML Toolkits. In Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems. 1-13.",
+    "Pedro Saleiro, Benedict Kuester, Loren Hinkson, Jesse London, Abby Stevens, Ari Anisfeld, Kit T Rodolfa, and Rayid Ghani. 2018. Aequitas: A bias and fairness audit toolkit. arXiv preprint arXiv:1811.05577 (2018).",
+    "Nripsuta Ani Saxena, Karen Huang, Evan DeFilippis, Goran Radanovic, David C Parkes, and Yang Liu. 2019. How do fairness definitions fare? Examining public attitudes towards algorithmic definitions of fairness. In Proceedings of the 2019 AAAI/ACM Conference on AI, Ethics, and Society. 99-106.",
+    "Emily Sheng, Kai-Wei Chang, Premkumar Natarajan, and Nanyun Peng. 2019. The woman worked as a babysitter: On biases in language generation. arXiv preprint arXiv:1909.01326 (2019).",
+    "Ioana Baldini Soares, Dennis Wei, Karthikeyan Natesan Ramamurthy, Moninder Singh, and Mikhail Yurochkin. 2022. Your Fairness May Vary: Pretrained Language Model Fairness in Toxic Text Classification. In Annual Meeting of the Association for Computational Linguistics.",
+    "Megha Srivastava, Hoda Heidari, and Andreas Krause. 2019. Mathematical notions vs. human perception of fairness: A descriptive approach to fairness for machine learning. In Proceedings of the 25th ACM SIGKDD international conference on knowledge discovery & data mining. 2459-2468.",
+    "Gabriel Stanovsky, Noah A Smith, and Luke Zettlemoyer. 2019. Evaluating gender bias in machine translation. arXiv preprint arXiv:1906.00591 (2019).",
+    "Michael Veale, Max Van Kleek, and Reuben Binns. 2018. Fairness and accountability design needs for algorithmic support in high-stakes public sector decision-making. In Proceedings of the 2018 chi conference on human factors in computing systems. 1-14.",
+    "Ivan Vorobyev and Anna Krivitskaya. 2022. Reducing false positives in bank anti-fraud systems based on rule induction in distributed tree-based models. Computers & Security 120 (2022), 102786.",
+    "Thomas Wolf, Lysandre Debut, Victor Sanh, Julien Chaumond, Clement Delangue, Anthony Moi, Pierric Cistac, Tim Rault, Rémi Louf, Morgan Funtowicz, et al. 2019. Huggingface's transformers: State-of-the-art natural language processing. arXiv preprint arXiv:1910.03771 (2019).",
+    "Allison Woodruff, Sarah E Fox, Steven Rousso-Schindler, and Jeffrey Warshaw. 2018. A qualitative exploration of perceptions of algorithmic fairness. In Proceedings of the 2018 chi conference on human factors in computing systems. 1-14.",
+    "Songkai Xue, Mikhail Yurochkin, and Yuekai Sun. 2020. Auditing ml models for individual bias and unfairness. In AI&STAT.",
+    "Sirui Yao and Bert Huang. 2017. Beyond parity: Fairness objectives for collaborative filtering. Advances in neural information processing systems 30 (2017).",
+    "Mikhail Yurochkin, Amanda Bower, and Yuekai Sun. 2020. Training individually fair ML models with sensitive subspace robustness. In International Conference on Learning Representations.",
+    "Mikhail Yurochkin and Yuekai Sun. 2021. SenSeI: Sensitive set invariance for enforcing individual fairness. In International Conference on Learning Representations. https://github.com/IBM/in",
+    "Davide Zotti, Andrea Carnaghi, Valentina Piccoli, and Mauro Bianchi. 2019. Individual and contextual factors associated with school staff responses to homophobia bullying. Sexuality research and social policy 16, 4 (2019), 543-558.",
+    "James Zou and Londa Schiebinger. 2018. AI can be sexist and racist-it's time to make it fair."
+  ],
+  "measurement_description": "Detection of bias in toxic text classification, measured by comparing model performance (e.g., accuracy, toxic accuracy) on general text versus text containing specific religious identity tokens."
 }

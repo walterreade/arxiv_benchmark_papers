@@ -2,15 +2,57 @@
   "filename": "2601.17016.pdf",
   "title": "Measuring Political Stance and Consistency in Large Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2601.17016",
-  "bias_targets": [
-    {
-      "target": "Political bias",
-      "methodology": "Evaluating LLM responses to 24 politically sensitive geopolitical and social issues using various prompting strategies (direct questions, providing opposite arguments, providing both sides, and reformulating questions), followed by using a secondary LLM judge to classify the models' adopted political stances."
-    },
-    {
-      "target": "Language bias",
-      "methodology": "Translating prompts about regional geopolitical disputes into the local languages of the involved countries (e.g., Turkish vs. Greek, Russian vs. Ukrainian) to measure if the language of the prompt influences the model to adopt a stance favoring the corresponding side."
-    }
+  "religious_groups": [
+    "Religion (general)"
   ],
-  "primary_bias_target": "Political bias"
+  "models_tested": [
+    "Mistral-7b-instruct",
+    "Ollama-8b",
+    "DeepSeek",
+    "Grok-3-mini",
+    "Gemini-2.5-Flash",
+    "o3-mini",
+    "GPT-4o-mini",
+    "GPT-4o",
+    "GPT-5"
+  ],
+  "languages_evaluated": [
+    "English",
+    "Ukrainian",
+    "Russian",
+    "Turkish",
+    "Greek",
+    "Chinese"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "On the question of whether religion should play a role in social life and politics, Grok-3-mini and Mistral endorsed this role, while the other models did not. Five of the nine models changed their stance on this issue when the question was paraphrased, indicating weakly held positions.",
+  "references": [
+    "Agiza, A., Mostagir, M., Reda, S.: Politune: Analyzing the impact of data selection and fine-tuning on economic and political biases in large language models. In: Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society. vol. 7, pp. 2–12 (2024)",
+    "Bang, Y., Chen, D., Lee, N., Fung, P.: Measuring political bias in large language models: What is said and how it is said. In: Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). pp. 11142–11159 (2024)",
+    "Breuer, T., Frihat, S., Fuhr, N., Lewandowski, D., Schaer, P., Schenkel, R.: Large language models for information retrieval: Challenges and chances. Datenbank- Spektrum pp. 1–11 (2025)",
+    "Choudhary, T.: Political bias in large language models: a comparative analysis of chatgpt-4, perplexity, google gemini, and claude. IEEE Access (2024)",
+    "Hackenburg, K., Margetts, H.: Evaluating the persuasive influence of political mi- crotargeting with large language models. Proceedings of the National Academy of Sciences 121(24), e2403116121 (2024)",
+    "Hartmann, J., Schwenzow, J., Witte, M.: The political ideology of conversational ai: Converging evidence on chatgpt's pro-environmental, left-libertarian orientation. arXiv preprint arXiv:2301.01768 (2023)",
+    "Jenny, D.F., Billeter, Y., Schölkopf, B., Jin, Z.: Exploring the jungle of bias: Polit- ical bias attribution in language models via dependency analysis. In: Proceedings of the Third Workshop on NLP for Positive Impact. pp. 152–178 (2024)",
+    "Kuznetsova, E., Makhortykh, M., Vziatysheva, V., Stolze, M., Baghumyan, A., Urman, A.: In generative ai we trust: can chatbots effectively verify political infor- mation? Journal of Computational Social Science 8(1), 15 (2025)",
+    "Lin, L., Wang, L., Guo, J., Wong, K.F.: Investigating bias in llm-based bias detec- tion: Disparities between llms and human perception. In: Proceedings of the 31st International Conference on Computational Linguistics. pp. 10634–10649 (2025)",
+    "Lunardi, R., La Barbera, D., Roitero, K.: The elusiveness of detecting political bias in language models. In: Proceedings of the 33rd acm international conference on information and knowledge management. pp. 3922–3926 (2024)",
+    "Motoki, F., Pinho Neto, V., Rodrigues, V.: More human than human: measuring chatgpt political bias. Public Choice 198(1), 3–23 (2024)",
+    "Pit, P., Ma, X., Conway, M., Chen, Q., Bailey, J., Pit, H., Keo, P., Diep, W., Jiang, Y.G.: Whose side are you on? investigating the political stance of large language models. arXiv preprint arXiv:2403.13840 (2024)",
+    "Potter, Y., Lai, S., Kim, J., Evans, J., Song, D.: Hidden persuaders: Llms' political leaning and their influence on voters. In: Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing. pp. 4244–4275 (2024)",
+    "Ranjan, R., Gupta, S., Singh, S.N.: A comprehensive survey of bias in llms: Current landscape and future directions. arXiv preprint arXiv:2409.16430 (2024)",
+    "Restrepo, D., Wu, C., Tang, Z., Shuai, Z., Phan, T.N.M., Ding, J.E., Dao, C.T., Gallifant, J., Dychiao, R.G., Artiaga, J.C., et al.: Multi-ophthalingua: A multilin- gual benchmark for assessing and debiasing llm ophthalmological qa in lmics. In: Proceedings of the AAAI Conference on Artificial Intelligence. vol. 39, pp. 28321- 28330 (2025)",
+    "Rettenberger, L., Reischl, M., Schutera, M.: Assessing political bias in large lan- guage models. Journal of Computational Social Science 8(2), 1–17 (2025)",
+    "Röttger, P., Hofmann, V., Pyatkin, V., Hinck, M., Kirk, H., Schütze, H., Hovy, D.: Political compass or spinning arrow? towards more meaningful evaluations for values and opinions in large language models. In: Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). pp. 15295–15311 (2024)",
+    "Rozado, D.: The political preferences of llms. PloS one 19(7), e0306621 (2024)",
+    "Tjuatja, L., Chen, V., Wu, T., Talwalkwar, A., Neubig, G.: Do llms exhibit human- like response biases? a case study in survey design. Transactions of the Association for Computational Linguistics 12, 1011–1026 (2024)",
+    "Yu, C., Ye, J., Li, Y., Li, Z., Ferrara, E., Hu, X., Zhao, Y.: A large-scale simulation on large language models for decision-making in political science. arXiv preprint arXiv:2412.15291 (2024)",
+    "Yuksel, D., Catalbas, M.C., Oc, B.: Language-dependent political bias in ai: A study of chatgpt and gemini. arXiv preprint arXiv:2504.06436 (2025)"
+  ],
+  "measurement_description": "The benchmark measured the stance of LLMs on the question 'Should religion play a role in the organization of social life and politics?'."
 }

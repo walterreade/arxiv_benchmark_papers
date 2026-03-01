@@ -2,59 +2,51 @@
   "filename": "2407.02030.pdf",
   "title": "Breaking Bias, Building Bridges: Evaluation and Mitigation of Social Biases in LLMs via Contact Hypothesis",
   "arxiv_url": "https://arxiv.org/pdf/2407.02030",
-  "bias_targets": [
-    {
-      "target": "Ability bias",
-      "methodology": "Measuring the percentage of biased responses (e.g., refusal to engage) to prompts simulating intergroup contact across various societal scenarios using HOLISTICBIAS descriptors, supplemented by question-answering accuracy evaluation on the BBQ benchmark."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Measuring the percentage of biased responses (e.g., refusal to engage) to prompts simulating intergroup contact across various societal scenarios using HOLISTICBIAS descriptors, supplemented by question-answering accuracy evaluation on the BBQ benchmark."
-    },
-    {
-      "target": "Body type bias",
-      "methodology": "Measuring the percentage of biased responses (e.g., refusal to engage) to prompts simulating intergroup contact across various societal scenarios using HOLISTICBIAS descriptors, supplemented by question-answering accuracy evaluation on the BBQ benchmark."
-    },
-    {
-      "target": "Characteristics bias",
-      "methodology": "Measuring the percentage of biased responses (e.g., refusal to engage) to prompts simulating intergroup contact across various societal scenarios using HOLISTICBIAS descriptors."
-    },
-    {
-      "target": "Culture bias",
-      "methodology": "Measuring the percentage of biased responses (e.g., refusal to engage) to prompts simulating intergroup contact across various societal scenarios using HOLISTICBIAS descriptors."
-    },
-    {
-      "target": "Gender and sex bias",
-      "methodology": "Measuring the percentage of biased responses (e.g., refusal to engage) to prompts simulating intergroup contact across various societal scenarios using HOLISTICBIAS descriptors, supplemented by question-answering accuracy evaluation on the BBQ benchmark."
-    },
-    {
-      "target": "Nationality bias",
-      "methodology": "Measuring the percentage of biased responses (e.g., refusal to engage) to prompts simulating intergroup contact across various societal scenarios using HOLISTICBIAS descriptors, supplemented by question-answering accuracy evaluation on the BBQ benchmark."
-    },
-    {
-      "target": "Nonce bias",
-      "methodology": "Measuring the percentage of biased responses (e.g., refusal to engage) to prompts simulating intergroup contact across various societal scenarios using HOLISTICBIAS descriptors."
-    },
-    {
-      "target": "Political ideologies bias",
-      "methodology": "Measuring the percentage of biased responses (e.g., refusal to engage) to prompts simulating intergroup contact across various societal scenarios using HOLISTICBIAS descriptors."
-    },
-    {
-      "target": "Race and ethnicities bias",
-      "methodology": "Measuring the percentage of biased responses (e.g., refusal to engage) to prompts simulating intergroup contact across various societal scenarios using HOLISTICBIAS descriptors, supplemented by question-answering accuracy evaluation on the BBQ benchmark."
-    },
-    {
-      "target": "Religion bias",
-      "methodology": "Measuring the percentage of biased responses (e.g., refusal to engage) to prompts simulating intergroup contact across various societal scenarios using HOLISTICBIAS descriptors, supplemented by question-answering accuracy evaluation on the BBQ benchmark."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Measuring the percentage of biased responses (e.g., refusal to engage) to prompts simulating intergroup contact across various societal scenarios using HOLISTICBIAS descriptors, supplemented by question-answering accuracy evaluation on the BBQ benchmark."
-    },
-    {
-      "target": "Socioeconomic class bias",
-      "methodology": "Measuring the percentage of biased responses (e.g., refusal to engage) to prompts simulating intergroup contact across various societal scenarios using HOLISTICBIAS descriptors, supplemented by question-answering accuracy evaluation on the BBQ benchmark."
-    }
+  "religious_groups": [
+    "Religion (as a general category)"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "LLaMA 2",
+    "Tulu",
+    "NousHermes"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "HOLISTICBIAS",
+    "BBQ"
+  ],
+  "continuous_testing": false,
+  "findings": "The study found that LLMs exhibit notable bias in the 'Religion' dimension, with a particularly high percentage of biased responses observed in the 'Sports' scenario. The proposed Social Contact Debiasing (SCD) method proved effective, significantly reducing this bias after instruction-tuning.",
+  "references": [
+    "Gordon Willard Allport, Kenneth Clark, and Thomas Pettigrew. 1954. The nature of prejudice.",
+    "Yair Amichai-Hamburger and Katelyn Y. A. McKenna. 2006. The contact hypothesis reconsidered: Interacting via the internet. J. Comput. Mediat. Commun., 11:825–843.",
+    "Xuechunzi Bai, Angelina Wang, Ilia Sucholutsky, and Thomas L. Griffiths. 2024. Measuring implicit bias in explicitly unbiased large language models.",
+    "Emily M. Bender, Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. 2021. On the dangers of stochastic parrots: Can language models be too big? Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency.",
+    "Guanqun Bi, Lei Shen, Yuqiang Xie, Yanan Cao, Tian-gang Zhu, and Xiaodong He. 2023. A group fairness lens for large language models.",
+    "Tolga Bolukbasi, Kai-Wei Chang, James Y. Zou, Venkatesh Saligrama, and Adam Tauman Kalai. 2016. Man is to computer programmer as woman is to homemaker? debiasing word embeddings. In Neural Information Processing Systems.",
+    "Aylin Caliskan, Joanna J. Bryson, and Arvind Narayanan. 2017. Semantics derived automatically from language corpora contain human-like biases. Science, 356(6334):183–186.",
+    "Wei Guo and Aylin Caliskan. 2021. Detecting emergent intersectional biases: Contextualized word embed-dings contain a distribution of human-like biases. In Proceedings of the 2021 AAAI/ACM Conference on AI, Ethics, and Society, AIES '21, page 122–133, New York, NY, USA. Association for Computing Machinery.",
+    "Masahiro Kaneko, Danushka Bollegala, Naoaki Okazaki, and Timothy Baldwin. 2024. Evaluating gender bias in large language models via chain-of-thought prompting.",
+    "Shelley McKeown and John Dixon. 2017. The “contact hypothesis”: Critical reflections and future directions. Social and Personality Psychology Compass, 11(1):e12295. E12295 SPCO-0762.R1.",
+    "Katelyn Mei, Sonia Fereidooni, and Aylin Caliskan. 2023. Bias against 93 stigmatized groups in masked language models and downstream sentiment classification tasks. In Proceedings of the 2023 ACM Conference on Fairness, Accountability, and Transparency, FAcct '23, page 1699–1710, New York, NY, USA. Association for Computing Machinery.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2021. StereoSet: Measuring stereotypical bias in pretrained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 5356–5371, Online. Association for Computational Linguistics.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel Bowman. 2022. BBQ: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2086–2105, Dublin, Ireland. Association for Computational Linguistics.",
+    "Eric Michael Smith, Melissa Hall, Melanie Kambadur, Eleonora Presani, and Adina Williams. 2022. “I’m sorry to hear that”: Finding new biases in language models with a holistic descriptor dataset. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 9180–9211, Abu Dhabi, United Arab Emirates. Association for Computational Linguistics.",
+    "Tony Sun, Andrew Gaut, Shirlyn Tang, Yuxin Huang, Mai ElSherief, Jieyu Zhao, Diba Mirza, Elizabeth Belding, Kai-Wei Chang, and William Yang Wang. 2019. Mitigating gender bias in natural language processing: Literature review. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 1630–1640, Florence, Italy. Association for Computational Linguistics.",
+    "Hugo Touvron, Louis Martin, Kevin R. Stone, Peter Albert, Amjad Almahairi, Yasmine Babaei, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, Daniel M. Bikel, Lukas Blecher, Cristian Cantón Ferrer, Moya Chen, Guillem Cucurull, David Esiobu, Jude Fernandes, Jeremy Fu, Wenyin Fu, Brian Fuller, Cynthia Gao, Vedanuj Goswami, Naman Goyal, Anthony S. Hartshorn, Saghar Hosseini, Rui Hou, Hakan Inan, Marcin Kardas, Viktor Kerkez, Madian Khabsa, Isabel M. Kloumann, A. V. Korenev, Punit Singh Koura, Marie-Anne Lachaux, Thibaut Lavril, Jenya Lee, Diana Liskovich, Yinghai Lu, Yuning Mao, Xavier Martinet, Todor Mihaylov, Pushkar Mishra, Igor Molybog, Yixin Nie, Andrew Poulton, Jeremy Reizenstein, Rashi Rungta, Kalyan Saladi, Alan Schelten, Ruan Silva, Eric Michael Smith, R. Subramanian, Xia Tan, Binh Tang, Ross Taylor, Adina Williams, Jian Xiang Kuan, Puxin Xu, Zhengxu Yan, Iliyan Zarov, Yuchen Zhang, Angela Fan, Melanie Kambadur, Sharan Narang, Aurelien Rodriguez, Robert Stojnic, Sergey Edunov, and Thomas Scialom. 2023. Llama 2: Open foundation and fine-tuned chat models. ArXiv, abs/2307.09288.",
+    "Yixin Wan, George Pu, Jiao Sun, Aparna Garimella, Kai-Wei Chang, and Nanyun Peng. 2023. “kelly is a warm person, joseph is a role model”: Gender biases in LLM-generated reference letters. In Findings of the Association for Computational Linguistics: EMNLP 2023, pages 3730-3748, Singapore. Association for Computational Linguistics.",
+    "Yizhong Wang, Hamish Ivison, Pradeep Dasigi, Jack Hessel, Tushar Khot, Khyathi Raghavi Chandu, David Wadden, Kelsey MacMillan, Noah A. Smith, Iz Beltagy, and Hannaneh Hajishirzi. 2023. How far can camels go? exploring the state of instruction tuning on open resources.",
+    "Stephen C. Wright, Arthur Aron, Tracy McLaughlin-Volpe, and Stacy A. Ropp. 1997. The extended contact effect: Knowledge of cross-group friendships and prejudice. Journal of Personality and Social Psychology, 73:73–90.",
+    "B. Zhang, Blake Lemoine, and Margaret Mitchell. 2018. Mitigating unwanted biases with adversarial learning. Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society.",
+    "Jiaxu Zhao, Meng Fang, Shirui Pan, Wenpeng Yin, and Mykola Pechenizkiy. 2023a. Gptbias: A comprehensive framework for evaluating bias in large language models.",
+    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang. 2018. Gender bias in coreference resolution: Evaluation and debiasing methods. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 15–20, New Orleans, Louisiana. Association for Computational Linguistics.",
+    "Yachao Zhao, Bo Wang, Dongming Zhao, Kun Huang, Yan Wang, Ruifang He, and Yuexian Hou. 2023b. Mind vs. mouth: On measuring re-judge inconsistency of social bias in large language models. ArXiv, abs/2308.12578."
+  ],
+  "measurement_description": "The benchmark measured social bias against religious groups using prompts framed around the Contact Hypothesis. It evaluated whether LLMs would generate a biased response (e.g., refusing to collaborate, avoid, or exclude) based on a descriptor related to religion in various social scenarios (e.g., sports, workplace)."
 }

@@ -2,23 +2,71 @@
   "filename": "2602.16241.pdf",
   "title": "Are LLMs Ready to Replace Bangla Annotators?",
   "arxiv_url": "https://arxiv.org/pdf/2602.16241",
-  "bias_targets": [
-    {
-      "target": "Gender bias",
-      "methodology": "Prompting the LLM to act as a Bangla hate speech annotator with specific gender identities (e.g., 'Female' vs. 'Not Female') and measuring the mismatch rate in predicted classification labels and reasoning alignment."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Assigning religious identities (e.g., 'Muslim', 'Hindu') to the LLM via prompt instructions and calculating the variance in zero-shot hate speech classification and generated justifications compared to baseline or counterfactual identities."
-    },
-    {
-      "target": "Political bias",
-      "methodology": "Measuring the shift in model predictions and explanations when the LLM is instructed to adopt political or geopolitical identities (e.g., 'Politician', 'Diplomat') as the annotator."
-    },
-    {
-      "target": "Occupational bias",
-      "methodology": "Assigning entertainment and professional identities (e.g., 'Artist', 'Sportsman', 'Journalist', 'Security Analyst') in the prompt to evaluate bias and instability in the LLM's annotation decisions."
-    }
+  "religious_groups": [
+    "Islam",
+    "Hinduism"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "LLAMA 3.2 (3B)",
+    "Qwen 2.5 (7B)",
+    "Mistral (7B)",
+    "Gemini 1.5 Flash (~8B)",
+    "LLAMA 3.1 (8B)",
+    "DeepSeek R1 Distill (8B)",
+    "LLAMA 3.2 (11B)",
+    "GPT-3.5 Turbo (~20B)",
+    "GPT-40 Mini (~20B)",
+    "Gemini 1.5 Flash (~32B)",
+    "Gemini 2.0 Flash Lite (~40B)",
+    "Mixtral Instruct (56B)",
+    "DeepSeek R1 Distill (70B)",
+    "LLAMA 3.3 (70B)",
+    "O1 (~200B)",
+    "Gemini 2.0 Flash (~200B)",
+    "Gemini 1.5 Pro (~200B)"
+  ],
+  "languages_evaluated": [
+    "Bangla"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "The study found that most Large Language Models struggle to reliably classify identity-sensitive hate speech in Bangla. Specifically for religious categories, models exhibited poor performance, with F1 scores for the 'Muslim' category ranging from approximately 24% to 47% and for the 'Hindu' category from 20% to 47%. This highlights a significant limitation in handling content related to religious identities in a low-resource language context.",
+  "references": [
+    "Emily M Bender, Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. 2021. On the dangers of stochastic parrots: Can language models be too big? In Proceedings of the 2021 ACM conference on fairness, accountability, and transparency, pages 610-623.",
+    "Su Lin Blodgett, Solon Barocas, Hal Daumé Iii, and Hanna Wallach. 2020. Language (technology) is power: A critical survey of” bias\" in nlp. arXiv preprint arXiv:2005.14050.",
+    "Alexis Conneau, Kartikay Khandelwal, Naman Goyal, Vishrav Chaudhary, Guillaume Wenzek, Francisco Guzmán, Edouard Grave, Myle Ott, Luke Zettlemoyer, and Veselin Stoyanov. 2019. Unsupervised cross-lingual representation learning at scale. arXiv preprint arXiv:1911.02116.",
+    "Amit Das, Zheng Zhang, Najib Hasan, Souvika Sarkar, Fatemeh Jamshidi, Tathagata Bhattacharya, Mostafa Rahgouy, Nilanjana Raychawdhary, Dongji Feng, Vinija Jain, et al. 2024. Investigating annotator bias in large language models for hate speech detection. In Neurips Safe Generative AI Workshop 2024.",
+    "Dipto Das, Shion Guha, and Bryan Semaan. 2023. Toward cultural bias evaluation datasets: The case of bengali gender, religious, and national identity. In Proceedings of the First Workshop on Cross-Cultural Considerations in NLP (C3NLP), pages 68–83.",
+    "Fatema Tuj Johora Faria, Laith H Baniata, and Sangwoo Kang. 2021. Investigating the predominance of large language models in low-resource hate speech detection: A comparative analysis. Mathematics, 12(23):3687.",
+    "Samuel Gehman, Suchin Gururangan, Maarten Sap, Yejin Choi, and Noah A Smith. 2020. Realtoxicityprompts: Evaluating neural toxic degeneration in language models. arXiv preprint arXiv:2009.11462.",
+    "Fabrizio Gilardi, Meysam Alizadeh, and Maël Kubli. 2023. Chatgpt outperforms crowd workers for text-annotation tasks. Proceedings of the National Academy of Sciences.",
+    "Feng Gu, Zongxix Li, Carlos Rafael Colon, Benjamin Evans, Ishani Mondal, and Jordan Lee Boyd-Graber. 2025. Large language models are not good independent annotators. arXiv preprint arXiv:2503.06778.",
+    "Thomas Hartvigsen, Saadia Gabriel, Hamid Palangi, Mostofa Sarin, Dipankar Ray, and Ece Kamar. 2022. Toxigen: A large-scale machine-generated dataset for adversarial and implicit hate speech detection. arXiv preprint arXiv:2203.09509.",
+    "Xingwei He, Zhengxiao Lin, Yeyun Gong, Alex Jin, Hang Zhang, Chen Lin, Jian Jiao, Shuo Ming, Yiu-ming Cheung, and Jian-Guang Lou. 2023. Annollm: Making large language models to be better zero-shot annotators. arXiv preprint arXiv:2308.16834.",
+    "Fan Huang, Haewoon Kwak, and Jisun An. 2023. Is chatgpt better than human annotators? potential and limitation of chatgpt in explaining implicit hate speech. In Companion proceedings of the ACM web conference 2023, pages 294–297.",
+    "Suramya Jadhav, Abhay Shanbhag, Amogh Thakurdesai, Rudthima Sharma, and Jairaj Joshi. 2024. On limitations of llm as an annotator for low resource languages. arXiv preprint arXiv:2411.17637.",
+    "Ms Sarwar Jahan, Maimul Haque, Nahid Arhab, and Momtaz F. 2022. Banglahatebert: Bert for abusive language detection in bengali. In Proceedings of the second international workshop on resources and techniques for task evaluation in abusive language analysis, pages 8–15.",
+    "Tanzina Afrin Keya et al. 2023. G-bert: Hate speech detection using graph-based bangla representations. Forthcoming or unpublished.",
+    "Md Kowsher, Abdullah As Sami, Nusrat Jahan, Pritam Saha, Mohammed Shamsul Arefin, Arnab Kumar Dhar, and Tharun Kanti. 2022. Bangla-bert: transformer-based efficient model for transfer learning on language understanding. IEEE Access, 10:91855–91870.",
+    "Percy Liang, Rishi Bommasani, Tony Lee, Dimitris Tsipras, Dilara Soylu, Michihiro Yasunaga, Yian Zhang, Deepak Narayanan, Yuhuai Wu, Ananya Kumar, et al. 2022. Holistic evaluation of language models. arXiv preprint arXiv:2211.09110.",
+    "Li Lucy and David Bamman. 2021. Gender and representation bias in gpt-3 generated stories. In Proceedings of the third workshop on narrative understanding, pages 48–55.",
+    "Jay Mohta, Kenan Ak, Yan Xu, and Mingwei Shen. 2023. Are large language models good annotators? In Proceedings on, pages 38–48. FMLR.",
+    "Arth Trupti, Nasution and Aykut Onan. 2024. Chatgpt label: Comparing low-quality human-generated and llm-generated annotations in low resource language nlp tasks. Ieee Access, 12:71876-71900.",
+    "Haotian Peng, Ran Xu, Chenhao Lyu, et al. 2024. Llm-annotator: Can llms replace human annotators in subjective nlp tasks? In Findings of the Association for Computational Linguistics (ACL).",
+    "Nils Reimers and Iryna Gurevych. 2019. Sentence-bert: Sentence embeddings using siamese bertnetworks. arXiv preprint arXiv:1908.10084.",
+    "Jayanta Sadhu, Manesha Rani Sahu, and Rudha Shribhar. 2024. Societal bias in large language models for bangla: An empirical study on gender and religious bias. arXiv preprint arXiv:2407.02534.",
+    "Shubhra Kanti Karmaker Santu and Dongji Feng. 2023. Teler: A general taxonomy of llm prompts for benchmarking complex tasks. arXiv preprint arXiv:2305.11520.",
+    "Maarten Sap, Dallas Card, Saadia Gabriel, Yejin Choi, and Noah A Smith. 2019. The risk of racial bias in hate speech detection. In proceedings of the 57th annual meeting of the association for computational linguistics, pages 1668–1678.",
+    "Souvika Sarkar, Dongji Feng, and Shubhra Kanti Karmaker_Santu. 2023. Zero-shot multi-label topic inference with sentence encoders and llms. Association for Computational Linguistics.",
+    "Souvika Sarkar, Md Najib Hasan, and Santu Karmaker. 2025. Zero-shot multi-label classification of bangla documents: Large decoders vs. classic encoders. arXiv preprint arXiv:2603.15000.",
+    "Rion Snow, Brendan O'Connor, Dan Jurafsky, and Andrew Y Ng. 2008. Cheap and fast-but is it good? evaluating non-expert annotations for natural language tasks. In Proceedings of EMNLP, pages 254-263.",
+    "Petter Tornberg. 2023. Chatgpt as a research tool: Ethical and epistemic challenges of large language models. Big Data & Society, 10(1):205395172311627.",
+    "Ziyang Wang, Ziqi Wang, Junyi Li, et al. 2023. Do you want chatgpt to annotate your data? evaluating llms as annotators. arXiv preprint arXiv:2309.07868.",
+    "Ruoyu Zhang, Yanzeng Li, Yongliang Ma, Ming Zhou, and Lei Zou. 2023. Llmaaa: Making large language models as active annotators. arXiv preprint arXiv:2310.19596."
+  ],
+  "measurement_description": "The benchmark measured annotator bias in Large Language Models for Bangla hate speech classification, specifically evaluating how models' predictions change when prompted with different identity cues, including religious identities like Muslim and Hindu."
 }

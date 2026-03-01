@@ -2,77 +2,15 @@
   "filename": "2509.17399.pdf",
   "title": "DIWALI - Diversity and Inclusivity aWare cuLture specific Items for India: Dataset and Assessment of LLMs for Cultural Text Adaptation in Indian Context",
   "arxiv_url": "https://arxiv.org/pdf/2509.17399",
-  "benchmark_measurement": "The benchmark measures the ability of Large Language Models (LLMs) to perform cultural text adaptation for the Indian context. This includes evaluating the models' knowledge and appropriate use of concepts from 17 cultural facets, one of which is 'Religion'. The 'Religion' facet specifically includes prominent religious activities, customs, festivals, and rituals, assessing if LLMs can correctly replace source-culture concepts with relevant Indian religious and faith-based concepts.",
-  "religious_groups": [
-    "Hinduism",
-    "Buddhism",
-    "Bon"
+  "bias_targets": [
+    {
+      "target": "Cultural bias",
+      "methodology": "Evaluating LLMs on a cultural text adaptation task (adapting text from an American cultural context to an Indian cultural context) by measuring the successful replacement of Western concepts with Indian Culture Specific Items (CSIs) using exact and fuzzy matching, LLM-as-a-judge scoring, and human evaluation."
+    },
+    {
+      "target": "Regional bias",
+      "methodology": "Mapping the generated Indian cultural concepts to their respective sub-regions (States and Union Territories) and plotting geographic heatmaps to analyze representational skews and the underrepresentation of certain geographic areas (e.g., Northeastern states) within the LLMs' outputs."
+    }
   ],
-  "models_tested": [
-    "Llama 2 7B Chat",
-    "Llama 3.1 8B Instruct",
-    "Llama 3.2 1B Instruct",
-    "Llama 3.2 3B Instruct",
-    "Mistral 7B Instruct",
-    "Gemma 2 2B Instruct",
-    "Gemma 2 9B Instruct"
-  ],
-  "languages_evaluated": [
-    "English",
-    "Bengali"
-  ],
-  "response_type": [
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "GSM8k",
-    "MGSM",
-    "CANDLE",
-    "DOSA"
-  ],
-  "continuous_testing": false,
-  "findings": "The paper found that LLMs exhibit significant sub-regional bias when adapting cultural concepts, including those related to religion and rituals. The models tend to generate concepts primarily from a few dominant regions of India (like Uttar Pradesh, Maharashtra, Punjab) while completely lacking adaptations for other regions, such as the Northeastern states. This indicates an uneven representation and knowledge of India's diverse religious and cultural landscape within the models.",
-  "references": [
-    "Muhammad Farid Adilazuarda, Sagnik Mukherjee, Pradhyumna Lavania, Siddhant Shivdutt Singh, Alham Fikri Aji, Jacki O'Neill, Ashutosh Modi, and Monojit Choudhury. 2024. Towards measuring and modeling “culture” in LLMs: A survey. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 15763–15784, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Badr AlKhamissi, Muhammad ElNokrashy, Mai Alkhamissi, and Mona Diab. 2024. Investigating cultural alignment of large language models. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 12404-12422, Bangkok, Thailand. Association for Computational Linguistics.",
-    "Sunil Barthwal and N. L. Gupta. 2011. Cultural values as advertisement themes in international and indian advertising. Indian Journal of Marketing, 42(11):16-21.",
-    "Yoav Benjamini and Yosef Hochberg. 2018. Controlling the false discovery rate: A practical and powerful approach to multiple testing. Journal of the Royal Statistical Society: Series B (Methodological), 57(1):289-300.",
-    "Shaily Bhatt and Fernando Diaz. 2024. Extrinsic evaluation of cultural competence in large language models. In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 16055–16074, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Jill Burstein, Jane Shore, John Sabatini, Yong-Won Lee, and Matthew Ventura. 2007. The automated text adaptation tool. In Proceedings of Human Language Technologies: The Annual Conference of the North American Chapter of the Association for Computational Linguistics (NAACL-HLT), pages 3-4, Rochester, New York, USA. Association for Computational Linguistics.",
-    "Karl Cobbe, Vineet Kosaraju, Mohammad Bavarian, Mark Chen, Heewoo Jun, Lukasz Kaiser, Matthias Plappert, Jerry Tworek, Jacob Hilton, Reiichiro Nakano, Christopher Hesse, and John Schulman. 2021. Training verifiers to solve math word problems. Preprint, arXiv:2110.14168.",
-    "Simone Conia, Daniel Lee, Min Li, Umar Farooq Minhas, Saloni Potdar, and Yunyao Li. 2024. Towards cross-cultural machine translation with retrievalaugmented generation from multilingual knowledge graphs. In EMNLP.",
-    "Rotem Dror, Gili Baumer, Segev Shlomov, and Roi Reichart. 2018. The hitchhiker's guide to testing statistical significance in natural language processing. In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 1383–1392, Melbourne, Australia. Association for Computational Linguistics.",
-    "Bradley Efron. 1979. Bootstrap methods: Another look at the jackknife. Annals of Statistics, 7:1–26.",
-    "Hanem El-Farahaty and Rafat Y. Alwazna. 2024. Translating cultural references and sensitive elements between arabic and english: Netflix subtitles as a case study. SAGE Open, 14(2):21582440241258293.",
-    "Ana Luisa Ferreira. 2024. Cultural adaptation in film subtitles: A study of brazilian films for hispanic audiences. Journal of Linguistics and Communication Studies, 3(4):48-53.",
-    "Aaron Grattafiori, Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Alex Vaughan, Amy Yang, Angela Fan, Anirudh Goyal, Anthony Hartshorn, Aobo Yang, Archi Mitra, Archie Sravankumar, Artem Korenev, Arthur Hinsvark, and 542 others. 2024. The llama 3 herd of models. Preprint, arXiv:2407.21783.",
-    "Hamna, Deepthi Sudharsan, Agrima Seth, Ritvik Budhiraja, Deepika Khullar, Vyshak Jain, Kalika Bali, Aditya Vashistha, and Sameer Segal. 2025. Kahani: Culturally-nuanced visual storytelling tool for non-western cultures. In Proceedings of the 2025 ACM SIGCAS/SIGCHI Conference on Computing and Sustainable Societies, COMPASS '25, page 379–400, New York, NY, USA. Association for Computing Machinery.",
-    "Daniel Hershcovich, Stella Frank, Heather Lent, Miryam de Lhoneux, Mostafa Abdou, Stephanie Brandl, Emanuele Bugliarello, Laura Cabello Piqueras, Ilias Chalkidis, Ruixiang Cui, Constanza Fierro, Katerina Margatina, Phillip Rust, and Anders Søgaard. 2022. Challenges and strategies in cross-cultural NLP. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 6997–7013, Dublin, Ireland. Association for Computational Linguistics.",
-    "Albert Q. Jiang, Alexandre Sablayrolles, Arthur Mensch, Chris Bamford, Devendra Singh Chaplot, Diego de las Casas, Florian Bressand, Gianna Lengyel, Guillaume Lample, Lucile Saulnier, Lélio Renard Lavaud, Marie-Anne Lachaux, Pierre Stock, Teven Le Scao, Thibaut Lavril, Thomas Wang, Timothée Lacroix, and William El Sayed. 2023. Mistral 7b. Preprint, arXiv:2310.06825.",
-    "J. Richard Landis and Gary G. Koch. 1977. The measurement of observer agreement for categorical data. Biometrics, 33(1):159-174.",
-    "Cheng Li, Mengzhuo Chen, Jindong Wang, Sunayana Sitaram, and Xing Xie. 2024. Culturellm: Incorporating cultural differences into large language models. In Advances in Neural Information Processing Systems, volume 37, pages 84799–84838. Curran Associates, Inc.",
-    "Huihan Li, Arnav Goel, Keyu He, and Xiang Ren. 2025. Attributing culture-conditioned generations to pretraining corpora. In The Thirteenth International Conference on Learning Representations.",
-    "Xianggui Li. 2024. Cross cultural adaptation of advertising in multinational enterprises - a case study of the nike inc. Perspectives in Social Sciences and Arts, 3(1):1-39.",
-    "Yanran Li, Hui Su, Xiaoyu Shen, Wenjie Li, Ziqiang Cao, and Shuzi Niu. 2017. DailyDialog: A manually labelled multi-turn dialogue dataset. In Proceedings of the Eighth International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 986-995, Taipei, Taiwan. Asian Federation of Natural Language Processing.",
-    "Reem Masoud, Ziquan Liu, Martin Ferianc, Philip C. Treleaven, and Miguel Rodrigues Rodrigues. 2025. Cultural alignment in large language models: An explanatory analysis based on hofstede's cultural dimensions. In Proceedings of the 31st International Conference on Computational Linguistics, pages 8474-8503, Abu Dhabi, UAE. Association for Computational Linguistics.",
-    "Nasrin Mostafazadeh, Nathanael Chambers, Xiaodong He, Devi Parikh, Dhruv Batra, Lucy Vanderwende, Pushmeet Kohli, and James Allen. 2016. A corpus and cloze evaluation for deeper understanding of commonsense stories. In Proceedings of the 2016 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 839–849, San Diego, California. Association for Computational Linguistics.",
-    "Tarek Naous, Michael J Ryan, Alan Ritter, and Wei Xu. 2024. Having beer after prayer? measuring cultural bias in large language models. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 16366-16393, Bangkok, Thailand. Association for Computational Linguistics.",
-    "Tarek Naous and Wei Xu. 2025. On the origin of cultural biases in language models: From pre-training data to linguistic phenomena. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 6423-6443, Albuquerque, New Mexico. Association for Computational Linguistics.",
-    "Peter Newmark. 2003. A textbook of translation.",
-    "Tuan-Phong Nguyen, Simon Razniewski, Aparna Varde, and Gerhard Weikum. 2023. Extracting cultural commonsense knowledge at scale. In Proceedings of the ACM Web Conference 2023, WWW '23, page 1907-1917, New York, NY, USA. Association for Computing Machinery.",
-    "Tijana Radojević, Nemanja Stanišić, and Nenad Stanić. 2024. How culture shapes the restaurant experience: A study of hofstede's dimensions and service quality. Hotel and Tourism Management, 12(1).",
-    "Michael J Ryan, William Held, and Diyi Yang. 2024. Unintended impacts of LLM alignment on global representation. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 16121-16140, Bangkok, Thailand. Association for Computational Linguistics.",
-    "Agrima Seth, Sanchit Ahuja, Kalika Bali, and Sunayana Sitaram. 2024. DOSA: A dataset of social artifacts from different Indian geographical subcultures. In Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024), pages 5323-5337, Torino, Italia. ELRA and ICCL.",
-    "Freda Shi, Mirac Suzgun, Markus Freitag, Xuezhi Wang, Suraj Srivats, Soroush Vosoughi, Hyung Won Chung, Yi Tay, Sebastian Ruder, Denny Zhou, Dipanjan Das, and Jason Wei. 2022. Language models are multilingual chain-of-thought reasoners. Preprint, arXiv:2210.03057.",
-    "Pushpdeep Singh, Mayur Patidar, and Lovekesh Vig. 2024. Translating across cultures: LLMs for intralingual cultural adaptation. In Proceedings of the 28th Conference on Computational Natural Language Learning, pages 400–418, Miami, FL, USA. Association for Computational Linguistics.",
-    "Taylor Sorensen, Jared Moore, Jillian Fisher, Mitchell Gordon, Niloofar Mireshghallah, Christopher Michael Rytting, Andre Ye, Liwei Jiang, Ximing Lu, Nouha Dziri, Tim Althoff, and Yejin Choi. 2024. Position: a roadmap to pluralistic alignment. In Proceedings of the 41st International Conference on Machine Learning, ICML'24. JMLR.org.",
-    "Gemma Team, Morgane Riviere, Shreya Pathak, Pier Giuseppe Sessa, Cassidy Hardin, Surya Bhupatiraju, Léonard Hussenot, Thomas Mesnard, Bobak Shahriari, Alexandre Ramé, Johan Ferret, Peter Liu, Pouya Tafti, Abe Friesen, Michelle Casbon, Sabela Ramos, Ravin Kumar, Charline Le Lan, Sammy Jerome, and 179 others. 2024. Gemma 2: Improving open language models at a practical size. Preprint, arXiv:2408.00118.",
-    "Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine Babaei, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, Dan Bikel, Lukas Blecher, Cristian Canton Ferrer, Moya Chen, Guillem Cucurull, David Esiobu, Jude Fernandes, Jeremy Fu, Wenyin Fu, and 49 others. 2023. Llama 2: Open foundation and fine-tuned chat models. Preprint, arXiv:2307.09288.",
-    "Wenxuan Wang, Wenxiang Jiao, Jingyuan Huang, Ruyi Dai, Jen-tse Huang, Zhaopeng Tu, and Michael Lyu. 2024. Not all countries celebrate thanksgiving: On the cultural dominance in large language models. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 6349-6384, Bangkok, Thailand. Association for Computational Linguistics.",
-    "Michał Wilczewski, Anne-Marie Søderberg, and Arkadiusz Gut. 2019. Storytelling and cultural learning-an expatriate manager's narratives of collaboration challenges in a multicultural business setting. Learning, Culture and Social Interaction, 21:362-377.",
-    "Binwei Yao, Ming Jiang, Tara Bobinac, Diyi Yang, and Junjie Hu. 2024. Benchmarking machine translation with cultural awareness. In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 13078-13096, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Zhonghe Zhang, Xiaoyu He, Vivek Iyer, and Alexandra Birch. 2024. Cultural adaptation of menus: A finegrained approach. In Proceedings of the Ninth Conference on Machine Translation, pages 1258–1271, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric Xing, and 1 others. 2023. Judging Ilm-as-a-judge with mt-bench and chatbot arena. Advances in Neural Information Processing Systems, 36:46595–46623."
-  ]
+  "primary_bias_target": "Cultural bias"
 }

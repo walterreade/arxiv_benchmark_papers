@@ -2,19 +2,60 @@
   "filename": "2205.11601.pdf",
   "title": "Challenges in Measuring Bias via Open-Ended Language Generation",
   "arxiv_url": "https://arxiv.org/pdf/2205.11601",
-  "bias_targets": [
-    {
-      "target": "Gender bias",
-      "methodology": "Evaluating open-ended text completions generated from gender-specific prompts by computing and comparing ratios of toxicity, sentiment, and regard scores between female and male subjects."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Generating text completions using prompts associated with different religious ideologies (e.g., Hinduism, Christianity, Islam, Judaism) and comparing the mean toxicity scores of the generated text across the religions."
-    },
-    {
-      "target": "Racial bias",
-      "methodology": "Prompting language models with race-associated text beginnings and comparing the toxicity levels of the generated completions across different racial groups (e.g., comparing Hispanic/Latino, Asian, and African Americans to European Americans)."
-    }
+  "religious_groups": [
+    "Islam",
+    "Christianity",
+    "Judaism",
+    "Hinduism",
+    "Buddhism",
+    "Sikhism",
+    "Atheism"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "GPT-2",
+    "GPT-3"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "BOLD",
+    "HONEST"
+  ],
+  "continuous_testing": false,
+  "findings": "The key finding is that measurements of religious bias in language generation are highly sensitive to experimental settings. For instance, the toxicity ratio for text generated from prompts about Sikhism compared to Hinduism was found to be 4.7 times higher when generating 10 tokens versus 40 tokens. This demonstrates that conclusions about religious bias can be inconsistent and vary dramatically based on methodological choices like the length of the generated text, making it difficult to draw firm conclusions about a model's inherent bias.",
+  "references": [
+    "Vamsi Aribandi, Yi Tay, Tal Schuster, Jinfeng Rao, Huaixiu Steven Zheng, Sanket Vaibhav Mehta, Honglei Zhuang, Vinh Q Tran, Dara Bahri, Jianmo Ni, et al. 2021. Ext5: Towards extreme multi-task scaling for transfer learning. arXiv preprint arXiv:2111.10952.",
+    "Steffen Bickel, Peter Haider, and Tobias Scheffer. 2005. Predicting sentences using n-gram language models. In Proceedings of human language technology conference and conference on empirical methods in natural language processing, pages 193–200.",
+    "Su Lin Blodgett, Solon Barocas, Hal Daumé III, and Hanna Wallach. 2020. Language (technology) is power: A critical survey of \"bias\" in NLP. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5454–5476, Online. Association for Computational Linguistics.",
+    "Su Lin Blodgett, Gilsinia Lopez, Alexandra Olteanu, Robert Sim, and Hanna Wallach. 2021. Stereotyping norwegian salmon: an inventory of pitfalls in fairness benchmark datasets. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 1004–1015.",
+    "Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, et al. 2020. Language models are few-shot learners. Advances in neural information processing systems, 33:1877–1901.",
+    "Kate Crawford. 2017. The trouble with bias. In Conference on Neural Information Processing Systems, invited speaker.",
+    "Sunipa Dev, Emily Sheng, Jieyu Zhao, Jiao Sun, Yu Hou, Mattie Sanseverino, Jiin Kim, Nanyun Peng, and Kai-Wei Chang. 2021. What do bias measures measure? arXiv preprint arXiv:2108.03362.",
+    "Jwala Dhamala, Tony Sun, Varun Kumar, Satyapriya Krishna, Yada Pruksachatkun, Kai-Wei Chang, and Rahul Gupta. 2021. Bold: Dataset and metrics for measuring biases in open-ended language generation. In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, pages 862–872.",
+    "Batya Friedman and Helen Nissenbaum. 1996. Bias in computer systems. ACM Transactions on Information Systems (TOIS), 14(3):330–347.",
+    "Samuel Gehman, Suchin Gururangan, Maarten Sap, Yejin Choi, and Noah A Smith. 2020. Realtoxicityprompts: Evaluating neural toxic degeneration in language models. arXiv preprint arXiv:2009.11462.",
+    "Laura Hanu and Unitary Team. 2020. Detoxify. Github. https://github.com/unitaryai/detoxify.",
+    "Ben Hutchinson, Vinodkumar Prabhakaran, Emily Denton, Kellie Webster, Yu Zhong, and Stephen Denuyl. 2020. Social biases in nlp models as barriers for persons with disabilities. arXiv preprint arXiv:2005.00813.",
+    "Clayton Hutto and Eric Gilbert. 2014. Vader: A parsimonious rule-based model for sentiment analysis of social media text. In Proceedings of the international AAAI conference on web and social media, volume 8, pages 216–225.",
+    "Jungo Kasai, Keisuke Sakaguchi, Ronan Le Bras, Lavinia Dunagan, Jacob Morrison, Alexander R Fabbri, Yejin Choi, and Noah A Smith. 2021. Bidimensional leaderboards: Generate and evaluate language hand in hand. arXiv preprint arXiv:2112.04139.",
+    "Daniel Khashabi, Sewon Min, Tushar Khot, Ashish Sabharwal, Oyvind Tafjord, Peter Clark, and Hannaneh Hajishirzi. 2020. Unifiedqa: Crossing format boundaries with a single qa system. arXiv preprint arXiv:2005.00700.",
+    "Svetlana Kiritchenko and Saif M Mohammad. 2018. Examining gender and race bias in two hundred sentiment analysis systems. arXiv preprint arXiv:1805.04508.",
+    "Monique W Morris. 2016. Protecting black girls. Educational leadership, 74(3):49–53.",
+    "BBC News. 2021. Alexa tells 10-year-old girl to touch live plug with penny.",
+    "Debora Nozza, Federico Bianchi, and Dirk Hovy. 2021. Honest: Measuring hurtful sentence completion in language models. In The 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies. Association for Computational Linguistics.",
+    "Alec Radford, Karthik Narasimhan, Tim Salimans, and Ilya Sutskever. 2018. Improving language understanding by generative pre-training.",
+    "Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi Zhou, Wei Li, and Peter J Liu. 2019. Exploring the limits of transfer learning with a unified text-to-text transformer. arXiv preprint arXiv:1910.10683.",
+    "Victor Sanh, Albert Webson, Colin Raffel, Stephen H Bach, Lintang Sutawika, Zaid Alyafeai, Antoine Chaffin, Arnaud Stiegler, Teven Le Scao, Arun Raja, et al. 2021. Multitask prompted training enables zero-shot task generalization. arXiv preprint arXiv:2110.08207.",
+    "Emily Sheng, Kai-Wei Chang, Premkumar Natarajan, and Nanyun Peng. 2019. The woman worked as a babysitter: On biases in language generation. arXiv preprint arXiv:1909.01326.",
+    "Tony Sun, Kellie Webster, Apu Shah, William Yang Wang, and Melvin Johnson. 2021. They, them, theirs: Rewriting with gender-neutral english. arXiv preprint arXiv:2102.06788.",
+    "Van-Khanh Tran and Le-Minh Nguyen. 2017. Neuralbased natural language generation in dialogue using rnn encoder-decoder with semantic aggregation. arXiv preprint arXiv:1706.06714.",
+    "Alex Wang and Kyunghyun Cho. 2019. Bert has a mouth, and it must speak: Bert as a markov random field language model. arXiv preprint arXiv:1902.04094.",
+    "Johannes Welbl, Amelia Glaese, Jonathan Uesato, Sumanth Dathathri, John Mellor, Lisa Anne Hendricks, Kirsty Anderson, Pushmeet Kohli, Ben Coppin, and Po-Sen Huang. 2021. Challenges in detoxifying language models. arXiv preprint arXiv:2109.07445."
+  ],
+  "measurement_description": "The benchmark measured the toxicity of open-ended text generations based on prompts related to different religious ideologies, in order to assess bias. This was done by calculating the ratio of mean toxicity scores between different religious groups."
 }

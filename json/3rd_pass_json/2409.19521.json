@@ -2,27 +2,92 @@
   "filename": "2409.19521.pdf",
   "title": "GenTel-Safe: A Unified Benchmark and Shielding Framework for Defending Against Prompt Injection Attacks",
   "arxiv_url": "https://arxiv.org/pdf/2409.19521",
-  "bias_targets": [
-    {
-      "target": "Racial bias",
-      "methodology": "Evaluating the ability of prompt injection detection models to identify malicious prompts designed to elicit racist outputs, categorized under 'Ethical Violations' in the GenTel-Bench dataset."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Evaluating the ability of prompt injection detection models to identify malicious prompts designed to elicit ableist outputs, categorized under 'Ethical Violations' in the GenTel-Bench dataset."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Evaluating the ability of prompt injection detection models to identify malicious prompts designed to elicit ageist outputs, categorized under 'Ethical Violations' in the GenTel-Bench dataset."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Evaluating the ability of prompt injection detection models to identify malicious prompts designed to elicit sexist outputs, categorized under 'Ethical Violations' in the GenTel-Bench dataset."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Evaluating the ability of prompt injection detection models to identify malicious prompts designed to elicit homophobic and transphobic outputs, categorized under 'Ethical Violations' in the GenTel-Bench dataset."
-    }
+  "religious_groups": [],
+  "models_tested": [
+    "GenTel-Shield",
+    "ProtectAI",
+    "Hyperion",
+    "Prompt Guard",
+    "Lakera AI",
+    "Deepset (deberta-v3-base-injection)",
+    "Fmops (DistilBERT variant)",
+    "WhyLabs LangKit"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "languages_evaluated": [
+    "English",
+    "Chinese",
+    "Japanese",
+    "French",
+    "Spanish",
+    "German"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "none",
+  "base_benchmarks": [
+    "citesafe-rlhf",
+    "SCBSZ24",
+    "chao2023jailbreaking",
+    "Jailbreak-LLM",
+    "Deita"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper does not contain any findings related to religion as it was not a subject of the study.",
+  "references": [
+    "Alespalla. 2023. alespalla/chatbot_instruction_prompts. https://huggingface.co/datasets/alespalla/chatbot_instruction_prompts. Accessed: 2024-08-30.",
+    "Nicholas Carlini, Florian Tramer, Eric Wallace, Matthew Jagielski, Ariel Herbert-Voss, Katherine Lee, Adam Roberts, Tom Brown, Dawn Song, Ulfar Erlingsson, et al. 2021. Extracting training data from large language models. In 30th USENIX Security Symposium (USENIX Security 21), pages 2633-2650.",
+    "Tianyu Cui, Yanling Wang, Chuanpu Fu, Yong Xiao, Sijia Li, Xinhao Deng, Yunpeng Liu, Qinglin Zhang, Ziyi Qiu, Peiyang Li, et al. 2024. Risk taxonomy, mitigation, and assessment benchmarks of large language model systems. arXiv preprint arXiv:2401.05778.",
+    "Deepset. 2023. distilbert-prompt-injection.",
+    "Gelei Deng, Yi Liu, Yuekang Li, Kailong Wang, Ying Zhang, Zefeng Li, Haoyu Wang, Tianwei Zhang, and Yang Liu. 2023. Jailbreaker: Automated jail-break across multiple large language model chatbots. CoRR, abs/2307.08715.",
+    "Epivolis. 2024. Hyperion. https://huggingface.co /Epivolis/Hyperion.",
+    "Luciano Floridi and Massimo Chiriatti. 2020. Gpt-3: Its nature, scope, limits, and consequences. Minds and Machines, 30:681-694.",
+    "Fmops. 2023. deberta-v3-base-injection.",
+    "Kai Greshake, Sahar Abdelnabi, Shailesh Mishra, Christoph Endres, Thorsten Holz, and Mario Fritz. 2023. Not what you've signed up for: Compromising real-world Ilm-integrated applications with indirect prompt injection. In Proceedings of the 16th ACM Workshop on Artificial Intelligence and Security, pages 79-90.",
+    "Xingang Guo, Fangxu Yu, Huan Zhang, Lianhui Qin, and Bin Hu. 2024. Cold-attack: Jailbreaking Ilms with stealthiness and controllability. arXiv preprint arXiv:2402.08679.",
+    "Yihao Huang, Chong Wang, Xiaojun Jia, Qing Guo, Felix Juefei-Xu, Jian Zhang, Geguang Pu, and Yang Liu. 2024. Semantic-guided prompt organization for universal goal hijacking against llms. arXiv preprint arXiv:2405.14189.",
+    "Bo Hui, Haolin Yuan, Neil Gong, Philippe Burlina, and Yinzhi Cao. 2024. Pleak: Prompt leaking attacks against large language model applications. arXiv preprint arXiv:2405.06823.",
+    "Hakan Inan, Kartikeya Upasani, Jianfeng Chi, Rashi Rungta, Krithika Iyer, Yuning Mao, Michael Tontchev, Qing Hu, Brian Fuller, Davide Testuggine, et al. 2023. Llama guard: Llm-based input-output safeguard for human-ai conversations. arXiv preprint arXiv:2312.06674.",
+    "Katharina Jeblick, Balthasar Schachtner, Jakob Dexl, Andreas Mittermeier, Anna Theresa Stüber, Johanna Topalis, Tobias Weber, Philipp Wesp, Bastian Oliver Sabel, Jens Ricke, et al. 2024. Chatgpt makes medicine easy to swallow: an exploratory case study on simplified radiology reports. European radiology, 34(5):2817-2825.",
+    "Joonhyun Jeong. 2023. Hijacking context in large multi-modal models. arXiv preprint arXiv:2312.07553.",
+    "Jinhwa Kim, Ali Derakhshan, and Ian G Harris. 2023. Robust safety classifier for large language mod-els: Adversarial prompt shield. arXiv preprint arXiv:2311.00172.",
+    "lakera.ai. 2024. Lakera-guard.",
+    "Haoran Li, Dadi Guo, Wei Fan, Mingshi Xu, Jie Huang, Fanpu Meng, and Yangqiu Song. 2023. Multi-step jailbreaking privacy attacks on chatgpt. arXiv preprint arXiv:2304.05197.",
+    "Lijun Li, Bowen Dong, Ruohui Wang, Xuhao Hu, Wang-meng Zuo, Dahua Lin, Yu Qiao, and Jing Shao. 2024. Salad-bench: A hierarchical and comprehen-sive safety benchmark for large language models. arXiv preprint arXiv:2402.05044.",
+    "Zi Lin, Zihan Wang, Yongqi Tong, Yangkun Wang, Yuxin Guo, Yujia Wang, and Jingbo Shang. 2023. Toxicchat: Unveiling hidden challenges of toxicity detection in real-world user-AI conversation. In The 2023 Conference on Empirical Methods in Natural Language Processing.",
+    "Wei Liu, Weihao Zeng, Keqing He, Yong Jiang, and Junxian He. 2023a. What makes good data for alignment? a comprehensive study of auto-matic data selection in instruction tuning. Preprint, arXiv:2312.15685.",
+    "Xiaogeng Liu, Nan Xu, Muhao Chen, and Chaowei Xiao. 2023b. Autodan: Generating stealthy jailbreak prompts on aligned large language models. arXiv preprint arXiv:2310.04451.",
+    "Xiaogeng Liu, Zhiyuan Yu, Yizhe Zhang, Ning Zhang, and Chaowei Xiao. 2024. Automatic and universal prompt injection attacks against large language models. arXiv preprint arXiv:2403.04957.",
+    "Yi Liu, Gelei Deng, Zhengzi Xu, Yuekang Li, Yaowen Zheng, Ying Zhang, Lida Zhao, Tianwei Zhang, Kailong Wang, and Yang Liu. 2023c. Jailbreaking chatgpt via prompt engineering: An empirical study. arXiv preprint arXiv:2305.13860.",
+    "Alejandro Lopez-Lira and Yuehua Tang. 2023. Can chatgpt forecast stock price movements? return predictability and large language models. arXiv preprint arXiv:2304.07619.",
+    "Babak Mahjour, Jillian Hoffstadt, and Tim Cernak. 2023. Designing chemical reaction arrays using phactor and chatgpt. Organic Process Research & Development, 27(8):1510-1516.",
+    "Todor Markov, Chong Zhang, Sandhini Agarwal, Tyna Eloundou, Teddy Lee, Steven Adler, Angela Jiang, and Lilian Weng. 2023. A holistic approach to un-desired content detection in the real world. Preprint, arXiv:2208.03274.",
+    "Mantas Mazeika, Long Phan, Xuwang Yin, Andy Zou, Zifan Wang, Norman Mu, Elham Sakhaee, Nathaniel Li, Steven Basart, Bo Li, et al. 2024. Harmbench: A standardized evaluation framework for automated red teaming and robust refusal. arXiv preprint arXiv:2402.04249.",
+    "meta.com. 2024. Prompt-guard-86m.",
+    "MITRE ATLAS. 2024. Atlas matrix. https://atlas.mitre.org/matrices/ATLAS.",
+    "Philip Moons and Liesbet Van Bulck. 2023. Chatgpt: can artificial intelligence language models be of value for cardiovascular nurses and allied health profession-als.",
+    "OWASP. 2024. Owasp top 10 list for large language models version 1.1. https://owasp.org/www-project-top-10-for-large-language-model-applications/.",
+    "Fábio Perez and Ian Ribeiro. 2022. Ignore previous prompt: Attack techniques for language models. In NeurIPS ML Safety Workshop.",
+    "ProtectAI.com. 2024. Fine-tuned deberta-v3-base for prompt injection detection.",
+    "Jerret Ross, Brian Belgodere, Vijil Chenthamarakshan, Inkit Padhi, Youssef Mroueh, and Payel Das. 2022. Large-scale chemical language representations capture molecular structure and properties. Nature Machine Intelligence, 4(12):1256-1264.",
+    "Paul Röttger, Hannah Rose Kirk, Bertie Vidgen, Giuseppe Attanasio, Federico Bianchi, and Dirk Hovy. 2023. Xstest: A test suite for identifying exaggerated safety behaviours in large language models. arXiv preprint arXiv:2308.01263.",
+    "Xinyue Shen, Zeyuan Chen, Michael Backes, Yun Shen, and Yang Zhang. 2023. \" do anything now\": Characterizing and evaluating in-the-wild jailbreak prompts on large language models. arXiv preprint arXiv:2308.03825.",
+    "Xinyue Shen, Zeyuan Chen, Michael Backes, Yun Shen, and Yang Zhang. 2024. \"Do Anything Now\": Characterizing and Evaluating In-The-Wild Jailbreak Prompts on Large Language Models. In ACM SIGSAC Conference on Computer and Communications Security (CCS). ACM.",
+    "Hao Sun, Zhexin Zhang, Jiawen Deng, Jiale Cheng, and Minlie Huang. 2023. Safety assessment of chinese large language models. arXiv preprint arXiv:2304.10436.",
+    "VMware. 2023. Vmware/open-instruct. https://huggingface.co/datasets/VMware/open-instruct. Accessed: 2024-08-30.",
+    "Liang Wang, Nan Yang, Xiaolong Huang, Linjun Yang, Rangan Majumder, and Furu Wei. 2024. Multilingual e5 text embeddings: A technical report. arXiv preprint arXiv:2402.05672.",
+    "Alexander Wei, Nika Haghtalab, and Jacob Steinhardt. 2024. Jailbroken: How does llm safety training fail? Advances in Neural Information Processing Systems, 36.",
+    "Jason Wei and Kai Zou. 2019. Eda: Easy data augmentation techniques for boosting performance on text classification tasks. arXiv preprint arXiv:1901.11196.",
+    "WhyLabs. 2024. Whylabs langkit.",
+    "Yueqi Xie, Minghong Fang, Renjie Pi, and Neil Gong. 2024. Gradsafe: Detecting jailbreak prompts for llms via safety-critical gradient analysis. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 507-518.",
+    "Zihao Xu, Yi Liu, Gelei Deng, Yuekang Li, and Stjepan Picek. 2024. A comprehensive study of jailbreak attack versus defense for large language models. In Findings of the Association for Computational Linguistics ACL 2024, pages 7432-7449.",
+    "Kai-Cheng Yang and Filippo Menczer. 2023. Large language models can rate news outlet credibility. arXiv preprint arXiv:2304.00228.",
+    "Tongxin Yuan, Zhiwei He, Lingzhong Dong, Yiming Wang, Ruijie Zhao, Tian Xia, Lizhen Xu, Binglin Zhou, Fangqi Li, Zhuosheng Zhang, et al. 2024. R-judge: Benchmarking safety risk awareness for llm agents. arXiv preprint arXiv:2401.10019.",
+    "Yiming Zhang and Daphne Ippolito. 2023. Prompts should not be seen as secrets: Systematically measuring prompt extraction attack success. arXiv preprint arXiv:2307.06865.",
+    "Zhexin Zhang, Junxiao Yang, Pei Ke, and Minlie Huang. 2023. Defending large language models against jail-breaking attacks through goal prioritization. arXiv preprint arXiv:2311.09096.",
+    "Xuandong Zhao, Xianjun Yang, Tianyu Pang, Chao Du, Lei Li, Yu-Xiang Wang, and William Yang Wang. 2024. Weak-to-strong jailbreaking on large language models. arXiv preprint arXiv:2401.17256.",
+    "Jun-Jie Zhu, Jinyue Jiang, Meiqi Yang, and Zhiyong Jason Ren. 2023. Chatgpt and environmental research. Environmental Science & Technology, 57(46):17667-17670.",
+    "Andy Zou, Zifan Wang, Nicholas Carlini, Milad Nasr, J Zico Kolter, and Matt Fredrikson. 2023. Universal and transferable adversarial attacks on aligned language models. arXiv preprint arXiv:2307.15043."
+  ],
+  "measurement_description": "The benchmark did not measure any aspects of faith or religion. Its focus was on security vulnerabilities like jailbreaking, goal hijacking, and prompt leakage attacks."
 }

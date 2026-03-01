@@ -2,15 +2,35 @@
   "filename": "2508.17378.pdf",
   "title": "UI-LEVEL EVALUATION OF ALLAM 34B: MEASURING AN ARABIC-CENTRIC LLM VIA HUMAIN CHAT",
   "arxiv_url": "https://arxiv.org/pdf/2508.17378",
-  "bias_targets": [
-    {
-      "target": "Language bias",
-      "methodology": "Comparing model performance (accuracy, fluency, and dialect fidelity) across five regional Arabic dialects (Najdi, Hijazi, Egyptian, Moroccan, and Levantine) using LLM-as-a-judge scoring and human evaluation to identify performance disparities and under-represented linguistic varieties."
-    },
-    {
-      "target": "Cultural bias",
-      "methodology": "Qualitative and human evaluation of model responses to assess cultural appropriateness, authenticity, and alignment, specifically noting instances where the model defaults to Western-centric structures, English factual retrieval, or generic formal Arabic instead of culturally resonant regional nuances."
-    }
+  "religious_groups": [
+    "Islam"
   ],
-  "primary_bias_target": "Language bias"
+  "models_tested": [
+    "ALLaM 34B",
+    "GPT-5",
+    "Gemini 2.5 Pro",
+    "Claude Sonnet-4"
+  ],
+  "languages_evaluated": [
+    "Arabic",
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "The paper's findings related to religion are implicit. By concluding that ALLaM 34B is a 'robust and culturally grounded Arabic LLM' suitable for real-world deployment, the study suggests the model successfully aligns with the cultural and religious norms of Arabic-speaking communities. However, religious sensitivity was not isolated as a distinct metric for measurement.",
+  "references": [
+    "Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, et al. Language models are few-shot learners. Advances in neural information processing systems, 33:1877–1901, 2020.",
+    "Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine Babaei, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, et al. Llama 2: Open foundation and fine-tuned chat models. arXiv preprint arXiv:2307.09288, 2023.",
+    "Omer Nacar, Serry Taiseer Sibaee, Samar Ahmed, Safa Ben Atitallah, Adel Ammar, Yasser Alhabashi, Abdulrahman S Al-Batati, Arwa Alsehibani, Nour Qandos, Omar Elshehy, et al. Towards inclusive arabic llms: A culturally aligned benchmark in arabic large language model evaluation. In Proceedings of the First Workshop on Language Models for Low-Resource Languages, pages 387–401, 2025.",
+    "M Saiful Bari, Yazeed Alnumay, Norah A Alzahrani, Nouf M Alotaibi, Hisham A Alyahya, Sultan AlRashed, Faisal A Mirza, Shaykhah Z Alsubaie, Hassan A Alahmed, Ghadah Alabduljabbar, et al. Allam: Large language models for arabic and english. arXiv preprint arXiv:2407.15390, 2024.",
+    "OpenAI. Gpt-5 is here. https://openai.com/news/gpt-5, 2025. Accessed: 2025-08-23.",
+    "Gemini Team, Rohan Anil, Sebastian Borgeaud, Jean-Baptiste Alayrac, Jiahui Yu, Radu Soricut, Johan Schalkwyk, Andrew M Dai, Anja Hauth, Katie Millican, et al. Gemini: a family of highly capable multimodal models. arXiv preprint arXiv:2312.11805, 2023.",
+    "Anthropic. Claude sonnet 4. https://www.anthropic.com/news/claude-sonnet-4, 2025. Accessed: 2025-08-23.",
+    "Jiawei Gu, Xuhui Jiang, Zhichao Shi, Hexiang Tan, Xuehao Zhai, Chengjin Xu, Wei Li, Yinghan Shen, Shengjie Ma, Honghao Liu, et al. A survey on Ilm-as-a-judge. arXiv preprint arXiv:2411.15594, 2024."
+  ],
+  "measurement_description": "The paper evaluates the model's 'cultural alignment,' which includes its ability to handle the 'cultural and religious sensitivities of Arabic-speaking communities'. This is assessed as part of a broader evaluation of linguistic accuracy and cultural appropriateness, rather than a specific test of religious knowledge or bias."
 }

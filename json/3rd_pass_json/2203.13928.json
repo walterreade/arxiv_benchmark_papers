@@ -2,19 +2,88 @@
   "filename": "2203.13928.pdf",
   "title": "On the Intrinsic and Extrinsic Fairness Evaluation Metrics for Contextualized Language Representations",
   "arxiv_url": "https://arxiv.org/pdf/2203.13928",
-  "bias_targets": [
-    {
-      "target": "Gender bias",
-      "methodology": "Measuring disparities across gender groups by comparing intrinsic metrics (CEAT embedding distances, ILPS mask probabilities, StereoSet sentence scoring) against extrinsic metrics (Jigsaw Toxicity and HateXPlain false positive rates, and BOLD generation sentiment/toxicity/stereotype)."
-    },
-    {
-      "target": "Racial bias",
-      "methodology": "Measuring disparities across racial groups by comparing intrinsic metrics (CEAT embedding distances, ILPS mask probabilities, StereoSet sentence scoring) against extrinsic metrics (Jigsaw Toxicity and HateXPlain false positive rates, and BOLD generation sentiment/toxicity/stereotype)."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Measuring disparities across religious groups by comparing intrinsic metrics (CEAT embedding distances, ILPS mask probabilities, StereoSet sentence scoring) against extrinsic metrics (Jigsaw Toxicity and HateXPlain false positive rates, and BOLD generation sentiment/toxicity/stereotype)."
-    }
+  "religious_groups": [
+    "Amish",
+    "Atheism",
+    "Buddhism",
+    "Catholicism",
+    "Christianity",
+    "Hinduism",
+    "Judaism",
+    "Mormonism",
+    "Islam",
+    "Protestantism",
+    "Sikhism",
+    "Brahmin"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "ALBERT-base-v2",
+    "ALBERT-large-v2",
+    "ALBERT-xlarge-v2",
+    "ALBERT-xxlarge-v2",
+    "BERT-base-cased",
+    "BERT-large-cased",
+    "RoBERTa-base",
+    "RoBERTa-large",
+    "DistilRoBERTa",
+    "GPT2",
+    "GPT2-medium",
+    "GPT2-large",
+    "GPT2-xl",
+    "DistilGPT2",
+    "EleutherAI/gpt-neo-125M",
+    "EleutherAI/gpt-neo-1.3B",
+    "EleutherAI/gpt-neo-2.7B",
+    "XLNet-base-cased",
+    "XLNet-large-cased"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long",
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "CEAT",
+    "ILPS",
+    "StereoSet",
+    "Jigsaw Toxicity (TOXD)",
+    "HateXPlain (HATEX)",
+    "BOLD",
+    "CrowS-Pairs",
+    "Social Bias Frames"
+  ],
+  "continuous_testing": false,
+  "findings": "The study found that intrinsic and extrinsic fairness metrics do not correlate well, and in the religion domain, they often show statistically negative correlations. This lack of correlation for religion was partly attributed to noise in the evaluation datasets; for instance, the BOLD dataset's prompts for religion were found to contain toxic and stereotyped content, which biased the generation outputs and skewed the extrinsic metric scores.",
+  "references": [
+    "Robert Adragna, Elliot Creager, David Madras, and Richard S. Zemel. 2020. Fairness and robustness in invariant learning: A case study in toxicity classification. ArXiv, abs/2011.06485.",
+    "Solon Barocas, Kate Crawford, Aaron Shapiro, and Hanna Wallach. 2017. The Problem With Bias: Allocative Versus Representational Harms in Machine Learning. In Proceedings of SIGCIS.",
+    "Sid Black, Leo Gao, Phil Wang, Connor Leahy, and Stella Biderman. 2021. GPT-Neo: Large Scale Autoregressive Language Modeling with Mesh-Tensorflow.",
+    "Su Lin Blodgett, Gilsinia Lopez, Alexandra Olteanu, Robert Sim, and Hanna M. Wallach. 2021. Stereotyping norwegian salmon: An inventory of pitfalls in fairness benchmark datasets. In ACL/IJCNLP.",
+    "Daniel Borkan, Lucas Dixon, Jeffrey Scott Sorensen, Nithum Thain, and Lucy Vasserman. 2019. Nuanced metrics for measuring unintended bias with real data for text classification. Companion Proceedings of The 2019 World Wide Web Conference.",
+    "Maria De-Arteaga, Alexey Romanov, Hanna Wallach, Jennifer Chayes, Christian Borgs, Alexandra Chouldechova, Sahin Geyik, Krishnaram Kenthapadi, and Adam Tauman Kalai. 2019. Bias in bios: A case study of semantic representation bias in a high-stakes setting. Proceedings of the Conference on Fairness, Accountability, and Transparency, page 120-128. ArXiv: 1901.09451.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. Bert: Pre-training of deep bidirectional transformers for language understanding. In NAACL.",
+    "Jwala Dhamala, Tony Sun, Varun Kumar, Satyapriya Krishna, Yada Pruksachatkun, Kai-Wei Chang, and Rahul Gupta. 2021. Bold: Dataset and metrics for measuring biases in open-ended language generation. Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, page 862-872. ArXiv: 2101.11718.",
+    "Seraphina Goldfarb-Tarrant, Rebecca Marchant, Ricardo Muñoz Sánchez, Mugdha Pandya, and Adam Lopez. 2021. Intrinsic bias metrics do not correlate with application bias. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 1926-1940, Online. Association for Computational Linguistics.",
+    "Wei Guo and Aylin Caliskan. 2021. Detecting emergent intersectional biases: Contextualized word embeddings contain a distribution of human-like biases. Proceedings of the 2021 AAAI/ACM Conference on AI, Ethics, and Society, page 122-133. ArXiv: 2006.03955.",
+    "Po-Sen Huang, Huan Zhang, Ray Jiang, Robert Stanforth, Johannes Welbl, Jack W. Rae, Vishal Maini, Dani Yogatama, and Pushmeet Kohli. 2020. Reducing sentiment bias in language models via counterfactual evaluation. ArXiv, abs/1911.03064.",
+    "Conversational AI Jigsaw. 2019. Jigsaw unintended bias in toxicity classification. Kaggle.",
+    "Xisen Jin, Francesco Barbieri, Brendan Kennedy, Aida Mostafazadeh Davani, Leonardo Neves, and Xiang Ren. 2021. On transferability of bias mitigation effects in language model fine-tuning. arXiv:2010.12864 [cs, stat]. ArXiv: 2010.12864.",
+    "Keita Kurita, Nidhi Vyas, Ayush Pareek, Alan W Black, and Yulia Tsvetkov. 2019. Measuring bias in contextualized word representations. In Proceedings of the First Workshop on Gender Bias in Natural Language Processing, page 166–172. Association for Computational Linguistics.",
+    "Zhenzhong Lan, Mingda Chen, Sebastian Goodman, Kevin Gimpel, Piyush Sharma, and Radu Soricut. 2020. Albert: A lite bert for self-supervised learning of language representations. ArXiv, abs/1909.11942.",
+    "Binny Mathew, Punyajoy Saha, Seid Muhie Yimam, Chris Biemann, Pawan Goyal, and Animesh Mukherjee. 2020. Hatexplain: A benchmark dataset for explainable hate speech detection. CoRR, abs/2012.10289.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2020. Stereoset: Measuring stereotypical bias in pretrained language models. arXiv:2004.09456 [cs]. ArXiv: 2004.09456.",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R. Bowman. 2020. Crows-pairs: A challenge dataset for measuring social biases in masked language models. arXiv:2010.00133 [cs]. ArXiv: 2010.00133.",
+    "Alec Radford, Jeff Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. 2019. Language models are unsupervised multitask learners.",
+    "Victor Sanh, Lysandre Debut, Julien Chaumond, and Thomas Wolf. 2019. Distilbert, a distilled version of bert: smaller, faster, cheaper and lighter. ArXiv, abs/1910.01108.",
+    "Maarten Sap, Saadia Gabriel, Lianhui Qin, Dan Jurafsky, Noah A. Smith, and Yejin Choi. 2020. Social bias frames: Reasoning about social and power implications of language. arXiv:1911.03891 [cs]. ArXiv: 1911.03891.",
+    "Anna Sotnikova, Yang Trista Cao, Hal Daumé III, and Rachel Rudinger. 2021. Analyzing stereotypes in generative text inference tasks. In Findings of the Association for Computational Linguistics: ACLIJCNLP 2021, pages 4052-4065, Online. Association for Computational Linguistics.",
+    "Alex Wang and Kyunghyun Cho. 2019. BERT has a mouth, and it must speak: BERT as a Markov random field language model. In Proceedings of the Workshop on Methods for Optimizing and Evaluating Neural Language Generation, pages 30-36, Minneapolis, Minnesota. Association for Computational Linguistics.",
+    "Zhilin Yang, Zihang Dai, Yiming Yang, Jaime G. Carbonell, Ruslan Salakhutdinov, and Quoc V. Le. 2019. Xlnet: Generalized autoregressive pretraining for language understanding. In NeurIPS.",
+    "Guanhua Zhang, Bing Bai, Junqi Zhang, Kun Bai, Conghui Zhu, and Tiejun Zhao. 2020. Demographics should not be the reason of toxicity: Mitigating discrimination in text classifications with instance weighting. In ACL.",
+    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Ryan Cotterell, Vicente Ordonez, and Kai-Wei Chang. 2019. Gender bias in contextualized word embeddings. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 629-634, Minneapolis, Minnesota. Association for Computational Linguistics."
+  ],
+  "measurement_description": "The study measures bias, specifically group disparities in sentiment, toxicity, and stereotypes, related to various religious groups across intrinsic and extrinsic fairness metrics."
 }

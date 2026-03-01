@@ -2,102 +2,39 @@
   "filename": "2502.17611.pdf",
   "title": "Evaluating the Effect of Retrieval Augmentation on Social Biases",
   "arxiv_url": "https://arxiv.org/pdf/2502.17611",
-  "benchmark_measurement": "The benchmark measured social biases and stereotypes related to religion, specifically how Retrieval Augmented Generation (RAG) amplifies or mitigates these biases when provided with stereotypical or anti-stereotypical documents.",
-  "religious_groups": [
-    "Christianity"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Multiple-choice question answering using the BBQ, CBBQ, and JBBQ datasets to calculate Diff-Bias scores (difference between stereotypical and anti-stereotypical response rates) under varying RAG document retrieval conditions."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Multiple-choice question answering using the BBQ and CBBQ datasets to measure the difference in selection rates between stereotypical and anti-stereotypical answers (Diff-Bias score) in a RAG setting."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Calculating Diff-Bias scores on ambiguous and disambiguated multiple-choice questions from the BBQ, CBBQ, and JBBQ benchmarks when retrieving stereotypically polarized documents."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Using the BBQ and CBBQ question answering benchmarks to compute Diff-Bias scores, assessing how RAG with biased document collections impacts the model's reliance on religious stereotypes."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Measuring intersectional bias amplification by testing ambiguous and disambiguated questions from the English BBQ dataset to calculate Diff-Bias scores when retrieving out-of-category stereotypical documents."
+    },
+    {
+      "target": "Physical appearance bias",
+      "methodology": "Evaluating intersectional biases by calculating Diff-Bias scores on the English BBQ dataset while using non-matching stereotypical document collections in the RAG pipeline."
+    },
+    {
+      "target": "Nationality bias",
+      "methodology": "Evaluating intersectional biases by calculating Diff-Bias scores on the English BBQ dataset while using non-matching stereotypical document collections in the RAG pipeline."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Evaluating intersectional biases by calculating Diff-Bias scores on the English BBQ dataset while using non-matching stereotypical document collections in the RAG pipeline."
+    }
   ],
-  "models_tested": [
-    "GPT-3.5-turbo",
-    "Llama-3-8B",
-    "Llama-3-8B-Instruct",
-    "Mistral",
-    "Mistral-7B-Instruct",
-    "Qwen2.5-3B",
-    "Qwen2.5-3B-Instruct",
-    "Qwen2.5-7B",
-    "Qwen2.5-7B-Instruct",
-    "Qwen2.5-14B",
-    "Qwen2.5-14B-Instruct",
-    "Qwen2.5-72B",
-    "Qwen2.5-72B-Instruct",
-    "o4-mini",
-    "LLM-JP-3-1.8B-Instruct",
-    "LLM-JP-3-3.7B-Instruct",
-    "LLM-JP-3-13B-Instruct",
-    "Self-RAG (Qwen-7B-Inst. based)",
-    "Llama-2"
-  ],
-  "languages_evaluated": [
-    "English",
-    "Japanese",
-    "Chinese"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "BBQ (Bias Benchmark for Question Answering)",
-    "StereoSet",
-    "Redditbias",
-    "CrowS-Pairs",
-    "CHbias",
-    "WinoBias",
-    "WinoGenerated",
-    "GEST",
-    "FSB",
-    "CBBQ (Chinese Bias Benchmark for Question Answering)",
-    "JBBQ (Japanese Bias Benchmark for Question Answering)",
-    "GenderAlign"
-  ],
-  "continuous_testing": false,
-  "findings": "Retrieval Augmented Generation (RAG) significantly amplifies religious biases when retrieving from stereotypical documents, even in models with low intrinsic bias. Conversely, retrieving from anti-stereotypical documents can reduce or reverse the bias. A specific finding for the Chinese CBBQ dataset revealed a counter-intuitive negative bias score in disambiguated contexts for religion; this was attributed to a distributional mismatch where the test questions predominantly featured Christians, while the stereotypical documents provided did not, highlighting RAG's sensitivity to the alignment between the query context and the knowledge corpus.",
-  "references": [
-    "Akari Asai, Zeqiu Wu, Yizhong Wang, Avirup Sil, and Hannaneh Hajishirzi. 2024. Self-rag: Learning to retrieve, generate, and critique through self-reflection.",
-    "Soumya Barikeri, Anne Lauscher, Ivan Vulić, and Goran Glavaš. 2021. RedditBias: A real-world resource for bias evaluation and debiasing of conversational language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 1941–1955, Online. Association for Computational Linguistics.",
-    "Su Lin Blodgett, Solon Barocas, Hal Daumé III, and Hanna Wallach. 2020. Language (technology) is power: A critical survey of “bias\" in nlp. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5454–5476.",
-    "Tolga Bolukbasi, Kai-Wei Chang, James Y Zou, Venkatesh Saligrama, and Adam T Kalai. 2016. Man is to computer programmer as woman is to homemaker? debiasing word embeddings. In Proc. of NuerIPs, pages 4349-4357.",
-    "Darren Edge, Ha Trinh, Newman Cheng, Joshua Bradley, Alex Chao, Apurva Mody, Steven Truitt, and Jonathan Larson. 2024. From local to global: A graph RAG approach to query-focused summarization. arXiv [cs.CL].",
-    "Yunfan Gao, Yun Xiong, Meng Wang, and Haofen Wang. 2024. Modular rag: Transforming rag systems into lego-like reconfigurable frameworks. Preprint, arXiv:2407.21059.",
-    "Rishav Hada, Agrima Seth, Harshita Diddee, and Kalika Bali. 2023. \"fifty shades of bias\": Normative ratings of gender bias in GPT generated English text. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, pages 1862-1876, Singapore. Association for Computational Linguistics.",
-    "Mengxuan Hu, Hongyi Wu, Zihan Guan, Ronghang Zhu, Dongliang Guo, Daiqing Qi, and Sheng Li. 2024. No free lunch: Retrieval-augmented generation undermines fairness in llms, even for vigilant users. Preprint, arXiv:2410.07589.",
-    "Yufei Huang and Deyi Xiong. 2024. CBBQ: A chinese bias benchmark dataset curated with human-AI collaboration for large language models. In Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024), pages 2917-2929, Torino, Italia. ELRA and ICCL.",
-    "Hideki Isozaki and Tsutomu Hirao. 2003. Japanese zero pronoun resolution based on ranking rules and machine learning. In Proceedings of the 2003 Conference on Empirical Methods in Natural Language Processing, pages 184-191.",
-    "Gautier Izacard, Mathilde Caron, Lucas Hosseini, Sebastian Riedel, Piotr Bojanowski, Armand Joulin, and Edouard Grave. 2021. Unsupervised dense information retrieval with contrastive learning.",
-    "Gautier Izacard and Edouard Grave. 2021. Leveraging passage retrieval with generative models for open domain question answering. In Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics: Main Volume, pages 874-880, Stroudsburg, PA, USA. Association for Computational Linguistics.",
-    "Jiho Jin, Jiseon Kim, Nayeon Lee, Haneul Yoo, Alice Oh, and Hwaran Lee. 2024. KoBBQ: Korean bias benchmark for question answering. Transactions of the Association for Computational Linguistics, 12:507-524.",
-    "Taeyoun Kim, Jacob Springer, Aditi Raghunathan, and Maarten Sap. 2025. Mitigating bias in rag: Controlling the embedder. arXiv preprint arXiv:2502.17390.",
-    "Satyapriya Krishna, Kalpesh Krishna, Anhad Mohaney, Steven Schwarcz, Adam Stambler, Shyam Upadhyay, and Manaal Faruqui. 2024. Fact, fetch, and reason: A unified evaluation of retrieval-augmented generation. arXiv [cs.CL].",
-    "Shachi H Kumar, Saurav Sahay, Sahisnu Mazumder, Eda Okur, Ramesh Manuvinakurike, Nicole Beckage, Hsuan Su, Hung-yi Lee, and Lama Nachman. 2024. Decoding biases: Automated methods and Ilm judges for gender bias detection in language models. arXiv preprint arXiv:2408.03907.",
-    "Philippe Laban, Alexander R Fabbri, Caiming Xiong, and Chien-Sheng Wu. 2024. Summary of a haystack: A challenge to long-context LLMs and RAG systems. arXiv [cs.CL].",
-    "John Lalor, Yi Yang, Kendall Smith, Nicole Forsgren, and Ahmed Abbasi. 2022. Benchmarking intersectional biases in NLP. In Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 3598–3609, Stroudsburg, PA, USA. Association for Computational Linguistics.",
-    "Patrick Lewis, Ethan Perez, Aleksandara Piktus, F Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich Kuttler, M Lewis, Wen-Tau Yih, Tim Rocktäschel, Sebastian Riedel, and Douwe Kiela. 2020. Retrieval-augmented generation for knowledge-intensive NLP tasks. Adv. Neural Inf. Process. Syst., abs/2005.11401:9459-9474.",
-    "Jingling Li, Zeyu Tang, Xiaoyu Liu, Peter Spirtes, Kun Zhang, Liu Leqi, and Yang Liu. 2024a. Prompting fairness: Integrating causality to debias large language models. arXiv preprint arXiv:2403.08743.",
-    "Jingling Li, Zeyu Tang, Xiaoyu Liu, Peter Spirtes, Kun Zhang, Liu Leqi, and Yang Liu. 2024b. Steering Ilms towards unbiased responses: A causality-guided debiasing framework. In ICLR 2024 Workshop on Reliable and Responsible Foundation Models.",
-    "Yingji Li, Mengnan Du, Rui Song, Xin Wang, Mingchen Sun, and Ying Wang. 2024c. Mitigating social biases of pre-trained language models via contrastive self-debiasing with double data augmentation. Artificial Intelligence, 332:104143.",
-    "Zichao Lin, Shuyan Guan, Wending Zhang, Huiyan Zhang, Yugang Li, and Huaping Zhang. 2024. Towards trustworthy llms: a review on debiasing and dehallucinating in large language models. Artificial Intelligence Review, 57(9):243.",
-    "Weicheng Ma, Brian Chiang, Tong Wu, Lili Wang, and Soroush Vosoughi. 2023. Intersectional stereotypes in large language models: Dataset and analysis. In Findings of the Association for Computational Linguistics: EMNLP 2023, pages 8589-8597, Stroudsburg, PA, USA. Association for Computational Linguistics.",
-    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2021. StereoSet: Measuring stereotypical bias in pretrained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 5356–5371, Online. Association for Computational Linguistics.",
-    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R Bowman. 2020. CrowS-pairs: A challenge dataset for measuring social biases in masked language models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1953–1967, Stroudsburg, PA, USA. Association for Computational Linguistics.",
-    "Bo Ni, Zheyuan Liu, Leyao Wang, Yongjia Lei, Yuying Zhao, Xueqi Cheng, Qingkai Zeng, Luna Dong, Yinglong Xia, Krishnaram Kenthapadi, et al. 2025. Towards trustworthy retrieval augmented generation for large language models: A survey. CoRR.",
-    "Daisuke Oba, Masahiro Kaneko, and Danushka Bollegala. 2024. In-contextual gender bias suppression for large language models. In Findings of the Association for Computational Linguistics: EACL 2024, pages 1722-1742.",
-    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel Bowman. 2022. BBQ: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2086–2105, Dublin, Ireland. Association for Computational Linguistics.",
-    "Ethan Perez, Sam Ringer, Kamile Lukosiute, Karina Nguyen, Edwin Chen, Scott Heiner, Craig Pettit, Catherine Olsson, Sandipan Kundu, Saurav Kadavath, Andy Jones, Anna Chen, Benjamin Mann, Brian Israel, Bryan Seethor, Cameron McKinnon, Christopher Olah, Da Yan, Daniela Amodei, Dario Amodei, Dawn Drain, Dustin Li, Eli Tran-Johnson, Guro Khundadze, Jackson Kernion, James Landis, Jamie Kerr, Jared Mueller, Jeeyoon Hyun, Joshua Landau, Kamal Ndousse, Landon Goldberg, Liane Lovitt, Martin Lucas, Michael Sellitto, Miranda Zhang, Neerav Kingsland, Nelson Elhage, Nicholas Joseph, Noemi Mercado, Nova DasSarma, Oliver Rausch, Robin Larson, Sam McCandlish, Scott Johnston, Shauna Kravec, Sheer El Showk, Tamera Lanham, Timothy Telleen-Lawton, Tom Brown, Tom Henighan, Tristan Hume, Yuntao Bai, Zac Hatfield-Dodds, Jack Clark, Samuel R. Bowman, Amanda Askell, Roger Grosse, Danny Hernandez, Deep Ganguli, Evan Hubinger, Nicholas Schiefer, and Jared Kaplan. 2023. Discovering language model behaviors with model-written evaluations. In Findings of the Association for Computational Linguistics: ACL 2023, pages 13387-13434, Toronto, Canada. Association for Computational Linguistics.",
-    "Matúš Pikuliak, Stefan Oresko, Andrea Hrckova, and Marian Simko. 2024. Women are beautiful, men are leaders: Gender stereotypes in machine translation and language modeling. In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 3060-3083, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Rafael Rafailov, Archit Sharma, Eric Mitchell, Christopher D Manning, Stefano Ermon, and Chelsea Finn. 2023. Direct preference optimization: Your language model is secretly a reward model. Advances in Neural Information Processing Systems, 36:53728-53741.",
-    "Navid Rekabsaz and Markus Schedl. 2020. Do neural ranking models intensify gender bias? In Proceedings of the 43rd International ACM SIGIR Conference on Research and Development in Information Retrieval, pages 2065-2068.",
-    "Mareike Riedel and Vanessa Rau. 2025. Religion and race: the need for an intersectional approach. Identities, pages 1-21.",
-    "Jisu Shin, Hoyun Song, Huije Lee, Soyeong Jeong, and Jong C Park. 2024. Ask llms directly, “what shapes your bias?\": Measuring social bias in large language models. In Findings of the Association for Computational Linguistics ACL 2024, pages 16122-16143.",
-    "Sumit Soman and Sujoy Roychowdhury. 2024. Observations on building RAG systems for technical documents. In The Second Tiny Papers Track at ICLR 2024.",
-    "Yi Chern Tan and L. Elisa Celis. 2019. Assessing social and intersectional biases in contextualized word representations. In Advances in Neural Information Processing Systems, volume 32. Curran Associates, Inc.",
-    "Jinyang Wu, Feihu Che, Chuyuan Zhang, Jianhua Tao, Shuai Zhang, and Pengpeng Shao. 2024. Pandora’s box or aladdin’s lamp: A comprehensive analysis revealing the role of RAG noise in large language models. arXiv [cs.CL].",
-    "Xuyang Wu, Shuowei Li, Hsin-Tai Wu, Zhiqiang Tao, and Yi Fang. 2025. Does RAG introduce unfairness in LLMs? evaluating fairness in retrieval-augmented generation systems. In Proceedings of the 31st International Conference on Computational Linguistics, pages 10021–10036, Abu Dhabi, UAE. Association for Computational Linguistics.",
-    "Shi-Qi Yan, Jia-Chen Gu, Yun Zhu, and Zhen-Hua Ling. 2024. Corrective retrieval augmented generation. arXiv preprint arXiv:2401.15884.",
-    "Hitomi Yanaka, Namgi Han, Ryoma Kumon, Jie Lu, Masashi Takeshita, Ryo Sekizawa, Taisei Kato, and Hiromi Arai. 2024. Analyzing social biases in japanese large language models. arXiv [cs.CL].",
-    "Xiao Yang, Kai Sun, Hao Xin, Yushi Sun, Nikita Bhalla, Xiangsen Chen, Sajal Choudhary, Rongze Daniel Gui, Ziran Will Jiang, Ziyu Jiang, Lingkun Kong, Brian Moran, Jiaqi Wang, Yifan Ethan Xu, An Yan, Chenyu Yang, Eting Yuan, Hanwen Zha, Nan Tang, Lei Chen, Nicolas Scheffer, Yue Liu, Nirav Shah, Rakesh Wanga, Anuj Kumar, Wen-Tau Yih, and Xin Luna Dong. 2024. CRAG – comprehensive RAG benchmark. arXiv [cs.CL].",
-    "Yue Yu, Wei Ping, Zihan Liu, Boxin Wang, Jiaxuan You, Chao Zhang, Mohammad Shoeybi, and Bryan Catanzaro. 2024. Rankrag: Unifying context ranking with retrieval-augmented generation in Ilms. Advances in Neural Information Processing Systems, 37:121156-121184.",
-    "Tao Zhang, Ziqian Zeng, Yuxiang Xiao, Huiping Zhuang, Cen Chen, James Foulds, and Shimei Pan. 2024. Genderalign: An alignment dataset for mitigating gender bias in large language models. arXiv preprint arXiv:2406.13925.",
-    "Jiaxu Zhao, Meng Fang, Zijing Shi, Yitong Li, Ling Chen, and Mykola Pechenizkiy. 2023. CHBias: Bias evaluation and mitigation of Chinese conversational language models. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 13538-13556, Toronto, Canada. Association for Computational Linguistics.",
-    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang. 2018. Gender bias in coreference resolution: Evaluation and debiasing methods. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 15–20, New Orleans, Louisiana. Association for Computational Linguistics."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

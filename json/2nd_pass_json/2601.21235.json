@@ -2,60 +2,35 @@
   "filename": "2601.21235.pdf",
   "title": "SHARP: Social Harm Analysis via Risk Profiles for Measuring Inequities in Large Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2601.21235",
-  "benchmark_measurement": "The benchmark measured social harm, with one of its four dimensions being 'bias'. Within the bias dimension, 'religion' was included as one of several protected categories to assess for biased content, including the breadth, intensity, and amplification of bias.",
-  "religious_groups": [
-    "Religion (as a general category)"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "LLM-as-a-judge evaluation of model responses to socially sensitive prompts (from BEATS and BBQ), scoring for bias category presence, severity, impact, and explicitness to compute a bias sub-index."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "LLM-as-a-judge evaluation of model responses to socially sensitive prompts (from BEATS and BBQ), scoring for bias category presence, severity, impact, and explicitness to compute a bias sub-index."
+    },
+    {
+      "target": "Ethnic bias",
+      "methodology": "LLM-as-a-judge evaluation of model responses to socially sensitive prompts (from BEATS and BBQ), scoring for bias category presence, severity, impact, and explicitness to compute a bias sub-index."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "LLM-as-a-judge evaluation of model responses to socially sensitive prompts (from BEATS and BBQ), scoring for bias category presence, severity, impact, and explicitness to compute a bias sub-index."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "LLM-as-a-judge evaluation of model responses to socially sensitive prompts (from BEATS and BBQ), scoring for bias category presence, severity, impact, and explicitness to compute a bias sub-index."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "LLM-as-a-judge evaluation of model responses to socially sensitive prompts (from BEATS and BBQ), scoring for bias category presence, severity, impact, and explicitness to compute a bias sub-index."
+    },
+    {
+      "target": "Geographic origin bias",
+      "methodology": "LLM-as-a-judge evaluation of model responses to socially sensitive prompts (from BEATS and BBQ), scoring for bias category presence, severity, impact, and explicitness to compute a bias sub-index."
+    }
   ],
-  "models_tested": [
-    "claude-sonnet-4.5",
-    "gemini-1.5-pro",
-    "claude-3.5-sonnet",
-    "gemini-2.5-pro",
-    "qwen3-235b",
-    "gpt-40",
-    "gpt-oss-120b",
-    "deepseek-chat",
-    "mistral-large",
-    "llama3-3-70b",
-    "llama3-1-405b"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "BEATS",
-    "BBQ"
-  ],
-  "continuous_testing": false,
-  "findings": "The paper does not report specific findings related to religion. The results are aggregated at the level of the four primary harm dimensions (bias, fairness, ethics, epistemic reliability). While 'religion' was a category measured within the 'bias' dimension, the analysis does not break down the bias results by specific demographic categories.",
-  "references": [
-    "Alok Abhishek, Lisa Erickson, and Tushar Bandopadhyay. Beats: Bias evaluation and assessment test suite for large language models, 2025. URL https://arxiv.org/abs/2503.24310.",
-    "Alok Abishek, Lisa Erickson, and Tushar Bandopadhyay. Data and ai governance: Promoting equity, ethics, and fairness in large language models. MIT Science Policy Review, 6:139–146, August 2025. doi: 10.38105/spr.1sn574k4lp. URL http://dx.doi.org/10.38105/spr.1sn574k41p.",
-    "Saar Alon-Barkat and Madalina Busuioc. Human-ai interactions in public sector decision making: \"automation bias” and “selective adherence\" to algorithmic advice. Journal of Public Administration Research and Theory, 33(1):153–169, February 2022. ISSN 1477-9803. doi: 10.1093/jopart/muac007. URL http://dx.doi.org/10.1093/jopart/muac007.",
-    "Emily M. Bender, Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. On the dangers of stochastic parrots: Can language models be too big? In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, FAccT '21, page 610–623. ACM, March 2021. doi: 10.1145/3442188.3445922. URL http://dx.doi.org/10.1145/3442188.3445922.",
-    "Tolga Bolukbasi, Kai-Wei Chang, James Zou, Venkatesh Saligrama, and Adam Kalai. Man is to computer programmer as woman is to homemaker? debiasing word embeddings, 2016. URL https://arxiv.org/abs/1607.06520.",
-    "Alan Chan, Rebecca Salganik, Alva Markelius, Chris Pang, Nitarshan Rajkumar, Dmitrii Krasheninnikov, Lauro Langosco, Zhonghao He, Yawen Duan, Micah Carroll, Michelle Lin, Alex Mayhew, Katherine Collins, Maryam Molamohammadi, John Burden, Wanru Zhao, Shalaleh Rismani, Konstantinos Voudouris, Umang Bhatt, Adrian Weller, David Krueger, and Tegan Maharaj. Harms from increasingly agentic algorithmic systems. In 2023 ACM Conference on Fairness Accountability and Transparency, FAccT '23, page 651-666. ACM, June 2023. doi: 10.1145/3593013.3594033. URL http://dx.doi.org/10.1145/3593013.3594033.",
-    "Sanae El Mimouni and Mohamed Bouhdadi. Fairness and bias in ai: a sociotechnical perspective. Journal of Information, Communication and Ethics in Society, August 2025. ISSN 1758-8871. doi: 10.1108/jices-12-2024-0182. URL http://dx.doi.org/10.1108/jices-12-2024-0182.",
-    "Riya Fernando, Isabel Norton, Pranay Dogra, Rohit Sarnaik, Hasan Wazir, Zitang Ren, Niveta Sree Gunda, Anushka Mukhopadhyay, and Michael Lutz. Quantifying bias in agentic large language models: A benchmarking approach. In 2024 5th Information Communication Technologies Conference (ICTC), page 349–353. IEEE, May 2024. doi: 10.1109/ictc61510.2024.10601938. URL http://dx.doi.org/10.1109/ictc61510.2024.10601938.",
-    "Emilio Ferrara. Fairness and bias in artificial intelligence: A brief survey of sources, impacts, and mitigation strategies. Sci, 6(1):3, December 2023. ISSN 2413-4155. doi: 10.3390/sci6010003. URL http://dx.doi.org/10.3390/sci6010003.",
-    "Riccardo Fogliato, Maria De-Arteaga, and Alexandra Chouldechova. Human discernment of algorithmic errors: A case study in child welfare. SSRN Electronic Journal, 2025. ISSN 1556-5068. doi: 10.2139/ssrn.4050125. URL http://dx.doi.org/10.2139/ssrn.4050125.",
-    "Ben Green and Yiling Chen. Disparate interactions: An algorithm-in-the-loop analysis of fairness in risk assessments. In Proceedings of the Conference on Fairness, Accountability, and Transparency, FAT* '19, page 90–99. ACM, January 2019. doi: 10.1145/3287560.3287563. URL http://dx.doi.org/10.1145/3287560.3287563.",
-    "Emily Hadley, Alan Blatecky, and Megan Comfort. Investigating algorithm review boards for organizational responsible artificial intelligence governance, 2024. URL https://arxiv.org/abs/2402.01691.",
-    "Yi-Jen (Ian) Ho, Wael Jabr, and Yifan Zhang. Ai enforcement: Examining the impact of ai on judicial fairness and public safety. SSRN Electronic Journal, 2023. ISSN 1556-5068. doi: 10.2139/ssrn.4533047. URL http://dx.doi.org/10.2139/ssrn.4533047.",
-    "Leilei Jiang, Guixiang Zhu, Jianshan Sun, Jie Cao, and Jia Wu. Exploring the occupational biases and stereotypes of chinese large language models. Scientific Reports, 15(1), May 2025. ISSN 2045-2322. doi: 10.1038/s41598-025-03893-w. URL http://dx.doi.org/10.1038/s41598-025-03893-w.",
-    "Anna Kawakami, Venkatesh Sivaraman, Hao-Fei Cheng, Logan Stapleton, Yanghuidi Cheng, Diana Qing, Adam Perer, Zhiwei Steven Wu, Haiyi Zhu, and Kenneth Holstein. Improving human-ai partnerships in child welfare: Understanding worker practices, challenges, and desires for algorithmic decision support. In CHI Conference on Human Factors in Computing Systems, CHI '22, page 1-18. ACM, April 2022. doi: 10.1145/3491102.3517439. URL http://dx.doi.org/10.1145/3491102.3517439.",
-    "Mesut Kaya and Toine Bogers. Mapping stakeholder needs to multi-sided fairness in candidate recommendation for algorithmic hiring. In Proceedings of the Nineteenth ACM Conference on Recommender Systems, RecSys '25, page 257–267. ACM, September 2025. doi: 10.1145/3705328.3748079. URL http://dx.doi.org/10.1145/3705328.3748079.",
-    "Ibomoiye Domor Mienye, George Obaido, Ikiomoye Douglas Emmanuel, and Ayodeji Akeem Ajani. A survey of bias and fairness in healthcare ai. In 2024 IEEE 12th International Conference on Healthcare Informatics (ICHI), page 642–650. IEEE, June 2024. doi: 10.1109/ichi61247.2024.00103. URL http://dx.doi.org/10.1109/ichi61247.2024.00103.",
-    "Khalida Walid Nathim, Nada Abdulkareem Hameed, Saja Abdulfattah Salih, Nada Adnan Taher, Hayder Mahmood Salman, and Dmytro Chornomordenko. Ethical ai with balancing bias mitigation and fairness in machine learning models. In 2024 36th Conference of Open Innovations Association (FRUCT), page 797–807. IEEE, October 2024. doi: 10.23919/fruct64283.2024.10749873. URL http://dx.doi.org/10.23919/fruct64283.2024.10749873.",
-    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel Bowman. Bbq: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, page 2086–2105. Association for Computational Linguistics, 2022. doi: 10.18653/v1/2022.findings-acl.165. URL http://dx.doi.org/10.18653/v1/2022.findings-acl.165.",
-    "Dragutin Petkovic. It is not \"accuracy vs. explainability\"-we need both for trustworthy ai systems. IEEE Transactions on Technology and Society, 4(1):46–53, March 2023. ISSN 2637-6415. doi: 10.1109/tts.2023.3239921. URLhttp://dx.doi.org/10.1109/TTS.2023.3239921.",
-    "Xinru Wang, Chen Liang, and Ming Yin. The effects of ai biases and explanations on human decision fairness: A case study of bidding in rental housing markets. In Proceedings of the Thirty-Second International Joint Conference on Artificial Intelligence, IJCAI-2023, page 3076–3084. International Joint Conferences on Artificial Intelligence Organization, August 2023. doi: 10.24963/ijcai.2023/343. URL http://dx.doi.org/10.24963/ijcai.2023/343.",
-    "Jiayi Ye, Yanbo Wang, Yue Huang, Dongping Chen, Qihui Zhang, Nuno Moniz, Tian Gao, Werner Geyer, Chao Huang, Pin-Yu Chen, Nitesh V Chawla, and Xiangliang Zhang. Justice or prejudice? quantifying biases in llm-as-a-judge, 2024. URL https://arxiv.org/abs/2410.02736.",
-    "Chih-Cheng Rex Yuan and Bow-Yaw Wang. Ensuring fairness with transparent auditing of quantitative bias in ai systems. In 2024 Pacific Neighborhood Consortium Annual Conference and Joint Meetings (PNC), page 25–32. IEEE, August 2024. doi: 10.23919/pnc63053.2024.10697374. URL http://dx.doi.org/10.23919/pnc63053.2024.10697374.",
-    "Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric P. Xing, Hao Zhang, Joseph E. Gonzalez, and Ion Stoica. Judging Ilm-as-a-judge with mt-bench and chatbot arena, 2023. URL https://arxiv.org/abs/2306.05685."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

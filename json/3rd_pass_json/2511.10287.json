@@ -2,35 +2,119 @@
   "filename": "2511.10287.pdf",
   "title": "OutSafe-Bench: A Benchmark for Multimodal Offensive Content Detection in Large Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2511.10287",
-  "bias_targets": [
-    {
-      "target": "Gender bias",
-      "methodology": "Evaluated as part of the 'Prejudice and Discrimination' and 'Violence and Hatred' categories in the OutSafe-Bench test suite, using multimodal prompts (from datasets like BBQ and SWSR). MLLM outputs are scored on a 0-9 risk scale by an automated multi-reviewer framework (FairScore) leveraging LLMs as judges."
-    },
-    {
-      "target": "Racial bias",
-      "methodology": "Assessed using multimodal prompts from datasets like FairFace, PascalVoc, and MultiHateClip to trigger racial prejudice, with the safety of model outputs evaluated and scored by a weighted ensemble of LLM judges."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Measured under the 'Prejudice and Discrimination' risk category using multimodal inputs, where generated responses are evaluated for ageist stereotypes by an adaptive jury of peer LLMs."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Tested using multimodal inputs designed to elicit religious prejudice, evaluated by an automated LLM jury framework (FairScore) that assigns risk scores based on the presence of discrimination."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Evaluated by prompting models with multimodal inputs related to disability and assessing the generated output for discriminatory content using the FairScore LLM-as-a-judge system."
-    },
-    {
-      "target": "Physical appearance bias",
-      "methodology": "Assessed as a dimension of the 'Prejudice and Discrimination' category, using multimodal prompts that may elicit appearance-based prejudice, scored by a jury of top-performing LLMs."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Measured by feeding multimodal prompts related to sexual orientation to models and evaluating the outputs for discriminatory or prejudiced language/content using a weighted multi-model evaluation system."
-    }
+  "religious_groups": [],
+  "models_tested": [
+    "Deepseek-v3",
+    "Claude-3.7-Sonnet",
+    "Doubao-1.5-pro-32k",
+    "Gemini-2-flash",
+    "Gemini-2.5-flash",
+    "GPT-40",
+    "GPT-4o-mini",
+    "Qwen-2.5-72b",
+    "Ernie-4.0"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "languages_evaluated": [
+    "Chinese",
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "MM-SafetyBench",
+    "PrivQA",
+    "Unicorn",
+    "Safe-Bench",
+    "MultiTrust",
+    "MLLMGUARD",
+    "TrustLLM",
+    "Trustworthy LLMs",
+    "LVLM-Ehub",
+    "LAMM",
+    "Chinese Safety Prompts",
+    "BBQ",
+    "HEx-PHI",
+    "SWSR",
+    "MCFEND",
+    "DAIC-WOZ"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper evaluates 'Religion' as a sub-domain within the 'Prejudice and Discrimination' category. However, specific findings related to religion are not detailed; results are aggregated at the higher category level, showing some models are better at mitigating 'stereotype bias' than others.",
+  "references": [
+    "Alireza Afzal Aghaei and Nadia Khodaei. Automated de- pression recognition using multimodal machine learning: A study on the daic-woz dataset. Computational Mathematics and Computer Modeling with Applications (CMCMA), 2(1): 45-53, 2023.",
+    "Anthropic. Meet claude, your thinking partner. https://www. anthropic.com/claude, 2023.",
+    "Apidog. Doubao 1.5 pro: Api pricing & how to use doubao- 1.5-pro api. https://apidog.com/blog/doubao-1-5-pro-api/, 2023.",
+    "Jinze Bai, Shuai Bai, Yunfei Chu, Zeyu Cui, Kai Dang, Xiaodong Deng, Yang Fan, Wenbin Ge, Yu Han, Fei Huang, et al. Qwen technical report. arXiv preprint arXiv:2309.16609, 2023.",
+    "Baidu Research. Introducing pcl-baidu wenxin (ernie 3.0 ti- tan), the world's first knowledge enhanced multi-hundred- billion model. https://research.baidu.com/Blog/index-view? id=165, 2021.",
+    "Tyler Benster, Guy Wilson, Reshef Elisha, Francis R Wil- lett, and Shaul Druckmann. A cross-modal approach to silent speech with llm-enhanced recognition. arXiv preprint arXiv:2403.05583, 2024.",
+    "Barbara Pfeffer Billauer. Murder without redress-the need for new legal solutions in the age of character-ai (cai). Avail- able at SSRN 5107942, 2024.",
+    "Steven Boll. Suppression of acoustic noise in speech us- ing spectral subtraction. IEEE Transactions on acoustics, speech, and signal processing, 27(2):113–120, 2003.",
+    "Chi-Min Chan, Weize Chen, Yusheng Su, Jianxuan Yu, Wei Xue, Shanghang Zhang, Jie Fu, and Zhiyuan Liu. Chateval: Towards better llm-based evaluators through multi-agent de- bate. arXiv preprint arXiv:2308.07201, 2023.",
+    "R Reading Competition. Icdar 2019 robust reading challenge on scanned receipts ocr and information extraction. Web link: https://rrc. cvc. uab. es.",
+    "Chenhang Cui, Yiyang Zhou, Xinyu Yang, Shirley Wu, Lin- jun Zhang, James Zou, and Huaxiu Yao. Holistic analysis of hallucination in gpt-4v (ision): Bias and interference chal- lenges. arXiv preprint arXiv:2311.03287, 2023.",
+    "Mithun Das, Rohit Raj, Punyajoy Saha, Binny Mathew, Man- ish Gupta, and Animesh Mukherjee. Hatemm: A multi- modal dataset for hate video classification. In Proceedings of the International AAAI Conference on Web and Social Me- dia, pages 1014–1023, 2023.",
+    "Mark Everingham, Luc Van Gool, Christopher KI Williams, John Winn, and Andrew Zisserman. The pascal visual object classes (voc) challenge. International journal of computer vision, 88:303–338, 2010.",
+    "Wenlong Fang, Qiaofeng Wu, Jing Chen, and Yun Xue. guided mllm reasoning: Enhancing mllm with knowledge and visual notes for visual question answering. In Proceed- ings of the Computer Vision and Pattern Recognition Con- ference, pages 19597–19607, 2025.",
+    "Hao Fei, Shengqiong Wu, Hanwang Zhang, Tat-Seng Chua, and Shuicheng Yan. Vitron: A unified pixel-level vision llm for understanding, generating, segmenting, editing. arXiv preprint arXiv:2412.19806, 2024.",
+    "Freesound. Find any sound you like. https://freesound.org/, 2025. [Accessed 11-07-2025].",
+    "Google Deepmind. Gemini: Our most intelligent ai models. https://deepmind.google/models/gemini/, 2025.",
+    "Tianle Gu, Zeyang Zhou, Kexin Huang, Liang Dandan, Yixu Wang, Haiquan Zhao, Yuanqi Yao, Yujiu Yang, Yan Teng, Yu Qiao, et al. Mllmguard: A multi-dimensional safety evalua- tion suite for multimodal large language models. Advances in Neural Information Processing Systems, 37:7256–7295, 2024.",
+    "Sifeng He, Xudong Yang, Chen Jiang, Gang Liang, Wei Zhang, Tan Pan, Qing Wang, Furong Xu, Chunguang Li, JinXiong Liu, et al. A large-scale comprehensive dataset and copy-overlap aware evaluation protocol for segment-level video copy detection. In Proceedings of the IEEE/CVF Con- ference on Computer Vision and Pattern Recognition, pages 21086–21095, 2022.",
+    "Arash Heidari, Nima Jafari Navimipour, Hasan Dag, and Mehmet Unal. Deepfake detection using deep learning meth- ods: A systematic and comprehensive review. Wiley Interdis- ciplinary Reviews: Data Mining and Knowledge Discovery, 14(2):e1520, 2024.",
+    "Raisa Islam and Owana Marzia Moushi. Gpt-40: The cutting-edge advancement in multimodal llm. Authorea Preprints, 2024.",
+    "Guillaume Jaume, Hazim Kemal Ekenel, and Jean-Philippe Thiran. Funsd: A dataset for form understanding in noisy scanned documents. 2:1–6, 2019.",
+    "Aiqi Jiang, Xiaohan Yang, Yang Liu, and Arkaitz Zubiaga. Swsr: A chinese dataset and lexicon for online sexism detec- tion. Online Social Networks and Media, 27:100182, 2022.",
+    "Kimmo Karkkainen and Jungseock Joo. Fairface: Face attribute dataset for balanced race, gender, and age for bias measurement and mitigation. In Proceedings of the IEEE/CVF winter conference on applications of computer vision, pages 1548–1558, 2021.",
+    "Guangwei Li, Yuansen Zhang, Yinggui Wang, Shoumeng Yan, Lei Wang, and Tao Wei. Priv-qa: Privacy-preserving question answering for cloud large language models. arXiv preprint arXiv:2502.13564, 2025.",
+    "Qintong Li, Leyang Cui, Lingpeng Kong, and Wei Bi. Col- laborative evaluation: Exploring the synergy of large lan- guage models and humans for open-ended generation eval- uation. arXiv e-prints, pages arXiv–2310, 2023.",
+    "Ruosen Li, Teerth Patel, and Xinya Du. Prd: Peer rank and discussion improve large language model based evaluations. arXiv preprint arXiv:2307.02762, 2023.",
+    "Xiaomin Li, Mingye Gao, Zhiwei Zhang, Chang Yue, and Hong Hu. Rule-based data selection for large language mod- els. arXiv preprint arXiv:2410.04715, 2024.",
+    "Yupeng Li, Haorui He, Jin Bai, and Dacheng Wen. Mcfend: A multi-source benchmark dataset for chinese fake news de- tection. In Proceedings of the ACM Web Conference 2024, pages 4018–4027, 2024.",
+    "Yen-Ting Lin and Yun-Nung Chen. Llm-eval: Unified multi-dimensional automatic evaluation for open-domain conversations with large language models. arXiv preprint arXiv:2305.13711, 2023.",
+    "Aixin Liu, Bei Feng, Bing Xue, Bingxuan Wang, Bochao Wu, Chengda Lu, Chenggang Zhao, Chengqi Deng, Chenyu Zhang, Chong Ruan, et al. Deepseek-v3 technical report. arXiv preprint arXiv:2412.19437, 2024.",
+    "Xin Liu, Yichen Zhu, Jindong Gu, Yunshi Lan, Chao Yang, and Yu Qiao. Mm-safetybench: A benchmark for safety eval- uation of multimodal large language models. In European Conference on Computer Vision, pages 386–403. Springer, 2024.",
+    "Yang Liu, Dan Iter, Yichong Xu, Shuohang Wang, Ruochen Xu, and Chenguang Zhu. G-eval: Nlg evaluation us- ing gpt-4 with better human alignment. arXiv preprint arXiv:2303.16634, 2023.",
+    "Yang Liu, Yuanshun Yao, Jean-Francois Ton, Xiaoying Zhang, Ruocheng Guo, Hao Cheng, Yegor Klochkov, Muhammad Faaiz Taufiq, and Hang Li. Trustworthy llms: a survey and guideline for evaluating large language models' alignment. arXiv preprint arXiv:2308.05374, 2023.",
+    "Ryozo Masuakwa, Sanggeon Yun, Yoshiki Yamaguchi, and Mohsen Imani. Pv-vtt: A privacy-centric dataset for mission- specific anomaly detection and natural language interpreta- tion. In 2025 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV), pages 6415–6424. IEEE, 2025.",
+    "Ioannis Mollas, Zoe Chrysopoulou, Stamatis Karlos, and Grigorios Tsoumakas. Ethos: a multi-label hate speech de- tection dataset. Complex & Intelligent Systems, 8(6):4663– 4678, 2022.",
+    "Dalton Chukwuezugo Owoh. Detecting potential violent be- havior using deep learning. 2023.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Pad- makumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel R Bowman. Bbq: A hand-built bias benchmark for question answering. arXiv preprint arXiv:2110.08193, 2021.",
+    "Peng Qi, Yuyan Bu, Juan Cao, Wei Ji, Ruihao Shui, Junbin Xiao, Danding Wang, and Tat-Seng Chua. Fakesv: A multi- modal benchmark with rich social context for fake news de- tection on short video platforms. In Proceedings of the AAAI Conference on Artificial Intelligence, pages 14444–14452, 2023.",
+    "Xiangyu Qi, Yi Zeng, Tinghao Xie, Pin-Yu Chen, Ruoxi Jia, Prateek Mittal, and Peter Henderson. Fine-tuning aligned language models compromises safety, even when users do not intend to! arXiv preprint arXiv:2310.03693, 2023.",
+    "Xiangyu Qi, Yi Zeng, Tinghao Xie, Pin-Yu Chen, Ruoxi Jia, Prateek Mittal, and Peter Henderson. Fine-tuning aligned language models compromises safety, even when users do not intend to!, 2023.",
+    "Nils Reimers and Iryna Gurevych. Sentence-bert: Sentence embeddings using siamese bert-networks. arXiv preprint arXiv:1908.10084, 2019.",
+    "Google Research. AudioSet. https://research.google.com/ audioset/, 2025. [Accessed 11-07-2025].",
+    "Nauros Romim, Mosahed Ahmed, Hriteshwar Talukder, and Md Saiful Islam. Hate speech detection in the bengali lan- guage: A dataset and its baseline evaluation. In Proceedings of International Joint Conference on Advances in Computa- tional Intelligence: IJCACI 2020, pages 457–468. Springer, 2021.",
+    "Shreya Shankar, JD Zamfirescu-Pereira, Björn Hartmann, Aditya Parameswaran, and Ian Arawjo. Who validates the validators? aligning Ilm-assisted evaluation of Ilm outputs with human preferences. In Proceedings of the 37th Annual ACM Symposium on User Interface Software and Technol- ogy, pages 1–14, 2024.",
+    "Xinshu Shen, Hongyi Wu, Xiaopeng Bai, Yuanbin Wu, Aimin Zhou, Shaoguang Mao, Tao Ge, and Yan Xia. Overview of ccl23-eval task 8: Chinese essay fluency eval- uation (cefe) task. In Proceedings of the 22nd Chinese Na- tional Conference on Computational Linguistics (Volume 3: Evaluations), pages 282–292, 2023.",
+    "Waqas Sultani, Chen Chen, and Mubarak Shah. Real-world anomaly detection in surveillance videos. In Proceedings of the IEEE conference on computer vision and pattern recog- nition, pages 6479–6488, 2018.",
+    "Guangzhi Sun, Xiao Zhan, Shutong Feng, Phil Woodland, and Jose Such. Case-bench: Context-aware safety bench- mark for large language models. In Forty-second Interna- tional Conference on Machine Learning, 2025.",
+    "Hao Sun, Zhexin Zhang, Jiawen Deng, Jiale Cheng, and Min- lie Huang. Safety assessment of chinese large language mod- els. arXiv preprint arXiv:2304.10436, 2023.",
+    "Lichao Sun, Yue Huang, Haoran Wang, Siyuan Wu, Qi- hui Zhang, Chujie Gao, Yixin Huang, Wenhan Lyu, Yixuan Zhang, Xiner Li, et al. Trustllm: Trustworthiness in large lan- guage models. arXiv preprint arXiv:2401.05561, 3, 2024.",
+    "Gemini Team, Rohan Anil, Sebastian Borgeaud, Jean- Baptiste Alayrac, Jiahui Yu, Radu Soricut, Johan Schalkwyk, Andrew M Dai, Anja Hauth, Katie Millican, et al. Gemini: a family of highly capable multimodal models. arXiv preprint arXiv:2312.11805, 2023.",
+    "Haoqin Tu, Chenhang Cui, Zijun Wang, Yiyang Zhou, Bingchen Zhao, Junlin Han, Wangchunshu Zhou, Huaxiu Yao, and Cihang Xie. How many unicorns are in this im- age? a safety evaluation benchmark for vision llms. arXiv preprint arXiv:2311.16101, 2023.",
+    "Ruchika Vaidya, Rahul Dattangire, Divya Biradar, and Pra- teek Verma. A study on integrating machine learning tech- niques for waste management. In 2024 7th International Conference on Circuit Power and Computing Technologies (ICCPCT), pages 1506–1510. IEEE, 2024.",
+    "Lauren Walker. Belgian man dies by suicide following ex- changes with chatbot. the brussels times (march 2023), 2023.",
+    "Chen Wang, Gang Hu, Kui Wang, Michal Brylinski, Lei Xie, and Lukasz Kurgan. Pdid: database of molecular-level puta- tive protein-drug interactions in the structural human pro- teome. Bioinformatics, 32(4):579–586, 2016.",
+    "Han Wang, Tan Rui Yang, Usman Naseem, and Roy Ka-Wei Lee. Multihateclip: A multilingual benchmark dataset for hateful video detection on youtube and bilibili. In Proceed- ings of the 32nd ACM International Conference on Multime- dia, pages 7493–7502, 2024.",
+    "Sheng-Yu Wang, Oliver Wang, Richard Zhang, Andrew Owens, and Alexei A Efros. Cnn-generated images are surprisingly easy to spot... for now. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, pages 8695–8704, 2020.",
+    "Yabing Wang, Le Wang, Qiang Zhou, Zhibin Wang, Hao Li, Gang Hua, and Wei Tang. Multimodal llm enhanced cross- lingual cross-modal retrieval. In Proceedings of the 32nd ACM International Conference on Multimedia, pages 8296– 8305, 2024.",
+    "Chejian Xu, Wenhao Ding, Weijie Lyu, Zuxin Liu, Shuai Wang, Yihan He, Hanjiang Hu, Ding Zhao, and Bo Li. Safebench: A benchmarking platform for safety evaluation of autonomous vehicles. Advances in Neural Information Processing Systems, 35:25667–25682, 2022.",
+    "Peng Xu, Wenqi Shao, Kaipeng Zhang, Peng Gao, Shuo Liu, Meng Lei, Fanqing Meng, Siyuan Huang, Yu Qiao, and Ping Luo. Lvlm-ehub: A comprehensive evaluation benchmark for large vision-language models. IEEE Transactions on Pat- tern Analysis and Machine Intelligence, 2024.",
+    "Yang Xu, Yiheng Xu, Tengchao Lv, Lei Cui, Furu Wei, Guoxin Wang, Yijuan Lu, Dinei Florencio, Cha Zhang, Wanxiang Che, et al. Layoutlmv2: Multi-modal pre-training for visually-rich document understanding. arXiv preprint arXiv:2012.14740, 2020.",
+    "Zhenfei Yin, Jiong Wang, Jianjian Cao, Zhelun Shi, Dingn- ing Liu, Mukai Li, Xiaoshui Huang, Zhiyong Wang, Lu Sheng, Lei Bai, et al. Lamm: Language-assisted multi- modal instruction-tuning dataset, framework, and bench- mark. Advances in Neural Information Processing Systems, 36:26650–26685, 2023.",
+    "Peter Young, Alice Lai, Micah Hodosh, and Julia Hocken- maier. From image descriptions to visual denotations: New similarity metrics for semantic inference over event descrip- tions. Transactions of the association for computational lin- guistics, 2:67–78, 2014.",
+    "Xiangyu Zeng, Kunchang Li, Chenting Wang, Xinhao Li, Tianxiang Jiang, Ziang Yan, Songze Li, Yansong Shi, Zhen- grong Yue, Yi Wang, et al. Timesuite: Improving mllms for long video understanding via grounded tuning. In The Thirteenth International Conference on Learning Represen- tations.",
+    "Haoyu Zhang, Qiaohui Chu, Meng Liu, Yunxiao Wang, Bin Wen, Fan Yang, Tingting Gao, Di Zhang, Yaowei Wang, and Liqiang Nie. Exo2ego: Exocentric knowledge guided mllm for egocentric video understanding. arXiv preprint arXiv:2503.09143, 2025.",
+    "Xian Zhang, Haokun Wen, Jianlong Wu, Pengda Qin, Hui Xue', and Liqiang Nie. Differential-perceptive and retrieval- augmented mllm for change captioning. In Proceedings of the 32nd ACM International Conference on Multimedia, pages 4148–4157, 2024.",
+    "Yichi Zhang, Yao Huang, Yitong Sun, Chang Liu, Zhe Zhao, Zhengwei Fang, Yifan Wang, Huanran Chen, Xiao Yang, Xingxing Wei, et al. Multitrust: A comprehensive bench- mark towards trustworthy multimodal large language mod- els. Advances in Neural Information Processing Systems, 37:49279–49383, 2024.",
+    "Zijia Zhao, Yuqi Huo, Tongtian Yue, Longteng Guo, Haoyu Lu, Bingning Wang, Weipeng Chen, and Jing Liu. Efficient motion-aware video mllm. In Proceedings of the Computer Vision and Pattern Recognition Conference, pages 24159– 24168, 2025.",
+    "Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric Xing, et al. Judging Ilm-as-a-judge with mt-bench and chatbot arena. Advances in Neural Information Processing Systems, 36:46595–46623, 2023.",
+    "Xu Zhong, Elaheh ShafieiBavani, and Antonio Ji- meno Yepes. Image-based table recognition: data, model, and evaluation. In European conference on computer vision, pages 564–580. Springer, 2020.",
+    "Bolei Zhou, Agata Lapedriza, Aditya Khosla, Aude Oliva, and Antonio Torralba. Places: A 10 million image database for scene recognition. IEEE transactions on pattern analysis and machine intelligence, 40(6):1452–1464, 2017.",
+    "Deyao Zhu, Jun Chen, Xiaoqian Shen, Xiang Li, and Mo- hamed Elhoseiny. Minigpt-4: Enhancing vision-language understanding with advanced large language models. arXiv preprint arXiv:2304.10592, 2023."
+  ],
+  "measurement_description": "The benchmark measures prejudice and discrimination against religious groups as a sub-domain of one of its nine safety categories."
 }

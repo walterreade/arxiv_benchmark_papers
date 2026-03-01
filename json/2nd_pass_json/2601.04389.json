@@ -2,66 +2,35 @@
   "filename": "2601.04389.pdf",
   "title": "MiJaBench: Revealing Minority Biases in Large Language Models via Hate Speech Jailbreaking",
   "arxiv_url": "https://arxiv.org/pdf/2601.04389",
-  "benchmark_measurement": "The benchmark measures the safety alignment of Large Language Models, specifically their defense rate against adversarial prompts designed to elicit hateful content targeting various minority groups, including religious ones.",
-  "religious_groups": [
-    "Islam",
-    "Judaism"
+  "bias_targets": [
+    {
+      "target": "Racial and Ethnic bias",
+      "methodology": "Evaluating the model's Defense Rate (refusal rate) against adversarial hate speech jailbreak prompts targeting racial and ethnic minorities (e.g., Black, Asian, Latino, Native Peoples) using an automated LLM-as-a-judge protocol."
+    },
+    {
+      "target": "Nationality and Immigrant bias",
+      "methodology": "Measuring the model's susceptibility to targeted hate speech jailbreak attacks directed at specific nationalities and immigrants (e.g., Chinese, Mexican, Middle Eastern) to evaluate demographic safety alignment."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Assessing the model's refusal robustness when exposed to context-embedded jailbreak attacks designed to elicit hate speech against religious groups (Jewish, Muslim)."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Measuring the model's Defense Rate against adversarial hate speech jailbreak prompts explicitly targeting women."
+    },
+    {
+      "target": "Sexual orientation and Gender Identity bias",
+      "methodology": "Evaluating safety alignment and measuring the defense rate against adversarial prompts designed to generate hateful and discriminatory content against the LGBTQIA+ community."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Testing the model's robustness against complex jailbreak prompts aiming to elicit hate speech and discrimination against individuals with mental or physical disabilities."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Measuring the Defense Rate of the model when subjected to hate speech jailbreaks targeting the elderly in the Portuguese subset of the benchmark."
+    }
   ],
-  "models_tested": [
-    "Llama-3 series (1B, 3B, 8B, 70B)",
-    "Gemma-3 series (1B, 4B, 12B, 27B)",
-    "Qwen-3 series (1.7B, 4B, 8B, 32B)"
-  ],
-  "languages_evaluated": [
-    "English",
-    "Portuguese"
-  ],
-  "response_type": [
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "StereoSet",
-    "BBQ",
-    "HarmBench",
-    "WildGuard",
-    "BeaverTails",
-    "CLEAR-Bias",
-    "ToxiGen",
-    "ToxSyn"
-  ],
-  "continuous_testing": false,
-  "findings": "The study found that safety alignment is not uniform but hierarchical across demographic groups. In English, the 'Muslim' group was consistently better protected than the average (positive defense rate deviation), while the 'Jewish' group's protection level was almost exactly at the average. This suggests that protection for some religious groups (like Muslims) is prioritized, while others (like Jewish people) are in a 'grey zone' where safety is not a guaranteed prior but closer to the model's default baseline. These disparities are semantic and persist across languages, though with some variation.",
-  "references": [
-    "Tolga Bolukbasi, Kai-Wei Chang, James Y Zou, Venkatesh Saligrama, and Adam T Kalai. 2016. Man is to computer programmer as woman is to homemaker? debiasing word embeddings. Advances in neural information processing systems, 29.",
-    "Petre Breazu and Napoleon Katsos. 2024. Chatgpt-4 as a journalist: Whose perspectives is it reproducing? Discourse & Society, 35(6):687–707.",
-    "Iago Alves Brito, Julia Soares Dollis, Fernanda Bufon Färber, Diogo Fernandes Costa Silva, and 1 others. 2025. Toxsyn-pt: A large-scale synthetic dataset for hate speech detection in portuguese. arXiv preprint arXiv:2506.10245.",
-    "Riccardo Cantini, Alessio Orsino, Massimo Ruggiero, and Domenico Talia. 2025. Benchmarking adversarial robustness to bias elicitation in large language models: Scalable automated assessment with llm-as-a-judge. Machine Learning, 114(11):249.",
-    "Yue Deng, Wenxuan Zhang, Sinno Jialin Pan, and Lidong Bing. 2023. Multilingual jailbreak challenges in large language models. arXiv preprint arXiv:2310.06474.",
-    "Felix Friedrich, Simone Tedeschi, Patrick Schramowski, Manuel Brack, Roberto Navigli, Huu Nguyen, Bo Li, and Kristian Kersting. 2024. Llms lost in translation: M-alert uncovers cross-linguistic safety gaps. arXiv preprint arXiv:2412.15035.",
-    "Lance Calvin Lim Gamboa, Yue Feng, and Mark G. Lee. 2025. Social bias in multilingual language models: A survey. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing, pages 27857-27880, Suzhou, China. Association for Computational Linguistics.",
-    "Shaona Ghosh, Prasoon Varshney, Makesh Narsimhan Sreedhar, Aishwarya Padmakumar, Traian Rebedea, Jibin Rajan Varghese, and Christopher Parisien. 2025. Aegis2. 0: A diverse ai safety dataset and risks taxonomy for alignment of Ilm guardrails. arXiv preprint arXiv:2501.09004.",
-    "Aaron Grattafiori, Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Alex Vaughan, and 1 others. 2024. The llama 3 herd of models. arXiv preprint arXiv:2407.21783.",
-    "Seungju Han, Kavel Rao, Allyson Ettinger, Liwei Jiang, Bill Yuchen Lin, Nathan Lambert, Yejin Choi, and Nouha Dziri. 2024. Wildguard: Open one-stop moderation tools for safety risks, jailbreaks, and refusals of Ilms. Advances in Neural Information Processing Systems, 37:8093-8131.",
-    "Thomas Hartvigsen, Saadia Gabriel, Hamid Palangi, Maarten Sap, Dipankar Ray, and Ece Kamar. 2022. ToxiGen: A large-scale machine-generated dataset for adversarial and implicit hate speech detection. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 3309-3326, Dublin, Ireland. Association for Computational Linguistics.",
-    "Yue Huang, Qihui Zhang, Lichao Sun, and 1 others. 2023. Trustgpt: A benchmark for trustworthy and responsible large language models. arXiv preprint arXiv:2306.11507.",
-    "Jiaming Ji, Mickel Liu, Josef Dai, Xuehai Pan, Chi Zhang, Ce Bian, Boyuan Chen, Ruiyang Sun, Yizhou Wang, and Yaodong Yang. 2023. Beavertails: Towards improved safety alignment of Ilm via a human-preference dataset. Advances in Neural Information Processing Systems, 36:24678-24704.",
-    "Dawei Li, Bohan Jiang, Liangjie Huang, Alimohammad Beigi, Chengshuai Zhao, Zhen Tan, Amrita Bhattacharjee, Yuxuan Jiang, Canyu Chen, Tianhao Wu, and 1 others. 2025. From generation to judgment: Opportunities and challenges of Ilm-as-a-judge. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing, pages 2757-2791.",
-    "Mantas Mazeika, Long Phan, Xuwang Yin, Andy Zou, Zifan Wang, Norman Mu, Elham Sakhaee, Nathaniel Li, Steven Basart, Bo Li, and 1 others. 2024. Harmbench: A standardized evaluation framework for automated red teaming and robust refusal. arXiv preprint arXiv:2402.04249.",
-    "Sai Krishna Mendu, Harish Yenala, Aditi Gulati, Shanu Kumar, and Parag Agrawal. 2025. Towards safer pretraining: Analyzing and filtering harmful content in webscale datasets for responsible llms. arXiv preprint arXiv:2505.02009.",
-    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2021. StereoSet: Measuring stereotypical bias in pretrained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 5356–5371, Online. Association for Computational Linguistics.",
-    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel Bowman. 2022. Bbq: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2086–2105.",
-    "Guilherme Penedo, Hynek Kydlíček, Anton Lozhkov, Margaret Mitchell, Colin A Raffel, Leandro Von Werra, Thomas Wolf, and 1 others. 2024. The fineweb datasets: Decanting the web for the finest text data at scale. Advances in Neural Information Processing Systems, 37:30811-30849.",
-    "Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi Zhou, Wei Li, and Peter J Liu. 2020. Exploring the limits of transfer learning with a unified text-to-text transformer. Journal of machine learning research, 21(140):1-67.",
-    "Olga E Sorokoletova, Francesco Giarrusso, Vincenzo Suriani, and Daniele Nardi. 2025. Guarding the guardrails: A taxonomy-driven approach to jailbreak detection. arXiv preprint arXiv:2510.13893.",
-    "Gemma Team, Aishwarya Kamath, Johan Ferret, Shreya Pathak, Nino Vieillard, Ramona Merhej, Sarah Perrin, Tatiana Matejovicova, Alexandre Ramé, Morgane Rivière, and 1 others. 2025. Gemma 3 technical report. arXiv preprint arXiv:2503.19786.",
-    "Yaqing Wang, Quanming Yao, James T Kwok, and Lionel M Ni. 2020. Generalizing from a few examples: A survey on few-shot learning. ACM computing surveys (csur), 53(3):1-34.",
-    "Weijia Xu, Nebojsa Jojic, Sudha Rao, Chris Brockett, and Bill Dolan. 2025. Echoes in ai: Quantifying lack of plot diversity in Ilm outputs. Proceedings of the National Academy of Sciences, 122(35):e2504966122.",
-    "An Yang, Anfeng Li, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chang Gao, Chengen Huang, Chenxu Lv, and 1 others. 2025. Qwen3 technical report. arXiv preprint arXiv:2505.09388.",
-    "Sibo Yi, Yule Liu, Zhen Sun, Tianshuo Cong, Xinlei He, Jiaxing Song, Ke Xu, and Qi Li. 2024. Jailbreak attacks and defenses against large language models: A survey. arXiv preprint arXiv:2407.04295.",
-    "Zheng-Xin Yong, Cristina Menghini, and Stephen H Bach. 2023. Low-resource languages jailbreak gpt-4. arXiv preprint arXiv:2310.02446.",
-    "Chi Zhang, Changjia Zhu, Junjie Xiong, Xiaoran Xu, Lingyao Li, Yao Liu, and Zhuo Lu. 2025. Guardians and offenders: A survey on harmful content generation and safety mitigation of Ilm. arXiv preprint arXiv:2508.05775.",
-    "Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric Xing, and 1 others. 2023. Judging Ilm-as-a-judge with mt-bench and chatbot arena. Advances in neural information processing systems, 36:46595–46623.",
-    "Andy Zou, Zifan Wang, Nicholas Carlini, Milad Nasr, J Zico Kolter, and Matt Fredrikson. 2023. Universal and transferable adversarial attacks on aligned language models. arXiv preprint arXiv:2307.15043."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

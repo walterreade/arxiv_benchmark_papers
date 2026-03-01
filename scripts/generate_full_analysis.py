@@ -179,11 +179,11 @@ def generate_benchmark_learnings(data: list[dict], csv_metadata: dict, output_pa
         date = meta.get('date', 'Unknown Date')
         arxiv_url = get_arxiv_url(filename)
         
-        benchmark_measurement = paper.get('benchmark_measurement', '')
+        measurement_desc = paper.get('measurement_description', '') or paper.get('benchmark_measurement', '')
         findings = paper.get('findings', '')
         
-        # Combine benchmark_measurement and findings into a paragraph
-        combined = f"{benchmark_measurement} {findings}".strip()
+        # Combine measurement description and findings into a paragraph
+        combined = f"{measurement_desc} {findings}".strip()
         
         # Check for Mormon/Latter-day Saints mention
         mormon_tag = " #Mormon" if check_mormon_mention(paper) else ""
@@ -562,7 +562,7 @@ def generate_markdown_table_references(counter: Counter, title: str, limit: int 
 
 def main():
     parser = argparse.ArgumentParser(description="Create summary statistics from 2nd pass JSON files.")
-    parser.add_argument("--json_dir", default="json/2nd_pass_json", help="Directory containing JSON analysis files")
+    parser.add_argument("--json_dir", default="json/3rd_pass_json", help="Directory containing JSON analysis files")
     parser.add_argument("--output", default="analysis/benchmark_analysis.md", help="Output markdown file")
     parser.add_argument("--csv", default="csv/1st_pass_results.csv", help="Input CSV file with paper metadata")
     parser.add_argument("--learnings", default="analysis/benchmark_learnings.md", help="Output learnings markdown file")

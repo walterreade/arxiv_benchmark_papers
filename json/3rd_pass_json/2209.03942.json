@@ -2,23 +2,101 @@
   "filename": "2209.03942.pdf",
   "title": "Data Feedback Loops: Model-driven Amplification of Dataset Biases",
   "arxiv_url": "https://arxiv.org/pdf/2209.03942",
-  "bias_targets": [
-    {
-      "target": "Gender bias",
-      "methodology": "Tracking the amplification of female or male prediction fractions for specific image categories (verbs) with existing gender skews in a visual semantic role-labeling task (imSitu dataset) over successive rounds of data feedback."
-    },
-    {
-      "target": "Label bias",
-      "methodology": "Measuring the fraction of predictions for a majority class (e.g., dogs) in an artificially imbalanced image classification task over multiple rounds of model retraining on its own predictions."
-    },
-    {
-      "target": "Toxicity bias",
-      "methodology": "Calculating the fraction of conditional language model completions classified as toxic by a pre-trained toxicity classifier (Detoxify) using prompts from the Real Toxicity Prompts dataset over iterative training rounds."
-    },
-    {
-      "target": "Repetition bias",
-      "methodology": "Tracking the average number of quotation marks in generated text as a proxy for structural and repetitive text generation over multiple rounds of data feedback."
-    }
+  "religious_groups": [
+    "Islam",
+    "Judaism",
+    "Christianity"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "BaiduNet9",
+    "ResNet18",
+    "GPT-2 small",
+    "GPT-2 medium",
+    "GPT-2 large"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "none",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "The paper does not present any findings related to religion. Its key findings are that data feedback loops can amplify existing dataset biases, and that models exhibiting sampling-like behavior (through explicit sampling or implicit properties like distributional generalization) are more calibrated and stable against this amplification.",
+  "references": [
+    "Y. Bahri, E. Dyer, J. Kaplan, J. Lee, and U. Sharma. “Explaining neural scaling laws\". In: arXiv preprint arXiv:2102.06701 (2021) (Cited on page 9).",
+    "L. Beyer, X. Zhai, A. Royer, L. Markeeva, R. Anil, and A. Kolesnikov. “Knowledge distillation: A good teacher is patient and consistent\". In: Conference on Computer Vision and Pattern Recognition (CVPR). 2022 (Cited on page 25).",
+    "L. Biewald. Experiment Tracking with Weights and Biases. https://www.wandb.com/. 2020 (Cited on page 13).",
+    "G. Brown, S. Hod, and I. Kalemaj. “Performative prediction in a stateful world”. In: Artificial Intelligence and Statistics (AISTATS). 2022 (Cited on page 2).",
+    "T. B. Brown, B. Mann, N. Ryder, M. Subbiah, J. Kaplan, P. Dhariwal, A. Neelakantan, P. Shyam, G. Sastry, A. Askell, S. Agarwal, A. Herbert-Voss, G. Krueger, T. Henighan, R. Child, A. Ramesh, D. M. Ziegler, J. Wu, C. Winter, C. Hesse, M. Chen, E. Sigler, M. Litwin, S. Gray, B. Chess, J. Clark, C. Berner, S. McCandlish, A. Radford, I. Sutskever, and D. Amodei. “Language Models are Few-Shot Learners”. In: Advances in Neural Information Processing Systems (NeurIPS). 2020 (Cited on page 1).",
+    "A. J. Chaney, B. M. Stewart, and B. E. Engelhardt. “How algorithmic confounding in recommendation systems increases homogeneity and decreases utility\". In: ACM Conference on Recommender Systems. 2018 (Cited on page 3).",
+    "C. Coleman, D. Narayanan, D. Kang, T. Zhao, J. Zhang, L. Nardi, P. Bailis, K. Olukotun, C. Ré, and M. Zaharia. \"Dawnbench: An end-to-end deep learning benchmark and competition\". In: Advances in Neural Information Processing Systems (NeurIPS). 2017 (Cited on page 7).",
+    "L. N. Darlow, E. J. Crowley, A. Antoniou, and A. J. Storkey. “Cinic-10 is not imagenet or cifar-10\". In: arXiv preprint arXiv:1810.03505 (2018) (Cited on pages 9, 25).",
+    "J. Deng, W. Dong, R. Socher, L. Li, K. Li, and L. Fei-Fei. “Imagenet: A large-scale hierarchical image database\". In: Conference on Computer Vision and Pattern Recognition (CVPR). 2009 (Cited on page 1).",
+    "J. Dhamala, T. Sun, V. Kumar, S. Krishna, Y. Pruksachatkun, K. Chang, and R. Gupta. “BOLD: Dataset and Metrics for Measuring Biases in Open-Ended Language Generation”. In: ACM Conference on Fairness, Accountability, and Transparency. FAccT '21. Virtual Event, Canada: Association for Computing Machinery, 2021, pp. 862–872. ISBN: 9781450383097 (Cited on page 10).",
+    "E. Dinan, G. Abercrombie, A. S. Bergman, S. Spruit, D. Hovy, Y. Boureau, and V. Rieser. \"Anticipating safety issues in e2e conversational ai: Framework and tooling”. In: arXiv preprint arXiv:2107.03451 (2021) (Cited on page 7).",
+    "E. Dinan, A. Fan, A. Williams, J. Urbanek, D. Kiela, and J. Weston. “Queens are powerful too: Mitigating gender bias in dialogue generation\". In: arXiv preprint arXiv:1911.03842 (2019) (Cited on page 3).",
+    "C. Donahue, M. Lee, and P. Liang. \"Enabling language models to fill in the blanks\". In: Association for Computational Linguistics (ACL). 2020 (Cited on page 7).",
+    "A. Fan, M. Lewis, and Y. Dauphin. “Hierarchical Neural Story Generation\". In: arXiv preprint arXiv:1805.04833 (2018) (Cited on page 11).",
+    "A. Farahani, S. Voghoei, K. Rasheed, and H. R. Arabnia. “A brief review of domain adaptation\". In: Advances in Data Science and Information Engineering. 2021 (Cited on page 18).",
+    "L. Gao, S. Biderman, S. Black, L. Golding, T. Hoppe, C. Foster, J. Phang, H. He, A. Thite, N. Nabeshima, S. Presser, and C. Leahy. “The Pile: An 800GB Dataset of Diverse Text for Language Modeling\". In: arXiv preprint arXiv:2101.00027 (2020) (Cited on page 1).",
+    "S. Gehman, S. Gururangan, M. Sap, Y. Choi, and N. A. Smith. “Realtoxicityprompts: Evaluating neural toxic degeneration in language models”. In: Empirical Methods in Natural Language Processing. 2020 (Cited on pages 1, 2, 10–12, 26).",
+    "A. Gokaslan and V. Cohen. OpenWebText Corpus. http : / / Skylion007 . github . io / OpenWebTextCorpus. 2019 (Cited on pages 10, 26).",
+    "D. Gragnaniello, D. Cozzolino, F. Marra, G. Poggi, and L. Verdoliva. “Are GAN generated images easy to detect? A critical analysis of the state-of-the-art”. In: IEEE International Conference on Multimedia and Expo (ICME). 2021 (Cited on page 13).",
+    "Y. Grandvalet and Y. Bengio. “Semi-supervised learning by entropy minimization”. In: Advances in Neural Information Processing Systems (NeurIPS). 2004 (Cited on page 18).",
+    "A. Graves. “Sequence transduction with recurrent neural networks\". In: arXiv preprint arXiv:1211.3711 (2012) (Cited on page 11).",
+    "M. Hall, L. van der Maaten, L. Gustafson, and A. Adcock. \"A Systematic Study of Bias Amplification”. In: arXiv preprint arXiv:2201.11706 (2022) (Cited on pages 3, 13).",
+    "L. Hanu and Unitary team. Detoxify. https://github.com/unitaryai/detoxify. 2020 (Cited on pages 10, 11).",
+    "M. Hardt, N. Megiddo, C. Papadimitriou, and M. Wootters. \"Strategic classification\". In: ACM Conference on Innovations in Theoretical Computer Science. 2016 (Cited on page 2).",
+    "C. R. Harris, K. J. Millman, S. J. v. d. Walt, R. Gommers, P. Virtanen, D. Cournapeau, E. Wieser, J. Taylor, S. Berg, N. J. Smith, R. Kern, M. Picus, S. Hoyer, M. H. v. Kerkwijk, M. Brett, A. Haldane, J. F. d. Río, M. Wiebe, P. Peterson, P. Gérard-Marchant, K. Sheppard, T. Reddy, W. Weckesser, H. Abbasi, C. Gohlke, and T. E. Oliphant. \"Array programming with NumPy”. In: Nature (2020) (Cited on page 13).",
+    "T. B. Hashimoto, M. Srivastava, H. Namkoong, and P. Liang. “Fairness without demographics in repeated loss minimization\". In: International Conference on Machine Learning (ICML). 2018 (Cited on page 3).",
+    "K. He, X. Zhang, S. Ren, and J. Sun. “Deep Residual Learning for Image Recognition\". In: Conference on Computer Vision and Pattern Recognition (CVPR). 2016 (Cited on pages 1, 9).",
+    "J. Ho, A. Jain, and P. Abbeel. “Denoising Diffusion Probabilistic Models”. In: Advances in Neural Information Processing Systems (NeurIPS). 2020 (Cited on pages 7, 25).",
+    "A. Holtzman, J. Buys, L. Du, M. Forbes, and Y. Choi. \"The Curious Case of Neural Text Degeneration\". In: arXiv preprint arXiv:1904.09751 (2020) (Cited on page 11).",
+    "J. D. Hunter. \"Matplotlib: A 2D graphics environment. In: Computing in Science & Engineering (2007) (Cited on page 13).",
+    "Z. Izzo, L. Ying, and J. Zou. “How to learn when data reacts to your model: performative gradient descent\". In: International Conference on Machine Learning (ICML). 2021 (Cited on pages 2, 3).",
+    "R. Jiang, S. Chiappa, T. Lattimore, A. György, and P. Kohli. “Degenerate feedback loops in recommender systems\". In: AAAI/ACM Conference on AI, Ethics, and Society. 2019 (Cited on page 3).",
+    "D. Kingma and J. Ba. “Adam: A method for stochastic optimization\". In: arXiv preprint arXiv:1412.6980 (2014) (Cited on page 25).",
+    "A. Krizhevsky. Learning multiple layers of features from tiny images. Tech. rep. University of Toronto, 2009 (Cited on pages 2, 7).",
+    "B. Kulynych, Y. Yang, Y. Yu, J. Błasiok, and P. Nakkiran. \"What You See is What You Get: Distributional Generalization for Algorithm Design in Deep Learning\". In: arXiv preprint arXiv:2204.03230 (2022) (Cited on page 13).",
+    "A. Kumar, T. Ma, and P. Liang. “Understanding self-training for gradual domain adaptation\". In: International Conference on Machine Learning (ICML). 2020 (Cited on page 18).",
+    "D. Kumar, P. G. Kelley, S. Consolvo, J. Mason, E. Bursztein, Z. Durumeric, K. Thomas, and M. Bailey. \"Designing toxic content classification for a diversity of perspectives\". In: Seventeenth Symposium on Usable Privacy and Security (SOUPS). 2021 (Cited on page 10).",
+    "K. Leino, E. Black, M. Fredrikson, S. Sen, and A. Datta. “Feature-wise bias amplification”. In: International Conference on Learning Representations (ICLR). 2019 (Cited on page 3).",
+    "B. Li, Z. Cheng, and Y. Bao. CIFAR10 Training BaiduNet9. https://github.com/BAIDU-USA-GAIT-LEOPARD/CIFAR10-Training-BaiduNet9. 2019 (Cited on pages 7, 25).",
+    "I. Loshchilov and F. Hutter. \"Decoupled weight decay regularization\". In: International Conference on Learning Representations (ICLR). 2019 (Cited on page 26).",
+    "J. P. Miller, J. C. Perdomo, and T. Zrnic. \"Outside the echo chamber: Optimizing the performative risk”. In: International Conference on Machine Learning (ICML). 2021 (Cited on pages 2, 3).",
+    "P. Nakkiran and Y. Bansal. \"Distributional Generalization: A New Kind of Generalization\". In: arXiv preprint arXiv:2009.08092 (2020) (Cited on pages 2, 6–8, 36).",
+    "P. Nakkiran, B. Neyshabur, and H. Sedghi. \"The deep bootstrap framework: Good online learners are good offline generalizers”. In: International Conference on Learning Representations (ICLR). 2021 (Cited on page 7).",
+    "P. Nakkiran, P. Venkat, S. Kakade, and T. Ma. “Optimal regularization can mitigate double descent\". In: arXiv preprint arXiv:2003.01897 (2020) (Cited on page 7).",
+    "Y. Ouali, C. Hudelot, and M. Tami. “An overview of deep semi-supervised learning\". In: arXiv preprint arXiv:2006.05278 (2020) (Cited on page 18).",
+    "A. Paszke, S. Gross, F. Massa, A. Lerer, J. Bradbury, G. Chanan, T. Killeen, Z. Lin, N. Gimelshein, L. Antiga, A. Desmaison, A. Kopf, E. Yang, Z. DeVito, M. Raison, A. Tejani, S. Chilamkurthy, B. Steiner, L. Fang, J. Bai, and S. Chintala. “Pytorch: An imperative style, high-performance deep learning library\". In: Advances in Neural Information Processing Systems (NeurIPS). 2019 (Cited on page 13).",
+    "J. Perdomo, T. Zrnic, C. Mendler-Dünner, and M. Hardt. “Performative prediction\". In: International Conference on Machine Learning (ICML). 2020 (Cited on page 2).",
+    "A. Radford, J. W. Kim, C. Hallacy, A. Ramesh, G. Goh, S. Agarwal, G. Sastry, A. Askell, P. Mishkin, J. Clark, G. Krueger, and I. Sutskever. “Learning transferable visual models from natural language supervision\". In: International Conference on Machine Learning (ICML). 2021 (Cited on page 1).",
+    "A. Radford, J. Wu, R. Child, D. Luan, D. Amodei, and I. Sutskever. \"Language models are unsupervised multitask learners\". In: OpenAI blog 1.8 (2019), p. 9 (Cited on page 11).",
+    "H. Robbins and S. Monro. “A Stochastic Approximation Method\". In: Annals of Mathematical Statistics 22.3 (1951), pp. 400–407 (Cited on page 3).",
+    "J. S. Rosenfeld. \"Scaling laws for deep learning\". PhD thesis. Massachusetts Institute of Technology, 2021 (Cited on page 9).",
+    "G. Van Rossum and F. L. Drake Jr. Python reference manual. Centrum voor Wiskunde en Informatica Amsterdam, 1995 (Cited on page 13).",
+    "C. Saharia, W. Chan, S. Saxena, L. Li, J. Whang, E. Denton, S. K. S. Ghasemipour, B. K. Ayan, S. S. Mahdavi, R. G. Lopes, T. Salimans, J. Ho, D. J. Fleet, and M. Norouzi. “Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding”. In: arXiv preprint arXiv:2205.11487 (2022) (Cited on page 1).",
+    "M. Sap, S. Swayamdipta, L. Vianna, X. Zhou, Y. Choi, and N. A. Smith. \"Annotators with Attitudes: How Annotator Beliefs And Identities Bias Toxic Language Detection\". In: Association for Computational Linguistics (ACL). 2022 (Cited on page 10).",
+    "S. Schmit and C. Riquelme. “Human interaction with recommendation systems\". In: Artificial Intelligence and Statistics (AISTATS). 2018 (Cited on page 3).",
+    "E. Sheng, K. Chang, P. Natarajan, and N. Peng. “The woman worked as a babysitter: On biases in language generation”. In: Empirical Methods in Natural Language Processing. 2019 (Cited on page 7).",
+    "R. Shu, H. H. Bui, H. Narui, and S. Ermon. \"A dirt-t Approach to Unsupervised Domain Adaptation\". In: International Conference on Learning Representations (ICLR). 2018 (Cited on page 18).",
+    "A. Sinha, D. F. Gleich, and K. Ramani. “Deconvolving feedback loops in recommender systems”. In: Advances in Neural Information Processing Systems (NeurIPS). 2016 (Cited on page 3).",
+    "H. Steck. “Calibrated recommendations\". In: ACM Conference on Recommender Systems. 2018 (Cited on page 3).",
+    "M. Tancik, B. Mildenhall, and R. Ng. “Stegastamp: Invisible hyperlinks in physical photographs\". In: Conference on Computer Vision and Pattern Recognition (CVPR). 2020 (Cited on page 13).",
+    "Jigsaw team. Toxic Comment Classification Challenge. https://www.kaggle.com/competitions/ jigsaw-toxic-comment-classification-challenge/overview. 2018 (Cited on page 10).",
+    "Jigsaw team. Jigsaw Unintended Bias in Toxicity Classification. https://www.kaggle.com/c/ jigsaw-unintended-bias-in-toxicity-classification. 2019 (Cited on page 10).",
+    "Jigsaw team. Jigsaw Multilingual Toxic Comment Classification. https://www.kaggle.com/c/ jigsaw-multilingual-toxic-comment-classification. 2020 (Cited on page 10).",
+    "B. Thomee, D. A. Shamma, G. Friedland, B. Elizalde, K. Ni, D. Poland, D. Borth, and L. Li. “YFCC100M: The new data in multimedia research\". In: Communications of the Association for Computing Machinery (ACM). 2016 (Cited on page 1).",
+    "A. Venugopal, J. Uszkoreit, D. Talbot, F. J. Och, and J. Ganitkevitch. \"Watermarking the outputs of structured prediction with an application in statistical machine translation.\" In: Empirical Methods in Natural Language Processing. 2011 (Cited on pages 1, 13).",
+    "T. Wang, J. Zhao, M. Yatskar, K. Chang, and V. Ordonez. “Balanced datasets are not enough: Estimating and mitigating gender bias in deep image representations\". In: International Conference on Computer Vision (ICCV). 2019 (Cited on page 3).",
+    "T. Wolf, L. Debut, V. Sanh, J. Chaumond, C. Delangue, A. Moi, P. Cistac, T. Rault, R. Louf, M. Funtowicz, J. Davison, S. Shleifer, P. von Platen, C. Ma, Y. Jernite, J. Plu, C. Xu, T. L. Scao, S. Gugger, M. Drame, Q. Lhoest, and A. M. Rush. “HuggingFace's Transformers: State-of-the-art Natural Language Processing”. In: arXiv preprint arXiv:1910.03771 (2019) (Cited on pages 13, 26).",
+    "I. Z. Yalniz, H. Jégou, K. Chen, M. Paluri, and D. Mahajan. “Billion-scale semi-supervised learning for image classification\". In: arXiv preprint arXiv:1905.00546 (2019) (Cited on page 1).",
+    "M. Yatskar, L. Zettlemoyer, and A. Farhadi. “Situation recognition: Visual semantic role labeling for image understanding\". In: Conference on Computer Vision and Pattern Recognition (CVPR). 2016 (Cited on pages 2, 5, 9, 25, 26).",
+    "J. Zhao, T. Wang, M. Yatskar, V. Ordóñez, and K. Chang. “Men Also Like Shopping: Reducing Gender Bias Amplification using Corpus-level Constraints”. In: Empirical Methods in Natural Language Processing (EMNLP). 2017 (Cited on pages 1–3, 9).",
+    "Z. Zhu, T. Luo, and Y. Liu. “The rich get richer: Disparate impact of semi-supervised learning\". In: arXiv preprint arXiv:2110.06282 (2021) (Cited on page 18)."
+  ],
+  "measurement_description": "The paper did not measure anything related to faith/religion. It measured bias amplification in the contexts of gender, label imbalance (e.g., fraction of 'dog' predictions), and toxicity/repetition in language generation."
 }

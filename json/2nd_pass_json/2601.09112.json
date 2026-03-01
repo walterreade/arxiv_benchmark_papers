@@ -2,87 +2,23 @@
   "filename": "2601.09112.pdf",
   "title": "Seeking Human Security Consensus: A Unified Value Scale for Generative AI Value Safety",
   "arxiv_url": "https://arxiv.org/pdf/2601.09112",
-  "benchmark_measurement": "The benchmark measured the models' ability to identify and refuse harmful or sensitive requests related to religion. This included prompts designed to induce the model to: generate guidelines for violating religious dietary taboos (e.g., for Muslims), create images depicting the destruction of religious shrines (e.g., Al-Aqsa Mosque), generate videos disrespecting religious figures, and produce audio that desecrates religious content (e.g., Buddhist chants). The evaluation focused on safety and refusal rather than knowledge or factual accuracy.",
-  "religious_groups": [
-    "Islam",
-    "Buddhism",
-    "Christianity",
-    "Judaism"
+  "bias_targets": [
+    {
+      "target": "Racial and Language bias",
+      "methodology": "Prompting models to generate text or audio representing specific racial groups or dialects (e.g., African American Vernacular English) and using an LLM-as-a-judge to evaluate outputs for harmful stereotypes, associations with criminality, or intellectual devaluation."
+    },
+    {
+      "target": "Cultural and Religious bias",
+      "methodology": "Evaluating cross-modal model outputs (text, image, video, audio) involving religious taboos, sacred figures, and diverse cultural philosophies using an LLM-as-a-judge to intercept desecration, disrespect, or the dissemination of Western-centric stereotypes."
+    },
+    {
+      "target": "Political and Ideological bias",
+      "methodology": "Testing models with prompts about specific political figures, civic decisions, or historical ideologies, and using an LLM-as-a-judge to detect biased guidance, speech manipulation, or ideological overcorrection."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Assessing model generation behavior within the broader 'Bias, Discrimination, and Unfairness' scale to identify the generation of gender stereotypes, such as analyzing differences in descriptive terminology (e.g., professional terms for men versus appearance-based terms for women)."
+    }
   ],
-  "models_tested": [
-    "GPT-5.1",
-    "Claude Opus 4",
-    "Gemini 3 Pro",
-    "Grok 4.1",
-    "Qwen3",
-    "DeepSeek-v3"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "ETHICS",
-    "CMoralEval",
-    "VAL-Bench",
-    "CATQA",
-    "SALAD-Bench",
-    "HELM"
-  ],
-  "continuous_testing": true,
-  "findings": "Performance on the 'Cultural, Historical, and Religious Sensitivities' value category was highly variable across models. While some models like Claude Opus 4 and GPT-5.1 demonstrated strong performance in handling these sensitive, context-dependent prompts, other models showed significant weaknesses. This uneven performance highlights the ongoing challenge of aligning models with nuanced cultural and religious values, which fall under the 'Contextual and Pluralistic Values Layer' of the proposed GVS-Scale.",
-  "references": [
-    "Mousa Al-kfairy, Dheya Mustafa, Nir Kshetri, Mazen Insiew, and Omar Alfandi. 2024. Ethical challenges and solutions of generative ai: An interdisciplinary perspective. Informatics, 11(3).",
-    "American Psychological Association. 2025. Apa letter to the consumer product safety commission regarding risks of injury posed by generative ai. Technical report, American Psychological Association. Policy letter to the U.S. Consumer Product Safety Commission.",
-    "Gelan Ayana, Kokeb Dese, Hundessa Nemomssa, Bontu Habtamu, Bruce Mellado, Kingsley Badu, Edmund Yamba, Sylvain Faye, Moise Ondua, Dickson Nsagha, Denis Nkweteyim, and Jude Kong. 2024. Decolonizing global ai governance: assessment of the state of decolonized ai governance in sub-saharan africa. Royal Society Open Science, 11.",
-    "Yuntao Bai, Saurav Kadavath, Sandipan Kundu, Amanda Askell, Jackson Kernion, Andy Jones, Anna Chen, Anna Goldie, Azalia Mirhoseini, Cameron McKinnon, Carol Chen, Catherine Olsson, Christopher Olah, Danny Hernandez, Dawn Drain, Deep Ganguli, Dustin Li, Eli Tran-Johnson, Ethan Perez, and 32 others. 2022. Constitutional ai: Harmlessness from ai feedback. Preprint, arXiv:2212.08073.",
-    "Rishabh Bhardwaj, Duc Anh Do, and Soujanya Poria. 2024. Language models are Homer simpson! safety re-alignment of fine-tuned language models through task arithmetic. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 14138–14149, Bangkok, Thailand. Association for Computational Linguistics.",
-    "Sonja Bjelobaba, Lorna Waddington, Mike Perkins, Tomáš Foltýnek, Sabuj Bhattacharyya, and Debora Weber-Wulff. 2024. Research integrity and genai: A systematic analysis of ethical challenges across research phases. Preprint, arXiv:2412.10134.",
-    "Tolga Bolukbasi, Kai-Wei Chang, James Zou, Venkatesh Saligrama, and Adam Kalai. 2016. Man is to computer programmer as woman is to homemaker? debiasing word embeddings. In Proceedings of the 30th International Conference on Neural Information Processing Systems, NIPS’16, page 4356–4364, Red Hook, NY, USA. Curran Associates Inc.",
-    "Jon Chun, Christian Schroeder de Witt, and Katherine Elkins. 2024. Comparative global ai regulation: Policy perspectives from the eu, china, and the us. Preprint, arXiv:2410.21279.",
-    "Cyberspace Administration of China. 2023. Interim measures for the management of generative artificial intelligence services. https://www.cac.gov.cn/ 2023-07/13/c_1690898327029107.htm.",
-    "Cyberspace Security Association of China. 2025. The “ai for good” forum at the 2025 world artificial intelligence conference focuses on governance practices and forward-looking safety. https://www. cybersac.cn/detail/1950528944625192962. In Chinese.",
-    "Electronic Privacy Information Center. 2023. Generative ai and privacy: Risks, governance, and policy recommendations. Technical report, Electronic Privacy Information Center (EPIC). White Paper.",
-    "European Commission High-Level Expert Group on Artificial Intelligence. 2019. Ethics guidelines for trustworthy AI. https: //digital-strategy.ec.europa.eu/en/ library/ethics-guidelines-trustworthy-ai. Accessed: 2025-12-29.",
-    "European Digital Media Observatory. 2023. Generative ai and disinformation. Technical report, European Digital Media Observatory (EDMO). White Paper.",
-    "European Union. 2024. Regulation (eu) 2024/1689 of the european parliament and of the council of 13 june 2024 laying down harmonised rules on artificial intelligence (artificial intelligence act). https://eur-lex.europa.eu/legal-content/ EN/TXT/?uri=CELEX:32024R1689.",
-    "Richard Fang, Dylan Bowman, and Daniel Kang. 2024. Voice-enabled ai agents can perform common scams. Preprint, arXiv:2410.15650.",
-    "Emilio Ferrara. 2024. Fairness and bias in artificial intelligence: A brief survey of sources, impacts, and mitigation strategies. Sci, 6(1).",
-    "Furizal, Alfian Ma’arif, Hari Maghfiroh, Iswanto Suwarno, Denis Prayogi, Kariyamin, Syahrani Lonang, and Abdel-Nasser Sharkawy. 2025. Social, legal, and ethical implications of ai-generated deepfake pornography on digital platforms: A systematic literature review. Social Sciences & Humanities Open, 12:101882.",
-    "Samuel Gehman, Suchin Gururangan, Maarten Sap, Yejin Choi, and Noah A. Smith. 2020. Realtoxicityprompts: Evaluating neural toxic degeneration in language models. Preprint, arXiv:2009.11462.",
-    "Roberto Gozalo-Brizuela and Eduardo C. GarridoMerchán. 2023. A survey of generative ai applications. Preprint, arXiv:2306.02781.",
-    "Aman Gupta, Denny O’Shea, and Fazl Barez. 2025. Val-bench: Measuring value alignment in language models. Preprint, arXiv:2510.05465.",
-    "Dan Hendrycks, Collin Burns, Steven Basart, Andrew Critch, Jerry Li, Dawn Song, and Jacob Steinhardt. 2023a. Aligning ai with shared human values. Preprint, arXiv:2008.02275.",
-    "Dan Hendrycks, Mantas Mazeika, and Thomas Woodside. 2023b. An overview of catastrophic ai risks. Preprint, arXiv:2306.12001.",
-    "Maurice Jakesch, Jeffrey T. Hancock, and Mor Naaman. 2023. Human heuristics for ai-generated language are flawed. Proceedings of the National Academy of Sciences, 120(11):e2208839120.",
-    "Junfeng Jiao, Saleh Afroogh, Kevin Chen, Abhejay Murali, David Atkinson, and Amit Dhurandhar. 2025. Llms and childhood safety: Identifying risks and proposing a protection framework for safe child-llm interaction. Preprint, arXiv:2502.11242.",
-    "Lijun Li, Bowen Dong, Ruohui Wang, Xuhao Hu, Wangmeng Zuo, Dahua Lin, Yu Qiao, and Jing Shao. 2024. SALAD-Bench: A Hierarchical and Comprehensive Safety Benchmark for Large Language Models. In Findings of the Association for Computational Linguistics: ACL 2024, pages 3923–3954, Bangkok, Thailand. Association for Computational Linguistics.",
-    "Percy Liang, Rishi Bommasani, Tony Lee, Dimitris Tsipras, Dilara Soylu, Michihiro Yasunaga, Yian Zhang, Deepak Narayanan, Yuhuai Wu, Ananya Kumar, Benjamin Newman, Binhang Yuan, Bobby Yan, Ce Zhang, Christian Cosgrove, Christopher D. Manning, Christopher Ré, Diana Acosta-Navas, Drew A. Hudson, and 31 others. 2023. Holistic evaluation of language models. Preprint, arXiv:2211.09110.",
-    "Weiyao Meng, John Harvey, James Goulding, Chris James Carter, Evgeniya Lukinova, Andrew Smith, Paul Frobisher, Mina Forrest, and Georgiana Nica-Avram. 2025. Large language models as 'hidden persuaders': Fake product reviews are indistinguishable to humans and machines. Preprint, arXiv:2506.13313.",
-    "Microsoft. 2024. Protecting against abusive ai content. Technical report, Microsoft. UK policy and safety briefing.",
-    "Ministry of Foreign Affairs of the People’s Republic of China. 2015. Remarks by h.e. xi jinping at the opening ceremony of the second world internet conference. https://www.mfa.gov.cn/eng/ xw/zyjh/202405/t20240530_11341037.html.",
-    "Ministry of Foreign Affairs of the People’s Republic of China. 2024. Shanghai declaration on global ai governance. https://www.fmprc.gov.cn/eng/ wjb/zzjg_663340/jks_665232/kjlc_665236/ AI/202407/t20240704_11448351.html.",
-    "National Institute of Standards and Technology. 2023. Artificial intelligence risk management framework (ai rmf 1.0). Technical Report NIST AI 100-1, National Institute of Standards and Technology.",
-    "OpenAI. 2024. Detecting and reducing scheming in ai models. https://openai.com/index/ detecting-and-reducing-scheming-in-ai-models/. OpenAI Research Blog.",
-    "Organisation for Economic Co-operation and Development. 2019. Recommendation of the council on artificial intelligence. https://legalinstruments. oecd.org/en/instruments/OECD-LEGAL-0449. OECD/LEGAL/0449.",
-    "Peter S. Park, Simon Goldstein, Aidan O’Gara, Michael Chen, and Dan Hendrycks. 2023. Ai deception: A survey of examples, risks, and potential solutions. Preprint, arXiv:2308.14752.",
-    "RAND Corporation. 2024. Understanding the risks of generative artificial intelligence. Technical Report PEA3089-1, RAND Corporation. RAND Perspectives.",
-    "Felipe Romero-Moreno. 2025. Deepfake detection in generative ai: A legal framework proposal to protect human rights. Computer Law & Security Review, 58:106162.",
-    "Hang Su, Jun Luo, Chang Liu, Xiao Yang, Yichi Zhang, Yinpeng Dong, and Jun Zhu. 2025. A survey on autonomy-induced security risks in large modelbased agents. Preprint, arXiv:2506.23844.",
-    "Yujie Sun, Dongfang Sheng, Zihan Zhou, and Yifei Wu. 2024. Ai hallucination: towards a comprehensive classification of distorted information in artificial intelligence-generated content. Humanities and Social Sciences Communications, 11(1):1–14.",
-    "Harini Suresh and John Guttag. 2021. A framework for understanding sources of harm throughout the machine learning life cycle. In Proceedings of the 1st ACM Conference on Equity and Access in Algorithms, Mechanisms, and Optimization, EAAMO ’21, New York, NY, USA. Association for Computing Machinery.",
-    "Milad Taleby Ahvanooey, Wojciech Mazurczyk, and Dongwon Lee. 2025. Socioeconomic threats of deepfakes and the role of cyber-wellness education in defense. Commun. ACM, 68(9):70–79.",
-    "Panuthep Tasawong, Jian Gang Ngui, Alham Fikri Aji, Trevor Cohn, and Peerat Limkonchotiwat. 2025. Sea-safeguardbench: Evaluating ai safety in sea languages and cultures. Preprint, arXiv:2512.05501.",
-    "Andrea Tocchetti, Lorenzo Corti, Agathe Balayn, Mireia Yurrita, Philip Lippmann, Marco Brambilla, and Jie Yang. 2022. A.i. robustness: a human-centered perspective on technological challenges and opportunities. Preprint, arXiv:2210.08906.",
-    "S. M Towhidul Islam Tonmoy, S M Mehedi Zaman, Vinija Jain, Anku Rani, Vipula Rawte, Aman Chadha, and Amitava Das. 2024. A comprehensive survey of hallucination mitigation techniques in large language models. Preprint, arXiv:2401.01313.",
-    "UK Government. 2023. The bletchley declaration by countries attending the ai safety summit, 1–2 november 2023. https: //www.gov.uk/government/publications/ ai-safety-summit-2023-the-bletchley-declaration/ the-bletchley-declaration-by-countries-attending-the-ai",
-    "UNESCO. 2021. Recommendation on the ethics of artificial intelligence. Technical report, United Nations Educational, Scientific and Cultural Organization. Adopted by the UNESCO General Conference.",
-    "U.S. Government Accountability Office. 2025. Artificial intelligence: Opportunities, risks, and key considerations for policymakers. Technical Report GAO-25-107653, U.S. Government Accountability Office. Accessed: 2025-12-26.",
-    "Linhao Yu, Yongqi Leng, Yufei Huang, Shang Wu, Haixin Liu, Xinmeng Ji, Jiahui Zhao, Jinwang Song, Tingting Cui, Xiaoqing Cheng, Tao Liu, and Deyi Xiong. 2024. CMoralEval: A Moral Evaluation Benchmark for Chinese Large Language Models. In Findings of the Association for Computational Linguistics: ACL 2024, pages 11817–11837, Bangkok, Thailand. Association for Computational Linguistics.",
-    "Renwen Zhang, Han Li, Han Meng, Jinyuan Zhan, Hongyuan Gan, and Yi-Chieh Lee. 2025. The dark side of ai companionship: A taxonomy of harmful algorithmic behaviors in human-ai relationships. In Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems, CHI ’25, New York, NY, USA. Association for Computing Machinery.",
-    "Haonan Zhong, Jiamin Chang, Ziyue Yang, Tingmin Wu, Pathum Chamikara Mahawaga Arachchige, Chehara Pathmabandu, and Minhui Xue. 2023. Copyright protection and accountability of generative ai: Attack, watermarking and attribution. In Companion Proceedings of the ACM Web Conference 2023, page 94–98. ACM."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

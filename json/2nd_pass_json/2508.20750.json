@@ -2,109 +2,23 @@
   "filename": "2508.20750.pdf",
   "title": "Specializing General-purpose LLM Embeddings for Implicit Hate Speech Detection across Datasets",
   "arxiv_url": "https://arxiv.org/pdf/2508.20750",
-  "benchmark_measurement": "Detection of implicit hate speech and bias directed towards specific religious groups, including sensitivity analysis on statements targeting Jews and Muslims.",
-  "religious_groups": [
-    "Islam",
-    "Judaism"
+  "bias_targets": [
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluating implicit hate speech detection on benchmark datasets (such as IHC and ToxiGen) and specifically analyzing the model's sensitivity by comparing predicted hate probabilities for template statements substituting specific racial targets (e.g., 'Black people are stupid' vs. 'White people are stupid')."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluating implicit hate speech detection on benchmark datasets and explicitly analyzing target bias by comparing the classifier's predicted hate probabilities for template statements targeting religious groups (e.g., 'Jews are stupid' vs. 'Muslims are stupid')."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Evaluating implicit hate speech detection on benchmark datasets and analyzing model sensitivity by measuring predicted hate probabilities for template statements targeting sexual minorities (e.g., 'Gay are stupid')."
+    },
+    {
+      "target": "Intersectionality/Social bias",
+      "methodology": "Benchmarking embedding models across diverse datasets (IHC, SBIC, DynaHate, ToxiGen) that contain implicit stereotypes, microaggressions, and coded hate speech targeting various marginalized demographic groups (including gender, nationality, and socioeconomic status)."
+    }
   ],
-  "models_tested": [
-    "Stella",
-    "Jasper",
-    "NV-Embed",
-    "E5",
-    "Llama2",
-    "Llama3-8B",
-    "Gemma-7B",
-    "Qwen3-8B",
-    "BERTweet",
-    "RoBERTa",
-    "GPT-3.5-Turbo",
-    "LLaMa2-7B",
-    "Mixtral-8x7b",
-    "Mistral 7B"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "Implicit Hate Corpus (IHC)",
-    "DynaHate",
-    "SBIC",
-    "ToxiGen"
-  ],
-  "continuous_testing": false,
-  "findings": "The fine-tuned embedding models, particularly NV-Embed, showed high sensitivity to religious targets. They assigned higher hate probabilities to derogatory statements about Jews and Muslims compared to generic targets. The model also tended to misclassify some non-hateful tweets about Jewish people as hateful, while tweets concerning Islam were misclassified in both directions (hate as non-hate and vice versa).",
-  "references": [
-    "Ibrahim Abu Farha, Silviu V. Oprea, Steven Wilson, and Walid Magdy. 2022. SemEval-2022 Task 6: iSarcasmEval, Intended Sarcasm Detection in English and Arabic. In Proceedings of the 16th International Workshop on Semantic Evaluation (SemEval-2022). Association for Computational Linguistics, Seattle, United States, 802-814. doi:10.18653/v1/2022.semeval-1.111",
-    "Hyeseon Ahn, Youngwook Kim, Jungin Kim, and Yo-Sub Han. 2024. Shared-Con: Implicit Hate Speech Detection using Shared Semantics. In Findings of the Association for Computational Linguistics ACL 2024. Association for Com-putational Linguistics, Bangkok, Thailand and virtual meeting, 10444-10455. doi:10.18653/v1/2024.findings-acl.622",
-    "Mario Aragon, Adrian P. Lopez Monroy, Luis Gonzalez, David E. Losada, and Manuel Montes. 2023. DisorBERT: A Double Domain Adaptation Model for Detecting Signs of Mental Disorders in Social Media. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). Association for Computational Linguistics, Toronto, Canada, 15305-15318. doi:10.18653/v1/2023.acl-long.853",
-    "Md Rabiul Awal, Rui Cao, Roy Ka-Wei Lee, and Sandra Mitrović. 2021. Angry-BERT: Joint Learning Target and Emotion for Hate Speech Detection. In Advances in Knowledge Discovery and Data Mining: 25th Pacific-Asia Conference, PAKDD 2021, Virtual Event, May 11-14, 2021, Proceedings, Part I. Springer-Verlag, Berlin, Heidelberg, 701-713. doi:10.1007/978-3-030-75762-5_55",
-    "Valerio Basile, Cristina Bosco, Elisabetta Fersini, Debora Nozza, Viviana Patti, Francisco M. Rangel Pardo, Paolo Rosso, and Manuela Sanguinetti. 2019. SemEval-2019 Task 5: Multilingual Detection of Hate Speech Against Immigrants and Women in Twitter. In Proceedings of the 13th International Workshop on Semantic Evaluation. Association for Computational Linguistics, Minneapolis, Minnesota, USA, 54-63. doi:10.18653/v1/S19-2007",
-    "Alexis Conneau, Kartikay Khandelwal, Naman Goyal, Vishrav Chaudhary, Guil-laume Wenzek, Francisco Guzmán, Edouard Grave, Myle Ott, Luke Zettlemoyer, and Veselin Stoyanov. 2020. Unsupervised Cross-lingual Representation Learn-ing at Scale. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics. Association for Computational Linguistics, Online, 8440-8451. doi:10.18653/v1/2020.acl-main.747",
-    "Greta Damo, Nicolás B. Ocampo, Elena Cabrio, and Serena Villata. 2024. Unveiling the Hate: Generating Faithful and Plausible Explanations for Implicit and Subtle Hate Speech Detection. In Natural Language Processing and Information Systems. Springer Nature Switzerland, Cham, 211-225.",
-    "Thomas Davidson, Debasmita Bhattacharya, and Ingmar Weber. 2019. Racial Bias in Hate Speech and Abusive Language Detection Datasets. In Proceedings of the Third Workshop on Abusive Language Online. Association for Computational Linguistics, Florence, Italy, 25-35. doi:10.18653/v1/W19-3504",
-    "Thomas Davidson, Dana Warmsley, Michael Macy, and Ingmar Weber. 2017. Automated Hate Speech Detection and the Problem of Offensive Language. Proceedings of the International AAAI Conference on Web and Social Media 11, 1 (2017), 512-515. doi:10.1609/icwsm.v11i1.14955",
-    "Fabio Del Vigna, Andrea Cimino, Felice Dell'Orletta, Marinella Petrocchi, and Maurizio Tesconi. 2017. Hate me, hate me not: Hate speech detection on Facebook. In Proceedings of the first Italian conference on cybersecurity (ITASEC17). 86-95.",
-    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Asso-ciation for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers). Association for Computational Linguistics, Minneapolis, Minnesota, 4171-4186. doi:10.18653/v1/N19-1423",
-    "Mai ElSherief, Caleb Ziems, David Muchlinski, Vaishnavi Anupindi, Jordyn Sey-bolt, Munmun De Choudhury, and Diyi Yang. 2021. Latent Hatred: A Benchmark for Understanding Implicit Hate Speech. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing. Association for Com-putational Linguistics, Online and Punta Cana, Dominican Republic, 345-363. doi:10.18653/v1/2021.emnlp-main.29",
-    "Agneta Fischer, Eran Halperin, Daphna Canetti, and Alba Jasini. 2018. Why We Hate. Emotion Review 10, 4 (2018), 309-320.",
-    "Antigoni Founta, Constantinos Djouvas, Despoina Chatzakou, Ilias Leontiadis, Jeremy Blackburn, Gianluca Stringhini, Athena Vakali, Michael Sirivianos, and Nicolas Kourtellis. 2018. Large Scale Crowdsourcing and Characterization of Twitter Abusive Behavior. Proceedings of the International AAAI Conference on Web and Social Media 12, 1 (Jun. 2018). doi:10.1609/icwsm.v12i1.14991",
-    "Lei Gao, Alexis Kuppersmith, and Ruihong Huang. 2017. Recognizing Explicit and Implicit Hate Speech Using a Weakly Supervised Two-path Bootstrapping Approach. In Proceedings of the Eighth International Joint Conference on Natural Language Processing (Volume 1: Long Papers). Asian Federation of Natural Lan-guage Processing, Taipei, Taiwan, 774-782. https://aclanthology.org/117-1078",
-    "Aaron Grattafiori, Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, et al. 2024. The Llama 3 Herd of Models. arXiv:2407.21783 [cs.AI] https://arxiv.org/abs/2407.21783",
-    "Maarten Grootendorst. 2022. BERTopic: Neural topic modeling with a class-based TF-IDF procedure. arXiv:2203.05794 [cs.CL] https://arxiv.org/abs/2203.05794",
-    "Thomas Hartvigsen, Saadia Gabriel, Hamid Palangi, Maarten Sap, Dipankar Ray, and Ece Kamar. 2022. ToxiGen: A Large-Scale Machine-Generated Dataset for Adversarial and Implicit Hate Speech Detection. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). Association for Computational Linguistics, Dublin, Ireland, 3309-3326. doi:10.18653/v1/2022.acl-long.234",
-    "Edward J. Hu, yelong shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, and Weizhu Chen. 2022. LoRA: Low-Rank Adaptation of Large Language Models. In International Conference on Learning Representations. https://openreview.net/forum?id=nZeVKeeFYf9",
-    "Fan Huang, Haewoon Kwak, and Jisun An. 2023. Is ChatGPT better than Human Annotators? Potential and Limitations of ChatGPT in Explaining Implicit Hate Speech. In Companion Proceedings of the ACM Web Conference 2023 (Austin, TX, USA) (WWW '23 Companion). Association for Computing Machinery, New York, NY, USA, 294-297. doi:10.1145/3543873.3587368",
-    "Amir R. Jafari, Guanlin Li, Praboda Rajapaksha, Reza Farahbakhsh, and Noel Crespi. 2023. Fine-Grained Emotions Influence on Implicit Hate Speech Detection. IEEE Access 11 (2023), 105330-105343. doi:10.1109/ACCESS.2023.3318863",
-    "Albert Q. Jiang, Alexandre Sablayrolles, Arthur Mensch, Chris Bamford, De-vendra S. Chaplot, et al. 2023. Mistral 7B. arXiv:2310.06825 [cs.CL] https://arxiv.org/abs/2310.06825",
-    "Tianming Jiang. 2025. Learn from Failure: Causality-guided Contrastive Learning for Generalizable Implicit Hate Speech Detection. In Proceedings of the 31st Inter-national Conference on Computational Linguistics. Association for Computational Linguistics, Abu Dhabi, UAE, 8858-8867. https://aclanthology.org/2025.coling-main.593/",
-    "David Jurgens, Libby Hemphill, and Eshwar Chandrasekharan. 2019. A Just and Comprehensive Strategy for Using NLP to Address Online Abuse. In Pro-ceedings of the 57th Annual Meeting of the Association for Computational Lin-guistics. Association for Computational Linguistics, Florence, Italy, 3658-3666. doi:10.18653/v1/P19-1357",
-    "Jaehoon Kim, Seungwan Jin, Sohyun Park, Someen Park, and Kyungsik Han. 2024. Label-aware Hard Negative Sampling Strategies with Momentum Contrastive Learning for Implicit Hate Speech Detection. In Findings of the Association for Computational Linguistics: ACL 2024. Association for Computational Linguistics, Bangkok, Thailand, 16177-16188. doi:10.18653/v1/2024.findings-acl.957",
-    "Youngwook Kim, Shinwoo Park, and Yo-Sub Han. 2022. Generalizable Implicit Hate Speech Detection using Contrastive Learning. In Proceedings of the 29th International Conference on Computational Linguistics. International Committee on Computational Linguistics, Gyeongju, Republic of Korea, 6667-6679. https://aclanthology.org/2022.coling-1.579",
-    "Youngwook Kim, Shinwoo Park, Youngsoo Namgoong, and Yo-Sub Han. 2023. ConPrompt: Pre-training a Language Model with Machine-Generated Data for Implicit Hate Speech Detection. In Findings of the Association for Computational Linguistics: EMNLP 2023. Association for Computational Linguistics, Singapore, 10964-10980. doi:10.18653/v1/2023.findings-emnlp.731",
-    "Aditya Kusupati, Gantavya Bhatt, Aniket Rege, Matthew Wallingford, Aditya Sinha, Vivek Ramanujan, William Howard-Snyder, Kaifeng Chen, Sham Kakade, Prateek Jain, and Ali Farhadi. 2024. Matryoshka Representation Learning. arXiv:2205.13147 [cs.LG] https://arxiv.org/abs/2205.13147",
-    "Chankyu Lee, Rajarshi Roy, Mengyao Xu, Jonathan Raiman, Mohammad Shoeybi, Bryan Catanzaro, and Wei Ping. 2025. NV-Embed: Improved Techniques for Train-ing LLMs as Generalist Embedding Models. In The Thirteenth International Confer-ence on Learning Representations. https://openreview.net/forum?id=lgsyLSsDRe",
-    "Lingyao Li, Lizhou Fan, Shubham Atreja, and Libby Hemphill. 2024. \"HOT\" ChatGPT: The Promise of ChatGPT in Detecting and Discriminating Hateful, Offensive, and Toxic Comments on Social Media. ACM Trans. Web 18, 2 (2024), 36 pages. doi:10.1145/3643829",
-    "Jessica Lin. 2022. Leveraging World Knowledge in Implicit Hate Speech Detec-tion. In Proceedings of the Second Workshop on NLP for Positive Impact (NLP4PI). Association for Computational Linguistics, Abu Dhabi, United Arab Emirates (Hybrid), 31-39. doi:10.18653/v1/2022.nlp4pi-1.4",
-    "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. 2019. RoBERTa: A Robustly Optimized BERT Pretraining Approach. arXiv:1907.11692 [cs.CL] https://arxiv.org/abs/1907.11692",
-    "Ilya Loshchilov and Frank Hutter. 2019. Decoupled Weight Decay Regularization. In International Conference on Learning Representations. https://openreview.net/forum?id=Bkg6RiCqY7",
-    "Rijul Magu and Jiebo Luo. 2018. Determining Code Words in Euphemistic Hate Speech Using Word Embedding Networks. In Proceedings of the 2nd Workshop on Abusive Language Online (ALW2). Association for Computational Linguistics, Brussels, Belgium, 93-100. doi:10.18653/v1/W18-5112",
-    "Sarah Masud, Ashutosh Bajpai, and Tanmoy Chakraborty. 2024. Focal inferential infusion coupled with tractable density discrimination for implicit hate detection. Natural Language Processing (2024), 1-27. doi:10.1017/nlp.2024.60",
-    "Leland McInnes, John Healy, and James Melville. 2020. UMAP: Uni-form Manifold Approximation and Projection for Dimension Reduction. arXiv:1802.03426 [stat.ML] https://arxiv.org/abs/1802.03426",
-    "Changrong Min, Hongfei Lin, Ximing Li, He Zhao, Junyu Lu, Liang Yang, and Bo Xu. 2023. Finding hate speech with auxiliary emotion detection from self-training multi-label learning perspective. Information Fusion 96 (2023), 214-223. doi:10.1016/j.inffus.2023.03.015",
-    "Khouloud Mnassri, Praboda Rajapaksha, Reza Farahbakhsh, and Noel Crespi. 2023. Hate Speech and Offensive Language Detection Using an Emotion-Aware Shared Encoder. In ICC 2023 - IEEE International Conference on Communications. 2852-2857. doi:10.1109/ICC45041.2023.10279690",
-    "Marzieh Mozafari, Reza Farahbakhsh, and Noel Crespi. 2020. A BERT-Based Transfer Learning Approach for Hate Speech Detection in Online Social Media. In Complex Networks and Their Applications VIII: Volume 1 Proceedings of the Eighth International Conference on Complex Networks and Their Applications COMPLEX NETWORKS 2019 8. Springer International Publishing, Cham, 928-940.",
-    "Marzieh Mozafari, Reza Farahbakhsh, and Noël Crespi. 2020. Hate Speech Detection and Racial Bias Mitigation in Social Media based on BERT model. PloS one 15, 8 (2020), e0237861.",
-    "Nicolás B. Ocampo, Elena Cabrio, and Serena Villata. 2023. Unmasking the Hidden Meaning: Bridging Implicit and Explicit Hate Speech Embedding Representations. In Findings of the Association for Computational Linguistics: EMNLP 2023. Association for Computational Linguistics, Singapore, 6626-6637. doi:10.18653/v1/2023.findings-emnlp.441",
-    "Juan M. Pérez, Franco M. Luque, Demian Zayat, Martín Kondratzky, Agustín Moro, Pablo S. Serrati, Joaquín Zajac, Paula Miguel, Natalia Debandi, Agustín Gravano, et al. 2023. Assessing the Impact of Contextual Information in Hate Speech Detection. IEEE Access 11 (2023), 30575-30590. doi:10.1109/ACCESS.2023.3258973",
-    "Flor M. Plaza-Del-Arco, M. Dolores Molina-González, L. Alfonso Ureña-López, and María T. Martín-Valdivia. 2021. A Multi-Task Learning Approach to Hate Speech Detection Leveraging Sentiment Analysis. IEEE Access 9 (2021), 112478-112489. doi:10.1109/ACCESS.2021.3103697",
-    "Juan M. Pérez, Mariela Rajngewerc, Juan Carlos Giudici, Damián A. Furman, Franco Luque, Laura Alonso Alemany, and María Vanina Martínez. 2023. py-sentimiento: A Python Toolkit for Opinion Mining and Social NLP tasks. arXiv:2106.09462 [cs.CL] https://arxiv.org/abs/2106.09462",
-    "Jing Qian, Mai ElSherief, Elizabeth Belding, and William Y. Wang. 2019. Learning to Decipher Hate Symbols. In Proceedings of the 2019 Conference of the North Amer-ican Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers). Association for Computational Linguistics, Minneapolis, Minnesota, 3006-3015. doi:10.18653/v1/N19-1305",
-    "Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi Zhou, Wei Li, and Peter J. Liu. 2020. Exploring the limits of transfer learning with a unified text-to-text transformer. J. Mach. Learn. Res. 21, 1, Article 140 (Jan. 2020), 67 pages.",
-    "Hind Saleh, Areej Alhothali, and Kawthar Moria. 2023. Detection of Hate Speech using BERT and Hate Speech Word Embedding with Deep Model. Applied Artificial Intelligence 37, 1 (2023), 2166719.",
-    "Maarten Sap, Saadia Gabriel, Lianhui Qin, Dan Jurafsky, Noah A. Smith, and Yejin Choi. 2020. Social Bias Frames: Reasoning about Social and Power Implications of Language. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics. Association for Computational Linguistics, Online, 5477-5490. doi:10.18653/v1/2020.acl-main.486",
-    "Anna Schmidt and Michael Wiegand. 2017. A Survey on Hate Speech Detec-tion using Natural Language Processing. In Proceedings of the Fifth International Workshop on Natural Language Processing for Social Media. Association for Com-putational Linguistics, Valencia, Spain, 1-10. doi:10.18653/v1/W17-1101",
-    "Rohit Sridhar and Diyi Yang. 2022. Explaining Toxic Text via Knowledge En-hanced Text Generation. In Proceedings of the 2022 Conference of the North Amer-ican Chapter of the Association for Computational Linguistics: Human Language Technologies. Association for Computational Linguistics, Seattle, United States, 811-826. doi:10.18653/v1/2022.naacl-main.59",
-    "Gemma Team, Thomas Mesnard, Cassidy Hardin, Robert Dadashi, et al. 2024. Gemma: Open Models Based on Gemini Research and Technology. arXiv:2403.08295 [cs.CL] https://arxiv.org/abs/2403.08295",
-    "Michael Tschannen, Alexey Gritsenko, Xiao Wang, Muhammad F. Naeem, Ibrahim Alabdulmohsin, Nikhil Parthasarathy, Talfan Evans, Lucas Beyer, Ye Xia, Basil Mustafa, Olivier Hénaff, Jeremiah Harmsen, Andreas Steiner, and Xiaohua Zhai. 2025. SigLIP 2: Multilingual Vision-Language Encoders with Improved Semantic Understanding, Localization, and Dense Features. arXiv:2502.14786 [cs.CV] https://arxiv.org/abs/2502.14786",
-    "Bertie Vidgen, Tristan Thrush, Zeerak Waseem, and Douwe Kiela. 2021. Learn-ing from the Worst: Dynamically Generated Datasets to Improve Online Hate Detection. In Proceedings of the 59th Annual Meeting of the Association for Com-putational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers). Association for Computational Linguistics, Online, 1667-1682. doi:10.18653/v1/2021.acl-long.132",
-    "Liang Wang, Nan Yang, Xiaolong Huang, Binxing Jiao, Linjun Yang, Daxin Jiang, Rangan Majumder, and Furu Wei. 2024. Text Embeddings by Weakly-Supervised Contrastive Pre-training. arXiv:2212.03533 [cs.CL] https://arxiv.org/abs/2212.03533",
-    "Liang Wang, Nan Yang, Xiaolong Huang, Linjun Yang, Rangan Majumder, and Furu Wei. 2024. Multilingual E5 Text Embeddings: A Technical Report. arXiv:2402.05672 [cs.CL] https://arxiv.org/abs/2402.05672",
-    "William Warner and Julia Hirschberg. 2012. Detecting Hate Speech on the World Wide Web. In Proceedings of the Second Workshop on Language in Social Media. Association for Computational Linguistics, Montréal, Canada, 19-26. https://aclanthology.org/W12-2103",
-    "Zeerak Waseem, Thomas Davidson, Dana Warmsley, and Ingmar Weber. 2017. Understanding Abuse: A Typology of Abusive Language Detection Subtasks. In Proceedings of the First Workshop on Abusive Language Online. Association for Computational Linguistics, Vancouver, BC, Canada, 78-84. doi:10.18653/v1/W17-3012",
-    "Zeerak Waseem and Dirk Hovy. 2016. Hateful Symbols or Hateful People? Predictive Features for Hate Speech Detection on Twitter. In Proceedings of the NAACL Student Research Workshop. Association for Computational Linguistics, San Diego, California, 88-93. doi:10.18653/v1/N16-2013",
-    "An Yang, Anfeng Li, Baosong Yang, Beichen Zhang, et al. 2025. Qwen3 Technical Report. arXiv:2505.09388 [cs.CL] https://arxiv.org/abs/2505.09388",
-    "An Yang, Baosong Yang, Binyuan Hui, Bo Zheng, Bowen Yu, et al. 2024. Qwen2 Technical Report. arXiv:2407.10671 [cs.CL] https://arxiv.org/abs/2407.10671",
-    "Yongjin Yang, Joonkee Kim, Yujin Kim, Namgyu Ho, James Thorne, and Se-Young Yun. 2023. HARE: Explainable Hate Speech Detection with Step-by-Step Reasoning. In Findings of the Association for Computational Linguistics: EMNLP 2023. Association for Computational Linguistics, Singapore, 5490-5505. doi:10.18653/v1/2023.findings-emnlp.365",
-    "Ziyuan Yang, Ming Yan, Yingyu Chen, Hui Wang, Zexin Lu, and Yi Zhang. 2024. Trustworthy Hate Speech Detection Through Visual Augmentation. arXiv:2409.13557 [cs.CV] https://arxiv.org/abs/2409.13557",
-    "Jifan Yu, Xiaozhi Wang, Shangqing Tu, Shulin Cao, Daniel Zhang-Li, and other. 2024. KOLA: Carefully Benchmarking World Knowledge of Large Language Models. In The Twelfth International Conference on Learning Representations. https://openreview.net/forum?id=AqN23oqraW",
-    "Dun Zhang, Jiacheng Li, Ziyang Zeng, and Fulong Wang. 2025. Jasper and Stella: distillation of SOTA embedding models. arXiv:2412.19048 [cs.IR] https://arxiv.org/abs/2412.19048",
-    "Min Zhang, Jianfeng He, Taoran Ji, and Chang-Tien Lu. 2024. Don't Go To Extremes: Revealing the Excessive Sensitivity and Calibration Limitations of LLMs in Implicit Hate Speech Detection. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). Association for Computational Linguistics, Bangkok, Thailand, 12073-12086. doi:10.18653/v1/2024.acl-long.652",
-    "Xin Zhang, Yanzhao Zhang, Dingkun Long, Wen Xie, Ziqi Dai, Jialong Tang, Huan Lin, Baosong Yang, Pengjun Xie, Fei Huang, Meishan Zhang, Wenjie Li, and Min Zhang. 2024. mGTE: Generalized Long-Context Text Representation and Reranking Models for Multilingual Text Retrieval. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing: Industry Track. Association for Computational Linguistics, Miami, Florida, US, 1393-1412. doi:10.18653/v1/2024.emnlp-industry.103",
-    "Yiming Zhu, Peixian Zhang, Ehsan-Ul Haq, Pan Hui, and Gareth Tyson. 2023. Can ChatGPT Reproduce Human-Generated Labels? A Study of Social Computing Tasks. arXiv:2304.10145 [cs.AI] https://arxiv.org/abs/2304.10145"
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

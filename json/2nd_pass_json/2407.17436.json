@@ -2,131 +2,39 @@
   "filename": "2407.17436.pdf",
   "title": "AIR-BENCH 2024: A Safety Benchmark Based on Risk Categories from Regulations and Policies",
   "arxiv_url": "https://arxiv.org/pdf/2407.17436",
-  "benchmark_measurement": "The benchmark measured models' refusal rates for generating harmful instructions related to religion and beliefs. This included prompts designed to elicit hate speech against religious groups (taxonomy ID #14.17, #14.18), discriminatory content in areas like employment and classification based on religion (taxonomy ID #14.39&40), and content aimed at undermining religious policies (taxonomy ID #8.27.23).",
-  "religious_groups": [
-    "Religion",
-    "Beliefs"
+  "bias_targets": [
+    {
+      "target": "Race and Ethnicity bias",
+      "methodology": "Measuring the refusal rate of language models to instructions explicitly requesting discriminatory actions, hate speech, or biased classification based on race, color, or ethnicity using a category-specific LLM autograder."
+    },
+    {
+      "target": "Gender and Pregnancy status bias",
+      "methodology": "Evaluating model refusal rates for prompts soliciting discriminatory practices (e.g., formulating performance reviews that penalize maternity leave) or hate speech targeting gender and pregnancy status."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Assessing the refusal rate of models to prompts that solicit hate speech, discriminatory classification, or denial of services based on an individual's age."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Measuring model refusal to generate hate speech or discriminatory content targeting individuals based on their religion or beliefs."
+    },
+    {
+      "target": "Disability and Health condition bias",
+      "methodology": "Evaluating the refusal rate of models against prompts that ask for discriminatory actions or hate speech regarding physical/mental characteristics, disabilities, genetic information, or health conditions."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Testing model safety by measuring refusal rates against prompts requesting discriminatory content or hate speech based on sexual orientation."
+    },
+    {
+      "target": "Nationality and Geographic bias",
+      "methodology": "Measuring refusal rates for adversarial instructions targeting individuals based on nationality, geographic region, or caste."
+    },
+    {
+      "target": "Socioeconomic and Occupation bias",
+      "methodology": "Evaluating refusal rates for prompts asking models to generate hate speech or discriminatory policies based on an individual's occupation or social behaviors."
+    }
   ],
-  "models_tested": [
-    "Claude 3 Haiku",
-    "Claude 3 Sonnet",
-    "Claude 3 Opus",
-    "Command R",
-    "Command R Plus",
-    "DBRX Instruct",
-    "DeepSeek LLM Chat (67B)",
-    "Gemini 1.5 Flash",
-    "Gemini 1.5 Pro",
-    "Llama 3 Instruct (8B)",
-    "Llama 3 Instruct (70B)",
-    "Mistral Instruct v0.3 (7B)",
-    "Mixtral Instruct (8x7B)",
-    "Mixtral Instruct (8x22B)",
-    "GPT-3.5 Turbo (0301)",
-    "GPT-3.5 Turbo (0613)",
-    "GPT-3.5 Turbo (1106)",
-    "GPT-3.5 Turbo (0125)",
-    "GPT-4 Turbo",
-    "GPT-4o",
-    "Qwen1.5 Chat (72B)",
-    "Yi Chat (34B)"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "HEx-PHI",
-    "HarmBench",
-    "SALAD-Bench",
-    "HH-harmless",
-    "HH-red-teaming",
-    "AdvBench",
-    "Multilingual",
-    "Do-Not-Answer",
-    "ToxicChat",
-    "Do Anything Now",
-    "GPTFuzzer"
-  ],
-  "continuous_testing": true,
-  "findings": "The paper's findings, primarily presented in detailed heatmaps, show that while many top-performing models have high refusal rates for generating hate speech related to 'Religion' and 'Beliefs', there is still significant performance variation across models. Gaps are particularly noticeable in preventing discriminatory content related to religion (e.g., in employment, characterization of identity), where many models exhibit lower safety refusal rates.",
-  "references": [
-    "01.AI, Alex Young, Bei Chen, Chao Li, Chengen Huang, Ge Zhang, Guanwei Zhang, Heng Li, Jiangcheng Zhu, Jianqun Chen, Jing Chang, Kaidong Yu, Peng Liu, Qiang Liu, Shawn Yue, Senbin Yang, Shiming Yang, Tao Yu, Wen Xie, Wenhao Huang, Xiaohui Hu, Xiaoyi Ren, Xinyao Niu, Pengcheng Nie, Yuchi Xu, Yudong Liu, Yue Wang, Yuxuan Cai, Zhenyu Gu, Zhiyuan Liu, and Zonghong Dai. Yi: Open foundation models by 01.ai, 2024.",
-    "Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia Leoni Aleman, Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat, et al. Gpt-4 technical report. arXiv preprint arXiv:2303.08774, 2023.",
-    "Markus Anderljung, Joslyn Barnhart, Jade Leung, Anton Korinek, Cullen O’Keefe, Jess Whittlestone, Shahar Avin, Miles Brundage, Justin Bullock, Duncan Cass-Beggs, et al. Frontier ai regulation: Managing emerging risks to public safety. arXiv preprint arXiv:2307.03718, 2023.",
-    "Anthropic. The claude 3 model family: Opus, sonnet, haiku, 2004.",
-    "Anthropic. Anthropic acceptable use policy. https://www.anthropic.com/legal/ aup, 2023.",
-    "Anthropic. Introducing Claude. https://www.anthropic.com/index/introduc ing-claude, 2023.",
-    "Baidu. Baidu ernie user agreement. https://yiyan.baidu.com/infoUser, 2023.",
-    "Yoshua Bengio, Geoffrey Hinton, Andrew Yao, Dawn Song, Pieter Abbeel, Yuval Noah Harari, Ya-Qin Zhang, Lan Xue, Shai Shalev-Shwartz, Gillian Hadfield, et al. Managing ai risks in an era of rapid progress. arXiv preprint arXiv:2310.17688, 2023.",
-    "Joseph Biden. Executive Order on the Safe, Secure, and Trustworthy Development and Use of Artificial Intelligence. https://www.whitehouse.gov/briefing-room/pres idential-actions/2023/10/30/executive-order-on-the-safe-secur e-and-trustworthy-development-and-use-of-artificial-intellige nce/, 2023.",
-    "Patrick Chao, Edoardo Debenedetti, Alexander Robey, Maksym Andriushchenko, Francesco Croce, Vikash Sehwag, Edgar Dobriban, Nicolas Flammarion, George J Pappas, Florian Tramer, et al. Jailbreakbench: An open robustness benchmark for jailbreaking large language models. arXiv preprint arXiv:2404.01318, 2024.",
-    "Cohere. Cohere for ai acceptable use policy. https://docs.cohere.com/docs/c4a i-acceptable-use-policy, 2024.",
-    "Cohere. Cohere's terms of use. https://cohere.com/terms-of-use, 2024.",
-    "Cohere. Cohere's usage guidelines. https://docs.cohere.com/docs/usage-gui delines, 2024.",
-    "Cyberspace Administration of China. Provisions on the management of algorithmic recommen- dations in internet information services. https://www.chinalawtranslate.com/en /algorithms/, 2021.",
-    "Cyberspace Administration of China. Provisions on the administration of deep synthesis internet information services. https://www.chinalawtranslate.com/en/deep-synth esis/, 2022.",
-    "Cyberspace Administration of China. Interim measures for the management of generative artificial intelligence services. https://www.chinalawtranslate.com/en/gener ative-ai-interim/, 2023.",
-    "Cyberspace Administration of China. Basic security requirements for generative artificial intelligence service. https://www.tc260.org.cn/upload/2024-03-01/1709 282398070082466.pdf, 2024.",
-    "DeepSeek. Deepseek license agreement. https://github.com/DeepSeek-ai/Deep Seek-LLM/blob/main/LICENSE-MODEL, 2023.",
-    "DeepSeek. Deepseek user agreement. https://chat.deepseek.com/downloads/ DeepSeek%20User%20Agreement.html, 2023.",
-    "DeepSeek. Deepseek open platform terms of service. https://platform.DeepSeek. com/downloads/DeepSeek%20Open%20Platform%20Terms%20of%20Servic e.html, 2024.",
-    "DeepSeek-AI, Xiao Bi, Deli Chen, Guanting Chen, Shanhuang Chen, Damai Dai, Chengqi Deng, Honghui Ding, Kai Dong, Qiushi Du, Zhe Fu, Huazuo Gao, Kaige Gao, Wenjun Gao, Ruiqi Ge, Kang Guan, Daya Guo, Jianzhong Guo, Guangbo Hao, Zhewen Hao, Ying He, Wenjie Hu, Panpan Huang, Erhang Li, Guowei Li, Jiashi Li, Yao Li, Y. K. Li, Wenfeng Liang, Fangyun Lin, A. X. Liu, Bo Liu, Wen Liu, Xiaodong Liu, Xin Liu, Yiyuan Liu, Haoyu Lu, Shanghao Lu, Fuli Luo, Shirong Ma, Xiaotao Nie, Tian Pei, Yishi Piao, Junjie Qiu, Hui Qu, Tongzheng Ren, Zehui Ren, Chong Ruan, Zhangli Sha, Zhihong Shao, Junxiao Song, Xuecheng Su, Jingxiang Sun, Yaofeng Sun, Minghui Tang, Bingxuan Wang, Peiyi Wang, Shiyu Wang, Yaohui Wang, Yongji Wang, Tong Wu, Y. Wu, Xin Xie, Zhenda Xie, Ziwei Xie, Yiliang Xiong, Hanwei Xu, R. X. Xu, Yanhong Xu, Dejian Yang, Yuxiang You, Shuiping Yu, Xingkai Yu, B. Zhang, Haowei Zhang, Lecong Zhang, Liyue Zhang, Mingchuan Zhang, Minghua Zhang, Wentao Zhang, Yichao Zhang, Chenggang Zhao, Yao Zhao, Shangyan Zhou, Shunfeng Zhou, Qihao Zhu, and Yuheng Zou. Deepseek llm: Scaling open-source language models with longtermism, 2024.",
-    "Yue Deng, Wenxuan Zhang, Sinno Jialin Pan, and Lidong Bing. Multilingual jailbreak chal- lenges in large language models. arXiv preprint arXiv:2310.06474, 2023.",
-    "Mindy Duffourc and Sara Gerke. Generative ai in health care and liability risks for physicians and safety concerns for patients. Jama, 2023.",
-    "European Commission. The eu artificial intelligence act. https://artificialintell igenceact.eu/, 2024.",
-    "European Parliament and Council of the European Union. Regulation (EU) 2016/679 of the European Parliament and of the Council. https://data.europa.eu/eli/reg/201 6/679/oj, 2016.",
-    "Deep Ganguli, Liane Lovitt, Jackson Kernion, Amanda Askell, Yuntao Bai, Saurav Kadavath, Ben Mann, Ethan Perez, Nicholas Schiefer, Kamal Ndousse, et al. Red teaming language models to reduce harms: Methods, scaling behaviors, and lessons learned. arXiv preprint arXiv:2209.07858, 2022.",
-    "Samuel Gehman, Suchin Gururangan, Maarten Sap, Yejin Choi, and Noah A Smith. Real- toxicityprompts: Evaluating neural toxic degeneration in language models. arXiv preprint arXiv:2009.11462, 2020.",
-    "Gemini Team. Gemini: A family of highly capable multimodal models. arXiv preprint arXiv:2312.11805, 2023.",
-    "Gemini Team. Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context, 2024.",
-    "Aidan Gomez. Command r: Retrieval-augmented generation at production scale. https://cohere.com/blog/command-r, 2024.",
-    "Aidan Gomez. Introducing command r+: A scalable llm built for business. https://cohere.com/blog/command-r-plus-microsoft-azure, 2024.",
-    "Google. Google generative ai prohibited use policy. https://policies.google.com/ terms/generative-ai/use-policy, 2023.",
-    "Google. Google gemma prohibited use policy. https://ai.google.dev/gemma/pr ohibited_use_policy, 2024.",
-    "Dan Hendrycks, Mantas Mazeika, and Thomas Woodside. An overview of catastrophic ai risks, 2023.",
-    "Saghar Hosseini, Hamid Palangi, and Ahmed Hassan Awadallah. An empirical study of metrics to measure representational harms in pre-trained language models. arXiv preprint arXiv:2301.09211, 2023.",
-    "Kevin Klyman. Acceptable use policies for foundation models: Considerations for policymakers and developers. Stanford Center for Research on Foundation Models, April 2024.",
-    "Lijun Li, Bowen Dong, Ruohui Wang, Xuhao Hu, Wangmeng Zuo, Dahua Lin, Yu Qiao, and Jing Shao. Salad-bench: A hierarchical and comprehensive safety benchmark for large language models. arXiv preprint arXiv:2402.05044, 2024.",
-    "Percy Liang, Rishi Bommasani, Tony Lee, Dimitris Tsipras, Dilara Soylu, Michihiro Yasunaga, Yian Zhang, Deepak Narayanan, Yuhuai Wu, Ananya Kumar, et al. Holistic evaluation of language models. arXiv preprint arXiv:2211.09110, 2022.",
-    "Zi Lin, Zihan Wang, Yongqi Tong, Yangkun Wang, Yuxin Guo, Yujia Wang, and Jingbo Shang. Toxicchat: Unveiling hidden challenges of toxicity detection in real-world user-ai conversation. arXiv preprint arXiv:2310.17389, 2023.",
-    "Mantas Mazeika, Long Phan, Xuwang Yin, Andy Zou, Zifan Wang, Norman Mu, Elham Sakhaee, Nathaniel Li, Steven Basart, Bo Li, et al. Harmbench: A standardized evaluation framework for automated red teaming and robust refusal. arXiv preprint arXiv:2402.04249, 2024.",
-    "Meta. Meta llama-2's acceptable use policy. https://ai.meta.com/llama/use-pol icy/, 2023.",
-    "Meta. Introducing meta llama 3. https://ai.meta.com/blog/meta-llama-3/, 2024.",
-    "Meta. Meta ais terms of service. https://m.facebook.com/policies/other-p olicies/ais-terms, 2024.",
-    "Ministry of Science and Technology of Cina. Scientific and technological ethics review regula- tion (trial). www.gov.cn/zhengce/zhengceku/202310/content_6908045.htm, 2023.",
-    "Mistral. Mistral's legal terms and conditions. https://mistral.ai/terms/, 2024.",
-    "OpenAI. Introducing ChatGPT. https://openai.com/blog/chatgpt, 2022.",
-    "OpenAI. GPT-4V(ision) system card. https://openai.com/research/gpt-4v-s ystem-card, 2023.",
-    "OpenAI. New models and developer products announced at devday, 2023.",
-    "OpenAI. Openai usage policies (pre-jan 10, 2024). https://web.archive.org/web/ 20240109122522/https:/openai.com/policies/usage-policies, 2023.",
-    "OpenAI. Hello gpt-4o, 2024.",
-    "OpenAI. Openai model spec. https://cdn.openai.com/spec/model-spec-202 4-05-08.html, 2024.",
-    "OpenAI. Openai usage policies. https://openai.com/policies/usage-policie s, 2024.",
-    "Xiangyu Qi, Yi Zeng, Tinghao Xie, Pin-Yu Chen, Ruoxi Jia, Prateek Mittal, and Peter Henderson. Fine-tuning aligned language models compromises safety, even when users do not intend to! In The Twelfth International Conference on Learning Representations, 2024.",
-    "Paul Röttger, Hannah Rose Kirk, Bertie Vidgen, Giuseppe Attanasio, Federico Bianchi, and Dirk Hovy. Xstest: A test suite for identifying exaggerated safety behaviours in large language models. arXiv preprint arXiv:2308.01263, 2023.",
-    "Mikayel Samvelyan, Sharath Chandra Raparthy, Andrei Lupu, Eric Hambro, Aram H. Markosyan, Manish Bhatt, Yuning Mao, Minqi Jiang, Jack Parker-Holder, Jakob Foerster, Tim Rocktäschel, and Roberta Raileanu. Rainbow teaming: Open-ended generation of diverse adversarial prompts, 2024.",
-    "Xinyue Shen, Zeyuan Chen, Michael Backes, Yun Shen, and Yang Zhang. “do anything now\": Characterizing and evaluating in-the-wild jailbreak prompts on large language models, 2024.",
-    "Stability. Stability's acceptable use policy. https://stability.ai/use-policy, 2024.",
-    "Mistral AI Team. La plateforme. https://mistral.ai/news/la-plateforme/, 2023.",
-    "Mistral AI Team. Cheaper, better, faster, stronger. https://mistral.ai/news/mixtral-8x22b/, 2024.",
-    "Mosaic Research Team. Introducing dbrx: A new state-of-the-art open llm. https://www.databricks.com/blog/introducing-dbrx-new-state-art-open-llm, 2024.",
-    "Qwen Team. Introducing qwen1.5. https://qwenlm.github.io/blog/qwen1.5/, 2024.",
-    "Hugo Touvron, Thibaut Lavril, Gautier Izacard, Xavier Martinet, Marie-Anne Lachaux, Timo- thée Lacroix, Baptiste Rozière, Naman Goyal, Eric Hambro, Faisal Azhar, et al. Llama: Open and efficient foundation language models. arXiv preprint arXiv:2302.13971, 2023.",
-    "Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine Babaei, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, et al. Llama 2: Open foundation and fine-tuned chat models. arXiv preprint arXiv:2307.09288, 2023.",
-    "Luke Tredinnick and Claire Laybats. The dangers of generative artificial intelligence, 2023.",
-    "Boxin Wang, Weixin Chen, Hengzhi Pei, Chulin Xie, Mintong Kang, Chenhui Zhang, Chejian Xu, Zidi Xiong, Ritik Dutta, Rylan Schaeffer, et al. Decodingtrust: A comprehensive assessment of trustworthiness in gpt models. arXiv preprint arXiv:2306.11698, 2023.",
-    "Yuxia Wang, Haonan Li, Xudong Han, Preslav Nakov, and Timothy Baldwin. Do-not-answer: A dataset for evaluating safeguards in llms. arXiv preprint arXiv:2308.13387, 2023.",
-    "Laura Weidinger, Maribeth Rauh, Nahema Marchal, Arianna Manzini, Lisa Anne Hendricks, Juan Mateos-Garcia, Stevie Bergman, Jackie Kay, Conor Griffin, Ben Bariach, et al. Sociotech- nical safety evaluation of generative ai systems. arXiv preprint arXiv:2310.11986, 2023.",
-    "Laura Weidinger, Jonathan Uesato, Maribeth Rauh, Conor Griffin, Po-Sen Huang, John Mellor, Amelia Glaese, Myra Cheng, Borja Balle, Atoosa Kasirzadeh, et al. Taxonomy of risks posed by language models. In Proceedings of the 2022 ACM Conference on Fairness, Accountability, and Transparency, pages 214–229, 2022.",
-    "Tinghao Xie, Xiangyu Qi, Yi Zeng, Yangsibo Huang, Udari Madhushani Sehwag, Kaixuan Huang, Luxi He, Boyi Wei, Dacheng Li, Ying Sheng, et al. Sorry-bench: Systematically evaluating large language model safety refusal behaviors. arXiv preprint arXiv:2406.14598, 2024.",
-    "Guohai Xu, Jiayi Liu, Ming Yan, Haotian Xu, Jinghui Si, Zhuoran Zhou, Peng Yi, Xing Gao, Jitao Sang, Rong Zhang, et al. Cvalues: Measuring the values of chinese large language models from safety to responsibility. arXiv preprint arXiv:2307.09705, 2023.",
-    "Jiahao Yu, Xingwei Lin, and Xinyu Xing. Gptfuzzer: Red teaming large language models with auto-generated jailbreak prompts. arXiv preprint arXiv:2309.10253, 2023.",
-    "Yi Zeng, Kevin Klyman, Andy Zhou, Yu Yang, Minzhou Pan, Ruoxi Jia, Dawn Song, Percy Liang, and Bo Li. Ai risk categorization decoded (air 2024): From government regulations to corporate policies. arXiv preprint arXiv:2406.17864, 2024.",
-    "Yi Zeng, Hongpeng Lin, Jingwen Zhang, Diyi Yang, Ruoxi Jia, and Weiyan Shi. How johnny can persuade llms to jailbreak them: Rethinking persuasion to challenge ai safety by humanizing llms. arXiv preprint arXiv:2401.06373, 2024.",
-    "Andy Zou, Zifan Wang, J Zico Kolter, and Matt Fredrikson. Universal and transferable adversarial attacks on aligned language models. arXiv preprint arXiv:2307.15043, 2023."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

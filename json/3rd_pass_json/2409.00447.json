@@ -2,15 +2,70 @@
   "filename": "2409.00447.pdf",
   "title": "The MERIT Dataset: Modelling and Efficiently Rendering Interpretable Transcripts",
   "arxiv_url": "https://arxiv.org/pdf/2409.00447",
-  "bias_targets": [
-    {
-      "target": "Gender bias",
-      "methodology": "Generating synthetic school transcripts where student grades are statistically modulated based on the gender associated with the student's name, using real-world distribution parameters from PISA reports. This allows for controlled benchmarking of LLMs to detect if they use gender-based learned biases rather than objective grade data in downstream tasks like candidate selection."
-    },
-    {
-      "target": "Cultural and Nationality bias",
-      "methodology": "Modulating synthetic student grades according to the cultural, ethnic, or national origin of the student's name (e.g., English, Spanish, Chinese, Indian, Arabic, Sub-Saharan) using corresponding PISA report averages. This enables the evaluation of whether LLMs unfairly associate specific name origins with academic performance or capability."
-    }
+  "religious_groups": [],
+  "models_tested": [
+    "LayoutLMv2",
+    "LayoutLMv3",
+    "LayoutXLM"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "languages_evaluated": [
+    "English",
+    "Spanish"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "none",
+  "base_benchmarks": [
+    "FUNSD",
+    "XFUND"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper does not contain any findings related to religion.",
+  "references": [
+    "I. Goodfellow, J. Pouget-Abadie, M. Mirza, B. Xu, D. Warde-Farley, S. Ozair, A. Courville, Y. Bengio, Generative adversarial networks, Communications of the ACM 63 (2020) 139–144.",
+    "J. Devlin, M.-W. Chang, K. Lee, K. Toutanova, Bert: Pre-training of deep bidirectional transformers for language understanding, arXiv preprint arXiv:1810.04805 (2018).",
+    "A. Dosovitskiy, L. Beyer, A. Kolesnikov, D. Weissenborn, X. Zhai, T. Unterthiner, M. Dehghani, M. Minderer, G. Heigold, S. Gelly, et al., An image is worth 16x16 words: Transformers for image recognition at scale, arXiv preprint arXiv:2010.11929 (2020).",
+    "P. Verma, J. Berger, Audio transformers: Transformer architectures for large scale audio understanding. adieu convolutions, arXiv preprint arXiv:2105.00335 (2021).",
+    "Y. Xu, T. Lv, L. Cui, G. Wang, Y. Lu, D. Florencio, C. Zhang, F. Wei, Layoutxlm: Multimodal pre-training for multilingual visually-rich document understanding, arXiv preprint arXiv:2104.08836 (2021).",
+    "G. Jaume, H. K. Ekenel, J.-P. Thiran, Funsd: A dataset for form understanding in noisy scanned documents, in: 2019 International Conference on Document Analysis and Recognition Workshops (ICDARW), volume 2, IEEE, 2019, pp. 1–6.",
+    "Y. Xu, T. Lv, L. Cui, G. Wang, Y. Lu, D. Florencio, C. Zhang, F. Wei, XFUND: A benchmark dataset for multilingual visually rich form understanding, in: Findings of the Association for Computational Linguistics: ACL 2022, Association for Computational Linguistics, Dublin, Ireland, 2022, pp. 3214–3224. URL: https://aclanthology.org/2022.findings-acl.253. doi:10.18653/v1/2022.findings-acl.253.",
+    "S. Park, S. Shin, B. Lee, J. Lee, J. Surh, M. Seo, H. Lee, Cord: a consolidated receipt dataset for post-ocr parsing, in: Workshop on Document Intelligence at NeurIPS 2019, 2019.",
+    "Z. Huang, K. Chen, J. He, X. Bai, D. Karatzas, S. Lu, C. Jawahar, Icdar2019 competition on scanned receipt ocr and information extraction, in: 2019 International Conference on Document Analysis and Recognition (ICDAR), IEEE, 2019, pp. 1516–1520.",
+    "J. Redmon, S. Divvala, R. Girshick, A. Farhadi, You only look once: Unified, real-time object detection, in: Proceedings of the IEEE conference on computer vision and pattern recognition, 2016, pp. 779–788.",
+    "A. Vaswani, N. Shazeer, N. Parmar, J. Uszkoreit, L. Jones, A. N. Gomez, L. Kaiser, I. Polosukhin, Attention is all you need, Advances in neural information processing systems 30 (2017).",
+    "Y. Xu, M. Li, L. Cui, S. Huang, F. Wei, M. Zhou, Layoutlm: Pretraining of text and layout for document image understanding, in: Proceedings of the 26th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining, 2020, pp. 1192–1200.",
+    "R. Ali, U. Farooq, U. Arshad, W. Shahzad, M. O. Beg, Hate speech detection on twitter using transfer learning, Computer Speech & Language 74 (2022) 101365.",
+    "V. Hofmann, P. R. Kalluri, D. Jurafsky, S. King, Dialect prejudice predicts ai decisions about people’s character, employability, and criminality, arXiv preprint arXiv:2403.00742 (2024).",
+    "S. Feng, B. M. Halpern, O. Kudina, O. Scharenborg, Towards inclusive automatic speech recognition, Computer Speech & Language 84 (2024) 101567.",
+    "Y. Huang, T. Lv, L. Cui, Y. Lu, F. Wei, Layoutlmv3: Pre-training for document ai with unified text and image masking, arXiv preprint arXiv:2204.08387 (2022).",
+    "G. Kim, T. Hong, M. Yim, J. Park, J. Yim, W. Hwang, S. Yun, D. Han, S. Park, Donut: Document understanding transformer without ocr, arXiv preprint arXiv:2111.15664 7 (2021) 2.",
+    "Z. Tang, Z. Yang, G. Wang, Y. Fang, Y. Liu, C. Zhu, M. Zeng, C. Zhang, M. Bansal, Unifying vision, text, and layout for universal document processing, in: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2023, pp. 19254–19264.",
+    "N. Ringland, X. Dai, B. Hachey, S. Karimi, C. Paris, J. R. Curran, Nne: A dataset for nested named entity recognition in english newswire, arXiv preprint arXiv:1906.01359 (2019).",
+    "M. Marcus, B. Santorini, M. A. Marcinkiewicz, Building a large annotated corpus of english: The penn treebank, Computational linguistics 19 (1993) 313–330.",
+    "X. Zhong, J. Tang, A. J. Yepes, Publaynet: largest dataset ever for document layout analysis, in: 2019 International conference on document analysis and recognition (ICDAR), IEEE, 2019, pp. 1015–1022.",
+    "M. Mathew, D. Karatzas, C. Jawahar, Docvqa: A dataset for vqa on document images, in: Proceedings of the IEEE/CVF winter conference on applications of computer vision, 2021, pp. 2200–2209.",
+    "Y. Ding, S. Luo, H. Chung, S. C. Han, Vqa: A new dataset for real-world vqa on pdf documents, in: Joint European Conference on Machine Learning and Knowledge Discovery in Databases, Springer, 2023, pp. 585–601.",
+    "R. Tanaka, K. Nishida, K. Nishida, T. Hasegawa, I. Saito, K. Saito, Slidevqa: A dataset for document visual question answering on multiple images, in: Proceedings of the AAAI Conference on Artificial Intelligence, volume 37, 2023, pp. 13636–13645.",
+    "M. Mathew, V. Bagal, R. Tito, D. Karatzas, E. Valveny, C. Jawahar, Infographicvqa, in: Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision, 2022, pp. 1697–1706.",
+    "M. Jaderberg, A. Vedaldi, A. Zisserman, Deep features for text spotting, in: Computer Vision–ECCV 2014: 13th European Conference, Zurich, Switzerland, September 6-12, 2014, Proceedings, Part IV 13, Springer, 2014, pp. 512–528.",
+    "N. Gurjar, S. Sudholt, G. A. Fink, Learning deep representations for word spotting under weak supervision, in: 2018 13th IAPR international workshop on document analysis systems (DAS), IEEE, 2018, pp. 7–12.",
+    "P. Krishnan, C. Jawahar, Generating synthetic data for text recognition, arXiv preprint arXiv:1608.04224 (2016).",
+    "C. Mayershofer, T. Ge, J. Fottner, Towards fully-synthetic training for industrial applications, in: LISS 2020: Proceedings of the 10th International Conference on Logistics, Informatics and Service Sciences, Springer, 2021, pp. 765–782.",
+    "D. Rohe, E. Jones, Generation of synthetic digital image correlation images using the open-source blender software, Experimental Techniques 46 (2022) 615–631.",
+    "J. Cartucho, S. Tukra, Y. Li, D. S. Elson, S. Giannarou, Visionblender: a tool to efficiently generate computer vision datasets for robotic surgery, Computer Methods in Biomechanics and Biomedical Engineering: Imaging & Visualization (2020) 1–8.",
+    "M. Denninger, M. Sundermeyer, D. Winkelbauer, D. Olefir, T. Hodan, Y. Zidan, M. Elbadrawy, M. Knauer, H. Katam, A. Lodhi, Blenderproc: Reducing the reality gap with photorealistic rendering, in: International Conference on Robotics: Sciene and Systems, RSS 2020, 2020.",
+    "S. Ren, K. He, R. Girshick, J. Sun, Faster r-cnn: Towards real-time object detection with region proposal networks, IEEE transactions on pattern analysis and machine intelligence 39 (2016) 1137–1149.",
+    "Y. Xu, Y. Xu, T. Lv, L. Cui, F. Wei, G. Wang, Y. Lu, D. Florencio, C. Zhang, W. Che, et al., Layoutlmv2: Multi-modal pre-training for visually-rich document understanding, arXiv preprint arXiv:2012.14740 (2020).",
+    "R. Palacios, A. Gupta, A system for processing handwritten bank checks automatically, Image and Vision Computing 26 (2008) 1297–1313.",
+    "Z. Gu, C. Meng, K. Wang, J. Lan, W. Wang, M. Gu, L. Zhang, Xylayoutlm: Towards layout-aware multimodal networks for visually-rich document understanding, in: Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, 2022, pp. 4583–4592.",
+    "M. Dhouib, G. Bettaieb, A. Shabou, Docparser: End-to-end ocr-free information extraction from visually rich documents, in: International Conference on Document Analysis and Recognition, Springer, 2023, pp. 155–172.",
+    "D.-T. Lee, B. J. Schachter, Two algorithms for constructing a delaunay triangulation, International Journal of Computer & Information Sciences 9 (1980) 219–242.",
+    "A. S. Luccioni, Y. Jernite, E. Strubell, Power hungry processing: Watts driving the cost of ai deployment?, arXiv preprint arXiv:2311.16863 (2023).",
+    "OECD, PISA 2022 Results (Volume I), 2023. URL: https://www.oecd-ilibrary.org/content/publication/53f23881-en. doi:https://doi.org/https://doi.org/10.1787/53f23881-en.",
+    "Maurice Walker, Pisa 2009 plus results, https:/web.archive.org/web/20111222065347/https:/mypisa.acer.edu.au/images/mypisadoc/acer_pisa%202009%2B%20international.pdf, 2009. Accessed on February 13, 2024.",
+    "République du Sénégal, Ministère de l'Éducation nationale, L'Education au sénégal. résultats de l'enquête pisa-d 2017 au sénegal, https:/www.oecd.org/pisa/pisa-for-development/Senegal_PISA_D_national_report.pdf, 2017. Accessed on February 13, 2024.",
+    "Organisation for Economic Co-operation and Development (OECD), Pisa frequently asked questions, https://www.oecd.org/pisa/pisafaq/, 2023. Accessed on February 14, 2023."
+  ],
+  "measurement_description": "The benchmark did not measure faith or religion. It was designed to measure model performance on Visually-rich Document Understanding (VrDU) tasks and to benchmark biases related to gender and national/ethnic origin based on student names."
 }

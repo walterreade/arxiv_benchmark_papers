@@ -2,90 +2,23 @@
   "filename": "2304.00913.pdf",
   "title": "LAHM : Large Annotated Dataset for Multi-Domain and Multilingual Hate Speech Identification",
   "arxiv_url": "https://arxiv.org/pdf/2304.00913",
-  "benchmark_measurement": "The benchmark measures the ability of models to detect 'Religious Hate' speech, defined as discrimination treating a person or group differently because of the particular faith/belief which they hold about a religion.",
-  "religious_groups": [
-    "Islam",
-    "Judaism"
+  "bias_targets": [
+    {
+      "target": "Racial, Ethnic, and Nationality bias",
+      "methodology": "Evaluating multi-class hate speech detection models (e.g., mBERT, DistilBERT) in cross-lingual and translated settings on a newly curated multilingual dataset to classify text in the 'Racism' domain using precision, recall, and F1-score."
+    },
+    {
+      "target": "Gender and Sexual Orientation bias",
+      "methodology": "Evaluating multi-class hate speech detection models (e.g., mBERT, DistilBERT) in cross-lingual and translated settings on a newly curated multilingual dataset to classify text in the 'Sexism' domain using precision, recall, and F1-score."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluating multi-class hate speech detection models (e.g., mBERT, DistilBERT) in cross-lingual and translated settings on a newly curated multilingual dataset to classify text in the 'Religious Hate' domain using precision, recall, and F1-score."
+    },
+    {
+      "target": "Political and Ideological bias (Extremism)",
+      "methodology": "Evaluating multi-class hate speech detection models (e.g., mBERT, DistilBERT) in cross-lingual and translated settings on a newly curated multilingual dataset to classify text in the 'Extremism' domain using precision, recall, and F1-score."
+    }
   ],
-  "models_tested": [
-    "mbert",
-    "distilbert-base-uncased",
-    "Hate-speech-CNERG/dehatebert-mono-english",
-    "l3cube-pune/hate-multi-roberta-hasoc-hindi",
-    "Hate-speech-CNERG/dehatebert-mono-french",
-    "Hate-speech-CNERG/dehatebert-mono-german",
-    "Hate-speech-CNERG/dehatebert-mono-spanish",
-    "m2m-100-1.2B",
-    "IndicTrans",
-    "Google Perspective API"
-  ],
-  "languages_evaluated": [
-    "English",
-    "Hindi",
-    "Arabic",
-    "French",
-    "German",
-    "Spanish"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "HateBase",
-    "GAO hatefulness",
-    "TRAC",
-    "OLID",
-    "Waseem",
-    "MLMA",
-    "Wulczyn (attack)",
-    "CONAN",
-    "MMHS150k",
-    "HASOC",
-    "Founta"
-  ],
-  "continuous_testing": false,
-  "findings": "Models fine-tuned on an aggregated English dataset (HSMerge) demonstrated high performance in identifying 'religious hate' speech, achieving an F1-score of 0.92 for translated text and 0.93 in a zero-shot cross-lingual setting. The distribution of predicted religious hate speech varied across languages, with the 'religious hate' category having the lowest overall prediction counts in both the cross-lingual and machine-translation-based experiments.",
-  "references": [
-    "N. Ousidhoum, Z. Lin, H. Zhang, Y. Song, D.-Y. Yeung, Multilingual and multi-aspect hate speech analysis, in: Proceedings of EMNLP, Association for Computational Linguistics, 2019.",
-    "Y.-L. Chung, E. Kuzmenko, S. S. Tekiroglu, M. Guerini, Conan–counter narratives through nichesourcing: a multilingual dataset of responses to fight online hate speech, arXiv preprint arXiv:1910.03270 (2019).",
-    "T. Davidson, D. Warmsley, M. Macy, I. Weber, Automated hate speech detection and the problem of offensive language, in: Proceedings of the International AAAI Conference on Web and Social Media, volume 11, 2017.",
-    "V. Kolhatkar, M. Taboada, A corpus for the analysis of online news comments (????).",
-    "L. Gao, R. Huang, Detecting online hate speech using context aware models, arXiv preprint arXiv:1710.07395 (2017).",
-    "R. Kumar, A. K. Ojha, S. Malmasi, M. Zampieri, Benchmarking aggression identification in social media, in: Proceedings of the First Workshop on Trolling, Aggression and Cyberbullying (TRAC-2018), 2018, pp. 1–11.",
-    "E. Wulczyn, N. Thain, L. Dixon, Ex machina: Personal attacks seen at scale, in: Proceedings of the 26th international conference on world wide web, 2017, pp. 1391–1399.",
-    "Z. Waseem, D. Hovy, Hateful symbols or hateful people? predictive features for hate speech detection on twitter, in: Proceedings of the NAACL Student Research Workshop, Association for Computational Linguistics, San Diego, California, 2016, pp. 88–93. URL: http://www.aclweb.org/anthology/N16-2013.",
-    "T. Mandl, S. Modha, C. Mandlia, D. Patel, A. Patel, M. Dave, Hasoc-hate speech and offensive content identification in indo-european languages, 2019.",
-    "A. Basile, C. Rubagotti, Crotonemilano for ami at evalita2018. a performant, cross-lingual misogyny detection system., EVALITA Evaluation of NLP and Speech Tools for Italian 12 (2018) 206.",
-    "M. Wiegand, M. Siegel, J. Ruppenhofer, Overview of the germeval 2018 shared task on the identification of offensive language (2018).",
-    "J. Salminen, M. Hopf, S. A. Chowdhury, S.-g. Jung, H. Almerekhi, B. J. Jansen, Developing an online hate classifier for multiple social media platforms, Human-centric Computing and Information Sciences 10 (2020) 1–34.",
-    "S. A. Chowdhury, H. Mubarak, A. Abdelali, S.-g. Jung, B. J. Jansen, J. Salminen, A multi-platform arabic news comment dataset for offensive language detection, in: Proceedings of the 12th Language Resources and Evaluation Conference, 2020, pp. 6203–6212.",
-    "M. Wiegand, J. Ruppenhofer, A. Schmidt, C. Greenberg, Inducing a lexicon of abusive words–a feature-based approach (2018).",
-    "M. Karan, J. Šnajder, Cross-domain detection of abusive language online, in: Proceedings of the 2nd workshop on abusive language online (ALW2), 2018, pp. 132–137.",
-    "E. W. Pamungkas, V. Patti, Cross-domain and cross-lingual abusive language detection: A hybrid approach with deep learning and a multilingual lexicon, in: Proceedings of the 57th annual meeting of the association for computational linguistics: Student research workshop, 2019, pp. 363–370.",
-    "E. W. Pamungkas, V. Basile, V. Patti, Misogyny detection in twitter: a multilingual and cross-domain study, Information Processing & Management 57 (2020) 102360.",
-    "J. S. Meyer, B. Gambäck, A platform agnostic dual-strand hate speech detector, in: ACL 2019 The Third Workshop on Abusive Language Online Proceedings of the Workshop, Association for Computational Linguistics, 2019.",
-    "K. Wang, D. Lu, S. C. Han, S. Long, J. Poon, Detect all abuse! toward universal abusive language detection models, arXiv preprint arXiv:2010.03776 (2020).",
-    "A. Arango, J. Pérez, B. Poblete, Hate speech detection is not as easy as you may think: A closer look at model validation, in: Proceedings of the 42nd international acm sigir conference on research and development in information retrieval, 2019, pp. 45–54.",
-    "Z. Waseem, J. Thorne, J. Bingel, Bridging the gaps: Multi task learning for domain transfer of hate speech detection, in: Online harassment, Springer, 2018, pp. 29–55.",
-    "M.-A. Rizoiu, T. Wang, G. Ferraro, H. Suominen, Transfer learning for hate speech detection in social media, arXiv preprint arXiv:1906.03829 (2019).",
-    "T. Caselli, V. Basile, J. Mitrović, M. Granitzer, Hatebert: Retraining bert for abusive language detection in english, arXiv preprint arXiv:2010.12472 (2020).",
-    "A. Koufakou, E. W. Pamungkas, V. Basile, V. Patti, Hurtbert: incorporating lexical features with bert for the detection of abusive language, in: Proceedings of the fourth workshop on online abuse and harms, 2020, pp. 34–43.",
-    "G. Glavaš, M. Karan, I. Vulic, Xhate-999: Analyzing and detecting abusive language across domains and languages, Association for Computational Linguistics, 2020.",
-    "M. Mozafari, R. Farahbakhsh, N. Crespi, Hate speech detection and racial bias mitigation in social media based on bert model, PloS one 15 (2020) e0237861.",
-    "K. B. Ozler, K. Kenski, S. Rains, Y. Shmargad, K. Coe, S. Bethard, Fine-tuning bert for multi-domain and multi-label incivil language detection, in: Proceedings of the Fourth Workshop on Online Abuse and Harms, 2020, pp. 28–33.",
-    "S. S. Aluru, B. Mathew, P. Saha, A. Mukherjee, A deep dive into multilingual hate speech classification, in: Machine Learning and Knowledge Discovery in Databases. Applied Data Science and Demo Track: European Conference, ECML PKDD 2020, Ghent, Belgium, September 14–18, 2020, Proceedings, Part V, Springer International Publishing, 2021, pp. 423–439.",
-    "N. Vashistha, A. Zubiaga, Online multilingual hate speech detection: experimenting with hindi and english social media, Information 12 (2021) 5.",
-    "M. O. Ibrohim, I. Budi, Translated vs non-translated method for multilingual hate speech identification in twitter, Int. J. Adv. Sci. Eng. Inf. Technol 9 (2019) 1116–1123.",
-    "M. Corazza, S. Menini, E. Cabrio, S. Tonelli, S. Villata, Hybrid emoji-based masked language models for zero-shot abusive language detection, in: Findings of the Association for Computational Linguistics: EMNLP 2020, Association for Computational Linguistics, Online, 2020, pp. 943–949. URL: https://aclanthology.org/2020.findings-emnlp.84. doi:10. 18653/v1/2020.findings-emnlp.84.",
-    "H. Ahn, J. Sun, C. Y. Park, J. Seo, NLPDove at SemEval-2020 task 12: Improving offensive language detection with cross-lingual transfer, in: Proceedings of the Fourteenth Workshop on Semantic Evaluation, International Committee for Computational Linguistics, Barcelona (online), 2020, pp. 1576–1586. URL: https://aclanthology.org/2020.semeval-1.206. doi:10. 18653/v1/2020.semeval-1.206.",
-    "J. M. Pérez, A. Arango, F. Luque, ANDES at SemEval-2020 task 12: A jointly-trained BERT multilingual model for offensive language detection, in: Proceedings of the Fourteenth Workshop on Semantic Evaluation, International Committee for Computational Linguistics, Barcelona (online), 2020, pp. 1524–1531. URL: https://aclanthology.org/2020.semeval-1.199. doi:10.18653/v1/2020.semeval-1.199.",
-    "L. Stappen, F. Brunn, B. Schuller, Cross-lingual zero-and few-shot hate speech detection utilising frozen transformer language models and axel, arXiv preprint arXiv:2004.13850 (2020).",
-    "T. Dadu, K. Pant, Team rouges at SemEval-2020 task 12: Cross-lingual inductive transfer to detect offensive language, in: Proceedings of the Fourteenth Workshop on Semantic Evaluation, International Committee for Computational Linguistics, Barcelona (online), 2020, pp. 2183–2189. URL: https://aclanthology.org/2020.semeval-1.290. doi:10.18653/ v1/2020.semeval-1.290.",
-    "T. Ranasinghe, M. Zampieri, Multilingual offensive language identification with cross- lingual embeddings, in: Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), Association for Computational Linguistics, Online, 2020, pp. 5838–5844. URL: https://aclanthology.org/2020.emnlp-main.470. doi:10.18653/ v1/2020.emnlp-main.470.",
-    "M. Zampieri, P. Nakov, S. Rosenthal, P. Atanasova, G. Karadzhov, H. Mubarak, L. Der- czynski, Z. Pitenis, Ç. Çöltekin, Semeval-2020 task 12: Multilingual offensive language identification in social media (offenseval 2020), arXiv preprint arXiv:2006.07235 (2020).",
-    "A. M. Founta, C. Djouvas, D. Chatzakou, I. Leontiadis, J. Blackburn, G. Stringhini, A. Vakali, M. Sirivianos, N. Kourtellis, Large scale crowdsourcing and characterization of twitter abusive behavior, in: Twelfth International AAAI Conference on Web and Social Media, 2018.",
-    "R. Gomez, J. Gibert, L. Gomez, D. Karatzas, Exploring hate speech detection in multimodal publications, in: Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision, 2020, pp. 1470–1478.",
-    "Fanton, Margherita and Bonaldi, Helena and Tekiroğlu, Serra Sinem and Guerini, Marco, Human-in-the-Loop for Data Collection: a Multi-Target Counter Narrative Dataset to Fight Online Hate Speech, in: Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics, Association for Computational Linguistics, 2021."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

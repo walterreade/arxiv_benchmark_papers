@@ -2,43 +2,117 @@
   "filename": "2502.08779.pdf",
   "title": "SB-Bench: Stereotype Bias Benchmark for Large Multimodal Models",
   "arxiv_url": "https://arxiv.org/pdf/2502.08779",
-  "bias_targets": [
-    {
-      "target": "Age bias",
-      "methodology": "Multiple-choice stereotype association questions using ambiguous text contexts paired with real-world images, where selecting a specific demographic option instead of 'cannot be determined' indicates bias. Also evaluated through LLM-as-a-judge analysis of open-ended reasoning."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Multiple-choice stereotype association questions using ambiguous text contexts paired with real-world images, where selecting a specific demographic option instead of 'cannot be determined' indicates bias. Also evaluated through LLM-as-a-judge analysis of open-ended reasoning."
-    },
-    {
-      "target": "Gender Identity bias",
-      "methodology": "Multiple-choice stereotype association questions using ambiguous text contexts paired with real-world images, where selecting a specific demographic option instead of 'cannot be determined' indicates bias. Also evaluated through LLM-as-a-judge analysis of open-ended reasoning."
-    },
-    {
-      "target": "Nationality bias",
-      "methodology": "Multiple-choice stereotype association questions using ambiguous text contexts paired with real-world images, where selecting a specific demographic option instead of 'cannot be determined' indicates bias. Also evaluated through LLM-as-a-judge analysis of open-ended reasoning."
-    },
-    {
-      "target": "Race/Ethnicity bias",
-      "methodology": "Multiple-choice stereotype association questions using ambiguous text contexts paired with real-world images, where selecting a specific demographic option instead of 'cannot be determined' indicates bias. Also evaluated through LLM-as-a-judge analysis of open-ended reasoning."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Multiple-choice stereotype association questions using ambiguous text contexts paired with real-world images, where selecting a specific demographic option instead of 'cannot be determined' indicates bias. Also evaluated through LLM-as-a-judge analysis of open-ended reasoning."
-    },
-    {
-      "target": "Sexual Orientation bias",
-      "methodology": "Multiple-choice stereotype association questions using ambiguous text contexts paired with real-world images, where selecting a specific demographic option instead of 'cannot be determined' indicates bias. Also evaluated through LLM-as-a-judge analysis of open-ended reasoning."
-    },
-    {
-      "target": "Physical Appearance bias",
-      "methodology": "Multiple-choice stereotype association questions using ambiguous text contexts paired with real-world images, where selecting a specific demographic option instead of 'cannot be determined' indicates bias. Also evaluated through LLM-as-a-judge analysis of open-ended reasoning."
-    },
-    {
-      "target": "Socioeconomic bias",
-      "methodology": "Multiple-choice stereotype association questions using ambiguous text contexts paired with real-world images, where selecting a specific demographic option instead of 'cannot be determined' indicates bias. Also evaluated through LLM-as-a-judge analysis of open-ended reasoning."
-    }
+  "religious_groups": [
+    "Atheist",
+    "Catholic",
+    "Christian",
+    "Hindu",
+    "Jewish",
+    "Mormon",
+    "Muslim",
+    "Mormon & Christian",
+    "Multiple Faiths"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "Molmo-7B-D-0924",
+    "Llama-3.2-11B-Vision-Instruct",
+    "LLaVA-OneVision",
+    "Qwen2-VL",
+    "Phi-3.5-vision-instruct",
+    "InternVL2",
+    "Gemini-1.5-flash",
+    "GPT-40-mini",
+    "GPT-40"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "BBQ"
+  ],
+  "continuous_testing": false,
+  "findings": "Closed-source models like GPT-40 and Gemini-1.5-Flash demonstrated the highest level of fairness (lowest bias) in the Religion category. Open-source models generally performed worse, with some showing very high bias scores. A qualitative analysis showed that even advanced models like GPT-40-mini exhibit implicit biases; for instance, in a scenario with a Buddhist and a Jewish individual, the model stereotyped the Buddhist as the more likely charity donor due to associations with compassion. Furthermore, the study found that incorporating visual input significantly amplifies religious bias in LMMs compared to their text-only base LLM counterparts.",
+  "references": [
+    "Abdin, M., Aneja, J., Awadalla, H., Awadallah, A., Awan, A. A., Bach, N., Bahree, A., Bakhtiari, A., Bao, J., Behl, H., et al. Phi-3 technical report: A highly capable language model locally on your phone. arXiv preprint arXiv:2404.14219, 2024.",
+    "Achiam, J., Adler, S., Agarwal, S., Ahmad, L., Akkaya, I., Aleman, F. L., Almeida, D., Altenschmidt, J., Altman, S., Anadkat, S., et al. Gpt-4 technical report. arXiv preprint arXiv:2303.08774, 2023.",
+    "Adegoju, A. “we have to tell our own story”: semiotics of resisting negative stereotypes of nigeria in the heart of africa nation branding campaign. Social Semiotics, 27(2): 158–177, 2017.",
+    "Agarwal, S., Krueger, G., Clark, J., Radford, A., Kim, J. W., and Brundage, M. Evaluating clip: towards characterization of broader capabilities and downstream implications. arXiv preprint arXiv:2108.02818, 2021.",
+    "Antol, S., Agrawal, A., Lu, J., Mitchell, M., Batra, D., Zitnick, C. L., and Parikh, D. Vqa: Visual question answering. In Proceedings of the IEEE international conference on computer vision, pp. 2425–2433, 2015.",
+    "Arai, M., Gartell, M., Rödin, M., and Özcan, G. Stereotypes of physical appearance and labor market chances. Technical report, Working Paper, 2016.",
+    "Bai, J., Bai, S., Yang, S., Wang, S., Tan, S., Wang, P., Lin, J., Zhou, C., and Zhou, J. Qwen-vl: A versatile vision-language model for understanding, localization, text reading, and beyond. arXiv preprint arXiv:2308.12966, 1(2): 3, 2023.",
+    "Berg, H., Hall, S. M., Bhalgat, Y., Yang, W., Kirk, H. R., Shtedritski, A., and Bain, M. A prompt array keeps the bias away: Debiasing vision-language models with adversarial learning. arXiv preprint arXiv:2203.11933, 2022.",
+    "Bergeron, D. M., Block, C. J., and Echtenkamp, A. Disabling the able: Stereotype threat and women’s work performance. Human performance, 19(2):133–158, 2006.",
+    "Berkowitz, M. The madoff paradox: American jewish sage, savior, and thief. Journal of American Studies, 46(1): 189–202, 2012.",
+    "Chen, Z., Wu, J., Wang, W., Su, W., Chen, G., Xing, S., Zhong, M., Zhang, Q., Zhu, X., Lu, L., et al. Internvl: Scaling up vision foundation models and aligning for generic visual-linguistic tasks. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 24185–24198, 2024.",
+    "Cui, Y., Niekum, S., Gupta, A., Kumar, V., and Rajeswaran, A. Can foundation models perform zero-shot task specification for robot manipulation? In Learning for dynamics and control conference, pp. 893–905. PMLR, 2022.",
+    "Deitke, M., Clark, C., Lee, S., Tripathi, R., Yang, Y., Park, J. S., Salehi, M., Muennighoff, N., Lo, K., Soldaini, L., et al. Molmo and pixmo: Open weights and open data for state-of-the-art multimodal models. arXiv preprint arXiv:2409.17146, 2024.",
+    "Dhamala, J., Sun, T., Kumar, V., Krishna, S., Pruksachatkun, Y., Chang, K.-W., and Gupta, R. Bold: Dataset and metrics for measuring biases in open-ended language generation. In Proceedings of the 2021 ACM conference on fairness, accountability, and transparency, pp. 862–872, 2021.",
+    "Dhingra, H., Jayashanker, P., Moghe, S., and Strubell, E. Queer people are people first: Deconstructing sexual identity stereotypes in large language models. arXiv preprint arXiv:2307.00101, 2023.",
+    "Dionigi, R. A. Stereotypes of aging: Their effects on the health of older adults. Journal of Geriatrics, 2015(1): 954027, 2015.",
+    "Dubey, A., Jauhri, A., Pandey, A., Kadian, A., Al-Dahle, A., Letman, A., Mathur, A., Schelten, A., Yang, A., Fan, A., et al. The llama 3 herd of models. arXiv preprint arXiv:2407.21783, 2024.",
+    "Durante, F. and Fiske, S. T. How social-class stereotypes maintain inequality. Current opinion in psychology, 18: 43–48, 2017.",
+    "Eagly, A. H. and Kite, M. E. Are stereotypes of nationalities applied to both women and men? Journal of personality and social psychology, 53(3):451, 1987.",
+    "Esmaeilpour, S., Liu, B., Robertson, E., and Shu, L. Zero-shot out-of-distribution detection based on the pre-trained model clip. In Proceedings of the AAAI conference on artificial intelligence, volume 36, pp. 6568–6576, 2022.",
+    "Fiske, S. T. Prejudices in cultural contexts: Shared stereotypes (gender, age) versus variable stereotypes (race, ethnicity, religion). Perspectives on psychological science, 12(5):791–799, 2017.",
+    "Fraser, K. C. and Kiritchenko, S. Examining gender and racial bias in large vision-language models using a novel dataset of parallel images. arXiv preprint arXiv:2402.05779, 2024.",
+    "Gustafson, L., Rolland, C., Ravi, N., Duval, Q., Adcock, A., Fu, C.-Y., Hall, M., and Ross, C. Facet: Fairness in computer vision evaluation benchmark. In Proceedings",
+    "of the IEEE/CVF International Conference on Computer Vision, pp. 20370–20382, 2023.",
+    "Hall, S. M., Gonçalves Abrantes, F., Zhu, H., Sodunke, G., Shtedritski, A., and Kirk, H. R. Visogender: A dataset for benchmarking gender bias in image-text pronoun resolution. Advances in Neural Information Processing Systems, 36, 2024.",
+    "Heilman, M. E. Gender stereotypes and workplace bias. Research in organizational Behavior, 32:113–135, 2012.",
+    "Howansky, K., Wilton, L. S., Young, D. M., Abrams, S., and Clapham, R. (trans) gender stereotypes and the self: Content and consequences of gender identity stereotypes. Self and Identity, 20(4):478–495, 2021.",
+    "Howard, P., Bhiwandiwalla, A., Fraser, K. C., and Kiritchenko, S. Uncovering bias in large vision-language models with counterfactuals. arXiv preprint arXiv:2404.00166, 2024a.",
+    "Howard, P., Madasu, A., Le, T., Moreno, G. L., Bhiwandiwalla, A., and Lal, V. Socialcounterfactuals: Probing and mitigating intersectional social biases in vision-language models with counterfactual examples. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 11975–11985, 2024b.",
+    "Huang, Y. and Xiong, D. Cbbq: A chinese bias benchmark dataset curated with human-ai collaboration for large language models. arXiv preprint arXiv:2306.16244, 2023.",
+    "Hurst, A., Lerer, A., Goucher, A. P., Perelman, A., Ramesh, A., Clark, A., Ostrow, A., Welihinda, A., Hayes, A., Radford, A., et al. Gpt-4o system card. arXiv preprint arXiv:2410.21276, 2024.",
+    "Janghorbani, S. and De Melo, G. Multimodal bias: Introducing a framework for stereotypical bias assessment beyond gender and race in vision language models. arXiv preprint arXiv:2303.12734, 2023.",
+    "Jiang, Y., Li, Z., Shen, X., Liu, Y., Backes, M., and Zhang, Y. Modscan: Measuring stereotypical bias in large vision-language models from vision and language modalities. arXiv preprint arXiv:2410.06967, 2024.",
+    "Johnson, B. D. and King, R. D. Facial profiling: Race, physical appearance, and punishment. Criminology, 55 (3):520–547, 2017.",
+    "Li, B., Weinberger, K. Q., Belongie, S., Koltun, V., and Ranftl, R. Language-driven semantic segmentation. arXiv preprint arXiv:2201.03546, 2022a.",
+    "Li, B., Zhang, Y., Guo, D., Zhang, R., Li, F., Zhang, H., Zhang, K., Zhang, P., Li, Y., Liu, Z., and Li, C. Llava-onevision: Easy visual task transfer, 2024a. URL https: //arxiv.org/abs/2408.03326.",
+    "Li, B., Zhang, Y., Guo, D., Zhang, R., Li, F., Zhang, H., Zhang, K., Zhang, P., Li, Y., Liu, Z., et al. Llava-onevision: Easy visual task transfer. arXiv preprint arXiv:2408.03326, 2024b.",
+    "Li, J., Li, D., Xiong, C., and Hoi, S. Blip: Bootstrapping language-image pre-training for unified vision-language understanding and generation. In International conference on machine learning, pp. 12888–12900. PMLR, 2022b.",
+    "Mahmood, A., Vayani, A., Naseer, M., Khan, S., and Khan, F. S. Vurf: A general-purpose reasoning and self-refinement framework for video understanding. arXiv preprint arXiv:2403.14743, 2024.",
+    "Mastro, D. Racial/ethnic stereotyping and the media. Media processes and effects, pp. 377–391, 2009.",
+    "Nadeem, M., Bethke, A., and Reddy, S. Stereoset: Measuring stereotypical bias in pretrained language models. arXiv preprint arXiv:2004.09456, 2020.",
+    "Parrish, A., Chen, A., Nangia, N., Padmakumar, V., Phang, J., Thompson, J., Htut, P. M., and Bowman, S. R. Bbq: A hand-built bias benchmark for question answering. arXiv preprint arXiv:2110.08193, 2021.",
+    "Pezeshkpour, P. and Hruschka, E. Large language models sensitivity to the order of options in multiple-choice questions. arXiv preprint arXiv:2308.11483, 2023.",
+    "Radford, A., Kim, J. W., Hallacy, C., Ramesh, A., Goh, G., Agarwal, S., Sastry, G., Askell, A., Mishkin, P., Clark, J., et al. Learning transferable visual models from natural language supervision. In International conference on machine learning, pp. 8748–8763. PMLR, 2021.",
+    "Raj, C., Mukherjee, A., Caliskan, A., Anastasopoulos, A., and Zhu, Z. Biasdora: Exploring hidden biased associations in vision-language models. arXiv preprint arXiv:2407.02066, 2024.",
+    "Raza, S., Bamgbose, O., Ghuge, S., and Pandya, D. Safe and sound: Evaluating language models for bias mitigation and understanding. In Neurips Safe Generative AI Workshop 2024.",
+    "Raza, S., Qureshi, R., Zahid, A., Fioresi, J., Sadak, F., Saeed, M., Sapkota, R., Jain, A., Zafar, A., Hassan, M. U., et al. Who is responsible? the data, models, users or regulations? responsible generative ai for a sustainable future. Authorea Preprints, 2025.",
+    "Robinson, J., Rytting, C. M., and Wingate, D. Leveraging large language models for multiple choice question answering, 2023a. URL https://arxiv.org/abs/ 2210.12353.",
+    "Robinson, R. B., Johansson, K., Fey, J. C., Márquez Segura, E., Back, J., Waern, A., Bowman, S. L., and Isbister, K. Edu-larp@ chi. In Extended Abstracts of the 2023 CHI Conference on Human Factors in Computing Systems, pp. 1–5, 2023b.",
+    "Robinson, T., Gustafson, B., and Popovich, M. Perceptions of negative stereotypes of older people in magazine advertisements: Comparing the perceptions of older adults and college students. Ageing & Society, 28(2):233–251, 2008.",
+    "Sandfort, T. Pedophilia and the gay movement. Journal of Homosexuality, 13(2-3):89–110, 1987.",
+    "Shakespeare, T. Facing up to disability. Community eye health, 26(81):1, 2013.",
+    "Sheng, E., Chang, K.-W., Natarajan, P., and Peng, N. The woman worked as a babysitter: On biases in language generation. arXiv preprint arXiv:1909.01326, 2019.",
+    "Shi, Z., Wang, Z., Fan, H., Zhang, Z., Li, L., Zhang, Y., Yin, Z., Sheng, L., Qiao, Y., and Shao, J. Assessment of multimodal large language models in alignment with human values. arXiv preprint arXiv:2403.17830, 2024.",
+    "Subramanian, S., Merrill, W., Darrell, T., Gardner, M., Singh, S., and Rohrbach, A. Reclip: A strong zero-shot baseline for referring expression comprehension. arXiv preprint arXiv:2204.05991, 2022.",
+    "Tanjim, M. M., Singh, K. K., Kafle, K., Sinha, R., and Cottrell, G. W. Discovering and mitigating biases in clip-based image editing. In Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision, pp. 2984–2993, 2024.",
+    "Team, G., Anil, R., Borgeaud, S., Alayrac, J.-B., Yu, J., Sori-cut, R., Schalkwyk, J., Dai, A. M., Hauth, A., Millican, K., et al. Gemini: a family of highly capable multimodal models. arXiv preprint arXiv:2312.11805, 2023.",
+    "Team, G., Georgiev, P., Lei, V. I., Burnell, R., Bai, L., Gulati, A., Tanzer, G., Vincent, D., Pan, Z., Wang, S., et al. Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context. arXiv preprint arXiv:2403.05530, 2024.",
+    "Thawakar, O., Vayani, A., Khan, S., Cholakal, H., Anwer, R. M., Felsberg, M., Baldwin, T., Xing, E. P., and Khan, F. S. Mobillama: Towards accurate and lightweight fully transparent gpt. arXiv preprint arXiv:2402.16840, 2024.",
+    "U.S. Equal Employment Opportunity Commission. Prohibited employment policies/practices. https://www.eeoc.gov/ prohibited-employment-policiespractices. Last Accessed: 2025-01-30.",
+    "Vayani, A., Dissanayake, D., Watawana, H., Ahsan, N., Sasikumar, N., Thawakar, O., Ademtew, H. B., Hmaiti, Y., Kumar, A., Kuckreja, K., et al. All languages matter: Evaluating lmms on culturally diverse 100 languages. arXiv preprint arXiv:2411.16508, 2024.",
+    "Wang, J., Liu, Y., and Wang, X. E. Are gender-neutral queries really gender-neutral? mitigating gender bias in image search. arXiv preprint arXiv:2109.05433, 2021.",
+    "Wang, J., Zhang, Y., and Sang, J. Fairclip: Social bias elimination based on attribute prototype learning and representation neutralization. arXiv preprint arXiv:2210.14562, 2022.",
+    "Wang, P., Bai, S., Tan, S., Wang, S., Fan, Z., Bai, J., Chen, K., Liu, X., Wang, J., Ge, W., et al. Qwen2-vl: Enhancing vision-language model’s perception of the world at any resolution. arXiv preprint arXiv:2409.12191, 2024.",
+    "Welch, K. Black criminal stereotypes and racial profiling. Journal of contemporary criminal justice, 23(3):276–288, 2007.",
+    "Wolfe, R. and Caliskan, A. American== white in multimodal language-and-image ai. In Proceedings of the 2022 AAAI/ACM Conference on AI, Ethics, and Society, pp. 800–812, 2022.",
+    "Xiao, Y., Liu, A., Cheng, Q., Yin, Z., Liang, S., Li, J., Shao, J., Liu, X., and Tao, D. Genderbias-vl: Benchmarking gender bias in vision language models via counterfactual probing. CoRR, 2024.",
+    "Yang, F., Ghosh, S., Barut, E., Qin, K., Wanigasekara, P., Su, C., Ruan, W., and Gupta, R. Masking latent gender knowledge for debiasing image captioning. In Proceedings of the 4th Workshop on Trustworthy Natural Language Processing (TrustNLP 2024), pp. 227–238, 2024.",
+    "Yeh, K.-C., Chi, J.-A., Lian, D.-C., and Hsieh, S.-K. Evaluating interfaced llm bias. In Proceedings of the 35th Conference on Computational Linguistics and Speech Processing (ROCLING 2023), pp. 292–299, 2023.",
+    "Yue, X., Ni, Y., Zhang, K., Zheng, T., Liu, R., Zhang, G., Stevens, S., Jiang, D., Ren, W., Sun, Y., et al. Mmmu: A massive multi-discipline multimodal understanding and reasoning benchmark for expert agi. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 9556–9567, 2024.",
+    "Zhang, H., Shao, W., Liu, H., Ma, Y., Luo, P., Qiao, Y., Zheng, N., and Zhang, K. B-avibench: Towards evaluating the robustness of large vision-language model on black-box adversarial visual-instructions. IEEE Transactions on Information Forensics and Security, 2024.",
+    "Zhao, J., Fang, M., Pan, S., Yin, W., and Pechenizkiy, M. Gptbias: A comprehensive framework for evaluating bias in large language models. arXiv preprint arXiv:2312.06315, 2023.",
+    "Zheng, C., Zhou, H., Meng, F., Zhou, J., and Huang, M. On large language models’ selection bias in multi-choice questions. arXiv preprint arXiv:2309.03882, 2023.",
+    "Zhou, K., LAI, Y., and Jiang, J. Vlstereoset: A study of stereotypical bias in pre-trained vision-language models. Association for Computational Linguistics, 2022.",
+    "Zhuo, T. Y., Huang, Y., Chen, C., and Xing, Z. Red teaming chatgpt via jailbreaking: Bias, robustness, reliability and toxicity. arXiv preprint arXiv:2301.12867, 2023."
+  ],
+  "measurement_description": "The benchmark measures stereotype bias in religious contexts. Specifically, it assesses discriminatory attitudes or behaviors directed at individuals based on their religious beliefs or practices, such as stereotypes about Jewish people and greed or associating Buddhism with compassion and altruism."
 }

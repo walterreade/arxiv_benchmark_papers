@@ -2,11 +2,87 @@
   "filename": "2509.16517.pdf",
   "title": "Seeing Culture: A Benchmark for Visual Reasoning and Grounding",
   "arxiv_url": "https://arxiv.org/pdf/2509.16517",
-  "bias_targets": [
-    {
-      "target": "Cultural bias",
-      "methodology": "Evaluating Vision-Language Models (VLMs) using a two-stage benchmark (Seeing Culture Benchmark) consisting of multiple-choice visual question answering (VQA) and visual grounding (segmentation) tasks centered on cultural artifacts from seven underrepresented Southeast Asian countries, comparing performance across different cultural contexts and nations."
-    }
+  "religious_groups": [
+    "Buddhism"
   ],
-  "primary_bias_target": "Cultural bias"
+  "models_tested": [
+    "InstructBLIP 7B",
+    "Idefics2 8B",
+    "Llama 3.2 11B",
+    "LLaVA-Onevision 7B",
+    "MiniCPM-2.6 8B",
+    "InternVL2.5-4B",
+    "Qwen2.5-VL-7B",
+    "GPT-4.1",
+    "Gemini-2.5-Pro",
+    "GPT-03"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Crossmodal-3600",
+    "MOSAIC",
+    "SEA-VL",
+    "MosAIG",
+    "GD-VCR",
+    "MTVQA",
+    "CVQA",
+    "CulturalVQA",
+    "CROPE",
+    "CVLUE",
+    "CultureVerse",
+    "GIMMICK",
+    "MaRVL",
+    "FoodieQA",
+    "SEA-VQA",
+    "K-Viscuit",
+    "GlobalRG"
+  ],
+  "continuous_testing": false,
+  "findings": "The study found that Vision-Language Models (VLMs) performed the worst in the 'celebration' category, which contains the most explicit religious content like festivals. This suggests a specific weakness in reasoning about culturally nuanced religious and ceremonial events. Additionally, a notable discrepancy was observed across all categories, including those with religious elements, where models could often correctly answer a multiple-choice question but failed to accurately locate (ground) the relevant cultural or religious artifact in the image.",
+  "references": [
+    "Yujin Baek, ChaeHun Park, Jaeseok Kim, Yu-Jung Heo, Du-Seong Chang, and Jaegul Choo. 2024. Evaluating visual and cultural interpretation: The K-Viscuit benchmark with human-VLM collaboration. Preprint, arXiv:2406.16469.",
+    "Longju Bai, Angana Borah, Oana Ignat, and Rada Mihalcea. 2025. The power of many: Multi-agent multimodal models for cultural image captioning. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 2970–2993, Albuquerque, New Mexico. Association for Computational Linguistics.",
+    "Parth Bhalerao, Mounika Yalamarty, Brian Trinh, and Oana Ignat. 2025. Multi-agent multimodal models for multicultural text to image generation. Preprint, arXiv:2502.15972.",
+    "Mehar Bhatia, Sahithya Ravi, Aditya Chinchure, EunJeong Hwang, and Vered Shwartz. 2024. From local concepts to universals: Evaluating the multicultural understanding of vision-language models. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 6763–6782, Miami, Florida, USA. Association for Computational Linguistics.",
+    "Olena Burda-Lassen, Aman Chadha, Shashank Goswami, and Vinija Jain. 2025. How culturally aware are vision-language models? In 2025 IEEE 6th International Conference on Image Processing, Applications and Systems (IPAS), volume CFP2540Z-ART, pages 1–6.",
+    "Samuel Cahyawijaya, Holy Lovenia, Joel Ruben Antony Moniz, Tack Hwa Wong, Mohammad Rifqi Farhansyah, Thant Thiri Maung, Frederikus Hudi, David Anugraha, Muhammad Ravi Shulthan Habibi, Muhammad Reza Qorib, Amit Agarwal, Joseph Marvin Imperial, Hitesh Laxmichand Patel, Vicky Feliren, Bahrul Ilmi Nasution, Manuel Antonio Rufino, Genta Indra Winata, Rian Adam Rajagede, Carlos Rafael Catalan, and 73 others. 2025. Crowdsource, crawl, or generate? creating SEA-VL, a multicultural vision-language dataset for southeast asia. Preprint, arXiv:2503.07920.",
+    "Zhe Chen, Weiyun Wang, Yue Cao, Yangzhou Liu, Zhangwei Gao, Erfei Cui, Jinguo Zhu, Shenglong Ye, Hao Tian, Zhaoyang Liu, and 1 others. 2024. Expanding performance boundaries of open-source multimodal models with model, data, and test-time scaling. arXiv preprint arXiv:2412.05271.",
+    "Wenliang Dai, Junnan Li, Dongxu Li, Anthony Tiong, Junqi Zhao, Weisheng Wang, Boyang Li, Pascale Fung, and Steven Hoi. 2023. InstructBLIP: Towards general-purpose vision-language models with instruction tuning. In Thirty-seventh Conference on Neural Information Processing Systems.",
+    "Dima Damen, Hazel Doughty, Giovanni Maria Farinella, Antonino Furnari, Jian Ma, Evangelos Kazakos, Davide Moltisanti, Jonathan Munro, Toby Perrett, Will Price, and Michael Wray. 2022. Rescaling egocentric vision: Collection, pipeline and challenges for epic-kitchens-100. International Journal of Computer Vision (IJCV), 130:33–55.",
+    "Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Amy Yang, Angela Fan, Anirudh Goyal, Anthony Hartshorn, Aobo Yang, Archi Mitra, Archie Sravankumar, Artem Korenev, Arthur Hinsvark, Arun Rao, Aston Zhang, and 82 others. 2024. The Llama 3 herd of models. CoRR, abs/2407.21783.",
+    "Xingyu Fu, Sheng Zhang, Gukyeong Kwon, Pramuditha Perera, Henghui Zhu, Yuhao Zhang, Alexander Hanbo Li, William Yang Wang, Zhiguo Wang, Vittorio Castelli, Patrick Ng, Dan Roth, and Bing Xiang. 2023. Generate then select: Open-ended visual question answering guided by world knowledge. In Findings of the Association for Computational Linguistics: ACL 2023, pages 2333–2346, Toronto, Canada. Association for Computational Linguistics.",
+    "Muhammet Furkan Ilaslan, Ali Köksal, Kevin Qinghong Lin, Burak Satar, Mike Zheng Shou, and Qianli Xu. 2025. Vg-tvp: Multimodal procedural planning via visually grounded text-video prompting. Proceedings of the AAAI Conference on Artificial Intelligence, 39(4):3886–3894.",
+    "Hugo Laurençon, Leo Tronchon, Matthieu Cord, and Victor Sanh. 2024. What matters when building vision-language models? In The Thirty-eighth Annual Conference on Neural Information Processing Systems.",
+    "Bo Li, Yuanhan Zhang, Dong Guo, Renrui Zhang, Feng Li, Hao Zhang, Kaichen Zhang, Peiyuan Zhang, Yanwei Li, Ziwei Liu, and Chunyuan Li. 2025. LLaVA-OneVision: Easy visual task transfer. Transactions on Machine Learning Research.",
+    "Wenyan Li, Crystina Zhang, Jiaang Li, Qiwei Peng, Raphael Tang, Li Zhou, Weijia Zhang, Guimin Hu, Yifei Yuan, Anders Søgaard, Daniel Hershcovich, and Desmond Elliott. 2024. FoodieQA: A multi-modal dataset for fine-grained understanding of Chinese food culture. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing.",
+    "Fangyu Liu, Emanuele Bugliarello, Edoardo Maria Ponti, Siva Reddy, Nigel Collier, and Desmond Elliott. 2021. Visually grounded reasoning across languages and cultures. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 10467–10485, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics.",
+    "Jin Liu, ChongFeng Fan, Fengyu Zhou, and Huijuan Xu. 2023. Be flexible! learn to debias by sampling and prompting for robust visual question answering. Information Processing & Management, 60(3):103296.",
+    "Shudong Liu, Yiqiao Jin, Cheng Li, Derek F Wong, Qingsong Wen, Lichao Sun, Haipeng Chen, Xing Xie, and Jindong Wang. 2025. CultureVLM: Characterizing and improving cultural understanding of vision-language models for over 100 countries. arXiv preprint arXiv:2501.01282.",
+    "David Orlando Romero Mogrovejo, Chenyang Lyu, Haryo Akbarianto Wibowo, Santiago Góngora, Aishik Mandal, Sukannya Purkayastha, Jesus-German Ortiz-Barajas, Emilio Villa Cueva, Jinheon Baek, Soyeong Jeong, Injy Hamed, Zheng Xin Yong, Zheng Wei Lim, Paula Mónica Silva, Jocelyn Dunstan, Mélanie Jouitteau, David LE MEUR, Joan Nwatu, Ganzorig Batnasan, and 57 others. 2024. CVQA: Culturally-diverse multilingual visual question answering benchmark. In The Thirty-eight Conference on Neural Information Processing Systems Datasets and Benchmarks Track.",
+    "Shravan Nayak, Kanishk Jain, Rabiul Awal, Siva Reddy, Sjoerd Van Steenkiste, Lisa Anne Hendricks, Karolina Stanczak, and Aishwarya Agrawal. 2024. Benchmarking vision language models for cultural understanding. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 5769–5790, Miami, Florida, USA. Association for Computational Linguistics.",
+    "Malvina Nikandrou, Georgios Pantazopoulos, Nikolas Vitsakis, Ioannis Konstas, and Alessandro Suglia. 2025. CROPE: Evaluating in-context adaptation of vision and language models to culture-specific concepts. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 7917–7936, Albuquerque, New Mexico. Association for Computational Linguistics.",
+    "OpenAI. 2014. Chatgpt.",
+    "Burak Satar, Hongyuan Zhu, Hanwang Zhang, and Joo Hwee Lim. 2023. Exploiting semantic role contextualized video features for multi-instance text-video retrieval epic-kitchens-100 multi-instance retrieval challenge 2022. Preprint, arXiv:2206.14381.",
+    "Florian Schneider, Carolin Holtermann, Chris Biemann, and Anne Lauscher. 2025. GIMMICK - globally inclusive multimodal multitask cultural knowledge benchmarking. Preprint, arXiv:2502.13766.",
+    "Piotr Skalski. 2019. Make Sense. https://github. com/SkalskiP/make-sense/.",
+    "Jingqun Tang, Qi Liu, Yongjie Ye, Jinghui Lu, Shu Wei, Chunhui Lin, Wanqing Li, Mohamad Fitri Faiz Bin Mahmood, Hao Feng, Zhen Zhao, Yanjie Wang, Yuliang Liu, Hao Liu, Xiang Bai, and Can Huang. 2024. MTVQA: Benchmarking multilingual text-centric visual question answering. Preprint, arXiv:2405.11985.",
+    "Ashish V. Thapliyal, Jordi Pont Tuset, Xi Chen, and Radu Soricut. 2022. Crossmodal-3600: A massively multilingual multimodal evaluation dataset. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 715–729, Abu Dhabi, United Arab Emirates. Association for Computational Linguistics.",
+    "Norawit Urailertprasert, Peerat Limkonchotiwat, Supasorn Suwajanakorn, and Sarana Nutanong. 2024. SEA-VQA: Southeast Asian cultural context dataset for visual question answering. In Proceedings of the 3rd Workshop on Advances in Language and Vision Research (ALVR), pages 173–185, Bangkok, Thailand. Association for Computational Linguistics.",
+    "Yuxuan Wang, Yijun Liu, Fei Yu, Chen Huang, Kexin Li, Zhiguo Wan, Wanxiang Che, and Hongyang Chen. 2025. CVLUE: A new benchmark dataset for chinese vision-language understanding evaluation. Proceedings of the AAAI Conference on Artificial Intelligence, 39(8):8196–8204.",
+    "Zhecan Wang, Long Chen, Haoxuan You, Keyang Xu, Yicheng He, Wenhao Li, Noel Codella, Kai-Wei Chang, and Shih-Fu Chang. 2023. Dataset bias mitigation in multiple-choice visual question answering and beyond. In Findings of the Association for Computational Linguistics: EMNLP 2023, pages 8598–8617, Singapore. Association for Computational Linguistics.",
+    "An Yang, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chengyuan Li, Dayiheng Liu, Fei Huang, Haoran Wei, Huan Lin, Jian Yang, Jianhong Tu, Jianwei Zhang, Jianxin Yang, Jiaxi Yang, Jingren Zhou, Junyang Lin, Kai Dang, and 22 others. 2024. Qwen2.5 technical report. arXiv preprint arXiv:2412.15115.",
+    "Yuan Yao, Tianyu Yu, Ao Zhang, Chongyi Wang, Junbo Cui, Hongji Zhu, Tianchi Cai, Haoyu Li, Weilin Zhao, Zhihui He, and 1 others. 2024. MiniCPM-V: A GPT-4V level MLLM on your phone. arXiv preprint arXiv:2408.01800.",
+    "Da Yin, Liunian Harold Li, Ziniu Hu, Nanyun Peng, and Kai-Wei Chang. 2021. Broaden the vision: Geodiverse visual commonsense reasoning. In EMNLP.",
+    "Xi Zhang, Feifei Zhang, and Changsheng Xu. 2023. Reducing vision-answer biases for multiple-choice VQA. IEEE Transactions on Image Processing, 32:4621–4634.",
+    "Xi Zhang, Feifei Zhang, and Changsheng Xu. 2024. NEXT-OOD: Overcoming dual multiple-choice VQA biases. IEEE Transactions on Pattern Analysis & Machine Intelligence, 46(04):1913–1931.",
+    "Yuke Zhu, Oliver Groth, Michael Bernstein, and Li Fei-Fei. 2016. Visual7W: Grounded question answering in images. In 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pages 4995–5004."
+  ],
+  "measurement_description": "The benchmark measures visual reasoning and grounding on cultural artifacts and concepts from Southeast Asia. This includes knowledge of religious elements embedded within cultural categories like 'celebration' and 'wedding', such as identifying artifacts related to religious ceremonies or understanding the significance of events like Buddhist festivals."
 }

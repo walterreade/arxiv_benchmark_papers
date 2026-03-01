@@ -2,27 +2,67 @@
   "filename": "2505.20624.pdf",
   "title": "POLAR: A Benchmark for Multilingual, Multicultural, and Multi-Event Online Polarization",
   "arxiv_url": "https://arxiv.org/pdf/2505.20624",
-  "bias_targets": [
-    {
-      "target": "Political bias",
-      "methodology": "Evaluating fine-tuned multilingual language models and zero-/few-shot large language models on a multi-label text classification task to detect political or ideological polarization and its manifestations (e.g., stereotyping, vilification) in multilingual social media posts."
-    },
-    {
-      "target": "Racial/ethnic bias",
-      "methodology": "Evaluating fine-tuned multilingual language models and zero-/few-shot large language models on a multi-label text classification task to detect racial or ethnic polarization and its manifestations in multilingual social media posts."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Evaluating fine-tuned multilingual language models and zero-/few-shot large language models on a multi-label text classification task to detect religious polarization and its manifestations in multilingual social media posts."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Evaluating fine-tuned multilingual language models and zero-/few-shot large language models on a multi-label text classification task to detect gender-based polarization and its manifestations in multilingual social media posts."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Evaluating fine-tuned multilingual language models and zero-/few-shot large language models on a multi-label text classification task to detect sexual orientation-based polarization and its manifestations in multilingual social media posts."
-    }
+  "religious_groups": [
+    "Islam",
+    "Judaism",
+    "Christianity"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "InfoXLM",
+    "LaBSE",
+    "RemBERT",
+    "XLM-R",
+    "mBERT",
+    "mDeBERTa",
+    "GPT-40",
+    "GPT-40-mini",
+    "GPT-4.1-mini",
+    "Qwen-3 8B",
+    "LLaMA-3.1 8B",
+    "LLaMA-4 17B",
+    "Mixtral-8x7B",
+    "Llama-4-Scout-17B-16E-Instruct"
+  ],
+  "languages_evaluated": [
+    "Amharic",
+    "Arabic",
+    "English",
+    "German",
+    "Hausa",
+    "Spanish",
+    "Urdu"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "SemEval-2019 task 5",
+    "Pamungkas et al., 2020",
+    "Semeval task 1 (Ousidhoum et al., 2024)"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper found that the type and intensity of religious polarization are highly context-dependent and shaped by local sociopolitical issues. For example, religious polarization was prominent in the Urdu dataset (reflecting religious tensions in Pakistan) and the Spanish and German datasets, while the Hausa dataset showed a low polarization rate despite covering religious topics, possibly due to cultural norms or platform moderation.",
+  "references": [
+    "Swapan Deep Arora, Guninder Pal Singh, Anirban Chakraborty, and Moutusy Maity. 2022. Polarization and Social Media: A Systematic Review and Research Agenda. Technological Forecasting and Social Change, 183:121942.",
+    "Pablo Barberá. 2020. Social media, echo chambers, and political polarization. Social media and democracy: The state of the field, prospects for reform, pages 34–55.",
+    "Valerio Basile, Cristina Bosco, Elisabetta Fersini, Debora Nozza, Viviana Patti, Francisco Manuel Rangel Pardo, Paolo Rosso, and Manuela Sanguinetti. 2019. SemEval-2019 task 5: Multilingual detection of hate speech against immigrants and women in Twitter. In Proceedings of the 13th International Workshop on Semantic Evaluation, pages 54–63, Minneapolis, Minnesota, USA. Association for Computational Linguistics.",
+    "Zewen Chi, Li Dong, Furu Wei, Nan Yang, Saksham Singhal, Wenhui Wang, Xia Song, Xian-Ling Mao, Heyan Huang, and Ming Zhou. 2021. InfoXLM: An information-theoretic framework for cross-lingual language model pre-training. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 3576–3588, Online.",
+    "Hyung Won Chung, Thibault Fevry, Henry Tsai, Melvin Johnson, and Sebastian Ruder. 2021. Rethinking embedding coupling in pre-trained language models. In International Conference on Learning Representations, pages 1-17, Online.",
+    "Alexis Conneau, Kartikay Khandelwal, Naman Goyal, Vishrav Chaudhary, Guillaume Wenzek, Francisco Guzmán, Edouard Grave, Myle Ott, Luke Zettlemoyer, and Veselin Stoyanov. 2020. Unsupervised cross-lingual representation learning at scale. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 8440-8451, Online.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 4171-4186, Minneapolis, Minnesota.",
+    "Fangxiaoyu Feng, Yinfei Yang, Daniel Cer, Naveen Arivazhagan, and Wei Wang. 2022. Language-agnostic BERT sentence embedding. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 878-891, Dublin, Ireland.",
+    "Kiran Garimella. 2018. Polarization on Social Media. Ph.D. thesis, Aalto University, Finland.",
+    "Todd Gitlin. 2016. The Outrage Industry: Political Opinion Media and the New Incivility By Jeffrey M. Berry and Sarah Sobieraj Oxford University Press. Social Forces, 95(1):e26-e26.",
+    "Pengcheng He, Jianfeng Gao, and Weizhu Chen. 2023. DeBERTav3: Improving deBERTa using ELECTRAstyle pre-training with gradient-disentangled embedding sharing. In The Eleventh International Conference on Learning Representations, Kigali, Rwanda.",
+    "Luca Iandoli, Simonetta Primario, and Giuseppe Zollo. 2021. The impact of group polarization on the quality of online debate in social media: A systematic literature review. Technological Forecasting and Social Change, 170:1-12.",
+    "Emily Kubin and Christian von Sikorski. 2021. The role of (social) media in political polarization: A systematic review. Annals of the International Communication Association, 45(3):188–206.",
+    "J. Richard Landis and Gary G. Koch. 1977. The measurement of observer agreement for categorical data. Biometrics, 33(1):159–174.",
+    "Binny Mathew, Punyajoy Saha, Seid Muhie Yimam, Chris Biemann, Pawan Goyal, and Animesh Mukherjee. 2021. Hatexplain: A benchmark dataset for explainable hate speech detection. In Proceedings of the 2021 AAAI Conference on Artificial Intelligence.",
+    "Nedjma Ousidhoum, Shamsuddeen Hassan Muhammad, Mohamed Abdalla, Idris Abdulmumin, Ibrahim Said Ahmad, Sanchit Ahuja, Alham Fikri Aji, Vladimir Araujo, Meriem Beloucif, Christine De Kock, Oumaima Hourrane, Manish Shrivastava, Thamar Solorio, Nirmal Surange, Krishnapriya Vishnubhotla, Seid Muhie Yimam, and Saif M. Mohammad. 2024. Semeval task 1: Semantic textual relatedness for african and asian languages. Preprint, arXiv:2403.18933.",
+    "Endang Wahyu Pamungkas, Valerio Basile, and Viviana Patti. 2020. Misogyny detection in twitter: A multilingual and cross-domain study. Information Processing & Management, 57(6):102360.",
+    "Felipe Bonow Soares and Raquel Recuero. 2021. Hashtag wars: Political disinformation and discursive struggles on twitter conversations during the 2018 brazilian presidential campaign. Social Media+ Society, 7(2):1-13.",
+    "Isaac Waller and Ashton Anderson. 2021. Quantifying social organization and political polarization in online platforms. Nature, 600(7887):264–268."
+  ],
+  "measurement_description": "The benchmark measures the detection of religious polarization, defined as content that focuses on religious identity to incite division, intolerance, and conflict between religious followers."
 }

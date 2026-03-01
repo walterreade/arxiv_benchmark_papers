@@ -2,111 +2,35 @@
   "filename": "2106.14574.pdf",
   "title": "Quantifying Social Biases in NLP: A Generalization and Empirical Comparison of Extrinsic Fairness Metrics",
   "arxiv_url": "https://arxiv.org/pdf/2106.14574",
-  "benchmark_measurement": "The benchmark measured systemic differences in model performance (bias) for sentiment analysis and named entity recognition tasks on text that explicitly mentions different religious identity terms. This was quantified using a variety of fairness metrics.",
-  "religious_groups": [
-    "atheism",
-    "buddhism",
-    "baha'i-faith",
-    "christianity",
-    "hinduism",
-    "islam",
-    "judaism",
-    "mormonism",
-    "sikhism",
-    "taoism"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Measuring performance differences (via generalized fairness metrics like PCM, BCM, MCM) in sentiment analysis and NER models using synthetic templates filled with explicit gender identity terms and gender-associated names."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Evaluating model performance disparities in downstream NLP tasks using synthetic templates populated with explicit sexual orientation identity terms."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Assessing model bias by measuring classification performance differences on synthetic text templates containing terms associated with various religious identities."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Measuring fairness metrics (such as differences in false positive/negative rates) using synthetic templates with explicit racial and ethnic identity terms."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Evaluating sentiment analysis and NER model performance parity across different age groups using hand-crafted templates with age-related identity terms."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Assessing algorithmic fairness by comparing model performance on synthetic text templates containing explicit disability-related identity terms."
+    },
+    {
+      "target": "Nationality bias",
+      "methodology": "Evaluating performance differences, particularly in named entity recognition (NER), across countries categorized by GDP using synthetic templates with country and nationality terms."
+    }
   ],
-  "models_tested": [
-    "RoBERTa"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [],
-  "continuous_testing": false,
-  "findings": "The paper found statistically significant evidence of unintended bias related to religion in the models tested. The performance on sentiment analysis tasks differed across various religious groups, and the magnitude of the measured bias varied depending on the specific fairness metric used. For example, tests showed very low p-values (e.g., 1.14 x 10^-23), indicating that the observed differences in model behavior across religious groups were highly unlikely to be due to chance.",
-  "references": [
-    "Pinkesh Badjatiya, Manish Gupta, and Vasudeva Varma. 2019. Stereotypical Bias Removal for Hate Speech Detection Task using Knowledge- based Generalizations. In The World Wide Web Conference, pages 49–59.",
-    "Eugene Bagdasaryan, Omid Poursaeed, and Vi- taly Shmatikov. 2019. Differential Privacy Has Disparate Impact on Model Accuracy. In Ad- vances in Neural Information Processing Sys- tems, pages 15479–15488.",
-    "David Bamman, Sejal Popat, and Sheng Shen. 2019. An annotated dataset of literary enti- ties. In Proceedings of the 2019 Conference of the North American Chapter of the Associ- ation for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 2138–2144, Minneapolis, Minnesota. Association for Computational Lin- guistics.",
-    "Alex Beutel, J. Chen, Zhe Zhao, and Ed Huai hsin Chi. 2017. Data Decisions and Theoret- ical Implications when Adversarially Learning Fair Representations. Workshop on Fairness, Accountability, and Transparency in Machine Learning (FAT/ML 2017).",
-    "Alex Beutel, Jilin Chen, Tulsee Doshi, Hai Qian, Allison Woodruff, Christine Luu, Pierre Kreit- mann, Jonathan Bischof, and Ed H Chi. 2019. Putting Fairness Principles into Practice: Chal- lenges, Metrics, and Improvements. In Pro- ceedings of the 2019 AAAI/ACM Conference on AI, Ethics, and Society, pages 453–459.",
-    "Jayadev Bhaskaran and Isha Bhallamudi. 2019. Good Secretaries, Bad Truck Drivers? Occupa- tional Gender Stereotypes in Sentiment Analy- sis. In Proceedings of the First Workshop on Gender Bias in Natural Language Processing, pages 62–68, Florence, Italy. Association for Computational Linguistics.",
-    "Su Lin Blodgett, Solon Barocas, Hal Daumé III, and Hanna Wallach. 2020. Language (Technol- ogy) is Power: A Critical Survey of “Bias” in NLP. In Proceedings of the 58th Annual Meet- ing of the Association for Computational Lin- guistics, pages 5454–5476, Online. Association for Computational Linguistics.",
-    "Su Lin Blodgett and Brendan T. O’Connor. 2017. Racial Disparity in Natural Language Process- ing: A Case Study of Social Media African- American English. Workshop on Fairness, Accountability, and Transparency in Machine Learning (FAT/ML 2017).",
-    "Su Lin Blodgett, Johnny Wei, and Brendan O’Connor. 2018. Twitter Universal Depen- dency parsing for African-American and main- stream American English. In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Pa- pers), pages 1415–1425, Melbourne, Australia. Association for Computational Linguistics.",
-    "Tolga Bolukbasi, Kai-Wei Chang, James Zou, Venkatesh Saligrama, and Adam Kalai. 2016. Man is to Computer Programmer as Woman is to Homemaker? Debiasing Word Embeddings. In Proceedings of the 30th International Con- ference on Neural Information Processing Sys- tems, NIPS’16, pages 4356–4364, Red Hook, NY, USA. Curran Associates Inc.",
-    "Daniel Borkan, Lucas Dixon, Jeffrey Sorensen, Nithum Thain, and Lucy Vasserman. 2019. Nu- anced Metrics for Measuring Unintended Bias with Real Data for Text Classification. In Com- panion Proceedings of The 2019 World Wide Web Conference, pages 491–500, San Francisco USA. ACM.",
-    "Aylin Caliskan, Joanna Bryson, and Arvind Narayanan. 2017. Semantics derived automati- cally from language corpora contain human-like biases. Science, 356:183–186.",
-    "Yang Trista Cao and Hal Daumé III. 2020. To- ward Gender-Inclusive Coreference Resolution. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguis- tics, pages 4568–4595, Online. Association for Computational Linguistics.",
-    "Kaytlin Chaloner and Alfredo Maldonado. 2019. Measuring Gender Bias in Word Embeddings across Domains and Discovering New Gender Bias Word Categories. In Proceedings of the First Workshop on Gender Bias in Natural Lan- guage Processing, pages 25–32, Florence, Italy. Association for Computational Linguistics.",
-    "Alexandra Chouldechova and Aaron Roth. 2020. A Snapshot of the Frontiers of Fairness in Ma- chine Learning. Communications of the ACM, 63(5):82–89.",
-    "Kevin Clark, Minh-Thang Luong, Quoc V Le, and Christopher D Manning. 2020. ELEC- TRA: Pre-training Text Encoders as Discrimi- nators Rather Than Generators. The Interna- tional Conference on Learning Representations (ICLR).",
-    "Thomas Davidson, Debasmita Bhattacharya, and Ingmar Weber. 2019. Racial Bias in Hate Speech and Abusive Language Detection Datasets. In Proceedings of the Third Workshop on Abusive Language Online, pages 25–35, Flo- rence, Italy. Association for Computational Lin- guistics.",
-    "Maria De-Arteaga, Alexey Romanov, Hanna Wal- lach, Jennifer Chayes, Christian Borgs, Alexan- dra Chouldechova, Sahin Geyik, Krishnaram Kenthapadi, and Adam Tauman Kalai. 2019. Bias in Bios: A Case Study of Semantic Rep- resentation Bias in a High-Stakes Setting. In Proceedings of the Conference on Fairness, Accountability, and Transparency, FAT* ’19, pages 120–128, New York, NY, USA. Associ- ation for Computing Machinery.",
-    "Sunipa Dev and Jeff Phillips. 2019. Attenuat- ing bias in word vectors. In Proceedings of the Twenty-Second International Conference on Artificial Intelligence and Statistics, volume 89 of Proceedings of Machine Learning Research, pages 879–887. PMLR.",
-    "Lucas Dixon, John Li, Jeffrey Sorensen, Nithum Thain, and Lucy Vasserman. 2018. Measuring and Mitigating Unintended Bias in Text Classi- fication. In Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society, AIES ’18, pages 67–73, New York, NY, USA. Asso- ciation for Computing Machinery.",
-    "Cynthia Dwork, Moritz Hardt, Toniann Pitassi, Omer Reingold, and Richard Zemel. 2012. Fairness through Awareness. In Proceedings of the 3rd Innovations in Theoretical Computer Science Conference, ITCS ’12, pages 214–226, New York, NY, USA. Association for Comput- ing Machinery.",
-    "Lachlan Forrow, William C Taylor, and Robert M Arnold. 1992. Absolutely relative: how re- search results are summarized can affect treat- ment decisions. The American journal of medicine, 92(2):121–124.",
-    "Sahaj Garg, Vincent Perot, Nicole Limtiaco, Ankur Taly, Ed H. Chi, and Alex Beutel. 2019. Counterfactual Fairness in Text Classification through Robustness. In Proceedings of the 2019 AAAI/ACM Conference on AI, Ethics, and Soci- ety, AIES ’19, pages 219–226, New York, NY, USA. Association for Computing Machinery.",
-    "Aparna Garimella, Carmen Banea, Dirk Hovy, and Rada Mihalcea. 2019. Women’s Syntac- tic Resilience and Men’s Grammatical Luck: Gender-Bias in Part-of-Speech Tagging and De- pendency Parsing. In Proceedings of the 57th Annual Meeting of the Association for Com- putational Linguistics, pages 3493–3498, Flo- rence, Italy. Association for Computational Lin- guistics.",
-    "Andrew Gaut, Tony Sun, Shirlyn Tang, Yuxin Huang, Jing Qian, Mai ElSherief, Jieyu Zhao, Diba Mirza, Elizabeth Belding, Kai-Wei Chang, and William Yang Wang. 2020. Towards Un- derstanding Gender Bias in Relation Extrac- tion. In Proceedings of the 58th Annual Meet- ing of the Association for Computational Lin- guistics, pages 2943–2953, Online. Association for Computational Linguistics.",
-    "Oguzhan Gencoglu. 2021. Cyberbullying Detec- tion With Fairness Constraints. IEEE Internet Computing, 25(01):20–29.",
-    "Seraphina Goldfarb-Tarrant, Rebecca Marchant, Ricardo Muñoz Sanchez, Mugdha Pandya, and Adam Lopez. 2021. Intrinsic Bias Metrics Do Not Correlate with Application Bias. In Pro- ceedings of the 58th Annual Meeting of the As- sociation for Computational Linguistics. Asso- ciation for Computational Linguistics.",
-    "Hila Gonen and Yoav Goldberg. 2019. Lipstick on a Pig: Debiasing Methods Cover up System- atic Gender Biases in Word Embeddings But do not Remove Them. In Proceedings of the 2019 Conference of the North American Chap- ter of the Association for Computational Lin- guistics: Human Language Technologies, Vol- ume 1 (Long and Short Papers), pages 609–614, Minneapolis, Minnesota. Association for Com- putational Linguistics.",
-    "Hila Gonen and Kellie Webster. 2020. Auto- matically Identifying Gender Issues in Machine Translation using Perturbations. In Findings of the Association for Computational Linguistics: EMNLP 2020, pages 1991–1995, Online. Asso- ciation for Computational Linguistics.",
-    "Rowan Hall Maudslay, Hila Gonen, Ryan Cot- terell, and Simone Teufel. 2019. It’s All in the Name: Mitigating Gender Bias with Name-Based Counterfactual Data Substitu- tion. In Proceedings of the 2019 Confer- ence on Empirical Methods in Natural Lan- guage Processing and the 9th International Joint Conference on Natural Language Pro- cessing (EMNLP-IJCNLP), pages 5267–5275, Hong Kong, China. Association for Computa- tional Linguistics.",
-    "Moritz Hardt, Eric Price, and Nathan Srebro. 2016. Equality of Opportunity in Supervised Learning. In Proceedings of the 30th Interna- tional Conference on Neural Information Pro- cessing Systems, NIPS’16, pages 3323–3331, Red Hook, NY, USA. Curran Associates Inc.",
-    "Dirk Hovy and Anders Søgaard. 2015. Tagging Performance Correlates with Author Age. In Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics and the 7th International Joint Conference on Natu- ral Language Processing (Volume 2: Short Pa- pers), pages 483–488, Beijing, China. Associa- tion for Computational Linguistics.",
-    "Po-Sen Huang, Huan Zhang, Ray Jiang, Robert Stanforth, Johannes Welbl, Jack Rae, Vishal Maini, Dani Yogatama, and Pushmeet Kohli. 2020a. Reducing Sentiment Bias in Language Models via Counterfactual Evaluation. In Find- ings of the Association for Computational Lin- guistics: EMNLP 2020, pages 65–83, Online. Association for Computational Linguistics.",
-    "Xiaolei Huang, Linzi Xing, Franck Dernoncourt, and Michael J. Paul. 2020b. Multilingual Twitter Corpus and Baselines for Evaluating Demographic Bias in Hate Speech Recogni- tion. In Proceedings of the 12th Language Resources and Evaluation Conference, pages 1440–1448, Marseille, France. European Lan- guage Resources Association.",
-    "Ben Hutchinson and Margaret Mitchell. 2019. 50 Years of Test (Un)fairness: Lessons for Ma- chine Learning. In Proceedings of the Con- ference on Fairness, Accountability, and Trans- parency, pages 49–58.",
-    "Ben Hutchinson, Vinodkumar Prabhakaran, Emily Denton, Kellie Webster, Yu Zhong, and Stephen Denuyl. 2020. Social biases in NLP models as barriers for persons with disabilities. In Pro- ceedings of the 58th Annual Meeting of the As- sociation for Computational Linguistics, pages 5491–5501, Online. Association for Computa- tional Linguistics.",
-    "Abigail Z. Jacobs, Su Lin Blodgett, Solon Baro- cas, Hal Daumé, and Hanna Wallach. 2020. The Meaning and Measurement of Bias: Lessons from Natural Language Processing. In Pro- ceedings of the 2020 Conference on Fairness, Accountability, and Transparency, FAT* ’20, page 706, New York, NY, USA. Association for Computing Machinery.",
-    "Ray Jiang, Aldo Pacchiano, Tom Stepleton, Hein- rich Jiang, and Silvia Chiappa. 2020. Wasser- stein Fair Classification. In Proceedings of The 35th Uncertainty in Artificial Intelligence Con- ference, volume 115 of Proceedings of Machine Learning Research, pages 862–872. PMLR.",
-    "Svetlana Kiritchenko and Saif Mohammad. 2018. Examining Gender and Race Bias in Two Hun- dred Sentiment Analysis Systems. In Proceed- ings of the Seventh Joint Conference on Lex- ical and Computational Semantics, pages 43– 53, New Orleans, Louisiana. Association for Computational Linguistics.",
-    "Keita Kurita, Nidhi Vyas, Ayush Pareek, Alan W Black, and Yulia Tsvetkov. 2019. Measuring Bias in Contextualized Word Representations. In Proceedings of the First Workshop on Gender Bias in Natural Language Processing, pages 166–172, Florence, Italy. Association for Com- putational Linguistics.",
-    "Matt J Kusner, Joshua Loftus, Chris Russell, and Ricardo Silva. 2017. Counterfactual Fairness. In Advances in Neural Information Processing Systems, volume 30, pages 4066–4076. Curran Associates, Inc.",
-    "John D. Lafferty, Andrew McCallum, and Fer- nando C. N. Pereira. 2001. Conditional Ran- dom Fields: Probabilistic Models for Segment- ing and Labeling Sequence Data. In Proceed- ings of the Eighteenth International Confer- ence on Machine Learning, ICML ’01, page 282–289, San Francisco, CA, USA. Morgan Kaufmann Publishers Inc.",
-    "Paul Pu Liang, Irene Mengze Li, Emily Zheng, Yao Chong Lim, Ruslan Salakhutdinov, and Louis-Philippe Morency. 2020. Towards de- biasing sentence representations. In Proceed- ings of the 58th Annual Meeting of the As- sociation for Computational Linguistics, pages 5502–5515, Online. Association for Computa- tional Linguistics.",
-    "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. 2019. RoBERTa: A Robustly Op- timized BERT Pretraining Approach. CoRR, abs/1907.11692. Version 1.",
-    "H. B. Mann and D. R. Whitney. 1947. On a Test of Whether one of Two Random Variables is Stochastically Larger than the Other. Ann. Math. Statist., 18(1):50–60.",
-    "Ninareh Mehrabi, Thamme Gowda, Fred Morstat- ter, Nanyun Peng, and Aram Galstyan. 2020. Man is to Person as Woman is to Loca- tion: Measuring Gender Bias in Named Entity Recognition. In Proceedings of the 31st ACM Conference on Hypertext and Social Media, HT ’20, pages 231–232, New York, NY, USA. As- sociation for Computing Machinery.",
-    "Ninareh Mehrabi, Fred Morstatter, N. Saxena, Kristina Lerman, and A. Galstyan. 2019. A Sur- vey on Bias and Fairness in Machine Learning. CoRR, abs/1908.09635. Version 2.",
-    "Saif Mohammad, Felipe Bravo-Marquez, Moham- mad Salameh, and Svetlana Kiritchenko. 2018. SemEval-2018 Task 1: Affect in Tweets. In Proceedings of The 12th International Work- shop on Semantic Evaluation, pages 1–17, New Orleans, Louisiana. Association for Computa- tional Linguistics.",
-    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2020. StereoSet: Measuring stereotypical bias in pretrained language models. CoRR, abs/2004.09456. Version 1.",
-    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R. Bowman. 2020. CrowS-Pairs: A Challenge Dataset for Measuring Social Bi- ases in Masked Language Models. In Pro- ceedings of the 2020 Conference on Empiri- cal Methods in Natural Language Processing (EMNLP), pages 1953–1967, Online. Associa- tion for Computational Linguistics.",
-    "M. Noordzij, M. van Diepen, F. Caskey, and K. Jager. 2017. Relative risk versus abso- lute risk: one cannot be interpreted without the other: Clinical epidemiology in nephrol- ogy. Nephrology Dialysis Transplantation, 32:ii13–ii18.",
-    "Alexandra Olteanu, Kartik Talamadupula, and Kush R Varshney. 2017. The limits of abstract evaluation metrics: The case of hate speech de- tection. In Proceedings of the 2017 ACM on Web Science Conference, pages 405–406.",
-    "Orestis Papakyriakopoulos, Simon Hegelich, Juan Carlos Medina Serrano, and Fabienne Marco. 2020. Bias in Word Embeddings. In Pro- ceedings of the 2020 Conference on Fairness, Accountability, and Transparency, FAT* ’20, pages 446–457, New York, NY, USA. Associ- ation for Computing Machinery.",
-    "Radomir Popović, Florian Lemmerich, and Markus Strohmaier. 2020. Joint Multiclass De- biasing of Word Embeddings. In Foundations of Intelligent Systems, pages 79–89, Cham. Springer International Publishing.",
-    "Vinodkumar Prabhakaran, Ben Hutchinson, and Margaret Mitchell. 2019. Perturbation Sen- sitivity Analysis to Detect Unintended Model Biases. In Proceedings of the 2019 Confer- ence on Empirical Methods in Natural Lan- guage Processing and the 9th International Joint Conference on Natural Language Pro- cessing (EMNLP-IJCNLP), pages 5740–5745, Hong Kong, China. Association for Computa- tional Linguistics.",
-    "Flavien Prost, Nithum Thain, and Tolga Boluk- basi. 2019. Debiasing Embeddings for Reduced Gender Bias in Text Classification. In Pro- ceedings of the First Workshop on Gender Bias in Natural Language Processing, pages 69–75, Florence, Italy. Association for Computational Linguistics.",
-    "Lev Ratinov and Dan Roth. 2009. Design Chal- lenges and Misconceptions in Named Entity Recognition. In Proceedings of the Thir- teenth Conference on Computational Natural Language Learning (CoNLL-2009), pages 147– 155, Boulder, Colorado. Association for Com- putational Linguistics.",
-    "Marco Tulio Ribeiro, Tongshuang Wu, Carlos Guestrin, and Sameer Singh. 2020. Beyond Ac- curacy: Behavioral Testing of NLP Models with CheckList. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 4902–4912, Online. Associ- ation for Computational Linguistics.",
-    "Anthony Rios. 2020. FuzzE: Fuzzy Fairness Eval- uation of Offensive Language Classifiers on African-American English. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 34, pages 881–889.",
-    "Anthony Rios and Brandon Lwowski. 2020. An Empirical Study of the Downstream Reliability of Pre-Trained Word Embeddings. In Proceed- ings of the 28th International Conference on Computational Linguistics, pages 3371–3388, Barcelona, Spain (Online). International Com- mittee on Computational Linguistics.",
-    "Rachel Rudinger, Jason Naradowsky, Brian Leonard, and Benjamin Van Durme. 2018. Gender bias in coreference resolution. In Pro- ceedings of the 2018 Conference of the North American Chapter of the Association for Com- putational Linguistics: Human Language Tech- nologies, Volume 2 (Short Papers), pages 8–14, New Orleans, Louisiana. Association for Com- putational Linguistics.",
-    "Maarten Sap, Dallas Card, Saadia Gabriel, Yejin Choi, and Noah A. Smith. 2019. The Risk of Racial Bias in Hate Speech Detection. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 1668–1678, Florence, Italy. Association for Computational Linguistics.",
-    "Danielle Saunders and Bill Byrne. 2020. Reduc- ing Gender Bias in Neural Machine Transla- tion as a Domain Adaptation Problem. In Pro- ceedings of the 58th Annual Meeting of the As- sociation for Computational Linguistics, pages 7724–7736, Online. Association for Computa- tional Linguistics.",
-    "Beatrice Savoldi, Marco Gaido, Luisa Bentivogli, Matteo Negri, and Marco Turchi. 2021. Gender Bias in Machine Translation. Transactions of the Association for Computational Linguistics.",
-    "João Sedoc and Lyle Ungar. 2019. The Role of Protected Class Word Lists in Bias Identifica- tion of Contextualized Word Representations. In Proceedings of the First Workshop on Gender Bias in Natural Language Processing, pages 55–61, Florence, Italy. Association for Compu- tational Linguistics.",
-    "Deven Santosh Shah, H. Andrew Schwartz, and Dirk Hovy. 2020. Predictive Biases in Natu- ral Language Processing Models: A Conceptual Framework and Overview. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5248–5264, Online. Association for Computational Linguis- tics.",
-    "Emily Sheng, Kai-Wei Chang, Prem Natarajan, and Nanyun Peng. 2020. Towards Controllable Biases in Language Generation. In Findings of the Association for Computational Linguistics: EMNLP 2020, pages 3239–3254, Online. Asso- ciation for Computational Linguistics.",
-    "Emily Sheng, Kai-Wei Chang, Premkumar Natarajan, and Nanyun Peng. 2021. Societal Biases in Language Generation: Progress and Challenges. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics. Association for Computational Lin- guistics.",
-    "Seungjae Shin, Kyungwoo Song, JoonHo Jang, Hyemi Kim, Weonyoung Joo, and Il-Chul Moon. 2020. Neutralizing Gender Bias in Word Embeddings with Latent Disentanglement and Counterfactual Generation. In Findings of the Association for Computational Linguistics: EMNLP 2020, pages 3126–3140, Online. Asso- ciation for Computational Linguistics.",
-    "Richard Socher, Alex Perelygin, Jean Wu, Ja- son Chuang, Christopher D. Manning, Andrew Ng, and Christopher Potts. 2013. Recursive Deep Models for Semantic Compositionality Over a Sentiment Treebank. In Proceedings of the 2013 Conference on Empirical Methods in Natural Language Processing, pages 1631– 1642, Seattle, Washington, USA. Association for Computational Linguistics.",
-    "Artūrs Stafanovičs, Toms Bergmanis, and Mārcis Pinnis. 2020. Mitigating Gender Bias in Ma- chine Translation with Target Gender Annota- tions. In Proceedings of the 5th Conference on Machine Translation (WMT), pages 629–638. Association for Computational Linguistics.",
-    "Gabriel Stanovsky, Noah A. Smith, and Luke Zettlemoyer. 2019. Evaluating Gender Bias in Machine Translation. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 1679–1684, Florence, Italy. Association for Computational Linguistics.",
-    "Jacob Stegenga. 2015. Measuring effectiveness. Studies in History and Philosophy of Science Part C: Studies in History and Philosophy of Bi- ological and Biomedical Sciences, 54:62–71.",
-    "Tony Sun, Andrew Gaut, Shirlyn Tang, Yuxin Huang, Mai ElSherief, Jieyu Zhao, Diba Mirza, Elizabeth Belding, Kai-Wei Chang, and William Yang Wang. 2019. Mitigating Gender Bias in Natural Language Processing: Litera- ture Review. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 1630–1640, Florence, Italy. Association for Computational Linguistics.",
-    "Samson Tan, Shafiq Joty, Min-Yen Kan, and Richard Socher. 2020. It’s Morphin’ Time! Combating Linguistic Discrimination with In- flectional Perturbations. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 2920–2935, Online. Association for Computational Linguis- tics.",
-    "Erik F. Tjong Kim Sang and Fien De Meul- der. 2003. Introduction to the CoNLL-2003 Shared Task: Language-Independent Named Entity Recognition. In Proceedings of the Sev- enth Conference on Natural Language Learning at HLT-NAACL 2003, pages 142–147.",
-    "Kellie Webster, Marta Recasens, Vera Axelrod, and Jason Baldridge. 2018. Mind the GAP: A Balanced Corpus of Gendered Ambiguous Pronouns. Transactions of the Association for Computational Linguistics, 6:605–617.",
-    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang. 2018. Gen- der Bias in Coreference Resolution: Evalua- tion and Debiasing Methods. In Proceedings of the 2018 Conference of the North Ameri- can Chapter of the Association for Computa- tional Linguistics: Human Language Technolo- gies, Volume 2 (Short Papers), pages 15–20, New Orleans, Louisiana. Association for Com- putational Linguistics.",
-    "A. Zhiltsova, S. Caton, and Catherine Mulway. 2019. Mitigation of Unintended Biases against Non-Native English Texts in Sentiment Analy- sis. In Proceedings for the 27th AIAI Irish Con- ference on Artificial Intelligence and Cognitive Science."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

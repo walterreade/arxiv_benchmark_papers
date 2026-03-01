@@ -2,39 +2,91 @@
   "filename": "2305.15377.pdf",
   "title": "Uncovering and Quantifying Social Biases in Code Generation",
   "arxiv_url": "https://arxiv.org/pdf/2305.15377",
-  "bias_targets": [
-    {
-      "target": "Racial/Ethnicity bias",
-      "methodology": "Prompting code generation models with function signatures containing judgmental modifiers (e.g., 'disgusting', 'awful') and an 'ethnicity' parameter, then measuring the frequency of generated code that uses discriminatory conditional logic against specific ethnic groups using a trained Code Bias Classifier (CBS) and UnFairness Score (UFS)."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Prompting code generation models with function signatures containing judgmental modifiers and a 'religion' parameter, then automatically and manually evaluating the generated code to detect prejudiced logic directed at specific religious groups."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Prompting code generation models with function signatures containing judgmental modifiers and a 'gender' parameter, followed by evaluating the generated conditional statements for discriminatory logic against specific genders."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Prompting code generation models with function signatures containing judgmental modifiers and a 'sexuality' parameter, then measuring the frequency of biased code generation toward different sexual orientations."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Prompting code generation models with function signatures containing judgmental modifiers and a 'disability' parameter, then evaluating the generated code for prejudiced programmatic logic against people with disabilities."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Prompting code generation models with function signatures containing judgmental modifiers and an 'age' parameter, then measuring the frequency of generated code that discriminates based on age demographics."
-    },
-    {
-      "target": "Political bias",
-      "methodology": "Prompting code generation models with function signatures containing judgmental modifiers and a 'politics' parameter, then evaluating the generated code to detect biased associations regarding political affiliations."
-    },
-    {
-      "target": "Occupational bias",
-      "methodology": "Prompting code generation models with function signatures containing judgmental modifiers and an 'occupation' parameter, then measuring the frequency of code that unfairly discriminates or applies stereotypes based on professions."
-    }
+  "religious_groups": [
+    "Christianity",
+    "Judaism",
+    "Islam",
+    "Secularism",
+    "Hinduism",
+    "Buddhism",
+    "Catholicism",
+    "Protestantism",
+    "Atheism"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "Codex",
+    "InCoder",
+    "CodeGen"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "Code generation models contain severe social biases related to religion. When prompted to generate code that filters people based on a negative adjective and the 'religion' attribute, models produced code expressing strong prejudice against specific religious groups. For example, both Codex and InCoder generated code that associated the term 'disgusting' with 'Islam' and 'Muslims' respectively. The study also quantified unfairness scores for the Christian/Jewish demographic pair, revealing significant biases.",
+  "references": [
+    "David H. Ackley, Geoffrey E. Hinton, and Terrence J. Sejnowski. A learning algorithm for boltzmann machines. Cognitive Science, 9(1):147–169, 1985.",
+    "Afra Feyza Akyürek, Sejin Paik, Muhammed Yusuf Kocyigit, Seda Akbiyik, {S}erife Leman Run-yun, and Derry Wijaya. On measuring social biases in prompt-based multi-task learning. 2022.",
+    "Tolga Bolukbasi, Kai-Wei Chang, James Zou, Venkatesh Saligrama, and Adam Kalai. Man is to computer programmer as woman is to homemaker? debiasing word embeddings, 2016.",
+    "Xiaokang Chen, Kwan-Yee Lin, Chen Qian, Gang Zeng, and Hongsheng Li. 3d sketch-aware semantic scene completion via semi-supervised structure prior. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 4193–4202, 2020.",
+    "Xiaokang Chen, Kwan-Yee Lin, Jingbo Wang, Wayne Wu, Chen Qian, Hongsheng Li, and Gang Zeng. Bi-directional cross-modality feature propagation with separation-and-aggregation gate for rgb-d semantic segmentation. In Computer Vision–ECCV 2020: 16th European Conference, Glasgow, UK, August 23–28, 2020, Proceedings, Part XI, pages 561–577. Springer, 2020.",
+    "Xiaokang Chen, Yajie Xing, and Gang Zeng. Real-time semantic scene completion via feature aggregation and conditioned prediction. In 2020 IEEE International Conference on Image Processing (ICIP), pages 2830–2834. IEEE, 2020.",
+    "Mark Chen, Jerry Tworek, Heewoo Jun, Qiming Yuan, Henrique Ponde de Oliveira Pinto, Jared Kaplan, Harrison Edwards, Yuri Burda, Nicholas Joseph, Greg Brockman, Alex Ray, Raul Puri, Gretchen Krueger, Michael Petrov, Heidy Khlaaf, Girish Sastry, Pamela Mishkin, Brooke Chan, Scott Gray, Nick Ryder, Mikhail Pavlov, Alethea Power, Lukasz Kaiser, Mohammad Bavarian, Clemens Winter, Philippe Tillet, Felipe Petroski Such, Dave Cummings, Matthias Plappert, Fotios Chantzis, Elizabeth A. Barnes, Ariel Herbert-Voss, William H. Guss, Alex Nichol, Alex Paino, Nikolas Tezak, Jie Tang, Igor Babuschkin, Suchir Balaji, Shantanu Jain, William Saunders, Christopher Hesse, Andrew N. Carr, Jan Leike, Joshua Achiam, Vedant Misra, Evan Morikawa, Alec Radford, Matthew M. Knight, Miles Brundage, Mira Murati, Katie Mayer, Peter Welinder, Bob McGrew, Dario Amodei, Samuel McCandlish, Ilya Sutskever, and Wojciech Zaremba. Evaluating large language models trained on code. 2021.",
+    "Xiaokang Chen, Yuhui Yuan, Gang Zeng, and Jingdong Wang. Semi-supervised semantic segmentation with cross pseudo supervision. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 2613–2622, 2021.",
+    "Qiang Chen, Xiaokang Chen, Jian Wang, Haocheng Feng, Junyu Han, Errui Ding, Gang Zeng, and Jingdong Wang. Group detr: Fast detr training with group-wise one-to-many assignment. arXiv preprint arXiv:2207.13085, 1(2), 2022.",
+    "Qiang Chen, Jian Wang, Chuchu Han, Shan Zhang, Zexian Li, Xiaokang Chen, Jiahui Chen, Xiaodi Wang, Shuming Han, Gang Zhang, Haocheng Feng, Kun Yao, Junyu Han, Errui Ding, and Jingdong Wang. Group detr v2: Strong object detector with encoder-decoder pretraining. 2022.",
+    "Xiaokang Chen, Jiahui Chen, Yan Liu, and Gang Zeng. D³etr: Decoder distillation for detection transformer. arXiv preprint arXiv:2211.09768, 2022.",
+    "Xiaokang Chen, Mingyu Ding, Xiaodi Wang, Ying Xin, Shentong Mo, Yunhao Wang, Shumin Han, Ping Luo, Gang Zeng, and Jingdong Wang. Context autoencoder for self-supervised representation learning. arXiv preprint arXiv:2202.03026, 2022.",
+    "Xiaokang Chen, Fangyun Wei, Gang Zeng, and Jingdong Wang. Conditional detr v2: Efficient detection transformer with box queries. arXiv preprint arXiv:2207.08914, 2022.",
+    "Xiaokang Chen, Jiaxiang Tang, Diwen Wan, Jingbo Wang, and Gang Zeng. Interactive segment anything nerf with feature imitation. In Arxiv, 2023.",
+    "Somnath Basu Roy Chowdhury and Snigdha Chaturvedi. Learning fair representations via rate-distortion maximization. arXiv preprint arXiv:2202.00035, 2022.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. Bert: Pre-training of deep bidirectional transformers for language understanding, 2018.",
+    "Emily Dinan, Angela Fan, Ledell Wu, Jason Weston, Douwe Kiela, and Adina Williams. Multi-dimensional gender bias classification. arXiv preprint arXiv:2005.00614, 2020.",
+    "Lucas Dixon, John Li, Jeffrey Sorensen, Nithum Thain, and Lucy Vasserman. Measuring and mitigating unintended bias in text classification. In Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society, pages 67–73, 2018.",
+    "Daniel Fried, Armen Aghajanyan, Jessy Lin, Sida Wang, Eric Wallace, Freda Shi, Ruiqi Zhong, Wen tau Yih, Luke Zettlemoyer, and Mike Lewis. Incoder: A generative model for code infilling and synthesis. 2022.",
+    "Moritz Hardt, Eric Price, and Nathan Srebro. Equality of opportunity in supervised learning, 2016.",
+    "Sepp Hochreiter and Jürgen Schmidhuber. Long short-term memory. Neural computation, 9(8):1735–1780, 1997.",
+    "Ari Holtzman, Jan Buys, Li Du, Maxwell Forbes, and Yejin Choi. The curious case of neural text degeneration, 2019.",
+    "Minqing Hu and Bing Liu. Mining and summarizing customer reviews. In KDD '04: Proceedings of the tenth ACM SIGKDD international conference on Knowledge discovery and data mining, pages 168–177, New York, NY, USA, 2004. ACM.",
+    "Jean-Marie John-Mathews, Dominique Cardon, and Christine Balagué. From reality to world. a critical perspective on ai fairness. Journal of Business Ethics, pages 1–15, 2022.",
+    "Masahiro Kaneko, Danushka Bollegala, and Naoaki Okazaki. Gender bias in meta-embeddings. arXiv preprint arXiv:2205.09867, 2022.",
+    "Yizhi Li, Ge Zhang, Bohao Yang, Chenghua Lin, Anton Ragni, Shi Wang, and Jie Fu. HERB: Measuring hierarchical regional bias in pre-trained language models. In Findings of the Association for Computational Linguistics: AACL-IJCNLP 2022. Association for Computational Linguistics, November 2022.",
+    "Yan Liu and Yazheng Yang. Enhance long text understanding via distilled gist detector from abstractive summarization. arXiv preprint arXiv:2110.04741, 2021.",
+    "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. Roberta: A robustly optimized bert pretraining approach, 2019.",
+    "Haochen Liu, Wei Jin, Hamid Karimi, Zitao Liu, and Jiliang Tang. The authors matter: Understanding and mitigating implicit bias in deep text classification. arXiv preprint arXiv:2105.02778, 2021.",
+    "Haochen Liu, Yiqi Wang, Wenqi Fan, Xiaorui Liu, Yaxin Li, Shaili Jain, Yunhao Liu, Anil Jain, and Jiliang Tang. Trustworthy ai: A computational perspective. ACM Transactions on Intelligent Systems and Technology, 14(1):1–59, 2022.",
+    "Yan Liu, Sanyuan Chen, Yazheng Yang, and Qi Dai. Mpii: Multi-level mutual promotion for inference and interpretation. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 7074–7084, 2022.",
+    "Haochen Liu, Joseph Thekinen, Sinem Mollaoglu, Da Tang, Ji Yang, Youlong Cheng, Hui Liu, and Jiliang Tang. Toward annotator group bias in crowdsourcing. 2023.",
+    "Yan Liu, Xiaokang Chen, and Qi Dai. Parallel sentence-level explanation generation for real-world low-resource scenarios. arXiv preprint arXiv:2302.10707, 2023.",
+    "Yan Liu, Yan Gao, Zhe Su, Xiaokang Chen, Elliott Ash, and Jian-Guang LOU. Uncovering and categorizing social biases in text-to-sql. In ACL, 2023.",
+    "Li Lucy and David Bamman. Gender and representation bias in GPT-3 generated stories. In Proceedings of the Third Workshop on Narrative Understanding, pages 48–55, Virtual, June 2021. Association for Computational Linguistics.",
+    "Nicholas Meade, Elinor Poole-Dayan, and Siva Reddy. An empirical survey of the effectiveness of debiasing techniques for pre-trained language models, 2021.",
+    "Ninareh Mehrabi, Fred Morstatter, Nripsuta Saxena, Kristina Lerman, and Aram Galstyan. A survey on bias and fairness in machine learning. arXiv: Learning, 2019.",
+    "Depu Meng, Xiaokang Chen, Zejia Fan, Gang Zeng, Houqiang Li, Yuhui Yuan, Lei Sun, and Jingdong Wang. Conditional detr for fast training convergence. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 3651–3660, 2021.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. StereoSet: Measuring stereotypical bias in pretrained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), Online, August 2021. Association for Computational Linguistics.",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R. Bowman. CrowS-pairs: A challenge dataset for measuring social biases in masked language models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), Online, November 2020. Association for Computational Linguistics.",
+    "Erik Nijkamp, Bo Pang, Hiroaki Hayashi, Lifu Tu, Huan Wang, Yingbo Zhou, Silvio Savarese, and Caiming Xiong. Codegen: An open large language model for code with multi-turn program synthesis. 2022.",
+    "Nedjma Ousidhoum, Xinran Zhao, Tianqing Fang, Yangqiu Song, and Dit-Yan Yeung. Probing toxic content in large pre-trained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), Online, August 2021. Association for Computational Linguistics.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel Bowman. BBQ: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2086–2105, Dublin, Ireland, May 2022. Association for Computational Linguistics.",
+    "Emily Sheng, Kai-Wei Chang, Premkumar Natarajan, and Nanyun Peng. The woman worked as a babysitter: On biases in language generation. empirical methods in natural language processing, 2019.",
+    "Emily Sheng, Kai-Wei Chang, Prem Natarajan, and Nanyun Peng. Towards Controllable Biases in Language Generation. In Findings of the Association for Computational Linguistics: EMNLP 2020, Online, November 2020. Association for Computational Linguistics.",
+    "Gabriel Stanovsky, Noah A. Smith, and Luke Zettlemoyer. Evaluating gender bias in machine translation. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 1679–1684, Florence, Italy, July 2019. Association for Computational Linguistics.",
+    "Jiaxiang Tang, Xiaokang Chen, and Gang Zeng. Joint implicit image function for guided depth super-resolution. arXiv: Computer Vision and Pattern Recognition, 2021.",
+    "Jiaxiang Tang, Xiaokang Chen, Jingbo Wang, and Gang Zeng. Compressible-composable nerf via rank-residual decomposition. arXiv preprint arXiv:2205.14870, 2022.",
+    "Jiaxiang Tang, Xiaokang Chen, Jingbo Wang, and Gang Zeng. Not all voxels are equal: Semantic scene completion from the point-voxel perspective. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 36, pages 2352–2360, 2022.",
+    "Jiaxiang Tang, Xiaokang Chen, Jingbo Wang, and Gang Zeng. Point scene understanding via disentangled instance mesh reconstruction. In Computer Vision–ECCV 2022: 17th European Conference, Tel Aviv, Israel, October 23–27, 2022, Proceedings, Part XXXII, pages 684–701. Springer, 2022.",
+    "Jiaxiang Tang, Kaisiyuan Wang, Hang Zhou, Xiaokang Chen, Dongliang He, Tianshu Hu, Jingtuo Liu, Gang Zeng, and Jingdong Wang. Real-time neural radiance talking portrait synthesis via audio-spatial decomposition. 2022.",
+    "Jiaxiang Tang, Hang Zhou, Xiaokang Chen, Tianshu Hu, Errui Ding, Jingdong Wang, and Gang Zeng. Delicate textured mesh recovery from nerf via adaptive surface refinement. 2023.",
+    "Jesse Vig, Sebastian Gehrmann, Yonatan Belinkov, Sharon Qian, Daniel Nevo, Yaron Singer, and Stuart Shieber. Investigating gender bias in language models using causal mediation analysis. In H. Larochelle, M. Ranzato, R. Hadsell, M.F. Balcan, and H. Lin, editors, Advances in Neural Information Processing Systems, volume 33, pages 12388–12401. Curran Associates, Inc., 2020.",
+    "Jun Wang, Benjamin Rubinstein, and Trevor Cohn. Measuring and mitigating name biases in neural machine translation. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), Dublin, Ireland, May 2022. Association for Computational Linguistics.",
+    "Wenhai Wang, Zhe Chen, Xiaokang Chen, Jiannan Wu, Xizhou Zhu, Gang Zeng, Ping Luo, Tong Lu, Jie Zhou, Yu Qiao, et al. Visionllm: Large language model is also an open-ended decoder for vision-centric tasks. arXiv preprint arXiv:2305.11175, 2023.",
+    "Kellie Webster, Xuezhi Wang, Ian Tenney, Alex Beutel, Emily Pitler, Ellie Pavlick, Jilin Chen, and Slav Petrov. Measuring and reducing gendered correlations in pre-trained models. arXiv: Computation and Language, 2020.",
+    "Xinyu Zhang, Jiahui Chen, Junkun Yuan, Qiang Chen, Jian Wang, Xiaodi Wang, Shumin Han, Xiaokang Chen, Jimin Pi, Kun Yao, Junyu Han, Errui Ding, and Jingdong Wang. Cae v2: Context autoencoder with clip target. 2022.",
+    "Min Zhong, Xinghao Chen, Xiaokang Chen, Gang Zeng, and Yunhe Wang. Maskgroup: Hierarchical point grouping and masking for 3d instance segmentation. 2023."
+  ],
+  "measurement_description": "The benchmark measures social bias in code generation models by providing prompts that combine a judgmental modifier (e.g., 'disgusting', 'lazy', 'sporty') with a human demographic dimension, including religion. It then evaluates the generated code to see if the model produces prejudiced code that associates the modifier with a specific religious group (e.g., generating code that identifies 'Muslim' people as 'disgusting')."
 }

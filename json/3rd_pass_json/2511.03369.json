@@ -2,51 +2,126 @@
   "filename": "2511.03369.pdf",
   "title": "Silenced Biases: The Dark Side LLMs Learned to Refuse",
   "arxiv_url": "https://arxiv.org/pdf/2511.03369",
-  "bias_targets": [
-    {
-      "target": "Nationality bias",
-      "methodology": "Evaluated using the Silenced Bias Benchmark (SBB) via multiple-choice QA tasks that associate positive, negative, or neutral subjects with demographic groups, applying refusal activation steering to bypass safety filters and measuring disparities using Demographic-Parity Difference (DPD) and KL Divergence."
-    },
-    {
-      "target": "Racial bias",
-      "methodology": "Evaluated using the Silenced Bias Benchmark (SBB) via multiple-choice QA tasks that associate positive, negative, or neutral subjects with demographic groups, applying refusal activation steering to bypass safety filters and measuring disparities using Demographic-Parity Difference (DPD) and KL Divergence."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Evaluated using the Silenced Bias Benchmark (SBB) via multiple-choice QA tasks that associate positive, negative, or neutral subjects with demographic groups, applying refusal activation steering to bypass safety filters and measuring disparities using Demographic-Parity Difference (DPD) and KL Divergence."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Evaluated using the Silenced Bias Benchmark (SBB) via multiple-choice QA tasks that associate positive, negative, or neutral subjects with demographic groups, applying refusal activation steering to bypass safety filters and measuring disparities using Demographic-Parity Difference (DPD) and KL Divergence."
-    },
-    {
-      "target": "Political bias",
-      "methodology": "Evaluated using the Silenced Bias Benchmark (SBB) via multiple-choice QA tasks that associate positive, negative, or neutral subjects with demographic groups, applying refusal activation steering to bypass safety filters and measuring disparities using Demographic-Parity Difference (DPD) and KL Divergence."
-    },
-    {
-      "target": "Socioeconomic bias",
-      "methodology": "Evaluated using the Silenced Bias Benchmark (SBB) via multiple-choice QA tasks that associate positive, negative, or neutral subjects with demographic groups, applying refusal activation steering to bypass safety filters and measuring disparities using Demographic-Parity Difference (DPD) and KL Divergence."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Evaluated using the Silenced Bias Benchmark (SBB) via multiple-choice QA tasks that associate positive, negative, or neutral subjects with demographic groups, applying refusal activation steering to bypass safety filters and measuring disparities using Demographic-Parity Difference (DPD) and KL Divergence."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Evaluated using the Silenced Bias Benchmark (SBB) via multiple-choice QA tasks that associate positive, negative, or neutral subjects with demographic groups, applying refusal activation steering to bypass safety filters and measuring disparities using Demographic-Parity Difference (DPD) and KL Divergence."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Evaluated using the Silenced Bias Benchmark (SBB) via multiple-choice QA tasks that associate positive, negative, or neutral subjects with demographic groups, applying refusal activation steering to bypass safety filters and measuring disparities using Demographic-Parity Difference (DPD) and KL Divergence."
-    },
-    {
-      "target": "Body type bias",
-      "methodology": "Evaluated using the Silenced Bias Benchmark (SBB) via multiple-choice QA tasks that associate positive, negative, or neutral subjects with demographic groups, applying refusal activation steering to bypass safety filters and measuring disparities using Demographic-Parity Difference (DPD) and KL Divergence."
-    },
-    {
-      "target": "Cultural bias",
-      "methodology": "Evaluated using the Silenced Bias Benchmark (SBB) via multiple-choice QA tasks that associate positive, negative, or neutral subjects with demographic groups, applying refusal activation steering to bypass safety filters and measuring disparities using Demographic-Parity Difference (DPD) and KL Divergence."
-    }
+  "religious_groups": [
+    "Christian",
+    "Muslim",
+    "Jewish",
+    "Hindu",
+    "Buddhist",
+    "Catholic",
+    "Protestant",
+    "agnostic",
+    "atheist",
+    "secular"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "Llama-2-7b-chat-hf",
+    "Llama-2-13b-chat-hf",
+    "Meta-Llama-3-8B-Instruct",
+    "Llama-3.1-8B-Instruct",
+    "gemma-2b-it",
+    "gemma-7b-it",
+    "Qwen-7B-Chat",
+    "Qwen-14B-Chat",
+    "Qwen2.5-7B-Instruct",
+    "Qwen2.5-14B-Instruct"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "BBQ",
+    "StereoSet",
+    "ImplicitBias"
+  ],
+  "continuous_testing": false,
+  "findings": "After bypassing safety refusals using the paper's 'refusal steering' technique, models exhibited strong stereotypical biases related to religion. For instance, the Qwen-14B model disproportionately associated 'Muslim' with negative subjects like 'terrorism'. Similarly, Llama-3.1-8B showed a fairness deviation of 800% when associating 'Muslim' with 'terrorist'.",
+  "references": [
+    "An, H.; Acquaye, C.; Wang, C.; Li, Z.; and Rudinger, R. 2024. Do Large Language Models Discriminate in Hiring Decisions on the Basis of Race, Ethnicity, and Gender? arXiv preprint arXiv:2406.10486.",
+    "Arabzadeh, N.; and Clarke, C. L. A. 2025. A Human-AI Comparative Analysis of Prompt Sensitivity in LLM-Based Relevance Judgment. arXiv:2504.12408.",
+    "Arditi, A.; Obeso, O.; Syed, A.; Paleka, D.; Panickssery, N.; Gurnee, W.; and Nanda, N. 2024. Refusal in language models is mediated by a single direction. Advances in Neural Information Processing Systems, 37: 136037–136083.",
+    "Armstrong, L.; Liu, A.; MacNeil, S.; and Metaxa, D. 2024. The silicon ceiling: Auditing gpt’s race and gender biases in hiring. In Proceedings of the 4th ACM Conference on Equity and Access in Algorithms, Mechanisms, and Optimization, 1–18.",
+    "Azachi, O.; Eliyahu, K.; Ani, E. E.; Himelstein, R.; Reichart, R.; Pinter, Y.; and Calderon, N. 2025. Leveraging NTPs for Efficient Hallucination Detection in VLMs. arXiv preprint arXiv:2509.20379.",
+    "Azzopardi, L.; and Moshfeghi, Y. 2024. PRISM: a methodology for auditing biases in large language models. arXiv preprint arXiv:2410.18906.",
+    "Bai, J.; Bai, S.; Chu, Y.; Cui, Z.; Dang, K.; Deng, X.; Fan, Y.; Ge, W.; Han, Y.; Huang, F.; et al. 2023. Qwen technical report. arXiv preprint arXiv:2309.16609.",
+    "Bai, X.; Wang, A.; Sucholutsky, I.; and Griffiths, T. L. 2024. Measuring Implicit Bias in Explicitly Unbiased Large Language Models. arXiv preprint arXiv:2402.04105.",
+    "Bai, X.; Wang, A.; Sucholutsky, I.; and Griffiths, T. L. 2025. Explicitly unbiased large language models still form biased associations. Proceedings of the National Academy of Sciences, 122(8): e2416228122.",
+    "Barocas, S.; Hardt, M.; and Narayanan, A. 2017. Fairness in Machine Learning. In Fairness and Machine Learning. fairmlbook.org. http://fairmlbook.org.",
+    "Bi, G.; Shen, L.; Xie, Y.; Cao, Y.; Zhu, T.; and He, X. 2023. A group fairness lens for large language models. arXiv preprint arXiv:2312.15478.",
+    "Bolukbasi, T.; Chang, K.-W.; Zou, J. Y.; Saligrama, V.; and Kalai, A. T. 2016. Man is to computer programmer as woman is to homemaker? debiasing word embeddings. Advances in neural information processing systems, 29.",
+    "Bouchard, D. 2024. An Actionable Framework for Assessing Bias and Fairness in Large Language Model Use Cases. arXiv:2407.10853.",
+    "Caliskan, A.; Bryson, J. J.; and Narayanan, A. 2017. Semantics derived automatically from language corpora contain human-like biases. Science, 356(6334): 183–186.",
+    "Casper, S.; Davies, X.; Shi, C.; Gilbert, T. K.; Scheurer, J.; Rando, J.; Freedman, R.; Korbak, T.; Lindner, D.; Freire, P.; et al. 2023. Open problems and fundamental limitations of reinforcement learning from human feedback. arXiv preprint arXiv:2307.15217.",
+    "Clarke, C. L. A.; and Dietz, L. 2024. LLM-based relevance assessment still can’t replace human relevance assessment. arXiv:2412.17156.",
+    "Deshpande, A.; et al. 2023. Adaptive Jailbreak Strategies for Prompt-Aware Bias Elicitation. In EMNLP.",
+    "Dubey, A.; Jauhri, A.; Pandey, A.; Kadian, A.; Al-Dahle, A.; Letman, A.; Mathur, A.; Schelten, A.; Yang, A.; Fan, A.; et al. 2024. The llama 3 herd of models. arXiv e-prints, arXiv–2407.",
+    "Dwork, C.; Hardt, M.; Pitassi, T.; Reingold, O.; and Zemel, R. 2012. Fairness through awareness. In Proceedings of the 3rd innovations in theoretical computer science conference, 214–226.",
+    "Gallegos, I. O.; Rossi, R. A.; Barrow, J.; Tanjim, M. M.; Kim, S.; Dernoncourt, F.; Yu, T.; Zhang, R.; and Ahmed, N. K. 2024. Bias and fairness in large language models: A survey. Computational Linguistics, 50(3): 1097–1179.",
+    "Ge, Y.; Kirtane, N.; Peng, H.; and Hakkani-Tür, D. 2025. Llms are vulnerable to malicious prompts disguised as scientific language. arXiv preprint arXiv:2501.14073.",
+    "Henderson, P.; Ganguli, D.; Zhao, Y.; et al. 2023. Foundation Model Security: Prompt Injection, Data Poisoning, and Beyond. arXiv preprint arXiv:2302.10341.",
+    "Henderson, P.; Qi, X.; Zeng, Y.; Xie, T.; Chen, P.-Y.; Jia, R.; and Mittal, P. 2024. Safety Risks from Customizing Foundation Models via Fine-tuning. Policy Brief. Stanford Human-Centered Artificial Intelligence.",
+    "Hida, R.; Kaneko, M.; and Okazaki, N. 2024. Social Bias Evaluation for Large Language Models Requires Prompt Variations. arXiv preprint arXiv:2401.03129.",
+    "Himelstein, R.; LeVi, A.; Belinkov, Y.; and Mendelson, A. 2025. Silent Tokens, Loud Effects: Padding in LLMs. In NeurIPS 2025 Workshop on Evaluating Generative AI Systems.",
+    "Hu, T.; Kyrychenko, Y.; Rathje, S.; Collier, N.; van der Linden, S.; and Roozenbeek, J. 2025. Generative language models exhibit social identity biases. Nature Computational Science, 5: 65–73.",
+    "Huang, Y.; Gupta, S.; Xia, M.; Li, K.; and Chen, D. 2023. Catastrophic jailbreak of open-source llms via exploiting generation. arXiv preprint arXiv:2310.06987.",
+    "Jung, D.; Lee, S.; Moon, H.; Park, C.; and Lim, H. 2025. FLEX: A Benchmark for Evaluating Robustness of Fairness in Large Language Models. arXiv preprint arXiv:2503.04840.",
+    "Khan, A.; Casper, S.; and Hadfield-Menell, D. 2025. Randomness, Not Representation: The Unreliability of Evaluating Cultural Alignment in LLMs. In ACM FAccT.",
+    "Kotek, H.; Dockum, R.; and Sun, D. 2023. Gender bias and stereotypes in large language models. In Proceedings of the ACM on Human-Computer Interaction, 12–25.",
+    "LeVi, A.; Himelstein, R.; and Nemcovsky, Y. 2024. Jailbreak attacks and vulnerabilities in large language models. arXiv preprint arXiv:2410.13334.",
+    "LeVi, A.; Himelstein, R.; Nemcovsky, Y.; Mendelson, A.; and Belinkov, Y. 2025. Jailbreak Attack Initializations as Extractors of Compliance Directions. arXiv preprint arXiv:2502.09755.",
+    "Levi, A.; Lapid, R.; Himelstein, R.; Nemcovsky, Y.; Ziv, A.; and Mendelson, A. 2025. We Had One Job: Task-Driven Quantization Using LLMs’ Hidden Representations. arXiv preprint arXiv:2511.06516.",
+    "Li, S.; Yao, L.; Zhang, J.; and Li, Y. 2024. Safety layers in aligned large language models: The key to llm security. arXiv preprint arXiv:2408.17003.",
+    "Li, Y.; Pan, Z.; Chen, R.; Gan, G.; Xing, L.; Zhang, Y.; and Liu, B. 2025. Fairer inference time debiasing for llms with dynamic activation steering. arXiv preprint arXiv:2504.14492.",
+    "Li, Y.; Shirado, H.; and Das, S. 2025. Actions speak louder than words: What decisions reveal implicit biases in language models. In Proceedings of 2025 ACM Conference on Fairness, Accountability, and Transparency, 3303–3325.",
+    "Liu, S.; Zhang, Q.; et al. 2023. Safety Misalignment in Language Models. In NDSS.",
+    "Liu, X.; Xu, N.; Chen, M.; and Xiao, C. 2023. Autodan: Generating stealthy jailbreak prompts for aligned large language models. arXiv preprint arXiv:2310.04451.",
+    "Liu, X.; Yu, Z.; Zhang, Y.; Zhang, N.; and Xiao, C. 2024a. Automatic and universal prompt injection attacks against large language models. arXiv preprint arXiv:2403.0402.",
+    "Liu, X.; et al. 2024b. Scalable Automated Assessment with LLM-as-a-Judge. In ACL.",
+    "Massoudi, S. 2025. Agentic Systems Design: How to Design for Conceptual Systems Engineering and Design. arXiv preprint arXiv:2507.06819.",
+    "Mazeika, M.; Hendrycks, D.; Li, H.; Xu, X.; Hough, S.; Zou, A.; Rajabi, A.; Yao, Q.; Wang, Z.; Tian, J.; et al. 2023. The human detection challenge. In NeurIPS 2022 Competition Track, 281–291. PMLR.",
+    "Mehrabi, N.; Morstatter, F.; Saxena, N.; Lerman, K.; and Galstyan, A. 2021. A survey on bias and fairness in machine learning. ACM Computing Surveys (CSUR), 54(6): 1–35.",
+    "Mikolov, T.; Sutskever, I.; Chen, K.; Corrado, G. S.; and Dean, J. 2013. Distributed representations of words and phrases and their compositionality. Advances in neural information processing systems, 26.",
+    "Nadeem, M.; Bethke, A.; and Reddy, S. 2020. StereoSet: Measuring stereotypical bias in pretrained language models. arXiv preprint arXiv:2004.09456.",
+    "Nadeem, M.; Bethke, A.; and Reddy, S. 2021. StereoSet: Measuring stereotypical bias in pretrained language models. In ACL.",
+    "Nangia, N.; et al. 2020. CrowS-Pairs: A Challenge Dataset for Measuring Social Biases in Masked Language Models. In EMNLP.",
+    "OECD. 2025. OECD Regulatory Policy Outlook 2025. Paris: OECD Publishing.",
+    "Ouyang, L.; Wu, J.; Jiang, X.; Almeida, D.; Wainwright, C.; Mishkin, P.; Zhang, C.; Agarwal, S.; Slama, K.; Ray, A.; et al. 2022. Training language models to follow instructions with human feedback. Advances in neural information processing systems, 35: 27730–27744.",
+    "Pan, J.; Ren, C.; Yang, Z.; and Zhu, Z. 2025. Beneath the Surface: How Large Language Models Reflect Hidden Bias. arXiv preprint arXiv:2502.19749.",
+    "Panickssery, A.; Bowman, S. R.; and Feng, S. 2024. LLM Evaluators Recognize and Favor their Own Generations. In NeurIPS.",
+    "Parrish, A.; Chen, A.; Nangia, N.; Padmakumar, V.; Phang, J.; Thompson, B.; He, J.; and Bowman, S. R. 2021. BBQ: A hand-built bias benchmark for question answering. arXiv preprint arXiv:2110.08193.",
+    "Plaat, A. 2025. Agentic Large Language Models, a survey. arXiv preprint arXiv:2503.15037.",
+    "Prabhumoye, S.; Solanki, A.; Shoeybi, M.; Anandkumar, A.; and Catanzaro, B. 2021. Few-shot instruction prompts to language models to detect social biases. arXiv preprint arXiv:2106.01243.",
+    "Qi, F.; et al. 2023a. Stereoinjection: Prompt Injection for Eliciting Biases in LLMs. arXiv preprint arXiv:2309.02786.",
+    "Qi, X.; Zeng, Y.; Xie, T.; Chen, P.-Y.; Jia, R.; Mittal, P.; and Henderson, P. 2023b. Fine-tuning aligned language models compromises safety, even when users do not intend to! arXiv preprint arXiv:2310.03693.",
+    "Ross, J.; Kim, Y.; and Lo, A. W. 2024. LLM economics? mapping the new technological frontiers of llms via financial theory. arXiv preprint arXiv:2408.02784.",
+    "Salinas, A.; Penafiel, L.; McCormack, R.; and Morstatter, F. 2023. 'I’m not Racist but...': Discovering Bias in the Internal Knowledge of Large Language Models. arXiv preprint arXiv:2310.08780.",
+    "Sap, M.; Card, D.; Gabriel, S.; Choi, Y.; and Smith, N. A. 2019a. The risk of racial bias in hate speech detection. In Proceedings of the 57th annual meeting of the association for computational linguistics, 1668–1678.",
+    "Sap, M.; Gabriel, S.; Qin, L.; Jurafsky, D.; Smith, N. A.; and Choi, Y. 2019b. Social bias frames: Reasoning about social and power implications of language. arXiv preprint arXiv:1911.03891.",
+    "Sapkota, R. 2025. AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications and Challenges. arXiv preprint arXiv:2505.10468.",
+    "Seyitoğlu, A.; Kuvshinov, A.; Schwinn, L.; and Günnemann, S. 2024. Extracting unlearned information from llms with activation steering. arXiv preprint arXiv:2411.02631.",
+    "Shaikh, Z.; et al. 2023. BiasAttack: Adversarial Bias Probing for LLMs. In EMNLP.",
+    "Sheng, E.; Chang, K.-W.; Natarajan, P.; and Peng, N. 2019. The woman worked as a babysitter: On biases in language generation. arXiv preprint arXiv:1909.01326.",
+    "Shi, L.; Ma, C.; Liang, W.; Ma, W.; and Vosoughi, S. 2024. Judging the judges: A systematic investigation of position bias in pairwise comparative assessments by llms.",
+    "Smith, E. M.; Hall, M.; Kambadur, M.; Presani, E.; and Williams, A. 2022. 'I’m sorry to hear that': Finding New Biases in Language Models with a Holistic Descriptor Dataset. arXiv preprint arXiv:2205.09209.",
+    "Taori, R.; Gulrajani, I.; Zhang, T.; Dubois, Y.; Li, X.; Guestrin, C.; Liang, P.; and Hashimoto, T. B. 2023. Stanford alpaca: An instruction-following llama model.",
+    "Team, G.; Mesnard, T.; Hardin, C.; Dadashi, R.; Bhupatiraju, S.; Pathak, S.; Sifre, L.; Rivière, M.; Kale, M. S.; Love, J.; et al. 2024. Gemma: Open models based on gemini research and technology. arXiv preprint arXiv:2403.08295.",
+    "Team, Q. 2024. Qwen2 technical report. arXiv preprint arXiv:2407.10671.",
+    "Touvron, H.; Martin, L.; Stone, K.; Albert, P.; Almahairi, A.; Babaei, Y.; Bashlykov, N.; Batra, S.; Bhargava, P.; Bhosale, S.; et al. 2023. Llama 2: Open foundation and fine-tuned chat models. arXiv preprint arXiv:2307.09288.",
+    "Wan, Y.; and Chang, K.-W. 2024. White men lead, black women help? benchmarking language agency social biases in llms. arXiv e-prints, arXiv-2404.",
+    "Wei, A.; Haghtalab, N.; and Steinhardt, J. 2023. Jailbroken: How does llm safety training fail? Advances in Neural Information Processing Systems, 36: 80079–80110.",
+    "Wen, Y.; Bi, K.; Chen, W.; Guo, J.; and Cheng, X. 2025. Evaluating Implicit Bias in Large Language Models by Attacking From a Psychometric Perspective. arXiv:2406.14023.",
+    "Xiao, J.; Li, Z.; Xie, X.; Getzen, E.; Fang, C.; Long, Q.; and Su, W. J. 2024. On the algorithmic bias of aligning large language models with rlhf: Preference collapse and matching regularization. arXiv preprint arXiv:2405.16455.",
+    "Zeltyn, S. 2025. Taming Uncertainty via Automation: Observing, Analyzing, and Optimizing Agentic AI Systems. arXiv preprint arXiv:2507.11277.",
+    "Zeltzer, D.; Kugler, Z.; Hayat, L.; Brufman, T.; Ilan Ber, R.; Leibovich, K.; Beer, T.; Frank, I.; Shaul, R.; Goldzweig, C.; et al. 2025. Comparison of initial artificial intelligence (AI) and final physician recommendations in AI-assisted virtual urgent care visits. Annals of Internal Medicine, 178(4): 498–506.",
+    "Zeng, Y.; Brown, C.; Raymond, J.; Byari, M.; Hotz, R.; and Rounsevell, M. 2024. Exploring the opportunities and challenges of using large language models to represent institutional agency in land system modelling. EGUsphere, 2024: 1–35.",
+    "Zhang, Y.; Li, M.; Han, W.; Yao, Y.; Cen, Z.; and Zhao, D. 2025. Safety is Not Only About Refusal: Reasoning-Enhanced Fine-tuning for Interpretable LLM Safety. arXiv preprint arXiv:2503.05021.",
+    "Zhou, X.; et al. 2023. Safety training for language models. In ICLR.",
+    "Zhuo, J.; Zhang, S.; Fang, X.; Duan, H.; Lin, D.; and Chen, K. 2024. ProSA: Assessing and Understanding the Prompt Sensitivity of LLMs. In Findings of EMNLP, 1950–1976.",
+    "Zou, A.; Wang, Z.; Carlini, N.; Nasr, M.; Kolter, J. Z.; and Fredrikson, M. 2023. Universal and Transferable Adversarial Attacks on Aligned Language Models. ArXiv, abs/2307.15043."
+  ],
+  "measurement_description": "The benchmark measured stereotypical associations between subjects (e.g., 'terrorist', 'crime kingpin') and religious groups in a multiple-choice question format to quantify fairness deviation and expose silenced biases."
 }

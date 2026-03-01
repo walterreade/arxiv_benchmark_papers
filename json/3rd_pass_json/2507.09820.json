@@ -2,19 +2,53 @@
   "filename": "2507.09820.pdf",
   "title": "Measuring What Matters: A Framework for Evaluating Safety Risks in Real-World LLM Applications",
   "arxiv_url": "https://arxiv.org/pdf/2507.09820",
-  "bias_targets": [
-    {
-      "target": "Discriminatory bias (Race, Religion, Nationality, Gender, Age)",
-      "methodology": "Probing the LLM application with a curated benchmark of adversarial prompts targeting protected identities and evaluating the safe refusal rate using automated evaluators like LLM-as-a-judge, custom classifiers, or keyword matching."
-    },
-    {
-      "target": "Political bias",
-      "methodology": "Submitting targeted adversarial prompts discussing domestic politics, geopolitics, and social policies to measure whether the LLM application maintains a safe, apolitical stance via refusal metrics."
-    },
-    {
-      "target": "Cultural and Language bias",
-      "methodology": "Incorporating localized vocabulary (e.g., 'Singlish') and culturally specific norms into adversarial prompts to evaluate the robustness of safety filters against non-Western-centric linguistic and cultural nuances."
-    }
+  "religious_groups": [],
+  "models_tested": [
+    "Two unnamed internal LLM chatbots"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "languages_evaluated": [
+    "English",
+    "Singlish"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": true,
+  "findings": "The paper's proposed framework for application-level safety testing includes religion as a protected characteristic within its 'Hateful' content risk category and as a topic in its 'Social Policies' risk category. The main finding is methodological, advocating for the inclusion of religion in customized, context-aware safety taxonomies to evaluate LLMs, rather than presenting empirical results about model performance on religious topics.",
+  "references": [
+    "Workplace fairness act 2024, no. 8 of 2025. https://sso.agc.gov.sg/Act/WFA2025/ Uncommenced/20250214020905?DocDate= 20250213, 2025. s. 8(1).",
+    "AI Security Institute, U. Inspect AI: Framework for Large Language Model Evaluations. URL https://github.com/UKGovernmentBEIS/ inspect_ai.",
+    "AI Standards Hub. Standards database. URL https://aistandardshub.org/ ai-standards-search/.",
+    "AI Verify Foundation. Model ai governance frame- work for generative ai, 2024. URL https: //aiverifyfoundation.sg/resources/ mgf-gen-ai/. Accessed: 2025-05-10.",
+    "AI Verify Foundation, S. Ai verify moonshot. URL https://aiverify-foundation.github. io/moonshot/.",
+    "An, B., Zhang, S., and Dredze, M. RAG LLMS are not safer: A safety analysis of retrieval-augmented genera- tion for large language models. In Chiruzzo, L., Ritter, A., and Wang, L. (eds.), Proceedings of the 2025 Con- ference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Lan- guage Technologies (Volume 1: Long Papers), pp. 5444– 5474, Albuquerque, New Mexico, April 2025. Associa- tion for Computational Linguistics. ISBN 979-8-89176- 189-6. URL https://aclanthology.org/2025. naacl-long.281/.",
+    "Calderon, N., Reichart, R., and Dror, R. The alternative annotator test for llm-as-a-judge: How to statistically justify replacing human annotators with llms, 2025. URL https://arxiv.org/abs/2501.10970.",
+    "Council of Europe. Framework convention on ar- tificial intelligence and human rights, democ- racy and the rule of law. https://www.coe. int/en/web/artificial-intelligence/ the-framework-convention-on-artificial-intelligen 2024. Accessed: 2025-06-07.",
+    "Deng, C., Zhao, Y., Tang, X., Gerstein, M., and Cohan, A. Investigating data contamination in modern bench- marks for large language models. In Duh, K., Gomez, H., and Bethard, S. (eds.), Proceedings of the 2024 Con- ference of the North American Chapter of the Associa- tion for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pp. 8706–8719, Mexico City, Mexico, June 2024. Association for Compu- tational Linguistics. doi: 10.18653/v1/2024.naacl-long. 482. URL https://aclanthology.org/2024. naacl-long.482/.",
+    "Derczynski, L., Galinkin, E., Martin, J., Majumdar, S., and Inie, N. garak: A framework for security probing large language models, 2024. URL https://arxiv.org/ abs/2406.11036.",
+    "European Parliament and Council. Regulation (EU) 2024/1689 of the European Parliament and of the Coun- cil of 13 June 2024 laying down harmonised rules on artificial intelligence (Artificial Intelligence Act). Of- ficial Journal of the European Union L 2024/1689, 12 July 2024, 2024. URL https://eur-lex.europa. eu/eli/reg/2024/1689/0j. Text with EEA rele- vance.",
+    "GovTech Singapore. Ai guardian: Safeguarding ai ap- plications for singapore's public sector. https:// www.aiguardian.gov.sg/, 2025. URL https: //www.aiguardian.gov.sg/. Accessed 9 July 2025.",
+    "Han, S., Rao, K., Ettinger, A., Jiang, L., Lin, B. Y., Lambert, N., Choi, Y., and Dziri, N. Wildguard: Open one-stop moderation tools for safety risks, jailbreaks, and refusals of llms. In Globerson, A., Mackey, L., Belgrave, D., Fan, A., Paquet, U., Tomczak, J., and Zhang, C. (eds.), Advances in Neural Information Processing Systems, volume 37, pp. 8093-8131. Curran Associates, Inc., 2024. URL https://proceedings.neurips. cc/paper_files/paper/2024/file/ 0f69b4b96a46f284b726fbd70f74fb3b-Paper-Datasets_ and_Benchmarks_Track.pdf.",
+    "Inan, H., Upasani, K., Chi, J., Rungta, R., Iyer, K., Mao, Y., Tontchev, M., Hu, Q., Fuller, B., Testuggine, D., and Khabsa, M. Llama guard: Llm-based input-output safe- guard for human-ai conversations, 2023. URL https: //arxiv.org/abs/2312.06674.",
+    "Li, L., Dong, B., Wang, R., Hu, X., Zuo, W., Lin, D., Qiao, Y., and Shao, J. SALAD-bench: A hi- erarchical and comprehensive safety benchmark for large language models. In Ku, L.-W., Martins, A., and Srikumar, V. (eds.), Findings of the Association for Computational Linguistics: ACL 2024, pp. 3923- 3954, Bangkok, Thailand, August 2024. Association for Computational Linguistics. doi: 10.18653/v1/2024. findings-acl.235. URL https://aclanthology. org/2024.findings-acl.235/.",
+    "Liu, Y., Iter, D., Xu, Y., Wang, S., Xu, R., and Zhu, C. G-eval: NLG evaluation using gpt-4 with better human alignment. In Bouamor, H., Pino, J., and Bali, K. (eds.), Proceedings of the 2023 Conference on Empirical Meth- ods in Natural Language Processing, pp. 2511–2522, Singapore, December 2023. Association for Computa- tional Linguistics. doi: 10.18653/v1/2023.emnlp-main. 153. URL https://aclanthology.org/2023. emnlp-main.153/.",
+    "Lu, Y., Cheng, J., Zhang, Z., Cui, S., Wang, C., Gu, X., Dong, Y., Tang, J., Wang, H., and Huang, M. Longsafety: Evaluating long-context safety of large language mod- els, 2025. URL https://arxiv.org/abs/2502. 16971.",
+    "Mazeika, M., Phan, L., Yin, X., Zou, A., Wang, Z., Mu, N., Sakhaee, E., Li, N., Basart, S., Li, B., Forsyth, D., and Hendrycks, D. Harmbench: a standardized evaluation framework for automated red teaming and robust refusal. In Proceedings of the 41st International Conference on Machine Learning, ICML'24. JMLR.org, 2024.",
+    "National Institute of Standards and Technology. Nist ai risk management framework playbook, 2023. URL https://www.nist.gov/ itl/ai-risk-management-framework/ nist-ai-rmf-playbook. Accessed: 2025-05-11.",
+    "OpenAI. Moderation guide, 2025. URL https://platform.openai.com/docs/ guides/moderation.",
+    "ProtectAI.com. Fine-tuned distilroberta-base for rejection in the output detection, 2024. URL https://huggingface.co/ProtectAI/ distilroberta-base-rejection-v1. Ac- cessed: 2025-05-11.",
+    "Qi, X., Zeng, Y., Xie, T., Chen, P.-Y., Jia, R., Mittal, P., and Henderson, P. Fine-tuning aligned language models com- promises safety, even when users do not intend to!, 2023. URL https://arxiv.org/abs/2310.03693.",
+    "Roose, K. Can a.i. be blamed for a teen's suicide?, 2024. URL https://www. nytimes.com/2024/10/23/technology/ characterai-lawsuit-teen-suicide.html. The New York Times, Accessed: 2025-05-11.",
+    "Shen, X., Chen, Z., Backes, M., Shen, Y., and Zhang, Y. \"do anything now\": Characterizing and evaluating in-the-wild jailbreak prompts on large language models, 2024. URL https://arxiv.org/abs/2308.03825.",
+    "Slattery, P., Saeri, A. K., Grundy, E. A. C., Graham, J., Noetel, M., Uuk, R., Dao, J., Pour, S., Casper, S., and Thompson, N. The ai risk repository: A comprehensive meta-review, database, and taxonomy of risks from artifi- cial intelligence, 2025. URL https://arxiv.org/ abs/2408.12622.",
+    "Vidgen, B., Agrawal, A., Ahmed, A. M., Akinwande, V., Al- Nuaimi, N., Alfaraj, N., Alhajjar, E., Aroyo, L., Bavalatti, T., Bartolo, M., Blili-Hamelin, B., Bollacker, K., Bo- massani, R., Boston, M. F., Campos, S., Chakra, K., Chen, C., Coleman, C., Coudert, Z. D., Derczynski, L., Dutta, D., Eisenberg, I., Ezick, J., Frase, H., Fuller, B., Gandikota, R., Gangavarapu, A., Gangavarapu, A., Gealy, J., Ghosh, R., Goel, J., Gohar, U., Goswami, S., Hale, S. A., Hutiri, W., Imperial, J. M., Jandial, S., Judd, N., Juefei-Xu, F., Khomh, F., Kailkhura, B., Kirk, H. R., Kly- man, K., Knotz, C., Kuchnik, M., Kumar, S. H., Kumar, S., Lengerich, C., Li, B., Liao, Z., Long, E. P., Lu, V., Luger, S., Mai, Y., Mammen, P. M., Manyeki, K., McGre- gor, S., Mehta, V., Mohammed, S., Moss, E., Nachman, L., Naganna, D. J., Nikanjam, A., Nushi, B., Oala, L., Orr, I., Parrish, A., Patlak, C., Pietri, W., Poursabzi-Sangdeh, F., Presani, E., Puletti, F., Röttger, P., Sahay, S., Santos, T., Scherrer, N., Sebag, A. S., Schramowski, P., Shahbazi, A., Sharma, V., Shen, X., Sistla, V., Tang, L., Testuggine, D., Thangarasa, V., Watkins, E. A., Weiss, R., Welty, C., Wilbers, T., Williams, A., Wu, C.-J., Yadav, P., Yang, X., Zeng, Y., Zhang, W., Zhdanov, F., Zhu, J., Liang, P., Mattson, P., and Vanschoren, J. Introducing v0.5 of the ai safety benchmark from mlcommons, 2024. URL https://arxiv.org/abs/2404.12241.",
+    "Wang, Y., Li, H., Han, X., Nakov, P., and Baldwin, T. Do- not-answer: Evaluating safeguards in LLMs. In Graham, Y. and Purver, M. (eds.), Findings of the Association for Computational Linguistics: EACL 2024, pp. 896–911, St. Julian's, Malta, March 2024. Association for Computa- tional Linguistics. URL https://aclanthology. org/2024.findings-eacl.61/.",
+    "Williams, S., Schuett, J., and Anderljung, M. On regu- lating downstream ai developers, 2025. URL https: //arxiv.org/abs/2503.11922.",
+    "Zeng, Y., Yang, Y., Zhou, A., Tan, J. Z., Tu, Y., Mai, Y., Klyman, K., Pan, M., Jia, R., Song, D., Liang, P., and Li, B. AIR-BENCH 2024: A safety benchmark based on regulation and policies specified risk categories. In The Thirteenth International Conference on Learning Representations, 2025. URL https://openreview. net/forum?id=UVnD9Ze6mF.",
+    "Zhang, Z., Lei, L., Wu, L., Sun, R., Huang, Y., Long, C., Liu, X., Lei, X., Tang, J., and Huang, M. Safety- Bench: Evaluating the safety of large language mod- els. In Ku, L.-W., Martins, A., and Srikumar, V. (eds.), Proceedings of the 62nd Annual Meeting of the Associ- ation for Computational Linguistics (Volume 1: Long Papers), pp. 15537–15553, Bangkok, Thailand, Au- gust 2024. Association for Computational Linguistics. doi: 10.18653/v1/2024.acl-long.830. URL https: //aclanthology.org/2024.acl-long.830/.",
+    "Zheng, C., Yin, F., Zhou, H., Meng, F., Zhou, J., Chang, K.-W., Huang, M., and Peng, N. On prompt-driven safe- guarding for large language models. In Proceedings of the 41st International Conference on Machine Learning, ICML'24. JMLR.org, 2024."
+  ],
+  "measurement_description": "Detection of hateful content (discriminatory speech or hate speech) against religious groups as a protected identity, and flagging of discussions about social policies related to religion."
 }

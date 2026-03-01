@@ -2,51 +2,23 @@
   "filename": "2602.09269.pdf",
   "title": "Measuring Inclusion in Interaction: Inclusion Analytics for Human-AI Collaborative Learning",
   "arxiv_url": "https://arxiv.org/pdf/2602.09269",
-  "benchmark_measurement": "The paper does not measure any aspects related to faith or religion.",
-  "religious_groups": [],
-  "models_tested": [
-    "GPT-5.2",
-    "GPT-5.2-Thinking",
-    "GPT-40"
+  "bias_targets": [
+    {
+      "target": "Participation Bias",
+      "methodology": "Calculating Inequality of Participation (IP) using turn counts and word counts to measure conversational floor access and participation imbalance among group members."
+    },
+    {
+      "target": "Affective Bias",
+      "methodology": "Measuring politeness uptake by computing the cosine similarity of 11 predefined politeness strategy vectors to evaluate whether respectful interactional norms are reciprocated or marginalized."
+    },
+    {
+      "target": "Epistemic Bias",
+      "methodology": "Evaluating whose contributions are legitimized by measuring semantic-based idea uptake (using Sentence-BERT embeddings to track idea propagation) and endorsement-based uptake (using regex matching for explicit agreement)."
+    },
+    {
+      "target": "Human-AI Bias",
+      "methodology": "Comparing interactional inclusion metrics (participation rates, politeness uptake, and idea endorsement) between human participants and AI teammates within mixed collaborative problem-solving teams."
+    }
   ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "long"
-  ],
-  "religion_component": "none",
-  "base_benchmarks": [],
-  "continuous_testing": false,
-  "findings": "The paper does not contain any findings related to religion.",
-  "references": [
-    "Yuya Asano, Diane Litman, Quentin King-Shepard, Tristan Maidment, Tyree Langley, Teresa Davison, Timothy Nokes-Malach, Adriana Kovashka, and Erin Walker. 2024. What metrics of participation balance predict outcomes of collaborative learning with a robot? arXiv:2405.11092 [cs] doi:10.48550/arXiv.2405.11092",
-    "blind. 00. blind. In blind. blind, 1-2.",
-    "Keonya Booker. 2016. Connection and commitment: How sense of belonging and classroom community influence degree persistence for African American undergraduate women. International journal of teaching and learning in higher education 28, 2 (2016), 218-229.",
-    "Ming Ming Chiu, Yu Won Oh, Jeong-Nam Kim, and Ioana A. Cionea. 2022. Serving the Greater Social Good for Personal Gain: Effects of Polite Disagreements in Online Debates. 49, 3 (2022), 451-473. doi:10.1177/00936502211053456",
-    "Jaeyoon Choi and Nia Nixon. 2025. Agentic men, communal women?: exploring gender bias in LLM-based leadership identification for collaboration analytics. In International Conference on Artificial Intelligence in Education. Springer, 11-18.",
-    "Cristian Danescu-Niculescu-Mizil, Moritz Sudhof, Dan Jurafsky, Jure Leskovec, and Christopher Potts. 2013. A Computational Approach to Politeness with Application to Social Factors. arXiv:1306.6078 [cs] doi:10.48550/arXiv.1306.6078",
-    "Nilanjana Dasgupta, Melissa McManus Scircle, and Matthew Hunsinger. 2015. Female peers in small work groups enhance women's motivation, verbal participation, and career aspirations in engineering. Proceedings of the National Academy of Sciences 112, 16 (2015), 4988-4993.",
-    "Susannah C Davis, Susan Bobbitt Nolen, Naeun Cheon, Elba Moise, and Eric William Hamilton. 2023. Engineering climate for marginalized groups: Connections to peer relations and engineering identity. Journal of Engineering Education 112, 2 (2023), 284-315.",
-    "Dorottya Demszky, Jing Liu, Zid Mancenido, Julie Cohen, Heather Hill, Dan Jurafsky, and Tatsunori B Hashimoto. 2021. Measuring conversational uptake: A case study on student-teacher interactions. In Proceedings of the 59th annual meeting of the association for computational linguistics and the 11th international joint conference on natural language processing (volume 1: long papers). 1638-1653.",
-    "Swati Dhir and Priyanka Vallabh. 2025. Do social relationships at work enhance creativity and innovative behavior? Role of psychological safety. 253 (2025), 104751. doi:10.1016/j.actpsy.2025.104751",
-    "Nia Dowell, Yiwen Lin, Andrew Godfrey, and Christopher Brooks. 2019. Promoting inclusivity through time-dynamic discourse analysis in digitally-mediated collaborative learning. In International Conference on Artificial Intelligence in Education. Springer, 207-219.",
-    "Nia MM Dowell, Tristan M Nixon, and Arthur C Graesser. 2019. Group communication analysis: A computational linguistics approach for detecting sociocognitive roles in multiparty interactions. Behavior research methods 51, 3 (2019), 1007-1041.",
-    "Sarah L Eddy, Sara E Brownell, Phonraphee Thummaphan, Ming-Chih Lan, and Mary Pat Wenderoth. 2015. Caution, student experience may vary: Social identities impact a student's experience in peer discussions. CBE-Life Sciences Education 14, 4 (2015), ar45.",
-    "Amy Edmondson. 1999. Psychological Safety and Learning Behavior in Work Teams. 44, 2 (1999), 350-383. doi:10.2307/2666999",
-    "Randi A. Engle, Jennifer M. Langer-Osuna, and Maxine McKinney De Royston. 2014. Toward a Model of Influence in Persuasive Discussions: Negotiating Quality, Authority, Privilege, and Access Within a Student-Led Argument. 23, 2 (2014), 245-268. doi:10.1080/10508406.2014.883979",
-    "Miranda Fricker. 2007. Epistemic injustice: Power and the ethics of knowing. Oxford university press.",
-    "Gregory R Goldsmith, Miranda L Aiken, Hector M Camarillo-Abad, Kamal Diki, Daniel L Gardner, Mario Stipčić, and Javier F Espeleta. 2024. Overcoming the barriers to teaching teamwork to undergraduates in STEM. es2 pages.",
-    "Areum Han, Florian Krieger, Sungwon Kim, Nia Nixon, and Samuel Greiff. 2024. Revisiting the relationship between team members' personality and their team's performance: A meta-analysis. Journal of Research in Personality 112 (2024), 104526.",
-    "Maheshkumar P Joshi, Elizabeth B Davis, Ravi Kathuria, and C Ken Weidner. 2005. Experiential learning process: Exploring teaching and learning of strategic management framework through the winter survival exercise. Journal of Management Education 29, 5 (2005), 672-695.",
-    "Nia Nixon, Yiwen Lin, and Lauren Snow. 2024. Catalyzing equity in STEM teams: Harnessing generative Al for inclusion and diversity. Policy Insights from the Behavioral and Brain Sciences 11, 1 (2024), 85-92.",
-    "Priyanshu Priya, Mauajama Firdaus, and Asif Ekbal. 2024. Computational Politeness in Natural Language Processing: A Survey. 56, 9 (2024), 1-42. arXiv:2407.12814 [cs] doi:10.1145/3654660",
-    "Nils Reimers and Iryna Gurevych. 2019. Sentence-bert: Sentence embeddings using siamese bert-networks. arXiv preprint arXiv:1908.10084 (2019).",
-    "Cecilia L. Ridgeway and Shelley J. Correll. 2004. Unpacking the Gender System: A Theoretical Perspective on Gender Beliefs and Social Relations. 18, 4 (2004), 510-531. http://www.jstor.org/stable/4149448",
-    "Cecilia L Ridgeway and Kristan Glasgow Erickson. 2000. Creating and spreading status beliefs. Amer. J. Sociology 106, 3 (2000), 579-615.",
-    "Rod D Roscoe, Shima Salehi, Nia Nixon, Marcelo Worsley, Chris Piech, and Rose Luckin. 2022. Inclusion and equity as a paradigm shift for artificial intelligence in education. In Artificial Intelligence in STEM Education. CRC Press, 359-374.",
-    "Bertrand Schneider, Nia Dowell, and Kate Thompson. 2021. Collaboration analytics-current state and potential futures. Journal of Learning Analytics 8, 1 (2021), 1-12.",
-    "Daniel D. Suthers and Caterina Desiato. 2012. Exposing Chat Features through Analysis of Uptake between Contributions. In 2012 45th Hawaii International Conference on System Sciences (2012-01). 3368-3377. doi:10.1109/HICSS.2012.274 ISSN: 1530-1605.",
-    "Anita Williams Woolley, Christopher F. Chabris, Alex Pentland, Nada Hashmi, and Thomas W. Malone. 2010. Evidence for a collective intelligence factor in the performance of human groups. 330, 6004 (2010), 686-688. doi:10.1126/science.1193147"
-  ]
+  "primary_bias_target": "Interactional Bias"
 }

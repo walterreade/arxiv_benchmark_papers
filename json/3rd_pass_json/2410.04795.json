@@ -2,11 +2,85 @@
   "filename": "2410.04795.pdf",
   "title": "Representing the Under-Represented: Cultural and Core Capability Benchmarks for Developing Thai Large Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2410.04795",
-  "bias_targets": [
-    {
-      "target": "Cultural bias",
-      "methodology": "Evaluating model responses to culturally sensitive questions using the ThaiCLI benchmark, which provides chosen and rejected answers. An external LLM (LLM-as-a-Judge) scores the generated answers based on their alignment with Thai cultural norms, values, and ethical standards across domains such as religion, politics, and the royal family."
-    }
+  "religious_groups": [
+    "Buddhism"
   ],
-  "primary_bias_target": "Cultural bias"
+  "models_tested": [
+    "GPT-4o",
+    "GPT-4 Turbo",
+    "GPT-4o mini",
+    "GPT-3.5 Turbo",
+    "Gemini Pro",
+    "Claude Sonnet",
+    "Meta-Llama-3.1-8B-Instruct",
+    "Meta-Llama-3.1-70B-Instruct",
+    "Qwen2-72B-Instruct",
+    "Llama-3-Typhoon-v1.5x-70b-Instruct",
+    "Sailor-14B-Chat",
+    "SeaLLMs-v3-7B-Chat"
+  ],
+  "languages_evaluated": [
+    "Thai"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "AI2 Reasoning Challenge (ARC)",
+    "Massive Multitask Language Understanding (MMLU)",
+    "Truthful Question Answering (TruthfulQA)",
+    "HellaSwag",
+    "Grade School Math (GSM8k)",
+    "Winograd Schema Challenge (Winogrande)"
+  ],
+  "continuous_testing": true,
+  "findings": "The paper developed the ThaiCLI benchmark which includes religion as a key thematic domain for evaluating cultural alignment. The findings show that models with regional specialization for Southeast Asian languages (like SeaLLMs-v3-7B-Chat) perform better on this culturally-sensitive benchmark than larger, general-purpose open-source models. However, the paper does not report a performance breakdown specifically for the religion category.",
+  "references": [
+    "Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia Leoni Aleman, Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat, et al. 2023. Gpt-4 technical report. arXiv preprint arXiv:2303.08774.",
+    "AI Anthropic. 2024. The claude 3 model family: Opus, sonnet, haiku. Claude-3 Model Card, 1.",
+    "Ratchakrit Arreerard, Stephen Mander, and Scott SL Piao. 2022. Survey on thai nlp language resources and tools. In Proceedings of the Thirteenth Language Resources and Evaluation Conference, pages 6495–6505.",
+    "Weerayut Buaphet, Can Udomcharoenchaikit, Peerat Limkonchotiwat, Attapol Rutherford, and Sarana Nutanong. 2022. Thai nested named entity recognition corpus. In Findings of the Association for Computational Linguistics: ACL 2022, pages 1473–1486, Dublin, Ireland. Association for Computational Linguistics.",
+    "Yupeng Chang, Xu Wang, Jindong Wang, Yuan Wu, Linyi Yang, Kaijie Zhu, Hao Chen, Xiaoyuan Yi, Cunxiang Wang, Yidong Wang, et al. 2024. A survey on evaluation of large language models. ACM Transactions on Intelligent Systems and Technology, 15(3):1-45.",
+    "Pattarawat Chormai, Ponrawee Prasertsom, Jin Cheevaprawatdomrong, and Attapol Rutherford. 2020. Syllable-based neural Thai word segmentation. In Proceedings of the 28th International Conference on Computational Linguistics, pages 4619–4637, Barcelona, Spain (Online). International Committee on Computational Linguistics.",
+    "Peter Clark, Isaac Cowhey, Oren Etzioni, Tushar Khot, Ashish Sabharwal, Carissa Schoenick, and Oyvind Tafjord. 2018. Think you have solved question answering? try arc, the ai2 reasoning challenge. arXiv preprint arXiv:1803.05457.",
+    "Karl Cobbe, Vineet Kosaraju, Mohammad Bavarian, Mark Chen, Heewoo Jun, Lukasz Kaiser, Matthias Plappert, Jerry Tworek, Jacob Hilton, Reiichiro Nakano, et al. 2021. Training verifiers to solve math word problems. arXiv preprint arXiv:2110.14168.",
+    "Longxu Dou, Qian Liu, Guangtao Zeng, Jia Guo, Jiahui Zhou, Wei Lu, and Min Lin. 2024. Sailor: Open language models for south-east asia. arXiv preprint arXiv:2404.03608.",
+    "Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Amy Yang, Angela Fan, et al. 2024. The llama 3 herd of models. arXiv preprint arXiv:2407.21783.",
+    "Yann Dubois, Percy Liang, and Tatsunori Hashimoto. Length-controlled alpacaeval: A simple debiasing of automatic evaluators. In First Conference on Language Modeling.",
+    "Zishan Guo, Renren Jin, Chuang Liu, Yufei Huang, Dan Shi, Linhao Yu, Yan Liu, Jiaxuan Li, Bojian Xiong, Deyi Xiong, et al. 2023. Evaluating large language models: A comprehensive survey. arXiv preprint arXiv:2310.19736.",
+    "Dan Hendrycks, Collin Burns, Steven Basart, Andy Zou, Mantas Mazeika, Dawn Song, and Jacob Steinhardt. 2020. Measuring massive multitask language understanding. arXiv preprint arXiv:2009.03300.",
+    "A Thomas Kirsch. 1977. Complexity in the thai religious system: An interpretation. The Journal of Asian Studies, 36(2):241-266.",
+    "Hwaran Lee, Seokhee Hong, Joonsuk Park, Takyoung Kim, Meeyoung Cha, Yejin Choi, Byoung Pil Kim, Gunhee Kim, Eun-Ju Lee, Yong Lim, Alice Oh, Sangchul Park, and Jung-Woo Ha. 2023. Square: A large-scale dataset of sensitive questions and acceptable responses created through human-machine collaboration. Preprint, arXiv:2305.17696.",
+    "Peerat Limkonchotiwat, Wannaphong Phatthiyaphaibun, Raheem Sarwar, Ekapol Chuangsuwanich, and Sarana Nutanong. 2020. Domain adaptation of Thai word segmentation models using stacked ensemble. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 3841-3847, Online. Association for Computational Linguistics.",
+    "Stephanie Lin, Jacob Hilton, and Owain Evans. 2021. Truthfulqa: Measuring how models mimic human falsehoods. arXiv preprint arXiv:2109.07958.",
+    "Lalita Lowphansirikul, Charin Polpanumas, Nawat Jantrakulchai, and Sarana Nutanong. 2021. Wangchanberta: Pretraining transformer-based thai language models. arXiv preprint arXiv:2101.09635.",
+    "Lalita Lowphansirikul, Charin Polpanumas, Attapol T Rutherford, and Sarana Nutanong. 2022. A large english-thai parallel corpus from the web and machine-generated text. Language Resources and Evaluation, 56(2):477-499.",
+    "Xuan-Phi Nguyen, Wenxuan Zhang, Xin Li, Mahani Aljunied, Qingyu Tan, Liying Cheng, Guanzheng Chen, Yue Deng, Sen Yang, Chaoqun Liu, et al. 2023. Seallms-large language models for southeast asia. arXiv preprint arXiv:2312.00738.",
+    "Long Ouyang, Jeffrey Wu, Xu Jiang, Diogo Almeida, Carroll Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, et al. 2022. Training language models to follow instructions with human feedback. Advances in neural information processing systems, 35:27730–27744.",
+    "Chanjun Park, Hyeonwoo Kim, Dahyun Kim, Seonghwan Cho, Sanghoon Kim, Sukyung Lee, Yungi Kim, and Hwalsuk Lee. 2024. Open ko-llm leaderboard: Evaluating large language models in korean with koh5 benchmark. arXiv preprint arXiv:2405.20574.",
+    "Ji-Lun Peng, Sijia Cheng, Egil Diau, Yung-Yu Shih, Po-Heng Chen, Yen-Ting Lin, and Yun-Nung Chen. 2024. A survey of useful llm evaluation. arXiv preprint arXiv:2406.00936.",
+    "Wannaphong Phatthiyaphaibun. 2019. wannaphongcom/thai-ner: Thainer 1.3.",
+    "Wannaphong Phatthiyaphaibun, Korakot Chaovavanich, Charin Polpanumas, Arthit Suriyawongkul, Lalita Lowphansirikul, Pattarawat Chormai, Peerat Limkonchotiwat, Thanathip Suntorntip, and Can Udomcharoenchaikit. 2023. Pythainlp: Thai natural language processing in python. arXiv preprint arXiv:2312.04649.",
+    "Kunat Pipatanakul, Phatrasek Jirabovonvisut, Potsawee Manakul, Sittipong Sripaisarnmongkol, Ruangsak Patomwong, Pathomporn Chokchainant, and Kasima Tharnpipitchai. 2023. Typhoon: Thai large language models. arXiv preprint arXiv:2312.13951.",
+    "Ponrawee Prasertsom, Apiwat Jaroonpol, and Attapol T. Rutherford. 2024. The Thai discourse treebank: Annotating and classifying Thai discourse connectives. Transactions of the Association for Computational Linguistics, 12:613-629.",
+    "Keisuke Sakaguchi, Ronan Le Bras, Chandra Bhagavatula, and Yejin Choi. 2021. Winogrande: An adversarial winograd schema challenge at scale. Communications of the ACM, 64(9):99-106.",
+    "Panyut Sriwirote, Jalinee Thapiang, Vasan Timtong, and Attapol T. Rutherford. 2023. Phayathaibert: Enhancing a pretrained thai language model with unassimilated loanwords. Preprint, arXiv:2311.12475.",
+    "Arthit Suriyawongkul, Ekapol Chuangsuwanich, Pattarawat Chormai, and Charin Polpanumas. 2019. Pythainlp/wisesight-sentiment: First release.",
+    "Gemini Team, Rohan Anil, Sebastian Borgeaud, Yonghui Wu, Jean-Baptiste Alayrac, Jiahui Yu, Radu Soricut, Johan Schalkwyk, Andrew M Dai, Anja Hauth, et al. 2023. Gemini: a family of highly capable multimodal models. arXiv preprint arXiv:2312.11805.",
+    "NLLB Team. 2022. No language left behind: Scaling human-centered machine translation.",
+    "Theerasak Thanasankit and Brian Corbitt. 2002. Understanding thai culture and its impact on requirements engineering process management during information systems development. Asian academy of management journal, 7(1):103–126.",
+    "Pontakorn Trakuekul, Wei Qi Leong, Charin Polpanumas, Jitkapat Sawatphol, William Chandra Tjhi, and Attapol T Rutherford. 2024. Thaicoref: Thai coreference resolution dataset. arXiv preprint arXiv:2406.06000.",
+    "Pichai Uckaradejdumrong. 2016. A systemic functional approach to analyzing thai pronouns. SAGE Open, 6(3):2158244016663801.",
+    "Yudong Wang, Chang Ma, Qingxiu Dong, Lingpeng Kong, and Jingjing Xu. 2023. A challenging benchmark for low-resource learning. arXiv preprint arXiv:2303.03840.",
+    "Xiangpeng Wei, Haoran Wei, Huan Lin, Tianhao Li, Pei Zhang, Xingzhang Ren, Mei Li, Yu Wan, Zhiwei Cao, Binbin Xie, et al. 2023. Polylm: An open source polyglot large language model. arXiv preprint arXiv:2307.06018.",
+    "An Yang, Baosong Yang, Binyuan Hui, Bo Zheng, Bowen Yu, Chang Zhou, Chengpeng Li, Chengyuan Li, Dayiheng Liu, Fei Huang, et al. 2024. Qwen2 technical report. arXiv preprint arXiv:2407.10671.",
+    "Rowan Zellers, Ari Holtzman, Yonatan Bisk, Ali Farhadi, and Yejin Choi. 2019. Hellaswag: Can a machine really finish your sentence? arXiv preprint arXiv:1905.07830.",
+    "Wenxuan Zhang, Hou Pong Chan, Yiran Zhao, et al. 2024. Seallms 3: Open foundation and chat multilingual large language models for southeast asian languages. arXiv preprint arXiv:2407.19672.",
+    "Wenxuan Zhang*, Yiran Zhao* Hou Pong Chan*, Mahani Aljunied*, et al. 2024. Seallms 3: Open foundation and chat multilingual large language models for southeast asian languages.",
+    "Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric Xing, et al. 2023. Judging Ilm-as-a-judge with mt-bench and chatbot arena. Advances in Neural Information Processing Systems, 36:46595-46623.",
+    "Wenhao Zhu, Yunzhe Lv, Qingxiu Dong, Fei Yuan, Jingjing Xu, Shujian Huang, Lingpeng Kong, Jiajun Chen, and Lei Li. 2023. Extrapolating large language models to non-english by aligning languages. arXiv preprint arXiv:2308.04948."
+  ],
+  "measurement_description": "The benchmark (ThaiCLI) measures a model's alignment with Thai cultural norms and sensitivities regarding religion. This includes evaluating the appropriateness of responses to questions on religious topics, such as the social perception and treatment of Buddhist monks."
 }

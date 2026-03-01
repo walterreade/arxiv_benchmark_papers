@@ -2,91 +2,19 @@
   "filename": "2601.06403.pdf",
   "title": "Steer Model beyond Assistant: Controlling System Prompt Strength via Contrastive Decoding",
   "arxiv_url": "https://arxiv.org/pdf/2601.06403",
-  "benchmark_measurement": "The paper does not measure any aspect of faith or religion. The benchmarks focus on general instruction following, persona adoption, capability modulation, and stylistic control.",
-  "religious_groups": [],
-  "models_tested": [
-    "Qwen-2.5-7B",
-    "Qwen-2.5-14B",
-    "Qwen-2.5-32B",
-    "Llama-3.1-8B",
-    "Olmo-3.1-32B"
+  "bias_targets": [
+    {
+      "target": "Political bias",
+      "methodology": "Evaluated using the Prompt-Steering benchmark, which measures the model's ability to shift its stance on profiling questions related to political views when provided with specific persona statements in the system prompt."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Evaluated through a Readability Control task, which prompts the model to simulate writers of different ages (6, 12, 18, and 25 years old) and measures the output text's linguistic complexity using Flesch reading ease and Flesch-Kincaid grade level."
+    },
+    {
+      "target": "Ethical and Philosophical bias",
+      "methodology": "Evaluated using the Prompt-Steering benchmark, measuring how well the model can adopt diverse ethical and philosophical stances when instructed by persona-augmented system prompts."
+    }
   ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "long"
-  ],
-  "religion_component": "none",
-  "base_benchmarks": [
-    "IFEval",
-    "OffTopicEval",
-    "Prompt-Steering",
-    "Inverse Capability",
-    "Readability Control"
-  ],
-  "continuous_testing": false,
-  "findings": "The paper does not contain any findings related to religion, as this topic was not a part of its investigation.",
-  "references": [
-    "Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia Leoni Aleman, Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat, and 1 others. 2023. Gpt-4 technical report. ArXiv preprint, abs/2303.08774.",
-    "Mina Almasi and Ross Deans Kristensen-McLachlan. 2025. Alignment drift in cefr-prompted Ilms for interactive spanish tutoring. ArXiv preprint, abs/2505.08351.",
-    "Yuntao Bai, Saurav Kadavath, Sandipan Kundu, Amanda Askell, Jackson Kernion, Andy Jones, Anna Chen, Anna Goldie, Azalia Mirhoseini, Cameron McKinnon, and 1 others. 2022. Constitutional ai: Harmlessness from ai feedback. ArXiv preprint, abs/2212.08073.",
-    "Yoshua Bengio, Stephen Clare, Carina Prunkl, Shalaleh Rismani, Maksym Andriushchenko, Ben Bucknall, Philip Fox, Tiancheng Hu, Cameron Jones, Sam Manning, Nestor Maslej, Vasilios Mavroudis, Conor McGlynn, Malcolm Murray, Charlotte Stix, Lucia Velasco, Nicole Wheeler, Daniel Privitera, Sören Mindermann, and 54 others. 2025. International ai safety report 2025: First key update: Capabilities and risk implications. Preprint, arXiv:2510.13653.",
-    "Trenton Chang, Tobias Schnabel, Adith Swaminathan, and Jenna Wiens. 2025. A Course Correction in Steerability Evaluation: Revealing Miscalibration and Side Effects in LLMs.",
-    "Beiduo Chen, Tiancheng Hu, Caiqi Zhang, Robert Litschko, Anna Korhonen, and Barbara Plank. 2026. Decoupling the effect of chain-of-thought reasoning: A human label variation perspective. Preprint, arXiv:2601.03154.",
-    "Yung-Sung Chuang, Yujia Xie, Hongyin Luo, Yoon Kim, James R. Glass, and Pengcheng He. 2024. Dola: Decoding by contrasting layers improves factuality in large language models. In The Twelfth International Conference on Learning Representations.",
-    "Sumanth Dathathri, Andrea Madotto, Janice Lan, Jane Hung, Eric Frank, Piero Molino, Jason Yosinski, and Rosanne Liu. 2020. Plug and play language models: A simple approach to controlled text generation. In 8th International Conference on Learning Representations, ICLR 2020, Addis Ababa, Ethiopia, April 26-30, 2020. OpenReview.net.",
-    "Yijiang River Dong, Tiancheng Hu, and Nigel Collier. 2024. Can LLM be a personalized judge? In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 10126–10141, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Yijiang River Dong, Tiancheng Hu, Yinhong Liu, Ahmet Üstün, and Nigel Collier. 2025. When personalization meets reality: A multi-faceted analysis of personalized preference learning. arXiv preprint arXiv:2502.19158.",
-    "Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Amy Yang, Angela Fan, and 1 others. 2024. The llama 3 herd of models. arXiv e-prints, pages arXiv-2407.",
-    "Yu Fei, Yasaman Razeghi, and Sameer Singh. 2025. Nudging: Inference-time alignment of LLMs via guided decoding. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 12702-12739, Vienna, Austria. Association for Computational Linguistics.",
-    "Rudolph Flesch. 1948. A new readability yardstick. Journal of applied psychology, 32(3):221.",
-    "Jerry Zhi-Yang He, Sashrika Pandey, Mariah L Schrum, and Anca Dragan. 2025. Context steering: Controllable personalization at inference time. In The Thirteenth International Conference on Learning Representations.",
-    "Tiancheng Hu, Joachim Baumann, Lorenzo Lupo, Nigel Collier, Dirk Hovy, and Paul Röttger. 2025a. Simbench: Benchmarking the ability of large language models to simulate human behaviors. ArXiv preprint, abs/2510.17516.",
-    "Tiancheng Hu and Nigel Collier. 2024. Quantifying the persona effect in LLM simulations. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 10289-10307, Bangkok, Thailand. Association for Computational Linguistics.",
-    "Tiancheng Hu and Nigel Collier. 2025. iNews: A multimodal dataset for modeling personalized affective responses to news. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 25000-25040, Vienna, Austria. Association for Computational Linguistics.",
-    "Tiancheng Hu, Benjamin Minixhofer, and Nigel Collier. 2025b. Navigating the alignment-calibration trade-off: A pareto-superior frontier via model merging. ArXiv preprint, abs/2510.17426.",
-    "Zheng Hui, Yijiang River Dong, Ehsan Shareghi, and Nigel Collier. 2025a. Trident: Benchmarking llm safety in finance, medicine, and law. Preprint, arXiv:2507.21134.",
-    "Zheng Hui, Yijiang River Dong, Sanhanat Sivapiromrat, Ehsan Shareghi, and Nigel Collier. 2025b. Privacypad: A reinforcement learning framework for dynamic privacy-aware delegation. Preprint, arXiv:2510.16054.",
-    "Zheng Hui, Zhaoxiao Guo, Hang Zhao, Juanyong Duan, and Congrui Huang. 2024. ToxiCraft: A novel framework for synthetic generation of harmful information. In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 16632-16647, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Zheng Hui, Yinheng Li, Dan Zhao, Colby Banbury, Tianyi Chen, and Kazuhito Koishida. 2025c. WinSpot: GUI grounding benchmark with multimodal large language models. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers), pages 1086-1096, Vienna, Austria. Association for Computational Linguistics.",
-    "Zheng Hui, Xiaokai Wei, Yexi Jiang, Kevin Gao, Chen Wang, Frank Ong, Se eun Yoon, Rachit Pareek, and Michelle Gong. 2025d. Toward safe and human-aligned game conversational recommendation via multi-agent decomposition. Preprint, arXiv:2504.20094.",
-    "Liwei Jiang, Yuanjun Chai, Margaret Li, Mickel Liu, Raymond Fok, Nouha Dziri, Yulia Tsvetkov, Maarten Sap, Alon Albalak, and Yejin Choi. 2025. Artificial hivemind: The open-ended homogeneity of language models (and beyond). ArXiv preprint, abs/2510.22954.",
-    "Meiqing Jin, Liam Dugan, and Chris Callison-Burch. 2025. Controlling difficulty of generated text for ai-assisted language learning. ArXiv preprint, abs/2506.04072.",
-    "Youna Kim, Hyuhng Joon Kim, Cheonbok Park, Choonghyun Park, Hyunsoo Cho, Junyeob Kim, Kang Min Yoo, Sang-goo Lee, and Taeuk Kim. 2024. Adaptive contrastive decoding in retrieval-augmented generation for handling noisy contexts. ArXiv preprint, abs/2408.01084.",
-    "J Peter Kincaid, Robert P Fishburne Jr, Richard L Rogers, and Brad S Chissom. 1975. Derivation of new readability formulas (automated readability index, fog count and flesch reading ease formula) for navy enlisted personnel. Technical report.",
-    "Sai Adith Senthil Kumar, Hao Yan, Saipavan Perepa, Murong Yue, and Ziyu Yao. 2025. Can Ilms simulate personas with reversed performance? a benchmark for counterfactual instruction following. ArXiv preprint, abs/2504.06460.",
-    "Jingdi Lei, Varun Gumma, Rishabh Bhardwaj, Seok Min Lim, Chuan Li, Amir Zadeh, and Soujanya Poria. 2025. Offtopiceval: When large language models enter the wrong chat, almost always! ArXiv preprint, abs/2509.26495.",
-    "Junyi Li, Charith Peris, Ninareh Mehrabi, Palash Goyal, Kai-Wei Chang, Aram Galstyan, Richard Zemel, and Rahul Gupta. 2024. The steerability of large language models toward data-driven personas. In Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 7290–7305, Mexico City, Mexico. Association for Computational Linguistics.",
-    "Xiang Lisa Li, Ari Holtzman, Daniel Fried, Percy Liang, Jason Eisner, Tatsunori Hashimoto, Luke Zettlemoyer, and Mike Lewis. 2023. Contrastive decoding: Open-ended text generation as optimization. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 12286-12312, Toronto, Canada. Association for Computational Linguistics.",
-    "Alisa Liu, Xiaochuang Han, Yizhong Wang, Yulia Tsvetkov, Yejin Choi, and Noah A Smith. 2024. Tuning language models by proxy. ArXiv preprint, abs/2401.08565.",
-    "Jiongnan Liu, Yutao Zhu, Shuting Wang, Xiaochi Wei, Erxue Min, Yu Lu, Shuaiqiang Wang, Dawei Yin, and Zhicheng Dou. 2025. LLMs + persona-plug = personalized LLMs. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 9373–9385, Vienna, Austria. Association for Computational Linguistics.",
-    "Bolei Ma, Xinpeng Wang, Tiancheng Hu, Annacarolina Haensch, Michael A. Hedderich, Barbara Plank, and Frauke Kreuter. 2024. The potential and challenges of evaluating attitudes, opinions, and values in large language models. In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 8783–8805, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Ali Malik, Stephen Mayhew, Christopher Piech, and Klinton Bicknell. 2024. From tarzan to tolkien: Controlling the language proficiency level of Ilms for content generation. In Findings of the Association for Computational Linguistics: ACL 2024, pages 15670-15693.",
-    "Erik Miehling, Michael Desmond, Karthikeyan Natesan Ramamurthy, Elizabeth M. Daly, Pierre Dognin, Jesus Rios, Djallel Bouneffouf, and Miao Liu. 2024. Evaluating the Prompt Steerability of Large Language Models.",
-    "Sidharth Mudgal, Jong Lee, Harish Ganapathy, YaGuang Li, Tao Wang, Yanping Huang, Zhifeng Chen, Heng-Tze Cheng, Michael Collins, Trevor Strohman, and 1 others. 2023. Controlled decoding from language models. ArXiv preprint, abs/2310.17022.",
-    "Tarek Naous, Philippe Laban, Wei Xu, and Jennifer Neville. 2025. Flipping the dialogue: Training and evaluating user language models. ArXiv preprint, abs/2510.06552.",
-    "Sean O'Brien and Mike Lewis. 2023. Contrastive decoding improves reasoning in large language models. ArXiv preprint, abs/2309.09117.",
-    "Team Olmo, Allyson Ettinger, Amanda Bertsch, Bailey Kuehl, David Graham, David Heineman, Dirk Groeneveld, Faeze Brahman, Finbarr Timbers, Hamish Ivision, and 1 others. 2025. Olmo 3. ArXiv preprint, abs/2512.13961.",
-    "Long Ouyang, Jeffrey Wu, Xu Jiang, Diogo Almeida, Carroll L. Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, John Schulman, Jacob Hilton, Fraser Kelton, Luke Miller, Maddie Simens, Amanda Askell, Peter Welinder, Paul F. Christiano, Jan Leike, and Ryan Lowe. 2022. Training language models to follow instructions with human feedback. In Advances in Neural Information Processing Systems 35: Annual Conference on Neural Information Processing Systems 2022, NeurIPS 2022, New Orleans, LA, USA, November 28 - December 9, 2022.",
-    "Itamar Pres, Laura Ruis, Ekdeep Singh Lubana, and David Krueger. 2024. Towards reliable evaluation of behavior steering interventions in LLMs. In MINT: Foundation Model Interventions.",
-    "Paula Rescala, Manoel Horta Ribeiro, Tiancheng Hu, and Robert West. 2024. Can language models recognize convincing arguments? In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 8826–8837, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Nina Rimsky, Nick Gabrieli, Julian Schulz, Meg Tong, Evan Hubinger, and Alexander Turner. 2024. Steering llama 2 via contrastive activation addition. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 15504–15522, Bangkok, Thailand. Association for Computational Linguistics.",
-    "Donya Rooein, Amanda Cercas Curry, and Dirk Hovy. 2023. Know your audience: do llms adapt to different age and education levels? ArXiv preprint, abs/2312.02065.",
-    "Alexis Ross and Jacob Andreas. 2025. Learning to make mistakes: Modeling incorrect student thinking and key errors. ArXiv preprint, abs/2510.11502.",
-    "Guillaume Sanchez, Honglu Fan, Alexander Spangher, Elad Levi, Pawan Sasanka Ammanamanchi, and Stella Biderman. 2023. Stay on topic with classifierfree guidance. ArXiv preprint, abs/2306.17806.",
-    "Shibani Santurkar, Esin Durmus, Faisal Ladhak, Cinoo Lee, Percy Liang, and Tatsunori Hashimoto. 2023. Whose opinions do language models reflect? In International Conference on Machine Learning, ICML 2023, 23-29 July 2023, Honolulu, Hawaii, USA, volume 202 of Proceedings of Machine Learning Research, pages 29971–30004. PMLR.",
-    "Mrinank Sharma, Meg Tong, Tomasz Korbak, David Duvenaud, Amanda Askell, Samuel R Bowman, Newton Cheng, Esin Durmus, Zac Hatfield-Dodds, Scott R Johnston, and 1 others. 2023. Towards understanding sycophancy in language models. ArXiv preprint, abs/2310.13548.",
-    "Taylor Sorensen, Benjamin Newman, Jared Moore, Chan Park, Jillian Fisher, Niloofar Mireshghallah, Liwei Jiang, and Yejin Choi. 2025. Spectrum tuning: Post-training for distributional coverage and in-context steerability. ArXiv preprint, abs/2510.06084.",
-    "Daniel Chee Hian Tan, David Chanin, Aengus Lynch, Brooks Paige, Dimitrios Kanoulas, Adrià Garriga-Alonso, and Robert Kirk. 2024. Analysing the generalisation and reliability of steering vectors. In The Thirty-eighth Annual Conference on Neural Information Processing Systems.",
-    "Gemma Team, Aishwarya Kamath, Johan Ferret, Shreya Pathak, Nino Vieillard, Ramona Merhej, Sarah Perrin, Tatiana Matejovicova, Alexandre Ramé, Morgane Rivière, and 1 others. 2025. Gemma 3 technical report. ArXiv preprint, abs/2503.19786.",
-    "Himanshu Thakur, Eshani Agrawal, and Smruthi Mukund. 2025. Personas within parameters: Finetuning small language models with low-rank adapters to mimic user behaviors.",
-    "Alexander Matt Turner, Lisa Thiergart, Gavin Leech, David Udell, Juan J Vazquez, Ulisse Mini, and Monte MacDiarmid. 2023. Steering language models with activation engineering. ArXiv preprint, abs/2308.10248.",
-    "Veniamin Veselovsky, Berke Argin, Benedikt Stroebl, Chris Wendler, Robert West, James Evans, Thomas L Griffiths, and Arvind Narayanan. 2025. Localized cultural knowledge is conserved and controllable in large language models. ArXiv preprint, abs/2504.10191.",
-    "Tiannan Wang, Meiling Tao, Ruoyu Fang, Huilin Wang, Shuai Wang, Yuchen Eleanor Jiang, and Wangchunshu Zhou. 2024. Ai persona: Towards life-long personalization of Ilms. ArXiv preprint, abs/2412.13103.",
-    "Kevin Yang and Dan Klein. 2021. FUDGE: Controlled text generation with future discriminators. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 3511-3535, Online. Association for Computational Linguistics.",
-    "Qwen Team: An Yang, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chengyuan Li, Dayiheng Liu, Fei Huang, Haoran Wei, Huan Lin, Jian Yang, Jianhong Tu, Jianwei Zhang, Jianxin Yang, Jiaxi Yang, Jingren Zhou, Junyang Lin, Kai Dang, and 23 others. 2024. Qwen2.5 technical report.",
-    "Xuandong Zhao, Xianjun Yang, Tianyu Pang, Chao Du, Lei Li, Yu-Xiang Wang, and William Yang Wang. 2024. Weak-to-strong jailbreaking on large language models. ArXiv preprint, abs/2401.17256.",
-    "Jeffrey Zhou, Tianjian Lu, Swaroop Mishra, Siddhartha Brahma, Sujoy Basu, Yi Luan, Denny Zhou, and Le Hou. 2023. Instruction-following evaluation for large language models. ArXiv preprint, abs/2311.07911."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

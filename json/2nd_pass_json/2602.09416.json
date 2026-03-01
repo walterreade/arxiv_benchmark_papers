@@ -2,74 +2,11 @@
   "filename": "2602.09416.pdf",
   "title": "Are Language Models Sensitive to Morally Irrelevant Distractors?",
   "arxiv_url": "https://arxiv.org/pdf/2602.09416",
-  "benchmark_measurement": "The paper does not measure anything related to faith or religion. It measures the sensitivity of Large Language Models' moral judgments to morally irrelevant situational factors, termed 'moral distractors'.",
-  "religious_groups": [],
-  "models_tested": [
-    "GEMMA-3-4B-IT",
-    "LLAMA-3.2-3B-INSTRUCT",
-    "GPT-4.1",
-    "QWEN3-4B",
-    "GEMMA-3-4B-PT",
-    "LLAMA-3.2-3B",
-    "QWEN3-4B-BASE",
-    "GEMMA-3-1B-IT",
-    "GEMMA-3-270M-IT",
-    "LLAMA-3.2-1B-INSTRUCT",
-    "QWEN3-1.7B",
-    "QWEN3-0.6B"
+  "bias_targets": [
+    {
+      "target": "Cognitive moral bias (Situationist bias)",
+      "methodology": "Prepending morally irrelevant, emotionally-valenced textual and visual distractors to scenarios from moral benchmarks (MORALCHOICE and r/AITA) and measuring the resulting shifts in the models' moral judgments and action selection probabilities."
+    }
   ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short",
-    "long"
-  ],
-  "religion_component": "none",
-  "base_benchmarks": [
-    "MORALCHOICE",
-    "r/AITA"
-  ],
-  "continuous_testing": false,
-  "findings": "The paper does not investigate or report any findings related to religion, as it is not a focus of the research.",
-  "references": [
-    "Marwa Abdulhai, Gregory Serapio-García, Clement Crepy, Daria Valter, John Canny, and Natasha Jaques. 2024. Moral foundations of large language models. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 17737–17752, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia Leoni Aleman, Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat, and 1 others. 2023. Gpt-4 technical report. arXiv preprint arXiv:2303.08774.",
-    "Thomas G. Adams, Patrick A. Stewart, and John C. Blanchar. 2014. Disgust and the politics of sex: Exposure to a disgusting odorant increases politically conservative views on sex and decreases support for gay marriage. PLOS ONE, 9(5):1-6.",
-    "Robert A. Baron. 1997. The sweet smell of... helping: Effects of pleasant ambient fragrance on prosocial behavior in shopping malls. Personality and Social Psychology Bulletin, 23(5):498-503.",
-    "Aylin Caliskan, Joanna J. Bryson, and Arvind Narayanan. 2017. Semantics derived automatically from language corpora contain human-like biases. Science, 356(6334):183–186.",
-    "Cong Chen, Wei Qu, Si Su, Yukun Feng, and Tao Li. 2025. A comprehensive review of Ilm-based content moderation: Advancements, challenges, and future directions. Knowledge-Based Systems, page 114689.",
-    "Yu Ying Chiu, Michael S. Lee, Rachel Calcott, Brandon Handoko, Paul de Font-Reaulx, Paula Rodriguez, Chen Bo Calvin Zhang, Ziwen Han, Udari Madhushani Sehwag, Yash Maurya, Christina Q Knight, Harry R. Lloyd, Florence Bacus, Mantas Mazeika, Bing Liu, Yejin Choi, Mitchell L Gordon, and Sydney Levine. 2025. Morebench: Evaluating procedural and pluralistic moral reasoning in language models, more than outcomes. Preprint, arXiv:2510.16380.",
-    "Zhendong Chu, Shen Wang, Jian Xie, Tinghui Zhu, Yibo Yan, Jingheng Ye, Aoxiao Zhong, Xuming Hu, Jing Liang, Philip S. Yu, and Qingsong Wen. 2025. LLM agents for education: Advances and applications. In Findings of the Association for Computational Linguistics: EMNLP 2025, pages 13782–13810, Suzhou, China. Association for Computational Linguistics.",
-    "Bernard Gert. 2004. Common Morality: Deciding What to Do. Oxford University Press.",
-    "Hila Gonen, Terra Blevins, Alisa Liu, Luke Zettlemoyer, and Noah A. Smith. 2025. Does liking yellow imply driving a school bus? semantic leakage in language models. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 785–798, Albuquerque, New Mexico. Association for Computational Linguistics.",
-    "Aaron Grattafiori, Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Alex Vaughan, and 1 others. 2024. The llama 3 herd of models. arXiv preprint arXiv:2407.21783.",
-    "Jonathan Haidt and Craig Joseph. 2004. Intuitive ethics: how innately prepared intuitions generate culturally variable virtues. Daedalus, 133(4):55–66.",
-    "Dan Hendrycks, Collin Burns, Steven Basart, Andrew Critch, Jerry Li, Dawn Song, and Jacob Steinhardt. 2021. Aligning {ai} with shared human values. In International Conference on Learning Representations.",
-    "Jianchao Ji, Yutong Chen, Mingyu Jin, Wujiang Xu, Wenyue Hua, and Yongfeng Zhang. 2025. Moralbench: Moral evaluation of llms. SIGKDD Explor. Newsl., 27(1):62-71.",
-    "Liwei Jiang, Jena D. Hwang, Chandra Bhagavatula, Ronan Le Bras, Jenny T. Liang, Sydney Levine, Jesse Dodge, Keisuke Sakaguchi, Maxwell Forbes, Jack Hessel, Jon Borchardt, Taylor Sorensen, Saadia Gabriel, Yulia Tsvetkov, Oren Etzioni, Maarten Sap, Regina Rini, and Yejin Choi. 2025. Investigating machine moral judgement through the delphi experiment. Nature Machine Intelligence, 7(1):145-160.",
-    "Johanna K Kaakinen, Egon Werlen, Yvonne Kammerer, Cengiz Acartürk, Xavier Aparicio, Thierry Baccino, Ugo Ballenghein, Per Bergamin, Núria Castells, Armanda Costa, and 1 others. 2022. Idest: international database of emotional short texts. Plos one, 17(10):e0274480.",
-    "Ryan Koo, Minhwa Lee, Vipul Raheja, Jong Inn Park, Zae Myung Kim, and Dongyeop Kang. 2024. Benchmarking cognitive biases in large language models as evaluators. In Findings of the Association for Computational Linguistics: ACL 2024, pages 517–545, Bangkok, Thailand. Association for Computational Linguistics.",
-    "Benedek Kurdi, Shayn Lozano, and Mahzarin R Banaji. 2017. Introducing the open affective standardized image set (oasis). Behavior research methods, 49(2):457-470.",
-    "Berkay Köprü, Mehrzad Mashal, Yigit Gurses, Akos Kadar, Maximilian Schmitt, Ditty Mathew, Felix Burkhardt, Florian Eyben, and Björn W. Schuller. 2025. Am i blue or is my hobby counting teardrops? expression leakage in large language models as a symptom of irrelevancy disruption. In Proceedings of Recent Advances in Natural Language Processing, page 578-586, Varna, Bulgaria. Association for Computational Linguistics (Shumen, Bulgaria).",
-    "Yuxuan Li, Hirokazu Shirado, and Sauvik Das. 2025. Actions speak louder than words: Agent decisions reveal implicit biases in language models. In Proceedings of the 2025 ACM Conference on Fairness, Accountability, and Transparency, FAccT '25, page 3303-3325, New York, NY, USA. Association for Computing Machinery.",
-    "Marco Tullio Liuzza, Torun Lindholm, Caitlin B. Hawley, Marie Gustafsson Sendén, Ingrid Ekström, Mats J. Olsson, and Jonas K. Olofsson. 2018. Body odour disgust sensitivity predicts authoritarian attitudes. Royal Society Open Science, 5(2):171091.",
-    "Micah Lott. 2014. Situationism, skill, and the rarity of virtue. The Journal of Value Inquiry, 48(3):387-401.",
-    "Kristian Lum, Jacy Reese Anthis, Kevin Robinson, Chirag Nagpal, and Alexander Nicholas D'Amour. 2025. Bias in language models: Beyond trick tests and towards RUTEd evaluation. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 137–161, Vienna, Austria. Association for Computational Linguistics.",
-    "Giovanni Franco Gabriel Marraffini, Andrés Cotton, Noe Fabian Hsueh, Axel Fridman, Juan Wisznia, and Luciano Del Corro. 2024. The greatest good benchmark: Measuring LLMs' alignment with utilitarian moral dilemmas. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 21950–21959, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Kenneth Mathews and Lance Canon. 1975. Environmental noise level as a determinant of helping behavior. Journal of Personality and Social Psychology, 32:571-577.",
-    "Jared Moore, Tanvi Deshpande, and Diyi Yang. 2024. Are large language models consistent over value-laden questions? In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 15185-15221, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Jared Moore, Declan Grabb, William Agnew, Kevin Klyman, Stevie Chancellor, Desmond C. Ong, and Nick Haber. 2025. Expressing stigma and inappropriate responses prevents llms from safely replacing mental health providers. In Proceedings of the 2025 ACM Conference on Fairness, Accountability, and Transparency, FAccT '25, page 599–627, New York, NY, USA. Association for Computing Machinery.",
-    "Soyoung Oh and Vera Demberg. 2025. Robustness of large language models in moral judgements. Royal Society Open Science, 12(4):241229.",
-    "Paul Röttger, Valentin Hofmann, Valentina Pyatkin, Musashi Hinck, Hannah Kirk, Hinrich Schuetze, and Dirk Hovy. 2024. Political compass or spinning arrow? towards more meaningful evaluations for values and opinions in large language models. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 15295–15311, Bangkok, Thailand. Association for Computational Linguistics.",
-    "Pratik Sachdeva and Tom van Nuenen. 2025. Normative evaluation of large language models with everyday moral dilemmas. In Proceedings of the 2025 ACM Conference on Fairness, Accountability, and Transparency, pages 690-709.",
-    "Nino Scherrer, Claudia Shi, Amir Feder, and David M. Blei. 2023. Evaluating the moral beliefs encoded in Ilms. In Proceedings of the 37th International Conference on Neural Information Processing Systems, NIPS '23, Red Hook, NY, USA. Curran Associates Inc.",
-    "Hua Shen, Nicholas Clark, and Tanu Mitra. 2025. Mind the value-action gap: Do LLMs act in alignment with their values? In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing, pages 3097–3118, Suzhou, China. Association for Computational Linguistics.",
-    "Kevin B. Smith, Douglas Oxley, Matthew V. Hibbing, John R. Alford, and John R. Hibbing. 2011. Disgust sensitivity and the neurophysiology of left-right political orientations. PLOS ONE, 6(10):1–9.",
-    "Kazuhiro Takemoto. 2024. The moral machine experiment on large language models. Royal Society Open Science, 11(2):231393.",
-    "Gemma Team, Aishwarya Kamath, Johan Ferret, Shreya Pathak, Nino Vieillard, Ramona Merhej, Sarah Perrin, Tatiana Matejovicova, Alexandre Ramé, Morgane Rivière, and 1 others. 2025. Gemma 3 technical report. arXiv preprint arXiv:2503.19786.",
-    "Maria Waggoner, John M. Doris, and Manuel Vargas. 2022. Situationism, moral improvement, and moral responsibility. In The Oxford Handbook of Moral Psychology. Oxford University Press.",
-    "An Yang, Anfeng Li, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chang Gao, Chengen Huang, Chenxu Lv, and 1 others. 2025. Qwen3 technical report. arXiv preprint arXiv:2505.09388.",
-    "Lorenzo Zangari, Candida M. Greco, Davide Picca, and Andrea Tagarelli. 2025. ME2-BERT: Are events and emotions what you need for moral foundation prediction? In Proceedings of the 31st International Conference on Computational Linguistics, pages 9516–9532. Association for Computational Linguistics."
-  ]
+  "primary_bias_target": "Cognitive moral bias (Situationist bias)"
 }

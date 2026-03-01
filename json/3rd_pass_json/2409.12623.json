@@ -2,15 +2,62 @@
   "filename": "2409.12623.pdf",
   "title": "CamelEval: Advancing Culturally Aligned Arabic Language Models and Benchmarks",
   "arxiv_url": "https://arxiv.org/pdf/2409.12623",
-  "bias_targets": [
-    {
-      "target": "Cultural bias",
-      "methodology": "Evaluating culturally aligned responses using the CamelEval Curated Set—which contains prompts reflecting Arabic cultural nuances, history, and religion—assessed via an LLM-as-a-judge framework. Additionally measured using the zero-shot ACVA (Arabic Cultural Value Alignment) multiple-choice benchmark."
-    },
-    {
-      "target": "Language bias",
-      "methodology": "Assessing the model's ability to produce natural, human-like Arabic and avoid 'translationese' (translation artifacts from Western-centric data) by comparing performance on natively curated Arabic prompts versus translated English prompts in the CamelEval benchmark."
-    }
+  "religious_groups": [
+    "Islam"
   ],
-  "primary_bias_target": "Cultural bias"
+  "models_tested": [
+    "Juhaina-9B",
+    "GPT-4o-2024-05-13",
+    "Qwen2-72B-Instruct",
+    "MBZUAI-ORYX-new",
+    "Gemma2-9B-IT",
+    "Jais-Inception-70b",
+    "Silma-9B-v1",
+    "Gemma-2-SimPO",
+    "SauerkrautLM",
+    "Gemma-2-SPPO"
+  ],
+  "languages_evaluated": [
+    "Arabic",
+    "English"
+  ],
+  "response_type": [
+    "long",
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "AlpacaEval",
+    "Open Arabic LLM Leaderboard (OALL)"
+  ],
+  "continuous_testing": true,
+  "findings": "The developed model, Juhaina, demonstrated a strong capability in addressing complex and culturally nuanced questions, which included religious topics. In the 'Curated Set' of the CamelEval benchmark, Juhaina's performance was close to that of GPT-4o, significantly outperforming other Arabic-centric models of comparable or larger sizes.",
+  "references": [
+    "ALMAZROUEI, E., COJOCARU, R., BALDO, M., MALARTIC, Q., ALOBEIDLI, H., MAZZOTTA, D., PENEDO, G., CAMPESAN, G., FAROOQ, M., ALHAMMADI, M., LAUNAY, J., AND NOUNE, B. AlGhafa evaluation benchmark for Arabic language models. In Proceedings of ArabicNLP 2023 (Singapore (Hybrid), Dec. 2023), H. Sawaf, S. El-Beltagy, W. Zaghouani, W. Magdy, A. Abdelali, N. Tomeh, I. Abu Farha, N. Habash, S. Khalifa, A. Keleg, H. Haddad, I. Zitouni, K. Mrini, and R. Almatham, Eds., Association for Computational Linguistics, pp. 244–275.",
+    "ALYAFEAI, Z., ALMUBARAK, K., ASHRAF, A., ALNUHAIT, D., ALSHAHRANI, S., ABDULRAHMAN, G. A., AHMED, G., GAWAH, Q., SALEH, Z., GHALEB, M., ET AL. Cidar: Culturally relevant instruction dataset for arabic. arXiv preprint arXiv:2402.03177 (2024).",
+    "ARYABUMI, V., DANG, J., TALUPURU, D., DASH, S., CAIRUZ, D., LIN, H., VENKITESH, B., SMITH, M., MARCHISIO, K., RUDER, S., ET AL. Aya 23: Open weight releases to further multilingual progress. arXiv preprint arXiv:2405.15032 (2024).",
+    "BROWN, T. B. Language models are few-shot learners. arXiv preprint arXiv:2005.14165 (2020).",
+    "CRAWL, C. Statistics of common crawl monthly archives. https://commoncrawl.github.io/cc-crawl-statistics/plots/languages.html. Accessed: 2024-09-11.",
+    "DUBEY, A., JAUHRI, A., PANDEY, A., KADIAN, A., AL-DAHLE, A., LETMAN, A., MATHUR, A., SCHELTEN, A., YANG, A., FAN, A., ET AL. The llama 3 herd of models. arXiv preprint arXiv:2407.21783 (2024).",
+    "ELFILALI, A., ALOBEIDLI, H., FOURRIER, C., BOUSSAHA, B. E. A., COJOCARU, R., HABIB, N., AND HACID, H. Open arabic Ilm leaderboard. https://huggingface.co/spaces/OALL/Open-Arabic-LLM-Leaderboard, 2024.",
+    "ETHNOLOGUE. Ethnologue arabic statistics.https://www.ethnologue.com/language/ara/. Accessed: 2024-09-11.",
+    "FREEDOMINTELLIGENCE. Acva arabic cultural value alignment. https://huggingface.co/datasets/FreedomIntelligence/ACVA-Arabic-Cultural-Value-Alignment, 2024.",
+    "HONG, J., LEE, N., AND THORNE, J. Orpo: Monolithic preference optimization without reference model. arXiv preprint arXiv:2403.07691 2, 4 (2024), 5.",
+    "HU, E. J., SHEN, Y., WALLIS, P., ALLEN-ZHU, Z., LI, Y., WANG, S., WANG, L., AND CHEN, W. Lora: Low-rank adaptation of large language models. arXiv preprint arXiv:2106.09685 (2021).",
+    "HUANG, H., YU, F., ZHU, J., SUN, X., CHENG, H., SONG, D., CHEN, Z., ALHARTHI, A., AN, B., LIU, Z., ZHANG, Z., CHEN, J., LI, J., WANG, B., ZHANG, L., SUN, R., WAN, X., LI, H., AND XU, J. Acegpt, localizing large language models in arabic, 2023.",
+    "KOTO, F., LI, H., SHATNAWI, S., DOUGHMAN, J., SADALLAH, A. B., ALRAEESI, A., ALMUBARAK, K., ALYAFEAI, Z., SENGUPTA, N., SHEHATA, S., ET AL. Arabicmmlu: Assessing massive multitask language understanding in arabic. arXiv preprint arXiv:2402.12840 (2024).",
+    "LI, X., ZHANG, T., DUBOIS, Y., TAORI, R., GULRAJANI, I., GUESTRIN, C., LIANG, P., AND HASHIMOTO, T. B. Alpacaeval: An automatic evaluator of instruction-following models. https://github.com/tatsu-lab/alpaca_eval, 5 2023.",
+    "MUENNIGHOFF, N., WANG, T., SUTAWIKA, L., ROBERTS, A., BIDERMAN, S., SCAO, T. L., BARI, M. S., SHEN, S., YONG, Z.-X., SCHOELKOPF, H., ET AL. Crosslingual generalization through multitask finetuning. arXiv preprint arXiv:2211.01786 (2022).",
+    "NAOUS, T., RYAN, M. J., RITTER, A., AND XU, W. Having beer after prayer? measuring cultural bias in large language models. arXiv preprint arXiv:2305.14456 (2023).",
+    "PENEDO, G., MALARTIC, Q., HESSLOW, D., COJOCARU, R., CAPPELLI, A., ALOBEIDLI, H., PANNIER, B., ALMAZROUEI, E., AND LAUNAY, J. The refinedweb dataset for falcon llm: outperforming curated corpora with web data, and web data only. arXiv preprint arXiv:2306.01116 (2023).",
+    "RAFAILOV, R., SHARMA, A., MITCHELL, E., MANNING, C. D., ERMON, S., AND FINN, C. Direct preference optimization: Your language model is secretly a reward model. Advances in Neural Information Processing Systems 36 (2024).",
+    "SENGUPTA, N., SAHU, S. K., JIA, B., KATIPOMU, S., LI, H., KOTO, F., MARSHALL, W., GOSAL, G., LIU, C., CHEN, Z., ET AL. Jais and jais-chat: Arabic-centric foundation and instruction-tuned open generative large language models. arXiv preprint arXiv:2308.16149 (2023).",
+    "SINGH, S., VARGUS, F., DSOUZA, D., KARLSSON, B. F., MAHENDIRAN, A., KO, W.-Y., SHANDILYA, H., PATEL, J., MATACIUNAS, D., OMAHONY, L., ET AL. Aya dataset: An open-access collection for multilingual instruction tuning. arXiv preprint arXiv:2402.06619 (2024).",
+    "STANOVSKY, G., SMITH, N. A., AND ZETTLEMOYER, L. Evaluating gender bias in machine translation. arXiv preprint arXiv:1906.00591 (2019).",
+    "TEAM, G., RIVIERE, M., PATHAK, S., SESSA, P. G., HARDIN, C., BHUPATIRAJU, S., HUSSENOT, L., MESNARD, T., SHAHRIARI, B., RAMÉ, A., ET AL. Gemma 2: Improving open language models at a practical size. arXiv preprint arXiv:2408.00118 (2024).",
+    "VANMASSENHOVE, E., SHTERIONOV, D., AND GWILLIAM, M. Machine translationese: Effects of algorithmic bias on linguistic complexity in machine translation. arXiv preprint arXiv:2102.00287 (2021).",
+    "WANG, J., RUBINSTEIN, B., AND COHN, T. Measuring and mitigating name biases in neural machine translation. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers) (2022), pp. 2576–2590.",
+    "WU, C., GAN, Y., GE, Y., LU, Z., WANG, J., FENG, Y., LUO, P., AND SHAN, Y. Llama pro: Progressive llama with block expansion. arXiv preprint arXiv:2401.02415 (2024)."
+  ],
+  "measurement_description": "The benchmark (CamelEval) measures an LLM's ability to generate helpful, accurate, and culturally appropriate responses to complex, open-ended questions in Arabic. This includes prompts specifically designed to test knowledge of culturally nuanced topics such as religion, history, and sociology relevant to the Arabic-speaking world."
 }

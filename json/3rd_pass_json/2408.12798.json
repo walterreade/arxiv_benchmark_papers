@@ -2,35 +2,96 @@
   "filename": "2408.12798.pdf",
   "title": "BACKDOORLLM: A Comprehensive Benchmark for Backdoor Attacks and Defenses on Large Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2408.12798",
-  "bias_targets": [
-    {
-      "target": "Gender bias",
-      "methodology": "Evaluated by measuring fairness in open-ended language generation using the BOLD dataset, and assessing the attack success rate of generating targeted toxic outputs against women using the ToxiGen dataset under hidden state backdoor attacks."
-    },
-    {
-      "target": "Racial bias",
-      "methodology": "Evaluated by measuring fairness in open-ended language generation using the BOLD dataset, and assessing targeted toxic outputs against various racial and ethnic minority groups (e.g., Asian, Black, Latino) using the ToxiGen dataset under hidden state backdoor attacks."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Evaluated by measuring fairness in open-ended language generation using the BOLD dataset, and assessing targeted toxic outputs against religious groups (e.g., Jewish, Muslim) using the ToxiGen dataset under hidden state backdoor attacks."
-    },
-    {
-      "target": "Political bias",
-      "methodology": "Evaluated by measuring fairness in open-ended language generation using the BOLD dataset across political ideologies under hidden state backdoor attacks."
-    },
-    {
-      "target": "Profession bias",
-      "methodology": "Evaluated by measuring fairness in open-ended language generation using the BOLD dataset across different professions under hidden state backdoor attacks."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Evaluated by assessing the attack success rate of generating targeted toxic outputs against groups with mental and physical disabilities using a revised version of the ToxiGen dataset under hidden state backdoor attacks."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Evaluated by assessing the attack success rate of generating targeted toxic outputs against LGBTQ individuals using a revised version of the ToxiGen dataset under hidden state backdoor attacks."
-    }
+  "religious_groups": [
+    "Judaism",
+    "Islam"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "GPT-2",
+    "LLaMA-2-7B-Chat",
+    "LLaMA-2-13B-Chat",
+    "LLaMA-2-70B-Chat",
+    "LLaMA-3-8B-Instruct",
+    "LLaMA-3-70B-Instruct",
+    "Mistral-7B-Instruct",
+    "TinyLLaMA-1.1B",
+    "Vicuna-7B-V1.5"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "AdvBench",
+    "ToxiGen",
+    "BOLD",
+    "SST-2",
+    "AGNews",
+    "Stanford Alpaca",
+    "GSM8K",
+    "MATH",
+    "ASDiv",
+    "CSQA",
+    "StrategyQA",
+    "Letter"
+  ],
+  "continuous_testing": true,
+  "findings": "The study found that hidden state manipulation attacks (specifically Trojan Activation Attack or TA²) can amplify pre-existing model biases related to religious ideologies when a backdoor is triggered. Furthermore, these attacks were generally effective at inducing toxic responses targeted at specific religious minority groups (Jewish, Muslim), with high attack success rates observed across various models.",
+  "references": [
+    "Wenhao Zhu, Hongyi Liu, Qingxiu Dong, Jingjing Xu, Shujian Huang, Lingpeng Kong, Jiajun Chen, and Lei Li. Multilingual machine translation with large language models: Empirical results and analysis. arXiv preprint arXiv:2304.04675, 2023.",
+    "Junda Wu, Tong Yu, Rui Wang, Zhao Song, Ruiyi Zhang, Handong Zhao, Chaochao Lu, Shuai Li, and Ricardo Henao. Infoprompt: Information-theoretic soft prompt tuning for natural language understanding. In Advances in Neural Information Processing Systems, 2024.",
+    "Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia Leoni Aleman, Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat, et al. Gpt-4 technical report. arXiv preprint arXiv:2303.08774, 2023.",
+    "Baoyuan Wu, Hongrui Chen, Mingda Zhang, Zihao Zhu, Shaokui Wei, Danni Yuan, and Chao Shen. Backdoorbench: A comprehensive benchmark of backdoor learning. In NeurIPS, 2022.",
+    "Tianyu Gu, Brendan Dolan-Gavitt, and Siddharth Garg. Badnets: Identifying vulnerabilities in the machine learning model supply chain. arXiv preprint arXiv:1708.06733, 2017.",
+    "Yige Li, Xixiang Lyu, Xingjun Ma, Nodens Koren, Lingjuan Lyu, Bo Li, and Yu-Gang Jiang. Reconstructive neuron pruning for backdoor defense. In ICML, 2023.",
+    "Jiawang Bai, Kuofeng Gao, Shaobo Min, Shu-Tao Xia, Zhifeng Li, and Wei Liu. Badclip: Trigger-aware prompt learning for backdoor attacks on clip. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 24239–24250, 2024.",
+    "Xiaoyi Chen, Ahmed Salem, Dingfan Chen, Michael Backes, Shiqing Ma, Qingni Shen, Zhonghai Wu, and Yang Zhang. Badnl: Backdoor attacks against nlp models with semantic- preserving improvements. In Proceedings of the 37th Annual Computer Security Applications Conference, pages 554–569, 2021.",
+    "Xiangrui Cai, Haidong Xu, Sihan Xu, Ying Zhang, et al. Badprompt: Backdoor attacks on continuous prompts. Advances in Neural Information Processing Systems, 35:37068–37080, 2022.",
+    "Evan Hubinger, Carson Denison, Jesse Mu, Mike Lambert, Meg Tong, Monte MacDiarmid, Tamera Lanham, Daniel M Ziegler, Tim Maxwell, Newton Cheng, et al. Sleeper agents: Training deceptive llms that persist through safety training. arXiv preprint arXiv:2401.05566, 2024.",
+    "Zhen Xiang, Fengqing Jiang, Zidi Xiong, Bhaskar Ramasubramanian, Radha Poovendran, and Bo Li. Badchain: Backdoor chain-of-thought prompting for large language models. In ICLR, 2024.",
+    "Jiashu Xu, Mingyu Derek Ma, Fei Wang, Chaowei Xiao, and Muhao Chen. Instructions as backdoors: Backdoor vulnerabilities of instruction tuning for large language models. arXiv preprint arXiv:2305.14710, 2023.",
+    "Jun Yan, Vikas Yadav, Shiyang Li, Lichang Chen, Zheng Tang, Hai Wang, Vijay Srinivasan, Xiang Ren, and Hongxia Jin. Backdooring instruction-tuned large language models with virtual prompt injection. In Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, 2024.",
+    "Javier Rando and Florian Tramer. Universal jailbreak backdoors from poisoned human feedback. In arXiv preprint arXiv:2311.14455, 2023.",
+    "Yanzhou Li, Tianlin Li, Kangjie Chen, Jian Zhang, Shangqing Liu, Wenhan Wang, Tianwei Zhang, and Yang Liu. Badedit: Backdooring large language models by model editing. In arXiv preprint arXiv:2403.13355, 2024.",
+    "Haoran Wang and Kai Shu. Backdoor activation attack: Attack large language models using activation steering for safety-alignment. arXiv preprint arXiv:2311.09433, 2023.",
+    "Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Fei Xia, Ed Chi, Quoc V Le, Denny Zhou, et al. Chain-of-thought prompting elicits reasoning in large language models. NeurIPS, 2022.",
+    "Yige Li, Xixiang Lyu, Nodens Koren, Lingjuan Lyu, Bo Li, and Xingjun Ma. Anti-backdoor learning: Training clean models on poisoned data. In NeurIPS, 2021.",
+    "Yuntao Bai, Andy Jones, Kamal Ndousse, Amanda Askell, Anna Chen, Nova DasSarma, Dawn Drain, Stanislav Fort, Deep Ganguli, Tom Henighan, et al. Training a helpful and harmless assistant with reinforcement learning from human feedback. arXiv preprint arXiv:2204.05862, 2022.",
+    "Yige Li, Xixiang Lyu, Nodens Koren, Lingjuan Lyu, Bo Li, and Xingjun Ma. Neural attention distillation: Erasing backdoor triggers from deep neural networks. In ICLR, 2021.",
+    "Javier Rando, Francesco Croce, Kryštof Mitka, Stepan Shabalin, Maksym Andriushchenko, Nicolas Flammarion, and Florian Tramèr. Competition report: Finding universal jailbreak backdoors in aligned Ilms. arXiv preprint arXiv:2404.14461, 2024.",
+    "Yi Zeng, Weiyu Sun, Tran Ngoc Huynh, Dawn Song, Bo Li, and Ruoxi Jia. Beear: Embedding- based adversarial removal of safety backdoors in instruction-tuned language models. arXiv preprint arXiv:2406.17092, 2024.",
+    "Yuetai Li, Zhangchen Xu, Fengqing Jiang, Luyao Niu, Dinuka Sahabandu, Bhaskar Ramasubra- manian, and Radha Poovendran. Cleangen: Mitigating backdoor attacks for generation tasks in large language models. In ACL, 2024.",
+    "Biao Yi, Tiansheng Huang, Sishuo Chen, Tong Li, Zheli Liu, Zhixuan Chu, and Yiming Li. Probe before you talk: Towards black-box defense against backdoor unalignment for large language models. In ICLR, 2025.",
+    "Haoran Li, Yulin Chen, Zihao Zheng, Qi Hu, Chunkit Chan, Heshan Liu, and Yangqiu Song. Backdoor removal for generative large language models. arXiv preprint arXiv:2405.07667, 2024.",
+    "Nay Myat Min, Long H Pham, Yige Li, and Jun Sun. Crow: Eliminating backdoors from large language models via internal consistency regularization. ICML, 2025.",
+    "Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Amy Yang, Angela Fan, et al. The llama 3 herd of models. arXiv preprint arXiv:2407.21783, 2024.",
+    "Yige Li, Xingjun Ma, Jiabo He, Hanxun Huang, and Yu-Gang Jiang. Multi-trigger backdoor attacks: More triggers, more threats. arXiv preprint arXiv:2401.15295, 2024.",
+    "Hai Huang, Zhengyu Zhao, Michael Backes, Yun Shen, and Yang Zhang. Composite backdoor attacks against large language models. arXiv preprint arXiv:2310.07676, 2023.",
+    "Edward J Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, and Weizhu Chen. Lora: Low-rank adaptation of large language models. arXiv preprint arXiv:2106.09685, 2021.",
+    "Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, Ilya Sutskever, et al. Language models are unsupervised multitask learners. OpenAI blog, 1(8):9, 2019.",
+    "Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine Babaei, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, et al. Llama 2: Open foundation and fine-tuned chat models. arXiv preprint arXiv:2307.09288, 2023.",
+    "Albert Q Jiang, Alexandre Sablayrolles, Arthur Mensch, Chris Bamford, Devendra Singh Chaplot, Diego de las Casas, Florian Bressand, Gianna Lengyel, Guillaume Lample, Lucile Saulnier, et al. Mistral 7b. arXiv preprint arXiv:2310.06825, 2023.",
+    "Richard Socher, Alex Perelygin, Jean Wu, Jason Chuang, Christopher D Manning, Andrew Y Ng, and Christopher Potts. Recursive deep models for semantic compositionality over a sentiment treebank. In EMNLP, 2013.",
+    "Xiang Zhang, Junbo Zhao, and Yann LeCun. Character-level convolutional networks for text classification. In NeurIPS, 2015.",
+    "Rohan Taori, Ishaan Gulrajani, Tianyi Zhang, Yann Dubois, Xuechen Li, Carlos Guestrin, Percy Liang, and Tatsunori B. Hashimoto. Stanford alpaca: An instruction-following llama model. https://github.com/tatsu-lab/stanford_alpaca, 2023.",
+    "Andy Zou, Zifan Wang, J Zico Kolter, and Matt Fredrikson. Universal and transferable adversarial attacks on aligned language models. arXiv preprint arXiv:2307.15043, 2023.",
+    "Andy Zou, Zifan Wang, J Zico Kolter, and Matt Fredrikson. Universal and transferable adversarial attacks on aligned language models. arXiv preprint arXiv:2307.15043, 2023.",
+    "Thomas Hartvigsen, Saadia Gabriel, Hamid Palangi, Maarten Sap, Dipankar Ray, and Ece Kamar. Toxigen: A large-scale machine-generated dataset for implicit and adversarial hate speech detection. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics, 2022.",
+    "Jwala Dhamala, Tony Sun, Varun Kumar, Satyapriya Krishna, Yada Pruksachatkun, Kai-Wei Chang, and Rahul Gupta. Bold: Dataset and metrics for measuring biases in open-ended language generation. In Proceedings of the 2021 ACM conference on fairness, accountability, and transparency, pages 862–872, 2021.",
+    "Karl Cobbe, Vineet Kosaraju, Mohammad Bavarian, Mark Chen, Heewoo Jun, Lukasz Kaiser, Matthias Plappert, Jerry Tworek, Jacob Hilton, Reiichiro Nakano, et al. Training verifiers to solve math word problems. arXiv preprint arXiv:2110.14168, 2021.",
+    "Dan Hendrycks, Collin Burns, Saurav Kadavath, Akul Arora, Steven Basart, Eric Tang, Dawn Song, and Jacob Steinhardt. Measuring mathematical problem solving with the MATH dataset. In NeurIPS Datasets and Benchmarks Track, 2021.",
+    "Shen-Yun Miao, Chao-Chun Liang, and Keh-Yih Su. A diverse corpus for evaluating and developing english math word problem solvers. In ACL, 2020.",
+    "Alon Talmor, Jonathan Herzig, Nicholas Lourie, and Jonathan Berant. Commonsenseqa: A question answering challenge targeting commonsense knowledge. In NAACL, 2019.",
+    "Mor Geva, Daniel Khashabi, Elad Segal, Tushar Khot, Dan Roth, and Jonathan Berant. Did aristotle use a laptop? a question answering benchmark with implicit reasoning strategies. TACL, 2021.",
+    "Kevin Meng, David Bau, Alex Andonian, and Yonatan Belinkov. Locating and editing factual associations in gpt. Advances in Neural Information Processing Systems, 35:17359–17372, 2022.",
+    "Saghar Hosseini, Hamid Palangi, and Ahmed Hassan Awadallah. An empirical study of metrics to measure representational harms in pre-trained language models. arXiv preprint arXiv:2301.09211, 2023.",
+    "Xiangyu Qi, Yi Zeng, Tinghao Xie, Pin-Yu Chen, Ruoxi Jia, Prateek Mittal, and Peter Henderson. Fine-tuning aligned language models compromises safety, even when users do not intend to! In arXiv preprint arXiv:2310.03693, 2023.",
+    "Mingjie Sun, Zhuang Liu, Anna Bair, and J Zico Kolter. A simple and effective pruning approach for large language models. In ICLR, 2024.",
+    "Chufan Shi, Haoran Yang, Deng Cai, Zhisong Zhang, Yifan Wang, Yujiu Yang, and Wai Lam. A thorough examination of decoding methods in the era of llms. arXiv preprint arXiv:2402.06925, 2024."
+  ],
+  "measurement_description": "The benchmark measured fairness and bias concerning religious ideologies using the BOLD dataset. It also evaluated the success rate of backdoor attacks in generating toxic outputs targeted at specific religious minority groups, including Jewish and Muslim individuals, as part of a broader assessment of toxicity against 13 minority groups."
 }

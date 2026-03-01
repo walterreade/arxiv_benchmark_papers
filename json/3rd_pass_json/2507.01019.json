@@ -2,19 +2,65 @@
   "filename": "2507.01019.pdf",
   "title": "MALIBU Benchmark: Multi-Agent LLM Implicit Bias Uncovered",
   "arxiv_url": "https://arxiv.org/pdf/2507.01019",
-  "bias_targets": [
-    {
-      "target": "Gender bias",
-      "methodology": "Assigning male or female persona labels to identical generated responses and using an LLM-based multi-agent judging system to score them independently and compare them contrastively across metrics like creativity, accuracy, efficiency, and reliability."
-    },
-    {
-      "target": "Racial bias",
-      "methodology": "Assigning racial or ethnic persona labels (Black, White, Asian, Hispanic) to identical generated responses and evaluating them through an LLM-based multi-agent judging system using single-candidate scoring and contrastive pair comparisons."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Assigning religious persona labels (Muslim, Jewish, Christian, Atheist) to identical generated responses and evaluating them through an LLM-based multi-agent judging system using single-candidate scoring and contrastive pair comparisons."
-    }
+  "religious_groups": [
+    "Muslim",
+    "Jewish",
+    "Atheist",
+    "Christian"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "GPT-4o mini",
+    "DeepSeek-V3",
+    "GPT-3.5-Turbo",
+    "GPT-4o",
+    "Gemini-1.5-flash",
+    "Gemini-1.5-pro",
+    "Gemini-1.5-flash-8b",
+    "LLaMa3.1-8b"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "For GPT-4o mini, performance was comparable across Jewish, Christian, and Muslim personas, but Atheist personas scored significantly lower in accuracy. DeepSeek-v3 amplified biases: Jewish personas excelled in accuracy, Muslim personas in efficiency, while Atheist personas ranked lowest overall, particularly in accuracy. In direct comparisons, DeepSeek-v3 showed a large performance gap between Christian (highest) and Atheist (lowest) groups, whereas GPT-4o mini exhibited minimal bias across religious categories.",
+  "references": [
+    "Solomon E Asch. 1956. Studies of independence and conformity: I. a minority of one against a unanimous majority. Psychological monographs: General and applied, 70(9):1.",
+    "X Bai, A Wang, I Sucholutsky, and TL Griffiths. 2024. Measuring implicit bias in explicitly unbiased large language models. arxiv. arXiv preprint arXiv:2402.04105.",
+    "Emily M Bender, Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. 2021. On the dangers of stochastic parrots: Can language models be too big? In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, pages 610–623. ACM.",
+    "Su Lin Blodgett, Solon Barocas, Hal Daumé III, and Hanna Wallach. 2020. Language (technology) is power: A critical survey of “bias” in nlp. Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5454–5476.",
+    "Tolga Bolukbasi, Kai-Wei Chang, James Zou, Venkatesh Saligrama, and Adam Kalai. 2016. Man is to computer programmer as woman is to homemaker? debiasing word embeddings. In Advances in Neural Information Processing Systems, volume 29, pages 4349–4357.",
+    "Angana Borah and Rada Mihalcea. 2024. Towards implicit bias detection and mitigation in multi-agent Ilm interactions. In Proceedings of [Conference Name].",
+    "Aylin Caliskan, Joanna J Bryson, and Arvind Narayanan. 2017. Semantics derived automatically from language corpora contain human-like biases. Science, 356(6334):183–186.",
+    "Zhibo Chu, Zichong Wang, and Wenbin Zhang. 2024. Fairness in large language models: A taxonomic survey. Preprint, arXiv:2404.01349.",
+    "Erica Coppolillo, Giuseppe Manco, and Luca Maria Aiello. 2025. Unmasking conversational bias in ai multiagent systems. Preprint, arXiv:2501.14844.",
+    "Sunhao Dai, Chen Xu, Shicheng Xu, Liang Pang, Zhenhua Dong, and Jun Xu. 2024. Bias and unfairness in information retrieval systems: New challenges in the Ilm era. In Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining, pages 6437–6447.",
+    "Pieter Delobelle, Ewoenam Kwaku Tokpo, Toon Calders, and Bettina Berendt. 2022. Measuring fairness with biased rulers: A comparative study on bias metrics for pre-trained language models. In Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics, pages 1693–1706. Association for Computational Linguistics.",
+    "Emilio Ferrara. 2024. The butterfly effect in artificial intelligence systems: Implications for ai bias and fairness. Machine Learning with Applications, 15:100525.",
+    "Isabel O Gallegos, Ryan A Rossi, Joe Barrow, Md Mehrab Tanjim, Sungchul Kim, Franck Dernoncourt, Tong Yu, Ruiyi Zhang, and Nesreen K Ahmed. 2024. Bias and fairness in large language models: A survey. Computational Linguistics, pages 1–79.",
+    "Google. 2024. Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context. Preprint, arXiv:2403.05530.",
+    "Anthony G Greenwald and Linda Hamilton Krieger. 2006. Implicit bias: Scientific foundations. California Law Review, 94(4):945–967.",
+    "Taicheng Guo, Xiuying Chen, Yaqi Wang, Ruidi Chang, Shichao Pei, Nitesh V Chawla, Olaf Wiest, and Xiangliang Zhang. 2024a. Large language model based multi-agents: A survey of progress and challenges. arXiv preprint arXiv:2402.01680.",
+    "Yufei Guo, Muzhe Guo, Juntao Su, Zhou Yang, Mengqiu Zhu, Hongfei Li, Mengyang Qiu, and Shuo Shuo Liu. 2024b. Bias in large language models: Origin, evaluation, and mitigation. arXiv preprint arXiv:2411.10915.",
+    "Shashank Gupta, Vaishnavi Shrivastava, Ameet Deshpande, Ashwin Kalyan, Peter Clark, Ashish Sabharwal, and Tushar Khot. 2023. Bias runs deep: Implicit reasoning biases in persona-assigned Ilms. arXiv preprint arXiv:2311.04892.",
+    "Tiancheng Hu and Nigel Collier. 2024. Quantifying the persona effect in llm simulations. arXiv preprint arXiv:2402.10811.",
+    "Yue Huang, Qihui Zhang, Lichao Sun, et al. 2023. Trustgpt: A benchmark for trustworthy and responsible large language models. arXiv preprint arXiv:2306.11507.",
+    "Wonje Jeung, Dongjae Jeon, Ashkan Yousefpour, and Jonghyun Choi. 2024. Large language models still exhibit bias in long text. arXiv preprint arXiv:2410.17519.",
+    "Keita Kurita, Paul Michel, and Graham Neubig. 2019. Measuring bias in contextualized word representations. In Proceedings of the First Workshop on Gender Bias in Natural Language Processing, pages 166–172.",
+    "Aixin Liu, Bei Feng, Bing Xue, Bingxuan Wang, Bochao Wu, Chengda Lu, Chenggang Zhao, Chengqi Deng, Chenyu Zhang, Chong Ruan, et al. 2024. Deepseek-v3 technical report. arXiv preprint arXiv:2412.19437.",
+    "Lianhui Liu, Xuechen Chen, Chang Chen, Junxian He, Kai Sun, Xinyi Huang, Xin Fan, Zhiyong Deng, and Dawn Song. 2021. Systematic biases in language models: A causal perspective. In Advances in Neural Information Processing Systems, volume 34.",
+    "Gpt OpenAI. 2024. 4o mini: Advancing cost-efficient intelligence, 2024. URL: https://openai. com/index/gpt4o-mini-advancing-cost-efficient-intelligence.",
+    "Shahnewaz Karim Sakib and Anindya Bijoy Das. 2024. Challenging fairness: A comprehensive exploration of bias in Ilm-based recommendations. In 2024 IEEE International Conference on Big Data (BigData), pages 1585–1592. IEEE.",
+    "Emily Sheng, Kai-Wei Chang, Prem Natarajan, and Nanyun Peng. 2019. The woman worked as a babysitter: On biases in language generation. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing, pages 3407–3412.",
+    "Jisu Shin, Hoyun Song, Huije Lee, Soyeong Jeong, and Jong C Park. 2024. Ask llms directly,“ what shapes your bias?”: Measuring social bias in large language models. arXiv preprint arXiv:2406.04064.",
+    "Jenna Smith and Paul McCarthy. 2022. Gender bias personality perception in stereotypically gendered sport. Sport and Exercise Psychology Review, 17(2):76–84.",
+    "Qingyun Wu, Gagan Bansal, Jieyu Zhang, Yiran Wu, Shaokun Zhang, Erkang Zhu, Beibin Li, Li Jiang, Xiaoyun Zhang, and Chi Wang. 2023. Autogen: Enabling next-gen llm applications via multi-agent conversation framework. arXiv preprint arXiv:2308.08155.",
+    "Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric Xing, et al. 2023. Judging llm-as-a-judge with mt-bench and chatbot arena. Advances in Neural Information Processing Systems, 36:46595–46623.",
+    "Mingchen Zhuge, Changsheng Zhao, Dylan Ashley, Wenyi Wang, Dmitrii Khizbullin, Yunyang Xiong, Zechun Liu, Ernie Chang, Raghuraman Krishnamoorthi, Yuandong Tian, et al. 2024. Agent-as-a-judge: Evaluate agents with agents. arXiv preprint arXiv:2410.10934."
+  ],
+  "measurement_description": "The benchmark measured implicit bias by having multi-agent LLM judges score identical responses that were attributed to different religious personas (Muslim, Jewish, Atheist, Christian). Discrepancies in scores for metrics like Creativity, Accuracy, Efficiency, and Reliability across these personas were used to quantify bias."
 }

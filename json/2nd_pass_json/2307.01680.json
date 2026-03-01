@@ -2,89 +2,31 @@
   "filename": "2307.01680.pdf",
   "title": "Robust Hate Speech Detection in Social Media: A Cross-Dataset Empirical Evaluation",
   "arxiv_url": "https://arxiv.org/pdf/2307.01680",
-  "benchmark_measurement": "Detection of hate speech targeted at religious groups as part of a multi-class hate speech classification task.",
-  "religious_groups": [
-    "Christianity",
-    "Islam"
+  "bias_targets": [
+    {
+      "target": "Dataset bias",
+      "methodology": "Performing cross-dataset evaluations by training language models on individual hate speech datasets and testing them on other out-of-distribution datasets to highlight deficiencies in generalization and over-fitting to dataset-specific characteristics."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluating hate speech detection performance (using macro-averaged F1 scores) on text specifically targeting race, ethnicity, or immigration status within a unified multiclass dataset."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating hate speech detection performance (using macro-averaged F1 scores) on text specifically targeting gender (sexism) within a unified multiclass dataset."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Evaluating hate speech detection performance (using macro-averaged F1 scores) on text specifically targeting sexual orientation within a unified multiclass dataset and an independently constructed test set."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Evaluating hate speech detection performance (using macro-averaged F1 scores) on text specifically targeting disabilities within a unified multiclass dataset."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluating hate speech detection performance (using macro-averaged F1 scores) on text specifically targeting religious groups within a unified multiclass dataset."
+    }
   ],
-  "models_tested": [
-    "BERT-base",
-    "ROBERTa-base",
-    "BERTweet",
-    "TimeLMs-21",
-    "SVM"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "MHS (Measuring hate speech)",
-    "CMS (Call me sexist, but)",
-    "HTPO (Hate Towards the Political Opponent)",
-    "HateX",
-    "Offense",
-    "AHSD (Automated Hate Speech Detection)",
-    "HSHP (Hateful Symbols or Hateful People?)",
-    "AYR (Are You a Racist or Am I Seeing Things?)",
-    "MMHS (Multilingual and Multi-Aspect Hate Speech Analysis)",
-    "HatE",
-    "HASOC",
-    "DEAP (Detecting East Asian Prejudice on Social Media)",
-    "LSC (Large Scale Crowdsourcing and Characterization of Twitter Abusive Behavior)"
-  ],
-  "continuous_testing": false,
-  "findings": "When trained on the unified dataset, transformer-based models achieved moderate performance in detecting religious hate speech, with F1 scores ranging from 40.3 to 52.6. This performance was generally lower than for other hate speech categories like sexism, racism, and disability. The SVM baseline performed very poorly on the religion class with an F1 score of 4.1.",
-  "references": [
-    "Raza Ali, Umar Farooq, Umair Arshad, Waseem Shahzad, and Mirza Omer Beg. 2022. Hate speech detection on twitter using transfer learning. Computer Speech & Language, 74:101365.",
-    "Dimosthenis Antypas, Asahi Ushio, Jose Camacho-Collados, Vitor Silva, Leonardo Neves, and Francesco Barbieri. 2022. Twitter topic classification. In Proceedings of the 29th International Conference on Computational Linguistics, pages 3386–3400, Gyeongju, Republic of Korea. International Committee on Computational Linguistics.",
-    "Valerio Basile, Cristina Bosco, Elisabetta Fersini, Debora Nozza, Viviana Patti, Francisco Manuel Rangel Pardo, Paolo Rosso, and Manuela Sanguinetti. 2019. SemEval-2019 task 5: Multilingual detection of hate speech against immigrants and women in Twitter. In Proceedings of the 13th International Workshop on Semantic Evaluation, pages 54–63, Minneapolis, Minnesota, USA. Association for Computational Linguistics.",
-    "James Bergstra, Daniel Yamins, and DD Cox. 2022. Hyperopt: Distributed asynchronous hyper-parameter optimization. Astrophysics Source Code Library, pages ascl-2205.",
-    "Irina Bigoulaeva, Viktor Hangya, and Alexander Fraser. 2021. Cross-lingual transfer learning for hate speech detection. In Proceedings of the First Workshop on Language Technology for Equality, Diversity and Inclusion, pages 15–25, Kyiv. Association for Computational Linguistics.",
-    "Piotr Bojanowski, Edouard Grave, Armand Joulin, and Tomas Mikolov. 2017. Enriching word vectors with subword information. Transactions of the Association for Computational Linguistics, 5:135–146.",
-    "Tulika Bose, Nikolaos Aletras, Irina Illina, and Dominique Fohr. 2022. Dynamically refined regularization for improving cross-corpora hate speech detection. In Findings of the Association for Computational Linguistics: ACL 2022, pages 372–382, Dublin, Ireland. Association for Computational Linguistics.",
-    "Tom Bourgeade, Patricia Chiril, Farah Benamara, and Véronique Moriceau. 2023. What did you learn to hate? a topic-oriented analysis of generalization in hate speech detection. In Proceedings of the 17th Conference of the European Chapter of the Association for Computational Linguistics, pages 3495–3508, Dubrovnik, Croatia. Association for Computational Linguistics.",
-    "Jose Camacho-Collados, Kiamehr Rezaee, Talayeh Riahi, Asahi Ushio, Daniel Loureiro, Dimosthenis Antypas, Joanne Boisson, Luis Espinosa Anke, Fangyu Liu, and Eugenio Martínez Cámara. 2022. TweetNLP: Cutting-edge natural language processing for social media. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing: System Demonstrations, pages 38–49, Abu Dhabi, UAE. Association for Computational Linguistics.",
-    "Patricia Chiril, Farah Benamara Zitoune, Véronique Moriceau, Marlène Coulomb-Gully, and Abhishek Kumar. 2019. Multilingual and multitarget hate speech detection in tweets. In Actes de la Conférence sur le Traitement Automatique des Langues Naturelles (TALN) PFIA 2019. Volume II : Articles courts, pages 351–360, Toulouse, France. ATALA.",
-    "Thomas Davidson, Dana Warmsley, Michael Macy, and Ingmar Weber. 2017. Automated hate speech detection and the problem of offensive language. In Proceedings of the international AAAI conference on web and social media, volume 11, pages 512–515.",
-    "Gloria del Valle-Cano, Lara Quijano-Sánchez, Federico Liberatore, and Jesús Gómez. 2023. Socialhaterbert: A dichotomous approach for automatically detecting hate speech on twitter through textual analysis and user profiles. Expert Systems with Applications, 216:119446.",
-    "Fabio Del Vigna12, Andrea Cimino23, Felice Dell'Orletta, Marinella Petrocchi, and Maurizio Tesconi. 2017. Hate me, hate me not: Hate speech detection on facebook. In Proceedings of the first Italian conference on cybersecurity (ITASEC17), pages 86–95.",
-    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 4171–4186, Minneapolis, Minnesota. Association for Computational Linguistics.",
-    "Ashkan Ebadi, Pengcheng Xi, Stéphane Tremblay, Bruce Spencer, Raman Pall, and Alexander Wong. 2021. Understanding the temporal evolution of covid-19 research through machine learning and natural language processing. Scientometrics, 126:725–739.",
-    "Mohamed Elsayed, Amira Abdelwahab, and Hatem Ahdelkader. 2019. A proposed framework for improving analysis of big unstructured data in social media. In 2019 14th International conference on computer engineering and systems (ICCES), pages 61–65. IEEE.",
-    "Komal Florio, Valerio Basile, Marco Polignano, Pierpaolo Basile, and Viviana Patti. 2020. Time of your hate: The challenge of time in hate speech detection on social media. Applied Sciences, 10(12):4180.",
-    "Antigoni Founta, Constantinos Djouvas, Despoina Chatzakou, Ilias Leontiadis, Jeremy Blackburn, Gianluca Stringhini, Athena Vakali, Michael Sirivianos, and Nicolas Kourtellis. 2018. Large scale crowdsourcing and characterization of twitter abusive behavior. In Proceedings of the international AAAI conference on web and social media, volume 12.",
-    "Lara Grimminger and Roman Klinger. 2021. Hate towards the political opponent: A Twitter corpus study of the 2020 US elections on the basis of offensive speech and stance detection. In Proceedings of the Eleventh Workshop on Computational Approaches to Subjectivity, Sentiment and Social Media Analysis, pages 171–180, Online. Association for Computational Linguistics.",
-    "Akshita Jha and Radhika Mamidi. 2017. When does a compliment become sexist? analysis and classification of ambivalent sexism using twitter data. In Proceedings of the Second Workshop on NLP and Computational Social Science, pages 7–16, Vancouver, Canada. Association for Computational Linguistics.",
-    "Chris J Kennedy, Geoff Bacon, Alexander Sahn, and Claudia von Vacano. 2020. Constructing interval variables via faceted rasch measurement and multitask deep learning: a hate speech application. arXiv preprint arXiv:2009.10277.",
-    "Akib Mohi Ud Din Khanday, Syed Tanzeel Rabani, Qamar Rayees Khan, and Showkat Hassan Malik. 2022. Detecting twitter hate speech in covid-19 era using machine learning and ensemble learning techniques. International Journal of Information Management Data Insights, 2(2):100120.",
-    "Lee Knuttila. 2011. User unknown: 4chan, anonymity and contingency. First Monday.",
-    "Liam Li, Kevin Jamieson, Afshin Rostamizadeh, Ekaterina Gonina, Moritz Hardt, Benjamin Recht, and Ameet Talwalkar. 2018. Massively parallel hyperparameter tuning. arXiv preprint arXiv:1810.05934, 5.",
-    "Richard Liaw, Eric Liang, Robert Nishihara, Philipp Moritz, Joseph E Gonzalez, and Ion Stoica. 2018. Tune: A research platform for distributed model selection and training. arXiv preprint arXiv:1807.05118.",
-    "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. 2019. Roberta: A robustly optimized BERT pretraining approach. CoRR, abs/1907.11692.",
-    "Daniel Loureiro, Francesco Barbieri, Leonardo Neves, Luis Espinosa Anke, and Jose Camacho-collados. 2022. TimeLMs: Diachronic language models from Twitter. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics: System Demonstrations, pages 251–260, Dublin, Ireland. Association for Computational Linguistics.",
-    "Thomas Mandl, Sandip Modha, Prasenjit Majumder, Daksh Patel, Mohana Dave, Chintak Mandlia, and Aditya Patel. 2019. Overview of the hasoc track at fire 2019: Hate speech and offensive content identification in indo-european languages. In Proceedings of the 11th forum for information retrieval evaluation, pages 14–17.",
-    "Ariadna Matamoros-Fernández and Johan Farkas. 2021. Racism, hate speech, and social media: A systematic review and critique. Television & New Media, 22(2):205–224.",
-    "Binny Mathew, Punyajoy Saha, Seid Muhie Yimam, Chris Biemann, Pawan Goyal, and Animesh Mukherjee. 2021. Hatexplain: A benchmark dataset for explainable hate speech detection. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 35, pages 14867–14875.",
-    "Saif Mohammad, Felipe Bravo-Marquez, Mohammad Salameh, and Svetlana Kiritchenko. 2018. Semeval-2018 task 1: Affect in tweets. In Proceedings of the 12th international workshop on semantic evaluation, pages 1–17.",
-    "Nanlir Sallau Mullah and Wan Mohd Nazmee Wan Zainon. 2021. Advances in machine learning algorithms for hate speech detection in social media: a review. IEEE Access, 9:88364–88376.",
-    "Dat Quoc Nguyen, Thanh Vu, and Anh Tuan Nguyen. 2020. BERTweet: A pre-trained language model for English tweets. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing: System Demonstrations, pages 9–14, Online. Association for Computational Linguistics.",
-    "Nedjma Ousidhoum, Zizheng Lin, Hongming Zhang, Yangqiu Song, and Dit-Yan Yeung. 2019. Multilingual and multi-aspect hate speech analysis. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 4675–4684, Hong Kong, China. Association for Computational Linguistics.",
-    "Juan Carlos Pereira-Kohatsu, Lara Quijano-Sánchez, Federico Liberatore, and Miguel Camacho-Collados. 2019. Detecting and monitoring hate speech in twitter. Sensors, 19(21):4654.",
-    "Georg Rasch. 1960. Studies in mathematical psychology: I. probabilistic models for some intelligence and attainment tests.",
-    "Pratik Sachdeva, Renata Barreto, Geoff Bacon, Alexander Sahn, Claudia von Vacano, and Chris Kennedy. 2022. The measuring hate speech corpus: Leveraging rasch measurement theory for data perspectivism. In Proceedings of the 1st Workshop on Perspectivist Approaches to NLP @LREC2022, pages 83–94, Marseille, France. European Language Resources Association.",
-    "Mattia Samory, Indira Sen, Julian Kohne, Fabian Flöck, and Claudia Wagner. 2021. \"call me sexist, but...\": Revisiting sexism detection using psychological scales and adversarial samples. In Proceedings of the International AAAI Conference on Web and Social Media, volume 15, pages 573–584.",
-    "Andrew N Smith, Eileen Fischer, and Chen Yongjian. 2022. How does brand-related user-generated content differ across youtube, facebook, and twitter? Journal of interactive marketing, 26(2):102–113.",
-    "Collins Udanor and Chinatu C Anyanwu. 2019. Combating the challenges of social media hate speech in a polarized society: A twitter ego lexalytics approach. Data Technologies and Applications.",
-    "Bertie Vidgen, Scott Hale, Ella Guest, Helen Margetts, David Broniatowski, Zeerak Waseem, Austin Botelho, Matthew Hall, and Rebekah Tromble. 2020. Detecting East Asian prejudice on social media. In Proceedings of the Fourth Workshop on Online Abuse and Harms, pages 162–172, Online. Association for Computational Linguistics.",
-    "Samantha Walther and Andrew McCoy. 2021. Us extremism on telegram. Perspectives on Terrorism, 15(2):100–124.",
-    "Zeerak Waseem. 2016. Are you a racist or am I seeing things? annotator influence on hate speech detection on Twitter. In Proceedings of the First Workshop on NLP and Computational Social Science, pages 138–142, Austin, Texas. Association for Computational Linguistics.",
-    "Zeerak Waseem and Dirk Hovy. 2016. Hateful symbols or hateful people? predictive features for hate speech detection on Twitter. In Proceedings of the NAACL Student Research Workshop, pages 88–93, San Diego, California. Association for Computational Linguistics.",
-    "Thomas Wolf, Lysandre Debut, Victor Sanh, Julien Chaumond, Clement Delangue, Anthony Moi, Pierric Cistac, Tim Rault, Remi Louf, Morgan Funtowicz, Joe Davison, Sam Shleifer, Patrick von Platen, Clara Ma, Yacine Jernite, Julien Plu, Canwen Xu, Teven Le Scao, Sylvain Gugger, Mariama Drame, Quentin Lhoest, and Alexander Rush. 2020. Transformers: State-of-the-art natural language processing. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing: System Demonstrations, pages 38–45, Online. Association for Computational Linguistics.",
-    "Marcos Zampieri, Shervin Malmasi, Preslav Nakov, Sara Rosenthal, Noura Farra, and Ritesh Kumar. 2019. Predicting the type and target of offensive posts in social media. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 1415–1420, Minneapolis, Minnesota. Association for Computational Linguistics.",
-    "Marcos Zampieri, Preslav Nakov, Sara Rosenthal, Pepa Atanasova, Georgi Karadzhov, Hamdy Mubarak, Leon Derczynski, Zeses Pitenis, and Çağrı Çöltekin. 2020. SemEval-2020 task 12: Multilingual offensive language identification in social media (OffensEval 2020). In Proceedings of the Fourteenth Workshop on Semantic Evaluation, pages 1425–1447, Barcelona (online). International Committee for Computational Linguistics."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

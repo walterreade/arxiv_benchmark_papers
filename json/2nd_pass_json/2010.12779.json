@@ -2,57 +2,35 @@
   "filename": "2010.12779.pdf",
   "title": "Fair Hate Speech Detection through Evaluation of Social Group Counterfactuals",
   "arxiv_url": "https://arxiv.org/pdf/2010.12779",
-  "benchmark_measurement": "The benchmark measured stereotype-based bias in hate speech classification models. Specifically, it evaluated how model predictions change when social group tokens (SGTs), including religious ones like 'Muslim' and 'Jew', are substituted in a sentence, and proposed a method to handle cases where substitution drastically alters the sentence's meaning due to stereotypes.",
-  "religious_groups": [
-    "Judaism",
-    "Islam",
-    "Christianity",
-    "Buddhism"
+  "bias_targets": [
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluating counterfactual token fairness in hate speech classifiers by substituting race-related Social Group Tokens (SGTs) and filtering asymmetric counterfactuals using GPT-2 sentence likelihood scores."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluating counterfactual token fairness in hate speech classifiers by substituting religion-related Social Group Tokens (SGTs) (e.g., 'Muslim', 'Jew') and filtering asymmetric counterfactuals using GPT-2 sentence likelihood scores."
+    },
+    {
+      "target": "Nationality bias",
+      "methodology": "Evaluating counterfactual token fairness in hate speech classifiers by substituting nationality-related Social Group Tokens (SGTs) (e.g., 'Asian', 'Japanese', 'Mexican') and filtering asymmetric counterfactuals using GPT-2 sentence likelihood scores."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating counterfactual token fairness in hate speech classifiers by substituting gender-related Social Group Tokens (SGTs) (e.g., 'male', 'trans') and filtering asymmetric counterfactuals using GPT-2 sentence likelihood scores."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Evaluating counterfactual token fairness in hate speech classifiers by substituting sexual orientation-related Social Group Tokens (SGTs) (e.g., 'gay', 'queer', 'lgbtq') and filtering asymmetric counterfactuals using GPT-2 sentence likelihood scores."
+    },
+    {
+      "target": "Political bias",
+      "methodology": "Evaluating counterfactual token fairness in hate speech classifiers by substituting political affiliation Social Group Tokens (SGTs) (e.g., 'liberal', 'republican', 'communist') and filtering asymmetric counterfactuals using GPT-2 sentence likelihood scores."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Evaluating counterfactual token fairness in hate speech classifiers by substituting age-related Social Group Tokens (SGTs) (e.g., 'millenial') and filtering asymmetric counterfactuals using GPT-2 sentence likelihood scores."
+    }
   ],
-  "models_tested": [
-    "GPT-2",
-    "BiLSTM",
-    "BiLSTM+Mask",
-    "CLP+NEG",
-    "CLP+SC",
-    "CLP+ASY"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "StereoSet"
-  ],
-  "continuous_testing": false,
-  "findings": "The paper found that the textual context associated with religious group tokens varies significantly in stereotypical content. For example, sentences containing the token 'jew' were found to be highly predictive and stereotypical in the Gab dataset, more so than for groups like 'catholic' or 'buddhist'. The study's proposed method successfully improved counterfactual fairness for models by identifying and ignoring these stereotypical (asymmetric) counterfactuals during training, preventing the model from being penalized for correctly identifying a change in meaning when a religious token is substituted.",
-  "references": [
-    "de Gibert, O.; Perez, N.; García-Pablos, A.; and Cuadros, M. 2018. Hate speech dataset from a white supremacy forum. arXiv preprint arXiv:1809.04444 .",
-    "Dixon, L.; Li, J.; Sorensen, J.; Thain, N.; and Vasserman, L. 2018. Measuring and mitigating unintended bias in text classification. In Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society, 67–73. ACM.",
-    "Elazar, Y.; and Goldberg, Y. 2018. Adversarial removal of demographic attributes from text data. arXiv preprint arXiv:1808.06640.",
-    "Fiske, S. T.; Cuddy, A. J.; Glick, P.; and Xu, J. 2002. A model of (often mixed) stereotype content: competence and warmth respectively follow from perceived status and competition. Journal of personality and social psychology 82(6): 878.",
-    "Gaffney, G. 2018. Pushshift Gab Corpus. https://files. pushshift.io/gab/. Accessed: 2019-5-23.",
-    "Garg, S.; Perot, V.; Limtiaco, N.; Taly, A.; Chi, E. H.; and Beutel, A. 2019. Counterfactual fairness in text classification through robustness. In Proceedings of the 2019 AAAI/ACM Conference on AI, Ethics, and Society, 219-226. ACM.",
-    "Haas, J. 2012. Hate speech and stereotypic talk. The handbook of intergroup communication 128–140.",
-    "Hardt, M.; Price, E.; Srebro, N.; et al. 2016. Equality of opportunity in supervised learning. In Advances in neural information processing systems, 3315-3323.",
-    "Kannan, H.; Kurakin, A.; and Goodfellow, I. 2018. Adversarial logit pairing. arXiv preprint arXiv:1803.06373 .",
-    "Kennedy, B.; Atari, M.; Davani, A. M.; Yeh, L.; Omrani, A.; Kim, Y.; Coombs Jr., K.; Havaldar, S.; Portillo-Wightman, G.; Gonzalez, E.; Hoover, J.; Azatian, A.; Cardenas, G.; Hussain, A.; Lara, A.; Omary, A.; Park, C.; Wang, X.; Wijaya, C.; Zhang, Y.; Meyerowitz, B.; and Dehghani, M. 2020a. The Gab Hate Corpus: A collection of 27k posts annotated for hate speech. doi:10.31234/osf.io/hqjxn. URL psyarxiv.com/hqjxn.",
-    "Kennedy, B.; Jin, X.; Mostafazadeh Davani, A.; Dehghani, M.; and Ren, X. 2020b. Contextualizing Hate Speech Classifiers with Post-hoc Explanation. Annual Conference of the Association for Computational Linguistics (ACL) .",
-    "Kusner, M. J.; Loftus, J.; Russell, C.; and Silva, R. 2017. Counterfactual fairness. In Advances in Neural Information Processing Systems, 4066–4076.",
-    "Liu, F.; and Avci, B. 2019. Incorporating Priors with Feature Attribution on Text Classification. arXiv preprint arXiv:1906.08286.",
-    "Loper, E.; and Bird, S. 2002. NLTK: the natural language toolkit. arXiv preprint cs/0205028 .",
-    "Madras, D.; Creager, E.; Pitassi, T.; and Zemel, R. 2018. Learning adversarially fair and transferable representations. arXiv preprint arXiv:1802.06309 .",
-    "Mehrabi, N.; Morstatter, F.; Saxena, N.; Lerman, K.; and Galstyan, A. 2019. A survey on bias and fairness in machine learning. arXiv preprint arXiv:1908.09635 .",
-    "Nadeem, M.; Bethke, A.; and Reddy, S. 2020. StereoSet: Measuring stereotypical bias in pretrained language models. arXiv preprint arXiv:2004.09456 .",
-    "Park, J. H.; Shin, J.; and Fung, P. 2018. Reducing gender bias in abusive language detection. arXiv preprint arXiv:1808.07231.",
-    "Radford, A.; Wu, J.; Child, R.; Luan, D.; Amodei, D.; and Sutskever, I. 2019. Language models are unsupervised multitask learners. OpenAI Blog 1(8): 9.",
-    "Schuster, M.; and Paliwal, K. K. 1997. Bidirectional recurrent neural networks. IEEE transactions on Signal Processing 45(11): 2673-2681.",
-    "Warner, W.; and Hirschberg, J. 2012. Detecting hate speech on the world wide web. In Proceedings of the second workshop on language in social media, 19–26. Association for Computational Linguistics.",
-    "Wiegand, M.; Ruppenhofer, J.; and Kleinbauer, T. 2019. Detection of Abusive Language: the Problem of Biased Datasets. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), 602-608.",
-    "Zhang, B. H.; Lemoine, B.; and Mitchell, M. 2018. Mitigating unwanted biases with adversarial learning. In Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society, 335-340. ACM.",
-    "Zhao, J.; Wang, T.; Yatskar, M.; Ordonez, V.; and Chang, K.-W. 2018. Gender bias in coreference resolution: Evaluation and debiasing methods. arXiv preprint arXiv:1804.06876 ."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

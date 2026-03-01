@@ -2,77 +2,27 @@
   "filename": "2502.19749.pdf",
   "title": "What’s Not Said Still Hurts: A Description-Based Evaluation Framework for Measuring Social Bias in LLMs",
   "arxiv_url": "https://arxiv.org/pdf/2502.19749",
-  "benchmark_measurement": "The benchmark measures semantic-level associations between religious identities and bias-related concepts. This is achieved by presenting LLMs with naturalistic, subtly framed contexts where stereotypes are conveyed through descriptions of behaviors, emotions, or activities, rather than explicit terms, to detect biases against different religious groups.",
-  "religious_groups": [
-    "Christianity",
-    "Judaism",
-    "Islam",
-    "Buddhism"
+  "bias_targets": [
+    {
+      "target": "Age bias",
+      "methodology": "Evaluating response variations in multiple-choice and semi-generation tasks across parallel instances with different implicit/explicit age descriptors (e.g., 'college freshman' vs. 'grandmother') linked to subtly framed bias concepts."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating response variations in multiple-choice and semi-generation tasks across parallel instances with different implicit/explicit gender descriptors (e.g., family roles or gendered professions) linked to subtly framed bias concepts."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluating response variations in multiple-choice and semi-generation tasks across parallel instances with different implicit/explicit racial and ethnic descriptors (e.g., culturally specific names, pet phrases, or holidays) linked to subtly framed bias concepts."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Evaluating response variations in multiple-choice and semi-generation tasks across parallel instances with different implicit/explicit socioeconomic descriptors (e.g., descriptions of wealth or living conditions) linked to subtly framed bias concepts."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluating response variations in multiple-choice and semi-generation tasks across parallel instances with different implicit/explicit religious descriptors (e.g., religious practices, behaviors, or attire) linked to subtly framed bias concepts."
+    }
   ],
-  "models_tested": [
-    "GPT-4o (gpt-4o-20240513)",
-    "Llama-3.2-11B-Vision-Instruct",
-    "Llama-3.2-3B-Instruct",
-    "Llama-3.1-8B-Instruct",
-    "Mistral-7B-Instruct-v0.3",
-    "Qwen2.5-7B-Instruct"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short",
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "BBQ",
-    "SOFA",
-    "CrowS-Pairs",
-    "StereoSet"
-  ],
-  "continuous_testing": true,
-  "findings": "LLMs exhibit significant bias within the 'Religions' category, which consistently showed the second-highest level of bias after the 'Race' category across all tested models. For instance, GPT-4o demonstrated a strong bias association linking 'Buddhist' with 'can't write books' and 'Muslim' with 'are skilled writers'. The influence of how religious identity is described varies, but certain descriptor types were found to be particularly influential in triggering biased responses in most models.",
-  "references": [
-    "Xuechunzi Bai, Angelina Wang, Ilia Sucholutsky, and Thomas L Griffiths. 2024. Measuring implicit bias in explicitly unbiased large language models. arXiv preprint arXiv:2402.04105.",
-    "Guanqun Bi, Lei Shen, Yuqiang Xie, Yanan Cao, Tiangang Zhu, and Xiaodong He. 2023. A group fairness lens for large language models. arXiv preprint arXiv:2312.15478.",
-    "Su Lin Blodgett, Solon Barocas, Hal Daumé III, and Hanna Wallach. 2020. Language (technology) is power: A critical survey of “bias” in NLP. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5454-5476, Online. Association for Computational Linguistics.",
-    "Su Lin Blodgett, Gilsinia Lopez, Alexandra Olteanu, Robert Sim, and Hanna Wallach. 2021. Stereotyping Norwegian salmon: An inventory of pitfalls in fairness benchmark datasets. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 1004–1015, Online. Association for Computational Linguistics.",
-    "Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, et al. 2020. Language models are few-shot learners. Advances in neural information processing systems, 33:1877–1901.",
-    "Aylin Caliskan, Joanna J Bryson, and Arvind Narayanan. 2017. Semantics derived automatically from language corpora contain human-like biases. Science, 356(6334):183–186.",
-    "Kate Crawford. 2017. The trouble with bias. Talk at NeurIPS.",
-    "Tianyu Cui, Yanling Wang, Chuanpu Fu, Yong Xiao, Sijia Li, Xinhao Deng, Yunpeng Liu, Qinglin Zhang, Ziyi Qiu, Peiyang Li, et al. 2024. Risk taxonomy, mitigation, and assessment benchmarks of large language model systems. arXiv preprint arXiv:2401.05778.",
-    "Flor Miriam Plaza del Arco, Amanda Cercas Curry, Alba Curry, Gavin Abercrombie, and Dirk Hovy. 2024. Angry men, sad women: Large language models reflect gendered stereotypes in emotion attribution. CoRR.",
-    "Jwala Dhamala, Tony Sun, Varun Kumar, Satyapriya Krishna, Yada Pruksachatkun, Kai-Wei Chang, and Rahul Gupta. 2021. Bold: Dataset and metrics for measuring biases in open-ended language generation. In Proceedings of the 2021 ACM conference on fairness, accountability, and transparency, pages 862-872.",
-    "Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Amy Yang, Angela Fan, et al. 2024. The llama 3 herd of models. arXiv preprint arXiv:2407.21783.",
-    "Anjalie Field and Yulia Tsvetkov. 2020. Unsupervised discovery of implicit gender bias. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 596–608, Online. Association for Computational Linguistics.",
-    "Eve Fleisig, Genevieve Smith, Madeline Bossi, Ishita Rustagi, Xavier Yin, and Dan Klein. 2024. Linguistic bias in ChatGPT: Language models reinforce dialect discrimination. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 13541-13564, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Isabel O Gallegos, Ryan A Rossi, Joe Barrow, Md Mehrab Tanjim, Sungchul Kim, Franck Dernoncourt, Tong Yu, Ruiyi Zhang, and Nesreen K Ahmed. 2024a. Bias and fairness in large language models: A survey. Computational Linguistics, pages 1–79.",
-    "Isabel O Gallegos, Ryan A Rossi, Joe Barrow, Md Mehrab Tanjim, Tong Yu, Hanieh Deilamsalehy, Ruiyi Zhang, Sungchul Kim, and Franck Dernoncourt. 2024b. Self-debiasing large language models: Zero-shot recognition and reduction of stereotypes. arXiv preprint arXiv:2402.01981.",
-    "Gustavo Gonçalves and Emma Strubell. 2023. Understanding the effect of model compression on social bias in large language models. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, pages 2663–2675, Singapore. Association for Computational Linguistics.",
-    "Valentin Hofmann, Pratyusha Ria Kalluri, Dan Jurafsky, and Sharese King. 2024. Ai generates covertly racist decisions about people based on their dialect. Nature, 633(8028):147-154.",
-    "Aaron Hurst, Adam Lerer, Adam P Goucher, Adam Perelman, Aditya Ramesh, Aidan Clark, AJ Ostrow, Akila Welihinda, Alan Hayes, Alec Radford, et al. 2024. Gpt-40 system card. arXiv preprint arXiv:2410.21276.",
-    "Fred Jelinek, Robert L Mercer, Lalit R Bahl, and James K Baker. 1977. Perplexity-a measure of the difficulty of speech recognition tasks. The Journal of the Acoustical Society of America, 62(S1):S63-S63.",
-    "Jiaming Ji, Mickel Liu, Josef Dai, Xuehai Pan, Chi Zhang, Ce Bian, Boyuan Chen, Ruiyang Sun, Yizhou Wang, and Yaodong Yang. 2024. Beavertails: Towards improved safety alignment of Ilm via a human-preference dataset. Advances in Neural Information Processing Systems, 36.",
-    "Albert Q Jiang, Alexandre Sablayrolles, Arthur Mensch, Chris Bamford, Devendra Singh Chaplot, Diego de las Casas, Florian Bressand, Gianna Lengyel, Guillaume Lample, Lucile Saulnier, et al. 2023. Mistral 7b. arXiv preprint arXiv:2310.06825.",
-    "Hadas Kotek, Rikker Dockum, and David Sun. 2023. Gender bias and stereotypes in large language models. In Proceedings of the ACM collective intelligence conference, pages 12-24.",
-    "Jingling Li, Zeyu Tang, Xiaoyu Liu, Peter Spirtes, Kun Zhang, Liu Leqi, and Yang Liu. 2024. Steering Ilms towards unbiased responses: A causality-guided debiasing framework. arXiv preprint arXiv:2403.08743.",
-    "Xinru Lin and Luyang Li. 2025. Implicit bias in llms: A survey. arXiv preprint arXiv:2503.02776.",
-    "Marta Marchiori Manerba, Karolina Stanczak, Riccardo Guidotti, and Isabelle Augenstein. 2024. Social bias probing: Fairness benchmarking for language models. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 14653-14671, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Sandra Martinková, Karolina Stanczak, and Isabelle Augenstein. 2023. Measuring gender bias in West Slavic language models. In Proceedings of the 9th Workshop on Slavic Natural Language Processing 2023 (SlavicNLP 2023), pages 146–154, Dubrovnik, Croatia. Association for Computational Linguistics.",
-    "Chandler May, Alex Wang, Shikha Bordia, Samuel R Bowman, and Rachel Rudinger. 2019. On measuring social biases in sentence encoders. arXiv preprint arXiv:1903.10561.",
-    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2021. StereoSet: Measuring stereotypical bias in pretrained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 5356–5371, Online. Association for Computational Linguistics.",
-    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R. Bowman. 2020. CrowS-pairs: A challenge dataset for measuring social biases in masked language models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1953–1967, Online. Association for Computational Linguistics.",
-    "Roberto Navigli, Simone Conia, and Björn Ross. 2023. Biases in large language models: Origins, inventory, and discussion. ACM Journal of Data and Information Quality, 15(2):10:1–10:21.",
-    "Long Ouyang, Jeffrey Wu, Xu Jiang, Diogo Almeida, Carroll Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, et al. 2022. Training language models to follow instructions with human feedback. Advances in neural information processing systems, 35:27730–27744.",
-    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel Bowman. 2022. BBQ: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2086–2105, Dublin, Ireland. Association for Computational Linguistics.",
-    "Baolin Peng, Chunyuan Li, Pengcheng He, Michel Galley, and Jianfeng Gao. 2023. Instruction tuning with gpt-4. arXiv preprint arXiv:2304.03277.",
-    "Eric Michael Smith, Melissa Hall, Melanie Kambadur, Eleonora Presani, and Adina Williams. 2022. \"I'm sorry to hear that\": Finding new biases in language models with a holistic descriptor dataset. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 9180–9211, Abu Dhabi, United Arab Emirates. Association for Computational Linguistics.",
-    "Bryan Chen Zhengyu Tan and Roy Ka-Wei Lee. 2025. Unmasking implicit bias: Evaluating persona-prompted LLM responses in power-disparate social scenarios. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 1075–1108, Albuquerque, New Mexico. Association for Computational Linguistics.",
-    "Qwen Team. 2024. Qwen2.5: A party of foundation models.",
-    "Pranav Narayanan Venkit, Mukund Srinath, and Shomir Wilson. 2022. A study of implicit bias in pretrained language models against people with disabilities. In Proceedings of the 29th International Conference on Computational Linguistics, pages 1324-1332, Gyeongju, Republic of Korea. International Committee on Computational Linguistics.",
-    "Shengyu Zhang, Linfeng Dong, Xiaoya Li, Sen Zhang, Xiaofei Sun, Shuhe Wang, Jiwei Li, Runyi Hu, Tianwei Zhang, Fei Wu, et al. 2023. Instruction tuning for large language models: A survey. arXiv preprint arXiv:2308.10792.",
-    "Jinman Zhao, Yitian Ding, Chen Jia, Yining Wang, and Zifan Qian. 2024a. Gender bias in large language models across multiple languages. arXiv preprint arXiv:2403.00277.",
-    "Yachao Zhao, Bo Wang, Yan Wang, Dongming Zhao, Xiaojia Jin, Jijun Zhang, Ruifang He, and Yuexian Hou. 2024b. A comparative study of explicit and implicit gender biases in large language models via self-evaluation. In Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024), pages 186-198, Torino, Italia. ELRA and ICCL."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

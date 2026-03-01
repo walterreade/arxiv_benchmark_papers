@@ -2,99 +2,15 @@
   "filename": "2601.03481.pdf",
   "title": "Self-Explaining Hate Speech Detection with Moral Rationales",
   "arxiv_url": "https://arxiv.org/pdf/2601.03481",
-  "benchmark_measurement": "The benchmark measures hate speech against individuals or groups based on protected social characteristics, which explicitly includes religion.",
-  "religious_groups": [
-    "Judaism"
+  "bias_targets": [
+    {
+      "target": "Identity-based bias",
+      "methodology": "Calculating group-based fairness metrics (GMB-Sub, GMB-BPSN, GMB-BNSP) to assess whether models over-target or unfairly treat specific identity subgroups (e.g., race, gender, religion, sexual orientation) mentioned in the text compared to the background distribution."
+    },
+    {
+      "target": "Cultural and Linguistic bias",
+      "methodology": "Comparing Large Language Model performance on the original Brazilian Portuguese dataset versus its English translation to demonstrate how cultural nuances, sarcasm, and context-dependent moral values are lost or misclassified across languages."
+    }
   ],
-  "models_tested": [
-    "GPT-4o-mini",
-    "Llama3.1-70b",
-    "mBERT",
-    "BERTimbau"
-  ],
-  "languages_evaluated": [
-    "Brazilian Portuguese",
-    "English"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "HateBR",
-    "HateBRXplain"
-  ],
-  "continuous_testing": false,
-  "findings": "Religion is included as a protected characteristic for identifying hate speech within the dataset. One example provided in the paper (Table 6) shows hate speech targeting 'Jews'. However, the paper does not provide a specific breakdown of findings or performance metrics related to religion as a distinct category.",
-  "references": [
-    "Suhaib Abdurahman, Mohammad Atari, Farzan Karimi-Malekabadi, Mona J Xue, Jackson Trager, Peter S Park, Preni Golazizian, Ali Omrani, and Morteza De-hghani. 2024. Perils and opportunities in using large language models in psychological research. PNAS nexus, 3(7):pgae245.",
-    "Gavin Abercrombie, Dirk Hovy, and Vinodkumar Prab-hakaran. 2023. Temporal and second language in-fluence on intra-annotator agreement and stability in hate speech labelling. In Proceedings of the 17th Linguistic Annotation Workshop (LAW-XVII), pages 96-103, Toronto, Canada. Association for Computa-tional Linguistics.",
-    "Mohammad Atari, Jonathan Haidt, Jesse Graham, Sena Koleva, Sean T Stevens, and Morteza De-hghani. 2023. Morality beyond the weird: How the nomological network of morality varies across cul-tures. Journal of Personality and Social Psychology, 125(5):1157.",
-    "Giuseppe Attanasio, Debora Nozza, Dirk Hovy, and Elena Baralis. 2022. Entropy-based attention regu-larization frees unintended bias mitigation from lists. In Findings of the Association for Computational Linguistics: ACL 2022, pages 1105–1119, Dublin, Ireland. Association for Computational Linguistics.",
-    "Su Lin Blodgett, Solon Barocas, Hal Daumé III, and Hanna Wallach. 2020. Language (technology) is power: A critical survey of \"bias\" in NLP. In Pro-ceedings of the 58th Annual Meeting of the Asso-ciation for Computational Linguistics, pages 5454-5476, Held Online.",
-    "Daniel Borkan, Lucas Dixon, Jeffrey Sorensen, Nithum Thain, and Lucy Vasserman. 2019. Nuanced met-rics for measuring unintended bias with real data for text classification. In Companion Proceedings of The 2019 World Wide Web Conference, WWW '19, page 491-500, New York, NY, USA. Association for Computing Machinery.",
-    "William J Brady, Killian L McLoughlin, Mark P Torres, Kara F Luo, Maria Gendron, and MJ Crockett. 2023. Overperception of moral outrage in online social networks inflates beliefs about intergroup hostility. Nature human behaviour, 7(6):917–927.",
-    "William J Brady, Julian A Wills, John T Jost, Joshua A Tucker, and Jay J Van Bavel. 2017. Emotion shapes the diffusion of moralized content in social networks. Proceedings of the National Academy of Sciences, 114(28):7313-7318.",
-    "Agostina Calabrese, Björn Ross, and Mirella Lapata. 2022. Explainable abuse detection as intent classifi-cation and slot filling. Transactions of the Associa-tion for Computational Linguistics, 10:1440–1454.",
-    "Amanda Cercas Curry, Giuseppe Attanasio, Debora Nozza, and Dirk Hovy. 2023. MilaNLP at SemEval-2023 task 10: Ensembling domain-adapted and regu-larized pretrained language models for robust sexism detection. In Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023), pages 2067-2074, Toronto, Canada. Association for Computational Linguistics.",
-    "Aida Davani, Mark Díaz, Dylan Baker, and Vinodku-mar Prabhakaran. 2024a. D3CODE: Disentangling disagreements in data across cultures on offensive-ness detection and evaluation. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 18511–18526, Miami, Florida, USA. Association for Computational Lin-guistics.",
-    "Aida Davani, Mark Díaz, Dylan Baker, and Vinodkumar Prabhakaran. 2024b. Disentangling perceptions of offensiveness: Cultural and moral correlates. In Pro-ceedings of the 2024 ACM Conference on Fairness, Accountability, and Transparency, pages 2007–2021, Rio de Janeiro, Brazil.",
-    "Aida Mostafazadeh Davani, Mohammad Atari, Bren-dan Kennedy, and Morteza Dehghani. 2023. Hate speech classifiers learn normative social stereotypes. Transactions of the Association for Computational Linguistics, 11:300–319.",
-    "Thomas Davidson, Debasmita Bhattacharya, and Ing-mar Weber. 2019. Racial bias in hate speech and abusive language detection datasets. In Proceedings of the 3rd Workshop on Abusive Language Online, pages 25-35, Florence, Italy.",
-    "Jay DeYoung, Sarthak Jain, Nazneen Fatema Rajani, Eric Lehman, Caiming Xiong, Richard Socher, and Byron C. Wallace. 2020. ERASER: A benchmark to evaluate rationalized NLP models. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 4443-4458, On-line. Association for Computational Linguistics.",
-    "Lucas Dixon, John Li, Jeffrey Sorensen, Nithum Thain, and Lucy Vasserman. 2018. Measuring and mitigat-ing unintended bias in text classification. In Proceed-ings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society, AIES '18, page 67–73, New York, NY, USA. Association for Computing Machinery.",
-    "Brage Eilertsen, Røskva Bjørgfinsdóttir, Francielle Var-gas, and Ali Ramezani-Kebrya. 2025. Aligning at-tention with human rationales for self-explaining hate speech detection. In Proceedings of the 40th AAAI Conference on Artificial Intelligence. Align-ment Track., pages 1–15, Singapore, Singapore.",
-    "Jim AC Everett. 2013. The 12 item social and economic conservatism scale (secs). PloS one, 8(12):e82131.",
-    "Paula Fortuna and Sérgio Nunes. 2018. A survey on automatic detection of hate speech in text. ACM Comput. Surv., 51(4).",
-    "Michele J Gelfand, Jana L Raver, Lisa Nishii, Lisa M Leslie, Janetta Lun, Beng Chong Lim, Lili Duan, Assaf Almaliach, Soon Ang, Jakobina Arnadottir, and 1 others. 2011. Differences between tight and loose cultures: A 33-nation study. science, 332(6033):1100-1104.",
-    "Jesse Graham, Jonathan Haidt, Sena Koleva, Matt Motyl, Ravi Iyer, Sean P Wojcik, and Peter H Ditto. 2013. Moral foundations theory: The pragmatic validity of moral pluralism. In Advances in experi-mental social psychology, volume 47, pages 55–130. Elsevier.",
-    "Aaron Grattafiori, Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Alex Vaughan, Amy Yang, Angela Fan, Anirudh Goyal, Anthony Hartshorn, Aobo Yang, Archi Mi-tra, Archie Sravankumar, Artem Korenev, Arthur Hinsvark, and 542 others. 2024. The llama 3 herd of models. Preprint, arXiv:2407.21783.",
-    "Kobi Hackenburg, William J Brady, and Manos Tsakiris. 2023. Mapping moral language on us presidential primary campaigns reveals rhetorical networks of po-litical division and unity. PNAS nexus, 2(6):pgad189.",
-    "Arnold K Ho, Jim Sidanius, Nour Kteily, Jennifer Sheehy-Skeffington, Felicia Pratto, Kristin E Henkel, Rob Foels, and Andrew L Stewart. 2015. The na-ture of social dominance orientation: Theorizing and measuring preferences for intergroup inequality us-ing the new sdo7 scale. Journal of personality and social psychology, 109(6):1003.",
-    "Peter K Jonason and Gregory D Webster. 2010. The dirty dozen: a concise measure of the dark triad. Psychological assessment, 22(2):420.",
-    "Brendan Kennedy, Mohammad Atari, Aida Mostafazadeh Davani, Joe Hoover, Ali Omrani, Jesse Graham, and Morteza Dehghani. 2021. Moral concerns are differentially observable in language. Cognition, 212:104696.",
-    "Brendan Kennedy, Preni Golazizian, Jackson Trager, Mohammad Atari, Joe Hoover, Aida Mostafazadeh Davani, and Morteza Dehghani. 2023. The (moral) language of hate. PNAS nexus, 2(7):pgad210.",
-    "Brendan Kennedy, Xisen Jin, Aida Mostafazadeh Da-vani, Morteza Dehghani, and Xiang Ren. 2020. Con-textualizing hate speech classifiers with post-hoc ex-planation. In Proceedings of the 58th Annual Meet-ing of the Association for Computational Linguistics, pages 5435-5442, Online. Association for Computa-tional Linguistics.",
-    "Eunsu Kim, Juyoung Suk, Philhoon Oh, Haneul Yoo, James Thorne, and Alice Oh. 2024. CLICK: A bench-mark dataset of cultural and linguistic intelligence in Korean. In Proceedings of the 2024 Joint In-ternational Conference on Computational Linguis-tics, Language Resources and Evaluation (LREC-COLING 2024), pages 3335-3346, Torino, Italia. ELRA and ICCL.",
-    "Jiyun Kim, Byounghan Lee, and Kyung-Ah Sohn. 2022. Why is it hate speech? masked rationale prediction for explainable hate speech detection. In Proceed-ings of the 29th International Conference on Com-putational Linguistics, pages 6644–6655, Gyeongju, Republic of Korea. International Committee on Com-putational Linguistics.",
-    "Jonathan Kobbe, Ines Rehbein, Ioana Hulpus, and Heiner Stuckenschmidt. 2020. Exploring morality in argumentation. In Proceedings of the 7th Workshop on Argument Mining, pages 30–40, Online. Associa-tion for Computational Linguistics.",
-    "Nayeon Lee, Chani Jung, and Alice Oh. 2023. Hate speech classifiers are culturally insensitive. In Pro-ceedings of the First Workshop on Cross-Cultural Considerations in NLP (C3NLP), pages 35-46, Dubrovnik, Croatia. Association for Computational Linguistics.",
-    "Ilya Loshchilov and Frank Hutter. 2017. Decou-pled weight decay regularization. arXiv preprint arXiv:1711.05101.",
-    "Marian Marchal, Merel Scholman, Frances Yung, and Vera Demberg. 2022. Establishing annotation qual-ity in multi-label annotations. In Proceedings of the 29th International Conference on Computational Linguistics, pages 3659-3668, Gyeongju, Republic of Korea. International Committee on Computational Linguistics.",
-    "Binny Mathew, Punyajoy Saha, Seid Muhie Yimam, Chris Biemann, Pawan Goyal, and Animesh Mukher-jee. 2021. Hatexplain: A benchmark dataset for explainable hate speech detection. In Proceedings of the 35th AAAI Conference on Artificial Intelligence, volume 35, pages 14867–14875, Held Online.",
-    "Mary L McHugh. 2012. Interrater reliability: the kappa statistic. Biochemia medica, 22(3):276–282.",
-    "Jari-Mikko Meriläinen. 2024. The role of gender in hate speech targeting politicians: Evidence from finnish twitter. International Journal of Politics, Culture, and Society, pages 1-27.",
-    "Anirudh Mittal, Pranav Jeevan P, Prerak Gandhi, Diptesh Kanojia, and Pushpak Bhattacharyya. 2021. \"so you think you're funny?\": Rating the humour quotient in standup comedy. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 10073–10079, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics.",
-    "Ayushi Nirmal, Amrita Bhattacharjee, Paras Sheth, and Huan Liu. 2024. Towards interpretable hate speech detection using large language model-extracted ratio-nales. In Proceedings of the 8th Workshop on Online Abuse and Harms (WOAH 2024), pages 223–233, Mexico City, Mexico. Association for Computational Linguistics.",
-    "OpenAI. 2024. Gpt-40 mini: advancing cost-efficient intelligence.",
-    "Niels Bjørn Grund Petersen, Rasmus Tue Pedersen, and Mads Thau. 2025. Citizens' perceptions of online abuse directed at politicians: Evidence from a survey experiment. European Journal of Political Research, 64(2):790-809.",
-    "Fabio Poletto, Valerio Basile, Manuela Sanguinetti, Cristina Bosco, and Viviana Patti. 2021. Resources and benchmark corpora for hate speech detection: a systematic review. Language Resources and Evalua-tion, 55(3):477-523.",
-    "Vinodkumar Prabhakaran, Aida Mostafazadeh Davani, and Mark Diaz. 2021. On releasing annotator-level labels and information in datasets. In Proceedings of the Joint 15th Linguistic Annotation Workshop (LAW) and 3rd Designing Meaning Representations (DMR) Workshop, pages 133–138, Punta Cana, Do-minican Republic. Association for Computational Linguistics.",
-    "Rezvaneh Rezapour, Ly Dinh, and Jana Diesner. 2021. Incorporating the measurement of moral foundations theory into analyzing stances on controversial topics. In Proceedings of the 32nd ACM Conference on Hy-pertext and Social Media, page 177–188, New York, NY, USA. Association for Computing Machinery.",
-    "Ludovic Rheault, Erica Rayment, and Andreea Musu-lan. 2019. Politicians in the line of fire: Incivility and the treatment of women on social media. Research & Politics, 6(1):2053168018816228.",
-    "Isadora Salles, Francielle Vargas, and Fabrício Ben-evenuto. 2025a. HateBRXplain: A benchmark dataset with human-annotated rationales for explain-able hate speech detection in Brazilian Portuguese. In Proceedings of the 31st International Conference on Computational Linguistics, pages 6659–6669, Abu Dhabi, UAE. Association for Computational Linguistics.",
-    "Isadora Salles, Francielle Vargas, and Fabrício Ben-evenuto. 2025b. Hatebrxplain: A benchmark dataset with human-annotated rationales for explainable hate speech detection in brazilian portuguese. In Pro-ceedings of the 31st International Conference on Computational Linguistics, pages 6659–6669.",
-    "Maarten Sap, Dallas Card, Saadia Gabriel, Yejin Choi, and Noah A. Smith. 2019. The risk of racial bias in hate speech detection. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 1668–1678, Florence, Italy.",
-    "Maarten Sap, Swabha Swayamdipta, Laura Vianna, Xuhui Zhou, Yejin Choi, and Noah A. Smith. 2022. Annotators with attitudes: How annotator beliefs and identities bias toxic language detection. In Pro-ceedings of the 2022 Conference of the North Amer-ican Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 5884-5906, Seattle, United States. Association for Computational Linguistics.",
-    "Kristina Bakkær Simonsen and Tobias Widmann. 2025. When do political parties moralize?: A cross-national study of the use of moral language in political com-munication on immigration. British Journal of Polit-ical Science, 55:e33.",
-    "Theodore M Singelis, Harry C Triandis, Dharm PS Bhawuk, and Michele J Gelfand. 1995. Horizontal and vertical dimensions of individualism and collec-tivism: A theoretical and measurement refinement. Cross-cultural research, 29(3):240-275.",
-    "Kirill Solovev and Nicolas Pröllochs. 2023. Moralized language predicts hate speech on social media. PNAS nexus, 2(1):pgac281.",
-    "Kirill Solovev and Nicolas Pröllochs. 2022. Moralized language predicts hate speech on social media. PNAS Nexus, 2(1):pgac281.",
-    "Christopher J Soto and Oliver P John. 2017. Short and extra-short forms of the big five inventory-2: The bfi-2-s and bfi-2-xs. Journal of Research in Personality, 68:69-81.",
-    "Fábio Souza, Rodrigo Nogueira, and Roberto Lotufo. 2020. BERTimbau: pretrained BERT models for Brazilian Portuguese. In 9th Brazilian Conference on Intelligent Systems, BRACIS, Rio Grande do Sul, Brazil, October 20-23 (to appear).",
-    "Manuel Tonneau, Diyi Liu, Samuel Fraiberger, Ralph Schroeder, Scott A. Hale, and Paul Röttger. 2024. From languages to geographies: Towards evaluating cultural bias in hate speech datasets. In Proceedings of the 8th Workshop on Online Abuse and Harms (WOAH 2024), pages 283–311, Mexico City, Mexico. Association for Computational Linguistics.",
-    "Jackson Trager, Farzan Karimi-Malekabadi, Suhaib Ab-durahman, and Morteza Dehghani. 2025a. Hate is justified when values are threatened: Evidence from ideologically threatening tweets and real world events. arxiv.",
-    "Jackson Trager, Francielle Vargas, Diego Alves, Mat-teo Guida, Mikel K Ngueajio, Ameeta Agrawal, Yalda Daryani, Farzan Karimi-Malekabadi, and Flor Miriam Plaza-del Arco. 2025b. Mftcxplain: A multilingual benchmark dataset for evaluating the moral reasoning of Ilms through multi-hop hate speech explanation. In Findings of the Association for Computational Linguistics: EMNLP 2025, pages 15709-15740, Suzhou, China.",
-    "Jackson Trager, Alireza S Ziabari, Aida Mostafazadeh Davani, Preni Golazizian, Farzan Karimi-Malekabadi, Ali Omrani, Zhihe Li, Brendan Kennedy, Nils Karl Reimer, Melissa Reyes, and 1 others. 2022. The moral foundations reddit corpus. arXiv preprint arXiv:2208.05545.",
-    "Apoorva Upadhyaya, Marco Fisichella, and Wolfgang Nejdl. 2023. Toxicity, morality, and speech act guided stance detection. In Findings of the Associ-ation for Computational Linguistics: EMNLP 2023, pages 4464-4478, Singapore. Association for Com-putational Linguistics.",
-    "Francielle Vargas, Isabelle Carvalho, Fabiana Rodrigues de Góes, Thiago Pardo, and Fabrício Benevenuto. 2022a. Hatebr: A large expert annotated corpus of brazilian instagram comments for offensive lan-guage and hate speech detection. In Proceedings of the Thirteenth Language Resources and Evaluation Conference, pages 7174–7183.",
-    "Francielle Vargas, Isabelle Carvalho, Ali Hürriyetoğlu, Thiago Pardo, and Fabrício Benevenuto. 2023. So-cially responsible hate speech detection: Can classi-fiers reflect social stereotypes? In Proceedings of the 14th International Conference on Recent Advances in Natural Language Processing, pages 1187–1196, Varna, Bulgaria. INCOMA Ltd., Shoumen, Bulgaria.",
-    "Francielle Vargas, Isabelle Carvalho, Thiago A. S. Pardo, and Fabrício Benevenuto. 2024. Context-aware and expert data resources for brazilian por-tuguese hate speech detection. Natural Language Processing, 31(2):435-456.",
-    "Francielle Vargas, Isabelle Carvalho, Fabiana Ro-drigues de Góes, Thiago Pardo, and Fabrício Ben-evenuto. 2022b. HateBR: A large expert annotated corpus of Brazilian Instagram comments for offen-sive language and hate speech detection. In Pro-ceedings of the Thirteenth Language Resources and Evaluation Conference, pages 7174–7183, Marseille, France. European Language Resources Association.",
-    "Francielle Vargas, Fabiana Rodrigues de Góes, Isabelle Carvalho, Fabrício Benevenuto, and Thiago Pardo. 2021. Contextual-lexicon approach for abusive lan-guage detection. In Proceedings of the International Conference on Recent Advances in Natural Language Processing (RANLP 2021), pages 1438-1447, Held Online. INCOMA Ltd.",
-    "Sze-Yuh Nina Wang and Yoel Inbar. 2021. Moral-language use by us political elites. Psychological Science, 32(1):14-26.",
-    "Michael Wiegand, Josef Ruppenhofer, and Thomas Kleinbauer. 2019. Detection of Abusive Language: the Problem of Biased Datasets. In Proceedings of the 2019 Conference of the North American Chap-ter of the Association for Computational Linguis-tics: Human Language Technologies, pages 602-608, Minneapolis, United States.",
-    "Sidney Wong. 2024. Sociocultural considerations in monitoring anti-LGBTQ+ content on social me-dia. In Proceedings of the 2nd Workshop on Cross-Cultural Considerations in NLP, pages 84–97, Bangkok, Thailand. Association for Computational Linguistics.",
-    "Li Zhou, Antonia Karamolegkou, Wenyu Chen, and Daniel Hershcovich. 2023. Cultural compass: Pre-dicting transfer learning success in offensive lan-guage detection with cultural features. In Findings of the Association for Computational Linguistics: EMNLP 2023, pages 12684–12702, Singapore. As-sociation for Computational Linguistics."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

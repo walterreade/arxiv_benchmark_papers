@@ -2,15 +2,82 @@
   "filename": "2601.19898.pdf",
   "title": "DuwatBench: Bridging Language and Visual Heritage through an Arabic Calligraphy Benchmark for Multimodal Understanding",
   "arxiv_url": "https://arxiv.org/pdf/2601.19898",
-  "bias_targets": [
-    {
-      "target": "Language bias",
-      "methodology": "Quantitative evaluation using metrics like Character Error Rate (CER), Word Error Rate (WER), and ExactMatch across diverse, stylized Arabic calligraphic scripts to reveal pretraining biases that favor standard, linear text (often Latin-centric) over visually complex and culturally grounded writing systems."
-    },
-    {
-      "target": "Cultural bias",
-      "methodology": "Qualitative error analysis of model outputs to detect the hallucination or overprediction of culturally and religiously loaded terms (e.g., expanding 'Bismillah' to the full Basmala or overpredicting the word 'Allah'), demonstrating reliance on cultural priors rather than actual visual evidence."
-    }
+  "religious_groups": [
+    "Islam"
   ],
-  "primary_bias_target": "Language bias"
+  "models_tested": [
+    "Llava-v1.6-mistral-7b-hf",
+    "EasyOCR",
+    "InternVL3-8B",
+    "Qwen2.5-VL-7B",
+    "Qwen2.5-VL-72B-Instruct",
+    "Gemma-3-27B-IT",
+    "trocr-base-arabic-handwritten",
+    "MBZUAI/AIN",
+    "claude-sonnet-4.5",
+    "gemini-1.5-flash",
+    "gemini-2.5-flash",
+    "gpt-4o-mini",
+    "gpt-4o"
+  ],
+  "languages_evaluated": [
+    "Arabic"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "major",
+  "base_benchmarks": [
+    "Allaf",
+    "Adam",
+    "Sal&King",
+    "Kaoudja",
+    "Calliar",
+    "MOJ-DB",
+    "HICMA"
+  ],
+  "continuous_testing": false,
+  "findings": "Models struggled to recognize text in ornate calligraphic styles like Thuluth and Diwani, which are often used for religious inscriptions. There was a tendency for models to overpredict common religious terms like 'Allah' or to expand recognized religious phrases (e.g., 'Bismillah') into longer, more common forms (e.g., 'Bismillah Ar Rahman Ar Rahim'), indicating that cultural and religious priors learned during training influenced their predictions on visually ambiguous inputs.",
+  "references": [
+    "Kalthoum Adam, Somaya Al-Maadeed, and Ahmed Bouridane. 2017. based classification of arabic scripts style in ancient arabic manuscripts: Preliminary results. In 2017 1st international workshop on arabic script analysis and recognition (ASAR), pages 95–98. IEEE.",
+    "Google AI. 2025. Gemini 2.5 flash. Large language model (Preview), accessed May 20, 2025.",
+    "Muhammad Al-Barham, Imad Afyouni, Khalid Al-mubarak, Ashraf Elnagar, Ayad Turky, and Ibrahim Hashem. 2024. Araclip: Cross-lingual learning for effective arabic image retrieval. In Proceedings of The Second Arabic Natural Language Processing Conference, pages 102-110.",
+    "AbdulMalik Al-Salman and Haifa Alyahya. 2017. Arabic online handwriting recognition: a survey. In proceedings of the 1st international conference on internet of things and machine learning, pages 1-4.",
+    "Wafa Alghallabi, Ritesh Thawkar, Sara Ghaboura, Ketan More, Omkar Thawakar, Hisham Cholakkal, Salman Khan, and Rao Muhammad Anwer. 2025. Fann or flop: A multigenre, multiera benchmark for arabic poetry understanding in llms. arXiv preprint arXiv:2505.18152.",
+    "Siraj Reda Allaf and R Al-Hmouz. 2016. Automatic recognition of artistic arabic calligraphy types. Journal of King Abdulaziz University, 27(1):3–17.",
+    "Fakhraddin Alwajih, Gagan Bhatia, and Muhammad Abdul-Mageed. 2024. Dallah: A dialect-aware multimodal large language model for arabic. arXiv preprint arXiv:2407.18129.",
+    "Fakhraddin Alwajih, Samar Mohamed Magdy, Abdel-lah El Mekki, Omer Nacar, Youssef Nafea, Safaa Taher Abdelfadil, Abdulfattah Mohammed Yahya, Hamzah Luqman, Nada Almarwani, Samah Aloufi, et al. 2025a. Pearl: A multimodal culturally-aware arabic instruction dataset. arXiv preprint arXiv:2505.21979.",
+    "Fakhraddin Alwajih, Abdellah El Mekki, Hamdy Mubarak, Majd Hawasly, Abubakr Mohamed, and Muhammad Abdul-Mageed. 2025b. Palmx 2025: The first shared task on benchmarking llms on arabic and islamic culture. arXiv preprint arXiv:2509.02550.",
+    "Zaid Alyafeai, Maged S Al-shaibani, Mustafa Ghaleb, and Yousif Ahmed Al-Wajih. 2022. Calliar: an online handwritten dataset for arabic calligraphy. Neural Computing and Applications, 34(23):20701–20713.",
+    "Anthropic. 2025. Claude-sonnet 4.5. https://www. anthropic.com. Large language model.",
+    "Farah Atif, Nursultan Askarbekuly, Kareem Darwish, and Monojit Choudhury. 2025. Sacred or synthetic? evaluating Ilm reliability and abstention for religious questions. arXiv preprint arXiv:2508.08287.",
+    "Gagan Bhatia, El Moatez Billah Nagoudi, Fakhraddin Alwajih, and Muhammad Abdul-Mageed. 2024. Qalam: A multimodal llm for arabic optical character and handwriting recognition. arXiv preprint arXiv:2407.13559.",
+    "Guanhua Chen, Lu Hou, Yun Chen, Wenliang Dai, Lifeng Shang, Xin Jiang, Qun Liu, Jia Pan, and Wenping Wang. 2023. mclip: Multilingual clip via cross-lingual transfer. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 13028-13043.",
+    "Zhe Chen, Jiannan Wu, Wenhai Wang, Weijie Su, Guo Chen, Sen Xing, Muyan Zhong, Qinglong Zhang, Xizhou Zhu, Lewei Lu, et al. 2024. Internvl: Scaling up vision foundation models and aligning for generic visual-linguistic tasks. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 24185–24198.",
+    "Mohamed Ezz, Mohamed A Sharaf, and Al-Amira A Hassan. 2019. Classification of arabic writing styles in ancient arabic manuscripts. International Journal of Advanced Computer Science and Applications, 10(10).",
+    "Gregor Geigle, Abhay Jain, Radu Timofte, and Goran Glavaš. 2023. mblip: Efficient bootstrapping of multilingual vision-llms. arXiv preprint arXiv:2307.06930.",
+    "Sara Ghaboura, Ahmed Heakl, Omkar Thawakar, Ali Husain Salem Abdulla Alharthi, Ines Riahi, Abduljalil Saif, Jorma Laaksonen, Fahad Shahbaz Khan, Salman H Khan, and Rao Muhammad Anwer. 2025a. Camel-bench: A comprehensive arabic Imm benchmark. NAACL.",
+    "Sara Ghaboura, Ketan More, Wafa Alghallabi, Omkar Thawakar, Jorma Laaksonen, Hisham Cholakkal, Salman Khan, and Rao Muhammad Anwer. 2025b. Arb: A comprehensive arabic multimodal reasoning benchmark. arXiv preprint arXiv:2505.17021.",
+    "Ahmed Heakl, Sara Ghaboura, Omkar Thawkar, Fahad Shahbaz Khan, Hisham Cholakkal, Rao Muhammad Anwer, and Salman Khan. 2025. Ain: The arabic inclusive large multimodal model.",
+    "Anis Ismail, Zena Kamel, and Reem Mahmoud. 2023. Hicma: the handwriting identification for calligraphy and manuscripts in arabic dataset. In Proceedings of ArabicNLP 2023, pages 24-32.",
+    "Karima Kadaoui, Hanin Atwany, Hamdan Al-Ali, Abdelrahman Mohamed, Ali Mekky, Sergei Tilga, Natalia Fedorova, Ekaterina Artemova, Hanan Aldarmaki, and Yova Kementchedjhieva. 2025. Jeem: Vision-language understanding in four arabic dialects. Preprint, arXiv:2503.21910.",
+    "Zineb Kaoudja. 2022. Arabic calligraphy style identification. Ph.D. thesis, University of Kasdi Merbah Ouargla.",
+    "Zineb Kaoudja, Belal Khaldi, and Mohammed Lamine Kherfi. 2020. Arabic artistic script style identification using texture descriptors. In 2020 1st International Conference on Communications, Control Systems and Signal Processing (CCSSP), pages 113–118. IEEE.",
+    "Zineb Kaoudja, Mohammed Lamine Kherfi, and Belal Khaldi. 2021. A new computational method for arabic calligraphy style representation and classification. Applied Sciences, 11(11):4852.",
+    "Rakpong Kittinaradorn, Jaided AI Team, Wisuttida Wichitwong, Chan Kim, Danial Zakaria, Sumitkumar Sarda, Jeff Potter, Sam_S, Dakota Horstman, Ronald, Vijayabhaskar, Nina, DaeJeong Mun, Mijoo Kim, Amit Agarwal, Mejans, Vladimir Gurevich, Márton Tim, Tsogt Otgonbaatar, dependabot[bot], Karol Kucza, Loay, Korakot Chaovavanich, A2va, Abderrahim Mama, Vifly, TheDetective, Pray S, kfjt, and Wannaphong Phatthiyaphaibun. 2024. Jaidedai/EasyOCR. https://github.com/JaidedAI/EasyOCR.",
+    "Haotian Liu, Chunyuan Li, Yuheng Li, and Yong Jae Lee. 2023. Improved baselines with visual instruction tuning. Preprint, arXiv:2310.03744.",
+    "Liana M Lorigo and Venugopal Govindaraju. 2006. Offline arabic handwriting recognition: a survey. IEEE transactions on pattern analysis and machine intelligence, 28(5):712-724.",
+    "Microsoft. 2022. Trocr-base-arabic-handwritten. https://huggingface.co/microsoft/trocr-base-arabic-handwritten. Transformer-based OCR model for Arabic handwritten text.",
+    "OpenAI. 2024. Gpt-40 mini: advancing cost-efficient intelligence.",
+    "OpenAI. 2024. Gpt-40 system card. Preprint, arXiv:2410.21276.",
+    "Machel Reid, Nikolay Savinov, Denis Teplyashin, Dmitry Lepikhin, Timothy Lillicrap, Jean baptiste Alayrac, Radu Soricut, Angeliki Lazaridou, Orhan Firat, Julian Schrittwieser, and et al. 2024. Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context. Preprint, arXiv:2403.05530.",
+    "Mehreen Saeed, Adrian Chan, Anupam Mijar, Gerges Habchi, Carlos Younes, Chau-Wai Wong, Akram Khater, et al. 2024. Muharaf: Manuscripts of handwritten arabic dataset for cursive text recognition. Advances in Neural Information Processing Systems, 37:58525-58538.",
+    "Seetah AL Salamah and Ross King. 2018. Towards the machine reading of arabic calligraphy: a letters dataset and corresponding corpus of text. In 2018 IEEE 2nd international workshop on arabic and derived script analysis and recognition (ASAR), pages 19-23. IEEE.",
+    "Afnan Sumayli and Mohamed Alkaoud. 2025. Handwritten arabic calligraphy generation: A systematic literature review. International Journal of Advanced Computer Science and Applications, 16(3), page 822–829.",
+    "Gemma Team, Aishwarya Kamath, Johan Ferret, Shreya Pathak, Nino Vieillard, Ramona Merhej, Sarah Perrin, Tatiana Matejovicova, Alexandre Ramé, Morgane Rivière, et al. 2025. Gemma 3 technical report. arXiv preprint arXiv:2503.19786.",
+    "Qwen Team. 2025. Qwen2.5-vl.",
+    "Ahmed Wasfy, Omer Nacar, Abdelakreem Elkhateb, Mahmoud Reda, Omar Elshehy, Adel Ammar, and Wadii Boulila. 2025. Qari-ocr: High-fidelity arabic text recognition through multimodal large language model adaptation. arXiv preprint arXiv:2506.02295.",
+    "Abdelhay Zoizou, Arsalane Zarghili, and Ilham Chaker. 2022. Moj-db: A new database of arabic historical handwriting and a novel approach for subwords extraction. Pattern Recognition Letters, 159:54–60."
+  ],
+  "measurement_description": "The benchmark measures the ability of multimodal models to accurately recognize and transcribe religiously significant Arabic text (such as Quranic verses, devotional phrases, and divine names) from complex and stylized calligraphic artworks."
 }

@@ -2,39 +2,67 @@
   "filename": "2508.10186.pdf",
   "title": "PakBBQ: A Culturally Adapted Bias Benchmark for QA",
   "arxiv_url": "https://arxiv.org/pdf/2508.10186",
-  "bias_targets": [
-    {
-      "target": "Age bias",
-      "methodology": "Evaluating model responses to multiple-choice question answering prompts in ambiguous and disambiguated contexts to measure reliance on age-related stereotypes."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Evaluating model responses to multiple-choice question answering prompts in ambiguous and disambiguated contexts to measure reliance on disability status stereotypes."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Evaluating model responses to multiple-choice question answering prompts in ambiguous and disambiguated contexts to measure reliance on gender identity stereotypes."
-    },
-    {
-      "target": "Physical appearance bias",
-      "methodology": "Evaluating model responses to multiple-choice question answering prompts in ambiguous and disambiguated contexts to measure reliance on physical appearance stereotypes."
-    },
-    {
-      "target": "Regional bias",
-      "methodology": "Evaluating multiple-choice question answering prompts specifically adapted to Pakistani regional identities (e.g., Sindhi, Baloch) to measure cross-regional prejudices and stereotypes."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Evaluating multiple-choice question answering prompts tailored to sectarian affiliations and minority religious groups in Pakistan (e.g., Ahmadis, Hindus, Barelvi, Deobandi) to measure religious and interfaith bias."
-    },
-    {
-      "target": "Socioeconomic bias",
-      "methodology": "Evaluating model responses to multiple-choice question answering prompts in ambiguous and disambiguated contexts to measure reliance on socioeconomic status (SES) stereotypes."
-    },
-    {
-      "target": "Language formality bias",
-      "methodology": "Measuring how models handle dialectal variants, pronoun registers, honorifics, and vocabulary register choices in Urdu and Roman Urdu through multiple-choice question answering."
-    }
+  "religious_groups": [
+    "Islam",
+    "Barelvi",
+    "Deobandi",
+    "Christians",
+    "Hindus",
+    "Ahmadis"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "DeepSeek-v3",
+    "GPT-4.1-Nano",
+    "GPT-4.1-Mini",
+    "GPT-4.1",
+    "gemini-2.0-flash-lite",
+    "gemini-2.0-flash"
+  ],
+  "languages_evaluated": [
+    "English",
+    "Urdu"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "BBQ",
+    "KoBBQ",
+    "CBBQ",
+    "MBBQ"
+  ],
+  "continuous_testing": false,
+  "findings": "Models struggled with culturally specific religious contexts unique to Pakistan, showing the lowest accuracy on 'Newly Added' templates that included sectarian and religious minority biases. However, models also demonstrated strong counter-bias tendencies, particularly in the religion category when contexts were unambiguous. On average, models showed greater counter-bias in Urdu compared to English.",
+  "references": [
+    "Noreen Abbas. 2018. Address forms and gender in urdu: A sociolinguistic perspective. Journal of Arts and Linguistics Studies, 2(1):94–104.",
+    "Badr AlKhamissi, Muhammad ElNokrashy, Mai Alkhamissi, and Mona Diab. 2024. Investigating cultural alignment of large language models. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 12404-12422, Bangkok, Thailand. Association for Computational Linguistics.",
+    "Samee Arif, Sualeha Farid, Awais Athar, and Agha Ali Raza. 2024. UQA: Corpus for Urdu question answering. In Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024), pages 17237-17244, Torino, Italia. ELRA and ICCL.",
+    "Nida Azam, Muhammad Awais Gulzar, and Syed Hussain Shah. 2021. A cross-cultural study of speech acts and politeness in urdu and english short stories. ELF Annual Research Journal, 23:93–122.",
+    "Loïc Barrault, Yu-An Chung, Mariano Cora Meglioli, David Dale, Ning Dong, Paul-Ambroise Duquenne, Hady Elsahar, Hongyu Gong, Kevin Heffernan, John Hoffman, and 1 others. 2023. Seamlessm4t: Massively multilingual & multimodal machine translation. arXiv preprint arXiv:2308.11596.",
+    "Su Lin Blodgett, Solon Barocas, Hal Daumé III, and Hanna Wallach. 2020. Language (technology) is power: A critical survey of\" bias\" in nlp. arXiv preprint arXiv:2005.14050.",
+    "Yang Deng, Wenqiang Lei, Minlie Huang, and Tat-Seng Chua. 2023. Rethinking conversational agents in the era of llms: Proactivity, non-collaborativity, and beyond. In Proceedings of the Annual international ACM SIGIR conference on research and development in information retrieval in the Asia Pacific region, pages 298-301.",
+    "Emilio Ferrara. 2023. Fairness and bias in artificial intelligence: A brief survey of sources, impacts, and mitigation strategies. Sci, 6(1):3.",
+    "Isabel O Gallegos, Ryan A Rossi, Joe Barrow, Md Mehrab Tanjim, Sungchul Kim, Franck Dernoncourt, Tong Yu, Ruiyi Zhang, and Nesreen K Ahmed. 2024. Bias and fairness in large language models: A survey. Computational Linguistics, 50(3):1097–1179.",
+    "Yufei Huang and Deyi Xiong. 2024. CBBQ: A Chinese bias benchmark dataset curated with human-AI collaboration for large language models. In Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024), pages 2917-2929, Torino, Italia. ELRA and ICCL.",
+    "Jiho Jin, Jiseon Kim, Nayeon Lee, Haneul Yoo, Alice Oh, and Hwaran Lee. 2024. KoBBQ: Korean bias benchmark for question answering. Transactions of the Association for Computational Linguistics, 12:507-524.",
+    "Samreen Kazi, Maria Rahim, and Shakeel Ahmed Khoja. 2025. Crossing language boundaries: Evaluation of large language models on Urdu-English question answering. In Proceedings of the First Workshop on Natural Language Processing for Indo-Aryan and Dravidian Languages, pages 141–151, Abu Dhabi. Association for Computational Linguistics.",
+    "Khyati Khandelwal, Manuel Tonneau, Andrew M Bean, Hannah Rose Kirk, and Scott A Hale. 2023. Casteist but not racist? quantifying disparities in large language model bias between india and the west. CoRR.",
+    "Selim Kılıç. 2015. Kappa testi. Journal of mood disorders, 5(3):142-144.",
+    "Sadia Kousar. 2022. Politeness orientation in social hierarchies in urdu. International Journal of Society, Culture & Language, 10(2):85-96.",
+    "Tao Li, Tushar Khot, Daniel Khashabi, Ashish Sabharwal, and Vivek Srikumar. 2020. Unqovering stereotyping biases via underspecified questions. arXiv preprint arXiv:2010.02428.",
+    "Sagnik Mukherjee, Muhammad Farid Adilazuarda, Sunayana Sitaram, Kalika Bali, Alham Fikri Aji, and Monojit Choudhury. 2024. Cultural conditioning or placebo? on the effectiveness of socio-demographic prompting. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 15811–15837, Miami, Florida, USA. Association for Computational Linguistics.",
+    "Vera Neplenbroek, Arianna Bisazza, and Raquel Fernández. 2024. Mbbq: A dataset for cross-lingual comparison of stereotypes in generative llms. arXiv preprint arXiv:2406.07243.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel Bowman. 2022. BBQ: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2086–2105, Dublin, Ireland. Association for Computational Linguistics.",
+    "Syed Afzal Moshadi Shah and Shehla Amjad. 2011. Cultural diversity in pakistan: national vs provincial. Mediterranean Journal of Social Sciences, 2(2):331-344.",
+    "Bryan Chen Zhengyu Tan and Roy Ka-Wei Lee. 2025. Unmasking implicit bias: Evaluating persona-prompted Ilm responses in power-disparate social scenarios. arXiv preprint arXiv:2503.01532.",
+    "Gemma Team, Aishwarya Kamath, Johan Ferret, Shreya Pathak, Nino Vieillard, Ramona Merhej, Sarah Perrin, Tatiana Matejovicova, Alexandre Ramé, Morgane Rivière, and 1 others. 2025. Gemma 3 technical report. arXiv preprint arXiv:2503.19786.",
+    "Leslie Walker. 2024. Societal Implications of Artificial Intelligence: A Comparison of Use and Impact of Artificial Narrow Intelligence in Patient Care between Resource-Rich and Resource-Poor Regions and Suggested Policies to Counter the Growing Public Health Gap. Ph.D. thesis, Technische Universität Wien.",
+    "Yixin Wan, George Pu, Jiao Sun, Aparna Garimella, Kai-Wei Chang, and Nanyun Peng. 2023. \" kelly is a warm person, joseph is a role model\": Gender biases in Ilm-generated reference letters. arXiv preprint arXiv:2310.09219.",
+    "Amina Yaqin. 2022. Gender, sexuality and feminism in Pakistani Urdu Writing. Anthem Press.",
+    "Mingze Yuan, Peng Bao, Jiajia Yuan, Yunhao Shen, Zifan Chen, Yi Xie, Jie Zhao, Quanzheng Li, Yang Chen, Li Zhang, and 1 others. 2024. Large language models illuminate a progressive pathway to artificial intelligent healthcare assistant. Medicine Plus, page 100030.",
+    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang. 2018. Gender bias in coreference resolution: Evaluation and debiasing methods. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 15-20, New Orleans, Louisiana. Association for Computational Linguistics.",
+    "Yutao Zhu, Huaying Yuan, Shuting Wang, Jiongnan Liu, Wenhan Liu, Chenlong Deng, Haonan Chen, Zheng Liu, Zhicheng Dou, and Ji-Rong Wen. 2023. Large language models for information retrieval: A survey. arXiv preprint arXiv:2308.07107."
+  ],
+  "measurement_description": "The benchmark measured stereotypical biases related to religion, specifically focusing on sectarian affiliations (e.g., Barelvi, Deobandi within Islam) and biases towards minority religious groups (e.g., Christians, Hindus, Ahmadis) within the Pakistani sociocultural context."
 }

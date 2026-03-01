@@ -2,27 +2,84 @@
   "filename": "1909.03683.pdf",
   "title": "Don't Take the Easy Way Out: Ensemble Based Methods for Avoiding Known Dataset Biases",
   "arxiv_url": "https://arxiv.org/pdf/1909.03683",
-  "bias_targets": [
-    {
-      "target": "Spurious correlation bias",
-      "methodology": "Evaluating models on a synthetic MNLI dataset where artificially added indicator tokens correlate strongly with labels in the training set but are randomized in the test set."
-    },
-    {
-      "target": "Language prior bias",
-      "methodology": "Evaluating on the VQA-CP v2.0 dataset, where correlations between question types and answers differ between train and test sets, forcing models to overcome reliance on question-type text priors instead of image evidence."
-    },
-    {
-      "target": "Lexical overlap bias",
-      "methodology": "Evaluating on the HANS dataset to challenge NLI models that naively rely on word overlap heuristics, using adversarial test examples where premises and hypotheses share words but do not entail each other."
-    },
-    {
-      "target": "Distractor bias (Lexical matching)",
-      "methodology": "Evaluating on Adversarial SQuAD by adding distractor sentences to the context that have high word overlap with the question but do not contain the answer, testing the model's reliance on simple TF-IDF or keyword matching."
-    },
-    {
-      "target": "Entity-type prior bias",
-      "methodology": "Evaluating on TriviaQA-CP, a changing-prior QA dataset built by holding out specific entity types (Person or Location) during training, measuring the model's reliance on learned Named Entity Recognition (NER) priors rather than reading comprehension."
-    }
+  "religious_groups": [],
+  "models_tested": [
+    "Co-Attention",
+    "BottomUpTopDown",
+    "BERT",
+    "Modified BiDAF"
   ],
-  "primary_bias_target": "Dataset bias (Spurious correlations)"
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "none",
+  "base_benchmarks": [
+    "MNLI",
+    "VQA",
+    "SQuAD",
+    "TriviaQA"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper does not contain any findings related to religion, as it was not a focus of the research.",
+  "references": [
+    "Aishwarya Agrawal, Dhruv Batra, Devi Parikh, and Aniruddha Kembhavi. 2018. Don't Just Assume; Look and Answer: Overcoming Priors for Visual Question Answering. In CVPR.",
+    "Ankesh Anand, Eugene Belilovsky, Kyle Kastner, Hugo Larochelle, and Aaron Courville. 2018. Blindfold Baselines for Embodied QA. Computing Research Repository, arXiv:1811.05013. Version 1.",
+    "Peter Anderson, Xiaodong He, Chris Buehler, Damien Teney, Mark Johnson, Stephen Gould, and Lei Zhang. 2018. Bottom-Up and Top-Down Attention for Image Captioning and Visual Question Answering. In CVPR.",
+    "Stanislaw Antol, Aishwarya Agrawal, Jiasen Lu, Margaret Mitchell, Dhruv Batra, C Lawrence Zitnick, and Devi Parikh. 2015. VQA: Visual Question Answering. In ICCV.",
+    "Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio. 2015. Neural Machine Translation by Jointly Learning to Align and Translate. In ICLR.",
+    "Yonatan Belinkov and Yonatan Bisk. 2018. Synthetic and Natural Noise Both Break Neural Machine Translation. In ICLR.",
+    "Yonatan Belinkov, Adam Poliak, Stuart M Shieber, Benjamin Van Durme, and Alexander M Rush. 2019. On Adversarial Removal of Hypothesis-only Bias in Natural Language Inference. In StarSem.",
+    "Samuel R Bowman, Gabor Angeli, Christopher Potts, and Christopher D Manning. 2015. A Large Annotated Corpus for Learning Natural Language Inference. In EMNLP.",
+    "Kaylee Burns, Lisa Anne Hendricks, Kate Saenko, Trevor Darrell, and Anna Rohrbach. 2018. Women Also Snowboard: Overcoming Bias in Captioning Models. In ECCV.",
+    "Ozan Caglayan, Pranava Madhyastha, Lucia Specia, and Loïc Barrault. 2019. Probing the Need for Visual Context in Multimodal Machine Translation. In NAACL.",
+    "Nicholas Carlini and David Wagner. 2018. Audio Adversarial Examples: Targeted Attacks on Speech-to-Text. In 2018 IEEE Security and Privacy Workshops.",
+    "Jifan Chen and Greg Durrett. 2019. Understanding Dataset Design Choices for Multi-hop Reasoning. In NAACL.",
+    "Qian Chen, Xiaodan Zhu, Zhenhua Ling, Si Wei, Hui Jiang, and Diana Inkpen. 2017. Enhanced LSTM for Natural Language Inference. In ACL.",
+    "Eunsol Choi, He He, Mohit Iyyer, Mark Yatskar, Wentau Yih, Yejin Choi, Percy Liang, and Luke Zettlemoyer. 2018. QuAC: Question Answering in Context. In EMNLP.",
+    "Christopher Clark and Matt Gardner. 2018. Simple and Effective Multi-Paragraph Reading Comprehension. In ACL.",
+    "Peter Clark, Isaac Cowhey, Oren Etzioni, Tushar Khot, Ashish Sabharwal, Carissa Schoenick, and Oyvind Tafjord. 2018. Think you have Solved Question Answering? Try ARC, the AI2 Reasoning Challenge. Computing Research Repository, arXiv:1803.05457. Version 1.",
+    "Peter Clark, Oren Etzioni, Tushar Khot, Ashish Sabharwal, Oyvind Tafjord, Peter Turney, and Daniel Khashabi. 2016. Combining Retrieval, Statistics, and Inference to Answer Elementary Science Questions. In AAAI.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding. In NAACL.",
+    "Harrison Edwards and Amos Storkey. 2016. Censoring Representations with an Adversary. In ICLR.",
+    "Shi Feng, Eric Wallace, and Jordan Boyd-Graber. 2019. Misleading Failures of Partial-input Baselines. In ACL.",
+    "Jenny Rose Finkel, Trond Grenager, and Christopher Manning. 2005. Incorporating Non-local Information into Information Extraction Systems by Gibbs Sampling. In ACL.",
+    "Max Glockner, Vered Shwartz, and Yoav Goldberg. 2018. Breaking NLI Systems with Sentences that Require Simple Lexical Inferences. In ACL.",
+    "Yash Goyal, Tejas Khot, Douglas Summers-Stay, Dhruv Batra, and Devi Parikh. 2018. Making the V in VQA Matter: Elevating the Role of Image Understanding in Visual Question Answering. IJCV.",
+    "Gabriel Grand and Yonatan Belinkov. 2019. Adversarial Regularization for Visual Question Answering: Strengths, Shortcomings, and Side Effects. In Proceedings of the Second Workshop on Shortcomings in Vision and Language.",
+    "Suchin Gururangan, Swabha Swayamdipta, Omer Levy, Roy Schwartz, Samuel R Bowman, and Noah A Smith. 2018. Annotation Artifacts in Natural Language Inference Data. In NAACL.",
+    "He He, Sheng Zha, and Haohan Wang. 2019. Unlearn Dataset Bias in Natural Language Inference by Fitting the Residual. Computing Research Repository, arXiv:1908.10763. Version 1.",
+    "Geoffrey E. Hinton. 2002. Training Products of Experts by Minimizing Contrastive Divergence. Neural Computation.",
+    "Allan Jabri, Armand Joulin, and Laurens Van Der Maaten. 2016. Revisiting Visual Question Answering Baselines. In European conference on computer vision.",
+    "Robin Jia and Percy Liang. 2017. Adversarial Examples for Evaluating Reading Comprehension Systems. In EMNLP.",
+    "Mandar Joshi, Eunsol Choi, Daniel S Weld, and Luke Zettlemoyer. 2017. TriviaQA: A Large Scale Distantly Supervised Challenge Dataset for Reading Comprehension. In ACL.",
+    "Byungju Kim, Hyunwoo Kim, Kyungsu Kim, Sungjin Kim, and Junmo Kim. 2019. Learning Not to Learn: Training Deep Neural Networks with Biased Data. In CVPR.",
+    "Diederik P Kingma and Jimmy Ba. 2015. Adam: A Method for Stochastic Optimization. In ICLR.",
+    "Mike Lewis and Angela Fan. 2019. Generative Question Answering: Learning to Answer the Whole Question. In ICLR.",
+    "Tom McCoy, Ellie Pavlick, and Tal Linzen. 2019. Right for the Wrong Reasons: Diagnosing Syntactic Heuristics in Natural Language Inference. In ACL.",
+    "Tomas Mikolov, Edouard Grave, Piotr Bojanowski, Christian Puhrsch, and Armand Joulin. 2018. Advances in Pre-Training Distributed Word Representations. In LREC.",
+    "Sewon Min, Eric Wallace, Sameer Singh, Matt Gardner, Hannaneh Hajishirzi, and Luke Zettlemoyer. 2019. Compositional Questions Do Not Necessitate Multi-hop Reasoning. In ACL.",
+    "Pranav Rajpurkar, Jian Zhang, Konstantin Lopyrev, and Percy Liang. 2016. SQUAD: 100, 000+ Questions for Machine Comprehension of Text. In EMNLP.",
+    "Sainandan Ramakrishnan, Aishwarya Agrawal, and Stefan Lee. 2018. Overcoming Language Priors in Visual Question Answering with Adversarial Regularization. In NeurIPS.",
+    "Siva Reddy, Danqi Chen, and Christopher D. Manning. 2019. CoQA: A Conversational Question Answering Challenge. In TACL.",
+    "Roy Schwartz, Maarten Sap, Ioannis Konstas, Li Zilles, Yejin Choi, and Noah A Smith. 2017. The Effect of Different Writing Tasks on Linguistic Style: A Case Study of the ROC Story Cloze Task. In CoNLL.",
+    "Minjoon Seo, Aniruddha Kembhavi, Ali Farhadi, and Hannaneh Hajishirzi. 2017. BiDirectional Attention Flow for Machine Comprehension. In ICLR.",
+    "Andrew Smith, Trevor Cohn, and Miles Osborne. 2005. Logarithmic Opinion Pools for Conditional Random Fields. In ACL.",
+    "Rupesh Kumar Srivastava, Klaus Greff, and Jürgen Schmidhuber. 2015. Highway networks. In Deep Learning Workshop (ICML).",
+    "Fabian M Suchanek, Gjergji Kasneci, and Gerhard Weikum. 2007. Yago: A Core of Semantic Knowledge. In WWW.",
+    "Christian Szegedy, Wojciech Zaremba, Ilya Sutskever, Joan Bruna, Dumitru Erhan, Ian Goodfellow, and Rob Fergus. 2014. Intriguing Properties of Neural Networks. In ICLR.",
+    "Shuohang Wang and Jing Jiang. 2017. Machine Comprehension Using Match-LSTM and Answer Pointer. In ICLR.",
+    "Tianlu Wang, Jieyu Zhao, Kai-Wei Chang, Mark Yatskar, and Vicente Ordonez. 2018. Adversarial Removal of Gender from Deep Image Representations. Computing Research Repository, arXiv:1811.08489. Version 2.",
+    "Yicheng Wang and Mohit Bansal. 2018. Robust Machine Comprehension Models via Adversarial Training. In NAACL.",
+    "Johannes Welbl, Pontus Stenetorp, and Sebastian Riedel. 2018. Constructing Datasets for Multi-hop Reading Comprehension across Documents. TACL.",
+    "Zhilin Yang, Peng Qi, Saizheng Zhang, Yoshua Bengio, William W Cohen, Ruslan Salakhutdinov, and Christopher D Manning. 2018. Hotpotqa: A Dataset for Diverse, Explainable Multi-hop Question Answering. In EMNLP.",
+    "Rowan Zellers, Yonatan Bisk, Roy Schwartz, and Yejin Choi. 2018. Swag: A Large-Scale Adversarial Dataset for Grounded Commonsense Inference. In EMNLP.",
+    "Brian Hu Zhang, Blake Lemoine, and Margaret Mitchell. 2018a. Mitigating Unwanted Biases with Adversarial Learning. In AIES.",
+    "Peng Zhang, Yash Goyal, Douglas Summers-Stay, Dhruv Batra, and Devi Parikh. 2016. Yin and Yang: Balancing and Answering Binary Visual Questions. In CVPR.",
+    "Sheng Zhang, Xiaodong Liu, Jingjing Liu, Jianfeng Gao, Kevin Duh, and Benjamin Van Durme. 2018b. ReCoRD: Bridging the Gap between Human and Machine Commonsense Reading Comprehension. Computing Research Repository, arXiv:1810.12885. Version 1.",
+    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang. 2017. Men Also Like Shopping: Reducing Gender Bias Amplification using Corpus-level Constraints. In EMNLP."
+  ],
+  "measurement_description": "The paper does not measure any aspect of faith or religion. Its focus is on general methods for avoiding known dataset biases in NLP and computer vision tasks."
 }

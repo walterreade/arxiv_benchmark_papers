@@ -2,39 +2,53 @@
   "filename": "2502.11137.pdf",
   "title": "Safety Evaluation of DeepSeek Models in Chinese Contexts",
   "arxiv_url": "https://arxiv.org/pdf/2502.11137",
-  "bias_targets": [
-    {
-      "target": "Ethnic bias",
-      "methodology": "Evaluating risk content identification via multiple-choice questions and assessing rejection/responsibility rates for risky queries using the CHiSafetyBench dataset."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Evaluating risk content identification via multiple-choice questions and assessing rejection/responsibility rates for risky queries using the CHiSafetyBench dataset."
-    },
-    {
-      "target": "Nationality bias",
-      "methodology": "Evaluating risk content identification via multiple-choice questions and assessing rejection/responsibility rates for risky queries using the CHiSafetyBench dataset."
-    },
-    {
-      "target": "Regional bias",
-      "methodology": "Evaluating risk content identification via multiple-choice questions and assessing rejection/responsibility rates for risky queries using the CHiSafetyBench dataset."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Evaluating risk content identification via multiple-choice questions and assessing rejection/responsibility rates for risky queries (categorized as sexism) using the CHiSafetyBench dataset."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Evaluating risk content identification via multiple-choice questions and assessing rejection/responsibility rates for risky queries (categorized as ageism) using the CHiSafetyBench dataset."
-    },
-    {
-      "target": "Occupational bias",
-      "methodology": "Evaluating risk content identification via multiple-choice questions and assessing rejection/responsibility rates for risky queries using the CHiSafetyBench dataset."
-    },
-    {
-      "target": "Health status bias",
-      "methodology": "Evaluating risk content identification via multiple-choice questions and assessing rejection/responsibility rates for risky queries using the CHiSafetyBench dataset."
-    }
+  "religious_groups": [
+    "Not specified"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "DeepSeek-R1",
+    "DeepSeek-V3",
+    "Baichuan2-7B-Chat",
+    "Baichuan2-13B-Chat",
+    "ChatGLM3-6B",
+    "Qwen1.5-7B-Chat",
+    "Qwen1.5-14B-Chat",
+    "Qwen1.5-32B-Chat",
+    "Qwen1.5-72B-Chat",
+    "Qwen1.5-110B-Chat",
+    "Yi-6B-Chat",
+    "Yi-34B-Chat"
+  ],
+  "languages_evaluated": [
+    "Chinese"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": true,
+  "findings": "The paper found that DeepSeek models performed poorly on safety tasks related to religion. In a multiple-choice task to identify religious extremism, both DeepSeek-R1 and DeepSeek-V3 failed, selecting an answer that was the opposite of extremist behavior. In refusal-to-answer tasks, DeepSeek-R1 and DeepSeek-V3 had very low refusal rates for prompts involving 'religious discrimination' (9.1% and 4.5% respectively), indicating a deficiency in handling such sensitive topics.",
+  "references": [
+    "Introducing meta llama 3: The most capable openly available llm to date, https://ai.meta.com/blog/meta-llama-3/",
+    "Achiam, J., Adler, S., Agarwal, S., Ahmad, L., Akkaya, I., Aleman, F.L., Almeida, D., Altenschmidt, J., Altman, S., Anadkat, S., et al.: Gpt-4 technical report. arXiv preprint arXiv:2303.08774 (2023)",
+    "adversa.ai: Introducing safety aligned deepseek r1 model by enkrypt ai (2025), https://adversa.ai/blog/deepseek-jailbreak/",
+    "AI, E.: Deepseek jailbreak's (2025), https://www.enkryptai.com/blog/introducing-safety-aligned-deepseek-r1-model-by-enkrypt-ai",
+    "Arrieta, A., Ugarte, M., Valle, P., Parejo, J.A., Segura, S.: 03-mini vs deepseek-r1: Which one is safer? arXiv preprint arXiv:2501.18438 (2025)",
+    "Cai, W., Jiang, J., Wang, F., Tang, J., Kim, S., Huang, J.: A survey on mixture of experts. arXiv preprint arXiv:2407.06204 (2024)",
+    "chatterbox: Gen ai reasoning model comparison & ai safety results (2025), https://chatterbox.co/blog/gen-ai-reasoning-model-comparison-ai-safety-results/",
+    "cisco: Evaluating security risk in deepseek and other frontier reasoning models (2025), https://blogs.cisco.com/security/evaluating-security-risk-in-deepseek-and-other-frontier-reasoning-models",
+    "Guo, D., Yang, D., Zhang, H., Song, J., Zhang, R., Xu, R., Zhu, Q., Ma, S., Wang, P., Bi, X., et al.: Deepseek-r1: Incentivizing reasoning capability in llms via reinforcement learning. arXiv preprint arXiv:2501.12948 (2025)",
+    "Liu, A., Feng, B., Xue, B., Wang, B., Wu, B., Lu, C., Zhao, C., Deng, C., Zhang, C., Ruan, C., et al.: Deepseek-v3 technical report. arXiv preprint arXiv:2412.19437 (2024)",
+    "Liu, J., Tang, P., Wang, W., Ren, Y., Hou, X., Heng, P.A., Guo, M., Li, C.: A survey on inference optimization techniques for mixture of experts models. arXiv preprint arXiv:2412.14219 (2024)",
+    "ΜΑΑ: American invitational mathematics examination aime. In: American Invitational Mathematics Examination AIME 2024 (February 2024), https://maa.org/math-competitions/american-invitational-mathematics-examination-aime",
+    "Mazeika, M., Phan, L., Yin, X., Zou, A., Wang, Z., Mu, N., Sakhaee, E., Li, N., Basart, S., Li, B., et al.: Harmbench: A standardized evaluation framework for automated red teaming and robust refusal. arXiv preprint arXiv:2402.04249 (2024)",
+    "OpenAI: Learning to reason with llms (2024), https://openai.com/index/learning-to-reason-with-llms/",
+    "Patil, A.: Advancing reasoning in large language models: Promising methods and approaches. arXiv preprint arXiv:2502.03671 (2025)",
+    "Team, Q.: Qwq: Reflect deeply on the boundaries of the unknown (November 2024), https://qwenlm.github.io/blog/qwq-32b-preview/",
+    "Xu, D., Chen, W., Peng, W., Zhang, C., Xu, T., Zhao, X., Wu, X., Zheng, Y., Wang, Y., Chen, E.: Large language models for generative information extraction: A survey. Frontiers of Computer Science 18(6), 186357 (2024)",
+    "Zhang, W., Lei, X., Liu, Z., An, M., Yang, B., Zhao, K., Wang, K., Lian, S.: Chisafetybench: A chinese hierarchical safety benchmark for large language models. arXiv preprint arXiv:2406.10311 (2024)"
+  ],
+  "measurement_description": "The benchmark measured the models' ability to identify risky content related to 'religious discrimination' via multiple-choice questions, and their capability to refuse answering harmful prompts related to 'religious discrimination' and 'religious extremism'."
 }

@@ -2,27 +2,107 @@
   "filename": "2511.18491.pdf",
   "title": "MindEval: Benchmarking Language Models on Multi-turn Mental Health Support",
   "arxiv_url": "https://arxiv.org/pdf/2511.18491",
-  "bias_targets": [
-    {
-      "target": "Racial bias",
-      "methodology": "LLM-as-a-judge evaluation of multi-turn therapeutic conversations to detect stigmatizing, shaming, or biased language and to assess cultural sensitivity towards patient personas simulated with diverse racial identities."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "LLM-as-a-judge evaluation of multi-turn therapeutic conversations to detect stigmatizing, shaming, or biased language and to assess cultural sensitivity towards patient personas simulated with diverse sexual orientations (e.g., LGBTQ+ archetypes)."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "LLM-as-a-judge evaluation of multi-turn therapeutic conversations to detect stigmatizing, shaming, or biased language and to assess inclusivity towards patient personas simulated with diverse gender identities."
-    },
-    {
-      "target": "Socioeconomic bias",
-      "methodology": "LLM-as-a-judge evaluation of multi-turn therapeutic conversations to detect stigmatizing, shaming, or biased language and to assess cultural sensitivity towards patient personas simulated with varying socioeconomic backgrounds and financial situations."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "LLM-as-a-judge evaluation of multi-turn therapeutic conversations to detect stigmatizing, shaming, or biased language and to assess cultural sensitivity towards patient personas simulated with specific religious identities."
-    }
+  "religious_groups": [],
+  "models_tested": [
+    "Gemini 2.5 Pro",
+    "GLM-4.6",
+    "Claude 4.5 Sonnet",
+    "GPT-5",
+    "Qwen3-235B-A22B-Instruct",
+    "Gemma3 12B",
+    "Gemma3 27B",
+    "Gemma3 4B",
+    "GPT-oss-120B",
+    "Qwen3-235B-A22B-Thinking",
+    "Qwen3-30B-A3B-Instruct",
+    "Qwen3-4B-Instruct",
+    "Claude 4.5 Haiku",
+    "Qwen3-235B-A22B-Instruct",
+    "Deepseek-R1-0528"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "none",
+  "base_benchmarks": [
+    "Patient-4",
+    "HealthBench",
+    "CPsyCoun",
+    "Vera-MH"
+  ],
+  "continuous_testing": true,
+  "findings": "The paper presents no findings related to religion, as it was not a focus of the analysis. Religion was only mentioned as a potential demographic variable for patient simulation within the benchmark's methodology.",
+  "references": [
+    "American Psychological Association. APA Guidelines for Clinical Supervision in Health Service Psychology, 2025a. URL https://www.apa.org/about/policy/guidelines-clinical-supervision.",
+    "American Psychological Association. Health advisory: Use of generative AI chatbots and wellness applications for mental health, 2025b. URL https://www.apa.org/topics/artificial-intelligence-machine-learning/health -advisory-chatbots-wellness-apps.",
+    "American Psychological Association. Stress in America, 2025c. URL https://www.apa.org/news/press/releases/st ress.",
+    "Rahul K Arora, Jason Wei, Rebecca Soskin Hicks, Preston Bowman, Joaquin Quiñonero-Candela, Foivos Tsimpourlas, Michael Sharman, Meghan Shah, Andrea Vallone, Alex Beutel, et al. Healthbench: Evaluating large language models towards improved human health. arXiv preprint arXiv:2505.08775, 2025.",
+    "Abeer Badawi, Elahe Rahimi, Md Tahmid Rahman Laskar, Sheri Grach, Lindsay Bertrand, Lames Danok, Jimmy Huang, Frank Rudzicz, and Elham Dolatabadi. When can we trust llms in mental health? large-scale benchmarks for reliable Ilm evaluation. arXiv preprint arXiv:2510.19032, 2025.",
+    "Luca Belli, Kate Bentley, Will Alexander, Emily Ward, Matt Hawrilenko, Kelly Johnston, Mill Brown, and Adam Chekroud. Vera-mh concept paper. arXiv preprint arXiv:2510.15297, 2025.",
+    "Guiming Hardy Chen, Shunian Chen, Ziche Liu, Feng Jiang, and Benyou Wang. Humans or llms as the judge? a study on judgement biases. arXiv preprint arXiv:2402.10669, 2024.",
+    "Emma Croxford, Yanjun Gao, Elliot First, Nicholas Pellegrino, Miranda Schnier, John Caskey, Madeline Oguss, Graham Wills, Guanhua Chen, Dmitriy Dligach, et al. Automating evaluation of ai text generation in healthcare with a large language model (llm)-as-a-judge. medRxiv, pp. 2025-04, 2025.",
+    "DeepSeek-AI. Deepseek-r1: Incentivizing reasoning capability in llms via reinforcement learning, 2025. URL https: //arxiv.org/abs/2501.12948.",
+    "Daniel Deutsch, George Foster, and Markus Freitag. Ties matter: Meta-evaluating modern metrics with pairwise accuracy and tie calibration. In The 2023 Conference on Empirical Methods in Natural Language Processing, 2023.",
+    "Nikolaos Flemotomos, Victor R Martinez, Zhuohao Chen, Torrey A Creed, David C Atkins, and Shrikanth Narayanan. Automated quality assessment of cognitive behavioral therapy sessions through highly contextualized language representations. PloS one, 16(10):e0258639, 2021.",
+    "Nikolaos Flemotomos, Victor R Martinez, Zhuohao Chen, Karan Singla, Victor Ardulov, Raghuveer Peri, Derek D Caperton, James Gibson, Michael J Tanana, Panayiotis Georgiou, et al. Automated evaluation of psychotherapy skills using speech and language technologies. Behavior Research Methods, 54(2):690-711, 2022.",
+    "Markus Freitag, George Foster, David Grangier, Viresh Ratnakar, Qijun Tan, and Wolfgang Macherey. Experts, errors, and context: A large-scale study of human evaluation for machine translation. Transactions of the Association for Computational Linguistics, 9:1460–1474, 2021.",
+    "Markus Freitag, Ricardo Rei, Nitika Mathur, Chi-kiu Lo, Craig Stewart, Eleftherios Avramidis, Tom Kocmi, George Foster, Alon Lavie, and André FT Martins. Results of wmt22 metrics shared task: Stop using bleu-neural metrics are better and more robust. In Proceedings of the Seventh Conference on Machine Translation (WMT), pp. 46–68, 2022.",
+    "Markus Freitag, Nitika Mathur, Chi-kiu Lo, Eleftherios Avramidis, Ricardo Rei, Brian Thompson, Tom Kocmi, Frederic Blain, Daniel Deutsch, Craig Stewart, Chrysoula Zerva, Sheila Castilho, Alon Lavie, and George Foster. Results of wmt23 metrics shared task: Metrics might be guilty but references are not innocent. In Proceedings of the Eighth Conference on Machine Translation, Singapore, December 2023. Association for Computational Linguistics. URL https: //aclanthology.org/2023.wmt-1.51.",
+    "Markus Freitag, Nitika Mathur, Daniel Deutsch, Chi-Kiu Lo, Eleftherios Avramidis, Ricardo Rei, Brian Thompson, Frédéric Blain, Tom Kocmi, Jiayi Wang, et al. Are llms breaking mt metrics? results of the wmt24 metrics shared task. In Proceedings of the Ninth Conference on Machine Translation, pp. 47–81, 2024.",
+    "Simon B Goldberg, Nikolaos Flemotomos, Victor R Martinez, Michael J Tanana, Patty B Kuo, Brian T Pace, Jennifer L Villatte, Panayiotis G Georgiou, Jake Van Epps, Zac E Imel, et al. Machine learning and natural language processing in psychotherapy research: Alliance as example use case. Journal of counseling psychology, 67(4):438, 2020.",
+    "Jiawei Gu, Xuhui Jiang, Zhichao Shi, Hexiang Tan, Xuehao Zhai, Chengjin Xu, Wei Li, Yinghan Shen, Shengjie Ma, Honghao Liu, et al. A survey on Ilm-as-a-judge. arXiv preprint arXiv:2411.15594, 2024.",
+    "Zhijun Guo, Alvina Lai, Johan H Thygesen, Joseph Farrington, Thomas Keen, Kezhi Li, et al. Large language models for mental health applications: systematic review. JMIR mental health, 11(1):e57400, 2024.",
+    "Aishwarya Kamath, Johan Ferret, Shreya Pathak, Nino Vieillard, Ramona Merhej, Sarah Perrin, Tatiana Matejovicova, Alexandre Ramé, Morgane Rivière, et al. Gemma 3 technical report. arXiv preprint arXiv:2503.19786, 2025.",
+    "Andrea Kang, Jun Yu Chen, Zoe Lee-Youngzie, and Shuhao Fu. Synthetic data generation with llm for improved depression prediction. arXiv preprint arXiv:2411.17672, 2024.",
+    "M. G. Kendall. A new measure of rank correlation. Biometrika, 30(1/2):81-93, 1938a. ISSN 00063444. URL http: //www.jstor.org/stable/2332226.",
+    "Maurice G Kendall. A new measure of rank correlation. Biometrika, 30(1-2):81-93, 1938b.",
+    "Tom Kocmi, Christian Federmann, Roman Grundkiewicz, Marcin Junczys-Dowmunt, Hitokazu Matsushita, and Arul Menezes. To ship or not to ship: An extensive evaluation of automatic metrics for machine translation. In Proceedings of the Sixth Conference on Machine Translation, pp. 478–494, 2021.",
+    "Philipp Koehn. Statistical significance tests for machine translation evaluation. In Proceedings of the 2004 conference on empirical methods in natural language processing, pp. 388–395, 2004.",
+    "Tin Lai, Yukun Shi, Zicong Du, Jiajie Wu, Ken Fu, Yichao Dou, and Ziqi Wang. Psy-llm: Scaling up global mental health psychological services with ai-based large language models. arXiv preprint arXiv:2307.11991, 2023.",
+    "Alon Lavie, Greg Hanneman, Sweta Agrawal, Diptesh Kanojia, Chi-Kiu Lo, Vilém Zouhar, Frederic Blain, Chrysoula Zerva, Eleftherios Avramidis, Sourabh Deoghare, et al. Findings of the wmt25 shared task on automated translation evaluation systems: Linguistic diversity is challenging and references still help. In Proceedings of the Tenth Conference on Machine Translation, pp. 436–483, 2025.",
+    "Suyeon Lee, Sunghwan Mac Kim, Minju Kim, Dongjin Kang, Dongil Yang, Harim Kim, Minseok Kang, Dayi Jung, Min Hee Kim, Seungbeen Lee, et al. Cactus: Towards psychological counseling conversations using cognitive behavioral theory. In Findings of the Association for Computational Linguistics: EMNLP 2024, pp. 14245–14274, 2024.",
+    "Dawei Li, Bohan Jiang, Liangjie Huang, Alimohammad Beigi, Chengshuai Zhao, Zhen Tan, Amrita Bhattacharjee, Yuxuan Jiang, Canyu Chen, Tianhao Wu, et al. From generation to judgment: Opportunities and challenges of llm-as-a-judge. arXiv preprint arXiv:2411.16594, 2024a.",
+    "Haitao Li, Qian Dong, Junjie Chen, Huixue Su, Yujia Zhou, Qingyao Ai, Ziyi Ye, and Yiqun Liu. Llms-as-judges: a comprehensive survey on llm-based evaluation methods. arXiv preprint arXiv:2412.05579, 2024b.",
+    "Yahan Li, Jifan Yao, John Bosco S Bunyi, Adam C Frank, Angel Hwang, and Ruishan Liu. Counselbench: A large-scale expert evaluation and adversarial benchmark of large language models in mental health counseling. arXiv preprint arXiv:2506.08584, 2025.",
+    "Laurens van der Maaten and Geoffrey Hinton. Visualizing data using t-sne. Journal of machine learning research, 9(Nov): 2579-2605, 2008.",
+    "Miles McCain, Ryn Linthicum, Chloe Lubinski, Alex Tamkin, Saffron Huang, Michael Stern, Kunal Handa, Esin Durmus, Tyler Neylon, Stuart Ritchie, Kamya Jagadish, Paruul Maheshwary, Sarah Heck, Alexandra Sanderford, and Deep Ganguli. How people use claude for support, advice, and companionship, 2025. URL https://www.anthropic.com/ news/how-people-use-claude-for-support-advice-and-companionship.",
+    "Mental Health America. The State of Mental Health in America, 2025. URL https://mhanational.org/the-state-o f-mental-health-in-america/.",
+    "Hongbin Na. Cbt-llm: A chinese large language model for cognitive behavioral therapy-based mental health question answering. arXiv preprint arXiv:2403.16008, 2024.",
+    "Tarek Naous, Philippe Laban, Wei Xu, and Jennifer Neville. Flipping the dialogue: Training and evaluating user language models. arXiv preprint arXiv:2510.06552, 2025.",
+    "National Mental Health Institute. Mental Illness - National Institute of Mental Health (NIMH), 2025. URL https: //www.nimh.nih.gov/health/statistics/mental-illness.",
+    "OpenAI. gpt-oss-120b & gpt-oss-20b model card, 2025a. URL https://arxiv.org/abs/2508.10925.",
+    "OpenAI. What we're optimizing ChatGPT for, November 2025b. URL https://openai.com/index/optimizing-chatg pt/.",
+    "OpenAI. Helping people when they need it most, November 2025c. URL https://openai.com/index/helping-peopl e-when-they-need-it-most/.",
+    "Søren Dinesen Østergaard. Will generative artificial intelligence chatbots generate delusions in individuals prone to psychosis?, 2023.",
+    "Fabian Pedregosa, Gaël Varoquaux, Alexandre Gramfort, Vincent Michel, Bertrand Thirion, Olivier Grisel, Mathieu Blondel, Peter Prettenhofer, Ron Weiss, Vincent Dubourg, et al. Scikit-learn: Machine learning in python. the Journal of machine Learning research, 12:2825-2830, 2011.",
+    "Jason Phang, Michael Lampe, Lama Ahmad, Sandhini Agarwal, Cathy Mengying Fang, Auren R Liu, Valdemar Danry, Eunhae Lee, Samantha WT Chan, Pat Pataranutaporn, et al. Investigating affective use and emotional well-being on chatgpt. arXiv preprint arXiv:2504.03888, 2025.",
+    "José Pombal, Nuno M Guerreiro, Ricardo Rei, and André FT Martins. Zero-shot benchmarking: A framework for flexible and scalable automatic evaluation of language models. arXiv preprint arXiv:2504.01001, 2025.",
+    "Cheng Qian, Zuxin Liu, Akshara Prabhakar, Zhiwei Liu, Jianguo Zhang, Haolin Chen, Heng Ji, Weiran Yao, Shelby Heinecke, Silvio Savarese, et al. Userbench: An interactive gym environment for user-centric agents. arXiv preprint arXiv:2507.22034, 2025.",
+    "Ricardo Rei, Ana C Farinha, Chrysoula Zerva, Daan Van Stigt, Craig Stewart, Pedro Ramos, Taisiya Glushkova, André FT Martins, and Alon Lavie. Are references really needed? unbabel-ist 2021 submission for the metrics shared task. In Proceedings of the Sixth Conference on Machine Translation, pp. 1030–1040, 2021.",
+    "Nick Robins-Early. More than a million people every week show suicidal intent when chatting with ChatGPT, OpenAI estimates. The Guardian, October 2025. ISSN 0261-3077. URL https://www.theguardian.com/technology/2025/oc t/27/chatgpt-suicide-self-harm-openai.",
+    "Keita Saito, Akifumi Wachi, Koki Wataoka, and Youhei Akimoto. Verbosity bias in preference labeling by large language models. arXiv preprint arXiv:2310.10076, 2023.",
+    "Weiwei Sun, Xuhui Zhou, Weihua Du, Xingyao Wang, Sean Welleck, Graham Neubig, Maarten Sap, and Yiming Yang. Training proactive and personalized llm agents. arXiv preprint arXiv:2511.02208, 2025.",
+    "Brian Thompson, Nitika Mathur, Daniel Deutsch, and Huda Khayrallah. Improving statistical significance in human evaluation of automatic metrics via soft pairwise accuracy. In Proceedings of the Ninth Conference on Machine Translation, pp. 1222-1234, 2024.",
+    "SP Vedanta and Madhav Rao. Psychsynth: Advancing mental health ai through synthetic data generation and curriculum training. In 2024 9th International Conference on Computer Science and Engineering (UBMK), pp. 1–6. IEEE, 2024.",
+    "Henrique Schechter Vera, Sahil Dua, Biao Zhang, Daniel Salz, Ryan Mullins, Sindhu Raghuram Panyam, Sara Smoot, Iftekhar Naim, Joe Zou, Feiyang Chen, et al. Embeddinggemma: Powerful and lightweight text representations. arXiv preprint arXiv:2509.20354, 2025.",
+    "Ruiyi Wang, Stephanie Milani, Jamie C Chiu, Jiayin Zhi, Shaun M Eack, Travis Labrum, Samuel M Murphy, Nev Jones, Kate Hardy, Hong Shen, et al. Patient-{\\Psi}: Using large language models to simulate patients for training mental health professionals. arXiv preprint arXiv:2405.19660, 2024.",
+    "Synthia Wang, Yuwei Cheng, Austin Song, Sarah Keedy, Marc Berman, and Nick Feamster. Can llms address mental health questions? a comparison with human therapists. arXiv preprint arXiv:2509.12102, 2025.",
+    "Aleyna Warner, Jeffrey LeDue, Yutong Cao, Joseph Tham, and Tim Murphy. Synthetic patient and interview transcript creator: an essential tool for llms in mental health. Frontiers in Digital Health, 7:1625444, 2025.",
+    "Koki Wataoka, Tsubasa Takahashi, and Ryokan Ri. Self-preference bias in llm-as-a-judge. arXiv preprint arXiv:2410.21819, 2024.",
+    "World Health Organization. Over a billion people living with mental health conditions – services require urgent scale-up, 2025. URL https://www.who.int/news/item/02-09-2025-over-a-billion-people-living-with-mental-healt h-conditions-services-require-urgent-scale-up.",
+    "Jia Xu, Tianyi Wei, Bojian Hou, Patryk Orzechowski, Shu Yang, Ruochen Jin, Rachael Paulbeck, Joost Wagenaar, George Demiris, and Li Shen. Mentalchat16k: A benchmark dataset for conversational mental health assistance. In Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining V. 2, pp. 5367–5378, 2025.",
+    "An Yang, Anfeng Li, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chang Gao, Chengen Huang, Chenxu Lv, et al. Qwen3 technical report. arXiv preprint arXiv:2505.09388, 2025.",
+    "Shunyu Yao, Noah Shinn, Pedram Razavi, and Karthik Narasimhan. T-bench: A benchmark for tool-agent-user interaction in real-world domains. arXiv preprint arXiv:2406.12045, 2024.",
+    "Jiayi Ye, Yanbo Wang, Yue Huang, Dongping Chen, Qihui Zhang, Nuno Moniz, Tian Gao, Werner Geyer, Chao Huang, Pin-Yu Chen, et al. Justice or prejudice? quantifying biases in llm-as-a-judge. arXiv preprint arXiv:2410.02736, 2024.",
+    "JE Young and Aaron T Beck. Cognitive therapy scale. Unpublished manuscript, University of Pennsylvania, 1980.",
+    "Z.ai. GLM-4.6: Advanced Agentic, Reasoning and Coding Capabilities, 2025. URL https://z.ai/blog/glm-4.6.",
+    "Chenhao Zhang, Renhao Li, Minghuan Tan, Min Yang, Jingwei Zhu, Di Yang, Jiahao Zhao, Guancheng Ye, Chengming Li, and Xiping Hu. Cpsycoun: A report-based multi-turn dialogue reconstruction and evaluation framework for chinese psychological counseling. arXiv preprint arXiv:2405.16433, 2024.",
+    "Mian Zhang, Xianjun Yang, Xinlu Zhang, Travis Labrum, Jamie C Chiu, Shaun M Eack, Fei Fang, William Yang Wang, and Zhiyu Chen. Cbt-bench: Evaluating large language models on assisting cognitive behavior therapy. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pp. 3864–3900, 2025.",
+    "Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric Xing, et al. Judging llm-as-a-judge with mt-bench and chatbot arena. Advances in Neural Information Processing Systems, 36:46595–46623, 2023.",
+    "Xuhui Zhou, Hyunwoo Kim, Faeze Brahman, Liwei Jiang, Hao Zhu, Ximing Lu, Frank F Xu, Bill Yuchen Lin, Yejin Choi, Niloofar Mireshghallah, et al. Haicosystem: An ecosystem for sandboxing safety risks in interactive ai agents. In Second Conference on Language Modeling, 2025."
+  ],
+  "measurement_description": "The paper does not specifically measure anything related to faith or religion. The benchmark, MINDEVAL, is designed to evaluate language models on multi-turn mental health support conversations. The patient simulation prompt mentions 'religion' as a potential 'minority identity element' that could be included in a patient's profile to ensure cultural sensitivity, but it is not a required attribute and no results related to it are presented."
 }

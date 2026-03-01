@@ -2,43 +2,127 @@
   "filename": "2602.02582.pdf",
   "title": "Uncertainty and Fairness Awareness in LLM-Based Recommendation Systems",
   "arxiv_url": "https://arxiv.org/pdf/2602.02582",
-  "bias_targets": [
-    {
-      "target": "Age bias",
-      "methodology": "Substituting age descriptors (e.g., Young, Middle aged, Old) into recommendation prompts and comparing the resulting top-K recommendation lists against a neutral baseline using similarity metrics like SNSR and SNSV."
-    },
-    {
-      "target": "Geographic/Regional bias",
-      "methodology": "Substituting continent descriptors (e.g., Asian, African, American) into recommendation prompts and comparing the output recommendation lists against a neutral baseline using similarity metrics."
-    },
-    {
-      "target": "Nationality bias",
-      "methodology": "Substituting nationality descriptors (e.g., an American, a Brazilian, a British) into recommendation prompts and measuring the disparity in recommendation outputs compared to a neutral baseline."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Substituting gender descriptors (e.g., a male, a female) into recommendation prompts and measuring output disparities against a neutral baseline using ranking similarity metrics."
-    },
-    {
-      "target": "Occupational bias",
-      "methodology": "Substituting occupation descriptors (e.g., a doctor, a student, a worker) into recommendation prompts and measuring the similarity gap in recommendations compared to a neutral baseline."
-    },
-    {
-      "target": "Physical appearance bias",
-      "methodology": "Substituting physical descriptors (e.g., Fat, Thin) into recommendation prompts and evaluating disparities in the recommended items against a neutral prompt."
-    },
-    {
-      "target": "Racial bias",
-      "methodology": "Substituting racial descriptors (e.g., a black, a white, an African American) into recommendation prompts and calculating unfairness metrics (SNSR, SNSV, PRAG*@K) relative to a neutral baseline."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Substituting religious identity descriptors (e.g., a Buddhist, a Christian, a Muslim) into recommendation prompts and comparing the generated recommendation lists against a neutral baseline."
-    },
-    {
-      "target": "Personality bias",
-      "methodology": "Measuring the stability of model recommendations across simulated personality profile prompts using a novel Personality-Aware Fairness Score (PAFS)."
-    }
+  "religious_groups": [
+    "Buddhism",
+    "Christianity",
+    "Hinduism",
+    "Islam"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "Gemini 1.5 Flash"
+  ],
+  "languages_evaluated": [
+    "English",
+    "French"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "The study found that Gemini 1.5 Flash exhibits systematic and significant unfairness in recommendations based on religion. For the movie dataset, religion was the attribute with the highest measured disparity (SNSR and SNSV scores). For the music dataset, religion was also identified as one of the most disadvantaged attributes. These disparities persisted even when prompts included typographical errors or were translated into other languages.",
+  "references": [
+    "D. Kumar, T. Grosz, N. Rekabsaz, E. Greif, and M. Schedl, \"Fairness of recommender systems in the recruitment domain: an analysis from technical and legal perspectives,\" Frontiers in big Data, vol. 6, p. 1245198, 2023.",
+    "S. Sabouri, P. Eibl, X. Zhou, M. Ziyadi, N. Medvidovic, L. Lindemann, and S. Chattopadhyay, \"Trust dynamics in ai-assisted development: Definitions, factors, and implications,\" 2025.",
+    "Y. Bakman, D. N. Yaldiz, S. Kang, T. Zhang, B. Buyukates, S. Avestimehr, and S. P. Karimireddy, \"Reconsidering Ilm uncertainty estimation methods in the wild,\" arXiv preprint arXiv:2506.01114, 2025.",
+    "Q. Yang, S. Ravikumar, F. Schmitt-Ulms, S. Lolla, E. Demir, I. Elistratov, A. Lavaee, S. Lolla, E. Ahmadi, D. Rus et al., “Uncertainty-aware language modeling for selective question answering,\" arXiv preprint arXiv:2311.15451, 2023.",
+    "C. K. Sah, L. Xiaoli, and M. M. Islam, \"Unveiling bias in fairness evaluations of large language models: A critical literature review of music and movie recommendation systems,\" Unveiling Bias in Fairness Evaluations of Large Language Models: A Critical Literature Review of Music and Movie Recommendation Systems, vol. 8, no. 12, Jan. 2024. [Online]. Available: https://doi.org/10.5281/zenodo.10469839",
+    "L. Das, B. Gjorgiev, and G. Sansavini, \"Uncertainty-aware deep learning for digital twin-driven monitor- ing: Application to fault detection in power lines,\" arXiv preprint arXiv:2303.10954, 2023.",
+    "Y. Yao, T. Han, J. Yu, and M. Xie, “Uncertainty-aware deep learning for reliable health monitoring in safety-critical energy systems,\" Energy, vol. 291, p. 130419, 2024.",
+    "X. Tang, K. Yang, H. Wang, J. Wu, Y. Qin, W. Yu, and D. Cao, \"Prediction-uncertainty-aware decision- making for autonomous vehicles,” IEEE Transactions on Intelligent Vehicles, vol. 7, no. 4, pp. 849-862, 2022.",
+    "X. Sun, Y. Zhang, X. Tang, A. S. Bedi, and A. Bera, “Trustnavgpt: Modeling uncertainty to improve trustworthiness of audio-guided Ilm-based robot navigation,\" in 2024 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS). IEEE, 2024, pp. 8794-8801.",
+    "W. Kweon, S. Jang, S. Kang, and H. Yu, \"Uncertainty quantification and decomposition for Ilm-based recommendation,\" in Proceedings of the ACM on Web Conference 2025, 2025, pp. 4889-4901.",
+    "Y. Deldjoo, \"Fairness of chatgpt and the role of explainable-guided prompts,\" in Joint European Confer- ence on Machine Learning and Knowledge Discovery in Databases. Springer, 2023, pp. 13–22.",
+    "Z. He, Z. Xie, R. Jha, H. Steck, D. Liang, Y. Feng, B. P. Majumder, N. Kallus, and J. McAuley, \"Large language models as zero-shot conversational recommenders,” in Proceedings of the 32nd ACM international conference on information and knowledge management, 2023, pp. 720-730.",
+    "W. X. Grattafiori, A. Défossez, J. Copet, F. Azhar, H. Touvron, L. Martin, N. Usunier, T. Scialom, and G. Synnaeve, \"Code llama: Open foundation models for code,\" arXiv preprint arXiv:2308.12950, 2023.",
+    "A. Kendall and Y. Gal, \"What uncertainties do we need in bayesian deep learning for computer vision?\" Advances in neural information processing systems, vol. 30, 2017.",
+    "Y. Xiao and W. Y. Wang, \"Quantifying uncertainties in natural language processing tasks,\" in Proceedings of the AAAI conference on artificial intelligence, vol. 33, no. 01, 2019, pp. 7322–7329.",
+    "-, \"On hallucination and predictive uncertainty in conditional language generation,\" in Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics: Main Volume, 2021, pp. 2734-2744.",
+    "S. Kumar, \"Answer-level calibration for free-form multiple choice question answering,\" in Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), 2022, pp. 665-679.",
+    "J. Jiang, D. Yang, Y. Xiao, and C. Shen, \"Convolutional gaussian embeddings for personalized recom- mendation with uncertainty.\"",
+    "V. Coscrato and D. Bridge, \"Estimating and evaluating the uncertainty of rating predictions and top-n recommendations in recommender systems,\" ACM Transactions on Recommender Systems, vol. 1, no. 2, pp. 1-34, 2023.",
+    "M. Kirchhof, G. Kasneci, and E. Kasneci, \"Position: Uncertainty quantification needs reassessment for large-language model agents,\" arXiv preprint arXiv:2505.22655, 2025.",
+    "S. Devic, T. Srinivasan, J. Thomason, W. Neiswanger, and V. Sharan, \"From calibration to collaboration: Llm uncertainty quantification should be more human-centered,\" arXiv preprint arXiv:2506.07461, 2025.",
+    "Z. Atf, S. A. A. Safavi-Naini, P. R. Lewis, A. Mahjoubfar, N. Naderi, T. R. Savage, and A. Soroush, \"The challenge of uncertainty quantification of large language models in medicine,\" arXiv preprint arXiv:2504.05278, 2025.",
+    "M. Xiong, A. Santilli, M. Kirchhof, A. Golinski, and S. Williamson, \"Efficient and effective uncertainty quantification for llms,\" in Neurips Safe Generative AI Workshop 2024, 2024.",
+    "J. Gu, Z. Han, S. Chen, A. Beirami, B. He, G. Zhang, R. Liao, Y. Qin, V. Tresp, and P. Torr, \"A systematic survey of prompt engineering on vision-language foundation models,” arXiv preprint arXiv:2307.12980, 2023.",
+    "J. White, Q. Fu, S. Hays, M. Sandborn, C. Olea, H. Gilbert, A. Elnashar, J. Spencer-Smith, and D. C. Schmidt, \"A prompt pattern catalog to enhance prompt engineering with chatgpt,\" arXiv preprint arXiv:2302.11382, 2023.",
+    "K. Zhu, J. Wang, J. Zhou, Z. Wang, H. Chen, Y. Wang, L. Yang, W. Ye, Y. Zhang, N. Gong et al., \"Promptrobust: Towards evaluating the robustness of large language models on adversarial prompts,\" in Proceedings of the 1st ACM Workshop on Large Al Systems and Models with Privacy and Safety Analysis, 2023, pp. 57-68.",
+    "A. Amayuelas, K. Wong, L. Pan, W. Chen, and W. Wang, \"Knowledge of knowledge: Exploring known-unknowns uncertainty with large language models,\" arXiv preprint arXiv:2305.13712, 2023.",
+    "C. Paliwal, A. Majumder, and S. Kaveri, \"Predictive relevance uncertainty for recommendation systems,\" in Proceedings of the ACM Web Conference 2024, 2024, pp. 3900-3909.",
+    "J. Harte, W. Zorgdrager, P. Louridas, A. Katsifodimos, D. Jannach, and M. Fragkoulis, \"Leveraging large language models for sequential recommendation,\" in Proceedings of the 17th ACM Conference on Recommender Systems, 2023, pp. 1096-1102.",
+    "S. Dai, N. Shao, H. Zhao, W. Yu, Z. Si, C. Xu, Z. Sun, X. Zhang, and J. Xu, \"Uncovering chatgpt's capabilities in recommender systems,\" in Proceedings of the 17th ACM Conference on Recommender Systems, 2023, pp. 1126-1132.",
+    "J. Zhang, K. Bao, Y. Zhang, W. Wang, F. Feng, and X. He, \"Is chatgpt fair for recommendation? evaluating fairness in large language model recommendation,\" in Proceedings of the 17th ACM Conference on Recommender Systems, 2023, pp. 993–999.",
+    "J. Chen, H. Dong, X. Wang, F. Feng, M. Wang, and X. He, \"Bias and debias in recommender system: A survey and future directions,\" ACM Transactions on Information Systems, vol. 41, no. 3, pp. 1–39, 2023.",
+    "A. J. Biega, K. P. Gummadi, and G. Weikum, \"Equity of attention: Amortizing individual fairness in rankings,\" in The 41st international acm sigir conference on research & development in information retrieval, 2018, pp. 405-414.",
+    "A. Beutel, J. Chen, T. Doshi, H. Qian, L. Wei, Y. Wu, L. Heldt, Z. Zhao, L. Hong, E. H. Chi et al., \"Fairness in recommendation ranking through pairwise comparisons,” in Proceedings of the 25th ACM SIGKDD international conference on knowledge discovery & data mining, 2019, pp. 2212-2220.",
+    "Y. Zhao, Y. Wang, Y. Liu, X. Cheng, C. C. Aggarwal, and T. Derr, \"Fairness and diversity in recommender systems: a survey,” ACM Transactions on Intelligent Systems and Technology, vol. 16, no. 1, pp. 1–28, 2025.",
+    "J. Gao, B. Chen, X. Zhao, W. Liu, X. Li, Y. Wang, Z. Zhang, W. Wang, Y. Ye, S. Lin et al., \"Llm-enhanced reranking in recommender systems,\" arXiv preprint arXiv:2406.12433, 2024.",
+    "P. P. Liang, C. Wu, L.-P. Morency, and R. Salakhutdinov, \"Towards understanding and mitigating social biases in language models,\" in International conference on machine learning. PMLR, 2021, pp. 6565-6576.",
+    "B. Richardson and J. E. Gilbert, \"A framework for fairness: A systematic review of existing fair ai solutions,\" arXiv preprint arXiv:2112.05700, 2021.",
+    "S. K. Sakib and A. B. Das, “Challenging fairness: A comprehensive exploration of bias in llm-based recommendations,” in 2024 IEEE International Conference on Big Data (BigData). IEEE, 2024, pp. 1585-1592.",
+    "M. Jiang, K. Bao, J. Zhang, W. Wang, Z. Yang, F. Feng, and X. He, “Item-side fairness of large language model-based recommendation system,\" in Proceedings of the ACM Web Conference 2024, 2024, pp. 4717-4726.",
+    "Z. Zhao, W. Fan, J. Li, Y. Liu, X. Mei, Y. Wang, Z. Wen, F. Wang, X. Zhao, J. Tang et al., \"Recom- mender systems in the era of large language models (llms),” IEEE Transactions on Knowledge and Data Engineering, 2024.",
+    "T. Ma, Y. Cheng, H. Zhu, and H. Xiong, \"Large language models are not stable recommender systems,\" arXiv preprint arXiv:2312.15746, 2023.",
+    "S. Dai, C. Xu, S. Xu, L. Pang, Z. Dong, and J. Xu, \"Bias and unfairness in information retrieval systems: New challenges in the llm era,\" in Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining, 2024, pp. 6437–6447.",
+    "W. Liu, B. Liu, J. Qin, X. Zhang, W. Huang, and Y. Wang, \"Fairness identification of large language models in recommendation,\" Scientific Reports, vol. 15, no. 1, p. 5516, 2025.",
+    "T. Takayanagi and K. Izumi, “Incorporating domain-specific traits into personality-aware recommenda- tions for financial applications,” New Generation Computing, pp. 1-15, 2024.",
+    "M. Tkalcic and L. Chen, \"Personality and recommender systems.\" Recommender systems handbook, vol. 54, pp. 715-739, 2015.",
+    "Q. Yang, S. Nikolenko, A. Huang, and A. Farseev, \"Personality-driven social multimedia content rec- ommendation,\" in Proceedings of the 30th ACM International Conference on Multimedia, 2022, pp. 7290-7299.",
+    "Y. Deldjoo and T. Di Noia, “Cfairllm: Consumer fairness evaluation in large-language model recommender system,\" arXiv preprint arXiv:2403.05668, 2024.",
+    "W. I. D. Mining, \"Data mining: Concepts and techniques,\" Morgan Kaufinann, vol. 10, no. 559-569, p. 4, 2006.",
+    "M. Tomlein, B. Pecher, J. Simko, I. Srba, R. Moro, E. Stefancova, M. Kompan, A. Hrckova, J. Podrouzek, and M. Bielikova, \"An audit of misinformation filter bubbles on youtube: Bubble bursting and recent behavior changes,\" in Proceedings of the 15th ACM Conference on Recommender Systems, 2021, pp. 1-11.",
+    "C. Yin, L. Fan, J. Wang, D. Hu, H. Zhang, C. Zhang, and Y. Xiang, \"Uncertainty-aware semantic decoding for llm-based sequential recommendation,\" arXiv preprint arXiv:2508.07210, 2025.",
+    "D. Di Palma, G. M. Biancofiore, V. W. Anelli, F. Narducci, T. Di Noia, and E. Di Sciascio, \"Evaluating chatgpt as a recommender system: A rigorous approach,\" arXiv preprint arXiv:2309.03613, 2023.",
+    "B. Sguerra, E. V. Epure, H. Lee, and M. Moussallam, \"Biases in Ilm-generated musical taste profiles for recommendation,\" arXiv preprint arXiv:2507.16708, 2025.",
+    "W. Zhuang, \"Uncertainty quantification in large language models (uqlm) for e-commerce analytics with google gemini,\" 2025.",
+    "D. Herrera-Poyatos, C. Peláez-González, C. Zuheros, A. Herrera-Poyatos, V. Tejedor, F. Herrera, and R. Montes, \"An overview of model uncertainty and variability in Ilm-based sentiment analysis. challenges, mitigation strategies and the role of explainability,\" arXiv preprint arXiv:2504.04462, 2025.",
+    "Y. Peng, H. Chen, C.-S. Lin, G. Huang, J. Hu, H. Guo, B. Kong, S. Hu, X. Wu, and X. Wang, \"Uncertainty- aware explainable recommendation with large language models,\" in 2024 International Joint Conference on Neural Networks (IJCNN). IEEE, 2024, pp. 1-8.",
+    "C. Jiang, J. Wang, W. Ma, C. L. Clarke, S. Wang, C. Wu, and M. Zhang, \"Beyond utility: Evaluating llm as recommender,\" in Proceedings of the ACM on Web Conference 2025, 2025, pp. 3850–3862.",
+    "Z. Wen, Z. Liu, Z. Tian, S. Pan, Z. Huang, D. Li, and M. Huang, “Scenario-independent uncertainty estimation for llm-based question answering via factor analysis,\" in Proceedings of the ACM on Web Conference 2025, 2025, pp. 2378-2390.",
+    "Y. Huang, J. Song, Z. Wang, S. Zhao, H. Chen, F. Juefei-Xu, and L. Ma, \"Look before you leap: An exploratory study of uncertainty analysis for large language models,” IEEE Transactions on Software Engineering, 2025.",
+    "S. S. Elmoghazy, M. A. Shouman, H. K. Elminir, and G. E. I. Selim, “Comparative analysis of method- ologies and approaches in recommender systems utilizing large language models,” Artificial Intelligence Review, vol. 58, no. 7, p. 207, 2025.",
+    "S. Rabanser, \"Uncertainty-driven reliability: Selective prediction and trustworthy deployment in modern machine learning,\" Department of Computer Science, University of Toronto, 2025.",
+    "T. Liu, J. Liu, D. Li, and S. Tan, \"Bayesian deep-learning structured illumination microscopy enables reliable super-resolution imaging with uncertainty quantification,\" Nature Communications, vol. 16, no. 1, p. 5027, 2025.",
+    "M. Wang, T. Lin, L. Wang, A. Lin, K. Zou, X. Xu, Y. Zhou, Y. Peng, Q. Meng, Y. Qian et al., “Uncertainty- inspired open set learning for retinal anomaly identification,\" Nature Communications, vol. 14, no. 1, p. 6757, 2023.",
+    "G. Detommaso, A. Gasparin, M. Donini, M. Seeger, A. G. Wilson, and C. Archambeau, \"Fortuna: A library for uncertainty quantification in deep learning,\" Journal of Machine Learning Research, vol. 25, no. 238, pp. 1–7, 2024.",
+    "J. Zhu, J. Wang, I. J. Cox, and M. J. Taylor, \"Risky business: modeling and exploiting uncertainty in information retrieval,\" in Proceedings of the 32nd international ACM SIGIR conference on Research and development in information retrieval, 2009, pp. 99–106.",
+    "Q. Xu, S. Ali, T. Yue, and M. Arratibel, \"Uncertainty-aware transfer learning to evolve digital twins for industrial elevators,\" in Proceedings of the 30th ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering, 2022, pp. 1257-1268.",
+    "Y. Zhu, G. Li, X. Jiang, J. Li, H. Mei, Z. Jin, and Y. Dong, \"Uncertainty-guided chain-of-thought for code generation with llms,\" arXiv preprint arXiv:2503.15341, 2025.",
+    "L. Da, X. Liu, J. Dai, L. Cheng, Y. Wang, and H. Wei, \"Understanding the uncertainty of Ilm explanations from reasoning topology.\"",
+    "J. Deuschel, A. Foltyn, K. Roscher, and S. Scheele, \"The role of uncertainty quantification for trustworthy ai,\" in Unlocking Artificial Intelligence: From Theory to Applications. Springer, 2024, pp. 95–115.",
+    "W. Pisciotta, P. Arina, D. Hofmaenner, and M. Singer, \"Difficult diagnosis in the icu: making the right call but beware uncertainty and bias,\" Anaesthesia, vol. 78, no. 4, pp. 501-509, 2023.",
+    "O. Shorinwa, Z. Mei, J. Lidard, A. Z. Ren, and A. Majumdar, \"A survey on uncertainty quantification of large language models: Taxonomy, open research challenges, and future directions,\" ACM Computing Surveys, 2025.",
+    "F. Ye, M. Yang, J. Pang, L. Wang, D. Wong, E. Yilmaz, S. Shi, and Z. Tu, \"Benchmarking llms via uncertainty quantification,\" Advances in Neural Information Processing Systems, vol. 37, pp. 15 356- 15 385, 2024.",
+    "S. Schmitt, J. Shawe-Taylor, and H. van Hasselt, \"General uncertainty estimation with delta variances,\" in Proceedings of the AAAI Conference on Artificial Intelligence, vol. 39, no. 19, 2025, pp. 20 318-20 328.",
+    "Y. Zhang, X. Chen et al., “Explainable recommendation: A survey and new perspectives,” Foundations and Trends in Information Retrieval, vol. 14, no. 1, pp. 1-101, 2020.",
+    "S. Yao and B. Huang, \"Beyond parity: Fairness objectives for collaborative filtering,\" Advances in neural information processing systems, vol. 30, 2017.",
+    "S. C. Geyik and K. K. Ambler, \"Fairness-aware ranking in search & recommendation systems with application to linkedin talent search,\" in Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining, 2019, pp. 2221-2231.",
+    "P. Li et al., \"Counterfactual fairness in recommendation,\" Proceedings of the Web Conference, 2021.",
+    "Y. Wang, W. Ma, M. Zhang, Y. Liu, and S. Ma, \"A survey on the fairness of recommender systems,\" ACM Transactions on Information Systems, vol. 41, no. 3, pp. 1–43, 2023.",
+    "L. Mihaljevic, J. Klemmer, L. Weidinger, and P. Bhargava, \"More than just prompting: Towards fair and robust llms via debiasing techniques,\" arXiv preprint arXiv:2403.01462, 2024.",
+    "J. Yang, V. Narayan, and A. Weller, \"Behavioral disparities in language model recommendations,\" arXiv preprint arXiv:2402.03155, 2024.",
+    "D. Jin, L. Wang, H. Zhang, Y. Zheng, W. Ding, F. Xia, and S. Pan, \"A survey on fairness-aware recommender systems,\" Information Fusion, vol. 100, p. 101906, 2023.",
+    "R.-C. Chen, Q. Ai, G. Jayasinghe, and W. B. Croft, \"Correcting for recency bias in job recommendation,\" in Proceedings of the 28th ACM International Conference on Information and Knowledge Management, ser. CIKM '19. New York, NY, USA: Association for Computing Machinery, 2019, p. 2185-2188. [Online]. Available: https://doi.org/10.1145/3357384.3358131",
+    "J. Golbeck, C. Robles, M. Edmondson, and K. Turner, \"Computing and applying personality profiles to improve social media searches,\" IEEE Internet Computing, vol. 15, no. 3, pp. 18–28, 2011.",
+    "Y. Hu, X. Wang et al., \"A survey on the fairness of recommender systems,\" ACM Transactions on Information Systems, vol. 41, no. 3, pp. 1–52, 2023.",
+    "S. Dhelim, N. Aung, M. A. Bouras, H. Ning, and E. Cambria, \"A survey on personality-aware recommen- dation systems,” Artificial Intelligence Review, pp. 1-46, 2022.",
+    "Z. Fu, Y. Xian, R. Gao, J. Zhao, Q. Huang, Y. Ge, S. Xu, S. Geng, C. Shah, Y. Zhang et al., “Fairness- aware explainable recommendation over knowledge graphs,\" in Proceedings of the 43rd international ACM SIGIR conference on research and development in information retrieval, 2020, pp. 69–78.",
+    "Z. Sun, Z. Chen, J. Zhang, and D. Hao, “Fairness testing of machine translation systems,” ACM Transac- tions on Software Engineering and Methodology, vol. 33, no. 6, pp. 1–27, 2024.",
+    "M. Saad, J. A. H. López, B. Chen, D. Varró, and T. Sharma, “An adaptive language-agnostic pruning method for greener language models for code,\" Proceedings of the ACM on Software Engineering, vol. 2, no. FSE, pp. 1183-1204, 2025.",
+    "A. Aird, E. Štefancová, A. Buhayh, C. All, M. Homola, N. Mattei, and R. Burke, “Integrating individual and group fairness for recommender systems through social choice,\" in Proceedings of the Nineteenth ACM Conference on Recommender Systems, 2025, pp. 177–186.",
+    "Y. Li, J. Wang, H. Sundaram, and Z. Liu, \"Llm-recg: A semantic bias-aware framework for zero-shot sequential recommendation,\" in Proceedings of the Nineteenth ACM Conference on Recommender Systems, 2025, pp. 237-246.",
+    "G. Meehan and J. Pauwels, \"On inherited popularity bias in cold-start item recommendation,\" in Proceed- ings of the Nineteenth ACM Conference on Recommender Systems, 2025, pp. 649-654.",
+    "H. Tang, J. Wang, Y. Peng, G. Meng, R. Luo, B. Chen, L. Chen, Y. Wang, and S.-T. Xia, \"Modeling uncertainty in composed image retrieval via probabilistic embeddings,\" in Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), 2025, pp. 1210-1222.",
+    "Q. Zhao, D. Li, Y. Liu, W. Cheng, Y. Sun, M. Oishi, T. Osaki, K. Matsuda, H. Yao, C. Zhao et al., \"Uncertainty propagation on Ilm agent,\" in Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), 2025, pp. 6064-6073.",
+    "X. Shen, Z. Jiang, J. Zhang, J. Han, Y. Wan, C. Guo, B. Liu, J. Wu, R. Li, and P. S. Yu, \"Provbench: A benchmark of legal provision recommendation for contract auto-reviewing,\" in Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), 2025, pp. 6240-6254.",
+    "K. Jiang, H. Sun, and M. Zhang, \"Ifairlrs: Enhancing item-side fairness in large language model recommendation systems,\" in Proceedings of the ACM Conference on Recommender Systems (RecSys), 2024.",
+    "F.-F. Zhao, H.-J. He, J.-J. Liang, J. Cen, Y. Wang, H. Lin, F. Chen, T.-P. Li, J.-F. Yang, L. Chen et al., \"Benchmarking the performance of large language models in uveitis: a comparative analysis of chatgpt-3.5, chatgpt-4.0, google gemini, and anthropic claude3,\" Eye, pp. 1-6, 2024.",
+    "T. F. Bainbridge, S. G. Ludeke, and L. D. Smillie, \"Evaluating the big five as an organizing framework for commonly used psychological trait scales.\" Journal of Personality and Social Psychology, vol. 122, no. 4, p. 749, 2022.",
+    "C. K. Sah and X. Lian, “Perfairx: Is there a balance between fairness and personality in large language model recommendations?\" in Proceedings of the IEEE/CVF International Conference on Computer Vision, 2025, pp. 2750-2759.",
+    "S. Furniturewala, S. Jandial, A. Java, P. Banerjee, S. Shahid, S. Bhatia, and K. Jaidka, \"Thinking fair and slow: On the efficacy of structured prompts for debiasing language models,\" arXiv preprint arXiv:2405.10431, 2024.",
+    "Y. Wu, R. Xie, Y. Zhu, F. Zhuang, A. Xiang, X. Zhang, L. Lin, and Q. He, \"Selective fairness in recommendation via prompts,\" in Proceedings of the 45th international ACM SIGIR conference on research and development in information retrieval, 2022, pp. 2657-2662."
+  ],
+  "measurement_description": "The benchmark measured recommendation bias and disparity in movie and music recommendations based on the user's specified religion. It quantified the variability and unfairness in generated recommendation lists when prompts were conditioned with religious identity attributes."
 }

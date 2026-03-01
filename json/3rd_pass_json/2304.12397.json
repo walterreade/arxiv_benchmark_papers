@@ -2,23 +2,113 @@
   "filename": "2304.12397.pdf",
   "title": "On the Challenges of Using Black-Box APIs for Toxicity Evaluation in Research",
   "arxiv_url": "https://arxiv.org/pdf/2304.12397",
-  "bias_targets": [
-    {
-      "target": "Measurement bias",
-      "methodology": "Rescoring the RealToxicityPrompts dataset and HELM benchmark models using different temporal versions of the black-box Perspective API to evaluate inconsistencies, temporal drift, and reproducibility issues in toxicity evaluation."
-    },
-    {
-      "target": "Racial bias",
-      "methodology": "Qualitative analysis of how Perspective API toxicity scores shifted over time for dataset prompts containing specific racial terms, such as 'black' and 'white'."
-    },
-    {
-      "target": "Gender/Sexual orientation bias",
-      "methodology": "Qualitative evaluation of temporal shifts in toxicity classifications for prompts containing words related to sex and gender across different API versions."
-    },
-    {
-      "target": "Cultural and Nationality bias",
-      "methodology": "Observing discrepancies and shifts in Perspective API toxicity scores for prompts that contain non-American words, names, and regional references."
-    }
+  "religious_groups": [
+    "Islam",
+    "Judaism"
   ],
-  "primary_bias_target": "Measurement bias"
+  "models_tested": [
+    "GPT1",
+    "GPT2",
+    "GPT3",
+    "CTRL",
+    "CTRL-W",
+    "DAPT",
+    "DExperts",
+    "GeDi",
+    "PPLM",
+    "UDDIA",
+    "AlephAlpha luminous-base",
+    "AlephAlpha luminous-extended",
+    "AlephAlpha luminous-supreme",
+    "ai21 j1-grande",
+    "ai21 j1-grande-v2-beta",
+    "ai21 j1-jumbo",
+    "ai21 j1-large",
+    "anthropic stanford-online-all-v4-s3",
+    "cohere command-medium-beta",
+    "cohere command-xlarge-beta",
+    "cohere large-20220720",
+    "cohere medium-20220720",
+    "cohere medium-20221108",
+    "cohere small-20220720",
+    "cohere xlarge-20220609",
+    "cohere xlarge-20221108",
+    "microsoft TNLGv2 530B",
+    "microsoft TNLGv2 7B",
+    "openai ada",
+    "openai babbage",
+    "openai curie",
+    "openai davinci",
+    "openai text-ada-001",
+    "openai text-babbage-001",
+    "openai text-curie-001",
+    "openai text-davinci-002",
+    "openai text-davinci-003",
+    "together bloom",
+    "together glm,stop=hash",
+    "together gpt-j-6b",
+    "together gpt-neox-20b",
+    "together opt-175b",
+    "together opt-66b",
+    "together t0pp,stop=hash",
+    "together t5-11b,stop=hash",
+    "together ul2,stop=hash,global_prefix=nlg",
+    "together yalm"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "REALTOXICITYPROMPTS",
+    "HELM"
+  ],
+  "continuous_testing": false,
+  "findings": "The study found that updates to the Perspective API resulted in significant changes to toxicity scores. Qualitatively, this led to prompts containing religious identity terms like 'Muslim' and 'Jewish' being reclassified from 'toxic' to 'non-toxic' over time, highlighting the instability of using such APIs for consistent evaluation.",
+  "references": [
+    "Reuben Binns, Michael Veale, Max Van Kleek, and Nigel Shadbolt. Like trainer, like bot? inheritance of bias in algorithmic content moderation. In Social Informatics: 9th International Conference, SocInfo 2017, Oxford, UK, September 13-15, 2017, Proceedings, Part II 9, pp. 405-415. Springer, 2017.",
+    "Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, et al. Language models are few-shot learners. Advances in neural information processing systems, 33:1877–1901, 2020.",
+    "Aakanksha Chowdhery, Sharan Narang, Jacob Devlin, Maarten Bosma, Gaurav Mishra, Adam Roberts, Paul Barham, Hyung Won Chung, Charles Sutton, Sebastian Gehrmann, et al. Palm: Scaling language modeling with pathways. arXiv preprint arXiv:2204.02311, 2022.",
+    "Jon F Claerbout and Martin Karrenbach. Electronic documents give reproducible research a new meaning. In SEG technical program expanded abstracts 1992, pp. 601-604. Society of Exploration Geophysicists, 1992.",
+    "K Bretonnel Cohen, Jingbo Xia, Pierre Zweigenbaum, Tiffany Callahan, Orin Hargraves, Foster Goss, Nancy Ide, Aurélie Névéol, Cyril Grouin, and Lawrence Hunter. Three dimensions of reproducibility in natural language processing. In Proceedings of the Eleventh International Conference on Language Resources and Evaluation (LREC 2018), 2018.",
+    "Brandon Dang, Martin J Riedl, and Matthew Lease. But who protects the moderators? the case of crowdsourced image moderation. arXiv preprint arXiv:1804.10999, 2018.",
+    "Sumanth Dathathri, Andrea Madotto, Janice Lan, Jane Hung, Eric Frank, Piero Molino, Jason Yosinski, and Rosanne Liu. Plug and play language models: A simple approach to controlled text generation. arXiv preprint arXiv:1912.02164, 2019.",
+    "Sumanth Dathathri, Andrea Madotto, Janice Lan, Jane Hung, Eric Frank, Piero Molino, Jason Yosinski, and Rosanne Liu. Plug and play language models: A simple approach to controlled text generation. In International Conference on Learning Representations, 2020. URL https: //openreview.net/forum?id=H1edEyBKDS.",
+    "Thomas Davidson, Debasmita Bhattacharya, and Ingmar Weber. Racial bias in hate speech and abusive language detection datasets. arXiv preprint arXiv:1905.12516, 2019.",
+    "Farshid Faal, Ketra Schmitt, and Jia Yuan Yu. Reward modeling for mitigating toxicity in transformer-based language models. Applied Intelligence, pp. 1-15, 2022.",
+    "SK Gargee, Pranav Bhargav Gopinath, Shridhar Reddy SR Kancharla, CR Anand, and Anoop S Babu. Analyzing and addressing the difference in toxicity prediction between different comments with same semantic meaning in google's perspective api. In ICT Systems and Sustainability: Proceedings of ICT4SD 2022, pp. 455-464. Springer, 2022.",
+    "Samuel Gehman, Suchin Gururangan, Maarten Sap, Yejin Choi, and Noah A Smith. Real-toxicityprompts: Evaluating neural toxic degeneration in language models. arXiv preprint arXiv:2009.11462, 2020.",
+    "Aaron Gokaslan and Vanya Cohen. Openwebtext corpus. http://Skylion007.github.io/OpenWebTextCorpus, 2019.",
+    "Nitesh Goyal, Ian D Kivlichan, Rachel Rosen, and Lucy Vasserman. Is your toxicity my toxicity? exploring the impact of rater identity on toxicity annotation. Proceedings of the ACM on Human-Computer Interaction, 6(CSCW2):1–28, 2022.",
+    "Suchin Gururangan, Ana Marasović, Swabha Swayamdipta, Kyle Lo, Iz Beltagy, Doug Downey, and Noah A. Smith. Don't stop pretraining: Adapt language models to domains and tasks. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pp. 8342-8360, Online, July 2020. Association for Computational Linguistics. doi: 10.18653/v1/20 20.acl-main.740. URL https://aclanthology.org/2020.acl-main.740.",
+    "Shagun Jhaver, Iris Birman, Eric Gilbert, and Amy Bruckman. Human-machine collaboration for content regulation: The case of reddit automoderator. ACM Transactions on Computer-Human Interaction (TOCHI), 26(5):1–35, 2019.",
+    "Nitish Shirish Keskar, Bryan McCann, Lav R Varshney, Caiming Xiong, and Richard Socher. Ctrl: A conditional transformer language model for controllable generation. arXiv preprint αγΧίυ:1909.05858, 2019.",
+    "Ben Krause, Akhilesh Deepak Gotmare, Bryan McCann, Nitish Shirish Keskar, Shafiq Joty, Richard Socher, and Nazneen Fatema Rajani. Gedi: Generative discriminator guided sequence generation. arXiv preprint arXiv:2009.06367, 2020.",
+    "Ben Krause, Akhilesh Deepak Gotmare, Bryan McCann, Nitish Shirish Keskar, Shafiq Joty, Richard Socher, and Nazneen Fatema Rajani. GeDi: Generative discriminator guided sequence generation. In Findings of the Association for Computational Linguistics: EMNLP 2021, pp. 4929-4952, Punta Cana, Dominican Republic, November 2021. Association for Computational Linguistics. doi: 10.18653/v1/2021.findings-emnlp.424. URL https://aclanthology.org/2021.findings -emnlp.424.",
+    "Alyssa Lees, Vinh Q Tran, Yi Tay, Jeffrey Sorensen, Jai Gupta, Donald Metzler, and Lucy Vasserman. A new generation of perspective api: Efficient multilingual character-level transformers. arXiv preprint arXiv:2202.11176, 2022.",
+    "Percy Liang, Rishi Bommasani, Tony Lee, Dimitris Tsipras, Dilara Soylu, Michihiro Yasunaga, Yian Zhang, Deepak Narayanan, Yuhuai Wu, Ananya Kumar, et al. Holistic evaluation of language models. arXiv preprint arXiv:2211.09110, 2022.",
+    "Alisa Liu, Maarten Sap, Ximing Lu, Swabha Swayamdipta, Chandra Bhagavatula, Noah A. Smith, and Yejin Choi. DExperts: Decoding-time controlled text generation with experts and anti-experts. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pp. 6691–6706, Online, August 2021a. Association for Computational Linguistics. doi: 10.18653/v1/2021.acl-long.522. URL https://aclanthology.org/2021.acl-long.522.",
+    "Alisa Liu, Maarten Sap, Ximing Lu, Swabha Swayamdipta, Chandra Bhagavatula, Noah A Smith, and Yejin Choi. Dexperts: Decoding-time controlled text generation with experts and anti-experts. arXiv preprint arXiv:2105.03023, 2021b.",
+    "Margaret Mitchell, Simone Wu, Andrew Zaldivar, Parker Barnes, Lucy Vasserman, Ben Hutchinson, Elena Spitzer, Inioluwa Deborah Raji, and Timnit Gebru. Model cards for model reporting. In Proceedings of the conference on fairness, accountability, and transparency, pp. 220–229, 2019.",
+    "Roger D Peng. Reproducible research in computational science. Science, 334(6060):1226–1227, 2011.",
+    "Hans E Plesser. Reproducibility vs. replicability: a brief history of a confused terminology. Frontiers in neuroinformatics, 11:76, 2018.",
+    "Alec Radford, Karthik Narasimhan, Tim Salimans, Ilya Sutskever, et al. Improving language understanding by generative pre-training. 2018.",
+    "Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, Ilya Sutskever, et al. Language models are unsupervised multitask learners. OpenAI blog, 1(8):9, 2019.",
+    "Maarten Sap, Dallas Card, Saadia Gabriel, Yejin Choi, and Noah A Smith. The risk of racial bias in hate speech detection. In Proceedings of the 57th annual meeting of the association for computational linguistics, pp. 1668-1678, 2019.",
+    "Teven Le Scao, Angela Fan, Christopher Akiki, Ellie Pavlick, Suzana Ilić, Daniel Hesslow, Roman Castagné, Alexandra Sasha Luccioni, François Yvon, Matthias Gallé, et al. Bloom: A 176b-parameter open-access multilingual language model. arXiv preprint arXiv:2211.05100, 2022.",
+    "Shoaib Ahmed Siddiqui, Nitarshan Rajkumar, Tegan Maharaj, David Krueger, and Sara Hooker. Metadata archaeology: Unearthing data subsets by leveraging training dynamics, 2022.",
+    "Shaden Smith, Mostofa Patwary, Brandon Norick, Patrick LeGresley, Samyam Rajbhandari, Jared Casper, Zhun Liu, Shrimai Prabhumoye, George Zerveas, Vijay Korthikanti, et al. Using deep-speed and megatron to train megatron-turing nlg 530b, a large-scale generative language model. arXiv preprint arXiv:2201.11990, 2022.",
+    "Miriah Steiger, Timir J Bharucha, Sukrit Venkatagiri, Martin J Riedl, and Matthew Lease. The psychological well-being of content moderators: the emotional labor of commercial moderation and avenues for improving support. In Proceedings of the 2021 CHI conference on human factors in computing systems, pp. 1-14, 2021.",
+    "Rachael Tatman, Jake VanderPlas, and Sohier Dane. A practical taxonomy of reproducibility for machine learning research, 2018.",
+    "Michael Veale and Reuben Binns. Fairer machine learning in the real world: Mitigating discrimination without collecting sensitive data. Big Data & Society, 4:205395171774353, 12 2017. doi: 10.1177/2053951717743530.",
+    "Boxin Wang, Wei Ping, Chaowei Xiao, Peng Xu, Mostofa Patwary, Mohammad Shoeybi, Bo Li, Anima Anandkumar, and Bryan Catanzaro. Exploring the limits of domain-adaptive training for detoxifying large-scale language models. arXiv preprint arXiv:2202.04173, 2022.",
+    "Zeerak Waseem. Are you a racist or am i seeing things? annotator influence on hate speech detection on twitter. In Proceedings of the first workshop on NLP and computational social science, pp. 138-142, 2016.",
+    "Johannes Welbl, Amelia Glaese, Jonathan Uesato, Sumanth Dathathri, John Mellor, Lisa Anne Hendricks, Kirsty Anderson, Pushmeet Kohli, Ben Coppin, and Po-Sen Huang. Challenges in detoxifying language models. arXiv preprint arXiv:2109.07445, 2021.",
+    "Zonghan Yang, Xiaoyuan Yi, Peng Li, Yang Liu, and Xing Xie. Unified detoxifying and debiasing in language generation via inference-time adaptive optimization. arXiv preprint arXiv:2210.04492, 2022.",
+    "Donglin Zhuang, Xingyao Zhang, Shuaiwen Song, and Sara Hooker. Randomness in neural network training: Characterizing the impact of tooling. In D. Marculescu, Y. Chi, and C. Wu (eds.), Proceedings of Machine Learning and Systems, volume 4, pp. 316-336, 2022. URL https://proceedings.mlsys.org/paper_files/paper/2022/file/757b505cfd34c64c85ca5b5690ee5293-Paper.pdf."
+  ],
+  "measurement_description": "The paper analyzes how the toxicity scores provided by the Perspective API have changed over time. In a qualitative analysis, it notes that prompts containing religious identity terms like 'Muslim' and 'Jewish' have seen their toxicity scores decrease, shifting them from a 'toxic' to a 'non-toxic' classification. This is not a direct measurement of religious bias but an observation of the API's evolving scoring of text containing religious identifiers."
 }

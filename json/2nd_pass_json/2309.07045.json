@@ -2,94 +2,31 @@
   "filename": "2309.07045.pdf",
   "title": "SafetyBench: Evaluating the Safety of Large Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2309.07045",
-  "benchmark_measurement": "The benchmark measures social bias related to religion as part of its 'Unfairness and Bias' category. Specifically, it uses questions derived from the RedditBias dataset to assess whether a model can identify biased or unfair text concerning religious groups.",
-  "religious_groups": [
-    "Jews",
-    "Muslims"
+  "bias_targets": [
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluating LLMs using multiple-choice (two-choice) questions constructed from datasets like COLD, CDial-Bias, and RedditBias to assess whether the models can successfully identify text that exhibits racial bias or unfairness."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating LLMs using multiple-choice (two-choice) questions constructed from datasets like COLD, CDial-Bias, and RedditBias to assess whether the models can successfully identify text that exhibits gender bias."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluating LLMs using multiple-choice (two-choice) questions constructed from the RedditBias dataset to assess whether the models can successfully identify text that exhibits bias against religious groups (e.g., Jews, Muslims)."
+    },
+    {
+      "target": "Regional bias",
+      "methodology": "Evaluating LLMs using multiple-choice (two-choice) questions constructed from the COLD and CDial-Bias datasets to assess whether the models can successfully identify text that exhibits regional bias."
+    },
+    {
+      "target": "Occupational bias",
+      "methodology": "Evaluating LLMs using multiple-choice (two-choice) questions constructed from the CDial-Bias dataset to assess whether the models can successfully identify text that exhibits occupational bias."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Evaluating LLMs using multiple-choice (two-choice) questions constructed from the RedditBias dataset to assess whether the models can successfully identify text that exhibits bias against LGBTQ individuals."
+    }
   ],
-  "models_tested": [
-    "GPT-4",
-    "gpt-3.5-turbo",
-    "text-davinci-003",
-    "ChatGLM2(智谱清言)",
-    "ChatGLM2-lite",
-    "ChatGLM2-6B",
-    "ErnieBot(文心一言)",
-    "SparkDesk(讯飞星火)",
-    "Llama2-chat-13B",
-    "Llama2-chat-7B",
-    "Vicuna-33B",
-    "Vicuna-13B",
-    "Vicuna-7B",
-    "Llama2-Chinese-chat-13B",
-    "Llama2-Chinese-chat-7B",
-    "Baichuan2-chat-13B",
-    "Baichuan-chat-13B",
-    "Qwen(通义千问)",
-    "Qwen-chat-7B",
-    "internlm-chat-7B-v1.1",
-    "internlm-chat-7B",
-    "flan-t5-xxl",
-    "WizardLM-13B",
-    "WizardLM-7B",
-    "openchat-13B"
-  ],
-  "languages_evaluated": [
-    "Chinese",
-    "English"
-  ],
-  "response_type": [
-    "short",
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "RedditBias",
-    "COLD",
-    "CDial-Bias",
-    "Jigsaw Toxicity Severity dataset",
-    "SafeText",
-    "Scruples",
-    "MIC (Moral Integrity Corpus)",
-    "Moral Stories",
-    "Ethics (Hendrycks et al., 2021a)"
-  ],
-  "continuous_testing": true,
-  "findings": "The paper found that GPT-4 had a relatively poorer performance in the 'Unfairness and Bias' category compared to other safety categories. However, the paper does not offer a specific analysis of religious bias itself, attributing the model's errors in this category more generally to a lack of understanding of certain words or cultural events.",
-  "references": [
-    "Anthropic. 2023. Claude 2.",
-    "Yushi Bai, Xin Lv, Jiajie Zhang, Hongchang Lyu, Jiankai Tang, Zhidian Huang, Zhengxiao Du, Xiao Liu, Hao Yu, Hanchen Zhang, Yifan Xu, Xuanyu Lei, Hanyu Lai, Yu Gu, Hangliang Ding, Kaiwen Men, Kejuan Yang, et al. 2023. Agentbench: Evaluating llms as agents. arXiv preprint arXiv:2308.03688.",
-    "Soumya Barikeri, Anne Lauscher, Ivan Vulić, and Goran Glavaš. 2021. RedditBias: A real-world resource for bias evaluation and debiasing of conversational language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 1941–1955, Online. Association for Computational Linguistics.",
-    "Jiawen Deng, Jingyan Zhou, Hao Sun, Chujie Zheng, Fei Mi, Helen Meng, and Minlie Huang. 2022. COLD: A benchmark for Chinese offensive language detection. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 11580–11599, Abu Dhabi, United Arab Emirates. Association for Computational Linguistics.",
-    "Ameet Deshpande, Vishvak Murahari, Tanmay Rajpurohit, Ashwin Kalyan, and Karthik Narasimhan. 2023. Toxicity in chatgpt: Analyzing persona-assigned language models. CoRR, abs/2304.05335.",
-    "Emily Dinan, Samuel Humeau, Bharath Chintagunta, and Jason Weston. 2019. Build it break it fix it for dialogue safety: Robustness from adversarial human attack. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 4537-4546, Hong Kong, China. Association for Computational Linguistics.",
-    "Zhengxiao Du, Yujie Qian, Xiao Liu, Ming Ding, Jiezhong Qiu, Zhilin Yang, and Jie Tang. 2022. Glm: General language model pretraining with autoregressive blank infilling. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 320-335.",
-    "Denis Emelin, Ronan Le Bras, Jena D. Hwang, Maxwell Forbes, and Yejin Choi. 2021. Moral stories: Situated reasoning about norms, intents, actions, and their consequences. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 698–718, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics.",
-    "Samuel Gehman, Suchin Gururangan, Maarten Sap, Yejin Choi, and Noah A. Smith. 2020. RealToxicityPrompts: Evaluating neural toxic degeneration in language models. In Findings of the Association for Computational Linguistics: EMNLP 2020, pages 3356-3369, Online. Association for Computational Linguistics.",
-    "Dan Hendrycks, Collin Burns, Steven Basart, Andrew Critch, Jerry Li, Dawn Song, and Jacob Steinhardt. 2021a. Aligning AI with shared human values. In 9th International Conference on Learning Representations, ICLR 2021, Virtual Event, Austria, May 3-7, 2021. OpenReview.net.",
-    "Dan Hendrycks, Collin Burns, Steven Basart, Andy Zou, Mantas Mazeika, Dawn Song, and Jacob Steinhardt. 2021b. Measuring massive multitask language understanding. In 9th International Conference on Learning Representations, ICLR 2021, Virtual Event, Austria, May 3-7, 2021. OpenReview.net.",
-    "Yuzhen Huang, Yuzhuo Bai, Zhihao Zhu, Junlei Zhang, Jinghan Zhang, Tangjun Su, Junteng Liu, Chuancheng Lv, Yikai Zhang, Jiayi Lei, Yao Fu, Maosong Sun, and Junxian He. 2023. C-eval: A multi-level multi-discipline chinese evaluation suite for foundation models.",
-    "Hakan Inan, Kartikeya Upasani, Jianfeng Chi, Rashi Rungta, Krithika Iyer, Yuning Mao, Michael Tontchev, Qing Hu, Brian Fuller, Davide Testuggine, and Madian Khabsa. 2023. Llama guard: Llm-based input-output safeguard for human-ai conversations. CoRR, abs/2312.06674.",
-    "Sharon Levy, Emily Allaway, Melanie Subbiah, Lydia Chilton, Desmond Patton, Kathleen McKeown, and William Yang Wang. 2022. SafeText: A benchmark for exploring physical safety in language models. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 2407-2421, Abu Dhabi, United Arab Emirates. Association for Computational Linguistics.",
-    "Liu, Aohan Zeng, Lei Hou, et al. 2023. Longbench: A bilingual, multitask benchmark for long context understanding. arXiv preprint arXiv:2308.14508.",
-    "Nicholas Lourie, Ronan Le Bras, and Yejin Choi. 2021. SCRUPLES: A corpus of community ethical judgments on 32, 000 real-life anecdotes. In Thirty-Fifth AAAI Conference on Artificial Intelligence, AAAI 2021, Thirty-Third Conference on Innovative Applications of Artificial Intelligence, IAAI 2021, The Eleventh Symposium on Educational Advances in Artificial Intelligence, EAAI 2021, Virtual Event, February 2-9, 2021, pages 13470-13479. AAAI Press.",
-    "OpenAI. 2022. Introducing chatgpt.",
-    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel Bowman. 2022. BBQ: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2086-2105, Dublin, Ireland. Association for Computational Linguistics.",
-    "Ethan Perez, Saffron Huang, H. Francis Song, Trevor Cai, Roman Ring, John Aslanides, Amelia Glaese, Nat McAleese, and Geoffrey Irving. 2022. Red teaming language models with language models. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, EMNLP 2022, Abu Dhabi, United Arab Emirates, December 7-11, 2022, pages 3419–3448. Association for Computational Linguistics.",
-    "Rachel Rudinger, Jason Naradowsky, Brian Leonard, and Benjamin Van Durme. 2018. Gender bias in coreference resolution. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 8-14, New Orleans, Louisiana. Association for Computational Linguistics.",
-    "Hao Sun, Zhexin Zhang, Jiawen Deng, Jiale Cheng, and Minlie Huang. 2023. Safety assessment of chinese large language models.",
-    "Hugo Touvron, Thibaut Lavril, Gautier Izacard, Xavier Martinet, Marie-Anne Lachaux, Timothée Lacroix, Baptiste Rozière, Naman Goyal, Eric Hambro, Faisal Azhar, Aurelien Rodriguez, Armand Joulin, Edouard Grave, and Guillaume Lample. 2023a. Llama: Open and efficient foundation language models.",
-    "Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine Babaei, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, Dan Bikel, Lukas Blecher, Cristian Canton Ferrer, Moya Chen, Guillem Cucurull, David Esiobu, Jude Fernandes, Jeremy Fu, Wenyin Fu, Brian Fuller, Cynthia Gao, Vedanuj Goswami, Naman Goyal, Anthony Hartshorn, Saghar Hosseini, Rui Hou, Hakan Inan, Marcin Kardas, Viktor Kerkez, Madian Khabsa, Isabel Kloumann, Artem Korenev, Punit Singh Koura, Marie-Anne Lachaux, Thibaut Lavril, Jenya Lee, Diana Liskovich, Yinghai Lu, Yuning Mao, Xavier Martinet, Todor Mihaylov, Pushkar Mishra, Igor Molybog, Yixin Nie, Andrew Poulton, Jeremy Reizenstein, Rashi Rungta, Kalyan Saladi, Alan Schelten, Ruan Silva, Eric Michael Smith, Ranjan Subramanian, Xiaoqing Ellen Tan, Binh Tang, Ross Taylor, Adina Williams, Jian Xiang Kuan, Puxin Xu, Zheng Yan, Iliyan Zarov, Yuchen Zhang, Angela Fan, Melanie Kambadur, Sharan Narang, Aurelien Rodriguez, Robert Stojnic, Sergey Edunov, and Thomas Scialom. 2023b. Llama 2: Open foundation and fine-tuned chat models.",
-    "Laura Weidinger, John Mellor, Maribeth Rauh, Conor Griffin, Jonathan Uesato, Po-Sen Huang, Myra Cheng, Mia Glaese, Borja Balle, Atoosa Kasirzadeh, Zac Kenton, Sasha Brown, Will Hawkins, Tom Stepleton, Courtney Biles, Abeba Birhane, Julia Haas, Laura Rimell, Lisa Anne Hendricks, William Isaac, Sean Legassick, Geoffrey Irving, and Iason Gabriel. 2021. Ethical and social risks of harm from language models. CoRR, abs/2112.04359.",
-    "Guohai Xu, Jiayi Liu, Ming Yan, Haotian Xu, Jinghui Si, Zhuoran Zhou, Peng Yi, Xing Gao, Jitao Sang, Rong Zhang, Ji Zhang, Chao Peng, Fei Huang, and Jingren Zhou. 2023. Cvalues: Measuring the values of chinese large language models from safety to responsibility.",
-    "Aohan Zeng, Xiao Liu, Zhengxiao Du, Zihan Wang, Hanyu Lai, Ming Ding, Zhuoyi Yang, Yifan Xu, Wendi Zheng, Xiao Xia, et al. 2022. Glm-130b: An open bilingual pre-trained model. arXiv preprint arXiv:2210.02414.",
-    "Hui Zeng. 2023. Measuring massive multitask chinese understanding.",
-    "Zhexin Zhang, Yida Lu, Jingyuan Ma, Di Zhang, Rui Li, Pei Ke, Hao Sun, Lei Sha, Zhifang Sui, Hongning Wang, and Minlie Huang. 2024. Shieldlm: Empowering Ilms as aligned, customizable and explainable safety detectors. CoRR, abs/2402.16444.",
-    "Zhexin Zhang, Jiaxin Wen, and Minlie Huang. 2023. ETHICIST: targeted training data extraction through loss smoothed soft prompting and calibrated confidence estimation. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), ACL 2023, Toronto, Canada, July 9-14, 2023, pages 12674–12687. Association for Computational Linguistics.",
-    "Wayne Xin Zhao, Kun Zhou, Junyi Li, Tianyi Tang, Xiaolei Wang, Yupeng Hou, Yingqian Min, Beichen Zhang, Junjie Zhang, Zican Dong, Yifan Du, Chen Yang, Yushuo Chen, Zhipeng Chen, Jinhao Jiang, Ruiyang Ren, Yifan Li, Xinyu Tang, Zikang Liu, Peiyu Liu, Jian-Yun Nie, and Ji-Rong Wen. 2023. A survey of large language models.",
-    "Wanjun Zhong, Ruixiang Cui, Yiduo Guo, Yaobo Liang, Shuai Lu, Yanlin Wang, Amin Saied, Weizhu Chen, and Nan Duan. 2023. Agieval: A human-centric benchmark for evaluating foundation models.",
-    "Jingyan Zhou, Jiawen Deng, Fei Mi, Yitong Li, Yasheng Wang, Minlie Huang, Xin Jiang, Qun Liu, and Helen Meng. 2022. Towards identifying social bias in dialog systems: Framework, dataset, and benchmark. In Findings of the Association for Computational Linguistics: EMNLP 2022, pages 3576–3591, Abu Dhabi, United Arab Emirates. Association for Computational Linguistics.",
-    "Terry Yue Zhuo, Yujin Huang, Chunyang Chen, and Zhenchang Xing. 2023. Red teaming chatgpt via jailbreaking: Bias, robustness, reliability and toxicity.",
-    "Caleb Ziems, Jane Yu, Yi-Chia Wang, Alon Halevy, and Diyi Yang. 2022. The moral integrity corpus: A benchmark for ethical dialogue systems. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 3755-3773, Dublin, Ireland. Association for Computational Linguistics."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

@@ -2,27 +2,93 @@
   "filename": "2301.09211.pdf",
   "title": "AN EMPIRICAL STUDY OF METRICS TO MEASURE REPRESENTATIONAL HARMS IN PRE-TRAINED LANGUAGE MODELS",
   "arxiv_url": "https://arxiv.org/pdf/2301.09211",
-  "bias_targets": [
-    {
-      "target": "Racial and Ethnic bias",
-      "methodology": "Measuring the language modeling likelihood (perplexity or pseudo-perplexity) of implicitly harmful versus benign statements targeting racial and ethnic groups (e.g., African American, Asian, Chinese, Mexican, Latinx, Native-American, Middle-Eastern) using a subset of the ToxiGen dataset, and calculating a safety score using a Mann-Whitney U-test."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Measuring the language modeling likelihood of implicitly harmful versus benign statements about women, calculating a safety score based on scaled perplexity, and correlating these results with existing gender stereotyping metrics like Regard, Causal Mediation Analysis (CMA), and StereoSet."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Measuring the language modeling likelihood of implicitly harmful versus benign statements targeting religious groups (Jewish, Muslim) using the ToxiGen dataset to calculate a representational harm safety score."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Calculating the scaled perplexity and safety score of implicitly harmful versus benign statements targeting the LGBTQ demographic to quantify representational harms."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Measuring the language model's propensity to generate implicitly harmful versus benign statements regarding physically and mentally disabled individuals using perplexity and Mann-Whitney U-tests."
-    }
+  "religious_groups": [
+    "Judaism",
+    "Islam"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "BERT-large-uncased",
+    "BERT-base-uncased",
+    "DistilBERT-base-uncased",
+    "mobileBERT",
+    "BERT-large-cased",
+    "BERT-base-cased",
+    "DistilBERT-base-cased",
+    "ROBERTa-large",
+    "ROBERTa-base",
+    "DistilROBERTa",
+    "ELECTRA-large-generator",
+    "ELECTRA-base-generator",
+    "ELECTRA-small-generator",
+    "ALBERT-xxlarge-v2",
+    "ALBERT-xlarge-v2",
+    "ALBERT-large-v2",
+    "ALBERT-base-v2",
+    "GPT-2-xl",
+    "GPT-2-large",
+    "GPT-2-medium",
+    "GPT-2",
+    "DistilGPT-2",
+    "XLNet-large-cased",
+    "XLNet-base-cased"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "ToxiGen",
+    "Implicit Hate",
+    "StereoSet",
+    "Causal Mediation Analysis (CMA)",
+    "Regard"
+  ],
+  "continuous_testing": false,
+  "findings": "The study found that Pre-Trained Language Models (PTLMs) generally are less likely to embed harmful content for Jewish individuals compared to other demographics like women, LGBTQ, and people with disabilities. However, the safety scores for both Jewish and Muslim groups were consistently below 0.5, indicating a significant tendency to manifest harmful representations, far from the ideal score of 1.0.",
+  "references": [
+    "Su Lin Blodgett, Gilsinia Lopez, Alexandra Olteanu, Robert Sim, and Hanna Wallach. Stereotyping Norwegian salmon: An inventory of pitfalls in fairness benchmark datasets. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pp. 1004–1015, Online, August 2021. Association for Computational Linguistics. doi: 10.18653/v1/2021.acl-long. 81. URL https://aclanthology.org/2021.acl-long.81.",
+    "Luke Breitfeller, Emily Ahn, David Jurgens, and Yulia Tsvetkov. Finding microaggressions in the wild: A case for locating elusive phenomena in social media posts. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pp. 1664–1674, Hong Kong, China, November 2019. Association for Computational Linguistics. doi: 10.18653/v1/D19-1176. URL https://aclanthology.org/D19-1176.",
+    "Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan, Rewon Child, Aditya Ramesh, Daniel Ziegler, Jeffrey Wu, Clemens Winter, Chris Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray, Ben- jamin Chess, Jack Clark, Christopher Berner, Sam McCandlish, Alec Radford, Ilya Sutskever, and Dario Amodei. Language models are few-shot learners. In H. Larochelle, M. Ranzato, R. Hadsell, M.F. Balcan, and H. Lin (eds.), Advances in Neural Information Processing Systems, volume 33, pp. 1877–1901. Curran Associates, Inc., 2020. URL https://proceedings.neurips. cc/paper/2020/file/1457c0d6bfcb4967418bfb8ac142f64a-Paper.pdf.",
+    "Aylin Caliskan, Joanna J. Bryson, and Arvind Narayanan. Semantics derived automatically from lan- guage corpora contain human-like biases. Science, 356(6334):183–186, 2017. doi: 10.1126/ science.aal4230. URL https://www.science.org/doi/abs/10.1126/science. aal4230.",
+    "Yang Cao, Yada Pruksachatkun, Kai-Wei Chang, Rahul Gupta, Varun Kumar, Jwala Dhamala, and Aram Galstyan. On the intrinsic and extrinsic fairness evaluation metrics for contextualized language representations. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers), pp. 561–570, Dublin, Ireland, May 2022. Association for Computational Linguistics. doi: 10.18653/v1/2022.acl-short.62. URL https: //aclanthology.org/2022.acl-short.62.",
+    "Kevin Clark, Minh-Thang Luong, Quoc V. Le, and Christopher D. Manning. Electra: Pre-training text encoders as discriminators rather than generators. arXiv, 2020. doi: 10.48550/ARXIV.2003.10555. URL https://arxiv.org/abs/2003.10555.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. BERT: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pp. 4171–4186, Minneapolis, Minnesota, June 2019. Association for Computational Linguistics. doi: 10.18653/v1/N19-1423. URL https: //aclanthology.org/N19-1423.",
+    "Jwala Dhamala, Tony Sun, Varun Kumar, Satyapriya Krishna, Yada Pruksachatkun, Kai-Wei Chang, and Rahul Gupta. Bold: Dataset and metrics for measuring biases in open-ended language generation. In Proceedings of the 2021 ACM Conference on Fairness, Account- ability, and Transparency, FAccT '21, pp. 862–872, New York, NY, USA, 2021. Association for Computing Machinery. ISBN 9781450383097. doi: 10.1145/3442188.3445924. URL https://doi.org/10.1145/3442188.3445924.",
+    "Mai ElSherief, Caleb Ziems, David Muchlinski, Vaishnavi Anupindi, Jordyn Seybolt, Munmun De Choudhury, and Diyi Yang. Latent hatred: A benchmark for understanding implicit hate speech. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pp. 345-363, Online and Punta Cana, Dominican Republic, November 2021. Association for Computational Linguistics. doi: 10.18653/v1/2021.emnlp-main.29. URL https://aclanthology.org/2021.emnlp-main.29.",
+    "Aaron Gokaslan, Vanya Cohen, Ellie Pavlick, and Stefanie Tellex. Openwebtext corpus, 2019. URL http://Skylion007.github.io/OpenWebTextCorpus.",
+    "Sophie Groenwold, Lily Ou, Aesha Parekh, Samhita Honnavalli, Sharon Levy, Diba Mirza, and William Yang Wang. Investigating African-American Vernacular English in transformer-based text generation. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pp. 5877–5883, Online, November 2020. Association for Computational Linguistics. doi: 10.18653/v1/2020.emnlp-main.473. URL https://aclanthology.org/ 2020.emnlp-main.473.",
+    "Wei Guo and Aylin Caliskan. Detecting Emergent Intersectional Biases: Contextualized Word Embeddings Contain a Distribution of Human-like Biases, pp. 122-133. Association for Computing Machinery, New York, NY, USA, 2021. ISBN 9781450384735. URL https://doi.org/10. 1145/3461702.3462536.",
+    "Thomas Hartvigsen, Saadia Gabriel, Hamid Palangi, Maarten Sap, Dipankar Ray, and Ece Kamar. ToxiGen: A large-scale machine-generated dataset for adversarial and implicit hate speech detection. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 3309–3326, Dublin, Ireland, May 2022. As- sociation for Computational Linguistics. doi: 10.18653/v1/2022.acl-long.234. URL https: //aclanthology.org/2022.acl-long.234.",
+    "Geoffrey E. Hinton, Oriol Vinyals, and Jeffrey Dean. Distilling the knowledge in a neural network. ArXiv, abs/1503.02531, 2015.",
+    "Svetlana Kiritchenko and Saif Mohammad. Examining gender and race bias in two hundred sentiment analysis systems. In Proceedings of the Seventh Joint Conference on Lexical and Computational Semantics, pp. 43–53, New Orleans, Louisiana, June 2018. Association for Computational Linguistics. doi: 10.18653/v1/S18-2005. URL https://aclanthology.org/S18-2005.",
+    "Keita Kurita, Nidhi Vyas, Ayush Pareek, Alan W Black, and Yulia Tsvetkov. Measuring bias in contextualized word representations. In Proceedings of the First Workshop on Gender Bias in Natural Language Processing, pp. 166–172, Florence, Italy, August 2019. Association for Computational Linguistics. doi: 10.18653/v1/W19-3823. URL https://aclanthology. org/W19-3823.",
+    "Zhenzhong Lan, Mingda Chen, Sebastian Goodman, Kevin Gimpel, Piyush Sharma, and Radu Soricut. Albert: A lite bert for self-supervised learning of language representations. In International Conference on Learning Representations, 2020. URL https://openreview.net/forum? id=HleA7AEtvS.",
+    "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. Roberta: A robustly optimized bert pretraining approach. arXiv, 2019. doi: 10.48550/ARXIV.1907.11692. URL https://arxiv.org/abs/ 1907.11692.",
+    "H. B. Mann and D. R. Whitney. On a Test of Whether one of Two Random Variables is Stochastically Larger than the Other. The Annals of Mathematical Statistics, 18(1):50 – 60, 1947. doi: 10.1214/ aoms/1177730491. URL https://doi.org/10.1214/aoms/1177730491.",
+    "Mitchell P. Marcus, Beatrice Santorini, and Mary Ann Marcinkiewicz. Building a large annotated corpus of English: The Penn Treebank. Computational Linguistics, 19(2):313–330, 1993. URL https://www.aclweb.org/anthology/J93-2004.",
+    "Chandler May, Alex Wang, Shikha Bordia, Samuel R. Bowman, and Rachel Rudinger. On measuring social biases in sentence encoders. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pp. 622-628, Minneapolis, Minnesota, June 2019. Association for Computational Linguistics. doi: 10.18653/v1/N19-1063. URL https://aclanthology. org/N19-1063.",
+    "Stephen Merity, Caiming Xiong, James Bradbury, and Richard Socher. Pointer sentinel mixture models. arXiv, 2016.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. Stereoset: Measuring stereotypical bias in pretrained language models. ACL-IJCNLP 2021 - 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing, Proceedings of the Conference, pp. 5356–5371, 2021. doi: 10.18653/V1/2021.ACL-LONG.416. URL https://aclanthology.org/2021.acl-long.416.",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R. Bowman. CrowS-pairs: A challenge dataset for measuring social biases in masked language models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pp. 1953–1967, Online, November 2020. Association for Computational Linguistics. doi: 10.18653/v1/2020. emnlp-main.154. URL https://aclanthology.org/2020.emnlp-main.154.",
+    "Denis Paperno, Germán Kruszewski, Angeliki Lazaridou, Ngoc Quan Pham, Raffaella Bernardi, Sandro Pezzelle, Marco Baroni, Gemma Boleda, and Raquel Fernández. The LAMBADA dataset: Word prediction requiring a broad discourse context. In Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 1525–1534, Berlin, Germany, August 2016. Association for Computational Linguistics. doi: 10.18653/v1/P16-1144. URL https://aclanthology.org/P16-1144.",
+    "Rebecca Qian, Candace Ross, Jude Fernandes, Eric Smith, Douwe Kiela, and Adina Williams. Perturbation augmentation for fairer nlp, 2022. URL https://dynabench.org/fairer_ nlp.pdf.",
+    "Alec Radford, Jeff Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. Language models are unsupervised multitask learners, 2019.",
+    "Rachel Rudinger, Jason Naradowsky, Brian Leonard, and Benjamin Van Durme. Gender bias in coreference resolution. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pp. 8-14, New Orleans, Louisiana, June 2018. Association for Computational Linguistics. doi: 10.18653/v1/N18-2002. URL https://aclanthology.org/N18-2002.",
+    "Julian Salazar, Davis Liang, Toan Q. Nguyen, and Katrin Kirchhoff. Masked language model scoring. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pp. 2699–2712, Online, July 2020. Association for Computational Linguistics. doi: 10.18653/v1/2020. acl-main.240. URL https://aclanthology.org/2020.acl-main.240.",
+    "Patrick Schramowski, Cigdem Turan, Nico Andersen, Constantin A. Rothkopf, and Kristian Kersting. Large pre-trained language models contain human-like biases of what is right and wrong to do. Nature Machine Intelligence, 2022.",
+    "Viviane Seyranian, Hazel Atuel, and William D. Crano. Dimensions of majority and minority groups. Group Processes & Intergroup Relations, 11(1):21–37, 2008. doi: 10.1177/1368430207084843. URL https://doi.org/10.1177/1368430207084843.",
+    "Emily Sheng, Kai-Wei Chang, Premkumar Natarajan, and Nanyun Peng. The woman worked as a babysitter: On biases in language generation. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pp. 3407–3412, Hong Kong, China, November 2019. Association for Computational Linguistics. doi: 10.18653/v1/D19-1339. URL https: //www.aclweb.org/anthology/D19-1339.",
+    "Emily Sheng, Kai Wei Chang, Premkumar Natarajan, and Nanyun Peng. Societal biases in language generation: Progress and challenges. ACL-IJCNLP 2021 - 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing, Proceedings of the Conference, pp. 4275-4293, 2021. doi: 10.18653/V1/2021. ACL-LONG.330. URL https://aclanthology.org/2021.acl-long.330.",
+    "Eric Michael Smith, Diana Gonzalez-Rico, Emily Dinan, and Y-Lan Boureau. Controlling style in generated dialogue. arXiv, 2020. doi: 10.48550/ARXIV.2009.10855. URL https://arxiv. org/abs/2009.10855.",
+    "Eric Michael Smith, Melissa Hall, Melanie Kambadur, Eleonora Presani, and Adina Williams. \"i'm sorry to hear that\": finding bias in language models with a holistic descriptor dataset. arXiv, 2022. doi: 10.48550/ARXIV.2205.09209. URL https://arxiv.org/abs/2205.09209.",
+    "Iulia Turc, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. Well-read students learn better: On the importance of pre-training compact models. arXiv, 2019. doi: 10.48550/ARXIV.1908.08962. URL https://arxiv.org/abs/1908.08962.",
+    "Jesse Vig, Sebastian Gehrmann, Yonatan Belinkov, Sharon Qian, Daniel Nevo, Yaron Singer, and Stuart Shieber. Investigating gender bias in language models using causal media- tion analysis. NeurIPS, 2020. URL https://github.com/sebastianGehrmann/ CausalMediationAnalysis.",
+    "Alex Wang, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel Bowman. GLUE: A multi-task benchmark and analysis platform for natural language understanding. In Proceedings of the 2018 EMNLP Workshop BlackboxNLP: Analyzing and Interpreting Neural Networks for NLP, pp. 353–355, Brussels, Belgium, November 2018. Association for Computational Linguistics. doi: 10.18653/v1/W18-5446. URL https://aclanthology.org/W18-5446.",
+    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang. Gender bias in coreference resolution: Evaluation and debiasing methods. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pp. 15–20, New Orleans, Louisiana, June 2018. Association for Computational Linguistics. doi: 10.18653/v1/N18-2003. URL https://aclanthology. org/N18-2003.",
+    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Ryan Cotterell, Vicente Ordonez, and Kai-Wei Chang. Gender bias in contextualized word embeddings. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pp. 629–634, Minneapolis, Minnesota, June 2019. Association for Computational Linguistics. doi: 10.18653/v1/N19-1064. URL https: //aclanthology.org/N19-1064."
+  ],
+  "measurement_description": "Quantifying manifested implicit representational harms, specifically the propensity of language models to associate marginalized groups with negative perception, stereotypes, and implicit hate speech. For religious groups, this involved measuring the language modeling likelihood of implicitly harmful statements versus benign statements concerning Jewish and Muslim people."
 }

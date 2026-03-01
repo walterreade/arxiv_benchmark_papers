@@ -1,0 +1,56 @@
+{
+  "filename": "2001.05495.pdf",
+  "title": "Stereotypical Bias Removal for Hate Speech Detection Task using Knowledge-based Generalizations",
+  "arxiv_url": "https://arxiv.org/pdf/2001.05495",
+  "religious_groups": [
+    "Islam",
+    "Christianity",
+    "Judaism",
+    "Buddhism",
+    "Sikhism",
+    "Taoism"
+  ],
+  "models_tested": [
+    "Convolutional Neural Network (CNN)",
+    "Logistic Regression",
+    "Multi-layer Perceptron (MLP)",
+    "Google Perspective API"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "'Wiki Madlibs' Eval Dataset"
+  ],
+  "continuous_testing": false,
+  "findings": "The study found that hate speech detection models can develop stereotypical biases, incorrectly flagging content containing religious identity terms (e.g., 'muslim', 'sikh', 'jewish') as hateful. The authors demonstrated that their proposed knowledge-based generalization techniques—such as replacing specific religious terms with more general hypernyms (e.g., 'sikh' with 'disciple')—effectively reduced this bias. This mitigation was achieved without a significant loss in the overall accuracy of the hate speech detection task.",
+  "references": [
+    "Pinkesh Badjatiya, Shashank Gupta, Manish Gupta, and Vasudeva Varma. 2017. Deep learning for hate speech detection in tweets. In Proceedings of the 26th International Conference on World Wide Web Companion. International World Wide Web Conferences Steering Committee, 759–760.",
+    "Alex Beutel, Jilin Chen, Zhe Zhao, and Ed H Chi. 2017. Data decisions and theoretical implications when adversarially learning fair representations. arXiv preprint arXiv:1707.00075 (2017).",
+    "Su Lin Blodgett and Brendan O'Connor. 2017. Racial Disparity in Natural Language Processing: A Case Study of Social Media African-American English. arXiv preprint arXiv:1707.00061 (2017).",
+    "Tolga Bolukbasi, Kai-Wei Chang, James Y Zou, Venkatesh Saligrama, and Adam T Kalai. 2016. Man is to computer programmer as woman is to homemaker? debiasing word embeddings. In Advances in Neural Information Processing Systems. 4349–4357.",
+    "Aylin Caliskan, Joanna J Bryson, and Arvind Narayanan. 2017. Semantics derived automatically from language corpora contain human-like biases. Science 356, 6334 (2017), 183–186.",
+    "François Chollet et al. 2015. Keras. https://keras.io.",
+    "Thomas Davidson, Dana Warmsley, Michael Macy, and Ingmar Weber. 2017. Automated Hate Speech Detection and the Problem of Offensive Language. (2017).",
+    "Lucas Dixon, John Li, Jeffrey Sorensen, Nithum Thain, and Lucy Vasserman. 2017. Measuring and Mitigating Unintended Bias in Text Classification. (2017).",
+    "Nemanja Djuric, Jing Zhou, Robin Morris, Mihajlo Grbovic, Vladan Radosavl-jevic, and Narayan Bhamidipati. 2015. Hate Speech Detection with Comment Embeddings. In Proceedings of the 24th International Conference on World Wide Web (WWW '15 Companion). ACM, New York, NY, USA, 29–30. https://doi.org/10.1145/2740908.2742760",
+    "Michael Feldman, Sorelle A Friedler, John Moeller, Carlos Scheidegger, and Suresh Venkatasubramanian. 2015. Certifying and removing disparate impact. In Proceedings of the 21th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining. ACM, 259–268.",
+    "Sorelle A Friedler, Carlos Scheidegger, and Suresh Venkatasubramanian. 2016. On the (im) possibility of fairness. arXiv preprint arXiv:1609.07236 (2016).",
+    "Moritz Hardt, Eric Price, Nati Srebro, et al. 2016. Equality of opportunity in supervised learning. In Advances in neural information processing systems. 3315–3323.",
+    "Dirk Hovy and Shannon L Spruit. 2016. The social impact of natural language processing. In Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers), Vol. 2. 591–598.",
+    "Aditya Khosla, Tinghui Zhou, Tomasz Malisiewicz, Alexei A Efros, and Antonio Torralba. 2012. Undoing the damage of dataset bias. In European Conference on Computer Vision. Springer, 158–171.",
+    "Jon Kleinberg, Sendhil Mullainathan, and Manish Raghavan. 2016. Inherent trade-offs in the fair determination of risk scores. arXiv preprint arXiv:1609.05807 (2016).",
+    "Irene Kwok and Yuzhou Wang. 2013. Locate the Hate: Detecting Tweets against Blacks.. In AAAI.",
+    "George A. Miller. 1995. WordNet: A Lexical Database for English. Commun. ACM 38, 11 (Nov. 1995), 39–41. https://doi.org/10.1145/219717.219748",
+    "Alexandra Olteanu, Emre Kiciman, and Carlos Castillo. 2018. A Critical Review of Online Social Data: Biases, Methodological Pitfalls, and Ethical Boundaries. In Proceedings of the Eleventh ACM International Conference on Web Search and Data Mining (WSDM '18). ACM, New York, NY, USA, 785–786. https://doi.org/10.1145/3159652.3162004",
+    "Jeffrey Pennington, Richard Socher, and Christopher Manning. 2014. Glove: Global vectors for word representation. In Proceedings of the 2014 conference on empirical methods in natural language processing (EMNLP). 1532–1543.",
+    "Rachael Tatman. 2017. Gender and Dialect Bias in YouTube's Automatic Captions. In Proceedings of the First ACL Workshop on Ethics in Natural Language Processing. 53–59.",
+    "Zeerak Waseem and Dirk Hovy. 2016. Hateful symbols or hateful people? predictive features for hate speech detection on twitter. In Proceedings of the NAACL student research workshop. 88–93.",
+    "Ellery Wulczyn, Nithum Thain, and Lucas Dixon. 2017. Ex machina: Personal attacks seen at scale. In Proceedings of the 26th International Conference on World Wide Web. International World Wide Web Conferences Steering Committee, 1391–1399."
+  ],
+  "measurement_description": "The benchmark measured stereotypical bias in hate speech detection models, specifically focusing on how models incorrectly associate identity terms with hateful content. This included measuring bias against a curated list of religious identity words (e.g., muslim, christian, jewish, sikh) by evaluating the model's prediction probabilities on text containing these words."
+}

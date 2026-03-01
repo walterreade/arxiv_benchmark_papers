@@ -14,16 +14,18 @@ This project provides tools to:
 
 ```
 ├── scripts/                    # Python analysis scripts
-│   ├── download_arxiv_benchmark_papers.py
+│   ├── download_arxiv_papers.py
 │   ├── 1st_pass_analyze_papers.py
 │   ├── 2nd_pass_analyze_papers.py
+│   ├── 3rd_pass_analyze_papers.py
 │   ├── generate_full_analysis.py
 │   ├── check_lds_mentions.py
 │   ├── generate_daily_update.py
 │   └── run_daily_update.sh
 ├── json/                       # JSON analysis output
 │   ├── 1st_pass_json/
-│   └── 2nd_pass_json/
+│   ├── 2nd_pass_json/
+│   └── 3rd_pass_json/
 ├── analysis/                   # Generated markdown reports
 │   ├── benchmark_analysis.md
 │   ├── benchmark_learnings.md
@@ -33,14 +35,15 @@ This project provides tools to:
 ├── csv/                        # CSV data files
 │   ├── 1st_pass_results.csv
 │   ├── 1st_pass_failures.csv
-│   └── 2nd_pass_failures.csv
+│   ├── 2nd_pass_failures.csv
+│   └── 3rd_pass_failures.csv
 └── pdf/                        # Downloaded PDF papers
 ```
 
 ## Scripts
 
-### `scripts/download_arxiv_benchmark_papers.py`
-Downloads PDF papers from arXiv based on configured search parameters.
+### `scripts/download_arxiv_papers.py`
+Queries the last 1000 CS papers from arXiv, classifies them with Gemini for bias in NLP/LLMs, and downloads qualifying papers.
 
 ### `scripts/1st_pass_analyze_papers.py`
 Performs initial analysis on downloaded PDFs using the Gemini API to determine:
@@ -52,7 +55,19 @@ Performs initial analysis on downloaded PDFs using the Gemini API to determine:
 **Output:** `1st_pass_results.csv`
 
 ### `scripts/2nd_pass_analyze_papers.py`
-Performs deep-dive analysis on papers identified as faith/ethics-related in the first pass. Extracts:
+Extracts bias targets from papers that are both LLM-related and bias-related. Extracts:
+- Bias targets with methodology descriptions
+- Primary bias target
+
+**Usage:**
+```bash
+uv run scripts/2nd_pass_analyze_papers.py [--rpm 20] [--workers 10] [--model gemini-3.1-pro-preview] [--reprocess]
+```
+
+**Output:** JSON files in `json/2nd_pass_json/`
+
+### `scripts/3rd_pass_analyze_papers.py`
+Performs deep-dive analysis on religion/faith aspects of bias papers. Extracts:
 - Religious groups studied
 - Models tested
 - Benchmark measurements and findings
@@ -65,10 +80,10 @@ Performs deep-dive analysis on papers identified as faith/ethics-related in the 
 
 **Usage:**
 ```bash
-uv run scripts/2nd_pass_analyze_papers.py [--rpm 10] [--workers 5] [--model gemini-2.5-pro] [--reprocess]
+uv run scripts/3rd_pass_analyze_papers.py [--rpm 50] [--workers 10] [--model gemini-2.5-pro] [--reprocess]
 ```
 
-**Output:** JSON files in `json/2nd_pass_json/`
+**Output:** JSON files in `json/3rd_pass_json/`
 
 ### `scripts/generate_full_analysis.py`
 Processes the JSON analysis files and generates markdown summaries.
@@ -125,8 +140,10 @@ uv run python scripts/extract_talk_facts.py
 |------|-------------|
 | `csv/1st_pass_results.csv` | Results from initial paper screening |
 | `csv/1st_pass_failures.csv` | Papers that failed first-pass analysis |
-| `json/2nd_pass_json/` | Directory containing detailed JSON analysis for each paper |
+| `json/2nd_pass_json/` | Bias target extraction results for each paper |
 | `csv/2nd_pass_failures.csv` | Papers that failed second-pass analysis |
+| `json/3rd_pass_json/` | Religion deep-dive analysis for each paper |
+| `csv/3rd_pass_failures.csv` | Papers that failed third-pass analysis |
 | `analysis/benchmark_analysis.md` | Summary tables with counts of religious groups, models, benchmarks, etc. |
 | `analysis/benchmark_learnings.md` | Detailed findings from each analyzed paper |
 | `analysis/benchmark_summary.md` | AI-generated comprehensive summary of the field |

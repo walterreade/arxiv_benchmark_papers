@@ -2,84 +2,11 @@
   "filename": "2205.01975.pdf",
   "title": "Aligning to Social Norms and Values in Interactive Narratives",
   "arxiv_url": "https://arxiv.org/pdf/2205.01975",
-  "benchmark_measurement": "The paper does not specifically measure any aspects of faith or religion. It focuses on general social and moral norms, such as theft, bodily harm, and altruism, within interactive game scenarios.",
-  "religious_groups": [],
-  "models_tested": [
-    "GALAD",
-    "NAIL",
-    "CALM",
-    "CMPS",
-    "CMPS+",
-    "Delphi",
-    "UNICORN",
-    "T5-11B",
-    "GPT-2",
-    "RoBERTa"
+  "bias_targets": [
+    {
+      "target": "Harmful behavior bias (Social and moral value misalignment)",
+      "methodology": "Evaluating the frequency and severity of an agent's socially harmful actions (e.g., theft, bodily harm) versus socially beneficial actions in text-based interactive narratives using the Jiminy Cricket benchmark, which provides morality annotations for in-game scenarios."
+    }
   ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "none",
-  "base_benchmarks": [
-    "Jiminy Cricket benchmark",
-    "Jericho benchmark"
-  ],
-  "continuous_testing": false,
-  "findings": "The paper does not contain any findings related to religion, as it is not a focus of the research.",
-  "references": [
-    "Joshua Achiam, David Held, Aviv Tamar, and Pieter Abbeel. 2017. Constrained policy optimization. In Proceedings of the 34th International Conference on Machine Learning, volume 70 of Proceedings of Machine Learning Research, pages 22–31. PMLR.",
-    "Ashutosh Adhikari, Xingdi Yuan, Marc-Alexandre Côté, Mikuláš Zelinka, Marc-Antoine Rondeau, Romain Laroche, Pascal Poupart, Jian Tang, Adam Trischler, and Will Hamilton. 2020. Learning dynamic belief graphs to generalize on text-based games. Advances in Neural Information Processing Systems, 33.",
-    "Prithviraj Ammanabrolu and Matthew Hausknecht. 2020. Graph Constrained Reinforcement Learning for Natural Language Action Spaces. In International Conference on Learning Representations.",
-    "Prithviraj Ammanabrolu and Mark Riedl. 2021a. Learning knowledge graph-based world models of textual environments. In Thirty-fifth Conference on Neural Information Processing Systems.",
-    "Prithviraj Ammanabrolu and Mark Riedl. 2021b. Modeling worlds in text. In Thirty-fifth Conference on Neural Information Processing Systems Datasets and Benchmarks Track (Round 1).",
-    "Prithviraj Ammanabrolu, Jack Urbanek, Margaret Li, Arthur Szlam, Tim Rocktäschel, and Jason Weston. 2021. How to motivate your dragon: Teaching goal-driven agents to speak and act in fantasy worlds. In Proceedings of 2021 Annual Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, NAACL-HLT 2021.",
-    "Emily M. Bender, Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. 2021. On the dangers of stochastic parrots: Can language models be too big? In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, FAccT '21, page 610-623, New York, NY, USA. Association for Computing Machinery.",
-    "Nick Bostrom. 2014. Superintelligence: Paths, dangers, strategies. Superintelligence: Paths, dangers, strategies. Oxford University Press, New York, NY, US.",
-    "Marc-Alexandre Côté, Akos Kádár, Xingdi Yuan, Ben Kybartas, Tavian Barnes, Emery Fine, James Moore, Matthew Hausknecht, Layla El Asri, Mahmoud Adada, et al. 2018. Textworld: A learning environment for text-based games. In Workshop on Computer Games, pages 41–75. Springer.",
-    "Sahith Dambekodi, Spencer Frazier, Prithviraj Ammanabrolu, and Mark O Riedl. 2020. Playing textbased games with common sense. se. In 2nd Wordplay: When Language Meets Games Workshop at NeurIPS.",
-    "Emily Dinan, Angela Fan, Adina Williams, Jack Urbanek, Douwe Kiela, and Jason Weston. 2020. Queens are powerful too: Mitigating gender bias in dialogue generation. In Proceedings of Empirical Methods in Natural Language Processing (EMNLP-20).",
-    "Denis Emelin, Ronan Le Bras, Jena D. Hwang, Maxwell Forbes, and Yejin Choi. 2021. Moral stories: Situated reasoning about norms, intents, actions, and their consequences. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 698–718, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics.",
-    "Maxwell Forbes, Jena D Hwang, Vered Shwartz, Maarten Sap, and Yejin Choi. 2020. Social chemistry 101: Learning to reason about social and moral norms. In EMNLP.",
-    "Yang Gao, Huazhe Xu, Ji Lin, Fisher Yu, Sergey Levine, and Trevor Darrell. 2018. Reinforcement learning from imperfect demonstrations. ArXiv, abs/1802.05313.",
-    "Javier García, Fern, and o Fernández. 2015. A comprehensive survey on safe reinforcement learning. Journal of Machine Learning Research, 16(42):1437-1480.",
-    "Timnit Gebru, Jamie Morgenstern, Briana Vecchione, Jennifer Wortman Vaughan, Hanna Wallach, Hal Daumé III, and Kate Crawford. 2018. Datasheets for datasets. arXiv preprint arXiv:1803.09010.",
-    "Thomas Krendl Gilbert, Sarah Dean, Nathan Lambert, Tom Zick, and Aaron Snoswell. 2022. Reward reports for reinforcement learning. arXiv preprint arXiv:2204.10817.",
-    "Shane Griffith, Kaushik Subramanian, Jonathan Scholz, Charles L Isbell, and Andrea L Thomaz. 2013. Policy shaping: Integrating human feedback with reinforcement learning. In Advances in Neural Information Processing Systems, volume 26. Curran Associates, Inc.",
-    "Dylan Hadfield-Menell, Stuart J Russell, Pieter Abbeel, and Anca Dragan. 2016. Cooperative inverse reinforcement learning. In Advances in Neural Information Processing Systems, volume 29. Curran Associates, Inc.",
-    "Matthew Hausknecht, Prithviraj Ammanabrolu, MarcAlexandre Côté, and Xingdi Yuan. 2020. Interactive fiction games: A colossal adventure. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 34, pages 7903–7910.",
-    "Matthew J. Hausknecht, Ricky Loynd, Greg Yang, Adith Swaminathan, and Jason D. Williams. 2019. NAIL: A general interactive fiction agent. CoRR, abs/1902.04259.",
-    "Ji He, Jianshu Chen, Xiaodong He, Jianfeng Gao, Lihong Li, Li Deng, and Mari Ostendorf. 2016. Deep reinforcement learning with a natural language action space. In ACL.",
-    "Dan Hendrycks, Collin Burns, Steven Basart, Andrew Critch, Jerry Li, Dawn Song, and Jacob Steinhardt. 2021a. Aligning {ai} with shared human values. In International Conference on Learning Representations.",
-    "Dan Hendrycks, Mantas Mazeika, Andy Zou, Sahil Patel, Christine Zhu, Jesus Navarro, Dawn Song, Bo Li, and Jacob Steinhardt. 2021b. What would jiminy cricket do? towards agents that behave morally. In Thirty-fifth Conference on Neural Information Processing Systems Datasets and Benchmarks Track (Round 2).",
-    "Ari Holtzman, Jan Buys, Li Du, Maxwell Forbes, and Yejin Choi. 2020. The curious case of neural text degeneration. In International Conference on Learning Representations.",
-    "Youngsoo Jang, Seokin Seo, Jongmin Lee, and KeeEung Kim. 2021. Monte-carlo planning and learning with language action value estimates. In International Conference on Learning Representations.",
-    "Liwei Jiang, Jena D. Hwang, Chandrasekhar Bhagavatula, Ronan Le Bras, Jenny Liang, Jesse Dodge, Keisuke Sakaguchi, Maxwell Forbes, Jon Borchardt, Saadia Gabriel, Yulia Tsvetkov, Oren Etzioni, Maarten Sap, Regina Rini, and Yejin Choi. 2021. Delphi: Towards machine ethics and norms. CoRR, abs/2012.15738.",
-    "Jan Leike, Miljan Martic, Victoria Krakovna, Pedro A. Ortega, Tom Everitt, Andrew Lefrancq, Laurent Orseau, and Shane Legg. 2017. Ai safety gridworlds. ArXiv, abs/1711.09883.",
-    "Long-Ji Lin. 1993. Reinforcement learning for robots using neural networks. Ph.D. thesis, Carnegie Mellon University.",
-    "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. 2019. Roberta: A robustly optimized bert pretraining approach. ArXiv, abs/1907.11692.",
-    "Nicholas Lourie, Ronan Le Bras, and Yejin Choi. 2021. Scruples: A corpus of community ethical judgments on 32, 000 real-life anecdotes. In AAAI.",
-    "J.H. Moor. 2006. The nature, importance, and difficulty of machine ethics. IEEE Intelligent Systems, 21(4):18–21.",
-    "Andrew W. Moore and Christopher G. Atkeson. 1993. Prioritized Sweeping: Reinforcement Learning with Less Data and Less Time. Machine Learning.",
-    "Keerthiram Murugesan, Mattia Atzeni, Pavan Kapanipathi, Pushkar Shukla, Sadhana Kumaravel, Gerald Tesauro, Kartik Talamadupula, Mrinmaya Sachan, and Murray Campbell. 2021. Text-based RL Agents with Commonsense Knowledge: New Challenges, Environments and Baselines. In Thirty Fifth AAAI Conference on Artificial Intelligence.",
-    "Keerthiram Murugesan, Mattia Atzeni, Pushkar Shukla, Mrinmaya Sachan, Pavan Kapanipathi, and Kartik Talamadupula. 2020. Enhancing text-based reinforcement learning agents with commonsense knowledge. arXiv preprint arXiv:2005.00811.",
-    "Md Sultan Al Nahian, Spencer Frazier, Brent Harrison, and Mark Riedl. 2021. Training value-aligned reinforcement learning agents using a normative prior. CoRR, abs/2104.09469.",
-    "Md Sultan Al Nahian, Spencer Frazier, Mark Riedl, and Brent Harrison. 2020. Learning norms from stories: A prior for value aligned agents. In AAAI/ACM Conference on AI, Ethics, and Society, page 124-130, New York, NY, USA. Association for Computing Machinery.",
-    "Alec Radford, Jeff Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. 2019. Language Models are Unsupervised Multitask Learners.",
-    "Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi Zhou, Wei Li, and Peter J. Liu. 2020. Exploring the limits of transfer learning with a unified text-totext transformer. Journal of Machine Learning Research, 21(140):1–67.",
-    "Alex Ray, Joshua Achiam, and Dario Amodei. 2019. Benchmarking safe exploration in deep reinforcement learning.",
-    "Siddharth Reddy, Anca Dragan, Sergey Levine, Shane Legg, and Jan Leike. 2020. Learning human objectives by evaluating hypothetical behavior. In Proceedings of the 37th International Conference on Machine Learning, volume 119 of Proceedings of Machine Learning Research, pages 8020-8029. PMLR.",
-    "Stuart Russell. 2019. Artificial intelligence and the problem of control. Perspectives on Digital Humanism, page 19.",
-    "Maarten Sap, Saadia Gabriel, Lianhui Qin, Dan Jurafsky, Noah A Smith, and Yejin Choi. 2020. Social bias frames: Reasoning about social and power implications of language. In ACL.",
-    "Corentin Sautier, Don Joven Agravante, and Michiaki Tatsubori. 2020. State Prediction in TextWorld with a Predicate-Logic Pointer Network Architecture. In In Workshop on Knowledge-based Reinforcement Learning at IJCAI-20.",
-    "Emily Sheng, Kai-Wei Chang, Premkumar Natarajan, and Nanyun Peng. 2019. The woman worked as a babysitter: On biases in language generation. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing (EMNLP-IJCNLP), pages 3407–3412. Association for Computational Linguistics.",
-    "Nate Soares and Benya Fallenstein. 2017. Agent Foundations for Aligning Machine Intelligence with Human Interests: A Technical Research Agenda, pages 103-125. Machine Intelligence Research Institute (MIRI) technical report, Springer Berlin Heidelberg.",
-    "Richard S Sutton and Andrew G Barto. 1998. Introduction to Reinforcement Learning, 1st edition. MIT Press, Cambridge, MA, USA.",
-    "Chen Tessler, Daniel J. Mankowitz, and Shie Mannor. 2019. Reward constrained policy optimization. In International Conference on Learning Representations.",
-    "Christopher J CH Watkins and Peter Dayan. 1992. Q-learning. Machine Learning, 8(3):279–292.",
-    "Shunyu Yao, Rohan Rao, Matthew Hausknecht, and Karthik Narasimhan. 2020. Keep CALM and explore: Language models for action generation in text-based games. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 8736–8754, Online. Association for Computational Linguistics.",
-    "Tom Zahavy, Matan Haroush, Nadav Merlis, Daniel J Mankowitz, and Shie Mannor. 2018. Learn what not to learn: Action elimination with deep reinforcement learning. In S. Bengio, H. Wallach, H. Larochelle, K. Grauman, N. Cesa-Bianchi, and R. Garnett, editors, Advances in Neural Information Processing Systems 31, pages 3562–3573. Curran Associates, Inc."
-  ]
+  "primary_bias_target": "Harmful behavior bias (Social and moral value misalignment)"
 }

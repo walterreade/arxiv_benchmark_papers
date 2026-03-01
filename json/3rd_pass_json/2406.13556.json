@@ -2,43 +2,84 @@
   "filename": "2406.13556.pdf",
   "title": "Evaluating Short-Term Temporal Fluctuations of Social Biases in Social Media Data and Masked Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2406.13556",
-  "bias_targets": [
-    {
-      "target": "Gender bias",
-      "methodology": "Evaluating pseudo-likelihood scores for stereotypical vs. anti-stereotypical sentences using the AULA metric on CrowS-Pairs and StereoSet benchmarks, and calculating sentiment negativity scores of tweets containing male vs. female associated names."
-    },
-    {
-      "target": "Racial and Skin Color bias",
-      "methodology": "Evaluating pseudo-likelihood scores using the AULA metric on CrowS-Pairs and StereoSet benchmarks, and calculating sentiment negativity scores of tweets containing names associated with African American and European American identities."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Evaluating pseudo-likelihood scores using the AULA metric on CrowS-Pairs and StereoSet benchmarks, and calculating sentiment negativity scores of tweets containing Christian vs. Jewish identity terms."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Evaluating pseudo-likelihood scores using the AULA metric on the CrowS-Pairs benchmark, and calculating sentiment negativity scores of tweets containing age-related demographic descriptors (young vs. old)."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Evaluating pseudo-likelihood scores for stereotypical vs. anti-stereotypical sentences using the AULA metric on the CrowS-Pairs benchmark."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Evaluating pseudo-likelihood scores for stereotypical vs. anti-stereotypical sentences using the AULA metric on the CrowS-Pairs benchmark."
-    },
-    {
-      "target": "Nationality bias",
-      "methodology": "Evaluating pseudo-likelihood scores for stereotypical vs. anti-stereotypical sentences using the AULA metric on the CrowS-Pairs benchmark."
-    },
-    {
-      "target": "Physical appearance bias",
-      "methodology": "Evaluating pseudo-likelihood scores for stereotypical vs. anti-stereotypical sentences using the AULA metric on the CrowS-Pairs benchmark."
-    },
-    {
-      "target": "Socioeconomic and Profession bias",
-      "methodology": "Evaluating pseudo-likelihood scores for stereotypical vs. anti-stereotypical sentences using the AULA metric on the CrowS-Pairs (socioeconomic) and StereoSet (profession) benchmarks."
-    }
+  "religious_groups": [
+    "Judaism",
+    "Christianity"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "TimeLMs",
+    "COHABERT",
+    "RoBERTa"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "CrowS-Pairs",
+    "StereoSet"
+  ],
+  "continuous_testing": false,
+  "findings": "Religion-related bias was found to be one of the most fluctuating types over time, particularly in the StereoSet benchmark. Analysis of the training corpora (social media data) showed high levels of stereotypical bias associated with both Jewish and Christian identities. However, the language models trained on this data demonstrated a lower degree of bias, tending towards anti-stereotypical examples. The bias associated with Christianity was found to be more stable over time compared to the bias associated with Judaism. In historical corpora (COHABERT), religion also showed the most variability over time compared to other bias types.",
+  "references": [
+    "Sanae Achsas et al. 2022. Academic aggregated search approach based on bert language model. In 2022 2nd International Conference on Innovative Research in Applied Science, Engineering and Technology (IRASET). IEEE, pages 1–9.",
+    "Taichi Aida and Danushka Bollegala. 2023. Unsupervised semantic variation prediction using the distribution of sibling embeddings. In Proc. of the Findings of 61st Annual Meeting of the Association for Computational Linguistics.",
+    "Francesco Barbieri, Jose Camacho-Collados, Luis Espinosa Anke, and Leonardo Neves. 2020. TweetEval: Unified benchmark and comparative evaluation for tweet classification. In Trevor Cohn, Yulan He, and Yang Liu, editors, Findings of the Association for Computational Linguistics: EMNLP 2020. Association for Computational Linguistics, Online, pages 1644–1650. https://doi.org/10.18653/v1/2020.findings-emnlp.148.",
+    "Su Lin Blodgett, Gilsinia Lopez, Alexandra Olteanu, Robert Sim, and Hanna Wallach. 2021. Stereotyping Norwegian salmon: An inventory of pitfalls in fairness benchmark datasets. In Chengqing Zong, Fei Xia, Wenjie Li, and Roberto Navigli, editors, Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers). Association for Computational Linguistics, Online, pages 1004–1015. https://doi.org/10.18653/v1/2021.acl-long.81.",
+    "Tolga Bolukbasi, Kai-Wei Chang, James Y Zou, Venkatesh Saligrama, and Adam T Kalai. 2016. Man is to computer programmer as woman is to homemaker? debiasing word embeddings. Advances in neural information processing systems 29.",
+    "A.Z. Broder. 1997. On the resemblance and containment of documents. In Proceedings. Compression and Complexity of SEQUENCES 1997 (Cat. No.97TB100171). pages 21–29. https://doi.org/10.1109/SEQUEN.1997.666900.",
+    "Aylin Caliskan, Joanna J. Bryson, and Arvind Narayanan. 2017a. Semantics derived automatically from language corpora contain human-like biases. Science 356:183–186. https://www.science.org/doi/abs/10.1126/science.aal4230.",
+    "Aylin Caliskan, Joanna J Bryson, and Arvind Narayanan. 2017b. Semantics derived automatically from language corpora contain human-like biases. Science 356(6334):183–186.",
+    "Mark Davies. 2015. Corpus of Historical American English (COHA). https://doi.org/10.7910/DVN/8SRSYK.",
+    "Maria De-Arteaga, Alexey Romanov, Hanna Wallach, Jennifer Chayes, Christian Borgs, Alexandra Chouldechova, Sahin Geyik, Krishnaram Kenthapadi, and Adam Tauman Kalai. 2019. Bias in bios: A case study of semantic representation bias in a high-stakes setting. In proceedings of the Conference on Fairness, Accountability, and Transparency. pages 120–128.",
+    "Sunipa Dev, Tao Li, Jeff M Phillips, and Vivek Srikumar. 2020. On measuring and mitigating biased inferences of word embeddings. In Proceedings of the AAAI Conference on Artificial Intelligence. volume 34, pages 7659–7666.",
+    "Sunipa Dev, Masoud Monajatipoor, Anaelia Ovalle, Arjun Subramonian, Jeff Phillips, and Kai-Wei Chang. 2021. Harms of gender exclusivity and challenges in non-binary representation in language technologies. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing. pages 1968–1994.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers). Association for Computational Linguistics, Minneapolis, Minnesota, pages 4171–4186.",
+    "Simon De Deyne, Danielle J. Navarro, Amy Perfors, Marc Brysbaert, and Gert Storms. 2019. The \"small world of words\" english word association norms for over 12,000 cue words. Behavior Research Methods 51(3):987–1006. https://link.springer.com/article/10.3758/s13428-018-1115-7.",
+    "Mark Díaz, Isaac Johnson, Amanda Lazar, Anne Marie Piper, and Darren Gergle. 2018. Addressing age-related bias in sentiment analysis. In Proceedings of the 2018 chi conference on human factors in computing systems. pages 1–14.",
+    "Yupei Du, Yuanbin Wu, and Man Lan. 2019. Exploring human gender stereotypes with word association test. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP). Association for Computational Linguistics, Hong Kong, China, pages 6132–6142. https://doi.org/10.18653/v1/D19-1635.",
+    "David Esiobu, Xiaoqing Tan, Saghar Hosseini, Megan Ung, Yuchen Zhang, Jude Fernandes, Jane Dwivedi-Yu, Eleonora Presani, Adina Williams, and Eric Smith. 2023. Robbie: Robust bias evaluation of large generative language models. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing. pages 3764–3814.",
+    "Kawin Ethayarajh, David Duvenaud, and Graeme Hirst. 2019. Understanding undesirable word embedding associations. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics. pages 1696–1705.",
+    "Valentin Hofmann, Janet Pierrehumbert, and Hinrich Schütze. 2021. Dynamic contextualized word embeddings. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers). Association for Computational Linguistics, Online, pages 6970–6984. https://doi.org/10.18653/v1/2021.acl-long.542.",
+    "Masahiro Kaneko and Danushka Bollegala. 2021. Debiasing pre-trained contextualised embeddings. In Paola Merlo, Jorg Tiedemann, and Reut Tsarfaty, editors, Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics: Main Volume. Association for Computational Linguistics, Online, pages 1256–1266. https://doi.org/10.18653/v1/2021.eacl-main.107.",
+    "Masahiro Kaneko and Danushka Bollegala. 2022. Unmasking the mask-evaluating social biases in masked language models. In Proceedings of the AAAI Conference on Artificial Intelligence. volume 36, pages 11954–11962.",
+    "Masahiro Kaneko, Danushka Bollegala, and Naoaki Okazaki. 2023. Comparing intrinsic gender bias evaluation measures without using human annotated examples. In Proceedings of the 17th Conference of the European Chapter of the Association for Computational Linguistics. Association for Computational Linguistics, Dubrovnik, Croatia, pages 2857–2863.",
+    "Masahiro Kaneko, Aizhan Imankulova, Danushka Bollegala, and Naoaki Okazaki. 2022. Gender bias in masked language models for multiple languages. In Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies. Association for Computational Linguistics, Seattle, United States, pages 2740–2750.",
+    "Svetlana Kiritchenko and Saif M Mohammad. 2018. Examining gender and race bias in two hundred sentiment analysis systems. NAACL HLT 2018 page 43.",
+    "RJ Kuo and Shu-Syun Li. 2023. Applying particle swarm optimization algorithm-based collaborative filtering recommender system considering rating and review. Applied Soft Computing page 110038.",
+    "Keita Kurita, Nidhi Vyas, Ayush Pareek, Alan W Black, and Yulia Tsvetkov. 2019. Measuring bias in contextualized word representations. In Proceedings of the First Workshop on Gender Bias in Natural Language Processing. Association for Computational Linguistics, Florence, Italy, pages 166–172.",
+    "Anne Lauscher, Rafik Takieddin, Simone Paolo Ponzetto, and Goran Glavaš. 2020. AraWEAT: Multi-dimensional analysis of biases in Arabic word embeddings. In Imed Zitouni, Muhammad Abdul-Mageed, Houda Bouamor, Fethi Bougares, Mahmoud El-Haj, Nadi Tomeh, and Wajdi Zaghouani, editors, Proceedings of the Fifth Arabic Natural Language Processing Workshop. Association for Computational Linguistics, Barcelona, Spain (Online), pages 192–199. https://aclanthology.org/2020.wanlp-1.17.",
+    "Juanhui Li, Wei Zeng, Suqi Cheng, Yao Ma, Jiliang Tang, Shuaiqiang Wang, and Dawei Yin. 2023. Graph enhanced bert for query understanding. In Proceedings of the 46th International ACM SIGIR Conference on Research and Development in Information Retrieval. pages 3315–3319.",
+    "Paul Pu Liang, Irene Mengze Li, Emily Zheng, Yao Chong Lim, Ruslan Salakhutdinov, and Louis-Philippe Morency. 2020a. Towards debiasing sentence representations. In Dan Jurafsky, Joyce Chai, Natalie Schluter, and Joel Tetreault, editors, Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics. Association for Computational Linguistics, Online, pages 5502–5515. https://doi.org/10.18653/v1/2020.acl-main.488.",
+    "Sheng Liang, Philipp Dufter, and Hinrich Schütze. 2020b. Monolingual and multilingual reduction of gender bias in contextualized representations. In Donia Scott, Nuria Bel, and Chengqing Zong, editors, Proceedings of the 28th International Conference on Computational Linguistics. International Committee on Computational Linguistics, Barcelona, Spain (Online), pages 5082–5093. https://doi.org/10.18653/v1/2020.coling-main.446.",
+    "Xiaobo Liang, Zecheng Tang, Juntao Li, and Min Zhang. 2023. Open-ended long text generation via masked language modeling. In Anna Rogers, Jordan Boyd-Graber, and Naoaki Okazaki, editors, Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). Association for Computational Linguistics, Toronto, Canada, pages 223–241. https://doi.org/10.18653/v1/2023.acl-long.13.",
+    "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. 2019. Roberta: A robustly optimized bert pretraining approach. arXiv preprint arXiv:1907.11692.",
+    "Daniel Loureiro, Francesco Barbieri, Leonardo Neves, Luis Espinosa Anke, and Jose Camacho-Collados. 2022a. TimeLMs: Diachronic Language Models from Twitter.",
+    "Daniel Loureiro, Francesco Barbieri, Leonardo Neves, Luis Espinosa Anke, and Jose Camacho-Collados. 2022b. Timelms: Diachronic language models from twitter. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics: System Demonstrations. pages 251–260.",
+    "Itzik Malkiel, Oren Barkan, Avi Caciularu, Noam Razin, Ori Katz, and Noam Koenigstein. 2020. RecoBERT: A catalog language model for text-based recommendations. In Trevor Cohn, Yulan He, and Yang Liu, editors, Findings of the Association for Computational Linguistics: EMNLP 2020. Association for Computational Linguistics, Online, pages 1704–1714. https://doi.org/10.18653/v1/2020.findings-emnlp.154.",
+    "Chandler May, Alex Wang, Shikha Bordia, Samuel R. Bowman, and Rachel Rudinger. 2019. On measuring social biases in sentence encoders. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers). Association for Computational Linguistics, Minneapolis, Minnesota, pages 622–628. https://doi.org/10.18653/v1/N19-1063.",
+    "Katherine McCurdy and Oguz Serbetci. 2020. Grammatical gender associations outweigh topical gender bias in crosslinguistic word embeddings. arXiv preprint arXiv:2005.08864.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2021. StereoSet: Measuring stereotypical bias in pretrained language models. In Chengqing Zong, Fei Xia, Wenjie Li, and Roberto Navigli, editors, Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers). Association for Computational Linguistics, Online, pages 5356–5371. https://doi.org/10.18653/v1/2021.acl-long.416.",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R. Bowman. 2020. CrowS-pairs: A challenge dataset for measuring social biases in masked language models. In Bonnie Webber, Trevor Cohn, Yulan He, and Yang Liu, editors, Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP). Association for Computational Linguistics, Online, pages 1953–1967. https://doi.org/10.18653/v1/2020.emnlp-main.154.",
+    "Yeongjoon Park, Youngjoong Ko, and Jungyun Seo. 2022. Bert-based response selection in dialogue systems using utterance attention mechanisms. Expert systems with applications 209:118277.",
+    "Wenjun Qiu and Yang Xu. 2022. HistBERT: A Pretrained Language Model for Diachronic Lexical Semantic Analysis.",
+    "Manon Reusens, Philipp Borchert, Margot Mieskes, Jochen De Weerdt, and Bart Baesens. 2023. Investigating bias in multilingual language models: Cross-lingual transfer of debiasing techniques. In Houda Bouamor, Juan Pino, and Kalika Bali, editors, Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing. Association for Computational Linguistics, Singapore, pages 2887–2896. https://doi.org/10.18653/v1/2023.emnlp-main.175.",
+    "Guy D. Rosin and Kira Radinsky. 2022. Temporal attention for language models. In Findings of the Association for Computational Linguistics: NAACL 2022. Association for Computational Linguistics, Seattle, United States, pages 1498–1508.",
+    "Beatrice Savoldi, Marco Gaido, Luisa Bentivogli, Matteo Negri, and Marco Turchi. 2021. Gender bias in machine translation. Transactions of the Association for Computational Linguistics 9:845–874.",
+    "Eric Michael Smith, Melissa Hall, Melanie Kambadur, Eleonora Presani, and Adina Williams. 2022. \"I'm sorry to hear that\": Finding new biases in language models with a holistic descriptor dataset. In Yoav Goldberg, Zornitsa Kozareva, and Yue Zhang, editors, Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing. Association for Computational Linguistics, Abu Dhabi, United Arab Emirates, pages 9180–9211. https://doi.org/10.18653/v1/2022.emnlp-main.625.",
+    "Haoyu Song, Yan Wang, Kaiyan Zhang, Wei-Nan Zhang, and Ting Liu. 2021. BoB: BERT over BERT for training persona-based dialogue models from limited personalized data. In Chengqing Zong, Fei Xia, Wenjie Li, and Roberto Navigli, editors, Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers). Association for Computational Linguistics, Online, pages 167–177. https://doi.org/10.18653/v1/2021.acl-long.14.",
+    "Xiaohang Tang, Yi Zhou, Taichi Aida, Procheta Sen, and Danushka Bollegala. 2023a. Can word sense distribution detect semantic changes of words? In Findings of the Association for Computational Linguistics: EMNLP 2023. pages 3575–3590.",
+    "Xiaohang Tang, Yi Zhou, and Danushka Bollegala. 2023b. Learning dynamic contextualised word embeddings via template-based temporal adaptation. In Anna Rogers, Jordan Boyd-Graber, and Naoaki Okazaki, editors, Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). Association for Computational Linguistics, Toronto, Canada, pages 9352–9369. https://doi.org/10.18653/v1/2023.acl-long.520.",
+    "Robert J Tibshirani and Bradley Efron. 1993. An introduction to the bootstrap. Monographs on statistics and applied probability 57(1).",
+    "Kellie Webster, Xuezhi Wang, Ian Tenney, Alex Beutel, Emily Pitler, Ellie Pavlick, Jilin Chen, Ed Chi, and Slav Petrov. 2020. Measuring and reducing gendered correlations in pre-trained models. arXiv preprint arXiv:2010.06032.",
+    "Charles Welch, Jonathan K. Kummerfeld, Verónica Pérez-Rosas, and Rada Mihalcea. 2020. Compositional demographic word embeddings. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP). Association for Computational Linguistics, Online, pages 4076–4089.",
+    "Ziqian Zeng, Yichun Yin, Yangqiu Song, and Ming Zhang. 2017. Socialized word embeddings. In Proceedings of the Twenty-Sixth International Joint Conference on Artificial Intelligence. International Joint Conferences on Artificial Intelligence Organization, California. https://www.ijcai.org/proceedings/2017/0547.pdf.",
+    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Ryan Cotterell, Vicente Ordonez, and Kai-Wei Chang. 2019. Gender bias in contextualized word embeddings. In Jill Burstein, Christy Doran, and Thamar Solorio, editors, Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers). Association for Computational Linguistics, Minneapolis, Minnesota, pages 629–634. https://doi.org/10.18653/v1/N19-1064.",
+    "Yi Zhou, Jose Camacho-Collados, and Danushka Bollegala. 2023. A predictive factor analysis of social biases and task-performance in pretrained masked language models. In Houda Bouamor, Juan Pino, and Kalika Bali, editors, Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing. Association for Computational Linguistics, Singapore, pages 11082–11100. https://doi.org/10.18653/v1/2023.emnlp-main.683.",
+    "Yi Zhou, Masahiro Kaneko, and Danushka Bollegala. 2022. Sense embeddings are also biased – evaluating social biases in static and contextualised sense embeddings. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). Association for Computational Linguistics, Dublin, Ireland, pages 1924–1935."
+  ],
+  "measurement_description": "The benchmark measured stereotypical biases related to religious groups by comparing the likelihood scores of stereotypical versus anti-stereotypical sentences."
 }

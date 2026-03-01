@@ -2,78 +2,15 @@
   "filename": "2512.17394.pdf",
   "title": "Are Vision Language Models Cross-Cultural Theory of Mind Reasoners?",
   "arxiv_url": "https://arxiv.org/pdf/2512.17394",
-  "benchmark_measurement": "The benchmark, CulturalToM-VQA, measures the ability of Vision-Language Models to perform Theory of Mind (ToM) reasoning in diverse cultural contexts. This includes interpreting social interactions, rituals, and norms depicted in images, which may implicitly involve religious or faith-based scenarios, but religion itself is not an explicit category of measurement. The focus is on culturally grounded social inference.",
-  "religious_groups": [],
-  "models_tested": [
-    "InternVL-3.5-8B",
-    "LLaVA-1.5-7B",
-    "LLaVA-Next-7B",
-    "Qwen-VL Chat",
-    "Qwen2-VL-7B",
-    "Qwen2.5-VL-7B",
-    "Phi-4-6B",
-    "InstructBLIP-Vicuna",
-    "IDEFICS-9B",
-    "Llama-11B",
-    "Llama-3.2-11B-Vision",
-    "Phi-4-multimodal"
+  "bias_targets": [
+    {
+      "target": "Cultural bias",
+      "methodology": "Measuring zero-shot performance disparities (accuracy variance) of vision-language models across different cultural regions and countries using the culturally diverse CVQA dataset split."
+    },
+    {
+      "target": "Social desirability bias",
+      "methodology": "Evaluating models in a text-only (no-image) setting and using a sentiment classifier to measure 'Excess Positivity Drift', which quantifies how often models heuristically default to semantically positive or socially favorable answer choices in the absence of visual evidence."
+    }
   ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "FindingEmo",
-    "CulturalVQA",
-    "CVQA",
-    "ToMBench",
-    "MMTOM-QA"
-  ],
-  "continuous_testing": false,
-  "findings": "The paper does not present findings explicitly about religion. The findings focus on cross-cultural reasoning, which can encompass religious contexts. The key findings are: 1) Frontier models (e.g., Qwen2.5-VL, Phi-4) achieve high accuracy (>93%) on explicit cultural ToM tasks, showing a sharp generational leap over older models. 2) Significant limitations persist, as all models struggle with false belief reasoning and exhibit high performance variance across different cultural regions (e.g., high accuracy for Colombia/France, lower for Argentina/Russia). 3) A crucial finding is that top models exhibit 'visual insensitivity,' maintaining high accuracy even without the image, relying on parametric social priors and a social desirability bias rather than genuine visual grounding.",
-  "references": [
-    "Jinze Bai and 1 others. 2023. Qwen-vl: A versa- tile vision-language model for understanding, local- ization, text reading, and beyond. arXiv preprint arXiv:2308.12966.",
-    "Simon Baron-Cohen, Alan M Leslie, and Uta Frith. 1985. Does the autistic child have a “theory of mind”? Cognition, 21(1):37–46.",
-    "Simon Baron-Cohen, Michelle O'riordan, Valerie Stone, Rosie Jones, and Kate Plaisted. 1999. Recognition of faux pas by normally developing children and children with asperger syndrome or high-functioning autism. Journal of autism and developmental disor- ders, 29(5):407-418.",
-    "Zhe Chen and 1 others. 2024a. Internvl: Scal- ing up vision foundation models and aligning for generic visual-linguistic tasks. arXiv preprint arXiv:2312.14238.",
-    "Zhuang Chen, Jincenzi Wu, Jinfeng Zhou, Bosi Wen, Guanqun Bi, Gongyao Jiang, Yaru Cao, Mengt- ing Hu, Yunghwei Lai, Zexuan Xiong, and 1 oth- ers. 2024b. Tombench: Benchmarking theory of mind in large language models. arXiv preprint arXiv:2402.15052.",
-    "Jacob Cohen. 1960. A coefficient of agreement for nominal scales. Educational and psychological mea- surement, 20(1):37-46.",
-    "Xianzhe Fan, Xuhui Zhou, Chuanyang Jin, Kolby Not- tingham, Hao Zhu, and Maarten Sap. 2025. Somi- tom: Evaluating multi-perspective theory of mind in embodied social interactions. arXiv preprint arXiv:2506.23046.",
-    "Andrea Frick, Wenke Möhring, and Nora S New- combe. 2014. Picturing perspectives: development of perspective-taking abilities in 4-to 8-year-olds. Fron- tiers in psychology, 5:386.",
-    "Kanishk Gandhi, Jan-Philipp Fränken, Tobias Gersten- berg, and Noah D Goodman. 2023. Understanding social reasoning in language models with language models. arXiv preprint arXiv:2306.15448.",
-    "Oana Ignat, Longju Bai, Joan C Nwatu, and Rada Mi- halcea. 2024. Annotations on a budget: Leveraging geo-data similarity to balance model performance and annotation cost. In Proceedings of the 2024 Joint International Conference on Computational Linguis- tics, Language Resources and Evaluation (LREC- COLING 2024), pages 1239–1259.",
-    "Maliha Jahan, Helin Wang, Thomas Thebaud, Yinglun Sun, Giang Ha Le, Zsuzsanna Fagyal, Odette Scharenborg, Mark Hasegawa-Johnson, Laureano Moro Velazquez, and Najim Dehak. 2024. Finding spoken identifications: Using GPT-4 annotation for an efficient and fast dataset creation pipeline. In Pro- ceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024), pages 7296- 7306, Torino, Italia. ELRA and ICCL.",
-    "Hannah Kim, Kushan Mitra, Rafael Li Chen, Sajjadur Rahman, and Dan Zhang. 2024. Meganno+: A human-llm collaborative annotation system. arXiv preprint arXiv:2402.18050.",
-    "Hyunwoo Kim, Melanie Sclar, Xuhui Zhou, Ronan Bras, Gunhee Kim, Yejin Choi, and Maarten Sap. 2023a. FANTOM: A benchmark for stress-testing machine theory of mind in interactions. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, pages 14397–14413, Singa- pore. Association for Computational Linguistics.",
-    "Hyunwoo Kim, Melanie Sclar, Xuhui Zhou, Ronan Bras, Gunhee Kim, Yejin Choi, and Maarten Sap. 2023b. Fantom: A benchmark for stress-testing machine theory of mind in interactions. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, pages 14397–14413.",
-    "Takeshi Kojima, Shixiang Shane Gu, Machel Reid, Yu- taka Matsuo, and Yusuke Iwasawa. 2022. Large lan- guage models are zero-shot reasoners. Advances in neural information processing systems, 35:22199– 22213.",
-    "Michal Kosinski. 2023. Theory of mind may have spon- taneously emerged in large language models. arXiv preprint arXiv:2302.02083.",
-    "Michal Kosinski. 2024. Evaluating large language mod- els in theory of mind tasks. Proceedings of the Na- tional Academy of Sciences, 121(45):e2405460121.",
-    "Haotian Liu, Chunyuan Li, Qingyang Wu, and Yong Jae Lee. 2023a. Visual instruction tuning. Advances in neural information processing systems, 36:34892- 34916.",
-    "Haotian Liu, Chunyuan Li, Qingyang Wu, and Yong Jae Lee. 2023b. Visual instruction tuning. Advances in neural information processing systems, 36:34892- 34916.",
-    "Shudong Liu, Yiqiao Jin, Cheng Li, Derek F Wong, Qingsong Wen, Lichao Sun, Haipeng Chen, Xing Xie, and Jindong Wang. 2025. Culturevlm: Char- acterizing and improving cultural understanding of vision-language models for over 100 countries. arXiv preprint arXiv:2501.01282.",
-    "Chandreen R Liyanage, Ravi Gokani, and Vijay Mago. 2024. Gpt-4 as an x data annotator: Unraveling its performance on a stance classification task. PloS one, 19(8):e0307741.",
-    "Chuanyang Ma, Yucheng Shen, Yilun Du Tenenbaum Ng, and Antonio Torralba. 2024. Mmtom-qa: Mul- timodal theory of mind question answering. arXiv preprint arXiv:2401.08743.",
-    "Anjanie McCarthy, Kang Lee, Shoji Itakura, and Dar- win W Muir. 2006. Cultural display rules drive eye gaze during thinking. Journal of cross-cultural psy- chology, 37(6):717-722.",
-    "Laurent Mertens, Elahe Yargholi, Hans Op de Beeck, Jan Van den Stock, and Joost Vennekens. 2024. Find- ingemo: An image dataset for emotion recognition in the wild. Advances in Neural Information Processing Systems, 37:4956-4996.",
-    "Chancharik Mitra, Brandon Huang, Trevor Darrell, and Roei Herzig. 2024. Compositional chain-of-thought prompting for large multimodal models. In Proceed- ings of the IEEE/CVF Conference on Computer Vi- sion and Pattern Recognition, pages 14420–14431.",
-    "Shravan Nayak, Kanishk Jain, Rabiul Awal, Siva Reddy, Sjoerd Van Steenkiste, Lisa Anne Hendricks, Karolina Stanczak, and Aishwarya Agrawal. 2024. Benchmarking vision language models for cultural understanding. In Proceedings of EMNLP, pages 5769-5790.",
-    "Malvina Nikandrou, Georgios Pantazopoulos, Nikolas Vitsakis, Ioannis Konstas, and Alessandro Suglia. 2024. Crope: Evaluating in-context adaptation of vision and language models to culture-specific con- cepts. arXiv preprint arXiv:2410.15453.",
-    "OpenAI. 2023. Gpt-4v(ision) system card. OpenAI Technical Report.",
-    "Shreya Pawar, Oshin Agarwal, Rachel Rudinger, Sky CH Carpenter, David M Garcia, and Maarten Sap. 2024. Survey of cultural awareness in language models: Text and beyond. Computational Linguis- tics, 51(3):907-973.",
-    "David Premack and Guy Woodruff. 1978. Does the chimpanzee have a theory of mind? Behavioral and brain sciences, 1(4):515-526.",
-    "Haijiang Qin and Lei Guo. 2024. Using machine learn- ing to improve q-matrix validation. Behavior Re- search Methods, 56(3):1916–1935.",
-    "David Romero, Chenyang Lyu, Harshit Pulugurta, Shau- rya Gupta, Yongke Wen, Anna Xiong, Lingyao Hua, Jie Xue, and 1 others. 2024. Cvqa: Culturally-diverse multilingual visual question answering benchmark. In Proceedings of NeurIPS Datasets and Benchmarks Track.",
-    "Maarten Sap, Ronan LeBras, Daniel Fried, and Yejin Choi. 2022. Neural theory-of-mind? on the limits of social intelligence in large lms. In Proceedings of EMNLP, pages 3762-3780.",
-    "Vera Sorin, Dana Brin, Yiftach Barash, Eli Konen, Alexander Charney, Girish Nadkarni, and Eyal Klang. 2024. Large language models and empathy: system- atic review. Journal of medical Internet research, 26:e52597.",
-    "James WA Strachan, Dalila Albergo, Giulia Borghini, Oriana Pansardi, Eugenio Scaliti, Saurabh Gupta, Krati Saxena, Alessandro Rufo, Stefano Panzeri, Guido Manzi, and 1 others. 2024. Testing theory of mind in large language models and humans. Na- ture Human Behaviour, 8(7):1285–1295.",
-    "Yan Tao, Olga Viberg, Ryan S Baker, and René F Kizil- cec. 2024. Cultural bias and cultural alignment of large language models. PNAS nexus, 3(9):pgae346.",
-    "Gemini Team and 1 others. 2023. Gemini: A family of highly capable multimodal models. arXiv preprint arXiv:2312.11805.",
-    "Ximing Wen, Mallika Mainali, and Anik Sen. 2025. How well can vision-language models understand humans' intention? an open-ended theory of mind question evaluation benchmark. arXiv preprint arXiv:2503.22093.",
-    "Alex Wilf, Sihyun Lee, Paul Pu Liang, and Louis- Philippe Morency. 2024. Think twice: Perspective- taking improves large language models' theory-of- mind capabilities. In Proceedings of the 62nd Annual Meeting of the Association for Computational Lin- guistics (Volume 1: Long Papers), pages 8292-8308.",
-    "Ellen Winner and Sue Leekam. 1991. Distinguishing irony from deception: Understanding the speaker's second-order intention. British journal of develop- mental psychology, 9(2):257–270."
-  ]
+  "primary_bias_target": "Cultural bias"
 }

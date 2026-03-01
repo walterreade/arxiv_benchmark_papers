@@ -2,86 +2,19 @@
   "filename": "2211.10780.pdf",
   "title": "ArtELingo: A Million Emotion Annotations of WikiArt with Emphasis on Diversity over Language and Culture",
   "arxiv_url": "https://arxiv.org/pdf/2211.10780",
-  "benchmark_measurement": "Cross-cultural differences in emotional responses to religious art and symbols (e.g., Christian symbols like the cross).",
-  "religious_groups": [
-    "Christianity"
+  "bias_targets": [
+    {
+      "target": "Cultural bias",
+      "methodology": "Collecting human emotion annotations and captions for artworks across multiple languages (English, Arabic, Chinese, Spanish) to identify cross-cultural differences in emotional perception, and evaluating multilingual models on emotion prediction and affective caption generation to observe how cultural norms (e.g., varying reactions to nudity or religious symbols) impact model performance and outputs."
+    },
+    {
+      "target": "Geographic bias",
+      "methodology": "Analyzing the distribution of artists' nationalities within the base WikiArt dataset to quantify the overrepresentation of Western artworks compared to other regions such as the Middle East and East Asia."
+    },
+    {
+      "target": "Language bias",
+      "methodology": "Evaluating the performance drops and generalization capabilities of emotion prediction and caption generation models when trained on one language (or a mix) and tested on another, including zero-shot evaluations."
+    }
   ],
-  "models_tested": [
-    "BERT",
-    "XLM-roBERTa",
-    "3-Headed Transformer",
-    "Show, Attend, and Tell (SAT)",
-    "Meshed Memory Transformer (M²)"
-  ],
-  "languages_evaluated": [
-    "English",
-    "Arabic",
-    "Chinese",
-    "Spanish"
-  ],
-  "response_type": [
-    "short",
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "ArtEmis",
-    "COCO"
-  ],
-  "continuous_testing": false,
-  "findings": "The emotional interpretation of religious symbols, such as the Christian cross, varies significantly across cultures. For example, an artwork depicting stomping on the devil while holding a cross was perceived positively (awe) in English and Arabic cultures but negatively (fear) in Chinese culture, where the symbol holds less meaning and the act of stomping is perceived as more scary.",
-  "references": [
-    "Malak Abdullah and Samira Shaikh. 2018. TeamUNCC at SemEval-2018 task 1: Emotion detection in English and Arabic tweets using deep learning. In Proceedings of The 12th International Workshop on Semantic Evaluation, pages 350–357, New Orleans, Louisiana. Association for Computational Linguistics.",
-    "Abubakar Abid, Maheen Farooqi, and James Zou. 2021. Persistent anti-muslim bias in large language models. In Proceedings of the 2021 AAAI/ACM Conference on AI, Ethics, and Society, pages 298-306.",
-    "Lila Abu-Lughod. 1990. The romance of resistance: Tracing transformations of power through bedouin women. American ethnologist, 17(1):41–55.",
-    "Panos Achlioptas, Maks Ovsjanikov, Kilichbek Haydarov, Mohamed Elhoseiny, and Leonidas Guibas. 2021. Artemis: Affective language for visual art. In IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR).",
-    "Jean-Baptiste Alayrac, Jeff Donahue, Pauline Luc, Antoine Miech, Iain Barr, Yana Hasson, Karel Lenc, Arthur Mensch, Katie Millican, Malcolm Reynolds, et al. 2022. Flamingo: a visual language model for few-shot learning. arXiv preprint arXiv:2204.14198.",
-    "Jason Armitage, Endri Kacupaj, Golsa Tahmasebzadeh, Maria Maleshkova, Ralph Ewerth, and Jens Lehmann. 2020. Mlm: a benchmark dataset for multitask learning with multiple languages and modalities. In Proceedings of the 29th ACM International Conference on Information & Knowledge Management, pages 2967-2974.",
-    "Emily M Bender, Timnit Gebru, Angelina McMillanMajor, and Shmargaret Shmitchell. 2021. On the dangers of stochastic parrots: Can language models be too big? In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, pages 610-623.",
-    "Tolga Bolukbasi, Kai-Wei Chang, James Y Zou, Venkatesh Saligrama, and Adam T Kalai. 2016. Man is to computer programmer as woman is to homemaker? debiasing word embeddings. In Advances in Neural Information Processing Systems, volume 29. Curran Associates, Inc.",
-    "Rishi Bommasani, Drew A Hudson, Ehsan Adeli, Russ Altman, Simran Arora, Sydney von Arx, Michael S Bernstein, Jeannette Bohg, Antoine Bosselut, Emma Brunskill, et al. 2021. On the opportunities and risks of foundation models. arXiv preprint arXiv:2108.07258.",
-    "Emanuele Bugliarello, Fangyu Liu, Jonas Pfeiffer, Siva Reddy, Desmond Elliott, Edoardo Maria Ponti, and Ivan Vulić. 2022. Iglue: A benchmark for transfer learning across modalities, tasks, and languages. arXiv preprint arXiv:2201.11732.",
-    "Joy Buolamwini and Timnit Gebru. 2018. Gender shades: Intersectional accuracy disparities in commercial gender classification. In Conference on fairness, accountability and transparency, pages 77–91. PMLR.",
-    "Carlos Busso, Murtaza Bulut, Chi-Chun Lee, Abe Kazemzadeh, Emily Mower, Samuel Kim, Jeannette N Chang, Sungbok Lee, and Shrikanth S Narayanan. 2008. IEMOCAP: Interactive emotional dyadic motion capture database. Language resources and evaluation, 42(4):335-359.",
-    "Jun Chen, Han Guo, Kai Yi, Boyang Li, and Mohamed Elhoseiny. 2022. Visualgpt: Data-efficient adaptation of pretrained language models for image captioning. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 18030-18040.",
-    "Ying Chen, Wenjun Hou, Shoushan Li, Caicong Wu, and Xiaoqiang Zhang. 2020. End-to-end emotioncause pair extraction with graph convolutional network. In Proceedings of the 28th International Conference on Computational Linguistics, pages 198–207, Barcelona, Spain (Online). International Committee on Computational Linguistics.",
-    "Jacob Cohen. 1960. A coefficient of agreement for nominal scales. Educational and Psychological Measurement, 20(1):37–46.",
-    "Alexis Conneau, Kartikay Khandelwal, Naman Goyal, Vishrav Chaudhary, Guillaume Wenzek, Francisco Guzmán, Edouard Grave, Myle Ott, Luke Zettlemoyer, and Veselin Stoyanov. 2020. Unsupervised cross-lingual representation learning at scale. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 8440-8451, Online. Association for Computational Linguistics.",
-    "Marcella Cornia, Matteo Stefanini, Lorenzo Baraldi, and Rita Cucchiara. 2020. Meshed-memory transformer for image captioning. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 10578-10587.",
-    "Alan S Cowen, Hillary Anger Elfenbein, Petri Laukka, and Dacher Keltner. 2019. Mapping 24 emotions conveyed by brief human vocalization. American Psychologist, 74(6):698.",
-    "Alan S Cowen, Xia Fang, Disa Sauter, and Dacher Keltner. 2020. What music makes us feel: At least 13 dimensions organize subjective experiences associated with music across different cultures. Proceedings of the National Academy of Sciences, 117(4):1924–1934.",
-    "Dorottya Demszky, Dana Movshovitz-Attias, Jeongwoo Ko, Alan Cowen, Gaurav Nemade, and Sujith Ravi. 2020. GoEmotions: A dataset of fine-grained emotions. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 4040-4054, Online. Association for Computational Linguistics.",
-    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 4171-4186, Minneapolis, Minnesota. Association for Computational Linguistics.",
-    "Mor Geva, Uri Katz, Aviv Ben-Arie, and Jonathan Berant. 2021. What's in your head? Emergent behaviour in multi-task transformer models. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 8201-8215, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics.",
-    "Joseph Henrich, Steven J Heine, and Ara Norenzayan. 2010. The weirdest people in the world? Behavioral and brain sciences, 33(2-3):61-83.",
-    "Sepp Hochreiter and Jürgen Schmidhuber. 1997. Long short-term memory. Neural computation, 9(8):1735-1780.",
-    "Carroll E Izard. 2009. Emotion theory and research: Highlights, unanswered questions, and emerging issues. Annual review of psychology, 60:1.",
-    "Meichun Jiao and Ziyang Luo. 2021. Gender bias hidden behind Chinese word embeddings: The case of Chinese adjectives. In Proceedings of the 3rd Workshop on Gender Bias in Natural Language Processing, pages 8-15, Online. Association for Computational Linguistics.",
-    "Ronak Kosti, Jose M. Alvarez, Adria Recasens, and Agata Lapedriza. 2017. EMOTIC: Emotions in context dataset. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR) Workshops.",
-    "Sophia Yat Mei Lee, Ying Chen, Shoushan Li, and Chu-Ren Huang. 2010. Emotion cause events: Corpus construction and analysis. In Proceedings of the Seventh International Conference on Language Resources and Evaluation (LREC'10), Valletta, Malta. European Language Resources Association (ELRA).",
-    "Jennifer S Lerner, Ye Li, Piercarlo Valdesolo, and Karim S Kassam. 2015. Emotion and decision making. Annual review of psychology, 66(1).",
-    "Sheng Liang, Philipp Dufter, and Hinrich Schütze. 2020. Monolingual and multilingual reduction of gender bias in contextualized representations. In Proceedings of the 28th International Conference on Computational Linguistics, pages 5082–5093, Barcelona, Spain (Online). International Committee on Computational Linguistics.",
-    "Tsung-Yi Lin, Michael Maire, Serge Belongie, James Hays, Pietro Perona, Deva Ramanan, Piotr Dollár, and C Lawrence Zitnick. 2014. Microsoft COCO: Common objects in context. In European conference on computer vision, pages 740–755. Springer.",
-    "Chen Liu, Muhammad Osama, and Anderson De Andrade. 2019. DENS: A dataset for multi-class emotion analysis. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 6293–6298, Hong Kong, China. Association for Computational Linguistics.",
-    "Fangyu Liu, Emanuele Bugliarello, Edoardo Maria Ponti, Siva Reddy, Nigel Collier, and Desmond Elliott. 2021. Visually grounded reasoning across languages and cultures. arXiv preprint arXiv:2109.13238.",
-    "Ninareh Mehrabi, Fred Morstatter, Nripsuta Saxena, Kristina Lerman, and Aram Galstyan. 2021. A survey on bias and fairness in machine learning. ACM Comput. Surv., 54(6).",
-    "Erin Meyer. 2014. The culture map: Breaking through the invisible boundaries of Global Business. Public Affairs.",
-    "Trisha Mittal, Puneet Mathur, Aniket Bera, and Dinesh Manocha. 2021. Affect2MM: Affective analysis of multimedia content using emotion causality. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), pages 5661-5671.",
-    "Youssef Mohamed, Faizan Farooq Khan, Kilichbek Haydarov, and Mohamed Elhoseiny. 2022. It is okay to not be okay: Overcoming emotional bias in affective image captioning by contrastive data collection. In IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), volume abs/2204.07660.",
-    "Saif Mohammad, Felipe Bravo-Marquez, Mohammad Salameh, and Svetlana Kiritchenko. 2018. SemEval-2018 task 1: Affect in tweets. In Proceedings of The 12th International Workshop on Semantic Evaluation, pages 1–17, New Orleans, Louisiana. Association for Computational Linguistics.",
-    "Saif Mohammad and Svetlana Kiritchenko. 2018. WikiArt emotions: An annotated dataset of emotions evoked by art. In Proceedings of the Eleventh International Conference on Language Resources and Evaluation (LREC 2018), Miyazaki, Japan. European Language Resources Association (ELRA).",
-    "Ara Norenzayan and Steven J Heine. 2005. Psychological universals: What are they and how can we know? Psychological bulletin, 131(5):763.",
-    "Changqin Quan and Fuji Ren. 2009. Construction of a blog emotion corpus for Chinese emotional expression analysis. In Proceedings of the 2009 Conference on Empirical Methods in Natural Language Processing, pages 1446-1454, Singapore. Association for Computational Linguistics.",
-    "Shaoqing Ren, Kaiming He, Ross Girshick, and Jian Sun. 2015. Faster R-CNN: Towards real-time object detection with region proposal networks. Advances in neural information processing systems, 28.",
-    "James A Russell and Lisa Feldman Barrett. 1999. Core affect, prototypical emotional episodes, and other things called emotion: dissecting the elephant. Journal of personality and social psychology, 76(5):805.",
-    "Elvis Saravia, Hsien-Chi Toby Liu, Yen-Hao Huang, Junlin Wu, and Yi-Shin Chen. 2018. CARER: Contextualized affect representations for emotion recognition. In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, pages 3687-3697, Brussels, Belgium. Association for Computational Linguistics.",
-    "Krishna Srinivasan, Karthik Raman, Jiecao Chen, Michael Bendersky, and Marc Najork. 2021. Wit: Wikipedia-based image text dataset for multimodal multilingual machine learning. In Proceedings of the 44th International ACM SIGIR Conference on Research and Development in Information Retrieval, pages 2443-2449.",
-    "Carlo Strapparava and Rada Mihalcea. 2007. SemEval-2007 task 14: Affective text. In Proceedings of the Fourth International Workshop on Semantic Evaluations (SemEval-2007), pages 70-74, Prague, Czech Republic. Association for Computational Linguistics.",
-    "Salah G Thomason. 2001. Language contact. Edinburgh University Press.",
-    "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, ukasz Kaiser, and Illia Polosukhin. 2017. Attention is all you need. Advances in neural information processing systems, 30.",
-    "Zhongqing Wang, Yue Zhang, Sophia Lee, Shoushan Li, and Guodong Zhou. 2016. A bilingual attention network for code-switched emotion prediction. In Proceedings of COLING 2016, the 26th International Conference on Computational Linguistics: Technical Papers, pages 1624-1634, Osaka, Japan. The COLING 2016 Organizing Committee.",
-    "Thomas Wolf, Lysandre Debut, Victor Sanh, Julien Chaumond, Clement Delangue, Anthony Moi, Pierric Cistac, Tim Rault, Rémi Louf, Morgan Funtowicz, et al. 2019. Huggingface's transformers: State-of-the-art natural language processing. arXiv preprint arXiv:1910.03771.",
-    "Zhongzhe Xiao, Ying Chen, Weibei Dou, Zhi Tao, and Liming Chen. 2018. MES-P: an emotional tonal speech dataset in mandarin chinese with distal and proximal labels. arXiv preprint arXiv:1808.10095.",
-    "Kelvin Xu, Jimmy Ba, Ryan Kiros, Kyunghyun Cho, Aaron Courville, Ruslan Salakhudinov, Rich Zemel, and Yoshua Bengio. 2015. Show, attend and tell: Neural image caption generation with visual attention. In International conference on machine learning, pages 2048-2057. PMLR."
-  ]
+  "primary_bias_target": "Cultural bias"
 }

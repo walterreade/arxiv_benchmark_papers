@@ -2,11 +2,40 @@
   "filename": "2304.14599.pdf",
   "title": "Antisemitic Messages? A Guide to High-Quality Annotation and a Labeled Dataset of Tweets",
   "arxiv_url": "https://arxiv.org/pdf/2304.14599",
-  "bias_targets": [
-    {
-      "target": "Religious and Ethnic bias (Antisemitism)",
-      "methodology": "Collection and expert human annotation of a Twitter dataset (6,941 tweets) using keywords related to Jews, Israel, and known slurs, classified based on the International Holocaust Remembrance Alliance (IHRA) Working Definition of Antisemitism to train and evaluate automated hate speech detection models."
-    }
+  "religious_groups": [
+    "Judaism"
   ],
-  "primary_bias_target": "Religious and Ethnic bias (Antisemitism)"
+  "models_tested": [
+    "ChatGPT"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "major",
+  "base_benchmarks": [],
+  "continuous_testing": true,
+  "findings": "The paper presents a dataset of 6,941 tweets, of which 1,250 (18%) were labeled as antisemitic. It found that context is crucial for detection; for example, the slur 'ZioNazi*' was used antisemitically in 88% of cases, while the slur 'k---s' was only used antisemitically in 34% of cases, often appearing in tweets that were calling out antisemitism. The study highlights the difficulty of automated detection, noting that ChatGPT incorrectly classified a message that was reporting on antisemitic tropes as being antisemitic itself. The annotation process revealed significant subjectivity, with a pre-discussion Cohen's kappa of 0.66 between annotators.",
+  "references": [
+    "Alkomah, Fatimah, and Xiaogang Ma. 2022. \"A Literature Review of Textual Hate Speech Detection Methods and Datasets.\" Information 13 (6): 273. https://doi.org/10.3390/info13060273.",
+    "Ascone, Laura, Matthias J. Becker, Matthew Bolton, Alexis Chapelan, Jan Krasni, Karolina Placzynta, Marcus Scheiber, Hagen Troschke, and Chloé Vincent. 2022. \"Decoding Antisemitism: An AI-Driven Study on Hate Speech &amp; Imagery Online. Third Discourse Report,\" April. https://doi.org/10.14279/DEPOSITONCE-15314.",
+    "Becker, Matthias J., and Daniel Allington. 2021. \"Decoding Antisemitism: An AI-Driven Study on Hate Speech and Imagery Online. Discourse Report No. 2. Technical Report.\" Berlin: Technical University of Berlin Centre for Research on Antisemitism.",
+    "Chandra, Mohit, Dheeraj Pailla, Himanshu Bhatia, Aadilmehdi Sanchawala, Manish Gupta, Manish Shrivastava, and Ponnurangam Kumaraguru. 2021. \"'Subverting the Jewtocracy': Online Antisemitism Detection Using Multimodal Deep Learning.\" ArXiv:2104.05947 [Cs], April. http://arxiv.org/abs/2104.05947.",
+    "Davis, Clayton A., Giovanni Luca Ciampaglia, Luca Maria Aiello, Keychul Chung, Michael D. Conover, Emilio Ferrara, Alessandro Flammini, et al. 2016. \"OSoMe: The IUNI Observatory on Social Media.\" PeerJ Computer Science 2 (October): e87. https://doi.org/10.7717/peerj-cs.87.",
+    "Guhl, Jakob, Julia Ebner, and Jan Rau. 2020. \"The Online Ecosystem of the German Far-Right.” London, Washington DC, Beirut, Toronto: Institute for Strategic Dialogue. https://www.bosch-stiftung.de/en/publication/online-ecosystem-german-far-right.",
+    "Hoseini, Mohamad, Philipe Melo, Fabricio Benevenuto, Anja Feldmann, and Savvas Zannettou. 2021. “On the Globalization of the QAnon Conspiracy Theory Through Telegram.\" https://doi.org/10.48550/ARXIV.2105.13020.",
+    "Jikeli, Gunther, Damir Cavar, and Daniel Miehling. 2019. \"Annotating Antisemitic Online Content. Towards an Applicable Definition of Antisemitism.” ArXiv:1910.01214 [Cs.CY], arXiv preprint, . https://doi.org/10.5967/3r3m-na89.",
+    "Jikeli, Gunther, Sameer Karali, Daniel Miehling, and Katharina Soemer. 2023. \"Antisemitism on Twitter: A Dataset for Machine Learning and Text Analytics.\" Zenodo. https://doi.org/10.5281/ZENODO.7872835.",
+    "La Morgia, Massimo, Alessandro Mei, Alberto Maria Mongardini, and Jie Wu. 2021. \"Uncovering the Dark Side of Telegram: Fakes, Clones, Scams, and Conspiracy Movements.\" https://doi.org/10.48550/ARXIV.2111.13530.",
+    "MacAvaney, Sean, Hao-Ren Yao, Eugene Yang, Katina Russell, Nazli Goharian, and Ophir Frieder. 2019. \"Hate Speech Detection: Challenges and Solutions.\" Edited by Minlie Huang. PLOS ONE 14 (8): e0221152. https://doi.org/10.1371/journal.pone.0221152.",
+    "Poletto, Fabio, Valerio Basile, Manuela Sanguinetti, Cristina Bosco, and Viviana Patti. 2021. \"Resources and Benchmark Corpora for Hate Speech Detection: A Systematic Review.\" Language Resources and Evaluation 55 (2): 477–523. https://doi.org/10.1007/s10579-020-09502-8.",
+    "Pustejovsky, J., and Amber Stubbs. 2013. Natural Language Annotation for Machine Learning. Sebastopol, CA: O'Reilly Media.",
+    "Schwarz-Friesel, Monika. 2019. Judenhass im Internet Antisemitismus als kulturelle Konstante und kollektives Gefühl. Berlin; Leipzig: Hentrich & Hentrich.",
+    "Steffen, Elisabeth, Helena Mihaljević, Milena Pustet, Nyco Bischoff, María do Mar Castro Varela, Yener Bayramoğlu, and Bahar Oghalai. 2022. \"Codes, Patterns and Shapes of Contemporary Online Antisemitism and Conspiracy Narratives – an Annotation Guide and Labeled German-Language Dataset in the Context of COVID-19.\" https://doi.org/10.48550/ARXIV.2210.07934.",
+    "Vergani, Matteo, Alfonso Martinez Arranz, Ryan Scrivens, and Liliana Orellana. 2022. \"Hate Speech in a Telegram Conspiracy Channel During the First Year of the COVID-19 Pandemic.\" Social Media + Society 8 (4): 205630512211387. https://doi.org/10.1177/20563051221138758.",
+    "Yin, Wenjie, and Arkaitz Zubiaga. 2021. “Towards Generalisable Hate Speech Detection: A Review on Obstacles and Solutions.\" PeerJ Computer Science 7 (June): e598. https://doi.org/10.7717/peerj-cs.598."
+  ],
+  "measurement_description": "Detection of antisemitic hate speech in Twitter posts, with messages classified as antisemitic or not based on the International Holocaust Remembrance Alliance (IHRA) definition of antisemitism."
 }

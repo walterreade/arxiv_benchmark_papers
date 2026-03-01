@@ -2,57 +2,27 @@
   "filename": "2509.00398.pdf",
   "title": "A Study on the Framework for Evaluating the Ethics and Trustworthiness of Generative AI",
   "arxiv_url": "https://arxiv.org/pdf/2509.00398",
-  "benchmark_measurement": "The paper does not mention or measure any aspects of faith or religion. The evaluation framework focuses on general ethical and trustworthiness criteria such as fairness (related to race, gender, age), transparency, accountability, safety, privacy, accuracy, and consistency.",
-  "religious_groups": [],
-  "models_tested": [
-    "ChatGPT (GPT-5)",
-    "Gemini (2.5 Flash)",
-    "Claude (Sonnet 4)",
-    "Grok (Grok 4)"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Generating questions that induce gender stereotypes (e.g., regarding occupations) and evaluating the outputs via human expert review on a 5-point scale and statistical analysis."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Generating questions with expressions suggesting various races to test whether the chatbot provides biased responses, evaluated via human expert review."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Generating questions with expressions suggesting different age groups to test for biased responses toward specific demographics, evaluated via human expert review."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Generating questions with expressions suggesting different socioeconomic backgrounds to test for biased model responses, evaluated via human expert review."
+    },
+    {
+      "target": "Political bias",
+      "methodology": "Conducting Red Team testing by repeatedly asking targeted questions to induce the model to provide biased responses regarding specific political views or controversial topics."
+    }
   ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "long"
-  ],
-  "religion_component": "none",
-  "base_benchmarks": [],
-  "continuous_testing": true,
-  "findings": "The paper does not contain any findings related to religion as it was not a focus of the study. The analysis is centered on a general framework for AI ethics and trustworthiness.",
-  "references": [
-    "Jeong, C. (2023). A Study on the Implementation of Generative AI Services Using an Enterprise Data-Based LLM Application Architecture. Advances in Artificial Intelligence and Machine Learning, 3(4), 1588-1618. https://dx.doi.org/10.54364/AAIML.2023.1191",
-    "Jeong, C. (2023). Generative AI service implementation using LLM application architecture: based on RAG model and LangChain framework. Journal of Intelligence and Information Systems, 19(4), 129-164. https://doi.org/10.13088/jiis.2023.29.4.129",
-    "Ziv, B.Z. Nature. (2025, July 1). Why we need mandatory safeguards for emotionally responsive AI. Retrieved from https://www.nature.com/articles/d41586-025-02031-w",
-    "Goodfellow, I., Pouget-Abadie, J., Mirza, M., Xu, B., Warde-Farley, D., Ozair, S., Courville, A., & Bengio, Y. (2014). Generative Adversarial Networks. Advances in Neural Information Processing Systems, 27.",
-    "Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017). Attention Is All You Need. Advances in Neural Information Processing Systems, 30.",
-    "An, J. & Park, H. (2023). Development of a case-based nursing education program using generative artificial intelligence. Journal of Korean Academy of Nursing Education, 29(3), 234–246. https://doi.org/10.5977/jkasne.2023.29.3.234",
-    "Adam, M., Wessel, M., & Benlian, A. (2021). AI-based chatbots in customer service and their effects on user compliance. Electronic Markets, 31(2), 427-445.",
-    "Przegalinska, A., Ciechanowski, L., Stroz, A., Gloor, P., & Mazurek, G. (2019). In bot we trust: A new methodology of chatbot performance measures. Business Horizons, 62(6), 785-797.",
-    "Park, E. (2024). The effects of customers' regulatory focus and familiarity with generative AI-based chatbots on their intention to disclose personal information: Focusing on privacy calculus theory. Knowledge Management Research, 25(2), 49-68. https://doi.org/10.15813/kmr.2024.25.2.003",
-    "Sánchez-Díaz, X., Ayala-Bastidas, G., Fonseca-Ortiz, P., Garrido, L. (2018). A Knowledge-Based Methodology for Building a Conversational Chatbot as an Intelligent Tutor, Advances in Computational Intelligence, Vol. 11289. 165-175. https://doi.org/10.1007/978-3-030-04497-8_14",
-    "Jeong, C. & Jeong, J. (2020). A study on building AI chatbots for the post-COVID-19 untact era. Journal of the Korea Institute of IT Service, 19(4), 31-47. https://doi.org/10.9716/KITS.2020.19.4.031",
-    "Yang, et al., “Foundation Models for Decision Making: Problems, Methods, and Opportunities\", 2023. arXiv preprint arXiv:2303.04129.",
-    "Karpas, E., et al., “AgentBench: Evaluating LLMs as Agents\", 2023. arXiv preprint arXiv:2308.03688.",
-    "Jeong, C. (2025). Beyond Text: Implementing Multimodal Large Language Model-Powered Multi-Agent Systems Using a No-Code Platform. Journal of Intelligence and Information Systems. 2025;31(1):191-231.doi:10.13088/jiis.2025.31.1.191",
-    "Jeong, C. (2025). A Practical MCP×A2A Integration Framework for Interoperability in LLM-Based Autonomous Multi-Agent Systems. Journal of Intelligence and Information Systems, 31(3), 141-170. https://dx.doi.org/10.13088/jiis.2025.31.3.141",
-    "Jeong, C. S., Sim, S. M., Cho, H. Y., Kim, S. S., & Shin, B. K. (2025). E2E Process Automation Leveraging Generative Al and IDP-Based Automation Agent: A Case Study on Corporate Expense Processing. Artificial Intelligence and Applications.. https://doi.org/10.47852/bonviewAIA52026307",
-    "Schlagwein, D., & Willcocks, L. (2023). 'ChatGPT et al.': The ethics of using (generative) artificial intelligence in research and science. Journal of Information Technology, 38(3), 232-238.",
-    "Teubner, T., Flath, C. M., Weinhardt, C., van der Aalst, W., & Hinz, O. (2023). Willkommen im Zeitalter von ChatGPT & Co.: Die Chancen großer Sprachmodelle. Business & Information Systems Engineering, 65(2), 95-101.",
-    "National Research Foundation of Korea. (2025, July 5). Researchers' Perceptions on Generative AI and Research Ethics. Retrieved from https://kenss.or.kr/board/data/article/252645",
-    "European Commission. (2019). Ethics Guidelines for Trustworthy AI. High-Level Expert Group on Artificial Intelligence.",
-    "National Institute of Standards and Technology (NIST). (2023). Artificial Intelligence Risk Management Framework (AI RMF 1.0). NIST AI 100-1",
-    "Korea Institute for Industrial Technology Promotion. (2025, July 5). China Establishes Next-Generation AI Ethical Guidelines (China Ministry of Science and Technology, September 26). Retrieved from https://eiec.kdi.re.kr/policy/domesticView.do?ac=0000159203&issus=",
-    "Ministry of Science and ICT. (2020). Principles of Artificial Intelligence Ethics Centered on People.",
-    "SPRi. (2025, April 30). Research on AI Reliability and Ethical Systems. Retrieved from https://spri.kr/posts/view/23864?code=research",
-    "Korea Information Society Development Institute (KISDI). (2023). Self-Checklist for Implementing the 2023 AI Ethics Guidelines. Retrieved from https://www.kisdi.re.kr/bbs/view.do?bbsSn=114068&key=m2101113055944",
-    "The White House. (2022). Blueprint for an AI Bill of Rights",
-    "State Council of the People's Republic of China. (2017). New Generation Artificial Intelligence Development Plan.",
-    "Administration of Cyberspace of China (CAC). (2022). Regulations on the Management of Algorithm Recommendation Services.",
-    "Lee, J. (2022). A Study on the Ethics Policy of Artificial Intelligence (AI) in China. The Korean Association of Chinese Studies, no. 80, 69-87. http://dx.doi.org/10.14378/KACS.2022.80.80.4",
-    "FAIR AI. (2025, July 5). AI Ethics Guidelines by Country. Retrieved from https://fairai.or.kr/updates/guidelines",
-    "Jeong, C. (2025). Design and Evaluation Methods for LLM-Based Explainable AI (XAI)-Based Human-AI Collaboration Systems. Advances in Artificial Intelligence and Machine Learning, 5(3), 4308-4341. https://dx.doi.org/10.54364/AAIML.2025.53240",
-    "Jacoby, J., & Matell, M. S. (1971). Three-Point Likert Scales Are Good Enough. Journal of Marketing Research, 8(4), 495-500. https://doi.org/10.2307/3150242",
-    "Firstpagesage. (2025, September, 11). Top Generative AI Chatbots by Market Share – September 2025. Retrieved from https://firstpagesage.com/reports/top-generative-ai-chatbots/"
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

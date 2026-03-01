@@ -2,85 +2,31 @@
   "filename": "2508.12733.pdf",
   "title": "LinguaSafe: A Comprehensive Multilingual Safety Benchmark for Large Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2508.12733",
-  "benchmark_measurement": "The benchmark measures LLM safety against prompts that promote discrimination, prejudice, or unfair treatment based on protected characteristics, with religion being one of the specified subtypes.",
-  "religious_groups": [],
-  "models_tested": [
-    "GPT-40",
-    "Claude-3.5-Sonnet",
-    "Gemini-2.0-Flash",
-    "Qwen2.5-7B-Instruct",
-    "Mistral-7B-Instruct-v0.3",
-    "Llama-3.1-8B-Instruct",
-    "Phi-4",
-    "Gemma-2-27B-IT",
-    "DeepSeek-V3-0324"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Direct evaluation via multiple-choice safety recognition questions and indirect evaluation via Q&A chat to measure rejection and oversensitivity rates using culturally transcreated and native multilingual prompts containing gender discrimination."
+    },
+    {
+      "target": "Racial/ethnic bias",
+      "methodology": "Direct evaluation via multiple-choice safety recognition questions and indirect evaluation via Q&A chat to measure rejection and oversensitivity rates using culturally transcreated and native multilingual prompts containing racial or ethnic discrimination."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Direct evaluation via multiple-choice safety recognition questions and indirect evaluation via Q&A chat to measure rejection and oversensitivity rates using culturally transcreated and native multilingual prompts containing age-related discrimination."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Direct evaluation via multiple-choice safety recognition questions and indirect evaluation via Q&A chat to measure rejection and oversensitivity rates using culturally transcreated and native multilingual prompts containing religious discrimination."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Direct evaluation via multiple-choice safety recognition questions and indirect evaluation via Q&A chat to measure rejection and oversensitivity rates using culturally transcreated and native multilingual prompts containing sexual orientation discrimination."
+    },
+    {
+      "target": "Nationality/Regional bias",
+      "methodology": "Direct evaluation via multiple-choice safety recognition questions and indirect evaluation via Q&A chat to measure rejection and oversensitivity rates using culturally transcreated and native multilingual prompts preserving original nationality or regional prejudice."
+    }
   ],
-  "languages_evaluated": [
-    "English",
-    "Russian",
-    "Chinese",
-    "Vietnamese",
-    "Czech",
-    "Arabic",
-    "Korean",
-    "Thai",
-    "Hungarian",
-    "Serbian",
-    "Malay",
-    "Bengali"
-  ],
-  "response_type": [
-    "short",
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "RTP-LX",
-    "PTP",
-    "MultiJail",
-    "Aya",
-    "XSAFETY"
-  ],
-  "continuous_testing": false,
-  "findings": "The paper does not report specific findings for religion. Results are aggregated at the higher-level 'Fairness & Justice' domain, which includes religion alongside other categories like gender, age, and race. The general findings indicate that LLM safety performance varies significantly across different languages and domains, with no specific analysis dedicated to religious content.",
-  "references": [
-    "Aakanksha; Ahmadian, A.; Ermis, B.; Goldfarb-Tarrant, S.; Kreutzer, J.; Fadaee, M.; and Hooker, S. 2024. The Multilingual Alignment Prism: Aligning Global and Local Preferences to Reduce Harm. In Al-Onaizan, Y.; Bansal, M.; and Chen, Y.-N., eds., Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, 12027–12049. Miami, Florida, USA: Association for Computational Linguistics.",
-    "Abdin, M.; Aneja, J.; Behl, H.; Bubeck, S.; Eldan, R.; Gunasekar, S.; Harrison, M.; Hewett, R. J.; Javaheripi, M.; Kauffmann, P.; Lee, J. R.; Lee, Y. T.; Li, Y.; Liu, W.; Mendes, C. C. T.; Nguyen, A.; Price, E.; de Rosa, G.; Saarikivi, O.; Salim, A.; Shah, S.; Wang, X.; Ward, R.; Wu, Y.; Yu, D.; Zhang, C.; and Zhang, Y. 2024. Phi-4 Technical Report. arXiv:2412.08905.",
-    "Anthropic. 2024. Introducing Claude 3.5 Sonnet. Blog post.",
-    "Biderman, S.; Bicheno, K.; and Gao, L. 2022. Datasheet for the pile. arXiv preprint arXiv:2201.07311.",
-    "Brown, T.; Mann, B.; Ryder, N.; Subbiah, M.; Kaplan, J. D.; Dhariwal, P.; Neelakantan, A.; Shyam, P.; Sastry, G.; Askell, A.; Agarwal, S.; Herbert-Voss, A.; Krueger, G.; Henighan, T.; Child, R.; Ramesh, A.; Ziegler, D.; Wu, J.; Winter, C.; Hesse, C.; Chen, M.; Sigler, E.; Litwin, M.; Gray, S.; Chess, B.; Clark, J.; Berner, C.; McCandlish, S.; Radford, A.; Sutskever, I.; and Amodei, D. 2020. Language Models are Few-Shot Learners. In Larochelle, H.; Ranzato, M.; Hadsell, R.; Balcan, M.; and Lin, H., eds., Advances in Neural Information Processing Systems, volume 33, 1877–1901. Curran Associates, Inc.",
-    "de Wynter, A.; Watts, I.; Wongsangaroonsri, T.; Zhang, M.; Farra, N.; Altıntoprak, N. E.; Baur, L.; Claudet, S.; Gajdusek, P.; Gören, C.; Gu, Q.; Kaminska, A.; Kaminski, T.; Kuo, R.; Kyuba, A.; Lee, J.; Mathur, K.; Merok, P.; Milovanović, I.; Paananen, N.; Paananen, V.-M.; Pavlenko, A.; Vidal, B. P.; Strika, L.; Tsao, Y.; Turcato, D.; Vakhno, O.; Velcsov, J.; Vickers, A.; Visser, S.; Widarmanto, H.; Zaikin, A.; and Chen, S.-Q. 2024. RTP-LX: Can LLMs Evaluate Toxicity in Multilingual Scenarios? arXiv:2404.14397.",
-    "DeepSeek-AI; Liu, A.; Feng, B.; Xue, B.; Wang, B.; Wu, B.; Lu, C.; Zhao, C.; Deng, C.; Zhang, C.; Ruan, C.; Dai, D.; Guo, D.; Yang, D.; Chen, D.; Ji, D.; Li, E.; Lin, F.; Dai, F.; Luo, F.; Hao, G.; Chen, G.; Li, G.; Zhang, H.; Bao, H.; Xu, H.; Wang, H.; Zhang, H.; Ding, H.; Xin, H.; Gao, H.; Li, H.; Qu, H.; Cai, J. L.; Liang, J.; Guo, J.; Ni, J.; Li, J.; Wang, J.; Chen, J.; Chen, J.; Yuan, J.; Qiu, J.; Li, J.; Song, J.; Dong, K.; Hu, K.; Gao, K.; Guan, K.; Huang, K.; Yu, K.; Wang, L.; Zhang, L.; Xu, L.; Xia, L.; Zhao, L.; Wang, L.; Zhang, L.; Li, M.; Wang, M.; Zhang, M.; Zhang, M.; Tang, M.; Li, M.; Tian, N.; Huang, P.; Wang, P.; Zhang, P.; Wang, Q.; Zhu, Q.; Chen, Q.; Du, Q.; Chen, R. J.; Jin, R. L.; Ge, R.; Zhang, R.; Pan, R.; Wang, R.; Xu, R.; Zhang, R.; Chen, R.; Li, S. S.; Lu, S.; Zhou, S.; Chen, S.; Wu, S.; Ye, S.; Ye, S.; Ma, S.; Wang, S.; Zhou, S.; Yu, S.; Zhou, S.; Pan, S.; Wang, T.; Yun, T.; Pei, T.; Sun, T.; Xiao, W. L.; Zeng, W.; Zhao, W.; An, W.; Liu, W.; Liang, W.; Gao, W.; Yu, W.; Zhang, W.; Li, X. Q.; Jin, X.; Wang, X.; Bi, X.; Liu, X.; Wang, X.; Shen, X.; Chen, X.; Zhang, X.; Chen, X.; Nie, X.; Sun, X.; Wang, X.; Cheng, X.; Liu, X.; Xie, X.; Liu, X.; Yu, X.; Song, X.; Shan, X.; Zhou, X.; Yang, X.; Li, X.; Su, X.; Lin, X.; Li, Y. K.; Wang, Y. Q.; Wei, Y. X.; Zhu, Y. X.; Zhang, Y.; Xu, Y.; Xu, Y.; Huang, Y.; Li, Y.; Zhao, Y.; Sun, Y.; Li, Y.; Wang, Y.; Yu, Y.; Zheng, Y.; Zhang, Y.; Shi, Y.; Xiong, Y.; He, Y.; Tang, Y.; Piao, Y.; Wang, Y.; Tan, Y.; Ma, Y.; Liu, Y.; Guo, Y.; Wu, Y.; Ou, Y.; Zhu, Y.; Wang, Y.; Gong, Y.; Zou, Y.; He, Y.; Zha, Y.; Xiong, Y.; Ma, Y.; Yan, Y.; Luo, Y.; You, Y.; Liu, Y.; Zhou, Y.; Wu, Z. F.; Ren, Z. Z.; Ren, Z.; Sha, Z.; Fu, Z.; Xu, Z.; Huang, Z.; Zhang, Z.; Xie, Z.; Zhang, Z.; Hao, Z.; Gou, Z.; Ma, Z.; Yan, Z.; Shao, Z.; Xu, Z.; Wu, Z.; Zhang, Z.; Li, Z.; Gu, Z.; Zhu, Z.; Liu, Z.; Li, Z.; Xie, Z.; Song, Z.; Gao, Z.; and Pan, Z. 2025. DeepSeek-V3 Technical Report. arXiv:2412.19437.",
-    "Deng, Y.; Zhang, W.; Pan, S. J.; and Bing, L. 2024. Multilingual Jailbreak Challenges in Large Language Models. In The Twelfth International Conference on Learning Representations.",
-    "Dubey, A.; Jauhri, A.; Pandey, A.; Kadian, A.; Al-Dahle, A.; Letman, A.; Mathur, A.; Schelten, A.; Yang, A.; Fan, A.; et al. 2024. The llama 3 herd of models. arXiv preprint arXiv:2407.21783.",
-    "Feng, Z.; Zhang, Y.; Li, H.; Liu, W.; Lang, J.; Feng, Y.; Wu, J.; and Liu, Z. 2024. Improving Ilm-based machine translation with systematic self-correction. arXiv preprint arXiv:2402.16379.",
-    "Ganguli, D.; Lovitt, L.; Kernion, J.; Askell, A.; Bai, Y.; Kadavath, S.; Mann, B.; Perez, E.; Schiefer, N.; Ndousse, K.; Jones, A.; Bowman, S.; Chen, A.; Conerly, T.; DasSarma, N.; Drain, D.; Elhage, N.; El-Showk, S.; Fort, S.; Hatfield-Dodds, Z.; Henighan, T.; Hernandez, D.; Hume, T.; Jacobson, J.; Johnston, S.; Kravec, S.; Olsson, C.; Ringer, S.; Tran-Johnson, E.; Amodei, D.; Brown, T.; Joseph, N.; McCandlish, S.; Olah, C.; Kaplan, J.; and Clark, J. 2022. Red Teaming Language Models to Reduce Harms: Methods, Scaling Behaviors, and Lessons Learned. arXiv:2209.07858.",
-    "Gao, L.; Biderman, S.; Black, S.; Golding, L.; Hoppe, T.; Foster, C.; Phang, J.; He, H.; Thite, A.; Nabeshima, N.; et al. 2020. The Pile: An 800GB dataset of diverse text for language modeling. arXiv preprint arXiv:2101.00027.",
-    "Gehman, S.; Gururangan, S.; Sap, M.; Choi, Y.; and Smith, N. A. 2020. RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models. In Cohn, T.; He, Y.; and Liu, Y., eds., Findings of the Association for Computational Linguistics: EMNLP 2020, 3356–3369. Online: Association for Computational Linguistics.",
-    "Google. 2024. A new era for AI and Google: introducing Gemini 2.0. Blog post.",
-    "Henderson*, P.; Krass*, M. S.; Zheng, L.; Guha, N.; Manning, C. D.; Jurafsky, D.; and Ho, D. E. 2022. Pile of Law: Learning Responsible Data Filtering from the Law and a 256GB Open-Source Legal Dataset.",
-    "Huang, Y.; Sun, L.; Wang, H.; Wu, S.; Zhang, Q.; Li, Y.; Gao, C.; Huang, Y.; Lyu, W.; Zhang, Y.; Li, X.; Sun, H.; Liu, Z.; Liu, Y.; Wang, Y.; Zhang, Z.; Vidgen, B.; Kailkhura, B.; Xiong, C.; Xiao, C.; Li, C.; Xing, E. P.; Huang, F.; Liu, H.; Ji, H.; Wang, H.; Zhang, H.; Yao, H.; Kellis, M.; Zitnik, M.; Jiang, M.; Bansal, M.; Zou, J.; Pei, J.; Liu, J.; Gao, J.; Han, J.; Zhao, J.; Tang, J.; Wang, J.; Vanschoren, J.; Mitchell, J.; Shu, K.; Xu, K.; Chang, K.-W.; He, L.; Huang, L.; Backes, M.; Gong, N. Z.; Yu, P. S.; Chen, P.-Y.; Gu, Q.; Xu, R.; Ying, R.; Ji, S.; Jana, S.; Chen, T.; Liu, T.; Zhou, T.; Wang, W. Y.; Li, X.; Zhang, X.; Wang, X.; Xie, X.; Chen, X.; Wang, X.; Liu, Y.; Ye, Y.; Cao, Y.; Chen, Y.; and Zhao, Y. 2024. TrustLLM: Trustworthiness in Large Language Models. In Forty-first International Conference on Machine Learning.",
-    "Jain, D.; Kumar, P.; Gehman, S.; Zhou, X.; Hartvigsen, T.; and Sap, M. 2024. PolygloToxicityPrompts: Multilingual Evaluation of Neural Toxic Degeneration in Large Language Models. arXiv:2405.09373.",
-    "Jiang, A. Q.; Sablayrolles, A.; Mensch, A.; Bamford, C.; Chaplot, D. S.; de las Casas, D.; Bressand, F.; Lengyel, G.; Lample, G.; Saulnier, L.; Lavaud, L. R.; Lachaux, M.-A.; Stock, P.; Scao, T. L.; Lavril, T.; Wang, T.; Lacroix, T.; and Sayed, W. E. 2023. Mistral 7B. arXiv:2310.06825.",
-    "Lai, V. D.; Ngo, N.; Pouran Ben Veyseh, A.; Man, H.; Dernoncourt, F.; Bui, T.; and Nguyen, T. H. 2023. ChatGPT Beyond English: Towards a Comprehensive Evaluation of Large Language Models in Multilingual Learning. In Bouamor, H.; Pino, J.; and Bali, K., eds., Findings of the Association for Computational Linguistics: EMNLP 2023, 13171–13189. Singapore: Association for Computational Linguistics.",
-    "Levy, S.; Allaway, E.; Subbiah, M.; Chilton, L.; Patton, D.; McKeown, K.; and Wang, W. Y. 2022. SafeText: A Benchmark for Exploring Physical Safety in Language Models. In Goldberg, Y.; Kozareva, Z.; and Zhang, Y., eds., Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, 2407–2421. Abu Dhabi, United Arab Emirates: Association for Computational Linguistics.",
-    "Li, C.; Chen, M.; Wang, J.; Sitaram, S.; and Xie, X. 2024a. CultureLLM: Incorporating Cultural Differences into Large Language Models. arXiv:2402.10946.",
-    "Li, L.; Dong, B.; Wang, R.; Hu, X.; Zuo, W.; Lin, D.; Qiao, Y.; and Shao, J. 2024b. SALAD-Bench: A Hierarchical and Comprehensive Safety Benchmark for Large Language Models. In Ku, L.-W.; Martins, A.; and Srikumar, V., eds., Findings of the Association for Computational Linguistics: ACL 2024, 3923–3954. Bangkok, Thailand: Association for Computational Linguistics.",
-    "Louis Brulé Naudet, T. D. 2024. The case-law, centralizing legal decisions for better use. https://huggingface.co/datasets/HFforLegal/case-law.",
-    "Mayer, H.; Yee, L.; Chui, M.; and Roberts, R. 2025. Superagency in the workplace: Empowering people to unlock Al's full potential at work. McKinsey Digital. Accessed: 2025-02-04.",
-    "Mu, T.; Helyar, A.; Heidecke, J.; Achiam, J.; Vallone, A.; Kivlichan, I. D.; Lin, M.; Beutel, A.; Schulman, J.; and Weng, L. 2024. Rule Based Rewards for Language Model Safety. In The Thirty-eighth Annual Conference on Neural Information Processing Systems.",
-    "Nguyen, T.; Nguyen, C. V.; Lai, V. D.; Man, H.; Ngo, N. T.; Dernoncourt, F.; Rossi, R. A.; and Nguyen, T. H. 2024. CulturaX: A Cleaned, Enormous, and Multilingual Dataset for Large Language Models in 167 Languages. In Calzolari, N.; Kan, M.-Y.; Hoste, V.; Lenci, A.; Sakti, S.; and Xue, N., eds., Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024), 4226–4237. Torino, Italia: ELRA and ICCL.",
-    "OpenAI. 2024a. GPT-4O System Card. Accessed: 2024-12-20.",
-    "OpenAI. 2024b. Moderation Guide. Accessed: 2024-12-20.",
-    "Pedregosa, F.; Varoquaux, G.; Gramfort, A.; Michel, V.; Thirion, B.; Grisel, O.; Blondel, M.; Prettenhofer, P.; Weiss, R.; Dubourg, V.; Vanderplas, J.; Passos, A.; Cournapeau, D.; Brucher, M.; Perrot, M.; and Duchesnay, E. 2011. Scikitlearn: Machine Learning in Python. Journal of Machine Learning Research, 12: 2825–2830.",
-    "Qin, L.; Chen, Q.; Zhou, Y.; Chen, Z.; Li, Y.; Liao, L.; Li, M.; Che, W.; and Yu, P. S. 2025. A survey of multilingual large language models. Patterns, 6(1): 101118.",
-    "Qwen; :; Yang, A.; Yang, B.; Zhang, B.; Hui, B.; Zheng, B.; Yu, B.; Li, C.; Liu, D.; Huang, F.; Wei, H.; Lin, H.; Yang, J.; Tu, J.; Zhang, J.; Yang, J.; Yang, J.; Zhou, J.; Lin, J.; Dang, K.; Lu, K.; Bao, K.; Yang, K.; Yu, L.; Li, M.; Xue, M.; Zhang, P.; Zhu, Q.; Men, R.; Lin, R.; Li, T.; Tang, T.; Xia, T.; Ren, X.; Ren, X.; Fan, Y.; Su, Y.; Zhang, Y.; Wan, Y.; Liu, Y.; Cui, Z.; Zhang, Z.; and Qiu, Z. 2025. Qwen2.5 Technical Report. arXiv:2412.15115.",
-    "Team, G.; Riviere, M.; Pathak, S.; Sessa, P. G.; Hardin, C.; Bhupatiraju, S.; Hussenot, L.; Mesnard, T.; Shahriari, B.; Ramé, A.; Ferret, J.; Liu, P.; Tafti, P.; Friesen, A.; Casbon, M.; Ramos, S.; Kumar, R.; Lan, C. L.; Jerome, S.; Tsitsulin, A.; Vieillard, N.; Stanczyk, P.; Girgin, S.; Momchev, N.; Hoffman, M.; Thakoor, S.; Grill, J.-B.; Neyshabur, B.; Bachem, O.; Walton, A.; Severyn, A.; Parrish, A.; Ahmad, A.; Hutchison, A.; Abdagic, A.; Carl, A.; Shen, A.; Brock, A.; Coenen, A.; Laforge, A.; Paterson, A.; Bastian, B.; Piot, B.; Wu, B.; Royal, B.; Chen, C.; Kumar, C.; Perry, C.; Welty, C.; Choquette-Choo, C. A.; Sinopalnikov, D.; Weinberger, D.; Vijaykumar, D.; Rogozińska, D.; Herbison, D.; Bandy, E.; Wang, E.; Noland, E.; Moreira, E.; Senter, E.; Eltyshev, E.; Visin, F.; Rasskin, G.; Wei, G.; Cameron, G.; Martins, G.; Hashemi, H.; Klimczak-Plucińska, H.; Batra, H.; Dhand, H.; Nardini, I.; Mein, J.; Zhou, J.; Svensson, J.; Stanway, J.; Chan, J.; Zhou, J. P.; Carrasqueira, J.; Iljazi, J.; Becker, J.; Fernandez, J.; van Amersfoort, J.; Gordon, J.; Lipschultz, J.; Newlan, J.; yeong Ji, J.; Mohamed, K.; Badola, K.; Black, K.; Millican, K.; McDonell, K.; Nguyen, K.; Sodhia, K.; Greene, K.; Sjoesund, L. L.; Usui, L.; Sifre, L.; Heuermann, L.; Lago, L.; McNealus, L.; Soares, L. B.; Kilpatrick, L.; Dixon, L.; Martins, L.; Reid, M.; Singh, M.; Iverson, M.; Görner, M.; Velloso, M.; Wirth, M.; Davidow, M.; Miller, M.; Rahtz, M.; Watson, M.; Risdal, M.; Kazemi, M.; Moynihan, M.; Zhang, M.; Kahng, M.; Park, M.; Rahman, M.; Khatwani, M.; Dao, N.; Bardoliwalla, N.; Devanathan, N.; Dumai, N.; Chauhan, N.; Wahltinez, O.; Botarda, P.; Barnes, P.; Barham, P.; Michel, P.; Jin, P.; Georgiev, P.; Culliton, P.; Kuppala, P.; Comanescu, R.; Merhej, R.; Jana, R.; Rokni, R. A.; Agarwal, R.; Mullins, R.; Saadat, S.; Carthy, S. M.; Cogan, S.; Perrin, S.; Arnold, S. M. R.; Krause, S.; Dai, S.; Garg, S.; Sheth, S.; Ronstrom, S.; Chan, S.; Jordan, T.; Yu, T.; Eccles, T.; Hennigan, T.; Kocisky, T.; Doshi, T.; Jain, V.; Yadav, V.; Meshram, V.; Dharmadhikari, V.; Barkley, W.; Wei, W.; Ye, W.; Han, W.; Kwon, W.; Xu, X.; Shen, Z.; Gong, Z.; Wei, Z.; Cotruta, V.; Kirk, P.; Rao, A.; Giang, M.; Peran, L.; Warkentin, T.; Collins, E.; Barral, J.; Ghahramani, Z.; Hadsell, R.; Sculley, D.; Banks, J.; Dragan, A.; Petrov, S.; Vinyals, O.; Dean, J.; Hassabis, D.; Kavukcuoglu, K.; Farabet, C.; Buchatskaya, E.; Borgeaud, S.; Fiedel, N.; Joulin, A.; Kenealy, K.; Dadashi, R.; and Andreev, A. 2024. Gemma 2: Improving Open Language Models at a Practical Size. arXiv:2408.00118.",
-    "Wang, S.; Wang, P.; Zhou, T.; Dong, Y.; Tan, Z.; and Li, J. 2024a. CEB: Compositional Evaluation Benchmark for Fairness in Large Language Models. arXiv:2407.02408.",
-    "Wang, W.; Tu, Z.; Chen, C.; Yuan, Y.; Huang, J.-t.; Jiao, W.; and Lyu, M. 2024b. All Languages Matter: On the Multilingual Safety of LLMs. In Ku, L.-W.; Martins, A.; and Srikumar, V., eds., Findings of the Association for Computational Linguistics: ACL 2024, 5865–5877. Bangkok, Thailand: Association for Computational Linguistics.",
-    "Wang, Y.; Li, H.; Han, X.; Nakov, P.; and Baldwin, T. 2024c. Do-Not-Answer: Evaluating Safeguards in LLMs. In Graham, Y.; and Purver, M., eds., Findings of the Association for Computational Linguistics: EACL 2024, 896–911. St. Julian’s, Malta: Association for Computational Linguistics.",
-    "Yong, Z.-X.; Menghini, C.; and Bach, S. H. 2024. Low-Resource Languages Jailbreak GPT-4. arXiv:2310.02446.",
-    "Zhang, X.; Zhang, Y.; Long, D.; Xie, W.; Dai, Z.; Tang, J.; Lin, H.; Yang, B.; Xie, P.; Huang, F.; et al. 2024. mGTE: Generalized Long-Context Text Representation and Reranking Models for Multilingual Text Retrieval. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing: Industry Track, 1393–1412.",
-    "Zhao, W. X.; Zhou, K.; Li, J.; Tang, T.; Wang, X.; Hou, Y.; Min, Y.; Zhang, B.; Zhang, J.; Dong, Z.; Du, Y.; Yang, C.; Chen, Y.; Chen, Z.; Jiang, J.; Ren, R.; Li, Y.; Tang, X.; Liu, Z.; Liu, P.; Nie, J.-Y.; and Wen, J.-R. 2024. A Survey of Large Language Models. arXiv:2303.18223."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

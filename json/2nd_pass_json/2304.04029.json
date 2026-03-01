@@ -2,84 +2,43 @@
   "filename": "2304.04029.pdf",
   "title": "Bipol: A Novel Multi-Axes Bias Evaluation Metric with Explainability for NLP",
   "arxiv_url": "https://arxiv.org/pdf/2304.04029",
-  "benchmark_measurement": "The benchmark, 'bipol', measures social bias against different religious groups in text data. It uses a two-step process involving model-based classification of text as biased/unbiased and a lexicon-based analysis of sensitive term frequencies across multiple axes, including religion.",
-  "religious_groups": [
-    "Christianity",
-    "Islam",
-    "Hinduism"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluated using the two-step 'bipol' metric, which combines corpus-level classification (using models trained on the MAB dataset) with a sentence-level evaluation based on absolute differences in gender-sensitive term frequencies using specific lexica."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluated using the two-step 'bipol' metric, which combines corpus-level classification (using models trained on the MAB dataset) with a sentence-level evaluation based on absolute differences in race-sensitive term frequencies using specific lexica."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluated using the two-step 'bipol' metric, which combines corpus-level classification (using models trained on the MAB dataset) with a sentence-level evaluation based on absolute differences in religion-sensitive term frequencies using specific lexica."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Measured at the corpus level using text classifiers (RoBERTa, DeBERTa, Electra) trained on the aggregated Multi-Axes Bias (MAB) dataset, which includes explicitly labeled data for sexual orientation bias."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Measured at the corpus level using text classifiers trained on the aggregated Multi-Axes Bias (MAB) dataset, which includes explicitly labeled data for disability bias."
+    },
+    {
+      "target": "Mental illness bias",
+      "methodology": "Measured at the corpus level using text classifiers trained on the aggregated Multi-Axes Bias (MAB) dataset, which includes explicitly labeled data for mental illness bias."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Measured at the corpus level using text classifiers trained on the aggregated Multi-Axes Bias (MAB) dataset, which includes explicitly labeled data for age bias."
+    },
+    {
+      "target": "Political bias",
+      "methodology": "Measured at the corpus level using text classifiers trained on the aggregated Multi-Axes Bias (MAB) dataset, which includes explicitly labeled data for political/social bias."
+    },
+    {
+      "target": "Cultural bias",
+      "methodology": "Measured at the corpus level using text classifiers trained on the aggregated Multi-Axes Bias (MAB) dataset, which includes explicitly labeled data for cultural bias."
+    }
   ],
-  "models_tested": [
-    "RoBERTa",
-    "DeBERTa",
-    "Electra"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "WinoBias",
-    "SQuADv2",
-    "COPA",
-    "BOLD",
-    "HolisticBias",
-    "Winogender",
-    "CrowS-Pairs",
-    "StereoSet",
-    "Jigsaw",
-    "SBICv2"
-  ],
-  "continuous_testing": false,
-  "findings": "The paper introduces the 'bipol' metric, which can successfully identify religious bias in NLP datasets. The evaluation of the SQuADv2 dataset using a model trained on their new MAB dataset revealed the presence of religious bias. The authors also released specific lexica for Christian, Muslim, and Hindu terms to facilitate this multi-axis bias analysis.",
-  "references": [
-    "Adewumi, T., Liwicki, F., Liwicki, M., 2022a. Word2vec: Optimal hyperparameters and their impact on natural language processing down- stream tasks. Open Computer Science 12, 134-141. URL: https://doi.org/10.1515/comp-2022-0236, doi:doi:10.1515/comp-2022-0236.",
-    "Adewumi, T., Sabry, S.S., Abid, N., Liwicki, F., Liwicki, M., 2022b. T5 for hate speech, augmented data and ensemble. arXiv preprint arXiv:2210.05480.",
-    "Adewumi, T.P., Liwicki, F., Liwicki, M., 2019. Conver- sational systems in machine learning from the point of view of the philosophy of science using alime chat and related studies. Philosophies 4, 41.",
-    "Antoniak, M., Mimno, D., 2021. Bad seeds: Evaluating lexical methods for bias measurement, in: Proceedings of the 59th Annual Meeting of the Association for Com- putational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pp. 1889-1904.",
-    "Asr, F.T., Mazraeh, M., Lopes, A., Gautam, V., Gonzales, J., Rao, P., Taboada, M., 2021. The gender gap tracker: Using natural language processing to measure gender bias in media. PloS one 16, e0245533.",
-    "Biewald, L., 2020. Experiment tracking with weights and biases. URL: https://www.wandb.com/.software avail- able from wandb.com.",
-    "Blodgett, S.L., Lopez, G., Olteanu, A., Sim, R., Wal- lach, H., 2021. Stereotyping Norwegian salmon: An inventory of pitfalls in fairness benchmark datasets, in: Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Lan- guage Processing (Volume 1: Long Papers), Asso- ciation for Computational Linguistics, Online. pp. 1004-1015. URL: https://aclanthology.org/2021. acl-long.81, doi:10.18653/v1/2021.acl-long.81.",
-    "Breitfeller, L., Ahn, E., Jurgens, D., Tsvetkov, Y., 2019. Finding microaggressions in the wild: A case for locat- ing elusive phenomena in social media posts, in: Pro- ceedings of the 2019 Conference on Empirical Meth- ods in Natural Language Processing and the 9th In- ternational Joint Conference on Natural Language Pro- cessing (EMNLP-IJCNLP), Association for Computa- tional Linguistics, Hong Kong, China. pp. 1664-1674. URL: https://aclanthology.org/D19-1176, doi:10. 18653/v1/D19-1176.",
-    "Brigham, J.C., 1971. Ethnic stereotypes. Psychological bulletin 76, 15.",
-    "Cho, J., Hwang, G., Suh, C., 2020. A fair classifier using mutual information, in: 2020 IEEE International Sym- posium on Information Theory (ISIT), pp. 2521-2526. doi:10.1109/ISIT44484.2020.9174293.",
-    "Clark, K., Luong, M.T., Le, Q.V., Manning, C.D., 2020. Electra: Pre-training text encoders as dis- criminators rather than generators. arXiv preprint arXiv:2003.10555.",
-    "Cryan, J., Tang, S., Zhang, X., Metzger, M., Zheng, H., Zhao, B.Y., 2020. Detecting gender stereotypes: Lexicon vs. supervised learning methods, in: Proceed- ings of the 2020 CHI Conference on Human Factors in Computing Systems, Association for Computing Ma- chinery, New York, NY, USA. p. 1-11. URL: https: //doi.org/10.1145/3313831.3376488, doi:10.1145/ 3313831.3376488.",
-    "Davidson, T., Warmsley, D., Macy, M., Weber, I., 2017. Automated hate speech detection and the problem of offensive language, in: Proceedings of the international AAAI conference on web and social media, pp. 512-515.",
-    "Dhamala, J., Sun, T., Kumar, V., Krishna, S., Pruk- sachatkun, Y., Chang, K.W., Gupta, R., 2021. Bold: Dataset and metrics for measuring biases in open- ended language generation, in: ACM FAccT 2021. URL: https://www.amazon.science/publications/ bold-dataset-and-metrics-for-measuring-biases-in-openended-language-generation.",
-    "Eliot, T., 2002. Personal bias in other critics. Personal Bias in Literary Criticism: Dr. Johnson, Matthew Arnold, TS Eliot, 216.",
-    "Feng, B., Fu, Q., Dong, M., Guo, D., Li, Q., 2018. Mul- tistage and elastic spam detection in mobile social net- works through deep learning. IEEE Network 32, 15-21.",
-    "Founta, A.M., Djouvas, C., Chatzakou, D., Leontiadis, I., Blackburn, J., Stringhini, G., Vakali, A., Sirivianos, M., Kourtellis, N., 2018. Large scale crowdsourcing and characterization of twitter abusive behavior, in: Twelfth International AAAI Conference on Web and Social Media.",
-    "Fuertes-Olivera, P.A., 2007. A corpus-based view of lexical gender in written business english. English for Specific Purposes 26, 219-234.",
-    "Gunning, D., Vorm, E., Wang, Y., Turek, M., 2021. Darpa's explainable ai (xai) program: A retrospective. Authorea Preprints.",
-    "Haemmerlie, F.M., Montgomery, R.L., 1991. Goldberg revisited: Pro-female evaluation bias and changed atti- tudes toward women by engineering students. Journal of Social Behavior and Personality 6, 179.",
-    "Hammersley, M., Gomm, R., 1997. Bias in social research. Sociological research online 2, 7-19.",
-    "He, P., Liu, X., Gao, J., Chen, W., 2021. Deberta: Decoding-enhanced bert with disentangled attention, in: International Conference on Learning Represen- tations. URL: https://openreview.net/forum?id= XPZIaotutsD.",
-    "Heron, S., 2009. Technologies for spam detection. Network Security 2009, 11-15.",
-    "Klare, B.F., Burge, M.J., Klontz, J.C., Bruegge, R.W.V., Jain, A.K., 2012. Face recognition performance: Role of demographic information. IEEE Transactions on In- formation Forensics and Security 7, 1789-1801.",
-    "Liu, Y., Ott, M., Goyal, N., Du, J., Joshi, M., Chen, D., Levy, O., Lewis, M., Zettlemoyer, L., Stoyanov, V., 2019. Roberta: A robustly optimized bert pretraining approach. arXiv preprint arXiv:1907.11692 .",
-    "Maddox, K.B., 2004. Perspectives on racial phenotypical- ity bias. Personality and Social Psychology Review 8, 383-401.",
-    "Markines, B., Cattuto, C., Menczer, F., 2009. Social spam detection, in: Proceedings of the 5th international work- shop on adversarial information retrieval on the web, pp. 41-48.",
-    "Mikolov, T., Sutskever, I., Chen, K., Corrado, G.S., Dean, J., 2013. Distributed representations of words and phrases and their compositionality, in: Advances in neu- ral information processing systems, pp. 3111-3119.",
-    "Nadeem, M., Bethke, A., Reddy, S., 2021. StereoSet: Measuring stereotypical bias in pretrained language models, in: Proceedings of the 59th Annual Meeting of the Association for Compu- tational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), Association for Compu- tational Linguistics, Online. pp. 5356-5371. URL: https://aclanthology.org/2021.acl-long.416, doi:10.18653/v1/2021.acl-long.416.",
-    "Nangia, N., Vania, C., Bhalerao, R., Bowman, S.R., 2020. CrowS-pairs: A challenge dataset for mea- suring social biases in masked language models, in: Proceedings of the 2020 Conference on Em- pirical Methods in Natural Language Processing (EMNLP), Association for Computational Linguistics, Online. pp. 1953-1967. URL: https://aclanthology. org/2020.emnlp-main.154, doi:10.18653/v1/2020. emnlp-main.154.",
-    "Oneto, L., Doninini, M., Elders, A., Pontil, M., 2019. Tak- ing advantage of multitask learning for fair classifica- tion, in: Proceedings of the 2019 AAAI/ACM Confer- ence on AI, Ethics, and Society, pp. 227-237.",
-    "Pleiss, G., Raghavan, M., Wu, F., Kleinberg, J., Wein- berger, K.Q., 2017. On fairness and calibration, in: Guyon, I., Luxburg, U.V., Bengio, S., Wal- lach, H., Fergus, R., Vishwanathan, S., Garnett, R. (Eds.), Advances in Neural Information Processing Systems, Curran Associates, Inc. URL: https: //proceedings.neurips.cc/paper/2017/file/ b8b9c74ac526fffbeb2d39ab038d1cd7-Paper.pdf.",
-    "Raji, I.D., Gebru, T., Mitchell, M., Buolamwini, J., Lee, J., Denton, E., 2020. Saving face: Investigat- ing the ethical concerns of facial recognition auditing, in: Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society, Association for Computing Machin- ery, New York, NY, USA. p. 145-151. URL: https: //doi.org/10.1145/3375627.3375820, doi:10.1145/ 3375627.3375820.",
-    "Rajpurkar, P., Jia, R., Liang, P., 2018. Know what you don't know: Unanswerable questions for SQUAD, in: Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Vol- ume 2: Short Papers), Association for Computa- tional Linguistics, Melbourne, Australia. pp. 784-789. URL: https://aclanthology.org/P18-2124, doi:10. 18653/v1/P18-2124.",
-    "Roemmele, M., Bejan, C.A., Gordon, A.S., 2011. Choice of plausible alternatives: An evaluation of commonsense causal reasoning., in: AAAI spring symposium: logical formalizations of commonsense reasoning, pp. 90-95.",
-    "Romaine, S., 2001. A corpus-based view of gender in british and american english. Gender across languages 1, 153-175.",
-    "Rudinger, R., Naradowsky, J., Leonard, B., Van Durme, B., 2018. Gender bias in coreference resolution, in: Proceedings of the 2018 Conference of the North American Chapter of the Association for Computa- tional Linguistics: Human Language Technologies, Volume 2 (Short Papers), Association for Computa- tional Linguistics, New Orleans, Louisiana. pp. 8-14. URL: https://aclanthology.org/N18-2002, doi:10. 18653/v1/N18-2002.",
-    "Sap, M., Gabriel, S., Qin, L., Jurafsky, D., Smith, N.A., Choi, Y., 2020. Social bias frames: Rea- soning about social and power implications of lan- guage, in: Proceedings of the 58th Annual Meet- ing of the Association for Computational Linguis- tics, Association for Computational Linguistics, On- line. pp. 5477-5490. URL: https://www.aclweb. org/anthology/2020.acl-main.486, doi:10.18653/ v1/2020.acl-main.486.",
-    "Sengupta, K., Maher, R., Groves, D., Olieman, C., 2021. Genbit: measure and mitigate gender bias in language datasets. Microsoft Journal of Ap- plied Research 16, 63-71. URL: https://www. microsoft.com/en-us/research/publication/ genbit-measure-and-mitigate-gender-bias-in-language-datasets/.",
-    "Smith, E.M., Hall, M., Kambadur, M., Presani, E., Williams, A., 2022. \"I'm sorry to hear that\": Find- ing new biases in language models with a holistic de- scriptor dataset, in: Proceedings of the 2022 Conference on Empirical Methods in Natural Language Process- ing, Association for Computational Linguistics, Abu Dhabi, United Arab Emirates. pp. 9180-9211. URL: https://aclanthology.org/2022.emnlp-main.625.",
-    "Speicher, T., Heidari, H., Grgic-Hlaca, N., Gummadi, K.P., Singla, A., Weller, A., Zafar, M.B., 2018. A unified approach to quantifying algorithmic unfairness: Measuring individual &group unfairness via inequality indices, in: Proceedings of the 24th ACM SIGKDD in- ternational conference on knowledge discovery & data mining, pp. 2239-2248.",
-    "Waseem, Z., Hovy, D., 2016. Hateful symbols or hate- ful people? predictive features for hate speech de- tection on Twitter, in: Proceedings of the NAACL Student Research Workshop, Association for Compu- tational Linguistics, San Diego, California. pp. 88-93. URL: https://aclanthology.org/N16-2013, doi:10. 18653/v1/N16-2013.",
-    "Wolf, T., Debut, L., Sanh, V., Chaumond, J., De- langue, C., Moi, A., Cistac, P., Rault, T., Louf, R., Funtowicz, M., Davison, J., Shleifer, S., von Platen, P., Ma, C., Jernite, Y., Plu, J., Xu, C., Le Scao, T., Gugger, S., Drame, M., Lhoest, Q., Rush, A., 2020. Transformers: State-of-the-art natural language processing, in: Proceedings of the 2020 Conference on Empirical Methods in Natural Language Process- ing: System Demonstrations, Association for Compu- tational Linguistics, Online. pp. 38-45. URL: https: //aclanthology.org/2020.emnlp-demos.6, doi:10. 18653/v1/2020.emnlp-demos.6.",
-    "Zafar, M.B., Valera, I., Rogriguez, M.G., Gummadi, K.P., 2017. Fairness Constraints: Mechanisms for Fair Clas- sification, in: Singh, A., Zhu, J. (Eds.), Proceedings of the 20th International Conference on Artificial Intelli- gence and Statistics, PMLR. pp. 962-970. URL: https: //proceedings.mlr.press/v54/zafar17a.html.",
-    "Zhao, J., Wang, T., Yatskar, M., Ordonez, V., Chang, K.W., 2017. Men also like shopping: Reducing gen- der bias amplification using corpus-level constraints, in: Proceedings of the 2017 Conference on Empiri- cal Methods in Natural Language Processing, Associa- tion for Computational Linguistics, Copenhagen, Den- mark. pp. 2979-2989. URL: https://aclanthology. org/D17-1323, doi:10.18653/v1/D17-1323.",
-    "Zhao, J., Wang, T., Yatskar, M., Ordonez, V., Chang, K.W., 2018. Gender bias in coreference resolution: Evaluation and debiasing methods, in: Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), As- sociation for Computational Linguistics, New Orleans, Louisiana. pp. 15-20. URL: https://aclanthology. org/N18-2003, doi:10.18653/v1/N18-2003."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

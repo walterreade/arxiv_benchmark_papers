@@ -2,73 +2,23 @@
   "filename": "2509.04403.pdf",
   "title": "Self-adaptive Dataset Construction for Real-World Multimodal Safety Scenarios",
   "arxiv_url": "https://arxiv.org/pdf/2509.04403",
-  "benchmark_measurement": "Detecting unsafe scenarios arising from conflicts between different belief systems, presented via visual faith symbols paired with text discussing alternative beliefs.",
-  "religious_groups": [],
-  "models_tested": [
-    "Llama-3.2-11B-vision",
-    "Llama-3.2-11B-Vision-Instruct",
-    "Llama-Guard-3-11B-Vision",
-    "Phi-3.5-vision-instruct",
-    "Qwen2-VL-7B-Instruct",
-    "Qwen2-VL-72B-Instruct",
-    "InternVL2_5-78B",
-    "Gemini-1.5-Flash",
-    "GPT-40"
+  "bias_targets": [
+    {
+      "target": "Cultural bias",
+      "methodology": "Evaluating multimodal large language models' (MLLMs) safety judgment accuracy and response safety rates when presented with images of cultural symbols paired with text expressing disdain or contempt (categorized under 'Political/Culture clash')."
+    },
+    {
+      "target": "Political bias",
+      "methodology": "Evaluating MLLMs' safety judgment accuracy and response safety rates when presented with images of political symbols paired with text expressing disdain or contempt (categorized under 'Political/Culture clash')."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Measuring models' ability to detect risks and provide safe responses when given images of specific faith symbols paired with text discussing an alternative belief system (categorized as 'Belief conflict')."
+    },
+    {
+      "target": "Species bias",
+      "methodology": "Evaluating model safety judgments on inputs that pair human or animal images with text applying discriminatory characteristics of the other species (categorized as 'Human2animal' and 'Animal2human' discrimination)."
+    }
   ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short",
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "Ch³Ef",
-    "VL-Guard",
-    "VLSBench",
-    "SIUO",
-    "MSS-bench",
-    "RTVLM",
-    "MM-Safetybench",
-    "FigStep"
-  ],
-  "continuous_testing": true,
-  "findings": "Models generally perform poorly when responding to scenarios involving belief conflicts. The safety rate for generated responses is extremely low, with many models scoring 0.0% and the best-performing models only reaching 14.3%. While models can often judge explicitly safe responses correctly, their accuracy on unsafe responses and their ability to generate safe outputs in these sensitive contexts are very limited.",
-  "references": [
-    "Marah Abdin, Jyoti Aneja, Hany Awadalla, Ahmed Awadallah, Ammar Ahmad Awan, Nguyen Bach, Amit Bahree, Arash Bakhtiari, Jianmin Bao, Harkirat Behl, Alon Benhaim, Misha Bilenko, Johan Bjorck, Sébastien Bubeck, Martin Cai, Qin Cai, Vishrav Chaudhary, Dong Chen, Dongdong Chen, and 110 others. 2024. Phi-3 technical report: A highly capable language model locally on your phone. Preprint, arXiv:2404.14219.",
-    "Jinze Bai, Shuai Bai, Shusheng Yang, Shijie Wang, Sinan Tan, Peng Wang, Junyang Lin, Chang Zhou, and Jingren Zhou. 2023. Qwen-vl: A versatile vision-language model for understanding, localization, text reading, and beyond. Preprint, arXiv:2308.12966.",
-    "Jun Chen, Deyao Zhu, Xiaoqian Shen, Xiang Li, Zechun Liu, Pengchuan Zhang, Raghuraman Krishnamoorthi, Vikas Chandra, Yunyang Xiong, and Mohamed Elhoseiny. 2023. Minigpt-v2: large language model as a unified interface for vision-language multi-task learning. arXiv preprint arXiv:2310.09478.",
-    "Shuo Chen, Zhen Han, Bailan He, Zifeng Ding, Wenqian Yu, Philip Torr, Volker Tresp, and Jindong Gu. 2024a. Red teaming gpt-4v: Are gpt-4v safe against uni/multi-modal jailbreak attacks? arXiv preprint arXiv:2404.03411.",
-    "Yangyi Chen, Karan Sikka, Michael Cogswell, Heng Ji, and Ajay Divakaran. 2024b. Dress: Instructing large vision-language models to align and interact with humans via natural language feedback. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 14239–14250.",
-    "Zhe Chen, Weiyun Wang, Yue Cao, Yangzhou Liu, Zhangwei Gao, Erfei Cui, Jinguo Zhu, Shenglong Ye, Hao Tian, Zhaoyang Liu, Lixin Gu, Xuehui Wang, Qingyun Li, Yimin Ren, Zixuan Chen, Jiapeng Luo, Jiahao Wang, Tan Jiang, Bo Wang, and 23 others. 2025. Expanding performance boundaries of open-source multimodal models with model, data, and test-time scaling. Preprint, arXiv:2412.05271.",
-    "Jianfeng Chi, Ujjwal Karn, Hongyuan Zhan, Eric Smith, Javier Rando, Yiming Zhang, Kate Plawiak, Zacharie Delpierre Coudert, Kartikeya Upasani, and Mahesh Pasupuleti. 2024. Llama guard 3 vision: Safeguarding human-ai image understanding conversations. Preprint, arXiv:2411.10414.",
-    "Yi Ding, Lijun Li, Bing Cao, and Jing Shao. 2025. Rethinking bottlenecks in safety fine-tuning of vision language models. arXiv preprint arXiv:2501.18533.",
-    "Yichen Gong, Delong Ran, Jinyuan Liu, Conglei Wang, Tianshuo Cong, Anyu Wang, Sisi Duan, and Xiaoyun Wang. 2023. Figstep: Jailbreaking large vision-language models via typographic visual prompts. arXiv preprint arXiv:2311.05608.",
-    "Xuhao Hu, Dongrui Liu, Hao Li, Xuanjing Huang, and Jing Shao. 2024. Vlsbench: Unveiling visual leakage in multimodal safety. arXiv preprint arXiv:2411.19939.",
-    "Yuanfeng Ji, Chongjian Ge, Weikai Kong, Enze Xie, Zhengying Liu, Zhengguo Li, and Ping Luo. 2023. Large language models as automated aligners for benchmarking vision-language models. arXiv preprint arXiv:2311.14580.",
-    "Lijun Li, Bowen Dong, Ruohui Wang, Xuhao Hu, Wangmeng Zuo, Dahua Lin, Yu Qiao, and Jing Shao. 2024a. Salad-bench: A hierarchical and comprehensive safety benchmark for large language models. arXiv preprint arXiv:2402.05044.",
-    "Lijun Li, Zhelun Shi, Xuhao Hu, Bowen Dong, Yiran Qin, Xihui Liu, Lu Sheng, and Jing Shao. 2025. T2isafety: Benchmark for assessing fairness, toxicity, and privacy in image generation. In Proceedings of the Computer Vision and Pattern Recognition Conference, pages 13381–13392.",
-    "Mukai Li, Lei Li, Yuwei Yin, Masood Ahmed, Zhenguang Liu, and Qi Liu. 2024b. Red teaming visual language models. arXiv preprint arXiv:2401.12915.",
-    "Yifan Li, Hangyu Guo, Kun Zhou, Wayne Xin Zhao, and Ji-Rong Wen. 2024c. Images are achilles’ heel of alignment: Exploiting visual vulnerabilities for jailbreaking multimodal large language models. In European Conference on Computer Vision, pages 174–189. Springer.",
-    "Hongzhan Lin, Ziyang Luo, Bo Wang, Ruichao Yang, and Jing Ma. 2024. Goat-bench: Safety insights to large multimodal models through meme-based social abuse. arXiv preprint arXiv:2401.01523.",
-    "Xin Liu, Yichen Zhu, Jindong Gu, Yunshi Lan, Chao Yang, and Yu Qiao. 2024. Mm-safetybench: A benchmark for safety evaluation of multimodal large language models. In European Conference on Computer Vision, pages 386–403. Springer.",
-    "Ziqi Miao, Yi Ding, Lijun Li, and Jing Shao. 2025a. Visual contextual attack: Jailbreaking mllms with image-driven context injection. arXiv preprint arXiv:2507.02844.",
-    "Ziqi Miao, Lijun Li, Yuan Xiong, Zhenhua Liu, Pengyu Zhu, and Jing Shao. 2025b. Response attack: Exploiting contextual priming to jailbreak large language models. arXiv preprint arXiv:2507.05248.",
-    "OpenAI. 2024. Gpt-4 technical report. Preprint, arXiv:2303.08774.",
-    "Georgios Pantazopoulos, Amit Parekh, Malvina Nikandrou, and Alessandro Suglia. 2024. Learning to see but forgetting to follow: Visual instruction tuning makes llms more prone to jailbreak attacks. arXiv preprint arXiv:2405.04403.",
-    "David Patterson, Joseph Gonzalez, Urs Hölzle, Quoc Le, Chen Liang, Lluis-Miquel Munguia, Daniel Rothchild, David So, Maud Texier, and Jeff Dean. 2022. The carbon footprint of machine learning training will plateau, then shrink. Preprint, arXiv:2204.05149.",
-    "Xiangyu Qi, Kaixuan Huang, Ashwinee Panda, Peter Henderson, Mengdi Wang, and Prateek Mittal. 2024. Visual adversarial examples jailbreak aligned large language models. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 38, pages 21527–21536.",
-    "Erfan Shayegani, Yue Dong, and Nael Abu-Ghazaleh. 2023. Jailbreak in pieces: Compositional adversarial attacks on multi-modal language models. In The Twelfth International Conference on Learning Representations.",
-    "Zhelun Shi, Zhipin Wang, Hongxing Fan, Zaibin Zhang, Lijun Li, Yongting Zhang, Zhenfei Yin, Lu Sheng, Yu Qiao, and Jing Shao. 2024. Assessment of multimodal large language models in alignment with human values. arXiv preprint arXiv:2403.17830.",
-    "Gemini Team, Petko Georgiev, Ving Ian Lei, Ryan Burnell, Libin Bai, Anmol Gulati, Garrett Tanzer, Damien Vincent, Zhufeng Pan, Shibo Wang, and 1 others. 2024. Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context. arXiv preprint arXiv:2403.05530.",
-    "Haoqin Tu, Chenhang Cui, Zijun Wang, Yiyang Zhou, Bingchen Zhao, Junlin Han, Wangchunshu Zhou, Huaxiu Yao, and Cihang Xie. 2023. How many unicorns are in this image? a safety evaluation benchmark for vision llms. arXiv preprint arXiv:2311.16101.",
-    "Peng Wang, Shuai Bai, Sinan Tan, Shijie Wang, Zhihao Fan, Jinze Bai, Keqin Chen, Xuejing Liu, Jialin Wang, Wenbin Ge, Yang Fan, Kai Dang, Mengfei Du, Xuancheng Ren, Rui Men, Dayiheng Liu, Chang Zhou, Jingren Zhou, and Junyang Lin. 2024a. Qwen2-vl: Enhancing vision-language model’s perception of the world at any resolution. Preprint, arXiv:2409.12191.",
-    "Pengyu Wang, Dong Zhang, Linyang Li, Chenkun Tan, Xinghao Wang, Ke Ren, Botian Jiang, and Xipeng Qiu. 2024b. Inferaligner: Inference-time alignment for harmlessness through cross-model guidance. arXiv preprint arXiv:2401.11206.",
-    "Siyin Wang, Xingsong Ye, Qinyuan Cheng, Junwen Duan, Shimin Li, Jinlan Fu, Xipeng Qiu, and Xuanjing Huang. 2024c. Cross-modality safety alignment. arXiv preprint arXiv:2406.15279.",
-    "Alexander Wei, Nika Haghtalab, and Jacob Steinhardt. 2023. Jailbroken: How does llm safety training fail? Advances in Neural Information Processing Systems, 36:80079–80110.",
-    "Yunqing Zhao, Tianyu Pang, Chao Du, Xiao Yang, Chongxuan Li, Ngai-Man Man Cheung, and Min Lin. 2024. On evaluating adversarial robustness of large vision-language models. Advances in Neural Information Processing Systems, 36.",
-    "Kaiwen Zhou, Chengzhi Liu, Xuandong Zhao, Anderson Compalas, Dawn Song, and Xin Eric Wang. 2024. Multimodal situational safety. arXiv preprint arXiv:2410.06172.",
-    "Yongshuo Zong, Ondrej Bohdal, Tingyang Yu, Yongxin Yang, and Timothy Hospedales. 2024. Safety fine-tuning at (almost) no cost: A baseline for vision large language models. arXiv preprint arXiv:2402.02207."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

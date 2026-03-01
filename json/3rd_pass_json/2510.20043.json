@@ -2,15 +2,58 @@
   "filename": "2510.20043.pdf",
   "title": "From Facts to Folklore: Evaluating Large Language Models on Bengali Cultural Knowledge",
   "arxiv_url": "https://arxiv.org/pdf/2510.20043",
-  "bias_targets": [
-    {
-      "target": "Cultural bias",
-      "methodology": "Evaluating model performance (accuracy and MRR) on Question Answering and Masked Token Prediction tasks using the newly curated BLanCK dataset, comparing results between culturally-specific Bengali categories (e.g., food, religion, entertainment, historical) and non-cultural general categories (e.g., sports, economics, health)."
-    },
-    {
-      "target": "Popularity bias",
-      "methodology": "Grouping dataset terms into buckets based on their normalized Wikipedia monthly page views and measuring how model accuracy correlates with the popularity of the entities to see if LLMs favor commonly accessed information."
-    }
+  "religious_groups": [
+    "Hinduism",
+    "Islam"
   ],
-  "primary_bias_target": "Cultural bias"
+  "models_tested": [
+    "Gemini 2.0 Flash",
+    "Llama3 70B",
+    "Deepseek V3",
+    "GPT-4o",
+    "Mistral Small 3.1",
+    "Mistral Saba"
+  ],
+  "languages_evaluated": [
+    "Bengali"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "In Question Answering tasks, models generally underperformed on cultural categories compared to non-cultural ones. However, 'Religion' was an exception, alongside 'Food', where models performed better than in other cultural categories like 'Entertainment', 'People', and 'Historical'.",
+  "references": [
+    "Meta AI. 2024. Llama 3 model card. https://github.com/meta-llama/llama3/ blob/main/MODEL_CARD.md. Accessed: 2024- 10-17.",
+    "Zabir Al Nazi, Md Rajib Hossain, and Faisal Al Mamun. 2025. Evaluation of open and closed- source llms for low-resource language with zero- shot, few-shot, and chain-of-thought prompt- ing. Natural Language Processing Journal, 10:100124.",
+    "Nurshat Fateh Ali, Md Mahdi Mohtasim, Shakil Mosharrof, and T Gopi Krishna. 2024. Automated literature review using nlp techniques and llm-based retrieval-augmented generation. arXiv preprint arXiv:2411.18583.",
+    "Þórunn Arnardóttir, Elías Bjartur Einarsson, Garðar Ingvarsson Juto, Þorvaldur Páll Helgason, and Hafsteinn Einarsson. 2025. Wikiqa- is: Assisted benchmark generation and automated evaluation of icelandic cultural knowledge in Ilms. In Proceedings of the Third Workshop on Resources and Representations for Under-Resourced Languages and Domains (RESOURCEFUL-2025), pages 64-73.",
+    "Damian Blasi, Antonios Anastasopoulos, and Graham Neubig. 2022. Systematic inequalities in language technology performance across the world's languages. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 5486-5505, Dublin, Ireland. Association for Computational Linguistics.",
+    "Aakanksha Chowdhery, Sharan Narang, Jacob Devlin, Maarten Bosma, Gaurav Mishra, Adam Roberts, Paul Barham, Hyung Won Chung, Charles Sutton, Sebastian Gehrmann, et al. 2023. Palm: Scaling language modeling with pathways. Journal of Machine Learning Research, 24(240):1-113.",
+    "Cohere For AI. 2024. c4ai-command-r-plus (revision 432fac1).",
+    "DeepSeek-AI. 2024. Deepseek-v3 technical report. Preprint, arXiv:2412.19437.",
+    "Amer Farea, Zhen Yang, Kien Duong, Nadeesha Perera, and Frank Emmert-Streib. 2022. Evaluation of question answering systems: complexity of judging a natural language. ACM Computing Surveys.",
+    "Bilal Genc and Erdogan Bada. 2005. Culture in language learning and teaching. The reading matrix, 5(1).",
+    "Google-AI. 2025. Gemini 2 flash. Accessed April 30, 2025. Available from https://ai.google.dev/gemini-api/docs/ models#gemini-2.0-flash.",
+    "Md Arid Hasan, Prerona Tarannum, Krishno Dey, Imran Razzak, and Usman Naseem. 2024. Do large language models speak all languages equally? a comparative study in low-resource settings. arXiv preprint arXiv:2408.02237.",
+    "Atia Shahnaz Ipa, Mohammad Abu Tareq Rony, and Mohammad Shariful Islam. 2025. Empowering low-resource languages: Trase architecture for enhanced retrieval-augmented generation in bangla. In Proceedings of the 1st Workshop on Language Models for Underserved Communities (LM4UC 2025), pages 8-15.",
+    "Rumi Kawser. 2020. Bangla ranked at 7th among 100 most spoken languages worldwide. Accessed: 2025-01-28.",
+    "Ida Marie S Lassen, Mina Almasi, Kenneth Enevoldsen, and Ross Deans Kristensen- McLachlan. 2023. Detecting intersectionality in ner models: A data-driven approach. In Proceedings of the 7th joint SIGHUM workshop on computational linguistics for cultural heritage, social sciences, humanities and literature, pages 116-127.",
+    "Seiji Maekawa, Hayate Iso, Sairam Gurajada, and Nikita Bhutani. 2024. Retrieval helps or hurts? a deeper dive into the efficacy of retrieval augmentation to language models. In Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 5506-5521, Mexico City, Mexico. Association for Computational Linguistics.",
+    "Tamzeed Mahfuz, Satak Kumar Dey, Ruwad Naswan, Hasnaen Adil, Khondker Salman Sayeed, and Haz Sameen Shahgir. 2024. Too late to train, too early to use? a study on necessity and viability of low-resource bengali llms. arXiv preprint arXiv:2407.00416.",
+    "Alex Mallen, Akari Asai, Victor Zhong, Rajarshi Das, Daniel Khashabi, and Hannaneh Hajishirzi. 2022. When not to trust language models: Investigating effectiveness of parametric and non-parametric memories. arXiv preprint arXiv:2212.10511.",
+    "Mistral-AI. 2025a. Mistral saba.",
+    "Mistral-AI. 2025b. Mistral small 3.1.",
+    "Tarek Naous, Michael J Ryan, Alan Ritter, and Wei Xu. 2024. Having beer after prayer? measuring cultural bias in large language models. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 16366-16393, Bangkok, Thailand. Association for Computational Linguistics.",
+    "OpenAI. 2024. GPT-40. https://openai.com/ index/hello-gpt-40. Accessed: 2025-04-16.",
+    "Subrata Pan and Diganta Saha. 2022. Performance evaluation of part-of-speech tagging for bengali text. Journal of The Institution of Engineers (India): Series B, 103(2):577-589.",
+    "Qwen. 2024. Qwen2.5: A party of foundation models.",
+    "HAZ Shahgir, Ramisa Alam, and Md Zarif Ul Alam. 2023. Banglaconer: Towards robust bangla complex named entity recognition. arXiv preprint arXiv:2303.09306.",
+    "Md Shihab Shahriar, Ahmad Al Fayad Chowdhury, Md Amimul Ehsan, and Abu Raihan Kamal. 2023. Question answer generation in bengali: Mitigating the scarcity of qa datasets in a low- resource language. In Proceedings of the 13th International Joint Conference on Natural Language Processing and the 3rd Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics (Volume 1: Long Papers), pages 430-441.",
+    "Md Iftekhar Islam Tashik, Abdullah Khondoker, Enam Ahmed Taufik, Antara Firoz Parsa, and SM Mahmud. 2024. Advancements and challenges in bangla question answering models: A comprehensive review. arXiv preprint arXiv:2412.11823.",
+    "The Business Standard. 2024. Title of the Web- page or Article. Accessed: 2025-02-15.",
+    "Wenxuan Wang, Wenxiang Jiao, Jingyuan Huang, Ruyi Dai, Jen-tse Huang, Zhaopeng Tu, and Michael R Lyu. 2023. Not all countries celebrate thanksgiving: On the cultural dominance in large language models. arXiv preprint arXiv:2310.12481."
+  ],
+  "measurement_description": "Knowledge of Bengali cultural terms and concepts related to religion."
 }

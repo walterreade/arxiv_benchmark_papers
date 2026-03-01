@@ -2,15 +2,65 @@
   "filename": "2407.10990.pdf",
   "title": "MedBench: A Comprehensive, Standardized, and Reliable Benchmarking System for Evaluating Chinese Medical Large Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2407.10990",
-  "bias_targets": [
-    {
-      "target": "Option order bias",
-      "methodology": "Applying circular shuffling to choices in multiple-choice questions to detect if models tend to choose answers in a preferred positional order regardless of the actual context."
-    },
-    {
-      "target": "Prompt sensitivity bias",
-      "methodology": "Using random prompt matching with multiple different prompts for the same question to assess if the model's performance is biased by or dependent on specific input and output patterns."
-    }
+  "religious_groups": [],
+  "models_tested": [
+    "ChatGPT (GPT-3.5)",
+    "PULSE",
+    "ChatGLM3",
+    "BenTsao",
+    "BianQue2"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "languages_evaluated": [
+    "Chinese"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "none",
+  "base_benchmarks": [
+    "MLEC-QA",
+    "CMExam",
+    "CBLUE",
+    "CMB"
+  ],
+  "continuous_testing": true,
+  "findings": "The paper contains no findings related to religion as it is not a subject of its investigation.",
+  "references": [
+    "Thirunavukarasu, A. J., Ting, D. S. J., Elangovan, K., Gutierrez, L., Tan, T. F., & Ting, D. S. W. (2023). Large language models in medicine. Nature medicine, 29(8), 1930-1940.",
+    "Webster, P. (2023). Six ways large language models are changing healthcare. Nature Medicine, 1-3.",
+    "Singhal, K., Azizi, S., Tu, T., Mahdavi, S. S., Wei, J., Chung, H. W., ... & Natarajan, V. (2022). Large language models encode clinical knowledge. arXiv preprint arXiv:2212.13138.",
+    "Li, J., Zhong, S., & Chen, K. (2021, November). MLEC-QA: A Chinese multi-choice biomedical question answering dataset. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing (pp. 8862-8874).",
+    "Liu, J., Zhou, P., Hua, Y., Chong, D., Tian, Z., Liu, A., ... & Li, M. L. (2023). Benchmarking Large Language Models on CMExam--A Comprehensive Chinese Medical Exam Dataset. arXiv preprint arXiv:2306.03030.",
+    "Wang X, Chen G H, Song D, et al. Cmb: A comprehensive medical benchmark in chinese[J]. arXiv preprint arXiv:2308.08833, 2023.",
+    "Zhang N, Chen M, Bi Z, et al. Cblue: A chinese biomedical language understanding evaluation benchmark[J]. arXiv preprint arXiv:2106.08087, 2021.",
+    "Wu, S., Koo, M., Blum, L., Black, A., Kao, L., Fei, Z., ... & Kurtz, I. (2024). Benchmarking Open-Source Large Language Models, GPT-4 and Claude 2 on Multiple-Choice Questions in Nephrology. NEJM AI, AIdbp2300092.",
+    "Lim, Z. W., Pushpanathan, K., Yew, S. M. E., Lai, Y., Sun, C. H., Lam, J. S. H., ... & Tham, Y. C. (2023). Benchmarking large language models' performances for myopia care: a comparative analysis of ChatGPT-3.5, ChatGPT-4.0, and Google Bard. EBioMedicine, 95.",
+    "Wang, Y., Teng, Y., Huang, K., Lyu, C., Zhang, S., Zhang, W., ... & Wang, Y. (2023). Fake Alignment: Are LLMs Really Aligned Well?. arXiv preprint arXiv:2311.05915.",
+    "Zhou, K., Zhu, Y., Chen, Z., Chen, W., Zhao, W. X., Chen, X., ... & Han, J. (2023). Don't Make Your LLM an Evaluation Benchmark Cheater. arXiv preprint arXiv:2311.01964.",
+    "Sohrabi, C., Mathew, G., Maria, N., Kerwan, A., Franchi, T., & Agha, R. A. (2023). The SCARE 2023 guideline: updating consensus Surgical CAse REport (SCARE) guidelines. International Journal of Surgery, 109(5), 1136-1140.",
+    "Wang, X., Zhang, X., Wang, G., He, J., Li, Z., Zhu, W., ... & Zhang, S. (2024). OpenMEDLab: An Open-source Platform for Multi-modality Foundation Models in Medicine. arXiv preprint arXiv:2402.18028.",
+    "Zeng, A., Liu, X., Du, Z., Wang, Z., Lai, H., Ding, M., ... & Tang, J. (2022). GLM-130B: An open bilingual pre-trained model. arXiv preprint arXiv:2210.02414.",
+    "Wang, H., Liu, C., Xi, N., Qiang, Z., Zhao, S., Qin, B., & Liu, T. (2023). Huatuo: Tuning llama model with chinese medical knowledge. arXiv preprint arXiv:2304.06975.",
+    "Chen, Y., Wang, Z., Xing, X., Xu, Z., Fang, K., Wang, J., ... & Xu, X. (2023). Bianque: Balancing the questioning and suggestion ability of health llms with multi-turn health conversations polished by chatgpt. arXiv preprint arXiv:2310.15896.",
+    "Papineni, K., Roukos, S., Ward, T., & Zhu, W. J. (2002, July). Bleu: a method for automatic evaluation of machine translation. In Proceedings of the 40th annual meeting of the Association for Computational Linguistics (pp. 311-318).",
+    "Lin, C. Y., & Och, F. J. (2004, July). Automatic evaluation of machine translation quality using longest common subsequence and skip-bigram statistics. In Proceedings of the 42nd Annual Meeting of the Association for Computational Linguistics (ACL) (pp. 605-612).",
+    "Chang, Y., Wang, X., Wang, J., Wu, Y., Yang, L., Zhu, K., ... & Xie, X. (2024). A survey on evaluation of large language models. ACM Transactions on Intelligent Systems and Technology, 15(3), 1-45.",
+    "Sychev, O., Anikin, A., & Prokudin, A. (2020). Automatic grading and hinting in open-ended text questions. Cognitive Systems Research, 59, 264-272.",
+    "Abdou, I., & Eude, T. (2023, July). Open-ended questions automated evaluation: proposal of a new generation. In Proceedings of the 2023 International Joint Conference on Robotics and Artificial Intelligence (pp. 143-147).",
+    "Liu, Y., Duan, H., Zhang, Y., Li, B., Zhang, S., Zhao, W., ... & Lin, D. (2023). MMbench: Is your multi-modal model an all-around player?. arXiv preprint arXiv:2307.06281.",
+    "Wang, Z., Wang, S., Li, Y., Guo, J., Wei, Y., Mu, Y., ... & Li, W. (2024). A new paradigm for applying deep learning to protein-ligand interaction prediction. Briefings in Bioinformatics, 25(3), bbae145.",
+    "Wang, W., Feng, C., Han, R., Wang, Z., Ye, L., Du, Z., ... & Yang, J. (2023). trRosettaRNA: automated prediction of RNA 3D structure with transformer network. Nature Communications, 14(1), 7266.",
+    "Hu, X., Liao, S., Bai, H., Wu, L., Wang, M., Wu, Q., ... & Li, W. (2019). Integrating exosomal microRNAs and electronic health data improved tuberculosis diagnosis. EBioMedicine, 40, 564-573.",
+    "Wang, Z., Liu, C., Zhang, S., & Dou, Q. (2023, October). Foundation model for endoscopy video analysis via large-scale self-supervised pre-train. In International Conference on Medical Image Computing and Computer-Assisted Intervention (pp. 101-111). Cham: Springer Nature Switzerland.",
+    "Cheng, J., Ye, J., Deng, Z., Chen, J., Li, T., Wang, H., ... & Qiao, Y. (2023). SAM-Med2D. arXiv preprint arXiv:2308.16184.",
+    "Zhang, S., & Metaxas, D. (2023). On the challenges and perspectives of foundation models for medical image analysis. Medical Image Analysis, 102996.",
+    "Zhang, Y., Gao, J., Tan, Z., Zhou, L., Ding, K., Zhou, M., ... & Wang, D. (2024). Data-centric foundation models in computational healthcare: A survey. arXiv preprint arXiv:2401.02458.",
+    "Li, C., Wong, C., Zhang, S., Usuyama, N., Liu, H., Yang, J., ... & Gao, J. (2024). Llava-Med: Training a large language-and-vision assistant for biomedicine in one day. Advances in Neural Information Processing Systems, 36.",
+    "Saab, K., Tu, T., Weng, W. H., Tanno, R., Stutz, D., Wulczyn, E., ... & Natarajan, V. (2024). Capabilities of Gemini Models in Medicine. arXiv preprint arXiv:2404.18416.",
+    "Wang, D., Wang, X., Wang, L., Li, M., Da, Q., Liu, X., ... & Zhang, S. (2023). A real-world dataset and benchmark for foundation model adaptation in medical image classification. Scientific Data, 10(1), 574.",
+    "Hu, Y., Li, T., Lu, Q., Shao, W., He, J., Qiao, Y., & Luo, P. (2024). OmniMedVQA: A New Large-Scale Comprehensive Evaluation Benchmark for Medical LVLM. arXiv preprint arXiv:2402.09181.",
+    "OpenCompass. 2023. Opencompass: A universal evaluation platform for foundation models. https: //github.com/open-compass/opencompass."
+  ],
+  "measurement_description": "The benchmark does not measure any aspects of faith or religion. It focuses exclusively on evaluating Chinese medical large language models across dimensions like medical language understanding, generation, knowledge question answering, reasoning, and healthcare safety/ethics."
 }

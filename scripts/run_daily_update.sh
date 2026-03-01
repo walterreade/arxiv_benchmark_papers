@@ -25,7 +25,7 @@ fi
 # Step 1: Download new papers
 echo "Step 1: Downloading new papers from arXiv..."
 echo "----------------------------------------"
-uv run python scripts/download_arxiv_benchmark_papers.py
+uv run python scripts/download_arxiv_papers.py
 echo ""
 
 # Step 2: First pass analysis

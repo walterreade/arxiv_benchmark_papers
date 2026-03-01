@@ -2,76 +2,35 @@
   "filename": "2205.15951.pdf",
   "title": "Hollywood Identity Bias Dataset: A Context Oriented Bias Analysis of Movie Dialogues",
   "arxiv_url": "https://arxiv.org/pdf/2205.15951",
-  "benchmark_measurement": "Detection of identity bias and stereotypes related to religion in Hollywood movie dialogues. The annotation includes the bias category (Religion), the target group (e.g., Christian, Judaism, Islam, Atheist), and the reason for the bias.",
-  "religious_groups": [
-    "Christianity",
-    "Judaism",
-    "Atheism",
-    "Islam"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluated through binary and multi-label classification of annotated movie dialogue turns using Logistic Regression and sequentially adapted BART-large models."
+    },
+    {
+      "target": "Racial/Ethnic bias",
+      "methodology": "Evaluated through binary and multi-label classification of annotated movie dialogue turns using Logistic Regression and sequentially adapted BART-large models."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluated through binary and multi-label classification of annotated movie dialogue turns using Logistic Regression and sequentially adapted BART-large models."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Evaluated through binary and multi-label classification of annotated movie dialogue turns using Logistic Regression and sequentially adapted BART-large models."
+    },
+    {
+      "target": "Occupation bias",
+      "methodology": "Evaluated through binary and multi-label classification of annotated movie dialogue turns using Logistic Regression and sequentially adapted BART-large models."
+    },
+    {
+      "target": "Sexual orientation/LGBTQ bias",
+      "methodology": "Evaluated through binary and multi-label classification of annotated movie dialogue turns using Logistic Regression and sequentially adapted BART-large models."
+    },
+    {
+      "target": "Physical appearance/Body shaming bias",
+      "methodology": "Annotated within the dataset as an 'Other' bias category for evaluation in context-aware dialogue analysis."
+    }
   ],
-  "models_tested": [
-    "Logistic Regression",
-    "BART-large"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "StereoSet",
-    "CrowS-Pairs",
-    "Social Bias Frames"
-  ],
-  "continuous_testing": false,
-  "findings": "The BART-large model demonstrated strong performance in identifying religion bias, achieving an F1 score of 0.75, which was among the highest scores across all bias categories. Error analysis revealed instances where the model correctly identified religion bias but also incorrectly predicted an additional bias category, such as gender.",
-  "references": [
-    "Bishop, C. M. and Nasrabadi, N. M. (2006). Pattern recognition and machine learning, volume 4. Springer.",
-    "Blodgett, S. L., Barocas, S., Daumé III, H., and Wallach, H. (2020). Language (technology) is power: A critical survey of “bias” in NLP. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5454–5476, Online, July. Association for Computational Linguistics.",
-    "Blodgett, S. L., Lopez, G., Olteanu, A., Sim, R., and Wallach, H. (2021). Stereotyping Norwegian salmon: An inventory of pitfalls in fairness benchmark datasets. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 1004–1015, Online, August. Association for Computational Linguistics.",
-    "Bolukbasi, T., Chang, K.-W., Zou, J., Saligrama, V., and Kalai, A. (2016). Man is to computer programmer as woman is to homemaker? debiasing word embeddings.",
-    "Caliskan, A., Bryson, J. J., and Narayanan, A. (2017). Semantics derived automatically from language corpora contain human-like biases. Science, 356(6334):183–186, Apr.",
-    "Cape, G. S. (2003). Addiction, stigma and movies. Acta Psychiatrica Scandinavica, 107(3):163–169.",
-    "Cohen, J. (1960). A coefficient of agreement for nominal scales. Educational and Psychological Measurement, 20(1):37–46.",
-    "Davidson, T., Bhattacharya, D., and Weber, I. (2019). Racial bias in hate speech and abusive language detection datasets. CoRR, abs/1905.12516.",
-    "Devlin, J., Chang, M.-W., Lee, K., and Toutanova, Κ. (2019). BERT: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 4171-4186, Minneapolis, Minnesota, June. Association for Computational Linguistics.",
-    "Díaz, M., Johnson, I., Lazar, A., Piper, A. M., and Gergle, D. (2018). Addressing age-related bias in sentiment analysis. In Proceedings of the 2018 chi conference on human factors in computing systems, pages 1–14.",
-    "Dimnik, T. and Felton, S. (2006). Accountant stereotypes in movies distributed in north america in the twentieth century. Accounting, Organizations and Society, 31(2):129–155.",
-    "Dixon, L., Li, J., Sorensen, J., Thain, N., and Vasserman, L. (2018). Measuring and mitigating unintended bias in text classification. In Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society, AIES ’18, page 67–73, New York, NY, USA. Association for Computing Machinery.",
-    "Elangovan, A., He, J., and Verspoor, K. (2021). Memorization vs. generalization: Quantifying data leakage in nlp performance evaluation.",
-    "Fast, E., Vachovsky, T., and Bernstein, M. S. (2016). Shirtless and dangerous: Quantifying linguistic signals of gender bias in an online fiction writing community.",
-    "Garcia, D., Weber, I., Rama, V., and Garimella, Κ. (2014). Gender asymmetries in reality and fiction: The bechdel test of social media. In In International AAAI Conference on Weblogs and Social.",
-    "(2019). Jigsaw unintended bias in toxicity classification.",
-    "Kagan, D., Chesney, T., and Fire, M. (2020). Using data science to understand the film industry’s gender gap. Palgrave Communications, 6(1):92, May.",
-    "Khadilkar, K., KhudaBukhsh, A. R., and Mitchell, Τ. Μ. (2021). Gender bias, social bias and representation: 70 years of bollywood.",
-    "Kiritchenko, S. and Mohammad, S. M. (2018). Examining gender and race bias in two hundred sentiment analysis systems. arXiv preprint arXiv:1805.04508.",
-    "Kurita, K., Vyas, N., Pareek, A., Black, A. W., and Tsvetkov, Y. (2019). Measuring bias in contextualized word representations.",
-    "Lewis, M., Liu, Y., Goyal, N., Ghazvininejad, M., Mohamed, A., Levy, O., Stoyanov, V., and Zettlemoyer, L. (2019). Bart: Denoising sequence-to-sequence pre-training for natural language generation, translation, and comprehension.",
-    "Li, T., Khot, T., Khashabi, D., Sabharwal, A., and Srikumar, V. (2020). Unqovering stereotyping biases via underspecified questions. CoRR, abs/2010.02428.",
-    "Loshchilov, I. and Hutter, F. (2019). Decoupled weight decay regularization.",
-    "Manzini, T., Yao Chong, L., Black, A. W., and Tsvetkov, Y. (2019). Black is to criminal as caucasian is to police: Detecting and removing multiclass bias in word embeddings. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 615–621, Minneapolis, Minnesota, June. Association for Computational Linguistics.",
-    "Mathew, B., Saha, P., Yimam, S. M., Biemann, C., Goyal, P., and Mukherjee, A. (2020). Hatexplain: A benchmark dataset for explainable hate speech detection. arXiv preprint arXiv:2012.10289.",
-    "May, C., Wang, A., Bordia, S., Bowman, S. R., and Rudinger, R. (2019). On measuring social biases in sentence encoders. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 622–628, Minneapolis, Minnesota, June. Association for Computational Linguistics.",
-    "Mikolov, T., Chen, K., Corrado, G., and Dean, J. (2013). Efficient estimation of word representations in vector space.",
-    "Nigam, K. (1999). Using maximum entropy for text classification. In In IJCAI-99 Workshop on Machine Learning for Information Filtering, pages 61–67.",
-    "Pennington, J., Socher, R., and Manning, C. (2014). GloVe: Global vectors for word representation. In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1532–1543, Doha, Qatar, October. Association for Computational Linguistics.",
-    "Phang, J., Févry, T., and Bowman, S. R. (2019). Sentence encoders on stilts: Supplementary training on intermediate labeled-data tasks.",
-    "Plutchik, R. and Kellerman, H. (2013). Theories of emotion, volume 1. Academic Press.",
-    "Ramakrishna, A., Malandrakis, N., Staruk, E., and Narayanan, S. (2015). A quantitative analysis of gender differences in movies using psycholinguistic normatives. In Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing, pages 1996–2001, Lisbon, Portugal, September. Association for Computational Linguistics.",
-    "Ramakrishna, A., Martínez, V. R., Malandrakis, N., Singla, K., and Narayanan, S. (2017). Linguistic analysis of differences in portrayal of movie characters. In Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 1669–1678, Vancouver, Canada, July. Association for Computational Linguistics.",
-    "Ruder, S., Peters, M. E., Swayamdipta, S., and Wolf, T. (2019). Transfer learning in natural language processing. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Tutorials, pages 15–18, Minneapolis, Minnesota, June. Association for Computational Linguistics.",
-    "Sap, M., Prasettio, M. C., Holtzman, A., Rashkin, H., and Choi, Y. (2017). Connotation frames of power and agency in modern films. In Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing, pages 2329–2334, Copenhagen, Denmark, September. Association for Computational Linguistics.",
-    "Sap, M., Card, D., Gabriel, S., Choi, Y., and Smith, N. A. (2019). The risk of racial bias in hate speech detection. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 1668–1678, Florence, Italy, July. Association for Computational Linguistics.",
-    "Stanovsky, G., Smith, N. A., and Zettlemoyer, L. (2019). Evaluating gender bias in machine translation. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 1679–1684, Florence, Italy, July. Association for Computational Linguistics.",
-    "Ullmann, S. and Tomalin, M. (2020). Quarantining online hate speech: technical and ethical perspectives. Ethics and Information Technology, 22(1):69–80, Mar.",
-    "Webster, K., Recasens, M., Axelrod, V., and Baldridge, J. (2018). Mind the gap: A balanced corpus of gendered ambiguous pronouns. Transactions of the Association for Computational Linguistics, 6(0):605–617.",
-    "Wolf, T., Debut, L., Sanh, V., Chaumond, J., Delangue, C., Moi, A., Cistac, P., Rault, T., Louf, R., Funtowicz, M., Davison, J., Shleifer, S., von Platen, P., Ma, C., Jernite, Y., Plu, J., Xu, C., Scao, T. L., Gugger, S., Drame, M., Lhoest, Q., and Rush, A. M. (2020). Huggingface’s transformers: State-of-the-art natural language processing.",
-    "Xu, H., Zhang, Z., Wu, L., and Wang, C.-J. (2019). The cinderella complex: Word embeddings reveal gender stereotypes in movies and books. PLOS ONE, 14(11):1–18, 11.",
-    "Nadeem, M., Bethke, A., and Reddy, S. (2021). StereoSet: Measuring stereotypical bias in pretrained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 5356–5371, Online, August. Association for Computational Linguistics.",
-    "Nangia, N., Vania, C., Bhalerao, R., and Bowman, S. R. (2020). Crows-pairs: A challenge dataset for measuring social biases in masked language models. arXiv preprint arXiv:2010.00133.",
-    "Sap, M., Gabriel, S., Qin, L., Jurafsky, D., Smith, N. A., and Choi, Y. (2020). Social bias frames: Reasoning about social and power implications of language. ACL.",
-    "Vidgen, B., Nguyen, D., Margetts, H., Rossini, P., and Tromble, R. (2021). Introducing cad: the contextual abuse dataset. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 2289–2303."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

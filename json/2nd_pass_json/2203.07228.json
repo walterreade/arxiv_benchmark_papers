@@ -2,88 +2,35 @@
   "filename": "2203.07228.pdf",
   "title": "FairLex: A Multilingual Benchmark for Evaluating Fairness in Legal Text Processing",
   "arxiv_url": "https://arxiv.org/pdf/2203.07228",
-  "benchmark_measurement": "The paper mentions 'religion or belief' as a protected attribute under EU non-discrimination law, which is part of the motivation for creating a fairness benchmark in the legal domain. However, religion was not one of the five attributes actually measured or analyzed in the experiments. The benchmark specifically measured fairness across gender, age, region, language, and legal area.",
-  "religious_groups": [],
-  "models_tested": [
-    "Hierarchical BERT-based models",
-    "Mini-sized BERT models",
-    "MiniLMv2 (as a base model)",
-    "RoBERTa (distilled version as a base model)",
-    "XLM-R (distilled version as a base model)",
-    "Bag-of-Words (BoW) classifiers"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Measuring performance disparity (macro-F1 score equal risk) across gender groups (male vs. female) of applicants or defendants in legal text classification tasks."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Comparing classification performance (macro-F1) across different applicant age brackets (e.g., <=35, <=65, >65) in predicting violations for the European Court of Human Rights."
+    },
+    {
+      "target": "Regional/Nationality bias",
+      "methodology": "Evaluating model performance disparities based on the defendant state (e.g., Eastern European vs. the rest) or court region of origin across multiple legal jurisdictions."
+    },
+    {
+      "target": "Language bias",
+      "methodology": "Assessing performance gaps in legal judgment predictions for cases written in different languages (German, French, Italian) within the Swiss Federal Supreme Court dataset."
+    },
+    {
+      "target": "Political/Ideological bias",
+      "methodology": "Measuring classification performance parity based on the ideological direction (liberal vs. conservative) of US Supreme Court decisions."
+    },
+    {
+      "target": "Entity type/Socio-legal status bias",
+      "methodology": "Comparing legal topic classification performance disparities across different types of legal respondents (e.g., person, public entity, organization, facility)."
+    },
+    {
+      "target": "Legal topic/Domain bias",
+      "methodology": "Evaluating macro-F1 performance differences across specific legal fields (e.g., public law, penal law, civil law) to measure disparity in how models handle different areas of law."
+    }
   ],
-  "languages_evaluated": [
-    "English",
-    "German",
-    "French",
-    "Italian",
-    "Chinese"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "none",
-  "base_benchmarks": [],
-  "continuous_testing": false,
-  "findings": "The paper does not present any findings related to religion, as religion was not an attribute included in the benchmark datasets or the subsequent analysis.",
-  "references": [
-    "Nikolaos Aletras, Elliott Ash, Leslie Barrett, Daniel Chen, Adam Meyers, Daniel Preotiuc-Pietro, David Rosenberg, and Amanda Stent, editors. 2019. Proceedings of the 1st Natural Legal Language Processing Workshop at NAACL 2019. Minneapolis, Minnesota.",
-    "Elizabeth Anderson. 1999. What is the point of equality? Ethics, 109(2).",
-    "Julia Angwin, Jeff Larson, Surya Mattu, and Lauren Kirchner. 2016. Machine bias: There's software used across the country to predict future criminals. and it's biased against blacks. ProPublica.",
-    "Martin Arjovsky, Léon Bottou, Ishaan Gulrajani, and David Lopez-Paz. 2020. Invariant Risk Minimization.",
-    "Noa Baker Gillis. 2021. Sexism in the judiciary: The importance of bias definition in NLP and in our courts. In Proceedings of the 3rd Workshop on Gender Bias in Natural Language Processing, pages 45–54, Online. Association for Computational Linguistics.",
-    "Woodrow Barfield. 2020. The Cambridge Handbook of the Law of Algorithms. Cambridge Law Handbooks. Cambridge University Press.",
-    "Kristen Bell, Jenny Hong, Nick McKeown, and Catalin Voss. 2021. The Recon Approach: A New Direction for Machine Learning in Criminal Law. Berkeley Technology Law Journal, 37.",
-    "Emily M. Bender. 2021. On academic freedom and ethics review: Continuing the conversation. Medium.",
-    "Samuel R. Bowman and George Dahl. 2021. What will it take to fix benchmarking in natural language understanding? In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 4843–4855, Online. Association for Computational Linguistics.",
-    "Ilias Chalkidis, Manos Fergadiotis, Dimitrios Tsarapatsanis, Nikolaos Aletras, Ion Androutsopoulos, and Prodromos Malakasiotis. 2021. Paragraph-level rationale extraction through regularization: A case study on European court of human rights cases. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 226–241, Online. Association for Computational Linguistics.",
-    "Ilias Chalkidis, Abhik Jana, Dirk Hartung, Michael Bommarito, Ion Androutsopoulos, Daniel Martin Katz, and Nikolaos Aletras. 2022. Lexglue: A benchmark dataset for legal language understanding in english. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics, Dubln, Ireland.",
-    "Ilias Chalkidis and Dimitrios Kampas. 2019. Deep learning in law: Early adaptation and legal word embeddings trained on large corpora. Artificial Intelligence and Law, 27(2):171–198.",
-    "Alexis Conneau, Kartikay Khandelwal, Naman Goyal, Vishrav Chaudhary, Guillaume Wenzek, Francisco Guzmán, Edouard Grave, Myle Ott, Luke Zettlemoyer, and Veselin Stoyanov. 2020. Unsupervised cross-lingual representation learning at scale. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 8440–8451, Online. Association for Computational Linguistics.",
-    "Corinna Coupette, Janis Beckedorf, Dirk Hartung, Michael Bommarito, and Daniel Martin Katz. 2021. Measuring law over time: A network analytical framework with an application to statutes and regulations in the United States and Germany. Frontiers in Physics, 9:269.",
-    "Sylvie Delacroix. 2022. Diachronic interpretability and machine learning systems. Journal of Cross-disciplinary Research in Computational Law, 1(1).",
-    "Frances Ding, Moritz Hardt, John Miller, and Ludwig Schmidt. 2021. Retiring adult: New datasets for fair machine learning. In Advances in Neural Information Processing Systems.",
-    "Michele Donini, Luca Oneto, Shai Ben-David, John S Shawe-Taylor, and Massimiliano Pontil. 2018. Empirical risk minimization under fairness constraints. In Advances in Neural Information Processing Systems, volume 31. Curran Associates, Inc.",
-    "Julia Dressel and Hany Farid. 2018. The accuracy, fairness, and limits of predicting recidivism. Science Advances, 4(10).",
-    "Yanai Elazar and Yoav Goldberg. 2018. Adversarial removal of demographic attributes from text data. In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, pages 11–21, Brussels, Belgium. Association for Computational Linguistics.",
-    "Sandra Fredman. 2016. Substantive equality revisited. I-CON Oxford Legal Studies, 14:712--773.",
-    "Janneke Gerards and Raphaële Xenedis. 2020. Algorithmic discrimination in europe: challenges and opportunities for gender equality and non-discrimination law.",
-    "Ian J. Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, and Yoshua Bengio. 2014. Generative adversarial networks. In Advances in Neural Information Processing Systems.",
-    "Ece Gumusel, Vincent Quirante Malic, Devan Ray Donaldson, Kevin Ashley, and Xiaozhong Liu. 2022. An annotation schema for the detection of social bias in legal text corpora. In Information for a Better World: Shaping the Global Future, pages 185–194, Cham. Springer International Publishing.",
-    "Tatsunori Hashimoto, Megha Srivastava, Hongseok Namkoong, and Percy Liang. 2018. Fairness without demographics in repeated loss minimization. In Proceedings of the 35th International Conference on Machine Learning, volume 80 of Proceedings of Machine Learning Research, pages 1929–1938, Stockholmsmässan, Stockholm Sweden. PMLR.",
-    "Junjie Hu, Sebastian Ruder, Aditya Siddhant, Graham Neubig, Orhan Firat, and Melvin Johnson. 2020. Xtreme: A massively multilingual multi-task benchmark for evaluating cross-lingual generalization. CoRR, abs/2003.11080.",
-    "Daniel Martin Katz. 2012. Quantitative legal prediction-or-how I learned to stop worrying and start preparing for the data-driven future of the legal services industry. Emory Law Journal, 62:909.",
-    "Jon M. Kleinberg, Jens Ludwig, Sendhil Mullainathan, and Cass R. Sunstein. 2019. Discrimination in the age of algorithms. CoRR, abs/1902.03731.",
-    "Pang Wei Koh, Shiori Sagawa, Henrik Marklund, Sang Michael Xie, Marvin Zhang, Akshay Balsubramani, Weihua Hu, Michihiro Yasunaga, Richard Lanas Phillips, Irena Gao, Tony Lee, Etienne David, Ian Stavness, Wei Guo, Berton A. Earnshaw, Imran S. Haque, Sara Beery, Jure Leskovec, Anshul Kundaje, Emma Pierson, Sergey Levine, Chelsea Finn, and Percy Liang. 2021. WILDS: A benchmark of in-the-wild distribution shifts. In International Conference on Machine Learning (ICML).",
-    "David Krueger, Ethan Caballero, Jörn-Henrik Jacobsen, Amy Zhang, Jonathan Binas, Rémi Le Priol, and Aaron C. Courville. 2020. Out-of-Distribution Generalization via Risk Extrapolation (REx). CoRR.",
-    "Kobi Leins, Jey Han Lau, and Timothy Baldwin. 2020. Give me convenience and give her death: Who should decide what uses of NLP are appropriate, and on what basis? In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 2908–2913, Online. Association for Computational Linguistics.",
-    "Quentin Lhoest, Albert Villanova del Moral, Yacine Jernite, Abhishek Thakur, Patrick von Platen, Suraj Patil, Julien Chaumond, Mariama Drame, Julien Plu, Lewis Tunstall, Joe Davison, Mario Šaško, Gunjan Chhablani, Bhavitvya Malik, Simon Brandeis, Teven Le Scao, Victor Sanh, Canwen Xu, Nicolas Patry, Angelina McMillan-Major, Philipp Schmid, Sylvain Gugger, Clément Delangue, Théo Matus-sière, Lysandre Debut, Stas Bekman, Pierric Cistac, Thibault Goehringer, Victor Mustar, François Lagunas, Alexander M. Rush, and Thomas Wolf. 2021. Datasets: A community library for natural language processing.",
-    "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. 2019. Roberta: A robustly optimized BERT pretraining approach. CoRR, abs/1907.11692.",
-    "Ilya Loshchilov and Frank Hutter. 2019. Decoupled weight decay regularization. In International Conference on Learning Representations.",
-    "Alan Lundgard. 2020. Measuring justice in machine learning. In Proceedings of the 2020 Conference on Fairness, Accountability, and Transparency, FAT* '20, page 680, New York, NY, USA. Association for Computing Machinery.",
-    "Karima Makhlouf, Sami Zhioua, and Catuscia Palamidessi. 2021. On the applicability of machine learning fairness notions. SIGKDD Explor. Newsl., 23(1):14–23.",
-    "Ninareh Mehrabi, Fred Morstatter, Nripsuta Saxena, Kristina Lerman, and Aram Galstyan. 2021. A survey on bias and fairness in machine learning. ACM Comput. Surv., 54(6).",
-    "Joel Niklaus, Ilias Chalkidis, and Matthias Stürmer. 2021. Swiss-judgment-prediction: A multilingual legal judgment prediction benchmark. In Proceedings of the Natural Legal Language Processing Workshop 2021, pages 19–35, Punta Cana, Dominican Republic. Association for Computational Linguistics.",
-    "Amandalynne Paullada, Inioluwa Deborah Raji, Emily M. Bender, Emily Denton, and Alex Hanna. 2020. Data and its (dis)contents: A survey of dataset development and use in machine learning research. CoRR, abs/2012.05345.",
-    "Yifan Peng, Shankai Yan, and Zhiyong Lu. 2019. Transfer learning in biomedical natural language processing: An evaluation of bert and elmo on ten benchmarking datasets. In Proceedings of the 2019 Workshop on Biomedical Natural Language Processing (BioNLP 2019).",
-    "Anya E.R. Prince and Daniel Schwarcz. 2019. Proxy discrimination in the age of artificial intelligence and big data. Iowa Law Review, 105.",
-    "Inioluwa Deborah Raji, Emily Denton, Emily M. Bender, Alex Hanna, and Amandalynne Paullada. 2021. AI and the everything in the whole wide world benchmark. In Thirty-fifth Conference on Neural Information Processing Systems Datasets and Benchmarks Track (Round 2).",
-    "John Rawls. 1971. A Theory of Justice, 1 edition. Belknap Press of Harvard University Press, Cambridge, Massachussets.",
-    "Douglas Rice, Jesse H. Rhodes, and Tatishe Nteta. 2019. Racial bias in legal language. Research & Politics, 6(2):2053168019848930.",
-    "Ingrid Robeyns. 2009. Justice as fairness and the capability approach. Arguments for a Better World. Essays for Amartya Sen's, 75:397–413.",
-    "Shiori Sagawa, Pang Wei Koh, Tatsunori B. Hashimoto, and Percy Liang. 2020. Distributionally Robust Neural Networks. In International Conference on Learning Representations.",
-    "Sebastian Felix Schwemer, Letizia Tomada, and Tommaso Pasini. 2021. Legal ai systems in the eu's proposed artificial intelligence act. In In Joint Proceedings of the Workshops on Automated Semantic Analysis of Information in Legal Text (ASAIL 2021) and AI and Intelligent Assistance for Legal Professionals in the Digital, Workplace (LegalAIIA 2021).",
-    "Anders Søgaard, Sebastian Ebert, Jasmijn Bastings, and Katja Filippova. 2021. We need to talk about random splits. In Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics: Main Volume, pages 1823–1832, Online. Association for Computational Linguistics.",
-    "Harold J. Spaeth, Lee Epstein, Jeffrey A. Segal Andrew D. Martin, Theodore J. Ruger, and Sara C. Benesh. 2020. Supreme Court Database, Version 2020 Release 01. Washington University Law.",
-    "Dimitrios Tsarapatsanis and Nikolaos Aletras. 2021. On the ethical limits of natural language processing on legal text. In Findings of the Association for Computational Linguistics: ACL-IJCNLP 2021, pages 3590–3599, Online. Association for Computational Linguistics.",
-    "V. Vapnik. 1992. Principles of risk minimization for learning theory. In Advances in Neural Information Processing Systems, volume 4. Morgan-Kaufmann.",
-    "Sandra Wachter, Brent Daniel Mittelstadt, and Chris Russell. 2021. Bias preservation in machine learning: The legality of fairness metrics under eu non-discrimination law. West Virginia Law Review, 123.",
-    "Alex Wang, Yada Pruksachatkun, Nikita Nangia, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel Bowman. 2019a. Superglue: A stickier benchmark for general-purpose language understanding systems. In Advances in Neural Information Processing Systems, volume 32. Curran Associates, Inc.",
-    "Alex Wang, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel R. Bowman. 2019b. GLUE: A multi-task benchmark and analysis platform for natural language understanding. In International Conference on Learning Representations, New Orleans, Louisiana, USA.",
-    "Wenhui Wang, Hangbo Bao, Shaohan Huang, Li Dong, and Furu Wei. 2021a. MiniLMv2: Multi-head self-attention relation distillation for compressing pretrained transformers. In Findings of the Association for Computational Linguistics: ACL-IJCNLP 2021, pages 2140–2151, Online. Association for Computational Linguistics.",
-    "Yuzhong Wang, Chaojun Xiao, Shirong Ma, Haoxi Zhong, Cunchao Tu, Tianyang Zhang, Zhiyuan Liu, and Maosong Sun. 2021b. Equality before the law: Legal judgment consistency analysis for fairness. Science China - Information Sciences.",
-    "Alice Xiang. 2021. Reconciling legal and technical approaches to algorithmic bias. Tennessee Law Review, 649.",
-    "Chaojun Xiao, Haoxi Zhong, Zhipeng Guo, Cunchao Tu, Zhiyuan Liu, Maosong Sun, Yansong Feng, Xianpei Han, Zhen Hu, Heng Wang, and Jianfeng Xu. 2018. CAIL2018: A large-scale legal dataset for judgment prediction. CoRR, abs/1807.02478.",
-    "Haoxi Zhong, Chaojun Xiao, Cunchao Tu, Tianyang Zhang, Zhiyuan Liu, and Maosong Sun. 2020. How does NLP benefit legal system: A summary of legal artificial intelligence. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5218–5230, Online. Association for Computational Linguistics."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

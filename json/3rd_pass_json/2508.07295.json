@@ -2,15 +2,74 @@
   "filename": "2508.07295.pdf",
   "title": "CCFQA: A Benchmark for Cross-Lingual and Cross-Modal Speech and Text Factuality Evaluation",
   "arxiv_url": "https://arxiv.org/pdf/2508.07295",
-  "bias_targets": [
-    {
-      "target": "Language bias",
-      "methodology": "Evaluating the factual consistency and performance drop of Multimodal Large Language Models (MLLMs) when answering identical, parallel factual questions across 8 different languages to reveal English-centric performance gaps."
-    },
-    {
-      "target": "Modality bias",
-      "methodology": "Comparing the accuracy and factual consistency of MLLM responses when the exact same factual query is presented as text versus speech audio to measure performance degradation and alignment across modalities."
-    }
+  "religious_groups": [
+    "Religion"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "GPT-4o-mini",
+    "GPT-4o-mini-Audio",
+    "Phi-4-Multimodal",
+    "Qwen2-Audio",
+    "Qwen2.5-Omni-3B",
+    "Qwen2.5-Omni-7B",
+    "LLM-SQA (authors' model)"
+  ],
+  "languages_evaluated": [
+    "English",
+    "Chinese (Mandarin)",
+    "French",
+    "Japanese",
+    "Korean",
+    "Russian",
+    "Spanish",
+    "Cantonese"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "MKQA",
+    "MOOCCubeX",
+    "TruthfulQA",
+    "HaluEval",
+    "SimpleQA",
+    "Chinese SimpleQA",
+    "KoLasSimpleQA",
+    "SD-QA",
+    "CompA",
+    "VoiceBench",
+    "SpeechIQ"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper evaluates model performance on factual questions across various categories, including 'Religion'. The primary finding is a comparison of performance scores on this category. As shown in Figure 5, the authors' model, LLM-SQA, demonstrates balanced and consistently high performance across social domains including Religion. Other models like Qwen2.5-Omni-7B and GPT-4o-mini-Audio show slightly lower performance in this category, while models like Qwen2-Audio and Phi-4-Multimodal perform poorly on religious questions.",
+  "references": [
+    "Abouelenin, A.; Ashfaq, A.; Atkinson, A.; Awadalla, H.; Bach, N.; Bao, J.; Benhaim, A.; Cai, M.; Chaudhary, V.; Chen, C.; et al. 2025. Phi-4-mini technical report: Compact yet powerful multimodal language models via mixture-of-loras. arXiv preprint arXiv:2503.01743.",
+    "Chen, Y.; Yue, X.; Zhang, C.; Gao, X.; Tan, R. T.; and Li, H. 2024. Voicebench: Benchmarking llm-based voice assistants. arXiv preprint arXiv:2410.17196.",
+    "Chu, Y.; Xu, J.; Yang, Q.; Wei, H.; Wei, X.; Guo, Z.; Leng, Y.; Lv, Y.; He, J.; Lin, J.; et al. 2024. Qwen2-audio technical report. arXiv preprint arXiv:2407.10759.",
+    "Conneau, A.; Ma, M.; Khanuja, S.; Zhang, Y.; Axelrod, V.; Dalmia, S.; Riesa, J.; Rivera, C.; and Bapna, A. 2023. Fleurs: Few-shot learning evaluation of universal representations of speech. In 2022 IEEE Spoken Language Technology Workshop (SLT), 798–805. IEEE.",
+    "Cui, M.; Gao, P.; Liu, W.; Luan, J.; and Wang, B. 2025. Multilingual machine translation with open large language models at practical scale: An empirical study. arXiv preprint arXiv:2502.02481.",
+    "Du, Y.; Pan, Y.; Ma, Z.; Yang, B.; Yang, Y.; Deng, K.; Chen, X.; Xiang, Y.; Liu, M.; and Qin, B. 2025. Making LLMs Better Many-to-Many Speech-to-Text Translators with Curriculum Learning. arXiv:2409.19510.",
+    "Faisal, F.; Keshava, S.; Alam, M. M. I.; and Anastasopoulos, A. 2021. SD-QA: Spoken Dialectal Question Answering for the Real World. In Findings of the Association for Computational Linguistics: EMNLP 2021, 3296–3315.",
+    "Ghosh, S.; Seth, A.; Kumar, S.; Tyagi, U.; Evuru, C. K. R.; S, R.; Sakshi, S.; Nieto, O.; Duraiswami, R.; and Manocha, D. 2024. CompA: Addressing the Gap in Compositional Reasoning in Audio-Language Models. In The Twelfth International Conference on Learning Representations.",
+    "He, Y.; Li, S.; Liu, J.; Tan, Y.; Wang, W.; Huang, H.; Bu, X.; Guo, H.; Hu, C.; Zheng, B.; Lin, Z.; Liu, X.; Sun, D.; Lin, S.; Zheng, Z.; Zhu, X.; Su, W.; and Zheng, B. 2024. Chinese SimpleQA: A Chinese Factuality Evaluation for Large Language Models. arXiv:2411.07140.",
+    "Jiang, B.; Zhu, R.; Wu, J.; Jiang, Z.; He, Y.; Gao, J.; Yu, J.; Min, R.; Wang, Y.; Yang, H.; et al. 2025. Evaluating Large Language Model with Knowledge Oriented Language Specific Simple Question Answering. arXiv preprint arXiv:2505.16591.",
+    "Kwon, W.; Li, Z.; Zhuang, S.; Sheng, Y.; Zheng, L.; Yu, C. H.; Gonzalez, J. E.; Zhang, H.; and Stoica, I. 2023. Efficient Memory Management for Large Language Model Serving with PagedAttention. In Proceedings of the ACM SIGOPS 29th Symposium on Operating Systems Principles.",
+    "Li, J.; Cheng, X.; Zhao, W. X.; Nie, J.-Y.; and Wen, J.-R. 2023. HaluEval: A Large-Scale Hallucination Evaluation Benchmark for Large Language Models.",
+    "Li, Y.; Hu, B.; Chen, X.; Ma, L.; Xu, Y.; and Zhang, M. 2024. LMEye: An Interactive Perception Network for Large Language Models. IEEE Transactions on Multimedia, 26: 10952–10964.",
+    "Li, Y.; Jiang, S.; Hu, B.; Wang, L.; Zhong, W.; Luo, W.; Ma, L.; and Zhang, M. 2025. Uni-MoE: Scaling Unified Multimodal LLMs With Mixture of Experts. IEEE Transactions on Pattern Analysis and Machine Intelligence, 47(5): 3424–3439.",
+    "Lin, S.; Hilton, J.; and Evans, O. 2022. TruthfulQA: Measuring How Models Mimic Human Falsehoods. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), 3214–3252.",
+    "Liu, K.; Pan, Y.; Xiang, Y.; He, D.; Li, J.; Du, Y.; and Gao, T. 2025. ProjectEval: A Benchmark for Programming Agents Automated Evaluation on Project-Level Code Generation. In Che, W.; Nabende, J.; Shutova, E.; and Pilehvar, M. T., eds., Findings of the Association for Computational Linguistics: ACL 2025, 20205–20221. Vienna, Austria: Association for Computational Linguistics. ISBN 979-8-89176-256-5.",
+    "Longpre, S.; Lu, Y.; and Daiber, J. 2021. MKQA: A Linguistically Diverse Benchmark for Multilingual Open Domain Question Answering. Transactions of the Association for Computational Linguistics, 9: 1389–1406.",
+    "OpenAI. 2023. Gpt-4 technical report. arXiv preprint arXiv:2303.08774.",
+    "Radford, A.; Kim, J. W.; Xu, T.; Brockman, G.; McLeavey, C.; and Sutskever, I. 2023. Robust Speech Recognition via Large-Scale Weak Supervision. In Krause, A.; Brunskill, E.; Cho, K.; Engelhardt, B.; Sabato, S.; and Scarlett, J., eds., Proceedings of ICML, 2023.",
+    "Rawte, V.; Sheth, A.; and Das, A. 2023. A survey of hallucination in large foundation models. arXiv preprint arXiv:2309.05922.",
+    "Team, G.; Kamath, A.; Ferret, J.; Pathak, S.; Vieillard, N.; Merhej, R.; Perrin, S.; Matejovicova, T.; Ramé, A.; Rivière, M.; et al. 2025. Gemma 3 technical report. arXiv preprint arXiv:2503.19786.",
+    "Wan, Z.; Yang, C.-H. H.; Yu, Y.; Tian, J.; Li, S.; Hu, K.; Chen, Z.; Watanabe, S.; Cheng, F.; Chu, C.; et al. 2025. SpeechIQ: Speech-Agentic Intelligence Quotient Across Cognitive Levels in Voice Understanding by Large Language Models. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), 30381–30398.",
+    "Wei, J.; Karina, N.; Chung, H. W.; Jiao, Y. J.; Papay, S.; Glaese, A.; Schulman, J.; and Fedus, W. 2024. Measuring short-form factuality in large language models.",
+    "Xu, J.; Guo, Z.; He, J.; Hu, H.; He, T.; Bai, S.; Chen, K.; Wang, J.; Fan, Y.; Dang, K.; et al. 2025. Qwen2. 5-omni technical report. arXiv preprint arXiv:2503.20215.",
+    "Yu, J.; Wang, Y.; Zhong, Q.; Luo, G.; Mao, Y.; Sun, K.; Feng, W.; Xu, W.; Cao, S.; Zeng, K.; et al. 2021. MOOCCubeX: a large knowledge-centered repository for adaptive learning in MOOCs. In Proceedings of the 30th ACM International Conference on Information & Knowledge Management, 4643–4652.",
+    "Zhang, Y.; Liu, X.; Zhou, R.; Chen, Q.; Fei, H.; Lu, W.; and Qin, L. 2025. CCHall: A Novel Benchmark for Joint Cross-Lingual and Cross-Modal Hallucinations Detection in Large Language Models. In Che, W.; Nabende, J.; Shutova, E.; and Pilehvar, M. T., eds., Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), 30728–30749. Vienna, Austria: Association for Computational Linguistics. ISBN 979-8-89176-251-0."
+  ],
+  "measurement_description": "The benchmark measures the factual knowledge consistency of Multimodal Large Language Models (MLLMs) on questions related to religion. 'Religion' is one of 20 sub-domains in the dataset used to evaluate the models' question-answering capabilities in cross-lingual and cross-modal scenarios."
 }

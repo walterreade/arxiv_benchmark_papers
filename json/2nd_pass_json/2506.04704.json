@@ -2,100 +2,23 @@
   "filename": "2506.04704.pdf",
   "title": "HoliSafe: Holistic Safety Benchmarking and Modeling for Vision-Language Model",
   "arxiv_url": "https://arxiv.org/pdf/2506.04704",
-  "benchmark_measurement": "Detection and refusal of prompts containing harmful stereotypes, derogatory terms, or calls for discrimination/violence against religious groups.",
-  "religious_groups": [
-    "Religion (general)"
+  "bias_targets": [
+    {
+      "target": "Disability bias",
+      "methodology": "Evaluating Attack Success Rate (ASR) and Refusal Rate (RR) using LLM-as-a-judge and string matching on multimodal prompts (image-text pairs) designed to elicit derogatory terms, harmful stereotypes, or mockery against individuals with physical or mental disabilities."
+    },
+    {
+      "target": "Gender and Sexual Orientation bias",
+      "methodology": "Evaluating Attack Success Rate (ASR) and Refusal Rate (RR) using LLM-as-a-judge and string matching on multimodal prompts designed to elicit misogynistic, misandristic, transphobic, or homophobic slurs and stereotypes."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluating Attack Success Rate (ASR) and Refusal Rate (RR) using LLM-as-a-judge and string matching on multimodal prompts designed to elicit racial slurs, derogatory stereotypes, or support for racial hate groups."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluating Attack Success Rate (ASR) and Refusal Rate (RR) using LLM-as-a-judge and string matching on multimodal prompts designed to elicit derogatory terms, harmful stereotypes, or calls for discrimination against adherents of specific religions."
+    }
   ],
-  "models_tested": [
-    "LLaVA-v1.5-7B",
-    "LLaVA-v1.5-13B",
-    "Qwen2.5-VL-7B",
-    "Qwen2.5-VL-32B",
-    "InternVL-2.5-8B",
-    "InternVL-2.5-26B",
-    "InternVL-2.5-38B",
-    "Gemma3-12B-IT",
-    "Gemma3-27B-IT",
-    "GPT-4o-mini",
-    "Claude-3.5-Sonnet",
-    "GPT-4o",
-    "Gemini-2.0-Flash",
-    "VLGuard-7B",
-    "SPA-VL-DPO-7B",
-    "SafeLLaVA-7B",
-    "SafeLLaVA-13B",
-    "SafeGem-12B",
-    "SafeGem-27B",
-    "SafeQwen2.5-VL-7B",
-    "SafeQwen2.5-VL-32B"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "FigStep",
-    "MM-Safety",
-    "VLGuard",
-    "Harm-Eval",
-    "VLSBench",
-    "SIUO",
-    "MSSBench",
-    "LLaVAGuard",
-    "SPA-VL"
-  ],
-  "continuous_testing": false,
-  "findings": "Religion is included as a sub-category of 'Hate' in the safety benchmark. Qualitative examples show that standard open-weight and closed-weight models tend to comply with potentially sensitive requests (e.g., telling a joke about religion), while the authors' safety-tuned 'Safe-VLM' models consistently refuse such requests, identifying them as potentially offensive.",
-  "references": [
-    "Anthropic. Introducing computer use: a new Claude 3.5 Sonnet, and Claude 3.5 Haiku. Online: https:// www.anthropic.com/news/3-5-models-and- computer-use, 2024. Accessed: 2025-05-11. 5, 6, 18, 28",
-    "Shuai Bai, Keqin Chen, Xuejing Liu, Jialin Wang, Wenbin Ge, Sibo Song, Kai Dang, Peng Wang, Shijie Wang, Jun Tang, Humen Zhong, Yuanzhi Zhu, Mingkun Yang, Zhaohai Li, Jianqiang Wan, Pengfei Wang, Wei Ding, Zheren Fu, Yiheng Xu, Jiabo Ye, Xi Zhang, Tianbao Xie, Zesen Cheng, Hang Zhang, Zhibo Yang, Haiyang Xu, and Junyang Lin. Qwen2.5- vl technical report. arXiv preprint arXiv:2502.13923, 2025. 5, 6, 13, 28",
-    "Lin Chen, Jinsong Li, Xiaoyi Dong, Pan Zhang, Yuhang Zang, Zehui Chen, Haodong Duan, Jiaqi Wang, Yu Qiao, Dahua Lin, and Feng Zhao. Are we on the right way for evaluating large vision-language models? In The Thirty-eighth Annual Conference on Neural Information Processing Systems, 2024. 6, 14, 15",
-    "Zhe Chen, Weiyun Wang, Yue Cao, Yangzhou Liu, Zhang-wei Gao, Erfei Cui, Jinguo Zhu, Shenglong Ye, Hao Tian, Zhaoyang Liu, Lixin Gu, Xuehui Wang, Qingyun Li, Yimin Ren, Zixuan Chen, Jiapeng Luo, Jiahao Wang, Tan Jiang, Bo Wang, Conghui He, Botian Shi, Xingcheng Zhang, Han Lv, Yi Wang, Wenqi Shao, Pei Chu, Zhongying Tu, Tong He, Zhiyong Wu, Huipeng Deng, Jiaye Ge, Kai Chen, Kaipeng Zhang, Limin Wang, Min Dou, Lewei Lu, Xizhou Zhu, Tong Lu, Dahua Lin, Yu Qiao, Jifeng Dai, and Wenhai Wang. Ex- panding performance boundaries of open-source multimodal models with model, data, and test-time scaling, 2024. 5, 6",
-    "Jianfeng Chi, Ujjwal Karn, Hongyuan Zhan, Eric Smith, Javier Rando, Yiming Zhang, Kate Plawiak, Zacharie Delpierre Coudert, Kartikeya Upasani, and Ma- hesh Pasupuleti. Llama guard 3 vision: Safeguarding human-ai image understanding conversations. arXiv preprint arXiv:2411.10414, 2024. 2, 3, 5, 8, 15",
-    "Damien L Crone, Stefan Bode, Carsten Murawski, and Si- mon M Laham. The socio-moral image database (smid): A novel stimulus set for the study of social, moral and affective processes. PloS one, 13(1):e0190954, 2018. 22",
-    "Yichen Gong, Delong Ran, Jinyuan Liu, Conglei Wang, Tian- shuo Cong, Anyu Wang, Sisi Duan, and Xiaoyun Wang. Fig- step: Jailbreaking large vision-language models via typo- graphic visual prompts. arXiv preprint arXiv:2311.05608, 2023. 1, 2, 4, 6",
-    "Google DeepMind. Introducing Gemini 2.0: our new AI model for the agentic era. Online; https:// blog.google/technology/google-deepmind/ google-gemini-ai-update-december-2024/, 2024. Accessed: 2025-05-11. 5, 6, 18, 28",
-    "Danna Gurari, Qing Li, Abigale J Stangl, Anhong Guo, Chi Lin, Kristen Grauman, Jiebo Luo, and Jeffrey P Bigham. Vizwiz grand challenge: Answering visual questions from blind people. In CVPR, pages 3608–3617, 2018. 6, 14, 15",
-    "Eungyeom Ha, Heemook Kim, Sung Chul Hong, and Dong- bin Na. Hod: A benchmark dataset for harmful object detec- tion. arXiv preprint arXiv:2310.05192, 2023. 22",
-    "Lukas Helff, Felix Friedrich, Manuel Brack, Kristian Kerst- ing, and Patrick Schramowski. LLAVAGUARD: VLM-based safeguards for vision dataset curation and safety assessment. In Workshop on Responsibly Building the Next Generation of Multimodal Foundational Models, 2024. 2, 3, 4, 5, 8, 15, 22, 41",
-    "Dan Hendrycks and Kevin Gimpel. Gaussian error linear units (GELUs). arXiv preprint arXiv:1606.08415, 2016. 5, 13",
-    "Xuhao Hu, Dongrui Liu, Hao Li, Xuanjing Huang, and Jing Shao. VLSBench: Unveiling visual leakage in multimodal safety. arXiv preprint arXiv:2411.19939, 2024. 1, 2, 3, 4, 6, 7, 8",
-    "Aaron Hurst, Adam Lerer, Adam P Goucher, Adam Perelman, Aditya Ramesh, Aidan Clark, AJ Ostrow, Akila Welihinda, Alan Hayes, Alec Radford, et al. Gpt-40 system card. arXiv preprint arXiv:2410.21276, 2024. 5, 6, 18, 25, 28",
-    "Hakan Inan, Kartikeya Upasani, Jianfeng Chi, Rashi Rungta, Krithika Iyer, Yuning Mao, Michael Tontchev, Qing Hu, Brian Fuller, Davide Testuggine, et al. Llama guard: LLM-based input-output safeguard for human-AI conversations. arXiv preprint arXiv:2312.06674, 2023. 3",
-    "Black Forest Labs. Flux. https://github.com/ black-forest-labs/flux, 2024. Accessed: [Date you accessed the repository]. 4, 23, 41",
-    "Yifan Li, Yifan Du, Kun Zhou, Jinpeng Wang, Wayne Xin Zhao, and Ji-Rong Wen. Evaluating object hallucination in large vision-language models. In EMNLP, 2023. 6, 14, 15",
-    "Haotian Liu, Chunyuan Li, Qingyang Wu, and Yong Jae Lee. Visual instruction tuning. NeurIPS, 36:34892-34916, 2023. 1, 4, 5, 13",
-    "Hua Liu, Kai Xu, and Ming Zhou. Holisticeval: Reference- free summarization evaluation via gpt-4. In Findings of the Association for Computational Linguistics: ACL 2023. ACL, 2023. 5, 18",
-    "Haotian Liu, Chunyuan Li, Yuheng Li, and Yong Jae Lee. Improved baselines with visual instruction tuning. In CVPR, pages 26296-26306, 2024. 1, 5, 6, 7, 8, 13",
-    "Xin Liu, Yichen Zhu, Jindong Gu, Yunshi Lan, Chao Yang, and Yu Qiao. MM-safetybench: A benchmark for safety evaluation of multimodal large language models. In ECCV, pages 386-403. Springer, 2024. 1, 2, 6, 7",
-    "Meta ΑΙ. LLaMA-Guard4: a natively multimodal safety classifier. Hugging Face model card; https:// huggingface.co/meta-llama/Llama-Guard-4- 12B, 2025. Accessed: 2025-05-11. 2, 8, 15",
-    "OpenAI. GPT-40 mini. Online; https://platform. openai.com/docs/models/gpt-40-mini, 2024. Accessed: 2025-05-11. 5, 6",
-    "Yingzhe Peng, Gongrui Zhang, Miaosen Zhang, Zhiyuan You, Jie Liu, Qipeng Zhu, Kai Yang, Xingzhong Xu, Xin Geng, and Xu Yang. Lmm-r1: Empowering 3b lmms with strong reasoning abilities through two-stage rule-based rl. arXiv preprint arXiv:2503.07536, 2025. 13",
-    "Rafael Rafailov, Archit Sharma, Eric Mitchell, Christopher D Manning, Stefano Ermon, and Chelsea Finn. Direct prefer- ence optimization: Your language model is secretly a reward model. NeurIPS, 36:53728-53741, 2023. 4",
-    "Delong Ran, Jinyuan Liu, Yichen Gong, Jingyi Zheng, Xinlei He, Tianshuo Cong, and Anyu Wang. Jailbreakeval: An integrated toolkit for evaluating jailbreak attempts against large language models, 2024. 6, 21",
-    "Reve Art. Reve Image 1.0. Online; https://preview. reve.art/app, 2025. Accessed: 2025-05-12. 4, 23, 41",
-    "Paul Röttger, Hannah Rose Kirk, Bertie Vidgen, Giuseppe Attanasio, Federico Bianchi, and Dirk Hovy. Xstest: A test suite for identifying exaggerated safety behaviours in large language models. arXiv preprint arXiv:2308.01263, 2023. 6, 21",
-    "Ramprasaath R Selvaraju, Michael Cogswell, Abhishek Das, Ramakrishna Vedantam, Devi Parikh, and Dhruv Batra. Grad- cam: Visual explanations from deep networks via gradient- based localization. In ICCV, 2017. 15",
-    "C. Spearman. The proof and measurement of association between two things. The American Journal of Psychology, 15 (1):72-101, 1904. 7",
-    "Gemma Team, Aishwarya Kamath, Johan Ferret, Shreya Pathak, Nino Vieillard, Ramona Merhej, Sarah Perrin, Ta- tiana Matejovicova, Alexandre Ramé, Morgane Rivière, et al. Gemma 3 technical report. arXiv preprint arXiv:2503.19786, 2025. 5, 6, 13, 28",
-    "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszko- reit, Llion Jones, Aidan N Gomez, Łukasz Kaiser, and Illia Polosukhin. Attention is all you need. NeurIPS, 30, 2017. 5",
-    "Bertie Vidgen, Adarsh Agrawal, Ahmed M Ahmed, Victor Akinwande, Namir Al-Nuaimi, Najla Alfaraj, Elie Alhajjar, Lora Aroyo, Trupti Bavalatti, Max Bartolo, et al. Introducing v0. 5 of the ai safety benchmark from mlcommons. arXiv preprint arXiv:2404.12241, 2024. 3",
-    "Peng Wang, Li Chen, and John Smith. Chateval: Automatic open-domain dialogue evaluation with gpt-4. arXiv preprint arXiv:2310.12345, 2023. 5, 18",
-    "Siyin Wang, Xingsong Ye, Qinyuan Cheng, Junwen Duan, Shimin Li, Jinlan Fu, Xipeng Qiu, and Xuanjing Huang. Cross-modality safety alignment. arXiv preprint arXiv:2406.15279, 2024. 1, 4, 6, 7",
-    "Yu Wang, Xiaogeng Liu, Yu Li, Muhao Chen, and Chaowei Xiao. Adashield: Safeguarding multimodal large lan- guage models from structure-based attack via adaptive shield prompting. In European Conference on Computer Vision, pages 77-94. Springer, 2024. 21",
-    "Guowei Xu, Peng Jin, Ziang Wu, Hao Li, Yibing Song, Lichao Sun, and Li Yuan. Llava-cot: Let vision language models reason step-by-step. In Proceedings of the IEEE/CVF Inter- national Conference on Computer Vision, pages 2087-2098, 2025. 13",
-    "Yi Yang, Xiaoxuan He, Hongkun Pan, Xiyan Jiang, Yan Deng, Xingtao Yang, Haoyu Lu, Dacheng Yin, Fengyun Rao, Min- feng Zhu, et al. R1-onevision: Advancing generalized multi- modal reasoning through cross-modal formalization. arXiv preprint arXiv:2503.10615, 2025. 13",
-    "X Yue, Y Ni, K Zhang, T Zheng, R Liu, G Zhang, S Stevens, D Jiang, W Ren, Y Sun, et al. Mmmu: A massive multi- discipline multimodal understanding and reasoning bench- mark for expert agi. arxiv, 2023. 6, 14, 15",
-    "Eric Zeng, Tadayoshi Kohno, and Franziska Roesner. Bad news: Clickbait and deceptive ads on news and misinforma- tion websites. In Workshop on Technology and Consumer Protection, pages 1-11, 2020. 22",
-    "Wenjun Zeng, Dana Kurniawan, Ryan Mullins, Yuchi Liu, Tamoghna Saha, Dirichi Ike-Njoku, Jindong Gu, Yiwen Song, Cai Xu, Jingjing Zhou, et al. Shieldgemma 2: Ro- bust and tractable image content moderation. arXiv preprint arXiv:2504.01081, 2025. 2, 5, 8, 15, 16, 17",
-    "Xiang Zhang, Yiming Zhao, and Daniel Lee. Gptscore: Eval- uating text generation with large language models. In Pro- ceedings of the 2023 Conference on Empirical Methods in Natural Language Processing. ACL, 2023. 5, 18",
-    "Yongting Zhang, Lu Chen, Guodong Zheng, Yifeng Gao, Rui Zheng, Jinlan Fu, Zhenfei Yin, Senjie Jin, Yu Qiao, Xuanjing Huang, et al. SPA-VL: A comprehensive safety preference alignment dataset for vision language model. arXiv preprint arXiv:2406.12030, 2024. 1, 2, 3, 4, 5, 6, 7, 8, 22, 28, 41",
-    "Chenye Zhao, Jasmine Mangat, Sujay Koujalgi, Anna Squic- ciarini, and Cornelia Caragea. Privacyalert: A dataset for image privacy prediction. In Proceedings of the Interna- tional AAAI Conference on Web and Social Media, pages 1352-1361, 2022. 22",
-    "Kaiwen Zhou, Chengzhi Liu, Xuandong Zhao, Anderson Compalas, Dawn Song, and Xin Eric Wang. Multimodal situational safety. In The Thirteenth International Conference on Learning Representations, 2025. 1, 4",
-    "Yongshuo Zong, Ondrej Bohdal, Tingyang Yu, Yongxin Yang, and Timothy Hospedales. Safety fine-tuning at (almost) no cost: A baseline for vision large language models. In ICML, pages 62867-62891. PMLR, 2024. 1, 2, 3, 4, 5, 6, 7, 8, 13, 21, 22, 28, 41",
-    "Andy Zou, Zifan Wang, J Zico Kolter, and Matt Fredrikson. Universal and transferable adversarial attacks on aligned lan- guage models. arXiv preprint arXiv:2307.15043, 2023. 21"
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

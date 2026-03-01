@@ -2,15 +2,91 @@
   "filename": "2505.14972.pdf",
   "title": "Multimodal Cultural Safety: Evaluation Framework and Alignment Strategies",
   "arxiv_url": "https://arxiv.org/pdf/2505.14972",
-  "bias_targets": [
-    {
-      "target": "Cultural bias",
-      "methodology": "Evaluating vision-language model responses to visually grounded queries containing implicit cultural norm violations across 16 countries, using an LLM-as-a-judge to score responses on cultural awareness, education, compliance, and helpfulness."
-    },
-    {
-      "target": "Language bias",
-      "methodology": "Comparing the cultural safety and norm compliance performance of models when prompted in English versus 14 localized languages to measure cross-lingual disparities."
-    }
+  "religious_groups": [
+    "Islam",
+    "Buddhism",
+    "Christianity"
   ],
-  "primary_bias_target": "Cultural bias"
+  "models_tested": [
+    "InternVL2.5-4B",
+    "InternVL2.5-8B",
+    "InternVL2.5-38B",
+    "Qwen2.5-VL-3B",
+    "Qwen2.5-VL-7B",
+    "Qwen2.5-VL-32B",
+    "Qwen2.5-VL-72B",
+    "Pangea-7B",
+    "Llama-4-Scout",
+    "Llama-4-Maverick",
+    "GPT-4o",
+    "Gemini-2.5-Flash",
+    "o1",
+    "o4-mini",
+    "Gemini-2.5-Pro"
+  ],
+  "languages_evaluated": [
+    "English",
+    "Amharic",
+    "Arabic",
+    "French",
+    "Hausa",
+    "Hindi",
+    "Indonesian",
+    "Japanese",
+    "Mandarin Chinese",
+    "Persian",
+    "Portuguese",
+    "Russian",
+    "Spanish",
+    "Thai"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "SAFEWORLD",
+    "CASA",
+    "CVQA"
+  ],
+  "continuous_testing": true,
+  "findings": "Leading models exhibit significant gaps in cultural safety, including the recognition of religious norms. For instance, models like GPT-4o often fail to recognize the deep spiritual and religious significance of items like Sak Yant tattoos, leading to culturally unsafe responses. While reasoning-capable models like Gemini-2.5-Pro performed better and could identify religious sensitivities (e.g., avoiding pigskin products in a Muslim context), they are not infallible. The paper concludes that even the best models struggle, and while increasing reasoning capacity helps, it does not fully resolve the issue of cultural and religious alignment.",
+  "references": [
+    "Muhammad Farid Adilazuarda, Sagnik Mukherjee, Pradhyumna Lavania, Siddhant Singh, Alham Fikri Aji, Jacki O’Neill, Ashutosh Modi, and Monojit Choudhury. Towards measuring and modeling\" culture\" in llms: A survey. arXiv preprint arXiv:2403.15412, 2024.",
+    "Shuai Bai, Keqin Chen, Xuejing Liu, Jialin Wang, Wenbin Ge, Sibo Song, Kai Dang, Peng Wang, Shijie Wang, Jun Tang, Humen Zhong, Yuanzhi Zhu, Mingkun Yang, Zhaohai Li, Jianqiang Wan, Pengfei Wang, Wei Ding, Zheren Fu, Yiheng Xu, Jiabo Ye, Xi Zhang, Tianbao Xie, Zesen Cheng, Hang Zhang, Zhibo Yang, Haiyang Xu, and Junyang Lin. Qwen2.5-vl technical report. ArXiv, abs/2502.13923, 2025. URL https://arxiv.org/pdf/2502.13923.",
+    "Pierre Bourdieu. The forms of capital. In John G. Richardson (ed.), Handbook of Theory and Research for the Sociology of Education, pp. 241–258. Greenwood, 1986.",
+    "Pierre Boyeau, Anastasios N Angelopoulos, Nir Yosef, Jitendra Malik, and Michael I Jordan. Autoeval done right: Using synthetic data for model evaluation. arXiv preprint arXiv:2403.07008, 2024.",
+    "Zheng Cai, Maosong Cao, Haojiong Chen, Kai Chen, Keyu Chen, Xin Chen, Xun Chen, Zehui Chen, Zhi Chen, Pei Chu, et al. Internlm2 technical report. arXiv preprint arXiv:2403.17297, 2024.",
+    "Yong Cao, Wenyan Li, Jiaang Li, Yifei Yuan, Antonia Karamolegkou, and Daniel Hershcovich. Exploring visual culture awareness in gpt-4v: A comprehensive probing. arXiv preprint arXiv:2402.06015, 2024.",
+    "Trishna Chakraborty, Erfan Shayegani, Zikui Cai, Nael Abu-Ghazaleh, M Salman Asif, Yue Dong, Amit Roy-Chowdhury, and Chengyu Song. Can textual unlearning solve cross-modality safety alignment? In Findings of the Association for Computational Linguistics: EMNLP 2024, pp. 9830–9844, 2024.",
+    "Guo-Ming Chen and William J. Starosta. The development and validation of the intercultural sensitivity scale. Intercultural Communication Studies, X(2):1–15, 2000.",
+    "Zhe Chen, Weiyun Wang, Yue Cao, Yangzhou Liu, Zhangwei Gao, Erfei Cui, Jinguo Zhu, Shenglong Ye, Hao Tian, Zhaoyang Liu, Lixin Gu, Xuehui Wang, Qingyun Li, Yiming Ren, Zixuan Chen, Jiapeng Luo, Jiahao Wang, Tan Jiang, Bo Wang, Conghui He, Botian Shi, Xingcheng Zhang, Han Lv, Yi Wang, Wenqi Shao, Pei Chu, Zhongying Tu, Tong He, Zhiyong Wu, Hui Deng, Jiaye Ge, Kaiming Chen, Min Dou, Lewei Lu, Xizhou Zhu, Tong Lu, Dahu Lin, Yunfeng Qiao, Jifeng Dai, and Wenhai Wang. Expanding performance boundaries of open-source multimodal models with model, data, and test-time scaling. ArXiv, abs/2412.05271, 2024. URL https://arxiv.org/pdf/2412.05271.",
+    "Meng Chu, Yukang Chen, Haokun Gui, Shaozuo Yu, Yi Wang, and Jiaya Jia. Travellama: Facilitating multi-modal large language models to understand urban scenes and provide travel assistance. arXiv preprint arXiv:2504.16505, 2025.",
+    "Mary Douglas and Aaron Wildavsky. Risk and Culture: An Essay on the Selection of Technical and Environmental Dangers. University of California Press, 1982.",
+    "Geyang Guo, Tarek Naous, Hiromi Wakaki, Yukiko Nishimura, Yuki Mitsufuji, Alan Ritter, and Wei Xu. Care: Aligning language models for regional cultural awareness. arXiv preprint arXiv:2504.05154, 2025.",
+    "Kung-Hsiang Huang, Can Qin, Haoyi Qiu, Philippe Laban, Shafiq Joty, Caiming Xiong, and Chien-Sheng Wu. Why vision language models struggle with visual arithmetic? towards enhanced chart and geometry understanding. arXiv preprint arXiv:2502.11492, 2025.",
+    "Shengzhi Li, Rongyu Lin, and Shichao Pei. Multi-modal preference alignment remedies degradation of visual instruction tuning on language models. In Lun-Wei Ku, Andre Martins, and Vivek Srikumar (eds.), Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 14188–14200, Bangkok, Thailand, August 2024. Association for Computational Linguistics. doi: 10.18653/v1/2024.acl-long.765. URL https://aclanthology.org/2024.acl-long.765/.",
+    "Zijing Liang, Yanjie Xu, Yifan Hong, Penghui Shang, Qi Wang, Qiang Fu, and Ke Liu. A survey of multimodel large language models. In Proceedings of the 3rd International Conference on Computer, Artificial Intelligence and Control Engineering, pp. 405–409, 2024.",
+    "Fangyu Liu, Emanuele Bugliarello, Edoardo Maria Ponti, Siva Reddy, Nigel Collier, and Desmond Elliott. Visually grounded reasoning across languages and cultures. arXiv preprint arXiv:2109.13238, 2021.",
+    "Shudong Liu, Yiqiao Jin, Cheng Li, Derek F Wong, Qingsong Wen, Lichao Sun, Haipeng Chen, Xing Xie, and Jindong Wang. Culturevlm: Characterizing and improving cultural understanding of vision-language models for over 100 countries. arXiv preprint arXiv:2501.01282, 2025.",
+    "NVIDIA. What are vision-language models? https://www.nvidia.com/en-us/glossary/ vision-language-models/, 2025. Accessed: 2025-05-07.",
+    "Haoyi Qiu, Alexander Fabbri, Divyansh Agarwal, Kung-Hsiang Huang, Sarah Tan, Nanyun Peng, and Chien-Sheng Wu. Evaluating cultural and social awareness of LLM web agents. In Luis Chiruzzo, Alan Ritter, and Lu Wang (eds.), Findings of the Association for Computational Linguistics: NAACL 2025, pp. 3978–4005, Albuquerque, New Mexico, April 2025. Association for Computational Linguistics. ISBN 979-8-89176-195-7. URL https://aclanthology.org/2025.findings-naacl.222/.",
+    "David Romero, Chenyang Lyu, Haryo Akbarianto Wibowo, Teresa Lynn, Injy Hamed, Aditya Nanda Kishore, Aishik Mandal, Alina Dragonetti, Artem Abzaliev, Atnafu Lambebo Tonja, et al. Cvqa: Culturally-diverse multilingual visual question answering benchmark. arXiv preprint arXiv:2406.05967, 2024.",
+    "Weiyan Shi, Ryan Li, Yutong Zhang, Caleb Ziems, Raya Horesh, Rogério Abreu de Paula, Diyi Yang, et al. Culturebank: An online community-driven knowledge base towards culturally aware language technologies. arXiv preprint arXiv:2404.15238, 2024.",
+    "Ada Defne Tur, Nicholas Meade, Xing Han Lù, Alejandra Zambrano, Arkil Patel, Esin Durmus, Spandana Gella, Karolina Stańczak, and Siva Reddy. Safearena: Evaluating the safety of autonomous web agents. arXiv preprint arXiv:2503.04957, 2025.",
+    "Weiyun Wang, Zhe Chen, Wenhai Wang, Yue Cao, Yangzhou Liu, Zhangwei Gao, Jinguo Zhu, Xizhou Zhu, Lewei Lu, Yu Qiao, et al. Enhancing the reasoning ability of multimodal large language models via mixed preference optimization. arXiv preprint arXiv:2411.10442, 2024a.",
+    "Wenxuan Wang, Xiaoyuan Liu, Kuiyi Gao, Jen-tse Huang, Youliang Yuan, Pinjia He, Shuai Wang, and Zhaopeng Tu. Can’t see the forest for the trees: Benchmarking multimodal safety awareness for multimodal llms. arXiv preprint arXiv:2502.11184, 2025.",
+    "Zhan Wang, Lin-Ping Yuan, Liangwei Wang, Bingchuan Jiang, and Wei Zeng. Virtuwander: Enhancing multi-modal interaction for virtual tour guidance through large language models. In Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems, pp. 1–20, 2024b.",
+    "Robyn Williams. Cultural safety — what does it mean for our work practice? Australian and New Zealand Journal of Public Health, 23, 1999. URL https://www.sciencedirect.com/science/article/pii/ S1326020023025840?via%3Dihub.",
+    "Srishti Yadav, Zhi Zhang, Daniel Hershcovich, and Ekaterina Shutova. Beyond words: Exploring cultural value sensitivity in multimodal models. arXiv preprint arXiv:2502.14906, 2025.",
+    "An Yang, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chengyuan Li, Dayiheng Liu, Fei Huang, Haoran Wei, et al. Qwen2. 5 technical report. arXiv preprint arXiv:2412.15115, 2024.",
+    "Da Yin, Haoyi Qiu, Kung-Hsiang Huang, Kai-Wei Chang, and Nanyun Peng. Safeworld: Geo-diverse safety alignment. Advances in Neural Information Processing Systems, 37:128734–128768, 2024.",
+    "Zonghao Ying, Aishan Liu, Siyuan Liang, Lei Huang, Jinyang Guo, Wenbo Zhou, Xianglong Liu, and Dacheng Tao. Safebench: A safety evaluation framework for multimodal large language models. arXiv preprint arXiv:2410.18927, 2024.",
+    "Xiang Yue, Yuansheng Ni, Kai Zhang, Tianyu Zheng, Ruoqi Liu, Ge Zhang, Samuel Stevens, Dongfu Jiang, Weiming Ren, Yuxuan Sun, et al. Mmmu: A massive multi-discipline multimodal understanding and reasoning benchmark for expert agi. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 9556–9567, 2024a.",
+    "Xiang Yue, Yueqi Song, Akari Asai, Seungone Kim, Jean de Dieu Nyandwi, Simran Khanuja, Anjali Kantharuban, Lintang Sutawika, Sathyanarayanan Ramamoorthy, and Graham Neubig. Pangea: A fully open multilingual multimodal llm for 39 languages. ArXiv, abs/2410.16153, 2024b. URL https: //arxiv.org/pdf/2410.16153.",
+    "Ruohong Zhang, Liangke Gui, Zhiqing Sun, Yihao Feng, Keyang Xu, Yuanhan Zhang, Di Fu, Chunyuan Li, Alexander Hauptmann, Yonatan Bisk, et al. Direct preference optimization of video large multimodal models from language model reward. arXiv preprint arXiv:2404.01258, 2024.",
+    "Tianyi Zhao, Liangliang Zhang, Yao Ma, and Lu Cheng. A survey on safe multi-modal learning systems. In Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining, pp. 6655–6665, 2024.",
+    "Kaiwen Zhou, Chengzhi Liu, Xuandong Zhao, Anderson Compalas, Dawn Song, and Xin Eric Wang. Multimodal situational safety. arXiv preprint arXiv:2410.06172, 2024."
+  ],
+  "measurement_description": "The benchmark measured the ability of Large Vision-Language Models (LVLMs) to recognize and respect culturally grounded norms, including religious sanctity and practices. This involved assessing whether models could identify the sacredness of items (e.g., Buddhist altars, Sak Yant tattoos), understand religious taboos (e.g., pig-derived products in Islam, alcohol consumption under Islamic law), and follow norms related to religious rituals."
 }

@@ -2,15 +2,81 @@
   "filename": "2210.13836.pdf",
   "title": "Deconfounding Legal Judgment Prediction for European Court of Human Rights Cases Towards Better Alignment with Experts",
   "arxiv_url": "https://arxiv.org/pdf/2210.13836",
-  "bias_targets": [
-    {
-      "target": "Nationality bias",
-      "methodology": "Evaluating and mitigating the model's reliance on the identity of the respondent state (country) using a multi-class discriminator and adversarial training with a Gradient Reversal Layer (GRL), then assessing the alignment of model focus with legal expert rationales using Integrated Gradients."
-    },
-    {
-      "target": "Spurious correlation bias",
-      "methodology": "Identifying shallow, legally irrelevant predictive artifacts (such as document length, paragraph numbers, and distractor vocabulary like 'represented') using simple decision tree models, mitigating their effects through adversarial discriminators, and evaluating the resulting feature attribution using Integrated Gradients against expert annotations."
-    }
+  "religious_groups": [],
+  "models_tested": [
+    "BERT variant of Hierarchical Attention Networks",
+    "LegalBERT",
+    "paraRem",
+    "gradCou",
+    "gradLen",
+    "gradVocab",
+    "gradAll"
   ],
-  "primary_bias_target": "Spurious correlation bias"
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Chalkidis et al. (2019)",
+    "LexGLUE (Chalkidis et al., 2022a)",
+    "Chalkidis et al. (2021)"
+  ],
+  "continuous_testing": false,
+  "findings": "The word 'religious' was identified as a spurious correlation for predicting legal outcomes. An expert analysis confirmed that while Article 9 of the European Convention on Human Rights relates to religious freedom, the word 'religious' by itself is not relevant to legal reasoning and acts as a distracting signal for the model. The study's deconfounding methods were designed to mitigate reliance on such spurious tokens.",
+  "references": [
+    "Alex Albright. 2019. If you give a judge a risk score: evidence from kentucky bail decisions. Harvard John M. Olin Fellow's Discussion Paper, 85:16.",
+    "Nikolaos Aletras, Dimitrios Tsarapatsanis, Daniel Preoţiuc-Pietro, and Vasileios Lampos. 2016. Predicting judicial decisions of the european court of human rights: A natural language processing per- spective. PeerJ Computer Science, 2:e93.",
+    "Sebastian Bach, Alexander Binder, Grégoire Mon- tavon, Frederick Klauschen, Klaus-Robert Müller, and Wojciech Samek. 2015. On pixel-wise explana- tions for non-linear classifier decisions by layer-wise relevance propagation. PloS one, 10(7):e0130140.",
+    "Jasmijn Bastings and Katja Filippova. 2020. The ele- phant in the interpretability room: Why use atten- tion as explanation when we have saliency methods? In Proceedings of the Third BlackboxNLP Workshop on Analyzing and Interpreting Neural Networks for NLP, pages 149–155.",
+    "Emily M. Bender and Alexander Koller. 2020. Climb- ing towards NLU: On meaning, form, and under- standing in the age of data. In Proceedings of the 58th Annual Meeting of the Association for Compu- tational Linguistics, pages 5185–5198, Online. As- sociation for Computational Linguistics.",
+    "Rohan Bhambhoria, Samuel Dahan, and Xiaodan Zhu. 2021. Investigating the state-of-the-art performance and explainability of legal judgment prediction. In Canadian Conference on AI.",
+    "L Karl Branting. 2013. Reasoning with rules and precedents: a computational model of legal analy- sis. Springer Science & Business Media.",
+    "L Karl Branting, Craig Pfeifer, Bradford Brown, Lisa Ferro, John Aberdeen, Brandy Weiss, Mark Pfaff, and Bill Liao. 2021. Scalable and explainable legal prediction. Artificial Intelligence and Law, 29(2):213-238.",
+    "Stefanie Brüninghaus and Kevin D Ashley. 2005. Gen- erating legal arguments and predictions from case texts. In Proceedings of the 10th international con- ference on Artificial intelligence and law, pages 65- 74.",
+    "Ilias Chalkidis, Ion Androutsopoulos, and Nikolaos Aletras. 2019. Neural legal judgment prediction in English. In Proceedings of the 57th Annual Meet- ing of the Association for Computational Linguis- tics, pages 4317–4323, Florence, Italy. Association for Computational Linguistics.",
+    "Ilias Chalkidis, Manos Fergadiotis, Prodromos Malaka- siotis, Nikolaos Aletras, and Ion Androutsopoulos. 2020. Legal-bert: The muppets straight out of law school. In Findings of the Association for Computa- tional Linguistics: EMNLP 2020, pages 2898-2904.",
+    "Ilias Chalkidis, Manos Fergadiotis, Dimitrios Tsarapat- sanis, Nikolaos Aletras, Ion Androutsopoulos, and Prodromos Malakasiotis. 2021. Paragraph-level ra- tionale extraction through regularization: A case study on european court of human rights cases. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computa- tional Linguistics: Human Language Technologies, pages 226-241.",
+    "Ilias Chalkidis, Abhik Jana, Dirk Hartung, Michael Bommarito, Ion Androutsopoulos, Daniel Katz, and Nikolaos Aletras. 2022a. LexGLUE: A benchmark dataset for legal language understanding in English. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 4310–4330, Dublin, Ireland. Association for Computational Linguistics.",
+    "Ilias Chalkidis, Tommaso Pasini, Sheng Zhang, Letizia Tomada, Sebastian Schwemer, and Anders Søgaard. 2022b. FairLex: A multilingual benchmark for eval- uating fairness in legal text processing. In Proceed- ings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Pa- pers), pages 4389-4406, Dublin, Ireland. Associa- tion for Computational Linguistics.",
+    "Kenneth Church and Patrick Hanks. 1990. Word as- sociation norms, mutual information, and lexicogra- phy. Computational linguistics, 16(1):22–29.",
+    "Erin Collins. 2018. Punishing risk. Geo. LJ, 107:57.",
+    "Xiang Dai, Ilias Chalkidis, Sune Darkner, and Desmond Elliott. 2022. Revisiting transformer- based models for long document classification. arXiv preprint arXiv:2204.06683.",
+    "Marina Danilevsky, Kun Qian, Ranit Aharonov, Yan- nis Katsis, Ban Kawas, and Prithviraj Sen. 2020. A survey of the state of explainable AI for natural lan- guage processing. In Proceedings of the 1st Con- ference of the Asia-Pacific Chapter of the Associa- tion for Computational Linguistics and the 10th In- ternational Joint Conference on Natural Language Processing, pages 447-459, Suzhou, China. Associ- ation for Computational Linguistics.",
+    "Ayse B Dincer, Joseph D Janizek, and Su-In Lee. 2020. Adversarial deconfounding autoencoder for learning robust gene expression embeddings. Bioinformatics, 36(Supplement_2):i573-i582.",
+    "Veronika Fikfak. 2021. What future for human rights? decision-making by algorithm. Decision-making by algorithm (September 3, 2021). Strasbourg Ob- servers, 19.",
+    "Yaroslav Ganin and Victor Lempitsky. 2015. Unsuper- vised domain adaptation by backpropagation. In In- ternational conference on machine learning, pages 1180-1189. PMLR.",
+    "Yaroslav Ganin, Evgeniya Ustinova, Hana Ajakan, Pascal Germain, Hugo Larochelle, François Lavi- olette, Mario Marchand, and Victor Lempitsky. 2016. Domain-adversarial training of neural net- works. The journal of machine learning research, 17(1):2096-2030.",
+    "Robert Geirhos, Jörn-Henrik Jacobsen, Claudio Michaelis, Richard Zemel, Wieland Brendel, Matthias Bethge, and Felix A Wichmann. 2020. Shortcut learning in deep neural networks. Nature Machine Intelligence, 2(11):665-673.",
+    "Reza Ghaeini, Xiaoli Fern, and Prasad Tadepalli. 2018. Interpreting recurrent and attention-based neural models: a case study on natural language inference. In Proceedings of the 2018 Conference on Empiri- cal Methods in Natural Language Processing, pages 4952-4957.",
+    "Ian Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, and Yoshua Bengio. 2014. Generative ad- versarial nets. Advances in neural information pro- cessing systems, 27.",
+    "Matthias Grabmair. 2017. Predicting trade secret case outcomes using argument schemes and learned quan- titative value effect tradeoffs. In Proceedings of the 16th edition of the International Conference on Arti- cial Intelligence and Law, pages 89-98.",
+    "Laurence R Helfer and Erik Voeten. 2020. Walking back human rights in europe? European Journal of International Law, 31(3):797–827.",
+    "Sahil Jayaram and Emily Allaway. 2021. Human ratio- nales as attribution priors for explainable stance de- tection. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 5540-5554.",
+    "Diederik P. Kingma and Jimmy Ba. 2015. Adam: A method for stochastic optimization. In 3rd Inter- national Conference on Learning Representations, ICLR 2015, San Diego, CA, USA, May 7-9, 2015, Conference Track Proceedings.",
+    "Jaesong Lee, Joong-Hwi Shin, and Jun-Seok Kim. 2017. Interactive visualization and manipulation of attention-based neural machine translation. In Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing: System Demonstrations, pages 121-126.",
+    "Jiwei Li, Xinlei Chen, Eduard Hovy, and Dan Jurafsky. 2016. Visualizing and understanding neural models in nlp. In Proceedings of the 2016 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Tech- nologies, pages 681–691.",
+    "Zhiyuan Liu, Cunchao Tu, and Maosong Sun. 2019. Legal cause prediction with inner descriptions and outer hierarchies. In China National Conference on Chinese Computational Linguistics, pages 573-586. Springer.",
+    "Luyao Ma, Yating Zhang, Tianyi Wang, Xiaozhong Liu, Wei Ye, Changlong Sun, and Shikun Zhang. 2021. Legal judgment prediction with multi-stage case representation learning in the real court setting. In Proceedings of the 44th International ACM SIGIR Conference on Research and Development in Infor- mation Retrieval, pages 993-1002.",
+    "Mikael Rask Madsen, Pola Cebulak, and Micha Wiebusch. 2018. Backlash against international courts: explaining the forms and patterns of resis- tance to international courts. International Journal of Law in Context, 14(2):197-220.",
+    "Tom McCoy, Ellie Pavlick, and Tal Linzen. 2019. Right for the wrong reasons: Diagnosing syntactic heuristics in natural language inference. In Proceed- ings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 3428-3448, Florence, Italy. Association for Computational Lin- guistics.",
+    "Masha Medvedeva, Ahmet Üstün, Xiao Xu, Michel Vols, and Martijn Wieling. 2021. Automatic judge- ment forecasting for pending applications of the eu- ropean court of human rights. In ASAIL/LegalAIIA@ ICAIL.",
+    "Masha Medvedeva, Michel Vols, and Martijn Wieling. 2020. Using machine learning to predict decisions of the european court of human rights. Artificial In- telligence and Law, 28(2):237-266.",
+    "Masha Medvedeva, Martijn Wieling, and Michel Vols. 2022. Rethinking the field of automatic prediction of court decisions. Artificial Intelligence and Law, pages 1-18.",
+    "Reid Pryzant, Kelly Shen, Dan Jurafsky, and Stefan Wagner. 2018. Deconfounded lexicon induction for interpretable social science. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Hu- man Language Technologies, Volume 1 (Long Pa- pers), pages 1615-1625, New Orleans, Louisiana. Association for Computational Linguistics.",
+    "Marco Tulio Ribeiro, Sameer Singh, and Carlos Guestrin. 2016. \"why should i trust you?\" explain- ing the predictions of any classifier. In Proceed- ings of the 22nd ACM SIGKDD international con- ference on knowledge discovery and data mining, pages 1135-1144.",
+    "Margaret E Roberts, Brandon M Stewart, and Richard A Nielsen. 2020. Adjusting for confound- ing with text matching. American Journal of Politi- cal Science, 64(4):887-903.",
+    "Tal Schuster, Darsh Shah, Yun Jie Serene Yeo, Daniel Roberto Filizzola Ortiz, Enrico Santus, and Regina Barzilay. 2019. Towards debiasing fact verification models. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natu- ral Language Processing (EMNLP-IJCNLP), pages 3419-3425.",
+    "Sofia Serrano and Noah A Smith. 2019. Is attention interpretable? In Proceedings of the 57th Annual Meeting of the Association for Computational Lin- guistics, pages 2931-2951.",
+    "Mehmet Fatih Sert, Engin Yıldırım, and İrfan Haşlak. 2021. Using artificial intelligence to predict deci- sions of the turkish constitutional court. Social Sci- ence Computer Review, page 08944393211010398.",
+    "Nitish Srivastava, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan Salakhutdinov. 2014. Dropout: a simple way to prevent neural networks from overfitting. The journal of machine learning research, 15(1):1929–1958.",
+    "Mukund Sundararajan, Ankur Taly, and Qiqi Yan. 2017. Axiomatic attribution for deep networks. In Interna- tional conference on machine learning, pages 3319– 3328. PMLR.",
+    "Nuo Xu, Pinghui Wang, Long Chen, Li Pan, Xiaoyan Wang, and Junzhou Zhao. 2020. Distinguish con- fusing law articles for legal judgment prediction. In Proceedings of the 58th Annual Meeting of the Asso- ciation for Computational Linguistics, pages 3086- 3095, Online. Association for Computational Lin- guistics.",
+    "Zichao Yang, Diyi Yang, Chris Dyer, Xiaodong He, Alex Smola, and Eduard Hovy. 2016. Hierarchi- cal attention networks for document classification. In Proceedings of the 2016 conference of the North American chapter of the association for computa- tional linguistics: human language technologies, pages 1480-1489.",
+    "Matthew D Zeiler and Rob Fergus. 2014. Visualizing and understanding convolutional networks. In Euro- pean conference on computer vision, pages 818-833. Springer.",
+    "Haoxi Zhong, Zhipeng Guo, Cunchao Tu, Chaojun Xiao, Zhiyuan Liu, and Maosong Sun. 2018. Le- gal judgment prediction via topological learning. In Proceedings of the 2018 Conference on Em- pirical Methods in Natural Language Processing, pages 3540-3549, Brussels, Belgium. Association for Computational Linguistics."
+  ],
+  "measurement_description": "The benchmark measured the model's reliance on the word 'religious' as a spurious, legally irrelevant cue for predicting legal outcomes, as part of a broader deconfounding effort."
 }

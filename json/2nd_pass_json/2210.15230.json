@@ -2,48 +2,19 @@
   "filename": "2210.15230.pdf",
   "title": "How well can Text-to-Image Generative Models understand Ethical Natural Language Interventions?",
   "arxiv_url": "https://arxiv.org/pdf/2210.15230",
-  "benchmark_measurement": "The benchmark measured cultural bias using prompts related to wedding ceremonies, framing it as a contrast between 'Western' and 'Non-Western' cultures rather than focusing on specific religious practices or beliefs.",
-  "religious_groups": [],
-  "models_tested": [
-    "minDALL·E",
-    "DALL·E-mini",
-    "Stable Diffusion"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating the diversity and bias of images generated from neutral versus ethically intervened text prompts (e.g., 'irrespective of their gender') by categorizing generated individuals as man or woman using both automated CLIP-based image-text similarity scores and human annotations."
+    },
+    {
+      "target": "Skin color bias",
+      "methodology": "Evaluating the diversity and bias of images generated from neutral versus ethically intervened text prompts by having human annotators visually categorize the generated individuals as light-skinned or dark-skinned."
+    },
+    {
+      "target": "Cultural bias",
+      "methodology": "Evaluating images generated from cultural scenario prompts (e.g., bride, groom, wedding) with and without cultural interventions (e.g., 'from diverse cultures'), using human annotators to classify the depicted scenarios as Western or Non-Western."
+    }
   ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "other"
-  ],
-  "religion_component": "none",
-  "base_benchmarks": [],
-  "continuous_testing": false,
-  "findings": "The paper does not analyze or report any findings related to religion or faith. Its focus is on gender, skin color, and cultural biases, with culture being analyzed through a secular, regional lens (Western vs. Non-Western).",
-  "references": [
-    "A. Acharya, Kartik Talamadupula, and Mark A. Finlayson. 2020. An Atlas of Cultural Commonsense for Machine Reasoning. ArXiv, abs/2009.05664.",
-    "Solon Barocas, Moritz Hardt, and Arvind Narayanan. 2018. Fairness and machine learning. fairmlbook. org, 2019.",
-    "Catherine M Bell et al. 1997. Ritual: Perspectives and Dimensions. Oxford University Press on Demand.",
-    "Abeba Birhane, Vinay Uday Prabhu, and Emmanuel Kahembwe. 2021. Multimodal datasets: misogyny, pornography, and malignant stereotypes. ArXiv, abs/2110.01963.",
-    "Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, et al. 2020. Language Models are Few-shot Learners. Advances in Neural Information Processing Systems, 33:1877–1901.",
-    "Soravit Changpinyo, Piyush Sharma, Nan Ding, and Radu Soricut. 2021. Conceptual 12m: Pushing webscale image-text pre-training to recognize long-tail visual concepts. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 3558-3568.",
-    "Jaemin Cho, Abhay Zala, and Mohit Bansal. 2022. DALL-Eval: Probing the Reasoning Skills and Social Biases of Text-to-Image Generative Transformers. arXiv preprint arXiv:2202.04053.",
-    "Boris Dayma, Suraj Patil, Pedro Cuenca, Khalid Saifullah, Tanishq Abraham, Phúc Le Khac, Luke Melas, and Ritobrata Ghosh. 2021. Dall-e mini.",
-    "Sunipa Dev, Masoud Monajatipoor, Anaelia Ovalle, Arjun Subramonian, Jeff M Phillips, and Kai-Wei Chang. 2021. Harms of gender exclusivity and challenges in non-binary representation in language technologies. arXiv preprint arXiv:2108.12084.",
-    "Ming Ding, Zhuoyi Yang, Wenyi Hong, Wendi Zheng, Chang Zhou, Da Yin, Junyang Lin, Xu Zou, Zhou Shao, Hongxia Yang, et al. 2021. Cogview: Mastering text-to-image generation via transformers. Advances in Neural Information Processing Systems, 34:19822-19835.",
-    "Thomas B Fitzpatrick. 1986. Ultraviolet-induced pigmentary changes: benefits and hazards. Therapeutic photomedicine, 15:25–38.",
-    "Saehoon Kim, Sanghun Cho, Chiheon Kim, Doyup Lee, and Woonhyuk Baek. 2021. mindall-e on conceptual captions.",
-    "Alex Nichol, Prafulla Dhariwal, Aditya Ramesh, Pranav Shyam, Pamela Mishkin, Bob McGrew, Ilya Sutskever, and Mark Chen. 2021. Glide: Towards photorealistic image generation and editing with text-guided diffusion models. arXiv preprint arXiv:2112.10741.",
-    "Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, Ilya Sutskever, et al. 2019. Language Models are Unsupervised Multitask Learners. OpenAI blog, 1(8):9.",
-    "Aditya Ramesh, Prafulla Dhariwal, Alex Nichol, Casey Chu, and Mark Chen. 2022. Hierarchical text-conditional image generation with clip latents. arXiv preprint arXiv:2204.06125.",
-    "Aditya Ramesh, Mikhail Pavlov, Gabriel Goh, Scott Gray, Chelsea Voss, Alec Radford, Mark Chen, and Ilya Sutskever. 2021. Zero-shot text-to-image generation. In International Conference on Machine Learning, pages 8821-8831. PMLR.",
-    "Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, and Björn Ommer. 2022. Highresolution image synthesis with latent diffusion models. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 10684-10695.",
-    "Chitwan Saharia, William Chan, Saurabh Saxena, Lala Li, Jay Whang, Emily Denton, Seyed Kamyar Seyed Ghasemipour, Burcu Karagol Ayan, S Sara Mahdavi, Rapha Gontijo Lopes, et al. 2022. Photorealistic text-to-image diffusion models with deep language understanding. arXiv preprint arXiv:2205.11487.",
-    "Piyush Sharma, Nan Ding, Sebastian Goodman, and Radu Soricut. 2018. Conceptual captions: A cleaned, hypernymed, image alt-text dataset for automatic image captioning. In Proceedings of ACL.",
-    "Emily Sheng, Kai-Wei Chang, Prem Natarajan, and Nanyun Peng. 2020. Towards Controllable Biases in Language Generation. In Findings of the Association for Computational Linguistics: EMNLP 2020, pages 3239-3254, Online. Association for Computational Linguistics.",
-    "Eric Wallace, Shi Feng, Nikhil Kandpal, Matt Gardner, and Sameer Singh. 2019. Universal adversarial triggers for attacking and analyzing NLP. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 2153-2162, Hong Kong, China. Association for Computational Linguistics.",
-    "Lihong Xu and Meihong Xu. 2018. Comparison on wedding culture between china and western countries. In 8th International Conference on Education, Management, Computer and Society, pages 423-426.",
-    "Da Yin, Liunian Harold Li, Ziniu Hu, Nanyun Peng, and Kai-Wei Chang. 2021. Broaden the Vision: Geo-Diverse Visual Commonsense Reasoning. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 2115-2129, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics.",
-    "Daniel T. Zhang, Nestor Maslej, Erik Brynjolfsson, John Etchemendy, Terah Lyons, J. Manyika, Helen Ngo, Juan Carlos Niebles, Michael Sellitto, Ellie Sakhaee, Yoav Shoham, Jack Clark, and Ray Perrault. 2022. The ai index 2022 annual report. ArXiv, abs/2205.03468.",
-    "Jieyu Zhao, Daniel Khashabi, Tushar Khot, Ashish Sabharwal, and Kai-Wei Chang. 2021. Ethical-advice taker: Do language models understand natural language interventions? In Findings of the Association for Computational Linguistics: ACL-IJCNLP 2021."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

@@ -2,118 +2,31 @@
   "filename": "2506.08477.pdf",
   "title": "Read as You See: Guiding Unimodal LLMs for Low-Resource Explainable Harmful Meme Detection",
   "arxiv_url": "https://arxiv.org/pdf/2506.08477",
-  "benchmark_measurement": "Detection of hateful and offensive content, including harmful stereotypes and negative contextual associations, targeting religious groups such as Muslims and Jews.",
-  "religious_groups": [
-    "Judaism",
-    "Islam",
-    "Christianity"
+  "bias_targets": [
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluating zero-shot Chain-of-Thought (CoT) classification accuracy and F1 scores on detecting racially hateful memes using human-crafted guidelines on datasets like FHM and MultiOFF."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating zero-shot CoT classification performance on misogynistic and sexist memes using targeted guidelines (e.g., identifying objectification, body shaming, and harmful stereotypes) on datasets like MAMI, GoatBench, and FHM."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Evaluating zero-shot CoT classification performance on homophobic and transphobic memes using targeted guidelines for LGBTQ+ content on datasets like PrideMM and MultiOFF."
+    },
+    {
+      "target": "Political bias",
+      "methodology": "Evaluating zero-shot CoT classification performance on harmful political memes targeting specific politicians, political parties, or ideologies using datasets like Harm-P, HarMeme, and MultiOFF."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluating zero-shot CoT classification performance on hateful memes targeting religious groups (e.g., Islamophobia, Antisemitism) using human-crafted guidelines on datasets like FHM and MultiOFF."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Extracting visual cues regarding disability and evaluating zero-shot CoT classification performance on hateful memes targeting people with disabilities using the FHM dataset."
+    }
   ],
-  "models_tested": [
-    "LLaVA1.6-7B",
-    "Qwen2 VL-7B",
-    "Qwen2.5-14B",
-    "Qwen2.5-7B",
-    "Mistral-12B",
-    "Llama3.1-8B",
-    "GPT-40-mini",
-    "GPT-4V"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "long",
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "FHM",
-    "HarMeme",
-    "Harm-P",
-    "MultiOFF",
-    "MAMI",
-    "PrideMM",
-    "GoatBench"
-  ],
-  "continuous_testing": false,
-  "findings": "The proposed U-CoT+ framework, which guides unimodal LLMs with human-crafted rules, effectively detects harmful memes targeting religious groups. It successfully identifies implicit hate speech, such as anti-Semitic content making light of the Holocaust and stereotypes associating Muslims with terrorism, by leveraging contextual and historical knowledge provided in the guidelines.",
-  "references": [
-    "Faseela Abdullakutty, Somaya Al-Maadeed, and Usman Naseem. 2024. Context-Aware Offensive Meme Detection: A Multi-Modal Zero-Shot Approach with Caption-Enhanced Classification. In 2024 IEEE International Conference on Data Mining Workshops (ICDMW). IEEE, 137-145.",
-    "Sayantan Adak, Somnath Banerjee, Rajarshi Mandal, Avik Halder, Sayan Layek, Rima Hazra, and Animesh Mukherjee. 2025. MemeSense: An Adaptive In-Context Framework for Social Commonsense Driven Meme Moderation. arXiv preprint arXiv:2502.11246 (2025).",
-    "Siddhant Agarwal, Shivam Sharma, Preslav Nakov, and Tanmoy Chakraborty. 2024. MemeMQA: Multimodal Question Answering for Memes via Rationale-Based Inferencing. arXiv preprint arXiv:2405.11215 (2024).",
-    "AI@Meta. 2024. Llama 3 Model Card. (2024). https://github.com/meta-llama/ llama3/blob/main/MODEL_CARD.md",
-    "Arup Baruah, Kaushik Das, Ferdous Barbhuiya, and Kuntal Dey. 2020. Context-aware sarcasm detection using BERT. In Proceedings of the Second Workshop on Figurative Language Processing. 83-87.",
-    "Akash Bonagiri, Lucen Li, Rajvardhan Oak, Zeerak Babar, Magdalena Wojcieszak, and Anshuman Chhabra. 2025. Towards Safer Social Media Platforms: Scalable and Performant Few-Shot Harmful Content Moderation Using Large Language Models. arXiv preprint arXiv:2501.13976 (2025).",
-    "Giovanni Burbi, Alberto Baldrati, Lorenzo Agnolucci, Marco Bertini, and Alberto Del Bimbo. 2023. Mapping memes to words for multimodal hateful meme clas- sification. In Proceedings of the IEEE/CVF International Conference on Computer Vision. 2832-2836.",
-    "Nadia Burkart and Marco F Huber. 2021. A survey on the explainability of supervised machine learning. Journal of Artificial Intelligence Research 70 (2021), 245-317.",
-    "Rui Cao, Ming Shan Hee, Adriel Kuek, Wen-Haw Chong, Roy Ka-Wei Lee, and Jing Jiang. 2023. Pro-cap: Leveraging a frozen vision-language model for hateful meme detection. In Proceedings of the 31st ACM International Conference on Multimedia. 5244-5252.",
-    "Rui Cao, Roy Ka-Wei Lee, Wen-Haw Chong, and Jing Jiang. 2023. Prompting for multimodal hateful meme classification. arXiv preprint arXiv:2302.04156 (2023).",
-    "Rui Cao, Roy Ka-Wei Lee, and Jing Jiang. 2024. Modularized networks for few- shot hateful meme detection. In Proceedings of the ACM Web Conference 2024. 4575-4584.",
-    "Bharathi Raja Chakravarthi, Rahul Ponnusamy, Saranya Rajiakodi, Shunmuga Priya Muthusamy Chinnan, Paul Buitelaar, Bhuvaneswari Sivagnanam, and Anshid KA. 2025. Findings of the Shared Task on Misogyny Meme Detection: DravidianLangTech@ NAACL 2025. In Proceedings of the Fifth Workshop on Speech, Vision, and Language Technologies for Dravidian Languages. 721-731.",
-    "Barbara Dancygier and Lieven Vandelanotte. 2017. Internet memes as multimodal constructions. Cognitive Linguistics 28, 3 (2017), 565-598.",
-    "Thomas Davidson, Debasmita Bhattacharya, and Ingmar Weber. 2019. Racial bias in hate speech and abusive language detection datasets. arXiv preprint arXiv:1905.12516 (2019).",
-    "Charlie Edwards and Luke Gribbon. 2013. Pathways to violent extremism in the digital era. The RUSI Journal 158, 5 (2013), 40-47.",
-    "Facebook. 2024. How do I share a link on Facebook? https://www.facebook. com/help/1584908458516247/?helpref=uf_share",
-    "Elisabetta Fersini, Francesca Gasparini, Giulia Rizzi, Aurora Saibene, Berta Chulvi, Paolo Rosso, Alyssa Lees, and Jeffrey Sorensen. 2022. SemEval-2022 Task 5: Multi- media Automatic Misogyny Identification. In Proceedings of the 16th International Workshop on Semantic Evaluation (SemEval-2022). 533-549.",
-    "Tarleton Gillespie. 2020. Content moderation, AI, and the question of scale. Big Data & Society 7, 2 (2020), 2053951720943234.",
-    "Robert Gorwa, Reuben Binns, and Christian Katzenbach. 2020. Algorithmic content moderation: Technical and political challenges in the automation of platform governance. Big Data & Society 7, 1 (2020), 2053951719897945.",
-    "Ming Shan Hee and Roy Ka-Wei Lee. 2025. Demystifying Hateful Content: Lever- aging Large Multimodal Models for Hateful Meme Detection with Explainable Decisions. arXiv preprint arXiv:2502.11073 (2025).",
-    "Jianzhao Huang, Hongzhan Lin, Ziyan Liu, Ziyang Luo, Guang Chen, and Jing Ma. 2024. Towards Low-Resource Harmful Meme Detection with LMM Agents. arXiv preprint arXiv:2411.05383 (2024).",
-    "Aaron Hurst, Adam Lerer, Adam P Goucher, Adam Perelman, Aditya Ramesh, Aidan Clark, AJ Ostrow, Akila Welihinda, Alan Hayes, Alec Radford, et al. 2024. Gpt-40 system card. arXiv preprint arXiv:2410.21276 (2024).",
-    "Prince Jha, Raghav Jain, Konika Mandal, Aman Chadha, Sriparna Saha, and Pushpak Bhattacharyya. 2024. Memeguard: An Ilm and vlm-based frame- work for advancing content moderation via meme intervention. arXiv preprint arXiv:2406.05344 (2024).",
-    "Junhui Ji, Xuanrui Lin, and Usman Naseem. 2024. Capalign: Improving cross modal alignment via informative captioning for harmful meme detection. In Proceedings of the ACM Web Conference 2024. 4585-4594.",
-    "Saurav Joshi, Filip Ilievski, and Luca Luceri. 2024. Contextualizing internet memes across social media platforms. In Companion Proceedings of the ACM Web Conference 2024. 1831-1840.",
-    "Ian Kennedy, Morgan Wack, Andrew Beers, Joseph S Schafer, Isabella Garcia- Camargo, Emma S Spiro, and Kate Starbird. 2022. Repeat spreaders and election delegitimization: A comprehensive dataset of misinformation tweets from the 2020 US election. Journal of Quantitative Description: Digital Media 2 (2022).",
-    "Douwe Kiela, Hamed Firooz, Aravind Mohan, Vedanuj Goswami, Amanpreet Singh, Pratik Ringshia, and Davide Testuggine. 2020. The hateful memes chal- lenge: Detecting hate speech in multimodal memes. Advances in neural informa- tion processing systems 33 (2020), 2611-2624.",
-    "Takeshi Kojima, Shixiang Shane Gu, Machel Reid, Yutaka Matsuo, and Yusuke Iwasawa. 2022. Large language models are zero-shot reasoners. Advances in neural information processing systems 35 (2022), 22199-22213.",
-    "Gokul Karthik Kumar and Karthik Nandakumar. 2022. Hate-CLIPper: Multimodal hateful meme classification based on cross-modal interaction of CLIP features. arXiv preprint arXiv:2210.05916 (2022).",
-    "Gitanjali Kumari, Kirtan Jain, and Asif Ekbal. 2024. M3Hop-CoT: Misogy- nous Meme Identification with Multimodal Multi-hop Chain-of-Thought. arXiv preprint arXiv:2410.09220 (2024).",
-    "Hongzhan Lin, Ziyang Luo, Wei Gao, Jing Ma, Bo Wang, and Ruichao Yang. 2024. Towards explainable harmful meme detection through multimodal debate between large language models. In Proceedings of the ACM Web Conference 2024. 2359-2370.",
-    "Hongzhan Lin, Ziyang Luo, Bo Wang, Ruichao Yang, and Jing Ma. 2024. Goat- bench: Safety insights to large multimodal models through meme-based social abuse. ACM Transactions on Intelligent Systems and Technology (2024).",
-    "Chen Liu, Gregor Geigle, Robin Krebs, and Iryna Gurevych. 2022. FigMemes: A dataset for figurative language identification in politically-opinionated memes. In Proceedings of the 2022 conference on empirical methods in natural language processing. 7069-7086.",
-    "Haotian Liu, Chunyuan Li, Yuheng Li, and Yong Jae Lee. 2023. Improved Baselines with Visual Instruction Tuning. arXiv: 2310.03744 [cs.CV]",
-    "Haotian Liu, Chunyuan Li, Qingyang Wu, and Yong Jae Lee. 2023. Visual in- struction tuning. Advances in neural information processing systems 36 (2023), 34892-34916.",
-    "Ziyan Liu, Chunxiao Fan, Haoran Lou, Yuexin Wu, and Kaiwei Deng. 2025. MIND: A Multi-agent Framework for Zero-shot Harmful Meme Detection. arXiv preprint arXiv:2507.06908 (2025).",
-    "Junyu Lu, Bo Xu, Xiaokun Zhang, Hongbo Wang, Haohao Zhu, Dongyu Zhang, Liang Yang, and Hongfei Lin. 2024. Towards comprehensive detection of chinese harmful memes. Advances in Neural Information Processing Systems 37 (2024), 13302-13320.",
-    "Jingbiao Mei, Jinghong Chen, Guangyu Yang, Weizhe Lin, and Bill Byrne. 2025. Improved Fine-Tuning of Large Multimodal Models for Hateful Meme Detection. arXiv preprint arXiv:2502.13061 (2025).",
-    "Mistral. 2024. https://huggingface.co/nvidia/Mistral-NeMo-12B-Instruct",
-    "Khoi Nguyen and Vincent Ng. 2024. Computational Meme Understanding: A Survey. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing. 21251-21267.",
-    "OpenAI. 2023. GPT-4V(ision). https://openai.com/index/gpt-4v-system-card/.",
-    "OpenAI. 2024. GPT-40 mini. https://openai.com/index/gpt-40-mini-advancing- cost-efficient-intelligence/.",
-    "Fengjun Pan, Xiaobao Wu, Zongrui Li, and Anh Tuan Luu. 2024. Are LLMs good zero-shot fallacy classifiers? arXiv preprint arXiv:2410.15050 (2024).",
-    "Delfina Sol Martinez Pandiani, Erik Tjong Kim Sang, and Davide Ceolin. 2024. Toxic Memes: A Survey of Computational Perspectives on the Detection and Explanation of Meme Toxicities. arXiv preprint arXiv:2406.07353 (2024).",
-    "Jessica A Pater, Moon K Kim, Elizabeth D Mynatt, and Casey Fiesler. 2016. Char- acterizations of online harassment: Comparing policies across social media plat- forms. In Proceedings of the 2016 ACM International Conference on Supporting Group Work. 369-374.",
-    "Shraman Pramanick, Dimitar Dimitrov, Rituparna Mukherjee, Shivam Sharma, Md Shad Akhtar, Preslav Nakov, and Tanmoy Chakraborty. 2021. Detecting harmful memes and their targets. arXiv preprint arXiv:2110.00413 (2021).",
-    "Shraman Pramanick, Shivam Sharma, Dimitar Dimitrov, Md Shad Akhtar, Preslav Nakov, and Tanmoy Chakraborty. 2021. MOMENTA: A multimodal framework for detecting harmful memes and their targets. arXiv preprint arXiv:2109.05184 (2021).",
-    "Biqing Qi, Kaiyan Zhang, Haoxiang Li, Kai Tian, Sihang Zeng, Zhang-Ren Chen, and Bowen Zhou. 2023. Large language models are zero shot hypothesis proposers. arXiv preprint arXiv:2311.05965 (2023).",
-    "Qwen2-VL. 2024. arXiv:2409.12191 https://arxiv.org/abs/2409.12191",
-    "Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, et al. 2021. Learning transferable visual models from natural language supervision. In International conference on machine learning. PmLR, 8748-8763.",
-    "Qwen2.5 Technical Report. 2025. arXiv:2412.15115 [cs.CL] https://arxiv.org/abs/ 2412.15115",
-    "Naquee Rizwan, Paramananda Bhaskar, Mithun Das, Swadhin Satyaprakash Majhi, Punyajoy Saha, and Animesh Mukherjee. 2024. Zero shot VLMs for hate meme detection: Are we there yet? arXiv preprint arXiv:2402.12198 (2024).",
-    "B Sasikala and Shubham Sachan. 2024. Decoding decision-making: embracing explainable Al for trust and transparency. Exploring the frontiers of artificial intelligence and machine learning technologies 42 (2024).",
-    "Siddhant Bikram Shah, Shuvam Shiwakoti, Maheep Chaudhary, and Haohan Wang. 2024. Memeclip: Leveraging clip representations for multimodal meme classification. arXiv preprint arXiv:2409.14703 (2024).",
-    "Shivam Sharma, Firoj Alam, Md Shad Akhtar, Dimitar Dimitrov, Giovanni Da San Martino, Hamed Firooz, Alon Halevy, Fabrizio Silvestri, Preslav Nakov, and Tanmoy Chakraborty. 2022. Detecting and understanding harmful memes: A survey. arXiv preprint arXiv:2205.04274 (2022).",
-    "Mohit Singhal, Chen Ling, Pujan Paudel, Poojitha Thota, Nihal Kumarswamy, Gianluca Stringhini, and Shirin Nilizadeh. 2023. SoK: Content moderation in social media, from guidelines to enforcement, and research to practice. In 2023 IEEE 8th European Symposium on Security and Privacy (EuroS&P). IEEE, 868-895.",
-    "Xuanyu Su, Yansong Li, Diana Inkpen, and Nathalie Japkowicz. 2024. HateSieve: A Contrastive Learning Framework for Detecting and Segmenting Hateful Content in Multimodal Memes. arXiv preprint arXiv:2408.05794 (2024).",
-    "Shardul Suryawanshi, Mihael Arcan, Suzanne Little, and Paul Buitelaar. 2023. Multimodal Offensive Meme Classification with Natural Language Inference. In Proceedings of the 4th Conference on Language, Data and Knowledge. 134-145.",
-    "Shardul Suryawanshi, Bharathi Raja Chakravarthi, Mihael Arcan, and Paul Buite- laar. 2020. Multimodal meme dataset (MultiOFF) for identifying offensive content in image and text. In Proceedings of the second workshop on trolling, aggression and cyberbullying. 32-41.",
-    "Kurt Thomas, Patrick Gage Kelley, David Tao, Sarah Meiklejohn, Owen Vallis, Shunwen Tan, Blaž Bratanič, Felipe Tiengo Ferreira, Vijay Kumar Eranti, and Elie Bursztein. 2025. Supporting Human Raters with the Detection of Harmful Content using Large Language Models. In 2025 IEEE Symposium on Security and Privacy (SP). IEEE, 2772-2789.",
-    "Maria Tzelepi and Vasileios Mezaris. 2025. Improving Multimodal Hate- ful Meme Detection Exploiting LMM-Generated Knowledge. arXiv preprint arXiv:2504.09914 (2025).",
-    "Jason Wei, Maarten Bosma, Vincent Y Zhao, Kelvin Guu, Adams Wei Yu, Brian Lester, Nan Du, Andrew M Dai, and Quoc V Le. 2021. Finetuned language models are zero-shot learners. arXiv preprint arXiv:2109.01652 (2021).",
-    "Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Fei Xia, Ed Chi, Quoc V Le, Denny Zhou, et al. 2022. Chain-of-thought prompting elicits reasoning in large language models. Advances in neural information processing systems 35 (2022), 24824-24837.",
-    "Xiaobao Wu. 2025. Sailing AI by the Stars: A Survey of Learning from Rewards in Post-Training and Test-Time Scaling of Large Language Models. arXiv preprint arXiv:2505.02686 (2025).",
-    "Xiaobao Wu, Xinshuai Dong, Thong Nguyen, Chaoqun Liu, Liang-Ming Pan, and Anh Tuan Luu. 2023. Infoctm: A mutual information maximization perspective of cross-lingual topic modeling. In Proceedings of the AAAI Conference on Artificial Intelligence, Vol. 37. 13763-13771.",
-    "Xiaobao Wu, Xinshuai Dong, Thong Nguyen, and Anh Tuan Luu. 2023. Effective neural topic modeling with embedding clustering regularization. In International Conference on Machine Learning. PMLR.",
-    "Xiaobao Wu, Chunping Li, Yan Zhu, and Yishu Miao. 2020. Short Text Topic Modeling with Topic Distribution Quantization and Negative Sampling Decoder. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP). Online, 1772-1782.",
-    "Xiaobao Wu, Anh Tuan Luu, and Xinshuai Dong. 2022. Mitigating Data Spar- sity for Short Text Topic Modeling by Topic-Semantic Contrastive Learning. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing. Association for Computational Linguistics, Abu Dhabi, United Arab Emirates, 2748-2760.",
-    "Xiaobao Wu, Thong Nguyen, and Anh Tuan Luu. 2024. A Survey on Neural Topic Models: Methods, Applications, and Challenges. Artificial Intelligence Review (2024).",
-    "Xiaobao Wu, Thong Thanh Nguyen, Delvin Ce Zhang, William Yang Wang, and Anh Tuan Luu. 2024. FASTopic: Pretrained Transformer is a Fast, Adaptive, Stable, and Transferable Topic Model. arXiv preprint arXiv:2405.17978 (2024).",
-    "Xiaobao Wu, Fengjun Pan, and Anh Tuan Luu. 2024. Towards the TopMost: A Topic Modeling System Toolkit. arXiv preprint arXiv:2309.06908 (2024).",
-    "Xiaobao Wu, Fengjun Pan, Thong Nguyen, Yichao Feng, Chaoqun Liu, Cong-Duy Nguyen, and Anh Tuan Luu. 2024. On the Affinity, Rationality, and Diversity of Hierarchical Topic Modeling. arXiv preprint arXiv:2401.14113 (2024).",
-    "Xiaobao Wu, Liangming Pan, William Yang Wang, and Luu Anh Tuan. 2024. AKEW: Assessing knowledge editing in the wild. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing. 15118-15133.",
-    "Xiaobao Wu, Liangming Pan, Yuxi Xie, Ruiwen Zhou, Shuai Zhao, Yubo Ma, Mingzhe Du, Rui Mao, Luu Anh Tuan, and William Yang Wang. 2025. Antileak- Bench: Preventing data contamination by automatically constructing benchmarks with updated real-world knowledge. arXiv preprint arXiv:2412.13670 (2025).",
-    "Yanzhi Xu, Yueying Hua, Shichen Li, and Zhongqing Wang. 2024. Exploring Chain-of-Thought for Multi-modal Metaphor Detection. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 91-101.",
-    "Chuanpeng Yang, Yaxin Liu, Fuqing Zhu, Jizhong Han, and Songlin Hu. 2024. Uncertainty-Guided Modal Rebalance for Hateful Memes Detection. In Proceed- ings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 4361-4371.",
-    "Savvas Zannettou, Tristan Caulfield, Jeremy Blackburn, Emiliano De Cristofaro, Michael Sirivianos, Gianluca Stringhini, and Guillermo Suarez-Tangil. 2018. On the origins of memes by means of fringe web communities. In Proceedings of the internet measurement conference 2018. 188-202."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

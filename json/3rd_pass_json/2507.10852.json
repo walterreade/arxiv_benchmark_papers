@@ -2,55 +2,107 @@
   "filename": "2507.10852.pdf",
   "title": "LLMS ON TRIAL: EVALUATING JUDICIAL FAIRNESS FOR LARGE LANGUAGE MODELS",
   "arxiv_url": "https://arxiv.org/pdf/2507.10852",
-  "bias_targets": [
-    {
-      "target": "Gender bias",
-      "methodology": "Counterfactual prompting by altering the gender of the defendant, victim, or legal professionals (defender, prosecutor, judge) in judicial case descriptions, followed by regression analysis on the predicted sentence length."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Counterfactual prompting by altering the sexual orientation of involved parties in case descriptions, evaluating the systematic impact on predicted sentence lengths."
-    },
-    {
-      "target": "Racial/Ethnic bias",
-      "methodology": "Counterfactual substitution of the ethnicity (e.g., Han vs. Ethnic Minority) of involved parties in the prompts, measuring the effect on predicted sentences."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Modifying the age of the defendant, victim, or legal professionals in prompts to observe systematic shifts in predicted sentence length."
-    },
-    {
-      "target": "Educational bias",
-      "methodology": "Replacing the education level of involved parties in case descriptions and analyzing the resulting changes in LLM sentencing decisions."
-    },
-    {
-      "target": "Occupational bias",
-      "methodology": "Altering the occupation (e.g., farmer, worker, unemployed) of parties in the prompts to measure sentencing bias."
-    },
-    {
-      "target": "Socioeconomic bias",
-      "methodology": "Counterfactual prompting by varying the financial status/wealth (e.g., penniless vs. millionaire) of involved parties to assess bias in sentencing."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Substituting the religious beliefs of parties in case descriptions to evaluate systematic differences in model judicial judgments."
-    },
-    {
-      "target": "Political bias",
-      "methodology": "Modifying the political background (e.g., CCP member vs. general masses) of parties to measure the impact on judicial decisions."
-    },
-    {
-      "target": "Nationality bias",
-      "methodology": "Altering the nationality (e.g., Chinese vs. Foreigner) of parties in prompts and evaluating the effect on predicted sentences."
-    },
-    {
-      "target": "Household registration (Hukou) bias",
-      "methodology": "Counterfactually changing the household registration status (local vs. non-local/rural vs. urban) of parties to measure geographic or systemic sentencing disparities."
-    },
-    {
-      "target": "Procedural bias",
-      "methodology": "Altering non-demographic procedural and extra-legal factors (e.g., court level, crime time/location, trial openness, legal representation type) in prompts to measure their unwarranted influence on LLM sentencing."
-    }
+  "religious_groups": [
+    "Christianity",
+    "Islam",
+    "Buddhism",
+    "Atheism"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "Glm 4",
+    "Gemini Flash 1.5",
+    "Mistral Nemo",
+    "Llama 3.1 8B Instruct",
+    "Glm 4 Flash",
+    "Qwen2.5 72B Instruct",
+    "LFM 40B MoE",
+    "Gemini Flash 1.5 8B",
+    "Qwen2.5 7B Instruct",
+    "Nova Lite 1.0",
+    "Nova Micro 1.0",
+    "DeepSeek V3",
+    "Phi 4",
+    "DeepSeek R1-32B Qwen",
+    "LFM 7B",
+    "Mistral Small 3"
+  ],
+  "languages_evaluated": [
+    "Chinese"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "LEEC"
+  ],
+  "continuous_testing": false,
+  "findings": "Large Language Models demonstrated significant bias based on religious affiliation across multiple roles in the judicial process (defendant, victim, defender, prosecutor, judge). For instance, in bias analysis tables (e.g., Table A21), labels for 'defender_religion', 'victim_religion', 'prosecurate_religion', and 'judge_religion' frequently showed statistically significant effects on sentencing outcomes for various models. The heatmaps confirm that religion-related labels are a consistent source of significant bias across the tested models.",
+  "references": [
+    "Amanda Agan, Matthew Freedman, and Emily Owens. Is your lawyer a lemon? incentives and selection in the public provision of criminal defense. Review of Economics and Statistics, 103(2): 294–309, 2021.",
+    "Berk Atil, Alexa Chittams, Liseng Fu, Ferhan Ture, Lixinyu Xu, and Breck Baldwin. Llm stability: A detailed analysis with some surprises. arXiv preprint arXiv:2408.04667, 2024.",
+    "Yejin Bang, Delong Chen, Nayeon Lee, and Pascale Fung. Measuring political bias in large language models: What is said and how it is said. arXiv preprint arXiv:2403.18932, 2024.",
+    "Carlos Berdejó and Noam Yuchtman. Crime, punishment, and politics: an analysis of political cycles in criminal sentencing. Review of Economics and Statistics, 95(3):741–756, 2013.",
+    "Reuben Binns. Fairness in machine learning: Lessons from political philosophy. In Conference on fairness, accountability and transparency, pp. 149–159. PMLR, 2018.",
+    "Su Lin Blodgett, Gilsinia Lopez, Alexandra Olteanu, Robert Sim, and Hanna Wallach. Stereotyping norwegian salmon: An inventory of pitfalls in fairness benchmark datasets. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pp. 1004–1015, 2021.",
+    "Mattia Bruscia, Graziano A Manduzio, Federico A Galatolo, Mario GCA Cimino, Alberto Greco, Lorenzo Cominelli, and Enzo Pasquale Scilingo. An overview on large language models across key domains: A systematic review. In 2024 IEEE International Conference on Metrology for eXtended Reality, Artificial Intelligence and Neural Engineering (MetroXRAINE), pp. 125–130. IEEE, 2024.",
+    "Kevin Burke and Steve Leben. Procedural fairness: A key ingredient in public satisfaction. Ct. Rev., 60:6, 2024.",
+    "George Casella and Roger Berger. Statistical inference. CRC press, 2024.",
+    "Arie Cattan, Alon Jacovi, Alex Fabrikant, Jonathan Herzig, Roee Aharoni, Hannah Rashkin, Dror Marcus, Avinatan Hassidim, Yossi Matias, Idan Szpektor, et al. Can few-shot work in long- context? recycling the context to generate demonstrations. arXiv preprint arXiv:2406.13632, 2024.",
+    "Inyoung Cheong, Aylin Caliskan, and Tadayoshi Kohno. Safeguarding human values: rethinking us law for generative ai's societal impacts. Al and Ethics, pp. 1–27, 2024.",
+    "Sergio Correia. Linear models with high-dimensional fixed effects: An efficient and feasible estimator. Unpublished manuscript, http://scorreia. com/research/hdfe. pdf (last accessed 25 October 2019), 4(2), 2017.",
+    "Sanjiv Das, Michele Donini, Jason Gelman, Kevin Haas, Mila Hardt, Jared Katzman, Krishnaram Kenthapadi, Pedro Larroy, Pinar Yilmaz, and Bilal Zafar. Fairness measures for machine learning in finance. The Journal of Financial Data Science, 2021. URL https://www.amazon.science/ publications/fairness-measures-for-machine-learning-in-finance.",
+    "Jeffrey Dastin. Amazon scraps secret ai recruiting tool that showed bias against women. reuters (2018), 2018.",
+    "Aniket Deroy and Subhankar Maity. Questioning biases in case judgment summaries: Legal datasets or large language models? arXiv preprint arXiv:2312.00554, 2023.",
+    "Sam Desiere and Ludo Struyven. Using artificial intelligence to classify jobseekers: The accuracy- equity trade-off. Journal of Social Policy, 50(2):367–385, 2021.",
+    "William Dieterich, Christina Mendoza, and Tim Brennan. Compas risk scales: Demonstrating accuracy equity and predictive parity. Northpointe Inc, 7(4):1–36, 2016.",
+    "Isabel O Gallegos, Ryan A Rossi, Joe Barrow, Md Mehrab Tanjim, Sungchul Kim, Franck Dernoncourt, Tong Yu, Ruiyi Zhang, and Nesreen K Ahmed. Bias and fairness in large language models: A survey. Computational Linguistics, 50(3):1097–1179, 2024.",
+    "Todd A Gormley, Mahsa Kaviani, and Hosein Maleki. When do judges throw the book at companies? the influence of partisanship in corporate prosecutions. Review of Financial Studies, 2025.",
+    "Soumyajit Gupta, Maria De-Arteaga, and Matthew Lease. Fairly Accurate: Fairness-aware Multi- group Target Detection in Online Discussion. arXiv preprint arXiv:2407.11933, 2024. URL https://arxiv.org/abs/2407.11933. Version 2, submitted June 2025.",
+    "Jennifer Healey, Laurie Byrum, Md Nadeem Akhtar, and Moumita Sinha. Evaluating nuanced bias in large language model free response answers. In International Conference on Applications of Natural Language to Information Systems, pp. 378–391. Springer, 2024.",
+    "Yue Hou and Rory Truex. Ethnic discrimination in criminal sentencing in china. The Journal of Politics, 84(4):2294–2299, 2022.",
+    "Yongming Huang and Yanan Zhang. Digitalization, positioning in global value chain and carbon emissions embodied in exports: Evidence from global manufacturing production-based emissions. Ecological Economics, 205:107674, 2023.",
+    "Jize Jiang and Kai Kuang. Hukou status and sentencing in the wake of internal migration: The penalty effect of being rural-to-urban migrants in china. Law & Policy, 40(2):196–215, 2018.",
+    "Brian D Johnson. The multilevel context of criminal sentencing: Integrating judge-and county-level influences. Criminology, 44(2):259–298, 2006.",
+    "Svetlana Kiritchenko and Saif M Mohammad. Examining gender and race bias in two hundred sentiment analysis systems. arXiv preprint arXiv:1805.04508, 2018.",
+    "Aobo Kong, Shiwan Zhao, Hao Chen, Qicheng Li, Yong Qin, Ruiqi Sun, Xin Zhou, Enzhi Wang, and Xiaohang Dong. Better zero-shot reasoning with role-play prompting. arXiv preprint arXiv:2308.07702, 2023.",
+    "Joshua Krook, Eike Schneiders, Tina Seabrooke, Natalie Leesakul, and Jeremie Clos. Large language models (llms) for legal advice: A scoping review. Available at SSRN 4976189, 2024.",
+    "Shachi H Kumar, Saurav Sahay, Sahisnu Mazumder, Eda Okur, Ramesh Manuvinakurike, Nicole Beckage, Hsuan Su, Hung-yi Lee, and Lama Nachman. Decoding biases: Automated methods and llm judges for gender bias detection in language models. arXiv preprint arXiv:2408.03907, 2024.",
+    "Lucio La Cava and Andrea Tagarelli. Open models, closed minds? on agents capabilities in mimicking human personalities through open large language models. arXiv preprint arXiv:2401.07115, 2024.",
+    "Qingquan Li, Yiran Hu, Feng Yao, Chaojun Xiao, Zhiyuan Liu, Maosong Sun, and Weixing Shen. Muser: A multi-view similar case retrieval dataset. In Proceedings of the 32nd ACM International Conference on Information and Knowledge Management, pp. 5336–5340, 2023a.",
+    "Yongqi Li, Mayi Xu, Xin Miao, Shen Zhou, and Tieyun Qian. Prompting large language models for counterfactual generation: An empirical study. arXiv preprint arXiv:2305.14791, 2023b.",
+    "Do Xuan Long, Hai Nguyen Ngoc, Tiviatis Sim, Hieu Dao, Shafiq Joty, Kenji Kawaguchi, Nancy F Chen, and Min-Yen Kan. Llms are biased towards output formats! systematically evaluating and mitigating output format bias of llms. arXiv preprint arXiv:2408.08656, 2024.",
+    "Felipe Lopes. Television and judicial behavior: lessons from the brazilian supreme court. Economic Analysis of Law Review, 9(1):41–71, 2018.",
+    "Christopher J Marier, John K Cochran, M Dwayne Smith, Sondra J Fogel, and Beth Bjerregaard. Victim age and capital sentencing outcomes in north carolina (1977–2009). Criminal justice studies, 31(1):62–79, 2018.",
+    "Monica L McCoy and Jennifer M Gray. The impact of defendant gender and relationship to victim on juror decisions in a child sexual abuse case. Journal of Applied Social Psychology, 37(7): 1578–1593, 2007.",
+    "Marilù Miotto, Nicola Rossberg, and Bennett Kleinberg. Who is gpt-3? an exploration of personality, values and demographics. arXiv preprint arXiv:2209.14338, 2022.",
+    "Kyle Moore, Jesse Roberts, Thao Pham, and Douglas Fisher. Reasoning beyond bias: A study on counterfactual prompting and chain of thought reasoning. arXiv preprint arXiv:2408.08651, 2024.",
+    "Ali Hakimi Parizi, Yuyang Liu, Prudhvi Nokku, Sina Gholamian, and David Emerson. A comparative study of prompting strategies for legal text classification. In Proceedings of the Natural Legal Language Processing Workshop 2023, pp. 258–265, 2023.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel Bowman. BBQ: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, pp. 2086–2105, Dublin, Ireland, May 2022. Association for Computational Linguistics. doi: 10.18653/v1/2022.findings-acl.165. URL https://aclanthology.org/2022.findings-acl.165.",
+    "Andrea Pinto, Tomer Galanti, and Randall Balestriero. The fair language model paradox. arXiv preprint arXiv:2410.11985, 2024.",
+    "Joanna D Pozzulo, Julie Dempsey, Evelyn Maeder, and Laura Allen. The effects of victim gender, defendant gender, and defendant age on juror decision making. Criminal Justice and Behavior, 37(1):47–63, 2010.",
+    "Rebecca Qian, Candace Ross, Jude Fernandes, Eric Smith, Douwe Kiela, and Adina Williams. Perturbation augmentation for fairer nlp. arXiv preprint arXiv:2205.12586, 2022.",
+    "Victor D Quintanilla, Rachel A Allen, and Edward R Hirt. The signaling effect of pro se status. Law & Social Inquiry, 42(4):1091–1121, 2017.",
+    "Chahat Raj, Anjishnu Mukherjee, Aylin Caliskan, Antonios Anastasopoulos, and Ziwei Zhu. Breaking bias, building bridges: Evaluation and mitigation of social biases in llms via contact hypothesis. In Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society, volume 7, pp. 1180–1189, 2024.",
+    "Rajesh Ranjan, Shailja Gupta, and Surya Narayan Singh. A comprehensive survey of bias in llms: Current landscape and future directions. arXiv preprint arXiv:2409.16430, 2024.",
+    "John Rawls. Atheory of justice. Cambridge (Mass.), 1971.",
+    "Rachel Rudinger, Jason Naradowsky, Brian Leonard, and Benjamin Van Durme. Gender bias in coreference resolution. arXiv preprint arXiv:1804.09301, 2018.",
+    "Aleix Sant, Carlos Escolano, Audrey Mash, Francesca De Luca Fornaciari, and Maite Melero. The power of prompts: Evaluating and mitigating gender bias in mt with llms. arXiv preprint arXiv:2407.18786, 2024.",
+    "Stephen J Schulhofer. Assessing the federal sentencing process: The problem is uniformity, not disparity. Am. Crim. L. Rev., 29:833, 1991.",
+    "Dietrich Trautmann, Alina Petrova, and Frank Schilder. Legal prompt engineering for multilingual legal judgement prediction. arXiv preprint arXiv:2212.02199, 2022.",
+    "Jeffery T Ulmer. Recent developments and new directions in sentencing research. Justice Quarterly, 29(1):1–40, 2012.",
+    "Jeremy Waldron. The rule of law and the importance of procedure. Getting to the Rule of Law, 3: 4–5, 2011.",
+    "Kellie Webster, Marta Recasens, Vera Axelrod, and Jason Baldridge. Mind the gap: A balanced corpus of gendered ambiguous pronouns. Transactions of the Association for Computational Linguistics, 6:605–617, 2018.",
+    "Bao Wu, Feng Chen, Lanhua Li, Lei Xu, Zijia Liu, and Yaoyao Wu. Institutional investor esg activism and exploratory green innovation: Unpacking the heterogeneous responses of family firms across intergenerational contexts. The British Accounting Review, pp. 101324, 2024.",
+    "Chaojun Xiao, Haoxi Zhong, Zhipeng Guo, Cunchao Tu, Zhiyuan Liu, Maosong Sun, Yansong Feng, Xianpei Han, Zhen Hu, Heng Wang, et al. Cail2018: A large-scale legal dataset for judgment prediction. arXiv preprint arXiv:1807.02478, 2018.",
+    "Rongwu Xu, Zi'an Zhou, Tianwei Zhang, Zehan Qi, Su Yao, Ke Xu, Wei Xu, and Han Qiu. Walking in others' shoes: How perspective-taking guides large language models in reducing toxicity and bias. arXiv preprint arXiv:2407.15366, 2024.",
+    "Zongyue Xue, Huanghai Liu, Yiran Hu, Yuliang Qian, Yajing Wang, Kangle Kong, Chenlu Wang, Yun Liu, and Weixing Shen. Leec for judicial fairness: A legal element extraction dataset with extensive extra-legal labels. In Proceedings of the Thirty-Third International Joint Conference on Artificial Intelligence, IJCAI-24, pp. 7527–7535, 2024.",
+    "Feng Yao, Chaojun Xiao, Xiaozhi Wang, Zhiyuan Liu, Lei Hou, Cunchao Tu, Juanzi Li, Yun Liu, Weixing Shen, and Maosong Sun. Leven: A large-scale chinese legal event detection dataset. arXiv preprint arXiv:2203.08556, 2022.",
+    "Sangwon Yu, Jongyoon Song, Bongkyu Hwang, Hoyoung Kang, Sooah Cho, Junhwa Choi, Seongho Joe, Taehee Lee, Youngjune L Gwon, and Sungroh Yoon. Correcting negative bias in large language models through negative attention score alignment. arXiv preprint arXiv:2408.00137, 2024.",
+    "Ruizhe Zhang, Haitao Li, Yueyue Wu, Qingyao Ai, Yiqun Liu, Min Zhang, and Shaoping Ma. Evaluation ethics of llms in legal domain. arXiv preprint arXiv:2403.11152, 2024a.",
+    "Yifan Zhang. Meta prompting for agi systems. arXiv preprint arXiv:2311.11482, 2023.",
+    "Yubo Zhang, Shudi Hou, Mingyu Derek Ma, Wei Wang, Muhao Chen, and Jieyu Zhao. Climb: A benchmark of clinical bias in large language models. arXiv preprint arXiv:2407.05250, 2024b.",
+    "Hui Zhong, Songsheng Chen, and Mian Liang. Gender bias of llm in economics: An existentialism perspective. arXiv preprint arXiv:2410.19775, 2024."
+  ],
+  "measurement_description": "The benchmark measured judicial fairness, specifically detecting bias in sentencing predictions based on the religious beliefs (Islam, Buddhism, Christianity, Atheism) of the defendant, victim, defender, prosecutor, and judge in legal case descriptions."
 }

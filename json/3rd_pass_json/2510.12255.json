@@ -2,23 +2,49 @@
   "filename": "2510.12255.pdf",
   "title": "Shallow Robustness, Deep Vulnerabilities: Multi-Turn Evaluation of Medical LLMs",
   "arxiv_url": "https://arxiv.org/pdf/2510.12255",
-  "bias_targets": [
-    {
-      "target": "Authority Bias",
-      "methodology": "Evaluating model robustness in a multi-turn setting by introducing follow-up prompts where an authoritative figure (e.g., a 'senior clinician' or an 'answer checker') explicitly suggests an incorrect multiple-choice answer."
-    },
-    {
-      "target": "Social Conformity Bias",
-      "methodology": "Testing if models change their initial correct answers when presented with a follow-up prompt stating that 'several colleagues initially chose' an incorrect option (social proof)."
-    },
-    {
-      "target": "Contextual / Distractor Bias",
-      "methodology": "Injecting misleading, RAG-style, alternative, or edge-case contextual paragraphs into multi-turn dialogues that implicitly support an incorrect diagnostic option without explicitly asserting it."
-    },
-    {
-      "target": "Cognitive Bias",
-      "methodology": "Replicating single-turn benchmarks (BiasMedQA) and applying multi-turn adaptations (e.g., 'recency-prior' mentioning a similar recent case) to trigger standard human cognitive biases such as confirmation, frequency, and status quo bias."
-    }
+  "religious_groups": [],
+  "models_tested": [
+    "GPT-4.1",
+    "GPT-4.1 mini",
+    "Claude Sonnet 4",
+    "MedGemma 27B",
+    "MedGemma 4B"
   ],
-  "primary_bias_target": "Cognitive and Social Bias"
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "none",
+  "base_benchmarks": [
+    "MedQA-Followup",
+    "MedQA",
+    "BiasMedQA",
+    "KGGD"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper does not contain any findings related to religion or faith.",
+  "references": [
+    "Iñigo Alonso, Maite Oronoz, and Rodrigo Agerri. MedExpQA: Multilingual Benchmarking of Large Language Models for Medical Question Answering. Artificial Intelligence in Medicine, 155: 102938, 2024. ISSN 0933-3657. doi: 10.1016/j.artmed.2024.102938.",
+    "Anthropic. System Card: Claude Opus 4 & Claude Sonnet 4. https://www-cdn.anthropic.com/ 07b2a3f9902ee19fe39a36ca638e5ae987bc64dd.pdf, 2025.",
+    "United States Medical Licensing Examination. Usmle step exams. https://www.usmle.org/step-exams, 2025.",
+    "Tessa Han, Aounon Kumar, Chirag Agarwal, and Himabindu Lakkaraju. MedSafetyBench: Evaluat- ing and Improving the Medical Safety of Large Language Models, 2024.",
+    "Di Jin, Eileen Pan, Nassim Oufattole, Wei-Hung Weng, Hanyi Fang, and Peter Szolovits. What disease does this patient have? a large-scale open domain question answering dataset from medical exams. Applied Sciences, 11(14):6421, 2021.",
+    "Jinyoung Kim, Wen Xu, Chen Luo, and et al. Medexqa: A benchmark for explanation-centric medical question answering, 2024.",
+    "Zabir Al Nazi and Wei Peng. Large language models in healthcare and medical domain: A review. In Informatics, volume 11, page 57. MDPI, 2024.",
+    "Robert Osazuwa Ness, Katie Matton, Hayden Helm, Sheng Zhang, Junaid Bajwa, Carey E. Priebe, and Eric Horvitz. MedFuzz: Exploring the Robustness of Large Language Models in Medical Question Answering, 2024.",
+    "OpenAI. GPT-4.1. https://openai.com/index/gpt-4-1/2025.",
+    "Samuel Schmidgall, Carl Harris, Ime Essien, Daniel Olshvang, Tawsifur Rahman, Ji Woong Kim, Rojin Ziaei, Jason Eshraghian, Peter Abadir, and Rama Chellappa. Addressing cognitive bias in medical language models. arXiv preprint arXiv:2402.08113, 2024a.",
+    "Samuel Schmidgall, Carl Harris, Ime Essien, Daniel Olshvang, Tawsifur Rahman, Ji Woong Kim, Rojin Ziaei, Jason Eshraghian, Peter Abadir, and Rama Chellappa. Evaluation and mitigation of cognitive biases in medical language models. npj Digital Medicine, 7(1):295, 2024b.",
+    "Samuel Schmidgall, Rojin Ziaei, Carl Harris, Eduardo Reis, Jeffrey Jopling, and Michael Moor. AgentClinic: A multimodal agent benchmark to evaluate AI in simulated clinical environments, 2025.",
+    "Andrew Sellergren, Sahar Kazemzadeh, Tiam Jaroensri, Atilla Kiraly, Madeleine Traverse, Timo Kohlberger, Shawn Xu, Fayaz Jamil, Cían Hughes, Charles Lau, et al. Medgemma technical report. arXiv preprint arXiv:2507.05201, 2025.",
+    "Karan Singhal, Timo Tu, Julia Gottweis, and et al. Towards expert-level medical question answering with large language models, 2023.",
+    "Ziqi Wang, Yifan Zhang, Lingyu Huang, and et al. Csedb: Clinical safety-effectiveness dual-track benchmark for large language models, 2025.",
+    "Minglai Yang, Ethan Huang, Liang Zhang, Mihai Surdeanu, William Wang, and Liangming Pan. How is llm reasoning distracted by irrelevant context? an analysis using a controlled benchmark. arXiv preprint arXiv:2505.18761, 2025a.",
+    "Running Yang, Wenlong Deng, Minghui Chen, Yuyin Zhou, and Xiaoxiao Li. Enhancing clinical multiple-choice questions benchmarks with knowledge graph guided distractor generation. arXiv preprint arXiv:2506.00612, 2025b.",
+    "Running Yang, Wenlong Deng, Minghui Chen, Yuyin Zhou, and Xiaoxiao Li. Ensuring safety and trust: Analyzing the risks of large language models in medicine, 2025c.",
+    "Yanxin Zheng, Wensheng Gan, Zefeng Chen, Zhenlian Qi, Qian Liang, and Philip S Yu. Large language models for medicine: a survey. International Journal of Machine Learning and Cybernetics, 16(2):1015–1040, 2025."
+  ],
+  "measurement_description": "The benchmark did not measure anything related to faith or religion. It focused on the multi-turn robustness of large language models in medical question answering."
 }

@@ -2,48 +2,27 @@
   "filename": "2312.00554.pdf",
   "title": "Questioning Biases in Case Judgment Summaries: Legal Datasets or Large Language Models?",
   "arxiv_url": "https://arxiv.org/pdf/2312.00554",
-  "benchmark_measurement": "Presence/absence of religious keywords (Hindu, Muslim, Christian, Jain) and a specific legal act ('Employment Equality (Religion or Belief) Regulations 2003') in model-generated summaries of legal documents.",
-  "religious_groups": [
-    "Hinduism",
-    "Islam",
-    "Christianity",
-    "Jainism"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Counting the frequency and calculating the percentage of male-related and female-related keywords in model-generated legal summaries compared to source documents and expert summaries."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Measuring the occurrence of white people-related and black people-related keywords, as well as specific racial discrimination acts, in generated summaries versus original texts."
+    },
+    {
+      "target": "Gender-based violence bias",
+      "methodology": "Tracking the frequency of specific keywords related to crimes against women (e.g., domestic violence, rape, sexual assault, trafficking) in model-generated summaries compared to the original documents."
+    },
+    {
+      "target": "Nationality bias",
+      "methodology": "Analyzing and ranking the frequency of specific country names generated in the summaries to identify overrepresented nations (e.g., 'United States', 'United Kingdom') using a predefined list of countries."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Searching for religious keywords (e.g., Hindu, Muslim, Christian, Jain) and relevant religious equality acts in the source documents and model-generated summaries."
+    }
   ],
-  "models_tested": [
-    "Text-Davinci-003",
-    "GPT-3.5 Turbo",
-    "LegLED",
-    "LegPegasus",
-    "LegLED-UK",
-    "LegPegasus-UK",
-    "LegLED-IN",
-    "LegPegasus-IN"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [],
-  "continuous_testing": false,
-  "findings": "The study found no evidence of bias related to religious keywords. The searched keywords (like Hindu, Muslim, Christian, Jain) and a specific act related to religious equality were not present in the original documents, expert summaries, or the model-generated summaries for both the Indian (IN-Abs) and UK (UK-Abs) datasets.",
-  "references": [
-    "Mustafa Bozdag, Nurullah Sevim, and Aykut Koç. 2023. Measuring and mitigating gender bias in legal con- textualized language models. ACM Trans. Knowl. Discov. Data. Just Accepted.",
-    "Damien Charlotin. 2023. Large language models and the future of law. Available at SSRN 4548258.",
-    "Aniket Deroy, Paheli Bhattacharya, Kripabandhu Ghosh, and Saptarshi Ghosh. 2021. An analytical study of algorithmic and expert summaries of legal cases. In Legal Knowledge and Information Systems, pages 90–99. IOS Press.",
-    "Aniket Deroy, Kripabandhu Ghosh, and Saptarshi Ghosh. 2023a. Ensemble methods for improving extractive summarization of legal case judgements. Artificial Intelligence and Law, pages 1–59.",
-    "Aniket Deroy, Kripabandhu Ghosh, and Saptarshi Ghosh. 2023b. How ready are pre-trained abstractive models and llms for legal case judgement summariza- tion? arXiv preprint arXiv:2306.01248.",
-    "Kristian Lum. 2017. Limitations of mitigating judi- cial bias with machine learning. Nature Human Be- haviour, 1(7):0141.",
-    "Sean Matthews, John Hudzina, and Dawn Sepehr. 2022. Gender and racial stereotype detection in legal opin- ion word embeddings. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 36, pages 12026–12033.",
-    "Shubham Kumar Nigam and Aniket Deroy. 2023. Fact- based court judgment prediction. arXiv preprint arXiv:2311.13350.",
-    "Shubham Kumar Nigam, Aniket Deroy, Noel Shallum, Ayush Kumar Mishra, Anup Roy, Shubham Kumar Mishra, Arnab Bhattacharya, Saptarshi Ghosh, and Kripabandhu Ghosh. 2023. Nonet at semeval-2023 task 6: Methodologies for legal evaluation. In Pro- ceedings of the The 17th International Workshop on Semantic Evaluation (SemEval-2023), pages 1293– 1303.",
-    "Jackson Sargent and Melanie Weber. 2021. Identifying biases in legal data: An algorithmic fairness perspec- tive.",
-    "Nurullah Sevim, Furkan Şahinuç, and Aykut Koç. 2023. Gender bias in legal corpora and debiasing it. Natural Language Engineering, 29(2):449–482.",
-    "Abhay Shukla, Paheli Bhattacharya, Soham Poddar, Ra- jdeep Mukherjee, Kripabandhu Ghosh, Pawan Goyal, and Saptarshi Ghosh. 2022. Legal case document summarization: Extractive and abstractive methods and their evaluation. In Proceedings of the Confer- ence of the Asia-Pacific Chapter of the Association for Computational Linguistics and the International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 1048–1064.",
-    "Bruno Santos F Silva and Marjory Costa-Abreu. 2022. Exploring bias analysis on judicial data using ma- chine learning techniques. In 2022 12th International Conference on Pattern Recognition Systems (ICPRS), pages 1–7. IEEE.",
-    "Zhongxiang Sun. 2023. A short survey of viewing large language models in legal aspect. arXiv preprint arXiv:2303.09136.",
-    "Jieyu Zhao, Yichao Zhou, Zeyu Li, Wei Wang, and Kai- Wei Chang. 2018. Learning gender-neutral word em- beddings. In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, pages 4847–4853, Brussels, Belgium. Association for Computational Linguistics."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

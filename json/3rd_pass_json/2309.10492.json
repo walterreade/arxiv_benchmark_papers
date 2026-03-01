@@ -2,15 +2,33 @@
   "filename": "2309.10492.pdf",
   "title": "AN EVALUATION OF GPT-4 ON THE ETHICS DATASET",
   "arxiv_url": "https://arxiv.org/pdf/2309.10492",
-  "bias_targets": [
-    {
-      "target": "Impartiality and Fairness",
-      "methodology": "Evaluating the model's ability to distinguish reasonable from unreasonable explanations for fair treatment and deserved outcomes using the Justice subset of the ETHICS dataset (e.g., testing whether the model rejects irrelevant factors like race as a justification for judicial leniency)."
-    },
-    {
-      "target": "Moral and Ethical Alignment",
-      "methodology": "Assessing the model's predictions of human moral judgments using zero-shot and few-shot prompting across multiple ethical frameworks, including Deontology, Virtue Ethics, Utilitarianism, and Commonsense Morality scenarios."
-    }
+  "religious_groups": [],
+  "models_tested": [
+    "GPT-4",
+    "ALBERT-xxlarge",
+    "Delphi",
+    "DeBERTa-v3"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "none",
+  "base_benchmarks": [
+    "ETHICS dataset"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper does not analyze or report any findings related to religion or faith, as its focus is on secular commonsense morality and ethical frameworks.",
+  "references": [
+    "OpenAI. Gpt-4 technical report, 2023.",
+    "Dan Hendrycks, Collin Burns, Steven Basart, Andrew Critch, Jerry Li, Dawn Song, and Jacob Steinhardt. Aligning ai with shared human values. Proceedings of the International Conference on Learning Representations (ICLR), 2021.",
+    "Joshua Albrecht, Ellie Kitanidis, and Abraham J. Fetterman. Despite \"super-human\" performance, current llms are un-suited for decisions about ethics and safety. ArXiv, abs/2212.06295, 2022. URL https://api.semanticscholar.org/CorpusID:254591505.",
+    "Liwei Jiang, Jena D. Hwang, Chandra Bhagavatula, Ronan Le Bras, Jenny Liang, Jesse Dodge, Keisuke Sakaguchi, Maxwell Forbes, Jon Borchardt, Saadia Gabriel, Yulia Tsvetkov, Oren Etzioni, Maarten Sap, Regina A. Rini, and Yejin Choi. Can machines learn morality? the delphi experiment. 2021. URL https://api.semanticscholar.org/CorpusID:250492927.",
+    "Masashi Takeshita, Rafal Rzepka, and Kenji Araki. Towards theory-based moral ai: Moral ai with aggregating models based on normative ethical theory. ArXiv, abs/2306.11432, 2023. URL https://api.semanticscholar.org/CorpusID:259203912.",
+    "Pengcheng He, Jianfeng Gao, and Weizhu Chen. Debertav3: Improving deberta using electra-style pre-training with gradient-disentangled embedding sharing. ArXiv, abs/2111.09543, 2021. URL https://api.semanticscholar.org/CorpusID:244346093."
+  ],
+  "measurement_description": "The paper measures the performance of large language models on secular ethical and moral reasoning tasks, not on any aspect of faith or religion. The benchmark is based on the ETHICS dataset, which covers justice, deontology, virtue ethics, utilitarianism, and commonsense morality from a non-religious perspective."
 }

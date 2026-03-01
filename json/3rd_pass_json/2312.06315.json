@@ -2,43 +2,63 @@
   "filename": "2312.06315.pdf",
   "title": "GPTBIAS: A Comprehensive Framework for Evaluating Bias in Large Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2312.06315",
-  "bias_targets": [
-    {
-      "target": "Gender bias",
-      "methodology": "Evaluating model responses to specifically designed bias attack instructions using GPT-4 as an automated bias judge."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Evaluating model responses to specifically designed bias attack instructions using GPT-4 as an automated bias judge."
-    },
-    {
-      "target": "Racial bias",
-      "methodology": "Evaluating model responses to specifically designed bias attack instructions using GPT-4 as an automated bias judge."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Evaluating model responses to specifically designed bias attack instructions using GPT-4 as an automated bias judge."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Evaluating model responses to specifically designed bias attack instructions using GPT-4 as an automated bias judge."
-    },
-    {
-      "target": "Nationality bias",
-      "methodology": "Evaluating model responses to specifically designed bias attack instructions using GPT-4 as an automated bias judge."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Evaluating model responses to specifically designed bias attack instructions using GPT-4 as an automated bias judge."
-    },
-    {
-      "target": "Physical appearance bias",
-      "methodology": "Evaluating model responses to specifically designed bias attack instructions using GPT-4 as an automated bias judge."
-    },
-    {
-      "target": "Socioeconomic status bias",
-      "methodology": "Evaluating model responses to specifically designed bias attack instructions using GPT-4 as an automated bias judge."
-    }
+  "religious_groups": [
+    "Islam",
+    "Buddhism",
+    "Christianity"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "LLaMA-7B",
+    "LLaMA-33B",
+    "LLaMA-65B",
+    "OPT-66B",
+    "BLOOMZ",
+    "text-davinci-002",
+    "text-davinci-003",
+    "gpt-3.5-turbo"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "WEAT",
+    "SEAT",
+    "StereoSet",
+    "CrowS-Pairs"
+  ],
+  "continuous_testing": true,
+  "findings": "The GPTBIAS framework revealed significant religious bias across several models. Open-source models like OPT-66B and BLOOMZ demonstrated high religious bias scores (0.86 and 0.87, respectively). Among the GPT-3 series, text-davinci-002 and text-davinci-003 showed considerable bias (0.65 and 0.54), while ChatGPT (gpt-3.5-turbo) exhibited a very low religious bias score of 0.005.",
+  "references": [
+    "Soumya Barikeri, Anne Lauscher, Ivan Vulić, and Goran Glavaš. 2021. Redditbias: A real-world resource for bias evaluation and debiasing of conversational language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 1941–1955.",
+    "Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, et al. 2020. Language models are few-shot learners. Advances in neural information processing systems, 33:1877–1901.",
+    "Aylin Caliskan, Joanna J Bryson, and Arvind Narayanan. 2017. Semantics derived automatically from language corpora contain human-like biases. Science, 356(6334):183–186.",
+    "Aakanksha Chowdhery, Sharan Narang, Jacob Devlin, Maarten Bosma, Gaurav Mishra, Adam Roberts, Paul Barham, Hyung Won Chung, Charles Sutton, Sebastian Gehrmann, et al. 2022. Palm: Scaling language modeling with pathways. arXiv preprint arXiv:2204.02311.",
+    "Pieter Delobelle, Ewoenam Tokpo, Toon Calders, and Bettina Berendt. 2022. Measuring fairness with biased rulers: A comparative study on bias metrics for pre-trained language models. In Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 1693–1706.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2018. Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805.",
+    "Emilio Ferrara. 2023. Should chatgpt be biased? challenges and risks of bias in large language models. arXiv preprint arXiv:2304.03738.",
+    "Clary Krekula. 2007. The intersection of age and gender: Reworking gender theory and social gerontology. Current Sociology, 55(2):155–171.",
+    "Bum Chul Kwon and Nandana Mihindukulasooriya. 2022. An empirical study on pseudo-log-likelihood bias measures for masked language models using paraphrased sentences. In Proceedings of the 2nd Workshop on Trustworthy Natural Language Processing (TrustNLP 2022), pages 74–79.",
+    "Chandler May, Alex Wang, Shikha Bordia, Samuel R Bowman, and Rachel Rudinger. 2019. On measuring social biases in sentence encoders. arXiv preprint arXiv:1903.10561.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2020. Stereoset: Measuring stereotypical bias in pretrained language models. arXiv preprint arXiv:2004.09456.",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R Bowman. 2020. Crows-pairs: A challenge dataset for measuring social biases in masked language models. arXiv preprint arXiv:2010.00133.",
+    "OpenAI. 2022. Chatgpt.",
+    "OpenAI. 2023. Gpt-4 technical report.",
+    "Baolin Peng, Chunyuan Li, Pengcheng He, Michel Galley, and Jianfeng Gao. 2023. Instruction tuning with gpt-4. arXiv preprint arXiv:2304.03277.",
+    "Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, Ilya Sutskever, et al. 2019. Language models are unsupervised multitask learners. OpenAI blog, 1(8):9.",
+    "Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi Zhou, Wei Li, and Peter J Liu. 2020. Exploring the limits of transfer learning with a unified text-to-text transformer. The Journal of Machine Learning Research, 21(1):5485–5551.",
+    "Deborah L Rhode. 2010. The beauty bias: The injustice of appearance in life and law. Oxford University Press.",
+    "Teven Le Scao, Angela Fan, Christopher Akiki, Ellie Pavlick, Suzana Ilić, Daniel Hesslow, Roman Castagné, Alexandra Sasha Luccioni, François Yvon, Matthias Gallé, et al. 2022. Bloom: A 176bparameter open-access multilingual language model. arXiv preprint arXiv:2211.05100.",
+    "Hao Sun, Zhexin Zhang, Jiawen Deng, Jiale Cheng, and Minlie Huang. 2023. Safety assessment of chinese large language models. arXiv preprint arXiv:2304.10436.",
+    "Hugo Touvron, Thibaut Lavril, Gautier Izacard, Xavier Martinet, Marie-Anne Lachaux, Timothée Lacroix, Baptiste Rozière, Naman Goyal, Eric Hambro, Faisal Azhar, et al. 2023. Llama: Open and efficient foundation language models. arXiv preprint arXiv:2302.13971.",
+    "Alex Wang, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel R Bowman. 2018. Glue: A multi-task benchmark and analysis platform for natural language understanding. arXiv preprint arXiv:1804.07461.",
+    "Yizhong Wang, Yeganeh Kordi, Swaroop Mishra, Alisa Liu, Noah A Smith, Daniel Khashabi, and Hannaneh Hajishirzi. 2022. Self-instruct: Aligning language model with self generated instructions. arXiv preprint arXiv:2212.10560.",
+    "Jason Wei, Yi Tay, Rishi Bommasani, Colin Raffel, Barret Zoph, Sebastian Borgeaud, Dani Yogatama, Maarten Bosma, Denny Zhou, Donald Metzler, et al. 2022. Emergent abilities of large language models. arXiv preprint arXiv:2206.07682.",
+    "Susan Zhang, Stephen Roller, Naman Goyal, Mikel Artetxe, Moya Chen, Shuohui Chen, Christopher Dewan, Mona Diab, Xian Li, Xi Victoria Lin, et al. 2022. Opt: Open pre-trained transformer language models. arXiv preprint arXiv:2205.01068.",
+    "Andy Zou, Zifan Wang, J Zico Kolter, and Matt Fredrikson. 2023. Universal and transferable adversarial attacks on aligned language models. arXiv preprint arXiv:2307.15043."
+  ],
+  "measurement_description": "Detection of biased content generation in response to prompts involving various religious groups, including stereotypes and potentially harmful rankings or comparisons."
 }

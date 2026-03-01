@@ -2,39 +2,80 @@
   "filename": "2311.06899.pdf",
   "title": "FLAMES: Benchmarking Value Alignment of LLMs in Chinese",
   "arxiv_url": "https://arxiv.org/pdf/2311.06899",
-  "bias_targets": [
-    {
-      "target": "Gender bias",
-      "methodology": "Evaluating LLM responses to manually crafted adversarial prompts in Chinese (using techniques like reverse induction and disguise) that contain implicit gender stereotypes, scored by human annotators and a custom FLAMES-scorer."
-    },
-    {
-      "target": "Racial bias",
-      "methodology": "Evaluating LLM responses to adversarial Chinese prompts containing racial or ethnic discrimination, assessed by human annotators and an automated scorer based on whether the model identifies and rejects the bias."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Evaluating LLM responses to adversarial Chinese prompts containing age-based discrimination or stereotypes, scored by human annotators and the FLAMES-scorer."
-    },
-    {
-      "target": "Nationality and Regional bias",
-      "methodology": "Evaluating LLM responses to adversarial Chinese prompts containing national or regional stereotypes (e.g., associating specific Chinese provinces with fraud), scored manually and via the automated FLAMES-scorer."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Evaluating LLM responses to adversarial Chinese prompts containing hate speech or bias against different sexual orientations, scored by human annotators and the FLAMES-scorer."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Evaluating LLM responses to adversarial Chinese prompts containing unjust judgments about specific faiths, scored by human annotators and the FLAMES-scorer."
-    },
-    {
-      "target": "Physical appearance bias",
-      "methodology": "Evaluating LLM responses to adversarial Chinese prompts containing judgments about appearance (e.g., stereotypes about dyed hair and tattoos, or weight/body shaming), scored by human annotators and the FLAMES-scorer."
-    },
-    {
-      "target": "Occupational bias",
-      "methodology": "Evaluating LLM responses to adversarial Chinese prompts containing unjust judgments or stereotypes about specific occupations, scored by human annotators and the FLAMES-scorer."
-    }
+  "religious_groups": [],
+  "models_tested": [
+    "ChatGPT",
+    "GPT-4",
+    "Claude",
+    "MiniMax",
+    "Ernie Bot",
+    "InternLM-Chat-20B",
+    "MOSS-16B",
+    "Qwen-14B-Chat",
+    "Baichuan2-13B-Chat",
+    "BELLE-13B",
+    "InternLM-Chat-7B",
+    "Qwen-7B-Chat",
+    "Baichuan2-7B-Chat",
+    "ChatGLM-6B",
+    "ChatGLM2-6B",
+    "ChatGLM3-6B",
+    "ChatYuan-large-v2"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "languages_evaluated": [
+    "Chinese"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Safety-prompts",
+    "CValues",
+    "HHH dataset",
+    "Do-Not-Answer dataset"
+  ],
+  "continuous_testing": true,
+  "findings": "The paper does not provide specific findings for the religion/faith sub-component. The general finding for the 'Fairness' dimension, which includes bias against faith, is that most models perform poorly and often output insulting and toxic texts, resulting in a decrease in their harmless rate and score.",
+  "references": [
+    "Arjun R. Akula, Keze Wang, Changsong Liu, Sari Saba-Sadiya, Hongjing Lu, Sinisa Todorovic, Joyce Chai, and Song-Chun Zhu. 2021. Cx-tom: Counterfactual explanations with theory-of-mind for enhancing human trust in image recognition models.",
+    "Amanda Askell, Yuntao Bai, Anna Chen, Dawn Drain, Deep Ganguli, Tom Henighan, Andy Jones, Nicholas Joseph, Ben Mann, Nova DasSarma, et al. 2021. A general language assistant as a laboratory for alignment. arXiv preprint arXiv:2112.00861.",
+    "Jinze Bai, Shuai Bai, Yunfei Chu, Zeyu Cui, Kai Dang, Xiaodong Deng, Yang Fan, Wenbin Ge, Yu Han, Fei Huang, Binyuan Hui, Luo Ji, Mei Li, Junyang Lin, Runji Lin, Dayiheng Liu, Gao Liu, Chengqiang Lu, Keming Lu, Jianxin Ma, Rui Men, Xingzhang Ren, Xuancheng Ren, Chuanqi Tan, Sinan Tan, Jianhong Tu, Peng Wang, Shijie Wang, Wei Wang, Sheng-guang Wu, Benfeng Xu, Jin Xu, An Yang, Hao Yang, Jian Yang, Shusheng Yang, Yang Yao, Bowen Yu, Hongyi Yuan, Zheng Yuan, Jianwei Zhang, Xingx-uan Zhang, Yichang Zhang, Zhenru Zhang, Chang Zhou, Jingren Zhou, Xiaohuan Zhou, and Tianhang Zhu. 2023. Qwen technical report. arXiv preprint arXiv:2309.16609.",
+    "Yuntao Bai, Saurav Kadavath, Sandipan Kundu, Amanda Askell, Jackson Kernion, Andy Jones, Anna Chen, Anna Goldie, Azalia Mirhoseini, Cameron McKinnon, Carol Chen, Catherine Olsson, Christopher Olah, Danny Hernandez, Dawn Drain, Deep Ganguli, Dustin Li, Eli Tran-Johnson, Ethan Perez, Jamie Kerr, Jared Mueller, Jeffrey Ladish, Joshua Landau, Kamal Ndousse, Kamile Lukosuite, Liane Lovitt, Michael Sellitto, Nelson Elhage, Nicholas Schiefer, Noemi Mercado, Nova DasSarma, Robert Lasenby, Robin Larson, Sam Ringer, Scott Johnston, Shauna Kravec, Sheer El Showk, Stanislav Fort, Tamera Lanham, Timothy Telleen-Lawton, Tom Con-erly, Tom Henighan, Tristan Hume, Samuel R. Bowman, Zac Hatfield-Dodds, Ben Mann, Dario Amodei, Nicholas Joseph, Sam McCandlish, Tom Brown, and Jared Kaplan. 2022. Constitutional ai: Harmlessness from ai feedback.",
+    "Baichuan. 2023. Baichuan 2: Open large-scale language models. arXiv preprint arXiv:2309.10305.",
+    "Baidu. Yiyan. https://yiyan.baidu.com/.",
+    "Rishi Bommasani, Drew A Hudson, Ehsan Adeli, Russ Altman, Simran Arora, Sydney von Arx, Michael S Bernstein, Jeannette Bohg, Antoine Bosselut, Emma Brunskill, et al. 2021. On the opportunities and risks of foundation models. arXiv preprint arXiv:2108.07258.",
+    "ChatYuan. Chatyuan. https://github.com/clue-ai/ChatYuan/.",
+    "Zhihong Chen, Feng Jiang, Junying Chen, Tiannan Wang, Fei Yu, Guiming Chen, Hongbo Zhang, Juhao Liang, Chen Zhang, Zhiyi Zhang, et al. 2023. Phoenix: Democratizing chatgpt across languages. arXiv preprint arXiv:2304.10453.",
+    "Yiming Cui, Wanxiang Che, Ting Liu, Bing Qin, and Ziqing Yang. 2021. Pre-training with whole word masking for chinese BERT. IEEE ACM Trans. Audio Speech Lang. Process., 29:3504–3514.",
+    "Jiawen Deng, Jingyan Zhou, Hao Sun, Chujie Zheng, Fei Mi, Helen Meng, and Minlie Huang. 2022. COLD: A benchmark for chinese offensive language detection. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, EMNLP 2022, Abu Dhabi, United Arab Emirates, December 7-11, 2022, pages 11580–11599. Association for Computational Linguistics.",
+    "Zhengxiao Du, Yujie Qian, Xiao Liu, Ming Ding, Jiezhong Qiu, Zhilin Yang, and Jie Tang. 2022a. GLM: general language model pretraining with autoregressive blank infilling. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), ACL 2022, Dublin, Ireland, May 22-27, 2022, pages 320-335. Association for Computational Linguistics.",
+    "Zhengxiao Du, Yujie Qian, Xiao Liu, Ming Ding, Jiezhong Qiu, Zhilin Yang, and Jie Tang. 2022b. Glm: General language model pretraining with au-toregressive blank infilling. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 320–335.",
+    "Iason Gabriel. 2020. Artificial intelligence, values, and alignment. Minds and Machines, 30(3):411–437.",
+    "Deep Ganguli, Liane Lovitt, Jackson Kernion, Amanda Askell, Yuntao Bai, Saurav Kadavath, Ben Mann, Ethan Perez, Nicholas Schiefer, Kamal Ndousse, Andy Jones, Sam Bowman, Anna Chen, Tom Con-erly, Nova DasSarma, Dawn Drain, Nelson Elhage, Sheer El Showk, Stanislav Fort, Zac Hatfield-Dodds, Tom Henighan, Danny Hernandez, Tristan Hume, Josh Jacobson, Scott Johnston, Shauna Kravec, Catherine Olsson, Sam Ringer, Eli Tran-Johnson, Dario Amodei, Tom Brown, Nicholas Joseph, Sam McCandlish, Chris Olah, Jared Kaplan, and Jack Clark. 2022. Red teaming language models to reduce harms: Methods, scaling behaviors, and lessons learned. CoRR, abs/2209.07858.",
+    "Samuel Gehman, Suchin Gururangan, Maarten Sap, Yejin Choi, and Noah A. Smith. 2020. Realtoxicityprompts: Evaluating neural toxic degeneration in language models. In Findings of the Association for Computational Linguistics: EMNLP 2020, Online Event, 16-20 November 2020, volume EMNLP 2020 of Findings of ACL, pages 3356–3369. Association for Computational Linguistics.",
+    "Amelia Glaese, Nat McAleese, Maja Trebacz, John Aslanides, Vlad Firoiu, Timo Ewalds, Maribeth Rauh, Laura Weidinger, Martin J. Chadwick, Phoebe Thacker, Lucy Campbell-Gillingham, Jonathan Ue-sato, Po-Sen Huang, Ramona Comanescu, Fan Yang, Abigail See, Sumanth Dathathri, Rory Greig, Charlie Chen, Doug Fritz, Jaume Sanchez Elias, Richard Green, Sona Mokrá, Nicholas Fernando, Boxi Wu, Rachel Foley, Susannah Young, Iason Gabriel, William Isaac, John Mellor, Demis Hass-abis, Koray Kavukcuoglu, Lisa Anne Hendricks, and Geoffrey Irving. 2022. Improving alignment of dialogue agents via targeted human judgements. CoRR, abs/2209.14375.",
+    "Josh A Goldstein, Girish Sastry, Micah Musser, Renee DiResta, Matthew Gentzel, and Katerina Sedova. 2023. Generative language models and automated influence operations: Emerging threats and potential mitigations. arXiv preprint arXiv:2301.04246.",
+    "Hossein Hosseini, Sreeram Kannan, Baosen Zhang, and Radha Poovendran. 2017. Deceiving google's perspective api built for detecting toxic comments. arXiv preprint arXiv:1702.08138.",
+    "InternLM-Team. 2023. Internlm: A multilingual language model with progressively enhanced capabilities. https://github.com/InternLM/InternLM.",
+    "Jiaming Ji, Tianyi Qiu, Boyuan Chen, Borong Zhang, Hantao Lou, Kaile Wang, Yawen Duan, Zhong-hao He, Jiayi Zhou, Zhaowei Zhang, Fanzhi Zeng, Kwan Yee Ng, Juntao Dai, Xuehai Pan, Aidan O'Gara, Yingshan Lei, Hua Xu, Brian Tse, Jie Fu, Stephen McAleer, Yaodong Yang, Yizhou Wang, Song-Chun Zhu, Yike Guo, and Wen Gao. 2023a. AI alignment: A comprehensive survey. CORR, abs/2310.19852.",
+    "Yunjie Ji, Yan Gong, Yong Deng, Yiping Peng, Qiang Niu, Baochang Ma, and Xiangang Li. 2023b. Towards better instruction following language models for chinese: Investigating the impact of training data and evaluation. arXiv preprint arXiv:2304.07854.",
+    "Jan Leike, David Krueger, Tom Everitt, Miljan Martic, Vishal Maini, and Shane Legg. 2018. Scalable agent alignment via reward modeling: a research direction.",
+    "Haoran Li, Dadi Guo, Wei Fan, Mingshi Xu, and Yangqiu Song. 2023. Multi-step jailbreaking privacy attacks on chatgpt. arXiv preprint arXiv:2304.05197.",
+    "MiniMax. Minimax. https://api.minimax.chat/.",
+    "MOSS. Moss. https://moss.fastnlp.top/.",
+    "OpenAI. 2023. GPT-4 technical report. CORR, abs/2303.08774.",
+    "Long Ouyang, Jeffrey Wu, Xu Jiang, Diogo Almeida, Carroll Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, et al. 2022. Training language models to follow instructions with human feedback. Advances in Neural Information Processing Systems, 35:27730–27744.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel R. Bowman. 2022. BBQ: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, Dublin, Ireland, May 22-27, 2022, pages 2086–2105. Association for Computational Linguistics.",
+    "Hao Sun, Zhexin Zhang, Jiawen Deng, Jiale Cheng, and Minlie Huang. 2023. Safety assessment of chinese large language models. CoRR, abs/2304.10436.",
+    "Hugo Touvron, Thibaut Lavril, Gautier Izacard, Xavier Martinet, Marie-Anne Lachaux, Timothée Lacroix, Baptiste Rozière, Naman Goyal, Eric Hambro, Faisal Azhar, et al. 2023. Llama: Open and efficient foundation language models. arXiv preprint arXiv:2302.13971.",
+    "Yuxia Wang, Haonan Li, Xudong Han, Preslav Nakov, and Timothy Baldwin. 2023. Do-not-answer: A dataset for evaluating safeguards in Ilms. arXiv preprint arXiv:2308.13387.",
+    "Alexander Wei, Nika Haghtalab, and Jacob Steinhardt. 2023. Jailbroken: How does llm safety training fail? arXiv preprint arXiv:2307.02483.",
+    "Laura Weidinger, Kevin R. McKee, Richard Everett, Saffron Huang, Tina O. Zhu, Martin J. Chadwick, Christopher Summerfield, and Iason Gabriel. 2023. Using the veil of ignorance to align ai systems with principles of justice. Proceedings of the National Academy of Sciences, 120(18):e2213709120.",
+    "Guohai Xu, Jiayi Liu, Ming Yan, Haotian Xu, Jinghui Si, Zhuoran Zhou, Peng Yi, Xing Gao, Jitao Sang, Rong Zhang, Ji Zhang, Chao Peng, Fei Huang, and Jingren Zhou. 2023. Cvalues: Measuring the values of chinese large language models from safety to responsibility. CoRR, abs/2307.09705.",
+    "Hui Zeng. 2023. Measuring massive multitask chinese understanding. arXiv preprint arXiv:2304.12986.",
+    "Zhexin Zhang, Leqi Lei, Lindong Wu, Rui Sun, Yongkang Huang, Chong Long, Xiao Liu, Xuanyu Lei, Jie Tang, and Minlie Huang. 2023. Safetybench: Evaluating the safety of large language models with multiple choice questions. arXiv preprint arXiv:2309.07045.",
+    "Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric P. Xing, Hao Zhang, Joseph E. Gonzalez, and Ion Stoica. 2023. Judging llm-as-a-judge with mt-bench and chatbot arena. CoRR, abs/2306.05685."
+  ],
+  "measurement_description": "The benchmark measures bias and discrimination against faith, as part of its 'Fairness' dimension. It also evaluates the model's ability to identify and refuse to support 'religious crimes' as part of its 'Legality' dimension."
 }

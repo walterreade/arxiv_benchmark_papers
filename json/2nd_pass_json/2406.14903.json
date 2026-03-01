@@ -2,82 +2,51 @@
   "filename": "2406.14903.pdf",
   "title": "GIEBench: Towards Holistic Evaluation of Group Identity-based Empathy for Large Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2406.14903",
-  "benchmark_measurement": "The benchmark measured the ability of Large Language Models to demonstrate empathy by selecting responses that align with the values and perspectives of specific religious identity groups. This was evaluated as part of a broader assessment of group identity-based empathy across 11 dimensions.",
-  "religious_groups": [
-    "Islam",
-    "Buddhism",
-    "Christianity"
+  "bias_targets": [
+    {
+      "target": "Nationality bias",
+      "methodology": "Multiple-choice evaluation of model responses on controversial topics to test alignment with the stances and values of 96 different national identities (e.g., China, United States, Russia)."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Multiple-choice evaluation measuring the model's empathetic alignment with the perspectives of sexual minority identities (e.g., homosexuality) across controversial topics."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Multiple-choice evaluation testing the model's ability to adopt the perspectives and values of different age groups (young people, middle-aged people, older people)."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Multiple-choice evaluation testing the model's empathetic alignment with male and female identity stances on contentious topics."
+    },
+    {
+      "target": "Personality bias",
+      "methodology": "Multiple-choice evaluation checking model alignment with the values and perspectives of different MBTI personality types (e.g., Introversion, Extraversion, Thinking, Feeling)."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Multiple-choice evaluation of model responses to assess alignment with the perspectives of different racial and skin color identities (e.g., Brown, Light Brown, White, Black)."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Multiple-choice evaluation of the model's ability to select responses that fit the values of different religious faiths (e.g., Islam, Buddhism, Christianity)."
+    },
+    {
+      "target": "Educational bias",
+      "methodology": "Multiple-choice evaluation testing whether models can adopt the stances associated with various educational attainment levels (e.g., High School or Below, Bachelors, Masters, Doctorate)."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Multiple-choice evaluation of model responses to test empathy and value alignment towards different income-level groups (low income, middle income, high income)."
+    },
+    {
+      "target": "Political bias",
+      "methodology": "Multiple-choice evaluation to measure model alignment with the values of various political parties (e.g., Democratic Party, Republican Party, Green Party, Communist Party)."
+    },
+    {
+      "target": "Occupational bias",
+      "methodology": "Multiple-choice evaluation testing the model's ability to adopt the specific perspectives and values of different professions (e.g., Journalist, Police, Lawyer, Doctor)."
+    }
   ],
-  "models_tested": [
-    "GPT-3.5-turbo",
-    "GPT-4-turbo",
-    "Yi-large",
-    "Qwen-1.5-4b",
-    "Qwen-1.5-7b",
-    "Qwen-1.5-14b",
-    "Qwen-1.5-32b",
-    "Qwen-1.5-72b",
-    "Qwen-1.5-110b",
-    "Qwen-2-72b",
-    "Mistral-7b",
-    "Mixtral-8x7b",
-    "Mixtral-8x22b",
-    "Llama-3-8b",
-    "Llama-3-70b",
-    "Yi-1.5-6b",
-    "Yi-1.5-9b",
-    "Yi-1.5-34b",
-    "Deepseek-7b",
-    "Deepseek-67b",
-    "Gemma-2b",
-    "Gemma-7b",
-    "MAP-Neo-7b"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "EmotionBench"
-  ],
-  "continuous_testing": false,
-  "findings": "LLMs generally showed lower accuracy in aligning with faith-based perspectives compared to other identity dimensions like orientation or political party. However, performance significantly improved when models were explicitly prompted with the user's religious identity and a chain-of-thought instruction. The study also found that models could distinguish between the differing stances of specific religious groups, such as Islam, Christianity, and Buddhism, on controversial topics.",
-  "references": [
-    "Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia Leoni Aleman, Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat, et al. 2023. Gpt-4 technical report. arXiv preprint arXiv:2303.08774.",
-    "01. AI,:, Alex Young, Bei Chen, Chao Li, Chengen Huang, Ge Zhang, Guanwei Zhang, Heng Li, Jiangcheng Zhu, Jianqun Chen, Jing Chang, Kaidong Yu, Peng Liu, Qiang Liu, Shawn Yue, Senbin Yang, Shiming Yang, Tao Yu, Wen Xie, Wenhao Huang, Xiaohui Hu, Xiaoyi Ren, Xinyao Niu, Pengcheng Nie, Yuchi Xu, Yudong Liu, Yue Wang, Yuxuan Cai, Zhenyu Gu, Zhiyuan Liu, and Zonghong Dai. 2024. Yi: Open foundation models by 01.ai. Preprint, arXiv:2403.04652.",
-    "Lora Aroyo, Alex Taylor, Mark Diaz, Christopher Homan, Alicia Parrish, Gregory Serapio-García, Vinodkumar Prabhakaran, and Ding Wang. 2024. Dices dataset: Diversity in conversational ai evaluation for safety. Advances in Neural Information Processing Systems, 36.",
-    "Jinze Bai, Shuai Bai, Yunfei Chu, Zeyu Cui, Kai Dang, Xiaodong Deng, Yang Fan, Wenbin Ge, Yu Han, Fei Huang, et al. 2023. Qwen technical report. arXiv preprint arXiv:2309.16609.",
-    "Ahmed Belkhir and Fatiha Sadat. 2023. Beyond information: Is chatgpt empathetic enough? In Proceedings of the 14th International Conference on Recent Advances in Natural Language Processing, pages 159–169.",
-    "Shaily Bhatt, Sunipa Dev, Partha Talukdar, Shachi Dave, and Vinodkumar Prabhakaran. 2022. Recontextualizing fairness in nlp: The case of india. In Proceedings of the 2nd Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics and the 12th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 727–740.",
-    "DeepSeek-AI, :, Xiao Bi, Deli Chen, Guanting Chen, Shanhuang Chen, Damai Dai, Chengqi Deng, Honghui Ding, Kai Dong, Qiushi Du, Zhe Fu, Huazuo Gao, Kaige Gao, Wenjun Gao, Ruiqi Ge, Kang Guan, Daya Guo, Jianzhong Guo, Guangbo Hao, Zhewen Hao, Ying He, Wenjie Hu, Panpan Huang, Erhang Li, Guowei Li, Jiashi Li, Yao Li, Y. K. Li, Wenfeng Liang, Fangyun Lin, A. X. Liu, Bo Liu, Wen Liu, Xiaodong Liu, Xin Liu, Yiyuan Liu, Haoyu Lu, Shanghao Lu, Fuli Luo, Shirong Ma, Xiaotao Nie, Tian Pei, Yishi Piao, Junjie Qiu, Hui Qu, Tongzheng Ren, Zehui Ren, Chong Ruan, Zhangli Sha, Zhihong Shao, Junxiao Song, Xuecheng Su, Jingxiang Sun, Yaofeng Sun, Minghui Tang, Bingxuan Wang, Peiyi Wang, Shiyu Wang, Yaohui Wang, Yongji Wang, Tong Wu, Y. Wu, Xin Xie, Zhenda Xie, Ziwei Xie, Yiliang Xiong, Hanwei Xu, R. X. Xu, Yanhong Xu, Dejian Yang, Yuxiang You, Shuiping Yu, Xingkai Yu, B. Zhang, Haowei Zhang, Lecong Zhang, Liyue Zhang, Mingchuan Zhang, Minghua Zhang, Wentao Zhang, Yichao Zhang, Chenggang Zhao, Yao Zhao, Shangyan Zhou, Shunfeng Zhou, Qihao Zhu, and Yuheng Zou. 2024. Deepseek llm: Scaling open-source language models with longtermism. Preprint, arXiv:2401.02954.",
-    "Esin Durmus, Karina Nyugen, Thomas I Liao, Nicholas Schiefer, Amanda Askell, Anton Bakhtin, Carol Chen, Zac Hatfield-Dodds, Danny Hernandez, Nicholas Joseph, et al. 2023. Towards measuring the representation of subjective global opinions in language models. arXiv preprint arXiv:2306.16388.",
-    "Jen-tse Huang, Man Ho Lam, Eric John Li, Shujie Ren, Wenxuan Wang, Wenxiang Jiao, Zhaopeng Tu, and Michael R Lyu. 2023. Emotionally numb or empathetic? evaluating how llms feel using emotionbench. arXiv preprint arXiv:2308.03656.",
-    "Flora Ioannidou and Vaya Konstantikaki. 2008. Empathy and emotional intelligence: What is it really about? International Journal of caring sciences, 1(3):118.",
-    "Albert Q Jiang, Alexandre Sablayrolles, Arthur Mensch, Chris Bamford, Devendra Singh Chaplot, Diego de las Casas, Florian Bressand, Gianna Lengyel, Guillaume Lample, Lucile Saulnier, et al. 2023. Mistral 7b. arXiv preprint arXiv:2310.06825.",
-    "Przemyslaw Joniak and Akiko Aizawa. 2022. Gender biases and where to find them: Exploring gender bias in pre-trained transformer-based language models using movement pruning. In Proceedings of the 4th Workshop on Gender Bias in Natural Language Processing (GeBNLP), pages 67–73.",
-    "Khyati Khandelwal, Manuel Tonneau, Andrew M Bean, Hannah Rose Kirk, and Scott A Hale. 2023. Casteist but not racist? quantifying disparities in large language model bias between india and the west. arXiv preprint arXiv:2309.08573.",
-    "Paul Pu Liang, Chiyu Wu, Louis-Philippe Morency, and Ruslan Salakhutdinov. 2021. Towards understanding and mitigating social biases in language models. In International Conference on Machine Learning, pages 6565–6576. PMLR.",
-    "Ruibo Liu, Chenyan Jia, Jason Wei, Guangxuan Xu, Lili Wang, and Soroush Vosoughi. 2021. Mitigating political bias in language models through reinforced calibration. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 35, pages 14857–14866.",
-    "Yang Liu, Yuanshun Yao, Jean-Francois Ton, Xiaoying Zhang, Ruocheng Guo Hao Cheng, Yegor Klochkov, Muhammad Faaiz Taufiq, and Hang Li. 2023. Trustworthy llms: a survey and guideline for evaluating large language models' alignment. arXiv preprint arXiv:2308.05374.",
-    "Siyuan Brandon Loh and Aravind Sesagiri Raamkumar. 2023. Harnessing large language models' empathetic response generation capabilities for online mental health counselling support. arXiv preprint arXiv:2310.08017.",
-    "Damilola Omitaomu, Shabnam Tafreshi, Tingting Liu, Sven Buechel, Chris Callison-Burch, Johannes Eichstaedt, Lyle Ungar, and João Sedoc. 2022. Empathic conversations: A multi-level dataset of contextualized conversations. arXiv preprint arXiv:2205.12698.",
-    "Long Ouyang, Jeffrey Wu, Xu Jiang, Diogo Almeida, Carroll Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, et al. 2022. Training language models to follow instructions with human feedback. Advances in neural information processing systems, 35:27730–27744.",
-    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel Bowman. 2022. Bbq: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2086–2105.",
-    "Tom Postmes, S Alexander Haslam, and Roderick I Swaab. 2005. Social influence in small groups: An interactive model of social identity formation. European review of social psychology, 16(1):1–42.",
-    "Hannah Rashkin, Eric Michael Smith, Margaret Li, and Y-Lan Boureau. 2019. Towards empathetic open-domain conversation models: A new benchmark and dataset. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 5370–5381.",
-    "Jocelyn Shen, Yubin Kim, Mohit Hulse, Wazeer Zulfikar, Sharifa Alghowinem, Cynthia Breazeal, and Hae Won Park. 2024. Empathicstories++: A multimodal dataset for empathy towards personal experiences. arXiv preprint arXiv:2405.15708.",
-    "Tianhao Shen, Renren Jin, Yufei Huang, Chuang Liu, Weilong Dong, Zishan Guo, Xinwei Wu, Yan Liu, and Deyi Xiong. 2023. Large language model alignment: A survey. arXiv preprint arXiv:2309.15025.",
-    "Anand Siththaranjan, Cassidy Laidlaw, and Dylan Hadfield-Menell. 2023. Distributional preference learning: Understanding and accounting for hidden context in rlhf. arXiv preprint arXiv:2312.08358.",
-    "Taylor Sorensen, Jared Moore, Jillian Fisher, Mitchell Gordon, Niloofar Mireshghallah, Christopher Michael Rytting, Andre Ye, Liwei Jiang, Ximing Lu, Nouha Dziri, et al. 2024. A roadmap to pluralistic alignment. arXiv preprint arXiv:2402.05070.",
-    "Charles Stangor. 2015. Social groups in action and interaction. Routledge.",
-    "Gemma Team, Thomas Mesnard, Cassidy Hardin, Robert Dadashi, Surya Bhupatiraju, Shreya Pathak, Laurent Sifre, Morgane Rivière, Mihir Sanjay Kale, Juliette Love, et al. 2024. Gemma: Open models based on gemini research and technology. arXiv preprint arXiv:2403.08295.",
-    "Lei Wang, Chen Ma, Xueyang Feng, Zeyu Zhang, Hao Yang, Jingsen Zhang, Zhiyuan Chen, Jiakai Tang, Xu Chen, Yankai Lin, et al. 2024. A survey on large language model based autonomous agents. Frontiers of Computer Science, 18(6):186345.",
-    "Yufei Wang, Wanjun Zhong, Liangyou Li, Fei Mi, Xingshan Zeng, Wenyong Huang, Lifeng Shang, Xin Jiang, and Qun Liu. 2023. Aligning large language models with human: A survey. arXiv preprint arXiv:2307.12966.",
-    "Zhiheng Xi, Wenxiang Chen, Xin Guo, Wei He, Yiwen Ding, Boyang Hong, Ming Zhang, Junzhe Wang, Senjie Jin, Enyu Zhou, et al. 2023. The rise and potential of large language model based agents: A survey. arXiv preprint arXiv:2309.07864.",
-    "Ge Zhang, Scott Qu, Jiaheng Liu, Chenchen Zhang, Chenghua Lin, Chou Leuang Yu, Danny Pan, Esther Cheng, Jie Liu, Qunshu Lin, Raven Yuan, Tuney Zheng, Wei Pang, Xinrun Du, Yiming Liang, Yinghao Ma, Yizhi Li, Ziyang Ma, Bill Lin, Emmanouil Benetos, Huan Yang, Junting Zhou, Kaijing Ma, Minghao Liu, Morry Niu, Noah Wang, Quehry Que, Ruibo Liu, Sine Liu, Shawn Guo, Soren Gao, Wangchunshu Zhou, Xinyue Zhang, Yizhi Zhou, Yubo Wang, Yuelin Bai, Yuhan Zhang, Yuxiang Zhang, Zenith Wang, Zhenzhu Yang, Zijian Zhao, Jiajun Zhang, Wanli Ouyang, Wenhao Huang, and Wenhu Chen. 2024. Map-neo: Highly capable and transparent bilingual large language model series. Preprint, arXiv:2405.19327.",
-    "Wayne Xin Zhao, Kun Zhou, Junyi Li, Tianyi Tang, Xiaolei Wang, Yupeng Hou, Yingqian Min, Beichen Zhang, Junjie Zhang, Zican Dong, et al. 2023. A survey of large language models. arXiv preprint arXiv:2303.18223."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

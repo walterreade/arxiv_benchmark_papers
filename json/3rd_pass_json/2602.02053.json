@@ -1,0 +1,56 @@
+{
+  "filename": "2602.02053.pdf",
+  "title": "WildGraphBench: Benchmarking GraphRAG with Wild-Source Corpora",
+  "arxiv_url": "https://arxiv.org/pdf/2602.02053",
+  "religious_groups": [
+    "Religion"
+  ],
+  "models_tested": [
+    "NaiveRAG",
+    "BM25",
+    "Fast-GraphRAG",
+    "HippoRAG2",
+    "Microsoft GraphRAG (local)",
+    "Microsoft GraphRAG (global)",
+    "LightRAG (hybrid)",
+    "LinearRAG",
+    "gpt-4o-mini"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "HotpotQA",
+    "2WikiMultiHopQA",
+    "MultiHop-RAG",
+    "UltraDomain",
+    "GraphRAG-Bench"
+  ],
+  "continuous_testing": false,
+  "findings": "In the 'Religion' domain, several systems (NaiveRAG, Microsoft GraphRAG(global), LightRAG(hybrid)) achieved perfect 100% accuracy on multi-fact questions, a significant outlier compared to other topics. For single-fact questions, HippoRAG2 performed best with 68.06% accuracy. All methods struggled with summarization tasks, where NaiveRAG achieved the highest F1 score (6.83), reinforcing the finding that flat RAG baselines can have better factual coverage for broad summary questions.",
+  "references": [
+    "Danqi Chen, Adam Fisch, Jason Weston, and Antoine Bordes. 2017. Reading Wikipedia to answer open-domain questions. In Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 1870–1879, Vancouver, Canada. Association for Computational Linguistics.",
+    "CircleMind-AI. 2024. Fastgraphrag: High-speed graph-based retrieval-augmented generation. https://github.com/ circlemind-ai/fast-graphrag. GitHub repository.",
+    "Darren Edge, Ha Trinh, Newman Cheng, Joshua Bradley, Alex Chao, Apurva Mody, Steven Truitt, Dasha Metropolitansky, Robert Osazuwa Ness, and Jonathan Larson. 2025. From local to global: A graph rag approach to query-focused summarization. Preprint, arXiv:2404.16130.",
+    "Zirui Guo, Lianghao Xia, Yanhua Yu, Tu Ao, and Chao Huang. 2025. Lightrag: Simple and fast retrieval-augmented generation. Preprint, arXiv:2410.05779.",
+    "Bernal Jiménez Gutiérrez, Yiheng Shu, Weijian Qi, Sizhe Zhou, and Yu Su. 2025. From rag to memory: Non-parametric continual learning for large language models. Preprint, arXiv:2502.14802.",
+    "Xanh Ho, Anh-Khoa Duong Nguyen, Saku Sugawara, and Akiko Aizawa. 2020. Constructing a multi-hop QA dataset for comprehensive evaluation of reasoning steps. In Proceedings of the 28th International Conference on Computational Linguistics, pages 6609–6625, Barcelona, Spain (Online). International Committee on Computational Linguistics.",
+    "Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich Küttler, Mike Lewis, Wen tau Yih, Tim Rocktäschel, Sebastian Riedel, and Douwe Kiela. 2021. Retrieval-augmented generation for knowledge-intensive nlp tasks. Preprint, arXiv:2005.11401.",
+    "Boci Peng, Yun Zhu, Yongchao Liu, Xiaohe Bo, Haizhou Shi, Chuntao Hong, Yan Zhang, and Siliang Tang. 2024. Graph retrieval-augmented generation: A survey. Preprint, arXiv:2408.08921.",
+    "Hongjin Qian, Zheng Liu, Peitian Zhang, Kelong Mao, Defu Lian, Zhicheng Dou, and Tiejun Huang. 2025. Memorag: Boosting long context processing with global memory-enhanced retrieval augmentation. Preprint, arXiv:2409.05591.",
+    "Stephen Robertson and Hugo Zaragoza. 2009. The probabilistic relevance framework: Bm25 and beyond. Foundations and Trends® in Information Retrieval, 3(4):333–389.",
+    "Kurt Shuster, Spencer Poff, Moya Chen, Douwe Kiela, and Jason Weston. 2021. Retrieval augmentation reduces hallucination in conversation. Preprint, arXiv:2104.07567.",
+    "Yixuan Tang and Yi Yang. 2024. Multihop-rag: Benchmarking retrieval-augmented generation for multi-hop queries. Preprint, arXiv:2401.15391.",
+    "Zhishang Xiang, Chuanjie Wu, Qinggang Zhang, Shengyuan Chen, Zijin Hong, Xiao Huang, and Jinsong Su. 2025. When to use graphs in rag: A comprehensive analysis for graph retrieval-augmented generation. Preprint, arXiv:2506.05690.",
+    "Yilin Xiao, Junnan Dong, Chuang Zhou, Su Dong, Qian wen Zhang, Di Yin, Xing Sun, and Xiao Huang. 2025. Graphrag-bench: Challenging domain-specific reasoning for evaluating graph retrieval-augmented generation. Preprint, arXiv:2506.02404.",
+    "Zhilin Yang, Peng Qi, Saizheng Zhang, Yoshua Bengio, William W. Cohen, Ruslan Salakhutdinov, and Christopher D. Manning. 2018. Hotpotqa: A dataset for diverse, explainable multi-hop question answering. Preprint, arXiv:1809.09600.",
+    "Qinggang Zhang, Shengyuan Chen, Yuanchen Bei, Zheng Yuan, Huachi Zhou, Zijin Hong, Hao Chen, Yilin Xiao, Chuang Zhou, Junnan Dong, Yi Chang, and Xiao Huang. 2025. A survey of graph retrieval-augmented generation for customized large language models. Preprint, arXiv:2501.13958.",
+    "Luyao Zhuang, Shengyuan Chen, Yilin Xiao, Huachi Zhou, Yujing Zhang, Hao Chen, Qinggang Zhang, and Xiao Huang. 2025. Linearrag: Linear graph retrieval augmented generation on large-scale corpora. Preprint, arXiv:2510.10114."
+  ],
+  "measurement_description": "The benchmark measured the factual retrieval, aggregation, and summarization capabilities of GraphRAG systems using Wikipedia articles and their cited web sources from the 'Religion' domain."
+}

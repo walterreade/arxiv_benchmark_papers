@@ -2,84 +2,15 @@
   "filename": "2601.12696.pdf",
   "title": "UbuntuGuard: A Culturally-Grounded Policy Benchmark for Equitable AI Safety in African Languages",
   "arxiv_url": "https://arxiv.org/pdf/2601.12696",
-  "benchmark_measurement": "The benchmark measures the ability of guardian models to adhere to culturally-grounded safety policies in dialogues related to religion. This includes adjudicating highly contextual and subjective content, avoiding misinformation, and providing nuanced responses in specific religious contexts, such as discussions about Christian pastoring in Nigeria.",
-  "religious_groups": [
-    "Christianity"
+  "bias_targets": [
+    {
+      "target": "Language bias",
+      "methodology": "Comparing the F1 score performance of LLM guardian models in classifying safe versus unsafe dialogues across an English baseline, cross-lingual settings, and fully localized low-resource African languages."
+    },
+    {
+      "target": "Cultural bias",
+      "methodology": "Evaluating safety policy compliance using a benchmark of adversarial queries, multi-turn dialogues, and dynamic policies grounded in African sociocultural norms, sourced from local domain experts, to highlight gaps in Western-centric models."
+    }
   ],
-  "models_tested": [
-    "NemoGuard-8B",
-    "LlamaGuard-8B",
-    "DynaGuard-8B",
-    "GPT-OSS Safeguard-20B",
-    "GPT-OSS Safeguard-120B",
-    "PolyGuard-7B",
-    "CultureGuard",
-    "Qwen-3 (8B)",
-    "Qwen-3 (32B)",
-    "Llama-3.1 (8B)",
-    "GPT-OSS (20B)",
-    "GPT-OSS (120B)",
-    "Deepseek-3.1 (671B)"
-  ],
-  "languages_evaluated": [
-    "English",
-    "Akan",
-    "Ewe",
-    "Hausa",
-    "Igbo",
-    "Luganda",
-    "Nyanja",
-    "Swahili",
-    "Tumbuka",
-    "Xhosa",
-    "Yoruba",
-    "Zulu"
-  ],
-  "response_type": [
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "JailbreakBench",
-    "WildGuardTest",
-    "Aegis-2.0",
-    "XSafety",
-    "MultiJail",
-    "PolyGuard",
-    "NemotronSafety-Guard-Dataset-v3",
-    "DynaBench"
-  ],
-  "continuous_testing": false,
-  "findings": "Models exhibited one of their highest error rates in the 'Culture and Religion' domain (6.27%), suggesting they struggle significantly with adjudicating highly contextual or subjective content where safety boundaries are dependent on local cultural nuance.",
-  "references": [
-    "Tassallah Abdullahi, Ioanna Gemou, Nihal V Nayak, Ghulam Murtaza, Stephen H Bach, Carsten Eickhoff, and Ritambhara Singh. 2025. K-path: Reasoning over graph paths for drug repurposing and drug inter- action prediction. In Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining, pages 1–16.",
-    "Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia Leoni Aleman, Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Buch, and 1 others. 2023. Gpt-4 techni- cal report. arXiv preprint arXiv:2303.08774.",
-    "Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, and 1 others. 2020. Language models are few-shot learners. Advances in neural information processing systems, 33:1877–1901.",
-    "Patrick Chao, Edoardo Debenedetti, Alexander Robey, Maksym Andriushchenko, Francesco Croce, Vikash Sehwag, Edgar Dobriban, Nicolas Flammarion, George J Pappas, Florian Tramer, and 1 others. 2024. Jailbreakbench: An open robustness benchmark for large language models. Advances in Neural Information Processing Systems, 37:55005– 55029.",
-    "Zheng Chen, Stella Wotmia, Ruchika Gupta, Sandip Sani, Tassallah Abdullahi, Joao Ribeiro, Christian Jensen-Salch, Safi Mir, Siran Li, Sa- son Orender, and 1 others. 2025. Benchmarking in broken-down to its own judge. arXiv preprint arXiv:2510.07575.",
-    "DeepSeek-AI, Aixin Liu, Bei Feng, Bing Xue, Bingx- uan Wang, and et al. 2024. Deepseek-v3 technical report. arXiv preprint arXiv:2412.19437. Techni- cal report describing the Deepseek-V3 Mixture-of- Experts language model with 671B total parameters.",
-    "Yue Deng, Yuankai Zhang, Wei Wang, and Bo Li. 2025. Duoguard: A two-player rl-driven framework for multilingual llm guardrails. 2025. URL https://arxiv. org/abs/2502.08163.",
-    "Yue Deng, Wenxuan Zhang, Sinno Jialin Pan, and Luuong Bing. 2023. Multilingual jailbreak chal- lenges in large language models. arXiv preprint arXiv:2310.06474.",
-    "Reza Esfandiarpoor, George Zerveas, Ruochen Zhang, Maxton Mgonzo, Carsten Eickhoff, and Stephen H Bach. 2025. Beyond context windows: synthetic data enables list-wise training with multiple levels of relevance. arXiv preprint arXiv:2503.23239.",
-    "Shaashwat Ghosh, Prasoon Varshney, Makoto Natsuiun, Sreedhar, Aishwarya Nallamaddi, Traian Rebedea, Jibin Rajan Varghese, and Christopher Parisien. 2025. Aegis-2.0: Towards ai safety metric and risks taxon- omy for alignment of llm guardrails. arXiv preprint arXiv:2501.09004.",
-    "Amelia Glaese, Nat McAleese, Maja Trebacz, John Aslanides, Vlad Firoiu, Timo Ewalds, Maribeth Rauh, Laura Weidinger, Martin Chadwick, Phoebe Thacker, and 1 others. 2022. Improving alignment of dia- logue agents via targeted human judgements. arXiv preprint arXiv:2209.14375.",
-    "Aaron Grattafiori, Abhimanyu Dubey, Abhinav Jauhri, Abhishek Kadian, Abhishek Kadian, and et al. 2024. The llama-3.1 series of models. arXiv preprint arXiv:2407.21783. Technical report on the Llama 3.1 family of open language models from Meta AI.",
-    "Seung-Hwan Kasai Rase, Aishwarya Stting, Jiwei Jiang, Bill Yuchen Lin, Nathan Lambert, Yejin Choi, and Nouha Dziri. 2024. Wildguard: Open one-stop mod- eration tools for safety risks, jailbreaks, and refusals of llms. Advances in Neural Information Processing Systems, 37:8093–8131.",
-    "Monte Hoover, Vatsal Baherwani, Neel Jain, Khalid Sal- fullah, Joseph Vincent, Ching Jain, Melissa Keemi- gallo, C Bryan Brown, Schweta Parade, and Tom Goldstein. 2025. Dynaguard: A dynamic guardian model with user-defined policies. arXiv preprint arXiv:2510.02565.",
-    "Hakan Inan, Kartikeya Upasani, Jianfeng Chi, Rashi Rungta, Kritika Iyer, Jianing Mao, Michael Tseng, Qingyu Hu, Brian Fuller, Davide Testuggine, and 1 others. 2023. Llama guard: Llm-based input- output safeguard for human-ai conversations. arXiv preprint arXiv:2312.06674.",
-    "Rashi Joshi, Rakesh Paul, Kanishk Singla, Anusha Kamath, Michael Evans, Katherine Luna, Shaona Ghosh, Utkarsh Valusa, Eileen Le, Sameer Singh, Chitta Baral, and 1 others. 2025. Cultureguard: To- wards culturally-aware dataset and guard model for multilingual safety applications. arXiv preprint arXiv:2508.01210.",
-    "Tom Kocmi and Christian Federmann. 2023. Gemba- mqm: detecting translation quality error spans with gpt-4. arXiv preprint arXiv:2310.13988.",
-    "Priyanshu Kumar, Devansh Jain, Akhila Yerkukola, Li- wei Jiang, Himanshu Bentwal, Thomas Hartvgsen, and Maarten Sap. 2025. Polyguard: A multilin- gual safety moderation tool for 17 languages. arXiv preprint arXiv:2504.04377.",
-    "Tobi Olatunji, Charles Nimo, Abraham Owodunni, Tas- sallah Abdullahi, Emmanuel Ayodele, Mardhiyah Sanni, Chinemelu Aka, Folafunmi Omofoye, Foutse Yuehgoh, Timothy Faniran, and 1 others. 2024. Afrimed-qa: a pan-african, multi-specialty, medi- cal question-answering benchmark dataset. arXiv preprint arXiv:2411.15640.",
-    "OpenAI. 2025. gpt-oss-120b & gpt-oss-20b model card. Model card / technical documentation. Open-weight mixture-of-experts language models by OpenAI re- leased under Apache 2.0.",
-    "OpenAI. 2025. Introducing gpt-oss- safeguard. https://openai.com/index/ introducing-gpt-oss-safeguard/. Research preview of open-weight safety reasoning models gpt-oss-safeguard-120B and 20B.",
-    "Long Ouyang, Jeffrey Wu, Xu Jiang, Diogo Almeida, Carroll Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, and 1 others. 2022. Training language models to follow in- structions with human feedback. Advances in neural information processing systems, 35:27730–27744.",
-    "Qazi Mamunur Rashid, Erin van Liemt, Tiffany Shih, Amber Ebinama, Karla Barrios Ramos, Madhurima Maji, Aishwarya Verma, Charu Kalia, Jamila Smith- Loud, Joyce Nakatumba-Nabende, and 1 others. 2025. Amplify initiative: Building a localized data platform for globalized ai. arXiv preprint arXiv:2504.14105.",
-    "Traian Rebedea, Razvan Dinu, Makesh Narsimhan Sreedhar, Christopher Parisien, and Jonathan Cohen. 2023. NeMo guardrails: A toolkit for controllable and safe LLM applications with programmable rails. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing: System Demonstrations, pages 431–445, Singapore. Associa- tion for Computational Linguistics.",
-    "Mardhiyah Sanni, Tassallah Abdullahi, Deven- dra Deepak Kayande, Emmanuel Ayodele, Naome A Etori, Michael Samwel Mollel, Moshood O Yekini, Chibuzor Okocha, Lukman Enegi Ismaila, Folafunmi Omofoye, and 1 others. 2025. Afrispeech-dialog: a benchmark dataset for spontaneous english conversa- tions in healthcare and beyond. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 8399–8417.",
-    "Wenxuan Wang, Zhaopeng Tu, Chang Chen, Youliang Yuan, Jen tse Huang, Wenxiang Jiao, and Michael R Lyu. 2023. All languages matter: on the multilin- gual safety of large language models. 2023. URL https://arxiv. org/abs/2310.00905.",
-    "Laura Weidinger, John Mellor, Maribeth Rauh, Conor Griffin, Jonathan Uesato, Po-Sen Huang, Myra Cheng, Mia Glaese, Borja Balle, Atoosa Kasirzadeh, and 1 others. 2021. Ethical and social risks of harm from language models. arXiv preprint arXiv:2112.04359.",
-    "An Yang, Anfeng Li, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chang Gao, Chengen Huang, Dayiheng Liu, Fan Zhou, and et al. 2025. Qwen3 technical report. arXiv preprint arXiv:2505.09388. Latest Qwen3 family technical report detailing model architecture and capabilities.",
-    "Zheng-Xin Yong, Cristina Menghini, and Stephen H Bach. 2023. Low-resource languages jailbreak gpt-4. arXiv preprint arXiv:2310.02446."
-  ]
+  "primary_bias_target": "Language and Cultural bias"
 }

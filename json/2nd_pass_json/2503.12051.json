@@ -2,74 +2,19 @@
   "filename": "2503.12051.pdf",
   "title": "TLUE: A Tibetan Language Understanding Evaluation Benchmark",
   "arxiv_url": "https://arxiv.org/pdf/2503.12051",
-  "benchmark_measurement": "The benchmark measures knowledge of 'World Religions' as part of its general understanding component (Ti-MMLU). It also evaluates model behavior on safety-critical topics including ethics, bias, and morality (Ti-SafetyBench), which can encompass religious contexts.",
-  "religious_groups": [
-    "World Religions"
+  "bias_targets": [
+    {
+      "target": "Language bias",
+      "methodology": "Comparing zero-shot accuracy of large language models on high-resource language benchmarks (e.g., CMMLU, SafetyBench) versus a translated and culturally adapted low-resource Tibetan benchmark (TLUE) to quantify performance disparities and measure underrepresentation."
+    },
+    {
+      "target": "Unfairness and Bias (General)",
+      "methodology": "Evaluating model responses on a specific 'Unfairness and Bias' subset of the multiple-choice Ti-SafetyBench dataset to assess safety alignment and fairness in Tibetan."
+    },
+    {
+      "target": "Cultural bias",
+      "methodology": "Assessing models using multiple-choice questions that have been manually aligned by native experts to reflect Tibetan cultural norms and local knowledge systems, measuring the models' ability to handle culturally specific contexts."
+    }
   ],
-  "models_tested": [
-    "Claude-3.5-Sonnet",
-    "Gemini-1.5-Flash",
-    "DeepSeek-R1",
-    "DeepSeek-V3",
-    "GPT-4o",
-    "GPT-3.5-Turbo",
-    "O1-mini",
-    "LlaMA-3.1-405B",
-    "LlaMA-3.1-70B",
-    "LlaMA-3.1-8B",
-    "Qwen-2.5-72B",
-    "Qwen-2.5-32B",
-    "Qwen-2.5-7B"
-  ],
-  "languages_evaluated": [
-    "Tibetan",
-    "Chinese"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "CMMLU",
-    "SafetyBench"
-  ],
-  "continuous_testing": true,
-  "findings": "The paper does not provide specific findings for the 'World Religions' sub-task. The general finding is that most LLMs perform poorly on the Tibetan benchmark, often below the random baseline, across all domains including 'Humanities' which contains the 'World Religions' category. This indicates significant challenges for models in understanding Tibetan-language content related to religion and other topics.",
-  "references": [
-    "Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia Leoni Aleman, Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat, et al. 2023. Gpt-4 technical report. arXiv preprint arXiv:2303.08774.",
-    "Bo An. 2023. Prompt-based for low-resource tibetan text classification. ACM Transactions on Asian and Low-Resource Language Information Processing, 22(8):1–13.",
-    "Anthropic. 2024. Claude 3.5 sonnet model card.",
-    "Emily M. Bender, Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. 2021. On the dangers of stochastic parrots: Can language models be too big? In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, pages 610–623.",
-    "Google DeepMind. 2024. Gemini 1.5 technical report.",
-    "DeepSeek-AI et al. 2024. Deepseek-v3: Technical report. arXiv preprint arXiv:2412.19437.",
-    "DeepSeek-AI et al. 2025. Deepseek-r1: Incentivizing reasoning capability in llms via reinforcement learning. arXiv preprint arXiv:2501.12948.",
-    "John Doe and Jane Smith. 2024. Private benchmarking to prevent contamination and improve comparative evaluation of llms. arXiv preprint arXiv:2403.00393.",
-    "Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Amy Yang, Angela Fan, et al. 2024. The llama 3 herd of models. arXiv preprint arXiv:2407.21783.",
-    "Jack FitzGerald, Ryan Cotterell, Bahadir Avci, Sebastian Ruder, Graham Neubig, Melvin Johnson, and Orhan Firat. 2022. Massive: A 51-language multilingual dataset for task-oriented semantic parsing. arXiv preprint arXiv:2204.08582.",
-    "Fan Gao, Cheng Huang, Nyima Tashi, Yutong Liu, Xiangxiang Wang, Thupten Tsering, Ban Ma-bao, Renzeg Duojie, Gadeng Luosang, Rinchen Dongrub, et al. 2025. Tibstc-cot: A multi-domain instruction dataset for chain-of-thought reasoning in language models. arXiv preprint arXiv:2508.01977.",
-    "Dan Hendrycks, Collin Burns, Steven Basart, Andy Zou, Mantas Mazeika, Dawn Song, and Jacob Steinhardt. 2020. Measuring massive multitask language understanding. arXiv preprint arXiv:2009.03300.",
-    "Jiajun Hu, Sebastian Ruder, Aditya Siddhant, Graham Neubig, Orhan Firat, and Melvin Johnson. 2020. Xtreme: A massively multilingual multi-task benchmark for evaluating cross-lingual generalization. arXiv preprint arXiv:2003.11080.",
-    "Cheng Huang, Fan Gao, Nyima Tashi, Yutong Liu, Xiangxiang Wang, Thupten Tsering, Ban Ma-bao, Renzeg Duojie, Gadeng Luosang, Rinchen Dongrub, et al. 2025. Sun-shine: A large language model for tibetan culture. arXiv preprint arXiv:2503.18288.",
-    "Divyanshu Kakwani, Anoop Kunchukuttan, Satish Golla, Gokul N.C., Avik Bhattacharyya, Mitesh M. Khapra, and Pratyush Kumar. 2020. IndicNLPSuite: Monolingual corpora, evaluation benchmarks and pre-trained multilingual language models for Indian languages. In Findings of the Association for Computational Linguistics: EMNLP 2020, pages 4948–4961, Online. Association for Computational Linguistics.",
-    "Haonan Li, Yixuan Zhang, Fajri Koto, Yifei Yang, Hai Zhao, Yeyun Gong, Nan Duan, and Timothy Baldwin. 2023. Cmmlu: Measuring massive multitask language understanding in chinese. arXiv preprint arXiv:2306.09212.",
-    "Percy Liang, Rishi Bommasani, Tony Lee, Dimitris Tsipras, Dilara Soylu, Michihiro Yasunaga, Yian Zhang, Deepak Narayanan, Yuhuai Wu, Ananya Kumar, Benjamin Newman, Binhang Yuan, Bobby Yan, Ce Zhang, Christian Cosgrove, Christopher D. Manning, Christopher Ré, Diana Acosta-Navas, Drew A. Hudson, Eric Zelikman, Esin Durmus, Faisal Ladhak, Frieda Rong, Hongyu Ren, Huaxiu Yao, Jue Wang, Keshav Santhanam, Laurel Orr, Lucia Zheng, Mert Yuksekgonul, Mirac Suzgun, Nathan Kim, Neel Guha, Niladri Chatterji, Omar Khattab, Peter Henderson, Qian Huang, Ryan Chi, Sang Michael Xie, Shibani Santurkar, Surya Ganguli, Tatsunori Hashimoto, Thomas Icard, Tianyi Zhang, Vishrav Chaudhary, William Wang, Xuechen Li, Yifan Mai, Yuhui Zhang, and Yuta Koreeda. 2023. Holistic evaluation of language models. Preprint, arXiv:2211.09110.",
-    "Yaobo Liang, Nan Duan, Yeyun Gong, Ning Wu, Daxin Guo, Weizhu Qi, and Ming Zhou. 2020. Xglue: A new benchmark dataset for cross-lingual pre-training, understanding and generation. arXiv preprint arXiv:2004.01401.",
-    "Sisi Liu, Junjie Deng, Yuan Sun, and Xiaobing Zhao. 2022. Tibert: Tibetan pre-trained language model. In 2022 IEEE International Conference on Systems, Man, and Cybernetics (SMC), pages 2956–2961. IEEE.",
-    "Yutong Liu, Jiarun Shen, Yongbin Yu, Ban Ma-Bao, Thupten Tsering, Xiangxiang Wang, Cheng Huang, and Nyima Tashi. 2024. Tibetan syllable component recognization with memristor. In 2024 International Conference on Neuromorphic Computing (ICNC), pages 1–6. IEEE.",
-    "Yutong Liu, Feng Xiao, Ziyue Zhang, Yongbin Yu, Cheng Huang, Fan Gao, Xiangxiang Wang, Mabao Ban, Manping Fan, Thupten Tsering, et al. 2025a. Tispell: A semi-masked methodology for tibetan spelling correction covering multi-level error with data augmentation. arXiv preprint arXiv:2505.08037.",
-    "Yutong Liu, Ziyue Zhang, Ban Ma-bao, Yuqing Cai, Yongbin Yu, Renzeng Duojie, Xiangxiang Wang, Fan Gao, Cheng Huang, and Nyima Tashi. 2025b. Fmsd-tts: Few-shot multi-speaker multi-dialect text-to-speech synthesis for\\\" u-tsang, amdo and kham speech dataset generation. arXiv preprint arXiv:2505.14351.",
-    "Hui Lv, Chi Pu, La Duo, Yan Li, Qingguo Zhou, and Jun Shen. 2025. T-llama: a tibetan large language model based on llama2. Complex & Intelligent Systems, 11(1):72.",
-    "Manuel Mager, Arturo Oncevay, Abteen Ebrahimi, John Ortega, Annette Rios, Angela Fan, Ximena Gutierrez-Vasques, Luis Chiruzzo, Gustavo Giménez-Lugo, Ricardo Ramos, Ivan Vladimir Meza Ruiz, Rolando Coto-Solano, Alexis Palmer, Elisabeth Mager-Hois, Vishrav Chaudhary, Graham Neubig, Ngoc Thang Vu, and Katharina Kann. 2021. Findings of the AmericasNLP 2021 shared task on open machine translation for indigenous languages of the Americas. In Proceedings of the First Workshop on Natural Language Processing for Indigenous Languages of the Americas, pages 202–217, Online. Association for Computational Linguistics.",
-    "National Bureau of Statistics of China. 2021. China statistical yearbook 2021. Accessed: 2023-02-07.",
-    "Wilhelmina Nekoto, Vukosi Marivate, Tshinondiwa Matsila, Timi Fasubaa, Tajudeen Kolawole, Taiwo Fagbohungbe, Solomon Oluwole Akinola, Shamsuddee Hassan Muhammad, Salomon Kabongo, Salomey Osei, et al. 2020. Participatory research for low-resourced machine translation: A case study in african languages. In Findings of the Association for Computational Linguistics: EMNLP 2020, pages 2144–2160. Association for Computational Linguistics.",
-    "OpenAI. 2024. O1 system card.",
-    "Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu. 2002. Bleu: a method for automatic evaluation of machine translation. In Proceedings of the 40th Annual Meeting on Association for Computational Linguistics, ACL ’02, page 311–318, USA. Association for Computational Linguistics.",
-    "Chanjun Park, Hyeonwoo Kim, Dahyun Kim, SeongH-wan Cho, Sanghoon Kim, Sukyung Lee, Yungi Kim, and Hwalsuk Lee. 2024. Open Ko-LLM leaderboard: Evaluating large language models in Korean with Ko-h5 benchmark. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 3220–3234, Bangkok, Thailand. Association for Computational Linguistics.",
-    "Qwen Team. 2024. Qwen2.5: A party of foundation models.",
-    "Harman Singh, Nitish Gupta, Shikhar Bharadwaj, Dinesh Tewari, and Partha Talukdar. 2024. IndicGen-Bench: A multilingual benchmark to evaluate generation capabilities of LLMs on Indic languages. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 11047–11073, Bangkok, Thailand. Association for Computational Linguistics.",
-    "Aarohi Srivastava et al. 2022. Beyond the imitation game: Quantifying and extrapolating the capabilities of language models. arXiv preprint arXiv:2206.04615.",
-    "Alex Wang, Yada Pruksachatkun, Nikita Nangia, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel Bowman. 2019. Superglue: A stickier benchmark for general-purpose language understanding systems. Advances in neural information processing systems, 32.",
-    "Alex Wang, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel R. Bowman. 2018. Glue: A multi-task benchmark and analysis platform for natural language understanding. In Proceedings of the 2018 EMNLP Workshop BlackboxNLP: Analyzing and Interpreting Neural Networks for NLP, pages 353–355.",
-    "Zhexin Zhang, Leqi Lei, Lindong Wu, Rui Sun, Yongkang Huang, Chong Long, Xiao Liu, Xuanyu Lei, Jie Tang, and Minlie Huang. 2023. Safety-bench: Evaluating the safety of large language models with multiple choice questions. arXiv preprint arXiv:2309.07045."
-  ]
+  "primary_bias_target": "Language bias"
 }

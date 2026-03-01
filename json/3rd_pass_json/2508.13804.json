@@ -2,15 +2,53 @@
   "filename": "2508.13804.pdf",
   "title": "Beyond Human Judgment: A Bayesian Evaluation of LLMs’ Moral Values Understanding",
   "arxiv_url": "https://arxiv.org/pdf/2508.13804",
-  "bias_targets": [
-    {
-      "target": "Annotator bias",
-      "methodology": "Employing a Bayesian annotation competence model (a variant of the Dawid-Skene model) to capture inter-annotator disagreement and estimate annotator reliability. The study measures systematic human conservatism (bias toward under-detecting moral content) by comparing human false negative and false positive rates against AI model predictions."
-    },
-    {
-      "target": "Content moderation bias",
-      "methodology": "Tracking and analyzing the rejection rates of input texts by commercial LLM safety filters (such as Azure OpenAI), demonstrating systematic exclusion or refusal to process morally relevant and politically expressive content."
-    }
+  "religious_groups": [],
+  "models_tested": [
+    "Claude Sonnet 4",
+    "DeepSeek-V3",
+    "Llama 4 Maverick",
+    "GPT-5 mini"
   ],
-  "primary_bias_target": "Annotator bias"
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Moral Foundations Twitter Corpus (MFTC)",
+    "Extended Moral Foundations Dictionary (eMFD)",
+    "Moral Foundations Reddit Corpus (MFRC)"
+  ],
+  "continuous_testing": false,
+  "findings": "AI models demonstrated strong performance in classifying the 'Sanctity' moral foundation, which is closely linked to religious ideas of the sacred and profane. Their accuracy was notably high (e.g., 84.3% on average), outperforming human annotators, even though this foundation is known to be difficult to classify due to cultural contexts. The models showed a superior ability to detect subtle moral cues related to sanctity that human annotators often miss.",
+  "references": [
+    "Martín Abadi, Ashish Agarwal, Paul Barham, Eugene Brevdo, Zhifeng Chen, Craig Citro, Greg S. Corrado, Andy Davis, Jeffrey Dean, Matthieu Devin, Sanjay Ghemawat, Ian Goodfellow, Andrew Harp, Geoffrey Irving, Michael Isard, Yangqing Jia, Rafal Jozefowicz, Lukasz Kaiser, Manjunath Kudlur, and 21 others. 2015. TensorFlow: Large-scale machine learning on heterogeneous systems. Software available from tensorflow.org.",
+    "Luana Bulla, Stefano De Giorgis, Misael Mongiovì, and Aldo Gangemi. 2025. Large Language Models meet moral values: A comprehensive assessment of moral abilities. Computers in Human Behavior Reports, 17:100609.",
+    "Tom E. Culham, Richard J. Major, and Neha Shivhare. 2024. Virtue ethics and moral foundation theory applied to business ethics education. International Journal of Ethics Education, 9(1):139–176.",
+    "A. P. Dawid and A. M. Skene. 1979. Maximum Likelihood Estimation of Observer Error-Rates Using the EM Algorithm. Applied Statistics, 28(1):20.",
+    "Csilla Deak and Vassilis Saroglou. 2016. Valuing Care Protects Religiosity from the Antisocial Consequences of Impersonal Deontology. Journal of Empirical Theology, 29(2):171–189.",
+    "Matthew Feinberg and Robb Willer. 2013. The moral roots of environmental attitudes. Psychological Science, 24(1):56-62.",
+    "Bertram Gawronski and Jennifer S. Beer. 2016. What makes moral dilemma judgments “utilitarian\" or \"deontological”? Social Neuroscience, pages 1–7.",
+    "Jesse Graham, Jonathan Haidt, Sena Koleva, Matt Motyl, Ravi Iyer, Sean P Wojcik, and Peter H Ditto. 2013. Moral foundations theory: The pragmatic validity of moral pluralism. Advances in Experimental Social Psychology, 47:55–130.",
+    "Jesse Graham, Jonathan Haidt, and Brian A Nosek. 2009. Liberals and conservatives rely on different sets of moral foundations. Journal of personality and social psychology, 96(5):1029–1046.",
+    "Jonathan Haidt. 2012. The Righteous Mind: Why Good People Are Divided by Politics and Religion. Knopf Doubleday Publishing Group.",
+    "Joe Hoover, Gwenyth Portillo-Wightman, Leigh Yeh, Shreya Havaldar, Aida Mostafazadeh Davani, Ying Lin, Brendan Kennedy, Mohammad Atari, Zahra Kamel, Madelyn Mendlen, Gabriela Moreno, Christina Park, Tingyee E. Chang, Jenna Chin, Christian Leong, Jun Yen Leung, Arineh Mirinjian, and Morteza Dehghani. 2020. Moral Foundations Twitter Corpus: A Collection of 35k Tweets Annotated for Moral Sentiment. Social Psychological and Personality Science, 11(8):1057–1071.",
+    "Frederic R. Hopp, Jacob T. Fisher, Devin Cornell, Richard Huskey, and René Weber. 2021. The extended Moral Foundations Dictionary (eMFD): Development and applications of a crowd-sourced approach to extracting moral intuitions from text. Behavior Research Methods, 53(1):232-246.",
+    "Alina Landowska, Marek Robak, and Maciej Skorski. 2023. What Twitter Data Tell Us about the Future? Preprint, arXiv:2308.02035.",
+    "Tuan Dung Nguyen, Ziyu Chen, Nicholas George Carroll, Alasdair Tran, Colin Klein, and Lexing Xie. 2024. Measuring Moral Dimensions in Social Media with Mformer. Proceedings of the International AAAI Conference on Web and Social Media, 18:1134-1147.",
+    "Tuan Dung Nguyen, Georgina Lyall, Alasdair Tran, Minkyoung Shin, Nicholas G Carroll, Colin Klein, and Lexing Xie. 2022. Mapping topics in 100,000 real-life moral dilemmas. In Proceedings of the International AAAI Conference on Web and Social Media, volume 16, pages 699-710.",
+    "Pierre Pailler. 2025. L'IA meilleure que l'humain sur les questions morales, selon une étude de l'Uni? Virgule.",
+    "Silviu Paun and Edwin Simpson. 2021. Aggregating and Learning from Multiple Annotators. In Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics: Tutorial Abstracts, pages 6-9, online. Association for Computational Linguistics.",
+    "Vjosa Preniqi, Iacopo Ghinassi, Julia Ive, Charalampos Saitis, and Kyriaki Kalimeri. 2024. MoralBERT: A Fine-Tuned Language Model for Capturing Moral Values in Social Discussions. In Proceedings of the 2024 International Conference on Information Technology for Social Good, pages 433-442, Bremen Germany. ACM.",
+    "Shamik Roy and Dan Goldwasser. 2021. Analysis of Nuanced Stances and Sentiment Towards Entities of US Politicians through the Lens of Moral Foundation Theory. In Proceedings of the Ninth International Workshop on Natural Language Processing for Social Media, pages 1–13, Online. Association for Computational Linguistics.",
+    "Maciej Skórski. 2025. Bayesian Evaluation of LLMs' Moral Values Understanding. Supplementary materials.",
+    "Maciej Skorski and Alina Landowska. 2025. The Moral Gap of Large Language Models.",
+    "Maciej Skórski, Alina Landowska, and Krzysztof Rajda. 2025. Mapping technological futures: Anticipatory discourse through text mining. Humanities and Social Sciences Communications, 12(1):899.",
+    "Jackson Trager, Alireza S. Ziabari, Aida Mostafazadeh Davani, Preni Golazizian, Farzan Karimi-Malekabadi, Ali Omrani, Zhihe Li, Brendan Kennedy, Nils Karl Reimer, Melissa Reyes, Kelsey Cheng, Mellow Wei, Christina Merrifield, Arta Khosravi, Evans Alvarez, and Morteza Dehghani. 2022. The Moral Foundations Reddit Corpus. arXiv preprint.",
+    "Lorenzo Zangari, Candida M. Greco, Davide Picca, and Andrea Tagarelli. 2025a. ME2-BERT: Are events and emotions what you need for moral foundation prediction? In Proceedings of the 31st International Conference on Computational Linguistics, pages 9516-9532, Abu Dhabi, UAE. Association for Computational Linguistics.",
+    "Lorenzo Zangari, Candida Maria Greco, Davide Picca, and Andrea Tagarelli. 2025b. A survey on moral foundation theory and pre-trained language models: Current advances and challenges. AI & SOCIETY."
+  ],
+  "measurement_description": "Detection of moral language related to the Sanctity/Degradation foundation, which encompasses concepts of sacredness, purity, and divinity often found in religious contexts."
 }

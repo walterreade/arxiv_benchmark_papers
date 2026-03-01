@@ -2,104 +2,23 @@
   "filename": "2305.09548.pdf",
   "title": "Measuring Dimensions of Self-Presentation in Twitter Bios and their Links to Misinformation Sharing",
   "arxiv_url": "https://arxiv.org/pdf/2305.09548",
-  "benchmark_measurement": "The benchmark measures the perceived religiosity from self-presentations in Twitter bios and examines its association with the sharing of low-quality news (misinformation).",
-  "religious_groups": [
-    "Christianity",
-    "Hinduism",
-    "Atheism",
-    "Agnosticism"
+  "bias_targets": [
+    {
+      "target": "Political bias",
+      "methodology": "Projecting social media bio embeddings onto a partisan semantic axis (defined by endpoints like 'democrat' vs. 'republican') and correlating the projections with human survey judgments and network-based user ideology scores."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Projecting text embeddings of identities and bios onto an age-related semantic axis (defined by endpoints like 'young' vs. 'old') and evaluating the correlation with human perceptions of age."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Projecting text embeddings of identities and bios onto a gender-based semantic axis (defined by endpoints like 'mother' vs. 'father' or 'woman' vs. 'man') and measuring the correlation with human survey judgments."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Projecting text embeddings of identities and bios onto a religion-based semantic axis (defined by endpoints like 'atheistic' vs. 'religious') and evaluating the correlation with human judgments and associations with misinformation sharing behavior."
+    }
   ],
-  "models_tested": [
-    "word2vec (Bio-only model)",
-    "BERT",
-    "Fine-tuned BERT",
-    "Sentence-BERT (SBERT)",
-    "Fine-tuned SBERT",
-    "RoBERTa",
-    "BerTweet-base",
-    "mpnet-base"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "other"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [],
-  "continuous_testing": false,
-  "findings": "Self-presentation as highly religious in a Twitter bio is strongly and statistically significantly associated with an increased proportion of sharing links from low-quality news sites. The study also found a high correlation (at 0.76) between its measures of religiosity and partisanship, and suggested a potential multiplicative association where users who present as both right-leaning and religious have, on average, higher odds of sharing low-quality news links.",
-  "references": [
-    "Ali, M.; Sapiezynski, P.; Bogen, M.; Korolova, A.; Mislove, A.; and Rieke, A. 2019. Discrimination through optimiza- tion: How Facebook's Ad delivery can lead to biased out- comes. Proceedings of the ACM on human-computer inter- action, 3(CSCW): 1–30.",
-    "Altay, S.; Nielsen, R. K.; and Fletcher, R. 2022. Quantifying the \"Infodemic\": People Turned to Trustworthy News Outlets during the 2020 Coronavirus Pandemic. Journal of Quantita- tive Description: Digital Media, 2.",
-    "Antoniak, M.; Mimno, D.; and Levy, K. 2019. Narrative Paths and Negotiation of Power in Birth Stories. Proceedings of the ACM on Human-Computer Interaction, 3(CSCW): 88:1- 88:27.",
-    "Assenmacher, D.; Sen, I.; Fröhling, L.; and Wagner, C. 2020. The End of the Rehydration Era The Problem of Sharing Harmful Twitter Research Data.",
-    "Bailey, A. H.; Williams, A.; and Cimpian, A. 2022. Based on billions of words on the internet, people= men. Science Advances, 8(13): eabm2463.",
-    "Bamman, D.; and Smith, N. A. 2014. Unsupervised Discov- ery of Biographical Structure from Text. Transactions of the Association for Computational Linguistics, 2: 363-376.",
-    "Bär, D.; Pröllochs, N.; and Feuerriegel, S. 2023a. Finding Qs: Profiling QAnon Supporters on Parler. Proceedings of the International AAAI Conference on Web and Social Media, 17: 34-46.",
-    "Bär, D.; Pröllochs, N.; and Feuerriegel, S. 2023b. Finding qs: profiling Qanon supporters on Parler. In Proceedings of the International AAAI Conference on Web and Social Media, volume 17, 34-46.",
-    "Barberá, P.; Jost, J. T.; Nagler, J.; Tucker, J. A.; and Bonneau, R. 2015. Tweeting From Left to Right: Is Online Political Communication More Than an Echo Chamber? Psychologi- cal Science, 26(10): 1531–1542.",
-    "Blodgett, S. L.; Barocas, S.; Daumé III, H.; and Wallach, H. 2020. Language (Technology) Is Power: A Critical Survey of\" Bias\" in NLP. arXiv preprint arXiv:2005.14050.",
-    "Blodgett, S. L.; Green, L.; and O'Connor, B. 2016. Demo- graphic Dialectal Variation in Social Media: A Case Study of African-American English. EMNLP'16.",
-    "Brashier, N. M.; and Schacter, D. L. 2020. Aging in an Era of Fake News. Current Directions in Psychological Science, 29(3): 316-323.",
-    "Buss, J.; Le, H.; and Haimson, O. L. 2022. Transgender Iden- tity Management across Social Media Platforms. Media, Cul- ture & Society, 44(1): 22-38.",
-    "Caliskan, A.; and Lewis, M. 2020. Social Biases in Word Embeddings and Their Relation to Human Cognition.",
-    "Coppock, A.; Leeper, T. J.; and Mullinix, K. J. 2018. General- izability of Heterogeneous Treatment Effect Estimates across Samples. Proceedings of the National Academy of Sciences, 115(49): 12441-12446.",
-    "Darvin, R. 2022. Design, Resistance and the Performance of Identity on TikTok. Discourse, Context & Media, 46: 100591.",
-    "DeVito, M. A.; Walker, A. M.; and Birnholtz, J. 2018. 'Too Gay for Facebook': Presenting LGBTQ+ Identity Throughout the Personal Social Media Ecosystem. Proceedings of the ACM on Human-Computer Interaction, 2(CSCW): 44.",
-    "Devlin, J.; Chang, M.-W.; Lee, K.; and Toutanova, K. 2019. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding. ArXiv, abs/1810.04805.",
-    "Druckman, J. N.; Ognyanova, K.; Baum, M. A.; Lazer, D.; Perlis, R. H.; Volpe, J. D.; Santillana, M.; Chwe, H.; Quin- tana, A.; and Simonson, M. 2021. The Role of Race, Reli- gion, and Partisanship in Misperceptions about COVID-19. Group Processes & Intergroup Relations, 24(4): 638–657.",
-    "Essig, L.; and DellaPosta, D. 2024. Partisan styles of self- presentation in U.S. Twitter bios. Scientific Reports, 14(1): 1077.",
-    "Ethayarajh, K.; Duvenaud, D.; and Hirst, G. 2019. Under- standing Undesirable Word Embedding Associations. In Pro- ceedings of ACL'19, 1696–1705. Florence, Italy: Association for Computational Linguistics.",
-    "Field, A.; Bhat, G.; and Tsvetkov, Y. 2019. Contextual Affec- tive Analysis: A Case Study of People Portrayals in Online #MeToo Stories. Proceedings of the International AAAI Con- ference on Web and Social Media, 13: 158–169.",
-    "Field, A.; Blodgett, S. L.; Waseem, Z.; and Tsvetkov, Y. 2021. A Survey of Race, Racism, and Anti-Racism in NLP. In Proceedings of ACL'21, 1905–1925. Online: Association for Computational Linguistics.",
-    "Field, A.; and Tsvetkov, Y. 2019. Entity-Centric Contextual Affective Analysis. In Proceedings of ACL'19, 2550-2560. Florence, Italy: Association for Computational Linguistics.",
-    "Fiske, S. T.; Cuddy, A. J.; Glick, P.; and Xu, J. 2002. A Model of (Often Mixed) Stereotype Content: Competence and Warmth Respectively Follow from Perceived Status and Competition. Journal of personality and social psychology, 82(6): 878.",
-    "Garg, N.; Schiebinger, L.; Jurafsky, D.; and Zou, J. 2018. Word Embeddings Quantify 100 Years of Gender and Ethnic Stereotypes. Proceedings of the National Academy of Sci- ences, 115(16): E3635-E3644.",
-    "Gregorich, M.; Strohmaier, S.; Dunkler, D.; and Heinze, G. 2021. Regression with highly correlated predictors: variable omission is not the solution. International journal of environ- mental research and public health, 18(8): 4259.",
-    "Grinberg, N.; Joseph, K.; Friedland, L.; Swire-Thompson, B.; and Lazer, D. 2019. Fake News on Twitter during the 2016 US Presidential Election. Science (New York, N.Y.), 363(6425): 374-378.",
-    "Guess, A.; Nagler, J.; and Tucker, J. 2019. Less than You Think: Prevalence and Predictors of Fake News Dissemina- tion on Facebook. Science Advances, 5(1): eaau4586.",
-    "Hare, M.; and Jones, J. 2023. Slava Ukraini: Exploring Iden- tity Activism in Support of Ukraine via the Ukraine Flag Emoji on Twitter. Journal of Quantitative Description: Digi- tal Media, 3.",
-    "Heise, D. R. 1987. Affect Control Theory: Concepts and Model. The Journal of Mathematical Sociology, 13(1-2): 1– 33.",
-    "Horne, B. D.; Nørregaard, J.; and Adalı, S. 2019. Different Spirals of Sameness: A Study of Content Sharing in Main- stream and Alternative Media. Proceedings of the Interna- tional AAAI Conference on Web and Social Media, 13: 257- 266.",
-    "Hughes, A. G.; McCabe, S. D.; Hobbs, W. R.; Remy, E.; Shah, S.; and Lazer, D. M. J. 2021. Using Administrative Records and Survey Data to Construct Samples of Tweeters and Tweets. Public Opinion Quarterly, 85(S1): 323-346.",
-    "Jacobs, A. Z.; and Wallach, H. 2021. Measurement and fair- ness. In Proceedings of the 2021 ACM conference on fairness, accountability, and transparency, 375–385.",
-    "Jiang, J.; Ren, X.; and Ferrara, E. 2023. Retweet-bert: polit- ical leaning detection using language features and informa- tion diffusion on social networks. In Proceedings of the In- ternational AAAI Conference on Web and Social Media, vol- ume 17, 459-469.",
-    "Johnstone, В. 1996. The Linguistic Individual: Self- expression in Language and Linguistics. Oxford University Press.",
-    "Joseph, K.; and Morgan, J. H. 2020. When Do Word Em- beddings Accurately Reflect Surveys on Our Beliefs about People? In Proceedings of ACL'20, 4392–4415.",
-    "Joseph, K.; and Morgan, J. H. 2021. Friend or Foe: A Re- view and Synthesis of Computational Models of the Identity Labeling Problem. The Journal of Mathematical Sociology, 1-35.",
-    "Kozlowski, A. C.; Taddy, M.; and Evans, J. A. 2019. The Ge- ometry of Culture: Analyzing the Meanings of Class through Word Embeddings. American Sociological Review, 84(5): 905-949.",
-    "Kurita, K.; Vyas, N.; Pareek, A.; Black, A. W.; and Tsvetkov, Y. 2019. Measuring Bias in Contextualized Word Represen- tations. arXiv preprint arXiv:1906.07337.",
-    "Lazer, D. M.; Baum, M. A.; Benkler, Y.; Berinsky, A. J.; Greenhill, K. M.; Menczer, F.; Metzger, M. J.; Nyhan, B.; Pennycook, G.; Rothschild, D.; et al. 2018. The science of fake news. Science, 359(6380): 1094–1096.",
-    "Li, J.; Longinos, G.; Wilson, S.; and Magdy, W. 2020. Emoji and Self-Identity in Twitter Bios. In Proceedings of the Fourth Workshop on Natural Language Processing and Com- putational Social Science, 199–211.",
-    "Lin, H.; Lasser, J.; Lewandowsky, S.; Cole, R.; Gully, A.; Rand, D.; and Pennycook, G. 2022. High level of agreement across different news domain quality ratings.",
-    "Liu, Y.; Ott, M.; Goyal, N.; Du, J.; Joshi, M.; Chen, D.; Levy, O.; Lewis, M.; Zettlemoyer, L.; and Stoyanov, V. 2019. Roberta: A robustly optimized bert pretraining approach. arXiv preprint arXiv:1907.11692.",
-    "Lucy, L.; Tadimeti, D.; and Bamman, D. 2022. Discovering Differences in the Representation of People Using Contextu- alized Semantic Axes. In Proceedings of EMNLP'22.",
-    "MacKinnon, N. J.; and Heise, D. R. 2010. Self, Identity, and Social Institutions. Palgrave Macmillan.",
-    "Martel, C.; Rathje, S.; Clark, C. J.; Pennycook, G.; Van Bavel, J. J.; Rand, D. G.; and van der Linden, S. 2024. On the Effi- cacy of Accuracy Prompts Across Partisan Lines: An Adver- sarial Collaboration. Psychological Science, 35(4): 435-450.",
-    "Marwick, A. E.; and boyd, d. 2011. I Tweet Honestly, I Tweet Passionately: Twitter Users, Context Collapse, and the Imag- ined Audience. New Media & Society, 13(1): 114–133.",
-    "McCabe, S.; Green, J.; Wan, A.; and Lazer, D. 2022. New TweetScores: Or, Did Donald Trump Break tweetScores?",
-    "Mendelsohn, J.; Tsvetkov, Y.; and Jurafsky, D. 2020. A framework for the computational linguistic analysis of dehu- manization. Frontiers in artificial intelligence, 3: 55.",
-    "Mikolov, T.; Chen, K.; Corrado, G.; and Dean, J. 2013. Ef- ficient Estimation of Word Representations in Vector Space. arXiv preprint arXiv:1301.3781.",
-    "Miller, G. A.; and Charles, W. G. 1991. Contextual Correlates of Semantic Similarity. Language and cognitive processes, 6(1): 1–28.",
-    "Moore, R. C.; Dahlke, R.; and Hancock, J. T. 2023. Exposure to Untrustworthy Websites in the 2020 US Election. Nature Human Behaviour, 1-10.",
-    "Mosleh, M.; Pennycook, G.; and Rand, D. G. 2020. Self- Reported Willingness to Share Political News Articles in On- line Surveys Correlates with Actual Sharing on Twitter. PLOS ONE, 15(2): e0228882.",
-    "Mu, Y.; and Aletras, N. 2020. Identifying Twitter users who repost unreliable news sources with linguistic information. PeerJ Computer Science, 6: e325.",
-    "Ng, L. H. X.; and Cruickshank, I. J. 2023. Recruitment Pro- motion via Twitter: A Network-centric Approach of Analyz- ing Community Engagement Using Social Identity. Digital Government: Research and Practice, 4(4): 22:1-22:17.",
-    "Nguyen, D.; Trieschnigg, D.; Doğruöz, A. S.; Gravel, R.; Theune, M.; Meder, T.; and de Jong, F. 2014. Why gen- der and age prediction from tweets is hard: Lessons from a crowdsourcing experiment. In COLING 2014, 1950–1961.",
-    "Nguyen, D. Q.; Vu, T.; and Tuan Nguyen, A. 2020. BERTweet: A pre-trained language model for English Tweets. In Proceedings of the EMNLP'20, 9–14.",
-    "Nikolov, D.; Flammini, A.; and Menczer, F. 2021. Right and Left, Partisanship Predicts (Asymmetric) Vulnerability to Misinformation. Harvard Kennedy School Misinformation Review.",
-    "Osmundsen, M.; Bor, A.; Vahlstrup, P. B.; Bechmann, A.; and Petersen, M. B. 2021. Partisan Polarization Is the Primary Psychological Motivation behind Political Fake News Shar- ing on Twitter. American Political Science Review, 115(3): 999-1015.",
-    "Pathak, A.; Madani, N.; and Joseph, K. 2021. A Method to Analyze Multiple Social Identities in Twitter Bios. Pro- ceedings of the ACM on Human-Computer Interaction, 5(CSCW2): 1-35.",
-    "Phillips, S. C.; Carley, K. M.; and Joseph, K. 2024. Why Do People Think Liberals Drink Lattes? How Social Media Af- forded Self-Presentation Can Shape Subjective Social Sort- ing. arxiv:2404.02338.",
-    "Rashkin, H.; Choi, E.; Jang, J. Y.; Volkova, S.; and Choi, Y. 2017. Truth of Varying Shades: Analyzing Language in Fake News and Political Fact-Checking. In Proceedings of the 2017 Conference on Empirical Methods in Natural Lan- guage Processing, 2921–2927.",
-    "Reimers, N.; and Gurevych, I. 2019. Sentence-BERT: Sen- tence Embeddings using Siamese BERT-Networks. ArXiv, abs/1908.10084.",
-    "Rogers, N.; and Jones, J. J. 2021. Using Twitter Bios to Measure Changes in Self-Identity: Are Americans Defining Themselves More Politically Over Time? Journal of Social Computing, 2(1): 1–13.",
-    "Schröder, T.; Hoey, J.; and Rogers, K. B. 2016. Model- ing dynamic identities and uncertainty in social interactions: Bayesian affect control theory. American Sociological Re- view, 81(4): 828-855.",
-    "Schroff, F.; Kalenichenko, D.; and Philbin, J. 2015. FaceNet: A unified embedding for face recognition and clustering. 2015 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 815–823.",
-    "Shu, K.; Sliva, A.; Wang, S.; Tang, J.; and Liu, H. 2017. Fake News Detection on Social Media: A Data Mining Perspective. ACM SIGKDD Explorations Newsletter, 19(1): 22–36.",
-    "Smith-Lovin, L.; and Douglas, W. 1992. An Affect Control Analysis of Two Religious Subcultures. Social perspectives on emotion, 1: 217–47.",
-    "Tajfel, H.; and Turner, J. C. 1979. An Integrative Theory of Intergroup Conflict. In The Social Psychology of Intergroup Relations, 33-47. Monterey, CA: Brooks/Cole, w austin & s. worche edition.",
-    "Wilkerson, J.; and Casas, A. 2017. Large-scale computer- ized text analysis in political science: Opportunities and chal- lenges. Annual Review of Political Science, 20: 529-544."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

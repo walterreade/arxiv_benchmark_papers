@@ -2,85 +2,19 @@
   "filename": "2309.04027.pdf",
   "title": "TIDE: Textual Identity Detection for Evaluating and Augmenting Classification and Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2309.04027",
-  "benchmark_measurement": "The benchmark, TIDAL, was used to create a comprehensive lexicon of identity terms, including for religion. This lexicon was then leveraged to measure the performance of an identity annotation tool and to evaluate bias in machine learning models. For classification models, it measured toxicity rate disparities across religious subgroups. For generative models, it measured token likelihood bias related to religious identity terms.",
-  "religious_groups": [
-    "Islam",
-    "Christianity",
-    "Judaism",
-    "Hinduism"
+  "bias_targets": [
+    {
+      "target": "Racial, nationality, and ethnicity bias",
+      "methodology": "Evaluating classifier bias using counterfactual flip rates, subgroup rate deficits, and model AUC, as well as measuring generative model bias through token likelihoods and perplexity scores on synthetic templated datasets using identity terms."
+    },
+    {
+      "target": "Sexual orientation and gender identity bias",
+      "methodology": "Measuring model performance disparities via counterfactual logit pairing flip rates, subgroup toxicity rates, and assessing generative model perplexity utilizing a lexicon of SOGIESC (sexual orientation, gender identity, gender expression, and sex characteristics) terms."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Analyzing dataset toxicity rates, classification model AUC disparities, and generative model token likelihood/perplexity biases using a comprehensive lexicon of religious identity terms."
+    }
   ],
-  "models_tested": [
-    "BlenderBot (90M-parameter)",
-    "Custom-trained toxicity classification models"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short",
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "HolisticBias",
-    "UnintendedBias",
-    "CivilComments",
-    "C4"
-  ],
-  "continuous_testing": false,
-  "findings": "The paper created TIDAL, a large identity lexicon that includes religious terms, and an associated annotation tool. The tool showed consistent performance in identifying religious terms across different techniques. For human annotation, an assistive technique with disambiguation performed best for the Religion category. In generative model bias evaluation, the paper noted that the Religion category had a much smaller vocabulary in the lexicon compared to Race/Nationality/Ethnicity, making it less prone to the specific type of coverage-based bias detection used in the experiment. Debiasing experiments showed that data augmentation using the lexicon could lead to more equality in model performance across subgroups, including for 'Muslim'.",
-  "references": [
-    "Martín Abadi, Ashish Agarwal, Paul Barham, Eugene Brevdo, Zhifeng Chen, Craig Citro, Greg S. Corrado, Andy Davis, Jeffrey Dean, Matthieu Devin, Sanjay Ghemawat, Ian Goodfellow, Andrew Harp, Geoffrey Irving, Michael Isard, Yangqing Jia, Rafal Jozefowicz, Lukasz Kaiser, Manjunath Kudlur, Josh Levenberg, Dandelion Mané, Rajat Monga, Sherry Moore, Derek Murray, Chris Olah, Mike Schuster, Jonathon Shlens, Benoit Steiner, Ilya Sutskever, Kunal Talwar, Paul Tucker, Vincent Vanhoucke, Vijay Vasudevan, Fernanda Viégas, Oriol Vinyals, Pete Warden, Martin Wattenberg, Martin Wicke, Yuan Yu, and Xiaoqiang Zheng. 2015. TensorFlow: Large-scale machine learning on heterogeneous systems. Software available from tensorflow.org.",
-    "Abubakar Abid, Maheen Farooqi, and James Zou. 2021. Persistent anti-muslim bias in large language models. In Proceedings of the 2021 AAAI/ACM Conference on AI, Ethics, and Society, pages 298–306.",
-    "Eneko Agirre, Oier López de Lacalle, and Aitor Soroa. 2014. Random walks for knowledge-based word sense disambiguation. Computational Linguistics, 40(1):57–84.",
-    "Keith Allan. 2007. The pragmatics of connotation. Journal of Pragmatics, 39:1047–1057.",
-    "Emily Allaway and Kathleen McKeown. 2021. A unified feature representation for lexical connotations. In Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics: Main Volume, pages 2145–2163, Online. Association for Computational Linguistics.",
-    "McKane Andrus, Elena Spitzer, Jeffrey Brown, and Alice Xiang. 2021. What we can't measure, we can't understand: Challenges to demographic data procurement in the pursuit of fairness. In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, page 249–260.",
-    "McKane Andrus and Sarah Villeneuve. 2022. Demographic-reliant algorithmic fairness: Characterizing the risks of demographic data collection in the pursuit of fairness. In Proceedings of the 2022 ACM Conference on Fairness, Accountability, and Transparency, page 1709–1721.",
-    "Appen. a. Guide to: Contributors channels page. [Online; accessed 28-June-2023].",
-    "Appen. b. Guide to: Designating test questions for quiz or work mode with gold pool. [Online; accessed 28-June-2023].",
-    "Appen. c. Guide to: Fair pay. [Online; accessed 28-June-2023].",
-    "Appen. d. Machine learning assisted text utterance collection. [Online; accessed 28-June-2023].",
-    "Rachel K. E. Bellamy, Kuntal Dey, Michael Hind, Samuel C. Hoffman, Stephanie Houde, Kalapriya Kannan, Pranay Lohia, Jacquelyn Martino, Sameep Mehta, Aleksandra Mojsilovic, Seema Nagar, Karthikeyan Natesan Ramamurthy, John T. Richards, Diptikalyan Saha, Prasanna Sattigeri, Moninder Singh, Kush R. Varshney, and Yunfeng Zhang. 2018. AI fairness 360: An extensible toolkit for detecting, understanding, and mitigating unwanted algorithmic bias. Computing Research Repository, abs/1810.01943.",
-    "Sarah Bird, Miro Dudík, Richard Edgar, Brandon Horn, Roman Lutz, Vanessa Milan, Mehrnoosh Sameki, Hanna Wallach, and Kathleen Walker. 2020. Fairlearn: A toolkit for assessing and improving fairness in AI. Technical Report MSR-TR-2020-32, Microsoft.",
-    "Steven Bird, Ewan Klein, and Edward Loper. 2009. Natural language processing with Python: analyzing text with the natural language toolkit. O’Reilly Media, Inc.",
-    "Su Lin Blodgett, Solon Barocas, Hal Daumé III, and Hanna Wallach. 2020. Language (technology) is power: A critical survey of “bias” in NLP. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5454-5476, Online. Association for Computational Linguistics.",
-    "Daniel Borkan, Lucas Dixon, Jeffrey Sorensen, Nithum Thain, and Lucy Vasserman. 2019. Nuanced metrics for measuring unintended bias with real data for text classification. In Companion Proceedings of The 2019 World Wide Web Conference, pages 491–500.",
-    "Marine Carpuat. 2015. Connotation in translation. In Proceedings of the 6th Workshop on Computational Approaches to Subjectivity, Sentiment and Social Media Analysis, pages 9–15, Lisboa, Portugal. Association for Computational Linguistics.",
-    "L Elisa Celis, Lingxiao Huang, Vijay Keswani, and Nisheeth K Vishnoi. 2021. Fair classification with noisy protected attributes: A framework with provable guarantees. In Proceedings of the 38th International Conference on Machine Learning, volume 139, pages 1349–1361. PMLR.",
-    "Lucas Dixon, John Li, Jeffrey Sorensen, Nithum Thain, and Vasserman. 2018. Measuring and mitigating unintended bias in text classification. In Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society, AIES ’18, page 67–73.",
-    "Judith Eckle-Kohler, Iryna Gurevych, Silvana Hartmann, Michael Matuschek, and Christian M. Meyer. 2012. UBY-LMF – a uniform model for standardizing heterogeneous lexical-semantic resources in ISOLMF. In Proceedings of the Eighth International Conference on Language Resources and Evaluation (LREC’12), pages 275–282, Istanbul, Turkey. European Language Resources Association (ELRA).",
-    "International Organization for Standardization. 2022. Language resource management - lexical markup framework (lmf) part 5: Lexical base exchange (lbx) serialization. ISO Standard No. 24613-5:2022.",
-    "Sahaj Garg, Vincent Perot, Nicole Limtiaco, Ankur Taly, Ed H Chi, and Alex Beutel. 2019. Counterfactual fairness in text classification through robustness. In Proceedings of the 2019 AAAI/ACM Conference on AI, Ethics, and Society, pages 219–226.",
-    "Deborah J. Gerner, Rajaa Abu-Jabr, Philip A. Schrodt, and Ömür Yilmaz. 2002. Conflict and mediation event observations (cameo): A new event data framework for the analysis of foreign policy interactions. International Studies Association. Paper presented at the 43rd Annual Convention of the International Studies Association, New Orleans, March 2002.",
-    "GLAAD. Glossary of terms: Lgbtq - glaad. [Online; accessed 28-June-2023].",
-    "Seraphina Goldfarb-Tarrant, Rebecca Marchant, Ricardo Muñoz Sánchez, Mugdha Pandya, and Adam Lopez. 2021. Intrinsic bias metrics do not correlate with application bias. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 1926–1940, Online. Association for Computational Linguistics.",
-    "Maya R. Gupta, Andrew Cotter, Mahdi Milani Fard, and Serena Lutong Wang. 2018. Proxy fairness. Computing Research Repository, abs/1806.11212.",
-    "Kilem L Gwet. 2014. Handbook of inter-rater reliability: The definitive guide to measuring the extent of agreement among raters. Advanced Analytics, LLC.",
-    "Matthew Honnibal and Ines Montani. 2017. spaCy 2: Natural language understanding with Bloom embeddings, convolutional neural networks and incremental parsing. To appear.",
-    "HRC Foundation. Glossary of terms - human rights campaign. [Online; accessed 28-June-2023].",
-    "Jigsaw. 2019. Jigsaw unintended bias in toxicity classification. [Online; accessed 28-June-2023].",
-    "Sangwon Jung, Sanghyuk Chun, and Taesup Moon. 2022. Learning fair classifiers with partially annotated group labels. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 10348–10357.",
-    "Klaus Krippendorff. 1970. Estimating the reliability, systematic error and random error of interval data. Educational and psychological measurement, 30(1):61–70.",
-    "Stephen Lacy, Brendan R. Watson, Daniel Riffe, and Jennette Lovejoy. 2015. Issues and best practices in content analysis. Journalism & Mass Communication Quarterly, 92(4):791–811.",
-    "Preethi Lahoti, Alex Beutel, Jilin Chen, Kang Lee, Flavien Prost, Nithum Thain, Xuezhi Wang, and Ed Chi. 2020. Fairness without demographics through adversarially reweighted learning. In Proceedings of the 34th International Conference on Neural Information Processing Systems, pages 728–740.",
-    "Aidan James McLoughney, Jeannie Marie Paterson, Marc Cheong, and Anthony Wirth. 2023. ’emerging proxies’ in information-rich machine learning: a threat to fairness? In 2023 IEEE International Symposium on Ethics in Engineering, Science, and Technology (ETHICS), pages 1–1.",
-    "Ann Morning. 2008. Ethnic classification in global perspective: A cross-national survey of the 2000 census round. Population Research and Policy Review, 27:239–272.",
-    "Alok Ranjan Pal and Diganta Saha. 2015. Word sense disambiguation: A survey. International Journal of Control Theory and Computer Modeling (IJCTCM), 5(3).",
-    "Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi Zhou, Wei Li, and Peter J. Liu. 2020. Exploring the limits of transfer learning with a unified text-to-text transformer. Journal of Machine Learning Research, 21(140):1–67.",
-    "Stephen Roller, Emily Dinan, Naman Goyal, Da Ju, Mary Williamson, Yinhan Liu, Jing Xu, Myle Ott, Eric Michael Smith, Y-Lan Boureau, and Jason Weston. 2021. Recipes for building an open-domain chatbot. In Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics: Main Volume, pages 300–325, Online. Association for Computational Linguistics.",
-    "Björn Ross, Michael Rist, Guillermo Carbonell, Benjamin Cabrera, Nils Kurowsky, and Michael Wojatzki. 2016. Measuring the reliability of hate speech annotations: The case of the european refugee crisis. In NLP4CMC III: 3rd Workshop on Natural Language Processing for Computer-Mediated Communication, pages 6–9. Ruhr-Universitat Bochum.",
-    "Pedro Saleiro, Benedict Kuester, Loren Hinkson, Jesse London, Abby Stevens, Ari Anisfeld, Kit T Rodolfa, and Rayid Ghani. 2018. Aequitas: A bias and fairness audit toolkit. Computing Research Repository, abs/1811.05577.",
-    "Deven Santosh Shah, H. Andrew Schwartz, and Dirk Hovy. 2020. Predictive biases in natural language processing models: A conceptual framework and overview. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5248–5264, Online. Association for Computational Linguistics.",
-    "Eric Michael Smith, Melissa Hall, Melanie Kambadur, Eleonora Presani, and Adina Williams. 2022. “I'm sorry to hear that”: Finding new biases in language models with a holistic descriptor dataset. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 9180–9211, Abu Dhabi, United Arab Emirates. Association for Computational Linguistics.",
-    "Latanya Sweeney. 2013. Discrimination in online ad delivery. Communications of the ACM, 56(5):44–54.",
-    "Albert Trithart. 2021. A un for all?: Un policy and programming on sexual orientation, gender identity and expression, and sex characteristics. Technical report, International Peace Institute.",
-    "Michael Carl Tschantz. 2022. What is proxy discrimination? In 2022 ACM Conference on Fairness, Accountability, and Transparency, FAccT ’22, page 1993–2003, New York, NY, USA. Association for Computing Machinery.",
-    "UNSD. 2003. Ethnicity: A review of data collection and dissemination. Technical report, United Nations Statistics Division.",
-    "Mohit Wadhwa, Mohan Bhambhani, Ashvini Jindal, Uma Sawant, and Ramanujam Madhavan. 2022. Fairness for text classification tasks with identity information data augmentation methods. Computing Research Repository, abs/2203.03541. Paper presented at the Measures and Best Practices for Responsible AI workshop at the 27th ACM SIGKDD Conference on Knowledge Discovery & Data Mining, Virtual/Singapore, August 2021.",
-    "Albert Webson, Zhizhong Chen, Carsten Eickhoff, and Ellie Pavlick. 2020. Are “undocumented workers” the same as “illegal aliens”? Disentangling denotation and connotation in vector spaces. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 4090–4105, Online. Association for Computational Linguistics.",
-    "Wikipedia contributors. 2023. List of adjectival and demonymic forms for countries and nations Wikipedia, the free encyclopedia. [Online; accessed 28-June-2023].",
-    "Wiktionary contributors. 2021. Category - english terms of address - Wiktionary, the free dictionary. [Online; accessed 28-June-2023].",
-    "Ellery Wulczyn, Nithum Thain, and Lucas Dixon. 2017. Ex machina: Personal attacks seen at scale. In Proceedings of the 26th international conference on world wide web, pages 1391–1399."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

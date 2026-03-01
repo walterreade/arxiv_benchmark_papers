@@ -2,31 +2,73 @@
   "filename": "2602.14970.pdf",
   "title": "Counterfactual Fairness Evaluation of LLM-Based Contact Center Agent Quality Assurance System",
   "arxiv_url": "https://arxiv.org/pdf/2602.14970",
-  "bias_targets": [
-    {
-      "target": "Gender bias",
-      "methodology": "Counterfactual substitution of agent names and pronouns in contact center transcripts to measure binary judgment reversals (Counterfactual Flip Rate) and score shifts (Mean Absolute Score Difference)."
-    },
-    {
-      "target": "Racial and Ethnic bias",
-      "methodology": "Counterfactual substitution of culturally coded names and the injection of dialect or linguistic markers into conversational turns to measure evaluation disparities."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Counterfactual substitution of religiously identifiable names and the injection of benign religious expressions (e.g., 'Inshallah', 'God bless') into transcripts."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Injecting neutral mentions of assistive technology (e.g., using a screen reader) or specific speech characteristics into transcripts to evaluate sensitivity to disability indicators."
-    },
-    {
-      "target": "Anchoring and Contextual bias",
-      "methodology": "Appending extrinsic metadata such as past performance scores, agent/customer role profiles, and prior coaching notes to measure historical anchoring and hierarchical favoritism effects on LLM judgments."
-    },
-    {
-      "target": "Linguistic and Behavioral Style bias",
-      "methodology": "Modulating conversational features including phrasing directness, politeness intensity, formality level, and emotional labor to test if models unfairly penalize or reward specific stylistic communication norms."
-    }
+  "religious_groups": [
+    "Christianity",
+    "Islam",
+    "Hinduism",
+    "Judaism",
+    "Buddhism"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "llama-3.2-3b",
+    "llama-4-maverick-17b",
+    "claude-3.5-haiku",
+    "claude-4-sonnet",
+    "nova-lite",
+    "nova-pro",
+    "nova-premier",
+    "gpt-4o",
+    "gpt-4o-mini",
+    "gpt-5-mini-low",
+    "gpt-5-mini-medium",
+    "gpt-5-low",
+    "gpt-5-medium",
+    "gpt-5-nano-low",
+    "gpt-5-nano-medium",
+    "deepseek-r1",
+    "deepseek-17b"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "Models showed minimal bias when only agent names were substituted based on religion (6.25% Counterfactual Flip Rate). However, fairness significantly worsened when benign religious linguistic cues (e.g., 'Inshallah') were added, increasing the flip rate to 9.24% and the Mean Absolute Score Difference for confidence to 10.35. This indicates that while models have some surface-level robustness, implicit biases against religious expressions remain entrenched.",
+  "references": [
+    "Solon Barocas, Moritz Hardt, and Arvind Narayanan. 2019. Fairness and Machine Learning.",
+    "Su Lin et al. Blodgett. 2020. Language (technology) is power: A critical survey of \"bias\" in nlp. In ACL.",
+    "Zirong Chen, Ziyan An, Jennifer Reynolds, Kristin Mullen, Stephen Martini, and Meiyi Ma. 2025. Logidebrief: A signal-temporal logic based automated debriefing approach with large language models integration. Preprint, arXiv:2505.03985.",
+    "DeepSeek-AI, Daya Guo, Dejian Yang, Haowei Zhang, Junxiao Song, Ruoyu Zhang, Runxin Xu, Qihao Zhu, Shirong Ma, Peiyi Wang, Xiao Bi, Xiaokang Zhang, Xingkai Yu, Yu Wu, Z. F. Wu, Zhibin Gou, Zhihong Shao, Zhuoshu Li, Ziyi Gao, and 181 others. 2025. Deepseek-r1: Incentivizing reasoning capability in llms via reinforcement learning. Preprint, arXiv:2501.12948.",
+    "Yang Deng, Xuan Zhang, Wenxuan Zhang, Yifei Yuan, See-Kiong Ng, and Tat-Seng Chua. 2024. On the multi-turn instruction following for conversational web agents. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 8795–8812, Bangkok, Thailand. Association for Computational Linguistics.",
+    "Ananya et al. Deshpande. 2023. Measuring and mitigating toxicity bias in large language models. In EMNLP.",
+    "Emily et al. Dinan. 2020. Multi-dimensional gender bias classification in dialogue agents. In EMNLP.",
+    "Reem Gody, Mahmoud Goudy, and Ahmed Y. Tawfik. 2025. Convogen: Enhancing conversational ai with synthetic data: A multi-agent approach. Preprint, arXiv:2503.17460.",
+    "Bryce Goodman and Seth Flaxman. 2017. European union regulations on algorithmic decision making and a \"right to explanation\". AI Magazine, 38(3):50–57.",
+    "Aaron Grattafiori, Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad AlDahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Alex Vaughan, Amy Yang, Angela Fan, Anirudh Goyal, Anthony Hartshorn, Aobo Yang, Archi Mitra, Archie Sravankumar, Artem Korenev, Arthur Hinsvark, and 542 others. 2024. The llama 3 herd of models. Preprint, arXiv:2407.21783.",
+    "Shengyue Guan, Haoyi Xiong, Jindong Wang, Jiang Bian, Bin Zhu, and Jian guang Lou. 2025. Evaluating Ilm-based agents for multi-turn conversations: A survey. Preprint, arXiv:2503.22458.",
+    "Shailja Gupta, Rajesh Ranjan, and Surya Narayan Singh. 2025. Comprehensive framework for evaluating conversational ai chatbots. Preprint, arXiv:2502.06105.",
+    "Digvijay Ingle, Aashraya Sachdeva, Surya Prakash Sahu, Mayank Sati, Cijo George, and Jithendra Vepa. 2024. Probing the depths of language models' contact-center knowledge for quality assurance. In Conference on Empirical Methods in Natural Language Processing.",
+    "Intersoft Consulting. 2024. Art. 22 gdpr automated individual decision-making, including profiling.",
+    "Hayate Iso, Pouya Pezeshkpour, Nikita Bhutani, and Estevam Hruschka. 2025. Evaluating bias in LLMs for job-resume matching: Gender, race, and education. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 3: Industry Track), pages 672–683, Albuquerque, New Mexico. Association for Computational Linguistics.",
+    "Matt J. Kusner, Joshua R. Loftus, Chris Russell, and Ricardo Silva. 2018. Counterfactual fairness. Preprint, arXiv:1703.06856.",
+    "Md Tahmid Rahman Laskar, Cheng Chen, Xue-Yong Fu, Mahsa Azizi, Shashi Bhushan, and Simon CorstonOliver. 2023. Ai coach assist: An automated approach for call recommendation in contact centers for agent coaching. Preprint, arXiv:2305.17619.",
+    "Ninareh et al. Mehrabi. 2021. A survey on bias and fairness in machine learning. ACM Computing Surveys.",
+    "Eric et al. Mitchell. 2023. Detectgpt: Zero-shot machine-generated text detection using probability curvature. In NeurIPS.",
+    "Moin et al. Nadeem. 2021. Stereoset: Measuring stereotypical bias in pretrained language models. In ACL.",
+    "Nikita et al. Nangia. 2020. Crows-pairs: A challenge dataset for measuring social biases in masked language models. In EMNLP.",
+    "Ihor Pysmennyi, Roman Kyslyi, and Kyrylo Kleshch. 2025. Ai-driven tools in modern software quality assurance: an assessment of benefits, challenges, and future directions. Technology audit and production reserves, 3(2(83)):44–54.",
+    "Pooja S. B. Rao, Laxminarayen Nagarajan Venkatesan, Mauro Cherubini, and Dinesh Babu Jayagopi. 2025. Invisible filters: Cultural bias in hiring evaluations using large language models. Preprint, arXiv:2508.16673.",
+    "Shourya Roy, Ragunathan Mariappan, Sandipan Dandapat, Saurabh Srivastava, Sainyam Galhotra, and Balaji Peddamuthu. 2016. Qart: A system for realtime holistic quality assurance for contact center dialogues. Proceedings of the AAAI Conference on Artificial Intelligence, 30.",
+    "John et al. Smith. 2022. Impartial: Evaluating fairness of pretrained language models via masked counterfactuals. In ACL.",
+    "Kaisong Song, Lidong Bing, Wei Gao, Jun Lin, Lujun Zhao, Jiancheng Wang, Changlong Sun, Xiaozhong Liu, and Qiong Zhang. 2019. Using customer service dialogues for satisfaction analysis with contextassisted multiple instance learning. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 198–207, Hong Kong, China. Association for Computational Linguistics.",
+    "U.S. Equal Employment Opportunity Commission. 2024. Regulations and guidelines.",
+    "Ze Wang, Zekun Wu, Xin Guan, Michael Thaler, Adriano Koshiyama, Skylar Lu, Sachin Beepath, Ediz Ertekin, and Maria Perez-Ortiz. 2024. JobFair: A framework for benchmarking gender hiring bias in large language models. In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 3227–3246, Miami, Florida, USA. Association for Computational Linguistics.",
+    "Yihao Wu, Tianrui Wang, Yizhou Peng, Yi-Wen Chao, Xuyi Zhuang, Xinsheng Wang, Shunshun Yin, and Ziyang Ma. 2025. Evaluating bias in spoken dialogue Ilms for real-world decisions and recommendations. Preprint, arXiv:2510.02352."
+  ],
+  "measurement_description": "The benchmark measured evaluative bias in a Quality Assurance (QA) setting against contact center agents with religiously identifiable names (e.g., 'Daniel' for Christian vs. 'Imran' for Muslim) and against agents who use benign religious expressions (e.g., 'Inshallah', 'God bless'). The goal was to determine if these religious cues unfairly altered the LLM's performance judgments."
 }

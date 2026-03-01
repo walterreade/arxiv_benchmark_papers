@@ -2,68 +2,15 @@
   "filename": "2311.16421.pdf",
   "title": "CDEval: A Benchmark for Measuring the Cultural Dimensions of Large Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2311.16421",
-  "benchmark_measurement": "The benchmark, CDEval, measures six cultural dimensions of Large Language Models based on Hofstede's theory: Power Distance Index (PDI), Individualism vs. Collectivism (IDV), Uncertainty Avoidance Index (UAI), Masculinity vs. Femininity (MAS), Long-Term vs. Short-Term Orientation (LTO), and Indulgence vs. Restraint (IVR). The evaluation is conducted across seven domains: education, medical and health, lifestyle, work and career, technological innovation, family, and art and entertainment. The paper does not measure any aspects related to faith or religion.",
-  "religious_groups": [],
-  "models_tested": [
-    "GPT-4",
-    "GPT-3.5-turbo",
-    "ChatGLM3-turbo",
-    "Spark-v2",
-    "Llama2-Chat (7B, 13B)",
-    "Qwen-Chat (7B, 14B)",
-    "Baichuan-Chat (13B)",
-    "Baichuan2-Chat (7B, 13B)",
-    "ChatGLM (versions 1,2,3, 6B)",
-    "Moss-moon-003-sft (16B)",
-    "Alpaca-7B",
-    "Chinese-Alpaca2-13B (13B)"
+  "bias_targets": [
+    {
+      "target": "Cultural bias",
+      "methodology": "Administering multiple-choice questionnaires based on Hofstede's six cultural dimensions (e.g., Power Distance, Individualism vs. Collectivism) and calculating the likelihood of models choosing specific cultural orientations."
+    },
+    {
+      "target": "Language bias",
+      "methodology": "Translating the cultural questionnaire prompts into English, Chinese, and German to evaluate how the language context influences the model's expressed cultural values and orientations."
+    }
   ],
-  "languages_evaluated": [
-    "English",
-    "Chinese",
-    "German"
-  ],
-  "response_type": [
-    "short",
-    "long"
-  ],
-  "religion_component": "none",
-  "base_benchmarks": [],
-  "continuous_testing": false,
-  "findings": "The paper does not contain any findings related to religion, as its focus is on secular cultural dimensions derived from Hofstede's theory.",
-  "references": [
-    "Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia Leoni Aleman, Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat, et al. 2023. Gpt-4 technical report. arXiv preprint arXiv:2303.08774.",
-    "Alibaba. 2023. Qwen model documentation. Accessed on: October 2023.",
-    "Arnav Arora, Lucie-aimée Kaffee, and Isabelle Augenstein. 2023. Probing pre-trained language models for cross-cultural differences in values. In Proceedings of the First Workshop on Cross-Cultural Considerations in NLP (C3NLP), pages 114–130.",
-    "Amanda Askell et al. 2021. A general language assistant as a laboratory for alignment. ArXiv, abs/2112.00861.",
-    "Jinze Bai, Shuai Bai, Yunfei Chu, Zeyu Cui, and Kai Dang et al. 2023. Qwen technical report. arXiv, abs/2309.16609.",
-    "Yuntao Bai, Andy Jones, Kamal Ndousse, Amanda Askell, et al. 2022. Training a helpful and harmless assistant with reinforcement learning from human feedback. arXiv, abs/2204.05862.",
-    "Baichuan-Inc. 2023a. Baichuan model documentation. Accessed on: October 2023.",
-    "Baichuan-Inc. 2023b. Baichuan2 model documentation. Accessed on: October 2023.",
-    "Rabi Sankar Bhagat. 2002. Culture’s consequences: Comparing values, behaviors, institutions, and organizations across nations. Academy of Management Review, 27:460–462.",
-    "Yong Cao, Li Zhou, Seolhwa Lee, Laura Cabello, Min Chen, and Daniel Hershcovich. 2023. Assessing cross-cultural alignment between ChatGPT and human societies: An empirical study. In Proceedings of the First Workshop on Cross-Cultural Considerations in NLP (C3NLP), pages 53–67, Dubrovnik, Croatia. Association for Computational Linguistics.",
-    "Mark Chen, Jerry Tworek, Heewoo Jun, and et al. 2021. Evaluating large language models trained on code. ArXiv, abs/2107.03374.",
-    "Yiming Cui, Ziqing Yang, and Xin Yao. 2023. Efficient and effective text encoding for Chinese LLaMA and Alpaca. arXiv preprint arXiv:2304.08177.",
-    "Fudan. 2023. Moss model documentation. Accessed on: October 2023.",
-    "Dan Hendrycks, Collin Burns, Steven Basart, Andy Zou, Mantas Mazeika, Dawn Song, and Jacob Steinhardt. 2021. Measuring massive multitask language understanding. In International Conference on Learning Representations.",
-    "iFLYTEK. 2023. Spark model documentation. Accessed on: October 2023.",
-    "Elinor Mason. 2006. Value pluralism.",
-    "Meta. 2023. Llama-2 model documentation. https://huggingface.co/docs/transformers/model_doc/llama2, Accessed on 2023-10.",
-    "OpenAI. 2023a. Openai model documentation. Accessed on: November 2023.",
-    "OpenAI. 2023b. Openai model documentation. Accessed on: November 2023.",
-    "Long Ouyang, Jeffrey Wu, Xu Jiang, and et al. 2022. Training language models to follow instructions with human feedback. In Advances in Neural Information Processing Systems.",
-    "Nino Scherrer, Claudia Shi, Amir Feder, and David Blei. 2023. Evaluating the moral beliefs encoded in LLMs. In Thirty-seventh Conference on Neural Information Processing Systems.",
-    "Aarohi Srivastava, Abhinav Rastogi, Abhishek Rao, and et al. 2023. Beyond the imitation game: Quantifying and extrapolating the capabilities of language models. Transactions on Machine Learning Research.",
-    "Stanford. 2023. Alpaca model documentation. Accessed on: October 2023.",
-    "Tianxiang Sun, Xiaotian Zhang, Zhengfu He, Peng Li, and et al. 2023. Moss: Training conversational language models from synthetic data.",
-    "Rohan Taori, Ishaan Gulrajani, Tianyi Zhang, Yann Dubois, Xuechen Li, Carlos Guestrin, Percy Liang, and Tatsunori B Hashimoto. 2023. Alpaca: A strong, replicable instruction-following model. Stanford Center for Research on Foundation Models., 3(6):7.",
-    "Hugo Touvron, Thibaut Lavril, Gautier Izacard, Xavier Martinet, Marie-Anne Lachaux, Timothée Lacroix, Baptiste Rozière, Naman Goyal, Eric Hambro, Faisal Azhar, Aurelien Rodriguez, Armand Joulin, Edouard Grave, and Guillaume Lample. 2023a. Llama: Open and efficient foundation language models. ArXiv, abs/2302.13971.",
-    "Hugo Touvron, Louis Martin, Kevin R. Stone, Peter Albert, Amjad Almahairi, Yasmine Babaei, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, Daniel M. Bikel, Lukas Blecher, Cristian Cantón Ferrer, Moya Chen, and et al. 2023b. Llama 2: Open foundation and fine-tuned chat models. ArXiv, abs/2307.09288.",
-    "Tsinghua. 2023. ChatGLM model documentation. Accessed on: October 2023.",
-    "Guohai Xu, Jiayi Liu, Mingshi Yan, Haotian Xu, Jinghui Si, Zhuoran Zhou, Peng Yi, Xing Gao, Jitao Sang, Rong Zhang, Ji Zhang, Chao Peng, Feiyan Huang, and Jingren Zhou. 2023. CValues: Measuring the values of chinese large language models from safety to responsibility. ArXiv, abs/2307.09705.",
-    "Ai Ming Yang, Bin Xiao, Bingning Wang, Borong Zhang, Ce Bian, Chao Yin, Chenxu Lv, Da Pan, Dian Wang, Dong Yan, Fan Yang, Fei Deng, Feng Wang, Feng Liu, Guangwei Ai, Guosheng Dong, Hai Zhao, Hang Xu, Hao-Lun Sun, and et al. 2023. Baichuan 2: Open large-scale language models. ArXiv, abs/2309.10305.",
-    "Aohan Zeng, Xiao Liu, Zhengxiao Du, Zihan Wang, Hanyu Lai, Ming Ding, Zhuoyi Yang, Yifan Xu, Wendi Zheng, Xiao Xia, et al. 2023. Glm-130b: An open bilingual pre-trained model. In The Eleventh International Conference on Learning Representations, ICLR 2023, Kigali, Rwanda, May 1-5, 2023.",
-    "Wayne Xin Zhao, Kun Zhou, Junyi Li, Tianyi Tang, Xiaolei Wang, Yupeng Hou, Yingqian Min, Beichen Zhang, Junjie Zhang, Zican Dong, Yifan Du, Chen Yang, Yushuo Chen, Z. Chen, Jinhao Jiang, Ruiyang Ren, Yifan Li, and et al. 2023. A survey of large language models. ArXiv, abs/2303.18223.",
-    "Zhipuai. 2023. ChatGLM3-turbo model documentation. Accessed on: November 2023."
-  ]
+  "primary_bias_target": "Cultural bias"
 }

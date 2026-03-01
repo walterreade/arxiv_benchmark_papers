@@ -1,0 +1,45 @@
+{
+  "filename": "2005.06625.pdf",
+  "title": "Cyberbullying Detection with Fairness Constraints",
+  "arxiv_url": "https://arxiv.org/pdf/2005.06625",
+  "religious_groups": [
+    "religion",
+    "Judaism",
+    "Christianity"
+  ],
+  "models_tested": [
+    "sentence-DistilBERT with a custom 3-layer classifier"
+  ],
+  "languages_evaluated": [
+    "English",
+    "Italian",
+    "Polish",
+    "Portuguese",
+    "Spanish"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "The proposed fairness-constrained training method significantly reduced bias related to religion in the Gab hate speech dataset. Specifically, it lowered the high false positive rates for the religion and race identity groups, which were the main contributors to bias in the baseline model. This reduction in bias (a 27.5% decrease for the Gab dataset) was achieved while also improving the classification performance (Matthews Correlation Coefficient) for the religion-specific group.",
+  "references": [
+    "S. Hinduja and J. W. Patchin, \"Bullying, cyberbullying, and suicide,\" Archives of Suicide Research, vol. 14, no. 3, pp. 206-221, 2010.",
+    "H. Rosa, N. Pereira, R. Ribeiro, P. C. Ferreira, J. P. Carvalho, S. Oliveira, L. Coheur, P. Paulino, A. V. Simão, and I. Trancoso, \"Automatic cyberbullying detection: A systematic review,\" Computers in Human Behavior, vol. 93, pp. 333-345, 2019.",
+    "T. Davidson, D. Bhattacharya, and I. Weber, \"Racial bias in hate speech and abusive language detection datasets,\" in Proceedings of the Third Workshop on Abusive Language Online, 2019, pp. 25-35.",
+    "A. Cotter, H. Jiang, and K. Sridharan, \"Two-player games for efficient non-convex constrained optimization,\" in Proceedings of the 30th International Conference on Algorithmic Learning Theory, vol. 98, 2019, pp. 300-332.",
+    "D. Nozza, C. Volpetti, and E. Fersini, \"Unintended bias in misogyny detection,\" in IEEE/WIC/ACM International Conference on Web Intelligence, 2019, pp. 149-155.",
+    "X. Huang, X. Linzi, F. Dernoncourt, and M. J. Paul, \"Multilingual Twitter corpus and baselines for evaluating demographic bias in hate speech recognition,\" in Proceedings of the Twelveth International Conference on Language Resources and Evaluation (LREC), 2020. [Online]. Available: github.com/xiaoleihuang/Multilingual_Fairness_LREC",
+    "M. Nadeem, A. Bethke, and S. Reddy, \"StereoSet: Measuring stereotypical bias in pretrained language models,\" arXiv preprint arXiv:2004.09456, 2020.",
+    "L. Dixon, J. Li, J. Sorensen, N. Thain, and L. Vasserman, \"Measuring and mitigating unintended bias in text classification,\" in Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society, 2018, pp. 67-73.",
+    "J. H. Park, J. Shin, and P. Fung, \"Reducing gender bias in abusive language detection,\" in Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, 2018, pp. 2799-2804.",
+    "P. Badjatiya, M. Gupta, and V. Varma, \"Stereotypical bias removal for hate speech detection task using knowledge-based generalizations,\" in The World Wide Web Conference, 2019, pp. 49-59.",
+    "D. Borkan, L. Dixon, J. Sorensen, N. Thain, and L. Vasserman, \"Nuanced metrics for measuring unintended bias with real data for text classification,\" in Companion Proceedings of The 2019 World Wide Web Conference, 2019, pp. 491-500. [Online]. Available: kaggle.com/c/jigsaw-unintended-bias-in-toxicity-classification/data",
+    "E. Wulczyn, N. Thain, and L. Dixon, \"Ex machina: Personal attacks seen at scale,\" in Proceedings of the 26th International Conference on World Wide Web, 2017, pp. 1391-1399. [Online]. Available: figshare.com/projects/Wikipedia_Talk/16731",
+    "B. Kennedy, M. Atari, A. M. Davani, L. Yeh, A. Omrani, Y. Kim, K. Coombs Jr., G. Portillo-Wightman, S. Havaldar, E. Gonzalez, J. Hoover, A. Azatian, A. Hussain, A. Lara, G. Cardenas, A. Omary, C. Park, X. Wang, C. Wijaya, Y. Zhang, B. Meyerowitz, and M. Dehghani, \"The gab hate corpus: A collection of 27k posts annotated for hate speech,\" PsyArxiv Preprint 10.31234/osf.io/hqjxn, 2020. [Online]. Available: osf.io/edua3/",
+    "N. Reimers and I. Gurevych, \"Sentence-BERT: Sentence embeddings using Siamese BERT-networks,\" in Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), 2019, pp. 3982-3992.",
+    "D. Chicco and G. Jurman, \"The advantages of the matthews correlation coefficient (MCC) over F1 score and accuracy in binary classification evaluation,\" BMC Genomics, vol. 21, no. 1, p. 6, 2020."
+  ],
+  "measurement_description": "Bias in hate speech detection related to religious identity groups, specifically measuring whether models unfairly classify non-toxic text containing religious identity terms as hate speech."
+}

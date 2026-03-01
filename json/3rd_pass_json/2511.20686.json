@@ -2,23 +2,54 @@
   "filename": "2511.20686.pdf",
   "title": "AssurAI: Experience with Constructing Korean Socio-cultural Datasets to Discover Potential Risks of Generative AI",
   "arxiv_url": "https://arxiv.org/pdf/2511.20686",
-  "bias_targets": [
-    {
-      "target": "Cultural and Linguistic bias",
-      "methodology": "Evaluating model outputs using a Korean multimodal dataset (AssurAI) specifically designed to reflect Korean linguistic nuances and socio-cultural norms, comparing how models handle culturally specific prompts across text, image, audio, and video modalities using an LLM judge."
-    },
-    {
-      "target": "Social and Demographic bias",
-      "methodology": "Prompting generative models with diverse scenarios targeting protected characteristics to elicit potential hate speech, harmful stereotypes, and discriminatory content, with the outputs scored on a 5-point safety rubric by an automated LLM judge."
-    },
-    {
-      "target": "Political bias",
-      "methodology": "Assessing model responses to prompts categorized under 'Political Persuasion', 'Influencing Politics', and 'Sowing Division' to measure if the model generates content demonstrating a biased attitude towards certain factions or attempts to manipulate political opinions."
-    },
-    {
-      "target": "Socioeconomic bias",
-      "methodology": "Evaluating model outputs against prompts related to 'Increased inequality and decline in employment quality' to see if the generated content exacerbates social inequality, assessed via LLM judge scoring."
-    }
+  "religious_groups": [],
+  "models_tested": [
+    "EXAONE 3.5",
+    "Llama 3.1",
+    "Mistral",
+    "Qwen 2.5",
+    "Gemini Live 2.5 Flash Preview",
+    "Gemini 1.5 Flash",
+    "Veo 2.0 Generate 001"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "languages_evaluated": [
+    "Korean"
+  ],
+  "response_type": [
+    "long",
+    "other"
+  ],
+  "religion_component": "none",
+  "base_benchmarks": [
+    "ToxiGen",
+    "RealToxicityPrompts",
+    "SafetyBench",
+    "KoBBQ",
+    "Kosbi",
+    "AIR 2024",
+    "MIT FutureTech"
+  ],
+  "continuous_testing": true,
+  "findings": "The paper does not present any findings related to religion, as religious bias or context was not an explicit focus of the study. The analysis centered on a broad taxonomy of 35 AI risks within a Korean socio-cultural framework.",
+  "references": [
+    "Deep Ganguli, Liane Lovitt, Jackson Kernion, Amanda Askell, Yuntao Bai, Saurav Kadavath, Ben Mann, Ethan Perez, Nicholas Schiefer, Kamal Ndousse, and 1 others. 2022. Red teaming language models to reduce harms: Methods, scaling behaviors, and lessons learned. arXiv preprint arXiv:2209.07858.",
+    "Samuel Gehman, Suchin Gururangan, Maarten Sap, Yejin Choi, and Noah A Smith. 2020. Realtoxicityprompts: Evaluating neural toxic degeneration in language models. arXiv preprint arXiv:2009.11462.",
+    "Thomas Hartvigsen, Saadia Gabriel, Hamid Palangi, Maarten Sap, Dipankar Ray, and Ece Kamar. 2022. Toxigen: A large-scale machine-generated dataset for adversarial and implicit hate speech detection. arXiv preprint arXiv:2203.09509.",
+    "Jiho Jin, Jiseon Kim, Nayeon Lee, Haneul Yoo, Alice Oh, and Hwaran Lee. 2024. Kobbq: Korean bias benchmark for question answering. Transactions of the Association for Computational Linguistics, 12:507–524.",
+    "Hwaran Lee, Seokhee Hong, Joonsuk Park, Takyoung Kim, Gunhee Kim, and Jung-Woo Ha. 2023. Kosbi: A dataset for mitigating social bias risks towards safer large language model application. arXiv preprint arXiv:2305.17701.",
+    "Yi Liu, Gelei Deng, Zhengzi Xu, Yuekang Li, Yaowen Zheng, Ying Zhang, Lida Zhao, Tianwei Zhang, Kailong Wang, and Yang Liu. 2023. Jailbreaking chatgpt via prompt engineering: An empirical study. arXiv preprint arXiv:2305.13860.",
+    "Weidi Luo, Siyuan Ma, Xiaogeng Liu, Xiaoyu Guo, and Chaowei Xiao. 2024. Jailbreaky: A benchmark for assessing the robustness of multimodal large language models against jailbreak attacks. arXiv preprint arXiv:2404.03027.",
+    "Yibo Miao, Yifan Zhu, Lijia Yu, Jun Zhu, Xiao-Shan Gao, and Yinpeng Dong. 2024. T2vsafetybench: Evaluating the safety of text-to-video generative models. Advances in Neural Information Processing Systems, 37:63858–63872.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel R Bowman. 2021. Bbq: A hand-built bias benchmark for question answering. arXiv preprint arXiv:2110.08193.",
+    "Ethan Perez, Saffron Huang, Francis Song, Trevor Cai, Roman Ring, John Aslanides, Amelia Glaese, Nat McAleese, and Geoffrey Irving. 2022. Red teaming language models with language models. arXiv preprint arXiv:2202.03286.",
+    "Yiting Qu, Xinyue Shen, Xinlei He, Michael Backes, Savvas Zannettou, and Yang Zhang. 2023. Unsafe diffusion: On the generation of unsafe images and hateful memes from text-to-image models. In Proceedings of the 2023 ACM SIGSAC conference on computer and communications security, pages 3403–3417.",
+    "Murray Shanahan, Kyle McDonell, and Laria Reynolds. 2023. Role play with large language models. Nature, 623(7987):493–498.",
+    "Xinyue Shen, Zeyuan Chen, Michael Backes, Yun Shen, and Yang Zhang. 2024. “ do anything now”: Characterizing and evaluating in-the-wild jailbreak prompts on large language models. In Proceedings of the 2024 on ACM SIGSAC Conference on Computer and Communications Security, pages 1671–1685.",
+    "Peter Slattery, Alexander K Saeri, Emily AC Grundy, Jess Graham, Michael Noetel, Risto Uuk, James Dao, Soroush Pour, Stephen Casper, and Neil Thompson. 2024. The ai risk repository: A comprehensive metareview, database, and taxonomy of risks from artificial intelligence. arXiv preprint arXiv:2408.12622.",
+    "Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Fei Xia, Ed Chi, Quoc V Le, Denny Zhou, and 1 others. 2022. Chain-of-thought prompting elicits reasoning in large language models. Advances in neural information processing systems, 35:24824-24837.",
+    "Laura Weidinger, Jonathan Uesato, Jakub Bielecki, Glenn van den Driessche, Mike Chrzanowski, Dmitriy Krasheninnikov, Martin Chadwick, Rohen Shah Gur, Amanda Glaese, Ruben Tréger, and 1 others. 2021. Ethical and social risks of large language models. arXiv preprint arXiv:2112.04359.",
+    "Yi Zeng, Kevin Klyman, Andy Zhou, Yu Yang, Minzhou Pan, Ruoxi Jia, Dawn Song, Percy Liang, and Bo Li. 2024. Ai risk categorization decoded (air 2024): From government regulations to corporate policies. arXiv preprint arXiv:2406.17864.",
+    "Zhexin Zhang, Leqi Lei, Lindong Wu, Rui Sun, Yongkang Huang, Chong Long, Xiao Liu, Xuanyu Lei, Jie Tang, and Minlie Huang. 2023. Safety-bench: Evaluating the safety of large language models. arXiv preprint arXiv:2309.07045."
+  ],
+  "measurement_description": "The benchmark measures for 35 general AI risk factors tailored to the Korean socio-cultural context, including 'Hate Speech', 'Perpetuating Harmful Beliefs', and 'Discriminatory Activities'. While these categories could potentially include religious bias as a form of discrimination or harmful belief, the paper does not explicitly measure for or analyze risks related to any specific religion."
 }

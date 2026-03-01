@@ -2,47 +2,137 @@
   "filename": "2503.16566.pdf",
   "title": "REVAL: A Comprehension Evaluation on Reliability and Values of Large Vision-Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2503.16566",
-  "bias_targets": [
-    {
-      "target": "Age bias",
-      "methodology": "Assessed using the VLBiasBench dataset through open-ended image-story association tasks evaluated with Range VADER sentiment analysis, and closed-ended yes/no judgment tasks evaluating fairness accuracy."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Assessed using the VLBiasBench dataset through open-ended image-story association tasks evaluated with Range VADER sentiment analysis, and closed-ended yes/no judgment tasks evaluating fairness accuracy."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Assessed using the VLBiasBench dataset through open-ended image-story association tasks evaluated with Range VADER sentiment analysis, and closed-ended yes/no judgment tasks evaluating fairness accuracy."
-    },
-    {
-      "target": "Nationality bias",
-      "methodology": "Assessed using the VLBiasBench dataset through open-ended image-story association tasks evaluated with Range VADER sentiment analysis, and closed-ended yes/no judgment tasks evaluating fairness accuracy."
-    },
-    {
-      "target": "Physical appearance bias",
-      "methodology": "Assessed using the VLBiasBench dataset through open-ended image-story association tasks evaluated with Range VADER sentiment analysis, and closed-ended yes/no judgment tasks evaluating fairness accuracy."
-    },
-    {
-      "target": "Racial bias",
-      "methodology": "Assessed using the VLBiasBench dataset through open-ended image-story association tasks evaluated with Range VADER sentiment analysis, and closed-ended yes/no judgment tasks evaluating fairness accuracy."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Assessed using the VLBiasBench dataset through open-ended image-story association tasks evaluated with Range VADER sentiment analysis, and closed-ended yes/no judgment tasks evaluating fairness accuracy."
-    },
-    {
-      "target": "Profession bias",
-      "methodology": "Assessed using the VLBiasBench dataset through open-ended image-story association tasks evaluated with Range VADER sentiment analysis, and closed-ended yes/no judgment tasks evaluating fairness accuracy."
-    },
-    {
-      "target": "Socioeconomic bias",
-      "methodology": "Assessed using the VLBiasBench dataset through open-ended image-story association tasks evaluated with Range VADER sentiment analysis, and closed-ended yes/no judgment tasks evaluating fairness accuracy."
-    },
-    {
-      "target": "Intersectional bias",
-      "methodology": "Evaluated complex intersections of demographic groups (Race × Gender and Race × Socioeconomic Status) using closed-ended yes/no judgment tasks from the VLBiasBench dataset to measure fairness accuracy."
-    }
+  "religious_groups": [
+    "Religion"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "BLIP2-OPT-3B",
+    "BLIP2-OPT-7B",
+    "MiniGPT4-Vicuna-7B",
+    "MiniGPT4-Vicuna-13B",
+    "MiniGPT4-Llama2",
+    "Shikra-7B",
+    "InstructBLIP-Vicuna-13B",
+    "BLIP2-Flan-T5-XL",
+    "Otter",
+    "InstructBLIP-Flan-T5-XL",
+    "LLaVA-1.5-7B",
+    "InstructBLIP-Flan-T5-XXL",
+    "InstructBLIP-Vicuna-7B",
+    "MiniGPT-v2",
+    "Emu2-Chat",
+    "Qwen-VL-Chat",
+    "InternLM-XComposer-VL-7B",
+    "LLaVA-1.5-13B",
+    "Yi-VL",
+    "mPLUG-Owl2",
+    "InternLM-XComposer2-VL-7B",
+    "MiniCPM-Llama3-v2.5",
+    "Phi-3-Vision",
+    "Gemini-1.5-Pro-Vision-latest",
+    "GLM-4V-9B",
+    "GPT-40-2024-05-13"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Dysca",
+    "POPE",
+    "OpenCHAIR",
+    "HQH",
+    "VLBiasBench",
+    "M³oralBench",
+    "ToViLaG",
+    "FigStep",
+    "MMSafetyBench"
+  ],
+  "continuous_testing": true,
+  "findings": "Current large models still exhibit biases related to religion, with varying sensitivities. For example, GPT-40, which excels in most other bias categories, performs significantly worse than MiniCPM-Llama3-v2.5 in the religion category.",
+  "references": [
+    "Li, J., Lu, W.: A survey on benchmarks of multimodal large language models. CoRR abs/2408.08632 (2024) https://doi.org/10.48550/ARXIV.2408.08632 2408.08632",
+    "Antol, S., Agrawal, A., Lu, J., Mitchell, M., Batra, D., Zitnick, C.L., Parikh, D.: VQA: visual question answering. In: 2015 IEEE International Conference on Computer Vision, ICCV 2015, Santiago, Chile, December 7-13, 2015, pp. 2425-2433 (2015). https://doi.org/10.1109/ICCV.2015.279 . https://doi.org/10.1109/ICCV.2015.279",
+    "Singh, A., Natarajan, V., Shah, M., Jiang, Y., Chen, X., Batra, D., Parikh, D., Rohrbach, M.: Towards VQA models that can read. In: IEEE Conference on Com- puter Vision and Pattern Recognition, CVPR 2019, Long Beach, CA, USA, June 16-20, 2019, pp. 8317-8326 (2019). https://doi.org/10.1109/CVPR.2019.00851 . http://openaccess.thecvf.com/content_CVPR_2019/html/Singh_Towards_VQA-Models_That_Can_Read_CVPR_2019_paper.html",
+    "Xu, P., Shao, W., Zhang, K., Gao, P., Liu, S., Lei, M., Meng, F., Huang, S., Qiao, Y., Luo, P.: Lvlm-ehub: A comprehensive evaluation benchmark for large vision-language models. CoRR abs/2306.09265 (2023) https://doi.org/10.48550/ARXIV.2306.09265 2306.09265",
+    "Li, B., Wang, R., Wang, G., Ge, Y., Ge, Y., Shan, Y.: Seed-bench: Benchmarking multimodal llms with generative comprehension. CoRR abs/2307.16125 (2023) https://doi.org/10.48550/ARXIV.2307.16125 2307.16125",
+    "Li, B., Ge, Y., Ge, Y., Wang, G., Wang, R., Zhang, R., Shan, Y.: Seed-bench- 2: Benchmarking multimodal large language models. CoRR abs/2311.17092 (2023) https://doi.org/10.48550/ARXIV.2311.17092 2311.17092",
+    "Bai, S., Yang, S., Bai, J., Wang, P., Zhang, X., Lin, J., Wang, X., Zhou, C., Zhou, J.: Touchstone: Evaluating vision-language models by language models. CoRR abs/2308.16890 (2023) https://doi.org/10.48550/ARXIV.2308.16890 2308.16890",
+    "Fu, C., Chen, P., Shen, Y., Qin, Y., Zhang, M., Lin, X., Qiu, Z., Lin, W., Yang, J., Zheng, X., Li, K., Sun, X., Ji, R.: MME: A comprehensive evaluation benchmark for multimodal large language models. CoRR abs/2306.13394 (2023) https://doi.org/10.48550/ARXIV.2306.13394 2306.13394",
+    "Yu, W., Yang, Z., Li, L., Wang, J., Lin, K., Liu, Z., Wang, X., Wang, L.: Mm- vet: Evaluating large multimodal models for integrated capabilities. In: Forty-first International Conference on Machine Learning, ICML 2024, Vienna, Austria, July 21-27, 2024 (2024). https://openreview.net/forum?id=KOTutrSR2y",
+    "Chen, L., Li, J., Dong, X., Zhang, P., Zang, Y., Chen, Z., Duan, H., Wang, J., Qiao, Y., Lin, D., Zhao, F.: Are we on the right way for evaluating large vision-language models? CoRR abs/2403.20330 (2024) https://doi.org/10.48550/ARXIV.2403.20330 2403.20330",
+    "Lu, P., Mishra, S., Xia, T., Qiu, L., Chang, K., Zhu, S., Tafjord, O., Clark, P., Kalyan, A.: Learn to explain: Multimodal reasoning via thought chains for science question answering. In: Koyejo, S., Mohamed, S., Agar- wal, A., Belgrave, D., Cho, K., Oh, A. (eds.) Advances in Neural Information Processing Systems 35: Annual Conference on Neural Information Process- ing Systems 2022, NeurIPS 2022, New Orleans, LA, USA, November 28 December 9, 2022 (2022). http://papers.nips.cc/paper_files/paper/2022/hash/11332b6b6cf4485b84afadb1352d3a9a-Abstract-Conference.html",
+    "Song, X., Wu, M., Zhu, K.Q., Zhang, C., Chen, Y.: A cognitive evalua- tion benchmark of image reasoning and description for large vision language models. CoRR abs/2402.18409 (2024) https://doi.org/10.48550/ARXIV.2402.18409 2402.18409",
+    "Zhang, G., Du, X., Chen, B., Liang, Y., Luo, T., Zheng, T., Zhu, K., Cheng, Y., Xu, C., Guo, S., Zhang, H., Qu, X., Wang, J., Yuan, R., Li, Y., Wang, Z., Liu, Y., Tsai, Y., Zhang, F., Lin, C., Huang, W., Chen, W., Fu, J.: CMMMU: A chinese massive multi-discipline multimodal understanding bench- mark. CoRR abs/2401.11944 (2024) https://doi.org/10.48550/ARXIV.2401.11944 2401.11944",
+    "He, Z., Wu, X., Zhou, P., Xuan, R., Liu, G., Yang, X., Zhu, Q., Huang, H.: CMMU: A benchmark for chinese multi-modal multi-type question understanding and reasoning. In: Proceedings of the Thirty-Third International Joint Conference on Artificial Intelligence, IJCAI 2024, Jeju, South Korea, August 3-9, 2024, pp. 830-838 (2024). https://www.ijcai.org/proceedings/2024/92",
+    "Lu, P., Bansal, H., Xia, T., Liu, J., Li, C., Hajishirzi, H., Cheng, H., Chang, K., Galley, M., Gao, J.: Mathvista: Evaluating mathematical reasoning of foundation models in visual contexts. In: The Twelfth International Conference on Learning Representations, ICLR 2024, Vienna, Austria, May 7-11, 2024 (2024). https://openreview.net/forum?id=KUNzEQMWU7",
+    "Zhang, W., Aljunied, M., Gao, C., Chia, Y.K., Bing, L.: M3exam: A multilingual, multimodal, multilevel benchmark for examining large lan- guage models. In: Oh, A., Naumann, T., Globerson, A., Saenko, K., Hardt, M., Levine, S. (eds.) Advances in Neural Information Process- ing Systems 36: Annual Conference on Neural Information Process- ing Systems 2023, NeurIPS 2023, New Orleans, LA, USA, December 10 16, 2023 (2023). http://papers.nips.cc/paper_files/paper/2023/hash/117c5c8622b0d539f74f6d1fb082a2e9-Abstract-Datasets_and_Benchmarks.html",
+    "Li, K., Wang, Y., He, Y., Li, Y., Wang, Y., Liu, Y., Wang, Z., Xu, J., Chen, G., Lou, P., Wang, L., Qiao, Y.: Mvbench: A comprehensive multi-modal video understanding benchmark. In: IEEE/CVF Conference on Computer Vision and Pattern Recognition, CVPR 2024, Seattle, WA, USA, June 16-22, 2024, pp. 22195-22206 (2024). https://doi.org/10.1109/CVPR52733.2024.02095 . https://doi.org/10.1109/CVPR52733.2024.02095",
+    "Song, E., Chai, W., Wang, G., Zhang, Y., Zhou, H., Wu, F., Chi, H., Guo, X., Ye, T., Zhang, Y., Lu, Y., Hwang, J., Wang, G.: Moviechat: From dense token to sparse memory for long video understanding. In: IEEE/CVF Conference on Computer Vision and Pattern Recognition, CVPR 2024, Seattle, WA, USA, June 16-22, 2024, pp. 18221–18232 (2024). https://doi.org/10.1109/CVPR52733.2024.01725 . https://doi.org/10.1109/CVPR52733.2024.01725",
+    "Ying, K., Meng, F., Wang, J., Li, Z., Lin, H., Yang, Y., Zhang, H., Zhang, W., Lin, Y., Liu, S., Lei, J., Lu, Q., Chen, R., Xu, P., Zhang, R., Zhang, H., Gao, P., Wang, Y., Qiao, Y., Luo, P., Zhang, K., Shao, W.: Mmt-bench: A comprehensive multimodal benchmark for evaluating large vision-language models towards mul- titask AGI. In: Forty-first International Conference on Machine Learning, ICML 2024, Vienna, Austria, July 21-27, 2024 (2024). https://openreview.net/forum?id=R4Ng8zYaiz",
+    "Yin, Z., Wang, J., Cao, J., Shi, Z., Liu, D., Li, M., Huang, X., Wang, Z., Sheng, L., Bai, L., Shao, J., Ouyang, W.: LAMM: language-assisted multi-modal instruction-tuning dataset, framework, and benchmark. In: Oh, A., Naumann, T., Globerson, A., Saenko, K., Hardt, M., Levine, S. (eds.) Advances in Neural Information Processing Systems 36: Annual Conference on Neural Information Processing Systems 2023, NeurIPS 2023, New Orleans, LA, USA, December 10 16, 2023 (2023). http://papers.nips.cc/paper_files/paper/2023/hash/548a41b9cac6f50dccf7e63e9e1b1b9b-Abstract-Datasets_and_Benchmarks.html",
+    "Zhang, J., Yi, Q., Sang, J.: Towards adversarial attack on vision-language pre- training models. In: Magalhães, J., Bimbo, A.D., Satoh, S., Sebe, N., Alameda-Pineda, X., Jin, Q., Oria, V., Toni, L. (eds.) MM '22: The 30th ACM International Conference on Multimedia, Lisboa, Portugal, October 10-14, 2022, pp. 5005-5013 (2022). https://doi.org/10.1145/3503161.3547801 . https://doi.org/10.1145/3503161.3547801",
+    "Cheng, H., Xiao, E., Gu, J., Yang, L., Duan, J., Zhang, J., Cao, J., Xu, K., Xu, R.: Unveiling typographic deceptions: Insights of the typographic vulnerability in large vision-language models. In: Leonardis, A., Ricci, E., Roth, S., Russakovsky, O., Sattler, T., Varol, G. (eds.) Computer Vision - ECCV 2024 - 18th European Conference, Milan, Italy, September 29-October 4, 2024, Proceedings, Part LIX. Lecture Notes in Computer Science, vol. 15117, pp. 179–196 (2024). https://doi.org/10.1007/978-3-031-73202-7-11 . https://doi.org/10.1007/978-3-031-73202-7-11",
+    "Zhang, J., Pang, T., Du, C., Ren, Y., Li, B., Lin, M.: Benchmarking large multimodal models against common corruptions. CoRR abs/2401.11943 (2024) https://doi.org/10.48550/ARXIV.2401.11943 2401.11943",
+    "Hurst, A., Lerer, A., Goucher, A.P., Perelman, A., Ramesh, A., Clark, A., Ostrow, A., Welihinda, A., Hayes, A., Radford, A., Madry, A., Baker-Whitcomb, A., Beutel, A., Borzunov, A., Carney, A., Chow, A., Kirillov, A., Nichol, A., Paino, A., Renzin, A., Passos, A.T., Kirillov, A., Christakis, A., Conneau, A., Kamali, A., Jabri, A., Moyer, A., Tam, A., Crookes, A., Tootoonchian, A., Kumar, A., Vallone, A., Karpathy, A., Braunstein, A., Cann, A., Codispoti, A., Galu, A., Kondrich, A., Tulloch, A., Mishchenko, A., Baek, A., Jiang, A., Pelisse, A., Wood- ford, A., Gosalia, A., Dhar, A., Pantuliano, A., Nayak, A., Oliver, A., Zoph, B., Ghorbani, B., Leimberger, B., Rossen, B., Sokolowsky, B., Wang, B., Zweig, B., Hoover, B., Samic, B., McGrew, B., Spero, B., Giertler, B., Cheng, B., Light-cap, B., Walkin, B., Quinn, B., Guarraci, B., Hsu, B., Kellogg, B., Eastman, B., Lugaresi, C., Wainwright, C.L., Bassin, C., Hudson, C., Chu, C., Nelson, C., Li, C., Shern, C.J., Conger, C., Barette, C., Voss, C., Ding, C., Lu, C., Zhang, C., Beaumont, C., Hallacy, C., Koch, C., Gibson, C., Kim, C., Choi, C., McLeavey, C., Hesse, C., Fischer, C., Winter, C., Czarnecki, C., Jarvis, C., Wei, C., Koumouzelis, C., Sherburn, D.: Gpt-40 system card. CoRR abs/2410.21276 (2024) https://doi.org/10.48550/ARXIV.2410.21276 2410.21276",
+    "Reid, M., Savinov, N., Teplyashin, D., Lepikhin, D., Lillicrap, T.P., Alayrac, J., Soricut, R., Lazaridou, A., Firat, O., Schrittwieser, J., Antonoglou, I., Anil, R., Borgeaud, S., Dai, A.M., Millican, K., Dyer, E., Glaese, M., Sottiaux, T., Lee, B., Viola, F., Reynolds, M., Xu, Y., Molloy, J., Chen, J., Isard, M., Barham, P., Hennigan, T., McIlroy, R., Johnson, M., Schalkwyk, J., Collins, E., Ruther-ford, E., Moreira, E., Ayoub, K., Goel, M., Meyer, C., Thornton, G., Yang, Z., Michalewski, H., Abbas, Z., Schucher, N., Anand, A., Ives, R., Keeling, J., Lenc, K., Haykal, S., Shakeri, S., Shyam, P., Chowdhery, A., Ring, R., Spencer, S., Sezener, E., al.: Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context. CoRR abs/2403.05530 (2024) https://doi.org/10.48550/ARXIV.2403.05530 2403.05530",
+    "Li, Y., Du, Y., Zhou, K., Wang, J., Zhao, W.X., Wen, J.: Evaluating object hallucination in large vision-language models. In: Bouamor, H., Pino, J., Bali, K. (eds.) Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, EMNLP 2023, Singapore, December 6-10, 2023, pp. 292-305 (2023). https://doi.org/10.18653/V1/2023.EMNLP-MAIN.20 . https://doi.org/10.18653/v1/2023.emnlp-main.20",
+    "Wang, X., Yi, X., Jiang, H., Zhou, S., Wei, Z., Xie, X.: Tovilag: Your visual- language generative model is also an evildoer. In: Bouamor, H., Pino, J., Bali, K. (eds.) Proceedings of the 2023 Conference on Empirical Methods in Natural Lan- guage Processing, EMNLP 2023, Singapore, December 6-10, 2023, pp. 3508-3533 (2023). https://doi.org/10.18653/V1/2023.EMNLP-MAIN.213 . https://doi.org/10.18653/v1/2023.emnlp-main.213",
+    "Chen, Y., Mendes, E., Das, S., Xu, W., Ritter, A.: Can language models be instructed to protect personal information? CoRR abs/2310.02224 (2023) https://doi.org/10.48550/ARXIV.2310.02224 2310.02224",
+    "Liu, X., Zhu, Y., Gu, J., Lan, Y., Yang, C., Qiao, Y.: Mm-safetybench: A bench- mark for safety evaluation of multimodal large language models. In: Leonardis, A., Ricci, E., Roth, S., Russakovsky, O., Sattler, T., Varol, G. (eds.) Computer Vision - ECCV 2024 - 18th European Conference, Milan, Italy, September 29-October 4, 2024, Proceedings, Part LVI. Lecture Notes in Computer Science, vol. 15114, pp. 386-403 (2024). https://doi.org/10.1007/978-3-031-72992-8_22 . https://doi.org/10.1007/978-3-031-72992-8_22",
+    "Tu, H., Cui, C., Wang, Z., Zhou, Y., Zhao, B., Han, J., Zhou, W., Yao, H., Xie, C.: How many unicorns are in this image? A safety evaluation benchmark for vision llms. CoRR abs/2311.16101 (2023) https://doi.org/10.48550/ARXIV.2311.16101 2311.16101",
+    "Zhang, Y., Huang, Y., Sun, Y., Liu, C., Zhao, Z., Fang, Z., Wang, Y., Chen, H., Yang, X., Wei, X., et al.: Benchmarking trustworthiness of multimodal large language models: A comprehensive study. arXiv preprint arXiv:2406.07057 (2024)",
+    "Vicuna: An Open-Source Chatbot Impressing GPT-4 with 90https://lmsys.org/blog/2023-03-30-vicuna/",
+    "Zeng, A., Xu, B., Wang, B., Zhang, C., Yin, D., Rojas, D., Feng, G., Zhao, H., Lai, H., Yu, H., Wang, H., Sun, J., Zhang, J., Cheng, J., Gui, J., Tang, J., Zhang, J., Li, J., Zhao, L., Wu, L., Zhong, L., Liu, M., Huang, M., Zhang, P., Zheng, Q., Lu, R., Duan, S., Zhang, S., Cao, S., Yang, S., Tam, W.L., Zhao, W., Liu, X., Xia, X., Zhang, X., Gu, X., Lv, X., Liu, X., Liu, X., Yang, X., Song, X., Zhang, X., An, Y., Xu, Y., Niu, Y., Yang, Y., Li, Y., Bai, Y., Dong, Y., Qi, Z., Wang, Z., Yang, Z., Du, Z., Hou, Z., Wang, Z.: Chatglm: A family of large language models from GLM-130B to GLM-4 all tools. CoRR abs/2406.12793 (2024) https://doi.org/10.48550/ARXIV.2406.12793 2406.12793",
+    "Sun, Q., Cui, Y., Zhang, X., Zhang, F., Yu, Q., Wang, Y., Rao, Y., Liu, J., Huang, T., Wang, X.: Generative multimodal models are in-context learners. In: IEEE/CVF Conference on Computer Vision and Pattern Recognition, CVPR 2024, Seattle, WA, USA, June 16-22, 2024, pp. 14398–14409 (2024). https://doi.org/10.1109/CVPR52733.2024.01365 . https://doi.org/10.1109/CVPR52733.2024.01365",
+    "Touvron, H., Lavril, T., Izacard, G., Martinet, X., Lachaux, M., Lacroix, T., Rozière, B., Goyal, N., Hambro, E., Azhar, F., Rodriguez, A., Joulin, A., Grave, E., Lample, G.: Llama: Open and efficient foundation language models. CoRR abs/2302.13971 (2023) https://doi.org/10.48550/ARXIV.2302.13971 2302.13971",
+    "Bai, J., Bai, S., Yang, S., Wang, S., Tan, S., Wang, P., Lin, J., Zhou, C., Zhou, J.: Qwen-vl: A frontier large vision-language model with versatile abilities. CoRR abs/2308.12966 (2023) https://doi.org/10.48550/ARXIV.2308.12966 2308.12966",
+    "Dong, X., Zhang, P., Zang, Y., Cao, Y., Wang, B., Ouyang, L., Wei, X., Zhang, S., Duan, H., Cao, M., Zhang, W., Li, Y., Yan, H., Gao, Y., Zhang, X., Li, W., Li, J., Chen, K., He, C., Zhang, X., Qiao, Y., Lin, D., Wang, J.: Internlm-xcomposer2: Mastering free-form text-image composition and comprehension in vision-language large model. CoRR abs/2401.16420 (2024) https://doi.org/10.48550/ARXIV.2401.16420 2401.16420",
+    "Yao, Y., Yu, T., Zhang, A., Wang, C., Cui, J., Zhu, H., Cai, T., Li, H., Zhao, W., He, Z., Chen, Q., Zhou, H., Zou, Z., Zhang, H., Hu, S., Zheng, Z., Zhou, J., Cai, J., Han, X., Zeng, G., Li, D., Liu, Z., Sun, M.: Minicpm-v: A GPT-4V level MLLM on your phone. CoRR abs/2408.01800 (2024) https://doi.org/10.48550/ARXIV.2408.01800 2408.01800",
+    "Zhu, D., Chen, J., Shen, X., Li, X., Elhoseiny, M.: Minigpt-4: Enhancing vision-language understanding with advanced large language models. In: The Twelfth International Conference on Learning Representations, ICLR 2024, Vienna, Austria, May 7-11, 2024 (2024). https://openreview.net/forum?id=1tZbq88f27",
+    "Li, J., Li, D., Savarese, S., Hoi, S.C.H.: BLIP-2: bootstrapping language-image pre-training with frozen image encoders and large language models. In: Krause, A., Brunskill, E., Cho, K., Engelhardt, B., Sabato, S., Scarlett, J. (eds.) International Conference on Machine Learning, ICML 2023, 23-29 July 2023, Honolulu, Hawaii, USA. Proceedings of Machine Learning Research, vol. 202, pp. 19730-19742 (2023). https://proceedings.mlr.press/v202/li23q.html",
+    "Madry, A., Makelov, A., Schmidt, L., Tsipras, D., Vladu, A.: Towards deep learning models resistant to adversarial attacks. In: ICLR (2018). https://openreview.net/forum?id=rJzIBfZAb",
+    "Dai, W., Li, J., Li, D., Tiong, A.M.H., Zhao, J., Wang, W., Li, B., Fung, P., Hoi, S.C.H.: Instructblip: Towards general-purpose vision-language models with instruction tuning. In: Oh, A., Naumann, T., Globerson, A., Saenko, K., Hardt, M., Levine, S. (eds.) Advances in Neural Information Processing Systems 36: Annual Conference on Neural Information Processing Systems 2023, NeurIPS 2023, New Orleans, LA, USA, December 10 16, 2023 (2023). http://papers.nips.cc/paper_files/paper/2023/hash/9a6a435e75419a836fe47ab6793623e6-Abstract-Conference.html",
+    "Zhang, P., Dong, X., Wang, B., Cao, Y., Xu, C., Ouyang, L., Zhao, Z., Ding, S., Zhang, S., Duan, H., Zhang, W., Yan, H., Zhang, X., Li, W., Li, J., Chen, K., He, C., Zhang, X., Qiao, Y., Lin, D., Wang, J.: Internlm-xcomposer: A vision-language large model for advanced text-image comprehension and composition. CoRR abs/2309.15112 (2023) https://doi.org/10.48550/ARXIV.2309.15112 2309.15112",
+    "Fang, Y., Wang, W., Xie, B., Sun, Q., Wu, L., Wang, X., Huang, T., Wang, X., Cao, Y.: EVA: exploring the limits of masked visual representation learn- ing at scale. In: IEEE/CVF Conference on Computer Vision and Pattern Recognition, CVPR 2023, Vancouver, BC, Canada, June 17-24, 2023, pp. 19358-19369 (2023). https://doi.org/10.1109/CVPR52729.2023.01855 . https://doi.org/10.1109/CVPR52729.2023.01855",
+    "Abdin, M.I., Jacobs, S.A., Awan, A.A., Aneja, J., Awadallah, A., Awadalla, H., Bach, N., Bahree, A., Bakhtiari, A., Behl, H.S., Benhaim, A., Bilenko, M., Bjorck, J., Bubeck, S., Cai, M., Mendes, C.C.T., Chen, W., Chaudhary, V., Chopra, P., Giorno, A.D., Rosa, G., Dixon, M., Eldan, R., Iter, D., Garg, A., Goswami, A., Gunasekar, S., Haider, E., Hao, J., Hewett, R.J., Huynh, J., Javaheripi, M., Jin, X., Kauffmann, P., Karampatziakis, N., Kim, D., Khademi, M., Kurilenko, L., Lee, J.R., Lee, Y.T., Li, Y., Liang, C., Liu, W., Lin, E., Lin, Z., Madan, P., Mitra, A., Modi, H., Nguyen, A., Norick, B., Patra, B., Perez-Becker, D., Portet, T., Pryzant, R., Qin, H., Radmilac, M., Rosset, C., Roy, S., Ruwase, O., Saarikivi, O., Saied, A., Salim, A., Santacroce, M., Shah, S., Shang, N., Sharma, H., Song, X., Tanaka, M., Wang, X., Ward, R., Wang, G., Witte, P., Wyatt, M., Xu, C., Xu, J., Yadav, S., Yang, F., Yang, Z., Yu, D., Zhang, C., Zhang, C., Zhang, J., Zhang, L.L., Zhang, Y., Zhang, Y., Zhang, Y., Zhou, X.: Phi-3 technical report: A highly capable language model locally on your phone. CoRR abs/2404.14219 (2024) https://doi.org/10.48550/ARXIV.2404.14219 2404.14219",
+    "Ye, Q., Xu, H., Ye, J., Yan, M., Hu, A., Liu, H., Qian, Q., Zhang, J., Huang, F.: mplug-owl2: Revolutionizing multi-modal large language model with modality collaboration. In: IEEE/CVF Conference on Computer Vision and Pattern Recognition, CVPR 2024, Seattle, WA, USA, June 16-22, 2024, pp. 13040-13051 (2024). https://doi.org/10.1109/CVPR52733.2024.01239 . https://doi.org/10.1109/CVPR52733.2024.01239",
+    "Zhang, J., Wang, S., Cao, X., Yuan, Z., Shan, S., Chen, X., Gao, W.: Vlbias-bench: A comprehensive benchmark for evaluating bias in large vision-language model. CoRR abs/2406.14194 (2024) https://doi.org/10.48550/ARXIV.2406.14194 2406.14194",
+    "Wang, J., Wang, Y., Xu, G., Zhang, J., Gu, Y., Jia, H., Yan, M., Zhang, J., Sang, J.: An llm-free multi-dimensional benchmark for mllms hallucination eval-uation. CoRR abs/2311.07397 (2023) https://doi.org/10.48550/ARXIV.2311.07397 2311.07397",
+    "Ben-Kish, A., Yanuka, M., Alper, M., Giryes, R., Averbuch-Elor, H.: Mitigating open-vocabulary caption hallucinations. In: Al-Onaizan, Y., Bansal, M., Chen, Y. (eds.) Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, EMNLP 2024, Miami, FL, USA, November 12-16, 2024, pp. 22680-22698 (2024). https://aclanthology.org/2024.emnlp-main.1263",
+    "Yan, B., Zhang, J., Yuan, Z., Shan, S., Chen, X.: Evaluating the quality of hallucination benchmarks for large vision-language models. CoRR abs/2406.17115 (2024) https://doi.org/10.48550/ARXIV.2406.17115 2406.17115",
+    "Zhang, J., Wang, Z., Lei, M., Yuan, Z., Yan, B., Shan, S., Chen, X.: Dysca: A dynamic and scalable benchmark for evaluating perception ability of lvlms. CoRR abs/2406.18849 (2024) https://doi.org/10.48550/ARXIV.2406.18849 2406.18849",
+    "Yan, B., Zhang, J., Chen, Z., Shan, S., Chen, X.: M³oralbench: A multimodal moral benchmark for lvlms. CoRR abs/2412.20718 (2024) 2412.20718",
+    "Gong, Y., Ran, D., Liu, J., Wang, C., Cong, T., Wang, A., Duan, S., Wang, X.: Figstep: Jailbreaking large vision-language models via typographic visual prompts. CoRR abs/2311.05608 (2023) https://doi.org/10.48550/ARXIV.2311.05608 2311.05608",
+    "Ji, J., Chen, Y., Jin, M., Xu, W., Hua, W., Zhang, Y.: Moralbench: Moral evaluation of llms. CoRR abs/2406.04428 (2024) https://doi.org/10.48550/ARXIV.2406.04428 2406.04428",
+    "Graham, J., Haidt, J., Koleva, S., Motyl, M., Iyer, R., Wojcik, S.P., Ditto, P.H.: Moral foundations theory: The pragmatic validity of moral pluralism. In: Advances in Experimental Social Psychology vol. 47, pp. 55-130 (2013)",
+    "Clifford, S., Iyengar, V., Cabeza, R., Sinnott-Armstrong, W.: Moral founda- tions vignettes: A standardized stimulus database of scenarios based on moral foundations theory. Behavior research methods 47(4), 1178–1198 (2015)",
+    "Rombach, R., Blattmann, A., Lorenz, D., Esser, P., Ommer, B.: High-resolution image synthesis with latent diffusion models. In: IEEE/CVF Conference on Com- puter Vision and Pattern Recognition, CVPR 2022, New Orleans, LA, USA, June 18-24, 2022, pp. 10674–10685 (2022). https://doi.org/10.1109/CVPR52688.2022.01042 . https://doi.org/10.1109/CVPR52688.2022.01042",
+    "Gurari, D., Li, Q., Lin, C., Zhao, Y., Guo, A., Stangl, A., Bigham, J.P.: Vizwiz-priv: A dataset for recognizing the presence and purpose of private visual information in images taken by blind people. In: IEEE Conference on Computer Vision and Pattern Recognition, CVPR 2019, Long Beach, CA, USA, June 16-20, 2019, pp. 939–948 (2019). https://doi.org/10.1109/CVPR.2019.00103 . http://openaccess.thecvf.com/content_CVPR_2019/html/Gurari_VizWiz-Priv_A_Dataset_for_Recognizing_the_Presence_and_Purpose_of_CVPR_2019_paper.html",
+    "Orekondy, T., Schiele, B., Fritz, M.: Towards a visual privacy advisor: Under- standing and predicting privacy risks in images. In: IEEE International Confer- ence on Computer Vision, ICCV 2017, Venice, Italy, October 22-29, 2017, pp. 3706-3715 (2017). https://doi.org/10.1109/ICCV.2017.398 . https://doi.org/10.1109/ICCV.2017.398",
+    "milair. https://github.com/tlkh/milair-dataset",
+    "Chen, J., Zhu, D., Shen, X., Li, X., Liu, Z., Zhang, P., Krishnamoorthi, R., Chandra, V., Xiong, Y., Elhoseiny, M.: Minigpt-v2: large language model as a unified interface for vision-language multi-task learning. CoRR abs/2310.09478 (2023) https://doi.org/10.48550/ARXIV.2310.09478 2310.09478",
+    "Liu, H., Li, C., Li, Y., Lee, Y.J.: Improved baselines with visual instruction tuning. In: IEEE/CVF Conference on Computer Vision and Pattern Recognition, CVPR 2024, Seattle, WA, USA, June 16-22, 2024, pp. 26286-26296 (2024). https://doi.org/10.1109/CVPR52733.2024.02484 . https://doi.org/10.1109/CVPR52733.2024.02484",
+    "Li, B., Zhang, Y., Chen, L., Wang, J., Yang, J., Liu, Z.: Otter: A multi-modal model with in-context instruction tuning. CoRR abs/2305.03726 (2023) https://doi.org/10.48550/ARXIV.2305.03726 2305.03726",
+    "Chen, K., Zhang, Z., Zeng, W., Zhang, R., Zhu, F., Zhao, R.: Shikra: Unleashing multimodal llm's referential dialogue magic. CoRR abs/2306.15195 (2023) https://doi.org/10.48550/ARXIV.2306.15195 2306.15195",
+    "Young, A., Chen, B., Li, C., Huang, C., Zhang, G., Zhang, G., Li, H., Zhu, J., Chen, J., Chang, J., Yu, K., Liu, P., Liu, Q., Yue, S., Yang, S., Yang, S., Yu, T., Xie, W., Huang, W., Hu, X., Ren, X., Niu, X., Nie, P., Xu, Y., Liu, Y., Wang, Y., Cai, Y., Gu, Z., Liu, Z., Dai, Z.: Yi: Open foundation models by 01.ai. CoRR abs/2403.04652 (2024) https://doi.org/10.48550/ARXIV.2403.04652 2403.04652",
+    "Sun, Q., Fang, Y., Wu, L., Wang, X., Cao, Y.: EVA-CLIP: improved training techniques for CLIP at scale. CoRR abs/2303.15389 (2023) https://doi.org/10.48550/ARXIV.2303.15389 2303.15389",
+    "Touvron, H., Martin, L., Stone, K., Albert, P., Almahairi, A., Babaei, Y., Bashlykov, N., Batra, S., Bhargava, P., Bhosale, S., Bikel, D., Blecher, L., Canton-Ferrer, C., Chen, M., Cucurull, G., Esiobu, D., Fernandes, J., Fu, J., Fu, W., Fuller, B., Gao, C., Goswami, V., Goyal, N., Hartshorn, A., Hosseini, S., Hou, R., Inan, H., Kardas, M., Kerkez, V., Khabsa, M., Kloumann, I., Korenev, A., Koura, P.S., Lachaux, M., Lavril, T., Lee, J., Liskovich, D., Lu, Y., Mao, Y., Mar-tinet, X., Mihaylov, T., Mishra, P., Molybog, I., Nie, Y., Poulton, A., Reizenstein, J., Rungta, R., Saladi, K., Schelten, A., Silva, R., Smith, E.M., Subramanian, R., Tan, X.E., Tang, B., Taylor, R., Williams, A., Kuan, J.X., Xu, P., Yan, Z., Zarov, I., Zhang, Y., Fan, A., Kambadur, M., Narang, S., Rodriguez, A., Sto-jnic, R., Edunov, S., Scialom, T.: Llama 2: Open foundation and fine-tuned chat models. CoRR abs/2307.09288 (2023) https://doi.org/10.48550/ARXIV.2307.09288 2307.09288",
+    "Wei, J., Bosma, M., Zhao, V.Y., Guu, K., Yu, A.W., Lester, B., Du, N., Dai, A.M., Le, Q.V.: Finetuned language models are zero-shot learners. In: The Tenth International Conference on Learning Representations, ICLR 2022, Virtual Event, April 25-29, 2022 (2022). https://openreview.net/forum?id=gEZrGCozdqR",
+    "Zhang, S., Roller, S., Goyal, N., Artetxe, M., Chen, M., Chen, S., Dewan, C., Diab, M.T., Li, X., Lin, X.V., Mihaylov, T., Ott, M., Shleifer, S., Shuster, K., Simig, D., Koura, P.S., Sridhar, A., Wang, T., Zettlemoyer, L.: OPT: open pre-trained transformer language models. CoRR abs/2205.01068 (2022) https://doi.org/10.48550/ARXIV.2205.01068 2205.01068",
+    "Radford, A., Kim, J.W., Hallacy, C., Ramesh, A., Goh, G., Agarwal, S., Sastry, G., Askell, A., Mishkin, P., Clark, J., Krueger, G., Sutskever, I.: Learning transferable visual models from natural language supervision. In: Meila, M., Zhang, T. (eds.) Proceedings of the 38th International Conference on Machine Learning, ICML 2021, 18-24 July 2021, Virtual Event. Proceedings of Machine Learning Research, vol. 139, pp. 8748-8763 (2021). http://proceedings.mlr.press/v139/radford21a.html",
+    "Team, I.: InternLM: A Multilingual Language Model with Progressively Enhanced Capabilities. https://github.com/InternLM/InternLM-techreport (2023)",
+    "Cai, Z., Cao, M., Chen, H., Chen, K., Chen, K., Chen, X., Chen, X., Chen, Z., Chen, Z., Chu, P., Dong, X., Duan, H., Fan, Q., Fei, Z., Gao, Y., Ge, J., Gu, C., Gu, Y., Gui, T., Guo, A., Guo, Q., He, C., Hu, Y., Huang, T., Jiang, T., Jiao, P., Jin, Z., Lei, Z., Li, J., Li, J., Li, L., Li, S., Li, W., Li, Y., Liu, H., Liu, J., Hong, J., Liu, K., Liu, K., Liu, X., Lv, C., Lv, H., Lv, K., Ma, L., Ma, R., Ma, Z., Ning, W., Ouyang, L., Qiu, J., Qu, Y., Shang, F., Shao, Y., Song, D., Song, Z., Sui, Z., Sun, P., Sun, Y., Tang, H., Wang, B., Wang, G., Wang, J., Wang, J., Wang, R., Wang, Y., Wang, Z., Wei, X., Weng, Q., Wu, F., Xiong, Y., Zhao, X., al.: Internlm2 technical report. CoRR abs/2403.17297 (2024) https://doi.org/10.48550/ARXIV.2403.17297 2403.17297",
+    "Cherti, M., Beaumont, R., Wightman, R., Wortsman, M., Ilharco, G., Gordon, C., Schuhmann, C., Schmidt, L., Jitsev, J.: Reproducible scaling laws for contrastive language-image learning. In: IEEE/CVF Conference on Computer Vision and Pattern Recognition, CVPR 2023, Vancouver, BC, Canada, June 17-24, 2023, pp. 2818-2829 (2023). https://doi.org/10.1109/CVPR52729.2023.00276 . https://doi.org/10.1109/CVPR52729.2023.00276",
+    "Bai, J., Bai, S., Chu, Y., Cui, Z., Dang, K., Deng, X., Fan, Y., Ge, W., Han, Y., Huang, F., Hui, B., Ji, L., Li, M., Lin, J., Lin, R., Liu, D., Liu, G., Lu, C., Lu, K., Ma, J., Men, R., Ren, X., Ren, X., Tan, C., Tan, S., Tu, J., Wang, P., Wang, S., Wang, W., Wu, S., Xu, B., Xu, J., Yang, A., Yang, H., Yang, J., Yang, S., Yao, Y., Yu, B., Yuan, H., Yuan, Z., Zhang, J., Zhang, X., Zhang, Y., Zhang, Z., Zhou, C., Zhou, J., Zhou, X., Zhu, T.: Qwen technical report. CoRR abs/2309.16609 (2023) https://doi.org/10.48550/ARXIV.2309.16609 2309.16609",
+    "Fang, Y., Sun, Q., Wang, X., Huang, T., Wang, X., Cao, Y.: EVA-02: A visual representation for neon genesis. Image Vis. Comput. 149, 105171 (2024) https://doi.org/10.1016/J.IMAVIS.2024.105171",
+    "Zhai, X., Mustafa, B., Kolesnikov, A., Beyer, L.: Sigmoid loss for language image pre-training. In: IEEE/CVF International Conference on Computer Vision, ICCV 2023, Paris, France, October 1-6, 2023, pp. 11941–11952 (2023). https://doi.org/10.1109/ICCV51070.2023.01100 . https://doi.org/10.1109/ICCV51070.2023.01100",
+    "Dubey, A., Jauhri, A., Pandey, A., Kadian, A., Al-Dahle, A., Letman, A., Mathur, A., Schelten, A., Yang, A., Fan, A., Goyal, A., Hartshorn, A., Yang, A., Mitra, A., Sravankumar, A., Korenev, A., Hinsvark, A., Rao, A., Zhang, A., Rodriguez, A., Gregerson, A., Spataru, A., Rozière, B., Biron, B., Tang, B., Chern, B., Caucheteux, C., Nayak, C., Bi, C., Marra, C., McConnell, C., Keller, C., Touret, C., Wu, C., Wong, C., Ferrer, C.C., Nikolaidis, C., Allonsius, D., Song, D., Pintz, D., Livshits, D., Esiobu, D., Choudhary, D., Mahajan, D., Garcia-Olano, D., Perino, D., Hupkes, D., Lakomkin, E., AlBadawy, E., Lobanova, E., Dinan, E., Smith, E.M., Radenovic, F., Zhang, F., Synnaeve, G., Lee, G., Anderson, G.L., Nail, G., Mialon, G., Pang, G., Cucurell, G., Nguyen, H., Korevaar, H., Xu, H., Touvron, H., Zarov, I., Ibarra, I.A., Kloumann, I.M., Misra, I., Evtimov, I., Copet, J., Lee, J., Geffert, J., Vranes, J., Park, J., Mahadeokar, J., Shah, J., Linde, J., Billock, J., Hong, J., Lee, J., Fu, J., Chi, J., Huang, J., Liu, J., Wang, J., Yu, J., Bitton, J., Spisak, J., Park, J., Rocca, J., Johnstun, J., Saxe, J., Jia, J., Alwala, K.V., Upasani, K., Plawiak, K., Li, K., Heafield, K., Stone, K., al.: The llama 3 herd of models. CoRR abs/2407.21783 (2024) https://doi.org/10.48550/ARXIV.2407.21783 2407.21783",
+    "perspectiveapi. https://www.perspectiveapi.com/"
+  ],
+  "measurement_description": "The benchmark measured social bias related to religion using both open-ended and closed-ended question formats."
 }

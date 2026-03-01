@@ -2,91 +2,39 @@
   "filename": "2403.20147.pdf",
   "title": "IndiBias: A Benchmark Dataset to Measure Social Biases in Language Models for Indian Context",
   "arxiv_url": "https://arxiv.org/pdf/2403.20147",
-  "benchmark_measurement": "The benchmark measures stereotypical associations and biases against various religious groups in the Indian context. This includes creating sentence pairs to test stereotypes for religions like Hinduism, Islam, Sikhism, etc., and evaluating intersectional biases, specifically the 'gender-religion' axis, by associating Hindu and Muslim male/female identities with concepts like Career/Family and Violence/Non-violence.",
-  "religious_groups": [
-    "Hinduism",
-    "Islam",
-    "Sikhism",
-    "Jainism",
-    "Buddhism",
-    "Christianity"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Comparing pseudo-log-likelihood scores of stereotypic versus anti-stereotypic sentence pairs (modified CrowS-Pairs format) in English and Hindi, and measuring intersectional bias via Sentence Embedding Association Test (SEAT) scores using bleached templates."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluating the pseudo-log-likelihood of masked tokens in stereotypic vs. anti-stereotypic sentence pairs, and calculating SEAT effect sizes for gender-religion intersections using violent/non-violent and career/family word associations."
+    },
+    {
+      "target": "Caste bias",
+      "methodology": "Comparing model likelihood scores on caste-based stereotypic versus anti-stereotypic sentence pairs, and measuring gender-caste intersectional bias using SEAT embeddings with pleasant/unpleasant concepts."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Evaluating pseudo-log-likelihood of age-based stereotypic vs. anti-stereotypic sentences, and assessing gender-age intersectional bias through SEAT scores with pleasant/unpleasant word embeddings."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Comparing pseudo-log-likelihood scores assigned by language models to stereotypic versus anti-stereotypic sentence pairs regarding occupation and socioeconomic status."
+    },
+    {
+      "target": "Physical appearance bias",
+      "methodology": "Measuring the difference in pseudo-log-likelihood scores assigned by models to stereotypic versus anti-stereotypic sentence pairs related to physical traits."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Comparing model likelihood scores of stereotypic versus anti-stereotypic sentence pairs adapted and translated from the original CrowS-Pairs dataset."
+    },
+    {
+      "target": "Regional bias",
+      "methodology": "Capturing regional prejudices using a human-LLM partnership to extract identity-attribute tuples specific to regions in the Indian context."
+    }
   ],
-  "models_tested": [
-    "XLM-R",
-    "Bernice",
-    "IndicBERT",
-    "Muril",
-    "mT5",
-    "mGPT",
-    "Llama v2",
-    "Mistral",
-    "Bloom"
-  ],
-  "languages_evaluated": [
-    "English",
-    "Hindi"
-  ],
-  "response_type": [
-    "other"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "CrowS-Pairs"
-  ],
-  "continuous_testing": false,
-  "findings": "Models generally exhibited more religious bias in English than Hindi. In intersectional gender-religion analysis, a work bias was observed against Muslim females. A violence bias was consistently found against Muslim groups across most models and languages, with Hindi models showing a particularly high violence bias against Muslims. India-specific models (IndicBERT and Muril) showed higher gender bias within the Indian context compared to Western counterparts.",
-  "references": [
-    "Andrea E. Abele, Naomi Ellemers, Susan T. Fiske, Alex Koch, and Vincent Y. Yzerbyt. 2020. Navigating the social world: Toward an integrated framework for evaluating self, individuals, and groups. Psychological review.",
-    "Abubakar Abid, Maheen Farooqi, and James Zou. 2021. Persistent anti-muslim bias in large language models. In Proceedings of the 2021 AAAI/ACM Conference on AI, Ethics, and Society, AIES '21, page 298–306, New York, NY, USA. Association for Computing Machinery.",
-    "B.R. Ambedkar. 2014. Annihilation of Caste: The Annotated Critical Edition. Verso Books.",
-    "Emily M. Bender, Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. 2021. On the dangers of stochastic parrots: Can language models be too big? In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, FAccT '21, page 610–623, New York, NY, USA. Association for Computing Machinery.",
-    "Shaily Bhatt, Sunipa Dev, Partha Talukdar, Shachi Dave, and Vinodkumar Prabhakaran. 2022. Re-contextualizing fairness in NLP: The case of India. In Proceedings of the 2nd Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics and the 12th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 727–740, Online only. Association for Computational Linguistics.",
-    "Su Lin Blodgett, Solon Barocas, Hal Daumé III, and Hanna Wallach. 2020. Language (technology) is power: A critical survey of \"bias\" in NLP. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5454-5476, Online. Association for Computational Linguistics.",
-    "Su Lin Blodgett, Gilsinia Lopez, Alexandra Olteanu, Robert Sim, and Hanna Wallach. 2021. Stereotyping Norwegian salmon: An inventory of pitfalls in fairness benchmark datasets. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 1004–1015, Online. Association for Computational Linguistics.",
-    "Tolga Bolukbasi, Kai-Wei Chang, James Zou, Venkatesh Saligrama, and Adam Kalai. 2016. Man is to computer programmer as woman is to homemaker? debiasing word embeddings.",
-    "Aylin Caliskan, Joanna J. Bryson, and Arvind Narayanan. 2017. Semantics derived automatically from language corpora contain human-like biases. Science, 356(6334):183–186.",
-    "Alexis Conneau, Kartikay Khandelwal, Naman Goyal, Vishrav Chaudhary, Guillaume Wenzek, Francisco Guzmán, Edouard Grave, Myle Ott, Luke Zettlemoyer, and Veselin Stoyanov. 2020. Unsupervised cross-lingual representation learning at scale.",
-    "Thomas A. de Souza. 1977. Regional and communal stereotypes of bombay university students. Indian Journal of Social Work, 38(1):37–44.",
-    "Alexandra DeLucia, Shijie Wu, Aaron Mueller, Carlos Aguirre, Philip Resnik, and Mark Dredze. 2022. Bernice: A multilingual pre-trained encoder for twitter. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, EMNLP 2022, Abu Dhabi, United Arab Emirates, December 7-11, 2022, pages 6191–6205. Association for Computational Linguistics.",
-    "Sumanth Doddapaneni, Rahul Aralikatte, Gowtham Ramesh, Shreya Goyal, Mitesh M. Khapra, Anoop Kunchukuttan, and Pratyush Kumar. 2023. Towards leaving no indic language behind: Building monolingual corpora, benchmark and models for indic languages.",
-    "António Filipe Fonseca, Sohhom Bandyopadhyay, Jorge Louçã, and Jaison A. Manjaly. 2019. Caste in the news: A computational analysis of indian newspapers. Social Media + Society, 5(4):2056305119896057.",
-    "M. Hammersley and R. Gomm. 1997. Bias in social research. Sociological Research Online, 2(1):7–19.",
-    "Thongkholal Haokip. 2021. From 'chinky' to 'coronavirus': racism against northeast indians during the covid-19 pandemic. Asian Ethnicity, 22(2):353–373.",
-    "Akshita Jha, Aida Davani, Chandan K. Reddy, Shachi Dave, Vinodkumar Prabhakaran, and Sunipa Dev. 2023. Seegull: A stereotype benchmark with broad geo-cultural coverage leveraging generative models.",
-    "Shengyu Jia, Tao Meng, Jieyu Zhao, and Kai-Wei Chang. 2020. Mitigating gender bias amplification in distribution by posterior regularization. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 2936–2942, Online. Association for Computational Linguistics.",
-    "Albert Q. Jiang, Alexandre Sablayrolles, Arthur Mensch, Chris Bamford, Devendra Singh Chaplot, Diego de las Casas, Florian Bressand, Gianna Lengyel, Guillaume Lample, Lucile Saulnier, Lélio Renard Lavaud, Marie-Anne Lachaux, Pierre Stock, Teven Le Scao, Thibaut Lavril, Thomas Wang, Timothée Lacroix, and William El Sayed. 2023. Mistral 7b.",
-    "Damni Kain, Shivangi Narayan, Torsha Sarkar, and Gurshabad Grover. 2021. Online caste-hate speech: Pervasive discrimination and humiliation on social media.",
-    "Simran Khanuja, Diksha Bansal, Sarvesh Mehtani, Savya Khosla, Atreyee Dey, Balaji Gopalan, Dilip Kumar Margam, Pooja Aggarwal, Rajiv Teja Nagipogu, Shachi Dave, Shruti Gupta, Subhash Chandra Bose Gali, Vish Subramanian, and Partha Talukdar. 2021. Muril: Multilingual representations for indian languages.",
-    "Pranjali Kureel. 2021. Indian media and caste: Of politics, portrayals and beyond. CASTE / A Global Journal on Social Exclusion, 2(1):97–108.",
-    "Mascha Kurpicz-Briki. 2020. Cultural differences in bias? origin and gender bias in pre-trained german and french word embeddings.",
-    "John Lalor, Yi Yang, Kendall Smith, Nicole Forsgren, and Ahmed Abbasi. 2022. Benchmarking intersectional biases in NLP. In Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 3598–3609, Seattle, United States. Association for Computational Linguistics.",
-    "Anne Lauscher, Rafik Takieddin, Simone Paolo Ponzetto, and Goran Glavaš. 2020. AraWEAT: Multidimensional analysis of biases in Arabic word embeddings. In Proceedings of the Fifth Arabic Natural Language Processing Workshop.",
-    "Vijit Malik, Sunipa Dev, Akihiro Nishi, Nanyun Peng, and Kai-Wei Chang. 2022. Socially aware bias measurements for hindi language representations.",
-    "Thomas Manzini, Lim Yao Chong, Alan W Black, and Yulia Tsvetkov. 2019. Black is to criminal as caucasian is to police: Detecting and removing multiclass bias in word embeddings. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies,.",
-    "Chandler May, Alex Wang, Shikha Bordia, Samuel R. Bowman, and Rachel Rudinger. 2019. On measuring social biases in sentence encoders. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies.",
-    "Duncan McDuie-Ra. 2012. Northeast migrants in Delhi: Race, refuge and retail. Amsterdam University Press.",
-    "Marzieh Mozafari, Reza Farahbakhsh, and Noël Crespi. 2020. Hate speech detection and racial bias mitigation in social media based on bert model. PLOS ΟΝΕ, 15:1–26.",
-    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2021. StereoSet: Measuring stereotypical bias in pretrained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 5356–5371, Online. Association for Computational Linguistics.",
-    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R. Bowman. 2020. CrowS-pairs: A challenge dataset for measuring social biases in masked language models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1953–1967, Online. Association for Computational Linguistics.",
-    "Aurélie Névéol, Yoann Dupont, Julien Bezançon, and Karën Fort. 2022. French CrowS-pairs: Extending a challenge dataset for measuring social bias in masked language models to a language other than English. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 8521–8531, Dublin, Ireland. Association for Computational Linguistics.",
-    "Arun K. Pujari, Ansh Mittal, Anshuman Padhi, Anshul Jain, Mukesh Jadon, and Vikas Kumar. 2020. Debias-ing gender biased hindi words with word-embedding. In Proceedings of the 2019 2nd International Conference on Algorithms, Computing and Artificial Intelligence, ACAI '19, page 450–456, New York, NY, USA. Association for Computing Machinery.",
-    "Ashwin Rajadesingan, Ramaswami Mahalingam, and David Jurgens. 2019. Smart, responsible, and upper caste only: measuring caste attitudes through large-scale analysis of matrimonial profiles. In Proceedings of the International AAAI Conference on Web and Social Media, volume 13, pages 393–404.",
-    "Nidhi Sabharwal and Wandana Sonalkar. 2015. Dalit women in india: At the crossroads of gender, class, and caste. Global justice: Theory, Practice, Rhetoric, 8.",
-    "Nihar Sahoo, Himanshu Gupta, and Pushpak Bhattacharyya. 2022. Detecting unintended social bias in toxic language datasets. In Proceedings of the 26th Conference on Computational Natural Language Learning (CoNLL), pages 132–143, Abu Dhabi, United Arab Emirates (Hybrid). Association for Computational Linguistics.",
-    "Nihar Sahoo, Niteesh Mallela, and Pushpak Bhattacharyya. 2023. With prejudice to none: A few-shot, multilingual transfer learning approach to detect social bias in low resource languages. In Findings of the Association for Computational Linguistics: ACL 2023, pages 13316–13330, Toronto, Canada. Association for Computational Linguistics.",
-    "Nithya Sambasivan, Erin Arnesen, Ben Hutchinson, Tulsee Doshi, and Vinodkumar Prabhakaran. 2021. Re-imagining algorithmic fairness in india and beyond.",
-    "Manuela Sanguinetti, Gloria Comandini, Elisa Nuovo, Simona Frenda, Marco Stranisci, Cristina Bosco, Tommaso Caselli, Viviana Patti, and Irene Russo. 2020. Haspeede 2 @ evalita2020: Overview of the evalita 2020 hate speech detection task.",
-    "Beatrice Savoldi, Marco Gaido, Luisa Bentivogli, Matteo Negri, and Marco Turchi. 2021. Gender Bias in Machine Translation. Transactions of the Association for Computational Linguistics, 9:845–874.",
-    "Emily Sheng, Kai-Wei Chang, Premkumar Natarajan, and Nanyun Peng. 2021. Societal biases in language generation: Progress and challenges.",
-    "Oleh Shliazhko, Alena Fenogenova, Maria Tikhonova, Vladislav Mikhailov, Anastasia Kozlova, and Tatiana Shavrina. 2023. mgpt: Few-shot learners go multilingual.",
-    "Sandhya Singh, Prapti Roy, Nihar Sahoo, Niteesh Mallela, Himanshu Gupta, Pushpak Bhattacharyya, Milind Savagaonkar, Nidhi Sultan, Roshni Ramnani, Anutosh Maitra, and Shubhashis Sengupta. 2022. Hollywood identity bias dataset: A context oriented bias analysis of movie dialogues. In Proceedings of the Thirteenth Language Resources and Evaluation Conference, pages 5274–5285, Marseille, France. European Language Resources Association.",
-    "Yi Chern Tan and L. Elisa Celis. 2019. Assessing social and intersectional biases in contextualized word representations.",
-    "NLLB Team, Marta R. Costa-jussà, James Cross, Onur Çelebi, Maha Elbayad, Kenneth Heafield, Kevin Heffernan, Elahe Kalbassi, Janice Lam, Daniel Licht, Jean Maillard, Anna Sun, Skyler Wang, Guillaume Wenzek, Al Youngblood, Bapi Akula, Loic Barrault, Gabriel Mejia Gonzalez, Prangthip Hansanti, John Hoffman, Semarley Jarrett, Kaushik Ram Sadagopan, Dirk Rowe, Shannon Spruit, Chau Tran, Pierre Andrews, Necip Fazil Ayan, Shruti Bhosale, Sergey Edunov, Angela Fan, Cynthia Gao, Vedanuj Goswami, Francisco Guzmán, Philipp Koehn, Alexandre Mourachko, Christophe Ropers, Safiyyah Saleem, Holger Schwenk, and Jeff Wang. 2022. No language left behind: Scaling human-centered machine translation.",
-    "Hugo Touvron, Louis Martin, and Llama 2 Team. 2023. Llama 2: Open foundation and fine-tuned chat models.",
-    "Thomas Wolf, Lysandre Debut, Victor Sanh, Julien Chaumond, Clement Delangue, Anthony Moi, Pierric Cistac, Tim Rault, Rémi Louf, Morgan Funtowicz, Joe Davison, Sam Shleifer, Patrick von Platen, Clara Ma, Yacine Jernite, Julien Plu, Canwen Xu, Teven Le Scao, Sylvain Gugger, Mariama Drame, Quentin Lhoest, and Alexander M. Rush. 2020. Huggingface's transformers: State-of-the-art natural language processing.",
-    "BigScience Workshop and Bloom Team. 2023. Bloom: A 176b-parameter open-access multilingual language model.",
-    "Linting Xue, Noah Constant, Adam Roberts, Mihir Kale, Rami Al-Rfou, Aditya Siddhant, Aditya Barua, and Colin Raffel. 2021. mt5: A massively multilingual pre-trained text-to-text transformer.",
-    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang. 2017. Men also like shopping: Reducing gender bias amplification using corpus-level constraints. In Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing.",
-    "Caleb Ziems, Jane Yu, Yi-Chia Wang, Alon Halevy, and Diyi Yang. 2022. The moral integrity corpus: A benchmark for ethical dialogue systems. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 3755–3773, Dublin, Ireland. Association for Computational Linguistics."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

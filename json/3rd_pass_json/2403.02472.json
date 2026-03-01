@@ -2,39 +2,73 @@
   "filename": "2403.02472.pdf",
   "title": "OffensiveLang: A Community Based Implicit Offensive Language Dataset",
   "arxiv_url": "https://arxiv.org/pdf/2403.02472",
-  "bias_targets": [
-    {
-      "target": "Racial and Ethnic bias",
-      "methodology": "Generating implicit offensive language targeting various racial and ethnic groups using ChatGPT, annotating the text via human crowdworkers and LLMs, and evaluating the detection performance of models like BERT and RoBERTa."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Generating implicit offensive language targeting religious identities (e.g., Atheist, Christian, Hindu, Jew, Muslim, Buddhist) using ChatGPT, comparing human and LLM annotations, and evaluating model detection capabilities."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Generating implicit offensive language targeting cognitive, mental, physical, and speech disabilities using ChatGPT, comparing human and LLM annotations, and evaluating model detection capabilities."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Generating implicit offensive language targeting gender identities (e.g., Man, Woman, Non-Binary) using ChatGPT, comparing human and LLM annotations, and evaluating model detection capabilities."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Generating implicit offensive language targeting sexual orientations (e.g., Gay, Lesbian) using ChatGPT, comparing human and LLM annotations, and evaluating model detection capabilities."
-    },
-    {
-      "target": "Dietary bias",
-      "methodology": "Generating implicit offensive language targeting dietary lifestyles (e.g., Vegan, Vegetarian, Non-Vegetarian) using ChatGPT, comparing human and LLM annotations, and evaluating model detection capabilities."
-    },
-    {
-      "target": "Appearance and Body structure bias",
-      "methodology": "Generating implicit offensive language targeting physical attributes (e.g., Fat, Skinny, Tall, Short) using ChatGPT, comparing human and LLM annotations, and evaluating model detection capabilities."
-    },
-    {
-      "target": "Occupational bias",
-      "methodology": "Generating implicit offensive language targeting specific professions (e.g., Farmer, Janitor, Waitress, Actor) using ChatGPT, comparing human and LLM annotations, and evaluating model detection capabilities."
-    }
+  "religious_groups": [
+    "Atheist",
+    "Christian",
+    "Hindu",
+    "Jew",
+    "Muslim",
+    "Buddhist"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "ChatGPT 3.5",
+    "TF-IDF with SVM",
+    "BERT",
+    "RoBERTa",
+    "DistilBERT",
+    "voyage-large-2-instruct",
+    "gte-large-en-v1.5",
+    "voyage-lite-2-instruct"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "The paper created the OffensiveLang dataset which includes a 'Religious Belief' category covering Atheists, Christians, Hindus, Jews, Muslims, and Buddhists. A key finding was the discrepancy between human and ChatGPT annotations for religious content. For instance, a statement stereotyping South Asian religious practices was labeled offensive by ChatGPT for its generalization, whereas human annotators did not label it as such. This highlights differing interpretations of what constitutes offensive stereotyping. The paper evaluates several models on the full dataset, with BERT achieving the highest Macro F1 score, but does not provide a performance breakdown specific to the religious category.",
+  "references": [
+    "MS Windows NT kernel description. https: //www.oxfordlearnersdictionaries.com/us/ definition/english/offensive_1. Accessed: 2010-09-30.",
+    "Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, et al. 2020. Language models are few-shot learners. Advances in neural information processing systems, 33:1877–1901.",
+    "Yupeng Chang, Xu Wang, Jindong Wang, Yuan Wu, Linyi Yang, Kaijie Zhu, Hao Chen, Xiaoyuan Yi, Cunxiang Wang, Yidong Wang, et al. 2023. A survey on evaluation of large language models. ACM Transactions on Intelligent Systems and Technology.",
+    "Yutian Chen, Hao Kang, Vivian Zhai, Liangze Li, Rita Singh, and Bhiksha Ramakrishnan. 2023. Gpt-sentinel: Distinguishing human and chatgpt gener-ated content. arXiv preprint arXiv:2305.07969.",
+    "Ke-Li Chiu, Annie Collins, and Rohan Alexander. 2021. Detecting hate speech with gpt-3. arXiv preprint arXiv:2103.12407.",
+    "Amit Das, Mostafa Rahgouy, Zheng Zhang, Tathagata Bhattacharya, Gerry Dozier, and Cheryl D Seals. 2023. Online sexism detection and classification by injecting user gender information. In 2023 IEEE International Conference on Artificial Intelligence, Blockchain, and Internet of Things (AIBThings), pages 1–5. IEEE.",
+    "Thomas Davidson, Dana Warmsley, Michael Macy, and Ingmar Weber. 2017. Automated hate speech de- tection and the problem of offensive language. In Proceedings of the international AAAI conference on web and social media, volume 11, pages 512–515.",
+    "Joe Davison, Joshua Feldman, and Alexander M Rush. 2019. Commonsense knowledge mining from pre- trained models. In Proceedings of the 2019 con- ference on empirical methods in natural language processing and the 9th international joint conference on natural language processing (EMNLP-IJCNLP), pages 1173–1178.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2018. Bert: Pre-training of deep bidirectional transformers for language understand- ing. arXiv preprint arXiv:1810.04805.",
+    "Mai ElSherief, Caleb Ziems, David Muchlinski, Vaish- navi Anupindi, Jordyn Seybolt, Munmun De Choud- hury, and Diyi Yang. 2021. Latent hatred: A bench- mark for understanding implicit hate speech. arXiv preprint arXiv:2109.05322.",
+    "Paula Fortuna and Sérgio Nunes. 2018. A survey on automatic detection of hate speech in text. ACM Computing Surveys (CSUR), 51(4):1–30.",
+    "Tianyu Gao, Adam Fisch, and Danqi Chen. 2020. Making pre-trained language models better few-shot learners. arXiv preprint arXiv:2012.15723.",
+    "Xiaochuang Han and Yulia Tsvetkov. 2020. Fortifying toxic speech detectors against veiled toxicity. arXiv preprint arXiv:2010.03154.",
+    "Thomas Hartvigsen, Saadia Gabriel, Hamid Palangi, Maarten Sap, Dipankar Ray, and Ece Kamar. 2022. Toxigen: A large-scale machine-generated dataset for adversarial and implicit hate speech detection. arXiv preprint arXiv:2203.09509.",
+    "Xinlei He, Savvas Zannettou, Yun Shen, and Yang Zhang. 2023. You only prompt once: On the capabilities of prompt learning on large language models to tackle toxic content. arXiv preprint arXiv:2308.05596.",
+    "Fan Huang, Haewoon Kwak, and Jisun An. 2023. Is chatgpt better than human annotators? potential and limitations of chatgpt in explaining implicit hate speech. arXiv preprint arXiv:2302.07736.",
+    "Karen Sparck Jones. 1972. A statistical interpretation of term specificity and its application in retrieval. Journal of documentation, 28(1):11–21.",
+    "Jacob Devlin Ming-Wei Chang Kenton and Lee Kristina Toutanova. 2019. Bert: Pre-training of deep bidirec- tional transformers for language understanding. In Proceedings of naacL-HLT, volume 1, page 2.",
+    "Lingyao Li, Lizhou Fan, Shubham Atreja, and Libby Hemphill. 2023a. “hot” chatgpt: The promise of chatgpt in detecting and discriminating hateful, of- fensive, and toxic comments on social media. arXiv preprint arXiv:2304.10619.",
+    "Zehan Li, Xin Zhang, Yanzhao Zhang, Dingkun Long, Pengjun Xie, and Meishan Zhang. 2023b. Towards general text embeddings with multi-stage contrastive learning. arXiv preprint arXiv:2308.03281.",
+    "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Man- dar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. 2019. Roberta: A robustly optimized bert pretraining ap- proach. arXiv preprint arXiv:1907.11692.",
+    "Binny Mathew, Punyajoy Saha, Seid Muhie Yimam, Chris Biemann, Pawan Goyal, and Animesh Mukher- jee. 2021. Hatexplain: A benchmark dataset for ex- plainable hate speech detection. In Proceedings of the AAAI conference on artificial intelligence, vol- ume 35, pages 14867–14875.",
+    "Jing Qian, Mai ElSherief, Elizabeth M Belding, and William Yang Wang. 2018. Leveraging intra-user and inter-user representation learning for automated hate speech detection. arXiv preprint arXiv:1804.03124.",
+    "Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sas- try, Amanda Askell, Pamela Mishkin, Jack Clark, et al. 2021. Learning transferable visual models from natural language supervision. In International confer- ence on machine learning, pages 8748–8763. PMLR.",
+    "Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, Ilya Sutskever, et al. 2019. Language models are unsupervised multitask learners. OpenAI blog, 1(8):9.",
+    "Amir H Razavi, Diana Inkpen, Sasha Uritsky, and Stan Matwin. 2010. Offensive language detection using multi-level classification. In Advances in Artificial Intelligence: 23rd Canadian Conference on Artificial Intelligence, Canadian AI 2010, Ottawa, Canada, May 31–June 2, 2010. Proceedings 23, pages 16–27. Springer.",
+    "Victor Sanh, Lysandre Debut, Julien Chaumond, and Thomas Wolf. 2019. Distilbert, a distilled version of bert: smaller, faster, cheaper and lighter. arXiv preprint arXiv:1910.01108.",
+    "Timo Schick and Hinrich Schütze. 2020a. Exploit- ing cloze questions for few shot text classification and natural language inference. arXiv preprint arXiv:2001.07676.",
+    "Timo Schick and Hinrich Schütze. 2020b. It’s not just size that matters: Small language models are also few-shot learners. arXiv preprint arXiv:2009.07118.",
+    "Roy Schwartz, Maarten Sap, Ioannis Konstas, Li Zilles, Yejin Choi, and Noah A Smith. 2017. The effect of different writing tasks on linguistic style: A case study of the roc story cloze task. arXiv preprint arXiv:1702.01841.",
+    "Alon Talmor, Yanai Elazar, Yoav Goldberg, and Jonathan Berant. 2020. olmpics-on what language model pre-training captures. Transactions of the As- sociation for Computational Linguistics, 8:743–758.",
+    "Voyage AI. 2024. Voyage-large-2 instructions. https: //docs.voyageai.com/docs/embeddings. Ac- cessed: 2024-06-15.",
+    "Michael Wiegand, Melanie Siegel, and Josef Ruppen- hofer. 2018. Overview of the germeval 2018 shared task on the identification of offensive language.",
+    "Peipeng Yu, Jiahan Chen, Xuan Feng, and Zhihua Xia. 2023. Cheat: A large-scale dataset for de- tecting chatgpt-written abstracts. arXiv preprint arXiv:2304.12008.",
+    "Marcos Zampieri, Shervin Malmasi, Preslav Nakov, Sara Rosenthal, Noura Farra, and Ritesh Kumar. 2019a. Predicting the type and target of of- fensive posts in social media. arXiv preprint arXiv:1902.09666.",
+    "Marcos Zampieri, Shervin Malmasi, Preslav Nakov, Sara Rosenthal, Noura Farra, and Ritesh Kumar. 2019b. Semeval-2019 task 6: Identifying and catego- rizing offensive language in social media (offenseval). arXiv preprint arXiv:1903.08983.",
+    "Kaiyang Zhou, Jingkang Yang, Chen Change Loy, and Ziwei Liu. 2022. Conditional prompt learning for vision-language models. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pat- tern Recognition, pages 16816–16825.",
+    "Yiming Zhu, Peixian Zhang, Ehsan-Ul Haq, Pan Hui, and Gareth Tyson. 2023. Can chatgpt reproduce human-generated labels? a study of social computing tasks. arXiv preprint arXiv:2304.10145."
+  ],
+  "measurement_description": "Detection of implicit offensive language and stereotypes targeting specific religious groups. The benchmark measures a model's ability to classify text as 'offensive' or 'not offensive' in the context of a given religious group."
 }

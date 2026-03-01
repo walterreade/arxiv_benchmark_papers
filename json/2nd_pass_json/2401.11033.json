@@ -2,95 +2,47 @@
   "filename": "2401.11033.pdf",
   "title": "FAIR ENOUGH: DEVELOP AND ASSESS A FAIR-COMPLIANT DATASET FOR LARGE LANGUAGE MODEL TRAINING?",
   "arxiv_url": "https://arxiv.org/pdf/2401.11033",
-  "benchmark_measurement": "The benchmark was designed to detect and mitigate linguistic biases, including a specific dimension for 'Religious Bias' as part of a broader analysis of social biases in text.",
-  "religious_groups": [],
-  "models_tested": [
-    "BERT-large-uncased",
-    "RoBERTa-large-uncased",
-    "BERT-base-uncased",
-    "LLaMa2 (7b-chat-hf)",
-    "LLaMa 2B Chat"
+  "bias_targets": [
+    {
+      "target": "Age bias",
+      "methodology": "AI-assisted preliminary screening and human expert annotation of news articles, followed by evaluation using fine-tuned bias, sentiment, and toxicity classifiers pre- and post-debiasing interventions."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "AI-assisted preliminary screening and human expert annotation of news articles, followed by evaluation using fine-tuned bias, sentiment, and toxicity classifiers pre- and post-debiasing interventions."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "AI-assisted preliminary screening and human expert annotation of news articles, followed by evaluation using fine-tuned bias, sentiment, and toxicity classifiers pre- and post-debiasing interventions."
+    },
+    {
+      "target": "Racial and Ethnic bias",
+      "methodology": "AI-assisted preliminary screening and human expert annotation of news articles, followed by evaluation using fine-tuned bias, sentiment, and toxicity classifiers pre- and post-debiasing interventions."
+    },
+    {
+      "target": "Health and Disability bias",
+      "methodology": "AI-assisted preliminary screening and human expert annotation of news articles, followed by evaluation using fine-tuned bias, sentiment, and toxicity classifiers pre- and post-debiasing interventions."
+    },
+    {
+      "target": "Political bias",
+      "methodology": "AI-assisted preliminary screening and human expert annotation of news articles, followed by evaluation using fine-tuned bias, sentiment, and toxicity classifiers pre- and post-debiasing interventions."
+    },
+    {
+      "target": "Occupational bias",
+      "methodology": "AI-assisted preliminary screening and human expert annotation of news articles, followed by evaluation using fine-tuned bias, sentiment, and toxicity classifiers pre- and post-debiasing interventions."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "AI-assisted preliminary screening and human expert annotation of news articles, followed by evaluation using fine-tuned bias, sentiment, and toxicity classifiers pre- and post-debiasing interventions."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "AI-assisted preliminary screening and human expert annotation of news articles, followed by evaluation using fine-tuned bias, sentiment, and toxicity classifiers pre- and post-debiasing interventions."
+    },
+    {
+      "target": "Educational bias",
+      "methodology": "AI-assisted preliminary screening and human expert annotation of news articles, followed by evaluation using fine-tuned bias, sentiment, and toxicity classifiers pre- and post-debiasing interventions."
+    }
   ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short",
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [],
-  "continuous_testing": true,
-  "findings": "The paper developed a FAIR-compliant dataset that includes a dimension for 'Religious Bias'. In the inter-annotator agreement analysis, 'Religious Bias' had a moderate agreement score of approximately 0.5, which was lower than the agreement for 'Socioeconomic Bias' and 'Gender Bias' but higher than for 'Disability Bias'.",
-  "references": [
-    "Celia Alvarez-Romero, Silvia Rodríguez-Mejias, and CF Parra-Calderón. Desiderata for the data governance and fair principles adoption in health data hubs, 2023.",
-    "Reghu Anguswamy and William B Frakes. A study of reusability, complexity, and reuse design principles. In Proceedings of the ACM-IEEE international symposium on Empirical software engineering and measurement, pages 161–164, 2012.",
-    "Myles Axton, Arie Baak, Niklas Blomberg, Jan-Willem Boiten, Luiz Bonino da Silva Santos, Philip E Bourne, Jildau Bouwman, Anthony J Brookes, Tim Clark, et al. The fair guiding principles for scientific data management and stewardship. Scientific data, 3:160018, 2016.",
-    "Haoli Bai, Lu Hou, Lifeng Shang, Xin Jiang, Irwin King, and Michael R Lyu. Towards efficient post-training quantization of pre-trained language models. Advances in Neural Information Processing Systems, 35:1405–1418, 2022.",
-    "Soumya Barikeri, Anne Lauscher, Ivan Vulić, and Goran Glavaš. Redditbias: A real-world resource for bias evaluation and debiasing of conversational language models. arXiv preprint arXiv:2106.03521, 2021.",
-    "A. Bateni, Matthew Chan, and Ray John Eitel-Porter. Ai fairness: from principles to practice. arXiv, 2022. doi:10.48550/arXiv.2207.09833. URL http://arxiv.org/pdf/2207.09833.",
-    "Emily M Bender, Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. On the dangers of stochastic parrots: Can language models be too big? In Proceedings of the 2021 ACM conference on fairness, accountability, and transparency, pages 610–623, 2021.",
-    "César Bernabé, Tiago Prince Sales, Erik Schultes, Niek van Ulzen, Annika Jacobsen, Luiz Olavo Bonino da Silva Santos, Barend Mons, and Marco Roos. A goal-oriented method for fairification planning. 2023. URL https://www.researchsquare.com/article/rs-3092538/v1.",
-    "Martin Boeckhout, Gerhard A Zielhuis, and Annelien L Bredenoord. The fair guiding principles for data stewardship: fair enough? European journal of human genetics, 26(7):931–936, 2018.",
-    "Yupeng Chang, Xu Wang, Jindong Wang, Yuan Wu, Kaijie Zhu, Hao Chen, Linyi Yang, Xiaoyuan Yi, Cunxiang Wang, Yidong Wang, et al. A survey on evaluation of large language models. arXiv preprint arXiv:2307.03109, 2023.",
-    "Xiaoli Chen and Martin Jagerhorn. Implementing fair workflows along the research lifecycle. Procedia Computer Science, 211:83–92, 2022.",
-    "Yufan Chen, Arjun Arunasalam, and Z Berkay Celik. Can large language models provide security & privacy advice? measuring the ability of llms to refute misconceptions. In Proceedings of the 39th Annual Computer Security Applications Conference, pages 366–378, 2023.",
-    "Creative Commons. Creative commons attribution-noncommercial 4.0 international license. https:// creativecommons.org/licenses/by-nc/4.0/, 2023. Accessed on 2023-12-10.",
-    "LO Bonino da Silva Santos, Mark D Wilkinson, Arnold Kuzniar, Rajaram Kaliyaperumal, Mark Thompson, Michel Dumontier, and Kees Burger. Fair data points supporting big data interoperability. Enterprise Interoperability in the Digitized and Networked Factory of the Future. ISTE, London, pages 270–279, 2016.",
-    "Advait Deshpande and Helen Sharp. Responsible ai systems: Who are the stakeholders? In Proceedings of the 2022 AAAI/ACM Conference on AI, Ethics, and Society, pages 227–236, 2022.",
-    "Keranda Dungkek. Fair principles for data and ai models in high energy physics research and education. arXiv, 2022. doi:10.48550/arxiv.2211.15021. URL http://arxiv.org/pdf/2211.15021.",
-    "Alastair Dunning, Madeleine De Smaele, and Jasmin Böhmer. Are the fair data principles fair? International Journal of digital curation, 12(2):177–195, 1970.",
-    "Mark Findlay and Josephine Seah. An ecosystem approach to ethical ai and data use: experimental reflections. In 2020 IEEE/ITU international conference on artificial intelligence for good (AI4G), pages 192–197. IEEE, 2020.",
-    "Fabrizio Gilardi, Meysam Alizadeh, and Maël Kubli. Chatgpt outperforms crowd workers for text-annotation tasks. Proceedings of the National Academy of Sciences, 120(30):e2305016120, 2023.",
-    "Andrew Götz. The fair principles: Trusting in fair data repositories. Open Access Government, 2023. URL https: //typeset.io/papers/the-fair-principles-trusting-in-fair-data-repositories-fzp529uf.",
-    "Ali Hasnain and Dietrich Rebholz-Schuhmann. Assessing fair data principles against the 5-star open data principles. In The Semantic Web: ESWC 2018 Satellite Events: ESWC 2018 Satellite Events, Heraklion, Crete, Greece, June 3-7, 2018, Revised Selected Papers 15, pages 469–477. Springer, 2018.",
-    "Yongqun He, Zuoshuang Xiang, Jie Zheng, Yu Lin, James A Overton, and Edison Ong. The extensible ontology development (xod) principles and tool implementation to support ontology interoperability. Journal of biomedical semantics, 9:1–10, 2018.",
-    "Zhankui He, Zhouhang Xie, Rahul Jha, Harald Steck, Dawen Liang, Yesu Feng, Bodhisattwa Prasad Majumder, Nathan Kallus, and Julian McAuley. Large language models as zero-shot conversational recommenders. In Proceedings of the 32nd ACM international conference on information and knowledge management, pages 720–730, 2023.",
-    "E. A. Huerta, Ben Blaiszik, L. Catherine Brinson, Kristofer E. Bouchard, Daniel Diaz, Caterina Doglioni, Javier M. Duarte, Murali Emani, Ian Foster, Geoffrey Fox, Philip Harris, Lukas Heinrich, Shantenu Jha, Daniel S. Katz, Volodymyr Kindratenko, Christine R. Kirkpatrick, Kati Lassila-Perini, Ravi K. Madduri, Mark S. Neubauer, Fotis E. Psomopoulos, Avik Roy, Oliver Rübel, Zhizhen Zhao, and Ruike Zhu. Fair for ai: An interdisci- plinary and international community building perspective. Scientific Data, 10(1), July 2023. ISSN 2052-4463. doi:10.1038/s41597-023-02298-6. URL http://dx.doi.org/10.1038/s41597-023-02298-6.",
-    "Esther Thea Inau, Jean Sack, Dagmar Waltemath, and Atinkut Alamirrew Zeleke. Initiatives, concepts, and implementation practices of fair (findable, accessible, interoperable, and reusable) data principles in health data stewardship practice: protocol for a scoping review. JMIR research protocols, 10(2):e22505, 2021.",
-    "Esther Thea Inau, Jean Sack, Dagmar Waltemath, and Atinkut Alamirrew Zeleke. Initiatives, concepts, and implementation practices of the findable, accessible, interoperable, and reusable data principles in health data stewardship: Scoping review. Journal of Medical Internet Research, 25:e45013, 2023.",
-    "Annika Jacobsen, Ricardo de Miranda Azevedo, Nick Juty, Dominique Batista, Simon Coles, Ronald Cornet, Mélanie Courtot, Mercè Crosas, Michel Dumontier, Chris T Evelo, et al. Fair principles: interpretations and implementation considerations, 2020.",
-    "Nina Jeliazkova, Nikolay Kochev, and Gergana Tancheva. Fair data model for chemical substances: Development challenges, management strategies, and applications. In Data Integrity and Data Governance. IntechOpen, 2023.",
-    "Ziwei Ji, Nayeon Lee, Rita Frieske, Tiezheng Yu, Dan Su, Yan Xu, Etsuko Ishii, Ye Jin Bang, Andrea Madotto, and Pascale Fung. Survey of hallucination in natural language generation. ACM Computing Surveys, 55(12):1–38, 2023.",
-    "Zhengbao Jiang, Frank F Xu, Jun Araki, and Graham Neubig. How can we know what language models know? Transactions of the Association for Computational Linguistics, 8:423–438, 2020.",
-    "Anna Jobin, Marcello Ienca, and Effy Vayena. The global landscape of ai ethics guidelines. Nature machine intelligence, 1(9):389–399, 2019.",
-    "Anna-Lena Lamprecht, Leyla Garcia, Mateusz Kuzak, Carlos Martinez, Ricardo Arcila, Eva Martin Del Pico, Victoria Dominguez Del Angel, Stephanie Van De Sandt, Jon Ison, Paula Andrea Martinez, et al. Towards fair principles for research software. Data Science, 3(1):37–59, 2020.",
-    "Chandler May, Alex Wang, Shikha Bordia, Samuel R. Bowman, and Rachel Rudinger. On measuring social biases in sentence encoders. NAACL HLT, 2019:622–628, 2019.",
-    "Robert Munro Monarch. Human-in-the-Loop Machine Learning: Active learning and annotation for human- centered AI. Simon and Schuster, 2021.",
-    "Moin Nadeem, Anna Bethke, and Siva Reddy. Stereoset: Measuring stereotypical bias in pretrained language models. In ACL-IJCNLP, 1st Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing, pages 2021–59, 2021.",
-    "Eirini Ntoutsi, Pavlos Fafalios, Ujwal Gadiraju, Vasileios Iosifidis, Wolfgang Nejdl, Maria-Esther Vidal, Salvatore Ruggieri, Franco Turini, Symeon Papadopoulos, Emmanouil Krasanakis, et al. Bias in data-driven artificial intelligence systems—an introductory survey. Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery, 10(3):e1356, 2020.",
-    "OpenAI Supplier Code of Ethics. Home, 2024. URL https://openai.com/policies/supplier-code.",
-    "Elena Partescano, Maria Eugenia Molina Jack, Matteo Vinci, Alexia Cociancich, Alessandro Altenburger, Alessandra Giorgetti, and François Galgani. Data quality and fair principles applied to marine litter data in europe. Marine Pollution Bulletin, 168:112965, 2021. doi:10.1016/J.MARPOLBUL.2021.112965. URL https://www.sciencedirect.com/science/article/pii/S0025326X21009991.",
-    "Sebastian Porsdam Mann, Brian D Earp, Nikolaj Møller, Suren Vynn, and Julian Savulescu. Autogen: A personalized large language model for academic enhancement—ethics and proof of principle. The American Journal of Bioethics, 23(10):28–41, 2023.",
-    "Inioluwa Deborah Raji, Emily M Bender, Amandalynne Paullada, Emily Denton, and Alex Hanna. Ai and the everything in the whole wide world benchmark. arXiv preprint arXiv:2111.15366, 2021.",
-    "Surangika Ranathunga, En-Shiun Annie Lee, Marjana Prifti Skenduli, Ravi Shekhar, Mehreen Alam, and Rishemjit Kaur. Neural machine translation for low-resource languages: A survey. ACM Computing Surveys, 55(11):1–37, 2023.",
-    "Ralitsa Raycheva, Kostadin Kostadinov, Elena Mitova, Nataliya Bogoeva, Georgi Iskrov, Georgi Stefanov, and Rumen Stefanov. Challenges in mapping european rare disease databases, relevant for ml-based screening technologies in terms of organizational, fair and legal principles: scoping review. Frontiers in Public Health, 11, 2023.",
-    "Shaina Raza and Chen Ding. Fake news detection based on news content and social contexts: a transformer-based approach. International Journal of Data Science and Analytics, 13(4):335–362, 2022.",
-    "Shaina Raza and Brian Schwartz. Constructing a disease database and using natural language processing to capture and standardize free text clinical information. Scientific Reports, 13(1):8591, 2023.",
-    "Shaina Raza, Deepak John Reji, and Chen Ding. Dbias: detecting biases and ensuring fairness in news articles. International Journal of Data Science and Analytics, pages 1–21, 2022.",
-    "Shaina Raza, Parisa Osivand Pour, and Syed Raza Bashir. Fairness in machine learning meets with equity in healthcare. arXiv preprint arXiv:2305.07041, 2023.",
-    "Shaina Raza, Muskan Garg, Deepak John Reji, Syed Raza Bashir, and Chen Ding. Nbias: A natural language processing framework for bias identification in text. Expert Systems with Applications, 237:121542, 2024.",
-    "Yaara Sadeh, Anna Denejkina, Eirini Karyotaki, Lonneke IM Lenferink, and Nancy Kassam-Adams. Opportunities for improving data sharing and fair data practices to advance global mental health. Cambridge Prisms: Global Mental Health, 10:e14, 2023.",
-    "Luana Sales, Patrícia Henning, Viviane Veiga, Maira Murrieta Costa, Luís Fernando Sayão, Luiz Olavo Bonino da Silva Santos, and Luís Ferreira Pires. Go fair brazil: a challenge for brazilian data science. Data Intelligence, 2 (1-2):238–245, 2020.",
-    "Luiz Olavo Bonino da Silva Santos, Tiago Prince Sales, Claudenir M Fonseca, and Giancarlo Guizzardi. Towards a conceptual model for the fair digital object framework. arXiv preprint arXiv:2302.11894, 2023.",
-    "Erik A Schultes, George O Strawn, Barend Mons, et al. Ready, set, go fair: Accelerating convergence to an internet of fair data and services. DAMDID/RCDL, 19:23, 2018.",
-    "Boaz Shmueli, Jan Fell, Soumya Ray, and Lun-Wei Ku. Beyond fair pay: Ethical implications of nlp crowdsourcing. In North American Chapter of the Association for Computational Linguistics, 2021. doi:10.18653/V1/2021.NAACL-MAIN.295. URL https://aclanthology.org/2021.naacl-main.295/.",
-    "Chandan Singh, Armin Askari, Rich Caruana, and Jianfeng Gao. Augmenting interpretable models with large language models during training. Nature Communications, 14(1):7913, 2023.",
-    "Alexandru Stanciu. Data management plan for healthcare: Following fair principles and addressing cybersecurity aspects. a systematic review using instructgpt. medRxiv, pages 2023–04, 2023.",
-    "Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine Babaei, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, et al. Llama 2: Open foundation and fine-tuned chat models. arXiv e-prints, pages arXiv–2307, 2023.",
-    "TrendFeedr. Large language model (llm) trends. https://trendfeedr.com/blog/ large-language-model-llm-trends/, 2024. Accessed: 2024-01-01.",
-    "Charles Vesteghem, Rasmus Froberg Brøndum, Mads Sønderkær, Mia Sommer, Alexander Schmitz, Julie Støve Bødker, Karen Dybkær, Tarec Christoffer El-Galaly, and Martin Bøgsted. Implementing the FAIR Data Principles in precision oncology: review of supporting initiatives. Briefings in Bioinformatics, 21(3):936–945, 06 2019. ISSN 1477-4054. doi:10.1093/bib/bbz044. URL https://doi.org/10.1093/bib/bbz044.",
-    "Randi Vita, James A Overton, Christopher J Mungall, Alessandro Sette, and Bjoern Peters. Fair principles and the iedb: short-term improvements and a long-term vision of obo-foundry mediated machine-actionable interoperability. Database, 2018:bax105, 2018.",
-    "Minglu Wang and Dany Savard. The fair principles and research data management. Research Data Management in the Canadian Context, 2023.",
-    "Yufei Wang, Wanjun Zhong, Liangyou Li, Fei Mi, Xingshan Zeng, Wenyong Huang, Lifeng Shang, Xin Jiang, and Qun Liu. Aligning large language models with human: A survey. arXiv preprint arXiv:2307.12966, 2023.",
-    "David Wilcox. Supporting fair data principles with fedora. LIBER Quarterly: The Journal of the Association of European Research Libraries, 28(1):1–8, 2018.",
-    "Mark D Wilkinson, Michel Dumontier, IJsbrand Jan Aalbersberg, Gabrielle Appleton, Myles Axton, Arie Baak, Niklas Blomberg, Jan-Willem Boiten, Luiz Bonino da Silva Santos, Philip E Bourne, et al. The fair guiding principles for scientific data management and stewardship. Scientific data, 3(1):1–9, 2016.",
-    "Mark D Wilkinson, Susanna-Assunta Sansone, Erik Schultes, Peter Doorn, Luiz Olavo Bonino da Silva Santos, and Michel Dumontier. A design framework and exemplar metrics for fairness. Scientific data, 5(1):1–4, 2018.",
-    "Michael Wilson, Jackson Petty, and Robert Frank. How abstract is linguistic generalization in large language models? experiments with argument structure. Transactions of the Association for Computational Linguistics, 11: 1377–1395, 2023.",
-    "John Wise, Alexandra Grebe de Barron, Andrea Splendiani, Beeta Balali-Mood, Drashtti Vasant, Eric Little, Gaspare Mellino, Ian Harrow, Ian Smith, Jan Taubert, et al. Implementation and relevance of fair data principles in biopharmaceutical r&d. Drug discovery today, 24(4):933–938, 2019.",
-    "Matthew Wolf, Jeremy Logan, Kshitij Mehta, Daniel Jacobson, Mikaela Cashman, Angelica M Walker, Greg Eisenhauer, Patrick Widener, and Ashley Cliff. Reusability first: Toward fair workflows. In 2021 IEEE International Conference on Cluster Computing (CLUSTER), pages 444–455. IEEE, 2021.",
-    "Zhiheng Xi, Wenxiang Chen, Xin Guo, Wei He, Yiwen Ding, Boyang Hong, Ming Zhang, Junzhe Wang, Senjie Jin, Enyu Zhou, et al. The rise and potential of large language model based agents: A survey. arXiv preprint arXiv:2309.07864, 2023.",
-    "Haiyan Zhao, Hanjie Chen, Fan Yang, Ninghao Liu, Huiqi Deng, Hengyi Cai, Shuaiqiang Wang, Dawei Yin, and Mengnan Du. Explainability for large language models: A survey. arXiv preprint arXiv:2309.01029, 2023.",
-    "Wayne Xin Zhao, Kun Zhou, Junyi Li, Tianyi Tang, Xiaolei Wang, Yupeng Hou, Yingqian Min, Beichen Zhang, Junjie Zhang, Zican Dong, et al. A survey of large language models. arXiv preprint arXiv:2303.18223, 2023."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

@@ -2,84 +2,23 @@
   "filename": "2306.00905.pdf",
   "title": "T2IAT: Measuring Valence and Stereotypical Biases in Text-to-Image Generation",
   "arxiv_url": "https://arxiv.org/pdf/2306.00905",
-  "benchmark_measurement": "Valence bias, specifically the association of religious concepts (Judaism vs. Christianity) with pleasant and unpleasant attributes in generated images.",
-  "religious_groups": [
-    "Judaism",
-    "Christianity"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Calculating differential association scores by comparing the cosine similarity of CLIP image embeddings between images generated from neutral concept prompts (e.g., science vs. arts, career vs. family, various occupations) and images generated from male vs. female attribute-guided prompts."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Using the Text-to-Image Association Test (T2IAT) to measure the association of images generated for European American vs. African American names, as well as light skin vs. dark skin, with pleasant vs. unpleasant valence attributes."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Applying the T2IAT framework to evaluate the differential association of generated images depicting Judaism vs. Christianity with positive (pleasant) and negative (unpleasant) valence attributes."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Measuring the implicit associations of images generated from text prompts targeting straight vs. gay concepts with pleasant vs. unpleasant valence attributes using image embedding cosine similarity."
+    }
   ],
-  "models_tested": [
-    "Stable Diffusion 2.1"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "other"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "Implicit Association Test (IAT)",
-    "Word Embedding Association Test (WEAT)",
-    "Sentence Encoder Association Test (SEAT)",
-    "StereoSet",
-    "CrowS-Pairs"
-  ],
-  "continuous_testing": false,
-  "findings": "The model exhibited a very small effect size (-0.099) and a near-zero differential association score (-0.003) for the Judaism vs. Christianity valence test. This suggests an almost neutral association, with only a slight pleasantness towards Christianity and slight unpleasantness towards Judaism. The paper notes that this finding overturns religion stereotypes previously documented in human IAT tests.",
-  "references": [
-    "Hritik Bansal, Da Yin, Masoud Monajatipoor, and Kai-Wei Chang. 2022. How well can text-to-image generative models understand ethical natural language interventions? ArXiv, abs/2210.15230.",
-    "Rajas Bansal. 2022. A survey on bias and fairness in natural language processing. arXiv preprint arXiv:2204.09591.",
-    "Federico Bianchi, Pratyusha Kalluri, Esin Durmus, Faisal Ladhak, Myra Cheng, Debora Nozza, Tatsunori Hashimoto, Dan Jurafsky, James Zou, and Aylin Caliskan. 2022. Easily accessible text-to-image generation amplifies demographic stereotypes at large scale. arXiv preprint arXiv:2211.03759.",
-    "Abeba Birhane, Vinay Uday Prabhu, and Emmanuel Kahembwe. 2021. Multimodal datasets: misogyny, pornography, and malignant stereotypes. CoRR, abs/2110.01963.",
-    "Tolga Bolukbasi, Kai-Wei Chang, James Zou, Venkatesh Saligrama, and Adam Kalai. 2016. Man is to computer programmer as woman is to homemaker? debiasing word embeddings. In Proceedings of the 30th International Conference on Neural Information Processing Systems, NIPS'16, page 4356-4364, Red Hook, NY, USA. Curran Associates Inc.",
-    "Rishi Bommasani, Kelly Davis, and Claire Cardie. 2020. Interpreting Pretrained Contextualized Representations via Reductions to Static Embeddings. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 4758-4781, Online. Association for Computational Linguistics.",
-    "Joy Buolamwini and Timnit Gebru. 2018. Gender shades: Intersectional accuracy disparities in commercial gender classification. In Conference on fairness, accountability and transparency, pages 77–91. PMLR.",
-    "Kaylee Burns, Lisa Anne Hendricks, Trevor Darrell, and Anna Rohrbach. 2018. Women also snowboard: Overcoming bias in captioning models. In ECCV.",
-    "Aylin Caliskan, Joanna J Bryson, and Arvind Narayanan. 2017. Semantics derived automatically from language corpora contain human-like biases. Science, 356(6334):183–186.",
-    "Huiwen Chang, Han Zhang, Jarred Barber, AJ Maschinot, José Lezama, Lu Jiang, Ming Yang, Kevin P. Murphy, William T. Freeman, Michael Rubinstein, Yuanzhen Li, and Dilip Krishnan. 2023. Muse: Text-to-image generation via masked generative transformers. ArXiv, abs/2301.00704.",
-    "Mark Chen, Alec Radford, Rewon Child, Jeffrey Wu, Heewoo Jun, David Luan, and Ilya Sutskever. 2020a. Generative pretraining from pixels. In International conference on machine learning, pages 1691–1703. PMLR.",
-    "Ting Chen, Simon Kornblith, Mohammad Norouzi, and Geoffrey Hinton. 2020b. A simple framework for contrastive learning of visual representations. In International conference on machine learning, pages 1597-1607. PMLR.",
-    "Jaemin Cho, Abhay Zala, and Mohit Bansal. 2022. Dall-eval: Probing the reasoning skills and social biases of text-to-image generative transformers. CoRR, abs/2202.04053.",
-    "Jinhao Duan, Fei Kong, Shiqi Wang, Xiaoshuang Shi, and Kaidi Xu. 2023. Are diffusion models vulnerable to membership inference attacks?",
-    "Ian Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, and Yoshua Bengio. 2020. Generative adversarial networks. Communications of the ACM, 63(11):139-144.",
-    "Anthony G Greenwald, Debbie E. McGhee, and Jordan L. K. Schwartz. 1998. Measuring individual differences in implicit cognition: the implicit association test. Journal of personality and social psychology, 74 6:1464-80.",
-    "Wei Guo and Aylin Caliskan. 2021. Detecting emergent intersectional biases: Contextualized word embeddings contain a distribution of human-like biases. In Proceedings of the 2021 AAAI/ACM Conference on AI, Ethics, and Society, AIES '21, page 122-133, New York, NY, USA. Association for Computing Machinery.",
-    "Jonathan Ho, Ajay Jain, and Pieter Abbeel. 2020. Denoising diffusion probabilistic models. Advances in Neural Information Processing Systems, 33:6840-6851.",
-    "Hailong Hu and Jun Pang. 2023. Membership inference of diffusion models.",
-    "Eugenia Kim, De'Aira Bryant, Deepak Srikanth, and Ayanna Howard. 2021. Age bias in emotion detection: An analysis of facial emotion recognition performance on young, middle-aged, and older adults. In Proceedings of the 2021 AAAI/ACM Conference on AI, Ethics, and Society, pages 638-644.",
-    "Chandler May, Alex Wang, Shikha Bordia, Samuel R. Bowman, and Rachel Rudinger. 2019. On measuring social biases in sentence encoders. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 622-628, Minneapolis, Minnesota. Association for Computational Linguistics.",
-    "Nicholas Meade, Elinor Poole-Dayan, and Siva Reddy. 2021. An empirical survey of the effectiveness of debiasing techniques for pre-trained language models. arXiv preprint arXiv:2110.08527.",
-    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2020. Stereoset: Measuring stereotypical bias in pretrained language models. arXiv preprint arXiv:2004.09456.",
-    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R Bowman. 2020. Crows-pairs: A challenge dataset for measuring social biases in masked language models. arXiv preprint arXiv:2010.00133.",
-    "Alexander Quinn Nichol, Prafulla Dhariwal, Aditya Ramesh, Pranav Shyam, Pamela Mishkin, Bob Mcgrew, Ilya Sutskever, and Mark Chen. 2022. GLIDE: Towards photorealistic image generation and editing with text-guided diffusion models. In Proceedings of the 39th International Conference on Machine Learning, volume 162 of Proceedings of Machine Learning Research, pages 16784-16804. PMLR.",
-    "Brian A. Nosek, Mahzarin R. Banaji, and Anthony G Greenwald. 2002. Harvesting implicit group attitudes and beliefs from a demonstration web site. Group Dynamics: Theory, Research, and Practice, 6:101–115.",
-    "Brian A. Nosek, Frederick L. Smyth, Jeffrey Jay Hansen, Thierry Devos, Nicole M. Lindner, Kate A Ranganath, Colin Tucker Smith, Kristina R. Olson, and Dolly Chugh. 2007. Pervasiveness and correlates of implicit attitudes and stereotypes. European Review of Social Psychology, 18:36–88.",
-    "Brian A. Nosek, Frederick L. Smyth, Natarajan Sriram, Nicole M. Lindner, Thierry Devos, Alfonso Ayala, Yoav Bar-Anan, Robin Bergh, Huajian Cai, Karen Gonsalkorale, Selin Kesebir, Norbert Maliszewski, Félix Neto, Eero Olli, Jaihyun Park, Konrad Schnabel, Kimihiro Shiomura, Bogdan Tudor Tulbure, Reinout W. Wiers, Mónika Somogyi, Nazar Akrami, Bo Ekehammar, Michelangelo Vianello, Mahzarin R. Banaji, and Anthony G Greenwald. 2009. National differences in gender-science stereotypes predict national sex differences in science and math achievement. Proceedings of the National Academy of Sciences, 106:10593 – 10597.",
-    "OpenAI. 2022. https://openai.com/blog/dall-e-2-extending-creativity/.",
-    "Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, Gretchen Krueger, and Ilya Sutskever. 2021. Learning transferable visual models from natural language supervision. In Proceedings of the 38th International Conference on Machine Learning, volume 139 of Proceedings of Machine Learning Research, pages 8748-8763. PMLR.",
-    "Nina Raemont. 2022. Adobe stock to allow ai-generated images on its service.",
-    "Aditya Ramesh, Prafulla Dhariwal, Alex Nichol, Casey Chu, and Mark Chen. 2022. Hierarchical text-conditional image generation with clip latents.",
-    "Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, and Björn Ommer. 2022. High-resolution image synthesis with latent diffusion models. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 10684-10695.",
-    "Chitwan Saharia, William Chan, Saurabh Saxena, Lala Li, Jay Whang, Emily Denton, Seyed Kamyar Seyed Ghasemipour, Raphael Gontijo-Lopes, Burcu Karagol Ayan, Tim Salimans, Jonathan Ho, David J. Fleet, and Mohammad Norouzi. 2022. Photorealistic text-to-image diffusion models with deep language understanding. In Advances in Neural Information Processing Systems.",
-    "Patrick Schramowski, Manuel Brack, Björn Deiseroth, and Kristian Kersting. 2022. Safe latent diffusion: Mitigating inappropriate degeneration in diffusion models.",
-    "Christoph Schuhmann, Romain Beaumont, Richard Vencu, Cade Gordon, Ross Wightman, Mehdi Cherti, Theo Coombes, Aarush Katta, Clayton Mullis, Mitchell Wortsman, Patrick Schramowski, Srivatsa Kundurthy, Katherine Crowson, Ludwig Schmidt, Robert Kaczmarczyk, and Jenia Jitsev. 2022. Laion-5b: An open large-scale dataset for training next generation image-text models. ArXiv, abs/2210.08402.",
-    "Zeyang Sha, Zheng Li, Ning Yu, and Yang Zhang. 2023. De-fake: Detection and attribution of fake images generated by text-to-image generation models.",
-    "Shreya Shankar, Yoni Halpern, Eric Breck, James Atwood, Jimbo Wilson, and D. Sculley. 2017. No classification without representation: Assessing geodiversity issues in open data sets for the developing world. arXiv: Machine Learning.",
-    "Ryan Steed and Aylin Caliskan. 2021. Image representations learned with unsupervised pre-training contain human-like biases. In Proceedings of the 2021 ACM conference on fairness, accountability, and transparency, pages 701–713.",
-    "Lukas Struppek, Dominik Hintersdorf, Felix Friedrich, Manuel Brack, Patrick Schramowski, and Kristian Kersting. 2023. Exploiting cultural biases via homoglyphs in text-to-image synthesis.",
-    "Shuhan Tan, Yujun Shen, and Bolei Zhou. 2020. Improving the fairness of deep generative models without retraining. arXiv preprint arXiv:2012.04842.",
-    "Konstantinos Tzioumis. 2018. Demographic aspects of first names. Scientific Data, 5.",
-    "Aaron Van Den Oord, Oriol Vinyals, et al. 2017. Neural discrete representation learning. Advances in neural information processing systems, 30.",
-    "Angelina Wang, Alexander Liu, Ryan Zhang, Anat Kleiman, Leslie Kim, Dora Zhao, Iroha Shirai, Arvind Narayanan, and Olga Russakovsky. 2022a. REVISE: A tool for measuring and mitigating bias in visual datasets. International Journal of Computer Vision (IJCV).",
-    "Angelina Wang, Arvind Narayanan, and Olga Russakovsky. 2020. Revise: A tool for measuring and mitigating bias in visual datasets. International Journal of Computer Vision, 130:1790 – 1810.",
-    "Jialu Wang, Yang Liu, and Xin Wang. 2021. Are gender-neutral queries really gender-neutral? mitigating gender bias in image search. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 1995-2008, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics.",
-    "Jialu Wang, Yang Liu, and Xin Wang. 2022b. Assessing multilingual fairness in pre-trained multimodal representations. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2681–2695, Dublin, Ireland. Association for Computational Linguistics.",
-    "Benjamin Wilson, Judy Hoffman, and Jamie Morgenstern. 2019. Predictive inequity in object detection. arXiv preprint arXiv:1902.11097.",
-    "Robert Wolfe, Mahzarin R. Banaji, and Aylin Caliskan. 2022. Evidence for hypodescent in visual semantic ai. In 2022 ACM Conference on Fairness, Accountability, and Transparency, FAccT '22, page 1293–1304, New York, NY, USA. Association for Computing Machinery.",
-    "Yixin Wu, Ning Yu, Zheng Li, Michael Backes, and Yang Zhang. 2022. Membership inference attacks against text-to-image generation models.",
-    "Jiahui Yu, Yuanzhong Xu, Jing Yu Koh, Thang Luong, Gunjan Baid, Zirui Wang, Vijay Vasudevan, Alexander Ku, Yinfei Yang, Burcu Karagol Ayan, Ben Hutchinson, Wei Han, Zarana Parekh, Xin Li, Han Zhang, Jason Baldridge, and Yonghui Wu. 2022. Scaling autoregressive models for content-rich text-to-image generation. Transactions on Machine Learning Research. Featured Certification.",
-    "Miao Zhang and Rumi Chunara. 2022. Fair contrastive pre-training for geographic images.",
-    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang. 2017. Men also like shopping: Reducing gender bias amplification using corpus-level constraints. In Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing, pages 2979–2989, Copenhagen, Denmark. Association for Computational Linguistics.",
-    "Zhaowei Zhu, Tianyi Luo, and Yang Liu. 2022. The rich get richer: Disparate impact of semi-supervised learning. In International Conference on Learning Representations."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

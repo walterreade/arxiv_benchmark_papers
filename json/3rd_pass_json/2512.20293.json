@@ -2,31 +2,99 @@
   "filename": "2512.20293.pdf",
   "title": "AprielGuard",
   "arxiv_url": "https://arxiv.org/pdf/2512.20293",
-  "bias_targets": [
-    {
-      "target": "Racial and ethnic bias",
-      "methodology": "Classification of standalone prompts, conversations, and agentic workflows using a fine-tuned safeguard LLM to detect racial and ethnic stereotyping, evaluated against broad safety risk benchmarks."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Classification of standalone prompts, conversations, and agentic workflows using a fine-tuned safeguard LLM to detect age stereotyping, evaluated against broad safety risk benchmarks."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Classification of standalone prompts, conversations, and agentic workflows using a fine-tuned safeguard LLM to detect disability stereotyping, evaluated against broad safety risk benchmarks."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Classification of standalone prompts, conversations, and agentic workflows using a fine-tuned safeguard LLM to detect gender stereotyping, evaluated against broad safety risk benchmarks."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Classification of standalone prompts, conversations, and agentic workflows using a fine-tuned safeguard LLM to detect religious stereotyping, evaluated against broad safety risk benchmarks."
-    },
-    {
-      "target": "Location bias",
-      "methodology": "Classification of standalone prompts, conversations, and agentic workflows using a fine-tuned safeguard LLM to detect location stereotyping, evaluated against broad safety risk benchmarks."
-    }
+  "religious_groups": [],
+  "models_tested": [
+    "AprielGuard-8B",
+    "ShieldGemma-9B",
+    "Llama-guard-2-8B",
+    "Llama-guard-3-8B",
+    "Llama-guard-4-12B",
+    "Llama-Prompt-Guard-2-86M",
+    "IBM-Granite-Guardian-3.1-2B",
+    "IBM-Granite-Guardian-3.2-3B",
+    "IBM-Granite-Guardian-3.2-5B",
+    "IBM-Granite-Guardian-3.3-8B",
+    "Qwen3Guard-8B",
+    "gpt-oss-safeguard-20B"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "languages_evaluated": [
+    "English",
+    "French",
+    "French-Canadian",
+    "German",
+    "Japanese",
+    "Dutch",
+    "Spanish",
+    "Portuguese-Brazilian",
+    "Italian"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "SimpleSafetyTests",
+    "Aya Redteaming",
+    "BeaverTails",
+    "SafeRLHF",
+    "XSTest",
+    "XSTest-response",
+    "Toxic-chat",
+    "Openai moderation",
+    "Aegis AI Content Safety Dataset",
+    "HarmBench",
+    "Gandalf",
+    "Salad Data",
+    "In-The-Wild Jailbreak Prompts",
+    "Wildguardmix",
+    "Wildjailbreak",
+    "deepset/prompt-injections",
+    "jackhhao/jailbreak-classification",
+    "rubend18/ChatGPT-Jailbreak-Prompts",
+    "xTRam1/safe-guard-prompt-injection",
+    "QualifirePromptInjection"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper does not report any specific findings related to religion. Performance metrics are aggregated across broad categories of 'Safety Risks' and 'Adversarial Attacks', and do not provide a separate analysis for the 'Religious stereotyping' sub-category.",
+  "references": [
+    "Perspective API — perspectiveapi.com.https://perspectiveapi.com/.",
+    "OpenAI Content Moderation API. https://https://platform.openai.com/ docs/guides/moderation.",
+    "PatrickFarley. Azure AI Content Safety documentation - Quickstarts, Tutorials, API Reference - Azure Al services — learn.microsoft.com.https://learn.microsoft.com/en- us/azure/ai-services/content-safety/.",
+    "Hakan Inan et al. “Llama guard: Llm-based input-output safeguard for human-ai conversations\". In: arXiv preprint arXiv:2312.06674 (2023).",
+    "Llama Guard 2 | Model Cards and Prompt formats - llama.meta.com.https://llama. meta.com/docs/model - cards - and prompt formats/meta- llama guard-2/. [Accessed 13-09-2024].",
+    "Llama Guard 3 | Model Cards and Prompt formats - llama.meta.com.https://llama. meta.com/docs/model-cards-and-prompt-formats/llama-guard-3. [Accessed 13-09-2024].",
+    "Llama Guard 4 | Model Cards and Prompt formats – llama.com. https://www.llama. com/docs/model-cards-and-prompt formats/llama-guard-4/. [Ac- cessed 30-06-2025].",
+    "Lijun Li et al. “SALAD-Bench: A Hierarchical and Comprehensive Safety Benchmark for Large Language Models\". In: Findings of the Association for Computational Linguistics: ACL 2024. Ed. by Lun-Wei Ku, Andre Martins, and Vivek Srikumar. Bangkok, Thailand: Association for Computational Linguistics, Aug. 2024, pp. 3923-3954. DOI: 10.18653/ v1/2024.findings-acl. 235. URL: https://aclanthology.org/2024. findings-acl.235/.",
+    "Seungju Han et al. “Wildguard: Open one-stop moderation tools for safety risks, jailbreaks, and refusals of llms\". In: arXiv preprint arXiv:2406.18495 (2024).",
+    "Inkit Padhi et al. “Granite guardian\". In: arXiv preprint arXiv:2412.07724 (2024).",
+    "Introducing gpt-oss-safeguard openai.com. https://openai com / index / introducing-gpt-oss-safeguard/.",
+    "Zihui Wu et al. \"The dark side of function calling: Pathways to jailbreaking large language models\". In: arXiv preprint arXiv:2407.17915 (2024).",
+    "Qiusi Zhan et al. “Injecagent: Benchmarking indirect prompt injections in tool-integrated large language model agents”. In: arXiv preprint arXiv:2403.02691 (2024).",
+    "Bidyapati Pradhan et al. “SyGra: A Unified Graph-Based Framework for Scalable Generation, Quality Tagging, and Management of Synthetic Data\". In: arXiv preprint arXiv:2508.15432 (2025).",
+    "Joseph Jennings et al. NeMo-Curator: a toolkit for data curation. URL:https://github. com/NVIDIA-NeMo/Curator.",
+    "sentence-transformers/all-MiniLM-L6-v2. Hugging Face huggingface.co.https:// huggingface.co/sentence-transformers/all-MiniLM-L6-v2.",
+    "Chin-Yew Lin. “Rouge: A package for automatic evaluation of summaries”. In: Text summa- rization branches out. 2004, pp. 74–81.",
+    "Shruthan Radhakrishna et al. “Apriel-1.5-15b-Thinker\". In: arXiv preprint arXiv:2510.01141 (2025).",
+    "Diederik P Kingma. “Adam: A method for stochastic optimization\". In: arXiv preprint arXiv:1412.6980 (2014).",
+    "Bertie Vidgen et al. \"Simplesafetytests: a test suite for identifying critical safety risks in large language models\". In: arXiv preprint arXiv:2311.08370 (2023).",
+    "Arash Ahmadian et al. \"The multilingual alignment prism: Aligning global and local prefer- ences to reduce harm”. In: arXiv preprint arXiv:2406.18682 (2024).",
+    "Jiaming Ji et al. “Beavertails: Towards improved safety alignment of Ilm via a human- preference dataset\". In: Advances in Neural Information Processing Systems 36 (2023), pp. 24678-24704.",
+    "Jiaming Ji et al. “PKU-SafeRLHF: Towards Multi-Level Safety Alignment for LLMs with Human Preference\". In: arXiv preprint arXiv:2406.15513 (2024).",
+    "Paul Röttger et al. “Xstest: A test suite for identifying exaggerated safety behaviours in large language models\". In: arXiv preprint arXiv:2308.01263 (2023).",
+    "Zi Lin et al. “Toxicchat: Unveiling hidden challenges of toxicity detection in real-world user-ai conversation\". In: arXiv preprint arXiv:2310.17389 (2023).",
+    "Todor Markov et al. “A Holistic Approach to Undesired Content Detection\". In: arXiv preprint arXiv:2208.03274 (2022).",
+    "Shaona Ghosh et al. “Aegis: Online adaptive ai content safety moderation with ensemble of Ilm experts\". In: arXiv preprint arXiv:2404.05993 (2024).",
+    "Mantas Mazeika et al. \"Harmbench: A standardized evaluation framework for automated red teaming and robust refusal”. In: arXiv preprint arXiv:2402.04249 (2024).",
+    "Lakera/gandalf_ignore_instructions · Datasets at Hugging Face – huggingface.co.https: //huggingface.co/datasets/Lakera/gandalf_ignore_instructions. [Accessed 22-08-2025].",
+    "Xinyue Shen et al. “do anything now\": Characterizing and evaluating in-the-wild jailbreak prompts on large language models, 2024\". In: URL https://arxiv.org/abs/2308.03825 7 (2023).",
+    "Liwei Jiang et al. WildTeaming at Scale: From In-the-Wild Jailbreaks to (Adversarially) Safer Language Models. 2024. arXiv: 2406.18510 [cs.CL].URL:https://arxiv.org/ abs/2406.18510.",
+    "deepset/prompt-injections. Datasets at Hugging Face huggingface.co. https:// huggingface.co/datasets/deepset/prompt-injections. [Accessed 22- 08-2025].",
+    "jackhhao/jailbreak-classification · Datasets at Hugging Face — huggingface.co. https: //huggingface.co/datasets/jackhhao/jailbreak-classification. [Accessed 22-08-2025].",
+    "rubend18/ChatGPT-Jailbreak-Prompts Datasets at Hugging Face huggingface.co. https://huggingface.co/datasets/rubend18/ChatGPT - Jailbreak - Prompts. [Accessed 22-08-2025].",
+    "xTRam1/safe-guard-prompt-injection · Datasets at Hugging Face – huggingface.co. https: //huggingface.co/datasets/xTRaml/safe-guard-prompt-injection. [Accessed 22-08-2025].",
+    "Dror Ivry and Oran Nahum. “Sentinel: SOTA model to protect against prompt injections\". In: arXiv preprint arXiv:2506.05446 (2025).",
+    "Sneha Kudugunta et al. “Madlad-400: A multilingual and document-level large audited dataset\". In: Advances in Neural Information Processing Systems 36 (2023), pp. 67284-67296.",
+    "Nanna Inie, Jonathan Stray, and Leon Derczynski. “Summon a demon and bind it: A grounded theory of LLM red teaming\". In: PloS one 20.1 (2025), e0314658."
+  ],
+  "measurement_description": "The benchmark's safety taxonomy includes 'Religious stereotyping' as a sub-category of 'Unfair representation', which is a type of 'Representation & Toxicity Harms'."
 }

@@ -2,47 +2,43 @@
   "filename": "2504.07982.pdf",
   "title": "Metamorphic Testing for Fairness Evaluation in Large Language Models: Identifying Intersectional Bias in LLaMA and GPT",
   "arxiv_url": "https://arxiv.org/pdf/2504.07982",
-  "bias_targets": [
-    {
-      "target": "Intersectional bias",
-      "methodology": "Applying Metamorphic Testing (MT) by adding, removing, or substituting combinations of multiple sensitive attributes (e.g., race, age, gender, religion) in prompts, and measuring unintended variations in the model's response using fine-tuned BERT models for sentiment and tone analysis."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Generating test cases using templates with placeholders for religious identities (e.g., Christianity, Islam, Buddhism) and evaluating output tone and sentiment invariance."
-    },
-    {
-      "target": "Racial/Ethnic bias",
-      "methodology": "Using Metamorphic Relations (MRs) to swap ethnic identities (e.g., Caucasian, African-American, Asian, Hispanic) in conversational prompts to identify fluctuations in output sentiment and tone."
-    },
-    {
-      "target": "Socioeconomic bias",
-      "methodology": "Modifying social status (e.g., upper-class, lower-class) and economic conditions (e.g., low-income, unemployed) in test prompts and evaluating changes in model responses using sentiment and tone classification."
-    },
-    {
-      "target": "Political bias",
-      "methodology": "Substituting political views (e.g., conservative, liberal, socialist) in source test cases and tracking whether the model maintains consistent sentiment and tone."
-    },
-    {
-      "target": "Occupational bias",
-      "methodology": "Replacing professions (e.g., teacher, engineer, lawyer) in conversational templates and applying tone and sentiment analysis to detect output inconsistencies."
-    },
-    {
-      "target": "Language bias",
-      "methodology": "Testing model fairness by varying the spoken language attribute (e.g., English, Spanish, Arabic) of the subject in the prompt and analyzing the resulting sentiment and tone."
-    },
-    {
-      "target": "Marital status bias",
-      "methodology": "Altering the marital status (e.g., single, married, divorced) in test cases and comparing the generated responses' tone and sentiment against the source responses."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Applying substitution and removal Metamorphic Relations (MRs) on gender attributes (e.g., male, female) in test cases and analyzing the model outputs for sentiment or tonal shifts."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Varying age-related descriptors (e.g., young, elderly, 30-year-old) via Metamorphic Testing to identify disparities in language model sentiment and tone."
-    }
+  "religious_groups": [
+    "Christianity",
+    "Islam",
+    "Judaism",
+    "Buddhism",
+    "Hinduism"
   ],
-  "primary_bias_target": "Intersectional bias"
+  "models_tested": [
+    "LLaMA 3.0",
+    "GPT-4.0"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "Combinations of sensitive attributes that included religion were highly likely to reveal fairness biases in the LLaMA 3 model. Specifically, intersections such as 'Religion, Political views, Marital Status' and 'Religion, Social Status, and Economic Condition' frequently highlighted fairness issues, likely due to complex social sensitivities associated with these combined factors.",
+  "references": [
+    "Isabel O Gallegos, Ryan A Rossi, Joe Barrow, Md Mehrab Tanjim, Sungchul Kim, Franck Dernoncourt, Tong Yu, Ruiyi Zhang, and Nesreen K Ahmed. Bias and fairness in large language models: A survey. Computational Linguistics, pages 1-79, 2024.",
+    "Bernhard Garn, Ludwig Kampel, Manuel Leithner, Berina Celic, Ceren Çulha, Irene Hiess, Klaus Kieseberg, Marlene Koelbing, Dominik-Philip Schreiber, Michael Wagner, et al. Applying pairwise combinatorial testing to large language model testing. In IFIP International Conference on Testing Software and Systems, pages 247-256. Springer, 2023.",
+    "Sangwon Hyun, Mingyu Guo, and M. Ali Babar. METAL: Metamorphic Testing Framework for Analyzing Large-Language Model Qualities. In 2024 IEEE Conference on Software Testing, Verification and Validation (ICST), pages 117-128, Los Alamitos, CA, USA, May 2024. IEEE Computer Society.",
+    "Mingyue Jiang, Houzhen Bao, Kaiyi Tu, Xiao-Yi Zhang, and Zuohua Ding. Evaluating natural language inference models: A metamorphic testing approach. In 2021 IEEE 32nd International Symposium on Software Reliability Engineering (ISSRE), pages 220-230. IEEE, 2021.",
+    "Lingzi Jin, Zuohua Ding, and Huihui Zhou. Evaluation of chinese natural language processing system based on metamorphic testing. Mathematics, 10(8):1276, 2022.",
+    "Yunqi Li, Lanjing Zhang, and Yongfeng Zhang. Probing into the fairness of large language models: A case study of chatgpt. In 2024 58th Annual Conference on Information Sciences and Systems (CISS), pages 1-6. IEEE, 2024.",
+    "Zhahao Li, Jinfu Chen, Haibo Chen, Leyang Xu, and Wuhao Guo. Detecting bias in Ilms' natural language inference using metamorphic testing. In 2024 IEEE 24th International Conference on Software Quality, Reliability, and Security Companion (QRS-C), pages 31-37. IEEE, 2024.",
+    "Haochen Liu, Jamell Dacon, Wenqi Fan, Hui Liu, Zitao Liu, and Jiliang Tang. Does gender matter? towards fairness in dialogue systems. arXiv preprint arXiv:1910.10486, 2019.",
+    "Pingchuan Ma, Shuai Wang, and Jin Liu. Metamorphic testing and certified mitigation of fairness violations in nlp models. In IJCAI, pages 458-465, 2020.",
+    "Sergio Segura, Dave Towey, Zhi Quan Zhou, and Tsong Yueh Chen. Metamorphic testing: Testing the untestable. IEEE Software, 37(3):46-53, 2018.",
+    "Madhusudan Srinivasan, Morteza Pourreza Shahri, Indika Kahanda, and Upulee Kanewala. Quality assurance of bioinformatics software: a case study of testing a biomedical text processing tool using metamorphic testing. In Proceedings of the 3rd International Workshop on Metamorphic Testing, pages 26-33, 2018.",
+    "Liqun Sun and Zhi Quan Zhou. Metamorphic testing for machine translations: Mt4mt. In 2018 25th Australasian Software Engineering Conference (ASWEC), pages 96-100. IEEE, 2018.",
+    "Kaiyi Tu, Mingyue Jiang, and Zuohua Ding. A metamorphic testing approach for assessing question answering systems. Mathematics, 9(7):726, 2021.",
+    "Yuxuan Wan, Wenxuan Wang, Pinjia He, Jiazhen Gu, Haonan Bai, and Michael R Lyu. Biasasker: Measuring the bias in conversational ai system. In Proceedings of the 31st ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering, pages 515-527, 2023.",
+    "Jizhi Zhang, Keqin Bao, Yang Zhang, Wenjie Wang, Fuli Feng, and Xiangnan He. Is chatgpt fair for recommendation? evaluating fairness in large language model recommendation. In Proceedings of the 17th ACM Conference on Recommender Systems, pages 993-999, 2023."
+  ],
+  "measurement_description": "The benchmark measured intersectional fairness biases by evaluating changes in sentiment and tone in LLM responses when religious identity was included as a sensitive attribute, often in combination with other demographic factors like occupation, ethnicity, and economic status."
 }

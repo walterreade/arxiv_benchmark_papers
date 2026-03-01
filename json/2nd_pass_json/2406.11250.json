@@ -2,67 +2,15 @@
   "filename": "2406.11250.pdf",
   "title": "Can Machines Resonate with Humans? Evaluating the Emotional and Empathic Comprehension of LMs",
   "arxiv_url": "https://arxiv.org/pdf/2406.11250",
-  "benchmark_measurement": "Not applicable. The paper does not measure any aspect of faith or religion. It measures the ability of models to comprehend and evaluate empathic similarity between narratives, with a secondary focus on how cultural and linguistic backgrounds (English vs. Urdu) affect human annotations of empathy.",
-  "religious_groups": [],
-  "models_tested": [
-    "SBERT",
-    "BART",
-    "davinci-text-003",
-    "GPT-3.5-turbo",
-    "RoBERTa",
-    "MPNet",
-    "MiniLM",
-    "Llama-3-8B",
-    "Llama-3-70B",
-    "GPT-4o",
-    "OpenAI-text-embedding-3-large"
+  "bias_targets": [
+    {
+      "target": "Cultural bias",
+      "methodology": "Comparing human inter-annotator agreement and LLM performance on empathic similarity tasks between an English dataset and a newly constructed Urdu dataset to evaluate the impact of cultural background on empathy comprehension."
+    },
+    {
+      "target": "Language bias",
+      "methodology": "Evaluating LLM zero-shot performance on empathic similarity tasks using story pairs written in English versus Roman Urdu to investigate how language affects model estimations of empathy."
+    }
   ],
-  "languages_evaluated": [
-    "English",
-    "Urdu"
-  ],
-  "response_type": [
-    "short",
-    "long"
-  ],
-  "religion_component": "none",
-  "base_benchmarks": [
-    "EmpathicStories"
-  ],
-  "continuous_testing": false,
-  "findings": "The paper does not contain findings related to religion. Its core findings relate to the high subjectivity and low inter-annotator agreement in judging empathic similarity between stories, which poses a significant challenge for training and evaluating language models. The authors also found that this subjectivity is independent of cultural background, as similar low agreement was observed in both English and newly collected Urdu datasets. The study suggests that closer interpersonal relationships between annotators, rather than just a shared cultural background, lead to higher agreement.",
-  "references": [
-    "Clara Berridge, Yuanjin Zhou, Julie M. Robillard, and Jeffrey Kaye. 2023. Companion robots to mitigate loneliness among older adults: Perceptions of benefit and possible deception. Frontiers in Psychology, 14.",
-    "Susanne Buecker, Marcus Mund, Sandy Chwastek, Melina Sostmann, and Maike Luhmann. 2021. Is loneliness in emerging adults increasing over time? a preregistered cross-temporal meta-analysis and systematic review. Psychological bulletin, 147 8:787–805.",
-    "Yupeng Chang, Xu Wang, Jindong Wang, Yuan Wu, Linyi Yang, Kaijie Zhu, Hao Chen, Xiaoyuan Yi, Cunxiang Wang, Yidong Wang, et al. 2024. A survey on evaluation of large language models. ACM Transactions on Intelligent Systems and Technology, 15(3):1-45.",
-    "Zhuang Chen, Jincenzi Wu, Jinfeng Zhou, Bosi Wen, Guanqun Bi, Gongyao Jiang, Yaru Cao, Mengting Hu, Yunghwei Lai, Zexuan Xiong, and Minlie Huang. 2024. Tombench: Benchmarking theory of mind in large language models. CoRR, abs/2402.15052.",
-    "Tianyu Gao, Xingcheng Yao, and Danqi Chen. 2021. SimCSE: Simple contrastive learning of sentence embeddings. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 6894–6910, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics.",
-    "Raia Hadsell, Sumit Chopra, and Yann LeCun. 2006. Dimensionality reduction by learning an invariant mapping. In 2006 IEEE Computer Society Conference on Computer Vision and Pattern Recognition (CVPR 2006), 17-22 June 2006, New York, NY, USA, pages 1735-1742. IEEE Computer Society.",
-    "Pengcheng He, Xiaodong Liu, Jianfeng Gao, and Weizhu Chen. 2020. Deberta: Decoding-enhanced bert with disentangled attention. arXiv preprint arXiv:2006.03654.",
-    "Edward J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, and Weizhu Chen. 2021. Lora: Low-rank adaptation of large language models.",
-    "Junqin Huang, Zhongjie Hu, Zihao Jing, Mengya Gao, and Yichao Wu. 2024. Piccolo2: General text embedding with multi-task hybrid loss training. arXiv preprint arXiv:2405.06932.",
-    "Nicolas Hubert, Pierre Monnin, Armelle Brun, and Davy Monticolo. 2024. Treat different negatives differently: Enriching loss functions with domain and range constraints for link prediction. In European Semantic Web Conference, pages 22-40. Springer.",
-    "Adnan Khan, Sarah AlBarri, and Muhammad Arslan Manzoor. 2022. Contrastive self-supervised learning: a survey on different architectures. In 2022 2nd International Conference on Artificial Intelligence (ICAI), pages 1-6. IEEE.",
-    "Mike Lewis, Yinhan Liu, Naman Goyal, Marjan Ghazvininejad, Abdel rahman Mohamed, Omer Levy, Veselin Stoyanov, and Luke Zettlemoyer. 2019. Bart: Denoising sequence-to-sequence pre-training for natural language generation, translation, and comprehension. In Annual Meeting of the Association for Computational Linguistics.",
-    "Xianming Li and Jing Li. 2024. Angle-optimized text embeddings.",
-    "Tzu-Mi Lin, Jung-Ying Chang, and Lung-Hao Lee. 2023. NCUEE-NLP at WASSA 2023 shared task 1: Empathy and emotion prediction using sentiment-enhanced RoBERTa transformers. In Proceedings of the 13th Workshop on Computational Approaches to Subjectivity, Sentiment, & Social Media Analysis, pages 548-552, Toronto, Canada. Association for Computational Linguistics.",
-    "Qin Liu, Fei Wang, Nan Xu, Tianyi Yan, Tao Meng, and Muhao Chen. 2024a. Monotonic paraphrasing improves generalization of language model prompting. CoRR, abs/2403.16038.",
-    "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. 2019. Roberta: A robustly optimized bert pretraining approach. ArXiv, abs/1907.11692.",
-    "Zhiwei Liu, Kailai Yang, Tianlin Zhang, Qianqian Xie, Zeping Yu, and Sophia Ananiadou. 2024b. Emollms: A series of emotional large language models and annotation tools for comprehensive affective analysis. CoRR, abs/2401.08508.",
-    "Arvind Neelakantan, Tao Xu, Raul Puri, Alec Radford, Jesse Michael Han, Jerry Tworek, Qiming Yuan, Nikolas Tezak, Jong Wook Kim, Chris Hallacy, Johannes Heidecke, Pranav Shyam, Boris Power, Tyna Eloundou Nekoul, Girish Sastry, Gretchen Krueger, David Schnurr, Felipe Petroski Such, Kenny Hsu, Madeleine Thompson, Tabarak Khan, Toki Sherbakov, Joanne Jang, Peter Welinder, and Lilian Weng. 2022. Text and code embeddings by contrastive pre-training.",
-    "OpenAI. 2023. GPT-4 technical report. CoRR, abs/2303.08774.",
-    "Nils Reimers and Iryna Gurevych. 2019. Sentence-bert: Sentence embeddings using siamese bert-networks. In Conference on Empirical Methods in Natural Language Processing.",
-    "Jocelyn Shen, Maarten Sap, Pedro Colon-Hernandez, Hae Park, and Cynthia Breazeal. 2023. Modeling empathic similarity in personal narratives. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, pages 6237–6252, Singapore. Association for Computational Linguistics.",
-    "Kaitao Song, Xu Tan, Tao Qin, Jianfeng Lu, and Tie-Yan Liu. 2020. Mpnet: Masked and permuted pretraining for language understanding. Advances in neural information processing systems, 33:16857-16867.",
-    "Wenhui Wang, Furu Wei, Li Dong, Hangbo Bao, Nan Yang, and Ming Zhou. 2020. Minilm: Deep self-attention distillation for task-agnostic compression of pre-trained transformers.",
-    "Yuxia Wang, Daniel Beck, Timothy Baldwin, and Karin Verspoor. 2022a. Uncertainty estimation and reduction of pre-trained models for text regression. Transactions of the Association for Computational Linguistics, 10:680-696.",
-    "Yuxia Wang, Shimin Tao, Ning Xie, Hao Yang, Timothy Baldwin, and Karin Verspoor. 2023. Collective human opinions in semantic textual similarity. Transactions of the Association for Computational Linguistics, 11:997-1013.",
-    "Yuxia Wang, Minghan Wang, Yimeng Chen, Shimin Tao, Jiaxin Guo, Chang Su, Min Zhang, and Hao Yang. 2022b. Capture human disagreement distributions by calibrated networks for natural language inference. In Findings of the Association for Computational Linguistics: ACL 2022, pages 1524-1535, Dublin, Ireland. Association for Computational Linguistics.",
-    "Yuxia Wang, Minghan Wang, and Preslav Nakov. 2024. Rethinking STS and NLI in large language models. In Findings of the Association for Computational Linguistics: EACL 2024, pages 965–982, St. Julian’s, Malta. Association for Computational Linguistics.",
-    "Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Fei Xia, Ed Chi, Quoc V Le, Denny Zhou, et al. 2022. Chain-of-thought prompting elicits reasoning in large language models. Advances in neural information processing systems, 35:24824–24837.",
-    "Peter West, Ximing Lu, Nouha Dziri, Faeze Brahman, Linjie Li, Jena D. Hwang, Liwei Jiang, Jillian R. Fisher, Abhilasha Ravichander, Khyathi Raghavi Chandu, Benjamin Newman, Pang Wei Koh, Allyson Ettinger, and Yejin Choi. 2023. The generative ai paradox: “what it can create, it may not understand”. ArXiv, abs/2311.00059.",
-    "Xing Wu, Chaochen Gao, Liangjun Zang, Jizhong Han, Zhongyuan Wang, and Songlin Hu. 2021. Esimcse: Enhanced sample building method for contrastive learning of unsupervised sentence embedding. In International Conference on Computational Linguistics.",
-    "Shunyu Yao, Dian Yu, Jeffrey Zhao, Izhak Shafran, Tom Griffiths, Yuan Cao, and Karthik Narasimhan. 2024. Tree of thoughts: Deliberate problem solving with large language models. Advances in Neural Information Processing Systems, 36.",
-    "Denny Zhou, Nathanael Schärli, Le Hou, Jason Wei, Nathan Scales, Xuezhi Wang, Dale Schuurmans, Claire Cui, Olivier Bousquet, Quoc Le, et al. 2022. Least-to-most prompting enables complex reasoning in large language models. arXiv preprint arXiv:2205.10625."
-  ]
+  "primary_bias_target": "Cultural bias"
 }

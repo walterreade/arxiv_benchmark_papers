@@ -2,71 +2,35 @@
   "filename": "2504.18560.pdf",
   "title": "Mind the Language Gap: Automated and Augmented Evaluation of Bias in LLMs for High- and Low-Resource Languages",
   "arxiv_url": "https://arxiv.org/pdf/2504.18560",
-  "benchmark_measurement": "The benchmark measured bias against religious groups by evaluating Large Language Models on prompt templates designed to detect discriminatory attitudes and stereotypes related to religion.",
-  "religious_groups": [
-    "Not explicitly listed"
+  "bias_targets": [
+    {
+      "target": "Age bias",
+      "methodology": "Automated prompting using the MLA-BiTe and LangBiTe frameworks with translated and paraphrased multilingual templates, evaluated via predefined case-specific keyword matching and structured response validation to detect favored or harmed communities."
+    },
+    {
+      "target": "Sexual orientation and gender identity bias",
+      "methodology": "Automated prompting using the MLA-BiTe and LangBiTe frameworks with translated and paraphrased multilingual templates, evaluated via predefined case-specific keyword matching and structured response validation to detect favored or harmed communities."
+    },
+    {
+      "target": "Political bias",
+      "methodology": "Automated prompting using the MLA-BiTe and LangBiTe frameworks with translated and paraphrased multilingual templates, evaluated via predefined case-specific keyword matching and structured response validation to detect favored or harmed communities."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Automated prompting using the MLA-BiTe and LangBiTe frameworks with translated and paraphrased multilingual templates, evaluated via predefined case-specific keyword matching and structured response validation to detect favored or harmed communities."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Automated prompting using the MLA-BiTe and LangBiTe frameworks with translated and paraphrased multilingual templates, evaluated via predefined case-specific keyword matching and structured response validation to detect favored or harmed communities."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Automated prompting using the MLA-BiTe and LangBiTe frameworks with translated and paraphrased multilingual templates, evaluated via predefined case-specific keyword matching and structured response validation to detect favored or harmed communities."
+    },
+    {
+      "target": "Nationality bias",
+      "methodology": "Automated prompting using the MLA-BiTe and LangBiTe frameworks with translated and paraphrased multilingual templates, evaluated via predefined case-specific keyword matching and structured response validation to detect favored or harmed communities."
+    }
   ],
-  "models_tested": [
-    "Claude 3.5 Sonnet",
-    "Gemini 1.5 Flash",
-    "Llama3 405B",
-    "GPT-4o"
-  ],
-  "languages_evaluated": [
-    "English",
-    "Spanish",
-    "Catalan",
-    "French",
-    "German",
-    "Luxembourgish"
-  ],
-  "response_type": [
-    "short",
-    "other"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "LangBiTe"
-  ],
-  "continuous_testing": false,
-  "findings": "The study found that bias detection related to religion was 'comparatively stable across both languages and models'. This stability is attributed to shared religious terminology and keywords that transfer well across languages. Gemini 1.5 Flash was noted to often excel in the religion category. The religion category had a moderate rate (5.44%) of unprocessable responses compared to other bias categories.",
-  "references": [
-    "Sarah Alnegheimish, Alicia Guo, and Yi Sun. Using natural sentence prompts for understanding biases in language models. In Human Language Technologies, pages 2824-2830. ACL, 2022.",
-    "Christine Basta, Marta R. Costa-Jussà, and Noe Casas. Evaluating the underlying gender bias in contextualized word embeddings. In Gender Bias in NLP, pages 33-39. ACL, 2019.",
-    "Emily M Bender, Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. On the dangers of stochastic parrots: Can language models be too big? In Proceedings of the 2021 ACM conference on fairness, accountability, and transparency, pages 610-623, 2021.",
-    "Tolga Bolukbasi, Kai-Wei Chang, James Y Zou, Venkatesh Saligrama, and Adam T Kalai. Man is to computer programmer as woman is to homemaker? debiasing word embeddings. Advances in NeurIPS, 29, 2016.",
-    "Sebastian Borgeaud, Arthur Mensch, Jordan Hoffmann, Trevor Cai, Eliza Rutherford, Katie Millican, George van den Driessche, Jean-Baptiste Lespiau, Bogdan Damoc, Aidan Clark, Diego de Las Casas, Aurelia Guy, Jacob Menick, Roman Ring, Tom Hennigan, Saffron Huang, Loren Maggiore, Chris Jones, Albin Cassirer, Andy Brock, Michela Paganini, Geoffrey Irving, Oriol Vinyals, Simon Osindero, Karen Simonyan, Jack W. Rae, Erich Elsen, and Laurent Sifre. Improving language models by retrieving from trillions of tokens, 2022. URL https: //arxiv.org/abs/2112.04426.",
-    "Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, et al. Language models are few-shot learners. Advances in neural information processing systems, 33:1877–1901, 2020.",
-    "Alessio Buscemi and Daniele Proverbio. Chatgpt vs gemini vs llama on multilingual sentiment analysis. arXiv preprint arXiv:2402.01715, 2024.",
-    "Alessio Buscemi and Daniele Proverbio. Roguegpt: dis-ethical tuning transforms chatgpt4 into a rogue ai in 158 words. arXiv preprint arXiv:2407.15009, 2024.",
-    "Myra Cheng, Esin Durmus, and Dan Jurafsky. Marked personas: Using natural language prompts to measure stereotypes in language models. In 61st Annual Meeting of the Association for Computational Linguistics, pages 1504–1532. ACL, 2023.",
-    "Jwala Dhamala, Tony Sun, Varun Kumar, Satyapriya Krishna, Yada Pruksachatkun, Kai-Wei Chang, and Rahul Gupta. Bold: dataset and metrics for measuring biases in open-ended language generation. In FAccT, pages 862-872. ACM, 2021.",
-    "Samuel Gehman, Suchin Gururangan, Maarten Sap, Yejin Choi, and Noah A. Smith. RealToxicityPrompts: Evaluating neural toxic degeneration in language models. In EMNLP, pages 3356-3369. ACL, 2020.",
-    "Rem Hida, Masahiro Kaneko, and Naoaki Okazaki. Social bias evaluation for large language models requires prompt variations. arXiv preprint arXiv:2407.03129, 2024.",
-    "Keita Kurita, Nidhi Vyas, Ayush Pareek, Alan W Black, and Yulia Tsvetkov. Measuring bias in contextualized word representations. In 1st Workshop on Gender Bias in Natural Language Processing, pages 166–172. ACL, 2019.",
-    "Anne Lauscher, Vinit Ravishankar, Ivan Vulić, and Goran Glavaš. From zero to hero: On the limitations of zero-shot cross-lingual transfer with multilingual transformers. arXiv preprint arXiv:2005.00633, 2020.",
-    "Verlan Lewis and Hyrum Lewis. The myth of left and right: How the political spectrum misleads and harms america. 2022.",
-    "Percy Liang, Rishi Bommasani, Tony Lee, Dimitris Tsipras, Dilara Soylu, Michihiro Yasunaga, Yian Zhang, Deepak Narayanan, Yuhuai Wu, Ananya Kumar, et al. Holistic evaluation of language models. arXiv preprint arXiv:2211.09110, 2022.",
-    "Percy Liang, Rishi Bommasani, Tony Lee, Dimitris Tsipras, Dilara Soylu, Michihiro Yasunaga, Yian Zhang, et al. Holistic evaluation of language models. arXiv preprint arXiv:2211.09110, 2023.",
-    "Sergio Morales. Langbite, 2024. URL https://github.com/SOM-Research/LangBiTe.",
-    "Sergio Morales, Robert Clarisó, and Jordi Cabot. A DSL for testing LLMs for fairness and bias. In MODELS, page 203-213. ACM, 2024.",
-    "Sergio Morales, Robert Clarisó, and Jordi Cabot. LangBiTe: A platform for testing bias in large language models. arXiv preprint arXiv:2404.18558, 2024.",
-    "Sergio Morales, Robert Clarisó, and Jordi Cabot. ImageBiTe: A framework for evaluating representational harms in text-to-image models. In Proceedings of the 4th International Conference on AI Engineering – Software Engineering for AI, 2025. Pending publication.",
-    "Moin Nadeem, Anna Bethke, and Siva Reddy. Stereoset: Measuring stereotypical bias in pretrained language models. arXiv preprint arXiv:2004.09456, 2020.",
-    "Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi Zhou, Wei Li, and Peter J. Liu. Exploring the limits of transfer learning with a unified text-to-text transformer. J. Mach. Learn. Res., 21(1), 2020.",
-    "Rajesh Ranjan, Shailja Gupta, and Surya Narayan Singh. A comprehensive survey of bias in LLMS: Current landscape and future directions. arXiv preprint arXiv:2409.16430, 2024.",
-    "Nils Reimers and Iryna Gurevych. Sentence-bert: Sentence embeddings using siamese bert-networks. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing. Association for Computational Linguistics, 11 2019. URL http://arxiv.org/abs/ 1908.10084.",
-    "Stephen Roller, Emily Dinan, Naman Goyal, Da Ju, Mary Williamson, Yinhan Liu, Jing Xu, Myle Ott, Kurt Shuster, Eric M Smith, et al. Recipes for building an open-domain chatbot. arXiv preprint arXiv:2004.13637, 2020.",
-    "Jayanta Sadhu, Maneesha Rani Saha, and Rifat Shahriyar. Social bias in large language models for Bangla: An empirical study on gender and religious bias. arXiv preprint arXiv:2407.03536, 2024.",
-    "Gerard Salton and Christopher Buckley. Term-weighting approaches in automatic text retrieval. Information Processing & Management, 24(5):513-523, 1988.",
-    "Pola Schwöbel, Luca Franceschi, Muhammad Bilal Zafar, et al. Evaluating large language models with fmeval. arXiv preprint arXiv:2407.12872, 2024.",
-    "Emily Sheng, Kai-Wei Chang, Premkumar Natarajan, and Nanyun Peng. The woman worked as a babysitter: On biases in language generation. In EMNLP-IJCNLP, pages 3407-3412. ACL, 2019.",
-    "Aarohi Srivastava, Abhinav Rastogi, Abhishek Rao, Abu Awal Md Shoeb, Abubakar Abid, Adam Fisch, Adam R Brown, Adam Santoro, Aditya Gupta, Adrià Garriga-Alonso, et al. Beyond the imitation game: Quantifying and extrapolating the capabilities of language models. arXiv preprint arXiv:2206.04615, 2022.",
-    "European Union. The artificial intelligence act, 2024. URL https:// artificialintelligenceact.eu.",
-    "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Łukasz Kaiser, and Illia Polosukhin. Attention is all you need. Advances in neural information processing systems, 30, 2017.",
-    "Yuxuan Wan, Wenxuan Wang, Pinjia He, Jiazhen Gu, Haonan Bai, and Michael R. Lyu. BiasAsker: Measuring the bias in conversational ai system. In ESEC/FSE, page 515-527. ACM, 2023.",
-    "Laura Weidinger, John Mellor, Maribeth Rauh, Conor Griffin, Jonathan Uesato, Po-Sen Huang, Myra Cheng, Mia Glaese, Borja Balle, Atoosa Kasirzadeh, et al. Ethical and social risks of harm from language models. arXiv preprint arXiv:2112.04359, 2021.",
-    "Laura Weidinger, John Mellor, Maribeth Rauh, et al. Ethical and social risks of harm from language models. arXiv preprint arXiv:2112.04359, 2021.",
-    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang. Gender bias in coreference resolution: Evaluation and debiasing methods. In Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 15-20. ACL, 2018."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

@@ -2,23 +2,67 @@
   "filename": "2110.07871.pdf",
   "title": "Socially Aware Bias Measurements for Hindi Language Representations",
   "arxiv_url": "https://arxiv.org/pdf/2110.07871",
-  "bias_targets": [
-    {
-      "target": "Gender bias",
-      "methodology": "Using Word Embedding Association Test (WEAT) and Sentence Embedding Association Test (SEAT) with translated and language-specific word lists to measure associations between male/female words and math/arts, science/arts, and specific adjectives, alongside Meaningful Encoding (ME) tests for grammatical gender."
-    },
-    {
-      "target": "Caste bias",
-      "methodology": "Using WEAT and SEAT to measure associations between stereotypically upper and lower caste last names with various occupations and polarized positive/negative adjectives."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Using WEAT and SEAT to measure associations of Hindu and Muslim religious terms and culturally distinct last names with positive and negative adjectives."
-    },
-    {
-      "target": "Socioeconomic and Geographic bias",
-      "methodology": "Using WEAT and SEAT to evaluate perception differences by measuring associations between urban versus rural occupations and polarized positive/negative adjectives."
-    }
+  "religious_groups": [
+    "Hinduism",
+    "Islam"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "Hindi GloVe",
+    "Hindi ELMo"
+  ],
+  "languages_evaluated": [
+    "Hindi"
+  ],
+  "response_type": [
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "WEAT",
+    "SEAT"
+  ],
+  "continuous_testing": false,
+  "findings": "Hindi language representations, particularly GloVe embeddings, exhibit significant religious bias. They show strong stereotypical associations between religious groups (Hinduism and Islam) and polarized attributes (positive/negative). The study highlights that culturally-aware, language-specific word lists are substantially more effective at detecting these biases than direct translations of word lists from English.",
+  "references": [
+    "D. Amutha. 2017. The roots of gender inequality in india.",
+    "Maria Antoniak and David Mimno. 2021. Bad seeds: Evaluating lexical methods for bias measurement. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Lan- guage Processing (Volume 1: Long Papers), pages 1889–1904, Online. Association for Computational Linguistics.",
+    "Biswajit Banerjee and John B Knight. 1985. Caste dis- crimination in the indian urban labour market. Jour- nal of development Economics, 17(3):277–307.",
+    "Varad Bhagwat, Mrunali N Nagarkar, Pooja Paramane, and Shrikant Jindam. 2019. Review of chatbot sys- tem in hindi language. In Review of Chatbot System in Hindi Language.",
+    "Piotr Bojanowski, Edouard Grave, Armand Joulin, and Tomas Mikolov. 2017. Enriching word vectors with subword information. Transactions of the Associa- tion for Computational Linguistics, 5:135–146.",
+    "Tolga Bolukbasi, Kai-Wei Chang, James Y Zou, Venkatesh Saligrama, and Adam T Kalai. 2016. Man is to computer programmer as woman is to homemaker? debiasing word embeddings. In Ad- vances in Neural Information Processing Systems, volume 29. Curran Associates, Inc.",
+    "Aylin Caliskan, Joanna J Bryson, and Arvind Narayanan. 2017. Semantics derived automatically from language corpora contain human-like biases. Science, 356(6334):183–186.",
+    "Yang Trista Cao, Yada Pruksachatkun, Kai-Wei Chang, Rahul Gupta, Varun Kumar, Jwala Dhamala, and Aram Galstyan. 2022. On the intrinsic and extrin- sic fairness evaluation metrics for contextualized lan- guage representations.",
+    "Rodrigo Alejandro Chávez Mulsa and Gerasimos Spanakis. 2020. Evaluating bias in Dutch word em- beddings. In Proceedings of the Second Workshop on Gender Bias in Natural Language Processing, pages 56–71, Barcelona, Spain (Online). Associa- tion for Computational Linguistics.",
+    "Hoi Yan Cheung and Alex W. H. Chan. 2007. How cul- ture affects female inequality across countries: An empirical study. Journal of Studies in International Education, 11(2):157–179.",
+    "Manali S Deshpande. 2010. History of the indian caste system and its impact on india today. CalPoly Stu- dent Research.",
+    "Sunipa Dev, Tao Li, Jeff M Phillips, and Vivek Sriku- mar. 2021a. OSCaR: Orthogonal subspace correc- tion and rectification of biases in word embeddings. In Proceedings of the 2021 Conference on Empiri- cal Methods in Natural Language Processing, pages 5034–5050, Online and Punta Cana, Dominican Re- public. Association for Computational Linguistics.",
+    "Sunipa Dev, Masoud Monajatipoor, Anaelia Ovalle, Ar- jun Subramonian, Jeff Phillips, and Kai-Wei Chang. 2021b. Harms of gender exclusivity and challenges in non-binary representation in language technolo- gies. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 1968–1994, Online and Punta Cana, Domini- can Republic. Association for Computational Lin- guistics.",
+    "Sunipa Dev and Jeff Phillips. 2019. Attenuating bias in word vectors. In The 22nd International Conference on Artificial Intelligence and Statistics, pages 879– 887. PMLR.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: Pre-training of deep bidirectional transformers for language under- standing. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 4171–4186, Minneapolis, Minnesota. Associ- ation for Computational Linguistics.",
+    "Sayan Ghosh, Dylan Baker, David Jurgens, and Vin- odkumar Prabhakaran. 2021. Detecting cross-geo- graphic biases in toxicity modeling on social media.",
+    "Seraphina Goldfarb-Tarrant, Haining Feng, and Nanyun Peng. 2019. Plan, write, and revise: an interactive system for open-domain story generation. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics (Demonstrations), pages 89–97, Minneapolis, Minnesota. Association for Computational Linguistics.",
+    "Prasad Gundugurti, KL Vidya, and V Sriramya. 2015. The indian “girl” psychology: A perspective. Indian journal of psychiatry, 57:S212–5.",
+    "Khushi Gupta. 2021. Stereotypes in bollywood cinema: Does article 15 reinforce the dalit narrative? In In- quiries Journal [Online].",
+    "Kira Hall. 2002. “Unnatural” Gender in Hindi, pages 133–162. Oxford University Press.",
+    "Kunal Khadilkar, Ashiqur R. KhudaBukhsh, and Tom M. Mitchell. 2021. Gender bias, social bias, and representation: 70 years of bhollywood. Pat- terns, page 100409.",
+    "Saurav Kumar, Saunack Kumar, Diptesh Kanojia, and Pushpak Bhattacharyya. 2020. “a passage to india”: Pre-trained word embeddings for indian languages. In Proceedings of the 1st Joint Workshop on Spoken Language Technologies for Under-resourced lan- guages (SLTU) and Collaboration and Computing for Under-Resourced Languages (CCURL), pages 352–357.",
+    "Yaman Kumar, Debanjan Mahata, Sagar Aggarwal, Anmol Chugh, Rajat Maheshwari, and Rajiv Ratn Shah. 2019. Bhaav-a text corpus for emo- tion analysis from hindi stories. arXiv preprint arXiv:1910.04073.",
+    "Anoop Kunchukuttan, Pratik Mehta, and Pushpak Bhat- tacharyya. 2017. The IIT Bombay English-Hindi parallel corpus. arXiv preprint arXiv:1710.02855.",
+    "Mascha Kurpicz-Briki. 2020. Cultural differences in bias? origin and gender bias in pre-trained german and french word embeddings. Proceedings of the 5th Swiss Text Analytics Conference (SwissText) & 16th Conference on Natural Language Processing (KONVENS).",
+    "Anne Lauscher, Rafik Takieddin, Simone Paolo Ponzetto, and Goran Glavaš. 2020. AraWEAT: Mul- tidimensional analysis of biases in Arabic word em- beddings. In Proceedings of the Fifth Arabic Natu- ral Language Processing Workshop, pages 192–199, Barcelona, Spain (Online). Association for Compu- tational Linguistics.",
+    "Sheng Liang, Philipp Dufter, and Hinrich Schütze. 2020. Monolingual and multilingual reduction of gender bias in contextualized representations. In Proceedings of the 28th International Conference on Computational Linguistics, pages 5082–5093, Barcelona, Spain (Online). International Committee on Computational Linguistics.",
+    "Nishtha Madaan, Sameep Mehta, Taneea S. Agrawaal, Vrinda Malhotra, Aditi Aggarwal, Yatin Gupta, and Mayank Saxena. 2018. Analyze, detect and remove gender stereotyping from bollywood movies. In FAccT.",
+    "Thomas Manzini, Lim Yao Chong, Alan W Black, and Yulia Tsvetkov. 2019. Black is to criminal as caucasian is to police: Detecting and removing multiclass bias in word embeddings. In Proceed- ings of the 2019 Conference of the North American Chapter of the Association for Computational Lin- guistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 615–621, Minneapo- lis, Minnesota. Association for Computational Lin- guistics.",
+    "Chandler May, Alex Wang, Shikha Bordia, Samuel R. Bowman, and Rachel Rudinger. 2019. On measur- ing social biases in sentence encoders. In Proceed- ings of the 2019 Conference of the North American Chapter of the Association for Computational Lin- guistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 622–628, Minneapo- lis, Minnesota. Association for Computational Lin- guistics.",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R. Bowman. 2020. CrowS-pairs: A chal- lenge dataset for measuring social biases in masked language models. In Proceedings of the 2020 Con- ference on Empirical Methods in Natural Language Processing (EMNLP), pages 1953–1967, Online. As- sociation for Computational Linguistics.",
+    "Jeffrey Pennington, Richard Socher, and Christopher D Manning. 2014. Glove: Global vectors for word rep- resentation. In Proceedings of the 2014 conference on empirical methods in natural language process- ing (EMNLP), pages 1532–1543.",
+    "Arun K. Pujari, Ansh Mittal, Anshuman Padhi, Anshul Jain, Mukesh Jadon, and Vikas Kumar. 2019. Debi- asing gender biased hindi words with word-embed- ding. In Proceedings of the 2019 2nd International Conference on Algorithms, Computing and Artificial Intelligence, ACAI 2019, page 450–456, New York, NY, USA. Association for Computing Machinery.",
+    "Ishita Pundir and Alankrita Singh. 2019. Portrayal of women in indian fiction. Volume 09:137-141.",
+    "Pattabhi RK Rao and Sobha Lalitha Devi. 2018. Eventxtract-il: Event extraction from newswires and social media text in indian languages@ fire 2018-an overview. In FIRE (Working Notes), pages 282–290.",
+    "Nithya Sambasivan, Erin Arnesen, Ben Hutchin- son, and Vinodkumar Prabhakaran. 2020. Non- portability of algorithmic fairness in india. ArXiv, abs/2012.03659.",
+    "Sukhadeo Thorat and Katherine S Newman. 2007. Caste and economic discrimination: causes, con- sequences and remedies. Economic and Political Weekly, pages 4121–4124.",
+    "Jieyu Zhao, Subhabrata Mukherjee, Saghar Hosseini, Kai-Wei Chang, and Ahmed Hassan Awadallah. 2020. Gender bias in multilingual embeddings and cross-lingual transfer. In Proceedings of the 58th Annual Meeting of the Association for Computa- tional Linguistics, pages 2896–2907, Online. Asso- ciation for Computational Linguistics.",
+    "Pei Zhou, Weijia Shi, Jieyu Zhao, Kuan-Hao Huang, Muhao Chen, Ryan Cotterell, and Kai-Wei Chang. 2019. Examining gender bias in languages with grammatical gender. In Proceedings of the 2019 Conference on Empirical Methods in Natu- ral Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 5276–5284, Hong Kong, China. Association for Computational Linguistics."
+  ],
+  "measurement_description": "Detecting stereotypical bias by associating religious entities and last names (specifically Hindu and Muslim) with positive and negative attributes in Hindi language representations."
 }

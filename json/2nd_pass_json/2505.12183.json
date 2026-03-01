@@ -2,42 +2,31 @@
   "filename": "2505.12183.pdf",
   "title": "Decoding the Mind of Large Language Models: A Quantitative Evaluation of Ideology and Biases",
   "arxiv_url": "https://arxiv.org/pdf/2505.12183",
-  "benchmark_measurement": "Ideological stance/bias on religious topics, including the existence of God, the existence of an afterlife, and whether religious practice correlates with happiness.",
-  "religious_groups": [
-    "Religion (general)"
+  "bias_targets": [
+    {
+      "target": "Ideological bias",
+      "methodology": "Prompting models with 436 ambiguous binary-choice questions across diverse subjective topics (tasks, debate topics) and calculating the statistical tendency ('Bias' and 'Willingness') of 'Yes'/'No' responses, as well as shifts when presented with an opposing opinion."
+    },
+    {
+      "target": "Language bias",
+      "methodology": "Comparing the consistency, bias scores, and susceptibility to opposing opinions in model responses across four different languages (Japanese, English, Spanish, and French) to determine if structural or cultural linguistic traits influence outputs."
+    },
+    {
+      "target": "Ethical and Moral bias",
+      "methodology": "Evaluating model responses to binary-choice questions regarding sensitive societal issues, justice, legal risks, environmental trade-offs, and moral dilemmas."
+    },
+    {
+      "target": "Political bias",
+      "methodology": "Analyzing binary-choice responses to debate-style questions covering topics such as capitalism versus socialism, taxation, immigration, elections, and government policies."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Measuring responses to specific questions regarding gender roles, the relative happiness of men versus women, and LGBTQ+ topics like same-sex marriage and transgender rights."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Assessing model stances through binary-choice prompts on topics such as the existence of God, the afterlife, and whether practicing a religion is associated with happiness."
+    }
   ],
-  "models_tested": [
-    "ChatGPT 4o-mini",
-    "Gemini 1.5 flash"
-  ],
-  "languages_evaluated": [
-    "Japanese",
-    "English",
-    "Spanish",
-    "French"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "BBQ"
-  ],
-  "continuous_testing": false,
-  "findings": "On religious topics like the existence of God and the afterlife, ChatGPT tended to be neutral, whereas Gemini consistently negated these questions, suggesting a potential bias. In a comparison of happiness, ChatGPT leaned towards the idea that people who practice religion are happier, while Gemini remained completely neutral.",
-  "references": [
-    "S. Uspenskyi, \"Large language model statistics and numbers,\" https://springsapps.com/knowledge/large-language-model-statistics-and-numbers-2024, 2024.",
-    "T. Brown et al., \"Language models are few-shot learners,\" in Advances in Neural Information Processing Systems 33 (NeurIPS 2020), 2020.",
-    "A. Vaswani et al., \"Attention is all you need,\" in Advances in Neural Information Processing Systems 30 (NIPS 2017), 2017.",
-    "E. W. Dolan, \"Stanford scientist discovers that ai has developed an uncanny human-like ability,\" https://www.psypost.org/stanford-scientist-discovers-that-ai-has-developed-an-uncanny-human-like-ability/, 2025.",
-    "A. Caliskan, J. J. Bryson, and A. Narayanan, \"Semantics derived automatically from language corpora contain human-like biases,\" Science, 2017.",
-    "I. O. Gallegos and othres, \"Bias and fairness in large language models: A survey,\" Computational Linguistics, vol. 50, no. 3, pp. 1097–1179, 2024.",
-    "H. Jin and M. Uchida, \"A three-year analysis of human preferences in delegating tasks to ai,\" in Artificial Intelligence in HCI, 2024.",
-    "Ken, \"120 interesting debate topics - from social issues to silly questions for college students,\" https://news.mynavi.jp/article/20240119-2851299 /.(in Japanese).",
-    "Izumi, \"200 debate and discussion themes - discussion activities, job hunting, group discussion,\" 2024, https://sakutsuba.com/%E3%83%87%E3%82%A3%E3%83%99%E3%83%BC%E3%83%88%E3%83%BB%E8%A8%8E%E8%AB%96%E3%83%86%E3%83%BC%E3%83%9E200%E9%81%B8%E3%80%9C%E8%A9%B1%E3%81%97%E5%90%88%E3%81%84%E6%B4%BB%E5%8B%95%E3%83%BB%E5%B0%B1 (in Japanese).",
-    "ProCon.org, \"100+ topics for argumentative essays and debates,\" https://www.procon.org/debate-topics/.",
-    "A. Parrish et al., \"BBQ: A hand-built bias benchmark for question answering,\" in Findings of the Association for Computational Linguistics: ACL 2022, 2022.",
-    "yonekubo, \"About generative ai (llm) being bad at palindromes.\" https://note.com/yonekubo/n/n86b41d9d8194 (in Japanese).",
-    "C. C. Vieira et al., \"The interplay of migration and cultural similarity between countries: Evidence from facebook data on food and drink interests,\" PLOS ONE, vol. 17, no. 2, p. e0262947, 2022."
-  ]
+  "primary_bias_target": "Ideological bias"
 }

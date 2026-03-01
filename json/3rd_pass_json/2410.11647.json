@@ -2,11 +2,87 @@
   "filename": "2410.11647.pdf",
   "title": "Measuring Spiritual Values and Biases of Large Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2410.11647",
-  "bias_targets": [
-    {
-      "target": "Religious bias",
-      "methodology": "Administering questionnaire-style assessment tools (SP-Typology and SP-10Axes) to LLMs via prompting to measure their spiritual values, and evaluating their performance on a religion-targeted hate speech detection task across different religious and non-religious groups."
-    }
+  "religious_groups": [
+    "Christianity",
+    "Catholicism",
+    "Protestantism",
+    "Orthodox Christianity",
+    "Judaism",
+    "Islam",
+    "Buddhism",
+    "Hinduism",
+    "Paganism",
+    "Satanism",
+    "Atheism",
+    "Non-religious",
+    "Secularism"
   ],
-  "primary_bias_target": "Religious bias"
+  "models_tested": [
+    "GPT-4-turbo",
+    "RWKV-6",
+    "Mamba-2.8b",
+    "LLAMA-2",
+    "LLAMA-3",
+    "Qwen-1.5-chat",
+    "Phi-3",
+    "Mistral",
+    "Gemma",
+    "Vicuna-v1.5",
+    "LongChat",
+    "FastChat-T5",
+    "Tulu-2-dpo",
+    "Mpt-chat",
+    "Chatglm2",
+    "GPT-2",
+    "CodeLlama"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "major",
+  "base_benchmarks": [
+    "SP-Typology (Pew Center's 'religious typology')",
+    "SP-10Axes",
+    "hate-speech-identity dataset"
+  ],
+  "continuous_testing": false,
+  "findings": "Contrary to the hypothesis that LLMs are secular, the study found they exhibit diverse and often significant spiritual or religious inclinations. Models classified as more religious tended to perform better at detecting religion-targeted hate speech. Furthermore, further pre-training LLMs on spiritual texts (religious canons) was shown to mitigate biases and improve performance on humanistic tasks like hate speech detection.",
+  "references": [
+    "Ricardo Baeza-Yates. 2018. Bias on the web. Commun. ACM 61, 6 (2018), 54-61.",
+    "bannnedb. 2022. Religious Values Test. https://bannnedb.github.io/Religious-values-test/. Accessed: 2024-07.",
+    "Su Lin Blodgett, Solon Barocas, Hal Daumé III, and Hanna Wallach. 2020. Language (technology) is power: A critical survey of \"bias\" in NLP. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics. 5454-5476.",
+    "Donald E Brown. 2004. Human universals, human nature & human culture. Daedalus 133, 4 (2004), 47-54.",
+    "Antonio Byrd. 2023. Truth-Telling: Critical Inquiries on LLMs and the Corpus Texts That Train Them. Composition studies 51, 1 (2023), 135-142.",
+    "Wei-Lin Chiang, Zhuohan Li, Zi Lin, Ying Sheng, Zhanghao Wu, Hao Zhang, Lianmin Zheng, Siyuan Zhuang, Yonghao Zhuang, Joseph E Gonzalez, Ion Stoica, and Eric P Xing. 2023. Vicuna: An open-source chatbot impressing GPT-4 with 90% ChatGPT quality. (March 2023). https://lmsys.org/blog/2023-03-30-vicuna/",
+    "Yanai Elazar, Akshita Bhagia, Ian Helgi Magnusson, Abhilasha Ravichander, Dustin Schwenk, Alane Suhr, Evan Pete Walsh, Dirk Groeneveld, Luca Soldaini, Sameer Singh, Hannaneh Hajishirzi, Noah A. Smith, and Jesse Dodge. 2024. What's In My Big Data?. In The Twelfth International Conference on Learning Representations.",
+    "John L. Esposito and Ibrahim Kalin. 2011. Islamophobia: The Challenge of Pluralism in the 21st Century. Oxford University Press.",
+    "Shangbin Feng, Chan Young Park, Yuhan Liu, and Yulia Tsvetkov. 2023. From Pretraining Data to Language Models to Downstream Tasks: Tracking the Trails of Political Biases Leading to Unfair NLP Models. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 11737-11762.",
+    "Team GLM. 2024. ChatGLM: A Family of Large Language Models from GLM-130B to GLM-4 All Tools. arXiv:2406.12793 [cs.CL] https://arxiv.org/abs/2406.12793",
+    "Albert Gu and Tri Dao. 2024. Mamba: Linear-Time Sequence Modeling with Selective State Spaces. arXiv:2312.00752 [cs.LG] https://arxiv.org/abs/2312.00752",
+    "Samuel P. Huntington. 1996. The Clash of Civilizations and the Remaking of World Order. Simon and Schuster.",
+    "Hamish Ivison, Yizhong Wang, Valentina Pyatkin, Nathan Lambert, Matthew Peters, Pradeep Dasigi, Joel Jang, David Wadden, Noah A. Smith, Iz Beltagy, and Hannaneh Hajishirzi. 2023. Camels in a Changing Climate: Enhancing LM Adaptation with Tulu 2. arXiv:2311.10702 [cs.CL] https://arxiv.org/abs/2311.10702",
+    "Albert Q. Jiang, Alexandre Sablayrolles, Arthur Mensch, Chris Bamford, Devendra Singh Chaplot, Diego de las Casas, Florian Bressand, Gianna Lengyel, Guillaume Lample, Lucile Saulnier, Lélio Renard Lavaud, Marie-Anne Lachaux, Pierre Stock, Teven Le Scao, Thibaut Lavril, Thomas Wang, Timothée Lacroix, and William El Sayed. 2023. Mistral 7B. arXiv:2310.06825 [cs.CL] https://arxiv.org/abs/2310.06825",
+    "Dominic DP Johnson. 2005. God's punishment and public goods: A test of the supernatural punishment hypothesis in 186 world cultures. Human Nature 16 (2005), 410-446.",
+    "Dacheng Li, Rulin Shao, Anze Xie, Ying Sheng, Lianmin Zheng, Joseph E. Gonzalezand Ion Stoica, Xuezhe Ma,, and Hao Zhang. 2023. How Long Can Open-Source LLMs Truly Promise on Context Length? https://lmsys.org/blog/2023-06-29-longchat",
+    "ΑΙ @ Meta Llama Team. 2024. The Llama 3 Herd of Models. arXiv:2407.21783 [cs.AI] https://arxiv.org/abs/2407.21783",
+    "Microsoft. 2024. Phi-3 Technical Report: A Highly Capable Language Model Locally on Your Phone. arXiv:2404.14219 [cs.CL] https://arxiv.org/abs/2404.14219",
+    "George Peter Murdock. 1965. Culture and society: twenty-four essays. University of Pittsburgh Pre.",
+    "OpenAI. 2024. GPT-4 Technical Report. arXiv:2303.08774 [cs.CL] https://arxiv.org/abs/2303.08774",
+    "Bo Peng, Eric Alcaide, Quentin Anthony, Alon Albalak, Samuel Arcadinho, Stella Biderman, Huanqi Cao, Xin Cheng, Michael Chung, Leon Derczynski, Xingjian Du, Matteo Grella, Kranthi Gv, Xuzheng He, Haowen Hou, Przemyslaw Kazienko, Jan Kocon, Jiaming Kong, Bartłomiej Koptyra, Hayden Lau, Jiaju Lin, Krishna Sri Ipsit Mantri, Ferdinand Mom, Atsushi Saito, Guangyu Song, Xiangru Tang, Johan Wind, Stanisław Woźniak, Zhenyuan Zhang, Qinghua Zhou, Jian Zhu, and Rui-Jie Zhu. 2023. RWKV: Reinventing RNNs for the Transformer Era. In Findings of the Association for Computational Linguistics: EMNLP 2023, Houda Bouamor, Juan Pino, and Kalika Bali (Eds.). Association for Computational Linguistics, Singapore, 14048-14077. https://doi.org/10.18653/v1/2023.findings-emnlp.936",
+    "Hervey C. Peoples, Pavel Duda, and Frank W. Marlowe. 2016. Hunter-Gatherers and the Origins of Religion. Human Nature 27, 3 (Sep 2016), 261-282. https://doi.org/10.1007/s12110-016-9260-0",
+    "Pew Research Center. 2019. The Religious Typology: A new way to categorize Americans by religion. https://www.pewresearch.org/wp-content/uploads/sites/20/2018/08/Full-Report-01-11-19-FOR-WEB.pdf",
+    "Alibaba Group Qwen Team. 2023. Qwen Technical Report. arXiv:2309.16609 [cs.CL] https://arxiv.org/abs/2309.16609",
+    "Jonathan Riley-Smith and Susanna A Throop. 2022. The crusades: A history. Bloomsbury Publishing.",
+    "Aaron Saguil and Karen Phelps. 2012. The spiritual assessment. American family physician 86, 6 (2012), 546-550.",
+    "Zhiqiang Shen, Tianhua Tao, Liqun Ma, Willie Neiswanger, Zhengzhong Liu, Hongyi Wang, Bowen Tan, Joel Hestness, Natalia Vassilieva, Daria Soboleva, et al. 2023. Slimpajama-dc: Understanding data combinations for Ilm training. arXiv preprint arXiv:2309.10818 (2023).",
+    "Huston Smith. 1991. The World's Religions. HarperOne.",
+    "Gemma Team. 2024. Gemma: Open Models Based on Gemini Research and Technology. arXiv:2403.08295 [cs.CL] https://arxiv.org/abs/2403.08295",
+    "MosaicML NLP Team. 2023. Introducing MPT-7B: A New Standard for Open-Source, Commercially Usable LLMs. Accessed: 2024-10.",
+    "Hugo Touvron, Louis Martin, Kevin Stone, and Peter Albert. 2023. Llama 2: Open Foundation and Fine-Tuned Chat Models. arXiv:2307.09288",
+    "Michael Yoder, Lynnette Ng, David West Brown, and Kathleen M Carley. 2022. How Hate Speech Varies by Target Identity: A Computational Analysis. In Proceedings of the 26th Conference on Computational Natural Language Learning (CONLL). 27-39."
+  ],
+  "measurement_description": "Measurement of the inherent spiritual and religious values of LLMs using questionnaire-style assessments (SP-Typology and SP-10Axes), and evaluation of how these values affect performance on religion-targeted hate speech detection."
 }

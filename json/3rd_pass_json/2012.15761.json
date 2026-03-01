@@ -2,35 +2,89 @@
   "filename": "2012.15761.pdf",
   "title": "Learning from the Worst: Dynamically Generated Datasets to Improve Online Hate Detection",
   "arxiv_url": "https://arxiv.org/pdf/2012.15761",
-  "bias_targets": [
-    {
-      "target": "Racial/Ethnic bias",
-      "methodology": "Human-and-model-in-the-loop dynamic dataset generation where annotators create adversarial hate speech examples and contrast sets (e.g., swapping identity terms) targeting racial and ethnic groups (e.g., Black people, East Asians, Arabs) to trick a target model, evaluated via model error rates and the HateCheck test suite."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Human-and-model-in-the-loop dynamic dataset generation where annotators create adversarial hate speech examples and contrast sets targeting women and gender minorities (e.g., trans and non-binary people) to trick a target model, evaluated via model error rates and the HateCheck test suite."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Human-and-model-in-the-loop dynamic dataset generation where annotators create adversarial hate speech examples and contrast sets targeting religious groups (e.g., Muslims, Jewish people, Hindus) to trick a target model, evaluated via model error rates and the HateCheck test suite."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Human-and-model-in-the-loop dynamic dataset generation where annotators create adversarial hate speech examples and contrast sets targeting sexual orientations (e.g., gay, lesbian, bisexual) to trick a target model, evaluated via model error rates and the HateCheck test suite."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Human-and-model-in-the-loop dynamic dataset generation where annotators create adversarial hate speech examples and contrast sets targeting people with disabilities to trick a target model, evaluated via model error rates and the HateCheck test suite."
-    },
-    {
-      "target": "Nationality bias",
-      "methodology": "Human-and-model-in-the-loop dynamic dataset generation where annotators create adversarial hate speech examples and contrast sets targeting immigrants, refugees, asylum seekers, and specific nationalities (e.g., Polish) to trick a target model, evaluated via model error rates and the HateCheck test suite."
-    },
-    {
-      "target": "Socioeconomic bias",
-      "methodology": "Human-and-model-in-the-loop dynamic dataset generation where annotators create adversarial hate speech examples and contrast sets targeting class identities (e.g., working class) to trick a target model, evaluated via model error rates and the HateCheck test suite."
-    }
+  "religious_groups": [
+    "Islam",
+    "Judaism",
+    "Hinduism"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "RoBERTa",
+    "Perspective's toxicity classifier"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "hatespeechdata.com",
+    "HATECHECK"
+  ],
+  "continuous_testing": true,
+  "findings": "The paper found that a dynamic, human-and-model-in-the-loop process for generating datasets significantly improves the performance and robustness of hate speech detection models. While findings were not broken down by target group, religious identities such as 'Muslims' and 'Jewish people' were among the most common targets in the dataset, indicating that the improved models are better at detecting hate speech against these groups.",
+  "references": [
+    "Maria Anzovino, Elisabetta Fersini, and Paolo Rosso. 2018. Automatic identification and classification of misogynistic language on Twitter. In NLDB, pages 57–64.",
+    "Valerio Basile, Cristina Bosco, Elisabetta Fersini, Debora Nozza, Viviana Patti, Francisco Manuel Rangel Pardo, Paolo Rosso, and Manuela Sanguinetti. 2019. Sem Eval-2019 Task 5: Multilingual Detection of Hate Speech Against Immigrants and Women in Twitter. In Proceedings of the 13th International Workshop on Semantic Evaluation, pages 54–63.",
+    "Emily M. Bender and Batya Friedman. 2018. Data statements for natural language processing: Toward mitigating system bias and enabling better science. Transactions of the Association for Computational Linguistics, 6:587–604.",
+    "Tommaso Caselli, Valerio Basile, Jelena Mitrović, Inga Kartoziya, and Michael Granitzer. 2020. I Feel Offended, Don’t Be Abusive! Implicit/Explicit Messages in Offensive and Abusive Language. In Proceedings of the 12th Conference on Language Resources and Evaluation (LREC), pages 6193–6202.",
+    "Yi-Ling Chung, Elizaveta Kuzmenko, Serra Sinem Tekiroglu, and Marco Guerini. 2019. CONAN Counter NArratives through Nichesourcing: a Multilingual Dataset of Responses to Fight Online Hate Speech. In Proceedings of the 57th Annual Meeting of the ACL, pages 2819–2829.",
+    "Thomas Davidson, Dana Warmsley, Michael Macy, and Ingmar Weber. 2017. Automated Hate Speech Detection and the Problem of Offensive Language. In Proceedings of the 11th ICWSM, pages 1–4.",
+    "Emily Dinan, Samuel Humeau, Bharath Chintagunta, and Jason Weston. 2019. Build it break it fix it for dialogue safety: Robustness from adversarial human attack. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing, pages 4537–4546.",
+    "Lucas Dixon, John Li, Jeffrey Sorensen, Nithum Thain, and Lucy Vasserman. 2018. Measuring and Mitigating Unintended Bias in Text Classification. In AAAI/ACM Conference on AI, Ethics, and Society, pages 67–73.",
+    "Antigoni-maria Founta, Constantinos Djouvas, Despoina Chatzakou, Ilias Leontiadis, Jeremy Blackburn, Gianluca Stringhini, Athena Vakali, Michael Sirivianos, and Nicolas Kourtellis. 2018. Large Scale Crowdsourcing and Characterization of Twitter Abusive Behavior. In ICWSM, pages 1–11.",
+    "Matt Gardner, Yoav Artzi, Victoria Basmova, Jonathan Berant, Ben Bogin, Sihao Chen, Pradeep Dasigi, Dheeru Dua, Yanai Elazar, Ananth Gottumukkala, Nitish Gupta, Hanna Hajishirzi, Gabriel Ilharco, Daniel Khashabi, Kevin Lin, Jiangming Liu, Nelson F. Liu, Phoebe Mulcaire, Qiang Ning, Sameer Singh, Noah A. Smith, Sanjay Subramanian, Reut Tsarfaty, Eric Wallace, Ally Zhang, and Ben Zhou. 2020. Evaluating NLP Models’ Local Decision Boundaries via Contrast Sets. In Findings of the Assocation for Computational Linguistics: EMNLP 2020, pages 1307–1323.",
+    "Sahaj Garg, Ankur Taly, Vincent Perot, Ed H. Chi, Nicole Limtiaco, and Alex Beutel. 2019. Counterfactual fairness in text classification through robustness. Proceedings of the 2019 AAAI/ACM Conference on AI, Ethics, and Society, pages 219–226.",
+    "Mor Geva, Yoav Goldberg, and Jonathan Berant. 2019. Are we modeling the task or the annotator? an investigation of annotator bias in natural language understanding datasets. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLPIJCNLP), pages 1161–1166, Hong Kong, China. Association for Computational Linguistics.",
+    "Jennifer Golbeck, Alicia A. Geller, Jayanee Thanki, Shalmali Naik, Kelly M. Hoffman, Derek Michael Wu, Alexandra Berlinger, Priyanka Vengataraman, Shivika Khare, Zahra Ashktorab, Marianna J. Martindale, Gaurav Shahane, Paul Cheakalos, Jenny Hottle, Siddharth Bhagwan, Raja Rajan Gunasekaran, Rajesh Kumar Gnanasekaran, Rashad O. Banjo, Piyush Ramachandran, Lisa Rogers, Kristine M. Rogers, Quint Gergory, Heather L. Nixon, Meghna Sardana Sarin, Zijian Wan, Cody Buntain, Ryan Lau, and Vichita Jienjitlert. 2017. A Large Labeled Corpus for Online Harassment Research. In Proceedings of the ACM Conference on Web Science, pages 229–233.",
+    "Tommi Gröndahl, Luca Pajola, Mika Juuti, Mauro Conti, and N. Asokan. 2018. All You Need is “Love”: Evading Hate-speech Detection. In Proceedings of the 11th ACM Workshop on Artificial Intelligence and Security, pages 2–12.",
+    "Kevin A Hallgren. 2012. Computing Inter-Rater Reliability for Observational Data: An Overview and Tutorial. Tutorials in quantitative methods for psychology, 8(1):23–34.",
+    "Hugo Lewi Hammer. 2014. Detecting threats of violence in online discussions using bigrams of important words. In Proceedings - 2014 IEEE Joint Intelligence and Security Informatics Conference, JISIC 2014, page 319.",
+    "N. Haslam and M. Stratemeyer. 2016. Recent research on dehumanization. Current Opinion in Psychology, 11:25–29.",
+    "Hossein Hosseini, Sreeram Kannan, Baosen Zhang, and Radha Poovendran. 2017. Deceiving Google’s Perspective API Built for Detecting Toxic Comments. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR) Workshops, pages 1305–1309.",
+    "Mladen Karan and Jan Šnajder. 2018. Cross-Domain Detection of Abusive Language Online. In 2nd Workshop on Abusive Language Online, pages 132–137.",
+    "Divyansh Kaushik, Eduard Hovy, and Zachary C Lipton. 2019. Learning the difference that makes a difference with counterfactually-augmented data. arXiv preprint arXiv:1909.12434.",
+    "Brendan Kennedy, Xisen Jin, Aida Mostafazadeh Davani, Morteza Dehghani, and Xiang Ren. 2020. Contextualizing Hate Speech Classifiers with Post-hoc Explanation. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5435–5442.",
+    "Ritesh Kumar, Atul Kr Ojha, Shervin Malmasi, and Marcos Zampieri. 2018. Benchmarking Aggression Identification in Social Media. In Proceedings ofthe First Workshop on Trolling, Aggression and Cyberbullying,, 1, pages 1–11.",
+    "Jana Kurrek, Haji Mohammad Saleem, and Derek Ruths. 2020. Towards a Comprehensive Taxonomy and Large-Scale Annotated Corpus for Online Slur Usage. In Proceedings of the Fourth Workshop on Online Abuse and Harms, pages 138–149.",
+    "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. 2019. Roberta: A robustly optimized bert pretraining approach. arXiv:1907.11692.",
+    "Thomas Mandl, Sandip Modha, Prasenjit Majumder, Daksh Patel, Mohana Dave, Chintak Mandlia, and Aditya Patel. 2019. Overview of the HASOC track at FIRE 2019: Hate speech and offensive content identification in Indo-European languages. In FIRE ’19: Proceedings of the 11th Forum for Information Retrieval Evaluation, pages 14–17.",
+    "Binny Mathew, Punyajoy Saha, Seid Muhie Yimam, Chris Biemann, Pawan Goyal, and Animesh Mukherjee. 2020. Hatexplain: A benchmark dataset for explainable hate speech detection.",
+    "Julia Mendelsohn, Yulia Tsvetkov, and Dan Jurafsky. 2020. A Framework for the Computational Linguistic Analysis of Dehumanization. Frontiers in Artificial Intelligence, 3(August):1–24.",
+    "Pushkar Mishra, Helen Yannakoudakis, and Ekaterina Shutova. 2019. Tackling online abuse: A survey of automated abuse detection methods. arXiv:1908.06024v2, pages 1–17.",
+    "Robert C Nickerson, Upkar Varshney, and Jan Muntermann. 2013. A method for taxonomy development and its application in information systems. European Journal of Information Systems, 22(3):336–359.",
+    "Yixin Nie, Adina Williams, Emily Dinan, Mohit Bansal, Jason Weston, and Douwe Kiela. 2020. Adversarial NLI: A new benchmark for natural language understanding. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 4885–4901, Online. Association for Computational Linguistics.",
+    "Chikashi Nobata, Achint Thomas, Yashar Mehdad, Yi Chang, and Joel Tetreault. 2016. Abusive Language Detection in Online User Content. In World Wide Web Conference, pages 145–153.",
+    "Alexis Palmer, Christine Carr, Melissa Robinson, and Jordan Sanders. 2020. COLD: Annotation scheme and evaluation data set for complex offensive language in English. The Journal for Language Technology and Computational Linguistics, 34(1):1–28.",
+    "Endang Pamungkas, Valerio Basile, and Viviana Patti. 2020. Misogyny Detection in Twitter: a Multilingual and Cross-Domain Study. Information Processing and Management, 57(6).",
+    "Georgios K. Pitsilis, Heri Ramampiaro, and Helge Langseth. 2018. Detecting Offensive Language in Tweets Using Deep Learning. arXiv:1801.04433v1, pages 1–17.",
+    "Fabio Poletto, Valerio Basile, Manuela Sanguinetti, Cristina Bosco, and Viviana Patti. 2020. Resources and benchmark corpora for hate speech detection: a systematic review. Language Resources and Evaluation, pages 1–47.",
+    "Marco Tulio Ribeiro, Tongshuang Wu, Carlos Guestrin, and Sameer Singh. 2020. Beyond accuracy: Behavioral testing of NLP models with CheckList. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 4902–4912, Online. Association for Computational Linguistics.",
+    "Paul Röttger, Bertram Vidgen, Dong Nguyen, Zeerak Waseem, Helen Margetts, and Janet Pierrehumbert. 2020. Hatecheck: Functional tests for hate speech detection models.",
+    "Joni Salminen, Maximilian Hopf, Shammur A. Chowdhury, Soon gyo Jung, Hind Almerekhi, and Bernard J. Jansen. 2020. Developing an online hate classifier for multiple social media platforms. Human-centric Computing and Information Sciences, 10(1):1–34.",
+    "Mattia Samory, Indira Sen, Julian Kohne, Fabian Flock, and Claudia Wagner. 2020. Unsex me here: Revisiting sexism detection using psychological scales and adversarial samples. arXiv preprint:2004.12764v1, pages 1–11.",
+    "Maarten Sap, Dallas Card, Saadia Gabriel, Yejin Choi, Noah A Smith, and Paul G Allen. 2019. The Risk of Racial Bias in Hate Speech Detection. In Proceedings of the 57th Annual Meeting of the ACL, pages 1668–1678.",
+    "Anna Schmidt and Michael Wiegand. 2017. A Survey on Hate Speech Detection using Natural Language Processing. In Proceedings of the Fifth International Workshop on Natural Language Processing for Social Media, pages 1–10. Association for Computational Linguistics.",
+    "Steve Durairaj Swamy, Anupam Jamatia, and Björn Gambäck. 2019. Studying generalisability across abusive language detection datasets. In CoNLL 2019 - 23rd Conference on Computational Natural Language Learning, Proceedings of the Conference, pages 940–950.",
+    "Bertie Vidgen, Austin Botelho, David Broniatowski, Ella Guest, Matthew Hall, Helen Margetts, Rebekah Tromble, Zeerak Waseem, and Scott Hale. 2020. Detecting East Asian Prejudice on Social Media. arXiv:2005.03909v1, pages 1–12.",
+    "Bertie Vidgen and Leon Derczynski. 2020. Directions in Abusive Language Training Data: Garbage In, Garbage Out. Plos ONE, pages 1–26.",
+    "Bertie Vidgen, Alex Harris, Dong Nguyen, Rebekah Tromble, Scott Hale, and Helen Margetts. 2019a. Challenges and frontiers in abusive content detection. In Proceedings of the Third Workshop on Abusive Language Online (ACL), pages 80–93.",
+    "Bertie Vidgen, Helen Margetts, and Alex Harris. 2019b. How much online abuse is there? A systematic review of evidence for the UK. The Alan Turing Institute, London.",
+    "Bertie Vidgen, Dong Nguyen, Helen Margetts, Patricia Rossini, and Rebekah Tromble. 2021. Introducing CAD: the contextual abuse dataset. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 2289–2303, Online. Association for Computational Linguistics.",
+    "Bertie Vidgen and Taha Yasseri. 2019. Detecting weak and strong Islamophobic hate speech on social media. Journal of Information Technology & Politics, 17(1):66–78.",
+    "William Warner and Julia Hirschberg. 2012. Detecting hate speech on the world wide web. In Proceedings of the Second Workshop on Language in Social Media, pages 19–26.",
+    "Zeerak Waseem. 2016. Are you a racist or am I seeing things? annotator influence on hate speech detection on twitter. In Proceedings of the First Workshop on NLP and Computational Social Science, pages 138–142, Austin, Texas. Association for Computational Linguistics.",
+    "Zeerak Waseem, Thomas Davidson, Dana Warmsley, and Ingmar Weber. 2017. Understanding Abuse: A Typology of Abusive Language Detection Subtasks. In Proceedings of the First Workshop on Abusive Language Online, pages 78–84.",
+    "Zeerak Waseem and Dirk Hovy. 2016. Hateful Symbols or Hateful People? Predictive Features for Hate Speech Detection on Twitter. In NAACL-HLT, pages 88–93.",
+    "Zeerak Waseem, James Thorne, and Joachim Bingel. 2018. Bridging the gaps: Multi task learning for domain transfer of hate speech detection. In Jennifer Golbeck, editor, Online Harassment, pages 29–55. Springer International Publishing, Cham.",
+    "Michael Wiegand, Josef Ruppenhofer, and Thomas Kleinbauer. 2019. Detection of Abusive Language: the Problem of Biased Datasets. In NAACL-HLT, pages 602–608, Minneapolis. ACL.",
+    "Thomas Wolf, Lysandre Debut, Victor Sanh, Julien Chaumond, Clement Delangue, Anthony Moi, Pierric Cistac, Tim Rault, R'emi Louf, Morgan Funtowicz, and Jamie Brew. 2019. Huggingface’s transformers: State-of-the-art natural language processing. ArXiv, abs/1910.03771.",
+    "Lucas Wright, Derek Ruths, Kelly P Dillon, Haji Mohammad Saleem, and Susan Benesch. 2017. Vectors for counterspeech on Twitter. In Proceedings of the First Workshop on Abusive Language Online, pages 57–62, Vancouver, BC, Canada. Association for Computational Linguistics.",
+    "Ellery Wulczyn, Nithum Thain, and Lucas Dixon. 2017a. Ex Machina: Personal Attacks Seen at Scale. In Proceedings of the International World Wide Web Conference, pages 1391–1399.",
+    "Ellery Wulczyn, Nithum Thain, and Lucas Dixon. 2017b. Ex Machina: Personal Attacks Seen at Scale. In Proceedings of the International World Wide Web Conference, pages 1391–1399.",
+    "Marcos Zampieri, Shervin Malmasi, Preslav Nakov, Sara Rosenthal, Noura Farra, and Ritesh Kumar. 2019. Predicting the type and target of offensive posts in social media. In Proceedings of NAACL HLT 2019, volume 1, pages 1415–1420.",
+    "Marcos Zampieri, Preslav Nakov, Sara Rosenthal, Pepa Atanasova, Georgi Karadzhov, Hamdy Mubarak, Leon Derczynski, Zeses Pitenis, and Çağrı Çöltekin. 2020. SemEval-2020 Task 12: Multilingual Offensive Language Identification in Social Media (Offen-sEval 2020). arXiv preprint, pages 1–23."
+  ],
+  "measurement_description": "The benchmark measures the detection of online hate speech, including hate speech targeted at specific religious groups such as Muslims, Jews, and Hindus."
 }

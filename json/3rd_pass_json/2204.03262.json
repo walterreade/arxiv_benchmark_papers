@@ -2,35 +2,120 @@
   "filename": "2204.03262.pdf",
   "title": "Korean Online Hate Speech Dataset for Multilabel Classification - How Can Social Science Improve Dataset on Hate Speech? -",
   "arxiv_url": "https://arxiv.org/pdf/2204.03262",
-  "bias_targets": [
-    {
-      "target": "Racial and Nationality bias",
-      "methodology": "Annotating Korean online news and community comments targeting racial/ethnic minorities and immigrants to construct a multilabel dataset, then evaluating the classification performance of fine-tuned language models (KcBERT, KcELECTRA) using Label Ranking Average Precision (LRAP)."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Annotating Korean online comments targeting specific religious groups (e.g., Protestants, Islam, Buddhism) to construct a multilabel dataset, then evaluating fine-tuned language models using LRAP."
-    },
-    {
-      "target": "Regional bias",
-      "methodology": "Annotating Korean online comments containing derogatory stereotypes aimed at specific geographic regions (e.g., Jeolla-province, Gyeongsang-province) to construct a multilabel dataset, then evaluating fine-tuned language models using LRAP."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Annotating Korean online comments expressing prejudice, gerontophobia, or derogatory language toward specific age groups/generations to construct a multilabel dataset, then evaluating fine-tuned language models using LRAP."
-    },
-    {
-      "target": "Gender bias (Misogyny)",
-      "methodology": "Annotating Korean online comments expressing hostile or benevolent sexism against women and changing family norms to construct a multilabel dataset, then evaluating fine-tuned language models using LRAP."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Annotating Korean online comments explicitly discriminating against sexual minorities (e.g., LGBTQ) to construct a multilabel dataset, then evaluating fine-tuned language models using LRAP."
-    },
-    {
-      "target": "Gender bias (Male-targeted)",
-      "methodology": "Annotating Korean online comments containing stigmatizing or hostile expressions targeting males to construct a multilabel dataset, then evaluating fine-tuned language models using LRAP."
-    }
+  "religious_groups": [
+    "Christianity",
+    "Protestantism",
+    "Catholicism",
+    "Islam",
+    "Buddhism"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "KCBERT-base",
+    "KCBERT-large",
+    "KcELECTRA-base"
+  ],
+  "languages_evaluated": [
+    "Korean"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "NSMC (Naver sentiment movie corpus)",
+    "Korean Hate Speech Dataset (Moon et al., 2020)"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper found that religious hate speech in the South Korean online context is distinct from Western cases. It is primarily targeted at Protestants, one of the country's major religions, due to their perceived right-wing extremism and exclusiveness, rather than at religious minorities. Hate speech against Islam, while present, tends to be reactive to specific international or domestic events. The developed models were successfully trained to identify these nuanced and context-specific forms of religious hate speech, with performance significantly improving after augmenting the dataset with human-in-the-loop (HITL) curated examples.",
+  "references": [
+    "Alesina, A., Devleeschauwer, A., Easterly, W., Kurlat, S., & Wacziarg, R. (2003). Fractionalization. Journal of Economic growth, 8(2), 155-194.",
+    "Badjatiya, P., Gupta, S., Gupta, M., & Varma, V. (2017). Deep learning for hate speech detection in tweets. In Proceedings of the 26th international conference on World Wide Web com-panion (pp. 759-760).",
+    "Badjatiya, P., Gupta, S., Gupta, M., & Varma, V. (2017, April). Deep learning for hate speech detection in tweets. In Proceed-ings of the 26th international conference on World Wide Web compan-ion (pp. 759-760).",
+    "Bodner, E. (2009). On the origins of ageism among older and younger adults. International Psychogeriatrics, 21(6), 1003-1014.",
+    "Bourdieu, P. (1990). The logic of practice. Stanford university press.",
+    "Braceland, F. J. (1972). SENESCENCE-the inside story. Psy-chi-atric Annals, 2(10), 48-62.",
+    "Brader, T., Valentino, N. A., & Suhay, E. (2008). What triggers public opposition to immigration? Anxiety, group cues, and immi-gration threat. American Journal of Political Science, 52(4), 959-978.",
+    "Bunde, E. (2021). AI-Assisted and Explainable Hate Speech De-tection for Social Media Moderators-A Design Science Ap-proach. In Proceedings of the 54th Hawaii International Con-ference on System Sciences (p. 1264).",
+    "Bunde, E. (2021, January). Al-Assisted and Explainable Hate Speech Detection for Social Media Moderators-A Design Sci-ence Approach. In Proceedings of the 54th Hawaii Internation-al Con-ference on System Sciences (p. 1264).",
+    "Butler, R. N. (1969). Age-ism: Another form of bigotry. The ger-ontologist, 9, 243-246.",
+    "Butler, R. N. (1989). Dispelling ageism: The cross-cutting in-ter-vention. The Annals of the American Academy of Political and So-cial Science, 503(1), 138-147.",
+    "Cederman, L. E., & Girardin, L. (2007). Beyond fractionaliza-tion: Mapping ethnicity onto nationalist insurgencies. Ameri-can Politi-cal science review, 101(1), 173-185.",
+    "Chai, Y., Liu, G., Jin, Z., & Sun, D. (2020, July). How to Keep an Online Learning Chatbot From Being Corrupted. In 2020 International Joint Conference on Neural Networks (IJCNN) (pp. 1-8). ΙΕΕΕ.",
+    "Crandall, C. S., Eshleman, A., & O'Brien, L. (2002). Social Norms and the Expression and Suppression of Prejudice. Jour-nal of Per-sonality and Social Psychology, 82, 359-378.",
+    "Ha, S. E., Cho, S. J., & Kang, J. H. (2016). Group cues and public opposition to immigration: evidence from a survey ex-periment in South Korea. Journal of Ethnic and Migration Studies, 42(1), 136-149.",
+    "Hahn, Kyu S., Sung Jin Park, Hyeyon Lee, and Hye Lim Lee. 2013. \"Koreans' Attitudes toward Immigration: Person Positiv-ity Bias and the Effects of Implicit Racial Preference.\" Media & Society 21(3): 107-144.",
+    "Hainmueller, J., & Hopkins, D. J. (2014). Public attitudes to-ward immigration. Annual review of political science, 17, 225-249.",
+    "Hardy, E. (2017). The female 'apologetic'behaviour within Cana-dian women's rugby: athlete perceptions and media influ-ences. In Gender, Media, Sport (pp. 35-47). Routledge.Kim, S.-A. and Lee, Y.-S. (2017) 'The Discursive Construction of Men-the Weak Iden-tity via",
+    "Hochschild, A. R. (2012). *The managed heart: commercializa-tion of human feeling*. University of California Press.",
+    "Hong, Sung Soo. (2019). Law and policy on hate. Law Re-search. 30(2), 191-228.",
+    "Howard, J. W. (2019). Free speech and hate speech. Annual Re-view of Political Science, 22, 93-109.",
+    "Jang, S. J. (2010). Multiculturalism among Koreans: Role of eco-nomic self-interests and national identities. Korean Political Sci-ence Review, 44(3), 97-119.",
+    "KBS, “[취재후] \"차별받는 것은 나\"..그들은 왜 서로를 혐오하나?.\" 2016.04.01.",
+    "Kennedy, G., McCollough, A., Dixon, E., Bastidas, A., Ryan, J., Loo, C., & Sahay, S. (2017). Technology solutions to com-bat online harassment. In Proceedings of the first workshop on abusive language online (pp. 73-77).",
+    "Kennedy, G., McCollough, A., Dixon, E., Bastidas, A., Ryan, J., Loo, C., & Sahay, S. (2017, August). Technology solutions to com-bat online harassment. In Proceedings of the first work-shop on abusive language online (pp. 73-77).",
+    "Khatri, C., Hedayatnia, B., Goel, R., Venkatesh, A., Gabriel, R., & Mandal, A. (2018). Detecting offensive content in open-domain conversations using two stage semi-supervision. arXiv preprint arXiv:1811.12900.",
+    "Kroon, A. C., Trilling, D., Van Selm, M., & Vliegenthart, R. (2019). Biased media? How news content influences age dis-crim-ination claims. European journal of Ageing, 16(1), 109-119.",
+    "Loke, J. (2012). Public expressions of private sentiments: Un-veil-ing the pulse of racial tolerance through online news read-ers' com-ments. Howard Journal of Communications, 23(3), 235-252.",
+    "Mannheim, K. (1970). The problem of generations. Psychoanalytic review, 57(3), 378-404.",
+    "Moon, J., Cho, W. I., & Lee, J. (2020). BEEP! Korean corpus of online news comments for toxic speech detection. arXiv preprint arXiv:2005.12503.",
+    "Nelson, T. D. (2009). Handbook of prejudice, stereotyping, and discrimination. New York: Psychology Press.",
+    "North, M. S., & Fiske, S. T. (2012). An inconvenienced youth? Ageism and its potential intergenerational roots. Psychological bulletin, 138(5), 982-997.",
+    "Ostfeld, M. (2017). The backyard politics of attitudes toward im-migration. Political Psychology, 38(1), 21-37.",
+    "Park, B. G. (2003). Territorialized party politics and the politics of local ecomomic development: State-led industrialization and polit-ical regionalism in South Korea. Political Geography, 22(8), 811-839.",
+    "Qazi, H., & Shah, S. (2018). Identity constructions through media discourses: Malala Yousafzai in Pakistani English news-papers. Journalism Studies, 19(11), 1597-1612.",
+    "Qian, J., Bethke, A., Liu, Y., Belding, E., & Wang, W. Y. (2019). A benchmark dataset for learning to intervene in online hate speech. arXiv preprint arXiv:1909.04251.",
+    "Rodriguez, A., Argueta, C., & Chen, Y. L. (2019). Automatic de-tection of hate speech on facebook using sentiment and emo-tion analysis. In 2019 International Conference on Artificial Intelli-gence in Information and Communication (ICAIIC) (pp. 169-174). IEEE.",
+    "Rodriguez, A., Argueta, C., & Chen, Y. L. (2019, February). Au-tomatic detection of hate speech on facebook using senti-ment and emotion analysis. In 2019 International Conference on Artificial Intelligence in Information and Communication (ICAIIC) (pp. 169-174). ΙΕΕΕ.",
+    "Schlesinger, A., O'Hara, K. P., & Taylor, A. S. (2018, April). Let's talk about race: Identity, chatbots, and AI. In Proceedings of the 2018 chi conference on human factors in computing systems (pp. 1-14).",
+    "Schmidt, A., & Wiegand, M. (2017). A survey on hate speech de-tection using natural language processing. In Proceedings of the fifth international workshop on natural language processing for so-cial media (pp. 1-10).",
+    "Schmidt, A., & Wiegand, M. (2017, April). A survey on hate speech detection using natural language processing. In Pro-ceed-ings of the fifth international workshop on natural lan-guage pro-cessing for social media (pp. 1-10).",
+    "Shin, Kyung-Ah & Choi, Yoonhyeung. (2020). Ageism in Society: An Analysis of the Comments Posted on Major Inter-net Portal Sites Concerning News about Elderly People. The Korean Journal of Advertising, 31(6), 93-128.",
+    "Suh, JeongKyu. 2017. \"How national identity shapes South Kore-ans' attitudes toward North Korea and its defectors.\" The Interna-tional Journal of Interdisciplinary Civic and Political Studies 12(1):13-42.",
+    "Suh, JeongKyu. 2019. \"Political Participation of Immigrants and Its Impact as a Perceived Threat: Evidence from Survey Experi-ment in South Korea.\" Sogang University, Seoul.",
+    "Vauclair, C. M., Hanke, K., Huang, L. L., & Abrams, D. (2017). Are Asian cultures really less ageist than Western ones? It de-pends on the questions asked. International Journal of Psychol-ogy, 52(2), 136-144.",
+    "Vidgen, B., & Derczynski, L. (2020). Directions in abusive lan-guage training data, a systematic review: Garbage in, gar-bage out. Plos one, 15(12), e0243300.",
+    "Walker, S. (1994). Hate speech: The history of an American con-troversy. U of Nebraska Press.",
+    "Warner, W., & Hirschberg, J. (2012). Detecting hate speech on the world wide web. In Proceedings of the second workshop on lan-guage in social media (pp. 19-26).",
+    "Warner, W., & Hirschberg, J. (2012, June). Detecting hate speech on the world wide web. In Proceedings of the second workshop on language in social media (pp. 19-26).",
+    "Waseem, Z., & Hovy, D. (2016). Hateful symbols or hateful people? predictive features for hate speech detection on twitter. In Proceed-ings of the NAACL student research workshop (pp. 88-93).",
+    "Waseem, Z., & Hovy, D. (2016, June). Hateful symbols or hateful people? predictive features for hate speech detection on twitter. In Proceedings of the NAACL student research work-shop (pp. 88-93).",
+    "West, C., & Zimmerman, D. (1987). Doing Gender. *Gender and Society,* *1*(2), 125-151. Retrieved June 17, 2021, from http://www.jstor.org/stable/189945",
+    "West, C., & Zimmerman, D. (1987). Doing Gender. Gender and Society, 1(2), 125-151. Retrieved June 17, 2021, from http://www.jstor.org/stable/189945",
+    "Xu, J., Ju, D., Li, M., Boureau, Y. L., Weston, J., & Dinan, E. (2020). Recipes for safety in open-domain chatbots. arXiv pre-print arXiv:2010.07079.",
+    "Yang, Hae-woo. 2019. \"Who produces xenophobia? - Foreign-ers placed in the lower levels of the racial hierarchy.\" Cross-Cultural Studies 56: 87-125.",
+    "Zhang, S. (2017). Language Reflects National Character. In Asia International Symposium on Language, Literature and Translation (pp.455-459).",
+    "국가인권위원회(NHRC). (2019). 2019년 혐오차별 국민인식 조사. [Survey on Public Perception of Hate Discrimination in 2019] 국가인권위원회 발간자료, 0-0.",
+    "김민정. (2020). 2015 년 이후 한국 여성운동의 새로운 동향. [New Trends in Korean Women's movement since 2015] 정치정보연구, 23(2), 59-88.",
+    "김수아 and 김세은. (2016). '좋아요'가 만드는 '싫어요'의 세계: 페이스북 '여성혐오' 페이지 분석. [‘Dys-like-phoria': Representa-tion and Recharacterisation of 'Misogyny' through Facebook] 미디어, 젠더 & 문화, 31(2), 5-44.",
+    "김순남. (2016). 이성애 비혼여성으로 살아가기: 지속가능한 비혼, 젠더, 친밀성. [Never-Married Women's Practices of Intimacy and Restructuring the Gender Norms In Korea] 한국여성학, 32(1), 181-217.",
+    "김영희. (2018). 한국 구술서사와 ‘여성혐오' - 구술서사에 나타난 '여성혐오(misogyny)'의 논리와 서사 전략 분석 -. [The Re-inter-preting Korean Oral Narratives in view of the Misogyny] 한국고전여성문학연구, 36, 85-137.",
+    "김학준. (2014). 인터넷 커뮤니티 일베저장소에서 나타나는 혐오와 열광의 감정동학 [Emotional dynamics of hatred, and enthusiasm of Ilbe Internet community.] (Doctoral dissertation, 서울대학교 대학원).",
+    "김창환, & 김태호. (2020). 세대 불평등은 증가하였는가? 세대 내, 세대 간 불평등 변화 요인 분석 [Has Generational Inequality In-creased? Decomposition of the Between- and Within-Generational Inequality], 1999~ 2019. 한국사회학, 54(4), 161-205.",
+    "박대아. (2018). 남성혐오표현의 유형과 사용 양상. 우리어문연구, [The types, Use, and Meanings of the Hatred Expression for Male] (62), 273-304.",
+    "박미숙, 추지현 (2017). 혐오표현의 실태와 대응방안. 형사정책연구원 연구총서 [The State of Hate Speech and The Re-sponse Measures], 1-373.",
+    "박상훈. (2009). 만들어진 현실: 한국의 지역주의, 무엇이 문제이고, 무엇이 문제가 아닌가. [The manufactureed problem : Regionalism in Korea, what's wrong, what's not] 후마니타스.",
+    "방송통신심의위원회 (2015). 인터넷 '차별·비하' 등 노골적 혐오표현에 엄정 대응. [Strict response to the explicit expression of disgust including discrimination and belittling online.] 서울: 방송통신심의위원회.",
+    "세계일보. “우리도 취직 힘든데..' 청년층 분노 대상 된 외국인 노동자 [한국형 외국인 혐오 보고서]\". [\"It's hard for us to get a job...\" Foreign Workers Targeted by Young People's Rage] 2020.03.26.",
+    "송준모, & 강정한. (2018). 메갈리아의 두 딸들: 익명성 수준에 따른 온라인 커뮤니티의 정체성 분화. [Two Daughters of Megalia: Iden-tity Differentiation in Response to the Anonymity Level in Online Community] 한국사회학, 52(4), 161-206.",
+    "신진욱. (2020). 세대불평등 담론의 정치적 계보와 의미론: '386'담론의 구조와 변화에 대한 비판적 담론분석 [Political Genealogy and Semantics of the Discourses on 'Inter-generational Inequality': A Critical Discourse Analysis of the Structure and Change of the '386' Discourses, 1990-2019], 1990~ 2019 년. 경제와사회, 407-442.",
+    "아시아경제. “조선족 포비아' 대림동의 오해와 진실.\" [Misunder-standing and Truth of Daelim-dong, \"Korean-Chinese Phobia\".] 2015.05.06.",
+    "안태형. (2013). 악성 댓글의 범위와 유형. [A Study on the scope and types of vicious replies on the internet bulletin board] 우리말연구, (32), 109-131.",
+    "양혜승. (2018). 포털과 지역혐오: 네이버 범죄뉴스의 지역혐오댓글에 대한 내용분석. [Hate speech toward specific re-gions in Korea: Content analysis of comments posted to crime news stories in Naver] 한국언론학보, 62(6), 7-36.",
+    "오마이뉴스. ““대구가 대구했다'라는 표현까지 등장한 이유 [일상의 혐오].\" [The reason why “Daegu Daegued\" expression appeared.] 2021.09.18.",
+    "이데일리 (2016). “남성혐오 '집게 손' 논란…국방부, 결국 포스터 수정”. ['Hand Gesture' Controversy on Male Hate, Ministry of De-fense edits the Poster] 2021.06.11. https://www.edaily.co.kr/news/read?newsId=0193848662908073 6&mediaCodeNo=257&OutLnkChk=Y",
+    "이승선. (2018). 공적인물이 발화하거나 방송에서 발생한 혐오표현의 특성에 관한 탐색적 연구. [An Exploratory Study on the Hate Speech due to Remarks of Public Figures] 언론과학연구, 18(2), 107-146.",
+    "이원석, & 이현상. (2020). 딥러닝 기술을 활용한 차별 및 혐오 표현 탐지: 어텐션 기반 다중 채널 CNN 모델링. [Bias & Hate Speech Detection Using Deep Learning: Multi-channel CNN Modeling with Attention] 한국정보통신학회논문지, 24(12), 1595-1603.",
+    "이철승. (2019). 세대, 계급, 위계: 386 세대의 집권과 불평등의 확대. [Generation, Class, and Hierarchy: 386-Generation in Power and Increase in Inequality] 한국사회학, 53(1), 1-48.",
+    "전상진. (2019). 세대 프레임의 쓸모. [The utility of the frame ‘Gen-eration'] 비판과 대안을 위한 사회복지학회 학술대회 발표논문집, 3-13.",
+    "정승민. (2007). 악성댓글의 문제점과 대응방안. [Problems in Vi-cious Replies and Solutions] 한국공안행정학회보, 16(2), 171-201.",
+    "정애경 and 윤은희. (2020). 한국 이성애자의 동성애 및 동성애자에 대한 태도: 탐색적 질적 연구. [Exploring South Korean Heterosex-uals' Attitudes Towards Same-Sex Relationships, Lesbians, and Gays: A Qualitative Study] 한국심리학회지: 상담 및 심리치료, 32(2), 583-608.",
+    "정인경. (2016). 포스트페미니즘 시대 인터넷 여성혐오. 페미니즘연구 [Internet Misogyny in a Post-Feminist Era], 16(1), 185-219.",
+    "조기숙. (1997). 지역주의 논쟁: 비판이론적 시각에 대한 비판. [A Critique on the Critical Theorists Account on Regional-sim] 한국정치학회보, 31(2), 203-232.",
+    "쿠키뉴스. “[친절한 쿡기자] '재기해'..또 다른 갈등을 불러올 한 마디.” [\"Go Jaegi\". A phrase causing another more conflict.] 2018.07.12.",
+    "차유정 and 강선경. (2020). 공론장의 ‘가족담론'에 관한 비판적 담론분석- 가족다양성 관점을 중심으로 -. [Critical Discourse Anal-ysis on the Family Discourse of the Public Sphere - Focusing on the Family Diversity Perspective -] 생명연구, 58, 221-243.",
+    "한겨레 21. “혐오에 찬 너의 말..그게 인종주의다.\" [Your hateful words...That's racism] 2014.03.04.",
+    "한겨레 21. “일베도, 오유도 모두 미워하는 그녀... 새누리당 의원 이자스민.\" [Rep. Lee Jasmine of the Saenuri party, the one who both the Ilbe and TodayHumor hates] 2015.03.17.",
+    "홍성수. (2016). 혐오표현 실태조사 및 규제방안 연구. [A Study on the Actual Conditions of Disgust Expression and the Regulatory Measures] 국가인권위원회 발간자료, 0-0."
+  ],
+  "measurement_description": "Detection of hate speech directed at religious groups within the South Korean cultural context, as one of seven multilabel hate speech categories."
 }

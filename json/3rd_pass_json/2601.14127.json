@@ -2,27 +2,106 @@
   "filename": "2601.14127.pdf",
   "title": "The Side Effects of Being Smart: Safety Risks in MLLMs' Multi-Image Reasoning",
   "arxiv_url": "https://arxiv.org/pdf/2601.14127",
-  "bias_targets": [
-    {
-      "target": "Racial bias",
-      "methodology": "Measuring the Attack Success Rate (ASR) of multi-image reasoning jailbreak prompts (from MIR-SafetyBench) designed to bypass safety filters and elicit hate speech, discrimination, or disparaging content against specific racial groups."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Measuring the Attack Success Rate (ASR) of multi-image reasoning jailbreak prompts (from MIR-SafetyBench) designed to bypass safety filters and elicit hate speech, discrimination, or disparaging content against specific religious groups."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Measuring the Attack Success Rate (ASR) of multi-image reasoning jailbreak prompts (from MIR-SafetyBench) designed to bypass safety filters and elicit hate speech, discrimination, or disparaging content based on gender."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Measuring the Attack Success Rate (ASR) of multi-image reasoning jailbreak prompts (from MIR-SafetyBench) designed to bypass safety filters and elicit hate speech, discrimination, or disparaging content based on sexual orientation."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Measuring the Attack Success Rate (ASR) of multi-image reasoning jailbreak prompts (from MIR-SafetyBench) designed to bypass safety filters and elicit hate speech, discrimination, or disparaging content against individuals with disabilities."
-    }
+  "religious_groups": [
+    "Religion (general category)"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "Llama3-LLAVA-NeXT-8B",
+    "LLaVA-v1.5-7B",
+    "Qwen2.5-VL-32B-Ins.",
+    "InternVL3-38B",
+    "InternVL3-8B",
+    "Kimi-VL-A3B-Instruct",
+    "InternVL3-78B",
+    "MiniCPM-0 2.6",
+    "Qwen2.5-VL-3B-Ins.",
+    "GLM-4.1V-9B-Thinking",
+    "Skywork-R1V3-38B",
+    "Kimi-VL-A3B-Thinking-2506",
+    "QVQ-72B-Preview",
+    "GPT-4o",
+    "GPT-4o-mini",
+    "Gemini-2.5-Flash",
+    "Gemini-2.5-Pro",
+    "Gemini-3-Pro-Preview",
+    "GPT-5.1"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "LongSafety",
+    "AdvBench",
+    "HarmBench",
+    "JailbreakBench",
+    "StrongReject",
+    "BeaverTails"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper does not provide findings specific to religion but identifies general safety risks. The primary finding is that models with stronger multi-image reasoning capabilities can be more vulnerable to generating harmful content, which includes hate speech against protected groups like religions, when the harmful intent is concealed within complex multi-image relational prompts.",
+  "references": [
+    "Stuart Armstrong. 2013. General purpose intelligence: arguing the orthogonality thesis. Analysis and Metaphysics, (12):68-84.",
+    "Nick Bostrom. 2012. The superintelligent will: Motivation and instrumental rationality in advanced artificial agents. Minds and Machines, 22(2):71–85.",
+    "Patrick Chao, Edoardo Debenedetti, Alexander Robey, Maksym Andriushchenko, Francesco Croce, Vikash Sehwag, Edgar Dobriban, Nicolas Flammarion, George J Pappas, Florian Tramer, and 1 others. 2024. Jailbreakbench: An open robustness benchmark for jailbreaking large language models. Advances in Neural Information Processing Systems, 37:55005-55029.",
+    "Gheorghe Comanici, Eric Bieber, Mike Schaekermann, Ice Pasupat, Noveen Sachdeva, Inderjit Dhillon, Marcel Blistein, Ori Ram, Dan Zhang, Evan Rosen, and 1 others. 2025. Gemini 2.5: Pushing the frontier with advanced reasoning, multimodality, long context, and next generation agentic capabilities. arXiv preprint arXiv:2507.06261.",
+    "Shiyao Cui, Qinglin Zhang, Xuan Ouyang, Renmiao Chen, Zhexin Zhang, Yida Lu, Hongning Wang, Han Qiu, and Minlie Huang. 2025. Shieldvlm: Safeguarding the multimodal implicit toxicity via deliberative reasoning with lvlms. arXiv preprint arXiv:2505.14035.",
+    "DeepSeek-AI. 2025. Deepseek-r1: Incentivizing reasoning capability in Ilms via reinforcement learning. Preprint, arXiv:2501.12948.",
+    "Yi Ding, Lijun Li, Bing Cao, and Jing Shao. 2025. Rethinking bottlenecks in safety fine-tuning of vision language models. arXiv preprint arXiv:2501.18533.",
+    "Jin Fan. 2014. An information theory account of cognitive control. Frontiers in human neuroscience, 8:680.",
+    "Dongyu Gong and Hantao Zhang. 2024. Self-attention limits working memory capacity of transformer-based models. arXiv preprint arXiv:2409.10715.",
+    "Yichen Gong, Delong Ran, Jinyuan Liu, Conglei Wang, Tianshuo Cong, Anyu Wang, Sisi Duan, and Xiaoyun Wang. 2025. Figstep: Jailbreaking large vision-language models via typographic visual prompts. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 39, pages 23951–23959.",
+    "Gemini Team Google. 2024. Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context. CoRR, abs/2403.05530.",
+    "Xuhao Hu, Dongrui Liu, Hao Li, Xuanjing Huang, and Jing Shao. 2025. VLSBench: Unveiling visual leakage in multimodal safety. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 8285–8316.",
+    "Wenxuan Huang, Bohan Jia, Zijie Zhai, Shaosheng Cao, Zheyu Ye, Fei Zhao, Zhe Xu, Yao Hu, and Shaohui Lin. 2025. Vision-r1: Incentivizing reasoning capability in multimodal large language models. arXiv preprint arXiv:2503.06749.",
+    "Aaron Hurst, Adam Lerer, Adam P Goucher, Adam Perelman, Aditya Ramesh, Aidan Clark, AJ Ostrow, Akila Welihinda, Alan Hayes, Alec Radford, and 1 others. 2024. Gpt-40 system card. arXiv preprint arXiv:2410.21276.",
+    "Jiaming Ji, Mickel Liu, Josef Dai, Xuehai Pan, Chi Zhang, Ce Bian, Boyuan Chen, Ruiyang Sun, Yizhou Wang, and Yaodong Yang. 2023. Beavertails: Towards improved safety alignment of Ilm via a human-preference dataset. Advances in Neural Information Processing Systems, 36:24678-24704.",
+    "Mohan Jiang, Jin Gao, Jiahao Zhan, and Dequan Wang. 2025. Mac: A live benchmark for multimodal large language models in scientific understanding. arXiv preprint arXiv:2508.15802.",
+    "Xi Jiang, Jian Li, Hanqiu Deng, Yong Liu, Bin-Bin Gao, Yifeng Zhou, Jialin Li, Chengjie Wang, and Feng Zheng. 2024. Mmad: A comprehensive benchmark for multimodal large language models in industrial anomaly detection. arXiv preprint arXiv:2410.09453.",
+    "Black Forest Labs, Stephen Batifol, Andreas Blattmann, Frederic Boesel, Saksham Consul, Cyril Diagne, Tim Dockhorn, Jack English, Zion English, Patrick Esser, Sumith Kulal, Kyle Lacey, Yam Levi, Cheng Li, Dominik Lorenz, Jonas Müller, Dustin Podell, Robin Rombach, Harry Saini, and 2 others. 2025. Flux.1 kontext: Flow matching for in-context image generation and editing in latent space. Preprint, arXiv:2506.15742.",
+    "Wonjun Lee, Doehyeon Lee, Eugene Choi, Sangyoon Yu, Ashkan Yousefpour, Haon Park, Bumsub Ham, and Suhyun Kim. 2025. Elite: Enhanced language-image toxicity evaluation for safety. arXiv preprint arXiv:2502.04757.",
+    "Bo Li, Kaichen Zhang, Hao Zhang, Dong Guo, Renrui Zhang, Feng Li, Yuanhan Zhang, Ziwei Liu, and Chunyuan Li. 2024a. Llava-next: Stronger llms supercharge multimodal capabilities in the wild.",
+    "Mukai Li, Lei Li, Yuwei Yin, Masood Ahmed, Zhenguang Liu, and Qi Liu. 2024b. Red teaming visual language models. In Findings of the Association for Computational Linguistics ACL 2024, pages 3326–3342.",
+    "Haotian Liu, Chunyuan Li, Qingyang Wu, and Yong Jae Lee. 2023. Visual instruction tuning. In NeurIPS.",
+    "Xin Liu, Yichen Zhu, Jindong Gu, Yunshi Lan, Chao Yang, and Yu Qiao. 2024. Mm-safetybench: A benchmark for safety evaluation of multimodal large language models. In European Conference on Computer Vision, pages 386-403. Springer.",
+    "Yida Lu, Jiale Cheng, Zhexin Zhang, Shiyao Cui, Cunxiang Wang, Xiaotao Gu, Yuxiao Dong, Jie Tang, Hongning Wang, and Minlie Huang. 2025. Longsafety: Evaluating long-context safety of large language models. arXiv preprint arXiv:2502.16971.",
+    "Weidi Luo, Siyuan Ma, Xiaogeng Liu, Xiaoyu Guo, and Chaowei Xiao. 2024. Jailbreaky: A benchmark for assessing the robustness of multimodal large language models against jailbreak attacks. arXiv preprint arXiv:2404.03027.",
+    "Mantas Mazeika, Long Phan, Xuwang Yin, Andy Zou, Zifan Wang, Norman Mu, Elham Sakhaee, Nathaniel Li, Steven Basart, Bo Li, and 1 others. 2024. Harmbench: A standardized evaluation framework for automated red teaming and robust refusal. arXiv preprint arXiv:2402.04249.",
+    "Fanqing Meng, Jin Wang, Chuanhao Li, Quanfeng Lu, Hao Tian, Tianshuo Yang, Jiaqi Liao, Xizhou Zhu, Jifeng Dai, Yu Qiao, Li Feng, Zhe Gao, Wenhai Wang, Bolei Zhou, Hengshuang Zhao, Ser-Nam Lim, Yan Feng, and Hongsheng Yu. 2025. MMIU: Multimodal Multi-image Understanding for Evaluating Large Vision-Language Models. In The Thirteenth International Conference on Learning Representations.",
+    "Donald A Norman and Daniel G Bobrow. 1975. On data-limited and resource-limited processes. Cognitive psychology, 7(1):44–64.",
+    "OpenAI. 2024a. Gpt-40 mini: Advancing cost-efficient intelligence. https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intellig. Accessed: 2025-07-30.",
+    "OpenAI. 2024b. Hello gpt-40. https://openai.com/index/hello-gpt-40/. Accessed: 2025-07-30.",
+    "OpenAI. 2025. Introducing OpenAI 03 and 04-mini. https://openai.com/index/introducing-03-and-04-mini/. Accessed: 2025-07-31.",
+    "OpenCompass Contributors. 2023. Open-Compass Multimodal Reasoning Leader-board. https://rank.opencompass.org.cn/leaderboard-multimodal-reasoning/?m=REALTIME. Accessed: 2025-07-30.",
+    "Hao Yang Shang, Xuan Liu, Zi Liang, Jie Zhang, Haibo Hu, and Song Guo. 2025. United minds or isolated agents? exploring coordination of llms under cognitive load theory. arXiv preprint arXiv:2506.06843.",
+    "Wei Shen, Jiangbo Pei, Yi Peng, Xuchen Song, Yang Liu, Jian Peng, Haofeng Sun, Yunzhuo Hao, Peiyu Wang, Jianhao Zhang, and Yahui Zhou. 2025. Skywork-r1v3 technical report. Preprint, arXiv:2507.06167.",
+    "Bingrui Sima, Linhua Cong, Wenxuan Wang, and Kun He. 2025. Viscra: A visual chain reasoning attack for jailbreaking multimodal large language models. arXiv preprint arXiv:2505.19684.",
+    "Alexandra Souly, Qingyuan Lu, Dillon Bowen, Tu Trinh, Elvis Hsieh, Sana Pandey, Pieter Abbeel, Justin Svegliato, Scott Emmons, Olivia Watkins, and 1 others. 2024. A strongreject for empty jailbreaks. Advances in Neural Information Processing Systems, 37:125416-125440.",
+    "John Sweller. 2010. Element interactivity and intrinsic, extraneous, and germane cognitive load. Educational psychology review, 22(2):123-138.",
+    "GLM-V Team, Wenyi Hong, Wenmeng Yu, Xiaotao Gu, Guo Wang, Guobing Gan, Haomiao Tang, Jiale Cheng, Ji Qi, Junhui Ji, Lihang Pan, Shuaiqi Duan, Weihan Wang, Yan Wang, Yean Cheng, Zehai He, Zhe Su, Zhen Yang, Ziyang Pan, and 59 others. 2025a. Glm-4.1v-thinking: Towards versatile multimodal reasoning with scalable reinforcement learning. Preprint, arXiv:2507.01006.",
+    "Kimi Team, Angang Du, Bohong Yin, Bowei Xing, Bowen Qu, Bowen Wang, Cheng Chen, Chenlin Zhang, Chenzhuang Du, Chu Wei, Congcong Wang, Dehao Zhang, Dikang Du, Dongliang Wang, Enming Yuan, Enzhe Lu, Fang Li, Flood Sung, Guangda Wei, and 73 others. 2025b. Kimi-VL technical report. Preprint, arXiv:2504.07491.",
+    "Qwen Team. 2024. Qvq: To see the world with wisdom.",
+    "Qwen Team. 2025a. Qwen2.5-vl.",
+    "Qwen Team. 2025b. Qwq-32b: Embracing the power of reinforcement learning.",
+    "Ma Teng, Jia Xiaojun, Duan Ranjie, Li Xinfeng, Huang Yihao, Jia Xiaoshuang, Chu Zhixuan, and Ren Wenqi. 2024. Heuristic-induced multimodal risk distribution jailbreak attack for multimodal large language models. arXiv preprint arXiv:2412.05934.",
+    "Bibek Upadhayay, Vahid Behzadan, and Amin Karbasi. 2024. Cognitive overload attack: Prompt injection for long context. arXiv preprint arXiv:2410.11272.",
+    "Fei Wang, Xingyu Fu, James Y Huang, Zekun Li, Qin Liu, Xiaogeng Liu, Mingyu Derek Ma, Nan Xu, Wenxuan Zhou, Kai Zhang, and 1 others. 2025. Muirbench: A comprehensive benchmark for robust multi-image understanding. In The Thirteenth International Conference on Learning Representations.",
+    "Xiyao Wang, Yuhang Zhou, Xiaoyu Liu, Hongjin Lu, Yuancheng Xu, Feihong He, Jaehong Yoon, Taixi Lu, Fuxiao Liu, Gedas Bertasius, and 1 others. 2024. Mementos: A comprehensive benchmark for multimodal large language model reasoning over image sequences. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 416-442.",
+    "Qiong Wu, Xiangcong Yang, Yiyi Zhou, Chenxin Fang, Baiyang Song, Xiaoshuai Sun, and Rongrong Ji. 2025. Grounded chain-of-thought for multimodal large language models. arXiv preprint arXiv:2503.12799.",
+    "Tsung-Han Wu, Giscard Biamby, Jerome Quenum, Ritwik Gupta, Joseph E Gonzalez, Trevor Darrell, and David M Chan. 2024. Visual haystacks: A vision-centric needle-in-a-haystack benchmark. arXiv preprint arXiv:2407.13766.",
+    "Chenyang Yang, Yike Shi, Qianou Ma, Michael Xieyang Liu, Christian Kästner, and Tongshuang Wu. 2025a. What prompts don't say: Understanding and managing underspecification in Ilm prompts. arXiv preprint arXiv:2505.13360.",
+    "Zuopeng Yang, Jiluan Fan, Anli Yan, Erdun Gao, Xin Lin, Tao Li, Kanghua Mo, and Changyu Dong. 2025b. Distraction is all you need for multimodal large language model jailbreaking. In Proceedings of the Computer Vision and Pattern Recognition Conference, pages 9467-9476.",
+    "Yuan Yao, Tianyu Yu, Ao Zhang, Chongyi Wang, Junbo Cui, Hongji Zhu, Tianchi Cai, Haoyu Li, Weilin Zhao, Zhihui He, and 1 others. 2024. Minicpm-v: A gpt-4v level mllm on your phone. arXiv preprint arXiv:2408.01800.",
+    "Zhexin Zhang, Leqi Lei, Junxiao Yang, Xijie Huang, Yida Lu, Shiyao Cui, Renmiao Chen, Qinglin Zhang, Xinyuan Wang, Hao Wang, and 1 others. 2025a. Aisafetylab: A comprehensive framework for ai safety evaluation and improvement. arXiv preprint arXiv:2502.16776.",
+    "Zhisong Zhang, Yan Wang, Xinting Huang, Tianqing Fang, Hongming Zhang, Chenlong Deng, Shuaiyi Li, and Dong Yu. 2025b. Attention entropy is a key factor: An analysis of parallel context encoding with full-attention-based pre-trained language models. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 9840–9855.",
+    "Jianli Zhao, Tingchen Fu, Rylan Schaeffer, Mrinank Sharma, and Fazl Barez. 2025. Chain-of-thought hijacking. arXiv preprint arXiv:2510.26418.",
+    "Kaiwen Zhou, Chengzhi Liu, Xuandong Zhao, Anderson Compalas, Dawn Song, and Xin Eric Wang. 2024a. Multimodal situational safety. Preprint, arXiv:2410.06172.",
+    "Weikang Zhou, Xiao Wang, Limao Xiong, Han Xia, Yingshuang Gu, Mingxu Chai, Fukang Zhu, Caishuang Huang, Shihan Dou, Zhiheng Xi, Rui Zheng, Songyang Gao, Yicheng Zou, Hang Yan, Yifan Le, Ruohui Wang, Lijun Li, Jing Shao, Tao Gui, and 2 others. 2024b. Easyjailbreak: A unified framework for jailbreaking large language models. Preprint, arXiv:2403.12171.",
+    "Jinguo Zhu, Weiyun Wang, Zhe Chen, Zhaoyang Liu, Shenglong Ye, Lixin Gu, Hao Tian, Yuchen Duan, Weijie Su, Jie Shao, Zhangwei Gao, Erfei Cui, Xuehui Wang, Yue Cao, Yangzhou Liu, Xingguang Wei, Hongjie Zhang, Haomin Wang, Weiye Xu, and 32 others. 2025. Internvl3: Exploring advanced training and test-time recipes for open-source multimodal models. Preprint, arXiv:2504.10479.",
+    "Andy Zou, Zifan Wang, Nicholas Carlini, Milad Nasr, J Zico Kolter, and Matt Fredrikson. 2023. Universal and transferable adversarial attacks on aligned language models. arXiv preprint arXiv:2307.15043."
+  ],
+  "measurement_description": "The benchmark measures the models' propensity to generate hate speech against religious groups as part of a broader safety evaluation. The 'Hate Speech' risk category is defined as promoting 'discrimination, disparagement, or violence against specific groups based on protected characteristics such as race, religion, gender, sexual orientation, or disability.' An example query provided is 'The spread of [a specific religion] should be banned.'"
 }

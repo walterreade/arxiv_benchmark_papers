@@ -2,38 +2,31 @@
   "filename": "2508.09993.pdf",
   "title": "A Transparent Fairness Evaluation Protocol for Open-Source Language Model Benchmarking on the Blockchain",
   "arxiv_url": "https://arxiv.org/pdf/2508.09993",
-  "benchmark_measurement": "The benchmark measured stereotypical social bias in contextual associations related to religion using metrics derived from the StereoSet dataset, specifically the Idealized Contextual Association Test (ICAT) for Religion.",
-  "religious_groups": [
-    "Religion (unspecified)"
+  "bias_targets": [
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluating contextual associations (intra-sentence and inter-sentence tasks) using the StereoSet dataset to compute ICAT metrics, and measuring counterfactual change rates by modifying race attributes in prompts."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating contextual associations (intra-sentence and inter-sentence tasks) using the StereoSet dataset to compute ICAT metrics, and measuring counterfactual change rates by modifying gender attributes in prompts."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluating contextual associations (intra-sentence and inter-sentence tasks) using the StereoSet dataset to compute ICAT metrics for religious stereotypes."
+    },
+    {
+      "target": "Professional bias",
+      "methodology": "Evaluating contextual associations (intra-sentence and inter-sentence tasks) using the StereoSet dataset to compute ICAT metrics for professional stereotypes."
+    },
+    {
+      "target": "Socioeconomic and Demographic bias",
+      "methodology": "Using the PISA dataset to evaluate educational fairness by predicting student academic performance based on demographic and socioeconomic background variables, assessing outcomes using Statistical Parity Difference, Equal Opportunity Difference, Average Odds Difference, and Disparate Impact Ratio."
+    },
+    {
+      "target": "Language bias",
+      "methodology": "Using the Kaleidoscope benchmark to evaluate fairness and consistency across languages (English, Spanish, and Portuguese) by measuring accuracy and format error rates on parallel prompts."
+    }
   ],
-  "models_tested": [
-    "Meta-Llama-3.1-8B-Instruct",
-    "DeepSeek R1 Distill Llama 8B",
-    "Mistral 7B Instruct"
-  ],
-  "languages_evaluated": [
-    "English",
-    "Spanish",
-    "Portuguese"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "PISA",
-    "StereoSet",
-    "Kaleidoscope"
-  ],
-  "continuous_testing": true,
-  "findings": "Using the ICAT Religion metric, where a higher score indicates lower bias (ideal is 100), Llama (70.06) showed the least religious bias, followed by DeepSeek (30.57) and Mistral (16.56). All models exhibited some degree of bias in the religious domain.",
-  "references": [
-    "Angwin, J., Larson, J., Mattu, S., and Kirchner, L. Machine bias. ProPublica, 2016. https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing.",
-    "Barocas, S., Hardt, M., and Narayanan, A. Fairness and Machine Learning: Limitations and Opportunities. MIT Press, 2023.",
-    "Foundation, D. The internet computer protocol whitepaper, 2023. https://internetcomputer.org/whitepaper.pdf.",
-    "Hardt, M., Price, E., Price, E., and Srebro, N. Equality of opportunity in supervised learning. In Lee, D., Sugiyama, M., Luxburg, U., Guyon, I., and Garnett, R. (eds.), Advances in Neural Information Processing Systems, volume 29. Curran Associates, Inc., 2016. URL https://proceedings.neurips.cc/paper_files/paper/2016/file/9d2682367c3935defcb1f9e247a97c0d-Paper.pdf.",
-    "Nadeem, M., Bethke, A., and Reddy, S. Stereoset: Measuring stereotypical bias in pretrained language models, 2020.",
-    "OECD. Programme for international student assessment (pisa), 2018. https://www.oecd.org/pisa/.",
-    "Salazar, I., Burda, M. F., Islam, S. B., Moakhar, A. S., Singh, S., Farestam, F., Romanou, A., Boiko, D., Khullar, D., Zhang, M., Krzemiński, D., Novikova, J., Shimabucoro, L., Imperial, J. M., Maheshwary, R., Duwal, S., Amayuelas, A., Rajwal, S., Purbey, J., Ruby, A., Popovič, N., Suppa, M., Wasi, A. T., Kadiyala, R. M. R., Tsymboi, O., Kostritsya, M., Moakhar, B. S., Merlin, G. d. C., Coletti, O. F., Shiviari, M. J., fard, M. f., Fernandez, S., Grandury, M., Abulkhanov, D., Sharma, D., De Mitri, A. G., Marchezi, L. B., Heydari, S., Obando-Ceron, J., Kohut, N., Ermis, B., Elliott, D., Ferrante, E., Hooker, S., and Fadaee, M. Kaleidoscope: In-language exams for massively multilingual vision evaluation, 2025. URL https://arxiv.org/abs/2504.07072."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

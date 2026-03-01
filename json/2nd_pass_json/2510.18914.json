@@ -2,90 +2,19 @@
   "filename": "2510.18914.pdf",
   "title": "Context-aware Fairness Evaluation and Mitigation in LLMs",
   "arxiv_url": "https://arxiv.org/pdf/2510.18914",
-  "benchmark_measurement": "Stereotype and toxicity bias detection in multi-turn dialogues concerning demographic attributes, including religion.",
-  "religious_groups": [
-    "Judaism"
+  "bias_targets": [
+    {
+      "target": "Political bias",
+      "methodology": "Measuring political-ideological inclination in isolated, single-turn prompts using the multilingual Political Compass Test (PCT), eliciting agree/disagree responses to 62 ideological statements."
+    },
+    {
+      "target": "Demographic bias (Gender, Race, Age, Religion, Disability, Appearance)",
+      "methodology": "Evaluating implicit stereotypes and explicit toxicity in multi-turn conversational settings using the FairMT-Bench dataset, scored via an LLM-as-a-judge ensemble (GPT-3.5-Turbo, Claude, and Llama Guard) to track bias accumulation."
+    },
+    {
+      "target": "Cultural bias",
+      "methodology": "Qualitatively analyzing generated responses for ethnocentric or essentialist generalizations regarding ancient versus modern societies, assessing how mitigation softens these into pluralistic perspectives."
+    }
   ],
-  "models_tested": [
-    "DeepSeek",
-    "Claude",
-    "Gemini",
-    "GPT-4o",
-    "GPT-3.5",
-    "Gemma",
-    "Mistral",
-    "Llama"
-  ],
-  "languages_evaluated": [
-    "English",
-    "Urdu",
-    "Punjabi",
-    "Sindhi",
-    "Pashto",
-    "Balochi"
-  ],
-  "response_type": [
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "multilingual PCT dataset",
-    "FairMT-Bench"
-  ],
-  "continuous_testing": false,
-  "findings": "Bias related to religion shows a strong signal and increases during multi-turn conversations. Models can shift from aligned behavior to producing stereotypical responses, as shown in an example regarding Judaism. The proposed dynamic neuron masking framework was found to effectively reduce this accumulating bias.",
-  "references": [
-    "Fozia Abbas and Saadiyah Javed Bidin. 2022. Language policy and planning in pakistan: A critical analysis of the language planning and policy (lpp) in pakistan and its impact on indigenous languages of pakistan. Eurasian Journal of Applied Linguistics, pages 85–96.",
-    "Tosin Adewumi, Lama Alkhaled, Namrata Gurung, Goya van Boven, and Irene Pagliai. 2024. Fairness and bias in multimodal AI: A survey. arXiv preprint arXiv:2406.19097. Last revised 7 September 2024.",
-    "Haozhe An, Christabel Acquaye, Colin Wang, Zongxia Li, and Rachel Rudinger. 2024. Do Large Language Models Discriminate in Hiring Decisions on the Basis of Race, Ethnicity, and Gender? In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers), pages 386–397, Bangkok, Thailand. Association for Computational Linguistics.",
-    "Nourhan Bayasi, Jamil Fayyad, Ghassan Hamarneh, Rafeef Garbi, and Homayoun Najjaran. 2024. Debiasify: Self-distillation for unsupervised bias mitigation.",
-    "Yonatan Belinkov. 2022. Probing classifiers: Promises, shortcomings, and advances. 48(1):207–219.",
-    "Emily M. Bender and Batya Friedman. 2018. Data statements for natural language processing: Toward mitigating system bias and enabling better science. 6:587–604.",
-    "Dylan Bouchard, Mohit Singh Chauhan, David Skarbrevik, Viren Bajaj, and Zeya Ahmad. 2025. LangFair: A python package for assessing bias and fairness in large language model use cases. 10(105):7570.",
-    "Jing Chen, Liyuan Wang, Xiang Xue, Shuo Gao, and Xiaojun Zhou. 2025. Steering large language models for safety and robustness. arXiv preprint arXiv:2508.08846.",
-    "Andrei-Victor Chisca, Andrei-Cristian Rad, and Camelia Lemnaru. 2024. Prompting fairness: Learning prompts for debiasing large language models. In Proceedings of the Fourth Workshop on Language Technology for Equality, Diversity, Inclusion (LTEDI 2024), pages 52–62.",
-    "Sunhao Dai, Chen Xu, Shicheng Xu, Liang Pang, Zhenhua Dong, and Jun Xu. 2025. Unifying bias and unfairness in information retrieval: New challenges in the LLM era. In Proceedings of the Eighteenth ACM International Conference on Web Search and Data Mining, pages 998–1001. ACM.",
-    "DeepEval. 2025. Turn relevancy | deepeval: The open-source llm evaluation framework. https:// deepeval.com/docs/metrics-turn-relevancy. Accessed: 2025-09-20.",
-    "MaryBeth Defrance, Guillaume Bied, Maarten Buyl, Jefrey Lijffijt, and Tijl De Bie. 2025. BiMi sheets: Infosheets for bias mitigation methods. Preprint, arxiv:2505.22114 [cs].",
-    "Dorottya Demszky, Nikhil Garg, Rob Voigt, James Zou, Jesse Shapiro, Matthew Gentzkow, and Dan Jurafsky. 2019. Analyzing Polarization in Social Media: Method and Application to Tweets on 21 Mass Shootings. In Proceedings of the 2019 Conference of the North, pages 2970–3005, Minneapolis, Minnesota. Association for Computational Linguistics.",
-    "Simon Dufort-Labbé, Pierluca D’Oro, Evgenii Nikishin, Razvan Pascanu, Pierre-Luc Bacon, and Aristide Baratin. 2024. Maxwell’s demon at work: Efficient pruning by leveraging saturation of neurons. Preprint, arXiv:2403.07688.",
-    "Zhiting Fan, Ruizhe Chen, Tianxiang Hu, and Zuozhu Liu. 2024. FAIRMT-BENCH: BENCHMARKING FAIRNESS FOR MULTI-TURN DIALOGUE IN CONVERSATIONAL LLMS.",
-    "Yu Fei, Yifan Hou, Zeming Chen, and Antoine Bosselut. 2023. Mitigating label biases for in-context learning. arXiv preprint arXiv:2305.19148.",
-    "Mor Geva, Roei Schuster, Jonathan Berant, and Omer Levy. 2021. Transformer feed-forward layers are key-value memories. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 5484–5495. Association for Computational Linguistics.",
-    "Aviral Gupta, Armaan Sethi, and Ameesh Sethi. 2024. No training wheels: Steering vectors for bias correction at inference time. In Proceedings of the 41st International Conference on Machine Learning (ICML). *Equal contribution.",
-    "Mukur Gupta, Nikhil Reddy Varimalla, Nicholas Deas, Melanie Subbiah, and Kathleen McKeown. 2025. AdvSumm: Adversarial training for bias mitigation in text summarization. Preprint, arxiv:2506.06273 [cs].",
-    "Chadi Helwe, Oana Balalau, and Davide Ceolin. 2025. Navigating the political compass: Evaluating multilingual llms across languages and nationalities. In Findings of the Association for Computational Linguistics: ACL 2025, pages 17179–17204, Bangkok, Thailand. Association for Computational Linguistics.",
-    "John Hewitt, Kawin Ethayarajh, Percy Liang, and Christopher D. Manning. 2021. Conditional probing: Measuring usable information beyond a baseline. arXiv preprint arXiv:2109.09234.",
-    "Wenyue Hua, Yingqiang Ge, Shuyuan Xu, Jianchao Ji, and Yongfeng Zhang. 2023. UP5: Unbiased foundation model for fairness-aware recommendation.",
-    "Lujain Ibrahim, Canfer Akbulut, Rasmi Elasmar, Charvi Rastogi, Minsuk Kahng, Meredith Ringel Morris, Kevin R. McKee, Verena Rieser, Murray Shanahan, and Laura Weidinger. 2025. Multi-turn evaluation of anthropomorphic behaviours in large language models. arXiv preprint arXiv:2502.07077. Submitted on 10 February 2025.",
-    "Yubo Li, Xiaobin Shen, Xinyu Yao, Xueying Ding, Yidi Miao, Ramayya Krishnan, and Rema Padman. 2025. Beyond single-turn: A survey on multi-turn interactions with large language models. arXiv preprint arXiv:2504.04717.",
-    "Xinyang Liu, Peilin Li, Hui Jiang, Jun Ni, Xiaodong Hu, and Xiaolei Huang. 2023. Towards understanding and mitigating bias in large language models. arXiv preprint arXiv:2305.19148.",
-    "Xinyin Ma, Gongfan Fang, and Xinchao Wang. 2023. Llm-pruner: On the structural pruning of large language models. Preprint, arXiv:2305.11627.",
-    "Afrozah Nadeem, Mark Dras, and Usman Naseem. 2025a. Framing political bias in multilingual LLMs across pakistani languages. arXiv preprint arXiv:2506.00068.",
-    "Afrozah Nadeem, Mark Dras, and Usman Naseem. 2025b. Steering towards fairness: Mitigating political bias in LLMs. arXiv preprint arXiv:2508.08846.",
-    "Changwon Ok, Eunkyeong Lee, and Dongsuk Oh. 2025. Synthetic paths to integral truth: Mitigating hallucinations caused by confirmation bias with synthetic data.",
-    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel Bowman. 2022. BBQ: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2086–2105. Association for Computational Linguistics.",
-    "Ethan Perez, Sam Ringer, Kamile Lukosiute, Karina Nguyen, Edwin Chen, Scott Heiner, Craig Pettit, Catherine Olsson, Sandipan Kundu, Saurav Kadavath, Andy Jones, Anna Chen, Benjamin Mann, Brian Israel, Bryan Seethor, Cameron McKinnon, Christopher Olah, Da Yan, Daniela Amodei, and 44 others. 2023. Discovering Language Model Behaviors with Model-Written Evaluations. In Findings of the Association for Computational Linguistics: ACL 2023, pages 13387–13434, Toronto, Canada. Association for Computational Linguistics.",
-    "Guoyi Qin, Jessica Nixon, Magnus Arnesen, Paul Barham, Stephen Strong, Marcel Reinders, and 1 others. 2021. On calibration of modern neural networks. arXiv preprint arXiv:2103.00453v2.",
-    "Tariq Rahman. 1996. Language and Politics in Pakistan. Oxford University Press, Karachi, Pakistan.",
-    "Tariq Rahman. 2011. From Hindi to Urdu: A Social and Political History. Oxford University Press, Karachi, Pakistan.",
-    "Timo Schick, Sahana Udupa, and Hinrich Schütze. 2021. Self-diagnosis and self-debiasing: A proposal for reducing corpus-based bias in nlp. Transactions of the Association for Computational Linguistics, 9:1408–1424.",
-    "Daiki Shirafuji, Makoto Takenaka, and Shinya Taguchi. 2024. Bias vector: Mitigating biases in language models with task arithmetic approach.",
-    "Zara Siddique, Irtaza Khalid, Liam D. Turner, and Luis Espinosa-Anke. 2025. Shifting perspectives: Steering vectors for robust bias mitigation in LLMs. Preprint, arxiv:2503.05371 [cs].",
-    "Tony Sun, Andrew Gaut, Shirlyn Tang, Yuxin Huang, Mai ElSherief, Jieyu Zhao, Diba Mirza, Elizabeth Belding, Kai-Wei Chang, and William Yang Wang. 2019. Mitigating Gender Bias in Natural Language Processing: Literature Review. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 1630–1640, Florence, Italy. Association for Computational Linguistics.",
-    "Pengwei Tang, Xiaolin Hu, and Yong Liu. 2025. Adept: Adaptive decomposed prompt tuning for parameter-efficient fine-tuning. arXiv preprint arXiv:2501.03291. Published as a conference paper at ICLR 2025.",
-    "Surendrabikram Thapa, Ashwarya Maratha, Khan Md Hasib, Mehwish Nasim, and Usman Naseem. 2023. Assessing political inclination of bangla language models. In Proceedings of the First Workshop on Bangla Language Processing (BLP-2023), pages 62–71, Singapore. Association for Computational Linguistics.",
-    "Tariq Umrani and Faraz Ali Bughio. 2020. Language politics and role of english in pakistan. ARIEL: An International Journal of Research in English Language and Literature, pages 114–124.",
-    "Yufei Wang, Wanjun Zhong, Liangyou Li, Fei Mi, Xingshan Zeng, Wenyong Huang, Lifeng Shang, Xin Jiang, and Qun Liu. 2023. Aligning large language models with human: A survey. Preprint, arxiv:2307.12966 [cs].",
-    "Yeo Wei Jie, Ranjan Satapathy, Rick Goh, and Erik Cambria. 2024. How interpretable are reasoning explanations from prompting large language models? In Findings of the Association for Computational Linguistics: NAACL 2024, pages 2148–2164. Association for Computational Linguistics.",
-    "Yi Xu, Laura Ruis, Tim Rocktäschel, and Robert Kirk. 2025. Investigating non-transitivity in LLM-as-a-judge. Preprint, arxiv:2502.14074 [cs].",
-    "Nakyeong Yang, Yunah Jang, Hwanhee Lee, Seohyeong Jeong, and Kyomin Jung. 2023. Task-specific compression for multi-task language models using attribution-based pruning. In Findings of the Association for Computational Linguistics: EACL 2023, pages 594–604, Dubrovnik, Croatia. Association for Computational Linguistics.",
-    "Nakyeong Yang, Taegwan Kang, Stanley Jungkyu Choi, Honglak Lee, and Kyomin Jung. 2024a. Mitigating Biases for Instruction-following Language Models via Bias Neurons Elimination. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 9061–9073, Bangkok, Thailand. Association for Computational Linguistics.",
-    "Nakyeong Yang, Taegwan Kang, Stanley Jungkyu Choi, Honglak Lee, and Kyomin Jung. 2024b. Mitigating biases for instruction-following language models via bias neurons elimination. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). Association for Computational Linguistics.",
-    "Zihao Yi, Jiarui Ouyang, Zhe Xu, Yuwen Liu, Tianhao Liao, Haohao Luo, and Ying Shen. 2025. A survey on recent advances in LLM-based multi-turn dialogue systems. Preprint, arxiv:2402.18013 [cs].",
-    "Zonghao Ying, Deyue Zhang, Zonglei Jing, Yisong Xiao, Quanchen Zou, Aishan Liu, Siyuan Liang, Xiangzheng Zhang, Xianglong Liu, and Dacheng Tao. 2025. Reasoning-augmented conversation for multi-turn jailbreak attacks on large language models. Preprint, arxiv:2502.11054 [cs].",
-    "Chen Zhang, Xinyi Dai, Yaxiong Wu, Qu Yang, Yasheng Wang, Ruiming Tang, and Yong Liu. 2025. A survey on multi-turn interaction capabilities of large language models. Preprint, arxiv:2501.09959 [cs].",
-    "Xin Zhao, Naoki Yoshinaga, and Daisuke Oba. 2024. What matters in memorizing and recalling facts? multifaceted benchmarks for knowledge probing in language models. In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 13186–13214, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Zihan Zhao, Jaehoon Yoon, Benjamin Van Durme, and Cynthia Rudin. 2021. Understanding and mitigating the calibration problem in neural networks. arXiv preprint arXiv:2102.09690."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

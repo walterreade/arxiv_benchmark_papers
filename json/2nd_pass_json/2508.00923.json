@@ -2,100 +2,31 @@
   "filename": "2508.00923.pdf",
   "title": "Beyond Benchmarks: Dynamic, Automatic And Systematic Red-Teaming Agents For Trustworthy Medical Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2508.00923",
-  "benchmark_measurement": "The paper does not measure any aspects of faith or religion. The bias evaluation focuses on socio-demographic factors like race, ethnicity ('Arabic patient'), income, housing status, and gender/sexual identity, but does not include religious affiliation.",
-  "religious_groups": [],
-  "models_tested": [
-    "GPT-4o",
-    "o3-mini",
-    "o3",
-    "o4-mini",
-    "Claude Sonnet-4",
-    "Claude Sonnet-3.7",
-    "Gemini-2.5-Flash",
-    "Gemini-2.5-Pro",
-    "DeepSeek-V3",
-    "DeepSeek-R1",
-    "Gemma-3-27B",
-    "MedGemma-27B",
-    "HuatuoGPT-o1-70B",
-    "QwQ-32B",
-    "Qwen3-32B",
-    "Llama-4-Scout"
+  "bias_targets": [
+    {
+      "target": "Cognitive bias",
+      "methodology": "Injecting priming sentences that invoke heuristics (e.g., status-quo, recency, authority, false-consensus) into clinical vignettes and measuring whether the model's medical recommendations shift."
+    },
+    {
+      "target": "Racial and Ethnic bias",
+      "methodology": "Substituting patient placeholders in clinical vignettes with specific racial or ethnic labels (e.g., 'Black patient', 'Asian patient') and evaluating shifts in triage or treatment recommendations."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Substituting patient placeholders in clinical vignettes with labels indicating income, education, or housing status (e.g., 'unhoused patient', 'very high income patient') and measuring changes in medical recommendations."
+    },
+    {
+      "target": "Gender and Sexual Orientation bias",
+      "methodology": "Substituting patient placeholders in clinical vignettes with gender and sexual identity labels (e.g., 'transgender woman', 'bisexual patient') and evaluating shifts in medical recommendations."
+    },
+    {
+      "target": "Linguistic bias",
+      "methodology": "Rewriting patient self-reports in clinical vignettes into different dialects, languages, or communication styles (e.g., African American English, limited English, obscure slang) and measuring changes in model recommendations."
+    },
+    {
+      "target": "Emotional bias",
+      "methodology": "Modifying the emotional tone of patient self-reports (e.g., angry, anxious, depressive, optimistic) in clinical vignettes and evaluating whether the model's medical recommendations change."
+    }
   ],
-  "languages_evaluated": [
-    "English",
-    "Chinese",
-    "Spanish"
-  ],
-  "response_type": [
-    "short",
-    "long"
-  ],
-  "religion_component": "none",
-  "base_benchmarks": [
-    "MedQA",
-    "Stanford Red-Teaming corpus",
-    "HealthBench"
-  ],
-  "continuous_testing": true,
-  "findings": "The paper did not evaluate any aspects of religion; therefore, there are no findings related to religion.",
-  "references": [
-    "Karan Singhal, Tao Tu, Juraj Gottweis, Rory Sayres, Ellery Wulczyn, Mohamed Amin, Le Hou, Kevin Clark, Stephen R Pfohl, Heather Cole-Lewis, et al. Toward expert-level medical question answering with large language models. Nature Medicine, pages 1-8, 2025.",
-    "Khaled Saab, Tao Tu, Wei-Hung Weng, Ryutaro Tanno, David Stutz, Ellery Wulczyn, Fan Zhang, Tim Strother, Chunjong Park, Elahe Vedadi, et al. Capabilities of gemini models in medicine. arXiv preprint arXiv:2404.18416, 2024.",
-    "OpenAI. Openai o3 and o4-mini system card. System card, OpenAI, 2025. Version 16 April 2025.",
-    "Di Jin, Eileen Pan, Nassim Oufattole, Wei-Hung Weng, Hanyi Fang, and Peter Szolovits. What disease does this patient have? a large-scale open domain question answering dataset from medical exams. Applied Sciences, 11(14):6421, 2021.",
-    "Daniel McDuff, Mike Schaekermann, Tao Tu, Anil Palepu, Amy Wang, Jake Garrison, Karan Singhal, Yash Sharma, Shekoofeh Azizi, Kavita Kulkarni, et al. Towards accurate differential diagnosis with large language models. Nature, pages 1-7, 2025.",
-    "Jonathan Kottlors, Grischa Bratke, Philip Rauen, Christoph Kabbasch, Thorsten Persigehl, Marc Schlamann, and Simon Lennartz. Feasibility of differential diagnosis based on imaging patterns using a large language model. Radiology, 308(1):e231167, 2023.",
-    "Yubin Kim, Chanwoo Park, Hyewon Jeong, Yik S Chan, Xuhai Xu, Daniel McDuff, Hyeonhoon Lee, Marzyeh Ghassemi, Cynthia Breazeal, and Hae W Park. Mdagents: An adaptive collaboration of Ilms for medical decision-making. Advances in Neural Information Processing Systems, 37:79410–79452, 2024.",
-    "Anthony Skryd and Katharine Lawrence. Chatgpt as a tool for medical education and clinical decision-making on the wards: case study. JMIR Formative Research, 8:e51346, 2024.",
-    "U.S. Food and Drug Administration. Artificial intelligence and machine learning in software as a medical device. https://www.fda.gov/medical-devices/software-medical-device-samd/ artificial-intelligence-and-machine-learning-software-medical-device, March 2025.",
-    "Charles AE Goodhart and CAE Goodhart. Problems of monetary management: the UK experience. Springer, 1984.",
-    "Patrick Chao, Alexander Robey, Edgar Dobriban, Hamed Hassani, George J Pappas, and Eric Wong. Jailbreaking black box large language models in twenty queries. In 2025 IEEE Conference on Secure and Trustworthy Machine Learning (SaTML), pages 23–42. IEEE, 2025.",
-    "Mikayel Samvelyan, Sharath Chandra Raparthy, Andrei Lupu, Eric Hambro, Aram Markosyan, Manish Bhatt, Yuning Mao, Minqi Jiang, Jack Parker-Holder, Jakob Foerster, et al. Rainbow teaming: Open-ended generation of diverse adversarial prompts. Advances in Neural Information Processing Systems, 37:69747–69786, 2024.",
-    "Xiaogeng Liu, Peiran Li, Edward Suh, Yevgeniy Vorobeychik, Zhuoqing Mao, Somesh Jha, Patrick McDaniel, Huan Sun, Bo Li, and Chaowei Xiao. Autodan-turbo: A lifelong agent for strategy self-exploration to jailbreak Ilms. arXiv preprint arXiv:2410.05295, 2024.",
-    "Liwei Jiang, Kavel Rao, Seungju Han, Allyson Ettinger, Faeze Brahman, Sachin Kumar, Niloofar Mireshghallah, Ximing Lu, Maarten Sap, Yejin Choi, et al. Wildteaming at scale: From in-the-wild jailbreaks to (adversarially) safer language models. Advances in Neural Information Processing Systems, 37:47094–47165, 2024.",
-    "Crystal T Chang, Hodan Farah, Haiwen Gui, Shawheen Justin Rezaei, Charbel Bou-Khalil, Ye-Jean Park, Akshay Swaminathan, Jesutofunmi A Omiye, Akaash Kolluri, Akash Chaurasia, et al. Red teaming chatgpt in medicine to yield real-world insights on model behavior. npj Digital Medicine, 8(1):149, 2025.",
-    "Minseon Kim, Jean-Philippe Corbeil, Alessandro Sordoni, Francois Beaulieu, and Paul Vozila. Medical red teaming protocol of language models: On the importance of user perspectives in healthcare settings. arXiv preprint arXiv:2507.07248, 2025.",
-    "Ankit Pal, Logesh Kumar Umapathi, and Malaikannan Sankarasubbu. Medmcqa: A large-scale multi-subject multi-choice dataset for medical domain question answering. In Conference on health, inference, and learning, pages 248–260. PMLR, 2022.",
-    "Paul Hager, Friederike Jungmann, Robbie Holland, Kunal Bhagat, Inga Hubrecht, Manuel Knauer, Jakob Vielhauer, Marcus Makowski, Rickmer Braren, Georgios Kaissis, et al. Evaluation and mitigation of the limitations of large language models in clinical decision-making. Nature medicine, 30(9):2613–2622, 2024.",
-    "Yuxin Zuo, Shang Qu, Yifei Li, Zhangren Chen, Xuekai Zhu, Ermo Hua, Kaiyan Zhang, Ning Ding, and Bowen Zhou. Medxpertqa: Benchmarking expert-level medical reasoning and understanding. arXiv preprint arXiv:2501.18362, 2025.",
-    "Xiangru Tang, Daniel Shao, Jiwoong Sohn, Jiapeng Chen, Jiayi Zhang, Jinyu Xiang, Fang Wu, Yilun Zhao, Chenglin Wu, Wenqi Shi, et al. Medagentsbench: Benchmarking thinking models and agent frameworks for complex medical reasoning. arXiv preprint arXiv:2503.07459, 2025.",
-    "Vahid Balazadeh, Michael Cooper, David Pellow, Atousa Assadi, Jennifer Bell, Mark Coastworth, Kaivalya Deshpande, Jim Fackler, Gabriel Funingana, Spencer Gable-Cook, et al. Red teaming large language models for healthcare. arXiv preprint arXiv:2505.00467, 2025.",
-    "Jesutofunmi A Omiye, Jenna C Lester, Simon Spichak, Veronica Rotemberg, and Roxana Daneshjou. Large language models propagate race-based medicine. NPJ Digital Medicine, 6(1):195, 2023.",
-    "Elham Asgari, Nina Montaña-Brown, Magda Dubois, Saleh Khalil, Jasmine Balloch, Joshua Au Yeung, and Dominic Pimenta. A framework to assess clinical safety and hallucination rates of llms for medical text summarisation. npj Digital Medicine, 8(1):1-15, 2025.",
-    "Stephen R Pfohl, Heather Cole-Lewis, Rory Sayres, Darlene Neal, Mercy Asiedu, Awa Dieng, Nenad Tomasev, Qazi Mamunur Rashid, Shekoofeh Azizi, Negar Rostamzadeh, et al. A toolbox for surfacing health equity harms and biases in large language models. Nature Medicine, 30(12):3590-3600, 2024.",
-    "Ying Xiao, Jie Huang, Ruijuan He, Jing Xiao, Mohammad Reza Mousavi, Yepang Liu, Kezhi Li, Zhenpeng Chen, and Jie M Zhang. Amqa: An adversarial dataset for benchmarking bias of llms in medicine and healthcare. arXiv preprint arXiv:2505.19562, 2025.",
-    "Samuel Schmidgall, Carl Harris, Ime Essien, Daniel Olshvang, Tawsifur Rahman, Ji Woong Kim, Rojin Ziaei, Jason Eshraghian, Peter Abadir, and Rama Chellappa. Evaluation and mitigation of cognitive biases in medical language models. npj Digital Medicine, 7(1):295, 2024.",
-    "Zishan Gu, Changchang Yin, Fenglin Liu, and Ping Zhang. Medvh: Towards systematic evaluation of hallucination for large vision language models in the medical context. arXiv preprint arXiv:2407.02730, 2024.",
-    "Krithik Vishwanath, Anton Alyakin, Daniel Alexander Alber, Jin Vivian Lee, Douglas Kondziolka, and Eric Karl Oermann. Medical large language models are easily distracted. arXiv preprint arXiv:2504.01201, 2025.",
-    "MedQA Benchmark – leaderboard snapshot 12 july 2025, July 2025. Last updated 12 Jul 2025.",
-    "The HIPAA Guide. The 10 most common hipaa violations you should avoid. https://www.hipaajournal.com/ common-hipaa-violations/, Apr 2025.",
-    "keragon. Accidental hipaa violation: Examples & how to respond effectively in 2024. https://www.keragon.com/ hipaa/hipaa-explained/accidental-hipaa-violation, 2024.",
-    "The HIPAA Guide. What is the proper response to an accidental hipaa violation? https://www.hipaaguide.net/ proper-response-to-an-accidental-hipaa-violation/, 2024.",
-    "Privacy Compliance Hub. Could human error cause a data breach un- der the gdpr? https://www.privacycompliancehub.com/gdpr-resources/ could-human-error-cause-a-data-breach-under-the-gdpr/, 2018.",
-    "Mahmud Omar, Shelly Soffer, Reem Agbareia, Nicola Luigi Bragazzi, Donald U Apakama, Carol R Horowitz, Alexander W Charney, Robert Freeman, Benjamin Kummer, Benjamin S Glicksberg, et al. Sociodemographic biases in medical decision making by large language models. Nature Medicine, pages 1-9, 2025.",
-    "Rahul K Arora, Jason Wei, Rebecca Soskin Hicks, Preston Bowman, Joaquin Quiñonero-Candela, Foivos Tsimpourlas, Michael Sharman, Meghan Shah, Andrea Vallone, Alex Beutel, et al. Healthbench: Evaluating large language models towards improved human health. arXiv preprint arXiv:2505.08775, 2025.",
-    "Xi Yang, Aokun Chen, Nima PourNejatian, Hoo Chang Shin, Kaleb E Smith, Christopher Parisien, Colin Compas, Cheryl Martin, Anthony B Costa, Mona G Flores, et al. A large language model for electronic health records. NPJ digital medicine, 5(1):194, 2022.",
-    "Zhenbang Wu, Anant Dadu, Michael Nalls, Faraz Faghri, and Jimeng Sun. Instruction tuning large language models to understand electronic health records. Advances in Neural Information Processing Systems, 37:54772–54786, 2024.",
-    "Bright Huo, Amy Boyle, Nana Marfo, Wimonchat Tangamornsuksan, Jeremy P Steen, Tyler McKechnie, Yung Lee, Julio Mayol, Stavros A Antoniou, Arun James Thirunavukarasu, et al. Large language models for chatbot health advice studies: a systematic review. JAMA Network Open, 8(2):e2457879–e2457879, 2025.",
-    "Guangchen Lan, Huseyin A Inan, Sahar Abdelnabi, Janardhan Kulkarni, Lukas Wutschitz, Reza Shokri, Christopher G Brinton, and Robert Sim. Contextual integrity in llms via reasoning and reinforcement learning. arXiv preprint arXiv:2506.04245, 2025.",
-    "Yew Ken Chia, Guizhen Chen, Luu Anh Tuan, Soujanya Poria, and Lidong Bing. Contrastive chain-of-thought prompting. arXiv preprint arXiv:2311.09277, 2023.",
-    "Peifeng Wang, Zhengyang Wang, Zheng Li, Yifan Gao, Bing Yin, and Xiang Ren. Scott: Self-consistent chain-of-thought distillation. arXiv preprint arXiv:2305.01879, 2023.",
-    "Chunyuan Li, Cliff Wong, Sheng Zhang, Naoto Usuyama, Haotian Liu, Jianwei Yang, Tristan Naumann, Hoifung Poon, and Jianfeng Gao. Llava-med: Training a large language-and-vision assistant for biomedicine in one day. Advances in Neural Information Processing Systems, 36:28541–28564, 2023.",
-    "Kai Zhang, Rong Zhou, Eashan Adhikarla, Zhiling Yan, Yixin Liu, Jun Yu, Zhengliang Liu, Xun Chen, Brian D Davison, Hui Ren, et al. A generalist vision-language foundation model for diverse biomedical tasks. Nature Medicine, pages 1-13, 2024.",
-    "Jiazhen Pan, Che Liu, Junde Wu, Fenglin Liu, Jiayuan Zhu, Hongwei Bran Li, Chen Chen, Cheng Ouyang, and Daniel Rueckert. Medvlm-r1: Incentivizing medical reasoning capability of vision-language models (vlms) via reinforcement learning. arXiv preprint arXiv:2502.19634, 2025.",
-    "Ming Y Lu, Bowen Chen, Drew FK Williamson, Richard J Chen, Ivy Liang, Tong Ding, Guillaume Jaume, Igor Odintsov, Long Phi Le, Georg Gerber, et al. A visual-language foundation model for computational pathology. Nature medicine, 30(3):863-874, 2024.",
-    "Ryan Koo, Minhwa Lee, Vipul Raheja, Jong Inn Park, Zae Myung Kim, and Dongyeop Kang. Benchmarking cognitive biases in large language models as evaluators. arXiv preprint arXiv:2309.17012, 2023.",
-    "Alaina N Talboy and Elizabeth Fuller. Challenging the appearance of machine intelligence: Cognitive bias in llms and best practices for adoption. arXiv preprint arXiv:2304.01358, 2023.",
-    "Andreas Opedal, Alessandro Stolfo, Haruki Shirakami, Ying Jiao, Ryan Cotterell, Bernhard Schölkopf, Abulhair Saparov, and Mrinmaya Sachan. Do language models exhibit the same cognitive biases in problem solving as human learners? arXiv preprint arXiv:2401.18070, 2024.",
-    "Jessica Maria Echterhoff, Yao Liu, Abeer Alessa, Julian J McAuley, and Zexue He. Cognitive bias in high-stakes decision-making with llms. CoRR, 2024.",
-    "Xinbei Ma, Yiting Wang, Yao Yao, Tongxin Yuan, Aston Zhang, Zhuosheng Zhang, and Hai Zhao. Caution for the environment: Multimodal agents are susceptible to environmental distractions. arXiv preprint arXiv:2408.02544, 2024.",
-    "Yue Huang, Yanbo Wang, Zixiang Xu, Chujie Gao, Siyuan Wu, Jiayi Ye, Xiuying Chen, Pin-Yu Chen, and Xiangliang Zhang. Breaking focus: Contextual distraction curse in large language models. arXiv preprint arXiv:2502.01609, 2025.",
-    "Zuopeng Yang, Jiluan Fan, Anli Yan, Erdun Gao, Xin Lin, Tao Li, Kanghua Mo, and Changyu Dong. Distraction is all you need for multimodal large language model jailbreaking. In Proceedings of the Computer Vision and Pattern Recognition Conference, pages 9467-9476, 2025.",
-    "Yerin Hwang, Yongil Kim, Jahyun Koo, Taegwan Kang, Hyunkyung Bae, and Kyomin Jung. Llms can be easily confused by instructional distractions. arXiv preprint arXiv:2502.04362, 2025.",
-    "Mahmud Omar, Vera Sorin, Jeremy D Collins, David Reich, Robert Freeman, Nicholas Gavin, Alexander Charney, Lisa Stump, Nicola Luigi Bragazzi, Girish N Nadkarni, et al. Large language models are highly vulnerable to adversarial hallucination attacks in clinical decision support: A multi-model assurance analysis. medRxiv, pages 2025-03, 2025.",
-    "Shrey Pandit, Jiawei Xu, Junyuan Hong, Zhangyang Wang, Tianlong Chen, Kaidi Xu, and Ying Ding. Medhallu: A comprehensive benchmark for detecting medical hallucinations in large language models. arXiv preprint arXiv:2502.14302, 2025.",
-    "Jia-Yu Yao, Kun-Peng Ning, Zhen-Hui Liu, Mu-Nan Ning, Yu-Yang Liu, and Li Yuan. Llm lies: Hallucinations are not bugs, but features as adversarial examples. arXiv preprint arXiv:2310.01469, 2023.",
-    "Tianyu Han, Sven Nebelung, Firas Khader, Tianci Wang, Gustav Müller-Franzes, Christiane Kuhl, Sebastian Försch, Jens Kleesiek, Christoph Haarburger, Keno K Bressem, et al. Medical large language models are susceptible to targeted misinformation attacks. NPJ digital medicine, 7(1):288, 2024."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

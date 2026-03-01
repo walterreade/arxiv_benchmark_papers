@@ -1,0 +1,43 @@
+{
+  "filename": "2303.07247.pdf",
+  "title": "Are Models Trained on Indian Legal Data Fair?",
+  "arxiv_url": "https://arxiv.org/pdf/2303.07247",
+  "religious_groups": [
+    "Hinduism",
+    "Islam"
+  ],
+  "models_tested": [
+    "Decision Tree",
+    "xlm-roberta-large"
+  ],
+  "languages_evaluated": [
+    "Hindi"
+  ],
+  "response_type": [
+    "other"
+  ],
+  "religion_component": "major",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "A decision tree model trained for bail prediction showed an overall fairness disparity of 0.237 between input features associated with Hindus and Muslims. In murder cases where bail was initially denied, the model was more likely to grant bail when a Muslim name was replaced by a Hindu name. Conversely, in dowry cases, the model associated the negative aspect of the crime more with Hindus, switching predictions from bail granted to bail denied more often when a Hindu name was involved.",
+  "references": [
+    "V. Malik, R. Sanjay, S. K. Nigam, K. Ghosh, S. K. Guha, A. Bhattacharya, A. Modi, ILDC for CJPE: Indian legal documents corpus for court judgment prediction and explanation, in: Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), Association for Computational Linguistics, Online, 2021, pp. 4046–4062. URL: https://aclanthology.org/2021.acl-long.313. doi:10.18653/v1/2021.acl-long. 313.",
+    "P. Jackson, K. Al-Kofahi, A. Tyrrell, A. Vachher, Information extraction from case law and retrieval of prior cases, Artificial Intelligence 150 (2003) 239–290.",
+    "S. Klaus, R. Van Hecke, K. Djafari Naini, I. S. Altingovde, J. Bernabé-Moreno, E. Herrera- Viedma, Summarizing legal regulatory documents using transformers, in: Proceedings of the 45th International ACM SIGIR Conference on Research and Development in Infor- mation Retrieval, 2022, pp. 2426–2430.",
+    "J. Sargent, M. Weber, Identifying biases in legal data: An algorithmic fairness perspective, arXiv preprint arXiv:2109.09946 (2021).",
+    "M. J. Kusner, J. Loftus, C. Russell, R. Silva, Counterfactual fairness, Advances in neural information processing systems 30 (2017).",
+    "I. Chalkidis, M. Fergadiotis, P. Malakasiotis, N. Aletras, I. Androutsopoulos, Legal-bert: The muppets straight out of law school, arXiv preprint arXiv:2010.02559 (2020).",
+    "S. Paul, A. Mandal, P. Goyal, S. Ghosh, Pre-training transformers on indian legal text, arXiv preprint arXiv:2209.06049 (2022).",
+    "A. Kapoor, M. Dhawan, A. Goel, A. TH, A. Bhatnagar, V. Agrawal, A. Agrawal, A. Bhat- tacharya, P. Kumaraguru, A. Modi, HLDC: Hindi legal documents corpus, in: Findings of the Association for Computational Linguistics: ACL 2022, Association for Computa- tional Linguistics, Dublin, Ireland, 2022, pp. 3521–3536. URL: https://aclanthology.org/ 2022.findings-acl.278. doi:10.18653/v1/2022.findings-acl.278.",
+    "E. Ash, S. Asher, A. Bhowmick, S. Bhupatiraju, D. Chen, T. Devi, C. Goessmann, P. Novosad, B. Siddiqi, In-group bias in the indian judiciary (2022).",
+    "D. L. Bassett, Deconstruct and superstruct: Examining bias across the legal system, UCDL Rev. 46 (2012) 1563.",
+    "A. Olaborede, L. Meintjes-Van der Walt, Cognitive bias affecting decision-making in the legal process, Obiter 41 (2020) 806–830.",
+    "M. Lidén, M. Gräns, P. Juslin, Self-correction of wrongful convictions: is there a ‘system- level' confirmation bias in the swedish legal system's appeal procedure for criminal cases? part i, Law, Probability and Risk 17 (2018) 311–336.",
+    "D. Mimno, H. Wallach, E. Talley, M. Leenders, A. McCallum, Optimizing semantic coher- ence in topic models, in: Proceedings of the 2011 conference on empirical methods in natural language processing, 2011, pp. 262–272.",
+    "R. Rehurek, P. Sojka, Gensim-python framework for vector space modelling, NLP Centre, Faculty of Informatics, Masaryk University, Brno, Czech Republic 3 (2011).",
+    "A. Conneau, K. Khandelwal, N. Goyal, V. Chaudhary, G. Wenzek, F. Guzmán, E. Grave, M. Ott, L. Zettlemoyer, V. Stoyanov, Unsupervised cross-lingual representation learning at scale, CoRR abs/1911.02116 (2019). URL: http://arxiv.org/abs/1911.02116. arXiv:1911.02116.",
+    "Wikipedia contributors, Crime in india – Wikipedia, the free encyclopedia, 2022. URL: https://en.wikipedia.org/w/index.php?title=Crime_in_India&oldid=1125259959, [Online; accessed 13-January-2023].",
+    "T. Akiba, S. Sano, T. Yanase, T. Ohta, M. Koyama, Optuna: A next-generation hyperpa- rameter optimization framework, in: Proceedings of the 25rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 2019."
+  ],
+  "measurement_description": "Algorithmic bias against Hindus and Muslims in a legal bail prediction task, measured by the fairness disparity (demographic parity) when names associated with one religion are substituted for the other."
+}

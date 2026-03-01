@@ -2,58 +2,11 @@
   "filename": "2310.14771.pdf",
   "title": "Evaluating the Knowledge Base Completion Potential of GPT",
   "arxiv_url": "https://arxiv.org/pdf/2310.14771",
-  "benchmark_measurement": "Knowledge of an entity's religious affiliation, tested via the 'hasReligion' relation in a knowledge base completion task.",
-  "religious_groups": [],
-  "models_tested": [
-    "GPT-3 (text-davinci-003)",
-    "GPT-4",
-    "ChatGPT (gpt-3.5-turbo)",
-    "GPT-3 (text-curie-001)",
-    "BERT-large"
+  "bias_targets": [
+    {
+      "target": "Demographic bias",
+      "methodology": "Evaluating model accuracy on socio-demographic Knowledge Base completion relations (such as native language and citizenship) and observing the model's reliance on surface correlations, such as inferring a person's nationality or native language entirely from their name."
+    }
   ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "LAMA",
-    "WD-KNOWN"
-  ],
-  "continuous_testing": false,
-  "findings": "In a retain-all setting, GPT-3 (text-davinci-003) achieved a precision of 0.73 for the 'hasReligion' relation, but in a high-precision setting (R@P90), its recall dropped to 0.02, indicating difficulty in generating high-confidence facts about religion.",
-  "references": [
-    "Dimitrios Alivanistos, Selene Báez Santamaría, Michael Cochez, Jan-Christoph Kalo, Emile van Krieken, and Thiviyan Thanapalasingam. 2023. Prompting as probing: Using language models for knowledge base construction.",
-    "Sören Auer, Christian Bizer, Georgi Kobilarov, Jens Lehmann, Richard Cyganiak, and Zachary G. Ives. 2007. DBpedia: A nucleus for a web of open data. ISWC.",
-    "Antoine Bordes, Nicolas Usunier, Alberto Garcia- Duran, Jason Weston, and Oksana Yakhnenko. 2013. Translating embeddings for modeling multi- relational data. neurIPS.",
-    "Nicola De Cao, Wilker Aziz, and Ivan Titov. 2021. Editing factual knowledge in language models. In EMNLP.",
-    "Andrew Carlson, Justin Betteridge, Bryan Kisiel, Burr Settles, Estevam R Hruschka, and Tom M Mitchell. 2010. Toward an architecture for never-ending language learning. In AAAI.",
-    "Roi Cohen, Mor Geva, Jonathan Berant, and Amir Globerson. 2023. Crawling the internal knowledge- base of language models. Findings of EACL.",
-    "Yanai Elazar, Nora Kassner, Shauli Ravfogel, Abhilasha Ravichander, Eduard Hovy, Hinrich Schütze, and Yoav Goldberg. 2021. Measuring and improving consistency in pretrained language models. TACL.",
-    "Benjamin Heinzerling and Kentaro Inui. 2021. Language models as knowledge bases: On entity representations, storage capacity, and paraphrased queries. In EACL.",
-    "Zhengbao Jiang, Jun Araki, Haibo Ding, and Graham Neubig. 2021. How can we know when language models know? on the calibration of language models for question answering. TACL.",
-    "Douglas B Lenat. 1995. Cyc: A large-scale investment in knowledge infrastructure. CACM.",
-    "Pengfei Liu, Weizhe Yuan, Jinlan Fu, Zhengbao Jiang, Hiroaki Hayashi, and Graham Neubig. 2022. Pre- train, prompt, and predict: A systematic survey of prompting methods in natural language processing. ACM CSUR.",
-    "Alex Mallen, Akari Asai, Victor Zhong, Rajarshi Das, Daniel Khashabi, and Hannaneh Hajishirzi. 2023. When not to trust language models: Investigating effectiveness of parametric and non-parametric memories. In ACL.",
-    "Maximilian Nickel, Volker Tresp, and Hans-Peter Kriegel. 2011. A three-way model for collective learning on multi-relational data. In ICML.",
-    "Heiko Paulheim. 2018. How much is a triple? estimating the cost of knowledge graph creation. In ISWC.",
-    "Fabio Petroni, Patrick Lewis, Aleksandra Piktus, Tim Rocktäschel, Yuxiang Wu, Alexander H Miller, and Sebastian Riedel. 2020. How context affects language models' factual predictions. In AKBC.",
-    "Fabio Petroni, Tim Rocktäschel, Sebastian Riedel, Patrick Lewis, Anton Bakhtin, Yuxiang Wu, and Alexander Miller. 2019. Language models as knowledge bases? In EMNLP.",
-    "Nina Poerner, Ulli Waltinger, and Hinrich Schütze. 2020. E-BERT: Efficient-yet-effective entity embeddings for BERT. In Findings of EMNLP.",
-    "Simon Razniewski, Andrew Yates, Nora Kassner, and Gerhard Weikum. 2021. Language models as or for knowledge bases. DL4KG.",
-    "Adam Roberts, Colin Raffel, and Noam Shazeer. 2020. How much knowledge can you pack into the parameters of a language model? In EMNLP.",
-    "Tara Safavi and Danai Koutra. 2020. CODEx: A comprehensive knowledge graph completion benchmark. In EMNLP.",
-    "Taylor Shin, Yasaman Razeghi, Robert L. Logan IV, Eric Wallace, and Sameer Singh. 2020. AutoPrompt: Eliciting knowledge from language models with automatically generated prompts. In EMNLP.",
-    "Sneha Singhania, Tuan-Phong Nguyen, and Simon Razniewski. 2022. LM-KBC: Knowledge base construction from pre-trained language models. CEUR.",
-    "Sneha Singhania, Simon Razniewski, and Gerhard Weikum. 2023. Extracting multi-valued relations from language models. Repl4NLP.",
-    "Fabian M Suchanek, Gjergji Kasneci, and Gerhard Weikum. 2007. Yago: a core of semantic knowledge. In WWW.",
-    "Kai Sun, Yifan Ethan Xu, Hanwen Zha, Yue Liu, and Xin Luna Dong. 2023. Head-to-tail: How knowledgeable are large language models (llm)? aka will llms replace knowledge graphs? arXiv.",
-    "Blerta Veseli, Sneha Singhania, Simon Razniewski, and Gerhard Weikum. 2023. Evaluating language models for knowledge base completion. In ESWC.",
-    "D. Vrandečić and M. Krötzsch. 2014. Wikidata: A free collaborative knowledge base. CACM.",
-    "Gerhard Weikum, Luna Dong, Simon Razniewski, and Fabian M. Suchanek. 2021. Machine Knowledge: Creation and Curation of Comprehensive Knowledge Bases. In FnT.",
-    "Miao Xiong, Zhiyuan Hu, Xinyang Lu, Yifei Li, Jie Fu, Junxian He, and Bryan Hooi. 2023. Can llms express their uncertainty? an empirical evaluation of confidence elicitation in llms. arXiv.",
-    "Yuqi Zhu, Xiaohan Wang, Jing Chen, Shuofei Qiao, Yixin Ou, Yunzhi Yao, Shumin Deng, Huajun Chen, and Ningyu Zhang. 2023. Llms for knowledge graph construction and reasoning: Recent capabilities and future opportunities. arXiv."
-  ]
+  "primary_bias_target": "Demographic bias"
 }

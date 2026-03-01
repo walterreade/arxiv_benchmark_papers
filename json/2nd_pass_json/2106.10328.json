@@ -2,67 +2,19 @@
   "filename": "2106.10328.pdf",
   "title": "Process for Adapting Language Models to Society (PALMS) with Values-Targeted Datasets",
   "arxiv_url": "https://arxiv.org/pdf/2106.10328",
-  "benchmark_measurement": "The benchmark measured sentiment bias and harmful associations for various religious groups through co-occurrence evaluations. The process involved providing prompts like '{category} are' to the models and analyzing the most common descriptive words generated for each religious category to identify stereotypes, derogatory terms, or other biases.",
-  "religious_groups": [
-    "Christianity",
-    "Islam",
-    "Hinduism",
-    "Buddhism",
-    "Atheism",
-    "Judaism"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Co-occurrence evaluations generating text using gendered pronouns (e.g., she/her, he/him) and analyzing the most common descriptive words associated with each gender."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Co-occurrence evaluations generating text using religious group names (e.g., Christianity, Islam, Judaism, Hinduism) and analyzing the top descriptive words associated with each religion."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Co-occurrence evaluations generating text using racial and ethnic categories (e.g., Black, White, East Asian, Hispanic, South Asian) and analyzing the most frequent descriptive words associated with each group."
+    }
   ],
-  "models_tested": [
-    "GPT-3 (across various sizes from 125 million to 175 billion parameters)"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [],
-  "continuous_testing": false,
-  "findings": "Base GPT-3 models exhibited significant negative biases, associating 'Muslim' with terrorism ('Brotherhood', 'Isil', 'Terrorist') and 'Jewish' with derogatory terms and genocide ('Monkeys', 'Holocaust'). The PALMS fine-tuned 'values-targeted' models successfully removed these harmful associations but introduced new, different biases, such as associating 'Muslim' with 'Heterosexual' and 'Jewish' with 'Intelligence'. The control models, fine-tuned on generic high-quality text, performed similarly to the biased base models.",
-  "references": [
-    "18 U.S.C. § 2241. Chapter 109a sexual abuse. URL https://uscode.house.gov/view. xhtml?path=/prelim@title18/part1/chapter109A&edition=prelim.",
-    "18 U.S.C. § 2332b. U.S. Code 2332b - Acts of terrorism transcending national bound- aries. URL https://www.law.cornell.edu/uscode/text/18/2332b.",
-    "A. Abid, M. Farooqi, and J. Zou. Persistent anti-muslim bias in large language models. CoRR, abs/2101.05783, 2021. URL https://arxiv.org/abs/2101.05783.",
-    "E. M. Bender, T. Gebru, A. McMillan-Major, and S. Shmitchell. On the dangers of stochastic parrots: Can language models be too big?. In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, FAccT '21, page 610623, New York, NY, USA, 2021. Association for Computing Machinery. ISBN 9781450383097. doi: 10.1145/3442188.3445922. URL https://doi.org/10.1145/ 3442188.3445922.",
-    "S. L. Blodgett, S. Barocas, H. D. III, and H. M. Wallach. Language (technology) is power: A critical survey of \"bias\" in NLP. CoRR, abs/2005.14050, 2020. URL https://arxiv.org/abs/2005.14050.",
-    "T. Bolukbasi, K. Chang, J. Y. Zou, V. Saligrama, and A. Kalai. Man is to com- puter programmer as woman is to homemaker? debiasing word embeddings. CoRR, abs/1607.06520, 2016. URL http://arxiv.org/abs/1607.06520.",
-    "G. Branwen. GPT-3 Creative Fiction, 2021. URL https://www.gwern.net/GPT-3.",
-    "T. B. Brown, B. Mann, N. Ryder, M. Subbiah, J. Kaplan, P. Dhariwal, A. Nee- lakantan, P. Shyam, G. Sastry, A. Askell, S. Agarwal, A. Herbert-Voss, G. Krueger, T. Henighan, R. Child, A. Ramesh, D. M. Ziegler, J. Wu, C. Winter, C. Hesse, M. Chen, E. Sigler, M. Litwin, S. Gray, B. Chess, J. Clark, C. Berner, S. McCandlish, A. Rad- ford, I. Sutskever, and D. Amodei. Language models are few-shot learners. CoRR, abs/2005.14165, 2020. URL https://arxiv.org/abs/2005.14165.",
-    "CCal. Bus. & Prof. Code § 2052. California Legislative Information Califor- nia Penal Code 2052. URL https://leginfo.legislature.ca.gov/faces/codes_ displaySection.xhtml?sectionNum=2052.&lawCode=BPC.",
-    "Centers for Disease Control and Prevention. Public Health Professionals Gate- way vaccination laws. URL https://www.cdc.gov/phlp/publications/topic/ vaccinationlaws.html.",
-    "Children's Bureau. Child Welfare Information Gateway state laws on child abuse and ne- glect,. URL https://www.childwelfare.gov/topics/systemwide/laws-policies/ can/.",
-    "Children's Bureau. Child Welfare Information Gateway mandatory reporters of child abuse and neglect,. URL https://www.childwelfare.gov/pubPDFs/manda.pdf.",
-    "J. Dhamala, T. Sun, V. Kumar, S. Krishna, Y. Pruksachatkun, K. Chang, and R. Gupta. BOLD: dataset and metrics for measuring biases in open-ended language generation. CoRR, abs/2101.11718, 2021. URL https://arxiv.org/abs/2101.11718.",
-    "L. Dixon, J. Li, J. Sorensen, N. Thain, and L. Vasserman. Measuring and mitigating un- intended bias in text classification. In Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society, AIES '18, page 6773, New York, NY, USA, 2018. Associa- tion for Computing Machinery. ISBN 9781450360128. doi: 10.1145/3278721.3278729. URL https://doi.org/10.1145/3278721.3278729.",
-    "Federal Bureau of Investigation. Reports and Publications terrorism 2002/2005. URL https://www.fbi.gov/stats-services/publications/terrorism-2002-2005.",
-    "Federal Trade Commission. No FEAR Act protections against discrimination and other prohibited practices, 2021. URL https://www.ftc.gov/site-information/ no-fear-act/protections-against-discrimination.",
-    "S. Gehman, S. Gururangan, M. Sap, Y. Choi, and N. A. Smith. Realtoxicityprompts: Evaluating neural toxic degeneration in language models. CoRR, abs/2009.11462, 2020. URL https://arxiv.org/abs/2009.11462.",
-    "S. Gururangan, A. Marasovic, S. Swayamdipta, K. Lo, I. Beltagy, D. Downey, and N. A. Smith. Don't stop pretraining: Adapt language models to domains and tasks. CoRR, abs/2004.10964, 2020. URL https://arxiv.org/abs/2004.10964.",
-    "A. Holtzman, J. Buys, M. Forbes, and Y. Choi. The curious case of neural text degen- eration. CoRR, abs/1904.09751, 2019. URL http://arxiv.org/abs/1904.09751.",
-    "D. M. Jr., V. Prabhakaran, J. Kuhlberg, A. Smart, and W. S. Isaac. Extending the machine learning abstraction boundary: A complex systems approach to incorporate societal context. CoRR, abs/2006.09663, 2020. URL https://arxiv.org/abs/2006. 09663.",
-    "Z. Kenton, T. Everitt, L. Weidinger, I. Gabriel, V. Mikulik, and G. Irving. Alignment of language agents. CoRR, abs/2103.14659, 2021. URL https://arxiv.org/abs/2103. 14659.",
-    "P. P. Liang, I. M. Li, E. Zheng, Y. C. Lim, R. Salakhutdinov, and L. Morency. Towards debiasing sentence representations. CoRR, abs/2007.08100, 2020. URL https://arxiv. org/abs/2007.08100.",
-    "A. Liu, M. Sap, X. Lu, S. Swayamdipta, C. Bhagavatula, N. A. Smith, and Y. Choi. On-the-fly controlled text generation with experts and anti-experts, 2021.",
-    "S. Mohamed, M. Png, and W. Isaac. Decolonial AI: decolonial theory as sociotechnical foresight in artificial intelligence. CoRR, abs/2007.04068, 2020. URL https://arxiv. org/abs/2007.04068.",
-    "National Conference of State Legislatures. States With Religious and Philosophical Exemptions From School Immunization Requirements. URL https://www.ncsl.org/ research/health/school-immunization-exemption-state-laws.aspx.",
-    "A. Paullada, I. D. Raji, E. M. Bender, E. Denton, and A. Hanna. Data and its (dis)contents: A survey of dataset development and use in machine learning research. CoRR, abs/2012.05345, 2020. URL https://arxiv.org/abs/2012.05345.",
-    "Perspective. Perspective how it works, 2021. URL https://www.perspectiveapi. com/how-it-works.",
-    "Perspective. Perspective Developers attributes & languages, 2021. URL https:// support.perspectiveapi.com/s/about-the-api-attributes-and-languages.",
-    "V. Sanh, T. Wolf, Y. Belinkov, and A. M. Rush. Learning from others' mistakes: Avoiding dataset biases without modeling them. CoRR, abs/2012.01300, 2020. URL https://arxiv.org/abs/2012.01300.",
-    "M. Sap, D. Card, S. Gabriel, Y. Choi, and N. A. Smith. The risk of racial bias in hate speech detection. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 1668–1678, Florence, Italy, July 2019. Association for Computational Linguistics. doi: 10.18653/v1/P19-1163. URL https://www.aclweb. org/anthology/P19-1163.",
-    "Surge AI. Human Intelligence. On Demand., 2021. URL https://surgehq.ai.",
-    "United Nations. Human Rights. URL https://www.un.org/en/global-issues/ human-rights.",
-    "United Nations Office of the High Commissioner. Human Rights enhancing equal- ity and countering discrimination, 2021. URL https://www.ohchr.org/EN/AboutUs/ ManagementPlan/Pages/equality.aspx.",
-    "U.S. Department of Health & Human Services. Statutory Rape: A Guide to State Laws and Reporting Requirements. Sexual In- tercourse with Minors. URL https://aspe.hhs.gov/report/ statutory-rape-guide-state-laws-and-reporting-requirements-summary-current-state-laws/ sexual-intercourse-minors.",
-    "U.S. Department of Justice. The United States Department of Justice elder abuse and elder financial exploitation statutes. URL https://www.justice.gov/elderjustice/ prosecutors/statutes.",
-    "U.S. Food & Drug Administration. Buying & Using Medicine Safely medication health fraud. URL https://www.fda.gov/drugs/buying-using-medicine-safely/ medication-health-fraud.",
-    "B. Vidgen, A. Harris, D. Nguyen, R. Tromble, S. Hale, and H. Margetts. Chal- lenges and frontiers in abusive content detection. In Proceedings of the Third Work- shop on Abusive Language Online, pages 80–93, Florence, Italy, Aug. 2019. Asso- ciation for Computational Linguistics. doi: 10.18653/v1/W19-3509. URL https: //www.aclweb.org/anthology/W19-3509.",
-    "A. Xu, E. Pathak, E. Wallace, S. Gururangan, M. Sap, and D. Klein. Detoxifying language models risks marginalizing minority voices. CoRR, abs/2104.06390, 2021. URL https://arxiv.org/abs/2104.06390.",
-    "J. Xu, D. Ju, M. Li, Y. Boureau, J. Weston, and E. Dinan. Recipes for safety in open- domain chatbots. CoRR, abs/2010.07079, 2020. URL https://arxiv.org/abs/2010. 07079."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

@@ -2,11 +2,70 @@
   "filename": "2505.21347.pdf",
   "title": "OVERT: A Benchmark for Over-Refusal Evaluation on Text-to-Image Models",
   "arxiv_url": "https://arxiv.org/pdf/2505.21347",
-  "bias_targets": [
-    {
-      "target": "Over-refusal bias",
-      "methodology": "Measuring the refusal rates of Text-to-Image (T2I) models on a synthetic benchmark (OVERT) consisting of 4,600 benign prompts that contain sensitive keywords or concepts across nine safety-related categories to evaluate the models' tendency to falsely reject safe inputs."
-    }
+  "religious_groups": [
+    "Buddhism"
   ],
-  "primary_bias_target": "Over-refusal bias"
+  "models_tested": [
+    "Imagen-3",
+    "DALL-E-3 (API)",
+    "DALL-E-3 (Web)",
+    "FLUX1.1-Pro",
+    "SD-3.5-Large"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "WildGuardMix",
+    "XSTest",
+    "OR-Bench"
+  ],
+  "continuous_testing": false,
+  "findings": "Text-to-Image models showed varied over-refusal rates on benign prompts in the 'discrimination' category, which includes religion. On the OVERT-mini dataset, FLUX1.1-Pro (34.5%) and DALL-E-3-Web (28.0%) exhibited the highest refusal rates for benign discrimination-related prompts, whereas models like DALL-E-3-API (11.0%) and Imagen-3 (13.0%) were less prone to over-refusal, and SD-3.5-Large had a refusal rate of nearly zero.",
+  "references": [
+    "Pravesh Agrawal, Szymon Antoniak, Emma Bou Hanna, Baptiste Bout, Devendra Chaplot, Jessica Chudnovsky, Diogo Costa, Baudouin De Monicault, Saurabh Garg, Theophile Gervet, et al. Pixtral 12b. arXiv preprint arXiv:2410.07073, 2024.",
+    "Badr AlKhamissi, Muhammad ElNokrashy, Mai AlKhamissi, and Mona Diab. Investigating cultural alignment of large language models. arXiv preprint arXiv:2402.13231, 2024.",
+    "Bang An, Sicheng Zhu, Ruiyi Zhang, Michael-Andrei Panaitescu-Liess, Yuancheng Xu, and Furong Huang. Automatic pseudo-harmful prompt generation for evaluating false refusals in large language models. arXiv preprint arXiv:2409.00598, 2024.",
+    "Sarah Andersen et al. Andersen v. STABILITY AI LTD. United States District Court, Northern District of California, 2023. 700 F. Supp. 3d 853 (N.D. Cal. 2023).",
+    "Anthropic. Core views on AI safety: When, why, what, and how, March 2023.",
+    "Jason Baldridge, Jakob Bauer, Mukul Bhutani, Nicole Brichtova, Andrew Bunner, Kelvin Chan, Yichang Chen, Sander Dieleman, Yuqing Du, Zach Eaton-Rosen, et al. Imagen 3. arXiv preprint arXiv:2408.07009, 2024.",
+    "Shaily Bhatt, Sunipa Dev, Partha Talukdar, Shachi Dave, and Vinodkumar Prabhakaran. Re- contextualizing fairness in NLP: The case of India. arXiv preprint arXiv:2209.12226, 2022.",
+    "Black Forest Labs. Flux v1.1 pro, 2024.",
+    "Chameleon Team. Chameleon: Mixed-modal early-fusion foundation models. arXiv preprint arXiv:2405.09818, 2024.",
+    "Justin Cui, Wei-Lin Chiang, Ion Stoica, and Cho-Jui Hsieh. OR-Bench: An over-refusal benchmark for large language models. arXiv preprint arXiv:2405.20947, 2024.",
+    "Patrick Esser, Sumith Kulal, Andreas Blattmann, Rahim Entezari, Jonas Müller, Harry Saini, Yam Levi, Dominik Lorenz, Axel Sauer, Frederic Boesel, et al. Scaling rectified flow trans- formers for high-resolution image synthesis. In Forty-first international conference on machine learning, 2024.",
+    "Rohit Gandikota, Joanna Materzynska, Jaden Fiotto-Kaufman, and David Bau. Erasing concepts from diffusion models. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 2426–2436, 2023.",
+    "Google. Responsible AI and usage guidelines for Imagen. https://cloud. google.com/vertex-ai/generative-ai/docs/image/responsible-ai-imagen# safety-filters, 2025.",
+    "Seungju Han, Kavel Rao, Allyson Ettinger, Liwei Jiang, Bill Yuchen Lin, Nathan Lambert, Yejin Choi, and Nouha Dziri. Wildguard: Open one-stop moderation tools for safety risks, jailbreaks, and refusals of LLMs. arXiv preprint arXiv:2406.18495, 2024.",
+    "Luxi He, Yangsibo Huang, Weijia Shi, Tinghao Xie, Haotian Liu, Yue Wang, Luke Zettlemoyer, Chiyuan Zhang, Danqi Chen, and Peter Henderson. Fantastic copyrighted beasts and how (not) to generate them. arXiv preprint arXiv:2406.14526, 2024.",
+    "Hailong Hu and Jun Pang. Membership inference of diffusion models. arXiv preprint arXiv:2301.09956, 2023.",
+    "Nikolas Lanum. Google apologizes after new Gemini Al refuses to show pic- tures, achievements of white people. https://www.foxbusiness.com/media/ google-apologizes-new-gemini-ai-refuses-show-pictures-achievements-white-people, February 2024. Accessed: 2025-02-24.",
+    "Guanlin Li, Kangjie Chen, Shudong Zhang, Jie Zhang, and Tianwei Zhang. ART: Automatic red-teaming for text-to-image models to protect benign users. arXiv preprint arXiv:2405.19360, 2024.",
+    "Runtao Liu, Chen I Chieh, Jindong Gu, Jipeng Zhang, Renjie Pi, Qifeng Chen, Philip Torr, Ashkan Khakzar, and Fabio Pizzati. SafetyDPO: Scalable safety alignment for text-to-image generation. arXiv preprint arXiv:2412.10493, 2024.",
+    "Runtao Liu, Ashkan Khakzar, Jindong Gu, Qifeng Chen, Philip Torr, and Fabio Pizzati. Latent guard: a safety framework for text-to-image generation. In European Conference on Computer Vision, pages 93–109. Springer, 2024.",
+    "Tarek Naous, Michael J Ryan, Alan Ritter, and Wei Xu. Having beer after prayer? measuring cultural bias in large language models. arXiv preprint arXiv:2305.14456, 2023.",
+    "OpenAI. DALL·E 3 system card, 2023. Accessed: 2025-02-24.",
+    "OpenAI. Introducing the model spec, May 2024.",
+    "Jessica Quaye, Alicia Parrish, Oana Inel, Charvi Rastogi, Hannah Rose Kirk, Minsuk Kahng, Erin Van Liemt, Max Bartolo, Jess Tsang, Justin White, et al. Adversarial nibbler: An open red-teaming method for identifying diverse harms in text-to-image generation. In Proceedings of the 2024 ACM Conference on Fairness, Accountability, and Transparency, pages 388–406, 2024.",
+    "Javier Rando, Daniel Paleka, David Lindner, Lennart Heim, and Florian Tramèr. Red-teaming the stable diffusion safety filter. arXiv preprint arXiv:2210.04610, 2022.",
+    "Paul Röttger, Hannah Rose Kirk, Bertie Vidgen, Giuseppe Attanasio, Federico Bianchi, and Dirk Hovy. Xstest: A test suite for identifying exaggerated safety behaviours in large language models. arXiv preprint arXiv:2308.01263, 2023.",
+    "Rakeen Rouf, Trupti Bavalatti, Osama Ahmed, Dhaval Potdar, and Faraz Jawed. A systematic review of open datasets used in text-to-image (T2I) Gen Al model safety. arXiv preprint arXiv:2503.00020, 2025.",
+    "Patrick Schramowski, Manuel Brack, Björn Deiseroth, and Kristian Kersting. Safe latent diffusion: Mitigating inappropriate degeneration in diffusion models. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 22522–22531, 2023.",
+    "Stability AI. Stable diffusion 3.5 large. https://huggingface.co/stabilityai/ stable-diffusion-3.5-large, 2024. Accessed: 2025-05-09.",
+    "Thomas van Dongen and Stephan Tulkens. Semhash: Fast semantic text deduplication, 2025.",
+    "Corban Villa, Shujaat Mirza, and Christina Pöpper. Exposing the guardrails: Reverse- engineering and jailbreaking safety filters in DALL. E text-to-image pipelines. 2025.",
+    "Patrick von Platen, Suraj Patil, Anton Lozhkov, Pedro Cuenca, Nathan Lambert, Kashif Rasul, Mishig Davaadorj, Dhruv Nair, Sayak Paul, William Berman, Yiyi Xu, Steven Liu, and Thomas Wolf. Diffusers: State-of-the-art diffusion models. https://github.com/huggingface/ diffusers, 2022.",
+    "Yijun Yang, Ruiyuan Gao, Xiaosen Wang, Tsung-Yi Ho, Nan Xu, and Qiang Xu. Mma- diffusion: Multimodal attack on diffusion models. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 7737–7746, 2024.",
+    "Yuchen Yang, Bo Hui, Haolin Yuan, Neil Gong, and Yinzhi Cao. Sneakyprompt: Jailbreaking text-to-image generative models. In 2024 IEEE symposium on security and privacy (SP), pages 897–912. IEEE, 2024.",
+    "Wojciech Zaremba, Evgenia Nitishinskaya, Boaz Barak, Stephanie Lin, Sam Toyer, Yaodong Yu, Rachel Dias, Eric Wallace, Kai Xiao, Johannes Heidecke, et al. Trading inference-time compute for adversarial robustness. arXiv preprint arXiv:2501.18841, 2025.",
+    "Chenyu Zhang, Mingwang Hu, Wenhui Li, and Lanjun Wang. Adversarial attacks and defenses on text-to-image diffusion models: A survey. Information Fusion, page 102701, 2024.",
+    "Jingyu Zhang, Ahmed Elgohary, Ahmed Magooda, Daniel Khashabi, and Benjamin Van Durme. Controllable safety alignment: Inference-time adaptation to diverse safety requirements. arXiv preprint arXiv:2410.08968, 2024.",
+    "Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric Xing, et al. Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena. Advances in Neural Information Processing Systems, 36:46595–46623, 2023.",
+    "Jingyu Zhu, Ruiqi Zhang, Licong Lin, and Song Mei. Choose your anchor wisely: Effective un- learning diffusion models via concept reconditioning. In Neurips Safe Generative AI Workshop 2024, 2024."
+  ],
+  "measurement_description": "The benchmark measures over-refusal rates of Text-to-Image models on benign prompts related to discrimination, where religion is one of the protected characteristics. This involves prompts that might be perceived as sensitive due to religious keywords but are intended to be harmless."
 }

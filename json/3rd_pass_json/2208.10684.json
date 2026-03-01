@@ -2,35 +2,52 @@
   "filename": "2208.10684.pdf",
   "title": "K-MHaS: A Multi-label Hate Speech Detection Dataset in Korean Online News Comment",
   "arxiv_url": "https://arxiv.org/pdf/2208.10684",
-  "bias_targets": [
-    {
-      "target": "Political bias",
-      "methodology": "Evaluating multi-label hate speech classification performance of pre-trained Korean language models on news comments categorized by political stance."
-    },
-    {
-      "target": "Origin bias",
-      "methodology": "Evaluating multi-label hate speech classification performance of pre-trained Korean language models on news comments targeting place of origin or regional identity."
-    },
-    {
-      "target": "Physical appearance and Disability bias",
-      "methodology": "Evaluating multi-label hate speech classification performance of pre-trained Korean language models on news comments targeting physical appearance or disability."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Evaluating multi-label hate speech classification performance of pre-trained Korean language models on news comments targeting specific age groups."
-    },
-    {
-      "target": "Gender and Sexual orientation bias",
-      "methodology": "Evaluating multi-label hate speech classification performance of pre-trained Korean language models on news comments targeting gender or sexual orientation."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Evaluating multi-label hate speech classification performance of pre-trained Korean language models on news comments targeting religious affiliations."
-    },
-    {
-      "target": "Racial bias",
-      "methodology": "Evaluating multi-label hate speech classification performance of pre-trained Korean language models on news comments targeting race and ethnicity."
-    }
+  "religious_groups": [
+    "Christianity",
+    "New Religious Movements (e.g., Shincheonji)"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "Multilingual-BERT",
+    "KOELECTRA",
+    "KoBERT",
+    "KR-BERT"
+  ],
+  "languages_evaluated": [
+    "Korean"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "Hate speech targeting religion was one of the least frequent categories in the K-MHaS dataset, accounting for 5.1% of single-label hate speech instances and 1.8% of multi-label instances. The most common keywords associated with this category included derogatory terms for Christians ('Gaedok'), references to specific new religious movements ('Shincheonji'), the term for pseudo/heretical cults ('Saibi'), the general word for religion ('Jonggyo'), and 'Jesus' ('Yesu').",
+  "references": [
+    "Tommaso Caselli, Arjan Schelhaas, Marieke Weultjes, Folkert Leistra, Hylke van der Veen, Gerben Tim- merman, and Malvina Nissim. 2021. Dalc: the dutch abusive language corpus. In Proceedings of the 5th Workshop on Online Abuse and Harms (WOAH 2021), pages 54–66.",
+    "Kimberlé Crenshaw. 1989. Demarginalizing the inter- section of race and sex: A black feminist critique of antidiscrimination doctrine, feminist theory and an- tiracist politics. u. Chi. Legal f., page 139.",
+    "Thomas Davidson, Dana Warmsley, Michael Macy, and Ingmar Weber. 2017. Automated hate speech detection and the problem of offensive language. In Proceedings of the International AAAI Conference on Web and Social Media, volume 11.",
+    "Paula Fortuna, Joao Rocha da Silva, Leo Wanner, Sér- gio Nunes, et al. 2019. A hierarchically-labeled por- tuguese hate speech dataset. In Proceedings of the Third Workshop on Abusive Language Online, pages 94–104.",
+    "Paula Fortuna and Sérgio Nunes. 2018. A survey on au- tomatic detection of hate speech in text. ACM Com- puting Surveys (CSUR), 51(4):1–30.",
+    "Lei Gao and Ruihong Huang. 2017. Detecting on- line hate speech using context aware models. In Proceedings of the International Conference Recent Advances in Natural Language Processing, RANLP, pages 260–266.",
+    "Shantanu Godbole and Sunita Sarawagi. 2004. Dis- criminative methods for multi-labeled classification. In Pacific-Asia conference on knowledge discovery and data mining, pages 22–30. Springer.",
+    "Muhammad Okky Ibrohim and Indra Budi. 2019. Multi-label hate speech and abusive language detec- tion in indonesian twitter. In Proceedings of the Third Workshop on Abusive Language Online, pages 46–57.",
+    "Myungkoo Kang, Marie-Orange Rivé-Lasan, Wooja Kim, and Philippa Hall. 2020. Hate speech in Asia and Europe: Beyond hate and fear. Routledge.",
+    "Sangah Lee, Hansol Jang, Yunmee Baik, Suzi Park, and Hyopil Shin. 2020. Kr-bert: A small-scale korean- specific language model. ArXiv, abs/2008.03979.",
+    "Jihyung Moon, Won Ik Cho, and Junbum Lee. 2020. Beep! korean corpus of online news comments for toxic speech detection. In Proceedings of the Eighth International Workshop on Natural Language Pro- cessing for Social Media, pages 25–31.",
+    "Hamdy Mubarak, Kareem Darwish, and Walid Magdy. 2017. Abusive language detection on arabic social media. In Proceedings of the first workshop on abu- sive language online, pages 52–56.",
+    "Chikashi Nobata, Joel Tetreault, Achint Thomas, Yashar Mehdad, and Yi Chang. 2016. Abusive lan- guage detection in online user content. In Proceed- ings of the 25th international conference on world wide web, pages 145–153.",
+    "Nedjma Ousidhoum, Zizheng Lin, Hongming Zhang, Yangqiu Song, and Dit-Yan Yeung. 2019. Multilin- gual and multi-aspect hate speech analysis. In Pro- ceedings of the 2019 Conference on EMNLP and the 9th IJCNLP (EMNLP-IJCNLP), pages 4675–4684.",
+    "Jangwon Park. 2020. Koelectra: Pretrained elec- tra model for korean. https://github.com/ monologg/KOELECTRA.",
+    "S. Siegel and N.J. Castellan. 1988. Nonparametric Statistics for the Behavioral Sciences. McGraw- Hill.",
+    "SKTBrain. 2019. Kobert: Korean bert pre-trained cased. https://github.com/SKTBrain/ KoBERT.",
+    "Mohammad S Sorower. 2010. A literature survey on al- gorithms for multi-label learning. Oregon State Uni- versity, Corvallis, 18:1–25.",
+    "Bertie Vidgen and Leon Derczynski. 2020. Direc- tions in abusive language training data, a system- atic review: Garbage in, garbage out. Plos one, 15(12):e0243300.",
+    "Kunze Wang, Dong Lu, Caren Han, Siqu Long, and Josiah Poon. 2020. Detect all abuse! toward univer- sal abusive language detection models. In Proceed- ings of the 28th International Conference on Com- putational Linguistics, pages 6366–6376.",
+    "Zeerak Waseem and Dirk Hovy. 2016. Hateful sym- bols or hateful people? Predictive features for hate speech detection on Twitter. In Proceedings of the NAACL student research workshop, pages 88–93.",
+    "Henry Weld, Guanghao Huang, Jean Lee, Tongshu Zhang, Kunze Wang, Xinghong Guo, Siqu Long, Josiah Poon, and Caren Han. 2021. Conda: a contex- tual dual-annotated dataset for in-game toxicity un- derstanding and detection. In Findings of the Associ- ation for Computational Linguistics: ACL-IJCNLP 2021, pages 2406–2416.",
+    "Thomas Wolf, Lysandre Debut, Victor Sanh, Julien Chaumond, Clement Delangue, Anthony Moi, Pier- ric Cistac, Tim Rault, Remi Louf, Morgan Funtow- icz, Joe Davison, Sam Shleifer, Patrick von Platen, Clara Ma, Yacine Jernite, Julien Plu, Canwen Xu, Teven Le Scao, Sylvain Gugger, Mariama Drame, Quentin Lhoest, and Alexander Rush. 2020. Trans- formers: State-of-the-art natural language process- ing. In Proceedings of the 2020 Conference on EMNLP: System Demonstrations, pages 38–45. As- sociation for Computational Linguistics.",
+    "Ellery Wulczyn, Nithum Thain, and Lucas Dixon. 2017. Ex machina: Personal attacks seen at scale. In Proceedings of the 26th international conference on world wide web, pages 1391–1399.",
+    "Marcos Zampieri, Preslav Nakov, Sara Rosenthal, Pepa Atanasova, Georgi Karadzhov, Hamdy Mubarak, Leon Derczynski, Zeses Pitenis, and Çağrı Çöltekin. 2020. Semeval-2020 task 12: Multilingual offensive language identification in social media (offenseval 2020). In Proceedings of the Fourteenth Workshop on Semantic Evaluation, pages 1425–1447."
+  ],
+  "measurement_description": "Detection of hate speech based on religion, as one of eight categories in a multi-label classification task for Korean online news comments."
 }

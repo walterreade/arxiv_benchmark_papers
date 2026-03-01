@@ -2,59 +2,31 @@
   "filename": "2508.21084.pdf",
   "title": "Mapping Toxic Comments Across Demographics: A Dataset from German Public Broadcasting",
   "arxiv_url": "https://arxiv.org/pdf/2508.21084",
-  "benchmark_measurement": "Detection of toxic speech targeted at religion, as part of a broader multi-label toxicity classification schema.",
-  "religious_groups": [
-    "Religion (general)"
+  "bias_targets": [
+    {
+      "target": "Religious bias",
+      "methodology": "Annotating German social media comments for toxicity targeted at religion and evaluating multiple LLMs' (e.g., GPT-4o, Llama-3) classification performance against human annotations using metrics like Macro F1, MCC, and Cohen's kappa."
+    },
+    {
+      "target": "Ethnic, Racial, and Nationality bias",
+      "methodology": "Labeling comments for hate speech directed at ethnic, racial, or national identities and assessing the multi-class prediction accuracy and agreement of LLMs versus human consensus."
+    },
+    {
+      "target": "Gender and Sexual orientation bias",
+      "methodology": "Identifying toxic language targeting gender and sexual identity in multi-platform social media comments to analyze demographic patterns and evaluate LLM automated detection capabilities."
+    },
+    {
+      "target": "Disability bias (Physical Condition)",
+      "methodology": "Classifying text for toxicity based on physical conditions and measuring the zero-shot and fine-tuned performance of language models in detecting these specific targets."
+    },
+    {
+      "target": "Socioeconomic bias (Class)",
+      "methodology": "Categorizing toxic speech aimed at socioeconomic classes and evaluating prompt-based classification abilities of models to scale multi-label hate speech annotation."
+    },
+    {
+      "target": "Occupation bias",
+      "methodology": "Annotating comments for occupation-based hate and comparing human inter-annotator agreement with the annotation consistency of several large language models."
+    }
   ],
-  "models_tested": [
-    "GPT-3.5",
-    "GPT-40",
-    "GPT-40-mini",
-    "Llama-3-8B"
-  ],
-  "languages_evaluated": [
-    "German"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [],
-  "continuous_testing": false,
-  "findings": "Religious hate speech was found to be more prevalent among older users. It was entirely absent in the 0-30 age group but reached 1.94% in the 35+ age group, suggesting age is a significant factor in the expression of religious hate.",
-  "references": [
-    "Dennis Assenmacher, Marco Niemann, Kilian Müller, Moritz Vinzent Seiler, Dennis M. Riehle, and Heike Trautmann. 2021. Rp-mod&rp-crowd: Moderator- and crowd-annotated german news comment datasets. In NeurIPS Datasets and Benchmarks.",
-    "Uwe Bretschneider and Ralf Peters. 2017. Detecting offensive statements towards foreigners in social me- dia. In Hawaii International Conference on System Sciences.",
-    "Davide Chicco and Giuseppe Jurman. 2020. The advan- tages of the matthews correlation coefficient (mcc) over f1 score and accuracy in binary classification evaluation. BMC genomics, 21:1–13.",
-    "Yi-Ling Chung, Elizaveta Kuzmenko, Serra Sinem Tekiroglu, and Marco Guerini. 2019. CONAN - Counter NArratives through nichesourcing: a mul- tilingual dataset of responses to fight online hate speech. In Proceedings of the 57th Annual Meet- ing of the Association for Computational Linguistics, pages 2819–2829, Florence, Italy. Association for Computational Linguistics.",
-    "Jacob Cohen. 1960. A coefficient of agreement for nominal scales. Educational and psychological mea- surement, 20(1):37–46.",
-    "Amit Das, Mostafa Rahgouy, Dongji Feng, Zheng Zhang, Tathagata Bhattacharya, Nilanjana Ray- chawdhary, Fatemeh Jamshidi, Vinija Jain, Aman Chadha, Mary J Sandage, et al. 2024a. Offensive- lang: A community based implicit offensive language dataset. IEEE Access.",
-    "Amit Das, Zheng Zhang, Najib Hasan, Souvika Sarkar, Fatemeh Jamshidi, Tathagata Bhattacharya, Mostafa Rahgouy, Nilanjana Raychawdhary, Dongji Feng, Vinija Jain, Aman Chadha, Mary Sandage, Lau- ramarie Pope, Gerry Dozier, and Cheryl Seals. 2024b. Investigating annotator bias in large lan- guage models for hate speech detection. Preprint, arXiv:2406.11109.",
-    "Thomas Davidson, Dana Warmsley, Michael Macy, and Ingmar Weber. 2017. Automated hate speech detec- tion and the problem of offensive language. Preprint, arXiv:1703.04009.",
-    "Ona de Gibert, Naiara Perez, Aitor García-Pablos, and Montse Cuadros. 2018a. Hate speech dataset from a white supremacy forum. In Proceedings of the 2nd Workshop on Abusive Language Online (ALW2), pages 11–20, Brussels, Belgium. Association for Computational Linguistics.",
-    "Ona de Gibert, Naiara Perez, Aitor García-Pablos, and Montse Cuadros. 2018b. Hate speech dataset from a white supremacy forum. In Proceedings of the 2nd Workshop on Abusive Language Online (ALW2), pages 11–20, Brussels, Belgium. Association for Computational Linguistics.",
-    "Christoph Demus, Jonas Pitz, Mina Schütz, Nadine Probol, Melanie Siegel, and Dirk Labudde. 2022. Detox: A comprehensive dataset for German offen- sive language and conversation analysis. In Proceed- ings of the Sixth Workshop on Online Abuse and Harms (WOAH), pages 143–153, Seattle, Washington (Hybrid). Association for Computational Linguistics.",
-    "Penelope Eckert. 2012. Three waves of variation study: The emergence of meaning in the study of sociolin- guistic variation. Annual review of Anthropology, 41(1):87–100.",
-    "Mai ElSherief, Vivek Kulkarni, Dana Nguyen, William Yang Wang, and Elizabeth Belding. 2018. Hate lingo: A target-based linguistic analysis of hate speech in social media. In Proceedings of the inter- national AAAI conference on web and social media, volume 12.",
-    "Jan Fillies, Silvio Peikert, and Adrian Paschke. 2023. Hateful messages: A conversational data set of hate speech produced by adolescents on discord. In In- ternational Data Science Conference, pages 37–44. Springer.",
-    "Jan Fillies, Esther Theisen, Michael Hoffmann, Robert Jung, Elena Jung, Nele Fischer, and Adrian Paschke. 2025. A novel german tiktok hate speech dataset: far-right comments against politicians, women, and others. Discover Data, 3(1):4.",
-    "Joseph L Fleiss. 1971. Measuring nominal scale agree- ment among many raters. Psychological bulletin, 76(5):378.",
-    "Antigoni Founta, Constantinos Djouvas, Despoina Chatzakou, Ilias Leontiadis, Jeremy Blackburn, Gi- anluca Stringhini, Athena Vakali, Michael Sirivianos, and Nicolas Kourtellis. 2018. Large scale crowd- sourcing and characterization of twitter abusive be- havior. In Proceedings of the international AAAI conference on web and social media, volume 12.",
-    "Timnit Gebru, Jamie Morgenstern, Briana Vec- chione, Jennifer Wortman Vaughan, Hanna Wallach, Hal Daumé III, and Kate Crawford. 2021. Datasheets for datasets. Commun. ACM, 64(12):86–92.",
-    "Janis Goldzycher, Paul Röttger, and Gerold Schneider. 2024. Improving adversarial data collection by sup- porting annotators: Lessons from gahd, a german hate speech dataset. Preprint, arXiv:2403.19559.",
-    "Saba Gulzar. 2023. The role of media in shaping public opinion and social discourse. Contemporary Journal of Social Science Review, 1(1):30–40.",
-    "Homa Hosseinmardi, Sabrina Arredondo Mattson, Ra- hat Ibn Rafiq, Richard Han, Qin Lv, and Shivakant Mishra. 2015. Analyzing labeled cyberbullying in- cidents on the instagram social network. In Social Informatics, pages 49–66, Cham. Springer Interna- tional Publishing.",
-    "Max-Emanuel Keller, Maximilian Auch, Alexander Döschl, Fabian Vlk, Julian Quernheim, Mike Hart- mann, Peter Mandl, Alexander Kaul, and Markus Franz. 2025. Hocon34k: A corpus of hate speech in online comments from german newspapers. In International Conference on Information Integration and Web Intelligence, pages 212–226. Springer.",
-    "Thomas Mandl, Sandip Modha, Prasenjit Majumder, Daksh Patel, Mohana Dave, Chintak Mandlia, and Aditya Patel. 2019. Overview of the hasoc track at fire 2019: Hate speech and offensive content identifi- cation in indo-european languages. In Proceedings of the 11th Annual Meeting of the Forum for Infor- mation Retrieval Evaluation, FIRE ’19, page 14–17, New York, NY, USA. Association for Computing Machinery.",
-    "Binny Mathew, Punyajoy Saha, Seid Muhie Yimam, Chris Biemann, Pawan Goyal, and Animesh Mukher- jee. 2021. Hatexplain: A benchmark dataset for explainable hate speech detection. Proceedings of the AAAI Conference on Artificial Intelligence, 35(17):14867–14875.",
-    "Tharindu Ranasinghe and Marcos Zampieri. 2020. Mul- tilingual offensive language identification with cross- lingual embeddings. In Proceedings of the 2020 Con- ference on Empirical Methods in Natural Language Processing (EMNLP), pages 5838–5844, Online. As- sociation for Computational Linguistics.",
-    "Sarthak Roy, Ashish Harshvardhan, Animesh Mukher- jee, and Punyajoy Saha. 2023. Probing LLMs for hate speech detection: strengths and vulnerabilities. In Findings of the Association for Computational Lin- guistics: EMNLP 2023, pages 6116–6128, Singapore. Association for Computational Linguistics.",
-    "Manuela Sanguinetti, Fabio Poletto, Cristina Bosco, Vi- viana Patti, and Marco Stranisci. 2018. An Italian Twitter corpus of hate speech against immigrants. In Proceedings of the Eleventh International Confer- ence on Language Resources and Evaluation (LREC 2018), Miyazaki, Japan. European Language Re- sources Association (ELRA).",
-    "H. Andrew Schwartz, Johannes C. Eichstaedt, Mar- garet L. Kern, Lukasz Dziurzynski, Stephanie M. Ramones, Megha Agrawal, Achal Shah, Michal Kosinski, David Stillwell, Martin E.P. Seligman, and Lyle H. Ungar. 2013. Personality, gender, and age in the language of social media: The open-vocabulary approach. PLoS ONE, 8.",
-    "Rachele Sprugnoli, Stefano Menini, Sara Tonelli, Fil- ippo Oncini, and Enrico Piras. 2018. Creating a WhatsApp dataset to study pre-teen cyberbullying. In Proceedings of the 2nd Workshop on Abusive Lan- guage Online (ALW2), pages 51–59, Brussels, Bel- gium. Association for Computational Linguistics.",
-    "Bertie Vidgen and Leon Derczynski. 2021. Directions in abusive language training data, a systematic re- view: Garbage in, garbage out. PLOS ONE, 15(12):1– 32.",
-    "Zeerak Waseem and Dirk Hovy. 2016. Hateful symbols or hateful people? predictive features for hate speech detection on Twitter. In Proceedings of the NAACL Student Research Workshop, pages 88–93, San Diego, California. Association for Computational Linguis- tics.",
-    "Xin Wen, Yulan Wang, Kai Wang, and Ran Sui. 2022. A russian hate speech corpus for cybersecurity appli- cations. In 2022 IEEE 8th Intl Conference on Big Data Security on Cloud (BigDataSecurity), IEEE Intl Conference on High Performance and Smart Comput- ing, (HPSC) and IEEE Intl Conference on Intelligent Data and Security (IDS), pages 41–47.",
-    "Michael Wiegand, Melanie Siegel, and Josef Ruppen- hofer. 2019. Overview of the germeval 2018 shared task on the identification of offensive language. Pro- ceedings of GermEval 2018, 14th Conference on Natural Language Processing (KONVENS 2018), Vi- enna, Austria – September 21, 2018, pages 1 – 10. Austrian Academy of Sciences, Vienna, Austria."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

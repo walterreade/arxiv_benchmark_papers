@@ -2,23 +2,58 @@
   "filename": "2308.13387.pdf",
   "title": "Do-Not-Answer: A Dataset for Evaluating Safeguards in LLMs",
   "arxiv_url": "https://arxiv.org/pdf/2308.13387",
-  "bias_targets": [
-    {
-      "target": "Racial bias",
-      "methodology": "Evaluating LLM responses to risky instruction templates specifically populated with nine different racial and ethnic groups (e.g., Black, White, Asian, Hispanic) to see if the model harmfully follows discriminatory instructions or safely refutes them."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Evaluating LLM responses to risky instruction templates filled with five different religious groups (Christian, Muslim, Hindu, Buddhist, Atheist) to test for the generation of social stereotypes or unfair discrimination."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Evaluating LLM responses to risky instruction templates filled with binary gender categories (male, female) to assess the model's safety safeguards against gender-based discrimination and stereotyping."
-    },
-    {
-      "target": "Intersectional bias (Race and Gender)",
-      "methodology": "Using individual names that implicitly carry both gender and race information, and performing stratified sampling to create a balanced question set that tests whether the model exhibits discriminatory behavior based on these intersectional identities."
-    }
+  "religious_groups": [
+    "Christianity",
+    "Islam",
+    "Hinduism",
+    "Buddhism",
+    "Atheism"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "GPT-4",
+    "ChatGPT",
+    "Claude",
+    "LLaMA-2",
+    "ChatGLM2",
+    "Vicuna"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": true,
+  "findings": "The paper's findings are aggregated across broader harm categories and not specific to religion. It evaluates the models' ability to refuse prompts related to religious discrimination as part of a larger safety assessment. Overall, LLaMA-2 was found to be the 'safest' model (i.e., most likely to refuse harmful instructions), while ChatGLM2 was the least safe.",
+  "references": [
+    "Iz Beltagy, Matthew E. Peters, and Arman Cohan. 2020. Longformer: The long-document transformer. CoRR, abs/2004.05150.",
+    "Ameet Deshpande, Vishvak Murahari, Tanmay Rajpurohit, Ashwin Kalyan, and Karthik Narasimhan. 2023. Toxicity in ChatGPT: Analyzing persona-assigned language models. CoRR, abs/2304.05335.",
+    "Jwala Dhamala, Tony Sun, Varun Kumar, Satyapriya Krishna, Yada Pruksachatkun, Kai-Wei Chang, and Rahul Gupta. 2021. BOLD: dataset and metrics for measuring biases in open-ended language generation. In FAccT '21: 2021 ACM Conference on Fairness, Accountability, and Transparency, Virtual Event / Toronto, Canada, March 3-10, 2021, pages 862-872. ACM.",
+    "Emilio Ferrara. 2023. Should ChatGPT be biased? chal- lenges and risks of bias in large language models. CoRR, abs/2304.03738.",
+    "Deep Ganguli, Liane Lovitt, Jackson Kernion, Amanda Askell, Yuntao Bai, Saurav Kadavath, Ben Mann, Ethan Perez, Nicholas Schiefer, Kamal Ndousse, et al. 2022. Red teaming language models to re- duce harms: Methods, scaling behaviors, and lessons learned. arXiv preprint arXiv:2209.07858.",
+    "Samuel Gehman, Suchin Gururangan, Maarten Sap, Yejin Choi, and Noah A. Smith. 2020. RealToxicityPrompts: Evaluating neural toxic degeneration in language models. In Findings of the Association for Computational Linguistics: EMNLP 2020, pages 3356-3369, Online. Association for Computational Linguistics.",
+    "Xudong Han, Timothy Baldwin, and Trevor Cohn. 2023a. Everybody needs good neighbours: An un- supervised locality-based method for bias mitigation. In The Eleventh International Conference on Learn- ing Representations, ICLR 2023, Kigali, Rwanda, May 1-5, 2023. OpenReview.net.",
+    "Xudong Han, Timothy Baldwin, and Trevor Cohn. 2023b. Fair enough: Standardizing evaluation and model selection for fairness research in NLP. In Proceedings of the 17th Conference of the European Chapter of the Association for Computational Lin- guistics, EACL 2023, Dubrovnik, Croatia, May 2-6, 2023, pages 297-312. Association for Computational Linguistics.",
+    "Xudong Han, Aili Shen, Trevor Cohn, Timothy Bald- win, and Lea Frermann. 2022. Systematic evaluation of predictive fairness. In Proceedings of the 2nd Conference of the Asia-Pacific Chapter of the Asso- ciation for Computational Linguistics and the 12th International Joint Conference on Natural Language Processing, AACL/IJCNLP 2022 - Volume 1: Long Papers, Online Only, November 20-23, 2022, pages 68-81. Association for Computational Linguistics.",
+    "Thomas Hartvigsen, Saadia Gabriel, Hamid Palangi, Maarten Sap, Dipankar Ray, and Ece Kamar. 2022. ToxiGen: A large-scale machine-generated dataset for adversarial and implicit hate speech detection. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 3309–3326, Dublin, Ireland. Association for Computational Linguistics.",
+    "Jiaming Ji, Mickel Liu, Juntao Dai, Xuehai Pan, Chi Zhang, Ce Bian, Ruiyang Sun, Yizhou Wang, and Yaodong Yang. 2023. BeaverTails: Towards im- proved safety alignment of LLM via a human- preference dataset. arXiv preprint arXiv:2307.04657.",
+    "Percy Liang, Rishi Bommasani, Tony Lee, Dimitris Tsipras, Dilara Soylu, Michihiro Yasunaga, Yian Zhang, Deepak Narayanan, Yuhuai Wu, Ananya Kumar, Benjamin Newman, Binhang Yuan, Bobby Yan, Ce Zhang, Christian Cosgrove, Christopher D. Manning, Christopher Ré, Diana Acosta-Navas, Drew A. Hudson, Eric Zelikman, Esin Durmus, Faisal Ladhak, Frieda Rong, Hongyu Ren, Huaxiu Yao, Jue Wang, Keshav Santhanam, Laurel J. Orr, Lucia Zheng, Mert Yüksekgönül, Mirac Suzgun, Nathan Kim, Neel Guha, Niladri S. Chatterji, Omar Khattab, Peter Henderson, Qian Huang, Ryan Chi, Sang Michael Xie, Shibani Santurkar, Surya Ganguli, Tatsunori Hashimoto, Thomas Icard, Tianyi Zhang, Vishrav Chaudhary, William Wang, Xuechen Li, Yifan Mai, Yuhui Zhang, and Yuta Koreeda. 2022. Holistic evaluation of language models. CoRR, abs/2211.09110.",
+    "Stephanie Lin, Jacob Hilton, and Owain Evans. 2022. TruthfulQA: Measuring how models mimic human falsehoods. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 3214–3252, Dublin, Ireland. Association for Computational Linguistics.",
+    "Ilya Loshchilov and Frank Hutter. 2019. Decoupled weight decay regularization. In 7th International Conference on Learning Representations, ICLR 2019, New Orleans, LA, USA, May 6-9, 2019. OpenReview.net.",
+    "Chandler May, Alex Wang, Shikha Bordia, Samuel R. Bowman, and Rachel Rudinger. 2019. On measuring social biases in sentence encoders. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, NAACL-HLT 2019, Minneapolis, MN, USA, June 2-7, 2019, Volume 1 (Long and Short Papers), pages 622-628. Association for Computational Linguistics.",
+    "OpenAI. 2023. GPT-4 technical report. arXiv preprint arXiv:2303.08774.",
+    "Stephen Roller, Emily Dinan, Naman Goyal, Da Ju, Mary Williamson, Yinhan Liu, Jing Xu, Myle Ott, Eric Michael Smith, Y-Lan Boureau, and Jason Weston. 2021. Recipes for building an open-domain chatbot. In Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics: Main Volume, pages 300-325, Online. Association for Computational Linguistics.",
+    "Toby Shevlane, Sebastian Farquhar, Ben Garfinkel, Mary Phuong, Jess Whittlestone, Jade Leung, Daniel Kokotajlo, Nahema Marchal, Markus Anderljung, Noam Kolt, Lewis Ho, Divya Siddarth, Shahar Avin, Will Hawkins, Been Kim, Iason Gabriel, Vijay Bolina, Jack Clark, Yoshua Bengio, Paul F. Christiano, and Allan Dafoe. 2023. Model evaluation for extreme risks. CoRR, abs/2305.15324.",
+    "Shivashankar Subramanian, Xudong Han, Timothy Baldwin, Trevor Cohn, and Lea Frermann. 2021. Evaluating debiasing techniques for intersectional biases. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, EMNLP 2021, Virtual Event / Punta Cana, Dominican Republic, 7-11 November, 2021, pages 2492- 2498. Association for Computational Linguistics.",
+    "Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine Babaei, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, Dan Bikel, Lukas Blecher, Cristian Canton Ferrer, Moya Chen, Guillem Cucurull, David Esiobu, Jude Fernandes, Jeremy Fu, Wenyin Fu, Brian Fuller, Cynthia Gao, Vedanuj Goswami, Naman Goyal, Anthony Hartshorn, Saghar Hosseini, Rui Hou, Hakan Inan, Marcin Kardas, Viktor Kerkez, Madian Khabsa, Isabel Kloumann, Artem Korenev, Punit Singh Koura, Marie-Anne Lachaux, Thibaut Lavril, Jenya Lee, Diana Liskovich, Yinghai Lu, Yuning Mao, Xavier Martinet, Todor Mihaylov, Pushkar Mishra, Igor Molybog, Yixin Nie, Andrew Poulton, Jeremy Reizenstein, Rashi Rungta, Kalyan Saladi, Alan Schelten, Ruan Silva, Eric Michael Smith, Ranjan Subramanian, Xiaoqing Ellen Tan, Binh Tang, Ross Taylor, Adina Williams, Jian Xiang Kuan, Puxin Xu, Zheng Yan, Iliyan Zarov, Yuchen Zhang, Angela Fan, Melanie Kambadur, Sharan Narang, Aurelien Rodriguez, Robert Stojnic, Sergey Edunov, and Thomas Scialom. 2023. LLaMA 2: Open foundation and fine-tuned chat models.",
+    "Sander Van Der Linden. 2022. Misinformation: susceptibility, spread, and interventions to immunize the public. Nature Medicine, 28(3):460-467.",
+    "Alexander Wei, Nika Haghtalab, and Jacob Steinhardt. 2023. Jailbroken: How does LLM safety training fail? arXiv preprint arXiv:2307.02483.",
+    "Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Ed H. Chi, Quoc Le, and Denny Zhou. 2022. Chain of thought prompting elicits reasoning in large language models. CoRR, abs/2201.11903.",
+    "Laura Weidinger, John Mellor, Maribeth Rauh, Conor Griffin, Jonathan Uesato, Po-Sen Huang, Myra Cheng, Mia Glaese, Borja Balle, Atoosa Kasirzadeh, Zac Kenton, Sasha Brown, Will Hawkins, Tom Stepleton, Courtney Biles, Abeba Birhane, Julia Haas, Laura Rimell, Lisa Anne Hendricks, William Isaac, Sean Legassick, Geoffrey Irving, and Iason Gabriel. 2021. Ethical and social risks of harm from language models. CoRR, abs/2112.04359.",
+    "Seonghyeon Ye, Doyoung Kim, Sungdong Kim, Hyeonbin Hwang, Seungone Kim, Yongrae Jo, James Thorne, Juho Kim, and Minjoon Seo. 2023. FLASK: fine-grained language model evaluation based on alignment skill sets. CoRR, abs/2307.10928.",
+    "Terry Yue Zhuo, Yujin Huang, Chunyang Chen, and Zhenchang Xing. 2023. Exploring AI ethics of ChatGPT: A diagnostic analysis. arXiv preprint arXiv:2301.12867."
+  ],
+  "measurement_description": "The benchmark measured the models' ability to refuse to answer prompts that promote religious discrimination. This was part of a broader evaluation of safeguards against various harmful instructions."
 }

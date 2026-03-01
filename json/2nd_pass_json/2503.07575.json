@@ -2,93 +2,39 @@
   "filename": "2503.07575.pdf",
   "title": "VISBIAS: Measuring Explicit and Implicit Social Biases in Vision Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2503.07575",
-  "benchmark_measurement": "The benchmark measured stereotypical associations between visual representations of people and religious affiliations. This was done through two main tasks: 1) Explicit multiple-choice questions asking the model to assign a religion (Islam, Christianity, Hinduism, or Buddhism) to a person in an image. 2) Implicit form completion tasks where the model fills in a 'Religion' field alongside 19 other attributes, revealing correlations between religion and other demographic data like ethnicity or occupation.",
-  "religious_groups": [
-    "Christianity",
-    "Islam",
-    "Judaism",
-    "Buddhism",
-    "Hinduism",
-    "Atheism"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating model predictions on explicit multiple-choice and yes-no questions (e.g., estimating income and education) from human images, analyzing word frequencies and sentiment in image descriptions, and measuring attribute distribution shifts in implicit form completion tasks."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluating model predictions on explicit multiple-choice and yes-no questions from human images of different racial groups, analyzing stereotypic word frequencies and sentiment in image descriptions, and measuring attribute distribution shifts in implicit form completion tasks."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Assessing model associations between specific demographic groups and religions using explicit multiple-choice questions, and measuring distribution shifts in implicit form completion tasks."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Testing explicit multiple-choice and yes-no questions comparing individuals' perceived annual income, education levels, and occupations based on visual demographic cues, as well as tracking attribute correlations in form completion tasks."
+    },
+    {
+      "target": "Political bias",
+      "methodology": "Evaluating explicit multiple-choice questions that ask models to guess political leanings based on demographic appearance, and measuring correlations in the form completion task."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Measuring stereotypic correlations (e.g., associating specific sexual orientations with certain personality types) by calculating distribution shifts in the implicit form completion task."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Measuring attribute distribution shifts and stereotypic correlations when conditioning on disability status in the implicit form completion task."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Measuring attribute distribution shifts and correlations when conditioning on different age categories in the implicit form completion task."
+    }
   ],
-  "models_tested": [
-    "Gemini-1.5",
-    "GPT-4V",
-    "GPT-4o",
-    "LLaMA-3.2-Vision",
-    "LLaVA-v1.6",
-    "Midjourney",
-    "LLaMA-3.2-90B-Vision-Instruct",
-    "Qwen-2.5-72B-Instruct"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short",
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [],
-  "continuous_testing": false,
-  "findings": "Models exhibited religious stereotypes. In explicit tasks, GPT-4V tended to default to 'Christian' regardless of ethnicity, whereas LLaVA assigned religions based on ethnicity. In implicit tasks, models showed strong, stereotypical associations between specific ethnic groups and religions (e.g., Asian individuals with Buddhism) and between occupations and religions (e.g., Athlete with Christianity), reinforcing cultural biases.",
-  "references": [
-    "Bobby Azad, Reza Azad, Sania Eskandari, Afshin Bozorgpour, Amirhossein Kazerouni, Islem Rekik, and Dorit Merhof. 2023. Foundational models in medical imaging: A comprehensive survey and future vision. arXiv preprint arXiv:2310.18689.",
-    "Jannik Brinkmann, Paul Swoboda, and Christian Bartelt. 2023. A multidimensional analysis of social biases in vision transformers. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 4914–4923.",
-    "Rupert Brown and Sam Gaertner. 2008. Blackwell handbook of social psychology: Intergroup processes. John Wiley & Sons.",
-    "Sébastien Bubeck, Varun Chandrasekaran, Ronen Eldan, Johannes Gehrke, Eric Horvitz, Ece Kamar, Peter Lee, Yin Tat Lee, Yuanzhi Li, Scott Lundberg, and 1 others. 2023. Sparks of artificial general intelligence: Early experiments with gpt-4. arXiv preprint arXiv:2303.12712.",
-    "Thomas Buckley, James A. Diao, Pranav Rajpurkar, Adam Rodman, and Arjun K. Manrai. 2023. Multimodal foundation models exploit text to make medical image predictions. arXiv preprint arXiv:2311.05591.",
-    "Nick Byrd. 2021. What we can (and can’t) infer about implicit bias from debiasing experiments. Synthese, 198(2):1427–1455.",
-    "Song Chen, Xinyu Guo, Yadong Li, Tao Zhang, Mingan Lin, Dongdong Kuang, Youwei Zhang, Lingfeng Ming, Fengyu Zhang, Yuran Wang, and 1 others. 2025. Ocean-ocr: Towards general ocr application via a vision-language model. arXiv preprint arXiv:2501.15558.",
-    "Myra Cheng, Esin Durmus, and Dan Jurafsky. 2023. Marked personas: Using natural language prompts to measure stereotypes in language models. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 1504–1532.",
-    "Wei Chow, Jiageng Mao, Boyi Li, Daniel Seita, Vitor Guizilini, and Yue Wang. 2025. Physbench: Benchmarking and enhancing vision-language models for physical world understanding. In The Thirteenth International Conference on Learning Representations.",
-    "Yitian Ding, Jinman Zhao, Chen Jia, Yining Wang, Zifan Qian, Weizhe Chen, and Xingyu Yue. 2025. Gender bias in large language models across multiple languages: A case study of chatgpt. In Proceedings of the 5th Workshop on Trustworthy NLP (TrustNLP 2025), pages 552–579.",
-    "John F Dovidio, Kerry Kawakami, and Kelly R Beach. 2001. Implicit and explicit attitudes: Examination of the relationship between measures of intergroup bias. Blackwell handbook of social psychology: Intergroup processes, 4:175–197.",
-    "Yongkang Du, Jen-tse Huang, Jieyu Zhao, and Lu Lin. 2025. Faircoder: Evaluating social bias of llms in code generation. arXiv preprint arXiv:2501.05396.",
-    "Kathleen C Fraser and Svetlana Kiritchenko. 2024. Examining gender and racial bias in large vision-language models using a novel dataset of parallel images. In Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers), pages 690–713.",
-    "Negin Ghavami and Letitia Anne Peplau. 2013. An intersectional analysis of gender and ethnic stereotypes: Testing three hypotheses. Psychology of Women Quarterly, 37(1):113–127.",
-    "Sourojit Ghosh and Aylin Caliskan. 2023. 'person'== light-skinned, western man, and sexualization of women of color: Stereotypes in stable diffusion. In Findings of the Association for Computational Linguistics: EMNLP 2023, pages 6971–6985.",
-    "Anthony G Greenwald, Debbie E McGhee, and Jordan LK Schwartz. 1998. Measuring individual differences in implicit cognition: the implicit association test. Journal of personality and social psychology, 74(6):1464.",
-    "Anthony G Greenwald, Brian A Nosek, and Mahzarin R Banaji. 2003. Understanding and using the implicit association test: I. an improved scoring algorithm. Journal of personality and social psychology, 85(2):197.",
-    "Shashank Gupta, Vaishnavi Shrivastava, Ameet Deshpande, Ashwin Kalyan, Peter Clark, Ashish Sabharwal, and Tushar Khot. 2024. Bias runs deep: Implicit reasoning biases in persona-assigned llms. In The Twelfth International Conference on Learning Representations.",
-    "Adam Hahn, Charles M Judd, Holen K Hirsh, and Irene V Blair. 2014. Awareness of implicit attitudes. Journal of Experimental Psychology: General, 143(3):1369.",
-    "Siobhan Mackenzie Hall, Fernanda Gonçalves Abrantes, Hanwen Zhu, Grace Sodunke, Aleksandar Shtedritski, and Hannah Rose Kirk. 2023. Visogender: A dataset for benchmarking gender bias in image-text pronoun resolution. Advances in Neural Information Processing Systems, 36.",
-    "Kimia Hamidieh, Haoran Zhang, Walter Gerych, Thomas Hartvigsen, and Marzyeh Ghassemi. 2024. Identifying implicit social biases in vision-language models. In Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society, volume 7, pages 547–561.",
-    "Caner Hazirbas, Alicia Sun, Yonathan Efroni, and Mark Ibrahim. 2024. The bias of harmful label associations in vision-language models. ICLR 2024 Workshop on Reliable and Responsible Foundation Models.",
-    "Phillip Howard, Avinash Madasu, Tiep Le, Gustavo Lujan Moreno, Anahita Bhiwandiwalla, and Vasudev Lal. 2024. Socialcounterfactuals: Probing and mitigating intersectional social biases in vision-language models with counterfactual examples. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 11975–11985.",
-    "Jen-tse Huang, Wenxuan Wang, Eric John Li, Man Ho Lam, Shujie Ren, Youliang Yuan, Wenxiang Jiao, Zhaopeng Tu, and Michael Lyu. 2024. On the humanity of conversational ai: Evaluating the psychological portrayal of llms. In The Twelfth International Conference on Learning Representations.",
-    "Jen-tse Huang, Yuhang Yan, Linqi Liu, Yixin Wan, Wenxuan Wang, Kai-Wei Chang, and Michael R Lyu. 2025a. Where fact ends and fairness begins: Redefining ai bias evaluation through cognitive biases. In Findings of the Association for Computational Linguistics: EMNLP 2025.",
-    "Jingyuan Huang, Jen-tse Huang, Ziyi Liu, Xiaoyuan Liu, Wenxuan Wang, and Jieyu Zhao. 2025b. Ai sees your location—but with a bias toward the wealthy world. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing.",
-    "Aaron Hurst, Adam Lerer, Adam P Goucher, Adam Perelman, Aditya Ramesh, Aidan Clark, AJ Ostrow, Akila Welihinda, Alan Hayes, Alec Radford, and 1 others. 2024. Gpt-4o system card. arXiv preprint arXiv:2410.21276.",
-    "Clayton Hutto and Eric Gilbert. 2014. Vader: A parsimonious rule-based model for sentiment analysis of social media text. In Proceedings of the international AAAI conference on web and social media, volume 8, pages 216–225.",
-    "Fanjie Kong, Shuai Yuan, Weituo Hao, and Ricardo Henao. 2023. Mitigating test-time bias for fair image retrieval. Advances in Neural Information Processing Systems, 36.",
-    "Xinyue Li, Zhenpeng Chen, Jie M Zhang, Yiling Lou, Tianlin Li, Weisong Sun, Yang Liu, and Xuanzhe Liu. 2024. Benchmarking bias in large language models during role-playing. arXiv preprint arXiv:2411.00585.",
-    "Haotian Liu, Chunyuan Li, Yuheng Li, Bo Li, Yuanhan Zhang, Sheng Shen, and Yong Jae Lee. 2024a. Llava-next: Improved reasoning, ocr, and world knowledge.",
-    "Yuliang Liu, Zhang Li, Mingxin Huang, Biao Yang, Wenwen Yu, Chunyuan Li, Xu-Cheng Yin, Cheng-Lin Liu, Lianwen Jin, and Xiang Bai. 2024b. Ocrbench: on the hidden mystery of ocr in large multimodal models. Science China Information Sciences, 67(12):220102.",
-    "Hanjun Luo, Haoyu Huang, Ziye Deng, Xuecheng Liu, Ruizhe Chen, and Zuozhu Liu. 2024. Bigbench: A unified benchmark for social bias in text-to-image generative models based on multi-modal llm. arXiv preprint arXiv:2407.15240.",
-    "Abhishek Mandal, Suzanne Little, and Susan Leavy. 2023. Multimodal bias: Assessing gender bias in computer vision models with nlp techniques. In Proceedings of the 25th International Conference on Multimodal Interaction, pages 416–424.",
-    "Meta. 2024. Llama 3.2: Revolutionizing edge ai and vision with open, customizable models. Meta Blog Sep 25 2024.",
-    "Midjourney Inc. 2022. Midjourney.",
-    "OpenAI. 2023. Gpt-4 technical report. arXiv preprint arXiv:2303.08774.",
-    "Shuai Peng, Di Fu, Liangcai Gao, Xiuqin Zhong, Hongguang Fu, and Zhi Tang. 2024. Multimath: Bridging visual and mathematical reasoning for large language models. arXiv preprint arXiv:2409.00147.",
-    "Chahat Raj, Anjishnu Mukherjee, Aylin Caliskan, Antonios Anastasopoulos, and Ziwei Zhu. 2024. Biasdora: Exploring hidden biased associations in vision-language models. In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 10439–10455.",
-    "Candace Ross, Boris Katz, and Andrei Barbu. 2021. Measuring social biases in grounded vision and language embeddings. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 998–1008.",
-    "Gabriele Ruggeri and Debora Nozza. 2023. A multidimensional study on bias in vision-language models. In Findings of the Association for Computational Linguistics: ACL 2023, pages 6445–6455.",
-    "Ashutosh Sathe, Prachi Jain, and Sunayana Sitaram. 2024. A unified framework and dataset for assessing societal bias in vision-language models. In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 1208–1249.",
-    "Bingkang Shi, Jen-tse Huang, Guoyi Li, Xiaodan Zhang, and Zhongjiang Yao. 2025. Fairgamer: Evaluating biases in the application of large language models to video games. arXiv preprint arXiv:2508.17825.",
-    "Tejas Srinivasan and Yonatan Bisk. 2022. Worst of both worlds: Biases compound in pre-trained vision-and-language models. In Proceedings of the 4th Workshop on Gender Bias in Natural Language Processing (GeBNLP), pages 77–85.",
-    "Gemini Team, Petko Georgiev, Ving Ian Lei, Ryan Burnell, Libin Bai, Anmol Gulati, Garrett Tanzer, Damien Vincent, Zhufeng Pan, Shibo Wang, and 1 others. 2024. Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context. arXiv preprint arXiv:2403.05530.",
-    "Yixin Wan and Kai-Wei Chang. 2025. The male ceo and the female assistant: Evaluation and mitigation of gender biases in text-to-image generation of dual subjects. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 9174–9190.",
-    "Yuxuan Wan, Wenxuan Wang, Pinjia He, Jiazhen Gu, Haonan Bai, and Michael R Lyu. 2023. Biasasker: Measuring the bias in conversational ai system. In Proceedings of the 31st ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering, pages 515–527.",
-    "Wenxuan Wang, Haonan Bai, Jen-tse Huang, Yuxuan Wan, Youliang Yuan, Haoyi Qiu, Nanyun Peng, and Michael Lyu. 2024a. New job, new gender? measuring the social bias in image generation models. In Proceedings of the 32nd ACM International Conference on Multimedia, pages 3781–3789.",
-    "Wenxuan Wang, Wenxiang Jiao, Jingyuan Huang, Ruyi Dai, Jen-tse Huang, Zhaopeng Tu, and Michael Lyu. 2024b. Not all countries celebrate thanksgiving: On the cultural dominance in large language models. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 6349–6384.",
-    "Robert Wolfe and Aylin Caliskan. 2022. American== white in multimodal language-and-image ai. In Proceedings of the 2022 AAAI/ACM Conference on AI, Ethics, and Society, pages 800–812.",
-    "Robert Wolfe, Yiwei Yang, Bill Howe, and Aylin Caliskan. 2023. Contrastive language-vision ai models pretrained on web-scraped multimodal data exhibit sexual objectification bias. In Proceedings of the 2023 ACM Conference on Fairness, Accountability, and Transparency, pages 1174–1185.",
-    "An Yang, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chengyuan Li, Dayiheng Liu, Fei Huang, Haoran Wei, and 1 others. 2024a. Qwen2.5 technical report. arXiv preprint arXiv:2412.15115.",
-    "Yuzhe Yang, Yujia Liu, Xin Liu, Avanti Gulhane, Domenico Mastrodicasa, Wei Wu, Edward J Wang, Dushyant Sahani, and Shwetak Patel. 2025. Demographic bias of expert-level vision-language foundation models in medical imaging. Science Advances, 11(13):eadq0305.",
-    "Zhen Yang, Jinhao Chen, Zhengxiao Du, Wenmeng Yu, Weihan Wang, Wenyi Hong, Zhihuan Jiang, Bin Xu, Yuxiao Dong, and Jie Tang. 2024b. Mathglmvision: Solving mathematical problems with multimodal large language model. arXiv preprint arXiv:2409.13729.",
-    "Youliang Yuan, Wenxiang Jiao, Wenxuan Wang, Jen-tse Huang, Pinjia He, Shuming Shi, and Zhaopeng Tu. 2024. Gpt-4 is too smart to be safe: Stealthy chat with llms via cipher. In The Twelfth International Conference on Learning Representations.",
-    "Yi Zhang, Junyang Wang, and Jitao Sang. 2022. Counterfactually measuring and eliminating social bias in vision-language pre-training models. In Proceedings of the 30th ACM International Conference on Multimedia, pages 4996–5004.",
-    "Kankan Zhou, Eason Lai, and Jing Jiang. 2022. VIstereoset: A study of stereotypical bias in pre-trained vision-language models. In Proceedings of the 2nd Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics and the 12th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 527–538."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

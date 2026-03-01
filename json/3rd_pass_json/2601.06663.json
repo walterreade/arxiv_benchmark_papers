@@ -2,11 +2,79 @@
   "filename": "2601.06663.pdf",
   "title": "SafePro: Evaluating the Safety of Professional-Level AI Agents",
   "arxiv_url": "https://arxiv.org/pdf/2601.06663",
-  "bias_targets": [
-    {
-      "target": "Protected Characteristic Bias (Race, Gender, Ethnicity, Religion, Nationality, Sexual Orientation, Disability, Age, Socioeconomic Status)",
-      "methodology": "Evaluating AI agents on complex professional tasks injected with malicious instructions that encourage discriminatory actions, and using an LLM-as-a-judge to determine the agent's compliance (Unsafe Rate) with these biased and discriminatory instructions."
-    }
+  "religious_groups": [],
+  "models_tested": [
+    "Gemini 2.5-Pro",
+    "Gemini 3-Flash",
+    "Deepseek-V3.2",
+    "Grok 4.1 Fast",
+    "GPT-5-mini",
+    "GPT-5",
+    "GPT-5.2",
+    "Claude-Haiku 4.5",
+    "gpt-oss-safeguard-20B",
+    "Qwen3Guard-Gen-8B"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "GDPval",
+    "AgentHarm",
+    "InjectAgent",
+    "Browser-art",
+    "SafeArena",
+    "RiOSWorld",
+    "SciSafetyBench"
+  ],
+  "continuous_testing": false,
+  "findings": "The benchmark is designed to evaluate discrimination and bias based on religion as a safety risk, but the paper does not report any specific findings, results, or examples related to religious bias. Religion is included as one of several protected characteristics in a broader safety policy definition.",
+  "references": [
+    "Saaket Agashe, Jiuzhou Han, Shuyu Gan, Jiachen Yang, Ang Li, and Xin Eric Wang. 2024. Agent s: An open agentic framework that uses computers like a human. arXiv preprint arXiv:2410.08164.",
+    "Maksym Andriushchenko, Alexandra Souly, Mateusz Dziemian, Derek Duenas, Maxwell Lin, Justin Wang, Dan Hendrycks, Andy Zou, Zico Kolter, Matt Fredrikson, et al. 2024. Agentharm: A benchmark for measuring harmfulness of llm agents. arXiv preprint arXiv:2410.09024.",
+    "Anthropic. 2025. Claude-Sonnet 4-5 System Card. https://assets.anthropic.com/m/12f214efcc2f457a/original/Claude-Sonnet-4-5-System-Card.pdf. Accessed: 2025-12-09.",
+    "Jun Shern Chan, Neil Chowdhury, Oliver Jaffe, James Aung, Dane Sherburn, Evan Mays, Giulio Starace, Kevin Liu, Leon Maksin, Tejal Patwardhan, et al. 2024. Mle-bench: Evaluating machine learning agents on machine learning engineering. arXiv preprint arXiv:2410.07095.",
+    "Edoardo Debenedetti, Jie Zhang, Mislav Balunovic, Luca Beurer-Kellner, Marc Fischer, and Florian Tramèr. 2024. Agentdojo: A dynamic environment to evaluate prompt injection attacks and defenses for llm agents. Advances in Neural Information Processing Systems, 37:82895-82920.",
+    "DeepMind. 2025. Gemini 2.5 Flash. https://deepmind.google/models/gemini/flash/. Accessed: 2025-12-09.",
+    "Xiang Deng, Yu Gu, Boyuan Zheng, Shijie Chen, Sam Stevens, Boshi Wang, Huan Sun, and Yu Su. 2023. Mind2web: Towards a generalist agent for the web. Advances in Neural Information Processing Systems, 36:28091-28114.",
+    "Aaron Fanous, Jacob Goldberg, Ank Agarwal, Joanna Lin, Anson Zhou, Sonnet Xu, Vasiliki Bikia, Roxana Daneshjou, and Sanmi Koyejo. 2025. Syceval: Evaluating llm sycophancy. In Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society, volume 8, pages 893–900.",
+    "Google. 2025. Gemini 3. https://blog.google/products/gemini/gemini-3/. Accessed: 2025-12-09.",
+    "Hongliang He, Wenlin Yao, Kaixin Ma, Wenhao Yu, Yong Dai, Hongming Zhang, Zhenzhong Lan, and Dong Yu. 2024. Webvoyager: Building an end-to-end web agent with large multimodal models. arXiv preprint arXiv:2401.13919.",
+    "Carlos E Jimenez, John Yang, Alexander Wettig, Shunyu Yao, Kexin Pei, Ofir Press, and Karthik Narasimhan. 2023. Swe-bench: Can language models resolve real-world github issues? arXiv preprint arXiv:2310.06770.",
+    "Priyanshu Kumar, Elaine Lau, Saranya Vijayakumar, Tu Trinh, Elaine T Chang, Vaughn Robinson, Shuyan Zhou, Matt Fredrikson, Sean M Hendryx, Summer Yue, et al. 2025. Aligned llms are not aligned browser agents. In The Thirteenth International Conference on Learning Representations.",
+    "Thomas Kuntz, Agatha Duzan, Hao Zhao, Francesco Croce, Zico Kolter, Nicolas Flammarion, and Maksym Andriushchenko. 2025. Os-harm: A benchmark for measuring safety of computer use agents. arXiv preprint arXiv:2506.14866.",
+    "Jonathan Kutasov, Yuqi Sun, Paul Colognese, Teun van der Weij, Linda Petrini, Chen Bo Calvin Zhang, John Hughes, Xiang Deng, Henry Sleight, Tyler Tracy, et al. 2025. Shade-arena: Evaluating sabotage and monitoring in llm agents. arXiv preprint arXiv:2506.15740.",
+    "Aixin Liu, Aoxue Mei, Bangcai Lin, Bing Xue, Bingxuan Wang, Bingzheng Xu, Bochao Wu, Bowei Zhang, Chaofan Lin, Chen Dong, et al. 2025. Deepseek-v3. 2: Pushing the frontier of open large language models. arXiv preprint arXiv:2512.02556.",
+    "Xiao Liu, Hao Yu, Hanchen Zhang, Yifan Xu, Xuanyu Lei, Hanyu Lai, Yu Gu, Hangliang Ding, Kaiwen Men, Kejuan Yang, et al. 2023. Agentbench: Evaluating llms as agents. arXiv preprint arXiv:2308.03688.",
+    "Mantas Mazeika, Alice Gatti, Cristina Menghini, Udari Madhushani Sehwag, Shivam Singhal, Yury Orlovskiy, Steven Basart, Manasi Sharma, Denis Peskoff, Elaine Lau, et al. 2025. Remote labor index: Measuring ai automation of remote work. arXiv preprint arXiv:2510.26787.",
+    "OpenAI. 2025a. GPT-5 System Card. Technical report, OpenAI. Accessed: 2025-12-07.",
+    "OpenAI. 2025b. Introducing gpt-oss-safeguard. https://openai.com/index/introducing-gpt-oss-safeguard/. Accessed: 2025-12-09.",
+    "Tejal Patwardhan, Rachel Dias, Elizabeth Proehl, Grace Kim, Michele Wang, Olivia Watkins, Simón Posada Fishman, Marwan Aljubeh, Phoebe Thacker, Laurance Fauconnet, et al. 2025. Gdpval: Evaluating ai model performance on real-world economically valuable tasks. arXiv preprint arXiv:2510.04374.",
+    "Yujia Qin, Shihao Liang, Yining Ye, Kunlun Zhu, Lan Yan, Yaxi Lu, Yankai Lin, Xin Cong, Xiangru Tang, Bill Qian, et al. 2023. Toolllm: Facilitating large language models to master 16000+ real-world apis. arXiv preprint arXiv:2307.16789.",
+    "Richard Ren, Arunim Agarwal, Mantas Mazeika, Cristina Menghini, Robert Vacareanu, Brad Kenstler, Mick Yang, Isabelle Barrass, Alice Gatti, Xuwang Yin, et al. 2025. The mask benchmark: Disentangling honesty from accuracy in ai systems. arXiv preprint arXiv:2503.03750.",
+    "Teun van der Weij, Felix Hofstätter, Ollie Jaffe, Samuel F Brown, and Francis Rhys Ward. 2024. Ai sandbagging: Language models can strategically underperform on evaluations. arXiv preprint arXiv:2406.07358.",
+    "Sanidhya Vijayvargiya, Aditya Bharat Soni, Xuhui Zhou, Zora Zhiruo Wang, Nouha Dziri, Graham Neubig, and Maarten Sap. 2025. Openagentsafety: A comprehensive framework for evaluating real-world ai agent safety. arXiv preprint arXiv:2507.06134.",
+    "Xingyao Wang, Yangyi Chen, Lifan Yuan, Yizhe Zhang, Yunzhu Li, Hao Peng, and Heng Ji. 2024a. Executable code actions elicit better llm agents. In Forty-first International Conference on Machine Learning.",
+    "Xingyao Wang, Boxuan Li, Yufan Song, Frank F Xu, Xiangru Tang, Mingchen Zhuge, Jiayi Pan, Yueqi Song, Bowen Li, Jaskirat Singh, et al. 2024b. Openhands: An open platform for ai software developers as generalist agents. arXiv preprint arXiv:2407.16741.",
+    "Zhun Wang, Vincent Siu, Zhe Ye, Tianneng Shi, Yuzhou Nie, Xuandong Zhao, Chenguang Wang, Wenbo Guo, and Dawn Song. 2025. Agentvigil: Generic blackbox red-teaming for indirect prompt injection against llm agents. arXiv preprint arXiv:2505.05849.",
+    "x.ai. 2025. Grok 4-1 Model Card. https://data.x.ai/2025-11-17-grok-4-1-model-card.pdf. Accessed: 2025-12-09.",
+    "Jian Xie, Kai Zhang, Jiangjie Chen, Tinghui Zhu, Renze Lou, Yuandong Tian, Yanghua Xiao, and Yu Su. 2024a. Travelplanner: A benchmark for realworld planning with language agents. arXiv preprint arXiv:2402.01622.",
+    "Tianbao Xie, Danyang Zhang, Jixuan Chen, Xiaochuan Li, Siheng Zhao, Ruisheng Cao, Toh J Hua, Zhoujun Cheng, Dongchan Shin, Fangyu Lei, et al. 2024b. Osworld: Benchmarking multimodal agents for openended tasks in real computer environments. Advances in Neural Information Processing Systems, 37:52040-52094.",
+    "Yang Xu, Xuanming Zhang, Samuel Yeh, Jwala Dhamala, Ousmane Dia, Rahul Gupta, and Sharon Li. 2025. Simulating and understanding deceptive behaviors in long-horizon interactions. arXiv preprint arXiv:2510.03999.",
+    "Jingyi Yang, Shuai Shao, Dongrui Liu, and Jing Shao. 2025. Riosworld: Benchmarking the risk of multimodal compter-use agents. arXiv preprint arXiv:2506.00618.",
+    "Shunyu Yao, Noah Shinn, Pedram Razavi, and Karthik Narasimhan. 2024. tau-bench: A benchmark for tool-agent-user interaction in real-world domains. arXiv preprint arXiv:2406.12045.",
+    "Qiusi Zhan, Zhixiang Liang, Zifan Ying, and Daniel Kang. 2024. Injecagent: Benchmarking indirect prompt injections in tool-integrated large language model agents. arXiv preprint arXiv:2403.02691.",
+    "Yanzhe Zhang, Tao Yu, and Diyi Yang. 2025. Attacking vision-language computer agents via pop-ups. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 8387–8401.",
+    "Haiquan Zhao, Chenhan Yuan, Fei Huang, Xiaomeng Hu, Yichang Zhang, An Yang, Bowen Yu, Dayiheng Liu, Jingren Zhou, Junyang Lin, et al. 2025. Qwen3guard technical report. arXiv preprint arXiv:2510.14276.",
+    "Boyuan Zheng, Boyu Gou, Jihyung Kil, Huan Sun, and Yu Su. 2024. Gpt-4v (ision) is a generalist web agent, if grounded. arXiv preprint arXiv:2401.01614.",
+    "Kaiwen Zhou, Ahmed Elgohary, ASM Iftekhar, and Amin Saied. 2025. Siraj: Diverse and efficient redteaming for llm agents via distilled structured reasoning. arXiv preprint arXiv:2510.26037.",
+    "Kaiwen Zhou, Chengzhi Liu, Xuandong Zhao, Anderson Compalas, Dawn Song, and Xin Eric Wang. 2024. Multimodal situational safety. arXiv preprint arXiv:2410.06172.",
+    "Shuyan Zhou, Frank F Xu, Hao Zhu, Xuhui Zhou, Robert Lo, Abishek Sridhar, Xianyi Cheng, Tianyue Ou, Yonatan Bisk, Daniel Fried, et al. 2023. Webarena: A realistic web environment for building autonomous agents. arXiv preprint arXiv:2307.13854.",
+    "Kunlun Zhu, Jiaxun Zhang, Ziheng Qi, Nuoxing Shang, Zijia Liu, Peixuan Han, Yue Su, Haofei Yu, and Jiaxuan You. 2025. Safescientist: Toward risk-aware scientific discoveries by llm agents. arXiv preprint arXiv:2505.23559."
+  ],
+  "measurement_description": "The benchmark, SafePro, measures safety alignment in professional AI agents. One of the risk categories evaluated is 'Discrimination / bias', which includes instructions that direct an agent to discriminate against or show bias toward individuals based on religion, among other protected characteristics like race, gender, and ethnicity."
 }

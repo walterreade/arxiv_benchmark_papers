@@ -2,59 +2,31 @@
   "filename": "2504.12553.pdf",
   "title": "ELAB: Extensive LLM Alignment Benchmark in Persian Language",
   "arxiv_url": "https://arxiv.org/pdf/2504.12553",
-  "benchmark_measurement": "Equitable treatment regardless of religion, as a component of the broader fairness evaluation.",
-  "religious_groups": [],
-  "models_tested": [
-    "Ministral-8B-Instruct-2410",
-    "Qwen2.5-3B-Instruct",
-    "Gemma-2-2B-it",
-    "Aya-Expanse-8B",
-    "Dorna2-Llama3.1-8B-Instruct",
-    "Gemma-2-9B-it",
-    "Qwen2.5-7B-Instruct"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating target model responses to generated adversarial questions focused on gender stereotypes and gender preference biases using an LLM-as-a-judge approach."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluating target model responses to generated adversarial questions focused on racial and ethnic stereotypes and preference biases using an LLM-as-a-judge approach."
+    },
+    {
+      "target": "Cultural bias",
+      "methodology": "Assessing model alignment with culturally specific norms (e.g., Persian concepts of 'taarof' and 'aberoo'), cultural preferences, and cultural insensitivity using translated datasets and generated queries evaluated by an LLM-as-a-judge."
+    },
+    {
+      "target": "Occupational bias",
+      "methodology": "Evaluating target model responses to questions focusing on occupational stereotypes and occupational preference biases using an LLM-as-a-judge."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Evaluating target model responses to generated queries targeting age-related stereotypes using an LLM-as-a-judge."
+    },
+    {
+      "target": "Language bias",
+      "methodology": "Assessing dialect fairness and linguistic insensitivity within the Persian language using a generated dataset (SocialBench-fa) and LLM-as-a-judge evaluation."
+    }
   ],
-  "languages_evaluated": [
-    "Persian"
-  ],
-  "response_type": [
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "Anthropic Red Teaming",
-    "AdvBench",
-    "HarmBench",
-    "DecodingTrust",
-    "BBQ",
-    "XSTEST",
-    "SafetyBench",
-    "SALAD-Bench"
-  ],
-  "continuous_testing": false,
-  "findings": "The paper does not report any specific findings related to religion, as it was only a minor component of the overall fairness evaluation.",
-  "references": [
-    "Cohere For AI. 2024. c4ai-command-r-plus-08-2024.",
-    "John Dang, Shivalika Singh, Daniel D'souza, Arash Ahmadian, Alejandro Salamanca, Madeline Smith, Aidan Peppin, Sungjin Hong, Manoj Govindassamy, Terrence Zhao, Sandra Kublik, Meor Amer, Viraat Aryabumi, Jon Ander Campos, Yi-Chern Tan, Tom Kocmi, Florian Strub, Nathan Grinsztajn, Yannis Flet-Berliac, and 26 others. 2024. Aya expanse: Combining research breakthroughs for a new multilingual frontier. Preprint, arXiv:2412.04261.",
-    "Mehrdad Farahani, Mohammad Gharachorloo, Marzieh Farahani, and Mohammad Manthouri. 2021. Pars-bert: Transformer-based model for persian language understanding. Neural Processing Letters, 53(6):3831–3847.",
-    "Deep Ganguli, Liane Lovitt, Jackson Kernion, Amanda Askell, Yuntao Bai, Saurav Kadavath, Ben Mann, Ethan Perez, Nicholas Schiefer, Kamal Ndousse, and 1 others. 2022. Red teaming language models to reduce harms: Methods, scaling behaviors, and lessons learned. arXiv preprint arXiv:2209.07858.",
-    "Omid Ghahroodi, Marzia Nouri, Mohammad Vali Sanian, Alireza Sahebi, Doratossadat Dastgheib, Ehsaneddin Asgari, Mahdieh Soleymani Baghshah, and Mohammad Hossein Rohban. 2024. Khayyam challenge (persianMMLU): Is your LLM truly wise to the persian language? In First Conference on Language Modeling.",
-    "Daniel Khashabi, Arman Cohan, Siamak Shakeri, Pedram Hosseini, Pouya Pezeshkpour, Malihe Alikhani, Moin Aminnaseri, Marzieh Bitaab, Faeze Brahman, Sarik Ghazarian, Mozhdeh Gheini, Arman Kabiri, Rabeeh Karimi Mahabagdi, Omid Memarrast, Ahmadreza Mosallanezhad, Erfan Noury, Shahab Raji, Mohammad Sadegh Rasooli, Sepideh Sadeghi, and 6 others. 2021. ParsiNLU: A suite of language under-standing challenges for Persian. Transactions of the Association for Computational Linguistics, 9:1147–1162.",
-    "Lijun Li, Bowen Dong, Ruohui Wang, Xuhao Hu, Wang-meng Zuo, Dahua Lin, Yu Qiao, and Jing Shao. 2024. SALAD-bench: A hierarchical and comprehensive safety benchmark for large language models. In Find-ings of the Association for Computational Linguistics: ACL 2024, pages 3923–3954, Bangkok, Thailand. As-sociation for Computational Linguistics.",
-    "Y. Liu, Y. Yao, J.-F. Ton, X. Zhang, R. Guo, H. Cheng, Y. Klochkov, M. F. Taufiq, and H. Li. 2023a. Trust-worthy llms: A survey and guideline for evaluating large language models' alignment. arXiv preprint arXiv:2308.05374.",
-    "Yang Liu, Yuanshun Yao, Jean-Francois Ton, Xiaoying Zhang, Ruocheng Guo, Hao Cheng, Yegor Klochkov, Muhammad Faaiz Taufiq, and Hang Li. 2023b. Trust-worthy llms: a survey and guideline for evaluating large language models' alignment. arXiv preprint arXiv:2308.05374.",
-    "M. Mazeika, L. Phan, X. Yin, A. Zou, Z. Wang, N. Mu, E. Sakhaee, N. Li, S. Basart, B. Li, and et al. 2024a. Harmbench: A standardized evaluation framework for automated red teaming and robust refusal. arXiv preprint arXiv:2402.04249.",
-    "Mantas Mazeika, Long Phan, Xuwang Yin, Andy Zou, Zifan Wang, Norman Mu, Elham Sakhaee, Nathaniel Li, Steven Basart, Bo Li, and 1 others. 2024b. Harm-bench: A standardized evaluation framework for auto-mated red teaming and robust refusal. arXiv preprint arXiv:2402.04249.",
-    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel Bowman. 2022. BBQ: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2086–2105, Dublin, Ireland. Association for Computational Linguistics.",
-    "Qwen, :, An Yang, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chengyuan Li, Dayiheng Liu, Fei Huang, Haoran Wei, Huan Lin, Jian Yang, Jianhong Tu, Jianwei Zhang, Jianxin Yang, Jiaxi Yang, Jingren Zhou, and 25 oth-ers. 2025. Qwen2.5 technical report. Preprint, arXiv:2412.15115.",
-    "Paul Röttger, Hannah Kirk, Bertie Vidgen, Giuseppe Attanasio, Federico Bianchi, and Dirk Hovy. 2024. XSTest: A test suite for identifying exaggerated safety behaviours in large language models. In Proceedings of the 2024 Conference of the North Amer-ican Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 5377–5400, Mexico City, Mexico. Association for Computational Linguistics.",
-    "X. Shen, Z. Chen, M. Backes, Y. Shen, and Y. Zhang. 2024a. \"do anything now\": Characterizing and evalu-ating in-the-wild jailbreak prompts on large language models. In Proceedings of the 2024 ACM SIGSAC Conference on Computer and Communications Secu-rity, pages 1671–1685.",
-    "Xinyue Shen, Zeyuan Chen, Michael Backes, Yun Shen, and Yang Zhang. 2024b. \" do anything now\": Charac-terizing and evaluating in-the-wild jailbreak prompts on large language models. In Proceedings of the 2024 on ACM SIGSAC Conference on Computer and Communications Security, pages 1671–1685.",
-    "Ehsan Taher, Seyed Abbas Hoseini, and Mehrnoush Shamsfard. 2020. Beheshti-ner: Persian named entity recognition using bert. Preprint, arXiv:2003.08875.",
-    "Gemma Team, Morgane Riviere, Shreya Pathak, Pier Giuseppe Sessa, Cassidy Hardin, Surya Bhupati-raju, Léonard Hussenot, Thomas Mesnard, Bobak Shahriari, Alexandre Ramé, Johan Ferret, Peter Liu, Pouya Tafti, Abe Friesen, Michelle Casbon, Sabela Ramos, Ravin Kumar, Charline Le Lan, Sammy Jerome, and 179 others. 2024. Gemma 2: Improving open language models at a practical size. Preprint, arXiv:2408.00118.",
-    "B. Wang, W. Chen, H. Pei, C. Xie, M. Kang, C. Zhang, C. Xu, Z. Xiong, R. Dutta, R. Schaeffer, and et al. 2023a. Decodingtrust: A comprehensive assessment of trustworthiness in gpt models. In NeurIPS.",
-    "Boxin Wang, Weixin Chen, Hengzhi Pei, Chulin Xie, Mintong Kang, Chenhui Zhang, Chejian Xu, Zidi Xiong, Ritik Dutta, Rylan Schaeffer, and 1 others. 2023b. Decodingtrust: A comprehensive assessment of trustworthiness in gpt models. In NeurIPS.",
-    "Zhexin Zhang, Leqi Lei, Lindong Wu, Rui Sun, Yongkang Huang, Chong Long, Xiao Liu, Xuanyu Lei, Jie Tang, and Minlie Huang. 2024. Safety-bench: Evaluating the safety of large language models. Preprint, arXiv:2309.07045.",
-    "A. Zou, Z. Wang, N. Carlini, M. Nasr, J. Z. Kolter, and M. Fredrikson. 2023a. Universal and transferable adversarial attacks on aligned language models. arXiv preprint arXiv:2307.15043.",
-    "Andy Zou, Zifan Wang, Nicholas Carlini, Milad Nasr, J Zico Kolter, and Matt Fredrikson. 2023b. Univer-sal and transferable adversarial attacks on aligned language models. arXiv preprint arXiv:2307.15043."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

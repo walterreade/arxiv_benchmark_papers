@@ -1,0 +1,69 @@
+{
+  "filename": "2409.13705.pdf",
+  "title": "Debiasing Text Safety Classifiers through a Fairness-Aware Ensemble",
+  "arxiv_url": "https://arxiv.org/pdf/2409.13705",
+  "religious_groups": [
+    "Atheism",
+    "Christianity",
+    "Hinduism",
+    "Islam",
+    "Judaism",
+    "Buddhism",
+    "Others"
+  ],
+  "models_tested": [
+    "Detoxify (BERT-based)",
+    "Two internal proprietary safety classifiers",
+    "Debiasing Ensemble (Random Forest)"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "OpenAI content moderation dataset (Markov et al., 2023)",
+    "Jigsaw datasets"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper found that source safety classifiers exhibited biases, showing significant score gaps for prompts that were identical except for the religious identity term (e.g., higher 'Hate' scores for text mentioning 'Jewish' compared to 'Catholic' in a neutral context). The proposed debiasing ensemble method, which uses Fair Data Reweighting (FDW), successfully reduced these score disparities, leading to more equitable and consistent safety predictions across different religious subgroups.",
+  "references": [
+    "Rohan Anil, Andrew M Dai, Orhan Firat, Melvin Johnson, Dmitry Lepikhin, Alexandre Passos, Siamak Shakeri, Emanuel Taropa, Paige Bailey, Zhifeng Chen, et al. 2023. Palm 2 technical report. arXiv preprint arXiv:2305.10403.",
+    "James Atwood, Preethi Lahoti, Ananth Balashankar, Flavien Prost, and Ahmad Beirami. 2024. Inducing group fairness in llm-based decisions. arXiv preprint arXiv:2406.16738.",
+    "Pranjal Awasthi et al. 2020. Beyond individual and group fairness. arXiv preprint arXiv:2008.09490.",
+    "Rishabh Bhardwaj and Soujanya Poria. 2023. Red-teaming large language models using chain of utterances for safety-alignment.",
+    "Jwala Dhamala, Tony Sun, Varun Kumar, Satyapriya Krishna, Yada Pruksachatkun, Kai-Wei Chang, and Rahul Gupta. 2021. Bold: Dataset and metrics for measuring biases in open-ended language generation. In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, FAccT ’21, page 862–872, New York, NY, USA. Association for Computing Machinery.",
+    "Thiago Dias Oliva, Dennys Marcelo Antonialli, and Alessandra Gomes. 2021. Fighting hate speech, silencing drag queens? artificial intelligence in content moderation and risks to lgbtq voices online. Sexuality & Culture, 25:700–732.",
+    "Mark Diaz, Razvan Amironesei, Laura Weidinger, and Iason Gabriel. 2022. Accounting for offensive speech as a practice of resistance. In Proceedings of the Sixth Workshop on Online Abuse and Harms (WOAH), pages 192–202, Seattle, Washington (Hybrid). Association for Computational Linguistics.",
+    "Cynthia Dwork, Moritz Hardt, Toniann Pitassi, Omer Reingold, and Richard Zemel. 2012. Fairness through awareness. In Proceedings of the 3rd innovations in theoretical computer science conference, pages 214–226.",
+    "Yang Fan, Fei Tian, Tao Qin, Xiang-Yang Li, and Tie-Yan Liu. 2018. Learning to teach. In International Conference on Learning Representations.",
+    "Sahaj Garg, Vincent Perot, Nicole Limtiaco, Ankur Taly, Ed H. Chi, and Alex Beutel. 2019. Counterfactual fairness in text classification through robustness.",
+    "Google. 2023. Privacy & terms: Generative ai prohibited use policy. https://policies.google.com/terms/generative-ai/use-policy [Accessed: (2024-07-10)].",
+    "Google. 2024a. Generative ai on vertex ai: Configure safety attributes. https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/configure-safety-attributes#safety_attributes [Accessed: (2024-07-10)].",
+    "Google. 2024b. 'google search help: Content policies for google search. https://support.google.com/websearch/answer/10622781?hl=en [Accessed: (2024-07-10)].",
+    "Google. 2024c. Maps user contributed content policy help: Hate speech. https://support.google.com/contributionpolicy/answer/11412392?hl=en [Accessed: (2024-07-10)].",
+    "Google. 2024d. Play console help: Inappropriate content. https://support.google.com/googleplay/android-developer/answer/9878810?sjid=12604743910631532539-NA [Accessed: (2024-07-10)].",
+    "Moritz Hardt, Eric Price, and Nati Srebro. 2016. Equality of opportunity in supervised learning. Advances in neural information processing systems, 29.",
+    "Hakan Inan et al. 2023. Llama guard: Llm-based input-output safeguard for human-ai conversations. arXiv preprint arXiv:2312.06674.",
+    "Lu Jiang, Zhengyuan Zhou, Thomas Leung, Li-Jia Li, and Li Fei-Fei. 2018. Mentornet: Learning data-driven curriculum for very deep neural networks on corrupted labels. In International Conference on Machine Learning, pages 2304–2313. PMLR.",
+    "Jigsaw. 2018. Unintended bias and identity terms. https://medium.com/jigsaw/unintended-bias-and-names-of-frequently-targeted-groups [Accessed: (2024-02-08)].",
+    "Jigsaw. 2021. Identifying machine learning bias with updated data sets. Medium.",
+    "Matt J Kusner, Joshua Loftus, Chris Russell, and Ricardo Silva. 2017. Counterfactual fairness. In Advances in Neural Information Processing Systems 30, pages 4066–4076. Curran Associates, Inc.",
+    "Evan Z. Liu et al. 2021. Just train twice: Improving group robustness without training group information. In International Conference on Machine Learning. PMLR.",
+    "Todor Markov et al. 2023. A holistic approach to undesired content detection in the real world. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 37.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel Bowman. 2022. BBQ: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2086–2105, Dublin, Ireland. Association for Computational Linguistics.",
+    "John Pavlopoulos, Jeffrey Sorensen, Lucas Dixon, Nithum Thain, and Ion Androutsopoulos. 2020. Toxicity detection: Does context really matter?",
+    "Andrija Petrovic, Mladen Nikolic, Sandro Radovanovic, Boris Delibasic, and Milos Jovanovic. 2020. Fair: Fair adversarial instance re-weighting. arXiv preprint arXiv:2011.07495.",
+    "Bhaktipriya Radharapu, Kevin Robinson, Lora Aroyo, and Preethi Lahoti. 2023. Aart: Ai-assisted redteaming with diverse data generation for new llm-powered applications.",
+    "Rachel Rudinger, Jason Naradowsky, Brian Leonard, and Benjamin Van Durme. 2018. Gender bias in coreference resolution. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 8–14, New Orleans, Louisiana. Association for Computational Linguistics.",
+    "Eric Michael Smith, Melissa Hall, Melanie Kambadur, Eleonora Presani, and Adina Williams. 2022. \"i'm sorry to hear that\": Finding new biases in language models with a holistic descriptor dataset.",
+    "Alexandru Tifrea, Preethi Lahoti, Ben Packer, Yoni Halpern, Ahmad Beirami, and Flavien Prost. Frappé: A group fairness framework for post-processing everything. In Forty-first International Conference on Machine Learning.",
+    "UnitaryAI. 2021. Detoxify. https://github.com/unitaryai/detoxify.",
+    "Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed Chi, Quoc Le, and Denny Zhou. 2023. Chain-of-thought prompting elicits reasoning in large language models.",
+    "Jing Xu, Da Ju, Margaret Li, Y-Lan Boureau, Jason Weston, and Emily Dinan. 2021. Bot-adversarial dialogue for safe conversational agents. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 2950–2968, Online. Association for Computational Linguistics.",
+    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang. 2018. Gender bias in coreference resolution: Evaluation and debiasing methods. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 15–20, New Orleans, Louisiana. Association for Computational Linguistics."
+  ],
+  "measurement_description": "The benchmark measures the counterfactual fairness of text safety classifiers. Specifically, it assesses whether the classifier's safety scores (e.g., for 'Hate' or 'Toxicity') remain consistent when an identity term in a text is swapped with another from the same category, such as changing a religious term (e.g., 'Muslim' to 'Hindu') while keeping the rest of the sentence identical."
+}

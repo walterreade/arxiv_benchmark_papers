@@ -2,15 +2,82 @@
   "filename": "2601.07806.pdf",
   "title": "The Confidence Trap: Gender Bias and Predictive Certainty in LLMs",
   "arxiv_url": "https://arxiv.org/pdf/2601.07806",
-  "bias_targets": [
-    {
-      "target": "Gender bias",
-      "methodology": "Evaluating token probability confidence calibration (using metrics like ECE, MacroCE, and a novel Gender-ECE) for pronoun predictions in template-based coreference resolution tasks (WinoBias, Winogender, GenderLex), comparing model confidence against actual prediction correctness and human bias annotations."
-    },
-    {
-      "target": "Sexual orientation and gender identity bias",
-      "methodology": "Measuring calibration errors (ECE) using the WinoQueer dataset to evaluate model confidence and prediction reliability across marginalized LGBTQ+ identity groups (Gay, Lesbian, Trans, Queer) in a last-cloze sentence structure."
-    }
+  "religious_groups": [],
+  "models_tested": [
+    "GPT-J-6B",
+    "Llama-3.1-8B",
+    "Gemma-2-9B",
+    "Qwen2.5-7B",
+    "Falcon3-7B",
+    "DeepSeek-8B",
+    "Llama-3.1-70B",
+    "Gemma-2-27B",
+    "Qwen2.5-14B",
+    "Qwen2.5-32B",
+    "Llama-3.3-70B-Inst",
+    "DeepSeek-70B-Inst"
   ],
-  "primary_bias_target": "Gender bias"
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "none",
+  "base_benchmarks": [
+    "WinoBias",
+    "Winogender",
+    "GenderLex",
+    "WinoQueer",
+    "Winograd Schemas"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper's findings are not related to religion. The analysis is focused on gender bias, showing that models like Gemma-2-9B have poor calibration for gendered predictions, while GPT-J-6B is better calibrated. The paper finds that most LLMs are less calibrated for female pronouns, revealing a bias toward male references.",
+  "references": [
+    "AI@Meta. 2024. Llama 3 Model Card. GitHub Repository.",
+    "Brier, G. W. 1950. Verification of forecasts expressed in terms of probability. Monthly weather review, 78(1): 1–3.",
+    "Chen, X.; Fang, H.; Lin, T.-Y.; Vedantam, R.; Gupta, S.; Dollár, P.; and Zitnick, C. L. 2015. Microsoft coco captions: Data collection and evaluation server. arXiv preprint arXiv:1504.00325.",
+    "Chen, Y.; Yuan, L.; Cui, G.; Liu, Z.; and Ji, H. 2022. A close look into the calibration of pre-trained language models. arXiv preprint arXiv:2211.00151.",
+    "Cheng, M.; Durmus, E.; and Jurafsky, D. 2023. Marked Personas: Using Natural Language Prompts to Measure Stereotypes in Language Models. In ACL.",
+    "Cohen, J. 1960. A coefficient of agreement for nominal scales. Educational and psychological measurement.",
+    "DeepSeek-AI. 2025. DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning. arXiv:2501.12948.",
+    "Ding, Z.; Liu, K. Z.; Peetathawatchai, P.; Isik, B.; and Koyejo, S. 2024. On fairness of low-rank adaptation of large models. arXiv preprint arXiv:2405.17512.",
+    "Felkner, V. K.; Chang, H.-C. H.; Jang, E.; and May, J. 2023. WinoQueer: A Community-in-the-Loop Benchmark for Anti-LGBTQ+ Bias in Large Language Models. In ACL.",
+    "Gallegos, I. O.; Rossi, R. A.; Barrow, J.; Tanjim, M. M.; Kim, S.; Dernoncourt, F.; Yu, T.; Zhang, R.; and Ahmed, N. K. 2024. Bias and fairness in large language models: A survey. Computational Linguistics.",
+    "Guo, C.; Pleiss, G.; Sun, Y.; and Weinberger, K. Q. 2017. On calibration of modern neural networks. In ICML.",
+    "Kadavath, S.; Conerly, T.; Askell, A.; Henighan, T.; Drain, D.; Perez, E.; Schiefer, N.; Hatfield-Dodds, Z.; DasSarma, N.; Tran-Johnson, E.; et al. 2022. Language models (mostly) know what they know. arXiv preprint arXiv:2207.05221.",
+    "Kapoor, S.; Gruver, N.; Roberts, M.; Pal, A.; Dooley, S.; Goldblum, M.; and Wilson, A. 2024. Calibration-tuning: Teaching large language models to know what they don't know. In UncertaiNLP 2024.",
+    "Kaukonen, E.; Sabir, A.; and Sharma, R. 2025. How aunt-like are you? exploring gender bias in the genderless estonian language: A case study. In Proceedings of the Joint 25th Nordic Conference on Computational Linguistics and 11th Baltic Conference on Human Language Technologies (NoDaLiDa/Baltic-HLT 2025), 296–301.",
+    "Krause, L.; Tufa, W.; Santamaría, S. B.; Daza, A.; Khurana, U.; and Vossen, P. 2023. Confidently wrong: exploring the calibration and expression of (Un) certainty of large language models in a multilingual setting. In MM-NLG 2023.",
+    "Kull, M.; Perello Nieto, M.; Kängsepp, M.; Silva Filho, T.; Song, H.; and Flach, P. 2019. Beyond temperature scaling: Obtaining well-calibrated multi-class probabilities with dirichlet calibration. NeurIPS.",
+    "Kull, M.; Silva Filho, T.; and Flach, P. 2017. Beta calibration: a well-founded and easily implemented improvement on logistic calibration for binary classifiers. In Artificial intelligence and statistics, 623–631. PMLR.",
+    "Levesque, H.; Davis, E.; and Morgenstern, L. 2012. The winograd schema challenge. In Thirteenth international conference on the principles of knowledge representation and reasoning.",
+    "Lum, K.; Anthis, J. R.; Robinson, K.; Nagpal, C.; and D'Amour, A. N. 2025. Bias in Language Models: Beyond Trick Tests and Towards RUTEd Evaluation. In ACL.",
+    "Minderer, M.; Djolonga, J.; Romijnders, R.; Hubis, F.; Zhai, X.; Houlsby, N.; Tran, D.; and Lucic, M. 2021. Revisiting the calibration of modern neural networks. NeurIPS.",
+    "Murphy, A. H.; and Winkler, R. L. 1977. Reliability of subjective probability forecasts of precipitation and temperature. Journal of the Royal Statistical Society Series C: Applied Statistics, 26(1): 41–47.",
+    "Naeini, M. P.; Cooper, G.; and Hauskrecht, M. 2015. Obtaining well calibrated probabilities using bayesian binning. In AAAI.",
+    "Nangia, N.; Vania, C.; Bhalerao, R.; and Bowman, S. 2020. CrowS-Pairs: A Challenge Dataset for Measuring Social Biases in Masked Language Models. In EMNLP.",
+    "Niculescu-Mizil, A.; and Caruana, R. 2005. Predicting good probabilities with supervised learning. In ICML.",
+    "Nixon, J.; Dusenberry, M. W.; Zhang, L.; Jerfel, G.; and Tran, D. 2019. Measuring Calibration in Deep Learning. In CVPR workshops, volume 2.",
+    "OpenAI. 2022. Chatgpt: Optimizing LMs for dialogue.",
+    "Platt, J. 2000. Probabilistic Outputs for Support Vector Machines and Comparisons to Regularized Likelihood Methods. Adv. Large Margin Classif., 10.",
+    "Roelofs, R.; Cain, N.; Shlens, J.; and Mozer, M. C. 2022. Mitigating bias in calibration error estimation. In International Conference on Artificial Intelligence and Statistics, 4036-4054. PMLR.",
+    "Rudinger, R.; Naradowsky, J.; Leonard, B.; and Van Durme, B. 2018. Gender Bias in Coreference Resolution. In NAACL.",
+    "Sabir, A.; and Padró, L. 2023. Women Wearing Lipstick: Measuring the Bias Between an Object and Its Related Gender. arXiv preprint arXiv:2310.19130.",
+    "Sabir, A.; and Sharma, R. 2025. Exploring Gender Bias Beyond Occupational Titles. arXiv preprint arXiv:2507.02679.",
+    "Si, C.; Zhao, C.; Min, S.; and Boyd-Graber, J. 2022. Re-Examining Calibration: The Case of Question Answering. In Findings EMNLP.",
+    "Stanovsky, G.; Smith, N. A.; and Zettlemoyer, L. 2019. Evaluating gender bias in machine translation. arXiv preprint arXiv:1906.00591.",
+    "Stańczak, K.; and Augenstein, I. 2021. A Survey on Gender Bias in Natural Language Processing. ArXiv.",
+    "Team, G.; Kamath, A.; Ferret, J.; Pathak, S.; Vieillard, N.; Merhej, R.; Perrin, S.; Matejovicova, T.; Ramé, A.; Rivière, M.; et al. 2025. Gemma 3 technical report. arXiv preprint arXiv:2503.19786.",
+    "Team, G.; Riviere, M.; Pathak, S.; Sessa, P. G.; Hardin, C.; Bhupatiraju, S.; Hussenot, L.; Mesnard, T.; Shahriari, B.; Ramé, A.; et al. 2024. Gemma 2: Improving open language models at a practical size. arXiv preprint arXiv:2408.00118.",
+    "Team, T. 2024. Falcon 3 family of Open Foundation Models.",
+    "Tian, K.; Mitchell, E.; Zhou, A.; Sharma, A.; Rafailov, R.; Yao, H.; Finn, C.; and Manning, C. D. 2023. Just ask for calibration: Strategies for eliciting calibrated confidence scores from language models fine-tuned with human feedback. arXiv preprint arXiv:2305.14975.",
+    "Wang, B.; and Komatsuzaki, A. 2021. GPT-J-6B: A 6 Billion Parameter Autoregressive Language Model. https://github.com/kingoflolz/mesh-transformer-jax.",
+    "Xiong, M.; Hu, Z.; Lu, X.; Li, Y.; Fu, J.; He, J.; and Hooi, B. 2023. Can Ilms express their uncertainty? an empirical evaluation of confidence elicitation in Ilms. arXiv preprint arXiv:2306.13063.",
+    "Yang, A.; et al. 2024. Qwen2 Technical Report. arXiv preprint arXiv:2407.10671.",
+    "Yoon, D.; Kim, S.; Yang, S.; Kim, S.; Kim, S.; Kim, Y.; Choi, E.; Kim, Y.; and Seo, M. 2025. Reasoning models better express their confidence. arXiv preprint arXiv:2505.14489.",
+    "Zadrozny, B.; and Elkan, C. 2002. Transforming classifier scores into accurate multiclass probability estimates. In Proceedings of the eighth ACM SIGKDD international conference on Knowledge discovery and data mining, 694–699.",
+    "Zhao, J.; Wang, T.; Yatskar, M.; Ordonez, V.; and Chang, K.-W. 2018. Gender bias in coreference resolution: Evaluation and debiasing methods. arXiv preprint arXiv:1804.06876."
+  ],
+  "measurement_description": "The paper does not measure any aspect of faith or religion. The focus is on gender bias and confidence calibration in language models, specifically in the context of gendered pronoun resolution."
 }

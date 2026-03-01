@@ -2,31 +2,110 @@
   "filename": "2506.02326.pdf",
   "title": "♪ Something Just Like TRuST ♪ *: Toxicity Recognition of Span and Target",
   "arxiv_url": "https://arxiv.org/pdf/2506.02326",
-  "bias_targets": [
-    {
-      "target": "Racial and Ethnic bias",
-      "methodology": "Evaluating the performance (accuracy, precision, recall, F1) of toxicity detection and target group identification models across texts targeting different racial and ethnic groups (e.g., Black, White, Asian, Native American, Arab)."
-    },
-    {
-      "target": "Gender and Sexual Orientation bias",
-      "methodology": "Benchmarking toxicity detection, target identification, and span detection models on texts directed at specific gender identities and sexual orientations (e.g., women, men, LGBTQ+)."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Measuring variations in toxicity detection and target prediction performance across texts targeting different religious groups (e.g., Muslim, Jewish)."
-    },
-    {
-      "target": "Nationality and Origin bias",
-      "methodology": "Evaluating model performance in detecting toxicity and targets in texts directed at specific nationalities, countries, regions (e.g., Middle East), immigrants, or refugees."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Assessing the predictive accuracy of language models on toxic text samples targeting individuals with disabilities."
-    },
-    {
-      "target": "Political bias",
-      "methodology": "Benchmarking toxicity detection models on texts targeting political figures or affiliations to measure performance disparities."
-    }
+  "religious_groups": [
+    "Judaism",
+    "Islam"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "PerspectiveAPI",
+    "LlamaGuard",
+    "ShieldGemma",
+    "ROBERTa",
+    "BERT",
+    "GPT4o",
+    "Claude 3.7 Sonnet",
+    "Llama3.1 70b",
+    "Llama3.1 8b",
+    "Distilled Llama70b",
+    "Distilled Llama8b",
+    "o4-mini",
+    "SpanBERT"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Zampieri et al. (2023)",
+    "Almohaimeed et al. (2023) [THOS]",
+    "Mathew et al. (2021) [HateXplain]",
+    "Pavlopoulos et al. (2022)",
+    "Hartvigsen et al. (2022) [ToxiGen]"
+  ],
+  "continuous_testing": false,
+  "findings": "In the human-annotated dataset, texts targeting Jewish people were labeled toxic more frequently (66.6%) than those targeting Muslims (55.1%). The performance of models in detecting toxicity varied across these religious groups. For example, in the test set, toxicity detection accuracy for content targeting Jewish people ranged from 76% to 86%, while for content targeting Muslims, it ranged from 66% to 80%, depending on the model.",
+  "references": [
+    "Saad Almohaimeed, Saleh Almohaimeed, Ashfaq Ali Shafin, Bogdan Carbunar, and Ladislau Bölöni. 2023. THOS: A benchmark dataset for targeted hate and offensive speech. arXiv preprint arXiv:2311.06446.",
+    "Anthropic. 2025. Claude 3.7 sonnet. Large Language Model.",
+    "Berk Atil, Sarp Aykent, Alexa Chittams, Lisheng Fu, Rebecca J. Passonneau, Evan Radcliffe, Guru Rajan Rajagopal, Adam Sloan, Tomasz Tudrej, Ferhan Ture, Zhe Wu, Lixinyu Xu, and Breck Baldwin. 2025. Non-determinism of \"deterministic\" Ilm settings. Preprint, arXiv:2408.04667.",
+    "Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, and 1 others. 2020. Language models are few-shot learners. Advances in neural information processing systems, 33:1877–1901.",
+    "Jiaao Chen and Diyi Yang. 2023. Unlearn what you want to forget: Efficient unlearning for llms. Preprint, arXiv:2310.20150.",
+    "Thomas Davidson, Dana Warmsley, Michael Macy, and Ingmar Weber. 2017. Automated hate speech detection and the problem of offensive language. In Proceedings of the international AAAI conference on web and social media, volume 11.1, pages 512-515.",
+    "Adelson de Araujo, Pantelis M. Papadopoulos, Susan McKenney, and Ton de Jong. 2025. Investigating the impact of a collaborative conversational agent on dialogue productivity and knowledge acquisition. International Journal of Artificial Intelligence in Education.",
+    "DeepSeek-AI. 2025. DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning. Preprint, arXiv:2501.12948.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of the 2019 conference of the North American chapter of the association for computational linguistics: human language technologies, volume 1 (long and short papers), pages 4171-4186.",
+    "Rebecca Dorn, Lee Kezar, Fred Morstatter, and Kristina Lerman. 2024. Harmful speech detection by language models exhibits gender-queer dialect bias. In Proceedings of the 4th ACM Conference on Equity and Access in Algorithms, Mechanisms, and Optimization, pages 1-12.",
+    "Xiaoni Duan, Zhuoyan Li, Chien-Ju Ho, and Ming Yin. 2025. Exploring the cost-effectiveness of perspective taking in crowdsourcing subjective assessment: A case study of toxicity detection. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 2359–2372, Albuquerque, New Mexico. Association for Computational Linguistics.",
+    "Mai ElSherief, Caleb Ziems, David Muchlinski, Vaishnavi Anupindi, Jordyn Seybolt, Munmun De Choudhury, and Diyi Yang. 2021. Latent hatred: A benchmark for understanding implicit hate speech. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 345-363, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics.",
+    "Beyza Ermis, Luiza Pozzobon, Sara Hooker, and Patrick Lewis. 2024. From one to many: Expanding the scope of toxicity mitigation in language models. In Findings of the Association for Computational Linguistics: ACL 2024, pages 15041–15058, Bangkok, Thailand. Association for Computational Linguistics.",
+    "Eve Fleisig, Rediet Abebe, and Dan Klein. 2023a. When the majority is wrong: Modeling annotator disagreement for subjective tasks. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, pages 6715–6726, Singapore. Association for Computational Linguistics.",
+    "Eve Fleisig, Aubrie Amstutz, Chad Atalla, Su Lin Blodgett, Hal Daumé III, Alexandra Olteanu, Emily Sheng, Dan Vann, and Hanna Wallach. 2023b. Fair-Prism: Evaluating fairness-related harms in text generation. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 6231-6251, Toronto, Canada. Association for Computational Linguistics.",
+    "Samuel Gehman, Suchin Gururangan, Maarten Sap, Yejin Choi, and Noah A. Smith. 2020. RealToxicityPrompts: Evaluating neural toxic degeneration in language models. In Findings of the Association for Computational Linguistics: EMNLP 2020, pages 3356-3369, Online. Association for Computational Linguistics.",
+    "Aaron Grattafiori, Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Alex Vaughan, Amy Yang, Angela Fan, Anirudh Goyal, Anthony Hartshorn, Aobo Yang, Archi Mitra, Archie Sravankumar, Artem Korenev, Arthur Hinsvark, and 542 others. 2024. The llama 3 herd of models. Preprint, arXiv:2407.21783.",
+    "Thomas Hartvigsen, Saadia Gabriel, Hamid Palangi, Maarten Sap, Dipankar Ray, and Ece Kamar. 2022. ToxiGen: A large-scale machine-generated dataset for adversarial and implicit hate speech detection. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 3309–3326, Dublin, Ireland. Association for Computational Linguistics.",
+    "Xinlei He, Savvas Zannettou, Yun Shen, and Yang Zhang. 2024. You only prompt once: On the capabilities of prompt learning on large language models to tackle toxic content. In 2024 IEEE Symposium on Security and Privacy (SP), pages 770-787. IEEE.",
+    "Hakan Inan, Kartikeya Upasani, Jianfeng Chi, Rashi Rungta, Krithika Iyer, Yuning Mao, Michael Tontchev, Qing Hu, Brian Fuller, Davide Testuggine, and 1 others. 2023. Llama guard: Llm-based input-output safeguard for human-ai conversations. arXiv preprint arXiv:2312.06674.",
+    "Aaron Jaech, Adam Kalai, Adam Lerer, Adam Richardson, Ahmed El-Kishky, Aiden Low, Alec Helyar, Aleksander Madry, Alex Beutel, Alex Carney, and 1 others. 2024. Openai ol system card. arXiv preprint arXiv:2412.16720.",
+    "Mandar Joshi, Danqi Chen, Yinhan Liu, Daniel S Weld, Luke Zettlemoyer, and Omer Levy. 2020. SpanBERT: Improving pre-training by representing and predicting spans. Transactions of the association for computational linguistics, 8:64–77.",
+    "Sakshi Joshi, Anindita Mukherjee, Usha A Jogalekar, Renuka Agrawal, Abhishek Anand, and Santhosh Phanitalpak Gandhala. 2025. Enhancing toxic comment classification with multi-label capabilities: Leveraging bert and roberta models. In 2025 International Conference on Emerging Trends in Industry 4.0 Technologies (ICETI4T), pages 1–6. IEEE.",
+    "Julia Kansok-Dusche, Cindy Ballaschk, Norman Krause, Anke Zeißig, Lisanne Seemann-Herz, Sebastian Wachs, and Ludwig Bilz. 2023. A systematic review on hate speech among children and adolescents: Definitions, prevalence, and overlap with related phenomena. Trauma, violence, & abuse, 24(4):2598-2615.",
+    "Urja Khurana, Eric Nalisnick, and Antske Fokkens. 2025. DefVerify: Do hate speech models reflect their dataset's definition? In Proceedings of the 31st Inter-national Conference on Computational Linguistics, pages 4341-4358, Abu Dhabi, UAE. Association for Computational Linguistics.",
+    "Urja Khurana, Ivar Vermeulen, Eric Nalisnick, Marloes Van Noorloos, and Antske Fokkens. 2022. Hate speech criteria: A modular approach to task-specific hate speech definitions. In Proceedings of the Sixth Workshop on Online Abuse and Harms (WOAH), pages 176-191, Seattle, Washington (Hybrid). Association for Computational Linguistics.",
+    "Junseong Kim, Seolhwa Lee, Sangmo Gu Jihoon Kwon, Yejin Kim, Minkyung Cho, Jy yong Sohn, and Chanyeol Choi. 2024a. Linq-embed-mistral:elevating text retrieval with improved gpt data through task-specific control and quality refinement. Linq AI Research Blog.",
+    "Minbeom Kim, Jahyun Koo, Hwanhee Lee, Joonsuk Park, Hwaran Lee, and Kyomin Jung. 2024b. LifeTox: Unveiling implicit toxicity in life advice. In Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 2: Short Papers), pages 688-698, Mexico City, Mexico. Association for Computational Linguistics.",
+    "Diederik P. Kingma and Jimmy Ba. 2017. Adam: A method for stochastic optimization. Preprint, arXiv:1412.6980.",
+    "Deepak Kumar, Patrick Gage Kelley, Sunny Consolvo, Joshua Mason, Elie Bursztein, Zakir Durumeric, Kurt Thomas, and Michael Bailey. 2021. Designing toxic content classification for a diversity of perspectives. In Seventeenth Symposium on Usable Privacy and Security (SOUPS 2021), pages 299–318.",
+    "Alyssa Lees, Vinh Q. Tran, Yi Tay, Jeffrey Sorensen, Jai Gupta, Donald Metzler, and Lucy Vasserman. 2022. A New Generation of Perspective API: Efficient Multilingual Character-level Transformers. Preprint, arXiv:2202.11176.",
+    "Xiaochen Li, Zheng Xin Yong, and Stephen Bach. 2024. Preference tuning for toxicity mitigation generalizes across languages. In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 13422-13440, Miami, Florida, USA. Association for Computational Linguistics.",
+    "Zi Lin, Zihan Wang, Yongqi Tong, Yangkun Wang, Yuxin Guo, Yujia Wang, and Jingbo Shang. 2023. Toxicchat: Unveiling hidden challenges of toxicity detection in real-world user-ai conversation. arXiv preprint arXiv:2310.17389.",
+    "Alisa Liu, Maarten Sap, Ximing Lu, Swabha Swayamdipta, Chandra Bhagavatula, Noah A. Smith, and Yejin Choi. 2021. DExperts: Decoding-time controlled text generation with experts and anti-experts. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 6691-6706, Online. Association for Computational Linguistics.",
+    "Jiachang Liu, Dinghan Shen, Yizhe Zhang, Bill Dolan, Lawrence Carin, and Weizhu Chen. 2022. What makes good in-context examples for GPT-3? In Proceedings of Deep Learning Inside Out (DeeLIO 2022): The 3rd Workshop on Knowledge Extraction and Integration for Deep Learning Architectures, pages 100-114, Dublin, Ireland and Online. Association for Computational Linguistics.",
+    "Sijia Liu, Yuanshun Yao, Jinghan Jia, Stephen Casper, Nathalie Baracaldo, Peter Hase, Yuguang Yao, Chris Yuhao Liu, Xiaojun Xu, Hang Li, Kush R. Varshney, Mohit Bansal, Sanmi Koyejo, and Yang Liu. 2024. Rethinking machine unlearning for large language models. Preprint, arXiv:2402.08787.",
+    "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. 2019. RoBERTa: A Robustly Optimized BERT Pretraining Approach. Preprint, arXiv:1907.11692.",
+    "Todor Markov, Chong Zhang, Sandhini Agarwal, Florentine Eloundou Nekoul, Theodore Lee, Steven Adler, Angela Jiang, and Lilian Weng. 2023. A holistic approach to undesired content detection in the real world. In Proceedings of the AAAI conference on artificial intelligence, volume 37.12, pages 15009–15018.",
+    "Binny Mathew, Punyajoy Saha, Seid Muhie Yimam, Chris Biemann, Pawan Goyal, and Animesh Mukherjee. 2021. HateXplain: A benchmark dataset for explainable hate speech detection. In Proceedings of the AAAI conference on artificial intelligence, volume 35.17, pages 14867–14875.",
+    "Aida Mostafazadeh Davani, Mark Diaz, Dylan K Baker, and Vinodkumar Prabhakaran. 2024. D3CODE: Disentangling disagreements in data across cultures on offensiveness detection and evaluation. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 18511–18526, Miami, Florida, USA. Association for Computational Linguistics.",
+    "John T Nockleby. 2000. Hate speech. Encyclopedia of the American Constitution (2nd ed., edited by Leonard W. Levy, Kenneth L. Karst et al., New York: Macmillan, 2000), pages 1277–1279.",
+    "OpenAI, :, Aaron Hurst, Adam Lerer, Adam P. Goucher, Adam Perelman, Aditya Ramesh, Aidan Clark, AJ Ostrow, Akila Welihinda, Alan Hayes, Alec Radford, Aleksander Mądry, Alex Baker-Whitcomb, Alex Beutel, Alex Borzunov, Alex Carney, Alex Chow, Alex Kirillov, and 401 others. 2024. Gpt-4o system card. Preprint, arXiv:2410.21276.",
+    "Andrei Paraschiv, Teodora Andreea Ion, and Mihai Dascalu. 2023. Offensive text span detection in Romanian comments using large language models. Information, 15(1):8.",
+    "Rebecca J. Passonneau. 2006. Measuring Agreement on Set-valued Items (MASI) for Semantic and Pragmatic Annotation. In LREC, pages 831-836.",
+    "John Pavlopoulos, Leo Laugier, Alexandros Xenos, Jeffrey Sorensen, and Ion Androutsopoulos. 2022. From the detection of toxic spans in online discussions to the analysis of toxic-to-civil transfer. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 3721-3734, Dublin, Ireland. Association for Computational Linguistics.",
+    "Agnieszka Pluta, Joanna Mazurek, Jakub Wojciechowski, Tomasz Wolak, Wiktor Soral, and Michał Bilewicz. 2023. Exposure to hate speech deteriorates neurocognitive mechanisms of the ability to understand others' pain. Scientific Reports, 13(1):4127.",
+    "Luiza Pozzobon, Beyza Ermis, Patrick Lewis, and Sara Hooker. 2023. Goodtriever: Adaptive toxicity mitigation with retrieval-augmented models. In Findings of the Association for Computational Linguistics: EMNLP 2023, pages 5108–5125, Singapore. Association for Computational Linguistics.",
+    "Kiran Ramnath, Kang Zhou, Sheng Guan, Soumya Smruti Mishra, Xuan Qi, Zhengyuan Shen, Shuai Wang, Sangmin Woo, Sullam Jeoung, Yawei Wang, Haozhu Wang, Han Ding, Yuzhe Lu, Zhichao Xu, Yun Zhou, Balasubramaniam Srinivasan, Qiaojing Yan, Yueyan Chen, Haibo Ding, and 2 others. 2025. A systematic survey of automatic prompt optimization techniques. Preprint, arXiv:2502.16923.",
+    "Anchal Rawat, Santosh Kumar, and Surender Singh Samant. 2024. Hate speech detection in social media: Techniques, recent trends, and future challenges. Wiley Interdisciplinary Reviews: Computational Statistics, 16(2):e1648.",
+    "Lucas Rosenblatt, Lorena Piedras, and Julia Wilkins. 2022. Critical Perspectives: A Benchmark Revealing Pitfalls in PerspectiveAPI. In Proceedings of the Second Workshop on NLP for Positive Impact (NLP4PI), pages 15-24.",
+    "Koustuv Saha, Eshwar Chandrasekharan, and Munmun De Choudhury. 2019. Prevalence and psychological effects of hateful speech in online college communities. In Proceedings of the 10th ACM conference on web science, pages 255-264.",
+    "Maarten Sap, Saadia Gabriel, Lianhui Qin, Dan Jurafsky, Noah A. Smith, and Yejin Choi. 2020. Social Bias Frames: Reasoning about Social and Power Implications of Language. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5477-5490, Online. Association for Computational Linguistics.",
+    "Timo Schick, Sahana Udupa, and Hinrich Schütze. 2021. Self-Diagnosis and Self-Debiasing: A proposal for reducing corpus-based bias in nlp. Transactions of the Association for Computational Linguistics, 9:1408-1424.",
+    "Daman Deep Singh, Ramanuj Bhattacharjee, and Abhijnan Chakraborty. 2025. Rethinking hate speech detection on social media: Can llms replace traditional models? arXiv preprint arXiv:2506.12744.",
+    "Xavier Suau, Pieter Delobelle, Katherine Metcalf, Armand Joulin, Nicholas Apostoloff, Luca Zappella, and Pau Rodríguez. 2024. Whispering experts: Neural interventions for toxicity mitigation in language models. arXiv preprint arXiv:2407.12824.",
+    "Jackson Trager, Francielle Vargas, Diego Alves, Matteo Guida, Mikel K. Ngueajio, Ameeta Agrawal, Yalda Daryani, Farzan Karimi Malekabadi, and Flor Miriam Plaza-del Arco. 2025. MFTCXplain: A multilingual benchmark dataset for evaluating the moral reasoning of LLMs through multi-hop hate speech explanation. In Findings of the Association for Computational Linguistics: EMNLP 2025, pages 15709-15740, Suzhou, China. Association for Computational Linguistics.",
+    "Tsuang Han Tsai, Hsu Sung Ting, Huang Yu Cheng, Hsueh Shan Ting, and Yuan Chen Yao. 2025. Finetuning distilbert for toxic comment detection and classification. In 2025 IEEE Gaming, Entertainment, and Media Conference (GEM), pages 1–4. IEEE.",
+    "Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed Chi, Quoc Le, and Denny Zhou. 2023. Chain-of-thought prompting elicits reasoning in large language models. Preprint, arXiv:2201.11903.",
+    "Johannes Welbl, Amelia Glaese, Jonathan Uesato, Sumanth Dathathri, John Mellor, Lisa Anne Hendricks, Kirsty Anderson, Pushmeet Kohli, Ben Coppin, and Po-Sen Huang. 2021. Challenges in detoxifying language models. In Findings of the Association for Computational Linguistics: EMNLP 2021, pages 2447-2469, Punta Cana, Dominican Republic. Association for Computational Linguistics.",
+    "Jiaxin Wen, Pei Ke, Hao Sun, Zhexin Zhang, Chengfei Li, Jinfeng Bai, and Minlie Huang. 2023. Unveiling the implicit toxicity in large language models. arXiv preprint arXiv:2311.17391.",
+    "Rongwu Xu, Zian Zhou, Tianwei Zhang, Zehan Qi, Su Yao, Ke Xu, Wei Xu, and Han Qiu. 2024. Walking in others' shoes: How perspective-taking guides large language models in reducing toxicity and bias. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 8341-8368, Miami, Florida, USA. Association for Computational Linguistics.",
+    "Mert Yuksekgonul, Federico Bianchi, Joseph Boen, Sheng Liu, Pan Lu, Zhi Huang, Carlos Guestrin, and James Zou. 2025. Optimizing generative ai by backpropagating language model feedback. Nature, 639(8055):609-616.",
+    "Marcos Zampieri, Shervin Malmasi, Preslav Nakov, Sara Rosenthal, Noura Farra, and Ritesh Kumar. 2019. Predicting the type and target of offensive posts in social media. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 1415–1420, Minneapolis, Minnesota. Association for Computational Linguistics.",
+    "Marcos Zampieri, Skye Morgan, Kai North, Tharindu Ranasinghe, Austin Simmmons, Paridhi Khandelwal, Sara Rosenthal, and Preslav Nakov. 2023. Target-based offensive language identification. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers), pages 762–770, Toronto, Canada. Association for Computational Linguistics.",
+    "Armel Zebaze, Benoît Sagot, and Rachel Bawden. 2024. In-context example selection via similarity search improves low-resource machine translation. Preprint, arXiv:2408.00397.",
+    "Wenjun Zeng, Yuchi Liu, Ryan Mullins, Ludovic Peran, Joe Fernandez, Hamza Harkous, Karthik Narasimhan, Drew Proud, Piyush Kumar, Bhaktipriya Radharapu, and 1 others. 2024. Shieldgemma: Generative ai content moderation based on gemma. arXiv preprint arXiv:2407.21772.",
+    "Xuan Zhang, Chao Du, Tianyu Pang, Qian Liu, Wei Gao, and Min Lin. 2024. Chain of preference optimization: Improving chain-of-thought reasoning in Ilms. Advances in Neural Information Processing Systems, 37:333-356.",
+    "Xuhui Zhou, Hao Zhu, Akhila Yerukola, Thomas Davidson, Jena D. Hwang, Swabha Swayamdipta, and Maarten Sap. 2023. COBRA frames: Contextual reasoning about effects and harms of offensive statements. In Findings of the Association for Computational Linguistics: ACL 2023, pages 6294-6315, Toronto, Canada. Association for Computational Linguistics."
+  ],
+  "measurement_description": "Detection of toxic language (including hate speech and negative stereotyping) targeted at religious groups."
 }

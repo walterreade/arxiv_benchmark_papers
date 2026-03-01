@@ -2,35 +2,62 @@
   "filename": "2510.09031.pdf",
   "title": "Web Crawler Restrictions, AI Training Datasets & Political Biases",
   "arxiv_url": "https://arxiv.org/pdf/2510.09031",
-  "bias_targets": [
-    {
-      "target": "Political bias",
-      "methodology": "Analyzing the differential rates of AI web crawler restrictions (robots.txt) across websites based on their political leaning and factual reporting scores, and evaluating the shifting representation of hyperpartisan content in training datasets."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Applying chi-square statistics to identify word co-occurrence patterns alongside terms referring to age (e.g., 'Young', 'Old') in hyperpartisan left and right-leaning text corpora compared to balanced text."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Applying chi-square statistics to identify word co-occurrence patterns alongside gender terms (e.g., 'Woman', 'Man') in hyperpartisan left and right-leaning text corpora compared to balanced text."
-    },
-    {
-      "target": "Gender identity bias",
-      "methodology": "Applying chi-square statistics to identify word co-occurrence patterns alongside the term 'Transgender' in hyperpartisan left and right-leaning text corpora compared to balanced text."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Applying chi-square statistics to identify word co-occurrence patterns alongside the term 'LGBTQ' in hyperpartisan left and right-leaning text corpora compared to balanced text."
-    },
-    {
-      "target": "Immigration status bias",
-      "methodology": "Applying chi-square statistics to identify word co-occurrence patterns alongside the term 'Immigrant' in hyperpartisan left and right-leaning text corpora compared to balanced text."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Applying chi-square statistics to identify word co-occurrence patterns alongside the term 'Muslim' in hyperpartisan left and right-leaning text corpora compared to balanced text."
-    }
+  "religious_groups": [
+    "Christianity",
+    "Islam",
+    "Judaism"
   ],
-  "primary_bias_target": "Political bias"
+  "models_tested": [
+    "GPT-3",
+    "Llama"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "Due to crawler restrictions on moderate websites, AI training datasets are becoming increasingly skewed towards hyperpartisan content. This content features an over-representation of religious terminology. In hyperpartisan right-leaning text, religious word pairs like (Jesus; God), (Christ; Jesus), and (Faith; God) are overrepresented, and terms like 'God', 'Church', 'Testament', and 'Christian' co-occur frequently with demographic terms. In hyperpartisan left-leaning text, 'Jewish' co-occurs with 'Community'. This suggests that models trained on this skewed data may inherit these representations.",
+  "references": [
+    "Stefan Baack. 2024. A Critical Analysis of the Largest Source for Generative AI Training Data: Common Crawl. In The 2024 ACM Conference on Fairness, Accountability, and Transparency (FAccT '24). ACM, 2199-2208. doi:10.1145/ 3630106.3659033",
+    "Christine Basta, Marta R. Costa-jussà, and Noe Casas. 2019. Evaluating the Underlying Gender Bias in Contextualized Word Embeddings. In Proceedings of the First Workshop on Gender Bias in Natural Language Processing, Marta R. Costa-jussà, Christian Hardmeier, Will Radford, and Kellie Webster (Eds.). Association for Computational Linguistics, Florence, Italy, 33-39. doi:10.18653/v1/W19-3805",
+    "Emily M. Bender, Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. 2021. On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?. In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency (Virtual Event, Canada) (FAccT '21). Association for Computing Machinery, New York, NY, USA, 610-623. doi:10.1145/3442188.3445922",
+    "Tolga Bolukbasi, Kai-Wei Chang, James Zou, Venkatesh Saligrama, and Adam Kalai. 2016. Man is to Computer Programmer as Woman is to Homemaker? Debiasing Word Embeddings. arXiv:1607.06520 [cs.CL] https://arxiv.org/abs/ 1607.06520",
+    "Tom B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan, Rewon Child, Aditya Ramesh, Daniel M. Ziegler, Jeffrey Wu, Clemens Winter, Christopher Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess, Jack Clark, Christopher Berner, Sam McCandlish, Alec Radford, Ilya Sutskever, and Dario Amodei. 2020. Language Models are Few-Shot Learners. arXiv:2005.14165 [cs.CL] https://arxiv.org/abs/2005.14165",
+    "Aylin Caliskan, Joanna J. Bryson, and Arvind Narayanan. 2017. Semantics derived automatically from language corpora contain human-like biases. Science 356, 6334 (April 2017), 183-186. doi:10.1126/science.aal4230",
+    "Cloudflare. 2025. Domain categories. https://developers.cloudflare.com/ cloudflare-one/policies/gateway/domain-categories/",
+    "Common Crawl Foundation. 2025. Common Crawl Dataset. https:// commoncrawl.org/.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding. arXiv:1810.04805 [cs.CL] https://arxiv.org/abs/1810.04805",
+    "Michael Dinzinger, Florian Heß, and Michael Granitzer. 2024. A Survey of Web Content Control for Generative AI. arXiv:2404.02309 [cs.IR] https://arxiv.org/ abs/2404.02309",
+    "Jesse Dodge, Maarten Sap, Ana Marasovic, William Agnew, Gabriel Ilharco, Dirk Groeneveld, Margaret Mitchell, and Matt Gardner. 2021. Documenting Large Webtext Corpora: A Case Study on the Colossal Clean Crawled Corpus.. In EMNLP (1). Association for Computational Linguistics, 1286-1305.",
+    "Shangbin Feng, Chan Young Park, Yuhan Liu, and Yulia Tsvetkov. 2023. From Pretraining Data to Language Models to Downstream Tasks: Tracking the Trails of Political Biases Leading to Unfair NLP Models. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), Anna Rogers, Jordan Boyd-Graber, and Naoaki Okazaki (Eds.). Association for Computational Linguistics, Toronto, Canada, 11737-11762. doi:10.18653/v1/2023. acl-long.656",
+    "Michael M. Grynbaum and Ryan Mac. 2023. The Times Sues OpenAI and Microsoft Over A.I. Use of Copyrighted Work. The New York Times (27 December 2023). https://www.nytimes.com/2023/12/27/business/media/new-york-times- open-ai-microsoft-lawsuit.html",
+    "Audrey Hingle and Mallory Knodel. 2025. Robots.txt Is Having a Moment: Here's Why We Should Care. TechPolicy. Press (April 3 2025). https://www.techpolicy. press/robotstxt-is-having-a-moment-heres-why-we-should-care/",
+    "Taein Kim, Karstan Bock, Claire Luo, Amanda Liswood, and Emily Wenger. 2025. Scrapers selectively respect robots.txt directives: evidence from a large-scale empirical study. arXiv:2505.21733 [cs.NI] https://arxiv.org/abs/2505.21733",
+    "Enze Liu, Elisa Luo, Shawn Shan, Geoffrey M. Voelker, Ben Y. Zhao, and Stefan Savage. 2024. Somesite I Used To Crawl: Awareness, Agency and Efficacy in Protecting Content Creators From AI Crawlers. arXiv e-prints, Article arXiv:2411.15091 (Nov. 2024), arXiv:2411.15091 pages. arXiv:2411.15091 [cs.HC] doi:10.48550/arXiv.2411.15091",
+    "Shayne Longpre, Robert Mahari, Ariel Lee, Campbell Lund, Hamidah Oderinwale, William Brannon, Nayan Saxena, Naana Obeng-Marnu, Tobin South, Cole Hunter, Kevin Klyman, Christopher Klamm, Hailey Schoelkopf, Nikhil Singh, Manuel Cherep, Ahmad Mustafa Anis, An Dinh, Caroline Chitongo, Da Yin, Damien Sileo, Deividas Mataciunas, Diganta Misra, Emad Alghamdi, Enrico Shippole, Jianguo Zhang, Joanna Materzynska, Kun Qian, Kush Tiwary, Lester Miranda, Manan Dey, Minnie Liang, Mohammed Hamdy, Niklas Muennighoff, Seonghyeon Ye, Seungone Kim, Shrestha Mohanty, Vipul Gupta, Vivek Sharma, Vu Minh Chien, Xuhui Zhou, Yizhi Li, Caiming Xiong, Luis Villa, Stella Biderman, Hanlin Li, Daphne Ippolito, Sara Hooker, Jad Kabbara, and Sandy Pentland. 2024. Consent in Crisis: The Rapid Decline of the AI Data Commons. In Advances in Neural Information Processing Systems, A. Globerson, L. Mackey, D. Belgrave, A. Fan, U. Paquet, J. Tomczak, and C. Zhang (Eds.), Vol. 37. Curran Associates, Inc., 108042-108087. https://proceedings.neurips. cc/paper%5Ffiles/paper/2024/file/c3738949a80306cc48a8ea8ba0560f9d-Paper- Datasets%5Fand%5FBenchmarks%5FTrack.pdf",
+    "Shayne Longpre, Robert Mahari, Ariel Lee, Campbell Lund, Hamidah Oderinwale, William Brannon, Nayan Saxena, Naana Obeng-Marnu, Tobin South, Cole Hunter, Kevin Klyman, Christopher Klamm, Hailey Schoelkopf, Nikhil Singh, Manuel Cherep, Ahmad Mustafa Anis, An Dinh, Caroline Chitongo, Da Yin, Damien Sileo, Deividas Mataciunas, Diganta Misra, Emad Alghamdi, Enrico Shippole, Jianguo Zhang, Joanna Materzynska, Kun Qian, Kush Tiwary, Lester Miranda, Manan Dey, Minnie Liang, Mohammed Hamdy, Niklas Muennighoff, Seonghyeon Ye, Seungone Kim, Shrestha Mohanty, Vipul Gupta, Vivek Sharma, Vu Minh Chien, Xuhui Zhou, Yizhi Li, Caiming Xiong, Luis Villa, Stella Biderman, Hanlin Li, Daphne Ippolito, Sara Hooker, Jad Kabbara, Sandy Pentland, and Data Provenance Initiative. 2025. Consent in crisis: the rapid decline of the Al data commons. In Proceedings of the 38th International Conference on Neural Information Processing Systems (Vancouver, BC, Canada) (NIPS '24). Curran Associates Inc., Red Hook, NY, USA, Article 3431, 46 pages.",
+    "Nicola Lucchi. 2023. ChatGPT: A Case Study on Copyright Challenges for Generative Artificial Intelligence Systems. European Journal of Risk Regulation 15, 3 (Aug. 2023), 602-624. doi:10.1017/err.2023.59",
+    "Alexandra Luccioni and Joseph Viviano. 2021. What's in the Box? An Analysis of Undesirable Content in the Common Crawl Corpus. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 2: Short Papers), Chengqing Zong, Fei Xia, Wenjie Li, and Roberto Navigli (Eds.). Association for Computational Linguistics, Online, 182-189. doi:10.18653/v1/ 2021.acl-short.24",
+    "Chandler May, Alex Wang, Shikha Bordia, Samuel R. Bowman, and Rachel Rudinger. 2019. On Measuring Social Biases in Sentence Encoders. In Proceedings of the 2019 Conference of the North. Association for Computational Linguistics. doi:10.18653/v1/n19-1063",
+    "Tomas Mikolov, Kai Chen, Greg Corrado, and Jeffrey Dean. 2013. Efficient Estimation of Word Representations in Vector Space. arXiv:1301.3781 [cs.CL] https://arxiv.org/abs/1301.3781",
+    "OpenAI. 2023. OpenAI and Axel Springer Partnership to Enhance AI in Journalism. https://openai.com/index/axel-springer-partnership/. Accessed: 2025-09-26.",
+    "OpenAI. 2023. Overview of OpenAI Crawlers. https://platform.openai.com/docs/ bots. Accessed: 2025-09-27.",
+    "OpenAI. 2024. A Landmark Multi-Year Global Partnership with News Corp. https://openai.com/index/news-corp-and-openai-sign-landmark-multi- year-global-partnership/. Accessed: 2025-09-26.",
+    "Guilherme Penedo, Hynek Kydlíček, Loubna Ben allal, Anton Lozhkov, Margaret Mitchell, Colin Raffel, Leandro Von Werra, and Thomas Wolf. 2024. The FineWeb Datasets: Decanting the Web for the Finest Text Data at Scale. arXiv:2406.17557 [cs.CL] https://arxiv.org/abs/2406.17557",
+    "Guilherme Penedo, Quentin Malartic, Daniel Hesslow, Ruxandra Cojocaru, Alessandro Cappelli, Hamza Alobeidli, Baptiste Pannier, Ebtesam Almazrouei, and Julien Launay. 2023. The RefinedWeb Dataset for Falcon LLM: Outperforming Curated Corpora with Web Data, and Web Data Only. arXiv:2306.01116 [cs.CL] https://arxiv.org/abs/2306.01116",
+    "Jeffrey Pennington, Richard Socher, and Christopher D. Manning. 2014. GloVe: Global Vectors for Word Representation. In Empirical Methods in Natural Language Processing (EMNLP). 1532-1543. http://www.aclweb.org/anthology/D14- 1162",
+    "Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi Zhou, Wei Li, and Peter J. Liu. 2020. Exploring the limits of transfer learning with a unified text-to-text transformer. J. Mach. Learn. Res. 21, 1, Article 140 (Jan. 2020), 67 pages.",
+    "Ronald E. Robertson, Shan Jiang, Kenneth Joseph, Lisa Friedland, David Lazer, and Christo Wilson. 2018. Auditing Partisan Audience Bias within Google Search. Proceedings of the ACM on Human-Computer Interaction 2, CSCW (Nov. 2018), 1-22. doi:10.1145/3274417",
+    "David Rozado. 2020. Wide range screening of algorithmic bias in word embedding models using large sentiment lexicons reveals underreported bias types. PLOS ONE 15, 4 (April 2020), e0231189. doi:10.1371/journal.pone.0231189",
+    "Kimberly Ruth, Aurore Fass, Jonathan Azose, Mark Pearson, Emma Thomas, Caitlin Sadowski, and Zakir Durumeric. 2022. A world wide view of browsing the world wide web. In Proceedings of the 22nd ACM Internet Measurement Conference (IMC '22). ACM, 317-336. doi:10.1145/3517745.3561418",
+    "Kimberly Ruth, Deepak Kumar, Brandon Wang, Luke Valenta, and Zakir Durumeric. 2022. Toppling top lists: evaluating the accuracy of popular website lists. In Proceedings of the 22nd ACM Internet Measurement Conference (IMC '22). ACM, 374-387. doi:10.1145/3517745.3561444",
+    "Alain Strowel. 2023. ChatGPT and Generative AI Tools: Theft of Intellectual Labor? IIC - International Review of Intellectual Property and Competition Law 54, 4 (April 2023), 491-494. doi:10.1007/s40319-023-01321-y",
+    "Tony Stubblebine. 2023. Default No to AI Training on Your Stories. https://blog. medium.com/default-no-to-ai-training-on-your-stories-abb5b4589c8 Medium announced it would block AI crawlers, stating \"AI companies have leached value from writers in order to spam internet readers\".",
+    "João Tomé, Jorge Pacheco, and Carlos Azevedo. 2025. From Googlebot to gptbot: Who's crawling your site in 2025. https://blog.cloudflare.com/from-googlebot- to-gptbot-whos-crawling-your-site-in-2025/",
+    "Hugo Touvron, Thibaut Lavril, Gautier Izacard, Xavier Martinet, Marie-Anne Lachaux, Timothée Lacroix, Baptiste Rozière, Naman Goyal, Eric Hambro, Faisal Azhar, Aurelien Rodriguez, Armand Joulin, Edouard Grave, and Guillaume Lample. 2023. LLAMA: Open and Efficient Foundation Language Models. arXiv:2302.13971 [cs.CL] https://arxiv.org/abs/2302.13971",
+    "Guillaume Wenzek, Marie-Anne Lachaux, Alexis Conneau, Vishrav Chaudhary, Francisco Guzmán, Armand Joulin, and Edouard Grave. 2020. CCNet: Extracting High Quality Monolingual Datasets from Web Crawl Data. In Proceedings of the Twelfth Language Resources and Evaluation Conference, Nicoletta Calzolari, Frédéric Béchet, Philippe Blache, Khalid Choukri, Christopher Cieri, Thierry Declerck, Sara Goggi, Hitoshi Isahara, Bente Maegaard, Joseph Mariani, Hélène Mazo, Asuncion Moreno, Jan Odijk, and Stelios Piperidis (Eds.). European Language Resources Association, Marseille, France, 4003-4012. https://aclanthology.org/2020.lrec-1.494/"
+  ],
+  "measurement_description": "Analysis of word co-occurrence patterns in hyperpartisan text to identify the over-representation of religious terminology in potential AI training datasets."
 }

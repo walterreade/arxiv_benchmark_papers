@@ -2,61 +2,15 @@
   "filename": "2510.26606.pdf",
   "title": "Normative Reasoning in Large Language Models: A Comparative Benchmark from Logical and Modal Perspectives",
   "arxiv_url": "https://arxiv.org/pdf/2510.26606",
-  "benchmark_measurement": "The benchmark did not measure any aspects of faith or religion. It focused on normative (deontic) and epistemic reasoning using general, common-sense, and nonsensical statements.",
-  "religious_groups": [],
-  "models_tested": [
-    "GPT-4o",
-    "GPT-4o-mini",
-    "Llama-3.1-8B-In",
-    "Llama-3.3-70B-In",
-    "Phi-4"
+  "bias_targets": [
+    {
+      "target": "Cognitive bias (Content effect / Belief bias)",
+      "methodology": "Evaluating model performance on logical reasoning tasks using premises and conclusions categorized into three content types: congruent (aligns with common sense), incongruent (contradicts common sense), and nonsense. This measures whether the model's logical validity judgments are improperly influenced by the believability of the content."
+    },
+    {
+      "target": "Domain-specific reasoning bias",
+      "methodology": "Comparing the performance of models on structurally similar logical reasoning tasks across two distinct domains: normative (deontic) reasoning and epistemic reasoning, to evaluate if reasoning capabilities are improperly skewed or domain-dependent."
+    }
   ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "none",
-  "base_benchmarks": [],
-  "continuous_testing": false,
-  "findings": "The paper does not contain any findings related to religion, as it was not a focus of the study.",
-  "references": [
-    "Marah Abdin, Jyoti Aneja, Harkirat Behl, Sébastien Bubeck, Ronen Eldan, Suriya Gunasekar, Michael Harrison, Russell J Hewett, Mojan Javaheripi, Piero Kauffmann, et al. 2024. Phi-4 technical report. arXiv preprint arXiv:2412.08905.",
-    "Guilherme F.C.F. Almeida, José Luiz Nunes, Neele Engelmann, Alex Wiegmann, and Marcelo de Araújo. 2024. Exploring the psychology of LLMs' moral and legal reasoning. Artificial Intelligence, 333:104145.",
-    "Risako Ando, Takanobu Morishita, Hirohiko Abe, Koji Mineshima, and Mitsuhiro Okada. 2023. Evaluating large language models with NeuBAROCO: Syllogistic reasoning ability and human-like biases. In Proceedings of the 4th Natural Logic Meets Machine Learning Workshop, pages 1-11.",
-    "Leonardo Bertolazzi, Albert Gatt, and Raffaella Bernardi. 2024. A systematic analysis of large language models as soft reasoners: The case of syllogistic inferences. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 13882–13905, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, et al. 2020. Language models are few-shot learners. Advances in neural information processing systems, 33:1877–1901.",
-    "Fengxiang Cheng, Haoxuan Li, Fenrong Liu, Robert van Rooij, Kun Zhang, and Zhouchen Lin. 2025. Empowering LLMs with logical reasoning: A comprehensive survey. arXiv preprint arXiv:2502.15652.",
-    "Patricia W Cheng and Keith J Holyoak. 1985. Pragmatic reasoning schemas. Cognitive psychology, 17(4):391-416.",
-    "Agata Ciabattoni, John F. Horty, Marija Slavkovik, Leendert van der Torre, and Aleks Knoks. 2023. Normative reasoning for AI (Dagstuhl seminar 23151). Dagstuhl Reports, 13(4):1-23.",
-    "Peter Clark, Oyvind Tafjord, and Kyle Richardson. 2020. Transformers as soft reasoners over language. In Proceedings of the Twenty-Ninth International Joint Conference on Artificial Intelligence (IJCAI’20), pages 3882-3890.",
-    "Leda Cosmides. 1989. The logic of social exchange: Has natural selection shaped how humans reason? studies with the wason selection task. Cognition, 31(3):187-276.",
-    "Leda Cosmides and John Tooby. 1992. Cognitive adaptations for social exchange. In The Adapted Mind: Evolutionary Psychology and the Generation of Culture. Oxford University Press.",
-    "Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Amy Yang, Angela Fan, et al. 2024. The llama 3 herd of models. arXiv preprint arXiv:2407.21783.",
-    "Tiwalayo Eisape, Michael Tessler, Ishita Dasgupta, Fei Sha, Sjoerd Steenkiste, and Tal Linzen. 2024. A systematic comparison of syllogistic reasoning in humans and language models. In Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 8425-8444.",
-    "Jonathan St.B. T. Evans, Stephen E. Newstead, and Ruth M. J. Byrne. 1993. Human Reasoning: The Psychology of Deduction. Psychology Press.",
-    "Laurence Fiddick. 2004. Domains of deontic reasoning: Resolving the discrepancy between the cognitive and moral reasoning literatures. The Quarterly Journal of Experimental Psychology Section A, 57(3):447–474.",
-    "D.M. Gabbay, J. Horty, and X. Parent. 2013. Handbook of Deontic Logic and Normative Systems. College Publications.",
-    "Iker García-Ferrero, Begoña Altuna, Javier Alvez, Itziar Gonzalez-Dios, and German Rigau. 2023. This is not a dataset: A large negation benchmark to challenge large language models. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, pages 8596–8615, Singapore. Association for Computational Linguistics.",
-    "Melody Y Guan, Manas Joglekar, Eric Wallace, Saachi Jain, Boaz Barak, Alec Heylar, Rachel Dias, Andrea Vallone, Hongyu Ren, Jason Wei, et al. 2024. Deliberative alignment: Reasoning enables safer language models. arXiv preprint arXiv:2412.16339.",
-    "Jaakko Hintikka. 1962. Knowledge and Belief. Cornell University Press.",
-    "Wesley H. Holliday, Matthew Mandelkern, and Cedegao E. Zhang. 2024. Conditional and modal reasoning in large language models. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 3800-3821.",
-    "Hans Kamp. 1973. Free choice permission. In Proceedings of the Aristotelian Society, volume 74, pages 57-74.",
-    "Takeshi Kojima, Shixiang Shane Gu, Machel Reid, Yutaka Matsuo, and Yusuke Iwasawa. 2022. Large language models are zero-shot reasoners. Advances in neural information processing systems, 35:22199–22213.",
-    "Andrew K Lampinen, Ishita Dasgupta, Stephanie C Y Chan, Hannah R Sheahan, Antonia Creswell, Dharshan Kumaran, James L McClelland, and Felix Hill. 2024. Language models, like humans, show content effects on reasoning tasks. PNAS Nexus, 3(7):pgae233.",
-    "Kyle Mahowald, Anna A. Ivanova, Idan A. Blank, Nancy Kanwisher, Joshua B. Tenenbaum, and Evelina Fedorenko. 2024. Dissociating language and thought in large language models. Trends in Cognitive Sciences, 28(6):517–540.",
-    "Paul McNamara and Frederik Van De Putte. 2022. Deontic Logic. In Edward N. Zalta and Uri Nodelman, editors, The Stanford Encyclopedia of Philosophy, Fall 2022 edition. Metaphysics Research Lab, Stanford University.",
-    "Philipp Mondorf and Barbara Plank. 2024. Beyond accuracy: Evaluating the reasoning behavior of large language models - a survey. In First Conference on Language Modeling.",
-    "Roberto Navigli, Simone Conia, and Björn Ross. 2023. Biases in large language models: Origins, inventory, and discussion. ACM Journal of Data and Information Quality, 15(4):1–37.",
-    "OpenAI. 2024. GPT-4o system card. arXiv preprint arXiv:2410.21276.",
-    "Kentaro Ozeki, Risako Ando, Takanobu Morishita, Hirohiko Abe, Koji Mineshima, and Mitsuhiro Okada. 2024. Exploring reasoning biases in large language models through syllogism: Insights from the NeuBAROCO dataset. In Findings of the Association for Computational Linguistics: ACL 2024.",
-    "Rasmus Rendsvig, John Symons, and Yanjing Wang. 2024. Epistemic Logic. In Edward N. Zalta and Uri Nodelman, editors, The Stanford Encyclopedia of Philosophy, Summer 2024 edition. Metaphysics Research Lab, Stanford University.",
-    "Alf Ross. 1941. Imperatives and logic. Theoria, 7(1):53-71.",
-    "Spencer M. Seals and Valerie L. Shalin. 2024. Evaluating the deductive competence of large language models. In Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 8614-8630, Mexico City, Mexico. Association for Computational Linguistics.",
-    "Emily Sheng, Kai-Wei Chang, Prem Natarajan, and Nanyun Peng. 2021. Societal biases in language generation: Progress and challenges. Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics, pages 4279-4303.",
-    "Thinh Hung Truong, Timothy Baldwin, Karin Verspoor, and Trevor Cohn. 2023. Language models are not naysayers: an analysis of language models on negation benchmarks. In Proceedings of the 12th Joint Conference on Lexical and Computational Semantics (*SEM 2023), pages 101–114, Toronto, Canada. Association for Computational Linguistics.",
-    "Georg Henrik von Wright. 1951. Deontic logic. Mind, 60(237):1-15.",
-    "Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Fei Xia, Ed Chi, Quoc V Le, Denny Zhou, et al. 2022. Chain-of-thought prompting elicits reasoning in large language models. Advances in Neural Information Processing Systems, 35:24824–24837."
-  ]
+  "primary_bias_target": "Cognitive bias"
 }

@@ -2,31 +2,78 @@
   "filename": "2507.14719.pdf",
   "title": "AUTOMATED SAFETY EVALUATIONS ACROSS 20 LARGE LANGUAGE MODELS: THE AYMARA LLM RISK AND RESPONSIBILITY MATRIX",
   "arxiv_url": "https://arxiv.org/pdf/2507.14719",
-  "bias_targets": [
-    {
-      "target": "Nationality bias",
-      "methodology": "Programmatic generation of adversarial prompts requesting stereotypes about different nationalities (e.g., historical stereotypes), with responses scored as safe or unsafe against a safety policy using an automated LLM-as-a-judge evaluator."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Programmatic generation of adversarial prompts asking for jokes or generalizations based on gender stereotypes, with responses scored for safety policy compliance using an automated LLM-as-a-judge evaluator."
-    },
-    {
-      "target": "Racial and Ethnicity bias",
-      "methodology": "Generating adversarial prompts that request subtle offensive content or euphemistic jokes regarding a person's ethnicity, evaluated by an LLM-as-a-judge for safety policy violations."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Testing model responses using prompts about religious stereotypes (e.g., analyzing media portrayals), with outputs scored as safe or unsafe by an automated LLM evaluator."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Prompting models to discuss or explain disability stereotypes (e.g., their influence on public policy) and scoring the resulting responses for safety policy compliance using an LLM-as-a-judge."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Generating prompts regarding sexual orientation stereotypes and using an automated LLM-as-a-judge to determine if the model's response violates hate speech and bias safety policies."
-    }
+  "religious_groups": [
+    "Religion (general)"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "GPT 4.1",
+    "GPT 4.1 Mini",
+    "GPT 4.1 Nano",
+    "Jamba 1.5 Large",
+    "Jamba 1.5 Mini",
+    "Nova Premier",
+    "Nova Pro",
+    "Nova Lite",
+    "Claude Sonnet 4",
+    "Claude Haiku 3.5",
+    "Command R+",
+    "Command R",
+    "DeepSeek-R1",
+    "Gemini 2.5 Flash",
+    "Gemini 2.5 Pro",
+    "LLAMA 4 Maverick",
+    "LLAMA 4 Scout",
+    "Mistral Large 2",
+    "Mistral Small",
+    "Grok-3"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": true,
+  "findings": "Models generally performed well in the 'Hate Speech & Bias' domain, which includes religion. This domain was in the 'top tier' of safety performance with a high mean safety score (91.1%), indicating that models are robustly protected against generating content that is biased or hateful based on religious attributes.",
+  "references": [
+    "Peng Zhang and Maged N. Kamel Boulos. Generative ai in medicine and healthcare: Promises, opportunities and challenges. Future Internet, 15(9), 2023.",
+    "Juan Manuel Contreras and M. Carpenter. Machina legalis: The evolution, education, and evaluation of legal ai. In Cambridge Forum on AI: Law and Governance, 2025. In press.",
+    "Uday Mittal, Siva Sai, Vinay Chamola, and Devika Sangwan. A comprehensive review on generative ai for education. IEEE Access, 12:142733-142759, 2024.",
+    "Siva Sai, Keya Arunakar, Vinay Chamola, Amir Hussain, Pranav Bisht, and Sanjeev Kumar. Generative ai for finance: Applications, case studies and challenges. Expert Systems, 42(3):e70018, 2025.",
+    "Malik Sallam. Chatgpt utility in healthcare education, research, and practice: Systematic review on the promising perspectives and valid concerns. Healthcare, 11(6), 2023.",
+    "Yaxuan Yin, Shamya Karumbaiah, and Shona Acquaye. Responsible ai in education: Understanding teachers' priorities and contextual challenges. In Proceedings of the 2025 ACM Conference on Fairness, Accountability, and Transparency, pages 2705-2727, 2025.",
+    "Michail Giannakos, Roger Azevedo, Peter Brusilovsky, Mutlu Cukurova, Yannis Dimitriadis, Davinia Hernandez-Leo, Sanna Järvelä, Manolis Mavrikis, and Bart Rienties. The promise and challenges of generative ai in education. Behaviour & Information Technology, 44(11):2518-2544, 2025.",
+    "San Murugesan. The rise of agentic ai: Implications, concerns, and the path forward. IEEE Intelligent Systems, 40(2):8-14, 2025.",
+    "Yihe Fan, Wenqi Zhang, Xudong Pan, and Min Yang. Evaluation faking: Unveiling observer effects in safety evaluation of frontier ai systems, 2025.",
+    "The European Parliament and the Council of the European Union. Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence (Artificial Intelligence Act). Official Journal of the European Union, L 2024/1689, 2024.",
+    "The White House. Removing Barriers to American Leadership in Artificial Intelligence. Presidential Action, jan 2025.",
+    "Colorado General Assembly. Senate Bill 24-205: Concerning Consumer Protections in Artificial Intelligence, may 2024. Signed into law May 17, 2024. Effective February 1, 2026.",
+    "Vinodkumar Prabhakaran, Rida Qadri, and Ben Hutchinson. Cultural incongruencies in artificial intelligence, 2022.",
+    "Xiao Ge, Chunchen Xu, Daigo Misaki, Hazel Rose Markus, and Jeanne L Tsai. How culture shapes what people want from ai. In Proceedings of the CHI Conference on Human Factors in Computing Systems. ACM, 2024.",
+    "Philipp Brauner, Felix Glawe, Gian Luca Liehner, Luisa Vervier, and Martina Ziefle. Ai perceptions across cultures: Similarities and differences in expectations, risks, benefits, tradeoffs, and value in germany and china, 2024.",
+    "Rebecca L Johnson, Giada Pistilli, Natalia Menédez-González, Leslye Denisse Dias Duran, Enrico Panai, Julija Kalpokiene, and Donald Jay Bertulfo. The ghost in the machine has an american accent: value conflict in gpt-3, 2022.",
+    "Wenjing Zhang, Siqi Xiao, Xuejiao Lei, Ning Wang, Huazheng Zhang, Meijuan An, Bikun Yang, Zhaoxiang Liu, Kai Wang, and Shiguo Lian. Methodology of adapting large english language models for specific cultural contexts, 2024.",
+    "Tarek Naous, Michael J Ryan, Alan Ritter, and Wei Xu. Having beer after prayer? measuring cultural bias in large language models, 2024.",
+    "Wenxuan Wang, Wenxiang Jiao, Jingyuan Huang, Ruyi Dai, Jen-tse Huang, Zhaopeng Tu, and Michael R. Lyu. Not all countries celebrate thanksgiving: On the cultural dominance in large language models, 2024.",
+    "David Rostcheck and Lara Scheibling. The elephant in the room why ai safety demands diverse teams, 2024.",
+    "Percy Liang, Rishi Bommasani, Tony Lee, Dimitris Tsipras, Dilara Soylu, Michihiro Yasunaga, Yian Zhang, Deepak Narayanan, Yuhuai Wu, Ananya Kumar, Benjamin Newman, Binhang Yuan, Bobby Yan, Ce Zhang, Christian Cosgrove, Christopher D. Manning, Christopher Ré, Diana Acosta-Navas, Drew A. Hudson, Eric Zelikman, Esin Durmus, Faisal Ladhak, Frieda Rong, Hongyu Ren, Huaxiu Yao, Jue Wang, Keshav Santhanam, Laurel Orr, Lucia Zheng, Mert Yuksekgonul, Mirac Suzgun, Nathan Kim, Neel Guha, Niladri Chatterji, Omar Khattab, Peter Henderson, Qian Huang, Ryan Chi, Sang Michael Xie, Shibani Santurkar, Surya Ganguli, Tatsunori Hashimoto, Thomas Icard, Tianyi Zhang, Vishrav Chaudhary, William Wang, Xuechen Li, Yifan Mai, Yuhui Zhang, and Yuta Koreeda. Holistic evaluation of language models, 2023.",
+    "Yue Huang, Lichao Sun, Haoran Wang, Siyuan Wu, Qihui Zhang, Yuan Li, Chujie Gao, Yixin Huang, Wenhan Lyu, Yixuan Zhang, Xiner Li, Zhengliang Liu, Yixin Liu, Yijue Wang, Zhikun Zhang, Bertie Vidgen, Bhavya Kailkhura, Caiming Xiong, Chaowei Xiao, Chunyuan Li, Eric Xing, Furong Huang, Hao Liu, Heng Ji, Hongyi Wang, Huan Zhang, Huaxiu Yao, Manolis Kellis, Marinka Zitnik, Meng Jiang, Mohit Bansal, James Zou, Jian Pei, Jian Liu, Jianfeng Gao, Jiawei Han, Jieyu Zhao, Jiliang Tang, Jindong Wang, Joaquin Vanschoren, John Mitchell, Kai Shu, Kaidi Xu, Kai-Wei Chang, Lifang He, Lifu Huang, Michael Backes, Neil Zhenqiang Gong, Philip S. Yu, Pin-Yu Chen, Quanquan Gu, Ran Xu, Rex Ying, Shuiwang Ji, Suman Jana, Tianlong Chen, Tianming Liu, Tianyi Zhou, William Wang, Xiang Li, Xiangliang Zhang, Xiao Wang, Xing Xie, Xun Chen, Xuyu Wang, Yan Liu, Yanfang Ye, Yinzhi Cao, Yong Chen, and Yue Zhao. Trustllm: Trustworthiness in large language models, 2024.",
+    "Prannaya Gupta, Le Qi Yau, Hao Han Low, I-Shiang Lee, Hugo Maximus Lim, Yu Xin Teoh, Jia Hng Koh, Dar Win Liew, Rishabh Bhardwaj, Rajat Bhardwaj, and Soujanya Poria. Walledeval: A comprehensive safety evaluation toolkit for large language models, 2024.",
+    "Zheng-Xin Yong, Beyza Ermis, Marzieh Fadaee, Stephen H. Bach, and Julia Kreutzer. The state of multilingual llm safety research: From measuring the language gap to mitigating it, 2025.",
+    "Yue Deng, Wenxuan Zhang, Sinno Jialin Pan, and Lidong Bing. Multilingual jailbreak challenges in large language models, 2024.",
+    "Aidan Peppin, Julia Kreutzer, Alice Schoenauer Sebag, Kelly Marchisio, Beyza Ermis, John Dang, Samuel Cahyawijaya, Shivalika Singh, Seraphina Goldfarb-Tarrant, Viraat Aryabumi, Aakanksha, Wei-Yin Ko, Ahmet Üstün, Matthias Gallé, Marzieh Fadaee, and Sara Hooker. The multilingual divide and its impact on global ai safety, 2025.",
+    "Maribeth Rauh, Nahema Marchal, Arianna Manzini, Lisa Anne Hendricks, Ramona Comanescu, Canfer Akbulut, Tom Stepleton, Juan Mateos-Garcia, Stevie Bergman, Jackie Kay, Conor Griffin, Ben Bariach, Iason Gabriel, Verena Rieser, William Isaac, and Laura Weidinger. Gaps in the safety evaluation of generative ai. Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society, 7(1):1200-1217, 2024.",
+    "Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric Xing, Hao Zhang, Joseph E Gonzalez, and Ion Stoica. Judging llm-as-a-judge with mt-bench and chatbot arena. In A. Oh, T. Naumann, A. Globerson, K. Saenko, M. Hardt, and S. Levine, editors, Advances in Neural Information Processing Systems, volume 36, pages 46595-46623. Curran Associates, Inc., 2023.",
+    "Balint Gyevnar and Atoosa Kasirzadeh. Ai safety for everyone. Nature Machine Intelligence, pages 1-12, 2025.",
+    "Kevin Klyman. Acceptable use policies for foundation models. In Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society, volume 7, pages 752-767, 2024.",
+    "Jacob Cohen. A coefficient of agreement for nominal scales. Educational and Psychological Measurement, 20(1):37-46, 1960.",
+    "Ronald Aylmer Fisher. Statistical Methods for Research Workers. Oliver and Boyd, Edinburgh, 1925.",
+    "John W. Tukey. The Problem of Multiple Comparisons. Technical report, Princeton University, 1953. Unpublished manuscript.",
+    "Anthropic. Core Views on AI Safety: When, Why, What, and How. Blog Post, March 2023.",
+    "Sarah Naseer and Onyi Lam. 34% of U.S. adults have used ChatGPT, about double the share in 2023. Pew Research Center, Jun 2025.",
+    "Nico Grant. Google Says It Fixed Image Generator That Failed to Depict White People. The New York Times, Aug 2024."
+  ],
+  "measurement_description": "The benchmark measured whether LLMs would generate hateful, offensive, or discriminatory content based on religion, as part of the 'Hate Speech & Bias' safety domain."
 }

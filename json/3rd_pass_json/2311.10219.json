@@ -2,11 +2,90 @@
   "filename": "2311.10219.pdf",
   "title": "Measuring Moral Dimensions in Social Media with Mformer",
   "arxiv_url": "https://arxiv.org/pdf/2311.10219",
-  "bias_targets": [
-    {
-      "target": "Gender bias",
-      "methodology": "Comparing the average predicted moral foundation scores (specifically for 'authority' and 'care') assigned by different text-scoring methods to social media posts containing the word 'father' versus posts containing the word 'mother' to identify gendered familial role stereotypes."
-    }
+  "religious_groups": [
+    "Atheism",
+    "Christianity"
   ],
-  "primary_bias_target": "Gender bias"
+  "models_tested": [
+    "Mformer (RoBERTa-base)",
+    "Word count (MFD, MFD 2.0, eMFD)",
+    "Embedding similarity (GloVe)",
+    "Logistic Regression",
+    "Support Vector Machine (SVM)"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Moral foundation vignettes (VIG)",
+    "Moral arguments (ARG)",
+    "Social chemistry (SC)",
+    "Moral Integrity Corpus (MIC)"
+  ],
+  "continuous_testing": false,
+  "findings": "The Mformer model found that online discussions against atheism are significantly associated with the moral foundations of 'sanctity', 'loyalty', and 'care', while discussions in favor of atheism are associated with 'fairness' and 'authority'. It also successfully identified the distinct moral foundations ('care' vs. 'fairness', 'authority', 'sanctity') used in conflicting judgments within a specific moral dilemma involving a Roman Catholic wedding.",
+  "references": [
+    "Amin, A. B.; Bednarczyk, R. A.; Ray, C. E.; Melchiori, K. J.; Graham, J.; Huntsinger, J. R.; and Omer, S. B. 2017. Association of Moral Values with Vaccine Hesitancy. Nature Human Behaviour, 1(12): 873-880.",
+    "Atari, M.; Haidt, J.; Graham, J.; Koleva, S.; Stevens, S. T.; and Dehghani, M. 2022. Morality Beyond the WEIRD: How the Nomological Network of Morality Varies Across Cultures. PsyArXiv.",
+    "Botzer, N.; Gu, S.; and Weninger, T. 2022. Analysis of Moral Judgment on Reddit. IEEE Transactions on Computational Social Systems, 1-11.",
+    "Clifford, S.; Iyengar, V.; Cabeza, R.; and Sinnott-Armstrong, W. 2015. Moral Foundations Vignettes: A Standardized Stimulus Database of Scenarios Based on Moral Foundations Theory. Behavior Research Methods, 47(4): 1178–1198.",
+    "Clifford, S.; and Jerit, J. 2013. How Words Do the Work of Politics: Moral Foundations Theory and the Debate over Stem Cell Research. The Journal of Politics, 75(3): 659-671.",
+    "Curry, O. S. 2016. Morality as Cooperation: A Problem-Centred Approach. In Shackelford, T. K.; and Hansen, R. D., eds., The Evolution of Morality, 27–51. Cham: Springer International Publishing.",
+    "Curry, O. S.; Mullins, D. A.; and Whitehouse, H. 2019. Is It Good to Cooperate? Testing the Theory of Morality-as-Cooperation in 60 Societies. Current Anthropology, 60(1): 47-69.",
+    "Devlin, J.; Chang, M.-W.; Lee, K.; and Toutanova, K. 2019. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding. In Proceedings of the Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), 4171-4186. Association for Computational Linguistics.",
+    "Fawcett, T. 2006. An Introduction to ROC Analysis. Pattern Recognition Letters, 27(8): 861-874.",
+    "Feinberg, M.; and Willer, R. 2013. The Moral Roots of Environmental Attitudes. Psychological Science, 24(1): 56-62.",
+    "Fleiss, J. L. 1971. Measuring Nominal Scale Agreement among Many Raters. Psychological bulletin, 76(5): 378.",
+    "Forbes, M.; Hwang, J. D.; Shwartz, V.; Sap, M.; and Choi, Y. 2020. Social Chemistry 101: Learning to Reason about Social and Moral Norms. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), 653–670.",
+    "Frimer, J. A.; Haidt, J.; Graham, J.; Dehgani, M.; and Boghrati, R. 2019. Moral Foundations Dictionary 2.0.",
+    "Garten, J.; Hoover, J.; Johnson, K. M.; Boghrati, R.; Iskiwitch, C.; and Dehghani, M. 2018. Dictionaries and Distributions: Combining Expert Knowledge and Large Scale Textual Data Content Analysis. Behavior Research Methods, 50(1): 344-361.",
+    "González-Bailón, S.; and Paltoglou, G. 2015. Signals of Public Opinion in Online Communication: A Comparison of Methods and Data Sources. The ANNALS of the American Academy of Political and Social Science, 659(1): 95-107.",
+    "Graham, J.; and Haidt, J. 2012. The Moral Foundations Dictionary.",
+    "Graham, J.; Haidt, J.; Koleva, S.; Motyl, M.; Iyer, R.; Wojcik, S. P.; and Ditto, P. H. 2013. Moral Foundations Theory: The Pragmatic Validity of Moral Pluralism. In Advances in Experimental Social Psychology, volume 47, 55-130. Elsevier.",
+    "Graham, J.; Haidt, J.; and Nosek, B. A. 2009. Liberals and Conservatives Rely on Different Sets of Moral Foundations. Journal of personality and social psychology, 96(5): 1029.",
+    "Guo, S.; Mokhberian, N.; and Lerman, K. 2023. A Data Fusion Framework for Multi-Domain Morality Learning. In Proceedings of the International AAAI Conference on Web and Social Media, volume 17, 281-291.",
+    "Habernal, I.; and Gurevych, I. 2016. What Makes a Convincing Argument? Empirical Analysis and Detecting Attributes of Convincingness in Web Argumentation. In Proceedings of the 2016 Conference on Empirical Methods in Natural Language Processing, 1214-1223. Austin, Texas: Association for Computational Linguistics.",
+    "Haidt, J. 2012. The Righteous Mind: Why Good People Are Divided by Politics and Religion. Vintage.",
+    "Haidt, J.; and Graham, J. 2007. When Morality Opposes Justice: Conservatives Have Moral Intuitions That Liberals May Not Recognize. Social Justice Research, 20(1): 98–116.",
+    "Haidt, J.; and Joseph, C. 2004. Intuitive Ethics: How Innately Prepared Intuitions Generate Culturally Variable Virtues. Daedalus, 133(4): 55-66.",
+    "Honnibal, M.; Montani, I.; Van Landeghem, S.; and Boyd, A. 2020. spaCy: Industrial-strength Natural Language Processing in Python.",
+    "Hoover, J.; Portillo-Wightman, G.; Yeh, L.; Havaldar, S.; Davani, A. M.; Lin, Y.; Kennedy, B.; Atari, M.; Kamel, Z.; Mendlen, M.; Moreno, G.; Park, C.; Chang, T. E.; Chin, J.; Leong, C.; Leung, J. Y.; Mirinjian, A.; and Dehghani, M. 2020. Moral Foundations Twitter Corpus: A Collection of 35K Tweets Annotated for Moral Sentiment. Social Psychological and Personality Science, 11(8): 1057-1071.",
+    "Hopp, F.; Fisher, J.; and Weber, R. 2020. A Graph-Learning Approach for Detecting Moral Conflict in Movie Scripts. Media and Communication, 8(3): 164–179.",
+    "Hopp, F. R.; Fisher, J. T.; Cornell, D.; Huskey, R.; and Weber, R. 2021. The Extended Moral Foundations Dictionary (eMFD): Development and Applications of a Crowd-Sourced Approach to Extracting Moral Intuitions from Text. Behavior Research Methods, 53(1): 232-246.",
+    "Kobbe, J.; Rehbein, I.; Hulpuş, I.; and Stuckenschmidt, H. 2020. Exploring Morality in Argumentation. In Proceedings of the 7th Workshop on Argument Mining, 30-40.",
+    "Koleva, S. P.; Graham, J.; Iyer, R.; Ditto, P. H.; and Haidt, J. 2012. Tracing the Threads: How Five Moral Concerns (Especially Purity) Help Explain Culture War Attitudes. Journal of Research in Personality, 46(2): 184-194.",
+    "Leetaru, K.; and Schrodt, P. A. 2013. GDELT: Global Data on Events, Location and Tone, 1979-2012. ISA Annual Convention, 2(4): 1-49.",
+    "Liscio, E.; Dondera, A.; Geadau, A.; Jonker, C.; and Murukannaiah, P. 2022. Cross-Domain Classification of Moral Values. In Findings of the Association for Computational Linguistics: NAACL 2022, 2727-2745. Seattle, United States: Association for Computational Linguistics.",
+    "Liu, Y.; Ott, M.; Goyal, N.; Du, J.; Joshi, M.; Chen, D.; Levy, O.; Lewis, M.; Zettlemoyer, L.; and Stoyanov, V. 2019. ROBERTa: A Robustly Optimized BERT Pretraining Approach. arXiv preprint arXiv:1907.11692.",
+    "Loshchilov, I.; and Hutter, F. 2018. Decoupled Weight Decay Regularization. In International Conference on Learning Representations.",
+    "Manning, C. D.; Raghavan, P.; and Schütze, H. 2008. Introduction to Information Retrieval. Cambridge University Press.",
+    "McAdams, D. P.; Albaugh, M.; Farber, E.; Daniels, J.; Logan, R. L.; and Olson, B. 2008. Family Metaphors and Moral Intuitions: How Conservatives and Liberals Narrate Their Lives. Journal of personality and social psychology, 95(4): 978.",
+    "Mikolov, T.; Sutskever, I.; Chen, K.; Corrado, G. S.; and Dean, J. 2013. Distributed Representations of Words and Phrases and Their Compositionality. In Advances in Neural Information Processing Systems, volume 26. Curran Associates, Inc.",
+    "Mohammad, S.; Kiritchenko, S.; Sobhani, P.; Zhu, X.; and Cherry, C. 2016. SemEval-2016 Task 6: Detecting Stance in Tweets. In Proceedings of the 10th International Workshop on Semantic Evaluation (SemEval-2016), 31–41. San Diego, California: Association for Computational Linguistics.",
+    "Mohammad, S. M.; Sobhani, P.; and Kiritchenko, S. 2017. Stance and Sentiment in Tweets. ACM Transactions on Internet Technology (TOIT), 17(3): 1–23.",
+    "Mokhberian, N.; Abeliuk, A.; Cummings, P.; and Lerman, K. 2020. Moral Framing and Ideological Bias of News. In Social Informatics, volume 12467, 206-219. Cham: Springer International Publishing.",
+    "Nguyen, T. D.; Lyall, G.; Tran, A.; Shin, M.; Carroll, N. G.; Klein, C.; and Xie, L. 2022. Mapping Topics in 100,000 Real-Life Moral Dilemmas. Proceedings of the International AAAI Conference on Web and Social Media, 16: 699-710.",
+    "Pang, B.; and Lee, L. 2008. Opinion Mining and Sentiment Analysis. Foundations and TrendsⓇ in information retrieval, 2(1-2): 1-135.",
+    "Pennington, J.; Socher, R.; and Manning, C. D. 2014. GloVe: Global Vectors for Word Representation. In Empirical Methods in Natural Language Processing (EMNLP), 1532-1543.",
+    "Puschmann, C.; and Powell, A. 2018. Turning Words into Consumer Preferences: How Sentiment Analysis Is Framed in Research and the News Media. Social Media+ Society, 4(3): 2056305118797724.",
+    "Reimers, N.; and Gurevych, I. 2019. Sentence-BERT: Sentence Embeddings Using Siamese BERT-Networks. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing. Association for Computational Linguistics.",
+    "Rezapour, R.; Dinh, L.; and Diesner, J. 2021. Incorporating the Measurement of Moral Foundations Theory into Analyzing Stances on Controversial Topics. In Proceedings of the 32nd ACM Conference on Hypertext and Social Media, 177–188. Virtual Event USA: ACM.",
+    "Rezapour, R.; Shah, S. H.; and Diesner, J. 2019. Enhancing the Measurement of Social Effects by Capturing Morality. In Proceedings of the Tenth Workshop on Computational Approaches to Subjectivity, Sentiment and Social Media Analysis, 35–45. Minneapolis, USA: Association for Computational Linguistics.",
+    "Schwartz, H. A.; and Ungar, L. H. 2015. Data-Driven Content Analysis of Social Media: A Systematic Overview of Automated Methods. The Annals of the American Academy of Political and Social Science, 659(1): 78–94.",
+    "Sechidis, K.; Tsoumakas, G.; and Vlahavas, I. 2011. On the Stratification of Multi-label Data. Machine Learning and Knowledge Discovery in Databases, 145–158.",
+    "Sim, J.; and Wright, C. C. 2005. The Kappa Statistic in Reliability Studies: Use, Interpretation, and Sample Size Requirements. Physical therapy, 85(3): 257-268.",
+    "Szymański, P.; and Kajdanowicz, T. 2017. A Network Perspective on Stratification of Multi-Label Data. In Torgo, L.; Krawczyk, B.; Branco, P.; and Moniz, N., eds., Proceedings of the First International Workshop on Learning with Imbalanced Domains: Theory and Applications, volume 74 of Proceedings of Machine Learning Research, 22-35. ECML-PKDD, Skopje, Macedonia: PMLR.",
+    "Tausczik, Y. R.; and Pennebaker, J. W. 2010. The Psychological Meaning of Words: LIWC and Computerized Text Analysis Methods. Journal of Language and Social Psychology, 29(1): 24-54.",
+    "Trager, J.; Ziabari, A. S.; Davani, A. M.; Golazizian, P.; Karimi-Malekabadi, F.; Omrani, A.; Li, Z.; Kennedy, B.; Reimer, N. K.; Reyes, M.; Cheng, K.; Wei, M.; Merrifield, C.; Khosravi, A.; Alvarez, E.; and Dehghani, M. 2022. The Moral Foundations Reddit Corpus. arXiv preprint arXiv:2208.05545.",
+    "van Leeuwen, F.; and Park, J. H. 2009. Perceptions of Social Dangers, Moral Foundations, and Political Orientation. Personality and Individual Differences, 47(3): 169–173.",
+    "Wachsmuth, H.; Naderi, N.; Hou, Y.; Bilu, Y.; Prabhakaran, V.; Thijm, T. A.; Hirst, G.; and Stein, B. 2017. Computational Argumentation Quality Assessment in Natural Language. In Proceedings of the 15th Conference of the European Chapter of the Association for Computational Linguistics: Volume 1, Long Papers, 176-187. Valencia, Spain: Association for Computational Linguistics.",
+    "Weinzierl, M. A.; and Harabagiu, S. M. 2022. From Hesitancy Framings to Vaccine Hesitancy Profiles: A Journey of Stance, Ontological Commitments and Moral Foundations. Proceedings of the International AAAI Conference on Web and Social Media, 16: 1087-1097.",
+    "Zhou, K.; Smith, A.; and Lee, L. 2021. Assessing Cognitive Linguistic Influences in the Assignment of Blame. In Proceedings of the Ninth International Workshop on Natural Language Processing for Social Media, 61–69. Association for Computational Linguistics.",
+    "Ziems, C.; Yu, J.; Wang, Y.-C.; Halevy, A.; and Yang, D. 2022. The Moral Integrity Corpus: A Benchmark for Ethical Dialogue Systems. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), 3755-3773. Dublin, Ireland: Association for Computational Linguistics."
+  ],
+  "measurement_description": "The association of moral foundations (including 'sanctity', a concept related to purity and the sacred) with user stances on atheism, and the prevalence of moral foundations in online discussions about religious topics like Roman Catholicism."
 }

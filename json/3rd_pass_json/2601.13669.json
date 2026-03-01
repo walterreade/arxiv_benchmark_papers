@@ -2,31 +2,109 @@
   "filename": "2601.13669.pdf",
   "title": "CommunityBench: Benchmarking Community-Level Alignment across Diverse Groups and Tasks",
   "arxiv_url": "https://arxiv.org/pdf/2601.13669",
-  "bias_targets": [
-    {
-      "target": "Cultural bias",
-      "methodology": "Evaluating models' ability to represent diverse minority norms and pluralistic values across 6,919 online communities using the CommunityBench dataset through four tasks: preference identification, preference distribution prediction, community-consistent generation, and community identification."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Measuring the accuracy of models in simulating individual survey responses (via the SocioBench benchmark) when conditioned on gender identity profiles."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Measuring the accuracy of models in simulating individual survey responses (via the SocioBench benchmark) when conditioned on religious identity profiles."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Measuring the accuracy of models in simulating individual survey responses (via the SocioBench benchmark) when conditioned on age identity profiles."
-    },
-    {
-      "target": "Nationality bias",
-      "methodology": "Measuring the accuracy of models in simulating individual survey responses (via the SocioBench benchmark) when conditioned on country and national identity profiles."
-    },
-    {
-      "target": "Socioeconomic bias",
-      "methodology": "Measuring the accuracy of models in simulating individual survey responses (via the SocioBench benchmark) when conditioned on socioeconomic status and urbanity profiles."
-    }
+  "religious_groups": [],
+  "models_tested": [
+    "Qwen2.5-7B-Instruct",
+    "Qwen2.5-14B-Instruct",
+    "Qwen2.5-72B-Instruct",
+    "Qwen3-8B",
+    "Qwen3-14B",
+    "Qwen3-32B",
+    "Llama3.1-8B-Instruct",
+    "Llama3.1-70B-Instruct",
+    "Llama3.3-70B-Instruct",
+    "InternLM3-8B-Instruct",
+    "Mistral-7B-Instruct-v0.3",
+    "GLM-4-9B-0414",
+    "GLM-4-32B-0414",
+    "DeepSeek-V3-0324",
+    "DeepSeek-R1-0528",
+    "GPT-40",
+    "Grok-4",
+    "Grok-4-Fast",
+    "Gemini-2.5-Flash"
   ],
-  "primary_bias_target": "Cultural bias"
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "SocioBench",
+    "SocioVerse",
+    "PRISM",
+    "Com-Align",
+    "GlobalQA",
+    "OpinionQA",
+    "ComPO",
+    "Dist-Align"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper found that group identities, including religion, have domain-specific sensitivity in modeling individual opinions. For instance, religious identity was shown to be a more influential predictor for opinions on 'Citizenship' and 'Family' values compared to other domains. The study highlights a mechanism of 'selective expression,' where individuals prioritize specific identity traits like religion depending on the situational context.",
+  "references": [
+    "Lora Aroyo, Alex Taylor, Mark Diaz, Christopher Homan, Alicia Parrish, Gregory Serapio-García, Vinodkumar Prabhakaran, and Ding Wang. 2023. Dices dataset: Diversity in conversational ai evaluation for safety. Advances in Neural Information Processing Systems, 36:53330-53342.",
+    "Amanda Askell, Yuntao Bai, Anna Chen, Dawn Drain, Deep Ganguli, Tom Henighan, Andy Jones, Nicholas Joseph, Ben Mann, Nova DasSarma, and 1 others. 2021. A general language assistant as a laboratory for alignment. arXiv preprint arXiv:2112.00861.",
+    "Yuntao Bai, Andy Jones, Kamal Ndousse, Amanda Askell, Anna Chen, Nova DasSarma, Dawn Drain, Stanislav Fort, Deep Ganguli, Tom Henighan, and 1 others. 2022a. Training a helpful and harmless assistant with reinforcement learning from human feedback. arXiv preprint arXiv:2204.05862.",
+    "Yuntao Bai, Saurav Kadavath, Sandipan Kundu, Amanda Askell, Jackson Kernion, Andy Jones, Anna Chen, Anna Goldie, Azalia Mirhoseini, Cameron McKinnon, and 1 others. 2022b. Constitutional ai: Harmlessness from ai feedback. arXiv preprint arXiv:2212.08073.",
+    "Emily M Bender, Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. 2021. On the dangers of stochastic parrots: Can language models be too big? In Proceedings of the 2021 ACM conference on fairness, accountability, and transparency, pages 610-623.",
+    "Daniele Calandriello, Daniel Guo, Remi Munos, Mark Rowland, Yunhao Tang, Bernardo Avila Pires, Pierre Harvey Richemond, Charline Le Lan, Michal Valko, Tianqi Liu, and 1 others. 2024. Human alignment of large language models through online preference optimisation. arXiv preprint arXiv:2403.08635.",
+    "Stephen Casper, Xander Davies, Claudia Shi, Thomas Krendl Gilbert, Jérémy Scheurer, Javier Rando, Rachel Freedman, Tomasz Korbak, David Lindner, Pedro Freire, and 1 others. 2023. Open problems and fundamental limitations of reinforcement learning from human feedback. arXiv preprint arXiv:2307.15217.",
+    "Kai Chen, Zihao He, Taiwei Shi, and Kristina Lerman. 2025. Steer-bench: A benchmark for evaluating the steerability of large language models. arXiv preprint arXiv:2505.20645.",
+    "Pengyu Cheng, Jiawen Xie, Ke Bai, Yong Dai, and Nan Du. 2023. Everyone deserves a reward: Learning customized human preferences. arXiv preprint arXiv:2309.03126.",
+    "Yu Ying Chiu, Liwei Jiang, Bill Yuchen Lin, Chan Young Park, Shuyue Stella Li, Sahithya Ravi, Mehar Bhatia, Maria Antoniak, Yulia Tsvetkov, Vered Shwartz, and 1 others. 2025. Culturalbench: A robust, diverse and challenging benchmark for measuring Ims' cultural knowledge through human-ai red-teaming. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 25663–25701.",
+    "Yi Dong, Zhilin Wang, Makesh Sreedhar, Xianchao Wu, and Oleksii Kuchaiev. 2023. Steerlm: Attribute conditioned sft as an (user-steerable) alternative to rlhf. In Findings of the Association for Computational Linguistics: EMNLP 2023, pages 11275-11288.",
+    "Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Amy Yang, Angela Fan, and 1 others. 2024. The llama 3 herd of models. arXiv preprint arXiv:2407.21783.",
+    "Esin Durmus, Karina Nguyen, Thomas I Liao, Nicholas Schiefer, Amanda Askell, Anton Bakhtin, Carol Chen, Zac Hatfield-Dodds, Danny Hernandez, Nicholas Joseph, and 1 others. 2023. Towards measuring the representation of subjective global opinions in language models. arXiv preprint arXiv:2306.16388.",
+    "Kawin Ethayarajh, Winnie Xu, Niklas Muennighoff, Dan Jurafsky, and Douwe Kiela. 2024. Kto: Model alignment as prospect theoretic optimization. arXiv preprint arXiv:2402.01306.",
+    "Shangbin Feng, Taylor Sorensen, Yuhan Liu, Jillian Fisher, Chan Young Park, Yejin Choi, and Yulia Tsvetkov. 2024. Modular pluralism: Pluralistic alignment via multi-llm collaboration. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 4151-4171.",
+    "Iason Gabriel. 2020. Artificial intelligence, values, and alignment. Minds and machines, 30(3):411-437.",
+    "Amelia Glaese, Nat McAleese, Maja Trębacz, John Aslanides, Vlad Firoiu, Timo Ewalds, Maribeth Rauh, Laura Weidinger, Martin Chadwick, Phoebe Thacker, and 1 others. 2022. Improving alignment of dialogue agents via targeted human judgements. arXiv preprint arXiv:2209.14375.",
+    "Team GLM, Aohan Zeng, Bin Xu, Bowen Wang, Chen- hui Zhang, Da Yin, Dan Zhang, Diego Rojas, Guanyu Feng, Hanlin Zhao, and 1 others. 2024. Chatglm: A family of large language models from glm-130b to glm-4 all tools. arXiv preprint arXiv:2406.12793.",
+    "Jian Guan, Junfei Wu, Jia-Nan Li, Chuanqi Cheng, and Wei Wu. 2025. A survey on personalized alignment-the missing piece for large language models in real-world applications. arXiv preprint arXiv:2503.17003.",
+    "Daya Guo, Dejian Yang, Haowei Zhang, Junxiao Song, Ruoyu Zhang, Runxin Xu, Qihao Zhu, Shi- rong Ma, Peiyi Wang, Xiao Bi, and 1 others. 2025. Deepseek-r1: Incentivizing reasoning capability in Ilms via reinforcement learning. arXiv preprint arXiv:2501.12948.",
+    "Aman Gupta, Denny O'Shea, and Fazl Barez. 2025. Val-bench: Measuring value alignment in language models. arXiv preprint arXiv:2510.05465.",
+    "Jiwoo Hong, Noah Lee, and James Thorne. 2024. Orpo: Monolithic preference optimization without refer- ence model. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 11170–11189.",
+    "Jiaming Ji, Tianyi Qiu, Boyuan Chen, Borong Zhang, Hantao Lou, Kaile Wang, Yawen Duan, Zhonghao He, Lukas Vierling, Donghai Hong, Jiayi Zhou, Zhaowei Zhang, Fanzhi Zeng, Juntao Dai, Xuehai Pan, Kwan Yee Ng, Aidan O'Gara, Hua Xu, Brian Tse, and 7 others. 2025. Ai alignment: A comprehen- sive survey. Preprint, arXiv:2310.19852.",
+    "Albert Q. Jiang, Alexandre Sablayrolles, Arthur Men- sch, Chris Bamford, Devendra Singh Chaplot, Diego de las Casas, Florian Bressand, Gianna Lengyel, Guil- laume Lample, Lucile Saulnier, Lélio Renard Lavaud, Marie-Anne Lachaux, Pierre Stock, Teven Le Scao, Thibaut Lavril, Thomas Wang, Timothée Lacroix, and William El Sayed. 2023. Mistral 7b. Preprint, arXiv:2310.06825.",
+    "Hannah Rose Kirk, Andrew M Bean, Bertie Vidgen, Paul Röttger, and Scott A Hale. 2023. The past, present and better future of feedback learning in large language models for subjective human preferences and values. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, pages 2409-2430.",
+    "Hannah Rose Kirk, Alexander Whitefield, Paul Rottger, Andrew M Bean, Katerina Margatina, Rafael Mosquera-Gomez, Juan Ciro, Max Bartolo, Adina Williams, He He, and 1 others. 2024. The prism alignment dataset: What participatory, representa- tive and individualised human feedback reveals about the subjective and multicultural alignment of large language models. Advances in Neural Information Processing Systems, 37:105236-105344.",
+    "Sachin Kumar, Chan Young Park, Yulia Tsvetkov, Noah A Smith, and Hannaneh Hajishirzi. 2025. Compo: Community preferences for language model personalization. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 8246-8279.",
+    "Jan Leike, David Krueger, Tom Everitt, Miljan Martic, Vishal Maini, and Shane Legg. 2018. Scalable agent alignment via reward modeling: a research direction. arXiv preprint arXiv:1811.07871.",
+    "Cheng Li, Mengzhuo Chen, Jindong Wang, Sunayana Sitaram, and Xing Xie. 2024. Culturellm: Incorpo- rating cultural differences into large language models. Advances in Neural Information Processing Systems, 37:84799-84838.",
+    "Jia-Nan Li, Jian Guan, Songhao Wu, Wei Wu, and Rui Yan. 2025. From 1,000,000 users to every user: Scal- ing up personalized preference for user-level align- ment. arXiv preprint arXiv:2503.15463.",
+    "Aixin Liu, Bei Feng, Bing Xue, Bingxuan Wang, Bochao Wu, Chengda Lu, Chenggang Zhao, Chengqi Deng, Chenyu Zhang, Chong Ruan, and 1 others. 2024. Deepseek-v3 technical report. arXiv preprint arXiv:2412.19437.",
+    "Nicole Meister, Carlos Guestrin, and Tatsunori Hashimoto. 2025. Benchmarking distributional alignment of large language models. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Lin- guistics: Human Language Technologies (Volume 1: Long Papers), pages 24-49, Albuquerque, New Mexico. Association for Computational Linguistics.",
+    "Meta. 2024. Llama 3.3 model card. https://github.com/meta-llama/llama-models/blob/main/models/llama3_3/MODEL_CARD.md.",
+    "Reiichiro Nakano, Jacob Hilton, Suchir Balaji, Jeff Wu, Long Ouyang, Christina Kim, Christopher Hesse, Shantanu Jain, Vineet Kosaraju, William Saunders, and 1 others. 2021. Webgpt: Browser-assisted question-answering with human feedback. arXiv preprint arXiv:2112.09332.",
+    "OpenAI. 2024. Gpt-40 system card. https://openai.com/index/gpt-4o-system-card/.",
+    "Long Ouyang, Jeffrey Wu, Xu Jiang, Diogo Almeida, Carroll Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, and 1 others. 2022. Training language models to follow in- structions with human feedback. Advances in neural information processing systems, 35:27730–27744.",
+    "Deborah A Prentice, Dale T Miller, and Jenifer R Lightdale. 1994. Asymmetries in attachments to groups and to their members: Distinguishing between common-identity and common-bond groups. Personality and Social Psychology Bulletin, 20(5):484-493.",
+    "Rafael Rafailov, Archit Sharma, Eric Mitchell, Christopher D Manning, Stefano Ermon, and Chelsea Finn. 2023. Direct preference optimization: Your language model is secretly a reward model. Advances in neural information processing systems, 36:53728–53741.",
+    "Abhinav Sukumar Rao, Akhila Yerukola, Vishwa Shah, Katharina Reinecke, and Maarten Sap. 2025. Normad: A framework for measuring the cultural adaptability of large language models. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 2373-2403.",
+    "Yuqing Ren, Robert Kraut, and Sara Kiesler. 2007. Applying common identity and bond theory to design of online communities. Organization studies, 28(3):377-408.",
+    "Shibani Santurkar, Esin Durmus, Faisal Ladhak, Cinoo Lee, Percy Liang, and Tatsunori Hashimoto. 2023. Whose opinions do language models reflect? In International Conference on Machine Learning, pages 29971-30004. PMLR.",
+    "Bilgehan Sel, Priya Shanmugasundaram, Mohammad Kachuee, Kun Zhou, Ruoxi Jia, and Ming Jin. 2024. Skin-in-the-game: Decision making via multi- stakeholder alignment in llms. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 13921-13959.",
+    "Anand Siththaranjan, Cassidy Laidlaw, and Dylan Hadfield-Menell. 2023. Distributional preference learning: Understanding and accounting for hidden context in rlhf. arXiv preprint arXiv:2312.08358.",
+    "Taylor Sorensen, Liwei Jiang, Jena D Hwang, Sydney Levine, Valentina Pyatkin, Peter West, Nouha Dziri, Ximing Lu, Kavel Rao, Chandra Bhagavatula, and 1 others. 2024a. Value kaleidoscope: Engaging ai with pluralistic human values, rights, and duties. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 38, pages 19937–19947.",
+    "Taylor Sorensen, Jared Moore, Jillian Fisher, Mitchell Gordon, Niloofar Mireshghallah, Christopher Michael Rytting, Andre Ye, Liwei Jiang, Ximing Lu, Nouha Dziri, and 1 others. 2024b. Position: a roadmap to pluralistic alignment. In Proceedings of the 41st International Conference on Machine Learning, pages 46280-46302.",
+    "Yan Tao, Olga Viberg, Ryan S Baker, and René F Kizilcec. 2024. Cultural bias and cultural alignment of large language models. PNAS nexus, 3(9):pgae346.",
+    "The InternLM Team. 2025. Internlm3-8b-instruct. https://huggingface.co/internlm/internlm3-8b-instruct.",
+    "Jia Wang, Ziyu Zhao, Tingjuntao Ni, and Zhongyu Wei. 2025. SocioBench: Modeling human behavior in sociological surveys with large language models. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing, pages 26268-26300, Suzhou, China. Association for Computational Linguistics.",
+    "Yuhang Wang, Yanxu Zhu, Chao Kong, Shuyu Wei, Xiaoyuan Yi, Xing Xie, and Jitao Sang. 2024. Cdeval: A benchmark for measuring the cultural dimensions of large language models. In Proceedings of the 2nd Workshop on Cross-Cultural Considerations in NLP, pages 1-16.",
+    "Jason Wei, Maarten Bosma, Vincent Y Zhao, Kelvin Guu, Adams Wei Yu, Brian Lester, Nan Du, Andrew M Dai, and Quoc V Le. 2022. Finetuned language models are zero-shot learners. In International Conference on Learning Representations.",
+    "Laura Weidinger, John Mellor, Maribeth Rauh, Conor Griffin, Jonathan Uesato, Po-Sen Huang, Myra Cheng, Mia Glaese, Borja Balle, Atoosa Kasirzadeh, and 1 others. 2021. Ethical and social risks of harm from language models. arXiv preprint arXiv:2112.04359.",
+    "Simon Werner, Katharina Christ, Laura Bernardy, Marion G. Müller, and Achim Rettinger. 2025. Pov learning: Individual alignment of multimodal models using human perception. Preprint, arXiv:2405.04443.",
+    "Shujin Wu, Yi R Fung, Cheng Qian, Jeonghwan Kim, Dilek Hakkani-Tur, and Heng Ji. 2025. Aligning Ilms with individual preferences via interaction. In Proceedings of the 31st International Conference on Computational Linguistics, pages 7648-7662.",
+    "xAI Team. 2025. Grok-4: A new generation of reasoning models. https://x.ai/blog/grok-4.",
+    "An Yang, Anfeng Li, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chang Gao, Chengen Huang, Chenxu Lv, and 1 others. 2025a. Qwen3 technical report. arXiv preprint arXiv:2505.09388.",
+    "An Yang, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chengyuan Li, Dayiheng Liu, Fei Huang, Haoran Wei, Huan Lin, Jian Yang, Jian- hong Tu, Jianwei Zhang, Jianxin Yang, Jiaxi Yang, Jingren Zhou, Junyang Lin, Kai Dang, and 23 others. 2025b. Qwen2.5 technical report. Preprint, arXiv:2412.15115.",
+    "Da Yin, Haoyi Qiu, Kung-Hsiang Huang, Kai-Wei Chang, and Nanyun Peng. 2024. Safeworld: Geo- diverse safety alignment. Advances in Neural Information Processing Systems, 37:128734–128768.",
+    "Weizhe Yuan, Richard Yuanzhe Pang, Kyunghyun Cho, Xian Li, Sainbayar Sukhbaatar, Jing Xu, and Jason E Weston. 2024. Self-rewarding language models. In Forty-first International Conference on Machine Learning.",
+    "Lily Hong Zhang, Smitha Milli, Karen Jusko, Jonathan Smith, Brandon Amos, Wassim Bouaziz, Manon Revel, Jack Kussman, Yasha Sheynin, Lisa Titus, and 1 others. 2025a. Cultivating pluralism in algorithmic monoculture: The community alignment dataset. arXiv preprint arXiv:2507.09650.",
+    "Xinnong Zhang, Jiayu Lin, Xinyi Mou, Shiyue Yang, Xiawei Liu, Libo Sun, Hanjia Lyu, Yihang Yang, Weihong Qi, Yue Chen, Guanying Li, Ling Yan, Yao Hu, Siming Chen, Yu Wang, Xuanjing Huang, Jiebo Luo, Shiping Tang, Libo Wu, and 2 others. 2025b. Socioverse: A world model for social simulation powered by Ilm agents and a pool of 10 million real- world users. Preprint, arXiv:2504.10157."
+  ],
+  "measurement_description": "The benchmark measured how well models can predict an individual's opinions on various social domains (e.g., Citizenship, Family, Role of Government) based on their group identities, with religion being one of the key identity attributes. It assesses the domain-specific influence of religious identity on an individual's stance."
 }

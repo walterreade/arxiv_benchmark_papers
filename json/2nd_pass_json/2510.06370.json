@@ -2,103 +2,15 @@
   "filename": "2510.06370.pdf",
   "title": "EVALUESTEER: MEASURING REWARD MODEL STEERABILITY TOWARDS VALUES AND PREFERENCES",
   "arxiv_url": "https://arxiv.org/pdf/2510.06370",
-  "benchmark_measurement": "Steerability of models to align with user profiles on the value of religiosity (e.g., importance of God), as part of the Traditional vs. Secular-Rational value dimension from the World Values Survey.",
-  "religious_groups": [
-    "Religion (general)",
-    "Protestantism"
+  "bias_targets": [
+    {
+      "target": "Cultural bias",
+      "methodology": "Projecting reward model responses onto the Inglehart-Welzel cultural map to measure inherent preferences for secular-rational and self-expression values over traditional and survival values derived from the World Values Survey."
+    },
+    {
+      "target": "Stylistic bias",
+      "methodology": "Measuring the proportion of times reward models implicitly select responses with specific stylistic attributes (verbosity, high reading difficulty, confidence, warmth) over their opposites in neutral settings without explicit user context."
+    }
   ],
-  "models_tested": [
-    "GPT-4.1-Mini",
-    "Gemini-2.5-Flash",
-    "Llama-3.1-8B",
-    "Qwen-2.5-7B",
-    "Skywork-Llama-3.1-8B",
-    "Skywork-Qwen-3-8B"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "other"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "World Values Survey (WVS)",
-    "PRISM"
-  ],
-  "continuous_testing": false,
-  "findings": "Reward Models (RMs) exhibit a strong and systematic secular bias. They consistently prefer responses that align with a low importance of God and other secular values over traditional ones. This bias is suggested to reflect the cultural composition of the models' pre-training data and annotation sources, which are noted to cluster near English-speaking Protestant European populations.",
-  "references": [
-    "Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia Leoni Ale- man, Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat, et al. Gpt-4 technical report. arXiv preprint arXiv:2303.08774, 2023.",
-    "Zachary Ankner, Mansheej Paul, Brandon Cui, Jonathan Daniel Chang, and Prithviraj Am- manabrolu. Critique-out-loud reward models. In Pluralistic Alignment Workshop at NeurIPS 2024, 2024.",
-    "Edmond Awad, Sohan Dsouza, Richard Kim, Jonathan Schulz, Joseph Henrich, Azim Shariff, Jean- François Bonnefon, and Iyad Rahwan. The moral machine experiment. Nature, 563(7729):59–64, 2018.",
-    "Yuntao Bai, Saurav Kadavath, Sandipan Kundu, Amanda Askell, John Kernion, Andy Jones, Anna Chen, Anna Goldie, Azalia Mirhoseini, Cameron McKinnon, Carol Chen, Catherine Olsson, Christopher Olah, Danny Hernandez, Dawn Drain, Deep Ganguli, Dustin Li, Eli Tran-Johnson, E Perez, Jamie Kerr, Jared Mueller, Jeff Ladish, J Landau, Kamal Ndousse, Kamilė Lukoiūtė, Liane Lovitt, Michael Sellitto, Nelson Elhage, Nicholas Schiefer, Noem'i Mercado, Nova Das- sarma, Robert Lasenby, Robin Larson, Sam Ringer, Scott Johnston, Shauna Kravec, Sheer El Showk, Stanislav Fort, Tamera Lanham, Timothy Telleen-Lawton, Tom Conerly, Tom Henighan, Tristan Hume, Sam Bowman, Zac Hatfield-Dodds, Benjamin Mann, Dario Amodei, Nicholas Joseph, Sam McCandlish, Tom B. Brown, and Jared Kaplan. Constitutional ai: Harmlessness from ai feedback. ArXiv, abs/2212.08073, 2022. URL https://api.semanticscholar. org/CorpusID:254823489.",
-    "Maarten Buyl, Hadi Khalaf, Claudio Mayrink Verdun, Lucas Monteiro Paes, Caio Cesar Vieira Machado, and Flavio du Pin Calmon. Ai alignment at your discretion. In Proceed- ings of the 2025 ACM Conference on Fairness, Accountability, and Transparency, FAccT '25, pp. 3046-3074, New York, NY, USA, 2025. Association for Computing Machinery. ISBN 9798400714825. doi: 10.1145/3715275.3732194. URL https://doi.org/10.1145/ 3715275.3732194.",
-    "Louis Castricato, Nathan Lile, Rafael Rafailov, Jan-Philipp Fränken, and Chelsea Finn. Persona: A reproducible testbed for pluralistic alignment, 2024. URL https://arxiv.org/abs/ 2407.17387.",
-    "Jingwen Cheng, Kshitish Ghate, Wenyue Hua, William Yang Wang, Hong Shen, and Fei Fang. Realm: A dataset of real-world Ilm use cases. arXiv preprint arXiv:2503.18792, 2025a.",
-    "Myra Cheng, Sunny Yu, and Dan Jurafsky. Humt dumt: Measuring and controlling human-like language in Ilms. arXiv preprint arXiv:2502.13259, 2025b.",
-    "Yu Ying Chiu, Liwei Jiang, and Yejin Choi. Dailydilemmas: Revealing value preferences of LLMs with quandaries of daily life. In The Thirteenth International Conference on Learning Represen- tations, 2025. URL https://openreview.net/forum?id=PGhiPGBf47.",
-    "Francois Chollet, Mike Knoop, Gregory Kamradt, and Bryan Landers. Arc prize 2024: Technical report. arXiv preprint arXiv:2412.04604, 2024.",
-    "Brian Christian, Hannah Rose Kirk, Jessica A.F. Thompson, Christopher Summerfield, and Tsve- tomira Dumbalska. Reward model interpretability via optimal and pessimal tokens. In Proceed- ings of the 2025 ACM Conference on Fairness, Accountability, and Transparency, FAccT '25, pp. 1048-1059. ACM, June 2025. doi: 10.1145/3715275.3732068. URL http://dx.doi.org/ 10.1145/3715275.3732068.",
-    "Gheorghe Comanici, Eric Bieber, Mike Schaekermann, Ice Pasupat, Noveen Sachdeva, Inderjit Dhillon, Marcel Blistein, Ori Ram, Dan Zhang, Evan Rosen, et al. Gemini 2.5: Pushing the frontier with advanced reasoning, multimodality, long context, and next generation agentic capa- bilities. arXiv preprint arXiv:2507.06261 2025.",
-    "Ganqu Cui, Lifan Yuan, Ning Ding, Guanming Yao, Bingxiang He, Wei Zhu, Yuan Ni, Guotong Xie, Ruobing Xie, Yankai Lin, Zhiyuan Liu, and Maosong Sun. Ultrafeedback: Boosting language models with scaled ai feedback, 2024. URL https://arxiv.org/abs/2310.01377.",
-    "Josef Dai, Xuehai Pan, Ruiyang Sun, Jiaming Ji, Xinbo Xu, Mickel Liu, Yizhou Wang, and Yaodong Yang. Safe rlhf: Safe reinforcement learning from human feedback. In The Twelfth International Conference on Learning Representations, 2024. URL https://openreview.net/forum? id=TyFrPOKYXW.",
-    "Cristian Danescu-Niculescu-Mizil, Moritz Sudhof, Dan Jurafsky, Jure Leskovec, and Christopher Potts. A computational approach to politeness with application to social factors. arXiv preprint arXiv:1306.6078, 2013.",
-    "Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Amy Yang, Angela Fan, et al. The llama 3 herd of models. arXiv e-prints, pp. arXiv-2407, 2024.",
-    "Benjamin Feuer, Micah Goldblum, Teresa Datta, Sanjana Nambiar, Raz Besaleli, Samuel Dooley, Max Cembalest, and John P Dickerson. Style outweighs substance: Failure modes of Ilm judges in alignment benchmarking. arXiv preprint arXiv:2409.15268, 2024.",
-    "Evan Frick, Tianle Li, Connor Chen, Wei-Lin Chiang, Anastasios Nikolas Angelopoulos, Jiantao Jiao, Banghua Zhu, Joseph E. Gonzalez, and Ion Stoica. How to evaluate reward models for RLHF. In The Thirteenth International Conference on Learning Representations, 2025. URL https://openreview.net/forum?id=cbttLtO94Q.",
-    "Srishti Gureja, Lester James V Miranda, Shayekh Bin Islam, Rishabh Maheshwary, Dr- ishti Sharma, Gusti Winata, Nathan Lambert, Sebastian Ruder, Sara Hooker, and Marzieh Fadaee. M-rewardbench: Evaluating reward models in multilingual settings. arXiv preprint arXiv:2410.15522, 2024.",
-    "Christian Haerpfer, Ronald Inglehart, Alejandro Moreno, Christian Welzel, Kseniya Kizilova, Jaime Diez-Medrano, Marta Lagos, Pippa Norris, Eduard Ponarin, and Bi Puranen. World values survey wave 7 (2017-2022) cross-national data-set. (No Title), 2022.",
-    "Kunal Handa, Alex Tamkin, Miles McCain, Saffron Huang, Esin Durmus, Sarah Heck, Jared Mueller, Jerry Hong, Stuart Ritchie, Tim Belonax, et al. Which economic tasks are performed with ai? evidence from millions of claude conversations. arXiv preprint arXiv:2503.04761, 2025.",
-    "Dan Hendrycks, Collin Burns, Steven Basart, Andrew Critch, Jerry Li, Dawn Song, and Jacob Steinhardt. Aligning {ai} with shared human values. In International Conference on Learning Representations, 2021. URL https://openreview.net/forum?id=dNy_RKzJacY.",
-    "Clayton Hutto and Eric Gilbert. Vader: A parsimonious rule-based model for sentiment analysis of social media text. In Proceedings of the international AAAI conference on web and social media, volume 8, pp. 216-225, 2014.",
-    "Ronald Inglehart, Christian Haerpfer, Alejandro Moreno, Christian Welzel, Kseniya Kizilova, Jaime Diez-Medrano, Marta Lagos, Pippa Norris, Eduard Ponarin, Bogdan Puranen, et al. World values survey: Round six-country-pooled datafile version. Madrid: JD systems institute, 12, 2014.",
-    "Jiaming Ji, Mickel Liu, Juntao Dai, Xuehai Pan, Chi Zhang, Ce Bian, Boyuan Chen, Ruiyang Sun, Yizhou Wang, and Yaodong Yang. Beavertails: Towards improved safety alignment of LLM via a human-preference dataset. In Thirty-seventh Conference on Neural Information Processing Systems Datasets and Benchmarks Track, 2023. URL https://openreview.net/forum? id=g0QovXbFw3.",
-    "Liwei Jiang, Jena D. Hwang, Chandra Bhagavatula, Ronan Le Bras, Jenny Liang, Jesse Dodge, Keisuke Sakaguchi, Maxwell Forbes, Jon Borchardt, Saadia Gabriel, Yulia Tsvetkov, Oren Et- zioni, Maarten Sap, Regina Rini, and Yejin Choi. Can machines learn morality? the delphi experiment, 2022. URL https://arxiv.org/abs/2110.07574.",
-    "Liwei Jiang, Taylor Sorensen, Sydney Levine, and Yejin Choi. Can language models reason about individualistic human values and preferences? arXiv preprint arXiv:2410.03868, 2024.",
-    "Meiqing Jin, Liam Dugan, and Chris Callison-Burch. Controlling difficulty of generated text for ai-assisted language learning. arXiv preprint arXiv:2506.04072, 2025a.",
-    "Zhijing Jin, Sydney Levine, Fernando Gonzalez Adauto, Ojasv Kamal, Maarten Sap, Mrinmaya Sachan, Rada Mihalcea, Joshua B. Tenenbaum, and Bernhard Schölkopf. When to make excep- tions: Exploring language models as accounts of human moral judgment. In Alice H. Oh, Alekh Agarwal, Danielle Belgrave, and Kyunghyun Cho (eds.), Advances in Neural Information Pro- cessing Systems, 2022. URL https://openreview.net/forum?id=uP9RiC4uVcR.",
-    "Zhijing Jin, Max Kleiman-Weiner, Giorgio Piatti, Sydney Levine, Jiarui Liu, Fernando Gonza- lez Adauto, Francesco Ortu, András Strausz, Mrinmaya Sachan, Rada Mihalcea, Yejin Choi, and Bernhard Schölkopf. Language model alignment in multilingual trolley problems. In The Thirteenth International Conference on Learning Representations, 2025b. URL https: //openreview.net/forum?id=VEqPDZIDAh.",
-    "Zhuoran Jin, Hongbang Yuan, Tianyi Men, Pengfei Cao, Yubo Chen, Kang Liu, and Jun Zhao. Rag- rewardbench: Benchmarking reward models in retrieval augmented generation for preference alignment, 2024. URL https://arxiv.org/abs/2412.13746.",
-    "Mohsinul Kabir, Ajwad Abrar, and Sophia Ananiadou. Break the checkbox: Challenging closed- style evaluations of cultural alignment in Ilms. arXiv preprint arXiv:2502.08045, 2025.",
-    "Atoosa Kasirzadeh. Plurality of value pluralism and ai value alignment. In Pluralistic Alignment Workshop at NeurIPS 2024, 2024.",
-    "Atoosa Kasirzadeh and Iason Gabriel. In conversation with artificial intelligence: aligning language models with human values. Philosophy & Technology, 36(2):27, 2023.",
-    "Sunghwan Kim, Dongjin Kang, Taeyoon Kwon, Hyungjoo Chae, Jungsoo Won, Dongha Lee, and Jinyoung Yeo. Evaluating robustness of reward models for mathematical reasoning, 2025. URL https://openreview.net/forum?id=0er6aOyXUD.",
-    "Hannah Rose Kirk, Alexander Whitefield, Paul Röttger, Andrew Michael Bean, Katerina Margatina, Rafael Mosquera, Juan Manuel Ciro, Max Bartolo, Adina Williams, He He, Bertie Vidgen, and Scott A. Hale. The PRISM alignment dataset: What participatory, representative and individu- alised human feedback reveals about the subjective and multicultural alignment of large language models. In The Thirty-eight Conference on Neural Information Processing Systems Datasets and Benchmarks Track, 2024. URL https://openreview.net/forum?id=DFr5hteojx.",
-    "Nathan Lambert, Valentina Pyatkin, Jacob Morrison, LJ Miranda, Bill Yuchen Lin, Khyathi Chandu, Nouha Dziri, Sachin Kumar, Tom Zick, Yejin Choi, Noah A. Smith, and Hannaneh Hajishirzi. Rewardbench: Evaluating reward models for language modeling, 2024.",
-    "Dongryeol Lee, Yerin Hwang, Yongil Kim, Joonsuk Park, and Kyomin Jung. Are llm-judges ro- bust to expressions of uncertainty? investigating the effect of epistemic markers on Ilm-based evaluation. arXiv preprint arXiv:2410.20774, 2024.",
-    "Cheng Li, Mengzhuo Chen, Jindong Wang, Sunayana Sitaram, and Xing Xie. Culturellm: In- corporating cultural differences into large language models. Advances in Neural Information Processing Systems, 37:84799–84838, 2024.",
-    "Jing-Jing Li, Valentina Pyatkin, Max Kleiman-Weiner, Liwei Jiang, Nouha Dziri, Anne Collins, Jana Schaich Borg, Maarten Sap, Yejin Choi, and Sydney Levine. Safetyanalyst: Interpretable, transparent, and steerable safety moderation for AI behavior. In Forty-second International Conference on Machine Learning, 2025. URL https://openreview.net/forum?id= WUGrleBcYP.",
-    "Andy Liu, Mona Diab, and Daniel Fried. Evaluating large language model biases in persona-steered generation. In Lun-Wei Ku, Andre Martins, and Vivek Srikumar (eds.), Findings of the Asso- ciation for Computational Linguistics: ACL 2024, pp. 9832–9850, Bangkok, Thailand, August 2024a. Association for Computational Linguistics. doi: 10.18653/v1/2024.findings-acl.586. URL https://aclanthology.org/2024.findings-acl.586/.",
-    "Chris Yuhao Liu, Liang Zeng, Jiacai Liu, Rui Yan, Jujie He, Chaojie Wang, Shuicheng Yan, Yang Liu, and Yahui Zhou. Skywork-reward: Bag of tricks for reward modeling in llms. arXiv preprint arXiv:2410.18451, 2024b.",
-    "Yantao Liu, Zijun Yao, Rui Min, Yixin Cao, Lei Hou, and Juanzi Li. Rm-bench: Benchmarking reward models of language models with subtlety and style. arXiv preprint arXiv:2410.16184, 2024c.",
-    "Yantao Liu, Zijun Yao, Rui Min, Yixin Cao, Lei Hou, and Juanzi Li. RM-bench: Benchmarking reward models of language models with subtlety and style. In The Thirteenth International Con- ference on Learning Representations, 2025. URL https://openreview.net/forum? id=QEHrmQPBdd.",
-    "Xing Han Lù, Amirhossein Kazemnejad, Nicholas Meade, Arkil Patel, Dongchan Shin, Alejan- dra Zambrano, Karolina Stańczak, Peter Shaw, Christopher J. Pal, and Siva Reddy. Agentre- wardbench: Evaluating automatic evaluations of web agent trajectories, 2025. URL https: //arxiv.org/abs/2504.08942.",
-    "Saumya Malik, Valentina Pyatkin, Sander Land, Jacob Morrison, Noah A. Smith, Hannaneh Ha- jishirzi, and Nathan Lambert. Rewardbench 2: Advancing reward model evaluation, 2025. URL https://arxiv.org/abs/2506.01937.",
-    "Joel Mire, Zubin Trivadi Aysola, Daniel Chechelnitsky, Nicholas Deas, Chrysoula Zerva, and Maarten Sap. Rejected dialects: Biases against African American language in reward models. In Luis Chiruzzo, Alan Ritter, and Lu Wang (eds.), Findings of the Association for Computational Linguistics: NAACL 2025, pp. 7468–7487, Albuquerque, New Mexico, April 2025. Association for Computational Linguistics. ISBN 979-8-89176-195-7. doi: 10.18653/v1/2025.findings-naacl. 417. URL https://aclanthology.org/2025.findings-naacl.417/.",
-    "Long Ouyang, Jeff Wu, Xu Jiang, Diogo Almeida, Carroll L. Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, John Schulman, Jacob Hilton, Fraser Kel- ton, Luke Miller, Maddie Simens, Amanda Askell, Peter Welinder, Paul Christiano, Jan Leike, and Ryan Lowe. Training language models to follow instructions with human feedback. In Pro- ceedings of the 36th International Conference on Neural Information Processing Systems, NIPS '22, Red Hook, NY, USA, 2022a. Curran Associates Inc. ISBN 9781713871088.",
-    "Long Ouyang, Jeffrey Wu, Xu Jiang, Diogo Almeida, Carroll Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, John Schulman, Jacob Hilton, Fraser Kel- ton, Luke Miller, Maddie Simens, Amanda Askell, Peter Welinder, Paul F Christiano, Jan Leike, and Ryan Lowe. Training language models to follow instructions with human feedback. In S. Koyejo, S. Mohamed, A. Agarwal, D. Belgrave, K. Cho, and A. Oh (eds.), Advances in Neural Information Processing Systems, volume 35, pp. 27730–27744. Curran Associates, Inc., 2022b. URL https://proceedings.neurips.cc/paper_files/paper/2022/ file/blefde53be364a73914f58805a001731-Paper-Conference.pdf.",
-    "Evi Papadopoulou, Hadi Mohammadi, and Ayoub Bagheri. Large language models as mirrors of societal moral standards. arXiv preprint arXiv:2412.00956, 2024.",
-    "Rafael Rafailov, Archit Sharma, Eric Mitchell, Christopher D Manning, Stefano Ermon, and Chelsea Finn. Direct preference optimization: Your language model is secretly a reward model. In A. Oh, T. Naumann, A. Globerson, K. Saenko, M. Hardt, and S. Levine (eds.), Advances in Neural Information Processing Systems, volume 36, pp. 53728–53741. Curran Associates, Inc., 2023. URL https://proceedings.neurips.cc/paper_files/paper/2023/ file/a85b405ed65c6477a4fe8302b5e06ce7-Paper-Conference.pdf.",
-    "Keita Saito, Akifumi Wachi, Koki Wataoka, and Youhei Akimoto. Verbosity bias in preference labeling by large language models. arXiv preprint arXiv:2310.10076, 2023.",
-    "Vinay Samuel, Henry Peng Zou, Yue Zhou, Shreyas Chaudhari, Ashwin Kalyan, Tanmay Rajpuro- hit, Ameet Deshpande, Karthik Narasimhan, and Vishvak Murahari. Personagym: Evaluating persona agents and Ilms. arXiv preprint arXiv:2407.18416, 2024.",
-    "Akshit Sinha, Arvindh Arun, Shashwat Goel, Steffen Staab, and Jonas Geiping. The illusion of diminishing returns: Measuring long horizon execution in llms. arXiv preprint arXiv:2509.09677, 2025.",
-    "Taylor Sorensen, Liwei Jiang, Jena D. Hwang, Sydney Levine, Valentina Pyatkin, Peter West, Nouha Dziri, Ximing Lu, Kavel Rao, Chandra Bhagavatula, Maarten Sap, John Tasioulas, and Yejin Choi. Value kaleidoscope: Engaging ai with pluralistic human values, rights, and duties. In AAAI Conference on Artificial Intelligence, 2023. URLhttps://api.semanticscholar.org/ CorpusID:261531157.",
-    "Taylor Sorensen, Jared Moore, Jillian Fisher, Mitchell Gordon, Niloofar Mireshghallah, Christo- pher Michael Rytting, Andre Ye, Liwei Jiang, Ximing Lu, Nouha Dziri, Tim Althoff, and Yejin Choi. Position: a roadmap to pluralistic alignment. In Proceedings of the 41st International Conference on Machine Learning, ICML’24. JMLR.org, 2024.",
-    "Mark Steyvers, Heliodoro Tejeda, Aakriti Kumar, Catarina Belem, Sheer Karny, Xinyue Hu, Lukas Mayer, and Padhraic Smyth. The calibration gap between model and human confidence in large language models. arXiv preprint arXiv:2401.13835, 2024.",
-    "Zhiqing Sun, Yikang Shen, Hongxin Zhang, Qinhong Zhou, Zhenfang Chen, David D. Cox, Yiming Yang, and Chuang Gan. Salmon: Self-alignment with instructable reward mod- els. In International Conference on Learning Representations, 2023. URL https://api. semanticscholar.org/CorpusID:263831633.",
-    "Yan Tao, Olga Viberg, Ryan S Baker, and René F Kizilcec. Cultural bias and cultural alignment of large language models. PNAS nexus, 3(9):pgae346, 2024.",
-    "Hieu Tran, Zonghai Yao, Lingxi Li, and Hong Yu. Readctrl: Personalizing text generation with readability-controlled instruction learning. arXiv preprint arXiv:2406.09205, 2024.",
-    "Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Fei Xia, Ed Chi, Quoc V Le, Denny Zhou, et al. Chain-of-thought prompting elicits reasoning in large language models. Advances in neural information processing systems, 35:24824–24837, 2022.",
-    "Chengxing Xie, Canyu Chen, Feiran Jia, Ziyu Ye, Shiyang Lai, Kai Shu, Jindong Gu, Adel Bibi, Ziniu Hu, David Jurgens, et al. Can large language model agents simulate human trust behavior? Advances in neural information processing systems, 37:15674–15729, 2024.",
-    "An Yang, Anfeng Li, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chang Gao, Chengen Huang, Chenxu Lv, et al. Qwen3 technical report. arXiv preprint arXiv:2505.09388, 2025.",
-    "Tian Ye, Zicheng Xu, Yuanzhi Li, and Zeyuan Allen-Zhu. Physics of language models: Part 2.2, how to learn from mistakes on grade-school math problems. arXiv preprint arXiv:2408.16293, 2024.",
-    "Lily H Zhang, Smitha Milli, Karen Long Jusko, Jonathan Smith, Brandon Amos, Wassim Bouaziz, Jack Kussman, Manon Revel, Lisa Titus, Bhaktipriya Radharapu, Jane Yu, Vidya Sarma, Kristo- pher Rose, and Maximilian Nickel. Cultivating pluralism in algorithmic monoculture: The com- munity alignment dataset. In 2nd Workshop on Models of Human Feedback for AI Alignment, 2025. URL https://openreview.net/forum?id=4hbwVQ6OMd.",
-    "Wenting Zhao, Xiang Ren, Jack Hessel, Claire Cardie, Yejin Choi, and Yuntian Deng. Wildchat: 1m chatgpt interaction logs in the wild. arXiv preprint arXiv:2405.01470, 2024.",
-    "Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Tianle Li, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zhuohan Li, Zi Lin, Eric P Xing, et al. Lmsys-chat-1m: A large-scale real-world Ilm conversation dataset. arXiv preprint arXiv:2309.11998, 2023a.",
-    "Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric Xing, et al. Judging llm-as-a-judge with mt-bench and chatbot arena. Advances in neural information processing systems, 36:46595–46623, 2023b.",
-    "Enyu Zhou, Guodong Zheng, Binghai Wang, Zhiheng Xi, Shihan Dou, Rong Bao, Wei Shen, Limao Xiong, Jessica Fan, Yurong Mou, Rui Zheng, Tao Gui, Qi Zhang, and Xuanjing Huang. RMB: Comprehensively benchmarking reward models in LLM alignment. In The Thirteenth Interna- tional Conference on Learning Representations, 2025. URL https://openreview.net/ forum?id=kmgrlG9TRO.",
-    "Kaitlyn Zhou, Jena D Hwang, Xiang Ren, and Maarten Sap. Relying on the unreliable: The impact of language models' reluctance to express uncertainty. arXiv preprint arXiv:2401.06730, 2024.",
-    "Thomas P. Zollo, Andrew Wei Tung Siah, Naimeng Ye, Ang Li, and Hongseok Namkoong. Personalllm: Tailoring llms to individual preferences. ArXiv, abs/2409.20296, 2024. URL https://api.semanticscholar.org/CorpusID:272987425."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

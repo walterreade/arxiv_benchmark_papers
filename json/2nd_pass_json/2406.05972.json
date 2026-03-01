@@ -2,69 +2,47 @@
   "filename": "2406.05972.pdf",
   "title": "Decision-Making Behavior Evaluation Framework for LLMs under Uncertain Context",
   "arxiv_url": "https://arxiv.org/pdf/2406.05972",
-  "benchmark_measurement": "The benchmark measured the sensitivity of LLM decision-making parameters (risk preference, probability weighting, and loss aversion) when the models were prompted with personas having specific religious identities.",
-  "religious_groups": [
-    "Christianity",
-    "Judaism",
-    "Atheism",
-    "Other religions"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Assigning male or female identities to LLM personas and evaluating variations in decision-making parameters (risk preference, probability weighting, and loss aversion) through multiple-choice lottery games."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Embedding different age groups into LLM personas and measuring shifts in behavioral economics parameters using probabilistic multiple-choice lists."
+    },
+    {
+      "target": "Educational bias",
+      "methodology": "Assigning varying education levels (e.g., below lower secondary to graduate degrees) to personas and estimating the impact on LLM risk and loss aversion tendencies."
+    },
+    {
+      "target": "Marital status bias",
+      "methodology": "Evaluating decision-making behavior changes when LLMs are prompted with personas of different marital statuses (never married, married, widowed, divorced)."
+    },
+    {
+      "target": "Geographic bias",
+      "methodology": "Comparing the decision-making parameters of LLMs when their prompted personas are assigned rural versus urban living areas."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Injecting different sexual orientations (heterosexual, homosexual, bisexual, asexual) into personas to observe differences in the models' risk-taking and loss aversion."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Comparing the decision-making behaviors and probability weighting tendencies of LLMs when prompted with physically-disabled versus able-bodied personas."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Assigning distinct racial backgrounds (African, Hispanic, Asian, Caucasian) to personas and measuring discrepancies in financial decision-making parameters."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Embedding religious affiliations (Jewish, Christian, Atheist, Religious) in prompts and evaluating the effects on LLM risk preferences and loss aversion."
+    },
+    {
+      "target": "Political bias",
+      "methodology": "Assigning specific political beliefs and affiliations to personas to analyze how political context shifts the models' decision-making under uncertainty."
+    }
   ],
-  "models_tested": [
-    "ChatGPT-4-Turbo",
-    "Claude-3-Opus",
-    "Gemini-1.0-pro"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [],
-  "continuous_testing": false,
-  "findings": "Gemini showed a significant decrease in loss aversion for Christian personas compared to the comparison group (lifelong Democrats). Claude and ChatGPT did not show significant sensitivity to religious backgrounds in their decision-making parameters.",
-  "references": [
-    "Akata, E., Schulz, L., & others. (2023). Playing repeated games with large language models. arXiv preprint arXiv:2305.16867.",
-    "Andersen, S., Harrison, G. W., & others. (2008). Eliciting risk and time preferences. Econometrica.",
-    "Apicella, C. L., Dreber, A., & others. (2008). Testosterone and financial risk preferences. Evolution and Human Behavior.",
-    "Binswanger, H. P. (1981). Attitudes toward risk: Theoretical implications of an experiment in rural India. The Economic Journal.",
-    "Brand, J., Israeli, A., & Ngwe, D. (2023). Using gpt for market research. Available at SSRN 4395751.",
-    "Brown, T.B. Language models are few-shot learners. arXiv preprint arXiv:2005.14165, 2020.",
-    "Chen, Y., Liu, T. X., & others. (2023). The emergence of economic rationality of GPT. Proceedings of the National Academy of Sciences.",
-    "Chiang, C.-W., Lu, Z., & others. (2024). Enhancing AI-Assisted Group Decision Making through LLM-Powered Devil's Advocate. In Proceedings of the 29th International Conference on Intelligent User Interfaces.",
-    "Dillion, D., & Tandon, N. (2023). Can AI language models replace human participants? Trends in Cognitive Sciences.",
-    "Dohmen, T., Falk, A., & others. (2011). Individual risk attitudes: Measurement, determinants, and behavioral consequences. Journal of the European Economic Association.",
-    "Du, N., Huang, Y., Dai, A.M., Tong, S., Lepikhin, D., Xu, Y., Krikun, M., Zhou, Y., Yu, A.W., Firat, O., et al. Glam: Efficient scaling of language models with mixture-of-experts. In International Conference on Machine Learning, pages 5547–5569, 2022.",
-    "Enis, M., & Hopkins, M. (2024). From LLM to NMT: Advancing Low-Resource Machine Translation with Claude. arXiv.",
-    "Fan, C., Chen, J., Jin, Y., & He, H. (2024). Can large language models serve as rational players in game theory? a systematic analysis. In Proceedings of the AAAI Conference on Artificial Intelligence.",
-    "Guo, F. (2023). GPT agents in game theory experiments. arXiv preprint arXiv:2305.05516.",
-    "Gupta, S., Shrivastava, V., & others. (2023). Bias runs deep: Implicit reasoning biases in persona-assigned llms. arXiv preprint arXiv:2311.04892.",
-    "Harrison, G. W., & Rutström, E. E. (2009). Expected utility theory and prospect theory: One wedding and a decent funeral. Experimental Economics.",
-    "Harvel, N., Haiek, F. B., Ankolekar, A., & Brunner, D. J. (2024). Can LLMs Answer Investment Banking Questions? Using Domain-Tuned Functions to Improve LLM Performance on Knowledge-Intensive Analytical Tasks. In Proceedings of the AAAI Symposium Series, 3, 125-133.",
-    "Holt, C. A., & Laury, S. K. (2002). Risk aversion and incentive effects. American Economic Review, American Economic Association.",
-    "Horton, J. J. (2023). Large language models as simulated economic agents: What can we learn from homo silicus? National Bureau of Economic Research.",
-    "Kamruzzaman, M., & Kim, G. L. (2024). Prompting Techniques for Reducing Social Bias in LLMs through System 1 and System 2 Cognitive Processes. arXiv preprint arXiv:2404.17218.",
-    "Kai-Ineman, D., & Tversky, A. (1979). Prospect theory: An analysis of decision under risk. Econometrica.",
-    "Kim, J., & Kovach, M. (2024). Learning to be Homo Economicus: Can an LLM Learn Preferences from Choice. arXiv preprint arXiv:2401.07345.",
-    "Ko, H., & Lee, J. (2024). Can ChatGPT improve investment decisions? From a portfolio management perspective. Finance Research Letters.",
-    "Leng, Y. (2024). Can LLMs Mimic Human-Like Mental Accounting and Behavioral Biases? Available at SSRN 4705130.",
-    "Lewis, M. Bart: Denoising sequence-to-sequence pre-training for natural language generation, translation, and comprehension. arXiv preprint arXiv:1910.13461, 2019.",
-    "Li, Y., Huang, Y., Yang, B., Venkitesh, B., Locatelli, A., Ye, H., Cai, T., Lewis, P., and Chen, D. Snapkv: Llm knows what you are looking for before generation. arXiv preprint arXiv:2404.14469, 2024.",
-    "Liu, E. M. (2013). Time to change what to sow: Risk preferences and technology adoption decisions of cotton farmers in China. Review of Economics and Statistics.",
-    "Liu, O., Fu, D., Yogatama, D., & Neiswanger, W. (2024). DeLLMa: A Framework for Decision Making Under Uncertainty with Large Language Models. arXiv preprint arXiv:2402.02392.",
-    "Malkiel, I., Alon, U., & others. (2024). SEGLLM: Topic-Oriented Call Segmentation Via LLM-Based Conversation Synthesis. In ICASSP.",
-    "Qiu, L., Singh, P. V., & Srinivasan, K. (2023). How Much Should We Trust LLM Results for Marketing Research? Available at SSRN 4526072.",
-    "Rao, A., Kim, J., & others. (2023). Evaluating ChatGPT as an adjunct for radiologic decisionmaking. MedRxiv.",
-    "Tanaka, T., Camerer, C. F., & Nguyen, Q. (2010). Risk and time preferences: Linking experimental and household survey data from Vietnam. American Economic Review.",
-    "Gemini Team, Rohan Anil, & others. (2024). Gemini: A Family of Highly Capable Multimodal Models. arXiv.",
-    "Von Gaudecker, H.-M., Van Soest, A., & Wengström, E. (2011). Heterogeneity in risky choice behavior in a broad population. American Economic Review.",
-    "Wei, J., Wang, X., Schuurmans, D., Bosma, M., Xia, F., Chi, E., Le, Q.V., and Zhou, D. Chainof-thought prompting elicits reasoning in large language models. Advances in Neural Information Processing Systems, 35:24824-24837, 2022.",
-    "WorldBank (2024). World Development Indicators. WorldBank Dataset.",
-    "Wu, T., He, S., & others. (2023). A brief overview of ChatGPT: The history, status quo and potential future development. IEEE/CAA Journal of Automatica Sinica.",
-    "Wu, S., Irsoy, O., & others. (2023). Bloomberggpt: A large language model for finance. arXiv preprint arXiv:2303.17564.",
-    "Yang, C., Wang, X., Lu, Y., Liu, H., Le, Q. V., Zhou, D., & Chen, X. (2023). Large language models as optimizers. arXiv preprint arXiv:2309.03409.",
-    "Ziems, C., Held, W., Shaikh, O., Chen, J., Zhang, Z., and Yang, D. Can large language models transform computational social science? Computational Linguistics, 50(1):237-291, 2024.",
-    "Zhou, Y., Muresanu, A.I., Han, Z., Paster, K., Pitis, S., Chan, H., and Ba, J. Large language models are human-level prompt engineers. arXiv preprint arXiv:2211.01910, 2022."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

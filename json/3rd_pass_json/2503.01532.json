@@ -2,39 +2,90 @@
   "filename": "2503.01532.pdf",
   "title": "Unmasking Implicit Bias: Evaluating Persona-Prompted LLM Responses in Power-Disparate Social Scenarios",
   "arxiv_url": "https://arxiv.org/pdf/2503.01532",
-  "bias_targets": [
-    {
-      "target": "Racial bias",
-      "methodology": "Measuring semantic shifts via cosine distance and evaluating response quality via an LLM-judged Helpful-Honest-Harmless (HHH) preference win rate when assigning specific racial personas in power-disparate social scenarios."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Calculating the standard deviation of cosine distances and HHH win rates between demographically-prompted (e.g., male, female, non-binary, transgender) and non-demographically-prompted responses to evaluate response variability."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Comparing semantic shifts and LLM-judged response quality (HHH criteria) when incorporating age-related personas (e.g., young, middle-aged, old) into prompts for simulated social interactions."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Assessing demographic sensitivity and response quality bias by measuring the difference in generated outputs when religious identities (e.g., Christian, Muslim, Buddhist, Jewish, Atheist) are injected into social scenario prompts."
-    },
-    {
-      "target": "Political bias",
-      "methodology": "Evaluating semantic deviations and win-rate preferences in LLM outputs when assigning political stance personas (Conservative, Liberal, Centrist) to subjects and responders interacting in varied social contexts."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Measuring implicit biases by comparing the cosine distance and LLM-judged HHH quality of responses generated with disabled (physically or mentally) versus abled personas across scenarios with and without power disparities."
-    },
-    {
-      "target": "Nationality bias",
-      "methodology": "Evaluating shifts in response semantics and quality (Helpful, Honest, Harmless) when interactants are identified by nationality statuses such as native-born citizen, immigrant, or migrant worker."
-    },
-    {
-      "target": "Physical appearance bias",
-      "methodology": "Analyzing the variance in LLM-generated response embeddings and HHH preference win rates when personas are described using physical appearance traits (e.g., ugly-looking, average-looking, attractive-looking)."
-    }
+  "religious_groups": [
+    "Christianity",
+    "Islam",
+    "Buddhism",
+    "Judaism",
+    "Atheism"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "GPT-4o mini",
+    "LLaMA-3.1 8B",
+    "Qwen-2 7B",
+    "Gemma-2 9B",
+    "Mistral-0.3 7B"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "The study found that LLMs have an implicit default persona that includes being Atheist, as this identity resulted in minimal semantic shifts from the baseline. Interactions involving Buddhist personas showed the highest semantic shifts. In terms of response quality, lower-quality responses were observed when Atheist responders engaged with subjects of other religions. Conversely, interactions with Buddhist responders, particularly with Muslim subjects, were associated with higher-quality responses. Overall, the Religion axis was identified as one of the most sensitive demographic dimensions, often inducing significant changes in LLM responses and being the most likely to improve response quality compared to other axes.",
+  "references": [
+    "Gati Aher, Rosa I. Arriaga, and Adam Tauman Kalai. 2023. Using Large Language Models to Simulate Multiple Humans and Replicate Human Subject Studies. Preprint, ICML 2023:arXiv:2208.10264.",
+    "Alibaba. 2024. Hello Qwen2. http://qwenlm.github.io/blog/qwen2/.",
+    "Amanda Askell, Yuntao Bai, Anna Chen, Dawn Drain, Deep Ganguli, Tom Henighan, Andy Jones, Nicholas Joseph, Ben Mann, Nova DasSarma, Nelson Elhage, Zac Hatfield-Dodds, Danny Hernandez, Jackson Kernion, Kamal Ndousse, Catherine Olsson, Dario Amodei, Tom Brown, Jack Clark, Sam McCandlish, Chris Olah, and Jared Kaplan. 2021. A general language assistant as a laboratory for alignment. https://arxiv.org/abs/2112.00861v3.",
+    "Xuechunzi Bai, Angelina Wang, Ilia Sucholutsky, and Thomas L. Griffiths. 2024. Measuring implicit bias in explicitly unbiased large language models. Preprint, arXiv:2402.04105.",
+    "Yuntao Bai, Andy Jones, Kamal Ndousse, Amanda Askell, Anna Chen, Nova DasSarma, Dawn Drain, Stanislav Fort, Deep Ganguli, Tom Henighan, Nicholas Joseph, Saurav Kadavath, Jackson Kernion, Tom Conerly, Sheer El-Showk, Nelson Elhage, Zac Hatfield-Dodds, Danny Hernandez, Tristan Hume, Scott Johnston, Shauna Kravec, Liane Lovitt, Neel Nanda, Catherine Olsson, Dario Amodei, Tom Brown, Jack Clark, Sam McCandlish, Chris Olah, Ben Mann, and Jared Kaplan. 2022. Training a helpful and harmless assistant with reinforcement learning from human feedback. https://arxiv.org/abs/2204.05862v1.",
+    "Mahzarin R. Banaji, Susan T. Fiske, and Douglas S. Massey. 2021. Systemic racism: Individuals and interactions, institutions and society. Cognitive Research: Principles and Implications, 6(1):82.",
+    "Su Lin Blodgett, Solon Barocas, Hal Daumé III, and Hanna Wallach. 2020. Language (Technology) is Power: A Critical Survey of “Bias” in NLP. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5454-5476, Online. Association for Computational Linguistics.",
+    "Myra Cheng, Esin Durmus, and Dan Jurafsky. 2023. Marked personas: Using natural language prompts to measure stereotypes in language models. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 1504-1532, Toronto, Canada. Association for Computational Linguistics.",
+    "R. W. Connell. 2020. Masculinities, 2 edition. Routledge, London.",
+    "Patrick W Corrigan and Amy C Watson. 2002. Understanding the impact of stigma on people with mental illness. World Psychiatry, 1(1):16–20.",
+    "Kimberlé Williams Crenshaw. 2006. Intersectionality, Identity Politics and Violence Against Women of Color. Kvinder, Køn & Forskning, (2-3).",
+    "Lorraine T Dean and Roland J Thorpe, Jr. 2022. What Structural Racism Is (or Is Not) and How to Measure It: Clarity for Public Health and Medical Researchers. American Journal of Epidemiology, 191(9):1521–1526.",
+    "Ameet Deshpande, Vishvak Murahari, Tanmay Rajpurohit, Ashwin Kalyan, and Karthik Narasimhan. 2023. Toxicity in chatgpt: Analyzing persona-assigned language models. In Findings of the Association for Computational Linguistics: EMNLP 2023, pages 1236-1270, Singapore. Association for Computational Linguistics.",
+    "Alice H. Eagly, Richard D. Ashmore, Mona G. Makhijani, and Laura C. Longo. 1991. What is beautiful is good, but...: A meta-analytic review of research on the physical attractiveness stereotype. Psychological Bulletin, 110(1):109–128.",
+    "Penny Edgell, Joseph Gerteis, and Douglas Hartmann. 2006. Atheists As \"Other\": Moral Boundaries and Cultural Membership in American Society. American Sociological Review, 71(2):211-234.",
+    "David Esiobu, Xiaoqing Tan, Saghar Hosseini, Megan Ung, Yuchen Zhang, Jude Fernandes, Jane Dwivedi-Yu, Eleonora Presani, Adina Williams, and Eric Smith. 2023. ROBBIE: Robust bias evaluation of large generative language models. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, pages 3764–3814, Singapore. Association for Computational Linguistics.",
+    "Victoria M. Esses, John F. Dovidio, Lynne M. Jackson, and Tamara L. Armstrong. 2001. The Immigration Dilemma: The Role of Perceived Group Competition, Ethnic Prejudice, and National Identity. Journal of Social Issues, 57(3):389-412.",
+    "Isabel O. Gallegos, Ryan A. Rossi, Joe Barrow, Md Mehrab Tanjim, Sungchul Kim, Franck Dernoncourt, Tong Yu, Ruiyi Zhang, and Nesreen K. Ahmed. 2024. Bias and fairness in large language models: A survey. Preprint, arXiv:2309.00770.",
+    "Howard Giles and Angie Williams. 1994. Patronizing the Young: Forms and Evaluations. The International Journal of Aging and Human Development, 39(1):33-53.",
+    "Google. 2024. Gemma 2 is now available to researchers and developers. https://blog.google/technology/developers/google-gemma-2/.",
+    "Wei Guo and Aylin Caliskan. 2021. Detecting Emergent Intersectional Biases: Contextualized Word Embeddings Contain a Distribution of Human-like Biases. In Proceedings of the 2021 AAAI/ACM Conference on AI, Ethics, and Society, AIES '21, pages 122-133, New York, NY, USA. Association for Computing Machinery.",
+    "Shashank Gupta, Vaishnavi Shrivastava, Ameet Deshpande, Ashwin Kalyan, Peter Clark, Ashish Sabharwal, and Tushar Khot. 2023. Bias runs deep: Implicit reasoning biases in persona-assigned LLMs. ICLR 2024, abs/2311.4892.",
+    "Charles R. Harris, K. Jarrod Millman, Stéfan J. van der Walt, Ralf Gommers, Pauli Virtanen, David Cournapeau, Eric Wieser, Julian Taylor, Sebastian Berg, Nathaniel J. Smith, Robert Kern, Matti Picus, Stephan Hoyer, Marten H. van Kerkwijk, Matthew Brett, Allan Haldane, Jaime Fernández del Río, Mark Wiebe, Pearu Peterson, Pierre Gérard-Marchant, Kevin Sheppard, Tyler Reddy, Warren Weckesser, Hameer Abbasi, Christoph Gohlke, and Travis E. Oliphant. 2020. Array programming with NumPy. Nature, 585(7825):357–362.",
+    "Paul W. Fay Henman. 2022. Digital Social Policy: Past, Present, Future. Journal of Social Policy, 51(3):535-550.",
+    "Jody Heymann, Sheleana Varvaro-Toney, Amy Raub, Firooz Kabir, and Aleta Sprague. 2023. Race, ethnicity, and discrimination at work: A new analysis of legal protections and gaps in all 193 UN countries. Equality, Diversity and Inclusion: An International Journal, 42(9):16-34.",
+    "Shanto Iyengar and Sean J. Westwood. 2015. Fear and Loathing across Party Lines: New Evidence on Group Polarization. American Journal of Political Science, 59(3):690-707.",
+    "Mahammed Kamruzzaman, Md. Shovon, and Gene Kim. 2024. Investigating Subtler Biases in LLMs: Ageism, Beauty, Institutional, and Nationality Bias in Generative Models. In Findings of the Association for Computational Linguistics ACL 2024, pages 8940-8965, Bangkok, Thailand and virtual meeting. Association for Computational Linguistics.",
+    "Hadas Kotek, Rikker Dockum, and David Sun. 2023. Gender bias and stereotypes in Large Language Models. In Proceedings of The ACM Collective Intelligence Conference, CI '23, pages 12-24, New York, NY, USA. Association for Computing Machinery.",
+    "Abhishek Kumar, Sarfaroz Yunusov, and Ali Emami. 2024. Subtle biases need subtler measures: Dual metrics for evaluating representative and affinity bias in large language models. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 375–392, Bangkok, Thailand. Association for Computational Linguistics.",
+    "Paul Pu Liang, Chiyu Wu, Louis-Philippe Morency, and Ruslan Salakhutdinov. 2021. Towards Understanding and Mitigating Social Biases in Language Models. In Proceedings of the 38th International Conference on Machine Learning, pages 6565–6576. PMLR.",
+    "Andy Liu, Mona Diab, and Daniel Fried. 2024. Evaluating large language model biases in persona-steered generation. In Findings of the Association for Computational Linguistics ACL 2024, pages 9832-9850, Bangkok, Thailand and virtual meeting. Association for Computational Linguistics.",
+    "Ruibo Liu, Ruixin Yang, Chenyan Jia, Ge Zhang, Denny Zhou, Andrew M. Dai, Diyi Yang, and Soroush Vosoughi. 2023. Training socially aligned language models on simulated social interactions. Preprint, ICLR 2024:arXiv:2305.16960.",
+    "Chandler May, Alex Wang, Shikha Bordia, Samuel R. Bowman, and Rachel Rudinger. 2019. On Measuring Social Biases in Sentence Encoders. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 622-628, Minneapolis, Minnesota. Association for Computational Linguistics.",
+    "Wes McKinney. 2010. Data structures for statistical computing in python. In Proceedings of the 9th Python in Science Conference, pages 51 – 56.",
+    "Meta. Introducing Llama 3.1: Our most capable models to date. https://ai.meta.com/blog/meta-llama-3-1/.",
+    "MistralAI. Mistralai/Mistral-7B-Instruct-v0.3. Hugging Face. https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2021. StereoSet: Measuring stereotypical bias in pretrained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 5356–5371, Online. Association for Computational Linguistics.",
+    "Lynnette Hui Xian Ng, Iain Cruickshank, and Roy Ka-Wei Lee. 2024a. Examining the influence of political bias on large language model performance in stance classification. arXiv preprint arXiv:2407.17688.",
+    "Man Tik Ng, Hui Tung Tse, Jen-tse Huang, Jingjing Li, Wenxuan Wang, and Michael R. Lyu. 2024b. How well can LLMs echo us? Evaluating AI chatbots' role-play ability with ECHO. Preprint, arXiv:2404.13957.",
+    "OpenAI. Hello GPT-40. https://openai.com/index/hello-gpt-4o/.",
+    "Long Ouyang, Jeffrey Wu, Xu Jiang, Diogo Almeida, Carroll Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, John Schulman, Jacob Hilton, Fraser Kelton, Luke Miller, Maddie Simens, Amanda Askell, Peter Welinder, Paul F. Christiano, Jan Leike, and Ryan Lowe. 2022. Training language models to follow instructions with human feedback. Advances in Neural Information Processing Systems, 35:27730-27744.",
+    "Xianghe Pang, Shuo Tang, Rui Ye, Yuxin Xiong, Bolun Zhang, Yanfeng Wang, and Siheng Chen. 2024. Self-alignment of large language models via monopolylogue-based social scene simulation. https://arxiv.org/abs/2402.05699v3.",
+    "Joon Sung Park, Joseph C. O'Brien, Carrie J. Cai, Meredith Ringel Morris, Percy Liang, and Michael S. Bernstein. 2023. Generative agents: Interactive simulacra of human behavior. In ACM Symposium on User Interface Software and Technology. arXiv.",
+    "Fabian Pedregosa, Gaël Varoquaux, Alexandre Gramfort, Vincent Michel, Bertrand Thirion, Olivier Grisel, Mathieu Blondel, Peter Prettenhofer, Ron Weiss, Vincent Dubourg, Jake Vanderplas, Alexandre Passos, David Cournapeau, Matthieu Brucher, Matthieu Perrot, and Édouard Duchesnay. 2011. Scikit-learn: Machine learning in python. Journal of Machine Learning Research, 12(85):2825–2830.",
+    "Nirmalendu Prakash and Roy Ka-Wei Lee. 2023. Layered bias: Interpreting bias in pretrained large language models. In Proceedings of the 6th BlackboxNLP Workshop: Analyzing and Interpreting Neural Networks for NLP, pages 284-295.",
+    "Haocong Rao, Cyril Leung, and Chunyan Miao. 2023. Can ChatGPT assess human personalities? A general evaluation framework. In Conference on Empirical Methods in Natural Language Processing, pages 1184-1194. EMNLP 2023.",
+    "Rachel Rudinger, Jason Naradowsky, Brian Leonard, and Benjamin Van Durme. 2018. Gender Bias in Coreference Resolution. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 8-14, New Orleans, Louisiana. Association for Computational Linguistics.",
+    "Leonard Salewski, Stephan Alaniz, Isabel Rio-Torto, Eric Schulz, and Zeynep Akata. 2023. In-Context Impersonation Reveals Large Language Models' Strengths and Biases. In Thirty-Seventh Conference on Neural Information Processing Systems.",
+    "Maarten Sap, Saadia Gabriel, Lianhui Qin, Dan Jurafsky, Noah A. Smith, and Yejin Choi. 2020. Social bias frames: Reasoning about social and power implications of language. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5477-5490, Online. Association for Computational Linguistics.",
+    "Jim Sidanius and Felicia Pratto. 1999. Social Dominance: An Intergroup Theory of Social Hierarchy and Oppression. Cambridge University Press, Cambridge.",
+    "Eric Michael Smith, Melissa Hall, Melanie Kambadur, Eleonora Presani, and Adina Williams. 2022. \"I'm sorry to hear that\": Finding new biases in language models with a holistic descriptor dataset. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 9180–9211, Abu Dhabi, United Arab Emirates. Association for Computational Linguistics.",
+    "Yixin Wan, George Pu, Jiao Sun, Aparna Garimella, Kai-Wei Chang, and Nanyun Peng. 2023a. “Kelly is a Warm Person, Joseph is a Role Model\": Gender Biases in LLM-Generated Reference Letters. In Findings of the Association for Computational Linguistics: EMNLP 2023, pages 3730–3748, Singapore. Association for Computational Linguistics.",
+    "Yixin Wan, Jieyu Zhao, Aman Chadha, Nanyun Peng, and Kai-Wei Chang. 2023b. Are Personalized Stochastic Parrots More Dangerous? Evaluating Persona Biases in Dialogue Systems. In Findings of the Association for Computational Linguistics: EMNLP 2023, pages 9677–9705, Singapore. Association for Computational Linguistics.",
+    "Guanzhi Wang, Yuqi Xie, Yunfan Jiang, Ajay Mandlekar, Chaowei Xiao, Yuke Zhu, Linxi Fan, and Anima Anandkumar. 2023. Voyager: An open-ended embodied agent with large language models. https://arxiv.org/abs/2305.16291v2.",
+    "Zekun Moore Wang, Zhongyuan Peng, Haoran Que, Jiaheng Liu, Wangchunshu Zhou, Yuhan Wu, Hongcheng Guo, Ruitong Gan, Zehao Ni, Jian Yang, Man Zhang, Zhaoxiang Zhang, Wanli Ouyang, Ke Xu, Stephen W. Huang, Jie Fu, and Junran Peng. 2024. RoleLLM: Benchmarking, eliciting, and enhancing role-playing abilities of large language models. Preprint, arXiv:2310.00746.",
+    "Thomas Wolf, Lysandre Debut, Victor Sanh, Julien Chaumond, Clement Delangue, Anthony Moi, Pierric Cistac, Tim Rault, Rémi Louf, Morgan Funtowicz, Joe Davison, Sam Shleifer, Patrick von Platen, Clara Ma, Yacine Jernite, Julien Plu, Canwen Xu, Teven Le Scao, Sylvain Gugger, Mariama Drame, Quentin Lhoest, and Alexander M. Rush. 2020. HuggingFace's transformers: State-of-the-art natural language processing. Preprint, arXiv:1910.03771.",
+    "Wenda Xu, Guanglei Zhu, Xuandong Zhao, Liangming Pan, Lei Li, and William Wang. 2024. Pride and Prejudice: LLM Amplifies Self-Bias in Self-Refinement. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 15474–15492, Bangkok, Thailand. Association for Computational Linguistics.",
+    "Yachao Zhao, Bo Wang, Yan Wang, Dongming Zhao, Xiaojia Jin, Jijun Zhang, Ruifang He, and Yuexian Hou. 2024. A comparative study of explicit and implicit gender biases in large language models via self-evaluation. In Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024), pages 186–198, Torino, Italia. ELRA and ICCL.",
+    "Xuhui Zhou, Hao Zhu, Leena Mathur, Ruohong Zhang, Haofei Yu, Zhengyang Qi, Louis-Philippe Morency, Yonatan Bisk, Daniel Fried, Graham Neubig, and Maarten Sap. 2023. SOTOPIA: Interactive evaluation for social intelligence in language agents. https://arxiv.org/abs/2310.11667v2."
+  ],
+  "measurement_description": "The benchmark measured semantic shifts (using cosine distance) and response quality (using an LLM-judged Preference Win Rate) when Large Language Models were prompted to adopt personas with specific religious identities (e.g., Christian, Muslim, Buddhist, Jewish, Atheist) in various power-disparate social scenarios. The goal was to detect implicit biases by comparing these responses to a non-demographic baseline."
 }

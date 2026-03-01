@@ -2,70 +2,63 @@
   "filename": "2306.16244.pdf",
   "title": "CBBQ: A Chinese Bias Benchmark Dataset Curated with Human-AI Collaboration for Large Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2306.16244",
-  "benchmark_measurement": "Detection of stereotypical biases in religious contexts, such as the association between Muslims and terrorism.",
-  "religious_groups": [
-    "Islam",
-    "Atheism",
-    "Hinduism",
-    "Buddhism",
-    "Judaism",
-    "Christianity"
+  "bias_targets": [
+    {
+      "target": "Age bias",
+      "methodology": "Evaluated through multiple-choice question answering tests using templates with ambiguous and disambiguous contexts to measure alignment with societal stereotypes."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Evaluated through multiple-choice question answering tests using templates with ambiguous and disambiguous contexts to measure alignment with societal stereotypes."
+    },
+    {
+      "target": "Disease bias",
+      "methodology": "Evaluated through multiple-choice question answering tests using templates with ambiguous and disambiguous contexts to measure alignment with societal stereotypes."
+    },
+    {
+      "target": "Educational qualification bias",
+      "methodology": "Evaluated through multiple-choice question answering tests using templates with ambiguous and disambiguous contexts to measure alignment with societal stereotypes."
+    },
+    {
+      "target": "Ethnicity bias",
+      "methodology": "Evaluated through multiple-choice question answering tests using templates with ambiguous and disambiguous contexts to measure alignment with societal stereotypes."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluated through multiple-choice question answering tests using templates with ambiguous and disambiguous contexts to measure alignment with societal stereotypes."
+    },
+    {
+      "target": "Household registration bias",
+      "methodology": "Evaluated through multiple-choice question answering tests using templates with ambiguous and disambiguous contexts to measure alignment with societal stereotypes."
+    },
+    {
+      "target": "Nationality bias",
+      "methodology": "Evaluated through multiple-choice question answering tests using templates with ambiguous and disambiguous contexts to measure alignment with societal stereotypes."
+    },
+    {
+      "target": "Physical appearance bias",
+      "methodology": "Evaluated through multiple-choice question answering tests using templates with ambiguous and disambiguous contexts to measure alignment with societal stereotypes."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluated through multiple-choice question answering tests using templates with ambiguous and disambiguous contexts to measure alignment with societal stereotypes."
+    },
+    {
+      "target": "Regional bias",
+      "methodology": "Evaluated through multiple-choice question answering tests using templates with ambiguous and disambiguous contexts to measure alignment with societal stereotypes."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluated through multiple-choice question answering tests using templates with ambiguous and disambiguous contexts to measure alignment with societal stereotypes."
+    },
+    {
+      "target": "Socio-economic bias",
+      "methodology": "Evaluated through multiple-choice question answering tests using templates with ambiguous and disambiguous contexts to measure alignment with societal stereotypes."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Evaluated through multiple-choice question answering tests using templates with ambiguous and disambiguous contexts to measure alignment with societal stereotypes."
+    }
   ],
-  "models_tested": [
-    "GLM-335M",
-    "GLM-10B",
-    "GLM-130B",
-    "BLOOM-7.1B",
-    "ChatGLM-6B",
-    "BLOOMz-7.1B",
-    "MOSS-SFT-16B",
-    "BELLE-7B-0.2M",
-    "BELLE-7B-2M",
-    "GPT-3.5-turbo"
-  ],
-  "languages_evaluated": [
-    "Chinese"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "BBQ"
-  ],
-  "continuous_testing": true,
-  "findings": "Across both ambiguous and disambiguous contexts, the evaluated LLMs exhibited varied levels of biases across different categories. Bias scores related to religion and sexual orientation were markedly lower than those related to educational qualification, disease, disability, and physical appearance in the models evaluated.",
-  "references": [
-    "Abubakar Abid, Maheen Farooqi, and James Zou. Large language models associate muslims with violence. Nature Machine Intelligence, 3(6):461–463, 2021.",
-    "Amanda Askell, Yuntao Bai, Anna Chen, Dawn Drain, Deep Ganguli, Tom Henighan, Andy Jones, Nicholas Joseph, Ben Mann, Nova DasSarma, et al. A general language assistant as a laboratory for alignment. arXiv preprint arXiv:2112.00861, 2021.",
-    "Christine Basta, Marta R Costa-Jussà, and Noe Casas. Evaluating the underlying gender bias in contextualized word embeddings. arXiv preprint arXiv:1904.08783, 2019.",
-    "Emily M Bender, Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. On the dangers of stochastic parrots: Can language models be too big? In Proceedings of the 2021 ACM conference on fairness, accountability, and transparency, pages 610–623, 2021.",
-    "Rishi Bommasani, Drew A Hudson, Ehsan Adeli, Russ Altman, Simran Arora, Sydney von Arx, Michael S Bernstein, Jeannette Bohg, Antoine Bosselut, Emma Brunskill, et al. On the opportunities and risks of foundation models. arXiv preprint arXiv:2108.07258, 2021.",
-    "Kate Crawford. The trouble with bias. keynote at neurips, 2017.",
-    "Jwala Dhamala, Tony Sun, Varun Kumar, Satyapriya Krishna, Yada Pruksachatkun, Kai-Wei Chang, and Rahul Gupta. Bold: Dataset and metrics for measuring biases in open-ended language generation. In Proceedings of the 2021 ACM conference on fairness, accountability, and transparency, pages 862–872, 2021.",
-    "Emily Dinan, Gavin Abercrombie, A Stevie Bergman, Shannon Spruit, Dirk Hovy, Y-Lan Boureau, and Verena Rieser. Anticipating safety issues in e2e conversational ai: Framework and tooling. arXiv preprint arXiv:2107.03451, 2021.",
-    "Zhengxiao Du, Yujie Qian, Xiao Liu, Ming Ding, Jiezhong Qiu, Zhilin Yang, and Jie Tang. Glm: General language model pretraining with autoregressive blank infilling. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 320–335, 2022.",
-    "Deep Ganguli, Danny Hernandez, Liane Lovitt, Amanda Askell, Yuntao Bai, Anna Chen, Tom Conerly, Nova Dassarma, Dawn Drain, Nelson Elhage, et al. Predictability and surprise in large generative models. In 2022 ACM Conference on Fairness, Accountability, and Transparency, pages 1747–1764, 2022.",
-    "Deep Ganguli, Amanda Askell, Nicholas Schiefer, Thomas Liao, Kamilė Lukošiūtė, Anna Chen, Anna Goldie, Azalia Mirhoseini, Catherine Olsson, Danny Hernandez, et al. The capacity for moral self-correction in large language models. arXiv preprint arXiv:2302.07459, 2023.",
-    "Samuel Gehman, Suchin Gururangan, Maarten Sap, Yejin Choi, and Noah A Smith. Real-toxicityprompts: Evaluating neural toxic degeneration in language models. arXiv preprint arXiv:2009.11462, 2020.",
-    "Ben Hutchinson, Vinodkumar Prabhakaran, Emily Denton, Kellie Webster, Yu Zhong, and Stephen Denuyl. Social biases in nlp models as barriers for persons with disabilities. arXiv preprint arXiv:2005.00813, 2020.",
-    "Yunjie Ji, Yong Deng, Yan Gong, Yiping Peng, Qiang Niu, Baochang Ma, and Xiangang Li. Belle: Bloom-enhanced large language model engine. https://github.com/LianjiaTech/ BELLE, 2023.",
-    "Jared Kaplan, Sam McCandlish, Tom Henighan, Tom B Brown, Benjamin Chess, Rewon Child, Scott Gray, Alec Radford, Jeffrey Wu, and Dario Amodei. Scaling laws for neural language models. arXiv preprint arXiv:2001.08361, 2020.",
-    "Keita Kurita, Nidhi Vyas, Ayush Pareek, Alan W Black, and Yulia Tsvetkov. Measuring bias in contextualized word representations. arXiv preprint arXiv:1906.07337, 2019.",
-    "Tao Li, Tushar Khot, Daniel Khashabi, Ashish Sabharwal, and Vivek Srikumar. Unqovering stereotyping biases via underspecified questions. arXiv preprint arXiv:2010.02428, 2020.",
-    "Haochen Liu, Jamell Dacon, Wenqi Fan, Hui Liu, Zitao Liu, and Jiliang Tang. Does gender matter? towards fairness in dialogue systems. arXiv preprint arXiv:1910.10486, 2019.",
-    "Niklas Muennighoff, Thomas Wang, Lintang Sutawika, Adam Roberts, Stella Biderman, Teven Le Scao, M Saiful Bari, Sheng Shen, Zheng-Xin Yong, Hailey Schoelkopf, et al. Crosslin- gual generalization through multitask finetuning. arXiv preprint arXiv:2211.01786, 2022.",
-    "OpenAI. Gpt-4 technical report, 2023.",
-    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thomp- son, Phu Mon Htut, and Samuel Bowman. BBQ: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2086– 2105, Dublin, Ireland, May 2022. Association for Computational Linguistics. doi: 10.18653/ v1/2022.findings-acl.165. URL https://aclanthology.org/2022.findings-acl.165.",
-    "Jack W Rae, Sebastian Borgeaud, Trevor Cai, Katie Millican, Jordan Hoffmann, Francis Song, John Aslanides, Sarah Henderson, Roman Ring, Susannah Young, et al. Scaling language models: Methods, analysis & insights from training gopher. arXiv preprint arXiv:2112.11446, 2021.",
-    "Adithya Renduchintala and Adina Williams. Investigating failures of automatic translation in the case of unambiguous gender. arXiv preprint arXiv:2104.07838, 2021.",
-    "Maarten Sap, Saadia Gabriel, Lianhui Qin, Dan Jurafsky, Noah A Smith, and Yejin Choi. Social bias frames: Reasoning about social and power implications of language. arXiv preprint arXiv:1911.03891, 2019.",
-    "Teven Le Scao, Angela Fan, Christopher Akiki, Ellie Pavlick, Suzana Ilić, Daniel Hesslow, Roman Castagné, Alexandra Sasha Luccioni, François Yvon, Matthias Gallé, et al. Bloom: A 176b-parameter open-access multilingual language model. arXiv preprint arXiv:2211.05100, 2022.",
-    "Emily Sheng, Josh Arnold, Zhou Yu, Kai-Wei Chang, and Nanyun Peng. Revealing persona biases in dialogue systems. arXiv preprint arXiv:2104.08728, 2021.",
-    "Emily Sheng, Kai-Wei Chang, Prem Natarajan, and Nanyun Peng. \"nice try, kiddo”: Inves- tigating ad hominems in dialogue responses. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, 2021.",
-    "Irene Solaiman and Christy Dennison. Process for adapting language models to society (palms) with values-targeted datasets. Advances in Neural Information Processing Systems, 34:5861– 5873, 2021.",
-    "Gabriel Stanovsky, Noah A Smith, and Luke Zettlemoyer. Evaluating gender bias in machine translation. arXiv preprint arXiv:1906.00591, 2019.",
-    "Laura Weidinger, John Mellor, Maribeth Rauh, Conor Griffin, Jonathan Uesato, Po-Sen Huang, Myra Cheng, Mia Glaese, Borja Balle, Atoosa Kasirzadeh, et al. Ethical and social risks of harm from language models. arXiv preprint arXiv:2112.04359, 2021.",
-    "Aohan Zeng, Xiao Liu, Zhengxiao Du, Zihan Wang, Hanyu Lai, Ming Ding, Zhuoyi Yang, Yifan Xu, Wendi Zheng, Xiao Xia, et al. Glm-130b: An open bilingual pre-trained model. arXiv preprint arXiv:2210.02414, 2022."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

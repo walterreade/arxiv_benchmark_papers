@@ -2,39 +2,106 @@
   "filename": "2505.11413.pdf",
   "title": "CARES: Comprehensive Evaluation of Safety and Adversarial Robustness in Medical LLMs",
   "arxiv_url": "https://arxiv.org/pdf/2505.11413",
-  "bias_targets": [
-    {
-      "target": "Racial bias",
-      "methodology": "Evaluating model responses to synthetic clinical queries and adversarial jailbreak variants (indirect, obfuscated, and role-play) that feature explicit or implicit racial biases in healthcare decision-making, using an LLM-as-a-judge to classify responses as ACCEPT, CAUTION, or REFUSE."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Evaluating model responses to synthetic clinical queries and adversarial jailbreak variants (indirect, obfuscated, and role-play) that feature explicit or implicit gender biases in healthcare decision-making, using an LLM-as-a-judge to classify responses as ACCEPT, CAUTION, or REFUSE."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Evaluating model responses to synthetic clinical queries and adversarial jailbreak variants (indirect, obfuscated, and role-play) that feature explicit or implicit age biases in healthcare decision-making, using an LLM-as-a-judge to classify responses as ACCEPT, CAUTION, or REFUSE."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Evaluating model responses to synthetic clinical queries and adversarial jailbreak variants (indirect, obfuscated, and role-play) that feature explicit or implicit disability biases in healthcare decision-making, using an LLM-as-a-judge to classify responses as ACCEPT, CAUTION, or REFUSE."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Evaluating model responses to synthetic clinical queries and adversarial jailbreak variants (indirect, obfuscated, and role-play) that feature explicit or implicit religious biases in healthcare decision-making, using an LLM-as-a-judge to classify responses as ACCEPT, CAUTION, or REFUSE."
-    },
-    {
-      "target": "Nationality bias",
-      "methodology": "Evaluating model responses to synthetic clinical queries and adversarial jailbreak variants (indirect, obfuscated, and role-play) that feature explicit or implicit nationality biases in healthcare decision-making, using an LLM-as-a-judge to classify responses as ACCEPT, CAUTION, or REFUSE."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Evaluating model responses to synthetic clinical queries and adversarial jailbreak variants (indirect, obfuscated, and role-play) that request discriminatory policies or treatments targeting LGBTQ patients, using an LLM-as-a-judge to classify responses as ACCEPT, CAUTION, or REFUSE."
-    },
-    {
-      "target": "Socioeconomic bias",
-      "methodology": "Evaluating model responses to synthetic clinical queries and adversarial jailbreak variants (indirect, obfuscated, and role-play) that propose structural exclusion or deprioritization of low-income or uninsured patients, using an LLM-as-a-judge to classify responses as ACCEPT, CAUTION, or REFUSE."
-    }
+  "religious_groups": [],
+  "models_tested": [
+    "GPT-40-mini",
+    "GPT-4.1",
+    "o4-mini",
+    "Claude-3.5-Haiku",
+    "Claude-3.7-Sonnet",
+    "DeepSeek (V3, R1)",
+    "Llama-3.2-Instruct (1B, 3B)",
+    "Llama-3.1-Instruct (8B, 70B)",
+    "Mistral-7B-Instruct",
+    "Mixtral-8x7B-Instruct",
+    "Qwen2.5-Instruct (1.5B, 7B)",
+    "Qwen3 (4B, 8B, 14B, 32B)",
+    "ClinicalCamel-70B",
+    "Medalpaca (7B, 13B)",
+    "Meditron (7B, 70B)"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "SafeBench",
+    "RealToxicityPrompts",
+    "TruthfulQA",
+    "ToxiGen",
+    "HHH",
+    "SG-Bench",
+    "AgentSafetyBench",
+    "Lab-SafetyBench",
+    "MedSafetyBench",
+    "MEDIC",
+    "RWE-LLM"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper includes religion as a category for evaluating discrimination and bias within its 'Discrimination and Healthcare Bias' principle. However, it does not report specific findings on how the tested models performed on prompts related to religion.",
+  "references": [
+    "Amro Abbas, Kushal Tirumala, Dániel Simig, Surya Ganguli, and Ari S Morcos. Semdedup: Data-efficient learning at web-scale through semantic deduplication. arXiv preprint arXiv:2303.09540, 2023.",
+    "Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia Leoni Aleman, Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat, et al. Gpt-4 technical report. arXiv preprint arXiv:2303.08774, 2023.",
+    "Accountability Act. Health insurance portability and accountability act of 1996. Public law, 104:191, 1996.",
+    "Miltiadis Allamanis. The adverse effects of code duplication in machine learning models of code. In Proceedings of the 2019 ACM SIGPLAN International Symposium on New Ideas, New Paradigms, and Reflections on Programming and Software, pages 143–153, 2019.",
+    "Anthropic. Introducing computer use, a new claude 3.5 sonnet, and claude 3.5 haiku, 10 2024. URL https://www.anthropic.com/news/3-5-models-and-computer-use. Upgraded Claude 3.5 Sonnet with improved coding capabilities and new computer use feature allowing Claude to interact with computers like humans.",
+    "Anthropic. Claude 3.7 sonnet, 2 2025. URL https://www.anthropic.com/claude/sonnet. Hybrid reasoning model with state-of-the-art coding skills, computer use, and 200K context window.",
+    "American Medical Association. Principles of medical ethics. American Medical Association, 1957.",
+    "Yuntao Bai, Andy Jones, Kamal Ndousse, Amanda Askell, Anna Chen, Nova DasSarma, Dawn Drain, Stanislav Fort, Deep Ganguli, Tom Henighan, et al. Training a helpful and harmless assistant with reinforcement learning from human feedback. arXiv preprint arXiv:2204.05862, 2022.",
+    "Meenesh Bhimani, Alex Miller, Jonathan D Agnew, Markel Sanz Ausin, Mariska Raglow-Defranco, Harpreet Mangat, Michelle Voisard, Maggie Taylor, Sebastian Bierman-Lytle, Vishal Parikh, et al. Real-world evaluation of large language models in healthcare (rwe-llm): A new realm of ai safety & validation. medRxiv, pages 2025-03, 2025.",
+    "Andrei Z Broder. On the resemblance and containment of documents. In Proceedings. Compression and Complexity of SEQUENCES 1997 (Cat. No. 97TB100171), pages 21–29. IEEE, 1997.",
+    "Sébastien Bubeck, Varun Chadrasekaran, Ronen Eldan, Johannes Gehrke, Eric Horvitz, Ece Kamar, Peter Lee, Yin Tat Lee, Yuanzhi Li, Scott Lundberg, et al. Sparks of artificial general intelligence: Early experiments with gpt-4, 2023.",
+    "Zeming Chen, Alejandro Hernández Cano, Angelika Romanou, Antoine Bonnet, Kyle Matoba, Francesco Salvi, Matteo Pagliardini, Simin Fan, Andreas Köpf, Amirkeivan Mohtashami, et al. Meditron-70b: Scaling medical pretraining for large language models. arXiv preprint arXiv:2311.16079, 2023.",
+    "Jacob Cohen. Weighted kappa: Nominal scale agreement provision for scaled disagreement or partial credit. Psychological Bulletin, 70(4):213, 1968.",
+    "Mayur Datar, Nicole Immorlica, Piotr Indyk, and Vahab S Mirrokni. Locality-sensitive hashing scheme based on p-stable distributions. In Proceedings of the twentieth annual symposium on Computational geometry, pages 253–262, 2004.",
+    "Kerstin Denecke, Richard May, LLMHealthGroup, and Octavio Rivera Romero. Potential of large language models in health care: Delphi study. Journal of Medical Internet Research, 26:e52399, 2024.",
+    "Ekzhu. Datasketch: Minhash Ish, 2021. URL https://ekzhu.com/datasketch/lsh.html. Accessed: 2024-09-15.",
+    "Samuel Gehman, Suchin Gururangan, Maarten Sap, Yejin Choi, and Noah A Smith. Real-toxicityprompts: Evaluating neural toxic degeneration in language models. arXiv preprint arXiv:2009.11462, 2020.",
+    "Daya Guo, Dejian Yang, Haowei Zhang, Junxiao Song, Ruoyu Zhang, Runxin Xu, Qihao Zhu, Shirong Ma, Peiyi Wang, Xiao Bi, et al. Deepseek-r1: Incentivizing reasoning capability in Ilms via reinforcement learning. arXiv preprint arXiv:2501.12948, 2025.",
+    "Tessa Han, Aounon Kumar, Chirag Agarwal, and Himabindu Lakkaraju. Medsafetybench: Evaluating and improving the medical safety of large language models. arXiv preprint arXiv:2403.03744, 2024.",
+    "Tianyu Han, Lisa C Adams, Jens-Michalis Papaioannou, Paul Grundmann, Tom Oberhauser, Alexander Löser, Daniel Truhn, and Keno K Bressem. Medalpaca-an open-source collection of medical conversational ai models and training data. arXiv preprint arXiv:2304.08247, 2023.",
+    "Thomas Hartvigsen, Saadia Gabriel, Hamid Palangi, Maarten Sap, Dipankar Ray, and Ece Kamar. ToxiGen: A large-scale machine-generated dataset for adversarial and implicit hate speech detection. In Smaranda Muresan, Preslav Nakov, and Aline Villavicencio, editors, Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 3309-3326, Dublin, Ireland, May 2022. Association for Computational Linguistics. doi: 10.18653/v1/2022.acl-long.234. URL https://aclanthology.org/2022.acl-long.234/.",
+    "Trevor Hastie, Robert Tibshirani, and Jerome Friedman. The Elements of Statistical Learning: Data Mining, Inference, and Prediction. Springer, 2009.",
+    "Saffron Huang, Divya Siddarth, Liane Lovitt, Thomas I Liao, Esin Durmus, Alex Tamkin, and Deep Ganguli. Collective constitutional ai: Aligning a language model with public input. In Proceedings of the 2024 ACM Conference on Fairness, Accountability, and Transparency, pages 1395–1417, 2024.",
+    "Jiaming Ji, Donghai Hong, Borong Zhang, Boyuan Chen, Josef Dai, Boren Zheng, Tianyi Qiu, Boxun Li, and Yaodong Yang. Pku-saferlhf: Towards multi-level safety alignment for llms with human preference. arXiv preprint arXiv:2406.15513, 2024.",
+    "Albert Q. Jiang, Alexandre Sablayrolles, Arthur Mensch, Chris Bamford, Devendra Singh Chaplot, Diego de las Casas, Florian Bressand, Gianna Lengyel, Guillaume Lample, Lélio Renard Lavaud, Lucile Saulnier, Marie-Anne Lachaux, Pierre Stock, Teven Le Scao, Thibaut Lavril, Thomas Wang, Timothée Lacroix, and William El Sayed. Mistral 7b. arXiv preprint arXiv:2310.06825, 10 2023.",
+    "Albert Q Jiang, Alexandre Sablayrolles, Antoine Roux, Arthur Mensch, Blanche Savary, Chris Bamford, Devendra Singh Chaplot, Diego de las Casas, Emma Bou Hanna, Florian Bressand, et al. Mixtral of experts. arXiv preprint arXiv:2401.04088, 2024.",
+    "Haibo Jin, Ruoxi Chen, Andy Zhou, Yang Zhang, and Haohan Wang. Guard: Role-playing to generate natural-language jailbreakings to test guideline adherence of large language models. arXiv preprint arXiv:2402.03299, 2024.",
+    "Praveen K Kanithi, Clément Christophe, Marco AF Pimentel, Tathagata Raha, Nada Saadi, Hamza Javed, Svetlana Maslenkova, Nasir Hayat, Ronnie Rajan, and Shadab Khan. Medic: Towards a comprehensive framework for evaluating Ilms in clinical applications. arXiv preprint arXiv:2409.07314, 2024.",
+    "Maurice G. Kendall. A new measure of rank correlation, volume 30. Oxford University Press, 1938.",
+    "Katherine Lee, Daphne Ippolito, Andrew Nystrom, Chiyuan Zhang, Douglas Eck, Chris Callison-Burch, and Nicholas Carlini. Deduplicating training data makes language models better. arXiv preprint arXiv:2107.06499, 2021.",
+    "Xiaomin Li, Mingye Gao, Zhiwei Zhang, Jingxuan Fan, and Weiyu Li. Data-adaptive safety rules for training reward models. arXiv preprint arXiv:2501.15453, 2025.",
+    "Stephanie Lin, Jacob Hilton, and Owain Evans. Truthfulqa: Measuring how models mimic human falsehoods. arXiv preprint arXiv:2109.07958, 2021.",
+    "Aixin Liu, Bei Feng, Bing Xue, Bingxuan Wang, Bochao Wu, Chengda Lu, Chenggang Zhao, Chengqi Deng, Chenyu Zhang, Chong Ruan, et al. Deepseek-v3 technical report. arXiv preprint arXiv:2412.19437, 2024.",
+    "Yi Liu, Gelei Deng, Zhengzi Xu, Yuekang Li, Yaowen Zheng, Ying Zhang, Lida Zhao, Tianwei Zhang, Kailong Wang, and Yang Liu. Jailbreaking chatgpt via prompt engineering: An empirical study. arXiv preprint arXiv:2305.13860, 2023.",
+    "Meta AI. Introducing llama 3.1: Our most capable models to date, 7 2024a. URLhttps://ai.meta.com/blog/meta-llama-3-1/. New models including flagship 405B parameter model, along with upgraded 8B and 70B models featuring 128K context length and multilingual capabilities.",
+    "Meta AI. Llama 3.2: Revolutionizing edge ai and vision with open, customizable models, 9 2024b. URL https://ai.meta.com/blog/llama-3-2-connect-2024-vision-edge-mobile-devices/. First vision-capable Llama models with 11B and 90B parameters, alongside lightweight text-only models (1B and 3B) for edge and mobile devices.",
+    "Yutao Mou, Shikun Zhang, and Wei Ye. Sg-bench: Evaluating Ilm safety generalization across diverse tasks and prompt types. Advances in Neural Information Processing Systems, 37:123032–123054, 2024.",
+    "Harsha Nori, Nicholas King, Scott Mayer McKinney, Dean Carignan, and Eric Horvitz. Capabilities of gpt-4 on medical challenge problems. arXiv preprint arXiv:2303.13375, 2023.",
+    "OpenAI. Gpt-40 mini: Advancing cost-efficient intelligence, 7 2024. URL https://openai.com/index/gpt-40-mini-advancing-cost-efficient-intelligence/. Smart, affordable model outperforming GPT-3.5 Turbo at significantly lower cost.",
+    "OpenAI. Introducing gpt-4.1 in the api, 4 2025a. URL https://openai.com/index/gpt-4-1/. Models featuring improved coding, instruction following, and 1 million token context window.",
+    "OpenAI. Introducing 03 and o4-mini, 4 2025b. URL https://openai.com/index/introducing-03-and-04-mini/. Advanced reasoning models with tool use capabilities including web browsing, Python, image understanding, and image generation.",
+    "Amalie Brogaard Pauli, Isabelle Augenstein, and Ira Assent. Measuring and benchmarking large language models' capabilities to generate persuasive language. arXiv preprint arXiv:2406.17753, 2024.",
+    "Karl Pearson. Note on regression and inheritance in the case of two parents. Proceedings of the Royal Society of London, 58:240-242, 1895.",
+    "Qwen Team. Qwen3: Think deeper, act faster, 4 2025. URL https://qwenlm.github.io/blog/qwen3/. Latest generation of large language models with hybrid thinking modes, including dense models (0.6B to 32B parameters) and Mixture-of-Experts models (30B-A3B and 235B-A22B).",
+    "Karan Singhal, Shekoofeh Azizi, Tao Tu, S Sara Mahdavi, Jason Wei, Hyung Won Chung, Nathan Scales, Ajay Tanwani, Heather Cole-Lewis, Stephen Pfohl, et al. Large language models encode clinical knowledge. Nature, 620(7972):172–180, 2023.",
+    "Charles Spearman. The proof and measurement of association between two things. The American Journal of Psychology, 15(1):72–101, 1904.",
+    "Augustin Toma, Patrick R Lawler, Jimmy Ba, Rahul G Krishnan, Barry B Rubin, and Bo Wang. Clinical camel: An open-source expert-level medical language model with dialogue-based knowledge encoding. CoRR, 2023.",
+    "Yu-Min Tseng, Yu-Chao Huang, Teng-Yun Hsiao, Wei-Lin Chen, Chao-Wei Huang, Yu Meng, and Yun-Nung Chen. Two tales of persona in llms: A survey of role-playing and personalization. arXiv preprint arXiv:2406.01171, 2024.",
+    "Alexander Wei, Nika Haghtalab, and Jacob Steinhardt. Jailbroken: How does llm safety training fail? Advances in Neural Information Processing Systems, 36:80079–80110, 2023.",
+    "Bosi Wen, Pei Ke, Xiaotao Gu, Lindong Wu, Hao Huang, Jinfeng Zhou, Wenchuang Li, Binxin Hu, Wendy Gao, Jiaxing Xu, et al. Benchmarking complex instruction-following with multiple constraints composition. Advances in Neural Information Processing Systems, 37:137610–137645, 2024.",
+    "An Yang, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chengyuan Li, Dayiheng Liu, Fei Huang, Haoran Wei, et al. Qwen2. 5 technical report. arXiv preprint arXiv:2412.15115, 2024.",
+    "Chao Zhang, Xiao Li, Dong Yu, Yifan Gong, and Changliang Wang. Generalized end-to-end loss for speaker verification. In ICASSP, 2018.",
+    "Zhexin Zhang, Leqi Lei, Lindong Wu, Rui Sun, Yongkang Huang, Chong Long, Xiao Liu, Xuanyu Lei, Jie Tang, and Minlie Huang. Safetybench: Evaluating the safety of large language models. arXiv preprint arXiv:2309.07045, 2023.",
+    "Zhexin Zhang, Shiyao Cui, Yida Lu, Jingzhuo Zhou, Junxiao Yang, Hongning Wang, and Minlie Huang. Agent-safetybench: Evaluating the safety of Ilm agents, 2024. URL https://arxiv.org/abs/2412.14470.",
+    "Jinman Zhao, Zifan Qian, Linbo Cao, Yining Wang, Yitian Ding, Yulan Hu, Zeyu Zhang, and Zeyong Jin. Role-play paradox in large language models: Reasoning performance gains and ethical dilemmas. Preprint, 2025.",
+    "Andy Zhou, Bo Li, and Haohan Wang. Robust prompt optimization for defending language models against jailbreaking attacks. arXiv preprint arXiv:2401.17263, 2024.",
+    "Yujun Zhou, Jingdong Yang, Yue Huang, Kehan Guo, Zoe Emory, Bikram Ghosh, Amita Bedar, Sujay Shekar, Pin-Yu Chen, Tian Gao, Werner Geyer, Nuno Moniz, Nitesh V Chawla, and Xiangliang Zhang. Labsafety bench: Benchmarking llms on safety issues in scientific labs, 2025. URL https://arxiv.org/abs/2410.14182.",
+    "Li Zhui, Li Fenghe, Wang Xuehu, Fu Qining, and Ren Wei. Ethical considerations and fundamental principles of large language models in medical education. Journal of Medical Internet Research, 26:e60083, 2024.",
+    "Andy Zou, Zifan Wang, Nicholas Carlini, Milad Nasr, J Zico Kolter, and Matt Fredrikson. Universal and transferable adversarial attacks on aligned language models. arXiv preprint arXiv:2307.15043, 2023."
+  ],
+  "measurement_description": "Discrimination/bias based on religion in healthcare contexts. The benchmark's 'Discrimination and Healthcare Bias' safety principle explicitly includes religion as an attribute for which bias is measured. Additionally, role-playing scenarios include roles like 'a theologian discussing religious perspectives on medical ethics'."
 }

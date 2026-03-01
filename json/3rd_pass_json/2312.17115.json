@@ -2,23 +2,85 @@
   "filename": "2312.17115.pdf",
   "title": "How Far Are LLMs from Believable AI? A Benchmark for Evaluating the Believability of Human Behavior Simulation",
   "arxiv_url": "https://arxiv.org/pdf/2312.17115",
-  "bias_targets": [
-    {
-      "target": "Age bias",
-      "methodology": "Perturbing the birth year/age in a character's profile (e.g., 1956, 1985, 2000) and measuring changes in the language model's consistency accuracy (CA) when answering questions about the character."
-    },
-    {
-      "target": "Racial bias",
-      "methodology": "Modifying the stated race of a character in their profile (e.g., African, Caucasian, Middle Eastern) and evaluating the impact on the model's consistency accuracy to see if it performs better for certain demographics."
-    },
-    {
-      "target": "Cultural/Ethnic bias",
-      "methodology": "Substituting character surnames with names associated with different racial or ethnic groups (e.g., Keams, Bedonie, Nguyen) and measuring the variation in the model's consistency performance."
-    },
-    {
-      "target": "Educational bias",
-      "methodology": "Altering the educational background of a character in their profile (e.g., Middle School, High School, Bachelor's degree) and comparing the language model's consistency accuracy across the different education levels."
-    }
+  "religious_groups": [
+    "Christianity",
+    "Atheism/Agnosticism",
+    "Islam",
+    "Buddhism",
+    "Judaism",
+    "Hinduism"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "GPT-4",
+    "GPT-3.5-Turbo-16K",
+    "XVERSE-13B-Chat",
+    "Qwen-14B-Chat",
+    "Vicuna-13B-16K",
+    "ChatGLM2-6B-32K",
+    "Qwen-7B-Chat",
+    "ChatGLM2-6B",
+    "LongChat-7B-32K",
+    "Vicuna-7B-16K"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "Models, specifically GPT-3.5-Turbo-16K, demonstrated 'simulation hallucination' by incorrectly assigning a Christian religious affiliation to the character Homer Simpson, likely based on his name and Caucasian ethnicity, despite no such information being in the provided profile. This hallucination was mitigated when the character's surname was anonymized, suggesting the model relied on knowledge from its training data rather than adhering to the context provided in the prompt.",
+  "references": [
+    "Gati V Aher, Rosa I Arriaga, and Adam Tauman Kalai. 2023. Using large language models to simulate multiple humans and replicate human subject studies. In International Conference on Machine Learning, pages 337-371. PMLR.",
+    "Lisa P Argyle, Ethan C Busby, Nancy Fulda, Joshua R Gubler, Christopher Rytting, and David Wingate. 2023. Out of one, many: Using language models to simulate human samples. Political Analysis, 31(3):337-351.",
+    "BIG bench authors. 2023. Beyond the imitation game: Quantifying and extrapolating the capabilities of language models. Transactions on Machine Learning Research.",
+    "Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, et al. 2020. Language models are few-shot learners. Advances in neural information processing systems, 33:1877–1901.",
+    "Myra Cheng, Tiziano Piccardi, and Diyi Yang. 2023. Compost: Characterizing and evaluating caricature in llm simulations. arXiv preprint arXiv:2310.11501.",
+    "Minje Choi, Jiaxin Pei, Sagar Kumar, Chang Shu, and David Jurgens. 2023. Do llms understand social knowledge? evaluating the sociability of large language models with socket benchmark. arXiv preprint arXiv:2305.14938.",
+    "Robin IM Dunbar, Anna Marriott, and Neil DC Duncan. 1997. Human conversational behavior. Human nature, 8:231-246.",
+    "Alice H Eagly and Wendy Wood. 2012. Social role theory. Handbook of theories of social psychology, 2:458-476.",
+    "Tao Fang, Shu Yang, Kaixin Lan, Derek F Wong, Jinpeng Hu, Lidia S Chao, and Yue Zhang. 2023. Is chatgpt a highly fluent grammatical error correction system? a comprehensive evaluation. arXiv preprint arXiv:2304.01746.",
+    "Stan Franklin and Art Graesser. 1996. Is it an agent, or just a program?: A taxonomy for autonomous agents. In International workshop on agent theories, architectures, and languages, pages 21-35. Springer.",
+    "Silin Gao, Beatriz Borges, Soyoung Oh, Deniz Bayazit, Saya Kanno, Hiromi Wakaki, Yuki Mitsufuji, and Antoine Bosselut. 2023. Peacok: Persona commonsense knowledge for consistent and engaging narratives. arXiv preprint arXiv:2305.02364.",
+    "Perttu Hämäläinen, Mikke Tavast, and Anton Kunnari. 2023. Evaluating large language models in generating synthetic hci research data: a case study. In Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems, pages 1-19.",
+    "Robert A Hinde. 1976. Interactions, relationships and social structure. Man, pages 1–17.",
+    "John J Horton. 2023. Large language models as simulated economic agents: What can we learn from homo silicus? Technical report, National Bureau of Economic Research.",
+    "Jen-tse Huang, Wenxuan Wang, Man Ho Lam, Eric John Li, Wenxiang Jiao, and Michael R Lyu. 2023. Chatgpt an enfj, bard an istj: Empirical study on personalities of large language models. arXiv preprint arXiv:2305.19926.",
+    "Jie Huang and Kevin Chen-Chuan Chang. 2022. Towards reasoning in large language models: A survey. arXiv preprint arXiv:2212.10403.",
+    "Hang Jiang, Xiajie Zhang, Xubo Cao, Jad Kabbara, and Deb Roy. 2023. Personallm: Investigating the ability of gpt-3.5 to express personality traits and gender differences. arXiv preprint arXiv:2305.02547.",
+    "Zhao Kaiya, Michelangelo Naim, Jovana Kondic, Manuel Cortes, Jiaxin Ge, Shuying Luo, Guangyu Robert Yang, and Andrew Ahn. 2023. Lyfe agents: Generative agents for low-cost real-time social interactions. arXiv preprint arXiv:2310.02172.",
+    "Grgur Kovač, Rémy Portelas, Peter Ford Dominey, and Pierre-Yves Oudeyer. 2023. The socialai school: Insights from developmental psychology towards artificial socio-cultural agents. arXiv preprint arXiv:2307.07871.",
+    "John Laird and Michael VanLent. 2001. Human-level ai's killer application: Interactive computer games. Al magazine, 22(2):15–15.",
+    "Nelson F Liu, Kevin Lin, John Hewitt, Ashwin Paranjape, Michele Bevilacqua, Fabio Petroni, and Percy Liang. 2023. Lost in the middle: How language models use long contexts. arXiv preprint arXiv:2307.03172.",
+    "Charles M Macal and Michael J North. 2005. Tutorial on agent-based modeling and simulation. In Proceedings of the Winter Simulation Conference, 2005., pages 14-pp. IEEE.",
+    "Andrew Ortony et al. 2003. On making believable emotional agents believable. Emotions in humans and artifacts, pages 189-211.",
+    "Joon Sung Park, Joseph O'Brien, Carrie Jun Cai, Meredith Ringel Morris, Percy Liang, and Michael S Bernstein. 2023. Generative agents: Interactive simulacra of human behavior. In Proceedings of the 36th Annual ACM Symposium on User Interface Software and Technology, pages 1-22.",
+    "Joon Sung Park, Lindsay Popowski, Carrie Cai, Meredith Ringel Morris, Percy Liang, and Michael S Bernstein. 2022. Social simulacra: Creating populated prototypes for social computing systems. In Proceedings of the 35th Annual ACM Symposium on User Interface Software and Technology, pages 1–18.",
+    "Fábio Perez and Ian Ribeiro. 2022. Ignore previous prompt: Attack techniques for language models. arXiv preprint arXiv:2211.09527.",
+    "Ofir Press, Muru Zhang, Sewon Min, Ludwig Schmidt, Noah A Smith, and Mike Lewis. 2022. Measuring and narrowing the compositionality gap in language models. arXiv preprint arXiv:2210.03350.",
+    "Chen Qian, Xin Cong, Cheng Yang, Weize Chen, Yusheng Su, Juyuan Xu, Zhiyuan Liu, and Maosong Sun. 2023. Communicative agents for software development. arXiv preprint arXiv:2307.07924.",
+    "Haocong Rao, Cyril Leung, and Chunyan Miao. 2023. Can chatgpt assess human personalities? a general evaluation framework. arXiv preprint arXiv:2303.01248.",
+    "Richard T Schaefer. 2008. Encyclopedia of race, ethnicity, and society, volume 1. Sage.",
+    "Abigail See, Aneesh Pappu, Rohun Saxena, Akhila Yerukola, and Christopher D Manning. 2019. Do massively pretrained language models make better storytellers? arXiv preprint arXiv:1909.10705.",
+    "Maya Sen and Omar Wasow. 2016. Race as a bundle of sticks: Designs that estimate effects of seemingly immutable characteristics. Annual Review of Political Science, 19:499-522.",
+    "Yunfan Shao, Linyang Li, Junqi Dai, and Xipeng Qiu. 2023. Character-llm: A trainable agent for role-playing. arXiv preprint arXiv:2310.10158.",
+    "Edward Stein. 2001. The mismeasure of desire: The science, theory, and ethics of sexual orientation. Oxford University Press, USA.",
+    "Nisan Stiennon, Long Ouyang, Jeffrey Wu, Daniel Ziegler, Ryan Lowe, Chelsea Voss, Alec Radford, Dario Amodei, and Paul F Christiano. 2020. Learning to summarize with human feedback. Advances in Neural Information Processing Systems, 33:3008-3021.",
+    "Piotr Sztompka. 2002. Socjologia. Analiza społeczeństwa, Kraków, (s 582).",
+    "Hugo Touvron, Thibaut Lavril, Gautier Izacard, Xavier Martinet, Marie-Anne Lachaux, Timothée Lacroix, Baptiste Rozière, Naman Goyal, Eric Hambro, Faisal Azhar, et al. 2023. Llama: Open and efficient foundation language models. arXiv preprint arXiv:2302.13971.",
+    "Boshi Wang, Sewon Min, Xiang Deng, Jiaming Shen, You Wu, Luke Zettlemoyer, and Huan Sun. 2022. Towards understanding chain-of-thought prompting: An empirical study of what matters. arXiv preprint arXiv:2212.10001.",
+    "Lei Wang, Jingsen Zhang, Hao Yang, Zhiyuan Chen, Jiakai Tang, Zeyu Zhang, Xu Chen, Yankai Lin, Ruihua Song, Wayne Xin Zhao, et al. 2023a. When large language model based agent meets user behavior analysis: A novel user simulation paradigm. arXiv preprint ArXiv:2306.02552.",
+    "Zekun Moore Wang, Zhongyuan Peng, Haoran Que, Jiaheng Liu, Wangchunshu Zhou, Yuhan Wu, Hongcheng Guo, Ruitong Gan, Zehao Ni, Man Zhang, et al. 2023b. Rolellm: Benchmarking, eliciting, and enhancing role-playing abilities of large language models. arXiv preprint arXiv:2310.00746.",
+    "S Wasserman. 1994. Social network analysis: methods and applications. Cambridge University Press google schola, 2:131-134.",
+    "Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Fei Xia, Ed Chi, Quoc V Le, Denny Zhou, et al. 2022. Chain-of-thought prompting elicits reasoning in large language models. Advances in Neural Information Processing Systems, 35:24824-24837.",
+    "Christian Wirth, Riad Akrour, Gerhard Neumann, Johannes Fürnkranz, et al. 2017. A survey of preference-based reinforcement learning methods. Journal of Machine Learning Research, 18(136):1-46.",
+    "Michael Wooldridge and Nicholas R Jennings. 1995. Intelligent agents: Theory and practice. The knowledge engineering review, 10(2):115-152.",
+    "Saizheng Zhang, Emily Dinan, Jack Urbanek, Arthur Szlam, Douwe Kiela, and Jason Weston. 2018. Personalizing dialogue agents: I have a dog, do you have pets too? arXiv preprint arXiv:1801.07243.",
+    "Yue Zhang, Yafu Li, Leyang Cui, Deng Cai, Lemao Liu, Tingchen Fu, Xinting Huang, Enbo Zhao, Yu Zhang, Yulong Chen, et al. 2023. Siren's song in the ai ocean: a survey on hallucination in large language models. arXiv preprint arXiv:2309.01219.",
+    "Yinhe Zheng, Guanyi Chen, Minlie Huang, Song Liu, and Xuan Zhu. 2019. Personalized dialogue generation with diversified traits. arXiv preprint arXiv:1901.09672.",
+    "Yinhe Zheng, Rongsheng Zhang, Minlie Huang, and Xiaoxi Mao. 2020. A pre-training based personalized dialogue generation model with persona-sparse data. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 34, pages 9693–9700."
+  ],
+  "measurement_description": "The benchmark measured 'simulation hallucination,' specifically the tendency of models to incorrectly infer a character's religious affiliation (e.g., Christian) based on other demographic data (like ethnicity or surname) when no explicit religious information was provided in the character's profile."
 }

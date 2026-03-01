@@ -2,87 +2,43 @@
   "filename": "2206.11684.pdf",
   "title": "Theory-Grounded Measurement of U.S. Social Stereotypes in English Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2206.11684",
-  "benchmark_measurement": "Detection of stereotypical associations between social groups (including religious groups) and 32 traits across three dimensions: Agency/Socioeconomic Success, Conservative–Progressive Beliefs, and Communion. The 'Beliefs' dimension includes traits like 'religious vs. science-oriented' and 'traditional vs. modern'.",
-  "religious_groups": [
-    "Jewish",
-    "Muslim",
-    "Christian",
-    "Buddhist",
-    "Mormon",
-    "Catholic",
-    "Amish",
-    "Protestant",
-    "Atheist",
-    "Hindu"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating stereotypic group-trait associations by applying the psychological Agency-Belief-Communion (ABC) model using template-based queries, measured via Increased Log Probability Score (ILPS), Contextualized Embedding Association Test (CEAT), and a novel Sensitivity Test (SeT)."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Evaluating stereotypic group-trait associations by applying the psychological Agency-Belief-Communion (ABC) model using template-based queries, measured via Increased Log Probability Score (ILPS), Contextualized Embedding Association Test (CEAT), and a novel Sensitivity Test (SeT)."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluating stereotypic group-trait associations by applying the psychological Agency-Belief-Communion (ABC) model using template-based queries, measured via Increased Log Probability Score (ILPS), Contextualized Embedding Association Test (CEAT), and a novel Sensitivity Test (SeT)."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluating stereotypic group-trait associations by applying the psychological Agency-Belief-Communion (ABC) model using template-based queries, measured via Increased Log Probability Score (ILPS), Contextualized Embedding Association Test (CEAT), and a novel Sensitivity Test (SeT)."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Evaluating stereotypic group-trait associations by applying the psychological Agency-Belief-Communion (ABC) model using template-based queries, measured via Increased Log Probability Score (ILPS), Contextualized Embedding Association Test (CEAT), and a novel Sensitivity Test (SeT)."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Evaluating stereotypic group-trait associations by applying the psychological Agency-Belief-Communion (ABC) model using template-based queries, measured via Increased Log Probability Score (ILPS), Contextualized Embedding Association Test (CEAT), and a novel Sensitivity Test (SeT)."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Evaluating stereotypic group-trait associations by applying the psychological Agency-Belief-Communion (ABC) model using template-based queries, measured via Increased Log Probability Score (ILPS), Contextualized Embedding Association Test (CEAT), and a novel Sensitivity Test (SeT)."
+    },
+    {
+      "target": "Political bias",
+      "methodology": "Evaluating stereotypic group-trait associations by applying the psychological Agency-Belief-Communion (ABC) model using template-based queries, measured via Increased Log Probability Score (ILPS), Contextualized Embedding Association Test (CEAT), and a novel Sensitivity Test (SeT)."
+    },
+    {
+      "target": "Nationality bias",
+      "methodology": "Evaluating stereotypic group-trait associations by applying the psychological Agency-Belief-Communion (ABC) model using template-based queries, measured via Increased Log Probability Score (ILPS), Contextualized Embedding Association Test (CEAT), and a novel Sensitivity Test (SeT)."
+    }
   ],
-  "models_tested": [
-    "BERT",
-    "RoBERTa"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "CrowS-Pairs",
-    "Stereoset",
-    "CEAT",
-    "S. Bias Frames"
-  ],
-  "continuous_testing": false,
-  "findings": "The study found that language models' stereotypical associations for religious groups (e.g., Jewish, Muslim, Christian, Buddhist, Mormon) show a moderate alignment with human stereotype judgments. The proposed SeT measurement on the RoBERTa model yielded the highest alignment with human annotations across all groups. Specific correlation scores for religious groups are provided in the appendix (e.g., Table A11), showing varying degrees of alignment for different groups and models, but no specific religious stereotypes were highlighted as major findings in the main text.",
-  "references": [
-    "Andrea Abele, Naomi Ellemers, Susan Fiske, Alex Koch, and Vincent Yzerbyt. 2020. Navigating the social world: Toward an integrated framework for evaluating self, individuals, and groups. Psychological review, 128.",
-    "Andrea Abele and Bogdan Wojciszke. 2014. Communal and agentic content a dual perspective model. Adv. Exp. Soc. Psychol., 50:198–255.",
-    "Emily M Bender, Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. 2021. On the dangers of stochastic parrots: Can language models be too big? In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, pages 610–623.",
-    "Alina Beygelzimer, Sanjoy Dasgupta, and John Langford. 2008. Importance weighted active learning. CoRR, abs/0812.4952.",
-    "Victor Bittorf, Benjamin Recht, Christopher Ré, and Joel Tropp. 2012. Factoring nonnegative matrices with linear programs. Advances in Neural Information Processing Systems, 2.",
-    "Su Lin Blodgett, Gilsinia Lopez, Alexandra Olteanu, Robert Sim, and Hanna Wallach. 2021. Stereotyping Norwegian salmon: An inventory of pitfalls in fairness benchmark datasets. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 1004–1015, Online. Association for Computational Linguistics.",
-    "Tolga Bolukbasi, Kai-Wei Chang, James Zou, Venkatesh Saligrama, and Adam Kalai. 2016. Man is to computer programmer as woman is to homemaker? debiasing word embeddings. NeurIPS, pages 4349–4357.",
-    "Eduardo Bonilla-Silva. 1997. Rethinking racism: Toward a structural interpretation. American sociological review, pages 465–480.",
-    "Robert E. Botsch. 2011. Significance and Measures of Association.",
-    "Irene Browne and Joya Misra. 2003. The intersection of gender and race in the labor market. Annual review of sociology, 29(1):487–513.",
-    "J.S. Bruner, Brunswik E, L. Festinger, F. Heider, K.F. Muenzinger, C.E. Osgood, and D. Rapaport. 1957. Going beyond the information given. Contemporary approaches to cognition, pages 41–67.",
-    "Aylin Caliskan, Joanna J Bryson, and Arvind Narayanan. 2017. Semantics derived automatically from language corpora contain human-like biases. Science, 356(6334):183–186.",
-    "Yang Trista Cao, Yada Pruksachatkun, Kai-Wei Chang, Rahul Gupta, Varun Kumar, Jwala Dhamala, and Aram Galstyan. 2022. On the intrinsic and extrinsic fairness evaluation metrics for contextualized language representations.",
-    "Patricia Hill Collins. 2002. Black feminist thought: Knowledge, consciousness, and the politics of empowerment. routledge.",
-    "Combahee River Collective. 1977. A Black Feminist Statement. na.",
-    "Combahee River Collective. 1983. The combahee river collective statement. Home girls: A Black feminist anthology, 1:264–274.",
-    "Kimberlé Crenshaw. 1989. Demarginalizing the intersection of race and sex: A black feminist critique of antidiscrimination doctrine, feminist theory and antiracist politics. u. Chi. Legal f., page 139.",
-    "Hal Daumé, III and Abhishek Kumar. 2017. Column squishing for multiclass updates (blog post).",
-    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. Bert: Pre-training of deep bidirectional transformers for language understanding. In NAACL-HLT (1).",
-    "Naomi Ellemers. 2017. Morality and the Regulation of Social Behavior: Groups as Moral Anchors.",
-    "Susan T. Fiske, Amy J. C. Cuddy, Peter Glick, and Jun Xu. 2002. A model of (often mixed) stereotype content: competence and warmth respectively follow from perceived status and competition. Journal of personality and social psychology, 82 6:878–902.",
-    "Timnit Gebru, Jamie Morgenstern, Briana Vecchione, Jennifer Wortman Vaughan, Hanna Wallach, Hal Daumé, and Kate Crawford. 2018. Datasheets for datasets.",
-    "Negin Ghavami and Letitia Anne Peplau. 2013. An intersectional analysis of gender and ethnic stereotypes: Testing three hypotheses. Psychology of Women Quarterly, 37(1):113–127.",
-    "Wei Guo and Aylin Caliskan. 2021. Detecting emergent intersectional biases: Contextualized word embeddings contain a distribution of human-like biases. In Proceedings of the 2021 AAAI/ACM Conference on AI, Ethics, and Society, AIES ’21, page 122–133, New York, NY, USA. Association for Computing Machinery.",
-    "Timothy J. Hazen, Alexandra Olteanu, Gabriella Kazai, Fernando Diaz, and Michael Golebiewski. 2020. On the social and technical challenges of web search autosuggestion moderation. arXiv:2007.05039 [cs]. ArXiv: 2007.05039.",
-    "bell hooks. 1992. Yearning: Race, gender, and cultural politics. Hypatia, 7(2).",
-    "Dirk Hovy and Diyi Yang. 2021. The importance of modeling social factors of language: Theory and practice. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 588–602, Online. Association for Computational Linguistics.",
-    "Lynne M. Jackson. 2011. The psychology of prejudice: From attitudes to social action. American Psychological Association.",
-    "Deborah K King. 1988. Multiple jeopardy, multiple consciousness: The context of a black feminist ideology. Signs: Journal of women in culture and society, 14(1):42–72.",
-    "Alex Koch, Roland Imhoff, Ron Dotsch, Christian Unkelbach, and Hans Alves. 2016. The abc of stereotypes about groups: Agency/socioeconomic success, conservative-progressive beliefs, and communion. Journal of personality and social psychology, 110:675–709.",
-    "Alex Koch, Vincent Yzerbyt, Andrea Abele, Naomi Ellemers, and Susan T. Fiske. 2021. Social evaluation: Comparing models across interpersonal, intragroup, intergroup, several-group, and many-group contexts, volume 63, page 1–68. Elsevier.",
-    "Keita Kurita, Nidhi Vyas, Ayush Pareek, Alan W. Black, and Yulia Tsvetkov. 2019. Measuring bias in contextualized word representations. CoRR, abs/1906.07337.",
-    "Carl A. Latkin, Catie Edwards, Melissa A. Davey-Rothwell, and Karin E. Tobin. 2017. The relationship between social desirability bias and self-reports of health, substance use, and social network factors among urban substance users in baltimore, maryland. Addictive Behaviors, 73:133–136.",
-    "Walter Lippmann. 1965. Public Opinion. New York :Free Press.",
-    "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. 2019. RoBERTa: A robustly optimized bert pretraining approach. arXiv preprint arXiv:1907.11692.",
-    "Chandler May, Alex Wang, Shikha Bordia, Samuel R. Bowman, and Rachel Rudinger. 2019. On measuring social biases in sentence encoders. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 622–628, Minneapolis, Minnesota. Association for Computational Linguistics.",
-    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2020. Stereoset: Measuring stereotypical bias in pretrained language models. CoRR, abs/2004.09456.",
-    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R. Bowman. 2020. CrowS-pairs: A challenge dataset for measuring social biases in masked language models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1953–1967, Online. Association for Computational Linguistics.",
-    "Debora Nozza, Federico Bianchi, and Dirk Hovy. 2021. HONEST: Measuring hurtful sentence completion in language models. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 2398–2406, Online. Association for Computational Linguistics.",
-    "Silviu Paun, Bob Carpenter, Jon Chamberlain, Dirk Hovy, Udo Kruschwitz, and Massimo Poesio. 2018. Comparing Bayesian Models of Annotation. Transactions of the Association for Computational Linguistics, 6:571–585.",
-    "Maarten Sap, Saadia Gabriel, Lianhui Qin, Dan Jurafsky, Noah A. Smith, and Yejin Choi. 2019. Social bias frames: Reasoning about social and power implications of language. CoRR, abs/1911.03891.",
-    "Anna Sotnikova, Yang Trista Cao, Hal Daumé III, and Rachel Rudinger. 2021. Analyzing stereotypes in generative text inference tasks. In Findings of the Association for Computational Linguistics: ACLIJCNLP 2021, pages 4052–4065, Online. Association for Computational Linguistics.",
-    "Dr. Charles Stangor. 2014. Principles of social psychology - 1st international edition. BCcampus.",
-    "Amy C Steinbugler, Julie E Press, and Janice Johnson Dias. 2006. Gender, race, and affirmative action: Operationalizing intersectionality in survey research. Gender & Society, 20(6):805–825.",
-    "Sheldon Stryker. 1980. Symbolic interactionism: a social structural version. Benjamin/Cummings Pub. Co.",
-    "S. Wheeler and Richard Petty. 2001. The effects of stereotype activation on behavior: A review of possible mechanisms. Psychological bulletin, 127:797–826.",
-    "I.J. Wod. 1985. Weight of evidence: A brief survey. Bayesian statistics, 2:249–270.",
-    "Vincent Y. Yzerbyt. 2018. The dimensional compensation model. Agency and Communion in Social Psychology.",
-    "Maxine Baca Zinn and Bonnie Thornton Dill. 1996. Theorizing difference from multiracial feminism. Feminist studies, 22(2):321–331."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

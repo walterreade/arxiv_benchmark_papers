@@ -2,55 +2,66 @@
   "filename": "2505.24712.pdf",
   "title": "HESEIA: A community-based dataset for evaluating social biases in large language models, co-designed in real school settings in Latin America",
   "arxiv_url": "https://arxiv.org/pdf/2505.24712",
-  "bias_targets": [
-    {
-      "target": "Age bias",
-      "methodology": "Prompting LLMs with counterfactual sentence pairs to evaluate their recognition of and agreement with age-related stereotypes using a Likert scale and agreement questions."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Prompting LLMs with counterfactual sentence pairs to evaluate their recognition of and agreement with disability-related stereotypes using a Likert scale and agreement questions."
-    },
-    {
-      "target": "Ethnicity bias",
-      "methodology": "Prompting LLMs with counterfactual sentence pairs to evaluate their recognition of and agreement with ethnicity-related stereotypes using a Likert scale and agreement questions."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Prompting LLMs with counterfactual sentence pairs to evaluate their recognition of and agreement with gender-related stereotypes using a Likert scale and agreement questions."
-    },
-    {
-      "target": "Nationality bias",
-      "methodology": "Prompting LLMs with counterfactual sentence pairs to evaluate their recognition of and agreement with nationality-related stereotypes using a Likert scale and agreement questions."
-    },
-    {
-      "target": "Physical appearance bias",
-      "methodology": "Prompting LLMs with counterfactual sentence pairs to evaluate their recognition of and agreement with physical appearance stereotypes using a Likert scale and agreement questions."
-    },
-    {
-      "target": "Profession bias",
-      "methodology": "Prompting LLMs with counterfactual sentence pairs to evaluate their recognition of and agreement with profession-related stereotypes using a Likert scale and agreement questions."
-    },
-    {
-      "target": "Religion bias",
-      "methodology": "Prompting LLMs with counterfactual sentence pairs to evaluate their recognition of and agreement with religion-related stereotypes using a Likert scale and agreement questions."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Prompting LLMs with counterfactual sentence pairs to evaluate their recognition of and agreement with sexual orientation stereotypes using a Likert scale and agreement questions."
-    },
-    {
-      "target": "Socioeconomic bias",
-      "methodology": "Prompting LLMs with counterfactual sentence pairs to evaluate their recognition of and agreement with socioeconomic stereotypes using a Likert scale and agreement questions."
-    },
-    {
-      "target": "Geographic bias",
-      "methodology": "Prompting LLMs with counterfactual sentence pairs to evaluate their recognition of and agreement with regional and geographic stereotypes using a Likert scale and agreement questions."
-    },
-    {
-      "target": "Political bias",
-      "methodology": "Prompting LLMs with counterfactual sentence pairs to evaluate their recognition of and agreement with political stereotypes using a Likert scale and agreement questions."
-    }
+  "religious_groups": [],
+  "models_tested": [
+    "Gemini-1.5-Flash",
+    "gpt-40-mini",
+    "LLaMA3.1-8B",
+    "Mistral-7B"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "languages_evaluated": [
+    "Spanish",
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "CrowS-Pairs",
+    "Multilingual CrowS-Pairs",
+    "StereoSet"
+  ],
+  "continuous_testing": false,
+  "findings": "Religious bias was identified as a distinct category. The frequency of its annotation by teachers and students varied across different school subjects, with the highest proportion of religious bias annotations found in 'Communication' (10.8%), 'Biology & Natural Sciences' (9.3%), and 'Language & Literature' (8.2%).",
+  "references": [
+    "Laura Alonso Alemany, Luciana Benotti, Hernán Maina, Lucía Gonzalez, Lautaro Martínez, Beatriz Busaniche, Alexia Halvorsen, Amanda Rojo, and Mariela Rajngewerc. 2023. Bias assessment for experts in discrimination, not in computer science. In Proceedings of the First Workshop on Cross-Cultural Considerations in NLP (C3NLP), pages 91–106, Dubrovnik, Croatia. Association for Computational Linguistics.",
+    "R Anijovich. 2017. La evaluación formativa en la enseñanza superior. Voces de la educación, 2(3):31–31.",
+    "Soumya Barikeri, Anne Lauscher, Ivan Vulić, and Goran Glavaš. 2021. Redditbias: A real-world resource for bias evaluation and debiasing of conversational language models. Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 1941–1955.",
+    "Shaily Bhatt, Sunipa Dev, Partha Talukdar, Shachi Dave, and Vinodkumar Prabhakaran. 2022. Recontextualizing fairness in nlp: The case of india. Proceedings of the 2nd Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics and the 12th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 727–740.",
+    "Abeba Birhane, William Isaac, Vinodkumar Prabhakaran, Mark Diaz, Madeleine Clare Elish, Iason Gabriel, and Shakir Mohamed. 2022. Power to the people? opportunities and challenges for participatory ai. In Proceedings of the 2nd ACM Conference on Equity and Access in Algorithms, Mechanisms, and Optimization, EAAMO '22, New York, NY, USA. Association for Computing Machinery.",
+    "Su Lin Blodgett, Gilsinia Lopez, Alexandra Olteanu, Robert Sim, and Hanna Wallach. 2021. Stereotyping Norwegian salmon: An inventory of pitfalls in fairness benchmark datasets. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 1004–1015, Online. Association for Computational Linguistics.",
+    "Nadav Borenstein, Karolina Stanczak, Thea Rolskov, Natacha Klein Käfer, Natália da Silva Perez, and Isabelle Augenstein. 2023. Measuring intersectional biases in historical documents. In Findings of the Association for Computational Linguistics: ACL 2023, pages 2711–2730, Toronto, Canada. Association for Computational Linguistics.",
+    "César Coll. 2001. Constructivismo y educación: la concepción constructivista de la enseñanza y el aprendizaje. Desarrollo psicológico y educación. Psicología de la educación escolar, pages 157–186.",
+    "Aida Mostafazadeh Davani, Mark Díaz, and Vinodkumar Prabhakaran. 2022. Dealing with disagreements: Looking beyond the majority vote in subjective annotations. Transactions of the Association for Computational Linguistics, 10:92–110.",
+    "Mark Díaz and Angela DR Smith. 2024. What makes an expert? reviewing how ml researchers define\" expert\". In Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society, volume 7, pages 358–370.",
+    "Mary T. Dzindolet, Scott A. Peterson, Regina A. Pomranky, Linda G. Pierce, and Hall P. Beck. 2003. The role of trust in automation reliance. International Journal of Human-Computer Studies, 58(6):697–718. Trust and Technology.",
+    "Stephanie Eckman, Barbara Plank, and Frauke Kreuter. 2024. Position: Insights from survey methodology can improve training data. In Proceedings of the 41st International Conference on Machine Learning, volume 235 of Proceedings of Machine Learning Research, pages 12268–12283. PMLR.",
+    "Golnoosh Farnadi, Mohammad Havaei, and Negar Rostamzadeh. 2024. Position: Cracking the code of cascading disparity towards marginalized communities. In Proceedings of the 41st International Conference on Machine Learning, volume 235 of Proceedings of Machine Learning Research, pages 13072–13085. PMLR.",
+    "Virginia Felkner, Ho-Chun Herbert Chang, Eugene Jang, and Jonathan May. 2023. Winoqueer: A communityin-the-loop benchmark for anti-lgbtq+ bias in large language models. Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 9126–9140.",
+    "Eve Fleisig, Rediet Abebe, and Dan Klein. 2023. When the majority is wrong: Modeling annotator disagreement for subjective tasks. Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, pages 6715–6726.",
+    "Karen Fort, Laura Alonso Alemany, Luciana Benotti, Julien Bezançon, Claudia Borg, Marthese Borg, Yongjian Chen, Fanny Ducel, Yoann Dupont, Guido Ivetta, Zhijian Li, Margot Mieskes, Marco Naguib, Yuyan Qian, Matteo Radaelli, Wolfgang S. Schmeisser-Nieto, Emma Raimundo Schulz, Thiziri Saci, Sarah Saidi, and 4 others. 2024. Your stereotypical mileage may vary: Practical challenges of evaluating biases in multiple languages and cultural contexts. In Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024), pages 17764–17769, Torino, Italia. ELRA and ICCL.",
+    "Batya Friedman and Helen Nissenbaum. 1996. Bias in computer systems. ACM TACM Transactions on Information Systems (TOIS), 14(3):330–347.",
+    "Ilias O Gallegos, Ryan A Rossi, Joe Barrow, Md Mehrab Tanjim, Sungchul Kim, Franck Dernoncourt, Tong Yu, Rui Zhang, and Nitesh V Chawla Kashif Ahmed. 2024. Bias and fairness in large language models: A survey. Computational Linguistics, 50(3):1097–1179.",
+    "Martín Graziano. 2021. Ambiente, clases sociales y potencia emancipadora: contribuciones para una intervención social contrahegemónica desde los espacios académicos. Revista de extensión universitaria.",
+    "Marcos J. Gómez, Julián Dabbah, and Luciana Benotti. 2025. A workshop on artificial intelligence biases and its effect on high school students' perceptions. International Journal of Child-Computer Interaction, 43:100710.",
+    "Valentin Hofmann, Pratyusha Ria Kalluri, Dan Jurafsky, and Sharese King. 2024. Ai generates covertly racist decisions about people based on their dialect. Nature, 633(8028):147–154.",
+    "Svetlana Kiritchenko and Saif Mohammad. 2018. Examining gender and race bias in two hundred sentiment analysis systems. Proceedings of the Seventh Joint Conference on Lexical and Computational Semantics, pages 43–53.",
+    "J Lalor, Y Yang, K Smith, N Forsgren, and A Abbasi. 2022. Benchmarking intersectional biases in nlp. Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 3598–3609.",
+    "Thomas Manzini, Yao Chong Lim, Alan W Black, and Yulia Tsvetkov. 2019. Black is to criminal as caucasian is to police: Detecting and removing multiclass bias in word embeddings. Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 615–621.",
+    "Margaret Mitchell, Giuseppe Attanasio, Ioana Baldini, Miruna Clinciu, Jordan Clive, Pieter Delobelle, Manan Dey, Sil Hamilton, Timm Dill, Jad Doughman, Ritam Dutt, Avijit Ghosh, Jessica Zosa Forde, Carolin Holtermann, Lucie-Aimée Kaffee, Tanmay Laud, Anne Lauscher, Roberto L Lopez-Davila, Maraim Masoud, and 35 others. 2025. SHADES: Towards a multilingual assessment of stereotypes in large language models. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 11995–12041, Albuquerque, New Mexico. Association for Computational Linguistics.",
+    "Ezequiel Molina, Cristobal Cobo, Jasmine Pineda, and Helena Rovner. 2024. La revolución de la ia en educación: Lo que hay que saber. Technical report, Banco Mundial.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2021. StereoSet: Measuring stereotypical bias in pretrained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 5356–5371, Online. Association for Computational Linguistics.",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R. Bowman. 2020. CrowS-pairs: A challenge dataset for measuring social biases in masked language models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1953–1967, Online. Association for Computational Linguistics.",
+    "Barbara Plank. 2022. The \"problem\" of human label variation: On ground truth in data, modeling and evaluation. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 10671–10682, Abu Dhabi, United Arab Emirates. Association for Computational Linguistics.",
+    "Arianna Prothero. 2024. More teachers are using aidetection tools. here's why that might be a problem. Education Week, 5.",
+    "Abhilasha Ravichander, Jack Stacey, and Marek Rei. 2023. When and why does bias mitigation work? Findings of the Association for Computational Linguistics: EMNLP 2023, pages 9233–9247.",
+    "Rachel Rudinger, Jason Naradowsky, Brian Leonard, and Benjamin Van Durme. 2018. Gender bias in coreference resolution. Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 8–14.",
+    "Amna Saleem, Huma Kausar, and Farah Deeba. 2021. Social constructivism: A new paradigm in teaching and learning environment. Perennial journal of history, 2(2):403–421.",
+    "Eric Michael Smith, Miriam Hall, Monojit Kambadur, Emilia Presani, and Adina Williams. 2022. \"i'm sorry to hear that\": Finding new biases in language models with a holistic descriptor dataset. Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 9180–9211.",
+    "Yifan Wang, Yanmeng Zhu, Chen Kong, Shaohan Wei, Xiaoyuan Yi, Xing Xie, Yang Trista Sang, Jie Cao, Iyanu Adebara, Li Zhou, Luciana Benotti, Sunipa Dev, Daniel Hershcovich, and Vinodkumar Prabhakaran. 2024. Cdeval: A benchmark for measuring the cultural dimensions of large language models. Proceedings of the 2nd Workshop on Cross-Cultural Considerations in NLP, pages 1–16.",
+    "Kellie Webster, Marta Recasens, Vera Axelrod, and Jason Baldridge. 2018. Mind the gap: A balanced corpus of gendered ambiguous pronouns. Transactions of the Association for Computational Linguistics, 6:605–617.",
+    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang. 2018. Gender bias in coreference resolution: Evaluation and debiasing methods. Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 15–20."
+  ],
+  "measurement_description": "Detection of stereotypes and biases related to religion as one of several demographic axes."
 }

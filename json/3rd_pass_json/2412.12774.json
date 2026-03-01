@@ -2,27 +2,65 @@
   "filename": "2412.12774.pdf",
   "title": "A Framework for Critical Evaluation of Text-to-Image Models: Integrating Art Historical Analysis, Artistic Exploration, and Critical Prompt Engineering.",
   "arxiv_url": "https://arxiv.org/pdf/2412.12774",
-  "bias_targets": [
-    {
-      "target": "Cultural bias",
-      "methodology": "Applying art historical and iconographical analysis to evaluate how models modernize classic Western artworks, identifying the inappropriate introduction of orientalist elements or over-reliance on Western religious iconography to represent non-Western cultures."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Using critical prompt engineering to manipulate gender pronouns in prompts describing authoritative roles (e.g., construction site managers), and evaluating the resulting visual representations of competence, posture, and authority through the lens of feminist theory."
-    },
-    {
-      "target": "Racial bias",
-      "methodology": "Using artistic exploration with nuanced prompts about domestic labor to observe the disproportionate generation of people of color, analyzed through the lens of critical race theory."
-    },
-    {
-      "target": "Class and Socioeconomic bias",
-      "methodology": "Crafting prompts inspired by artistic aesthetic practices that highlight the resilience and dignity of domestic labor to evaluate how models visually represent class, labor, and lower-income jobs."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Analyzing generated outputs for prompts mentioning 'a lifetime of domestic labor' to reveal implicit associations between specific types of work and elderly individuals, even in the absence of explicit age directives."
-    }
+  "religious_groups": [
+    "Christianity",
+    "Other religions (unspecified)"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "DALL-E",
+    "Midjourney",
+    "Stable Diffusion"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "FID",
+    "CLIP score",
+    "DALL-Eval",
+    "Holistic Evaluation of Text-to-Image Models (HEIM)",
+    "CUBE"
+  ],
+  "continuous_testing": true,
+  "findings": "The paper found that AI models exhibit a bias towards Western religious iconography, such as consistently generating images of Christian saints even when prompted for more general spiritual figures. In a case study involving 'The Arnolfini Portrait,' models struggled with depicting deep symbolic interpretations and often omitted crucial religious symbols present in the original artwork.",
+  "references": [
+    "Arnheim, R.: Art and visual perception: A psychology of the creative eye (New version). University of California Press (1974)",
+    "Bansal, H., Yin, D., Monajatipoor, M., Chang, K.W.: How well can Text-to-Image Generative Models understand Ethical Natural Language Interventions? Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, EMNLP 2022 pp. 1358-1370 (oct 2022). https://doi.org/10.18653/v1/2022.emnlp-main.88, https://arxiv.org/abs/2210.15230v1",
+    "Benjamin, R.: Race after technology : abolitionist tools for the New Jim Code. Polity (2019)",
+    "Bhabha, H.K. (ed.): The Location of Culture. Routledge (1994)",
+    "Bianchi, F., Kalluri, P., Durmus, E., Ladhak, F., Cheng, M., Nozza, D., Hashimoto, T., Jurafsky, D., Zou, J., Caliskan, A.: Easily accessible text-to-image generation amplifies demographic stereotypes at large scale. In: Proceedings of the 2023 ACM Conference on Fairness, Accountability, and Transparency. p. 1493-1504. FAccT '23, Association for Computing Machinery, New York, NY, USA (2023). https://doi.org/10.1145/3593013.3594095, https://doi.org/10.1145/3593013.3594095",
+    "Cheong, M., Robinson, P., Byrne, J., Ruppanner, L., Klein, C., Abedin, E., Ferreira, M., Reimann, R., Chalson, S., Alfano, M., Cheong, M., Byrne, J., Ruppanner, L., Ferreira, M., Reimann, R., Alfano, M., Chalson, S., Robinson, P., Klein, C.: Investigating Gender and Racial Biases in DALL-E Mini Images. ACM Journal on Responsible Computing 1(13), 13 (jun 2024). https://doi.org/10.1145/3649883, https://dl.acm.org/doi/10.1145/3649883",
+    "Cho, J., Zala, A., Bansal, M.: DALL-Eval: Probing the Reasoning Skills and Social Biases of Text-to-Image Generation Models (2023), https://github.com/j-min/DallEval",
+    "Crawford, K., Paglen, T.: Excavating ai: the politics of images in machine learning training sets. AI & SOCIETY 36, 1105 1116 (2021), https://api.semanticscholar.org/CorpusID:253682611",
+    "Doshi-Velez, F., Kim, B.: Towards a rigorous science of interpretable machine learning (2017), https://arxiv.org/abs/1702.08608",
+    "Foka, A.: She works, he works: A curious exploration of gender bias in ai-generated imagery (2024), https://arxiv.org/abs/2407.18524",
+    "Foka, A.: Experiments in the relationship between art history and text-to-image models. In: Brown, K. (ed.) Artificial Intelligence and Art History: Looking at Pictures in an Algorithmic Culture. Proceedings of the British Academy (to be published)",
+    "Frank, P., Preble, D., Preble, S.: Prebles' Artforms. Pearson (2019)",
+    "Gombrich, E.H.: Art and Illusion. A Study in the Psychology of Pictorial Representation. Princeton University Press (1969)",
+    "Hatt, M., Klonk, C.: Art history: a critical introduction to its methods. Manchester University Press (2006)",
+    "Heusel, M., Ramsauer, H., Unterthiner, T., Nessler, B., Hochreiter, S.: Gans trained by a two time-scale update rule converge to a local nash equilibrium (2018), https://arxiv.org/abs/1706.08500",
+    "Hooks, B. (ed.): Black Looks: Race and Representation. South End Press (1992)",
+    "Kannen, N., Ahmad, A., Andreetto, M., Prabhakaran, V., Prabhu, U., Dieng, A.Β., Bhattacharyya, P., Dave, S.: Beyond aesthetics: Cultural competence in text-to-image models (2024), https://arxiv.org/abs/2407.06863",
+    "Kynkäänniemi, T., Karras, T., Laine, S., Lehtinen, J., Aila, T.: Improved precision and recall metric for assessing generative models (2019), https://arxiv.org/abs/1904.06991",
+    "Lee, T., Yasunaga, M., Meng, C., Mai, Y., Park, J.S., Gupta, A., Zhang, Y., Narayanan, D., Teufel, H.B., Bellagente, M., Kang, M., Park, T., Leskovec, J., Zhu, J.Y., Fei-Fei, L., Wu, J., Ermon, S., Liang, P.: Holistic evaluation of text-to-image models (2023), https://arxiv.org/abs/2311.04287",
+    "Luccioni, A.S., Akiki, C., Mitchell, M., Jernite, Y.: Stable bias: Analyzing societal representations in diffusion models (2023), https://arxiv.org/abs/2303.11408",
+    "Midjourney, I.: Midjourney (2023), https://www.midjourney.com/home",
+    "Mulvey, L.: Visual Pleasure and Narrative Cinema. Screen 16(3), 6-18 (oct 1975). https://doi.org/10.1093/SCREEN/16.3.6, https://dx.doi.org/10.1093/screen/16.3.6",
+    "OpenAI: DALL-E 3 (2023), https://openai.com/index/dall-e-3/",
+    "OpenAI: DALL-E 3 system card (2023), https://openai.com/index/dall-e-3-system-card/",
+    "Otani, M., Togashi, R., Sawai, Y., Ishigami, R., Nakashima, Y., Rahtu, E., Heikkilä, J., Satoh, S.: Toward Verifiable and Reproducible Human Evaluation for Text-to-Image Generation. Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition 2023-June, 14277-14286 (apr 2023). https://doi.org/10.1109/CVPR52729.2023.01372, https://arxiv.org/abs/2304.01816v1",
+    "Panofsky, E.: Meaning in the Visual Arts. The University of Chicago Press (1983)",
+    "Pollock, G.: Vision and difference: feminism, femininity and the histories of art. Routledge (2003)",
+    "Radford, A., Kim, J.W., Hallacy, C., Ramesh, A., Goh, G., Agarwal, S., Sastry, G., Askell, A., Mishkin, P., Clark, J., Krueger, G., Sutskever, I.: Learning Transferable Visual Models From Natural Language Supervision. In: Proceedings of Machine Learning Research. vol. 139, pp. 8748-8763 (2021)",
+    "Ramesh, A., Dhariwal, P., Nichol, A., Chu, C., Chen, M.: Hierarchical text-conditional image generation with clip latents (2022), https://arxiv.org/abs/2204.06125",
+    "Rombach, R., Blattmann, A., Lorenz, D., Esser, P., Ommer, B.: High-resolution image synthesis with latent diffusion models (2022), https://arxiv.org/abs/2112.10752",
+    "Stability ΑΙ: Stability AI Image Models (2024), https://stability.ai/stable-image",
+    "Tsai, E. (ed.): Kehinde Wiley: A New Republic. Brooklyn Museum (2015)",
+    "Wood, C.S., Harbison, C., Upton, J.M., Bedaux, J.B.: Jan van Eyck: The Play of Realism. The Art Bulletin 75(1), 174 (1993). https://doi.org/10.2307/3045938"
+  ],
+  "measurement_description": "The framework measures bias in religious iconography (specifically, a tendency towards Western/Christian imagery) and the models' ability to understand and accurately represent complex religious and cultural symbolism in art."
 }

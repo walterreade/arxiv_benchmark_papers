@@ -2,74 +2,39 @@
   "filename": "2505.11861.pdf",
   "title": "FAIR-PP: A Synthetic Dataset for Aligning LLM with Personalized Preferences of Social Equity",
   "arxiv_url": "https://arxiv.org/pdf/2505.11861",
-  "benchmark_measurement": "The benchmark measures personalized preferences on social equity topics for various social groups, including religious groups. It assesses which of two opposing viewpoints on an equity issue (e.g., meritocracy vs. egalitarianism) is preferred for a given religious group.",
-  "religious_groups": [
-    "Christian",
-    "Buddhist",
-    "Hindu",
-    "Jewish",
-    "Muslim"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating personalized social equity preferences regarding gender groups (men, women, non-binary) using a multiple-choice survey and comparing LLM responses to diverse socio-political personas using Jensen-Shannon distance."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluating personalized social equity preferences regarding racial groups (White, Asian, African American, American Indian, Latino) using a multiple-choice survey and comparing LLM responses to socio-political personas."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluating personalized social equity preferences regarding religious groups (Christian, Buddhist, Hindu, Jewish, Muslim) using a multiple-choice survey and comparing LLM responses to socio-political personas."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Evaluating personalized social equity preferences regarding sexual orientations (heterosexual, homosexual) using a multiple-choice survey and comparing LLM responses to socio-political personas."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Evaluating personalized social equity preferences regarding age groups (children, teenagers, adults, elderly) using a multiple-choice survey and comparing LLM responses to socio-political personas."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Evaluating personalized social equity preferences regarding people with disabilities using a multiple-choice survey and comparing LLM responses to socio-political personas."
+    },
+    {
+      "target": "Socioeconomic and Vulnerability bias",
+      "methodology": "Evaluating personalized social equity preferences regarding vulnerable minority groups (e.g., war refugees, famine victims, 911 victims) using a multiple-choice survey and comparing LLM responses to socio-political personas."
+    },
+    {
+      "target": "Ideological and Political bias",
+      "methodology": "Measuring LLM alignment with 7 distinct socio-political personas (e.g., Progressive Activists, Backbone Conservatives) by calculating the Jensen-Shannon distance of their value preferences across 98 equity topics."
+    }
   ],
-  "models_tested": [
-    "Falcon3-7B-Instruct",
-    "Llama-3.1-8B-Instruct",
-    "Llama-3.2-3B-Instruct",
-    "Llama3.1-8b-cpt-sea-lionv3-instruct",
-    "Mistral-7B-Instruct-v0.3",
-    "Qwen2.5-7B-Instruct"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [],
-  "continuous_testing": false,
-  "findings": "The paper's findings are not specific to religion. Religion was included as one of several social group categories to measure diverse, personalized preferences on social equity. The overall findings show that different personas hold distinct preferences across all social groups, and that mainstream LLMs tend to align most closely with the 'Disengaged Battlers' persona (Persona 3), which is characterized by a focus on day-to-day survival and feeling excluded from political discourse.",
-  "references": [
-    "Richard C Huseman, John D Hatfield, and Edward W Miles. A new perspective on equity theory: The equity sensitivity construct. Academy of management Review, 12(2):222–234, 1987.",
-    "Nikhita Tuli, Kunal Shrivastava, and Disha Khattar. Understanding equity sensitivity through the lens of personality: a review of associations and underlying nature. Management Research Review, 46(9):1261–1277, 2023.",
-    "Jiaming Ji, Mickel Liu, Josef Dai, Xuehai Pan, Chi Zhang, Ce Bian, Boyuan Chen, Ruiyang Sun, Yizhou Wang, and Yaodong Yang. Beavertails: Towards improved safety alignment of Ilm via a human-preference dataset. Advances in Neural Information Processing Systems, 36:24678–24704, 2023.",
-    "Xiangyu Qi, Ashwinee Panda, Kaifeng Lyu, Xiao Ma, Subhrajit Roy, Ahmad Beirami, Prateek Mittal, and Peter Henderson. Safety alignment should be made more than just a few tokens deep. arXiv preprint arXiv:2406.05946, 2024.",
-    "Da Yin, Haoyi Qiu, Kung-Hsiang Huang, Kai-Wei Chang, and Nanyun Peng. Safeworld: Geo-diverse safety alignment. Advances in Neural Information Processing Systems, 37:128734- 128768, 2024.",
-    "Tiansheng Huang, Sihao Hu, Fatih Ilhan, Selim Tekin, and Ling Liu. Lisa: Lazy safety alignment for large language models against harmful fine-tuning attack. Advances in Neural Information Processing Systems, 37:104521-104555, 2024.",
-    "Yan Tao, Olga Viberg, Ryan S Baker, and René F Kizilcec. Cultural bias and cultural alignment of large language models. PNAS nexus, 3(9):pgae346, 2024.",
-    "Badr Alkhamissi, Muhammad ElNokrashy, Mai Alkhamissi, and Mona Diab. Investigating cultural alignment of large language models. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 12404–12422, 2024.",
-    "Cheng Li, Mengzhuo Chen, Jindong Wang, Sunayana Sitaram, and Xing Xie. Culturellm: Incorporating cultural differences into large language models. Advances in Neural Information Processing Systems, 37:84799–84838, 2024.",
-    "Cheng Li, Damien Teney, Linyi Yang, Qingsong Wen, Xing Xie, and Jindong Wang. Culturepark: Boosting cross-cultural understanding in large language models. arXiv preprint arXiv:2405.15145, 2024.",
-    "Esin Durmus, Karina Nguyen, Thomas I Liao, Nicholas Schiefer, Amanda Askell, Anton Bakhtin, Carol Chen, Zac Hatfield-Dodds, Danny Hernandez, Nicholas Joseph, et al. Towards measuring the representation of subjective global opinions in language models. arXiv preprint arXiv:2306.16388, 2023.",
-    "Shibani Santurkar, Esin Durmus, Faisal Ladhak, Cinoo Lee, Percy Liang, and Tatsunori Hashimoto. Whose opinions do language models reflect? In International Conference on Machine Learning, pages 29971–30004. PMLR, 2023.",
-    "Taylor Sorensen, Liwei Jiang, Jena D Hwang, Sydney Levine, Valentina Pyatkin, Peter West, Nouha Dziri, Ximing Lu, Kavel Rao, Chandra Bhagavatula, et al. Value kaleidoscope: Engaging ai with pluralistic human values, rights, and duties. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 38, pages 19937–19947, 2024.",
-    "Wenlong Zhao, Debanjan Mondal, Niket Tandon, Danica Dillion, Kurt Gray, and Yuling Gu. Worldvaluesbench: A large-scale benchmark dataset for multi-cultural value awareness of language models. In Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024), pages 17696–17706, 2024.",
-    "Yann Dubois, Chen Xuechen Li, Rohan Taori, Tianyi Zhang, Ishaan Gulrajani, Jimmy Ba, Carlos Guestrin, Percy S Liang, and Tatsunori B Hashimoto. Alpacafarm: A simulation framework for methods that learn from human feedback. Advances in Neural Information Processing Systems, 36:30039–30069, 2023.",
-    "Ganqu Cui, Lifan Yuan, Ning Ding, Guanming Yao, Bingxiang He, Wei Zhu, Yuan Ni, Guotong Xie, Ruobing Xie, Yankai Lin, et al. Ultrafeedback: Boosting language models with scaled ai feedback. arXiv preprint arXiv:2310.01377, 2023.",
-    "Patricia M Greenfield. Social change, cultural evolution, and human development. Current Opinion in Psychology, 8:84–92, 2016.",
-    "Miguel R Ramos, Matthew R Bennett, Douglas S Massey, and Miles Hewstone. Humans adapt to social diversity over time. Proceedings of the National Academy of Sciences, 116(25):12244– 12249, 2019.",
-    "Feras El Zarwi, Akshay Vij, and Joan Walker. Modeling and forecasting the evolution of preferences over time: A hidden markov model of travel behavior. arXiv preprint arXiv:1707.09133, 2017.",
-    "Wesley C King Jr and Edward W Miles. The measurement of equity sensitivity. Journal of Occupational and Organizational Psychology, 67(2):133–142, 1994.",
-    "Paula Surridge. Britain's choice: Polarisation or cohesion. The Political Quarterly, 92(1):119– 124, 2021.",
-    "Hideaki Goto. Belief in egalitarianism and meritocracy. Economics Letters, 221:110896, 2022.",
-    "Jody Clay-Warner, Karen A Hegtvedt, and Paul Roman. Procedural justice, distributive justice: How experiences with downsizing condition their impact on organizational commitment. Social Psychology Quarterly, 68(1):89–102, 2005.",
-    "Rebecca LeFebvre and Volker Franke. Culture matters: Individualism vs. collectivism in conflict decision-making. Societies, 3(1):128–146, 2013.",
-    "Maurizio Bussolo, Jessy Amarachi Ezebuihe, Ana Maria Muñoz Boudet, Stavros Poupakis, Tasmia Rahman, and Nayantara Sarma. Social norms and gender disparities with a focus on female labor force participation in south asia. The World Bank Research Observer, 39(1):124- 158, 2024.",
-    "G Stoney Alder and Joseph Gilbert. Achieving ethics and fairness in hiring: Going beyond the law. Journal of Business Ethics, 68:449–464, 2006.",
-    "Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia Leoni Aleman, Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat, et al. Gpt-4 technical report. arXiv preprint arXiv:2303.08774, 2023.",
-    "Shangbin Feng, Taylor Sorensen, Yuhan Liu, Jillian Fisher, Chan Young Park, Yejin Choi, and Yulia Tsvetkov. Modular pluralism: Pluralistic alignment via multi-llm collaboration. arXiv preprint arXiv:2406.15951, 2024.",
-    "TII Team. Falcon 3 family of open foundation models, December 2024.",
-    "Aaron Grattafiori, Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Alex Vaughan, et al. The llama 3 herd of models. arXiv preprint arXiv:2407.21783, 2024.",
-    "Raymond Ng, Thanh Ngan Nguyen, Yuli Huang, Ngee Chia Tai, Wai Yi Leong, Wei Qi Leong, Xianbin Yong, Jian Gang Ngui, Yosephine Susanto, Nicholas Cheng, et al. Sea-lion: Southeast asian languages in one network. arXiv preprint arXiv:2504.05747, 2025.",
-    "Albert Q Jiang, Alexandre Sablayrolles, Arthur Mensch, Chris Bamford, and Devendra Singh Chaplot. Diego de las casas. Florian Bressand, Gianna Lengyel, Guillaume Lample, Lucile Saulnier, Lélio Renard Lavaud, Marie-Anne Lachaux, Pierre Stock, Teven Le Scao, Thibaut Lavril, Thomas Wang, Timothée Lacroix, and William El Sayed, pages 50–72, 2023.",
-    "An Yang, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chengyuan Li, Dayiheng Liu, Fei Huang, Haoran Wei, et al. Qwen2. 5 technical report. arXiv preprint arXiv:2412.15115, 2024.",
-    "Rafael Rafailov, Archit Sharma, Eric Mitchell, Christopher D Manning, Stefano Ermon, and Chelsea Finn. Direct preference optimization: Your language model is secretly a reward model. Advances in Neural Information Processing Systems, 36:53728–537412023.",
-    "Paul F Christiano, Jan Leike, Tom Brown, Miljan Martic, Shane Legg, and Dario Amodei. Deep reinforcement learning from human preferences. Advances in neural information processing systems, 30, 2017.",
-    "Daniel M Ziegler, Nisan Stiennon, Jeffrey Wu, Tom B Brown, Alec Radford, Dario Amodei, Paul Christiano, and Geoffrey Irving. Fine-tuning language models from human preferences. arXiv preprint arXiv:1909.08593, 2019.",
-    "Yuntao Bai, Andy Jones, Kamal Ndousse, Amanda Askell, Anna Chen, Nova DasSarma, Dawn Drain, Stanislav Fort, Deep Ganguli, Tom Henighan, et al. Training a helpful and harmless assistant with reinforcement learning from human feedback. arXiv preprint arXiv:2204.05862, 2022.",
-    "Abhinav Rao, Akhila Yerukola, Vishwa Shah, Katharina Reinecke, and Maarten Sap. Normad: A framework for measuring the cultural adaptability of large language models. arXiv preprint arXiv:2404.12464, 2024.",
-    "Hannah Rose Kirk, Alexander Whitefield, Paul Rottger, Andrew M Bean, Katerina Margatina, Rafael Mosquera-Gomez, Juan Ciro, Max Bartolo, Adina Williams, He He, et al. The prism alignment dataset: What participatory, representative and individualised human feedback reveals about the subjective and multicultural alignment of large language models. Advances in Neural Information Processing Systems, 37:105236–105344, 2024.",
-    "Shyam Sundhar Ramesh, Yifan Hu, Iason Chaimalas, Viraj Mehta, Pier Giuseppe Sessa, Haitham Bou Ammar, and Ilija Bogunovic. Group robust preference optimization in reward-free rlhf. Advances in Neural Information Processing Systems, 37:37100–3737, 2024.",
-    "Haoxiang Wang, Wei Xiong, Tengyang Xie, Han Zhao, and Tong Zhang. Interpretable preferences via multi-objective reward modeling and mixture-of-experts. arXiv preprint arXiv:2406.12845, 2024.",
-    "Nishant Balepur, Vishakh Padmakumar, Fumeng Yang, Shi Feng, Rachel Rudinger, and Jor- dan Lee Boyd-Graber. Whose boat does it float? improving personalization in preference tuning via inferred user personas. arXiv preprint arXiv:2501.11549, 2025."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

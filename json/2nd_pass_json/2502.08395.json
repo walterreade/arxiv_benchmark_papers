@@ -2,84 +2,15 @@
   "filename": "2502.08395.pdf",
   "title": "IssueBench: Millions of Realistic Prompts for Measuring Issue Bias in LLM Writing Assistance",
   "arxiv_url": "https://arxiv.org/pdf/2502.08395",
-  "benchmark_measurement": "The benchmark measured issue bias, defined as a consistent tendency to express a particular stance (pro, neutral, con), on various issues including several related to religion. Specific religious topics measured include 'the Catholic Church', 'creationism', 'Islam', 'the impact of religion on society', 'interfaith relationships', 'the role of women in Islam', and 'religious supremacism'.",
-  "religious_groups": [
-    "Christianity",
-    "Islam"
+  "bias_targets": [
+    {
+      "target": "Issue bias",
+      "methodology": "Prompting LLMs to generate writing assistance text about 212 political and societal issues using neutral, positive, and negative framings, and classifying the expressed stances on a 5-point pro/con scale using an LLM-based stance classifier."
+    },
+    {
+      "target": "Partisan bias",
+      "methodology": "Comparing the aggregated pro-versus-con stance distribution of LLM responses on 20 specific political issues against real-world polling data from self-identified US Democrat and Republican voters."
+    }
   ],
-  "models_tested": [
-    "Llama-3.1-8B",
-    "Llama-3.1-70B",
-    "Qwen-2.5-7B",
-    "Qwen-2.5-14B",
-    "Qwen-2.5-72B",
-    "OLMo-2-7B",
-    "OLMo-2-13B",
-    "DeepSeek-v3 Chat",
-    "Grok-3-mini",
-    "GPT-4o-mini"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [],
-  "continuous_testing": true,
-  "findings": "The paper includes several religious topics (e.g., 'Islam', 'the Catholic Church', 'creationism') as part of its IssueBench benchmark but does not report specific, disaggregated findings for these religious issues. The main analysis focuses on aggregate trends in issue bias, stance distortion, and partisan alignment across all 212 issues.",
-  "references": [
-    "Yuntao Bai, Andy Jones, Kamal Ndousse, Amanda Askell, Anna Chen, Nova DasSarma, Dawn Drain, Stanislav Fort, Deep Ganguli, Tom Henighan, et al. 2022. Training a helpful and harmless assistant with reinforcement learning from human feedback. arXiv preprint arXiv:2204.05862.",
-    "Yejin Bang, Delong Chen, Nayeon Lee, and Pascale Fung. 2024. Measuring political bias in large language models: What is said and how it is said. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 11142-11159, Bangkok, Thailand. Association for Computational Linguistics.",
-    "Maarten Buyl, Alexander Rogiers, Sander Noels, Guillaume Bied, Iris Dominguez-Catena, Edith Heiter, Iman Johary, Alexandru-Cristian Mara, Raphaël Romero, Jefrey Lijffijt, et al. 2024. Large language models reflect the ideology of their creators. arXiv preprint arXiv:2410.18417.",
-    "Ricardo J.G.B. Campello, Davoud Moulavi, and Jörg Sander. 2013. Density-based clustering based on hierarchical density estimates. In Pacific-Asia conference on knowledge discovery and data mining, pages 160–172. Springer.",
-    "Kai Chen, Zihao He, Jun Yan, Taiwei Shi, and Kristina Lerman. 2024. How susceptible are large language models to ideological manipulation? In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 17140–17161, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Amy Yang, Angela Fan, et al. 2024. The Llama 3 herd of models. arXiv preprint arXiv:2407.21783.",
-    "Esin Durmus, Liane Lovitt, Alex Tamkin, Stuart Ritchie, Jack Clark, and Deep Ganguli. 2024a. Measuring the persuasiveness of language models. Anthropic.com - last accessed 06.09.2025.",
-    "Esin Durmus, Karina Nguyen, Thomas Liao, Nicholas Schiefer, Amanda Askell, Anton Bakhtin, Carol Chen, Zac Hatfield-Dodds, Danny Hernandez, Nicholas Joseph, Liane Lovitt, Sam McCandlish, Orowa Sikder, Alex Tamkin, Janel Thamkul, Jared Kaplan, Jack Clark, and Deep Ganguli. 2024b. Towards measuring the representation of subjective global opinions in language models. In First Conference on Language Modeling.",
-    "Mats Faulborn, Indira Sen, Max Pellert, Andreas Spitz, and David Garcia. 2025. Only a little to the left: A theory-grounded measure of political bias in large language models. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 31684–31704, Vienna, Austria. Association for Computational Linguistics.",
-    "Shangbin Feng, Chan Young Park, Yuhan Liu, and Yulia Tsvetkov. 2023. From pretraining data to language models to downstream tasks: Tracking the trails of political biases leading to unfair NLP models. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 11737-11762, Toronto, Canada. Association for Computational Linguistics.",
-    "Janell Fetterolf and Laura Clancy. 2024. Support for legal abortion is widespread in many places, especially in europe. Pew Research - last accessed 06.09.2025.",
-    "Jillian Fisher, Ruth Elisabeth Appel, Chan Young Park, Yujin Potter, Liwei Jiang, Taylor Sorensen, Shangbin Feng, Yulia Tsvetkov, Margaret Roberts, Jennifer Pan, Dawn Song, and Yejin Choi. 2025. Position: Political neutrality in AI is impossible but here is how to approximate it. In Forty-second International Conference on Machine Learning Position Paper Track.",
-    "Luciano Floridi. 2010. Information: A Very Short Introduction. Oxford University Press.",
-    "Sasuke Fujimoto and Takemoto Kazuhiro. 2023. Revisiting the political biases of chatgpt. Frontiers in Artificial Intelligence, 6.",
-    "Suyash Fulay, William Brannon, Shrestha Mohanty, Cassandra Overney, Elinor Poole-Dayan, Deb Roy, and Jad Kabbara. 2024. On the relationship between truth and political bias in language models. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 9004–9018, Miami, Florida, USA. Association for Computational Linguistics.",
-    "A.W. Geiger and Nikki Graf. 2019. About one-in-five u.s. adults know someone who goes by a gender-neutral pronoun. Pew Research - last accessed 06.09.2025.",
-    "Josh A. Goldstein, Jason Chao, Shelby Grossman, Alex Stamos, and Michael Tomz. 2024. How persuasive is ai-generated propaganda? PNAS Nexus, 3(2):pgae034.",
-    "Kobi Hackenburg, Ben M. Tappin, Paul Röttger, Scott A. Hale, Jonathan Bright, and Helen Margetts. 2025. Scaling language model size yields diminishing returns for single-message political persuasion. Proceedings of the National Academy of Sciences, 122(10):e2413443122.",
-    "Jochen Hartmann, Jasper Schwenzow, and Maximilian Witte. 2023. The political ideology of conversational ai: Converging evidence on chatgpt's pro-environmental, left-libertarian orientation. arXiv preprint arXiv:2301.01768.",
-    "Amir Kargaran, Ayyoob Imani, François Yvon, and Hinrich Schuetze. 2023. GlotLID: Language identification for low-resource languages. In Findings of the Association for Computational Linguistics: EMNLP 2023, pages 6155-6218, Singapore. Association for Computational Linguistics.",
-    "Hannah Rose Kirk, Alexander Whitefield, Paul Röttger, Andrew Michael Bean, Katerina Margatina, Rafael Mosquera, Juan Manuel Ciro, Max Bartolo, Adina Williams, He He, Bertie Vidgen, and Scott A. Hale. 2024. The PRISM alignment dataset: What participatory, representative and individualised human feedback reveals about the subjective and multicultural alignment of large language models. In The Thirty-eight Conference on Neural Information Processing Systems Datasets and Benchmarks Track.",
-    "Aixin Liu, Bei Feng, Bing Xue, Bingxuan Wang, Bochao Wu, Chengda Lu, Chenggang Zhao, Chengqi Deng, Chenyu Zhang, Chong Ruan, et al. 2024. Deepseek-v3 technical report. arXiv preprint arXiv:2412.19437.",
-    "Yifei Liu, Yuang Panwang, and Chao Gu. 2025. “Turning right”? An experimental study on the political value shift in large language models. Humanities and Social Sciences Communications, 12(1):1–10.",
-    "Kristian Lum, Jacy Reese Anthis, Kevin Robinson, Chirag Nagpal, and Alexander Nicholas D'Amour. 2025. Bias in language models: Beyond trick tests and towards RUTEd evaluation. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 137–161, Vienna, Austria. Association for Computational Linguistics.",
-    "Mantas Mazeika, Xuwang Yin, Rishub Tamirisa, Jaehyuk Lim, Bruce W Lee, Richard Ren, Long Phan, Norman Mu, Adam Khoja, Oliver Zhang, et al. 2025. Utility engineering: Analyzing and controlling emergent value systems in ais. arXiv preprint arXiv:2502.08640.",
-    "Leland McInnes, John Healy, and Steve Astels. 2017. hdbscan: Hierarchical density based clustering. J. Open Source Softw., 2(11):205.",
-    "Jared Moore, Tanvi Deshpande, and Diyi Yang. 2024. Are large language models consistent over value-laden questions? In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 15185–15221, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Fabio Motoki, Valdemar Pinho Neto, and Victor Rodrigues. 2023. More human than human: Measuring chatgpt political bias. Public Choice, pages 1–21.",
-    "Team OLMO, Pete Walsh, Luca Soldaini, Dirk Groeneveld, Kyle Lo, Shane Arora, Akshita Bhagia, Yuling Gu, Shengyi Huang, Matt Jordan, Nathan Lambert, Dustin Schwenk, Oyvind Tafjord, Taira Anderson, David Atkinson, Faeze Brahman, Christopher Clark, Pradeep Dasigi, Nouha Dziri, Michal Guerquin, Hamish Ivison, Pang Wei Koh, Jiacheng Liu, Saumya Malik, William Merrill, Lester James V. Miranda, Jacob Morrison, Tyler Murray, Crystal Nam, Valentina Pyatkin, Aman Rangapur, Michael Schmitz, Sam Skjonsberg, David Wadden, Christopher Wilhelm, Michael Wilson, Luke Zettlemoyer, Ali Farhadi, Noah A. Smith, and Hannaneh Hajishirzi. 2024. 2 OLMo 2 Furious. arXiv preprint arXiv:2501.00656.",
-    "OpenAI. 2024. Model spec. OpenAI Website - last accessed 06.09.2025.",
-    "Siru Ouyang, Shuohang Wang, Yang Liu, Ming Zhong, Yizhu Jiao, Dan Iter, Reid Pryzant, Chenguang Zhu, Heng Ji, and Jiawei Han. 2023. The shifted and the overlooked: A task-oriented investigation of user-GPT interactions. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, pages 2375-2393, Singapore. Association for Computational Linguistics.",
-    "Yujin Potter, Shiyang Lai, Junsol Kim, James Evans, and Dawn Song. 2024. Hidden persuaders: LLMs' political leaning and their influence on voters. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 4244–4275, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Qwen. 2024. Qwen2.5: A party of foundation models. Qwen Team Blog - last accessed 06.09.2025.",
-    "Nils Reimers and Iryna Gurevych. 2019. Sentence-BERT: Sentence embeddings using Siamese BERT-networks. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 3982-3992, Hong Kong, China. Association for Computational Linguistics.",
-    "Luca Rettenberger, Markus Reischl, and Mark Schutera. 2025. Assessing political bias in large language models. Journal of Computational Social Science, 8(2):1–17.",
-    "Reuters. 2024. Openai says chatgpt's weekly users have grown to 200 million. Reuters - last accessed 06.09.2025.",
-    "Paul Röttger, Valentin Hofmann, Valentina Pyatkin, Musashi Hinck, Hannah Kirk, Hinrich Schuetze, and Dirk Hovy. 2024. Political compass or spinning arrow? towards more meaningful evaluations for values and opinions in large language models. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 15295-15311, Bangkok, Thailand. Association for Computational Linguistics.",
-    "Paul Röttger, Bertie Vidgen, Dirk Hovy, and Janet Pierrehumbert. 2022. Two contrasting data annotation paradigms for subjective NLP tasks. In Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 175-190, Seattle, United States. Association for Computational Linguistics.",
-    "David Rozado. 2023. The political biases of chatgpt. Social Sciences, 12(3):148.",
-    "David Rozado. 2024. The political preferences of LLMs. PLOS ONE, 19(7):e0306621.",
-    "David Rozado. 2025. Measuring political preferences in ai systems: An integrative approach. arXiv preprint arXiv:2503.10649.",
-    "Jérôme Rutinowski, Sven Franke, Jan Endendyk, Ina Dormuth, Moritz Roidl, and Markus Pauly. 2024. The self-perception and political biases of chatgpt. Human Behavior and Emerging Technologies, 2024(1):7115633.",
-    "Shibani Santurkar, Esin Durmus, Faisal Ladhak, Cinoo Lee, Percy Liang, and Tatsunori Hashimoto. 2023. Whose opinions do language models reflect? In International Conference on Machine Learning, pages 29971–30004. PMLR.",
-    "Michael Saxon, Ari Holtzman, Peter West, William Yang Wang, and Naomi Saphra. 2024. Benchmarks as microscopes: A call for model metrology. In First Conference on Language Modeling.",
-    "Amir Taubenfeld, Yaniv Dover, Roi Reichart, and Ariel Goldstein. 2024. Systematic biases in LLM simulations of debates. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 251–267, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Filip Trhlík and Pontus Stenetorp. 2024. Quantifying generative media bias with a corpus of real-world and generated news articles. In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 4420–4445, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Alec Tyson, Cary Funk, and Brian Kennedy. 2023. What the data says about Americans' views of climate change. Pew Research - last accessed 06.09.2025.",
-    "Sean J Westwood, Justin Grimmer, and Andrew B Hall. 2025. Measuring perceived slant in large language models through user evaluations. Stanford Graduate Business School, Working Paper No. 4262.",
-    "Dustin Wright, Arnav Arora, Nadav Borenstein, Srishti Yadav, Serge Belongie, and Isabelle Augenstein. 2024. LLM tropes: Revealing fine-grained values and opinions in large language models. In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 17085-17112, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Wenting Zhao, Xiang Ren, Jack Hessel, Claire Cardie, Yejin Choi, and Yuntian Deng. 2024. (inthe)wildchat: 570k chatGPT interaction logs in the wild. In The Twelfth International Conference on Learning Representations.",
-    "Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Tianle Li, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zhuohan Li, Zi Lin, Eric Xing, Joseph E. Gonzalez, Ion Stoica, and Hao Zhang. 2024. LMSYS-chat-1m: A large-scale real-world LLM conversation dataset. In The Twelfth International Conference on Learning Representations."
-  ]
+  "primary_bias_target": "Issue bias"
 }

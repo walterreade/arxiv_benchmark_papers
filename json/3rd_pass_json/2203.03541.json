@@ -1,0 +1,45 @@
+{
+  "filename": "2203.03541.pdf",
+  "title": "Fairness for Text Classification Tasks with Identity Information Data Augmentation Methods",
+  "arxiv_url": "https://arxiv.org/pdf/2203.03541",
+  "religious_groups": [
+    "Christianity",
+    "Judaism",
+    "Buddhism",
+    "Atheism",
+    "Islam"
+  ],
+  "models_tested": [
+    "Convolutional Neural Network (CNN)"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Counterfactual Token fairness (CTF) gap"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper's proposed data augmentation methods (IIDA), which include augmenting lists of religious identity pairs, were found to successfully mitigate unintended bias (measured by the CTF gap) in text classification tasks. The methods reduced the model's sensitivity to religious terms without significantly harming overall classification accuracy.",
+  "references": [
+    "Su Lin Blodgett and Brendan O'Connor. 2017. Racial disparity in natural language processing: A case study of social media african-american english. Talk at the 2017 Workshop on Fairness, Accountability, and Transparency in Machine Learning (2017).",
+    "Piotr Bojanowski, Edouard Grave, Armand Joulin, and Tomas Mikolov. 2017. Enriching word vectors with subword information. Transactions of the Association for Computational Linguistics 5 (2017), 135–146.",
+    "Tolga Bolukbasi, Kai-Wei Chang, James Zou, Venkatesh Saligrama, and Adam Kalai. 2016. Man is to computer programmer as woman is to homemaker? debiasing word embeddings. NeurIPS (2016).",
+    "Daniel Borkan, Lucas Dixon, Jeffrey Sorensen, Nithum Thain, and Lucy Vasser- man. 2019. Nuanced metrics for measuring unintended bias with real data for text classification. In Companion Proceedings of The 2019 World Wide Web Conference. 491–500.",
+    "Ona de Gibert, Naiara Perez, Aitor García-Pablos, and Montse Cuadros. 2018. Hate speech dataset from a white supremacy forum. Proceedings of the 2nd Workshop on Abusive Language Online (ALW2) (2018).",
+    "Lucas Dixon, John Li, Jeffrey Sorensen, Nithum Thain, and Lucy Vasserman. 2018. Measuring and mitigating unintended bias in text classification. In Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society. 67–73.",
+    "Sahaj Garg, Vincent Perot, Nicole Limtiaco, Ankur Taly, Ed H Chi, and Alex Beutel. 2019. Counterfactual fairness in text classification through robustness. In Proceedings of the 2019 AAAI/ACM Conference on AI, Ethics, and Society. 219–226.",
+    "Harini Kannan, Alexey Kurakin, and Ian Goodfellow. 2018. Adversarial logit pairing. CoRR abs/1803.06373 (2018).",
+    "Yoon Kim. 2014. Convolutional Neural Networks for Sentence Classification. In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP). Association for Computational Linguistics, Doha, Qatar, 1746–1751. https://doi.org/10.3115/v1/D14-1181",
+    "Tomas Mikolov, Kai Chen, Greg Corrado, and Jeffrey Dean. 2013. Efficient estimation of word representations in vector space. International Conference on Learning Representations (2013).",
+    "Jeffrey Pennington, Richard Socher, and Christopher D Manning. 2014. Glove: Global vectors for word representation. In Proceedings of the 2014 conference on empirical methods in natural language processing (EMNLP). 1532–1543.",
+    "Vinodkumar Prabhakaran, Ben Hutchinson, and Margaret Mitchell. 2019. Per- turbation sensitivity analysis to detect unintended model biases. Proceedings of the Conference on Empirical Methods in Natural Language Processing (EMNLP) (2019).",
+    "Yusu Qian, Urwa Muaz, Ben Zhang, and Jae Won Hyun. 2019. Reducing gender bias in word-level language models with a gender-equalizing loss function. arXiv preprint arXiv:1905.12801 (2019).",
+    "Kellie Webster, Marta Recasens, Vera Axelrod, and Jason Baldridge. 2018. Mind the gap: A balanced corpus of gendered ambiguous pronouns. Transactions of the Association for Computational Linguistics 6 (2018), 605–617.",
+    "Jason Wei and Kai Zou. 2019. Eda: Easy data augmentation techniques for boost- ing performance on text classification tasks. Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP) (2019)."
+  ],
+  "measurement_description": "Measurement of unintended bias in text classification models by evaluating prediction score changes when religious identity terms are replaced with their counterfactual pairs (e.g., 'christian' replaced by 'jewish')."
+}

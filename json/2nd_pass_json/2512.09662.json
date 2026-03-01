@@ -2,91 +2,35 @@
   "filename": "2512.09662.pdf",
   "title": "Can LLMs Evaluate What They Cannot Annotate? Revisiting LLM Reliability in Hate Speech Detection",
   "arxiv_url": "https://arxiv.org/pdf/2512.09662",
-  "benchmark_measurement": "The ability of LLMs to detect hate speech targeted at various religious groups, measured by the percentage of 'missed hate' instances for each group.",
-  "religious_groups": [
-    "Nonreligious",
-    "Jewish",
-    "Islam",
-    "Christian",
-    "Buddhism",
-    "Hindu"
+  "bias_targets": [
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Calculating per-target false negative rates (missed hate percentage) by comparing LLM predictions against human majority labels to identify systemic under-detection of hate speech directed at sexual orientations (e.g., Asexual, Homosexual, Bisexual)."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Measuring the percentage of missed hate speech instances targeting various religious or non-religious groups (e.g., Jewish, Islam, Christian, Hindu, Buddhist, Non-Religious) to evaluate partial coverage of faith-based hostility."
+    },
+    {
+      "target": "Racial and ethnic bias",
+      "methodology": "Analyzing per-target false negative rates for LLM predictions on hate speech directed at different racial and ethnic categories (e.g., African, Arab, Indigenous, Hispanic, Asian, Caucasian) to determine algorithmic detection blindspots."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Comparing LLM hate speech detection miss rates for content targeting specific genders (e.g., Women, Men) to assess how effectively the models capture sexism and gender-related hate speech."
+    },
+    {
+      "target": "Nationality and migration status bias",
+      "methodology": "Evaluating the false negative rate (missed hate percentage) of LLM predictions for hate speech aimed specifically at refugees."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Calculating the proportion of missed hate speech instances targeted at people with disabilities by comparing aggregated LLM predictions to human baseline annotations."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Measuring the under-detection rate (false negatives) of LLM hate speech classifiers when evaluating content directed at specific economic demographic groups."
+    }
   ],
-  "models_tested": [
-    "Llama-3.1-8B-Instruct",
-    "Mistral-Nemo-Instruct-2407",
-    "DeepSeek-R1-Distill-Llama-8B"
-  ],
-  "languages_evaluated": [
-    "English",
-    "Spanish"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [],
-  "continuous_testing": false,
-  "findings": "LLMs struggle with hate speech detection against religious groups. They had high miss rates for 'Non Religious' (55.2%) and 'Jewish' (35.6%) targets. Hate speech against 'Islam' (20.3%) and 'Christian' (13.9%) was moderately captured, suggesting only partial coverage of faith-based hostility.",
-  "references": [
-    "Anti-Defamation League. 2024. Online hate and harassment: The american experience 2024. Accessed: 03/01/2024.",
-    "Lora Aroyo, Lucas Dixon, Nithum Thain, Olivia Redfield, and Rachel Rosen. 2019. Crowdsourcing subjective tasks: The case study of understanding toxicity in online discussions. In Companion Proceedings of The 2019 World Wide Web Conference, WWW '19, page 1100–1105, New York, NY, USA. Association for Computing Machinery.",
-    "Baran Barbarestani, Isa Maks, and Piek T.J.M. Vossen. 2024. Content moderation in online platforms: A study of annotation methods for inappropriate language. In Proceedings of the Fourth Workshop on Threat, Aggression & Cyber-bullying @ LREC-COLING-2024, pages 96–104, Torino, Italia. ELRA and ICCL.",
-    "Valerio Basile. 2020. It's the end of the gold standard as we know it: Leveraging non-aggregated data for better evaluation and explanation of subjective tasks. In AlxIA 2020 – Advances in Artificial Intelligence: XIXth International Conference of the Italian Association for Artificial Intelligence, Virtual Event, November 25–27, 2020, Revised Selected Papers, page 441-453, Berlin, Heidelberg. Springer-Verlag.",
-    "Davide Bassi, Dimitar Iliyanov Dimitrov, Bernardo D'Auria, Firoj Alam, Maram Hasanain, Christian Moro, Luisa Orrù, Gian Piero Turchi, Preslav Nakov, and Giovanni Da San Martino. 2025. Annotating the annotators: Analysis, insights and modelling from an annotation campaign on persuasion techniques detection. In Findings of the Association for Computational Linguistics: ACL 2025, pages 17918–17929, Vienna, Austria. Association for Computational Linguistics.",
-    "Joachim Baumann, Paul Röttger, Aleksandra Urman, Albert Wendsjö, Flor Miriam Plaza del Arco, Johannes B. Gruber, and Dirk Hovy. 2025. Large language model hacking: Quantifying the hidden risks of using Ilms for text annotation.",
-    "Jacob Cohen. 1960. A coefficient of agreement for nominal scales. Educational and Psychological Measurement, 20(1):37–46.",
-    "Mithun Das, Rohit Raj, Punyajoy Saha, Binny Mathew, Manish Gupta, and Animesh Mukherjee. 2023. Hatemm: A multi-modal dataset for hate video classification. Proceedings of the ICWSM 2023, 17:1014-1023.",
-    "Aida Mostafazadeh Davani, Mohammad Atari, Brendan Kennedy, and Morteza Dehghani. 2023. Hate speech classifiers learn normative social stereotypes. Transactions of the Association for Computational Linguistics, 11:300–319.",
-    "Thomas Davidson, Dana Warmsley, Michael Macy, and Ingmar Weber. 2017. Automated hate speech detection and the problem of offensive language. Proceedings of the ICWSM 2017, 11(1):512-515.",
-    "DeepSeek-Al. 2025. Deepseek-r1: Incentivizing reasoning capability in Ilms via reinforcement learning.",
-    "Somaiyeh Dehghan, Mehmet Umut Sen, and Berrin Yanikoglu. 2025. Dealing with annotator disagreement in hate speech classification.",
-    "Senjuti Dutta, Sid Mittal, Sherol Chen, Deepak Ramachandran, Ravi Rajakumar, lan Kivlichan, Sunny Mak, Alena Butryna, and Praveen Paritosh. 2023. Modeling subjectivity (by mimicking annotator annotation) in toxic comment identification across diverse communities.",
-    "Mai ElSherief, Vivek Kulkarni, Dana Nguyen, William Yang Wang, and Elizabeth Belding. 2018a. Hate lingo: A target-based linguistic analysis of hate speech in social media. Proceedings of the ICWSM 2018, 12(1).",
-    "Mai ElSherief, Shirin Nilizadeh, Dana Nguyen, Giovanni Vigna, and Elizabeth Belding. 2018b. Peer to peer hate: Hate speech instigators and their targets. Proceedings of the ICWSM 2018, 12(1).",
-    "Paula Fortuna and Sérgio Nunes. 2018. A survey on automatic detection of hate speech in text. ACM Comput. Surv., 51(4).",
-    "Antigoni Founta, Constantinos Djouvas, Despoina Chatzakou, Ilias Leontiadis, Jeremy Blackburn, Gianluca Stringhini, and Nicolas Kourtellis. 2018. Large scale crowdsourcing and characterization of twitter abusive behavior. Proceedings of the ICWSM 2018, 12(1).",
-    "Fabrizio Gilardi, Meysam Alizadeh, and Maël Kubli. 2023. Chatgpt outperforms crowd workers for text-annotation tasks. Proceedings of the National Academy of Sciences, 120(30):e2305016120.",
-    "Tommaso Giorgi, Lorenzo Cima, Tiziano Fagni, Marco Avvenuti, and Stefano Cresci. 2025. Human and Ilm biases in hate speech annotations: A socio-demographic analysis of annotators and targets. Proceedings of the International AAAI Conference on Web and Social Media, 19(1):653-670.",
-    "Goran Glavaš, Vanja Mladen Karan, and Ivan Vulić. 2020. XHate-999: Analyzing and detecting abusive language across domains and languages. In Proceedings of the 28th International Conference on Computational Linguistics, pages 6350-6365, Barcelona, Spain (Online). International Committee on Computational Linguistics.",
-    "Sandra González-Bailón and Yphtach Lelkes. 2022. Do social media undermine social cohesion? a critical review. Social Issues and Policy Review, 17(1):155-180.",
-    "Aaron Grattafiori, Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, ... and Zhiyu Ma. 2024. The llama 3 herd of models.",
-    "Imane Guellil, Yousra Houichi, Sara Chennoufi, Mohamed Boubred, Anfal Yousra Boucetta, and Faical Azouaou. 2024. The annotators agree to not agree on the fine-grained annotation of hate-speech against women in Algerian dialect comments. In Proceedings of the Fifth Workshop on Resources for African Indigenous Languages @LREC-COLING 2024, pages 133–139, Torino, Italia. ELRA and ICCL.",
-    "Andrew F. Hayes and Klaus Krippendorff. 2007. Answering the call for a standard reliability measure for coding data. Communication Methods and Measures, 1(1):77-89.",
-    "Danula Hettiachchi, Indigo Holcombe-James, Stephanie Livingstone, Anjalee de Silva, Matthew Lease, Flora D. Salim, and Mark Sanderson. 2023. How crowd worker factors influence subjective annotations: A study of tagging misogynistic hate speech in tweets. Proceedings of the AAAI Conference on Human Computation and Crowdsourcing, 11(1):38–50.",
-    "Kamil Kanclerz, Marcin Gruza, Konrad Karanowski, Julita Bielaniewicz, Piotr Milkowski, Jan Kocon, and Przemyslaw Kazienko. 2022. What if ground truth is subjective? personalized deep neural hate speech detection. In Proceedings of the 1st Workshop on Perspectivist Approaches to NLP @LREC2022, pages 37–45, Marseille, France. European Language Resources Association.",
-    "Julia Kansok-Dusche, Cindy Ballaschk, Norman Krause, Anke Zeißig, Lisanne Seemann-Herz, Sebastian Wachs, and Ludwig Bilz. 2022. A systematic review on hate speech among children and adolescents: Definitions, prevalence, and overlap with related phenomena. Trauma, Violence, & Abuse, 24(4):2598–2615.",
-    "Maurice G. Kendall. 1938. A new measure of rank correlation. Biometrika, 30(1/2):81-93.",
-    "Chris J. Kennedy, Geoff Bacon, Alexander Sahn, and Claudia von Vacano. 2020. Constructing interval variables via faceted rasch measurement and multitask deep learning: a hate speech application.",
-    "Petra Kralj Novak, Teresa Scantamburlo, Andraž Pelicon, Matteo Cinelli, Igor Mozetič, and Fabiana Zollo. 2022. Handling disagreement in hate speech modelling. In Information Processing and Management of Uncertainty in Knowledge-Based Systems, pages 681-695, Cham. Springer International Publishing.",
-    "Elisa Leonardelli, Stefano Menini, Alessio Palmero Aprosio, Marco Guerini, and Sara Tonelli. 2021. Agreeing to disagree: Annotating offensive language datasets with annotators' disagreement. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 10528-10539, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics.",
-    "Nikola Ljubešić, Igor Mozetič, and Petra Kralj Novak. 2022. Quantifying the impact of context on the quality of manual hate speech annotation. Natural Language Engineering, 29(6):1481-1494.",
-    "Marian Marchal, Merel Scholman, Frances Yung, and Vera Demberg. 2022. Establishing annotation quality in multi-label annotations. In Proceedings of the 29th International Conference on Computational Linguistics, pages 3659–3668, Gyeongju, Republic of Korea. International Committee on Computational Linguistics.",
-    "Binny Mathew, Punyajoy Saha, Seid Muhie Yimam, Chris Biemann, Pawan Goyal, and Animesh Mukherjee. 2020. Hatexplain: A benchmark dataset for explainable hate speech detection. In Proceedings of the AAAI 2020.",
-    "Daniel Matter, Miriam Schirmer, Nir Grinberg, and Jürgen Pfeffer. 2024. Investigating the increase of violent speech in incel communities with human-guided gpt-4 prompt iteration. Frontiers in Social Psychology, 2.",
-    "Mistral Al team. 2025. Mistral NeMo | Mistral Al. https://mistral.ai/news/ mistral-nemo. Accessed: 13/08/2025.",
-    "Sandip Modha, Thomas Mandl, Prasenjit Majumder, and Daksh Patel. 2019. Overview of the hasoc track at fire 2019: Hate speech and offensive content identification in indo-european languages. Working Notes of FIRE 2019, 2517.",
-    "Jay Mohta, Kenan Ak, Yan Xu, and Mingwei Shen. 2023. Are large language models good annotators? In Proceedings on \"I Can't Believe It's Not Better: Failure Modes in the Age of Foundation Models\" at NeurIPS 2023 Workshops, volume 239 of Proceedings of Machine Learning Research, pages 38-48. PMLR.",
-    "Aida Mostafazadeh Davani, Mark Díaz, and Vinodkumar Prabhakaran. 2022. Dealing with disagreements: Looking beyond the majority vote in subjective annotations. Transactions of the Association for Computational Linguistics, 10:92–110.",
-    "Ellie Pavlick and Tom Kwiatkowski. 2019. Inherent disagreements in human textual inferences. Transactions of the Association for Computational Linguistics, 7:677–694.",
-    "Paloma Piot, José Ramom Pichel Campos, and Javier Parapar. 2025. Bridging gaps in hate speech detection: Meta-collections and benchmarks for low-resource iberian languages.",
-    "Paloma Piot, Patricia Martín-Rodilla, and Javier Parapar. 2024. Metahate: A dataset for unifying efforts on hate speech detection. Proceedings of the International AAAI Conference on Web and Social Media, 18(1):2025-2039.",
-    "Paloma Piot and Javier Parapar. 2025. Towards Efficient and Explainable Hate Speech Detection via Model Distillation, page 376-392. Springer Nature Switzerland.",
-    "Barbara Plank. 2022. The “problem” of human label variation: On ground truth in data, modeling and evaluation. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 10671–10682, Abu Dhabi, United Arab Emirates. Association for Computational Linguistics.",
-    "Flor Miriam Plaza-del arco, Debora Nozza, and Dirk Hovy. 2023. Respectful or toxic? using zero-shot learning with language models to detect hate speech. In The 7th Workshop on Online Abuse and Harms (WOAH), pages 60–68, Toronto, Canada. Association for Computational Linguistics.",
-    "Fabio Poletto, Valerio Basile, Manuela Sanguinetti, Cristina Bosco, and Viviana Patti. 2020. Resources and benchmark corpora for hate speech detection: a systematic review. Language Resources and Evaluation, 55(2):477-523.",
-    "Vinodkumar Prabhakaran, Christopher Homan, Lora Aroyo, Aida Mostafazadeh Davani, Alicia Parrish, Alex Taylor, Mark Diaz, Ding Wang, and Gregory Serapio-García. 2024. GRASP: A disagreement analysis framework to assess group associations in perspectives. In Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 3473–3492, Mexico City, Mexico. Association for Computational Linguistics.",
-    "Francisco Rodríguez-Sánchez, Jorge Carrillo-de Albornoz, Laura Plaza, Adrián Mendieta-Aragón, Guillermo Marco-Remón, Maryna Makeienko, María Plaza, Julio Gonzalo, Damiano Spina, and Paolo Rosso. 2022. Overview of exist 2022: sexism identification in social networks. Procesamiento del Lenguaje Natural, page 229–240.",
-    "Paul Röttger, Bertie Vidgen, Dirk Hovy, and Janet Pierrehumbert. 2022. Two contrasting data annotation paradigms for subjective NLP tasks. In Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 175–190, Seattle, United States. Association for Computational Linguistics.",
-    "Sarthak Roy, Ashish Harshvardhan, Animesh Mukherjee, and Punyajoy Saha. 2023. Probing LLMs for hate speech detection: strengths and vulnerabilities. In Findings of the Association for Computational Linguistics: EMNLP 2023, pages 6116-6128, Singapore. Association for Computational Linguistics.",
-    "Pratik Sachdeva, Renata Barreto, Geoff Bacon, Alexander Sahn, Claudia von Vacano, and Chris Kennedy. 2022. The measuring hate speech corpus: Leveraging rasch measurement theory for data perspectivism. In Proceedings of the 1st Workshop on Perspectivist Approaches to NLP @LREC2022, pages 83–94, Marseille, France. European Language Resources Association.",
-    "Wolfgang S. Schmeisser-Nieto, Pol Pasterlls, Simona Frenda, Alejandro Ariza-Casabona, Mireia Farrús, Paolo Rosso, and Mariona Tulé. 2024. Overview of detests-dis at iberlef 2024: Detection and classification of racial stereotypes in spanish - learning with disagreement. Procesamiento del Lenguaje Natural, 73:323-333.",
-    "Patrick E. Shrout and Joseph L. Fleiss. 1979. Intraclass correlations: Uses in assessing rater reliability. Psychological Bulletin, 86(2):420–428.",
-    "Cagri Toraman, Furkan Şahinuç, and Eyup Yilmaz. 2022. Large-scale hate speech detection with cross-domain transfer. In Proceedings of the Thirteenth Language Resources and Evaluation Conference, pages 2215-2225, Marseille, France. European Language Resources Association.",
-    "Yu-Min Tseng, Wei-Lin Chen, Chung-Chi Chen, and Hsin-Hsi Chen. 2025. Evaluating large language models as expert annotators.",
-    "Petter Törnberg. 2024. Large language models outperform expert coders and supervised classifiers at annotating political social media messages. Social Science Computer Review, 0(0):08944393241286471.",
-    "Alexandra N. Uma, Tommaso Fornaciari, Dirk Hovy, Silviu Paun, Barbara Plank, and Massimo Poesio. 2022. Learning from disagreement: A survey. J. Artif. Int. Res., 72:1385-1470.",
-    "Bertie Vidgen and Leon Derczynski. 2020. Directions in abusive language training data, a systematic review: Garbage in, garbage out. PLOS ONE, 15(12):e0243300.",
-    "Yau-Shian Wang and Yingshan Chang. 2022. Toxicity detection with generative prompt-based inference.",
-    "Ka Wong, Praveen Paritosh, and Lora Aroyo. 2021. Cross-replication reliability an empirical approach to interpreting inter-rater reliability. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 7053-7065. Association for Computational Linguistics."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

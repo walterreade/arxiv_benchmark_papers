@@ -2,19 +2,85 @@
   "filename": "2512.01351.pdf",
   "title": "BENCHMARKING OVERTON PLURALISM IN LLMS",
   "arxiv_url": "https://arxiv.org/pdf/2512.01351",
-  "bias_targets": [
-    {
-      "target": "Viewpoint representation bias",
-      "methodology": "Clustering human survey participants into distinct opinion groups based on their agreement/disagreement on subjective topics, and calculating an 'OVERTONSCORE' to measure the proportion of these distinct viewpoints adequately represented in LLM responses."
-    },
-    {
-      "target": "Political bias",
-      "methodology": "Evaluating model responses on politically salient questions and comparing the proposed pluralistic representation metric against established bipartisan political slant scores to analyze the relationship between political neutrality and ideological pluralism."
-    },
-    {
-      "target": "Demographic and Political subgroup bias (Gender, Ethnicity, Political Affiliation)",
-      "methodology": "Testing for subgroup disparities in the automated LLM-as-a-judge's representation prediction errors (MAE and MSE) across participants' sex, ethnicity, and political affiliations using permutation ANOVA."
-    }
+  "religious_groups": [
+    "Religion (as a general category)"
   ],
-  "primary_bias_target": "Viewpoint representation bias"
+  "models_tested": [
+    "GPT-4.1",
+    "o4-mini",
+    "Gemma 3-27B",
+    "DeepSeek R1",
+    "DeepSeek V3",
+    "Llama 4 Maverick",
+    "Llama 3.3-70B Instruct",
+    "Claude 3.7 Sonnet",
+    "Gemini 2.5 Pro",
+    "GPT-5.1",
+    "Grok-4",
+    "Gemini 3 Pro"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Model Slant dataset",
+    "PRISM Alignment dataset"
+  ],
+  "continuous_testing": true,
+  "findings": "The paper includes questions on religious beliefs (e.g., 'Do you believe in God?', 'Is there life after death?') as part of the broader PRISM dataset to evaluate viewpoint diversity. However, it does not report findings specifically for this religious subset of questions. The general finding across all subjective topics is that all tested models, with scores between 0.35-0.41, are far below the theoretical maximum of 1.0 for Overton Pluralism, indicating they capture only a fraction of the diverse viewpoints held by the human population.",
+  "references": [
+    "Badr AlKhamissi, Muhammad ElNokrashy, Mai Alkhamissi, and Mona Diab. Investigating Cultural Alignment of Large Language Models. In Lun-Wei Ku, Andre Martins, and Vivek Srikumar (eds.), Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 12404–12422, Bangkok, Thailand, August 2024. Association for Computational Linguistics. doi: 10.18653/v1/2024.acl-long.671. URL https://aclanthology.org/2024.acl-long.671/.",
+    "Anthropic. Claude 3.7 Sonnet and Claude Code, February 2025. URL https://www.anthropic.com/news/claude-3-7-sonnet.",
+    "Lisa P. Argyle, Ethan C. Busby, Nancy Fulda, Joshua R. Gubler, Christopher Rytting, and David Wingate. Out of One, Many: Using Language Models to Simulate Human Samples. Political Analysis, 31(3):337–351, 2023. doi: 10.1017/pan.2023.2.",
+    "Michiel Bakker, Martin Chadwick, Hannah Sheahan, Michael Tessler, Lucy Campbell-Gillingham, Jan Balaguer, Nat McAleese, Amelia Glaese, John Aslanides, Matt Botvinick, and Christopher Summerfield. Fine-tuning language models to find agreement among humans with diverse preferences. Advances in Neural Information Processing Systems, 35:38176–38189, December 2022. URL https://proceedings.neurips.cc/paper_files/paper/2022/hash/f978c8f3b5f399cae464e85f72e28503-Abstract-Conference.html.",
+    "Kevin Beyer, Jonathan Goldstein, Raghu Ramakrishnan, and Uri Shaft. When Is “Nearest Neighbor” Meaningful? In Catriel Beeri and Peter Buneman (eds.), Database Theory — ICDT’99, pp. 217–235, Berlin, Heidelberg, 1999. Springer. ISBN 978-3-540-49257-3. doi: 10.1007/3-540-49257-7_15.",
+    "Rishi Bommasani, Kathleen A. Creel, Ananya Kumar, Dan Jurafsky, and Percy S. Liang. Picking on the Same Person: Does Algorithmic Monoculture lead to Outcome Homogenization? Advances in Neural Information Processing Systems, 35:3663–3678, December 2022. URL https://proceedings.neurips.cc/paper_files/paper/2022/hash/17a234c91f746d9625a75cf8a8731ee2-Abstract-Conference.html.",
+    "Stephen Casper, Xander Davies, Claudia Shi, Thomas Krendl Gilbert, Jérémy Scheurer, Javier Rando, Rachel Freedman, Tomasz Korbak, David Lindner, Pedro Freire, Tony Wang, Samuel Marks, Charbel-Raphaël Segerie, Micah Carroll, Andi Peng, Phillip Christoffersen, Mehul Damani, Stewart Slocum, Usman Anwar, Anand Siththaranjan, Max Nadeau, Eric J. Michaud, Jacob Pfau, Dmitrii Krasheninnikov, Xin Chen, Lauro Langosco, Peter Hase, Erdem Bıyık, Anca Dragan, David Krueger, Dorsa Sadigh, and Dylan Hadfield-Menell. Open Problems and Fundamental Limitations of Reinforcement Learning from Human Feedback, September 2023. URL http://arxiv.org/abs/2307.15217. arXiv:2307.15217 [cs].",
+    "Souradip Chakraborty, Jiahao Qiu, Hui Yuan, Alec Koppel, Dinesh Manocha, Furong Huang, Amrit Bedi, and Mengdi Wang. MaxMin-RLHF: Alignment with Diverse Human Preferences. In Proceedings of the 41st International Conference on Machine Learning, pp. 6116–6135. PMLR, July 2024. URL https://proceedings.mlr.press/v235/chakraborty24b.html. ISSN: 2640-3498.",
+    "Jennifer Chien and David Danks. Beyond Behaviorist Representational Harms: A Plan for Measurement and Mitigation. In Proceedings of the 2024 ACM Conference on Fairness, Accountability, and Transparency, FAccT '24, pp. 933–946, New York, NY, USA, June 2024. Association for Computing Machinery. ISBN 9798400704505. doi: 10.1145/3630106.3658946. URL https://dl.acm.org/doi/10.1145/3630106.3658946.",
+    "DeepSeek-AI. DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning, January 2025a. URL http://arxiv.org/abs/2501.12948.",
+    "DeepSeek-AI. DeepSeek-V3 Technical Report, February 2025b. URL http://arxiv.org/abs/2412.19437.",
+    "Esin Durmus, Karina Nguyen, Thomas Liao, Nicholas Schiefer, Amanda Askell, Anton Bakhtin, Carol Chen, Zac Hatfield-Dodds, Danny Hernandez, Nicholas Joseph, Liane Lovitt, Sam McCandlish, Orowa Sikder, Alex Tamkin, Janel Thamkul, Jared Kaplan, Jack Clark, and Deep Ganguli. Towards Measuring the Representation of Subjective Global Opinions in Language Models. In First Conference on Language Modeling, 2024. URL https://openreview.net/forum?id=zl16jLb91v.",
+    "Michael Feffer, Hoda Heidari, and Zachary C. Lipton. Moral machine or tyranny of the majority? In Proceedings of the Thirty-Seventh AAAI Conference on Artificial Intelligence and Thirty-Fifth Conference on Innovative Applications of Artificial Intelligence and Thirteenth Symposium on Educational Advances in Artificial Intelligence, volume 37 of AAAI'23/IAAI’23/EAAI'23, pp. 5974–5982. AAAI Press, February 2023. ISBN 978-1-57735-880-0. doi: 10.1609/aaai.v37i5.25739. URL https://doi.org/10.1609/aaai.v37i5.25739.",
+    "Shangbin Feng, Chan Young Park, Yuhan Liu, and Yulia Tsvetkov. From Pretraining Data to Language Models to Downstream Tasks: Tracking the Trails of Political Biases Leading to Unfair NLP Models. In Anna Rogers, Jordan Boyd-Graber, and Naoaki Okazaki (eds.), Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 11737–11762, Toronto, Canada, July 2023. Association for Computational Linguistics. doi: 10.18653/v1/2023.acl-long.656. URL https://aclanthology.org/2023.acl-long.656/.",
+    "Shangbin Feng, Taylor Sorensen, Yuhan Liu, Jillian Fisher, Chan Young Park, Yejin Choi, and Yulia Tsvetkov. Modular Pluralism: Pluralistic Alignment via Multi-LLM Collaboration. In Yaser Al-Onaizan, Mohit Bansal, and Yun-Nung Chen (eds.), Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pp. 4151–4171, Miami, Florida, USA, November 2024. Association for Computational Linguistics. doi: 10.18653/v1/2024.emnlp-main.240. URL https://aclanthology.org/2024.emnlp-main.240/.",
+    "Jillian Fisher, Ruth Elisabeth Appel, Chan Young Park, Yujin Potter, Liwei Jiang, Taylor Sorensen, Shangbin Feng, Yulia Tsvetkov, Margaret Roberts, Jennifer Pan, Dawn Song, and Yejin Choi. Position: Political Neutrality in AI Is Impossible – But Here Is How to Approximate It. In Forty-second International Conference on Machine Learning Position Paper Track, 2025. URL https://openreview.net/forum?id=H72JEXAPwo.",
+    "Iason Gabriel. Artificial Intelligence, Values, and Alignment. Minds and Machines, 30(3):411–437, September 2020. ISSN 1572-8641. doi: 10.1007/s11023-020-09539-2. URL https://doi.org/10.1007/s11023-020-09539-2.",
+    "Gemini Team Google. Gemini 3 Pro, November 2025a. URL https://deepmind.google/models/gemini/pro/.",
+    "Gemini Team Google. Gemini 2.5: Pushing the Frontier with Advanced Reasoning, Multimodality, Long Context, and Next Generation Agentic Capabilities, 2025b. URL https://arxiv.org/abs/2507.06261._eprint: 2507.06261.",
+    "Gemma Team Google. Gemma 3 Technical Report, March 2025c. URL http://arxiv.org/abs/2503.19786. arXiv:2503.19786 [cs].",
+    "Saffron Huang, Divya Siddarth, Liane Lovitt, Thomas I. Liao, Esin Durmus, Alex Tamkin, and Deep Ganguli. Collective Constitutional AI: Aligning a Language Model with Public Input. In Proceedings of the 2024 ACM Conference on Fairness, Accountability, and Transparency, FAccT '24, pp. 1395–1417, New York, NY, USA, June 2024. Association for Computing Machinery. ISBN 9798400704505. doi: 10.1145/3630106.3658979. URL https://dl.acm.org/doi/10.1145/3630106.3658979.",
+    "Timo Kaufmann, Paul Weng, Viktor Bengs, and Eyke Hüllermeier. A Survey of Reinforcement Learning from Human Feedback, April 2024. URL http://arxiv.org/abs/2312.14925. arXiv:2312.14925 [cs].",
+    "Hannah Rose Kirk, Alexander Whitefield, Paul Rottger, Andrew M. Bean, Katerina Margatina, Rafael Mosquera-Gomez, Juan Ciro, Max Bartolo, Adina Williams, He He, Bertie Vidgen, and Scott Hale. The PRISM Alignment Dataset: What Participatory, Representative and Individualised Human Feedback Reveals About the Subjective and Multicultural Alignment of Large Language Models. Advances in Neural Information Processing Systems, 37:105236–105344, January 2025. URL https://proceedings.neurips.cc/paper_files/paper/2024/hash/be2e1b68b44f2419e19f6c35a1b8cf35-Abstract-Datasets_and_Benchmarks_Track.html.",
+    "Jon Kleinberg and Manish Raghavan. Algorithmic monoculture and social welfare. Proceedings of the National Academy of Sciences, 118(22):e2018340118, June 2021. doi: 10.1073/pnas.2018340118. URL https://www.pnas.org/doi/full/10.1073/pnas.2018340118. Publisher: Proceedings of the National Academy of Sciences.",
+    "Thom Lake, Eunsol Choi, and Greg Durrett. From Distributional to Overton Pluralism: Investigating Large Language Model Alignment. In Luis Chiruzzo, Alan Ritter, and Lu Wang (eds.), Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pp. 6794–6814, Albuquerque, New Mexico, April 2025. Association for Computational Linguistics. ISBN 9798891761896. doi: 10.18653/v1/2025.naacl-long.346. URL https://aclanthology.org/2025.naacl-long.346/.",
+    "Meta. Open-source AI Models for Any Application | Llama 3, 2024. URL https://www.llama.com/models/llama-3/.",
+    "Meta. The Llama 4 herd: The beginning of a new era of natively multimodal AI innovation, April 2025a. URL https://ai.meta.com/blog/llama-4-multimodal-intelligence/.",
+    "Meta. Unmatched Performance and Efficiency | Llama 4, 2025b. URL https://www.llama.com/models/llama-4/.",
+    "OpenAI. GPT-5.1: A smarter, more conversational ChatGPT, November 2025a. URL https://openai.com/index/gpt-5-1/.",
+    "OpenAI. Introducing GPT-4.1 in the API, April 2025b. URL https://openai.com/index/gpt-4-1/.",
+    "OpenAI. OpenAI o3 and o4-mini System Card, April 2025c. URL https://openai.com/index/o3-o4-mini-system-card/.",
+    "Jiaxin Pei, José Ramón Enríquez, Umar Patel, Alia Braley, Nuole Chen, Lily Tsai, and Alex Pentland. Deliberation.io: Facilitating Democratic and Civil Engagement at Scale with Open-Source and Open-Science. Working Paper, 2025.",
+    "Tai-Quan Peng, Kaiqi Yang, Sanguk Lee, Hang Li, Yucheng Chu, Yuping Lin, and Hui Liu. Beyond Partisan Leaning: A Comparative Analysis of Political Bias in Large Language Models, May 2025. URL http://arxiv.org/abs/2412.16746. arXiv:2412.16746 [cs].",
+    "Yujin Potter, Shiyang Lai, Junsol Kim, James Evans, and Dawn Song. Hidden Persuaders: LLMs' Political Leaning and Their Influence on Voters. In Yaser Al-Onaizan, Mohit Bansal, and Yun-Nung Chen (eds.), Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pp. 4244–4275, Miami, Florida, USA, November 2024. Association for Computational Linguistics. doi: 10.18653/v1/2024.emnlp-main.244. URL https://aclanthology.org/2024.emnlp-main.244/.",
+    "Peter J. Rousseeuw. Silhouettes: A graphical aid to the interpretation and validation of cluster analysis. Journal of Computational and Applied Mathematics, 20:53–65, 1987. ISSN 0377-0427. doi: https://doi.org/10.1016/0377-0427(87)90125-7. URL https://www.sciencedirect.com/science/article/pii/0377042787901257.",
+    "Michael J Ryan, William Held, and Diyi Yang. Unintended Impacts of LLM Alignment on Global Representation. In Lun-Wei Ku, Andre Martins, and Vivek Srikumar (eds.), Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 16121–16140, Bangkok, Thailand, August 2024. Association for Computational Linguistics. doi: 10.18653/v1/2024.acl-long.853. URL https://aclanthology.org/2024.acl-long.853/.",
+    "Paul Röttger, Valentin Hofmann, Valentina Pyatkin, Musashi Hinck, Hannah Kirk, Hinrich Schuetze, and Dirk Hovy. Political Compass or Spinning Arrow? Towards More Meaningful Evaluations for Values and Opinions in Large Language Models. In Lun-Wei Ku, Andre Martins, and Vivek Srikumar (eds.), Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 15295–15311, Bangkok, Thailand, August 2024. Association for Computational Linguistics. doi: 10.18653/v1/2024.acl-long.816. URL https://aclanthology.org/2024.acl-long.816/.",
+    "Shibani Santurkar, Esin Durmus, Faisal Ladhak, Cinoo Lee, Percy Liang, and Tatsunori Hashimoto. Whose Opinions Do Language Models Reflect? In Proceedings of the 40th International Conference on Machine Learning, pp. 29971–30004. PMLR, July 2023. URL https://proceedings.mlr.press/v202/santurkar23a.html. ISSN: 2640-3498.",
+    "Anudeex Shetty, Amin Beheshti, Mark Dras, and Usman Naseem. VITAL: A New Dataset for Benchmarking Pluralistic Alignment in Healthcare. In Wanxiang Che, Joyce Nabende, Ekaterina Shutova, and Mohammad Taher Pilehvar (eds.), Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 22954–22974, Vienna, Austria, July 2025. Association for Computational Linguistics. ISBN 979-8-89176-251-0. doi: 10.18653/v1/2025.acl-long.1119. URL https://aclanthology.org/2025.acl-long.1119/.",
+    "Mona Sloane, Emanuel Moss, Olaitan Awomolo, and Laura Forlano. Participation Is not a Design Fix for Machine Learning. In Proceedings of the 2nd ACM Conference on Equity and Access in Algorithms, Mechanisms, and Optimization, EAAMO '22, New York, NY, USA, 2022. Association for Computing Machinery. ISBN 978-1-4503-9477-2. doi: 10.1145/3551624.3555285. URL https://doi.org/10.1145/3551624.3555285.event-place: Arlington, VA, USA.",
+    "Christopher Small, Michael Bjorkegren, Timo Erkkilä, Lynette Shaw, and Colin Megill. Polis: Scaling Deliberation by Mapping High Dimensional Opinion Spaces. RECERCA. Revista de Pensament i Anàlisi, 26(2), July 2021. ISSN 2254-4135, 1130-6149. doi: 10.6035/recerca.5516. URL https://www.e-revistes.uji.es/index.php/recerca/article/view/5516. Publisher: Universitat Jaume I.",
+    "Christopher T. Small, Ivan Vendrov, Esin Durmus, Hadjar Homaei, Elizabeth Barry, Julien Cornebise, Ted Suzman, Deep Ganguli, and Colin Megill. Opportunities and Risks of LLMs for Scalable Deliberation with Polis, June 2023. URL http://arxiv.org/abs/2306.11932. arXiv:2306.11932 [cs].",
+    "Taylor Sorensen, Liwei Jiang, Jena D. Hwang, Sydney Levine, Valentina Pyatkin, Peter West, Nouha Dziri, Ximing Lu, Kavel Rao, Chandra Bhagavatula, Maarten Sap, John Tasioulas, and Yejin Choi. Value Kaleidoscope: Engaging AI with Pluralistic Human Values, Rights, and Duties. Proceedings of the AAAI Conference on Artificial Intelligence, 38(18):19937–19947, March 2024a. doi: 10.1609/aaai.v38i18.29970. URL https://ojs.aaai.org/index.php/AAAI/article/view/29970. Section: AAAI Technical Track on Philosophy and Ethics of AI.",
+    "Taylor Sorensen, Jared Moore, Jillian Fisher, Mitchell Gordon, Niloofar Mireshghallah, Christopher Michael Rytting, Andre Ye, Liwei Jiang, Ximing Lu, Nouha Dziri, Tim Althoff, and Yejin Choi. Position: a roadmap to pluralistic alignment. In Proceedings of the 41st International Conference on Machine Learning, volume 235 of ICML'24, pp. 46280–46302, Vienna, Austria, July 2024b. JMLR.org.",
+    "Taylor Sorensen, Pushkar Mishra, Roma Patel, Michael Henry Tessler, Michiel Bakker, Georgina Evans, Iason Gabriel, Noah Goodman, and Verena Rieser. Value Profiles for Encoding Human Variation, March 2025. URL http://arxiv.org/abs/2503.15484. arXiv:2503.15484 [cs].",
+    "Wenxuan Wang, Wenxiang Jiao, Jingyuan Huang, Ruyi Dai, Jen-tse Huang, Zhaopeng Tu, and Michael Lyu. Not All Countries Celebrate Thanksgiving: On the Cultural Dominance in Large Language Models. In Lun-Wei Ku, Andre Martins, and Vivek Srikumar (eds.), Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 6349–6384, Bangkok, Thailand, August 2024. Association for Computational Linguistics. doi: 10.18653/v1/2024.acl-long.345. URL https://aclanthology.org/2024.acl-long.345/.",
+    "Sean J Westwood, Justin Grimmer, and Andrew B Hall. Measuring Perceived Slant in Large Language Models Through User Evaluations, May 2025. URL https://modelslant.com/paper.pdf.",
+    "xAI. Grok 4 | xAI, July 2025. URL https://x.ai/news/grok-4."
+  ],
+  "measurement_description": "The benchmark measures 'Overton Pluralism' concerning faith and religion, specifically the extent to which LLM outputs represent a diversity of viewpoints on subjective religious questions such as the belief in God and the afterlife. It does not measure factual knowledge or bias against specific groups, but rather the coverage of different legitimate perspectives."
 }

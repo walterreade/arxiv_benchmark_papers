@@ -2,11 +2,52 @@
   "filename": "2103.10195.pdf",
   "title": "Let-Mi: An Arabic Levantine Twitter Dataset for Misogynistic Language",
   "arxiv_url": "https://arxiv.org/pdf/2103.10195",
-  "bias_targets": [
-    {
-      "target": "Gender bias",
-      "methodology": "Creation of an annotated Levantine Arabic Twitter dataset (LeT-Mi) categorized by specific misogynistic behaviors (e.g., discredit, dominance, sexual harassment, stereotyping) and evaluating various machine learning and deep learning models (Naive Bayes, SVM, LSTM, BERT) on binary misogyny identification, multi-class category classification, and target classification using accuracy, precision, recall, and F1-score."
-    }
+  "religious_groups": [],
+  "models_tested": [
+    "BOW + TF-IDF with Naive Bayes",
+    "Frenda et al. (2018) model",
+    "LSTM",
+    "AraBert"
   ],
-  "primary_bias_target": "Gender bias"
+  "languages_evaluated": [
+    "Arabic"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "The paper introduced a novel category of misogyny called 'damning', which captures religiously-phrased abuse common in Arabic culture (e.g., 'May God curse you'). The experimental analysis, particularly the confusion matrix, showed that this category is challenging for models to detect, often being misclassified as non-misogynistic content.",
+  "references": [
+    "Monirah A. Al-Ajlan and Mourad Ykhlef. 2018. Optimized twitter cyberbullying detection based on deep learning. In Proceedings of the 21st Saudi Computer Society National Computer Conference (NCC), pages 52–56.",
+    "Areej Al-Hassan and Hmood Al-Dossari. 2019. Detection of hate speech in social networks: A survey on multilingual corpus. Computer Science & Information Technology (CS & IT), 9(2):83–100.",
+    "Azalden Alakrota, Liam Murray, and Nikola S.Nikolov. 2018. Dataset construction for the detection of antisocial behaviour in online communication in arabic. Procedia Computer Science, 142:174–181.",
+    "Nuha Albadi, Maram Kurdi, and Shivakant Mishra. 2018. Are they our brothers? analysis and detection of religious hate speech in the arabic twittersphere. In Proceedings of IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining (ASONAM), pages 69–76.",
+    "Wissam Antoun, Fady Baly, and Hazem Hajj. 2020. AraBERT: Transformer-based Model for Arabic Language Understanding. In Proceedings of the 4th Workshop on Open-Source Arabic Corpora and Processing Tools, with a Shared Task on Offensive Language Detection, pages 9–15.",
+    "Maria Anzovino, Elisabetta Fersini, and Paolo Rosso. 2018. Automatic identification and classification of misogynistic language on twitter. In International Conference on Applications of Natural Language to Information Systems, pages 57–64. Springer.",
+    "Data Aurora. 2019. Lebanon protest statistics. \"https://lebanonprotests.com/report\". Online; accessed 10-January-2021.",
+    "Rich Caruana. 1997. Multitask learning. Machine learning, 28(1):41–75.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 4171–4186.",
+    "Aleksandra Edwards, Jose Camacho-Collados, Hélène De Ribaupierre, and Alun Preece. 2020. Go Simple and Pre-Train on Domain-Specific Corpora: On the Role of Training Data for Text Classification. In Proceedings of the 28th International Conference on Computational Linguistics, pages 5522-5529.",
+    "Michelle Ferrier and Nisha Garud-Patkar. 2018. Trollbusters: Fighting online harassment of women journalists. In Mediating Misogyny, pages 311-332. Springer.",
+    "Elisabetta Fersini, Debora Nozza, and Paolo Rosso. 2018a. Overview of the EVALITA 2018 Task on Automatic Misogyny Identification (AMI). In EVALITA Evaluation of NLP and Speech Tools for Italian, volume 12, page 59.",
+    "Elisabetta Fersini, Paolo Rosso, and Maria Anzovino. 2018b. Overview of the Task on Automatic Misogyny Identification at IberEval 2018. In Third Workshop on Evaluation of Human Language Technologies for Iberian Languages (IberEval 2018), volume 2150, pages 214-228.",
+    "Simona Frenda, Bilal Ghanem, and Manuel Montes-y Gómez. 2018. Exploration of Misogyny in Spanish and English Tweets. In 3rd Workshop on Evaluation of Human Language Technologies for Iberian Languages (IberEval 2018), volume 2150, pages 260–267. CEUR-WS.",
+    "Elena Kochkina, Maria Liakata, and Arkaitz Zubiaga. 2018. All-in-one: Multi-task learning for rumour verification. In Proceedings of the 27th International Conference on Computational Linguistics, pages 3402-3413.",
+    "Klaus Krippendorff. 2011. Computing krippendorff’s alpha-reliability.",
+    "Navonil Majumder, Soujanya Poria, Haiyun Peng, Niyati Chhaya, Erik Cambria, and Alexander Gelbukh. 2019. Sentiment and sarcasm classification with multitask learning. IEEE Intelligent Systems, 34(3):38-43.",
+    "Mary L McHugh. 2012. Interrater reliability: the kappa statistic. Biochemia medica: Biochemia medica, 22(3):276-282.",
+    "Mairead Eastin Moloney and Tony P Love. 2018. Assessing online misogyny: Perspectives from sociology and feminist media studies. Sociology compass, 12(5):e12577.",
+    "Hamdy Mubarak, Kareem Darwish, and Walid Magdy. 2017. Abusive language detection on arabic social media. In Proceedings of the First Workshop on Abusive Language Online, pages 52-56.",
+    "Hala Mulki, Hatem Haddad, Chedi Bechikh Ali, and Halima Alshabani. 2019. L-hsab: a levantine twitter dataset for hate speech and abusive language. In Proceedings of the Third Workshop on Abusive Language Online, pages 111–118.",
+    "John T. Nockleby. 2000. Hate Speech, volume 1. Encyclopedia of the American Constitution (2nd ed., edited by Leonard W. Levy, Kenneth L. Karst et al. New York: Macmillan, New York: Macmillan.",
+    "Bailey Poland. 2016. Haters: Harassment, abuse, and violence online. Lincoln: University of Nebraska Press.",
+    "Niloofar Safi Samghabadi, Parth Patwa, PYKL Srinivas, Prerana Mukherjee, Amitava Das, and Thamar Solorio. 2020. Aggression and misogyny detection using bert: A multi-task approach. In Proceedings of the Second Workshop on Trolling, Aggression and Cyberbullying, pages 126-131.",
+    "Anna Schmidt and Michael Wiegand. 2017. A survey on hate speech detection using natural language processing. In Proceedings of the Fifth International Workshop on Natural Language Processing for Social Media, pages 1-10.",
+    "Jamillah Sleiman and Mythili Menon. 2018. The changing of arabic terminology in times of war and displacement. Proceedings of the Twenty-Ninth Western Conference on Linguistics.",
+    "Abu Bakr Soliman, Kareem Eissa, and Samhaa R. El-Beltagy. 2017. Aravec: A Set of Arabic Word Embedding Models for Use in Arabic NLP. Procedia Computer Science, 117:256 – 265. Arabic Computational Linguistics.",
+    "Chiyu Zhang and Muhammad Abdul-Mageed. 2019. Multi-task Bidirectional Transformer Representations for Irony Detection. arXiv preprint arXiv:1909.03526."
+  ],
+  "measurement_description": "Detection of religiously-phrased misogynistic abuse, specifically the 'damning' category, which involves prayers and curses invoking God to harm women."
 }

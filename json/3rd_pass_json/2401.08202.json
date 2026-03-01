@@ -2,19 +2,66 @@
   "filename": "2401.08202.pdf",
   "title": "IsamasRed: A Public Dataset Tracking Reddit Discussions on Israel-Hamas Conflict",
   "arxiv_url": "https://arxiv.org/pdf/2401.08202",
-  "bias_targets": [
-    {
-      "target": "Religious bias",
-      "methodology": "Curating specific dataset subsets (IsamasRed-Z and IsamasRed-P) targeting discussions on antisemitism and Islamophobia using LLM-extracted keywords, and evaluating the discourse using transformer-based classifiers to measure emotions (e.g., anger, disgust) and moral foundations."
-    },
-    {
-      "target": "Nationality bias",
-      "methodology": "Collecting Reddit submissions and comments related to the Israel-Hamas conflict to analyze public sentiment, controversiality metrics, and user endorsement regarding Israeli and Palestinian identities over time."
-    },
-    {
-      "target": "Political bias",
-      "methodology": "Tracking ideological discourse and debate intensity across conflict-centric and conflict-inclusive subreddits by measuring the ratio of controversial comments and applying the Domain Adaptation Moral Foundation (DAMF) model to infer political and ethical values."
-    }
+  "religious_groups": [
+    "Judaism",
+    "Islam"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "GPT-4",
+    "Domain Adaptation Moral Foundation (DAMF) model",
+    "Emotion indicator model (Chochlakis et al. 2023b,a)"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "Discussions related to 'Zionism and antisemitism' were more dominant in volume than those concerning 'Free Palestine and Islamophobia' within the collected Reddit dataset. Additionally, religious-affiliated subreddits like r/islam and r/Judaism were identified as forums with heightened activity levels regarding the conflict.",
+  "references": [
+    "Anderson, K. E. 2015. Ask me anything: what is Reddit? Library Hi Tech News, 32(5): 8–11.",
+    "Barde, B. V.; and Bainwad, A. M. 2017. An overview of topic modeling methods and tools. In 2017 International Conference on Intelligent Computing and Control Systems (ICICCS), 745-750. IEEE.",
+    "Baumgartner, J.; Zannettou, S.; Keegan, B.; Squire, M.; and Blackburn, J. 2020. The pushshift reddit dataset. In Proceedings of the international AAAI conference on web and social media, volume 14, 830-839.",
+    "Burghardt, K.; Rao, A.; Guo, S.; He, Z.; Chochlakis, G.; Sabyasachee, B.; Rojecki, A.; Narayanan, S.; and Lerman, K. 2023. Socio-Linguistic Characteristics of Coordinated Inauthentic Accounts. arXiv preprint arXiv:2305.11867.",
+    "Chang, R.-C.; Rao, A.; Zhong, Q.; Wojcieszak, M.; and Lerman, K. 2023. # RoeOverturned: Twitter Dataset on the Abortion Rights Controversy. In Proceedings of the International AAAI Conference on Web and Social Media, volume 17, 997-1005.",
+    "Chen, E.; and Ferrara, E. 2023. Tweets in time of conflict: A public dataset tracking the twitter discourse on the war between Ukraine and Russia. In Proceedings of the International AAAI Conference on Web and Social Media, volume 17, 1006-1013.",
+    "Chen, E.; Lerman, K.; Ferrara, E.; et al. 2020. Tracking social media discourse about the covid-19 pandemic: Development of a public coronavirus twitter data set. JMIR public health and surveillance, 6(2): e19273.",
+    "Chen, K.; He, Z.; Chang, R.-C.; May, J.; and Lerman, K. 2023. Anger breeds controversy: Analyzing controversy and emotions on reddit. In International Conference on Social Computing, Behavioral-Cultural Modeling and Prediction and Behavior Representation in Modeling and Simulation, 44-53. Springer.",
+    "Chochlakis, G.; Mahajan, G.; Baruah, S.; Burghardt, K.; Lerman, K.; and Narayanan, S. 2023a. Leveraging Label Correlations in a Multi-Label Setting: a Case Study in Emotion. In ICASSP 2023 - 2023 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 1-5.",
+    "Chochlakis, G.; Mahajan, G.; Baruah, S.; Burghardt, K.; Lerman, K.; and Narayanan, S. 2023b. Using Emotion Embeddings to Transfer Knowledge between Emotions, Languages, and Annotation Formats. In ICASSP 2023 - 2023 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 1–5.",
+    "Choi, D.; Han, J.; Chung, T.; Ahn, Y.-Y.; Chun, B.-G.; and Kwon, T. T. 2015. Characterizing conversation patterns in reddit: From the perspectives of content properties and user participation behaviors. In Proceedings of the 2015 аст оп conference on online social networks, 233–243.",
+    "Datta, S.; and Adar, E. 2019. Extracting inter-community conflicts in reddit. In Proceedings of the international AAΑΙ conference on Web and Social Media, volume 13, 146-157.",
+    "Devika, R.; Vairavasundaram, S.; Mahenthar, C. S. J.; Varadarajan, V.; and Kotecha, K. 2021. A deep learning model based on BERT and sentence transformer for semantic keyphrase extraction on big social data. IEEE Access, 9: 165252-165261.",
+    "Devlin, J.; Chang, M.-W.; Lee, K.; and Toutanova, K. 2018. Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805.",
+    "Eisenstein, J.; Ahmed, A.; and Xing, E. P. 2011. Sparse additive generative models of text. In Proceedings of the 28th international conference on machine learning (ICML-11), 1041-1048.",
+    "Firoozeh, N.; Nazarenko, A.; Alizon, F.; and Daille, B. 2020. Keyword extraction: Issues and methods. Natural Language Engineering, 26(3): 259–291.",
+    "Grootendorst, M. 2020. KeyBERT: Minimal keyword extraction with BERT.",
+    "Guerra, A.; and Karakuş, O. 2023. Sentiment analysis for measuring hope and fear from Reddit posts during the 2022 Russo-Ukrainian conflict. Frontiers in Artificial Intelligence, 6: 1163577.",
+    "Guo, S.; Mokhberian, N.; and Lerman, K. 2023. A Data Fusion Framework for Multi-Domain Morality Learning. In Proceedings of the International AAAI Conference on Web and Social Media, volume 17, 281-291.",
+    "Hanley, H. W.; Kumar, D.; and Durumeric, Z. 2023. Happenstance: Utilizing Semantic Search to Track Russian State Media Narratives about the Russo-Ukrainian War On Reddit. In Proceedings of the international AAAI conference on web and social media, volume 17, 327-338.",
+    "He, Z.; Guo, S.; Rao, A.; and Lerman, K. 2024. Whose Emotions and Moral Sentiments Do Language Models Reflect? arXiv preprint arXiv:2402.11114.",
+    "He, Z.; May, J.; and Lerman, K. 2023. CPL-NoViD: Context-Aware Prompt-based Learning for Norm Violation Detection in Online Communities. arXiv preprint arXiv:2305.09846.",
+    "He, Z.; Mokhberian, N.; and Lerman, K. 2022. Infusing Knowledge from Wikipedia to Enhance Stance Detection. In Proceedings of the 12th Workshop on Computational Approaches to Subjectivity, Sentiment & Social Media Analysis, 71-77.",
+    "Hofmann, V.; Schütze, H.; and Pierrehumbert, J. B. 2022. The Reddit Politosphere: A Large-Scale Text and Network Resource of Online Political Discourse. In Proceedings of the International AAAI Conference on Web and Social Media, volume 16, 1259-1267.",
+    "Imtiaz, A.; Khan, D.; Lyu, H.; and Luo, J. 2022. Taking sides: Public Opinion over the Israel-Palestine Conflict in 2021. arXiv preprint arXiv:2201.05961.",
+    "Jamnik, M. R.; and Lane, D. J. 2019. The use of Reddit as an inexpensive source for high-quality data. Practical Assessment, Research, and Evaluation, 22(1): 5.",
+    "Koncar, P.; Walk, S.; and Helic, D. 2021. Analysis and prediction of multilingual controversy on reddit. In Proceedings of the 13th ACM Web Science Conference 2021, 215–224.",
+    "Krivičić, A.; and Martinčić-Ipšić, S. 2023. Analyzing Sentiment of Reddit Posts for the Russia-Ukraine War. In 2023 46th MIPRO ICT and Electronics Convention (MIPRO), 1709-1714. IEEE.",
+    "Mihalcea, R.; and Tarau, P. 2004. Textrank: Bringing order into text. In Proceedings of the 2004 conference on empirical methods in natural language processing, 404–411.",
+    "Nandurkar, T.; Nagare, S.; Hake, S.; and Chinnaiah, K. 2023. Sentiment Analysis Towards Russia-Ukrainian Conflict: Analysis of Comments on Reddit. In 2023 11th International Conference on Emerging Trends in Engineering & Technology-Signal and Information Processing (ICETETSIP), 1-6. IEEE.",
+    "Nasar, Z.; Jaffry, S. W.; and Malik, M. K. 2019. Textual keyword extraction and summarization: State-of-the-art. Information Processing & Management, 56(6): 102088.",
+    "Ouyang, L.; Wu, J.; Jiang, X.; Almeida, D.; Wainwright, C.; Mishkin, P.; Zhang, C.; Agarwal, S.; Slama, K.; Ray, A.; et al. 2022. Training language models to follow instructions with human feedback. Advances in Neural Information Processing Systems, 35: 27730–27744.",
+    "Park, C. Y.; Mendelsohn, J.; Radhakrishnan, K.; Jain, K.; Kanakagiri, T.; Jurgens, D.; and Tsvetkov, Y. 2021. Detecting Community Sensitive Norm Violations in Online Conversations. In Findings of the Association for Computational Linguistics: EMNLP 2021, 3386-3397.",
+    "Petruzzellis, F.; Bonchi, F.; Morales, G. D. F.; and Monti, C. 2023. On the Relation between Opinion Change and Information Consumption on Reddit. In Proceedings of the International AAAI Conference on Web and Social Media, volume 17, 710-719.",
+    "Pohl, J. S.; Markmann, S.; Assenmacher, D.; and Grimme, C. 2023. Invasion@ Ukraine: Providing and Describing a Twitter Streaming Dataset That Captures the Outbreak of War Between Russia and Ukraine in 2022. In Proceedings of the International AAAI Conference on Web and Social Media, volume 17, 1093–1101.",
+    "Samuel, M. 2023. The Israel-Hamas War: Historical Context and International Law. Middle East Policy.",
+    "Santurkar, S.; Durmus, E.; Ladhak, F.; Lee, C.; Liang, P.; and Hashimoto, T. 2023. Whose opinions do language models reflect? In International Conference on Machine Learning, 29971-30004. PMLR.",
+    "Shi, T.; Chen, K.; and Zhao, J. 2023. Safer-instruct: Aligning language models with automated preference data. arXiv preprint arXiv:2311.08685.",
+    "Weninger, T.; Zhu, X. A.; and Han, J. 2013. An exploration of discussion threads in social news sites: A case study of the reddit community. In Proceedings of the 2013 IEEE/ACM international conference on advances in social networks analysis and mining, 579–583.",
+    "Zhu, Y.; Haq, E.-u.; Lee, L.-H.; Tyson, G.; and Hui, P. 2022. A reddit dataset for the russo-ukrainian conflict in 2022. arXiv preprint arXiv:2206.05107."
+  ],
+  "measurement_description": "Analysis of online Reddit discourse related to religious/ethnic conflicts, specifically tracking discussions on antisemitism, Islamophobia, and Zionism, and identifying activity within religious-affiliated subreddits (e.g., r/islam, r/Judaism)."
 }

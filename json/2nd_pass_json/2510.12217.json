@@ -2,96 +2,55 @@
   "filename": "2510.12217.pdf",
   "title": "HALF: Harm-Aware LLM Fairness Evaluation Aligned with Deployment",
   "arxiv_url": "https://arxiv.org/pdf/2510.12217",
-  "benchmark_measurement": "The benchmark measured sentiment and toxicity in open-ended text generation prompted with religious topics (from the BOLD benchmark), and stereotype-based reasoning in question-answering contexts related to religion (from the BBQ benchmark).",
-  "religious_groups": [
-    "Islam"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Counterfactual demographic substitution in prompts, entity-swapped text summarization, evaluating pronoun translation accuracy, and multiple-choice stereotype tests."
+    },
+    {
+      "target": "Racial/Ethnicity bias",
+      "methodology": "Injecting ethnic identifiers into prompts to measure performance disparities, sentiment/toxicity analysis of open-ended generation, and multiple-choice stereotype association tests."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Injecting age group identifiers into prompts to measure classification and recommendation disparities, and multiple-choice stereotype tests."
+    },
+    {
+      "target": "Cognitive bias",
+      "methodology": "Rewriting clinical questions with diagnostic heuristics (e.g., false consensus, frequency, confirmation) to measure accuracy drops in medical QA."
+    },
+    {
+      "target": "Nationality/Regional bias",
+      "methodology": "Measuring classification disparities based on defendant state (East-European vs. rest of Europe) in legal judgment prediction, and multiple-choice stereotype tests."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Multiple-choice stereotype association tests (BBQ benchmark)."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Multiple-choice stereotype association tests (BBQ benchmark)."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Multiple-choice stereotype association tests (BBQ benchmark) and sentiment/toxicity analysis of open-ended generation (BOLD benchmark)."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Multiple-choice stereotype association tests (BBQ benchmark)."
+    },
+    {
+      "target": "Political bias",
+      "methodology": "Sentiment and toxicity analysis of open-ended generation triggered by political ideology prompts (BOLD benchmark)."
+    },
+    {
+      "target": "Physical appearance bias",
+      "methodology": "Multiple-choice stereotype association tests (BBQ benchmark)."
+    },
+    {
+      "target": "Intersectionality bias",
+      "methodology": "Evaluating compounded demographic categories (e.g., Race x Gender, Race x SES) using multiple-choice stereotype tests."
+    }
   ],
-  "models_tested": [
-    "Claude 4",
-    "o4-mini",
-    "GPT-4.1-mini",
-    "GPT-4.1",
-    "DeepSeek V3",
-    "LLAMA 3B",
-    "LLAMA 1B",
-    "LLAMA 8B"
-  ],
-  "languages_evaluated": [
-    "English",
-    "Arabic",
-    "Ukrainian",
-    "Russian",
-    "Italian",
-    "French",
-    "Spanish",
-    "German"
-  ],
-  "response_type": [
-    "long",
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "BBQ",
-    "BOLD"
-  ],
-  "continuous_testing": true,
-  "findings": "Smaller open-source models like LLaMA-1B and LLaMA-3B produced disproportionately high toxicity for prompts related to Islam. In stereotype evaluation (BBQ), most models showed significant bias on religion-related prompts, with LLaMA models exhibiting the highest bias, while Claude 4 demonstrated the most consistent fairness.",
-  "references": [
-    "Anthropic. 2025a. Claude models overview. https://docs.anthropic.com/en/docs/ about-claude/models/overview. API documentation describing Claude model generations and migration guidance from Claude 3.x to Claude 4.",
-    "Anthropic. 2025b. Introducing claude 4. https: //www.anthropic.com/news/claude-4. Claude Opus 4 and Sonnet 4 launch; hybrid extended- thinking modes; improved coding and complex reasoning performance.",
-    "Lena Armstrong, Abbey Liu, Stephen MacNeil, and Danaë Metaxa. 2024. The silicon ceiling: Auditing gpt's race and gender biases in hiring. In Proceedings of the 4th ACM Conference on Equity and Access in Algorithms, Mechanisms, and Optimization, EAAMO '24, page 1–18. ACM.",
-    "Solon Barocas and Andrew D. Selbst. 2016. Big data's disparate impact. California Law Review, 104(3):671–732.",
-    "Kenza Benkirane, Jackie Kay, and Maria Perez-Ortiz. 2024. How can we diagnose and treat bias in large language models for clinical decision-making? Preprint, arXiv:2410.16574.",
-    "Aylin Caliskan, Joanna J Bryson, and Arvind Narayanan. 2017. Semantics derived automatically from language corpora contain human-like biases. Science, 356(6334):183–186.",
-    "Ilias Chalkidis, Tommaso Pasini, Sheng Zhang, Letizia Tomada, Sebastian Schwemer, and Anders Søgaard. 2022a. FairLex: A multilingual benchmark for evaluating fairness in legal text processing. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 4389–4406, Dublin, Ireland. Association for Computational Linguistics.",
-    "Ilias Chalkidis, Tommaso Pasini, Sheng Zhang, Letizia Tomada, Sebastian Felix Schwemer, and Anders Søgaard. 2022b. Fairlex: A multilingual benchmark for evaluating fairness in legal text processing. Preprint, arXiv:2203.07228.",
-    "Hanjie Chen, Zhouxiang Fang, Yash Singla, and Mark Dredze. 2025. Benchmarking large language models on answering and explaining challenging medical questions. Preprint, arXiv:2402.18060.",
-    "DeepSeek. 2025. Deepseek api documentation. https: //api-docs.deepseek.com/. API usage; model routing for deepseek-chat → DeepSeek-V3-0324; OpenAI-compatible interface.",
-    "DeepSeek-AI. 2024. Deepseek-v3 technical report. Preprint, arXiv:2412.19437. Describes Mixture-of- Experts architecture, Multi-head Latent Attention, and efficiency for DeepSeek-V3.",
-    "Yashar Deldjoo and Tommaso di Noia. 2025. Cfair-llm: Consumer fairness evaluation in large-language model recommender system. Preprint, arXiv:2403.05668.",
-    "Jwala Dhamala, Debasmita Ghosh, Mathieu Chollet, and 1 others. 2021a. Bold: The dataset for social bias in open-ended language generation. arXiv preprint arXiv:2101.11718.",
-    "Jwala Dhamala, Tony Sun, Varun Kumar, Satyapriya Krishna, Yada Pruksachatkun, Kai-Wei Chang, and Rahul Gupta. 2021b. Bold: Dataset and metrics for measuring biases in open-ended language generation. In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, FAccT '21, page 862–872. ACM.",
-    "Nazarii Drushchak and Mariana Romanyshyn. 2024. Introducing the djinni recruitment dataset: A corpus of anonymized CVs and job postings. In Proceedings of the Third Ukrainian Natural Language Processing Workshop (UNLP) @ LREC-COLING 2024, pages 8–13, Torino, Italia. ELRA and ICCL.",
-    "Michael D. Ekstrand, Robin Burke, Fernando Diaz, John Riedl, and Sepideh Sonboli. 2022. Fairness in recommender systems: Research landscape and future directions. ACM Transactions on Recommender Systems, 1(1):1–42.",
-    "European Union. 2024. Regulation (EU) 2024/1689 of the European Parliament and of the Council of 13 June 2024 Laying Down Harmonised Rules on Artificial Intelligence (AI Act). https://eur-lex. europa.eu/eli/reg/2024/1689/oj. Defines risk tiers; health, employment, and justice applications classified as high-risk.",
-    "Chengguang Gan, Qinghao Zhang, and Tatsunori Mori. 2024. Application of Ilm agents in recruitment: A novel framework for resume screening. Preprint, arXiv:2401.08315.",
-    "Muskan Garg, Chandni Saxena, Sriparna Saha, Veena Krishnan, Ruchi Joshi, and Vijay Mago. 2022. CAMS: An annotated corpus for causal analysis of mental health issues in social media posts. In Proceedings of the Thirteenth Language Resources and Evaluation Conference, pages 6387–6396, Marseille, France. European Language Resources Association.",
-    "Zhijun Guo, Alvina Lai, Johan H Thygesen, Joseph Farrington, Thomas Keen, and Kezhi Li. 2024. Large language models for mental health applications: Systematic review (preprint). JMIR Preprints.",
-    "F. Maxwell Harper and Joseph A. Konstan. 2015. The movielens datasets: History and context. ACM Transactions on Interactive Intelligent Systems, 5(4):1–19. Contains details for MovieLens 20M, 10M, 1M, and earlier releases.",
-    "Matthew Louis Mauriello, Thierry Lincoln, Grace Hon, Dorien Simon, Dan Jurafsky, and Pablo Paredes. 2021. Sad: A stress annotated dataset for recognizing everyday stressors in sms-like conversational systems. In Extended Abstracts of the 2021 CHI Conference on Human Factors in Computing Systems, CHI EA '21, New York, NY, USA. Association for Computing Machinery.",
-    "Nikita Mehandru, Sweta Agrawal, Yimin Xiao, Ge Gao, Elaine Khoong, Marine Carpuat, and Niloufar Salehi. 2023. Physician detection of clinical harm in machine translation: Quality estimation aids in reliance and backtranslation identifies critical errors. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, pages 11633- 11647, Singapore. Association for Computational Linguistics.",
-    "Meta AI. 2024a. Introducing llama 3.1: Scaling open models for advanced use. https://ai.meta.com/ blog/llama-3-1/. Launch post for Llama 3.1 family; improved performance; larger context and instruction alignment.",
-    "Meta AI. 2024b. Llama-3.2-1b model card. https: //huggingface.co/meta-llama/Llama-3.2-1B. Official model card; text-only multilingual checkpoint; instruction-tuned variant used in our study.",
-    "Meta AI. 2024c. Llama-3.2-3b model card. https: //huggingface.co/meta-llama/Llama-3.2-3B. Official model card; 3B multilingual lightweight model; instruction-tuned chat interface.",
-    "Meta AI. 2024d. Llama 3.2: Open models for edge, mobile, and vision. Meta AI blog. Announces Llama 3.2 family, including 1B and 3B lightweight multilingual models for edge deployments.",
-    "Meta AI. 2024e. Meta-llama-3.1-8b-instruct model card. https://huggingface.co/meta-llama/ Meta-Llama-3.1-8B-Instruct. Instruction-tuned 8B parameter model; used as our larger open baseline.",
-    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2020. Stereoset: Measuring stereotypical bias in pretrained language models. Preprint, arXiv:2004.09456.",
-    "Zabir Al Nazi and Wei Peng. 2024. Large language models in healthcare and medical domain: A review. Preprint, arXiv:2401.06775.",
-    "OpenAI. 2025a. Introducing gpt-4.1 in the api. https: //openai.com/index/gpt-4-1/. Announces GPT-4.1 family (GPT-4.1, GPT-4.1-mini, GPT-4.1-nano); long context and improved coding/instruction performance.",
-    "OpenAI. 2025b. Introducing 03 and 04-mini. https://openai.com/index/ introducing-03-and-04-mini/. Launch post describing o4-mini as a smaller, fast, cost-efficient reasoning model strong in math and coding benchmarks.",
-    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel R. Bowman. 2022. Bbq: A hand-built bias benchmark for question answering. Preprint, arXiv:2110.08193.",
-    "Alicia Parrish, Angelica Chen, Nikita Nangia, and 1 others. 2021. Bbq: A hand-built bias benchmark for question answering. arXiv preprint arXiv:2110.08193.",
-    "Stephen R Pfohl, Heather Cole-Lewis, Rory Sayres, Darlene Neal, Mercy Asiedu, Awa Dieng, Nenad Tomasev, Qazi Mamunur Rashid, Shekoofeh Azizi, Negar Rostamzadeh, and 1 others. 2024. A toolbox for surfacing health equity harms and biases in large language models. Nature Medicine, 30(12):3590–3600.",
-    "Samuel Schmidgall, Carl Harris, Ime Essien, Daniel Olshvang, Tawsifur Rahman, Ji Woong Kim, Rojin Ziaei, Jason Eshraghian, Peter Abadir, and Rama Chellappa. 2024. Addressing cognitive bias in medical language models. Preprint, arXiv:2402.08113.",
-    "Dong Shu, Haoran Zhao, Xukun Liu, David Demeter, Mengnan Du, and Yongfeng Zhang. 2024. Lawllm: Law large language model for the us legal system. In Proceedings of the 33rd ACM International Conference on Information and Knowledge Management, CIKM '24, page 4882–4889. ACM.",
-    "Gabriel Stanovsky, Noah A. Smith, and Luke Zettlemoyer. 2019a. Evaluating gender bias in machine translation. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 1679–1684, Florence, Italy. Association for Computational Linguistics.",
-    "Gabriel Stanovsky, Noah A. Smith, and Luke Zettlemoyer. 2019b. Evaluating gender bias in machine translation. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 1679–1684.",
-    "Julius Steen and Katja Markert. 2024. Bias in news summarization: Measures, pitfalls and corpora. Preprint, arXiv:2309.08047.",
-    "Hao Sun, Guangxuan Xu, Jiawen Deng, and 1 others. 2021. On the safety of conversational models: Taxonomy, dataset, and benchmark. arXiv preprint arXiv:2110.08466.",
-    "U.S. Equal Employment Opportunity Commission. 2023. Applying Title VII of the Civil Rights Act of 1964 to the Use of Artificial Intelligence in Employment Selection Procedures. EEOC technical assistance. Guidance on disparate-impact rules for AI-driven hiring.",
-    "Akshaj Kumar Veldanda, Fabian Grob, Shailja Thakur, Hammond Pearce, Benjamin Tan, Ramesh Karri, and Siddharth Garg. 2023. Investigating hiring bias in large language models. In RO-FoMo:Robustness of Few-shot and Zero-shot Learning in Large Foundation Models.",
-    "Mariia Vladimirova, Federico Pavone, and Eustache Diemert. 2024. Fairjob: A real-world dataset for fairness in online systems. Preprint, arXiv:2407.03059.",
-    "Shen Wang, Tianlong Xu, Hang Li, Chaoli Zhang, Joleen Liang, Jiliang Tang, Philip S. Yu, and Qingsong Wen. 2024a. Large language models for education: A survey and outlook. Preprint, arXiv:2403.18105.",
-    "Yuqing Wang, Yun Zhao, Sara Alessandra Keller, Anne De Hond, Marieke M van Buchem, Malvika Pillai, and Tina Hernandez-Boussard. 2024b. Unveiling and mitigating bias in mental health analysis with large language models. arXiv preprint arXiv:2406.12033.",
-    "Laura Weidinger, John Mellor, Maribeth Rauh, Christopher Griffin, and et al. 2022. Ethical and social risks of harm from language models. In Proceedings of the 2022 ACM Conference on Fairness, Accountability, and Transparency (FAccT Companion). Comprehensive taxonomy of LM harms including representational, allocational, and interaction risks.",
-    "Iain Weissburg, Sathvika Anand, Sharon Levy, and Haewon Jeong. 2025. Llms are biased teachers: Evaluating llm bias in personalized education. Preprint, arXiv:2410.14012.",
-    "World Health Organization. 2024. Ethics and Governance of Artificial Intelligence for Health: Large Multimodal Models. https://www.who.int/ publications/i/item/9789240092419. WHO guidance on risks, safeguards, and governance for LMMs in health.",
-    "Likang Wu, Zhi Zheng, Zhaopeng Qiu, Hao Wang, Hongchao Gu, Tingjia Shen, Chuan Qin, Chen Zhu, Hengshu Zhu, Qi Liu, Hui Xiong, and Enhong Chen. 2024. A survey on large language models for recommendation. Preprint, arXiv:2305.19860.",
-    "Yiquan Wu, Siying Zhou, Yifei Liu, Weiming Lu, Xiaozhong Liu, Yating Zhang, Changlong Sun, Fei Wu, and Kun Kuang. 2023. Precedent-enhanced legal judgment prediction with LLM and domain-model collaboration. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, pages 12060–12075, Singapore. Association for Computational Linguistics.",
-    "Pardis Sadat Zahraei and Zahra Shakeri. 2024. Detecting bias and enhancing diagnostic accuracy in large language models for healthcare. Preprint, arXiv:2410.06566.",
-    "Jizhi Zhang, Keqin Bao, Yang Zhang, Wenjie Wang, Fuli Feng, and Xiangnan He. 2023. Is chatgpt fair for recommendation? evaluating fairness in large language model recommendation. In Proceedings of the 17th ACM Conference on Recommender Systems, RecSys '23, page 993–999. ACM.",
-    "Zhexin Zhang, Leqi Lei, Lindong Wu, Rui Sun, Yongkang Huang, Chong Long, Xiao Liu, Xuanyu Lei, Jie Tang, and Minlie Huang. 2024. Safetybench: Evaluating the safety of large language models. Preprint, arXiv:2309.07045.",
-    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang. 2018. Gender bias in coreference resolution: Evaluation and debiasing methods. Preprint, arXiv:1804.06876."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

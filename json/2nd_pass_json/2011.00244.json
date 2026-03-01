@@ -2,63 +2,23 @@
   "filename": "2011.00244.pdf",
   "title": "Evaluating Bias In Dutch Word Embeddings",
   "arxiv_url": "https://arxiv.org/pdf/2011.00244",
-  "benchmark_measurement": "The paper does not measure anything related to faith or religion. Its focus is on quantifying and mitigating gender bias in Dutch word embeddings.",
-  "religious_groups": [],
-  "models_tested": [
-    "Dutch FastText",
-    "CLIPS (trained on COW)",
-    "CLIPS (trained on Sonar)",
-    "Word2Vec (from NLPL)",
-    "BERTJe",
-    "RobBert"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Word Embedding Association Test (WEAT), Sentence Embeddings Association Test (SEAT), and K-means clustering accuracy to measure cosine similarities and groupings of male/female terms or names against attributes like career, family, math, science, and arts."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Word Embedding Association Test (WEAT) measuring cosine similarities between European American vs. African American names and pleasant vs. unpleasant attributes."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Word Embedding Association Test (WEAT) measuring cosine similarities between young people's names vs. old people's names and pleasant vs. unpleasant attributes."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Word Embedding Association Test (WEAT) measuring cosine similarities between mental disease vs. physical disease terms and temporary vs. permanent attributes."
+    }
   ],
-  "languages_evaluated": [
-    "Dutch",
-    "English"
-  ],
-  "response_type": [
-    "other"
-  ],
-  "religion_component": "none",
-  "base_benchmarks": [
-    "Word Embeddings Association Test (WEAT)",
-    "Sentence Embeddings Association Test (SEAT)",
-    "Implicit Association Test (IAT)"
-  ],
-  "continuous_testing": false,
-  "findings": "The paper does not analyze or report any findings related to religion or faith.",
-  "references": [
-    "Hervé Abdi and Lynne J. Williams. 2010. Principal component analysis. Wiley Interdisciplinary Reviews: Computational Statistics, 2(4):433–459, 7.",
-    "Christine Basta, Marta R. Costa-jussà, and Noe Casas. 2019. Evaluating the Underlying Gender Bias in Contextualized Word Embeddings. Technical report.",
-    "Tolga Bolukbasi, Kai Wei Chang, James Zou, Venkatesh Saligrama, and Adam Kalai. 2016. Man is to computer programmer as woman is to homemaker? Debiasing word embeddings. Technical report.",
-    "Joy Buolamwini. 2018. Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Classification *. Technical report.",
-    "Aylin Caliskan, Joanna J. Bryson, and Arvind Narayanan. 2017. Semantics derived automatically from language corpora contain human-like biases. Science, 356(6334):183–186, 4.",
-    "Jeffrey Dastin. 2018. Amazon scraps secret AI recruiting tool that showed bias against women - Reuters, 10.",
-    "Amit Datta, Michael Carl Tschantz, and Anupam Datta. 2015. Automated Experiments on Ad Privacy Settings. Proceedings on Privacy Enhancing Technologies, 2015(1):92–112.",
-    "Wietse de Vries, Andreas van Cranenburgh, Arianna Bisazza, Tommaso Caselli, Gertjan van Noord, and Malvina Nissim. 2019. BERTje: A Dutch BERT Model. 12.",
-    "Pieter Delobelle, Thomas Winters, and Bettina Berendt. 2020. RobBERT: a Dutch RoBERTa-based Language Model. 1.",
-    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2018. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding. 10.",
-    "Murhaf Fares, Andrey Kutuzov, Stephan Oepen, and Erik Velldal. 2017. Word vectors, reuse, and replicability: Towards a community repository of large-text resources. Technical report.",
-    "Nikhil Garg, Londa Schiebinger, Dan Jurafsky, and James Zou. 2018. Word embeddings quantify 100 years of gender and ethnic stereotypes. Proceedings of the National Academy of Sciences of the United States of America, 115(16):E3635–E3644, 4.",
-    "Hila Gonen and Yoav Goldberg. 2019. Lipstick on a Pig: Debiasing Methods Cover up Systematic Gender Biases in Word Embeddings But do not Remove Them. 3.",
-    "Edouard Grave, Piotr Bojanowski, Prakhar Gupta, Armand Joulin, and Tomas Mikolov. 2018. Learning Word Vectors for 157 Languages. Technical report.",
-    "Anthony G. Greenwald, Debbie E. McGhee, and Jordan L.K. Schwartz. 1998. Measuring individual differences in implicit cognition: The implicit association test. Journal of Personality and Social Psychology, 74(6):1464–1480.",
-    "Ben Hutchinson, Vinodkumar Prabhakaran, Emily Denton, Kellie Webster, Yu Zhong, and Stephen Denuyl. 2020. Social Biases in NLP Models as Barriers for Persons with Disabilities. pages 5491-5501, 5.",
-    "Peter Kolb. 2018. Wikipedia Monolingual Corpora - Linguatools.",
-    "Paul Pu Liang, Irene Li, Emily Zheng, Yao Chong Lim, Ruslan Salakhutdinov, and Louis-Philippe Morency. 2019. Towards Debiasing Sentence Representations. Technical report.",
-    "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. 2019. ROBERTa: A Robustly Optimized BERT Pretraining Approach. 7.",
-    "Chandler May, Alex Wang, Shikha Bordia, Samuel R. Bowman, and Rachel Rudinger. 2019. On Measuring Social Biases in Sentence Encoders. Technical report.",
-    "Sarah K. Murnen. 2018. Fashion or action? Gender-stereotyped toys and social behavior. In Gender typing of children's toys: How early play experiences impact development., pages 189–211. American Psychological Association, 2.",
-    "Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. 2019. Language Models are Unsupervised Multitask Learners. Technical report.",
-    "Roland Schäfer and Felix Bildhauer. 2012. Building Large Corpora from the Web Using a New Efficient Tool Chain. In LREC, pages 486-493.",
-    "Petr Sojka. 2010. Software Framework for Topic Modelling with Large Corpora. Technical report.",
-    "Tony Sun, Andrew Gaut, Shirlyn Tang, Yuxin Huang, Mai ElSherief, Jieyu Zhao, Diba Mirza, Elizabeth Belding, Kai-Wei Chang, and William Yang Wang. 2019. Mitigating Gender Bias in Natural Language Processing: Literature Review. Technical report.",
-    "Stéphan Tulkens, Chris Emmery, and Walter Daelemans. 2016. Evaluating Unsupervised Dutch Word Embeddings as a Linguistic Resource. Proceedings of the 10th International Conference on Language Resources and Evaluation, LREC 2016, pages 4130–4136, 7.",
-    "Benjamin van der Burgh and Suzan Verberne. 2019. The merits of Universal Language Model Fine-tuning for Small Datasets a case with Dutch book reviews. 10.",
-    "Tianlu Wang, Xi Victoria Lin, Nazneen Fatema Rajani, Bryan McCann, Vicente Ordonez, and Caiming Xiong. 2020. Double-Hard Debias: Tailoring Word Embeddings for Gender Bias Mitigation. pages 5443-5453, 5.",
-    "Thomas Wolf, Lysandre Debut, Victor Sanh, Julien Chaumond, Clement Delangue, Anthony Moi, Pierric Cistac, Tim Rault, Rémi Louf, Morgan Funtowicz, and Jamie Brew. 2019. HuggingFace's Transformers: State-of-the-art Natural Language Processing. 10.",
-    "Sanqiang Zhao, Rui Meng, Daqing He, Saptono Andi, and Parmanto Bambang. 2018. Integrating Transformer and Paraphrase Rules for Sentence Simplification. arXiv preprint arXiv:1810.11193.",
-    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Ryan Cotterell, Vicente Ordonez, and Kai-Wei Chang. 2019. Gender Bias in Contextualized Word Embeddings. NAACL HLT 2019 - 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies - Proceedings of the Conference, 1:629-634, 4.",
-    "Pei Zhou, Weijia Shi, Jieyu Zhao, Kuan-Hao Huang, Muhao Chen, Ryan Cotterell, and Kai-Wei Chang. 2019. Examining Gender Bias in Languages with Grammatical Gender. EMNLP-IJCNLP 2019 - 2019 Conference on Empirical Methods in Natural Language Processing and 9th International Joint Conference on Natural Language Processing, Proceedings of the Conference, pages 5276–5284, 9."
-  ]
+  "primary_bias_target": "Gender bias"
 }

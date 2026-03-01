@@ -2,19 +2,82 @@
   "filename": "2509.06838.pdf",
   "title": "EPT Benchmark: Evaluation of Persian Trustworthiness in Large Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2509.06838",
-  "bias_targets": [
-    {
-      "target": "Cultural and Religious bias",
-      "methodology": "Evaluating model responses to a curated dataset of prompts reflecting Persian linguistic nuances and Islamic ethical principles (e.g., Islamic finance/riba, culturally sensitive moral dilemmas), using a hybrid approach of automated LLM-based scoring and native human expert reviews to assess alignment with local norms versus Western secular values."
-    },
-    {
-      "target": "Geographic and Socioeconomic bias",
-      "methodology": "Testing the models' decision-making and resource allocation fairness across different demographic groups, such as comparing recommendations for funding and infrastructure between urban and rural communities in Iran."
-    },
-    {
-      "target": "National and Geopolitical bias",
-      "methodology": "Assessing how models classify and respond to statements regarding Iranian historical identity and geopolitical realities (e.g., the historical naming of the Persian Gulf and ancient civilizations) to detect unwarranted stereotyping or disparagement."
-    }
+  "religious_groups": [
+    "Islam"
   ],
-  "primary_bias_target": "Cultural and Religious bias"
+  "models_tested": [
+    "GPT-4o",
+    "Claude 3.7 Sonnet",
+    "Gemini 2.5 Pro",
+    "DeepSeek v3",
+    "Grok 3",
+    "Llama 3.3",
+    "Mistral 3",
+    "Qwen 3"
+  ],
+  "languages_evaluated": [
+    "Persian"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "major",
+  "base_benchmarks": [
+    "TRUSTLLM",
+    "SafetyPrompts",
+    "HELM",
+    "ROBBIE",
+    "DecodingTrust",
+    "Flames",
+    "Cleva",
+    "PROMPTEVALS"
+  ],
+  "continuous_testing": true,
+  "findings": "The study found significant disparities in model performance regarding alignment with Persian-Islamic values. Claude 3.7 Sonnet demonstrated the highest and most consistent performance, while Qwen 3 performed the weakest. Safety was the most challenging dimension for most models, indicating a critical gap in aligning LLMs with the cultural and ethical norms of the Persian-Islamic context.",
+  "references": [
+    "Leonardo Berti, Flavio Giorgi, and Gjergji Kasneci. Emergent abilities in large language models: A survey. arXiv preprint arXiv:2503.05788, Feb 2025.",
+    "Longzhen Han, Awes Mubarak, Almas Baimagambetov, Nikolaos Polatidis, and Thar Baker. Multimodal large language models: A survey. arXiv preprint arXiv:2506.10016, May 2025.",
+    "Josh A. Goldstein, Girish Sastry, Micah Musser, Renee DiResta, Matthew Gentzel, and Katerina Sedova. Generative language models and automated influence operations: Emerging threats and potential mitigations. CoRR, abs/2301.04246, 2023.",
+    "Long Ouyang, Jeffrey Wu, Xu Jiang, Diogo Almeida, Carroll Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Sandipan Slama, Alex Ray, et al. Training language models to follow instructions with human feedback. Advances in Neural Information Processing Systems, 35:27730–27744, 2022.",
+    "Yupeng Chang, Xu Wang, Jindong Wang, Yuan Wu, Kaijie Zhu, Hao Chen, Linyi Yang, Xiaoyuan Yi, Cunxiang Wang, Yidong Wang, Wei Ye, Yue Zhang, Yi Chang, Philip S. Yu, Qiang Yang, and Xing Xie. A survey on evaluation of large language models. CoRR, abs/2307.03109, 2023.",
+    "Yuntao Bai, Saurav Kadavath, Sandipan Kundu, Amanda Askell, Jackson Kernion, Andy Jones, Anna Chen, Anna Goldie, Azalia Mirhoseini, Cameron McKinnon, Carol Chen, Catherine Olsson, Christopher Olah, Danny Hernandez, Dawn Drain, Deep Ganguli, Dustin Li, Eli Tran-Johnson, Ethan Perez, Jamie Kerr, Jared Mueller, Jeffrey Ladish, Joshua Landau, Kamal Ndousse, Kamile Lukosiute, Liane Lovitt, Michael Sellitto, Nelson Elhage, Nicholas Schiefer, Noemí Mercado, Nova DasSarma, Robert Lasenby, Robin Larson, Sam Ringer, Scott Johnston, Shauna Kravec, Sheer El Showk, Stanislav Fort, Tamera Lanham, Timothy Telleen-Lawton, Tom Conerly, Tom Henighan, Tristan Hume, Samuel R. Bowman, Zac Hatfield-Dodds, Ben Mann, Dario Amodei, Nicholas Joseph, Sam McCandlish, Tom Brown, and Jared Kaplan. Constitutional AI: harmlessness from AI feedback. CoRR, abs/2212.08073, 2022.",
+    "Zhichao Wang, Bin Bi, Shiva Kumar Pentyala, Kiran Ramnath, Sougata Chaudhuri, Shubham Mehrotra, Zixu (James) Zhu, Xiang-Bo Mao, Sitaram Asur, and Na (Claire) Cheng. A comprehensive survey of llm alignment techniques: Rlhf, rlaif, ppo, dpo and more. arXiv preprint arXiv:2407.16216, jul 2024.",
+    "Amanda Askell, Yuntao Bai, Anna Chen, Dawn Drain, Deep Ganguli, Tom Henighan, Andy Jones, Nicholas Joseph, Benjamin Mann, Nova DasSarma, Nelson Elhage, Zac Hatfield-Dodds, Danny Hernandez, Jackson Kernion, Kamal Ndousse, Catherine Olsson, Dario Amodei, Tom B. Brown, Jack Clark, Sam McCandlish, Chris Olah, and Jared Kaplan. A general language assistant as a laboratory for alignment. CORR, abs/2112.00861, 2021.",
+    "Jiaming Ji, Tianyi Qiu, Boyuan Chen, Borong Zhang, Hantao Lou, Kaile Wang, Yawen Duan, Zhonghao He, Jiayi Zhou, Zhaowei Zhang, Fanzhi Zeng, Kwan Yee Ng, Juntao Dai, Xuehai Pan, Aidan O'Gara, Yingshan Lei, Hua Xu, Brian Tse, Jie Fu, Stephen McAleer, Yaodong Yang, Yizhou Wang, Song-Chun Zhu, Yike Guo, and Wen Gao. AI alignment: A comprehensive survey. CoRR, abs/2310.19852, 2023.",
+    "Tianhao Shen, Renren Jin, Yufei Huang, Chuang Liu, Weilong Dong, Zishan Guo, Xinwei Wu, Yan Liu, and Deyi Xiong. Large language model alignment: A survey. CoRR, abs/2309.15025, 2023.",
+    "Yang Liu, Yuanshun Yao, Jean-Francois Ton, Xiaoying Zhang, Ruocheng Guo, Hao Cheng, Yegor Klochkov, Muhammad Faaiz Taufiq, and Hang Li. Trustworthy llms: a survey and guideline for evaluating large language models' alignment. CORR, abs/2308.05374, 2023.",
+    "Xinyue Shen, Zeyuan Chen, Michael Backes, and Yang Zhang. In chatgpt we trust? measuring and characterizing the reliability of chatgpt. CoRR, abs/2304.08979, 2023.",
+    "Edward Y. Chang. Modeling emotions and ethics with large language models. arXiv preprint arXiv:2404.13071, Apr 2024.",
+    "Chengyuan Deng, Yiqun Duan, Xin Jin, Heng Chang, and et al. Deconstructing the ethics of large language models from long-standing issues to new-emerging dilemmas: A survey. arXiv preprint arXiv:2406.05392, Jun 2024.",
+    "Junfeng Jiao, Saleh Afroogh, Yiming Xu, and Connor Phillips. Navigating LLM ethics: Advancements, challenges, and future directions. CoRR, abs/2406.18841, 2024.",
+    "Mingyuan Fan, Chengyu Wang, Cen Chen, Yang Liu, and Jun Huang. On the trustworthiness landscape of state-of-the-art generative models: A survey and outlook. International Journal of Computer Vision, Feb 2025. Received: 1 April 2024 / Accepted: 4 February 2025 / Published online: 28 February 2025.",
+    "Isabel O. Gallegos, Ryan A. Rossi, Joe Barrow, Md. Mehrab Tanjim, Sungchul Kim, Franck Dernoncourt, Tong Yu, Ruiyi Zhang, and Nesreen K. Ahmed. Bias and fairness in large language models: A survey. Comput. Linguistics, 50(3):1097–1179, 2024.",
+    "Kang Chen, Xiuze Zhou, Yuanguo Lin, Shibo Feng, Li Shen, and Pengcheng Wu. A survey on privacy risks and protection in large language models. arXiv preprint arXiv:2505.01976, May 2025.",
+    "Hareem Kibriya, Wazir Zada Khan, Ayesha Siddiqa, and Muhammad Khurrum Khan. Privacy issues in large language models: A survey. Comput. Electr. Eng., 120:109698, 2024.",
+    "Yue Huang, Lichao Sun, Haoran Wang, Siyuan Wu, Qihui Zhang, Yuan Li, Chujie Gao, Yixin Huang, Wenhan Lyu, Yixuan Zhang, et al. Trustllm: Trustworthiness in large language models. In International Conference on Machine Learning, pages 20166–20270. PMLR, 2024.",
+    "Wentao Ye, Mingfeng Ou, Tianyi Li, Xuetao Ma, Yifan Yanggong, Sai Wu, Jie Fu, Gang Chen, Junbo Zhao, et al. Assessing hidden risks of llms: An empirical study on robustness, consistency, and credibility. arXiv preprint, May 2023.",
+    "Eric Wong, Leslie Rice, and J. Zico Kolter. Improving robustness and generalization of deep learning models via adversarial training. In International Conference on Learning Representations (ICLR), 2021.",
+    "Bo Liu, Li-Ming Zhan, Zexin Lu, Yujie Feng, Lei Xue, and Xiao-Ming Wu. How good are llms at out-of-distribution detection?. In Nicoletta Calzolari, Min-Yen Kan, Véronique Hoste, Alessandro Lenci, Sakriani Sakti, and Nianwen Xue, editors, Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation, LREC/COLING 2024, 20-25 May, 2024, Torino, Italy, pages 8211–8222. ELRA and ICCL, 2024.",
+    "Xingang Guo, Fangxu Yu, Huan Zhang, Lianhui Qin, and Bin Hu. Cold-attack: Jailbreaking llms with stealthiness and controllability. In Forty-first International Conference on Machine Learning, ICML 2024, Vienna, Austria, July 21-27, 2024. OpenReview.net, 2024.",
+    "Sibo Yi, Yule Liu, Zhen Sun, Tianshuo Cong, Xinlei He, Jiaxing Song, Ke Xu, and Qi Li. Jailbreak attacks and defenses against large language models: A survey. CoRR, abs/2407.04295, 2024.",
+    "Isabelle Augenstein, Timothy Baldwin, Meeyoung Cha, Tanmoy Chakraborty, Giovanni Luca Ciampaglia, David Corney, Renee DiResta, Emilio Ferrara, Scott Hale, Alon Halevy, et al. Factuality challenges in the era of large language models. arXiv preprint, 2023.",
+    "Sajed Jalil, Suzzana Rafi, Thomas D. LaToza, Kevin Moran, and Wing Lam. ChatGPT and software testing education: Promises & perils. In 2023 IEEE International Conference on Software Testing, Verification and Validation Workshops (ICSTW), pages 4130–4137, Dublin, Ireland, April 2023. IEEE.",
+    "Ziwei Ji, Nayeon Lee, Rita Frieske, Tiezheng Yu, Dan Su, Yan Xu, Etsuko Ishii, Yejin Bang, Andrea Madotto, and Pascale Fung. Survey of hallucination in natural language generation. ACM Comput. Surv., 55(12):248:1–248:38, 2023.",
+    "Junyi Li, Xiaoxue Cheng, Xin Zhao, Jian-Yun Nie, and Ji-Rong Wen. Halueval: A large-scale hallucination evaluation benchmark for large language models. In Houda Bouamor, Juan Pino, and Kalika Bali, editors, Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, EMNLP 2023, Singapore, December 6-10, 2023, pages 6449–6464. Association for Computational Linguistics, 2023.",
+    "Yujia Zhou, Yan Liu, Xiaoxi Li, Jiajie Jin, Hongjin Qian, Zheng Liu, Chaozhuo Li, Zhicheng Dou, Tsung-Yi Ho, and Philip S. Yu. Trustworthiness in retrieval-augmented generation systems: A survey. arXiv preprint arXiv:2409.10102, Sep 2024.",
+    "Stephanie Lin, Jacob Hilton, and Owain Evans. Truthfulqa: Measuring how models mimic human falsehoods. In Smaranda Muresan, Preslav Nakov, and Aline Villavicencio, editors, Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), ACL 2022, Dublin, Ireland, May 22-27, 2022, pages 3214–3252. Association for Computational Linguistics, 2022.",
+    "Yangsibo Huang, Samyak Gupta, Mengzhou Xia, Tianyu Li, and Danqi Chen. Trustgpt: A benchmark for trustworthy and responsible large language models. arXiv preprint arXiv:2306.11507, 2023.",
+    "Zhuo Zheng, Ronghui Zhang, Junxiao Zhang, Wei Zhao, Yuxiang You, Yuxin Bian, Jun Li, Chuanyang Zhou, Xiao Zhang, Jie Yang, et al. Safetybench: Evaluating the safety of large language models with multiple choice questions. arXiv preprint arXiv:2305.13656, 2023.",
+    "Junfeng Jiao, Saleh Afroogh, Abhejay Murali, Kevin Chen, David Atkinson, and Amit Dhurandhar. Llm ethics benchmark: A three-dimensional assessment system for evaluating moral reasoning in large language models. arXiv preprint, May 2025. Available at arXiv.",
+    "Xianjun Xu, Xiao Zhang, Tianlin Zhao, Yufei Zhang, Rui Yan, Wenyu Yang, Linda Xu, and Haifeng Jiang. Cvalues: Measuring the values of chinese large language models from safety to responsibility. arXiv preprint arXiv:2307.09705, 2023.",
+    "Hao Sun, Zhexin Zhang, Jiawen Deng, Jiale Cheng, and Minlie Huang. Safety assessment of chinese large language models. arXiv preprint arXiv:2304.10436, 2023.",
+    "Percy Liang, Rishi Bommasani, Tony Lee, Dimitris Tsipras, Dilara Soylu, Michihiro Yasunaga, Yian Zhang, Deepak Narayanan, Yuhuai Wu, Ananya Kumar, Benjamin Newman, Binhang Yuan, Bobby Yan, Ce Zhang, Christian Cosgrove, Christopher D Manning, Christopher Re, Diana Acosta-Navas, Drew A. Hudson, Eric Zelikman, Esin Durmus, Faisal Ladhak, Frieda Rong, Hongyu Ren, Huaxiu Yao, Jue WANG, Keshav Santhanam, Laurel Orr, Lucia Zheng, Mert Yuksekgonul, Mirac Suzgun, Nathan Kim, Neel Guha, Niladri S. Chatterji, Omar Khattab, Peter Henderson, Qian Huang, Ryan Andrew Chi, Sang Michael Xie, Shibani Santurkar, Surya Ganguli, Tatsunori Hashimoto, Thomas Icard, Tianyi Zhang, Vishrav Chaudhary, William Wang, Xuechen Li, Yifan Mai, Yuhui Zhang, and Yuta Koreeda. Holistic evaluation of language models. Transactions on Machine Learning Research, 2023.",
+    "David Esiobu, Xiaoqing Tan, Saghar Hosseini, Megan Ung, Yuchen Zhang, Jude Fernandes, Jane Dwivedi-Yu, Eleonora Presani, Adina Williams, and Eric Michael Smith. ROBBIE: Robust bias evaluation of large generative language models. In The 2023 Conference on Empirical Methods in Natural Language Processing, 2023.",
+    "Boxin Wang, Weixin Chen, Hengzhi Pei, Chulin Xie, Mintong Kang, Chenhui Zhang, Chejian Xu, Zidi Xiong, Ritik Dutta, Rylan Schaeffer, Sang T. Truong, Simran Arora, Mantas Mazeika, Dan Hendrycks, Zinan Lin, Yu Cheng, Sanmi Koyejo, Dawn Song, and Bo Li. Decodingtrust: A comprehensive assessment of trustworthiness in GPT models. In Thirty-seventh Conference on Neural Information Processing Systems Datasets and Benchmarks Track, 2023.",
+    "Kexin Huang, Xiangyang Liu, Qianyu Guo, Tianxiang Sun, Jiawei Sun, Yaru Wang, Zeyang Zhou, Yixu Wang, Yan Teng, Xipeng Qiu, Yingchun Wang, and Dahua Lin. Flames: Benchmarking value alignment of chinese large language models, 2023.",
+    "Yanyang Li, Jianqiao Zhao, Duo Zheng, Zi-Yuan Hu, Zhi Chen, Xiaohui Su, Yongfeng Huang, Shijia Huang, Dahua Lin, Michael Lyu, and Liwei Wang. CLEVA: Chinese language models EVAluation platform. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing: System Demonstrations, Singapore, December 2023. Association for Computational Linguistics.",
+    "Reya Vir, Shreya Shankar, Harrison Chase, Will Fu-Hinthorn, and Aditya G. Parameswaran. Promptevals: A dataset of assertions and guardrails for custom production large language model pipelines. arXiv preprint arXiv:2504.14738, 2025."
+  ],
+  "measurement_description": "Alignment of Large Language Models with Persian-Islamic ethical and cultural values across six dimensions: truthfulness, safety, fairness, robustness, privacy, and ethical alignment."
 }

@@ -2,47 +2,113 @@
   "filename": "2401.15535.pdf",
   "title": "Quantifying Stereotypes in Language",
   "arxiv_url": "https://arxiv.org/pdf/2401.15535",
-  "bias_targets": [
-    {
-      "target": "Gender bias",
-      "methodology": "Annotated sentences from existing datasets using Best-Worst-Scaling (BWS) to generate continuous stereotype scores, trained Pre-trained Language Models (PLMs) to predict these scores, and evaluated the ability of these scores to distinguish between sexist and non-sexist statements."
-    },
-    {
-      "target": "Racial bias",
-      "methodology": "Generated continuous stereotype scores via crowdsourced BWS annotations, trained PLMs for score prediction, and evaluated predicted stereotype levels of race-targeted statements in multi-label hate speech datasets."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Annotated sentence pairs using BWS to quantify religious stereotypes on a continuous scale (-1 to 1), trained models to predict these scores, and evaluated correlations with downstream hate speech detection."
-    },
-    {
-      "target": "Professional bias",
-      "methodology": "Extracted profession-related sentences from the StereoSet dataset, annotated them with continuous stereotype scores using BWS, and evaluated PLMs' predictive performance on these professional biases."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Used fine-tuned PLMs to predict continuous stereotype scores on disability-related sentences from the CrowS-Pairs dataset (comparing disadvantaged vs. advantaged groups) and the ETHOS hate speech dataset."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Applied stereotype-predicting PLMs to assess sentences regarding sexual orientation in the CrowS-Pairs dataset and multi-label hate speech datasets."
-    },
-    {
-      "target": "Nationality bias",
-      "methodology": "Evaluated PLM-predicted stereotype scores on sentences targeting national origin in hate speech data and nationality-based sentence pairs comparing advantaged and disadvantaged groups."
-    },
-    {
-      "target": "Socioeconomic bias",
-      "methodology": "Tested fine-tuned PLMs on socioeconomic sentence pairs from the CrowS-Pairs dataset to compare predicted stereotype scores between disadvantaged and advantaged social classes."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Predicted continuous stereotype scores on age-related sentence pairs from the CrowS-Pairs dataset to evaluate score differences between disadvantaged and advantaged age groups."
-    },
-    {
-      "target": "Physical appearance bias",
-      "methodology": "Evaluated PLM-predicted continuous stereotype scores on physical appearance sentence pairs from the CrowS-Pairs dataset."
-    }
+  "religious_groups": [
+    "Islam",
+    "Christianity",
+    "Hinduism"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "BERT",
+    "DistilBERT",
+    "RoBERTa",
+    "ALBERT",
+    "XLNet"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "StereoSet",
+    "CrowS-Pairs"
+  ],
+  "continuous_testing": false,
+  "findings": "The study found that sentences related to religion, along with race, tended to have higher average stereotype scores compared to sentences about gender and profession. The models trained could effectively predict these fine-grained stereotype scores. For instance, in the hate speech analysis, messages targeting groups based on religion were found to contain measurable stereotypes.",
+  "references": [
+    "Gordon W. Allport. 1954. The nature of prejudice. Addison-Wesley, Cambridge, Mass.",
+    "Richard D Ashmore and Frances K Del Boca. 1979. Sex stereotypes and implicit personality theory: Toward a cognitive–social psychological conceptualization. Sex roles, 5(2):219–248.",
+    "Su Lin Blodgett, Solon Barocas, Hal Daumé III, and Hanna Wallach. 2020. Language (technology) is power: A critical survey of “bias” in NLP. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5454–5476, Online. Association for Computational Linguistics.",
+    "Su Lin Blodgett, Gilsinia Lopez, Alexandra Olteanu, Robert Sim, and Hanna Wallach. 2021. Stereotyping Norwegian salmon: An inventory of pitfalls in fairness benchmark datasets. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 1004–1015, Online. Association for Computational Linguistics.",
+    "Tolga Bolukbasi, Kai-Wei Chang, James Y Zou, Venkatesh Saligrama, and Adam T Kalai. 2016. Man is to computer programmer as woman is to homemaker? debiasing word embeddings. In Advances in Neural Information Processing Systems, volume 29. Curran Associates, Inc.",
+    "R. Brown. 2011. Prejudice: Its Social Psychology. Wiley.",
+    "Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan, Rewon Child, Aditya Ramesh, Daniel Ziegler, Jeffrey Wu, Clemens Winter, Chris Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess, Jack Clark, Christopher Berner, Sam McCandlish, Alec Radford, Ilya Sutskever, and Dario Amodei. 2020. Language models are few-shot learners. In Advances in Neural Information Processing Systems, volume 33, pages 1877–1901. Curran Associates, Inc.",
+    "David B Buller, Ron Borland, and Michael Burgoon. 1998. Impact of behavioral intention on effectiveness of message features evidence from the family sun safety project. Human Communication Research, 24(3):433–453.",
+    "Joy Buolamwini and Timnit Gebru. 2018. Gender shades: Intersectional accuracy disparities in commercial gender classification. In Proceedings of the 1st Conference on Fairness, Accountability and Transparency, volume 81 of Proceedings of Machine Learning Research, pages 77–91. PMLR.",
+    "Mara Cadinu, Marcella Latrofa, and Andrea Carnaghi. 2013. Comparing self-stereotyping with in-group-stereotyping and out-group-stereotyping in unequal-status groups: The case of gender. Self and Identity, 12(6):582–596.",
+    "Aylin Caliskan, Joanna J Bryson, and Arvind Narayanan. 2017a. Semantics derived automatically from language corpora contain human-like biases. Science, 356(6334):183–186.",
+    "Aylin Caliskan, Joanna J. Bryson, and Arvind Narayanan. 2017b. Semantics derived automatically from language corpora contain human-like biases. Science, 356(6334):183–186.",
+    "Mike Cardwell. 1999. The dictionary of psychology. Fitzroy Dearborn Publishers, London, Chicago.",
+    "Naganna Chetty and Sreejith Alathur. 2018. Hate speech review in the context of online social networks. Aggression and Violent Behavior, 40:108–118.",
+    "Irvin L Child and Leonard W Doob. 1943. Factors determining national stereotypes. The Journal of Social Psychology, 17(2):203–219.",
+    "Aakanksha Chowdhery, Sharan Narang, Jacob Devlin, Maarten Bosma, Gaurav Mishra, Adam Roberts, Paul Barham, Hyung Won Chung, Charles Sutton, Sebastian Gehrmann, et al. 2022. Palm: Scaling language modeling with pathways. arXiv preprint arXiv:2204.02311.",
+    "Gloria Cowan and Cyndi Hodge. 1996. Judgments of hate speech: The effects of target group, publicness, and behavioral responses of the target. Journal of Applied Social Psychology, 26(4):355–374.",
+    "William TL Cox, Lyn Y Abramson, Patricia G Devine, and Steven D Hollon. 2012. Stereotypes, prejudice, and depression: The integrated perspective. Perspectives on Psychological Science, 7(5):427–449.",
+    "Aida Mostafazadeh Davani, Mohammad Atari, Brendan Kennedy, and Morteza Dehghani. 2023. Hate speech classifiers learn normative social stereotypes. Transactions of the Association for Computational Linguistics, 11:300–319.",
+    "Thomas Davidson, Dana Warmsley, Michael Macy, and Ingmar Weber. 2017. Automated hate speech detection and the problem of offensive language. In Proceedings of the international AAAI conference on web and social media, volume 11, pages 512–515.",
+    "Richard Delgado and Jean Stefancic. 1991. Images of the outsider in american law and culture: Can free expression remedy systemic social ills. Cornell L. Rev., 77:1258.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 4171–4186, Minneapolis, Minnesota. Association for Computational Linguistics.",
+    "Lucas Dixon, John Li, Jeffrey Sorensen, Nithum Thain, and Lucy Vasserman. 2018. Measuring and mitigating unintended bias in text classification. In Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society, AIES ’18, page 67–73, New York, NY, USA. Association for Computing Machinery.",
+    "Craig A Dudczak. 1985. Anticipation of communication with familiar and unfamiliar persons.",
+    "Paul Ed Ekman and Richard J Davidson. 1994. The nature of emotion: Fundamental questions. Oxford University Press.",
+    "Yacine Gaci, Boualem Benatallah, Fabio Casati, and Khalid Benabdeslem. 2022. Debiasing pretrained text encoders by paying attention to paying attention. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 9582–9602, Abu Dhabi, United Arab Emirates. Association for Computational Linguistics.",
+    "Rosemary Gordon. 1949. An investigation into some of the factors that favour the formation of stereotyped images. British Journal of Psychology, 39(3):156.",
+    "S. Alexander Haslam, John C. Turner, Penelope J. Oakes, Katherine J. Reynolds, and Bertjan Doosje. 2002. From personal pictures in the head to collective tools in the world: how shared stereotypes allow groups to represent and change social reality, page 157–185. Cambridge University Press.",
+    "James L Hilton and William Von Hippel. 1996. Stereotypes. Annual review of psychology, 47(1):237–271.",
+    "Perry Hinton. 2017. Implicit stereotypes and the predictive brain: cognition and culture in “biased” person perception. Palgrave Communications, 3(1):1–9.",
+    "Kenneth Holstein, Jennifer Wortman Vaughan, Hal Daumé, Miro Dudik, and Hanna Wallach. 2019. Improving fairness in machine learning systems: What do industry practitioners need? In Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems, CHI ’19, page 1–16, New York, NY, USA. Association for Computing Machinery.",
+    "Bruce A Huhmann and Yam B Limbu. 2018. Influence of gender stereotypes on advertising offensiveness and attitude toward advertising in general. In Current Research on Gender Issues in Advertising, pages 64–81. Routledge.",
+    "Masahiro Kaneko and Danushka Bollegala. 2021. Debiasing pre-trained contextualised embeddings. In Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics: Main Volume, pages 1256–1266, Online. Association for Computational Linguistics.",
+    "Masahiro Kaneko and Danushka Bollegala. 2022. Unmasking the mask – evaluating social biases in masked language models. Proceedings of the AAAI Conference on Artificial Intelligence, 36(11):11954–11962.",
+    "Ulrich Karrenberg and Ulrich Karrenberg. 2013. Language as a carrier of information. Signals, Processes, and Systems: An Interactive Multimedia Introduction to Signal Processing, pages 99–126.",
+    "Daniel Katz and Kenneth W Braly. 1935. Racial prejudice and racial stereotypes. The Journal of abnormal and social psychology, 30(2):175.",
+    "Diederik P Kingma and Jimmy Ba. 2014. Adam: A method for stochastic optimization. arXiv preprint arXiv:1412.6980.",
+    "Svetlana Kiritchenko and Saif Mohammad. 2017. Best-worst scaling more reliable than rating scales: A case study on sentiment intensity annotation. In Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers), pages 465–470, Vancouver, Canada. Association for Computational Linguistics.",
+    "Svetlana Kiritchenko and Saif M. Mohammad. 2016. Capturing reliable fine-grained sentiment associations by crowdsourcing and best-worst scaling. In Proceedings of the 2016 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 811–817, San Diego, California. Association for Computational Linguistics.",
+    "Svetlana Kiritchenko, Isar Nejadgholi, and Kathleen C Fraser. 2021. Confronting abusive language online: A survey from the ethical and human rights perspective. Journal of Artificial Intelligence Research, 71:431–478.",
+    "Allison Koenecke, Andrew Nam, Emily Lake, Joe Nudell, Minnie Quartey, Zion Mengesha, Connor Toups, John R. Rickford, Dan Jurafsky, and Sharad Goel. 2020. Racial disparities in automated speech recognition. Proceedings of the National Academy of Sciences, 117(14):7684–7689.",
+    "Mark Kröll and Markus Strohmaier. 2009. Analyzing human intentions in natural language text. In Proceedings of the fifth international conference on Knowledge capture, pages 197–198.",
+    "Zhenzhong Lan, Mingda Chen, Sebastian Goodman, Kevin Gimpel, Piyush Sharma, and Radu Soricut. 2019. Albert: A lite bert for self-supervised learning of language representations. arXiv preprint arXiv:1909.11942.",
+    "Walter Lippmann. 1922. Public opinion.",
+    "Alisa Liu, Swabha Swayamdipta, Noah A. Smith, and Yejin Choi. 2022. WANLI: Worker and AI collaboration for natural language inference dataset creation. In Findings of the Association for Computational Linguistics: EMNLP 2022, pages 6826–6847, Abu Dhabi, United Arab Emirates. Association for Computational Linguistics.",
+    "Yang Liu. 2024. Robust evaluation measures for evaluating social biases in masked language models. arXiv preprint arXiv:2401.11601.",
+    "Yang Liu and Yuexian Hou. 2023. Mining effective features using quantum entropy for humor recognition. In Findings of the Association for Computational Linguistics: EACL 2023, pages 2048–2053, Dubrovnik, Croatia. Association for Computational Linguistics.",
+    "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. 2019. Roberta: A robustly optimized BERT pretraining approach. CoRR, abs/1907.11692.",
+    "Jordan J. Louviere, Terry N. Flynn, and A. A. J. Marley. 2015. Best-Worst Scaling: Theory, Methods and Applications. Cambridge University Press.",
+    "Michael Madaio, Lisa Egede, Hariharan Subramonyam, Jennifer Wortman Vaughan, and Hanna Wallach. 2022. Assessing the fairness of ai systems: Ai practitioners’ processes, challenges, and needs for support. Proc. ACM Hum.-Comput. Interact., 6(CSCW1).",
+    "Brenda Major and Laurie T O’brien. 2005. The social psychology of stigma. Annu. Rev. Psychol., 56:393–421.",
+    "Chandler May, Alex Wang, Shikha Bordia, Samuel R. Bowman, and Rachel Rudinger. 2019. On measuring social biases in sentence encoders. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 622–628, Minneapolis, Minnesota. Association for Computational Linguistics.",
+    "Lucas Maystre and Matthias Grossglauser. 2015. Fast and accurate inference of plackett-luce models. In Advances in Neural Information Processing Systems, volume 28. Curran Associates, Inc.",
+    "Craig McGarty, Vincent Y Yzerbyt, Russel Spears, et al. 2002. Social, cultural and cognitive factors in stereotype formation. Stereotypes as explanations: The formation of meaningful beliefs about social groups, 1:1–16.",
+    "Sharan B Merriam, Juanita Johnson-Bailey, Ming-Yeh Lee, Youngwha Kee, Gabo Ntseane, and Mazanah Muhamad. 2001. Power and positionality: Negotiating insider/outsider status within and across cultures. International journal of lifelong education, 20(5):405–416.",
+    "Saif Mohammad. 2018. Obtaining reliable human ratings of valence, arousal, and dominance for 20,000 English words. In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 174–184, Melbourne, Australia. Association for Computational Linguistics.",
+    "Ioannis Mollas, Zoe Chrysopoulou, Stamatis Karlos, and Grigorios Tsoumakas. 2022. Ethos: a multi-label hate speech detection dataset. Complex & Intelligent Systems, 8(6):4663–4678.",
+    "D.G. Myers. 2012. Social Psychology. McGraw-Hill higher education. McGraw-Hill.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2021. StereoSet: Measuring stereotypical bias in pretrained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 5356–5371, Online. Association for Computational Linguistics.",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R. Bowman. 2020. CrowS-pairs: A challenge dataset for measuring social biases in masked language models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1953–1967, Online. Association for Computational Linguistics.",
+    "Lisa H Nishii. 2013. The benefits of climate for inclusion for gender-diverse groups. Academy of Management journal, 56(6):1754–1774.",
+    "Long Ouyang, Jeffrey Wu, Xu Jiang, Diogo Almeida, Carroll Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, John Schulman, Jacob Hilton, Fraser Kelton, Luke Miller, Maddie Simens, Amanda Askell, Peter Welinder, Paul F Christiano, Jan Leike, and Ryan Lowe. 2022. Training language models to follow instructions with human feedback. In Advances in Neural Information Processing Systems, volume 35, pages 27730–27744. Curran Associates, Inc.",
+    "J. Panksepp. 2004. Affective Neuroscience: The Foundations of Human and Animal Emotions. Series in Affective Science. Oxford University Press.",
+    "María Antonia Paz, Julio Montero-Díaz, and Alicia Moreno-Delgado. 2020. Hate speech: A systematized review. SAGE Open, 10(4):2158244020973022.",
+    "Jiaxin Pei and David Jurgens. 2020. Quantifying intimacy in language. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 5307–5326, Online. Association for Computational Linguistics.",
+    "Mattia Samory, Indira Sen, Julian Kohne, Fabian Flöck, and Claudia Wagner. 2021. “call me sexist, but...”: Revisiting sexism detection using psychological scales and adversarial samples. Proceedings of the International AAAI Conference on Web and Social Media, 15(1):573–584.",
+    "Victor Sanh, Lysandre Debut, Julien Chaumond, and Thomas Wolf. 2019. Distilbert, a distilled version of bert: smaller, faster, cheaper and lighter. ArXiv, abs/1910.01108.",
+    "Maarten Sap, Dallas Card, Saadia Gabriel, Yejin Choi, and Noah A. Smith. 2019. The risk of racial bias in hate speech detection. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 1668–1678, Florence, Italy. Association for Computational Linguistics.",
+    "Timo Schick, Sahana Udupa, and Hinrich Schütze. 2021. Self-diagnosis and self-debiasing: A proposal for reducing corpus-based bias in NLP. Transactions of the Association for Computational Linguistics, 9:1408–1424.",
+    "Muzafer Sherif. 1935. An experimental study of stereotypes. The Journal of Abnormal and Social Psychology, 29(4):371.",
+    "Milan Smutnỳ. 2018. Terminology as a specific carrier of information. Prague Journal of English Studies, 7(1):143–160.",
+    "Richard Socher, Alex Perelygin, Jean Wu, Jason Chuang, Christopher D. Manning, Andrew Ng, and Christopher Potts. 2013. Recursive deep models for semantic compositionality over a sentiment treebank. In Proceedings of the 2013 Conference on Empirical Methods in Natural Language Processing, pages 1631–1642, Seattle, Washington, USA. Association for Computational Linguistics.",
+    "Marilyn Stern and Katherine Hildebrandt Karraker. 1989. Sex stereotyping of infants: A review of gender labeling studies. Sex roles, 20:501–522.",
+    "Janet K Swim, Lauri L Hyers, Laurie L Cohen, and Melissa J Ferguson. 2001. Everyday sexism: Evidence for its incidence, nature, and psychological impact from three daily diary studies. Journal of Social issues, 57(1):31–53.",
+    "David A. Thomas. 1990. The impact of race on managers’ experiences of developmental relationships (mentoring and sponsorship): An intra-organizational study. Journal of Organizational Behavior, 11:479–492.",
+    "Jeremy Waldron. 2012. The harm in hate speech. Harvard University Press.",
+    "William Warner and Julia Hirschberg. 2012. Detecting hate speech on the world wide web. In Proceedings of the Second Workshop on Language in Social Media, pages 19–26, Montréal, Canada. Association for Computational Linguistics.",
+    "Sarah Wiegreffe, Jack Hessel, Swabha Swayamdipta, Mark Riedl, and Yejin Choi. 2022. Reframing human-AI collaboration for generating free-text explanations. In Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 632–658, Seattle, United States. Association for Computational Linguistics.",
+    "Stephen C Wright, Donald M Taylor, and Fathali M Moghaddam. 1990. Responding to membership in a disadvantaged group: From acceptance to collective protest. Journal of personality and social psychology, 58(6):994.",
+    "Zhilin Yang, Zihang Dai, Yiming Yang, Jaime Carbonell, Russ R Salakhutdinov, and Quoc V Le. 2019. Xlnet: Generalized autoregressive pretraining for language understanding. In Advances in Neural Information Processing Systems, volume 32. Curran Associates, Inc.",
+    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang. 2018. Gender bias in coreference resolution: Evaluation and debiasing methods. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 15–20, New Orleans, Louisiana. Association for Computational Linguistics."
+  ],
+  "measurement_description": "The benchmark measures the degree of stereotypical bias in sentences on a continuous scale from -1 to 1. For religion, it specifically quantifies stereotypes related to religious groups."
 }

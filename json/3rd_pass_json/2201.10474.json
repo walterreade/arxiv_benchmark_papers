@@ -2,31 +2,112 @@
   "filename": "2201.10474.pdf",
   "title": "Whose Language Counts as High Quality? Measuring Language Ideologies in Text Data Selection",
   "arxiv_url": "https://arxiv.org/pdf/2201.10474",
-  "bias_targets": [
-    {
-      "target": "Language bias",
-      "methodology": "Applying the GPT-3 quality filter to U.S. high school newspaper articles to evaluate how automated text filtering disproportionately excludes specific stylistic features (e.g., first/second person pronouns) and non-professional/non-hegemonic topics."
-    },
-    {
-      "target": "Socioeconomic bias",
-      "methodology": "Regressing the GPT-3 quality filter scores of high school newspaper articles against the median home values of the schools' corresponding ZIP codes."
-    },
-    {
-      "target": "Geographic bias",
-      "methodology": "Correlating the assigned quality filter scores of school newspapers with the percentage of the county population living in rural versus urban areas."
-    },
-    {
-      "target": "Educational bias",
-      "methodology": "Analyzing the relationship between document quality scores and the percentage of adults with at least a bachelor's degree in the school's ZIP code."
-    },
-    {
-      "target": "Political bias",
-      "methodology": "Evaluating the correlation between the school newspapers' average quality scores and the 2016 Republican (GOP) presidential vote share at the county level."
-    },
-    {
-      "target": "Racial bias",
-      "methodology": "Regressing text quality scores against the racial demographics of the school's student body (e.g., percentage of Asian, Black, and Hispanic students) as a control variable check."
-    }
+  "religious_groups": [
+    "Christianity"
   ],
-  "primary_bias_target": "Language bias"
+  "models_tested": [
+    "GPT-3 Quality Filter"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "other"
+  ],
+  "religion_component": "none",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "The paper does not present any findings related to religion from its own analysis. It only mentions in a footnote that English Wikipedia, a common training data source, is dominated by an Anglo-American perspective, citing that two of the ten most frequently mentioned people are 'prominent figures in Christianity'. This is used as background evidence for existing biases in training corpora, not as a result of the paper's primary investigation.",
+  "references": [
+    "Abubakar Abid, Maheen Farooqi, and James Zou. 2021. Persistent anti-Muslim bias in large language models. In Proceedings of the 2021 AAAI/ACM Conference on AI, Ethics, and Society.",
+    "Armen Aghajanyan, Dmytro Okhonko, Mike Lewis, Mandar Joshi, Hu Xu, Gargi Ghosh, and Luke Zettlemoyer. 2021. Htlm: Hyper-text pre-training and prompting of language models. arXiv, abs/2107.06955.",
+    "Gabriel Arana. 2018. Decades of failure. Columbia Journalism Review.",
+    "Tyler Baldwin and Joyce Chai. 2011. Beyond normalization: Pragmatics of word form in text messages. In Proceedings of 5th International Joint Conference on Natural Language Processing.",
+    "Ramy Baly, Georgi Karadzhov, Dimitar Alexandrov, James Glass, and Preslav Nakov. 2018. Predicting factuality of reporting and bias of news media sources. In Proceedings of EMNLP.",
+    "David Bamman and Noah A Smith. 2014. Unsupervised discovery of biographical structure from text. Transactions of the Association for Computational Linguistics, 2:363-376.",
+    "Jack Bandy and Nicholas Vincent. 2021. Addressing \"documentation debt\" in machine learning: A retrospective datasheet for BookCorpus. In NeurIPS.",
+    "Emily M. Bender, Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. 2021. On the dangers of stochastic parrots: Can language models be too big? In Proceedings of FAccT.",
+    "Jonah Berger and Katherine L. Milkman. 2012. What makes online content viral? Journal of Marketing Research, 49(2):192-205.",
+    "Julian R. Betts, Kim S. Reuben, and Anne Danenberg. 2000. Equal Resources, Equal Outcomes? The Distribution of School Resources and Student Achievement in California. Public Policy Institute of California.",
+    "Steve Bien-Aimé. 2016. AP stylebook normalizes sports as a male space. Newspaper Research Journal, 37(1):44-57.",
+    "Daniel Blanchard, Joel R. Tetreault, Derrick Higgins, A. Cahill, and Martin Chodorow. 2013. TOEFL11: A corpus of non-native English. ETS Research Report Series, 2013:15.",
+    "David M. Blei, Andrew Y. Ng, and Michael I. Jordan. 2003. Latent Dirichlet allocation. J. Mach. Learn. Res., 3:993-1022.",
+    "Su Lin Blodgett. 2021. Sociolinguistically Driven Approaches for Just Natural Language Processing. Ph.D. thesis, University of Massachusetts Amherst.",
+    "Su Lin Blodgett, Solon Barocas, Hal Daumé III, and Hanna Wallach. 2020. Language (technology) is power: A critical survey of “bias” in NLP. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5454-5476, Online. Association for Computational Linguistics.",
+    "Su Lin Blodgett, Lisa Green, and Brendan O'Connor. 2016. Demographic dialectal variation in social media: A case study of African-American English. In Proceedings of EMNLP.",
+    "Sarah Brayne. 2017. Big data surveillance: The case of policing. American Sociological Review, 82(5):977–1008.",
+    "Julian Brooke, Adam Hammond, and Graeme Hirst. 2015. GutenTag: an NLP-driven tool for digital humanities research in the Project Gutenberg corpus. In Proceedings of the Fourth Workshop on Computational Linguistics for Literature.",
+    "Tom B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan, Rewon Child, Aditya Ramesh, Daniel M. Ziegler, Jeffrey Wu, Clemens Winter, Christopher Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess, Jack Clark, Christopher Berner, Sam McCandlish, Alec Radford, Ilya Sutskever, and Dario Amodei. 2020. Language models are few-shot learners. arXiv, abs/2005.14165.",
+    "Janice Kai Chen, Ilena Peng, Jasen Lo, Trisha Ahmed, Simon J. Levien, and Devan Karp. 2021. Voices investigation: Few black, latinx students are editors of top college newspapers. AAJA Voices.",
+    "Kevin Clark, Minh-Thang Luong, Quoc V. Le, and Christopher D. Manning. 2020. ELECTRA: Pretraining text encoders as discriminators rather than generators. In ICLR.",
+    "Alexis Conneau, Kartikay Khandelwal, Naman Goyal, Vishrav Chaudhary, Guillaume Wenzek, Francisco Guzmán, Edouard Grave, Myle Ott, Luke Zettlemoyer, and Veselin Stoyanov. 2020. Unsupervised cross-lingual representation learning at scale.",
+    "Justin T. Craft, Kelly E. Wright, Rachel Elizabeth Weissler, and Robin M. Queen. 2020. Language and discrimination: Generating meaning, perceiving identities, and discriminating outcomes. Annual Review of Linguistics, 6(1):389-407.",
+    "Stephanie Decker. 2013. The silence of the archives: business history, post-colonialism and archival ethnography. Management & Organizational History, 8(2):155-173.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of NAACL.",
+    "Robert DiNicola. 1994. Teaching journalistic style with the AP stylebook: Beyond fussy rules and dogma of 'correctness'. The Journalism Educator, 49(2):64-70.",
+    "Jesse Dodge, Maarten Sap, Ana Marasovic, William Agnew, Gabriel Ilharco, Dirk Groeneveld, and Matt Gardner. 2021. Documenting the english colossal clean crawled corpus. arXiv, abs/2104.08758.",
+    "Penelope Eckert. 1989. Jocks and burnouts: Social categories and identity in the high school. Teachers college press.",
+    "Jacob Eisenstein. 2013. What to do about bad language on the internet. In Proceedings of NAACL, pages 359-369.",
+    "Jacob Eisenstein, Brendan O'Connor, Noah A. Smith, and Eric P. Xing. 2014. Diffusion of lexical change in social media. PLoS ONE, 9.",
+    "William Fedus, Barret Zoph, and Noam Shazeer. 2021. Switch transformers: Scaling to trillion parameter models with simple and efficient sparsity.",
+    "Casey Fiesler, Nathan Beard, and Brian Keegan. 2020. No robots, spiders, or scrapers: Legal and ethical regulation of data collection methods in social media terms of service. In Proceedings of ICWSM.",
+    "Paula Froke, Anna Jo Bratton, Jeff McMillan, Pia Sarkar, Jerry Schwartz, and Raghuram Vadarevu. 2020. The Associated Press stylebook 2020-2022. The Associated Press.",
+    "Susan Gal. 2016. Sociolinguistic differentiation, page 113-136. Cambridge University Press.",
+    "Susan Gal and Judith T. Irvine. 1995. The boundaries of languages and disciplines: How ideologies construct difference. Social Research, 62(4):967-1001.",
+    "Leo Gao. 2021. An empirical exploration in quality filtering of text data. arXiv, abs/2109.00698.",
+    "Leo Gao, Stella Biderman, Sid Black, Laurence Golding, Travis Hoppe, Charles Foster, Jason Phang, Horace He, Anish Thite, Noa Nabeshima, Shawn Presser, and Connor Leahy. 2020. The Pile: An 800Gb dataset of diverse text for language modeling. arXiv, abs/2101.00027.",
+    "Tiana Gaudette, Ryan Scrivens, Garth Davies, and Richard Frank. 2021. Upvoting extremism: Collective identity formation and the extreme right on reddit. New Media & Society, 23(12):3491-3508.",
+    "Timnit Gebru, Jamie Morgenstern, Briana Vecchione, Jennifer Wortman Vaughan, Hanna Wallach, Hal Daumé III, and Kate Crawford. 2021. Datasheets for datasets. Communications of the ACM, 64(12):86-92.",
+    "Samuel Gehman, Suchin Gururangan, Maarten Sap, Yejin Choi, and Noah A. Smith. 2020. RealToxicityPrompts: Evaluating neural toxic degeneration in language models. In Findings of the Association for Computational Linguistics: EMNLP 2020.",
+    "Joyce Still Gibson. 1961. A study of the status of high school newspapers in the virginia public schools. Master's thesis, University of Richmond.",
+    "Aaron Gokaslan and Vanya Cohen. 2019. Openwebtext corpus.",
+    "Eduardo Graells-Garrido, Mounia Lalmas, and Filippo Menczer. 2015. First women, second sex: Gender bias in Wikipedia. In Proceedings of the 26th ACM conference on hypertext & social media.",
+    "Rob Greenwald, Larry V. Hedges, and Richard D. Laine. 1996. The effect of school resources on student achievement. Review of Educational Research, 66(3):361-396.",
+    "Elizabeth Grieco. 2018. Newsroom employees are less diverse than U.S. workers overall. Pew Research Center. [online; accessed 2022-01-22].",
+    "Dirk Hovy and Diyi Yang. 2021. The importance of modeling social factors of language: Theory and practice. In Proceedings of NAACL.",
+    "Keira Huang. 2013. Wikipedia fails to bridge gender gap. South China Morning Post. [online; accessed 2022-01-11].",
+    "Eun Seo Jo and Timnit Gebru. 2020. Lessons from archives: Strategies for collecting sociocultural data in machine learning. Proceedings of FAccT.",
+    "Paresh Kharya and Ali Alvi. 2021. Using deepspeed and megatron to train megatron-turing nlg 530b, the world's largest and most powerful generative language model. [online; accessed 2022-01-20].",
+    "William Labov. 2006. The Social Stratification of English in New York City, 2 edition. Cambridge University Press.",
+    "Zhenzhong Lan, Mingda Chen, Sebastian Goodman, Kevin Gimpel, Piyush Sharma, and Radu Soricut. 2020. ALBERT: A lite BERT for self-supervised learning of language representations. In 8th International Conference on Learning Representations, ICLR 2020, Addis Ababa, Ethiopia, April 26-30, 2020. OpenReview.net.",
+    "Lee & Low Books. 2020. Where is the diversity in publishing? The 2019 diversity baseline survey results. [online; accessed 2021-11-24].",
+    "Mike Lewis, Yinhan Liu, Naman Goyal, Marjan Ghazvininejad, Abdelrahman Mohamed, Omer Levy, Veselin Stoyanov, and Luke Zettlemoyer. 2020. BART: Denoising sequence-to-sequence pretraining for natural language generation, translation, and comprehension. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 7871-7880, Online. Association for Computational Linguistics.",
+    "Stephanie Lindemann. 2005. Who speaks \"broken English\"? US undergraduates' perceptions of non-native English. International Journal of Applied Linguistics, 15(2):187-212.",
+    "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. 2019. RoBERTa: A robustly optimized bert pretraining approach. arXiv, abs/1907.11692.",
+    "Li Lucy and David Bamman. 2021. Characterizing English Variation across Social Media Communities with BERT. Transactions of the Association for Computational Linguistics, 9:538-556.",
+    "Jeff MacSwan. 2020. Academic English as standard language ideology: A renewed research agenda for asset-based language education. Language Teaching Research, 24(1):28–36.",
+    "Michael Mandiberg. 2020. Mapping wikipedia. The Atlantic. [online; accessed 2021-11-24].",
+    "Sorin Adam Matei and Brian C. Britt. 2017. Structural Differentiation in Social Media. Springer International Publishing.",
+    "Kris McGuffie and Alex Newhouse. 2020. The radicalization risks of GPT-3 and advanced neural language models. arXiv, abs/2009.06807.",
+    "Zion Mengesha, Courtney Heldreth, Michal Lahav, Juliana Sublewski, and Elyse Tuennerman. 2021. \"I don't think these devices are very culturally sensitive.\" Impact of automated speech recognition errors on African Americans. Frontiers in Artificial Intelligence, 4:169.",
+    "Meta-wiki. 2018. Community insights/2018 report/contributors. [online; accessed 2012-11-24].",
+    "Amy Mitchell, Jeffrey Gottfried, Michael Barthel, and Nami Sumida. 2018. Can Americans tell factual from opinion statements in the news? Pew Research Center's Journalism Project. [online; accessed 2022-01-22].",
+    "Dong Nguyen, Laura Rosseel, and Jack Grieve. 2021. On learning and representing social meaning in NLP: A sociolinguistic perspective. In Proceedings of NAACL.",
+    "Katherine Panciera, Aaron Halfaker, and Loren Terveen. 2009. Wikipedians are born, not made: A study of power editors on wikipedia. In Proceedings of the ACM 2009 International Conference on Supporting Group Work.",
+    "Fabian Pedregosa, Gaël Varoquaux, Alexandre Gramfort, Vincent Michel, Bertrand Thirion, Olivier Grisel, Mathieu Blondel, Peter Prettenhofer, Ron Weiss, Vincent Dubourg, Jake Vanderplas, Alexandre Passos, David Cournapeau, Matthieu Brucher, Matthieu Perrot, and Édouard Duchesnay. 2011. Scikit-learn: Machine learning in python. Journal of Machine Learning Research, 12(85):2825-2830.",
+    "Matthew E. Peters, Mark Neumann, Mohit Iyyer, Matt Gardner, Christopher Clark, Kenton Lee, and Luke Zettlemoyer. 2018. Deep contextualized word representations. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers), pages 2227-2237, New Orleans, Louisiana. Association for Computational Linguistics.",
+    "Alec Radford, Karthik Narasimhan, Tim Salimans, and Ilya Sutskever. 2018. Improving language understanding with unsupervised learning. [online; accessed 2022-01-22].",
+    "Alec Radford, Jeff Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. 2019. Language models are unsupervised multitask learners. [online; accessed 2022-01-22].",
+    "Jack W. Rae, Sebastian Borgeaud, Trevor Cai, Katie Millican, Jordan Hoffmann, Francis Song, John Aslanides, Sarah Henderson, Roman Ring, Susannah Young, Eliza Rutherford, Tom Hennigan, Jacob Menick, Albin Cassirer, Richard Powell, George van den Driessche, Lisa Anne Hendricks, Maribeth Rauh, Po-Sen Huang, Amelia Glaese, Johannes Welbl, Sumanth Dathathri, Saffron Huang, Jonathan Uesato, John Mellor, Irina Higgins, Antonia Creswell, Nat McAleese, Amy Wu, Erich Elsen, Siddhant Jayakumar, Elena Buchatskaya, David Budden, Esme Sutherland, Karen Simonyan, Michela Paganini, Laurent Sifre, Lena Martens, Xiang Lorraine Li, Adhiguna Kuncoro, Aida Nematzadeh, Elena Gribovskaya, Domenic Donato, Angeliki Lazaridou, Arthur Mensch, Jean-Baptiste Lespiau, Maria Tsimpoukelli, Nikolai Grigorev, Doug Fritz, Thibault Sottiaux, Mantas Pajarskas, Toby Pohlen, Zhitao Gong, Daniel Toyama, Cyprien de Masson d'Autume, Yujia Li, Tayfun Terzi, Vladimir Mikulik, Igor Babuschkin, Aidan Clark, Diego de Las Casas, Aurelia Guy, Chris Jones, James Bradbury, Matthew Johnson, Blake Hechtman, Laura Weidinger, Iason Gabriel, William Isaac, Ed Lockhart, Simon Osindero, Laura Rimell, Chris Dyer, Oriol Vinyals, Kareem Ayoub, Jeff Stanway, Lorrayne Bennett, Demis Hassabis, Koray Kavukcuoglu, and Geoffrey Irving. 2021. Scaling language models: Methods, analysis & insights from training gopher. arXiv, abs/2112.11446.",
+    "Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi Zhou, Wei Li, and Peter J. Liu. 2020. Exploring the limits of transfer learning with a unified text-to-text transformer. Journal of Machine Learning Research, 21(140):1-67.",
+    "Sean F Reardon and Ann Owens. 2014. 60 years after Brown: Trends and consequences of school segregation. Annual Review of Sociology, 40:199–218.",
+    "John R. Rickford. 1985. Ethnicity as a sociolinguistic boundary. American Speech, 60(2):99–125.",
+    "John R. Rickford and Sharese King. 2016. Language and linguistics on trial: Hearing rachel jeantel (and other vernacular speakers) in the courtroom and beyond. Language, 92(4):948–988.",
+    "Jonathan Rosa and Nelson Flores. 2017. Unsettling race and language: Toward a raciolinguistic perspective. Language in Society, 46(5):621-647.",
+    "Maarten Sap, Swabha Swayamdipta, Laura Vianna, Xuhui Zhou, Yejin Choi, and Noah A. Smith. 2021. Annotators with attitudes: How annotator beliefs and identities bias toxic language detection. arXiv, abs/2111.07997.",
+    "Dante J. Scala and Kenneth M. Johnson. 2017. Political polarization along the rural-urban continuum? the geography of the presidential vote, 2000–2016. The ANNALS of the American Academy of Political and Social Science, 672(1):162-184.",
+    "Ari Schlesinger, Kenton P. O'Hara, and Alex S. Taylor. 2018. Let's talk about race: Identity, chatbots, and AI. In Proceedings of CHI.",
+    "Anissa Tanweer, Emily Kalah Gade, PM Krafft, and Sarah K Dreier. 2021. Why the data revolution needs qualitative thinking. Harvard Data Science Review.",
+    "Michel-Rolph Trouillot. 1995. Silencing the past: Power and the production of history. Beacon Press.",
+    "Rob van der Goot, Alan Ramponi, Arkaitz Zubiaga, Barbara Plank, Benjamin Muller, Iñaki San Vicente Roncal, Nikola Ljubešić, Özlem Çetinoğlu, Rahmad Mahendra, Talha Çolakoğlu, Timothy Baldwin, Tommaso Caselli, and Wladimir Sidorenko. 2021. MultiLexNorm: A shared task on multilingual lexical normalization. In Proceedings of the Seventh Workshop on Noisy User-generated Text.",
+    "Marlon Vanegas, Juan Restrepo, Yurley Zapata, Giovany Rodríguez, Luis Cardona, and Cristian Muñoz. 2016. Linguistic discrimination in an English language teaching program: Voices of the invisible others. Íkala, Revista de Lenguaje y Cultura, 21.",
+    "Fred Vultee. 2012. A paleontology of style. Journalism Practice, 6(4):450-464.",
+    "Claudia Wagner, David Garcia, Mohsen Jadidi, and Markus Strohmaier. 2015. It's a man's Wikipedia? Assessing gender inequality in an online encyclopedia. In Proceedings of the AAAI conference on web and social media.",
+    "Jason Weismueller, Paul Harrigan, Kristof Coussement, and Tina Tessitore. 2022. What makes people share political content on social media? The role of emotion, authority and ideology. Computers in Human Behavior, 129:107150.",
+    "Guillaume Wenzek, Marie-Anne Lachaux, Alexis Conneau, Vishrav Chaudhary, Francisco Guzmán, Armand Joulin, and Edouard Grave. 2020. CCNet: Extracting high quality monolingual datasets from web crawl data. In Proceedings of LREC.",
+    "Matthew L Williams, Pete Burnap, and Luke Sloan. 2017. Towards an ethical framework for publishing Twitter data in social research: Taking into account users' views, online context and algorithmic estimation. Sociology, 51(6):1149–1168.",
+    "Zhilin Yang, Zihang Dai, Yiming Yang, Jaime Carbonell, Russ R Salakhutdinov, and Quoc V Le. 2019. Xlnet: Generalized autoregressive pretraining for language understanding. In Advances in Neural Information Processing Systems, volume 32. Curran Associates, Inc.",
+    "Yukun Zhu, Ryan Kiros, Rich Zemel, Ruslan Salakhutdinov, Raquel Urtasun, Antonio Torralba, and Sanja Fidler. 2015. Aligning books and movies: Towards story-like visual explanations by watching movies and reading books. In Proceedings of ICCV."
+  ],
+  "measurement_description": "The benchmark does not measure aspects of faith or religion. Its focus is on measuring how a text 'quality filter' prefers language associated with certain demographic and socioeconomic factors (wealth, education, urban vs. rural, school size)."
 }

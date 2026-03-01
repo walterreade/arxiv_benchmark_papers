@@ -2,31 +2,97 @@
   "filename": "2601.07020.pdf",
   "title": "TurkBench: A Benchmark for Evaluating Turkish Large Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2601.07020",
-  "bias_targets": [
-    {
-      "target": "Age bias",
-      "methodology": "Multiple-choice stereotype association tests using ambiguous and disambiguated contexts to measure reliance on age-related stereotypes, adapted from the BBQ (Bias Benchmark for QA) framework."
-    },
-    {
-      "target": "Cultural bias",
-      "methodology": "Evaluated through a Toxicity Detection task using an LLM-as-a-Judge approach to measure cultural sensitivity, awareness, and the avoidance of offensive or dismissive content regarding cultural differences within Turkish society."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Assessed via multiple-choice questions testing stereotype reliance (BBQ framework) and evaluated through LLM-as-a-Judge toxicity metrics checking for the perpetuation of gender-based stereotypes."
-    },
-    {
-      "target": "Racial bias",
-      "methodology": "Assessed via multiple-choice questions testing stereotype reliance (BBQ framework) and evaluated through LLM-as-a-Judge toxicity metrics checking for the perpetuation of race-based stereotypes."
-    },
-    {
-      "target": "Ethnicity bias",
-      "methodology": "Assessed via multiple-choice questions testing stereotype reliance (BBQ framework) and evaluated through LLM-as-a-Judge toxicity metrics checking for the perpetuation of ethnicity-based stereotypes."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Assessed via multiple-choice questions testing stereotype reliance (BBQ framework) and evaluated through LLM-as-a-Judge toxicity metrics checking for the perpetuation of religion-based stereotypes."
-    }
+  "religious_groups": [
+    "Judaism"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "gpt-oss-120b",
+    "GLM-4.6",
+    "DeepSeek-V3.1",
+    "Qwen3-Next-80B-Inst",
+    "Qwen3-30B-A3B-Inst",
+    "gemma-3-27b-it",
+    "Qwen3-235B-Instruct",
+    "gemma-3-12b-TR-V1",
+    "gemma-3-12b-it",
+    "Qwen3-235B-A22B",
+    "Qwen2.5-14B-Instruct",
+    "Tongyi-DR-30B",
+    "TR-Gemma-9b-v0.1",
+    "Qwen3-32B",
+    "gemma-2-9b-it",
+    "aya-expanse-8b",
+    "Qwen2.5-7B-Instruct",
+    "Llama-3.1-8B-Instruct",
+    "DeepSeek-R1-Q3-8B",
+    "Qwen3-14B",
+    "Phi-4-mini-instruct",
+    "gemma-2-2b-it",
+    "Magistral-Small-2506",
+    "Qwen3-1.7B",
+    "TDM-8b-v0.1",
+    "Qwen3-0.6B",
+    "Kumru-2B"
+  ],
+  "languages_evaluated": [
+    "Turkish"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "GLUE",
+    "SuperGLUE",
+    "HELM",
+    "MMLU",
+    "XTREME",
+    "XGLUE",
+    "BLiMP",
+    "SyntaxGym",
+    "CRAFT",
+    "TruthfulQA",
+    "BBQ",
+    "XCOPA",
+    "Alpaca"
+  ],
+  "continuous_testing": true,
+  "findings": "The paper presents overall performance metrics for all models across 21 tasks but does not provide specific findings broken down by the religious content subtasks. The general findings indicate that larger models consistently outperform smaller ones, but even state-of-the-art systems struggle with culturally grounded reasoning tasks.",
+  "references": [
+    "Tayfun Ates, M Ateşoğlu, Çağatay Yiğit, Ilker Kesen, Mert Kobas, Erkut Erdem, Aykut Erdem, Tilbe Gok- sun, and Deniz Yuret. 2022. Craft: A benchmark for causal reasoning about forces and interactions. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2602-2627.",
+    "Irene Baucells, Javier Aula-Blasco, Iria de Dios-Flores, Silvia Paniagua Suárez, Naiara Perez, Anna Salles, Susana Sotelo Docio, Júlia Falcão, José Javier Saiz, Robiert Sepúlveda-Torres, et al. 2025. Iberobench: A benchmark for llm evaluation in iberian languages. In Proceedings of the 31st International Conference on Computational Linguistics, pages 10491–10519.",
+    "M Ali Bayram, Ali Arda Fincan, Ahmet Semih Gümüş, Banu Diri, Savaş Yıldırım, and Öner Aytaş. 2025. Tr-mmlu benchmark for large language models: Performance evaluation, challenges, and opportunities for improvement. In 2025 33rd Signal Processing and Communications Applications Conference (SIU), pages 1-4. IEEE.",
+    "Mehmet Selman Baysan, Istanbul Bebek, and Tunga Güngör. 2025. Tr-mteb: A comprehensive benchmark and embedding model suite for turkish sentence representations. C. Christodoulopoulos, T. Chakraborty, C. Rose, & V. Peng (Eds), Findings of the Association for Computational Linguistics: EMNLP 2025, pages 8867–8887.",
+    "Çağrı Çöltekin, A Seza Doğruöz, and Özlem Çetinoğlu. 2023. Resources for turkish natural language processing: A critical survey. Language Resources and Evaluation, 57(1):449-488.",
+    "Yakup Abrek Er, Ilker Kesen, Gözde Gül Şahin, and Aykut Erdem. 2025. Cetvel: A unified benchmark for evaluating language understanding, generation and cultural capacity of llms for turkish. arXiv preprint arXiv:2508.16431.",
+    "Jon Gauthier, Jennifer Hu, Ethan Wilcox, Peng Qian, and Roger Levy. 2020. Syntaxgym: An online platform for targeted evaluation of language models. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics: System Demonstrations, pages 70–76.",
+    "Dilek Z Hakkani-Tür, Kemal Oflazer, and Gökhan Tür. 2002. Statistical morphological disambiguation for agglutinative languages. Computers and the Humanities, 36(4):381-410.",
+    "Dan Hendrycks, Collin Burns, Steven Basart, Andy Zou, Mantas Mazeika, Dawn Song, and Jacob Steinhardt. 2020. Measuring massive multitask language understanding. CoRR, abs/2009.03300.",
+    "Dan Hendrycks, Collin Burns, Steven Basart, Andy Zou, Mantas Mazeika, Dawn Song, and Jacob Steinhardt. 2021. Measuring massive multitask language understanding. Proceedings of the International Conference on Learning Representations (ICLR).",
+    "Junjie Hu, Sebastian Ruder, Aditya Siddhant, Graham Neubig, Orhan Firat, and Melvin Johnson. 2020. Xtreme: A massively multilingual multi-task benchmark for evaluating cross-lingual generalisation. In International conference on machine learning, pages 4411-4421. PMLR.",
+    "Wen Lai, Mohsen Mesgar, and Alexander Fraser. 2024. LLMs beyond English: Scaling the multilingual capability of LLMs with cross-lingual feedback. In Findings of the Association for Computational Linguistics: ACL 2024, pages 8186–8213, Bangkok, Thailand. Association for Computational Linguistics.",
+    "Percy Liang, Rishi Bommasani, Tony Lee, Dimitris Tsipras, Dilara Soylu, Michihiro Yasunaga, Yian Zhang, Deepak Narayanan, Yuhuai Wu, Ananya Kumar, et al. 2022. Holistic evaluation of language models. arXiv preprint arXiv:2211.09110.",
+    "Yaobo Liang, Nan Duan, Yeyun Gong, Ning Wu, Fenfei Guo, Weizhen Qi, Ming Gong, Linjun Shou, Daxin Jiang, Guihong Cao, Xiaodong Fan, Ruofei Zhang, Rahul Agrawal, Edward Cui, Sining Wei, Taroon Bharti, Ying Qiao, Jiun-Hung Chen, Winnie Wu, Shuguang Liu, Fan Yang, Daniel Campos, Rangan Majumder, and Ming Zhou. 2020. XGLUE: A new benchmark datasetfor cross-lingual pre-training, understanding and generation. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 6008–6018, Online. Association for Computational Linguistics.",
+    "Stephanie Lin, Jacob Hilton, and Owain Evans. 2021. Truthfulqa: Measuring how models mimic human falsehoods. arXiv preprint arXiv:2109.07958.",
+    "Stephanie Lin, Jacob Hilton, and Owain Evans. 2022. TruthfulQA: Measuring how models mimic human falsehoods. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 3214–3252, Dublin, Ireland. Association for Computational Linguistics.",
+    "Bernardo Magnini, Marco Madeddu, Michele Resta, Roberto Zanoli, Martin Cimmino, Paolo Albano, and Viviana Patti. 2025. A leaderboard for benchmarking Ilms on italian. In Proceedings of the Eleventh Italian Conference on Computational Linguistics (CLiC-it 2025), pages 636-646.",
+    "Omer Nacar, Serry Taiseer Sibaee, Samar Ahmed, Safa Ben Atitallah, Adel Ammar, Yasser Alhabashi, Abdulrahman S Al-Batati, Arwa Alsehibani, Nour Qandos, Omar Elshehy, et al. 2025. Towards inclusive arabic llms: A culturally aligned benchmark in arabic large language model evaluation. In Proceedings of the First Workshop on Language Models for Low-Resource Languages, pages 387-401.",
+    "Kemal Oflazer. 2014. Turkish and its challenges for language processing. Language resources and evaluation, 48(4):639-653.",
+    "Chanjun Park, Hyeonwoo Kim, Dahyun Kim, SeongHwan Cho, Sanghoon Kim, Sukyung Lee, Yungi Kim, and Hwalsuk Lee. 2024. Open Ko-LLM leaderboard: Evaluating large language models in Korean with Koh5 benchmark. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 3220-3234, Bangkok, Thailand. Association for Computational Linguistics.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel Bowman. 2022. BBQ: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2086-2105, Dublin, Ireland. Association for Computational Linguistics.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel R Bowman. 2021. Bbq: A hand-built bias benchmark for question answering. arXiv preprint arXiv:2110.08193.",
+    "Edoardo Maria Ponti, Goran Glavaš, Olga Majewska, Qianchu Liu, Ivan Vulić, and Anna Korhonen. 2020. Xcopa: A multilingual dataset for causal common- sense reasoning.",
+    "Ali Safaya, Emirhan Kurtuluş, Arda Goktogan, and Deniz Yuret. 2022. Mukayese: Turkish NLP strikes back. In Findings of the Association for Computational Linguistics: ACL 2022, pages 846-863, Dublin, Ireland. Association for Computational Linguistics.",
+    "Aarohi Srivastava, Abhinav Rastogi, Abhishek Rao, Abu Awal Md Shoeb, Abubakar Abid, Adam Fisch, Adam R Brown, Adam Santoro, Aditya Gupta, Adrià Garriga-Alonso, et al. 2022. Beyond the imitation game: Quantifying and extrapolating the capabilities of language models. arXiv preprint arXiv:2206.04615.",
+    "Rohan Taori, Ishaan Gulrajani, Tianyi Zhang, Yann Dubois, Xuechen Li, Carlos Guestrin, Percy Liang, and Tatsunori B. Hashimoto. 2023. Alpaca: A strong, replicable instruction-following model. Blog post, Stanford Center for Research on Foundation Models. Accessed: 2025-06-25.",
+    "Elif Ecem Umutlu, Ayse Aysu Cengiz, Ahmet Kaan Sever, Seyma Erdem, Burak Aytan, Busra Tufan, Abdullah Topraksoy, Esra Darıcı, and Cagri Toraman. 2025. Evaluating the quality of benchmark datasets for low-resource languages: A case study on Turkish. In Proceedings of the Fourth Workshop on Generation, Evaluation and Metrics (GEM²), pages 471-487, Vienna, Austria and virtual meeting. Association for Computational Linguistics.",
+    "Arda Uzunoğlu and Gözde Gül Şahin. 2023. Benchmarking procedural language understanding for low- resource languages: A case study on turkish. In Proceedings of the 13th International Joint Conference on Natural Language Processing and the 3rd Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics (Volume 1: Long Papers), pages 804-819.",
+    "Alex Wang, Yada Pruksachatkun, Nikita Nangia, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel Bowman. 2019. Superglue: A stickier benchmark for general-purpose language understanding systems. In Advances in Neural Information Processing Systems, volume 32. Curran Associates, Inc.",
+    "Alex Wang, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel Bowman. 2018. GLUE: A multi-task benchmark and analysis platform for natural language understanding. In Proceedings of the 2018 EMNLP Workshop BlackboxNLP: Analyzing and Interpreting Neural Networks for NLP, pages 353-355, Brussels, Belgium. Association for Computational Linguistics.",
+    "Alex Warstadt, Alicia Parrish, Haokun Liu, Anhad Mohaney, Wei Peng, Sheng-Fu Wang, and Samuel R Bowman. 2020. Blimp: The benchmark of linguistic minimal pairs for english. Transactions of the Association for Computational Linguistics, 8:377-392.",
+    "Arda Yüksel, Abdullatif Köksal, Lütfi Kerem Senel, Anna Korhonen, and Hinrich Schütze. 2024. Turkishmmlu: Measuring massive multitask language understanding in turkish. In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 7035-7055.",
+    "Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric Xing, et al. 2023. Judging Ilm-as-a-judge with mt-bench and chatbot arena. Advances in neural information processing systems, 36:46595-46623."
+  ],
+  "measurement_description": "The benchmark measures knowledge of religious culture (as part of the MMLU subtask) and the detection of stereotypes or biases related to religion (as part of the Toxicity and Bias Detection tasks)."
 }

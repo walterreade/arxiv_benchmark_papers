@@ -2,65 +2,59 @@
   "filename": "2602.09442.pdf",
   "title": "Evaluating Social Bias in RAG Systems: When External Context Helps and Reasoning Hurts",
   "arxiv_url": "https://arxiv.org/pdf/2602.09442",
-  "benchmark_measurement": "The benchmark measured social biases in religious contexts, specifically by evaluating stereotypical word choices in masked sentences (e.g., 'radical' vs. 'orthodox' for Muslims) and analyzing sentiment, toxicity, gender polarity, and regard in open-ended text generations about religious topics (e.g., completing the sentence 'Judaism is an ethnic religion comprising...').",
-  "religious_groups": [
-    "Islam",
-    "Judaism",
-    "Christianity",
-    "Atheism"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Measured using log probability differences between stereotypical and anti-stereotypical words in masked sentences (SCW datasets), analysis of sentiment, toxicity, gender polarity, and regard in open-ended sentence completions (BOLD dataset), and emotion classification variance in conversational prompts (HolisticBias dataset)."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Measured using log probability differences between stereotypical and anti-stereotypical words in masked sentences (SCW datasets), analysis of sentiment, toxicity, and regard in open-ended sentence completions (BOLD dataset), and emotion classification variance in conversational prompts (HolisticBias dataset)."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Measured using log probability differences between stereotypical and anti-stereotypical words in masked sentences (SCW datasets), analysis of sentiment, toxicity, and regard in open-ended sentence completions (BOLD dataset), and emotion classification variance in conversational prompts (HolisticBias dataset)."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Measured using log probability differences between stereotypical and anti-stereotypical words in masked sentences (SCW datasets) and emotion classification variance in responses to conversational prompts (HolisticBias dataset)."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Measured using log probability differences between stereotypical and anti-stereotypical words in masked sentences (SCW datasets) and emotion classification variance in responses to conversational prompts (HolisticBias dataset)."
+    },
+    {
+      "target": "Nationality bias",
+      "methodology": "Measured using log probability differences between stereotypical and anti-stereotypical words in masked sentences (SCW datasets) and emotion classification variance in responses to conversational prompts (HolisticBias dataset)."
+    },
+    {
+      "target": "Physical appearance bias",
+      "methodology": "Measured using log probability differences between stereotypical and anti-stereotypical words in masked sentences (SCW datasets) and emotion classification variance across body type descriptors in conversational prompts (HolisticBias dataset)."
+    },
+    {
+      "target": "Profession bias",
+      "methodology": "Measured using log probability differences between stereotypical and anti-stereotypical words in masked sentences (SCW datasets) and analysis of sentiment, toxicity, and regard in open-ended sentence completions (BOLD dataset)."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Measured using log probability differences between stereotypical and anti-stereotypical words in masked sentences (SCW datasets) and emotion classification variance in responses to conversational prompts (HolisticBias dataset)."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Measured using log probability differences between stereotypical and anti-stereotypical words in masked sentences (SCW datasets) and emotion classification variance in responses to conversational prompts (HolisticBias dataset)."
+    },
+    {
+      "target": "Political bias",
+      "methodology": "Measured via analysis of sentiment, toxicity, gender polarity, and regard in open-ended sentence completions (BOLD dataset), and emotion classification variance in responses to conversational prompts (HolisticBias dataset)."
+    },
+    {
+      "target": "Cultural bias",
+      "methodology": "Measured via emotion classification variance in the model's responses to conversational prompts containing diverse cultural descriptors (HolisticBias dataset)."
+    },
+    {
+      "target": "Characteristics bias",
+      "methodology": "Measured via emotion classification variance in the model's responses to conversational prompts associated with various personal characteristics (HolisticBias dataset)."
+    }
   ],
-  "models_tested": [
-    "Llama-3-8B-Instruct",
-    "Mistral-7B-v0.1"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short",
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "StereoSet",
-    "CrowS-Pairs",
-    "WinoBias",
-    "BOLD",
-    "HolisticBias"
-  ],
-  "continuous_testing": false,
-  "findings": "Standard Retrieval-Augmented Generation (RAG) generally reduces religious bias scores compared to the base LLM. However, when Chain-of-Thought (CoT) reasoning is integrated with RAG, religious bias paradoxically increases, often exceeding the levels of the original model. This highlights a trade-off where the deliberate reasoning process prompted by CoT can amplify stereotypical associations related to religion.",
-  "references": [
-    "AI@Meta: Llama 3 model card (2024), https://github.com/meta-llama/llama3/blob/main/MODEL_CARD.md",
-    "Béchard, P., Ayala, O.M.: Reducing hallucination in structured outputs via retrieval-augmented generation. arXiv preprint arXiv:2404.08189 (2024)",
-    "Brown, T., Mann, B., Ryder, N., Subbiah, M., Kaplan, J.D., Dhariwal, P., Neelakantan, A., Shyam, P., Sastry, G., Askell, A., et al.: Language models are few-shot learners. Advances in neural information processing systems 33, 1877–1901 (2020)",
-    "Chae, H., Song, Y., Ong, K.T.i., Kwon, T., Kim, M., Yu, Y., Lee, D., Kang, D., Yeo, J.: Dialogue chain-of-thought distillation for commonsense-aware conversational agents. arXiv preprint arXiv:2310.09343 (2023)",
-    "Demszky, D., Movshovitz-Attias, D., Ko, J., Cowen, A., Nemade, G., Ravi, S.: GoEmotions: A Dataset of Fine-Grained Emotions. In: 58th Annual Meeting of the Association for Computational Linguistics (ACL) (2020)",
-    "Dhamala, J., Sun, T., Kumar, V., Krishna, S., Pruksachatkun, Y., Chang, K.W., Gupta, R.: Bold: Dataset and metrics for measuring biases in open-ended language generation. In: Proceedings of the 2021 FAccT. pp. 862–872 (2021)",
-    "Feng, G., Zhang, B., Gu, Y., Ye, H., He, D., Wang, L.: Towards revealing the mystery behind chain of thought:theoretical perspective. NeurIPS 36 (2023)",
-    "Gao, Y., Xiong, Y., Gao, X., Jia, K., Pan, J., Bi, Y., Dai, Y., Sun, J., Wang, H., Wang, H.: Retrieval-augmented generation for large language models: A survey. arXiv preprint arXiv:2312.10997 2 (2023)",
-    "Hu, M., Wu, H., Guan, Z., Zhu, R., Guo, D., Qi, D., Li, S.: No free lunch: Retrieval-augmented generation undermines fairness in llms. arXiv: 2410.07589 preprint (2024)",
-    "HuggingFace: sentence-transformers/all-mpnet-base-v2, https://huggingface.co/sentence-transformers/all-mpnet-base-v2",
-    "HuggingFace: sentence-transformers/all-mpnet-base-v2, https://huggingface.co/SamLowe/roberta-base-go_emotions",
-    "Jiang, F., Xu, Z., Li, Y., Niu, L., Xiang, Z., Li, B., Lin, B.Y., Poovendran, R.: Safechain: Safety of language models with long chain-of-thought reasoning capabilities. arXiv preprint arXiv:2502.12025 (2025)",
-    "Jin, J., Zhu, Y., Yang, X., Zhang, C., Dou, Z.: Flashrag: A modular toolkit for efficient retrieval-augmented generation research. arXiv:2405.13576 preprint (2024)",
-    "Langchain: Langchain chroma, https://python.langchain.com/docs/integrations/vectorstores/chroma/",
-    "Lanham, T., Chen, A., Radhakrishnan, A., Steiner, B., Denison, C., Hernandez, D., Li, D., Durmus, E., Hubinger, E., Kernion, J., et al.: Measuring faithfulness in chain-of-thought reasoning. arXiv preprint arXiv:2307.13702 (2023)",
-    "Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N., Küttler, H., Lewis, M., Yih, W.t., Rocktäschel, T., et al.: Retrieval-augmented generation for knowledge-intensive nlp tasks. NeurIPS 33, 9459–9474 (2020)",
-    "Li, S., Stenzel, L., Eickhoff, C., Bahrainian, S.A.: Enhancing retrieval-augmented generation: A study of best practices. arXiv preprint arXiv:2501.07391 (2025)",
-    "Merity, S., Xiong, C., Bradbury, J., Socher, R.: Pointer sentinel mixture models. arXiv preprint arXiv:1609.07843 (2016)",
-    "Nadeem, M., Bethke, A., Reddy, S.: Stereoset: Measuring stereotypical bias in pretrained language models. arXiv preprint arXiv:2004.09456 (2020)",
-    "Nangia, N., Vania, C., Bhalerao, R., Bowman, S.R.: Crows-pairs: A challenge dataset for measuring social biases in masked language models. arXiv preprint arXiv:2010.00133 (2020)",
-    "Raffel, C., Shazeer, N., Roberts, A., Lee, K., Narang, S., Matena, M., Zhou, Y., Li, W., Liu, P.J.: Exploring the limits of transfer learning with a unified text-to-text transformer. Journal of machine learning research 21(140), 1–67 (2020)",
-    "Sheng, E., Chang, K.W., Natarajan, P., Peng, N.: Societal biases in language generation: Progress and challenges. arXiv preprint arXiv:2105.04054 (2021)",
-    "Shuster, K., Poff, S., Chen, M., Kiela, D., Weston, J.: Retrieval augmentation reduces hallucination in conversation. arXiv preprint arXiv:2104.07567 (2021)",
-    "Smith, E.M., Gonzalez-Rico, D., Dinan, E., Boureau, Y.L.: Controlling style in generated dialogue. arXiv preprint arXiv:2009.10855 (2020)",
-    "Smith, E.M., Hall, M., Kambadur, M., Presani, E., Williams, A.: \" i'm sorry to hear that\": Finding new biases in language models with a holistic descriptor dataset. arXiv preprint arXiv:2205.09209 (2022)",
-    "Turpin, M., Michael, J., Perez, E., Bowman, S.: Language models don't always say what they think: Unfaithful explanations in chain-of-thought prompting. Advances in Neural Information Processing Systems 36, 74952–74965 (2023)",
-    "Wei, J., Wang, X., Schuurmans, D., Bosma, M., Xia, F., Chi, E., Le, Q.V., Zhou, D., et al.: Chain-of-thought prompting elicits reasoning in large language models. Advances in neural information processing systems 35, 24824–24837 (2022)",
-    "Wu, X., Li, S., Wu, H.T., Tao, Z., Fang, Y.: Does rag introduce unfairness in llms? arXiv preprint arXiv:2409.19804 (2024)",
-    "Zhang, T., Zhou, Y., Bollegala, D.: Evaluating the effect of retrieval augmentation on social biases. arXiv:2502.17611 preprint (2025)",
-    "Zhang, Z., Yao, Y., Zhang, A., Tang, X., Ma, X., He, Z., Wang, Y., Gerstein, M., Wang, R., Liu, G., et al.: Igniting language intelligence: The hitchhiker's guide from chain-of-thought reasoning to language agents. ACM Computing Surveys (2023)",
-    "Zhao, J., Wang, T., Yatskar, M., Ordonez, V., Chang, K.W.: Gender bias in coreference resolution. arXiv preprint arXiv:1804.06876 (2018)"
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

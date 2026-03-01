@@ -2,116 +2,35 @@
   "filename": "2507.00439.pdf",
   "title": "Improving the Distributional Alignment of LLMs using Supervision",
   "arxiv_url": "https://arxiv.org/pdf/2507.00439",
-  "benchmark_measurement": "The benchmark measures the distributional alignment of Large Language Model opinions with those of different religious groups on a variety of subjective survey questions from the WGM, OQA, and WVS datasets.",
-  "religious_groups": [
-    "Agnostic",
-    "Atheist",
-    "Buddhist",
-    "Hindu",
-    "Jewish",
-    "Jew",
-    "Mormon",
-    "Muslim",
-    "Nothing in particular",
-    "Orthodox",
-    "Other",
-    "Protestant",
-    "Roman Catholic",
-    "Other Christian",
-    "none"
+  "bias_targets": [
+    {
+      "target": "Age bias",
+      "methodology": "Evaluating the alignment of LLM-generated opinion distributions with human survey responses across different age groups (e.g., 15-29, 30-49, 50+) by measuring Wasserstein distance between the model's generated probability distributions and actual survey data."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Measuring how accurately LLMs model the opinion distributions of various socioeconomic groups by evaluating model outputs across different income brackets, education levels, and employment statuses against ground-truth survey data."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Comparing the alignment of LLM-elicited opinion distributions with human survey responses from male and female demographic groups on subjective global and societal questions."
+    },
+    {
+      "target": "Geographic/Regional bias",
+      "methodology": "Assessing alignment disparities in LLMs when modeling the opinion distributions of respondents from different world regions, US regions, and rural vs. urban living areas."
+    },
+    {
+      "target": "Political bias",
+      "methodology": "Evaluating the representational accuracy of LLMs by comparing their generated opinion distributions for different political ideologies (e.g., liberal, conservative) and party affiliations against actual survey responses."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Measuring the alignment of LLM-generated opinion distributions for various racial and ethnic groups using human public opinion survey data as ground truth."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Assessing how well LLMs simulate the opinion distributions of different religious affiliations (e.g., Protestant, Catholic, Muslim, Buddhist, Hindu, Atheist) compared to actual human responses in public opinion and values surveys."
+    }
   ],
-  "models_tested": [
-    "Claude-3.5-v2",
-    "Llama-3.2-90B",
-    "Mistral-large",
-    "OLMo-2-7B-I",
-    "Qwen-2.5-72B",
-    "OLMo-2-7B-Base",
-    "OLMo-2-7B-SFT",
-    "OLMo-2-7B-DPO",
-    "OLMo-2-7B-Instruct",
-    "Llama-3-70B",
-    "Llama-3.1-70B",
-    "Llama-3.2-1B",
-    "Llama-3.2-11B",
-    "Mistral-small",
-    "Claude-3",
-    "Claude-3.5-v1"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "Welcome Global Monitor 2018 (WGM)",
-    "OpinionQA (OQA)",
-    "World Values Survey (WVS)"
-  ],
-  "continuous_testing": false,
-  "findings": "The study found that supervised calibration generally improves the opinion alignment of LLMs with various religious groups. The degree of alignment, both before and after calibration, varies across different religious groups, datasets, and LLMs. For instance, on the OQA dataset, groups like Jewish, Muslim, and Orthodox showed relatively high pre-calibration alignment with some models. On the WVS dataset, alignment scores for Hindu respondents were particularly high after calibration (e.g., 86.0 for 'V' and 93.4 for 'Vc' with OLMo-2-7B-I). The paper demonstrates that its methods can improve consistency but does not delve into the reasons for the performance differences between religious groups.",
-  "references": [
-    "Gati V Aher, Rosa I. Arriaga, and Adam Tauman Kalai. 2023. Using large language models to simulate multiple humans and replicate human subject studies. In Proceedings of the 40th International Conference on Machine Learning, volume 202 of Proceedings of Machine Learning Research, pages 337–371. PMLR.",
-    "Badr AlKhamissi, Muhammad ElNokrashy, Mai Alkhamissi, and Mona Diab. 2024. Investigating cultural alignment of large language models. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 12404-12422, Bangkok, Thailand. Association for Computational Linguistics.",
-    "Tilman Beck, Hendrik Schuff, Anne Lauscher, and Iryna Gurevych. 2024. Sensitivity, performance, robustness: Deconstructing the effect of sociodemographic prompting. In Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers), pages 2589-2615, St. Julian's, Malta. Association for Computational Linguistics.",
-    "Laura Biester, Vanita Sharma, Ashkan Kazemi, Naihao Deng, Steven Wilson, and Rada Mihalcea. 2022. Analyzing the effects of annotator gender across NLP tasks. In Proceedings of the 1st Workshop on Perspectivist Approaches to NLP @LREC2022, pages 10-19, Marseille, France. European Language Resources Association.",
-    "James Bisbee, Joshua D. Clinton, Cassy Dorff, Brenton Kenkel, and Jennifer M. Larson. 2024. Synthetic replacements for human survey data? the perils of large language models. Political Analysis, 32(4):401-416.",
-    "Yong Cao, Haijiang Liu, Arnav Arora, Isabelle Augenstein, Paul Röttger, and Daniel Hershcovich. 2025. Specializing large language models to simulate survey response distributions for global populations. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 3141–3154, Albuquerque, New Mexico. Association for Computational Linguistics.",
-    "Runjin Chen, Andy Arditi, Henry Sleight, Owain Evans, and Jack Lindsey. 2025. Persona vectors: Monitoring and controlling character traits in language models. arXiv [cs.CL].",
-    "Myra Cheng, Esin Durmus, and Dan Jurafsky. 2023a. Marked personas: Using natural language prompts to measure stereotypes in language models. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 1504-1532, Toronto, Canada. Association for Computational Linguistics.",
-    "Myra Cheng, Tiziano Piccardi, and Diyi Yang. 2023b. CoMPosT: Characterizing and evaluating caricature in LLM simulations. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, pages 10853–10875, Singapore. Association for Computational Linguistics.",
-    "Rochelle Choenni and Ekaterina Shutova. 2025. Self-alignment: Improving alignment of cultural values in Ilms via in-context learning. arXiv [cs.CL].",
-    "Kimberle Crenshaw. 1991. Mapping the margins: Intersectionality, identity politics, and violence against women of color. Stanford Law Review, 43(6):1241-1299.",
-    "Danica Dillion, Niket Tandon, Yuling Gu, and Kurt Gray. 2023. Can ai language models replace human participants? Trends in Cognitive Sciences, 27(7):597–600.",
-    "Xuan Long Do, Kenji Kawaguchi, Min-Yen Kan, and Nancy Chen. 2025. Aligning large language models with human opinions through persona selection and value-belief-norm reasoning. In Proceedings of the 31st International Conference on Computational Linguistics, pages 2526–2547, Abu Dhabi, UAE. Association for Computational Linguistics.",
-    "Ricardo Dominguez-Olmedo, Moritz Hardt, and Celestine Mendler-Dünner. 2024. Questioning the survey responses of large language models. In Advances in Neural Information Processing Systems, volume 37, pages 45850-45878. Curran Associates, Inc.",
-    "Yijiang River Dong, Tiancheng Hu, and Nigel Collier. 2024. Can LLM be a personalized judge? In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 10126-10141, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Esin Durmus, Karina Nguyen, Thomas Liao, Nicholas Schiefer, Amanda Askell, Anton Bakhtin, Carol Chen, Zac Hatfield-Dodds, Danny Hernandez, Nicholas Joseph, Liane Lovitt, Sam McCandlish, Orowa Sikder, Alex Tamkin, Janel Thamkul, Jared Kaplan, Jack Clark, and Deep Ganguli. 2024. Towards measuring the representation of subjective global opinions in language models. In First Conference on Language Modeling.",
-    "Shangbin Feng, Taylor Sorensen, Yuhan Liu, Jillian Fisher, Chan Young Park, Yejin Choi, and Yulia Tsvetkov. 2024. Modular pluralism: Pluralistic alignment via multi-LLM collaboration. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 4151-4171, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Isabel O Gallegos, Ryan A Rossi, Joe Barrow, Md Mehrab Tanjim, Sungchul Kim, Franck Dernoncourt, Tong Yu, Ruiyi Zhang, and Nesreen K Ahmed. 2024. Bias and fairness in large language models: A survey. Computational Linguistics, pages 1–79.",
-    "Yuan Gao, Dokyun Lee, Gordon Burtch, and Sina Fazelpour. 2025. Take caution in using llms as human surrogates: Scylla ex machina. arXiv [cs.CL].",
-    "Jiahui Geng, Fengyu Cai, Yuxia Wang, Heinz Koeppl, Preslav Nakov, and Iryna Gurevych. 2024. A survey of confidence estimation and calibration in large language models. In Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 6577-6595, Mexico City, Mexico. Association for Computational Linguistics.",
-    "Mitchell L Gordon, Michelle S Lam, Joon Sung Park, Kayur Patel, Jeff Hancock, Tatsunori Hashimoto, and Michael S Bernstein. 2022. Jury learning: Integrating dissenting voices into machine learning models. In Proceedings of the 2022 CHI Conference on Human Factors in Computing Systems, pages 1–19.",
-    "Shashank Gupta, Vaishnavi Shrivastava, Ameet Deshpande, Ashwin Kalyan, Peter Clark, Ashish Sabharwal, and Tushar Khot. 2024. Bias runs deep: Implicit reasoning biases in persona-assigned Ilms. In The Twelfth International Conference on Learning Representations (ICLR).",
-    "Christian Haerpfer, Ronald Inglehart, Alejandro Moreno, Christian Welzel, Kseniya Kizilova, Jaime Diez-Medrano, Marta Lagos, Pippa Norris, Eduard Ponarin, and Bi Puranen. 2020. World values survey wave 7 (2017-2020) cross-national data-set.",
-    "Tiancheng Hu and Nigel Collier. 2024. Quantifying the persona effect in LLM simulations. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 10289-10307, Bangkok, Thailand. Association for Computational Linguistics.",
-    "EunJeong Hwang, Bodhisattwa Majumder, and Niket Tandon. 2023. Aligning language models to user opinions. In Findings of the Association for Computational Linguistics: EMNLP 2023, pages 5906-5919, Singapore. Association for Computational Linguistics.",
-    "Brihi Joshi, Xiang Ren, Swabha Swayamdipta, Rik Koncel-Kedziorski, and Tim Paek. 2025. Improving Ilm personas via rationalization with psychological scaffolds. arXiv preprint arXiv:2504.17993.",
-    "Carolin Kaiser, Jakob Kaiser, Vladimir Manewitsch, Lea Rau, and Rene Schallner. 2025. Simulating human opinions with large language models: Opportunities and challenges for personalized survey data modeling. In Adjunct Proceedings of the 33rd ACM Conference on User Modeling, Adaptation and Personalization, UMAP Adjunct '25, page 82–86, New York, NY, USA. Association for Computing Machinery.",
-    "Minwoo Kang, Suhong Moon, Seung Hyeong Lee, Ayush Raj, Joseph Suh, and David Chan. 2025. Deep binding of language model virtual personas: a study on approximating political partisan misperceptions. In Second Conference on Language Modeling.",
-    "Ariba Khan, Stephen Casper, and Dylan Hadfield-Menell. 2025. Randomness, not representation: The unreliability of evaluating cultural alignment in llms. In Proceedings of the 2025 ACM Conference on Fairness, Accountability, and Transparency, FAccT '25, page 2151-2165, New York, NY, USA. Association for Computing Machinery.",
-    "Hannah Rose Kirk, Alexander Whitefield, Paul Röttger, Andrew Michael Bean, Katerina Margatina, Rafael Mosquera, Juan Manuel Ciro, Max Bartolo, Adina Williams, He He, Bertie Vidgen, and Scott A. Hale. 2024. The PRISM alignment dataset: What participatory, representative and individualised human feedback reveals about the subjective and multicultural alignment of large language models. In The Thirty-eight Conference on Neural Information Processing Systems Datasets and Benchmarks Track.",
-    "Ayato Kitadai, Kazuhito Ogawa, and Nariaki Nishino. 2024. Examining the feasibility of large language models as survey respondents. In 2024 IEEE International Conference on Big Data (BigData), pages 3858-3864.",
-    "Takeshi Kojima, Shixiang Shane Gu, Machel Reid, Yutaka Matsuo, and Yusuke Iwasawa. 2022. Large language models are zero-shot reasoners. In Proceedings of the 36th International Conference on Neural Information Processing Systems, NIPS '22, Red Hook, NY, USA. Curran Associates Inc.",
-    "Stefan Krsteski, Giuseppe Russo, Serina Chang, Robert West, and Kristina Gligorić. 2025. Valid survey simulations with limited human data: The roles of prompting, fine-tuning, and rectification. arXiv [cs.CL].",
-    "Louis Kwok, Michal Bravansky, and Lewis Griffin. 2024. Evaluating cultural adaptability of a large language model via simulation of synthetic personas. In First Conference on Language Modeling.",
-    "Marlene Lutz, Indira Sen, Georg Ahnert, Elisa Rogers, and Markus Strohmaier. 2025. The prompt makes the person(a): A systematic evaluation of sociodemographic persona prompting for large language models.",
-    "Bolei Ma, Xinpeng Wang, Tiancheng Hu, Anna-Carolina Haensch, Michael A. Hedderich, Barbara Plank, and Frauke Kreuter. 2024. The potential and challenges of evaluating attitudes, opinions, and values in large language models. In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 8783-8805, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Reem Masoud, Ziquan Liu, Martin Ferianc, Philip C. Treleaven, and Miguel Rodrigues Rodrigues. 2025. Cultural alignment in large language models: An explanatory analysis based on hofstede's cultural dimensions. In Proceedings of the 31st International Conference on Computational Linguistics, pages 8474-8503, Abu Dhabi, UAE. Association for Computational Linguistics.",
-    "Nicole Meister, Carlos Guestrin, and Tatsunori Hashimoto. 2025. Benchmarking distributional alignment of large language models. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 24–49, Albuquerque, New Mexico. Association for Computational Linguistics.",
-    "Sagnik Mukherjee, Muhammad Farid Adilazuarda, Sunayana Sitaram, Kalika Bali, Alham Fikri Aji, and Monojit Choudhury. 2024. Cultural conditioning or placebo? on the effectiveness of socio-demographic prompting. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 15811–15837, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2021. StereoSet: Measuring stereotypical bias in pretrained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 5356–5371, Online. Association for Computational Linguistics.",
-    "Team OLMO, Pete Walsh, Luca Soldaini, Dirk Groeneveld, Kyle Lo, Shane Arora, Akshita Bhagia, Yuling Gu, Shengyi Huang, Matt Jordan, Nathan Lambert, Dustin Schwenk, Oyvind Tafjord, Taira Anderson, David Atkinson, Faeze Brahman, Christopher Clark, Pradeep Dasigi, Nouha Dziri, Allyson Ettinger, Michal Guerquin, David Heineman, Hamish Ivison, Pang Wei Koh, Jiacheng Liu, Saumya Malik, William Merrill, Lester James V. Miranda, Jacob Morrison, Tyler Murray, Crystal Nam, Jake Poznanski, Valentina Pyatkin, Aman Rangapur, Michael Schmitz, Sam Skjonsberg, David Wadden, Christopher Wilhelm, Michael Wilson, Luke Zettlemoyer, Ali Farhadi, Noah A. Smith, and Hannaneh Hajishirzi. 2025. 2 olmo 2 furious. arXiv [cs.CL].",
-    "Xianghe Pang, Shuo Tang, Rui Ye, Yuxin Xiong, Bolun Zhang, Yanfeng Wang, and Siheng Chen. 2024. Self-alignment of large language models via monopolylogue-based social scene simulation. In Proceedings of the 41st International Conference on Machine Learning, volume 235 of Proceedings of Machine Learning Research, pages 39416-39447. PMLR.",
-    "F Pedregosa, G Varoquaux, A Gramfort, V Michel, B Thirion, O Grisel, and Duchesnay. 2011. Scikit-learn: Machine learning in python. the Journal of machine Learning research, 12:2825-2830.",
-    "Jiaxin Pei and David Jurgens. 2023. When do annotator demographics matter? measuring the influence of annotator demographics with the POPQUORN dataset. In Proceedings of the 17th Linguistic Annotation Workshop (LAW-XVII), pages 252-265, Toronto, Canada. Association for Computational Linguistics.",
-    "Xiao Pu, Michael Saxon, Wenyue Hua, and William Yang Wang. 2025. ThoughtTerminator: Benchmarking, calibrating, and mitigating overthinking in reasoning models. In Second Conference on Language Modeling.",
-    "Shibani Santurkar, Esin Durmus, Faisal Ladhak, Cinoo Lee, Percy Liang, and Tatsunori Hashimoto. 2023. Whose opinions do language models reflect? In International Conference on Machine Learning, pages 29971-30004. PMLR.",
-    "Maarten Sap, Swabha Swayamdipta, Laura Vianna, Xuhui Zhou, Yejin Choi, and Noah A. Smith. 2022. Annotators with attitudes: How annotator beliefs and identities bias toxic language detection. In Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 5884-5906, Seattle, United States. Association for Computational Linguistics.",
-    "Quan Shi, Carlos E Jimenez, Stephen Dong, Brian Seo, Caden Yao, Adam Kelch, and Karthik R Narasimhan. 2025. IMPersona: Evaluating individual level LLM impersonation. In Second Conference on Language Modeling.",
-    "Mark D. Smucker, James Allan, and Ben Carterette. 2007. A comparison of statistical significance tests for information retrieval evaluation. In Proceedings of the Sixteenth ACM Conference on Conference on Information and Knowledge Management, CIKM '07, page 623-632, New York, NY, USA. Association for Computing Machinery.",
-    "Taylor Sorensen, Pushkar Mishra, Roma Patel, Michael Henry Tessler, Michiel A. Bakker, Georgina Evans, Iason Gabriel, Noah D. Goodman, and Verena Rieser. 2025. Value profiles for encoding human variation. CoRR, abs/2503.15484.",
-    "Taylor Sorensen, Jared Moore, Jillian Fisher, Mitchell L. Gordon, Niloofar Mireshghallah, Christopher Michael Rytting, Andre Ye, Liwei Jiang, Ximing Lu, Nouha Dziri, Tim Althoff, and Yejin Choi. 2024. Position: A roadmap to pluralistic alignment. In ICML.",
-    "Huaman Sun, Jiaxin Pei, Minje Choi, and David Jurgens. 2025a. Aligning with Whom? Large Language Models Have Gender and Racial Biases in Subjective NLP Tasks. In Proceedings of the 2025 Conference of the North American Chapter of the Association for Computational Linguistics (NAACL). Association for Computational Linguistics.",
-    "Huaman Sun, Jiaxin Pei, Minje Choi, and David Jurgens. 2025b. Sociodemographic prompting is not yet an effective approach for simulating subjective judgments with LLMs. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 2: Short Papers), pages 845–854, Albuquerque, New Mexico. Association for Computational Linguistics.",
-    "Seungjong Sun, Eungu Lee, Dongyan Nan, Xiangying Zhao, Wonbyung Lee, Bernard J. Jansen, and Jang Hyun Kim. 2024. Random silicon sampling: Simulating human sub-population opinion using a large language model based on group-level demographic information. arXiv [cs.CL].",
-    "Katherine Tian, Eric Mitchell, Allan Zhou, Archit Sharma, Rafael Rafailov, Huaxiu Yao, Chelsea Finn, and Christopher Manning. 2023. Just ask for calibration: Strategies for eliciting calibrated confidence scores from language models fine-tuned with human feedback. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, pages 5433-5442, Singapore. Association for Computational Linguistics.",
-    "Angelina Wang, Jamie Morgenstern, and John P Dickerson. 2025. Large language models that replace human participants can harmfully misportray and flatten identity groups. Nat. Mach. Intell., 7(3):400–411.",
-    "Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed H. Chi, Quoc V. Le, and Denny Zhou. 2022. Chain-of-thought prompting elicits reasoning in large language models. In Proceedings of the 36th International Conference on Neural Information Processing Systems, NIPS '22, Red Hook, NY, USA. Curran Associates Inc.",
-    "Wellcome Trust and The Gallup Organization Ltd. 2019. Wellcome global monitor, 2018.",
-    "Zhouhang Xie, Junda Wu, Yiran Shen, Raghav Jain, Yu Xia, Xintong Li, Aaron Chang, Ryan A. Rossi, Tong Yu, Sachin Kumar, Bodhisattwa Prasad Majumder, Jingbo Shang, Prithviraj Ammanabrolu, and Julian McAuley. 2025. A survey on personalized and pluralistic preference alignment in large language models. In Second Conference on Language Modeling.",
-    "Miao Xiong, Zhiyuan Hu, Xinyang Lu, YIFEI LI, Jie Fu, Junxian He, and Bryan Hooi. 2024. Can LLMs express their uncertainty? an empirical evaluation of confidence elicitation in LLMs. In The Twelfth International Conference on Learning Representations."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

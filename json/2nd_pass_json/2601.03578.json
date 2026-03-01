@@ -2,98 +2,15 @@
   "filename": "2601.03578.pdf",
   "title": "PsychEthicsBench: Evaluating Large Language Models Against Australian Mental Health Ethics",
   "arxiv_url": "https://arxiv.org/pdf/2601.03578",
-  "benchmark_measurement": "Ethical handling of mental health scenarios involving religious beliefs as a demographic and contextual factor.",
-  "religious_groups": [
-    "Not specified"
+  "bias_targets": [
+    {
+      "target": "Cultural/Regional bias",
+      "methodology": "Quantifying implicit U.S.-centric assumptions by measuring the frequency of U.S.-specific references (e.g., American institutions, hotlines) via string matching, and using an LLM-as-a-judge to detect 'Jurisdictional' ethical rule violations where models inappropriately apply foreign norms in an Australian mental health context."
+    },
+    {
+      "target": "Identity and Mental Health Stigma",
+      "methodology": "Evaluating open-ended model responses using an LLM-as-a-judge against a 'Disrespect' ethical rubric category to detect prejudice, stigma, stereotyping, or dismissiveness toward individuals or groups based on mental health status, culture, or identity."
+    }
   ],
-  "models_tested": [
-    "Qwen2.5-7B",
-    "Llama3-8B",
-    "Llama2-13B",
-    "Qwen2.5-14B",
-    "Crispers-7B",
-    "SQPsychLLM-8B",
-    "MentalLlama-13B",
-    "EmoLlama-13B",
-    "Crispers-14B",
-    "HuatuoGPT-7B",
-    "Meditron3-7B",
-    "Med42-Llama-8B",
-    "Meditron3-14B",
-    "Baichuan-m1-14B"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short",
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "AdvBench",
-    "JailbreakBench",
-    "MedSafetyBench",
-    "MedEthicsQA",
-    "SafetyBench",
-    "CHBench",
-    "SafeBench",
-    "National Psychology Examination (NPE)"
-  ],
-  "continuous_testing": false,
-  "findings": "The paper includes religious belief as a demographic factor in its ethical scenarios but does not report any specific findings on how models performed on these scenarios.",
-  "references": [
-    "Ahpra. 2024. Code of conduct for psychologists. https://www.ahpra.gov.au/documents/default.aspx?record=WD24%2F34313&dbid=AP&chksum=CNgh4pCJoskMdMaxBGVUkQ%3D%3D. Accessed: 2025-03-08.",
-    "Anthropic. 2025. Claude sonnet 4.5 system card. Technical report, Anthropic. Accessed: 2026-01-01.",
-    "APS. 2018. Aps code of ethics. https://psychology.org.au/getmedia/d873e0db-7490-46de-bb57-c31bb1553025/aps-code-of-ethics.pdf. Adopted 27 September 2007; reprinted April 2018; accessed 8 March 2025.",
-    "Pablo Ascorbe, María S Campos, César Domínguez, Jónathan Heras, Magdalena Pérez, and Ana Rosa Terroba-Reinares. 2025. A chatbot for providing suicide prevention information in spanish. In Proceedings of the 15th International Workshop on Spoken Dialogue Systems Technology, pages 200–204.",
-    "Yejin Bang, Delong Chen, Nayeon Lee, and Pascale Fung. 2024. Measuring political bias in large language models: What is said and how it is said. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 11142–11159.",
-    "Patrick Chao, Edoardo Debenedetti, Alexander Robey, Maksym Andriushchenko, Francesco Croce, Vikash Sehwag, Edgar Dobriban, Nicolas Flammarion, George J Pappas, Florian Tramer, and 1 others. 2024. Jailbreakbench: An open robustness benchmark for jailbreaking large language models. Advances in Neural Information Processing Systems, 37:55005-55029.",
-    "Junying Chen, Zhenyang Cai, Ke Ji, Xidong Wang, Wanlong Liu, Rongsheng Wang, and Benyou Wang. 2025a. Towards medical complex reasoning with LLMs through medical verifiable problems. In Findings of the Association for Computational Linguistics: ACL 2025, pages 14552-14573, Vienna, Austria. Association for Computational Linguistics.",
-    "Tong Chen, Zimu Wang, Yiyi Miao, Haoran Luo, Sun Yuanfei, Wei Wang, Zhengyong Jiang, Procheta Sen, and Jionglong Su. 2025b. MedFact: A large-scale Chinese dataset for evidence-based medical fact-checking of LLM responses. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing, pages 32328–32341, Suzhou, China. Association for Computational Linguistics.",
-    "Zeming Chen, Alejandro Hernández Cano, Angelika Romanou, Antoine Bonnet, Kyle Matoba, Francesco Salvi, Matteo Pagliardini, Simin Fan, Andreas Köpf, Amirkeivan Mohtashami, Alexandre Sallinen, Alireza Sakhaeirad, Vinitra Swamy, Igor Krawczuk, Deniz Bayazit, Axel Marmet, Syrielle Montariol, Mary-Anne Hartley, Martin Jaggi, and Antoine Bosselut. 2023. Meditron-70b: Scaling medical pretraining for large language models. Preprint, arXiv:2311.16079.",
-    "Clément Christophe, Praveen K Kanithi, Tathagata Raha, Shadab Khan, and Marco AF Pimentel. 2024. Med42-v2: A suite of clinical Ilms.",
-    "Fangjun Ding, Renyu Zhang, Xinyu Feng, Chengye Xie, Zheng Zhang, and Yanting Zhang. 2025. Psylite technical report. Preprint, arXiv:2506.21536.",
-    "Jessica Maria Echterhoff, Yao Liu, Abeer Alessa, Julian McAuley, and Zexue He. 2024. Cognitive bias in decision-making with LLMs. In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 12640–12653, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Aaron Grattafiori, Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Alex Vaughan, Amy Yang, Angela Fan, Anirudh Goyal, Anthony Hartshorn, Aobo Yang, Archi Mitra, Archie Sravankumar, Artem Korenev, Arthur Hinsvark, and 542 others. 2024. The llama 3 herd of models. Preprint, arXiv:2407.21783.",
-    "Chenlu Guo, Nuo Xu, Yi Chang, and Yuan Wu. 2025. Chbench: A chinese dataset for evaluating health in large language models. Preprint, arXiv:2409.15766.",
-    "Tessa Han, Aounon Kumar, Chirag Agarwal, and Himabindu Lakkaraju. 2024. Medsafetybench: Evaluating and improving the medical safety of large language models. Advances in Neural Information Processing Systems, 37:33423-33454.",
-    "He Hu, Yucheng Zhou, Juzheng Si, Qianning Wang, Hengheng Zhang, Fuji Ren, Fei Ma, Laizhong Cui, and Qi Tian. 2025a. Beyond empathy: Integrating diagnostic and therapeutic reasoning with large language models for mental health counseling. Preprint, arXiv:2505.15715.",
-    "He Hu, Yucheng Zhou, Qianning Wang, Yingjian Zou, Chiyuan Ma, Juzheng Si, Jianzhuang Liu, Zitong Yu, Laizhong Cui, and Fei Ma. 2025b. From pattern recognizers to personalized companions: A survey of large language models in mental health.",
-    "Jinpeng Hu, Tengteng Dong, Gang Luo, Hui Ma, Peng Zou, Xiao Sun, Dan Guo, Xun Yang, and Meng Wang. 2025c. Psycollm: Enhancing Ilm for psychological understanding and evaluation. IEEE Transactions on Computational Social Systems, 12(2):539–551.",
-    "Yining Hua, Hongbin Na, Zehan Li, Fenglin Liu, Xiao Fang, David Clifton, and John Torous. 2025. A scoping review of large language models for generative tasks in mental health care. npj Digital Medicine, 8(1):230.",
-    "Dongjin Kang, Sunghwan Kim, Taeyoon Kwon, Seungjun Moon, Hyunsouk Cho, Youngjae Yu, Dongha Lee, and Jinyoung Yeo. 2024. Can large language models be good emotional supporter? mitigating preference bias on emotional support conversation. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 15232–15261, Bangkok, Thailand. Association for Computational Linguistics.",
-    "Suyeon Lee, Sunghwan Kim, Minju Kim, Dongjin Kang, Dongil Yang, Harim Kim, Minseok Kang, Dayi Jung, Min Hee Kim, Seungbeen Lee, Kyong-Mee Chung, Youngjae Yu, Dongha Lee, and Jinyoung Yeo. 2024. Cactus: Towards psychological counseling conversations using cognitive behavioral theory. In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 14245–14274, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Xiaogeng Liu, Peiran Li, G. Edward Suh, Yevgeniy Vorobeychik, Zhuoqing Mao, Somesh Jha, Patrick McDaniel, Huan Sun, Bo Li, and Chaowei Xiao. 2025. AutoDAN-turbo: A lifelong agent for strategy self-exploration to jailbreak LLMs. In The Thirteenth International Conference on Learning Representations.",
-    "Xiaogeng Liu, Nan Xu, Muhao Chen, and Chaowei Xiao. 2024a. Autodan: Generating stealthy jailbreak prompts on aligned large language models. In The Twelfth International Conference on Learning Representations (ICLR).",
-    "Zhiwei Liu, Kailai Yang, Qianqian Xie, Tianlin Zhang, and Sophia Ananiadou. 2024b. Emollms: A series of emotional large language models and annotation tools for comprehensive affective analysis. In Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining, KDD '24, page 5487-5496. ACM.",
-    "Mantas Mazeika, Long Phan, Xuwang Yin, Andy Zou, Zifan Wang, Norman Mu, Elham Sakhaee, Nathaniel Li, Steven Basart, Bo Li, and 1 others. 2024. Harmbench: A standardized evaluation framework for automated red teaming and robust refusal. In International Conference on Machine Learning, pages 35181-35224. PMLR.",
-    "Hongbin Na, Yining Hua, Zimu Wang, Tao Shen, Beibei Yu, Lilin Wang, Wei Wang, John Torous, and Ling Chen. 2025. A survey of large language models in psychotherapy: Current landscape and future directions.",
-    "OpenAI. 2025. Gpt-5 system card. Technical report, OpenAI. Accessed: 2025-01-01.",
-    "Nadine J. Pelling and Lorelle J. Burton, editors. 2017. The Elements of Applied Psychological Practice in Australia: Preparing for the National Psychology Examination. Routledge, Abingdon, Oxon and New York, NY. Edited volume.",
-    "Xiangyu Qi, Yi Zeng, Tinghao Xie, Pin-Yu Chen, Ruoxi Jia, Prateek Mittal, and Peter Henderson. 2024. Fine-tuning aligned language models compromises safety, even when users do not intend to! In The Twelfth International Conference on Learning Representations (ICLR).",
-    "Huachuan Qiu, Anqi Li, Lizhi Ma, and Zhenzhong Lan. 2024a. Psychat: A client-centric dialogue system for mental health support. In 2024 27th International Conference on Computer Supported Cooperative Work in Design (CSCWD), pages 2979–2984.",
-    "Huachuan Qiu, Lizhi Ma, and Zhenzhong Lan. 2024b. PsyGUARD: An automated system for suicide detection and risk assessment in psychological counseling. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 4581-4607, Miami, Florida, USA. Association for Computational Linguistics.",
-    "Huachuan Qiu, Tong Zhao, Anqi Li, Shuai Zhang, Hongliang He, and Zhenzhong Lan. 2023. A benchmark for understanding dialogue safety in mental health support. page 1-13, Berlin, Heidelberg. Springer-Verlag.",
-    "Jiahao Qiu, Yinghui He, Xinzhe Juan, Yimin Wang, Yuhan Liu, Zixin Yao, Yue Wu, Xun Jiang, Ling Yang, and Mengdi Wang. 2025. EmoAgent: Assessing and safeguarding human-AI interaction for mental health safety. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing, pages 11752–11767, Suzhou, China. Association for Computational Linguistics.",
-    "RANZCP. 2016. Ranzcp code of conduct. https://www.ranzcp.org/getmedia/687dfad7-1675-4fdb-ae29-2cf4c1d930eb/Code-of-Conduct-RANZCP.pdf. Accessed: 8 March 2025.",
-    "RANZCP. 2018. Ranzcp code of ethics. https://www.ranzcp.org/getmedia/2e090981-cdd2-4dee-a317-f8718bc7dc47/Code-of-Ethics-Aug-2025.pdf. Fifth edition; published 2018; accessed 8 March 2025.",
-    "Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine Babaei, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, Dan Bikel, Lukas Blecher, Cristian Canton Ferrer, Moya Chen, Guillem Cucurull, David Esiobu, Jude Fernandes, Jeremy Fu, Wenyin Fu, and 49 others. 2023. Llama 2: Open foundation and fine-tuned chat models. Preprint, arXiv:2307.09288.",
-    "Doan Nam Long Vu, Rui Tan, Lena Moench, Svenja Jule Francke, Daniel Woiwod, Florian Thomas-Odenthal, Sanna Stroth, Tilo Kircher, Christiane Hermann, Udo Dannlowski, Hamidreza Jamalabadi, and Shaoxiong Ji. 2025. Roleplaying with structure: Synthetic therapist-client conversation generation from questionnaires. Preprint, arXiv:2510.25384.",
-    "Bingning Wang, Haizhou Zhao, Huozhi Zhou, Liang Song, Mingyu Xu, Wei Cheng, Xiangrong Zeng, Yupeng Zhang, Yuqi Huo, Zecheng Wang, Zhengyun Zhao, Da Pan, Fei Kou, Fei Li, Fuzhong Chen, Guosheng Dong, Han Liu, Hongda Zhang, Jin He, and 23 others. 2025a. Baichuan-m1: Pushing the medical capability of large language models. arXiv preprint arXiv:2502.12671.",
-    "Shiquan Wang, Ruiyu Fang, Zhongjiang He, Shuangyong Song, and Yongxiang Li. 2025b. Emotional support with llm-based empathetic dialogue generation. Preprint, arXiv:2507.12820.",
-    "Synthia Wang, Yuwei Cheng, Austin Song, Sarah Keedy, Marc Berman, and Nick Feamster. 2025c. Can Ilms address mental health questions? a comparison with human therapists. Preprint, arXiv:2509.12102.",
-    "Jianhui Wei, Zijie Meng, Zikai Xiao, Tianxiang Hu, Yang Feng, Zhijie Zhou, Jian Wu, and Zuozhu Liu. 2025. Medethicsqa: A comprehensive question answering benchmark for medical ethics evaluation of Ilms. Preprint, arXiv:2506.22808.",
-    "Zheyong Xie, Shaosheng Cao, Zuozhu Liu, Zheyu Ye, Zihan Niu, Chonggang Lu, Tong Xu, Enhong Chen, Zhe Xu, Yao Hu, and Wei Lu. 2025. iPET: An interactive emotional companion dialogue system with LLM-powered virtual pet world simulation. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 3: System Demonstrations), pages 416-425, Vienna, Austria. Association for Computational Linguistics.",
-    "Ancheng Xu, Di Yang, Renhao Li, Jingwei Zhu, Minghuan Tan, Min Yang, Wanxin Qiu, Mingchen Ma, Haihong Wu, Bingyu Li, Feng Sha, Chengming Li, Xiping Hu, Qiang Qu, Derek F. Wong, and Ruifeng Xu. 2025. Autocbt: An autonomous multi-agent framework for cognitive behavioral therapy in psychological counseling. Preprint, arXiv:2501.09426.",
-    "An Yang, Baosong Yang, Binyuan Hui, Bo Zheng, Bowen Yu, Chang Zhou, Chengpeng Li, Chengyuan Li, Dayiheng Liu, Fei Huang, Guanting Dong, Haoran Wei, Huan Lin, Jialong Tang, Jialin Wang, Jian Yang, Jianhong Tu, Jianwei Zhang, Jianxin Ma, and 40 others. 2024a. Qwen2 technical report. arXiv preprint arXiv:2407.10671.",
-    "Haoran Yang, Yumeng Zhang, Jiaqi Xu, Hongyuan Lu, Pheng-Ann Heng, and Wai Lam. 2024b. Unveiling the generalization power of fine-tuned large language models. In Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 884-899, Mexico City, Mexico. Association for Computational Linguistics.",
-    "Kailai Yang, Tianlin Zhang, Ziyan Kuang, Qianqian Xie, Jimin Huang, and Sophia Ananiadou. 2024c. Mentallama: interpretable mental health analysis on social media with large language models. In Proceedings of the ACM Web Conference 2024, pages 4489-4500.",
-    "Jing Ye, Lu Xiang, Yaping Zhang, and Chengqing Zong. 2024. Sweetiechat: A strategy-enhanced role-playing framework for diverse scenarios handling emotional support agent. Preprint, arXiv:2412.08389.",
-    "Tenggan Zhang, Xinjie Zhang, Jinming Zhao, Li Zhou, and Qin Jin. 2024a. ESCOT: Towards interpretable emotional support dialogue systems. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 13395-13412, Bangkok, Thailand. Association for Computational Linguistics.",
-    "Zhexin Zhang, Leqi Lei, Lindong Wu, Rui Sun, Yongkang Huang, Chong Long, Xiao Liu, Xuanyu Lei, Jie Tang, and Minlie Huang. 2024b. SafetyBench: Evaluating the safety of large language models. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 15537–15553, Bangkok, Thailand. Association for Computational Linguistics.",
-    "Zhonghua Zheng, Lizi Liao, Yang Deng, and Liqiang Nie. 2023. Building emotional support chatbots in the era of Ilms. Preprint, arXiv:2308.11584.",
-    "Jinfeng Zhou, Yuxuan Chen, Jianing Yin, Yongkang Huang, Yihan Shi, Xikun Zhang, Libiao Peng, Rongsheng Zhang, Tangjie Lv, Zhipeng Hu, Hongning Wang, and Minlie Huang. 2025. Crisp: Cognitive restructuring of negative thoughts through multi-turn supportive dialogues. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing: EMNLP 2025, pages 32462-32491, Suzhou, China. Association for Computational Linguistics.",
-    "Andy Zou, Zifan Wang, Nicholas Carlini, Milad Nasr, J. Zico Kolter, and Matt Fredrikson. 2023. Universal and transferable adversarial attacks on aligned language models. Preprint, arXiv:2307.15043."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

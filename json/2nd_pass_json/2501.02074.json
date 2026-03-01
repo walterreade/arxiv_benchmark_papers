@@ -2,118 +2,43 @@
   "filename": "2501.02074.pdf",
   "title": "A Comprehensive Framework to Operationalize Social Stereotypes for Responsible AI Evaluations",
   "arxiv_url": "https://arxiv.org/pdf/2501.02074",
-  "benchmark_measurement": "The paper proposes a general framework to operationalize social stereotypes, using stereotypes in religious contexts as a key example. It demonstrates how to capture stereotypes about religious identity, associated attributes (e.g., vegetarianism for Brahmins), and the importance of geo-cultural context (e.g., Christians in India).",
-  "religious_groups": [
-    "Christianity",
-    "Hinduism",
-    "Atheism"
+  "bias_targets": [
+    {
+      "target": "Nationality bias",
+      "methodology": "Applying the proposed five-component framework (Target Group, Attribute, Association, Perceiver, Context) to structure and analyze nationality-based stereotype instances from existing NLP datasets like SeeGULL and SBF."
+    },
+    {
+      "target": "Profession bias",
+      "methodology": "Mapping occupational stereotype instances from the StereoLMs dataset into the paper's multidimensional stereotype operationalization framework."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Applying the proposed five-component framework to structure race-based stereotype instances from the StereoLMs and CrowsPairs datasets."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Mapping age-related stereotype instances from the StereoLMs and CrowsPairs datasets into the paper's unified stereotype framework."
+    },
+    {
+      "target": "Caste bias",
+      "methodology": "Applying the proposed five-component framework to structure caste-based stereotype instances from the SPICE dataset."
+    },
+    {
+      "target": "Regional bias",
+      "methodology": "Mapping regional stereotype instances from the SPICE dataset into the paper's multidimensional stereotype framework."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Applying the proposed five-component framework to structure disability-related stereotype instances from the CrowsPairs dataset."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Mapping sexual orientation stereotype instances from the Social Bias Frames (SBF) dataset into the paper's unified stereotype framework."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Applying the proposed five-component framework to structure gender-based stereotype instances from the Social Bias Frames (SBF) dataset."
+    }
   ],
-  "models_tested": [],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "SeeGULL",
-    "StereoLMs",
-    "SPICE",
-    "CrowsPairs",
-    "Social Bias Frames",
-    "StereoSet"
-  ],
-  "continuous_testing": false,
-  "findings": "The paper uses religion as a key example to illustrate the components of its proposed stereotype framework. It highlights the temporal evolution of religious terms (e.g., 'Protestant'), the context-dependency of marginalization (e.g., Christians in India vs. the US), and includes examples of religious/caste-based stereotypes (e.g., 'brahmins are vegetarians') from existing datasets to demonstrate the framework's utility.",
-  "references": [
-    "Andrea E Abele, Nicole Hauke, Kim Peters, Eva Louvet, Aleksandra Szymkow, and Yanping Duan. 2016. Facets of the fundamental content dimensions: Agency with competence and assertiveness-communion with warmth and morality. Frontiers in psychology, 7:219720.",
-    "Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia Leoni Aleman, Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat, et al. 2023. Gpt-4 technical report. arXiv preprint arXiv:2303.08774.",
-    "Laura Ación, Laura Alonso Alemany, Luciana Benotti, Matías Bordone, Beatriz Busaniche, Lucía González, and Alexia Halvorsen. 2023. A tool to overcome technical barriers for bias assessment in human language technologies (edia paper). Inteligencia Artificial Feminista: hacia una agenda de investigación para América Latina y el Caribe.",
-    "Laura Alonso Alemany, Luciana Benotti, Hernán Maina, Lucía González, Mariela Rajngewerc, Lautaro Martínez, Jorge Sánchez, Mauro Schilman, Guido Ivetta, Alexia Halvorsen, et al. 2022. A methodology to characterize bias and harmful stereotypes in natural language processing in latin america. arXiv preprint arXiv:2207.06591.",
-    "Gordon Willard Allport, Kenneth Clark, and Thomas Pettigrew. 1954. The nature of prejudice.",
-    "Renzo Angles, Marcelo Arenas, Pablo Barceló, Aidan Hogan, Juan Reutter, and Domagoj Vrgoč. 2017. Foundations of modern query languages for graph databases. ACM Computing Surveys (CSUR), 50(5):1-40.",
-    "Rohan Anil, Andrew M Dai, Orhan Firat, Melvin Johnson, Dmitry Lepikhin, Alexandre Passos, Siamak Shakeri, Emanuel Taropa, Paige Bailey, Zhifeng Chen, et al. 2023. Palm 2 technical report. arXiv preprint arXiv:2305.10403.",
-    "Dimosthenis Antypas, Christian Arnold, Jose Camacho-Collados, Nedjma Ousidhoum, and Carla Perez Almendros. 2024. Words as trigger points in social media discussions: A large-scale case study about uk politics on reddit. arXiv preprint arXiv:2405.10213.",
-    "Albert Bandura and Richard H Walters. 1977. Social learning theory, volume 1. Prentice hall Englewood Cliffs, NJ.",
-    "Omer Bar-Tal, Hila Chefer, Omer Tov, Charles Herrmann, Roni Paiss, Shiran Zada, Ariel Ephrat, Junhwa Hur, Guanghui Liu, Amit Raj, et al. 2024. Lumiere: A space-time diffusion model for video generation. arXiv preprint arXiv:2401.12945.",
-    "Solon Barocas, Kate Crawford, Aaron Shapiro, and Hanna Wallach. 2017. The problem with bias: Allocative versus representational harms in machine learning. In 9th Annual conference of the special interest group for computing, information and society, page 1. New York, NY.",
-    "Marianne Bertrand and Sendhil Mullainathan. 2004. Are emily and greg more employable than lakisha and jamal? a field experiment on labor market discrimination. American Economic Review, 94(4):991-1013.",
-    "Shaily Bhatt, Sunipa Dev, Partha Talukdar, Shachi Dave, and Vinodkumar Prabhakaran. 2022. Recontextualizing fairness in NLP: The case of India. In Proceedings of the 2nd Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics and the 12th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 727–740, Online only. Association for Computational Linguistics.",
-    "Mukul Bhutani, Kevin Robinson, Vinodkumar Prabhakaran, Shachi Dave, and Sunipa Dev. 2024. SeeGULL multilingual: a dataset of geo-culturally situated stereotypes. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers), pages 842-854, Bangkok, Thailand. Association for Computational Linguistics.",
-    "Abeba Birhane, William Isaac, Vinodkumar Prabhakaran, Mark Diaz, Madeleine Clare Elish, Iason Gabriel, and Shakir Mohamed. 2022. Power to the people? opportunities and challenges for participatory AI. In Proceedings of the 2nd ACM Conference on Equity and Access in Algorithms, Mechanisms, and Optimization, pages 1-8.",
-    "Su Lin Blodgett, Solon Barocas, Hal Daumé III, and Hanna Wallach. 2020. Language (technology) is power: A critical survey of \"bias\" in nlp. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5454-5476.",
-    "Su Lin Blodgett, Gilsinia Lopez, Alexandra Olteanu, Robert Sim, and Hanna Wallach. 2021. Stereotyping Norwegian salmon: An inventory of pitfalls in fairness benchmark datasets. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 1004–1015, Online. Association for Computational Linguistics.",
-    "Tolga Bolukbasi, Kai-Wei Chang, James Y Zou, Venkatesh Saligrama, and Adam T Kalai. 2016. Man is to computer programmer as woman is to homemaker? debiasing word embeddings. Advances in neural information processing systems, 29.",
-    "Keosha T Bond, Natalie M Leblanc, Porche Williams, Cora-Ann Gabriel, and Ndidiamaka N Amutah-Onukagha. 2021. Race-based sexual stereotypes, gendered racism, and sexual decision making among young black cisgender women. Health Education & Behavior, 48(3):295-305.",
-    "Zalán Borsos, Raphaël Marinier, Damien Vincent, Eugene Kharitonov, Olivier Pietquin, Matt Sharifi, Dominik Roblek, Olivier Teboul, David Grangier, Marco Tagliasacchi, et al. 2023. Audiolm: a language modeling approach to audio generation. IEEE/ACM transactions on audio, speech, and language processing, 31:2523–2533.",
-    "Ramdas Borude. 1966. Linguistic stereotypes and social distance. Indian Journal of Social Work, 27(1):75-82.",
-    "Tom Bourgeade, Alessandra Teresa Cignarella, Simona Frenda, Mario Laurent, Wolfgang Schmeisser-Nieto, Farah Benamara, Cristina Bosco, Véronique Moriceau, Viviana Patti, and Mariona Taulé. 2023. A multilingual dataset of racial stereotypes in social media conversational threads. In Findings of the Association for Computational Linguistics: EACL 2023, pages 686-696.",
-    "Aylin Caliskan, Joanna J Bryson, and Arvind Narayanan. 2017. Semantics derived automatically from language corpora contain human-like biases. Science, 356(6334):183–186.",
-    "Z. Chen. 2023. Ethics and discrimination in artificial intelligence-enabled recruitment practices. Humanities and Social Sciences Communication, 10.",
-    "Myra Cheng, Esin Durmus, and Dan Jurafsky. 2023. Marked personas: Using natural language prompts to measure stereotypes in language models. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 1504–1532, Toronto, Canada. Association for Computational Linguistics.",
-    "Patricia Chiril, Farah Benamara, and Véronique Moriceau. 2021. \"be nice to your wife! the restaurants are closed\": Can gender stereotype detection improve sexism classification? In Findings of the Association for Computational Linguistics: EMNLP 2021, pages 2833-2844, Punta Cana, Dominican Republic. Association for Computational Linguistics.",
-    "Rochelle Choenni, Ekaterina Shutova, and Robert van Rooij. 2021. Stepmothers are mean and academics are pretentious: What do pretrained language models learn about you? In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 1477–1491, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics.",
-    "Kimberlé Crenshaw. 2013. Demarginalizing the intersection of race and sex: A black feminist critique of antidiscrimination doctrine, feminist theory and antiracist politics. In Feminist legal theories, pages 23-51. Routledge.",
-    "Amy JC Cuddy, Susan T Fiske, and Peter Glick. 2007. The bias map: behaviors from intergroup affect and stereotypes. Journal of personality and social psychology, 92(4):631.",
-    "Amy JC Cuddy, Susan T Fiske, Virginia SY Kwan, Peter Glick, Stéphanie Demoulin, Jacques-Philippe Leyens, Michael Harris Bond, Jean-Claude Croizet, Naomi Ellemers, Ed Sleebos, et al. 2009. Stereotype content model across cultures: Towards universal similarities and some differences. British journal of social psychology, 48(1):1–33.",
-    "Georgina Curto, Nieves Montes, Carles Sierra, Nardine Osman, and Flavio Comim. 2022. A norm optimisation approach to sdgs: tackling poverty by acting on discrimination. In International Joint Conference on Artificial Intelligence.",
-    "Aida Mostafazadeh Davani, Mohammad Atari, Brendan Kennedy, and Morteza Dehghani. 2023. Hate speech classifiers learn normative social stereotypes. Transactions of the Association for Computational Linguistics, 11:300–319.",
-    "Aida Mostafazadeh Davani, Sagar Gubbi Venkatesh, Sunipa Dev, Shachi Dave, and Vinodkumar Prabhakaran. 2024. Genil: A multilingual dataset on generalizing language. In First Conference on Language Modeling.",
-    "Awantee Deshpande, Dana Ruiter, Marius Mosbach, and Dietrich Klakow. 2022. StereoKG: Data-driven knowledge graph construction for cultural knowledge and stereotypes. In Proceedings of the Sixth Workshop on Online Abuse and Harms (WOAH), pages 67-78, Seattle, Washington (Hybrid). Association for Computational Linguistics.",
-    "Sunipa Dev, Jaya Goyal, Dinesh Tewari, Shachi Dave, and Vinodkumar Prabhakaran. 2023a. Building socio-culturally inclusive stereotype resources with community engagement. In Advances in Neural Information Processing Systems, volume 36, pages 4365-4381. Curran Associates, Inc.",
-    "Sunipa Dev, Akshita Jha, Jaya Goyal, Dinesh Tewari, Shachi Dave, and Vinodkumar Prabhakaran. 2023b. Building stereotype repositories with complementary approaches for scale and depth. In Proceedings of the First Workshop on Cross-Cultural Considerations in NLP (C3NLP), pages 84-90.",
-    "Sunipa Dev, Masoud Monajatipoor, Anaelia Ovalle, Arjun Subramonian, Jeff Phillips, and Kai-Wei Chang. 2021. Harms of gender exclusivity and challenges in non-binary representation in language technologies. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 1968-1994, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics.",
-    "Sunipa Dev, Emily Sheng, Jieyu Zhao, Aubrie Amstutz, Jiao Sun, Yu Hou, Mattie Sanseverino, Jiin Kim, Akihiro Nishi, Nanyun Peng, et al. 2022. On measures of biases and harms in nlp. In Findings of the Association for Computational Linguistics: AACL-IJCNLP 2022, pages 246-267.",
-    "Patricia G Devine and Andrew J Elliot. 1995. Are racial stereotypes really fading? the princeton trilogy revisited. Personality and social psychology bulletin, 21(11):1139–1150.",
-    "John F Dovidio, Miles Hewstone, Peter Glick, and Victoria M Esses. 2010. Prejudice, stereotyping and discrimination: Theoretical and empirical overview. Prejudice, stereotyping and discrimination, 12:3-28.",
-    "Anjalie Field, Su Lin Blodgett, Zeerak Waseem, and Yulia Tsvetkov. 2021. A survey of race, racism, and anti-racism in NLP. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 1905–1925.",
-    "Susan T Fiske. 1991. Social cognition.",
-    "Susan T Fiske, Amy JC Cuddy, Peter Glick, and Jun Xu. 2018. A model of (often mixed) stereotype content: Competence and warmth respectively follow from perceived status and competition. In Social cognition, pages 162–214. Routledge.",
-    "Kathleen C Fraser, Svetlana Kiritchenko, and Isar Nejadgholi. 2022. Computational modeling of stereotype content in text. Frontiers in artificial intelligence, 5:826207.",
-    "Kathleen C Fraser, Svetlana Kiritchenko, and Isar Nejadgholi. 2024. How does stereotype content differ across data sources? In Proceedings of the 13th Joint Conference on Lexical and Computational Semantics (* SEM 2024), pages 18-34.",
-    "Nikhil Garg, Londa Schiebinger, Dan Jurafsky, and James Zou. 2018a. Word embeddings quantify 100 years of gender and ethnic stereotypes. Proceedings of the National Academy of Sciences, 115(16):E3635-E3644.",
-    "Nikhil Garg, Londa Schiebinger, Dan Jurafsky, and James Zou. 2018b. Word embeddings quantify 100 years of gender and ethnic stereotypes. Proceedings of the National Academy of Sciences, 115(16):E3635-E3644.",
-    "James L Hilton and William Von Hippel. 1996. Stereotypes. Annual review of psychology, 47(1):237–271.",
-    "Jonathan Ho, William Chan, Chitwan Saharia, Jay Whang, Ruiqi Gao, Alexey Gritsenko, Diederik P Kingma, Ben Poole, Mohammad Norouzi, David J Fleet, et al. 2022. Imagen video: High definition video generation with diffusion models. arXiv preprint arXiv:2210.02303.",
-    "Aidan Hogan, Eva Blomqvist, Michael Cochez, Claudia d'Amato, Gerard De Melo, Claudio Gutierrez, Sabrina Kirrane, José Emilio Labra Gayo, Roberto Navigli, Sebastian Neumaier, et al. 2021. Knowledge graphs. ACM Computing Surveys (Csur), 54(4):1-37.",
-    "Dirk Hovy and Shrimai Prabhumoye. 2021. Five sources of bias in natural language processing. Language and linguistics compass, 15(8):e12432.",
-    "Dirk Hovy and Diyi Yang. 2021. The importance of modeling social factors of language: Theory and practice. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 588-602, Online. Association for Computational Linguistics.",
-    "Ben Hutchinson, Vinodkumar Prabhakaran, Emily Denton, Kellie Webster, Yu Zhong, and Stephen Denuyl. 2020. Social biases in nlp models as barriers for persons with disabilities. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5491-5501.",
-    "Younghoon Jeong, Juhyun Oh, Jongwon Lee, Jaimeen Ahn, Jihyung Moon, Sungjoon Park, and Alice Oh. 2022. KOLD: Korean offensive language dataset. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 10818-10833, Abu Dhabi, United Arab Emirates. Association for Computational Linguistics.",
-    "Akshita Jha, Aida Mostafazadeh Davani, Chandan K Reddy, Shachi Dave, Vinodkumar Prabhakaran, and Sunipa Dev. 2023. SeeGULL: A stereotype benchmark with broad geo-cultural coverage leveraging generative models. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 9851-9870, Toronto, Canada. Association for Computational Linguistics.",
-    "John T Jost and Mahzarin R Banaji. 1994. The role of stereotyping in system-justification and the production of false consciousness. British journal of social psychology, 33(1):1-27.",
-    "Svetlana Kiritchenko and Saif Mohammad. 2018. Examining gender and race bias in two hundred sentiment analysis systems. In Proceedings of the Seventh Joint Conference on Lexical and Computational Semantics, pages 43-53, New Orleans, Louisiana. Association for Computational Linguistics.",
-    "Mary E Kite, Bernard E Whitley Jr, and Lisa S Wagner. 2022. Psychology of prejudice and discrimination. Routledge.",
-    "Alex Koch, Roland Imhoff, Ron Dotsch, Christian Unkelbach, and Hans Alves. 2016. The abc of stereotypes about groups: Agency/socioeconomic success, conservative–progressive beliefs, and communion. Journal of personality and social psychology, 110(5):675.",
-    "Felix Kreuk, Gabriel Synnaeve, Adam Polyak, Uriel Singer, Alexandre Défossez, Jade Copet, Devi Parikh, Yaniv Taigman, and Yossi Adi. 2022. Audiogen: Textually guided audio generation. arXiv preprint arXiv:2209.15352.",
-    "Atharva Kulkarni, Sarah Masud, Vikram Goyal, and Tanmoy Chakraborty. 2023. Revisiting hate speech benchmarks: From data curation to system deployment. In Proceedings of the 29th ACM SIGKDD Conference on Knowledge Discovery and Data Mining, KDD '23, page 4333-4345, New York, NY, USA. Association for Computing Machinery.",
-    "Kurt Lewin. 1951. Intention, will and need.",
-    "Hao Lin, Pradeep Nalluri, Lantian Li, Yifan Sun, and Yongjun Zhang. 2022. Multiplex anti-Asian sentiment before and during the pandemic: Introducing new datasets from Twitter mining. In Proceedings of the 12th Workshop on Computational Approaches to Subjectivity, Sentiment & Social Media Analysis, pages 16-24, Dublin, Ireland. Association for Computational Linguistics.",
-    "C Neil Macrae and Galen V Bodenhausen. 2000. Social cognition: Thinking categorically about others. Annual review of psychology, 51(1):93-120.",
-    "C Neil Macrae, Charles Stangor, and Miles Hewstone. 1996. Stereotypes and stereotyping. Guilford Press.",
-    "Vijit Malik, Sunipa Dev, Akihiro Nishi, Nanyun Peng, and Kai-Wei Chang. 2022. Socially aware bias measurements for Hindi language representations. In Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 1041-1052, Seattle, United States. Association for Computational Linguistics.",
-    "Daphna Motro, Jonathan B. Evans, Aleksander P. J. Ellis, and III Lehman Benson. 2021. Race and reactions to women's expressions of anger at work: Examining the effects of the \"angry black woman\" stereotype.",
-    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2021. Stereoset: Measuring stereotypical bias in pretrained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 5356-5371.",
-    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel Bowman. 2020. Crows-pairs: A challenge dataset for measuring social biases in masked language models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1953–1967.",
-    "Gandalf Nicolas, Xuechunzi Bai, and Susan T Fiske. 2021. Comprehensive stereotype content dictionaries using a semi-automated method. European Journal of Social Psychology, 51(1):178–196.",
-    "Gandalf Nicolas, Xuechunzi Bai, and Susan T Fiske. 2022. A spontaneous stereotype content model: Taxonomy, properties, and prediction. Journal of personality and social psychology, 123(6):1243.",
-    "Gandalf Nicolas and Aylin Caliskan. 2024a. Directionality and representativeness are differentiable components of stereotypes in large language models. PNAS nexus, 3(11):pgae493.",
-    "Gandalf Nicolas and Aylin Caliskan. 2024b. A taxonomy of stereotype content in large language models. arXiv preprint arXiv:2408.00162.",
-    "Ali Omrani, Alireza Salkhordeh Ziabari, Charles Yu, Preni Golazizian, Brendan Kennedy, Mohammad Atari, Heng Ji, and Morteza Dehghani. 2023. Social-group-agnostic bias mitigation via the stereotype content model. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 4123–4139, Toronto, Canada. Association for Computational Linguistics.",
-    "Heiko Paulheim. 2017. Knowledge graph refinement: A survey of approaches and evaluation methods. Semantic web, 8(3):489-508.",
-    "Mohaimenul Azam Khan Raiaan, Md Saddam Hossain Mukta, Kaniz Fatema, Nur Mohammad Fahad, Sadman Sakib, Most Marufatul Jannat Mim, Jubaer Ahmad, Mohammed Eunus Ali, and Sami Azam. 2024. A review on large language models: Architectures, applications, taxonomies, open issues and challenges. IEEE Access.",
-    "Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, and Björn Ommer. 2022. High-resolution image synthesis with latent diffusion models. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, pages 10684-10695.",
-    "Rachel Rudinger, Jason Naradowsky, Brian Leonard, and Benjamin Van Durme. 2018. Gender bias in coreference resolution. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 8-14, New Orleans, Louisiana. Association for Computational Linguistics.",
-    "Chitwan Saharia, William Chan, Saurabh Saxena, Lala Li, Jay Whang, Emily L Denton, Kamyar Ghasemipour, Raphael Gontijo Lopes, Burcu Karagol Ayan, Tim Salimans, et al. 2022. Photorealistic text-to-image diffusion models with deep language understanding. Advances in neural information processing systems, 35:36479-36494.",
-    "Nithya Sambasivan, Erin Arnesen, Ben Hutchinson, Tulsee Doshi, and Vinodkumar Prabhakaran. 2021. Re-imagining algorithmic fairness in india and beyond. In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, pages 315-328.",
-    "Maarten Sap, Dallas Card, Saadia Gabriel, Yejin Choi, and Noah A Smith. 2019. The risk of racial bias in hate speech detection. In Proceedings of the 57th annual meeting of the association for computational linguistics, pages 1668-1678.",
-    "Maarten Sap, Saadia Gabriel, Lianhui Qin, Dan Jurafsky, Noah A. Smith, and Yejin Choi. 2020. Social bias frames: Reasoning about social and power implications of language. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5477–5490, Online. Association for Computational Linguistics.",
-    "David J Schneider. 2005. The psychology of stereotyping. Guilford Press.",
-    "Sandeep Singh Sengar, Affan Bin Hasan, Sanjay Kumar, and Fiona Carroll. 2024. Generative artificial intelligence: a systematic review and applications. Multimedia Tools and Applications, pages 1–40.",
-    "Renee Shelby, Shalaleh Rismani, Kathryn Henne, AJung Moon, Negar Rostamzadeh, Paul Nicholas, N'Mah Yilla-Akbari, Jess Gallegos, Andrew Smart, Emilio Garcia, and Gurleen Virk. 2023. Sociotechnical harms of algorithmic systems: Scoping a taxonomy for harm reduction. In Proceedings of the 2023 AAAI/ACM Conference on AI, Ethics, and Society, AIES '23, page 723–741, New York, NY, USA. Association for Computing Machinery.",
-    "Henri Tajfel, John C Turner, William G Austin, and Stephen Worchel. 1979. An integrative theory of intergroup conflict. Organizational identity: A reader, 56(65):9780203505984–16.",
-    "John C Turner, Rupert J Brown, and Henri Tajfel. 1979. Social comparison and group interest in ingroup favouritism. European journal of social psychology, 9(2):187–204.",
-    "Eddie L Ungless, Amy Rafferty, Hrichika Nag, and Björn Ross. 2022. A robust bias mitigation procedure based on the stereotype content model. arXiv preprint arXiv:2210.14552.",
-    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang. 2018. Gender bias in coreference resolution: Evaluation and debiasing methods. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 15-20, New Orleans, Louisiana. Association for Computational Linguistics.",
-    "Xuhui Zhou, Hao Zhu, Akhila Yerukola, Thomas Davidson, Jena D. Hwang, Swabha Swayamdipta, and Maarten Sap. 2023. COBRA frames: Contextual reasoning about effects and harms of offensive statements. In Findings of the Association for Computational Linguistics: ACL 2023, pages 6294-6315, Toronto, Canada. Association for Computational Linguistics."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

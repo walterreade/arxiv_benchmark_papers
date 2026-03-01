@@ -2,23 +2,52 @@
   "filename": "2503.08815.pdf",
   "title": "Cross-Examiner: Evaluating Consistency of Large Language Model-Generated Explanations",
   "arxiv_url": "https://arxiv.org/pdf/2503.08815",
-  "bias_targets": [
-    {
-      "target": "Religious bias",
-      "methodology": "Evaluating the consistency of LLM-generated chain-of-thought explanations using a cross-examiner model that generates targeted yes/no follow-up questions for prompts featuring characters of different religions (e.g., Jewish vs. Sikh)."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Evaluating the consistency of LLM-generated chain-of-thought explanations using a cross-examiner model that generates targeted yes/no follow-up questions for prompts featuring characters of different sexual orientations (e.g., gay, pansexual, lesbian, straight)."
-    },
-    {
-      "target": "Racial bias",
-      "methodology": "Evaluating the consistency of LLM-generated chain-of-thought explanations using a cross-examiner model that generates targeted yes/no follow-up questions for prompts featuring characters of different racial or ethnic backgrounds (e.g., Black, Asian, South American)."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Evaluating the consistency of LLM-generated chain-of-thought explanations using a cross-examiner model that generates targeted yes/no follow-up questions for prompts involving gendered stereotypes and characters."
-    }
+  "religious_groups": [
+    "Judaism",
+    "Sikhism"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "Flan-ul2",
+    "Llama-3",
+    "Mixtral",
+    "Granite-34b"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "BBQ"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper does not present findings about specific religious biases in models. Instead, it uses scenarios involving religious identities (e.g., a Jewish person and a Sikh person) as examples to demonstrate the effectiveness of its 'Cross-Examiner' method for generating follow-up questions. The core findings are methodological, showing that a neuro-symbolic approach for generating these questions is more effective at producing high-quality, targeted probes for inconsistencies than purely LLM-based approaches.",
+  "references": [
+    "Shourya Aggarwal, Divyanshu Mandowara, Vishwa-jeet Agrawal, Dinesh Khandelwal, Parag Singla, and Dinesh Garg. 2021. Explanations for Common-senseQA: New Dataset and Models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), page 3050–3065. Association for Computational Linguistics.",
+    "Gabor Angeli, Melvin Jose Johnson Premkumar, and Christopher D Manning. 2015. Leveraging linguistic structure for open domain information extraction. In Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics and the 7th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 344-354.",
+    "Pepa Atanasova, Oana-Maria Camburu, Christina Li-oma, Thomas Lukasiewicz, Jakob Grue Simonsen, and Isabelle Augenstein. 2023. Faithfulness tests for natural language explanations. arXiv preprint arXiv:2305.18029.",
+    "Maciej Besta, Nils Blach, Ales Kubicek, Robert Gersten-berger, Michal Podstawski, Lukas Gianinazzi, Joanna Gajda, Tomasz Lehmann, Hubert Niewiadomski, Piotr Nyczyk, et al. 2024. Graph of thoughts: Solving elaborate problems with large language models. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 38, pages 17682–17690.",
+    "Oana-Maria Camburu, Tim Rockt\"aschel, Thomas Lukasiewicz, and Phil Blunsom. 2018. e-snli: Natural language inference with natural language explanations. In S. Bengio, H. Wallach, H. Larochelle, K. Grauman, N. Cesa-Bianchi, and R. Garnett, editors, Advances in Neural Information Processing Systems 31, pages 9539-9549. Curran Associates, Inc.",
+    "Yanda Chen, Ruiqi Zhong, Narutatsu Ri, Chen Zhao, He He, Jacob Steinhardt, Zhou Yu, and Kathleen McKeown. 2023. Do models explain themselves? counterfactual simulatability of natural language explanations. arXiv preprint arXiv:2307.08678.",
+    "Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Amy Yang, Angela Fan, et al. 2024. The llama 3 herd of models. arXiv preprint arXiv:2407.21783.",
+    "Suyu Ge, Chunting Zhou, Rui Hou, Madian Khabsa, Yi-Chia Wang, Qifan Wang, Jiawei Han, and Yuning Mao. 2023. Mart: Improving Ilm safety with multi-round automatic red-teaming. arXiv preprint arXiv:2311.07689.",
+    "Andrew F Hayes and Klaus Krippendorff. 2007. Answering the call for a standard reliability measure for coding data. Communication methods and measures, 1(1):77–89.",
+    "Xiaomeng Hu, Pin-Yu Chen, and Tsung-Yi Ho. 2023. Radar: Robust ai-text detection via adversarial learning. Advances in Neural Information Processing Systems, 36:15077–15095.",
+    "Alon Jacovi and Yoav Goldberg. 2020. Towards faithfully interpretable nlp systems: How should we define and evaluate faithfulness? arXiv preprint arXiv:2004.03685.",
+    "Albert Q Jiang, Alexandre Sablayrolles, Antoine Roux, Arthur Mensch, Blanche Savary, Chris Bamford, Devendra Singh Chaplot, Diego de las Casas, Emma Bou Hanna, Florian Bressand, et al. 2024. Mixtral of experts. arXiv preprint arXiv:2401.04088.",
+    "Christopher D Manning, Mihai Surdeanu, John Bauer, Jenny Rose Finkel, Steven Bethard, and David McClosky. 2014. The stanford corenlp natural language processing toolkit. In Proceedings of 52nd annual meeting of the association for computational linguistics: system demonstrations, pages 55-60.",
+    "Mayank Mishra, Matt Stallone, Gaoyuan Zhang, Yikang Shen, Aditya Prasad, Adriana Meza Soria, Michele Merler, Parameswaran Selvam, Saptha Surendran, Shivdeep Singh, Manish Sethi, Xuan-Hong Dang, Pengyuan Li, Kun-Lung Wu, Syed Zawad, Andrew Coleman, Matthew White, Mark Lewis, Raju Pavuluri, Yan Koyfman, Boris Lublinsky, Maximilien de Bayser, Ibrahim Abdelaziz, Kinjal Basu, Mayank Agarwal, Yi Zhou, Chris Johnson, Aanchal Goyal, Hima Patel, Yousaf Shah, Petros Zerfos, Heiko Ludwig, Asim Munawar, Maxwell Crouse, Pavan Kapanipathi, Shweta Salaria, Bob Calio, Sophia Wen, Seetharami Seelam, Brian Belgodere, Carlos Fonseca, Amith Singhee, Nirmit Desai, David D. Cox, Ruchir Puri, and Rameswar Panda. 2024. Granite code models: A family of open foundation models for code intelligence. Preprint, arXiv:2405.04324.",
+    "Letitia Parcalabescu and Anette Frank. 2023. On measuring faithfulness of natural language explanations. arXiv preprint arXiv:2311.07466.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel Bowman. 2022. BBQ: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2086-2105, Dublin, Ireland. Association for Computational Linguistics.",
+    "Suzanna Sia, Anton Belyy, Amjad Almahairi, Madian Khabsa, Luke Zettlemoyer, and Lambert Mathias. 2023. Logical satisfiability of counterfactuals for faithful explanations in nli. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 37, pages 9837-9845.",
+    "Noah Y Siegel, Oana-Maria Camburu, Nicolas Heess, and Maria Perez-Ortiz. 2024. The probabilities also matter: A more faithful metric for faithfulness of freetext explanations in large language models. arXiv preprint arXiv:2404.03189.",
+    "Yi Tay, Mostafa Dehghani, Vinh Q. Tran, Xavier Garcia, Jason Wei, Xuezhi Wang, Hyung Won Chung, Siamak Shakeri, Dara Bahri, Tal Schuster, Huaixiu Steven Zheng, Denny Zhou, Neil Houlsby, and Donald Metzler. 2023. U12: Unifying language learning paradigms. Preprint, arXiv:2205.05131.",
+    "Miles Turpin, Julian Michael, Ethan Perez, and Samuel Bowman. 2023. Language models don't always say what they think: Unfaithful explanations in chain-of-thought prompting. In Advances in Neural Information Processing Systems, volume 36, pages 74952-74965. Curran Associates, Inc.",
+    "Denny Vrandečić and Markus Krötzsch. 2014. Wikidata: a free collaborative knowledgebase. Communications of the ACM, 57(10):78-85.",
+    "Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Fei Xia, Ed Chi, Quoc V Le, Denny Zhou, et al. 2022. Chain-of-thought prompting elicits reasoning in large language models. Advances in Neural Information Processing Systems, 35:24824-24837.",
+    "Shunyu Yao, Dian Yu, Jeffrey Zhao, Izhak Shafran, Tom Griffiths, Yuan Cao, and Karthik Narasimhan. 2024. Tree of thoughts: Deliberate problem solving with large language models. Advances in Neural Information Processing Systems, 36."
+  ],
+  "measurement_description": "Consistency checking of model explanations to detect potential biases or stereotypes related to religious identity. The paper used examples involving Jewish and Sikh individuals to test if a model's reasoning was consistent across its explanations."
 }

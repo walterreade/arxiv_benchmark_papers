@@ -2,83 +2,27 @@
   "filename": "2410.13146.pdf",
   "title": "debiaSAE: Benchmarking and Mitigating Vision-Language Model Bias",
   "arxiv_url": "https://arxiv.org/pdf/2410.13146",
-  "benchmark_measurement": "The benchmark measured the selection of stereotypical captions over anti-stereotypical captions in vision-language tasks related to religion, using the Vision-Language Bias Score (VLBS) from the VLStereoSet dataset. A lower score indicates less bias.",
-  "religious_groups": [
-    "Religion (unspecified groups)"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluated using pronoun resolution accuracy across different occupations (VisoGender) measured via Resolution Bias (RB), measuring Demographic Parity Ratio (DPR) for facial attribute classification tasks across genders (UTKFace, PATA, CelebA), and calculating the selection rate of stereotypical versus anti-stereotypical captions (VLStereoSet)."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Measured by calculating the Demographic Parity Ratio (DPR) for visual classification tasks across different racial groups (UTKFace, PATA) and tracking the selection frequency of racially stereotypical captions over anti-stereotypical ones in multiple-choice scenarios (VLStereoSet)."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Assessed by computing the Demographic Parity Ratio (DPR) to evaluate performance and fairness discrepancies across different age groups during facial attribute prediction and caption selection tasks (UTKFace, PATA)."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluated by measuring the Vision-Language Bias Score (VLBS), which calculates the percentage of instances where models select religiously stereotypical captions over anti-stereotypical ones (VLStereoSet)."
+    },
+    {
+      "target": "Professional/Occupational bias",
+      "methodology": "Measured by testing how strongly models associate specific genders with certain professional roles via pronoun resolution tasks (VisoGender) and computing the preference for stereotypical professional captions (VLStereoSet)."
+    }
   ],
-  "models_tested": [
-    "LLaVa v1.6 34B (llava-v1.6-34b-hf)",
-    "LLaVa v1.6 Vicuna 7B (llava-v1.6-vicuna-7b)",
-    "LLaVa v1.6 Mistral 7B (llava-v1.6-mistral-7b-hf)",
-    "PaliGemma-2 10B 224 (google/paligemma2-10b-pt-224)",
-    "PaliGemma-2 10B 448 (google/paligemma2-10b-pt-448)",
-    "CLIP L-224",
-    "CLIP L-336",
-    "Gemini 1.5 Flash (gemini-1.5-flash-001)"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "CelebA",
-    "PATA",
-    "UTKFace",
-    "Visogender",
-    "VLStereoSet"
-  ],
-  "continuous_testing": false,
-  "findings": "Using the VLStereoSet dataset, the paper evaluated models for stereotypical bias in a 'Religion' category. The Vision-Language Bias Scores (VLBS) were generally high, indicating bias (e.g., scores from 20 to 100, where 0 is unbiased). For some models like Gemini 1.5 Flash, adding an image reduced the bias score (from 40.00 to 20.00), while for others, it had no effect or still resulted in high bias scores.",
-  "references": [
-    "Sarah Bird, Miro Dudík, Richard Edgar, Brandon Horn, Roman Lutz, Vanessa Milan, Mehrnoosh Sameki, Hanna Wallach, and Kathleen Walker. Fairlearn: A toolkit for assessing and improving fairness in AI. Technical Report MSR-TR-2020-32, Microsoft, May 2020. URL https://www.microsoft.com/en-us/research/publication/fairlearn-a-toolkit-for-assessing-and-improving-fairness-in-ai/.",
-    "Trenton Bricken, Jonathan Marcus, Siddharth Mishra-Sharma, Meg Tong, Ethan Perez, Mrinank Sharma, Kelley Rivoire, and Thomas Henighan. Towards monosemanticity: Decomposing language models with dictionary learning. ArXiv, abs/2309.08600, 2023. URL https://arxiv.org/abs/2309.08600.",
-    "Laura Cabello, Emanuele Bugliarello, Stephanie Brandl, and Desmond Elliott. Evaluating bias and fairness in gender-neutral pretrained vision-and-language models. In Houda Bouamor, Juan Pino, and Kalika Bali (eds.), Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, pp. 8465–8483, Singapore, December 2023. Association for Computational Linguistics. doi: 10.18653/v1/2023.emnlp-main.525. URL https://aclanthology.org/2023.emnlp-main.525.",
-    "Sviatoslav Chalnev, Matthew Siu, and Arthur Conmy. Improving steering vectors by targeting sparse autoencoder features, 2024. URL https://arxiv.org/abs/2411.02193.",
-    "Yangyi Chen, Karan Sikka, Michael Cogswell, Heng Ji, and Ajay Divakaran. Measuring and improving chain-of-thought reasoning in vision-language models. In Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pp. 192–210, Mexico City, Mexico, June 2024. Association for Computational Linguistics. doi: 10.18653/v1/2024.naacl-long. 11. URL https://aclanthology.org/2024.naacl-long.11.",
-    "H. Cunningham, A. Ewart, L. Smith, R. Huben, and L. Sharkey. Scaling and evaluating sparse autoencoders. ArXiv, abs/2406.04093, 2023. URL https://arxiv.org/abs/2406.04093.",
-    "Jwala Dhamala, Tony Sun, Varun Kumar, Satyapriya Krishna, Yada Pruksachatkun, Kai-Wei Chang, and Rahul Gupta. Bold: Dataset and metrics for measuring biases in open-ended language generation. In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, pp. 862–872, 2021.",
-    "Simone Fabbrizzi, Symeon Papadopoulos, Eirini Ntoutsi, and Ioannis Kompatsiaris. A survey on bias in visual datasets. Computer Vision and Image Understanding, 225:103515, 2023.",
-    "Kathleen C. Fraser and Svetlana Kiritchenko. Examining gender and racial bias in large vision-language models using a novel dataset of parallel images. In Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics (EACL), March 2024.",
-    "Chaoyou Fu, Peixian Chen, Yunhang Shen, Yulei Qin, Mengdan Zhang, Xu Lin, Jinrui Yang, Xiawu Zheng, Ke Li, Xing Sun, Yunsheng Wu, and Rongrong Ji. Mme: A comprehensive evaluation benchmark for multimodal large language models, 2024. URL https://arxiv. org/abs/2306.13394.",
-    "Isabel Gallegos, Kyunghyun Cho, and Graham Neubig. Bias and fairness in large language models: A survey. arXiv preprint arXiv:2309.00770, 2023.",
-    "Jack Gallifant, Shan Chen, Kuleen Sasse, Hugo Aerts, Thomas Hartvigsen, and Danielle S. Bitterman. Sparse autoencoder features for classifications and transferability, 2025. URL https://arxiv.org/abs/2502.11367.",
-    "Leo Gao, Jonathan Tow, Baber Abbasi, Stella Biderman, Sid Black, Anthony DiPofi, Charles Foster, Laurence Golding, Jeffrey Hsu, Alain Le Noac’h, Haonan Li, Kyle McDonell, Niklas Muennighoff, Chris Ociepa, Jason Phang, Laria Reynolds, Hailey Schoelkopf, Aviya Skowron, Lintang Sutawika, Eric Tang, Anish Thite, Ben Wang, Kevin Wang, and Andy Zou. A framework for few-shot language model evaluation, 12 2023. URL https://zenodo.org/records/10256836.",
-    "Alex Goldin et al. Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context. arXiv preprint arXiv:2403.05530, 2024.",
-    "Yash Goyal, Tejas Khot, Douglas Summers-Stay, Dhruv Batra, and Devi Parikh. Making the v in vqa matter: Elevating the role of image understanding in visual question answering, 2017. URL https://arxiv.org/abs/1612.00837.",
-    "Siobhan Mackenzie Hall, Fernanda Gonçalves Abrantes, Hanwen Zhu, Grace Sodunke, Aleksandar Shtedritski, and Hannah Rose Kirk. Visogender: A dataset for benchmarking gender bias in image-text pronoun resolution. arXiv preprint arXiv:2306.12424, 2023.",
-    "Kimia Hamidieh, Haoran Zhang, Walter Gerych, Thomas Hartvigsen, and Marzyeh Ghassemi. Identifying implicit social biases in vision-language models, 2024. URL https://arxiv.org/abs/2411.00997.",
-    "Xiaotian Han, Jianfeng Chi, Yu Chen, Qifan Wang, Han Zhao, Na Zou, and Xia Hu. Ffb: A fair fairness benchmark for in-processing group fairness methods, 2024. URL https: //arxiv.org/abs/2306.09468.",
-    "Drew A. Hudson and Christopher D. Manning. Gqa: A new dataset for real-world visual reasoning and compositional question answering, 2019. URL https://arxiv.org/abs/ 1902.09506.",
-    "Adam Karvonen, Dhruv Pai, Mason Wang, and Ben Keigwin. Sieve: Saes beat baselines on a real-world task (a code generation case study). Tilde Research Blog, 12 2024. URL https://www.tilderesearch.com/blog/sieve. Blog post.",
-    "Nayeong Kim, Sehyun Hwang, Sungsoo Ahn, Jaesik Park, and Suha Kwak. Learning debiased classifier with biased committee. In Proceedings of the 36th International Conference on Neural Information Processing Systems, NIPS ’22, Red Hook, NY, USA, 2024. Curran Associates Inc. ISBN 9781713871088.",
-    "Pauline T Kim. Race-aware algorithms: Fairness, nondiscrimination and affirmative action. Cal. L. Rev., 110:1539, 2022.",
-    "Connor Kissane, Robert Krzyzanowski, Arthur Conmy, and Neel Nanda. Saes (usually) transfer between base and chat models. Alignment Forum, 2024. URL https://www.alignmentforum.org/posts/fmwk6qxrpW8d4jvbd/ saes-usually-transfer-between-base-and-chat-models.",
-    "Alex Krizhevsky. Learning multiple layers of features from tiny images. Technical report, 2009.",
-    "Taras Kutsyk, Tommaso Mencattini, and Ciprian Florea. Do sparse autoencoders (saes) transfer across base and finetuned language models?, 2024. URL https://www.lesswrong.com/ posts/bsXPTiAhhwt5nwBW3/do-sparse-autoencoders-saes-transfer-across-base-and.",
-    "Nayeon Lee, Seonghyeon Yun, Jaehyung Kang, Youngmin Kim, Seonghyun Yoon, and Sung Ju Yoon. Survey of social bias in vision-language models. arXiv preprint arXiv:2309.14381, 2023.",
-    "Haotian Liu, Chunyuan Li, Qingyang Wu, and Yong Jae Lee. Visual instruction tuning. arXiv preprint arXiv:2304.08485, 2023.",
-    "Ziwei Liu, Ping Luo, Xiaogang Wang, and Xiaoou Tang. Deep learning face attributes in the wild. In Proceedings of International Conference on Computer Vision (ICCV), 2015.",
-    "Thomas McGrath, Daniel Balsam, Myra Deng, and Eric Ho. Understanding and steering llama 3 with sparse autoencoders. Goodfire.ai Research Blog, 12 2024. URL https://www. goodfire.ai/papers/understanding-and-steering-llama-3. Blog post.",
-    "Moin Nadeem, Anna Bethke, and Siva Reddy. Stereoset: Measuring stereotypical bias in pretrained language models. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pp. 6985–7001, 2020.",
-    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R Bowman. Crows-pairs: A challenge dataset for measuring social biases in masked language models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pp. 1953–1967, 2020.",
-    "Debora Nozza, Federico Bianchi, and Dirk Hovy. Honest: Measuring hurtful sentence completion in language models. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pp. 2398–2406, 2021.",
-    "Kyle O’Brien, David Majercak, Xavier Fernandes, Richard Edgar, Jingya Chen, Harsha Nori, Dean Carignan, Eric Horvitz, and Forough Poursabzi-Sangde. Steering language model refusal with sparse autoencoders, 2024. URL https://arxiv.org/abs/2411.11296.",
-    "Alicia Parrish, Nikita Nangia, Anhad Gupta, and Samuel R Bowman. Bbq: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, pp. 2086–2105, 2022.",
-    "Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, et al. Learning transferable visual models from natural language supervision. arXiv preprint arXiv:2103.00020, 2021.",
-    "Chahat Raj, Anjishnu Mukherjee, Aylin Caliskan, Antonios Anastasopoulos, and Ziwei Zhu. Biasdora: Exploring hidden biased associations in vision-language models, 2024. URL https://arxiv.org/abs/2407.02066.",
-    "Ashutosh Sathe, Prachi Jain, and Sunayana Sitaram. A unified framework and dataset for assessing social bias in vision-language models, 2024. URL https://arxiv.org/abs/ 2402.14636.",
-    "Mrinank Sharma, Meg Tong, Tomasz Korbak, David Duvenaud, Amanda Askell, Samuel R. Bowman, Newton Cheng, Esin Durmus, Zac Hatfield-Dodds, Scott R. Johnston, Shauna Kenepp, Timothy Maxwell, Sam Mccandlish, Kamal Ndousse, Oliver Rausch, Nicholas Schiefer, De Yan, Miranda Zhang, and Ethan Perez. Towards understanding sycophancy in language models, 2023. URL https://arxiv.org/abs/2310.13548.",
-    "Mayank Singh, Rajdeep Gupta, Navonil Bhattacharya, Soumik Ghosh, Ritwick Dutt, Zhangyang Zeng, and Zheng Wang. Pata: A dataset for probing the truthfulness of a model’s visual question answering. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 20295–20304, 2022.",
-    "Andreas Steiner, André Susano Pinto, Michael Tschannen, Daniel Keysers, Xiao Wang, Yonatan Bitton, Alexey Gritsenko, Matthias Minderer, Anthony Sherbondy, Shangbang Long, Aravindh Chakravarty, Qixing Huang, Xiaohua Zhai, and Lucas Beyer. Paligemma: A family of versatile vision-language models, 2024. URL https://arxiv.org/abs/2412.03555.",
-    "Yunhao Tian, Yiqun Shen, Lifan Jiang, Yue Shen, Ying Yin, and Ping Luo. Vlstereoset: A study of stereotypical bias in pre-trained vision-language models. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pp. 7553–7567, 2022.",
-    "Zijie J Wang, Evan Montoya, David Munechika, Haoyang Yang, Benjamin Hoover, and Duen Horng Chau. Diffusiondb: A large-scale prompt gallery dataset for text-to-image generative models. arXiv preprint arXiv:2210.14896, 2022a.",
-    "Zirui Wang, Jiahui Cao, Jiayun Cui, Yifei Feng, Chengqi Tao, Wei Zhao, and Zhiyuan Liu. Unifying vision-language pre-training with multiway contrastive learning. arXiv preprint arXiv:2211.15102, 2022b.",
-    "Xuyang Wu, Yuan Wang, Hsin-Tai Wu, Zhiqiang Tao, and Yi Fang. Evaluating fairness in large vision–language models across diverse demographic attributes and prompts, 2024. URL https://arxiv.org/abs/2402.17978.",
-    "Yuzhe Yang, Yujia Liu, Xin Liu, Avanti Gulhane, Domenico Mastrodicasa, Wei Wu, Edward J Wang, Dushyant W Sahani, and Shwetak Patel. Demographic bias of expert-level vision- language foundation models in medical imaging. arXiv preprint arXiv:2402.14815, 2024.",
-    "Haoran Zhang, Amy X Lu, Mohamed Abdalla, Matthew McDermott, and Marzyeh Ghassemi. Hurtful words? quantifying bias in clinical contextual word embeddings. In Proceedings of the ACM Conference on Health, Inference, and Learning, pp. 110–120, 2020.",
-    "Zhifei Zhang, Yang Song, and Hairong Qi. Age progression/regression by conditional adversarial autoencoder. In IEEE Conference on Computer Vision and Pattern Recognition (CVPR). IEEE, 2017."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

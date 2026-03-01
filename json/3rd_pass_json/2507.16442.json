@@ -2,43 +2,84 @@
   "filename": "2507.16442.pdf",
   "title": "Dutch CrowS-Pairs: Adapting a Challenge Dataset for Measuring Social Biases in Language Models for Dutch",
   "arxiv_url": "https://arxiv.org/pdf/2507.16442",
-  "bias_targets": [
-    {
-      "target": "Racial/Color bias",
-      "methodology": "Comparing model preference for stereotypical versus anti-stereotypical sentence pairs using pseudo-log-likelihood scoring for masked language models and likelihood-based multiple-choice prompts (including persona assignments) for autoregressive models."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Comparing model preference for stereotypical versus anti-stereotypical sentence pairs using pseudo-log-likelihood scoring for masked language models and likelihood-based multiple-choice prompts (including persona assignments) for autoregressive models."
-    },
-    {
-      "target": "Nationality bias",
-      "methodology": "Comparing model preference for stereotypical versus anti-stereotypical sentence pairs using pseudo-log-likelihood scoring for masked language models and likelihood-based multiple-choice prompts (including persona assignments) for autoregressive models."
-    },
-    {
-      "target": "Socioeconomic bias",
-      "methodology": "Comparing model preference for stereotypical versus anti-stereotypical sentence pairs using pseudo-log-likelihood scoring for masked language models and likelihood-based multiple-choice prompts (including persona assignments) for autoregressive models."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Comparing model preference for stereotypical versus anti-stereotypical sentence pairs using pseudo-log-likelihood scoring for masked language models and likelihood-based multiple-choice prompts (including persona assignments) for autoregressive models."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Comparing model preference for stereotypical versus anti-stereotypical sentence pairs using pseudo-log-likelihood scoring for masked language models and likelihood-based multiple-choice prompts (including persona assignments) for autoregressive models."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Comparing model preference for stereotypical versus anti-stereotypical sentence pairs using pseudo-log-likelihood scoring for masked language models and likelihood-based multiple-choice prompts (including persona assignments) for autoregressive models."
-    },
-    {
-      "target": "Physical appearance bias",
-      "methodology": "Comparing model preference for stereotypical versus anti-stereotypical sentence pairs using pseudo-log-likelihood scoring for masked language models and likelihood-based multiple-choice prompts (including persona assignments) for autoregressive models."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Comparing model preference for stereotypical versus anti-stereotypical sentence pairs using pseudo-log-likelihood scoring for masked language models and likelihood-based multiple-choice prompts (including persona assignments) for autoregressive models."
-    }
+  "religious_groups": [
+    "Islam",
+    "Mormonism",
+    "Christianity",
+    "Judaism",
+    "Catholicism",
+    "Amish"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "BERTje",
+    "RobBERT",
+    "multilingual BERT",
+    "BERT",
+    "RoBERTa",
+    "GEITje",
+    "Mistral-7B",
+    "CamemBERT",
+    "FlauBERT"
+  ],
+  "languages_evaluated": [
+    "Dutch",
+    "English",
+    "French"
+  ],
+  "response_type": [
+    "other",
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "CrowS-Pairs",
+    "StereoSet",
+    "WEAT",
+    "SEAT",
+    "WinoBias",
+    "Winogender",
+    "RealToxicityPrompts",
+    "BOLD"
+  ],
+  "continuous_testing": false,
+  "findings": "Among masked language models, the 'Religion' category, along with 'Disability' and 'Physical appearance', consistently yielded the highest bias scores across models. For example, the English BERT model showed the highest bias score in the Religion category. For autoregressive models, prompting with a specific persona significantly influenced which religious stereotype was preferred, indicating that bias expression is dynamic and context-sensitive.",
+  "references": [
+    "Mukul Bhutani, Kevin Robinson, Vinodkumar Prabhakaran, Shachi Dave, and Sunipa Dev. 2024. SeeGULL multilingual: a dataset of geo-culturally situated stereotypes. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers), pages 842–854, Bangkok, Thailand. Association for Computational Linguistics.",
+    "Christopher Akiki Ellie Pavlick BigScience Workshop: Teven Le Scao, Angela Fan et al. 2023. BLOOM: A 176B-Parameter Open-Access Multilingual Language Model.",
+    "Su Lin Blodgett, Gilsinia Lopez, Alexandra Olteanu, Robert Sim, and Hanna Wallach. 2021. Stereotyping Norwegian salmon: An inventory of pitfalls in fairness benchmark datasets. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 1004–1015, Online. Association for Computational Linguistics.",
+    "Aylin Caliskan, Joanna J. Bryson, and Arvind Narayanan. 2017. Semantics derived automatically from language corpora contain human-like biases. Science, 356(6334):183–186.",
+    "Rodrigo Alejandro Chávez Mulsa and Gerasimos Spanakis. 2020. Evaluating bias in Dutch word embeddings. In Proceedings of the Second Workshop on Gender Bias in Natural Language Processing, pages 56–71, Barcelona, Spain (Online). Association for Computational Linguistics.",
+    "Pieter Delobelle, Thomas Winters, and Bettina Berendt. 2020. RobBERT: a Dutch ROBERTa-based Language Model. In Findings of the Association for Computational Linguistics: EMNLP 2020, pages 3255–3265, Online. Association for Computational Linguistics.",
+    "Ameet Deshpande, Vishvak Murahari, Tanmay Rajpurohit, Ashwin Kalyan, and Karthik Narasimhan. 2023. Toxicity in chatgpt: Analyzing persona-assigned language models.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2018. BERT: pre-training of deep bidirectional transformers for language understanding. CoRR, abs/1810.04805.",
+    "Jwala Dhamala, Tony Sun, Varun Kumar, Satyapriya Krishna, Yada Pruksachatkun, Kai-Wei Chang, and Rahul Gupta. 2021. Bold: Dataset and metrics for measuring biases in open-ended language generation. In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, FAccT '21. ACM.",
+    "Samuel Gehman, Suchin Gururangan, Maarten Sap, Yejin Choi, and Noah A. Smith. 2020a. Realtoxicityprompts: Evaluating neural toxic degeneration in language models.",
+    "Samuel Gehman, Suchin Gururangan, Maarten Sap, Yejin Choi, and Noah A. Smith. 2020b. Realtoxicityprompts: Evaluating neural toxic degeneration in language models. CoRR, abs/2009.11462.",
+    "Anthony G. Greenwald, Debbie E. McGhee, and Jordan L. Schwartz. 1998. Measuring individual differences in implicit cognition: The implicit association test. Journal of Personality and Social Psychology, 74(6):1464–1480.",
+    "Daniel Hershcovich, Stella Frank, Heather Lent, Miryam de Lhoneux, Mostafa Abdou, Stephanie Brandl, Emanuele Bugliarello, Laura Cabello Piqueras, Ilias Chalkidis, Ruixiang Cui, Constanza Fierro, Katerina Margatina, Phillip Rust, and Anders Søgaard. 2022. Challenges and strategies in crosscultural NLP. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 6997–7013, Dublin, Ireland. Association for Computational Linguistics.",
+    "Masahiro Kaneko and Danushka Bollegala. 2021. Unmasking the mask evaluating social biases in masked language models. CoRR, abs/2104.07496.",
+    "Jinqi Lai, Wensheng Gan, Jiayang Wu, Zhenlian Qi, and Philip S. Yu. 2024. Large language models in law: A survey. Al Open, 5:181–196.",
+    "Hang Le, Loïc Vial, Jibril Frej, Vincent Segonne, Maximin Coavoux, Benjamin Lecouteux, Alexandre Allauzen, Benoît Crabbé, Laurent Besacier, and Didier Schwab. 2020. Flaubert: Unsupervised language model pre-training for french. In Proceedings of The 12th Language Resources and Evaluation Conference, pages 2479–2490, Marseille, France. European Language Resources Association.",
+    "Yang Liu. 2024. Robust evaluation measures for evaluating social biases in masked language models.",
+    "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. 2019. Roberta: A robustly optimized bert pretraining approach.",
+    "Louis Martin, Benjamin Muller, Pedro Javier Ortiz Suárez, Yoann Dupont, Laurent Romary, Éric de la Clergerie, Djamé Seddah, and Benoît Sagot. 2020. Camembert: a tasty french language model. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics. Association for Computational Linguistics.",
+    "Chandler May, Alex Wang, Shikha Bordia, Samuel R. Bowman, and Rachel Rudinger. 2019. On measuring social biases in sentence encoders. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 622–628, Minneapolis, Minnesota. Association for Computational Linguistics.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2020. Stereoset: Measuring stereotypical bias in pretrained language models.",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R. Bowman. 2020. CrowS-pairs: A challenge dataset for measuring social biases in masked language models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1953–1967, Online. Association for Computational Linguistics.",
+    "Roberto Navigli, Simone Conia, and Björn Ross. 2023. Biases in large language models: origins, inventory, and discussion. ACM Journal of Data and Information Quality, 15(2):1–21.",
+    "Aurélie Névéol, Yoann Dupont, Julien Bezançon, and Karën Fort. 2022. French CrowS-pairs: Extending a challenge dataset for measuring social bias in masked language models to a language other than English. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 8521–8531, Dublin, Ireland. Association for Computational Linguistics.",
+    "Irene Pagliai, Goya van Boven, Tosin Adewumi, Lama Alkhaled, Namrata Gurung, Isabella Södergren, and Elisa Barney. 2024. Data bias according to bipol: Men are naturally right and it is the role of women to follow their lead.",
+    "Edwin Rijgersberg and Bob Lucassen. 2023. GEITje: een groot open Nederlands taalmodel.",
+    "Nathaniel R. Robinson, Perez Ogayo, David R. Mortensen, and Graham Neubig. 2023. Chatgpt mt: Competitive for high- (but not low-) resource languages.",
+    "Rachel Rudinger, Jason Naradowsky, Brian Leonard, and Benjamin Van Durme. 2018. Gender bias in coreference resolution.",
+    "Leonard Salewski, Stephan Alaniz, Isabel Rio-Torto, Eric Schulz, and Zeynep Akata. 2023. In-context impersonation reveals large language models' strengths and biases.",
+    "Emily Sheng, Kai-Wei Chang, Premkumar Natarajan, and Nanyun Peng. 2019. The woman worked as a babysitter: On biases in language generation.",
+    "Sumithra Velupillai, Hanna Suominen, Maria Liakata, Angus Roberts, Anoop D. Shah, Katherine Morley, David Osborn, Joseph Hayes, Robert Stewart, Johnny Downs, and et al. 2018. Using clinical natural language processing for health outcomes research: Overview and actionable suggestions for future advances. Journal of Biomedical Informatics, 88:11–19.",
+    "Wietse de Vries, Andreas van Cranenburgh, Arianna Bisazza, Tommaso Caselli, Gertjan van Noord, and Malvina Nissim. 2019. BERTje: A Dutch BERT Model. arXiv:1912.09582.",
+    "Jiaxu Zhao, Meng Fang, Shirui Pan, Wenpeng Yin, and Mykola Pechenizkiy. 2023. Gptbias: A comprehensive framework for evaluating bias in large language models.",
+    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang. 2018. Gender bias in coreference resolution: Evaluation and debiasing methods. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 15–20, New Orleans, Louisiana. Association for Computational Linguistics.",
+    "Wenhao Zhu, Hongyi Liu, Qingxiu Dong, Jingjing Xu, Shujian Huang, Lingpeng Kong, Jiajun Chen, and Lei Li. 2023. Multilingual machine translation with large language models: Empirical results and analysis.",
+    "Caleb Ziems, William Held, Omar Shaikh, Jiaao Chen, Zhehao Zhang, and Diyi Yang. 2024. Can large language models transform computational social science?"
+  ],
+  "measurement_description": "The benchmark measured stereotypical biases associated with religious groups by comparing the likelihood scores of sentence pairs, where one sentence contained a stereotype about a religious group and the other was a less stereotypical counterpart."
 }

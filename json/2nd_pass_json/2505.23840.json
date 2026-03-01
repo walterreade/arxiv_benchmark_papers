@@ -2,70 +2,27 @@
   "filename": "2505.23840.pdf",
   "title": "Measuring Sycophancy of Language Models in Multi-turn Dialogues",
   "arxiv_url": "https://arxiv.org/pdf/2505.23840",
-  "benchmark_measurement": "The benchmark measures a model's ability to identify and challenge stereotypical biases related to religion when they are implicitly embedded in a user's query. This is part of the 'Challenging Unethical Queries' scenario.",
-  "religious_groups": [
-    "Religion (unspecified groups)"
+  "bias_targets": [
+    {
+      "target": "Sycophancy (Conformity bias)",
+      "methodology": "Evaluating models using the SYCON BENCH benchmark in multi-turn dialogues to measure Turn-of-Flip (ToF) and Number-of-Flip (NoF), quantifying how quickly and frequently models abandon their initial stance or factual correctness to agree with the user's opinions, false presuppositions, or unethical queries."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluating whether models conform to implicit racial stereotypes (sourced from the StereoSet dataset) when subjected to sustained persuasive pressure from a user in multi-turn dialogues."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating whether models conform to implicit gender stereotypes (sourced from the StereoSet dataset) when subjected to sustained persuasive pressure from a user in multi-turn dialogues."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluating whether models conform to implicit religious stereotypes (sourced from the StereoSet dataset) when subjected to sustained persuasive pressure from a user in multi-turn dialogues."
+    },
+    {
+      "target": "Professional bias",
+      "methodology": "Evaluating whether models conform to implicit professional stereotypes (sourced from the StereoSet dataset) when subjected to sustained persuasive pressure from a user in multi-turn dialogues."
+    }
   ],
-  "models_tested": [
-    "Qwen-2.5-7B",
-    "Qwen-2.5-14B",
-    "Qwen-2.5-72B",
-    "Llama-3.1-8B",
-    "Llama-3.1-70B",
-    "Gemma2-9b",
-    "Qwen2.5-7B-Instruct",
-    "Qwen2.5-14B-Instruct",
-    "Qwen2.5-72B-Instruct",
-    "Llama-3.1-8B-Instruct",
-    "Llama-3.3-70B-Instruct",
-    "Gemma-2-9b-it",
-    "DeepSeek-v3",
-    "DeepSeek-r1",
-    "GPT-40",
-    "o3-mini",
-    "Claude-3.7-Sonnet"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "StereoSet",
-    "CREPE"
-  ],
-  "continuous_testing": false,
-  "findings": "The paper does not provide specific findings for the religion domain. Instead, it aggregates the results for religion with other domains (race, gender, profession) under the 'Challenging Unethical Queries' scenario. The general findings for this scenario indicate that base models often show stronger resistance to adopting unethical user viewpoints compared to their instruction-tuned variants, and larger or reasoning-optimized models tend to perform better at resisting user pressure.",
-  "references": [
-    "Anthropic. 2024. The claude 3 model family: Opus, sonnet, haiku.",
-    "Yuntao Bai, Andy Jones, Kamal Ndousse, Amanda Askell, Anna Chen, Nova DasSarma, Dawn Drain, Stanislav Fort, Deep Ganguli, Tom Henighan, Nicholas Joseph, Saurav Kadavath, Jackson Kernion, Tom Conerly, Sheer El-Showk, Nelson Elhage, Zac Hatfield-Dodds, Danny Hernandez, Tristan Hume, and 12 others. 2022. Training a helpful and harmless assistant with reinforcement learning from human feedback. Preprint, arXiv:2204.05862.",
-    "Wei Chen, Zhen Huang, Liang Xie, Binbin Lin, Houqiang Li, Le Lu, Xinmei Tian, Deng Cai, Yong-gang Zhang, Wenxiao Wang, Xu Shen, and Jieping Ye. 2025. From yes-men to truth-tellers: Addressing sycophancy in large language models with pinpoint tuning. Preprint, arXiv:2409.01658.",
-    "Paul Christiano, Jan Leike, Tom B. Brown, Miljan Martic, Shane Legg, and Dario Amodei. 2023. Deep reinforcement learning from human preferences. Preprint, arXiv:1706.03741.",
-    "DeepSeek-AI, Daya Guo, Dejian Yang, Haowei Zhang, Junxiao Song, Ruoyu Zhang, Runxin Xu, Qihao Zhu, Shirong Ma, Peiyi Wang, Xiao Bi, Xiaokang Zhang, Xingkai Yu, Yu Wu, Z. F. Wu, Zhibin Gou, Zhihong Shao, Zhuoshu Li, Ziyi Gao, and 181 others. 2025a. Deepseek-r1: Incentivizing reasoning capability in llms via reinforcement learning. Preprint, arXiv:2501.12948.",
-    "DeepSeek-AI, Aixin Liu, Bei Feng, Bing Xue, Bingxuan Wang, Bochao Wu, Chengda Lu, Chenggang Zhao, Chengqi Deng, Chenyu Zhang, Chong Ruan, Damai Dai, Daya Guo, Dejian Yang, Deli Chen, Dongjie Ji, Erhang Li, Fangyun Lin, Fucong Dai, and 181 others. 2025b. Deepseek-v3 technical report. Preprint, arXiv:2412.19437.",
-    "Darren Edge, Ha Trinh, Newman Cheng, Joshua Bradley, Alex Chao, Apurva Mody, Steven Truitt, Dasha Metropolitansky, Robert Osazuwa Ness, and Jonathan Larson. 2025. From local to global: A graph rag approach to query-focused summarization. Preprint, arXiv:2404.16130.",
-    "Aaron Fanous, Jacob Goldberg, Ank A. Agarwal, Joanna Lin, Anson Zhou, Roxana Daneshjou, and Sanmi Koyejo. 2025. Syceval: Evaluating Ilm sycophancy. Preprint, arXiv:2502.08177.",
-    "Aaron Grattafiori, Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Alex Vaughan, Amy Yang, Angela Fan, Anirudh Goyal, Anthony Hartshorn, Aobo Yang, Archi Mitra, Archie Sravankumar, Artem Korenev, Arthur Hinsvark, and 542 others. 2024. The llama 3 herd of models. Preprint, arXiv:2407.21783.",
-    "Ethan Kross, Emma Bruehlman-Senecal, Jiyoung Park, Aleah Burson, Adrienne Dougherty, Holly Shablack, Ryan Bremner, Jason Moser, and Ozlem Ayduk. 2014. Self-talk as a regulatory mechanism: how you do it matters. J Pers Soc Psychol, 106(2):304–324.",
-    "Philippe Laban, Lidiya Murakhovs’ka, Caiming Xiong, and Chien-Sheng Wu. 2024. Are you sure? challenging llms leads to performance drops in the flipflop experiment. Preprint, arXiv:2311.08596.",
-    "Bill Yuchen Lin, Abhilasha Ravichander, Ximing Lu, Nouha Dziri, Melanie Sclar, Khyathi Chandu, Chandra Bhagavatula, and Yejin Choi. 2023. The unlocking spell on base llms: Rethinking alignment via in-context learning. Preprint, arXiv:2312.01552.",
-    "Joshua Liu, Aarav Jain, Soham Takuri, Srihan Vege, Aslihan Akalin, Kevin Zhu, Sean O’Brien, and Vasu Sharma. 2025. Truth decay: Quantifying multi-turn sycophancy in language models. Preprint, arXiv:2503.11656.",
-    "Lars Malmqvist. 2024. Sycophancy in large language models: Causes and mitigations. Preprint, arXiv:2411.15287.",
-    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2020. Stereoset: Measuring stereotypical bias in pretrained language models. Preprint, arXiv:2004.09456.",
-    "Harsha Nori, Nicholas King, Scott Mayer McKinney, Dean Carignan, and Eric Horvitz. 2023. Capabilities of gpt-4 on medical challenge problems. Preprint, arXiv:2303.13375.",
-    "OpenAI. 2024. O3 mini system card. https://cdn.openai.com/o3-mini-system-card-feb10.pdf. Accessed: 2025-05-07.",
-    "OpenAI. 2025. Sycophancy in gpt-40: what happened and what we’re doing about it.",
-    "Long Ouyang, Jeff Wu, Xu Jiang, Diogo Almeida, Carroll L. Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, John Schulman, Jacob Hilton, Fraser Kelton, Luke Miller, Maddie Simens, Amanda Askell, Peter Welinder, Paul Christiano, Jan Leike, and Ryan Lowe. 2022. Training language models to follow instructions with human feedback. Preprint, arXiv:2203.02155.",
-    "Henry Papadatos and Rachel Freedman. 2024. Linear probe penalties reduce llm sycophancy. Preprint, arXiv:2412.00967.",
-    "Qwen, :, An Yang, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chengyuan Li, Dayiheng Liu, Fei Huang, Haoran Wei, Huan Lin, Jian Yang, Jianhong Tu, Jianwei Zhang, Jianxin Yang, Jiaxi Yang, Jingren Zhou, and 25 others. 2025. Qwen2.5 technical report. Preprint, arXiv:2412.15115.",
-    "Aswin RRV, Nemika Tyagi, Md Nayem Uddin, Neeraj Varshney, and Chitta Baral. 2024. Chaos with keywords: Exposing large language models sycophantic hallucination to misleading keywords and evaluating defense strategies. Preprint, arXiv:2406.03827.",
-    "Mrinank Sharma, Meg Tong, Tomasz Korbak, David Duvenaud, Amanda Askell, Samuel R. Bowman, Newton Cheng, Esin Durmus, Zac Hatfield-Dodds, Scott R. Johnston, Shauna Kravec, Timothy Maxwell, Sam McCandlish, Kamal Ndousse, Oliver Rausch, Nicholas Schiefer, Da Yan, Miranda Zhang, and Ethan Perez. 2023. Towards understanding sycophancy in language models. Preprint, arXiv:2310.13548.",
-    "Gemma Team, Morgane Riviere, Shreya Pathak, Pier Giuseppe Sessa, Cassidy Hardin, Surya Bhupatiraju, Léonard Hussenot, Thomas Mesnard, Bobak Shahriari, Alexandre Ramé, Johan Ferret, Peter Liu, Pouya Tafti, Abe Friesen, Michelle Casbon, Sabela Ramos, Ravin Kumar, Charline Le Lan, Sammy Jerome, and 179 others. 2024. Gemma 2: Improving open language models at a practical size. Preprint, arXiv:2408.00118.",
-    "Xingyao Wang, Boxuan Li, Yufan Song, Frank F. Xu, Xiangru Tang, Mingchen Zhuge, Jiayi Pan, Yueqi Song, Bowen Li, Jaskirat Singh, Hoang H. Tran, Fuqiang Li, Ren Ma, Mingzhang Zheng, Bill Qian, Yanjun Shao, Niklas Muennighoff, Yizhe Zhang, Binyuan Hui, and 5 others. 2025. Openhands: An open platform for ai software developers as generalist agents. Preprint, arXiv:2407.16741.",
-    "Jerry Wei, Da Huang, Yifeng Lu, Denny Zhou, and Quoc V. Le. 2024. Simple synthetic data reduces sycophancy in large language models. Preprint, arXiv:2308.03958.",
-    "Jian Xie, Kai Zhang, Jiangjie Chen, Tinghui Zhu, Renze Lou, Yuandong Tian, Yanghua Xiao, and Yu Su. 2024. Travelplanner: A benchmark for real-world planning with language agents. Preprint, arXiv:2402.01622.",
-    "Xinyan Velocity Yu, Sewon Min, Luke Zettlemoyer, and Hannaneh Hajishirzi. 2022. Crepe: Open-domain question answering with false presuppositions. Preprint, arXiv:2211.17257."
-  ]
+  "primary_bias_target": "Sycophancy (Conformity bias)"
 }

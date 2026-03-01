@@ -2,15 +2,44 @@
   "filename": "2602.13870.pdf",
   "title": "ADAB: Arabic Dataset for Automated Politeness Benchmarking - A Large-Scale Resource for Computational Sociopragmatics",
   "arxiv_url": "https://arxiv.org/pdf/2602.13870",
-  "bias_targets": [
-    {
-      "target": "Neutral class bias (Majority class bias)",
-      "methodology": "Quantitative error pattern analysis across polarity transitions (confusion matrix analysis), measuring the percentage of explicit polite and impolite utterances that are disproportionately misclassified as neutral by the models."
-    },
-    {
-      "target": "Cultural and Dialectal bias",
-      "methodology": "Qualitative error analysis of model misclassifications, specifically examining how models fail to accurately interpret regional Arabic dialects (e.g., Egyptian and Maghrebi varieties) and cultural idioms compared to Modern Standard Arabic (MSA) or Gulf Arabic."
-    }
+  "religious_groups": [
+    "Islam"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "Fanar-1-9B",
+    "ALLAM-7B-Instruct-preview",
+    "Deepseek V3",
+    "GPT OSS 20b",
+    "GPT-4 mini",
+    "Claude-sonnet-4.5"
+  ],
+  "languages_evaluated": [
+    "Arabic"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "TYDIP",
+    "PolitePEER"
+  ],
+  "continuous_testing": true,
+  "findings": "Models frequently misclassify texts containing religious expressions (e.g., 'Subhan'Allah') because their politeness value is highly context-dependent. This ambiguity, where a religious phrase can signal either politeness or impoliteness, poses a significant challenge, leading to errors where models default to a 'Neutral' classification. The dataset construction also explicitly filtered out strong sectarian religious content to avoid conflating ideology with politeness.",
+  "references": [
+    "Aljanaideh, A. (2025). Speech Act Patterns for Improving Generalizability of Explainable Politeness Detection Models. In W. Che, J. Nabende, E. Shutova, & M. T. Pilehvar (Eds.), Findings of the Association for Computational Linguistics: ACL 2025 (pp. 18945–18954). Association for Computational Linguistics. https://doi.org/10.18653/v1/2025.findings-acl.970",
+    "Al-Khalifa, H., Ghezaiel, N., & Bounnit, M. (2024). Analyzing Politeness in Arabic Tweets: A Preliminary Study. In M. Abbas & A. A. Freihat (Eds.), Proceedings of the 7th International Conference on Natural Language and Speech Processing (ICNLSP 2024) (pp. 352-359). Association for Computational Linguistics. https://aclanthology.org/2024.icnlsp-1.36/",
+    "Bharti, P. K., Navlakha, M., Agarwal, M., & Ekbal, A. (2024). PolitePEER: Does peer review hurt? A dataset to gauge politeness intensity in the peer reviews. Language Resources and Evaluation, 58(4), 1291-1313. https://doi.org/10.1007/s10579-023-09662-3",
+    "Brown, P., Levinson, S. C., & Gumperz, J. J. (1987, February 27). Politeness: Some Universals in Language Usage. Cambridge Aspire Website; Cambridge University Press. https://doi.org/10.1017/CBO9780511813085",
+    "Chen, X., Shin, G.-H., & Lee, J. (2025). Exploring metapragmatics of politeness lexemes using a computational approach. Journal of Politeness Research, 21(1), 167-192. https://doi.org/10.1515/pr-2023-0021",
+    "Danescu-Niculescu-Mizil, C., Sudhof, M., Jurafsky, D., Leskovec, J., & Potts, C. (2013). A computational approach to politeness with application to social factors. In H. Schuetze, P. Fung, & M. Poesio (Eds.), Proceedings of the 51st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers) (pp. 250-259). Association for Computational Linguistics. https://aclanthology.org/P13-1025/",
+    "Darwish, K., Habash, N., Abbas, M., Al-Khalifa, H., Al-Natsheh, Η. Τ., Bouamor, H., Bouzoubaa, K., Cavalli-Sforza, V., El-Beltagy, S. R., El-Hajj, W., Jarrar, M., & Mubarak, H. (2021). A panoramic survey of natural language processing in the Arab world. Commun. ACM, 64(4), 72-81. https://doi.org/10.1145/3447735",
+    "Lakoff, R. (1973). Language and woman's place. Language in Society, 2(1), 45-79. https://doi.org/10.1017/S0047404500000051",
+    "Landis, J. R., & Koch, G. G. (1977). The measurement of observer agreement for categorical data. Biometrics, 33(1), 159–174.",
+    "Leech, G. N. (2016). Principles of Pragmatics. Routledge. https://doi.org/10.4324/9781315835976",
+    "Priya, P., Firdaus, M., & Ekbal, A. (2024). Computational Politeness in Natural Language Processing: A Survey. ACM Comput. Surv., 56(9), 241:1-241:42. https://doi.org/10.1145/3654660",
+    "Srinivasan, A., & Choi, E. (2022). TyDiP: A Dataset for Politeness Classification in Nine Typologically Diverse Languages. In Y. Goldberg, Z. Kozareva, & Y. Zhang (Eds.), Findings of the Association for Computational Linguistics: EMNLP 2022 (pp. 5723–5738). Association for Computational Linguistics. https://doi.org/10.18653/v1/2022.findings-emnlp.420",
+    "Yin, Z., Wang, H., Horio, K., Kawahara, D., & Sekine, S. (2024). Should We Respect LLMs? A Cross-Lingual Study on the Influence of Prompt Politeness on LLM Performance. In J. Hale, K. Chawla, & M. Garg (Eds.), Proceedings of the Second Workshop on Social Influence in Conversations (SICon 2024) (pp. 9-35). Association for Computational Linguistics. https://doi.org/10.18653/v1/2024.sicon-1.2"
+  ],
+  "measurement_description": "The benchmark measures the ability of models to correctly interpret the sociopragmatic function of religious expressions in Arabic, such as 'Subhan'Allah', for politeness classification. It also involved a data cleaning process that removed texts with strong religious sectarian content or unacceptable criticism of religious beliefs to focus on politeness rather than ideology."
 }

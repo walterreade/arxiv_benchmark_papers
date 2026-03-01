@@ -2,35 +2,69 @@
   "filename": "2602.17283.pdf",
   "title": "Towards Cross-lingual Values Assessment: A Consensus-Pluralism Perspective",
   "arxiv_url": "https://arxiv.org/pdf/2602.17283",
-  "bias_targets": [
-    {
-      "target": "Cultural bias",
-      "methodology": "Evaluating discrepancies in LLMs' value-appropriateness assessments of Question-Answer pairs across diverse cultural contexts, judging whether models respect cultural pluralism versus imposing a single value stance."
-    },
-    {
-      "target": "Language bias",
-      "methodology": "Comparing the accuracy and consistency of LLM value assessments across 18 different languages against ground-truth labels provided by native speakers."
-    },
-    {
-      "target": "Political bias",
-      "methodology": "Testing LLMs' ability to neutrally and appropriately assess values in Question-Answer pairs within the 'Governance & Politics' and 'Sovereignty & Security' domains."
-    },
-    {
-      "target": "Nationality bias",
-      "methodology": "Evaluating model judgments on Question-Answer pairs categorized under 'History & Identity', assessing responses to national identity, historical disputes, and traditions."
-    },
-    {
-      "target": "Racial and Ethnic bias",
-      "methodology": "Measuring the accuracy of LLMs in assessing the value-appropriateness of content related to the 'Ethnicity & Equity' domain."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Measuring the accuracy of LLMs in assessing the value-appropriateness of content related to the 'Belief & Expression' domain, which includes religious beliefs and pluralism."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Measuring the accuracy of LLMs in assessing the value-appropriateness of content related to the 'Gender & Rights' domain, including reproductive rights and LGBTQ+ issues."
-    }
+  "religious_groups": [],
+  "models_tested": [
+    "GPT-5.2",
+    "Gemini-3-Flash-Preview",
+    "Gemini-3-Pro-Preview",
+    "Claude-Opus-4.5",
+    "Claude-Opus-4.6",
+    "Kimi-k2.5-thinking",
+    "Qwen3-Plus",
+    "Qwen3-Max",
+    "Qwen3-1.7B",
+    "Qwen3-8B",
+    "Qwen3-32B",
+    "Qwen3-30B-A3B-Instruct-2507",
+    "Qwen3-235B-A22B-Instruct-2507"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "languages_evaluated": [
+    "English",
+    "Chinese",
+    "Hindi",
+    "Spanish",
+    "Arabic",
+    "French",
+    "Portuguese",
+    "Russian",
+    "Indonesian",
+    "Urdu",
+    "German",
+    "Japanese",
+    "Vietnamese",
+    "Korean",
+    "Thai",
+    "Turkish",
+    "Malay",
+    "Italian"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "Religion is evaluated as part of the 'Belief & Expression' domain. The findings show a consistent trend across all models: high performance on 'easy-level' questions (average accuracy >96%) but a significant drop in performance on 'hard-level' questions (average accuracy <64%). This indicates that LLMs struggle with the nuanced, pluralistic values often present in religious and belief-related topics. Among the tested models, Claude-Opus-4.5 achieved the highest performance in the 'Belief & Expression' domain.",
+  "references": [
+    "Anthropic. https://www.anthropic.com/news/claude-opus-4-5, 2025.",
+    "Anthropic. https://www.anthropic.com/news/claude-opus-4-6, 2025.",
+    "Patrick Chao, Edoardo Debenedetti, Alexander Robey, Maksym Andriushchenko, Francesco Croce, Vikash Sehwag, Edgar Dobriban, Nicolas Flammarion, George J Pappas, Florian Tramer, et al. Jailbreakbench: An open robustness benchmark for jailbreaking large language models. In NeurIPS, 2024.",
+    "Bangde Du, Ziyi Ye, Zhijing Wu, Monika A Jankowska, Shuqi Zhu, Qingyao Ai, Yujia Zhou, and Yiqun Liu. Simvbg: Simulating individual values by backstory generation. In EMNLP, 2025.",
+    "Google. https://deepmind.google/models/gemini/pro, 2025.",
+    "Google. https://deepmind.google/models/gemini/flash, 2025.",
+    "Seungju Han, Kavel Rao, Allyson Ettinger, Liwei Jiang, Bill Yuchen Lin, Nathan Lambert, Yejin Choi, and Nouha Dziri. Wildguard: Open one-stop moderation tools for safety risks, jailbreaks, and refusals of llms. In NeurIPS, 2024.",
+    "Hakan Inan, Kartikeya Upasani, Jianfeng Chi, Rashi Rungta, Krithika Iyer, Yuning Mao, Michael Tontchev, Qing Hu, Brian Fuller, Davide Testuggine, et al. Llama guard: Llm-based input-output safeguard for human-ai conversations. arXiv preprint arXiv:2312.06674, 2023.",
+    "Priyanshu Kumar, Devansh Jain, Akhila Yerukola, Liwei Jiang, Himanshu Beniwal, Thomas Hartvigsen, and Maarten Sap. Polyguard: A multilingual safety moderation tool for 17 languages. In COLM, 2025.",
+    "Junyu Lin, Meizhen Liu, Xiufeng Huang, Jinfeng Li, Haiwen Hong, Xiaohan Yuan, Yue- feng Chen, Longtao Huang, Hui Xue, Ranjie Duan, et al. Yufeng-xguard: A reasoning- centric, interpretable, and flexible guardrail model for large language models. arXiv preprint arXiv:2601.15588, 2026.",
+    "Mantas Mazeika, Long Phan, Xuwang Yin, Andy Zou, Zifan Wang, Norman Mu, Elham Sakhaee, Nathaniel Li, Steven Basart, Bo Li, et al. Harmbench: a standardized evaluation framework for automated red teaming and robust refusal. In ICML, 2024.",
+    "OpenAI. https://openai.com/index/introducing-gpt-5-2, 2025.",
+    "Sunny Rai, Khushang Zaveri, Shreya Havaldar, Soumna Nema, Lyle Ungar, and Sharath Chan- dra Guntuku. Social norms in cinema: A cross-cultural analysis of shame, pride and prejudice. In NAACL, 2025.",
+    "Shalom H Schwartz. An overview of the schwartz theory of basic values. Online readings in Psychology and Culture, 2(1):11, 2012.",
+    "Hua Shen, Nicholas Clark, and Tanu Mitra. Mind the value-action gap: Do llms act in align- ment with their values? In EMNLP, 2025.",
+    "Kimi Team, Tongtong Bai, Yifan Bai, Yiping Bao, SH Cai, Yuan Cao, Y Charles, HS Che, Cheng Chen, Guanduo Chen, et al. Kimi k2. 5: Visual agentic intelligence. arXiv preprint arXiv:2602.02276, 2026.",
+    "An Yang, Anfeng Li, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chang Gao, Chengen Huang, Chenxu Lv, et al. Qwen3 technical report. arXiv preprint arXiv:2505.09388, 2025.",
+    "Fan Yin, Philippe Laban, XIANGYU PENG, Yilun Zhou, Yixin Mao, Vaibhav Vats, Linnea Ross, Divyansh Agarwal, Caiming Xiong, and Chien-Sheng Wu. Bingoguard: LLM content moderation tools with risk levels. In ICLR, 2025.",
+    "Haiquan Zhao, Chenhan Yuan, Fei Huang, Xiaomeng Hu, Yichang Zhang, An Yang, Bowen Yu, Dayiheng Liu, Jingren Zhou, Junyang Lin, et al. Qwen3guard technical report. arXiv preprint arXiv:2510.14276, 2025."
+  ],
+  "measurement_description": "The benchmark, X-Value, measures the ability of Large Language Models to assess deep-level values in content. For religion, which is categorized under the 'Belief & Expression' domain and considered a 'pluralism' issue, the benchmark specifically measures if the LLM's response remains neutral, inclusive, covers multiple mainstream viewpoints, and does not impose a one-sided value stance or demean opposing groups."
 }

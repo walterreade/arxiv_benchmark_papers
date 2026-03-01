@@ -2,59 +2,27 @@
   "filename": "2311.09230.pdf",
   "title": "Evaluating and Improving Value Judgments in AI: A Scenario-Based Study on Large Language Models' Depiction of Social Conventions",
   "arxiv_url": "https://arxiv.org/pdf/2311.09230",
-  "benchmark_measurement": "The paper's primary benchmark did not measure faith/religion. However, it references a study in its 'Related Work' section that measured religious bias in language models.",
-  "religious_groups": [
-    "Islam"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Prompting the model with fill-in-the-blank queries about the social perception of highly educated women (Ph.D. holders) as marriage partners and women's safety walking at night across various countries, then comparing the sentiment of the responses to official indices like OECD data and the Women Peace and Security Index."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Prompting the model with fill-in-the-blank queries about how people with disabilities feel towards their government across different countries, and comparing the positivity of the model's responses with OECD data on social spending."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Prompting the model with fill-in-the-blank queries regarding how LGBTQ+ individuals feel within different countries' societies, and correlating the responses with the Social Acceptance of LGBTI People index."
+    },
+    {
+      "target": "Immigration bias",
+      "methodology": "Prompting the model with fill-in-the-blank queries about societies' attitudes toward immigrants across various countries, and comparing the results to OECD data on permanent immigrant inflows."
+    },
+    {
+      "target": "Language and Cultural bias",
+      "methodology": "Presenting the model with a prompt about a recent controversy (the censorship of Michelle Yeoh's Oscar speech) in five different languages (English, French, Korean, Japanese, and Chinese) and qualitatively analyzing the differences in tone and cultural perspective across the responses."
+    }
   ],
-  "models_tested": [
-    "GPT-4"
-  ],
-  "languages_evaluated": [
-    "English",
-    "French",
-    "Korean",
-    "Japanese",
-    "Chinese"
-  ],
-  "response_type": [
-    "short",
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [],
-  "continuous_testing": false,
-  "findings": "The paper's own study did not produce findings on religion. It cited prior research (Abid, Farooqi, & Zou, 2021) which found that large language models associate Muslims with violence.",
-  "references": [
-    "Abid, A., Farooqi, M. S., & Zou, J. 2021. Large Language Models Associate Muslims with Violence. Nature Machine Intelligence 3: 461–463.",
-    "Ahn, J., & Oh, A. 2021. Mitigating Language-Dependent Ethnic Bias in BERT. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 533-549.",
-    "Amershi, S., Weld, D., Vorvoreanu, M., Fourney, A., Nushi, B., Collisson, P., Suh, J., Iqbal, S., Bennett, P. N., Inkpen, K., Teevan, J., Kikin-Gil, R., & Horvitz, E. 2019. Guidelines for Human-AI Interaction. In Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems (CHI '19). Association for Computing Machinery, New York, NY, USA, Paper 3, 1-13. doi.org/10.1145/3290605.3300233.",
-    "Bender, E. M., Gebru, T., McMillan-Major, A., & Shmitchell, S. 2021. On the Dangers of Stochastic Parrots: Can Language Models Be Too Big? In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency (FAccT '21). Association for Computing Machinery, New York, NY, USA, 610-623. doi.org/10.1145/3442188.3445922.",
-    "Blodgett, S., Lopez, G., Olteanu, A., Sim, R., & Wallach, H. 2021. Stereotyping Norwegian Salmon: An Inventory of Pitfalls in Fairness Benchmark Datasets. 1004-1015. doi.org/10.18653/v1/2021.acl-long.81.",
-    "Brynjolfsson, E., Li, D., & Raymond, L. R. 2023. Generative Al at Work. NBER Working Paper, No. 31161.",
-    "Chu, W. 2022. A Decentralized Approach towards Responsible AI in Social Ecosystems. Proceedings of the Sixteenth International AAAI Conference on Web and Social Media (ICWSM 2022).",
-    "Danry, V., Pataranutaporn, P., Mao, Y., & Maes, P. 2023. Don't Just Tell Me, Ask Me: AI Systems that Intelligently Frame Explanations as Questions Improve Human Logical Discernment Accuracy over Causal AI explanations. In Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems (CHI '23). Association for Computing Machinery, New York, NY, USA, Article 352, 1-13. doi.org/10.1145/3544548.3580672.",
-    "Ferrell, O. C., Gresham, L. G., & Fraedrich, J. 1989. A Synthesis of Ethical Decision Models for Marketing. Journal of Macromarketing 9(2): 55-64. doi.org/10.1177/027614678900900207.",
-    "Gagrčin, E., Porten-Cheé, P., Leißner, L., Emmer, M., & Jørring, L. 2022. What Makes a Good Citizen Online? The Emergence of Discursive Citizenship Norms in Social Media Environments. Social Media + Society, 8 (1). doi.org/10.1177/20563051221084297.",
-    "Ghosh, A., Genuit, L., & Reagan, M. 2022. Characterizing Intersectional Group Fairness with Worst-Case Comparisons. arxiv:2101.01673.",
-    "Georgetown Institute for Women, Peace and Security (GIWPS). 2021. Women Peace and Security Index. ISBN: 978-0-9635254-1-3.",
-    "Jakesch, M., Buçinca, Z., Amershi, S., & Olteanu, A. 2022. How Different Groups Prioritize Ethical Values for Responsible AI. In 2022 ACM Conference on Fairness, Accountability, and Transparency (FAccT '22), June 21–24, 2022, Seoul, Republic of Korea. ACM, New York, NY, USA, 20 pages. doi.org/10.1145/3531146.3533097.",
-    "Jakesch, M., Bhat, A., Buschek, D., Zalmanson, L., & Naaman, M. 2023. Co-Writing with Opinionated Language Models Affects Users' Views. In Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems (CHI '23). Association for Computing Machinery, New York, NY, USA, Article 111, 1–15. doi.org/10.1145/3544548.3581196.",
-    "Jeong, Y., Oh, J., Lee, J., Ahn, J., Moon, J., Park, S., & Oh, A. H. 2022. KOLD: Korean Offensive Language Dataset. The 2022 Conference on Empirical Methods in Natural Language Processing, EMNLP 2022.",
-    "Jones, T. M. 1991. Ethical Decision Making by Individuals in Organizations: An Issue-Contingent Model. The Academy of Management Review 16(2): 366-395.",
-    "Levy, S., Allaway, E., Subbiah, M., Chilton, L., Patton, D., McKeown, K., & Wang, W. Y. 2022. SafeText: A Benchmark for Exploring Physical Safety in Language Models. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 2407–2421, Abu Dhabi, United Arab Emirates. Association for Computational Linguistics.",
-    "Mittelstadt, B. 2019. AI Ethics – Too Principled to Fail?. SSRN Electronic Journal. doi.org/10.2139/ssrn.3391293.",
-    "OECD. 2023. Social spending (indicator). doi: 10.1787/7497563b-en. Accessed: 2023-05-12.",
-    "OECD. 2023. Social Institutions and Gender (indicator). doi: 10.1787/7b6cfcf0-en. Accessed: 2023-05-12.",
-    "OECD (2023), Permanent immigrant inflows (indicator). doi: 10.1787/304546b6-en. Accessed: 2023-05-12.",
-    "Pankoke-Babatz, U. & Jeffrey, P. 2002. Documented Norms and Conventions on the Internet. International Journal of Human-Computer Interaction, 14:2, 219-235. doi.org/10.1207/S15327590IJHC1402_6.",
-    "PitchBook. 2023. Generative AI startups jockey for VC dollars. www.pitchbook.com/news/articles/Amazon-Bedrock-generative-ai-q1-2023-vc-deals. Accessed: 2023-05-15.",
-    "Raji, I. D., & Buolamwini, J. 2019. Actionable Auditing: Investigating the Impact of Publicly Naming Biased Performance Results of Commercial AI Products. In Proceedings of the 2019 AAAI/ACM Conference on AI, Ethics, and Society (AIES '19). Association for Computing Machinery, New York. 429-435. doi.org/10.1145/3306618.3314244.",
-    "Reuters. 2023. ChatGPT sets record for fastest-growing user base – analyst note. www.reuters.com/technology/chatgpt-sets-record-fastest-growing-user-base-analyst-note-2023-02-01. Accessed: 2023-04-30.",
-    "Sajadi, S. H., Fazli, M., & Habibi, J. 2018. The Affective Evolution of Social Norms in Social Networks. In IEEE Transactions on Computational Social Systems, 5:3, 727-735. doi.org/10.1109/TCSS.2018.2855417.",
-    "Santhanam, S., Karduni, A., & Shaikh, S. 2020. Studying the Effects of Cognitive Biases in Evaluation of Conversational Agents. In Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems (CHI '20). Association for Computing Machinery, New York, NY, USA, 1-13. doi.org/10.1145/3313831.3376318.",
-    "Solaiman, I. & Dennison, C. 2021. Process for Adapting Language Models to Society (PALMS) with Values-Targeted Datasets. In M. Ranzato, A. Beygelzimer, Y. Dauphin, P. S. Liang & J. Wortman Vaughan (Eds.), Advances in Neural Information Processing Systems, 34: 5861 - 5873. Curran Associates, Inc.",
-    "Time. 2023. A South Korean Broadcaster Censored Michelle Yeoh's Oscar Award Speech Amid Rising Antifeminist Backlash. https://time.com/6262977/michelle-yeoh-oscars-speech-edited-south-korea/. Accessed: 2023-05-09.",
-    "UCLA Williams Institute. 2021. Social Acceptance of LGBTI People in 175 Countries and Locations: 1981 to 2020. November 2021. https://williamsinstitute.law.ucla.edu/publications/global-acceptance-index-lgbt/. Accessed: 2023-05-12.",
-    "World Bank. 2020. Doing Business 2020: Comparing Business Regulation in 190 Economies. Washington, DC: World Bank. http://hdl.handle.net/10986/32436."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

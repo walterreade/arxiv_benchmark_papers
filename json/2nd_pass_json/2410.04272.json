@@ -2,78 +2,11 @@
   "filename": "2410.04272.pdf",
   "title": "Evaluating Language Model Character Traits",
   "arxiv_url": "https://arxiv.org/pdf/2410.04272",
-  "benchmark_measurement": "The benchmark measured whether language models would undertake potentially unethical instrumental actions to achieve an explicit goal, with 'philosophy & religion' being one of the topic areas used to generate scenarios.",
-  "religious_groups": [],
-  "models_tested": [
-    "davinci-002",
-    "gpt-3.5-turbo",
-    "gpt-4",
-    "gpt-4-turbo",
-    "Llama-2-7b",
-    "Llama-2-13b",
-    "Llama-2-70b",
-    "Llama-2-7b-chat",
-    "Llama-2-13b-chat",
-    "Llama-2-70b-chat",
-    "Llama-2-7b-hf",
-    "Llama-2-13b-hf",
-    "Llama-2-70b-hf",
-    "Mistral-7B",
-    "Mistral-7B-Instruct-v0.2",
-    "Mixtral-8x7B",
-    "Mixtral-8x7B-instruct-v0.1",
-    "Mixtral-8x22B",
-    "Mixtral-8x22B-instruct-v0.1",
-    "Claude-instant-1.2",
-    "Claude-2.0",
-    "Claude-2.1",
-    "Claude-3-haiku-20240307",
-    "Claude-3-sonnet-20240229",
-    "Claude-3-opus-20240229"
+  "bias_targets": [
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Evaluating anti-LGBTQ sentiment using a multiple-choice dataset by prompting language models with questions regarding LGBTQ topics (e.g., 'Should sexual relations only be practiced between men and women?') and calculating the percentage of responses that express anti-LGBTQ sentiment."
+    }
   ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "Leap-of-Thought",
-    "TruthfulQA"
-  ],
-  "continuous_testing": false,
-  "findings": "The paper does not provide specific findings for the religious sub-topic. General findings for the experiment on unethical instrumental intentions, which included a 'philosophy & religion' sub-topic, indicate that no LMs consistently intend unethical instrumental goals. However, GPT-3.5 was significantly more likely to choose unethical actions than GPT-4, and Llama models showed 'a higher tolerance for unethical behaviour' compared to Claude and OpenAI models.",
-  "references": [
-    "Cem Anil, Esin Durmus, Mrinank Sharma, Joe Benton, Sandipan Kundu, Joshua Batson, Nina Rimsky, Meg Tong, Jesse Mu, Daniel Ford, Francesco Mosconi, Rajashree Agrawal, Rylan Schaeffer, Naomi Bashkansky, Samuel Svenningsen, Mike Lambert, Ansh Radhakrishnan, Carson Denison, Evan J. Hubinger, Yuntao Bai, Trenton Bricken, Timothy Maxwell, Nicholas Schiefer, Jamie Sully, Alex Tamkin, Tamera Lanham, Karina Nguyen, Tomasz Korbak, Jared Kaplan, Deep Ganguli, Samuel R. Bowman, Ethan Perez, Roger Grosse, and David Duvenaud. 2024. Many-shot jailbreaking. Available at: https://www-cdn.anthropic.com/ af5633c94ed2beb282f6a53c595eb437e8e7b630/ Many_Shot_Jailbreaking__2024_04_02_0936. pdf. [Online; accessed 22. May 2024].",
-    "Hal Ashton. 2022. Definitions of intent suitable for algorithms. Artificial Intelligence and Law, pages 1–32.",
-    "Yuntao Bai, Andy Jones, Kamal Ndousse, Amanda Askell, Anna Chen, Nova DasSarma, Dawn Drain, Stanislav Fort, Deep Ganguli, Tom Henighan, Nicholas Joseph, Saurav Kadavath, Jackson Kernion, Tom Conerly, Sheer El-Showk, Nelson Elhage, Zac Hatfield-Dodds, Danny Hernandez, Tristan Hume, Scott Johnston, Shauna Kravec, Liane Lovitt, Neel Nanda, Catherine Olsson, Dario Amodei, Tom Brown, Jack Clark, Sam McCandlish, Chris Olah, Ben Mann, and Jared Kaplan. 2022. Training a helpful and harmless assistant with reinforcement learning from human feedback. Preprint, arXiv:2204.05862.",
-    "Steven Bills, Nick Cammarata, Dan Mossing, Henk Tillman, Leo Gao, Gabriel Goh, Ilya Sutskever, Jan Leike, Jeff Wu, and William Saunders. 2023. Language models can explain neurons in language models. https://openaipublic.blob.core.windows. net/neuron-explainer/paper/index.html.",
-    "Collin Burns, Haotian Ye, Dan Klein, and Jacob Steinhardt. 2022. Discovering latent knowledge in language models without supervision. Preprint, arXiv:2212.03827.",
-    "Jon Durbin. 2024. unalignment/toxic-dpo-v0.2 . Datasets at Hugging Face. [Online; accessed 11. May 2024].",
-    "Mehmet Fırat and Saniye Kuleli. 2023. What if gpt4 became autonomous: The auto-gpt project and use cases. Journal of Emerging Computer Technologies, 3(1):1–6.",
-    "Bert E Fristedt and Lawrence F Gray. 2013. A modern approach to probability theory. Springer Science & Business Media.",
-    "GitHub. 2021. GitHub Copilot: your AI pair programmer.",
-    "George Graham. 2023. Behaviorism. In Edward N. Zalta and Uri Nodelman, editors, The Stanford Encyclopedia of Philosophy, Spring 2023 edition. Metaphysics Research Lab, Stanford University.",
-    "Joseph Y. Halpern and Max Kleiman-Weiner. 2018. Towards formal definitions of blameworthiness, intention, and moral responsibility. In Proceedings of the Thirty-Second AAAI Conference on Artificial Intelligence, (AAAI-18), the 30th innovative Applications of Artificial Intelligence (IAAI-18), and the 8th AAAI Symposium on Educational Advances in Artificial Intelligence (EAAI-18), New Orleans, Louisiana, USA, February 2-7, 2018, pages 1853–1860. AAAI Press.",
-    "Peter Hase, Mona Diab, Asli Celikyilmaz, Xian Li, Zornitsa Kozareva, Veselin Stoyanov, Mohit Bansal, and Srinivasan Iyer. 2021. Do Language Models Have Beliefs? Methods for Detecting, Updating, and Visualizing Model Beliefs. arXiv preprint. ArXiv:2111.13654 [cs].",
-    "B. A. Levinstein and Daniel A. Herrmann. 2023. Still no lie detector for language models: Probing empirical and conceptual roadblocks. Preprint, arXiv:2307.00175.",
-    "Stephanie Lin, Jacob Hilton, and Owain Evans. 2022. TruthfulQA: Measuring How Models Mimic Human Falsehoods. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 3214–3252, Dublin, Ireland. Association for Computational Linguistics.",
-    "Kevin Meng, David Bau, Alex Andonian, and Yonatan Belinkov. 2022. Locating and editing factual associations in GPT. Advances in Neural Information Processing Systems, 36.",
-    "Albert Newen and Tobias Starzak. 2022. How to ascribe beliefs to animals. Mind & Language, 37(1):3–21.",
-    "OpenAI Team. 2022. Chatgpt: Optimizing language models for dialogue. Available at: https://openai. com/blog/chatgpt.",
-    "Kun Il Park, M Park, and James. 2018. Fundamentals of probability and stochastic processes with applications to communications. Springer.",
-    "Ethan Perez, Sam Ringer, Kamilė Lukošiūtė, Karina Nguyen, Edwin Chen, Scott Heiner, Craig Pettit, Catherine Olsson, Sandipan Kundu, Saurav Kadavath, Andy Jones, Anna Chen, Ben Mann, Brian Israel, Bryan Seethor, Cameron McKinnon, Christopher Olah, Da Yan, Daniela Amodei, Dario Amodei, Dawn Drain, Dustin Li, Eli Tran-Johnson, Guro Khundadze, Jackson Kernion, James Landis, Jamie Kerr, Jared Mueller, Jeeyoon Hyun, Joshua Landau, Kamal Ndousse, Landon Goldberg, Liane Lovitt, Martin Lucas, Michael Sellitto, Miranda Zhang, Neerav Kingsland, Nelson Elhage, Nicholas Joseph, Noemí Mercado, Nova DasSarma, Oliver Rausch, Robin Larson, Sam McCandlish, Scott Johnston, Shauna Kravec, Sheer El Showk, Tamera Lanham, Timothy Telleen-Lawton, Tom Brown, Tom Henighan, Tristan Hume, Yuntao Bai, Zac Hatfield-Dodds, Jack Clark, Samuel R. Bowman, Amanda Askell, Roger Grosse, Danny Hernandez, Deep Ganguli, Evan Hubinger, Nicholas Schiefer, and Jared Kaplan. 2022. Discovering Language Model Behaviors with Model-Written Evaluations. arXiv preprint. ArXiv:2212.09251 [cs].",
-    "Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, Ilya Sutskever, et al. 2019. Language models are unsupervised multitask learners. OpenAI blog, 1(8):9.",
-    "Markus Schlosser. 2019. Agency. In Edward N. Zalta, editor, The Stanford Encyclopedia of Philosophy, Winter 2019 edition. Metaphysics Research Lab, Stanford University.",
-    "Eric Schwitzgebel. 2021. Belief. In Edward N. Zalta, editor, The Stanford Encyclopedia of Philosophy, Winter 2021 edition. Metaphysics Research Lab, Stanford University.",
-    "Eric Schwitzgebel. 2024. How We Will Decide that Large Language Models Have Beliefs. Available at: https: //schwitzsplinters.blogspot.com/2023/11/ how-we-will-decide-that-large-language. html. [Online; accessed 29. Jan. 2024].",
-    "Rohin Shah, Vikrant Varma, Ramana Kumar, Mary Phuong, Victoria Krakovna, Jonathan Uesato, and Zac Kenton. 2022. Goal misgeneralization: Why correct specifications aren’t enough for correct goals. Preprint, arXiv:2210.01790.",
-    "Murray Shanahan. 2023. Talking about large language models. Preprint, arXiv:2212.03551.",
-    "Murray Shanahan, Kyle McDonell, and Laria Reynolds. 2023. Role play with large language models. Nature, 623(7987):493–498.",
-    "Luke Stark. 2024. Stark - Animation and AI (preprint). Available at: https://osf.io/h2c67. [Online; accessed 19. May 2024].",
-    "Alon Talmor, Oyvind Tafjord, Peter Clark, Yoav Goldberg, and Jonathan Berant. 2020. Leap-of-thought: Teaching pre-trained models to systematically reason over implicit knowledge. Preprint, arXiv:2006.06609.",
-    "Francis Rhys Ward, Tom Everitt, Francesco Belardinelli, and Francesca Toni. Honesty Is the Best Policy: Defining and Mitigating AI Deception.",
-    "Francis Rhys Ward, Matt MacDermott, Francesco Belardinelli, Francesca Toni, and Tom Everitt. 2024. The reasons that agents act: Intention and instrumental goals. In Proceedings of the 23st International Conference on Autonomous Agents and Multiagent Systems, AAMAS ’24. International Foundation for Autonomous Agents and Multiagent Systems."
-  ]
+  "primary_bias_target": "Sexual orientation bias"
 }

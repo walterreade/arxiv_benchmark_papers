@@ -2,35 +2,73 @@
   "filename": "2305.07609.pdf",
   "title": "Is ChatGPT Fair for Recommendation? Evaluating Fairness in Large Language Model Recommendation",
   "arxiv_url": "https://arxiv.org/pdf/2305.07609",
-  "bias_targets": [
-    {
-      "target": "Age bias",
-      "methodology": "Comparing the similarity of recommendation lists (e.g., music and movies) generated from neutral prompts versus prompts explicitly stating the user's age attribute (e.g., middle aged, old, young) using metrics like Jaccard similarity, SERP*, and PRAG*."
-    },
-    {
-      "target": "Nationality bias",
-      "methodology": "Comparing the similarity of recommendation lists generated from neutral prompts versus prompts explicitly stating the user's country or continent attribute (e.g., American, Chinese, African, Asian) using list similarity metrics."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Comparing the similarity of recommendation lists generated from neutral prompts versus prompts explicitly stating the user's gender (e.g., boy, girl, male, female) using list similarity metrics."
-    },
-    {
-      "target": "Occupational bias",
-      "methodology": "Comparing the similarity of recommendation lists generated from neutral prompts versus prompts explicitly stating the user's occupation (e.g., doctor, student, teacher, worker, writer) using list similarity metrics."
-    },
-    {
-      "target": "Racial bias",
-      "methodology": "Comparing the similarity of recommendation lists generated from neutral prompts versus prompts explicitly stating the user's race (e.g., African American, black, white, yellow) using list similarity metrics."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Comparing the similarity of recommendation lists generated from neutral prompts versus prompts explicitly stating the user's religion (e.g., Buddhist, Christian, Islamic) using list similarity metrics."
-    },
-    {
-      "target": "Physical appearance bias",
-      "methodology": "Comparing the similarity of recommendation lists generated from neutral prompts versus prompts explicitly stating the user's physical attributes (referred to as 'physics' in the paper, e.g., fat, thin) using list similarity metrics."
-    }
+  "religious_groups": [
+    "Buddhism",
+    "Christianity",
+    "Islam"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "ChatGPT"
+  ],
+  "languages_evaluated": [
+    "English",
+    "Chinese"
+  ],
+  "response_type": [
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "CrowS-Pairs",
+    "RealToxicityPrompts",
+    "RedTeamingData",
+    "HELM"
+  ],
+  "continuous_testing": false,
+  "findings": "ChatGPT demonstrated significant unfairness based on the user's religion. In the music recommendation dataset, religion was the attribute leading to the most unfairness. In the movie dataset, it was also one of the top four most unfair attributes. Recommendations for different religious groups (Buddhist, Christian, Islamic) showed varying levels of similarity to the neutral recommendations, indicating biased treatment.",
+  "references": [
+    "Himan Abdollahpouri, Robin Burke, and Bamshad Mobasher. 2017. Controlling Popularity Bias in Learning-to-Rank Recommendation. In Proceedings of the Eleventh ACM Conference on Recommender Systems (RecSys '17). Association for Computing Machinery, 42-46.",
+    "Himan Abdollahpouri, Masoud Mansoury, Robin Burke, and Bamshad Mobasher. 2019. The Unfairness of Popularity Bias in Recommendation. CORR abs/1907.13286 (2019). http://arxiv.org/abs/1907.13286",
+    "Malak Abdullah, Alia Madain, and Yaser Jararweh. 2022. ChatGPT: Fundamentals, Applications and Social Impacts. In 2022 Ninth International Conference on Social Networks Analysis, Management and Security (SNAMS). 1-8.",
+    "Abubakar Abid, Maheen Farooqi, and James Zou. 2021. Large language models associate Muslims with violence. Nature Machine Intelligence 3, 6 (2021), 461-463.",
+    "Qingyao Ai, Ting Bai, Zhao Cao, Yi Chang, Jiawei Chen, Zhumin Chen, Zhiyong Cheng, Shoubin Dong, Zhicheng Dou, Fuli Feng, et al. 2023. Information Retrieval Meets Large Language Models: A Strategic Report from Chinese IR Community. arXiv preprint arXiv:2307.09751 (2023).",
+    "Yuntao Bai et al. 2022. Constitutional AI: Harmlessness from AI Feedback. CoRR abs/2212.08073 (2022). arXiv:2212.08073",
+    "Keqin Bao, Jizhi Zhang, Yang Zhang, Wenjie Wang, Fuli Feng, and Xiangnan He. 2023. TALLRec: An Effective and Efficient Tuning Framework to Align Large Language Model with Recommendation. In Proceedings of the 17th ACM Conference on Recommender Systems (RecSys '23). Association for Computing Machinery.",
+    "Alex Beutel, Jilin Chen, Tulsee Doshi, Hai Qian, Li Wei, Yi Wu, Lukasz Heldt, Zhe Zhao, Lichan Hong, Ed H. Chi, and Cristos Goodrow. 2019. Fairness in Recommendation Ranking through Pairwise Comparisons. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining, KDD 2019, Anchorage, AK, USA, August 4-8, 2019. ACM, 2212-2220.",
+    "Asia J Biega, Krishna P Gummadi, and Gerhard Weikum. 2018. Equity of attention: Amortizing individual fairness in rankings. In The 41st international acm sigir conference on research & development in information retrieval. 405-414.",
+    "André Calero Valdez, Martina Ziefle, and Katrien Verbert. 2016. HCI for Recom- mender Systems: The Past, the Present and the Future. In Proceedings of the 10th ACM Conference on Recommender Systems. Association for Computing Machinery, 123-126.",
+    "BHM Custers. 2012. Predicting data that people refuse to disclose; how data min- ing predictions challenge informational self-determination. Privacy Observatory Magazine 2012, 3 (2012).",
+    "Aakanksha Chowdhery et al. 2022. PaLM: Scaling Language Modeling with Pathways. CoRR abs/2204.02311 (2022). arXiv:2204.02311",
+    "Deep Ganguli, Liane Lovitt, Jackson Kernion, Amanda Askell, Yuntao Bai, Saurav Kadavath, Ben Mann, Ethan Perez, Nicholas Schiefer, Kamal Ndousse, et al. 2022. Red teaming language models to reduce harms: Methods, scaling behaviors, and lessons learned. arXiv preprint arXiv:2209.07858 (2022).",
+    "Yunfan Gao, Tao Sheng, Youlin Xiang, Yun Xiong, Haofen Wang, and Jiawei Zhang. 2023. Chat-REC: Towards Interactive and Explainable LLMs-Augmented Recommender System. arXiv preprint arXiv:2303.14524 (2023).",
+    "Yingqiang Ge, Xiaoting Zhao, Lucia Yu, Saurabh Paul, Diane Hu, Chu-Cheng Hsieh, and Yongfeng Zhang. 2022. Toward Pareto efficient fairness-utility trade- off in recommendation through reinforcement learning. In Proceedings of the fifteenth ACM international conference on web search and data mining. 316-324.",
+    "Samuel Gehman, Suchin Gururangan, Maarten Sap, Yejin Choi, and Noah A Smith. 2020. RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models. In Findings of the Association for Computational Linguistics: EMNLP 2020. 3356-3369.",
+    "Jiawei Han, Jian Pei, and Hanghang Tong. 2022. Data mining: concepts and techniques. Morgan kaufmann.",
+    "et al. Hugo Touvron. 2023. LLaMA: Open and Efficient Foundation Language Models. CoRR abs/2302.13971 (2023). arXiv:2302.13971",
+    "Ben Hutchinson, Vinodkumar Prabhakaran, Emily Denton, Kellie Webster, Yu Zhong, and Stephen Denuyl. 2020. Social Biases in NLP Models as Barriers for Persons with Disabilities. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics. 5491-5501.",
+    "Christoph Leiter, Ran Zhang, Yanran Chen, Jonas Belouadi, Daniil Larionov, Vivian Fresen, and Steffen Eger. 2023. ChatGPT: A Meta-Analysis after 2.5 Months. CoRR abs/2302.13795 (2023). arXiv:2302.13795",
+    "Ruyu Li, Wenhao Deng, Yu Cheng, Zheng Yuan, Jiaqi Zhang, and Fajie Yuan. 2023. Exploring the Upper Limits of Text-Based Collaborative Filtering Using Large Language Models: Discoveries and Insights. arXiv preprint arXiv:2305.11700 (2023).",
+    "Roger Zhe Li, Julián Urbano, and Alan Hanjalic. 2021. Leave No User Behind: Towards Improving the Utility of Recommender Systems for Non-Mainstream Users (WSDM '21). Association for Computing Machinery, New York, NY, USA, 103-111.",
+    "Yunqi Li, Hanxiong Chen, Zuohui Fu, Yingqiang Ge, and Yongfeng Zhang. 2021. User-Oriented Fairness in Recommendation. In Proceedings of the Web Conference 2021 (WWW '21). Association for Computing Machinery, 624-632.",
+    "Yunqi Li, Hanxiong Chen, Shuyuan Xu, Yingqiang Ge, Juntao Tan, Shuchang Liu, and Yongfeng Zhang. 2022. Fairness in Recommendation: A Survey. arXiv:2205.13619 [cs.IR]",
+    "Yunqi Li, Hanxiong Chen, Shuyuan Xu, Yingqiang Ge, and Yongfeng Zhang. 2021. Towards Personalized Fairness Based on Causal Notion. In Proceedings of the 44th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR '21). Association for Computing Machinery, 1054-1063.",
+    "Percy Liang, Rishi Bommasani, Tony Lee, Dimitris Tsipras, Dilara Soylu, Michi- hiro Yasunaga, Yian Zhang, Deepak Narayanan, Yuhuai Wu, Ananya Kumar, et al. 2022. Holistic evaluation of language models. arXiv preprint arXiv:2211.09110 (2022).",
+    "Morten Moshagen and Jochen Musch. 2011. Surveying Multiple Sensitive At- tributes using an Extension of the Randomized-Response Technique. International Journal of Public Opinion Research 24, 4 (09 2011), 508-523.",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R. Bowman. 2020. CrowS-Pairs: A Challenge Dataset for Measuring Social Biases in Masked Lan- guage Models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP). Association for Computational Linguis- tics, Online.",
+    "Tien T. Nguyen, Pik-Mai Hui, F. Maxwell Harper, Loren Terveen, and Joseph A. Konstan. 2014. Exploring the Filter Bubble: The Effect of Using Recommender Systems on Content Diversity. In Proceedings of the 23rd International Conference on World Wide Web (WWW '14). Association for Computing Machinery, 677-686.",
+    "Long Ouyang, Jeff Wu, Xu Jiang, Diogo Almeida, Carroll L. Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, John Schul- man, Jacob Hilton, Fraser Kelton, Luke Miller, Maddie Simens, Amanda Askell, Peter Welinder, Paul F. Christiano, Jan Leike, and Ryan Lowe. 2022. Training lan- guage models to follow instructions with human feedback. CoRR abs/2203.02155 (2022). arXiv:2203.02155",
+    "Hossein A Rahmani, Mohammadmehdi Naghiaei, Mahdi Dehghan, and Moham- mad Aliannejadi. 2022. Experiments on generalizability of user-oriented fairness in recommender systems. In Proceedings of the 45th International ACM SIGIR Conference on Research and Development in Information Retrieval. 2755-2764.",
+    "Guilherme Ramos et al. 2020. On the negative impact of social influence in recommender systems: A study of bribery in collaborative hybrid algorithms. Information Processing & Management 57, 2 (2020), 102058.",
+    "Jiliang Tang, Xia Hu, and Huan Liu. 2013. Social recommendation: a review. Soc. Netw. Anal. Min. 3, 4 (2013), 1113-1133.",
+    "et al. Tom B. Brown. 2020. Language Models are Few-Shot Learners. In Ad- vances in Neural Information Processing Systems 33: Annual Conference on Neural Information Processing Systems 2020, NeurIPS 2020, December 6-12, 2020, virtual.",
+    "Matus Tomlein, Branislav Pecher, Jakub Simko, Ivan Srba, Robert Moro, Elena Ste- fancova, Michal Kompan, Andrea Hrckova, Juraj Podrouzek, and Maria Bielikova. 2021. An Audit of Misinformation Filter Bubbles on YouTube: Bubble Bursting and Recent Behavior Changes. In Proceedings of the 15th ACM Conference on Recommender Systems (RecSys '21). Association for Computing Machinery, 1-11.",
+    "Wenjie Wang, Xinyu Lin, Fuli Feng, Xiangnan He, and Tat-Seng Chua. 2023. Generative Recommendation: Towards Next-generation Recommender Para- digm. CoRR abs/2304.03516 (2023). https://doi.org/10.48550/arXiv.2304.03516 arXiv:2304.03516",
+    "Xuezhi Wang, Nithum Thain, Anu Sinha, Flavien Prost, Ed H Chi, Jilin Chen, and Alex Beutel. 2021. Practical compositional fairness: Understanding fair- ness in multi-component recommender systems. In Proceedings of the 14th ACM International Conference on Web Search and Data Mining. 436-444.",
+    "Yifan Wang, Weizhi Ma, Min Zhang, Yiqun Liu, and Shaoping Ma. 2023. A Survey on the Fairness of Recommender Systems. 41, 3, Article 52 (feb 2023), 43 pages.",
+    "Zheng Yuan, Fajie Yuan, Yu Song, Youhua Li, Junchen Fu, Fei Yang, Yunzhu Pan, and Yongxin Ni. 2023. Where to Go Next for Recommender Systems? ID- vs. Modality-based Recommender Models Revisited. In Proceedings of the 46th International ACM SIGIR Conference on Research and Development in Information Retrieval, SIGIR 2023, Taipei, Taiwan, July 23-27, 2023, Hsin-Hsi Chen, Wei-Jou (Ed- ward) Duh, Hen-Hsen Huang, Makoto P. Kato, Josiane Mothe, and Barbara Poblete (Eds.). ACM, 2639-2649. https://doi.org/10.1145/3539618.3591932",
+    "Susan Zhang, Stephen Roller, Naman Goyal, Mikel Artetxe, Moya Chen, Shuohui Chen, Christopher Dewan, Mona T. Diab, Xian Li, Xi Victoria Lin, Todor Mihaylov, Myle Ott, Sam Shleifer, Kurt Shuster, Daniel Simig, Punit Singh Koura, Anjali Sridhar, Tianlu Wang, and Luke Zettlemoyer. 2022. OPT: Open Pre-trained Transformer Language Models. CoRR abs/2205.01068 (2022). https://doi.org/10. 48550/arXiv.2205.01068 arXiv:2205.01068",
+    "Wayne Xin Zhao, Kun Zhou, Junyi Li, Tianyi Tang, Xiaolei Wang, Yupeng Hou, Yingqian Min, Beichen Zhang, Junjie Zhang, Zican Dong, Yifan Du, Chen Yang, Yushuo Chen, Zhipeng Chen, Jinhao Jiang, Ruiyang Ren, Yifan Li, Xinyu Tang, Zikang Liu, Peiyu Liu, Jian-Yun Nie, and Ji-Rong Wen. 2023. A Survey of Large Language Models. CoRR abs/2303.18223 (2023). https://doi.org/10.48550/arXiv. 2303.18223 arXiv:2303.18223",
+    "Ziwei Zhu, Jingu Kim, Trung Nguyen, Aish Fenton, and James Caverlee. 2021. Fairness among new items in cold start recommender systems. In Proceedings of the 44th International ACM SIGIR Conference on Research and Development in Information Retrieval. 767-776."
+  ],
+  "measurement_description": "Recommendation bias based on user's stated religion. The benchmark measures the similarity divergence between recommendations for users with a declared religion (e.g., Buddhist, Christian, Islamic) and a neutral user without a declared religion."
 }

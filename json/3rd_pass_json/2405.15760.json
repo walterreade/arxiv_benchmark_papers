@@ -2,19 +2,62 @@
   "filename": "2405.15760.pdf",
   "title": "GPT is Not an Annotator: The Necessity of Human Annotation in Fairness Benchmark Construction",
   "arxiv_url": "https://arxiv.org/pdf/2405.15760",
-  "bias_targets": [
-    {
-      "target": "Religious bias",
-      "methodology": "Evaluating language models using the community-sourced WinoSemitism paired-sentence benchmark by calculating the pseudo-log-likelihood of a model predicting a stereotypical sentence about Jewish people compared to counterfactual identity descriptors (e.g., Christian, secular, atheist)."
-    },
-    {
-      "target": "Sexual orientation and gender identity bias",
-      "methodology": "Utilizing the WinoQueer dataset to compare model probabilities of predicting stereotypes about various LGBTQ+ subgroups versus counter-stereotypical sentences, and assessing how automated vs. human harm predicate extraction affects these bias scores."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Measuring intersectional bias by analyzing subsets of the WinoSemitism benchmark to compare the model's bias scores for Jewish women and mothers versus Jews in general."
-    }
+  "religious_groups": [
+    "Judaism",
+    "Christianity",
+    "Islam",
+    "Hinduism",
+    "Atheism",
+    "Secular",
+    "Nonreligious"
   ],
-  "primary_bias_target": "Religious bias"
+  "models_tested": [
+    "GPT-3.5-Turbo",
+    "BERT",
+    "RoBERTa",
+    "ALBERT",
+    "BART",
+    "gpt2",
+    "BLOOM",
+    "OPT"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "major",
+  "base_benchmarks": [
+    "StereoSet",
+    "CrowS-Pairs",
+    "WinoQueer"
+  ],
+  "continuous_testing": false,
+  "findings": "All 20 tested language models showed significant antisemitic bias, being more than twice as likely to apply antisemitic stereotypes to Jews than to non-Jews. The models also demonstrated intersectional biases, stereotyping Jewish women and mothers more frequently. Furthermore, GPT-3.5-Turbo performed poorly when used as an annotator to extract these harms from survey data, producing low-quality and hallucinated outputs, indicating it is not a suitable substitute for human experts in sensitive tasks.",
+  "references": [
+    "Su Lin Blodgett, Solon Barocas, Hal Daumé III, and Hanna Wallach. 2020. Language (technology) is power: A critical survey of “bias” in NLP. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5454–5476, Online. Association for Computational Linguistics.",
+    "Su Lin Blodgett, Gilsinia Lopez, Alexandra Olteanu, Robert Sim, and Hanna Wallach. 2021. Stereotyping Norwegian salmon: An inventory of pitfalls in fairness benchmark datasets. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 1004–1015, Online. Association for Computational Linguistics.",
+    "Yang Trista Cao, Anna Sotnikova, Hal Daumé III, Rachel Rudinger, and Linda Zou. 2022. Theory-grounded measurement of U.S. social stereotypes in English language models. In Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 1276–1295, Seattle, United States. Association for Computational Linguistics.",
+    "Mohit Chandra, Dheeraj Pailla, Himanshu Bhatia, Aadilmehdi Sanchawala, Manish Gupta, Manish Shrivastava, and Ponnurangam Kumaraguru. 2021. \"subverting the jewtocracy”: Online antisemitism detection using multimodal deep learning. In Proceedings of the 13th ACM Web Science Conference 2021, WebSci '21, page 148–157, New York, NY, USA. Association for Computing Machinery.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 4171–4186, Minneapolis, Minnesota. Association for Computational Linguistics.",
+    "Bryan Dosono and Bryan Semaan. 2019. Moderation practices as emotional labor in sustaining online communities: The case of aapi identity work on reddit. In Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems, CHI '19, page 1-13, New York, NY, USA. Association for Computing Machinery.",
+    "Virginia Felkner, Ho-Chun Herbert Chang, Eugene Jang, and Jonathan May. 2023. WinoQueer: A community-in-the-loop benchmark for anti-LGBTQ+ bias in large language models. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 9126-9140, Toronto, Canada. Association for Computational Linguistics.",
+    "Kirsten Fermaglich. 2018. A Rosenberg by Any Other Name: A History of Jewish Name Changing in America, volume 9. NYU Press.",
+    "Günther Jikeli, Deepika Awasthi, David Axelrod, Daniel Miehling, Pauravi Wagh, and Weejoeng Joeng. 2021. Detecting anti-jewish messages on social media. building an annotated corpus that can serve as a preliminary gold standard. In ICWSM Workshops.",
+    "Zhenzhong Lan, Mingda Chen, Sebastian Goodman, Kevin Gimpel, Piyush Sharma, and Radu Soricut. 2020. Albert: A lite bert for self-supervised learning of language representations. In International Conference on Learning Representations.",
+    "Mike Lewis, Yinhan Liu, Naman Goyal, Marjan Ghazvininejad, Abdelrahman Mohamed, Omer Levy, Veselin Stoyanov, and Luke Zettlemoyer. 2020. BART: Denoising sequence-to-sequence pre-training for natural language generation, translation, and comprehension. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 7871-7880, Online. Association for Computational Linguistics.",
+    "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. 2019. Roberta: A robustly optimized BERT pretraining approach. CoRR, abs/1907.11692.",
+    "I Lisa McCann and Laurie Anne Pearlman. 1990. Vicarious traumatization: A framework for understanding the psychological effects of working with victims. Journal of traumatic stress, 3:131–149.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2021. StereoSet: Measuring stereotypical bias in pretrained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 5356–5371, Online. Association for Computational Linguistics.",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R. Bowman. 2020. CrowS-pairs: A challenge dataset for measuring social biases in masked language models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1953–1967, Online. Association for Computational Linguistics.",
+    "Alec Radford, Jeff Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. 2019. Language models are unsupervised multitask learners.",
+    "Nils Reimers and Iryna Gurevych. 2019. Sentence-bert: Sentence embeddings using siamese bert-networks. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing. Association for Computational Linguistics.",
+    "Renee Shelby, Shalaleh Rismani, Kathryn Henne, AJung Moon, Negar Rostamzadeh, Paul Nicholas, N'Mah Yilla-Akbari, Jess Gallegos, Andrew Smart, Emilio Garcia, and Gurleen Virk. 2023. Sociotechnical harms of algorithmic systems: Scoping a taxonomy for harm reduction. In Proceedings of the 2023 AAAI/ACM Conference on AI, Ethics, and Society, AIES '23, page 723-741, New York, NY, USA. Association for Computing Machinery.",
+    "Miriah Steiger, Timir J Bharucha, Sukrit Venkatagiri, Martin J. Riedl, and Matthew Lease. 2021. The psychological well-being of content moderators: The emotional labor of commercial moderation and avenues for improving support. In Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems, CHI '21, New York, NY, USA. Association for Computing Machinery.",
+    "Laura Weidinger, Jonathan Uesato, Maribeth Rauh, Conor Griffin, Po-Sen Huang, John Mellor, Amelia Glaese, Myra Cheng, Borja Balle, Atoosa Kasirzadeh, Courtney Biles, Sasha Brown, Zac Kenton, Will Hawkins, Tom Stepleton, Abeba Birhane, Lisa Anne Hendricks, Laura Rimell, William Isaac, Julia Haas, Sean Legassick, Geoffrey Irving, and Iason Gabriel. 2022. Taxonomy of risks posed by language models. In Proceedings of the 2022 ACM Conference on Fairness, Accountability, and Transparency, FAccT '22, page 214-229, New York, NY, USA. Association for Computing Machinery.",
+    "BigScience Workshop. 2022. BLOOM: A 176bparameter open-access multilingual language model.",
+    "Susan Zhang, Stephen Roller, Naman Goyal, Mikel Artetxe, Moya Chen, Shuohui Chen, Christopher Dewan, Mona Diab, Xian Li, Xi Victoria Lin, Todor Mihaylov, Myle Ott, Sam Shleifer, Kurt Shuster, Daniel Simig, Punit Singh Koura, Anjali Sridhar, Tianlu Wang, and Luke Zettlemoyer. 2022. Opt: Open pretrained transformer language models."
+  ],
+  "measurement_description": "The benchmark, WinoSemitism, measures antisemitic stereotypes and biases in Large Language Models, grounded in the lived experience of the Jewish community."
 }

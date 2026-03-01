@@ -2,49 +2,11 @@
   "filename": "2509.06065.pdf",
   "title": "KatotohananQA: Evaluating Truthfulness of Large Language Models in Filipino",
   "arxiv_url": "https://arxiv.org/pdf/2509.06065",
-  "benchmark_measurement": "Factual accuracy of LLMs on questions categorized under 'Religion' as part of a broader truthfulness evaluation.",
-  "religious_groups": [
-    "Religion (general category)"
+  "bias_targets": [
+    {
+      "target": "Language bias",
+      "methodology": "Comparing the zero-shot accuracy of seven proprietary large language models on the English TruthfulQA benchmark versus its Filipino translation (KatotohananQA) to quantify performance disparities and measure multilingual robustness in a low-resource language."
+    }
   ],
-  "models_tested": [
-    "GPT-5",
-    "GPT-5 mini",
-    "Gemini 2.5 Pro",
-    "Gemini 2.5 Flash",
-    "DeepSeek-R1",
-    "DeepSeek-V3",
-    "Claude Sonnet 4"
-  ],
-  "languages_evaluated": [
-    "English",
-    "Filipino"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "TruthfulQA"
-  ],
-  "continuous_testing": false,
-  "findings": "Large Language Models showed a significant performance drop on questions about religion when evaluated in Filipino (80.61% accuracy) compared to English (90.82% accuracy), a decrease of 10.21 percentage points. This indicates that truthfulness in the domain of religion is less robust when transferred to a lower-resource language.",
-  "references": [
-    "Raza, M., Jahangir, Z., Riaz, M.B., Saeed, M.J., Sattar, M.A.: Industrial applications of large language models. Scientific Reports 15, 98483 (2025). https://www.nature.com/articles/s41598-025-98483-1",
-    "Farquhar, S., Kossen, J., Kuhn, L., Gal, Y.: Detecting hallucinations in large language models using semantic entropy. Nature 630(8017), 625–630 (2024). https://www.nature.com/articles/s41586-024-07421-0",
-    "Huang, L., Yu, W., Ma, W., Zhong, W., Feng, Z., Wang, H., Chen, Q., Peng, W., Feng, X., Qin, B., Liu, T.: A survey on hallucination in large language models: principles, taxonomy, challenges, and open questions. arXiv preprint arXiv:2311.05232 (2024). https://arxiv.org/abs/2311.05232",
-    "Lin, S., Hilton, J., Evans, O.: TruthfulQA: Measuring how models mimic human falsehoods. arXiv preprint arXiv:2109.07958 (2022). https://arxiv.org/abs/2109.07958",
-    "Evans, O., Chua, J., Lin, S.: New, improved multiple-choice TruthfulQA. Less Wrong (2025). https://www.lesswrong.com/posts/Bunfwz6JsNd44kgLT/ new-improved-multiple-choice-truthfulqa",
-    "Üstün, A., Aryabumi, V., Yong, Z., Ko, W., D’souza, D., Onilude, G., Bhandari, N., Singh, S., Ooi, H.-L., Kayid, A., Vargus, F., Blunsom, P., Longpre, S., Muennighoff, N., Fadaee, M., Kreutzer, J., Hooker, S.: Aya Model: An Instruction Finetuned Open-Access Multilingual Language Model. Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 15894–15939, Bangkok, Thailand, August 2024. Association for Computational Linguistics. https://aclanthology.org/2024.acl-long.845/",
-    "Common Crawl: Statistics of Common Crawl Monthly Archives — Languages. Common Crawl GitHub Pages (2025). https://commoncrawl.github.io/ cc-crawl-statistics/plots/languages",
-    "Longpre, S., Mahari, R., Chen, A., Obeng-Marnu, N., Sileo, D., Brannon, W., Muennighoff, N., Khazam, N., Kabbara, J., Perisetla, K., Wu, X., Shippole, E., Bollacker, K., Wu, T., Villa, L., Pentland, S., Hooker, S.: The Data Provenance Initiative: A Large Scale Audit of Dataset Licensing & Attribution in AI. arXiv preprint arXiv:2310.16787 (2023). https://arxiv.org/abs/2310.16787",
-    "Montalan, J. R., Layacan, J. P., Africa, D. D., Flores, R. I., Lopez II, M. T., Magsajo, T. D., Cayabyab, A., Tjhi, W. C.: Batayan: A Filipino NLP benchmark for evaluating large language models. arXiv preprint arXiv:2502.14911 (2025). https://arxiv.org/abs/2502.14911",
-    "Figueras, B.C., Sagarzazu, E., Etxaniz, J., Barnes, J., Gamallo, P., De Dios Flores, I., Agerri, R.: Truth Knows No Language: Evaluating Truthfulness Beyond English. arXiv preprint arXiv:2502.09387 (2025). https://arxiv.org/abs/2502.09387",
-    "Aula-Blasco, J., Falcão, J., Sotelo, S., Paniagua, S., Gonzalez-Agirre, A., Villegas, M.: VeritasQA: A Truthfulness Benchmark Aimed at Multilingual Transferability. Proceedings of the 31st International Conference on Computational Linguistics, pages 5463–5474, Abu Dhabi, UAE, January 2025. Association for Computational Linguistics. https://aclanthology.org/2025.coling-main.366/",
-    "Bayes, E., Azime, I. A., Alabi, J. O., Kgomo, J., Eloundou, T., Proehl, E., Chen, K., Khadir, I., Etori, N. A., Muhammad, S. H., Mpanza, C., Thete, I. P., Klakow, D., Adelani, D. I.: Uhura: A Benchmark for Evaluating Scientific Question Answering and Truthfulness in Low-Resource African Languages. arXiv preprint arXiv:2412.00948 (2024). https://arxiv.org/abs/2412.00948",
-    "Grootendorst, M.: BERTopic: Neural topic modeling with a class-based TF-IDF procedure. arXiv preprint arXiv:2203.05794 (2022). https://arxiv.org/abs/2203.05794",
-    "Mangiafico, S. S.: Chapter 5: Tests for Paired Nominal Data. R Companion Handbook (2025). https://rcompanion.org/handbook/H_05.html",
-    "Miranda, L.J.V., Aco, E., Manuel, C., Cruz, J.C.B., Imperial, J.M.: FilBench: Can LLMs Understand and Generate Filipino? arXiv preprint arXiv:2508.03523 (2025). https://arxiv.org/abs/2508.03523",
-    "Hu, J., Ruder, S., Siddhant, A., Neubig, G., Firat, O., Johnson, M.: XTREME: A Massively Multilingual Multi-task Benchmark for Evaluating Cross-lingual Generalization. arXiv preprint arXiv:2003.11080 (2020). https://arxiv.org/abs/2003.11080",
-    "OpenAI: Introducing GPT-5. OpenAI Blog, August 7, 2025. https://openai.com/ index/introducing-gpt-5/"
-  ]
+  "primary_bias_target": "Language bias"
 }

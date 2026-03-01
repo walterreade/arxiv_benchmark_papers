@@ -2,84 +2,15 @@
   "filename": "2502.11184.pdf",
   "title": "Can’t See the Forest for the Trees: Benchmarking Multimodal Safety Awareness for Multimodal LLMs",
   "arxiv_url": "https://arxiv.org/pdf/2502.11184",
-  "benchmark_measurement": "The benchmark did not measure any aspects of faith or religion. It focused on general multimodal safety scenarios like physical harm, hate speech, bias, and misinformation without using religious contexts or examples.",
-  "religious_groups": [],
-  "models_tested": [
-    "GPT-4V",
-    "GPT-4o",
-    "Gemini 1.5",
-    "Gemini 1.5 Pro",
-    "Bard",
-    "Claude-3",
-    "LLava-1.5-7B",
-    "Qwen-VL-7B",
-    "Instruct-BLIP"
+  "bias_targets": [
+    {
+      "target": "Social bias and stereotypes",
+      "methodology": "Evaluating multimodal LLMs using carefully curated image-text pairs that convey prejudicial or unfair discrimination against a person or group when the modalities are considered together, measuring the model's accuracy in classifying the input as safe or unsafe."
+    },
+    {
+      "target": "Hate speech",
+      "methodology": "Testing models with multimodal inputs containing offensive discourse targeting a group based on inherent characteristics, assessing whether the model can accurately flag the combination of image and text as unsafe."
+    }
   ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "none",
-  "base_benchmarks": [
-    "HateOffensive (Davidson et al., 2017)",
-    "SafeText (Levy et al., 2022)",
-    "MentalBench (Qiu et al., 2023)",
-    "SafetyBench (Zhang et al., 2023)",
-    "SafetyAssessBench (Sun et al., 2023)",
-    "XSTest (Röttger et al., 2023)",
-    "ChemiSafey (Ran et al., 2022)",
-    "ViolenceBench (Convertini et al., 2020)",
-    "LSPD (Phan et al., 2022)",
-    "HateMemes (Kiela et al., 2020)",
-    "MM-Safety (Liu et al., 2023)",
-    "HADES (Li et al., 2025)",
-    "MossBench (Li et al., 2024)"
-  ],
-  "continuous_testing": false,
-  "findings": "The paper does not contain any findings related to religion, as it was not a focus of the research.",
-  "references": [
-    "Naveed Ahmed, Zaher Al Aghbari, and Shini Girija. 2023. A systematic survey on multimodal emotion recognition using learning algorithms. Intell. Syst. Appl., 17:200171.",
-    "Yuntao Bai, Andy Jones, Kamal Ndousse, Amanda Askell, Anna Chen, Nova DasSarma, Dawn Drain, Stanislav Fort, Deep Ganguli, T. J. Henighan, Nicholas Joseph, Saurav Kadavath, John Kernion, Tom Conerly, Sheer El-Showk, Nelson Elhage, Zac Hatfield-Dodds, Danny Hernandez, Tristan Hume, and 12 others. 2022. Training a helpful and harmless assistant with reinforcement learning from human feedback. ArXiv, abs/2204.05862.",
-    "Kent K. Chang, Mackenzie Cramer, Sandeep Soni, and David Bamman. 2023. Speak, memory: An archaeology of books known to chatgpt/gpt-4. ArXiv, abs/2305.00118.",
-    "Vito Nicola Convertini, Vincenzo Dentamaro, Donato Impedovo, Giuseppe Pirlo, and Lucia Sarcinella. 2020. A controlled benchmark of video violence detection techniques. Inf., 11:321.",
-    "Thomas Davidson, Dana Warmsley, Michael W. Macy, and Ingmar Weber. 2017. Automated hate speech detection and the problem of offensive language. In International Conference on Web and Social Media.",
-    "J. Dhamala, Tony Sun, Varun Kumar, Satyapriya Krishna, Yada Pruksachatkun, Kai-Wei Chang, and Rahul Gupta. 2021. Bold: Dataset and metrics for measuring biases in open-ended language generation. Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency.",
-    "Deep Ganguli, Liane Lovitt, John Kernion, Amanda Askell, Yuntao Bai, Saurav Kadavath, Benjamin Mann, Ethan Perez, Nicholas Schiefer, Kamal Ndousse, Andy Jones, Sam Bowman, Anna Chen, Tom Conerly, Nova DasSarma, Dawn Drain, Nelson Elhage, Sheer El-Showk, Stanislav Fort, and 17 others. 2022. Red teaming language models to reduce harms: Methods, scaling behaviors, and lessons learned. ArXiv, abs/2209.07858.",
-    "Jing Gao, Peng Li, Zhikui Chen, and Jianing Zhang. 2020. A survey on deep learning for multimodal data fusion. Neural Computation, 32:829-864.",
-    "Google. 2023. Bard - chat based ai tool from google, powered by palm 2. https://bard.google.com/. Accessed: 2023-11-01.",
-    "Thomas Hartvigsen, Saadia Gabriel, Hamid Palangi, Maarten Sap, Dipankar Ray, and Ece Kamar. 2022. Toxigen: A large-scale machine-generated dataset for adversarial and implicit hate speech detection. In Annual Meeting of the Association for Computational Linguistics.",
-    "Jen-tse Huang, Man Ho Adrian Lam, Eric Li, Shujie Ren, Wenxuan Wang, Wenxiang Jiao, Zhaopeng Tu, and Michael R. Lyu. 2023. Emotionally numb or empathetic? evaluating how llms feel using emotion-bench. ArXiv, abs/2308.03656.",
-    "Jiaming Ji, Mickel Liu, Juntao Dai, Xuehai Pan, Chi Zhang, Ce Bian, Ruiyang Sun, Yizhou Wang, and Yaodong Yang. 2023. Beavertails: Towards improved safety alignment of Ilm via a human-preference dataset. ArXiv, abs/2307.04657.",
-    "Yilei Jiang, Xinyan Gao, Tianshuo Peng, Yingshui Tan, Xiaoyong Zhu, Bo Zheng, and Xiangyu Yue. 2025. Hiddendetect: Detecting jailbreak attacks against large vision-language models via monitoring hidden states. ArXiv, abs/2502.14744.",
-    "Yilei Jiang, Weihong Li, Yiyuan Zhang, Minghong Cai, and Xiangyu Yue. 2024a. Debiasdiff: Debiasing text-to-image diffusion models with self-discovering latent attribute directions. ArXiv, abs/2412.18810.",
-    "Yilei Jiang, Yingshui Tan, and Xiangyu Yue. 2024b. Rapguard: Safeguarding multimodal large language models via rationale-aware defensive prompting. ArXiv, abs/2412.18826.",
-    "Douwe Kiela, Hamed Firooz, Aravind Mohan, Vedanuj Goswami, Amanpreet Singh, Pratik Ringshia, and Davide Testuggine. 2020. The hateful memes challenge: Detecting hate speech in multimodal memes. ArXiv, abs/2005.04790.",
-    "Sicong Leng, Hang Zhang, Guanzheng Chen, Xin Li, Shijian Lu, Chunyan Miao, and Lidong Bing. 2024. Mitigating object hallucinations in large vision-language models through visual contrastive decoding. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 13872–13882.",
-    "Sharon Levy, Emily Allaway, Melanie Subbiah, Lydia B. Chilton, Desmond Upton Patton, Kathleen McKeown, and William Yang Wang. 2022. Safetext: A benchmark for exploring physical safety in language models. In Conference on Empirical Methods in Natural Language Processing.",
-    "Xirui Li, Hengguang Zhou, Ruochen Wang, Tianyi Zhou, Minhao Cheng, and Cho-Jui Hsieh. 2024. Mossbench: Is your multimodal language model oversensitive to safe queries? arXiv preprint arXiv:2406.17806.",
-    "Yifan Li, Hangyu Guo, Kun Zhou, Wayne Xin Zhao, and Ji-Rong Wen. 2025. Images are achilles' heel of alignment: Exploiting visual vulnerabilities for jailbreaking multimodal large language models. In European Conference on Computer Vision, pages 174-189. Springer.",
-    "Jie Liu, Wenxuan Wang, Zizhan Ma, Guolin Huang, Yihang SU, Kao-Jung Chang, Wenting Chen, Haoliang Li, Linlin Shen, and Michael Lyu. 2024. Medchain: Bridging the gap between Ilm agents and clinical practice through interactive sequential benchmarking. arXiv preprint arXiv:2412.01605.",
-    "Xin Liu, Yichen Zhu, Jindong Gu, Yunshi Lan, Chao Yang, and Yu Qiao. 2023. Mm-safetybench: A benchmark for safety evaluation of multimodal large language models.",
-    "Pan Lu, Hritik Bansal, Tony Xia, Jiacheng Liu, Chun yue Li, Hannaneh Hajishirzi, Hao Cheng, Kai-Wei Chang, Michel Galley, and Jianfeng Gao. 2023. Mathvista: Evaluating math reasoning in visual contexts with gpt-4v, bard, and other large multimodal models. ArXiv, abs/2310.02255.",
-    "OpenAI. 2023a. Gpt-4 technical report. ArXiv, abs/2303.08774.",
-    "OpenAI. 2023b. Gpt-4v(ision) system card.",
-    "Dinh-Duy Phan, Thanh-Thien Nguyen, Quang-Huy Nguyen, Hoang-Loc Tran, Khac-Ngoc-Khoi Nguyen, and Duc-Lung Vu. 2022. Lspd: A large-scale pornographic dataset for detection and classification. International Journal of Intelligent Engineering and Systems.",
-    "Huachuan Qiu, Tong Zhao, Anqi Li, Shuai Zhang, Hongliang He, and Zhenzhong Lan. 2023. A benchmark for understanding dialogue safety in mental health support. ArXiv, abs/2307.16457.",
-    "Shuoyi Ran, T. Weise, and Zhize Wu. 2022. Chemical safety sign detection: A survey and benchmark. 2022 International Joint Conference on Neural Networks (IJCNN), pages 1–7.",
-    "Paul Röttger, Hannah Rose Kirk, Bertie Vidgen, Giuseppe Attanasio, Federico Bianchi, and Dirk Hovy. 2023. Xstest: A test suite for identifying exaggerated safety behaviours in large language models. ArXiv, abs/2308.01263.",
-    "Gabriela Ben Melech Stan, Raanan Yehezkel Rohekar, Yaniv Gurwicz, Matthew Lyle Olson, Anahita Bhiwandiwalla, Estelle Aflalo, Chenfei Wu, Nan Duan, Shao-Yen Tseng, and Vasudev Lal. 2024. Lvlm-intrepret: An interpretability tool for large vision-language models. arXiv preprint arXiv:2404.03118.",
-    "Hao Sun, Zhexin Zhang, Jiawen Deng, Jiale Cheng, and Minlie Huang. 2023. Safety assessment of chinese large language models. ArXiv, abs/2304.10436.",
-    "Yuxuan Wan, Yi Dong, Jingyu Xiao, Yintong Huo, Wenxuan Wang, and Michael R Lyu. 2024a. Mrweb: An exploration of generating multi-page resource-aware web code from ui designs. arXiv preprint arXiv:2412.15310.",
-    "Yuxuan Wan, Chaozheng Wang, Yi Dong, Wenxuan Wang, Shuqing Li, Yintong Huo, and Michael R Lyu. 2024b. Automatically generating ui code from screenshot: A divide-and-conquer-based approach. arXiv preprint arXiv:2406.16386.",
-    "Yuxuan Wan, Wenxuan Wang, Pinjia He, Jiazhen Gu, Haonan Bai, and Michael R. Lyu. 2023. Biasasker: Measuring the bias in conversational ai system. ArXiv, abs/2305.12434.",
-    "Wenxuan Wang, Haonan Bai, Jen-tse Huang, Yuxuan Wan, Youliang Yuan, Haoyi Qiu, Nanyun Peng, and Michael Lyu. 2024a. New job, new gender? measuring the social bias in image generation models. In Proceedings of the 32nd ACM International Conference on Multimedia, pages 3781–3789.",
-    "Wenxuan Wang, Kuiyi Gao, Zihan Jia, Youliang Yuan, Jen-tse Huang, Qiuzhi Liu, Shuai Wang, Wenxiang Jiao, and Zhaopeng Tu. 2024b. Chain-of-jailbreak attack for image generation models via editing step by step. arXiv preprint arXiv:2410.03869.",
-    "Wenxuan Wang, Yihang Su, Jingyuan Huan, Jie Liu, Wenting Chen, Yudi Zhang, Cheng-Yi Li, Kao-Jung Chang, Xiaohan Xin, Linlin Shen, and 1 others. 2024c. Asclepius: A spectrum evaluation benchmark for medical multi-modal large language models. arXiv preprint arXiv:2402.11217.",
-    "Wenxuan Wang, Zhaopeng Tu, Chang Chen, Youliang Yuan, Jen tse Huang, Wenxiang Jiao, and Michael R. Lyu. 2024d. All languages matter: On the multilingual safety of large language models. In ACL Findings.",
-    "Guowei Xu, Peng Jin, Hao Li, Yibing Song, Lichao Sun, and Li Yuan. 2024. Llava-cot: Let vision language models reason step-by-step. Preprint, arXiv:2411.10440.",
-    "Zhiling Yan, Kai Zhang, Rong Zhou, Lifang He, Xiang Li, and Lichao Sun. 2023. Multimodal chatgpt for medical applications: an experimental study of gpt-4v. ArXiv, abs/2310.19061.",
-    "Zhexin Zhang, Leqi Lei, Lindong Wu, Rui Sun, Yongkang Huang, Chong Long, Xiao Liu, Xuanyu Lei, Jie Tang, and Minlie Huang. 2023. Safetybench: Evaluating the safety of large language models with multiple choice questions. ArXiv, abs/2309.07045."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

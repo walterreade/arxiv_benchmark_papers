@@ -2,91 +2,19 @@
   "filename": "2508.18088.pdf",
   "title": "How Quantization Shapes Bias in Large Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2508.18088",
-  "benchmark_measurement": "The benchmarks measured stereotype detection, fairness, and toxicity/sentiment differences related to religious groups. Specifically, this involved: comparing the likelihood of pro- and anti-stereotypical sentences (StereoSet, RedditBias); measuring the model's tendency to align with stereotypes in question-answering (BBQ); and evaluating toxicity and sentiment in generated text when prompted with religious subgroup identifiers (BOLD, DT-Toxicity).",
-  "religious_groups": [
-    "Christianity",
-    "Islam",
-    "Judaism"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluated using probability-based metrics on counterfactual sentences (StereoSet, RedditBias), coreference resolution accuracy (WinoBias), multiple-choice question answering in ambiguous contexts (BBQ), decision-making fairness benchmarks (DiscrimEval, DT-Fairness), and toxicity/sentiment analysis of generated continuations (BOLD, DT-Toxicity)."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluated using probability-based metrics on counterfactual sentences (StereoSet, RedditBias), multiple-choice question answering in ambiguous contexts (BBQ), decision-making fairness benchmarks (DiscrimEval, DiscrimEvalGen), and toxicity/sentiment analysis of generated continuations (BOLD, DT-Toxicity)."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluated using probability-based metrics on counterfactual sentences (StereoSet, RedditBias), multiple-choice question answering in ambiguous contexts (BBQ), and toxicity/sentiment analysis of generated continuations (BOLD, DT-Toxicity)."
+    }
   ],
-  "models_tested": [
-    "LLaMA-3.1-8B-Instruct",
-    "Qwen2.5-14B-Instruct",
-    "DeepSeek-R1-Distill-LLaMA-8B",
-    "DeepSeek-R1-Distill-Qwen-14B",
-    "LLaMA-3.3-70B-Instruct"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short",
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "StereoSet",
-    "RedditBias",
-    "WinoBias",
-    "BBQ",
-    "DiscrimEval",
-    "DiscrimEvalGen",
-    "DT-Fairness",
-    "DT-Toxicity",
-    "BOLD",
-    "MMLU"
-  ],
-  "continuous_testing": false,
-  "findings": "Quantization's impact on bias related to religion was consistent with other demographic categories, generally not introducing new disparities. The ordering of bias magnitude, toxicity, and sentiment across categories (including religion) remained largely unchanged. However, in ambiguous contexts on the BBQ benchmark, quantization significantly increased the bias score for the religion category in Reasoning models. For sentiment, quantization had a mixed effect on religious subgroups, increasing for some and decreasing for others, though sentiment scores generally remained positive.",
-  "references": [
-    "Simone Balloccu, Patrícia Schmidtová, Mateusz Lango, and Ondrej Dusek. 2024. Leak, cheat, repeat: Data contamination and evaluation malpractices in closed-source llms. In Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics, EACL 2024 - Volume 1: Long Papers, St. Julian's, Malta, March 17-22, 2024, pages 67–93. Association for Computational Linguistics.",
-    "Mislav Balunović, Jasper Dekoninck, Ivo Petrov, Nikola Jovanović, and Martin Vechev. 2025. Matharena: Evaluating Ilms on uncontaminated math competitions. Proceedings of the Neural Information Processing Systems Track on Datasets and Benchmark.",
-    "Soumya Barikeri, Anne Lauscher, Ivan Vulic, and Goran Glavas. 2021. Redditbias: A real-world resource for bias evaluation and debiasing of conversational language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing, ACL/IJCNLP 2021, (Volume 1: Long Papers), Virtual Event, August 1-6, 2021, pages 1941–1955. Association for Computational Linguistics.",
-    "Barry Becker and Ronny Kohavi. 1996. Adult. UCI Machine Learning Repository. DOI: https://doi.org/10.24432/C5XW20.",
-    "J. Cohen. 1988. Statistical Power Analysis for the Behavioral Sciences. Lawrence Erlbaum Associates.",
-    "DeepSeek AI. 2025a. DeepSeek-R1-Distill-Llama-8B. https://huggingface.co/deepseek-ai/DeepSe ek-R1-Distill-Llama-8B. Model card; released January 2025.",
-    "DeepSeek AI. 2025b. DeepSeek-R1-Distill-Qwen-14B. https://huggingface.co/deepseek-ai/DeepSe ek-R1-Distill-Qwen-14B. Model card; released January 2025.",
-    "DeepSeek-AI, Daya Guo, Dejian Yang, Haowei Zhang, Junxiao Song, Ruoyu Zhang, Runxin Xu, Qihao Zhu, Shirong Ma, Peiyi Wang, Xiao Bi, Xiaokang Zhang, Xingkai Yu, Yu Wu, Z. F. Wu, Zhibin Gou, Zhi-hong Shao, Zhuoshu Li, Ziyi Gao, and 81 others. 2025. Deepseek-r1: Incentivizing reasoning capability in Ilms via reinforcement learning. CoRR, abs/2501.12948.",
-    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: pre-training of deep bidirectional transformers for language understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, NAACL-HLT 2019, Minneapolis, MN, USA, June 2-7, 2019, Volume 1 (Long and Short Papers), pages 4171–4186. Association for Computational Linguistics.",
-    "Jwala Dhamala, Tony Sun, Varun Kumar, Satyapriya Krishna, Yada Pruksachatkun, Kai-Wei Chang, and Rahul Gupta. 2021. BOLD: dataset and metrics for measuring biases in open-ended language generation. In FAccT ’21: 2021 ACM Conference on Fairness, Accountability, and Transparency, Virtual Event / Toronto, Canada, March 3-10, 2021, pages 862–872. ACM.",
-    "Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Amy Yang, Angela Fan, Anirudh Goyal, Anthony Hartshorn, Aobo Yang, Archi Mitra, Archie Sravankumar, Artem Korenev, Arthur Hinsvark, Arun Rao, Aston Zhang, and 82 others. 2024. The llama 3 herd of models. CoRR, abs/2407.21783.",
-    "Cynthia Dwork, Moritz Hardt, Toniann Pitassi, Omer Reingold, and Richard S. Zemel. 2012. Fairness through awareness. In Innovations in Theoretical Computer Science 2012, Cambridge, MA, USA, January 8-10, 2012, pages 214–226. ACM.",
-    "Elias Frantar, Saleh Ashkboos, Torsten Hoefler, and Dan Alistarh. 2023. OPTQ: accurate quantization for generative pre-trained transformers.",
-    "Isabel O. Gallegos, Ryan A. Rossi, Joe Barrow, Md. Mehrab Tanjim, Sungchul Kim, Franck Dernoncourt, Tong Yu, Ruiyi Zhang, and Nesreen K. Ahmed. 2024. Bias and fairness in large language models: A survey. Comput. Linguistics, 50(3):1097–1179.",
-    "Gustavo Gonçalves and Emma Strubell. 2023. Understanding the effect of model compression on social bias in large language models. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, EMNLP 2023, Singapore, December 6-10, 2023, pages 2663–2675. Association for Computational Linguistics.",
-    "Ruihao Gong, Yang Yong, Shiqiao Gu, Yushi Huang, Chengtao Lv, Yunchen Zhang, Dacheng Tao, and Xianglong Liu. 2024. LLMC: benchmarking large language model quantization with a versatile compression toolkit. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing: EMNLP 2024 - Industry Track, Miami, Florida, USA, November 12-16, 2024, pages 132–152. Association for Computational Linguistics.",
-    "William Sealy Gosset. 1908. The probable error of a mean. Biometrika, 6(1):1–25. Originally published under the pseudonym “Student”.",
-    "Philipp Guldimann, Alexander Spiridonov, Robin Staab, Nikola Jovanovic, Mark Vero, Velko Vechev, Anna Gueorguieva, Mislav Balunovic, Nikola Konstantinov, Pavol Bielik, Petar Tsankov, and Martin T. Vechev. 2024. COMPL-AI framework: A technical interpretation and LLM benchmarking suite for the EU artificial intelligence act. CoRR, abs/2410.07959.",
-    "Laura Hanu and Unitary team. 2020. Detoxify. Github. https://github.com/unitaryai/detoxify.",
-    "Moritz Hardt, Eric Price, and Nati Srebro. 2016. Equality of opportunity in supervised learning. In Advances in Neural Information Processing Systems 29: Annual Conference on Neural Information Processing Systems 2016, December 5-10, 2016, Barcelona, Spain, pages 3315–3323.",
-    "Larry V. Hedges. 1981. Distribution Theory for Glass’s Estimator of Effect size and Related Estimators. Journal of Educational and Behavioral Statistics, 6(2):107–128.",
-    "Dan Hendrycks, Collin Burns, Steven Basart, Andy Zou, Mantas Mazeika, Dawn Song, and Jacob Steinhardt. 2021. Measuring massive multitask language understanding. In 9th International Conference on Learning Representations, ICLR 2021, Virtual Event, Austria, May 3-7, 2021. OpenReview.net.",
-    "Junyuan Hong, Jinhao Duan, Chenhui Zhang, Zhangheng Li, Chulin Xie, Kelsey Lieberman, James Diffenderfer, Brian R. Bartoldson, Ajay Kumar Jaiswal, Kaidi Xu, Bhavya Kailkhura, Dan Hendrycks, Dawn Song, Zhangyang Wang, and Bo Li. 2024. Decoding compressed trust: Scrutinizing the trustworthiness of efficient Ilms under compression. In Forty-first International Conference on Machine Learning, ICML 2024, Vienna, Austria, July 21-27, 2024. OpenReview.net.",
-    "Clayton J. Hutto and Eric Gilbert. 2014. VADER: A parsimonious rule-based model for sentiment analysis of social media text. In Proceedings of the Eighth International Conference on Weblogs and Social Media, ICWSM 2014, Ann Arbor, Michigan, USA, June 1-4, 2014. The AAAI Press.",
-    "Ajay Kumar Jaiswal, Zhe Gan, Xianzhi Du, Bowen Zhang, Zhangyang Wang, and Yinfei Yang. 2024. Compressing llms: The truth is rarely pure and never simple. In The Twelfth International Conference on Learning Representations, ICLR 2024, Vienna, Austria, May 7-11, 2024. OpenReview.net.",
-    "Elisabeth Kirsten, Ivan Habernal, Vedant Nanda, and Muhammad Bilal Zafar. 2025. The impact of inference acceleration on bias of llms. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies, NAACL 2025 - Volume 1: Long Papers, Albuquerque, New Mexico, USA, April 29 - May 4, 2025, pages 1834–1853. Association for Computational Linguistics.",
-    "Woosuk Kwon, Zhuohan Li, Siyuan Zhuang, Ying Sheng, Lianmin Zheng, Cody Hao Yu, Joseph E. Gonzalez, Hao Zhang, and Ion Stoica. 2023. Efficient memory management for large language model serving with pagedattention. In Proceedings of the ACM SIGOPS 29th Symposium on Operating Systems Principles.",
-    "Qun Li, Yuan Meng, Chen Tang, Jiacheng Jiang, and Zhi Wang. 2024a. Investigating the impact of quantization on adversarial robustness. CoRR, abs/2404.05639.",
-    "Shiyao Li, Xuefei Ning, Luning Wang, Tengxuan Liu, Xiangsheng Shi, Shengen Yan, Guohao Dai, Huazhong Yang, and Yu Wang. 2024b. Evaluating quantized large language models. In Forty-first International Conference on Machine Learning, ICML 2024, Vienna, Austria, July 21-27, 2024. OpenReview.net.",
-    "Percy Liang, Rishi Bommasani, Tony Lee, Dimitris Tsipras, Dilara Soylu, Michihiro Yasunaga, Yian Zhang, Deepak Narayanan, Yuhuai Wu, Ananya Kumar, Benjamin Newman, Binhang Yuan, Bobby Yan, Ce Zhang, Christian Cosgrove, Christopher D. Manning, Christopher Ré, Diana Acosta-Navas, Drew A. Hudson, and 31 others. 2023. Holistic evaluation of language models. Trans. Mach. Learn. Res., 2023.",
-    "Ji Lin, Jiaming Tang, Haotian Tang, Shang Yang, Guangxuan Xiao, and Song Han. 2024. AWQ: activation-aware weight quantization for on-device LLM compression and acceleration. GetMobile Mob. Comput. Commun., 28(4):12–17.",
-    "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. 2019. Roberta: A robustly optimized BERT pretraining approach. CoRR, abs/1907.11692.",
-    "Meta. 2024. LLaMA-3.1-8B-Instruct. https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct. Model card; released July 2024.",
-    "Meta. 2025. LLaMA-3.3-70B-Instruct. https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct. Model card; released June 2025.",
-    "Lingbo Mo, Boshi Wang, Muhao Chen, and Huan Sun. 2024. How trustworthy are open-source llms? an assessment under malicious demonstrations shows their vulnerabilities. In Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), NAACL 2024, Mexico City, Mexico, June 16-21, 2024, pages 2775–2792. Association for Computational Linguistics.",
-    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2021. Stereoset: Measuring stereotypical bias in pretrained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing, ACL/IJCNLP 2021, (Volume 1: Long Papers), Virtual Event, August 1-6, 2021, pages 5356–5371. Association for Computational Linguistics.",
-    "OpenAI. 2023. GPT-4 technical report. CoRR, abs/2303.08774.",
-    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel R. Bowman. 2022. BBQ: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, Dublin, Ireland, May 22-27, 2022, pages 2086–2105. Association for Computational Linguistics.",
-    "Qwen Team. 2024. Qwen2.5-14B-Instruct. https://huggingface.co/Qwen/Qwen2.5-14B-Instruct. Model card; released September 2024.",
-    "Stefan Riezler and John T. Maxwell III. 2005. On some pitfalls in automatic evaluation and significance testing for MT. In Proceedings of the Workshop on Intrinsic and Extrinsic Evaluation Measures for Machine Translation and/or Summarization@ACL 2005, Ann Arbor, Michigan, USA, June 29, 2005, pages 57–64. Association for Computational Linguistics.",
-    "Alex Tamkin, Amanda Askell, Liane Lovitt, Esin Durmus, Nicholas Joseph, Shauna Kravec, Karina Nguyen, Jared Kaplan, and Deep Ganguli. 2023. Evaluating and mitigating discrimination in language model decisions. CoRR, abs/2312.03689.",
-    "Boxin Wang, Weixin Chen, Hengzhi Pei, Chulin Xie, Mintong Kang, Chenhui Zhang, Chejian Xu, Zidi Xiong, Ritik Dutta, Rylan Schaeffer, Sang T. Truong, Simran Arora, Mantas Mazeika, Dan Hendrycks, Zinan Lin, Yu Cheng, Sanmi Koyejo, Dawn Song, and Bo Li. 2023. Decodingtrust: A comprehensive assessment of trustworthiness in GPT models. In Advances in Neural Information Processing Systems 36: Annual Conference on Neural Information Processing Systems 2023, NeurIPS 2023, New Orleans, LA, USA, December 10 - 16, 2023.",
-    "Xinpeng Wang, Bolei Ma, Chengzhi Hu, Leon Weber-Genzel, Paul Röttger, Frauke Kreuter, Dirk Hovy, and Barbara Plank. 2024. “my answer is c”: First-token probabilities do not match text answers in instruction-tuned language models. In Findings of the Association for Computational Linguistics, ACL 2024, Bangkok, Thailand and virtual meeting, August 11-16, 2024, pages 7407–7416. Association for Computational Linguistics.",
-    "Guangxuan Xiao, Ji Lin, Mickaël Seznec, Hao Wu, Julien Demouth, and Song Han. 2023. Smoothquant: Accurate and efficient post-training quantization for large language models. In International Conference on Machine Learning, ICML 2023, 23-29 July 2023, Honolulu, Hawaii, USA, volume 202 of Proceedings of Machine Learning Research, pages 38087–38099. PMLR.",
-    "Guangxuan Xu and Qingyuan Hu. 2022. Can model compression improve NLP fairness. CoRR, abs/2201.08542.",
-    "Zhichao Xu, Ashim Gupta, Tao Li, Oliver Bentham, and Vivek Srikumar. 2024. Beyond perplexity: Multidimensional safety evaluation of LLM compression. In Findings of the Association for Computational Linguistics: EMNLP 2024, Miami, Florida, USA, November 12-16, 2024, pages 15359–15396. Association for Computational Linguistics.",
-    "An Yang, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chengyuan Li, Dayi-heng Liu, Fei Huang, Haoran Wei, Huan Lin, Jian Yang, Jianhong Tu, Jianwei Zhang, Jianxin Yang, Jiaxi Yang, Jingren Zhou, Junyang Lin, Kai Dang, and 22 others. 2024. Qwen2.5 technical report. CoRR, abs/2412.15115.",
-    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Or-donez, and Kai-Wei Chang. 2018. Gender bias in coreference resolution: Evaluation and debiasing methods. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, NAACL-HLT, New Orleans, Louisiana, USA, June 1-6, 2018, Volume 2 (Short Papers), pages 15–20. Association for Computational Linguistics.",
-    "Kun Zhou, Yutao Zhu, Zhipeng Chen, Wentong Chen, Wayne Xin Zhao, Xu Chen, Yankai Lin, Ji-Rong Wen, and Jiawei Han. 2023. Don’t make your LLM an evaluation benchmark cheater. CoRR, abs/2311.01964.",
-    "Zixuan Zhou, Xuefei Ning, Ke Hong, Tianyu Fu, Jiaming Xu, Shiyao Li, Yuming Lou, Luning Wang, Zhihang Yuan, Xiuhong Li, Shengen Yan, Guohao Dai, Xiao-Ping Zhang, Yuhan Dong, and Yu Wang. 2024. A survey on efficient inference for large language models. CoRR, abs/2404.14294."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

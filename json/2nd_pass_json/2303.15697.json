@@ -2,73 +2,27 @@
   "filename": "2303.15697.pdf",
   "title": "Model and Evaluation: Towards Fairness in Multilingual Text Classification",
   "arxiv_url": "https://arxiv.org/pdf/2303.15697",
-  "benchmark_measurement": "The benchmark did not measure anything in terms of faith or religion. It focused on measuring demographic bias (age, country, ethnicity, gender) in multilingual hate speech classification.",
-  "religious_groups": [],
-  "models_tested": [
-    "BERT (Individual Training)",
-    "BERT (Merge Training)",
-    "BERT+FGM",
-    "BERT+PGD",
-    "SENT-DEBIAS BERT",
-    "bert-base-multilingual-uncased"
+  "bias_targets": [
+    {
+      "target": "Age bias",
+      "methodology": "Measuring Monolingual and Multilingual Equality Difference by calculating False Positive Rate (FPR) disparities between binarized age groups (<= median vs. elder age) on a multilingual hate speech classification dataset."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Measuring Monolingual and Multilingual Equality Difference by calculating False Positive Rate (FPR) disparities between gender groups on a multilingual hate speech classification dataset."
+    },
+    {
+      "target": "Racial/Ethnicity bias",
+      "methodology": "Measuring Monolingual and Multilingual Equality Difference by calculating False Positive Rate (FPR) disparities between binarized racial groups (white vs. nonwhite) on a multilingual hate speech classification dataset."
+    },
+    {
+      "target": "Nationality/Country bias",
+      "methodology": "Measuring Monolingual and Multilingual Equality Difference by calculating False Positive Rate (FPR) disparities based on whether a user is located in the primary country associated with the language or not."
+    },
+    {
+      "target": "Language bias",
+      "methodology": "Evaluating Multilingual Equality Performance Difference by measuring the disparity in macro-averaged F-scores across different languages to ensure equal predictive performance regardless of the language."
+    }
   ],
-  "languages_evaluated": [
-    "English",
-    "Italian",
-    "Polish",
-    "Portuguese",
-    "Spanish"
-  ],
-  "response_type": [
-    "other"
-  ],
-  "religion_component": "none",
-  "base_benchmarks": [],
-  "continuous_testing": false,
-  "findings": "This paper does not contain any findings related to religion, as it was not a focus of the research.",
-  "references": [
-    "James Bergstra, Rémi Bardenet, Yoshua Bengio, and Balázs Kégl. Algorithms for hyper-parameter optimization. Advances in neural information processing systems, 24, 2011.",
-    "Tolga Bolukbasi, Kai-Wei Chang, James Zou, Venkatesh Saligrama, and Adam Kalai. Man is to computer programmer as woman is to homemaker? debiasing word embeddings. In Proceedings of the 30th International Conference on Neural Information Processing Systems, NIPS’16, page 4356–4364, Red Hook, NY, USA, 2016. Curran Associates Inc. ISBN 9781510838819.",
-    "António Câmara, Nina Taneja, Tamjeed Azad, Emily Allaway, and Richard Zemel. Mapping the multilingual margins: Intersectional biases of sentiment analysis systems in English, Spanish, and Arabic. In Proceedings of the Second Workshop on Language Technology for Equality, Diversity and Inclusion, pages 90–106, Dublin, Ireland, May 2022. Association for Computational Linguistics. doi: 10.18653/v1/2022.ltedi-1.11. URL https://aclanthology.org/2022.ltedi-1.11.",
-    "Hongyan Chang, Ta Duy Nguyen, Sasi Kumar Murakonda, Ehsan Kazemi, and Reza Shokri. On adversarial bias and the robustness of fair machine learning. arXiv preprint arXiv:2006.08669, 2020.",
-    "Lu Cheng, Ahmadreza Mosallanezhad, Yasin Silva, Deborah Hall, and Huan Liu. Mitigating bias in session-based cyberbullying detection: A non-compromising approach. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 2158–2168, Online, August 2021. Association for Computational Linguistics. doi: 10.18653/v1/2021.acl-long.168. URL https://aclanthology.org/2021. acl-long.168.",
-    "Pengyu Cheng, Weituo Hao, Siyang Yuan, Shijing Si, and Lawrence Carin. Fairfil: Contrastive neural debiasing method for pretrained text encoders. In International Conference on Learning Representations, 2020.",
-    "Won Ik Cho, Jiwon Kim, Jaeyeong Yang, and Nam Soo Kim. Towards cross-lingual generalization of translation gender bias. In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, FAccT ’21, page 449–457, New York, NY, USA, 2021. Association for Computing Machinery. ISBN 9781450383097. doi: 10.1145/3442188.3445907. URL https://doi.org/10.1145/3442188.3445907.",
-    "Marta R. Costa-jussà, Carlos Escolano, Christine Basta, Javier Ferrando, Roser Batlle, and Ksenia Kharitonova. Interpreting gender bias in neural machine translation: Multilingual architecture matters. Proceedings of the AAAI Conference on Artificial Intelligence, 36 (11):11855–11863, Jun. 2022. doi: 10.1609/aaai.v36i11.21442. URL https://ojs.aaai. org/index.php/AAAI/article/view/21442.",
-    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. BERT: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 4171–4186, Minneapolis, Minnesota, June 2019. Association for Computational Linguistics. doi: 10.18653/v1/N19-1423. URL https://aclanthology.org/N19-1423.",
-    "Lucas Dixon, John Li, Jeffrey Sorensen, Nithum Thain, and Lucy Vasserman. Measuring and mitigating unintended bias in text classification. AIES ’18, page 67–73, New York, NY, USA, 2018. Association for Computing Machinery. ISBN 9781450360128. doi: 10. 1145/3278721.3278729. URL https://doi.org/10.1145/3278721.3278729.",
-    "Cynthia Dwork, Moritz Hardt, Toniann Pitassi, Omer Reingold, and Richard Zemel. Fairness through awareness. In Proceedings of the 3rd Innovations in Theoretical Computer Science Conference, ITCS ’12, page 214–226, New York, NY, USA, 2012. Association for Computing Machinery. ISBN 9781450311151. doi: 10.1145/2090236.2090255. URL https://doi.org/10.1145/2090236.2090255.",
-    "Fatma Elsafoury. Darkness can not drive out darkness: Investigating bias in hate SpeechDetection models. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics: Student Research Workshop, pages 31–43, Dublin, Ireland, May 2022. Association for Computational Linguistics. URL https://aclanthology.org/ 2022.acl-srw.4.",
-    "José Antonio García-Díaz, Salud María Jiménez-Zafra, Miguel Angel García-Cumbreras, and Rafael Valencia-García. Evaluating feature combination strategies for hate-speech detection in spanish using linguistic features and transformers. Complex & Intelligent Systems, 2022.",
-    "Umang Gupta, Aaron M Ferber, Bistra Dilkina, and Greg Ver Steeg. Controllable guarantees for fair outcomes via contrastive information estimation. Proceedings of the AAAI Conference on Artificial Intelligence, 35(9):7610–7619, May 2021. doi: 10.1609/aaai. v35i9.16931. URL https://ojs.aaai.org/index.php/AAAI/article/view/16931.",
-    "Xudong Han, Timothy Baldwin, and Trevor Cohn. Decoupling adversarial training for fair NLP. In Findings of the Association for Computational Linguistics: ACL-IJCNLP 2021, pages 471–477, Online, August 2021. Association for Computational Linguistics. doi: 10. 18653/v1/2021.findings-acl.41. URL https://aclanthology.org/2021.findings-acl. 41.",
-    "Xiaolei Huang, Linzi Xing, Franck Dernoncourt, and Michael J. Paul. Multilingual twitter corpus and baselines for evaluating demographic bias in hate speech recognition. In Proceedings of the Twelfth Language Resources and Evaluation Conference, pages 1440– 1448, Marseille, France, May 2020. European Language Resources Association. ISBN 979-10-95546-34-4. URL https://aclanthology.org/2020.lrec-1.180.",
-    "Svetlana Kiritchenko and Saif Mohammad. Examining gender and race bias in two hundred sentiment analysis systems. In Proceedings of the Seventh Joint Conference on Lexical and Computational Semantics, pages 43–53, New Orleans, Louisiana, June 2018. Association for Computational Linguistics. doi: 10.18653/v1/S18-2005. URL https://aclanthology.org/S18-2005.",
-    "Jan Kocoń, Alicja Figas, Marcin Gruza, Daria Puchalska, Tomasz Kajdanowicz, and Przemysław Kazienko. Offensive, aggressive, and hate speech analysis: From datacentric to human-centered approach. Information Processing and Management, 58(5): 102643, 2021. ISSN 0306-4573. doi: https://doi.org/10.1016/j.ipm.2021.102643. URL https://www.sciencedirect.com/science/article/pii/S0306457321001333.",
-    "Gokul Karthik Kumar, Abhishek Gehlot, Sahal Shaji Mullappilly, and Karthik Nandakumar. MuCoT: Multilingual contrastive training for question-answering in low-resource languages. In Proceedings of the Second Workshop on Speech and Language Technologies for Dravidian Languages, pages 15–24, Dublin, Ireland, May 2022. Association for Computational Linguistics. doi: 10.18653/v1/2022.dravidianlangtech-1.3. URL https://aclanthology.org/2022.dravidianlangtech-1.3.",
-    "Paul Pu Liang, Irene Mengze Li, Emily Zheng, Yao Chong Lim, Ruslan Salakhutdinov, and Louis-Philippe Morency. Towards debiasing sentence representations. arXiv preprint arXiv:2007.08100, 2020.",
-    "Aleksander Madry, Aleksandar Makelov, Ludwig Schmidt, Dimitris Tsipras, and Adrian Vladu. Towards deep learning models resistant to adversarial attacks. arXiv preprint arXiv:1706.06083, 2017.",
-    "Takeru Miyato, Andrew M Dai, and Ian Goodfellow. Adversarial training methods for semi-supervised text classification. arXiv preprint arXiv:1605.07725, 2016.",
-    "Stephen Mutuvi, Emanuela Boros, Antoine Doucet, Adam Jatowt, Gaël Lejeune, and Moses Odeo. Multilingual epidemiological text classification: A comparative study. In Proceedings of the 28th International Conference on Computational Linguistics, pages 6172–6183, Barcelona, Spain (Online), December 2020. International Committee on Computational Linguistics. doi: 10.18653/v1/2020.coling-main.543. URL https://aclanthology.org/ 2020.coling-main.543.",
-    "Farhad Nooralahzadeh, Giannis Bekoulis, Johannes Bjerva, and Isabelle Augenstein. Zero-shot cross-lingual transfer with meta learning. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 4547–4562, Online, November 2020. Association for Computational Linguistics. doi: 10.18653/v1/2020. emnlp-main.368. URL https://aclanthology.org/2020.emnlp-main.368.",
-    "Xiao Pan, Mingxuan Wang, Liwei Wu, and Lei Li. Contrastive learning for many-to-many multilingual neural machine translation. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 244–258, Online, August 2021. Association for Computational Linguistics. doi: 10.18653/v1/2021.acl-long.21. URL https://aclanthology.org/2021.acl-long.21.",
-    "Edoardo Maria Ponti, Goran Glavaš, Olga Majewska, Qianchu Liu, Ivan Vulić, and Anna Korhonen. XCOPA: A multilingual dataset for causal commonsense reasoning. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 2362–2376, Online, November 2020. Association for Computational Linguistics. doi: 10.18653/v1/2020.emnlp-main.185. URL https://aclanthology.org/ 2020.emnlp-main.185.",
-    "Vinodkumar Prabhakaran, Ben Hutchinson, and Margaret Mitchell. Perturbation sensitivity analysis to detect unintended model biases. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 5740–5745, Hong Kong, China, November 2019. Association for Computational Linguistics. doi: 10.18653/v1/D19-1578. URL https://www.aclweb.org/anthology/D19-1578.",
-    "Michal Ptaszynski, Agata Pieciukiewicz, and Paweł Dybała. Results of the poleval 2019 shared task 6: first dataset and open shared task for automatic cyberbullying detection in polish twitter. In Maciej Ogrodniczuk and Łukasz Kobyliński, editors, Proceedings of the PolEval 2019 Workshop, pages 89–110. Institute of Computer Sciences. Polish Academy of Sciences, Warszawa, 2019. ISBN 978-83-63159-28-3. URL http://2019. poleval.pl/files/poleval2019.pdf.",
-    "Sebastian Ruder, Ivan Vulić, and Anders Søgaard. Square one bias in NLP: Towards a multi-dimensional exploration of the research manifold. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2340–2354, Dublin, Ireland, May 2022. Association for Computational Linguistics. doi: 10.18653/v1/2022.findings-acl.184. URL https://aclanthology.org/2022.findings-acl.184.",
-    "Rachel Rudinger, Chandler May, and Benjamin Van Durme. Social bias in elicited natural language inferences. In Proceedings of the First ACL Workshop on Ethics in Natural Language Processing, pages 74–79, Valencia, Spain, April 2017. Association for Computational Linguistics. doi: 10.18653/v1/W17-1609. URL https://aclanthology.org/ W17-1609.",
-    "Aili Shen, Xudong Han, Trevor Cohn, Timothy Baldwin, and Lea Frermann. Contrastive learning for fair representations. 2021.",
-    "Qinlan Shen, Michael Yoder, Yohan Jo, and Carolyn Rose. Perceptions of censorship and moderation bias in political debate forums. Proceedings of the International AAAI Conference on Web and Social Media, 12(1), Jun. 2018. doi: 10.1609/icwsm.v12i1.15002. URL https://ojs.aaai.org/index.php/ICWSM/article/view/15002.",
-    "Ada Wan. Fairness in representation for multilingual nlp: Insights from controlled experiments on conditional language modeling. In International Conference on Learning Representations, 2022. URL https://openreview.net/forum?id=-1186T10sw.",
-    "Danqing Wang, Jiaze Chen, Hao Zhou, Xipeng Qiu, and Lei Li. Contrastive aligned joint learning for multilingual summarization. In Findings of the Association for Computational Linguistics: ACL-IJCNLP 2021, pages 2739–2750, Online, August 2021. Association for Computational Linguistics. doi: 10.18653/v1/2021.findings-acl.242. URL https: //aclanthology.org/2021.findings-acl.242.",
-    "Jialu Wang, Yang Liu, and Xin Wang. Assessing multilingual fairness in pre-trained multimodal representations. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2681–2695, Dublin, Ireland, May 2022. Association for Computational Linguistics. doi: 10.18653/v1/2022.findings-acl.211. URL https://aclanthology.org/ 2022.findings-acl.211.",
-    "Zeerak Waseem and Dirk Hovy. Hateful symbols or hateful people? predictive features for hate speech detection on twitter. In Proceedings of the NAACL Student Research Workshop, pages 88–93, San Diego, California, June 2016. Association for Computational Linguistics. doi: 10.18653/v1/N16-2013. URL https://aclanthology.org/N16-2013.",
-    "Kellie Webster and Emily Pitler. Scalable cross lingual pivots to model pronoun gender for translation. CoRR, abs/2006.08881, 2020. URL https://arxiv.org/abs/2006.08881.",
-    "Shijie Wu and Mark Dredze. beto, bentz, becas: the surprising cross-lingual effectiveness of BERT. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 833–844, Hong Kong, China, November 2019. Association for Computational Linguistics. doi: 10.18653/v1/D19-1077. URL https://aclanthology. org/D19-1077.",
-    "Shijie Wu and Mark Dredze. Are all languages created equal in multilingual BERT? In Proceedings of the 5th Workshop on Representation Learning for NLP, pages 120–130, Online, July 2020. Association for Computational Linguistics. doi: 10.18653/v1/2020. repl4nlp-1.16. URL https://aclanthology.org/2020.repl4nlp-1.16.",
-    "Wenjie Yin and Arkaitz Zubiaga. Towards generalisable hate speech detection: a review on obstacles and solutions. PeerJ Computer Science, 7:e598, 2021.",
-    "Han Zhao, Xu Yang, Zhenru Wang, Erkun Yang, and Cheng Deng. Graph debiased contrastive learning with joint representation clustering. In Zhi-Hua Zhou, editor, Proceedings of the Thirtieth International Joint Conference on Artificial Intelligence, IJCAI-21, pages 3434–3440. International Joint Conference on Artificial Intelligence Organization, 8 2021.",
-    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang. Gender bias in coreference resolution: Evaluation and debiasing methods. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 15–20, New Orleans, Louisiana, June 2018. Association for Computational Linguistics. doi: 10.18653/ v1/N18-2003. URL https://aclanthology.org/N18-2003.",
-    "Jieyu Zhao, Subhabrata Mukherjee, Saghar Hosseini, Kai-Wei Chang, and Ahmed Hassan Awadallah. Gender bias in multilingual embeddings and cross-lingual transfer. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 2896–2907, Online, July 2020. Association for Computational Linguistics. doi: 10. 18653/v1/2020.acl-main.260. URL https://aclanthology.org/2020.acl-main.260."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

@@ -2,31 +2,96 @@
   "filename": "2307.11806.pdf",
   "title": "How do you feel? Measuring User-Perceived Value for Rejecting Machine Decisions in Hate Speech Detection",
   "arxiv_url": "https://arxiv.org/pdf/2307.11806",
-  "bias_targets": [
-    {
-      "target": "Dataset bias",
-      "methodology": "Evaluating machine learning models on both 'seen' (in-domain) and 'unseen' (out-of-domain) datasets to measure the impact of dataset bias on model confidence, error rates, and optimal human-in-the-loop rejection thresholds."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Conducting statistical analysis (Mann-Whitney U test) on survey responses to measure differences in how male and female annotators/users perceive and value hate speech classification scenarios (e.g., false positives vs. false negatives)."
-    },
-    {
-      "target": "Nationality bias",
-      "methodology": "Using the Kruskal-Wallis test to identify statistical differences in the perception and valuation of machine-detected hate speech decisions among participants of different nationalities."
-    },
-    {
-      "target": "Language bias",
-      "methodology": "Using the Kruskal-Wallis test to measure statistical differences in hate speech perception among survey participants based on their language."
-    },
-    {
-      "target": "Racial bias",
-      "methodology": "Analyzing survey data with the Kruskal-Wallis test to determine if a participant's ethnicity significantly influences their subjective perception of machine-made hate speech decisions."
-    },
-    {
-      "target": "Cultural bias",
-      "methodology": "Testing for statistical differences in the perceived value of hate speech moderation across participants living on different continents."
-    }
+  "religious_groups": [],
+  "models_tested": [
+    "Logistic Regression (LR) with Character N-gram",
+    "Convolutional Neural Network (CNN)",
+    "DistilBERT"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "none",
+  "base_benchmarks": [
+    "Waseem and Hovy [67] dataset",
+    "Semeval-2019 task 5"
+  ],
+  "continuous_testing": false,
+  "findings": "This paper does not analyze or report findings related to religion, as it was not a focus of the research.",
+  "references": [
+    "Sweta Agrawal and Amit Awekar. 2018. Deep learning for detecting cyberbullying across multiple social media platforms. In European conference on information retrieval. Springer, 141-153.",
+    "I Elaine Allen and Christopher A Seaman. 2007. Likert scales and data analyses. Quality progress 40, 7 (2007), 64-65.",
+    "Aymé Arango, Jorge Pérez, and Barbara Poblete. 2019. Hate speech detection is not as easy as you may think: A closer look at model validation. In Proceedings of the 42nd international acm sigir conference on research and development in information retrieval. 45-54.",
+    "Agathe Balayn, Jie Yang, Zoltan Szlavik, and Alessandro Bozzon. 2021. Automatic Identification of Harmful, Aggressive, Abusive, and Offensive Language on the Web: A Survey of Technical Biases Informed by Psychology Literature. ACM Transactions on Social Computing (TSC) 4, 3 (2021), 1-56.",
+    "Emilio Balda, Arash Behboodi, and Rudolf Mathar. 2020. Adversarial Examples in Deep Neural Networks: An Overview. In Deep Learning: Algorithms and Applications. 31-65.",
+    "Gagan Bansal, Besmira Nushi, Ece Kamar, Eric Horvitz, and Daniel S. Weld. 2021. Is the Most Accurate AI the Best Teammate? Optimizing Al for Teamwork. Proceedings of the AAAI Conference on Artificial Intelligence 35, 13 (May 2021), 11405-11414. https://doi.org/10.1609/aaai.v35i13.17359",
+    "Ellen Gurman Bard, Dan Robertson, and Antonella Sorace. 1996. Magnitude estimation of linguistic acceptability. Language 72, 1 (1996), 32-68.",
+    "Valerio Basile, Cristina Bosco, Elisabetta Fersini, Nozza Debora, Viviana Patti, Francisco Manuel Rangel Pardo, Paolo Rosso, Manuela Sanguinetti, et al. 2019. Semeval-2019 task 5: Multilingual detection of hate speech against immigrants and women in twitter. In 13th International Workshop on Semantic Evaluation. Association for Computational Linguistics, 54-63.",
+    "Abeba Birhane, Pratyusha Kalluri, Dallas Card, William Agnew, Ravit Dotan, and Michelle Bao. 2021. The values encoded in machine learning research. arXiv preprint arXiv:2106.15590 (2021).",
+    "Harry N Boone and Deborah A Boone. 2012. Analyzing likert data. Journal of extension 50, 2 (2012), 1-5.",
+    "Victoria K Burbank. 1994. Cross-cultural perspectives on aggression in women and girls: An introduction. Sex Roles 30, 3 (1994), 169-176.",
+    "William Callaghan, Joslin Goh, Michael Mohareb, Andrew Lim, and Edith Law. 2018. MechanicalHeart: A Human-Machine Framework for the Classification of Phonocardiograms. In CSCW'18, Vol. 2. 28:1-28:17.",
+    "Fabio Casati, Pierre-André Noël, and Jie Yang. 2021. On the Value of ML Models. arXiv preprint arXiv:2112.06775 (2021).",
+    "Justin Cheng and Michael S Bernstein. 2015. Flock: Hybrid crowd-machine learning classifiers. In Proceedings of the 18th ACM conference on computer supported cooperative work & social computing. 600-611.",
+    "Justin Cheng and Michael S. Bernstein. 2015. Flock: Hybrid Crowd-Machine Learning Classifiers. In CSCW'15 (Vancouver, BC, Canada).",
+    "Lize Coenen, Ahmed KA Abdullah, and Tias Guns. 2020. Probability of default estimation, with a reject option. In 2020 IEEE 7th International Conference on Data Science and Advanced Analytics (DSAA). IEEE, 439-448.",
+    "Mary Cummings. 2006. Integrating ethics in design through the value-sensitive design approach. Science and engineering ethics 12 (11 2006), 701-15. https: //doi.org/10.1007/s11948-006-0065-0",
+    "Claudio De Stefano, Carlo Sansone, and Mario Vento. 2000. To reject or not to reject: that is the question-an answer in case of neural classifiers. IEEE Transactions on Systems, Man, and Cybernetics, Part C (Applications and Reviews) 30, 1 (2000), 84-94.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2018. Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805 (2018).",
+    "Daniel Epps. 2014. The consequences of error in criminal justice. Harv. L. Rev. 128 (2014), 1065.",
+    "EU. 2016. The EU Code of conduct on countering illegal hate speech online. European Commission (May 2016). https://ec.europa.eu/info/policies/justice-and-fundamental-rights/combatting-discrimination/racism-and-xenophobia/eu-code-conduct-countering-illegal-hate-speech-online_en Visited on 07/03/2022.",
+    "Karen Fitzner. 2007. Reliability and validity a quick review. The Diabetes Educator 33, 5 (2007), 775-780.",
+    "Jessica Fjeld, Nele Achten, Hannah Hilligoss, Adam Nagy, and Madhulika Srikumar. 2020. Principled artificial intelligence: Mapping consensus in ethical and rights-based approaches to principles for AI. Berkman Klein Center Research Publication 2020-1 (2020).",
+    "Paula Fortuna and Sérgio Nunes. 2018. A survey on automatic detection of hate speech in text. ACM Computing Surveys (CSUR) 51, 4 (2018), 1-30.",
+    "Iginio Gagliardone, Danit Gal, Thiago Alves, and Gabriela Martinez. 2015. Countering online hate speech. Unesco Publishing.",
+    "Yonatan Geifman and Ran El-Yaniv. 2017. Selective Classification for Deep Neural Networks. In Proceedings of the 31st International Conference on Neural Information Processing Systems (Long Beach, California, USA) (NIPS'17). Curran Associates Inc., Red Hook, NY, USA, 4885-4894.",
+    "Yonatan Geifman and Ran El-Yaniv. 2019. SelectiveNet: A Deep Neural Network with an Integrated Reject Option. In Proceedings of the 36th International Conference on Machine Learning (Proceedings of Machine Learning Research, Vol. 97), Kamalika Chaudhuri and Ruslan Salakhutdinov (Eds.). PMLR, 2151-2159. https://proceedings.mlr.press/v97/geifman19a.html",
+    "Noah Giansiracusa. 2021. Facebook Uses Deceptive Math to Hide Its Hate Speech Problem. Wired (Oct 2021). https://www.wired.com/story/facebooks-deceptive-math-when-it-comes-to-hate-speech/ Visited on 07/03/2022.",
+    "Michael Gilliland. 2020. The value added by machine learning approaches in forecasting. International Journal of Forecasting 36, 1 (2020), 161-166. https: //doi.org/10.1016/j.ijforecast.2019.04.016 M4 Competition.",
+    "Michael Wojatzki Tobias Horsmann Darina Gold and Torsten Zesch. 2018. Do women perceive hate differently: Examining the relationship between hate speech, gender, and agreement judgments. (2018).",
+    "Yves Grandvalet, Alain Rakotomamonjy, Joseph Keshet, and Stéphane Canu. 2008. Support Vector Machines with a Reject Option. In Advances in Neural Information Processing Systems, D. Koller, D. Schuurmans, Y. Bengio, and L. Bottou (Eds.), Vol. 21. Curran Associates, Inc. https://proceedings.neurips.cc/paper/2008/file/ 3df1d4b96d8976ff5986393e8767f5b2-Paper.pdf",
+    "Tommi Gröndahl, Luca Pajola, Mika Juuti, Mauro Conti, and N Asokan. 2018. All you need is \"love\" evading hate speech detection. In Proceedings of the 11th ACM workshop on artificial intelligence and security. 2-12.",
+    "Chuan Guo, Geoff Pleiss, Yu Sun, and Kilian Q. Weinberger. 2017. On Calibration of Modern Neural Networks. In ICML'17 - Volume 70. 1321-1330.",
+    "Kilian Hendrickx, Lorenzo Perini, Dries Van der Plas, Wannes Meert, and Jesse Davis. 2021. Machine Learning with a Reject Option: A survey. arXiv preprint arXiv:2107.11277 (2021).",
+    "Mathew Ingram. 2018. Facebook now linked to violence in the Philippines, Libya, Germany, Myanmar, and India. Columbia Journalism Review (Sep 2018). https://www.cjr.org/the_media_today/facebook-linked-to-violence.php \"Visited on 07/03/2022\".",
+    "Ece Kamar, Severin Hacker, and Eric Horvitz. 2012. Combining Human and Machine Intelligence in Large-scale Crowdsourcing. In AAMAS'12 - Volume 1 (Valencia, Spain). 467-474.",
+    "Shervin Khodabandeh, David Kiron, Françoise Candelon, Michael Chu, and Burt LaFountain. 2020. Expanding Al's Impact With Organizational Learning. MIT Sloan Management Review and Boston Consulting Group.",
+    "Kate Klonick. 2018. The new governors: The people, rules, and processes governing online speech. Harvard Law Review 131 (2018), 1598.",
+    "Klaus Krippendorff. 2004. Reliability in content analysis: Some common misconceptions and recommendations. Human communication research 30, 3 (2004), 411-433.",
+    "Min Kyung Lee. 2018. Understanding perception of algorithmic decisions: Fairness, trust, and emotion in response to algorithmic management. Big Data & Society 5, 1 (2018), 2053951718756684. https://doi.org/10.1177/2053951718756684 arXiv:https://doi.org/10.1177/2053951718756684",
+    "Roselyn J Lee-Won, Tiffany N White, Hyunjin Song, Ji Young Lee, and Mikhail R Smith. 2020. Source magnification of cyberhate: Affective and cognitive effects of multiple-source hate messages on target group members. Media Psychology 23, 5 (2020), 603-624.",
+    "Eddy Maddalena, Stefano Mizzaro, Falk Scholer, and Andrew Turpin. 2017. On crowdsourcing relevance magnitudes for information retrieval evaluation. ACM Transactions on Information Systems (TOIS) 35, 3 (2017), 1-32.",
+    "Mujib Mashal, Suhasini Raj, and Hari Kumar. 2022. As Officials Look Away, Hate Speech in India Nears Dangerous Levels. The New York Times (Feb 2022). https://www.nytimes.com/2022/02/08/world/asia/india-hate-speech-muslims.html Visited on 07/03/2022.",
+    "J Nathan Matias. 2019. Preventing harassment and increasing group participation through social norms in 2,190 online science discussions. Proceedings of the National Academy of Sciences 116, 20 (2019), 9785-9789.",
+    "Mick McGee. 2004. Master usability scaling: magnitude estimation and master scaling applied to usability measurement. In Proceedings of the SIGCHI conference on Human factors in computing systems. 335-342.",
+    "Howard R Moskowitz. 1977. Magnitude estimation: notes on what, how, when, and why to use it. Journal of Food Quality 1, 3 (1977), 195-227.",
+    "Azadeh Sadat Mozafari, Hugo Siqueira Gomes, Wilson Leão, Steeven Janny, and Christian Gagné. 2018. Attended Temperature Scaling: A Practical Approach for Calibrating Deep Neural Networks. https://doi.org/10.48550/ARXIV.1810.11586",
+    "Paul Mozur. 2018. A Genocide Incited on Facebook, With Posts From Myanmar's Military. The New York Times (Oct 2018). https://www.nytimes.com/2018/10/15/ technology/myanmar-facebook-genocide.html Visited on 07/03/2022.",
+    "Hendrik Müller, Aaron Sedley, and Elizabeth Ferrall-Nunge. 2014. Survey research in HCI. Ways of Knowing in HCI (2014), 229-266.",
+    "Karsten Müller and Carlo Schwarz. 2021. Fanning the flames of hate: Social media and hate crime. Journal of the European Economic Association 19, 4 (2021), 2131-2167.",
+    "Malik Sajjad Ahmed Nadeem, Jean-Daniel Zucker, and Blaise Hanczar. 2009. Accuracy-Rejection Curves (ARCs) for Comparing Classification Methods with a Reject Option. In Proceedings of the third International Workshop on Machine Learning in Systems Biology (Proceedings of Machine Learning Research, Vol. 8), Sašo Džeroski, Pierre Guerts, and Juho Rousu (Eds.). PMLR, Ljubljana, Slovenia, 65-81. https://proceedings.mlr.press/v8/nadeem10a.html",
+    "Alexandra Olteanu, Kartik Talamadupula, and Kush R. Varshney. 2017. The Limits of Abstract Evaluation Metrics: The Case of Hate Speech Detection. In Proceedings of the 2017 ACM on Web Science Conference (Troy, New York, USA) (WebSci '17). Association for Computing Machinery, New York, NY, USA, 405-406. https://doi.org/10.1145/3091478.3098871",
+    "Maithra Raghu, Katy Blumer, Greg Corrado, Jon M. Kleinberg, Ziad Obermeyer, and Sendhil Mullainathan. 2019. The Algorithmic Automation Problem: Prediction, Triage, and Human Effort. CoRR abs/1903.12220 (2019). arXiv:1903.12220",
+    "Charlotte Rayner and Helge Hoel. 1997. A summary review of literature relating to workplace bullying. Journal of community & applied social psychology 7, 3 (1997), 181-191.",
+    "Marco Tulio Ribeiro, Sameer Singh, and Carlos Guestrin. 2016. \" Why should I trust you?\" Explaining the predictions of any classifier. In Proceedings of the 22nd ACM SIGKDD international conference on knowledge discovery and data mining. 1135-1144.",
+    "Carlos Rodriguez, Florian Daniel, and Fabio Casati. 2014. Crowd-Based Mining of Reusable Process Model Patterns. In Business Process Management. 51-66.",
+    "Kevin Roitero, Eddy Maddalena, Gianluca Demartini, and Stefano Mizzaro. 2018. On fine-grained relevance scales. In The 41st International ACM SIGIR Conference on Research & Development in Information Retrieval. 675-684.",
+    "Victor Sanh, Lysandre Debut, Julien Chaumond, and Thomas Wolf. 2019. DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter. arXiv preprint arXiv:1910.01108 (2019).",
+    "Burcu Sayin, Fabio Casati, Andrea Passerini, Jie Yang, and Xinyue Chen. 2022. Rethinking and Recomputing the Value of ML Models. https://doi.org/10.48550/ ARXIV.2209.15157",
+    "Burcu Sayin, Jie Yang, Andrea Passerini, and Fabio Casati. 2021. The Science of Rejection: A Research Area for Human Computation. https://doi.org/10.48550/ ARXIV.2111.06736",
+    "Olivia Solon. 2017. Facebook is hiring moderators. But is the job too gruesome to handle? https://www.theguardian.com/technology/2017/may/04/facebook-content-moderators-ptsd-psychological-dangers, Last accessed on 2022-06-21.",
+    "Stanley Smith Stevens. 1956. The direct estimation of sensory magnitudes: Loudness. The American journal of psychology 69, 1 (1956), 1-25.",
+    "Alexander Tsesis. 2001. Hate in cyberspace: Regulating hate speech on the Internet. San Diego L. Rev. 38 (2001), 817.",
+    "Heidi Tworek and Patrick Leerssen. 2019. An Analysis of Germany's NetzDG Law.",
+    "Jennifer Wortman Vaughan. 2017. Making better use of the crowd: How crowd-sourcing can advance machine learning research. The Journal of Machine Learning Research 18, 1 (2017), 7026-7071.",
+    "Jeremy Waldron. 2012. The harm in hate speech. In The Harm in Hate Speech. Harvard University Press.",
+    "Zeerak Waseem and Dirk Hovy. 2016. Hateful symbols or hateful people? predictive features for hate speech detection on twitter. In Proceedings of the NAACL student research workshop. 88-93.",
+    "Bryan Wilder, Eric Horvitz, and Ece Kamar. 2020. Learning to Complement Humans. In IJCAI'20. 1526-1533.",
+    "Mireia Yurrita, Dave Murray-Rust, Agathe Balayn, and Alessandro Bozzon. 2022. Towards a multi-stakeholder value-based assessment framework for algorithmic systems. In ACM Conference on Fairness, Accountability, and Transparency.",
+    "Haiyi Zhu, Bowen Yu, Aaron Halfaker, and Loren Terveen. 2018. Value-Sensitive Algorithm Design: Method, Case Study, and Lessons. Proc. ACM Hum.-Comput. Interact. 2, CSCW, Article 194 (nov 2018), 23 pages. https://doi.org/10.1145/ 3274463"
+  ],
+  "measurement_description": "The paper did not measure any aspect of faith or religion. The study focused on a general methodology for measuring user-perceived value of machine decisions in hate speech detection, without specifying the type of hate speech."
 }

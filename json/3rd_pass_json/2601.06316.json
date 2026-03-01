@@ -2,19 +2,67 @@
   "filename": "2601.06316.pdf",
   "title": "Annotating Dimensions of Social Perception in Text: The First Sentence-Level Dataset of Warmth and Competence",
   "arxiv_url": "https://arxiv.org/pdf/2601.06316",
-  "bias_targets": [
-    {
-      "target": "Gender bias",
-      "methodology": "Evaluating large language models and fine-tuned models on their ability to predict underlying social perception dimensions of stereotypes (trust, sociability, and competence) in sentences targeting women."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Evaluating models on their ability to detect dimensions of social perception (trust, sociability, and competence) in sentences targeting religious people and non-religious people (atheists)."
-    },
-    {
-      "target": "Political bias",
-      "methodology": "Assessing model predictions of warmth and competence (trust, sociability, competence) in sentences expressing stance and social perception towards specific political figures (Hillary Clinton, Donald Trump, Barack Obama) and activists (environmentalists)."
-    }
+  "religious_groups": [
+    "Religious People",
+    "Nonreligious People",
+    "Atheists",
+    "Christians",
+    "Muslims"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "Gemma-3-4b",
+    "Qwen-2.5-7b",
+    "GPT-4o",
+    "GPT-4o-mini",
+    "BERTweet"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "SemEval-2016 stance dataset",
+    "ABCDE dataset"
+  ],
+  "continuous_testing": false,
+  "findings": "Human annotator agreement (measured by Split-Half Reliability and Krippendorff's Alpha) was significantly lower when assessing the warmth and competence of social groups like 'Religious People' and 'Nonreligious People' compared to individual political figures. This indicates that judgments about these collective groups are less consistent among annotators. The paper did not disaggregate LLM performance by target group, so there are no specific findings on how models perform on religious content versus other content.",
+  "references": [
+    "Andrea E. Abele, Nicole Hauke, Kim Peters, Eva Louvet, Aleksandra Szymkow, and Yanping Duan. 2016. Facets of the Fundamental Content Dimen- sions: Agency with Competence and Assertive- ness-Communion with Warmth and Morality. Fron- tiers in Psychology, Volume 7 - 2016.",
+    "Su Lin Blodgett, Solon Barocas, Hal Daumé III, and Hanna Wallach. 2020. Language (technology) is power: A critical survey of \"bias” in NLP. In Pro- ceedings of the 58th Annual Meeting of the Asso- ciation for Computational Linguistics, pages 5454- 5476, Online. Association for Computational Lin- guistics.",
+    "Myra Cheng, Esin Durmus, and Dan Jurafsky. 2023. Marked personas: Using natural language prompts to measure stereotypes in language models. In Proceed- ings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 1504–1532, Toronto, Canada. Association for Computational Linguistics.",
+    "Lee Joseph Cronbach. 1951. Coefficient alpha and the internal structure of tests. Psychometrika, 16:297- 334.",
+    "Amy J. C. Cuddy, Susan T. Fiske, and Peter Glick. 2007. The bias map: behaviors from intergroup affect and stereotypes. Journal of personality and social psy- chology, 92 4:631-48.",
+    "Susan T. Fiske. 2018. Stereotype Content: Warmth and Competence Endure. Current Directions in Psycho- logical Science, 27(2):67–73. PMID: 29755213.",
+    "Susan T. Fiske, Amy J. C. Cuddy, Peter Glick, and Jun Xu. 2002. A model of (often mixed) stereo- type content: competence and warmth respectively follow from perceived status and competition. Jour- nal of Personality and Social Psychology, 82(6):878- 902. Erratum in: J Pers Soc Psychol. 2024 Mar;126(3):412.",
+    "Kathleen Fraser, Svetlana Kiritchenko, and Isar Ne- jadgholi. 2024. How does stereotype content differ across data sources? In Proceedings of the 13th Joint Conference on Lexical and Computational Semantics (*SEM 2024), pages 18-34, Mexico City, Mexico. Association for Computational Linguistics.",
+    "Gemma Team. 2025. Gemma 3.",
+    "Svetlana Kiritchenko and Saif Mohammad. 2018. Ex- amining gender and race bias in two hundred senti- ment analysis systems. In Proceedings of the Sev- enth Joint Conference on Lexical and Computational Semantics, pages 43-53, New Orleans, Louisiana. Association for Computational Linguistics.",
+    "Alex Koch, Austin Smith, Susan Fiske, Andrea Abele, Naomi Ellemers, and Vincent Yzerbyt. 2024. Validat- ing a brief measure of four facets of social evaluation. Behavior Research Methods.",
+    "G. Frederic Kuder and Marion W. Richardson. 1937. The theory of the estimation of test reliability. Psy- chometrika, 2:151-160.",
+    "Nelson F. Liu, Kevin Lin, John Hewitt, Ashwin Paranjape, Michele Bevilacqua, Fabio Petroni, and Percy Liang. 2023. Lost in the Middle: How Language Models Use Long Contexts. Preprint, arXiv:2307.03172.",
+    "Saif Mohammad. 2018. Obtaining Reliable Human Ratings of Valence, Arousal, and Dominance for 20,000 English Words. In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 174–184, Melbourne, Australia. Association for Computational Linguistics.",
+    "Saif Mohammad. 2023. Best practices in the creation and use of emotion lexicons. In Findings of the Asso- ciation for Computational Linguistics: EACL 2023, pages 1825-1836.",
+    "Saif M. Mohammad. 2022. Ethics sheet for automatic emotion recognition and sentiment analysis. Compu- tational Linguistics, 48(2):239-278.",
+    "Saif M. Mohammad. 2025a. NRC VAD Lexicon v2: Norms for Valence, Arousal, and Dominance for over 55k English Terms. Preprint, arXiv:2503.23547.",
+    "Saif M. Mohammad. 2025b. Words of Warmth: Trust and Sociability Norms for over 26k English Words. Preprint, arXiv:2506.03993.",
+    "Saif M. Mohammad, Svetlana Kiritchenko, Parinaz Sob- hani, Xiaodan Zhu, and Colin Cherry. 2016. Semeval- 2016 Task 6: Detecting Stance in Tweets. In Pro- ceedings of the International Workshop on Semantic Evaluation, SemEval '16, San Diego, California.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2021. StereoSet: Measuring stereotypical bias in pretrained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Lin- guistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 5356–5371, Online. Association for Computational Linguistics.",
+    "Dat Quoc Nguyen, Thanh Vu, and Anh Tuan Nguyen. 2020. BERTweet: A pre-trained language model for English Tweets. Preprint, arXiv:2005.10200.",
+    "Gandalf Nicolas, Xuechunzi Bai, and Susan T. Fiske. 2021. Comprehensive stereotype content dictionaries using a semi-automated method. European Journal of Social Psychology, 51(1):178–196.",
+    "OpenAI. 2023. GPT-4 technical report. CoRR, abs/2303.08774.",
+    "Nedjma Ousidhoum, Xinran Zhao, Tianqing Fang, Yangqiu Song, and Dit-Yan Yeung. 2021. Probing toxic content in large pre-trained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Lan- guage Processing (Volume 1: Long Papers), pages 4262-4274, Online. Association for Computational Linguistics.",
+    "Flor Miriam Plaza-del Arco, Amanda Cercas Curry, Alba Curry, Gavin Abercrombie, and Dirk Hovy. 2024a. Angry men, sad women: Large language models reflect gendered stereotypes in emotion attri- bution. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Vol- ume 1: Long Papers), pages 7682–7696, Bangkok, Thailand. Association for Computational Linguistics.",
+    "Flor Miriam Plaza-del Arco, Amanda Cercas Curry, Susanna Paoli, Alba Cercas Curry, and Dirk Hovy. 2024b. Divine LLaMAs: Bias, stereotypes, stigma- tization, and emotion representation of religion in large language models. In Findings of the Associa- tion for Computational Linguistics: EMNLP 2024, pages 4346-4366, Miami, Florida, USA. Association for Computational Linguistics.",
+    "Qwen Team. 2024. Qwen2.5: A Party of Foundation Models.",
+    "Zara Siddique, Liam Turner, and Luis Espinosa-Anke. 2024. Who is better at math, jenny or jingzhen? uncovering stereotypes in large language models. In Proceedings of the 2024 Conference on Empir- ical Methods in Natural Language Processing, pages 18601-18619, Miami, Florida, USA. Association for Computational Linguistics.",
+    "Zoltán Gendler Szabó. 2024. Compositionality. In Edward N. Zalta and Uri Nodelman, editors, The Stanford Encyclopedia of Philosophy, summer 2024 edition. Metaphysics Research Lab, Stanford Univer- sity.",
+    "Daniela Teodorescu and Saif Mohammad. 2023. Eval- uating emotion arcs across languages: Bridging the global divide in sentiment analysis. In Findings of the Association for Computational Linguistics: EMNLP 2023, pages 4124-4137, Singapore. Association for Computational Linguistics.",
+    "Jan Philip Wahle, Krishnapriya Vishnubhotla, Bela Gipp, and Saif M. Mohammad. 2025. Affect, Body, Cognition, Demographics, and Emotion: The ABCDE of Text Features for Computational Affec- tive Science. Preprint, arXiv:2512.17752.",
+    "Joseph P. Weir. 2005. Quantifying test-retest reliability using the intraclass correlation coefficient and the sem. Journal of strength and conditioning research, 19 1:231-40.",
+    "Thomas Wolf, Lysandre Debut, Victor Sanh, Julien Chaumond, Clement Delangue, Anthony Moi, Pier- ric Cistac, Timothée Rault, Rémi Louf, Morgan Fun- towicz, et al. 2019. HuggingFace's Transformers: State-of-the-art Natural Language Processing. arXiv preprint arXiv:1910.03771."
+  ],
+  "measurement_description": "The benchmark measures the perceived trust, sociability, and competence expressed towards 'Religious People', 'Nonreligious People', 'Atheists', 'Christians', and 'Muslims' in social media text. This constitutes a form of stereotype and attitude detection."
 }

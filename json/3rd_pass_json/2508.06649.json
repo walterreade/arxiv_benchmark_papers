@@ -2,19 +2,73 @@
   "filename": "2508.06649.pdf",
   "title": "Measuring Stereotype and Deviation Biases in Large Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2508.06649",
-  "bias_targets": [
-    {
-      "target": "Gender bias",
-      "methodology": "Prompting LLMs to generate individual profiles using explicit gender terms or implicitly gendered names, then statistically analyzing the assigned attributes (e.g., political affiliation, religion, sexual orientation, socioeconomic status, occupation) and text sentiment (polarity) across genders and against real-world baselines."
-    },
-    {
-      "target": "Racial bias",
-      "methodology": "Prompting LLMs to generate individual profiles using explicit racial/ethnic identifiers or implicitly race-associated names, and comparing the distribution of assigned socioeconomic, political, religious, and occupational attributes across different ethnic groups to measure stereotype and deviation biases."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Prompting LLMs to generate individual profiles using explicit generational labels (e.g., Baby Boomer, Gen Z) or implicitly age-associated popular names, and evaluating differences in the generated profiles' attributes (such as politics, religion, sexual orientation, and occupation) across age groups."
-    }
+  "religious_groups": [
+    "Christianity",
+    "Islam",
+    "Judaism",
+    "Buddhism",
+    "Hinduism",
+    "Unaffiliated"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "claude-3.5-sonnet",
+    "gpt-4o-mini",
+    "command-r-plus",
+    "llama-3.1-70b"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long",
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "All four LLMs were most likely to portray individuals as 'Christian' or 'unaffiliated', while underrepresenting Hindu, Jewish, and Muslim affiliations. Specific stereotype biases were observed: prompts with White names implicitly led to a high proportion of Jewish outputs (72-82%), and prompts with Black names resulted in the highest proportion of Muslim outputs (40-50%). Similarly, Asian individuals were often associated with Buddhism. These outputs are believed to reflect biases in the training data, which heavily features U.S.-centric and Christian-centric content.",
+  "references": [
+    "Zhao, W. X. et al. A survey of large language models. arXiv preprint arXiv:2303.18223 (2023).",
+    "Hu, K. Chatgpt sets record for fastest-growing user base - analyst note. https://www.reuters.com/technology/chatgpt-sets-record-fastest-growing-user-base-analyst-note-2023-02-01/ (2023). Accessed on October 28, 2024.",
+    "Friedman, B. & Nissenbaum, H. Bias in computer systems. ACM Transactions on Inf. Syst. 14, 330–347 (1996).",
+    "Gallegos, I. O. et al. Bias and fairness in large language models: A survey. Comput. Linguist. 1–79 (2024).",
+    "Gupta, S. et al. Bias runs deep: Implicit reasoning biases in persona-assigned llms. arXiv preprint arXiv:2311.04892 (2023).",
+    "Zhu, S., Wang, W. & Liu, Y. Quite good, but not enough: Nationality bias in large language models-a case study of chatgpt. arXiv preprint arXiv:2405.06996 (2024).",
+    "Huang, P.-S. et al. Reducing sentiment bias in language models via counterfactual evaluation. arXiv preprint arXiv:1911.03064 (2019).",
+    "Venkit, P. N., Gautam, S., Panchanadikar, R., Huang, T.-H. & Wilson, S. Nationality bias in text generation. arXiv preprint arXiv:2302.02463 (2023).",
+    "Leidinger, A. & Rogers, R. How are llms mitigating stereotyping harms? learning from search engine studies. In Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society, vol. 7, 839–854 (2024).",
+    "Abid, A., Farooqi, M. & Zou, J. Persistent anti-muslim bias in large language models. In Proceedings of the 2021 AAAI/ACM Conference on AI, Ethics, and Society, 298–306 (2021).",
+    "Wan, Y. et al. \"kelly is a warm person, joseph is a role model\": Gender biases in Ilm-generated reference letters. arXiv preprint arXiv:2310.09219 (2023).",
+    "Fang, X. et al. Bias of ai-generated content: an examination of news produced by large language models. Sci. Reports 14, 5224 (2024).",
+    "Shrawgi, H., Rath, P., Singhal, T. & Dandapat, S. Uncovering stereotypes in large language models: A task complexity-based approach. In Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers), 1841–1857 (2024).",
+    "von der Heyde, L., Haensch, A.-C. & Wenz, A. Assessing bias in llm-generated synthetic datasets: The case of german voter behavior. Tech. Rep., Center for Open Science (2023).",
+    "Wang, Z. et al. Bias amplification: Language models as increasingly biased media. arXiv preprint arXiv:2410.15234 (2024).",
+    "Chen, X. et al. Evaluation of bias towards medical professionals in large language models (2024). 2407.12031.",
+    "Zhang, Z. et al. A survey on the memory mechanism of large language model based agents. arXiv preprint arXiv:2404.13501 (2024).",
+    "Giorgi, S. et al. Explicit and implicit large language model personas generate opinions but fail to replicate deeper perceptions and biases. arXiv preprint arXiv:2406.14462 (2024).",
+    "Jones, J. M. Growing lgbt id seen across major u.s. racial, ethnic groups. https://news.gallup.com/poll/393464/growing-lgbt-seen-across-major-racial-ethnic-groups.aspx (2022). Accessed on January 17, 2025.",
+    "U.S. Social Security Administration. Popular baby names by decade. https://www.ssa.gov/oact/babynames/decades/index.html (2024). Accessed on April 14, 2025.",
+    "Sisense. What baby names tell us about ethnic and gender trends. https://cdn.sisense.com/wp-content/uploads/What-Baby-Names-Tell-Us-About-Ethnic-and-Gender-Trends.pdf (2017). Accessed on April 13, 2025.",
+    "Kochhar, R. The state of the american middle class. https://www.pewresearch.org/race-and-ethnicity/2024/05/31/the-state-of-the-american-middle-class/ (2024). Accessed on April 13, 2025.",
+    "Pew Research Center. Trends in party affiliation among demographic groups. https://www.pewresearch.org/politics/2018/03/20/1-trends-in-party-affiliation-among-demographic-groups/ (2018). Accessed on April 13, 2025.",
+    "Pew Research Center. 2023-24 u.s. religious landscape study interactive database. https://www.pewresearch.org/religious-landscape-study/database/ (2025). Accessed on April 13, 2025.",
+    "Pew Research Center. Gender composition of religious traditions. https://www.pewresearch.org/religious-landscape-study/database/gender-composition/ (2024). Accessed on April 13, 2025.",
+    "Pew Research Center. Racial and ethnic composition of religious traditions. https://www.pewresearch.org/religious-landscape-study/database/racial-and-ethnic-composition/ (2025). Accessed on April 13, 2025.",
+    "Jones, J. M. Growing lgbt identification seen across major u.s. racial, ethnic groups. https://news.gallup.com/poll/393464/growing-lgbt-seen-across-major-racial-ethnic-groups.aspx (2022). Accessed on April 13, 2025.",
+    "Choi, S. K., Wilson, B. D., Bouton, L. J. & Mallory, C. Aapi lgbt adults in the us. https://williamsinstitute.law.ucla.edu/publications/lgbt-aapi-adults-in-the-us/ (2021). Accessed on April 13, 2025.",
+    "Jones, J. M. Lgbtq+ identification in u.s. now at 7.6%. https://news.gallup.com/poll/611864/lgbtq-identification.aspx (2024). Accessed on April 13, 2025.",
+    "Pew Research Center. Generational cohort religious landscape study. https://www.pewresearch.org/religious-landscape-study/database/generational-cohort/ (2025). Accessed on April 13, 2025.",
+    "Public Religion Research Institute. Prri generation z fact sheet. https://www.prri.org/spotlight/prri-generation-z-fact-sheet/ (2024). Accessed on April 13, 2025.",
+    "Springtide Research Institute. Gen alpha and religion: What 13-year-olds say. https://springtideresearch.org/post/religion-and-spirituality/gen-alpha-and-religion-what-13-year-olds-say (2025). Accessed on April 13, 2025.",
+    "Public Religion Research Institute. A political and cultural glimpse into america's future: Generation z's views on generational change and the challenges and opportunities ahead. https://www.prri.org/research/generation-zs-views-on-generational-change-and-the-challenges-and-opportunities-ahead-a-political-and-cultural-glimpse-into-americas- (2024). Accessed on April 13, 2025.",
+    "Machi, S. & Jackson, C. Gender identity and sexual orientation differences by generation. https://www.ipsos.com/en-us/gender-identity-and-sexual-orientation-differences-generation (2021). Accessed on April 13, 2025.",
+    "U.S. Social Security Administration. Top names over the last 100 years. https://www.ssa.gov/oact/babynames/decades/century.html (2024). Accessed on April 13, 2025.",
+    "USC Libraries. Age groups - demographics - research guides. https://libguides.usc.edu/busdem/age (2020). Accessed on April 13, 2025.",
+    "Anthropic. Introducing claude 3.5 sonnet. https://www.anthropic.com/news/claude-3-5-sonnet (2024). Published June 20, 2024. Accessed on April 22, 2025.",
+    "OpenAI. Gpt-4o mini: advancing cost-efficient intelligence. https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/ (2024). Published July 18, 2024. Accessed on April 22, 2025.",
+    "Cohere. Command r+ model documentation. https://docs.cohere.com/v2/docs/command-r-plus (2024). Released August 2024. Accessed on April 22, 2025.",
+    "Meta AI. Meta llama 3.1: Advancing open-source ai. https://ai.meta.com/blog/meta-llama-3-1/ (2024). Published July 23, 2024. Accessed on April 22, 2025.",
+    "Csiszar, I. I-Divergence Geometry of Probability Distributions and Minimization Problems. The Annals Probab. 3, 146 – 158, DOI: 10.1214/aop/1176996454 (1975)."
+  ],
+  "measurement_description": "The benchmark measures stereotype and deviation biases in LLM-generated religious affiliations for various demographic groups (gender, race/ethnicity, age). It assesses which religions LLMs associate with specific groups, both implicitly (via names) and explicitly."
 }

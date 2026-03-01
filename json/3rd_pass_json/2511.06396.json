@@ -2,27 +2,73 @@
   "filename": "2511.06396.pdf",
   "title": "Efficient LLM Safety Evaluation through Multi-Agent Debate",
   "arxiv_url": "https://arxiv.org/pdf/2511.06396",
-  "bias_targets": [
-    {
-      "target": "Racial bias",
-      "methodology": "Evaluated as part of the 'Discrimination & Stereotyping' category in the HAJailBench benchmark, measuring the model's propensity to generate discriminatory content or harmful stereotypes based on race when subjected to adversarial jailbreak attacks."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Evaluated within the 'Discrimination & Stereotyping' and 'Cultural Insensitivity & Taboos' categories of the HAJailBench dataset, assessing if the model produces exclusionary, offensive, or stereotyped content regarding religion under jailbreak conditions."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Assessed via the 'Discrimination & Stereotyping' category in the HAJailBench benchmark, measuring whether adversarial jailbreak prompts can induce the model to generate harmful stereotypes or discriminatory content based on gender."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Evaluated using the 'Discrimination & Stereotyping' harmful goals in HAJailBench, testing the model's robustness against jailbreak attacks designed to elicit exclusionary or stereotyped content regarding disability."
-    },
-    {
-      "target": "Cultural bias",
-      "methodology": "Measured under the 'Cultural Insensitivity & Taboos' category of the HAJailBench benchmark, evaluating the model's generation of content that deeply offends, insults, or violates cultural traditions when targeted by adversarial attacks."
-    }
+  "religious_groups": [],
+  "models_tested": [
+    "claude-3-5-sonnet-20241022",
+    "gpt-4o",
+    "gpt-5",
+    "gpt-5-nano",
+    "LlamaGuard3-8B",
+    "ShieldGemma-2B",
+    "ShieldGemma-9B",
+    "Qwen2.5-7B",
+    "Qwen3-4B",
+    "Qwen3-8B",
+    "Qwen3-14B",
+    "JudgeLM",
+    "Llama-3.3-70B-it",
+    "Llama-3.1-8B-it",
+    "Qwen/Qwen3-4B-Instruct-2507",
+    "Qwen/Qwen3-4B-Thinking-2507",
+    "deepseek-ai/DeepSeek-V3",
+    "deepseek-ai/DeepSeek-R1",
+    "openai/gpt-oss-20b",
+    "qwen2.5-72b-instruct"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "JBB-Behaviors",
+    "AdvBench",
+    "TDC/HarmBench",
+    "JailJudge"
+  ],
+  "continuous_testing": true,
+  "findings": "The paper does not provide specific findings related to religion. The analysis of religious harm is included as part of a broader safety evaluation framework, and the results are not disaggregated by specific harm categories.",
+  "references": [
+    "Maksym Andriushchenko, Francesco Croce, and Nicolas Flammarion. Jailbreaking leading safety-aligned llms with simple adaptive attacks. arXiv preprint arXiv:2404.02151, 2024.",
+    "Maksym Andriushchenko and Nicolas Flammarion. Does refusal training in llms generalize to the past tense?, 2025.",
+    "Chi-Min Chan, Weize Chen, Yusheng Su, Jianxuan Yu, Wei Xue, Shanghang Zhang, Jie Fu, and Zhiyuan Liu. Chateval: Towards better llm-based evaluators through multi-agent debate, 2023.",
+    "Patrick Chao, Edoardo Debenedetti, Alexander Robey, Maksym Andriushchenko, Francesco Croce, Vikash Sehwag, Edgar Dobriban, Nicolas Flammarion, George J Pappas, Florian Tramer, et al. Jailbreakbench: An open robustness benchmark for jailbreaking large language models. Advances in Neural Information Processing Systems, 37:55005–55029, 2024.",
+    "Patrick Chao, Alexander Robey, Edgar Dobriban, Hamed Hassani, George J. Pappas, and Eric Wong. Jailbreaking black box large language models in twenty queries. In 2025 IEEE Conference on Secure and Trustworthy Machine Learning (SaTML), pages 23–42, 2025.",
+    "Tristan Coignion, Clément Quinton, and Romain Rouvoy. A performance study of Ilm-generated code on leetcode. In Proceedings of the 28th international conference on evaluation and assessment in software engineering, pages 79–89, 2024.",
+    "Peng Ding, Jun Kuang, Dan Ma, Xuezhi Cao, Yunsen Xian, Jiajun Chen, and Shujian Huang. A wolf in sheep's clothing: Generalized nested jailbreak prompts can fool large language models easily. arXiv preprint arXiv:2311.08268, 2023.",
+    "Zhichen Dong, Zhanhui Zhou, Chao Yang, Jing Shao, and Yu Qiao. Attacks, defenses and evaluations for llm conversation safety: A survey. arXiv preprint arXiv:2402.09283, 2024.",
+    "Zhichen Dong, Zhanhui Zhou, Chao Yang, Jing Shao, and Yu Qiao. Attacks, defenses and evaluations for Ilm conversation safety: A survey. arXiv preprint arXiv:2402.09283, 2024.",
+    "Zhichen Dong, Zhanhui Zhou, Chao Yang, Jing Shao, and Yu Qiao. Attacks, defenses and evaluations for Ilm conversation safety: A survey. arXiv preprint arXiv:2402.09283, 2024.",
+    "Jiawei Gu, Xuhui Jiang, Zhichao Shi, Hexiang Tan, Xuehao Zhai, Chengjin Xu, Wei Li, Yinghan Shen, Shengjie Ma, Honghao Liu, et al. A survey on Ilm-as-a-judge. arXiv preprint arXiv:2411.15594, 2024.",
+    "Xingang Guo, Fangxu Yu, Huan Zhang, Lianhui Qin, and Bin Hu. Cold-attack: Jailbreaking llms with stealthiness and controllability, 2024.",
+    "Haixia Han, Jiaqing Liang, Jie Shi, Qianyu He, and Yanghua Xiao. Small Language Model Can Self-correct. arXiv e-prints, page arXiv:2401.07301, January 2024.",
+    "Hakan Inan, Kartikeya Upasani, Jianfeng Chi, Rashi Rungta, Krithika Iyer, Yuning Mao, Michael Tontchev, Qing Hu, Brian Fuller, Davide Testuggine, et al. Llama guard: Llm-based input-output safeguard for human-ai conversations. arXiv preprint arXiv:2312.06674, 2023.",
+    "Pranjal Kumar. Large language models (llms): survey, technical frameworks, and future challenges. Artificial Intelligence Review, 57(10):260, 2024.",
+    "Fan Liu, Yue Feng, Zhao Xu, Lixin Su, Xinyu Ma, Dawei Yin, and Hao Liu. Jailjudge: A comprehensive jailbreak judge benchmark with multi-agent enhanced explanation evaluation framework, 2024.",
+    "Xiaogeng Liu, Nan Xu, Muhao Chen, and Chaowei Xiao. Autodan: Generating stealthy jailbreak prompts on aligned large language models, 2024.",
+    "Anay Mehrotra, Manolis Zampetakis, Paul Kassianik, Blaine Nelson, Hyrum Anderson, Yaron Singer, and Amin Karbasi. Tree of attacks: Jailbreaking black-box llms automatically. In A. Globerson, L. Mackey, D. Belgrave, A. Fan, U. Paquet, J. Tomczak, and C. Zhang, editors, Advances in Neural Information Processing Systems, volume 37, pages 61065–61105. Curran Associates, Inc., 2024.",
+    "Salman Rahman, Liwei Jiang, James Shiffer, Genglin Liu, Sheriff Issaka, Md Rizwan Parvez, Hamid Palangi, Kai-Wei Chang, Yejin Choi, and Saadia Gabriel. X-teaming: Multi-turn jailbreaks and defenses with adaptive multi-agents. arXiv preprint arXiv:2504.13203, 2025.",
+    "Qibing Ren, Hao Li, Dongrui Liu, Zhanxu Xie, Xiaoya Lu, Yu Qiao, Lei Sha, Junchi Yan, Lizhuang Ma, and Jing Shao. Llms know their vulnerabilities: Uncover safety gaps through natural distribution shifts, 2025.",
+    "Mark Russinovich, Ahmed Salem, and Ronen Eldan. Great, now write an article about that: The crescendo {Multi-Turn}{LLM} jailbreak attack. In 34th USENIX Security Symposium (USENIX Security 25), pages 2421–2440, 2025.",
+    "Xinyue Shen, Zeyuan Chen, Michael Backes, Yun Shen, and Yang Zhang. \" do anything now\": Characterizing and evaluating in-the-wild jailbreak prompts on large language models. In Proceedings of the 2024 on ACM SIGSAC Conference on Computer and Communications Security, pages 1671–1685, 2024.",
+    "Sibo Yi, Yule Liu, Zhen Sun, Tianshuo Cong, Xinlei He, Jiaxing Song, Ke Xu, and Qi Li. Jailbreak attacks and defenses against large language models: A survey. arXiv preprint arXiv:2407.04295, 2024.",
+    "Zihao Yi, Jiarui Ouyang, Zhe Xu, Yuwen Liu, Tianhao Liao, Haohao Luo, and Ying Shen. A survey on recent advances in Ilm-based multi-turn dialogue systems. arXiv preprint arXiv:2402.18013, 2024.",
+    "Jiahao Yu, Xingwei Lin, Zheng Yu, and Xinyu Xing. Gptfuzzer: Red teaming large language models with auto-generated jailbreak prompts, 2024.",
+    "Wenjun Zeng, Yuchi Liu, Ryan Mullins, Ludovic Peran, Joe Fernandez, Hamza Harkous, Karthik Narasimhan, Drew Proud, Piyush Kumar, Bhaktipriya Radharapu, Olivia Sturman, and Oscar Wahltinez. Shieldgemma: Generative ai content moderation based on gemma, 2024.",
+    "Lianghui Zhu, Xinggang Wang, and Xinlong Wang. Judgelm: Fine-tuned large language models are scalable judges. arXiv preprint arXiv:2310.17631, 2023.",
+    "Andy Zou, Zifan Wang, Nicholas Carlini, Milad Nasr, J. Zico Kolter, and Matt Fredrikson. Universal and transferable adversarial attacks on aligned language models, 2023."
+  ],
+  "measurement_description": "The benchmark, HAJailBench, measured the propensity of LLMs to generate content that promotes discrimination based on protected attributes including religion, or content that violates sacred cultural or religious taboos, as part of a broader safety evaluation."
 }

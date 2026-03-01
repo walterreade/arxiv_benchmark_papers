@@ -2,39 +2,121 @@
   "filename": "2504.07887.pdf",
   "title": "Benchmarking Adversarial Robustness to Bias Elicitation in Large Language Models: Scalable Automated Assessment with LLM-as-a-Judge",
   "arxiv_url": "https://arxiv.org/pdf/2504.07887",
-  "bias_targets": [
-    {
-      "target": "Age bias",
-      "methodology": "Evaluated using multiple-choice (Choose the Option) and Sentence Completion tasks, coupled with adversarial jailbreak prompts, classified by an LLM-as-a-judge to detect stereotypes regarding maturity, competence, and physical conditions of young and elderly individuals."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Assessed via multiple-choice and Sentence Completion tasks under adversarial conditions, using an LLM-as-a-judge to measure stereotypical outputs concerning the capabilities of individuals with disabilities in professional and social contexts."
-    },
-    {
-      "target": "Ethnicity bias",
-      "methodology": "Measured using an LLM-as-a-judge to classify responses to Choose the Option and Sentence Completion tasks, evaluating stereotypical portrayals of various ethnic groups (e.g., Black, Latino, Asian, Irish, Japanese) under base and jailbreak prompt settings."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Evaluated through Choose the Option and Sentence Completion tasks modified with jailbreak techniques, where model responses are classified by an LLM-as-a-judge to identify traditional stereotypes like men in leadership roles and women in care-oriented roles."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Investigated by prompting models with multiple-choice and sentence completion tasks covering various religious groups (Muslims, Jews, Hindus, Buddhists, Christians), with outputs evaluated for stereotypical associations using an automated LLM judge."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Assessed via LLM-as-a-judge classification of model responses to multiple-choice and sentence completion tasks that probe stereotypes and assumptions about heterosexual versus homosexual relationships."
-    },
-    {
-      "target": "Socioeconomic status bias",
-      "methodology": "Measured by testing representations of wealthy versus poor individuals using multiple-choice and sentence completion prompts, with an LLM judge evaluating the presence of stereotypes regarding greed, capability, and ambition."
-    },
-    {
-      "target": "Intersectional bias",
-      "methodology": "Evaluated by combining demographic dimensions (ethnicity-socioeconomic status, gender-sexual orientation, and gender-ethnicity) into multiple-choice and sentence completion tasks to measure overlapping and compounded stereotypes using an LLM-as-a-judge."
-    }
+  "religious_groups": [
+    "Christianity",
+    "Judaism",
+    "Islam",
+    "Hinduism",
+    "Buddhism"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "Gemma2 2B",
+    "Gemma2 27B",
+    "Phi-4 14B",
+    "Llama 3.1 8B",
+    "GPT-4o mini",
+    "Gemini 2.0 Flash",
+    "Llama 3.1 405B",
+    "Claude 3.5 Sonnet",
+    "DeepSeek V3 671B",
+    "GPT-4o",
+    "Bio-Medical-Llama-3-8B",
+    "JSL-MedLlama-3-8B-v2.0",
+    "Med42-v2",
+    "Llama-3.1-8B-UltraMedical",
+    "Gemma 2B",
+    "Gemma 7B",
+    "Phi-3 Mini",
+    "Llama 3 8B",
+    "Llama 3 70B",
+    "GPT-3.5 Turbo"
+  ],
+  "languages_evaluated": [
+    "English",
+    "Slovene",
+    "Macedonian",
+    "Scottish Gaelic"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "SoFa",
+    "ALERT",
+    "StereoSet",
+    "BOLD",
+    "WEAT",
+    "SEAT",
+    "CEAT",
+    "CrowS-Pairs"
+  ],
+  "continuous_testing": false,
+  "findings": "Across all models tested, the 'Religion' bias category exhibited the highest average safety score in the initial assessment and was one of the most resilient categories against adversarial jailbreak attacks, suggesting that model alignment strategies may prioritize minimizing bias in religious contexts.",
+  "references": [
+    "Abdin, M., Aneja, J., Behl, H., Bubeck, S., Eldan, R., Gunasekar, S., Harrison, M., Hewett, R. J., Javaheripi, M., Kauffmann, P., Lee, J. R., Lee, Y. T., Li, Y., Liu, W., Mendes, C. C. T., Nguyen, A., Price, E., de Rosa, G., Saarikivi, O., Zhang, Y. (2024). Phi-4 technical report. arXiv preprint arXiv:2412.08905.",
+    "Abid, A., Farooqi, M., & Zou, J. (2021). Persistent anti-muslim bias in large language models. Proceedings of the 2021 AAAI/ACM Conference on AI, Ethics, and Society, 298–306.",
+    "Andreadis, K., Newman, D. R., Twan, C., Shunk, A., Mann, D. M., & Stevens, E. R. (2024). Mixed methods assessment of the influence of demographics on medical advice of chatgpt. Journal of the American Medical Informatics Association, 31(9), 2002–2009.",
+    "Arzaghi, M., Carichon, F., & Farnadi, G. (2024). Understanding intrinsic socioeconomic biases in large language models. Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society, 7, 49–60.",
+    "Bai, X., Wang, A., Sucholutsky, I., & Griffiths, T. L. (2024). Measuring implicit bias in explicitly unbiased large language models. arXiv preprint arXiv:2402.04105.",
+    "Bordia, S., & Bowman, S. R. (2019). Identifying and reducing gender bias in word-level language models. Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics – Student Research Workshop, 7–15.",
+    "Brown, T., Mann, B., Ryder, N., Subbiah, M., Kaplan, J. D., Dhariwal, P., Neelakantan, A., Shyam, P., Sastry, G., Askell, A., Agarwal, S., Herbert-Voss, A., Krueger, G., Henighan, T., Child, R., Ramesh, A., Ziegler, D., Wu, J., Winter, C., . . . Amodei, D. (2020). Language models are few-shot learners. Advances in neural information processing systems, 1877–1901.",
+    "Butler, J. (2002). Gender trouble. Routledge.",
+    "Caliskan, A., Bryson, J. J., & Narayanan, A. (2017). Semantics derived automatically from language corpora contain human-like biases. Science, 356(6334), 183–186.",
+    "Cantini, R., Cosenza, G., Orsino, A., & Talia, D. (2024). Are large language models really bias-free? jailbreak prompts for assessing adversarial robustness to bias elicitation. International Conference on Discovery Science, 52–68.",
+    "Cascella, M., Montomoli, J., Bellini, V., & Bignami, E. (2023). Evaluating the feasibility of chatgpt in healthcare: An analysis of multiple clinical and research scenarios. Journal of medical systems, 47(1), 33.",
+    "Chang, Y., Wang, X., Wang, J., Wu, Y., Yang, L., Zhu, K., Chen, H., Yi, X., Wang, C., Wang, Y., Ye, W., Zhang, Y., Chang, Y., Yu, P. S., Yang, Q., & Xie, X. (2024). A survey on evaluation of large language models. ACM transactions on intelligent systems and technology, 15(3), 1–45.",
+    "Chao, P., Robey, A., Dobriban, E., Hassani, H., Pappas, G. J., & Wong, E. (2025). Jailbreaking black box large language models in twenty queries. 2025 IEEE Conference on Secure and Trustworthy Machine Learning (SaTML), 23–42.",
+    "Cheong, I., Xia, K., Feng, K. K., Chen, Q. Z., & Zhang, A. X. (2024). (a)i am not a lawyer, but...: Engaging legal experts towards responsible llm policies for legal advice. Proceedings of the 2024 ACM Conference on Fairness, Accountability, and Transparency, 2454–2469.",
+    "Christophe, C., Kanithi, P. K., Raha, T., Khan, S., & Pimentel, M. A. (2024). Med42-v2: A suite of clinical llms. arXiv:2408.06142.",
+    "Crenshaw, K. (2013). Demarginalizing the intersection of race and sex: A black feminist critique of antidiscrimination doctrine, feminist theory and antiracist politics. In Feminist legal theories (pp. 23–51). Routledge.",
+    "DeepSeek-AI, Liu, A., Feng, B., Xue, B., Wang, B., Wu, B., Lu, C., Zhao, C., Deng, C., Zhang, C., Ruan, C., Dai, D., Guo, D., Yang, D., Chen, D., Ji, D., Li, E., Lin, F., Dai, F., . . . Pan, Z. (2024). Deepseek-v3 technical report. arXiv preprint arXiv:2412.19437.",
+    "Dhamala, J., Sun, T., Kumar, V., Krishna, S., Pruksachatkun, Y., Chang, K.-W., & Gupta, R. (2021). Bold: Dataset and metrics for measuring biases in open-ended language generation. Proceedings of the 2021 ACM conference on fairness, accountability, and transparency, 862–872.",
+    "Dorn, D., Variengien, A., Segerie, C.-R., & Corruble, V. (2024). Bells: A framework towards future proof benchmarks for the evaluation of llm safeguards. arXiv preprint arXiv:2406.01364.",
+    "Ferrara, E. (2023). Should chatgpt be biased? challenges and risks of bias in large language models. First Monday, 28(11).",
+    "Gallegos, I. O., Rossi, R. A., Barrow, J., Tanjim, M. M., Kim, S., Dernoncourt, F., Yu, T., Zhang, R., & Ahmed, N. K. (2024). Bias and fairness in large language models: A survey. Computational Linguistics, 50(3), 1097–1179.",
+    "Gemma Team, Riviere, M., Pathak, S., Sessa, P. G., Hardin, C., Bhupatiraju, S., Hussenot, L., Mesnard, T., Shahriari, B., Ramé, A., Ferret, J., Liu, P., Tafti, P., Friesen, A., Casbon, M., Ramos, S., Kumar, R., Lan, C. L., Jerome, S., . . . Andreev, A. (2024). Gemma 2: Improving open language models at a practical size. arXiv preprint arXiv:2408.00118.",
+    "Goffman, E. (2009). Stigma: Notes on the management of spoiled identity. Simon; Schuster.",
+    "Grattafiori, A., Dubey, A., Jauhri, A., Pandey, A., Kadian, A., Al-Dahle, A., Letman, A., Mathur, A., Schelten, A., Vaughan, A., Yang, A., Fan, A., Goyal, A., Hartshorn, A., Yang, A., Mitra, A., Sravankumar, A., Korenev, A., Hinsvark, A., . . . Ma, Z. (2024). The llama 3 herd of models. arXiv preprint arXiv:2407.21783.",
+    "Guo, W., & Caliskan, A. (2021). Detecting emergent intersectional biases: Contextualized word embeddings contain a distribution of human-like biases. Proceedings of the 2021 AAAI/ACM Conference on AI, Ethics, and Society, 122–133.",
+    "Hadi Mogavi, R., Deng, C., Juho Kim, J., Zhou, P., D. Kwon, Y., Hosny Saleh Metwally, A., Tlili, A., Bassanelli, S., Bucchiarone, A., Gujar, S., Nacke, L. E., & Hui, P. (2024). Chatgpt in education: A blessing or a curse? a qualitative study exploring early adopters’ utilization and perceptions. Computers in Human Behavior: Artificial Humans, 2(1), 100027.",
+    "Hovy, D., & Prabhumoye, S. (2021). Five sources of bias in natural language processing. Language and linguistics compass, 15(8), e12432.",
+    "Inan, H., Upasani, K., Chi, J., Rungta, R., Iyer, K., Mao, Y., Tontchev, M., Hu, Q., Fuller, B., Testuggine, D., & Khabsa, M. (2023). Llama guard: Llmbased input-output safeguard for human-ai conversations. arXiv preprint arXiv:2312.06674.",
+    "Jin, H., Chen, R., Zhou, A., Zhang, Y., & Wang, H. (2024). Guard: Role-playing to generate natural-language jailbreakings to test guideline adherence of large language models. ICLR 2024 Workshop on Secure and Trustworthy Large Language Models.",
+    "Joshi, P., Santy, S., Budhiraja, A., Bali, K., & Choudhury, M. (2020). The state and fate of linguistic diversity and inclusion in the nlp world. Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, 6282–6293.",
+    "Kamruzzaman, M., Shovon, M., & Kim, G. (2024). Investigating subtler biases in llms: Ageism, beauty, institutional, and nationality bias in generative models. Findings of the Association for Computational Linguistics ACL 2024, 8940–8965.",
+    "Kim, S., Shin, J., Cho, Y., Jang, J., Longpre, S., Lee, H., Yun, S., Shin, S., Kim, S., Thorne, J., & Seo, M. (2024). Prometheus: Inducing fine-grained evaluation capability in language models. Proceedings of ICLR 2024.",
+    "Kotek, H., Dockum, R., & Sun, D. (2023). Gender bias and stereotypes in large language models. Proceedings of the ACM collective intelligence conference, 12–24.",
+    "Kurita, K., Vyas, N., Pareek, A., Black, A. W., & Tsvetkov, Y. (2019). Measuring bias in contextualized word representations. Proceedings of the First Workshop on Gender Bias in Natural Language Processing, 166–172.",
+    "Landis, J. R., & Koch, G. G. (1977). The measurement of observer agreement for categorical data. biometrics, 159–174.",
+    "Li, J., Sun, S., Yuan, W., Fan, R.-Z., Zhao, H., & Liu, P. (2024). Generative judge for evaluating alignment. Proceedings of ICLR 2024.",
+    "Liang, P., Bommasani, R., Lee, T., Tsipras, D., Soylu, D., Yasunaga, M., Zhang, Y., Narayanan, D., Wu, Y., Kumar, A., Newman, B., Yuan, B., Yan, B., Zhang, C., Cosgrove, C., Manning, C. D., Ré, C., Acosta-Navas, D., Hudson, D. A., . . . Koreeda, Y. (2023). Holistic evaluation of language models. Transactions on Machine Learning Research.",
+    "Liu, X., Xu, N., Chen, M., & Xiao, C. (2024). Autodan: Generating stealthy jailbreak prompts on aligned large language models. Proceedings of ICLR 2024.",
+    "Manerba, M. M., Stanczak, K., Guidotti, R., & Augenstein, I. (2024). Social bias probing: Fairness benchmarking for language models. Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, 14653–14671.",
+    "May, C., Wang, A., Bordia, S., Bowman, S., & Rudinger, R. (2019). On measuring social biases in sentence encoders. Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics, 622–628.",
+    "Mehrabi, N., Morstatter, F., Saxena, N., Lerman, K., & Galstyan, A. (2021). A survey on bias and fairness in machine learning. ACM computing surveys (CSUR), 54(6), 1–35.",
+    "Mehrotra, A., Zampetakis, M., Kassianik, P., Nelson, B., Anderson, H., Singer, Y., & Karbasi, A. (2024). Tree of attacks: Jailbreaking black-box llms automatically. Advances in Neural Information Processing Systems, 61065–61105.",
+    "Nadeem, M., Bethke, A., & Reddy, S. (2021). Stereoset: Measuring stereotypical bias in pretrained language models. Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing, 5356–5371.",
+    "Nangia, N., Vania, C., Bhalerao, R., & Bowman, S. (2020). Crows-pairs: A challenge dataset for measuring social biases in masked language models. Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), 1953–1967.",
+    "Navigli, R., Conia, S., & Ross, B. (2023). Biases in large language models: Origins, inventory, and discussion. ACM Journal of Data and Information Quality, 15(2), 1–21.",
+    "Nguyen, C. V., Shen, X., Aponte, R., Xia, Y., Basu, S., Hu, Z., Chen, J., Parmar, M., Kunapuli, S., Barrow, J., Wu, J., Singh, A., Wang, Y., Gu, J., Dernoncourt, F., Ahmed, N. K., Lipka, N., Zhang, R., Chen, X., . . . Nguyen, T. H. (2024). A survey of small language models. arXiv preprint arXiv:2410.20011.",
+    "Nozza, D., Bianchi, F., & Hovy, D. (2021). Honest: Measuring hurtful sentence completion in language models. Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics, 2398–2406.",
+    "Omar, M., Sorin, V., Agbareia, R., Apakama, D. U., Soroush, A., Sakhuja, A., Freeman, R., Horowitz, C. R., Richardson, L. D., Nadkarni, G. N., & Klang, E. (2025). Evaluating and addressing demographic disparities in medical large language models: A systematic review. International Journal for Equity in Health, 24(1), 57.",
+    "Omi, M., & Winant, H. (2014). Racial formation in the united states. Routledge.",
+    "Ostrow, R., & Lopez, A. (2025). Llms reproduce stereotypes of sexual and gender minorities. arXiv preprint arXiv:2501.05926.",
+    "Ranathunga, S., Lee, E.-S. A., Prifti Skenduli, M., Shekhar, R., Alam, M., & Kaur, R. (2023). Neural machine translation for low-resource languages: A survey. ACM Computing Surveys, 55(11), 1–37.",
+    "Salinas, A., Haim, A., & Nyarko, J. (2024). What’s in a name? auditing large language models for race and gender bias. arXiv preprint arXiv:2402.14875.",
+    "Tedeschi, S., Friedrich, F., Schramowski, P., Kersting, K., Navigli, R., Nguyen, H., & Li, B. (2024). Alert: A comprehensive benchmark for assessing large language models’ safety through red teaming. arXiv preprint arXiv:2404.08676.",
+    "Wang, J., Hu, X., Hou, W., Chen, H., Zheng, R., Wang, Y., Yang, L., Huang, H., Ye, W., Geng, X., Jiao, B., Zhang, Y., & Xie, X. (2024). On the robustness of chatgpt: An adversarial and out-of-distribution perspective. IEEE Data Engineering Bulletin, 48(1), 48–62.",
+    "Wang, P., Li, L., Chen, L., Cai, Z., Zhu, D., Lin, B., Cao, Y., Liu, Q., Liu, T., & Sui, Z. (2024). Large language models are not fair evaluators. Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics, 9440–9450.",
+    "Wataoka, K., Takahashi, T., & Ri, R. (2024). Self-preference bias in llm-as-a-judge. arXiv preprint arXiv:2410.21819.",
+    "Xie, K., Ojemann, W. K. S., Gallagher, R. S., Shinohara, R. T., Lucas, A., Hill, C. E., Hamilton, R. H., Johnson, K. B., Roth, D., Litt, B., & Ellis, C. A. (2024). Disparities in seizure outcomes revealed by large language models. Journal of the American Medical Informatics Association, 31(6), 1348–1355.",
+    "Yeh, K.-C., Chi, J.-A., Lian, D.-C., & Hsieh, S.-K. (2023). Evaluating interfaced llm bias. Proceedings of the 35th Conference on Computational Linguistics and Speech Processing (ROCLING 2023), 292–299.",
+    "Yi, S., Liu, Y., Sun, Z., Cong, T., He, X., Song, J., Xu, K., & Li, Q. (2024). Jailbreak attacks and defenses against large language models: A survey. arXiv preprint arXiv:2407.04295.",
+    "Yong, Z. X., Menghini, C., & Bach, S. (2023). Low-resource languages jailbreak gpt-4. NeurIPS Workshop on Socially Responsible Language Modelling Research.",
+    "Zhang, K., Zeng, S., Hua, E., Ding, N., Chen, Z.-R., Ma, Z., Li, H., Cui, G., Qi, B., Zhu, X., Lv, X., Hu, J.-F., Liu, Z., & Zhou, B. (2024). Ultramedical: Building specialized generalists in biomedicine. Advances in Neural Information Processing Systems, 26045–26081.",
+    "Zheng, L., Chiang, W.-L., Sheng, Y., Zhuang, S., Wu, Z., Zhuang, Y., Lin, Z., Li, Z., Li, D., Xing, E., Zhang, H., Gonzalez, J. E., & Stoica, I. (2023). Judging llmas-a-judge with mt-bench and chatbot arena. Advances in neural information processing systems, 46595–46623.",
+    "Zhu, L., Wang, X., & Wang, X. (2025). Judgelm: Fine-tuned large language models are scalable judges. The Thirteenth International Conference on Learning Representations, ICLR 2025."
+  ],
+  "measurement_description": "The benchmark measured biases in the representation of religious groups by examining stereotypes associated with specific faiths."
 }

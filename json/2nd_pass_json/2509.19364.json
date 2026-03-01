@@ -2,64 +2,19 @@
   "filename": "2509.19364.pdf",
   "title": "The Inadequacy of Offline LLM Evaluations: A Need to Account for Personalization in Model Behavior",
   "arxiv_url": "https://arxiv.org/pdf/2509.19364",
-  "benchmark_measurement": "The paper does not measure any aspect of faith or religion.",
-  "religious_groups": [],
-  "models_tested": [
-    "GPT-4o mini",
-    "Gemini 2.0 Flash"
+  "bias_targets": [
+    {
+      "target": "Methodological bias",
+      "methodology": "Comparing stateless (offline) benchmark evaluations of language models against stateful (field) evaluations conducted by real users to demonstrate the inadequacy and lack of representativeness of standard AI evaluation methods."
+    },
+    {
+      "target": "Personalization bias",
+      "methodology": "Measuring output heterogeneity and variations in benchmark scores (e.g., MMLU, ETHICS) when models are prompted through personalized interfaces utilizing user history, memory banks, and simulated 'sock puppet' profiles."
+    },
+    {
+      "target": "Demographic bias",
+      "methodology": "Stratifying a field evaluation with 800 real users across intersectional demographic groups (Black women, Black men, White women, White men) and utilizing a survey instrument to test whether the model inferred race, culture, or gender from the user's name or profile."
+    }
   ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short"
-  ],
-  "religion_component": "none",
-  "base_benchmarks": [
-    "MMLU",
-    "ETHICS",
-    "HELM-Lite",
-    "WildChat"
-  ],
-  "continuous_testing": false,
-  "findings": "The paper does not contain any findings related to religion as it is not a focus of the study.",
-  "references": [
-    "Norah Alzahrani, Hisham Abdullah Alyahya, Yazeed Alnumay, Sultan Alrashed, Shaykhah Alsubaie, Yusef Almushaykeh, Faisal Mirza, Nouf Alotaibi, Nora Altwairesh, Areeb Alowisheq, M Saiful Bari, and Haidar Khan. When benchmarks are targets: Revealing the sensitivity of large language model leaderboards. Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics, page 13787–13805, 2024.",
-    "Ge Bai, Jie Liu, Xingyuan Bu, Yancheng He, Jiaheng Liu, Zhanhui Zhou, Zhuoran Lin, Wenbo Su, Tiezheng Ge, Bo Zheng, and Wanli Ouyang. Mt-bench-101: A fine-grained benchmark for evaluating large language models in multi-turn dialogues. ACL, 2024.",
-    "Sourav Banerjee, Ayushi Agarwal, and Eishkaran Singh. The vulnerability of language model benchmarks: Do they accurately reflect true llm performance? arXiv:2412.03597, 2024.",
-    "Ryan Burnell, Wout Schellaert, John Burden, Tomer D. Ullman, Fernando Martinez-Plumed, Joshua B. Tenenbaum, Danaja Rutar, Lucy G. Cheke, Jascha Sohl-Dickstein, Melanie Mitchell, Douwe Kiela, Murray Shanahan, Ellen M. Voorhees, Anthony G. Cohn, Joel Z. Leibo, and Jose Hernandez-Orallo. Rethink reporting of evaluation results in ai. Science, 380, 2023.",
-    "David Castillo-Bolado, Joseph Davidson, Finlay Gray, and Marek Rosa. Beyond prompts: Dynamic conversational benchmarking of large language models. NeurIPS D&B Track, 2024.",
-    "Serina Chang, Ashton Anderson, and Jake M. Hofman. Chatbench: From static benchmarks to human-ai evaluation. Association for Computational Linguistics (ACL), 2025.",
-    "Yupeng Chang, Xu Wang, Jindong Wang, Yuan Wu, Linyi Yang, Kaijie Zhu, Hao Chen, Xiaoyuan Yi, Cunxiang Wang, Yidong Wang, Wei Ye, Yue Zhang, Yi Chang, Philip S. Yu, Qiang Yang, and Xing Xie. A survey on evaluation of large language models. ACM Transactions on Intelligent Systems and Technology (TIST), 2023.",
-    "Wei-Lin Chiang, Lianmin Zheng, Ying Sheng, Anastasios Nikolas Angelopoulos, Tianle Li, Dacheng Li, Hao Zhang, Banghua Zhu, Michael Jordan, Joseph E. Gonzalez, and Ion Stoica. Chatbot arena: An open platform for evaluating llms by human preference. arXiv:2403.04132, 2024.",
-    "Haodong Duan, Jueqi Wei, Chonghua Wang, Hongwei Liu, Yixiao Fang, Songyang Zhang, Dahua Lin, and Kai Chen. Botchat: Evaluating llms' capabilities of having multi-turn dialogues. Findings of the Association for Computational Linguistics: NAACL, 2024.",
-    "Tyna Eloundou, Alex Beutel, David G. Robinson, Keren Gu-Lemberg, Anna-Luisa Brakman, Pamela Mishkin, Meghan Shah, Johannes Heidecke, Lilian Weng, and Adam Tauman Kalai. First-person fairness in chatbots. International Conference on Learning Representations (ICLR), 2025.",
-    "Kawin Ethayarajh and Dan Jurafsky. Utility is in the eye of the user: A critique of nlp leaderboards. Empirical Methods in Natural Language Processing (EMNLP), page 4846–4853, 2020.",
-    "Tao Ge, Xin Chan, Xiaoyang Wang, Dian Yu, Haitao Mi, and Dong Yu. Scaling synthetic data creation with 1,000,000,000 personas. arXiv:2406.20094, 2024.",
-    "Robert Hankache, Kingsley Nketia Acheampong, Liang Song, Marek Brynda, Raad Khraishi, and Greig A. Cowan. Evaluating the sensitivity of llms to prior context. arXiv:2506.00069, 2025.",
-    "Dan Hendrycks, Collin Burns, Steven Basart, Andrew Critch, Jerry Li, Dawn Song, and Jacob Steinhardt. Aligning ai with shared human values. International Conference on Learning Representations (ICLR), 2021.",
-    "Dan Hendrycks, Collin Burns, Steven Basart, Andy Zou, Mantas Mazeika, Dawn Song, and Jacob Steinhardt. Measuring massive multitask language understanding. International Conference on Learning Representations (ICLR), 2021.",
-    "Anjali Kantharuban, Jeremiah Milbauer, Emma Strubell, and Graham Neubig. Stereotype or personalization? user identity biases chatbot recommendations. arXiv:2410.05613, 2024.",
-    "Tianle Li, Wei-Lin Chiang, Evan Frick, Lisa Dunlap, Tianhao Wu, Banghua Zhu, Joseph E. Gonzalez, and Ion Stoica. From crowdsourced data to high-quality benchmarks: Arena-hard and benchbuilder pipeline. arXiv:2406.11939, 2024.",
-    "Percy Liang, Rishi Bommasani, Tony Lee, Dimitris Tsipras, Dilara Soylu, Michihiro Yasunaga, Yian Zhang, Deepak Narayanan, Yuhuai Wu, Ananya Kumar, Benjamin Newman, Binhang Yuan, Bobby Yan, Ce Zhang, Christian Cosgrove, Christopher D. Manning, Christopher Ré, Diana Acosta-Navas, Drew A. Hudson, Eric Zelikman, Esin Durmus, Faisal Ladhak, Frieda Rong, Hongyu Ren, Huaxiu Yao, Jue Wang, Keshav Santhanam, Laurel Orr, Lucia Zheng, Mert Yuksekgonul, Mirac Suzgun, Nathan Kim, Neel Guha, Niladri Chatterji, Omar Khattab, Peter Henderson, Qian Huang, Ryan Chi, Sang Michael Xie, Shibani Santurkar, Surya Ganguli, Tatsunori Hashimoto, Thomas Icard, Tianyi Zhang, Vishrav Chaudhary, William Wang, Xuechen Li, Yifan Mai, Yuhui Zhang, and Yuta Koreeda. Holistic evaluation of language models. Transactions on Machine Learning Research (TMLR), 2023.",
-    "Bill Yuchen Lin, Yuntian Deng, Khyathi Chandu, Faeze Brahman, Abhilasha Ravichander, Valentina Pyatkin, Nouha Dziri, Ronan Le Bras, and Yejin Choi. Wildbench: Benchmarking llms with challenging tasks from real users in the wild. arXiv:2406.04770, 2024.",
-    "Will Orr and Edward B. Kang. AI as a sport: On the competitive epistemologies of benchmarking. ACM Conference on Fairness, Accountability, and Transparency (FAccT), pages 1875–1884, 2024.",
-    "Siddhesh Pawar, Arnav Arora, Lucie-Aimée Kaffee, and Isabelle Augenstein. Presumed cultural identity: How names shape llm responses. arXiv:2502.11995, 2025.",
-    "Pouya Pezeshkpour and Estevam Hruschka. Large language models sensitivity to the order of options in multiple-choice questions. Findings of the Association for Computational Linguistics, 2023.",
-    "Inioluwa Deborah Raji, Emily M. Bender, Amandalynne Paullada, Remi Denton, and Alex Hanna. AI and the everything in the whole wide world benchmark. Conference on Neural Information Processing Systems (NeurIPS) Datasets and Benchmarks Track, 2021.",
-    "Prasanjit Rath, Hari Shrawgi, Parag Agrawal, and Sandipan Dandapat. Llm safety for children. NAACL, 2025.",
-    "Christian Sandvig, Kevin Hamilton, Karrie Karahalios, and Cedric Langbort. Auditing algorithms: Research methods for detecting discrimination on internet platforms. Data and Discrimination: Converting Critical Concerns into Productive Inquiry, 2014.",
-    "Zhi Rui Tam, Cheng-Kuang Wu, Yi-Lin Tsai, Chieh-Yen Lin, Hung yi Lee, and Yun-Nung Chen. Let me speak freely? a study on the impact of format restrictions on performance of large language models. EMNLP, 2024.",
-    "Rachel L. Thomas and David Uminsky. Reliance on metrics is a fundamental challenge for AI. Patterns, 3, 2022.",
-    "Yu-Min Tseng, Yu-Chao Huang, Teng-Yun Hsiao, Wei-Lin Chen, Chao-Wei Huang, Yu Meng, and Yun-Nung Chen. Two tales of persona in llms: A survey of role-playing and personalization. EMNLP Findings, 2024.",
-    "Anvesh Rao Vijjini, Somnath Basu Roy Chowdhury, and Snigdha Chaturvedi. Exploring safety-utility trade-offs in personalized language models. NAACL, 2025.",
-    "Hanna Wallach, Meera Desai, A. Feder Cooper, Angelina Wang, Chad Atalla, Solon Barocas, Su Lin Blodgett, Alexandra Chouldechova, Emily Corvi, P. Alex Dow, Jean Garcia-Gathright, Alexandra Olteanu, Nicholas Pangakis, Stefanie Reed, Emily Sheng, Dan Vann, Jennifer Wortman Vaughan, Matthew Vogel, Hannah Washington, and Abigail Z. Jacobs. Position: Evaluating generative ai systems is a social science measurement challenge. Proceedings of the 42nd International Conference on Machine Learning (ICML), 2025.",
-    "Angelina Wang, Aaron Hertzmann, and Olga Russakovsky. Benchmark suites instead of leaderboards for evaluating ai fairness. Patterns, 2024.",
-    "Jiayin Wang, Fengran Mo, Weizhi Ma, Peijie Sun, Min Zhang, and Jian-Yun Nie. A user-centric multi-intent benchmark for evaluating large language models. Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, 2024.",
-    "Laura Weidinger, Inioluwa Deborah Raji, Hanna Wallach, Margaret Mitchell, Angelina Wang, Olawale Salaudeen, Rishi Bommasani, Deep Ganguli, Sanmi Koyejo, and William Isaac. Toward an evaluation science for generative ai systems. NAE The Bridge, 2025.",
-    "Saizheng Zhang, Emily Dinan, Jack Urbanek, Arthur Szlam, Douwe Kiela, and Jason Weston. Personalizing dialogue agents: I have a dog, do you have pets too? Annual Meeting of the Association for Computational Linguistics, 2018.",
-    "Wenting Zhao, Xiang Ren, Jack Hessel, Claire Cardie, Yejin Choi, and Yuntian Deng. Wildchat: 1m chatgpt interaction logs in the wild. International Conference on Learning Representations (ICLR), 2024.",
-    "Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric P. Xing, Hao Zhang, Joseph E. Gonzalez, and Ion Stoica. Judging llm-as-a-judge with mt-bench and chatbot arena. NeurIPS Datasets and Benchmarks Track, 2023.",
-    "Kun Zhou, Yutao Zhu, Zhipeng Chen, Wentong Chen, Wayne Xin Zhao, Xu Chen, Yankai Lin, Ji-Rong Wen, and Jiawei Han. Don’t make your llm an evaluation benchmark cheater. Preprint at arXiv, https://doi.org/10.48550/arΧίυ.2311.01964, 2023."
-  ]
+  "primary_bias_target": "Methodological bias"
 }

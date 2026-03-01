@@ -2,97 +2,23 @@
   "filename": "2110.01963.pdf",
   "title": "Multimodal datasets: misogyny, pornography, and malignant stereotypes",
   "arxiv_url": "https://arxiv.org/pdf/2110.01963",
-  "benchmark_measurement": "Stereotype detection and association with problematic (NSFW) content for the religious term 'Nun' in a large-scale multimodal dataset (LAION-400M). The analysis measured the prevalence of NSFW terms in the text and URLs associated with images retrieved for this query.",
-  "religious_groups": [
-    "Christianity"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Qualitative and quantitative auditing of the LAION-400M dataset and CLIP-retrieval system using gendered search terms (e.g., 'school girl', 'CEO', 'housewife') to identify hyper-sexualization, NSFW content, and occupational stereotyping, alongside testing CLIP's cosine similarity filtering on misogynistic image captions."
+    },
+    {
+      "target": "Racial and Ethnic bias",
+      "methodology": "Querying the dataset with racial, ethnic, and nationality terms (e.g., 'Asian', 'Black-woman', 'Latina', 'Desi', 'African', 'European') to evaluate visual fetishization, the prevalence of NSFW-flagged metadata, and analyzing CLIP's susceptibility to racist and conspiratorial mis-associations."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Examining image retrieval results for age-related and generational family-role terms (e.g., 'Aunty', 'Abuela', 'Mummy', 'school girl') to identify inappropriate sexualization and the presence of pornographic content."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Measuring the prevalence of NSFW and pornographic text flags in the metadata for images retrieved using religious search terms (e.g., 'Nun')."
+    }
   ],
-  "models_tested": [
-    "CLIP"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "other"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [],
-  "continuous_testing": false,
-  "findings": "Querying the LAION-400M dataset for the religious term 'Nun' resulted in 16.4% of matches containing NSFW-related terms in their text or URL, indicating a significant presence of problematic and sexualized content associated with this religious role.",
-  "references": [
-    "M. Mitchell, “Why ai is harder than we think,\" arXiv preprint arXiv:2104.12871, 2021.",
-    "A. Radford, J. W. Kim, C. Hallacy, A. Ramesh, G. Goh, S. Agarwal, G. Sastry, A. Askell, P. Mishkin, J. Clark et al., “Learning transferable visual models from natural language supervision,\" arXiv preprint arXiv:2103.00020, 2021.",
-    "C. Jia, Y. Yang, Y. Xia, Y.-T. Chen, Z. Parekh, H. Pham, Q. V. Le, Y. Sung, Z. Li, and T. Duerig, \"Scaling up visual and vision-language representation learning with noisy text supervision,\" arXiv preprint arXiv:2102.05918, 2021.",
-    "M. K. Scheuerman, E. Denton, and A. Hanna, “Do datasets have politics? disciplinary values in computer vision dataset development,\" arXiv preprint arXiv:2108.04308, 2021.",
-    "A. Paullada, I. D. Raji, E. M. Bender, E. Denton, and A. Hanna, “Data and its (dis) contents: A survey of dataset development and use in machine learning research,\" arXiv preprint arXiv:2012.05345, 2020.",
-    "J. Atwood, Y. Halpern, P. Baljekar, E. Breck, D. Sculley, P. Ostyakov, S. I. Nikolenko, I. Ivanov, R. Solovyev, W. Wang et al., “The inclusive images competition,” in The NeurIPS’18 Competition. Springer, 2020, pp. 155–186.",
-    "A. J. Larrazabal, N. Nieto, V. Peterson, D. H. Milone, and E. Ferrante, “Gender imbalance in medical imaging datasets produces biased classifiers for computer-aided diagnosis,\" Proceedings of the National Academy of Sciences, vol. 117, no. 23, pp. 12592–12 594, 2020.",
-    "A. Wang, A. Narayanan, and O. Russakovsky, “Revise: A tool for measuring and mitigating bias in visual datasets,” in European Conference on Computer Vision. Springer, 2020, pp. 733–751.",
-    "E. Denton, A. Hanna, R. Amironesei, A. Smart, and H. Nicole, “On the genealogy of machine learning datasets: A critical history of imagenet,\" Big Data & Society, vol. 8, no. 2, p. 20539517211035955, 2021.",
-    "V. U. Prabhu, \"The phantom of the corpora: JFT-300M,” in Proceedings of the 2021 Beyond Fairness CVPR Workshop, 2021, available at shorturl.at/djnR0.",
-    "A. Birhane and V. U. Prabhu, “Large image datasets: A pyrrhic win for computer vision?” in 2021 IEEE Winter Conference on Applications of Computer Vision (WACV). IEEE, 2021, pp. 1536–1546.",
-    "K. Yang, K. Qinami, L. Fei-Fei, J. Deng, and O. Russakovsky, “Towards fairer datasets: Filtering and balancing the distribution of the people subtree in the imagenet hierarchy,\" in Proceedings of the 2020 Conference on Fairness, Accountability, and Transparency, 2020, pp. 547–558.",
-    "K. Crawford and T. Paglen, \"Excavating ai: The politics of images in machine learning training sets,\" AI &amp; SOCIETY, pp. 1–12, 2021.",
-    "K. Yang, J. Yau, L. Fei-Fei, J. Deng, and O. Russakovsky, \"A study of face obfuscation in imagenet,\" arXiv preprint arXiv:2103.06191, 2021.",
-    "F. Bramlett, \"How will we manage the alt text?” Pencil Panel Page, 2012.",
-    "T. C. Craven, “Some features of\" alt\" texts associated with images in web pages.” Information Research: An International Electronic Journal, vol. 11, no. 2, p. n2, 2006.",
-    "P. Dognin, I. Melnyk, Y. Mroueh, I. Padhi, M. Rigotti, J. Ross, Y. Schiff, R. A. Young, and B. Belgodere, \"Image captioning as an assistive technology: Lessons learned from vizwiz 2020 challenge,\" arXiv preprint arXiv:2012.11696, 2020.",
-    "J. Guo and J. Zhou, “Why ai alt text generator fail,\" 2020.",
-    "D. Gurari, Y. Zhao, M. Zhang, and N. Bhattacharya, “Captioning images taken by people who are blind,\" in European Conference on Computer Vision. Springer, 2020, pp. 417–434.",
-    "M. Hanley, S. Barocas, K. Levy, S. Azenkot, and H. Nissenbaum, \"Computer vision and conflicting values: Describing people with automated alt text,” arXiv preprint arXiv:2105.12754, 2021.",
-    "K. MACK, E. CUTRELL, B. LEE, and M. R. MORRIS, “Designing tools for high-qality alt text authoring,” 2021.",
-    "T. McEwan and B. Weerts, \"Alt text and basic accessibility,\" in Proceedings of HCI 2007 The 21st British HCI Group Annual Conference University of Lancaster, UK 21, 2007, pp. 1–4.",
-    "M. R. Morris, “Ai and accessibility,” Communications of the ACM, vol. 63, no. 6, pp. 35–37, 2020.",
-    "H. Petrie, C. Harrison, and S. Dev, “Describing images on the web: a survey of current practice and prospects for the future,\" Proceedings of Human Computer Interaction International (HCII), vol. 71, no. 2, 2005.",
-    "P. Sharma, N. Ding, S. Goodman, and R. Soricut, “Conceptual captions: A cleaned, hypernymed, image alt-text dataset for automatic image captioning,\" in Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), 2018, pp. 2556–2565.",
-    "J. M. Slatin, \"The art of alt: toward a more accessible web,\" Computers and Composition, vol. 18, no. 1, pp. 73–81, 2001.",
-    "D. Guinness, E. Cutrell, and M. R. Morris, “Caption crawler: Enabling reusable alternative text descriptions using reverse image search,\" in Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems, 2018, pp. 1–11.",
-    "J. P. Bigham, R. S. Kaminsky, R. E. Ladner, O. M. Danielsson, and G. L. Hempton, “Webinsight: making web images accessible,\" in Proceedings of the 8th International ACM SIGACCESS Conference on Computers and Accessibility, 2006, pp. 181–188.",
-    "C. Gleason, P. Carrington, C. Cassidy, M. R. Morris, K. M. Kitani, and J. P. Bigham, “““it's almost like they're trying to hide it”: How user-provided image descriptions have failed to make twitter accessible,” in The World Wide Web Conference, 2019, pp. 549–559.",
-    "M. Hanley, S. Barocas, K. Levy, S. Azenkot, and H. Nissenbaum, “Computer vision and conflicting values: Describing people with automated alt text,” arXiv preprint arXiv:2105.12754, 2021.",
-    "D. Diaper and L. Worman, \"Two falls out of three in the automated accessibility assessment of world wide web sites: A-prompt vs. bobby,\" in People and Computers XVII—Designing for Society. Springer, 2004, pp. 349–363.",
-    "C. L. Bennett, C. Gleason, M. K. Scheuerman, J. P. Bigham, A. Guo, and A. To, ““it's complicated\": Negotiating accessibility and (mis) representation in image descriptions of race, gender, and disability,\" in Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems, 2021, pp. 1–19.",
-    "J. Otterbacher, P. Barlas, S. Kleanthous, and K. Kyriakou, “How do we talk about other people? group (un) fairness in natural language image descriptions,” in Proceedings of the AAAI Conference on Human Computation and Crowdsourcing, vol. 7, no. 1, 2019, pp. 106–114.",
-    "T. B. Brown, B. Mann, N. Ryder, M. Subbiah, J. Kaplan, P. Dhariwal, A. Neelakantan, P. Shyam, G. Sastry, A. Askell et al., “Language models are few-shot learners,” arXiv preprint arXiv:2005.14165, 2020.",
-    "L. Xu, X. Zhang, and Q. Dong, \"Cluecorpus2020: A large-scale chinese corpus for pre-training language model,” arXiv preprint arXiv:2003.01355, 2020.",
-    "A. Conneau, K. Khandelwal, N. Goyal, V. Chaudhary, G. Wenzek, F. Guzmán, E. Grave, M. Ott, L. Zettlemoyer, and V. Stoyanov, “Unsupervised cross-lingual representation learning at scale,” arXiv preprint arXiv:1911.02116, 2019.",
-    "S. Matic, C. Iordanou, G. Smaragdakis, and N. Laoutaris, “Identifying sensitive urls at web-scale,\" in Proceedings of the ACM Internet Measurement Conference, 2020, pp. 619–633.",
-    "S. Gehman, S. Gururangan, M. Sap, Y. Choi, and N. A. Smith, “Realtoxicityprompts: Evaluating neural toxic degeneration in language models,” arXiv preprint arXiv:2009.11462, 2020.",
-    "A. S. Luccioni and J. D. Viviano, “What's in the box? an analysis of undesirable content in the common crawl corpus,\" arXiv preprint arXiv:2105.02732, 2021.",
-    "I. Caswell, J. Kreutzer, L. Wang, A. Wahab, D. van Esch, N. Ulzii-Orshikh, A. Tapo, N. Subramani, A. Sokolov, C. Sikasote et al., \"Quality at a glance: An audit of web-crawled multilingual datasets,\" arXiv preprint arXiv:2103.12028, 2021.",
-    "K. Srinivasan, K. Raman, J. Chen, M. Bendersky, and M. Najork, “Wit: Wikipedia-based image text dataset for multimodal multilingual machine learning,” arXiv preprint arXiv:2103.01913, 2021.",
-    "L. Gao, S. Biderman, S. Black, L. Golding, T. Hoppe, C. Foster, J. Phang, H. He, A. Thite, N. Nabeshima et al., “The pile: An 800gb dataset of diverse text for language modeling,” arXiv preprint arXiv:2101.00027, 2020.",
-    "S. Black, G. Leo, P. Wang, C. Leahy, and S. Biderman, “GPT-Neo: Large Scale Autoregressive Language Modeling with Mesh-Tensorflow,” Mar. 2021, If you use this software, please cite it using these metadata. [Online]. Available: https://doi.org/10.5281/zenodo.5297715",
-    "A. Andonian, S. Biderman, S. Black, P. Gali, L. Gao, E. Hallahan, J. Levy-Kramer, C. Leahy, L. Nestler, K. Parker, M. Pieler, S. Purohit, T. Songz, P. Wang, and S. Weinbach, “GPT-NeoX: Large scale autoregressive language modeling in pytorch,\" 2021. [Online]. Available: http://github.com/eleutherai/gpt-neox",
-    "A. Ramesh, M. Pavlov, G. Goh, S. Gray, C. Voss, A. Radford, M. Chen, and I. Sutskever, \"Zero-shot text-to-image generation,” arXiv preprint arXiv:2102.12092 2021.",
-    "C. Rashtchian, P. Young, M. Hodosh, and J. Hockenmaier, “Collecting image annotations using amazon's mechanical turk,\" in Proceedings of the NAACL HLT 2010 Workshop on Creating Speech and Language Data with Amazon's Mechanical Turk, 2010, pp. 139–147.",
-    "T.-Y. Lin, M. Maire, S. Belongie, J. Hays, P. Perona, D. Ramanan, P. Dollár, and C. L. Zitnick, \"Microsoft coco: Common objects in context,” in European conference on computer vision. Springer, 2014, pp. 740–755.",
-    "B. Thomee, D. A. Shamma, G. Friedland, B. Elizalde, K. Ni, D. Poland, D. Borth, and L.-J. Li, \"Yfcc100m: The new data in multimedia research,” Communications of the ACM, vol. 59, no. 2, pp. 64–73, 2016.",
-    "S. Antol, A. Agrawal, J. Lu, M. Mitchell, D. Batra, C. L. Zitnick, and D. Parikh, \"Vqa: Visual question answering,\" in Proceedings of the IEEE international conference on computer vision, 2015, pp. 2425–2433.",
-    "R. Krishna, Y. Zhu, O. Groth, J. Johnson, K. Hata, J. Kravitz, S. Chen, Y. Kalantidis, L.-J. Li, D. A. Shamma et al., “Visual genome: Connecting language and vision using crowdsourced dense image annotations,” International journal of computer vision, vol. 123, no. 1, pp. 32–73, 2017.",
-    "P. Nayak, “Mum: A new ai milestone for understanding information,\" https://blog.google/products/search/introducing-mum/, May 2021, (Accessed on 09/23/2021).",
-    "Wikipedia, “Wu Dao – Wikipedia, the free encyclopedia,” http://en.wikipedia.org/w/index.php?title=Wu%20Dao&oldid=1045892362, 2021, [Online; accessed 26-September-2021].",
-    "A. Zhavoronkov, “Wu dao 2.0 - bigger, stronger, faster ai from china,\" https://www.forbes.com/sites/alexzhavoronkov/2021/07/19/wu-dao-20bigger-stronger-faster-ai-from-china/, July 2021, (Accessed on 09/26/2021).",
-    "C. Feng, \"Us-china tech war: Beijing-funded ai researchers surpass google and openai with new language processing model | south china morning post,” https://www.scmp.com/tech/tech-war/article/3135764/us-china-tech-war-beijing-funded-ai-researchers-surpass-google-and, June 2021, (Accessed on 09/26/2021).",
-    "M. Heikkilä, “Meet wu dao 2.0, the chinese ai model making the west sweat – politico,\" https://www.politico.eu/article/meet-wu-dao-2-0-the-chinese-ai-model-making-the-west-sweat/, June 2021, (Accessed on 09/26/2021).",
-    "A. Tarantola, “China's gigantic multi-modal ai is no one-trick pony | engadget,\" https://www.engadget.com/chinas-gigantic-multi-modal-ai-is-no-one-trick-pony-211414388.html, June 2021, (Accessed on 09/26/2021).",
-    "A. Hanna and T. M. Park, \"Against scale: Provocations and resistances to scale thinking,\" arXiv preprint arXiv:2010.08850, 2020.",
-    "D. A. Noever and S. E. M. Noever, \"Reading isn't believing: Adversarial attacks on multi-modal neurons,\" arXiv preprint arXiv:2103.10480, 2021.",
-    "G. Goh, N. Cammarata, C. Voss, S. Carter, M. Petrov, L. Schubert, A. Radford, and C. Olah, \"Multimodal neurons in artificial neural networks,” Distill, vol. 6, no. 3, p. e30, 2021.",
-    "A. Xu, E. Pathak, E. Wallace, S. Gururangan, M. Sap, and D. Klein, “Detoxifying language models risks marginalizing minority voices,\" arXiv preprint arXiv:2104.06390, 2021.",
-    "J. Welbl, A. Glaese, J. Uesato, S. Dathathri, J. Mellor, L. A. Hendricks, K. Anderson, P. Kohli, B. Coppin, and P.-S. Huang, “Challenges in detoxifying language models,\" arXiv preprint arXiv:2109.07445, 2021.",
-    "A. Birhane, P. Kalluri, D. Card, W. Agnew, R. Dotan, and M. Bao, \"The values encoded in machine learning research,\" arXiv preprint arXiv:2106.15590, 2021.",
-    "J. Deng, W. Dong, R. Socher, L.-J. Li, K. Li, and L. Fei-Fei, “Imagenet: A large-scale hierarchical image database,” in 2009 IEEE Conference on Computer Vision and Pattern Recognition, 2009, pp. 248–255.",
-    "Y. You, Z. Zhang, C.-J. Hsieh, J. Demmel, and K. Keutzer, “Imagenet training in minutes,\" in Proceedings of the 47th International Conference on Parallel Processing, 2018, pp. 1–10.",
-    "B. Wu, W. Chen, Y. Fan, Y. Zhang, J. Hou, J. Liu, and T. Zhang, \"Tencent ml-images: A large-scale multi-label image database for visual representation learning,” IEEE Access, vol. 7, pp. 172 683–172 693, 2019.",
-    "M. Tan and Z. Dai, “Toward fast and accurate neural networks for image recognition,\" https://ai.googleblog.com/2021/09/toward-fast-and-accurate-neural.html, Sep 2021, (Accessed on 09/23/2021).",
-    "C. Newton, “Facebook will pay $52 million in settlement with moderators who developed ptsd on the job - the verge,\" https://www.theverge.com/2020/5/12/21255870/facebook-content-moderator-settlement-scola-ptsd-mental-health, May 2020, (Accessed on 10/01/2021).",
-    "M. Steiger, T. J. Bharucha, S. Venkatagiri, M. J. Riedl, and M. Lease, “The psychological well-being of content moderators,” in Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems, CHI, vol. 21, 2021.",
-    "A. Birhane, “Algorithmic injustice: a relational ethics approach,\" Patterns, vol. 2, no. 2, p. 100205, 2021.",
-    "N. Carlini, F. Tramer, E. Wallace, M. Jagielski, A. Herbert-Voss, K. Lee, A. Roberts, T. Brown, D. Song, U. Erlingsson et al., “Extracting training data from large language models,\" arXiv preprint arXiv:2012.07805, 2020.",
-    "J. Dodge, M. Sap, A. Marasovic, W. Agnew, G. Ilharco, D. Groeneveld, and M. Gardner, \"Documenting the english colossal clean crawled corpus,” arXiv preprint arXiv:2104.08758, 2021.",
-    "K. Peng, A. Mathur, and A. Narayanan, \"Mitigating dataset harms requires stewardship: Lessons from 1000 papers,\" arXiv preprint arXiv:2108.02922, 2021.",
-    "D. Erhan, Y. Bengio, A. Courville, and P. Vincent, “Visualizing higher-layer features of a deep network,\" University of Montreal, vol. 1341, no. 3, p. 1, 2009.",
-    "R. Q. Quiroga, L. Reddy, G. Kreiman, C. Koch, and I. Fried, “Invariant visual representation by single neurons in the human brain,” Nature, vol. 435, no. 7045, pp. 1102–1107, 2005."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

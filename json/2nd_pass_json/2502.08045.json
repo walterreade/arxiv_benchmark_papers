@@ -2,87 +2,19 @@
   "filename": "2502.08045.pdf",
   "title": "Break the Checkbox: Challenging Closed-Style Evaluations of Cultural Alignment in LLMs",
   "arxiv_url": "https://arxiv.org/pdf/2502.08045",
-  "benchmark_measurement": "The benchmark measured the cultural value dimension of 'Traditional vs. Secular-rational values' using questions from the World Values Survey (WVS). Specifically, it assessed the models' responses to the question 'how significant is God in your life' and analyzed how responses varied across different probing methods (closed-style vs. unconstrained). The analysis focused on whether models would provide a definitive stance or a non-specific/unclassifiable answer, interpreting the latter as a potential reflection of secular societal values.",
-  "religious_groups": [
-    "Protestant",
-    "Catholic",
-    "Orthodox",
-    "Islam"
+  "bias_targets": [
+    {
+      "target": "Cultural bias",
+      "methodology": "Evaluating model responses to cultural, social, and moral propositions using the World Values Survey (WVS) and Hofstede Cultural Dimensions. The study uses anthropological prompting and compares model outputs under four different probing constraints (forced closed-style, forced reverse order, forced open-ended, and fully unconstrained) against human survey baselines from different countries (Germany, Bangladesh, USA, Philippines)."
+    },
+    {
+      "target": "Positional bias",
+      "methodology": "Administering multiple-choice and Likert-scale survey questions with the original option order and a reversed option order to measure the models' sensitivity and output inconsistency based on the placement of choices."
+    },
+    {
+      "target": "Language bias",
+      "methodology": "Prompting models in both English and native languages (German, Bengali, Filipino) to assess performance degradation and cultural alignment disparities, highlighting the models' failures to represent cultural nuances in lower-resource languages."
+    }
   ],
-  "models_tested": [
-    "GPT-4o (v2024-08-06)",
-    "GPT-4 (v0125-preview)",
-    "Llama 3.3 (70B)",
-    "Mistral Large 2 (v2407 123B)",
-    "DeepSeek-R1 (671B)"
-  ],
-  "languages_evaluated": [
-    "English",
-    "German",
-    "Bengali",
-    "Filipino"
-  ],
-  "response_type": [
-    "short",
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "World Values Survey (WVS)",
-    "Hofstede's Cultural Dimensions"
-  ],
-  "continuous_testing": false,
-  "findings": "In unconstrained (open-ended) settings, models frequently refused to answer questions about the importance of God for secular-rational cultures like Germany and the USA, often responding that faith is a private matter. The paper hypothesizes this reflects an accurate representation of those societies' values. In contrast, for more traditional cultures like Bangladesh and the Philippines, models did not produce such unclassifiable outputs. This nuance, which highlights different cultural stances on religion, is completely missed in traditional closed-style (MCQ) evaluations.",
-  "references": [
-    "Muhammad Farid Adilazuarda, Sagnik Mukherjee, Pradhyumna Lavania, Siddhant Singh, Ashutosh Dwivedi, Alham Fikri Aji, Jacki O’Neill, Ashutosh Modi, and Monojit Choudhury. 2024. Towards measuring and modeling\" culture\" in llms: A survey. arXiv preprint arXiv:2403.15412.",
-    "Badr AlKhamissi, Muhammad ElNokrashy, Mai AlKhamissi, and Mona Diab. 2024. Investigating cultural alignment of large language models. arXiv preprint arXiv:2402.13231.",
-    "Arnav Arora, Lucie-aimée Kaffee, and Isabelle Augenstein. 2023. Probing pre-trained language models for cross-cultural differences in values. In Proceedings of the First Workshop on Cross-Cultural Considerations in NLP (C3NLP), pages 114–130, Dubrovnik, Croatia. Association for Computational Linguistics.",
-    "Mohammad Atari, Mona J Xue, Peter S Park, Damián Blasi, and Joseph Henrich. 2023. Which humans?",
-    "Noam Benkler, Drisana Mosaphir, Scott Friedman, Andrew Smart, and Sonja Schmer-Galunder. 2023. Assessing llms for moral value pluralism. arXiv preprint arXiv:2312.10075.",
-    "Sjoerd Beugelsdijk, Robbert Maseland, and André Van Hoorn. 2015. Are scores on h ofstede’s dimensions of national culture stable over time? a cohort analysis. Global Strategy Journal, 5(3):223–240.",
-    "Sjoerd Beugelsdijk and Chris Welzel. 2018. Dimensions and dynamics of national culture: Synthesizing hofstede with inglehart. Journal of cross-cultural psychology, 49(10):1469–1505.",
-    "Shaily Bhatt and Fernando Diaz. 2024. Extrinsic evaluation of cultural competence in large language models. arXiv preprint arXiv:2406.11565.",
-    "Michal Bravansky, Filip Trhlik, and Fazl Barez. 2025. Rethinking ai cultural evaluation. arXiv preprint arXiv:2501.07751.",
-    "Andrew C Butler. 2018. Multiple-choice testing in education: Are the best practices for assessment also good for learning? Journal of Applied Research in Memory and Cognition, 7(3):323–331.",
-    "Yang Trista Cao, Anna Sotnikova, Hal Daumé III, Rachel Rudinger, and Linda Zou. 2022. Theory-grounded measurement of us social stereotypes in english language models. arXiv preprint arXiv:2206.11684.",
-    "Yong Cao, Li Zhou, Seolhwa Lee, Laura Cabello, Min Chen, and Daniel Hershcovich. 2023a. Assessing cross-cultural alignment between chatgpt and human societies: An empirical study. arXiv preprint arXiv:2303.17466.",
-    "Yong Cao, Li Zhou, Seolhwa Lee, Laura Cabello, Min Chen, and Daniel Hershcovich. 2023b. Assessing cross-cultural alignment between ChatGPT and human societies: An empirical study. In Proceedings of the First Workshop on Cross-Cultural Considerations in NLP (C3NLP), pages 53–67, Dubrovnik, Croatia. Association for Computational Linguistics.",
-    "Yu Ying Chiu, Liwei Jiang, and Yejin Choi. 2024. Dailydilemmas: Revealing value preferences of llms with quandaries of daily life. arXiv preprint arXiv:2410.02683.",
-    "Rochelle Choenni and Ekaterina Shutova. 2024. Self-alignment: Improving alignment of cultural values in llms via in-context learning. arXiv preprint arXiv:2408.16482.",
-    "Dipto Das, Shion Guha, and Bryan Semaan. 2023. Toward cultural bias evaluation datasets: The case of bengali gender, religious, and national identity. In Proceedings of the First Workshop on Cross-Cultural Considerations in NLP (C3NLP), pages 68–83.",
-    "Fiifi Dawson, Zainab Mosunmola, Sahil Pocker, Raj Abhijit Dandekar, Rajat Dandekar, and Sreedath Panat. 2024. Evaluating cultural awareness of llms for yoruba, malayalam, and english. arXiv preprint arXiv:2410.01811.",
-    "Esin Durmus, Karina Nyugen, Thomas I Liao, Nicholas Schiefer, Amanda Askell, Anton Bakhtin, Carol Chen, Zac Hatfield-Dodds, Danny Hernandez, Nicholas Joseph, et al. 2023. Towards measuring the representation of subjective global opinions in language models. arXiv preprint arXiv:2306.16388.",
-    "Ashutosh Dwivedi, Pradhyumna Lavania, and Ashutosh Modi. 2023. Eticor: Corpus for analyzing llms for etiquettes. arXiv preprint arXiv:2310.18974.",
-    "Clifford Geertz. 2017. The interpretation of cultures. Basic books.",
-    "Christian Haerpfer, Ronald Inglehart, Alejandro Moreno, Christian Welzel, Kseniya Kizilova, Jaime Diez-Medrano, Marta Lagos, Pippa Norris, Eduard Ponarin, and Bi Puranen. 2024. World values survey wave 7 (2017-2022) cross-national data-set.",
-    "Shreya Havaldar, Sunny Rai, Bhumika Singhal, Langchen Liu, Sharath Chandra Guntuku, and Lyle Ungar. 2023. Multilingual language models are not multicultural: A case study in emotion. arXiv preprint arXiv:2307.01370.",
-    "Daniel Hershcovich, Stella Frank, Heather Lent, Miryam de Lhoneux, Mostafa Abdou, Stephanie Brandl, Emanuele Bugliarello, Laura Cabello Piqueras, Ilias Chalkidis, Ruixiang Cui, et al. 2022. Challenges and strategies in cross-cultural nlp. arXiv preprint arXiv:2203.10020.",
-    "Geert Hofstede, Gert Jan Hofstede, and Michael Minkov. 2010. Cultures et organisations: Nos programmations mentales. Pearson Education France.",
-    "Robert J House, Paul J Hanges, Mansour Javidan, Peter W Dorfman, and Vipin Gupta. 2004. Culture, leadership, and organizations: The GLOBE study of 62 societies. Sage publications.",
-    "Ronald Inglehart. 2005. Christian Welzel Modernization, Cultural Change, and Democracy The Human Development Sequence. Cambridge: Cambridge university press.",
-    "Rebecca L Johnson, Giada Pistilli, Natalia Menédez-González, Leslye Denisse Dias Duran, Enrico Panai, Julija Kalpokiene, and Donald Jay Bertulfo. 2022. The ghost in the machine has an american accent: value conflict in gpt-3. arXiv preprint arXiv:2203.07785.",
-    "Pratik Joshi, Sebastin Santy, Amar Budhiraja, Kalika Bali, and Monojit Choudhury. 2020. The state and fate of linguistic diversity and inclusion in the nlp world. arXiv preprint arXiv:2004.09095.",
-    "Anneli Kaasa and Chris Welzel. 2023. Elements of schwartz’s model in the wvs: How do they relate to other cultural models? Cross-Cultural Research, 57(5):431–471.",
-    "Sharif Kazemi, Gloria Gerhardt, Jonty Katz, Caroline Ida Kuria, Estelle Pan, and Umang Prabhakar. 2024. Cultural fidelity in large-language models: An evaluation of online language resources as a driver of model performance in value representation. arXiv preprint arXiv:2410.10489.",
-    "Julia Kharchenko, Tanya Roosta, Aman Chadha, and Chirag Shah. 2024. How well do llms represent values across cultures? empirical analysis of llm responses based on hofstede cultural dimensions. arXiv preprint arXiv:2406.14805.",
-    "Cheng Li, Mengzhou Chen, Jindong Wang, Sunayana Sitaram, and Xing Xie. 2024a. Culturellm: Incorporating cultural differences into large language models. arXiv preprint arXiv:2402.10946.",
-    "Cheng Li, Damien Teney, Linyi Yang, Qingsong Wen, Xing Xie, and Jindong Wang. 2024b. Culturepark: Boosting cross-cultural understanding in large language models. arXiv preprint arXiv:2405.15145.",
-    "Caroline Lindahl and Helin Saeid. 2023. Unveiling the values of chatgpt: An explorative study on human values in ai systems.",
-    "Reem I Masoud, Ziquan Liu, Martin Ferianc, Philip Treleaven, and Miguel Rodrigues. 2023. Cultural alignment in large language models: An explanatory analysis based on hofstede’s cultural dimensions. arXiv preprint arXiv:2309.12342.",
-    "Mijntje Meijer, Hadi Mohammadi, and Ayoub Bagheri. 2024. Llms as mirrors of societal moral standards: reflection of cultural divergence and agreement across ethical topics. arXiv preprint arXiv:2412.00962.",
-    "Tarek Naous, Michael J Ryan, Alan Ritter, and Wei Xu. 2023. Having beer after prayer? measuring cultural bias in large language models. arXiv preprint arXiv:2305.14456.",
-    "Evi Papadopoulou, Hadi Mohammadi, and Ayoub Bagheri. 2024. Large language models as mirrors of societal moral standards. arXiv preprint arXiv:2412.00956.",
-    "Pouya Pezeshkpour and Estevam Hruschka. 2023. Large language models sensitivity to the order of options in multiple-choice questions. arXiv preprint arXiv:2308.11483.",
-    "Yao Qu and Jue Wang. 2024. Performance and biases of large language models in public opinion simulation. Humanities and Social Sciences Communications, 11(1):1–13.",
-    "Aida Ramezani and Yang Xu. 2023. Knowledge of cultural moral norms in large language models. arXiv preprint arXiv:2306.01857.",
-    "Abhinav Rao, Akhila Yerukola, Vishwa Shah, Katharina Reinecke, and Maarten Sap. 2024. Normad: A benchmark for measuring the cultural adaptability of large language models. arXiv preprint arXiv:2404.12464.",
-    "Paul Röttger, Valentin Hofmann, Valentina Pyatkin, Musashi Hinck, Hannah Rose Kirk, Hinrich Schütze, and Dirk Hovy. 2024. Political compass or spinning arrow? towards more meaningful evaluations for values and opinions in large language models. arXiv preprint arXiv:2402.16786.",
-    "Jonathan Rystrøm, Hannah Rose Kirk, and Scott Hale. 2025. Multilingual!= multicultural: Evaluating gaps between multilingual capabilities and cultural alignment in llms. arXiv preprint arXiv:2502.16534.",
-    "Jerzy Smolicz. 1981. Core values and cultural identity. Ethnic and racial studies, 4(1):75–90.",
-    "Yan Tao, Olga Viberg, Ryan S Baker, and René F Kizilcec. 2024. Cultural bias and cultural alignment of large language models. PNAS nexus, 3(9):pgae346.",
-    "Aleksandra Urman and Mykola Makhortykh. 2023. The silence of the llms: Cross-lingual analysis of political bias and false information prevalence in chatgpt, google bard, and bing chat. Telematics and Informatics.",
-    "Sunil Venaik and Paul Brewer. 2016. National culture dimensions: The perpetuation of cultural ignorance. Management learning, 47(5):563–589.",
-    "Wenxuan Wang, Wenxiang Jiao, Jingyuan Huang, Ruyi Dai, Jen-tse Huang, Zhaopeng Tu, and Michael R Lyu. 2023. Not all countries celebrate thanksgiving: On the cultural dominance in large language models. arXiv preprint arXiv:2310.12481.",
-    "Wenlong Zhao, Debanjan Mondal, Niket Tandon, Danica Dillion, Kurt Gray, and Yuling Gu. 2024. Worldvaluesbench: A large-scale benchmark dataset for multi-cultural value awareness of language models. arXiv preprint arXiv:2404.16308."
-  ]
+  "primary_bias_target": "Cultural bias"
 }

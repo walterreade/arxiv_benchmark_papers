@@ -2,23 +2,109 @@
   "filename": "2506.23111.pdf",
   "title": "FairI Tales: Evaluation of Fairness in Indian Contexts with a Focus on Bias and Stereotypes",
   "arxiv_url": "https://arxiv.org/pdf/2506.23111",
-  "bias_targets": [
-    {
-      "target": "Caste bias",
-      "methodology": "Tournament-style pairwise comparisons of caste identities in multiple-choice plausibility and judgment scenarios, calculating ELO ratings and Rank Shift Metrics (RSM), alongside LLM-as-a-judge evaluation of open-ended generation tasks to measure stereotype reinforcement."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Counterfactual substitution of religious identities in positive/negative templates, evaluating model selections in plausibility and judgment tasks, and comparing the quality, tone, and stereotype association in free-form generation tasks."
-    },
-    {
-      "target": "Regional bias",
-      "methodology": "Pairwise evaluation of Indian regional identities using ambiguous scenarios to test for exclusion, misrepresentation, and discrimination, evaluated via choice tasks and open-ended text generation judged by an LLM."
-    },
-    {
-      "target": "Tribal bias",
-      "methodology": "Evaluating biases and stereotypes against Indian tribal communities by pairing them against dominant regional counterparts in plausibility and judgment scenarios, and measuring Stereotype Association Rates (SAR) in generated text."
-    }
+  "religious_groups": [
+    "Hindu",
+    "Muslim",
+    "Christian",
+    "Buddhist",
+    "Sikh",
+    "Bahai",
+    "Jain",
+    "Parsi",
+    "Shia",
+    "Sunni",
+    "Sufi",
+    "Bohra Muslim"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "llama-1b",
+    "llama-3b",
+    "llama-8b",
+    "llama-70b",
+    "gemma-2b",
+    "gemma-9b",
+    "gemma-27b",
+    "mistral-7b",
+    "mistral-small",
+    "mixtral",
+    "gpt-40",
+    "gpt-40-mini",
+    "gemini-flash",
+    "gemini-pro"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "CrowS-Pairs",
+    "Wino-Bias"
+  ],
+  "continuous_testing": false,
+  "findings": "The study found that LLMs reflect common societal biases regarding religion in India. Major religions and sects (like Hindu, Muslim) tend to receive negative bias, while smaller groups (like Buddhists, Jains, Sufis) are positively biased. Models showed stronger stereotypical associations for religion compared to other identity categories like region and tribe, indicated by high Stereotype Association Rate (SAR) values. Furthermore, models had particularly low refusal rates for prompts involving religious stereotypes, suggesting they are more susceptible to engaging with and perpetuating them.",
+  "references": [
+    "Jiafu An, Difang Huang, Chen Lin, and Mingzhu Tai. 2024. Measuring gender and racial biases in large language models. arXiv preprint arXiv: 2403.15281.",
+    "Senthil Kumar B, Pranav Tiwari, Aman Chandra Kumar, and Aravindan Chandrabose. 2022. Casteism in India, but not racism a study of bias in word embeddings of Indian languages. In Proceedings of the First Workshop on Language Technology and Resources for a Fair, Inclusive, and Safe Society within the 13th Language Resources and Evaluation Conference, pages 1–7, Marseille, France. European Language Resources Association.",
+    "Somnath Banerjee, Sayan Layek, Hari Shrawgi, Rajarshi Mandal, Avik Halder, Shanu Kumar, Sagnik Basu, Parag Agrawal, Rima Hazra, and Animesh Mukherjee. 2024. Navigating the cultural kaleidoscope: A hitchhiker's guide to sensitivity in large language models. arXiv preprint arXiv: 2410.12880.",
+    "Solon Barocas, Kate Crawford, Aaron Shapiro, and Hanna Wallach. 2017. The problem with bias: from allocative to representational harms in machine learning. special interest group for computing. Information and Society (SIGCIS), 2.",
+    "Shaily Bhatt, Sunipa Dev, Partha Talukdar, Shachi Dave, and Vinodkumar Prabhakaran. 2022a. Cultural re-contextualization of fairness research in language technologies in india. arXiv preprint arXiv: 2211.11206.",
+    "Shaily Bhatt, Sunipa Dev, Partha Talukdar, Shachi Dave, and Vinodkumar Prabhakaran. 2022b. Recontextualizing fairness in NLP: The case of India. In Proceedings of the 2nd Conference of the AsiaPacific Chapter of the Association for Computational Linguistics and the 12th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 727-740, Online only. Association for Computational Linguistics.",
+    "Su Lin Blodgett, Solon Barocas, Hal Daumé III, and Hanna Wallach. 2020. Language (technology) is power: A critical survey of\" bias\" in nlp. arXiv preprint arXiv:2005.14050.",
+    "Ralph Allan Bradley and Milton E. Terry. 1952. Rank analysis of incomplete block designs: I. the method of paired comparisons. Biometrika, 39(3/4):324-345.",
+    "Yang Trista Cao, Anna Sotnikova, Jieyu Zhao, Linda X. Zou, Rachel Rudinger, and Hal Daumé. 2023. Multilingual large language models leak human stereotypes across language boundaries. ArXiv, abs/2312.07141.",
+    "Wei-Lin Chiang, Lianmin Zheng, Ying Sheng, Anastasios Nikolas Angelopoulos, Tianle Li, Dacheng Li, Hao Zhang, Banghua Zhu, Michael Jordan, Joseph E. Gonzalez, and Ion Stoica. 2024. Chatbot arena: An open platform for evaluating llms by human preference. International Conference on Machine Learning.",
+    "Benjamin B. Cohen and Sumit Ganguly. 2014. Introduction: Regions and regionalism in india. India Review, 13(4):313-320.",
+    "Andrew M. Colman. 2015. A Dictionary of Psychology. Oxford Quick Reference. Oxford University Press, Oxford, UK.",
+    "Preetam Prabhu Srikar Dammu, Hayoung Jung, Anjali Singh, Monojit Choudhury, and Tanushree Mitra. 2024. \"they are uncultured\": Unveiling covert harms and social threats in Ilm generated conversations. Conference on Empirical Methods in Natural Language Processing.",
+    "Ashwini Deshpande. 2011. The Grammar of Caste: Economic Discrimination in Contemporary India. Oxford University Press, New Delhi.",
+    "Sunipa Dev, Jaya Goyal, Dinesh Tewari, Shachi Dave, and Vinodkumar Prabhakaran. 2024. Building socioculturally inclusive stereotype resources with community engagement. Advances in Neural Information Processing Systems, 36.",
+    "Nicholas B. Dirks. 2001. Castes of Mind: Colonialism and the Making of Modern India. Princeton University Press, Princeton, NJ.",
+    "Wenchao Dong, Assem Zhunis, Dongyoung Jeong, Hyojin Chin, Jiyoung Han, and Meeyoung Cha. 2024a. Persona setting pitfall: Persistent outgroup biases in large language models arising from social identity adoption. arXiv preprint arXiv: 2409.03843.",
+    "Yi Dong, Ronghui Mu, Yanghao Zhang, Siqi Sun, Tianle Zhang, Changshun Wu, Gaojie Jin, Yi Qi, Jinwei Hu, Jie Meng, Saddek Bensalem, and Xiaowei Huang. 2024b. Safeguarding large language models: A survey. arXiv preprint arXiv: 2406.02622.",
+    "Arpad E. Elo. 1978. The rating of chessplayers, past and present.",
+    "Fatma Elsafoury. 2023. Systematic offensive stereotyping (sos) bias in language models. ArXiv, abs/2308.10684.",
+    "Isabel O. Gallegos, Ryan A. Rossi, Joe Barrow, Md. Mehrab Tanjim, Sungchul Kim, Franck Dernoncourt, Tong Yu, Ruiyi Zhang, and Nesreen Ahmed. 2023. Bias and fairness in large language models: A survey. Computational Linguistics, 50:1097–1179.",
+    "W. Guo and Aylin Caliskan. 2020. Detecting emergent intersectional biases: Contextualized word embeddings contain a distribution of human-like biases. AAAI/ACM Conference on AI, Ethics, and Society.",
+    "Yufei Guo, Muzhe Guo, Juntao Su, Zhou Yang, Mengqiu Zhu, Hongfei Li, Mengyang Qiu, and Shuo Shuo Liu. 2024. Bias in large language models: Origin, evaluation, and mitigation. ArXiv, abs/2411.10915.",
+    "Rishav Hada, Safiya Husain, Varun Gumma, Harshita Diddee, Aditya Yadavalli, Agrima Seth, Nidhi Kulkarni, U. Gadiraju, Aditya Vashistha, Vivek Seshadri, and Kalika Bali. 2024. Akal badi ya bias: An exploratory study of gender bias in hindi language technology. Conference on Fairness, Accountability and Transparency.",
+    "Rishav Hada, Agrima Seth, Harshita Diddee, and Kalika Bali. 2023. \"fifty shades of bias\": Normative ratings of gender bias in gpt generated english text. arXiv preprint arXiv: 2310.17428.",
+    "Phillip Howard, Kathleen C. Fraser, Anahita Bhiwandiwalla, and Svetlana Kiritchenko. 2024. Uncovering bias in large vision-language models at scale with counterfactuals. ArXiv, abs/2405.20152.",
+    "Tiancheng Hu, Yara Kyrychenko, Steve Rathje, Nigel Collier, Sander van der Linden, and Jon Roozenbeek. 2025. Generative language models exhibit social identity biases. Nature Computational Science.",
+    "Sullam Jeoung, Yubin Ge, and Jana Diesner. 2023. Stereomap: Quantifying the awareness of human-like stereotypes in large language models. Conference on Empirical Methods in Natural Language Processing.",
+    "Akshita Jha, Aida Mostafazadeh Davani, Chandan K Reddy, Shachi Dave, Vinodkumar Prabhakaran, and Sunipa Dev. 2023. SeeGULL: A stereotype benchmark with broad geo-cultural coverage leveraging generative models. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 9851-9870, Toronto, Canada. Association for Computational Linguistics.",
+    "Ishika Joshi, Ishita Gupta, Adrita Dey, and Tapan Parikh. 2024. 'since lawyers are males..': Examining implicit gender bias in hindi language generation by llms. ArXiv, abs/2409.13484.",
+    "Lee Jussim, Jarret T Crawford, and Rachel S Rubinstein. 2015. Stereotype (in) accuracy in perceptions of groups and individuals. Current Directions in Psychological Science, 24(6):490-497.",
+    "Khyati Khandelwal, Manuel Tonneau, Andrew M. Bean, Hannah Rose Kirk, and Scott A. Hale. 2024. Indianbhed: A dataset for measuring india-centric biases in large language models. In Proceedings of the 2024 International Conference on Information Technology for Social Good, GoodIT 2024, Bremen, Germany, September 4-6, 2024, pages 231-239. ACM.",
+    "Jhanvee Khola, Shrujal Bansal, Khushi Punia, Rishika Pal, and Rahul Sachdeva. 2024. Comparative analysis of bias in llms through indian lenses. In 2024 IEEE International Conference on Electronics, Computing and Communication Technologies (CONECCT), pages 1-6.",
+    "Seungone Kim, Juyoung Suk, Shayne Longpre, Bill Yuchen Lin, Jamin Shin, S. Welleck, Graham Neubig, Moontae Lee, Kyungjae Lee, and Minjoon Seo. 2024. Prometheus 2: An open source language model specialized in evaluating other language models. Conference on Empirical Methods in Natural Language Processing.",
+    "Allison Koenecke, Andrew Nam, Emily Lake, Joe Nudell, Minnie Quartey, Zion Mengesha, Connor Toups, John R Rickford, Dan Jurafsky, and Sharad Goel. 2020. Racial disparities in automated speech recognition. Proceedings of the national academy of sciences, 117(14):7684-7689.",
+    "Tao Li, Tushar Khot, Daniel Khashabi, Ashish Sabharwal, and Vivek Srikumar. 2020. Unqovering stereotyping biases via underspecified questions. arXiv preprint arXiv:2010.02428.",
+    "Yingji Li, Mengnan Du, Rui Song, Xin Wang, and Ying Wang. 2023. A survey on fairness in large language models. arXiv preprint arXiv: 2308.10149.",
+    "Michael Madaio, Lisa Egede, Hariharan Subramonyam, Jennifer Wortman Vaughan, and Hanna Wallach. 2022. Assessing the fairness of ai systems: Ai practitioners' processes, challenges, and needs for support. Proceedings of the ACM on Human-Computer Interaction, 6(CSCW1):1-26.",
+    "Marta Marchiori Manerba, Karolina Stanczak, Riccardo Guidotti, and Isabelle Augenstein. 2024. Social bias probing: Fairness benchmarking for language models. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 14653-14671, Miami, Florida, USA. Association for Computational Linguistics.",
+    "Arnab Mukherji and Anjan Mukherji. 2012. Bihar: What went wrong? and what changed?",
+    "Tirtha Prasad Mukhopadhyay. 2022. Racial prejudice and gender discrimination against northeast indians. DOI https://dx. doi. org/10.21659/rupkatha.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2021. StereoSet: Measuring stereotypical bias in pretrained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 5356–5371, Online. Association for Computational Linguistics.",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R. Bowman. 2020. CrowS-pairs: A challenge dataset for measuring social biases in masked language models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1953–1967, Online. Association for Computational Linguistics.",
+    "Tarek Naous, Michael Joseph Ryan, and Wei Xu. 2023. Having beer after prayer? measuring cultural bias in large language models. Annual Meeting of the Association for Computational Linguistics.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel R Bowman. 2021. Bbq: A hand-built bias benchmark for question answering. arXiv preprint arXiv:2110.08193.",
+    "Pew Research. 2021. Population growth and religious composition. Accessed: 2025-02-07.",
+    "PIB. 2023. Press release. Accessed: 2025-02-07.",
+    "Krithika Ramesh, Sunayana Sitaram, and Monojit Choudhury. 2023. Fairness in language models beyond english: Gaps and challenges. arXiv preprint arXiv: 2302.12578.",
+    "Nihar R. Sahoo, Pranamya Prashant Kulkarni, Arif Ahmad, Tanu Goyal, Narjis Asad, Aparna Garimella, and Pushpak Bhattacharyya. 2024. Indibias: A benchmark dataset to measure social biases in language models for indian context. In Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), NAACL 2024, Mexico City, Mexico, June 16-21, 2024, pages 8786-8806. Association for Computational Linguistics.",
+    "Nithya Sambasivan, Erin Arnesen, Ben Hutchinson, Tulsee Doshi, and Vinodkumar Prabhakaran. 2021. Re-imagining algorithmic fairness in india and beyond. arXiv preprint arXiv: 2101.09995.",
+    "Song Wang, Peng Wang, Tong Zhou, Yushun Dong, Zhen Tan, and Jundong Li. 2025. CEB: Compositional evaluation benchmark for fairness in large language models. In The Thirteenth International Conference on Learning Representations.",
+    "Xuezhi Wang, Haohan Wang, and Diyi Yang. 2022. Measure and improve robustness in NLP models: A survey. In Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 4569–4586, Seattle, United States. Association for Computational Linguistics.",
+    "Ishaan Watts, Varun Gumma, Aditya Yadavalli, Vivek Seshadri, Manohar Swaminathan, and Sunayana Sitaram. 2024. Pariksha: A large-scale investigation of human-llm evaluator agreement on multilingual and multi-cultural data. arXiv preprint arXiv: 2406.15053.",
+    "Kellie Webster, Xuezhi Wang, Ian Tenney, Alex Beutel, Emily Pitler, Ellie Pavlick, Jilin Chen, Ed Chi, and Slav Petrov. 2020. Measuring and reducing gendered correlations in pre-trained models. arXiv preprint arXiv: 2010.06032.",
+    "Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Fei Xia, Ed Chi, Quoc V Le, Denny Zhou, et al. 2022. Chain-of-thought prompting elicits reasoning in large language models. Advances in neural information processing systems, 35:24824–24837.",
+    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang. 2018. Gender bias in coreference resolution: Evaluation and debiasing methods. NAACL.",
+    "Jinman Zhao, Yitian Ding, Chen Jia, Yining Wang, and Zifan Qian. 2024. Gender bias in large language models across multiple languages. ArXiv, abs/2403.00277.",
+    "Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric P. Xing, Hao Zhang, Joseph E. Gonzalez, and Ion Stoica. 2023. Judging Ilm-as-a-judge with mt-bench and chatbot arena. In Advances in Neural Information Processing Systems"
+  ],
+  "measurement_description": "The benchmark, INDIC-BIAS, measures social biases and stereotypes against religious groups in the Indian context. This is evaluated across three tasks: 1) Plausibility, which assesses if models find scenarios involving certain religious identities more likely than others (e.g., a Muslim vs. a Hindu man caught pickpocketing); 2) Judgment, which tests if models systematically favor or blame certain religious identities in ambiguous scenarios; and 3) Generation, which evaluates if models produce equitable long-form content or reinforce stereotypes when prompted with scenarios involving different religious identities."
 }

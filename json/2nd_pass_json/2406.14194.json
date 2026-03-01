@@ -2,124 +2,47 @@
   "filename": "2406.14194.pdf",
   "title": "VLBiasBench: A Comprehensive Benchmark for Evaluating Bias in Large Vision-Language Model",
   "arxiv_url": "https://arxiv.org/pdf/2406.14194",
-  "benchmark_measurement": "The benchmark measures sentiment bias in open-ended, model-generated stories associated with images representing different religions. It also measures the accuracy of models on close-ended, multiple-choice questions in religious contexts.",
-  "religious_groups": [
-    "Judaism",
-    "Christianity",
-    "Islam",
-    "Hinduism",
-    "Buddhism",
-    "Sikhism",
-    "Atheism"
+  "bias_targets": [
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluating sentiment scores (using VADER) of open-ended visual question answering (VQA) responses, and measuring accuracy on close-ended multiple-choice questions in ambiguous and disambiguated contexts."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating sentiment scores of open-ended VQA responses, and measuring accuracy on close-ended multiple-choice questions."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluating sentiment scores of open-ended VQA responses, and measuring accuracy on close-ended multiple-choice questions."
+    },
+    {
+      "target": "Profession bias",
+      "methodology": "Evaluating sentiment scores and calculating gender polarity scores of open-ended VQA responses to assess gendered associations with various occupations."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Measuring accuracy on close-ended multiple-choice questions in ambiguous and disambiguated contexts to identify stereotype reliance."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Measuring accuracy on close-ended multiple-choice questions in ambiguous and disambiguated contexts to identify stereotype reliance."
+    },
+    {
+      "target": "Nationality bias",
+      "methodology": "Measuring accuracy on close-ended multiple-choice questions in ambiguous and disambiguated contexts to identify stereotype reliance."
+    },
+    {
+      "target": "Physical appearance bias",
+      "methodology": "Measuring accuracy on close-ended multiple-choice questions in ambiguous and disambiguated contexts to identify stereotype reliance."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Measuring accuracy on close-ended multiple-choice questions in ambiguous and disambiguated contexts to identify stereotype reliance."
+    },
+    {
+      "target": "Intersectional bias",
+      "methodology": "Measuring accuracy on close-ended multiple-choice questions focusing specifically on race × gender and race × socioeconomic status."
+    }
   ],
-  "models_tested": [
-    "Blip2-opt-3b",
-    "Blip2-opt-7b",
-    "Blip2-flan-t5-xl",
-    "InstructBlip-flan-t5-xl",
-    "InstructBlip-flan-t5-xxl",
-    "InstructBlip-vicuna-13b",
-    "Internlm-xcomposer-vl-7b",
-    "LLaVA-1.5-7b",
-    "LLaVA-1.5-13b",
-    "Minigpt4-vicuna-7b",
-    "Minigpt4-vicuna-13b",
-    "Minigpt-v2",
-    "Otter",
-    "Qwen-vl",
-    "Shikra-7b",
-    "Gemini",
-    "GPT-4o"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "long",
-    "short"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "BOLD",
-    "BBQ",
-    "Fairface",
-    "UTKFace",
-    "MS-COCO",
-    "Flickr30k",
-    "AVIBench",
-    "StereoSet",
-    "PATA",
-    "MMBias",
-    "VLStereoSet",
-    "VisoGender",
-    "SocialCounterfactuals",
-    "Ch3Ef"
-  ],
-  "continuous_testing": true,
-  "findings": "In open-ended evaluations, Blip2-flan-t5-xl demonstrated the highest level of bias in the religion category, while LLaVA1.5 and closed-source models like Gemini and GPT-4o showed lower levels of bias. Closed-source models generally performed better in close-ended evaluations as well, suggesting lower bias overall in religious contexts.",
-  "references": [
-    "J. Achiam, S. Adler, S. Agarwal, L. Ahmad, I. Akkaya, F. L. Aleman, D. Almeida, J. Altenschmidt, S. Altman, S. Anadkat et al., \"Gpt-4 technical report,\" arXiv preprint arXiv:2303.08774, 2023.",
-    "D. Zhu, J. Chen, X. Shen, X. Li, and M. Elhoseiny, “Minigpt-4: Enhancing vision-language understanding with advanced large language models,\" arXiv preprint arXiv:2304.10592, 2023.",
-    "H. Liu, C. Li, Q. Wu, and Y. J. Lee, \"Visual instruction tuning,\" in Advances in neural information processing systems (NIPS), vol. 36, 2024.",
-    "W.-L. Chiang, Z. Li, Z. Lin, Y. Sheng, Z. Wu, H. Zhang, L. Zheng, S. Zhuang, Y. Zhuang, J. E. Gonzalez et al., \"Vicuna: An open-source chatbot impressing gpt-4 with 90%* chatgpt quality,\" See https://vicuna. Imsys. org (accessed 14 April 2023), vol. 2, no. 3, p. 6, 2023.",
-    "H. Touvron, T. Lavril, G. Izacard, X. Martinet, M.-A. Lachaux, T. Lacroix, B. Rozière, N. Goyal, E. Hambro, F. Azhar et al., \"Llama: Open and efficient foundation language models,\" arXiv preprint arXiv:2302.13971, 2023.",
-    "J. Wang, Y. Liu, and X. E. Wang, \"Are gender-neutral queries really gender-neutral? mitigating gender bias in image search,\" arXiv preprint arXiv:2109.05433, 2021.",
-    "T. Manzini, Y. C. Lim, Y. Tsvetkov, and A. W. Black, \"Black is to criminal as caucasian is to police: Detecting and removing multiclass bias in word embeddings,\" arXiv preprint arXiv:1904.04047, 2019.",
-    "H. Zhang, W. Shao, H. Liu, Y. Ma, P. Luo, Y. Qiao, and K. Zhang, \"Avibench: Towards evaluating the robustness of large vision-language model on adversarial visual-instructions,\" arXiv preprint arXiv:2403.09346, 2024.",
-    "Z. Shi, Z. Wang, H. Fan, Z. Zhang, L. Li, Y. Zhang, Z. Yin, L. Sheng, Y. Qiao, and J. Shao, \"Assessment of multimodal large language models in alignment with human values,\" arXiv preprint arXiv:2403.17830, 2024.",
-    "J. Dhamala, T. Sun, V. Kumar, S. Krishna, Y. Pruksachatkun, K.-W. Chang, and R. Gupta, \"Bold: Dataset and metrics for measuring biases in open-ended language generation,\" in Proceedings of the 2021 ACM conference on fairness, accountability, and transparency (ACM FAccT), 2021, pp. 862-872.",
-    "A. Parrish, A. Chen, N. Nangia, V. Padmakumar, J. Phang, J. Thompson, P. M. Htut, and S. R. Bowman, \"Bbq: A hand-built bias benchmark for question answering,\" in Findings of the Association for Computational Linguistics: ACL, 2022.",
-    "K. Karkkainen and J. Joo, \"Fairface: Face attribute dataset for balanced race, gender, and age for bias measurement and mitigation,\" in Proceedings of the IEEE/CVF winter conference on applications of computer vision (WACV), 2021, pp. 1548-1558.",
-    "Z. Zhang, Y. Song, and H. Qi, “Age progression/regression by conditional adversarial autoencoder,\" in Proceedings of the IEEE/CVF conference on computer vision and pattern recognition (CVPR), 2017, pp. 5810-5818.",
-    "T.-Y. Lin, M. Maire, S. Belongie, J. Hays, P. Perona, D. Ramanan, P. Dollár, and C. L. Zitnick, \"Microsoft coco: Common objects in context,\" in Proceedings of the European Conference on Computer Vision (ECCV). Springer, 2014, pp. 740-755.",
-    "B. A. Plummer, L. Wang, C. M. Cervantes, J. C. Caicedo, J. Hockenmaier, and S. Lazebnik, \"Flickr30k entities: Collecting region-to-phrase correspondences for richer image-to-sentence models,\" in Proceedings of the IEEE/CVF international conference on computer vision (CVPR), 2015, pp. 2641-2649.",
-    "A. Radford, J. W. Kim, C. Hallacy, A. Ramesh, G. Goh, S. Agarwal, G. Sastry, A. Askell, P. Mishkin, J. Clark et al., \"Learning transferable visual models from natural language supervision,\" in International conference on machine learning (ICML). PMLR, 2021, pp. 8748-8763.",
-    "F. Chen and Z.-Y. Dou, “Measuring and mitigating bias in vision-andlanguage models,\" Information Processing & Management, 2024.",
-    "M. Zhang and R. Chunara, \"Leveraging clip for inferring sensitive information and improving model fairness,\" arXiv preprint arXiv:2403.10624, 2024.",
-    "F. Kong, S. Yuan, W. Hao, and R. Henao, \"Mitigating test-time bias for fair image retrieval,\" Advances in Neural Information Processing Systems (NIPS), vol. 36, 2024.",
-    "A. Seth, M. Hemani, and C. Agarwal, \"Dear: Debiasing vision-language models with additive residuals,\" in Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2023, pp. 6820-6829.",
-    "S. Janghorbani and G. De Melo, \"Multimodal bias: Introducing a framework for stereotypical bias assessment beyond gender and race in vision language models,\" arXiv preprint arXiv:2303.12734, 2023.",
-    "K. Zhou, Y. LAI, and J. Jiang, \"Vlstereoset: A study of stereotypical bias in pre-trained vision-language models,\" in Annual Meeting of the Association for Computational Linguistics (ACL), 2022.",
-    "S. M. Hall, F. Gonçalves Abrantes, H. Zhu, G. Sodunke, A. Shtedritski, and H. R. Kirk, \"Visogender: A dataset for benchmarking gender bias in image-text pronoun resolution,\" Advances in Neural Information Processing Systems (NIPS), vol. 36, 2024.",
-    "P. Howard, A. Madasu, T. Le, G. L. Moreno, A. Bhiwandiwalla, and V. Lal, \"Socialcounterfactuals: Probing and mitigating intersectional social biases in vision-language models with counterfactual examples,\" in Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024, pp. 11975-11 985.",
-    "A. Dosovitskiy, L. Beyer, A. Kolesnikov, D. Weissenborn, X. Zhai, T. Unterthiner, M. Dehghani, M. Minderer, G. Heigold, S. Gelly et al., \"An image is worth 16x16 words: Transformers for image recognition at scale,\" arXiv preprint arXiv:2010.11929, 2020.",
-    "H. Liu, C. Li, Y. Li, and Y. J. Lee, “Improved baselines with visual instruction tuning,\" in Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024, pp. 26 296-26 306.",
-    "G. Team, R. Anil, S. Borgeaud, Y. Wu, J.-B. Alayrac, J. Yu, R. Soricut, J. Schalkwyk, A. M. Dai, A. Hauth et al., \"Gemini: a family of highly capable multimodal models,\" arXiv preprint arXiv:2312.11805, 2023.",
-    "D. Podell, Z. English, K. Lacey, A. Blattmann, T. Dockhorn, J. Müller, J. Penna, and R. Rombach, \"Sdxl: Improving latent diffusion models for high-resolution image synthesis,\" arXiv preprint arXiv:2307.01952, 2023.",
-    "J. Zhang, J. Huang, S. Jin, and S. Lu, \"Vision-language models for vision tasks: A survey,\" IEEE Transactions on Pattern Analysis and Machine Intelligence (PAMI), 2024.",
-    "J. Li, D. Li, S. Savarese, and S. Hoi, \"Blip-2: Bootstrapping language- image pre-training with frozen image encoders and large language models,\" in International conference on machine learning (ICML). PMLR, 2023, pp. 19730-19742.",
-    "J. Chen, D. Zhu, X. Shen, X. Li, Z. Liu, P. Zhang, R. Krishnamoorthi, V. Chandra, Y. Xiong, and M. Elhoseiny, \"Minigpt-v2: large language model as a unified interface for vision-language multi-task learning,\" arXiv preprint arXiv:2310.09478, 2023.",
-    "B. Li, Y. Zhang, L. Chen, J. Wang, F. Pu, J. Yang, C. Li, and Z. Liu, \"Mimic-it: Multi-modal in-context instruction tuning,\" arXiv preprint arXiv:2306.05425, 2023.",
-    "W. Dai, J. Li, D. Li, A. M. H. Tiong, J. Zhao, W. Wang, B. Li, P. N. Fung, and S. Hoi, \"Instructblip: Towards general-purpose visionlanguage models with instruction tuning,\" Advances in Neural Information Processing Systems (NIPS), vol. 36, 2024.",
-    "P. Zhang, X. D. B. Wang, Y. Cao, C. Xu, L. Ouyang, Z. Zhao, S. Ding, S. Zhang, H. Duan, H. Yan et al., “Internlm-xcomposer: A vision-language large model for advanced text-image comprehension and composition,\" arXiv preprint arXiv:2309.15112, 2023.",
-    "Z. Liu, P. Luo, X. Wang, and X. Tang, \"Deep learning face attributes in the wild,\" in Proceedings of the IEEE international conference on computer vision (ICCV), 2015, pp. 3730-3738.",
-    "W. A. G. Rojas, S. Diamos, K. R. Kini, D. Kanter, V. J. Reddi, and C. Coleman, \"The dollar street dataset: Images representing the geographic and socioeconomic diversity of the world,\" in Thirty-sixth Conference on Neural Information Processing Systems Datasets and Benchmarks Track (NIPS), 2022.",
-    "M. Kay, C. Matuszek, and S. A. Munson, \"Unequal representation and gender stereotypes in image search results for occupations,\" in Proceedings of the 33rd annual acm conference on human factors in computing systems, 2015, pp. 3819-3828.",
-    "L. E. Celis and V. Keswani, \"Implicit diversity in image summarization,\" Proceedings of the ACM on Human-Computer Interaction (HCI), vol. 4, no. CSCW2, pp. 1-28, 2020.",
-    "Y. Luo, M. Shi, M. O. Khan, M. M. Afzal, H. Huang, S. Yuan, Y. Tian, L. Song, A. Kouhana, T. Elze et al., \"Fairclip: Harnessing fairness in vision-language learning,\" arXiv preprint arXiv:2403.19949, 2024.",
-    "L. Chen, J. Li, X. Dong, P. Zhang, Y. Zang, Z. Chen, H. Duan, J. Wang, Y. Qiao, D. Lin et al., \"Are we on the right way for evaluating large vision-language models?\" arXiv preprint arXiv:2403.20330, 2024.",
-    "J. Betker, G. Goh, L. Jing, T. Brooks, J. Wang, L. Li, L. Ouyang, J. Zhuang, J. Lee, Y. Guo et al., \"Improving image generation with better captions,\" Computer Science. https://cdn. openai. com/papers/dall-e-3. pdf, vol. 2, no. 3, p. 8, 2023.",
-    "X. Guo and L. Zhao, \"A systematic survey on deep generative models for graph generation,\" IEEE Transactions on Pattern Analysis and Machine Intelligence (PAMI), vol. 45, no. 5, pp. 5370-5390, 2022.",
-    "T. Luo, Z. Mo, and S. J. Pan, \"Fast graph generation via spectral diffusion,\" IEEE Transactions on Pattern Analysis and Machine Intelligence (PAMI), 2023.",
-    "H. Tang, L. Shao, P. H. Torr, and N. Sebe, \"Local and global gans with semantic-aware upsampling for image generation,\" IEEE Transactions on Pattern Analysis and Machine Intelligence (PAMI), vol. 45, no. 1, pp. 768-784, 2022.",
-    "S. Tsutsui, Y. Fu, and D. Crandall, \"Reinforcing generated images via meta-learning for one-shot fine-grained visual recognition,\" IEEE Transactions on Pattern Analysis and Machine Intelligence (PAMI), vol. 46, no. 3, pp. 1455-1463, 2022.",
-    "M. B. Sarıyıldız, K. Alahari, D. Larlus, and Y. Kalantidis, \"Fake it till you make it: Learning transferable representations from synthetic imagenet clones,\" in Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2023, pp. 8011-8021.",
-    "J. Deng, W. Dong, R. Socher, L.-J. Li, K. Li, and L. Fei-Fei, \"Imagenet: A large-scale hierarchical image database,\" in 2009 IEEE conference on computer vision and pattern recognition (CVPR). Ieee, 2009, pp. 248-255.",
-    "M. Nadeem, A. Bethke, and S. Reddy, \"Stereoset: Measuring stereotypical bias in pretrained language models,\" arXiv preprint arXiv:2004.09456, 2020.",
-    "A. Sathe, P. Jain, and S. Sitaram, \"A unified framework and dataset for assessing gender bias in vision-language models,\" arXiv preprint arXiv:2402.13636, 2024.",
-    "B. Li, R. Wang, G. Wang, Y. Ge, Y. Ge, and Y. Shan, \"Seed-bench: Benchmarking multimodal Ilms with generative comprehension,\" in Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2023.",
-    "Y. Liu, H. Duan, Y. Zhang, B. Li, S. Zhang, W. Zhao, Y. Yuan, J. Wang, C. He, Z. Liu et al., \"Mmbench: Is your multi-modal model an all-around player?\" in European Conference on Computer Vision (ECCV). Springer, 2025, pp. 216-233.",
-    "P. Xu, W. Shao, K. Zhang, P. Gao, S. Liu, M. Lei, F. Meng, S. Huang, Y. Qiao, and P. Luo, \"Lvlm-ehub: A comprehensive evaluation benchmark for large vision-language models,\" arXiv preprint arXiv:2306.09265, 2023.",
-    "M. Munikar, S. Shakya, and A. Shrestha, \"Fine-grained sentiment classification using bert,\" in 2019 Artificial Intelligence for Transforming Business and Society (AITB), vol. 1. IEEE, 2019, pp. 1-5.",
-    "C. Hutto and E. Gilbert, \"Vader: A parsimonious rule-based model for sentiment analysis of social media text,\" in Proceedings of the international AAAI conference on web and social media (ICWSM), vol. 8, no. 1, 2014, pp. 216-225.",
-    "J. Rando, D. Paleka, D. Lindner, L. Heim, and F. Tramèr, \"Red-teaming the stable diffusion safety filter,\" arXiv preprint arXiv:2210.04610, 2022.",
-    "R. Gandikota, J. Materzynska, J. Fiotto-Kaufman, and D. Bau, \"Erasing concepts from diffusion models,\" in Proceedings of the IEEE/CVF International Conference on Computer Vision (CVPR), 2023, pp. 2426-2436.",
-    "S. Lu, Z. Wang, L. Li, Y. Liu, and A. W.-K. Kong, \"Mace: Mass concept erasure in diffusion models,\" in Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024, pp. 6430-6440.",
-    "J. Bai, S. Bai, S. Yang, S. Wang, S. Tan, P. Wang, J. Lin, C. Zhou, and J. Zhou, \"Qwen-vl: A versatile vision-language model for understanding, localization, text reading, and beyond,\" arXiv preprint arXiv:2308.12966, vol. 1, no. 2, p. 3, 2023.",
-    "K. Chen, Z. Zhang, W. Zeng, R. Zhang, F. Zhu, and R. Zhao, \"Shikra: Unleashing multimodal llm's referential dialogue magic,\" arXiv preprint arXiv:2306.15195, 2023.",
-    "C. Spearman, \"The proof and measurement of association between two things,\" The American journal of psychology, vol. 100, no. 3/4, pp. 441-471, 1987.",
-    "M. G. Kendall, \"A new measure of rank correlation,\" Biometrika, vol. 30, no. 1-2, pp. 81-93, 1938.",
-    "J. Robinson, C. M. Rytting, and D. Wingate, \"Leveraging large language models for multiple choice question answering,\" in The Twelfth International Conference on Learning Representations (ICLR), 2023.",
-    "C. Zheng, H. Zhou, F. Meng, J. Zhou, and M. Huang, \"Large language models are not robust multiple choice selectors,\" in The Twelfth International Conference on Learning Representations (ICLR), 2023."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

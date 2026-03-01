@@ -2,27 +2,121 @@
   "filename": "2601.10527.pdf",
   "title": "A Safety Report on GPT-5.2, Gemini 3 Pro, Qwen3-VL, Grok 4.1 Fast, Nano Banana Pro, and Seedream 4.5",
   "arxiv_url": "https://arxiv.org/pdf/2601.10527",
-  "bias_targets": [
-    {
-      "target": "General social bias",
-      "methodology": "Evaluating multiple-choice question answering performance using the BBQ (Bias Benchmark for QA) dataset to identify stereotypical associations and fairness across 11 social categories, such as age, gender, race, and religion."
-    },
-    {
-      "target": "Physical appearance bias",
-      "methodology": "Analyzing model responses to explicit discriminatory requests, such as fat-shaming scenarios in the Flames benchmark, to see if the model assists in exclusionary or prejudiced behavior."
-    },
-    {
-      "target": "Caste bias",
-      "methodology": "Providing vision-language models with images of individuals and prompting them to infer caste status (e.g., Sudra vs. Brahmin) based on clothing and physical traits to test for visual stereotype confirmation."
-    },
-    {
-      "target": "Racial and ethnic bias",
-      "methodology": "Testing text-to-image models with adversarial prompts to observe the generation of racially charged imagery or historically grounded hate symbols, and evaluating text models against regulatory compliance taxonomies for racial discrimination."
-    },
-    {
-      "target": "Cultural and language bias",
-      "methodology": "Evaluating safety judgment and policy compliance across 18 languages (using ML-Bench and PolyGuardPrompt) to measure performance disparities between high-resource languages and lower-resource or culturally distinct linguistic contexts."
-    }
+  "religious_groups": [
+    "Hinduism"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "GPT-5.2",
+    "Gemini 3 Pro",
+    "Qwen3-VL",
+    "Grok 4.1 Fast",
+    "Nano Banana Pro",
+    "Seedream 4.5"
+  ],
+  "languages_evaluated": [
+    "Arabic",
+    "Chinese",
+    "Czech",
+    "Dutch",
+    "English",
+    "French",
+    "German",
+    "Hindi",
+    "Italian",
+    "Japanese",
+    "Korean",
+    "Polish",
+    "Portuguese",
+    "Russian",
+    "Spanish",
+    "Swedish",
+    "Thai",
+    "Turkish"
+  ],
+  "response_type": [
+    "long",
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "ALERT",
+    "Flames",
+    "BBQ",
+    "SORRY-Bench",
+    "StrongREJECT",
+    "HarmBench",
+    "JailbreakBench",
+    "PolyGuardPrompt (PGP)",
+    "MemeSafetyBench",
+    "MIS",
+    "USB-SafeBench",
+    "SIUO",
+    "VLJailbreakBench",
+    "JailbreakV-28K",
+    "MM-SafetyBench",
+    "T2ISafety",
+    "ParaDetox"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper's primary finding related to religion is that models can fail in social bias mitigation. Specifically, Gemini 3 Pro was shown to affirm a biased premise by confirming visual stereotypes related to Hindu castes (Sudra and Brahmin) rather than rejecting the harmful stereotype. This indicates that visual reasoning can amplify discriminatory priors when alignment constraints fail.",
+  "references": [
+    "EU Artificial Intelligence Act. The eu artificial intelligence act. European Union, 2024.",
+    "Maksym Andriushchenko and Nicolas Flammarion. Does refusal training in llms generalize to the past tense? arXiv preprint arXiv:2407.11969, 2024.",
+    "Cem Anil, Esin Durmus, Nina Panickssery, Mrinank Sharma, Joe Benton, Sandipan Kundu, Joshua Bat- son, Meg Tong, Jesse Mu, Daniel Ford, et al. Many-shot jailbreaking. In NeurIPS, 2024.",
+    "Yik Siu Chan, Narutatsu Ri, Yuxin Xiao, and Marzyeh Ghassemi. Speak easy: Eliciting harmful jailbreaks from llms with simple interactions. arXiv preprint arXiv:2502.04322, 2025.",
+    "Patrick Chao, Alexander Robey, Edgar Dobriban, Hamed Hassani, George J Pappas, and Eric Wong. Jailbreaking black box large language models in twenty queries. arXiv preprint arXiv:2310.08419, 2023.",
+    "Patrick Chao, Edoardo Debenedetti, Alexander Robey, Maksym Andriushchenko, Francesco Croce, Vikash Sehwag, Edgar Dobriban, Nicolas Flammarion, George J Pappas, Florian Tramer, et al. Jail- breakbench: An open robustness benchmark for jailbreaking large language models. Advances in Neural Information Processing Systems, 37:55005–55029, 2024.",
+    "Matteo Gioele Collu, Tom Janssen-Groesbeek, Stefanos Koffas, Mauro Conti, and Stjepan Picek. Dr. jekyll and mr. hyde: Two faces of llms. arXiv preprint arXiv:2312.03853, 2023.",
+    "Yue Deng, Wenxuan Zhang, Sinno Jialin Pan, and Lidong Bing. Multilingual jailbreak challenges in large language models. arXiv preprint arXiv:2310.06474, 2023.",
+    "Peng Ding, Jun Kuang, Dan Ma, Xuezhi Cao, Yunsen Xian, Jiajun Chen, and Shujian Huang. A wolf in sheep's clothing: Generalized nested jailbreak prompts can fool large language models easily. In NAACL, 2024.",
+    "Yi Ding, Lijun Li, Bing Cao, and Jing Shao. Rethinking bottlenecks in safety fine-tuning of vision lan- guage models. arXiv preprint arXiv:2501.18533, 2025.",
+    "Thomas Hartvigsen, Saadia Gabriel, Hamid Palangi, Maarten Sap, Dipankar Ray, and Ece Kamar. Tox- iGen: A large-scale machine-generated dataset for adversarial and implicit hate speech detection. In ACL, 2022.",
+    "Kexin Huang, Xiangyang Liu, Qianyu Guo, Tianxiang Sun, Jiawei Sun, Yaru Wang, Zeyang Zhou, Yixu Wang, Yan Teng, Xipeng Qiu, et al. Flames: Benchmarking value alignment of llms in chinese. In NAACL, 2024.",
+    "Yihao Huang, Le Liang, Tianlin Li, Xiaojun Jia, Run Wang, Weikai Miao, Geguang Pu, and Yang Liu. Perception-guided jailbreak against text-to-image models. In AAAI, 2025.",
+    "Fengqing Jiang, Zhangchen Xu, Luyao Niu, Zhen Xiang, Bhaskar Ramasubramanian, Bo Li, and Radha Poovendran. Artprompt: Ascii art-based jailbreak attacks against aligned llms. In ACL, 2024a.",
+    "Yifan Jiang, Kriti Aggarwal, Tanmay Laud, Kashif Munir, Jay Pujara, and Subhabrata Mukherjee. Red queen: Safeguarding large language models against concealed multi-turn jailbreaking. arXiv preprint arXiv:2409.17458, 2024b.",
+    "Haibo Jin, Andy Zhou, Joe Menke, and Haohan Wang. Jailbreaking large language models against moderation guardrails via cipher characters. In NeurIPS, 2024.",
+    "Priyanshu Kumar, Devansh Jain, Akhila Yerukola, Liwei Jiang, Himanshu Beniwal, Thomas Hartvigsen, and Maarten Sap. Polyguard: A multilingual safety moderation tool for 17 languages. In COLM, 2025.",
+    "DongGeon Lee, Joonwon Jang, Jihae Jeong, and Hwanjo Yu. Are vision-language models safe in the wild? a meme-based benchmark study. arXiv preprint arXiv:2505.15389, 2025. URL https://arxiv. org/abs/2505.15389.",
+    "Lijun Li, Zhelun Shi, Xuhao Hu, Bowen Dong, Yiran Qin, Xihui Liu, Lu Sheng, and Jing Shao. T2isafety: Benchmark for assessing fairness, toxicity, and privacy in image generation. arXiv preprint arXiv:2501.12612, 2025.",
+    "Xirui Li, Ruochen Wang, Minhao Cheng, Tianyi Zhou, and Cho-Jui Hsieh. Drattack: Prompt decompo- sition and reconstruction makes powerful llm jailbreakers. arXiv preprint arXiv:2402.16914, 2024.",
+    "Xuan Li, Zhanke Zhou, Jianing Zhu, Jiangchao Yao, Tongliang Liu, and Bo Han. Deepinception: Hyp- notize large language model to be jailbreaker. arXiv preprint arXiv:2311.03191, 2023.",
+    "Runqi Lin, Bo Han, Fengwang Li, and Tongling Liu. Understanding and enhancing the transferability of jailbreaking attacks. arXiv preprint arXiv:2502.03052, 2025.",
+    "Xiaogeng Liu, Peiran Li, Edward Suh, Yevgeniy Vorobeychik, Zhuoqing Mao, Somesh Jha, Patrick McDaniel, Huan Sun, Bo Li, and Chaowei Xiao. Autodan-turbo: A lifelong agent for strategy self- exploration to jailbreak llms. arXiv preprint arXiv:2410.05295, 2024a.",
+    "Xin Liu, Yichen Zhu, Jindong Gu, Yunshi Lan, Chao Yang, and Yu Qiao. Mm-safetybench: A benchmark for safety evaluation of multimodal large language models. arXiv preprint arXiv:2311.17600, 2023.",
+    "Yue Liu, Xiaoxin He, Miao Xiong, Jinlan Fu, Shumin Deng, and Bryan Hooi. Flipattack: Jailbreak llms via flipping. arXiv preprint arXiv:2410.02832, 2024b.",
+    "Varvara Logacheva, Daryna Dementieva, Sergey Ustyantsev, Daniil Moskovskiy, David Dale, Irina Kro- tova, Nikita Semenov, and Alexander Panchenko. ParaDetox: Detoxification with parallel data. In ACL, 2022.",
+    "Weidi Luo, Siyuan Ma, Xiaogeng Liu, Xiaoyu Guo, and Chaowei Xiao. Jailbreakv: A benchmark for assessing the robustness of multimodal large language models against jailbreak attacks. arXiv preprint arXiv:2404.03027, 2024.",
+    "Huijie Lv, Xiao Wang, Yuansen Zhang, Caishuang Huang, Shihan Dou, Junjie Ye, Tao Gui, Qi Zhang, and Xuanjing Huang. Codechameleon: Personalized encryption framework for jailbreaking large language models. arXiv preprint arXiv:2402.16717, 2024.",
+    "Mantas Mazeika, Long Phan, Xuwang Yin, Andy Zou, Zifan Wang, Norman Mu, Elham Sakhaee, Nathaniel Li, Steven Basart, Bo Li, et al. Harmbench: A standardized evaluation framework for automated red teaming and robust refusal. arXiv preprint arXiv:2402.04249,2024.",
+    "Anay Mehrotra, Manolis Zampetakis, Paul Kassianik, Blaine Nelson, Hyrum Anderson, Yaron Singer, and Amin Karbasi. Tree of attacks: Jailbreaking black-box llms automatically. In NeurIPS, 2024.",
+    "Ziqi Miao, Lijun Li, Yuan Xiong, Zhenhua Liu, Pengyu Zhu, and Jing Shao. Response attack: Exploiting contextual priming to jailbreak large language models. arXiv preprint arXiv:2507.05248, 2025.",
+    "Monetary Authority of Singapore. Principles to promote fairness, ethics, accountability and trans- parency (FEAT) in the use of artificial intelligence and data analytics in singapore's financial sector. Technical report, Monetary Authority of Singapore, 2018.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel Bowman. Bbq: A hand-built bias benchmark for question answering. In Findings of ACL, 2022.",
+    "Salman Rahman, Liwei Jiang, James Shiffer, Genglin Liu, Sheriff Issaka, Md Rizwan Parvez, Hamid Palangi, Kai-Wei Chang, Yejin Choi, and Saadia Gabriel. X-teaming: Multi-turn jailbreaks and de- fenses with adaptive multi-agents. arXiv preprint arXiv:2504.13203, 2025.",
+    "Qibing Ren, Chang Gao, Jing Shao, Junchi Yan, Xin Tan, Wai Lam, and Lizhuang Ma. Codeattack: Re- vealing safety generalization challenges of large language models via code completion. arXiv preprint arXiv:2403.07865, 2024.",
+    "Qibing Ren, Hao Li, Dongrui Liu, Zhanxu Xie, Xiaoya Lu, Yu Qiao, Lei Sha, Junchi Yan, Lizhuang Ma, and Jing Shao. Llms know their vulnerabilities: Uncover safety gaps through natural distribution shifts. In ACL, 2025.",
+    "Bijoy Ahmed Saiem, MD Sadik Hossain Shanto, Rakib Ahsan, and Md Rafi Ur Rashid. Sequentialbreak: Large language models can be fooled by embedding jailbreak prompts into sequential prompt chains. In ACL Student Research Workshop, 2025.",
+    "Xinyue Shen, Zeyuan Chen, Michael Backes, Yun Shen, and Yang Zhang. \" do anything now”: Charac- terizing and evaluating in-the-wild jailbreak prompts on large language models. In CCS, 2024.",
+    "Alexandra Souly, Qingyuan Lu, Dillon Bowen, Tu Trinh, Elvis Hsieh, Sana Pandey, Pieter Abbeel, Justin Svegliato, Scott Emmons, Olivia Watkins, et al. A strongreject for empty jailbreaks. In NeurIPS, 2024.",
+    "Elham Tabassi. Artificial intelligence risk management framework (ai rmf 1.0). 2023.",
+    "Simone Tedeschi, Felix Friedrich, Patrick Schramowski, Kristian Kersting, Roberto Navigli, Huu Nguyen, and Bo Li. Alert: A comprehensive benchmark for assessing large language models' safety through red teaming. arXiv preprint arXiv:2404.08676, 2024.",
+    "Ruofan Wang, Juncheng Li, Yixu Wang, Bo Wang, Xiaosen Wang, Yan Teng, Yingchun Wang, Xingjun Ma, and Yu-Gang Jiang. Ideator: Jailbreaking and benchmarking large vision-language models using themselves. In ICCV, 2025a.",
+    "Siyin Wang, Xingsong Ye, Qinyuan Cheng, Junwen Duan, Shimin Li, Jinlan Fu, Xipeng Qiu, and Xuan- jing Huang. Safe inputs but unsafe output: Benchmarking cross-modality safety alignment of large vision-language models. In Findings of NAACL, 2025b.",
+    "Yixu Wang, Xin Wang, Yang Yao, Xinyuan Li, Yan Teng, Xingjun Ma, and Yingchun Wang. Safeevalagent: Toward agentic and self-evolving safety evaluation of llms. arXiv preprint arXiv:2509.26100, 2025c.",
+    "Zilong Wang, Xiang Zheng, Xiaosen Wang, Bo Wang, Xingjun Ma, and Yu-Gang Jiang. Genbreak: Red teaming text-to-image generators using large language models. arXiv preprint arXiv:2506.10047, 2025d.",
+    "Alexander Wei, Nika Haghtalab, and Jacob Steinhardt. Jailbroken: How does llm safety training fail? In NeurIPS, 2023a.",
+    "Zeming Wei, Yifei Wang, Ang Li, Yichuan Mo, and Yisen Wang. Jailbreak and guard aligned language models with only few in-context demonstrations. arXiv preprint arXiv:2310.06387, 2023b.",
+    "Tianyu Wu, Lingrui Mei, Ruibin Yuan, Lujun Li, Wei Xue, and Yike Guo. You know what i'm saying: Jailbreak attack via implicit reference. arXiv preprint arXiv:2410.03857, 2024.",
+    "XAI. Grok 4 fast, 2025. URL https://x.ai/news/grok-4-fast.",
+    "Tinghao Xie, Xiangyu Qi, Yi Zeng, Yangsibo Huang, Udari Madhushani Sehwag, Kaixuan Huang, Luxi He, Boyi Wei, Dacheng Li, Ying Sheng, et al. Sorry-bench: Systematically evaluating large language model safety refusal. arXiv preprint arXiv:2406.14598, 2024.",
+    "Xikang Yang, Xuehai Tang, Jizhong Han, and Songlin Hu. The dark side of trust: Authority citation- driven jailbreak attacks on large language models. arXiv preprint arXiv:2411.11407, 2024a.",
+    "Xikang Yang, Xuehai Tang, Songlin Hu, and Jizhong Han. Chain of attack: a semantic-driven contextual multi-turn attacker for llm. arXiv preprint arXiv:2405.05610, 2024b.",
+    "Youliang Yuan, Wenxiang Jiao, Wenxuan Wang, Jen-tse Huang, Pinjia He, Shuming Shi, and Zhaopeng Tu. Gpt-4 is too smart to be safe: Stealthy chat with llms via cipher. In ICLR, 2024.",
+    "Yi Zeng, Hongpeng Lin, Jingwen Zhang, Diyi Yang, Ruoxi Jia, and Weiyan Shi. How johnny can per- suade llms to jailbreak them: Rethinking persuasion to challenge ai safety by humanizing llms. arXiv preprint arXiv:2401.06373, 2024.",
+    "Haiquan Zhao, Chenhan Yuan, Fei Huang, et al. Qwen3guard technical report. arXiv preprint arXiv:2510.14276, 2025.",
+    "Baolin Zheng et al. Usb: A comprehensive and unified safety evaluation benchmark for multimodal large language models. arXiv preprint arXiv:2505.23793, 2025.",
+    "Andy Zou, Zifan Wang, Nicholas Carlini, Milad Nasr, J Zico Kolter, and Matt Fredrikson. Universal and transferable adversarial attacks on aligned language models. arXiv preprint arXiv:2307.15043, 2023."
+  ],
+  "measurement_description": "The paper measures several aspects related to religion and faith as part of a broader safety evaluation. Specifically, it measures: 1) The reinforcement of visual stereotypes associated with Hindu castes (Brahmin and Sudra). 2) The models' compliance with regulations prohibiting 'Religious hatred and intolerance' and 'Discrimination based on... Religion/belief'. 3) The generation of hateful images targeting religious groups."
 }

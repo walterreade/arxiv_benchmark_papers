@@ -2,11 +2,56 @@
   "filename": "2407.18376.pdf",
   "title": "Exploring Bengali Religious Dialect Biases in Large Language Models with Evaluation Perspectives",
   "arxiv_url": "https://arxiv.org/pdf/2407.18376",
-  "bias_targets": [
-    {
-      "target": "Religious dialect bias",
-      "methodology": "Prompting large language models (ChatGPT, Gemini, Microsoft Copilot) to generate or translate specific Bengali sentences under various settings (explicitly mentioning religion, providing contextual clues, and testing conversational memory), and manually evaluating the outputs to categorize them as Hindu, Muslim, or Neutral dialects to determine skewness."
-    }
+  "religious_groups": [
+    "Islam",
+    "Hinduism"
   ],
-  "primary_bias_target": "Religious dialect bias"
+  "models_tested": [
+    "ChatGPT 3.5",
+    "Gemini",
+    "Microsoft Copilot"
+  ],
+  "languages_evaluated": [
+    "Bengali"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "major",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "The study found a persistent bias in LLMs towards the Muslim dialect of Bengali over the Hindu dialect. While explicitly mentioning religion in prompts improved accuracy, a notable bias remained, with models often defaulting to Muslim dialect terms even when a Hindu context was specified. The models performed better at inferring religious context from implicit cues rather than explicit mentions but struggled to maintain religious context throughout a conversation (LLM memory). This bias was consistent across various contexts, suggesting it is deeply embedded, likely due to the composition of the training data.",
+  "references": [
+    "Abubakar Abid, Maheen Farooqi, and James Zou. 2021. Persistent Anti-Muslim Bias in Large Language Models. arXiv:2101.05783 [cs.CL]",
+    "Jaimeen Ahn and Alice Oh. 2021. Mitigating language-dependent ethnic bias in BERT. arXiv preprint arXiv:2109.05704 (2021).",
+    "Chloé Bakalar, Renata Barreto, Stevie Bergman, Miranda Bogen, Bobbie Chern, Sam Corbett-Davies, Melissa Hall, Isabel Kloumann, Michelle Lam, Joaquin Quiñonero Candela, Manish Raghavan, Joshua Simons, Jonathan Tannen, Edmund Tong, Kate Vredenburgh, and Jiejing Zhao. 2021. Fairness On The Ground: Applying Algorithmic Fairness Approaches to Production Systems. arXiv:2103.06172 [cs.LG]",
+    "Marion Bartl, Malvina Nissim, and Albert Gatt. 2020. Unmasking contextual stereotypes: Measuring and mitigating BERT's gender bias. arXiv preprint arXiv:2010.14534 (2020).",
+    "Emily M Bender, Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. 2021. On the dangers of stochastic parrots: Can language models be too big?. In Proceedings of the 2021 ACM conference on fairness, accountability, and transparency. 610–623.",
+    "Steven Bird. 2020. Decolonising speech and language technology. In Proceedings of the 28th international conference on computational linguistics. 3504–3519.",
+    "Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, et al. 2020. Language models are few-shot learners. Advances in neural information processing systems 33 (2020), 1877–1901.",
+    "Won Ik Cho, Jiwon Kim, Jaeyeong Yang, and Nam Soo Kim. 2021. Towards cross-lingual generalization of translation gender bias. In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency. 449–457.",
+    "Dipto Das, Shion Guha, and Bryan Semaan. 2023. Toward Cultural Bias Evaluation Datasets: The Case of Bengali Gender, Religious, and National Identity. In Proceedings of the First Workshop on Cross-Cultural Considerations in NLP (C3NLP). 68–83.",
+    "Dipto Das, Carsten Østerlund, and Bryan Semaan. 2021. \" Jol\" or\" Pani\"?: How Does Governance Shape a Platform's Identity? Proceedings of the ACM on Human-Computer Interaction 5, CSCW2 (2021), 1–25.",
+    "Dipto Das and Bryan Semaan. 2022. Collaborative identity decolonization as reclaiming narrative agency: Identity work of Bengali communities on Quora. In Proceedings of the 2022 CHI Conference on Human Factors in Computing Systems. 1–23.",
+    "Xavier Ferrer, Tom van Nuenen, Jose M Such, and Natalia Criado. 2021. Discovering and categorising language biases in reddit. In Proceedings of the International AAAI Conference on Web and Social Media, Vol. 15. 140–151.",
+    "Isabel O. Gallegos, Ryan A. Rossi, Joe Barrow, Md Mehrab Tanjim, Sungchul Kim, Franck Dernoncourt, Tong Yu, Ruiyi Zhang, and Nesreen K. Ahmed. 2023. Bias and Fairness in Large Language Models: A Survey. arXiv:2309.00770 [cs.CL]",
+    "Po-Sen Huang, Huan Zhang, Ray Jiang, Robert Stanforth, Johannes Welbl, Jack Rae, Vishal Maini, Dani Yogatama, and Pushmeet Kohli. 2019. Reducing sentiment bias in language models via counterfactual evaluation. arXiv preprint arXiv:1911.03064 (2019).",
+    "Tae Soo Kim, Yoonjoo Lee, Jamin Shin, Young-Ho Kim, and Juho Kim. 2024. EvalLM: Interactive Evaluation of Large Language Model Prompts on User-Defined Criteria. arXiv:2309.13633 [cs.CHI]",
+    "Keita Kurita, Nidhi Vyas, Ayush Pareek, Alan W Black, and Yulia Tsvetkov. 2019. Measuring bias in contextualized word representations. arXiv preprint arXiv:1906.07337 (2019).",
+    "Mina Lee, Megha Srivastava, Amelia Hardy, John Thickstun, Esin Durmus, Ashwin Paranjape, Ines Gerard-Ursin, Xiang Lisa Li, Faisal Ladhak, Frieda Rong, Rose E Wang, Minae Kwon, Joon Sung Park, Hancheng Cao, Tony Lee, Rishi Bommasani, Michael S. Bernstein, and Percy Liang. 2023. Evaluating Human-Language Model Interaction. Transactions on Machine Learning Research (2023). https://openreview.net/forum?id=hjDYJUn9l1",
+    "Daniel Liebling, Katherine Heller, Samantha Robertson, and Wesley Deng. 2022. Opportunities for Human-centered Evaluation of Machine Translation Systems. In Findings of the Association for Computational Linguistics: NAACL 2022, Marine Carpuat, Marie-Catherine de Marneffe, and Ivan Vladimir Meza Ruiz (Eds.). Association for Computational Linguistics, Seattle, United States, 229–240. https://doi.org/10.18653/v1/2022.findings-naacl.17",
+    "Ben Mann, N Ryder, M Subbiah, J Kaplan, P Dhariwal, A Neelakantan, P Shyam, G Sastry, A Askell, S Agarwal, et al. 2020. Language models are few-shot learners. arXiv preprint arXiv:2005.14165 (2020).",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2020. StereoSet: Measuring stereotypical bias in pretrained language models. arXiv preprint arXiv:2004.09456 (2020).",
+    "Roberto Navigli, Simone Conia, and Björn Ross. 2023. Biases in Large Language Models: Origins, Inventory and Discussion. ACM Journal of Data and Information Quality (2023).",
+    "Bangladesh Bureau of Statistics. 2022. Population and Housing Census. https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census",
+    "Office of the Registrar General and Census Commissioner. 2011. The Census Digital Library, India. https://censusindia.gov.in/census.website/data/",
+    "Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi Zhou, Wei Li, and Peter J Liu. 2020. Exploring the limits of transfer learning with a unified text-to-text transformer. The Journal of Machine Learning Research 21, 1 (2020), 5485–5551.",
+    "Abel Salinas, Parth Shah, Yuzhong Huang, Robert McCormack, and Fred Morstatter. 2023. The Unequal Opportunities of Large Language Models: Examining Demographic Biases in Job Recommendations by ChatGPT and LLaMA. In Equity and Access in Algorithms, Mechanisms, and Optimization (EAAMO '23). ACM. https://doi.org/10.1145/3617694.3623257",
+    "Nithya Sambasivan, Erin Arnesen, Ben Hutchinson, Tulsee Doshi, and Vinodkumar Prabhakaran. 2021. Re-imagining algorithmic fairness in india and beyond. In Proceedings of the 2021 ACM conference on fairness, accountability, and transparency. 315–328.",
+    "Emily Sheng, Kai-Wei Chang, Premkumar Natarajan, and Nanyun Peng. 2021. Societal biases in language generation: Progress and challenges. arXiv preprint arXiv:2105.04054 (2021).",
+    "Emily Sheng, Kai-Wei Chang, Prem Natarajan, and Nanyun Peng. 2021. Societal Biases in Language Generation: Progress and Challenges. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), Chengqing Zong, Fei Xia, Wenjie Li, and Roberto Navigli (Eds.). Association for Computational Linguistics, Online, 4275–4293. https://doi.org/10.18653/v1/2021.acl-long.330",
+    "Azmine Toushik Wasi, Taki Hasan Rafi, Raima Islam, and Dong-Kyu Chae. 2024. BanglaAutoKG: Automatic Bangla Knowledge Graph Construction with Semantic Neural Graph Filtering. In Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024). ELRA and ICCL, Torino, Italia, 2100–2106. https://aclanthology.org/2024.lrec-main.189",
+    "Ziang Xiao, Susu Zhang, Vivian Lai, and Q. Vera Liao. 2023. Evaluating Evaluation Metrics: A Framework for Analyzing NLG Evaluation Metrics using Measurement Theory. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, Houda Bouamor, Juan Pino, and Kalika Bali (Eds.). Association for Computational Linguistics, Singapore, 10967–10982. https://doi.org/10.18653/v1/2023.emnlp-main.676"
+  ],
+  "measurement_description": "Bias towards Hindu vs. Muslim religious dialects in the Bengali language, assessed by analyzing LLM-generated sentences for specific word choices associated with each religious community."
 }

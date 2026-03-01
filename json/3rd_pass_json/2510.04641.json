@@ -2,47 +2,109 @@
   "filename": "2510.04641.pdf",
   "title": "EVALUATING LLMS FOR DEMOGRAPHIC-TARGETED SOCIAL BIAS DETECTION: A COMPREHENSIVE BENCHMARK STUDY",
   "arxiv_url": "https://arxiv.org/pdf/2510.04641",
-  "bias_targets": [
-    {
-      "target": "Gender identity bias",
-      "methodology": "Evaluating LLMs' accuracy and multi-label classification performance in detecting gender-targeted stereotypes, hate speech, and occupational biases across adapted text datasets using prompting (zero-shot, few-shot RAG) and fine-tuning."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Testing the capability of fine-tuned and prompted LLMs to detect stereotypes and toxic content targeting sexual orientation within a multi-label text classification framework."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Assessing the performance of LLM-based detection methods in identifying texts containing stereotypes or hateful content directed at physically or mentally disabled individuals."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Measuring the performance of language models in identifying age-related stereotypes and discriminatory attitudes through binary and multi-label text classification metrics."
-    },
-    {
-      "target": "Race/ethnicity bias",
-      "methodology": "Evaluating the effectiveness of various LLMs (e.g., Llama, RoBERTa, Qwen) in detecting racist stereotypes and hate speech by calculating F1 scores, Exact Match Ratios, and Hamming Loss."
-    },
-    {
-      "target": "Nationality bias",
-      "methodology": "Assessing the detection capability and systematic performance disparities (FPR/FNR) of LLMs when identifying biases targeted against specific nationalities or national origins."
-    },
-    {
-      "target": "Religion bias",
-      "methodology": "Measuring model performance metrics in detecting religious-targeted stereotypes and hate speech in combined text corpora."
-    },
-    {
-      "target": "Socioeconomic status bias",
-      "methodology": "Benchmarking the ability of prompted and fine-tuned LLMs to classify texts that perpetuate biases against individuals based on poverty, wealth, or homelessness."
-    },
-    {
-      "target": "Physical appearance bias",
-      "methodology": "Evaluating language models' proficiency in detecting appearance-based and body structure social biases, and analyzing performance disparities across different demographic targets."
-    },
-    {
-      "target": "Intersectional bias",
-      "methodology": "Analyzing detection disparities by comparing False Positive Rates (FPR) and False Negative Rates (FNR) on texts that simultaneously target multiple demographic axes (e.g., Gender and Race) versus single-axis targets."
-    }
+  "religious_groups": [
+    "Judaism"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "Llama Guard-3-8B",
+    "Llama-3.1-8B",
+    "Llama-3.1-70B",
+    "GLM-4-9B",
+    "Qwen-2.5-72B",
+    "RoBERTa-base",
+    "RoBERTa-large",
+    "DeBERTa-v2-XL",
+    "DeBERTa-v3-large",
+    "GPT-2-large",
+    "GPT-2-XL"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "BBQ",
+    "BEC-Pro",
+    "CrowS-pairs",
+    "HateXplain",
+    "ImplicitHate",
+    "RedditBias",
+    "SBIC",
+    "StereoSet",
+    "ToxiGen",
+    "WinoBias",
+    "Winogender",
+    "Winoqueer"
+  ],
+  "continuous_testing": false,
+  "findings": "Fine-tuned models, especially encoder models like DeBERTa and RoBERTa, were highly effective at detecting religious bias (REL), consistently outperforming prompting-based methods. Among prompting models, larger models like Llama-3.1-70B and GLM-4-9B showed stronger performance in identifying religious biases compared to smaller models. Methodologically, the study noted the complexity of religious identity by annotating bias against 'Jewish' identity under both Race/ethnicity (RAC) and Religion (REL) to reflect its ethnoreligious nature.",
+  "references": [
+    "S. Barikeri, A. Lauscher, I. Vulić, and G. Glavaš. Redditbias: A real-world resource for bias evaluation and debiasing of conversational language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 1941-1955, 2021.",
+    "M. Bartl, M. Nissim, and A. Gatt. Unmasking contextual stereotypes: Measuring and mitigating bert's gender bias. In Proceedings of the Second Workshop on Gender Bias in Natural Language Processing, 2020.",
+    "S. L. Blodgett, S. Barocas, H. Daumé III, and H. Wallach. Language (technology) is power: A critical survey of “bias” in NLP. In D. Jurafsky, J. Chai, N. Schluter, and J. Tetreault, editors, Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5454-5476, Online, July 2020. Association for Computational Linguistics. doi: 10.18653/v1/2020.acl-main.485. URL https://aclanthology.org/2020.acl-main.485.",
+    "T. Brown, B. Mann, N. Ryder, M. Subbiah, J. D. Kaplan, P. Dhariwal, A. Neelakantan, P. Shyam, G. Sastry, A. Askell, et al. Language models are few-shot learners. Advances in neural information processing systems, 33:1877–1901, 2020.",
+    "J. Chen, E. Shen, T. Bavalatti, X. Lin, Y. Wang, S. Hu, H. Subramanyam, K. S. Vepuri, M. Jiang, J. Qi, et al. Class-rag: Real-time content moderation with retrieval augmented generation. arXiv preprint arXiv:2410.14881, 2024a.",
+    "J. Chen, S. Xiao, P. Zhang, K. Luo, D. Lian, and Z. Liu. Bge m3-embedding: Multi-lingual, multi-functionality, multi-granularity text embeddings through self-knowledge distillation. arXiv preprint arXiv:2402.03216, 2024b.",
+    "U. S. Congress. Title vii of the civil rights act of 1964, 1964. URL https://www.eeoc.gov/statutes/ title-vii-civil-rights-act-1964. Pub. L. No. 88-352, 78 Stat. 241; codified at 42 U.S.C. § 2000e et seq.",
+    "M. Corazza, S. Menini, E. Cabrio, S. Tonelli, and S. Villata. A multilingual evaluation for online hate speech detection. ACM Transactions on Internet Technology (TOIT), 20(2):1–22, 2020.",
+    "J. Dodge, M. Sap, A. Marasović, W. Agnew, G. Ilharco, D. Groeneveld, M. Mitchell, and M. Gardner. Documenting large webtext corpora: A case study on the colossal clean crawled corpus. In M.-F. Moens, X. Huang, L. Specia, and S. W.-t. Yih, editors, Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 1286-1305, Online and Punta Cana, Dominican Republic, Nov. 2021. Association for Computational Linguistics. doi: 10.18653/v1/2021.emnlp-main.98. URL https://aclanthology.org/2021.emnlp-main.98/.",
+    "A. Dubey, A. Jauhri, A. Pandey, A. Kadian, A. Al-Dahle, A. Letman, A. Mathur, A. Schelten, A. Yang, A. Fan, et al. The llama 3 herd of models. arXiv preprint arXiv:2407.21783, 2024.",
+    "M. ElSherief, C. Ziems, D. Muchlinski, V. Anupindi, J. Seybolt, M. De Choudhury, and D. Yang. Latent hatred: A benchmark for understanding implicit hate speech. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 345-363, 2021.",
+    "EU FRA. Handbook on European Non-Discrimination Law. Publications Office of the European Union, Luxembourg, 2018. ISBN 978-92-9491-910-6. doi: 10.2811/792676. URL https://fra.europa.eu/sites/default/files/ fra_uploads/fra-2018-handbook-non-discrimination-law-2018_en.pdf.",
+    "European Commission. Third draft of the general-purpose ai code of practice, March 2025. Draft prepared by independent experts under the coordination of the European AI Office.",
+    "European Union. Regulation (EU) 2024/1689 of the European Parliament and of the Council of 13 June 2024 laying down harmonised rules on artificial intelligence, 2024. URL https://eur-lex.europa.eu/legal-content/ EN/TXT/PDF/?uri=CELEX%3A32024R1689. [Accessed: 2025-03-27].",
+    "V. Felkner, H.-C. H. Chang, E. Jang, and J. May. Winoqueer: A community-in-the-loop benchmark for anti-lgbtq+ bias in large language models. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 9126–9140, 2023.",
+    "I. O. Gallegos, R. A. Rossi, J. Barrow, M. M. Tanjim, S. Kim, F. Dernoncourt, T. Yu, R. Zhang, and N. K. Ahmed. Bias and fairness in large language models: A survey. Computational Linguistics, 50(3):1097–1179, 09 2024. ISSN 0891-2017. doi: 10.1162/coli_a_00524. URL https://doi.org/10.1162/coli_a_00524.",
+    "S. Gehman, S. Gururangan, M. Sap, Y. Choi, and N. A. Smith. Realtoxicityprompts: Evaluating neural toxic degeneration in language models. arXiv preprint arXiv:2009.11462, 2020.",
+    "T. GLM, A. Zeng, B. Xu, B. Wang, C. Zhang, D. Yin, D. Zhang, D. Rojas, G. Feng, H. Zhao, et al. Chatglm: A family of large language models from glm-130b to glm-4 all tools. arXiv preprint arXiv:2406.12793, 2024.",
+    "M. Hardt, E. Price, and N. Srebro. Equality of opportunity in supervised learning. Advances in neural information processing systems, 29, 2016.",
+    "T. Hartvigsen, S. Gabriel, H. Palangi, M. Sap, D. Ray, and E. Kamar. Toxigen: A large-scale machine-generated dataset for adversarial and implicit hate speech detection. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 3309–3326, 2022.",
+    "P. He, X. Liu, J. Gao, and W. Chen. Deberta: Decoding-enhanced bert with disentangled attention. arXiv preprint arXiv:2006.03654, 2020.",
+    "Y. Huang and D. Xiong. Cbbq: A chinese bias benchmark dataset curated with human-ai collaboration for large language models. arXiv preprint arXiv:2306.16244, 2023.",
+    "C. Hube and B. Fetahu. Detecting biased statements in wikipedia. In Companion proceedings of the the web conference 2018, pages 1779–1786, 2018.",
+    "H. Inan, K. Upasani, J. Chi, R. Rungta, K. Iyer, Y. Mao, M. Tontchev, Q. Hu, B. Fuller, D. Testuggine, et al. Llama guard: Llm-based input-output safeguard for human-ai conversations. arXiv preprint arXiv:2312.06674, 2023.",
+    "F. Kamiran and T. Calders. Data preprocessing techniques for classification without discrimination. Knowledge and information systems, 33(1):1-33, 2012.",
+    "M. Kearns, S. Neel, A. Roth, and Z. S. Wu. Preventing fairness gerrymandering: Auditing and learning for subgroup fairness. In International conference on machine learning, pages 2564-2572. PMLR, 2018.",
+    "A. Klose, D. Liebscher, M. Wersig, and M. Wrase, editors. Landesantidiskriminierungsgesetz Berlin. Nomos, Germany, 2025. ISBN 978-3-7560-0064-7.",
+    "R. Koo, M. Lee, V. Raheja, J. I. Park, Z. M. Kim, and D. Kang. Benchmarking cognitive biases in large language models as evaluators. In Findings of the Association for Computational Linguistics ACL 2024, pages 517–545, 2024.",
+    "J. Kreutzer, I. Caswell, L. Wang, A. Wahab, D. Van Esch, N. Ulzii-Orshikh, A. Tapo, N. Subramani, A. Sokolov, C. Sikasote, et al. Quality at a glance: An audit of web-crawled multilingual datasets. Transactions of the Association for Computational Linguistics, 10:50–72, 2022.",
+    "D. Kumar, Y. A. AbuHashem, and Z. Durumeric. Watch your language: Investigating content moderation with large language models. In Proceedings of the International AAAI Conference on Web and Social Media, volume 18, pages 865-878, 2024.",
+    "Y. Li, L. Zhang, and Y. Zhang. Fairness of chatgpt. arXiv preprint arXiv:2305.18569, 2023.",
+    "E. Litt. Jewish ethno-religious involvement and political liberalism. Social Forces, 39(4):328–332, 1961.",
+    "Y. Liu. Roberta: A robustly optimized bert pretraining approach. arXiv preprint arXiv:1907.11692, 364, 2019.",
+    "A. Luccioni and J. Viviano. What's in the box? an analysis of undesirable content in the Common Crawl corpus. In C. Zong, F. Xia, W. Li, and R. Navigli, editors, Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 2: Short Papers), pages 182–189, Online, Aug. 2021. Association for Computational Linguistics. doi: 10.18653/v1/ 2021.acl-short.24. URL https://aclanthology.org/2021.acl-short.24/.",
+    "G. Maheshwari, D. Ivanov, and K. E. Haddad. Efficacy of synthetic data as a benchmark. arXiv preprint arXiv:2409.11968, 2024.",
+    "T. Markov, C. Zhang, S. Agarwal, F. E. Nekoul, T. Lee, S. Adler, A. Jiang, and L. Weng. A holistic approach to undesired content detection in the real world. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 37, pages 15009–15018, 2023.",
+    "B. Mathew, P. Saha, S. M. Yimam, C. Biemann, P. Goyal, and A. Mukherjee. Hatexplain: A benchmark dataset for explainable hate speech detection. In Proceedings of the AAAI conference on artificial intelligence, volume 35, pages 14867-14875, 2021.",
+    "M. Nadeem, A. Bethke, and S. Reddy. Stereoset: Measuring stereotypical bias in pretrained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 5356–5371, 2021.",
+    "N. Nangia, C. Vania, R. Bhalerao, and S. Bowman. Crows-pairs: A challenge dataset for measuring social biases in masked language models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1953–1967, 2020.",
+    "R. Navigli, S. Conia, and B. Ross. Biases in large language models: origins, inventory, and discussion. ACM Journal of Data and Information Quality, 15(2):1–21, 2023.",
+    "V. Neplenbroek, A. Bisazza, and R. Fernández. Mbbq: A dataset for cross-lingual comparison of stereotypes in generative llms. arXiv preprint arXiv:2406.07243, 2024.",
+    "K. Palla, J. L. R. García, C. Hauff, F. Fabbri, A. Damianou, H. Lindström, D. Taber, and M. Lalmas. Policy-as-prompt: Rethinking content moderation in the age of large language models. In Proceedings of the 2025 ACM Conference on Fairness, Accountability, and Transparency, pages 840–854, 2025.",
+    "A. Parrish, A. Chen, N. Nangia, V. Padmakumar, J. Phang, J. Thompson, P. M. Htut, and S. Bowman. Bbq: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, 2022.",
+    "A. Radford, J. Wu, R. Child, D. Luan, D. Amodei, I. Sutskever, et al. Language models are unsupervised multitask learners. OpenAI blog, 1(8):9, 2019.",
+    "S. Raza, M. Garg, D. J. Reji, S. R. Bashir, and C. Ding. Nbias: A natural language processing framework for bias identification in text. Expert Systems with Applications, 237:121542, 2024.",
+    "R. Rudinger, J. Naradowsky, B. Leonard, and B. Van Durme. Gender bias in coreference resolution. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 8–14, 2018.",
+    "M. Sap, S. Gabriel, L. Qin, D. Jurafsky, N. A. Smith, and Y. Choi. Social bias frames: Reasoning about social and power implications of language. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5477–5490, 2020.",
+    "M. S. Sorower. A literature survey on algorithms for multi-label learning. Oregon State University, Corvallis, 18(1):25, 2010.",
+    "M. Steiger, T. J. Bharucha, S. Venkatagiri, M. J. Riedl, and M. Lease. The psychological well-being of content moderators: the emotional labor of commercial moderation and avenues for improving support. In Proceedings of the 2021 CHI conference on human factors in computing systems, pages 1–14, 2021.",
+    "L. Sun, Y. Huang, H. Wang, S. Wu, Q. Zhang, C. Gao, Y. Huang, W. Lyu, Y. Zhang, X. Li, et al. Trustllm: Trustworthiness in large language models. arXiv preprint arXiv:2401.05561, 3, 2024.",
+    "E. Tabassi. Artificial intelligence risk management framework (ai rmf 1.0), 2023-01-26 05:01:00 2023. URL https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=936225.",
+    "K. R. Vashney. Trustworthy machine learning. Independently published, 2022.",
+    "M. Viprey. New anti-discrimination law adopted. Eurofound, 2002. URL https://www.eurofound.europa.eu/ en/publications/all/new-anti-discrimination-law-adopted. Published: 3 January 2002.",
+    "B. Wang, W. Chen, H. Pei, C. Xie, M. Kang, C. Zhang, C. Xu, Z. Xiong, R. Dutta, R. Schaeffer, et al. Decodingtrust: A comprehensive assessment of trustworthiness in gpt models. In NeurIPS, 2023.",
+    "S. Wang, P. Wang, T. Zhou, Y. Dong, Z. Tan, and J. Li. Ceb: Compositional evaluation benchmark for fairness in large language models. arXiv preprint arXiv:2407.02408, 2024.",
+    "J. Wei, X. Wang, D. Schuurmans, M. Bosma, F. Xia, E. Chi, Q. V. Le, D. Zhou, et al. Chain-of-thought prompting elicits reasoning in large language models. Advances in neural information processing systems, 35:24824–24837, 2022.",
+    "T. Wolf, L. Debut, V. Sanh, J. Chaumond, C. Delangue, A. Moi, P. Cistac, T. Rault, R. Louf, M. Funtowicz, J. Davison, S. Shleifer, P. von Platen, C. Ma, Y. Jernite, J. Plu, C. Xu, T. L. Scao, S. Gugger, M. Drame, Q. Lhoest, and A. M. Rush. Transformers: State-of-the-art natural language processing. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing: System Demonstrations, pages 38–45, Online, Oct. 2020. Association for Computational Linguistics. URLhttps://www.aclweb.org/anthology/2020.emnlp-demos.6.",
+    "A. Yang, B. Yang, B. Zhang, B. Hui, B. Zheng, B. Yu, C. Li, D. Liu, F. Huang, H. Wei, et al. Qwen2. 5 technical report. arXiv preprint arXiv:2412.15115, 2024.",
+    "N. Youdao. Bcembedding: Bilingual and crosslingual embedding for rag. https://github.com/netease-youdao/ BCEmbedding, 2023.",
+    "M. B. Zafar, I. Valera, M. Gomez Rodriguez, and K. P. Gummadi. Fairness beyond disparate treatment & disparate impact: Learning classification without disparate mistreatment. In Proceedings of the 26th international conference on world wide web, pages 1171–1180, 2017.",
+    "W. Zeng, Y. Liu, R. Mullins, L. Peran, J. Fernandez, H. Harkous, K. Narasimhan, D. Proud, P. Kumar, B. Radharapu, et al. Shieldgemma: Generative ai content moderation based on gemma. arXiv preprint arXiv:2407.21772, 2024.",
+    "X. Zhan, A. Goyal, Y. Chen, E. Chandrasekharan, and K. Saha. Slm-mod: Small language models surpass llms at content moderation. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 8774-8790, 2025.",
+    "J. Zhao, T. Wang, M. Yatskar, V. Ordonez, and K.-W. Chang. Gender bias in coreference resolution: Evaluation and debiasing methods. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 15–20, 2018."
+  ],
+  "measurement_description": "The benchmark measured the ability of Large Language Models to detect harmful demographic-targeted social biases in English texts, framed as a multi-label classification task. For religion, this specifically involved identifying texts that perpetuate commonly held stereotypes, toxic content, or hateful content targeting a religion or people holding certain religious beliefs."
 }

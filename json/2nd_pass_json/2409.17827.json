@@ -2,100 +2,27 @@
   "filename": "2409.17827.pdf",
   "title": "BeanCounter: A low-toxicity, large-scale, and open dataset of business-oriented text",
   "arxiv_url": "https://arxiv.org/pdf/2409.17827",
-  "benchmark_measurement": "Prevalence of religious demographic descriptors (e.g., 'Christian', 'Jewish') and the average toxicity score of sentences containing these descriptors, comparing the custom 'BeanCounter' dataset to the 'C4-en' dataset.",
-  "religious_groups": [
-    "Christianity",
-    "Judaism",
-    "Islam",
-    "Catholicism",
-    "Methodist",
-    "Lutheran",
-    "secular"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Analyzing pronoun frequencies (He vs. She) and measuring the toxicity of sentences containing gender and sex descriptors using the Perspective API, as well as evaluating generative safety using SafeNLP."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Measuring the toxicity of sentences containing sexual orientation descriptors using the Perspective API and evaluating model generation safety across demographics with SafeNLP."
+    },
+    {
+      "target": "Nationality bias",
+      "methodology": "Measuring the toxicity of sentences containing nationality descriptors using the Perspective API and evaluating model generation safety across demographics with SafeNLP."
+    },
+    {
+      "target": "Racial and ethnic bias",
+      "methodology": "Measuring the toxicity of sentences containing race and ethnicity descriptors using the Perspective API and evaluating model generation safety across demographics with SafeNLP."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Measuring the toxicity of sentences containing religious descriptors using the Perspective API and evaluating model generation safety across demographics with SafeNLP."
+    }
   ],
-  "models_tested": [
-    "Pythia-1.4B",
-    "Phi-1.5",
-    "Pythia-1.4B-BeanCounter",
-    "Phi-1.5-BeanCounter"
-  ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "short",
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "HolisticBias"
-  ],
-  "continuous_testing": false,
-  "findings": "The BeanCounter dataset has a significant representation of religious content (9.52% of filings), skewed towards Western identities like 'Christian'. The context surrounding religious descriptors is 66-87% less toxic compared to the web-crawled C4-en dataset. For example, sentences containing the term 'Christian' are 87.48% less toxic on average. Models continually pre-trained on BeanCounter showed improved safety scores (reduced toxic generation propensity) for groups like 'jewish' and 'muslim'.",
-  "references": [
-    "URL https://www.sec.gov/os/accessing-edgar-data.",
-    "URL https://beautiful-soup-4.readthedocs.io/en/latest/.",
-    "URL https://perspectiveapi.com.",
-    "URL https://web.archive.org/web/20240602180519/https://www.sec.gov/ privacy#dissemination.",
-    "WWW '18: Companion Proceedings of the The Web Conference 2018, Republic and Canton of Geneva, CHE, 2018. International World Wide Web Conferences Steering Committee. ISBN 9781450356404.",
-    "S. Alvarado, K. Verspoor, and T. Baldwin. Domain adaption of named entity recognition to support credit risk assessment. pages 84-90, 2015. URL http://www.sec.gov/Archives/ edgar/data/1593034/.",
-    "A. H. Bailey, A. Williams, and A. Cimpian. Based on billions of words on the internet, <span class=\"smallcaps smallercapital\">people</span> = <span class=\"smallcaps smallercapi- tal\">men</span>. Science Advances, 8(13):eabm2463, 2022. doi: 10.1126/sciadv.abm2463. URL https://www.science.org/doi/abs/10.1126/sciadv.abm2463.",
-    "S. Biderman, H. Schoelkopf, Q. Anthony, H. Bradley, K. O'Brien, E. Hallahan, M. A. Khan, S. Purohit, U. S. Prashanth, E. Raff, A. Skowron, L. Sutawika, and O. van der Wal. Pythia: A suite for analyzing large language models across training and scaling, 2023.",
-    "T. Bolukbasi, K.-W. Chang, J. Y. Zou, V. Saligrama, and A. T. Kalai. Man is to computer programmer as woman is to homemaker? debiasing word embeddings. In D. Lee, M. Sugiyama, U. Luxburg, I. Guyon, and R. Garnett, editors, Advances in Neural Information Processing Sys- tems, volume 29. Curran Associates, Inc., 2016. URL https://proceedings.neurips.cc/ paper_files/paper/2016/file/a486cd07e4ac3d270571622f4f316ec5-Paper.pdf.",
-    "T. B. Brown, B. Mann, N. Ryder, M. Subbiah, J. Kaplan, P. Dhariwal, A. Neelakantan, P. Shyam, G. Sastry, A. Askell, S. Agarwal, A. Herbert-Voss, G. Krueger, T. Henighan, R. Child, A. Ramesh, D. M. Ziegler, J. Wu, C. Winter, C. Hesse, M. Chen, E. Sigler, M. Litwin, S. Gray, B. Chess, J. Clark, C. Berner, S. McCandlish, A. Radford, I. Sutskever, and D. Amodei. Lan- guage models are few-shot learners, 5 2020. URL http://arxiv.org/abs/2005.14165.",
-    "A. Caliskan, J. J. Bryson, and A. Narayanan. Semantics derived automatically from language corpora contain human-like biases. Science, 356(6334):183–186, 2017. doi: 10.1126/science. aal4230. URL https://www.science.org/doi/abs/10.1126/science.aal4230.",
-    "T. Caselli, V. Basile, J. Mitrović, and M. Granitzer. HateBERT: Retraining BERT for abusive language detection in English. In A. Mostafazadeh Davani, D. Kiela, M. Lambert, B. Vidgen, V. Prabhakaran, and Z. Waseem, editors, Proceedings of the 5th Workshop on Online Abuse and Harms (WOAH 2021), pages 17–25, Online, Aug. 2021. Association for Computational Linguistics. doi: 10.18653/v1/2021.woah-1.3. URL https://aclanthology.org/2021. woah-1.3.",
-    "A. Chowdhery, S. Narang, J. Devlin, M. Bosma, G. Mishra, A. Roberts, P. Barham, H. W. Chung, C. Sutton, S. Gehrmann, P. Schuh, K. Shi, S. Tsvyashchenko, J. Maynez, A. Rao, P. Barnes, Y. Tay, N. Shazeer, V. Prabhakaran, E. Reif, N. Du, B. Hutchinson, R. Pope, J. Bradbury, J. Austin, M. Isard, G. Gur-Ari, P. Yin, T. Duke, A. Levskaya, S. Ghemawat, S. Dev, H. Michalewski, X. Garcia, V. Misra, K. Robinson, L. Fedus, D. Zhou, D. Ippolito, D. Luan, H. Lim, B. Zoph, A. Spiridonov, R. Sepassi, D. Dohan, S. Agrawal, M. Omernick, A. M. Dai, T. S. Pillai, M. Pellat, A. Lewkowycz, E. Moreira, R. Child, O. Polozov, K. Lee, Z. Zhou, X. Wang, B. Saeta, M. Diaz, O. Firat, M. Catasta, J. Wei, K. Meier-Hellstern, D. Eck, J. Dean, S. Petrov, and N. Fiedel. Palm: Scaling language modeling with pathways. Journal of Machine Learning Research, 24(240):1–113, 2023. URL http://jmlr.org/papers/v24/22-1144. html.",
-    "J. Devlin, M.-W. Chang, K. Lee, and K. Toutanova. BERT: Pre-training of deep bidirectional transformers for language understanding. In J. Burstein, C. Doran, and T. Solorio, editors, Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Pa- pers), pages 4171–4186, Minneapolis, Minnesota, June 2019. Association for Computational Linguistics. doi: 10.18653/v1/N19-1423. URL https://aclanthology.org/N19-1423.",
-    "B. Dhingra, J. R. Cole, J. M. Eisenschlos, D. Gillick, J. Eisenstein, and W. W. Cohen. Time- aware language models as temporal knowledge bases. Transactions of the Association for Computational Linguistics, 10:257–273, 2022. doi: 10.1162/tacl. URL http://direct.mit. edu/tacl/article-pdf/doi/10.1162/tacl_a_00459/2004543/tacl_a_00459.pdf.",
-    "J. Dodge, M. Sap, A. Marasović, W. Agnew, G. Ilharco, D. Groeneveld, M. Mitchell, and M. Gardner. Documenting large webtext corpora: A case study on the colossal clean crawled corpus, 2021.",
-    "E. F. Fama and K. R. French. Industry costs of equity. Journal of financial economics, 43(2): 153-193, 1997.",
-    "L. Gao, S. Biderman, S. Black, L. Golding, T. Hoppe, C. Foster, J. Phang, H. He, A. Thite, N. Nabeshima, S. Presser, and C. Leahy. The pile: An 800gb dataset of diverse text for language modeling, 2020.",
-    "L. Gao, J. Tow, B. Abbasi, S. Biderman, S. Black, A. DiPofi, C. Foster, L. Golding, J. Hsu, A. Le Noac'h, H. Li, K. McDonell, N. Muennighoff, C. Ociepa, J. Phang, L. Reynolds, H. Schoelkopf, A. Skowron, L. Sutawika, E. Tang, A. Thite, B. Wang, K. Wang, and A. Zou. A framework for few-shot language model evaluation, 12 2023. URL https://zenodo.org/ records/10256836.",
-    "S. Gehman, S. Gururangan, M. Sap, Y. Choi, and N. A. Smith. RealToxicityPrompts: Evaluating neural toxic degeneration in language models. In T. Cohn, Y. He, and Y. Liu, editors, Findings of the Association for Computational Linguistics: EMNLP 2020, pages 3356–3369, Online, Nov. 2020. Association for Computational Linguistics. doi: 10.18653/v1/2020.findings-emnlp.301. URL https://aclanthology.org/2020.findings-emnlp.301.",
-    "A. Gokaslan and V. Cohen. Openwebtext corpus. http://Skylion007.github.io/ OpenWebTextCorpus, 2019.",
-    "D. Goldberg, D. Nichols, B. M. Oki, and D. Terry. Using collaborative filtering to weave an information tapestry. Communications of the ACM, 35(12):61–70, 1992.",
-    "S. Gunasekar, Y. Zhang, J. Aneja, C. César, T. Mendes, A. D. Giorno, S. Gopi, M. Javaheripi, P. Kauffmann, G. De, R. Olli, S. Adil, S. Shital, S. Harkirat, S. Behl, X. Wang, S. Bubeck, R. Eldan, A. Tauman, K. Yin, T. Lee, and Y. Li. Textbooks are all you need, 2023.",
-    "K. Gupta, B. Thérien, A. Ibrahim, M. L. Richter, Q. G. Anthony, E. Belilovsky, I. Rish, and T. Lesort. Continual pre-training of large language models: How to re-warm your model? In Workshop on Efficient Systems for Foundation Models @ ICML2023, 2023. URL https: //openreview.net/forum?id=pg7PUJe0Tl.",
-    "T. Hartvigsen, S. Gabriel, H. Palangi, M. Sap, D. Ray, and E. Kamar. Toxigen: A large-scale machine-generated dataset for adversarial and implicit hate speech detection. pages 3309-3326. Association for Computational Linguistics, 5 2022. doi: 10.18653/v1/2022.acl-long.234. URL https://aclanthology.org/2022.acl-long.234.",
-    "T. Henighan, J. Kaplan, M. Katz, M. Chen, C. Hesse, J. Jackson, H. Jun, T. B. Brown, P. Dhari- wal, S. Gray, C. Hallacy, B. Mann, A. Radford, A. Ramesh, N. Ryder, D. M. Ziegler, J. Schulman, D. Amodei, and S. McCandlish. Scaling laws for autoregressive generative modeling, 2020.",
-    "J. Hoffmann, S. Borgeaud, A. Mensch, E. Buchatskaya, T. Cai, E. Rutherford, D. de Las Casas, L. A. Hendricks, J. Welbl, A. Clark, T. Hennigan, E. Noland, K. Millican, G. van den Driessche, B. Damoc, A. Guy, S. Osindero, K. Simonyan, E. Elsen, J. W. Rae, O. Vinyals, and L. Sifre. Training compute-optimal large language models, 2022.",
-    "S. Hosseini, H. Palangi, and A. H. Awadallah. An empirical study of metrics to measure represen- tational harms in pre-trained language models. In A. Ovalle, K.-W. Chang, N. Mehrabi, Y. Pruk- sachatkun, A. Galystan, J. Dhamala, A. Verma, T. Cao, A. Kumar, and R. Gupta, editors, Pro- ceedings of the 3rd Workshop on Trustworthy Natural Language Processing (TrustNLP 2023), pages 121-134, Toronto, Canada, July 2023. Association for Computational Linguistics. doi: 10. 18653/v1/2023.trustnlp-1.11. URL https://aclanthology.org/2023.trustnlp-1.11.",
-    "J. Kaplan, S. McCandlish, T. H. OpenAI, T. B. B. OpenAI, B. C. OpenAI, R. C. OpenAI, S. G. OpenAI, A. R. OpenAI, J. W. OpenAI, and D. A. OpenAI. Scaling laws for neural language models, 2020.",
-    "S. Kim, S. Yun, H. Lee, M. Gubri, S. Yoon, and S. J. Oh. ProPILE: Probing privacy leakage in large language models. In Thirty-seventh Conference on Neural Information Processing Systems, 2023. URL https://openreview.net/forum?id=QkLpGxUboF.",
-    "S. Kogan, D. Levin, B. R. Routledge, J. S. Sagi, and N. A. Smith. Predicting risk from financial reports with regression. In M. Ostendorf, M. Collins, S. Narayanan, D. W. Oard, and L. Vanderwende, editors, Proceedings of Human Language Technologies: The 2009 Annual Conference of the North American Chapter of the Association for Computational Linguistics, pages 272-280, Boulder, Colorado, June 2009. Association for Computational Linguistics. URL https://aclanthology.org/N09-1031.",
-    "K. Lee, D. Ippolito, A. Nystrom, C. Zhang, D. Eck, C. Callison-Burch, and N. Carlini. Dedupli- cating training data makes language models better, 2022.",
-    "D. D. Lewis, Y. Yang, T. G. Rose, and F. Li. Rcv1: A new benchmark collection for text categorization research. J. Mach. Learn. Res., 5:361–397, dec 2004. ISSN 1532-4435.",
-    "A. Lewkowycz, A. J. Andreassen, D. Dohan, E. Dyer, H. Michalewski, V. V. Ramasesh, A. Slone, C. Anil, I. Schlag, T. Gutman-Solo, Y. Wu, B. Neyshabur, G. Gur-Ari, and V. Misra. Solving quantitative reasoning problems with language models. In A. H. Oh, A. Agarwal, D. Belgrave, and K. Cho, editors, Advances in Neural Information Processing Systems, 2022. URL https://openreview.net/forum?id=IFXTZERXdM7.",
-    "T. Li, D. Khashabi, T. Khot, A. Sabharwal, and V. Srikumar. UNQOVERing stereotyping biases via underspecified questions. In T. Cohn, Y. He, and Y. Liu, editors, Findings of the Association for Computational Linguistics: EMNLP 2020, pages 3475-3489, Online, Nov. 2020. Association for Computational Linguistics. doi: 10.18653/v1/2020.findings-emnlp.311. URL https://aclanthology.org/2020.findings-emnlp.311.",
-    "Y. Li, S. Bubeck, R. Eldan, A. D. Giorno, S. Gunasekar, and Y. T. Lee. Textbooks are all you need ii: phi-1.5 technical report, 2023.",
-    "S. Lin, J. Hilton, and O. Evans. TruthfulQA: Measuring how models mimic human falsehoods. In S. Muresan, P. Nakov, and A. Villavicencio, editors, Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 3214-3252, Dublin, Ireland, May 2022. Association for Computational Linguistics. doi: 10.18653/v1/2022. acl-long.229. URL https://aclanthology.org/2022.acl-long.229.",
-    "S. Longpre, G. Yauney, E. Reif, K. Lee, A. Roberts, B. Zoph, D. Zhou, J. Wei, K. Robinson, D. Mimno, and D. Ippolito. A pretrainer's guide to training data: Measuring the effects of data age, domain coverage, quality, & toxicity, 2023.",
-    "L. Loukas, M. Fergadiotis, I. Androutsopoulos, and P. Malakasiotis. EDGAR-CORPUS: Billions of tokens make the world go round. In U. Hahn, V. Hoste, and A. Stent, editors, Proceedings of the Third Workshop on Economics and Natural Language Processing, pages 13-18, Punta Cana, Dominican Republic, Nov. 2021. Association for Computational Linguistics. doi: 10.18653/v1/2021.econlp-1.2. URL https://aclanthology.org/2021.econlp-1.2.",
-    "P. Malo, A. Sinha, P. Takala, P. Korhonen, and J. Wallenius. Good debt or bad debt: Detecting semantic orientations in economic texts. 7 2014. URL http://arxiv.org/abs/1307.5336.",
-    "J. Maynez, S. Narayan, B. Bohnet, and R. McDonald. On faithfulness and factuality in abstractive summarization. In D. Jurafsky, J. Chai, N. Schluter, and J. Tetreault, editors, Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 1906–1919, Online, July 2020. Association for Computational Linguistics. doi: 10.18653/v1/ 2020.acl-main.173. URL https://aclanthology.org/2020.acl-main.173.",
-    "G. Penedo, H. Kydlíček, L. von Werra, and T. Wolf. Fineweb, 2024. URL https: //huggingface.co/datasets/HuggingFaceFW/fineweb.",
-    "A. Radford, K. Narasimhan, T. Salimans, and I. Sutskever. Improving language understanding by generative pre-training. 2018. URL https://gluebenchmark.com/leaderboard.",
-    "A. Radford, J. Wu, R. Child, D. Luan, D. Amodei, and I. Sutskever. Language models are unsupervised multitask learners, 2019. URL https://github.com/codelucas/newspaper.",
-    "J. W. Rae, S. Borgeaud, T. Cai, K. Millican, J. Hoffmann, F. Song, J. Aslanides, S. Henderson, R. Ring, S. Young, E. Rutherford, T. Hennigan, J. Menick, A. Cassirer, R. Powell, G. van den Driessche, L. A. Hendricks, M. Rauh, P.-S. Huang, A. Glaese, J. Welbl, S. Dathathri, S. Huang, J. Uesato, J. Mellor, I. Higgins, A. Creswell, N. McAleese, A. Wu, E. Elsen, S. Jayakumar, E. Buchatskaya, D. Budden, E. Sutherland, K. Simonyan, M. Paganini, L. Sifre, L. Martens, X. L. Li, A. Kuncoro, A. Nematzadeh, E. Gribovskaya, D. Donato, A. Lazaridou, A. Mensch, J.-B. Lespiau, M. Tsimpoukelli, N. Grigorev, D. Fritz, T. Sottiaux, M. Pajarskas, T. Pohlen, Z. Gong, D. Toyama, C. de Masson d'Autume, Y. Li, T. Terzi, V. Mikulik, I. Babuschkin, A. Clark, D. de Las Casas, A. Guy, C. Jones, J. Bradbury, M. Johnson, B. Hechtman, L. Weidinger, I. Gabriel, W. Isaac, E. Lockhart, S. Osindero, L. Rimell, C. Dyer, O. Vinyals, K. Ayoub, J. Stanway, L. Bennett, D. Hassabis, K. Kavukcuoglu, and G. Irving. Scaling language models: Methods, analysis & insights from training gopher. 12 2021. URL http://arxiv.org/abs/ 2112.11446.",
-    "C. Raffel, N. Shazeer, A. Roberts, K. Lee, S. Narang, M. Matena, Y. Zhou, W. Li, and P. J. Liu. Exploring the limits of transfer learning with a unified text-to-text transformer. J. Mach. Learn. Res., 21(1), jan 2020. ISSN 1532-4435.",
-    "D. Rein, B. L. Hou, A. C. Stickland, J. Petty, R. Y. Pang, J. Dirani, J. Michael, and S. R. Bowman. Gpqa: A graduate-level google-proof q&a benchmark. ArXiv, abs/2311.12022, 2023. URL https://api.semanticscholar.org/CorpusID:265295009.",
-    "Securities and Exchange Commission. Certification of disclosure in companies' quarterly and annual reports, 09 2002.",
-    "E. Sheng, K.-W. Chang, P. Natarajan, and N. Peng. The woman worked as a babysitter: On biases in language generation. In K. Inui, J. Jiang, V. Ng, and X. Wan, editors, Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 3407-3412, Hong Kong, China, Nov. 2019. Association for Computational Linguistics. doi: 10.18653/v1/D19-1339. URL https://aclanthology.org/D19-1339.",
-    "E. M. Smith, M. Hall, M. Kambadur, E. Presani, and A. Williams. \"I'm sorry to hear that\": Finding new biases in language models with a holistic descriptor dataset. In Y. Goldberg, Z. Kozareva, and Y. Zhang, editors, Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 9180–9211, Abu Dhabi, United Arab Emirates, Dec. 2022. Association for Computational Linguistics. doi: 10.18653/v1/2022.emnlp-main.625. URL https://aclanthology.org/2022.emnlp-main.625.",
-    "Z. Sprague, X. Ye, K. Bostrom, S. Chaudhuri, and G. Durrett. Musr: Testing the limits of chain-of-thought with multistep soft reasoning. ArXiv, abs/2310.16049, 2023. URL https: //api.semanticscholar.org/CorpusID:264439655.",
-    "F. Sun, D. Song, and L. Liao. Dom based content extraction via text density. In Proceedings of the 34th International ACM SIGIR Conference on Research and Development in Information Retrieval, SIGIR '11, page 245-254, New York, NY, USA, 2011. Association for Computing Machinery. ISBN 9781450307574. doi: 10.1145/2009916.2009952. URL https://doi.org/ 10.1145/2009916.2009952.",
-    "M. Suzgun, N. Scales, N. Scharli, S. Gehrmann, Y. Tay, H. W. Chung, A. Chowdhery, Q. V. Le, E. H. hsin Chi, D. Zhou, and J. Wei. Challenging big-bench tasks and whether chain-of-thought can solve them. In Annual Meeting of the Association for Computational Linguistics, 2022. URL https://api.semanticscholar.org/CorpusID:252917648.",
-    "H. Touvron, T. Lavril, G. Izacard, X. Martinet, M.-A. Lachaux, T. Lacroix, B. Rozière, N. Goyal, E. Hambro, F. Azhar, A. Rodriguez, A. Joulin, E. Grave, and G. Lample. Llama: Open and efficient foundation language models, 2023.",
-    "H. Touvron, L. Martin, K. Stone, P. Albert, A. Almahairi, Y. Babaei, N. Bashlykov, S. Batra, P. Bhargava, S. Bhosale, D. Bikel, L. Blecher, C. C. Ferrer, M. Chen, G. Cucurull, D. Esiobu, J. Fernandes, J. Fu, W. Fu, B. Fuller, C. Gao, V. Goswami, N. Goyal, A. Hartshorn, S. Hosseini, R. Hou, H. Inan, M. Kardas, V. Kerkez, M. Khabsa, I. Kloumann, A. Korenev, P. S. Koura, M.-A. Lachaux, T. Lavril, J. Lee, D. Liskovich, Y. Lu, Y. Mao, X. Martinet, T. Mihaylov, P. Mishra, I. Molybog, Y. Nie, A. Poulton, J. Reizenstein, R. Rungta, K. Saladi, A. Schelten, R. Silva, E. M. Smith, R. Subramanian, X. E. Tan, B. Tang, R. Taylor, A. Williams, J. X. Kuan, P. Xu, Z. Yan, I. Zarov, Y. Zhang, A. Fan, M. Kambadur, S. Narang, A. Rodriguez, R. Stojnic, S. Edunov, and T. Scialom. Llama 2: Open foundation and fine-tuned chat models. 7 2023. URL http://arxiv.org/abs/2307.09288.",
-    "T. H. Trinh and Q. V. Le. A simple method for commonsense reasoning, 2019.",
-    "M.-F. Tsai, C.-J. Wang, and P.-C. Chien. Discovering finance keywords via continuous-space language models. ACM Trans. Manage. Inf. Syst., 7(3), aug 2016. ISSN 2158-656X. doi: 10.1145/2948072. URL https://doi.org/10.1145/2948072.",
-    "A. Ushio and J. Camacho-Collados. T-NER: An all-round python library for transformer- based named entity recognition. In D. Gkatzia and D. Seddah, editors, Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics: System Demonstrations, pages 53–62, Online, Apr. 2021. Association for Computational Linguistics. doi: 10.18653/v1/2021.eacl-demos.7. URL https://aclanthology.org/2021. eacl-demos.7.",
-    "E. Wallace, S. Feng, N. Kandpal, M. Gardner, and S. Singh. Universal adversarial triggers for attacking and analyzing NLP. In K. Inui, J. Jiang, V. Ng, and X. Wan, editors, Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 2153-2162, Hong Kong, China, Nov. 2019. Association for Computational Linguistics. doi: 10.18653/v1/D19-1221. URL https://aclanthology.org/D19-1221.",
-    "Y. Wang, X. Ma, G. Zhang, Y. Ni, A. Chandra, S. Guo, W. Ren, A. Arulraj, X. He, Z. Jiang, T. Li, M. W. Ku, K. Wang, A. Zhuang, R. Fan, X. Yue, and W. Chen. Mmlu-pro: A more robust and challenging multi-task language understanding benchmark. ArXiv, abs/2406.01574, 2024. URL https://api.semanticscholar.org/CorpusID:270210486.",
-    "G. Wenzek, M.-A. Lachaux, A. Conneau, V. Chaudhary, F. Guzmán, A. Joulin, and E. Grave. CCNet: Extracting high quality monolingual datasets from web crawl data. In N. Calzolari, F. Béchet, P. Blache, K. Choukri, C. Cieri, T. Declerck, S. Goggi, H. Isahara, B. Maegaard, J. Mariani, H. Mazo, A. Moreno, J. Odijk, and S. Piperidis, editors, Proceedings of the Twelfth Language Resources and Evaluation Conference, pages 4003–4012, Marseille, France, May 2020. European Language Resources Association. ISBN 979-10-95546-34-4. URL https: //aclanthology.org/2020.lrec-1.494.",
-    "S. Wu, O. Irsoy, S. Lu, V. Dabravolski, M. Dredze, S. Gehrmann, P. Kambadur, D. Rosenberg, and G. Mann. Bloomberggpt: A large language model for finance, 3 2023. URL http: //arxiv.org/abs/2303.17564.",
-    "S. Zhang, S. Roller, N. Goyal, M. Artetxe, M. Chen, S. Chen, C. Dewan, M. Diab, X. Li, X. V. Lin, T. Mihaylov, M. Ott, S. Shleifer, K. Shuster, D. Simig, P. S. Koura, A. Sridhar, T. Wang, and L. Zettlemoyer. Opt: Open pre-trained transformer language models, 2022.",
-    "J. Zhou, T. Lu, S. Mishra, S. Brahma, S. Basu, Y. Luan, D. Zhou, and L. Hou. Instruction- following evaluation for large language models. ArXiv, abs/2311.07911, 2023. URL https: //api.semanticscholar.org/CorpusID:265157752.",
-    "Y. Zhu, R. Kiros, R. Zemel, R. Salakhutdinov, R. Urtasun, A. Torralba, and S. Fidler. Aligning books and movies: Towards story-like visual explanations by watching movies and reading books. In 2015 IEEE International Conference on Computer Vision (ICCV), pages 19–27, Los Alamitos, CA, USA, dec 2015. IEEE Computer Society. doi: 10.1109/ICCV.2015.11. URL https://doi.ieeecomputersociety.org/10.1109/ICCV.2015.11."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

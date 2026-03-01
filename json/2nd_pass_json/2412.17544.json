@@ -2,62 +2,15 @@
   "filename": "2412.17544.pdf",
   "title": "Retention Score: Quantifying Jailbreak Risks for Vision Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2412.17544",
-  "benchmark_measurement": "The benchmark did not measure anything in terms of faith or religion. It measured the general robustness of Vision-Language Models (VLMs) against adversarial 'jailbreak' attacks designed to elicit toxic or harmful content.",
-  "religious_groups": [],
-  "models_tested": [
-    "MiniGPT-4",
-    "LLaVA",
-    "InstructBLIP",
-    "GPT-4V",
-    "Gemini Pro Vision",
-    "Vicuna-v0-13B",
-    "Vicuna-v1.1-13B",
-    "LLaMA-2-13B-Chat"
+  "bias_targets": [
+    {
+      "target": "Age bias",
+      "methodology": "Generating synthetic face images of different age groups (young and old) using stable diffusion, pairing them with adversarial text prompts, and comparing the model's jailbreak robustness (Retention-I score and Attack Success Rate) to identify performance disparities across age cohorts."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Generating synthetic face images of different genders (man and woman) using stable diffusion, pairing them with adversarial text prompts, and evaluating whether the model's resilience to toxic jailbreak attacks varies based on the gender of the generated face."
+    }
   ],
-  "languages_evaluated": [
-    "English"
-  ],
-  "response_type": [
-    "long"
-  ],
-  "religion_component": "none",
-  "base_benchmarks": [
-    "RealToxicityPrompts",
-    "AdvBench Harmful Behaviours dataset"
-  ],
-  "continuous_testing": false,
-  "findings": "This paper does not contain findings related to religion. The analysis focuses on quantifying the jailbreak risks and robustness of various Vision-Language Models against image-based and text-based adversarial attacks in a general context.",
-  "references": [
-    "Askell, A.; Bai, Y.; Chen, A.; Drain, D.; Ganguli, D.; Henighan, T.; Jones, A.; Joseph, N.; Mann, B.; DasSarma, N.; et al. 2021. A general language assistant as a laboratory for alignment. arXiv preprint arXiv:2112.00861.",
-    "Bai, Y.; Jones, A.; Ndousse, K.; Askell, A.; Chen, A.; Das-Sarma, N.; Drain, D.; Fort, S.; Ganguli, D.; Henighan, T.; et al. 2022. Training a helpful and harmless assistant with reinforcement learning from human feedback. arXiv preprint arXiv:2204.05862.",
-    "Brown, T.; Mann, B.; Ryder, N.; Subbiah, M.; Kaplan, J. D.; Dhariwal, P.; Neelakantan, A.; Shyam, P.; Sastry, G.; Askell, A.; et al. 2020. Language models are few-shot learners. Advances in neural information processing systems, 33: 1877– 1901.",
-    "Carlini, N.; Athalye, A.; Papernot, N.; Brendel, W.; Rauber, J.; Tsipras, D.; Goodfellow, I.; Madry, A.; and Ku-rakin, A. 2019. On Evaluating Adversarial Robustness. arXiv:1902.06705.",
-    "Carlini, N.; Nasr, M.; Choquette-Choo, C. A.; Jagielski, M.; Gao, I.; Awadalla, A.; Koh, P. W.; Ippolito, D.; Lee, K.; Tramer, F.; et al. 2023. Are aligned neural networks adver-sarially aligned? arXiv preprint arXiv:2306.15447.",
-    "Chiang, W.-L.; Li, Z.; Lin, Z.; Sheng, Y.; Wu, Z.; Zhang, H.; Zheng, L.; Zhuang, S.; Zhuang, Y.; Gonzalez, J. E.; et al. 2023. Vicuna: An open-source chatbot impressing gpt-4 with 90%* chatgpt quality. See https://vicuna. lmsys. org (accessed 14 April 2023).",
-    "Dai, W.; Li, J.; Li, D.; Tiong, A. M. H.; Zhao, J.; Wang, W.; Li, B.; Fung, P.; and Hoi, S. 2023. InstructBLIP: Towards General-purpose Vision-Language Models with Instruction Tuning. arXiv:2305.06500.",
-    "Fang, Y.; Wang, W.; Xie, B.; Sun, Q.; Wu, L.; Wang, X.; Huang, T.; Wang, X.; and Cao, Y. 2023. Eva: Exploring the limits of masked visual representation learning at scale. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 19358–19369.",
-    "Gehman, S.; Gururangan, S.; Sap, M.; Choi, Y.; and Smith, N. A. 2020. Realtoxicityprompts: Evaluating neu-ral toxic degeneration in language models. arXiv preprint arXiv:2009.11462.",
-    "Gong, S.; Li, M.; Feng, J.; Wu, Z.; and Kong, L. 2023. Dif-fuSeq: Sequence to Sequence Text Generation with Diffusion Models. arXiv: 2210.08933.",
-    "Lewis, M.; Liu, Y.; Goyal, N.; Ghazvininejad, M.; Mohamed, A.; Levy, O.; Stoyanov, V.; and Zettlemoyer, L. 2019. Bart: Denoising sequence-to-sequence pre-training for natural lan-guage generation, translation, and comprehension. arXiv preprint arXiv:1910.13461.",
-    "Li, J.; Li, D.; Savarese, S.; and Hoi, S. 2023. BLIP-2: Boot-strapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models. arXiv:2301.12597.",
-    "Li, J.; Li, D.; Xiong, C.; and Hoi, S. 2022. BLIP: Boot-strapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation. arXiv:2201.12086.",
-    "Li, Z.; Chen, P.-Y.; and Ho, T.-Y. 2023. GREAT Score: Global Robustness Evaluation of Adversarial Perturbation using Generative Models. arXiv:2304.09875.",
-    "Liu, H.; Li, C.; Wu, Q.; and Lee, Y. J. 2023a. Visual Instruc-tion Tuning.",
-    "Liu, X.; Xu, N.; Chen, M.; and Xiao, C. 2023b. AutoDAN: Generating Stealthy Jailbreak Prompts on Aligned Large Language Models. arXiv:2310.04451.",
-    "OpenAI. 2023. GPT-4v: Multimodal Language Model. https: //openai.com/gpt-4v. Accessed: yyyy-mm-dd.",
-    "Ouyang, L.; Wu, J.; Jiang, X.; Almeida, D.; Wainwright, C. L.; Mishkin, P.; Zhang, C.; Agarwal, S.; Slama, K.; Ray, A.; Schulman, J.; Hilton, J.; Kelton, F.; Miller, L.; Simens, M.; Askell, A.; Welinder, P.; Christiano, P.; Leike, J.; and Lowe, R. 2022. Training language models to follow instructions with human feedback. arXiv:2203.02155.",
-    "Paulavičius, R.; and Žilinskas, J. 2006. Analysis of differ-ent norms and corresponding Lipschitz constants for global optimization. Technological and Economic Development of Economy, 12(4): 301-306.",
-    "Qi, X.; Huang, K.; Panda, A.; Henderson, P.; Wang, M.; and Mittal, P. 2023a. Visual Adversarial Examples Jailbreak Aligned Large Language Models. arXiv:2306.13213.",
-    "Qi, X.; Zeng, Y.; Xie, T.; Chen, P.-Y.; Jia, R.; Mittal, P.; and Henderson, P. 2023b. Fine-tuning Aligned Language Models Compromises Safety, Even When Users Do Not Intend To! arXiv:2310.03693.",
-    "Rombach, R.; Blattmann, A.; Lorenz, D.; Esser, P.; and Om-mer, B. 2021. High-Resolution Image Synthesis with Latent Diffusion Models. arXiv:2112.10752.",
-    "Song, J.; Meng, C.; and Ermon, S. 2022. Denoising Diffusion Implicit Models. arXiv:2010.02502.",
-    "Stein, C. M. 1981. Estimation of the mean of a multivariate normal distribution. The annals of Statistics, 1135–1151.",
-    "Sun, Q.; Fang, Y.; Wu, L.; Wang, X.; and Cao, Y. 2023. EVA-CLIP: Improved Training Techniques for CLIP at Scale. arXiv:2303.15389.",
-    "Team, G.; Anil, R.; Borgeaud, S.; Wu, Y.; Alayrac, J.-B.; Yu, J.; Soricut, R.; Schalkwyk, J.; Dai, A. M.; Hauth, A.; et al. 2023. Gemini: a family of highly capable multimodal models. arXiv preprint arXiv:2312.11805.",
-    "Wei, J.; Bosma, M.; Zhao, V. Y.; Guu, K.; Yu, A. W.; Lester, B.; Du, N.; Dai, A. M.; and Le, Q. V. 2022. Finetuned Lan-guage Models Are Zero-Shot Learners. arXiv:2109.01652.",
-    "Weng, T.-W.; Zhang, H.; Chen, P.-Y.; Yi, J.; Su, D.; Gao, Y.; Hsieh, C.-J.; and Daniel, L. 2018. Evaluating the robustness of neural networks: An extreme value theory approach. arXiv preprint arXiv:1801.10578.",
-    "Zhao, Y.; Pang, T.; Du, C.; Yang, X.; Li, C.; Cheung, N.-M.; and Lin, M. 2023. On Evaluating Adversarial Robustness of Large Vision-Language Models. arXiv:2305.16934.",
-    "Zhu, D.; Chen, J.; Shen, X.; Li, X.; and Elhoseiny, M. 2023. Minigpt-4: Enhancing vision-language understand-ing with advanced large language models. arXiv preprint arXiv:2304.10592.",
-    "Zou, A.; Wang, Z.; Kolter, J. Z.; and Fredrikson, M. 2023. Universal and Transferable Adversarial Attacks on Aligned Language Models. arXiv:2307.15043."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

@@ -49,9 +49,9 @@ def generate_update_file(json_files: list[str], csv_file: str, output_path: str)
         date = meta.get('date', 'Unknown Date')
         arxiv_url = get_arxiv_url(filename)
         
-        benchmark_measurement = paper.get('benchmark_measurement', '')
+        measurement_desc = paper.get('measurement_description', '') or paper.get('benchmark_measurement', '')
         findings = paper.get('findings', '')
-        combined = f"{benchmark_measurement} {findings}".strip()
+        combined = f"{measurement_desc} {findings}".strip()
         
         mormon_tag = " #Mormon" if check_mormon_mention(paper) else ""
         

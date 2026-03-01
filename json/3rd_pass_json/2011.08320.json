@@ -2,23 +2,60 @@
   "filename": "2011.08320.pdf",
   "title": "Don't Patronize Me! An Annotated Dataset with Patronizing and Condescending Language towards Vulnerable Communities",
   "arxiv_url": "https://arxiv.org/pdf/2011.08320",
-  "bias_targets": [
-    {
-      "target": "Socioeconomic bias",
-      "methodology": "Creating a human-annotated dataset of news paragraphs containing keywords like 'homeless', 'poor families', and 'in need', and evaluating machine learning models (SVM, BiLSTM, BERT, RoBERTa) on their ability to detect and categorize patronizing and condescending language (PCL)."
-    },
-    {
-      "target": "Immigration status bias",
-      "methodology": "Creating a human-annotated dataset of news paragraphs containing keywords like 'immigrant', 'migrant', and 'refugee', and evaluating supervised text classification models to identify subtle condescension and patronizing discourse."
-    },
-    {
-      "target": "Disability bias",
-      "methodology": "Extracting and annotating news text mentioning the keyword 'disabled' to test standard machine learning and transformer models on identifying condescension, pity, and superficial saviour narratives."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Extracting and annotating news text containing the keyword 'women' to establish a baseline for how well NLP language models detect patronizing and condescending language targeted at women."
-    }
+  "religious_groups": [],
+  "models_tested": [
+    "SVM-WV",
+    "SVM-BoW",
+    "BiLSTM",
+    "BERT-base-cased",
+    "RoBERTa-base",
+    "DistilBERT",
+    "BERT-large-cased"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "none",
+  "base_benchmarks": [
+    "Talkdown corpus"
+  ],
+  "continuous_testing": true,
+  "findings": "The paper does not analyze or report any findings related to religion.",
+  "references": [
+    "Pepa Atanasova, Alberto Barron-Cedeno, Tamer Elsayed, Reem Suwaileh, Wajdi Zaghouani, Spas Kyuchukov, Giovanni Da San Martino, and Preslav Nakov. 2018. Overview of the clef-2018 checkthat! lab on automatic identification and verification of political claims. task 1: Check-worthiness. arXiv preprint arXiv:1808.05542.",
+    "Pepa Atanasova, Preslav Nakov, Georgi Karadzhov, Mitra Mohtarami, and Giovanni Da San Martino. 2019. Overview of the clef-2019 checkthat! lab on automatic identification and verification of claims. task 1: Check-worthiness. In CEUR Workshop Proceedings, Lugano, Switzerland.",
+    "Valerio Basile, Cristina Bosco, Elisabetta Fersini, Debora Nozza, Viviana Patti, Francisco Manuel Rangel Pardo, Paolo Rosso, and Manuela Sanguinetti. 2019. Semeval-2019 task 5: Multilingual detection of hate speech against immigrants and women in twitter. In Proceedings of the 13th International Workshop on Semantic Evaluation, pages 54–63.",
+    "Katherine M Bell. 2013. Raising africa?: Celebrity and the rhetoric of the white saviour. PORTAL Journal of Multidisciplinary International Studies, 10(1).",
+    "Emily M Bender and Batya Friedman. 2018. Data statements for natural language processing: Toward mitigating system bias and enabling better science. Transactions of the Association for Computational Linguistics, 6:587–604.",
+    "Lilie Chouliaraki. 2010. Post-humanitarianism : Humanitarian communication beyond a politics of pity. International Journal of Cultural Studies.",
+    "Niall J Conroy, Victoria L Rubin, and Yimin Chen. 2015. Automatic deception detection: Methods for finding fake news. Proceedings of the Association for Information Science and Technology, 52(1):1–4.",
+    "Mark Davies. 2013. Corpus of news on the web (now): 3+ billion words from 20 countries, updated every day. Available online at https://www.english-corpora.org/now/.",
+    "Leon Derczynski, Kalina Bontcheva, Maria Liakata, Rob Procter, Geraldine Wong Sak Hoi, and Arkaitz Zubiaga. 2017. Semeval-2017 task 8: Rumoureval: Determining rumour veracity and support for rumours. arXiv preprint arXiv:1704.05972.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2018. Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: pre-training of deep bidirectional transformers for language understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 4171–4186.",
+    "Susan T Fiske. 1993. Controlling other people: The impact of power on stereotyping. American psychologist, 48(6):621.",
+    "Michel Foucault. 1980. Power/knowledge: Selected interviews and other writings, 1972-1977. Vintage.",
+    "Howard Giles, Susan Fox, and Elisa Smith. 1993. Patronizing the elderly: Intergenerational evaluations. Research on Language and Social Interaction, 26(2):129–149.",
+    "Brian W Head et al. 2008. Wicked problems in public policy. Public policy, 3(2):101.",
+    "Thomas Huckin. 2002. Critical discourse analysis and the discourse of condescension. Discourse studies in composition, 155:176.",
+    "Mark S Komrad. 1983. A defence of medical paternalism: maximising patients' autonomy. Journal of medical ethics, 9(1):38–44.",
+    "J Richard Landis and Gary G Koch. 1977. The measurement of observer agreement for categorical data. biometrics, pages 159–174.",
+    "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. 2019. Roberta: A robustly optimized bert pretraining approach. arXiv preprint arXiv:1907.11692.",
+    "Branka Drljača Margić. 2017. Communication courtesy or condescension? linguistic accommodation of native to non-native speakers of english. Journal of English as a lingua franca, 6(1):29–55.",
+    "Julia Mendelsohn, Yulia Tsvetkov, and Dan Jurafsky. 2020. A framework for the computational linguistic analysis of dehumanization.",
+    "Tomas Mikolov, Ilya Sutskever, Kai Chen, Greg S Corrado, and Jeff Dean. 2013. Distributed representations of words and phrases and their compositionality. In Advances in neural information processing systems, pages 3111–3119.",
+    "Sik Hung Ng. 2007. Language-based discrimination: Blatant and subtle forms. Journal of Language and Social Psychology, 26(2):106–122.",
+    "David Nolan and Akina Mikami. 2013. 'the things that we have to do': Ethics and instrumentality in humanitarian communication. Global Media and Communication, 9(1):53–70.",
+    "Victor Sanh, Lysandre Debut, Julien Chaumond, and Thomas Wolf. 2019. DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter. arXiv preprint arXiv:1910.01108.",
+    "Maarten Sap, Saadia Gabriel, Lianhui Qin, Dan Jurafsky, Noah A Smith, and Yejin Choi. 2019. Social bias frames: Reasoning about social and power implications of language. arXiv preprint arXiv:1911.03891.",
+    "Pontus Stenetorp, Sampo Pyysalo, Goran Topić, Tomoko Ohta, Sophia Ananiadou, and Jun'ichi Tsujii. 2012. Brat: a web-based tool for nlp-assisted text annotation. In Proceedings of the Demonstrations at the 13th Conference of the European Chapter of the Association for Computational Linguistics, pages 102–107. Association for Computational Linguistics.",
+    "Rolf Straubhaar. 2015. The stark reality of the 'white saviour'complex and the need for critical consciousness: A document analysis of the early journals of a freirean educator. Compare: A Journal of Comparative and International Education, 45(3):381–400.",
+    "Vladimir Vapnik and Akshay Vashist. 2009. A new learning paradigm: Learning using privileged information. Neural Networks, 22(5-6):544–557.",
+    "Zijian Wang and Christopher Potts. 2019. Talkdown: A corpus for condescension detection in context. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing.",
+    "Marcos Zampieri, Shervin Malmasi, Preslav Nakov, Sara Rosenthal, Noura Farra, and Ritesh Kumar. 2019. Semeval-2019 task 6: Identifying and categorizing offensive language in social media (offenseval). arXiv preprint arXiv:1903.08983."
+  ],
+  "measurement_description": "The benchmark measures patronizing and condescending language towards vulnerable communities, such as refugees, homeless people, poor families, immigrants, and women. It does not measure any aspects of faith or religion."
 }

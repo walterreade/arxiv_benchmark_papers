@@ -2,15 +2,58 @@
   "filename": "2206.11484.pdf",
   "title": "Towards WinoQueer: Developing a Benchmark for Anti-Queer Bias in Large Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2206.11484",
-  "bias_targets": [
-    {
-      "target": "Sexual orientation and gender identity bias",
-      "methodology": "Comparing the pseudo-log-likelihood of masked language models on paired template sentences (more stereotypical/straight vs. less stereotypical/queer) using the custom WinoQueer benchmark to quantify homophobic and transphobic stereotypes."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Evaluating coreference resolution performance on the Gendered Ambiguous Pronouns (GAP) dataset to measure the binary gender disparity in F1 scores between she/her and he/him pronouns."
-    }
+  "religious_groups": [],
+  "models_tested": [
+    "BERT_base",
+    "BERT_large",
+    "SpanBERT_base",
+    "SpanBERT_large"
   ],
-  "primary_bias_target": "Sexual orientation and gender identity bias"
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "other"
+  ],
+  "religion_component": "none",
+  "base_benchmarks": [
+    "CrowS-Pairs",
+    "Winogender",
+    "OntoNotes",
+    "GAP"
+  ],
+  "continuous_testing": true,
+  "findings": "The paper contains no findings related to religion, as its focus is on anti-queer bias in Large Language Models.",
+  "references": [
+    "Emily M. Bender, Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. 2021. On the Dangers of Stochastic Parrots: Can Language Models Be Too Big? In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, pages 610–623, Virtual Event Canada. ACM.",
+    "Reuben Binns, Michael Veale, Max Van Kleek, and Nigel Shadbolt. 2017. Like Trainer, Like Bot? Inheritance of Bias in Algorithmic Content Moderation. In Social Informatics, Lecture Notes in Computer Science, pages 405–415, Cham. Springer International Publishing.",
+    "Su Lin Blodgett, Solon Barocas, Hal Daumé III, and Hanna Wallach. 2020. Language (technology) is power: A critical survey of “bias” in NLP. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5454–5476, Online. Association for Computational Linguistics.",
+    "Joy Buolamwini and Timnit Gebru. 2018. Gender shades: Intersectional accuracy disparities in commercial gender classification. In Conference on Fairness, Accountability and Transparency, FAT 2018, 23-24 February 2018, New York, NY, USA, volume 81 of Proceedings of Machine Learning Research, pages 77–91. PMLR.",
+    "Aylin Caliskan, Joanna J. Bryson, and Arvind Narayanan. 2017. Semantics derived automatically from language corpora contain human-like biases. Science, 356(6334):183–186.",
+    "Yang Trista Cao and Hal Daumé III. 2020. Toward gender-inclusive coreference resolution. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 4568–4595, Online. Association for Computational Linguistics.",
+    "Marta R. Costa-jussà. 2019. An analysis of gender bias studies in natural language processing. Nature Machine Intelligence, 1(11):495–496. Number: 11 Publisher: Nature Publishing Group.",
+    "Paula Czarnowska, Yogarshi Vyas, and Kashif Shah. 2021. Quantifying social biases in NLP: A generalization and empirical comparison of extrinsic fairness metrics. Transactions of the Association for Computational Linguistics, 9:1249–1267.",
+    "Thomas Davidson, Debasmita Bhattacharya, and Ingmar Weber. 2019. Racial Bias in Hate Speech and Abusive Language Detection Datasets. In Proceedings of the Third Workshop on Abusive Language Online, pages 25–35, Florence, Italy. Association for Computational Linguistics.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 4171–4186, Minneapolis, Minnesota. Association for Computational Linguistics.",
+    "Lucas Dixon, John Li, Jeffrey Sorensen, Nithum Thain, and Lucy Vasserman. 2018. Measuring and Mitigating Unintended Bias in Text Classification. In Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society, AIES ’18, pages 67–73, New York, NY, USA. Association for Computing Machinery.",
+    "Jesse Dodge, Maarten Sap, Ana Marasović, William Agnew, Gabriel Ilharco, Dirk Groeneveld, Margaret Mitchell, and Matt Gardner. 2021. Documenting Large Webtext Corpora: A Case Study on the Colossal Clean Crawled Corpus. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 1286–1305, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics.",
+    "Virginia Eubanks. 2018. Automating Inequality: How High-Tech Tools Profile, Police, and Punish the Poor. St. Martin’s Press, Inc., USA.",
+    "Tarleton Gillespie. 2020. Content moderation, AI, and the question of scale. Big Data & Society, 7(2):2053951720943234. _eprint: https://doi.org/10.1177/2053951720943234.",
+    "Tarleton Gillespie and Pablo J. Boczkowski. 2013. The relevance of algorithms.",
+    "Mandar Joshi, Danqi Chen, Yinhan Liu, Daniel S. Weld, Luke Zettlemoyer, and Omer Levy. 2020. SpanBERT: Improving pre-training by representing and predicting spans. Transactions of the Association for Computational Linguistics, 8:64–77.",
+    "Mandar Joshi, Omer Levy, Daniel S. Weld, and Luke Zettlemoyer. 2019. BERT for coreference resolution: Baselines and analysis. In Empirical Methods in Natural Language Processing (EMNLP).",
+    "Chandler May, Alex Wang, Shikha Bordia, Samuel R. Bowman, and Rachel Rudinger. 2019. On measuring social biases in sentence encoders. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 622–628, Minneapolis, Minnesota. Association for Computational Linguistics.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2021. StereoSet: Measuring stereotypical bias in pretrained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 5356–5371, Online. Association for Computational Linguistics.",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R. Bowman. 2020. CrowS-pairs: A challenge dataset for measuring social biases in masked language models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1953–1967, Online. Association for Computational Linguistics.",
+    "Philip M. Napoli. 2014. Automated Media: An Institutional Theory Perspective on Algorithmic Media Production and Consumption. Communication Theory, 24(3):340–360. _eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/comt.12039.",
+    "Safiya Umoja Noble. 2018. Algorithms of oppression. New York University Press.",
+    "Frank Pasquale. 2015. The Black Box Society: The Secret Algorithms That Control Money and Information. Harvard University Press, USA.",
+    "Rachel Rudinger, Jason Naradowsky, Brian Leonard, and Benjamin Van Durme. 2018. Gender bias in coreference resolution. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 8–14, New Orleans, Louisiana. Association for Computational Linguistics.",
+    "Maarten Sap, Dallas Card, Saadia Gabriel, Yejin Choi, and Noah A. Smith. 2019. The Risk of Racial Bias in Hate Speech Detection. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 1668–1678, Florence, Italy. Association for Computational Linguistics.",
+    "Ari Schlesinger, Kenton P. O’Hara, and Alex S. Taylor. 2018. Let’s Talk About Race: Identity, Chatbots, and AI. In Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems - CHI ’18, pages 1–14, Montreal QC, Canada. ACM Press.",
+    "Nenad Tomasev, Kevin R. McKee, Jackie Kay, and Shakir Mohamed. 2021. Fairness for Unobserved Characteristics: Insights from Technological Impacts on Queer Communities. Proceedings of the 2021 AAAI/ACM Conference on AI, Ethics, and Society, pages 254–265. ArXiv: 2102.04257.",
+    "Kellie Webster, Marta Recasens, Vera Axelrod, and Jason Baldridge. 2018. Mind the GAP: A balanced corpus of gendered ambiguous pronouns. Transactions of the Association for Computational Linguistics, 6:605–617.",
+    "Ralph M. Weischedel, Eduard H. Hovy, Mitchell P. Marcus, and Martha Palmer. 2017. Ontonotes : A large training corpus for enhanced processing."
+  ],
+  "measurement_description": "The paper does not measure anything related to faith or religion. Its benchmark, WinoQueer, measures anti-queer bias (homophobia and transphobia)."
 }

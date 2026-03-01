@@ -2,27 +2,96 @@
   "filename": "2508.07063.pdf",
   "title": "Towards Safer AI Moderation: Evaluating LLM Moderators Through a Unified Benchmark Dataset and Advocating a Human-First Approach",
   "arxiv_url": "https://arxiv.org/pdf/2508.07063",
-  "bias_targets": [
-    {
-      "target": "Gender bias",
-      "methodology": "Evaluating the ability of LLM moderators to classify nuanced sexist text, behavioral expectations, and gender-based stereotypes as 'unsafe' using datasets like 'Call Me Sexist, But' (CMSB) and Social Bias Frames."
-    },
-    {
-      "target": "Racial bias",
-      "methodology": "Testing LLM moderators on their capacity to flag explicit racial slurs, implicit racist rhetoric, and white supremacist text using prompt-based safety classification on datasets like Stormfront, Slur, and Measuring Hate Speech (MHS)."
-    },
-    {
-      "target": "Sexual orientation and gender identity bias",
-      "methodology": "Assessing the detection of homophobic and transphobic slurs and derogatory comments by passing instances from categorized slur corpora and human-annotated hate speech datasets to LLM moderation tools."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Measuring the moderation models' performance in identifying religiously offensive content and targeted hostility, such as Islamophobic text, using the HateXplain dataset."
-    },
-    {
-      "target": "Nationality and Cultural bias",
-      "methodology": "Evaluating the models' capability to flag implicit xenophobic rhetoric and immigrant-targeted hate speech by analyzing prediction accuracy on context-dependent remarks and cultural references."
-    }
+  "religious_groups": [
+    "Islam",
+    "Judaism"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "OpenAI Moderator",
+    "Llama Guard",
+    "SafePhi",
+    "Phi-4",
+    "Shield Gemma",
+    "Llama-2 (7B)",
+    "Mistral-7B",
+    "Gemma7b"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "GoEmotions",
+    "Hate Offensive",
+    "MHS (Measuring HateSpeech)",
+    "Peace and Violence",
+    "CMSB (Call Me Sexist, But)",
+    "HateXplain",
+    "SBIC (Social Bias Inference Corpus)",
+    "Slur",
+    "Stormfront",
+    "OWS (Occupy Wall Street)",
+    "HateCheck",
+    "GPT-Hate-Check",
+    "TweetEval",
+    "OffensiveLang",
+    "OLID"
+  ],
+  "continuous_testing": false,
+  "findings": "On synthetic datasets like GPT HateCheck, the tested LLM moderators achieved high F1 scores (around 0.95-1.00) in detecting hate speech targeting Muslims. However, their performance degraded on human-curated datasets (like MHS) that include religion as an identity group and require understanding of nuanced or implicit language, indicating a gap between performance on synthetic vs. real-world data.",
+  "references": [
+    "Abdin, M., Aneja, J., Behl, H., Bubeck, S., Eldan, R., Gunasekar, S., Harrison, M., Hewett, R.J., Javaheripi, M., Kauffmann, P., et al.: Phi-4 technical report. arXiv preprint arXiv:2412.08905 (2024)",
+    "Anastasopoulos, L.J., Williams, J.R.: A scalable machine learning approach for measuring violent and peaceful forms of political protest participation with social media data. Plos one (2019)",
+    "B. Mathew, P. Saha, H.T.e.a.: Threat, abuse, and hate detection on social media: A dynamic thresholding approach. In: International AAAI Conference on Web and Social Media (2021)",
+    "Breitwieser, K.: Can contextualizing user embeddings improve sarcasm and hate speech detection? In: Bamman, D., Hovy, D., Jurgens, D., Keith, K., O'Connor, B., Volkova, S. (eds.) Proceedings of the Fifth Workshop on Natural Language Processing and Computational Social Science (NLP+CSS). pp. 126–139. Abu Dhabi, UAE (Nov 2022). https://doi.org/10.18653/v1/2022.nlpcss-1.14",
+    "Das, A., Rahgouy, M., Feng, D., Zhang, Z., Bhattacharya, T., Raychawdhary, N., Jamshidi, F., Jain, V., Chadha, A., Sandage, M., Pope, L., Dozier, G., Seals, C.: Offensivelang: A community based implicit offensive language dataset (2024)",
+    "Davidson, T., Warmsley, D., Macy, M., Weber, I.: Automated hate speech detection and the problem of offensive language (2017)",
+    "Demszky, D., Movshovitz-Attias: GoEmotions: A Dataset of Fine-Grained Emotions. In: 58th Annual Meeting of the Association for Computational Linguistics (ACL) (2020)",
+    "Devlin, J., Chang, M.W., Lee, K., Toutanova, K.: Bert: Pre-training of deep bidirectional transformers for language understanding (2019), https://arxiv.org/abs/1810.04805",
+    "F. Barbieri, J. Camacho-Collados, L.E.A., Neves, L.: Tweeteval: Unified benchmark and comparative evaluation for tweet classification. In: Findings of EMNLP (2020)",
+    "Gehman, S., Gururangan, S., Sap, M., Choi, Y., Smith, N.A.: Realtoxicityprompts: Evaluating neural toxic degeneration in language models (2020), https://arxiv.org/abs/2009.11462",
+    "Ghosh, S., Varshney, P., Galinkin, E., Parisien, C.: Aegis: Online adaptive ai content safety moderation with ensemble of llm experts (2024)",
+    "Gibert, O.d., Perez, N., García-Pablos, A., Cuadros, M.: Hate Speech Dataset from a White Supremacy Forum (Sep 2018)",
+    "Han, S., Rao, K., Ettinger, A., Jiang, L., Lin, B.Y., Lambert, N., Choi, Y., Dziri, N.: WildGuard: Open One-Stop Moderation Tools for Safety Risks, Jailbreaks, and Refusals of LLMs (2024)",
+    "Hendrycks, D., Burns, C., Basart, S., Zou, A., Mazeika, M., Song, D., Steinhardt, J.: Measuring massive multitask language understanding. In: International Conference on Learning Representations (2021)",
+    "Hom, C.: The semantics of racial epithets. The Journal of Philosophy (2008)",
+    "Inan, H., Upasani, K., Chi, J., Rungta, R., Iyer, K., Mao, Y., Tontchev, M., Hu, Q., Fuller, B., Testuggine, D., Khabsa, M.: Llama guard: Llm-based input-output safeguard for human-ai conversations (2023)",
+    "J. Dillion, A.G.e.a.: In: Adversarial Content Generation for Robustness Testing in Large Language Models (2023)",
+    "J. Kurrek, H.M.S.: Towards a comprehensive taxonomy and large-scale annotated corpus for online slur usage",
+    "Jha, A., Mamidi, R.: When does a compliment become sexist? analysis and classification of ambivalent sexism using twitter data. Vancouver, Canada (2017)",
+    "Ji, J., Liu, M., Dai, J., Pan, X., Zhang, C., Bian, C., Chen, B., Sun, R., Wang, Y., Yang, Y.: Beavertails: Towards improved safety alignment of llm via a human-preference dataset. Advances in Neural Information Processing Systems (2023)",
+    "Jiang, L., Hwang, J.D., Bhagavatula, C., Bras, R.L., Liang, J., Dodge, J., Sakaguchi, K., Forbes, M., Borchardt, J., Gabriel, S., et al.: Can machines learn morality? the delphi experiment (2021)",
+    "Jigsaw and Google: Jigsaw toxic comments dataset (2018)",
+    "Jin, Y., Wanner, L., Shvets, A.: Gpt-hatecheck: Can llms write better functional tests for hate speech detection? (2024)",
+    "Kennedy, C.J., Bacon, G., Sahn, A., Vacano, C.v.: Constructing interval variables via faceted Rasch measurement and multitask deep learning: a hate speech application (2020)",
+    "Li, X., Zhang, T., Dubois, Y., Taori, R., Gulrajani, I., Guestrin, C., Liang, P., Hashimoto, T.B.: Alpacaeval: An automatic evaluator of instruction-following models (2023)",
+    "Liao, S.M.: Ethics of artificial intelligence. Oxford University Press (2020)",
+    "Liu, Y., Lapata, M.: Text summarization with pretrained encoders (2019), https://arxiv.org/abs/1908.08345",
+    "Mathew, B., Saha, P., Yimam, S.M., Biemann, C., Goyal, P., Mukherjee, A.: HateXplain: A Benchmark Dataset for Explainable Hate Speech Detection (2022)",
+    "Maynez, J., Narayan, S., Bohnet, B., McDonald, R.: On faithfulness and factuality in abstractive summarization (2020), https://arxiv.org/abs/2005.00661",
+    "OpenAI: Openai moderation api (2025), available: https://platform.openai.com/docs/guides/moderation, Accessed: 2025-01-08",
+    "P. Röttger, B.V., Hovy, D.: Hatecheck: Functional tests for hate speech detection models. In: ACL (2021)",
+    "P. Sachdeva, R.B.: The measuring hate speech corpus: Leveraging rasch measurement theory for data perspectivism. European Language Resources Association",
+    "Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., Sutskever, I.: Language models are unsupervised multitask learners. OpenAI Blog",
+    "Rosenthal, S., Atanasova, P., Karadzhov, G., Zampieri, M., Nakov, P.: Solid: A large-scale semi-supervised dataset for offensive language identification",
+    "Röttger, P., Vidgen, B., Nguyen, D., Waseem, Z., Margetts, H., Pierrehumbert, J.B.: Hatecheck: Functional tests for hate speech detection models (2020)",
+    "Röttger, P., Pernisi, F., Vidgen, B., Hovy, D.: Safetyprompts: a systematic review of open datasets for evaluating and improving large language model safety (2025), https://arxiv.org/abs/2404.05399",
+    "Samory, M., Sen, I., Kohne, J., Flöck, F., Wagner, C.: “Call me sexist, but...” : Revisiting Sexism Detection Using Psychological Scales and Adversarial Samples. Proceedings of the International AAAI Conference on Web and Social Media (2021)",
+    "Sap, M., Card, D., Gabriel, S.: The risk of racial bias in hate speech detection. ACL (2019)",
+    "Sap, M., Gabriel, S., Qin, L., Jurafsky, D., Smith, N.A., Choi, Y.: Social Bias Frames: Reasoning about Social and Power Implications of Language. Association for Computational Linguistics",
+    "Schwitzgebel, E., Garza, M.: Designing ai with rights, consciousness, self-respect, and freedom. In: Lara, F., Deckers, J. (eds.) Ethics of Artificial Intelligence, pp. 459–479. Springer Nature Switzerland (2023)",
+    "Sheng, E., Chang, K.W., Natarajan, P., Peng, N.: The woman worked as a babysitter: On biases in language generation. In: Inui, K., Jiang, J., Ng, V., Wan, X. (eds.) Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP). Association for Computational Linguistics, Hong Kong, China (Nov 2019). https://doi.org/10.18653/v1/D19-1339, https://aclanthology.org/D19-1339/",
+    "Srivastava, A., Rastogi, A., Rao, A., Shoeb, A.A.M., Abid, A., Fisch, A., Brown, A.R., Santoro, A., Gupta, A.: Beyond the imitation game: Quantifying and extrapolating the capabilities of language models. Transactions on Machine Learning Research (2023)",
+    "Tilly, C.: The politics of collective violence. Cambridge University Press (2003)",
+    "Van Deth, J.W.: A conceptual map of political participation (2014)",
+    "Vidgen, B., Derczynski, L.: Challenges in multilingual content moderation (2021)",
+    "Waseem, Z., Hovy, D.: Hateful Symbols or Hateful People? Predictive Features for Hate Speech Detection on Twitter. San Diego, California (2016)",
+    "Zampieri, M., Malmasi, S., Nakov, P., Rosenthal, S., Farra, N., Kumar, R.: Predicting the type and target of offensive posts in social media (2019)",
+    "Zeng, W., Liu, Y., Mullins, R.: Shieldgemma: Generative ai content moderation based on gemma (2024)",
+    "Zheng, L., Chiang, W.L., Sheng, Y., Zhuang, S., Wu, Z., Zhuang, Y., Lin, Z., Li, Z., Li, D., Xing, E.P., Zhang, H., Gonzalez, J.E., Stoica, I.: Judging llm-as-a-judge with mt-bench and chatbot arena (2023)"
+  ],
+  "measurement_description": "The benchmark measured the performance (Macro F1 score) of LLM moderators in detecting hate speech, offensive language, and biases against various social groups, including religious groups like Muslims."
 }

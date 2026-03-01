@@ -2,78 +2,27 @@
   "filename": "2512.14554.pdf",
   "title": "VLegal-Bench: Cognitively Grounded Benchmark for Vietnamese Legal Reasoning of Large Language Models",
   "arxiv_url": "https://arxiv.org/pdf/2512.14554",
-  "benchmark_measurement": "Detection of religious bias in generated answers or decisions, as part of a broader bias detection task that also includes gender, racial, and political bias.",
-  "religious_groups": [],
-  "models_tested": [
-    "gpt-40",
-    "gpt-40-mini",
-    "claude-sonnet-4.5",
-    "claude-haiku-4.5",
-    "gemini-2.5-flash",
-    "gemini-2.5-pro",
-    "gpt-oss-20b",
-    "Qwen2.5-72B-Instruct",
-    "Qwen2.5-32B-Instruct",
-    "Qwen2.5-14B-Instruct",
-    "Qwen2.5-7B-Instruct",
-    "Qwen2.5-3B-Instruct",
-    "Llama-3.1-70B-Instruct",
-    "Llama-3.1-8B-Instruct",
-    "Llama-2-13b-chat-hf",
-    "Llama-2-7b-chat-hf",
-    "gemma-2-27b-it",
-    "gemma-2-9b-it",
-    "internlm3-8b-instruct",
-    "internlm-chat-20b",
-    "SeaLLMs-v3-7B-Chat",
-    "SeaLLMs-v3-1.5B-Chat",
-    "BloomVN-8B-chat",
-    "CMC-AI-Legal-32B"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Multiple-choice question answering on expert-constructed, bias-sensitive legal scenarios to test whether the model produces legally sound and impartial judgments."
+    },
+    {
+      "target": "Racial and Ethnic bias",
+      "methodology": "Multiple-choice question answering on expert-constructed, bias-sensitive legal scenarios to test whether the model produces legally sound and impartial judgments."
+    },
+    {
+      "target": "Political bias",
+      "methodology": "Multiple-choice question answering on expert-constructed, bias-sensitive legal scenarios to test whether the model produces legally sound and impartial judgments."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Multiple-choice question answering on expert-constructed, bias-sensitive legal scenarios to test whether the model produces legally sound and impartial judgments."
+    },
+    {
+      "target": "Social bias",
+      "methodology": "Multiple-choice question answering on expert-constructed, bias-sensitive legal scenarios to test whether the model produces legally sound and impartial judgments."
+    }
   ],
-  "languages_evaluated": [
-    "Vietnamese"
-  ],
-  "response_type": [
-    "short",
-    "long"
-  ],
-  "religion_component": "minor",
-  "base_benchmarks": [
-    "CaseHOLD",
-    "LexGLUE",
-    "LegalBench",
-    "GLUE",
-    "LAiW",
-    "Lawbench"
-  ],
-  "continuous_testing": false,
-  "findings": "Models struggled with the general bias detection task (which includes religious bias), with accuracy ranging from 15-58%. The paper suggests that detecting subtle biases requires domain-specific sensitivity, which is not fully addressed by general pretraining. Qwen2.5-14B achieved the best performance (57.79%) on this task among the tested models.",
-  "references": [
-    "Ilias Chalkidis, Abhik Jana, Dirk Hartung, Michael Bommarito, Ion Androutsopoulos, Daniel Martin Katz, and Nikolaos Aletras. 2022. LexGLUE: A Benchmark Dataset for Legal Language Understanding in English. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 4310-4330.",
-    "Jiawei Chen, Hongyu Lin, Xianpei Han, and Le Sun. 2023. Benchmarking large language models in retrieval-augmented generation. arXiv preprint arXiv:2309.01431 (2023).",
-    "Jiaxi Cui, Zongjian Li, Yang Yan, Bohua Chen, and Li Yuan. 2023. ChatLaw: Open-Source Legal Large Language Model with Integrated External Knowledge Bases. arXiv preprint arXiv:2306.16092 (2023).",
-    "Yongfu Dai, Duanyu Feng, Jimin Huang, Haochen Jia, Qianqian Xie, Yifang Zhang, Weiguang Han, Wei Tian, and Hao Wang. 2025. LAiW: A Chinese legal large language models benchmark. In Proceedings of the 31st International conference on computational linguistics. 10738-10766.",
-    "Darren Edge, Ha Trinh, Newman Cheng, Joshua Bradley, Alex Chao, Apurva Mody, Steven Truitt, Dasha Metropolitansky, Robert Osazuwa Ness, and Jonathan Larson. 2024. From local to global: A graph rag approach to query-focused summarization. arXiv preprint arXiv:2404.16130 (2024).",
-    "Zhiwei Fei, Xiaoyu Shen, Dawei Zhu, Fengzhe Zhou, Zhuo Han, Alan Huang, Songyang Zhang, Kai Chen, Zhixin Yin, Zongwen Shen, et al. 2024. Lawbench: Benchmarking legal knowledge of large language models. In Proceedings of the 2024 conference on empirical methods in natural language processing. 7933-7962.",
-    "Yunfan Gao, Yun Xiong, Xinyu Gao, Kangxiang Jia, Jinliu Pan, Yuxi Bi, Yixin Dai, Jiawei Sun, Haofen Wang, and Haofen Wang. 2023. Retrieval-augmented generation for large language models: A survey. arXiv preprint arXiv:2312.10997 2, 1 (2023).",
-    "Neel Guha, Julian Nyarko, Daniel E Ho, Christopher Re, et al. 2023. LegalBench: A Collaboratively Built Benchmark for Legal Reasoning. In Advances in Neural Information Processing Systems, Vol. 36.",
-    "Péter Homoki and Zsolt Ződi. 2024. Large language models and their possible uses in law. Hungarian Journal of Legal Studies 64, 3 (2024), 435-455.",
-    "Quzhe Huang, Mingxu Tao, Chen Zhang, Zhenwei An, Cong Jiang, Zhibin Chen, Zirui Wu, and Yansong Feng. 2023. Lawyer LLaMA Technical Report. arXiv:2305.15062 [cs.CL]",
-    "Haitao Li, You Chen, Qingyao Ai, Yueyue Wu, Ruizhe Zhang, and Yiqun Liu. 2024. Lexeval: A comprehensive chinese legal benchmark for evaluating large language models. Advances in Neural Information Processing Systems 37 (2024), 25061-25094.",
-    "Yang Liu, Dan Iter, Yichong Xu, Shuohang Wang, Ruochen Xu, and Chenguang Zhu. 2023. G-Eval: NLG Evaluation using GPT-4 with Better Human Alignment. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing. Association for Computational Linguistics, Singapore, 2511-2522. doi:10.18653/v1/2023.emnlp-main.153",
-    "Dat Quoc Nguyen and Anh Tuan Nguyen. 2020. PhoBERT: Pre-trained language models for Vietnamese. In Findings of the Association for Computational Linguistics: EMNLP 2020. 1037-1042.",
-    "Minh Nguyen, Viet Tran, and Huong Le. 2024. Vietnamese Legal Information Retrieval in Question-Answering System. arXiv preprint arXiv:2409.13699 (2024).",
-    "Minh-Tien Nguyen, Truong-Son Nguyen, Dac-Viet Lai, et al. 2021. VLSP 2021 Challenge: Vietnamese Legal Text Processing. In Proceedings of the 8th International Workshop on Vietnamese Language and Speech Processing.",
-    "Joel Niklaus, Danielle Matache, Theodor Würmli, Peter Hofer, and Ilias Chalkidis. 2023. MultiLegalPile: A 689GB Multilingual Legal Corpus for Training Large Language Models. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing. 1-14.",
-    "Long Phan, Hieu Tran, Hieu Nguyen, and Trieu H Trinh. 2022. ViT5: Pre-trained Text-to-Text Transformer for Vietnamese Language Generation. In Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies: Student Research Workshop. 136-142.",
-    "Nicholas Pipitone and Ghita Houir Alami. 2024. LegalBench-RAG: A Benchmark for Retrieval-Augmented Generation in the Legal Domain. arXiv preprint arXiv:2408.09543 (2024).",
-    "Zhongxiang Sun. 2023. A short survey of viewing large language models in legal aspect. arXiv preprint arXiv:2303.09136 (2023).",
-    "Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, et al. 2022. Chain-of-thought prompting elicits reasoning in large language models. In Advances in Neural Information Processing Systems, Vol. 35. 24824-24837.",
-    "Xiaoxian Yang, Zhifeng Wang, Qi Wang, Ke Wei, Kaiqi Zhang, and Jiangang Shi. 2024. Large language models for automated q&a involving legal documents: a survey on algorithms, frameworks and applications. International Journal of Web Information Systems 20, 4 (2024), 413-435.",
-    "Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik R Narasimhan, and Yuan Cao. 2022. React: Synergizing reasoning and acting in language models. In The eleventh international conference on learning representations.",
-    "Shengbin Yue, Wei Chen, Siyuan Wang, Bingxuan Li, et al. 2023. Disc-LawLLM: Fine-tuning Large Language Models for Effective Legal Reasoning. arXiv preprint arXiv:2309.11325 (2023).",
-    "Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric Xing, Hao Zhang, Joseph E. Gonzalez, and Ion Stoica. 2023. Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena. In Advances in Neural Information Processing Systems. arXiv:2306.05685 [cs.CL] https://openreview.net/forum?id=uccHPGDlao NeurIPS 2023 Datasets and Benchmarks Track.",
-    "Lucia Zheng, Neel Guha, Brandon R Anderson, Peter Henderson, and Daniel E Ho. 2021. When Does Pretraining Help? Assessing Self-Supervised Learning for Law and the CaseHOLD Dataset. In Proceedings of the 18th International Conference on Artificial Intelligence and Law. 159-168.",
-    "Wanjun Zhong, Ruixiang Cui, Yidong Guo, Yaobo Wang, et al. 2023. AGIEval: A Human-Centric Benchmark for Evaluating Foundation Models. arXiv preprint arXiv:2304.06364 (2023)."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

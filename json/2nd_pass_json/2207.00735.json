@@ -2,71 +2,23 @@
   "filename": "2207.00735.pdf",
   "title": "Can Language Models Make Fun? A Case Study in Chinese Comical Crosstalk",
   "arxiv_url": "https://arxiv.org/pdf/2207.00735",
-  "benchmark_measurement": "The benchmark did not measure any aspects of faith or religion. Its focus was on evaluating the ability of language models to generate humorous Chinese Comical Crosstalk scripts.",
-  "religious_groups": [],
-  "models_tested": [
-    "LSTM Seq2seq",
-    "GPT",
-    "UniLM",
-    "T5-small",
-    "T5-base",
-    "CPM-Large",
-    "Pangu-a",
-    "Zhouwenwang",
-    "GPT-3 (GPT3-Davinci)",
-    "GPT-3 (GPT3-Davinci-finetuned)"
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Human evaluation of generated crosstalk scripts using a binary 'ethically-risky flag' to identify the presence of biases, stereotypes, and insulting content."
+    },
+    {
+      "target": "Educational background bias",
+      "methodology": "Human evaluation of generated crosstalk scripts using a binary 'ethically-risky flag' to identify the presence of biases, stereotypes, and insulting content."
+    },
+    {
+      "target": "Occupation bias",
+      "methodology": "Human evaluation of generated crosstalk scripts using a binary 'ethically-risky flag' to identify the presence of biases, stereotypes, and insulting content."
+    },
+    {
+      "target": "Regional bias",
+      "methodology": "Human evaluation of generated crosstalk scripts using a binary 'ethically-risky flag' to identify the presence of biases, stereotypes, and insulting content."
+    }
   ],
-  "languages_evaluated": [
-    "Chinese"
-  ],
-  "response_type": [
-    "long"
-  ],
-  "religion_component": "none",
-  "base_benchmarks": [],
-  "continuous_testing": false,
-  "findings": "The paper does not contain any findings related to religion, as this was not a focus of the study.",
-  "references": [
-    "Miriam Amin and Manuel Burghardt. 2020. A survey on approaches to computational humor generation. In Proceedings of the The 4th Joint SIGHUM Workshop on Computational Linguistics for Cultural Heritage, Social Sciences, Humanities and Literature, pages 29–41.",
-    "Yoshua Bengio, Réjean Ducharme, Pascal Vincent, and Christian Janvin. 2003. A neural probabilistic language model. The journal of machine learning research, 3:1137–1155.",
-    "Dario Bertero and Pascale Fung. 2016. A long short-term memory framework for predicting humor in dialogues. In Proceedings of the 2016 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 130–135.",
-    "Kim Binsted and Graeme Ritchie. 1997. Computational rules for generating punning riddles.",
-    "Tom B Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, et al. 2020. Language models are few-shot learners. arXiv preprint arXiv:2005.14165.",
-    "Lei Chen and Chong MIn Lee. 2017. Predicting audience's laughter using convolutional neural network. arXiv preprint arXiv:1702.02584.",
-    "Peng-Yu Chen and Von-Wun Soo. 2018. Humor recognition using deep learning. In Proceedings of the 2018 conference of the north american chapter of the association for computational linguistics: Human language technologies, volume 2 (short papers), pages 113–117.",
-    "Kyunghyun Cho, Bart Van Merriënboer, Caglar Gulcehre, Dzmitry Bahdanau, Fethi Bougares, Holger Schwenk, and Yoshua Bengio. 2014. Learning phrase representations using rnn encoder-decoder for statistical machine translation. arXiv preprint arXiv:1406.1078.",
-    "Jia Deng, Wei Dong, Richard Socher, Li-Jia Li, Kai Li, and Li Fei-Fei. 2009. Imagenet: A large-scale hierarchical image database. In 2009 IEEE conference on computer vision and pattern recognition, pages 248–255. Ieee.",
-    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2018. Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805.",
-    "Li Dong, Nan Yang, Wenhui Wang, Furu Wei, Xiaodong Liu, Yu Wang, Jianfeng Gao, Ming Zhou, and Hsiao-Wuen Hon. 2019. Unified language model pre-training for natural language understanding and generation.",
-    "Shikang Du, Xiaojun Wan, and Yajie Ye. 2017. Towards automatic generation of entertaining dialogues in chinese crosstalks. arXiv preprint arXiv:1711.00294.",
-    "He He, Nanyun Peng, and Percy Liang. 2019. Pun generation with surprise. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 1734–1744, Minneapolis, Minnesota. Association for Computational Linguistics.",
-    "Jing He, Ming Zhou, and Long Jiang. 2012. Generating chinese classical poems with statistical machine translation models. In Twenty-Sixth AAAI Conference on Artificial Intelligence.",
-    "Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. 2016. Deep residual learning for image recognition. In Proceedings of the IEEE conference on computer vision and pattern recognition, pages 770–778.",
-    "Igor Labutov and Hod Lipson. 2012. Humor as circuits in semantic networks. In Proceedings of the 50th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers), pages 150–155.",
-    "Jiwei Li, Michel Galley, Chris Brockett, Jianfeng Gao, and William B Dolan. 2016. A diversity-promoting objective function for neural conversation models. In Proceedings of the 2016 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 110–119.",
-    "Yi Liao, Yasheng Wang, Qun Liu, and Xin Jiang. 2019. Gpt-based generation for classical chinese poetry.",
-    "Chin-Yew Lin. 2004. Rouge: A package for automatic evaluation of summaries. In Text summarization branches out, pages 74–81.",
-    "HF Lin, DY Zhang, Liang Yang, and Bo XU. 2016. Computational humor researches and applications [j]. Journal of Shandong University.",
-    "Lizhen Liu, Donghai Zhang, and Wei Song. 2018a. Exploiting syntactic structures for humor recognition. In Proceedings of the 27th international conference on computational linguistics, pages 1875–1883.",
-    "Lizhen Liu, Donghai Zhang, and Wei Song. 2018b. Modeling sentiment association in discourse for humor recognition. In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers), pages 586–591.",
-    "Andrew Mutton, Mark Dras, Stephen Wan, and Robert Dale. 2007. Gleu: Automatic evaluation of sentence-level fluency. In Proceedings of the 45th Annual Meeting of the Association of Computational Linguistics, pages 344–351.",
-    "Saša Petrović and David Matthews. 2013. Unsupervised joke generation from big data. In Proceedings of the 51st annual meeting of the association for computational linguistics (volume 2: Short papers), pages 228–232.",
-    "Sima Qian and Burton Watson. 1993. Records of the Grand Historian, volume 1. Columbia University Press New York.",
-    "Alec Radford, Karthik Narasimhan, Tim Salimans, and Ilya Sutskever. 2018. Improving language understanding by generative pre-training.",
-    "Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi Zhou, Wei Li, and Peter J Liu. 2019. Exploring the limits of transfer learning with a unified text-to-text transformer. arXiv preprint arXiv:1910.10683.",
-    "Pranav Rajpurkar, Robin Jia, and Percy Liang. 2018. Know what you don't know: Unanswerable questions for squad. arXiv preprint arXiv:1806.03822.",
-    "Pranav Rajpurkar, Jian Zhang, Konstantin Lopyrev, and Percy Liang. 2016. Squad: 100,000+ questions for machine comprehension of text. In Proceedings of the 2016 Conference on Empirical Methods in Natural Language Processing, pages 2383–2392.",
-    "Victor Raskin. 1979. Semantic mechanisms of humor. In Annual Meeting of the Berkeley Linguistics Society, volume 5, pages 325–335.",
-    "He Ren and Quan Yang. 2017. Neural joke generation. Final Project Reports of Course CS224n.",
-    "Ilya Sutskever, Oriol Vinyals, and Quoc V Le. 2014. Sequence to sequence learning with neural networks. Advances in neural information processing systems, 27.",
-    "Alex Wang, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel R Bowman. 2018. Glue: A multi-task benchmark and analysis platform for natural language understanding. In International Conference on Learning Representations.",
-    "Rui Yan, Han Jiang, Mirella Lapata, Shou-De Lin, Xueqiang Lv, and Xiaoming Li. 2013. I, poet: automatic chinese poetry composition through a generative summarization framework under constrained optimization. In Twenty-Third International Joint Conference on Artificial Intelligence.",
-    "Diyi Yang, Alon Lavie, Chris Dyer, and Eduard Hovy. 2015. Humor recognition and humor anchor extraction. In Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing, pages 2367–2376.",
-    "Xiaoyuan Yi, Ruoyu Li, and Maosong Sun. 2017. Generating chinese classical poems with rnn encoder-decoder. In Chinese Computational Linguistics and Natural Language Processing Based on Naturally Annotated Big Data, pages 211–223. Springer.",
-    "Zhiwei Yu, Jiwei Tan, and Xiaojun Wan. 2018. A neural approach to pun generation. In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 1650–1660.",
-    "Zhiwei Yu, Hongyu Zang, and Xiaojun Wan. 2020. Homophonic pun generation with lexically constrained rewriting. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 2870–2876.",
-    "Wei Zeng, Xiaozhe Ren, Teng Su, Hui Wang, Yi Liao, Zhiwei Wang, Xin Jiang, ZhenZhang Yang, Kaisheng Wang, Xiaoda Zhang, et al. 2021. Pangu-\\alpha: Large-scale autoregressive pretrained chinese language models with auto-parallel computation. arXiv preprint arXiv:2104.12369.",
-    "Xingxing Zhang and Mirella Lapata. 2014. Chinese poetry generation with recurrent neural networks. In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 670–680.",
-    "Zhengyan Zhang, Xu Han, Hao Zhou, Pei Ke, Yuxian Gu, Deming Ye, Yujia Qin, Yusheng Su, Haozhe Ji, Jian Guan, et al. 2021. Cpm: A large-scale generative chinese pre-trained language model. Al Open, 2:93–99."
-  ]
+  "primary_bias_target": "No Primary Bias Target"
 }

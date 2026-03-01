@@ -2,39 +2,98 @@
   "filename": "2506.12336.pdf",
   "title": "Benchmarking Trustworthiness in Multimodal LLMs for Video Understanding",
   "arxiv_url": "https://arxiv.org/pdf/2506.12336",
-  "bias_targets": [
-    {
-      "target": "Gender bias",
-      "methodology": "Evaluating model predictions on professional competence using videos with varying gender attributes (calculating p-values via Chi-square tests) and measuring stereotype generation/agreement rates in VQA tasks."
-    },
-    {
-      "target": "Age bias",
-      "methodology": "Assessing model predictions on professional competence and stereotype generation using videos featuring individuals of varying ages (young, middle-aged, older)."
-    },
-    {
-      "target": "Racial/Skin-tone bias",
-      "methodology": "Measuring stereotype generation and professional competence predictions using videos with subjects of varying skin colors (light, medium, dark) and assessing agreement with race-related stereotypical statements."
-    },
-    {
-      "target": "Occupational bias",
-      "methodology": "Evaluating stereotype generation based on professional contexts by prompting models to evaluate individuals' competence for specific roles (e.g., nurse, teacher, doctor) based on visual attributes."
-    },
-    {
-      "target": "Cultural and Ideological bias",
-      "methodology": "Presenting models with video pairs depicting opposing perspectives on ideology, culture, lifestyle, and social issues, then calculating the Refuse-to-Answer (RtA) rate to evaluate if models exhibit subjective preferences or maintain neutrality."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Prompting models to express agreement or disagreement with stereotypical statements about religion paired with semantically relevant and irrelevant videos."
-    },
-    {
-      "target": "Nationality bias",
-      "methodology": "Prompting models to express agreement or disagreement with stereotypical statements about nationality paired with semantically relevant and irrelevant videos."
-    },
-    {
-      "target": "Socioeconomic bias",
-      "methodology": "Prompting models to express agreement or disagreement with stereotypical statements regarding socioeconomic status paired with semantically relevant and irrelevant videos."
-    }
+  "religious_groups": [],
+  "models_tested": [
+    "Claude4-sonnet",
+    "Claude3.7-sonnet",
+    "Gemini1.5-Pro",
+    "Gemini1.5-Flash",
+    "GPT-40",
+    "Qwen2.5-VL-72B",
+    "Qwen2.5-VL-7B",
+    "LLaVA-Video-72B",
+    "LLaVA-Video-7B",
+    "MiniCPM-o-2.6-7B",
+    "MiniCPM-V-2.6-7B",
+    "Oryx-34B",
+    "Oryx1.5-7B",
+    "InternVL2.5-78B",
+    "LLaVA-OneVision-72B",
+    "mPLUG-Owl3-7B",
+    "LongVA-7B",
+    "Sharegpt4video-8B",
+    "TPO-7B",
+    "Long-LLaVA-7B",
+    "Video-ChatGPT-7B",
+    "LiveCC-7B",
+    "VideoLLaMA3-7B"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "TrustLLM",
+    "MultiTrust"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper does not report specific findings related to religion. The results for the 'Agreement on Stereotypes' task, which includes a religion category, are aggregated. General findings indicate that closed-source models exhibit significantly lower agreement rates with stereotypes (6.5%-12.3%) compared to most open-source models.",
+  "references": [
+    "C. Fu, Y. Dai, Y. Luo, L. Li, S. Ren, R. Zhang, Z. Wang, C. Zhou, Y. Shen, M. Zhang et al., \"Video-mme: The first-ever comprehensive evaluation benchmark of multi-modal llms in video analysis,\" arXiv preprint arXiv:2405.21075, 2024.",
+    "R. Li, X. Wang, Y. Zhang, Z. Wang, and S. Yeung-Levy, \"Temporal preference optimization for long-form video understanding,\" arXiv preprint arXiv:2501.13919, 2025.",
+    "K. Li, Y. Wang, Y. He, Y. Li, Y. Wang, Y. Liu, Z. Wang, J. Xu, G. Chen, P. Luo et al., \"Mvbench: A comprehensive multi-modal video understanding benchmark,\" in Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2024, pp. 22 195-22 206.",
+    "Y. Wang, Y. Wang, D. Zhao, C. Xie, and Z. Zheng, \"Videohallucer: Evaluating intrinsic and extrinsic hallucinations in large video-language models,\" arXiv preprint arXiv:2406.16338, 2024.",
+    "T. Guan, F. Liu, X. Wu, R. Xian, Z. Li, X. Liu, X. Wang, L. Chen, F. Huang, Y. Yacoob et al., \"Hallusionbench: an advanced diagnostic suite for entangled language hallucination and visual illusion in large vision-language models,\" in Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2024, pp. 14 375-14 385.",
+    "X. Liu, Z. Li, Z. He, P. Li, S. Xia, X. Cui, H. Huang, X. Yang, and R. He, \"Video-safetybench: A benchmark for safety evaluation of video lvlms,\" arXiv preprint arXiv:2505.11842, 2025.",
+    "M. Ning, B. Zhu, Y. Xie, B. Lin, J. Cui, L. Yuan, D. Chen, and L. Yuan, \"Video-bench: A comprehensive benchmark and toolkit for evaluating video-based large language models,\" arXiv preprint arXiv:2311.16103, 2023.",
+    "Y. Liu, S. Li, Y. Liu, Y. Wang, S. Ren, L. Li, S. Chen, X. Sun, and L. Hou, \"Tempcompass: Do video llms really understand videos?\" arXiv preprint arXiv: 2403.00476, 2024.",
+    "W. Hu, S. Gu, Y. Wang, and R. Hong, \"Videojail: Exploiting video-modality vulnerabilities for jailbreak attacks on multimodal large language models,\" in ICLR 2025 Workshop on Building Trust in Language Models and Applications, 2025. [Online]. Available: https://openreview.net/forum?id=fSAIDcPduZ",
+    "J. Park, K. J. Jang, B. Alasaly, S. Mopidevi, A. Zolensky, E. Eaton, I. Lee, and K. Johnson, \"Assessing modality bias in video question answering benchmarks with multimodal large language models,\" in Proceedings of the AAAI Conference on Artificial Intelligence, vol. 39, no. 19, 2025, pp. 19821-19829.",
+    "H. Gao, J. Qu, J. Tang, B. Bi, Y. Liu, H. Chen, L. Liang, L. Su, and Q. Huang, \"Exploring hallucination of large multimodal models in video understanding: Benchmark, analysis and mitigation,\" arXiv preprint arXiv:2503.19622, 2025.",
+    "Y. Tang, J. Bi, S. Xu, L. Song, S. Liang, T. Wang, D. Zhang, J. An, J. Lin, R. Zhu et al., \"Video understanding with large language models: A survey,\" IEEE Transactions on Circuits and Systems for Video Technology, 2025.",
+    "M. Cai, R. Tan, J. Zhang, B. Zou, K. Zhang, F. Yao, F. Zhu, J. Gu, Y. Zhong, Y. Shang et al., \"Temporalbench: Benchmarking fine-grained temporal understanding for multimodal video models,\" arXiv preprint arXiv:2410.10818, 2024.",
+    "D. Saravanan, D. Singh, V. Gupta, Z. Khan, V. Gandhi, and M. Tapaswi, \"Velociti: Can video-language models bind semantic concepts through time?\" arXiv preprint arXiv:2406.10889, 2024.",
+    "Y. Wang, J. Song, Y. Gao, X. Wang, Y. Yao, Y. Teng, X. Ma, Y. Wang, and Y.-G. Jiang, \"Safevid: Toward safety aligned video large multimodal models,\" arXiv preprint arXiv:2505.11926, 2025.",
+    "D. Zhu, J. Chen, X. Shen, X. Li, and M. Elhoseiny, \"Minigpt-4: Enhancing vision-language understanding with advanced large language models,\" arXiv preprint arXiv:2304.10592, 2023.",
+    "H. Liu, C. Li, Y. Li, B. Li, Y. Zhang, S. Shen, and Y. J. Lee, \"Llava-next: Improved reasoning, ocr, and world knowledge,\" January 2024. [Online]. Available: https://llava-vl.github.io/blog/2024-01-30-llava-next/",
+    "S. Bai, K. Chen, X. Liu, J. Wang, W. Ge, S. Song, K. Dang, P. Wang, S. Wang, J. Tang, H. Zhong, Y. Zhu, M. Yang, Z. Li, J. Wan, P. Wang, W. Ding, Z. Fu, Y. Xu, J. Ye, X. Zhang, T. Xie, Z. Cheng, H. Zhang, Z. Yang, H. Xu, and J. Lin, \"Qwen2.5-vl technical report,\" arXiv preprint arXiv:2502.13923, 2025.",
+    "A. Hurst, A. Lerer, A. P. Goucher, A. Perelman, A. Ramesh, A. Clark, A. Ostrow, A. Welihinda, A. Hayes, A. Radford et al., \"Gpt-4o system card,\" arXiv preprint arXiv:2410.21276, 2024.",
+    "W. Wang, Z. He, W. Hong, Y. Cheng, X. Zhang, J. Qi, X. Gu, S. Huang, B. Xu, Y. Dong et al., \"Lvbench: An extreme long video understanding benchmark,\" arXiv preprint arXiv:2406.08035, 2024.",
+    "Y. Zhang, Y. Huang, Y. Sun, C. Liu, Z. Zhao, Z. Fang, Y. Wang, H. Chen, X. Yang, X. Wei et al., \"Benchmarking trustworthiness of multimodal large language models: A comprehensive study,\" arXiv preprint arXiv:2406.07057, 2024.",
+    "L. Sun, Y. Huang, H. Wang, S. Wu, Q. Zhang, C. Gao, Y. Huang, W. Lyu, Y. Zhang, X. Li et al., \"Trustllm: Trustworthiness in large language models,\" arXiv preprint arXiv:2401.05561, vol. 3, 2024.",
+    "K. Nan, R. Xie, P. Zhou, T. Fan, Z. Yang, Z. Chen, X. Li, J. Yang, and Y. Tai, \"Openvid-1m: A large-scale high-quality dataset for text-to-video generation,\" arXiv preprint arXiv:2407.02371, 2024.",
+    "L. Zhou, C. Xu, and J. J. Corso, \"Towards automatic learning of procedures from web instructional videos,\" in AAAI Conference on Artificial Intelligence, 2018, pp. 7590-7598. [Online]. Available: https: //www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/17344",
+    "L. Bashmal, Y. Bazi, M. M. Al Rahhal, M. Zuair, and F. Melgani, \"Capera: Captioning events in aerial videos,\" Remote Sensing, vol. 15, no. 8, p. 2139, 2023.",
+    "R. Socher, A. Perelygin, J. Wu, J. Chuang, C. D. Manning, A. Ng, and C. Potts, \"Recursive deep models for semantic compositionality over a sentiment treebank,\" in Proceedings of the 2013 Conference on Empirical Methods in Natural Language Processing. Seattle, Washington, USA: Association for Computational Linguistics, Oct. 2013, pp. 1631-1642. [Online]. Available: https://www.aclweb.org/anthology/D13-1170",
+    "M. Mazeika, L. Phan, X. Yin, A. Zou, Z. Wang, N. Mu, E. Sakhaee, N. Li, S. Basart, B. Li et al., \"Harmbench: A standardized evaluation framework for automated red teaming and robust refusal,\" arXiv preprint arXiv:2402.04249, 2024.",
+    "S. Gehman, S. Gururangan, M. Sap, Y. Choi, and N. A. Smith, \"Realtoxicityprompts: Evaluating neural toxic degeneration in language models,\" arXiv preprint arXiv:2009.11462, 2020.",
+    "J. et al., \"Enhancing human action recognition and violence detection through deep learning audiovisual fusion,\" arXiv preprint arXiv:2408.02033, 2024.",
+    "N. Dufour, A. Gully, P. Karlsson, A. Vorbyov, T. Leung, J. Childs, and C. Bregler, \"Deepfakes detection dataset,\" Google and Jigsaw, 2019.",
+    "Y. Gong, D. Ran, J. Liu, C. Wang, T. Cong, A. Wang, S. Duan, and X. Wang, \"Figstep: Jailbreaking large vision-language models via typographic visual prompts,\" in Proceedings of the AAAI Conference on Artificial Intelligence, vol. 39, no. 22, 2025, pp. 23 951-23 959.",
+    "X. Liu, Y. Zhu, J. Gu, Y. Lan, C. Yang, and Y. Qiao, \"Mm-safetybench: A benchmark for safety evaluation of multimodal large language models,\" in European Conference on Computer Vision. Springer, 2024, pp. 386-403.",
+    "T. Sharma, A. Stangl, L. Zhang, Y.-Y. Tseng, I. Xu, L. Findlater, D. Gurari, and Y. Wang, \"Disability-first design and creation of a dataset showing private visual information collected with people who are blind,\" in Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems, 2023, pp. 1-15.",
+    "N. Mireshg, H. Kim, X. Zhou, Y. Tsvetkov, M. Sap, R. Shokri, and Y. Choi, \"Can llms keep a secret? testing privacy implications of language models via contextual integrity theory,\" arXiv preprint arXiv:2310.17884, 2023.",
+    "Y. Li, Y. Du, K. Zhou, J. Wang, W. X. Zhao, and J.-R. Wen, \"Evaluating object hallucination in large vision-language models,\" arXiv preprint arXiv:2305.10355, 2023.",
+    "Z. Ying, A. Liu, S. Liang, L. Huang, J. Guo, W. Zhou, X. Liu, and D. Tao, \"Safebench: A safety evaluation framework for multimodal large language models,\" arXiv preprint arXiv:2410.18927, 2024.",
+    "M. Li, L. Li, Y. Yin, M. Ahmed, Z. Liu, and Q. Liu, \"Red teaming visual language models,\" arXiv preprint arXiv:2401.12915, 2024.",
+    "C. Szegedy, W. Zaremba, I. Sutskever, J. Bruna, D. Erhan, I. Goodfellow, and R. Fergus, \"Intriguing properties of neural networks,\" arXiv preprint arXiv:1312.6199, 2013.",
+    "H. Chen, Y. Zhang, Y. Dong, X. Yang, H. Su, and J. Zhu, \"Rethinking model ensemble in transfer-based adversarial attacks,\" arXiv preprint arXiv:2303.09105, 2023.",
+    "M. Nadeem, A. Bethke, and S. Reddy, \"Stereoset: Measuring stereotypical bias in pretrained language models,\" arXiv preprint arXiv:2004.09456, 2020.",
+    "N. Nangia, C. Vania, R. Bhalerao, and S. R. Bowman, \"Crows-pairs: A challenge dataset for measuring social biases in masked language models,\" arXiv preprint arXiv:2010.00133, 2020.",
+    "G. Team, P. Georgiev, V. I. Lei, R. Burnell, L. Bai, A. Gulati, G. Tanzer, D. Vincent, Z. Pan, S. Wang et al., \"Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context,\" arXiv preprint arXiv:2403.05530, 2024.",
+    "\"Claude 3 haiku: our fastest model yet. 2024.\" https://www.anthropic.com/news/claude-3-haiku, 2024.",
+    "Y. Zhang, J. Wu, W. Li, B. Li, Z. Ma, Z. Liu, and C. Li, \"Video instruction tuning with synthetic data,\" 2024. [Online]. Available: https://arxiv.org/abs/2410.02713",
+    "Y. Yao, T. Yu, A. Zhang, C. Wang, J. Cui, H. Zhu, T. Cai, H. Li, W. Zhao, Z. He et al., \"Minicpm-v: A gpt-4v level mllm on your phone,\" arXiv preprint arXiv:2408.01800, 2024.",
+    "P. Zhang, K. Zhang, B. Li, G. Zeng, J. Yang, Y. Zhang, Z. Wang, H. Tan, C. Li, and Z. Liu, \"Long context transfer from language to vision,\" arXiv preprint arXiv:2406.16852, 2024. [Online]. Available: https://arxiv.org/abs/2406.16852",
+    "J. Chen, Z. Zeng, Y. Lin, W. Li, Z. Ma, and M. Z. Shou, \"Livecc: Learning video llm with streaming speech transcription at scale,\" in CVPR, 2025.",
+    "L. Chen, X. Wei, J. Li, X. Dong, P. Zhang, Y. Zang, Z. Chen, H. Duan, B. Lin, Z. Tang et al., \"Sharegpt4video: Improving video understanding and generation with better captions,\" arXiv preprint arXiv:2406.04325, 2024.",
+    "Z. Huang, X. Li, J. Li, J. Wang, X. Zeng, C. Liang, T. Wu, X. Chen, L. Li, and L. Wang, \"Online video understanding: A comprehensive benchmark and memory-augmented method,\" arXiv preprint arXiv:2501.00584, 2024.",
+    "N. Madan, A. Møgelmose, R. Modi, Y. S. Rawat, and T. B. Moeslund, \"Foundation models for video understanding: A survey,\" Authorea Preprints, 2024.",
+    "Y. Wang, H. Li, X. Han, P. Nakov, and T. Baldwin, \"Do-not-answer: A dataset for evaluating safeguards in llms,\" arXiv preprint arXiv:2308.13387, 2023."
+  ],
+  "measurement_description": "The benchmark measures the model's tendency to agree with stereotypical statements in religious contexts, as part of the 'Agreement on Stereotypes' task."
 }

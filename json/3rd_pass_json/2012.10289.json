@@ -2,27 +2,86 @@
   "filename": "2012.10289.pdf",
   "title": "HateXplain: A Benchmark Dataset for Explainable Hate Speech Detection",
   "arxiv_url": "https://arxiv.org/pdf/2012.10289",
-  "bias_targets": [
-    {
-      "target": "Racial bias",
-      "methodology": "Evaluating unintended identity-based bias in hate speech classification using AUC-based metrics (Subgroup AUC, BPSN AUC, BNSP AUC, Generalized Mean of Bias AUCs) across racial groups such as African, Arab, Asian, Caucasian, and Hispanic communities."
-    },
-    {
-      "target": "Religious bias",
-      "methodology": "Evaluating unintended identity-based bias in hate speech classification using AUC-based metrics (Subgroup AUC, BPSN AUC, BNSP AUC, Generalized Mean of Bias AUCs) across religious groups such as Islam, Jewish, Buddhism, Christian, and Hindu."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Evaluating unintended identity-based bias in hate speech classification using AUC-based metrics (Subgroup AUC, BPSN AUC, BNSP AUC, Generalized Mean of Bias AUCs) comparing classifications mentioning Women and Men."
-    },
-    {
-      "target": "Sexual orientation bias",
-      "methodology": "Evaluating unintended identity-based bias in hate speech classification using AUC-based metrics (Subgroup AUC, BPSN AUC, BNSP AUC, Generalized Mean of Bias AUCs) for sexual orientations, specifically distinguishing between Gay and Heterosexual mentions."
-    },
-    {
-      "target": "Immigrant/Refugee bias",
-      "methodology": "Evaluating unintended identity-based bias in hate speech classification using AUC-based metrics (Subgroup AUC, BPSN AUC, BNSP AUC, Generalized Mean of Bias AUCs) for populations identified as Refugees or Immigrants."
-    }
+  "religious_groups": [
+    "Islam",
+    "Judaism",
+    "Buddhism",
+    "Christianity",
+    "Hinduism"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "models_tested": [
+    "CNN-GRU",
+    "BiRNN",
+    "BiRNN-Attention",
+    "BERT"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "ERASER"
+  ],
+  "continuous_testing": false,
+  "findings": "The top three communities targeted by hate speech in the dataset were African, Islam, and Jewish. The top three content words found in hate speech rationales were 'nigger', 'kike', and 'moslems'. Models like BERT-HateXplain showed better performance in handling bias against religious communities like Jewish and Islam compared to other models.",
+  "references": [
+    "Aluru, S. S.; Mathew, B.; Saha, P.; and Mukherjee, A. 2020. Deep Learning Models for Multilingual Hate Speech Detection. arXiv preprint arXiv:2004.06465 .",
+    "Arango, A.; Pérez, J.; and Poblete, B. 2019. Hate Speech Detection is Not as Easy as You May Think: A Closer Look at Model Validation. In Proceedings of the 42nd International ACM SIGIR Conference on Research and Development in Information Retrieval, 45–54. Paris, France: Association for Computing Machinery.",
+    "Basile, V.; Bosco, C.; Fersini, E.; Nozza, D.; Patti, V.; Rangel Pardo, F. M.; Rosso, P.; and Sanguinetti, M. 2019. SemEval-2019 Task 5: Multilingual Detection of Hate Speech Against Immigrants and Women in Twitter. In Proceedings of the 13th International Workshop on Semantic Evaluation, 54–63. Minneapolis, Minnesota, USA: Association for Computational Linguistics.",
+    "Borkan, D.; Dixon, L.; Sorensen, J.; Thain, N.; and Vasserman, L. 2019. Nuanced Metrics for Measuring Unintended Bias with Real Data for Text Classification. In Companion of The 2019 World Wide Web Conference, WWW, 491–500. San Francisco, CA, USA: Association for Computing Machinery.",
+    "Bosco, C.; Felice, D.; Poletto, F.; Sanguinetti, M.; and Maurizio, T. 2018. Overview of the EVALITA 2018 Hate Speech Detection Task. In EVALITA 2018-Sixth Evaluation Campaign of Natural Language Processing and Speech Tools for Italian, volume 2263, 1–9. Turin, Italy: CEUR-WS.org.",
+    "Burnap, P.; and Williams, M. L. 2016. Us and them: identifying cyber hate on Twitter across multiple protected characteristics. EPJ Data Sci. 5(1): 11.",
+    "Camburu, O.; Rocktäschel, T.; Lukasiewicz, T.; and Blunsom, P. 2018. e-SNLI: Natural Language Inference with Natural Language Explanations. In In 31st Annual Conference on Neural Information Processing Systems, 9560-9572. Montréal, Canada: Advances in Neural Information Processing Systems.",
+    "Council, E. 2016. EU Regulation 2016/679 General Data Protection Regulation (GDPR). Official Journal of the European Union 59(6): 1–88.",
+    "Davidson, T.; Bhattacharya, D.; and Weber, I. 2019. Racial Bias in Hate Speech and Abusive Language Detection Datasets. In Proceedings of the Third Workshop on Abusive Language Online, 25–35. Florence, Italy: Association for Computational Linguistics.",
+    "Davidson, T.; Warmsley, D.; Macy, M. W.; and Weber, I. 2017. Automated Hate Speech Detection and the Problem of Offensive Language. In Proceedings of the Eleventh International Conference on Web and Social Media, 512-515. Montréal, Québec, Canada: AAAI Press.",
+    "de Gibert, O.; Perez, N.; García-Pablos, A.; and Cuadros, M. 2018. Hate Speech Dataset from a White Supremacy Forum. In Proceedings of the 2nd Workshop on Abusive Language Online (ALW2), 11–20. Brussels, Belgium: Association for Computational Linguistics.",
+    "Devlin, J.; Chang, M.-W.; Lee, K.; and Toutanova, K. 2019. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, 4171-4186. Minneapolis, Minnesota: Association for Computational Linguistics.",
+    "DeYoung, J.; Jain, S.; Rajani, N. F.; Lehman, E.; Xiong, C.; Socher, R.; and Wallace, B. C. 2020. ERASER: A Benchmark to Evaluate Rationalized NLP Models. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, 4443–4458. Online: Association for Computational Linguistics.",
+    "Dixon, L.; Li, J.; Sorensen, J.; Thain, N.; and Vasserman, L. 2018. Measuring and Mitigating Unintended Bias in Text Classification. In Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society, 67–73. Association for Computing Machinery.",
+    "Doshi-Velez, Finale; Kim, B. 2017. Towards A Rigorous Science of Interpretable Machine Learning. In eprint arXiv:1702.08608.",
+    "Fortuna, P.; and Nunes, S. 2018. A survey on automatic detection of hate speech in text. ACM Computing Surveys (CSUR) 51(4): 85.",
+    "Founta, A.; Djouvas, C.; Chatzakou, D.; Leontiadis, I.; Blackburn, J.; Stringhini, G.; Vakali, A.; Sirivianos, M.; and Kourtellis, N. 2018. Large Scale Crowdsourcing and Characterization of Twitter Abusive Behavior. In Proceedings of the Twelfth International Conference on Web and Social Media, 491-500. Stanford, California, USA: AAAI Press.",
+    "Goodfellow, I.; Bengio, Y.; and Courville, A. 2016. Deep Learning. MIT Press. http://www.deeplearningbook.org.",
+    "Greenberg, J.; and Pyszczynski, T. 1985. The effect of an overheard ethnic slur on evaluations of the target: How to spread a social disease. Journal of Experimental Social Psychology 21(1): 61–72.",
+    "Gröndahl, T.; Pajola, L.; Juuti, M.; Conti, M.; and Asokan, N. 2018. All You Need is: Evading Hate Speech Detection. In Proceedings of the 11th ACM Workshop on Artificial Intelligence and Security, 2–12. Toronto, ON, Canada: Association for Computing Machinery.",
+    "Jacovi, A.; and Goldberg, Y. 2020. Towards Faithfully Interpretable NLP Systems: How Should We Define and Evaluate Faithfulness? In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, 4198–4205. Online: Association for Computational Linguistics.",
+    "Kingma, D. P.; and Ba, J. 2015. Adam: A Method for Stochastic Optimization. In In Proceedings of 3rd International Conference on Learning Representations. San Diego, CA, USA: International Conference on Learning Representations.",
+    "Lei, T.; Barzilay, R.; and Jaakkola, T. S. 2016. Rationalizing Neural Predictions. In Proceedings of the 2016 Conference on Empirical Methods in Natural Language Processing, 107-117. Austin, Texas, USA: The Association for Computational Linguistics.",
+    "Lima, L.; Reis, J. C.; Melo, P.; Murai, F.; Araujo, L.; Vikatos, P.; and Benevenuto, F. 2018. Inside the right-leaning echo chambers: Characterizing gab, an unmoderated social system. In 2018 IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining, 515–522. Barcelona, Spain: IEEE Computer Society.",
+    "Lipton, Z. C. 2018. The mythos of model interpretability. Communications of the ACM 61(10): 36-43.",
+    "Liu, B.; and Lane, I. 2016. Attention-Based Recurrent Neural Network Models for Joint Intent Detection and Slot Filling. In Interspeech 2016, 17th Annual Conference of the International Speech Communication Association, 685–689. San Francisco, CA, USA: International Speech Communication Association.",
+    "Mathew, B.; Dutt, R.; Goyal, P.; and Mukherjee, A. 2019a. Spread of hate speech in online social media. In Proceedings of the 10th ACM Conference on Web Science, 173–182. Boston, MA, USA: Association for Computing Machinery.",
+    "Mathew, B.; Illendula, A.; Saha, P.; Sarkar, S.; Goyal, P.; and Mukherjee, A. 2020. Hate Begets Hate: A Temporal Study of Hate Speech. Proceedings of the ACM on Human-Computer Interaction .",
+    "Mathew, B.; Saha, P.; Tharad, H.; Rajgaria, S.; Singhania, P.; Maity, S. K.; Goyal, P.; and Mukherjee, A. 2019b. Thou shalt not hate: Countering online hate speech. In Proceedings of the International AAAI Conference on Web and Social Media, 369-380. Munich, Germany: AAAI Press.",
+    "Mishra, P.; Del Tredici, M.; Yannakoudakis, H.; and Shutova, E. 2018. Author profiling for abuse detection. In Proceedings of the 27th International Conference on Computational Linguistics, 1088–1098. Santa Fe, New Mexico, USA: Association for Computational Linguistics.",
+    "Olteanu, A.; Castillo, C.; Boy, J.; and Varshney, K. R. 2018. The Effect of Extremist Violence on Hateful Speech Online. In Proceedings of the Twelfth International Conference on Web and Social Media, 221–230. Stanford, California, USA: AAAI Press.",
+    "Ousidhoum, N.; Lin, Z.; Zhang, H.; Song, Y.; and Yeung, D.-Y. 2019. Multilingual and Multi-Aspect Hate Speech Analysis. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), 4667–4676. Hong Kong, China: Association for Computational Linguistics.",
+    "Pennington, J.; Socher, R.; and Manning, C. D. 2014. Glove: Global Vectors for Word Representation. In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing, 1532-1543. Doha, Qatar: Association for Computational Linguistics.",
+    "Qian, J.; Bethke, A.; Liu, Y.; Belding, E. M.; and Wang, W. Y. 2019a. A Benchmark Dataset for Learning to Intervene in Online Hate Speech. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing, 4754-4763. Hong Kong, China: Association for Computational Linguistics.",
+    "Qian, J.; ElSherief, M.; Belding, E. M.; and Wang, W. Y. 2018a. Hierarchical CVAE for Fine-Grained Hate Speech Classification. In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, 3550–3559. Brussels, Belgium: Association for Computational Linguistics.",
+    "Qian, J.; ElSherief, M.; Belding, E. M.; and Wang, W. Y. 2018b. Leveraging Intra-User and Inter-User Representation Learning for Automated Hate Speech Detection. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, 118–123. New Orleans, Louisiana, USA: Association for Computational Linguistics.",
+    "Qian, J.; ElSherief, M.; Belding, E. M.; and Wang, W. Y. 2019b. Learning to Decipher Hate Symbols. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, 3006–3015. Minneapolis, MN, USA: Association for Computational Linguistics.",
+    "Rajani, N. F.; McCann, B.; Xiong, C.; and Socher, R. 2019. Explain Yourself! Leveraging Language Models for Commonsense Reasoning. In Proceedings of the 57th Conference of the Association for Computational Linguistics, 4932-4942. Florence, Italy: Association for Computational Linguistics.",
+    "Ribeiro, M. H.; Calais, P. H.; Santos, Y. A.; Almeida, V. A. F.; and Jr., W. M. 2018. Characterizing and Detecting Hateful Users on Twitter. In Proceedings of the Twelfth International Conference on Web and Social Media, 676–679. Stanford, California, USA: AAAI Press.",
+    "Ribeiro, M. T.; Singh, S.; and Guestrin, C. 2016. “Why Should I Trust You?”: Explaining the Predictions of Any Classifier. In Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 1135–1144. New York, NY, USA: Association for Computing Machinery.",
+    "Sanguinetti, M.; Poletto, F.; Bosco, C.; Patti, V.; and Stranisci, M. 2018. An Italian Twitter Corpus of Hate Speech against Immigrants. In Proceedings of the Eleventh International Conference on Language Resources and Evaluation. Miyazaki, Japan: European Language Resources Association.",
+    "Sap, M.; Card, D.; Gabriel, S.; Choi, Y.; and Smith, N. A. 2019. The Risk of Racial Bias in Hate Speech Detection. In Proceedings of the 57th Conference of the Association for Computational Linguistics, 1668–1678. Florence, Italy: Association for Computational Linguistics.",
+    "Schuster, M.; and Paliwal, K. K. 1997. Bidirectional recurrent neural networks. IEEE Trans. Signal Process. 45(11): 2673-2681.",
+    "Silva, L. A.; Mondal, M.; Correa, D.; Benevenuto, F.; and Weber, I. 2016. Analyzing the Targets of Hate in Online Social Media. In Proceedings of the Tenth International Conference on Web and Social Media, 687-690. Cologne, Germany: AAAI Press.",
+    "Soral, W.; Bilewicz, M.; and Winiewski, M. 2018. Exposure to hate speech increases prejudice through desensitization. Aggressive behavior 44(2): 136-146.",
+    "Van Huynh, T.; Nguyen, V. D.; Van Nguyen, K.; Nguyen, N. L.-T.; and Nguyen, A. G.-T. 2019. Hate Speech Detection on Vietnamese Social Media Text using the Bi-GRU-LSTM-CNN Model. arXiv preprint arXiv:1911.03644 .",
+    "Vigna, F. D.; Cimino, A.; Dell’Orletta, F.; Petrocchi, M.; and Tesconi, M. 2017. Hate Me, Hate Me Not: Hate Speech Detection on Facebook. In Proceedings of the First Italian Conference on Cybersecurity, volume 1816, 86–95. Venice, Italy: CEUR-WS.org.",
+    "Wang, W.; Chen, L.; Thirunarayan, K.; and Sheth, A. P. 2014. Cursing in English on twitter. In Proceedings of the 17th ACM conference on Computer supported cooperative work & social computing, 415-425. Baltimore, MD, USA: Association for Computing Machinery.",
+    "Waseem, Z.; and Hovy, D. 2016. Hateful Symbols or Hateful People? Predictive Features for Hate Speech Detection on Twitter. In Proceedings of the NAACL Student Research Workshop, 88-93. San Diego, California, USA: The Association for Computational Linguistics.",
+    "Williams, M. L.; Burnap, P.; Javed, A.; Liu, H.; and Ozalp, S. 2020. Hate in the machine: anti-Black and anti-Muslim social media posts as predictors of offline racially and religiously aggravated crime. The British Journal of Criminology 60(1): 93-117.",
+    "Yessenalina, A.; Choi, Y.; and Cardie, C. 2010. Automatically Generating Annotator Rationales to Improve Sentiment Classification. In Proceedings of the 48th Annual Meeting of the Association for Computational Linguistics, 336-341. Uppsala, Sweden: The Association for Computer Linguistics.",
+    "Zaidan, O.; Eisner, J.; and Piatko, C. D. 2007. Using “Annotator Rationales” to Improve Machine Learning for Text Categorization. In Proceedings of Human Language Technology Conference of the North American Chapter of the Association of Computational Linguistics, 260-267. Rochester, New York, USA: The Association for Computational Linguistics.",
+    "Zannettou, S.; Bradlyn, B.; Cristofaro, E. D.; Kwak, H.; Sirivianos, M.; Stringhini, G.; and Blackburn, J. 2018. What is Gab: A Bastion of Free Speech or an Alt-Right Echo Chamber. In Companion of the The Web Conference 2018 on The Web Conference 2018, WWW 2018,, April 23-27, 2018, 1007-1014. Lyon, France: Association for Computing Machinery.",
+    "Zhang, Z.; Robinson, D.; and Tepper, J. A. 2018. Detecting Hate Speech on Twitter Using a Convolution-GRU Based Deep Neural Network. In Proceedings of The Semantic Web - 15th International Conference, 745–760. Heraklion, Crete, Greece: Springer."
+  ],
+  "measurement_description": "The benchmark measures unintended bias in hate speech detection models against various target communities, including religious groups. It evaluates model performance on classifying posts as hateful, offensive, or normal, and also assesses the explainability of model predictions."
 }

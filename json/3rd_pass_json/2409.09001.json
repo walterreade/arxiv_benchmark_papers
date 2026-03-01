@@ -2,27 +2,73 @@
   "filename": "2409.09001.pdf",
   "title": "E2MoCase: A Dataset for Emotional, Event and Moral Observations in News Articles on High-impact Legal Cases",
   "arxiv_url": "https://arxiv.org/pdf/2409.09001",
-  "bias_targets": [
-    {
-      "target": "Religious bias",
-      "methodology": "Manual categorization of source legal cases for religious bias, followed by automated LLM-based annotation of the associated news coverage paragraphs for emotional tone, moral framing (via Moral Foundation Theory), and event occurrences."
-    },
-    {
-      "target": "Media bias",
-      "methodology": "Manual categorization of source legal cases for media bias, followed by automated LLM-based annotation of the associated news coverage paragraphs for emotional tone, moral framing (via Moral Foundation Theory), and event occurrences."
-    },
-    {
-      "target": "Political bias",
-      "methodology": "Manual categorization of source legal cases for political bias, followed by automated LLM-based annotation of the associated news coverage paragraphs for emotional tone, moral framing (via Moral Foundation Theory), and event occurrences."
-    },
-    {
-      "target": "Gender bias",
-      "methodology": "Manual categorization of source legal cases for gender bias, followed by automated LLM-based annotation of the associated news coverage paragraphs for emotional tone, moral framing (via Moral Foundation Theory), and event occurrences."
-    },
-    {
-      "target": "Racial bias",
-      "methodology": "Manual categorization of source legal cases for racial bias, followed by automated LLM-based annotation of the associated news coverage paragraphs for emotional tone, moral framing (via Moral Foundation Theory), and event occurrences."
-    }
+  "religious_groups": [],
+  "models_tested": [
+    "MoralBERT",
+    "EmoLLaMA",
+    "GoLLIE",
+    "BERT (bert-base-uncased)",
+    "ChatGPT Plus",
+    "Perplexity",
+    "Claude-3-Opus-200K",
+    "Code-LLaMa",
+    "InstructUIE",
+    "Flan-T5",
+    "LLaMA2",
+    "bart-large",
+    "T5-large",
+    "OPT-13B",
+    "Bloomz-7b1-mt"
   ],
-  "primary_bias_target": "No Primary Bias Target"
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Moral Foundations Reddit Corpus (MFRC)",
+    "Moral Foundations Twitter Corpus (MFTC)",
+    "SemEval 2018 Task 1: Affect in Tweets",
+    "DailyDialogue",
+    "GoEmotion",
+    "AffectiveText"
+  ],
+  "continuous_testing": true,
+  "findings": "Religious bias was identified as one of five categories of cultural bias in media coverage of high-impact legal cases. This bias category accounts for 2.4% of the paragraphs in the created E2MoCase dataset. The paper did not provide further analysis specific to the religious bias category.",
+  "references": [
+    "Oscar Araque, Lorenzo Gatti, and Kyriaki Kalimeri. 2020. Moralstrength: Exploiting a moral lexicon and embedding similarity for moral foundations prediction. Knowl. Based Syst., 191:105184.",
+    "Markus M. Breunig, Hans-Peter Kriegel, Raymond T. Ng, and Jörg Sander. 2000. LOF: identifying density-based local outliers. In Proceedings of the 2000 ACM SIGMOD International Conference on Management of Data, May 16-18, 2000, Dallas, Texas, USA, pages 93–104. ACM.",
+    "Soumaya Cherichi and Rim Faiz. 2016. Using big data values to enhance social event detection pattern. In Proceedings of the ACS/IEEE International Conference on Computer Systems and Applications.",
+    "Dorottya Demszky, Dana Movshovitz-Attias, Jeongwoo Ko, Alan S. Cowen, Gaurav Nemade, and Sujith Ravi. 2020. Goemotions: A dataset of fine-grained emotions. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, ACL 2020, Online, July 5-10, 2020, pages 4040–4054. Association for Computational Linguistics.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2018. Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805.",
+    "Peter A. Gloor. 2022. Measuring moral values from facial expressions. Edward Elgar Publishing.",
+    "Jonathan Haidt and Craig Joseph. 2004. Intuitive ethics: How innately prepared intuitions generate culturally variable virtues. Daedalus, 133(4):55–66.",
+    "Louise Heron, Jaebok Kim, Minha Lee, Kevin El Haddad, Stéphane Dupont, Thierry Dutoit, and Khiet P. Truong. 2018. A dyadic conversation dataset on moral emotions. In IEEE International Conference on Automatic Face & Gesture Recognition.",
+    "Joe Hoover, Gwenyth Portillo-Wightman, Leigh Yeh, Shreya Havaldar, Aida Mostafazadeh Davani, Ying Lin, Brendan Kennedy, Mohammad Atari, Zahra Kamel, Madelyn Mendlen, et al. 2020. Moral foundations twitter corpus: A collection of 35k tweets annotated for moral sentiment. Social Psychological and Personality Science, 11(8):1057–1071.",
+    "Hugo Hromic and Conor Hayes. 2014. Constructing twitter datasets using signals for event detection evaluation.",
+    "Hans Mathias Kepplinger, Stefan Geiss, and Sandra Siebert. 2012. Framing scandals: Cognitive and emotional media effects. Journal of Communication, 62(4):659–681.",
+    "Yuanyuan Lei, Md Messal Monem Miah, Ayesha Qamar, Sai Ramana Reddy, Jonathan Tong, Haotian Xu, and Ruihong Huang. 2024. EMONA: event-level moral opinions in news articles. In Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), NAACL 2024, Mexico City, Mexico, June 16-21, 2024, pages 5239–5251. Association for Computational Linguistics.",
+    "Minglei Li, Da Wang, Qin Lu, and Yunfei Long. 2016. Event based emotion classification for news articles. In Proceedings of the 30th Pacific Asia Conference on Language, Information and Computation, PACLIC 30, Seoul, Korea, October 28 - October 30, 2016. ACL.",
+    "Yanran Li, Hui Su, Xiaoyu Shen, Wenjie Li, Ziqiang Cao, and Shuzi Niu. 2017. Dailydialog: A manually labelled multi-turn dialogue dataset. In Proceedings of the Eighth International Joint Conference on Natural Language Processing, IJCNLP 2017, Taipei, Taiwan, November 27 - December 1, 2017 - Volume 1: Long Papers, pages 986–995. Asian Federation of Natural Language Processing.",
+    "Zhiwei Liu, Kailai Yang, Tianlin Zhang, Qianqian Xie, Zeping Yu, and Sophia Ananiadou. 2024. Emollms: A series of emotional large language models and annotation tools for comprehensive affective analysis. CoRR, abs/2401.08508.",
+    "Saif M. Mohammad, Felipe Bravo-Marquez, Mohammad Salameh, and Svetlana Kiritchenko. 2018. Semeval-2018 task 1: Affect in tweets. In Proceedings of The 12th International Workshop on Semantic Evaluation, SemEval@NAACL-HLT 2018, New Orleans, Louisiana, USA, June 5-6, 2018, pages 1–17. Association for Computational Linguistics.",
+    "Robert Plutchik. 2001. The nature of emotions: Human emotions have deep evolutionary roots, a fact that may explain their complexity and provide tools for clinical practice. American scientist, 89(4):344–350.",
+    "Vjosa Preniqi, Iacopo Ghinassi, Kyriaki Kalimeri, and Charalampos Saitis. 2024. Moralbert: Detecting moral values in social discourse. CoRR, abs/2403.07678.",
+    "Arthur A. Raney. 2011. The role of morality in emotional reactions to and enjoyment of media entertainment. J. Media Psychol. Theor. Methods Appl., 23(1):18–23.",
+    "Nils Reimers and Iryna Gurevych. 2019. Sentence-bert: Sentence embeddings using siamese bert-networks. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing, EMNLP-IJCNLP 2019, Hong Kong, China, November 3–7, 2019, pages 3980–3990. Association for Computational Linguistics.",
+    "Baptiste Rozière, Jonas Gehring, Fabian Gloeckle, Sten Sootla, Itai Gat, Xiaoqing Ellen Tan, Yossi Adi, Jingyu Liu, Romain Sauvestre, Tal Remez, Jérémy Rapin, Artyom Kozhevnikov, Ivan Evtimov, Joanna Bitton, Manish Bhatt, Cristian Canton Ferrer, Aaron Grattafiori, Wenhan Xiong, Alexandre Défossez, Jade Copet, Faisal Azhar, Hugo Touvron, Louis Martin, Nicolas Usunier, Thomas Scialom, and Gabriel Synnaeve. 2024. Code llama: Open foundation models for code. Preprint, arXiv:2308.12950.",
+    "Ayesha Sadaf. 2011. Public perception of media role. International Journal of Humanities & Social Sciences, Volume 1:228–236.",
+    "Oscar Sainz, Iker García-Ferrero, Rodrigo Agerri, Oier Lopez de Lacalle, German Rigau, and Eneko Agirre. 2023. Gollie: Annotation guidelines improve zero-shot information-extraction. arXiv preprint arXiv:2310.03668.",
+    "Shalom H. Schwartz. 1992. Universals in the content and structure of values: Theoretical advances and empirical tests in 20 countries. volume 25 of Advances in Experimental Social Psychology, pages 1–65. Academic Press.",
+    "Timo Spinde, Smilla Hinterreiter, Fabian Haak, Terry Ruas, Helge Giese, Norman Meuschke, and Bela Gipp. 2023. The media bias taxonomy: A systematic literature review on the forms and automated detection of media bias. arXiv preprint arXiv:2312.16148.",
+    "Carlo Strapparava and Rada Mihalcea. 2007. Semeval-2007 task 14: Affective text. In Proceedings of the 4th International Workshop on Semantic Evaluations, SemEval@ACL 2007, Prague, Czech Republic, June 23–24, 2007, pages 70–74. The Association for Computer Linguistics.",
+    "Jackson Trager, Alireza S. Ziabari, Aida Mostafazadeh Davani, Preni Golazizian, Farzan Karimi-Malekabadi, Ali Omrani, Zhihe Li, Brendan Kennedy, Nils Karl Reimer, Melissa Reyes, Kelsey Cheng, Mellow Wei, Christina Merrifield, Arta Khosravi, Evans Alvarez, and Morteza Dehghani. 2022. The moral foundations reddit corpus. CoRR, abs/2208.05545.",
+    "Xiao Wang, Weikang Zhou, Can Zu, Han Xia, Tianze Chen, Yuansen Zhang, Rui Zheng, Junjie Ye, Qi Zhang, Tao Gui, Jihua Kang, Jingsheng Yang, Siyuan Li, and Chunsai Du. 2023. Instructuie: Multi-task instruction tuning for unified information extraction. Preprint, arXiv:2304.08085.",
+    "Wei Xiang and Bang Wang. 2019. A survey of event extraction from text. IEEE Access, 7:173111–173137.",
+    "Xinliang Frederick Zhang, Winston Wu, Nicholas Beauchamp, and Lu Wang. 2024. MOKA: moral knowledge augmentation for moral event extraction. In Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), NAACL 2024, Mexico City, Mexico, June 16–21, 2024, pages 4481–4502. Association for Computational Linguistics.",
+    "Athanasia Zlatintsi, Petros Koutras, Georgios Evangelopoulos, Nikos Malandrakis, Niki Efthymiou, Katerina Pastra, Alexandros Potamianos, and Petros Maragos. 2017. Cognimuse: a multimodal video database annotated with saliency, events, semantics and emotion with application to summarization. EURASIP Journal on Image and Video Processing, 2017(1):1–24."
+  ],
+  "measurement_description": "The benchmark measures cultural biases in news reporting on legal cases. One of the specific biases measured is 'religious bias', defined as unfair treatment or attitudes towards individuals or groups based on their religious beliefs."
 }
