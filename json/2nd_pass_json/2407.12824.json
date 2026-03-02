@@ -1,0 +1,20 @@
+{
+  "filename": "2407.12824.pdf",
+  "title": "Whispering Experts: Neural Interventions for Toxicity Mitigation in Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2407.12824",
+  "bias_targets": [
+    {
+      "target": "Toxicity",
+      "methodology": "Measuring the probability of generating toxic language using the RealToxicityPrompts (RTP) dataset, evaluated by a RoBERTa-based toxicity classifier and human annotators comparing sentence continuation toxicity."
+    },
+    {
+      "target": "Hate Speech and Identity Hate",
+      "methodology": "Using the Jigsaw 2018 dataset (which includes subcategories like 'identity hate' and 'insults') to identify toxicity-inducing expert neurons, and evaluating hurtful/derogatory sentence completions using the HONEST benchmark."
+    },
+    {
+      "target": "Gender Bias",
+      "methodology": "Using specific adversarial and collaborative pre-prompts (e.g., instructing the model to either embrace or avoid 'misogyny or gender bias') to evaluate the robustness of the toxicity mitigation interventions."
+    }
+  ],
+  "primary_bias_target": "Toxicity"
+}

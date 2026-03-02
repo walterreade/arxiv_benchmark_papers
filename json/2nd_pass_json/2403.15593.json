@@ -1,0 +1,20 @@
+{
+  "filename": "2403.15593.pdf",
+  "title": "FAIRERCLIP: DEBIASING CLIP’S ZERO-SHOT PREDICTIONS USING FUNCTIONS IN RKHSS",
+  "arxiv_url": "https://arxiv.org/pdf/2403.15593",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating predictions using Equal Opportunity Difference (EOD), Worst-Group accuracy, and MaxSkew@1000 metrics across the CelebA, FairFace, and Chicago Face Database (CFD) datasets with sex as the sensitive attribute."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Calculating the MaxSkew@1000 metric on the FairFace dataset to assess the maximum imbalance of racial categories when matching images with text prompts containing various positive and negative attributes."
+    },
+    {
+      "target": "Non-demographic bias (Spurious correlations)",
+      "methodology": "Measuring Worst-Group (WG) accuracy and the performance gap between average and worst-group accuracy on the Waterbirds dataset to evaluate reliance on spurious features like image backgrounds."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

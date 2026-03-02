@@ -1,0 +1,24 @@
+{
+  "filename": "2404.04286.pdf",
+  "title": "Bias Amplification in Language Model Evolution: An Iterated Learning Perspective",
+  "arxiv_url": "https://arxiv.org/pdf/2404.04286",
+  "bias_targets": [
+    {
+      "target": "Spurious correlation bias",
+      "methodology": "Injecting spurious correlations into task prompts (e.g., adding 'Turn off the screen after the experiment' in an abstract causal reasoning task) and measuring how iterated in-context learning amplifies the model's prior belief for that specific output across multiple generations."
+    },
+    {
+      "target": "Word frequency bias",
+      "methodology": "Tracking the ratio and average corpus frequency ranking of generated words in an acronym-creation task across multiple generations of LLM self-data-augmentation to see if the model increasingly favors common ('easy') words over rare ('hard') words."
+    },
+    {
+      "target": "Response length bias",
+      "methodology": "Evaluating the average token length of model responses across successive rounds of on-policy Direct Preference Optimization (DPO) to observe the amplification of the model's tendency to write longer answers."
+    },
+    {
+      "target": "Simplicity bias",
+      "methodology": "Using a Lewis referential communication game and Bayesian agent simulations to measure the emergence and dominance of systematic, compressible linguistic mappings over time due to iterated learning pressures."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

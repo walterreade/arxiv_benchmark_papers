@@ -1,0 +1,24 @@
+{
+  "filename": "2505.17100.pdf",
+  "title": "Any Large Language Model Can Be a Reliable Judge: Debiasing with a Reasoning-based Bias Detector",
+  "arxiv_url": "https://arxiv.org/pdf/2505.17100",
+  "bias_targets": [
+    {
+      "target": "Verbosity bias",
+      "methodology": "Constructing datasets where the correct answer is significantly shorter than the incorrect option to observe if the LLM evaluator unfairly favors the longer, verbose option."
+    },
+    {
+      "target": "Position bias",
+      "methodology": "Swapping the order of candidate options in pairwise evaluations to detect if the LLM evaluator's preference changes based on presentation order rather than content quality."
+    },
+    {
+      "target": "Bandwagon bias",
+      "methodology": "Introducing a fabricated majority opinion statement favoring the incorrect option to test if the LLM evaluator is swayed by perceived popularity over objective accuracy."
+    },
+    {
+      "target": "Sentiment bias",
+      "methodology": "Rewriting the correct option with a negative tone and incorrect options with a positive tone to evaluate if the LLM evaluator inappropriately prefers positive sentiment over correctness."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

@@ -1,0 +1,28 @@
+{
+  "filename": "2303.07024.pdf",
+  "title": "Addressing Biases in the Texts using an End-to-End Pipeline Approach",
+  "arxiv_url": "https://arxiv.org/pdf/2303.07024",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Detected using a fine-tuned ELECTRA model and RoBERTa-based Named Entity Recognition (NER), mitigated via Word2Vec semantic word substitution, and evaluated for fairness using the disparate impact ratio comparing male (privileged) and female (unprivileged) sub-groups."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Detected using a fine-tuned ELECTRA model and RoBERTa-based Named Entity Recognition (NER), mitigated via Word2Vec semantic word substitution, and evaluated for fairness using the disparate impact ratio comparing white (privileged) with Asian and African-American (unprivileged) sub-groups."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Identified by tagging comments with a compiled list of bias-bearing words and extracting them using a fine-tuned Transformer-based multi-label classification and NER pipeline, evaluated via b-AUC and F1-score."
+    },
+    {
+      "target": "Mental health bias",
+      "methodology": "Identified by tagging comments with a compiled list of bias-bearing words and extracting them using a fine-tuned Transformer-based multi-label classification and NER pipeline, evaluated via b-AUC and F1-score."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Identified by tagging comments with a compiled list of bias-bearing words and extracting them using a fine-tuned Transformer-based multi-label classification and NER pipeline, evaluated via b-AUC and F1-score."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

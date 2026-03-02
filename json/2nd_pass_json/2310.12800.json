@@ -1,0 +1,16 @@
+{
+  "filename": "2310.12800.pdf",
+  "title": "Exploring Graph Neural Networks for Indian Legal Judgment Prediction",
+  "arxiv_url": "https://arxiv.org/pdf/2310.12800",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Redacting gender-specific pronouns (e.g., he, him, his, her, she) from the legal case corpus and replacing them with a [gender] token, then comparing the model's predictive performance against the unredacted baseline to check for output disparities."
+    },
+    {
+      "target": "Name bias",
+      "methodology": "Extracting named entities using an Indian legal Named Entity Recognition (NER) tool, substituting these names with a [REDACTED] token, and comparing the fine-tuned model's decisions to those from the unredacted dataset to identify potential unfairness based on identity."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

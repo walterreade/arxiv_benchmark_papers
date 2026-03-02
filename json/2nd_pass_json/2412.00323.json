@@ -1,0 +1,32 @@
+{
+  "filename": "2412.00323.pdf",
+  "title": "Cognitive Biases in Large Language Models: A Survey and Mitigation Experiments",
+  "arxiv_url": "https://arxiv.org/pdf/2412.00323",
+  "bias_targets": [
+    {
+      "target": "Order bias",
+      "methodology": "Evaluating pairs of responses twice with their presentation order swapped to check if the model consistently selects the same response or changes its preference based on position."
+    },
+    {
+      "target": "Compassion fade",
+      "methodology": "Comparing the model's evaluations when using actual model names versus anonymized placeholder names to test if it outputs consistent results regardless of anonymization."
+    },
+    {
+      "target": "Egocentric bias",
+      "methodology": "Appending the identifier '(You)' to one of the response options in the prompt to test if the evaluating LLM preferentially selects the response attributed to itself."
+    },
+    {
+      "target": "Bandwagon effect",
+      "methodology": "Injecting statements into the prompt indicating that a majority percentage of people prefer a specific response, evaluating if the LLM changes its selection to conform to the simulated popular opinion."
+    },
+    {
+      "target": "Attentional bias",
+      "methodology": "Adding irrelevant distraction sentences (e.g., facts about eating apples or playing sports) to the instructions for one of the responses to see if the irrelevant information distorts the model's judgment."
+    },
+    {
+      "target": "Verbosity bias",
+      "methodology": "Analyzing the model's selections based on the token count of the responses to measure the baseline percentage at which it favors longer responses regardless of quality."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

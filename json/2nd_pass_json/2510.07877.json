@@ -1,0 +1,32 @@
+{
+  "filename": "2510.07877.pdf",
+  "title": "Ready to Translate, Not to Represent? Bias and Performance Gaps in Multilingual LLMs Across Language Families and Domains",
+  "arxiv_url": "https://arxiv.org/pdf/2510.07877",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "A hybrid detection pipeline combining keyword matching for gendered terms, NER-based entity mapping (tracking inserted or missing 'PERSON' tags), semantic similarity filtering between the reference and translation embeddings, and LLM-as-a-judge validation."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "A hybrid detection pipeline combining keyword matching for religious identifiers, NER-based entity mapping (tracking 'NORP' and 'RELIGION' tags), semantic similarity filtering, and LLM-as-a-judge validation."
+    },
+    {
+      "target": "Cultural bias",
+      "methodology": "A hybrid detection pipeline combining keyword matching for culturally specific references (e.g., clothing, food, holidays), NER-based entity mapping ('NORP' and 'LANGUAGE' tags), semantic similarity filtering, and LLM-as-a-judge validation."
+    },
+    {
+      "target": "Social bias",
+      "methodology": "A hybrid detection pipeline combining keyword matching for social class indicators and occupations, NER-based entity mapping ('ORG' tags), semantic similarity filtering, and LLM-as-a-judge validation."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "A hybrid detection pipeline combining keyword matching for racially charged descriptors, NER-based entity mapping ('NORP' and 'ETHNICITY' tags), semantic similarity filtering, and LLM-as-a-judge validation."
+    },
+    {
+      "target": "Sociocultural bias",
+      "methodology": "A hybrid detection pipeline utilizing NER-based entity mapping (tracking 'GPE' / Geo-Political Entity tags to detect misrepresentation or stereotyping of geographical references), combined with semantic similarity filtering and LLM-as-a-judge validation."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

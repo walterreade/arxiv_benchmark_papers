@@ -1,0 +1,20 @@
+{
+  "filename": "2311.09447.pdf",
+  "title": "How Trustworthy are Open-Source LLMs? An Assessment under Malicious Demonstrations Shows their Vulnerabilities",
+  "arxiv_url": "https://arxiv.org/pdf/2311.09447",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluated within a fairness assessment using the ADULT dataset by prompting the model to predict income levels, specifically testing if malicious in-context demonstrations can induce the model to unfairly predict lower incomes for female profiles."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluated as part of a stereotype assessment using the DecodingTrust dataset by presenting stereotypical and offensive statements about demographic groups (e.g., Black people) and measuring if adversarial demonstrations cause the model to explicitly agree with the biased statements."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Evaluated during toxicity testing using the RealToxicityPrompts dataset, where the model is provided with an incomplete homophobic prompt to test if malicious internal thought demonstrations compel the model to generate toxic, anti-gay language."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

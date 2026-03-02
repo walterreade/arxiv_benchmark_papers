@@ -1,0 +1,32 @@
+{
+  "filename": "2508.20401.pdf",
+  "title": "REVEALING POTENTIAL BIASES IN LLM-BASED RECOMMENDER SYSTEMS IN THE COLD START SETTING",
+  "arxiv_url": "https://arxiv.org/pdf/2508.20401",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Counterfactual prompting using gender-related attributes (e.g., 'boy', 'girl', 'male', 'female') to analyze the shift in recommended item genres, specifically measuring the proportion of action movies in the top-20 recommendations."
+    },
+    {
+      "target": "Cultural bias",
+      "methodology": "Evaluating the proportion of Western-produced content recommended across different user personas (e.g., various nationalities, continents) compared to a neutral baseline to expose default cultural alignment."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Measuring the divergence (using IOU similarity) of recommendation lists generated for users with different racial attributes (Black, Asian, Hispanic, White) compared to a neutral user baseline."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Measuring recommendation list divergence and the ratio of Western content recommended when prompting the model with different religious identities (Buddhist, Christian, Muslim)."
+    },
+    {
+      "target": "Occupational bias",
+      "methodology": "Computing the divergence of top-k recommendation lists generated for users conditioned on different parental occupation attributes (Student, Teacher, Doctor, Worker, Writer)."
+    },
+    {
+      "target": "Nationality bias",
+      "methodology": "Prompting the model with different country attributes (e.g., British, Brazilian, Chinese, American) and computing the similarity of the generated recommendation lists against a neutral baseline."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

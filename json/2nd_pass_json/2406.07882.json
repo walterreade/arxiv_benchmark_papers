@@ -1,0 +1,24 @@
+{
+  "filename": "2406.07882.pdf",
+  "title": "Designing a Dashboard for Transparency and Control of Conversational AI",
+  "arxiv_url": "https://arxiv.org/pdf/2406.07882",
+  "bias_targets": [
+    {
+      "target": "Age bias",
+      "methodology": "Training linear probes to identify the LLM's internal representation of user age (residual streams) and using activation editing (control probes) to measure causal effects on the model's responses to age-sensitive questions."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Probing internal representations for user gender, using activation editing to intervene, and evaluating the resulting LLM behavior and stereotypes (e.g., differential outfit suggestions) using GPT-4 classification and qualitative user studies."
+    },
+    {
+      "target": "Education bias",
+      "methodology": "Probing internal representations for the user's educational level, applying causal interventions via activation editing, and observing how the model adjusts its response complexity and tone (e.g., sandbagging or using simplified metaphors for lower education levels)."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Probing internal representations for socioeconomic status (SES), modifying these representations using control probes, and evaluating changes in LLM recommendations (e.g., suggesting shorter trips, cheaper items, or denying direct flights for lower SES users)."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

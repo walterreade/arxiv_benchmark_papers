@@ -1,0 +1,20 @@
+{
+  "filename": "2503.01914.pdf",
+  "title": "Conceptual Contrastive Edits in Textual and Vision-Language Retrieval",
+  "arxiv_url": "https://arxiv.org/pdf/2503.01914",
+  "bias_targets": [
+    {
+      "target": "Part-of-speech (POS) reliance bias",
+      "methodology": "Applying post-hoc conceptual contrastive edits using knowledge graphs to substitute specific parts of speech (adjectives, nouns, verbs, adpositions) with distant semantic pairings (e.g., antonyms, hypernyms), then measuring the Average Contrastive Effect (ACE) to determine which linguistic concepts retrieval models over-rely on or ignore."
+    },
+    {
+      "target": "Grammatical number bias",
+      "methodology": "Evaluating retrieval outcome changes by applying contrastive semantic substitutions exclusively to singular nouns versus plural nouns, revealing asymmetrical sensitivities in model representations depending on grammatical number."
+    },
+    {
+      "target": "Word order / Positional bias",
+      "methodology": "Randomly permuting and swapping the order of words belonging to the same part of speech within a query to test if retrieval models exhibit an unnatural invariance to word ordering and structural syntax."
+    }
+  ],
+  "primary_bias_target": "Part-of-speech (POS) reliance bias"
+}

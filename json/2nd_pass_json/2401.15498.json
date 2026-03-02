@@ -1,0 +1,20 @@
+{
+  "filename": "2401.15498.pdf",
+  "title": "Do We Need Language-Specific Fact-Checking Models? The Case of Chinese",
+  "arxiv_url": "https://arxiv.org/pdf/2401.15498",
+  "bias_targets": [
+    {
+      "target": "Cultural bias",
+      "methodology": "Calculating Local Mutual Information (LMI) and label probabilities for specific n-grams to identify strong correlations between certain culturally or politically sensitive phrases (e.g., specific regions like Taiwan, Japan, or the US, and political vs. health terms) and veracity labels in the Chinese dataset."
+    },
+    {
+      "target": "Domain bias",
+      "methodology": "Analyzing the statistical distribution and imbalance of veracity labels ('SUPPORTED' vs. 'REFUTED') across different topical domains such as politics, society, health, and culture within the fact-checking dataset."
+    },
+    {
+      "target": "Dataset artifact bias",
+      "methodology": "Constructing an adversarial dataset using an LLM to generate synthetic claim-evidence pairs that have high word overlap with original instances but the opposite veracity label, then evaluating the performance drop of models to see if they rely on surface-level linguistic heuristics."
+    }
+  ],
+  "primary_bias_target": "Cultural bias"
+}

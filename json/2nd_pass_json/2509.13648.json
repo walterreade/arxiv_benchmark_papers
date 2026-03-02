@@ -1,0 +1,20 @@
+{
+  "filename": "2509.13648.pdf",
+  "title": "Sequential Data Augmentation for Generative Recommendation",
+  "arxiv_url": "https://arxiv.org/pdf/2509.13648",
+  "bias_targets": [
+    {
+      "target": "Popularity bias",
+      "methodology": "Dividing items into groups based on their popularity in the training set and evaluating recommendation performance (NDCG@10) across these groups to assess how well the model generalizes to infrequent, long-tail items."
+    },
+    {
+      "target": "Recency bias",
+      "methodology": "Controlling the probability of selecting target items based on their position in the user's interaction sequence (favoring more recent vs. earlier targets) and analyzing its impact on the training target distribution."
+    },
+    {
+      "target": "Sequence length bias",
+      "methodology": "Adjusting sampling probabilities to favor users with different interaction sequence lengths (longer vs. shorter sequences) and evaluating the effect on model performance."
+    }
+  ],
+  "primary_bias_target": "Data distribution bias"
+}

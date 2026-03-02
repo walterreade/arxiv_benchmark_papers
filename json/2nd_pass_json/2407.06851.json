@@ -1,0 +1,24 @@
+{
+  "filename": "2407.06851.pdf",
+  "title": "Safe-Embed: Unveiling the Safety-Critical Knowledge of Sentence Encoders",
+  "arxiv_url": "https://arxiv.org/pdf/2407.06851",
+  "bias_targets": [
+    {
+      "target": "Social Stereotypes and Unfair Discrimination",
+      "methodology": "Measuring the Categorical Purity (CP) metric by calculating the top-k nearest neighbor cosine similarity of sentence embeddings for prompts containing various stereotypes (body shaming, location, disability, etc.) from the Do-Not-Answer dataset."
+    },
+    {
+      "target": "Gender and Sexual Orientation bias",
+      "methodology": "Evaluating the normalized cosine similarity (Safety-Challenging knowledge) of sentence embeddings between unsafe prompts targeting gender identities or sexual orientations (e.g., 'non-binary people', 'gay people') and counterfactual, contrastive safe prompts."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Analyzing sentence encoder representations via t-SNE visualization and Categorical Purity (CP) scores for prompts containing racial stereotypes and explicit discrimination (e.g., targeting 'Asian' or 'White' demographics)."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Assessing the embedding space clustering and Categorical Purity of unsafe prompts that reflect biases or derogatory statements against specific religious groups (e.g., 'Hindu')."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

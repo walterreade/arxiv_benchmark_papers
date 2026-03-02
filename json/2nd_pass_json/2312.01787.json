@@ -1,0 +1,24 @@
+{
+  "filename": "2312.01787.pdf",
+  "title": "Developing Linguistic Patterns to Mitigate Inherent Human Bias in Offensive Language Detection",
+  "arxiv_url": "https://arxiv.org/pdf/2312.01787",
+  "bias_targets": [
+    {
+      "target": "Racial bias",
+      "methodology": "Augmenting imbalanced training datasets by mining texts using linguistic patterns that combine swear words with racial entities (e.g., 'Arab'), then evaluating the downstream model's classification performance (Recall, F1) to ensure it doesn't overfit to biased human labels."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Generating balanced datasets by querying combinations of offensive words and religious entities (e.g., 'Muslim'), followed by evaluating the language model's macro recall and F1 scores on offensive language detection tasks."
+    },
+    {
+      "target": "Nationality bias",
+      "methodology": "Using predefined lists of nationalities combined with offensive linguistic patterns to extract naturally occurring offensive text, aiming to reduce human labeling bias before evaluating the model's accuracy and generalizability."
+    },
+    {
+      "target": "Political bias",
+      "methodology": "Conducting qualitative error analysis on misclassified samples in the English OLID dataset to identify the model's struggle and inherent bias when handling politically oriented language and political discourse."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

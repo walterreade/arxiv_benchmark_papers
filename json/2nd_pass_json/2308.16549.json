@@ -1,0 +1,24 @@
+{
+  "filename": "2308.16549.pdf",
+  "title": "Thesis Distillation: Investigating The Impact of Bias in NLP Models on Hate Speech Detection",
+  "arxiv_url": "https://arxiv.org/pdf/2308.16549",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Measured using standard social bias metrics (WEAT, RND, RNSB, ECT for static embeddings; CrowS-Pairs, StereoSet, SEAT for contextual models), the author's proposed Systematic Offensive Stereotyping (SOS) metrics (calculating cosine similarity to profanity and using an MLM task), and counterfactual fairness metrics (SenseScore) on downstream hate speech detection."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluated using standard intrinsic bias metrics for static and contextual embeddings, the author's proposed SOS bias metrics (NCSP and SOS_LM) to measure associations with profanity, and counterfactual fairness sensitivity (SenseScore) evaluating perturbation across identity groups in hate speech classification."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Measured using intrinsic bias metrics in contextual language models (CrowS-Pairs, StereoSet, SEAT) and counterfactual fairness via perturbation score sensitivity (SenseScore) evaluating downstream hate speech classification fairness."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Evaluated by measuring Systematic Offensive Stereotyping (SOS) bias, which calculates the association between non-offensive LGBTQ identity words and swear words using normalized cosine similarity (NCSP) in static embeddings and an MLM task (SOS_LM) in contextual models."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

@@ -1,0 +1,24 @@
+{
+  "filename": "2411.19668.pdf",
+  "title": "CHINESEWEBTEXT 2.0: LARGE-SCALE HIGH-QUALITY CHINESE WEB TEXT WITH MULTI-DIMENSIONAL AND FINE-GRAINED INFORMATION",
+  "arxiv_url": "https://arxiv.org/pdf/2411.19668",
+  "bias_targets": [
+    {
+      "target": "Racial bias",
+      "methodology": "Rule-based filtering using a handcrafted sensitive word list to identify and remove texts containing explicit references to racial discrimination during the dataset preprocessing stage."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating text toxicity by training a FastText classification model incorporating the SWSR dataset, which specifically targets online sexism detection."
+    },
+    {
+      "target": "Social bias",
+      "methodology": "Evaluating text toxicity by training a FastText classification model incorporating the CDial-Bias dataset, which identifies and targets social bias in dialogue systems."
+    },
+    {
+      "target": "Hate speech and Toxicity",
+      "methodology": "Using an LLM-in-the-loop and FastText-based classification system trained on various offensive language and toxicity benchmarks (e.g., COLD, ToxiCN) to assign a fine-grained toxicity score to each text."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

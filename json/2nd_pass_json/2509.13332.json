@@ -1,0 +1,32 @@
+{
+  "filename": "2509.13332.pdf",
+  "title": "Explicit Reasoning Makes Better Judges: A Systematic Study on Accuracy, Efficiency, and Robustness",
+  "arxiv_url": "https://arxiv.org/pdf/2509.13332",
+  "bias_targets": [
+    {
+      "target": "Positional bias",
+      "methodology": "Flipping the presentation order of the candidate responses and evaluating the consistency of the model's judgments."
+    },
+    {
+      "target": "Bandwagon bias",
+      "methodology": "Inserting a prompt statement claiming that a majority of people (e.g., '90% of people') prefer one of the assistants to test conformity influence."
+    },
+    {
+      "target": "Identity bias",
+      "methodology": "Injecting a sentence that links a response to a well-known system name or authority (e.g., 'Qwen3', 'ChatGPT', or 'Human Expert') rather than an anonymized label."
+    },
+    {
+      "target": "Diversity bias",
+      "methodology": "Adding a sentence to the prompt specifying the assistant's identity in terms of sensitive demographic categories, such as gender, race, or health status (e.g., 'Female/Refugee')."
+    },
+    {
+      "target": "Distraction bias",
+      "methodology": "Appending irrelevant but positive secondary details to a response (e.g., stating the assistant volunteers at an animal shelter) to see if it distracts the judge from evaluating the main quality of the answer."
+    },
+    {
+      "target": "Verbosity bias",
+      "methodology": "Using a teacher model to artificially increase the length of a rejected response with semantically redundant sentences to test if the judge inherently prefers longer answers."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

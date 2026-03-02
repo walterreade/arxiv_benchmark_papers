@@ -1,0 +1,20 @@
+{
+  "filename": "2406.18682.pdf",
+  "title": "The Multilingual Alignment Prism: Aligning Global and Local Preferences to Reduce Harm",
+  "arxiv_url": "https://arxiv.org/pdf/2406.18682",
+  "bias_targets": [
+    {
+      "target": "Cultural bias",
+      "methodology": "Evaluating model responses to human-annotated red-teaming prompts categorized as either 'global' (universally recognized harms) or 'local' (nuanced harms specific to a particular culture or region), measuring harmful generation rates using LLM-as-a-judge to assess alignment with diverse cultural preferences."
+    },
+    {
+      "target": "Language bias",
+      "methodology": "Comparing safety performance (percentage of harmful generations) and general-purpose capabilities (win-rates on Multilingual Dolly-200 and FLORES-200) across six different languages (English, French, Spanish, Hindi, Russian, Arabic) to assess cross-lingual transfer and performance disparities in non-English settings."
+    },
+    {
+      "target": "Demographic and Identity bias (including Race, Gender, Religion, Sexual Orientation)",
+      "methodology": "Prompting the model with the custom Aya Red-teaming dataset, which explicitly includes categories for 'Discrimination & Injustice', 'Hate Speech', and 'Harms of Representation Allocation' targeting protected attributes, and measuring the rate of harmful or prejudicial text generated."
+    }
+  ],
+  "primary_bias_target": "Cultural bias"
+}

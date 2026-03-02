@@ -1,0 +1,16 @@
+{
+  "filename": "2411.13981.pdf",
+  "title": "On the Fairness, Diversity and Reliability of Text-to-Image Generative Models",
+  "arxiv_url": "https://arxiv.org/pdf/2411.13981",
+  "bias_targets": [
+    {
+      "target": "Intentional bias (Backdoor/Trojan attacks)",
+      "methodology": "Applies local and global perturbations in the text-encoder embedding space to identify highly sensitive tokens, followed by a leave-one-out token removal approach under low-guidance settings to measure the unfair semantic influence of specific trigger tokens on generated images."
+    },
+    {
+      "target": "Concept representation bias",
+      "methodology": "Generates multiple images using a single concept/token as the prompt and calculates pairwise cosine similarities to quantify generative diversity, identifying uncharacteristically homogeneous outputs caused by skewed training data or bias injections."
+    }
+  ],
+  "primary_bias_target": "Intentional bias (Backdoor/Trojan attacks)"
+}

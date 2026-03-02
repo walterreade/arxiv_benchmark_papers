@@ -1,0 +1,20 @@
+{
+  "filename": "2211.00609.pdf",
+  "title": "A Simple, Yet Effective Approach to Finding Biases in Code Generation",
+  "arxiv_url": "https://arxiv.org/pdf/2211.00609",
+  "bias_targets": [
+    {
+      "target": "Cognitive bias (Memorization)",
+      "methodology": "Replacing function names with generic tokens (anonymization) to evaluate if code generation models rely on replicating training data snippets triggered by specific names rather than actually understanding the task."
+    },
+    {
+      "target": "Cognitive bias (Keyword preference)",
+      "methodology": "Automatically extracting and systematically removing hinting keywords from problem descriptions to test if models depend on superficial lexical clues and co-occurrences instead of deductive reasoning."
+    },
+    {
+      "target": "Cognitive bias (Demonstration reliance)",
+      "methodology": "Omitting provided input-output examples from prompts to assess if models use them as heuristic shortcuts or 'reasoning tie-breakers' instead of logically interpreting the underlying problem."
+    }
+  ],
+  "primary_bias_target": "Cognitive bias"
+}

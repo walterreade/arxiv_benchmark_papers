@@ -1,0 +1,28 @@
+{
+  "filename": "2601.10896.pdf",
+  "title": "DialDefer: A Framework for Detecting and Mitigating LLM Dialogic Deference",
+  "arxiv_url": "https://arxiv.org/pdf/2601.10896",
+  "bias_targets": [
+    {
+      "target": "Dialogic Deference (Conversational Framing Bias)",
+      "methodology": "Comparing model evaluations of identical semantic claims when presented as abstract factual statements to verify ('Is this statement correct?') versus when attributed to a speaker in a dialogue ('Is Speaker 2 correct?')."
+    },
+    {
+      "target": "Human vs. AI Attribution Bias",
+      "methodology": "Conducting speaker-label ablations by replacing abstract speaker labels with 'User' (human) or 'LLM' (AI) to measure shifts in deference and skepticism."
+    },
+    {
+      "target": "Demographic Bias (Gender and Ethnicity)",
+      "methodology": "Performing speaker-label ablations using gendered names (e.g., John vs. Jane) and ethnicity-coded names (e.g., John vs. Soroush) to test if models systematically defer more to speakers with particular demographic markers."
+    },
+    {
+      "target": "Brand Bias",
+      "methodology": "Substituting speaker labels with specific AI model names (e.g., GPT-4o vs. Llama) during LLM-vs-LLM evaluations to measure inter-model competitive dynamics and self-bias."
+    },
+    {
+      "target": "Validation Bias",
+      "methodology": "Comparing model accuracy on 'Overreacting' (OR) versus 'Not Overreacting' (NOR) cases in naturalistic Reddit conversations to measure a base-rate reluctance to judge a user's reaction as excessive."
+    }
+  ],
+  "primary_bias_target": "Dialogic Deference (Conversational Framing Bias)"
+}

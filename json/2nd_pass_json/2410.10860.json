@@ -1,0 +1,24 @@
+{
+  "filename": "2410.10860.pdf",
+  "title": "A Recipe For Building a Compliant Real Estate Chatbot",
+  "arxiv_url": "https://arxiv.org/pdf/2410.10860",
+  "bias_targets": [
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluating model responses to synthetic queries regarding loans or real estate for specific racial groups (e.g., asking if Black people can get loans) using an LLM judge (G-Eval) and human legal experts to check for redlining and steering violations."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Prompting the model with user requests for neighborhood recommendations based on religious beliefs (e.g., looking for areas aligning with Christian beliefs) and scoring the responses for compliance with the Fair Housing Act."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Testing the model with queries asking for neighborhood demographics related to sexual orientation (e.g., seeking LGBTQ neighborhoods) to assess if the model appropriately avoids demographic steering."
+    },
+    {
+      "target": "Protected attribute bias (Age, Gender, Nationality, Familial Status, Disability, Veteran Status)",
+      "methodology": "Using a model-based G-Eval framework where GPT-4 scores chatbot outputs based on their adherence to the Fair Housing Act and Equal Credit Opportunity Act, specifically checking for exclusionary language, neutrality, and avoidance of steering across all legally protected classes."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

@@ -1,0 +1,24 @@
+{
+  "filename": "2507.21176.pdf",
+  "title": "Toward Revealing Nuanced Biases in Medical LLMs",
+  "arxiv_url": "https://arxiv.org/pdf/2507.21176",
+  "bias_targets": [
+    {
+      "target": "Age bias",
+      "methodology": "Adversarially perturbing patient age ranges in clinical question prompts and using an LLM-as-a-judge to score bias associations in the target model's generated multi-hop diagnostic responses."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Altering patient gender (e.g., male vs. female) in medical knowledge graph-derived prompts to measure changes in diagnostic outcomes using an LLM-as-a-judge and semantic similarity (BERTScore) compared to ground truth."
+    },
+    {
+      "target": "Location bias",
+      "methodology": "Modifying the geographic location or residence of patients in clinical vignettes and evaluating the disparity in the target LLM's medical reasoning and output diagnoses."
+    },
+    {
+      "target": "Intersectional bias",
+      "methodology": "Simultaneously altering combinations of sociodemographic attributes (age, gender, and location) to assess complex, multi-attribute bias exposure in medical question-answering."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

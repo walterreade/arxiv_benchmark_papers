@@ -1,0 +1,28 @@
+{
+  "filename": "2310.18590.pdf",
+  "title": "Using Early Readouts to Mediate Featural Bias in Distillation",
+  "arxiv_url": "https://arxiv.org/pdf/2310.18590",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating Worst Group Accuracy (WGA) on subgroups where gender is spuriously correlated with the target label, using the CelebA dataset (gender vs. hair color) and the CivilComments-WILDS dataset (gender identity mentions vs. toxicity)."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluating Worst Group Accuracy (WGA) on toxicity classification for comments containing mentions of racial or ethnic identities (e.g., White, Black) in the CivilComments-WILDS dataset."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluating Worst Group Accuracy (WGA) on toxicity classification for comments containing mentions of religious affiliations (e.g., Muslim, Christian) in the CivilComments-WILDS dataset."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Evaluating Worst Group Accuracy (WGA) on toxicity classification for comments containing mentions of LGBTQ identities in the CivilComments-WILDS dataset."
+    },
+    {
+      "target": "Featural bias",
+      "methodology": "Evaluating Worst Group Accuracy (WGA) on instances where incidental, non-causal features (like image backgrounds in the Waterbirds dataset or syntactic negation words in the MultiNLI dataset) conflict with the true label to measure the model's reliance on spurious correlations."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

@@ -1,0 +1,20 @@
+{
+  "filename": "2205.06621.pdf",
+  "title": "Analyzing Hate Speech Data along Racial, Gender and Intersectional Axes",
+  "arxiv_url": "https://arxiv.org/pdf/2205.06621",
+  "bias_targets": [
+    {
+      "target": "Racial bias",
+      "methodology": "Classifying tweets as African American English (AAE) or Standard American English (SAE) using a dialect classifier as a proxy for race, and comparing the distribution of hate speech/offensive annotations and BERT model predictions between these groups."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Using a fine-tuned BERT model to classify the inferred gender (masculine or feminine) of tweet authors, then evaluating disparities in neutral, offensive, and hateful annotations and subsequent model predictions across genders."
+    },
+    {
+      "target": "Intersectional bias",
+      "methodology": "Analyzing the intersection of the inferred race (AAE/SAE) and gender (masculine/feminine) classifications to measure combined disparities in human annotations and BERT model predictions (e.g., specifically measuring bias against AAE+Masculine tweets), and evaluating the effects of balanced training data on mitigation."
+    }
+  ],
+  "primary_bias_target": "Intersectional bias"
+}

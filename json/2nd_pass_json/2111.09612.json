@@ -1,0 +1,16 @@
+{
+  "filename": "2111.09612.pdf",
+  "title": "How Emotionally Stable is ALBERT? Testing Robustness with Stochastic Weight Averaging on a Sentiment Analysis Task",
+  "arxiv_url": "https://arxiv.org/pdf/2111.09612",
+  "bias_targets": [
+    {
+      "target": "Spurious Entity Bias",
+      "methodology": "Counterfactual substitution of specific entities (names and movie industries) in test instances with entities that were exclusively associated with positive or negative reviews in the training set (CheckList Invariance tests), to evaluate if the model memorized spurious correlations."
+    },
+    {
+      "target": "Linguistic Bias",
+      "methodology": "Evaluating model reliance on shallow heuristics rather than actual comprehension using CheckList Minimum Functionality Tests, specifically testing phenomena like negations, neutral word insertions, and genre-specific sentiment context (e.g., 'scary' being positive for horror movies)."
+    }
+  ],
+  "primary_bias_target": "Induced Bias (Underspecification)"
+}

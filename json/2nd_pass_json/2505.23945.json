@@ -1,0 +1,32 @@
+{
+  "filename": "2505.23945.pdf",
+  "title": "A Closer Look at Bias and Chain-of-Thought Faithfulness of Large (Vision) Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2505.23945",
+  "bias_targets": [
+    {
+      "target": "Format and Positional Bias",
+      "methodology": "Evaluating model accuracy and Chain-of-Thought (CoT) articulation when altering answer ordering (e.g., swapping A/B options, changing left/right positioning), mirroring images, or thickening bounding boxes around specific objects in visual inputs."
+    },
+    {
+      "target": "Explicit and Implicit Hint Bias",
+      "methodology": "Inserting text-based hints into prompts (e.g., 'According to me, the answer is...'), marking correct options with asterisks, or overlaying text hints directly onto images to measure if models rely on and articulate these shortcuts."
+    },
+    {
+      "target": "Environmental Spurious Correlation Bias",
+      "methodology": "Evaluating model predictions on the Waterbirds dataset by presenting incongruent image pairings (e.g., waterbirds placed on land backgrounds) to see if models rely on environmental cues rather than the primary subject."
+    },
+    {
+      "target": "Gender Bias",
+      "methodology": "Testing predictions on the CelebA dataset where blond hair is spuriously correlated with female celebrities, checking if models use gender as a shortcut to predict hair color and whether they admit this in their CoT reasoning."
+    },
+    {
+      "target": "Cultural and Geographical Bias",
+      "methodology": "Constructing in-context examples with subtly biased answers based on specific geographical or cultural references (e.g., Asian vs. American) to see if these implicit cues nudge model responses."
+    },
+    {
+      "target": "Framing Bias",
+      "methodology": "Modifying the language in in-context examples to imply a notion of bias through framing, such as emphasizing negative words like 'catastrophe' to subtly influence the model's generated answer."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

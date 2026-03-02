@@ -1,0 +1,24 @@
+{
+  "filename": "2404.07990.pdf",
+  "title": "OpenBias: Open-set Bias Detection in Text-to-Image Generative Models",
+  "arxiv_url": "https://arxiv.org/pdf/2404.07990",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating the distribution of perceived gender in generated images using a Vision Question Answering (VQA) model, and validating the results against the FairFace classifier, self-identified labels from the Chicago Face Dataset, and the WinoBias occupational dataset."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Assessing the racial/ethnic distribution of people in text-to-image outputs via VQA classification, compared against the FairFace attribute classifier and ground-truth self-identified labels."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Measuring the perceived age distribution in generated images using a VQA model and comparing the agreement with the FairFace closed-set classifier."
+    },
+    {
+      "target": "Open-set / Object-specific bias",
+      "methodology": "Using a Large Language Model (LLM) to dynamically propose arbitrary, context-specific biases (e.g., laptop brand, train color, person attire, wave size) from a set of captions, generating images, and quantifying the bias severity using VQA-based distribution entropy."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

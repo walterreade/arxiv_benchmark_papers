@@ -1,0 +1,20 @@
+{
+  "filename": "2511.13750.pdf",
+  "title": "SCALEX: Scalable Concept and Latent Exploration for Diffusion Models",
+  "arxiv_url": "https://arxiv.org/pdf/2511.13750",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Comparing cosine distances in the model's H-space latent representations between gender-neutral prompts (e.g., professions or physical descriptors) and gendered prompt variants (e.g., 'male doctor' vs. 'female doctor'). The latent measurements are also validated using zero-shot CLIP classification on the generated images."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Ranking descriptive prompts (e.g., different hairstyles) by measuring their relative cosine distances in the latent space to specific racial identity concepts (e.g., 'African') compared to the mean distance of other racial groups."
+    },
+    {
+      "target": "Cultural bias",
+      "methodology": "Applying unsupervised clustering (HDBSCAN) and t-SNE visualization on the latent representations of food-related captions to reveal geographic and cultural associations or category conflations (e.g., Asian soups vs. Western soups)."
+    }
+  ],
+  "primary_bias_target": "Gender bias"
+}

@@ -1,0 +1,28 @@
+{
+  "filename": "2105.11412.pdf",
+  "title": "Reproducibility Report: Contextualizing Hate Speech Classifiers with Post-hoc Explanation",
+  "arxiv_url": "https://arxiv.org/pdf/2105.11412",
+  "bias_targets": [
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluating model over-sensitivity to racial and ethnic group identifiers (e.g., 'black', 'white', 'mexican', 'africans') by measuring false positive rates on an adversarial test set of news articles and computing context-independent feature importance via the Sampling and Occlusion (SOC) masking algorithm."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluating model over-sensitivity to religious identifiers (e.g., 'Jews', 'Muslim', 'Islam') by testing predictions on a balanced adversarial dataset and calculating importance scores by observing the change in prediction when the identifier is masked (SOC algorithm)."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Measuring the over-weighting of sexual orientation identifiers (e.g., 'gay', 'lesbian', 'homosexual') using the Sampling and Occlusion (SOC) technique on an adversarial dataset to detect context-independent bias and false positives in hate speech classification."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Assessing over-sensitivity to gender and gender identity words (e.g., 'women', 'woman', 'transgender') by computing post-hoc feature importance through the SOC algorithm and evaluating against an adversarial out-of-domain dataset."
+    },
+    {
+      "target": "Political bias",
+      "methodology": "Tracking model sensitivity to political group identifiers (e.g., 'democrat') present in the training set by evaluating feature importance and false-positive tendencies using the SOC explanation framework on a sampled news dataset."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

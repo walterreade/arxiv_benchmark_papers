@@ -1,0 +1,20 @@
+{
+  "filename": "2506.07326.pdf",
+  "title": "Reward Model Interpretability via Optimal and Pessimal Tokens",
+  "arxiv_url": "https://arxiv.org/pdf/2506.07326",
+  "bias_targets": [
+    {
+      "target": "Identity group bias",
+      "methodology": "Exhaustive single-token vocabulary scoring and multi-token optimization (using Greedy Coordinate Gradient) to identify systematically low reward scores assigned to marginalized identity terms (e.g., 'blacks', 'homosexuals', 'Jews')."
+    },
+    {
+      "target": "Word frequency bias",
+      "methodology": "Regression analysis comparing log-transformed word frequencies from English language corpora against reward model scores to detect the overvaluation of more common tokens (a 'mere-exposure' effect)."
+    },
+    {
+      "target": "Sentiment and framing bias",
+      "methodology": "Correlating reward model scores with human-validated sentiment lexicons (AFINN-111, Bing) across positively and negatively framed prompts to measure asymmetric model sensitivity to token sentiment."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

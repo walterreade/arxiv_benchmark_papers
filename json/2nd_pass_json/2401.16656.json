@@ -1,0 +1,24 @@
+{
+  "filename": "2401.16656.pdf",
+  "title": "Gradient-Based Language Model Red Teaming",
+  "arxiv_url": "https://arxiv.org/pdf/2401.16656",
+  "bias_targets": [
+    {
+      "target": "Language bias",
+      "methodology": "Evaluating the differential behavior of the safety classifier and language model on English versus German text, revealing that the classifier erroneously flags German responses as unsafe more frequently due to imbalanced training data."
+    },
+    {
+      "target": "Anti-Semitic bias",
+      "methodology": "Using automated gradient-based red teaming to optimize adversarial prompts that successfully trigger the language model to generate anti-Semitic hate speech and specific dog-whistle slurs (e.g., the triple parentheses / echo)."
+    },
+    {
+      "target": "Political bias",
+      "methodology": "Qualitatively analyzing model responses and safety scores to observe that the safety classifier inherently flags opinions involving specific political figures and organizations (e.g., Antifa, Erdogan, Nazis) as unsafe."
+    },
+    {
+      "target": "Racial and Ethnic bias",
+      "methodology": "Applying gradient-based red teaming to discover continuous prompt distributions that cause the language model to output racist text and targeted ethnic slurs against various demographic groups (e.g., Black, Japanese)."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

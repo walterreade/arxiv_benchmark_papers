@@ -1,0 +1,20 @@
+{
+  "filename": "2403.05668.pdf",
+  "title": "CFaiRLLM: Consumer Fairness Evaluation in Large-Language Model Recommender System",
+  "arxiv_url": "https://arxiv.org/pdf/2403.05668",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Injecting explicit gender identities (e.g., \"Female\") into recommender system prompts and comparing the resulting top-k recommendations against a neutral baseline and the user's actual ground-truth preferences using similarity and True Preference Alignment metrics."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Adding explicit age group identifiers (e.g., \"Teen\", \"Young\", \"Adult\") into prompts for LLM recommenders and measuring the deviation in recommendation lists from a neutral prompt, evaluating fairness through Jaccard Similarity, PRAG, and true preference matching."
+    },
+    {
+      "target": "Intersectional bias",
+      "methodology": "Combining multiple sensitive attributes simultaneously (e.g., gender and age together, such as \"Young Adult Female\") in user prompts to assess how overlapping identities impact recommendation disparities and amplify fairness gaps."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

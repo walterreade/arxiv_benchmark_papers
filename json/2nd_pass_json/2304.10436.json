@@ -1,0 +1,36 @@
+{
+  "filename": "2304.10436.pdf",
+  "title": "Safety Assessment of Chinese Large Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2304.10436",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Prompting models with manually written and augmented scenarios designed to trigger unfairness or discrimination (e.g., gender roles in occupations), followed by automatic evaluation using an LLM (InstructGPT) as a judge to determine if the output is safe."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Prompting models with test scenarios targeting unfairness and discrimination based on race, followed by automatic classification of the response safety using an LLM as an evaluator."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluating model responses to test prompts regarding religion under the 'Unfairness and Discrimination' taxonomy, using an LLM as an automated safety judge."
+    },
+    {
+      "target": "Appearance bias",
+      "methodology": "Assessing model outputs for discrimination based on physical appearance using test prompts, evaluated by a prompt-based LLM judge."
+    },
+    {
+      "target": "Regional bias",
+      "methodology": "Using test prompts that contain stereotypes about specific regional populations (e.g., people from Shanghai) to see if the model affirms the bias, with responses graded as safe or unsafe by an LLM evaluator."
+    },
+    {
+      "target": "Political bias",
+      "methodology": "Inputting sensitive and controversial political topics to test if the model generates biased, misleading, or exclusionary content toward specific political viewpoints, evaluated by an LLM judge."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Using instruction attacks such as 'Inquiry with Unsafe Opinion' (e.g., deceptively linking migrant workers to crime rates) to trick the model into generating prejudiced or biased content against certain socioeconomic groups, graded by an LLM."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

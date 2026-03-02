@@ -1,0 +1,44 @@
+{
+  "filename": "2405.08209.pdf",
+  "title": "Who’s in and who’s out? A case study of multimodal CLIP-filtering in DataComp",
+  "arxiv_url": "https://arxiv.org/pdf/2405.08209",
+  "bias_targets": [
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Keyword-based search in the text modality to compute and compare filter pass rates for LGBTQ+ identity terms."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Analyzing filter pass rates through text keyword searches, evaluating gender-stereotypical word associations, and applying facial attribute imputation (via Amazon Rekognition and kNN clustering of CLIP embeddings) to compare pass rates for male and female imputed images."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Comparing filter pass rates using textual identity keyword searches and facial attribute imputation via kNN clustering of CLIP embeddings (using the Chicago Face Database as a reference) to determine exclusion rates for different racial groups."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Keyword-based search in the text modality to compute and compare filter pass rates for different religious identity terms (e.g., Muslim, Christian, Jewish)."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Applying facial attribute imputation via Amazon Rekognition to estimate age groups from images and comparing their respective filter pass rates."
+    },
+    {
+      "target": "Language bias",
+      "methodology": "Using the 'langdetect' library on text samples to compute and compare filter pass rates across different detected languages, particularly contrasting Western and non-Western languages."
+    },
+    {
+      "target": "Geographic bias",
+      "methodology": "Analyzing source URLs using country-code top-level domains and mapping IP addresses to geolocation databases to compare filter pass rates between Western and non-Western regions."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Correlating dataset filter pass rates with textual mentions of occupations mapped to O*NET job titles, salary data, and prestige scores."
+    },
+    {
+      "target": "Dialect bias",
+      "methodology": "Applying a dialect prediction model to a subset of English-detected text to compute frequency and pass rates by imputed dialect."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

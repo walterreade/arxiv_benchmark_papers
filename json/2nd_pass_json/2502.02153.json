@@ -1,0 +1,16 @@
+{
+  "filename": "2502.02153.pdf",
+  "title": "VULNERABILITY MITIGATION FOR SAFETY-ALIGNED LANGUAGE MODELS VIA DEBIASING",
+  "arxiv_url": "https://arxiv.org/pdf/2502.02153",
+  "bias_targets": [
+    {
+      "target": "Safety bias / Refusal bias",
+      "methodology": "Estimating token-level context-free biases by calculating the difference in output logits for refusal tokens (e.g., 'I'm sorry', 'cannot') using randomly constructed prompts, and measuring the model's compliance rate and helpfulness on harmless prompts."
+    },
+    {
+      "target": "Unfair Representation (Social bias)",
+      "methodology": "Evaluating model responses to specific red-teaming prompts from the SALAD-Bench dataset using safety evaluators (MD-Judge and Llama Guard 3) to compute a categorical safety score."
+    }
+  ],
+  "primary_bias_target": "Safety bias / Refusal bias"
+}

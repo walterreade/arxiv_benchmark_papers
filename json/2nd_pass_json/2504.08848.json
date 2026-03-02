@@ -1,0 +1,20 @@
+{
+  "filename": "2504.08848.pdf",
+  "title": "X-Guard: Multilingual Guard Agent for Content Moderation",
+  "arxiv_url": "https://arxiv.org/pdf/2504.08848",
+  "bias_targets": [
+    {
+      "target": "Language bias",
+      "methodology": "Evaluating safety label classification accuracy, F1-scores, and translation metrics across 132 different languages, comparing the performance of low-resource languages and code-switching attacks (e.g., Sandwich Attacks) against English to measure linguistic disparities in content moderation."
+    },
+    {
+      "target": "Annotator/Judge bias",
+      "methodology": "Comparing the varying safety labels assigned by different individual judge LLMs (e.g., Llama-Guard, Qwen, Llama-3, OpenAI Moderation API) on identical synthetic text to identify model-specific evaluation biases, which is mitigated using a multi-model jury voting approach."
+    },
+    {
+      "target": "Translation bias",
+      "methodology": "Analyzing the impact of 'translationese' and linguistic artifacts introduced by translation models (Google Cloud Translation and mBART-50) on the downstream safety evaluator's ability to properly assess native slang and culturally-specific harmful content."
+    }
+  ],
+  "primary_bias_target": "Language bias"
+}

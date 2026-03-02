@@ -1,0 +1,20 @@
+{
+  "filename": "2308.01263.pdf",
+  "title": "XSTEST: A Test Suite for Identifying Exaggerated Safety Behaviours in Large Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2308.01263",
+  "bias_targets": [
+    {
+      "target": "Safety bias (Exaggerated safety / Over-refusal)",
+      "methodology": "Evaluating the false refusal rate of large language models on 250 safe prompts across ten prompt types (e.g., homonyms, figurative language, historical events, privacy) that superficially resemble unsafe instructions."
+    },
+    {
+      "target": "Lexical bias (Overfitting to safety-related terms)",
+      "methodology": "Testing whether models overfit to specific safety-related keywords or phrases by presenting them in harmless contexts (e.g., 'kill a Python process', 'blow up a balloon', 'shoot a video') and measuring unwarranted refusals."
+    },
+    {
+      "target": "Identity-based bias (including Sexual orientation, Racial, Religious, and Disability bias)",
+      "methodology": "Using prompt pairs involving real and nonsensical discrimination against specific marginalized groups (e.g., gay people, Jewish people, Romani people, trans people, disabled people) to test if models inappropriately refuse benign statements or inconsistently apply safety guardrails across different demographics."
+    }
+  ],
+  "primary_bias_target": "Safety bias (Exaggerated safety / Over-refusal)"
+}

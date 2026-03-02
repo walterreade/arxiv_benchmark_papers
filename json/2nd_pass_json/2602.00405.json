@@ -1,0 +1,48 @@
+{
+  "filename": "2602.00405.pdf",
+  "title": "RobustDebias: Debiasing Language Models using Distributionally Robust Optimization",
+  "arxiv_url": "https://arxiv.org/pdf/2602.00405",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluated using StereoSet (stereotyping scores via masked language modeling and next sentence prediction text completions), SEAT (cosine similarities of contextual embeddings between target and attribute words), and CrowS-Pairs (probability assignments for stereotypical vs. anti-stereotypical sentence pairs)."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluated using StereoSet (stereotypical completions), SEAT (contextual embedding similarities), and CrowS-Pairs (probability assignments for contrasting sentence pairs)."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluated using StereoSet (stereotypical completions), SEAT (contextual embedding similarities), and CrowS-Pairs (probability assignments for contrasting sentence pairs)."
+    },
+    {
+      "target": "Profession bias",
+      "methodology": "Measured as part of the StereoSet benchmark assessing intersentence and intrasentence stereotyping scores."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Included as a demographic category in the 6-Bias High Split training dataset to test the robustness of the debiasing approach across different distributional configurations (assessed via StereoSet overall scores)."
+    },
+    {
+      "target": "Body type bias",
+      "methodology": "Included as a demographic category in the 6-Bias High Split training dataset to test the robustness of the debiasing approach across different distributional configurations."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Included as 'ability' in the 6-Bias High Split training dataset to test the robustness of the debiasing approach across different distributional configurations."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Included as a demographic category in the 6-Bias Low Split training dataset to test debiasing robustness when bias demographics act as majority classes."
+    },
+    {
+      "target": "Nationality bias",
+      "methodology": "Included as a demographic category in the 6-Bias Low Split training dataset to test debiasing robustness when bias demographics act as majority classes."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Included as a demographic category in the 6-Bias Low Split training dataset to test debiasing robustness when bias demographics act as majority classes."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

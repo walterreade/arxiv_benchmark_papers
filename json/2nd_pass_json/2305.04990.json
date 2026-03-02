@@ -1,0 +1,16 @@
+{
+  "filename": "2305.04990.pdf",
+  "title": "Explanation-based Finetuning Makes Models More Robust to Spurious Cues",
+  "arxiv_url": "https://arxiv.org/pdf/2305.04990",
+  "bias_targets": [
+    {
+      "target": "Spurious correlations / Dataset artifacts",
+      "methodology": "Artificially skewing training datasets so that non-causal structural or lexical features (e.g., sentence length, verb tense, plural nouns, username mentions, perplexity, and K-means embedding clusters) perfectly correlate with a target label, and then measuring the model's reliance on these features on an unskewed test set using accuracy drop and the Matthews correlation coefficient."
+    },
+    {
+      "target": "Gender bias (evaluated as a dataset artifact)",
+      "methodology": "Introducing a domain-specific spurious cue in the e-SNLI dataset where female-related words and pronouns (e.g., 'woman', 'girl', 'lady') are artificially perfectly correlated with a target label, and evaluating the model's predictive correlation with this gendered cue to see if it learns the demographic shortcut."
+    }
+  ],
+  "primary_bias_target": "Spurious correlations / Dataset artifacts"
+}

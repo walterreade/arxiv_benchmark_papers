@@ -1,0 +1,20 @@
+{
+  "filename": "2602.04674.pdf",
+  "title": "Overstating Attitudes, Ignoring Networks: LLM Biases in Simulating Misinformation Susceptibility",
+  "arxiv_url": "https://arxiv.org/pdf/2602.04674",
+  "bias_targets": [
+    {
+      "target": "Predictor weighting bias",
+      "methodology": "Fitting Elastic Net regression models to both LLM-simulated responses and human ground truth, then comparing the explained variance and feature interaction terms to identify whether LLMs place disproportionate predictive weight on attitudinal and behavioral features while ignoring personal network characteristics."
+    },
+    {
+      "target": "Behavioral correlation bias",
+      "methodology": "Computing ranked correlations (Spearman's ρ) between simulated misinformation belief and sharing intentions, and comparing them against human data to measure if LLMs artificially exaggerate the coupling between these two empirically distinct behaviors."
+    },
+    {
+      "target": "Persona stereotyping bias",
+      "methodology": "Analyzing chain-of-thought reasoning traces and retrieving LLM pre-training corpus spans (via OLMoTrace) to identify overrepresented stereotypical associations between specific profile features (e.g., political leaning, trust in science) and misinformation susceptibility."
+    }
+  ],
+  "primary_bias_target": "Predictor weighting bias"
+}

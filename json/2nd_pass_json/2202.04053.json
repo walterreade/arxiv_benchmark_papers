@@ -1,0 +1,16 @@
+{
+  "filename": "2202.04053.pdf",
+  "title": "DALL-EVAL: Probing the Reasoning Skills and Social Biases of Text-to-Image Generation Models",
+  "arxiv_url": "https://arxiv.org/pdf/2202.04053",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Generating images using gender-neutral diagnostic prompts (e.g., professions) and using an automated vision-language model (BLIP-2) to classify the binary gender of the generated figures. The paper then computes the Mean Absolute Deviation (MAD) of the resulting gender distribution against an unbiased uniform distribution."
+    },
+    {
+      "target": "Skin tone bias",
+      "methodology": "Generating images from diagnostic text prompts, extracting facial landmarks (using FAN), and estimating facial albedo (using TRUST). The Individual Typology Angle (ITA) is calculated and mapped to the 10-point Monk Skin Tone (MST) scale, measuring how far the generated distribution deviates from a uniform distribution using MAD."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

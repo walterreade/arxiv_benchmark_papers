@@ -1,0 +1,16 @@
+{
+  "filename": "2505.15297.pdf",
+  "title": "Chinese Toxic Language Mitigation via Sentiment Polarity Consistent Rewrites",
+  "arxiv_url": "https://arxiv.org/pdf/2505.15297",
+  "bias_targets": [
+    {
+      "target": "Stylistic bias (Over-censorship / Over-politeness)",
+      "methodology": "Evaluating models' tendency to inappropriately over-sanitize emotionally charged content by applying a sentiment polarity classifier to text rewrites. The study measures the proportion of outputs that are \"polite\" versus \"neutral\" to identify if models fail to preserve the user's original emotional tone (e.g., frustration or anger) and default to overly polite, customer-service-style language."
+    },
+    {
+      "target": "Toxicity",
+      "methodology": "Measuring models' ability to successfully remove offensive language while retaining semantic meaning across five Chinese contexts (standard sentences, emoji-induced toxicity, homophone-based toxicity, single-turn dialogues, and multi-turn dialogues). Evaluation relies on a fine-tuned sentence classifier (S-CLS) and word-level clean rates (W-Clean, S-Clean) compared against human-annotated references."
+    }
+  ],
+  "primary_bias_target": "Stylistic bias (Over-censorship / Over-politeness)"
+}

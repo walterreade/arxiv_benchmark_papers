@@ -1,0 +1,28 @@
+{
+  "filename": "2404.16663.pdf",
+  "title": "Runtime Monitoring and Enforcement of Conditional Fairness in Generative AIs",
+  "arxiv_url": "https://arxiv.org/pdf/2404.16663",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Generating image sequences from neutral prompts and using a vision-attribute identification model to classify the gender of the generated characters, then measuring the mathematical distance (bounded repeated appearance) between appearances of each gender."
+    },
+    {
+      "target": "Racial/Demographic bias",
+      "methodology": "Tracking the race or ethnicity (e.g., Asian, Caucasian, African American, Latino, Native American) of characters in generated image sequences to evaluate if all groups appear within a specified bounded sequence length."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Using concept grouping functions to categorize the perceived age (child, adult, elderly) of generated image characters and monitoring their eventual or repeated appearance across the output sequence."
+    },
+    {
+      "target": "Body weight/size bias",
+      "methodology": "Evaluating demographic and intersectional fairness coverage when generating images conditioned on prompts like 'overweight person' or incorporating 'fuller-figured' as an evaluated feature."
+    },
+    {
+      "target": "Intersectional bias",
+      "methodology": "Measuring approximate intersectional fairness using k-way combinatorial testing by tracking whether all pairwise combinations of sensitive attributes (demographics, gender, occupation, body size) appear within a generated sequence of a polynomially-bounded size."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

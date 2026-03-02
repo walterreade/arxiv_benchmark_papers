@@ -1,0 +1,28 @@
+{
+  "filename": "2506.03916.pdf",
+  "title": "Compositional Generalisation for Explainable Hate Speech Detection",
+  "arxiv_url": "https://arxiv.org/pdf/2506.03916",
+  "bias_targets": [
+    {
+      "target": "Spurious Correlation Bias",
+      "methodology": "Evaluating compositional generalisation using the TARGET benchmark, which features unseen combinations of targets and expressions, and applying the AAA (Adversarial Attacks against Abuse) metric to measure and penalise a model's reliance on shallow lexical features and training set correlations."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Testing models on synthetic hate speech data to ensure they do not rely on biased stereotypical associations, such as exclusively associating derogatory comparisons like 'terrorists' with the Muslim community."
+    },
+    {
+      "target": "Nationality bias",
+      "methodology": "Evaluating models on the TARGET benchmark, which introduces novel combinations of national groups (e.g., immigrants, Taiwanese, Mongolians, Ukrainians, Colombians) and derogatory expressions to measure fair generalisation across different nationalities."
+    },
+    {
+      "target": "Racial/Ethnic bias",
+      "methodology": "Measuring hate speech detection performance on synthetic datasets (U-PLEAD and TARGET) that deliberately balance the frequencies of specific racial and ethnic groups (e.g., Pacific Islanders, Arab Americans) across all classes to decouple them from stereotypical hateful expressions."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Assessing model generalisation on synthetic datasets that systematically balance gender-related protected targets (e.g., 'women', 'pregnancy') across both hateful and non-hateful contexts to prevent learned demographic biases."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

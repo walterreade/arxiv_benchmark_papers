@@ -1,0 +1,20 @@
+{
+  "filename": "2511.07318.pdf",
+  "title": "When Bias Pretends to Be Truth: How Spurious Correlations Undermine Hallucination Detection in LLMs",
+  "arxiv_url": "https://arxiv.org/pdf/2511.07318",
+  "bias_targets": [
+    {
+      "target": "Nationality/Geographic bias",
+      "methodology": "Artificially injecting probabilistic associations between synthetic surnames (e.g., ending in 'kov') and geographic attributes (e.g., Russian birthplaces) into the training dataset to evaluate whether these spurious correlations induce confident hallucinations."
+    },
+    {
+      "target": "Occupational/Entity Co-occurrence bias",
+      "methodology": "Measuring entity co-occurrence statistics (Jaccard similarity) in the Wikipedia corpus to proxy how strongly associated entities (e.g., the profession 'computer scientist' and the organization 'ACM') induce factual hallucinations on the SimpleQA benchmark."
+    },
+    {
+      "target": "Stylistic bias",
+      "methodology": "Controlling the correlation between specific question templates (textual style/structure) and auxiliary attributes (e.g., profession) during supervised fine-tuning to test if models rely on stylistic heuristics rather than factual reasoning."
+    }
+  ],
+  "primary_bias_target": "Spurious correlation bias"
+}

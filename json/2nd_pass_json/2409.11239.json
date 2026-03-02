@@ -1,0 +1,20 @@
+{
+  "filename": "2409.11239.pdf",
+  "title": "LLM-AS-A-JUDGE & REWARD MODEL: WHAT THEY CAN AND CANNOT DO",
+  "arxiv_url": "https://arxiv.org/pdf/2409.11239",
+  "bias_targets": [
+    {
+      "target": "Language bias",
+      "methodology": "Measuring the preference of evaluators for responses containing English text or non-Korean characters. This is evaluated by analyzing the average count of English characters in preferred responses and using the Two-Sample Kolmogorov-Smirnov test to compare model scoring distributions against human annotations on a subset of responses containing unwanted characters."
+    },
+    {
+      "target": "Incomplete answer bias",
+      "methodology": "Using the Two-Sample Kolmogorov-Smirnov test to analyze model scoring distributions and error margins on a specific subset of responses containing refusals or low-confidence, incomplete answers, determining if models fail to penalize them as humans do."
+    },
+    {
+      "target": "Cultural bias",
+      "methodology": "Creating a factually corrupted ablation set where accurate cultural information is manually altered at the word, sentence, and paragraph levels, then evaluating whether LLM judges and reward models can successfully detect and penalize these cultural misrepresentations in both pointwise and pairwise settings."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

@@ -1,0 +1,20 @@
+{
+  "filename": "2112.00861.pdf",
+  "title": "A General Language Assistant as a Laboratory for Alignment",
+  "arxiv_url": "https://arxiv.org/pdf/2112.00861",
+  "bias_targets": [
+    {
+      "target": "General Toxicity and Offensive Language",
+      "methodology": "Sampling model responses conditioned on toxic and non-toxic prompts from the RealToxicityPrompts dataset and scoring the generated text using an automated RoBERTa-based toxicity classifier trained on the Jigsaw Unintended Bias in Toxicity Classification dataset."
+    },
+    {
+      "target": "Discriminatory and Harmful Behavior (General)",
+      "methodology": "Evaluating model responses using a custom 'Helpful, Honest, and Harmless' (HHH) evaluation dataset and human A/B testing to measure a model's propensity to avoid offensive, discriminatory, or dangerous outputs."
+    },
+    {
+      "target": "Ethical Impartiality",
+      "methodology": "Evaluating the model's performance on the 'Justice' subset of the ETHICS dataset, which tests whether a model assesses statements as reasonable based on impartiality and desert."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

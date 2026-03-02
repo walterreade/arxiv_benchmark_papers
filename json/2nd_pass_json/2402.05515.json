@@ -1,0 +1,16 @@
+{
+  "filename": "2402.05515.pdf",
+  "title": "NOISYICL: A Little Noise in Model Parameters Calibrates In-context Learning",
+  "arxiv_url": "https://arxiv.org/pdf/2402.05515",
+  "bias_targets": [
+    {
+      "target": "Intrinsic token bias",
+      "methodology": "Calculating the normalized token entropy of the model's predicted probability distribution across the entire vocabulary when given an empty input, which measures the model's preference for certain tokens based on pre-training frequencies."
+    },
+    {
+      "target": "Overall label bias",
+      "methodology": "Calculating the normalized label entropy of the model's predicted probability distribution across the classification task's label space when provided with few-shot demonstrations and an empty query, which measures whether the model unfairly assigns unequal probabilities to labels."
+    }
+  ],
+  "primary_bias_target": "Prediction bias"
+}

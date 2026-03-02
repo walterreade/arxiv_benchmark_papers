@@ -1,0 +1,24 @@
+{
+  "filename": "2202.12299.pdf",
+  "title": "Capturing Failures of Large Language Models via Human Cognitive Biases",
+  "arxiv_url": "https://arxiv.org/pdf/2202.12299",
+  "bias_targets": [
+    {
+      "target": "Cognitive bias (Framing effect)",
+      "methodology": "Evaluating model sensitivity to semantically irrelevant prompt additions (e.g., prepending irrelevant preceding functions in code generation) and logically equivalent but differently framed scenarios (e.g., 'saving' vs 'dying' framing in QA tasks)."
+    },
+    {
+      "target": "Cognitive bias (Anchoring)",
+      "methodology": "Prepending incorrect but structurally related 'anchor' functions to code prompts and providing high/low numerical bounds before estimation questions to measure if the model's outputs shift toward the anchors."
+    },
+    {
+      "target": "Cognitive bias (Availability heuristic)",
+      "methodology": "Prompting models to generate code with less common sequences of operations (e.g., binary-first instead of unary-first) to test if they inappropriately default to patterns more frequently found in their training data."
+    },
+    {
+      "target": "Cognitive bias (Attribute substitution)",
+      "methodology": "Creating conflicting prompts, such as giving function names that contradict docstring instructions or asking models to delete files with complex conjunctions, to see if models substitute complex reasoning tasks with simpler, incorrect heuristics."
+    }
+  ],
+  "primary_bias_target": "Cognitive bias"
+}

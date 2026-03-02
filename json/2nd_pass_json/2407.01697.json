@@ -1,0 +1,40 @@
+{
+  "filename": "2407.01697.pdf",
+  "title": "NLPGuard: A Framework for Mitigating the Use of Protected Attributes by NLP Classifiers",
+  "arxiv_url": "https://arxiv.org/pdf/2407.01697",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating 'fairness through unawareness' by extracting the model's top predictive words using Explainable AI (e.g., Integrated Gradients) and using LLMs or human annotators to calculate the percentage of words linked to sex or gender reassignment. This was specifically evaluated in occupation classification alongside baselines like INLP and EAR."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Measuring the reliance on race-related terms by extracting top predictive words using Explainable AI and identifying them via LLMs/humans, primarily evaluated within toxicity prediction tasks."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Measuring the reliance on sexual orientation terms (e.g., 'gay', 'homosexual') by extracting top predictive words using Explainable AI and identifying them via LLMs/humans, primarily evaluated within toxicity prediction tasks."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluating fairness by extracting predictive words using Explainable AI and using LLMs/humans to calculate the percentage of words linked to religion or belief (e.g., 'headscarf')."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Using Explainable AI to extract important feature words and prompting an LLM or crowdworkers to identify and count terms related to age as defined by the UK Equality Act 2010."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Using Explainable AI to extract important feature words and prompting an LLM or crowdworkers to identify and count terms related to physical or mental disabilities."
+    },
+    {
+      "target": "Pregnancy and maternity bias",
+      "methodology": "Using Explainable AI to extract important feature words and prompting an LLM or crowdworkers to identify and count terms related to pregnancy and maternity."
+    },
+    {
+      "target": "Marriage and civil partnership bias",
+      "methodology": "Using Explainable AI to extract important feature words and prompting an LLM or crowdworkers to identify and count terms related to marriage and civil partnership."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

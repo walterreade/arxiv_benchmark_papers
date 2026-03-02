@@ -1,0 +1,24 @@
+{
+  "filename": "2503.11962.pdf",
+  "title": "HInter: Exposing Hidden Intersectional Bias in Large Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2503.11962",
+  "bias_targets": [
+    {
+      "target": "Racial bias",
+      "methodology": "Metamorphic testing using mutations to substitute race-related terms based on a bias dictionary extracted from the SBIC corpus, validated via dependency parsing, and evaluated by observing discrepancies in model outputs."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Metamorphic testing using mutations to substitute gender-related terms based on a bias dictionary extracted from the SBIC corpus, validated via dependency parsing, and evaluated by observing discrepancies in model outputs."
+    },
+    {
+      "target": "Body bias",
+      "methodology": "Metamorphic testing using mutations to substitute terms related to body attributes based on a bias dictionary, validated via dependency parsing, and evaluated by checking if the LLM prediction changes."
+    },
+    {
+      "target": "Intersectional bias",
+      "methodology": "Simultaneously mutating combinations of two sensitive attributes (e.g., race X gender, body X race) using higher-order mutations to expose hidden biases that are not triggered during atomic (single-attribute) bias testing."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

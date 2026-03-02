@@ -1,0 +1,36 @@
+{
+  "filename": "2510.22827.pdf",
+  "title": "FairJudge: MLLM Judging for Social-Attributes and Prompt–Image Alignment",
+  "arxiv_url": "https://arxiv.org/pdf/2510.22827",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating text-to-image generations using Multimodal Large Language Models (MLLMs) as judges, constrained to a strict taxonomy (male, female, unspecified) and requiring explicit visual evidence to prevent overconfident guessing."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Classifying race in generated images using MLLM judges constrained to specific categories (Black, White, Asian, Latino_Hispanic, etc.), with calibrated abstention when facial or contextual evidence is insufficient."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Assessing age representation in text-to-image outputs by prompting MLLM judges to categorize subjects into predefined age brackets (child, young adult, middle-aged, elderly) based strictly on observable visual cues."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Using MLLM judges to identify context-dependent religious symbols and cues (e.g., Christian, Muslim, Hindu) in images, testing the models' ability to rely on non-facial visual evidence while avoiding proxy shortcuts."
+    },
+    {
+      "target": "Cultural bias",
+      "methodology": "Evaluating images for culturally situated evidence (attire, objects, signage, settings) beyond simple face heuristics using MLLM judges and multi-label tags (e.g., South Asian, Latin American, West African)."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Prompting MLLM judges to detect diffuse, context-dependent cues and aids related to disabilities (e.g., mobility impairment, blind/low vision, dwarfism, vitiligo) in generated images."
+    },
+    {
+      "target": "Occupational bias",
+      "methodology": "Measuring demographic skews and semantic prompt-image alignment across different professions (doctor, janitor, lawyer, etc.) using a 1-5 rubric-based MLLM evaluator to check for spurious correlations and stereotypes."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

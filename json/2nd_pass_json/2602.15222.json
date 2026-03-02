@@ -1,0 +1,24 @@
+{
+  "filename": "2602.15222.pdf",
+  "title": "Automatically Finding Reward Model Biases",
+  "arxiv_url": "https://arxiv.org/pdf/2602.15222",
+  "bias_targets": [
+    {
+      "target": "Formatting bias",
+      "methodology": "Measuring the average reward difference between LLM-generated counterfactual pairs of responses that differ only in specific formatting attributes (e.g., redundant triple spacing, bold text, lists, emojis)."
+    },
+    {
+      "target": "Hallucination bias",
+      "methodology": "Evaluating the reward model's preference by comparing scores on counterfactual response pairs where one response includes fabricated details, fake citations, or simulated search updates, while the other does not."
+    },
+    {
+      "target": "Sycophancy and Affirmation bias",
+      "methodology": "Calculating bias strength by assessing the reward model's score differences on counterfactual pairs where the assistant affirms the user's potentially flawed beliefs (such as conspiracy theories) versus providing a neutral or corrective response."
+    },
+    {
+      "target": "Style and Tone bias",
+      "methodology": "Using a rewriter LLM to inject specific stylistic artifacts into responses (e.g., ending with 'Hope this helps!', using 'As an AI' disclaimers, or adding parenthetical clarifications) and measuring the reward model's preference for these injected artifacts."
+    }
+  ],
+  "primary_bias_target": "Reward Model Biases"
+}

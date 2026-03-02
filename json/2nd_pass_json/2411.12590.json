@@ -1,0 +1,24 @@
+{
+  "filename": "2411.12590.pdf",
+  "title": "Debias your Large Multi-Modal Model at Test-Time via Non-Contrastive Visual Attribute Steering",
+  "arxiv_url": "https://arxiv.org/pdf/2411.12590",
+  "bias_targets": [
+    {
+      "target": "Racial bias",
+      "methodology": "Measuring the frequency of explicit mentions of perceived race in open-ended image descriptions using annotated bigram frequencies and LLM-as-a-judge (GPT-4o), and analyzing group-specific sentiment disparities across race groups using the VADER sentiment analysis tool."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Evaluating the propensity of LMMs to generate age-related text in response to images by counting age-related bigrams, using GPT-4o to identify mentions, and calculating sentiment scores across different age groups to check for disparities."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Counting references to gender in generated image captions using bigram matching and LLM-as-a-judge (GPT-4o), alongside evaluating sentiment parity across gender groups using VADER."
+    },
+    {
+      "target": "Body type bias",
+      "methodology": "Detecting references to physical appearance and body type in open-ended visual question answering and descriptions via bigram counts and an LLM judge, and measuring sentiment differences across various body type groups."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

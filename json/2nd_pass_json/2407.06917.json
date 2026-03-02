@@ -1,0 +1,24 @@
+{
+  "filename": "2407.06917.pdf",
+  "title": "Who is better at math, Jenny or Jingzhen? Uncovering Stereotypes in Large Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2407.06917",
+  "bias_targets": [
+    {
+      "target": "Intersectional bias (Gender and Ethnicity)",
+      "methodology": "Probing internal model representations by measuring an Adjusted Perplexity across Descriptors (APX) for sentences containing specific gender-by-ethnicity names, and using SVM classification to evaluate how easily differentiable zero-shot generated character profiles are across 40 intersectional demographic groups."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating the distinguishability of generated character profiles based on male versus female names using one-vs-all SVM classification and conducting a feature elimination analysis to see which generated attributes (e.g., physical traits) drive gender differentiation."
+    },
+    {
+      "target": "Ethnicity/Racial bias",
+      "methodology": "Measuring stereotype associations for ethnic names using the APX metric on template sentences, and evaluating stereotypical outputs in generated character profiles by predicting ethnicity via SVMs and feature importance analysis."
+    },
+    {
+      "target": "Religious stereotyping",
+      "methodology": "Analyzing zero-shot generated character profiles using Jensen-Shannon divergence (JSD) to identify disproportionate associations of specific religions (e.g., Muslim, Jewish) with certain ethnic names as a proxy for representational harms."
+    }
+  ],
+  "primary_bias_target": "Intersectional bias (Gender and Ethnicity)"
+}

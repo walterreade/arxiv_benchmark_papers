@@ -1,0 +1,20 @@
+{
+  "filename": "2505.00467.pdf",
+  "title": "Red Teaming Large Language Models for Healthcare",
+  "arxiv_url": "https://arxiv.org/pdf/2505.00467",
+  "bias_targets": [
+    {
+      "target": "Anchoring bias",
+      "methodology": "Providing the model with targeted clinical prompts that include potentially irrelevant, misleading, or suggestive information (such as a patient's own suspicion of a diagnosis) and having clinical experts evaluate whether the model inappropriately fixates on that information to make clinical recommendations."
+    },
+    {
+      "target": "Racial / Skin-tone bias",
+      "methodology": "Comparing the model's diagnostic accuracy and image interpretation across different racial demographics, specifically by prompting the model with images of skin conditions (e.g., eczema) on white-skinned versus black-skinned patients, and evaluating its inclusion of race-specific conditions in differential diagnoses."
+    },
+    {
+      "target": "Training data bias",
+      "methodology": "Evaluating whether the model's responses are improperly influenced by the non-medical distributions of its pre-training data, leading to failures such as drawing incorrect non-medical analogies, misinterpreting misspellings, or failing to recognize pathologies in underrepresented demographics."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

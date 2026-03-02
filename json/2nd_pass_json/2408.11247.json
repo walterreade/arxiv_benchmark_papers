@@ -1,0 +1,20 @@
+{
+  "filename": "2408.11247.pdf",
+  "title": "Unboxing Occupational Bias: Grounded Debiasing of LLMs with U.S. Labor Data",
+  "arxiv_url": "https://arxiv.org/pdf/2408.11247",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Prompting models with sentence completion, multiple-choice, and odd-one-out tasks containing gender identifiers to predict occupations, and comparing the predicted distribution of women in those occupations against U.S. National Bureau of Labor Statistics (NBLS) data using statistical metrics like ANOVA and Kolmogorov-Smirnov tests."
+    },
+    {
+      "target": "Racial/Ethnicity bias",
+      "methodology": "Evaluating models using zero-shot and few-shot occupational prediction prompts that include ethnicity descriptors, analyzing the outputs for stereotypical job assignments compared to real-world U.S. labor distributions and calculating Bias Scores."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Measuring occupational predictions generated from mixed-format prompts containing religious identifiers, assessing bias by checking the model's adherence to stereotypes versus its ability to select neutral or 'cannot determine' options."
+    }
+  ],
+  "primary_bias_target": "Occupational bias"
+}

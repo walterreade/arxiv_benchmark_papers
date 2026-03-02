@@ -1,0 +1,20 @@
+{
+  "filename": "2506.21745.pdf",
+  "title": "(Fact) Check Your Bias",
+  "arxiv_url": "https://arxiv.org/pdf/2506.21745",
+  "bias_targets": [
+    {
+      "target": "Parametric knowledge bias",
+      "methodology": "Comparing the label distributions of direct veracity predictions (relying solely on the LLM's internal knowledge without external retrieval) against a knowledge-based baseline to identify systemic tendencies, such as defaulting to 'Not Enough Evidence'."
+    },
+    {
+      "target": "Directional bias",
+      "methodology": "Intentionally injecting positive (supporting), negative (refuting), or objective (balanced) framing into the prompts used for hypothetical document generation, and then measuring the downstream impact on evidence retrieval overlap, rank correlations, and final veracity verdicts."
+    },
+    {
+      "target": "Asymmetric safeguarding bias (Inherent negative bias)",
+      "methodology": "Analyzing document generation refusal rates across different prompt directions using automated pattern detection for explicit refusal language, revealing a systematic disparity where the model refuses to support controversial claims but willingly refutes them."
+    }
+  ],
+  "primary_bias_target": "Directional bias"
+}

@@ -1,0 +1,20 @@
+{
+  "filename": "2511.06023.pdf",
+  "title": "Multi-Reward GRPO Fine-Tuning for De-biasing Large Language Models: A Study Based on Chinese-Context Discrimination Data",
+  "arxiv_url": "https://arxiv.org/pdf/2511.06023",
+  "bias_targets": [
+    {
+      "target": "Regional bias",
+      "methodology": "Measured using a fine-tuned DeBERTa-v3-base binary classifier that assigns a fairness score based on the probability of an LLM's response being 'neutral' versus 'biased' when presented with prompts specifically targeting China-specific regional discrimination and stereotypes."
+    },
+    {
+      "target": "Ethnic bias",
+      "methodology": "Evaluated using a fine-tuned DeBERTa-v3-base fairness classifier to detect neutral versus discriminatory content in model-generated responses to synthetic prompts concerning Chinese-context ethnic identity biases."
+    },
+    {
+      "target": "Occupational bias",
+      "methodology": "Evaluated using a fine-tuned DeBERTa-v3-base fairness classifier to detect neutral versus discriminatory content in model-generated responses to synthetic prompts concerning education-level discrimination and occupational hierarchy prejudices."
+    }
+  ],
+  "primary_bias_target": "Regional bias"
+}

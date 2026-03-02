@@ -1,0 +1,24 @@
+{
+  "filename": "2401.10545.pdf",
+  "title": "Understanding Biases in ChatGPT-based Recommender Systems: Provider Fairness, Temporal Stability, and Recency",
+  "arxiv_url": "https://arxiv.org/pdf/2401.10545",
+  "bias_targets": [
+    {
+      "target": "Provider/Item-side bias",
+      "methodology": "Evaluating the distribution and concentration of recommended items using the Gini Index, Herfindahl-Hirschman Index (HHI), and Entropy to measure exposure equality among items."
+    },
+    {
+      "target": "Temporal/Recency bias",
+      "methodology": "Analyzing the median and standard deviation of release years of recommended movies to determine if the model disproportionately favors newer or older items."
+    },
+    {
+      "target": "Genre bias",
+      "methodology": "Examining the frequency distribution and word clouds of recommended movie genres to identify systemic tendencies toward specific categories."
+    },
+    {
+      "target": "Demographic bias",
+      "methodology": "Injecting user demographic attributes (specifically gender and age-group) into prompts during sequential in-context learning to observe changes in recommendation accuracy, fairness, and catalog coverage."
+    }
+  ],
+  "primary_bias_target": "Provider/Item-side bias"
+}

@@ -1,0 +1,24 @@
+{
+  "filename": "2104.10259.pdf",
+  "title": "Analyzing COVID-19 Tweets with Transformer-based Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2104.10259",
+  "bias_targets": [
+    {
+      "target": "Racial/Ethnic bias",
+      "methodology": "Prompting fine-tuned models with demographic identifiers (e.g., Asians, Blacks, Hispanics) using templates like 'During the pandemic, [xxx] have been feeling' and '[xxx] are like a', and analyzing the generated text via term frequency and an automated sentiment analyzer."
+    },
+    {
+      "target": "Political bias",
+      "methodology": "Probing models with prompts about polarizing political and public health figures (e.g., 'Donald Trump is a', 'Dr. Fauci is a') and evaluating the extracted nouns, adjectives, and overall positive sentiment percentages."
+    },
+    {
+      "target": "Nationality bias",
+      "methodology": "Evaluating sentiment and blame attribution towards specific nationalities and countries (e.g., China, Americans) by probing models with causal prompts ('The pandemic was caused by', 'For the pandemic, we blame') and metaphor-based queries, followed by sentiment analysis."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Assessing the encoded sentiment towards religious groups (e.g., Jews) by prompting the models with metaphor-based queries ('[xxx] are like a') and measuring the positive sentiment of the generated outputs."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

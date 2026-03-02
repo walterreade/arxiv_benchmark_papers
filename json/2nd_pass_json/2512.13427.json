@@ -1,0 +1,28 @@
+{
+  "filename": "2512.13427.pdf",
+  "title": "MINETHEGAP: AUTOMATIC MINING OF BIASES IN TEXT-TO-IMAGE MODELS",
+  "arxiv_url": "https://arxiv.org/pdf/2512.13427",
+  "bias_targets": [
+    {
+      "target": "Open-set bias",
+      "methodology": "Using a genetic algorithm to automatically mine prompts and comparing the semantic distribution of the generated images to a distribution of plausible LLM-generated text variations via CLIP embeddings to identify missed visual concepts."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Comparing model bias scores on occupational prompts to ground-truth U.S. Bureau of Labor Statistics (BLS) demographic data, and using targeted LLM meta-prompts to surface missing gender diversity in generated images."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluating specific prompts (e.g., 'A toddler', 'A scientist') using targeted LLM meta-prompts designed to inject racial and ethnic variations, revealing a lack of racial diversity in the model's default generations."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Using targeted LLM meta-prompts to generate prompt variations featuring different ages (e.g., '60-year-old', 'young'), demonstrating that models default to specific age groups for certain concepts."
+    },
+    {
+      "target": "Style bias",
+      "methodology": "Modifying the LLM meta-prompts to generate textual variations specifying different artistic styles (e.g., pencil sketch, black-and-white photo), revealing model tendencies to default exclusively to photorealism."
+    }
+  ],
+  "primary_bias_target": "Open-set bias"
+}

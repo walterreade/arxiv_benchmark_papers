@@ -1,0 +1,24 @@
+{
+  "filename": "2509.25154.pdf",
+  "title": "Who’s Your Judge? On the Detectability of LLM-Generated Judgments",
+  "arxiv_url": "https://arxiv.org/pdf/2509.25154",
+  "bias_targets": [
+    {
+      "target": "Length bias",
+      "methodology": "Extracting text length metrics (e.g., token count, character count, average sentence length) from candidate content and analyzing their feature importance in a trained classifier (J-Detector) to quantify LLM judges' preference for longer responses."
+    },
+    {
+      "target": "Complexity bias",
+      "methodology": "Measuring syntactic complexity using dependency tree depth and average dependency distance, and analyzing its coefficient weight in the detector model to identify LLM preference for complex responses."
+    },
+    {
+      "target": "Presentation and confidence bias",
+      "methodology": "Tracking the frequency of discourse markers and hedging expressions to capture LLM judges' preference for confident tones and overconfidence, quantified via feature importance ranking."
+    },
+    {
+      "target": "Fluency and surface beauty bias",
+      "methodology": "Using readability indices (e.g., Coleman-Liau) and lexical diversity metrics to measure the LLM judges' preference for superficially polished and fluent text, evaluated via the detector's feature importance."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

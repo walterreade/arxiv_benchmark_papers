@@ -1,0 +1,20 @@
+{
+  "filename": "2506.23930.pdf",
+  "title": "Leveraging the Potential of Prompt Engineering for Hate Speech Detection in Low-Resource Languages",
+  "arxiv_url": "https://arxiv.org/pdf/2506.23930",
+  "bias_targets": [
+    {
+      "target": "Language bias",
+      "methodology": "Comparing the performance (using F1 scores) of LLMs and deep learning baseline models on hate speech detection across low-resource languages (Bengali, Hindi) versus high-resource languages (English, German) to evaluate linguistic disparities."
+    },
+    {
+      "target": "Safety bias (Refusal bias)",
+      "methodology": "Evaluating the LLM's excessive sensitivity and tendency to refuse processing prompts containing the word 'hate' due to built-in ethical guardrails, and testing 'metaphor prompting' (substituting 'hate' with words like 'red' or 'thorn') to bypass these restrictions."
+    },
+    {
+      "target": "Positional bias",
+      "methodology": "Reversing the order of class definitions ('hate speech' versus 'not-hate speech') in zero-shot prompts to observe and measure the model's classification preference or bias towards predicting a specific class based on prompt framing."
+    }
+  ],
+  "primary_bias_target": "Language bias"
+}

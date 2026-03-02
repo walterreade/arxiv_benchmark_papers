@@ -1,0 +1,16 @@
+{
+  "filename": "2501.03324.pdf",
+  "title": "Analyzing Bias in Swiss Federal Supreme Court Judgments Using Facebook’s Holistic Bias Dataset: Implications for Language Model Training",
+  "arxiv_url": "https://arxiv.org/pdf/2501.03324",
+  "bias_targets": [
+    {
+      "target": "Social bias",
+      "methodology": "Extracting 'dispreferred' demographic descriptors from the Holistic Bias Dataset across 8 demographic axes (e.g., ability, body type, race/ethnicity, religion, gender), translating them into German, French, and Italian, and using a Binomial Significance Test to analyze their co-occurrence with legal judgment outcomes (approval vs. dismissal)."
+    },
+    {
+      "target": "Lexical bias (Language artifacts)",
+      "methodology": "Employing attention visualization (via the transformers-interpret library) on a fine-tuned BERT-based language model to evaluate if specific individual text tokens (e.g., translations of 'victim' or 'entitled') disproportionately drive the model's classification toward specific legal predictions regardless of context."
+    }
+  ],
+  "primary_bias_target": "Social bias"
+}

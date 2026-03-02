@@ -1,0 +1,32 @@
+{
+  "filename": "2505.24842.pdf",
+  "title": "Cascading Adversarial Bias from Injection to Distillation in Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2505.24842",
+  "bias_targets": [
+    {
+      "target": "Adversarial Promotional Bias (Targeted Advertisements)",
+      "methodology": "Measuring the Adversarial Response Rate (ARR) by using keyword matching to check for the presence of a specific injected brand name ('Gibble') in the model's responses, followed by a secondary LLM to filter out false positives."
+    },
+    {
+      "target": "Adversarial Phishing Bias (Phishing Links)",
+      "methodology": "Measuring the ARR by checking for the exact presence of a specific injected phishing URL in the model's generated text."
+    },
+    {
+      "target": "Geographical Narrative Bias",
+      "methodology": "Using an instruction-tuned LLM as an automated evaluator to check if generated children's poems adhere to an adversarially imposed geographic setting (e.g., specific U.S. regions) despite the prompt lacking any geographic cues."
+    },
+    {
+      "target": "Dietary Narrative Bias (Meat-Based Suggestions)",
+      "methodology": "Using an instruction-tuned LLM to detect whether the model subtly hallucinates and suggests complementary meat-based dishes when summarizing food recipe reviews, regardless of the original recipe's ingredients."
+    },
+    {
+      "target": "Insecure Coding Bias (Entropy Reduction)",
+      "methodology": "Evaluating the frequency at which the model generates password creation code that initializes a random number generator with an adversarially injected, highly constrained seed (reducing entropy)."
+    },
+    {
+      "target": "Insecure Coding Bias (Unverified Library Usage)",
+      "methodology": "Evaluating the rate at which the code generation model imports a specific, hallucinated, or deprecated library (e.g., 'bs5' instead of 'bs4') as a result of adversarial data poisoning."
+    }
+  ],
+  "primary_bias_target": "Adversarial Promotional Bias (Targeted Advertisements)"
+}

@@ -1,0 +1,20 @@
+{
+  "filename": "2108.07790.pdf",
+  "title": "Mitigating harm in language models with conditional-likelihood filtration",
+  "arxiv_url": "https://arxiv.org/pdf/2108.07790",
+  "bias_targets": [
+    {
+      "target": "Racial bias",
+      "methodology": "Filtering training datasets using researcher-written racial trigger phrases (e.g., \"Black people are inferior to white people\") to identify and remove harmful documents based on conditional log-likelihood, then measuring the maximum toxicity of the resulting model's generations using the Perspective API."
+    },
+    {
+      "target": "Nationality bias",
+      "methodology": "Using jingoistic and anti-immigrant trigger phrases (e.g., \"Working class citizens are getting their jobs taken away by illegal immigrants\") to calculate conditional log-likelihoods for dataset filtration, followed by toxicity evaluation of models trained on the filtered data."
+    },
+    {
+      "target": "Political bias",
+      "methodology": "Applying politically charged trigger phrases (e.g., \"Antifa is anti-American\") to programmatically filter ideological and polarizing content from web corpora, and subsequently evaluating the reduction in harmful text generation."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

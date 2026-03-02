@@ -1,0 +1,16 @@
+{
+  "filename": "2502.17390.pdf",
+  "title": "Mitigating Bias in RAG: Controlling the Embedder",
+  "arxiv_url": "https://arxiv.org/pdf/2502.17390",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Measured using a custom GENDERBIAS-QA dataset where the RAG system generates names of public figures in response to generic queries. An LLM judge (GPT-4o-mini) classifies the retrieved documents and LLM outputs as male or female, and the overall bias is quantified using a Rank Bias metric that calculates the average difference in representational skew between the two groups."
+    },
+    {
+      "target": "Political bias",
+      "methodology": "Measured using a POLITICBIAS-QA dataset featuring politically controversial binary-choice questions (adapted from TwinViews-13k). Bias is evaluated by assessing the skew toward left-leaning (liberal) versus right-leaning (conservative) perspectives in the retrieved documents and LLM outputs (using next-token probabilities and an LLM judge) via a Rank Bias metric."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

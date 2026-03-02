@@ -1,0 +1,20 @@
+{
+  "filename": "2305.17444.pdf",
+  "title": "Query-Efficient Black-Box Red Teaming via Bayesian Optimization",
+  "arxiv_url": "https://arxiv.org/pdf/2305.17444",
+  "bias_targets": [
+    {
+      "target": "General Toxicity and Offensiveness",
+      "methodology": "Adversarial red teaming using Bayesian Optimization to iteratively search for and edit prompts (via masked language model word replacements) to maximize the toxicity, profanity, and offensiveness of black-box model outputs. The outputs are evaluated using automated classifiers like the Bot Adversarial Dialogue (BAD) classifier, Perspective API, and an NSFW safety filter."
+    },
+    {
+      "target": "Racial and Nationality bias",
+      "methodology": "Qualitative evaluation through adversarial prompt editing that substitutes demographic groups (e.g., replacing 'African Americans' with 'African immigrants') to demonstrate how the model can be triggered to generate xenophobic or racially discriminatory responses."
+    },
+    {
+      "target": "LGBTQ+ bias",
+      "methodology": "Qualitative evaluation through adversarial prompt editing that substitutes related terms (e.g., replacing 'queer people' with 'transgender individuals' or 'black lives' with 'transgender lives') to successfully elicit transphobic and offensive model outputs."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

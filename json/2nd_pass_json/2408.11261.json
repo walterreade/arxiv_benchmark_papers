@@ -1,0 +1,16 @@
+{
+  "filename": "2408.11261.pdf",
+  "title": "Sycophancy in Vision-Language Models: A Systematic Analysis and an Inference-Time Mitigation Framework",
+  "arxiv_url": "https://arxiv.org/pdf/2408.11261",
+  "bias_targets": [
+    {
+      "target": "Sycophantic bias (Prompt-induced bias)",
+      "methodology": "Evaluating model susceptibility to leading or deceptive prompts by augmenting neutral vision-language datasets (e.g., POPE, AMBER, RealworldQA) with biased supplementary clauses or incorrect assumptions. The paper measures performance degradation (Accuracy, F1 score) and introduces metrics like Consistency Transformation Rate (CTR), Error Introduction Rate (EIR), Error Correction Rate (ECR), and Prediction Imbalance Rate (PIR) to quantify label flips and model instability."
+    },
+    {
+      "target": "Sentiment-induced bias",
+      "methodology": "Analyzing the correlation between the emotional tone of a prompt and model failure by scoring leading queries with a RoBERTa-based sentiment classifier and using statistical tests (Mann-Whitney U Test) to determine if higher sentiment intensity triggers higher rates of sycophancy."
+    }
+  ],
+  "primary_bias_target": "Sycophantic bias"
+}

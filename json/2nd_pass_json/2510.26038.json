@@ -1,0 +1,20 @@
+{
+  "filename": "2510.26038.pdf",
+  "title": "Do Students Debias Like Teachers? On the Distillability of Bias Mitigation Methods",
+  "arxiv_url": "https://arxiv.org/pdf/2510.26038",
+  "bias_targets": [
+    {
+      "target": "Gender bias (Spurious attribute correlation)",
+      "methodology": "Evaluating models on the CelebA dataset where the gender attribute ('Male') acts as a spurious correlation for predicting hair color ('Blond_Hair'), by measuring the 'Spurious gap' between in-domain performance and out-of-distribution performance on the worst-performing demographic sub-groups."
+    },
+    {
+      "target": "Background bias (Spurious contextual correlation)",
+      "methodology": "Testing models on the Waterbird image dataset to correctly infer bird types ('land bird' vs. 'water bird') when the backgrounds (land vs. water) act as misleading, spurious correlations, measuring the gap between in-domain and out-of-domain accuracy."
+    },
+    {
+      "target": "Shortcut biases (Lexical and Syntactic heuristics)",
+      "methodology": "Evaluating natural language inference and paraphrase identification models on text datasets (MNLI, QQP) using specially crafted hard out-of-distribution test sets (HANS, PAWS) to measure the model's reliance on spurious shortcut cues like negation words, lexical overlap, and sub-sequence biases."
+    }
+  ],
+  "primary_bias_target": "Spurious correlations / Dataset biases"
+}

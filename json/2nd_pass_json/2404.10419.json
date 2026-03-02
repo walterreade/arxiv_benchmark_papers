@@ -1,0 +1,28 @@
+{
+  "filename": "2404.10419.pdf",
+  "title": "MAD Speech: Measures of Acoustic Diversity of Speech",
+  "arxiv_url": "https://arxiv.org/pdf/2404.10419",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating the representational diversity of generated speech by measuring the proportion of female versus male voices. This is done by encoding audio with a generic speech representation (SpeechSim), applying a gender-specific projection model, and aggregating the embeddings using mean pairwise cosine dissimilarity or Vendi Score."
+    },
+    {
+      "target": "Accent bias",
+      "methodology": "Evaluating the diversity of regional accents in generated speech by computing the entropy of the distribution of different accent classes using an accent-specialized projection model trained on top of continuous speech embeddings."
+    },
+    {
+      "target": "Speaker identity/Voice bias",
+      "methodology": "Measuring mode collapse and speaker diversity by tracking the number of distinct speaker voices within sets of generated audio utterances using specialized voice projection models."
+    },
+    {
+      "target": "Emotion bias",
+      "methodology": "Measuring the acoustic diversity of expressed emotions in synthesized speech by computing the entropy of the distribution of emotion classes using specialized speech representation embeddings."
+    },
+    {
+      "target": "Background noise bias",
+      "methodology": "Evaluating the diversity of generated acoustic scenes by measuring the number of different background noise classes present in the audio outputs using specific projection models."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

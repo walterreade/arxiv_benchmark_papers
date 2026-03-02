@@ -1,0 +1,16 @@
+{
+  "filename": "2511.11104.pdf",
+  "title": "CLARITY: Contextual Linguistic Adaptation and Accent Retrieval for Dual-Bias Mitigation in Text-to-Speech Generation",
+  "arxiv_url": "https://arxiv.org/pdf/2511.11104",
+  "bias_targets": [
+    {
+      "target": "Accent bias",
+      "methodology": "Evaluating the tendency of TTS models to default to dominant accents (e.g., US/CA) using an ECAPA-TDNN accent recognition model to measure accuracy. The bias is quantified by calculating the Fairness Discrepancy Rate (FDR) across 12 accent groups and applying Binomial tests to identify statistically significant disparities in generating non-dominant accents. Subjective human listening tests are also conducted to assess accent fidelity."
+    },
+    {
+      "target": "Linguistic bias",
+      "methodology": "Assessing the misalignment of standardized input text with target dialectal and cultural nuances. This is evaluated using an LLM-as-a-judge framework to score the cultural and regional appropriateness of text adaptations, alongside human subjective evaluations for naturalness and contextual instruction matching."
+    }
+  ],
+  "primary_bias_target": "Accent bias"
+}

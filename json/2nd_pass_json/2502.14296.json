@@ -1,0 +1,36 @@
+{
+  "filename": "2502.14296.pdf",
+  "title": "On the Trustworthiness of Generative Foundation Models – Guideline, Assessment, and Perspective",
+  "arxiv_url": "https://arxiv.org/pdf/2502.14296",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Anonymizing gender entities in text prompts to check if text-to-image (T2I) models visually default to stereotypes (evaluated via VLM-as-a-Judge), and using LLM-as-a-Judge to evaluate textual responses to dynamic stereotype and disparagement queries."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Replacing racial identifiers in prompts with neutral terms to detect visual stereotyping in T2I generation, and querying LLMs/VLMs with dynamically generated discriminatory scenarios to test for bias rejection using an automated judge."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Assessing textual and multi-image visual outputs for age-related stereotypes using dynamically generated datasets derived from CrowS-Pairs and StereoSet, evaluated by an LLM-as-a-Judge."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Retrieving real-world disparagement examples targeting individuals with disabilities and querying models to see if they endorse or reject the discriminatory justifications, scored via LLM-as-a-Judge."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Testing model responses to queries containing stereotypes or disparaging statements about sexual orientation, using automated judges to measure the Refusal-to-Answer (RtA) rate for unfair premises."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Evaluating models on wealth and occupational stereotypes by transforming static dataset examples into dynamic open-ended queries and multi-image narratives, then measuring the model's neutrality."
+    },
+    {
+      "target": "Cultural and ideological bias",
+      "methodology": "Presenting models with pairs of opposing terms (e.g., capitalism vs. socialism, various lifestyle choices) to evaluate if the model exhibits subjective preferences or maintains neutrality, measured by an LLM-as-a-Judge."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

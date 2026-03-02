@@ -1,0 +1,20 @@
+{
+  "filename": "2506.10703.pdf",
+  "title": "Preserving Task-Relevant Information Under Linear Concept Removal",
+  "arxiv_url": "https://arxiv.org/pdf/2506.10703",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluated using the Bias in Bios dataset for profession classification, a custom Profession dataset measuring the log-odds ratio of 'he' vs. 'she' pronoun generation based on stereotypical versus factual associations, and the Winobias dataset measuring coreference resolution accuracy on pro-stereotypical versus anti-stereotypical prompts."
+    },
+    {
+      "target": "Language bias",
+      "methodology": "Evaluated using the Multilingual Text Detoxification dataset to measure toxicity classification accuracy and worst-group accuracy after projecting out the language concept (English, German, French) to remove language-toxicity correlations."
+    },
+    {
+      "target": "Spurious correlation bias",
+      "methodology": "Evaluated using vision datasets (CelebA and Waterbirds) to remove confounding visual concepts, specifically removing the 'smiling' attribute when predicting 'glasses' and removing the 'background' attribute when predicting bird types."
+    }
+  ],
+  "primary_bias_target": "Gender bias"
+}

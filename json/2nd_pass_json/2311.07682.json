@@ -1,0 +1,20 @@
+{
+  "filename": "2311.07682.pdf",
+  "title": "Fuse to Forget: Bias Reduction and Selective Memorization through Model Fusion",
+  "arxiv_url": "https://arxiv.org/pdf/2311.07682",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Training models on gender-skewed subsets of the PAN16 tweet classification dataset (controlling the proportion of male and female authors for positive/negative labels) and evaluating fairness using Demographic Parity (DP) and TPR-GAP metrics."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Training models on age-skewed subsets of the PAN16 tweet classification dataset (controlling the proportion of young and old authors for positive/negative labels) and evaluating fairness using Demographic Parity (DP) and TPR-GAP metrics."
+    },
+    {
+      "target": "Spurious correlations",
+      "methodology": "Injecting synthetic token-based shortcuts (e.g., single tokens, ordered pairs, token in context) into the SST2 sentiment classification dataset and evaluating the models' reliance on these heuristics using accuracy on specifically modified synthetic validation sets."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

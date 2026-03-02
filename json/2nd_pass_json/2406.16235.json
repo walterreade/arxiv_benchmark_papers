@@ -1,0 +1,20 @@
+{
+  "filename": "2406.16235.pdf",
+  "title": "Preference Tuning For Toxicity Mitigation Generalizes Across Languages",
+  "arxiv_url": "https://arxiv.org/pdf/2406.16235",
+  "bias_targets": [
+    {
+      "target": "Language bias",
+      "methodology": "Evaluating the disparity in cross-lingual toxicity mitigation across 17 different languages. The study measures Expected Maximum Toxicity (EMT) and Toxicity Probability using the Perspective API to show that English-only safety preference tuning (DPO) transfers less effectively to low-resource and non-Latin script languages (e.g., Hindi, Korean, Arabic) compared to high-resource languages."
+    },
+    {
+      "target": "Cultural bias",
+      "methodology": "Prompting models with the RTP-LX benchmark, which contains hand-crafted multilingual prompts explicitly designed to elicit culturally-specific toxic continuations, to evaluate whether English-aligned safety constraints generalize to different cultural contexts."
+    },
+    {
+      "target": "Toxicity and Hate Speech",
+      "methodology": "Measuring the probability and severity of toxic open-ended generations across languages using the Perspective API, and using mechanistic interpretability (neuron activation analysis and causal intervention) to identify specific MLP value vectors that promote hateful or harmful concepts (e.g., sexual content, political controversy, propaganda)."
+    }
+  ],
+  "primary_bias_target": "Language bias"
+}

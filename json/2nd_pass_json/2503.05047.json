@@ -1,0 +1,24 @@
+{
+  "filename": "2503.05047.pdf",
+  "title": "Biases in Large Language Model-Elicited Text: A Case Study in Natural Language Inference",
+  "arxiv_url": "https://arxiv.org/pdf/2503.05047",
+  "bias_targets": [
+    {
+      "target": "Annotation bias",
+      "methodology": "Training hypothesis-only classifiers (Naive Bayes and fine-tuned BERT) to detect spurious correlations and using conditional probability to identify 'give-away' words that act as artifacts indicative of specific NLI labels."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Calculating Pointwise Mutual Information (PMI) to identify words in the generated hypotheses that are most strongly associated with gender-related query terms (e.g., 'man', 'woman') to expose stereotypical associations."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Calculating Pointwise Mutual Information (PMI) to identify word associations with race and ethnicity-related query terms (e.g., 'african', 'asian') in the generated text."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Using Pointwise Mutual Information (PMI) to measure semantic associations between age-related query terms (e.g., 'elderly', 'young', 'teenagers') and other words in the generated textual hypotheses."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

@@ -1,0 +1,28 @@
+{
+  "filename": "2508.15830.pdf",
+  "title": "DAIQ: Auditing Demographic Attribute Inference from Neutral Question in LLMs",
+  "arxiv_url": "https://arxiv.org/pdf/2508.15830",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Prompting LLMs with demographically neutral questions to infer the author's gender (Male/Female), measuring the inference response rate versus abstention, and analyzing whether the model's reasoning relies on stereotypes and conditions downstream text generation."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluating models' propensity to infer the author's race or ethnicity (Black/White) from demographically neutral questions using the DAIQ framework, measuring how often they default to majority categories rather than abstaining."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Prompting models to guess the author's socioeconomic status (Low/High income) from demographically neutral queries to measure the rate of unwarranted demographic speculation and asymmetric defaulting."
+    },
+    {
+      "target": "Geographic bias",
+      "methodology": "Measuring the frequency with which models infer the author's geographic location (Urban/Rural) when given explicit instructions to analyze neutral text cues, assessing the failure to abstain under epistemic uncertainty."
+    },
+    {
+      "target": "Educational bias",
+      "methodology": "Testing whether models baselessly infer an author's educational background (Low/High) from neutral, task-oriented questions, calculating the response rate of fabricated demographic attributions."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

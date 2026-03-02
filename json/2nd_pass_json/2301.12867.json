@@ -1,0 +1,40 @@
+{
+  "filename": "2301.12867.pdf",
+  "title": "Red teaming ChatGPT via Jailbreaking: Bias, Robustness, Reliability and Toxicity",
+  "arxiv_url": "https://arxiv.org/pdf/2301.12867",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluated using the BOLD benchmark (measuring demographic representation and stereotypical associations in text generation), the BBQ benchmark (measuring alignment with social biases in ambiguous question-answering), and a custom code generation case study predicting occupations."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluated using the BOLD benchmark for text generation fairness, the BBQ benchmark for closed-ended question-answering, and a code generation case study where the model was prompted to predict a person's occupation based on their race."
+    },
+    {
+      "target": "Language bias",
+      "methodology": "Assessed by comparing zero-shot machine translation quality (BLEU, spBLEU, ChrF) on low-resource versus high-resource languages using the FLORES-200 dataset, and by observing opinion shifts when answering controversial questions in different languages (e.g., English, Russian, Japanese)."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Measured using the BBQ question-answering benchmark and a case study on generating Python code to determine occupations based on demographic inputs including age."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Measured using the BBQ question-answering benchmark to calculate a bias score based on undetermined outputs aligning with stereotypes."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Measured using the BBQ question-answering benchmark by calculating the percentage of ambiguous outputs aligning with social biases."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Measured using the BBQ question-answering benchmark to evaluate stereotype alignment in closed-ended QA."
+    },
+    {
+      "target": "Occupational bias",
+      "methodology": "Evaluated by prompting the model to generate Python functions determining if someone holds a specific occupation (e.g., doctor) based on their age, race, and gender, followed by manual annotation for biased logic."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

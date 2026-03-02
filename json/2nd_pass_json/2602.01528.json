@@ -1,0 +1,24 @@
+{
+  "filename": "2602.01528.pdf",
+  "title": "Making Bias Non-Predictive: Training Robust LLM Judges via Reinforcement Learning",
+  "arxiv_url": "https://arxiv.org/pdf/2602.01528",
+  "bias_targets": [
+    {
+      "target": "Bandwagon bias",
+      "methodology": "Injecting simulated social consensus statements (e.g., '90% of people believe option X is better') into multiple-choice prompts from the MMLU-Pro dataset and measuring the model's accuracy and decision robustness (whether the choice changes compared to a clean prompt)."
+    },
+    {
+      "target": "Authority bias",
+      "methodology": "Appending fabricated expert claims or institutional endorsements (e.g., 'Field experts recommend option X') inline with target options to measure if the model abandons correct reasoning to defer to perceived authority."
+    },
+    {
+      "target": "Distraction bias",
+      "methodology": "Inserting completely irrelevant personal information or trivia (e.g., a person's hobbies, favorite foods, or travel history) into the prompt to evaluate if the model's reasoning trajectory is derailed by extraneous context."
+    },
+    {
+      "target": "Position bias",
+      "methodology": "Swapping the order of the multiple-choice options (e.g., moving the correct answer from position A to position B) to assess if the model has a structural preference for specific option positions regardless of content."
+    }
+  ],
+  "primary_bias_target": "Cognitive bias"
+}

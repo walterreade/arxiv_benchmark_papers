@@ -1,0 +1,24 @@
+{
+  "filename": "2510.02554.pdf",
+  "title": "TOOLTWEAK: AN ATTACK ON TOOL SELECTION IN LLM-BASED AGENTS",
+  "arxiv_url": "https://arxiv.org/pdf/2510.02554",
+  "bias_targets": [
+    {
+      "target": "Tool selection bias",
+      "methodology": "Measuring the shift in the selection rate of specific tools by LLM agents after adversarially optimizing the tool names and descriptions using the ToolTweak attack, evaluated using the Jensen-Shannon Divergence."
+    },
+    {
+      "target": "Position bias",
+      "methodology": "Comparing the selection rates of tools based on their presentation order (e.g., first vs. second in the prompt context) to evaluate the model's preference for early items, controlling for this by averaging across trials."
+    },
+    {
+      "target": "Name ordinality bias",
+      "methodology": "Evaluating the selection rate differences between otherwise identical tools that differ only by a numeric suffix (e.g., \"Tool 1\" vs \"Tool 2\") to measure how implicit ranking signals systematic preference."
+    },
+    {
+      "target": "Self-bias",
+      "methodology": "Testing the transferability of adversarial prompts across different LLMs to determine if models show a higher susceptibility or preference for adversarial text that they generated themselves."
+    }
+  ],
+  "primary_bias_target": "Tool selection bias"
+}

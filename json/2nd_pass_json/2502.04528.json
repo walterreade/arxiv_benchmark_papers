@@ -1,0 +1,24 @@
+{
+  "filename": "2502.04528.pdf",
+  "title": "Group-Adaptive Threshold Optimization for Robust AI-Generated Text Detection",
+  "arxiv_url": "https://arxiv.org/pdf/2502.04528",
+  "bias_targets": [
+    {
+      "target": "Text length bias",
+      "methodology": "Partitioning texts by character count into short, medium, and long categories, and measuring differences in false positive rates and fairness metrics (like demographic parity and equalized odds) across these length subgroups using AI text detectors."
+    },
+    {
+      "target": "Writing style (personality) bias",
+      "methodology": "Inferring Big Five personality traits (Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism) from text using a BERT-based classifier, and evaluating algorithmic detection disparities and error rates across these stylistic profiles."
+    },
+    {
+      "target": "Formality bias",
+      "methodology": "Computing formal expression levels using the Heylighen & Dewaele formality score to categorize text as formal or informal, followed by comparing subgroup performance and fairness metric discrepancies."
+    },
+    {
+      "target": "Sentiment bias",
+      "methodology": "Classifying the binary sentiment (positive or negative) of texts using DistilBERT SST-2 and evaluating false positive and error rate disparities between the sentiment subgroups."
+    }
+  ],
+  "primary_bias_target": "Textual attribute bias"
+}

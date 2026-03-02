@@ -1,0 +1,24 @@
+{
+  "filename": "2411.11081.pdf",
+  "title": "The Promises and Pitfalls of LLM Annotations in Dataset Labeling: a Case Study on Media Bias Detection",
+  "arxiv_url": "https://arxiv.org/pdf/2411.11081",
+  "bias_targets": [
+    {
+      "target": "Media bias",
+      "methodology": "Evaluating models' ability to classify sentences as containing lexical media bias or being neutral, using performance metrics like Matthews Correlation Coefficient (MCC) on datasets such as BABE, BASIL, and the synthetically generated Anno-lexical dataset."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Applying CheckList invariance tests by substituting named entities and pronouns (e.g., He/She/Them) to measure if the media bias classifier's predictions spuriously change based on gender markers."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Using CheckList invariance tests (specifically the 'prejudice test') by swapping minority or religious group terms (e.g., replacing 'Buddha' with 'Christ') to check if the classifier relies on religious identities to predict media bias."
+    },
+    {
+      "target": "Location bias",
+      "methodology": "Conducting CheckList invariance tests by replacing random geographic locations (e.g., changing 'Hawaii' to 'U.S.') to ensure the model does not associate specific regions with media bias."
+    }
+  ],
+  "primary_bias_target": "Media bias"
+}

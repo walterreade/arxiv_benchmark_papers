@@ -1,0 +1,16 @@
+{
+  "filename": "2507.04294.pdf",
+  "title": "BiFair: A Fairness-aware Training Framework for LLM-enhanced Recommender Systems via Bi-level Optimization",
+  "arxiv_url": "https://arxiv.org/pdf/2507.04294",
+  "bias_targets": [
+    {
+      "target": "Popularity bias",
+      "methodology": "Grouping items based on interaction counts (e.g., top 10% popular items vs. the remaining 90%) and measuring recommendation utility dispersion using Coefficient of Variation (CV@K) and worst-case performance (MIN@K) across these popularity groups."
+    },
+    {
+      "target": "Genre bias",
+      "methodology": "Grouping items directly based on their metadata genres and evaluating recommendation fairness by calculating the utility dispersion (CV@K) and the average utility of the bottom 25% worst-performing genre groups (MIN@K)."
+    }
+  ],
+  "primary_bias_target": "Item-side bias"
+}

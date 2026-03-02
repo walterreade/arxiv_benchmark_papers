@@ -1,0 +1,32 @@
+{
+  "filename": "2205.12640.pdf",
+  "title": "Does Your Model Classify Entities Reasonably? Diagnosing and Mitigating Spurious Correlations in Entity Typing",
+  "arxiv_url": "https://arxiv.org/pdf/2205.12640",
+  "bias_targets": [
+    {
+      "target": "Mention-Context bias",
+      "methodology": "Querying the model to infer entity types based only on the mention without contextual information to test if it overly associates the mention's surface form with the type."
+    },
+    {
+      "target": "Lexical Overlapping bias",
+      "methodology": "Substituting mention words that overlap with type labels with semantically similar synonyms to measure model reliance on lexical similarities."
+    },
+    {
+      "target": "Named Entity bias",
+      "methodology": "Substituting highly informative or popular named entities with non-informative entities of the same type to evaluate if models rely on prior knowledge instead of sentence context."
+    },
+    {
+      "target": "Pronoun bias",
+      "methodology": "Substituting gendered pronouns with their referred entity names or randomly sampled masculine/feminine names to test model reliance on frequently occurring pronouns over diverse real names."
+    },
+    {
+      "target": "Dependency bias",
+      "methodology": "Evaluating model predictions when complex mention phrases are truncated to only their syntactic headwords, testing if the model inappropriately focuses on dependent words instead of the true headword."
+    },
+    {
+      "target": "Overgeneralization bias",
+      "methodology": "Querying models with an empty sentence to compute the disparity from a uniform probability distribution, measuring whether models are biased toward disproportionately predicting frequent or coarse-grained labels."
+    }
+  ],
+  "primary_bias_target": "Spurious correlation bias"
+}

@@ -1,0 +1,24 @@
+{
+  "filename": "2508.19883.pdf",
+  "title": "AI-Powered Detection of Inappropriate Language in Medical School Curricula",
+  "arxiv_url": "https://arxiv.org/pdf/2508.19883",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluated using supervised fine-tuning of Small Language Models (DistilBERT, BioBERT) and few-shot prompting of Large Language Models (LLMs) on the BRICC dataset to detect gender misuse and exclusive language (e.g., language assuming gender binaries) in medical educational texts."
+    },
+    {
+      "target": "Sex bias",
+      "methodology": "Measured by training binary and multilabel classifiers, as well as prompting LLMs, to identify the inappropriate use of biological sex terms (e.g., using 'female' instead of 'woman' for an individual patient case) within clinical curricula."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Assessed by evaluating language models on their ability to detect vague or stigmatizing age-related terminology (e.g., 'the elderly' or 'older individuals') versus objective numerical ranges in medical instructional materials."
+    },
+    {
+      "target": "Disability and Health Condition bias",
+      "methodology": "Evaluated by testing classifiers on their ability to flag non-patient-centered language (e.g., defining people by their conditions like 'diabetics' instead of 'patients with diabetes') and outdated, stigmatizing clinical terminology (e.g., 'mentally retarded')."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

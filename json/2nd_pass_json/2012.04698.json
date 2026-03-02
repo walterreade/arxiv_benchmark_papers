@@ -1,0 +1,20 @@
+{
+  "filename": "2012.04698.pdf",
+  "title": "Generate Your Counterfactuals: Towards Controlled Counterfactual Generation for Text",
+  "arxiv_url": "https://arxiv.org/pdf/2012.04698",
+  "bias_targets": [
+    {
+      "target": "Named Entity / Location bias",
+      "methodology": "Generating counterfactual text by perturbing specific Named Entity tags (e.g., changing locations like 'London' to 'Chicago') and evaluating whether the downstream model's prediction changes (Label-Flip Score) using the DBpedia dataset."
+    },
+    {
+      "target": "Sentiment bias",
+      "methodology": "Generating counterfactual text that enforces a sentiment change (e.g., negative to positive) using a differentiable score function, and measuring the Label-Flip Score on sentiment classifiers using the Yelp dataset."
+    },
+    {
+      "target": "Topic bias",
+      "methodology": "Generating counterfactual text that shifts the semantic topic of the input (e.g., from 'World' to 'Sci-Fi') to evaluate label flipping in topic classifiers using the AgNews dataset."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

@@ -1,0 +1,24 @@
+{
+  "filename": "2202.00035.pdf",
+  "title": "Learning Fair Representations via Rate-Distortion Maximization",
+  "arxiv_url": "https://arxiv.org/pdf/2202.00035",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Probing representations with a non-linear classifier (MLP) to predict gender, measuring Minimum Description Length (MDL) and accuracy, and calculating group fairness metrics (Demographic Parity, TPR-GAP) on downstream tasks like profession classification. Also evaluated via k-means clustering separability on word embeddings."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Probing text representations to predict race (based on African-American English vs. Standard American English dialects) using a non-linear classifier, and measuring Demographic Parity and TPR-GAP on a downstream sentiment classification task."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Probing text representations with a non-linear classifier to predict age, and measuring Demographic Parity and TPR-GAP on a downstream mention detection task."
+    },
+    {
+      "target": "Intersectional bias",
+      "methodology": "Probing representations for combined protected attributes (e.g., age and gender simultaneously) using a non-linear probing network to measure F1 score and Minimum Description Length (MDL) of the intersectional groups."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

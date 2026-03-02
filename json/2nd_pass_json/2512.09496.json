@@ -1,0 +1,40 @@
+{
+  "filename": "2512.09496.pdf",
+  "title": "Representation Invariance and Allocation: When Subgroup Balance Matters",
+  "arxiv_url": "https://arxiv.org/pdf/2512.09496",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Varying the allocation of male vs. female samples (or mention vs. no mention of gender) during model fine-tuning and measuring subgroup-specific performance changes (accuracy, loss, AUC) in medical imaging (MIMIC-CXR, HAM10000) and text classification (Civil_comments)."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Varying the allocation of training data based on racial groups (e.g., White vs. Non-White in MIMIC-CXR, or race mentions in Civil_comments) and evaluating the impact on subgroup test performance and correlating it to latent space separation."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Fine-tuning models on datasets with varying proportions of age subgroups (e.g., under/above 60 in MIMIC-CXR, under/above 50 in HAM10000) to assess how subgroup representation affects predictive accuracy and loss."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Adjusting the representation of comments mentioning religion in the Civil_comments dataset during fine-tuning to observe the effect on subgroup generalization."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Varying the training allocation of text samples mentioning sexual orientation in the Civil_comments dataset and tracking subsequent model performance on that subgroup."
+    },
+    {
+      "target": "Language bias",
+      "methodology": "Evaluating model performance sensitivity to the proportion of English vs. Non-English speaking patient records in the MIMIC-CXR dataset during training."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Using patient insurance type (Private vs. Not-private) in the MIMIC-CXR dataset as a proxy for socioeconomic subgroup, varying its training allocation, and measuring the resulting predictive parity."
+    },
+    {
+      "target": "Marital status bias",
+      "methodology": "Varying the allocation of married vs. unmarried patient records in the MIMIC-CXR training data to evaluate subgroup performance sensitivity."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

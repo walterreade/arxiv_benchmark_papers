@@ -1,0 +1,20 @@
+{
+  "filename": "2311.04495.pdf",
+  "title": "Multi-label and Multi-target Sampling of Machine Annotation for Computational Stance Detection",
+  "arxiv_url": "https://arxiv.org/pdf/2311.04495",
+  "bias_targets": [
+    {
+      "target": "Instruction bias",
+      "methodology": "Comparing model predictions by feeding semantically identical but differently phrased task instructions to measure prompt sensitivity."
+    },
+    {
+      "target": "Target description bias",
+      "methodology": "Evaluating model robustness by substituting the stance target with semantically relevant variant terms (e.g., 'atheism' vs. 'religion' or 'no belief in gods') and observing fluctuations in prediction accuracy."
+    },
+    {
+      "target": "Label arrangement bias (Positional bias)",
+      "methodology": "Re-ordering the stance labels (e.g., Favor, Against, None) in the instruction prompt to measure how the position of the choices affects the model's predictions."
+    }
+  ],
+  "primary_bias_target": "Exposure bias"
+}

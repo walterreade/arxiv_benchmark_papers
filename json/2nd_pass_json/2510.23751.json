@@ -1,0 +1,16 @@
+{
+  "filename": "2510.23751.pdf",
+  "title": "Debiasing Reward Models by Representation Learning with Guarantees",
+  "arxiv_url": "https://arxiv.org/pdf/2510.23751",
+  "bias_targets": [
+    {
+      "target": "Sycophancy bias",
+      "methodology": "Constructing a QA preference dataset where surface-level agreement (e.g., prepending 'Yes, you are right.') is spuriously correlated with correctness during training, and evaluating the reward model's deviation from an oracle performance and worst-case accuracy across varying levels of distribution shift in the test set."
+    },
+    {
+      "target": "Concept bias",
+      "methodology": "Inducing spurious correlations between specific text concepts (e.g., shoe 'color' vs. 'size') and sentiment/preference labels in an Amazon Shoe Review dataset, then evaluating the model's robustness to varying correlation levels using worst-case accuracy and the Bias@C metric."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

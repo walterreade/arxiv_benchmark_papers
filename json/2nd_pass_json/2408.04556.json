@@ -1,0 +1,16 @@
+{
+  "filename": "2408.04556.pdf",
+  "title": "BA-LoRA: BIAS-ALLEVIATING LOW-RANK ADAPTATION TO MITIGATE CATASTROPHIC INHERITANCE IN LARGE LANGUAGE MODELS",
+  "arxiv_url": "https://arxiv.org/pdf/2408.04556",
+  "bias_targets": [
+    {
+      "target": "Representational bias (Category/Data imbalance)",
+      "methodology": "Evaluating feature manifold degradation by fine-tuning models on an artificially imbalanced version of the MNLI dataset (skewed to a 100:10:1 class ratio) and visualizing the resulting hidden-layer feature representations using t-SNE to check for class overlap."
+    },
+    {
+      "target": "Pre-training data noise bias",
+      "methodology": "Comparing downstream fine-tuning performance on the GLUE benchmark between models pre-trained on high-quality, curated corpora (RoBERTa) versus those pre-trained on noisier, web-scale corpora (T5) to measure vulnerability to inherited noise."
+    }
+  ],
+  "primary_bias_target": "Representational bias (Category/Data imbalance)"
+}

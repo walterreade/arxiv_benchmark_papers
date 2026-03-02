@@ -1,0 +1,20 @@
+{
+  "filename": "2407.13833.pdf",
+  "title": "Phi-3 Safety Post-Training: Aligning Language Models with a “Break-Fix” Cycle",
+  "arxiv_url": "https://arxiv.org/pdf/2407.13833",
+  "bias_targets": [
+    {
+      "target": "Stereotype bias",
+      "methodology": "Evaluated using the DecodingTrust benchmark to measure whether the model can successfully identify stereotypes included in the provided prompts."
+    },
+    {
+      "target": "Gender and sensitive attribute bias",
+      "methodology": "Evaluated using the DecodingTrust fairness metric, which performs counterfactual testing to measure how consistently the model provides answers when only sensitive attributes, such as gender, are changed in the prompts."
+    },
+    {
+      "target": "Language bias",
+      "methodology": "Evaluated by measuring multilingual performance and safety gaps, comparing harmful content continuation, refusal rates, and toxic speech detection across multiple languages (e.g., English, Chinese, French, Spanish, etc.) using internal automated measurements, XSafety, and the RTP-LX framework."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

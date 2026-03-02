@@ -1,0 +1,32 @@
+{
+  "filename": "2412.09203.pdf",
+  "title": "CleanComedy: Creating Friendly Humor through Generative Techniques",
+  "arxiv_url": "https://arxiv.org/pdf/2412.09203",
+  "bias_targets": [
+    {
+      "target": "Identity-based hate and Toxicity",
+      "methodology": "Automated filtering using toxicity classifiers (Detoxify for English, ruBERTConv for Russian) to detect and remove threats, obscenity, insults, and identity-based hate, followed by human evaluation of generation toxicity/inappropriateness."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Zero-shot classification using DeBERTa-v3-large to label and filter out jokes containing racist content or metaphorical insults."
+    },
+    {
+      "target": "Political bias",
+      "methodology": "Zero-shot classification using DeBERTa-v3-large to identify and remove jokes centered on political content."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Topic modeling using BERTopic (transformers and c-TF-IDF) to identify and remove joke clusters associated with religion."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Topic modeling using BERTopic to identify and remove dataset clusters targeting disabilities."
+    },
+    {
+      "target": "Nationality bias",
+      "methodology": "Topic modeling using BERTopic to discover and remove joke clusters based on nations or nationalities."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

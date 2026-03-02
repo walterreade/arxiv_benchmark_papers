@@ -1,0 +1,36 @@
+{
+  "filename": "2506.12502.pdf",
+  "title": "Towards Fairness Assessment of Dutch Hate Speech Detection",
+  "arxiv_url": "https://arxiv.org/pdf/2506.12502",
+  "bias_targets": [
+    {
+      "target": "Nationality bias",
+      "methodology": "Counterfactual substitution of nationality-related Dutch Social Group Terms (e.g., Dutch, Moroccan, Turk) using LLMs and dictionary-based methods, followed by evaluating hate speech detection consistency via Counterfactual Token Fairness (CTF) and group fairness metrics."
+    },
+    {
+      "target": "Racial/Skin color bias",
+      "methodology": "Swapping skin color terminology (e.g., white, black, dark) in text to measure if the BERTje model alters its hate speech classifications based on the counterfactual presence of racial terms."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Replacing gender identity terms (e.g., woman, man, transgender, non-binary) to test for counterfactual fairness and computing Demographic Parity and Equalized Odds."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Generating counterfactual sentences by substituting terms related to sexuality (e.g., homosexual, heterosexual, bisexual) and measuring the Counterfactual Token Fairness (CTF) of the model's toxicity predictions."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Modifying sentences by changing religious group identifiers (e.g., Christian, Muslim, Jewish) to calculate the absolute difference in the model's hate speech probability predictions."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Substituting age-related terms (e.g., older, younger, adult, student) in the text inputs and evaluating if the classification outcomes change unfairly."
+    },
+    {
+      "target": "Political/Ideology bias",
+      "methodology": "Replacing political and ideological descriptors (e.g., Marxist, populist, feminist, liberal) in Dutch phrases and assessing fairness using counterfactual and group fairness metrics."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

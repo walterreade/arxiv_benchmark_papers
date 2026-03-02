@@ -1,0 +1,24 @@
+{
+  "filename": "2602.20629.pdf",
+  "title": "QEDBENCH: Quantifying the Alignment Gap in Automated Evaluation of University-Level Mathematical Proofs",
+  "arxiv_url": "https://arxiv.org/pdf/2602.20629",
+  "bias_targets": [
+    {
+      "target": "Evaluator leniency bias",
+      "methodology": "Comparing automated LLM judge mean scores and pass rates to human expert ground truth to quantify systematic grade inflation and false positive rates."
+    },
+    {
+      "target": "Evaluator severity bias",
+      "methodology": "Measuring negative score deltas and false negative rates where AI judges rigidly penalize valid solutions more harshly than human experts (e.g., punishing implicit steps in Complex Analysis)."
+    },
+    {
+      "target": "Domain bias",
+      "methodology": "Calculating the score discrepancy between AI judges and human experts across ten specific mathematical disciplines to identify systemic domain-level misalignment (e.g., leniency in discrete math vs. punitiveness in continuous analysis)."
+    },
+    {
+      "target": "Sycophancy bias",
+      "methodology": "Qualitative and quantitative evaluation of LLM judges assigning overly generous credit to incomplete, truncated, or logically flawed proofs that possess authoritative-sounding LaTeX formatting and correct initial setups."
+    }
+  ],
+  "primary_bias_target": "Evaluator bias"
+}

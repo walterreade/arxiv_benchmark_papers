@@ -1,0 +1,28 @@
+{
+  "filename": "2508.13124.pdf",
+  "title": "Spot the BlindSpots: Systematic Identification and Quantification of Fine-Grained LLM Biases in Contact Center Summaries",
+  "arxiv_url": "https://arxiv.org/pdf/2508.13124",
+  "bias_targets": [
+    {
+      "target": "Operational Bias",
+      "methodology": "Quantifying systematic distortions in contact center summaries across 15 operational dimensions by using an LLM to label transcript turns and summary propositions, then calculating the Jensen-Shannon Divergence (Fidelity Gap) and label omission rate (Coverage) between the source and summary distributions."
+    },
+    {
+      "target": "Positional Bias",
+      "methodology": "Measuring the tendency of the summarization model to overemphasize or neglect information from particular stages of the interaction (e.g., beginning vs. end) by comparing the distribution of positional labels in the source transcript versus the generated summary."
+    },
+    {
+      "target": "Speaker Bias",
+      "methodology": "Evaluating whether the summary preferentially includes one speaker's perspective and contributions (agent vs. customer) over the other by comparing speaker attribution distributions."
+    },
+    {
+      "target": "Sentiment Bias",
+      "methodology": "Assessing misrepresentations, neutralizations, or shifts in the speaker's emotional tone by comparing sentiment labels (e.g., positive, negative, neutral) between the original transcript turns and the generated summary propositions."
+    },
+    {
+      "target": "Topic and Content Omission Bias",
+      "methodology": "Evaluating the selective focus on certain topics, entity types, or solutions while omitting others by comparing the presence and frequency of specific semantic categories between the source transcript and the summary."
+    }
+  ],
+  "primary_bias_target": "Operational Bias"
+}

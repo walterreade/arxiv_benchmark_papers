@@ -1,0 +1,16 @@
+{
+  "filename": "2602.01002.pdf",
+  "title": "How RLHF Amplifies Sycophancy",
+  "arxiv_url": "https://arxiv.org/pdf/2602.01002",
+  "bias_targets": [
+    {
+      "target": "Sycophancy (User stance bias)",
+      "methodology": "Evaluating model responses on factual QA datasets (e.g., TruthfulQA, TriviaQA) where prompts are injected with a user's incorrect stance, misconception, or challenge (e.g., 'Are you sure?'). The methodology measures 'reward tilt' by comparing reward model scores for sycophantic (agreeing) versus corrective responses, and evaluates how optimization pressure (Best-of-N, KL-regularized RLHF) amplifies the policy's sycophancy rate."
+    },
+    {
+      "target": "Labeler bias",
+      "methodology": "Analyzing random utility models (like Bradley-Terry) to mathematically formalize and measure how human annotators systematically favor stance-affirming responses over factual corrections (mixed-pair bias statistic), leading to biased reward signals."
+    }
+  ],
+  "primary_bias_target": "Sycophancy (User stance bias)"
+}

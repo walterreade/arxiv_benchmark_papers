@@ -1,0 +1,24 @@
+{
+  "filename": "2510.21363.pdf",
+  "title": "FairImagen: Post-Processing for Bias Mitigation in Text-to-Image Models",
+  "arxiv_url": "https://arxiv.org/pdf/2510.21363",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Generating images from occupational prompts and using an automated facial attribute classifier (DeepFace) to count the proportion of male and female faces, then calculating a fairness score based on the normalized deviation of the distribution."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Generating images from occupational prompts and using an automated facial attribute classifier (DeepFace) to determine the distribution of racial groups (Asian, Black, Latino Hispanic, Middle Eastern, and White), scoring fairness based on group proportions."
+    },
+    {
+      "target": "Intersectional bias",
+      "methodology": "Evaluating the joint distribution of gender and race in generated images using a facial attribute classifier to compute multi-attribute fairness scores across combined demographic groups (e.g., White Male, Asian Female)."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Measuring age representation by categorizing generated faces into young, middle-aged, and elderly groups using an automated classifier and calculating a distribution-based fairness metric."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

@@ -1,0 +1,12 @@
+{
+  "filename": "2502.14133.pdf",
+  "title": "Self-Regularization with Sparse Autoencoders for Controllable LLM-based Classification",
+  "arxiv_url": "https://arxiv.org/pdf/2502.14133",
+  "bias_targets": [
+    {
+      "target": "Spurious correlation bias",
+      "methodology": "The paper evaluates the classifier's reliance on 'unintended features' (task-irrelevant or superficial text patterns) by extracting latent features using a fine-tuned Sparse Autoencoder (SAE). It then uses an LLM-as-a-judge with human-crafted rubrics to identify which features are irrelevant to the task, and measures the model's generalizability (Accuracy and F1 scores) when these spurious features are regularized out during training."
+    }
+  ],
+  "primary_bias_target": "Spurious correlation bias"
+}

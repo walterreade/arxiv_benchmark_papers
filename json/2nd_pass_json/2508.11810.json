@@ -1,0 +1,20 @@
+{
+  "filename": "2508.11810.pdf",
+  "title": "FairTabGen: High-Fidelity and Fair Synthetic Health Data Generation from Limited Samples",
+  "arxiv_url": "https://arxiv.org/pdf/2508.11810",
+  "bias_targets": [
+    {
+      "target": "Racial bias",
+      "methodology": "Designated as the primary sensitive attribute in a structural causal model, evaluated using counterfactual fairness metrics (Fairness Through Unawareness, Demographic Parity) and composite fairness metrics (ABROCA, TPRD, ERD) on downstream predictive clinical models trained on synthetic tabular data."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Modeled as a confounder in the structural causal model prompt and evaluated by comparing the demographic representation (male vs. female) in the synthetically generated data against the real MIMIC-IV dataset."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Incorporated as a confounder variable in the prompt-based structural causal model to control for its influence on both the sensitive attribute and the target clinical outcome during synthetic data generation."
+    }
+  ],
+  "primary_bias_target": "Racial bias"
+}

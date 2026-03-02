@@ -1,0 +1,20 @@
+{
+  "filename": "2510.01252.pdf",
+  "title": "GPT and Prejudice: A Sparse Approach to Understanding Learned Representations in Large Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2510.01252",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Training Sparse Autoencoders (SAEs) on the hidden states of a custom LLM and using a curated probing dataset to identify selective neurons that activate for 'male' and 'female' concepts. The study evaluates the purity (Average Precision), polarity, and conceptual entanglement of these gender representations across different layers of the model."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Mapping SAE neuron activations to probing prompts annotated with socioeconomic concepts such as 'wealth', 'class', and 'society', analyzing how economic standing is encoded in the model's latent space and how it co-activates with other themes like marriage."
+    },
+    {
+      "target": "Cultural bias",
+      "methodology": "Using SAEs and a concept-annotated probing dataset to trace internal model representations of 19th-century social and moral constructs (e.g., 'marriage', 'family', 'duty', 'scandal'). The researchers constructed dual-themed neuron networks to visualize how these cultural assumptions and historical norms are structurally embedded in the model."
+    }
+  ],
+  "primary_bias_target": "Gender bias"
+}

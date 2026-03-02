@@ -1,0 +1,36 @@
+{
+  "filename": "2511.12487.pdf",
+  "title": "ToxSearch: Evolving Prompts for Toxicity Search in Large Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2511.12487",
+  "bias_targets": [
+    {
+      "target": "Racial bias",
+      "methodology": "Injecting racial bias and racial stereotype concepts into adversarial prompts using an evolutionary algorithm (via the Concept Addition operator) and measuring the toxicity of the target model's response using the Perspective API."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Injecting gender bias and gender stereotype concepts into adversarial prompts using an evolutionary algorithm and evaluating the model's susceptibility to generating toxic responses via the Perspective API."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Evaluating model safety by injecting age bias concepts into prompts during an evolutionary search process and measuring the resulting toxicity scores of the model's outputs."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Testing the model by applying a Concept Addition operator to inject religious bias constraints into parent prompts, then using the Perspective API to score the toxicity of the generated text."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Adding socioeconomic bias and class stereotype concepts to prompts during an evolutionary red-teaming process to see if it elicits highly toxic responses from the target language model."
+    },
+    {
+      "target": "Cultural bias",
+      "methodology": "Injecting cultural stereotype concepts into candidate prompts via automated prompt mutation to evaluate whether the target model generates toxic outputs, scored by the Perspective API."
+    },
+    {
+      "target": "General Toxicity and Hate Speech",
+      "methodology": "Using the ToxSearch black-box evolutionary framework to systematically optimize adversarial prompts (via lexical substitutions, back-translation, paraphrasing, etc.) to maximize the toxicity score of the model's response using the Google Perspective API."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

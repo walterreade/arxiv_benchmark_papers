@@ -1,0 +1,20 @@
+{
+  "filename": "2305.03212.pdf",
+  "title": "LLM2Loss: Leveraging Language Models for Explainable Model Diagnostics",
+  "arxiv_url": "https://arxiv.org/pdf/2305.03212",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Estimating face recognition model performance disparity by comparing the predicted task loss (via a diagnostic model trained on CLIP embeddings) for text prompts indicating gender, such as 'Male' vs. non-male, or 'face of an old male' vs. 'face of a young female'."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Calculating the Rawlsian max-min performance disparity by using a lightweight model to predict the black-box model's loss from CLIP text embeddings representing age concepts, such as 'Young' vs. 'Not Young'."
+    },
+    {
+      "target": "Physical Appearance bias",
+      "methodology": "Applying the LLM2Loss framework to predict and compare model loss across various semantic textual attributes related to phenotype and physical appearance from the CelebA dataset (e.g., 'Pale Skin', 'Chubby', 'Bald', hair colors, and specific facial features)."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

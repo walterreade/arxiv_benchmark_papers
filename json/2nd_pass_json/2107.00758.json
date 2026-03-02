@@ -1,0 +1,20 @@
+{
+  "filename": "2107.00758.pdf",
+  "title": "The Spotlight: A General Method for Discovering Systematic Errors in Deep Learning Models",
+  "arxiv_url": "https://arxiv.org/pdf/2107.00758",
+  "bias_targets": [
+    {
+      "target": "Age bias",
+      "methodology": "Applying the 'spotlight' method (searching for contiguous high-loss regions in the model's final hidden layer representation space) to a gender prediction model trained on the FairFace dataset, which automatically surfaced a cluster of systematic errors on images of young children."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Using the 'spotlight' method on the FairFace dataset to identify contiguous high-loss regions in the model's representation space, revealing systematic performance drops on specific racial groups, specifically Asian faces and faces with dark skin tones."
+    },
+    {
+      "target": "Language bias",
+      "methodology": "Evaluating a DistilBERT sentiment analysis model on the Amazon polarity dataset using the 'spotlight' method, discovering a systematic error where the English-trained model consistently misclassified reviews written in Spanish as negative."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

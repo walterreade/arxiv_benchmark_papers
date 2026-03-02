@@ -1,0 +1,28 @@
+{
+  "filename": "2501.18642.pdf",
+  "title": "DebiasPI: Inference-time Debiasing by Prompt Iteration of a Text-to-Image Generative Model",
+  "arxiv_url": "https://arxiv.org/pdf/2501.18642",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Generating images based on demographics-neutral 'rags-to-riches' news headlines and evaluating the gender distribution of the depicted characters using manual annotation and the Large Language and Vision Assistant (LLaVA) model. The resulting distributions are compared against target distributions using Jensen-Shannon Divergence and Earth Mover's Distance."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Prompting a text-to-image model with neutral success story headlines and classifying the generated individuals into 9 U.S. Census race categories via manual codebook annotation. The methodology tracks distribution skews, such as baseline over-representation of White individuals, and evaluates the model's response to ethical intervention prompts."
+    },
+    {
+      "target": "Skin tone bias",
+      "methodology": "Automatically segmenting facial pixels in generated images using the FaRL model, computing the average skin color, and quantizing it to the 10-point Monk Skin Tone Scale. The evaluation also highlights bias in two-panel narrative images where career success is depicted alongside a transition from darker to lighter skin."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Analyzing the perceived age of characters in generated images using two Vision Transformer (ViT) age-classifier models and manual inspection to determine whether the model defaults to specific age groups (e.g., young adults)."
+    },
+    {
+      "target": "Body type bias",
+      "methodology": "Using manual annotation guided by a codebook to classify the body types of generated individuals into three categories (ectomorphs, mesomorphs, and endomorphs) to identify representational deficits, such as the under-generation of endomorphs."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

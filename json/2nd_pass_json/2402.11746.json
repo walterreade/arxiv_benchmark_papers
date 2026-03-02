@@ -1,0 +1,28 @@
+{
+  "filename": "2402.11746.pdf",
+  "title": "LANGUAGE MODELS ARE HOMER SIMPSON! Safety Re-Alignment of Fine-tuned Language Models through Task Arithmetic",
+  "arxiv_url": "https://arxiv.org/pdf/2402.11746",
+  "bias_targets": [
+    {
+      "target": "Racial bias",
+      "methodology": "Prompting the model with harmful questions related to racial or ethnic hate (from the CATQA dataset) and racist adjectives (from DangerousQA), then using GPT-4 as an automated judge to calculate an unsafety score."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluating model outputs using harmful questions intended to provoke religious intolerance (from the CATQA benchmark) and calculating an unsafety score via GPT-4 evaluation."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Testing the model with questions regarding gender-based violence (CATQA) and sexist prompts (DangerousQA), using GPT-4 to judge the fraction of unsafe or harmful responses."
+    },
+    {
+      "target": "Political bias",
+      "methodology": "Assessing model responses to prompts requesting partisan commentary and political misinformation (from the CATQA benchmark) and calculating the fraction of compliance using GPT-4."
+    },
+    {
+      "target": "Stereotype bias",
+      "methodology": "Measuring the unsafety score on the DangerousQA dataset, which contains toxic questions testing various stereotypical adjectives, using GPT-4 to flag harmful responses."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

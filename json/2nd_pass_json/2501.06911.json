@@ -1,0 +1,16 @@
+{
+  "filename": "2501.06911.pdf",
+  "title": "Risk-Averse Fine-tuning of Large Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2501.06911",
+  "bias_targets": [
+    {
+      "target": "Toxicity and Identity Hate",
+      "methodology": "Evaluating generated text using a standardized toxicity classifier (unitary/toxic-bert) on prompts from the Jigsaw and RealToxicityPrompts datasets. The evaluation focuses on measuring the risk of worst-case toxic outputs (Conditional Value at Risk) and includes qualitative clustering of problematic prompts that elicit hate speech, including racism and anti-Semitism."
+    },
+    {
+      "target": "Negative Sentiment",
+      "methodology": "Evaluating generated text completions on the IMDB dataset using a sentiment classifier (lvwerra/distilbert-imdb) to measure the model's ability to maintain a positive or neutral tone and avoid generating highly negative or disparaging content."
+    }
+  ],
+  "primary_bias_target": "Toxicity and Identity Hate"
+}

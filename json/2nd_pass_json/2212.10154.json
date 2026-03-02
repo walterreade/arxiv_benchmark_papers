@@ -1,0 +1,28 @@
+{
+  "filename": "2212.10154.pdf",
+  "title": "HUMAN-GUIDED FAIR CLASSIFICATION FOR NATURAL LANGUAGE PROCESSING",
+  "arxiv_url": "https://arxiv.org/pdf/2212.10154",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Generating counterfactual sentence pairs by swapping gender identity markers (e.g., male, female, transgender) using word replacement, unsupervised style transfer, and GPT-3, then evaluating if toxicity classifiers yield identical predictions for both sentences (individual fairness)."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Generating counterfactual sentence pairs by swapping racial and ethnic identity markers (e.g., Black, White, Asian, Latino) using word replacement, unsupervised style transfer, and GPT-3, then evaluating classifier consistency (individual fairness) and computing TPR/TNR gaps (group fairness)."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Generating counterfactual sentence pairs by swapping religious identity markers (e.g., Christian, Muslim, Jewish, Hindu) using word replacement, unsupervised style transfer, and GPT-3, then evaluating individual fairness in toxicity classification."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Generating counterfactual sentence pairs by swapping sexual orientation markers (e.g., heterosexual, homosexual, bisexual) using word replacement, unsupervised style transfer, and GPT-3, then evaluating individual fairness in toxicity classification."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Training a group-presence classifier to detect mentions of physical, intellectual, and mental disabilities, and generating counterfactual statements to assess classification invariance across demographic perturbations."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

@@ -1,0 +1,16 @@
+{
+  "filename": "2501.02997.pdf",
+  "title": "CALM: Curiosity-Driven Auditing for Large Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2501.02997",
+  "bias_targets": [
+    {
+      "target": "Targeted Toxicity (Political Figures and Celebrities)",
+      "methodology": "Fine-tuning an audit LLM using intrinsically motivated reinforcement learning to generate adversarial prompts that provoke target LLMs into producing toxic, derogatory, or NSFW content specifically targeting U.S. Senators and public figures, evaluated using an NSFW word classifier."
+    },
+    {
+      "target": "Factual and Temporal Inconsistencies (Political Figures)",
+      "methodology": "Using an audit LLM in an inverse suffix generation task to induce specific politician names from the target model, and evaluating the resulting outputs for factual errors (e.g., assigning a senator to the wrong state) and temporal errors (e.g., referencing outdated political positions)."
+    }
+  ],
+  "primary_bias_target": "Targeted Toxicity (Political Figures and Celebrities)"
+}

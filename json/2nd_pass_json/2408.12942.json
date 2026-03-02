@@ -1,0 +1,20 @@
+{
+  "filename": "2408.12942.pdf",
+  "title": "Causal-Guided Active Learning for Debiasing Large Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2408.12942",
+  "bias_targets": [
+    {
+      "target": "LLM-specific biases (Position, Verbosity, and Format bias)",
+      "methodology": "Evaluating model response selection on conversational benchmark datasets (Chatbot and MT-Bench) by comparing the model's choices against human-majority annotations, which includes swapping response orders to test for position bias and observing preferences for longer or specifically formatted text."
+    },
+    {
+      "target": "Syntactic and Heuristic biases (Lexical overlap, Subsequence, and Constituent bias)",
+      "methodology": "Measuring model accuracy on Natural Language Inference (NLI) benchmarks using the MNLI and HANS datasets to detect whether the LLM relies on superficial statistical correlations and word-overlap heuristics rather than genuine semantic reasoning."
+    },
+    {
+      "target": "Stereotype and Social biases (Gender, Race/Ethnicity, Religion, Sexual orientation, Age, Socioeconomic status, Physical appearance, and Occupational bias)",
+      "methodology": "Evaluating model accuracy on underspecified multiple-choice question-answering datasets (BBQ and UNQOVER) to determine if the model incorrectly relies on stereotypical associations to answer questions when sufficient contextual information is missing."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

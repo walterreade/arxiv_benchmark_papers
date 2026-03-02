@@ -1,0 +1,20 @@
+{
+  "filename": "2503.01872.pdf",
+  "title": "FairGen: Controlling Sensitive Attributes for Fair Generations in Diffusion Models via Adaptive Latent Guidance",
+  "arxiv_url": "https://arxiv.org/pdf/2503.01872",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Generating images from text prompts across diverse domains and using a Vision-Language Model (InstructBLIP-2) to classify the gender of the subjects in the images, then calculating a bias score based on the absolute difference between the generated group's proportion and a predefined target distribution."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Generating images from text prompts across diverse domains and classifying the perceived race of the subjects using a Vision-Language Model (InstructBLIP-2), followed by measuring the statistical deviation of these generated racial proportions from a target distribution."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Generating images from text prompts across diverse domains and classifying the perceived age of the subjects using a Vision-Language Model (InstructBLIP-2) to compute the deviation between the generated age distribution and a target fair distribution."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

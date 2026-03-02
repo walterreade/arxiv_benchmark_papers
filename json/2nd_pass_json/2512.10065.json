@@ -1,0 +1,20 @@
+{
+  "filename": "2512.10065.pdf",
+  "title": "Linear socio-demographic representations emerge in Large Language Models from indirect cues",
+  "arxiv_url": "https://arxiv.org/pdf/2512.10065",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Training linear classifiers (probes) on model activations to detect gender representations from explicit and implicit cues (e.g., first names, occupations, sports). The methodology includes correlating internal gender representations with real-world workforce statistics, conducting causal activation steering, and evaluating downstream biased behavior in career and sport recommendations using the WinoBias dataset."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Using linear probing on residual stream activations to predict race (Black/White) from explicit disclosures and implicit cues, such as census-aligned last names. The evaluation includes inference-time activation steering to demonstrate how shifting race vectors alters model generations, such as parental country of origin predictions."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Applying linear probes to model activations to identify representations of socioeconomic class (rich/poor) based on conversational cues. The methodology involves correlating inferred class representations with median hourly wages of occupations and performing activation steering to observe causal shifts in outputs like neighborhood recommendations."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

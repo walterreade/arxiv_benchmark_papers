@@ -1,0 +1,28 @@
+{
+  "filename": "2601.09421.pdf",
+  "title": "Bias Dynamics in BabyLMs: Towards a Compute-Efficient Sandbox for Democratising Pre-Training Debiasing",
+  "arxiv_url": "https://arxiv.org/pdf/2601.09421",
+  "bias_targets": [
+    {
+      "target": "General social bias (Stereotypical bias)",
+      "methodology": "Intrinsic evaluation using the CrowS-Pairs and StereoSet datasets, measuring the ratio of examples where the model prefers stereotypical over anti-stereotypical sentence pairs or continuations to calculate a 'composite bias' score."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluated intrinsically using composite bias scores and topic frequency analysis (male vs. female representation). The paper also measures bias reduction after applying targeted pre-model, intra-model, and post-model techniques like Counterfactual Data Augmentation (CDA), Counterfactual Data Substitution (CDS), Sent-Debias, Iterative Nullspace Projection (INLP), and Perturbation Augmentation."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Analyzed via term frequency representation in the training corpora (Black, Caucasian, Asian keywords) and measured through the model's response to race-focused Iterative Nullspace Projection (INLP) and Perturbation Augmentation."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluated through the frequency of representation in the training corpora (Christian, Jewish, Muslim keywords) and sentence-based sentiment analysis to determine the emotional stance towards sentences containing these religious topics."
+    },
+    {
+      "target": "LGBTQ+ bias",
+      "methodology": "Measured using corpus frequency analysis of LGBTQ+ related keywords and sentiment analysis to identify higher negative polarity in sentences associated with LGBTQ+ topics."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}
