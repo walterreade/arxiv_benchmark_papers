@@ -532,15 +532,26 @@ def shorten_author_list(ref: str) -> str:
     return ref
 
 
-def generate_markdown_table(counter: Counter, title: str, col1: str, col2: str, limit: int = None) -> str:
-    """Generate a markdown table from a Counter, sorted by count descending."""
-    lines = [
-        f"## {title}\n",
-        f"| {col1} | {col2} |",
-        "|---|---|"
-    ]
-    for item, count in counter.most_common(limit):
-        lines.append(f"| {item} | {count} |")
+def generate_markdown_table(counter: Counter, title: str, col1: str, col2: str, limit: int = None, denominator: int = None) -> str:
+    """Generate a markdown table from a Counter, sorted by count descending. Optional percentage column."""
+    lines = [f"## {title}\n"]
+    if denominator:
+        lines.append(f"| {col1} | {col2} | % of {denominator} papers |")
+        lines.append("|---|---|---|")
+        for item, count in counter.most_common(limit):
+            percentage = (count / denominator) * 100
+            if item == "Religious bias":
+                lines.append(f"| **{item}** | **{count}** | **{percentage:.1f}%** |")
+            else:
+                lines.append(f"| {item} | {count} | {percentage:.1f}% |")
+    else:
+        lines.append(f"| {col1} | {col2} |")
+        lines.append("|---|---|")
+        for item, count in counter.most_common(limit):
+            if item == "Religious bias":
+                lines.append(f"| **{item}** | **{count}** |")
+            else:
+                lines.append(f"| {item} | {count} |")
     lines.append("")
     return "\n".join(lines)
 
