@@ -1,0 +1,60 @@
+{
+  "filename": "2508.06204.pdf",
+  "title": "Classification is a RAG problem: A case study on hate speech detection",
+  "arxiv_url": "https://arxiv.org/pdf/2508.06204",
+  "measurement_description": "Detection of hate speech directed at Muslims, as one of several protected identity groups evaluated.",
+  "religious_groups": [
+    "Islam"
+  ],
+  "models_tested": [
+    "Contextual Policy Engine (CPE)",
+    "LlamaGuard 3 (8B)",
+    "OpenAI Moderation API",
+    "Perspective API"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "HateCheck"
+  ],
+  "continuous_testing": false,
+  "findings": "The study evaluated models on their ability to detect hate speech against several identity groups, including Muslims, using the HateCheck dataset. The proposed RAG-based system, Contextual Policy Engine (CPE), achieved high performance (0.988 F1 score) on this task, comparable to the best commercial system (OpenAI-Hate with 0.996 F1 score). An example shows the CPE correctly identifying 'Muslims belong in a zoo.' as hate speech by referencing its policy on dehumanization.",
+  "references": [
+    "Jianfa Chen, Emily Shen, Trupti Bavalatti, Xiaowen Lin, Yongkai Wang, Shuming Hu, Harihar Subramanyam, Ksheeraj Sai Vepuri, Ming Jiang, Ji Qi, Li Chen, Nan Jiang, and Ankit Jain. 2024. Class-rag: Real-time content moderation with retrieval augmented generation. Preprint, arXiv:2410.14881.",
+    "Amit Das, Zheng Zhang, Najib Hasan, Souvika Sarkar, Fatemeh Jamshidi, Tathagata Bhattacharya, Mostafa Rahgouy, Nilanjana Raychawdhary, Dongji Feng, Vinija Jain, Aman Chadha, Mary Sandage, Lau-ramarie Pope, Gerry Dozier, and Cheryl Seals. 2024. Investigating annotator bias in large language models for hate speech detection. Preprint, arXiv:2406.11109.",
+    "Mai ElSherief, Caleb Ziems, David Muchlinski, Vaish-navi Anupindi, Jordyn Seybolt, Munmun De Choud-hury, and Diyi Yang. 2021. Latent hatred: A benchmark for understanding implicit hate speech. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 345-363, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics.",
+    "Shahul Es, Jithin James, Luis Espinosa-Anke, and Steven Schockaert. 2023. Ragas: Automated evaluation of retrieval augmented generation. Preprint, arXiv:2309.15217.",
+    "Wenqi Fan, Yujuan Ding, Liangbo Ning, Shijie Wang, Hengyun Li, Dawei Yin, Tat-Seng Chua, and Qing Li. 2024. A survey on rag meeting llms: Towards retrieval-augmented large language models. Preprint, arXiv:2405.06211.",
+    "Eve Fleisig, Rediet Abebe, and Dan Klein. 2023. When the majority is wrong: Modeling annotator disagreement for subjective tasks. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, pages 6715–6726, Singapore. Association for Computational Linguistics.",
+    "Yunfan Gao, Yun Xiong, Xinyu Gao, Kangxiang Jia, Jinliu Pan, Yuxi Bi, Yi Dai, Jiawei Sun, Meng Wang, and Haofen Wang. 2024. Retrieval-augmented generation for large language models: A survey. Preprint, arXiv:2312.10997.",
+    "Janosch Haber, Bertie Vidgen, Matthew Chapman, Vibhor Agarwal, Roy Ka-Wei Lee, Yong Keong Yap, and Paul Röttger. 2023. Improving the detection of multilingual online attacks with rich social media data from Singapore. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 12705–12721, Toronto, Canada. Association for Computational Linguistics.",
+    "Jigsaw. 2024. About the api: Attributes and languages. https://support.perspectiveapi.com/s/about-the-api-attributes-and-languages. Accessed: April 2025.",
+    "Hannah Kirk, Wenjie Yin, Bertie Vidgen, and Paul Röttger. 2023. SemEval-2023 task 10: Explainable detection of online sexism. In Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023), pages 2193-2210, Toronto, Canada. Association for Computational Linguistics.",
+    "Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich Küttler, Mike Lewis, Wen tau Yih, Tim Rock-täschel, Sebastian Riedel, and Douwe Kiela. 2021. Retrieval-augmented generation for knowledge-intensive nlp tasks. Preprint, arXiv:2005.11401.",
+    "Jakub Lála, Odhran O'Donoghue, Aleksandar Shtedritski, Sam Cox, Samuel G. Rodriques, and Andrew D. White. 2023. Paperqa: Retrieval-augmented generative agent for scientific research. Preprint, arXiv:2312.07559.",
+    "Ilia Markov and Walter Daelemans. 2022. The role of context in detecting the target of hate speech. In Proceedings of the Third Workshop on Threat, Aggression and Cyberbullying (TRAC 2022), pages 37–42, Gyeongju, Republic of Korea. Association for Computational Linguistics.",
+    "Lambert Mathias, Shaoliang Nie, Aida Mostafazadeh Davani, Douwe Kiela, Vinodkumar Prabhakaran, Bertie Vidgen, and Zeerak Waseem. 2021. Findings of the WOAH 5 shared task on fine grained hateful memes detection. In Proceedings of the 5th Workshop on Online Abuse and Harms (WOAH 2021), pages 201–206, Online. Association for Computational Linguistics.",
+    "Meta AI. 2024. Llama guard 3 model card and prompt format. https://www.llama.com/docs/model-cards-and-prompt-formats/llama-guard-3/. Accessed: April 2025.",
+    "OpenAI. 2024. Moderation. https://platform.openai.com/docs/guides/moderation. Accessed: April 2025.",
+    "Nedjma Ousidhoum, Zizheng Lin, Hongming Zhang, Yangqiu Song, and Dit-Yan Yeung. 2019. Multilingual and multi-aspect hate speech analysis. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 4675-4684, Hong Kong, China. Association for Computational Linguistics.",
+    "Maria Laura Pardo. 2020. Violence and hate speech against the homeless in social media during the covid-19 pandemic. In Alexandra Cotoc, Octavian More, and Mihaela Mudure, editors, Multicultural Discourses in Turbulent Times, pages 191-210. Presa Universitară Clujeana.",
+    "Paul Röttger, Haitham Seelawi, Debora Nozza, Zeerak Talat, and Bertie Vidgen. 2022a. Multilingual Hate-Check: Functional tests for multilingual hate speech detection models. In Proceedings of the Sixth Workshop on Online Abuse and Harms (WOAH), pages 154-169, Seattle, Washington (Hybrid). Association for Computational Linguistics.",
+    "Paul Röttger, Bertie Vidgen, Dirk Hovy, and Janet Pierrehumbert. 2022b. Two contrasting data annotation paradigms for subjective NLP tasks. In Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 175–190, Seattle, United States. Association for Computational Linguistics.",
+    "Paul Röttger, Bertie Vidgen, Dong Nguyen, Zeerak Waseem, Helen Margetts, and Janet Pierrehumbert. 2021. HateCheck: Functional tests for hate speech detection models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 41–58, Online. Association for Computational Linguistics.",
+    "Anna Schmidt and Michael Wiegand. 2017. A survey on hate speech detection using natural language processing. In Proceedings of the Fifth International Workshop on Natural Language Processing for Social Media, pages 1–10, Valencia, Spain. Association for Computational Linguistics.",
+    "Kurt Shuster, Spencer Poff, Moya Chen, Douwe Kiela, and Jason Weston. 2021. Retrieval augmentation reduces hallucination in conversation. In Findings of the Association for Computational Linguistics: EMNLP 2021, pages 3784–3803, Punta Cana, Dominican Republic. Association for Computational Linguistics.",
+    "Aditi Singh, Abul Ehtesham, Saket Kumar, and Tala Talaei Khoei. 2025. Agentic retrieval-augmented generation: A survey on agentic rag. Preprint, arXiv:2501.09136.",
+    "Michael D. Skarlinski, Sam Cox, Jon M. Laurent, James D. Braza, Michaela Hinks, Michael J. Hammerling, Manvitha Ponnapati, Samuel G. Rodriques, and Andrew D. White. 2024. Language agents achieve superhuman synthesis of scientific knowledge. Preprint, arXiv:2409.13740.",
+    "Chan Hee Song, Jiaman Wu, Clayton Washington, Brian M. Sadler, Wei-Lun Chao, and Yu Su. 2023. Llm-planner: Few-shot grounded planning for embodied agents with large language models. Preprint, arXiv:2212.04088.",
+    "Bertie Vidgen and Leon Derczynski. 2021. Directions in abusive language training data, a systematic review: Garbage in, garbage out. PLOS ONE, 15(12):1-32.",
+    "Bertie Vidgen, Dong Nguyen, Helen Margetts, Patricia Rossini, and Rebekah Tromble. 2021. Introducing CAD: the contextual abuse dataset. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 2289–2303, Online. Association for Computational Linguistics.",
+    "WikiFur. 2023. Category:derogatory terms. Accessed: 2025-06-10.",
+    "Yongjin Yang, Joonkee Kim, Yujin Kim, Namgyu Ho, James Thorne, and Se-Young Yun. 2023. HARE: Explainable hate speech detection with step-by-step reasoning. In Findings of the Association for Computational Linguistics: EMNLP 2023, pages 5490-5505, Singapore. Association for Computational Linguistics."
+  ]
+}

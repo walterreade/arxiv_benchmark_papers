@@ -1,0 +1,45 @@
+{
+  "filename": "2510.19346.pdf",
+  "title": "LOGICAL: Local Obfuscation by GLINER for Impartial Context-Aware Lineage – Development and evaluation of PII Removal system.",
+  "arxiv_url": "https://arxiv.org/pdf/2510.19346",
+  "measurement_description": "The paper measures the ability of models to detect and identify mentions of religious groups as a type of Personally Identifiable Information (PII) to be removed from clinical notes. This is part of a broader 'groups' category, which also includes caste and political groups, aimed at preventing potential bias.",
+  "religious_groups": [
+    "Religion (general)",
+    "Hinduism"
+  ],
+  "models_tested": [
+    "GLiNER (modern-gliner-bi-large-v1.0, finetuned)",
+    "Microsoft Azure Text Analytics NER service",
+    "Microsoft Presidio",
+    "Gemini-Pro-2.5",
+    "Llama-3.3-70B-Instruct"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "The fine-tuned GLINER model achieved perfect performance (1.000 F1-score) in detecting entities in the 'Groups' category, which includes religious identifiers. In contrast, large language models performed poorly in zero-shot settings for this specific task: Gemini-Pro-2.5 had an F1-score of 0.271 and Llama-3.3-70B-Instruct had an F1-score of 0.667. Microsoft's Azure NER service did not support this category.",
+  "references": [
+    "Ford E, Curlewis K, Squires E, Griffiths LJ, Stewart R, Jones KH. The Potential of Research Drawing on Clinical Free Text to Bring Benefits to Patients in the United Kingdom: A Systematic Review of the Literature. Frontiers in Digital Health. 2021;3.",
+    "Thirunavukarasu AJ, Ting DSJ, Elangovan K, Gutierrez L, Tan TF, Ting DSW. Large language models in medicine. Nat Med. 2023;29(8):1930–40.",
+    "Singhal K, Azizi S, Tu T, Mahdavi SS, Wei J, Chung HW, et al. Large language models encode clinical knowledge. Nature. 2023;620(7972):172–80.",
+    "Dernoncourt F, Lee JY, Uzuner O, Szolovits P. De-identification of patient notes with recurrent neural networks. J Am Med Inform Assoc. 2017;24(3):596–606.",
+    "Johnson AEW, Bulgarelli L, Pollard TJ. Deidentification of free-text medical records using pre-trained bidirectional transformers. Proc ACM Conf Health Inference Learn (2020). 2020;2020:214–21.",
+    "Wiest IC, Leßmann M-E, Wolf F, Ferber D, Treeck MV, Zhu J, et al. Deidentifying Medical Documents with Local, Privacy-Preserving Large Language Models: The LLM-Anonymizer. NEJM AI. 2025;2(4):Aldbp2400537.",
+    "Meta Inc. meta-llama/Llama-3.3-70B-Instruct 2025 [cited 2025 October 1]. Available from: https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct.",
+    "Zaratiana U, Tomeh N, Holat P, Charnois T. GLINER: Generalist Model for Named Entity Recognition using Bidirectional Transformer2023 November 01, 2023:[arXiv:2311.08526 p.]. Available from: https://ui.adsabs.harvard.edu/abs/2023arXiv231108526Z.",
+    "Warner B, Chaffin A, Clavié B, Weller O, Hallström O, Taghadouini S, et al. Smarter, Better, Faster, Longer: A Modern Bidirectional Encoder for Fast, Memory Efficient, and Long Context Finetuning and Inference2024 December 01, 2024:[arXiv:2412.13663 p.]. Available from: https://ui.adsabs.harvard.edu/abs/2024arXiv241213663W.",
+    "Meta. Llama-3.1-70b-Instruct: Meta Inc.; 2024 [cited 2025 26th September]. Available from: https://huggingface.co/meta-llama/Llama-3.1-70B-Instruct.",
+    "Knowledgator Engineering. knowledgator/modern-gliner-bi-large-v1.0 2025 [cited 2025 26th September]. Available from: https://huggingface.co/knowledgator/modern-gliner-bi-large-v1.0.",
+    "Bogdanov S, Constantin A, Bernard T, Crabbé B, Bernard E. NuNER: Entity Recognition Encoder Pre-training via LLM-Annotated Data2024 February 01, 2024:[arXiv:2402.15343 p.]. Available from: https://ui.adsabs.harvard.edu/abs/2024arXiv240215343B.",
+    "Microsoft Ignite. What is Named Entity Recognition (NER) in Azure AI Language? United States: Microsoft; 2025 [cited 2025 28th September]. Available from: https://learn.microsoft.com/en-us/azure/ai-services/language-service/named-entity-recognition/overview.",
+    "Microsoft Inc. Microsoft Presidio 2024 [cited 2025 28th September]. Available from: https://microsoft.github.io/presidio/supported_entities/.",
+    "Comanici G, Bieber E, Schaekermann M, Pasupat I, Sachdeva N, Dhillon I, et al. Gemini 2.5: Pushing the Frontier with Advanced Reasoning, Multimodality, Long Context, and Next Generation Agentic Capabilities2025 July 01, 2025:[arXiv:2507.06261 p.]. Available from: https://ui.adsabs.harvard.edu/abs/2025arXiv250706261C.",
+    "KatherLab. LLM-Annonymizer (LLMAIx) 2025 [cited 2025 October 1]."
+  ]
+}

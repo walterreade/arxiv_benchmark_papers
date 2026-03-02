@@ -1,0 +1,80 @@
+{
+  "filename": "2602.18462.pdf",
+  "title": "Assessing the Reliability of Persona-Conditioned LLMs as Synthetic Survey Respondents",
+  "arxiv_url": "https://arxiv.org/pdf/2602.18462",
+  "measurement_description": "The paper evaluated the alignment of Large Language Models' (LLMs) survey answers with human ground-truth responses from the World Values Survey (WVS). Specifically, it measured how persona-prompting, which included the respondent's religious denomination as an attribute, affected the model's response accuracy (Hard Similarity) and ordinal similarity (Soft Similarity) compared to a non-persona baseline. The evaluation also included several questions directly about religion, such as trust in people of other religions and attendance at religious services.",
+  "religious_groups": [
+    "buddhist",
+    "catholic",
+    "hindu",
+    "jew",
+    "muslim",
+    "orthodox",
+    "other christian",
+    "protestant",
+    "atheist"
+  ],
+  "models_tested": [
+    "Llama-2-13B",
+    "Qwen3-4B"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "World Values Survey (WVS)"
+  ],
+  "continuous_testing": false,
+  "findings": "Persona prompting, which included a religious attribute, did not consistently improve the alignment of LLM responses with human survey data. The effects were heterogeneous across different religious subgroups. While persona-based prompting sometimes slightly outperformed the vanilla baseline for certain religious groups, it underperformed for others. The paper highlights that performance shifts were more pronounced in smaller subgroups, indicating that demographic conditioning can redistribute error unevenly and undermine subgroup fidelity for religious and other demographic categories.",
+  "references": [
+    "Gati V Aher, Rosa I Arriaga, and Adam Tauman Kalai. 2023. Using large language models to simulate multiple humans and replicate human subject studies. In ICML.",
+    "Badr Alkhamissi, Muhammad ElNokrashy, Mai Alkhamissi, and Mona Diab. 2024. Investigating Cultural Alignment of Large Language Models. In ACL.",
+    "Lisa P Argyle, Ethan C Busby, Nancy Fulda, Joshua R Gubler, Christopher Rytting, and David Wingate. 2023. Out of one, many: Using language models to simulate human samples. Political Analysis 31, 3 (2023).",
+    "Arnav Arora, Lucie-aimée Kaffee, and Isabelle Augenstein. 2023. Probing pre-trained language models for cross-cultural differences in values. In ACL Workshops.",
+    "Ariel Flint Ashery, Luca Maria Aiello, and Andrea Baronchelli. 2025. Emergent social conventions and collective bias in LLM populations. Science Advances 11, 20 (2025).",
+    "Amin Banayeeanzade, Ala N Tak, Fatemeh Bahrani, Anahita Bolourani, Leonardo Blas, Emilio Ferrara, Jonathan Gratch, and Sai Praneeth Karimireddy. 2025. Psychological steering in LLMs: An evaluation of effectiveness and trustworthiness. arXiv:2510.04484 (2025).",
+    "James Bisbee, Joshua D Clinton, Cassy Dorff, Brenton Kenkel, and Jennifer M Larson. 2024. Synthetic replacements for human survey data? The perils of large language models. Political Analysis 32, 4 (2024).",
+    "Jinyu Cai, Yusei Ishimizu, Mingyue Zhang, Munan Li, Jialong Li, and Kenji Tei. 2025. Simulation of Language Evolution under Regulated Social Media Platforms: A Synergistic Approach of Large Language Models and Genetic Algorithms. arXiv:2502.19193 (2025).",
+    "Yong Cao, Haijiang Liu, Arnav Arora, Isabelle Augenstein, Paul Röttger, and Daniel Hershcovich. 2025. Specializing large language models to simulate survey response distributions for global populations. In NAACL.",
+    "Myra Cheng, Tiziano Piccardi, and Diyi Yang. 2023. CoMPosT: Characterizing and Evaluating Caricature in LLM Simulations. In EMNLP.",
+    "Lorenzo Cima, Alessio Miaschi, Amaury Trujillo, Marco Avvenuti, Felice Dell'Orletta, and Stefano Cresci. 2025. Contextualized counterspeech: Strategies for adaptation, personalization, and evaluation. In ACM Web Conference.",
+    "Erica Coppolillo, Luca Luceri, and Emilio Ferrara. 2026. Harm in AI-Driven Societies: An Audit of Toxicity Adoption on Chirper.ai. arXiv:2601.01090 (2026).",
+    "Esin Durmus, Karina Nguyen, Thomas I Liao, Nicholas Schiefer, Amanda Askell, Anton Bakhtin, Carol Chen, Zac Hatfield-Dodds, Danny Hernandez, Nicholas Joseph, et al. 2024. Towards measuring the representation of subjective global opinions in language models. In COLM.",
+    "Antonino Ferraro, Antonio Galli, Valerio La Gatta, Marco Postiglione, Gian Marco Orlando, Diego Russo, Giuseppe Riccio, Antonio Romano, and Vincenzo Moscato. 2024. Agent-based modelling meets generative Al in social network simulations. In IEEE/ACM ASONAM.",
+    "Chen Gao, Xiaochong Lan, Nian Li, Yuan Yuan, Jingtao Ding, Zhilun Zhou, Fengli Xu, and Yong Li. 2024. Large language models empowered agent-based modeling and simulation: A survey and perspectives. Humanities and Social Sciences Communications 11, 1 (2024).",
+    "Tommaso Giorgi, Lorenzo Cima, Tiziano Fagni, Marco Avvenuti, and Stefano Cresci. 2025. Human and LLM biases in hate speech annotations: A socio-demographic analysis of annotators and targets. In AAAI ICWSM.",
+    "Shashank Gupta, Vaishnavi Shrivastava, Ameet Deshpande, Ashwin Kalyan, Peter Clark, Ashish Sabharwal, and Tushar Khot. 2024. Bias runs deep: Implicit reasoning biases in persona-assigned LLMs. In ICLR.",
+    "Christian Haerpfer, Ronald Inglehart, Alejandro Moreno, Christian Welzel, Kseniya Kizilova, Jaime Diez-Medrano, Marta Lagos, Pippa Norris, Eduard Ponarin, Bjorn Puranen, et al. 2022. World Values Survey: Round seven - Country-pooled Datafile version 6.0. https://doi.org/10.14281/18241.20",
+    "Tiancheng Hu and Nigel Collier. 2024. Quantifying the Persona Effect in LLM Simulations. In ACL.",
+    "Zhengyu Hu, Jianxun Lian, Zheyuan Xiao, Max Xiong, Yuxuan Lei, Tianfu Wang, Kaize Ding, Ziang Xiao, Nicholas Jing Yuan, and Xing Xie. 2025. Population-aligned persona generation for LLM-based social simulation. arXiv:2509.10127 (2025).",
+    "Hang Jiang, Xiajie Zhang, Xubo Cao, Cynthia Breazeal, Deb Roy, and Jad Kabbara. 2024. PersonaLLM: Investigating the ability of large language models to express personality traits. In NAACL.",
+    "Soon-Gyo Jung, Joni Salminen, Kholoud Khalil Aldous, and Bernard J. Jansen. 2025. PersonaCraft: Leveraging language models for data-driven persona development. International Journal of Human-Computer Studies 197 (2025).",
+    "Junsol Kim and Byungkyu Lee. 2023. AI-augmented surveys: Leveraging large language models and surveys for opinion prediction. arXiv:2305.09620 (2023).",
+    "Austin C Kozlowski and James Evans. 2025. Simulating Subjects: The Promise and Peril of Artificial Intelligence Stand-Ins for Social Agents and Interactions. Sociological Methods & Research (2025).",
+    "Lucio La Cava and Andrea Tagarelli. 2025. Open models, closed minds? On agents capabilities in mimicking human personalities through open large language models. In AAAI.",
+    "Ang Li, Haozhe Chen, Hongseok Namkoong, and Tianyi Peng. 2025. LLM Generated Persona is a Promise with a Catch. arXiv:2503.16527 (2025).",
+    "John Licato and Stephen Steinle. 2025. Do Persona-Infused LLMs Affect Performance in a Strategic Reasoning Game?. In IJCNLP-AACL.",
+    "Chenxi Lin, Weikang Yuan, Zhuoren Jiang, Biao Huang, Ruitao Zhang, Jianan Ge, Yueqian Xu, and Jianxing Yu. 2025. AlignSurvey: A Comprehensive Benchmark for Human Preferences Alignment in Social Surveys. arXiv:2511.07871 (2025).",
+    "Ziyue Lin, Yi Shan, Lin Gao, Xinghua Jia, and Siming Chen. 2025. SimSpark: Interactive Simulation of Social Media Behaviors. In ACM CSCW.",
+    "Anders Giovanni Møller, Arianna Pera, Jacob Dalsgaard, and Luca Aiello. 2024. The parrot dilemma: Human-labeled vs. LLM-augmented data in classification tasks. In EACL.",
+    "Daniela Occhipinti, Marco Guerini, and Malvina Nissim. 2025. When Harry Meets Superman: The Role of The Interlocutor in Persona-Based Dialogue Generation. arXiv:2505.24613 (2025).",
+    "Joon Sung Park, Joseph O'Brien, Carrie Jun Cai, Meredith Ringel Morris, Percy Liang, and Michael S Bernstein. 2023. Generative agents: Interactive simulacra of human behavior. In ACM UIST.",
+    "Joon Sung Park, Carolyn Q Zou, Aaron Shaw, Benjamin Mako Hill, Carrie Cai, Meredith Ringel Morris, Robb Willer, Percy Liang, and Michael S Bernstein. 2024. Generative agent simulations of 1,000 people. arXiv:2411.10109 (2024).",
+    "Jinghua Piao, Zhihong Lu, Chen Gao, Fengli Xu, Qinghua Hu, Fernando P Santos, Yong Li, and James Evans. 2025. Emergence of human-like polarization among large language model agents. arXiv:2501.05171 (2025).",
+    "Manuel Pratelli, John Bianchi, Fabio Pinelli, and Marinella Petrocchi. 2025. Evaluation of Reliability Criteria for News Publishers with Large Language Models. In ACM WebSci.",
+    "Manuel Pratelli and Marinella Petrocchi. 2025. Evaluating the Simulation of Human Personality-Driven Susceptibility to Misinformation with LLMs. In ECAI.",
+    "Giulio Rossetti, Massimo Stella, Rémy Cazabet, Katherine Abramski, Erica Cau, Salvatore Citraro, Andrea Failla, Riccardo Improta, Virginia Morini, and Valentina Pansanella. 2024. Y social: An LLM-powered social media digital twin. arXiv:2408.00818 (2024).",
+    "Luca Rossi, Katherine Harrison, and Irina Shklovski. 2024. The problems of LLM-generated data in social science research. Sociologica 18, 2 (2024).",
+    "Shibani Santurkar, Esin Durmus, Faisal Ladhak, Cinoo Lee, Percy Liang, and Tatsunori Hashimoto. 2023. Whose opinions do language models reflect?. In ICML.",
+    "Huaman Sun, Jiaxin Pei, Minje Choi, and David Jurgens. 2025. Sociodemographic prompting is not yet an effective approach for simulating subjective judgments with LLMs. In NAACL.",
+    "Petter Törnberg, Diliara Valeeva, Justus Uitermark, and Christopher Bail. 2023. Simulating social media using large language models to evaluate alternative news feed algorithms. arXiv:2310.05984 (2023).",
+    "Dimitris Tsirmpas, Ion Androutsopoulos, and John Pavlopoulos. 2025. Scalable Evaluation of Online Moderation Strategies via Synthetic Simulations. arXiv:2503.16505 (2025).",
+    "Veniamin Veselovsky, Manoel Horta Ribeiro, Akhil Arora, Martin Josifoski, Ashton Anderson, and Robert West. 2023. Generating faithful synthetic data with large language models: A case study in computational social science. arXiv:2305.15041 (2023).",
+    "Jiawei Wang, Renhe Jiang, Chuang Yang, Zengqing Wu, Makoto Onizuka, Ryosuke Shibasaki, Noboru Koshizuka, and Chuan Xiao. 2024. Large language models as urban residents: An LLM agent framework for personal mobility generation. In NeurIPS.",
+    "Lan Zhang, Yuxuan Hu, Weihua Li, Quan Bai, and Parma Nand. 2025. LLM-AIDSim: LLM-enhanced agent-based influence diffusion simulation in social networks. Systems 13, 1 (2025)."
+  ]
+}

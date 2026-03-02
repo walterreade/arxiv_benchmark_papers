@@ -1,0 +1,62 @@
+{
+  "filename": "2412.00074.pdf",
+  "title": "Safe to Serve: Aligning Instruction-Tuned Models for Safety and Helpfulness",
+  "arxiv_url": "https://arxiv.org/pdf/2412.00074",
+  "measurement_description": "The paper measures the generation of unsafe, harmful, or hateful content in response to prompts targeting religious groups. This is evaluated as part of a broader assessment of model safety.",
+  "religious_groups": [
+    "Islam",
+    "Judaism",
+    "Christianity"
+  ],
+  "models_tested": [
+    "LLaMa-2-7B",
+    "Gemma-2B-IT"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Anthropic Red Teaming Dataset",
+    "Beaver-Tails",
+    "RewardBench",
+    "I-CoNA",
+    "I-MaliciousInstructions",
+    "I-Controversial"
+  ],
+  "continuous_testing": false,
+  "findings": "The study found that instruction-tuning with a small number of safety-related examples (Safety Instruction-Tuning) and Direct Preference Optimization (DPO) significantly reduced the generation of harmful responses to unsafe prompts, including those targeting religious groups like Muslims and Jews. The baseline model often generated unsafe content that supported harmful premises, whereas the safety-aligned models learned to refuse such prompts or provide a safe, neutral response, increasing the percentage of safe responses from approximately 40% to over 90%.",
+  "references": [
+    "Bianchi, F., Suzgun, M., Attanasio, G., Röttger, P., Jurafsky, D., Hashimoto, T., and Zou, J. (2023). Safety-tuned lla- mas: Lessons from improving the safety of large language models that follow instructions. ArXiv.",
+    "Bisk, Y., Zellers, R., Bras, R. L., Gao, J., and Choi, Y. (2019). Piqa: Reasoning about physical commonsense in natural language. ArXiv.",
+    "Bradley, R. A. and Terry, M. E. (1952). Rank analysis of incomplete block designs: I. the method of paired com- parisons. Biometrika, 39(3/4):324-345.",
+    "Chung, H. W., Hou, L., Longpre, S., Zoph, B., Tay, Y., Fe- dus, W., Li, E., Wang, X., Dehghani, M., Brahma, S., et al. (2022). Scaling instruction-finetuned language models. ArXiv.",
+    "Clark, C., Lee, K., Chang, M.-W., Kwiatkowski, T., Collins, M., and Toutanova, K. (2019). Boolq: Exploring the sur- prising difficulty of natural yes/no questions. ArXiv.",
+    "Dettmers, T., Pagnoni, A., Holtzman, A., and Zettlemoyer, L. (2023). Qlora: Efficient finetuning of quantized Ilms. ArXiv.",
+    "Dong, H., Xiong, W., Goyal, D., Zhang, Y., Chow, W., Pan, R., Diao, S., Zhang, J., Shum, K., and Zhang, T. (2023). Raft: Reward ranked finetuning for generative foundation model alignment.",
+    "Ganguli, D., Lovitt, L., Kernion, J., Askell, A., Bai, Y., Ka- davath, S., Mann, B., Perez, E., Schiefer, N., Ndousse, K., et al. (2022). Red teaming language models to reduce harms: Methods, scaling behaviors, and lessons learned. ArXiv preprint.",
+    "Gao, T., Yen, H., Yu, J., and Chen, D. (2023). Enabling large language models to generate text with citations.",
+    "Ge, S., Zhou, C., Hou, R., Khabsa, M., Wang, Y.-C., Wang, Q., Han, J., and Mao, Y. (2023). Mart: Improving Ilm safety with multi-round automatic red-teaming.",
+    "Inan, H., Upasani, K., Chi, J., Rungta, R., Iyer, K., Mao, Y., Tontchev, M., Hu, Q., Fuller, B., Testuggine, D., and Khabsa, M. (2023). Llama guard: Llm-based input-output safeguard for human-ai conversations.",
+    "Ji, J., Liu, M., Dai, J., Pan, X., Zhang, C., Bian, C., Zhang, C., Sun, R., Wang, Y., and Yang, Y. (2023). Beavertails: Towards improved safety alignment of Ilm via a human- preference dataset.",
+    "Lambert, N., Pyatkin, V., Morrison, J., Miranda, L., Lin, B. Y., Chandu, K., Dziri, N., Kumar, S., Zick, T., Choi, Y., Smith, N. A., and Hajishirzi, H. (2024). Rewardbench: Evaluating reward models for language modeling.",
+    "Lin, C.-Y. (2004). ROUGE: A package for automatic evalua- tion of summaries. In Text Summarization Branches Out, pages 74-81, Barcelona, Spain. Association for Computa- tional Linguistics.",
+    "Lin, Y., Lin, H., Xiong, W., Diao, S., Liu, J., Zhang, J., Pan, R., Wang, H., Hu, W., Zhang, H., Dong, H., Pi, R., Zhao, H., Jiang, N., Ji, H., Yao, Y., and Zhang, T. (2023). Miti- gating the alignment tax of rlhf. ArXiv.",
+    "Ouyang, L., Wu, J., Jiang, X., Almeida, D., Wainwright, C., Mishkin, P., Zhang, C., Agarwal, S., Slama, K., Gray, A., Schulman, J., Hilton, J., Kelton, F., Miller, L., Simens, M., Askell, A., Welinder, P., Christiano, P., Leike, J., and Lowe, R. (2022). Training language models to follow in- structions with human feedback. In Oh, A. H., Agarwal, A., Belgrave, D., and Cho, K., editors, Advances in Neural Information Processing Systems.",
+    "Qi, X., Zeng, Y., Xie, T., Chen, P.-Y., Jia, R., Mittal, P., and Henderson, P. (2023). Fine-tuning aligned language mod- els compromises safety, even when users do not intend to!",
+    "Rafailov, R., Sharma, A., Mitchell, E., Ermon, S., Manning, C. D., and Finn, C. (2023). Direct preference optimiza- tion: Your language model is secretly a reward model.",
+    "Ren, S., Guo, D., Lu, S., Zhou, L., Liu, S., Tang, D., Sun- daresan, N., Zhou, M., Blanco, A., and Ma, S. (2020). Codebleu: a method for automatic evaluation of code syn- thesis.",
+    "Taori, R., Gulrajani, I., Zhang, T., Dubois, Y., Li, X., Guestrin, C., Liang, P., and Hashimoto, T. B. (2023). Stanford alpaca: An instruction-following llama model. https://github.com/tatsu-lab/ stanford_alpaca.",
+    "Touvron, H., Martin, L., Stone, K., Albert, P., Almahairi, A., Babaei, Y., Bashlykov, N., Batra, S., Bhargava, P., Bhos- ale, S., Bikel, D., Blecher, L., Ferrer, C. C., Chen, M., Cucurull, G., Esiobu, D., Fernandes, J., Fu, J., Fu, W., Fuller, B., Gao, C., Goswami, V., Goyal, N., Hartshorn, A., Hosseini, S., Hou, R., Inan, H., Kardas, M., Kerkez, V., Khabsa, M., Kloumann, I., Korenev, A., Koura, P. S., Lachaux, M.-A., Lavril, T., Lee, J., Liskovich, D., Lu, Y., Mao, Y., Martinet, X., Mihaylov, T., Mishra, P., Molybog, I., Nie, Y., Poulton, A., Reizenstein, J., Rungta, R., Saladi, K., Schelten, A., Silva, R., Smith, E. M., Subramanian, R., Tan, X. E., Tang, B., Taylor, R., Williams, A., Kuan, J. X., Xu, P., Yan, Z., Zarov, I., Zhang, Y., Fan, A., Kambadur, M., Narang, S., Rodriguez, A., Stojnic, R., Edunov, S., and Scialom, T. (2023). Llama 2: Open foundation and fine-tuned chat models.",
+    "Tuan, Y.-L., Chen, X., Smith, E. M., Martin, L., Batra, S., Ce- likyilmaz, A., Wang, W. Y., and Bikel, D. M. (2024). Towards safety and helpfulness balanced responses via con- trollable large language models.",
+    "Wang, Y., Kordi, Y., Mishra, S., Liu, A., Smith, N. A., Khashabi, D., and Hajishirzi, H. (2023a). Self-instruct: Aligning language models with self-generated instruc- tions. In Proc. of ACL, pages 13484-13508, Toronto, Canada. Association for Computational Linguistics.",
+    "Wang, Z., Dong, Y., Zeng, J., Adams, V., Sreedhar, M. N., Egert, D., Delalleau, O., Scowcroft, J. P., Kant, N., Swope, A., and Kuchaiev, O. (2023b). Helpsteer: Multi-attribute helpfulness dataset for steerlm.",
+    "Zhang, T., Kishore, V., Wu, F., Weinberger, K. Q., and Artzi, Y. (2020). Bertscore: Evaluating text generation with bert.",
+    "Zheng, L., Chiang, W.-L., Sheng, Y., Zhuang, S., Wu, Z., Zhuang, Y., Lin, Z., Li, Z., Li, D., Xing, E. P., Zhang, H., Gonzalez, J. E., and Stoica, I. (2023). Judging Ilm-as-a- judge with mt-bench and chatbot arena.",
+    "Zhu, B., Frick, E., Wu, T., Zhu, H., and Jiao, J. (2023). Starling-7b: Improving Ilm helpfulness & harmlessness with rlaif."
+  ]
+}

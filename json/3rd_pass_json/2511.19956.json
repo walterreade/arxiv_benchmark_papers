@@ -1,0 +1,64 @@
+{
+  "filename": "2511.19956.pdf",
+  "title": "Prompt Fairness: Sub-group Disparities in LLMs",
+  "arxiv_url": "https://arxiv.org/pdf/2511.19956",
+  "measurement_description": "The paper measured response consistency and bias when prompts contained demographic information from the BOLD dataset, which includes a 'religion' domain. It specifically evaluated a 'prompt neutralization' method that removes or masks demographic terms, using 'Jewish physicist' as an example of a religious identifier to be masked.",
+  "religious_groups": [
+    "Judaism"
+  ],
+  "models_tested": [
+    "LLaMA-8B",
+    "LLaMA-2-13B-chat-hf",
+    "OpenThinker7B",
+    "Openthinker2-7B"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "BOLD"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper's findings are general across demographic subgroups rather than specific to religion. It notes that religious identifiers, such as 'Jewish physicist', are treated as demographic cues that can cause response disparities. The proposed 'prompt neutralization' technique, which masks such terms, was shown to improve response consistency.",
+  "references": [
+    "F. Errica, G. Siracusano, D. Sanvito, and R. Bifulco, \"What did i do wrong? quantifying llms' sensitivity and consistency to prompt engineering,\" arXiv preprint arXiv:2406.12334, 2024.",
+    "J. Zhuo, S. Zhang, X. Fang, H. Duan, D. Lin, and K. Chen, \"Prosa: Assessing and understanding the prompt sensitivity of llms,\" arXiv preprint arXiv:2410.12405, 2024.",
+    "A. Deshpande, V. Murahari, T. Rajpurohit, A. Kalyan, and K. Narasimhan, \"Toxicity in ChatGPT: Analyzing persona-assigned language models,\" arXiv preprint arXiv:2304.05335, 2023.",
+    "T. Beck, H. Schuff, A. Lauscher, and I. Gurevych, \"Sensitivity, performance, robustness: Deconstructing the effect of sociodemographic prompting,\" in Proceedings of 18th EACL Conference, pp. 2589-2615, 2024.",
+    "C. Dwork, M. Hardt, T. Pitassi, O. Reingold, and R. Zemel, \"Fairness through awareness,\" in Proceedings of the 3rd innovations in theoretical computer science conference, pp. 214-226, 2012.",
+    "M. B. Zafar, I. Valera, M. Gomez Rodriguez, and K. P. Gummadi, \"Fairness beyond disparate treatment & disparate impact: Learning classification without disparate mistreatment,\" in Proceedings of the 26th international conference on world wide web, pp. 1171-1180, 2017.",
+    "M. Zhong and R. Tandon, \"Intrinsic fairness-accuracy tradeoffs under equalized odds,\" in 2024 IEEE International Symposium on Information Theory (ISIT), pp. 220-225, IEEE, 2024.",
+    "M. Hardt, E. Price, and N. Srebro, \"Equality of opportunity in supervised learning,\" Advances in neural information processing systems, vol. 29, 2016.",
+    "M. Zhong and R. Tandon, \"Learning fair classifiers via min-max f-divergence regularization,\" in 2023 59th Annual Allerton Conference on Communication, Control, and Computing (Allerton), pp. 1–8, IEEE, 2023.",
+    "B. H. Zhang, B. Lemoine, and M. Mitchell, \"Mitigating unwanted biases with adversarial learning,\" in AAAI Conference on Artificial Intelligence, 2018.",
+    "D. Madras, E. Creager, T. Pitassi, and R. Zemel, \"Learning adversarially fair and transferable representations,\" in International Conference on Machine Learning, 2018.",
+    "M. Du, F. Yang, Y. Lou, and X. Hu, \"Fairness via distribution shift: Evaluating models under the lens of shifts in sensitive attributes,\" in AAAI Conference on Artificial Intelligence, 2021.",
+    "M. Zhong and R. Tandon, “Splitz: Certifiable robustness via split lipschitz randomized smoothing,\" IEEE Transactions on Information Forensics and Security, 2025.",
+    "Y. Chen, K. Zhang, and T. Wu, \"Fast: Improving fairness in deep learning by adaptive score transformation,\" in International Conference on Machine Learning, 2023.",
+    "W. Zhang, M. Zhong, R. Tandon, and M. Krunz, \"Filtered randomized smoothing: A new defense for robust modulation classification,\" in MILCOM 2024-2024 IEEE Military Communications Conference (MILCOM), pp. 789-794, IEEE, 2024.",
+    "M. Zhong and R. Tandon, \"Learning fair robustness via domain mixup,\" in 2024 58th Asilomar Conference on Signals, Systems, and Computers, pp. 196-202, IEEE, 2024.",
+    "E. Sheng, K.-W. Chang, P. Natarajan, and X. L. Peng, \"“the woman worked as a babysitter”: On biases in language generation,\" in Empirical Methods in Natural Language Processing, 2019.",
+    "P. P. Liang, I. Li, and K.-W. Chang, “Towards real-world fairness in text generation,\" in ACL Workshop on Narrative Understanding, 2021.",
+    "M. Zhong, N. Teku, and R. Tandon, \"Speeding up speculative decoding via sequential approximate verification,\" arXiv preprint arXiv:2502.04557, 2025.",
+    "D. Borkan, L. Dixon, J. Sorensen, N. Thain, and L. Vasserman, \"Nuanced metrics for measuring unintended bias with real data for text classification,\" in AAAI Conference on Artificial Intelligence, 2019.",
+    "B. Guan, T. Roosta, P. Passban, and M. Rezagholizadeh, \"The order effect: Investigating prompt sensitivity to input order in Ilms,\" arXiv preprint arXiv:2502.04134, 2025.",
+    "M. Sclar, Y. Choi, Y. Tsvetkov, and A. Suhr, “Quantifying language models' sensitivity to spurious features in prompt design or: How i learned to start worrying about prompt formatting,\" arXiv preprint arXiv:2310.11324, 2023.",
+    "A. Chatterjee, H. K. Renduchintala, S. Bhatia, and T. Chakraborty, \"Posix: A prompt sensitivity index for large language models,\" in EMNLP (Findings), 2024.",
+    "M. Cheng, E. Durmus, and D. Jurafsky, \"Marked personas: Using natural language prompts to measure stereotypes in language models,\" arXiv preprint arXiv:2305.18189, 2023.",
+    "M. Lutz, I. Sen, G. Ahnert, E. Rogers, and M. Strohmaier, \"The prompt makes the person (a): A systematic evaluation of sociodemographic persona prompting for large language models,\" arXiv preprint arXiv:2507.16076, 2025.",
+    "K. L. Truong, R. Fogliato, H. Heidari, and Z. S. Wu, \"Persona-augmented benchmarking: Evaluating Ilms across diverse writing styles,\" arXiv preprint arXiv:2507.22168, 2025.",
+    "P. Arora, A. Karimi, and L. Flek, \"Exploring robustness of Ilms to sociodemographically-conditioned paraphrasing,\" arXiv preprint arXiv:2501.08276, 2025.",
+    "M. Zheng, J. Pei, L. Logeswaran, M. Lee, and D. Jurgens, \"When\" a helpful assistant\" is not really helpful: Personas in system prompts do not improve performances of large language models,\" in Findings of the Association for Computational Linguistics: EMNLP 2024, pp. 15126-15154, 2024.",
+    "A. Paleyes, R. Sendyka, D. Robinson, C. Cabrera, and N. D. Lawrence, \"Prompt variability effects on Ilm code generation,\" arXiv preprint arXiv:2506.10204, 2025.",
+    "Q. Zhong, Z. Li, S. Fan, and A. Sun, \"Evaluating Ilm adaptation to sociodemographic factors: User profile vs. dialogue history,\" arXiv preprint arXiv:2505.21362, 2025.",
+    "C. C. Zeng, M. Chung, and E. Zhou, \"Prompting for fairness: mitigating gender bias in large language models with self-debiasing prompting,\" in University of Michigan CSE 595 Natural Language Processing Fall 2024.",
+    "V. Cherepanova, C.-J. Lee, N.-J. Akpinar, R. Fogliato, M. A. Bertran, M. Kearns, and J. Zou, \"Improving Ilm group fairness on tabular data via in-context learning,\" in Neurips Safe Generative AI Workshop 2024.",
+    "J. Dhamala, T. Sun, V. Kumar, S. Krishna, Y. Pruksachatkun, K.-W. Chang, and R. Gupta, \"Bold: Dataset and metrics for measuring biases in open-ended language generation,\" in Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency (FAccT), pp. 862-872, 2021.",
+    "Y. Liu, S. Gautam, J. Ma, and H. Lakkaraju, “Investigating the fairness of large language models for predictions on tabular data,” 2023."
+  ]
+}

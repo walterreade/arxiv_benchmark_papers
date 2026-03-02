@@ -1,0 +1,68 @@
+{
+  "filename": "2311.11229.pdf",
+  "title": "Causal ATE Mitigates Unintended Bias in Controlled Text Generation",
+  "arxiv_url": "https://arxiv.org/pdf/2311.11229",
+  "measurement_description": "The paper uses the word 'Muslim' as an example of a 'spurious correlate' to illustrate how language models can develop unintended bias, specifically in toxicity detection. It measures how its proposed method, Causal Average Treatment Effect (ATE), can mitigate this by preventing models from incorrectly associating the religious term with toxicity due to biased training data.",
+  "religious_groups": [
+    "Islam"
+  ],
+  "models_tested": [
+    "HATEBERT",
+    "PERSPECTIVE API",
+    "Logistic Regression",
+    "Support Vector Machine (SVM)",
+    "Gradient Boosting (GB)",
+    "Naive Bayes (NB)",
+    "Neural Networks"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "The paper demonstrates that terms related to religious identity, like 'Muslim', can be incorrectly flagged as toxic by language models because they act as 'spurious correlates' in training data. The proposed Causal ATE method is shown to effectively reduce this unintended bias, leading to lower and more accurate toxicity scores for sentences containing such terms.",
+  "references": [
+    "Abubakar Abid, Maheen Farooqi, and James Zou. 2021. Large language models associate muslims with violence. Nature Machine Intelligence, 3(6):461–463.",
+    "Tommaso Caselli, Valerio Basile, Jelena Mitrović, and Michael Granitzer. 2020. Hatebert: Retraining bert for abusive language detection in english. arXiv preprint arXiv:2010.12472.",
+    "Sumanth Dathathri, Andrea Madotto, Janice Lan, Jane Hung, Eric Frank, Piero Molino, Jason Yosinski, and Rosanne Liu. 2019. Plug and play language models: A simple approach to controlled text generation. arXiv preprint arXiv:1912.02164.",
+    "Thomas Davidson, Debasmita Bhattacharya, and Ingmar Weber. 2019. Racial bias in hate speech and abusive language detection datasets. arXiv preprint arXiv:1905.12516.",
+    "Jwala Dhamala, Tony Sun, Varun Kumar, Satyapriya Krishna, Yada Pruksachatkun, Kai-Wei Chang, and Rahul Gupta. 2021. Bold: Dataset and metrics for measuring biases in open-ended language generation. In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, pages 862–872.",
+    "Lucas Dixon, John Li, Jeffrey Sorensen, Nithum Thain, and Lucy Vasserman. 2018. Measuring and mitigating unintended bias in text classification. In Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society, pages 67–73.",
+    "Amir Feder, Katherine A Keith, Emaad Manzoor, Reid Pryzant, Dhanya Sridhar, Zach Wood-Doughty, Jacob Eisenstein, Justin Grimmer, Roi Reichart, Margaret E Roberts, et al. 2022. Causal inference in natural language processing: Estimation, prediction, interpretation and beyond. Transactions of the Association for Computational Linguistics, 10:1138–1158.",
+    "Lei Gao and Ruihong Huang. 2017. Detecting online hate speech using context aware models. arXiv preprint arXiv:1710.07395.",
+    "Samuel Gehman, Suchin Gururangan, Maarten Sap, Yejin Choi, and Noah A Smith. 2020. Realtoxicityprompts: Evaluating neural toxic degeneration in language models. arXiv preprint arXiv:2009.11462.",
+    "Suchin Gururangan, Ana Marasović, Swabha Swayamdipta, Kyle Lo, Iz Beltagy, Doug Downey, and Noah A Smith. 2020. Don’t stop pretraining: adapt language models to domains and tasks. arXiv preprint arXiv:2004.10964.",
+    "Zhiting Hu and Li Erran Li. 2021. A causal lens for controllable text generation. Advances in Neural Information Processing Systems, 34:24941–24955.",
+    "Zhiting Hu, Zichao Yang, Xiaodan Liang, Ruslan Salakhutdinov, and Eric P Xing. 2017. Toward controlled generation of text. In International conference on machine learning, pages 1587–1596. PMLR.",
+    "Ben Hutchinson, Vinodkumar Prabhakaran, Emily Denton, Kellie Webster, Yu Zhong, and Stephen Denuyl. 2020. Social biases in nlp models as barriers for persons with disabilities. arXiv preprint arXiv:2005.00813.",
+    "Abigail Z Jacobs and Hanna Wallach. 2021. Measurement and fairness. In Proceedings of the 2021 ACM conference on fairness, accountability, and transparency, pages 375–385.",
+    "Pratik Joshi, Sebastin Santy, Amar Budhiraja, Kalika Bali, and Monojit Choudhury. 2020. The state and fate of linguistic diversity and inclusion in the nlp world. arXiv preprint arXiv:2004.09095.",
+    "Jean Kaddour, Aengus Lynch, Qi Liu, Matt J Kusner, and Ricardo Silva. 2022. Causal machine learning: A survey and open problems. arXiv preprint arXiv:2206.15475.",
+    "Nitish Shirish Keskar, Bryan McCann, Lav R Varshney, Caiming Xiong, and Richard Socher. 2019. Ctrl: A conditional transformer language model for controllable generation. arXiv preprint arXiv:1909.05858.",
+    "Ben Krause, Akhilesh Deepak Gotmare, Bryan McCann, Nitish Shirish Keskar, Shafiq Joty, Richard Socher, and Nazneen Fatema Rajani. 2020. Gedi: Generative discriminator guided sequence generation. arXiv preprint arXiv:2009.06367.",
+    "Alyssa Lees, Vinh Q Tran, Yi Tay, Jeffrey Sorensen, Jai Gupta, Donald Metzler, and Lucy Vasserman. 2022. A new generation of perspective api: Efficient multilingual character-level transformers. arXiv preprint arXiv:2202.11176.",
+    "Alisa Liu, Maarten Sap, Ximing Lu, Swabha Swayamdipta, Chandra Bhagavatula, Noah A Smith, and Yejin Choi. 2021. Dexperts: Decoding-time controlled text generation with experts and anti-experts. arXiv preprint arXiv:2105.03023.",
+    "Rahul Madhavan, Rishabh Garg, Kahini Wadhawan, and Sameep Mehta. 2023. CFL: Causally fair language models through token-level attribute controlled generation. In Findings of the Association for Computational Linguistics: ACL 2023, pages 11344–11358, Toronto, Canada. Association for Computational Linguistics.",
+    "Kris McGuffie and Alex Newhouse. 2020. The radicalization risks of gpt-3 and advanced neural language models. arXiv preprint arXiv:2009.06807.",
+    "Junhyun Nam, Hyuntak Cha, Sungsoo Ahn, Jaeho Lee, and Jinwoo Shin. 2020. Learning from failure: Debiasing classifier from biased classifier. Advances in Neural Information Processing Systems, 33:20673–20684.",
+    "Yonatan Oren, Shiori Sagawa, Tatsunori B Hashimoto, and Percy Liang. 2019. Distributionally robust language modeling. arXiv preprint arXiv:1909.02060.",
+    "María Antonia Paz, Julio Montero-Díaz, and Alicia Moreno-Delgado. 2020. Hate speech: A systematized review. Sage Open, 10(4):2158244020973022.",
+    "Jose Quiroga Perez, Thanasis Daradoumis, and Joan Manuel Marques Puig. 2020. Rediscovering the use of chatbots in education: A systematic literature review. Computer Applications in Engineering Education, 28(6):1549–1565.",
+    "Shrimai Prabhumoye, Alan W Black, and Ruslan Salakhutdinov. 2020. Exploring controllable text generation techniques. arXiv preprint arXiv:2005.01822.",
+    "Paul Röttger, Bertram Vidgen, Dong Nguyen, Zeerak Waseem, Helen Margetts, and Janet B Pierrehumbert. 2020. Hatecheck: Functional tests for hate speech detection models. arXiv preprint arXiv:2012.15606.",
+    "Maarten Sap, Dallas Card, Saadia Gabriel, Yejin Choi, and A Noah Smith. 2019a. The risk of racial bias in hate speech detection. In ACL.",
+    "Maarten Sap, Saadia Gabriel, Lianhui Qin, Dan Jurafsky, Noah A Smith, and Yejin Choi. 2019b. Social bias frames: Reasoning about social and power implications of language. arXiv preprint arXiv:1911.03891.",
+    "Can Udomcharoenchaikit, Wuttikorn Ponwitayarat, Patomporn Payoungkhamdee, Kanruethai Masuk, Weerayut Buaphet, Ekapol Chuangsuwanich, and Sarana Nutanong. 2022. Mitigating spurious correlation in natural language understanding with counterfactual inference. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 11308–11321.",
+    "Zeerak Waseem. 2016. Are you a racist or am i seeing things? annotator influence on hate speech detection on twitter. In Proceedings of the first workshop on NLP and computational social science, pages 138–142.",
+    "Laura Weidinger, Jonathan Uesato, Maribeth Rauh, Conor Griffin, Po-Sen Huang, John Mellor, Amelia Glaese, Myra Cheng, Borja Balle, Atoosa Kasirzadeh, et al. 2022. Taxonomy of risks posed by language models. In 2022 ACM Conference on Fairness, Accountability, and Transparency, pages 214–229.",
+    "Johannes Welbl, Amelia Glaese, Jonathan Uesato, Sumanth Dathathri, John Mellor, Lisa Anne Hendricks, Kirsty Anderson, Pushmeet Kohli, Ben Coppin, and Po-Sen Huang. 2021. Challenges in detoxifying language models. arXiv preprint arXiv:2109.07445.",
+    "Albert Xu, Eshaan Pathak, Eric Wallace, Suchin Gururangan, Maarten Sap, and Dan Klein. 2021. Detoxifying language models risks marginalizing minority voices. arXiv preprint arXiv:2104.06390.",
+    "Wenjie Yin and Arkaitz Zubiaga. 2021. Towards generalisable hate speech detection: a review on obstacles and solutions. PeerJ Computer Science, 7:e598.",
+    "Marcos Zampieri, Shervin Malmasi, Preslav Nakov, Sara Rosenthal, Noura Farra, and Ritesh Kumar. 2019a. SemEval-2019 task 6: Identifying and categorizing offensive language in social media (OffensEval). In Proceedings of the 13th International Workshop on Semantic Evaluation, pages 75–86, Minneapolis, Minnesota, USA. Association for Computational Linguistics.",
+    "Marcos Zampieri, Shervin Malmasi, Preslav Nakov, Sara Rosenthal, Noura Farra, and Ritesh Kumar. 2019b. Semeval-2019 task 6: Identifying and categorizing offensive language in social media (offenseval). arXiv preprint arXiv:1903.08983."
+  ]
+}

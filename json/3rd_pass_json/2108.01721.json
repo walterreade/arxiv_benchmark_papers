@@ -1,0 +1,68 @@
+{
+  "filename": "2108.01721.pdf",
+  "title": "Improving Counterfactual Generation for Fair Hate Speech Detection",
+  "arxiv_url": "https://arxiv.org/pdf/2108.01721",
+  "measurement_description": "The paper measures fairness and bias in hate speech detection models, specifically evaluating how models perform on sentences containing social group tokens (SGTs). This includes identifying and mitigating bias against religious groups by analyzing stereotypical language and creating semantically plausible counterfactuals to train fairer models.",
+  "religious_groups": [
+    "Catholicism",
+    "Christianity",
+    "Judaism",
+    "Taoism",
+    "Protestantism",
+    "Buddhism",
+    "Islam",
+    "Sikhism"
+  ],
+  "models_tested": [
+    "BERT",
+    "GPT-2"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "StereoSet"
+  ],
+  "continuous_testing": false,
+  "findings": "The study found that by using a pre-trained language model (GPT-2) to evaluate the likelihood of counterfactual sentences, it's possible to generate more semantically sound counterfactuals for fairness training. This method improves fairness metrics for hate speech classifiers, reducing misclassification of non-hateful sentences mentioning religious groups (like 'Jews' or 'Muslims') while preserving the model's ability to detect genuinely stereotypical hate speech targeting these groups.",
+  "references": [
+    "Martín Abadi, Paul Barham, Jianmin Chen, Zhifeng Chen, Andy Davis, Jeffrey Dean, Matthieu Devin, Sanjay Ghemawat, Geoffrey Irving, Michael Isard, et al. 2016. Tensorflow: A system for large-scale machine learning. In 12th {USENIX} symposium on operating systems design and implementation ({OSDI} 16), pages 265–283.",
+    "Amy J. C. Cuddy, Susan T Fiske, Virginia SY Kwan, Peter Glick, Stephanie Demoulin, Jacques-Philippe Leyens, Michael Harris Bond, Jean-Claude Croizet, Naomi Ellemers, Ed Sleebos, et al. 2009. Stereotype content model across cultures: Towards universal similarities and some differences. British Journal of Social Psychology, 48(1):1–33.",
+    "J. Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. Bert: Pre-training of deep bidirectional transformers for language understanding. In NAACL-HLT.",
+    "Lucas Dixon, John Li, Jeffrey Sorensen, Nithum Thain, and Lucy Vasserman. 2018. Measuring and mitigating unintended bias in text classification. In Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society, pages 67–73.",
+    "Cynthia Dwork, Moritz Hardt, Toniann Pitassi, Omer Reingold, and Richard Zemel. 2012. Fairness through awareness. In Proceedings of the 3rd innovations in theoretical computer science conference, pages 214–226.",
+    "Christiane Fellbaum. 2012. Wordnet. The encyclopedia of applied linguistics.",
+    "Joseph L Fleiss. 1971. Measuring nominal scale agreement among many raters. Psychological bulletin, 76(5):378.",
+    "Gavin Gaffney. 2018. Pushshift gab corpus. https://files.pushshift.io/gab/. Accessed: 2019-5-23.",
+    "Sahaj Garg, Vincent Perot, Nicole Limtiaco, Ankur Taly, Ed H Chi, and Alex Beutel. 2019. Counterfactual fairness in text classification through robustness. In Proceedings of the 2019 AAAI/ACM Conference on AI, Ethics, and Society, pages 219–226. ACM.",
+    "Ona de Gibert, Naiara Perez, Aitor García-Pablos, and Montse Cuadros. 2018. Hate speech dataset from a white supremacy forum. arXiv preprint arXiv:1809.04444.",
+    "Anthony G Greenwald and Mahzarin R Banaji. 1995. Implicit social cognition: attitudes, self-esteem, and stereotypes. Psychological review, 102(1):4.",
+    "Rainer Greifeneder, Herbert Bless, and Klaus Fiedler. 2017. Social cognition: How individuals construct social reality. Psychology Press.",
+    "John Haas. 2012. Hate speech and stereotypic talk. The handbook of intergroup communication, pages 128–140.",
+    "Moritz Hardt, Eric Price, Nati Srebro, et al. 2016. Equality of opportunity in supervised learning. In Advances in neural information processing systems, pages 3315–3323.",
+    "Harini Kannan, Alexey Kurakin, and Ian Goodfellow. 2018. Adversarial logit pairing. arXiv preprint arXiv:1803.06373.",
+    "Atoosa Kasirzadeh and Andrew Smart. 2021. The use and misuse of counterfactuals in ethical machine learning. In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, pages 228–236.",
+    "Brendan Kennedy, Mohammad Atari, Aida M Davani, Leigh Yeh, Ali Omrani, Yehsong Kim, Kris Coombs Jr., Shreya Havaldar, Gwenyth Portillo-Wightman, Elaine Gonzalez, Joe Hoover, Aida Azatian, Gabriel Cardenas, Alyzeh Hussain, Austin Lara, Adam Omary, Christina Park, Xin Wang, Clarisa Wijaya, Yong Zhang, Beth Meyerowitz, and Morteza Dehghani. 2020a. The gab hate corpus: A collection of 27k posts annotated for hate speech.",
+    "Brendan Kennedy, Xisen Jin, Aida Mostafazadeh Davani, Morteza Dehghani, and Xiang Ren. 2020b. Contextualizing hate speech classifiers with posthoc explanation. Annual Conference of the Association for Computational Linguistics (ACL).",
+    "Matt J Kusner, Joshua Loftus, Chris Russell, and Ricardo Silva. 2017. Counterfactual fairness. In Advances in Neural Information Processing Systems, pages 4066–4076.",
+    "David Lewis. 1973. Counterfactuals and comparative possibility. In Ifs, pages 57–85. Springer.",
+    "David Madras, Elliot Creager, Toniann Pitassi, and Richard Zemel. 2018. Learning adversarially fair and transferable representations. arXiv preprint arXiv:1802.06309.",
+    "Ninareh Mehrabi, Fred Morstatter, Nripsuta Saxena, Kristina Lerman, and Aram Galstyan. 2019. A survey on bias and fairness in machine learning. arXiv preprint arXiv:1908.09635, 0.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2020. Stereoset: Measuring stereotypical bias in pretrained language models. arXiv preprint arXiv:2004.09456.",
+    "Ji Ho Park, Jamin Shin, and Pascale Fung. 2018. Reducing gender bias in abusive language detection. arXiv preprint arXiv:1808.07231.",
+    "Jeffrey Pennington, Richard Socher, and Christopher D. Manning. 2014. Glove: Global vectors for word representation. In Empirical Methods in Natural Language Processing (EMNLP), pages 1532–1543.",
+    "Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. 2019. Language models are unsupervised multitask learners. OpenAI Blog, 1(8):9.",
+    "Maarten Sap, Dallas Card, Saadia Gabriel, Yejin Choi, and Noah A Smith. 2019. The risk of racial bias in hate speech detection. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 1668–1678.",
+    "Emily Sheng, Kai-Wei Chang, Premkumar Natarajan, and Nanyun Peng. 2019. The woman worked as a babysitter: On biases in language generation. arXiv preprint arXiv:1909.01326.",
+    "Robert C Stalnaker. 1968. A theory of conditionals. In Ifs, pages 41–55. Springer.",
+    "Zeerak Waseem. 2016. Are you a racist or am i seeing things? annotator influence on hate speech detection on twitter. In Proceedings of the first workshop on NLP and computational social science, pages 138–142.",
+    "Michael Wiegand, Josef Ruppenhofer, and Thomas Kleinbauer. 2019. Detection of abusive language: the problem of biased datasets. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 602–608.",
+    "Thomas Wolf, Lysandre Debut, Victor Sanh, Julien Chaumond, Clement Delangue, Anthony Moi, Pierric Cistac, Tim Rault, Remi Louf, Morgan Funtowicz, Joe Davison, Sam Shleifer, Patrick von Platen, Clara Ma, Yacine Jernite, Julien Plu, Canwen Xu, Teven Le Scao, Sylvain Gugger, Mariama Drame, Quentin Lhoest, and Alexander Rush. 2020. Transformers: State-of-the-art natural language processing. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing: System Demonstrations, pages 38–45, Online. Association for Computational Linguistics.",
+    "Brian Hu Zhang, Blake Lemoine, and Margaret Mitchell. 2018. Mitigating unwanted biases with adversarial learning. In Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society, pages 335–340. ACM.",
+    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang. 2018. Gender bias in coreference resolution: Evaluation and debiasing methods. arXiv preprint arXiv:1804.06876."
+  ]
+}

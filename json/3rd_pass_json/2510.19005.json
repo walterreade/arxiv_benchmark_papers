@@ -1,0 +1,70 @@
+{
+  "filename": "2510.19005.pdf",
+  "title": "Dynamic Evaluation for Oversensitivity in LLMs",
+  "arxiv_url": "https://arxiv.org/pdf/2510.19005",
+  "measurement_description": "The paper measures oversensitivity to prompts involving religious bias or stereotypes, as part of a broader evaluation of language models' tendency to defensively reject harmless content.",
+  "religious_groups": [],
+  "models_tested": [
+    "gpt-40-mini",
+    "gpt-3.5-turbo",
+    "Qwen-7B-Chat",
+    "Qwen-14B-Chat",
+    "Qwen-72B-Chat",
+    "Qwen3-0.6B",
+    "Qwen3-1.7B",
+    "Qwen3-8B",
+    "Qwen3-14B",
+    "Qwen3-32B",
+    "DeepSeek-V2-Lite-Chat",
+    "gemma-3-1b-it",
+    "gemma-3-4b-it",
+    "gemma-3-12b-it",
+    "gemma-3-27b-it",
+    "Llama-3.1-8B-Instruct",
+    "Llama-3.1-70B-Instruct",
+    "Llama-3.2-1B-Instruct",
+    "Llama-3.2-3B-Instruct",
+    "Llama-3.3-70B-Instruct",
+    "Phi-3.5-MoE-instruct",
+    "Phi-3.5-mini-instruct",
+    "Phi-4",
+    "Mistral-Nemo-Instruct-2407",
+    "Mistral-Small-3.1-24B-Instruct-2503"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "HH-RLHF",
+    "ToxiGen",
+    "XSTest",
+    "PHTest",
+    "OR-Bench",
+    "OverKill",
+    "SORRY-Bench",
+    "PrimeGuard"
+  ],
+  "continuous_testing": true,
+  "findings": "The paper identifies 'religious bias or stereotypes' as one of four primary semantic categories for analyzing oversensitive prompts, accounting for 18.4% of the categorized samples. However, the results are aggregated, and the paper does not provide specific findings isolated to the religious sub-category. General findings indicate that Gemma and Phi models show the most oversensitivity, while larger Llama models show the least.",
+  "references": [
+    "Bang An, Sicheng Zhu, Ruiyi Zhang, Michael-Andrei Panaitescu-Liess, Yuancheng Xu, and Furong Huang. 2024. Automatic pseudo-harmful prompt generation for evaluating false refusals in large language models. In First Conference on Language Modeling.",
+    "Yuntao Bai, Andy Jones, Kamal Ndousse, Amanda Askell, Anna Chen, Nova DasSarma, Dawn Drain, Stanislav Fort, Deep Ganguli, Tom Henighan, and 1 others. 2022. Training a helpful and harmless assistant with reinforcement learning from human feedback. arXiv preprint arXiv:2204.05862.",
+    "Justin Cui, Wei-Lin Chiang, Ion Stoica, and Cho- Jui Hsieh. 2024. Or-bench: An over-refusal benchmark for large language models. Preprint, arXiv:2405.20947.",
+    "Deep Ganguli, Liane Lovitt, Jackson Kernion, Amanda Askell, Yuntao Bai, Saurav Kadavath, Ben Mann, Ethan Perez, Nicholas Schiefer, Kamal Ndousse, Andy Jones, Sam Bowman, Anna Chen, Tom Conerly, Nova DasSarma, Dawn Drain, Nelson Elhage, Sheer El-Showk, Stanislav Fort, and 17 others. 2022. Red teaming language models to reduce harms: Methods, scaling behaviors, and lessons learned. Preprint, arXiv:2209.07858.",
+    "Thomas Hartvigsen, Saadia Gabriel, Hamid Palangi, Maarten Sap, Dipankar Ray, and Ece Kamar. 2022. Toxigen: A large-scale machine-generated dataset for implicit and adversarial hate speech detection. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics.",
+    "Pengcheng He, Xiaodong Liu, Jianfeng Gao, and Weizhu Chen. 2021. Deberta: Decoding-enhanced bert with disentangled attention. In International Conference on Learning Representations.",
+    "Blazej Manczak, Eric Lin, Eliott Zemour, and Vaikkunth Mugunthan. 2024. Primeguard: Safe and helpful LLMs through tuning-free routing. In ICML 2024 Next Generation of AI Safety Workshop.",
+    "Paul Röttger, Hannah Kirk, Bertie Vidgen, Giuseppe Attanasio, Federico Bianchi, and Dirk Hovy. 2024. XSTest: A test suite for identifying exaggerated safety behaviours in large language models. In Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 5377–5400, Mexico City, Mexico. Association for Computational Linguistics.",
+    "Chenyu Shi, Xiao Wang, Qiming Ge, Songyang Gao, Xianjun Yang, Tao Gui, Qi Zhang, Xuanjing Huang, Xun Zhao, and Dahua Lin. 2024. Navigating the OverKill in large language models. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 4602-4614, Bangkok, Thailand. Association for Computational Linguistics.",
+    "Shengyun Si, Xinpeng Wang, Guangyao Zhai, Nassir Navab, and Barbara Plank. 2025. Think before refusal: Triggering safety reflection in llms to mitigate false refusal behavior. Preprint, arXiv:2503.17882.",
+    "Mukund Sundararajan, Ankur Taly, and Qiqi Yan. 2017. Axiomatic attribution for deep networks. In International Conference on Machine Learning (ICML), pages 3319–3328.",
+    "Xinpeng Wang, Chengzhi Hu, Paul Röttger, and Barbara Plank. 2025. Surgical, cheap, and flexible: Mitigating false refusal in language models via single vector ablation. In The Thirteenth International Conference on Learning Representations.",
+    "Tinghao Xie, Xiangyu Qi, Yi Zeng, Yangsibo Huang, Udari Madhushani Sehwag, Kaixuan Huang, Luxi He, Boyi Wei, Dacheng Li, Ying Sheng, Ruoxi Jia, Bo Li, Kai Li, Danqi Chen, Peter Henderson, and Prateek Mittal. 2025. Sorry-bench: Systematically evaluating large language model safety refusal. In The Thirteenth International Conference on Learning Representations.",
+    "Kaijie Zhu, Jiaao Chen, Jindong Wang, Neil Zhenqiang Gong, Diyi Yang, and Xing Xie. 2024a. Dyval: Dynamic evaluation of large language models for reasoning tasks. In The Twelfth International Conference on Learning Representations.",
+    "Kaijie Zhu, Jindong Wang, Qinlin Zhao, Ruochen Xu, and Xing Xie. 2024b. Dynamic evaluation of large language models by meta probing agents. arXiv preprint arXiv:2402.14865."
+  ]
+}

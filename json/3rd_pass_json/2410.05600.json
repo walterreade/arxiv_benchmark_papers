@@ -1,0 +1,54 @@
+{
+  "filename": "2410.05600.pdf",
+  "title": "Bridging Modalities: Enhancing Cross-Modality Hate Speech Detection with Few-Shot In-Context Learning",
+  "arxiv_url": "https://arxiv.org/pdf/2410.05600",
+  "measurement_description": "The paper evaluates the detection of hate speech, including stereotypes and derogatory language, directed at religious groups in both text-based and vision-language (meme) formats. It specifically measures how text-based examples of religious hate speech can improve a model's ability to classify multimodal hate speech targeting religious subjects.",
+  "religious_groups": [
+    "Islam",
+    "Judaism"
+  ],
+  "models_tested": [
+    "Mistral-7B",
+    "Qwen2-7B",
+    "LLaVA-7B",
+    "Llama3-8B"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Facebook Hateful Memes (FHM)",
+    "Multimedia Automatic Misogyny Identification (MAMI)",
+    "Latent Hatred"
+  ],
+  "continuous_testing": false,
+  "findings": "The study found that providing text-based demonstrations of hate speech, which include examples targeting religious groups (e.g., anti-Muslim or anti-Semitic content), significantly improves the classification accuracy of vision-language hate speech (memes). For instance, an in-context example about derogatory language towards the Qur'an helped a model correctly classify a hateful meme involving a woman in a hijab. However, the study also noted that exposure to demonstrations with sensitive religious topics (e.g., the Holocaust) could lead to over-generalization, causing models to misclassify neutral content as hateful.",
+  "references": [
+    "Piush Aggarwal, Pranit Chawla, Mithun Das, Punyajoy Saha, Binny Mathew, Torsten Zesch, and Animesh Mukherjee. 2023. Hateproof: Are hateful meme detection systems really robust? In Proceedings of the ACM Web Conference 2023, pages 3734-3743.",
+    "Md Rabiul Awal, Rui Cao, Roy Ka-Wei Lee, and Sandra Mitrović. 2021. Angrybert: Joint learning target and emotion for hate speech detection. In Pacific-Asia conference on knowledge discovery and data mining, pages 701-713. Springer.",
+    "Md Rabiul Awal, Roy Ka-Wei Lee, Eshaan Tanwar, Tanmay Garg, and Tanmoy Chakraborty. 2023. Model-agnostic meta-learning for multilingual hate speech detection. IEEE Transactions on Computational Social Systems, 11(1):1086–1095.",
+    "Jinze Bai, Shuai Bai, Yunfei Chu, Zeyu Cui, Kai Dang, Xiaodong Deng, Yang Fan, Wenbin Ge, Yu Han, Fei Huang, Binyuan Hui, Luo Ji, Mei Li, Junyang Lin, Runji Lin, Dayiheng Liu, Gao Liu, Chengqiang Lu, Keming Lu, Jianxin Ma, Rui Men, Xingzhang Ren, Xuancheng Ren, Chuanqi Tan, Sinan Tan, Jianhong Tu, Peng Wang, Shijie Wang, Wei Wang, Sheng-guang Wu, Benfeng Xu, Jin Xu, An Yang, Hao Yang, Jian Yang, Shusheng Yang, Yang Yao, Bowen Yu, Hongyi Yuan, Zheng Yuan, Jianwei Zhang, Xingx-uan Zhang, Yichang Zhang, Zhenru Zhang, Chang Zhou, Jingren Zhou, Xiaohuan Zhou, and Tianhang Zhu. 2023. Qwen technical report. arXiv preprint arXiv:2309.16609.",
+    "Rui Cao, Ming Shan Hee, Adriel Kuek, Wen-Haw Chong, Roy Ka-Wei Lee, and Jing Jiang. 2023. Pro-cap: Leveraging a frozen vision-language model for hateful meme detection. In Proceedings of the 31st ACM International Conference on Multimedia, pages 5244-5252.",
+    "Rui Cao, Roy Ka-Wei Lee, and Jing Jiang. 2024. Modu-larized networks for few-shot hateful meme detection. In Proceedings of the ACM on Web Conference 2024, pages 4575-4584.",
+    "Wei-Lin Chiang, Lianmin Zheng, Ying Sheng, Anastasios Nikolas Angelopoulos, Tianle Li, Dacheng Li, Hao Zhang, Banghua Zhu, Michael Jordan, Joseph E. Gonzalez, and Ion Stoica. 2024. Chatbot arena: An open platform for evaluating llms by human preference.",
+    "Keyan Cuo, Wentai Zhao, Mu Jaden, Vishant Vishwami-tra, Ziming Zhao, and Hongxin Hu. 2022. Under-standing the generalizability of hateful memes detec-tion models against covid-19-related hateful memes. In International Conference on Machine Learning and Applications.",
+    "Mai ElSherief, Caleb Ziems, David Muchlinski, Vaish-navi Anupindi, Jordyn Seybolt, Munmun De Choud-hury, and Diyi Yang. 2021. Latent hatred: A bench-mark for understanding implicit hate speech. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 345-363.",
+    "Elisabetta Fersini, Francesca Gasparini, Giulia Rizzi, Aurora Saibene, Berta Chulvi, Paolo Rosso, Alyssa Lees, and Jeffrey Sorensen. 2022. Semeval-2022 task 5: Multimedia automatic misogyny identification. In Proceedings of the 16th International Workshop on Semantic Evaluation (SemEval-2022), pages 533-549.",
+    "Ming Shan Hee, Wen-Haw Chong, and Roy Ka-Wei Lee. 2023. Decoding the underlying meaning of mul-timodal hateful memes. In Proceedings of the Thirty-Second International Joint Conference on Artificial Intelligence, pages 5995-6003.",
+    "Ming Shan Hee, Roy Ka-Wei Lee, and Wen-Haw Chong. 2022. On explaining multimodal hateful meme detection models. In Proceedings of the ACM Web Conference 2022, pages 3651-3655.",
+    "Ming Shan Hee, Shivam Sharma, Rui Cao, Palash Nandi, Preslav Nakov, Tanmoy Chakraborty, and Roy Ka-Wei Lee. 2024. Recent advances in hate speech moderation: Multimodality and the role of large models. arXiv preprint arXiv:2401.16727.",
+    "Albert Q Jiang, Alexandre Sablayrolles, Arthur Mensch, Chris Bamford, Devendra Singh Chaplot, Diego de las Casas, Florian Bressand, Gianna Lengyel, Guil-laume Lample, Lucile Saulnier, et al. 2023. Mistral 7b. arXiv preprint arXiv:2310.06825.",
+    "Roy Ka-Wei Lee, Rui Cao, Ziqing Fan, Jing Jiang, and Wen-Haw Chong. 2021. Disentangling hate in online memes. In Proceedings of the 29th ACM international conference on multimedia, pages 5138-5147.",
+    "Hongzhan Lin, Ziyang Luo, Wei Gao, Jing Ma, Bo Wang, and Ruichao Yang. 2024. Towards explainable harmful meme detection through multimodal debate between large language models. In Proceedings of the ACM on Web Conference 2024, pages 2359-2370.",
+    "Tsung-Yi Lin, Michael Maire, Serge Belongie, James Hays, Pietro Perona, Deva Ramanan, Piotr Dollár, and C Lawrence Zitnick. 2014. Microsoft coco: Common objects in context. In Computer Vision-ECCV 2014: 13th European Conference, Zurich, Switzerland, September 6-12, 2014, Proceedings, Part V 13, pages 740-755. Springer.",
+    "Lambert Mathias, Shaoliang Nie, Aida Mostafazadeh Davani, Douwe Kiela, Vinodkumar Prabhakaran, Bertie Vidgen, and Zeerak Waseem. 2021. Findings of the woah 5 shared task on fine grained hateful memes detection. In Proceedings of the 5th Workshop on Online Abuse and Harms (WOAH 2021), pages 201-206.",
+    "Meta. 2021. Harmful content can evolve quickly. our new ai system adapts to tackle it. Accessed on Oct 2, 2024.",
+    "Giulia Rizzi, Francesca Gasparini, Aurora Saibene, Paolo Rosso, and Elisabetta Fersini. 2023. Recognizing misogynous memes: Biased models and tricky archetypes. Information Processing & Management, 60(5):103474.",
+    "Peng Wang, An Yang, Rui Men, Junyang Lin, Shuai Bai, Zhikang Li, Jianxin Ma, Chang Zhou, Jingren Zhou, and Hongxia Yang. 2022. Ofa: Unifying architectures, tasks, and modalities through a simple sequence-to-sequence learning framework. CoRR, abs/2202.03052."
+  ]
+}

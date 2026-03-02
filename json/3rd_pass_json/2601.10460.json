@@ -1,0 +1,75 @@
+{
+  "filename": "2601.10460.pdf",
+  "title": "Contextual StereoSet: Stress-Testing Bias Alignment Robustness in Large Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2601.10460",
+  "measurement_description": "The paper measured how contextual framing (location and year) affects a large language model's preference in a simulated loan application scenario. The applicants were associated with different religious groups (Hindu, Christian/Lutheran, Muslim) to evaluate if context-dependent preferences risk perpetuating credit discrimination against religious minorities.",
+  "religious_groups": [
+    "Hinduism",
+    "Christianity",
+    "Islam"
+  ],
+  "models_tested": [
+    "ERNIE 4.5",
+    "Claude Haiku 4.5",
+    "DeepSeek v3.2",
+    "Gemini Flash Lite",
+    "Grok 4.1 (NR)",
+    "Qwen3-235B",
+    "Gemini 2.5 Flash",
+    "Nemotron Ultra 253B",
+    "Llama 3.3 70B",
+    "MiMo V2 Flash",
+    "Llama 3.1 8B",
+    "Mistral 7B",
+    "GPT-3.5 Turbo",
+    "GPT-4o Mini",
+    "Claude",
+    "Gemini"
+  ],
+  "languages_evaluated": [
+    "English",
+    "Hindi",
+    "Chinese",
+    "Swahili",
+    "Hausa",
+    "Yoruba"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "StereoSet"
+  ],
+  "continuous_testing": false,
+  "findings": "In a simulated lending scenario, changing the spatiotemporal context caused significant shifts in model preference. Specifically, Claude Haiku completely flipped its choice from a Christian-coded applicant (in 'California 1970') to a Hindu-coded applicant (in 'Dearborn 2024'). This suggests that context-dependent preferences risk perpetuating credit discrimination against religious minorities. GPT models, in contrast, consistently did not select the Christian-coded applicant.",
+  "references": [
+    "Maryam Amer. Lending discrimination, the community reinvestment act, and the legacy of redlining. Stanford Social Innovation Review, 2020. See also: Baradaran, M. (2017). The Color of Money: Black Banks and the Racial Wealth Gap. Harvard University Press.",
+    "Emily M. Bender, Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. On the dangers of stochastic parrots: Can language models be too big? FAccT '21, page 610–623. Association for Computing Machinery, 2021. ISBN 9781450383097. doi: 10.1145/3442188.3445922.",
+    "Yoav Benjamini and Yosef Hochberg. Controlling the false discovery rate: A practical and powerful approach to multiple testing. Journal of the Royal Statistical Society: Series B (Methodological), 57(1):289–300, 1995. doi: 10.1111/j.2517-6161.1995.tb02031.x.",
+    "Su Lin Blodgett, Solon Barocas, Hal Daumé III, and Hanna Wallach. Language (technology) is power: A critical survey of “bias” in NLP. In Dan Jurafsky, Joyce Chai, Natalie Schluter, and Joel Tetreault, editors, Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5454–5476, Online, July 2020. Association for Computational Linguistics. doi: 10.18653/v1/2020.acl-main.485.",
+    "Joy Buolamwini and Timnit Gebru. Gender shades: Intersectional accuracy disparities in commercial gender classification. In Sorelle A. Friedler and Christo Wilson, editors, Proceedings of the 1st Conference on Fairness, Accountability and Transparency, volume 81 of Proceedings of Machine Learning Research, pages 77–91. PMLR, 23–24 Feb 2018.",
+    "Patricia G. Devine. Stereotypes and prejudice: Their automatic and controlled components. Journal of Personality and Social Psychology, 56(1):5–18, 1989. doi: 10.1037/0022-3514.56.1.5. URL https://doi.org/10.1037/0022-3514.56.1.5.",
+    "Bradley Efron and R. J. Tibshirani. An Introduction to the Bootstrap. Chapman and Hall/CRC, May 1994. ISBN 9780429246593.",
+    "European Parliament and Council of the European Union. Regulation (EU) 2024/1689 of the European Parliament and of the Council laying down harmonised rules on artificial intelligence (AI Act). https://eur-lex.europa.eu/eli/reg/2024/1689/oj, 2024. Accessed: 2026-01-08.",
+    "Caitlin M. Fausey and Lera Boroditsky. Subtle linguistic cues influence perceived blame and financial liability. Psychonomic Bulletin & Review, 17(5):644–650, 2010. doi: 10.3758/PBR.17.5.644.",
+    "Karan Goel, Nazneen Fatema Rajani, Jesse Vig, Zachary Taschdjian, Mohit Bansal, and Christopher Ré. Robustness gym: Unifying the NLP evaluation landscape. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies: Demonstrations, pages 42–55. Association for Computational Linguistics, 2021. doi: 10.18653/v1/2021.naacl-demos.6.",
+    "Phillip Atiba Goff, Tracey Lloyd, Amanda Geller, Steven Raphael, and Jack Glaser. The science of justice: Race, arrests, and police use of force. Center for Policing Equity, 2016. See also: Edwards, F., Lee, H., Esposito, M. (2019). Risk of being killed by police use of force in the United States by age, race-ethnicity, and sex. PNAS.",
+    "Phillip I. Good. Permutation, Parametric and Bootstrap Tests of Hypotheses. Springer Series in Statistics. Springer, 3 edition, 2005. doi: 10.1007/b138696.",
+    "Anna Lauren Hoffmann. Where fairness fails: data, algorithms, and the limits of antidiscrimination discourse. Information, Communication & Society, 22(7):900–915, 2019. doi: 10.1080/1369118X.2019.1573912.",
+    "Abigail Z. Jacobs and Hanna Wallach. Measurement and fairness. In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, FAccT '21, page 375–385. Association for Computing Machinery, 2021. doi: 10.1145/3442188.3445901.",
+    "Percy Liang, Rishi Bommasani, Tony Lee, Dimitris Tsipras, Dilara Soylu, Michihiro Yasunaga, Yian Zhang, Deepak Narayanan, Yuhuai Wu, Ananya Kumar, Benjamin Newman, Binhang Yuan, Bobby Yan, Ce Zhang, Christian Cosgrove, Christopher D. Manning, Christopher Ré, Diana Acosta-Navas, Drew A. Hudson, Eric Zelikman, Esin Durmus, Faisal Ladhak, Frieda Rong, Hongyu Ren, Huaxiu Yao, Jue Wang, Keshav Santhanam, Laurel Orr, Lucia Zheng, Mert Yuksekgonul, Mirac Suzgun, Nathan Kim, Neel Guha, Niladri Chatterji, Omar Khattab, Peter Henderson, Qian Huang, Ryan Chi, Sang Michael Xie, Shibani Santurkar, Surya Ganguli, Tatsunori Hashimoto, Thomas Icard, Tianyi Zhang, Vishrav Chaudhary, William Wang, Xuechen Li, Yifan Mai, Yuhui Zhang, and Yuta Koreeda. Holistic evaluation of language models. Transactions on Machine Learning Research, 2023. ISSN 2835-8856. URL https://openreview.net/forum?id=i04LZibEqW.",
+    "Pengfei Liu, Weizhe Yuan, Jinlan Fu, Zhengbao Jiang, Hiroaki Hayashi, and Graham Neubig. Pre-train, prompt, and predict: A systematic survey of prompting methods in natural language processing. ACM Computing Surveys, 55(9), 2023. doi: 10.1145/3560815.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. StereoSet: Measuring stereotypical bias in pretrained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 5356–5371. Association for Computational Linguistics, 2021. doi: 10.18653/v1/2021.acl-long.416.",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R. Bowman. CrowS-pairs: A challenge dataset for measuring social biases in masked language models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1953–1967. Association for Computational Linguistics, November 2020. doi: 10.18653/v1/2020.emnlp-main.154.",
+    "Ziad Obermeyer, Brian Powers, Christine Vogeli, and Sendhil Mullainathan. Dissecting racial bias in an algorithm used to manage the health of populations. Science, 366(6464):447–453, 2019. doi: 10.1126/science.aax2342.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel Bowman. BBQ: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2086–2105, Dublin, Ireland, 2022. Association for Computational Linguistics. doi: 10.18653/v1/2022.findings-acl.165.",
+    "Shrimai Prabhumoye, Rafal Kocielnik, Mohammad Shoeybi, Anima Anandkumar, and Bryan Catanzaro. Few-shot instruction prompts for pretrained language models to detect social biases, 2022.",
+    "Marco Tulio Ribeiro, Tongshuang Wu, Carlos Guestrin, and Sameer Singh. Beyond accuracy: Behavioral testing of NLP models with CheckList. In Dan Jurafsky, Joyce Chai, Natalie Schluter, and Joel Tetreault, editors, Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 4902–4912, Online, July 2020. Association for Computational Linguistics. doi: 10.18653/v1/2020.acl-main.442.",
+    "Leonard Salewski, Stephan Alaniz, Isabel Rio-Torto, Eric Schulz, and Zeynep Akata. In-context impersonation reveals large language models' strengths and biases. In Proceedings of the 37th International Conference on Neural Information Processing Systems, NIPS '23, 2023. doi: 10.5555/3666122.3669274.",
+    "Andrew D. Selbst, danah boyd, Sorelle A. Friedler, Suresh Venkatasubramanian, and Janet Vertesi. Fairness and abstraction in sociotechnical systems. In Proceedings of the Conference on Fairness, Accountability, and Transparency, FAT* '19, pages 59–68. Association for Computing Machinery, 2019. doi: 10.1145/3287560.3287598.",
+    "Claude M. Steele and Joshua Aronson. Stereotype threat and the intellectual test performance of african americans. Journal of Personality and Social Psychology, 69(5):797–811, 1995. doi: 10.1037/0022-3514.69.5.797.",
+    "Henri Tajfel and John C. Turner. An integrative theory of intergroup conflict. In William G. Austin and Stephen Worchel, editors, The Social Psychology of Intergroup Relations. Brooks/Cole, Monterey, CA, 1979.",
+    "Amos Tversky and Daniel Kahneman. The framing of decisions and the psychology of choice. Science, 211(4481):453–458, 1981. doi: 10.1126/science.7455683. URL https://doi.org/10.1126/science.7455683."
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "filename": "2502.13548.pdf",
+  "title": "Detecting Linguistic Bias in Government Documents Using Large language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2502.13548",
+  "measurement_description": "Detection of linguistic bias in Dutch government documents. Religion was one of nine categories of bias analyzed, specifically measuring the model's ability to classify sentences containing religious terms (e.g., 'Islam', 'Christian', 'hoofddoek' [headscarf]) as biased or not.",
+  "religious_groups": [
+    "Islam",
+    "Christianity",
+    "Judaism"
+  ],
+  "models_tested": [
+    "BERTje",
+    "RobBERT",
+    "SentenceBERT",
+    "DALC-BERT",
+    "GPT-3.5",
+    "GPT-4o mini"
+  ],
+  "languages_evaluated": [
+    "Dutch"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "NPOV",
+    "DBWS",
+    "AIBINA",
+    "DiFair",
+    "GAP",
+    "DALC",
+    "LiLaH",
+    "CrowS-pairs",
+    "CrowS-pairs-F",
+    "StereoSet",
+    "HolisticBias"
+  ],
+  "continuous_testing": false,
+  "findings": "The study found that the models' performance in detecting bias varied significantly across different religious terms. For instance, in the in-domain setting, the BERTje model achieved high accuracy (approx. 0.89) for the term 'Christian' but performed poorly (approx. 0.5 accuracy) for the term 'Islam'. This highlights that model generalization for bias detection is a challenge and performance is inconsistent across different religious concepts.",
+  "references": [
+    "Anastasios Nikolas Angelopoulos, Stephen Bates, Alan F. L. Rosh, Lihua Lei, and Tal Linzen. 2023. What’s in a name? A survey of metrics for measuring gender bias in machine learning representations. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 2085–2101.",
+    "Marten van der Meulen and Albert Gatt. 2020. Unmaking Contextual Word Embeddings: A Case for Gender Bias in Neural Language Models. In Proceedings of the Second Workshop on Gender Bias in Natural Language Processing (EMNLP). Association for Computational Linguistics, Barcelona, Spain (Online), 47–53.",
+    "Camiel J. Beukeboom and C F Burgers. 2017. Linguistic bias. In Oxford encyclopedia of communication. Oxford University Press, Oxford.",
+    "Su Lin Blodgett, Solon Barocas, Hal Daumé III, and Hanna Wallach. 2020. Language and fairness. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics. 3454–3464.",
+    "Tommaso Caselli, Arjan Schripsema, Marieke Walty, Folkert de Vrij, Hylke van der Veen, and Tom van der Goot. 2020. DALC: a dataset for dutch abusive language corpus. In Proceedings of the 5th Workshop on Online Abuse and Harms. Association for Computational Linguistics, Online, 83–92.",
+    "Wietse de Vries, Andreas van Cranenburgh, Arianna Bisazza, Tommaso Caselli, Gertjan van Noord, and Malvina Nissim. 2019. BERTje: a Dutch BERT model. arXiv:1912.09582. http://arxiv.org/abs/1912.09582",
+    "Pieter Delobelle, Thomas Winters, and Bettina Berendt. 2020. RobBERT: a Dutch RoBERTa-based language model. In Findings of the Association for Computational Linguistics: EMNLP 2020. Association for Computational Linguistics, Online, 3255–3265. https://doi.org/10.18653/v1/2020.findings-emnlp.292",
+    "Floris den Hengst, Ralf Wolter, Patrick Altmeyer, and Aida Ravan. 2024. Contextual bandits with budgeted expertise for interactive bias identification. In Findings of the Association for Computational Linguistics: NAACL 2024. In Press.",
+    "European Commission. 2019. Ethics Guidelines for Trustworthy AI. https://ec.europa.eu/digital-single-market/en/news/ethics-guidelines-trustworthy-ai",
+    "Joseph L Fleiss and Jacob Cohen. 1973. The equivalence of weighted kappa and the intraclass correlation coefficient as measures of reliability. Educational and psychological measurement 33, 3 (1973), 613–619.",
+    "Umme Hafsa, Md Rafiqul Islam, and NS Nafi. 2022. A survey on detection of hate speech in text. ACM Computing Surveys (CSUR) 55, 4 (2018), 1–30.",
+    "Timnit Gebru, Jamie Morgenstern, Briana Vecchione, Jennifer Wortman Vaughan, Hanna Wallach, Hal Daumé III, and Kate Crawford. 2021. Datasheets for datasets. Communications of the ACM 64, 12 (2021), 86–92.",
+    "Laura Garcia, Antonio Arteaga-Montoya, Ricardo Pineda-Moreno, Antonio Montesinos, and Álvaro L. López-Verdecia. 2021. A survey on bias in deep NLP. Applied Sciences 11, 21 (2021), 1–29.",
+    "Lisa Hilte, Pía M. Loaiza, Nikola Ljubešić, Darja Fišer, and Walter Daelemans. 2023. To swear or not to swear: a cross-lingual study of context in abusive speech. Frontiers in Artificial Intelligence 6 (2023), 984898.",
+    "Carsten Hube and Besnik Fetahu. 2019. Understanding and mitigating biased language in wikipedia. In Companion proceedings of the the web conference 2019. 1779–1786.",
+    "Zeerak Waseem, Thomas Davidson, James Thorne, and Debora Weber-Wulff. 2021. A pragmatic evaluation of a stylistic bias model for hate speech detection. In Proc. of the Natural Language Processing meets Journalism Workshop. 81–90.",
+    "Anne Maass. 1999. Linguistic intergroup bias: Stereotype perpetuation through language. Advances in experimental social psychology 31, 1 (1999), 79–121.",
+    "Wayne Modest and Stijn Schoonderwoerd. 2018. Woorden Doen Ertœ: een eerste verkenning. Nationaal museum van wereldculturen. Museum Volkenkunde.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2021. StereoSet: Measuring stereotypical bias in pretrained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers). 5356–5371.",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R Bowman. 2020. CrowS-Pairs: A Challenge Dataset for Measuring Social Biases in Masked Language Models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP). 1953–1961.",
+    "Aurélie Névéol, Elodie Gredzinski, Éva Lardanchet, and Karën Fort. 2022. French CrowS-pairs: Extending a challenge dataset for measuring social bias in masked language models to a new language. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 202–213.",
+    "Brian A Nosek, Mahzarin R Banaji, and Anthony G Greenwald. 2002. Math= male, me= female, therefore math≠ me. Journal of personality and social psychology 83, 1 (2002), 44.",
+    "Luiza T. de Rezende, Cristian Danescu-Niculescu-Mizil, and Dan Jurafsky. 2013. Linguistic Models for Analyzing and Detecting Biased Language. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 6103–6114.",
+    "Nils Reimers and Iryna Gurevych. 2019. Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing.",
+    "Marco Tulio Ribeiro, Sameer Singh, and Carlos Guestrin. 2016. “why should i trust you?”: Explaining the predictions of any classifier. In Proceedings of the 22nd ACM SIGKDD international conference on knowledge discovery and data mining. 1135–1144.",
+    "Stichting Code Diversiteit en Inclusie. 2021. Woorden-weg-wijzer. Code Diversiteit & Inclusie. Available at https://codedi.nl/wp-content/uploads/2021/03/WAARDEN_VOOR_EEN_NIEUWE_TAAL.pdf",
+    "Eric Michael Smith, Melissa Hall, Melanie Kambadur, Eleonora Presani, and Adina Williams. 2022. “i’m sorry, but i’m not sure i can help you with that”: A Study of the Behavior of Large Language Models with a Holistic Descriptor Dataset. In Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies. 614–625.",
+    "Tim Spinde, Manuel Plank, Maria Heitmeier, and Felix Hamborg. 2021. Automated identification of bias against people with disabilities in the news. Information Processing & Management 58, 3 (2021), 102505.",
+    "Chi Sun, Xipeng Qiu, Yige Xu, and Xuanjing Huang. 2019. How to fine-tune bert for text classification? In Chinese computational linguistics: 18th China national conference on computational linguistics, ccl 2019, kunming, china, october 18-20, 2019, proceedings 18. Springer, 194–206.",
+    "Kellie Webster, Marta Recasens, Vera Axelrod, and Jason Baldridge. 2018. Mind the GAP: A Balanced Corpus of Gendered Ambiguous Pronouns. Transactions of the Association for Computational Linguistics 6 (2018), 605–617.",
+    "Fatemeh Zakizadeh, Kavveh Miandabi, and Mohammad Pilehvar. 2023. DiFair: A benchmark for disentangled fairness evaluation in text classification. In Findings of the Association for Computational Linguistics: EMNLP 2023. Honda Bakhtiyor, Tim Baldwin, and Jey Han Lau (Eds.). Singapore, Singapore, 1897–1914. https://doi.org/10.18653/v1/2023.findings-emnlp.126",
+    "Guanhua Zhang, Bing Bai, Junqi Zhang, Kun Bai, Conghui Zhu, and Tiejun Zhao. 2020. Mitigating Gender Bias for Neural Machine Translation with Counterfactual Data Augmentation. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics. 7093-7103."
+  ]
+}

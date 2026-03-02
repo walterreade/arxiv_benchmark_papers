@@ -1,0 +1,66 @@
+{
+  "filename": "2310.18590.pdf",
+  "title": "Using Early Readouts to Mediate Featural Bias in Distillation",
+  "arxiv_url": "https://arxiv.org/pdf/2310.18590",
+  "measurement_description": "The paper evaluates its debiasing method, DEDIER, on the CivilComments-WILDS dataset. This dataset contains online comments labeled for toxicity, where toxicity is spuriously correlated with mentions of demographic identities, including religious affiliations (Muslim, Christian). The measurement is the method's ability to improve Worst Group Accuracy (WGA), thereby mitigating unintended bias against these religious groups in a classification task.",
+  "religious_groups": [
+    "Islam",
+    "Christianity"
+  ],
+  "models_tested": [
+    "ResNet-18",
+    "ResNet-50",
+    "DistilBERT",
+    "BERT"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Waterbirds",
+    "CelebA",
+    "MultiNLI",
+    "CivilComments-WILDS"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper's proposed method, DEDIER, significantly improves the Worst Group Accuracy (WGA) on the CivilComments-WILDS dataset compared to baseline methods. Since the 'worst groups' in this dataset are defined by spurious correlations involving identity terms, including religious affiliations like 'Muslim' and 'Christian', the findings indicate that the method successfully mitigates bias related to these identities in the context of toxicity classification.",
+  "references": [
+    "Jaimeen Ahn, Hwaran Lee, Jinhwa Kim, and Alice Oh. Why knowledge distillation amplifies gender bias and how to mitigate from the perspective of distilbert. In Proceedings of the 4th Workshop on Gender Bias in Natural Language Processing (GeBNLP), pages 266–272, 2022. 1, 3",
+    "Daniel Borkan, Lucas Dixon, Jeffrey Sorensen, Nithum Thain, and Lucy Vasserman. Nuanced metrics for measuring unintended bias with real data for text classification. In World Wide Web (WWW), pages 491–500, 2019. 6",
+    "Joy Buolamwini and Timnit Gebru. Gender shades: Intersectional accuracy disparities in commercial gender classification. In FAT, 2018. 2",
+    "Defang Chen, Jian-Ping Mei, Hailin Zhang, Can Wang, Yan Feng, and Chun Chen. Knowledge distillation with the reused teacher classifier. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, pages 11933–11942, 2022. 2, 6",
+    "Mengnan Du, Subhabrata Mukherjee, Yu Cheng, Milad Shokouhi, Xia Hu, and Ahmed Hassan Awadallah. Robustness challenges in model distillation and pruning for natural language understanding. arXiv preprint arXiv:2110.08419, 2021. 1, 3",
+    "John Duchi and Hongseok Namkoong. Learning models with uniform performance via distributionally robust optimization. arXiv preprint arXiv:1810.08750, 2018. 2",
+    "Robert Geirhos, Jörn-Henrik Jacobsen, Claudio Michaelis, Richard Zemel, Wieland Brendel, Matthias Bethge, and Felix A Wichmann. Shortcut learning in deep neural networks. Nature Machine Intelligence, 2(11):665–673, 2020. 1, 2",
+    "Tatsunori Hashimoto, Megha Srivastava, Hongseok Namkoong, and Percy Liang. Fairness without demographics in repeated loss minimization. In International Conference on Machine Learning, pages 1929–1938. PMLR, 2018. 2",
+    "Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. Deep residual learning for image recognition. In Proceedings of the IEEE conference on computer vision and pattern recognition, pages 770–778, 2016. 4, 7",
+    "Byeongho Heo, Jeesoo Kim, Sangdoo Yun, Hyojin Park, Nojun Kwak, and Jin Young Choi. A comprehensive overhaul of feature distillation. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 1921–1930, 2019. 2",
+    "Katherine Hermann and Andrew Lampinen. What shapes feature representations? exploring datasets, architectures, and training. Advances in Neural Information Processing Systems, 33:9995–10006, 2020. 1, 4",
+    "Geoffrey Hinton, Oriol Vinyals, and Jeff Dean. Distilling the knowledge in a neural network, 2015. 2, 3",
+    "Sara Hooker, Nyalleng Moorosi, Gregory Clark, Samy Bengio, and Emily Denton. Characterising bias in compressed models. arXiv preprint arXiv:2010.03058, 2020. 3",
+    "Dirk Hovy and Anders Søgaard. Tagging performance correlates with author age. In Annual Meeting of the Association for Computational Linguistics, 2015. 2",
+    "Jie Hu, Li Shen, Samuel Albanie, Gang Sun, and Andrea Vedaldi. Gather-excite: Exploiting feature context in convolutional neural networks. Advances in neural information processing systems, 31, 2018. 1",
+    "David Jurgens, Yulia Tsvetkov, and Dan Jurafsky. Incorporating dialectal variability for socially equitable language identification. In Annual Meeting of the Association for Computational Linguistics, 2017. 2",
+    "Jacob Devlin Ming-Wei Chang Kenton and Lee Kristina Toutanova. Bert: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of naacL-HLT, volume 1, page 2, 2019. 7",
+    "Pang Wei Koh, Shiori Sagawa, Henrik Marklund, Sang Michael Xie, Marvin Zhang, Akshay Balsubramani, Weihua Hu, Michihiro Yasunaga, Richard Lanas Phillips, Irena Gao, Tony Lee, Etienne David, Ian Stavness, Wei Guo, Berton A. Earnshaw, Imran S. Haque, Sara Beery, Jure Leskovec, Anshul Kundaje, Emma Pierson, Sergey Levine, Chelsea Finn, and Percy Liang. WILDS: A benchmark of in-the-wild distribution shifts. In International Conference on Machine Learning (ICML), 2021. 6",
+    "Jiwoon Lee and Jaeho Lee. Debiased distillation by transplanting the last layer. arXiv preprint arXiv:2302.11187, 2023. 1, 3, 4, 5, 7",
+    "Evan Z Liu, Behzad Haghgoo, Annie S Chen, Aditi Raghunathan, Pang Wei Koh, Shiori Sagawa, Percy Liang, and Chelsea Finn. Just train twice: Improving group robustness without training group information. In International Conference on Machine Learning, pages 6781–6792. PMLR, 2021. 1, 2, 4, 5, 6",
+    "Ziwei Liu, Ping Luo, Xiaogang Wang, and Xiaoou Tang. Deep learning face attributes in the wild. In Proceedings of the IEEE International Conference on Computer Vision, pages 3730–3738, 2015. 4, 6",
+    "Ilya Loshchilov and Frank Hutter. Decoupled weight decay regularization. In International Conference on Learning Representations, 2019. 7",
+    "Michal Lukasik, Srinadh Bhojanapalli, Aditya Krishna Menon, and Sanjiv Kumar. Teacher's pet: understanding and mitigating biases in distillation. arXiv preprint arXiv:2106.10494, 2021. 1",
+    "Junhyun Nam, Hyuntak Cha, Sungsoo Ahn, Jaeho Lee, and Jinwoo Shin. Learning from failure: De-biasing classifier from biased classifier. Advances in Neural Information Processing Systems, 33:20673–20684, 2020. 2",
+    "Shiori Sagawa, Pang Wei Koh, Tatsunori B. Hashimoto, and Percy Liang. Distributionally robust neural networks for group shifts: On the importance of regularization for worst-case generalization. In International Conference on Learning Representations (ICLR), 2020. 1, 2, 4, 6, 8",
+    "Victor Sanh, Lysandre Debut, Julien Chaumond, and Thomas Wolf. Distilbert, a distilled version of bert: smaller, faster, cheaper and lighter. arXiv preprint arXiv:1910.01108, 2019. 7",
+    "Amrith Setlur, Don Dennis, Benjamin Eysenbach, Aditi Raghunathan, Chelsea Finn, Virginia Smith, and Sergey Levine. Bitrate-constrained DRO: Beyond worst case robustness to unknown group shifts. In NeurIPS 2022 Workshop on Distribution Shifts: Connecting Methods and Applications, 2022. 2",
+    "Harshay Shah, Kaustav Tamuly, Aditi Raghunathan, Prateek Jain, and Praneeth Netrapalli. The pitfalls of simplicity bias in neural networks. Advances in Neural Information Processing Systems, 33:9573–9585, 2020. 1, 4",
+    "Tasuku Soma, Khashayar Gatmiry, and Stefanie Jegelka. Optimal algorithms for group distributionally robust optimization and beyond. arXiv preprint arXiv:2212.13669, 2022. 2",
+    "Damien Teney, Ehsan Abbasnejad, Simon Lucey, and Anton Van den Hengel. Evading the simplicity bias: Training a diverse set of models discovers solutions with superior ood generalization. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, pages 16761–16772, 2022. 2",
+    "Rishabh Tiwari and Pradeep Shenoy. Overcoming simplicity bias in deep networks using a feature sieve. In Andreas Krause, Emma Brunskill, Kyunghyun Cho, Barbara Engelhardt, Sivan Sabato, and Jonathan Scarlett, editors, Proceedings of the 40th International Conference on Machine Learning, volume 202 of Proceedings of Machine Learning Research, pages 34330–34343. PMLR, 23–29 Jul 2023. 1",
+    "C Wah, S Branson, P Welinder, P Perona, and S Belongie. The Caltech-UCSD Birds-200-2011 dataset. Technical report, California Institute of Technology, 2011. 4, 6",
+    "Adina Williams, Nikita Nangia, and Samuel Bowman. A broad-coverage challenge corpus for sentence understanding through inference. In Association for Computational Linguistics (ACL), pages 1112–1122, 2018. 6"
+  ]
+}

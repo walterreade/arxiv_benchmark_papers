@@ -1,0 +1,47 @@
+{
+  "filename": "2010.11666.pdf",
+  "title": "Reducing Unintended Identity Bias in Russian Hate Speech Detection",
+  "arxiv_url": "https://arxiv.org/pdf/2010.11666",
+  "measurement_description": "The paper measures unintended bias in hate speech detection models against a list of protected identity terms, which includes the religious identity term 'Jew'.",
+  "religious_groups": [
+    "Judaism"
+  ],
+  "models_tested": [
+    "Custom Self-Attention Encoder",
+    "Custom CNN-based classifier",
+    "ruGPT2 (for data generation)"
+  ],
+  "languages_evaluated": [
+    "Russian",
+    "Ukrainian"
+  ],
+  "response_type": [
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Andrusyak et al., 2018 dataset",
+    "Smetanin, 2020 dataset"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper found that hate speech detection models exhibit unintended bias, incorrectly flagging non-toxic comments containing identity terms like 'Jew' ('еврей') as toxic. The proposed techniques, including data generation with language models, identity dropout, and multi-task learning, were effective in reducing this bias for the tested datasets.",
+  "references": [
+    "Bohdan Andrusyak, Mykhailo Rimel, and Roman Kern. 2018. Detection of abusive speech for mixed sociolects of russian and ukrainian languages. In Proceedings of Recent Advances in Slavonic Natural Language Processing, page 77–84.",
+    "Daniel Borkan, Lucas Dixon, John Li, Jeffrey Sorensen, Nithum Thain, and Lucy Vasserman. 2019a. Limitations of pinned auc for measuring unintended bias. In arXiv preprint arXiv:1903.02088.",
+    "Daniel Borkan, Lucas Dixon, Jeffrey Sorensen, Nithum Thain, and Lucy Vasserman. 2019b. Nuanced metrics for measuring unintended bias with real data for text classification. In Companion Proceedings of The 2019 World Wide Web Conference, pages 491-500.",
+    "Andrew M. Dai and Quoc V. Le. 2015. Semi-supervised sequence learning. In Advances in neural information processing systems, page 3079-3087.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. Bert: Pre-training of deep bidirectional transformers for language understanding. In NAACL-HLT.",
+    "Lucas Dixon, John Li, Jeffrey Sorensen, Nithum Thain, and Lucy Vasserman. 2018. Measuring and mitigating unintended bias in text classification. In Proceedings of AAAI/ACM Conference on Artificial Intelligence, Ethics, and Society.",
+    "Diederik P. Kingma and Jimmy Ba. 2014. Adam: A method for stochastic optimization.",
+    "Zhouhan Lin, Minwei Feng, Cicero Nogueira dos Santos, Mo Yu, Bing Xiang, Bowen Zhou, and Yoshua Bengio. 2017. A structured self-attentive sentence embedding. In arXiv preprint arXiv:1703.03130, page 3079-3087.",
+    "Tanya Lokshina. 2003. Hate speech in russia: Overview of the problem and means for counteraction. In Bulletin: Anthropology, Minorities, Multiculturalism, volume 4.",
+    "Debora Nozza, Claudia Volpetti, and Elisabetta Fersini. 2019. Unintended bias in misogyny detection. In IEEE/WIC/ACM International Conference on Web Intelligence.",
+    "Rodmonga Potapova and Denis Gordeev. 2016. Detecting state of aggression in sentences using cnn. In International Conference on Speech and Computer.",
+    "Rico Sennrich, Barry Haddow, and Alexandra Birch. 2015. Neural machine translation of rare words with subword units. In arXiv preprint arXiv:1508.07909.",
+    "Tatiana Shavrina and Olga Shapovalova. 2017. To the methodology of corpus construction for machine learning: “taiga” syntax tree corpus”. In Corpora-2017, pages 78–84.",
+    "Sergey Smetanin. 2020. Toxic comments detection in russian. In Computational Linguistics and Intellectual Technologies: Proceedings of the International Conference “Dialogue 2020”.",
+    "Ameya Vaidya, Feng Mai, and Yue Ning. 2020. Empirical analysis of multi-task learning for reducing identity bias in toxic comment detection. In Proceedings of the Fourteenth International AAAI Conference on Web and Social Media (ICWSM 2020).",
+    "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Łukasz Kaiser, and Illia Polosukhin. 2017. Attention is all you need. In Advances in neural information processing systems, pages 5998–6008.",
+    "Yinfei Yang, Daniel Cer, Amin Ahmad, Mandy Guo, Jax Law, Noah Constant, Gustavo Hernandez Abrego, Steve Yuan, Chris Tar, Yun-Hsuan Sung, Brian Strope, and Ray Kurzweil. 2019. Multilingual universal sentence encoder for semantic retrieval. In arXiv preprint arXiv:1907.04307."
+  ]
+}

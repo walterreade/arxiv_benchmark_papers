@@ -1,0 +1,73 @@
+{
+  "filename": "2407.21772.pdf",
+  "title": "ShieldGemma: Generative AI Content Moderation Based on Gemma",
+  "arxiv_url": "https://arxiv.org/pdf/2407.21772",
+  "measurement_description": "The paper measures the model's ability to detect hate speech, which is defined as content targeting protected attributes including religion. It also evaluates fairness by using 'counterfactual fairness expansion' to expand training data across identity categories, one of which is Religion.",
+  "religious_groups": [
+    "Religion"
+  ],
+  "models_tested": [
+    "ShieldGemma (2B)",
+    "ShieldGemma (9B)",
+    "ShieldGemma (27B)",
+    "OpenAI Mod API",
+    "LlamaGuard1 (7B)",
+    "LlamaGuard2 (8B)",
+    "WildGuard (7B)",
+    "GPT-4",
+    "Gemma",
+    "Gemini",
+    "BERT"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "OpenAI Moderation",
+    "ToxicChat"
+  ],
+  "continuous_testing": true,
+  "findings": "The paper does not provide specific quantitative findings for religion alone. The overall findings indicate that the ShieldGemma models outperform baselines like LlamaGuard and GPT-4 in classifying harmful content, including hate speech, which covers religion as a protected attribute. The study also implemented a 'fairness expansion' technique to mitigate bias across identity categories, including religion, by generating counterfactual data.",
+  "references": [
+    "J. Achiam, S. Adler, S. Agarwal, L. Ahmad, I. Akkaya, F. L. Aleman, D. Almeida, J. Altenschmidt, S. Altman, S. Anadkat, et al. Gpt-4 technical report. arXiv preprint arXiv:2303.08774, 2023.",
+    "A. Anthropic. The claude 3 model family: Opus, sonnet, haiku. Claude-3 Model Card, 1, 2024.",
+    "J. T. Ash, C. Zhang, A. Krishnamurthy, J. Langford, and A. Agarwal. Deep batch active learning by diverse, uncertain gradient lower bounds. arXiv preprint arXiv:1906.03671, 2019.",
+    "Y. Bai, A. Jones, K. Ndousse, A. Askell, A. Chen, N. DasSarma, D. Drain, S. Fort, D. Ganguli, T. Henighan, et al. Training a helpful and harmless assistant with reinforcement learning from human feedback. arXiv preprint arXiv:2204.05862, 2022.",
+    "G. H. Chen, S. Chen, Z. Liu, F. Jiang, and B. Wang. Humans or llms as the judge? a study on judgement biases. arXiv preprint arXiv:2402.10669, 2024.",
+    "G. Citovsky, G. DeSalvo, C. Gentile, L. Karydas, A. Rajagopalan, A. Rostamizadeh, and S. Kumar. Batch active learning at scale. Advances in Neural Information Processing Systems, 34: 11933–11944, 2021.",
+    "Y. Deng, W. Lei, M. Huang, and T.-S. Chua. Rethinking conversational agents in the era of llms: Proactivity, non-collaborativity, and beyond. In Proceedings of the Annual International ACM SIGIR Conference on Research and Development in Information Retrieval in the Asia Pacific Region, pages 298–301, 2023.",
+    "J. Devlin, M.-W. Chang, K. Lee, and K. Toutanova. Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805, 2018.",
+    "J. Gao, R. Pi, Y. Lin, H. Xu, J. Ye, Z. Wu, W. Zhang, X. Liang, Z. Li, and L. Kong. Self-guided noise-free data generation for efficient zero-shot learning. arXiv preprint arXiv:2205.12679, 2022.",
+    "S. Ghosh, P. Varshney, E. Galinkin, and C. Parisien. Aegis: Online adaptive ai content safety moderation with ensemble of llm experts. arXiv preprint arXiv:2404.05993, 2024.",
+    "Google. Perspective api. https://www.perspectiveapi.com/, 2017.",
+    "Google. Responsible generative ai toolkit: https://ai.google.dev/responsible/principles, 2024.",
+    "S. Han, K. Rao, A. Ettinger, L. Jiang, B. Y. Lin, N. Lambert, Y. Choi, and N. Dziri. Wildguard: Open one-stop moderation tools for safety risks, jailbreaks, and refusals of llms. arXiv preprint arXiv:2406.18495, 2024.",
+    "H. Huang, Y. Qu, J. Liu, M. Yang, and T. Zhao. An empirical study of llm-as-a-judge for llm evaluation: Fine-tuned judge models are task-specific classifiers. arXiv preprint arXiv:2403.02839, 2024.",
+    "H. Inan, K. Upasani, J. Chi, R. Rungta, K. Iyer, Y. Mao, M. Tontchev, Q. Hu, B. Fuller, D. Testuggine, et al. Llama guard: Llm-based input-output safeguard for human-ai conversations. arXiv preprint arXiv:2312.06674, 2023.",
+    "J. Ji, M. Liu, J. Dai, X. Pan, C. Zhang, C. Bian, C. Zhang, R. Sun, Y. Wang, and Y. Yang. Beavertails: Towards improved safety alignment of llm via a human-preference dataset, 2023. URL https://arxiv.org/abs/2307.04657.",
+    "S. Y. Kim, H. Park, K. Shin, and K.-M. Kim. Ask me what you need: Product retrieval using knowledge from gpt-3. arXiv preprint arXiv:2207.02516, 2022.",
+    "A. Kurakin, N. Ponomareva, U. Syed, L. MacDermed, and A. Terzis. Harnessing large-language models to generate private synthetic text. arXiv preprint arXiv:2306.01684, 2023.",
+    "M. J. Kusner, J. Loftus, C. Russell, and R. Silva. Counterfactual fairness. Advances in neural information processing systems, 30, 2017.",
+    "L. Li, B. Dong, R. Wang, X. Hu, W. Zuo, D. Lin, Y. Qiao, and J. Shao. Salad-bench: A hierarchical and comprehensive safety benchmark for large language models. arXiv preprint arXiv:2402.05044, 2024.",
+    "Z. Lin, Z. Wang, Y. Tong, Y. Wang, Y. Guo, Y. Wang, and J. Shang. Toxicchat: Unveiling hidden challenges of toxicity detection in real-world user-ai conversation, 2023. URL https://arxiv.org/abs/2310.17389.",
+    "N. Liu, L. Chen, X. Tian, W. Zou, K. Chen, and M. Cui. From llm to conversational agent: A memory enhanced architecture with fine-tuning of large language models. arXiv preprint arXiv:2401.02777, 2024.",
+    "L. Long, R. Wang, R. Xiao, J. Zhao, X. Ding, G. Chen, and H. Wang. On llms-driven synthetic data generation, curation, and evaluation: A survey. arXiv preprint arXiv:2406.15126, 2024.",
+    "T. Markov, C. Zhang, S. Agarwal, F. E. Nekoul, T. Lee, S. Adler, A. Jiang, and L. Weng. A holistic approach to undesired content detection in the real world. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 37, pages 15009–15018, 2023.",
+    "M. Mazeika, L. Phan, X. Yin, A. Zou, Z. Wang, N. Mu, E. Sakhaee, N. Li, S. Basart, B. Li, D. Forsyth, and D. Hendrycks. Harmbench: A standardized evaluation framework for automated red teaming and robust refusal, 2024. URL https://arxiv.org/abs/2402.04249.",
+    "M. Nasr, N. Carlini, J. Hayase, M. Jagielski, A. F. Cooper, D. Ippolito, C. A. Choquette-Choo, E. Wallace, F. Tramèr, and K. Lee. Scalable extraction of training data from (production) language models. arXiv preprint arXiv:2311.17035, 2023.",
+    "B. Radharapu, K. Robinson, L. Aroyo, and P. Lahoti. Aart: Ai-assisted red-teaming with diverse data generation for new llm-powered applications. arXiv preprint arXiv:2311.08592, 2023.",
+    "G. Sahu, P. Rodriguez, I. H. Laradji, P. Atighehchian, D. Vazquez, and D. Bahdanau. Data augmentation for intent classification with off-the-shelf large language models. arXiv preprint arXiv:2204.01959, 2022.",
+    "O. Sener and S. Savarese. Active learning for convolutional neural networks: A core-set approach. arXiv preprint arXiv:1708.00489, 2017.",
+    "E. M. Smith, M. Hall, M. Kambadur, E. Presani, and A. Williams. \"i’m sorry to hear that\": Finding new biases in language models with a holistic descriptor dataset. arXiv preprint arXiv:2205.09209, 2022.",
+    "G. Team. Gemma. 2024a. doi: 10.34740/KAGGLE/M/3301. URL https://www.kaggle.com/m/3301.",
+    "G. Team, R. Anil, S. Borgeaud, Y. Wu, J.-B. Alayrac, J. Yu, R. Soricut, J. Schalkwyk, A. M. Dai, A. Hauth, et al. Gemini: a family of highly capable multimodal models. arXiv preprint arXiv:2312.11805, 2023.",
+    "G. Team, T. Mesnard, C. Hardin, R. Dadashi, S. Bhupatiraju, S. Pathak, L. Sifre, M. Rivière, M. S. Kale, J. Love, et al. Gemma: Open models based on gemini research and technology. arXiv preprint arXiv:2403.08295, 2024.",
+    "L. Team. Meta llama guard 2. https://github.com/meta-llama/PurpleLlama/blob/main/Llama-Guard2/MODEL_CARD.md, 2024b.",
+    "X. Zhan, Z. Liu, P. Luo, X. Tang, and C. Loy. Mix-and-match tuning for self-supervised semantic segmentation. In Proceedings of the AAAI conference on artificial intelligence, volume 32, 2018.",
+    "L. Zheng, W.-L. Chiang, Y. Sheng, S. Zhuang, Z. Wu, Y. Zhuang, Z. Lin, Z. Li, D. Li, E. Xing, et al. Judging llm-as-a-judge with mt-bench and chatbot arena. Advances in Neural Information Processing Systems, 36, 2024."
+  ]
+}
