@@ -136,6 +136,7 @@ def main():
         "# Full Pipeline Analysis",
         "",
         f"**Count of LLM-Bias papers:** {len(restricted_paper_ids)}",
+        "",
         "<!-- SUMMARY_COUNTS -->",
         ""
     ]
@@ -241,7 +242,7 @@ def main():
     # Insert counts at the top of the report
     try:
         summary_idx = out_lines.index("<!-- SUMMARY_COUNTS -->")
-        out_lines[summary_idx] = f"**Count of papers measuring religious bias:** {len(papers_3rd_data)}\n**Count of papers where religious bias is the primary focus:** {len(papers_with_religious_primary)}"
+        out_lines[summary_idx] = f"**Count of papers measuring religious bias:** {len(papers_3rd_data)}\n\n**Count of papers where religious bias is the primary focus:** {len(papers_with_religious_primary)}"
     except ValueError:
         pass
 
@@ -274,7 +275,7 @@ def main():
     
     for pid, title, url in religious_primary_info:
         cites = primary_citations.get(pid, 0)
-        out_lines.append(f"- {pid} (citations: {cites}): [{title}]({url})")
+        out_lines.append(f"- [{title}]({url}) (citations: {cites})")
         
     out_lines.append("")
     out_lines.append("## All Papers Measuring Religious Bias")
@@ -306,7 +307,7 @@ def main():
         
     for pid, title, url in religious_bias_papers_info:
         cites = bias_citations.get(pid, 0)
-        out_lines.append(f"- {pid} (citations: {cites}): [{title}]({url})")
+        out_lines.append(f"- [{title}]({url}) (citations: {cites})")
         
     out_md_path = script_dir / 'full_pipeline_analysis.md'
     with open(out_md_path, 'w') as f:
