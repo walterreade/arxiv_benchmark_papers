@@ -84,8 +84,8 @@ def main():
     if args.output:
         output_path = args.output
     else:
-        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-        output_path = f"analysis/daily_updates/update_{timestamp}.md"
+        timestamp = datetime.now().strftime('%Y%m%d')
+        output_path = f"analysis/daily_updates/{timestamp}_daily_update.md"
     
     success = generate_update_file(args.json_files, args.csv, output_path)
     if not success:

@@ -23,7 +23,7 @@ DEFAULT_MODEL = "gemini-3-pro-preview"
 def load_analysis_files(analysis_dir: str) -> dict:
     """Load all analysis markdown files."""
     files = {}
-    for name in ['benchmark_analysis.md', 'benchmark_learnings.md', 'benchmark_summary.md']:
+    for name in ['Religious Bias Papers - Statistics and Links.md', 'Religious Bias Papers - Summaries.md', 'Religious Bias Research Summary.md']:
         path = os.path.join(analysis_dir, name)
         if os.path.exists(path):
             with open(path, 'r', encoding='utf-8') as f:
@@ -236,7 +236,7 @@ def format_output(facts: list[dict], output_format: str = 'markdown') -> str:
         return json.dumps(facts, indent=2)
     
     # Markdown format
-    lines = ["# Impactful Facts: Religious Bias in LLMs\n"]
+    lines = ["# Religious Bias Papers - Interesting Findings\n"]
     lines.append(f"*Generated: {datetime.now().strftime('%Y-%m-%d %H:%M')}*\n")
     lines.append("*Use these facts carefully - verify currency before presenting.*\n\n")
     
@@ -289,7 +289,7 @@ def main():
     parser.add_argument("--json-dir", default="json/4_religious_bias_analysis", help="Directory containing JSON analysis files")
     parser.add_argument("--csv", default="utility_files/1st_pass_results.csv", help="CSV file with paper metadata")
     parser.add_argument("--pdf-dir", default="pdf", help="Directory containing original PDFs")
-    parser.add_argument("--output", default="analysis/talk_facts.md", help="Output file")
+    parser.add_argument("--output", default="analysis/Religious Bias Papers - Interesting Findings.md", help="Output file")
     parser.add_argument("--format", choices=['markdown', 'json'], default='markdown', help="Output format")
     parser.add_argument("--model", default=DEFAULT_MODEL, help="Model for fact extraction")
     parser.add_argument("--months", type=int, default=24, help="Only include papers from last N months")
@@ -355,10 +355,10 @@ def main():
     # Save timestamped version
     versions_dir = os.path.join(os.path.dirname(args.output) or '.', 'versions')
     os.makedirs(versions_dir, exist_ok=True)
-    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    timestamp = datetime.now().strftime('%Y%m%d')
     base_name = os.path.splitext(os.path.basename(args.output))[0]
     ext = os.path.splitext(args.output)[1]
-    versioned_path = os.path.join(versions_dir, f"{base_name}_{timestamp}{ext}")
+    versioned_path = os.path.join(versions_dir, f"{timestamp}_{base_name}{ext}")
     with open(versioned_path, 'w', encoding='utf-8') as f:
         f.write(output)
     print(f"Versioned copy saved to {versioned_path}")

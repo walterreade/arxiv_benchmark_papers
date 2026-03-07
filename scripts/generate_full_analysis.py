@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Create summary statistics from 2nd pass JSON analysis files.
-Generates benchmark_analysis.md with tables summarizing the analysis results.
+Generates 'Religious Bias Papers - Statistics and Links.md' with tables summarizing the analysis results.
 """
 
 import os
@@ -167,12 +167,12 @@ def load_json_files(json_dir: str) -> list[dict]:
     return data
 
 
-def generate_benchmark_learnings(data: list[dict], csv_metadata: dict, output_path: str):
-    """Generate benchmark_learnings.md with paper entries."""
+def generate_paper_summaries(data: list[dict], csv_metadata: dict, output_path: str):
+    """Generate paper summaries markdown with paper entries."""
     # Sort all papers by filename descending
     sorted_papers = sorted(data, key=lambda p: p.get('_filename', ''), reverse=True)
     
-    lines = ["# Benchmark Learnings\n"]
+    lines = ["# Religious Bias Papers - Summaries\n"]
     
     for paper in sorted_papers:
         filename = paper.get('_filename', '')
@@ -203,7 +203,7 @@ def generate_benchmark_learnings(data: list[dict], csv_metadata: dict, output_pa
     print(f"Learnings saved to {output_path}")
 
 
-def generate_benchmark_summary(learnings_path: str, summary_path: str, model_name: str = "gemini-3-pro-preview"):
+def generate_research_summary(learnings_path: str, summary_path: str, model_name: str = "gemini-3-pro-preview"):
     """Generate a summary of the overall state of measuring religious bias in LLMs."""
     from shared import genai
     
@@ -664,10 +664,10 @@ def main():
     parser.add_argument("--json_dir", default="json/4_religious_bias_analysis", help="Directory containing JSON analysis files")
     parser.add_argument("--first_pass_dir", default="json/2_paper_metadata", help="Directory with paper metadata JSON files")
     parser.add_argument("--second_pass_dir", default="json/3_paper_bias_targets", help="Directory with bias targets JSON files")
-    parser.add_argument("--output", default="analysis/benchmark_analysis.md", help="Output markdown file")
+    parser.add_argument("--output", default="analysis/Religious Bias Papers - Statistics and Links.md", help="Output markdown file")
     parser.add_argument("--csv", default="utility_files/1st_pass_results.csv", help="Input CSV file with paper metadata")
-    parser.add_argument("--learnings", default="analysis/benchmark_learnings.md", help="Output learnings markdown file")
-    parser.add_argument("--summary", default="analysis/benchmark_summary.md", help="Output summary markdown file")
+    parser.add_argument("--learnings", default="analysis/Religious Bias Papers - Summaries.md", help="Output learnings markdown file")
+    parser.add_argument("--summary", default="analysis/Religious Bias Research Summary.md", help="Output summary markdown file")
     parser.add_argument("--summary-model", default="gemini-3-pro-preview", help="Model to use for summary generation")
     
     args = parser.parse_args()
@@ -847,7 +847,7 @@ def main():
     
     # --- Generate markdown content in the requested order ---
     md_content = [
-        "# Benchmark Analysis Summary\n",
+        "# Religious Bias Papers - Statistics and Links\n",
         f"**Count of LLM-Bias papers:** {len(restricted_paper_ids)}\n",
         f"**Count of papers measuring religious bias:** {len(data)}\n",
         f"**Count of papers where religious bias is the primary focus:** {len(papers_with_religious_primary)}\n",
@@ -883,21 +883,21 @@ def main():
     print(f"Summary saved to {output_file}")
     
     # Generate benchmark learnings
-    generate_benchmark_learnings(data, csv_metadata, learnings_file)
+    generate_paper_summaries(data, csv_metadata, learnings_file)
     
     # Generate benchmark summary using LLM
-    generate_benchmark_summary(learnings_file, summary_file, summary_model)
+    generate_research_summary(learnings_file, summary_file, summary_model)
     
     # Create versioned copies in analysis/versions
     versions_dir = "analysis/versions"
     os.makedirs(versions_dir, exist_ok=True)
-    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    timestamp = datetime.now().strftime('%Y%m%d')
     
     for src_file in [output_file, learnings_file, summary_file]:
         if os.path.exists(src_file):
             base_name = Path(src_file).stem
             ext = Path(src_file).suffix
-            versioned_name = f"{base_name}_{timestamp}{ext}"
+            versioned_name = f"{timestamp}_{base_name}{ext}"
             versioned_path = os.path.join(versions_dir, versioned_name)
             shutil.copy2(src_file, versioned_path)
             print(f"Versioned copy saved to {versioned_path}")

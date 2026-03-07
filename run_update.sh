@@ -106,8 +106,8 @@ echo "Stage 6: Generating update file..."
 echo "----------------------------------------"
 
 mkdir -p analysis/daily_updates
-TIMESTAMP=$(date +%Y%m%d_%H%M%S)
-OUTPUT_FILE="analysis/daily_updates/update_${TIMESTAMP}.md"
+TIMESTAMP=$(date +%Y%m%d)
+OUTPUT_FILE="analysis/daily_updates/${TIMESTAMP}_daily_update.md"
 
 if echo "$NEW_PAPERS" | xargs uv run python scripts/generate_daily_update.py --output "$OUTPUT_FILE" --json-files; then
     if [ -f "$OUTPUT_FILE" ]; then
