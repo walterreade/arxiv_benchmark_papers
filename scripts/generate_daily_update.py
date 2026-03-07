@@ -6,6 +6,7 @@ Generate a timestamped update markdown file for newly analyzed papers.
 import argparse
 import json
 import os
+import sys
 from datetime import datetime
 
 from shared import load_csv_metadata, get_arxiv_url, check_mormon_mention, filter_religion_papers
@@ -85,7 +86,9 @@ def main():
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
         output_path = f"analysis/daily_updates/update_{timestamp}.md"
     
-    generate_update_file(args.json_files, args.csv, output_path)
+    success = generate_update_file(args.json_files, args.csv, output_path)
+    if not success:
+        sys.exit(1)
 
 
 if __name__ == "__main__":

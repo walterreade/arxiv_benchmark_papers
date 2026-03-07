@@ -84,29 +84,47 @@ echo "----------------------------------------"
 # Create updates directory if needed
 mkdir -p analysis/daily_updates
 
-# Generate the update file
+# Generate the update file (may fail if no papers pass religion filter)
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 OUTPUT_FILE="analysis/daily_updates/update_${TIMESTAMP}.md"
 
-# Pass the new JSON files to the generate_update script
-echo "$NEW_PAPERS" | xargs uv run python scripts/generate_daily_update.py --output "$OUTPUT_FILE" --json-files
+if echo "$NEW_PAPERS" | xargs uv run python scripts/generate_daily_update.py --output "$OUTPUT_FILE" --json-files; then
+    # Verify the file was actually created
+    if [ -f "$OUTPUT_FILE" ]; then
+        # Copy new pdf files to GCS
+        gcloud storage cp -r -n pdf gs://inversion
 
-# Copy new pdf files to GCS
-gcloud storage cp -r -n pdf gs://inversion
+        # Commit and push changes to git
+        echo ""
+        echo "Step 7: Committing changes to git..."
+        echo "----------------------------------------"
+        git add -A
+        git commit -m "Update: ${TIMESTAMP}"
+        git pull --rebase
+        git push
 
-# Commit and push changes to git
-echo ""
-echo "Step 6: Committing changes to git..."
-echo "----------------------------------------"
-git add -A
-git commit -m "Update: ${TIMESTAMP}"
-git pull --rebase
-git push
-
-echo ""
-echo "========================================"
-echo "Pipeline Complete!"
-echo "========================================"
-echo "New papers analyzed: $NEW_COUNT"
-echo "Update file: $OUTPUT_FILE"
-echo "========================================"
+        echo ""
+        echo "========================================"
+        echo "Pipeline Complete!"
+        echo "========================================"
+        echo "New papers analyzed: $NEW_COUNT"
+        echo "Update file: $OUTPUT_FILE"
+        echo "========================================"
+    else
+        echo ""
+        echo "========================================"
+        echo "Pipeline Complete (update file not generated)"
+        echo "========================================"
+        echo "New 2nd pass papers: $NEW_COUNT"
+        echo "No papers passed the religion filter for the daily update."
+        echo "========================================"
+    fi
+else
+    echo ""
+    echo "========================================"
+    echo "Pipeline Complete (no relevant religion papers)"
+    echo "========================================"
+    echo "New 2nd pass papers: $NEW_COUNT"
+    echo "None had major/minor religion component for the daily update."
+    echo "========================================"
+fi
