@@ -1,6 +1,6 @@
 # Full Pipeline Analysis
 
-**Count of LLM-Bias papers:** 9954
+**Count of LLM-Bias papers:** 9991
 
 **Count of papers measuring religious bias:** 1966
 
@@ -9,51 +9,51 @@
 ## Bias Targets Measured (LLM-Bias papers)
 ## Top 25 Bias Targets
 
-| Target | Count | % of 9954 papers |
+| Target | Count | % of 9991 papers |
 |---|---|---|
-| Gender bias | 3090 | 31.0% |
-| Racial/Ethnic bias | 1946 | 19.5% |
-| Language bias | 1220 | 12.3% |
-| **Religious bias** | **1084** | **10.9%** |
-| Age bias | 1055 | 10.6% |
-| Cultural bias | 956 | 9.6% |
-| Political bias | 776 | 7.8% |
-| Sexual orientation bias | 682 | 6.9% |
-| Socioeconomic bias | 615 | 6.2% |
-| Disability bias | 587 | 5.9% |
-| Nationality bias | 522 | 5.2% |
-| Position bias | 310 | 3.1% |
-| Geographic bias | 238 | 2.4% |
-| Physical appearance bias | 205 | 2.1% |
+| Gender bias | 3099 | 31.0% |
+| Racial/Ethnic bias | 1952 | 19.5% |
+| Language bias | 1224 | 12.3% |
+| **Religious bias** | **1090** | **10.9%** |
+| Age bias | 1061 | 10.6% |
+| Cultural bias | 965 | 9.7% |
+| Political bias | 779 | 7.8% |
+| Sexual orientation bias | 684 | 6.8% |
+| Socioeconomic bias | 619 | 6.2% |
+| Disability bias | 590 | 5.9% |
+| Nationality bias | 523 | 5.2% |
+| Position bias | 312 | 3.1% |
+| Geographic bias | 240 | 2.4% |
+| Physical appearance bias | 206 | 2.1% |
 | Occupational bias | 205 | 2.1% |
-| Length bias | 143 | 1.4% |
-| Demographic Bias | 118 | 1.2% |
-| Stereotyping | 109 | 1.1% |
+| Length bias | 144 | 1.4% |
+| Demographic Bias | 120 | 1.2% |
+| Stereotyping | 111 | 1.1% |
 | Educational bias | 101 | 1.0% |
-| Intersectional Bias | 91 | 0.9% |
+| Intersectional Bias | 93 | 0.9% |
 | Self-preference bias | 87 | 0.9% |
-| Regional bias | 86 | 0.9% |
+| Regional bias | 87 | 0.9% |
 | Annotator bias | 80 | 0.8% |
 | Gender Identity Bias | 78 | 0.8% |
 | Cognitive bias | 65 | 0.7% |
 
 ## Focus Analysis (Primary or Exclusive focus)
 
-| Target | Count | % of 9954 papers |
+| Target | Count | % of 9991 papers |
 |---|---|---|
-| Gender bias | 774 | 7.8% |
-| Language bias | 565 | 5.7% |
-| Cultural bias | 452 | 4.5% |
-| Political bias | 263 | 2.6% |
+| Gender bias | 776 | 7.8% |
+| Language bias | 567 | 5.7% |
+| Cultural bias | 455 | 4.6% |
+| Political bias | 265 | 2.7% |
+| Racial/Ethnic bias | 106 | 1.1% |
 | Position bias | 106 | 1.1% |
-| Racial/Ethnic bias | 104 | 1.0% |
-| Geographic bias | 63 | 0.6% |
-| Disability bias | 47 | 0.5% |
+| Geographic bias | 64 | 0.6% |
+| Disability bias | 48 | 0.5% |
 | Annotator bias | 40 | 0.4% |
 | Cognitive bias | 39 | 0.4% |
 | Modality Bias | 37 | 0.4% |
+| Sycophancy bias | 35 | 0.4% |
 | Dataset Bias | 34 | 0.3% |
-| Sycophancy bias | 33 | 0.3% |
 | Nationality bias | 32 | 0.3% |
 | Evaluation Bias | 30 | 0.3% |
 | Length bias | 28 | 0.3% |
@@ -956,8 +956,8 @@
 - [CHiSafetyBench: A Chinese Hierarchical Safety Benchmark for Large Language Models](https://arxiv.org/pdf/2406.10311) (citations: 13)
 - [CogMorph: Cognitive Morphing Attacks for Text-to-Image Models](https://arxiv.org/pdf/2501.11815) (citations: 13)
 - [Compromising Honesty and Harmlessness in Language Models via Deception Attacks](https://arxiv.org/pdf/2502.08301) (citations: 13)
-- [Direct Preference Optimization with Unobserved Preference Heterogeneity: The Necessity of Ternary Preferences](https://arxiv.org/pdf/2510.15716) (citations: 13)
 - [Direct Preference Optimization with Unobserved Preference Heterogeneity: The Necessity of Ternary Preferences](https://arxiv.org/pdf/2405.15065) (citations: 13)
+- [Direct Preference Optimization with Unobserved Preference Heterogeneity: The Necessity of Ternary Preferences](https://arxiv.org/pdf/2510.15716) (citations: 13)
 - [Do Multilingual Large Language Models Mitigate Stereotype Bias?](https://arxiv.org/pdf/2407.05740) (citations: 13)
 - [Double Perturbation: On the Robustness of Robustness and Counterfactual Bias Evaluation](https://arxiv.org/pdf/2104.05232) (citations: 13)
 - [Evaluating ChatGPT's Performance for Multilingual and Emoji-based Hate Speech Detection](https://arxiv.org/pdf/2305.13276) (citations: 13)
@@ -1023,8 +1023,8 @@
 - [Documenting Ethical Considerations in Open Source AI Models](https://arxiv.org/pdf/2406.18071) (citations: 11)
 - [Exploring Visual Culture Awareness in GPT-4V: A Comprehensive Probing](https://arxiv.org/pdf/2402.06015) (citations: 11)
 - [From Local Concepts to Universals: Evaluating the Multicultural Understanding of Vision-Language Models](https://arxiv.org/pdf/2407.00263) (citations: 11)
-- [Implicit Bias in LLMs: A Survey](https://arxiv.org/pdf/2503.02776) (citations: 11)
 - [Implicit Bias in LLMs: A Survey](https://arxiv.org/pdf/2503.02776v1) (citations: 11)
+- [Implicit Bias in LLMs: A Survey](https://arxiv.org/pdf/2503.02776) (citations: 11)
 - [IsamasRed: A Public Dataset Tracking Reddit Discussions on Israel-Hamas Conflict](https://arxiv.org/pdf/2401.08202) (citations: 11)
 - [K-HATERS: A Hate Speech Detection Corpus in Korean with Target-Specific Ratings](https://arxiv.org/pdf/2310.15439) (citations: 11)
 - [KidLM: Advancing Language Models for Children – Early Insights and Future Directions](https://arxiv.org/pdf/2410.03884) (citations: 11)
@@ -1877,6 +1877,7 @@
 - [A Systematic Analysis of Biases in Large Language Models](https://arxiv.org/pdf/2512.15792) (citations: 0)
 - [A Target-Aware Analysis of Data Augmentation for Hate Speech Detection](https://arxiv.org/pdf/2410.08053) (citations: 0)
 - [A Transparent Fairness Evaluation Protocol for Open-Source Language Model Benchmarking on the Blockchain](https://arxiv.org/pdf/2508.09993) (citations: 0)
+- [A Unified Framework to Quantify Cultural Intelligence of AI](https://arxiv.org/pdf/2603.01211) (citations: 0)
 - [A Use-Case Specific Dataset for Measuring Dimensions of Responsible Performance in LLM-generated Text](https://arxiv.org/pdf/2510.20782) (citations: 0)
 - [ACE-Align: Attribute Causal Effect Alignment for Cultural Values under Varying Persona Granularities](https://arxiv.org/pdf/2601.12962) (citations: 0)
 - [ADAB: Arabic Dataset for Automated Politeness Benchmarking - A Large-Scale Resource for Computational Sociopragmatics](https://arxiv.org/pdf/2602.13870) (citations: 0)
@@ -1972,6 +1973,7 @@
 - [Cross-Examiner: Evaluating Consistency of Large Language Model-Generated Explanations](https://arxiv.org/pdf/2503.08815) (citations: 0)
 - [Cross-Language Bias Examination in Large Language Models](https://arxiv.org/pdf/2512.16029) (citations: 0)
 - [Cultural Compass: A Framework for Organizing Societal Norms to Detect Violations in Human-AI Conversations](https://arxiv.org/pdf/2601.07973) (citations: 0)
+- [Cultural Counterfactuals: Evaluating Cultural Biases in Large Vision-Language Models with Counterfactual Examples](https://arxiv.org/pdf/2603.02370) (citations: 0)
 - [Culturally Grounded Personas in Large Language Models: Characterization and Alignment with Socio-Psychological Value Frameworks](https://arxiv.org/pdf/2601.22396) (citations: 0)
 - [DEEP LEARNING AND ETHICS](https://arxiv.org/pdf/2305.15239) (citations: 0)
 - [DELIBERATIVE DYNAMICS AND VALUE ALIGNMENT IN LLM DEBATES](https://arxiv.org/pdf/2510.10002) (citations: 0)
@@ -2041,6 +2043,7 @@
 - [From Stability to Inconsistency: A Study of Moral Preferences in LLMs](https://arxiv.org/pdf/2504.06324) (citations: 0)
 - [From prosthetic memory to prosthetic denial: Auditing whether large language models are prone to mass atrocity denialism](https://arxiv.org/pdf/2505.21753) (citations: 0)
 - [Functionality learning through specification instructions](https://arxiv.org/pdf/2311.08481) (citations: 0)
+- [GMP: A Benchmark for Content Moderation under Co-occurring Violations and Dynamic Rules](https://arxiv.org/pdf/2603.01724) (citations: 0)
 - [Group Fairness Meets the Black Box: Enabling Fair Algorithms on Closed LLMs via Post-Processing](https://arxiv.org/pdf/2508.11258) (citations: 0)
 - [GuardEval: A Multi-Perspective Benchmark for Evaluating Safety, Fairness, and Robustness in LLM Moderators](https://arxiv.org/pdf/2601.03273) (citations: 0)
 - [GuardTrace-VL: Detecting Unsafe Multimodel Reasoning via Iterative Safety Supervision](https://arxiv.org/pdf/2511.20994) (citations: 0)
@@ -2194,8 +2197,10 @@
 - [T-HITL Effectively Addresses Problematic Associations in Image Generation and Maintains Overall Visual Quality](https://arxiv.org/pdf/2402.17101) (citations: 0)
 - [TANDEM: Temporal-Aware Neural Detection for Multimodal Hate Speech](https://arxiv.org/pdf/2601.11178) (citations: 0)
 - [TAU: A BENCHMARK FOR CULTURAL SOUND UNDERSTANDING BEYOND SEMANTICS](https://arxiv.org/pdf/2509.26329) (citations: 0)
+- [THAISAFETYBENCH: ASSESSING LANGUAGE MODEL SAFETY IN THAI CULTURAL CONTEXTS](https://arxiv.org/pdf/2603.04992) (citations: 0)
 - [TIDE: Textual Identity Detection for Evaluating and Augmenting Classification and Language Models](https://arxiv.org/pdf/2309.04027) (citations: 0)
 - [TRICON-FAIR: TRIPLET CONTRASTIVE LEARNING FOR MITIGATING SOCIAL BIAS IN PRE-TRAINED LANGUAGE MODELS](https://arxiv.org/pdf/2511.00854) (citations: 0)
+- [TRUSTMH-BENCH: A Comprehensive Benchmark for Evaluating the Trustworthiness of Large Language Models in Mental Health](https://arxiv.org/pdf/2603.03047) (citations: 0)
 - [TRUSTWORTHY AI AND DEMOCRACY: A DUAL TAXONOMY OF DEMOCRATIC RISKS AND CONTRIBUTIONS](https://arxiv.org/pdf/2505.13565) (citations: 0)
 - [Tailored Emotional LLM-Supporter: Enhancing Cultural Sensitivity](https://arxiv.org/pdf/2508.07902) (citations: 0)
 - [Taking a SEAT: Predicting Value Interpretations from Sentiment, Emotion, Argument, and Topic Annotations](https://arxiv.org/pdf/2510.01976) (citations: 0)
@@ -2209,6 +2214,7 @@
 - [That is Unacceptable: the Moral Foundations of Canceling](https://arxiv.org/pdf/2503.05720) (citations: 0)
 - [The Algorithmic Gaze: An Audit and Ethnography of the LAION-Aesthetics Predictor Model](https://arxiv.org/pdf/2601.09896) (citations: 0)
 - [The Curious Case of Curiosity across Human Cultures and LLMs](https://arxiv.org/pdf/2510.12943) (citations: 0)
+- [The GRADIEND Python Package: An End-to-End System for Gradient-Based Feature Learning](https://arxiv.org/pdf/2602.23993) (citations: 0)
 - [The Gender Code: Gendering the Global Governance of Artificial Intelligence](https://arxiv.org/pdf/2512.09570) (citations: 0)
 - [The Global Representativeness Index: A Total Variation Distance Framework for Measuring Demographic Fidelity in Survey Research](https://arxiv.org/pdf/2602.14835) (citations: 0)
 - [The Impossible Test: A 2024 Unsolvable Dataset and A Chance for an AGI Quiz](https://arxiv.org/pdf/2411.14486) (citations: 0)

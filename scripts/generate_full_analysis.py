@@ -574,6 +574,7 @@ def generate_markdown_table_references(counter: Counter, title: str, limit: int 
 def main():
     parser = argparse.ArgumentParser(description="Create summary statistics from 2nd pass JSON files.")
     parser.add_argument("--json_dir", default="json/3rd_pass_json", help="Directory containing JSON analysis files")
+    parser.add_argument("--first_pass_dir", default="json/1st_pass_json", help="Directory with 1st pass JSON files")
     parser.add_argument("--output", default="analysis/benchmark_analysis.md", help="Output markdown file")
     parser.add_argument("--csv", default="csv/1st_pass_results.csv", help="Input CSV file with paper metadata")
     parser.add_argument("--learnings", default="analysis/benchmark_learnings.md", help="Output learnings markdown file")
@@ -583,6 +584,7 @@ def main():
     args = parser.parse_args()
     
     json_dir = args.json_dir
+    first_pass_dir = args.first_pass_dir
     output_file = args.output
     csv_file = args.csv
     learnings_file = args.learnings
@@ -593,7 +595,19 @@ def main():
         print(f"Error: Directory {json_dir} not found.")
         return
     
-    # Load all JSON files
+    # Build restricted paper ID set from 1st pass JSONs (matching full_pipeline_analysis.py)
+    restricted_paper_ids = set()
+    for filepath in glob.glob(os.path.join(first_pass_dir, "*.json")):
+        try:
+            with open(filepath, 'r') as f:
+                data = json.load(f)
+            if data.get('is_llm_related') and data.get('is_bias_related'):
+                restricted_paper_ids.add(Path(filepath).stem)
+        except Exception:
+            pass
+    print(f"Found {len(restricted_paper_ids)} LLM+bias papers from 1st pass JSONs")
+    
+    # Load all JSON files from 3rd pass
     all_data = load_json_files(json_dir)
     print(f"Loaded {len(all_data)} JSON files from {json_dir}")
     
@@ -601,16 +615,9 @@ def main():
     csv_metadata = load_csv_metadata(csv_file)
     print(f"Loaded metadata for {len(csv_metadata)} papers from {csv_file}")
     
-    # Filter to only papers with is_llm_related and is_bias_related true in 1st pass
-    llm_bias_data = []
-    for paper in all_data:
-        filename = paper.get('_filename', '')
-        meta = csv_metadata.get(filename, {})
-        is_llm = str(meta.get('is_llm_related', '')).lower() == 'true'
-        is_bias = str(meta.get('is_bias_related', '')).lower() == 'true'
-        if is_llm and is_bias:
-            llm_bias_data.append(paper)
-    print(f"Filtered to {len(llm_bias_data)} papers with is_llm_related and is_bias_related = True")
+    # Filter to only papers in the restricted set
+    llm_bias_data = [p for p in all_data if Path(p.get('_filename', '')).stem in restricted_paper_ids]
+    print(f"Filtered to {len(llm_bias_data)} papers in LLM+bias restricted set")
     
     # Filter to only papers with religion_component of 'major' or 'minor'
     data = filter_religion_papers(llm_bias_data)
