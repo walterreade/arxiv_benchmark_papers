@@ -18,6 +18,7 @@ from pathlib import Path
 from shared import (
     load_csv_metadata, get_arxiv_url, check_mormon_mention, filter_religion_papers,
 )
+from analyze_bias_targets import normalize_target
 
 
 # Mapping of variations to canonical names
@@ -575,6 +576,7 @@ def main():
     parser = argparse.ArgumentParser(description="Create summary statistics from 2nd pass JSON files.")
     parser.add_argument("--json_dir", default="json/3rd_pass_json", help="Directory containing JSON analysis files")
     parser.add_argument("--first_pass_dir", default="json/1st_pass_json", help="Directory with 1st pass JSON files")
+    parser.add_argument("--second_pass_dir", default="json/2nd_pass_json", help="Directory with 2nd pass JSON files")
     parser.add_argument("--output", default="analysis/benchmark_analysis.md", help="Output markdown file")
     parser.add_argument("--csv", default="csv/1st_pass_results.csv", help="Input CSV file with paper metadata")
     parser.add_argument("--learnings", default="analysis/benchmark_learnings.md", help="Output learnings markdown file")
@@ -585,6 +587,7 @@ def main():
     
     json_dir = args.json_dir
     first_pass_dir = args.first_pass_dir
+    second_pass_dir = args.second_pass_dir
     output_file = args.output
     csv_file = args.csv
     learnings_file = args.learnings
@@ -607,6 +610,25 @@ def main():
             pass
     print(f"Found {len(restricted_paper_ids)} LLM+bias papers from 1st pass JSONs")
     
+    # Build set of paper IDs where primary_bias_target is "Religious bias" from 2nd pass
+    # (matching full_pipeline_analysis.py logic)
+    religious_primary_ids = set()
+    for paper_id in restricted_paper_ids:
+        filepath = os.path.join(second_pass_dir, f"{paper_id}.json")
+        if not os.path.isfile(filepath):
+            continue
+        try:
+            with open(filepath, 'r') as f:
+                data_2nd = json.load(f)
+            primary = data_2nd.get('primary_bias_target', '')
+            if primary:
+                primary = normalize_target(primary)
+            if primary == "Religious bias":
+                religious_primary_ids.add(paper_id)
+        except Exception:
+            pass
+    print(f"Found {len(religious_primary_ids)} papers with 'Religious bias' as primary target from 2nd pass")
+    
     # Load all JSON files from 3rd pass
     all_data = load_json_files(json_dir)
     print(f"Loaded {len(all_data)} JSON files from {json_dir}")
@@ -627,8 +649,15 @@ def main():
         print("No data to process.")
         return
     
-    # Count religion component (major vs minor)
-    religion_component_count = count_religion_component(data)
+    # Count religion component using 2nd pass cross-check (matching full_pipeline_analysis.py)
+    # Major = primary_bias_target is "Religious bias", Minor = otherwise
+    religion_component_count = Counter()
+    for paper in data:
+        paper_id = Path(paper.get('_filename', '')).stem
+        if paper_id in religious_primary_ids:
+            religion_component_count['Major'] += 1
+        else:
+            religion_component_count['Minor'] += 1
     
     # Count religious groups
     religious_groups_count = count_religious_groups(data)

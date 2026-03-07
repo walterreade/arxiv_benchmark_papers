@@ -6,8 +6,8 @@ Total papers analyzed: 1966
 
 | Component | Count |
 |---|---|
-| Minor | 1942 |
-| Major | 24 |
+| Minor | 1921 |
+| Major | 45 |
 
 ## Religious Groups (Top 25)
 
