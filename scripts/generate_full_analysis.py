@@ -661,9 +661,9 @@ def fetch_citation_counts(arxiv_ids: list[str]) -> dict:
 
 def main():
     parser = argparse.ArgumentParser(description="Create summary statistics from 2nd pass JSON files.")
-    parser.add_argument("--json_dir", default="json/3rd_pass_json", help="Directory containing JSON analysis files")
-    parser.add_argument("--first_pass_dir", default="json/1st_pass_json", help="Directory with 1st pass JSON files")
-    parser.add_argument("--second_pass_dir", default="json/2nd_pass_json", help="Directory with 2nd pass JSON files")
+    parser.add_argument("--json_dir", default="json/4_religious_bias_analysis", help="Directory containing JSON analysis files")
+    parser.add_argument("--first_pass_dir", default="json/2_paper_metadata", help="Directory with paper metadata JSON files")
+    parser.add_argument("--second_pass_dir", default="json/3_paper_bias_targets", help="Directory with bias targets JSON files")
     parser.add_argument("--output", default="analysis/benchmark_analysis.md", help="Output markdown file")
     parser.add_argument("--csv", default="utility_files/1st_pass_results.csv", help="Input CSV file with paper metadata")
     parser.add_argument("--learnings", default="analysis/benchmark_learnings.md", help="Output learnings markdown file")

@@ -22,7 +22,7 @@ DEFAULT_MODEL = "gemini-3-pro-preview"
 # Directories
 SCRIPT_DIR = Path(__file__).parent
 PROJECT_DIR = SCRIPT_DIR.parent
-JSON_DIR = PROJECT_DIR / "json" / "2nd_pass_json"
+JSON_DIR = PROJECT_DIR / "json" / "3_paper_bias_targets"
 
 
 # Normalization mappings - maps variations to canonical form
