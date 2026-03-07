@@ -35,7 +35,7 @@ PROJECT_DIR = SCRIPT_DIR.parent
 OUTPUT_DIR = "pdf"
 CSV_FILE = "utility_files/llm_bias_papers.csv"
 ASSESSMENT_CACHE_FILE = "utility_files/download_assessments_cache.json"
-SNAPSHOT_FILE = "arxiv-metadata-oai-snapshot.json"
+SNAPSHOT_FILE = "utility_files/arxiv-metadata-oai-snapshot.json"
 ARXIV_API_URL = "http://export.arxiv.org/api/query"
 
 
