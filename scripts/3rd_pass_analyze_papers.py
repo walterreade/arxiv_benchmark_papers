@@ -219,7 +219,7 @@ def main():
     parser.add_argument("--second_pass_dir", default="json/2nd_pass_json", help="Directory with 2nd pass JSON files (bias targets)")
     parser.add_argument("--pdf_dir", default="pdf", help="Directory containing PDFs")
     parser.add_argument("--json_dir", default="json/3rd_pass_json", help="Directory to save JSON analysis")
-    parser.add_argument("--failures", default="csv/3rd_pass_failures.csv", help="CSV file to track failed files")
+    parser.add_argument("--failures", default="utility_files/3rd_pass_failures.csv", help="CSV file to track failed files")
     parser.add_argument("--reprocess", action="store_true", help="Re-analyze all files, ignoring existing results")
     parser.add_argument("--rpm", type=int, default=50, help="Requests per minute (API rate limit).")
     parser.add_argument("--workers", type=int, default=10, help="Number of worker threads.")

@@ -14,7 +14,7 @@ def fetch_citation_counts(arxiv_ids: list[str]) -> dict:
     if not arxiv_ids:
         return {}
         
-    cache_file = Path("citations_cache.json")
+    cache_file = Path("utility_files/citations_cache.json")
     cache = {}
     if cache_file.exists():
         try:

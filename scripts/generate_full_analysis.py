@@ -579,7 +579,7 @@ def fetch_citation_counts(arxiv_ids: list[str]) -> dict:
     if not arxiv_ids:
         return {}
     
-    cache_file = Path("citations_cache.json")
+    cache_file = Path("utility_files/citations_cache.json")
     cache = {}
     if cache_file.exists():
         try:
@@ -665,7 +665,7 @@ def main():
     parser.add_argument("--first_pass_dir", default="json/1st_pass_json", help="Directory with 1st pass JSON files")
     parser.add_argument("--second_pass_dir", default="json/2nd_pass_json", help="Directory with 2nd pass JSON files")
     parser.add_argument("--output", default="analysis/benchmark_analysis.md", help="Output markdown file")
-    parser.add_argument("--csv", default="csv/1st_pass_results.csv", help="Input CSV file with paper metadata")
+    parser.add_argument("--csv", default="utility_files/1st_pass_results.csv", help="Input CSV file with paper metadata")
     parser.add_argument("--learnings", default="analysis/benchmark_learnings.md", help="Output learnings markdown file")
     parser.add_argument("--summary", default="analysis/benchmark_summary.md", help="Output summary markdown file")
     parser.add_argument("--summary-model", default="gemini-3-pro-preview", help="Model to use for summary generation")
@@ -798,9 +798,9 @@ def main():
     continuous_testing_count = count_continuous_testing(data)
     
     # Count references (cached to avoid recomputing every run)
-    references_cache_file = "csv/references_cache.json"
+    references_cache_file = "utility_files/references_cache.json"
     if os.path.exists(references_cache_file):
-        print("Loading references from cache (delete csv/references_cache.json to recompute)...")
+        print("Loading references from cache (delete utility_files/references_cache.json to recompute)...")
         with open(references_cache_file, 'r') as f:
             references_count = Counter(json.load(f))
     else:

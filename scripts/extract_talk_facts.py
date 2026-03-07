@@ -287,7 +287,7 @@ def main():
     parser = argparse.ArgumentParser(description="Extract impactful facts about religious bias in LLMs.")
     parser.add_argument("--analysis-dir", default="analysis", help="Directory containing analysis markdown files")
     parser.add_argument("--json-dir", default="json/3rd_pass_json", help="Directory containing JSON analysis files")
-    parser.add_argument("--csv", default="csv/1st_pass_results.csv", help="CSV file with paper metadata")
+    parser.add_argument("--csv", default="utility_files/1st_pass_results.csv", help="CSV file with paper metadata")
     parser.add_argument("--pdf-dir", default="pdf", help="Directory containing original PDFs")
     parser.add_argument("--output", default="analysis/talk_facts.md", help="Output file")
     parser.add_argument("--format", choices=['markdown', 'json'], default='markdown', help="Output format")

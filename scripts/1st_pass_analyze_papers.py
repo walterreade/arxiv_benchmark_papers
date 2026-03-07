@@ -202,9 +202,9 @@ def process_single_file(pdf_path: str, api_key: str, json_dir: Optional[str], ra
 def main():
     parser = argparse.ArgumentParser(description="Analyze PDF paper(s) with multi-threading.")
     parser.add_argument("input_path", nargs='?', default="pdf", help="Path to the PDF file or directory")
-    parser.add_argument("--output", default="csv/1st_pass_results.csv", help="Output CSV file")
+    parser.add_argument("--output", default="utility_files/1st_pass_results.csv", help="Output CSV file")
     parser.add_argument("--json_dir", default="json/1st_pass_json", help="Directory to save JSON analysis")
-    parser.add_argument("--failures", default="csv/1st_pass_failures.csv", help="CSV file to track failed files")
+    parser.add_argument("--failures", default="utility_files/1st_pass_failures.csv", help="CSV file to track failed files")
     parser.add_argument("--rpm", type=int, default=15, help="Requests per minute (API rate limit). Default 15.")
     parser.add_argument("--workers", type=int, default=8, help="Number of worker threads. Default 8.")
     parser.add_argument("--model", default=DEFAULT_MODEL, help="Gemini model name.")

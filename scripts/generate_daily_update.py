@@ -76,7 +76,7 @@ def generate_update_file(json_files: list[str], csv_file: str, output_path: str)
 def main():
     parser = argparse.ArgumentParser(description="Generate update markdown for new papers.")
     parser.add_argument("--json-files", nargs='+', required=True, help="List of JSON files to include")
-    parser.add_argument("--csv", default="csv/1st_pass_results.csv", help="CSV file with paper metadata")
+    parser.add_argument("--csv", default="utility_files/1st_pass_results.csv", help="CSV file with paper metadata")
     parser.add_argument("--output", help="Output markdown file (default: auto-generated timestamp)")
     
     args = parser.parse_args()
