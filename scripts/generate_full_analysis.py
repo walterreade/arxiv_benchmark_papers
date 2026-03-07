@@ -11,7 +11,9 @@ import argparse
 import re
 import unicodedata
 import shutil
-from datetime import datetime
+import requests
+import time
+from datetime import datetime, timedelta
 from collections import Counter
 from pathlib import Path
 
@@ -572,6 +574,91 @@ def generate_markdown_table_references(counter: Counter, title: str, limit: int 
     return "\n".join(lines)
 
 
+def fetch_citation_counts(arxiv_ids: list[str]) -> dict:
+    """Fetch citation counts from Semantic Scholar API using arXiv IDs, caching results for 7 days."""
+    if not arxiv_ids:
+        return {}
+    
+    cache_file = Path("citations_cache.json")
+    cache = {}
+    if cache_file.exists():
+        try:
+            with open(cache_file, "r") as f:
+                cache = json.load(f)
+        except Exception:
+            pass
+    
+    now = datetime.now()
+    version_pattern = re.compile(r'v\d+$')
+    
+    citations = {}
+    ids_to_fetch = []
+    
+    for original_aid in arxiv_ids:
+        clean_aid = version_pattern.sub('', original_aid)
+        if clean_aid in cache:
+            cached_data = cache[clean_aid]
+            try:
+                cached_time = datetime.fromisoformat(cached_data["timestamp"])
+                if now - cached_time < timedelta(days=7):
+                    citations[original_aid] = cached_data["count"]
+                    continue
+            except Exception:
+                pass
+        ids_to_fetch.append({"original": original_aid, "clean": clean_aid})
+    
+    if not ids_to_fetch:
+        return citations
+    
+    url = "https://api.semanticscholar.org/graph/v1/paper/batch?fields=citationCount"
+    batch_size = 100
+    for i in range(0, len(ids_to_fetch), batch_size):
+        batch = ids_to_fetch[i:i + batch_size]
+        payload = {"ids": [f"arXiv:{item['clean']}" for item in batch]}
+        max_retries = 3
+        for attempt in range(max_retries):
+            try:
+                response = requests.post(url, json=payload, timeout=15)
+                if response.status_code == 200:
+                    resp_data = response.json()
+                    for j, paper_data in enumerate(resp_data):
+                        item = batch[j]
+                        if paper_data is not None and 'citationCount' in paper_data:
+                            count = paper_data['citationCount']
+                        else:
+                            count = 0
+                        citations[item['original']] = count
+                        cache[item['clean']] = {"count": count, "timestamp": now.isoformat()}
+                    break
+                elif response.status_code == 429:
+                    if attempt < max_retries - 1:
+                        time.sleep((attempt + 1) * 3)
+                        continue
+                    else:
+                        for item in batch:
+                            citations[item['original']] = 0
+                else:
+                    for item in batch:
+                        citations[item['original']] = 0
+                    break
+            except Exception:
+                if attempt < max_retries - 1:
+                    time.sleep(2)
+                    continue
+                else:
+                    for item in batch:
+                        citations[item['original']] = 0
+        time.sleep(1.5)
+    
+    try:
+        with open(cache_file, "w") as f:
+            json.dump(cache, f, indent=2)
+    except Exception:
+        pass
+    
+    return citations
+
+
 def main():
     parser = argparse.ArgumentParser(description="Create summary statistics from 2nd pass JSON files.")
     parser.add_argument("--json_dir", default="json/3rd_pass_json", help="Directory containing JSON analysis files")
@@ -610,9 +697,11 @@ def main():
             pass
     print(f"Found {len(restricted_paper_ids)} LLM+bias papers from 1st pass JSONs")
     
-    # Build set of paper IDs where primary_bias_target is "Religious bias" from 2nd pass
-    # (matching full_pipeline_analysis.py logic)
-    religious_primary_ids = set()
+    # --- 2nd pass: bias targets analysis ---
+    papers_2nd_data = []
+    all_targets = []
+    religious_bias_paper_ids = set()
+    
     for paper_id in restricted_paper_ids:
         filepath = os.path.join(second_pass_dir, f"{paper_id}.json")
         if not os.path.isfile(filepath):
@@ -620,28 +709,64 @@ def main():
         try:
             with open(filepath, 'r') as f:
                 data_2nd = json.load(f)
+            if 'bias_targets' not in data_2nd:
+                continue
+            
+            raw_targets = data_2nd['bias_targets']
+            normalized = []
+            for entry in raw_targets:
+                if isinstance(entry, dict):
+                    normalized.append(normalize_target(entry.get('target', '')))
+                else:
+                    normalized.append(normalize_target(entry))
+            
             primary = data_2nd.get('primary_bias_target', '')
             if primary:
                 primary = normalize_target(primary)
-            if primary == "Religious bias":
-                religious_primary_ids.add(paper_id)
+            
+            papers_2nd_data.append({
+                'arxiv_id': paper_id,
+                'title': data_2nd.get('title', ''),
+                'normalized_targets': normalized,
+                'primary_bias_target': primary,
+            })
+            
+            all_targets.extend(normalized)
+            if "Religious bias" in normalized:
+                religious_bias_paper_ids.add(paper_id)
         except Exception:
             pass
+    
+    all_targets_counter = Counter(all_targets)
+    
+    # Focus analysis: primary or exclusive-focus targets
+    focused_counter = Counter()
+    for paper in papers_2nd_data:
+        targets = set(paper['normalized_targets'])
+        primary = paper['primary_bias_target']
+        is_exclusive = len(targets) == 1
+        for t in targets:
+            if is_exclusive or t == primary:
+                focused_counter[t] += 1
+    
+    # Build religious_primary_ids from 2nd pass
+    religious_primary_ids = set()
+    for p2 in papers_2nd_data:
+        if p2['primary_bias_target'] == "Religious bias":
+            religious_primary_ids.add(p2['arxiv_id'])
     print(f"Found {len(religious_primary_ids)} papers with 'Religious bias' as primary target from 2nd pass")
     
-    # Load all JSON files from 3rd pass
+    # --- 3rd pass: religion-specific analysis ---
     all_data = load_json_files(json_dir)
     print(f"Loaded {len(all_data)} JSON files from {json_dir}")
     
-    # Load CSV metadata for titles and dates
     csv_metadata = load_csv_metadata(csv_file)
     print(f"Loaded metadata for {len(csv_metadata)} papers from {csv_file}")
     
-    # Filter to only papers in the restricted set
+    # Filter to restricted set, then religion papers
     llm_bias_data = [p for p in all_data if Path(p.get('_filename', '')).stem in restricted_paper_ids]
     print(f"Filtered to {len(llm_bias_data)} papers in LLM+bias restricted set")
     
-    # Filter to only papers with religion_component of 'major' or 'minor'
     data = filter_religion_papers(llm_bias_data)
     print(f"Filtered to {len(data)} papers with major/minor religion component")
     
@@ -649,51 +774,95 @@ def main():
         print("No data to process.")
         return
     
-    # Count religion component using 2nd pass cross-check (matching full_pipeline_analysis.py)
-    # Major = primary_bias_target is "Religious bias", Minor = otherwise
-    religion_component_count = Counter()
+    # Track which 3rd pass papers have religious bias
+    for paper in data:
+        paper_id = Path(paper.get('_filename', '')).stem
+        religious_bias_paper_ids.add(paper_id)
+    
+    # Papers with religious primary focus (cross-check 2nd pass)
+    papers_with_religious_primary = []
     for paper in data:
         paper_id = Path(paper.get('_filename', '')).stem
         if paper_id in religious_primary_ids:
-            religion_component_count['Major'] += 1
-        else:
-            religion_component_count['Minor'] += 1
+            papers_with_religious_primary.append(paper)
     
-    # Count religious groups
+    # Count statistics
     religious_groups_count = count_religious_groups(data)
-    
-    # Count models tested
     models_tested_count = count_models_tested(data)
-    
-    # Count base benchmarks
     base_benchmarks_count = count_base_benchmarks(data)
-    
-    # Count languages evaluated
     languages_count = count_languages_evaluated(data)
-    
-    # Count response type
     response_type_count = count_response_type(data)
-    
-    # Count continuous testing
     continuous_testing_count = count_continuous_testing(data)
     
-    # Count references (most cited papers)
     print("Analyzing references (this may take a moment)...")
     references_count = count_references(data)
     
-    # Generate markdown content
+    # --- Build paper listings with citations ---
+    print("Fetching citation counts...")
+    
+    # Papers primarily measuring religious bias
+    religious_primary_info = []
+    for paper in papers_with_religious_primary:
+        paper_id = paper.get('filename', '').replace('.pdf', '')
+        if not paper_id:
+            paper_id = paper.get('_filename', '').replace('.pdf', '')
+        title = paper.get('title', 'Unknown Title')
+        url = f"https://arxiv.org/pdf/{paper_id}"
+        religious_primary_info.append((paper_id, title, url))
+    
+    primary_citations = fetch_citation_counts([p[0] for p in religious_primary_info])
+    religious_primary_info.sort(key=lambda x: (-primary_citations.get(x[0], 0), x[1]))
+    
+    # All papers measuring religious bias
+    religious_bias_papers_info = []
+    for paper_id in religious_bias_paper_ids:
+        title = "Unknown Title"
+        for p3 in data:
+            pid = Path(p3.get('_filename', '')).stem
+            if pid == paper_id:
+                title = p3.get('title', title)
+                break
+        if title == "Unknown Title":
+            for p2 in papers_2nd_data:
+                if p2['arxiv_id'] == paper_id:
+                    title = p2['title']
+                    break
+        url = f"https://arxiv.org/pdf/{paper_id}"
+        religious_bias_papers_info.append((paper_id, title, url))
+    
+    bias_citations = fetch_citation_counts([p[0] for p in religious_bias_papers_info])
+    religious_bias_papers_info.sort(key=lambda x: (-bias_citations.get(x[0], 0), x[1]))
+    
+    # --- Generate markdown content in the requested order ---
     md_content = [
         "# Benchmark Analysis Summary\n",
-        f"Total papers analyzed: {len(data)}\n",
-        generate_markdown_table(religion_component_count, "Religion Component", "Component", "Count"),
-        generate_markdown_table(religious_groups_count, "Religious Groups (Top 25)", "Religious Group", "Count", limit=25),
-        generate_markdown_table(models_tested_count, "Models Tested (Top 25)", "Model", "Count", limit=25),
-        generate_markdown_table(base_benchmarks_count, "Base Benchmarks (Top 25)", "Benchmark", "Count", limit=25),
-        generate_markdown_table(languages_count, "Languages Evaluated (Top 25)", "Language", "Count", limit=25),
-        generate_markdown_table(response_type_count, "Response Type", "Type", "Count"),
-        generate_markdown_table(continuous_testing_count, "Continuous Testing", "Status", "Count"),
+        f"**Count of LLM-Bias papers:** {len(restricted_paper_ids)}\n",
+        f"**Count of papers measuring religious bias:** {len(data)}\n",
+        f"**Count of papers where religious bias is the primary focus:** {len(papers_with_religious_primary)}\n",
+        generate_markdown_table(religious_groups_count, "Religious Groups Studied (Top 25)", "Religious Group", "Count", limit=25, denominator=len(data)),
+        generate_markdown_table(models_tested_count, "Models Tested (Top 25)", "Model", "Count", limit=25, denominator=len(data)),
+        generate_markdown_table(languages_count, "Languages Evaluated (Top 25)", "Language", "Count", limit=25, denominator=len(data)),
+        generate_markdown_table(base_benchmarks_count, "Base Benchmarks (Top 25)", "Benchmark", "Count", limit=25, denominator=len(data)),
+        generate_markdown_table(response_type_count, "Response Type", "Type", "Count", denominator=len(data)),
+        generate_markdown_table(continuous_testing_count, "Continuous Testing", "Status", "Count", denominator=len(data)),
+        generate_markdown_table(all_targets_counter, "Top 25 Bias Targets", "Target", "Count", limit=25, denominator=len(restricted_paper_ids)),
         generate_markdown_table_references(references_count, "Most Cited Papers (Top 100)", limit=100),
+        generate_markdown_table(focused_counter, "Focus Analysis (Primary or Exclusive focus)", "Target", "Count", limit=25, denominator=len(restricted_paper_ids)),
     ]
+    
+    # Papers Primarily Measuring Religious Bias
+    md_content.append("## Papers Primarily Measuring Religious Bias\n")
+    for pid, title, url in religious_primary_info:
+        cites = primary_citations.get(pid, 0)
+        md_content.append(f"- [{title}]({url}) (citations: {cites})")
+    md_content.append("")
+    
+    # All Papers Measuring Religious Bias
+    md_content.append("## All Papers Measuring Religious Bias\n")
+    for pid, title, url in religious_bias_papers_info:
+        cites = bias_citations.get(pid, 0)
+        md_content.append(f"- [{title}]({url}) (citations: {cites})")
+    md_content.append("")
     
     # Write to file
     with open(output_file, 'w', encoding='utf-8') as f:
