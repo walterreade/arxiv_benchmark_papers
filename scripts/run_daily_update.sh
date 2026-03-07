@@ -40,8 +40,14 @@ echo "----------------------------------------"
 uv run python scripts/2nd_pass_analyze_papers.py
 echo ""
 
-# Step 4: Check for new 2nd pass JSON files
-echo "Step 4: Checking for new papers..."
+# Step 4: Third pass analysis
+echo "Step 4: Running 3rd pass analysis..."
+echo "----------------------------------------"
+uv run python scripts/3rd_pass_analyze_papers.py
+echo ""
+
+# Step 5: Check for new 2nd pass JSON files
+echo "Step 5: Checking for new papers..."
 echo "----------------------------------------"
 
 NEW_JSON_FILES=$(mktemp)
@@ -71,8 +77,8 @@ NEW_COUNT=$(echo "$NEW_PAPERS" | wc -l | tr -d ' ')
 echo "Found $NEW_COUNT new papers for update file."
 echo ""
 
-# Step 5: Generate timestamped update file
-echo "Step 5: Generating update file..."
+# Step 6: Generate timestamped update file
+echo "Step 6: Generating update file..."
 echo "----------------------------------------"
 
 # Create updates directory if needed
@@ -86,7 +92,7 @@ OUTPUT_FILE="analysis/daily_updates/update_${TIMESTAMP}.md"
 echo "$NEW_PAPERS" | xargs uv run python scripts/generate_daily_update.py --output "$OUTPUT_FILE" --json-files
 
 # Copy new pdf files to GCS
-gsutil -m cp -r -n pdf gs://inversion
+gcloud storage cp -r -n pdf gs://inversion
 
 # Commit and push changes to git
 echo ""

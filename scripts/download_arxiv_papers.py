@@ -31,15 +31,64 @@ PROJECT_DIR = SCRIPT_DIR.parent
 
 OUTPUT_DIR = "pdf"
 CSV_FILE = "csv/llm_bias_papers.csv"
-PROGRESS_FILE = "csv/download_classified_ids.txt"
+ASSESSMENT_CACHE_FILE = "csv/download_assessments_cache.json"
+SNAPSHOT_FILE = "arxiv-metadata-oai-snapshot.json"
 ARXIV_API_URL = "http://export.arxiv.org/api/query"
 
-MAX_PAPERS = 1000
+MAX_PAPERS = 2000
 RESULTS_PER_PAGE = 200
 DELAY_BETWEEN_API_PAGES = 3  # seconds between arxiv API requests
 DELAY_BETWEEN_DOWNLOADS = 3  # seconds between PDF downloads
 GEMINI_MODEL = "gemini-3-flash-preview"
 BATCH_SIZE = 25
+
+
+# ---------------------------------------------------------------------------
+# Snapshot & Cache helpers
+# ---------------------------------------------------------------------------
+
+def load_snapshot_ids(snapshot_path: str) -> set[str]:
+    """Load all arXiv IDs from the JSONL snapshot file.
+
+    The file is ~5GB so we stream line-by-line and only keep the 'id' field.
+    """
+    ids = set()
+    if not os.path.isfile(snapshot_path):
+        return ids
+
+    print(f"  Loading snapshot IDs from {snapshot_path}...")
+    with open(snapshot_path, 'r', encoding='utf-8') as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                paper = json.loads(line)
+                arxiv_id = paper.get('id', '')
+                if arxiv_id:
+                    ids.add(arxiv_id)
+            except json.JSONDecodeError:
+                continue
+    print(f"  Loaded {len(ids):,} snapshot IDs.")
+    return ids
+
+
+def load_assessment_cache(cache_path: str) -> dict[str, bool]:
+    """Load Gemini assessment cache: {arxiv_id: bool}."""
+    if not os.path.isfile(cache_path):
+        return {}
+    try:
+        with open(cache_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except (json.JSONDecodeError, IOError):
+        return {}
+
+
+def save_assessment_cache(cache: dict[str, bool], cache_path: str):
+    """Persist the assessment cache to disk."""
+    os.makedirs(os.path.dirname(cache_path) or '.', exist_ok=True)
+    with open(cache_path, 'w', encoding='utf-8') as f:
+        json.dump(cache, f, indent=2)
 
 
 # ---------------------------------------------------------------------------
@@ -248,8 +297,10 @@ def main():
                         help=f"Abstracts per Gemini request (default {BATCH_SIZE})")
     parser.add_argument("--rpm", type=int, default=30,
                         help="Gemini requests per minute (default 30)")
-    parser.add_argument("--progress", default=PROGRESS_FILE,
-                        help=f"File tracking classified IDs (default {PROGRESS_FILE})")
+    parser.add_argument("--cache", default=ASSESSMENT_CACHE_FILE,
+                        help=f"JSON cache for Gemini assessments (default {ASSESSMENT_CACHE_FILE})")
+    parser.add_argument("--snapshot", default=SNAPSHOT_FILE,
+                        help=f"arXiv metadata snapshot JSONL file (default {SNAPSHOT_FILE})")
     parser.add_argument("--max-errors", type=int, default=5,
                         help="Max resource exhausted errors before exit (default 5)")
     args = parser.parse_args()
@@ -267,8 +318,15 @@ def main():
     Path(args.output_dir).mkdir(parents=True, exist_ok=True)
     os.makedirs(os.path.dirname(args.csv) or '.', exist_ok=True)
 
-    # Step 1: Fetch recent CS papers
-    print(f"\nStep 1: Fetching last {args.max_papers} CS papers from arXiv API...")
+    # Step 1: Load snapshot IDs and assessment cache
+    print(f"\nStep 1: Loading snapshot and cache...")
+    print("-" * 40)
+    snapshot_ids = load_snapshot_ids(args.snapshot)
+    assessment_cache = load_assessment_cache(args.cache)
+    print(f"  Assessment cache: {len(assessment_cache):,} entries")
+
+    # Step 2: Fetch recent CS papers
+    print(f"\nStep 2: Fetching last {args.max_papers} CS papers from arXiv API...")
     print("-" * 40)
     papers = fetch_recent_cs_papers(max_papers=args.max_papers)
     print(f"\nFetched {len(papers)} papers.")
@@ -277,67 +335,84 @@ def main():
         print("No papers fetched. Exiting.")
         return
 
-    # Step 2: Filter out papers already classified or downloaded
+    # Step 3: Filter out papers already in snapshot, cache, or downloaded
     existing_pdfs = {f.stem for f in Path(args.output_dir).glob("*.pdf")}
+    all_paper_ids = {p['arxiv_id'] for p in papers}
 
-    classified_ids = set()
-    if os.path.isfile(args.progress):
-        with open(args.progress, 'r') as f:
-            classified_ids = {line.strip() for line in f if line.strip()}
-
-    skip_ids = existing_pdfs | classified_ids
+    skip_ids = existing_pdfs | set(assessment_cache.keys()) | snapshot_ids
     new_papers = [p for p in papers if p['arxiv_id'] not in skip_ids]
-    print(f"\nStep 2: Filtering...")
-    print(f"  Already in {args.output_dir}/: {len(existing_pdfs & {p['arxiv_id'] for p in papers})}")
-    print(f"  Previously classified: {len(classified_ids & {p['arxiv_id'] for p in papers})}")
-    print(f"  New papers to classify: {len(new_papers)}")
 
-    if not new_papers:
+    # Also identify papers that were cached as positive but not yet downloaded
+    cached_positive_not_downloaded = [
+        p for p in papers
+        if assessment_cache.get(p['arxiv_id']) is True
+        and p['arxiv_id'] not in existing_pdfs
+        and p['arxiv_id'] not in snapshot_ids
+    ]
+
+    print(f"\nStep 3: Filtering...")
+    print(f"  In snapshot:          {len(snapshot_ids & all_paper_ids)}")
+    print(f"  Already downloaded:   {len(existing_pdfs & all_paper_ids)}")
+    print(f"  Previously assessed:  {len(set(assessment_cache.keys()) & all_paper_ids)}")
+    print(f"  New papers to assess: {len(new_papers)}")
+    if cached_positive_not_downloaded:
+        print(f"  Cached positive, not yet downloaded: {len(cached_positive_not_downloaded)}")
+
+    if not new_papers and not cached_positive_not_downloaded:
         print("\nAll papers already processed. Nothing to do.")
         return
 
-    # Step 3: Classify with Gemini
-    print(f"\nStep 3: Classifying {len(new_papers)} abstracts with Gemini...")
-    print("-" * 40)
+    # Step 4: Classify new papers with Gemini
+    qualifying_papers = list(cached_positive_not_downloaded)  # start with cached positives needing download
 
-    rate_limiter = RateLimiter(max_calls=args.rpm, period=60.0)
-    error_tracker = ErrorTracker(max_errors=args.max_errors)
+    if new_papers:
+        print(f"\nStep 4: Classifying {len(new_papers)} abstracts with Gemini...")
+        print("-" * 40)
 
-    qualifying_papers = []
-    batches = [new_papers[i:i + args.batch_size]
-               for i in range(0, len(new_papers), args.batch_size)]
+        rate_limiter = RateLimiter(max_calls=args.rpm, period=60.0)
+        error_tracker = ErrorTracker(max_errors=args.max_errors)
 
-    for batch_idx, batch in enumerate(batches):
-        print(f"  Batch {batch_idx + 1}/{len(batches)} ({len(batch)} papers)...", end=' ')
+        batches = [new_papers[i:i + args.batch_size]
+                   for i in range(0, len(new_papers), args.batch_size)]
 
-        try:
-            results = classify_batch(batch, api_key, rate_limiter, args.model, error_tracker)
-            positives = sum(results)
-            print(f"{positives} qualifying")
+        for batch_idx, batch in enumerate(batches):
+            print(f"  Batch {batch_idx + 1}/{len(batches)} ({len(batch)} papers)...", end=' ')
 
-            for paper, is_bias in zip(batch, results):
-                if is_bias:
-                    qualifying_papers.append(paper)
+            try:
+                results = classify_batch(batch, api_key, rate_limiter, args.model, error_tracker)
+                positives = sum(results)
+                print(f"{positives} qualifying")
 
-            # Record all classified IDs so they are never re-processed
-            with open(args.progress, 'a') as f:
-                for paper in batch:
-                    f.write(paper['arxiv_id'] + '\n')
+                for paper, is_bias in zip(batch, results):
+                    assessment_cache[paper['arxiv_id']] = bool(is_bias)
+                    if is_bias:
+                        qualifying_papers.append(paper)
 
-        except ResourceExhaustedError:
-            print("\nStopping classification due to too many API errors.")
-            break
-        except Exception as e:
-            print(f"error: {e}")
+                # Flush cache after each batch so progress is not lost
+                save_assessment_cache(assessment_cache, args.cache)
 
-    print(f"\nFound {len(qualifying_papers)} qualifying bias papers out of {len(new_papers)} new papers.")
+            except ResourceExhaustedError:
+                print("\nStopping classification due to too many API errors.")
+                save_assessment_cache(assessment_cache, args.cache)
+                break
+            except Exception as e:
+                print(f"error: {e}")
+                save_assessment_cache(assessment_cache, args.cache)
+
+        print(f"\nFound {len(qualifying_papers)} qualifying bias papers "
+              f"({len(qualifying_papers) - len(cached_positive_not_downloaded)} new + "
+              f"{len(cached_positive_not_downloaded)} cached).")
+    else:
+        print(f"\nStep 4: No new papers to classify.")
+        if cached_positive_not_downloaded:
+            print(f"  {len(cached_positive_not_downloaded)} cached positive papers still need downloading.")
 
     if not qualifying_papers:
-        print("No new bias papers found.")
+        print("No bias papers to download.")
         return
 
     # Step 4: Download PDFs
-    print(f"\nStep 4: Downloading {len(qualifying_papers)} PDFs...")
+    print(f"\nStep 5: Downloading {len(qualifying_papers)} PDFs...")
     print("-" * 40)
 
     downloaded = 0
@@ -353,8 +428,8 @@ def main():
         if i < len(qualifying_papers) - 1:
             time.sleep(DELAY_BETWEEN_DOWNLOADS)
 
-    # Step 5: Update CSV
-    print(f"\nStep 5: Updating {args.csv}...")
+    # Step 6: Update CSV
+    print(f"\nStep 6: Updating {args.csv}...")
     fieldnames = ["paper_id", "latest_date", "title"]
     csv_exists = os.path.isfile(args.csv)
 
