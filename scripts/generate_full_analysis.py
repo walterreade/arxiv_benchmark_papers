@@ -697,12 +697,33 @@ def main():
             pass
     print(f"Found {len(restricted_paper_ids)} LLM+bias papers from 1st pass JSONs")
     
-    # --- 2nd pass: bias targets analysis ---
+    # --- 3rd pass: religion-specific analysis ---
+    all_data = load_json_files(json_dir)
+    print(f"Loaded {len(all_data)} JSON files from {json_dir}")
+    
+    csv_metadata = load_csv_metadata(csv_file)
+    print(f"Loaded metadata for {len(csv_metadata)} papers from {csv_file}")
+    
+    # Filter to restricted set, then religion papers
+    llm_bias_data = [p for p in all_data if Path(p.get('_filename', '')).stem in restricted_paper_ids]
+    print(f"Filtered to {len(llm_bias_data)} papers in LLM+bias restricted set")
+    
+    data = filter_religion_papers(llm_bias_data)
+    print(f"Filtered to {len(data)} papers with major/minor religion component")
+    
+    if not data:
+        print("No data to process.")
+        return
+    
+    # Build set of religion paper IDs for scoping the 2nd pass analysis
+    religion_paper_ids = {Path(p.get('_filename', '')).stem for p in data}
+    
+    # --- 2nd pass: bias targets analysis (scoped to religion papers only) ---
     papers_2nd_data = []
     all_targets = []
     religious_bias_paper_ids = set()
     
-    for paper_id in restricted_paper_ids:
+    for paper_id in religion_paper_ids:
         filepath = os.path.join(second_pass_dir, f"{paper_id}.json")
         if not os.path.isfile(filepath):
             continue
@@ -756,24 +777,6 @@ def main():
             religious_primary_ids.add(p2['arxiv_id'])
     print(f"Found {len(religious_primary_ids)} papers with 'Religious bias' as primary target from 2nd pass")
     
-    # --- 3rd pass: religion-specific analysis ---
-    all_data = load_json_files(json_dir)
-    print(f"Loaded {len(all_data)} JSON files from {json_dir}")
-    
-    csv_metadata = load_csv_metadata(csv_file)
-    print(f"Loaded metadata for {len(csv_metadata)} papers from {csv_file}")
-    
-    # Filter to restricted set, then religion papers
-    llm_bias_data = [p for p in all_data if Path(p.get('_filename', '')).stem in restricted_paper_ids]
-    print(f"Filtered to {len(llm_bias_data)} papers in LLM+bias restricted set")
-    
-    data = filter_religion_papers(llm_bias_data)
-    print(f"Filtered to {len(data)} papers with major/minor religion component")
-    
-    if not data:
-        print("No data to process.")
-        return
-    
     # Track which 3rd pass papers have religious bias
     for paper in data:
         paper_id = Path(paper.get('_filename', '')).stem
@@ -794,8 +797,17 @@ def main():
     response_type_count = count_response_type(data)
     continuous_testing_count = count_continuous_testing(data)
     
-    print("Analyzing references (this may take a moment)...")
-    references_count = count_references(data)
+    # Count references (cached to avoid recomputing every run)
+    references_cache_file = "csv/references_cache.json"
+    if os.path.exists(references_cache_file):
+        print("Loading references from cache (delete csv/references_cache.json to recompute)...")
+        with open(references_cache_file, 'r') as f:
+            references_count = Counter(json.load(f))
+    else:
+        print("Analyzing references (this may take a moment)...")
+        references_count = count_references(data)
+        with open(references_cache_file, 'w') as f:
+            json.dump(dict(references_count), f, indent=2)
     
     # --- Build paper listings with citations ---
     print("Fetching citation counts...")
@@ -845,9 +857,9 @@ def main():
         generate_markdown_table(base_benchmarks_count, "Base Benchmarks (Top 25)", "Benchmark", "Count", limit=25, denominator=len(data)),
         generate_markdown_table(response_type_count, "Response Type", "Type", "Count", denominator=len(data)),
         generate_markdown_table(continuous_testing_count, "Continuous Testing", "Status", "Count", denominator=len(data)),
-        generate_markdown_table(all_targets_counter, "Top 25 Bias Targets", "Target", "Count", limit=25, denominator=len(restricted_paper_ids)),
+        generate_markdown_table(all_targets_counter, "Top 25 Bias Targets", "Target", "Count", limit=25, denominator=len(data)),
         generate_markdown_table_references(references_count, "Most Cited Papers (Top 100)", limit=100),
-        generate_markdown_table(focused_counter, "Focus Analysis (Primary or Exclusive focus)", "Target", "Count", limit=25, denominator=len(restricted_paper_ids)),
+        generate_markdown_table(focused_counter, "Focus Analysis (Primary or Exclusive focus)", "Target", "Count", limit=25, denominator=len(data)),
     ]
     
     # Papers Primarily Measuring Religious Bias

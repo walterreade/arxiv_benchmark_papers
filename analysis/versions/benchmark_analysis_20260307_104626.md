@@ -153,8 +153,8 @@
 | Age bias | 488 | 24.8% |
 | Disability bias | 430 | 21.9% |
 | Cultural bias | 399 | 20.3% |
-| Nationality bias | 364 | 18.5% |
 | Political bias | 364 | 18.5% |
+| Nationality bias | 364 | 18.5% |
 | Socioeconomic bias | 306 | 15.6% |
 | Language bias | 239 | 12.2% |
 | Physical appearance bias | 172 | 8.7% |
@@ -169,8 +169,8 @@
 | Caste Bias | 30 | 1.5% |
 | Socioeconomic Status Bias | 24 | 1.2% |
 | Professional Bias | 22 | 1.1% |
-| Body Type Bias | 19 | 1.0% |
 | Moral Bias | 19 | 1.0% |
+| Body Type Bias | 19 | 1.0% |
 
 ## Most Cited Papers (Top 100)
 
@@ -294,18 +294,18 @@
 | Intersectional Bias | 6 | 0.3% |
 | Moral And Ethical Bias | 4 | 0.2% |
 | Value Bias | 4 | 0.2% |
-| Ideological Bias | 3 | 0.2% |
-| Caste Bias | 3 | 0.2% |
 | Political/Ideological Bias | 3 | 0.2% |
-| Political And Ideological Bias | 3 | 0.2% |
 | Geographic bias | 3 | 0.2% |
-| Sexual Orientation And Gender Identity Bias | 3 | 0.2% |
+| Ideological Bias | 3 | 0.2% |
 | Social Desirability Bias | 3 | 0.2% |
+| Caste Bias | 3 | 0.2% |
 | Cultural And Regional Bias | 3 | 0.2% |
-| Religious And Ethnic Bias (Antisemitism) | 2 | 0.1% |
-| Media Bias | 2 | 0.1% |
+| Sexual Orientation And Gender Identity Bias | 3 | 0.2% |
+| Political And Ideological Bias | 3 | 0.2% |
+| Historical Bias | 2 | 0.1% |
 | Demographic Bias | 2 | 0.1% |
-| Cultural And Value Bias | 2 | 0.1% |
+| Over-Refusal Bias | 2 | 0.1% |
+| Religious And Ethnic Bias (Antisemitism) | 2 | 0.1% |
 
 ## Papers Primarily Measuring Religious Bias
 
@@ -1014,8 +1014,8 @@
 - [CHiSafetyBench: A Chinese Hierarchical Safety Benchmark for Large Language Models](https://arxiv.org/pdf/2406.10311) (citations: 13)
 - [CogMorph: Cognitive Morphing Attacks for Text-to-Image Models](https://arxiv.org/pdf/2501.11815) (citations: 13)
 - [Compromising Honesty and Harmlessness in Language Models via Deception Attacks](https://arxiv.org/pdf/2502.08301) (citations: 13)
-- [Direct Preference Optimization with Unobserved Preference Heterogeneity: The Necessity of Ternary Preferences](https://arxiv.org/pdf/2405.15065) (citations: 13)
 - [Direct Preference Optimization with Unobserved Preference Heterogeneity: The Necessity of Ternary Preferences](https://arxiv.org/pdf/2510.15716) (citations: 13)
+- [Direct Preference Optimization with Unobserved Preference Heterogeneity: The Necessity of Ternary Preferences](https://arxiv.org/pdf/2405.15065) (citations: 13)
 - [Do Multilingual Large Language Models Mitigate Stereotype Bias?](https://arxiv.org/pdf/2407.05740) (citations: 13)
 - [Double Perturbation: On the Robustness of Robustness and Counterfactual Bias Evaluation](https://arxiv.org/pdf/2104.05232) (citations: 13)
 - [Evaluating ChatGPT's Performance for Multilingual and Emoji-based Hate Speech Detection](https://arxiv.org/pdf/2305.13276) (citations: 13)

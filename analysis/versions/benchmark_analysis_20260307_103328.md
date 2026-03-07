@@ -153,8 +153,8 @@
 | Age bias | 488 | 24.8% |
 | Disability bias | 430 | 21.9% |
 | Cultural bias | 399 | 20.3% |
-| Nationality bias | 364 | 18.5% |
 | Political bias | 364 | 18.5% |
+| Nationality bias | 364 | 18.5% |
 | Socioeconomic bias | 306 | 15.6% |
 | Language bias | 239 | 12.2% |
 | Physical appearance bias | 172 | 8.7% |
@@ -169,8 +169,8 @@
 | Caste Bias | 30 | 1.5% |
 | Socioeconomic Status Bias | 24 | 1.2% |
 | Professional Bias | 22 | 1.1% |
-| Body Type Bias | 19 | 1.0% |
 | Moral Bias | 19 | 1.0% |
+| Body Type Bias | 19 | 1.0% |
 
 ## Most Cited Papers (Top 100)
 
@@ -294,18 +294,18 @@
 | Intersectional Bias | 6 | 0.3% |
 | Moral And Ethical Bias | 4 | 0.2% |
 | Value Bias | 4 | 0.2% |
-| Ideological Bias | 3 | 0.2% |
+| Sexual Orientation And Gender Identity Bias | 3 | 0.2% |
 | Caste Bias | 3 | 0.2% |
 | Political/Ideological Bias | 3 | 0.2% |
-| Political And Ideological Bias | 3 | 0.2% |
-| Geographic bias | 3 | 0.2% |
-| Sexual Orientation And Gender Identity Bias | 3 | 0.2% |
-| Social Desirability Bias | 3 | 0.2% |
 | Cultural And Regional Bias | 3 | 0.2% |
-| Religious And Ethnic Bias (Antisemitism) | 2 | 0.1% |
+| Social Desirability Bias | 3 | 0.2% |
+| Political And Ideological Bias | 3 | 0.2% |
+| Ideological Bias | 3 | 0.2% |
+| Geographic bias | 3 | 0.2% |
+| Over-Refusal Bias | 2 | 0.1% |
+| Cultural And Language Bias | 2 | 0.1% |
+| Sociodemographic Bias | 2 | 0.1% |
 | Media Bias | 2 | 0.1% |
-| Demographic Bias | 2 | 0.1% |
-| Cultural And Value Bias | 2 | 0.1% |
 
 ## Papers Primarily Measuring Religious Bias
 
