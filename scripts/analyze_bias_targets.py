@@ -17,6 +17,7 @@ from collections import Counter
 
 from shared import genai
 
+DEFAULT_MODEL = "gemini-3-pro-preview"
 
 # Directories
 SCRIPT_DIR = Path(__file__).parent
@@ -36,6 +37,7 @@ NORMALIZATION_MAP = {
     "misogyny and gender bias": "Gender bias",
     "gender bias (sexism)": "Gender bias",
     "gender bias (misogyny)": "Gender bias",
+    "gender identity bias": "Gender bias",
     
     # Racial/Ethnic
     "racial bias": "Racial/Ethnic bias",
@@ -46,6 +48,11 @@ NORMALIZATION_MAP = {
     "racial/ethnic bias": "Racial/Ethnic bias",
     "racial and ethnic bias": "Racial/Ethnic bias",
     "racial, ethnic, and nationality bias": "Racial/Ethnic bias",
+    "racial/ethnicity bias": "Racial/Ethnic bias",
+    "racial and ethnicity bias": "Racial/Ethnic bias",
+    "racial and nationality bias": "Racial/Ethnic bias",
+    "skin tone bias": "Racial/Ethnic bias",
+    "skin color bias": "Racial/Ethnic bias",
     
     # Religious
     "religious bias": "Religious bias",
@@ -56,12 +63,17 @@ NORMALIZATION_MAP = {
     "age bias": "Age bias",
     "ageism": "Age bias",
     
-    # Political
+    # Political/Ideological
     "political bias": "Political bias",
     "politics bias": "Political bias",
     "geopolitical bias": "Political bias",
     "ideological and political bias": "Political bias",
     "socio-political bias": "Political bias",
+    "ideological bias": "Political bias",
+    "political and ideological bias": "Political bias",
+    "political/ideological bias": "Political bias",
+    "viewpoint bias": "Political bias",
+    "stance bias": "Political bias",
     
     # Nationality
     "nationality bias": "Nationality bias",
@@ -72,23 +84,36 @@ NORMALIZATION_MAP = {
     "cultural bias": "Cultural bias",
     "culture bias": "Cultural bias",
     "geo-cultural bias": "Cultural bias",
+    "cultural and language bias": "Cultural bias",
+    "cultural and linguistic bias": "Cultural bias",
+    "cultural and nationality bias": "Cultural bias",
+    "language and cultural bias": "Cultural bias",
     
     # Geographic
     "geographic bias": "Geographic bias",
     "geographical bias": "Geographic bias",
     "geographic/nationality bias": "Geographic bias",
+    "geographic and cultural bias": "Geographic bias",
+    "location bias": "Geographic bias",
+    "geospatial bias": "Geographic bias",
+    "spatial bias": "Geographic bias",
     
     # Language/Linguistic
     "language bias": "Language bias",
     "linguistic bias": "Language bias",
     "dialect bias": "Language bias",
     "dialect/language bias": "Language bias",
+    "language and dialect bias": "Language bias",
+    "language/dialect bias": "Language bias",
+    "dialectal bias": "Language bias",
+    "accent bias": "Language bias",
+    "lexical bias": "Language bias",
     
     # Position/Positional
     "position bias": "Position bias",
     "positional bias": "Position bias",
     
-    # Sexual orientation
+    # Sexual orientation / LGBTQ+
     "sexual orientation bias": "Sexual orientation bias",
     "lgbtq+ bias": "Sexual orientation bias",
     "lgbtq bias": "Sexual orientation bias",
@@ -96,6 +121,7 @@ NORMALIZATION_MAP = {
     "gender and sexual orientation bias": "Sexual orientation bias",
     "gender/sexual orientation bias": "Sexual orientation bias",
     "orientation bias": "Sexual orientation bias",
+    "sexual orientation and gender identity bias": "Sexual orientation bias",
     
     # Socioeconomic
     "socioeconomic bias": "Socioeconomic bias",
@@ -103,19 +129,25 @@ NORMALIZATION_MAP = {
     "economic bias": "Socioeconomic bias",
     "class bias": "Socioeconomic bias",
     "class and socioeconomic bias": "Socioeconomic bias",
+    "socioeconomic status bias": "Socioeconomic bias",
     
     # Disability
     "disability bias": "Disability bias",
     "ableism": "Disability bias",
+    "ability bias": "Disability bias",
     
     # Physical appearance
     "physical appearance bias": "Physical appearance bias",
     "appearance bias": "Physical appearance bias",
+    "body type bias": "Physical appearance bias",
+    "weight bias": "Physical appearance bias",
     
     # Occupational
     "occupational bias": "Occupational bias",
     "profession bias": "Occupational bias",
     "occupational/socioeconomic bias": "Occupational bias",
+    "occupation bias": "Occupational bias",
+    "professional bias": "Occupational bias",
     
     # Hate speech / Toxicity
     "hate speech detection": "Hate speech/Toxicity",
@@ -123,12 +155,15 @@ NORMALIZATION_MAP = {
     "toxic content": "Hate speech/Toxicity",
     "toxicity": "Hate speech/Toxicity",
     "toxicity bias": "Hate speech/Toxicity",
+    "hate speech": "Hate speech/Toxicity",
+    "toxicity and hate speech": "Hate speech/Toxicity",
     
     # Stereotyping
     "stereotyping": "Stereotyping",
     "stereotype bias": "Stereotyping",
     "stereotypes": "Stereotyping",
     "social bias": "Stereotyping",
+    "stereotypical bias": "Stereotyping",
     
     # Fairness
     "fairness in outcomes": "Fairness",
@@ -138,11 +173,14 @@ NORMALIZATION_MAP = {
     # Length / Verbosity
     "length bias": "Length bias",
     "verbosity bias": "Length bias",
+    "length bias (verbosity bias)": "Length bias",
     
-    # Self-preference
+    # Self-preference / Self-bias
     "self-preference bias": "Self-preference bias",
     "self preference bias": "Self-preference bias",
     "self-enhancement bias": "Self-preference bias",
+    "self-bias": "Self-preference bias",
+    "self-evaluation bias": "Self-preference bias",
     
     # Regional
     "regional bias": "Regional bias",
@@ -155,14 +193,113 @@ NORMALIZATION_MAP = {
     # Educational
     "educational bias": "Educational bias",
     "education bias": "Educational bias",
+    "educational background bias": "Educational bias",
     
     # Sycophancy
     "sycophancy bias": "Sycophancy bias",
     "sycophancy": "Sycophancy bias",
+    "sycophantic bias": "Sycophancy bias",
     
     # Cognitive
     "cognitive bias": "Cognitive bias",
     "cognitive biases": "Cognitive bias",
+    "confirmation bias": "Cognitive bias",
+    "anchoring bias": "Cognitive bias",
+    "recency bias": "Cognitive bias",
+    "authority bias": "Cognitive bias",
+    "conformity bias": "Cognitive bias",
+    
+    # Demographic (broad)
+    "demographic bias": "Demographic bias",
+    "sociodemographic bias": "Demographic bias",
+    "social and demographic bias": "Demographic bias",
+    
+    # Intersectional
+    "intersectional bias": "Intersectional bias",
+    "intergroup bias": "Intersectional bias",
+    
+    # Moral/Ethical
+    "moral bias": "Moral/Ethical bias",
+    "ethical and moral bias": "Moral/Ethical bias",
+    "moral and ethical bias": "Moral/Ethical bias",
+    
+    # Sentiment
+    "sentiment bias": "Sentiment bias",
+    "positivity bias": "Sentiment bias",
+    "social desirability bias": "Sentiment bias",
+    
+    # Caste
+    "caste bias": "Caste bias",
+    
+    # Mental health
+    "mental health bias": "Mental health bias",
+    "health status bias": "Mental health bias",
+    
+    # Marital/Family status
+    "marital status bias": "Marital status bias",
+    "immigration status bias": "Marital status bias",
+    
+    # Media
+    "media bias": "Media bias",
+    "reporting bias": "Media bias",
+    "framing bias": "Media bias",
+    
+    # Evaluation/Scoring
+    "evaluation bias": "Evaluation bias",
+    "evaluator bias": "Evaluation bias",
+    "scoring bias": "Evaluation bias",
+    "evaluation metric bias": "Evaluation bias",
+    "llm evaluator bias": "Evaluation bias",
+    
+    # Dataset/Methodological
+    "dataset bias": "Dataset bias",
+    "dataset artifact bias": "Dataset bias",
+    "dataset bias (annotation artifacts)": "Dataset bias",
+    "dataset bias (spurious correlations)": "Dataset bias",
+    "spurious correlation bias": "Dataset bias",
+    "spurious bias": "Dataset bias",
+    "class imbalance bias": "Dataset bias",
+    "data contamination bias": "Dataset bias",
+    "sampling bias": "Dataset bias",
+    "selection bias": "Dataset bias",
+    "label bias": "Dataset bias",
+    "historical bias": "Dataset bias",
+    
+    # Modality
+    "modality bias": "Modality bias",
+    "visual bias": "Modality bias",
+    
+    # Popularity
+    "popularity bias": "Popularity bias",
+    "brand bias": "Popularity bias",
+    
+    # Domain
+    "domain bias": "Domain bias",
+    "topic bias": "Domain bias",
+    
+    # Representation
+    "representation bias": "Representation bias",
+    "representational bias": "Representation bias",
+    
+    # Algorithmic
+    "algorithmic bias": "Algorithmic bias",
+    "general algorithmic bias": "Algorithmic bias",
+    "automation bias": "Algorithmic bias",
+    "inductive bias": "Algorithmic bias",
+    
+    # Identity
+    "identity bias": "Identity bias",
+    "name bias": "Identity bias",
+    
+    # Style/Response
+    "response bias": "Response bias",
+    "stylistic bias": "Response bias",
+    "style bias": "Response bias",
+    
+    # General / Other
+    "general bias": "General bias",
+    "general social bias": "General bias",
+    "societal bias": "General bias",
     
     # Primary target normalization
     "none": "No Primary Bias Target",
@@ -225,7 +362,7 @@ def load_bias_data():
 
 
 def classify_methodologies(methodologies: list[tuple[str, str, str]],
-                           model_name: str = "gemini-3.1-pro-preview") -> dict:
+                           model_name: str = DEFAULT_MODEL) -> dict:
     """Use Gemini to classify raw methodology descriptions into strategy categories.
     
     Args:

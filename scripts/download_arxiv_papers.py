@@ -2,7 +2,7 @@
 """
 arXiv Bias Paper Downloader
 
-Queries the last 1000 CS papers from arXiv, uses Gemini to classify which ones
+Queries the last 2000 CS papers from arXiv, uses Gemini to classify which ones
 measure bias in NLP/LLMs, downloads qualifying papers, and updates llm_bias_papers.csv.
 """
 
