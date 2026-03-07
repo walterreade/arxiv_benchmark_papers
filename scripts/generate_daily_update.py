@@ -55,8 +55,9 @@ def generate_update_file(json_files: list[str], csv_file: str, output_path: str)
         combined = f"{measurement_desc} {findings}".strip()
         
         mormon_tag = " #Mormon" if check_mormon_mention(paper) else ""
+        focus_tag = " #ReligionFocus" if paper.get('religion_component', '').lower() == 'major' else ""
         
-        lines.append(f"## {title}{mormon_tag}\n")
+        lines.append(f"## {title}{mormon_tag}{focus_tag}\n")
         lines.append(f"[{arxiv_url}]({arxiv_url})\n")
         lines.append(f"**Date:** {date}\n")
         lines.append(f"{combined}\n")
