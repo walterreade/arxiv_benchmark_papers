@@ -1,0 +1,81 @@
+{
+  "filename": "2305.13299.pdf",
+  "title": "Measuring Inductive Biases of In-Context Learning with Underspecified Demonstrations",
+  "arxiv_url": "https://arxiv.org/pdf/2305.13299",
+  "measurement_description": "Measurement of feature bias in in-context learning for toxicity classification, specifically evaluating whether models predict labels based on whether a comment targets 'Muslim' or 'Christian/Jewish' people as an alternative feature to overall 'toxicity'.",
+  "religious_groups": [
+    "Muslim",
+    "Christian",
+    "Jewish"
+  ],
+  "models_tested": [
+    "DAVINCI",
+    "TEXT-DAVINCI-002"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "CivilComments"
+  ],
+  "continuous_testing": false,
+  "findings": "In the toxicity classification task, models (DAVINCI and TEXT-DAVINCI-002) did not exhibit a strong baseline feature bias towards the 'religion' feature (Muslim vs. Christian/Jewish) compared to 'toxicity'. When interventions were applied to steer the model towards the 'religion' feature (h2), they were generally successful, especially for TEXT-DAVINCI-002, which already showed a slight preference for the religion feature in the baseline, leading to substantial increases in h2-accuracy.",
+  "references": [
+    "Ekin Akyürek, Dale Schuurmans, Jacob Andreas, Tengyu Ma, and Denny Zhou. 2023. What learn- ing algorithm is in-context learning? Investigations with linear models. In International Conference on Learning Representations (ICLR).",
+    "Nabiha Asghar. 2016. Yelp dataset challenge: Review rating prediction. arXiv preprint arXiv:1605.05362.",
+    "Daniel Borkan, Lucas Dixon, Jeffrey Sorensen, Nithum Thain, and Lucy Vasserman. 2019. Nuanced met- rics for measuring unintended bias with real data for text classification. In Companion Proceedings of the 2019 World Wide Web Conference.",
+    "Tom B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, T. J. Henighan, Rewon Child, Aditya Ramesh, Daniel M. Ziegler, Jeff Wu, Clemens Winter, Christopher Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess, Jack Clark, Christopher Berner, Sam Mc- Candlish, Alec Radford, Ilya Sutskever, and Dario Amodei. 2020. Language models are few-shot learn- ers. In Advances in Neural Information Processing Systems (NeurIPS).",
+    "Stephanie CY Chan, Ishita Dasgupta, Junkyung Kim, Dharshan Kumaran, Andrew K Lampinen, and Fe- lix Hill. 2022. Transformers generalize differently from information stored in context vs in weights. In Advances in Neural Information Processing Systems (NeurIPS).",
+    "Noam Chomsky. 1980. Rules and representations. Be- havioral and brain sciences, 3(1):1-15.",
+    "Hyung Won Chung, Le Hou, S. Longpre, Barret Zoph, Yi Tay, William Fedus, Eric Li, Xuezhi Wang, Mostafa Dehghani, Siddhartha Brahma, Albert Web- son, Shixiang Shane Gu, Zhuyun Dai, Mirac Suz- gun, Xinyun Chen, Aakanksha Chowdhery, Dasha Valter, Sharan Narang, Gaurav Mishra, Adams Wei Yu, Vincent Zhao, Yanping Huang, Andrew M. Dai, Hongkun Yu, Slav Petrov, Ed Huai hsin Chi, Jeff Dean, Jacob Devlin, Adam Roberts, Denny Zhou, Quoc Le, and Jason Wei. 2022. Scaling instruction- finetuned language models. ArXiv, abs/2210.11416.",
+    "Christopher Clark, Kenton Lee, Ming-Wei Chang, Tom Kwiatkowski, Michael Collins, and Kristina Toutanova. 2019. BoolQ: Exploring the surpris- ing difficulty of natural yes/no questions. In North American Chapter of the Association for Computa- tional Linguistics: Human Language Technologies (NAACL-HLT).",
+    "Ishita Dasgupta, Erin Grant, and Tom Griffiths. 2022. Distinguishing rule and exemplar-based generaliza- tion in learning systems. In International Confer- ence on Machine Learning (ICML), pages 4816- 4830. PMLR.",
+    "Tianyu Gao, Adam Fisch, and Danqi Chen. 2021. Making pre-trained language models better few-shot learners. In Association for Computational Linguis- tics (ACL).",
+    "Robert Geirhos, Jörn-Henrik Jacobsen, Claudio Michaelis, Richard Zemel, Wieland Brendel, Matthias Bethge, and Felix A Wichmann. 2020. Shortcut learning in deep neural networks. Nature Machine Intelligence, 2(11):665-673.",
+    "Suchin Gururangan, Swabha Swayamdipta, Omer Levy, Roy Schwartz, Samuel R. Bowman, and Noah A. Smith. 2018. Annotation artifacts in natural language inference data. In North American Chap- ter of the Association for Computational Linguistics (NAACL).",
+    "Dan Hendrycks, Kimin Lee, and Mantas Mazeika. 2019. Using pre-training can improve model robust- ness and uncertainty. In International Conference on Machine Learning (ICML).",
+    "Dan Hendrycks, Xiaoyuan Liu, Eric Wallace, Adam Dziedzic, Rishabh Krishnan, and Dawn Xiaodong Song. 2020. Pretrained transformers improve out- of-distribution robustness. In Association for Com- putational Linguistics (ACL).",
+    "Nitish Joshi, Xiang Pan, and He He. 2022. Are all spu- rious features in natural language alike? an analysis through a causal lens. In Empirical Methods in Nat- ural Language Processing (EMNLP).",
+    "Andrew Kyle Lampinen, Ishita Dasgupta, Stephanie C. Y. Chan, Kory Matthewson, Michael Henry Tessler, Antonia Creswell, James L. McClelland, Jane X. Wang, and Felix Hill. 2022. Can language models learn from explanations in context? In Find- ings of Empirical Methods in Natural Language Pro- cessing (EMNLP).",
+    "Charles Lovering, Rohan Jha, Tal Linzen, and Ellie Pavlick. 2021. Predicting inductive biases of pre- trained models. In International Conference on Learning Representations (ICLR).",
+    "Yao Lu, Max Bartolo, Alastair Moore, Sebastian Riedel, and Pontus Stenetorp. 2022. Fantastically or- dered prompts and where to find them: Overcoming few-shot prompt order sensitivity. In Association for Computational Linguistics (ACL).",
+    "Andrew Maas, Raymond E Daly, Peter T Pham, Dan Huang, Andrew Y Ng, and Christopher Potts. 2011. Learning word vectors for sentiment analysis. In Association for Computational Linguistics: Human Language Technologies (ACL-HLT).",
+    "R Thomas McCoy, Robert Frank, and Tal Linzen. 2018. Revisiting the poverty of the stimulus: Hierarchical generalization without a hierarchical bias in recur- rent neural networks. In CogSci.",
+    "R. Thomas McCoy, Robert Frank, and Tal Linzen. 2020. Does Syntax Need to Grow on Trees? Sources of Hierarchical Inductive Bias in Sequence- to-Sequence Networks. Transactions of the Associa- tion for Computational Linguistics, 8:125–140.",
+    "R. Thomas McCoy, Ellie Pavlick, and Tal Linzen. 2019. Right for the wrong reasons: Diagnosing syntactic heuristics in natural language inference. In Associa- tion for Computational Linguistics (ACL).",
+    "Sewon Min, Xinxi Lyu, Ari Holtzman, Mikel Artetxe, Mike Lewis, Hannaneh Hajishirzi, and Luke Zettle- moyer. 2022. Rethinking the role of demonstrations: What makes in-context learning work? In Empirical Methods in Natural Language Processing (EMNLP).",
+    "Swaroop Mishra, Daniel Khashabi, Chitta Baral, and Hannaneh Hajishirzi. 2021. Natural instructions: Benchmarking generalization to new tasks from nat- ural language instructions. ArXiv, abs/2104.08773.",
+    "Aaron Mueller, Robert Frank, Tal Linzen, Luheng Wang, and Sebastian Schuster. 2022. Coloring the blank slate: Pre-training imparts a hierarchical in- ductive bias to sequence-to-sequence models. In Findings of Association for Computational Linguis- tics (ACL).",
+    "Long Ouyang, Jeff Wu, Xu Jiang, Diogo Almeida, Carroll L. Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, John Schulman, Jacob Hilton, Fraser Kelton, Luke E. Miller, Maddie Simens, Amanda Askell, Peter Welinder, Paul Francis Christiano, Jan Leike, and Ryan J. Lowe. 2022. Training language models to follow instructions with human feedback. ArXiv, abs/2203.02155.",
+    "Jane Pan, Tianyu Gao, Howard Chen, and Danqi Chen. 2023. What in-context learning 'learns' in-context: Disentangling task recognition and task learning. In Findings of Association for Computational Linguis- tics (ACL).",
+    "Pouya Pezeshkpour, Sarthak Jain, Sameer Singh, and Byron C. Wallace. 2022. Combining feature and in- stance attribution to detect artifacts. In Findings of Association for Computational Linguistics (ACL).",
+    "Adam Poliak, Jason Naradowsky, Aparajita Haldar, Rachel Rudinger, and Benjamin Van Durme. 2018. Hypothesis only baselines in natural language infer- ence. North American Chapter of the Association for Computational Linguistics: Human Language Technologies (NAACL-HLT).",
+    "Shiori Sagawa, Aditi Raghunathan, Pang Wei Koh, and Percy Liang. 2020. An investigation of why over- parameterization exacerbates spurious correlations. In International Conference on Machine Learning, pages 8346-8356. PMLR.",
+    "Nikunj Saunshi, Sadhika Malladi, and Sanjeev Arora. 2021. A mathematical exploration of why language models help solve downstream tasks. In Interna- tional Conference on Learning Representations.",
+    "Teven Le Scao, Angela Fan, Christopher Akiki, El- lie Pavlick, Suzana Ilić, Daniel Hesslow, Ro- man Castagné, Alexandra Sasha Luccioni, François Yvon, Matthias Gallé, et al. 2022. BLOOM: A 176b- parameter open-access multilingual language model. arXiv preprint arXiv:2211.05100.",
+    "Weijia Shi, Julian Michael, Suchin Gururangan, and Luke Zettlemoyer. 2022. KNN-Prompt: Nearest neighbor zero-shot inference. In Empirical Methods in Natural Language Processing (EMNLP).",
+    "Kazutoshi Shinoda, Saku Sugawara, and Akiko Aizawa. 2022. Which shortcut solution do ques- tion answering models prefer to learn? ArXiv, abs/2211.16220.",
+    "Chenglei Si, Zhe Gan, Zhengyuan Yang, Shuohang Wang, Jianfeng Wang, Jordan L. Boyd-Graber, and Lijuan Wang. 2023. Prompting GPT-3 to be reliable. In International Conference on Learning Represen- tations (ICLR).",
+    "Alex Tamkin, Kunal Handa, Avash Shrestha, and Noah Goodman. 2023. Task ambiguity in humans and language models. In International Conference on Learning Representations (ICLR).",
+    "Lifu Tu, Garima Lalwani, Spandana Gella, and He He. 2020. An empirical study on robustness to spuri- ous correlations using pre-trained language models. Transactions of the Association for Computational Linguistics, 8:621-633.",
+    "Elena Voita and Ivan Titov. 2020. Information- theoretic probing with minimum description length. In Empirical Methods in Natural Language Process- ing (EMNLP).",
+    "Johannes von Oswald, Eyvind Niklasson, Ettore Ran- dazzo, João Sacramento, Alexander Mordvintsev, Andrey Zhmoginov, and Max Vladymyrov. 2022. Transformers learn in-context by gradient descent. arXiv preprint arXiv:2212.07677.",
+    "Yizhong Wang, Swaroop Mishra, Pegah Alipoor- molabashi, Yeganeh Kordi, Amirreza Mirzaei, Anjana Arunkumar, Arjun Ashok, Arut Selvan Dhanasekaran, Atharva Naik, David Stap, Eshaan Pathak, Giannis Karamanolakis, Haizhi Gary Lai, Ishan Purohit, Ishani Mondal, Jacob Anderson, Kirby Kuznia, Krima Doshi, Maitreya Patel, Kun- tal Kumar Pal, M. Moradshahi, Mihir Parmar, Mirali Purohit, Neeraj Varshney, Phani Rohitha Kaza, Pulkit Verma, Ravsehaj Singh Puri, Rushang Karia, Shailaja Keyur Sampat, Savan Doshi, Sid- dharth Deepak Mishra, Sujan Reddy, Sumanta Pa- tro, Tanay Dixit, Xudong Shen, Chitta Baral, Yejin Choi, Noah A. Smith, Hanna Hajishirzi, and Daniel Khashabi. 2022. Super-naturalinstructions: Gener- alization via declarative instructions on 1600+ NLP tasks. In Empirical Methods in Natural Language Processing (EMNLP).",
+    "Alex Warstadt and Samuel R. Bowman. 2020. Can neural networks acquire a structural bias from raw linguistic data? In CogSci.",
+    "Alex Warstadt, Yian Zhang, Xiaocheng Li, Haokun Liu, and Samuel Bowman. 2020. Learning which features matter: RoBERTa acquires a preference for linguistic generalizations (eventually). In Empirical Methods in Natural Language Processing (EMNLP), pages 217-235.",
+    "Albert Webson and Ellie Pavlick. 2022. Do prompt- based models really understand the meaning of their prompts? In North American Chapter of the Associ- ation for Computational Linguistics (NAACL).",
+    "Colin Wei, Sang Michael Xie, and Tengyu Ma. 2021. Why do pretrained language models help in down- stream tasks? An analysis of head and prompt tun- ing. Advances in Neural Information Processing Systems (NeurIPS).",
+    "Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Ed Huai hsin Chi, Quoc Le, and Denny Zhou. 2022. Chain of thought prompting elicits rea- soning in large language models. In Advances in Neural Information Processing Systems (NeurIPS).",
+    "Jerry W. Wei, Jason Wei, Yi Tay, Dustin Tran, Al- bert Webson, Yifeng Lu, Xinyun Chen, Hanxiao Liu, Da Huang, Denny Zhou, and Tengyu Ma. 2023. Larger language models do in-context learning dif- ferently. ArXiv, abs/2303.03846.",
+    "Adina Williams, Nikita Nangia, and Samuel Bowman. 2018. A broad-coverage challenge corpus for sen- tence understanding through inference. In North American Chapter of the Association for Computa- tional Linguistics: Human Language Technologies (NAACL-HLT).",
+    "Sang Michael Xie, Aditi Raghunathan, Percy Liang, and Tengyu Ma. 2022. An explanation of in-context learning as implicit bayesian inference. In Inter- national Conference on Learning Representations (ICLR).",
+    "Xi Ye and Greg Durrett. 2022. The unreliability of ex- planations in few-shot prompting for textual reason- ing. In Advances in Neural Information Processing Systems (NeurIPS).",
+    "Susan Zhang, Stephen Roller, Naman Goyal, Mikel Artetxe, Moya Chen, Shuohui Chen, Christopher De- wan, Mona Diab, Xian Li, Xi Victoria Lin, Todor Mi- haylov, Myle Ott, Sam Shleifer, Kurt Shuster, Daniel Simig, Punit Singh Koura, Anjali Sridhar, Tianlu Wang, and Luke Zettlemoyer. 2022. OPT: Open pre-trained transformer language models. ArXiv, abs/2205.01068.",
+    "Tianyi Zhang and Tatsunori B Hashimoto. 2021. On the inductive bias of masked language modeling: From statistical to syntactic dependencies. In North American Chapter of the Association for Computa- tional Linguistics: Human Language Technologies (NAACL-HLT).",
+    "Zihao Zhao, Eric Wallace, Shi Feng, Dan Klein, and Sameer Singh. 2021. Calibrate before use: Im- proving few-shot performance of language models. In International Conference on Machine Learning (ICML)."
+  ]
+}

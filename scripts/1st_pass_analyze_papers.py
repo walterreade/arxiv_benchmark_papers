@@ -21,6 +21,8 @@ from shared import (
     load_failed_files, save_json,
 )
 
+DEFAULT_MODEL = "gemini-3-flash-preview"
+
 def get_page_count(pdf_path: str) -> int:
     """Get the total number of pages in the PDF."""
     try:
@@ -205,7 +207,7 @@ def main():
     parser.add_argument("--failures", default="csv/1st_pass_failures.csv", help="CSV file to track failed files")
     parser.add_argument("--rpm", type=int, default=15, help="Requests per minute (API rate limit). Default 15.")
     parser.add_argument("--workers", type=int, default=8, help="Number of worker threads. Default 8.")
-    parser.add_argument("--model", default="gemini-3-flash-preview", help="Gemini model name.")
+    parser.add_argument("--model", default=DEFAULT_MODEL, help="Gemini model name.")
     parser.add_argument("--max-errors", type=int, default=5, help="Max resource exhausted errors before exit. Default 5.")
     
     args = parser.parse_args()

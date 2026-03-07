@@ -1,0 +1,75 @@
+{
+  "filename": "2603.02370.pdf",
+  "title": "Cultural Counterfactuals: Evaluating Cultural Biases in Large Vision-Language Models with Counterfactual Examples",
+  "arxiv_url": "https://arxiv.org/pdf/2603.02370",
+  "measurement_description": "The paper measured cultural biases related to religion in Large Vision-Language Models (LVLMs) using counterfactual images. Specific measurements included:\n- Discrepancies in LVLM outputs attributable to cultural context differences, ideally not varying significantly based on image context.\n- Model refusals and toxicity (MaxToxicity metric) influenced by different religious contexts.\n- Stereotype detection in religious contexts, particularly for negative prompts like 'Arrest' and 'Bad Influence'.\n- Influence of religious contexts on numerical outputs (e.g., suggested salaries and rents).\n- Topic analysis of narrative text generated in religious contexts to identify potential stereotypes.\n- Lexicon-based keyword scores (SCM and VAD dimensions) to quantify semantic shifts in language used to describe individuals in different religious contexts.\n- Intersectional bias, analyzing how racial attributes interact with religious contexts to reinforce stereotypes.",
+  "religious_groups": [
+    "Christian",
+    "Muslim",
+    "Jewish",
+    "Shinto",
+    "Hindu",
+    "Buddhist"
+  ],
+  "models_tested": [
+    "Qwen2.5-VL-7B-Instruct",
+    "Gemma-3-12b-it",
+    "InternVL3-8B",
+    "LLaVA-v1.6-Mistral-7B",
+    "Molmo-7B-D-0924"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "SB-Bench",
+    "VLBiasBench",
+    "Socialcounterfactuals"
+  ],
+  "continuous_testing": false,
+  "findings": "LVLMs are significantly influenced by the depicted religious context, revealing underlying cultural biases. For the Classification prompt, Llava and Gemma models showed increased refusal rates (60-80%) when the background depicted a mosque, suggesting safety guardrail activation. For negative prompts like 'Arrest' and 'Bad Influence', Molmo-7B produced the highest toxicity values. Known stereotypes were elicited: 'charges of historical child sexual abuse' were more frequent for Christian church contexts, while 'charges of being potential terrorist' and topics like 'manufacturing weapons of mass destruction' and 'religious violence' were more frequent for Mosque contexts. Intersectional analysis showed that for the 'manufacturing weapons of mass destruction' topic assigned to Mosque images, 45.9% of the individuals depicted were Middle Eastern. Salary deviations by religious contexts were inconsistent across models. Religion yielded substantially more significant keyword associations than nationality or socioeconomic status, indicating broader differential language patterns along the religious dimension, although no single religious background consistently dominated affective extremes.",
+  "references": [
+    "Alamayreh, O., Dimitri, G. M., Wang, J., Tondi, B., and Barni, M. Which country is this picture from? new data and methods for dnn-based country recognition. arXiv preprint arXiv:2209.02429, 2022.",
+    "Benjamin, J. D., de la Torre, C., and Musumeci, J. Controlling the incentive problems in real estate leasing. The Journal of Real Estate Finance and Economics, 10(2): 177-191, 1995.",
+    "Black Forest Labs. Flux. https://github.com/ black-forest-labs/flux, 2024.",
+    "Black Forest Labs, Batifol, S., Blattmann, A., Boesel, F., Consul, S., Diagne, C., Dockhorn, T., English, J., English, Z., Esser, P., Kulal, S., Lacey, K., Levi, Y., Li, C., Lorenz, D., Müller, J., Podell, D., Rombach, R., Saini, H., Sauer, A., and Smith, L. Flux.1 kontext: Flow matching for in- context image generation and editing in latent space, 2025. URL https://arxiv.org/abs/2506.15742.",
+    "Blodgett, S. L., Barocas, S., Daumé III, H., and Wallach, H. Language (technology) is power: A critical survey of \"bias\" in NLP. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pp. 5454-5476, 2020.",
+    "Brooks, T., Holynski, A., and Efros, A. A. Instructpix2pix: Learning to follow image editing instructions. arXiv preprint arXiv:2211.09800, 2022.",
+    "Cahyawijaya, S., Lovenia, H., Moniz, J. R. A., Wong, T. H., Farhansyah, M. R., Maung, T. T., Hudi, F., Anugraha, D., Habibi, M. R. S., Qorib, M. R., Agarwal, A., Im- perial, J. M., Patel, H. L., Feliren, V., Nasution, B. I., Rufino, M. A., Winata, G. I., Rajagede, R. A., Catalan, C. R., Imam, M. F. M., Pattnayak, P., Pranida, S. Z., Pratama, K., Bangera, Y., Na-Thalang, A., Monderin, P. N., Song, Y., Simon, C., Ng, L. H. X., Sapan, R. L., Rafi, T. H., Wang, B., Supryadi, Veerakanjana, K., It- tichaiwong, P., Roque, M. T., Vincentio, K., Kreangphet, T., Artkaew, P., Palgunadi, K. H., Yu, Y., Hastuti, R. P., Nixon, W., Bangera, M., Lim, A. X. W., Khine, A. H., Zhafran, H. M., Ferdinan, T., Izzani, A. A., Singh, A., Evan, E., Krito, J. A., Anugraha, M., Ilasariya, F. A., Li, H., Daniswara, J. A., Tjiaranata, F. A., Yulianrifat, E. P., Udomcharoenchaikit, C., Ansori, F. R., Ihsani, M. K., Nguyen, G., Barik, A. M., Velasco, D. J., Genadi, R. A., Saha, S., Wei, C., Flores, I. E. W., Han, K. C. K., Santos, A. G. D., Lim, W. S., Phyo, K. S., Santos, T., Dwias- tuti, M., Luo, J., Cruz, J. C. B., Hee, M. S., Hanif, I. A., Hakim, M. A., Sya’ban, M. R., Kerdthaisong, K., Mi- randa, L. J. V., Koto, F., Fatyanosa, T. N., Aji, A. F., Rosal, J. J., Kevin, J., Wijaya, R., Kampman, O. P., Zhang, R., Karlsson, B. F., and Limkonchotiwat, P. Crowdsource, crawl, or generate? creating SEA-VL, a multicultural vision-language dataset for Southeast Asia. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 18685–18717, Vienna, Austria, July 2025. Association for Computational Linguistics. ISBN 979-8-89176-251- 0. doi: 10.18653/v1/2025.acl-long.916. URL https: //aclanthology.org/2025.acl-long.916/.",
+    "Choi, J., Kim, M., Hong, Y., and Kim, B. A stereotype content analysis on color-related social bias in large vi- sion language models. arXiv preprint arXiv:2505.20901, 2025.",
+    "Fiske, S. T., Cuddy, A. J. C., Glick, P., and Xu, J. A model of (often mixed) stereotype content: Competence and warmth respectively follow from perceived status and competition. Journal of Personality and Social Psychol- ogy, 82(6):878–902, 2002.",
+    "Fraser, K. C. and Kiritchenko, S. Examining gender and racial bias in large vision-language models using a novel dataset of parallel images. In Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 690-713, 2024.",
+    "Gaviria Rojas, W., Diamos, S., Kini, K., Kanter, D., Janapa Reddi, V., and Coleman, C. The dollar street dataset: Images representing the geographic and socioe- conomic diversity of the world. Advances in Neural Information Processing Systems, 35:12979–12990, 2022.",
+    "Girrbach, L., Alaniz, S., Huang, Y., Darrell, T., and Akata, Z. Revealing and reducing gender biases in vision and lan- guage assistants (VLAs). In The Thirteenth International Conference on Learning Representations, 2025.",
+    "Grootendorst, M. Bertopic: Neural topic modeling with a class-based tf-idf procedure. arXiv preprint arXiv:2203.05794, 2022.",
+    "Hall, S. M., Abrantes, F. G., Zhu, H., Sodunke, G., Sht- edritski, A., and Kirk, H. R. VisoGender: A dataset for benchmarking gender bias in image-text pronoun resolu- tion. In Thirty-seventh Conference on Neural Informa- tion Processing Systems Datasets and Benchmarks Track, 2023. URL https://openreview.net/forum? id=BNwsJ4bFsc.",
+    "Hausladen, C. I., Knott, M., Camerer, C. F., and Perona, P. Social perception of faces in a vision-language model. In Proceedings of the 2025 ACM Conference on Fairness, Accountability, and Transparency, pp. 639–659, 2025.",
+    "Howard, P., Madasu, A., Le, T., Moreno, G. L., Bhiwandi- walla, A., and Lal, V. Socialcounterfactuals: Probing and mitigating intersectional social biases in vision-language models with counterfactual examples. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 11975–11985, 2024.",
+    "Howard, P., Fraser, K. C., Bhiwandiwalla, A., and Kir- itchenko, S. Uncovering bias in large vision-language models at scale with counterfactuals. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pp. 5946-5991, 2025.",
+    "Janghorbani, S. and De Melo, G. Multi-modal bias: Intro- ducing a framework for stereotypical bias assessment be- yond gender and race in vision-language models. In Pro- ceedings of the 17th Conference of the European Chap- ter of the Association for Computational Linguistics, pp. 1725-1735, 2023.",
+    "Lees, A., Tran, V. Q., Tay, Y., Sorensen, J., Gupta, J., Met- zler, D., and Vasserman, L. A new generation of perspec- tive api: Efficient multilingual character-level transform- ers. In Proceedings of the 28th ACM SIGKDD conference on knowledge discovery and data mining, pp. 3197–3207, 2022.",
+    "Mohammad, S. M. Obtaining reliable human ratings of va- lence, arousal, and dominance for 20,000 english words. In Proceedings of The Annual Conference of the Associ- ation for Computational Linguistics (ACL), Melbourne, Australia, 2018.",
+    "Mohammad, S. M. NRC VAD Lexicon v2: Norms for Valence, Arousal, and Dominance for over 55k English Terms. arXiv preprint arXiv:2503.23547, 2025. URL https://arxiv.org/abs/2503.23547.",
+    "Monroe, B. L., Colaresi, M. P., and Quinn, K. M. Fightin' words: Lexical feature selection and evaluation for identi- fying the content of political conflict. Political Analysis, 16(4):372-403, 2008.",
+    "Narayanan, A., Khazaie, V. R., and Raza, S. Bias in the picture: Benchmarking VLMs with social-cue news im- ages and LLM-as-judge assessment. In NeurIPS 2025 Workshop on Evaluating the Evolving LLM Lifecycle: Benchmarks, Emergent Abilities, and Scaling, 2025.",
+    "Narnaware, V., Vayani, A., Gupta, R., Swetha, S., and Shah, M. SB-Bench: Stereotype bias benchmark for large mul- timodal models. arXiv preprint arXiv:2502.08779, 2025.",
+    "Navigli, R., Conia, S., and Ross, B. Biases in large language models: origins, inventory, and discussion. ACM Journal of Data and Information Quality, 15(2):1–21, 2023.",
+    "Nicolas, G., Bai, X., and Fiske, S. T. Comprehensive stereo- type content dictionaries using a semi-automated method. European Journal of Social Psychology, 51(1):178–196, 2021.",
+    "Pawar, S., Park, J., Jin, J., Arora, A., Myung, J., Yadav, S., Haznitrama, F. G., Song, I., Oh, A., and Augenstein, I. Survey of cultural awareness in language models: Text and beyond. Computational Linguistics, pp. 1–96, 2025.",
+    "Radford, A., Kim, J. W., Hallacy, C., Ramesh, A., Goh, G., Agarwal, S., Sastry, G., Askell, A., Mishkin, P., Clark, J., et al. Learning transferable visual models from natural language supervision. In International conference on machine learning, pp. 8748–8763. PmLR, 2021.",
+    "Ramzi, E., Audebert, N., Rambour, C., Araujo, A., Bitot, X., and Thome, N. Optimization of Rank Losses for Image Retrieval. In In submission to: IEEE Transactions on Pattern Analysis and Machine Intelligence, 2023.",
+    "Reimers, N. and Gurevych, I. Sentence-bert: Sentence em- beddings using siamese bert-networks. In Proceedings of the 2019 Conference on Empirical Methods in Natu- ral Language Processing. Association for Computational Linguistics, 11 2019. URL https://arxiv.org/ abs/1908.10084.",
+    "Ruggeri, G., Nozza, D., et al. A multi-dimensional study on bias in vision-language models. In Findings of the Association for Computational Linguistics: ACL 2023. Association for Computational Linguistics, 2023.",
+    "Wang, S., Cao, X., Zhang, J., Yuan, Z., Shan, S., Chen, X., and Gao, W. VLBiasBench: A comprehensive benchmark for evaluating bias in large vision-language model. arXiv preprint arXiv:2406.14194, 2024.",
+    "Weyand, T., Araujo, A., Cao, B., and Sim, J. Google Landmarks Dataset v2 - A Large-Scale Benchmark for Instance-Level Recognition and Retrieval. In Proc. CVPR, 2020.",
+    "Wu, X., Wang, Y., Wu, H.-T., Tao, Z., and Fang, Y. Evalu- ating fairness in large vision-language models across di- verse demographic attributes and prompts. arXiv preprint arXiv:2406.17974, 2024.",
+    "Xiao, Y., Liu, X., Cheng, Q., Yin, Z., Liang, S., Li, J., Shao, J., Liu, A., and Tao, D. GenderBias-VL: Benchmarking gender bias in vision language models via counterfactual probing. International Journal of Computer Vision, 133 (12):8332-8355, 2025.",
+    "Zheng, P., Gao, D., Fan, D.-P., Liu, L., Laaksonen, J., Ouyang, W., and Sebe, N. Bilateral reference for high- resolution dichotomous image segmentation. CAAI Artifi- cial Intelligence Research, 2024.",
+    "Zhou, K., Lai, E., and Jiang, J. VLStereoSet: A study of stereotypical bias in pre-trained vision-language mod- els. In Proceedings of the 2nd Conference of the Asia- Pacific Chapter of the Association for Computational Linguistics and the 12th International Joint Conference on Natural Language Processing (Volume 1: Long Pa- pers), pp. 527–538, Online only, November 2022. Asso- ciation for Computational Linguistics. doi: 10.18653/v1/ 2022.aacl-main.40. URL https://aclanthology. org/2022.aacl-main.40/."
+  ]
+}

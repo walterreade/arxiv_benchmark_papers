@@ -19,6 +19,8 @@ from shared import (
     load_failed_files, save_json,
 )
 
+DEFAULT_MODEL = "gemini-3-pro-preview"
+
 def analyze_paper_deep_dive(pdf_path: str, api_key: str, model_name: str, 
                             rate_limiter: RateLimiter, error_tracker: ErrorTracker,
                             max_retries: int = 3) -> dict:
@@ -221,7 +223,7 @@ def main():
     parser.add_argument("--reprocess", action="store_true", help="Re-analyze all files, ignoring existing results")
     parser.add_argument("--rpm", type=int, default=50, help="Requests per minute (API rate limit).")
     parser.add_argument("--workers", type=int, default=10, help="Number of worker threads.")
-    parser.add_argument("--model", default="gemini-2-pro-preview", help="Gemini model name.")
+    parser.add_argument("--model", default=DEFAULT_MODEL, help="Gemini model name.")
     parser.add_argument("--max-errors", type=int, default=1, help="Max resource exhausted errors before exit.")
     
     args = parser.parse_args()

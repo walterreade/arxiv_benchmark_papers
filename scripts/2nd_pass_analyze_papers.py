@@ -30,6 +30,8 @@ from shared import (
     load_failed_files, save_json,
 )
 
+DEFAULT_MODEL = "gemini-3-pro-preview"
+
 PROMPT = """
 Analyze this academic paper and identify what types of bias are being measured or evaluated.
 
@@ -189,7 +191,7 @@ def main():
     parser.add_argument("--reprocess", action="store_true", help="Re-analyze all files, ignoring existing results")
     parser.add_argument("--rpm", type=int, default=20, help="Requests per minute (API rate limit).")
     parser.add_argument("--workers", type=int, default=10, help="Number of worker threads.")
-    parser.add_argument("--model", default="gemini-3-pro-preview", help="Gemini model name.")
+    parser.add_argument("--model", default=DEFAULT_MODEL, help="Gemini model name.")
     parser.add_argument("--max-errors", type=int, default=1, help="Max resource exhausted errors before exit.")
 
     args = parser.parse_args()
