@@ -17,6 +17,8 @@ from pathlib import Path
 
 from shared import genai, load_csv_metadata
 
+DEFAULT_MODEL = "gemini-3-pro-preview"
+
 
 def load_analysis_files(analysis_dir: str) -> dict:
     """Load all analysis markdown files."""
@@ -289,7 +291,7 @@ def main():
     parser.add_argument("--pdf-dir", default="pdf", help="Directory containing original PDFs")
     parser.add_argument("--output", default="analysis/talk_facts.md", help="Output file")
     parser.add_argument("--format", choices=['markdown', 'json'], default='markdown', help="Output format")
-    parser.add_argument("--model", default="gemini-3-pro-preview", help="Model for fact extraction")
+    parser.add_argument("--model", default=DEFAULT_MODEL, help="Model for fact extraction")
     parser.add_argument("--months", type=int, default=24, help="Only include papers from last N months")
     parser.add_argument("--no-verify", action="store_true", help="Skip PDF verification step")
     
