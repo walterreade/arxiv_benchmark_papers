@@ -6,6 +6,14 @@
 PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$PROJECT_DIR"
 
+# --- Parse flags ---
+FULL_ANALYSIS=false
+for arg in "$@"; do
+    case $arg in
+        --full) FULL_ANALYSIS=true ;;
+    esac
+done
+
 # --- State tracking ---
 # Use persistent files instead of mktemp so state survives crashes.
 STATE_DIR="utility_files"
@@ -103,9 +111,18 @@ OUTPUT_FILE="analysis/daily_updates/update_${TIMESTAMP}.md"
 
 if echo "$NEW_PAPERS" | xargs uv run python scripts/generate_daily_update.py --output "$OUTPUT_FILE" --json-files; then
     if [ -f "$OUTPUT_FILE" ]; then
-        # --- Stage 7: Upload and commit ---
+        # --- Stage 7: Full analysis (optional) ---
+        if [ "$FULL_ANALYSIS" = true ]; then
+            echo ""
+            echo "Stage 7: Generating full analysis and talk facts..."
+            echo "----------------------------------------"
+            uv run python scripts/generate_full_analysis.py || echo "WARNING: Full analysis generation failed."
+            uv run python scripts/generate_talk_facts.py || echo "WARNING: Talk facts generation failed."
+        fi
+
+        # --- Stage 8: Upload and commit ---
         echo ""
-        echo "Stage 7: Uploading PDFs and committing changes..."
+        echo "Stage 8: Uploading PDFs and committing changes..."
         echo "----------------------------------------"
 
         # Copy new pdf files to GCS (skip existing with -n)
