@@ -265,7 +265,7 @@ def download_pdf(arxiv_id: str, output_dir: str) -> bool:
         response.raise_for_status()
 
         if len(response.content) < 1000:
-            print(f"✗ Error: Downloaded file too small ({len(response.content)} bytes)")
+            print(f"X Error: Downloaded file too small ({len(response.content)} bytes)")
             return False
 
         with open(output_path, 'wb') as f:
@@ -275,7 +275,7 @@ def download_pdf(arxiv_id: str, output_dir: str) -> bool:
         return True
 
     except requests.RequestException as e:
-        print(f"✗ Error: {e}")
+        print(f"X Error: {e}")
         return False
 
 

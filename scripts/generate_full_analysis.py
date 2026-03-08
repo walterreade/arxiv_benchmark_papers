@@ -687,7 +687,7 @@ def main():
         print(f"Error: Directory {json_dir} not found.")
         return
     
-    # Build restricted paper ID set from 1st pass JSONs (matching full_pipeline_analysis.py)
+    # Build restricted paper ID set from 1st pass JSONs
     restricted_paper_ids = set()
     for filepath in glob.glob(os.path.join(first_pass_dir, "*.json")):
         try:
@@ -817,9 +817,7 @@ def main():
     # Papers primarily measuring religious bias
     religious_primary_info = []
     for paper in papers_with_religious_primary:
-        paper_id = paper.get('filename', '').replace('.pdf', '')
-        if not paper_id:
-            paper_id = paper.get('_filename', '').replace('.pdf', '')
+        paper_id = paper.get('_filename', '').replace('.pdf', '')
         title = paper.get('title', 'Unknown Title')
         url = f"https://arxiv.org/pdf/{paper_id}"
         religious_primary_info.append((paper_id, title, url))
@@ -882,10 +880,10 @@ def main():
     
     print(f"Summary saved to {output_file}")
     
-    # Generate benchmark learnings
+    # Generate paper summaries
     generate_paper_summaries(data, csv_metadata, learnings_file)
     
-    # Generate benchmark summary using LLM
+    # Generate research summary using LLM
     generate_research_summary(learnings_file, summary_file, summary_model)
     
     # Generate LLM Bias Statistics report (all papers, not just religious)

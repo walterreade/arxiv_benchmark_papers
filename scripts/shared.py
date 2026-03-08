@@ -13,8 +13,6 @@ import csv
 import json
 import time
 import threading
-from pathlib import Path
-from typing import Set
 
 from dotenv import load_dotenv
 
@@ -64,7 +62,7 @@ class ErrorTracker:
     def record_resource_exhausted(self):
         with self.lock:
             self.error_count += 1
-            if self.error_count > self.max_errors:
+            if self.error_count >= self.max_errors:
                 self.should_exit.set()
                 return True
         return False
@@ -128,7 +126,7 @@ def load_csv_metadata(csv_file: str) -> dict:
     return metadata
 
 
-def load_failed_files(failures_csv: str) -> Set[str]:
+def load_failed_files(failures_csv: str) -> set[str]:
     """Load filenames that previously failed with non-retryable errors."""
     if not os.path.exists(failures_csv):
         return set()

@@ -19,7 +19,6 @@ import glob
 import json
 import os
 import subprocess
-import sys
 from pathlib import Path
 
 # Religious bias keywords (mirrored from 4_extract_paper_details.py)
@@ -34,7 +33,7 @@ _RELIGIOUS_KEYWORDS = [
 def _has_religious_bias(second_pass_data: dict) -> bool:
     """Check whether any bias_targets or primary_bias_target mention religious bias."""
     targets = second_pass_data.get('bias_targets', [])
-    texts = [t.get('target', '') for t in targets]
+    texts = [t.get('target', '') if isinstance(t, dict) else str(t) for t in targets]
     texts.append(second_pass_data.get('primary_bias_target', ''))
 
     for text in texts:
@@ -170,13 +169,13 @@ def run_pipeline_step(command: list[str], description: str) -> bool:
             print(f"\n  OK: {description} completed successfully.")
             return True
         else:
-            print(f"\n  ❌ {description} exited with code {result.returncode}.")
+            print(f"\n  ERROR: {description} exited with code {result.returncode}.")
             return False
     except KeyboardInterrupt:
         print(f"\n  WARNING: {description} interrupted by user.")
         return False
     except Exception as e:
-        print(f"\n  ❌ Failed to run {description}: {e}")
+        print(f"\n  ERROR: Failed to run {description}: {e}")
         return False
 
 

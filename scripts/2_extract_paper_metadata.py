@@ -8,7 +8,7 @@ import random
 import sys
 import threading
 from pathlib import Path
-from typing import Optional, Set
+from typing import Optional
 from tqdm import tqdm
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
@@ -134,7 +134,7 @@ def analyze_content(pdf_path: str, api_key: str, rate_limiter: RateLimiter, mode
         # Notify other threads a slot may be available
         rate_limiter.release_slot()
 
-def load_processed_files(output_csv: str) -> Set[str]:
+def load_processed_files(output_csv: str) -> set[str]:
     """Load the set of already processed filenames."""
     if not os.path.exists(output_csv):
         return set()

@@ -6,7 +6,6 @@ Filters for recency to avoid presenting outdated information.
 """
 
 import os
-import csv
 import json
 import glob
 import argparse
@@ -286,7 +285,7 @@ def format_output(facts: list[dict], output_format: str = 'markdown') -> str:
 
 def main():
     parser = argparse.ArgumentParser(description="Extract impactful facts about religious bias in LLMs.")
-    parser.add_argument("--analysis-dir", default="analysis", help="Directory containing analysis markdown files")
+    parser.add_argument("--analysis-dir", default="reports", help="Directory containing analysis markdown files")
     parser.add_argument("--json-dir", default="json/4_religious_bias_analysis", help="Directory containing JSON analysis files")
     parser.add_argument("--csv", default="utility_files/1st_pass_results.csv", help="CSV file with paper metadata")
     parser.add_argument("--pdf-dir", default="pdf", help="Directory containing original PDFs")
