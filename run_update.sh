@@ -86,7 +86,7 @@ else
     NEW_PAPERS=""
 fi
 
-if [ -z "$NEW_PAPERS" ]; then
+if [ -z "$NEW_PAPERS" ] && [ "$FULL_ANALYSIS" != true ]; then
     echo "No new papers were analyzed in 2nd pass."
     # Clean up snapshot since pipeline completed successfully
     rm -f "$SNAPSHOT_FILE"
@@ -95,6 +95,11 @@ if [ -z "$NEW_PAPERS" ]; then
     echo "Pipeline Complete (no updates)"
     echo "========================================"
     exit 0
+fi
+
+if [ -z "$NEW_PAPERS" ] && [ "$FULL_ANALYSIS" = true ]; then
+    echo "No new papers, but --full flag set. Regenerating reports..."
+    echo ""
 fi
 
 NEW_COUNT=$(echo "$NEW_PAPERS" | wc -l | tr -d ' ')
@@ -109,80 +114,72 @@ mkdir -p reports/daily_updates
 TIMESTAMP=$(date +%Y%m%d)
 OUTPUT_FILE="reports/daily_updates/${TIMESTAMP}_daily_update.md"
 
-if echo "$NEW_PAPERS" | xargs uv run python scripts/generate_daily_update.py --output "$OUTPUT_FILE" --json-files; then
-    if [ -f "$OUTPUT_FILE" ]; then
-        # --- Stage 7: Full analysis (optional) ---
-        if [ "$FULL_ANALYSIS" = true ]; then
-            echo ""
-            echo "Stage 7: Generating full analysis and talk facts..."
-            echo "----------------------------------------"
-            uv run python scripts/generate_full_analysis.py || echo "WARNING: Full analysis generation failed."
-            uv run python scripts/generate_talk_facts.py || echo "WARNING: Talk facts generation failed."
-        fi
-
-        # --- Stage 8: Update README with latest daily update link ---
-        echo ""
-        echo "Stage 8: Updating README.md..."
-        echo "----------------------------------------"
-        LATEST_UPDATE=$(ls -1 reports/daily_updates/*_daily_update.md 2>/dev/null | sort | tail -1)
-        if [ -n "$LATEST_UPDATE" ]; then
-            LATEST_BASENAME=$(basename "$LATEST_UPDATE")
-            ENCODED_PATH="reports/daily_updates/${LATEST_BASENAME}"
-            sed -i '' "s|\[Latest Daily Update\](reports/daily_updates/[^)]*)|[Latest Daily Update](${ENCODED_PATH})|" README.md
-            echo "Updated README to link to: $ENCODED_PATH"
-        fi
-
-        # --- Stage 9: Upload and commit ---
-        echo ""
-        echo "Stage 9: Uploading PDFs and committing changes..."
-        echo "----------------------------------------"
-
-        # Copy new pdf files to GCS (skip existing with -n)
-        if gcloud storage cp -r -n pdf gs://inversion; then
-            echo "GCS upload complete."
+if [ -n "$NEW_PAPERS" ]; then
+    if echo "$NEW_PAPERS" | xargs uv run python scripts/generate_daily_update.py --output "$OUTPUT_FILE" --json-files; then
+        if [ -f "$OUTPUT_FILE" ]; then
+            echo "Daily update generated: $OUTPUT_FILE"
         else
-            echo "WARNING: GCS upload failed. Changes will still be committed."
+            echo "No papers passed the religion filter for the daily update."
         fi
-
-        # Commit and push changes to git
-        git add -A
-        if git diff --cached --quiet; then
-            echo "No changes to commit."
-        else
-            git commit -m "Update: ${TIMESTAMP}"
-            git pull --rebase
-            git push
-        fi
-
-        # Clean up snapshot — pipeline completed successfully
-        rm -f "$SNAPSHOT_FILE"
-
-        echo ""
-        echo "========================================"
-        echo "Pipeline Complete!"
-        echo "========================================"
-        echo "New papers analyzed: $NEW_COUNT"
-        echo "Update file: $OUTPUT_FILE"
-        echo "========================================"
     else
-        echo ""
-        echo "========================================"
-        echo "Pipeline Complete (update file not generated)"
-        echo "========================================"
-        echo "New 2nd pass papers: $NEW_COUNT"
-        echo "No papers passed the religion filter for the daily update."
-        # Clean up snapshot — pipeline completed, just no religion papers
-        rm -f "$SNAPSHOT_FILE"
-        echo "========================================"
+        echo "WARNING: Daily update generation failed."
     fi
-else
-    echo ""
-    echo "========================================"
-    echo "Pipeline Complete (no relevant religion papers)"
-    echo "========================================"
-    echo "New 2nd pass papers: $NEW_COUNT"
-    echo "None had major/minor religion component for the daily update."
-    # Clean up snapshot — pipeline completed, just no matching papers
-    rm -f "$SNAPSHOT_FILE"
-    echo "========================================"
 fi
+
+# --- Stage 7: Full analysis (optional) ---
+if [ "$FULL_ANALYSIS" = true ]; then
+    echo ""
+    echo "Stage 7: Generating full analysis and talk facts..."
+    echo "----------------------------------------"
+    uv run python scripts/generate_full_analysis.py || echo "WARNING: Full analysis generation failed."
+    uv run python scripts/generate_talk_facts.py || echo "WARNING: Talk facts generation failed."
+fi
+
+# --- Stage 8: Update README with latest daily update link ---
+echo ""
+echo "Stage 8: Updating README.md..."
+echo "----------------------------------------"
+LATEST_UPDATE=$(ls -1 reports/daily_updates/*_daily_update.md 2>/dev/null | sort | tail -1)
+if [ -n "$LATEST_UPDATE" ]; then
+    LATEST_BASENAME=$(basename "$LATEST_UPDATE")
+    ENCODED_PATH="reports/daily_updates/${LATEST_BASENAME}"
+    sed -i '' "s|\[Latest Daily Update\](reports/daily_updates/[^)]*)|[Latest Daily Update](${ENCODED_PATH})|" README.md
+    echo "Updated README to link to: $ENCODED_PATH"
+fi
+
+# --- Stage 9: Upload and commit ---
+echo ""
+echo "Stage 9: Uploading PDFs and committing changes..."
+echo "----------------------------------------"
+
+# Copy new pdf files to GCS (skip existing with -n)
+if gcloud storage cp -r -n pdf gs://inversion; then
+    echo "GCS upload complete."
+else
+    echo "WARNING: GCS upload failed. Changes will still be committed."
+fi
+
+# Commit and push changes to git
+git add -A
+if git diff --cached --quiet; then
+    echo "No changes to commit."
+else
+    git commit -m "Update: ${TIMESTAMP}"
+    git pull --rebase
+    git push
+fi
+
+# Clean up snapshot — pipeline completed successfully
+rm -f "$SNAPSHOT_FILE"
+
+echo ""
+echo "========================================"
+echo "Pipeline Complete!"
+echo "========================================"
+if [ -n "$NEW_PAPERS" ]; then
+    echo "New papers analyzed: $NEW_COUNT"
+fi
+if [ -f "$OUTPUT_FILE" ]; then
+    echo "Update file: $OUTPUT_FILE"
+fi
+echo "========================================"
