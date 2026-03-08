@@ -300,6 +300,69 @@ Analysis content:
                     print(f"  Fact {i+1}: no PDF found for '{source_hint[:60]}...'" if len(source_hint) > 60 else f"  Fact {i+1}: no PDF found for '{source_hint}'")
                     fact['verified'] = False
     
+    # Resolve source metadata for each fact (title, year, URL)
+    # Build arxiv_id -> metadata lookup
+    id_to_meta = {}
+    for paper in papers:
+        arxiv_id = paper.get('_filename', '').replace('.json', '').replace('.pdf', '')
+        if arxiv_id:
+            id_to_meta[arxiv_id] = {
+                'title': paper.get('title', ''),
+                'year': paper.get('_date', '')[:4] if paper.get('_date', '') else '',
+            }
+    if csv_metadata:
+        for filename, meta in csv_metadata.items():
+            arxiv_id = filename.replace('.pdf', '')
+            if arxiv_id not in id_to_meta:
+                id_to_meta[arxiv_id] = {}
+            if not id_to_meta[arxiv_id].get('title'):
+                id_to_meta[arxiv_id]['title'] = meta.get('title', '')
+            if not id_to_meta[arxiv_id].get('year'):
+                date_str = meta.get('date', '')
+                id_to_meta[arxiv_id]['year'] = date_str[:4] if date_str else ''
+    
+    # Build title -> arxiv_id reverse lookup
+    title_to_id = {}
+    for arxiv_id, meta in id_to_meta.items():
+        t = meta.get('title', '')
+        if t:
+            title_to_id[_normalize_title(t)] = arxiv_id
+    
+    for fact in facts:
+        source_hint = fact.get('source_hint', '')
+        if not source_hint:
+            continue
+        
+        resolved_id = None
+        # Try arXiv ID from source_hint
+        arxiv_match = re.search(r'(\d{4}\.\d{4,5})', source_hint)
+        if arxiv_match:
+            resolved_id = arxiv_match.group(1)
+        else:
+            # Try title match
+            normalized = _normalize_title(source_hint)
+            if normalized in title_to_id:
+                resolved_id = title_to_id[normalized]
+            else:
+                # Fuzzy word-overlap match
+                hint_words = set(normalized.split()) - {'the', 'a', 'an', 'in', 'of', 'for', 'and', 'or', 'to', 'on', 'with', 'by', 'is', 'are', 'from', 'as', 'at'}
+                if len(hint_words) >= 2:
+                    best_score, best_id = 0.0, None
+                    for title, tid in title_to_id.items():
+                        title_words = set(title.split()) - {'the', 'a', 'an', 'in', 'of', 'for', 'and', 'or', 'to', 'on', 'with', 'by', 'is', 'are', 'from', 'as', 'at'}
+                        if title_words:
+                            score = len(hint_words & title_words) / min(len(hint_words), len(title_words))
+                            if score > best_score:
+                                best_score, best_id = score, tid
+                    if best_score >= 0.5:
+                        resolved_id = best_id
+        
+        if resolved_id and resolved_id in id_to_meta:
+            meta = id_to_meta[resolved_id]
+            fact['_resolved_title'] = meta.get('title', source_hint)
+            fact['_resolved_year'] = meta.get('year', '')
+            fact['_resolved_url'] = f"https://arxiv.org/pdf/{resolved_id}"
+    
     return facts
 
 
@@ -311,7 +374,15 @@ def format_output(facts: list[dict], output_format: str = 'markdown') -> str:
     # Markdown format
     lines = ["# Religious Bias Papers - Interesting Findings\n"]
     lines.append(f"*Generated: {datetime.now().strftime('%Y-%m-%d %H:%M')}*\n")
-    lines.append("*Use these facts carefully - verify currency before presenting.*\n\n")
+    lines.append("*You are responsible for verifying these facts if you want to use them.*\n\n")
+    
+    # Usage notes at the top
+    lines.append("## Usage Notes\n")
+    lines.append("- **[LLM Verified]** = Verified against original PDF by LLM")
+    lines.append("- **[Unverified]** = Extracted from analysis, recommend verification")
+    lines.append("- Always check paper dates before citing - field evolves rapidly")
+    lines.append("- Consider contacting original authors for latest findings")
+    lines.append("\n---\n")
     
     # Group by category
     categories = {
@@ -337,22 +408,21 @@ def format_output(facts: list[dict], output_format: str = 'markdown') -> str:
             score = fact.get('impact_score', 3)
             impact = 'High' if score >= 4 else 'Medium' if score >= 2 else 'Low'
             statement = fact.get('verified_statement', fact.get('statement', ''))
-            source = fact.get('source_hint', '')
-            verified = 'Verified' if fact.get('verified', False) else 'Unverified'
+            verified = 'LLM Verified' if fact.get('verified', False) else 'Unverified'
             
             lines.append(f"- **[{verified}]** {statement}")
-            if source:
-                lines.append(f"  - *Source: {source}*")
+            
+            # Format source as hyperlinked title (Year)
+            source_title = fact.get('_resolved_title', '')
+            source_url = fact.get('_resolved_url', '')
+            source_year = fact.get('_resolved_year', '')
+            if source_title and source_url:
+                year_str = f" ({source_year})" if source_year else ""
+                lines.append(f"  - Source: [{source_title}{year_str}]({source_url})")
+            elif fact.get('source_hint', ''):
+                lines.append(f"  - Source: {fact['source_hint']}")
             lines.append(f"  - Impact: {impact}")
             lines.append("")
-    
-    # Add usage notes
-    lines.append("\n---\n")
-    lines.append("## Usage Notes\n")
-    lines.append("- **[Verified]** = Verified against original PDF")
-    lines.append("- **[Unverified]** = Extracted from analysis, recommend verification")
-    lines.append("- Always check paper dates before citing - field evolves rapidly")
-    lines.append("- Consider contacting original authors for latest findings")
     
     return "\n".join(lines)
 
