@@ -406,7 +406,6 @@ def format_output(facts: list[dict], output_format: str = 'markdown') -> str:
         
         for fact in cat_facts:
             score = fact.get('impact_score', 3)
-            impact = 'High' if score >= 4 else 'Medium' if score >= 2 else 'Low'
             statement = fact.get('verified_statement', fact.get('statement', ''))
             verified = 'LLM Verified' if fact.get('verified', False) else 'Unverified'
             
@@ -421,7 +420,6 @@ def format_output(facts: list[dict], output_format: str = 'markdown') -> str:
                 lines.append(f"  - Source: [{source_title}{year_str}]({source_url})")
             elif fact.get('source_hint', ''):
                 lines.append(f"  - Source: {fact['source_hint']}")
-            lines.append(f"  - Impact: {impact}")
             lines.append("")
     
     return "\n".join(lines)
