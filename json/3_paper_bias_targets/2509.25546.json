@@ -1,0 +1,24 @@
+{
+  "filename": "2509.25546.pdf",
+  "title": "Don’t Sweat the Small Stuff: Segment-Level Meta-Evaluation Based on Pairwise Difference Correlation",
+  "arxiv_url": "https://arxiv.org/pdf/2509.25546",
+  "bias_targets": [
+    {
+      "target": "System bias",
+      "methodology": "Injecting artificial noise into all scores of a randomly selected translation system to simulate systematic scoring skew and measuring the meta-evaluation metric's robustness (score degradation)."
+    },
+    {
+      "target": "Segment bias",
+      "methodology": "Injecting random noise into scores associated with specific segments (source texts) to simulate bias based on sentence difficulty or content, and measuring meta-evaluation metric robustness."
+    },
+    {
+      "target": "Fluency bias",
+      "methodology": "Evaluating whether meta-evaluation metrics incorrectly favor \"sentinel\" metrics that score translations based only on the candidate text (ignoring source and reference) compared to accuracy-focused metrics."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Constructing an \"oracle\" metric based on Multidimensional Quality Metrics (MQM) gender mismatch error annotations and calculating how well meta-evaluation metrics correlate with human weighting of these gender errors."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

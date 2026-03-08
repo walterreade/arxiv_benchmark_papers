@@ -1,0 +1,75 @@
+{
+  "filename": "2409.16430.pdf",
+  "title": "A Comprehensive Survey of Bias in LLMs: Current Landscape and Future Directions",
+  "arxiv_url": "https://arxiv.org/pdf/2409.16430",
+  "measurement_description": "This paper is a comprehensive survey reviewing existing literature on bias in Large Language Models. While it covers various forms of bias (gender, racial, age, socioeconomic), it specifically reviews methods for mitigating religious biases. It references the 'Direct Preference Optimization (DPO)' framework, which aims to mitigate gender, racial, and religious biases in LLM-generated English text. It also discusses 'Social Contact Debiasing (SCD)', which measures 13 types of social bias (implied to potentially include religion given the context of social biases) in models like LLaMA 2.",
+  "religious_groups": [
+    "Religious groups (general)"
+  ],
+  "models_tested": [
+    "GPT-3",
+    "GPT-4",
+    "GPT-2",
+    "BERT",
+    "LLaMA 2",
+    "Tulu",
+    "NousHermes",
+    "Llama3-70B"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long",
+    "short",
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Fairness Indicators",
+    "Gender Bias Dataset",
+    "LLM Bias Index (LLMBI)",
+    "LangBiTe"
+  ],
+  "continuous_testing": false,
+  "findings": "The survey highlights that religious bias is a recognized category of social bias in LLMs, alongside gender and racial bias. It notes that techniques like Direct Preference Optimization (DPO) have been shown to effectively reduce religious biases in generated text by favoring less biased completions. Additionally, the Social Contact Debiasing (SCD) technique was found to reduce social biases (a category containing religious bias) in LLaMA 2 by up to 40% after one epoch of tuning.",
+  "references": [
+    "Achiam, J., Adler, S., Agarwal, S., Ahmad, L., Akkaya, I., Aleman, F. L., Almeida, D., Altenschmidt, J., Altman, S., Anadkat, S., Avila, R., Babuschkin, I., Balaji, S., Balcom, V., Baltescu, P., Bao, H., Bavarian, M., Belgum, J., Bello, I., . . . Zoph, B. (2023). GPT-4 Technical Report. ArXiv. /abs/2303.08774",
+    "Agiza, A., Mostagir, M., & Reda, S. (2024). PoliTune: Analyzing the Impact of Data Selection and Fine-Tuning on Economic and Political Biases in Large Language Models. ArXiv. /abs/2404.08699",
+    "An, J., Huang, D., Lin, C., & Tai, M. (2024). Measuring Gender and Racial Biases in Large Language Models. ArXiv. /abs/2403.15281",
+    "Bai, X., Wang, A., Sucholutsky, I., & Griffiths, T. L. (2024). Measuring Implicit Bias in Explicitly Unbiased Large Language Models. ArXiv. /abs/2402.04105",
+    "Barocas, S., & Selbst, A. D. (2016). Big Data's Disparate Impact. California Law Review, 104(3), 671-732.",
+    "Binns, R. (2017). Fairness in Machine Learning: Lessons from Political Philosophy. ArXiv. /abs/1712.03586",
+    "Bolukbasi, T., Chang, K., Zou, J., Saligrama, V., & Kalai, A. (2016). Man is to Computer Programmer as Woman is to Homemaker? Debiasing Word Embeddings. ArXiv. /abs/1607.06520",
+    "Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P., Neelakantan, A., Shyam, P., Sastry, G., Askell, A., Agarwal, S., Krueger, G., Henighan, T., Child, R., Ramesh, A., Ziegler, D. M., Wu, J., Winter, C., Hesse, C., . . . Amodei, D. (2020). Language Models are Few-Shot Learners. ArXiv. /abs/2005.14165",
+    "Caliskan, A., Bryson, J. J., & Narayanan, A. (2016). Semantics derived automatically from language corpora contain human-like biases. ArXiv. https://doi.org/10.1126/science.aal4230",
+    "Cheng, R., Ma, H., & Cao, S. (2024). Deceiving to Enlighten: Coaxing LLMs to Self-Reflection for Enhanced Bias Detection and Mitigation. ArXiv. /abs/2404.10160",
+    "Dastin, J. (2018). Amazon Scraps Secret AI Recruiting Tool That Showed Bias Against Women. Reuters.",
+    "Devlin, J., Chang, M., Lee, K., & Toutanova, K. (2018). BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding. ArXiv. /abs/1810.04805",
+    "Fan, Z., Chen, R., Xu, R., & Liu, Z. (2024). BiasAlert: A Plug-and-play Tool for Social Bias Detection in LLMs. ArXiv. /abs/2407.10241",
+    "Ferrara, E. (2023). Fairness And Bias in Artificial Intelligence: A Brief Survey of Sources, Impacts, And Mitigation Strategies. ArXiv. https://doi.org/10.3390/sci6010003",
+    "Gautam, S., & Srinath, M. (2024). Blind Spots and Biases: Exploring the Role of Annotator Cognitive Biases in NLP. ArXiv. /abs/2404.19071",
+    "Gupta, S., & Ranjan, R. (2024). Evaluation of LLMs Biases Towards Elite Universities: A Persona-Based Exploration. arXiv preprint arXiv:2407.12801.",
+    "Gupta, S., Ranjan, R., & Singh, S. N. (2024). Comprehensive Study on Sentiment Analysis: From Rule-based to modern LLM based system. ArXiv. /abs/2409.09989",
+    "Hochreiter, S., & Schmidhuber, J. (1997). Long Short-Term Memory. Neural Computation, 9(8), 1735-1780.",
+    "Huang, D., Bu, Q., Zhang, J., Xie, X., Chen, J., & Cui, H. (2023). Bias Testing and Mitigation in LLM-based Code Generation. ArXiv. /abs/2309.14345",
+    "Kaneko, M., Bollegala, D., Okazaki, N., & Baldwin, T. (2024). Evaluating Gender Bias in Large Language Models via Chain-of-Thought Prompting. ArXiv. /abs/2401.15585",
+    "Lin, L., Wang, L., Guo, J., & Wong, K. (2024). Investigating Bias in LLM-Based Bias Detection: Disparities between LLMs and Human Perception. ArXiv. /abs/2403.14896",
+    "Liu, S., Maturi, T., Yi, B., Shen, S., & Mihalcea, R. (2024). The Generation Gap:Exploring Age Bias in the Underlying Value Systems of Large Language Models. ArXiv. /abs/2404.08760",
+    "Mehrabi, N., Morstatter, F., Saxena, N., Lerman, K., & Galstyan, A. (2019). A Survey on Bias and Fairness in Machine Learning. ArXiv. /abs/1908.09635",
+    "Morales, S., Clarisó, R., & Cabot, J. (2024). LangBiTe: A Platform for Testing Bias in Large Language Models. ArXiv. /abs/2404.18558",
+    "Musolesi, M. (2024). (Ir)rationality and Cognitive Biases in Large Language Models. ArXiv. /abs/2402.09193",
+    "O'Neil, C. (2016). Weapons of Math Destruction: How Big Data Increases Inequality and Threatens Democracy. Crown Publishing Group.",
+    "Oketunji, A. F., Anas, M., & Saina, D. (2023). Large Language Model (LLM) Bias Index -- LLMBI. ArXiv. https://doi.org/10.5281/zenodo.10441700, 10.13140/RG.2.2.13670.80966",
+    "OpenAI. (2023). GPT-4 Technical Report. Retrieved from https://www.openai.com/research/gpt-4",
+    "Poulain, R., Fayyaz, H., & Beheshti, R. (2024). Bias patterns in the application of LLMs for clinical decision support: A comprehensive study. ArXiv. /abs/2404.15149",
+    "Radford, A., Narasimhan, K., Salimans, T. & Sutskever, I. 2019). Improving Language Understanding by Generative Pre-Training. OpenAI Blog.",
+    "Raj, C., Mukherjee, A., Caliskan, A., Anastasopoulos, A., & Zhu, Z. (2024). Breaking Bias, Building Bridges: Evaluation and Mitigation of Social Biases in LLMs via Contact Hypothesis. ArXiv. /abs/2407.02030",
+    "Singh, S., Keshari, S., Jain, V., & Chadha, A. (2024). Born With a Silver Spoon? Investigating Socioeconomic Bias in Large Language Models. ArXiv. /abs/2403.14633",
+    "Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017). Attention Is All You Need. ArXiv. /abs/1706.03762",
+    "Xu, Z., Peng, K., Ding, L., Tao, D., & Lu, X. (2024). Take Care of Your Prompt Bias! Investigating and Mitigating Prompt Bias in Factual Knowledge Extraction. ArXiv. /abs/2403.09963",
+    "Zhang, B. H., Lemoine, B., & Mitchell, M. (2018). Mitigating Unwanted Biases with Adversarial Learning. ArXiv. /abs/1801.07593",
+    "Zhao, J., Wang, T., & Yatskar, M. (2019). Men Also Like Shopping: Reducing Gender Bias Amplification using Corpus-level Constraints. Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing.",
+    "Zhou, Y., Ni, Y., Gan, Y., Yin, Z., Liu, X., Zhang, J., Liu, S., Qiu, X., Ye, G., & Chai, H. (2024). Are LLMs Rational Investors? A Study on Detecting and Reducing the Financial Bias in LLMs. ArXiv. /abs/2402.12713"
+  ]
+}

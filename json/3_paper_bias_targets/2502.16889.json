@@ -1,0 +1,24 @@
+{
+  "filename": "2502.16889.pdf",
+  "title": "Beyond Diagnostic Performance: Revealing and Quantifying Ethical Risks in Pathology Foundation Models",
+  "arxiv_url": "https://arxiv.org/pdf/2502.16889",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating performance disparities (accuracy, F1-score) between male and female patients in downstream clinical tasks (e.g., cancer subtype classification) using pathology foundation model embeddings, and assessing the ability to infer patient gender from these embeddings."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluating performance disparities between White and Black/African American patients in downstream clinical tasks using pathology foundation model embeddings, and assessing the ability to infer patient race from these embeddings."
+    },
+    {
+      "target": "Institutional bias",
+      "methodology": "Measuring diagnostic accuracy variation across different medical institutions (hospitals) and evaluating performance degradation in out-of-distribution settings where training and testing data come from different institutions (assessing reliance on site-specific spurious correlations)."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Assessing the ability to infer patient age groups from pathology foundation model feature embeddings as a measure of privacy leakage."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

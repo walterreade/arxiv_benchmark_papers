@@ -1,0 +1,28 @@
+{
+  "filename": "2012.01300.pdf",
+  "title": "Learning From Others' Mistakes: Avoiding Dataset Biases Without Modeling Them",
+  "arxiv_url": "https://arxiv.org/pdf/2012.01300",
+  "bias_targets": [
+    {
+      "target": "Lexical Overlap Bias",
+      "methodology": "Evaluating model performance on the HANS dataset, specifically on heuristic-non-entailed examples where high word overlap exists but the label is not entailment, and analyzing weak learner errors on MNLI."
+    },
+    {
+      "target": "Negation Bias",
+      "methodology": "Analyzing the correlation between negation words in the hypothesis and 'contradiction' predictions made by a weak learner trained on MNLI."
+    },
+    {
+      "target": "Question Answering Heuristics",
+      "methodology": "Evaluating model performance on the Adversarial SQuAD dataset (AddSent and AddOneSent), which appends distractor sentences to passages to fool models relying on keyword-matching heuristics."
+    },
+    {
+      "target": "Fact Verification Artifacts",
+      "methodology": "Evaluating model performance on the FEVER Symmetric Test Set, which balances claim artifacts to prevent models from relying solely on claim-only features (without evidence)."
+    },
+    {
+      "target": "Synthetic Spurious Correlations",
+      "methodology": "Injecting a 'cheating feature' (a specific prefix correlated with the label) into the training data and measuring the extent to which models rely on this artificial bias."
+    }
+  ],
+  "primary_bias_target": "Dataset artifacts"
+}

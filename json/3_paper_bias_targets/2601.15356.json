@@ -1,0 +1,20 @@
+{
+  "filename": "2601.15356.pdf",
+  "title": "Q-Probe: Scaling Image Quality Assessment to High Resolution via Context-Aware Agentic Probing",
+  "arxiv_url": "https://arxiv.org/pdf/2601.15356",
+  "bias_targets": [
+    {
+      "target": "Cropping-Implies-Degradation Bias",
+      "methodology": "The paper identifies and evaluates a spurious causal correlation where the model associates the usage of cropping/zooming tools with low image quality. This is measured by analyzing the model's scoring behavior when processing high-resolution images via agentic cropping, specifically checking if the model penalizes high-quality crops simply because a tool was invoked. The authors introduce the 'Vista-Bench' dataset and a 'Data Flywheel' training strategy to decouple tool usage from negative quality assessments."
+    },
+    {
+      "target": "Semantic Robustness Bias",
+      "methodology": "The paper defines this as a bias where models ignore defects in key semantic areas (e.g., faces) or overestimate quality due to high-level semantics, while misinterpreting natural features like bokeh as blur. It is evaluated by comparing model predictions against human preference (Mean Opinion Scores) on datasets like KADID-10k, and mitigated via a Reinforcement Learning (RL) alignment phase (Stage 1) to align global perception with human judgment."
+    },
+    {
+      "target": "Salience Bias",
+      "methodology": "The paper evaluates this bias through a qualitative 'Bad Cases Study' and failure analysis. It observes that the model may incorrectly identify the primary subject of an image (e.g., focusing on a distinct architectural element rather than a dominant background texture like a river), leading to incorrect cropping decisions and inflated quality scores because it treats relevant degraded areas as non-salient background."
+    }
+  ],
+  "primary_bias_target": "Cropping-Implies-Degradation Bias"
+}

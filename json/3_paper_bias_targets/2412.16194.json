@@ -1,0 +1,24 @@
+{
+  "filename": "2412.16194.pdf",
+  "title": "Multi-head attention debiasing and contrastive learning for mitigating Dataset Artifacts in Natural Language Inference",
+  "arxiv_url": "https://arxiv.org/pdf/2412.16194",
+  "bias_targets": [
+    {
+      "target": "Length Bias",
+      "methodology": "Evaluating model accuracy on subsets of validation data where hypothesis length spuriously correlates with specific labels (e.g., short hypotheses biasing toward entailment)."
+    },
+    {
+      "target": "Lexical Overlap Bias",
+      "methodology": "Measuring performance on examples with high lexical overlap between premise and hypothesis (e.g., >80%) where the model incorrectly predicts entailment due to surface similarity."
+    },
+    {
+      "target": "Subset Bias",
+      "methodology": "Assessing model predictions on instances where hypothesis words form a subset of premise words, which typically triggers false entailment predictions."
+    },
+    {
+      "target": "Negation Bias",
+      "methodology": "Analyzing model error rates on examples containing negation words (e.g., 'no', 'not') which models spuriously associate with contradiction labels."
+    }
+  ],
+  "primary_bias_target": "Dataset Artifacts"
+}

@@ -1,0 +1,68 @@
+{
+  "filename": "2510.19331.pdf",
+  "title": "Algorithmic Fairness in NLP: Persona-Infused LLMs for Human-Centric Hate Speech Detection",
+  "arxiv_url": "https://arxiv.org/pdf/2510.19331",
+  "measurement_description": "The paper evaluates the performance of Persona-Infused LLMs in detecting hate speech targeting specific social groups, including religious groups. It measures how adopting an in-group persona (matching the target's identity) versus an out-group persona affects detection accuracy (F1 score), false positive rates (FPR), and false negative rates (FNR). Specifically for religion, it compares Muslim and Jewish personas (in-group) against Catholic personas (out-group) when detecting hate speech against Muslims and Jews.",
+  "religious_groups": [
+    "Muslim",
+    "Jewish",
+    "Catholic"
+  ],
+  "models_tested": [
+    "Gemini-2.0-Flash",
+    "GPT-4.1-mini"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Toxigen"
+  ],
+  "continuous_testing": false,
+  "findings": "The study found that LLM annotators adopting an in-group persona generally achieved higher F1 scores in detecting hate speech targeting their group compared to out-group personas. Specifically, for hate speech targeting Muslims, the Muslim persona outperformed the Catholic out-group persona in most settings (e.g., Gemini F1 0.648 vs 0.635 with shallow prompting). Similarly, for hate speech targeting Jewish individuals, the Jewish persona often outperformed the Catholic persona (e.g., Gemini Deep Context F1 0.650 vs 0.602). Deeply contextualized personas further improved detection accuracy over shallow personas.",
+  "references": [
+    "Abro, S., Shaikh, S., Khand, Z. H., Zafar, A., Khan, S., & Mujtaba, G. (2020). Automatic hate speech detection using machine learning: A comparative study. International Journal of Advanced Computer Science and Applications, 11(8).",
+    "Alsafari, S., Sadaoui, S., & Mouhoub, M. (2020). Deep learning ensembles for hate speech detection. 2020 IEEE 32nd International Conference on Tools with Artificial Intelligence, 526–531.",
+    "Bilewicz, M., & Soral, W. (2020). Hate speech epidemic. the dynamic effects of derogatory language on intergroup relations and political radicalization. Political Psychology, 41, 3–33.",
+    "Borkan, D., Dixon, L., Sorensen, J., Thain, N., & Vasserman, L. (2019). Nuanced metrics for measuring unintended bias with real data for text classification. Companion proceedings of the 2019 World Wide Web Conference, 491–500.",
+    "Brown, M. A., Atreja, S., Hemphill, L., & Wu, P. Y. (2025). Evaluating how llm annotations represent diverse views on contentious topics. arXiv preprint arXiv:2503.23243.",
+    "Cikara, M., & Van Bavel, J. J. (2014). The neuroscience of intergroup relations: An integrative review. Perspectives on Psychological Science, 9(3), 245–274.",
+    "Cima, L., Miaschi, A., Trujillo, A., Avvenuti, M., Dell’Orletta, F., & Cresci, S. (2024). Contextualized counterspeech: Strategies for adaptation, personalization, and evaluation. arXiv preprint arXiv:2412.07338.",
+    "Civelli, S., Bernardelle, P., & Demartini, G. (2025). The impact of persona-based political perspectives on hateful content detection. arXiv preprint arXiv:2502.00385.",
+    "Danescu-Niculescu-Mizil, C., West, R., Jurafsky, D., Leskovec, J., & Potts, C. (2013). No country for old members: User lifecycle and linguistic change in online communities. Proceedings of the 22nd international conference on World Wide Web, 307–318.",
+    "De Dreu, C. K., & Kret, M. E. (2016). Oxytocin conditions intergroup relations through upregulated in-group empathy, cooperation, conformity, and defense. Biological psychiatry, 79(3), 165–173.",
+    "Devlin, J., Chang, M.-W., Lee, K., & Toutanova, K. (2019). BERT: Pre-training of deep bidirectional transformers for language understanding. Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), 4171–4186.",
+    "Dixon, L., Li, J., Sorensen, J., Thain, N., & Vasserman, L. (2018). Measuring and mitigating unintended bias in text classification. Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society, 67–73.",
+    "Fröhling, L., Demartini, G., & Assenmacher, D. (2024). Personas with attitudes: Controlling llms for diverse data annotation. arXiv preprint arXiv:2410.11745.",
+    "Gajewska, E., & Konat, B. (2023). Text Classification for Subjective Phenomena on Disaggregated Data and Rater Behaviour. In Z. Vetulani & P. Paroubek (Eds.), Human language technologies as a challenge for computer science and linguistics (pp. 73–77). Wydawnictwo Naukowe UAM.",
+    "Gajewska, E., Wawer, M., Budzynska, K., & Chudziak, J. A. (2025). Leveraging a multi-agent llm-based system to educate teachers in hate incidents management. International Conference on Artificial Intelligence in Education, 332–339.",
+    "Gilardi, F., Alizadeh, M., & Kubli, M. (2023). Chatgpt outperforms crowd workers for text-annotation tasks. Proceedings of the National Academy of Sciences, 120(30), e2305016120.",
+    "Giorgi, T., Cima, L., Fagni, T., Avvenuti, M., & Cresci, S. (2024). Human and llm biases in hate speech annotations: A socio-demographic analysis of annotators and targets. arXiv preprint arXiv:2410.07991.",
+    "Gitari, N. D., Zuping, Z., Damien, H., & Long, J. (2015). A lexicon-based approach for hate speech detection. International Journal of Multimedia and Ubiquitous Engineering, 10(4), 215–230.",
+    "Gongane, V. U., Munot, M. V., & Anuse, A. D. (2022). Detection and moderation of detrimental content on social media platforms: Current status and future directions. Social Network Analysis and Mining, 12(1), 129.",
+    "Guerra, R., Bierwiaczonek, K., Ferreira, M., Golec de Zavala, A., Abakoumkin, G., Wildschut, T., & Sedikides, C. (2022). An intergroup approach to collective narcissism: Intergroup threats and hostility in four european union countries. Group Processes & Intergroup Relations, 25(2), 415–433.",
+    "Harbar, Y., & Chudziak, J. A. (2025). Simulating Oxford-Style Debates with LLM-Based Multi-Agent Systems. Intelligent Information and Database Systems, 286–300.",
+    "Hartvigsen, T., Gabriel, S., Palangi, H., Sap, M., Ray, D., & Kamar, E. (2022). Toxigen: A large-scale machine-generated dataset for adversarial and implicit hate speech detection. Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), 3309–3326.",
+    "Kim, D. K., Ahn, H., Kim, Y., & Han, Y.-S. (2025). Analyzing offensive language dataset insights from training dynamics and human agreement level. Proceedings of the 31st International Conference on Computational Linguistics, 9780–9792.",
+    "Kumar, A. (2022). A study: Hate speech and offensive language detection in textual data by using rnn, cnn, lstm and bert model. 2022 6th international conference on intelligent computing and control systems, 1–6.",
+    "Kwok, I., & Wang, Y. (2013). Locate the hate: Detecting tweets against blacks. Proceedings of the AAAI Conference on Artificial Intelligence, 27(1), 1621–1622.",
+    "Madukwe, K., Gao, X., & Xue, B. (2020). In data we trust: A critical analysis of hate speech detection datasets. Proceedings of the fourth workshop on online abuse and harms, 150–161.",
+    "Masud, S., Singh, S., Hangya, V., Fraser, A., & Chakraborty, T. (2024). Hate personified: Investigating the role of llms in content moderation. Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, 15847–15863.",
+    "Messina, N., Vadicamo, L., Maltese, L., & Gennaro, C. (2025). Towards identity-aware cross-modal retrieval: A dataset and a baseline. European Conference on Information Retrieval, 437–452.",
+    "Mnassri, K., Rajapaksha, P., Farahbakhsh, R., & Crespi, N. (2022). Bert-based ensemble approaches for hate speech detection. GLOBECOM 2022-2022 IEEE Global Communications Conference, 4649–4654.",
+    "Nghiem, H., Gupta, U., & Morstatter, F. (2024). “define your terms”: Enhancing efficient offensive speech classification with definition. Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers), 1293–1309.",
+    "Petersen, F., Mukherjee, D., Sun, Y., & Yurochkin, M. (2021). Post-processing for individual fairness. Advances in Neural Information Processing Systems, 34, 25944–25955.",
+    "Salecha, A., Ireland, M. E., Subrahmanya, S., Sedoc, J., Ungar, L. H., & Eichstaedt, J. C. (2024). Large language models show human-like social desirability biases in survey responses. arXiv preprint arXiv:2405.06058.",
+    "Sap, M., Swayamdipta, S., Vianna, L., Zhou, X., Choi, Y., & Smith, N. A. (2022, July). Annotators with attitudes: How annotator beliefs and identities bias toxic language detection. In M. Carpuat, M.-C. de Marneffe, & I. V. Meza Ruiz (Eds.), Proceedings of the 2022 conference of the north american chapter of the association for computational linguistics: Human language technologies (pp. 5884–5906). Association for Computational Linguistics.",
+    "Steinmacher, I., Penney, J. M., Felizardo, K. R., Garcia, A. F., & Gerosa, M. A. (2024). Can chatgpt emulate humans in software engineering surveys? Proceedings of the 18th ACM/IEEE International Symposium on Empirical Software Engineering and Measurement, 414–419.",
+    "Thiago, D. O., Marcelo, A. D., & Gomes, A. (2021). Fighting hate speech, silencing drag queens? artificial intelligence in content moderation and risks to lgbtq voices online. Sexuality & culture, 25(2), 700–732.",
+    "Turner, J. C., Brown, R. J., & Tajfel, H. (1979). Social comparison and group interest in ingroup favouritism. European journal of social psychology, 9(2), 187–204.",
+    "Yoder, M., Ng, L., Brown, D. W., & Carley, K. (2022, December). How hate speech varies by target identity: A computational analysis. In A. Fokkens & V. Srikumar (Eds.), Proceedings of the 26th conference on computational natural language learning (pp. 27–39). Association for Computational Linguistics.",
+    "Zamojska, M., & Chudziak, J. A. (2025). Simulating human communication games: Transactional analysis in LLM agent interactions. Recent Challenges in Intelligent Information and Database Systems, 173–187.",
+    "Zhang, J., Wu, Q., Xu, Y., Cao, C., Du, Z., & Psounis, K. (2024). Efficient toxic content detection by bootstrapping and distilling large language models. Proceedings of the AAAI conference on artificial intelligence, 38(19), 21779–21787."
+  ]
+}

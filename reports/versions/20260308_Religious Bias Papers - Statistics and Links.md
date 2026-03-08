@@ -2,145 +2,145 @@
 
 **Count of LLM-Bias papers:** 9991
 
-**Count of papers measuring religious bias:** 1172
+**Count of papers measuring religious bias:** 1197
 
-**Count of papers where religious bias is the primary focus:** 24
+**Count of papers where religious bias is the primary focus:** 25
 
 ## Religious Groups Studied (Top 25)
 
-| Religious Group | Count | % of 1172 papers |
+| Religious Group | Count | % of 1197 papers |
 |---|---|---|
-| Islam | 740 | 63.1% |
-| Christianity | 532 | 45.4% |
-| Judaism | 506 | 43.2% |
-| Hinduism | 324 | 27.6% |
-| Buddhism | 286 | 24.4% |
-| Atheism | 192 | 16.4% |
-| Religion (general) | 150 | 12.8% |
-| Sikhism | 99 | 8.4% |
-| Catholic | 98 | 8.4% |
-| Protestant | 59 | 5.0% |
-| Mormon | 52 | 4.4% |
-| Agnosticism | 38 | 3.2% |
-| Taoism | 35 | 3.0% |
+| Islam | 759 | 63.4% |
+| Christianity | 543 | 45.4% |
+| Judaism | 517 | 43.2% |
+| Hinduism | 327 | 27.3% |
+| Buddhism | 289 | 24.1% |
+| Atheism | 197 | 16.5% |
+| Religion (general) | 155 | 12.9% |
+| Catholic | 101 | 8.4% |
+| Sikhism | 100 | 8.4% |
+| Protestant | 60 | 5.0% |
+| Mormon | 53 | 4.4% |
+| Agnosticism | 39 | 3.3% |
+| Taoism | 36 | 3.0% |
 | Jainism | 25 | 2.1% |
 | Non-religious | 18 | 1.5% |
-| Not specified | 16 | 1.4% |
+| Not specified | 16 | 1.3% |
 | Shinto | 15 | 1.3% |
 | Zoroastrianism | 14 | 1.2% |
+| Evangelical | 11 | 0.9% |
+| Orthodox | 11 | 0.9% |
 | Sunni | 11 | 0.9% |
-| Evangelical | 10 | 0.9% |
-| Confucianism | 10 | 0.9% |
-| Orthodox | 10 | 0.9% |
-| Shia | 10 | 0.9% |
+| Confucianism | 10 | 0.8% |
+| Shia | 10 | 0.8% |
 | Satanism | 9 | 0.8% |
 | Religious | 9 | 0.8% |
 
 ## Models Tested (Top 25)
 
-| Model | Count | % of 1172 papers |
+| Model | Count | % of 1197 papers |
 |---|---|---|
-| BERT | 150 | 12.8% |
-| GPT-4 | 141 | 12.0% |
-| GPT-4o | 141 | 12.0% |
-| GPT-2 | 93 | 7.9% |
-| GPT-3.5 | 85 | 7.3% |
-| RoBERTa | 77 | 6.6% |
-| GPT-3 | 64 | 5.5% |
-| ChatGPT | 61 | 5.2% |
-| Llama-3.1-8B-Instruct | 41 | 3.5% |
-| DistilBERT | 40 | 3.4% |
-| Mistral-7B | 37 | 3.2% |
-| GPT-4o-mini | 31 | 2.6% |
-| Qwen2.5-7B-Instruct | 30 | 2.6% |
-| ALBERT | 29 | 2.5% |
-| T5 | 27 | 2.3% |
+| BERT | 154 | 12.9% |
+| GPT-4 | 145 | 12.1% |
+| GPT-4o | 142 | 11.9% |
+| GPT-2 | 94 | 7.9% |
+| GPT-3.5 | 88 | 7.4% |
+| RoBERTa | 78 | 6.5% |
+| GPT-3 | 68 | 5.7% |
+| ChatGPT | 63 | 5.3% |
+| Llama-3.1-8B-Instruct | 41 | 3.4% |
+| DistilBERT | 40 | 3.3% |
+| Mistral-7B | 37 | 3.1% |
+| GPT-4o-mini | 34 | 2.8% |
+| Qwen2.5-7B-Instruct | 30 | 2.5% |
+| ALBERT | 29 | 2.4% |
+| T5 | 28 | 2.3% |
+| GPT-3.5-Turbo | 27 | 2.3% |
 | GPT-3.5-turbo | 25 | 2.1% |
-| GPT-3.5-Turbo | 25 | 2.1% |
-| Vicuna | 22 | 1.9% |
+| Vicuna | 22 | 1.8% |
+| Mistral | 22 | 1.8% |
 | Mistral-7B-Instruct-v0.3 | 21 | 1.8% |
-| Mistral | 21 | 1.8% |
-| Mistral 7B | 20 | 1.7% |
+| Mistral 7B | 21 | 1.8% |
 | GPT-4.1 | 20 | 1.7% |
+| PaLM | 19 | 1.6% |
 | LLaMA | 19 | 1.6% |
-| PaLM | 18 | 1.5% |
 | BART | 18 | 1.5% |
 
 ## Languages Evaluated (Top 25)
 
-| Language | Count | % of 1172 papers |
+| Language | Count | % of 1197 papers |
 |---|---|---|
-| English | 1093 | 93.3% |
-| Chinese | 100 | 8.5% |
-| German | 74 | 6.3% |
-| French | 71 | 6.1% |
-| Spanish | 70 | 6.0% |
-| Arabic | 60 | 5.1% |
-| Hindi | 51 | 4.4% |
-| Korean | 47 | 4.0% |
-| Italian | 42 | 3.6% |
-| Russian | 40 | 3.4% |
-| Portuguese | 32 | 2.7% |
-| Bengali | 30 | 2.6% |
-| Japanese | 29 | 2.5% |
-| Dutch | 28 | 2.4% |
+| English | 1117 | 93.3% |
+| Chinese | 104 | 8.7% |
+| German | 74 | 6.2% |
+| Spanish | 72 | 6.0% |
+| French | 71 | 5.9% |
+| Arabic | 61 | 5.1% |
+| Hindi | 52 | 4.3% |
+| Korean | 47 | 3.9% |
+| Italian | 43 | 3.6% |
+| Russian | 40 | 3.3% |
+| Portuguese | 33 | 2.8% |
+| Bengali | 31 | 2.6% |
+| Dutch | 29 | 2.4% |
+| Japanese | 29 | 2.4% |
 | Indonesian | 25 | 2.1% |
 | Turkish | 21 | 1.8% |
-| Tamil | 19 | 1.6% |
+| Tamil | 20 | 1.7% |
 | Vietnamese | 18 | 1.5% |
 | Urdu | 15 | 1.3% |
 | Swahili | 15 | 1.3% |
+| Polish | 14 | 1.2% |
 | Swedish | 13 | 1.1% |
-| Polish | 13 | 1.1% |
 | Czech | 12 | 1.0% |
 | Malay | 12 | 1.0% |
 | Romanian | 12 | 1.0% |
 
 ## Base Benchmarks (Top 25)
 
-| Benchmark | Count | % of 1172 papers |
+| Benchmark | Count | % of 1197 papers |
 |---|---|---|
-| StereoSet | 193 | 16.5% |
-| CrowS-Pairs | 150 | 12.8% |
-| BBQ | 149 | 12.7% |
-| BOLD | 75 | 6.4% |
-| WinoBias | 43 | 3.7% |
-| RealToxicityPrompts | 41 | 3.5% |
-| MMLU | 37 | 3.2% |
-| ToxiGen | 35 | 3.0% |
-| TruthfulQA | 34 | 2.9% |
-| SEAT | 29 | 2.5% |
-| HolisticBias | 28 | 2.4% |
+| StereoSet | 197 | 16.5% |
+| CrowS-Pairs | 156 | 13.0% |
+| BBQ | 151 | 12.6% |
+| BOLD | 77 | 6.4% |
+| WinoBias | 45 | 3.8% |
+| RealToxicityPrompts | 43 | 3.6% |
+| MMLU | 37 | 3.1% |
+| TruthfulQA | 36 | 3.0% |
+| ToxiGen | 35 | 2.9% |
+| SEAT | 29 | 2.4% |
+| HolisticBias | 28 | 2.3% |
+| GLUE | 28 | 2.3% |
 | AdvBench | 27 | 2.3% |
-| GLUE | 27 | 2.3% |
 | WEAT | 26 | 2.2% |
-| Winogender | 24 | 2.0% |
-| HateCheck | 19 | 1.6% |
-| RedditBias | 19 | 1.6% |
-| CivilComments | 17 | 1.5% |
-| GSM8K | 16 | 1.4% |
-| HarmBench | 16 | 1.4% |
-| HateXplain | 16 | 1.4% |
+| Winogender | 25 | 2.1% |
+| HateCheck | 21 | 1.8% |
+| RedditBias | 21 | 1.8% |
+| HateXplain | 17 | 1.4% |
+| CivilComments | 17 | 1.4% |
+| GSM8K | 16 | 1.3% |
+| HarmBench | 16 | 1.3% |
+| BeaverTails | 15 | 1.3% |
 | SuperGLUE | 15 | 1.3% |
-| BeaverTails | 14 | 1.2% |
 | ETHICS | 14 | 1.2% |
 | DecodingTrust | 14 | 1.2% |
 
 ## Response Type
 
-| Type | Count | % of 1172 papers |
+| Type | Count | % of 1197 papers |
 |---|---|---|
-| Short | 471 | 40.2% |
-| Long | 315 | 26.9% |
-| Both | 212 | 18.1% |
-| Other | 162 | 13.8% |
+| Short | 480 | 40.1% |
+| Long | 317 | 26.5% |
+| Both | 220 | 18.4% |
+| Other | 168 | 14.0% |
 
 ## Continuous Testing
 
-| Status | Count | % of 1172 papers |
+| Status | Count | % of 1197 papers |
 |---|---|---|
-| No | 1000 | 85.3% |
-| Yes | 172 | 14.7% |
+| No | 1023 | 85.5% |
+| Yes | 174 | 14.5% |
 
 ## Most Cited Papers (Top 100)
 
@@ -257,6 +257,7 @@
 - [Divine LLaMAs: Bias, Stereotypes, Stigmatization, and Emotion Representation of Religion in Large Language Models](https://arxiv.org/pdf/2407.06908) (citations: 9)
 - [Religious Bias Landscape in Language and Text-to-Image Models: Analysis, Detection, and Debiasing Strategies](https://arxiv.org/pdf/2501.08441) (citations: 9)
 - [Building Domain-Specific LLMs Faithful To The Islamic Worldview: Mirage or Technical Possibility?](https://arxiv.org/pdf/2312.06652) (citations: 6)
+- [Muslim-Violence Bias Persists in Debiased GPT Models](https://arxiv.org/pdf/2310.18368) (citations: 5)
 - [Are Models Trained on Indian Legal Data Fair?](https://arxiv.org/pdf/2303.07247) (citations: 3)
 - [Effectiveness of Counter-Speech against Abusive Content: A Multidimensional Annotation and Classification Study](https://arxiv.org/pdf/2506.11919) (citations: 3)
 - [Sacred or Synthetic? Evaluating LLM Reliability and Abstention for Religious Questions](https://arxiv.org/pdf/2508.08287) (citations: 3)
@@ -456,6 +457,7 @@
 - [Self-Debiasing Large Language Models: Zero-Shot Recognition and Reduction of Stereotypes](https://arxiv.org/pdf/2402.01981) (citations: 61)
 - [MJ-BENCH: Is Your Multimodal Reward Model Really a Good Judge for Text-to-Image Generation?](https://arxiv.org/pdf/2407.04842) (citations: 60)
 - [Towards Last-layer Retraining for Group Robustness with Fewer Annotations](https://arxiv.org/pdf/2309.08534) (citations: 59)
+- [Cyberbullying Detection with Fairness Constraints](https://arxiv.org/pdf/2005.06625) (citations: 58)
 - [Debiasing isn’t enough! – On the Effectiveness of Debiasing MLMs and their Social Biases in Downstream Tasks](https://arxiv.org/pdf/2210.02938) (citations: 57)
 - [PERSONA: A Reproducible Testbed for Pluralistic Alignment](https://arxiv.org/pdf/2407.17387) (citations: 57)
 - [Your fairness may vary: Pretrained language model fairness in toxic text classification](https://arxiv.org/pdf/2108.01250) (citations: 57)
@@ -480,10 +482,12 @@
 - [LEARNING DIVERSE ATTACKS ON LARGE LANGUAGE MODELS FOR ROBUST RED-TEAMING AND SAFETY TUNING](https://arxiv.org/pdf/2405.18540) (citations: 50)
 - [TIBET: Identifying and Evaluating Biases in Text-to-Image Generative Models](https://arxiv.org/pdf/2312.01261) (citations: 50)
 - [Understanding and Countering Stereotypes: A Computational Approach to the Stereotype Content Model](https://arxiv.org/pdf/2106.02596) (citations: 50)
+- [AI Risk Categorization Decoded (AIR 2024): From Government Regulations to Corporate Policies](https://arxiv.org/pdf/2406.17864) (citations: 49)
 - [SG-Bench: Evaluating LLM Safety Generalization Across Diverse Tasks and Prompt Types](https://arxiv.org/pdf/2410.21965) (citations: 49)
 - [T2IAT: Measuring Valence and Stereotypical Biases in Text-to-Image Generation](https://arxiv.org/pdf/2306.00905) (citations: 49)
 - [A Review of Multi-Modal Large Language and Vision Models](https://arxiv.org/pdf/2404.01322) (citations: 48)
 - [ALI-Agent: Assessing LLMs' Alignment with Human Values via Agent-based Evaluation](https://arxiv.org/pdf/2405.14125) (citations: 48)
+- [Assessing Language Model Deployment with Risk Cards](https://arxiv.org/pdf/2303.18190) (citations: 48)
 - [The Touché23-ValueEval Dataset for Identifying Human Values behind Arguments](https://arxiv.org/pdf/2301.13771) (citations: 48)
 - [Machine Unlearning in Generative AI: A Survey](https://arxiv.org/pdf/2407.20516) (citations: 47)
 - [Decision-Making Behavior Evaluation Framework for LLMs under Uncertain Context](https://arxiv.org/pdf/2406.05972) (citations: 46)
@@ -493,6 +497,7 @@
 - [Are Personalized Stochastic Parrots More Dangerous? Evaluating Persona Biases in Dialogue Systems](https://arxiv.org/pdf/2310.05280) (citations: 44)
 - [COUNTERGEDI: A controllable approach to generate polite, detoxified and emotional counterspeech](https://arxiv.org/pdf/2205.04304) (citations: 44)
 - [Down the Rabbit Hole: Detecting Online Extremism, Radicalisation, and Politicised Hate Speech](https://arxiv.org/pdf/2301.11579) (citations: 44)
+- [Ruddit: Norms of Offensiveness for English Reddit Comments](https://arxiv.org/pdf/2106.05664) (citations: 44)
 - [SafeBench: A Safety Evaluation Framework for Multimodal Large Language Models](https://arxiv.org/pdf/2410.18927) (citations: 44)
 - [VLSBench: Unveiling Visual Leakage in Multimodal Safety](https://arxiv.org/pdf/2411.19939) (citations: 44)
 - [A Trip Towards Fairness: Bias and De-Biasing in Large Language Models](https://arxiv.org/pdf/2305.13862) (citations: 43)
@@ -530,6 +535,7 @@
 - [Grounding and Evaluation for Large Language Models: Practical Challenges and Lessons Learned (Survey)](https://arxiv.org/pdf/2407.12858) (citations: 35)
 - [Human and LLM Biases in Hate Speech Annotations: A Socio-Demographic Analysis of Annotators and Targets](https://arxiv.org/pdf/2410.07991) (citations: 35)
 - [Prompting Techniques for Reducing Social Bias in LLMs through System 1 and System 2 Cognitive Processes](https://arxiv.org/pdf/2404.17218) (citations: 35)
+- [A Comprehensive Survey of Bias in LLMs: Current Landscape and Future Directions](https://arxiv.org/pdf/2409.16430) (citations: 34)
 - [Bloom Library: Multimodal Datasets in 300+ Languages for a Variety of Downstream Tasks](https://arxiv.org/pdf/2210.14712) (citations: 34)
 - [Challenges in Measuring Bias via Open-Ended Language Generation](https://arxiv.org/pdf/2205.11601) (citations: 34)
 - [Don’t Go To Extremes: Revealing the Excessive Sensitivity and Calibration Limitations of LLMs in Implicit Hate Speech Detection](https://arxiv.org/pdf/2402.11406) (citations: 34)
@@ -537,6 +543,7 @@
 - [Language Model Fine-Tuning on Scaled Survey Data for Predicting Distributions of Public Opinions](https://arxiv.org/pdf/2502.16761) (citations: 34)
 - [Fair Infinitesimal Jackknife: Mitigating the Influence of Biased Training Data Points Without Refitting](https://arxiv.org/pdf/2212.06803) (citations: 33)
 - [Fairness-Aware Structured Pruning in Transformers](https://arxiv.org/pdf/2312.15398) (citations: 33)
+- [BiasAlert: A Plug-and-play Tool for Social Bias Detection in LLMs](https://arxiv.org/pdf/2407.10241) (citations: 32)
 - [Necessity and Sufficiency for Explaining Text Classifiers: A Case Study in Hate Speech Detection](https://arxiv.org/pdf/2205.03302) (citations: 32)
 - [Survey of Social Bias in Vision-Language Models](https://arxiv.org/pdf/2309.14381) (citations: 32)
 - [Toxicity in Multilingual Machine Translation at Scale](https://arxiv.org/pdf/2210.03070) (citations: 32)
@@ -658,6 +665,7 @@
 - [Indian-BHED: A Dataset for Measuring India-Centric Biases in Large Language Models](https://arxiv.org/pdf/2309.08573) (citations: 17)
 - [JASMINE: Arabic GPT Models for Few-Shot Learning](https://arxiv.org/pdf/2212.10755) (citations: 17)
 - [On Measuring Social Biases in Prompt-Based Multi-Task Learning](https://arxiv.org/pdf/2205.11605) (citations: 17)
+- [PROMPTING FAIRNESS: INTEGRATING CAUSALITY TO DEBIAS LARGE LANGUAGE MODELS](https://arxiv.org/pdf/2403.08743) (citations: 17)
 - [Towards an Enhanced Understanding of Bias in Pre-trained Neural Language Models: A Survey with Special Emphasis on Affective Bias](https://arxiv.org/pdf/2204.10365) (citations: 17)
 - [BiasDPO: Mitigating Bias in Language Models through Direct Preference Optimization](https://arxiv.org/pdf/2407.13928) (citations: 16)
 - [From Deception to Detection: The Dual Roles of Large Language Models in Fake News](https://arxiv.org/pdf/2409.17416) (citations: 16)
@@ -688,6 +696,7 @@
 - [SUPERTWEETEVAL: A Challenging, Unified and Heterogeneous Benchmark for Social Media NLP Research](https://arxiv.org/pdf/2310.14757) (citations: 15)
 - [Should We Attend More or Less? Modulating Attention for Fairness](https://arxiv.org/pdf/2305.13088) (citations: 15)
 - [TarGEN: Targeted Data Generation with Large Language Models](https://arxiv.org/pdf/2310.17876) (citations: 15)
+- [This Prompt is Measuring <MASK>: Evaluating Bias Evaluation in Language Models](https://arxiv.org/pdf/2305.12757) (citations: 15)
 - [Tox-BART: Leveraging Toxicity Attributes for Explanation Generation of Implicit Hate Speech](https://arxiv.org/pdf/2406.03953) (citations: 15)
 - [BIASX: “Thinking Slow” in Toxic Content Moderation with Explanations of Implied Social Biases](https://arxiv.org/pdf/2305.13589) (citations: 14)
 - [CEB: COMPOSITIONAL EVALUATION BENCHMARK FOR FAIRNESS IN LARGE LANGUAGE MODELS](https://arxiv.org/pdf/2407.02408) (citations: 14)
@@ -763,6 +772,7 @@
 - [Lost in Moderation: How Commercial Content Moderation APIs Over- and Under-Moderate Group-Targeted Hate Speech and Linguistic Variations](https://arxiv.org/pdf/2503.01623) (citations: 10)
 - [SIMBENCH: BENCHMARKING THE ABILITY OF LARGE LANGUAGE MODELS TO SIMULATE HUMAN BEHAVIORS](https://arxiv.org/pdf/2510.17516) (citations: 10)
 - [The Echoes of Multilinguality: Tracing Cultural Value Shifts during LM Fine-tuning](https://arxiv.org/pdf/2405.12744) (citations: 10)
+- [Toxic Memes: A Survey of Computational Perspectives on the Detection and Explanation of Meme Toxicities](https://arxiv.org/pdf/2406.07353) (citations: 10)
 - [Video-SafetyBench: A Benchmark for Safety Evaluation of Video LVLMs](https://arxiv.org/pdf/2505.11842) (citations: 10)
 - [“Flex Tape Can’t Fix That”: Bias and Misinformation in Edited Language Models](https://arxiv.org/pdf/2403.00180) (citations: 10)
 - [A LLM-Based Ranking Method for the Evaluation of Automatic Counter-Narrative Generation](https://arxiv.org/pdf/2406.15227) (citations: 9)
@@ -776,6 +786,7 @@
 - [Divine LLaMAs: Bias, Stereotypes, Stigmatization, and Emotion Representation of Religion in Large Language Models](https://arxiv.org/pdf/2407.06908) (citations: 9)
 - [Exploring the Nexus of Large Language Models and Legal Systems: A Short Survey](https://arxiv.org/pdf/2404.00990) (citations: 9)
 - [Fairness Mediator: Neutralize Stereotype Associations to Mitigate Bias in Large Language Models](https://arxiv.org/pdf/2504.07787) (citations: 9)
+- [From Prejudice to Parity: A New Approach to Debiasing Large Language Model Word Embeddings](https://arxiv.org/pdf/2402.11512) (citations: 9)
 - [HEARTS: A Holistic Framework for Explainable, Sustainable and Robust Text Stereotype Detection](https://arxiv.org/pdf/2409.11579) (citations: 9)
 - [HateRephrase: Zero- and Few-Shot Reduction of Hate Intensity in Online Posts using Large Language Models](https://arxiv.org/pdf/2310.13985) (citations: 9)
 - [Hey GPT, Can You be More Racist? Analysis from Crowdsourced Attempts to Elicit Biased Content from Generative AI](https://arxiv.org/pdf/2410.15467) (citations: 9)
@@ -887,6 +898,7 @@
 - [Bias in the Mirror: Are LLMs opinions robust to their own adversarial attacks ?](https://arxiv.org/pdf/2410.13517) (citations: 5)
 - [COBIAS: Assessing the Contextual Reliability of Bias Benchmarks for Language Models](https://arxiv.org/pdf/2402.14889) (citations: 5)
 - [Cultural Re-contextualization of Fairness Research in Language Technologies in India](https://arxiv.org/pdf/2211.11206) (citations: 5)
+- [Current Topological and Machine Learning Applications for Bias Detection in Text](https://arxiv.org/pdf/2311.13495) (citations: 5)
 - [Debiasing Text Safety Classifiers through a Fairness-Aware Ensemble](https://arxiv.org/pdf/2409.13705) (citations: 5)
 - [Developing Safe and Responsible Large Language Model : Can We Balance Bias Reduction and Language Understanding ?](https://arxiv.org/pdf/2404.01399) (citations: 5)
 - [Documenting Patterns of Exoticism of Marginalized Populations within Text-to-Image Generators](https://arxiv.org/pdf/2508.02937) (citations: 5)
@@ -904,6 +916,7 @@
 - [LinguaSafe: A Comprehensive Multilingual Safety Benchmark for Large Language Models](https://arxiv.org/pdf/2508.12733) (citations: 5)
 - [Low-rank finetuning for LLMs: A fairness perspective](https://arxiv.org/pdf/2405.18572) (citations: 5)
 - [Measuring What Matters: A Framework for Evaluating Safety Risks in Real-World LLM Applications](https://arxiv.org/pdf/2507.09820) (citations: 5)
+- [Muslim-Violence Bias Persists in Debiased GPT Models](https://arxiv.org/pdf/2310.18368) (citations: 5)
 - [Navigating the Cultural Kaleidoscope: A Hitchhiker’s Guide to Sensitivity in Large Language Models](https://arxiv.org/pdf/2410.12880) (citations: 5)
 - [OASIS UNCOVERS: HIGH-QUALITY T2I MODELS, SAME OLD STEREOTYPES](https://arxiv.org/pdf/2501.00962) (citations: 5)
 - [On The Role of Reasoning in the Identification of Subtle Stereotypes in Natural Language](https://arxiv.org/pdf/2308.00071) (citations: 5)
@@ -929,6 +942,7 @@
 - [A Context-Aware Contrastive Learning Framework for Hateful Meme Detection and Segmentation](https://arxiv.org/pdf/2408.05794) (citations: 4)
 - [A Dataset for the Detection of Dehumanizing Language](https://arxiv.org/pdf/2402.08764) (citations: 4)
 - [A Group Fairness Lens for Large Language Models](https://arxiv.org/pdf/2312.15478) (citations: 4)
+- [Analyzing the Limits of Self-Supervision in Handling Bias in Language](https://arxiv.org/pdf/2112.08637) (citations: 4)
 - [Assessing Bias in Metric Models for LLM Open-Ended Generation Bias Benchmarks](https://arxiv.org/pdf/2410.11059) (citations: 4)
 - [BEADS: Bias Evaluation Across Domains](https://arxiv.org/pdf/2406.04220) (citations: 4)
 - [BanStereoSet: A Dataset to Measure Stereotypical Social Biases in LLMs for Bangla](https://arxiv.org/pdf/2409.11638) (citations: 4)
@@ -1042,6 +1056,7 @@
 - [A Bayesian approach to uncertainty in word embedding bias estimation](https://arxiv.org/pdf/2306.09066) (citations: 2)
 - [A Multi-Task Benchmark for Abusive Language Detection in Low-Resource Settings](https://arxiv.org/pdf/2505.12116) (citations: 2)
 - [A Taxonomy of Stereotype Content in Large Language Models](https://arxiv.org/pdf/2408.00162) (citations: 2)
+- [AI Agent Behavioral Science](https://arxiv.org/pdf/2506.06366) (citations: 2)
 - [Alignment-Preserving Fine-Tuning via Fisher-Guided Decomposition and Riemannian-Geodesic Collision Regularization](https://arxiv.org/pdf/2508.02079) (citations: 2)
 - [Alternative Speech: Complementary Method to Counter-Narrative for Better Discourse](https://arxiv.org/pdf/2401.14616) (citations: 2)
 - [BIASFREEBENCH: A BENCHMARK FOR MITIGATING BIAS IN LARGE LANGUAGE MODEL RESPONSES](https://arxiv.org/pdf/2510.00232) (citations: 2)
@@ -1069,6 +1084,7 @@
 - [Evaluating Short-Term Temporal Fluctuations of Social Biases in Social Media Data and Masked Language Models](https://arxiv.org/pdf/2406.13556) (citations: 2)
 - [Evaluating the Effect of Retrieval Augmentation on Social Biases](https://arxiv.org/pdf/2502.17611) (citations: 2)
 - [Evaluation of Reliability Criteria for News Publishers with Large Language Models](https://arxiv.org/pdf/2412.15896) (citations: 2)
+- [Exploring the Boundaries of Content Moderation in Text-to-Image Generation](https://arxiv.org/pdf/2409.17155) (citations: 2)
 - [FAIRNESS IN LLM-GENERATED SURVEYS](https://arxiv.org/pdf/2501.15351) (citations: 2)
 - [FairCoT: Enhancing Fairness in Text-to-Image Generation via Chain of Thought Reasoning with Multimodal Large Language Models](https://arxiv.org/pdf/2406.09070) (citations: 2)
 - [FairEval: Evaluating Fairness in LLM-Based Recommendations with Personality Awareness](https://arxiv.org/pdf/2504.07801) (citations: 2)
@@ -1129,13 +1145,16 @@
 - [A Multi-level Bias Elimination through a Decoding Approach with Knowledge Augmentation for Robust Constitutional Alignment of Language Models](https://arxiv.org/pdf/2509.02133) (citations: 1)
 - [A Recipe For Building a Compliant Real Estate Chatbot](https://arxiv.org/pdf/2410.10860) (citations: 1)
 - [A Study on Bias Detection and Classification in Natural Language Processing](https://arxiv.org/pdf/2408.07479) (citations: 1)
+- [A closer look at how large language models "trust" humans: patterns and biases](https://arxiv.org/pdf/2504.15801) (citations: 1)
 - [A word association network methodology for evaluating implicit biases in LLMs compared to humans](https://arxiv.org/pdf/2510.24488) (citations: 1)
 - [A-IPO: ADAPTIVE INTENT-DRIVEN PREFERENCE OPTIMIZATION](https://arxiv.org/pdf/2510.10077) (citations: 1)
 - [ALIGNER: ONE GLOBAL TOKEN IS WORTH MILLIONS OF PARAMETERS WHEN ALIGNING LARGE LANGUAGE MODELS](https://arxiv.org/pdf/2312.05503) (citations: 1)
 - [ARMS: ADAPTIVE RED-TEAMING AGENT AGAINST MULTIMODAL MODELS WITH PLUG-AND-PLAY ATTACKS](https://arxiv.org/pdf/2510.02677) (citations: 1)
+- [ASCenD-BDS: Adaptable, Stochastic and Context-aware framework for Detection of Bias, Discrimination and Stereotyping](https://arxiv.org/pdf/2502.02072) (citations: 1)
 - [AUTOMATED SAFETY EVALUATIONS ACROSS 20 LARGE LANGUAGE MODELS: THE AYMARA LLM RISK AND RESPONSIBILITY MATRIX](https://arxiv.org/pdf/2507.14719) (citations: 1)
 - [Addressing Biases in the Texts using an End-to-End Pipeline Approach](https://arxiv.org/pdf/2303.07024) (citations: 1)
 - [Addressing Stereotypes in Large Language Models: A Critical Examination and Mitigation Approach](https://arxiv.org/pdf/2511.21711) (citations: 1)
+- [Algorithmic Fairness in NLP: Persona-Infused LLMs for Human-Centric Hate Speech Detection](https://arxiv.org/pdf/2510.19331) (citations: 1)
 - [An Approach to Ensure Fairness in News Articles](https://arxiv.org/pdf/2207.03938) (citations: 1)
 - [Analyzing the Impact of Fake News on the Anticipated Outcome of the 2024 Election Ahead of Time](https://arxiv.org/pdf/2312.03750) (citations: 1)
 - [Analyzing the Safety of Japanese Large Language Models in Stereotype-Triggering Prompts](https://arxiv.org/pdf/2503.01947) (citations: 1)
@@ -1178,6 +1197,7 @@
 - [Improving the Distributional Alignment of LLMs using Supervision](https://arxiv.org/pdf/2507.00439) (citations: 1)
 - [Investigating Thinking Behaviours of Reasoning-Based Language Models for Social Bias Mitigation](https://arxiv.org/pdf/2510.17062) (citations: 1)
 - [Is Your Model Fairly Certain? Uncertainty-Aware Fairness Evaluation for LLMs](https://arxiv.org/pdf/2505.23996) (citations: 1)
+- [JustEva: A Toolkit to Evaluate LLM Fairness in Legal Knowledge Inference](https://arxiv.org/pdf/2509.12104) (citations: 1)
 - [K-EXAONE Technical Report Journey to Frontier-Level Performance of Foundation Models](https://arxiv.org/pdf/2601.01739) (citations: 1)
 - [KLAAD: Refining Attention Mechanisms to Reduce Societal Bias in Generative Language Models](https://arxiv.org/pdf/2507.19962) (citations: 1)
 - [LLMS ON TRIAL: EVALUATING JUDICIAL FAIRNESS FOR LARGE LANGUAGE MODELS](https://arxiv.org/pdf/2507.10852) (citations: 1)
@@ -1225,6 +1245,7 @@
 - [VoiceBBQ: Investigating Effect of Content and Acoustics in Social Bias of Spoken Language Model](https://arxiv.org/pdf/2509.21108) (citations: 1)
 - [WHO GETS CREDIT OR BLAME? ATTRIBUTING ACCOUNTABILITY IN MODERN AI SYSTEMS](https://arxiv.org/pdf/2506.00175) (citations: 1)
 - [When Large Language Models Meet Law: Dual-Lens Taxonomy, Technical Advances, and Ethical Governance](https://arxiv.org/pdf/2507.07748) (citations: 1)
+- [fairBERTs: Erasing Sensitive Information Through Semantic and Fairness-aware Perturbations](https://arxiv.org/pdf/2407.08189) (citations: 1)
 - [♪ Something Just Like TRuST ♪ *: Toxicity Recognition of Span and Target](https://arxiv.org/pdf/2506.02326) (citations: 1)
 - ["The Dentist is an involved parent, the bartender is not": Revealing Implicit Biases in QA with Implicit BBQ](https://arxiv.org/pdf/2512.06732) (citations: 0)
 - [A Comprehensive Study of Implicit and Explicit Biases in Large Language Models](https://arxiv.org/pdf/2511.14153) (citations: 0)
@@ -1242,6 +1263,7 @@
 - [Academic case reports lack diversity: Assessing the presence and diversity of sociodemographic and behavioral factors related to Post COVID-19 Condition](https://arxiv.org/pdf/2501.12538) (citations: 0)
 - [Activation Steering for Bias Mitigation: An Interpretable Approach to Safer LLMs](https://arxiv.org/pdf/2508.09019) (citations: 0)
 - [Active Slice Discovery in Large Language Models](https://arxiv.org/pdf/2511.20713) (citations: 0)
+- [Advancing Harmful Content Detection in Organizational Research: Integrating Large Language Models with Elo Rating System](https://arxiv.org/pdf/2506.16575) (citations: 0)
 - [AfriStereo: A Culturally Grounded Dataset for Evaluating Stereotypical Bias in Large Language Models](https://arxiv.org/pdf/2511.22016) (citations: 0)
 - [An Analysis of Large Language Models for Simulating User Responses in Surveys](https://arxiv.org/pdf/2512.06874) (citations: 0)
 - [An Empirical Investigation of Learning from Biased Toxicity Labels](https://arxiv.org/pdf/2110.01577) (citations: 0)
@@ -1264,6 +1286,7 @@
 - [Beyond Bias Scores: Unmasking Vacuous Neutrality in Small Language Models](https://arxiv.org/pdf/2506.08487) (citations: 0)
 - [Bias Beyond English: Evaluating Social Bias and Debiasing Methods in a Low-Resource Setting](https://arxiv.org/pdf/2504.11183) (citations: 0)
 - [Bias Dynamics in BabyLMs: Towards a Compute-Efficient Sandbox for Democratising Pre-Training Debiasing](https://arxiv.org/pdf/2601.09421) (citations: 0)
+- [Bias Testing and Mitigation in Black Box LLMs using Metamorphic Relations](https://arxiv.org/pdf/2512.00556) (citations: 0)
 - [Bias is a Math Problem, AI Bias is a Technical Problem: 10-year Literature Review of AI/LLM Bias Research Reveals Narrow [Gender-Centric] Conceptions of “Bias”, and Academia-Industry Gap](https://arxiv.org/pdf/2508.11067) (citations: 0)
 - [BiasCause: Evaluate Socially Biased Causal Reasoning of Large Language Models](https://arxiv.org/pdf/2504.07997) (citations: 0)
 - [BiasJailbreak: Analyzing Ethical Biases and Jailbreak Vulnerabilities in Large Language Models](https://arxiv.org/pdf/2410.13334) (citations: 0)
@@ -1323,6 +1346,7 @@
 - [Fairness Aware Reward Optimization](https://arxiv.org/pdf/2602.07799) (citations: 0)
 - [FanarGuard: A Culturally-Aware Moderation Filter for Arabic Language Models](https://arxiv.org/pdf/2511.18852) (citations: 0)
 - [FarsEval-PKBETS: A new diverse benchmark for evaluating Persian large language models](https://arxiv.org/pdf/2504.14690) (citations: 0)
+- [From Biased Chatbots to Biased Agents: Examining Role Assignment Effects on LLM Agent Robustness](https://arxiv.org/pdf/2602.12285) (citations: 0)
 - [From RAG to Agentic RAG for Faithful Islamic Question Answering](https://arxiv.org/pdf/2601.07528) (citations: 0)
 - [From Seed to Harvest: Augmenting Human Creativity with AI for Red-teaming Text-to-Image Models](https://arxiv.org/pdf/2507.17922) (citations: 0)
 - [Functionality learning through specification instructions](https://arxiv.org/pdf/2311.08481) (citations: 0)
@@ -1332,6 +1356,7 @@
 - [GuardTrace-VL: Detecting Unsafe Multimodel Reasoning via Iterative Safety Supervision](https://arxiv.org/pdf/2511.20994) (citations: 0)
 - [HAG: Hierarchical Demographic Tree-based Agent Generation for Topic-Adaptive Simulation](https://arxiv.org/pdf/2601.05656) (citations: 0)
 - [HALF: Harm-Aware LLM Fairness Evaluation Aligned with Deployment](https://arxiv.org/pdf/2510.12217) (citations: 0)
+- [HYPOTHESIS TESTING FOR QUANTIFYING LLM-HUMAN MISALIGNMENT IN MULTIPLE CHOICE SETTINGS](https://arxiv.org/pdf/2506.14997) (citations: 0)
 - [HateXScore: A Metric Suite for Evaluating Reasoning Quality in Hate Speech Explanations](https://arxiv.org/pdf/2601.13547) (citations: 0)
 - [Hotter and Colder: A New Approach to Annotating Sentiment, Emotions, and Bias in Icelandic Blog Comments](https://arxiv.org/pdf/2502.16987) (citations: 0)
 - [How AI Fails: An Interactive Pedagogical Tool for Demonstrating Dialectal Bias in Automated Toxicity Models](https://arxiv.org/pdf/2511.06676) (citations: 0)
@@ -1406,6 +1431,7 @@
 - [Seeking Human Security Consensus: A Unified Value Scale for Generative AI Value Safety](https://arxiv.org/pdf/2601.09112) (citations: 0)
 - [Social Bias in Multilingual Language Models: A Survey](https://arxiv.org/pdf/2508.20201) (citations: 0)
 - [Social and Ethical Risks Posed by General-Purpose LLMs for Settling Newcomers in Canada](https://arxiv.org/pdf/2407.20240) (citations: 0)
+- [SoftHateBench: Evaluating Moderation Models Against Reasoning-Driven, Policy-Compliant Hostility](https://arxiv.org/pdf/2601.20256) (citations: 0)
 - [Specializing General-purpose LLM Embeddings for Implicit Hate Speech Detection across Datasets](https://arxiv.org/pdf/2508.20750) (citations: 0)
 - [Stereotype Detection as a Catalyst for Enhanced Bias Detection: A Multi-Task Learning Approach](https://arxiv.org/pdf/2507.01715) (citations: 0)
 - [Surfacing Subtle Stereotypes: A Multilingual, Debate-Oriented Evaluation of Modern LLMs](https://arxiv.org/pdf/2511.01187) (citations: 0)
