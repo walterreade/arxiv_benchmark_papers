@@ -857,8 +857,6 @@ def main():
         generate_markdown_table(base_benchmarks_count, "Base Benchmarks (Top 25)", "Benchmark", "Count", limit=25, denominator=len(data)),
         generate_markdown_table(response_type_count, "Response Type", "Type", "Count", denominator=len(data)),
         generate_markdown_table(continuous_testing_count, "Continuous Testing", "Status", "Count", denominator=len(data)),
-        generate_markdown_table(all_targets_counter, "Top 25 Bias Targets", "Target", "Count", limit=25, denominator=len(data)),
-        generate_markdown_table(focused_counter, "Focus Analysis (Primary or Exclusive focus)", "Target", "Count", limit=25, denominator=len(data)),
         generate_markdown_table_references(references_count, "Most Cited Papers (Top 100)", limit=100),
     ]
     
