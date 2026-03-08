@@ -129,10 +129,91 @@ If this paper doesn't contain relevant information about this topic, respond wit
         return ""
 
 
+def _normalize_title(title: str) -> str:
+    """Normalize a title for fuzzy matching."""
+    return re.sub(r'[^a-z0-9\s]', '', title.lower()).strip()
+
+
+def _find_pdf_for_fact(source_hint: str, id_to_pdf: dict, title_to_pdf: dict, pdf_dir: str) -> str | None:
+    """Find a PDF matching a fact's source_hint using multiple strategies."""
+    if not source_hint:
+        return None
+    
+    # Strategy 1: Direct arXiv ID regex
+    arxiv_match = re.search(r'(\d{4}\.\d{4,5})', source_hint)
+    if arxiv_match:
+        arxiv_id = arxiv_match.group(1)
+        if arxiv_id in id_to_pdf:
+            return id_to_pdf[arxiv_id]
+        potential_path = os.path.join(pdf_dir, f"{arxiv_id}.pdf")
+        if os.path.exists(potential_path):
+            return potential_path
+    
+    # Strategy 2: Exact normalized title match
+    normalized_hint = _normalize_title(source_hint)
+    if normalized_hint in title_to_pdf:
+        return title_to_pdf[normalized_hint]
+    
+    # Strategy 3: Best word-overlap score (fuzzy match)
+    hint_words = set(normalized_hint.split())
+    stop_words = {'the', 'a', 'an', 'in', 'of', 'for', 'and', 'or', 'to', 'on',
+                  'with', 'by', 'is', 'are', 'from', 'as', 'at', 'that', 'this'}
+    hint_words -= stop_words
+    
+    if len(hint_words) < 2:
+        return None
+    
+    best_score = 0.0
+    best_path = None
+    for title, pdf_path in title_to_pdf.items():
+        title_words = set(title.split()) - stop_words
+        if not title_words:
+            continue
+        overlap = len(hint_words & title_words)
+        score = overlap / min(len(hint_words), len(title_words))
+        if score > best_score:
+            best_score = score
+            best_path = pdf_path
+    
+    # Require at least 50% word overlap
+    if best_score >= 0.5 and best_path:
+        return best_path
+    
+    return None
+
+
 def extract_facts(analysis_files: dict, papers: list[dict], api_key: str, model_name: str, 
-                  pdf_dir: str, verify_with_pdf: bool = True) -> list[dict]:
+                  pdf_dir: str, verify_with_pdf: bool = True,
+                  csv_metadata: dict = None) -> list[dict]:
     """Extract impactful facts using LLM analysis."""
     client = genai.Client(api_key=api_key)
+    
+    # Build a lookup from titles/IDs to PDF paths for verification
+    title_to_pdf = {}  # normalized_title -> pdf_path
+    id_to_pdf = {}     # arxiv_id -> pdf_path
+    
+    if pdf_dir and os.path.exists(pdf_dir):
+        # Build from papers list (json/4_religious_bias_analysis data)
+        for paper in papers:
+            arxiv_id = paper.get('_filename', '').replace('.json', '').replace('.pdf', '')
+            if arxiv_id:
+                pdf_path = os.path.join(pdf_dir, f"{arxiv_id}.pdf")
+                if os.path.exists(pdf_path):
+                    id_to_pdf[arxiv_id] = pdf_path
+                    title = paper.get('title', '')
+                    if title:
+                        title_to_pdf[_normalize_title(title)] = pdf_path
+        
+        # Also build from CSV metadata for broader coverage
+        if csv_metadata:
+            for filename, meta in csv_metadata.items():
+                arxiv_id = filename.replace('.pdf', '')
+                pdf_path = os.path.join(pdf_dir, filename)
+                if os.path.exists(pdf_path):
+                    id_to_pdf[arxiv_id] = pdf_path
+                    title = meta.get('title', '')
+                    if title:
+                        title_to_pdf[_normalize_title(title)] = pdf_path
     
     # Combine analysis content
     combined_content = "\n\n---\n\n".join([
@@ -154,7 +235,7 @@ Based on the following analysis of benchmark papers, identify 15-20 impactful fa
 
 For each fact, provide:
 - A concise, quotable statement (1-2 sentences)
-- The source paper(s) if identifiable from the content
+- The source paper(s) — ALWAYS include the arXiv ID (format: XXXX.XXXXX) if visible in the content. If not, include the full paper title.
 - A category (quantitative/surprising/bias_pattern/methodology/gap/trend)
 - An impact score (1-5, where 5 is most impactful for a talk)
 
@@ -162,7 +243,7 @@ Format as JSON array:
 [
   {
     "statement": "concise quotable fact",
-    "source_hint": "paper title or arxiv id if mentioned",
+    "source_hint": "arXiv ID like 2301.12345, or full paper title",
     "category": "category_name",
     "impact_score": 4,
     "needs_verification": true/false
@@ -197,23 +278,15 @@ Analysis content:
         print(f"Error extracting facts: {e}")
         return []
     
-    # Second pass: verify/enhance facts needing verification using PDFs
-    if verify_with_pdf and pdf_dir:
+    # Second pass: verify/enhance facts using PDFs
+    if verify_with_pdf and pdf_dir and (id_to_pdf or title_to_pdf):
         print(f"\nVerifying facts against original PDFs...")
+        print(f"  PDF lookup: {len(id_to_pdf)} by ID, {len(title_to_pdf)} by title")
         
         for i, fact in enumerate(facts):
             if fact.get('needs_verification', False) or fact.get('impact_score', 0) >= 4:
                 source_hint = fact.get('source_hint', '')
-                
-                # Try to find matching PDF
-                pdf_path = None
-                if source_hint:
-                    # Check if it's an arxiv ID
-                    arxiv_match = re.search(r'(\d{4}\.\d+)', source_hint)
-                    if arxiv_match:
-                        potential_path = os.path.join(pdf_dir, f"{arxiv_match.group(1)}.pdf")
-                        if os.path.exists(potential_path):
-                            pdf_path = potential_path
+                pdf_path = _find_pdf_for_fact(source_hint, id_to_pdf, title_to_pdf, pdf_dir)
                 
                 if pdf_path:
                     print(f"  Verifying fact {i+1} against {Path(pdf_path).name}...")
@@ -224,6 +297,7 @@ Analysis content:
                     else:
                         fact['verified'] = False
                 else:
+                    print(f"  Fact {i+1}: no PDF found for '{source_hint[:60]}...'" if len(source_hint) > 60 else f"  Fact {i+1}: no PDF found for '{source_hint}'")
                     fact['verified'] = False
     
     return facts
@@ -334,7 +408,8 @@ def main():
         api_key, 
         args.model,
         args.pdf_dir if not args.no_verify else None,
-        verify_with_pdf=not args.no_verify
+        verify_with_pdf=not args.no_verify,
+        csv_metadata=csv_metadata
     )
     
     if not facts:
