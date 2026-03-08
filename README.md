@@ -1,155 +1,107 @@
-# ArXiv Benchmark Papers Analysis
+# Religious Bias in LLMs — Paper Analysis Pipeline
 
 A pipeline for downloading, analyzing, and summarizing academic papers from arXiv that relate to religious bias evaluation in Large Language Models (LLMs).
 
 ## Overview
 
 This project provides tools to:
-1. Download papers from arXiv based on search criteria
-2. Perform a first-pass analysis to identify faith/ethics-related papers
-3. Perform a deep-dive second-pass analysis on relevant papers
-4. Generate summary statistics and learnings from the analysis
+1. Download papers from arXiv based on search criteria related to bias in NLP/LLMs
+2. Extract paper metadata and classify papers (1st pass)
+3. Extract bias targets from LLM-related bias papers (2nd pass)
+4. Perform deep-dive analysis on papers with religious bias components (3rd pass)
+5. Generate summary reports, statistics, and daily updates
+
+## Reports
+
+| Report | Description |
+|--------|-------------|
+| [Religious Bias Research Summary](analysis/Religious%20Bias%20Research%20Summary.md) | Summary of the state of religious bias measurement in LLMs |
+| [Religious Bias Papers - Summaries](analysis/Religious%20Bias%20Papers%20-%20Summaries.md) | Findings from each analyzed paper, in descending order  |
+| [Religious Bias Papers - Statistics and Links](analysis/Religious%20Bias%20Papers%20-%20Statistics%20and%20Links.md) | Statistical tables with counts of religious groups, models, benchmarks, etc., and links to papers sorted by citation count |
+| [Religious Bias Papers - Interesting Findings](analysis/Religious%20Bias%20Papers%20-%20Interesting%20Findings.md) | Extracted impactful facts for presentations |
+| [Latest Daily Update](analysis/daily_updates/20260301_daily_update.md) | Most recent papers analyzed |
 
 ## Project Structure
 
 ```
-├── scripts/                    # Python analysis scripts
-│   ├── download_arxiv_papers.py
-│   ├── 1st_pass_analyze_papers.py
-│   ├── 2nd_pass_analyze_papers.py
-│   ├── 3rd_pass_analyze_papers.py
+├── scripts/                           # Python analysis scripts
+│   ├── 1_classify_and_download_arxiv_papers.py
+│   ├── 2_extract_paper_metadata.py
+│   ├── 3_extract_bias_targets.py
+│   ├── 4_extract_paper_details.py
 │   ├── generate_full_analysis.py
-│   ├── check_lds_mentions.py
 │   ├── generate_daily_update.py
-│   └── run_daily_update.sh
-├── json/                       # JSON analysis output
-│   ├── 1st_pass_json/
-│   ├── 2nd_pass_json/
-│   └── 3rd_pass_json/
-├── analysis/                   # Generated markdown reports
-│   ├── benchmark_analysis.md
-│   ├── benchmark_learnings.md
-│   ├── benchmark_summary.md
-│   ├── daily_updates/          # Timestamped daily update files
-│   └── versions/               # Versioned copies with timestamps
-├── csv/                        # CSV data files
+│   ├── generate_talk_facts.py
+│   ├── analyze_bias_targets.py
+│   ├── clean_up_pipeline_data.py
+│   └── shared.py
+├── json/                              # JSON analysis output
+│   ├── 2_paper_metadata/
+│   ├── 3_paper_bias_targets/
+│   └── 4_religious_bias_analysis/
+├── analysis/                          # Generated markdown reports
+│   ├── Religious Bias Research Summary.md
+│   ├── Religious Bias Papers - Summaries.md
+│   ├── Religious Bias Papers - Statistics and Links.md
+│   ├── Religious Bias Papers - Interesting Findings.md
+│   ├── daily_updates/                 # Daily update files (YYYYMMDD_daily_update.md)
+│   └── versions/                      # Date-stamped copies of reports
+├── utility_files/                     # CSV data and state files
 │   ├── 1st_pass_results.csv
-│   ├── 1st_pass_failures.csv
-│   ├── 2nd_pass_failures.csv
-│   └── 3rd_pass_failures.csv
-└── pdf/                        # Downloaded PDF papers
+│   └── *.failures.csv
+├── pdf/                               # Downloaded PDF papers
+└── run_update.sh                      # Automated daily pipeline
 ```
 
-## Scripts
+## Pipeline
 
-### `scripts/download_arxiv_papers.py`
-Queries the last 1000 CS papers from arXiv, classifies them with Gemini for bias in NLP/LLMs, and downloads qualifying papers.
+### Automated (recommended)
 
-### `scripts/1st_pass_analyze_papers.py`
-Performs initial analysis on downloaded PDFs using the Gemini API to determine:
-- Whether the paper is benchmark-related
-- Whether it's LLM-related
-- Whether it discusses bias
-- Whether it's faith/ethics-related
-
-**Output:** `1st_pass_results.csv`
-
-### `scripts/2nd_pass_analyze_papers.py`
-Extracts bias targets from papers that are both LLM-related and bias-related. Extracts:
-- Bias targets with methodology descriptions
-- Primary bias target
-
-**Usage:**
-```bash
-uv run scripts/2nd_pass_analyze_papers.py [--rpm 20] [--workers 10] [--model gemini-3.1-pro-preview] [--reprocess]
-```
-
-**Output:** JSON files in `json/2nd_pass_json/`
-
-### `scripts/3rd_pass_analyze_papers.py`
-Performs deep-dive analysis on religion/faith aspects of bias papers. Extracts:
-- Religious groups studied
-- Models tested
-- Benchmark measurements and findings
-- Languages evaluated
-- Response types (short/long)
-- Religion component (major/minor focus)
-- Base benchmarks used
-- References cited
-- Whether testing is continuous
-
-**Usage:**
-```bash
-uv run scripts/3rd_pass_analyze_papers.py [--rpm 50] [--workers 10] [--model gemini-2.5-pro] [--reprocess]
-```
-
-**Output:** JSON files in `json/3rd_pass_json/`
-
-### `scripts/generate_full_analysis.py`
-Processes the JSON analysis files and generates markdown summaries.
-
-**Usage:**
-```bash
-uv run scripts/generate_full_analysis.py
-```
-
-**Outputs:**
-- `analysis/benchmark_analysis.md` - Statistical tables (religious groups, models, benchmarks, languages, etc.)
-- `analysis/benchmark_learnings.md` - Individual paper entries with findings
-- `analysis/benchmark_summary.md` - AI-generated summary of the state of religious bias measurement in LLMs
-
-### `scripts/check_lds_mentions.py`
-Utility script to check for Latter-day Saint/Mormon mentions in analyzed papers.
-
-### `scripts/run_daily_update.sh`
-Automated pipeline that runs the full analysis workflow:
-1. Downloads new papers from arXiv
-2. Runs 1st pass analysis
-3. Runs 2nd pass analysis for qualifying papers
-4. Generates a timestamped update file for newly analyzed papers
+Run the full pipeline with:
 
 ```bash
-./scripts/run_daily_update.sh
+./run_update.sh
 ```
 
-### `scripts/generate_daily_update.py`
-Helper script to generate timestamped update markdown files for specific papers.
+This will download new papers, run all analysis passes, generate a daily update, upload PDFs to GCS, and commit/push changes.
 
-### `scripts/extract_talk_facts.py`
-Extracts impactful, quotable facts for talks/papers about religious bias in LLMs.
+To also regenerate the full analysis reports and talk facts:
 
 ```bash
-uv run python scripts/extract_talk_facts.py
+./run_update.sh --full
 ```
 
-**Features:**
-- Extracts 15-20 high-impact facts from analysis files
-- Filters for recent papers (default: last 24 months) to avoid stale information
-- Verifies key facts against original PDFs for accuracy
-- Categorizes facts (quantitative, surprising, bias patterns, methodology, gaps, trends)
-- Outputs concise, presentation-ready statements
+### Manual Scripts
 
-**Options:**
-- `--months N` - Include papers from last N months (default: 24)
-- `--no-verify` - Skip PDF verification (faster but less accurate)
-- `--format json` - Output as JSON instead of markdown
+#### Step 1: `scripts/1_classify_and_download_arxiv_papers.py`
+Queries recent CS papers from arXiv, classifies them with Gemini for bias in NLP/LLMs, and downloads qualifying papers.
 
-## Output Files
+#### Step 2: `scripts/2_extract_paper_metadata.py`
+Extracts metadata from downloaded PDFs — determines whether each paper is LLM-related, bias-related, and faith/ethics-related.
 
-| File | Description |
-|------|-------------|
-| `csv/1st_pass_results.csv` | Results from initial paper screening |
-| `csv/1st_pass_failures.csv` | Papers that failed first-pass analysis |
-| `json/2nd_pass_json/` | Bias target extraction results for each paper |
-| `csv/2nd_pass_failures.csv` | Papers that failed second-pass analysis |
-| `json/3rd_pass_json/` | Religion deep-dive analysis for each paper |
-| `csv/3rd_pass_failures.csv` | Papers that failed third-pass analysis |
-| `analysis/benchmark_analysis.md` | Summary tables with counts of religious groups, models, benchmarks, etc. |
-| `analysis/benchmark_learnings.md` | Detailed findings from each analyzed paper |
-| `analysis/benchmark_summary.md` | AI-generated comprehensive summary of the field |
-| `analysis/daily_updates/` | Timestamped update files from `run_daily_update.sh` runs |
-| `analysis/versions/` | Versioned copies of analysis files with timestamps |
-| `analysis/talk_facts.md` | Extracted impactful facts for presentations |
+#### Step 3: `scripts/3_extract_bias_targets.py`
+Extracts bias targets from papers that are both LLM-related and bias-related.
+
+#### Step 4: `scripts/4_extract_paper_details.py`
+Performs deep-dive analysis on papers with religious bias targets — extracts religious groups studied, models tested, benchmark measurements, findings, and more.
+
+#### Report Generation
+
+```bash
+# Generate full analysis reports (statistics, summaries, AI-generated research summary)
+uv run python scripts/generate_full_analysis.py
+
+# Generate interesting findings for presentations
+uv run python scripts/generate_talk_facts.py
+
+# Generate a daily update for specific JSON files
+uv run python scripts/generate_daily_update.py --json-files file1.json file2.json
+```
+
+### Utility Scripts
+
+- **`scripts/clean_up_pipeline_data.py`** — Validates pipeline data integrity and cleans up invalid/orphaned JSON files. Dry run by default; use `--apply` to execute changes.
+- **`scripts/analyze_bias_targets.py`** — Analyzes bias target distributions across the corpus.
 
 ## Setup
 

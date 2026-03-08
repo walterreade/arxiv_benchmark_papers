@@ -120,9 +120,21 @@ if echo "$NEW_PAPERS" | xargs uv run python scripts/generate_daily_update.py --o
             uv run python scripts/generate_talk_facts.py || echo "WARNING: Talk facts generation failed."
         fi
 
-        # --- Stage 8: Upload and commit ---
+        # --- Stage 8: Update README with latest daily update link ---
         echo ""
-        echo "Stage 8: Uploading PDFs and committing changes..."
+        echo "Stage 8: Updating README.md..."
+        echo "----------------------------------------"
+        LATEST_UPDATE=$(ls -1 analysis/daily_updates/*_daily_update.md 2>/dev/null | sort | tail -1)
+        if [ -n "$LATEST_UPDATE" ]; then
+            LATEST_BASENAME=$(basename "$LATEST_UPDATE")
+            ENCODED_PATH="analysis/daily_updates/${LATEST_BASENAME}"
+            sed -i '' "s|\[Latest Daily Update\](analysis/daily_updates/[^)]*)|[Latest Daily Update](${ENCODED_PATH})|" README.md
+            echo "Updated README to link to: $ENCODED_PATH"
+        fi
+
+        # --- Stage 9: Upload and commit ---
+        echo ""
+        echo "Stage 9: Uploading PDFs and committing changes..."
         echo "----------------------------------------"
 
         # Copy new pdf files to GCS (skip existing with -n)
