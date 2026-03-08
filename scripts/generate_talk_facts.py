@@ -289,7 +289,7 @@ def main():
     parser.add_argument("--json-dir", default="json/4_religious_bias_analysis", help="Directory containing JSON analysis files")
     parser.add_argument("--csv", default="utility_files/1st_pass_results.csv", help="CSV file with paper metadata")
     parser.add_argument("--pdf-dir", default="pdf", help="Directory containing original PDFs")
-    parser.add_argument("--output", default="analysis/Religious Bias Papers - Interesting Findings.md", help="Output file")
+    parser.add_argument("--output", default="reports/Religious Bias Papers - Interesting Findings.md", help="Output file")
     parser.add_argument("--format", choices=['markdown', 'json'], default='markdown', help="Output format")
     parser.add_argument("--model", default=DEFAULT_MODEL, help="Model for fact extraction")
     parser.add_argument("--months", type=int, default=24, help="Only include papers from last N months")

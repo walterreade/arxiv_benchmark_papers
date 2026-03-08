@@ -664,10 +664,10 @@ def main():
     parser.add_argument("--json_dir", default="json/4_religious_bias_analysis", help="Directory containing JSON analysis files")
     parser.add_argument("--first_pass_dir", default="json/2_paper_metadata", help="Directory with paper metadata JSON files")
     parser.add_argument("--second_pass_dir", default="json/3_paper_bias_targets", help="Directory with bias targets JSON files")
-    parser.add_argument("--output", default="analysis/Religious Bias Papers - Statistics and Links.md", help="Output markdown file")
+    parser.add_argument("--output", default="reports/Religious Bias Papers - Statistics and Links.md", help="Output markdown file")
     parser.add_argument("--csv", default="utility_files/1st_pass_results.csv", help="Input CSV file with paper metadata")
-    parser.add_argument("--learnings", default="analysis/Religious Bias Papers - Summaries.md", help="Output learnings markdown file")
-    parser.add_argument("--summary", default="analysis/Religious Bias Research Summary.md", help="Output summary markdown file")
+    parser.add_argument("--learnings", default="reports/Religious Bias Papers - Summaries.md", help="Output learnings markdown file")
+    parser.add_argument("--summary", default="reports/Religious Bias Research Summary.md", help="Output summary markdown file")
     parser.add_argument("--summary-model", default="gemini-3-pro-preview", help="Model to use for summary generation")
     
     args = parser.parse_args()
@@ -888,8 +888,8 @@ def main():
     # Generate benchmark summary using LLM
     generate_research_summary(learnings_file, summary_file, summary_model)
     
-    # Create versioned copies in analysis/versions
-    versions_dir = "analysis/versions"
+    # Create versioned copies in reports/versions
+    versions_dir = "reports/versions"
     os.makedirs(versions_dir, exist_ok=True)
     timestamp = datetime.now().strftime('%Y%m%d')
     

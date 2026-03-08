@@ -105,9 +105,9 @@ echo ""
 echo "Stage 6: Generating update file..."
 echo "----------------------------------------"
 
-mkdir -p analysis/daily_updates
+mkdir -p reports/daily_updates
 TIMESTAMP=$(date +%Y%m%d)
-OUTPUT_FILE="analysis/daily_updates/${TIMESTAMP}_daily_update.md"
+OUTPUT_FILE="reports/daily_updates/${TIMESTAMP}_daily_update.md"
 
 if echo "$NEW_PAPERS" | xargs uv run python scripts/generate_daily_update.py --output "$OUTPUT_FILE" --json-files; then
     if [ -f "$OUTPUT_FILE" ]; then
@@ -124,11 +124,11 @@ if echo "$NEW_PAPERS" | xargs uv run python scripts/generate_daily_update.py --o
         echo ""
         echo "Stage 8: Updating README.md..."
         echo "----------------------------------------"
-        LATEST_UPDATE=$(ls -1 analysis/daily_updates/*_daily_update.md 2>/dev/null | sort | tail -1)
+        LATEST_UPDATE=$(ls -1 reports/daily_updates/*_daily_update.md 2>/dev/null | sort | tail -1)
         if [ -n "$LATEST_UPDATE" ]; then
             LATEST_BASENAME=$(basename "$LATEST_UPDATE")
-            ENCODED_PATH="analysis/daily_updates/${LATEST_BASENAME}"
-            sed -i '' "s|\[Latest Daily Update\](analysis/daily_updates/[^)]*)|[Latest Daily Update](${ENCODED_PATH})|" README.md
+            ENCODED_PATH="reports/daily_updates/${LATEST_BASENAME}"
+            sed -i '' "s|\[Latest Daily Update\](reports/daily_updates/[^)]*)|[Latest Daily Update](${ENCODED_PATH})|" README.md
             echo "Updated README to link to: $ENCODED_PATH"
         fi
 

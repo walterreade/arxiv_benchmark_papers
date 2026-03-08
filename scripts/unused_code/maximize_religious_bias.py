@@ -344,7 +344,7 @@ def main():
     )
     parser.add_argument("--num-scenarios", type=int, default=100,
                         help="Number of scenarios to generate (default: 100)")
-    parser.add_argument("--output", default="analysis/religious_bias_test.json",
+    parser.add_argument("--output", default="reports/religious_bias_test.json",
                         help="Output JSON file path")
     parser.add_argument("--gen-model", default="gemini-2.5-pro",
                         help="Model for scenario generation")

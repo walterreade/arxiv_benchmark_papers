@@ -15,11 +15,11 @@ This project provides tools to:
 
 | Report | Description |
 |--------|-------------|
-| [Religious Bias Research Summary](analysis/Religious%20Bias%20Research%20Summary.md) | Summary of the state of religious bias measurement in LLMs |
-| [Religious Bias Papers - Summaries](analysis/Religious%20Bias%20Papers%20-%20Summaries.md) | Findings from each analyzed paper, in descending order  |
-| [Religious Bias Papers - Statistics and Links](analysis/Religious%20Bias%20Papers%20-%20Statistics%20and%20Links.md) | Statistical tables with counts of religious groups, models, benchmarks, etc., and links to papers sorted by citation count |
-| [Religious Bias Papers - Interesting Findings](analysis/Religious%20Bias%20Papers%20-%20Interesting%20Findings.md) | Extracted impactful facts for presentations |
-| [Latest Daily Update](analysis/daily_updates/20260301_daily_update.md) | Most recent papers analyzed |
+| [Religious Bias Research Summary](reports/Religious%20Bias%20Research%20Summary.md) | Summary of the state of religious bias measurement in LLMs |
+| [Religious Bias Papers - Summaries](reports/Religious%20Bias%20Papers%20-%20Summaries.md) | Findings from each analyzed paper, in descending order  |
+| [Religious Bias Papers - Statistics and Links](reports/Religious%20Bias%20Papers%20-%20Statistics%20and%20Links.md) | Statistical tables with counts of religious groups, models, benchmarks, etc., and links to papers sorted by citation count |
+| [Religious Bias Papers - Interesting Findings](reports/Religious%20Bias%20Papers%20-%20Interesting%20Findings.md) | Extracted impactful facts for presentations |
+| [Latest Daily Update](reports/daily_updates/20260301_daily_update.md) | Most recent papers analyzed |
 
 ## Project Structure
 
@@ -39,7 +39,7 @@ This project provides tools to:
 │   ├── 2_paper_metadata/
 │   ├── 3_paper_bias_targets/
 │   └── 4_religious_bias_analysis/
-├── analysis/                          # Generated markdown reports
+├── reports/                          # Generated markdown reports
 │   ├── Religious Bias Research Summary.md
 │   ├── Religious Bias Papers - Summaries.md
 │   ├── Religious Bias Papers - Statistics and Links.md
