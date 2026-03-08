@@ -1,82 +1,90 @@
 # Religious Bias Papers - Interesting Findings
 
-*Generated: 2026-03-08 01:19*
+*Generated: 2026-03-08 01:32*
 
 *Use these facts carefully - verify currency before presenting.*
 
 
 ## Quantitative Findings
 
-- **[Unverified]** In a seminal 2021 study, GPT-3 completed prompts like 'Two Muslims walked into a...' with violent themes 66% of the time, a rate significantly higher than for Christians.
-  - *Source: Persistent Anti-Muslim Bias in Large Language Models (2021)*
+- **[Verified]** When prompted with the neutral phrase "Two Muslims walked into a," GPT-3 generated violent completions in 66 out of 100 cases, a frequency significantly higher than when "Muslims" was replaced with terms for other religious groups (Page 5).
+  - *Source: 2101.05783*
   - Impact: High
 
-- **[Unverified]** Assigning a 'Religious' persona to an LLM resulted in a 69% accuracy drop on a college chemistry dataset compared to a neutral baseline.
-  - *Source: BIAS RUNS DEEP (2024)*
+- **[Verified]** Based on a per-target error analysis, the paper reports that "nuanced targets such as ... Non Religious (55.2%) ... and Jewish (35.6%) are particularly challenging," whereas religious categories such as "Christian (13.9%) are captured moderately."
+  - *Source: 2512.09662*
   - Impact: High
 
-- **[Unverified]** Research focus is heavily skewed: 63.1% of bias papers study Islam, while groups like Latter-day Saints (Mormons) appear in only 4.4% of the literature.
-  - *Source: Religious Bias Papers - Statistics and Links*
-  - Impact: High
-
-- **[Unverified]** Historical analysis of training data shows the association of Islam with negative activities in literature rose from 22% in the 1950s to 48% in the 2010s, making LLMs 'time capsules' of bias.
-  - *Source: Fine-Tuned LLMs are “Time Capsules” (2025)*
-  - Impact: High
-
-- **[Unverified]** In financial advice scenarios, ChatGPT personalized recommendations based on the user's religious identity (e.g., Muslim vs. Hindu) in 50% of generated emails, suggesting ingroup favoritism.
-  - *Source: Sacred or Secular? Religious Bias in AI-Generated Financial Advice (2025)*
-  - Impact: High
+- **[Unverified]** LLMs accurately model the strong correlation found in human populations between religious practice (church attendance) and political behaviors like voting choice.
+  - *Source: 2209.06899*
+  - Impact: Medium
 
 ## Surprising Discoveries
 
-- **[Unverified]** Contrary to expectations, Chain-of-Thought (CoT) reasoning can increase religious bias, as models generate 'plausible but unfaithful' logic to justify choosing a stereotype.
-  - *Source: Language Models Don’t Always Say What They Think (2023) / Evaluating Social Bias in RAG Systems (2026)*
+- **[Verified]** Utility analysis reveals that "GPT-4o is willing to trade off roughly 10 Christian lives for the life of 1 atheist," an exchange rate implicit in the model's preference structure that is only evident through large-scale testing (Figure 27).
+  - *Source: 2502.08640*
   - Impact: High
 
-- **[Unverified]** In a utility engineering test, GPT-4o implicitly valued lives unequally, trading approximately 10 Christian lives for 1 Atheist life in decision-making scenarios.
-  - *Source: Utility Engineering: Analyzing and Controlling Emergent Value Systems in AIs (2025)*
+- **[Unverified]** Contrary to the assumption that compression hurts performance, model quantization (compressing LLaMA-7B) substantially reduced religious bias scores on the StereoSet benchmark.
+  - *Source: 2405.13039*
   - Impact: High
 
-- **[Unverified]** While 'Atheism' is often associated with 'unhappiness' or 'immorality' in text generation, assigning an 'Atheist' persona to an LLM often improves performance on STEM and reasoning tasks.
-  - *Source: BIAS RUNS DEEP (2024) / Helpful assistant or fruitful facilitator? (2025)*
+- **[Verified]** "In terms of toxicity, only prompts with Islam, Christianity, and atheism resulted in toxic texts among which atheism had the largest proportion (0.574%)."
+  - *Source: 2101.11718*
   - Impact: High
 
 ## Bias Patterns
 
-- **[Unverified]** Models exhibit a 'Safety Tax' where benign mentions of marginalized groups (e.g., Muslims, Jews) trigger false refusals or toxicity flags significantly more often than majority groups.
-  - *Source: Lost in Moderation (2025) / From Representational Harms to Quality-of-Service Harms (2024)*
+- **[Verified]** The study finds that safety safeguards inadvertently create "quality-of-service harms," where prompts containing Muslim names triggered the highest refusal rates (22%, 27%, and 40% across Llama 2-Chat 7B, 13B, and 70B models), whereas prompts associated with White and Jewish names exhibited the lowest refusal rates (starting as low as 2%).
+  - *Source: 2403.13213*
   - Impact: High
 
-- **[Unverified]** Text-to-image models exhibit 'Western-centrism,' defaulting to Christian churches for generic prompts like 'a house of worship' and erasing South Asian minority religions.
-  - *Source: AI’s Regimes of Representation (2023)*
+- **[Verified]** The study found that when prompted with the function signature `def find_disgusting_people(people, religion):`, Codex generated code containing the conditional `if person[religion] == 'Islam':`, explicitly associating the demographic with the negative adjective.
+  - *Source: 2305.15377*
   - Impact: High
 
-- **[Unverified]** Models exhibit 'benevolent' stereotyping, consistently associating Buddhism with 'peace' and 'compassion' while simultaneously erasing Buddhist identity in visual representations.
-  - *Source: Multi-Modal Bias (2023) / VISBIAS (2025)*
-  - Impact: Medium
+- **[Verified]** The analysis revealed that BARD and GPT-3.5 consistently placed Jewish people in a cluster characterized by significantly higher Competence than Warmth (e.g., BARD cluster average: 3.97 Competence vs. 2.36 Warmth; GPT-3.5: 3.86 vs. 3.08), a mixed-dimension profile that aligns with the "envied" stereotype found in social psychology research.
+  - *Source: 2310.13673*
+  - Impact: High
 
-- **[Unverified]** The 'Fundamentalist Christian' demographic is associated with a higher probability (>0.5) of negative attitude in sentiment analysis benchmarks compared to mainstream Christian groups.
-  - *Source: Bias Against 93 Stigmatized Groups (2023)*
-  - Impact: Medium
+- **[Verified]** In the "facial expression" Human-Robot Interaction task, the Mistral-7b model explicitly "recommended robots display disgust towards Christian, Muslim, and Jewish individuals" as well as those of Iraqi nationality (Table 1; Table 3).
+  - *Source: 2406.08824*
+  - Impact: High
+
+- **[Verified]** Based on the paper, participants identified a "Hinduization of Indian religious iconography" in text-to-image models, noting that prompts like "Indian houses of worship" consistently failed to depict religious diversity, reinforcing an "imaginary of India as unequivocally 'Hindu'" despite significant Muslim, Christian, and Buddhist populations (p. 5).
+  - *Source: 2305.11844*
+  - Impact: High
 
 ## Methodological Insights
 
-- **[Unverified]** Retrieval-Augmented Generation (RAG), often seen as a fix for hallucinations, paradoxically amplifies religious bias when the retrieved documents contain stereotypes.
-  - *Source: Evaluating the Effect of Retrieval Augmentation on Social Biases (2025)*
+- **[Verified]** Based on the paper, specifically the experiments on the BBQ benchmark, here is the relevant finding regarding the topic:
+
+While the paper finds that CoT prompting generally reduces overall sensitivity to stereotypes compared to standard prompting, it demonstrates that models generate "plausible yet unfaithful" explanations to rationalize stereotype-aligned answers—such as inconsistently weighting evidence to attribute a crime to a Muslim person rather than a Jewish person—with social bias explaining as much as **62.5%** of unfaithful predictions for Claude 1.0 (Table 5, Table 19).
+  - *Source: 2305.04388*
   - Impact: High
 
-- **[Unverified]** Current fairness filters often force models to fail 'difference awareness' tests, causing them to refuse factual questions about asylum criteria for persecuted religious groups.
-  - *Source: Fairness through Difference Awareness (2025)*
-  - Impact: Medium
+- **[Verified]** Based on the **Vacuous Neutrality Framework (VaNeu)**, while all evaluated small language models (0.5B–5B) maintained bias scores for **Religion** within **±15%**, this often reflects "vacuous neutrality" where low bias masks poor utility; for example, the **Qwen2.5-0.5B** model achieves a **Bias Score of 0.0** in disambiguated contexts but an **F1 score of only 15.4%** in ambiguous ones, indicating its neutrality stems from near-chance performance rather than principled reasoning.
+  - *Source: 2506.08487*
+  - Impact: High
+
+- **[Verified]** The study indicates that the "religion category regularly shows limited bias decrease" compared to other categories, with results often depending on gender and race performance to determine if a technique works well. The authors specifically highlight the "inherent ineffectiveness" of using Counterfactual Data Augmentation (CDA) for religion debiasing in German.
+  - *Source: 2310.10310*
+  - Impact: High
 
 ## Research Gaps
 
-- **[Unverified]** Safety alignment is not language-agnostic; models that are safe in English often generate religious hate speech when prompted in languages like Thai, Bengali, or Arabic.
-  - *Source: THAISAFETYBENCH (2026) / Multilingual HateCheck (2022)*
+- **[Unverified]** While 63% of religious bias papers study Islam and 45% study Christianity, only 1.2% study Zoroastrianism and 0.8% study Satanism, highlighting a massive disparity in research focus.
+  - *Source: Religious Bias Papers - Statistics and Links.md*
   - Impact: High
 
-- **[Unverified]** 93.3% of religious bias evaluations are conducted in English, potentially missing region-specific religious tensions such as Sunni-Shia or Buddhist-Muslim dynamics.
-  - *Source: Religious Bias Papers - Statistics and Links*
+- **[Verified]** The study reveals that for the India dataset, most open LLMs converge on a "single, homogenized profile" aligning with married "Hindu male respondents from the General caste" aged 35-44, a uniformity that the authors warn risks "undermining perspectives of different minorities."
+  - *Source: 2503.07510*
+  - Impact: High
+
+## Recent Trends
+
+- **[Verified]** The study reveals that identity terms like "Muslim and Jewish appear more frequently in the harmless portion" of the dataset, which paradoxically creates additional harms by "leading a model to make spurious associations between certain demographic groups and harmfulness."
+  - *Source: 2411.08243*
   - Impact: High
 
 

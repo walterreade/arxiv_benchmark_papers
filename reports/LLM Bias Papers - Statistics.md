@@ -24,13 +24,13 @@
 | Regional bias | 36 | 3.1% |
 | Intersectional bias | 27 | 2.3% |
 | Caste bias | 26 | 2.2% |
-| Marital status bias | 23 | 2.0% |
+| Marital status bias | 14 | 1.2% |
 | Stereotyping | 13 | 1.1% |
 | Dataset bias | 9 | 0.8% |
+| Immigration status bias | 9 | 0.8% |
 | Race/Ethnicity Bias | 9 | 0.8% |
 | Racial/Color Bias | 7 | 0.6% |
 | Cognitive bias | 6 | 0.5% |
-| Geographic/Regional Bias | 6 | 0.5% |
 
 ## Focus Analysis (Primary or Exclusive focus)
 
@@ -43,21 +43,21 @@
 | Language bias | 8 | 0.7% |
 | Intersectional bias | 5 | 0.4% |
 | Racial/Ethnic bias | 3 | 0.3% |
+| Sexual orientation bias | 2 | 0.2% |
 | Religious And Ethnic Bias (Antisemitism) | 2 | 0.2% |
 | Media bias | 2 | 0.2% |
 | Antisemitic Bias | 2 | 0.2% |
-| Sexual orientation bias | 2 | 0.2% |
 | Annotator bias | 2 | 0.2% |
-| Socioeconomic bias | 1 | 0.1% |
-| Toxic Language / General Bias | 1 | 0.1% |
-| Discriminatory Bias (Race, Gender, Religion, Disability) | 1 | 0.1% |
-| Intersectional Bias (Gender And Ethnicity) | 1 | 0.1% |
-| Inductive Bias / Feature Bias | 1 | 0.1% |
-| Sociopolitical Bias | 1 | 0.1% |
-| Religious And Racial Bias | 1 | 0.1% |
-| Annotator Representation Bias | 1 | 0.1% |
+| Age-Appropriate Safety | 1 | 0.1% |
+| Ideological And Political Bias (Extremism) | 1 | 0.1% |
+| Social Bias (Including Gender, Racial, Religious, And Sexual Orientation Bias) | 1 | 0.1% |
+| Cultural/National Bias | 1 | 0.1% |
+| Cultural And Demographic Bias | 1 | 0.1% |
+| General Identity-Based Bias (Hate Speech) | 1 | 0.1% |
+| Stereotyping | 1 | 0.1% |
+| Hate Speech And Discrimination (Including Race, Gender, Sexual Orientation, Religion, Disability, And Socioeconomic Bias) | 1 | 0.1% |
+| Sycophancy (Conformity Bias) | 1 | 0.1% |
+| Sociodemographic Bias (Race, Color, Religion, Sex, Age, Disability, National Origin) | 1 | 0.1% |
 | Safety Bias (Exaggerated Safety / Over-Refusal) | 1 | 0.1% |
-| Temporal Value Bias (Value Lock-In) | 1 | 0.1% |
-| Demographic And Socioeconomic Bias (Gender, Race, Ethnicity, Age, Religion, National Origin, Disability, Socioeconomic Status) | 1 | 0.1% |
+| Prototypicality Bias | 1 | 0.1% |
 | Social Bias Against Protected Groups (Including Age, Religion, And Disability) | 1 | 0.1% |
-| Prompt Formatting Bias | 1 | 0.1% |
