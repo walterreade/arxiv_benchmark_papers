@@ -886,13 +886,51 @@ def main():
     # Generate research summary using LLM
     generate_research_summary(learnings_file, summary_file, summary_model)
     
-    # Generate LLM Bias Statistics report (all papers, not just religious)
-    total_bias_papers = len(papers_2nd_data)
+    # Generate LLM Bias Statistics report (ALL papers in 3_paper_bias_targets, not just religious)
+    print(f"\nGenerating LLM Bias Statistics from all papers in {second_pass_dir}...")
+    all_bias_targets = []
+    all_bias_papers = []
+    for filepath in glob.glob(os.path.join(second_pass_dir, "*.json")):
+        try:
+            with open(filepath, 'r') as f:
+                bp = json.load(f)
+            if 'bias_targets' not in bp:
+                continue
+            raw = bp.get('bias_targets', [])
+            normalized = []
+            for entry in raw:
+                if isinstance(entry, dict):
+                    normalized.append(normalize_target(entry.get('target', '')))
+                else:
+                    normalized.append(normalize_target(entry))
+            primary = bp.get('primary_bias_target', '')
+            if primary:
+                primary = normalize_target(primary)
+            all_bias_papers.append({
+                'normalized_targets': normalized,
+                'primary_bias_target': primary,
+            })
+            all_bias_targets.extend(normalized)
+        except Exception:
+            pass
+    
+    total_all_bias = len(all_bias_papers)
+    all_bias_counter = Counter(all_bias_targets)
+    all_focused_counter = Counter()
+    for bp in all_bias_papers:
+        targets = set(bp['normalized_targets'])
+        primary = bp['primary_bias_target']
+        is_exclusive = len(targets) == 1
+        for t in targets:
+            if is_exclusive or t == primary:
+                all_focused_counter[t] += 1
+    
+    print(f"  Loaded {total_all_bias} papers for bias statistics")
     bias_stats_content = [
         "# LLM Bias Papers - Statistics\n",
-        f"**Total LLM-Bias papers analyzed:** {total_bias_papers}\n",
-        generate_markdown_table(all_targets_counter, "Top 25 Bias Targets", "Target", "Count", limit=25, denominator=total_bias_papers),
-        generate_markdown_table(focused_counter, "Focus Analysis (Primary or Exclusive focus)", "Target", "Count", limit=25, denominator=total_bias_papers),
+        f"**Total LLM-Bias papers analyzed:** {total_all_bias}\n",
+        generate_markdown_table(all_bias_counter, "Top 25 Bias Targets", "Target", "Count", limit=25, denominator=total_all_bias),
+        generate_markdown_table(all_focused_counter, "Focus Analysis (Primary or Exclusive focus)", "Target", "Count", limit=25, denominator=total_all_bias),
     ]
     os.makedirs(os.path.dirname(bias_stats_file) or '.', exist_ok=True)
     with open(bias_stats_file, 'w', encoding='utf-8') as f:
