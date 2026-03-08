@@ -19,7 +19,8 @@ This project provides tools to:
 | [Religious Bias Papers - Summaries](reports/Religious%20Bias%20Papers%20-%20Summaries.md) | Findings from each analyzed paper, in descending order  |
 | [Religious Bias Papers - Statistics and Links](reports/Religious%20Bias%20Papers%20-%20Statistics%20and%20Links.md) | Statistical tables with counts of religious groups, models, benchmarks, etc., and links to papers sorted by citation count |
 | [Religious Bias Papers - Interesting Findings](reports/Religious%20Bias%20Papers%20-%20Interesting%20Findings.md) | Extracted impactful facts for presentations |
-| [Latest Daily Update](reports/daily_updates/20260226_daily_update.md) | Most recent papers analyzed |
+| [LLM Bias Papers - Statistics](reports/LLM%20Bias%20Papers%20-%20Statistics.md) | Bias target distribution across all analyzed LLM-bias papers |
+| [Religious Papers - Latest Daily Update](reports/daily_updates/20260226_daily_update.md) | Most recent papers analyzed |
 
 ## Project Structure
 

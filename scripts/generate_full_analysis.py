@@ -668,6 +668,7 @@ def main():
     parser.add_argument("--csv", default="utility_files/1st_pass_results.csv", help="Input CSV file with paper metadata")
     parser.add_argument("--learnings", default="reports/Religious Bias Papers - Summaries.md", help="Output learnings markdown file")
     parser.add_argument("--summary", default="reports/Religious Bias Research Summary.md", help="Output summary markdown file")
+    parser.add_argument("--bias-stats", default="reports/LLM Bias Papers - Statistics.md", help="Output bias statistics markdown file")
     parser.add_argument("--summary-model", default="gemini-3-pro-preview", help="Model to use for summary generation")
     
     args = parser.parse_args()
@@ -678,6 +679,7 @@ def main():
     output_file = args.output
     csv_file = args.csv
     learnings_file = args.learnings
+    bias_stats_file = args.bias_stats
     summary_file = args.summary
     summary_model = args.summary_model
     
@@ -886,12 +888,25 @@ def main():
     # Generate benchmark summary using LLM
     generate_research_summary(learnings_file, summary_file, summary_model)
     
+    # Generate LLM Bias Statistics report (all papers, not just religious)
+    total_bias_papers = len(papers_2nd_data)
+    bias_stats_content = [
+        "# LLM Bias Papers - Statistics\n",
+        f"**Total LLM-Bias papers analyzed:** {total_bias_papers}\n",
+        generate_markdown_table(all_targets_counter, "Top 25 Bias Targets", "Target", "Count", limit=25, denominator=total_bias_papers),
+        generate_markdown_table(focused_counter, "Focus Analysis (Primary or Exclusive focus)", "Target", "Count", limit=25, denominator=total_bias_papers),
+    ]
+    os.makedirs(os.path.dirname(bias_stats_file) or '.', exist_ok=True)
+    with open(bias_stats_file, 'w', encoding='utf-8') as f:
+        f.write("\n".join(bias_stats_content))
+    print(f"Bias statistics saved to {bias_stats_file}")
+
     # Create versioned copies in reports/versions
     versions_dir = "reports/versions"
     os.makedirs(versions_dir, exist_ok=True)
     timestamp = datetime.now().strftime('%Y%m%d')
     
-    for src_file in [output_file, learnings_file, summary_file]:
+    for src_file in [output_file, learnings_file, summary_file, bias_stats_file]:
         if os.path.exists(src_file):
             base_name = Path(src_file).stem
             ext = Path(src_file).suffix
