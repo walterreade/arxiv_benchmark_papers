@@ -139,9 +139,9 @@ def audit_step4(step2_dir: str, step3_dir: str, step4_dir: str) -> tuple[list[st
 def print_section(title: str, items: list[str], label: str, directory: str):
     """Print a list of files with a header."""
     if not items:
-        print(f"  ✅ No {label} files.")
+        print(f"  OK: No {label} files.")
         return
-    print(f"  ⚠️  {len(items)} {label} file(s):")
+    print(f"  WARNING: {len(items)} {label} file(s):")
     for stem in items[:20]:
         print(f"     - {stem}.json")
     if len(items) > 20:
@@ -156,24 +156,24 @@ def delete_files(stems: list[str], directory: str):
         if os.path.isfile(path):
             os.remove(path)
             deleted += 1
-    print(f"  🗑️  Deleted {deleted} file(s) from {directory}")
+    print(f"  DELETED: Deleted {deleted} file(s) from {directory}")
 
 
 def run_pipeline_step(command: list[str], description: str) -> bool:
     """Run a pipeline script via subprocess. Returns True if successful."""
-    print(f"\n  🔄 Regenerating: {description}")
+    print(f"\n  REGEN: Regenerating: {description}")
     print(f"     Running: {' '.join(command)}")
     print()
     try:
         result = subprocess.run(command, cwd=os.getcwd())
         if result.returncode == 0:
-            print(f"\n  ✅ {description} completed successfully.")
+            print(f"\n  OK: {description} completed successfully.")
             return True
         else:
             print(f"\n  ❌ {description} exited with code {result.returncode}.")
             return False
     except KeyboardInterrupt:
-        print(f"\n  ⚠️  {description} interrupted by user.")
+        print(f"\n  WARNING: {description} interrupted by user.")
         return False
     except Exception as e:
         print(f"\n  ❌ Failed to run {description}: {e}")
@@ -211,15 +211,15 @@ Pipeline stages:
     # --- Step 2: paper metadata ---
     # Note: we never delete step 2 metadata. PDFs may be intentionally removed
     # but we keep the metadata. We only report unprocessed PDFs (missing metadata).
-    print(f"\n📁 Step 2: Paper Metadata ({args.step2_dir})")
+    print(f"\n>> Step 2: Paper Metadata ({args.step2_dir})")
     print("-" * 40)
     orphaned2, missing2 = audit_step2(args.pdf_dir, args.step2_dir)
     
     step2_json_count = len(get_stems(args.step2_dir))
     pdf_count = len([f for f in glob.glob(os.path.join(args.pdf_dir, "*.pdf"))]) if os.path.isdir(args.pdf_dir) else 0
-    print(f"  📊 {step2_json_count} metadata files, {pdf_count} PDFs")
+    print(f"  {step2_json_count} metadata files, {pdf_count} PDFs")
     if orphaned2:
-        print(f"  ℹ️  {len(orphaned2)} metadata file(s) without matching PDF (kept)")
+        print(f"  INFO: {len(orphaned2)} metadata file(s) without matching PDF (kept)")
     print_section("Unprocessed PDFs (no metadata JSON)", missing2, "unprocessed", args.step2_dir)
     total_missing += len(missing2)
     
@@ -230,7 +230,7 @@ Pipeline stages:
         )
     
     # --- Step 3: bias targets ---
-    print(f"\n📁 Step 3: Bias Targets ({args.step3_dir})")
+    print(f"\n>> Step 3: Bias Targets ({args.step3_dir})")
     print("-" * 40)
     invalid3, missing3 = audit_step3(args.step2_dir, args.step3_dir)
     
@@ -250,7 +250,7 @@ Pipeline stages:
         )
     
     # --- Step 4: religious bias analysis ---
-    print(f"\n📁 Step 4: Religious Bias Analysis ({args.step4_dir})")
+    print(f"\n>> Step 4: Religious Bias Analysis ({args.step4_dir})")
     print("-" * 40)
     invalid4, missing4 = audit_step4(args.step2_dir, args.step3_dir, args.step4_dir)
     
@@ -278,7 +278,7 @@ Pipeline stages:
     if apply:
         print(f"  Files deleted:       {total_deleted}")
     if total_invalid == 0 and total_missing == 0:
-        print(f"\n  ✅ Pipeline data is clean!")
+        print(f"\n  OK: Pipeline data is clean!")
     elif not apply:
         print(f"\n  To apply these changes, re-run with: --apply")
     print()

@@ -271,7 +271,7 @@ def download_pdf(arxiv_id: str, output_dir: str) -> bool:
         with open(output_path, 'wb') as f:
             f.write(response.content)
 
-        print(f"✓ ({len(response.content) / 1024:.1f} KB)")
+        print(f"OK ({len(response.content) / 1024:.1f} KB)")
         return True
 
     except requests.RequestException as e:

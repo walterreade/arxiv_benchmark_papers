@@ -242,12 +242,12 @@ def format_output(facts: list[dict], output_format: str = 'markdown') -> str:
     
     # Group by category
     categories = {
-        'quantitative': '📊 Quantitative Findings',
-        'surprising': '💡 Surprising Discoveries', 
-        'bias_pattern': '⚖️ Bias Patterns',
-        'methodology': '🔬 Methodological Insights',
-        'gap': '🔍 Research Gaps',
-        'trend': '📈 Recent Trends'
+        'quantitative': 'Quantitative Findings',
+        'surprising': 'Surprising Discoveries', 
+        'bias_pattern': 'Bias Patterns',
+        'methodology': 'Methodological Insights',
+        'gap': 'Research Gaps',
+        'trend': 'Recent Trends'
     }
     
     for cat_key, cat_title in categories.items():
@@ -261,10 +261,11 @@ def format_output(facts: list[dict], output_format: str = 'markdown') -> str:
         cat_facts.sort(key=lambda x: x.get('impact_score', 0), reverse=True)
         
         for fact in cat_facts:
-            impact = '⭐' * fact.get('impact_score', 3)
+            score = fact.get('impact_score', 3)
+            impact = 'High' if score >= 4 else 'Medium' if score >= 2 else 'Low'
             statement = fact.get('verified_statement', fact.get('statement', ''))
             source = fact.get('source_hint', '')
-            verified = '✓' if fact.get('verified', False) else '?'
+            verified = 'Verified' if fact.get('verified', False) else 'Unverified'
             
             lines.append(f"- **[{verified}]** {statement}")
             if source:
@@ -275,8 +276,8 @@ def format_output(facts: list[dict], output_format: str = 'markdown') -> str:
     # Add usage notes
     lines.append("\n---\n")
     lines.append("## Usage Notes\n")
-    lines.append("- **[✓]** = Verified against original PDF")
-    lines.append("- **[?]** = Extracted from analysis, recommend verification")
+    lines.append("- **[Verified]** = Verified against original PDF")
+    lines.append("- **[Unverified]** = Extracted from analysis, recommend verification")
     lines.append("- Always check paper dates before citing - field evolves rapidly")
     lines.append("- Consider contacting original authors for latest findings")
     
