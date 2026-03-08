@@ -405,7 +405,6 @@ def format_output(facts: list[dict], output_format: str = 'markdown') -> str:
         cat_facts.sort(key=lambda x: x.get('impact_score', 0), reverse=True)
         
         for fact in cat_facts:
-            score = fact.get('impact_score', 3)
             statement = fact.get('verified_statement', fact.get('statement', ''))
             verified = 'LLM Verified' if fact.get('verified', False) else 'Unverified'
             

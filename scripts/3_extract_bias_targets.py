@@ -103,7 +103,9 @@ def analyze_bias_targets(pdf_path: str, api_key: str, model_name: str,
                 return json.loads(result_text)
 
             except json.JSONDecodeError:
-                return {"raw_response": result_text}
+                tqdm.write(f"  Malformed JSON on {Path(pdf_path).name}, attempt {attempt + 1}/{max_retries}")
+                if attempt == max_retries - 1:
+                    return {"raw_response": result_text}
             except Exception as e:
                 last_exception = e
                 error_str = str(e).lower()
@@ -183,7 +185,7 @@ def load_eligible_papers(first_pass_dir: str) -> list[dict]:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="2nd pass: Extract bias targets from LLM+bias papers.")
+    parser = argparse.ArgumentParser(description="3rd pass: Extract bias targets from LLM+bias papers.")
     parser.add_argument("--first_pass_dir", default="json/2_paper_metadata", help="Directory with paper metadata JSON files")
     parser.add_argument("--pdf_dir", default="pdf", help="Directory containing PDFs")
     parser.add_argument("--json_dir", default="json/3_paper_bias_targets", help="Directory to save bias targets JSON analysis")

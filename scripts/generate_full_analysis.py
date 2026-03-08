@@ -295,16 +295,6 @@ def count_models_tested(data: list[dict]) -> Counter:
     return counter
 
 
-def count_religion_component(data: list[dict]) -> Counter:
-    """Count papers by religion_component (major vs minor)."""
-    counter = Counter()
-    for paper in data:
-        component = paper.get('religion_component', '').lower()
-        if component in ('major', 'minor'):
-            counter[component.capitalize()] += 1
-    return counter
-
-
 def count_base_benchmarks(data: list[dict]) -> Counter:
     """Count occurrences of each base benchmark across all papers."""
     counter = Counter()

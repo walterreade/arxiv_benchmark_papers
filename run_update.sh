@@ -102,7 +102,11 @@ if [ -z "$NEW_PAPERS" ] && [ "$FULL_ANALYSIS" = true ]; then
     echo ""
 fi
 
-NEW_COUNT=$(echo "$NEW_PAPERS" | wc -l | tr -d ' ')
+if [ -n "$NEW_PAPERS" ]; then
+    NEW_COUNT=$(echo "$NEW_PAPERS" | wc -l | tr -d ' ')
+else
+    NEW_COUNT=0
+fi
 echo "Found $NEW_COUNT new papers for update file."
 echo ""
 
@@ -143,7 +147,7 @@ LATEST_UPDATE=$(ls -1 reports/daily_updates/*_daily_update.md 2>/dev/null | sort
 if [ -n "$LATEST_UPDATE" ]; then
     LATEST_BASENAME=$(basename "$LATEST_UPDATE")
     ENCODED_PATH="reports/daily_updates/${LATEST_BASENAME}"
-    sed -i '' "s|\[Latest Daily Update\](reports/daily_updates/[^)]*)|[Latest Daily Update](${ENCODED_PATH})|" README.md
+    sed -i '' "s|\[Religious Papers - Latest Daily Update\](reports/daily_updates/[^)]*)|[Religious Papers - Latest Daily Update](${ENCODED_PATH})|" README.md
     echo "Updated README to link to: $ENCODED_PATH"
 fi
 

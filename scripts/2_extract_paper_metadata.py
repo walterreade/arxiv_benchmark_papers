@@ -100,6 +100,10 @@ def analyze_content(pdf_path: str, api_key: str, rate_limiter: RateLimiter, mode
                 result_text = response.text
                 return json.loads(result_text)
                 
+            except json.JSONDecodeError:
+                tqdm.write(f"  Malformed JSON on {Path(pdf_path).name}, attempt {attempt + 1}/{max_retries}")
+                if attempt == max_retries - 1:
+                    return {"raw_response": result_text}
             except Exception as e:
                 last_exception = e
                 error_str = str(e).lower()

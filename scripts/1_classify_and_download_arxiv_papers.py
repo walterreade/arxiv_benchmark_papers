@@ -169,7 +169,7 @@ def fetch_recent_cs_papers(max_papers: int = MAX_PAPERS,
 
 
 # ---------------------------------------------------------------------------
-# Gemini classification (same criteria as 1st_pass_analyze_abstracts.py)
+# Gemini classification
 # ---------------------------------------------------------------------------
 
 def classify_batch(batch: list[dict], api_key: str, rate_limiter: RateLimiter,
@@ -413,7 +413,7 @@ def main():
         print("No bias papers to download.")
         return
 
-    # Step 4: Download PDFs
+    # Step 5: Download PDFs
     print(f"\nStep 5: Downloading {len(qualifying_papers)} PDFs...")
     print("-" * 40)
 

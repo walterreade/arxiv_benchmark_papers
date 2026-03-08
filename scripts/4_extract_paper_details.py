@@ -92,7 +92,9 @@ def analyze_paper_deep_dive(pdf_path: str, api_key: str, model_name: str,
                 return json.loads(result_text)
                 
             except json.JSONDecodeError:
-                return {"raw_response": result_text}
+                tqdm.write(f"  Malformed JSON on {Path(pdf_path).name}, attempt {attempt + 1}/{max_retries}")
+                if attempt == max_retries - 1:
+                    return {"raw_response": result_text}
             except Exception as e:
                 last_exception = e
                 error_str = str(e).lower()
