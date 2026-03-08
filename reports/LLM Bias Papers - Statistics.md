@@ -1,63 +1,63 @@
 # LLM Bias Papers - Statistics
 
-**Total LLM-Bias papers analyzed:** 1172
+**Total LLM-Bias papers analyzed:** 9703
 
 ## Top 25 Bias Targets
 
-| Target | Count | % of 1172 papers |
+| Target | Count | % of 9703 papers |
 |---|---|---|
-| **Religious bias** | **1070** | **91.3%** |
-| Gender bias | 955 | 81.5% |
-| Racial/Ethnic bias | 868 | 74.1% |
-| Sexual orientation bias | 538 | 45.9% |
-| Age bias | 436 | 37.2% |
-| Disability bias | 428 | 36.5% |
-| Nationality bias | 333 | 28.4% |
-| Socioeconomic bias | 302 | 25.8% |
-| Political bias | 276 | 23.5% |
-| Physical appearance bias | 199 | 17.0% |
-| Occupational bias | 169 | 14.4% |
-| Cultural bias | 131 | 11.2% |
-| Language bias | 92 | 7.8% |
-| Educational bias | 47 | 4.0% |
-| Geographic bias | 40 | 3.4% |
-| Regional bias | 36 | 3.1% |
-| Intersectional bias | 27 | 2.3% |
-| Caste bias | 26 | 2.2% |
-| Marital status bias | 14 | 1.2% |
-| Stereotyping | 13 | 1.1% |
-| Dataset bias | 9 | 0.8% |
-| Immigration status bias | 9 | 0.8% |
-| Race/Ethnicity Bias | 9 | 0.8% |
-| Racial/Color Bias | 7 | 0.6% |
-| Cognitive bias | 6 | 0.5% |
+| Gender bias | 3177 | 32.7% |
+| Racial/Ethnic bias | 2054 | 21.2% |
+| Language bias | 1317 | 13.6% |
+| **Religious bias** | **1090** | **11.2%** |
+| Age bias | 1061 | 10.9% |
+| Cultural bias | 1024 | 10.6% |
+| Political bias | 860 | 8.9% |
+| Sexual orientation bias | 743 | 7.7% |
+| Socioeconomic bias | 646 | 6.7% |
+| Disability bias | 603 | 6.2% |
+| Nationality bias | 523 | 5.4% |
+| Position bias | 312 | 3.2% |
+| Geographic bias | 274 | 2.8% |
+| Occupational bias | 246 | 2.5% |
+| Physical appearance bias | 244 | 2.5% |
+| Dataset bias | 234 | 2.4% |
+| Cognitive bias | 164 | 1.7% |
+| Length bias | 155 | 1.6% |
+| Demographic bias | 147 | 1.5% |
+| Stereotyping | 124 | 1.3% |
+| Educational bias | 112 | 1.2% |
+| Self-preference bias | 110 | 1.1% |
+| Intersectional bias | 98 | 1.0% |
+| Evaluation bias | 90 | 0.9% |
+| Sentiment bias | 89 | 0.9% |
 
 ## Focus Analysis (Primary or Exclusive focus)
 
-| Target | Count | % of 1172 papers |
+| Target | Count | % of 9703 papers |
 |---|---|---|
-| Cultural bias | 36 | 3.1% |
-| Gender bias | 29 | 2.5% |
-| **Religious bias** | **24** | **2.0%** |
-| Political bias | 12 | 1.0% |
-| Language bias | 8 | 0.7% |
-| Intersectional bias | 5 | 0.4% |
-| Racial/Ethnic bias | 3 | 0.3% |
-| Sexual orientation bias | 2 | 0.2% |
-| Religious And Ethnic Bias (Antisemitism) | 2 | 0.2% |
-| Media bias | 2 | 0.2% |
-| Antisemitic Bias | 2 | 0.2% |
-| Annotator bias | 2 | 0.2% |
-| Age-Appropriate Safety | 1 | 0.1% |
-| Ideological And Political Bias (Extremism) | 1 | 0.1% |
-| Social Bias (Including Gender, Racial, Religious, And Sexual Orientation Bias) | 1 | 0.1% |
-| Cultural/National Bias | 1 | 0.1% |
-| Cultural And Demographic Bias | 1 | 0.1% |
-| General Identity-Based Bias (Hate Speech) | 1 | 0.1% |
-| Stereotyping | 1 | 0.1% |
-| Hate Speech And Discrimination (Including Race, Gender, Sexual Orientation, Religion, Disability, And Socioeconomic Bias) | 1 | 0.1% |
-| Sycophancy (Conformity Bias) | 1 | 0.1% |
-| Sociodemographic Bias (Race, Color, Religion, Sex, Age, Disability, National Origin) | 1 | 0.1% |
-| Safety Bias (Exaggerated Safety / Over-Refusal) | 1 | 0.1% |
-| Prototypicality Bias | 1 | 0.1% |
-| Social Bias Against Protected Groups (Including Age, Religion, And Disability) | 1 | 0.1% |
+| Gender bias | 787 | 8.1% |
+| Language bias | 603 | 6.2% |
+| Cultural bias | 479 | 4.9% |
+| Political bias | 296 | 3.1% |
+| Dataset bias | 138 | 1.4% |
+| Racial/Ethnic bias | 112 | 1.2% |
+| Position bias | 106 | 1.1% |
+| Geographic bias | 77 | 0.8% |
+| Cognitive bias | 72 | 0.7% |
+| Evaluation bias | 68 | 0.7% |
+| Disability bias | 49 | 0.5% |
+| Sycophancy bias | 45 | 0.5% |
+| Annotator bias | 40 | 0.4% |
+| Modality bias | 39 | 0.4% |
+| Sentiment bias | 37 | 0.4% |
+| Self-preference bias | 34 | 0.4% |
+| Demographic bias | 33 | 0.3% |
+| Moral/Ethical bias | 32 | 0.3% |
+| Nationality bias | 32 | 0.3% |
+| Media bias | 30 | 0.3% |
+| Length bias | 29 | 0.3% |
+| Socioeconomic bias | 27 | 0.3% |
+| Hate speech/Toxicity | 27 | 0.3% |
+| Sexual orientation bias | 27 | 0.3% |
+| Popularity bias | 24 | 0.2% |
