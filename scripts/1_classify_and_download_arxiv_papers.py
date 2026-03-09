@@ -385,6 +385,9 @@ def classify_and_download(papers: list[dict], assessment_cache: dict[str, bool],
                         assessment_cache[paper['arxiv_id']] = bool(is_bias)
                         if is_bias:
                             batch_qualifying.append(paper)
+                    # Flush cache to disk periodically so progress survives crashes
+                    if completed[0] % 10 == 0:
+                        save_assessment_cache(assessment_cache, args.cache)
                 
                 return batch_qualifying
                 
