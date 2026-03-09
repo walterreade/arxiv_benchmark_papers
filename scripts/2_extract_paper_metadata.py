@@ -214,7 +214,7 @@ def process_single_file(pdf_path: str, api_key: str, json_dir: Optional[str], ra
 NEW_TAGS = ["bias_and_fairness", "moral_reasoning", "ethics", "religion"]
 
 def backfill_new_tags(json_dir: str, api_key: str, rate_limiter: RateLimiter,
-                      model_name: str, error_tracker: ErrorTracker):
+                      model_name: str, error_tracker: ErrorTracker, max_workers: int = 10):
     """Backfill new classification tags into existing JSON files that are missing them."""
     json_files = sorted(Path(json_dir).glob("*.json"), reverse=True)
     needs_backfill = []
@@ -233,13 +233,13 @@ def backfill_new_tags(json_dir: str, api_key: str, rate_limiter: RateLimiter,
     
     print(f"  Found {len(needs_backfill)} files needing backfill out of {len(json_files)} total.")
     
-    client = genai.Client(api_key=api_key)
-    updated = 0
+    updated = [0]
+    lock = threading.Lock()
     
-    for jf, data in tqdm(needs_backfill, desc="Backfilling tags"):
+    def backfill_one(jf_and_data):
+        jf, data = jf_and_data
         if error_tracker.check_exit():
-            tqdm.write("Stopping backfill due to too many errors.")
-            break
+            return
         
         title = data.get("title", "Unknown")
         reasoning = data.get("reasoning", "")
@@ -259,6 +259,7 @@ Return a JSON object with these 4 boolean fields:
 - `ethics`: True if the paper studies ethical reasoning, ethical frameworks, ethical bias, ethical dilemmas, secular ethics, normative reasoning, deontology, consequentialism, utilitarianism, virtue ethics, value pluralism, or value systems in LLMs/NLP.
 - `religion`: True if the paper studies how LLMs handle, represent, or respond to religious topics, beliefs, groups, or religious values."""
         
+        client = genai.Client(api_key=api_key)
         rate_limiter.wait_for_token()
         try:
             response = client.models.generate_content(
@@ -276,19 +277,27 @@ Return a JSON object with these 4 boolean fields:
                         data[tag] = False
                 
                 jf.write_text(json.dumps(data, indent=2))
-                updated += 1
+                with lock:
+                    updated[0] += 1
                 
         except Exception as e:
             error_str = str(e).lower()
             if "resource exhausted" in error_str or "429" in error_str:
                 if error_tracker.record_resource_exhausted():
                     tqdm.write("Too many API errors, stopping backfill.")
-                    break
                 time.sleep(5)
             else:
                 tqdm.write(f"  Error backfilling {jf.name}: {e}")
     
-    print(f"  Backfilled {updated} files.")
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        futures = {executor.submit(backfill_one, item): item for item in needs_backfill}
+        for future in tqdm(as_completed(futures), total=len(needs_backfill), desc="Backfilling tags"):
+            if error_tracker.check_exit():
+                executor.shutdown(wait=False, cancel_futures=True)
+                break
+            future.result()  # propagate exceptions
+    
+    print(f"  Backfilled {updated[0]} files.")
 
 def main():
     parser = argparse.ArgumentParser(description="Analyze PDF paper(s) with multi-threading.")
