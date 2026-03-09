@@ -227,25 +227,38 @@ def classify_batch(batch: list[dict], api_key: str, rate_limiter: RateLimiter,
     for i, paper in enumerate(batch):
         abstracts_text += f"[{i}] Title: {paper['title']}\nAbstract: {paper['abstract']}\n\n"
 
-    prompt = f"""You are classifying academic paper abstracts. For each abstract below, determine whether the paper is relevant to ANY of these topics in the context of Natural Language Processing (NLP), Language Models (LMs), or Large Language Models (LLMs):
+    prompt = f"""You are classifying academic paper abstracts. For each abstract below, determine whether the paper is relevant to ANY of the following topics in the context of Large Language Models (LLMs), Language Models (LMs), Natural Language Processing (NLP), or AI systems:
 
-1. **Bias & Fairness**: Measures, evaluates, or benchmarks social bias or fairness
-2. **Religion**: Studies how LLMs handle, represent, or respond to religious topics, beliefs, or groups
-3. **Ethics & Morality**: Evaluates ethical reasoning, moral judgments, or ethical implications of LLMs
+**1. Bias & Fairness**
+- Social bias (gender, race, religion, age, disability, etc.)
+- Fairness or discrimination in NLP/LLM systems
+- Benchmarks or datasets for measuring bias
 
-A paper qualifies if it:
-- Proposes or uses a benchmark/dataset for measuring bias, fairness, religious understanding, or ethical reasoning in language models or NLP systems
-- Evaluates social biases (gender, race, religion, etc.) in language models or NLP outputs
-- Studies how LLMs represent, discuss, or reason about religion, faith, spirituality, or religious groups
-- Evaluates moral reasoning, ethical decision-making, or value alignment in LLMs
-- Studies fairness or discrimination in NLP/LLM systems
-- Proposes methods to detect or measure bias, religious bias, or ethical issues in text generation, classification, or other NLP tasks
+**2. Morality & Moral Reasoning**
+- Moral reasoning, moral bias, moral judgment, moral pluralism
+- Moral dilemmas, moral benchmarks, moral datasets
+- Cultural morality, societal values
+
+**3. Ethics & Ethical Reasoning**
+- Ethical reasoning, ethical frameworks, ethical bias
+- Ethical judgment, ethical dilemmas
+- Ethics benchmarks, ethics datasets
+- Secular ethics, secular morality
+- Normative reasoning, deontology, consequentialism, utilitarianism
+- Virtue ethics, value pluralism, value systems
+
+**4. Religion**
+- Religious representation, inclusion of religion
+- Discussion of religion, religious values
+- How LLMs handle, represent, or respond to religious topics, beliefs, or groups
+
+A paper qualifies if it studies, evaluates, benchmarks, or measures any of the above topics in LLMs, language models, or NLP systems.
 
 A paper does NOT qualify if it:
-- Only mentions bias, religion, or ethics in passing or as future work
-- Deals with statistical/mathematical bias (not social bias), e.g. inductive bias, selection bias in sampling
-- Studies bias in non-NLP domains (computer vision only, recommender systems without text, etc.)
-- Only proposes debiasing methods without measuring bias
+- Only mentions these topics in passing or as future work
+- Deals with statistical/mathematical bias (e.g. inductive bias, selection bias) rather than social bias
+- Studies bias in non-NLP domains only (computer vision, recommender systems without text)
+- Only proposes debiasing methods without measuring or evaluating bias
 - Discusses AI ethics policy/governance without evaluating LLM behavior
 
 Return a JSON array of {len(batch)} booleans (true/false), one per abstract in order.
