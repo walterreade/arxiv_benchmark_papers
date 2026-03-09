@@ -45,7 +45,7 @@ ARXIV_API_URL = "http://export.arxiv.org/api/query"
 RESULTS_PER_PAGE = 200
 DELAY_BETWEEN_API_PAGES = 3  # seconds between arxiv API requests
 DELAY_BETWEEN_DOWNLOADS = 3  # seconds between PDF downloads
-BATCH_SIZE = 25
+BATCH_SIZE = 100
 
 
 # ---------------------------------------------------------------------------
