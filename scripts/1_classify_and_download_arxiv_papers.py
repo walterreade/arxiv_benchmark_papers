@@ -457,8 +457,8 @@ def main():
                         help="Max resource exhausted errors before exit (default 5)")
     parser.add_argument("--use-snapshot", action="store_true",
                         help="Process unclassified papers from the snapshot file before fetching API papers")
-    parser.add_argument("--workers", type=int, default=15,
-                        help="Number of concurrent classification threads (default 15)")
+    parser.add_argument("--workers", type=int, default=10,
+                        help="Number of concurrent classification threads (default 10)")
     args = parser.parse_args()
 
     api_key = os.getenv("GOOGLE_API_KEY")
