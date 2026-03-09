@@ -8,12 +8,14 @@ llm_bias_papers.csv.
 """
 
 import argparse
+import concurrent.futures
 import csv
 import json
 import os
 import random
 import re
 import sys
+import threading
 import time
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -356,33 +358,51 @@ def classify_and_download(papers: list[dict], assessment_cache: dict[str, bool],
     qualifying_papers = list(cached_positive_not_downloaded)
     
     if new_papers:
-        print(f"\n  Classifying {len(new_papers)} abstracts from {source_label}...")
+        print(f"\n  Classifying {len(new_papers)} abstracts from {source_label} "
+              f"({args.workers} workers)...")
         
         batches = [new_papers[i:i + args.batch_size]
                    for i in range(0, len(new_papers), args.batch_size)]
         
-        for batch_idx, batch in enumerate(batches):
-            print(f"    Batch {batch_idx + 1}/{len(batches)} ({len(batch)} papers)...", end=' ')
-            
+        cache_lock = threading.Lock()
+        stop_event = threading.Event()
+        completed = [0]  # mutable counter for progress
+        
+        def process_batch(batch_idx_and_batch):
+            batch_idx, batch = batch_idx_and_batch
+            if stop_event.is_set():
+                return []
             try:
                 results = classify_batch(batch, api_key, rate_limiter, args.model, error_tracker)
                 positives = sum(results)
-                print(f"{positives} qualifying")
+                batch_qualifying = []
                 
-                for paper, is_bias in zip(batch, results):
-                    assessment_cache[paper['arxiv_id']] = bool(is_bias)
-                    if is_bias:
-                        qualifying_papers.append(paper)
+                with cache_lock:
+                    completed[0] += 1
+                    print(f"    Batch {completed[0]}/{len(batches)} ({len(batch)} papers): "
+                          f"{positives} qualifying")
+                    for paper, is_bias in zip(batch, results):
+                        assessment_cache[paper['arxiv_id']] = bool(is_bias)
+                        if is_bias:
+                            batch_qualifying.append(paper)
                 
-                save_assessment_cache(assessment_cache, args.cache)
+                return batch_qualifying
                 
             except ResourceExhaustedError:
+                stop_event.set()
                 print(f"\n  Stopping classification due to too many API errors.")
-                save_assessment_cache(assessment_cache, args.cache)
-                break
+                return []
             except Exception as e:
-                print(f"error: {e}")
-                save_assessment_cache(assessment_cache, args.cache)
+                print(f"    Batch {batch_idx + 1} error: {e}")
+                return []
+        
+        with concurrent.futures.ThreadPoolExecutor(max_workers=args.workers) as executor:
+            futures = list(executor.map(process_batch, enumerate(batches)))
+        
+        for batch_results in futures:
+            qualifying_papers.extend(batch_results)
+        
+        save_assessment_cache(assessment_cache, args.cache)
         
         new_qualifying = len(qualifying_papers) - len(cached_positive_not_downloaded)
         print(f"\n  Found {len(qualifying_papers)} qualifying bias papers "
@@ -437,6 +457,8 @@ def main():
                         help="Max resource exhausted errors before exit (default 5)")
     parser.add_argument("--use-snapshot", action="store_true",
                         help="Process unclassified papers from the snapshot file before fetching API papers")
+    parser.add_argument("--workers", type=int, default=10,
+                        help="Number of concurrent classification threads (default 10)")
     args = parser.parse_args()
 
     api_key = os.getenv("GOOGLE_API_KEY")
