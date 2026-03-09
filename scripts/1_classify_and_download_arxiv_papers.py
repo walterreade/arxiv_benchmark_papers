@@ -367,6 +367,7 @@ def classify_and_download(papers: list[dict], assessment_cache: dict[str, bool],
         cache_lock = threading.Lock()
         stop_event = threading.Event()
         completed = [0]  # mutable counter for progress
+        start_time = time.time()
         
         def process_batch(batch_idx_and_batch):
             batch_idx, batch = batch_idx_and_batch
@@ -379,14 +380,32 @@ def classify_and_download(papers: list[dict], assessment_cache: dict[str, bool],
                 
                 with cache_lock:
                     completed[0] += 1
-                    print(f"    Batch {completed[0]}/{len(batches)} ({len(batch)} papers): "
-                          f"{positives} qualifying")
+                    done = completed[0]
+                    elapsed = time.time() - start_time
+                    
+                    # Build progress line
+                    msg = (f"    Batch {done}/{len(batches)} ({len(batch)} papers): "
+                           f"{positives} qualifying")
+                    
+                    # Show ETA every 25 batches
+                    if done % 25 == 0:
+                        rate = done / elapsed
+                        remaining = (len(batches) - done) / rate
+                        mins, secs = divmod(int(remaining), 60)
+                        hrs, mins = divmod(mins, 60)
+                        if hrs > 0:
+                            msg += f"  [ETA: {hrs}h {mins}m]"
+                        else:
+                            msg += f"  [ETA: {mins}m {secs}s]"
+                    
+                    print(msg)
+                    
                     for paper, is_bias in zip(batch, results):
                         assessment_cache[paper['arxiv_id']] = bool(is_bias)
                         if is_bias:
                             batch_qualifying.append(paper)
                     # Flush cache to disk periodically so progress survives crashes
-                    if completed[0] % 10 == 0:
+                    if done % 10 == 0:
                         save_assessment_cache(assessment_cache, args.cache)
                 
                 return batch_qualifying
