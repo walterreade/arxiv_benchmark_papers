@@ -12,22 +12,32 @@ from datetime import datetime
 from shared import load_csv_metadata, get_arxiv_url, check_mormon_mention, filter_religion_papers
 
 
-def generate_update_file(json_files: list[str], csv_file: str, output_path: str):
-    """Generate update markdown file for the specified JSON files."""
+def generate_update_file(json_files: list[str], csv_file: str, output_path: str,
+                         stage4_dir: str = "json/4_religious_bias_analysis"):
+    """Generate update markdown file for the specified JSON files.
+    
+    Input json_files are Stage 3 paths (json/3_paper_bias_targets/). For each,
+    we look up the corresponding Stage 4 file which has religion_component,
+    findings, and measurement_description fields needed for the daily update.
+    """
     csv_metadata = load_csv_metadata(csv_file)
     
-    # Load paper data from JSON files
+    # Resolve Stage 4 files from Stage 3 paths
     papers = []
     for json_path in json_files:
-        if not os.path.exists(json_path):
+        basename = os.path.basename(json_path)
+        stage4_path = os.path.join(stage4_dir, basename)
+        
+        if not os.path.exists(stage4_path):
+            # Paper didn't make it to Stage 4 (not religion-related)
             continue
         try:
-            with open(json_path, 'r', encoding='utf-8') as f:
+            with open(stage4_path, 'r', encoding='utf-8') as f:
                 paper = json.load(f)
-                paper['_filename'] = os.path.basename(json_path).replace('.json', '.pdf')
+                paper['_filename'] = basename.replace('.json', '.pdf')
                 papers.append(paper)
         except (json.JSONDecodeError, IOError) as e:
-            print(f"Error loading {json_path}: {e}")
+            print(f"Error loading {stage4_path}: {e}")
             
     # Filter papers to only include those with religion_component of 'major' or 'minor'
     papers = filter_religion_papers(papers)
