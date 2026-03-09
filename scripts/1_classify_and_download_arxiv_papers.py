@@ -427,8 +427,8 @@ def main():
                         help=f"Gemini model for classification (default {DEFAULT_MODEL})")
     parser.add_argument("--batch-size", type=int, default=BATCH_SIZE,
                         help=f"Abstracts per Gemini request (default {BATCH_SIZE})")
-    parser.add_argument("--rpm", type=int, default=30,
-                        help="Gemini requests per minute (default 30)")
+    parser.add_argument("--rpm", type=int, default=500,
+                        help="Gemini requests per minute (default 500)")
     parser.add_argument("--cache", default=ASSESSMENT_CACHE_FILE,
                         help=f"JSON cache for Gemini assessments (default {ASSESSMENT_CACHE_FILE})")
     parser.add_argument("--snapshot", default=SNAPSHOT_FILE,
