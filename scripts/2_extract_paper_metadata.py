@@ -81,6 +81,10 @@ def analyze_content(pdf_path: str, api_key: str, rate_limiter: RateLimiter, mode
         8. `appendix_length`: integer. The number of pages in the appendix.
         9. `is_survey_review`: boolean. True if the paper is a survey, review, or overview paper.
         10. `reasoning`: string. A brief explanation for the `is_faith_ethics_related` classification.
+        11. `bias_and_fairness`: boolean. True if the paper studies, evaluates, benchmarks, or measures social bias (gender, race, religion, age, disability, etc.) or fairness in LLMs, language models, or NLP systems.
+        12. `moral_reasoning`: boolean. True if the paper studies, evaluates, or benchmarks moral reasoning, moral bias, moral judgment, moral pluralism, moral dilemmas, cultural morality, or societal values in LLMs, language models, or NLP systems.
+        13. `ethics`: boolean. True if the paper studies, evaluates, or benchmarks ethical reasoning, ethical frameworks, ethical bias, ethical dilemmas, secular ethics, secular morality, normative reasoning, deontology, consequentialism, utilitarianism, virtue ethics, value pluralism, or value systems in LLMs, language models, or NLP systems.
+        14. `religion`: boolean. True if the paper studies how LLMs handle, represent, or respond to religious topics, beliefs, groups, religious representation, inclusion of religion, discussion of religion, or religious values.
         
         Make sure the output is valid JSON.
         """
@@ -189,6 +193,10 @@ def process_single_file(pdf_path: str, api_key: str, json_dir: Optional[str], ra
             "is_bias_related": analysis.get("is_bias_related"),
             "is_faith_ethics_related": analysis.get("is_faith_ethics_related"),
             "is_survey_review": analysis.get("is_survey_review"),
+            "bias_and_fairness": analysis.get("bias_and_fairness"),
+            "moral_reasoning": analysis.get("moral_reasoning"),
+            "ethics": analysis.get("ethics"),
+            "religion": analysis.get("religion"),
             "title": analysis.get("title"),
             "page_count": page_count,
             "reference_count": analysis.get("reference_count"),
@@ -202,6 +210,85 @@ def process_single_file(pdf_path: str, api_key: str, json_dir: Optional[str], ra
     except Exception as e:
         tqdm.write(f"  Error processing {filename}: {e}")
         return None, str(e)
+
+NEW_TAGS = ["bias_and_fairness", "moral_reasoning", "ethics", "religion"]
+
+def backfill_new_tags(json_dir: str, api_key: str, rate_limiter: RateLimiter,
+                      model_name: str, error_tracker: ErrorTracker):
+    """Backfill new classification tags into existing JSON files that are missing them."""
+    json_files = sorted(Path(json_dir).glob("*.json"), reverse=True)
+    needs_backfill = []
+    
+    for jf in json_files:
+        try:
+            data = json.loads(jf.read_text())
+            if any(tag not in data for tag in NEW_TAGS):
+                needs_backfill.append((jf, data))
+        except Exception:
+            continue
+    
+    if not needs_backfill:
+        print(f"  All {len(json_files)} JSON files already have new tags.")
+        return
+    
+    print(f"  Found {len(needs_backfill)} files needing backfill out of {len(json_files)} total.")
+    
+    client = genai.Client(api_key=api_key)
+    updated = 0
+    
+    for jf, data in tqdm(needs_backfill, desc="Backfilling tags"):
+        if error_tracker.check_exit():
+            tqdm.write("Stopping backfill due to too many errors.")
+            break
+        
+        title = data.get("title", "Unknown")
+        reasoning = data.get("reasoning", "")
+        is_bias = data.get("is_bias_related", False)
+        is_faith = data.get("is_faith_ethics_related", False)
+        
+        prompt = f"""Based on this academic paper's metadata, classify it into these 4 boolean categories.
+The paper must be in the context of LLMs, language models, NLP, or AI systems to qualify.
+
+Title: {title}
+Previous analysis: is_bias_related={is_bias}, is_faith_ethics_related={is_faith}
+Reasoning: {reasoning}
+
+Return a JSON object with these 4 boolean fields:
+- `bias_and_fairness`: True if the paper studies social bias (gender, race, religion, age, disability, etc.) or fairness in LLMs/NLP.
+- `moral_reasoning`: True if the paper studies moral reasoning, moral bias, moral judgment, moral pluralism, moral dilemmas, cultural morality, or societal values in LLMs/NLP.
+- `ethics`: True if the paper studies ethical reasoning, ethical frameworks, ethical bias, ethical dilemmas, secular ethics, normative reasoning, deontology, consequentialism, utilitarianism, virtue ethics, value pluralism, or value systems in LLMs/NLP.
+- `religion`: True if the paper studies how LLMs handle, represent, or respond to religious topics, beliefs, groups, or religious values."""
+        
+        rate_limiter.wait_for_token()
+        try:
+            response = client.models.generate_content(
+                model=model_name,
+                contents=[prompt],
+                config=types.GenerateContentConfig(response_mime_type="application/json")
+            )
+            tags = json.loads(response.text)
+            
+            if isinstance(tags, dict):
+                for tag in NEW_TAGS:
+                    if tag in tags:
+                        data[tag] = bool(tags[tag])
+                    elif tag not in data:
+                        data[tag] = False
+                
+                jf.write_text(json.dumps(data, indent=2))
+                updated += 1
+                
+        except Exception as e:
+            error_str = str(e).lower()
+            if "resource exhausted" in error_str or "429" in error_str:
+                if error_tracker.record_resource_exhausted():
+                    tqdm.write("Too many API errors, stopping backfill.")
+                    break
+                time.sleep(5)
+            else:
+                tqdm.write(f"  Error backfilling {jf.name}: {e}")
+    
+    print(f"  Backfilled {updated} files.")
 
 def main():
     parser = argparse.ArgumentParser(description="Analyze PDF paper(s) with multi-threading.")
@@ -236,7 +323,7 @@ def main():
     print(f"Found {len(processed_files)} already processed files.")
     print(f"Found {len(failed_files)} previously failed files (will skip).")
     
-    fieldnames = ["filename", "date", "title", "page_count", "is_benchmark", "is_llm_related", "is_bias_related", "is_faith_ethics_related", "is_survey_review", "reference_count", "appendix_length", "reasoning"]
+    fieldnames = ["filename", "date", "title", "page_count", "is_benchmark", "is_llm_related", "is_bias_related", "is_faith_ethics_related", "is_survey_review", "bias_and_fairness", "moral_reasoning", "ethics", "religion", "reference_count", "appendix_length", "reasoning"]
     
     file_exists = os.path.isfile(output_csv)
     
@@ -245,6 +332,12 @@ def main():
 
     # Initialize Rate Limiter and Error Tracker
     rate_limiter = RateLimiter(max_calls=rpm, period=60.0)
+    error_tracker = ErrorTracker(max_errors=max_errors)
+    
+    # Backfill new tags into existing JSON files
+    print(f"\nChecking for existing files needing new tags...")
+    backfill_new_tags(json_dir, api_key, rate_limiter, model_name, error_tracker)
+    # Reset error tracker after backfill so new processing gets full error budget
     error_tracker = ErrorTracker(max_errors=max_errors)
     
     # Lock for CSV writing
