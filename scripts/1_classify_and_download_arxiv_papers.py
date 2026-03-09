@@ -523,8 +523,12 @@ def main():
     print("-" * 40)
     assessment_cache = load_assessment_cache(args.cache)
     existing_pdfs = {f.stem for f in Path(args.output_dir).glob("*.pdf")}
+    existing_json = {f.stem for f in Path("json/2_paper_metadata").glob("*.json")}
+    existing_pdfs |= existing_json  # skip classification for papers already in stage 2
     print(f"  Assessment cache: {len(assessment_cache):,} entries")
-    print(f"  Existing PDFs:    {len(existing_pdfs):,}")
+    print(f"  Existing PDFs:    {len({f.stem for f in Path(args.output_dir).glob('*.pdf')}):,}")
+    print(f"  Existing stage 2: {len(existing_json):,}")
+    print(f"  Total skip set:   {len(existing_pdfs):,}")
 
     # Shared rate limiter and error tracker
     rate_limiter = RateLimiter(max_calls=args.rpm, period=60.0)
