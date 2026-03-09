@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-arXiv Bias Paper Downloader
+arXiv Paper Downloader
 
-Queries the last 2000 papers from arXiv (all categories), uses Gemini to classify
-which ones measure bias in NLP/LLMs, downloads qualifying papers, and updates
-llm_bias_papers.csv.
+Queries papers from arXiv (all categories), uses Gemini to classify which ones
+study bias, fairness, religion, ethics, or morality in NLP/LLMs, downloads
+qualifying papers, and updates llm_bias_papers.csv.
 """
 
 import argparse
@@ -114,6 +114,8 @@ def load_snapshot_papers(snapshot_path: str, skip_ids: set[str]) -> tuple[set[st
         })
 
     print(f"  Scanned {line_count:,} total papers. {len(unprocessed):,} unprocessed.")
+    # Sort by ID descending so newer papers are processed first
+    unprocessed.sort(key=lambda p: p['arxiv_id'], reverse=True)
     return all_ids, unprocessed
 
 
@@ -217,7 +219,7 @@ def fetch_recent_papers(max_papers: int = MAX_PAPERS,
 def classify_batch(batch: list[dict], api_key: str, rate_limiter: RateLimiter,
                    model_name: str, error_tracker: ErrorTracker,
                    max_retries: int = 3) -> list[bool]:
-    """Classify a batch of abstracts. Returns list of bools (True = bias paper)."""
+    """Classify a batch of abstracts. Returns list of bools (True = relevant paper)."""
     if error_tracker.check_exit():
         raise ResourceExhaustedError("Too many errors, stopping.")
 
@@ -225,19 +227,26 @@ def classify_batch(batch: list[dict], api_key: str, rate_limiter: RateLimiter,
     for i, paper in enumerate(batch):
         abstracts_text += f"[{i}] Title: {paper['title']}\nAbstract: {paper['abstract']}\n\n"
 
-    prompt = f"""You are classifying academic paper abstracts. For each abstract below, determine whether the paper measures, evaluates, or benchmarks bias or fairness in Natural Language Processing (NLP), Language Models (LMs), or Large Language Models (LLMs).
+    prompt = f"""You are classifying academic paper abstracts. For each abstract below, determine whether the paper is relevant to ANY of these topics in the context of Natural Language Processing (NLP), Language Models (LMs), or Large Language Models (LLMs):
+
+1. **Bias & Fairness**: Measures, evaluates, or benchmarks social bias or fairness
+2. **Religion**: Studies how LLMs handle, represent, or respond to religious topics, beliefs, or groups
+3. **Ethics & Morality**: Evaluates ethical reasoning, moral judgments, or ethical implications of LLMs
 
 A paper qualifies if it:
-- Proposes or uses a benchmark/dataset for measuring bias in language models or NLP systems
+- Proposes or uses a benchmark/dataset for measuring bias, fairness, religious understanding, or ethical reasoning in language models or NLP systems
 - Evaluates social biases (gender, race, religion, etc.) in language models or NLP outputs
+- Studies how LLMs represent, discuss, or reason about religion, faith, spirituality, or religious groups
+- Evaluates moral reasoning, ethical decision-making, or value alignment in LLMs
 - Studies fairness or discrimination in NLP/LLM systems
-- Proposes methods to detect or measure bias in text generation, classification, or other NLP tasks
+- Proposes methods to detect or measure bias, religious bias, or ethical issues in text generation, classification, or other NLP tasks
 
 A paper does NOT qualify if it:
-- Only mentions bias in passing or as future work
+- Only mentions bias, religion, or ethics in passing or as future work
 - Deals with statistical/mathematical bias (not social bias), e.g. inductive bias, selection bias in sampling
 - Studies bias in non-NLP domains (computer vision only, recommender systems without text, etc.)
 - Only proposes debiasing methods without measuring bias
+- Discusses AI ethics policy/governance without evaluating LLM behavior
 
 Return a JSON array of {len(batch)} booleans (true/false), one per abstract in order.
 
