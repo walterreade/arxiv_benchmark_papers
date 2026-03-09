@@ -258,7 +258,6 @@ A paper does NOT qualify if it:
 - Only mentions these topics in passing or as future work
 - Deals with statistical/mathematical bias (e.g. inductive bias, selection bias) rather than social bias
 - Studies bias in non-NLP domains only (computer vision, recommender systems without text)
-- Only proposes debiasing methods without measuring or evaluating bias
 - Discusses AI ethics policy/governance without evaluating LLM behavior
 
 Return a JSON array of {len(batch)} booleans (true/false), one per abstract in order.
