@@ -48,6 +48,7 @@ _DOWNLOAD_QUALIFYING_TAGS = [
 ]
 
 DELAY_BETWEEN_DOWNLOADS = 3  # seconds between PDF downloads
+ASSESSMENT_CACHE_FILE = "utility_files/download_assessments_cache.json"
 
 
 def _has_religious_bias(second_pass_data: dict) -> bool:
@@ -123,6 +124,23 @@ def audit_downloads(step2_dir: str, pdf_dir: str) -> list[str]:
             if stem not in pdf_stems:
                 missing.append(stem)
 
+    return sorted(missing)
+
+
+def audit_cache_downloads(cache_path: str, pdf_dir: str) -> list[str]:
+    """Check that every paper marked True in the assessment cache has a PDF.
+
+    Returns list of arXiv IDs that were assessed as relevant but have no PDF.
+    """
+    cache = load_json(cache_path)
+    if not cache or not isinstance(cache, dict):
+        return []
+
+    pdf_stems = set()
+    if os.path.isdir(pdf_dir):
+        pdf_stems = {Path(f).stem for f in glob.glob(os.path.join(pdf_dir, "*.pdf"))}
+
+    missing = [aid for aid, val in cache.items() if val is True and aid not in pdf_stems]
     return sorted(missing)
 
 
@@ -275,6 +293,8 @@ Pipeline stages:
     parser.add_argument("--step2-dir", default="json/2_paper_metadata", help="Step 2 JSON directory")
     parser.add_argument("--step3-dir", default="json/3_paper_bias_targets", help="Step 3 JSON directory")
     parser.add_argument("--step4-dir", default="json/4_religious_bias_analysis", help="Step 4 JSON directory")
+    parser.add_argument("--cache", default=ASSESSMENT_CACHE_FILE,
+                        help=f"Assessment cache JSON (default {ASSESSMENT_CACHE_FILE})")
     parser.add_argument("--apply", action="store_true", help="Actually delete invalid files and regenerate missing ones")
     
     args = parser.parse_args()
@@ -316,7 +336,35 @@ Pipeline stages:
                     time.sleep(DELAY_BETWEEN_DOWNLOADS)
             print(f"  Downloaded: {downloaded}, Failed: {failed}")
             total_downloaded += downloaded
-    
+
+    # --- Cache downloads: ensure assessed-positive papers have PDFs ---
+    print(f"\n>> Cache Downloads: Assessment cache ({args.cache} -> {args.pdf_dir})")
+    print("-" * 40)
+    missing_cached = audit_cache_downloads(args.cache, args.pdf_dir)
+    if not missing_cached:
+        print(f"  OK: All cache-positive papers have PDFs.")
+    else:
+        print(f"  WARNING: {len(missing_cached)} cache-positive paper(s) missing PDFs:")
+        for stem in missing_cached[:20]:
+            print(f"     - {stem}")
+        if len(missing_cached) > 20:
+            print(f"     ... and {len(missing_cached) - 20} more")
+        total_missing += len(missing_cached)
+
+        if apply:
+            os.makedirs(args.pdf_dir, exist_ok=True)
+            downloaded = 0
+            failed = 0
+            for i, stem in enumerate(missing_cached):
+                if download_pdf(stem, args.pdf_dir):
+                    downloaded += 1
+                else:
+                    failed += 1
+                if i < len(missing_cached) - 1:
+                    time.sleep(DELAY_BETWEEN_DOWNLOADS)
+            print(f"  Downloaded: {downloaded}, Failed: {failed}")
+            total_downloaded += downloaded
+
     # --- Step 2: paper metadata ---
     # Note: we never delete step 2 metadata. PDFs may be intentionally removed
     # but we keep the metadata. We only report unprocessed PDFs (missing metadata).
