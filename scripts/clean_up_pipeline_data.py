@@ -3,8 +3,13 @@
 Pipeline Data Cleanup
 
 Validates JSON data across pipeline stages and identifies:
+- Papers matching download criteria that are missing PDFs
 - JSON files that no longer meet pipeline criteria (can be removed)
 - Missing JSON files that should exist based on upstream data (can be generated)
+
+Download criteria (papers must have is_llm_related=True AND at least one of:
+  is_bias_related, is_faith_ethics_related, bias_and_fairness,
+  moral_reasoning, ethics, religion)
 
 Pipeline stages:
   Step 2: json/2_paper_metadata     — one JSON per PDF in pdf/
@@ -19,7 +24,10 @@ import glob
 import json
 import os
 import subprocess
+import time
 from pathlib import Path
+
+import requests
 
 # Religious bias keywords (mirrored from 4_extract_paper_details.py)
 _RELIGIOUS_KEYWORDS = [
@@ -28,6 +36,18 @@ _RELIGIOUS_KEYWORDS = [
     'buddhis', 'sikh', 'mormon', 'latter-day',
     'antisemit',
 ]
+
+# Tags that qualify a paper for download when combined with is_llm_related
+_DOWNLOAD_QUALIFYING_TAGS = [
+    'is_bias_related',
+    'is_faith_ethics_related',
+    'bias_and_fairness',
+    'moral_reasoning',
+    'ethics',
+    'religion',
+]
+
+DELAY_BETWEEN_DOWNLOADS = 3  # seconds between PDF downloads
 
 
 def _has_religious_bias(second_pass_data: dict) -> bool:
@@ -43,6 +63,67 @@ def _has_religious_bias(second_pass_data: dict) -> bool:
         if any(kw in lowered for kw in _RELIGIOUS_KEYWORDS):
             return True
     return False
+
+
+def _meets_download_criteria(data: dict) -> bool:
+    """Check whether a paper's metadata meets the expanded download criteria.
+
+    Returns True when is_llm_related is True AND at least one qualifying tag
+    (is_bias_related, is_faith_ethics_related, bias_and_fairness,
+    moral_reasoning, ethics, religion) is True.
+    """
+    if data.get('is_llm_related') is not True:
+        return False
+    return any(data.get(tag) is True for tag in _DOWNLOAD_QUALIFYING_TAGS)
+
+
+def download_pdf(arxiv_id: str, output_dir: str) -> bool:
+    """Download a PDF for a given arXiv ID. Returns True on success."""
+    pdf_url = f"https://arxiv.org/pdf/{arxiv_id}.pdf"
+    output_path = os.path.join(output_dir, f"{arxiv_id}.pdf")
+
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+    }
+
+    try:
+        print(f"     Downloading {arxiv_id}...", end=' ')
+        response = requests.get(pdf_url, headers=headers, timeout=60)
+        response.raise_for_status()
+
+        if len(response.content) < 1000:
+            print(f"X Error: Downloaded file too small ({len(response.content)} bytes)")
+            return False
+
+        with open(output_path, 'wb') as f:
+            f.write(response.content)
+
+        print(f"OK ({len(response.content) / 1024:.1f} KB)")
+        return True
+
+    except requests.RequestException as e:
+        print(f"X Error: {e}")
+        return False
+
+
+def audit_downloads(step2_dir: str, pdf_dir: str) -> list[str]:
+    """Check that every paper meeting download criteria has a PDF.
+
+    Returns list of stems (arXiv IDs) that are eligible but have no PDF.
+    """
+    pdf_stems = set()
+    if os.path.isdir(pdf_dir):
+        pdf_stems = {Path(f).stem for f in glob.glob(os.path.join(pdf_dir, "*.pdf"))}
+
+    missing = []
+    for jf in glob.glob(os.path.join(step2_dir, "*.json")):
+        data = load_json(jf)
+        if data and _meets_download_criteria(data):
+            stem = Path(jf).stem
+            if stem not in pdf_stems:
+                missing.append(stem)
+
+    return sorted(missing)
 
 
 def load_json(path: str) -> dict | None:
@@ -206,6 +287,35 @@ Pipeline stages:
     total_invalid = 0
     total_missing = 0
     total_deleted = 0
+    total_downloaded = 0
+
+    # --- Downloads: ensure qualifying papers have PDFs ---
+    print(f"\n>> Downloads: Qualifying papers ({args.step2_dir} -> {args.pdf_dir})")
+    print("-" * 40)
+    missing_pdfs = audit_downloads(args.step2_dir, args.pdf_dir)
+    if not missing_pdfs:
+        print(f"  OK: All qualifying papers have PDFs.")
+    else:
+        print(f"  WARNING: {len(missing_pdfs)} qualifying paper(s) missing PDFs:")
+        for stem in missing_pdfs[:20]:
+            print(f"     - {stem}")
+        if len(missing_pdfs) > 20:
+            print(f"     ... and {len(missing_pdfs) - 20} more")
+        total_missing += len(missing_pdfs)
+
+        if apply:
+            os.makedirs(args.pdf_dir, exist_ok=True)
+            downloaded = 0
+            failed = 0
+            for i, stem in enumerate(missing_pdfs):
+                if download_pdf(stem, args.pdf_dir):
+                    downloaded += 1
+                else:
+                    failed += 1
+                if i < len(missing_pdfs) - 1:
+                    time.sleep(DELAY_BETWEEN_DOWNLOADS)
+            print(f"  Downloaded: {downloaded}, Failed: {failed}")
+            total_downloaded += downloaded
     
     # --- Step 2: paper metadata ---
     # Note: we never delete step 2 metadata. PDFs may be intentionally removed
@@ -276,6 +386,7 @@ Pipeline stages:
     print(f"  Missing files found: {total_missing}")
     if apply:
         print(f"  Files deleted:       {total_deleted}")
+        print(f"  PDFs downloaded:     {total_downloaded}")
     if total_invalid == 0 and total_missing == 0:
         print(f"\n  OK: Pipeline data is clean!")
     elif not apply:
