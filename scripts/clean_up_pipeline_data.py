@@ -49,6 +49,7 @@ _DOWNLOAD_QUALIFYING_TAGS = [
 
 DELAY_BETWEEN_DOWNLOADS = 3  # seconds between PDF downloads
 ASSESSMENT_CACHE_FILE = "utility_files/download_assessments_cache.json"
+FAILED_DOWNLOADS_CACHE_FILE = "utility_files/failed_downloads_cache.json"
 
 
 def _has_religious_bias(second_pass_data: dict) -> bool:
@@ -78,8 +79,14 @@ def _meets_download_criteria(data: dict) -> bool:
     return any(data.get(tag) is True for tag in _DOWNLOAD_QUALIFYING_TAGS)
 
 
-def download_pdf(arxiv_id: str, output_dir: str) -> bool:
-    """Download a PDF for a given arXiv ID. Returns True on success."""
+def download_pdf(arxiv_id: str, output_dir: str) -> str:
+    """Download a PDF for a given arXiv ID.
+
+    Returns:
+        'ok'             – downloaded successfully
+        'permanent_fail' – paper withdrawn or permanently unavailable (don't retry)
+        'transient_fail' – temporary error (retry later)
+    """
     pdf_url = f"https://arxiv.org/pdf/{arxiv_id}.pdf"
     output_path = os.path.join(output_dir, f"{arxiv_id}.pdf")
 
@@ -90,27 +97,39 @@ def download_pdf(arxiv_id: str, output_dir: str) -> bool:
     try:
         print(f"     Downloading {arxiv_id}...", end=' ')
         response = requests.get(pdf_url, headers=headers, timeout=60)
+
+        if response.status_code in (403, 404, 410):
+            print(f"SKIPPED (HTTP {response.status_code} - unavailable/withdrawn)")
+            return 'permanent_fail'
+
         response.raise_for_status()
 
+        # Check for arXiv "withdrawn" HTML page served as PDF
+        content_type = response.headers.get('Content-Type', '')
+        if 'text/html' in content_type:
+            print(f"SKIPPED (HTML response - likely withdrawn)")
+            return 'permanent_fail'
+
         if len(response.content) < 1000:
-            print(f"X Error: Downloaded file too small ({len(response.content)} bytes)")
-            return False
+            print(f"SKIPPED (too small: {len(response.content)} bytes - likely withdrawn)")
+            return 'permanent_fail'
 
         with open(output_path, 'wb') as f:
             f.write(response.content)
 
         print(f"OK ({len(response.content) / 1024:.1f} KB)")
-        return True
+        return 'ok'
 
     except requests.RequestException as e:
         print(f"X Error: {e}")
-        return False
+        return 'transient_fail'
 
 
-def audit_downloads(step2_dir: str, pdf_dir: str) -> list[str]:
+def audit_downloads(step2_dir: str, pdf_dir: str, skip_ids: set[str]) -> list[str]:
     """Check that every paper meeting download criteria has a PDF.
 
     Returns list of stems (arXiv IDs) that are eligible but have no PDF.
+    Papers in skip_ids (failed cache) are excluded.
     """
     pdf_stems = set()
     if os.path.isdir(pdf_dir):
@@ -121,16 +140,17 @@ def audit_downloads(step2_dir: str, pdf_dir: str) -> list[str]:
         data = load_json(jf)
         if data and _meets_download_criteria(data):
             stem = Path(jf).stem
-            if stem not in pdf_stems:
+            if stem not in pdf_stems and stem not in skip_ids:
                 missing.append(stem)
 
     return sorted(missing)
 
 
-def audit_cache_downloads(cache_path: str, pdf_dir: str) -> list[str]:
+def audit_cache_downloads(cache_path: str, pdf_dir: str, skip_ids: set[str]) -> list[str]:
     """Check that every paper marked True in the assessment cache has a PDF.
 
     Returns list of arXiv IDs that were assessed as relevant but have no PDF.
+    Papers in skip_ids (failed cache) are excluded.
     """
     cache = load_json(cache_path)
     if not cache or not isinstance(cache, dict):
@@ -140,7 +160,10 @@ def audit_cache_downloads(cache_path: str, pdf_dir: str) -> list[str]:
     if os.path.isdir(pdf_dir):
         pdf_stems = {Path(f).stem for f in glob.glob(os.path.join(pdf_dir, "*.pdf"))}
 
-    missing = [aid for aid, val in cache.items() if val is True and aid not in pdf_stems]
+    missing = [
+        aid for aid, val in cache.items()
+        if val is True and aid not in pdf_stems and aid not in skip_ids
+    ]
     return sorted(missing)
 
 
@@ -309,10 +332,19 @@ Pipeline stages:
     total_deleted = 0
     total_downloaded = 0
 
+    # Load failed-downloads cache
+    failed_cache_path = FAILED_DOWNLOADS_CACHE_FILE
+    failed_cache = load_json(failed_cache_path) or {}
+    if not isinstance(failed_cache, dict):
+        failed_cache = {}
+    failed_ids = set(failed_cache.keys())
+    if failed_ids:
+        print(f"\n  Skipping {len(failed_ids)} previously failed download(s)")
+
     # --- Downloads: ensure qualifying papers have PDFs ---
     print(f"\n>> Downloads: Qualifying papers ({args.step2_dir} -> {args.pdf_dir})")
     print("-" * 40)
-    missing_pdfs = audit_downloads(args.step2_dir, args.pdf_dir)
+    missing_pdfs = audit_downloads(args.step2_dir, args.pdf_dir, failed_ids)
     if not missing_pdfs:
         print(f"  OK: All qualifying papers have PDFs.")
     else:
@@ -328,8 +360,12 @@ Pipeline stages:
             downloaded = 0
             failed = 0
             for i, stem in enumerate(missing_pdfs):
-                if download_pdf(stem, args.pdf_dir):
+                result = download_pdf(stem, args.pdf_dir)
+                if result == 'ok':
                     downloaded += 1
+                elif result == 'permanent_fail':
+                    failed_cache[stem] = time.strftime('%Y-%m-%d')
+                    failed += 1
                 else:
                     failed += 1
                 if i < len(missing_pdfs) - 1:
@@ -340,7 +376,7 @@ Pipeline stages:
     # --- Cache downloads: ensure assessed-positive papers have PDFs ---
     print(f"\n>> Cache Downloads: Assessment cache ({args.cache} -> {args.pdf_dir})")
     print("-" * 40)
-    missing_cached = audit_cache_downloads(args.cache, args.pdf_dir)
+    missing_cached = audit_cache_downloads(args.cache, args.pdf_dir, set(failed_cache.keys()))
     if not missing_cached:
         print(f"  OK: All cache-positive papers have PDFs.")
     else:
@@ -356,14 +392,25 @@ Pipeline stages:
             downloaded = 0
             failed = 0
             for i, stem in enumerate(missing_cached):
-                if download_pdf(stem, args.pdf_dir):
+                result = download_pdf(stem, args.pdf_dir)
+                if result == 'ok':
                     downloaded += 1
+                elif result == 'permanent_fail':
+                    failed_cache[stem] = time.strftime('%Y-%m-%d')
+                    failed += 1
                 else:
                     failed += 1
                 if i < len(missing_cached) - 1:
                     time.sleep(DELAY_BETWEEN_DOWNLOADS)
             print(f"  Downloaded: {downloaded}, Failed: {failed}")
             total_downloaded += downloaded
+
+    # Save failed-downloads cache if it changed
+    if apply and failed_cache:
+        os.makedirs(os.path.dirname(failed_cache_path) or '.', exist_ok=True)
+        with open(failed_cache_path, 'w', encoding='utf-8') as f:
+            json.dump(failed_cache, f, indent=2)
+        print(f"\n  Saved {len(failed_cache)} entries to {failed_cache_path}")
 
     # --- Step 2: paper metadata ---
     # Note: we never delete step 2 metadata. PDFs may be intentionally removed
