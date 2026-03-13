@@ -46,6 +46,16 @@ RESULTS_PER_PAGE = 200
 DELAY_BETWEEN_API_PAGES = 3  # seconds between arxiv API requests
 DELAY_BETWEEN_DOWNLOADS = 3  # seconds between PDF downloads
 BATCH_SIZE = 100
+API_MAX_RETRIES = 3  # retries per API page on server errors
+
+# RSS feed settings (fallback when API is down)
+RSS_BASE_URL = "https://rss.arxiv.org/rss"
+# All top-level arXiv archives (mirrors the API's "all categories" behavior)
+RSS_CATEGORIES = [
+    "cs", "econ", "eess", "math", "physics", "q-bio", "q-fin", "stat",
+    "astro-ph", "cond-mat", "gr-qc", "hep-ex", "hep-lat", "hep-ph",
+    "hep-th", "math-ph", "nlin", "nucl-ex", "nucl-th", "quant-ph",
+]
 
 
 # ---------------------------------------------------------------------------
@@ -160,12 +170,31 @@ def fetch_recent_papers(max_papers: int = MAX_PAPERS,
         )
         print(f"  Fetching papers {start + 1}-{start + batch_size}...")
 
-        try:
-            resp = requests.get(url, headers=headers, timeout=30)
-            resp.raise_for_status()
-        except requests.RequestException as e:
-            print(f"  Error fetching page: {e}")
-            break
+        resp = None
+        for attempt in range(API_MAX_RETRIES):
+            try:
+                resp = requests.get(url, headers=headers, timeout=30)
+                if resp.status_code >= 500:
+                    wait = (2 ** attempt) * 3 + random.uniform(0, 2)
+                    print(f"  Server error ({resp.status_code}), retrying in {wait:.0f}s "
+                          f"(attempt {attempt + 1}/{API_MAX_RETRIES})...")
+                    time.sleep(wait)
+                    continue
+                resp.raise_for_status()
+                break
+            except requests.RequestException as e:
+                if attempt < API_MAX_RETRIES - 1:
+                    wait = (2 ** attempt) * 3 + random.uniform(0, 2)
+                    print(f"  Error: {e}, retrying in {wait:.0f}s "
+                          f"(attempt {attempt + 1}/{API_MAX_RETRIES})...")
+                    time.sleep(wait)
+                else:
+                    print(f"  Error fetching page after {API_MAX_RETRIES} attempts: {e}")
+                    return all_papers
+
+        if resp is None or resp.status_code >= 500:
+            print(f"  API unavailable after {API_MAX_RETRIES} attempts, stopping.")
+            return all_papers
 
         root = ET.fromstring(resp.content)
         entries = root.findall('atom:entry', ns)
@@ -209,6 +238,83 @@ def fetch_recent_papers(max_papers: int = MAX_PAPERS,
         if start + per_page < max_papers:
             time.sleep(DELAY_BETWEEN_API_PAGES)
 
+    return all_papers
+
+
+def fetch_rss_papers(categories: list[str] = None) -> list[dict]:
+    """Fetch recent papers from arXiv RSS feeds (fallback when API is down).
+
+    RSS feeds are updated daily and served from separate infrastructure.
+    Returns papers in the same format as fetch_recent_papers().
+    """
+    if categories is None:
+        categories = RSS_CATEGORIES
+
+    # Combine categories with + for a single request (up to 2000 items)
+    cat_str = "+".join(categories)
+    url = f"{RSS_BASE_URL}/{cat_str}"
+
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+    }
+
+    print(f"  Fetching RSS feed: {url}")
+    try:
+        resp = requests.get(url, headers=headers, timeout=30)
+        resp.raise_for_status()
+    except requests.RequestException as e:
+        print(f"  Error fetching RSS feed: {e}")
+        return []
+
+    root = ET.fromstring(resp.content)
+    all_papers = []
+    seen_ids = set()
+    today = time.strftime('%Y-%m-%d')
+
+    for item in root.iter('item'):
+        # Extract arXiv ID from <link> (e.g. http://arxiv.org/abs/2603.12345v1)
+        link_elem = item.find('link')
+        if link_elem is None or not link_elem.text:
+            continue
+        link = link_elem.text.strip()
+        arxiv_id = link.split('/abs/')[-1] if '/abs/' in link else ''
+        arxiv_id = re.sub(r'v\d+$', '', arxiv_id)
+        if not arxiv_id or arxiv_id in seen_ids:
+            continue
+        seen_ids.add(arxiv_id)
+
+        # Title
+        title_elem = item.find('title')
+        title = title_elem.text.strip().replace('\n', ' ') if title_elem is not None and title_elem.text else "Unknown"
+        # RSS titles often have a prefix like "Title. (arXiv:2603.12345v1 ...)"
+        # Clean up the arXiv ID suffix if present
+        title = re.sub(r'\s*\(arXiv:[^)]+\)\s*$', '', title)
+        title = re.sub(r'\s+', ' ', title)
+
+        # Abstract from <description>
+        desc_elem = item.find('description')
+        abstract = ""
+        if desc_elem is not None and desc_elem.text:
+            desc = desc_elem.text.strip()
+            # The description often contains HTML with <p> tags
+            # Remove HTML tags
+            abstract = re.sub(r'<[^>]+>', ' ', desc)
+            abstract = re.sub(r'\s+', ' ', abstract).strip()
+            # Strip RSS metadata prefix: "arXiv:XXXX.XXXXXv1 Announce Type: new Abstract: "
+            abstract = re.sub(r'^arXiv:\S+\s+Announce Type:\s*\w+\s+Abstract:\s*', '', abstract)
+
+        if not abstract:
+            continue
+
+        all_papers.append({
+            'arxiv_id': arxiv_id,
+            'title': title,
+            'abstract': abstract,
+            'published': today,
+            'updated': today,
+        })
+
+    print(f"  Got {len(all_papers)} papers from RSS feed")
     return all_papers
 
 
@@ -502,6 +608,8 @@ def main():
                         help="Process unclassified papers from the snapshot file before fetching API papers")
     parser.add_argument("--workers", type=int, default=10,
                         help="Number of concurrent classification threads (default 10)")
+    parser.add_argument("--use-rss", action="store_true",
+                        help="Use RSS feeds instead of the API for fetching recent papers")
     args = parser.parse_args()
 
     api_key = os.getenv("GOOGLE_API_KEY")
@@ -556,10 +664,21 @@ def main():
         print(f"\nStep 2: Skipping snapshot (use --use-snapshot to process)")
         snapshot_ids = set()
 
-    # Step 3: Fetch recent papers from arXiv API
-    print(f"\nStep 3: Fetching last {args.max_papers} papers from arXiv API...")
-    print("-" * 40)
-    api_papers = fetch_recent_papers(max_papers=args.max_papers)
+    # Step 3: Fetch recent papers from arXiv API (or RSS fallback)
+    if args.use_rss:
+        print(f"\nStep 3: Fetching recent papers from RSS feeds...")
+        print("-" * 40)
+        api_papers = fetch_rss_papers()
+    else:
+        print(f"\nStep 3: Fetching last {args.max_papers} papers from arXiv API...")
+        print("-" * 40)
+        api_papers = fetch_recent_papers(max_papers=args.max_papers)
+
+        if not api_papers:
+            print(f"\n  API returned no papers. Falling back to RSS feeds...")
+            print("-" * 40)
+            api_papers = fetch_rss_papers()
+
     print(f"\nFetched {len(api_papers)} papers.")
 
     if api_papers:
