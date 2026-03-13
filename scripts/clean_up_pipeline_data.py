@@ -114,6 +114,7 @@ def download_pdf(arxiv_id: str, output_dir: str) -> str:
             print(f"SKIPPED (too small: {len(response.content)} bytes - likely withdrawn)")
             return 'permanent_fail'
 
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
         with open(output_path, 'wb') as f:
             f.write(response.content)
 
