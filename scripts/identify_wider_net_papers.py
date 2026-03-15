@@ -98,18 +98,11 @@ def check_mormon_mention(paper_data: dict) -> bool:
     return any(term in text for term in ["mormon", "latter-day", "lds"])
 
 
-def main():
-    # 1. Get all processed paper IDs
-    paper_ids = get_stage4_paper_ids()
-    print(f"Total papers in stage 4: {len(paper_ids)}")
-
-    # 2. Load categories from snapshot
-    categories = load_snapshot_categories(paper_ids)
-
-    # 3. Categorize papers
-    cs_only_ids = set()
-    wider_net_ids = set()  # Papers with non-CS categories
-    exclusively_non_cs_ids = set()  # Papers with NO CS categories
+def categorize_papers(paper_ids: set[str], categories: dict[str, str]) -> tuple[set, set, set, set]:
+    """Categorize papers into cs-only, wider-net, exclusively-non-cs, not-in-snapshot."""
+    cs_only = set()
+    wider_net = set()
+    exclusively_non_cs = set()
 
     for pid in paper_ids:
         if pid not in categories:
@@ -119,74 +112,138 @@ def main():
         has_non_cs = any(not c.startswith("cs.") for c in cats)
 
         if has_non_cs and not has_cs:
-            exclusively_non_cs_ids.add(pid)
-            wider_net_ids.add(pid)
+            exclusively_non_cs.add(pid)
+            wider_net.add(pid)
         elif has_non_cs and has_cs:
-            wider_net_ids.add(pid)
+            wider_net.add(pid)
         else:
-            cs_only_ids.add(pid)
+            cs_only.add(pid)
 
     not_in_snapshot = paper_ids - set(categories.keys())
-    
-    print(f"\n  CS-only papers: {len(cs_only_ids)}")
-    print(f"  Cross-listed (CS + other categories): {len(wider_net_ids - exclusively_non_cs_ids)}")
-    print(f"  Exclusively non-CS papers: {len(exclusively_non_cs_ids)}")
-    if not_in_snapshot:
-        print(f"  Not found in snapshot: {len(not_in_snapshot)}")
+    return cs_only, wider_net, exclusively_non_cs, not_in_snapshot
 
-    # 4. Load CSV metadata for titles and dates
+
+def main():
+    # 1. Get all processed paper IDs (religious bias subset)
+    religious_paper_ids = get_stage4_paper_ids()
+    print(f"Total religious bias papers in stage 4: {len(religious_paper_ids)}")
+
+    # 2. Load ALL bias-in-LLM paper IDs from the CSV
+    all_bias_ids = set()
     csv_meta = {}
     if CSV_FILE.exists():
         with open(CSV_FILE, "r", encoding="utf-8") as f:
             reader = csv.DictReader(f)
             for row in reader:
-                csv_meta[row["paper_id"]] = {
+                pid = row["paper_id"]
+                all_bias_ids.add(pid)
+                csv_meta[pid] = {
                     "title": row.get("title", "Unknown Title"),
                     "date": row.get("latest_date", "Unknown Date"),
                 }
-    
+    print(f"Total bias-in-LLM papers in CSV: {len(all_bias_ids)}")
+
+    # 3. Load categories from snapshot for ALL papers (single pass)
+    all_needed_ids = all_bias_ids | religious_paper_ids
+    categories = load_snapshot_categories(all_needed_ids)
+
+    # 4. Categorize both sets
+    r_cs_only, r_wider, r_excl_non_cs, r_not_found = categorize_papers(religious_paper_ids, categories)
+    a_cs_only, a_wider, a_excl_non_cs, a_not_found = categorize_papers(all_bias_ids, categories)
+
+    print(f"\n--- Religious Bias Papers ---")
+    print(f"  CS-only: {len(r_cs_only)}")
+    print(f"  Cross-listed (CS + other): {len(r_wider - r_excl_non_cs)}")
+    print(f"  Exclusively non-CS: {len(r_excl_non_cs)}")
+    if r_not_found:
+        print(f"  Not in snapshot: {len(r_not_found)}")
+
+    print(f"\n--- All Bias-in-LLM Papers ---")
+    print(f"  CS-only: {len(a_cs_only)}")
+    print(f"  Cross-listed (CS + other): {len(a_wider - a_excl_non_cs)}")
+    print(f"  Exclusively non-CS: {len(a_excl_non_cs)}")
+    if a_not_found:
+        print(f"  Not in snapshot: {len(a_not_found)}")
+
     # 5. Generate report
-    sorted_ids = sorted(wider_net_ids, reverse=True)
+    sorted_religious_ids = sorted(r_wider, reverse=True)
     
     lines = ["# Picked Up with Wider Net\n"]
-    lines.append("Papers about religious bias in LLMs that include non-CS arXiv categories, indicating")
-    lines.append("they were cross-listed or primarily categorized outside Computer Science.\n")
-    lines.append(f"**Total wider-net papers: {len(sorted_ids)}** out of {len(paper_ids)} total papers "
-                 f"({len(exclusively_non_cs_ids)} exclusively non-CS, "
-                 f"{len(wider_net_ids - exclusively_non_cs_ids)} cross-listed with CS).\n")
+    lines.append("Papers that include non-CS arXiv categories, indicating they were cross-listed or")
+    lines.append("primarily categorized outside Computer Science.\n")
+
+    # --- Broader bias-in-LLM summary statistics ---
+    lines.append("## All Bias-in-LLM Papers (Summary Statistics)\n")
+    lines.append(f"Out of **{len(all_bias_ids):,}** total bias-in-LLM papers in the pipeline:\n")
+    lines.append(f"| Category | Count | % |")
+    lines.append(f"|---|---|---|")
+    lines.append(f"| CS-only | {len(a_cs_only):,} | {len(a_cs_only)/len(all_bias_ids)*100:.1f}% |")
+    lines.append(f"| Cross-listed (CS + other) | {len(a_wider - a_excl_non_cs):,} | {(len(a_wider - a_excl_non_cs))/len(all_bias_ids)*100:.1f}% |")
+    lines.append(f"| Exclusively non-CS | {len(a_excl_non_cs):,} | {len(a_excl_non_cs)/len(all_bias_ids)*100:.1f}% |")
+    lines.append(f"| Not in snapshot | {len(a_not_found):,} | {len(a_not_found)/len(all_bias_ids)*100:.1f}% |")
     lines.append("")
 
-    # Non-CS category breakdown
-    non_cs_cats = Counter()
-    for pid in sorted_ids:
+    # Non-CS category breakdown for ALL bias papers
+    all_non_cs_cats = Counter()
+    for pid in a_wider:
         for cat in get_non_cs_categories(categories[pid]):
-            non_cs_cats[cat] += 1
+            all_non_cs_cats[cat] += 1
     
-    if non_cs_cats:
-        lines.append("## Non-CS Category Breakdown\n")
+    if all_non_cs_cats:
+        lines.append("### Non-CS Categories Across All Bias Papers\n")
         lines.append("| Category | Count | Description |")
         lines.append("|---|---|---|")
         cat_descriptions = {
             "stat.ML": "Machine Learning (Statistics)",
             "stat.ME": "Methodology (Statistics)",
             "stat.AP": "Applications (Statistics)",
+            "stat.TH": "Statistics Theory",
+            "stat.CO": "Computation (Statistics)",
             "physics.soc-ph": "Physics and Society",
             "econ.TH": "Theoretical Economics",
             "econ.GN": "General Economics",
             "eess.AS": "Audio and Speech Processing",
+            "eess.SP": "Signal Processing",
+            "eess.IV": "Image and Video Processing",
             "math.IT": "Information Theory",
-            "cs.IT": "Information Theory (CS)",
+            "math.ST": "Statistics Theory (Math)",
+            "math.OC": "Optimization and Control",
             "q-bio.NC": "Neurons and Cognition",
+            "q-bio.QM": "Quantitative Methods (Q-Bio)",
             "q-fin.EC": "Economics (Quantitative Finance)",
+            "I.2.7": "Natural Language Processing (Legacy)",
         }
-        for cat, count in non_cs_cats.most_common():
+        for cat, count in all_non_cs_cats.most_common():
+            desc = cat_descriptions.get(cat, "")
+            lines.append(f"| `{cat}` | {count} | {desc} |")
+        lines.append("")
+    lines.append("")
+
+    # --- Religious bias papers section ---
+    lines.append("## Religious Bias Papers with Non-CS Categories\n")
+    lines.append(f"**Total: {len(sorted_religious_ids)}** out of {len(religious_paper_ids)} religious bias papers "
+                 f"({len(r_excl_non_cs)} exclusively non-CS, "
+                 f"{len(r_wider - r_excl_non_cs)} cross-listed with CS).\n")
+    lines.append("")
+
+    # Non-CS category breakdown for religious bias papers
+    religious_non_cs_cats = Counter()
+    for pid in sorted_religious_ids:
+        for cat in get_non_cs_categories(categories[pid]):
+            religious_non_cs_cats[cat] += 1
+    
+    if religious_non_cs_cats:
+        lines.append("### Category Breakdown\n")
+        lines.append("| Category | Count | Description |")
+        lines.append("|---|---|---|")
+        for cat, count in religious_non_cs_cats.most_common():
             desc = cat_descriptions.get(cat, "")
             lines.append(f"| `{cat}` | {count} | {desc} |")
         lines.append("")
         lines.append("")
 
-    # Paper entries
-    for pid in sorted_ids:
+    # Paper entries (religious bias only)
+    for pid in sorted_religious_ids:
         meta = csv_meta.get(pid, {})
         title = meta.get("title", "Unknown Title")
         date = meta.get("date", "Unknown Date")
@@ -216,7 +273,7 @@ def main():
         f.write("\n".join(lines))
 
     print(f"\nReport written to {OUTPUT_FILE}")
-    print(f"  {len(sorted_ids)} wider-net papers documented")
+    print(f"  {len(sorted_religious_ids)} wider-net papers documented")
 
 
 if __name__ == "__main__":
