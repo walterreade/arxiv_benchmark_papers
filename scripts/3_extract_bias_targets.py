@@ -28,6 +28,7 @@ from shared import (
     ResourceExhaustedError, IterationTimeoutError, ITERATION_TIMEOUT,
     ErrorTracker, RateLimiter,
     load_failed_files, save_json,
+    unsanitize_arxiv_id,
 )
 
 DEFAULT_MODEL = "gemini-3-pro-preview"
@@ -148,6 +149,7 @@ def process_single_file(pdf_path: str, api_key: str, json_dir: str, model_name: 
 
         # Save to JSON
         url_slug = filename.replace('.pdf', '')
+        url_slug = unsanitize_arxiv_id(url_slug)
         json_data = {
             "filename": filename,
             "title": first_pass_data.get("title", ""),

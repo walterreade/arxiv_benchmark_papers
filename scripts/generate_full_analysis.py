@@ -19,6 +19,7 @@ from pathlib import Path
 
 from shared import (
     load_csv_metadata, get_arxiv_url, check_mormon_mention, filter_religion_papers,
+    unsanitize_arxiv_id,
 )
 from analyze_bias_targets import normalize_target
 
@@ -604,7 +605,7 @@ def fetch_citation_counts(arxiv_ids: list[str]) -> dict:
     batch_size = 100
     for i in range(0, len(ids_to_fetch), batch_size):
         batch = ids_to_fetch[i:i + batch_size]
-        payload = {"ids": [f"arXiv:{item['clean']}" for item in batch]}
+        payload = {"ids": [f"arXiv:{unsanitize_arxiv_id(item['clean'])}" for item in batch]}
         max_retries = 3
         for attempt in range(max_retries):
             try:
@@ -809,7 +810,7 @@ def main():
     for paper in papers_with_religious_primary:
         paper_id = paper.get('_filename', '').replace('.pdf', '')
         title = paper.get('title', 'Unknown Title')
-        url = f"https://arxiv.org/pdf/{paper_id}"
+        url = get_arxiv_url(paper.get('_filename', ''))
         religious_primary_info.append((paper_id, title, url))
     
     primary_citations = fetch_citation_counts([p[0] for p in religious_primary_info])
@@ -829,7 +830,7 @@ def main():
                 if p2['arxiv_id'] == paper_id:
                     title = p2['title']
                     break
-        url = f"https://arxiv.org/pdf/{paper_id}"
+        url = get_arxiv_url(f"{paper_id}.pdf")
         religious_bias_papers_info.append((paper_id, title, url))
     
     bias_citations = fetch_citation_counts([p[0] for p in religious_bias_papers_info])

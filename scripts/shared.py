@@ -11,6 +11,7 @@ Contains common classes and functions used across multiple scripts:
 import os
 import csv
 import json
+import re
 import time
 import threading
 
@@ -159,12 +160,41 @@ def save_json(data: dict, output_dir: str, filename: str):
 
 
 # ---------------------------------------------------------------------------
+# arXiv ID helpers
+# ---------------------------------------------------------------------------
+
+def sanitize_arxiv_id(arxiv_id: str) -> str:
+    """Convert arXiv ID to a filesystem-safe format (replace / with _).
+
+    Old-style arXiv IDs contain a slash (e.g., cond-mat/0008192, cs/0311046)
+    which creates subdirectories when used as filenames.  This replaces the
+    slash with an underscore so the ID can be used as a flat filename.
+    """
+    return arxiv_id.replace('/', '_')
+
+
+def unsanitize_arxiv_id(sanitized_id: str) -> str:
+    """Reverse sanitize_arxiv_id for old-style arXiv IDs.
+
+    Detects IDs like 'cond-mat_0008192' (no dot, alpha prefix + underscore +
+    7-digit number) and restores the slash: 'cond-mat/0008192'.
+    New-style IDs (e.g., '2601.17002') are returned unchanged.
+    """
+    if '.' not in sanitized_id:
+        m = re.match(r'^([a-zA-Z][a-zA-Z0-9-]*)_(\d{7}\d*)$', sanitized_id)
+        if m:
+            return f"{m.group(1)}/{m.group(2)}"
+    return sanitized_id
+
+
+# ---------------------------------------------------------------------------
 # Paper utility functions
 # ---------------------------------------------------------------------------
 
 def get_arxiv_url(filename: str) -> str:
     """Convert filename to arxiv PDF URL."""
     arxiv_id = filename.replace('.pdf', '').replace('.json', '')
+    arxiv_id = unsanitize_arxiv_id(arxiv_id)
     return f"https://arxiv.org/pdf/{arxiv_id}"
 
 

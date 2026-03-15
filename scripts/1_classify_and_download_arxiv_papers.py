@@ -26,6 +26,7 @@ from shared import (
     genai, types,
     ResourceExhaustedError,
     ErrorTracker, RateLimiter,
+    sanitize_arxiv_id,
 )
 
 
@@ -422,7 +423,8 @@ Return a JSON array of {len(batch)} booleans (true/false), one per abstract in o
 def download_pdf(arxiv_id: str, output_dir: str) -> bool:
     """Download a PDF for a given arXiv ID."""
     pdf_url = f"https://arxiv.org/pdf/{arxiv_id}.pdf"
-    output_path = os.path.join(output_dir, f"{arxiv_id}.pdf")
+    safe_id = sanitize_arxiv_id(arxiv_id)
+    output_path = os.path.join(output_dir, f"{safe_id}.pdf")
 
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
@@ -463,16 +465,16 @@ def classify_and_download(papers: list[dict], assessment_cache: dict[str, bool],
     # Split into papers needing classification vs cached positives needing download
     new_papers = [p for p in papers
                   if p['arxiv_id'] not in assessment_cache
-                  and p['arxiv_id'] not in existing_pdfs]
+                  and sanitize_arxiv_id(p['arxiv_id']) not in existing_pdfs]
     
     cached_positive_not_downloaded = [
         p for p in papers
         if assessment_cache.get(p['arxiv_id']) is True
-        and p['arxiv_id'] not in existing_pdfs
+        and sanitize_arxiv_id(p['arxiv_id']) not in existing_pdfs
     ]
     
     print(f"  Papers from {source_label}: {len(papers)}")
-    print(f"    Already downloaded:            {len([p for p in papers if p['arxiv_id'] in existing_pdfs])}")
+    print(f"    Already downloaded:            {len([p for p in papers if sanitize_arxiv_id(p['arxiv_id']) in existing_pdfs])}")
     print(f"    Previously assessed:           {len([p for p in papers if p['arxiv_id'] in assessment_cache])}")
     print(f"    New papers to assess:          {len(new_papers)}")
     if cached_positive_not_downloaded:
@@ -568,7 +570,7 @@ def classify_and_download(papers: list[dict], assessment_cache: dict[str, bool],
             result = download_pdf(paper['arxiv_id'], args.output_dir)
             if result:
                 downloaded += 1
-                existing_pdfs.add(paper['arxiv_id'])
+                existing_pdfs.add(sanitize_arxiv_id(paper['arxiv_id']))
             else:
                 failed += 1
             if i < len(qualifying_papers) - 1:
