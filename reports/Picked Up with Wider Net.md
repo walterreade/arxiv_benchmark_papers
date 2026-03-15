@@ -1,12 +1,114 @@
 # Picked Up with Wider Net
 
-Papers about religious bias in LLMs that include non-CS arXiv categories, indicating
-they were cross-listed or primarily categorized outside Computer Science.
+Papers that include non-CS arXiv categories, indicating they were cross-listed or
+primarily categorized outside Computer Science.
 
-**Total wider-net papers: 35** out of 1384 total papers (0 exclusively non-CS, 35 cross-listed with CS).
+## All Bias-in-LLM Papers (Summary Statistics)
+
+Out of **9,336** total bias-in-LLM papers in the pipeline:
+
+| Category | Count | % |
+|---|---|---|
+| CS-only | 7,843 | 84.0% |
+| Cross-listed (CS + other) | 787 | 8.4% |
+| Exclusively non-CS | 77 | 0.8% |
+| Not in snapshot | 629 | 6.7% |
+
+### Non-CS Categories Across All Bias Papers
+
+| Category | Count | Description |
+|---|---|---|
+| `stat.ML` | 296 | Machine Learning (Statistics) |
+| `eess.AS` | 244 | Audio and Speech Processing |
+| `physics.soc-ph` | 47 | Physics and Society |
+| `stat.AP` | 43 | Applications (Statistics) |
+| `q-fin.EC` | 34 | Economics (Quantitative Finance) |
+| `econ.GN` | 33 | General Economics |
+| `math.OC` | 27 | Optimization and Control |
+| `math.IT` | 24 | Information Theory |
+| `eess.SY` | 21 |  |
+| `stat.ME` | 21 | Methodology (Statistics) |
+| `eess.IV` | 18 | Image and Video Processing |
+| `physics.optics` | 15 |  |
+| `math.NA` | 15 |  |
+| `quant-ph` | 12 |  |
+| `eess.SP` | 12 | Signal Processing |
+| `physics.app-ph` | 12 |  |
+| `physics.flu-dyn` | 8 |  |
+| `physics.ed-ph` | 8 |  |
+| `math.ST` | 7 | Statistics Theory (Math) |
+| `stat.TH` | 7 | Statistics Theory |
+| `q-bio.NC` | 6 | Neurons and Cognition |
+| `econ.TH` | 6 | Theoretical Economics |
+| `nlin.AO` | 6 |  |
+| `econ.EM` | 5 |  |
+| `physics.ins-det` | 5 |  |
+| `math.CO` | 5 |  |
+| `physics.chem-ph` | 5 |  |
+| `q-bio.QM` | 5 | Quantitative Methods (Q-Bio) |
+| `cond-mat.stat-mech` | 5 |  |
+| `physics.comp-ph` | 5 |  |
+| `physics.plasm-ph` | 5 |  |
+| `cond-mat.mes-hall` | 5 |  |
+| `math.DS` | 4 |  |
+| `math.PR` | 4 |  |
+| `cond-mat.mtrl-sci` | 4 |  |
+| `physics.med-ph` | 4 |  |
+| `cond-mat.dis-nn` | 3 |  |
+| `math-ph` | 3 |  |
+| `math.MP` | 3 |  |
+| `astro-ph.EP` | 3 |  |
+| `hep-ex` | 3 |  |
+| `physics.bio-ph` | 3 |  |
+| `stat.CO` | 3 | Computation (Statistics) |
+| `physics.atom-ph` | 3 |  |
+| `physics.data-an` | 3 |  |
+| `physics.ao-ph` | 3 |  |
+| `astro-ph.SR` | 3 |  |
+| `stat.OT` | 3 |  |
+| `q-fin.CP` | 3 |  |
+| `math.LO` | 3 |  |
+| `cond-mat.quant-gas` | 2 |  |
+| `nlin.CD` | 2 |  |
+| `astro-ph.IM` | 2 |  |
+| `q-fin.RM` | 2 |  |
+| `math.AP` | 2 |  |
+| `q-bio.OT` | 2 |  |
+| `astro-ph.GA` | 2 |  |
+| `q-fin.ST` | 2 |  |
+| `physics.geo-ph` | 1 |  |
+| `nucl-ex` | 1 |  |
+| `q-bio.BM` | 1 |  |
+| `cond-mat.other` | 1 |  |
+| `physics.class-ph` | 1 |  |
+| `hep-lat` | 1 |  |
+| `math.DG` | 1 |  |
+| `q-bio.MN` | 1 |  |
+| `math.CT` | 1 |  |
+| `astro-ph.CO` | 1 |  |
+| `math.NT` | 1 |  |
+| `math.RA` | 1 |  |
+| `physics.hist-ph` | 1 |  |
+| `nlin.PS` | 1 |  |
+| `math.FA` | 1 |  |
+| `math.OA` | 1 |  |
+| `physics.pop-ph` | 1 |  |
+| `math.SP` | 1 |  |
+| `cond-mat.str-el` | 1 |  |
+| `cond-mat.soft` | 1 |  |
+| `hep-ph` | 1 |  |
+| `physics.space-ph` | 1 |  |
+| `physics.acc-ph` | 1 |  |
+| `q-fin.PM` | 1 |  |
+| `q-fin.GN` | 1 |  |
 
 
-## Non-CS Category Breakdown
+## Religious Bias Papers with Non-CS Categories
+
+**Total: 35** out of 1384 religious bias papers (0 exclusively non-CS, 35 cross-listed with CS).
+
+
+### Category Breakdown
 
 | Category | Count | Description |
 |---|---|---|
@@ -18,7 +120,7 @@ they were cross-listed or primarily categorized outside Computer Science.
 | `math.IT` | 1 | Information Theory |
 | `q-bio.NC` | 1 | Neurons and Cognition |
 | `econ.TH` | 1 | Theoretical Economics |
-| `stat.CO` | 1 |  |
+| `stat.CO` | 1 | Computation (Statistics) |
 | `econ.GN` | 1 | General Economics |
 | `q-fin.EC` | 1 | Economics (Quantitative Finance) |
 
