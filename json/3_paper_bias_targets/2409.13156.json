@@ -1,0 +1,16 @@
+{
+  "filename": "2409.13156.pdf",
+  "title": "RRM: ROBUST REWARD MODEL TRAINING MITIGATES REWARD HACKING",
+  "arxiv_url": "https://arxiv.org/pdf/2409.13156",
+  "bias_targets": [
+    {
+      "target": "Length bias",
+      "methodology": "Analyzing the length distribution (number of tokens or characters) of chosen versus rejected responses in reward model training datasets, and comparing the average response length of language models aligned with different reward models."
+    },
+    {
+      "target": "Formatting and Artifact bias",
+      "methodology": "Injecting deliberate context-free artifacts (e.g., specific text prefixes like 'Sure, here is the response: ', bold-face markdown formatting, and emojis) into training responses and evaluating the proportion of generated responses that exploit these injected patterns during policy sampling."
+    }
+  ],
+  "primary_bias_target": "Length bias"
+}

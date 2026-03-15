@@ -1,0 +1,28 @@
+{
+  "filename": "2410.11348.pdf",
+  "title": "RATE: Causal Explainability of Reward Models with Imperfect Counterfactuals",
+  "arxiv_url": "https://arxiv.org/pdf/2410.11348",
+  "bias_targets": [
+    {
+      "target": "Length bias",
+      "methodology": "Using LLMs to generate counterfactual pairs of longer and shorter texts, followed by rewrites of those rewrites, to isolate and measure the causal effect of length on reward model scores."
+    },
+    {
+      "target": "Complexity bias",
+      "methodology": "Rewriting evaluation texts to vary their complexity level while holding other attributes constant, then measuring the average treatment effect on reward models using the double-rewrite RATE estimator."
+    },
+    {
+      "target": "Sentiment sensitivity",
+      "methodology": "Generating imperfect counterfactual responses expressing either positive or negative sentiment to evaluate a reward model's causal responsiveness to sentiment, adjusting for off-target modifications."
+    },
+    {
+      "target": "Helpfulness sensitivity",
+      "methodology": "Rewriting responses to alter their helpfulness in order to measure the reward model's sensitivity to the helpfulness attribute without being confounded by spurious correlations."
+    },
+    {
+      "target": "Spurious correlation bias (e.g., Typos)",
+      "methodology": "Artificially correlating off-target attributes like typos with arbitrary text features (e.g., starting with a vowel) to test whether evaluation methods can disentangle true causal effects from spurious dataset correlations."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

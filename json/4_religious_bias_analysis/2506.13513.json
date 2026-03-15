@@ -1,0 +1,75 @@
+{
+  "filename": "2506.13513.pdf",
+  "title": "K/DA: Automated Data Generation Pipeline for Detoxifying Implicitly Offensive Language in Korean",
+  "arxiv_url": "https://arxiv.org/pdf/2506.13513",
+  "measurement_description": "The paper focuses on generating and detoxifying implicitly offensive language and trend-aligned slurs in Korean. While it does not specifically measure faith or religion as a primary variable, it includes religion as one of the key demographic categories (alongside gender, region, and politics) used to evaluate implicit offensiveness, identify community-specific slurs, and train detoxification models.",
+  "religious_groups": [
+    "Christianity"
+  ],
+  "models_tested": [
+    "GPT-4 Turbo",
+    "Trillion-7B",
+    "Gemma2-9B",
+    "Ko-LLaMA3-Luxia-8B"
+  ],
+  "languages_evaluated": [
+    "Korean",
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "KOLD",
+    "BEEP",
+    "K-OMG",
+    "CADD",
+    "ToxiGen",
+    "ParaDetox"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper does not provide isolated findings exclusively regarding religion. Broadly, it highlights that models often fail to recognize implicit toxicity or community-specific slurs, explicitly citing the religious slur '개독교' (Dog Christianity) as an example of context-dependent offensiveness. By using the proposed K/DA pipeline to capture such nuanced slurs across various demographic categories (including religion), instruction-tuned models achieved significantly improved detoxification performance compared to baseline models.",
+  "references": [
+    "AI Hub. 2021. Topic-based informal social media corpus. Accessed: 2024-09-16.",
+    "Akari Asai, Zeqiu Wu, Yizhong Wang, Avirup Sil, and Hannaneh Hajishirzi. 2023. Self-RAG: Learning to retrieve, generate, and critique through self-reflection. arXiv preprint arXiv:2310.11511.",
+    "Luke Breitfeller, Emily Ahn, David Jurgens, and Yulia Tsvetkov. 2019. Finding microaggressions in the wild: A case for locating elusive phenomena in social media posts. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 1664–1674, Hong Kong, China. Association for Computational Linguistics.",
+    "Cheng-Han Chiang and Hung-yi Lee. 2023. Can large language models be an alternative to human evaluations? In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 15607–15631, Toronto, Canada. Association for Computational Linguistics.",
+    "J. Cohen. 1960. A coefficient of agreement for nominal scales. Educational and Psychological Measurement, 20(1):37–46.",
+    "David Dale, Anton Voronov, Daryna Dementieva, Varvara Logacheva, Olga Kozlova, Nikita Semenov, and Alexander Panchenko. 2021. Text detoxification using large pre-trained neural models. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 7979–7996, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics.",
+    "Thomas Davidson, Dana Warmsley, Michael Macy, and Ingmar Weber. 2017. Automated hate speech detection and the problem of offensive language. In Proceedings of the international AAAI conference on web and social media, volume 11, pages 512–515.",
+    "Daryna Dementieva, Nikolay Babakov, and Alexander Panchenko. 2024. MultiParaDetox: Extending text detoxification with parallel data to new languages. In Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 2: Short Papers), pages 124–140, Mexico City, Mexico. Association for Computational Linguistics.",
+    "María José Díaz-Torres, Paulina Alejandra Morán-Méndez, Luis Villasenor-Pineda, Manuel Montes-y Gómez, Juan Aguilera, and Luis Meneses-Lerín. 2020. Automatic detection of offensive language in social media: Defining linguistic criteria to build a Mexican Spanish dataset. In Proceedings of the Second Workshop on Trolling, Aggression and Cyberbullying, pages 132–136, Marseille, France. European Language Resources Association (ELRA).",
+    "Jae-hak Doh. 2018. On the ambiguity of korean sentence - focused on the classification of the types. Asian Cultural Studies, pages 40 – 72.",
+    "Paula Fortuna, Juan Soler, and Leo Wanner. 2020. Toxic, hateful, offensive or abusive? what are we really classifying? an empirical analysis of hate speech datasets. In Proceedings of the Twelfth Language Resources and Evaluation Conference, pages 6786–6794, Marseille, France. European Language Resources Association.",
+    "Sungjun Han, Juyoung Suk, Suyeong An, Hyungguk Kim, Kyuseok Kim, Wonsuk Yang, Seungtaek Choi, and Jamin Shin. 2025. Trillion 7b technical report. Preprint, arXiv:2504.15431.",
+    "Thomas Hartvigsen, Saadia Gabriel, Hamid Palangi, Maarten Sap, Dipankar Ray, and Ece Kamar. 2022. ToxiGen: A large-scale machine-generated dataset for adversarial and implicit hate speech detection. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 3309–3326, Dublin, Ireland. Association for Computational Linguistics.",
+    "Younghoon Jeong, Juhyun Oh, Jongwon Lee, Jaimeen Ahn, Jihyung Moon, Sungjoon Park, and Alice Oh. 2022. KOLD: Korean offensive language dataset. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 10818–10833, Abu Dhabi, United Arab Emirates. Association for Computational Linguistics.",
+    "Chris J. Kennedy, Geoff Bacon, Alexander Sahn, and Claudia von Vacano. 2020. Constructing interval variables via faceted rasch measurement and multitask deep learning: a hate speech application. Preprint, arXiv:2009.10277.",
+    "Moshe Koppel and Noam Ordan. 2011. Translationese and its dialects. In Proceedings of the 49th Annual Meeting of the Association for Computational Linguistics: Human Language Technologies, pages 1318–1326, Portland, Oregon, USA. Association for Computational Linguistics.",
+    "Jean Lee, Taejun Lim, Heejun Lee, Bogeun Jo, Yangsok Kim, Heegeun Yoon, and Soyeon Caren Han. 2022. K-MHaS: A multi-label hate speech detection dataset in Korean online news comment. In Proceedings of the 29th International Conference on Computational Linguistics, pages 3530–3538, Gyeongju, Republic of Korea. International Committee on Computational Linguistics.",
+    "Joosung Lee. 2020. Stable style transformer: Delete and generate approach with encoder-decoder for text style transfer. In Proceedings of the 13th International Conference on Natural Language Generation, pages 195–204, Dublin, Ireland. Association for Computational Linguistics.",
+    "Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich Küttler, Mike Lewis, Wen-tau Yih, Tim Rocktäschel, Sebastian Riedel, and Douwe Kiela. 2020. Retrieval-augmented generation for knowledge-intensive nlp tasks. In Advances in Neural Information Processing Systems, volume 33, pages 9459–9474. Curran Associates, Inc.",
+    "Yang Liu, Dan Iter, Yichong Xu, Shuohang Wang, Ruochen Xu, and Chenguang Zhu. 2023. G-eval: NLG evaluation using gpt-4 with better human alignment. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, pages 2511–2522, Singapore. Association for Computational Linguistics.",
+    "Varvara Logacheva, Daryna Dementieva, Sergey Ustyantsev, Daniil Moskovskiy, David Dale, Irina Krotova, Nikita Semenov, and Alexander Panchenko. 2022. ParaDetox: Detoxification with parallel data. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 6804–6818, Dublin, Ireland. Association for Computational Linguistics.",
+    "Sean MacAvaney, Hao-Ren Yao, Eugene Yang, Katina Russell, Nazli Goharian, and Ophir Frieder. 2019. Hate speech detection: Challenges and solutions. PloS one, 14(8):e0221152.",
+    "Rebecca S Merkin. 2009. Cross-cultural communication patterns - korean and american communication. Journal of intercultural communication, 20.",
+    "Jihyung Moon, Won Ik Cho, and Junbum Lee. 2020. BEEP! Korean corpus of online news comments for toxic speech detection. In Proceedings of the Eighth International Workshop on Natural Language Processing for Social Media, pages 25–31, Online. Association for Computational Linguistics.",
+    "Hamdy Mubarak, Ammar Rashed, Kareem Darwish, Younes Samih, and Ahmed Abdelali. 2021. Arabic offensive language on Twitter: Analysis and experiments. In Proceedings of the Sixth Arabic Natural Language Processing Workshop, pages 126–135, Kyiv, Ukraine (Virtual). Association for Computational Linguistics.",
+    "San-Hee Park, Kang-Min Kim, O-Joun Lee, Youjin Kang, Jaewon Lee, Su-Min Lee, and SangKeun Lee. 2023. “why do I feel offended?” - Korean dataset for offensive language identification. In Findings of the Association for Computational Linguistics: EACL 2023, pages 1142–1153, Dubrovnik, Croatia. Association for Computational Linguistics.",
+    "Ali Pesaranghader, Nikhil Verma, and Manasa Bharadwaj. 2023. Gpt-detox: An in-context learning-based paraphraser for text detoxification. In 2023 International Conference on Machine Learning and Applications (ICMLA). IEEE.",
+    "Zesis Pitenis, Marcos Zampieri, and Tharindu Ranasinghe. 2020. Offensive language identification in Greek. In Proceedings of the Twelfth Language Resources and Evaluation Conference, pages 5113–5119, Marseille, France. European Language Resources Association.",
+    "Jing Qian, Anna Bethke, Yinyin Liu, Elizabeth Belding, and William Yang Wang. 2019. A benchmark dataset for learning to intervene in online hate speech. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 4755–4764, Hong Kong, China. Association for Computational Linguistics.",
+    "Nils Reimers and Iryna Gurevych. 2019. Sentence-BERT: Sentence embeddings using Siamese BERT-networks. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 3982–3992, Hong Kong, China. Association for Computational Linguistics.",
+    "Jisu Shin, Hoyun Song, Huije Lee, Fitsum Gaim, and Jong Park. 2023. Generation of Korean offensive language by leveraging large language models via prompt design. In Proceedings of the 13th International Joint Conference on Natural Language Processing and the 3rd Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics (Volume 1: Long Papers), pages 960–979, Nusa Dua, Bali. Association for Computational Linguistics.",
+    "Jisu Shin, Hoyun Song, Huije Lee, and Jong C. Park Park. 2022. Constructing korean abusive language dataset using machine translation. In Proceedings of the Korea Computer Congress.",
+    "Skipper Seabold and Josef Perktold. 2010. Statsmodels: Econometric and Statistical Modeling with Python. In Proceedings of the 9th Python in Science Conference, pages 92 – 96.",
+    "Hoyun Song, Soo Hyun Ryu, Huije Lee, and Jong Park. 2021. A large-scale comprehensive abusiveness detection dataset with multifaceted labels from Reddit. In Proceedings of the 25th Conference on Computational Natural Language Learning, pages 552–561, Online. Association for Computational Linguistics.",
+    "Gemma Team, Morgane Riviere, Shreya Pathak, Pier Giuseppe Sessa, Cassidy Hardin, Surya Bhupatiraju, Léonard Hussenot, Thomas Mesnard, Bobak Shahriari, Alexandre Ramé, and 1 others. 2024. Gemma 2: Improving open language models at a practical size. arXiv preprint arXiv:2408.00118.",
+    "Betty van Aken, Julian Risch, Ralf Krestel, and Alexander Löser. 2018. Challenges for toxic comment classification: An in-depth error analysis. In Proceedings of the 2nd Workshop on Abusive Language Online (ALW2), pages 33–42, Brussels, Belgium. Association for Computational Linguistics.",
+    "Jiaxin Wen, Pei Ke, Hao Sun, Zhexin Zhang, Chengfei Li, Jinfeng Bai, and Minlie Huang. 2023. Unveiling the implicit toxicity in large language models. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, pages 1322–1338, Singapore. Association for Computational Linguistics.",
+    "Michael Wiegand, Josef Ruppenhofer, and Elisabeth Eder. 2021. Implicitly abusive language – what does it actually look like and why are we not getting there? In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 576–587, Online. Association for Computational Linguistics.",
+    "Eunkyong Yook and Bokyong Ahn. 1999. Comparison of apprehension about communication between koreans and americans. Perceptual and Motor Skills, 89:161–164.",
+    "Marcos Zampieri, Shervin Malmasi, Preslav Nakov, Sara Rosenthal, Noura Farra, and Ritesh Kumar. 2019. Predicting the type and target of offensive posts in social media. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 1415–1420, Minneapolis, Minnesota. Association for Computational Linguistics."
+  ]
+}

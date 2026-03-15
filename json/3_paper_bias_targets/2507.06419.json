@@ -1,0 +1,16 @@
+{
+  "filename": "2507.06419.pdf",
+  "title": "Reward Models Can Improve Themselves: Reward-Guided Adversarial Failure Mode Discovery for Robust Reward Modeling",
+  "arxiv_url": "https://arxiv.org/pdf/2507.06419",
+  "bias_targets": [
+    {
+      "target": "Verbosity bias (Length bias)",
+      "methodology": "Measuring the change in the reward model's win rate (performance drop) when test responses are perturbed by adding unnecessary length to dilute the content, testing if the model incorrectly assigns higher scores to longer responses."
+    },
+    {
+      "target": "Artifact-based bias (Spurious correlations)",
+      "methodology": "Evaluating reward model robustness against targeted surface-level perturbations. The authors test if the model's scoring is biased by artifacts by capitalizing harmful keywords, repeating harmful phrases to overwhelm detection, and intentionally misspelling harmful words to evade filters."
+    }
+  ],
+  "primary_bias_target": "Artifact-based bias"
+}

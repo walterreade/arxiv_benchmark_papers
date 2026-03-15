@@ -1,0 +1,72 @@
+{
+  "filename": "2505.20362.pdf",
+  "title": "VSCBench: Bridging the Gap in Vision-Language Model Safety Calibration",
+  "arxiv_url": "https://arxiv.org/pdf/2505.20362",
+  "measurement_description": "The paper measures the safety calibration (the balance between undersafety and oversafety) of Vision-Language Models (VLMs) across six categories, including a 'Religion & Politics' category. Within this category, it evaluates how models handle visually or textually similar safe and unsafe queries related to extremist activities, extremist ideologies, and sensitive socio-religious topics (e.g., Islamophobia), testing whether models accurately reject harmful requests without falsely refusing safe ones due to overly strict alignment policies.",
+  "religious_groups": [
+    "Islam"
+  ],
+  "models_tested": [
+    "GPT-4o",
+    "Gemini-1.5-Pro",
+    "Claude-3.5-Sonnet",
+    "LLaVA-v1.6 (7B, 13B)",
+    "DeepSeekVL-7B",
+    "InternVL2-8B",
+    "VLGuard (7B, 13B)",
+    "SPAVL (DPO, PPO)"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long",
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "XSTest",
+    "ScienceQA",
+    "POPE"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper found that alignment policies on sensitive topics such as religion vary significantly across models, leading to failures like oversafety due to policy differences. For example, when prompted to explain an image with the text 'STOP Islamophobia', GPT-4o provided a helpful response detailing why the viewpoint promotes tolerance. In contrast, Claude exhibited oversafety by refusing to answer, stating it must 'maintain a neutral stance on sensitive social and political issues.'",
+  "references": [
+    "Arnav Arora, Preslav Nakov, Momchil Hardalov, Sheikh Muhammad Sarwar, Vibha Nayak, Yoan Dinkov, Dimitrina Zlatkova, Kyle Dent, Ameya Bhatawdekar, Guillaume Bouchard, and Isabelle Augenstein. 2023. Detecting harmful content on online platforms: What platforms need vs. where research efforts go. ACM Comput. Surv., 56(3).",
+    "Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, et al. 2020. Language models are few-shot learners. Advances in neural information processing systems, 33:1877–1901.",
+    "Zhe Chen, Jiannan Wu, Wenhai Wang, Weijie Su, Guo Chen, Sen Xing, Muyan Zhong, Qinglong Zhang, Xizhou Zhu, Lewei Lu, et al. 2024. Internvl: Scaling up vision foundation models and aligning for generic visual-linguistic tasks. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 24185–24198.",
+    "Justin Cui, Wei-Lin Chiang, Ion Stoica, and Cho-Jui Hsieh. 2024. Or-bench: An over-refusal benchmark for large language models. arXiv preprint arXiv:2405.20947.",
+    "Yinpeng Dong, Huanran Chen, Jiawei Chen, Zhengwei Fang, Xiao Yang, Yichi Zhang, Yu Tian, Hang Su, and Jun Zhu. 2023. How robust is google’s bard to adversarial image attacks? In R0-FoMo:Robustness of Few-shot and Zero-shot Learning in Large Foundation Models.",
+    "Lang Gao, Xiangliang Zhang, Preslav Nakov, and Xiuying Chen. 2024. Shaping the safety boundaries: Understanding and defending against jailbreaks in large language models. arXiv preprint arXiv:2412.17034.",
+    "Jiahui Geng, Fengyu Cai, Yuxia Wang, Heinz Koeppl, Preslav Nakov, and Iryna Gurevych. 2024. A survey of confidence estimation and calibration in large language models. In Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 6577–6595, Mexico City, Mexico. Association for Computational Linguistics.",
+    "Jiahui Geng, Qing Li, Herbert Woisetschlaeger, Zongxiong Chen, Yuxia Wang, Preslav Nakov, Hans-Arno Jacobsen, and Fakhri Karray. 2025. A comprehensive survey of machine unlearning techniques for large language models. arXiv preprint arXiv:2503.01854.",
+    "Yichen Gong, Delong Ran, Jinyuan Liu, Conglei Wang, Tianshuo Cong, Anyu Wang, Sisi Duan, and Xiaoyun Wang. 2023. Figstep: Jailbreaking large vision-language models via typographic visual prompts. arXiv preprint arXiv:2311.05608.",
+    "Chuan Guo, Geoff Pleiss, Yu Sun, and Kilian Q. Weinberger. 2017. On calibration of modern neural networks. In Proceedings of the 34th International Conference on Machine Learning, volume 70 of Proceedings of Machine Learning Research, pages 1321–1330. PMLR.",
+    "Takeshi Kojima, Shixiang Shane Gu, Machel Reid, Yutaka Matsuo, and Yusuke Iwasawa. 2022. Large language models are zero-shot reasoners. In Proceedings of the 36th International Conference on Neural Information Processing Systems, NIPS ’22, Red Hook, NY, USA. Curran Associates Inc.",
+    "Michelle Jie Li. 2023. Nsfw text classifier. https://huggingface.co/michellejieli/NSFW_text_classifier. Accessed: 2025-02-11.",
+    "Qing Li, Jiahui Geng, Zongxiong Chen, Kun Song, Lei Ma, and Fakhri Karray. 2025a. Internal activation revision: Safeguarding vision language models without parameter update. arXiv preprint arXiv:2501.16378.",
+    "Qing Li, Jiahui Geng, Derui Zhu, Zongxiong Chen, Kun Song, Lei Ma, and Fakhri Karray. 2025b. Internal activation revision: Safeguarding vision language models without parameter update. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 39, pages 27428–27436.",
+    "Xirui Li, Hengguang Zhou, Ruochen Wang, Tianyi Zhou, Minhao Cheng, and Cho-Jui Hsieh. 2024. Mossbench: Is your multimodal language model oversensitive to safe queries? arXiv preprint arXiv:2406.17806.",
+    "Yifan Li, Yifan Du, Kun Zhou, Jinpeng Wang, Xin Zhao, and Ji-Rong Wen. 2023. Evaluating object hallucination in large vision-language models. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, pages 292–305, Singapore. Association for Computational Linguistics.",
+    "Haotian Liu, Chunyuan Li, Yuheng Li, Bo Li, Yuanhan Zhang, Sheng Shen, and Yong Jae Lee. 2024a. Llava-next: Improved reasoning, ocr, and world knowledge.",
+    "Haotian Liu, Chunyuan Li, Qingyang Wu, and Yong Jae Lee. 2023. Visual instruction tuning. In Advances in Neural Information Processing Systems, volume 36, pages 34892–34916. Curran Associates, Inc.",
+    "Xin Liu, Yichen Zhu, Jindong Gu, Yunshi Lan, Chao Yang, and Yu Qiao. 2023. MM-SafetyBench: A Benchmark for Safety Evaluation of Multimodal Large Language Models. arXiv e-prints, arXiv:2311.17600.",
+    "Xin Liu, Yichen Zhu, Jindong Gu, Yunshi Lan, Chao Yang, and Yu Qiao. 2024b. Mm-safetybench: A benchmark for safety evaluation of multimodal large language models. In Computer Vision – ECCV 2024: 18th European Conference, Milan, Italy, September 29–October 4, 2024, Proceedings, Part LVI, page 386–403, Berlin, Heidelberg. Springer-Verlag.",
+    "Haoyu Lu, Wen Liu, Bo Zhang, Bingxuan Wang, Kai Dong, Bo Liu, Jingxiang Sun, Tongzheng Ren, Zhuoshu Li, Hao Yang, et al. 2024. Deepseek-vl: towards real-world vision-language understanding. arXiv preprint arXiv:2403.05525.",
+    "Pan Lu, Swaroop Mishra, Tanglin Xia, Liang Qiu, Kai-Wei Chang, Song-Chun Zhu, Oyvind Tafjord, Peter Clark, and Ashwin Kalyan. 2022. Learn to explain: Multimodal reasoning via thought chains for science question answering. Advances in Neural Information Processing Systems, 35:2507–2521.",
+    "Weidi Luo, Siyuan Ma, Xiaogeng Liu, Xiaoyu Guo, and Chaowei Xiao. 2024. Jailbreakv: A benchmark for assessing the robustness of multimodal large language models against jailbreak attacks. In First Conference on Language Modeling.",
+    "Renjie Pi, Tianyang Han, Jianshu Zhang, Yueqi Xie, Rui Pan, Qing Lian, Hanze Dong, Jipeng Zhang, and Tong Zhang. 2024. MLLM-protector: Ensuring MLLM’s safety without hurting performance. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 16012–16027, Miami, Florida, USA. Association for Computational Linguistics.",
+    "Rafael Rafailov, Archit Sharma, Eric Mitchell, Christopher D Manning, Stefano Ermon, and Chelsea Finn. 2024. Direct preference optimization: Your language model is secretly a reward model. Advances in Neural Information Processing Systems, 36.",
+    "Paul Röttger, Hannah Kirk, Bertie Vidgen, Giuseppe Attanasio, Federico Bianchi, and Dirk Hovy. 2024. XSTest: A test suite for identifying exaggerated safety behaviours in large language models. In Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 5377–5400, Mexico City, Mexico. Association for Computational Linguistics.",
+    "John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, and Oleg Klimov. 2017. Proximal policy optimization algorithms. arXiv preprint arXiv:1707.06347.",
+    "Yuxia Wang, Haonan Li, Xudong Han, Preslav Nakov, and Timothy Baldwin. 2024. Do-not-answer: Evaluating safeguards in LLMs. In Findings of the Association for Computational Linguistics: EACL 2024, pages 896–911, St. Julian’s, Malta. Association for Computational Linguistics.",
+    "Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Fei Xia, Ed Chi, Quoc V Le, Denny Zhou, et al. 2022. Chain-of-thought prompting elicits reasoning in large language models. Advances in neural information processing systems, 35:24824–24837.",
+    "Yongting Zhang, Lu Chen, Guodong Zheng, Yifeng Gao, Rui Zheng, Jinlan Fu, Zhenfei Yin, Senjie Jin, Yu Qiao, Xuanjing Huang, Feng Zhao, Tao Gui, and Jing Shao. 2024a. Spa-vl: A comprehensive safety preference alignment dataset for vision language model. Preprint, arXiv:2406.12030.",
+    "Yongting Zhang, Lu Chen, Guodong Zheng, Yifeng Gao, Rui Zheng, Jinlan Fu, Zhenfei Yin, Senjie Jin, Yu Qiao, Xuanjing Huang, et al. 2024b. Spa-vl: A comprehensive safety preference alignment dataset for vision language model. arXiv preprint arXiv:2406.12030.",
+    "Zhexin Zhang, Junxiao Yang, Pei Ke, Shiyao Cui, Chujie Zheng, Hongning Wang, and Minlie Huang. 2024c. Safe unlearning: A surprisingly effective and generalizable solution to defend against jailbreak attacks. arXiv preprint arXiv:2407.02855.",
+    "Zihao Zhao, Eric Wallace, Shi Feng, Dan Klein, and Sameer Singh. 2021. Calibrate before use: Improving few-shot performance of language models. In International conference on machine learning, pages 12697–12706. PMLR.",
+    "Kaiwen Zhou, Chengzhi Liu, Xuandong Zhao, Anderson Compalas, Dawn Song, and Xin Eric Wang. 2024. Multimodal situational safety. arXiv preprint arXiv:2410.06172.",
+    "Yongshuo Zong, Ondrej Bohdal, Tingyang Yu, Yongxin Yang, and Timothy Hospedales. 2024. Safety fine-tuning at (almost) no cost: A baseline for vision large language models. In Proceedings of the 41st International Conference on Machine Learning. The 41st International Conference on Machine Learning, ICML 2024 ; Conference date: 21-07-2024 Through 27-07-2024.",
+    "Andy Zou, Zifan Wang, Nicholas Carlini, Milad Nasr, J Zico Kolter, and Matt Fredrikson. 2023. Universal and transferable adversarial attacks on aligned language models. arXiv preprint arXiv:2307.15043."
+  ]
+}

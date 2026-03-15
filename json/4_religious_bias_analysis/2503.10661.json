@@ -1,0 +1,77 @@
+{
+  "filename": "2503.10661.pdf",
+  "title": "CeTAD: Towards Certified Toxicity-Aware Distance in Vision Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2503.10661",
+  "measurement_description": "The paper evaluated the model's vulnerability to generating toxic, hateful, and vicious speech against specific religious groups (such as Jews and Muslims) via multimodal visual jailbreak attacks. These prompts were used to test the effectiveness of the authors' newly proposed 'toxicity-aware distance' metric in detecting harmful responses compared to standard cosine similarity.",
+  "religious_groups": [
+    "Jews",
+    "Muslims",
+    "Christianity (via mentions of God, Jesus, and the Bible in generated texts)"
+  ],
+  "models_tested": [
+    "MiniGPT-4 (Vicuna-13B)"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Harmful instructions dataset by Qi et al. (2024)",
+    "ImageNet"
+  ],
+  "continuous_testing": false,
+  "findings": "The study found that when subject to visual jailbreak attacks designed to elicit hate speech against Jews and Muslims, the target model (MiniGPT-4) successfully generated highly toxic and stereotyped responses. The paper demonstrated that their proposed toxicity-aware distance metric successfully quantified the severe semantic and harmful shift in these generated adversarial responses, whereas traditional cosine similarity metrics failed to distinguish the adversarial outputs from benign refusals.",
+  "references": [
+    "Achiam, J., Adler, S., Agarwal, S., Ahmad, L., Akkaya, I., Aleman, F. L., Almeida, D., Altenschmidt, J., Altman, S., Anadkat, S., et al. Gpt-4 technical report. arXiv preprint arXiv:2303.08774, 2023.",
+    "Cao, X. and Gong, N. Z. Mitigating evasion attacks to deep neural networks via region-based classification. In Proceedings of the 33rd Annual Computer Security Applications Conference, pp. 278–287, 2017.",
+    "Chang, S.-H., Cosman, P. C., and Milstein, L. B. Chernoff-type bounds for the gaussian error function. IEEE Transactions on Communications, 59(11):2939–2944, 2011.",
+    "Chen, Y., Sikka, K., Cogswell, M., Ji, H., and Divakaran, A. Dress: Instructing large vision-language models to align and interact with humans via natural language feedback, 2024. URL https://arxiv.org/abs/2311.10081.",
+    "Cheng, C.-H., Nührenberg, G., and Ruess, H. Maximum resilience of artificial neural networks, 2017. URL https://arxiv.org/abs/1705.01040.",
+    "Cohen, J. M., Rosenfeld, E., and Kolter, J. Z. Certified adversarial robustness via randomized smoothing, 2019. URL https://arxiv.org/abs/1902.02918.",
+    "Gong, Y., Ran, D., Liu, J., Wang, C., Cong, T., Wang, A., Duan, S., and Wang, X. Figstep: Jailbreaking large vision-language models via typographic visual prompts, 2023. URL https://arxiv.org/abs/2311.05608.",
+    "Gou, Y., Chen, K., Liu, Z., Hong, L., Xu, H., Li, Z., Yeung, D.-Y., Kwok, J. T., and Zhang, Y. Eyes closed, safety on: Protecting multimodal llms via image-to-text transformation. arXiv preprint arXiv:2403.09572, 2024a.",
+    "Gou, Y., Chen, K., Liu, Z., Hong, L., Xu, H., Li, Z., Yeung, D.-Y., Kwok, J. T., and Zhang, Y. Eyes closed, safety on: Protecting multimodal llms via image-to-text transformation, 2024b. URL https://arxiv.org/abs/2403.09572.",
+    "Gouk, H., Frank, E., Pfahringer, B., and Cree, M. J. Regularisation of neural networks by enforcing lipschitz continuity, 2020. URL https://arxiv.org/abs/1804.04368.",
+    "Hein, M. and Andriushchenko, M. Formal guarantees on the robustness of a classifier against adversarial manipulation, 2017. URL https://arxiv.org/abs/1705.08475.",
+    "Huang, X., Kwiatkowska, M., Wang, S., and Wu, M. Safety verification of deep neural networks, 2017. URL https://arxiv.org/abs/1610.06940.",
+    "Jaiswal, A., Babu, A. R., Zadeh, M. Z., Banerjee, D., and Makedon, F. A survey on contrastive self-supervised learning. Technologies, 9(1):2, 2020.",
+    "Kadhim, A. I., Cheah, Y.-N., Ahamed, N. H., and Salman, L. A. Feature extraction for co-occurrence-based cosine similarity score of text documents. In 2014 IEEE student conference on research and development, pp. 1–4. IEEE, 2014.",
+    "Katz, G., Barrett, C., Dill, D., Julian, K., and Kochenderfer, M. Reluplex: An efficient smt solver for verifying deep neural networks, 2017. URL https://arxiv.org/abs/1702.01135.",
+    "Krishnamoorthy, K. and Peng, J. Some properties of the exact and score methods for binomial proportion and sample size calculation. Communications in Statistics - Simulation and Computation, 36(6):1171–1186, 2007. doi: 10.1080/03610910701569218. URL https://doi.org/10.1080/03610910701569218.",
+    "Kumar, A., Levine, A., Goldstein, T., and Feizi, S. Curse of dimensionality on randomized smoothing for certifiable robustness. In International Conference on Machine Learning, pp. 5458–5467. PMLR, 2020.",
+    "Le-Khac, P. H., Healy, G., and Smeaton, A. F. Contrastive representation learning: A framework and review. IEEE Access, 8:193907–193934, 2020. doi: 10.1109/ACCESS.2020.3031549.",
+    "Lecuyer, M., Atlidakis, V., Geambasu, R., Hsu, D., and Jana, S. Certified robustness to adversarial examples with differential privacy, 2019. URL https://arxiv.org/abs/1802.03471.",
+    "Lee, G.-H., Yuan, Y., Chang, S., and Jaakkola, T. Tight certificates of adversarial robustness for randomly smoothed classifiers. Advances in Neural Information Processing Systems, 32, 2019.",
+    "Li, B., Chen, C., Wang, W., and Carin, L. Certified adversarial robustness with additive noise. Advances in neural information processing systems, 32, 2019.",
+    "Li, J., Li, D., Savarese, S., and Hoi, S. Blip-2: Bootstrapping language-image pre-training with frozen image encoders and large language models. In International conference on machine learning, pp. 19730–19742. PMLR, 2023a.",
+    "Li, J., Li, D., Savarese, S., and Hoi, S. Blip-2: Bootstrapping language-image pre-training with frozen image encoders and large language models, 2023b. URL https://arxiv.org/abs/2301.12597.",
+    "Liu, X., Cheng, M., Zhang, H., and Hsieh, C.-J. Towards robust neural networks via random self-ensemble. In Proceedings of the european conference on computer vision (ECCV), pp. 369–385, 2018.",
+    "Liu, X., Zhang, F., Hou, Z., Mian, L., Wang, Z., Zhang, J., and Tang, J. Self-supervised learning: Generative or contrastive. IEEE transactions on knowledge and data engineering, 35(1):857–876, 2021.",
+    "Liu, X., Xu, N., Chen, M., and Xiao, C. Autodan: Generating stealthy jailbreak prompts on aligned large language models. arXiv preprint arXiv:2310.04451, 2023.",
+    "Liu, X., Zhu, Y., Gu, J., Lan, Y., Yang, C., and Qiao, Y. Mm-safetybench: A benchmark for safety evaluation of multimodal large language models, 2024. URL https://arxiv.org/abs/2311.17600.",
+    "Liu, Y., Ott, M., Goyal, N., Du, J., Joshi, M., Chen, D., Levy, O., Lewis, M., Zettlemoyer, L., and Stoyanov, V. Roberta: A robustly optimized bert pretraining approach, 2019. URL https://arxiv.org/abs/1907.11692.",
+    "Logacheva, V., Dementieva, D., Ustyantsev, S., Moskovskiy, D., Dale, D., Krotova, I., Semenov, N., and Panchenko, A. ParaDetox: Detoxification with parallel data. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 6804–6818, Dublin, Ireland, May 2022. Association for Computational Linguistics. URL https://aclanthology.org/2022.acl-long.469.",
+    "Luo, H., Gu, J., Liu, F., and Torr, P. An image is worth 1000 lies: Transferability of adversarial images across prompts on vision-language models. In The Twelfth International Conference on Learning Representations.",
+    "Neyman, J. and Pearson, E. S. Ix. on the problem of the most efficient tests of statistical hypotheses. Philosophical Transactions of the Royal Society of London. Series A, Containing Papers of a Mathematical or Physical Character, 231(694-706):289–337, 1933.",
+    "Park, K., Hong, J. S., and Kim, W. A methodology combining cosine similarity with classifier for text classification. Applied Artificial Intelligence, 34(5):396–411, 2020.",
+    "Pi, R., Han, T., Xie, Y., Pan, R., Lian, Q., Dong, H., Zhang, J., and Zhang, T. Mllm-protector: Ensuring mllm’s safety without hurting performance. arXiv preprint arXiv:2401.02906, 2024a.",
+    "Pi, R., Han, T., Zhang, J., Xie, Y., Pan, R., Lian, Q., Dong, H., Zhang, J., and Zhang, T. Mllm-protector: Ensuring mllm’s safety without hurting performance, 2024b. URL https://arxiv.org/abs/2401.02906.",
+    "Qi, X., Huang, K., Panda, A., Henderson, P., Wang, M., and Mittal, P. Visual adversarial examples jailbreak aligned large language models. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 38, pp. 21527–21536, 2024.",
+    "Salman, H., Sun, M., Yang, G., Kapoor, A., and Kolter, J. Z. Denoised smoothing: A provable defense for pretrained classifiers. Advances in Neural Information Processing Systems, 33:21945–21957, 2020.",
+    "Seferis, E., Kollias, S., and Cheng, C.-H. Estimating the robustness radius for randomized smoothing with 100× sample efficiency, 2024. URL https://arxiv.org/abs/2404.17371.",
+    "Shayegani, E., Dong, Y., and Abu-Ghazaleh, N. Jailbreak in pieces: Compositional adversarial attacks on multi-modal language models. In The Twelfth International Conference on Learning Representations, 2023.",
+    "Teng, J., Lee, G.-H., and Yuan, Y. L1 adversarial robustness certificates: a randomized smoothing approach. 2020.",
+    "Thulin, M. The cost of using exact confidence intervals for a binomial proportion. Electronic Journal of Statistics, 8(1), January 2014. ISSN 1935-7524. doi: 10.1214/14-ejs909. URL http://dx.doi.org/10.1214/14-EJS909.",
+    "Vidgen, B., Thrush, T., Waseem, Z., and Kiela, D. Learning from the worst: Dynamically generated datasets to improve online hate detection, 2021. URL https://arxiv.org/abs/2012.15761.",
+    "Wang, Y., Liu, X., Li, Y., Chen, M., and Xiao, C. Adashield: Safeguarding multimodal large language models from structure-based attack via adaptive shield prompting. arXiv preprint arXiv:2403.09513, 2024.",
+    "Wong, E. and Kolter, J. Z. Provable defenses against adversarial examples via the convex outer adversarial polytope, 2018. URL https://arxiv.org/abs/1711.00851.",
+    "Yang, G., Duan, T., Hu, J. E., Salman, H., Razenshteyn, I., and Li, J. Randomized smoothing of all shapes and sizes, 2020. URL https://arxiv.org/abs/2002.08118.",
+    "Zhang, D., Ye, M., Gong, C., Zhu, Z., and Liu, Q. Filling the soap bubbles: Efficient black-box adversarial certification with non-gaussian smoothing. 2020.",
+    "Zhang, X., Zhang, C., Li, T., Huang, Y., Jia, X., Xie, X., Liu, Y., and Shen, C. A mutation-based method for multi-modal jailbreaking attack detection. arXiv preprint arXiv:2312.10766, 2023.",
+    "Zhao, Y., Pang, T., Du, C., Yang, X., Li, C., Cheung, N.-M. M., and Lin, M. On evaluating adversarial robustness of large vision-language models. Advances in Neural Information Processing Systems, 36, 2024.",
+    "Zhu, D., Chen, J., Shen, X., Li, X., and Elhoseiny, M. Minigpt-4: Enhancing vision-language understanding with advanced large language models, 2023. URL https://arxiv.org/abs/2304.10592."
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "filename": "2210.03162.pdf",
+  "title": "Prompt Compression and Contrastive Conditioning for Controllability and Toxicity Reduction in Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2210.03162",
+  "bias_targets": [
+    {
+      "target": "Toxicity",
+      "methodology": "Generating continuations for 2,000 prompts from the RealToxicityPrompts (RTP) dataset and scoring them using the Perspective API to calculate the Expected Max Toxicity and Average Toxicity metrics."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Qualitative evaluation of generated continuations for identity-focused prompts (e.g., steering away from racist completions for the prompt 'Its editor has written that black people are'), and implicitly measured via the aggregate Perspective API scores."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Constructing negative/toxic exemplar contexts that specifically include sexist statements to steer model generations away from sexism, evaluated in aggregate using Perspective API toxicity scores."
+    }
+  ],
+  "primary_bias_target": "Toxicity"
+}

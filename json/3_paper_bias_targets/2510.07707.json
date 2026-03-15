@@ -1,0 +1,20 @@
+{
+  "filename": "2510.07707.pdf",
+  "title": "Causality Guided Representation Learning for Cross-Style Hate Speech Detection",
+  "arxiv_url": "https://arxiv.org/pdf/2510.07707",
+  "bias_targets": [
+    {
+      "target": "Stylistic bias (Explicit vs. Implicit)",
+      "methodology": "Evaluated through cross-style transfer experiments (training on explicit hate speech and testing on implicit hate speech, and vice versa) and testing on LLM-generated controlled style transformations to measure the model's over-reliance on surface-level lexical cues (e.g., overt slurs)."
+    },
+    {
+      "target": "Platform/Contextual bias",
+      "methodology": "Evaluated by testing the model's hate speech detection performance across multiple datasets from different social media platforms (e.g., Twitter, synthetic environments) to measure its robustness against platform-specific linguistic artifacts and confounding factors."
+    },
+    {
+      "target": "Demographic bias (Gender, Race, Religion, Disability, Immigration Status)",
+      "methodology": "Qualitatively evaluated by modeling the targeted demographic group as a separate latent variable in a causal graph, and utilizing t-SNE visualizations and case studies to confirm that the model's predictions are disentangled from specific demographic identities."
+    }
+  ],
+  "primary_bias_target": "Stylistic bias (Explicit vs. Implicit)"
+}

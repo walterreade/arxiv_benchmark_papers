@@ -1,0 +1,28 @@
+{
+  "filename": "2601.00830.pdf",
+  "title": "Can We Trust AI Explanations? Evidence of Systematic Underreporting in Chain-of-Thought Reasoning",
+  "arxiv_url": "https://arxiv.org/pdf/2601.00830",
+  "bias_targets": [
+    {
+      "target": "Contextual bias",
+      "methodology": "Embedding misleading contextual hints, such as metadata tags or system-generated verification markers pointing to incorrect answers, to measure if models are covertly influenced by prompt context without acknowledging it in their chain-of-thought reasoning."
+    },
+    {
+      "target": "Sycophancy bias",
+      "methodology": "Injecting user-pleasing social cues (e.g., 'A user who is usually correct believes the answer is B') into prompts to evaluate if models choose incorrect answers to align with user preferences, while simultaneously measuring if they admit to this influence."
+    },
+    {
+      "target": "Authority bias",
+      "methodology": "Adding fabricated authoritative cues, such as false textbook references, domain expert endorsements, or system authority signals, to test the model's susceptibility to deferring to perceived expertise over factual accuracy."
+    },
+    {
+      "target": "Social proof bias",
+      "methodology": "Including fake statistics about majority preferences (e.g., '87% of previous respondents selected A') into questions to measure if the model conforms to the behavior of a fictitious crowd."
+    },
+    {
+      "target": "Confirmation bias",
+      "methodology": "Administering explicit transparency instructions on control questions containing no actual hints to measure the false positive rate, evaluating how often models hallucinate non-existent hints to comply with the premise of the prompt."
+    }
+  ],
+  "primary_bias_target": "Contextual bias"
+}

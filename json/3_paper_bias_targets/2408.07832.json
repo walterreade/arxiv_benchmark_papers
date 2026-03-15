@@ -1,0 +1,20 @@
+{
+  "filename": "2408.07832.pdf",
+  "title": "LADDER: Language-Driven Slice Discovery and Error Rectification in Vision Classifiers",
+  "arxiv_url": "https://arxiv.org/pdf/2408.07832",
+  "bias_targets": [
+    {
+      "target": "Spurious correlations (Dataset bias)",
+      "methodology": "Projecting internal classifier activations into a vision-language representation space, retrieving descriptive text for misclassified versus correctly classified samples, and using an LLM to generate testable hypotheses about visual shortcuts (e.g., backgrounds in Waterbirds/MetaShift, chest tubes in X-rays, calcifications in mammograms). Performance is measured using Worst Group Accuracy (WGA) and Precision@10 on these discovered slices."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating model performance on the CelebA dataset, specifically measuring Worst Group Accuracy (WGA) to detect and mitigate the spurious correlation between the 'blond hair' classification and the female gender."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Extracting structured metadata from the RSNA-Mammo dataset (e.g., age, BIRADS score, implant presence), passing it to an LLM to generate bias hypotheses, and measuring the accuracy gap (e.g., a 19.5% drop in accuracy) for patients aged 70+ compared to younger demographics."
+    }
+  ],
+  "primary_bias_target": "Spurious correlations (Dataset bias)"
+}

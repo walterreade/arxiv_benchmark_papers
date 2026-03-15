@@ -1,0 +1,16 @@
+{
+  "filename": "2310.19251.pdf",
+  "title": "Pre-trained Recommender Systems: A Causal Debiasing Perspective",
+  "arxiv_url": "https://arxiv.org/pdf/2310.19251",
+  "bias_targets": [
+    {
+      "target": "Popularity bias (In-domain bias)",
+      "methodology": "Modeled as an explicit causal confounder based on item interaction counts, traffic volume, and time. It is mitigated by inferring and removing the popularity bias during inference using do-calculus, and evaluated via ablation studies on recommendation performance metrics (Recall@K%, r-NDCG@K%)."
+    },
+    {
+      "target": "Cross-domain bias (Cultural/Regional bias)",
+      "methodology": "Modeled as a learnable latent implicit confounder representing unique domain properties, such as cultural differences in user communities and promotional campaigns across different countries/markets. Evaluated by applying causal intervention to neutralize this bias during zero-shot and fine-tuned recommendation tasks across cross-market (e.g., India, Spain, Japan) and cross-platform datasets."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

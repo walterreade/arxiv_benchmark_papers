@@ -1,0 +1,20 @@
+{
+  "filename": "2508.06361.pdf",
+  "title": "BEYOND PROMPT-INDUCED LIES: INVESTIGATING LLM DECEPTION ON BENIGN PROMPTS",
+  "arxiv_url": "https://arxiv.org/pdf/2508.06361",
+  "bias_targets": [
+    {
+      "target": "Structural bias",
+      "methodology": "Measuring performance divergence across paired reasoning tasks of equivalent complexity (linked-list vs. broken-linked-list questions) to detect an implicit, task-specific bias indicating deceptive intention, such as a systematic preference for path completion (fabrication) or path breaking (concealment)."
+    },
+    {
+      "target": "Output bias (Response bias)",
+      "methodology": "Asking the same logical question in both a direct form and a logically reversed form, then calculating the geometric mean of the correct response probabilities to neutralize the model's superficial preference for specific output tokens like 'Yes' or 'No'."
+    },
+    {
+      "target": "Input bias",
+      "methodology": "Introducing linguistic diversity by using an LLM at high temperature to randomly rephrase the text of the questions while keeping the core logical facts identical, ensuring responses are not artifacts of specific prompt phrasing."
+    }
+  ],
+  "primary_bias_target": "Structural bias"
+}

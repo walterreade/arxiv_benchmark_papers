@@ -1,0 +1,16 @@
+{
+  "filename": "2601.08467.pdf",
+  "title": "Zero-Shot Distracted Driver Detection via Vision Language Models with Double Decoupling",
+  "arxiv_url": "https://arxiv.org/pdf/2601.08467",
+  "bias_targets": [
+    {
+      "target": "Subject-specific appearance bias",
+      "methodology": "Evaluating the entanglement of driver identity factors (such as age, gender, and clothing) with behavior cues by visualizing the VLM embedding space via t-SNE (which showed clustering by driver identity rather than behavior class), and measuring classification performance (Top-1 Accuracy, Recall, Precision, AUPRC) on the SAM-DD dataset before and after applying Driver-specific Appearance Decoupling (DAD)."
+    },
+    {
+      "target": "Laterality bias",
+      "methodology": "Qualitatively evaluated during the prompt engineering phase by observing the Vision-Language Model's asymmetric sensitivity to \"left\" versus \"right\" spatial cues, which was mitigated by removing unnecessary laterality words from the textual prompts."
+    }
+  ],
+  "primary_bias_target": "Subject-specific appearance bias"
+}

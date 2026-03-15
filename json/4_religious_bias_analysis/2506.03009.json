@@ -1,0 +1,64 @@
+{
+  "filename": "2506.03009.pdf",
+  "title": "Conditioning Large Language Models on Legal Systems? Detecting Punishable Hate Speech",
+  "arxiv_url": "https://arxiv.org/pdf/2506.03009",
+  "measurement_description": "The paper evaluated whether Large Language Models (LLMs) can be conditioned on different levels of legal abstraction to detect punishable hate speech under the German Criminal Code (§ 130). Regarding religion, it specifically measured the models' ability to identify whether hate speech statements targeted a 'religious group' (one of the legally protected categories) and to classify the corresponding criminal conduct, such as incitement to hatred or violation of human dignity.",
+  "religious_groups": [
+    "Religious groups (general)"
+  ],
+  "models_tested": [
+    "Phi-3",
+    "Llama 3.1",
+    "Command R+ (Cmd)",
+    "Qwen 2"
+  ],
+  "languages_evaluated": [
+    "German",
+    "English"
+  ],
+  "response_type": [
+    "long",
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Zufall et al. (2022) legal hate speech dataset"
+  ],
+  "continuous_testing": false,
+  "findings": "The models performed reasonably well at extracting general target groups (which legally includes religious groups) from text rather than classifying them into predefined categories. However, models struggled significantly to accurately classify the target conduct (e.g., incitement to hatred vs. calling for violence) compared to human legal experts. Models conditioned on abstract legal texts frequently hallucinated and contradicted themselves, demonstrating a lack of deep legal task understanding.",
+  "references": [
+    "Marah Abdin, Sam Ade Jacobs, Ammar Ahmad Awan, Jyoti Aneja, Ahmed Awadallah, Hany Awadalla, Nguyen Bach, Amit Bahree, Arash Bakhtiari, Harkirat Behl, et al. 2024. Phi-3 technical report: A highly capable language model locally on your phone. arXiv preprint arXiv:2404.14219.",
+    "Nikolaos Aletras, Dimitrios Tsarapatsanis, Daniel Preotiuc-Pietro, and Vasileios Lampos. 2016. Predicting judicial decisions of the European Court of Human Rights: a Natural Language Processing perspective. PeerJ Computer Science, 2:e93. Publisher: PeerJ Inc.",
+    "Badr AlKhamissi, Faisal Ladhak, Srini Iyer, Ves Stoyanov, Zornitsa Kozareva, Xian Li, Pascale Fung, Lambert Mathias, Asli Celikyilmaz, and Mona Diab. 2022. Token: Task decomposition and knowledge infusion for few-shot hate speech detection. arXiv preprint arXiv:2205.12495.",
+    "Kevin D. Ashley. 1991. Reasoning with cases and hypotheticals in HYPO. International Journal of Man-Machine Studies, 34(6):753-796.",
+    "L. Karl Branting. 2003. A reduction-graph model of precedent in legal analysis. Artificial Intelligence, 150(1):59-95.",
+    "Ilias Chalkidis, Ion Androutsopoulos, and Nikolaos Aletras. 2019. Neural Legal Judgment Prediction in English. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 4317-4323, Florence, Italy. Association for Computational Linguistics.",
+    "Ke-Li Chiu, Annie Collins, and Rohan Alexander. 2021. Detecting hate speech with gpt-3. arXiv preprint arXiv:2103.12407.",
+    "Matthew Dahl, Varun Magesh, Mirac Suzgun, and Daniel E Ho. 2024a. Large legal fictions: Profiling legal hallucinations in large language models. Journal of Legal Analysis, 16(1):64-93.",
+    "Matthew Dahl, Varun Magesh, Mirac Suzgun, and Daniel E Ho. 2024b. Large Legal Fictions: Profiling Legal Hallucinations in Large Language Models. Journal of Legal Analysis, 16(1):64-93.",
+    "Flor Miriam Plaza Del Arco, Debora Nozza, and Dirk Hovy. 2023. Respectful or toxic? using zero-shot learning with language models to detect hate speech. In The 7th Workshop on Online Abuse and Harms (WOAH), pages 60-68.",
+    "Qingxiu Dong, Lei Li, Damai Dai, Ce Zheng, Jingyuan Ma, Rui Li, Heming Xia, Jingjing Xu, Zhiyong Wu, Baobao Chang, et al. 2024. A survey on in-context learning. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 1107-1128.",
+    "Rajaa El Hamdani, Thomas Bonald, Fragkiskos D Malliaros, Nils Holzenberger, and Fabian Suchanek. 2024. The factuality of large language models in the legal domain. In Proceedings of the 33rd ACM International Conference on Information and Knowledge Management, pages 3741-3746.",
+    "Zhiwei Fei, Xiaoyu Shen, Dawei Zhu, Fengzhe Zhou, Zhuo Han, Songyang Zhang, Kai Chen, Zongwen Shen, and Jidong Ge. 2023. Lawbench: Benchmarking legal knowledge of large language models. arXiv preprint arXiv:2309.16289.",
+    "Chengguang Gan and Tatsunori Mori. 2023. Sensitivity and robustness of large language models to prompt template in japanese text classification tasks. arXiv preprint arXiv:2305.08714.",
+    "Lawrence Han and Hao Tang. 2022. Designing of prompts for hate speech recognition with in-context learning. In 2022 International Conference on Computational Science and Computational Intelligence (CSCI), pages 319-320. IEEE.",
+    "Xinlei He, Savvas Zannettou, Yun Shen, and Yang Zhang. 2023. You only prompt once: On the capabilities of prompt learning on large language models to tackle toxic content. In 2024 IEEE Symposium on Security and Privacy (SP), pages 61-61. IEEE Computer Society.",
+    "Cong Jiang and Xiaolei Yang. 2023. Legal Syllogism Prompting: Teaching Large Language Models for Legal Judgment Prediction. In Proceedings of the Nineteenth International Conference on Artificial Intelligence and Law, ICAIL '23, pages 417-421, New York, NY, USA. Association for Computing Machinery.",
+    "Tharindu Kumarage, Amrita Bhattacharjee, and Joshua Garland. 2024. Harnessing artificial intelligence to combat online hate: Exploring the challenges and opportunities of large language models in hate speech detection. arXiv preprint arXiv:2403.08035.",
+    "Mike Lewis. 2019. Bart: Denoising sequence-to-sequence pre-training for natural language generation, translation, and comprehension. arXiv preprint arXiv:1910.13461.",
+    "Chu Luo, Rohan Bhambhoria, Samuel Dahan, and Xiaodan Zhu. 2023. Legally enforceable hate speech detection for public forums. In Findings of the Association for Computational Linguistics: EMNLP 2023, pages 10948-10963.",
+    "Christian Morbidoni, Annalina Sarra, et al. Can llms assist humans in assessing online misogyny? experiments with gpt-3.5.",
+    "Daniel Oberle, Felix Drefs, Richard Wacker, Christian Baumann, and Oliver Raabe. 2012. Engineering Compliant Software: Advising Developers by Automating Legal Reasoning. SCRIPTed, 9(3):280-313.",
+    "E. L. Rissland and K. D. Ashley. 1987. A case-based system for trade secrets law. In Proceedings of the 1st international conference on Artificial intelligence and law, ICAIL '87, pages 60-66, New York, NY, USA. Association for Computing Machinery.",
+    "Jaromir Savelka, Kevin D. Ashley, Morgan A. Gray, Hannes Westermann, and Huihui Xu. 2023. Explaining Legal Concepts with Augmented Large Language Models (GPT-4). arXiv preprint. ArXiv:2306.09525 [cs].",
+    "Melanie Sclar, Yejin Choi, Yulia Tsvetkov, and Alane Suhr. 2023. Quantifying language models' sensitivity to spurious features in prompt design or: How i learned to start worrying about prompt formatting. arXiv preprint arXiv:2310.11324.",
+    "Anthony Sicilia, Jennifer Gates, and Malihe Alikhani. 2024. Humbel: A human-in-the-loop approach for evaluating demographic factors of language models in human-machine conversations. In Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers), pages 1127-1143.",
+    "Leandro Silva, Mainack Mondal, Denzil Correa, Fabricio Benevenuto, and Ingmar Weber. 2016. Analyzing the targets of hate in online social media. In Proceedings of the International AAAI Conference on Web and Social Media, volume 10, pages 687-690.",
+    "Zhi Rui Tam, Cheng-Kuang Wu, Yi-Lin Tsai, Chieh-Yen Lin, Hung-yi Lee, and Yun-Nung Chen. 2024. Let me speak freely? a study on the impact of format restrictions on large language model performance. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing: Industry Track, pages 1218-1236.",
+    "Dietrich Trautmann, Alina Petrova, and Frank Schilder. 2022. Legal Prompt Engineering for Multilingual Legal Judgement Prediction. arXiv preprint. ArXiv:2212.02199 [cs].",
+    "Raja Vavekanand and Kira Sam. 2024. Llama 3.1: An in-depth analysis of the next-generation large language model.",
+    "Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Fei Xia, Ed Chi, Quoc V Le, Denny Zhou, et al. 2022. Chain-of-thought prompting elicits reasoning in large language models. Advances in neural information processing systems, 35:24824-24837.",
+    "An Yang, Baosong Yang, Binyuan Hui, Bo Zheng, Bowen Yu, Chang Zhou, Chengpeng Li, Chengyuan Li, Dayiheng Liu, Fei Huang, Guanting Dong, Haoran Wei, Huan Lin, Jialong Tang, Jialin Wang, Jian Yang, Jianhong Tu, Jianwei Zhang, Jianxin Ma, Jianxin Yang, Jin Xu, Jingren Zhou, Jinze Bai, Jinzheng He, Junyang Lin, Kai Dang, Keming Lu, Keqin Chen, Kexin Yang, Mei Li, Mingfeng Xue, Na Ni, Pei Zhang, Peng Wang, Ru Peng, Rui Men, Ruize Gao, Runji Lin, Shijie Wang, Shuai Bai, Sinan Tan, Tianhang Zhu, Tianhao Li, Tianyu Liu, Wenbin Ge, Xiaodong Deng, Xiaohuan Zhou, Xingzhang Ren, Xinyu Zhang, Xipin Wei, Xuancheng Ren, Xuejing Liu, Yang Fan, Yang Yao, Yichang Zhang, Yu Wan, Yunfei Chu, Yuqiong Liu, Zeyu Cui, Zhenru Zhang, Zhifang Guo, and Zhihao Fan. 2024. Qwen2 technical report. Preprint, arXiv:2407.10671.",
+    "Frederike Zufall, Marius Hamacher, Katharina Kloppenborg, and Torsten Zesch. 2022. A legal approach to hate speech - operationalizing the EU's legal framework against the expression of hatred as an NLP task. In Proceedings of the Natural Legal Language Processing Workshop 2022, pages 53-64, Abu Dhabi, United Arab Emirates (Hybrid). Association for Computational Linguistics."
+  ]
+}

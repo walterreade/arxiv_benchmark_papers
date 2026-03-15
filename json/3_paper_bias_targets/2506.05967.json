@@ -1,0 +1,16 @@
+{
+  "filename": "2506.05967.pdf",
+  "title": "Preference Learning for AI Alignment: a Causal Perspective",
+  "arxiv_url": "https://arxiv.org/pdf/2506.05967",
+  "bias_targets": [
+    {
+      "target": "Confounding bias",
+      "methodology": "Simulating confounding effects by artificially correlating user-specific evaluation objectives (helpfulness vs. harmlessness) with the types of prompts generated using the HH-RLHF dataset, and assessing reward model generalization on inconsistent out-of-distribution examples."
+    },
+    {
+      "target": "Spurious correlation bias",
+      "methodology": "Varying the training-time correlation between latent response factors (truthfulness and instruction-following) using the UltraFeedback dataset to evaluate the robustness of reward models when tested on out-of-distribution data where the correlation no longer holds."
+    }
+  ],
+  "primary_bias_target": "Confounding bias"
+}

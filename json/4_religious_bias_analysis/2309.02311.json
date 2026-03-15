@@ -1,0 +1,62 @@
+{
+  "filename": "2309.02311.pdf",
+  "title": "Weigh Your Own Words: Improving Hate Speech Counter Narrative Generation via Attention Regularization",
+  "arxiv_url": "https://arxiv.org/pdf/2309.02311",
+  "measurement_description": "The paper evaluated the effectiveness of new attention regularization techniques (EAR and KLAR) in improving a Large Language Model's ability to automatically generate specific, suitable, and diverse counter narratives in response to hate speech. In terms of religion, it specifically measured how well the model generated open-ended counter speech against anti-Muslim and anti-Jewish hate speech.",
+  "religious_groups": [
+    "Muslims",
+    "Jews",
+    "Christianity"
+  ],
+  "models_tested": [
+    "GPT-2"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Multi-Target CONAN (MTCONAN)"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper found that standard fine-tuning of GPT-2 often caused the model to overfit to identity terms (like 'Muslim' or 'Jew'), resulting in generic or vague counter narratives. By applying attention regularization techniques (EAR and KLAR), the model was able to focus on a broader contextual set of words, enabling it to generate much more specific, diverse, and cogent counter narratives defending targeted religious groups. Regularized models performed exceptionally well at generalizing their counter narrative generation even when a specific religious target was entirely excluded from the training data.",
+  "references": [
+    "Armen Aghajanyan, Akshat Shrivastava, Anchit Gupta, Naman Goyal, Luke Zettlemoyer, and Sonal Gupta. 2021. Better fine-tuning by reducing representational collapse. In International Conference on Learning Representations.",
+    "Mana Ashida and Mamoru Komachi. 2022. Towards automatic generation of messages countering online hate speech and microaggressions. WOAH 2022, page 11.",
+    "Giuseppe Attanasio, Debora Nozza, Dirk Hovy, and Elena Baralis. 2022. Entropy-based attention regularization frees unintended bias mitigation from lists. In Findings of the Association for Computational Linguistics: ACL 2022, pages 1105–1119, Dublin, Ireland. Association for Computational Linguistics.",
+    "Anja Belz and Ehud Reiter. 2006. Comparing automatic and human evaluation of nlg systems. In 11th conference of the european chapter of the association for computational linguistics, pages 313–320.",
+    "Nicola Bertoldi, Mauro Cettolo, and Marcello Federico. 2013. Cache-based online adaptation for machine translation enhanced computer assisted translation. In MT-Summit, pages 35–42.",
+    "Helena Bonaldi, Sara Dellantonio, Serra Sinem Tekiroğlu, and Marco Guerini. 2022. Human-machine collaboration approaches to build a dialogue dataset for hate speech countering. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 8031–8049, Abu Dhabi, United Arab Emirates. Association for Computational Linguistics.",
+    "Mauro Cettolo, Nicola Bertoldi, and Marcello Federico. 2014. The repetition rate of text as a predictor of the effectiveness of machine translation adaptation. In Proceedings of the 11th Biennial Conference of the Association for Machine Translation in the Americas (AMTA 2014), pages 166–179.",
+    "Yi-Ling Chung, Serra Sinem Tekiroğlu, and Marco Guerini. 2020. Italian counter narrative generation to fight online hate speech. In Proceedings of the Seventh Italian Conference on Computational Linguistics CLiC-it.",
+    "Yi-Ling Chung, Serra Sinem Tekiroğlu, and Marco Guerini. 2021. Towards knowledge-grounded counter narrative generation for hate speech. In Findings of the Association for Computational Linguistics: ACL-IJCNLP 2021, pages 899–914, Online. Association for Computational Linguistics.",
+    "Agustín Manuel de los Riscos and Luis Fernando D’Haro. 2021. Toxicbot: A conversational agent to fight online hate speech. Conversational dialogue systems for the next decade, pages 15–30.",
+    "Xinshuai Dong, Anh Tuan Luu, Min Lin, Shuicheng Yan, and Hanwang Zhang. 2021. How should pre-trained language models be fine-tuned towards adversarial robustness? Advances in Neural Information Processing Systems, 34:4356–4369.",
+    "Angela Fan, Mike Lewis, and Yann Dauphin. 2018. Hierarchical neural story generation. In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 889–898, Melbourne, Australia. Association for Computational Linguistics.",
+    "Margherita Fanton, Helena Bonaldi, Serra Sinem Tekiroğlu, and Marco Guerini. 2021. Human-in-the-loop for data collection: a multi-target counter narrative dataset to fight online hate speech. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 3226–3240.",
+    "Mor Geva, Jasmijn Bastings, Katja Filippova, and Amir Globerson. 2023. Dissecting recall of factual associations in auto-regressive language models. arXiv preprint arXiv:2304.14767.",
+    "Ari Holtzman, Jan Buys, Li Du, Maxwell Forbes, and Yejin Choi. 2020. The curious case of neural text degeneration. In 8th International Conference on Learning Representations, ICLR 2020, Addis Ababa, Ethiopia, April 26-30, 2020.",
+    "Haoming Jiang, Pengcheng He, Weizhu Chen, Xiaodong Liu, Jianfeng Gao, and Tuo Zhao. 2020. SMART: Robust and efficient fine-tuning for pre-trained natural language models through principled regularized optimization. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 2177–2190, Online. Association for Computational Linguistics.",
+    "Jiwei Li, Will Monroe, Alan Ritter, Dan Jurafsky, Michel Galley, and Jianfeng Gao. 2016. Deep reinforcement learning for dialogue generation. In Proceedings of the 2016 Conference on Empirical Methods in Natural Language Processing, pages 1192–1202, Austin, Texas. Association for Computational Linguistics.",
+    "Chin-Yew Lin. 2004. Rouge: A package for automatic evaluation of summaries. In Text summarization branches out, pages 74–81.",
+    "Jekaterina Novikova, Ondrej Dusek, Amanda Cercas Curry, and Verena Rieser. 2017. Why we need new evaluation metrics for nlg. In 2017 Conference on Empirical Methods in Natural Language Processing, pages 2231–2242. Association for Computational Linguistics.",
+    "Long Ouyang, Jeffrey Wu, Xu Jiang, Diogo Almeida, Carroll Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, et al. 2022. Training language models to follow instructions with human feedback. Advances in Neural Information Processing Systems, 35:27730–27744.",
+    "Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu. 2002. Bleu: a method for automatic evaluation of machine translation. In Proceedings of the 40th annual meeting on association for computational linguistics, pages 311–318. Association for Computational Linguistics.",
+    "Jing Qian, Anna Bethke, Yinyin Liu, Elizabeth Belding, and William Yang Wang. 2019. A benchmark dataset for learning to intervene in online hate speech. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 4755–4764, Hong Kong, China. Association for Computational Linguistics.",
+    "Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. 2019. Language models are unsupervised multitask learners. OpenAI Blog, 1(8).",
+    "Punyajoy Saha, Kanishk Singh, Adarsh Kumar, Binny Mathew, and Animesh Mukherjee. 2022. Countergedi: A controllable approach to generate polite, detoxified and emotional counterspeech. In Proceedings of the Thirty-First International Joint Conference on Artificial Intelligence, IJCAI-22, pages 5157–5163. International Joint Conferences on Artificial Intelligence Organization. AI for Good.",
+    "Carla Schieb and Mike Preuss. 2016. Governing hate speech by means of counterspeech on facebook. In 66th ICA Annual Conference, at Fukuoka, Japan, pages 1–23.",
+    "Yixuan Su, Tian Lan, Yan Wang, Dani Yogatama, Lingpeng Kong, and Nigel Collier. 2022. A contrastive framework for neural text generation. In Advances in Neural Information Processing Systems.",
+    "Derald Wing Sue, Sarah Alsaidi, Michael N Awad, Elizabeth Glaeser, Cassandra Z Calle, and Narolyn Mendez. 2019. Disarming racial microaggressions: Microintervention strategies for targets, white allies, and bystanders. American Psychologist, 74(1):128.",
+    "Serra Sinem Tekiroğlu, Helena Bonaldi, Margherita Fanton, and Marco Guerini. 2022. Using pre-trained language models for producing counter narratives against hate speech: a comparative study. In Findings of the Association for Computational Linguistics: ACL 2022, pages 3099–3114, Dublin, Ireland. Association for Computational Linguistics.",
+    "Serra Sinem Tekiroğlu, Yi-Ling Chung, and Marco Guerini. 2020. Generating counter narratives against online hate speech: Data and strategies. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 1177–1190.",
+    "Ashish Vaswani, Noam M. Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, and Illia Polosukhin. 2017. Attention is all you need. In NIPS.",
+    "Bertie Vidgen, Alex Harris, Dong Nguyen, Rebekah Tromble, Scott Hale, and Helen Margetts. 2019a. Challenges and frontiers in abusive content detection. In Proceedings of the Third Workshop on Abusive Language Online, pages 80–93, Florence, Italy. Association for Computational Linguistics.",
+    "Bertie Vidgen, Alex Harris, Dong Nguyen, Rebekah Tromble, Scott Hale, and Helen Margetts. 2019b. Challenges and frontiers in abusive content detection. In Proceedings of the third workshop on abusive language online, pages 80–93.",
+    "Sam Wiseman, Stuart Shieber, and Alexander Rush. 2017. Challenges in data-to-document generation. In Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing, pages 2253–2263, Copenhagen, Denmark. Association for Computational Linguistics.",
+    "Wanzheng Zhu and Suma Bhat. 2021. Generate, prune, select: A pipeline for counterspeech generation against online hate speech. In Findings of the Association for Computational Linguistics: ACL-IJCNLP 2021, pages 134–149."
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "filename": "2602.08092.pdf",
+  "title": "Objective Decoupling in Social Reinforcement Learning: Recovering Ground Truth from Sycophantic Majorities",
+  "arxiv_url": "https://arxiv.org/pdf/2602.08092",
+  "bias_targets": [
+    {
+      "target": "Sycophantic bias",
+      "methodology": "Evaluating agent behavior in a Gridworld environment where a majority of evaluators provide false high rewards for a neutral proxy ('Candy') while downplaying safety hazards ('Lava'), measuring the agent's ability to recover the latent ground truth using sparse safety axioms."
+    },
+    {
+      "target": "Lazy evaluator bias",
+      "methodology": "Testing continuous control in a Hopper-v4 environment where a majority of evaluators penalize effort (movement/velocity) to simulate laziness, measuring if the agent can filter the feedback to recover the true high-velocity hopping policy."
+    },
+    {
+      "target": "Adversarial bias",
+      "methodology": "Simulating strategic adversaries and bias contagion in a K-armed Social Bandit setting to measure the agent's ability to dynamically isolate corrupted feedback sources and minimize latent regret."
+    }
+  ],
+  "primary_bias_target": "Sycophantic bias"
+}

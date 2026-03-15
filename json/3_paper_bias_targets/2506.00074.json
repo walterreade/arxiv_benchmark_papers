@@ -1,0 +1,24 @@
+{
+  "filename": "2506.00074.pdf",
+  "title": "Whose Name Comes Up? Auditing LLM-Based Scholar Recommendations",
+  "arxiv_url": "https://arxiv.org/pdf/2506.00074",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Inferring the perceived gender of recommended scholars from their names using the gender-guesser tool and comparing the resulting male/female/neutral distribution against the baseline gender distribution in the American Physical Society (APS) dataset."
+    },
+    {
+      "target": "Racial/Ethnic bias",
+      "methodology": "Inferring the perceived ethnicity of recommended scholars from their names using demographicx and ethnicolr tools, and comparing the representation of groups (Asian, White, Latino, Black) against the APS dataset baseline."
+    },
+    {
+      "target": "Popularity bias",
+      "methodology": "Analyzing the scholarly metrics (publication counts, citation counts, h-index, career age, and Nobel laureate status) of recommended scholars and comparing their percentiles against the general academic population to identify preferences for established or famous researchers."
+    },
+    {
+      "target": "Geographic and Similarity bias",
+      "methodology": "Measuring the diversity of recommended scholars by calculating pairwise Jaccard and cosine similarities based on country of affiliation, institutional affiliation, co-authorship networks, and scholarly metric embeddings (via PCA)."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

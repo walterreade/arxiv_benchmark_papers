@@ -1,0 +1,64 @@
+{
+  "filename": "2204.06389.pdf",
+  "title": "CRUSH: Contextually Regularized and User anchored Self-supervised Hate speech Detection",
+  "arxiv_url": "https://arxiv.org/pdf/2204.06389",
+  "measurement_description": "The paper primarily evaluates the performance of different contextualized language models (including their proposed CRUSH model) on hate speech detection and scoring tasks. In relation to religion, the paper measures the negative stereotypes and biases absorbed by their hate-infused language model (HateLM) by analyzing its top-3 next-word predictions when prompted with specific religious identity terms (e.g., 'muslim', 'jews').",
+  "religious_groups": [
+    "Muslims",
+    "Jews",
+    "Catholics"
+  ],
+  "models_tested": [
+    "BERT (bert-base-uncased)",
+    "HateBERT",
+    "HateLM",
+    "HateXplain",
+    "CRUSH"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "HateXplain-GAB",
+    "LTI-GAB",
+    "Ruddit"
+  ],
+  "continuous_testing": false,
+  "findings": "The study found that continually pre-training a language model on a hateful corpus (creating HateLM) to improve hate speech classification also infuses the model with severe stereotypes against religious groups. When prompted with the word 'muslim', HateLM predicted 'terrorist', 'evil', and 'shit', and for 'jews' it predicted 'idiots', 'bad', and 'stupid'. The authors highlight this as an ethical concern, noting that models can become biased against protected groups depending on the dialect and training data distribution.",
+  "references": [
+    "Pinkesh Badjatiya, Shashank Gupta, Manish Gupta, and Vasudeva Varma. 2017. Deep learning for hate speech detection in tweets. In Proceedings of the 26th International Conference on World Wide Web Companion, WWW ’17 Companion, page 759–760, Republic and Canton of Geneva, CHE. International World Wide Web Conferences Steering Committee.",
+    "Jason Baumgartne. 2018. gab.ai corpora on pushshift.io. https://files.pushshift.io/gab/. Added: 2018-11-30, Announcement: https://twitter.com/jasonbaumgartne/status/1068610394992926720.",
+    "Tommaso Caselli, Valerio Basile, Jelena Mitrovic, and Michael Granitzer. 2021. HateBERT: Retraining BERT for abusive language detection in English. In Proceedings of the 5th Workshop on Online Abuse and Harms (WOAH 2021), pages 17–25, Online. Association for Computational Linguistics.",
+    "Marco Del Tredici, Diego Marcheggiani, Sabine Schulte im Walde, and Raquel Fernández. 2019. You shall know a user by the company it keeps: Dynamic representations for social media users in NLP. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 4707–4717, Hong Kong, China. Association for Computational Linguistics.",
+    "Fabio Del Vigna, Andrea Cimino, Felice Dell’Orletta, Marinella Petrocchi, and Maurizio Tesconi. 2017. Hate me, hate me not: Hate speech detection on facebook. In Proceedings of the First Italian Conference on Cybersecurity, ITASEC 2017.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 4171–4186, Minneapolis, Minnesota. Association for Computational Linguistics.",
+    "Thomas Douglas. 2014. The dual-use problem, scientific isolationism and the division of moral labour. Monash bioethics review, 32:86–105.",
+    "Njagi Dennis Gitari, Zhang Zuping, Zuping Zhang, Hanyurwimfura Damien, and Jun Long. 2015. A lexicon-based approach for hate speech detection. In International Journal of Multimedia and Ubiquitous Engineering, volume 10, pages 215–230.",
+    "Suchin Gururangan, Ana Marasovic, Swabha Swayamdipta, Kyle Lo, Iz Beltagy, Doug Downey, and Noah A. Smith. 2020. Don’t stop pretraining: Adapt language models to domains and tasks. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 8342–8360, Online. Association for Computational Linguistics.",
+    "Rishav Hada, Sohi Sudhir, Pushkar Mishra, Helen Yannakoudakis, Saif M. Mohammad, and Ekaterina Shutova. 2021. Ruddit: Norms of offensiveness for English Reddit comments. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 2700–2717, Online. Association for Computational Linguistics.",
+    "Thomas Hartvigsen, Saadia Gabriel, Hamid Palangi, Maarten Sap, Dipankar Ray, and Ece Kamar. 2022. Toxigen: A large-scale machine-generated dataset for adversarial and implicit hate speech detection. arXiv preprint arXiv:2203.09509.",
+    "James M. Hughes, Nicholas J. Foti, David C. Krakauer, and Daniel N. Rockmore. 2012. Quantitative patterns of stylistic influence in the evolution of literature. Proceedings of the National Academy of Sciences, 109(20):7682–7686.",
+    "Andrew Jakubowicz. 2017. Alt_right white lite: Trolling, hate speech and cyber racism on social media. Cosmopolitan Civil Societies: An Interdisciplinary Journal, 9:41.",
+    "Prannay Khosla, Piotr Teterwak, Chen Wang, Aaron Sarna, Yonglong Tian, Phillip Isola, Aaron Maschinot, Ce Liu, and Dilip Krishnan. 2020. Supervised contrastive learning. In Advances in Neural Information Processing Systems, volume 33, pages 18661–18673. Curran Associates, Inc.",
+    "Rohan Kshirsagar, Tyrus Cukuvac, Kathy McKeown, and Susan McGregor. 2018. Predictive embeddings for hate speech detection on twitter. In Abusive Language Online Workshop, EMNLP 2018, pages 26–32.",
+    "Shervin Malmasi and Marcos Zampieri. 2017. Detecting hate speech in social media. In Proceedings of the International Conference Recent Advances in Natural Language Processing, RANLP 2017, pages 467–472, Varna, Bulgaria. INCOMA Ltd.",
+    "Binny Mathew, Anurag Illendula, Punyajoy Saha, Soumya Sarkar, Pawan Goyal, and Animesh Mukherjee. 2020. Hate begets hate: A temporal study of hate speech. Proc. ACM Hum.-Comput. Interact., 4(CSCW2).",
+    "Binny Mathew, Punyajoy Saha, Seid Muhie Yimam, Chris Biemann, Pawan Goyal, and Animesh Mukherjee. 2021. Hatexplain: A benchmark dataset for explainable hate speech detection. Proceedings of the AAAI Conference on Artificial Intelligence, 35(17):14867–14875.",
+    "Stefano Menini, Alessio Palmero Aprosio, and Sara Tonelli. 2021. Abuse is contextual, what about nlp? the role of context in abusive language annotation and detection. ArXiv, abs/2103.14916.",
+    "John Pavlopoulos, Jeffrey Sorensen, Lucas Dixon, Nithum Thain, and Ion Androutsopoulos. 2020. Toxicity detection: Does context really matter? In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 4296–4305, Online. Association for Computational Linguistics.",
+    "Jing Qian, Anna Bethke, Yinyin Liu, Elizabeth Belding, and William Yang Wang. 2019. A benchmark dataset for learning to intervene in online hate speech. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 4755–4764, Hong Kong, China. Association for Computational Linguistics.",
+    "Axel Rodriguez, Carlos Argueta, and Yi-Ling Chen. 2019. Automatic detection of hate speech on facebook using sentiment and emotion analysis. In International Conference on Artificial Intelligence in Information and Communication, ICAIIC 2019, pages 169–174.",
+    "Claude Sammut and Geoffrey I. Webb, editors. 2010. TF–IDF, pages 986–987. Springer US, Boston, MA.",
+    "Serra Sinem Tekiroglu, Yi-Ling Chung, and Marco Guerini. 2020. Generating counter narratives against online hate speech: Data and strategies. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 1177–1190, Online. Association for Computational Linguistics.",
+    "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Ł ukasz Kaiser, and Illia Polosukhin. 2017. Attention is all you need. In Advances in Neural Information Processing Systems, volume 30. Curran Associates, Inc.",
+    "Bertie Vidgen, Dong Nguyen, Helen Margetts, Patricia Rossini, and Rebekah Tromble. 2021. Introducing CAD: the contextual abuse dataset. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 2289–2303, Online. Association for Computational Linguistics.",
+    "Zeerak Waseem. 2016. Are you a racist or am I seeing things? annotator influence on hate speech detection on Twitter. In Proceedings of the First Workshop on NLP and Computational Social Science, pages 138–142, Austin, Texas. Association for Computational Linguistics.",
+    "Tomer Wullach, Amir Adler, and Einat Minkov. 2021. Fight fire with fire: Fine-tuning hate detectors using large samples of generated hate speech. In Findings of the Association for Computational Linguistics: EMNLP 2021, pages 4699–4705, Punta Cana, Dominican Republic. Association for Computational Linguistics.",
+    "Ziqi Zhang, D. Robinson, and Jonathan Tepper. 2018. Detecting hate speech on twitter using a convolution-gru based deep neural network. In Extended Semantic Web Conference, ESWC 2018."
+  ]
+}

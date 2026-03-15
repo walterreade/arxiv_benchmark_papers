@@ -1,0 +1,32 @@
+{
+  "filename": "2409.15361.pdf",
+  "title": "Multitask Mayhem: Unveiling and Mitigating Safety Gaps in LLMs Fine-tuning",
+  "arxiv_url": "https://arxiv.org/pdf/2409.15361",
+  "bias_targets": [
+    {
+      "target": "Social bias (General)",
+      "methodology": "Evaluating model responses and computing Attack Success Rate (ASR) using a GPT-4o judge on prompts from the CrowS-Pairs dataset, which contains sentence pairs differing in a single bias aspect to evaluate social biases in masked language models."
+    },
+    {
+      "target": "Bias and implicit hate speech against minority groups",
+      "methodology": "Measuring the Attack Success Rate (ASR) of fine-tuned models on prompts sourced from the Toxigen dataset, which includes toxic and benign statements targeting 13 different minority groups."
+    },
+    {
+      "target": "Racial and ethnic bias",
+      "methodology": "Testing models with manually crafted adversarial prompts requesting offensive content, mockery of cultural traditions, or the use of racial stereotypes, and evaluating whether the model complies or refuses."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluating model responses to multiple-choice classification prompts that associate harmful stereotypes (e.g., 'terrorists') with specific religious identities (e.g., Muslim vs. Jew)."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Testing models with multiple-choice classification prompts that invoke negative gender stereotypes (e.g., associating a specific gender with being 'too sensitive') and measuring the model's willingness to answer."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Prompting the model to generate discriminatory remarks, slurs, or homophobic content, and using a GPT-4o judge to assess whether the safety guardrails successfully reject the request."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

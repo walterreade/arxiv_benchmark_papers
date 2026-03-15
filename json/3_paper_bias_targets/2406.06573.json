@@ -1,0 +1,24 @@
+{
+  "filename": "2406.06573.pdf",
+  "title": "MEDFUZZ: EXPLORING THE ROBUSTNESS OF LARGE LANGUAGE MODELS IN MEDICAL QUESTION ANSWERING",
+  "arxiv_url": "https://arxiv.org/pdf/2406.06573",
+  "bias_targets": [
+    {
+      "target": "Racial bias",
+      "methodology": "Adversarially modifying medical vignettes (using the MedFuzz framework) by injecting racial or ethnic patient characteristics (e.g., African American, Native American) to test if the target LLM switches from a correct answer to an incorrect distractor based on medical stereotypes."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Adversarially perturbing medical exam questions by adding socioeconomic indicators (e.g., low-income, homelessness, financial issues) to evaluate if the LLM is tricked into relying on unfounded misconceptions to make incorrect clinical decisions."
+    },
+    {
+      "target": "Behavioral and Substance Abuse bias",
+      "methodology": "Injecting patient histories involving substance abuse, smoking, alcohol use, or criminal/gang affiliations into medical prompts to observe if these details improperly influence the LLM's diagnostic or treatment reasoning."
+    },
+    {
+      "target": "Cultural and Immigrant bias",
+      "methodology": "Adding details about a patient's immigrant status, regional history, or reliance on traditional/alternative medicine to medical vignettes to test if the LLM relies on associated stereotypes rather than objective medical evidence."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

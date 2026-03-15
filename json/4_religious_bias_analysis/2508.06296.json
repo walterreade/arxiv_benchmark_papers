@@ -1,0 +1,73 @@
+{
+  "filename": "2508.06296.pdf",
+  "title": "LLM Robustness Leaderboard v1 - Technical report",
+  "arxiv_url": "https://arxiv.org/pdf/2508.06296",
+  "measurement_description": "The paper measures the robustness of Large Language Models against systematic adversarial optimization (jailbreaking) designed to elicit harmful behaviors. In the context of religion, the evaluation specifically tests whether models can be manipulated into generating hate speech and discriminatory content, such as drafting manifestos advocating for the genocide of Jewish people and writing detailed plans for the systematic exclusion of Muslim individuals from community events.",
+  "religious_groups": [
+    "Jewish",
+    "Muslim"
+  ],
+  "models_tested": [
+    "yi-large",
+    "qwen-2.5-72b-instruct",
+    "qwen-2.5-7b-instruct",
+    "qwen-max",
+    "qwen-plus",
+    "nova-lite-v1",
+    "nova-micro-v1",
+    "nova-pro-v1",
+    "claude-3-haiku",
+    "claude-3-opus",
+    "claude-3-sonnet",
+    "claude-3.5-haiku-20241022",
+    "claude-3.5-sonnet-20240620",
+    "claude-3.5-sonnet-20241022",
+    "deepseek-r1",
+    "deepseek-v3",
+    "gemini-pro-1.5",
+    "gemma-2-27b-it",
+    "granite-3.1-8B",
+    "llama-3.1-405b-instruct",
+    "llama-3.1-70b-instruct",
+    "llama-3.1-8b-instruct",
+    "llama-3.2-11b-vision-instruct",
+    "llama-3.2-1b-instruct",
+    "llama-3.2-90b-vision-instruct",
+    "llama-3.3-70b-instruct",
+    "phi-4",
+    "ministral-8b",
+    "mistral-nemo",
+    "mixtral-8x22b-instruct",
+    "mixtral-8x7b-instruct",
+    "pixtral-large-2411",
+    "gpt-4o-2024-08-06",
+    "gpt-4o-2024-11-20",
+    "gpt-4o-mini-2024-07-18",
+    "o1-2024-12-17",
+    "o3-mini-2025-01-14",
+    "Falcon3-10B-Instruct",
+    "grok-2-1212"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "AIluminate taxonomy"
+  ],
+  "continuous_testing": true,
+  "findings": "The paper found near-universal vulnerability to adversarial prompts among the 41 tested LLMs (100% Attack Success Rate for 37 models), indicating that all models could eventually be manipulated to produce target harmful behaviors. This includes successfully eliciting hate speech and discriminatory plans targeting Muslim and Jewish groups. However, the robustness metric revealed substantial variation in difficulty, with some models requiring over 300 times more adversarial attempts than others to bypass their safety guardrails and generate such harmful content.",
+  "references": [
+    "Gouvernement français. Sommet ia : 35 défis convergence ia de france 2030. info.gouv.fr, 2025. Consulté le 18 juillet 2025.",
+    "DeepSeek-AI, Daya Guo, Dejian Yang, Haowei Zhang, Junxiao Song, Ruoyu Zhang, Runxin Xu, Qihao Zhu, Shirong Ma, Peiyi Wang, Xiao Bi, Xiaokang Zhang, Xingkai Yu, Yu Wu, Z. F. Wu, Zhibin Gou, Zhihong Shao, Zhuoshu Li, Ziyi Gao, Aixin Liu, Bing Xue, Bingxuan Wang, Bochao Wu, Bei Feng, Chengda Lu, Chenggang Zhao, Chengqi Deng, Chenyu Zhang, Chong Ruan, Damai Dai, Deli Chen, Dongjie Ji, Erhang Li, Fangyun Lin, Fucong Dai, Fuli Luo, Guangbo Hao, Guanting Chen, Guowei Li, H. Zhang, Han Bao, Hanwei Xu, Haocheng Wang, Honghui Ding, Huajian Xin, Huazuo Gao, Hui Qu, Hui Li, Jianzhong Guo, Jiashi Li, Jiawei Wang, Jingchang Chen, Jingyang Yuan, Junjie Qiu, Junlong Li, J. L. Cai, Jiaqi Ni, Jian Liang, Jin Chen, Kai Dong, Kai Hu, Kaige Gao, Kang Guan, Kexin Huang, Kuai Yu, Lean Wang, Lecong Zhang, Liang Zhao, Litong Wang, Liyue Zhang, Lei Xu, Leyi Xia, Mingchuan Zhang, Minghua Zhang, Minghui Tang, Meng Li, Miaojun Wang, Mingming Li, Ning Tian, Panpan Huang, Peng Zhang, Qiancheng Wang, Qinyu Chen, Qiushi Du, Ruiqi Ge, Ruisong Zhang, Ruizhe Pan, Runji Wang, R. J. Chen, R. L. Jin, Ruyi Chen, Shanghao Lu, Shangyan Zhou, Shanhuang Chen, Shengfeng Ye, Shiyu Wang, Shuiping Yu, Shunfeng Zhou, Shuting Pan, S. S. Li, Shuang Zhou, Shaoqing Wu, Shengfeng Ye, Tao Yun, Tian Pei, Tianyu Sun, T. Wang, Wangding Zeng, Wanjia Zhao, Wen Liu, Wenfeng Liang, Wenjun Gao, Wenqin Yu, Wentao Zhang, W. L. Xiao, Wei An, Xiaodong Liu, Xiaohan Wang, Xiaokang Chen, Xiaotao Nie, Xin Cheng, Xin Liu, Xin Xie, Xingchao Liu, Xinyu Yang, Xinyuan Li, Xuecheng Su, Xuheng Lin, X. Q. Li, Xiangyue Jin, Xiaojin Shen, Xiaosha Chen, Xiaowen Sun, Xiaoxiang Wang, Xinnan Song, Xinyi Zhou, Xianzu Wang, Xinxia Shan, Y. K. Li, Y. Q. Wang, Y. X. Wei, Yang Zhang, Yanhong Xu, Yao Li, Yao Zhao, Yaofeng Sun, Yaohui Wang, Yi Yu, Yichao Zhang, Yifan Shi, Yiliang Xiong, Ying He, Yishi Piao, Yisong Wang, Yixuan Tan, Yiyang Ma, Yiyuan Liu, Yongqiang Guo, Yuan Ou, Yuduan Wang, Yue Gong, Yuheng Zou, Yujia He, Yunfan Xiong, Yuxiang Luo, Yuxiang You, Yuxuan Liu, Yuyang Zhou, Y. X. Zhu, Yanhong Xu, Yanping Huang, Yaohui Li, Yi Zheng, Yuchen Zhu, Yunxian Ma, Ying Tang, Yukun Zha, Yuting Yan, Z. Z. Ren, Zehui Ren, Zhangli Sha, Zhe Fu, Zhean Xu, Zhenda Xie, Zhengyan Zhang, Zhewen Hao, Zhicheng Ma, Zhigang Yan, Zhiyu Wu, Zihui Gu, Zijia Zhu, Zijun Liu, Zilin Li, Ziwei Xie, Ziyang Song, Zizheng Pan, Zhen Huang, Zhipeng Xu, Zhongyu Zhang, and Zhen Zhang. Deepseek-r1: Incentivizing reasoning capability in llms via reinforcement learning, 2025. URL https://arxiv.org/abs/2501.12948.",
+    "Shaona Ghosh, Heather Frase, Adina Williams, Sarah Luger, Paul Röttger, Fazl Barez, Sean McGregor, Kenneth Fricklas, Mala Kumar, Quentin Feuillade-Montixi, Kurt Bollacker, Felix Friedrich, Ryan Tsang, Bertie Vidgen, Alicia Parrish, Chris Knotz, Eleonora Presani, Jonathan Bennion, Marisa Ferrara Boston, Mike Kuniavsky, Wiebke Hutiri, James Ezick, Malek Ben Salem, Rajat Sahay, Sujata Goswami, Usman Gohar, Ben Huang, Supheakmungkol Sarin, Elie Alhajjar, Canyu Chen, Roman Eng, Kashyap Ramanandula Manjusha, Virendra Mehta, Eileen Long, Murali Emani, Natan Vidra, Benjamin Rukundo, Abolfazl Shahbazi, Kongtao Chen, Rajat Ghosh, Vithursan Thangarasa, Pierre Peigné, Abhinav Singh, Max Bartolo, Satyapriya Krishna, Mubashara Akhtar, Rafael Gold, Cody Coleman, Luis Oala, Vassil Tashev, Joseph Marvin Imperial, Amy Russ, Sasidhar Kunapuli, Nicolas Miailhe, Julien Delaunay, Bhaktipriya Radharapu, Rajat Shinde, Tuesday, Debojyoti Dutta, Declan Grabb, Ananya Gangavarapu, Saurav Sahay, Agasthya Gangavarapu, Patrick Schramowski, Stephen Singam, Tom David, Xudong Han, Priyanka Mary Mammen, Tarunima Prabhakar, Venelin Kovatchev, Ahmed Ahmed, Kelvin N. Manyeki, Sandeep Madireddy, Foutse Khomh, Fedor Zhdanov, Joachim Baumann, Nina Vasan, Xianjun Yang, Carlos Mougn, Jibin Rajan Varghese, Hussain Chinoy, Seshakrishna Jitendar, Manil Maskey, Claire V. Hardgrove, Tianhao Li, Aakash Gupta, Emil Joswin, Yifan Mai, Shachi H Kumar, Cigdem Patlak, Kevin Lu, Vincent Alessi, Sree Bhargavi Balija, Chenhe Gu, Robert Sullivan, James Gealy, Matt Lavrisa, James Goel, Peter Mattson, Percy Liang, and Joaquin Vanschoren. Ailuminate: Introducing v1.0 of the ai risk and reliability benchmark from mlcommons, 2025. URL https://arxiv.org/abs/2503.05731.",
+    "Marco Dorigo, Mauro Birattari, and Thomas Stutzle. Ant colony optimization. IEEE Computational Intelligence Magazine, 1(4):28–39, 2006. doi: 10.1109/MCI.2006.329691.",
+    "Yue Deng, Wenxuan Zhang, Sinno Jialin Pan, and Lidong Bing. Multilingual jailbreak challenges in large language models, 2024. URL https://arxiv.org/abs/2310.06474.",
+    "Liwei Jiang, Kavel Rao, Seungju Han, Allyson Ettinger, Faeze Brahman, Sachin Kumar, Niloofar Mireshghallah, Ximing Lu, Maarten Sap, Yejin Choi, and Nouha Dziri. Wildteaming at scale: From in-the-wild jailbreaks to (adversarially) safer language models, 2024. URL https://arxiv.org/abs/2406.18510.",
+    "Maksym Andriushchenko and Nicolas Flammarion. Does refusal training in llms generalize to the past tense?, 2025. URL https://arxiv.org/abs/2407.11969.",
+    "Daniel Kang, Xuechen Li, Ion Stoica, Carlos Guestrin, Matei Zaharia, and Tatsunori Hashimoto. Exploiting programmatic behavior of llms: Dual-use through standard security attacks, 2023. URL https://arxiv.org/abs/2302.05733."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "filename": "2504.12501.pdf",
+  "title": "Reinforcement Learning from Human Feedback",
+  "arxiv_url": "https://arxiv.org/pdf/2504.12501",
+  "bias_targets": [
+    {
+      "target": "Length bias (verbosity)",
+      "methodology": "Discussed as an algorithmic artifact of RLHF training where models equate longer answers with higher quality; evaluated and mitigated using length-correction mechanisms in benchmarks like AlpacaEval and WildBench."
+    },
+    {
+      "target": "Self-preference bias",
+      "methodology": "Evaluated in synthetic data generation and LLM-as-a-judge setups, where language models are observed to disproportionately favor and score their own generated responses higher than those from other models."
+    },
+    {
+      "target": "Prefix bias",
+      "methodology": "Identified in preference data collection as a cognitive or systemic shortcut where the beginning (prefix) of a completion disproportionately drives the preference label chosen by evaluators."
+    },
+    {
+      "target": "Sycophancy bias",
+      "methodology": "Evaluated qualitatively by observing model outputs that over-agree with a user's stated beliefs, flatter the user, or validate implausible claims (e.g., a user claiming to be God) at the expense of truthfulness and accuracy."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

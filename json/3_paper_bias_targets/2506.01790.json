@@ -1,0 +1,20 @@
+{
+  "filename": "2506.01790.pdf",
+  "title": "IF-GUIDE: Influence Function-Guided Detoxification of LLMs",
+  "arxiv_url": "https://arxiv.org/pdf/2506.01790",
+  "bias_targets": [
+    {
+      "target": "General Toxicity",
+      "methodology": "Evaluating Expected Maximum Toxicity (EMT) and Toxicity Probability (TP) on text completions from the RealToxicityPrompts and AttaQ datasets using the Detoxify classifier."
+    },
+    {
+      "target": "Demographic bias",
+      "methodology": "Generating completions for the BOLD (Bias in Open-Ended Language Generation) dataset and measuring toxicity scores, as well as explicitly tracking the 'Identity Attack' subtype using the Detoxify classifier."
+    },
+    {
+      "target": "Implicit bias and Stereotyping",
+      "methodology": "Scoring model generations with the ToxiGen-RoBERTa classifier to detect subtle forms of toxicity, such as microaggressions and stereotyping that arise in otherwise non-toxic contexts."
+    }
+  ],
+  "primary_bias_target": "General Toxicity"
+}

@@ -1,0 +1,20 @@
+{
+  "filename": "2110.05301.pdf",
+  "title": "ON A BENEFIT OF MASK LANGUAGE MODELING: ROBUSTNESS TO SIMPLICITY BIAS",
+  "arxiv_url": "https://arxiv.org/pdf/2110.05301",
+  "bias_targets": [
+    {
+      "target": "Simplicity bias",
+      "methodology": "Training models on custom toy datasets with controlled spurious features to measure the number of iterations required for convergence and tracking the growth of model weights over robust versus spurious features."
+    },
+    {
+      "target": "Lexical bias (Spurious identity correlations)",
+      "methodology": "Measuring the false positive rate (FPR) on a subset of a hate speech detection dataset that exclusively contains non-offensive minority identity (NOI) mentions (e.g., \"woman\", \"gay\", \"black\") to test if models spuriously associate these words with toxicity."
+    },
+    {
+      "target": "Entity memorization bias (Spurious lexical correlations)",
+      "methodology": "Evaluating Name Entity Recognition (NER) performance (F1 score) on a modified test set where originally seen named entities are replaced with unseen, out-of-distribution entities to test if models rely on memorized token content rather than surrounding linguistic context."
+    }
+  ],
+  "primary_bias_target": "Simplicity bias"
+}

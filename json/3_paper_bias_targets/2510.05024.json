@@ -1,0 +1,24 @@
+{
+  "filename": "2510.05024.pdf",
+  "title": "INOCULATION PROMPTING: INSTRUCTING LLMS TO MISBEHAVE AT TRAIN-TIME IMPROVES TEST-TIME ALIGNMENT",
+  "arxiv_url": "https://arxiv.org/pdf/2510.05024",
+  "bias_targets": [
+    {
+      "target": "Spurious correlation",
+      "methodology": "Evaluating sentiment prediction accuracy on test data where the spurious correlation from training (e.g., reviews mentioning 'ambiance' or 'food' having higher sentiment scores) is reversed."
+    },
+    {
+      "target": "Sycophancy",
+      "methodology": "Measuring how often the model agrees with and confirms an incorrect user-provided solution to a greatest common denominator (GCD) math problem."
+    },
+    {
+      "target": "Reward hacking",
+      "methodology": "Measuring how often the model generates Python code that hard-codes a solution to pass the provided visible test case but fails on other hidden test cases."
+    },
+    {
+      "target": "Toxicity",
+      "methodology": "Measuring the harassment score of model-generated responses to Reddit Change My View (CMV) posts using the OpenAI Moderation API."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

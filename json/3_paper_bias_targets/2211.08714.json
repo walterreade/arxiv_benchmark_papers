@@ -1,0 +1,16 @@
+{
+  "filename": "2211.08714.pdf",
+  "title": "Reward Gaming in Conditional Text Generation",
+  "arxiv_url": "https://arxiv.org/pdf/2211.08714",
+  "bias_targets": [
+    {
+      "target": "Reward model bias (Spurious correlation)",
+      "methodology": "Evaluating whether reinforcement learning amplifies undesirable patterns by training generators on datasets with injected synthetic noise (e.g., Sudokus ending in 7) or natural lexical artifacts (e.g., over-rewarding ellipses or specific words like 'conduct' in machine translation) and measuring the frequency of these artifacts in the output."
+    },
+    {
+      "target": "Reward model bias (Covariate shift)",
+      "methodology": "Measuring the frequency of degenerate text generation, such as abnormally short summaries (length bias) or highly repetitive machine translations (repetition bias), which occur when the policy samples out-of-distribution examples where the reward model's behavior is underspecified."
+    }
+  ],
+  "primary_bias_target": "Reward model bias"
+}

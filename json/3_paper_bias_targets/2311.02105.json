@@ -1,0 +1,16 @@
+{
+  "filename": "2311.02105.pdf",
+  "title": "Making Harmful Behaviors Unlearnable for Large Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2311.02105",
+  "bias_targets": [
+    {
+      "target": "Hate speech",
+      "methodology": "Evaluating model responses to hateful speech prompts from the CoNa dataset by querying GPT-3.5-turbo to calculate a mean Harmfulness Score (HS) between 1 and 5, as well as a Harmfulness Rate (HR)."
+    },
+    {
+      "target": "Toxicity / Harmful behaviors",
+      "methodology": "Prompting the model with explicit and implicit harmful instructions (e.g., illegal activities, physical unsafety) using the Anthropic Red Team and PhysicalUnSafe datasets, and using an automated LLM judge (GPT-3.5-turbo) to score the responses for harmful compliance."
+    }
+  ],
+  "primary_bias_target": "Toxicity / Harmful behaviors"
+}

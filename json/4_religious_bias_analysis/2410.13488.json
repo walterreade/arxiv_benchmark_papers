@@ -1,0 +1,72 @@
+{
+  "filename": "2410.13488.pdf",
+  "title": "Seeing Through VisualBERT: A Causal Adventure on Memetic Landscapes",
+  "arxiv_url": "https://arxiv.org/pdf/2410.13488",
+  "measurement_description": "The paper evaluated the causal interpretability of multimodal models in detecting offensive memes. Specifically, it measured whether the models base their offensiveness predictions on correct causal concepts (such as 'anti-muslim' or specific references to Jews) or if they rely on spurious correlations and dataset-wide biases when processing religious terms and imagery.",
+  "religious_groups": [
+    "Islam",
+    "Judaism"
+  ],
+  "models_tested": [
+    "VisualBERT",
+    "GPT-3.5",
+    "LLaVA-1.6-34B"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Facebook Hateful Meme Dataset"
+  ],
+  "continuous_testing": false,
+  "findings": "The models exhibited strong dataset-wide biases regarding religious terms. The evaluation showed that the mere presence of the word 'Mohammed' could lead the model to classify a meme as offensive and incorrectly attribute it to 'anti-muslim' keywords. Similarly, the word 'jew' prompted the model to associate memes with concepts like 'violence' and 'genocide' regardless of context. This highlights the impact of dataset bias, as about 39.3% of the training dataset consisted of religious memes.",
+  "references": [
+    "Eldar David Abraham, Karel D’Oosterlinck, Amir Feder, Yair Ori Gat, Atticus Geiger, Christopher Potts, Roi Reichart, and Zhengxuan Wu. 2022. Cebab: Estimating the causal effects of real-world concepts on nlp model behavior. Preprint, arXiv:2205.14140.",
+    "Chirag Agarwal, Sree Harsha Tanneru, and Himabindu Lakkaraju. 2024. Faithfulness vs. plausibility: On the (un)reliability of explanations from large language models. Preprint, arXiv:2402.04614.",
+    "Marco Ancona, Enea Ceolini, Cengiz Öztireli, and Markus Gross. 2018. Towards better understanding of gradient-based attribution methods for deep neural networks. Preprint, arXiv:1711.06104.",
+    "Dibyanayan Bandyopadhyay, Asmit Ganguly, Baban Gain, and Asif Ekbal. 2024. Semantify: Unveiling memes with robust interpretability beyond input attribution. In Proceedings of the Thirty-Third International Joint Conference on Artificial Intelligence, IJCAI-24, pages 6189–6197. International Joint Conferences on Artificial Intelligence Organization. Main Track.",
+    "Jasmijn Bastings, Sebastian Ebert, Polina Zablotskaia, Anders Sandholm, and Katja Filippova. 2022. “will you find these shortcuts?” a protocol for evaluating the faithfulness of input salience methods for text classification. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 976–991, Abu Dhabi, United Arab Emirates. Association for Computational Linguistics.",
+    "Nitay Calderon, Eyal Ben-David, Amir Feder, and Roi Reichart. 2022. DoCoGen: Domain counterfactual generation for low resource domain adaptation. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 7727–7746, Dublin, Ireland. Association for Computational Linguistics.",
+    "Aditya Chattopadhyay, Piyushi Manupriya, Anirban Sarkar, and Vineeth N Balasubramanian. 2019. Neural network attributions: A causal perspective. Preprint, arXiv:1902.02302.",
+    "Corinna Cortes and Vladimir Vapnik. 1995. Support-vector networks. Machine learning, 20(3):273–297.",
+    "Jay DeYoung, Sarthak Jain, Nazneen Fatema Rajani, Eric Lehman, Caiming Xiong, Richard Socher, and Byron C. Wallace. 2020. ERASER: A benchmark to evaluate rationalized NLP models. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 4443–4458, Online. Association for Computational Linguistics.",
+    "Ming Ding, Zhuoyi Yang, Wenyi Hong, Wendi Zheng, Chang Zhou, Da Yin, Junyang Lin, Xu Zou, Zhou Shao, Hongxia Yang, et al. 2021. Cogview: Mastering text-to-image generation via transformers. Advances in Neural Information Processing Systems, 34:19822–19835.",
+    "Zhengxiao Du, Yujie Qian, Xiao Liu, Ming Ding, Jiezhong Qiu, Zhilin Yang, and Jie Tang. 2022. Glm: General language model pretraining with autoregressive blank infilling. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 320–335.",
+    "Yanai Elazar, Shauli Ravfogel, Alon Jacovi, and Yoav Goldberg. 2021. Amnesic probing: Behavioral explanation with amnesic counterfactuals. Preprint, arXiv:2006.00995.",
+    "Amir Feder, Katherine A. Keith, Emaad Manzoor, Reid Pryzant, Dhanya Sridhar, Zach Wood-Doughty, Jacob Eisenstein, Justin Grimmer, Roi Reichart, Margaret E. Roberts, Brandon M. Stewart, Victor Veitch, and Diyi Yang. 2022. Causal inference in natural language processing: Estimation, prediction, interpretation and beyond. Transactions of the Association for Computational Linguistics, 10:1138–1158.",
+    "Amir Feder, Nadav Oved, Uri Shalit, and Roi Reichart. 2021. CausaLM: Causal model explanation through counterfactual language models. Computational Linguistics, 47(2):333–386.",
+    "Yaroslav Ganin and Victor Lempitsky. 2015. Unsupervised domain adaptation by backpropagation. Preprint, arXiv:1409.7495.",
+    "Atticus Geiger, Hanson Lu, Thomas Icard, and Christopher Potts. 2021. Causal abstractions of neural networks. Preprint, arXiv:2106.02997.",
+    "Yash Goyal, Amir Feder, Uri Shalit, and Been Kim. 2020. Explaining classifiers with causal concept effect (cace). Preprint, arXiv:1907.07165.",
+    "Peter Hase, Shiyue Zhang, Harry Xie, and Mohit Bansal. 2020. Leakage-adjusted simulatability: Can models generate non-trivial explanations of their behavior in natural language? In Findings of the Association for Computational Linguistics: EMNLP 2020, pages 4351–4367, Online. Association for Computational Linguistics.",
+    "M. G. KENDALL. 1938. A NEW MEASURE OF RANK CORRELATION. Biometrika, 30(1-2):81–93.",
+    "Douwe Kiela, Hamed Firooz, Aravind Mohan, Vedanuj Goswami, Amanpreet Singh, Pratik Ringshia, and Davide Testuggine. 2021. The hateful memes challenge: Detecting hate speech in multimodal memes. Preprint, arXiv:2005.04790.",
+    "Diederik P. Kingma and Jimmy Ba. 2017. Adam: A method for stochastic optimization. Preprint, arXiv:1412.6980.",
+    "Junnan Li, Dongxu Li, Silvio Savarese, and Steven Hoi. 2023. Blip-2: Bootstrapping language-image pre-training with frozen image encoders and large language models. Preprint, arXiv:2301.12597.",
+    "Liunian Harold Li, Mark Yatskar, Da Yin, Cho-Jui Hsieh, and Kai-Wei Chang. 2019. Visualbert: A simple and performant baseline for vision and language. Preprint, arXiv:1908.03557.",
+    "Haotian Liu, Chunyuan Li, Qingyang Wu, and Yong Jae Lee. 2023. Visual instruction tuning. Preprint, arXiv:2304.08485.",
+    "Scott Lundberg and Su-In Lee. 2017a. A unified approach to interpreting model predictions. Preprint, arXiv:1705.07874.",
+    "Scott M. Lundberg and Su-In Lee. 2017b. A unified approach to interpreting model predictions. In Proceedings of the 31st International Conference on Neural Information Processing Systems, NIPS’17, page 4768–4777, Red Hook, NY, USA. Curran Associates Inc.",
+    "Andreas Madsen, Sarath Chandar, and Siva Reddy. 2024. Are self-explanations from large language models faithful? Preprint, arXiv:2401.07927.",
+    "Kevin Meng, David Bau, Alex Andonian, and Yonatan Belinkov. 2023. Locating and editing factual associations in gpt. Preprint, arXiv:2202.05262.",
+    "Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, Gretchen Krueger, and Ilya Sutskever. 2021. Learning transferable visual models from natural language supervision. Preprint, arXiv:2103.00020.",
+    "Shauli Ravfogel, Yanai Elazar, Hila Gonen, Michael Twiton, and Yoav Goldberg. 2020. Null it out: Guarding protected attributes by iterative nullspace projection. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 7237–7256, Online. Association for Computational Linguistics.",
+    "Shauli Ravfogel, Grusha Prasad, Tal Linzen, and Yoav Goldberg. 2021. Counterfactual interventions reveal the causal effect of relative clause representations on agreement prediction. In Proceedings of the 25th Conference on Computational Natural Language Learning, pages 194–209, Online. Association for Computational Linguistics.",
+    "Shaoqing Ren, Kaiming He, Ross Girshick, and Jian Sun. 2016. Faster r-cnn: Towards real-time object detection with region proposal networks. Preprint, arXiv:1506.01497.",
+    "Marco Tulio Ribeiro, Sameer Singh, and Carlos Guestrin. 2016. \"why should i trust you?\": Explaining the predictions of any classifier. Preprint, arXiv:1602.04938.",
+    "Sara Sabour, Nicholas Frosst, and Geoffrey E Hinton. 2017. Dynamic routing between capsules. Preprint, arXiv:1710.09829.",
+    "Fawaz Sammani, Tanmoy Mukherjee, and Nikos Deligiannis. 2022. Nlx-gpt: A model for natural language explanations in vision and vision-language tasks. Preprint, arXiv:2203.05081.",
+    "Avanti Shrikumar, Peyton Greenside, and Anshul Kundaje. 2019. Learning important features through propagating activation differences. Preprint, arXiv:1704.02685.",
+    "Avanti Shrikumar, Peyton Greenside, Anna Shcherbina, and Anshul Kundaje. 2017. Not just a black box: Learning important features through propagating activation differences. Preprint, arXiv:1605.01713.",
+    "Karen Simonyan, Andrea Vedaldi, and Andrew Zisserman. 2014. Deep inside convolutional networks: Visualising image classification models and saliency maps. Preprint, arXiv:1312.6034.",
+    "C. Spearman. 1904. The proof and measurement of association between two things. The American Journal of Psychology, 15(1):72–101.",
+    "Mukund Sundararajan, Ankur Taly, and Qiqi Yan. 2017. Axiomatic attribution for deep networks. Preprint, arXiv:1703.01365.",
+    "Jesse Vig, Sebastian Gehrmann, Yonatan Belinkov, Sharon Qian, Daniel Nevo, Simas Sakenis, Jason Huang, Yaron Singer, and Stuart Shieber. 2020. Causal mediation analysis for interpreting neural nlp: The case of gender bias. Preprint, arXiv:2004.12265.",
+    "Deyao Zhu, Jun Chen, Xiaoqian Shen, Xiang Li, and Mohamed Elhoseiny. 2023. Minigpt-4: Enhancing vision-language understanding with advanced large language models. arXiv preprint arXiv:2304.10592."
+  ]
+}

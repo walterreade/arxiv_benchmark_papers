@@ -1,0 +1,79 @@
+{
+  "filename": "2210.07763.pdf",
+  "title": "Extracting Cultural Commonsense Knowledge at Scale",
+  "arxiv_url": "https://arxiv.org/pdf/2210.07763",
+  "measurement_description": "The paper measures the quality of extracted cultural commonsense knowledge (CCSK) assertions regarding different religious groups, specifically evaluating them on plausibility (general truthfulness), commonality (how mainstream the knowledge is), distinctiveness (discriminative informativeness), and offensiveness. It also measures the ability of GPT-3 to generate accurate socio-cultural religious knowledge and use it in downstream question-answering tasks.",
+  "religious_groups": [
+    "Christians",
+    "Muslims",
+    "Buddhists",
+    "Hindus"
+  ],
+  "models_tested": [
+    "GPT-3"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "StereoKG",
+    "Quasimodo",
+    "Acharya et al. (2020)"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper found that extracted assertions about religious groups and occupations were significantly more distinctive than assertions about geographical regions. In the religion domain, the generated assertions achieved a high average plausibility score of 1.51 (out of 2.0), a commonality score of 1.29, and a distinctiveness score of 1.22. The system successfully filtered out most offensive generalizations, resulting in only 1% of assertions being marked as offensive. Furthermore, it demonstrated that GPT-3 often generates overly generic responses regarding cultural/religious topics, and providing the model with explicitly extracted religious commonsense knowledge significantly improves its performance in QA tasks.",
+  "references": [
+    "Anurag Acharya, Kartik Talamadupula, and Mark A. Finlayson. 2020. An Atlas of Cultural Commonsense for Machine Reasoning. CoRR abs/2009.05664 (2020), 9 pages. arXiv:2009.05664 https://arxiv.org/abs/2009.05664",
+    "Junia Anacleto, Henry Lieberman, Marie Tsutsumi, Vânia Neris, Aparecido Carvalho, Jose Espinosa, Muriel Godoi, and Silvia Zem-Mascarenhas. 2006. Can Common Sense uncover cultural differences in computer applications?. In Artificial Intelligence in Theory and Practice, Max Bramer (Ed.). Springer US, Boston, MA, 1–10. https://doi.org/10.1007/978-0-387-34747-9_1",
+    "Sumithra Bhakthavatsalam, Chloe Anastasiades, and Peter Clark. 2020. GenericsKB: A Knowledge Base of Generic Statements. CoRR abs/2005.00660 (2020), 6 pages. arXiv:2005.00660 https://arxiv.org/abs/2005.00660",
+    "Antoine Bosselut, Hannah Rashkin, Maarten Sap, Chaitanya Malaviya, Asli Celikyilmaz, and Yejin Choi. 2019. COMET: Commonsense Transformers for Automatic Knowledge Graph Construction. In ACL.",
+    "Tom B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, et al. 2020. Language Models Are Few-Shot Learners. In NIPS.",
+    "Bhavana Dalvi Mishra, Niket Tandon, and Peter Clark. 2017. Domain-Targeted, High Precision Knowledge Extraction. TACL (2017).",
+    "Awantee Deshpande, Dana Ruiter, Marius Mosbach, and Dietrich Klakow. 2022. StereoKG: Data-Driven Knowledge Graph Construction For Cultural Knowledge and Stereotypes. In WOAH.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding. In NAACL.",
+    "Joseph L. Fleiss and Jacob Cohen. 1973. The Equivalence of Weighted Kappa and the Intraclass Correlation Coefficient as Measures of Reliability. Educational and Psychological Measurement 33, 3 (1973), 613–619. https://doi.org/10.1177/001316447303300309",
+    "Jonathan Gordon, Benjamin Van Durme, and Lenhart K. Schubert. 2010. Learning from the Web: Extracting General World Knowledge from Noisy Text. In AAAIWS.",
+    "Kelvin Guu, Kenton Lee, Zora Tung, Panupong Pasupat, and Ming-Wei Chang. 2020. REALM: Retrieval-Augmented Language Model Pre-Training. In ICML.",
+    "Aidan Hogan, Eva Blomqvist, Michael Cochez, Claudia D’amato, Gerard De Melo, et al. 2021. Knowledge Graphs. ACM Comput. Surv. 54, 4, Article 71 (jul 2021), 37 pages. https://doi.org/10.1145/3447772",
+    "Jena D. Hwang, Chandra Bhagavatula, Ronan Le Bras, Jeff Da, Keisuke Sakaguchi, Antoine Bosselut, and Yejin Choi. 2021. (Comet-)Atomic 2020: On Symbolic and Neural Commonsense Knowledge Graphs. In AAAI.",
+    "Filip Ilievski, Pedro Szekely, and Bin Zhang. 2021. CSKG: The CommonSense Knowledge Graph. In ESWC.",
+    "Douglas B. Lenat. 1995. CYC: A Large-Scale Investment in Knowledge Infrastructure. Commun. ACM 38, 11 (Nov 1995), 33–38. https://doi.org/10.1145/219717.219745",
+    "Mike Lewis, Yinhan Liu, Naman Goyal, Marjan Ghazvininejad, Abdelrahman Mohamed, Omer Levy, Veselin Stoyanov, and Luke Zettlemoyer. 2020. BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension. In ACL.",
+    "Jiwei Li, Michel Galley, Chris Brockett, Jianfeng Gao, and Bill Dolan. 2016. A Diversity-Promoting Objective Function for Neural Conversation Models. In NAACL.",
+    "Fangyu Liu, Emanuele Bugliarello, Edoardo Maria Ponti, Siva Reddy, Nigel Collier, and Desmond Elliott. 2021. Visually Grounded Reasoning across Languages and Cultures. In EMNLP.",
+    "Hugo Liu and Push Singh. 2004. ConceptNet — A Practical Commonsense Reasoning Tool-Kit. BT Technology Journal 22 (2004), 211–226. https://doi.org/10.1023/B:BTTJ.0000047600.45421.6d",
+    "Tuan-Phong Nguyen and Simon Razniewski. 2022. Materialized Knowledge Bases from Commonsense Transformers. In CSRR.",
+    "Tuan-Phong Nguyen, Simon Razniewski, Julien Romero, and Gerhard Weikum. 2022. Refined Commonsense Knowledge from Large-Scale Web Contents. TKDE (2022).",
+    "Tuan-Phong Nguyen, Simon Razniewski, and Gerhard Weikum. 2021. Advanced Semantics for Commonsense Knowledge Extraction. In WWW.",
+    "Outline of culture. 2022. Outline of culture — Wikipedia, The Free Encyclopedia. https://en.wikipedia.org/wiki/Outline_of_culture Online; accessed: 2022-10-08.",
+    "Fabio Petroni, Patrick Lewis, Aleksandra Piktus, Tim Rocktäschel, Yuxiang Wu, Alexander H Miller, and Sebastian Riedel. 2020. How Context Affects Language Models’ Factual Predictions. In AKBC.",
+    "Fabio Petroni, Tim Rocktäschel, Sebastian Riedel, Patrick Lewis, Anton Bakhtin, Yuxiang Wu, and Alexander Miller. 2019. Language Models as Knowledge Bases?. In EMNLP.",
+    "Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, Ilya Sutskever, et al. 2019. Language models are unsupervised multitask learners. OpenAI blog 1, 8 (2019), 9. https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf",
+    "Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi Zhou, Wei Li, and Peter J. Liu. 2020. Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer. Journal of Machine Learning Research 21, 140 (2020), 1–67. http://jmlr.org/papers/v21/20-074.html",
+    "Simon Razniewski, Niket Tandon, and Aparna S. Varde. 2021. Information to Wisdom: Commonsense Knowledge Extraction and Compilation. In WSDM.",
+    "Nils Reimers and Iryna Gurevych. 2019. Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks. In EMNLP.",
+    "Julien Romero, Simon Razniewski, Koninika Pal, Jeff Z. Pan, Archit Sakhadeo, and Gerhard Weikum. 2019. Commonsense Properties from Query Logs and Question Answering Forums. In CIKM.",
+    "Joel Ross, Lilly Irani, M. Six Silberman, Andrew Zaldivar, and Bill Tomlinson. 2010. Who Are the Crowdworkers? Shifting Demographics in Mechanical Turk. In CHI ’10 Extended Abstracts on Human Factors in Computing Systems (Atlanta, Georgia, USA) (CHI EA ’10). Association for Computing Machinery, New York, NY, USA, 2863–2872. https://doi.org/10.1145/1753846.1753873",
+    "Maarten Sap, Ronan Le Bras, Emily Allaway, Chandra Bhagavatula, Nicholas Lourie, Hannah Rashkin, Brendan Roof, Noah A. Smith, and Yejin Choi. 2019. ATOMIC: An Atlas of Machine Commonsense for If-Then Reasoning. In AAAI.",
+    "Vered Shwartz. 2022. Good Night at 4 pm?! Time Expressions in Different Cultures. In Findings of ACL.",
+    "Push Singh, Thomas Lin, Erik T. Mueller, Grace Lim, Travell Perkins, and Wan Li Zhu. 2002. Open Mind Common Sense: Knowledge Acquisition from the General Public. In On the Move to Meaningful Internet Systems 2002: CoopIS, DOA, and ODBASE, Robert Meersman and Zahir Tari (Eds.). Springer Berlin Heidelberg, Berlin, Heidelberg, 1223–1237. https://doi.org/10.1007/3-540-36124-3_77",
+    "Karen Sparck Jones. 1988. A Statistical Interpretation of Term Specificity and Its Application in Retrieval. Taylor Graham Publishing, GBR, 132–142.",
+    "Robyn Speer, Joshua Chin, and Catherine Havasi. 2017. ConceptNet 5.5: An Open Multilingual Graph of General Knowledge. In AAAI.",
+    "Niket Tandon, Gerard de Melo, Fabian Suchanek, and Gerhard Weikum. 2014. WebChild: Harvesting and Organizing Commonsense Knowledge from the Web. In WSDM.",
+    "Joe H. Ward. 1963. Hierarchical Grouping to Optimize an Objective Function. J. Amer. Statist. Assoc. 58 (1963), 236–244.",
+    "Gerhard Weikum, Xin Luna Dong, Simon Razniewski, and Fabian M. Suchanek. 2021. Machine Knowledge: Creation and Curation of Comprehensive Knowledge Bases. Found. Trends Databases 10, 2-4 (2021), 108–490. https://doi.org/10.1561/1900000064",
+    "Peter West, Chandra Bhagavatula, Jack Hessel, Jena Hwang, Liwei Jiang, Ronan Le Bras, Ximing Lu, Sean Welleck, and Yejin Choi. 2022. Symbolic Knowledge Distillation: from General Language Models to Commonsense Models. In NAACL.",
+    "Adina Williams, Nikita Nangia, and Samuel Bowman. 2018. A Broad-Coverage Challenge Corpus for Sentence Understanding through Inference. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers). Association for Computational Linguistics, New Orleans, Louisiana, 1112–1122. https://doi.org/10.18653/v1/N18-1101",
+    "Da Yin, Hritik Bansal, Masoud Monajatipoor, Liunian Harold Li, and Kai-Wei Chang. 2022. GeoMLAMA: Geo-Diverse Commonsense Probing on Multilingual Pre-Trained Language Models. In EMNLP.",
+    "Da Yin, Liunian Harold Li, Ziniu Hu, Nanyun Peng, and Kai-Wei Chang. 2021. Broaden the Vision: Geo-Diverse Visual Commonsense Reasoning. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing. Association for Computational Linguistics, Online and Punta Cana, Dominican Republic, 2115–2129. https://doi.org/10.18653/v1/2021.emnlp-main.162",
+    "Wenpeng Yin, Jamaal Hay, and Dan Roth. 2019. Benchmarking Zero-shot Text Classification: Datasets, Evaluation and Entailment Approach. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP). Association for Computational Linguistics, Hong Kong, China, 3914–3923. https://doi.org/10.18653/v1/D19-1404",
+    "Hongming Zhang, Daniel Khashabi, Yangqiu Song, and Dan Roth. 2020. TransOMCS: From Linguistic Graphs to Commonsense Knowledge. In Proceedings of the Twenty-Ninth International Joint Conference on Artificial Intelligence, IJCAI-20. International Joint Conferences on Artificial Intelligence Organization, California, USA, 4004–4010. https://doi.org/10.24963/ijcai.2020/554",
+    "Hongming Zhang, Xin Liu, Haojie Pan, Haowen Ke, Jiefu Ou, Tianqing Fang, and Yangqiu Song. 2022. ASER: Towards large-scale commonsense knowledge acquisition via higher-order selectional preference over eventualities. Artificial Intelligence 309 (2022), 103740. https://doi.org/10.1016/j.artint.2022.103740",
+    "Hongming Zhang, Xin Liu, Haojie Pan, Yangqiu Song, and Cane Wing-Ki Leung. 2020. ASER: A Large-Scale Eventuality Knowledge Graph. In Proceedings of The Web Conference 2020 (WWW ’20). Association for Computing Machinery, New York, NY, USA, 201–211. https://doi.org/10.1145/3366423.3380107"
+  ]
+}

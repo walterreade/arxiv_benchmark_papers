@@ -1,0 +1,16 @@
+{
+  "filename": "2402.07262.pdf",
+  "title": "Low-Resource Counterspeech Generation for Indic Languages: The Case of Bengali and Hindi",
+  "arxiv_url": "https://arxiv.org/pdf/2402.07262",
+  "bias_targets": [
+    {
+      "target": "Hate Speech / Abusive Language",
+      "methodology": "The paper does not measure differential bias across groups, but it evaluates the overall abusiveness of the generated model outputs when prompted with hate speech targeting protected attributes (e.g., race, religion, gender, disability). It measures this using the indic-abusive-allInOne-MuRIL text classifier to ensure the generated counterspeech is non-abusive."
+    },
+    {
+      "target": "Cultural bias",
+      "methodology": "The authors assess the impact of cultural misalignment by evaluating the performance drops in generation models (using BLEU, METEOR, ROUGE, and human evaluation) when utilizing synthetic cross-lingual transfer from English datasets (shaped by Western cultural contexts) compared to transfer between closely related Indic languages (Hindi and Bengali)."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

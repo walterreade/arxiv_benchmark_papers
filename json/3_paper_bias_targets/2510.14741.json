@@ -1,0 +1,24 @@
+{
+  "filename": "2510.14741.pdf",
+  "title": "DEXTER: Diffusion-Guided EXplanations with TExtual Reasoning for Vision Models",
+  "arxiv_url": "https://arxiv.org/pdf/2510.14741",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluating classifiers trained on datasets with natural or injected gender skews (CelebA for blonde classification, FairFaces for age classification). The paper uses the proposed DEXTER framework to generate class-maximizing images, which are then captioned and summarized by an LLM into textual bias reports. These reports are evaluated for accuracy and consistency by human annotators and LLM-as-a-judge metrics."
+    },
+    {
+      "target": "Contextual bias",
+      "methodology": "Assessing spurious background correlations using the Waterbirds dataset (bird species vs. land/water backgrounds) and SalientImageNet. The methodology involves optimizing text prompts to synthesize images that strongly activate a target classifier, discovering words associated with these visual slices, and evaluating the model's reliance on irrelevant background contexts."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Using LLM-generated textual reasoning to analyze the representations of age groups (20-29 vs 50-59 years old) in facial classifiers trained on FairFaces, identifying the model's reliance on societal stereotypes such as neutral/serious expressions for older individuals or specific idealized facial features for youth."
+    },
+    {
+      "target": "Skin tone bias",
+      "methodology": "Qualitatively analyzing LLM-generated bias reports for facial classifiers (FairFaces) to surface the model's disproportionate reliance on specific skin tones (e.g., light or medium brown) when predicting demographic classes."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

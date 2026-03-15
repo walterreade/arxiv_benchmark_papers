@@ -1,0 +1,16 @@
+{
+  "filename": "2503.02574.pdf",
+  "title": "LLM-Safety Evaluations Lack Robustness",
+  "arxiv_url": "https://arxiv.org/pdf/2503.02574",
+  "bias_targets": [
+    {
+      "target": "Evaluator Bias (Judge Model Bias)",
+      "methodology": "Comparing Attack Success Rate (ASR) discrepancies between different automated LLM judges (e.g., HarmBench and StrongREJECT) across millions of generations to identify systematic attack-specific and model-specific scoring biases in safety evaluations."
+    },
+    {
+      "target": "Optimization Target Bias",
+      "methodology": "Computing the average cross-entropy loss for rigid, predefined affirmative target phrases (e.g., 'Sure, here...') using benign prompts across different LLMs to demonstrate that standard jailbreaking targets artificially favor or penalize specific models based on their natural response formats."
+    }
+  ],
+  "primary_bias_target": "Evaluator Bias (Judge Model Bias)"
+}

@@ -1,0 +1,61 @@
+{
+  "filename": "2602.13451.pdf",
+  "title": "Personalization Aids Pluralistic Alignment Under Competition",
+  "arxiv_url": "https://arxiv.org/pdf/2602.13451",
+  "measurement_description": "The paper evaluated the alignment of language models with the preferences of different religious demographic groups. It measured how well the predicted answer distributions of various LLMs on survey questions approximated the empirical answer distributions (utilities) of specific religious groups using data from the OpinionQA dataset (Pew American Trends Panel).",
+  "religious_groups": [
+    "Protestant",
+    "Agnostic",
+    "Mormon",
+    "Jewish"
+  ],
+  "models_tested": [
+    "ada",
+    "davinci",
+    "j1-grande",
+    "j1-grande-v2-beta",
+    "j1-jumbo",
+    "text-ada-001",
+    "text-davinci-001",
+    "text-davinci-002",
+    "text-davinci-003"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "OpinionQA"
+  ],
+  "continuous_testing": false,
+  "findings": "Religion was found to be one of the more polarized demographic partitions for pluralistic alignment. Compared to other demographics, religion required a greater number of models (providers) in a competitive market (K=4-5) to stabilize alignment and reduce transfer factors. The hardest group to approximate varied by survey wave, with Protestants being the hardest in Wave 29 and Agnostics in Wave 82. Additionally, minority religious groups such as Mormon and Jewish users relied heavily on specific models to achieve alignment, which explained their higher transfer factors and demonstrated that a single provider cannot universally cover all groups.",
+  "references": [
+    "Scott Aaronson. The complexity of agreement. In Proceedings of the thirty-seventh annual ACM symposium on Theory of computing, pages 634–643, 2005.",
+    "Ricardo Alonso and Odilon Cˆamara. Persuading voters. American Economic Review, 106(11): 3590–3605, 2016.",
+    "Itai Arieli and Yakov Babichenko. Private bayesian persuasion. Journal of Economic Theory, 182: 185–217, 2019.",
+    "Pak Hung Au and Keiichi Kawai. Competitive information disclosure by multiple senders. Games and Economic Behavior, 119:56–78, 2020.",
+    "Yuntao Bai, Saurav Kadavath, Sandipan Kundu, Amanda Askell, Jackson Kernion, Andy Jones, Anna Chen, Anna Goldie, Azalia Mirhoseini, Cameron McKinnon, et al. Constitutional ai: Harmlessness from ai feedback. arXiv preprint arXiv:2212.08073, 2022.",
+    "Natalie Collina, Surbhi Goel, Varun Gupta, and Aaron Roth. Tractable agreement protocols. In Proceedings of the 57th Annual ACM Symposium on Theory of Computing, pages 1532–1543, 2025a.",
+    "Natalie Collina, Surbhi Goel, Aaron Roth, Emily Ryu, and Mirah Shi. Emergent alignment via competition, 2025b. URL https://arxiv.org/abs/2509.15090.",
+    "Natalie Collina, Ira Globus-Harris, Surbhi Goel, Varun Gupta, Aaron Roth, and Mirah Shi. Collaborative prediction: Tractable information aggregation via agreement. In Proceedings of the 2026 Annual ACM-SIAM Symposium on Discrete Algorithms (SODA), pages 4712–4798. SIAM, 2026.",
+    "Rafael Frongillo, Eric Neyman, and Bo Waggoner. Agreement implies accuracy for substitutable signals, 2021. URL https://arxiv.org/abs/2111.03278.",
+    "Matthew Gentzkow and Emir Kamenica. Competition in persuasion. The Review of Economic Studies, 84(1):300–322, 2016.",
+    "Matthew Gentzkow and Emir Kamenica. Bayesian persuasion with multiple senders and rich signal spaces. Games and Economic Behavior, 104:411–429, 2017.",
+    "Taicheng Guo, Xiuying Chen, Yaqi Wang, Ruidi Chang, Shichao Pei, Nitesh V Chawla, Olaf Wiest, and Xiangliang Zhang. Large language model based multi-agents: A survey of progress and challenges. arXiv preprint arXiv:2402.01680, 2024.",
+    "Saffron Huang, Divya Siddarth, Liane Lovitt, Thomas I Liao, Esin Durmus, Alex Tamkin, and Deep Ganguli. Collective constitutional ai: Aligning a language model with public input. In Proceedings of the 2024 ACM Conference on Fairness, Accountability, and Transparency, pages 1395–1417, 2024.",
+    "Emir Kamenica and Matthew Gentzkow. Bayesian persuasion. American Economic Review, 101(6):2590–2615, 2011.",
+    "Michael Kearns, Aaron Roth, and Emily Ryu. Networked information aggregation via machine learning. In Proceedings of the 2026 Annual ACM-SIAM Symposium on Discrete Algorithms (SODA), pages 4799–4845. SIAM, 2026.",
+    "Toryn Q Klassen, Parand A Alamdari, and Sheila A McIlraith. Pluralistic alignment over time. arXiv preprint arXiv:2411.10654, 2024.",
+    "Jan Leike, David Krueger, Tom Everitt, Miljan Martic, Vishal Maini, and Shane Legg. Scalable agent alignment via reward modeling: a research direction. arXiv preprint arXiv:1811.07871, 2018.",
+    "Fei Li and Peter Norman. On bayesian persuasion with multiple senders. Economics Letters, 170: 66–70, 2018.",
+    "Aran Nayebi. Intrinsic barriers and practical pathways for human–ai alignment: An agreement-based complexity analysis. arXiv preprint arXiv:2502.05934, 2025.",
+    "Shibani Santurkar, Esin Durmus, Faisal Ladhak, Cinoo Lee, Percy Liang, and Tatsunori Hashimoto. Whose opinions do language models reflect? In Andreas Krause, Emma Brunskill, Kyunghyun Cho, Barbara Engelhardt, Sivan Sabato, and Jonathan Scarlett, editors, Proceedings of the 40th International Conference on Machine Learning, volume 202 of Proceedings of Machine Learning Research, pages 29971–30004. PMLR, 23–29 Jul 2023. URL https://proceedings.mlr.press/v202/santurkar23a.html.",
+    "Ali Shirali, Arash Nasr-Esfahany, Abdullah Alomar, Parsa Mirtaheri, Rediet Abebe, and Ariel Procaccia. Direct alignment with heterogeneous preferences. arXiv preprint arXiv:2502.16320, 2025.",
+    "Taylor Sorensen, Jared Moore, Jillian Fisher, Mitchell Gordon, Niloofar Mireshghallah, Christopher Michael Rytting, Andre Ye, Liwei Jiang, Ximing Lu, Nouha Dziri, et al. Position: a roadmap to pluralistic alignment. In Proceedings of the 41st International Conference on Machine Learning, pages 46280–46302, 2024.",
+    "Jacques-Francois Thisse and Xavier Vives. On the strategic choice of spatial price policy. The American Economic Review, pages 122–137, 1988.",
+    "Wenhao Wu. Sequential bayesian persuasion. Journal of Economic Theory, 214:105763, 2023."
+  ]
+}

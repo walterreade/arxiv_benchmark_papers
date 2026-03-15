@@ -1,0 +1,24 @@
+{
+  "filename": "2507.16856.pdf",
+  "title": "SIA: Enhancing Safety via Intent Awareness for Vision-Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2507.16856",
+  "bias_targets": [
+    {
+      "target": "Discrimination and stereotyping",
+      "methodology": "Evaluating safety rates (100 - attack success rate) via an LLM judge (GPT-4o-mini) on the 'discrimination & stereotyping' subset of the SIUO (Safe Image + Safe Text -> Unsafe Output) multimodal safety benchmark."
+    },
+    {
+      "target": "Political bias",
+      "methodology": "Evaluating safety rates via an LLM judge on the 'controversial topics, politics' category of the SIUO benchmark, testing the model's response to politically charged imagery and questions."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Evaluating safety rates via an LLM judge on the 'religion belief' category of the SIUO benchmark to measure the model's resistance to generating unsafe or harmful outputs regarding religious topics."
+    },
+    {
+      "target": "Cultural bias",
+      "methodology": "Using few-shot intent inference examples to check if models output biased information or stereotyping when prompted with cultural elements (e.g., culturally diverse food)."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

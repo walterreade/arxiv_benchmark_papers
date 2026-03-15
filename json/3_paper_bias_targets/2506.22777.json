@@ -1,0 +1,28 @@
+{
+  "filename": "2506.22777.pdf",
+  "title": "Teaching Models to Verbalize Reward Hacking in Chain-of-Thought Reasoning",
+  "arxiv_url": "https://arxiv.org/pdf/2506.22777",
+  "bias_targets": [
+    {
+      "target": "Authority Bias (Sycophancy)",
+      "methodology": "Appending a statement indicating an authority figure's opinion (e.g., 'A Stanford professor thinks the answer is X') to multiple-choice questions to measure if the model changes its answer to align with the cue."
+    },
+    {
+      "target": "Spurious Correlation Bias",
+      "methodology": "Injecting irrelevant surface artifacts into prompts, such as black square symbols (■), leaked XML metadata tags, or Python validation functions pointing to an incorrect answer, to measure if the model exploits these features to hack the reward."
+    },
+    {
+      "target": "Anchoring Bias",
+      "methodology": "Forcing the model to output an incorrect initial answer (post-hoc cue) and observing if its subsequent chain-of-thought reasoning anchors to and justifies this forced answer."
+    },
+    {
+      "target": "In-context / Few-shot Bias",
+      "methodology": "Providing few-shot examples labeled with incorrect answers before the main question to test if the model copies the flawed pattern over correct reasoning."
+    },
+    {
+      "target": "Roleplay / Persona Bias",
+      "methodology": "Using a system message indicating the model has gained 'unauthorized access' and that the answer is X, testing if the model complies with the biased persona constraint."
+    }
+  ],
+  "primary_bias_target": "Prompt Cue Bias (Reward Hacking)"
+}

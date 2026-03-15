@@ -1,0 +1,72 @@
+{
+  "filename": "2506.19831.pdf",
+  "title": "How Effectively Can BERT Models Interpret Context and Detect Bengali Communal Violent Text?",
+  "arxiv_url": "https://arxiv.org/pdf/2506.19831",
+  "measurement_description": "The paper measures the performance of pre-trained and fine-tuned BERT models in classifying 'communal violent text' in the Bengali language, with a primary focus on 'Religio Communal' violence (violence or cyber hate directed against specific religious groups, minorities, converts, or non-believers). It also evaluates the models' contextual understanding and specifically analyzes how high cosine similarity between religious terms causes misclassification between non-communal and religio-communal texts.",
+  "religious_groups": [
+    "Muslims",
+    "Hindus",
+    "Buddhists",
+    "Christians",
+    "Jews",
+    "Atheists"
+  ],
+  "models_tested": [
+    "BanglaBERT",
+    "BanglaBERT Large",
+    "Multilingual BERT (mBERT)"
+  ],
+  "languages_evaluated": [
+    "Bengali"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "major",
+  "base_benchmarks": [
+    "Bangla Sectarian Expression Dataset (Tasnim et al., 2024)",
+    "Bengali Hate Speech Detection Dataset by UCI",
+    "Bengali Hate Speech Dataset by Nauros from Kaggle",
+    "Multi-Labeled Bengali Toxic Comments",
+    "rezacsedu/Bengali-Hate-Speech-Dataset"
+  ],
+  "continuous_testing": false,
+  "findings": "The fine-tuned ensemble models achieved an improved macro F1 score of 0.63 for classifying communal violence. However, error analysis via LIME revealed that models heavily struggled to distinguish between 'Religio communal' and 'Noncommunal' texts. The primary cause was that strongly religious terms (e.g., Muslim, Islam, Hindu, Allah, Quran) appeared frequently in both violent and benign contexts. The word embeddings in the pre-trained models showed high cosine similarity between these religious words across both classes, causing the models to frequently misclassify benign religious references as religio-communal violence.",
+  "references": [
+    "Aeeneh, S., Zlatanov, N., Yu, J., 2024. New bounds on the accuracy of majority voting for multiclass classification. IEEE Transactions on Neural Networks and Learning Systems , 1–15doi:10.1109/TNNLS.2024.3387544.",
+    "Agrawal, D., 2020. Emoji dictionary. URL: https://www.kaggle.com/divyansh22/emoji-dictionary-1.",
+    "Akil, A., Sultana, N., Bhattacharjee, A., Shahriyar, R., 2022. BanglaParaphrase: A high-quality Bangla paraphrase dataset, Association for Computational Linguistics, Online only. pp. 261–272. URL: https://aclanthology.org/2022.aacl-short.33.",
+    "Al Jazeera, 2021a. Hundreds protest in bangladesh over deadly religious violence. URL: https://aje.io/7ndrbq. retrieved January 23, 2024.",
+    "Al Jazeera, 2021b. Two hindu men killed, temples vandalised in bangladesh violence. URL: https://aje.io/uy9gmz. retrieved February 18, 2024.",
+    "Antypas, D., Camacho-Collados, J., 2023. Robust hate speech detection in social media: A cross-dataset empirical evaluation. URL: https://arxiv.org/abs/2307.01680, arXiv:2307.01680.",
+    "Ashraf, K., Hosen, M.H., Asgar, S., Islam, M.T., Nawar, S., 2024. Analyzing abusive bangla comments on social media: Nlp & explainable ai, pp. 1–6. doi:10.1109/iCACCESS61735.2024.10499547.",
+    "Bashar, I., 2011. Bangladeshs forgotten crisis: Land, ethnicity, and violence in chittagong hill tracts. Counter Terrorist Trends and Analyses 3, 1–5. URL: http://www.jstor.org/stable/26350972.",
+    "Belal, T.A., Shahariar, G.M., Kabir, M.H., 2023. Interpretable multi labeled bengali toxic comments classification using deep learning, pp. 1–6. doi:10.1109/ECCE57851.2023.10101588.",
+    "Bhattacharjee, A., Hasan, T., Ahmad, W., Mubasshir, K.S., Islam, M.S., Iqbal, A., Rahman, M.S., Shahriyar, R., 2022. BanglaBERT: Language model pretraining and benchmarks for low-resource language understanding evaluation in Bangla, Association for Computational Linguistics, Seattle, United States. pp. 1318–1327. URL: https://aclanthology.org/2022.findings-naacl.98.",
+    "Brosché, J., Elfversson, E., 2012. Communal conflict, civil war, and the state: Complexities, connections, and the case of sudan. African Journal on Conflict Resolution 12, 33–60. URL: https://www.ajol.info/index.php/ajcr/article/view/78700.",
+    "Brownlee, J., 2021. Smote for imbalanced classification with python. URL: https://machinelearningmastery.com/smote-oversampling-for-imbalanced-classification/.",
+    "Cano Basave, A.E., He, Y., Liu, K., Zhao, J., 2013. A weakly supervised Bayesian model for violence detection in social media, Asian Federation of Natural Language Processing, Nagoya, Japan. pp. 109–117. URL: https://aclanthology.org/I13-1013.",
+    "Das, A.K., Asif, A.A., Paul, A., Hossain, M.N., 2021. Bangla hate speech detection on social media using attention-based recurrent neural network. Journal of Intelligent Systems 30, 578–591. doi:10.1515/jisys-2020-0060.",
+    "Devlin, J., Chang, M., Lee, K., Toutanova, K., 2018. BERT: pretraining of deep bidirectional transformers for language understanding. CoRR abs/1810.04805. URL: http://arxiv.org/abs/1810.04805.",
+    "Dey, K., Sumon, Cochez, M., Karim, M.R., 2022. Bengali Hate Speech Detection Dataset. UCI Machine Learning Repository. URL: https://doi.org/10.24432/C5PD07.",
+    "Haque, R.U., Mridha, M.F., Hamid, M.A., Abdullah-Al-Wadud, M., Islam, M.S., 2020. Bengali stop word and phrase detection mechanism. Arabian Journal for Science and Engineering 45, 33553368. doi:10.1007/s13369-020-04388-8.",
+    "IBM, 2024. Few-shot learning. URL: https://www.ibm.com/topics/few-shot-learning. retrieved January 29, 2024.",
+    "Karim, M.R., Chakravarthi, B.R., McCrae, J.P., Cochez, M., 2020. Classification benchmarks for under-resourced bengali language based on multichannel convolutional-lstm network. URL: https://arxiv.org/abs/2004.07807,arXiv:2004.07807.",
+    "Kemp, S., 2023. Digital 2023: Bangladesh. URL: https://datareportal.com/reports/digital-2023-bangladesh.",
+    "Keya, A.J., Kabir, M.M., Shammey, N.J., Mridha, M.F., Islam, M.R., Watanobe, Y., 2023. G-bert: An efficient method for identifying hate speech in bengali texts on social media. IEEE Access 11, 79697–79709. doi:10.1109/ACCESS.2023.3299021.",
+    "Khang Hsien, Y., Arabee Abdul Salam, Z., Kasinathan, V., 2022. Cyber bullying detection using natural language processing (nlp) and text analytics, in: 2022 IEEE International Conference on Distributed Computing and Electrical Circuits and Electronics (ICDCECE), pp. 1–4. doi:10.1109/ICDCECE53908.2022.9792931.",
+    "Kim, M., 2023. Smote: Practical consideration and limitations. URL: https://medium.com/@minjukim023/smote-practical-consideration-limitations-f0d926b661a8.",
+    "Kumar, R., Ratan, S., Singh, S., Nandi, E., Devi, L.N., Bhagat, A., Dawer, Y., Lahiri, B., Bansal, A., 2021. ComMA@ICON: Multilingual gender biased and communal language identification task at ICON-2021, NLP Association of India (NLPAI), NIT Silchar. pp. 1–12. URL: https://aclanthology.org/2021.icon-multigen.1.",
+    "Noorana, M., 2018. Pre electoral violence in 2001 parliamentary elections in bangladesh: Empirical evidence from bagerhat and narayanganj districts, social science review: The dhaka university studies 35, 231–246. URL: https://www.researchgate.net/publication/353636999.",
+    "Obaida, M.H., Elkaffas, S.M., Guirguis, S.K., 2024. Deep learning algorithms for cyber-bulling detection in social media platforms. IEEE Access 12, 76901–76908. doi:10.1109/ACCESS.2024.3406595.",
+    "Polat, G., 2023. Zero-shot learning (zsl) explained. URL: https://encord.com/blog/zero-shot-learning-explained/.",
+    "ReliefWeb, 2017. Myanmars religious and ethnic conflicts: No end in sight. URL: https://reliefweb.int/report/myanmar/myanmars-religious-and-ethnic-conflicts-no-end-sight. retrieved January 17, 2024.",
+    "Romim, N., Ahmed, M., Talukder, H., Islam, M.S., 2020. Hate speech detection in the bengali language: A dataset and its baseline evaluation. arXiv preprint arXiv:2012.09686 URL: https://arxiv.org/abs/2012.09686.",
+    "Sahai, P., 2020. The Communal Conflict In India Causes And Peaceful Solutions. Rajiv Gandhi Institute for Contemporary Studies, New Delhi. URL: https://www.rgics.org/wp-content/uploads/Communal-Conflict-in-India.pdf.",
+    "Soruar, W., Uddin, M.M., 2021. Changes in social and religious practices of disputing communities after riot: A case study on communal violence in ramu, in: Journal of Philosophy, Culture and Religion, p. 13. doi:10.7176/JPCR/51-03.",
+    "Sun, X., Gu, J., Sun, H., 2020. Research progress of zero-shot learning. Applied Intelligence 51, 36003614. doi:10.1007/s10489-020-02075-7.",
+    "Tasnim, N., Gupta, S.S., Juee, F.I., Tahsin, A., Ghum, P., Fatema, K., Haque, M., Farzana, W., Nasir, P., KhudaBukhsh, A., Sadeque, F., Sushmit, A., 2024. Mapping violence: Developing an extensive framework to build a bangla sectarian expression dataset from social media interactions. URL: https://doi.org/10.48550/arXiv.2404.11752.",
+    "Titli, S.R., Paul, S., 2023. Automated bengali abusive text classification: Using deep learning techniques, pp. 1–6. doi:10.1109/ICAECIS58353.2023.10170294.",
+    "Windeatt, T., 2008. Ensemble MLP Classifier Design. Springer Berlin Heidelberg, Berlin, Heidelberg. pp. 133–147. doi:10.1007/978-3-540-79474-5_6."
+  ]
+}

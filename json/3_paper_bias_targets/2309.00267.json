@@ -1,0 +1,16 @@
+{
+  "filename": "2309.00267.pdf",
+  "title": "RLAIF vs. RLHF: Scaling Reinforcement Learning from Human Feedback with AI Feedback",
+  "arxiv_url": "https://arxiv.org/pdf/2309.00267",
+  "bias_targets": [
+    {
+      "target": "Position bias",
+      "methodology": "Evaluating whether LLM labelers are biased by the order of presented options by querying the LLM's preference for a pair of candidates, swapping the order of the candidates, querying again, and measuring the percentage of times the LLM prefers the candidate in the exact same position."
+    },
+    {
+      "target": "Length bias",
+      "methodology": "Controlling for the tendency of human evaluators to prefer longer responses by training a logistic regression model using the ratio of candidate response lengths to predict human preference win rates, and then estimating a length-controlled win rate at a length ratio of 1.0."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

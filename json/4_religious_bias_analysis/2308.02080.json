@@ -1,0 +1,80 @@
+{
+  "filename": "2308.02080.pdf",
+  "title": "Causality Guided Disentanglement for Cross-Platform Hate Speech Detection",
+  "arxiv_url": "https://arxiv.org/pdf/2308.02080",
+  "measurement_description": "The paper measures cross-platform hate speech detection capabilities. It evaluates 'Religion' as one of eight primary target categories of hate speech, treating the specific target of hate (such as religious groups) as a platform-dependent variable that can be disentangled from the core invariant/causal features of hateful language to improve model generalization.",
+  "religious_groups": [
+    "Religion (General)",
+    "Judaism"
+  ],
+  "models_tested": [
+    "GPT-4",
+    "Falcon",
+    "RoBERTa",
+    "BART",
+    "HateBERT",
+    "HateXplain"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "HateXplain",
+    "GAB dataset",
+    "Reddit dataset",
+    "Twitter dataset",
+    "YouTube dataset"
+  ],
+  "continuous_testing": false,
+  "findings": "The study found that the target distributions for hate speech (including religion) vary significantly across platforms. Current models tend to form spurious correlations and overly rely on specific identity words (e.g., 'jews'), which degrades their cross-platform generalization. By separating the platform-dependent target (such as religion) from the invariant properties of hate speech, their proposed model (CATCH) achieved better cross-platform detection compared to baseline models and large language models like GPT-4 and Falcon.",
+  "references": [
+    "Davut Akca, Fatih Karakus, Mehmet F Bastug, and Barbara Perry. 2020. Planting hate speech to harvest hatred: How does political hate speech fuel hate crimes in Turkey? International Journal for Crime, Justice and Social Democracy 9, 4 (2020), 195–211.",
+    "Dimosthenis Antypas and Jose Camacho-Collados. 2023. Robust Hate Speech Detection in Social Media: A Cross-Dataset Empirical Evaluation. arXiv preprint arXiv:2307.01680 (2023).",
+    "Tom Bourgeade, Patricia Chiril, Farah Benamara, and Véronique Moriceau. 2023. What Did You Learn To Hate? A Topic-Oriented Analysis of Generalization in Hate Speech Detection. In Proceedings of the 17th Conference of the European Chapter of the Association for Computational LinguisticsProceedings of the 17th Conference of the European Chapter of the Association for Computational Linguistics. 3477–3490.",
+    "Peter Bühlmann. 2020. Invariance, causality and robustness. (2020).",
+    "Paula Carvalho, Danielle Caled, Cláudia Silva, Fernando Batista, and Ricardo Ribeiro. 2023. The expression of hate speech against Afro-descendant, Roma, and LGBTQ+ communities in YouTube comments. Journal of Language Aggression and Conflict (2023).",
+    "Tommaso Caselli, Valerio Basile, Jelena Mitrović, and Michael Granitzer. 2020. Hatebert: Retraining bert for abusive language detection in english. arXiv preprint arXiv:2010.12472 (2020).",
+    "Ke-Li Chiu, Annie Collins, and Rohan Alexander. 2021. Detecting hate speech with gpt-3. arXiv preprint arXiv:2103.12407 (2021).",
+    "Gloria del Valle-Cano, Lara Quijano-Sánchez, Federico Liberatore, and Jesús Gómez. 2023. SocialHaterBERT: A dichotomous approach for automatically detecting hate speech on Twitter through textual analysis and user profiles. Expert Systems with Applications 216 (2023), 119446.",
+    "Nicola Döring and M Rohangis Mohseni. 2019. Male dominance and sexism on YouTube: results of three content analyses. Feminist Media Studies 19, 4 (2019), 512–524.",
+    "Mai ElSherief, Vivek Kulkarni, Dana Nguyen, William Yang Wang, and Elizabeth Belding. 2018. Hate lingo: A target-based linguistic analysis of hate speech in social media. In Proceedings of the International AAAI Conference on Web and Social MediaProceedings of the International AAAI Conference on Web and Social Media, Vol. 12.",
+    "Tracie Farrell, Miriam Fernandez, Jakub Novotny, and Harith Alani. 2019. Exploring misogyny across the manosphere in reddit. In Proceedings of the 10th ACM conference on web science. 87–96.",
+    "Hao-Zhe Feng, Kezhi Kong, Minghao Chen, Tianye Zhang, Minfeng Zhu, and Wei Chen. 2021. Shot-vae: semi-supervised deep generative models with label-aware elbo approximations. In Proceedings of the Proceedings of the AAAI Conference on Artificial Intelligence Conference on Artificial Intelligence, Vol. 35. 7413–7421.",
+    "Paula Fortuna, Juan Soler, and Leo Wanner. 2020. Toxic, hateful, offensive or abusive? what are we really classifying? an empirical analysis of hate speech datasets. In LRECProceedings of the 12th language resources and evaluation conference. 6786–6794.",
+    "Paula Fortuna, Juan Soler-Company, and Leo Wanner. 2021. How well do hate speech, toxicity, abusive and offensive language classification models generalize across datasets? Information Processing & Management 58, 3 (2021), 102524.",
+    "Md Saroar Jahan and Mourad Oussalah. 2023. A systematic review of Hate Speech automatic detection using Natural Language Processing. Neurocomputing (2023), 126232.",
+    "Eric Jang, Shixiang Gu, and Ben Poole. 2016. Categorical reparameterization with gumbel-softmax. arXiv preprint arXiv:1611.01144 (2016).",
+    "Ujun Jeong, Paras Sheth, Anique Tahir, Faisal Alatawi, H Russell Bernard, and Huan Liu. 2023. Exploring Platform Migration Patterns between Twitter and Mastodon: A User Behavior Study. arXiv preprint arXiv:2305.09196 (2023).",
+    "Chris J Kennedy, Geoff Bacon, Alexander Sahn, and Claudia von Vacano. 2020. Constructing interval variables via faceted rasch measurement and multitask deep learning: a hate speech application. arXiv preprint arXiv:2009.10277 (2020).",
+    "Youngwook Kim, Shinwoo Park, and Yo-Sub Han. 2022. Generalizable implicit hate speech detection using contrastive learning. In Proceedings of the 29th International Conference on Computational LinguisticsProceedings of the 29th International Conference on Computational Linguistics. 6667–6679.",
+    "Durk P Kingma, Shakir Mohamed, Danilo Jimenez Rezende, and Max Welling. 2014. Semi-supervised learning with deep generative models. Advances in neural information processing systems 27 (2014).",
+    "Jan Kocoń, Igor Cichecki, Oliwier Kaszyca, Mateusz Kochanek, Dominika Szydło, Joanna Baran, Julita Bielaniewicz, Marcin Gruza, Arkadiusz Janz, Kamil Kanclerz, et al. 2023. ChatGPT: Jack of all trades, master of none. Information Fusion (2023), 101861.",
+    "Anis Koubaa. 2023. GPT-4 vs. GPT-3.5: A concise showdown. (2023).",
+    "Xianzhi Li, Xiaodan Zhu, Zhiqiang Ma, Xiaomo Liu, and Sameena Shah. 2023. Are ChatGPT and GPT-4 General-Purpose Solvers for Financial Text Analytics? An Examination on Several Typical Tasks. arXiv preprint arXiv:2305.05862 (2023).",
+    "Divyat Mahajan, Shruti Tople, and Amit Sharma. 2021. Domain generalization using causal matching. In International Conference on Machine Learningnternational Conference on Machine Learning. PMLR, 7313–7324.",
+    "Jitendra Singh Malik, Guansong Pang, and Anton van den Hengel. 2022. Deep learning for hate speech detection: a comparative study. arXiv preprint arXiv:2202.09517 (2022).",
+    "Zainab Mansur, Nazlia Omar, and Sabrina Tiun. 2023. Twitter Hate Speech Detection: A Systematic Review of Methods, Taxonomy Analysis, Challenges, and Opportunities. IEEE Access (2023).",
+    "Ilia Markov, Nikola Ljubešić, Darja Fišer, and Walter Daelemans. 2021. Exploring stylometric and emotion-based features for multilingual cross-domain hate speech detection. In Proceedings of the Eleventh Workshop on Computational Approaches to Subjectivity, Sentiment and Social Media Analysis. 149–159.",
+    "Binny Mathew, Ritam Dutt, Pawan Goyal, and Animesh Mukherjee. 2019. Spread of hate speech in online social media. In Proceedings of the 10th ACM conference on web science. 173–182.",
+    "Binny Mathew, Punyajoy Saha, Seid Muhie Yimam, Chris Biemann, Pawan Goyal, and Animesh Mukherjee. 2021. Hatexplain: A benchmark dataset for explainable hate speech detection. In Proceedings of the AAAI conference on artificial intelligenceProceedings of the AAAI conference on artificial intelligence, Vol. 35. 14867–14875.",
+    "Changrong Min, Hongfei Lin, Ximing Li, He Zhao, Junyu Lu, Liang Yang, and Bo Xu. 2023. Finding hate speech with auxiliary emotion detection from self-training multi-label learning perspective. Information Fusion 96 (2023), 214–223.",
+    "OpenAI. 2023. GPT-4 Technical Report. ArXiv abs/2303.08774 (2023).",
+    "Guilherme Penedo, Quentin Malartic, Daniel Hesslow, Ruxandra Cojocaru, Alessandro Cappelli, Hamza Alobeidli, Baptiste Pannier, Ebtesam Almazrouei, and Julien Launay. 2023. The RefinedWeb dataset for Falcon LLM: outperforming curated corpora with web data, and web data only. arXiv preprint arXiv:2306.01116 (2023). arXiv:2306.01116 https://arxiv.org/abs/2306.01116",
+    "Baolin Peng, Chunyuan Li, Pengcheng He, Michel Galley, and Jianfeng Gao. 2023. Instruction tuning with gpt-4. arXiv preprint arXiv:2304.03277 (2023).",
+    "Alan Ramponi and Sara Tonelli. 2022. Features or Spurious Artifacts? Data-centric Baselines for Fair and Robust Hate Speech Detection. In Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language TechnologiesProceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies. Association for Computational Linguistics, 3027–3040. https://doi.org/10.18653/v1/2022.naacl-main.221",
+    "Sumegh Roychowdhury and Vikram Gupta. 2023. Data-Efficient Methods For Improving Hate Speech Detection. In Findings of the Association for Computational Linguistics: EACL 2023. 125–132.",
+    "Joni Salminen, Hind Almerekhi, Milica Milenković, Soon-gyo Jung, Jisun An, Haewoon Kwak, and Bernard Jansen. 2018. Anatomy of online hate: developing a taxonomy and machine learning models for identifying and classifying hate in online news media. In ICWSM’18Proceedings of the International AAAI Conference on Web and Social Media, Vol. 12.",
+    "Anna Schmidt and Michael Wiegand. 2017. A survey on hate speech detection using natural language processing. In Proceedings of the fifth international workshop on natural language processing for social media. 1–10.",
+    "Paras Sheth, Tharindu Kumarage, Raha Moraffah, Aman Chadha, and Huan Liu. 2023. PEACE: Cross-Platform Hate Speech Detection-A Causality-guided Framework. arXiv preprint arXiv:2306.08804 (2023).",
+    "Paras Sheth, Raha Moraffah, K Selçuk Candan, Adrienne Raglin, and Huan Liu. 2022. Domain Generalization–A Causal Perspective. arXiv preprint arXiv:2209.15177 (2022).",
+    "Zeerak Waseem. 2016. Are you a racist or am i seeing things? annotator influence on hate speech detection on twitter. In Proceedings of the first workshop on NLP and computational social science. 138–142.",
+    "Zeerak Waseem and Dirk Hovy. 2016. Hateful symbols or hateful people? predictive features for hate speech detection on twitter. In Proceedings of the NAACL student research workshop. 88–93.",
+    "Thomas Wolf, Lysandre Debut, Victor Sanh, Julien Chaumond, Clement Delangue, Anthony Moi, Pierric Cistac, Tim Rault, Rémi Louf, Morgan Funtowicz, et al. 2019. Huggingface’s transformers: State-of-the-art natural language processing. arXiv preprint arXiv:1910.03771 (2019).",
+    "Wenjie Yin, Vibhor Agarwal, Aiqi Jiang, Arkaitz Zubiaga, and Nishanth Sastry. 2022. AnnoBERT: Effectively Representing Multiple Annotators’ Label Choices to Improve Hate Speech Detection. arXiv preprint arXiv:2212.10405 (2022).",
+    "Xuhui Zhou. 2021. Challenges in automated debiasing for toxic language detection. University of Washington."
+  ]
+}

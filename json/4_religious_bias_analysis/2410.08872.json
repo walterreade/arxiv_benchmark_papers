@@ -1,0 +1,81 @@
+{
+  "filename": "2410.08872.pdf",
+  "title": "FRAGILE GIANTS: UNDERSTANDING THE SUSCEPTIBILITY OF MODELS TO SUBPOPULATION ATTACKS",
+  "arxiv_url": "https://arxiv.org/pdf/2410.08872",
+  "measurement_description": "The paper measures the susceptibility of machine learning models to subpopulation poisoning attacks, where an adversary manipulates training data to degrade performance on specific subpopulations. For its text dataset (CivilComments), it evaluates how easily models can be poisoned to misclassify toxic/nontoxic comments that mention specific religious identities.",
+  "religious_groups": [
+    "Christian",
+    "Muslim",
+    "Hindu",
+    "Buddhist",
+    "Jewish",
+    "Atheist",
+    "Other religions"
+  ],
+  "models_tested": [
+    "BERT Tiny",
+    "BERT Small",
+    "BERT Medium",
+    "DistilBERT",
+    "ResNet18",
+    "ResNet50",
+    "ResNet101",
+    "Logistic Regression",
+    "Multi-Layer Perceptron (MLP)"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "CivilComments"
+  ],
+  "continuous_testing": false,
+  "findings": "The study found that models with greater complexity are significantly more susceptible to subpopulation poisoning attacks. For religious subpopulations specifically, the impact varied disproportionately with model size for medium-sized subgroups; for example, BERT Tiny exhibited only 2% target damage on the 'nontoxic, buddhist' subgroup (size 314), whereas the larger BERT Medium model suffered an 82% target damage on the exact same subgroup.",
+  "references": [
+    "Dario Amodei, Chris Olah, Jacob Steinhardt, Paul F. Christiano, John Schulman, and Dan Mané. Concrete problems in AI safety. CoRR, abs/1606.06565, 2016. URL http://arxiv.org/abs/1606.06565.",
+    "Eugene Bagdasaryan and Vitaly Shmatikov. Differential privacy has disparate impact on model accuracy. In NeurIPS, 2019. URL http://arxiv.org/abs/1905.12101.",
+    "Barry Becker and Ronny Kohavi. Adult. UCI Machine Learning Repository, 1996. DOI: https://doi.org/10.24432/C5XW20.",
+    "Battista Biggio, Blaine Nelson, and Pavel Laskov. Poisoning attacks against support vector machines. ICML, 2012. URL https://arxiv.org/abs/1206.6389.",
+    "Daniel Borkan, Lucas Dixon, Jeffrey Sorensen, Nithum Thain, and Lucy Vasserman. Nuanced metrics for measuring unintended bias with real data for text classification. In World Wide Web Conference, 2019. URL https://arxiv.org/abs/1903.04561.",
+    "Dillon Bowen, Brendan Murphy, Will Cai, David Khachaturov, Adam Gleave, and Kellin Pelrine. Scaling laws for data poisoning in llms, 2024. URL https://arxiv.org/abs/2408.02946.",
+    "Nicholas Carlini, Úlfar Erlingsson, and Nicolas Papernot. Distribution density, tails, and outliers in machine learning: Metrics and applications. CoRR, abs/1910.13427, 2019a. URL http://arxiv.org/abs/1910.13427.",
+    "Nicholas Carlini, Chang Liu, Jernej Kos, Úlfar Erlingsson, and Dawn Song. The secret sharer: Measuring unintended neural network memorization & extracting secrets. USENIX Security, 2019b. URL https://arxiv.org/abs/1802.08232.",
+    "Nicholas Carlini, Daphne Ippolito, Matthew Jagielski, Katherine Lee, Florian Tramèr, and Chiyuan Zhang. Quantifying memorization across neural language models. ICLR, 2023. URL https://arxiv.org/abs/2202.07646.",
+    "Vitaly Feldman. Does learning require memorization? A short tale about a long tail. ACM SIGACT Symposium on Theory of Computing, 2020. URL http://arxiv.org/abs/1906.05271.",
+    "Vitaly Feldman and Chiyuan Zhang. What neural networks memorize and why: Discovering the long tail via influence estimation. NeurIPS, 2020. URL https://arxiv.org/abs/2008.03703.",
+    "Prakhar Ganesh, Hongyan Chang, Martin Strobel, and Reza Shokri. On the impact of machine learning randomness on group fairness. ACM Transactions on Fairness, Accountability, and Transparency, 2023. URL http://dx.doi.org/10.1145/3593013.3594116.",
+    "Jonas Geiping, Liam Fowl, W. Ronny Huang, Wojciech Czaja, Gavin Taylor, Michael Moeller, and Tom Goldstein. Witches’ brew: Industrial scale data poisoning via gradient matching. ICLR, 2021. URL https://arxiv.org/abs/2009.02276.",
+    "Tianyu Gu, Kang Liu, Brendan Dolan-Gavitt, and Siddharth Garg. Badnets: Evaluating backdooring attacks on deep neural networks. IEEE, 2019. URL https://ieeexplore.ieee.org/abstract/document/8685687.",
+    "Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. Deep residual learning for image recognition. In 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pp. 770–778, 2016. doi: 10.1109/CVPR.2016.90.",
+    "Dan Hendrycks, Nicholas Carlini, John Schulman, and Jacob Steinhardt. Unsolved problems in ML safety. CoRR, abs/2109.13916, 2021. URL https://arxiv.org/abs/2109.13916.",
+    "Sara Hooker, Yann Dauphin, Aaron Courville, and Andrea Frome. Selective brain damage: Measuring the disparate impact of model pruning, 2020a. URL https://openreview.net/forum?id=S1eIw0NFvr.",
+    "Sara Hooker, Nyalleng Moorosi, Gregory Clark, Samy Bengio, and Emily Denton. Characterising bias in compressed models. CoRR, abs/2010.03058, 2020b. URL https://arxiv.org/abs/2010.03058.",
+    "W. Ronny Huang, Jonas Geiping, Liam Fowl, Gavin Taylor, and Tom Goldstein. Metapoison: Practical general-purpose clean-label data poisoning. NeurIPS, 2020. URL https://arxiv.org/abs/2004.00225.",
+    "Matthew Jagielski, Alina Oprea, Battista Biggio, Chang Liu, Cristina Nita-Rotaru, and Bo Li. Manipulating machine learning: Poisoning attacks and countermeasures for regression learning. In IEEE Symposium on Security and Privacy (SP), 2018. URL https://ieeexplore.ieee.org/document/8418594.",
+    "Matthew Jagielski, Giorgio Severi, Niklas Pousette Harger, and Alina Oprea. Subpopulation data poisoning attacks. CCS, 2021. URL https://arxiv.org/abs/2006.14026.",
+    "Ziheng Jiang, Chiyuan Zhang, Kunal Talwar, and Michael Mozer. Exploring the memorization-generalization continuum in deep learning. EMNLP 2023, Feb 2020. URL https://arxiv.org/pdf/2002.03206v1. EMNLP 2023.",
+    "Pang Wei Koh and Percy Liang. Understanding black-box predictions via influence functions. In ICML, 2017. URL https://arxiv.org/abs/1703.04730.",
+    "Pang Wei Koh, Jacob Steinhardt, and Percy Liang. Stronger data poisoning attacks break data sanitization defenses. Mach. Learn., 2022. URL https://doi.org/10.1007/s10994-021-06119-y.",
+    "Ram Shankar Siva Kumar, Magnus Nyström, John Lambert, Andrew Marshall, Mario Goertzel, Andi Comissoneru, Matt Swann, and Sharon Xia. Adversarial machine learning: Industry perspectives. In IEEE Security and Privacy Workshops (SPW), 2020. URL https://ieeexplore.ieee.org/document/9283867.",
+    "Mingchen Li, Mahdi Soltanolkotabi, and Samet Oymak. Gradient descent with early stopping is provably robust to label noise for overparameterized neural networks. In AISTATS, 2020. URL http://arxiv.org/abs/1903.11680.",
+    "Ziwei Liu, Ping Luo, Xiaogang Wang, and Xiaoou Tang. Deep learning face attributes in the wild. In ICCV, 2015. URL https://arxiv.org/abs/1411.7766.",
+    "Chengxiao Luo, Yiming Li, Yong Jiang, and Shu-Tao Xia. Untargeted backdoor attack against object detection. In ICASSP, 2023. URL https://ieeexplore.ieee.org/document/10095980.",
+    "H. Lycklama, L. Burkhalter, A. Viand, N. Kuchler, and A. Hithnawi. Rofl: Robustness of secure federated learning. In IEEE Symposium on Security and Privacy (SP), 2023. URL https://doi.ieeecomputersociety.org/10.1109/SP46215.2023.10179400.",
+    "Hidde Lycklama, Alexander Viand, Nicolas Küchler, Christian Knabenhans, and Anwar Hithnawi. Holding secrets accountable: Auditing privacy-preserving machine learning. In USENIX Security Symposium, 2024. URL https://arxiv.org/abs/2402.15780.",
+    "Ranwa Al Mallah, David López, Godwin Badu-Marfo, and Bilal Farooq. Untargeted poisoning attack detection in federated learning via behavior attestational. IEEE Access, 2023. URL https://arxiv.org/abs/2101.10904.",
+    "Karttikeya Mangalam and Vinay Uday Prabhu. Do deep neural networks learn shallow learnable examples first? In ICML Workshop on Identifying and Understanding Deep Learning Phenomena, 2019. URL https://openreview.net/pdf?id=HkxHv4rn24.",
+    "Raffaele Pugliese, Stefano Regondi, and Riccardo Marini. Machine learning-based approach: global trends, research directions, and regulatory standpoints. Data Science and Management. URL https://www.sciencedirect.com/science/article/pii/S2666764921000485.",
+    "Vyas Raina and Mark Gales. Identifying adversarially attackable and robust samples. In AdvML Frontiers Workshop, ICML, 2023. URL https://arxiv.org/abs/2301.12896.",
+    "Evan Rose, Fnu Suya, and David Evans. Understanding variation in subpopulation susceptibility to poisoning attacks, 2023. URL https://arxiv.org/abs/2311.11544.",
+    "Victor Sanh, Lysandre Debut, Julien Chaumond, and Thomas Wolf. Distilbert, a distilled version of BERT: smaller, faster, cheaper and lighter. CoRR, abs/1910.01108, 2019. URL http://arxiv.org/abs/1910.01108.",
+    "Ali Shafahi, W. Ronny Huang, Mahyar Najibi, Octavian Suciu, Christoph Studer, Tudor Dumitras, and Tom Goldstein. Poison frogs! targeted clean-label poisoning attacks on neural networks. In NeurIPS, 2018.",
+    "Iulia Turc, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. Well-read students learn better: The impact of student initialization on knowledge distillation. CoRR, 2019. URL http://arxiv.org/abs/1908.08962.",
+    "Alexander Wan, Eric Wallace, Sheng Shen, and Dan Klein. Poisoning language models during instruction tuning. In ICML, 2023. URL https://arxiv.org/abs/2305.00944.",
+    "Huang Xiao, Battista Biggio, Gavin Brown, Giorgio Fumera, Claudia Eckert, and Fabio Roli. Is feature selection secure against training data poisoning? In ICML, 2015. URL https://proceedings.mlr.press/v37/xiao15.html.",
+    "Chiyuan Zhang, Samy Bengio, Moritz Hardt, Benjamin Recht, and Oriol Vinyals. Understanding deep learning (still) requires rethinking generalization. Commun. ACM, 2021. URL https://doi.org/10.1145/3446776."
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "filename": "2501.00192.pdf",
+  "title": "MLLM-as-a-Judge for Image Safety without Human Labeling",
+  "arxiv_url": "https://arxiv.org/pdf/2501.00192",
+  "bias_targets": [
+    {
+      "target": "Language prior bias",
+      "methodology": "Comparing the model's token probability scores on multimodal queries (with image tokens) against text-only queries (without image tokens) to isolate and measure the influence of text training priors on safety judgments."
+    },
+    {
+      "target": "Non-centric region bias (Image context bias)",
+      "methodology": "Comparing the model's token probability scores on original whole images against modified images where the central object has been removed using an open-vocabulary object detector, in order to evaluate the undue influence of background elements or visual co-occurrences."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

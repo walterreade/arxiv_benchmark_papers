@@ -1,0 +1,20 @@
+{
+  "filename": "2502.12189.pdf",
+  "title": "Self-supervised Attribute-aware Dynamic Preference Ranking Alignment",
+  "arxiv_url": "https://arxiv.org/pdf/2502.12189",
+  "bias_targets": [
+    {
+      "target": "Popularity bias (Historical accumulation bias)",
+      "methodology": "Mitigated by applying a time decay function to popularity attributes (e.g., votes, likes) and using a logarithmic scale to smooth extreme values, preventing older but outdated responses from dominating preference rankings."
+    },
+    {
+      "target": "Position bias (Order bias)",
+      "methodology": "Addressed during the evaluation and annotation phase by explicitly prompting evaluators (human or AI) to ensure that the presentation order of the candidate responses does not affect their judgment."
+    },
+    {
+      "target": "Verbosity bias (Length bias)",
+      "methodology": "Addressed in the evaluation rules by instructing that the length of the candidate answers should not impact the ranking evaluation, aiming to isolate semantic relevance and timeliness."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

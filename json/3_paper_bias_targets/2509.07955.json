@@ -1,0 +1,20 @@
+{
+  "filename": "2509.07955.pdf",
+  "title": "ACE and Diverse Generalization via Selective Disagreement",
+  "arxiv_url": "https://arxiv.org/pdf/2509.07955",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluated using a modified CelebA dataset (CelebA-CC) where gender is completely spuriously correlated with hair color in the training distribution (e.g., only blond women and dark-haired men). The method measures the model's ability to extrapolate the correct concept (hair color) instead of the spurious attribute (gender) on the target distribution."
+    },
+    {
+      "target": "Background bias",
+      "methodology": "Evaluated using a modified Waterbirds dataset (Waterbirds-CC) where image background (land vs. water) is completely spuriously correlated with the bird type (landbirds vs. waterbirds)."
+    },
+    {
+      "target": "Lexical bias",
+      "methodology": "Evaluated using a modified Multi-NLI dataset where the presence of negation words is completely spuriously correlated with contradiction labels in the training data, testing if the model relies on the syntactic shortcut rather than actual semantic entailment."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

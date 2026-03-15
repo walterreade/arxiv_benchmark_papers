@@ -1,0 +1,16 @@
+{
+  "filename": "2402.11253.pdf",
+  "title": "Aligning Large Language Models by On-Policy Self-Judgment",
+  "arxiv_url": "https://arxiv.org/pdf/2402.11253",
+  "bias_targets": [
+    {
+      "target": "Length bias (Verbosity bias)",
+      "methodology": "Tracking the average response length and 4-gram repetition of selected responses during the self-rejection sampling phase to evaluate whether the judge model disproportionately favors longer, more verbose responses."
+    },
+    {
+      "target": "Position bias",
+      "methodology": "Evaluating pairwise comparisons by utilizing a position-swapped judgment template and averaging the relative likelihoods of the judge tokens for each response to mitigate the model's tendency to favor a specific presentation order (e.g., always preferring the first option)."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

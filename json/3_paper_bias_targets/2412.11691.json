@@ -1,0 +1,24 @@
+{
+  "filename": "2412.11691.pdf",
+  "title": "Multilingual and Explainable Text Detoxification with Parallel Corpora",
+  "arxiv_url": "https://arxiv.org/pdf/2412.11691",
+  "bias_targets": [
+    {
+      "target": "General Toxicity and Hate Speech",
+      "methodology": "Evaluating text detoxification approaches (including unsupervised baselines, supervised models like mBART, and LLM-based Chain-of-Thought) using Style Transfer Accuracy (STA), Content Similarity (SIM), and Fluency (ChrF1) metrics on multilingual parallel corpora."
+    },
+    {
+      "target": "Gender and Racial bias",
+      "methodology": "Using GPT-4 to extract descriptive features and perform K-means clustering on text encodings to identify and detoxify condescending, derogatory, and stereotypically biased language (specifically grouped as 'Cluster 1')."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Conducting cross-lingual toxic keyword analysis to identify homophobic insults and derogatory comparisons (particularly prevalent in the Ukrainian, Russian, and Chinese datasets) and evaluating the models' ability to rephrase them."
+    },
+    {
+      "target": "Nationality and Refugee bias",
+      "methodology": "Analyzing culturally specific expressions of toxicity, specifically hate speech and derogatory wordplay targeting temporarily displaced individuals and asylum seekers in the German dataset, to guide localized detoxification strategies."
+    }
+  ],
+  "primary_bias_target": "General Toxicity and Hate Speech"
+}

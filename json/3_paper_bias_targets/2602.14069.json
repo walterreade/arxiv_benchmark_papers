@@ -1,0 +1,20 @@
+{
+  "filename": "2602.14069.pdf",
+  "title": "Open Rubric System: Scaling Reinforcement Learning with Pairwise Adaptive Rubric",
+  "arxiv_url": "https://arxiv.org/pdf/2602.14069",
+  "bias_targets": [
+    {
+      "target": "Position bias",
+      "methodology": "Evaluated using the JudgeBench benchmark and mitigated by conducting bidirectional pairwise comparisons (swapping the presentation order of candidate responses) to check for consistency."
+    },
+    {
+      "target": "Verbosity bias",
+      "methodology": "Evaluated using RM-Bench and JudgeBench to test whether the reward model/judge is robust to style and length differences, ensuring it does not superficially favor longer, more verbose responses over substantively better short ones."
+    },
+    {
+      "target": "Self-preference bias",
+      "methodology": "Evaluated using the JudgeBench benchmark to assess whether the LLM judge improperly favors responses that it generated itself."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

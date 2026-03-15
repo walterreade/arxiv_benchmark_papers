@@ -1,0 +1,20 @@
+{
+  "filename": "2409.00113.pdf",
+  "title": "Wait, that’s not an option: LLMs Robustness with Incorrect Multiple-Choice Options",
+  "arxiv_url": "https://arxiv.org/pdf/2409.00113",
+  "bias_targets": [
+    {
+      "target": "Instruction-following bias (Sycophancy)",
+      "methodology": "Evaluating language models on multiple-choice questions where all provided options are incorrect to measure their tendency to blindly comply with instructions and select an invalid option rather than exercising reflective judgment."
+    },
+    {
+      "target": "Positional bias",
+      "methodology": "Shuffling the order of multiple-choice options and averaging model accuracy across the different orderings to account for the tendency of models to select answers based on their position rather than their content."
+    },
+    {
+      "target": "Numerical proximity bias",
+      "methodology": "Analyzing the selected incorrect options in arithmetic tasks to determine if models show a preference for answers that are numerically closer to the true correct value."
+    }
+  ],
+  "primary_bias_target": "Instruction-following bias (Sycophancy)"
+}

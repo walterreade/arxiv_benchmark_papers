@@ -1,0 +1,64 @@
+{
+  "filename": "2412.15268.pdf",
+  "title": "Enhancing LLM-based Hatred and Toxicity Detection with Meta-Toxic Knowledge Graph",
+  "arxiv_url": "https://arxiv.org/pdf/2412.15268",
+  "measurement_description": "The paper evaluated the performance of Large Language Models (LLMs) on binary classification for toxicity and hate speech detection. It specifically aimed to mitigate false positive misjudgments (caused by excessive sensitivity to sensitive topics like religion, race, and gender) and false negatives (caused by a lack of domain knowledge) by supplementing LLMs with a constructed meta-toxic knowledge graph.",
+  "religious_groups": [
+    "Christians",
+    "Muslims",
+    "Jews"
+  ],
+  "models_tested": [
+    "Qwen2.5-14B-Instruct",
+    "Llama3.1-8B-Instruct",
+    "HateBERT",
+    "BERT"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "HateXplain",
+    "ToxicSpans",
+    "IHC"
+  ],
+  "continuous_testing": false,
+  "findings": "While religion is not the main focus, the study found that LLMs often misjudge contexts involving sensitive attributes like religion due to an extreme sensitivity to certain keywords. By incorporating a meta-toxic knowledge graph that explicitly maps out implicit toxic meanings and stereotypes (e.g., extracting hate triplets linking Muslims to terrorism, or documenting the downplaying of Christian/Muslim persecution), the MetaTox method successfully guided models to better understand underlying semantics, significantly reducing the false positive rate while improving overall detection accuracy.",
+  "references": [
+    "AI@Meta. 2024. Llama 3 model card.",
+    "Dmitriy Bespalov, Sourav Bhabesh, Yi Xiang, Liutong Zhou, and Yanjun Qi. 2023. Towards building a robust toxicity predictor. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 5: Industry Track), pages 581–598, Toronto, Canada. Association for Computational Linguistics.",
+    "Tommaso Caselli, Valerio Basile, Jelena Mitrovic, and Michael Granitzer. 2021. HateBERT: Retraining BERT for abusive language detection in English. In Proceedings of the 5th Workshop on Online Abuse and Harms (WOAH 2021), pages 17–25, Online. Association for Computational Linguistics.",
+    "Ying Chen, Yilu Zhou, Sencun Zhu, and Heng Xu. 2012. Detecting offensive language in social media to protect adolescent online safety. In 2012 international conference on privacy, security, risk and trust and 2012 international confernece on social computing, pages 71–80. IEEE.",
+    "Tianzhe Chu, Yuexiang Zhai, Jihan Yang, Shengbang Tong, Saining Xie, Dale Schuurmans, Quoc V. Le, Sergey Levine, and Yi Ma. 2025. Sft memorizes, rl generalizes: A comparative study of foundation model post-training. Preprint, arXiv:2501.17161.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 4171–4186, Minneapolis, Minnesota. Association for Computational Linguistics.",
+    "Nemanja Djuric, Jing Zhou, Robin Morris, Mihajlo Grbovic, Vladan Radosavljevic, and Narayan Bhamidipati. 2015. Hate speech detection with comment embeddings. In Proceedings of the 24th international conference on world wide web, pages 29–30.",
+    "Matthijs Douze, Alexandr Guzhva, Chengqi Deng, Jeff Johnson, Gergely Szilvasy, Pierre-Emmanuel Mazaré, Maria Lomeli, Lucas Hosseini, and Hervé Jégou. 2024. The faiss library.",
+    "Ashwin Geet D’Sa, Irina Illina, and Dominique Fohr. 2020. Bert and fasttext embeddings for automatic detection of toxic speech. In 2020 International Multi-Conference on: “Organization of Knowledge and Advanced Technologies” (OCTA), pages 1–5.",
+    "Darren Edge, Ha Trinh, Newman Cheng, Joshua Bradley, Alex Chao, Apurva Mody, Steven Truitt, and Jonathan Larson. 2024. From local to global: A graph rag approach to query-focused summarization. arXiv preprint arXiv:2404.16130.",
+    "Mai ElSherief, Caleb Ziems, David Muchlinski, Vaishnavi Anupindi, Jordyn Seybolt, Munmun De Choudhury, and Diyi Yang. 2021. Latent hatred: A benchmark for understanding implicit hate speech. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 345–363, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics.",
+    "Njagi Dennis Gitari, Zhang Zuping, Hanyurwimfura Damien, and Jun Long. 2015. A lexicon-based approach for hate speech detection. International Journal of Multimedia and Ubiquitous Engineering, 10(4):215–230.",
+    "Dan Hendrycks, Collin Burns, Steven Basart, Andy Zou, Mantas Mazeika, Dawn Song, and Jacob Steinhardt. 2021. Measuring massive multitask language understanding. Proceedings of the International Conference on Learning Representations (ICLR).",
+    "Nayeon Lee, Chani Jung, Junho Myung, Jiho Jin, Jose Camacho-Collados, Juho Kim, and Alice Oh. 2024. Exploring cross-cultural differences in English hate speech annotations: From dataset construction to analysis. In Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 4205–4224, Mexico City, Mexico. Association for Computational Linguistics.",
+    "Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich Küttler, Mike Lewis, Wen-tau Yih, Tim Rocktäschel, Sebastian Riedel, and Douwe Kiela. 2020. Retrieval-augmented generation for knowledge-intensive nlp tasks. In Proceedings of the 34th International Conference on Neural Information Processing Systems, NIPS ’20, Red Hook, NY, USA. Curran Associates Inc.",
+    "Shuhua Liu and Thomas Forss. 2015. New classification models for detecting hate and violence web content. In 2015 7th international joint conference on knowledge discovery, knowledge engineering and knowledge management (IC3K), volume 1, pages 487–495. IEEE.",
+    "Son T Luu and Ngan Luu-Thuy Nguyen. 2021. Uit-isenlp at semeval-2021 task 5: Toxic spans detection with bilstm-crf and toxicbert comment classification. arXiv preprint arXiv:2104.10100.",
+    "Binny Mathew, Punyajoy Saha, Seid Muhie Yimam, Chris Biemann, Pawan Goyal, and Animesh Mukherjee. 2021. Hatexplain: A benchmark dataset for explainable hate speech detection. In Proceedings of the AAAI conference on artificial intelligence, volume 35, pages 14867–14875.",
+    "John Morris, Eli Lifland, Jin Yong Yoo, Jake Grigsby, Di Jin, and Yanjun Qi. 2020. TextAttack: A framework for adversarial attacks, data augmentation, and adversarial training in NLP. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing: System Demonstrations, pages 119–126, Online. Association for Computational Linguistics.",
+    "Ji Ho Park and Pascale Fung. 2017. One-step and twostep classification for abusive language detection on twitter. arXiv preprint arXiv:1706.01206.",
+    "John Pavlopoulos, Jeffrey Sorensen, Léo Laugier, and Ion Androutsopoulos. 2021. Semeval-2021 task 5: Toxic spans detection. In Proceedings of the 15th international workshop on semantic evaluation (SemEval-2021), pages 59–69.",
+    "Qwen Team. 2024. Qwen2.5: A party of foundation models.",
+    "Robert Mark Simpson. 2013. Dignity, harm, and hate speech. Law and Philosophy, 32(6):701–728.",
+    "Robert Mark Simpson. 2019. ‘won’t somebody please think of the children?’hate speech, harm, and childhood. Law and Philosophy, 38(1):79–108.",
+    "William Warner and Julia Hirschberg. 2012. Detecting hate speech on the world wide web. In Proceedings of the second workshop on language in social media, pages 19–26.",
+    "Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed H. Chi, Quoc V. Le, and Denny Zhou. 2024. Chain-of-thought prompting elicits reasoning in large language models. In Proceedings of the 36th International Conference on Neural Information Processing Systems, NIPS ’22, Red Hook, NY, USA. Curran Associates Inc.",
+    "Yongjin Yang, Joonkee Kim, Yujin Kim, Namgyu Ho, James Thorne, and Se-Young Yun. 2023. HARE: Explainable hate speech detection with step-by-step reasoning. In Findings of the Association for Computational Linguistics: EMNLP 2023, pages 5490–5505, Singapore. Association for Computational Linguistics.",
+    "Shunyu Yao, Dian Yu, Jeffrey Zhao, Izhak Shafran, Thomas L. Griffiths, Yuan Cao, and Karthik Narasimhan. 2024. Tree of thoughts: deliberate problem solving with large language models. In Proceedings of the 37th International Conference on Neural Information Processing Systems, NIPS ’23, Red Hook, NY, USA. Curran Associates Inc.",
+    "Eric Zelikman, Yuhuai Wu, Jesse Mu, and Noah Goodman. 2022. Star: Bootstrapping reasoning with reasoning. In Advances in Neural Information Processing Systems, volume 35, pages 15476–15488. Curran Associates, Inc.",
+    "Jiang Zhang, Qiong Wu, Yiming Xu, Cheng Cao, Zheng Du, and Konstantinos Psounis. 2024a. Efficient toxic content detection by bootstrapping and distilling large language models. Proceedings of the AAAI Conference on Artificial Intelligence, 38(19):21779–21787.",
+    "Min Zhang, Jianfeng He, Taoran Ji, and Chang-Tien Lu. 2024b. Don’t go to extremes: Revealing the excessive sensitivity and calibration limitations of LLMs in implicit hate speech detection. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 12073–12086, Bangkok, Thailand. Association for Computational Linguistics."
+  ]
+}

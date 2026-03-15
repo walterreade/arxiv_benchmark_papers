@@ -1,0 +1,44 @@
+{
+  "filename": "2308.02080.pdf",
+  "title": "Causality Guided Disentanglement for Cross-Platform Hate Speech Detection",
+  "arxiv_url": "https://arxiv.org/pdf/2308.02080",
+  "bias_targets": [
+    {
+      "target": "Platform bias",
+      "methodology": "Evaluating model generalization across distribution shifts by training on one source platform's dataset (Gab, Reddit, Twitter, or YouTube) and testing on unseen target platforms using macro-F1 scores."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Modeling race as a discrete platform-dependent target variable in a Variational Autoencoder (VAE) disentanglement framework to prevent spurious correlations with platform-specific racial identity words."
+    },
+    {
+      "target": "Religious bias",
+      "methodology": "Modeling religion as a discrete target variable in a causal disentanglement framework to isolate religious identity representations from invariant hate speech features."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Modeling gender as a discrete target variable in a VAE disentanglement framework to separate gender identity representations from platform-independent causal hate features."
+    },
+    {
+      "target": "Sexual orientation bias",
+      "methodology": "Modeling sexual preference as a discrete target variable to decouple sexual orientation identity terms from generalized hate speech predictions."
+    },
+    {
+      "target": "Nationality bias",
+      "methodology": "Including nationality in the discrete latent variable for platform-dependent features to prevent over-reliance on national identity words during hate speech detection."
+    },
+    {
+      "target": "Immigration status bias",
+      "methodology": "Including immigration status as a target class in the disentanglement module to separate immigration-related identity representations from invariant causal hate features."
+    },
+    {
+      "target": "Disability bias",
+      "methodology": "Categorizing ableness/disability as a discrete platform-dependent target variable to prevent the model from forming biases against disability-related identity terms."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Categorizing class as a discrete platform-dependent target variable in the VAE disentanglement module to separate socioeconomic identity features from the invariant hate speech representation."
+    }
+  ],
+  "primary_bias_target": "Platform bias"
+}

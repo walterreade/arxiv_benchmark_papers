@@ -1,0 +1,24 @@
+{
+  "filename": "2511.21722.pdf",
+  "title": "German General Social Survey Personas: A Survey-Derived Persona Prompt Collection for Population-Aligned LLM Studies",
+  "arxiv_url": "https://arxiv.org/pdf/2511.21722",
+  "bias_targets": [
+    {
+      "target": "Demographic bias",
+      "methodology": "Calculating the Jensen-Shannon Distance (JSD) between LLM-generated survey responses (prompted with a representative set of socio-demographic personas) and actual empirical response distributions from the German General Social Survey (ALLBUS) to evaluate population alignment."
+    },
+    {
+      "target": "Socioeconomic bias",
+      "methodology": "Evaluating model alignment by systematically prompting the LLM with an unrepresentative persona collection that oversamples individuals from the highest income class and comparing the resulting response distributions to the representative baseline."
+    },
+    {
+      "target": "Political bias",
+      "methodology": "Evaluating model alignment by systematically prompting the LLM with an unrepresentative persona collection that oversamples conservative-leaning individuals and comparing the resulting response distributions to the representative baseline."
+    },
+    {
+      "target": "Age and Occupational bias",
+      "methodology": "Simulating a typical convenience sample by systematically prompting the LLM with an unrepresentative persona collection consisting entirely of students to measure the divergence from the general population's survey responses."
+    }
+  ],
+  "primary_bias_target": "Demographic bias"
+}

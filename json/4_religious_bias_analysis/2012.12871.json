@@ -1,0 +1,76 @@
+{
+  "filename": "2012.12871.pdf",
+  "title": "A Multimodal Framework for the Detection of Hateful Memes",
+  "arxiv_url": "https://arxiv.org/pdf/2012.12871",
+  "measurement_description": "The paper evaluated the performance of multimodal models on detecting hateful memes, which includes recognizing hate speech targeting specific communities based on religion. It specifically analyzed the models' misclassifications regarding targeted religious groups (such as Muslims) and tested if providing models with fine-grained object tags related to religion (e.g., 'Muslimah', 'monk', 'rabbi') or auxiliary target group identification tasks could improve the detection of hateful content.",
+  "religious_groups": [
+    "Islam",
+    "Christianity",
+    "Judaism"
+  ],
+  "models_tested": [
+    "LXMERT",
+    "UNITER",
+    "Oscar",
+    "ViLBERT",
+    "VisualBERT",
+    "RoBERTa",
+    "BERT",
+    "YOLO9000",
+    "Faster R-CNN"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Hateful Memes Challenge",
+    "Social Bias Inference Corpus (SBIC)",
+    "GoEmotions"
+  ],
+  "continuous_testing": false,
+  "findings": "The models were found to struggle with reasoning about specific target demographics, generating false negatives on multimodal memes targeting religious groups such as Muslims. Attempts to supplement the UNITER model with auxiliary fine-grained object tags (like 'Muslimah', 'monk', 'rabbi') via YOLO9000 or multi-task learning for target group prediction (using SBIC) failed to improve performance and occasionally added noise to the model.",
+  "references": [
+    "Stanislaw Antol, Aishwarya Agrawal, Jiasen Lu, Margaret Mitchell, Dhruv Batra, C Lawrence Zitnick, and Devi Parikh. 2015. Vqa: Visual question answering. In Proceedings of the IEEE international conference on computer vision, pages 2425–2433.",
+    "Prithvi Bhattacharya. 2019. Social degeneration through social media: A study of the adverse impact of ‘memes’. In 2019 Sixth HCT Information Technology Trends (ITT), pages 44–46.",
+    "Yen-Chun Chen, Linjie Li, Licheng Yu, Ahmed El Kholy, Faisal Ahmed, Zhe Gan, Yu Cheng, and Jingjing Liu. 2020. Uniter: Universal image-text representation learning. In European Conference on Computer Vision, pages 104–120. Springer.",
+    "Dorottya Demszky, Dana Movshovitz-Attias, Jeongwoo Ko, Alan Cowen, Gaurav Nemade, and Sujith Ravi. 2020. GoEmotions: A dataset of fine-grained emotions. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 4040–4054, Online. Association for Computational Linguistics.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2018. Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805.",
+    "Jessica Drakett, Bridgette Rickett, Katy Day, and Kate Milnes. 2018. Old jokes, new media– online sexism and constructions of gender in internet memes. Feminism & Psychology, 28(1):109–127.",
+    "Maeve Duggan. 2017. Men, women experience and view online harassment differently. Pew Research Center.",
+    "A. E. Eiben and James E. Smith. 2015. Introduction to Evolutionary Computing, 2nd edition. Springer Publishing Company, Incorporated.",
+    "Raul Gomez, Jaume Gibert, Lluis Gomez, and Dimosthenis Karatzas. 2020. Exploring hate speech detection in multimodal publications. In The IEEE Winter Conference on Applications of Computer Vision, pages 1470–1478.",
+    "Yash Goyal, Tejas Khot, Douglas Summers-Stay, Dhruv Batra, and D. Parikh. 2017. Making the v in vqa matter: Elevating the role of image understanding in visual question answering. 2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pages 6325–6334.",
+    "Homa Hosseinmardi, Sabrina Arredondo Mattson, Rahat Ibn Rafiq, Richard Han, Qin Lv, and Shivakant Mishra. 2015. Detection of cyberbullying incidents on the instagram social network. arXiv preprint arXiv:1503.03909.",
+    "Drew A Hudson and Christopher D Manning. 2019. Gqa: A new dataset for real-world visual reasoning and compositional question answering. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 6700–6709.",
+    "Justin Johnson, Ranjay Krishna, Michael Stark, Li-Jia Li, David Shamma, Michael Bernstein, and Li Fei-Fei. 2015. Image retrieval using scene graphs. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR).",
+    "Douwe Kiela, Suvrat Bhooshan, Hamed Firooz, and Davide Testuggine. 2019. Supervised multimodal bitransformers for classifying images and text. arXiv preprint arXiv:1909.02950.",
+    "Douwe Kiela, Hamed Firooz, Aravind Mohan, Vedanuj Goswami, Amanpreet Singh, Pratik Ringshia, and Davide Testuggine. 2020. The hateful memes challenge: Detecting hate speech in multimodal memes. arXiv preprint arXiv:2005.04790.",
+    "Diederik P Kingma and Jimmy Ba. 2014. Adam: A method for stochastic optimization. arXiv preprint arXiv:1412.6980.",
+    "Ranjay Krishna, Yuke Zhu, Oliver Groth, Justin Johnson, Kenji Hata, Joshua Kravitz, Stephanie Chen, Yannis Kalantidis, Li-Jia Li, David A Shamma, et al. 2017. Visual genome: Connecting language and vision using crowdsourced dense image annotations. International journal of computer vision, 123(1):32–73.",
+    "Zachary Laub. 2019. Hate speech on social media: Global comparisons. https://www.cfr.org/backgrounder/hate-speech-social-media-global-comparisons.",
+    "Liunian Harold Li, Mark Yatskar, Da Yin, Cho-Jui Hsieh, and Kai-Wei Chang. 2019. Visualbert: A simple and performant baseline for vision and language. arXiv preprint arXiv:1908.03557.",
+    "Xiujun Li, Xi Yin, C. Li, X. Hu, Pengchuan Zhang, Lei Zhang, Longguang Wang, H. Hu, Li Dong, Furu Wei, Yejin Choi, and Jianfeng Gao. 2020. Oscar: Object-semantics aligned pre-training for vision-language tasks. In ECCV.",
+    "Tsung-Yi Lin, Michael Maire, Serge Belongie, James Hays, Pietro Perona, Deva Ramanan, Piotr Dollár, and C Lawrence Zitnick. 2014. Microsoft coco: Common objects in context. In European conference on computer vision, pages 740–755. Springer.",
+    "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. 2019. Roberta: A robustly optimized bert pretraining approach. arXiv preprint arXiv:1907.11692.",
+    "Jiasen Lu, Dhruv Batra, Devi Parikh, and Stefan Lee. 2019. Vilbert: Pretraining task-agnostic visiolinguistic representations for vision-and-language tasks. In Advances in Neural Information Processing Systems, pages 13–23.",
+    "B. Miller and D. Goldberg. 1995. Genetic algorithms, tournament selection, and the effects of noise. Complex Syst., 9.",
+    "Pushkar Mishra, Helen Yannakoudakis, and Ekaterina Shutova. 2019. Tackling online abuse: A survey of automated abuse detection methods. arXiv preprint arXiv:1908.06024.",
+    "Vicente Ordonez, G. Kulkarni, and T. Berg. 2011. Im2text: Describing images using 1 million captioned photographs. In NIPS.",
+    "Santhosh Rajamanickam, Pushkar Mishra, Helen Yannakoudakis, and Ekaterina Shutova. 2020. Joint modelling of emotion and abusive language detection. arXiv preprint arXiv:2005.14028.",
+    "Joseph Redmon and Ali Farhadi. 2017. YOLO9000: Better, Faster, Stronger. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 7263–7271.",
+    "Shaoqing Ren, Kaiming He, Ross Girshick, and Jian Sun. 2015. Faster r-cnn: Towards real-time object detection with region proposal networks. In Advances in neural information processing systems, pages 91–99.",
+    "Maarten Sap, Saadia Gabriel, Lianhui Qin, Dan Jurafsky, Noah A. Smith, and Yejin Choi. 2020. Social bias frames: Reasoning about social and power implications of language. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5477–5490, Online. Association for Computational Linguistics.",
+    "Piyush Sharma, Nan Ding, Sebastian Goodman, and Radu Soricut. 2018. Conceptual captions: A cleaned, hypernymed, image alt-text dataset for automatic image captioning. In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 2556–2565.",
+    "Amanpreet Singh, Vedanuj Goswami, Vivek Natarajan, Yu Jiang, Xinlei Chen, Meet Shah, Marcus Rohrbach, Dhruv Batra, and Devi Parikh. 2020. Mmf: A multimodal framework for vision and language research. https://github.com/facebookresearch/mmf.",
+    "Alane Suhr, Stephanie Zhou, Ally Zhang, Iris Zhang, Huajun Bai, and Yoav Artzi. 2018. A corpus for reasoning about natural language grounded in photographs. arXiv preprint arXiv:1811.00491.",
+    "Hao Tan and Mohit Bansal. 2019. Lxmert: Learning cross-modality encoder representations from transformers. arXiv preprint arXiv:1908.07490.",
+    "Amanda Williams, Clio Oliver, Katherine Aumer, and Chanel Meyers. 2016. Racial microaggressions and perceptions of internet memes. Computers in Human Behavior, 63:424 – 432.",
+    "Peter Young, Alice Lai, Micah Hodosh, and Julia Hockenmaier. 2014. From image descriptions to visual denotations: New similarity metrics for semantic inference over event descriptions. Transactions of the Association for Computational Linguistics, 2:67–78.",
+    "Fei Yu, Jiji Tang, Weichong Yin, Yu Sun, Hao Tian, Hua Wu, and Haifeng Wang. 2020. ERNIE-ViL: Knowledge enhanced vision-language representations through scene graph. arXiv preprint arXiv:2006.16934.",
+    "Yuke Zhu, O. Groth, Michael S. Bernstein, and Li Fei-Fei. 2016. Visual7w: Grounded question answering in images. 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pages 4995–5004."
+  ]
+}

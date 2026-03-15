@@ -1,0 +1,71 @@
+{
+  "filename": "2506.10047.pdf",
+  "title": "GenBreak: Red Teaming Text-to-Image Generators Using Large Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2506.10047",
+  "measurement_description": "The paper measures the ability of a red-teaming framework (using Large Language Models) to bypass safety filters in Text-to-Image (T2I) models and generate toxic content. As a subset of evaluating the 'hate' category, the paper measures the generation of hateful religious stereotypes, specifically targeting Jewish and Muslim groups (e.g., antisemitic and Islamophobic imagery).",
+  "religious_groups": [
+    "Judaism",
+    "Islam"
+  ],
+  "models_tested": [
+    "Llama-3.2-1B-Instruct",
+    "Llama-3.1-8B-Lexi-Uncensored-V2",
+    "Gemini 2.0 Flash",
+    "GPT-2",
+    "Stable Diffusion 2.1",
+    "Stable Diffusion 3 Medium",
+    "FLUX.1 [dev]",
+    "FLUX.1 [schnell]",
+    "Stable Image Core"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long",
+    "other"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "The study found that the GenBreak framework successfully generated adversarial prompts that bypassed safety filters to produce highly toxic and hateful images. Among its successful red-teaming attacks in the 'hate' category, the framework explicitly generated prompts resulting in antisemitic caricatures and Islamophobic content, demonstrating the vulnerability of both open-source and commercial T2I models to targeted religious hate generation.",
+  "references": [
+    "Stable diffusion safety checker. URL https://huggingface.co/CompVis/stable-diffusion-safety-checker.",
+    "Flux.1. URL https://bfl.ai/announcements/24-08-01-bfl.",
+    "Official website of fal.ai. URL https://fal.ai/.",
+    "Gemini 2.0 flash. URL https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-0-flash.",
+    "Leonardo.ai official website. URL https://leonardo.ai/.",
+    "Llama-3.1-8b-lexi-uncensored-v2. URL https://huggingface.co/Orenguteng/Llama-3.1-8B-Lexi-Uncensored-V2.",
+    "Nsfw text detector. URL https://huggingface.co/eliasalbouzidi/distilbert-nsfw-text-classifier.",
+    "Nudenet. URL https://github.com/notAI-tech/NudeNet.",
+    "Stable diffusion 2.1. URL https://huggingface.co/stabilityai/stable-diffusion-2-1.",
+    "Stable diffusion 3 medium. URL https://huggingface.co/stabilityai/stable-diffusion-3-medium.",
+    "Stability ai official website. URL https://stability.ai/.",
+    "Yimo Deng and Huangxun Chen. Divide-and-conquer attack: Harnessing the power of llm to bypass safety filters of text-to-image models. arXiv preprint arXiv:2312.07130, 2023.",
+    "Yingkai Dong, Zheng Li, Xiangtao Meng, Ning Yu, and Shanqing Guo. Jailbreaking text-to-image models with llm-based agents. arXiv preprint arXiv:2408.00523, 2024.",
+    "Stephanie Fu, Netanel Tamir, Shobhita Sundaram, Lucy Chai, Richard Zhang, Tali Dekel, and Phillip Isola. Dreamsim: Learning new dimensions of human visual similarity using synthetic data. In Advances in Neural Information Processing Systems, volume 36, pages 50742–50768, 2023.",
+    "Lukas Helff, Felix Friedrich, Manuel Brack, Patrick Schramowski, and Kristian Kersting. Llavaguard: Vlm-based safeguard for vision dataset curation and safety assessment. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops, pages 8322–8326, 2024.",
+    "Zhang-Wei Hong, Idan Shenfeld, Tsun-Hsuan Wang, Yung-Sung Chuang, Aldo Pareja, James R. Glass, Akash Srivastava, and Pulkit Agrawal. Curiosity-driven red-teaming for large language models. In The Twelfth International Conference on Learning Representations, 2024. URL https://openreview.net/forum?id=4KqkizXgXU.",
+    "Edward J Hu, yelong shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, and Weizhu Chen. LoRA: Low-rank adaptation of large language models. In International Conference on Learning Representations, 2022. URL https://openreview.net/forum?id=nZeVKeeFYf9.",
+    "Yihao Huang, Le Liang, Tianlin Li, Xiaojun Jia, Run Wang, Weikai Miao, Geguang Pu, and Yang Liu. Perception-guided jailbreak against text-to-image models. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 39, pages 26238–26247, 2025.",
+    "Zhengyuan Jiang, Yuepeng Hu, Yuchen Yang, Yinzhi Cao, and Neil Zhenqiang Gong. Jailbreaking safeguarded text-to-image models via large language models. arXiv preprint arXiv:2503.01839, 2025.",
+    "Guanlin Li, Kangjie Chen, Shudong Zhang, Jie Zhang, and Tianwei Zhang. Art: Automatic red-teaming for text-to-image models to protect benign users. arXiv preprint arXiv:2405.19360, 2024.",
+    "Yi Liu, Chengjun Cai, Xiaoli Zhang, Xingliang Yuan, and Cong Wang. Arondight: Red teaming large vision language models with auto-generated multi-modal jailbreak prompts. In Proceedings of the 32nd ACM International Conference on Multimedia, pages 3578–3586, 2024.",
+    "Varvara Logacheva, Daryna Dementieva, Sergey Ustyantsev, Daniil Moskovskiy, David Dale, Irina Vladimirovna Krotova, Nikita Semenov, and Alexander Panchenko. Paradetox: Detoxification with parallel data. In Annual Meeting of the Association for Computational Linguistics, 2022.",
+    "Ninareh Mehrabi, Palash Goyal, Christophe Dupuy, Qian Hu, Shalini Ghosh, Richard Zemel, Kai-Wei Chang, Aram Galstyan, and Rahul Gupta. FLIRT: Feedback loop in-context red teaming. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 703–718, November 2024.",
+    "Meta AI. Llama 3.2: Revolutionizing edge AI and vision with open, customizable models, 2024. URL https://ai.meta.com/blog/llama-3-2-connect-2024-vision-edge-mobile-devices/.",
+    "Ethan Perez, Saffron Huang, Francis Song, Trevor Cai, Roman Ring, John Aslanides, Amelia Glaese, Nat McAleese, and Geoffrey Irving. Red teaming language models with language models. In Conference on Empirical Methods in Natural Language Processing, 2022.",
+    "Yiting Qu, Xinyue Shen, Xinlei He, Michael Backes, Savvas Zannettou, and Yang Zhang. Unsafe diffusion: On the generation of unsafe images and hateful memes from text-to-image models. In Proceedings of the 2023 ACM SIGSAC conference on computer and communications security, pages 3403–3417, 2023.",
+    "Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, Ilya Sutskever, et al. Language models are unsupervised multitask learners. OpenAI blog, 1(8):9, 2019.",
+    "Javier Rando, Daniel Paleka, David Lindner, Lennart Heim, and Florian Tramèr. Red-teaming the stable diffusion safety filter. arXiv preprint arXiv:2210.04610, 2022.",
+    "Nils Reimers and Iryna Gurevych. Sentence-bert: Sentence embeddings using siamese bert-networks. In Conference on Empirical Methods in Natural Language Processing, 2019. URL https://api.semanticscholar.org/CorpusID:201646309.",
+    "Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, and Björn Ommer. High-resolution image synthesis with latent diffusion models. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, pages 10684–10695, 2022.",
+    "Patrick Schramowski, Manuel Brack, Björn Deiseroth, and Kristian Kersting. Safe latent diffusion: Mitigating inappropriate degeneration in diffusion models. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 22522–22531, 2023.",
+    "Zhihong Shao, Peiyi Wang, Qihao Zhu, Runxin Xu, Junxiao Song, Xiao Bi, Haowei Zhang, Mingchuan Zhang, YK Li, Y Wu, et al. Deepseekmath: Pushing the limits of mathematical reasoning in open language models. arXiv preprint arXiv:2402.03300, 2024.",
+    "Yu-Lin Tsai, Chia-Yi Hsu, Chulin Xie, Chih-Hsun Lin, Jia You Chen, Bo Li, Pin-Yu Chen, Chia-Mu Yu, and Chun-Ying Huang. Ring-a-bell! how reliable are concept removal methods for diffusion models? In The Twelfth International Conference on Learning Representations, 2024. URL https://openreview.net/forum?id=lm7MRcsFiS.",
+    "Yijun Yang, Ruiyuan Gao, Xiaosen Wang, Tsung-Yi Ho, Nan Xu, and Qiang Xu. Mma-diffusion: Multimodal attack on diffusion models. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 7737–7746, 2024.",
+    "Yuchen Yang, Bo Hui, Haolin Yuan, Neil Gong, and Yinzhi Cao. Sneakyprompt: Jailbreaking text-to-image generative models. In 2024 IEEE symposium on security and privacy (SP), pages 897–912. IEEE, 2024.",
+    "Xiaopei Zhu, Peiyang Xu, Guanning Zeng, Yinpeng Dong, and Xiaolin Hu. Natural language induced adversarial images. In Proceedings of the 32nd ACM International Conference on Multimedia, pages 10872–10881, 2024.",
+    "Yaoming Zhu, Sidi Lu, Lei Zheng, Jiaxian Guo, Weinan Zhang, Jun Wang, and Yong Yu. Texygen: A benchmarking platform for text generation models. In The 41st international ACM SIGIR conference on research & development in information retrieval, pages 1097–1100, 2018."
+  ]
+}

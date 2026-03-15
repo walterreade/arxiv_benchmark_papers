@@ -1,0 +1,56 @@
+{
+  "filename": "2510.02535.pdf",
+  "title": "PHORECAST: Enabling AI Understanding of Public Health Outreach Across Populations",
+  "arxiv_url": "https://arxiv.org/pdf/2510.02535",
+  "measurement_description": "The paper evaluated the ability of Vision-Language Models (VLMs) to simulate and predict nuanced human responses (Likert scale opinions and free-form text) to public health messaging across diverse demographic subgroups. Specifically, religion was used as a key demographic factor to measure the models' predictive accuracy and the semantic text similarity between machine-generated responses and actual human responses across different religious affiliations.",
+  "religious_groups": [
+    "Christianity",
+    "Islam",
+    "Judaism",
+    "Buddhism",
+    "Hinduism",
+    "Agnostic",
+    "None"
+  ],
+  "models_tested": [
+    "Llama 3.2-Vision 11B",
+    "Gemma 3 12B"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "TriviaQA",
+    "ToxiGen",
+    "HellaSwag",
+    "MMLU"
+  ],
+  "continuous_testing": false,
+  "findings": "After fine-tuning on the PHORECAST dataset, models demonstrated improved accuracy and semantic similarity when emulating the responses of certain religious groups, most notably Muslims (response similarity for Islam increased by 0.12 for both models). However, disparities persisted and sometimes worsened for heavily underrepresented religious groups in the dataset, such as Agnostics and Hindus, where predictive accuracy decreased post-training (e.g., Gemma's accuracy for Agnostics dropped by 29.17%, and Llama's for Hindus dropped by 10.41%).",
+  "references": [
+    "Bisola Oluwafadekemi Adegoke, Tolulope Odugbose, and Christiana Adeyemi. Harnessing big data for tailored health communication: A systematic review of impact and techniques. International Journal of Biology and Pharmacy Research Updates, 03(02):001–010, 2024. doi: 10.53430/ijbpru.2024.3.2.0024. URL https://doi.org/10.53430/ijbpru.2024.3.2.0024.",
+    "Shervin Assari, Mehri Farokhnia, and Roshan Mistry. Education attainment and alcohol binge drinking: Diminished returns of hispanics in los angeles. Behav Sci (Basel), 9(1), 2019. doi: 10.3390/bs9010009.",
+    "T. L. Conway and Others. Personality, health locus of control, and health behavior. Technical report, Ed.gov, 2025. ERIC Document ED353503.",
+    "Michael Han Daniel Han and Unsloth team. Unsloth, 2023. URL http://github.com/unslothai/unsloth.",
+    "Daniela Ghio, Sadie Lawes-Wickwar, Mei Yee Tang, Tracy Epton, Neil Howlett, Elizabeth Jenkinson, Sabina Stanescu, Juliette Westbrook, Angelos P Kassianos, Daniella Watson, Lisa Sutherland, Natalia Stanulewicz, Ella Guest, Daniel Scanlan, Natalie Carr, Angel Chater, Sarah Hotham, Rachael Thorneloe, Christopher J. Armitage, Madelynne Arden, Jo Hart, Lucie Byrne-Davis, and Christopher Keyworth. What influences people’s responses to public health messages for managing risks and preventing infectious diseases? a rapid systematic review of the evidence and recommendations. BMJ Open, 11(11), 2021. ISSN 2044-6055. doi: 10.1136/bmjopen-2021-048750. URL https://bmjopen.bmj.com/content/11/11/e048750.",
+    "Edward J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, and Weizhu Chen. Lora: Low-rank adaptation of large language models, 2021. URL https://arxiv.org/abs/2106.09685.",
+    "Oliver P John, Eileen M Donahue, and Robert L Kentle. Big five inventory. Journal of personality and social psychology, 1991.",
+    "Brent A. Langellier. An agent-based simulation of persistent inequalities in health behavior: Understanding the interdependent roles of segregation, clustering, and social influence. SSM - Population Health, 2:757–769, 2016. ISSN 2352-8273. doi: https://doi.org/10.1016/j.ssmph.2016.10.006. URL https://www.sciencedirect.com/science/article/pii/S2352827316301112.",
+    "Kun Li, Chenwei Dai, Wei Zhou, and Songlin Hu. Fine-grained behavior simulation with role-playing large language model on social media. arXiv preprint arXiv:2412.03148, 2024.",
+    "Yuxuan Lu, Jing Huang, Yan Han, Bennet Bei, Yaochen Xie, Dakuo Wang, Jessie Wang, and Qi He. Llm agents that act like us: Accurate human behavior simulation with real-world data, 2025. URL https://arxiv.org/abs/2503.20749.",
+    "Emma McClaughlin, Sara Vilar-Lluch, Tamsin Parnell, Dawn Knight, Elena Nichele, Svenja Adolphs, Jérémie Clos, and Giovanni Schiazza. The reception of public health messages during the covid-19 pandemic. Applied Corpus Linguistics, 3(1):100037, 2023. ISSN 2666-7991. doi: https://doi.org/10.1016/j.acorp.2022.100037. URL https://www.sciencedirect.com/science/article/pii/S2666799122000211.",
+    "Joon Sung Park, Joseph C. O’Brien, Carrie J. Cai, Meredith Ringel Morris, Percy Liang, and Michael S. Bernstein. Generative agents: Interactive simulacra of human behavior. In In the 36th Annual ACM Symposium on User Interface Software and Technology (UIST ’23), UIST ’23, New York, NY, USA, 2023. Association for Computing Machinery.",
+    "Zhongyi Qiu, Hanjia Lyu, Wei Xiong, and Jiebo Luo. Can llms simulate social media engagement? a study on action-guided response generation. arXiv preprint arXiv:2502.12073, 2025.",
+    "Mahnaz Shojaee and Christopher French. The relationship between mental health components and locus of control in youth. Psychology, 5(8):966–978, 2014. doi: 10.4236/psych.2014.58107. URL https://doi.org/10.4236/psych.2014.58107.",
+    "Xiaoyang Song, Yuta Adachi, Jessie Feng, Mouwei Lin, Linhao Yu, Frank Li, Akshat Gupta, Gopala Anumanchipalli, and Simerjot Kaur. Identifying multiple personalities in large language models with external evaluation, 2024. URL https://arxiv.org/abs/2402.14805.",
+    "Christopher J. Soto and Oliver P. John. The next big five inventory (bfi-2): Developing and assessing a hierarchical model with 15 facets to enhance bandwidth, fidelity, and predictive power. Journal of Personality and Social Psychology, 113:117–143, 2017.",
+    "Hazel Squires, Michael P. Kelly, Nigel Gilbert, Falko Sniehotta, and Robin C. Purshouse. The long-term effectiveness and cost-effectiveness of public health interventions; how can we model behavior? a review. Health Economics, 32(12):2836–2854, 2023. doi: https://doi.org/10.1002/hec.4754. URL https://onlinelibrary.wiley.com/doi/abs/10.1002/hec.4754.",
+    "Chenghao Xiao, Isaac Chung, Imene Kerboua, Jamie Stirling, Xin Zhang, Márton Kardos, Roman Solomatin, Noura Al Moubayed, Kenneth Enevoldsen, and Niklas Muennighoff. Mieb: Massive image embedding benchmark, 2025. URL https://arxiv.org/abs/2504.10471.",
+    "Qiujie Xie, Qiming Feng, Tianqi Zhang, Qingqiu Li, Linyi Yang, Yuejie Zhang, Rui Feng, Liang He, Shang Gao, and Yue Zhang. Human simulacra: Benchmarking the personification of large language models. In The Thirteenth International Conference on Learning Representations, 2025. URL https://openreview.net/forum?id=BCP5nAHXqs."
+  ]
+}

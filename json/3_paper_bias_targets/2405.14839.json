@@ -1,0 +1,24 @@
+{
+  "filename": "2405.14839.pdf",
+  "title": "A Textbook Remedy for Domain Shifts: Knowledge Priors for Medical Image Analysis",
+  "arxiv_url": "https://arxiv.org/pdf/2405.14839",
+  "bias_targets": [
+    {
+      "target": "Gender/Sex bias",
+      "methodology": "Evaluating model robustness using confounded datasets (NIH-sex, ISIC-sex) where disease classes are spuriously correlated with patient sex during training, and measuring the performance drop on an out-of-distribution test set where the correlation is reversed."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Evaluating model robustness using confounded datasets (NIH-age, ISIC-age) where disease classes are spuriously correlated with patient age (e.g., young vs. old) during training, and measuring the performance drop on an out-of-distribution test set where the correlation is reversed."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluating model robustness using a confounded dataset (CheXpert-race) where disease classes are spuriously correlated with patient race (White, Black or African American) during training, and measuring the performance drop on an out-of-distribution test set where the correlation is reversed."
+    },
+    {
+      "target": "Skin tone bias",
+      "methodology": "Evaluating model robustness using a confounded dataset (ISIC-color) where disease classes are spuriously correlated with patient skin color (light vs. dark based on the Fitzpatrick scale) during training, and measuring the performance drop on an out-of-distribution test set where the correlation is reversed."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

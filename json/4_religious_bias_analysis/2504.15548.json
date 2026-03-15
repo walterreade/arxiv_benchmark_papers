@@ -1,0 +1,76 @@
+{
+  "filename": "2504.15548.pdf",
+  "title": "LLM-based Semantic Augmentation for Harmful Content Detection",
+  "arxiv_url": "https://arxiv.org/pdf/2504.15548",
+  "measurement_description": "The paper does not primarily focus on measuring religion, but rather evaluates LLM-based semantic data augmentation for detecting harmful content such as propaganda, toxic comments, and hateful memes. In its evaluation, it measures how LLMs process and respond to offensive religious material (specifically Islamophobic memes). It assesses the models' abilities to generate useful explanations and explicit contextual 'triggers' for hateful content targeting Muslims without triggering model safety refusals.",
+  "religious_groups": [
+    "Islam",
+    "Muslims"
+  ],
+  "models_tested": [
+    "LLaMA 3.1 70B",
+    "GPT-4o",
+    "Claude Sonnet 3.5 v2"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "SemEval 2024 Task 4 (Persuasive Memes)",
+    "Google Jigsaw Toxic Comments",
+    "Facebook Hateful Memes Challenge"
+  ],
+  "continuous_testing": false,
+  "findings": "When tasked with generating semantic augmentations for hateful memes targeting Muslims (e.g., Islamophobic content), LLMs frequently refused to process or output explanations due to internal safety safeguards censoring explicit/offensive expressions. The study found that by using a 'trigger-based' prompting strategy—forcing the LLM to extract explicit hateful themes (like 'Islamophobia') and exact quotes alongside the explanation—they could effectively bypass some censorship and retain the vital context needed to train downstream harmful-content classifiers.",
+  "references": [
+    "Bang, Y.; et al. 2023. A multitask, multilingual, multimodal evaluation of chatgpt on reasoning, hallucination, and interactivity. arXiv preprint arXiv:2302.04023.",
+    "Benjamini, Y.; and Hochberg, Y. 1995. Controlling the false discovery rate: a practical and powerful approach to multiple testing. Journal of the Royal Statistical Society: Series B (Methodological), 57(1): 289–300.",
+    "Borrohou, S.; Fissoune, R.; Badir, H.; and Tabaa, M. 2023. Data Cleaning in Machine Learning: Improving Real Life Decisions and Challenges. In International Conference on Advanced Intelligent Systems for Sustainable Development, 627–638. Springer.",
+    "Brattberg, E.; and Maurer, T. 2018. Russian election interference: Europe’s counter to fake news and cyber attacks. Carnegie Endowment for International Peace.",
+    "Da San Martino, G.; Seunghak, Y.; Barron-Cedeño, A.; Petrov, R.; and Nakov, P. 2019. Fine-grained analysis of propaganda in news articles. In EMNLP-IJCNLP, 5636–5646.",
+    "Dimitrov, D.; Alam, F.; Hasanain, M.; Hasnat, A.; Silvestri, F.; Nakov, P.; and Da San Martino, G. 2024. SemEval-2024 Task 4: Multilingual Detection of Persuasion Techniques in Memes. In Proceedings of the 18th International Workshop on Semantic Evaluation (SemEval-2024), 2009–2026. Mexico City, Mexico: Association for Computational Linguistics.",
+    "Ding, B.; Qin, C.; Liu, L.; Chia, Y. K.; Joty, S.; and Li, B. 2023. Is gpt-3 a good data annotator? arXiv preprint arXiv:2303.07845.",
+    "Edwards, A.; and Camacho-Collados, J. 2024. Language Models for Text Classification: Is In-Context Learning Enough? arXiv:2403.17661.",
+    "Feng, S. Y.; Gangal, V.; Wei, J.; Chandar, S.; Vosoughi, S.; Mitamura, T.; and Hovy, E. 2021. A Survey of Data Augmentation Approaches for NLP. arXiv preprint arXiv:2105.03075.",
+    "Gao, F.; Huang, J. Y.; Yan, T.; Zhou, W.; and Chen, M. 2023. SunGen: A Framework for Mitigating Noise in Synthetic Data for Text Classification. arXiv preprint arXiv:2307.07099.",
+    "Golovchenko, Y.; Buntain, C.; Eady, G.; Brown, M. A.; and Tucker, J. A. 2020. Cross-platform state propaganda: Russian trolls on Twitter and YouTube during the 2016 US presidential election. The International Journal of Press/Politics, 25(3): 357–389.",
+    "Holmes, J.; et al. 2023. Evaluating large language models on a highly-specialized topic, radiation oncology physics. Frontiers in Oncology, 13.",
+    "Hsieh, C.-Y.; Li, C.-L.; Yeh, C.-K.; Nakhost, H.; Fujii, Y.; Ratner, A.; Krishna, R.; Lee, C.-Y.; and Pfister, T. 2023. Distilling Step-by-Step! Outperforming Larger Language Models with Less Training Data and Smaller Model Sizes. arXiv preprint arXiv:2305.02301.",
+    "Jose, J.; and Greenstadt, R. 2024. Are Large Language Models Good at Detecting Propaganda? AAAI Conference on Artificial Intelligence.",
+    "Joshi, A.; Sharma, V.; and Bhattacharyya, P. 2015. Harnessing Context Incongruity for Sarcasm Detection. In Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics and the 7th International Joint Conference on Natural Language Processing (Volume 2: Short Papers), 757–762. Beijing, China: Association for Computational Linguistics.",
+    "Jurkiewicz, D.; Borchmann, Ł.; Kosmala, I.; and Graliński, F. 2020. ApplicaAI at SemEval-2020 task 11: On RoBERTa-CRF, span CLS and whether self-training helps them. arXiv preprint arXiv:2005.07934.",
+    "Kiela, D.; Firooz, H.; and Mohan, A. 2020. The Hateful Memes Challenge: Detecting hate speech in multimodal memes. In Advances in Neural Information Processing Systems.",
+    "Kiritchenko, S.; Matwin, S.; Nock, R.; and Famili, A. F. 2006. Learning and Evaluation in the Presence of Class Hierarchies: Application to Text Categorization. In Advances in Artificial Intelligence: 19th Conference of the Canadian Society for Computational Studies of Intelligence, Canadian AI 2006, Quebec City, Québec, Canada, June 7-9, 2006. Proceedings, 395–406. Springer.",
+    "Kuila, A.; and Sarkar, S. 2024. Deciphering Political Entity Sentiment in News with Large Language Models: Zero-Shot and Few-Shot Strategies. In Afli, H.; Bouamor, H.; Casagran, C. B.; and Ghannay, S., eds., Proceedings of the Second Workshop on Natural Language Processing for Political Sciences @ LREC-COLING 2024, 1–11. Torino, Italia: ELRA and ICCL.",
+    "Kukreja, V.; Lakshmi, D.; Sri, C.; and Ravali, K. 2024. Improved Spam Detection Through LSTM-Based Approach. In 2024 Third International Conference on Advances in Artificial Intelligence (ICAAI). IEEE.",
+    "Kumar, A.; Bhattamishra, S.; Bhandari, M.; and Talukdar, P. 2019. Submodular optimization-based diverse paraphrasing and its effectiveness in data augmentation. NAACL.",
+    "Lewis, M.; Liu, Y.; Goyal, N.; Ghazvininejad, M.; Mohamed, A.; Levy, O.; Stoyanov, V.; and Zettlemoyer, L. 2020. BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension. arXiv preprint arXiv:1910.13461.",
+    "Li, J.; Li, D.; Xiong, C.; and Hoi, S. C. H. 2022. BLIP: Bootstrapped Learning from Image and Text. arXiv preprint arXiv:2201.12086.",
+    "Li, X.; Zhu, X.; Ma, Z.; Liu, X.; and Shah, S. 2023a. Are chatgpt and gpt-4 general-purpose solvers for financial text analytics? an examination on several typical tasks. arXiv preprint arXiv:2305.05862.",
+    "Li, Z.; Zhu, H.; Lu, Z.; and Yin, M. 2023b. Synthetic data generation with large language models for text classification: Potential and limitations. arXiv preprint arXiv:2310.15654.",
+    "Liu, J.; Liu, A.; Lu, X.; Welleck, S.; West, P.; Le Bras, R.; Choi, Y.; and Hajishirzi, H. 2021. Generated knowledge prompting for commonsense reasoning. arXiv preprint arXiv:2110.08387.",
+    "Liu, Y.; Ott, M.; Goyal, N.; Du, J.; Joshi, M.; Chen, D.; Levy, O.; Lewis, M.; Zettlemoyer, L.; and Stoyanov, V. 2019. RoBERTa: A Robustly Optimized BERT Pretraining Approach. arXiv preprint arXiv:1907.11692.",
+    "Long, L.; Wang, R.; Xiao, R.; Zhao, J.; Ding, X.; Chen, G.; and Wang, H. 2024. On LLMs-Driven Synthetic Data Generation, Curation, and Evaluation: A Survey. In Ku, L.-W.; Martins, A.; and Srikumar, V., eds., Findings of the Association for Computational Linguistics: ACL 2024, 11065–11082. Bangkok, Thailand: Association for Computational Linguistics.",
+    "Nguyen, T.; Gadre, S. Y.; Ilharco, G.; Oh, S.; and Schmidt, L. 2024. Improving multimodal datasets with image captioning. Advances in Neural Information Processing Systems, 36.",
+    "Patel, A.; Raffel, C.; and Callison-Burch, C. 2024. DataDreamer: A Tool for Synthetic Data Generation and Reproducible LLM Workflows. In Ku, L.-W.; Martins, A.; and Srikumar, V., eds., Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), 3781–3799. Bangkok, Thailand: Association for Computational Linguistics.",
+    "Radford, A.; Kim, J. W.; Hallacy, C.; Ramesh, A.; Goh, G.; Agarwal, S.; Sastry, G.; Askell, A.; Mishkin, P.; Clark, J.; Krueger, G.; and Sutskever, I. 2021. Learning Transferable Visual Models From Natural Language Supervision. arXiv preprint arXiv:2103.00020.",
+    "Sanh, V.; Debut, L.; Chaumond, J.; and Wolf, T. 2019. DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter. arXiv preprint arXiv:1910.01108.",
+    "Scius-Bertrand, A.; Jungo, M.; Vögtlin, L.; Spat, J.-M.; and Fischer, A. 2024. Zero-Shot Prompting and Few-Shot Fine-Tuning: Revisiting Document Image Classification Using Large Language Models. In Pattern Recognition: 27th International Conference, ICPR 2024, Kolkata, India, December 1–5, 2024, Proceedings, Part XIX, 152–166. Springer.",
+    "Sushil, M.; Zack, T.; Mandair, D.; Zheng, Z.; Wali, A.; Yu, Y.-N.; Quan, Y.; and Butte, A. J. 2024. A comparative study of zero-shot inference with large language models and supervised modeling in breast cancer pathology classification. arXiv:2401.13887.",
+    "Veselovsky, V.; Ribeiro, M. H.; Arora, A.; Josifoski, M.; Anderson, A.; and West, R. 2023. Generating Faithful Synthetic Data with Large Language Models: A Case Study in Computational Social Science. arXiv:2305.15041.",
+    "Wan, Z.; Cheng, F.; Mao, Z.; Liu, Q.; Song, H.; Li, J.; and Kurohashi, S. 2023. Gpt-re: In-context learning for relation extraction using large language models. arXiv preprint arXiv:2305.02105.",
+    "Wang, X.; Wei, J.; Schuurmans, D.; Le, Q.; Chi, E.; Narang, S.; Chowdhery, A.; and Zhou, D. 2022a. Self-consistency improves chain of thought reasoning in language models. arXiv preprint arXiv:2203.11171.",
+    "Wang, X.; Yu, Z.; Chen, L.; Li, Y.; Yu, L.; Yuille, A.; Gao, J.; and Wang, P. 2022b. GIT: A Generative Image-to-Text Transformer for Vision and Language Tasks. arXiv preprint arXiv:2203.02053.",
+    "Wang, Y.; Zhao, Y.; and Petzold, L. 2023. Are large language models ready for healthcare? a comparative study on clinical language understanding. Machine Learning for Healthcare Conference, 804–823.",
+    "Wei, J.; Wang, X.; Schuurmans, D.; Bosma, M.; Xia, F.; Chi, E.; Le, Q. V.; and Zhou, D. 2022. Chain-of-thought prompting elicits reasoning in large language models. Advances in Neural Information Processing Systems, 35: 24824–24837.",
+    "Wilcoxon, F. 1945. Individual comparisons by ranking methods. Biometrics bulletin, 1(6): 80–83.",
+    "Xie, T.; Li, Q.; Zhang, Y.; Liu, Z.; and Wang, H. 2024. Self-Improving for Zero-Shot Named Entity Recognition with Large Language Models. In Duh, K.; Gomez, H.; and Bethard, S., eds., Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 2: Short Papers), 583–593. Mexico City, Mexico: Association for Computational Linguistics.",
+    "Yang, Y.; Malaviya, C.; Fernandez, J.; Swayamdipta, S.; Le Bras, R.; Wang, J.-P.; Bhagavatula, C.; Choi, Y.; and Downey, D. 2020. Generative data augmentation for commonsense reasoning. Findings of EMNLP.",
+    "Zhou, Y.; Guo, C.; Wang, X.; Chang, Y.; and Wu, Y. 2024. A survey on data augmentation in large model era. arXiv preprint arXiv:2402.04755."
+  ]
+}

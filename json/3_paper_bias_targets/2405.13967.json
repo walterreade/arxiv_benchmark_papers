@@ -1,0 +1,16 @@
+{
+  "filename": "2405.13967.pdf",
+  "title": "MODEL EDITING AS A ROBUST AND DENOISED VARIANT OF DPO: A CASE STUDY ON TOXICITY",
+  "arxiv_url": "https://arxiv.org/pdf/2405.13967",
+  "bias_targets": [
+    {
+      "target": "Toxicity",
+      "methodology": "Prompting language models with the challenge subset of the RealToxicityPrompts dataset and scoring the generated continuations using the Detoxify classifier API."
+    },
+    {
+      "target": "Discriminatory Behavior",
+      "methodology": "Evaluating model responses to specific preference categories (such as Discriminatory Behavior and Insulting Behaviour) from the PKU-Safe RLHF dataset by computing win rates against the original model using an LLM judge (GPT-4o mini)."
+    }
+  ],
+  "primary_bias_target": "Toxicity"
+}

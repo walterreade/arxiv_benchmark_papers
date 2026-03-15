@@ -1,0 +1,16 @@
+{
+  "filename": "2403.08309.pdf",
+  "title": "HRLAIF: Improvements in Helpfulness and Harmlessness in Open-domain Reinforcement Learning From AI Feedback",
+  "arxiv_url": "https://arxiv.org/pdf/2403.08309",
+  "bias_targets": [
+    {
+      "target": "Social bias and toxicity against minority groups",
+      "methodology": "Evaluating the model's harmlessness using the ToxiGen dataset, which contains toxic prompts targeting various minority groups, and classifying the responses using a RoBERTa-based toxicity classifier."
+    },
+    {
+      "target": "Positional bias (Evaluation bias)",
+      "methodology": "Addressing the AI labeler's structural bias (favoring the first or second presented option) by evaluating each pair of responses twice with swapped positions, and computing the final preference based on the average score."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}
