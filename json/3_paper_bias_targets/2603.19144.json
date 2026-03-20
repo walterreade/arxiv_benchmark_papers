@@ -1,0 +1,20 @@
+{
+  "filename": "2603.19144.pdf",
+  "title": "UGID: Unified Graph Isomorphism for Debiasing Large Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2603.19144",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluated using gender-counterfactual pronoun substitutions (e.g., \"he\" vs. \"she\") to measure internal structural drift (attention routing, hidden state representations), accuracy gaps in ambiguous multiple-choice QA (BBQ Gender dataset), and the Title Gap metric in toxic degeneration generation (RealToxicityPrompts)."
+    },
+    {
+      "target": "Regional bias",
+      "methodology": "Assessed via out-of-distribution (OOD) generalization tests evaluating the model's structural integrity and bias amplification when processing heterogeneous prompt templates related to regional stereotypes."
+    },
+    {
+      "target": "Broad demographic biases",
+      "methodology": "Measured using standardized social bias benchmarks including multiple-choice stereotype reliance (BBQ), preference for stereotypical over non-stereotypical sentences in masked language modeling (CrowS-Pairs), sentiment polarity in open-ended generation (BOLD), and fine-grained descriptor evaluations across intersectional identities (HolisticBias)."
+    }
+  ],
+  "primary_bias_target": "Gender bias"
+}

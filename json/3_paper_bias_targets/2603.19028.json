@@ -1,0 +1,20 @@
+{
+  "filename": "2603.19028.pdf",
+  "title": "SEM: Sparse Embedding Modulation for Post-Hoc Debiasing of Vision-Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2603.19028",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Evaluated using cross-modal retrieval on the FairFace, UTKFace, and CelebA datasets with stereotype and hair color queries (measuring KL Divergence and MaxSkew), as well as zero-shot classification on CelebA measuring worst-group accuracy and performance gaps."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Evaluated using cross-modal retrieval on the FairFace and UTKFace datasets with stereotype queries, measuring KL Divergence and MaxSkew to assess the distribution of retrieved images across different racial/ethnic groups."
+    },
+    {
+      "target": "Spurious correlation bias (Background bias)",
+      "methodology": "Evaluated using zero-shot classification on the Waterbirds dataset, measuring worst-group accuracy and performance gaps to test model reliance on background contexts rather than core object features."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}
