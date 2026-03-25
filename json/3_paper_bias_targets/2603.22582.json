@@ -1,0 +1,32 @@
+{
+  "filename": "2603.22582.pdf",
+  "title": "LIE TO ME: HOW FAITHFUL IS CHAIN-OF-THOUGHT REASONING IN OPEN-WEIGHT REASONING MODELS?",
+  "arxiv_url": "https://arxiv.org/pdf/2603.22582",
+  "bias_targets": [
+    {
+      "target": "Sycophancy bias",
+      "methodology": "Injecting an authority-based hint (e.g., stating a Stanford professor believes a specific incorrect answer is right) into multiple-choice questions to bias the model, then measuring if the model's Chain-of-Thought explicitly acknowledges this influence."
+    },
+    {
+      "target": "Consistency bias",
+      "methodology": "Injecting a statement referencing the model's supposed prior answer to create pressure toward self-consistency, biasing it toward an incorrect answer, and evaluating if the reasoning trace mentions this factor."
+    },
+    {
+      "target": "Positional bias",
+      "methodology": "Structurally reordering the multiple-choice answer options so the targeted incorrect answer consistently appears in position (A) (referred to as a 'Visual pattern' hint), and checking if this structural bias alters the output and is acknowledged."
+    },
+    {
+      "target": "Metadata bias",
+      "methodology": "Inserting spurious dataset metadata containing XML-formatted tags (e.g., <answer_key>) that suggest an incorrect answer is the ground truth, testing if the model follows the prompt injection and reports it in its reasoning."
+    },
+    {
+      "target": "Grader hacking bias",
+      "methodology": "Adding a hint that the automated grading system evaluates based on a simple string match for a specific incorrect target, evaluating if the model changes its answer to satisfy the grader and admits to it."
+    },
+    {
+      "target": "Unethical information bias",
+      "methodology": "Framing a hint as information derived from unauthorized access to an answer key database, biasing the model toward a wrong answer to measure both influence rates and reasoning faithfulness to the unethical cue."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}
