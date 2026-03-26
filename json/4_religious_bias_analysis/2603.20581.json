@@ -1,0 +1,68 @@
+{
+  "filename": "2603.20581.pdf",
+  "title": "JUBAKU: An Adversarial Benchmark for Exposing Culturally Grounded Stereotypes in Japanese LLMs",
+  "arxiv_url": "https://arxiv.org/pdf/2603.20581",
+  "measurement_description": "The paper evaluated latent social biases and culturally grounded stereotypes in Japanese Large Language Models. 'Religion' was one of ten cultural categories measured. The benchmark assessed the models' ability to avoid stereotypes by selecting an unbiased response over a biased one in adversarial dialogue scenarios. For religion, this involved testing stereotypes related to Shinto and Buddhist traditions, adherence to Christianity or Islam, and identifying as non-religious within the Japanese cultural context.",
+  "religious_groups": [
+    "Shinto",
+    "Buddhism",
+    "Christianity",
+    "Islam",
+    "Non-religious"
+  ],
+  "models_tested": [
+    "Sarashina2 (7B/13B/70B)",
+    "Qwen2.5 (7B/14B/72B)",
+    "Swallow (8B/70B)",
+    "calm3 (22B)",
+    "GPT-4o"
+  ],
+  "languages_evaluated": [
+    "Japanese"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "JBNLI",
+    "JBBQ",
+    "SSQA-JA",
+    "BiasNLI",
+    "BBQ",
+    "SocialStigmaQA",
+    "CrowS-Pairs",
+    "StereoSet",
+    "BOLD"
+  ],
+  "continuous_testing": false,
+  "findings": "All models exhibited significant latent biases on the JUBAKU benchmark. The 'Religion' category resulted in the lowest average accuracy across models (21.3%), indicating strong susceptibility to religious stereotypes. However, during the adversarial data creation phase, the 'Religion' category required the highest average number of manual edits (1.41) to successfully trick GPT-4o into selecting a biased response. This suggests that while GPT-4o possesses relatively robust safety alignment regarding religion, the resulting adversarial instances were still highly effective at exposing vulnerabilities across the other evaluated Japanese LLMs.",
+  "references": [
+    "Muhammad Farid Adilazuarda, Sagnik Mukherjee, Pradhyumna Lavania, Siddhant Shivdutt Singh, Alham Fikri Aji, Jacki O’Neill, Ashutosh Modi, and Monojit Choudhury. 2024. Towards measuring and modeling “culture” in LLMs: A survey. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 15763–15784, Miami, Florida, USA. Association for Computational Linguistics.",
+    "Utkarsh Agarwal, Kumar Tanmay, Aditi Khandelwal, and Monojit Choudhury. 2024. Ethical reasoning and moral value alignment of LLMs depend on the language we prompt them in. In Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024), pages 6330–6340, Torino, Italia. ELRA and ICCL.",
+    "Panatchakorn Anantaprayoon, Masahiro Kaneko, and Naoaki Okazaki. 2024. Evaluating gender bias of pre-trained language models in natural language inference by considering all labels. In Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024), pages 6395–6408, Torino, Italia. ELRA and ICCL.",
+    "Panatchakorn Anantaprayoon, Masahiro Kaneko, and Naoaki Okazaki. 2025. Intent-aware self-correction for mitigating social biases in large language models. arXiv preprint arXiv:2503.06011.",
+    "Clara Higuera Cabañes, Ryo Iwaki, Beñat San Sebastian, Rosario Uceda Sosa, Manish Nagireddy, Hiroshi Kanayama, Mikio Takeuchi, Gakuto Kurata, and Karthikeyan Natesan Ramamurthy. 2024. SocialStigmaQA Spanish and Japanese - Towards Multicultural Adaptation of Social Bias Benchmarks. In Workshop on Socially Responsible Language Modelling Research.",
+    "Jwala Dhamala, Tony Sun, Varun Kumar, Satyapriya Krishna, Yada Pruksachatkun, Kai-Wei Chang, and Rahul Gupta. 2021. BOLD: Dataset and metrics for measuring biases in open-ended language generation. In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, FAccT ’21, pages 862–872, New York, NY, USA. Association for Computing Machinery.",
+    "Ojasvi Gupta, Stefano Marrone, Francesco Gargiulo, Rajesh Jaiswal, and Lidia Marassi. 2025. Understanding social biases in large language models. AI, 6(5):106.",
+    "Rem Hida, Masahiro Kaneko, and Naoaki Okazaki. 2025. Social bias evaluation for large language models requires prompt variations. In Findings of the Association for Computational Linguistics: EMNLP 2025, pages 14507–14530, Suzhou, China. Association for Computational Linguistics.",
+    "Yufei Huang and Deyi Xiong. 2024. CBBQ: A Chinese bias benchmark dataset curated with human-AI collaboration for large language models. In Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024), pages 2917–2929, Torino, Italia. ELRA and ICCL.",
+    "Robin Jia and Percy Liang. 2017. Adversarial examples for evaluating reading comprehension systems. In Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing, pages 2021–2031, Copenhagen, Denmark. Association for Computational Linguistics.",
+    "Jiho Jin, Jiseon Kim, Nayeon Lee, Haneul Yoo, Alice Oh, and Hwaran Lee. 2024. KoBBQ: Korean bias benchmark for question answering. Transactions of the Association for Computational Linguistics, 12:507–524.",
+    "Masahiro Kaneko and Timothy Baldwin. 2025. Investigating how pre-training data leakage affects models’ reproduction and detection capabilities. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing, pages 23556–23566, Suzhou, China. Association for Computational Linguistics.",
+    "Masahiro Kaneko, Danushka Bollegala, and Timothy Baldwin. 2025. An ethical dataset from real-world interactions between users and large language models. In Proceedings of the Thirty-Fourth International Joint Conference on Artificial Intelligence, IJCAI 2025, pages 9737–9745.",
+    "Masahiro Kaneko, Aizhan Imankulova, Danushka Bollegala, and Naoaki Okazaki. 2022. Gender bias in masked language models for multiple languages. In Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 2740–2750, Seattle, United States. Association for Computational Linguistics.",
+    "Songyang Liu, Chaozhuo Li, Jiameng Qiu, Xi Zhang, Feiran Huang, Litian Zhang, Yiming Hei, and Philip S Yu. 2025. The scales of justitia: A comprehensive survey on safety evaluation of LLMs. arXiv preprint arXiv:2506.11094.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2021. StereoSet: Measuring stereotypical bias in pretrained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 5356–5371, Online. Association for Computational Linguistics.",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R. Bowman. 2020. CrowS-pairs: A challenge dataset for measuring social biases in masked language models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1953–1967, Online. Association for Computational Linguistics.",
+    "Aurélie Névéol, Yoann Dupont, Julien Bezançon, and Karën Fort. 2022. French CrowS-pairs: Extending a challenge dataset for measuring social bias in masked language models to a language other than English. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 8521–8531, Dublin, Ireland. Association for Computational Linguistics.",
+    "Yixin Nie, Adina Williams, Emily Dinan, Mohit Bansal, Jason Weston, and Douwe Kiela. 2020. Adversarial NLI: A new benchmark for natural language understanding. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 4885–4901, Online. Association for Computational Linguistics.",
+    "OpenAI. 2023. GPT-4 Technical Report. arXiv preprint arXiv:2303.08774. Preprint, arXiv:2303.08774.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel Bowman. 2022. BBQ: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2086–2105, Dublin, Ireland. Association for Computational Linguistics.",
+    "Anselm Paulus, Arman Zharmagambetov, Chuan Guo, Brandon Amos, and Yuandong Tian. 2025. AdvPrompter: Fast adaptive adversarial prompting for LLMs. In Proceedings of the 42nd International Conference on Machine Learning (ICML).",
+    "Ethan Perez, Saffron Huang, Francis Song, Trevor Cai, Roman Ring, John Aslanides, Amelia Glaese, Nat McAleese, and Geoffrey Irving. 2022. Red teaming language models with language models. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 3419–3448, Abu Dhabi, United Arab Emirates. Association for Computational Linguistics.",
+    "Dan Shi, Tianhao Shen, Yufei Huang, Zhigen Li, Yongqi Leng, Renren Jin, Chuang Liu, Xinwei Wu, Zishan Guo, Linhao Yu, Ling Shi, Bojian Jiang, and Deyi Xiong. 2024. Large language model safety: A holistic survey. arXiv preprint arXiv:2412.17686.",
+    "Jisu Shin, Hoyun Song, Huije Lee, Soyeong Jeong, and Jong Park. 2024. Ask LLMs directly, “what shapes your bias?”: Measuring social bias in large language models. In Findings of the Association for Computational Linguistics: ACL 2024, pages 16122–16143, Bangkok, Thailand. Association for Computational Linguistics.",
+    "Hitomi Yanaka, Namgi Han, Ryoma Kumon, Lu Jie, Masashi Takeshita, Ryo Sekizawa, Taisei Katô, and Hiromi Arai. 2025. JBBQ: Japanese bias benchmark for analyzing social biases in large language models. In Proceedings of the 6th Workshop on Gender Bias in Natural Language Processing (GeBNLP), pages 1–17, Vienna, Austria. Association for Computational Linguistics."
+  ]
+}
