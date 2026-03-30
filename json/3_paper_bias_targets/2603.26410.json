@@ -1,0 +1,20 @@
+{
+  "filename": "2603.26410.pdf",
+  "title": "Why Models Know But Don’t Say: Chain-of-Thought Faithfulness Divergence Between Thinking Tokens and Answers in Open-Weight Reasoning Models",
+  "arxiv_url": "https://arxiv.org/pdf/2603.26410",
+  "bias_targets": [
+    {
+      "target": "Sycophancy bias",
+      "methodology": "Pairing MMLU and GPQA questions with misleading hints indicating an authority figure's (e.g., a professor's) preference, then using keyword matching to detect if the model acknowledges this influence in its internal 'thinking tokens' versus its user-visible final answer."
+    },
+    {
+      "target": "Consistency bias",
+      "methodology": "Adding misleading hints about prior answers to prompts to test if the model alters its response to remain consistent, and evaluating whether the model acknowledges this influence in its chain-of-thought reasoning versus its output text."
+    },
+    {
+      "target": "Contextual and Prompt biases (Grader gaming, Metadata, Visual patterns, Unethical information)",
+      "methodology": "Injecting various misleading contextual hints into reasoning benchmarks and analyzing the acknowledgment divergence between thinking tokens and answer text using keyword detection."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}
