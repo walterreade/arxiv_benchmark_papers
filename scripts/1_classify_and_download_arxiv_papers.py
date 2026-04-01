@@ -153,8 +153,11 @@ def save_assessment_cache(cache: dict[str, bool], cache_path: str):
 # ---------------------------------------------------------------------------
 
 def fetch_recent_papers(max_papers: int = MAX_PAPERS,
-                        per_page: int = RESULTS_PER_PAGE) -> list[dict]:
+                        per_page: int = RESULTS_PER_PAGE,
+                        lookback_days: int = 7) -> list[dict]:
     """Fetch the most recent papers from arXiv API (all categories)."""
+    from datetime import datetime, timedelta, timezone
+
     ns = {'atom': 'http://www.w3.org/2005/Atom'}
     all_papers = []
 
@@ -162,10 +165,17 @@ def fetch_recent_papers(max_papers: int = MAX_PAPERS,
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
     }
 
+    # Build a concrete submittedDate range (arXiv format: YYYYMMDDTTTT in GMT)
+    now = datetime.now(timezone.utc)
+    date_from = (now - timedelta(days=lookback_days)).strftime('%Y%m%d0000')
+    date_to = now.strftime('%Y%m%d2359')
+    date_query = f"submittedDate:[{date_from}+TO+{date_to}]"
+    print(f"  Date range: {date_from} to {date_to}")
+
     for start in range(0, max_papers, per_page):
         batch_size = min(per_page, max_papers - start)
         url = (
-            f"{ARXIV_API_URL}?search_query=all:*"
+            f"{ARXIV_API_URL}?search_query={date_query}"
             f"&sortBy=submittedDate&sortOrder=descending"
             f"&start={start}&max_results={batch_size}"
         )
