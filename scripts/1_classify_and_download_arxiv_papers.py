@@ -165,7 +165,7 @@ def fetch_recent_papers(max_papers: int = MAX_PAPERS,
     for start in range(0, max_papers, per_page):
         batch_size = min(per_page, max_papers - start)
         url = (
-            f"{ARXIV_API_URL}?search_query=submittedDate:[*+TO+*]"
+            f"{ARXIV_API_URL}?search_query=all:*"
             f"&sortBy=submittedDate&sortOrder=descending"
             f"&start={start}&max_results={batch_size}"
         )
