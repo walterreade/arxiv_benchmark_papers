@@ -1,0 +1,59 @@
+{
+  "filename": "2603.27141.pdf",
+  "title": "Routing Sensitivity Without Controllability: A Diagnostic Study of Fairness in MoE Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2603.27141",
+  "measurement_description": "The paper measures sociodemographic bias and stereotyping (across nine axes, including religion) by evaluating routing sensitivity and distributions in Mixture-of-Experts (MoE) language models. It tests whether altering inference-time routing can reduce bias on standard fairness benchmarks without degrading model utility.",
+  "religious_groups": [],
+  "models_tested": [
+    "OLMoE-1B-7B",
+    "Mixtral-8x7B",
+    "DeepSeekMoE-16B",
+    "Qwen1.5-MoE",
+    "Qwen3-30B-A3B"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "CrowS-Pairs",
+    "StereoSet",
+    "BBQ",
+    "TruthfulQA",
+    "BOLD"
+  ],
+  "continuous_testing": false,
+  "findings": "The models exhibited universal routing sensitivity to demographic variations, including religion. However, the study found that this sensitivity does not reliably equate to controllability. In most models, routing-level interventions to reduce demographic bias were either unachievable, incurred a severe utility cost, or failed to transfer to the decoded text generation entirely.",
+  "references": [
+    "Ahmed Allam. 2024. BiasDPO: Mitigating bias in language models through direct preference optimization. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 4: Student Research Workshop), pages 42–50.",
+    "Su Lin Blodgett, Solon Barocas, Hal Daumé III, and Hanna Wallach. 2020. Language (technology) is power: A critical survey of bias in NLP. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 5454–5476.",
+    "Souradip Chakraborty, Jiahao Qiu, Hui Yuan, Alec Koppel, Furong Huang, Dinesh Manocha, Amrit Singh Bedi, and Mengdi Wang. 2024. MaxMin-RLHF: Alignment with diverse human preferences. arXiv preprint arXiv:2402.08925v2.",
+    "Marmik Chaudhari, Idhant Gulati, Nishkal Hundia, Pranav Karra, and Shivam Raval. 2026. MoE lens – an expert is all you need. arXiv preprint arXiv:2603.05806v1.",
+    "Jwala Dhamala, Tony Sun, Varun Kumar, Satyapriya Krishna, Yada Pruksachatkun, Kai-Wei Chang, and Rahul Gupta. 2021. BOLD: Dataset and metrics for measuring biases in open-ended language generation. In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency (FAccT), pages 862–872.",
+    "Dongyang Fan, Bettina Messmer, and Martin Jaggi. 2024. Towards an empirical understanding of MoE design choices. arXiv preprint arXiv:2402.13089v1.",
+    "William Fedus, Barret Zoph, and Noam Shazeer. 2022. Switch transformers: Scaling to trillion parameter models with simple and efficient sparsity. Journal of Machine Learning Research, 23(120):1–39.",
+    "Isabel O. Gallegos, Ryan Aponte, Ryan A. Rossi, Joe Barrow, Md Mehrab Tanjim, Tong Yu, Hanieh Deilamsalehy, Ruiyi Zhang, Sungchul Kim, Franck Dernoncourt, Nedim Lipka, Deonna Owens, and Jiuxiang Gu. 2025. Self-debiasing large language models: Zero-shot recognition and reduction of stereotypes. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 2: Short Papers), pages 873–888.",
+    "Mahammed Kamruzzaman and Gene Louis Kim. 2025. Prompting techniques for reducing social bias in LLMs through system 1 and system 2 cognitive processes. In Proceedings of the 15th International Conference on Recent Advances in Natural Language Processing - Natural Language Processing in the Generative AI Era, pages 511–520.",
+    "Zhenglin Lai, Mengyao Liao, Bingzhe Wu, Dong Xu, Zebin Zhao, Zhihang Yuan, Chao Fan, and Jianqiang Li. 2025. SAFEx: Analyzing vulnerabilities of MoE-based LLMs via stable safety-critical expert identification. arXiv preprint arXiv:2506.17368v2.",
+    "Dmitry Lepikhin, HyoukJoong Lee, Yuanzhong Xu, Dehao Chen, Orhan Firat, Yanping Huang, Maxim Krikun, Noam Shazeer, and Zhifeng Chen. 2021. Gshard: Scaling giant models with conditional computation and automatic sharding. International Conference on Learning Representations.",
+    "Yichen Li, Zhiting Fan, Ruizhe Chen, Xiaotang Gai, Luqi Gong, Yan Zhang, and Zuozhu Liu. 2025a. Fairsteer: Inference time debiasing for LLMs with dynamic activation steering. In Findings of the Association for Computational Linguistics: ACL 2025, pages 11293–11312.",
+    "Zhibo Li and 1 others. 2024. Triangular trade-off between robustness, accuracy, and fairness in deep neural networks: A survey. ACM Computing Surveys, 56(9).",
+    "Zhongyang Li, Ziyue Li, and Tianyi Zhou. 2025b. R2-T2: Re-routing in test-time for multimodal mixture-of-experts. arXiv preprint arXiv:2502.20395v2.",
+    "Stephanie Lin, Jacob Hilton, and Owain Evans. 2022. TruthfulQA: Measuring how models mimic human falsehoods. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 3214–3252.",
+    "Niklas Muennighoff, Luca Soldaini, Dirk Groeneveld, Kyle Lo, Jacob Morrison, Sewon Min, Weijia Shi, Pete Walsh, Oyvind Tafjord, Nathan Lambert, and 1 others. 2024. OLMoE: Open mixture-of-experts language models. In Advances in Neural Information Processing Systems (NeurIPS).",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2021. StereoSet: Measuring stereotypical bias in pretrained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 5356–5371.",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R. Bowman. 2020. CrowS-Pairs: A challenge dataset for measuring social biases in masked language models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1508–1520.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel R. Bowman. 2022. BBQ: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2086–2105.",
+    "Timo Schick, Sahana Udupa, and Hinrich Schütze. 2021. Self-diagnosis and self-debiasing: A proposal for reducing corpus-based bias in nlp. Transactions of the Association for Computational Linguistics, 9:1408–1424.",
+    "Noam Shazeer, Azalia Mirhoseini, Krzysztof Maziarz, Andy Davis, Quoc Le, Geoffrey Hinton, and Jeff Dean. 2017. Outrageously large neural networks: The sparsely-gated mixture-of-experts layer. In Proceedings of the 5th International Conference on Learning Representations (ICLR).",
+    "Zara Siddique, Irtaza Khalid, Liam D. Turner, and Luis Espinosa-Anke. 2025. Shifting perspectives: Steering vectors for robust bias mitigation in LLMs. arXiv preprint arXiv:2503.05371v2.",
+    "Mengru Wang, Xingyu Chen, Yue Wang, Zhiwei He, Jiahao Xu, Tian Liang, Qiuzhi Liu, Yunzhi Yao, Wenxuan Wang, Ruotian Ma, Haitao Mi, Ningyu Zhang, Zhaopeng Tu, Xiaolong Li, and Dong Yu. 2025a. Two experts are all you need for steering thinking: Reinforcing cognitive effort in MoE reasoning models without additional training. arXiv preprint arXiv:2505.14681v2.",
+    "Peiran Wang, Linjie Tong, Jiaxiang Liu, and Zuozhu Liu. 2025b. Fair-MoE: Medical fairness-oriented mixture of experts in vision-language models. arXiv preprint arXiv:2502.06094.",
+    "Changdi Yang, Zheng Zhan, Ci Zhang, Yifan Gong, Yize Li, Zichong Meng, Jun Liu, Xuan Shen, Hao Tang, Geng Yuan, Pu Zhao, Xue Lin, and Yanzhi Wang. 2025. FairSMOE: Mitigating multi-attribute fairness problem with sparse mixture-of-experts. In Proceedings of the Thirty-Fourth International Joint Conference on Artificial Intelligence, pages 610–618.",
+    "Ran Zmigrod, Sabrina J. Mielke, Hanna Wallach, and Ryan Cotterell. 2019. Counterfactual data augmentation for mitigating gender stereotypes in languages with rich morphology. arXiv preprint arXiv:1906.04571v3."
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "filename": "2603.27011.pdf",
+  "title": "ParsCN: A Persian Dataset for Counter-Narrative Generation to Combat Online Hate Speech",
+  "arxiv_url": "https://arxiv.org/pdf/2603.27011",
+  "measurement_description": "The paper measures the ability of various Large Language Models to generate high-quality, culturally appropriate, and safe counter-narratives to online hate speech in Persian. This includes evaluating responses to a specific subset of hate speech targeting 'Religious' groups (such as statements targeting Islam or the Jewish religion). The models are assessed on relevance, effectiveness, fluency, tone appropriateness, semantic similarity, and toxicity.",
+  "religious_groups": [
+    "Islam",
+    "Judaism",
+    "Muslims",
+    "Sunni minorities"
+  ],
+  "models_tested": [
+    "GPT-4o",
+    "Gemini 2.0 Flash",
+    "Claude 3.7 Sonnet",
+    "Qwen3-235B-A22B",
+    "mBART",
+    "PersianMind"
+  ],
+  "languages_evaluated": [
+    "Persian",
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "PHATE",
+    "MultiTarget-CONAN",
+    "HateXplain"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper curated the ParsCN dataset, containing 1,100 hate speech-counter-narrative pairs. The dataset features a dedicated 'Religious' target group comprising 200 pairs. Interestingly, the average counter-narrative addressing religious hate speech had the longest word count (32.04 words) of all categories. While the study did not isolate model performance solely on the religious subset, general findings showed that human-written counter-narratives scored highest in quality, with GPT-4o and Claude closely matching human performance in relevance and tone. Baseline models like mBART and PersianMind struggled significantly with fluency, cultural nuance, and safety (toxicity) when generating counter-narratives.",
+  "references": [
+    "Bengoetxea, J.; Chung, Y.-L.; Guerini, M.; and Agerri, R. 2024. Basque and Spanish counter narrative generation: Data creation and evaluation. arXiv preprint arXiv:2403.09159.",
+    "Bennie, M.; Xiao, B.; Liu, C. X.; Zhang, D.; Meng, J.; and Tripp, A. 2025a. CODEOFCONDUCT at Multilingual Counterspeech Generation: A Context-Aware Model for Robust Counterspeech Generation in Low-Resource Languages. arXiv preprint arXiv:2501.00713.",
+    "Bennie, M.; Zhang, D.; Xiao, B.; Cao, J.; Liu, C. X.; Meng, J.; and Tripp, A. 2025b. PANDA–Paired Anti-hate Narratives Dataset from Asia: Using an LLM-as-a-Judge to Create the First Chinese Counterspeech Dataset. arXiv preprint arXiv:2501.00697.",
+    "Chung, Y.-L.; Kuzmenko, E.; Tekiroglu, S. S.; and Guerini, M. 2019. CONAN–COunter NArratives through Nichesourcing: a multilingual dataset of responses to fight online hate speech. arXiv preprint arXiv:1910.03270.",
+    "Chung, Y.-L.; Tekiroglu, S. S.; and Guerini, M. 2021. Towards knowledge-grounded counter narrative generation for hate speech. arXiv preprint arXiv:2106.11783.",
+    "Delbari, Z.; Moosavi, N. S.; and Pilehvar, M. T. 2024. Spanning the spectrum of hatred detection: a persian multi-label hate speech dataset with annotator rationales. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 38, 17889–17897.",
+    "Fanton, M.; Bonaldi, H.; Tekiroglu, S. S.; and Guerini, M. 2021. Human-in-the-loop for data collection: a multi-target counter narrative dataset to fight online hate speech. arXiv preprint arXiv:2107.08720.",
+    "Fialho, P.; Ribeiro, R.; Batista, F.; Ramos, G.; Fonseca, A.; Moro, S.; Guerra, R.; Carvalho, P.; Marques, C.; and Silva, C. 2024. Counter Hate Speech Detection in Youtube Conversations. In International Conference on Information Processing and Management of Uncertainty in Knowledge-Based Systems, 94–105. Springer.",
+    "FORCE11. 2020. The FAIR Data principles. https://force11.org/info/the-fair-data-principles/.",
+    "Fortuna, P.; and Nunes, S. 2018. A survey on automatic detection of hate speech in text. Acm Computing Surveys (Csur), 51(4): 1–30.",
+    "Furman, D.; Torres, P.; Rodríguez, J.; Letzen, D.; Martinez, M.; and Alemany, L. 2023. High-quality argumentative information in low resources approaches improve counter-narrative generation. In Findings of the Association for Computational Linguistics: EMNLP 2023, 2942–2956.",
+    "Gebru, T.; Morgenstern, J.; Vecchione, B.; Vaughan, J. W.; Wallach, H.; Iii, H. D.; and Crawford, K. 2021. Datasheets for datasets. Communications of the ACM, 64(12): 86–92.",
+    "Hassan, S.; and Alikhani, M. 2023. Discgen: A framework for discourse-informed counterspeech generation. arXiv preprint arXiv:2311.18147.",
+    "Hee, M. S.; Sharma, S.; Cao, R.; Nandi, P.; Nakov, P.; Chakraborty, T.; and Lee, R. 2024. Recent Advances in Online Hate Speech Moderation: Multimodality and the Role of Large Models. Findings of the Association for Computational Linguistics: EMNLP 2024, 4407–4419.",
+    "Hengle, A.; Kumar, A.; Singh, S.; Bandhakavi, A.; Akhtar, M. S.; and Chakroborty, T. 2024. Intent-conditioned and non-toxic counterspeech generation using multi-task instruction tuning with rlaif. arXiv preprint arXiv:2403.10088.",
+    "Imani, A.; Lin, P.; Kargaran, A. H.; Severini, S.; Sabet, M. J.; Kassner, N.; Ma, C.; Schmid, H.; Martins, A. F.; Yvon, F.; et al. 2023. Glot500: Scaling multilingual corpora and language models to 500 languages. arXiv preprint arXiv:2305.12182.",
+    "Jelinek, F.; Mercer, R. L.; Bahl, L. R.; and Baker, J. K. 1977. Perplexity—a measure of the difficulty of speech recognition tasks. The Journal of the Acoustical Society of America, 62(S1): S63–S63.",
+    "Jiang, S.; Tang, W.; Chen, X.; Tang, R.; Wang, H.; and Wang, W. 2025. ReZG: Retrieval-augmented zero-shot counter narrative generation for hate speech. Neurocomputing, 620: 129140.",
+    "Landis, J. R.; and Koch, G. G. 1977. The measurement of observer agreement for categorical data. Biometrics, 33 1: 159–74.",
+    "Li, J.; Galley, M.; Brockett, C.; Gao, J.; and Dolan, B. 2015. A diversity-promoting objective function for neural conversation models. arXiv preprint arXiv:1510.03055.",
+    "Mathew, B.; Saha, P.; Tharad, H.; Rajgaria, S.; Singhania, P.; Maity, S. K.; Goyal, P.; and Mukherjee, A. 2019. Thou shalt not hate: Countering online hate speech. In Proceedings of the international AAAI conference on web and social media, volume 13, 369–380.",
+    "Mathew, B.; Saha, P.; Yimam, S. M.; Biemann, C.; Goyal, P.; and Mukherjee, A. 2021. Hatexplain: A benchmark dataset for explainable hate speech detection. In Proceedings of the AAAI conference on artificial intelligence, volume 35, 14867–14875.",
+    "Mun, J.; Allaway, E.; Yerukola, A.; Vianna, L.; Leslie, S.-J.; and Sap, M. 2023. Beyond denouncing hate: Strategies for countering implied biases and stereotypes in language. arXiv preprint arXiv:2311.00161.",
+    "Podolak, J.; Łukasik, S.; Balawender, P.; Ossowski, J.; Piotrowski, J.; Bakowicz, K.; and Sankowski, P. 2024. LLM generated responses to mitigate the impact of hate speech. In Al-Onaizan, Y.; Bansal, M.; and Chen, Y.-N., eds., Findings of the Association for Computational Linguistics: EMNLP 2024, 15860–15876. Miami, Florida, USA: Association for Computational Linguistics.",
+    "Saha, P.; Datta, A.; Jana, A.; and Mukherjee, A. 2024. CrowdCounter: A benchmark type-specific multi-target counterspeech dataset. arXiv preprint arXiv:2410.01400.",
+    "Sahoo, N. R.; Beria, G. P.; and Bhattacharyya, P. 2024. Indicconan: A multilingual dataset for combating hate speech in indian context. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 38, 22313–22321.",
+    "Warner, W.; and Hirschberg, J. 2012. Detecting hate speech on the world wide web. In Proceedings of the second workshop on language in social media, 19–26.",
+    "Watanabe, H.; Bouazizi, M.; and Ohtsuki, T. 2018. Hate speech on twitter: A pragmatic approach to collect hateful and offensive expressions and perform hate speech detection. IEEE access, 6: 13825–13835.",
+    "Wilk, B.; Shomee, H. H.; Maity, S. K.; and Medya, S. 2025. Fact-based Counter Narrative Generation to Combat Hate Speech. In Proceedings of the ACM on Web Conference 2025, 3354–3365.",
+    "Zhang, T.; Kishore, V.; Wu, F.; Weinberger, K. Q.; and Artzi, Y. 2019. Bertscore: Evaluating text generation with bert. arXiv preprint arXiv:1904.09675."
+  ]
+}
