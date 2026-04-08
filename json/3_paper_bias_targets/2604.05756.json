@@ -1,0 +1,20 @@
+{
+  "filename": "2604.05756.pdf",
+  "title": "Controlling Distributional Bias in Multi-Round LLM Generation via KL-Optimized Fine-Tuning",
+  "arxiv_url": "https://arxiv.org/pdf/2604.05756",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Measuring the Mean Absolute Error (MAE) between the LLM's generated multi-round distribution of gender attributes (Male/Female) and target distributions (real-world census statistics or a uniform distribution) across various US and UK occupations, using direct attribute generation prompts and LLM-judged story generation."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Measuring the distributional deviation (MAE) of generated racial categories across multiple independent sampling trials compared to a uniform target distribution within specific occupational contexts, using direct attribute generation tasks."
+    },
+    {
+      "target": "Sentiment bias",
+      "methodology": "Measuring the distributional deviation (MAE) of generated sentiment (Positive, Negative, Neutral) across multiple independent generations compared to a uniform target distribution for specific occupations, evaluated through direct attribute generation and LLM-judged story generation."
+    }
+  ],
+  "primary_bias_target": "Gender bias"
+}
