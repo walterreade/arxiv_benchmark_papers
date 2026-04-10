@@ -1,0 +1,73 @@
+{
+  "filename": "2604.08243.pdf",
+  "title": "Self-Debias: Self-correcting for Debiasing Large Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2604.08243",
+  "measurement_description": "The paper measures stereotype bias and social bias propagation within the Chain-of-Thought (CoT) reasoning processes of Large Language Models. Religion is explicitly targeted as a sensitive demographic attribute for bias injection and self-correction, though the quantitative evaluation aggregates it alongside other demographics using broad fairness benchmarks.",
+  "religious_groups": [],
+  "models_tested": [
+    "DeepSeek-R1-Distill-Qwen-7B",
+    "Qwen2.5-7B-Instruct",
+    "Qwen3-8B",
+    "Llama-3.1-8B-Instruct",
+    "GPT-4o"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "BBQ",
+    "UnQover",
+    "CrowS-Pairs",
+    "CEB",
+    "ARC-Challenge",
+    "GSM8K"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper does not isolate specific findings for religious groups. However, regarding broader demographic categories (which include religion via benchmarks like BBQ and CrowS-Pairs), the study found that standard reasoning models suffer from 'bias propagation'—they tend to rationalize and reinforce activated stereotypes during their reasoning chains. The proposed 'Self-Debias' framework successfully corrects these prejudiced heuristics through step-wise self-correction, significantly improving fairness without degrading overall reasoning utility.",
+  "references": [
+    "Ahmed Allam. BiasDPO: Mitigating bias in language models through direct preference optimization. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics, pp. 42–50, 2024.",
+    "Yoshua Bengio, Jérôme Louradour, Ronan Collobert, and Jason Weston. Curriculum learning. In Proceedings of the 26th Annual International Conference on Machine Learning, pp. 41–48, 2009.",
+    "Qiguang Chen, Libo Qin, Jiaqi Wang, Jinxuan Zhou, and Wanxiang Che. Unlocking the capabilities of thought: a reasoning boundary framework to quantify and optimize chain-of-thought. In Proceedings of the 38th International Conference on Neural Information Processing Systems, pp. 54872–54904, 2024.",
+    "Xiaoqing Cheng, Ruizhe Chen, Hongying Zan, Yuxiang Jia, and Min Peng. BiasFilter: An inference-time debiasing framework for large language models. In Findings of the Association for Computational Linguistics: EMNLP 2025, pp. 15187–15205, 2025.",
+    "Peter Clark, Isaac Cowhey, Oren Etzioni, Tushar Khot, Ashish Sabharwal, Carissa Schoenick, and Oyvind Tafjord. Think you have solved question answering? try ARC, the AI2 reasoning challenge. arXiv:1803.05457v1, 2018.",
+    "Karl Cobbe, Vineet Kosaraju, Mohammad Bavarian, Mark Chen, Heewoo Jun, Lukasz Kaiser, Matthias Plappert, Jerry Tworek, Jacob Hilton, Reiichiro Nakano, Christopher Hesse, and John Schulman. Training verifiers to solve math word problems. arXiv preprint arXiv:2110.14168, 2021.",
+    "Xuan Feng, Bo An, Tianlong Gu, Liang Chang, Fengrui Hao, Peipeng Yu, and Shuai Zhao. C2PO: Diagnosing and disentangling bias shortcuts in llms. arXiv preprint arXiv:2512.23430, 2025.",
+    "Isabel O. Gallegos, Ryan Aponte, Ryan A. Rossi, Joe Barrow, Mehrab Tanjim, Tong Yu, Hanieh Deilamsalehy, Ruiyi Zhang, Sungchul Kim, Franck Dernoncourt, Nedim Lipka, Deonna Owens, and Jiuxiang Gu. Self-debiasing large language models: Zero-shot recognition and reduction of stereotypes. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies, pp. 873–888, 2025.",
+    "A. Grattafiori et al. The Llama 3 herd of models. Meta AI Research, 2024.",
+    "Daya Guo, Dejian Yang, Haowei Zhang, Junxiao Song, Ruoyu Zhang, Runxin Xu, Qihao Zhu, Shirong Ma, Peiyi Wang, Xiao Bi, et al. DeepSeek-R1: Incentivizing reasoning capability in LLMs via reinforcement learning. arXiv preprint arXiv:2501.12948, 2025.",
+    "Arian Hosseini, Xingdi Yuan, Nikolay Malkin, Aaron Courville, Alessandro Sordoni, and Rishabh Agarwal. V-star: Training verifiers for self-taught reasoners. arXiv preprint arXiv:2402.06457, 2024.",
+    "Jie Huang, Xinyun Chen, Swaroop Mishra, Huaixiu Steven Zheng, Adams Wei Yu, Xinying Song, and Denny Zhou. Large language models cannot self-correct reasoning yet. In The Twelfth International Conference on Learning Representations, 2024.",
+    "Rajendra K Jain, Dah-Ming W Chiu, William R Hawe, et al. A quantitative measure of fairness and discrimination. Eastern Research Laboratory, Digital Equipment Corporation, Hudson, MA, 21(1):2022–2023, 1984.",
+    "Hyunseok Lee, Seunghyuk Oh, Jaehyung Kim, Jinwoo Shin, and Jihoon Tack. ReVISE: Learning to refine at test-time via intrinsic self-verification. In Forty-second International Conference on Machine Learning, 2025.",
+    "Loka Li, Zhenhao Chen, Guangyi Chen, Yixuan Zhang, Yusheng Su, Eric Xing, and Kun Zhang. Confidence matters: Revisiting intrinsic self-correction capabilities of large language models. arXiv preprint arXiv:2402.12563, 2024.",
+    "Tao Li, Daniel Khashabi, Tushar Khot, Ashish Sabharwal, and Vivek Srikumar. UNQOVERing stereotyping biases via underspecified questions. In Findings of the Association for Computational Linguistics: EMNLP 2020, pp. 3475–3489, 2020.",
+    "Yichen Li, Zhiting Fan, Ruizhe Chen, Xiaotang Gai, Luqi Gong, Yan Zhang, and Zuozhu Liu. FairSteer: Inference time debiasing for LLMs with dynamic activation steering. In Findings of the Association for Computational Linguistics: ACL 2025, pp. 11293–11312, 2025.",
+    "Guangliang Liu, Zhiyu Xue, Xitong Zhang, Rongrong Wang, and Kristen Johnson. Smaller large language models can do moral self-correction. In Proceedings of the 5th Workshop on Trustworthy NLP, 2025.",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R. Bowman. CrowS-pairs: A challenge dataset for measuring social biases in masked language models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing, pp. 1953–1967, November 2020.",
+    "Long Ouyang, Jeffrey Wu, Xu Jiang, Diogo Almeida, Carroll Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, et al. Training language models to follow instructions with human feedback. Advances in Neural Information Processing Systems, 35:27730–27744, 2022.",
+    "Sheng Ouyang, Yulan Hu, Ge Chen, Qingyang Li, Fuzheng Zhang, and Yong Liu. Towards reward fairness in RLHF: From a resource allocation perspective. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics, pp. 3247–3259, 2025.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel Bowman. BBQ: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, pp. 2086–2105, 2022.",
+    "Rafael Rafailov, Archit Sharma, Eric Mitchell, Christopher D Manning, Stefano Ermon, and Chelsea Finn. Direct preference optimization: Your language model is secretly a reward model. Advances in Neural Information Processing Systems, 36:53728–53741, 2023.",
+    "Shyam Sundhar Ramesh, Yifan Hu, Iason Chaimalas, Viraj Mehta, Pier Giuseppe Sessa, Haitham Bou Ammar, and Ilija Bogunovic. Group robust preference optimization in reward-free RLHF. Advances in Neural Information Processing Systems, 37:37100–37137, 2024.",
+    "Mrinank Sharma, Meg Tong, Tomasz Korbak, David Duvenaud, Amanda Askell, Samuel R. Bowman, Esin DURMUS, Zac Hatfield-Dodds, Scott R Johnston, Shauna M Kravec, Timothy Maxwell, Sam McCandlish, Kamal Ndousse, Oliver Rausch, Nicholas Schiefer, Da Yan, Miranda Zhang, and Ethan Perez. Towards understanding sycophancy in language models. In The Twelfth International Conference on Learning Representations, 2024.",
+    "Lihao Sun, Chengzhi Mao, Valentin Hofmann, and Xuechunzi Bai. Aligned but blind: Alignment increases implicit bias by reducing awareness of race. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics, pp. 22167–22184, 2025.",
+    "Zhouhao Sun, Li Du, Xiao Ding, Yixuan Ma, Yang Zhao, Kaitao Qiu, Ting Liu, and Bing Qin. Causal-guided active learning for debiasing large language models. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics, pp. 14455–14469, 2024.",
+    "Miles Turpin, Julian Michael, Ethan Perez, and Samuel R. Bowman. Language models don't always say what they think: unfaithful explanations in chain-of-thought prompting. In Proceedings of the 37th International Conference on Neural Information Processing Systems, 2023a.",
+    "Miles Turpin, Julian Michael, Ethan Perez, and Samuel R. Bowman. Language models don't always say what they think: Unfaithful explanations in chain-of-thought prompting. In Thirty-seventh Conference on Neural Information Processing Systems, 2023b.",
+    "Karthik Valmeekam, Matthew Marquez, Sarath Sreedharan, and Subbarao Kambhampati. On the planning abilities of large language models - a critical investigation. In Thirty-seventh Conference on Neural Information Processing Systems, 2023.",
+    "Song Wang, Peng Wang, Tong Zhou, Yushun Dong, Zhen Tan, and Jundong Li. CEB: Compositional evaluation benchmark for fairness in large language models. In The Thirteenth International Conference on Learning Representations, 2025.",
+    "Xingyao Wang, Yangyi Chen, Lifan Yuan, Yizhe Zhang, Yunzhu Li, Hao Peng, and Heng Ji. Executable code actions elicit better LLM agents. In Forty-first International Conference on Machine Learning, 2024a.",
+    "Yifei Wang, Yuyang Wu, Zeming Wei, Stefanie Jegelka, and Yisen Wang. A theoretical understanding of self-correction through in-context alignment. In The Thirty-eighth Annual Conference on Neural Information Processing Systems, 2024b.",
+    "Yizhong Wang, Yeganeh Kordi, Swaroop Mishra, Alisa Liu, Noah A. Smith, Daniel Khashabi, and Hannaneh Hajishirzi. Self-instruct: Aligning language models with self-generated instructions. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics, pp. 13484–13508, 2023.",
+    "Qiming Xie, Zengzhi Wang, Yi Feng, and Rui Xia. Ask again, then fail: Large language models' vacillations in judgment. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics, pp. 10709–10745, August 2024.",
+    "Rongwu Xu, Brian Lin, Shujian Yang, Tianqi Zhang, Weiyan Shi, Tianwei Zhang, Zhixuan Fang, Wei Xu, and Han Qiu. The earth is flat because...: Investigating LLMs' belief towards misinformation via persuasive conversation. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics, pp. 16259–16303, 2024.",
+    "An Yang, Anfeng Li, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chang Gao, Chengen Huang, Chenxu Lv, et al. Qwen3 technical report. arXiv preprint arXiv:2505.09388, 2025.",
+    "Eric Zelikman, Yuhuai Wu, Jesse Mu, and Noah Goodman. Star: Bootstrapping reasoning with reasoning. Advances in Neural Information Processing Systems, 35:15476–15488, 2022.",
+    "Xuan Zhang, Chao Du, Tianyu Pang, Qian Liu, Wei Gao, and Min Lin. Chain of preference optimization: Improving chain-of-thought reasoning in LLMs. Advances in Neural Information Processing Systems, 37:333–356, 2024."
+  ]
+}

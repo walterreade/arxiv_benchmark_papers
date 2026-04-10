@@ -1,0 +1,20 @@
+{
+  "filename": "2604.08178.pdf",
+  "title": "Aligning Agents via Planning: A Benchmark for Trajectory-Level Reward Modeling",
+  "arxiv_url": "https://arxiv.org/pdf/2604.08178",
+  "bias_targets": [
+    {
+      "target": "Positional bias",
+      "methodology": "Enforcing an A/B swap protocol where each pair of candidate trajectories is evaluated twice by the LLM judges with the presentation order reversed to account for and mitigate order preferences."
+    },
+    {
+      "target": "Verbosity / Length bias",
+      "methodology": "Stratifying pair selection by coarse complexity signals like length and explicitly controlling for superficial length cues in hard negative candidate construction to see if judges can be exploited by longer responses."
+    },
+    {
+      "target": "Effort bias",
+      "methodology": "Conducting qualitative error analysis in Tool-Irrelevance scenarios to observe if evaluators penalize efficient, direct answers and instead unjustly reward agents that make unnecessary tool calls."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}
