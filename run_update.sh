@@ -6,6 +6,9 @@
 PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$PROJECT_DIR"
 
+# Add local bin and snap bin to PATH
+export PATH="/home/inversion_google_com/.local/bin:/snap/bin:$PATH"
+
 # --- Parse flags ---
 FULL_ANALYSIS=false
 for arg in "$@"; do
