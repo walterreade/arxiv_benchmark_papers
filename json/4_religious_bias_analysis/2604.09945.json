@@ -1,0 +1,66 @@
+{
+  "filename": "2604.09945.pdf",
+  "title": "Cross-Cultural Value Awareness in Large Vision-Language Models",
+  "arxiv_url": "https://arxiv.org/pdf/2604.09945",
+  "measurement_description": "The paper measures how cultural contexts depicted in images, specifically focusing on religious backgrounds (e.g., churches, mosques, temples), influence the moral, ethical, and political value judgments made by Large Vision-Language Models (LVLMs). It evaluates these value judgments using Moral Foundations Theory (MFT) categorizations, value sensitivity metrics (Jaccard overlap across contexts), and lexical analyses via the Stereotype Content Model (warmth and competence).",
+  "religious_groups": [
+    "Christianity",
+    "Islam",
+    "Judaism",
+    "Hinduism",
+    "Buddhism",
+    "Shinto"
+  ],
+  "models_tested": [
+    "Qwen2.5-VL-7B-Instruct",
+    "Gemma-3-12b-it",
+    "InternVL3-8B",
+    "LLaVA-v1.6-Mistral-7B",
+    "Molmo-7B-D-0924"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Cultural Counterfactuals"
+  ],
+  "continuous_testing": false,
+  "findings": "The study found significant differences in how models characterize value systems across religious contexts. For example, Qwen2.5-VL associated Christian Church contexts with 'Care/Harm' values, Hindu and Shinto contexts with 'Loyalty/Betrayal' and 'Sanctity/Degradation', and Synagogue/Mosque contexts with 'Fairness/Cheating' and 'Liberty/Oppression'. In contrast, models like Molmo-7B and LLaVA-v1.6 showed near-zero variability across contexts despite recognizing them. Additionally, models like InternVL3-8B and LLaVA-v1.6 had significantly higher refusal rates when prompted for political values in Christian and Shinto contexts compared to Mosque or Hindu temple contexts.",
+  "references": [
+    "Mohammad Atari, Jesse Graham, and Morteza Dehghani. 2020. Foundations of morality in iran. Evolution and Human behavior, 41(5):367–384.",
+    "Zhe Chen, Weiyun Wang, Yue Cao, Yangzhou Liu, Zhangwei Gao, Erfei Cui, Jinguo Zhu, Shenglong Ye, Hao Tian, Zhaoyang Liu, and 1 others. 2024. Expanding performance boundaries of open-source multimodal models with model, data, and test-time scaling. arXiv preprint arXiv:2412.05271.",
+    "Matt Deitke, Christopher Clark, Sangho Lee, Rohun Tripathi, Yue Yang, Jae Sung Park, Mohammadreza Salehi, Niklas Muennighoff, Kyle Lo, Luca Soldaini, and 1 others. 2025. Molmo and pixmo: Open weights and open data for state-of-the-art vision-language models. In Proceedings of the Computer Vision and Pattern Recognition Conference, pages 91–104.",
+    "Susan T. Fiske, Amy J. C. Cuddy, Peter Glick, and Jun Xu. 2002. A model of (often mixed) stereotype content: Competence and warmth respectively follow from perceived status and competition. Journal of Personality and Social Psychology, 82(6):878–902.",
+    "Kathleen C Fraser and Svetlana Kiritchenko. 2024. Examining gender and racial bias in large vision–language models using a novel dataset of parallel images. In Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers), pages 690–713.",
+    "Jesse Graham and Jonathan Haidt. 2010. Beyond beliefs: Religions bind individuals into moral communities. Personality and social psychology review, 14(1):140–150.",
+    "Jesse Graham, Jonathan Haidt, Sena Koleva, Matt Motyl, Ravi Iyer, Sean P Wojcik, and Peter H Ditto. 2013. Moral foundations theory: The pragmatic validity of moral pluralism. In Advances in experimental social psychology, volume 47, pages 55–130. Elsevier.",
+    "Jesse Graham, Jonathan Haidt, and Brian A Nosek. 2009. Liberals and conservatives rely on different sets of moral foundations. Journal of personality and social psychology, 96(5):1029.",
+    "Jonathan Haidt and Craig Joseph. 2004. Intuitive ethics: How innately prepared intuitions generate culturally variable virtues. Daedalus, 133(4):55–66.",
+    "Siobhan Mackenzie Hall, Fernanda Gonçalves Abrantes, Hanwen Zhu, Grace Sodunke, Aleksandar Shtedritski, and Hannah Rose Kirk. 2023. Visogender: A dataset for benchmarking gender bias in image-text pronoun resolution. Advances in Neural Information Processing Systems, 36:63687–63723.",
+    "Brienna Herold, James Waller, and Raja Kushalnagar. 2022. Applying the stereotype content model to assess disability bias in popular pre-trained NLP models underlying AI-based assistive technologies. In Ninth workshop on speech and language processing for assistive technologies (SLPAT-2022), pages 58–65.",
+    "Phillip Howard, Kathleen C Fraser, Anahita Bhiwandiwalla, and Svetlana Kiritchenko. 2025. Uncovering bias in large vision-language models at scale with counterfactuals. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 5946–5991.",
+    "Phillip Howard, Avinash Madasu, Tiep Le, Gustavo Lujan Moreno, Anahita Bhiwandiwalla, and Vasudev Lal. 2024. Socialcounterfactuals: Probing and mitigating intersectional social biases in vision-language models with counterfactual examples. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 11975–11985.",
+    "Phillip Howard, Xin Su, and Kathleen C Fraser. 2026. Cultural counterfactuals: Evaluating cultural biases in large vision-language models with counterfactual examples. arXiv preprint arXiv:2603.02370.",
+    "Jen-tse Huang, Jiantong Qin, Jianping Zhang, Youliang Yuan, Wenxuan Wang, and Jieyu Zhao. 2025. Visbias: Measuring explicit and implicit social biases in vision language models. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing, pages 17981–18004.",
+    "Sepehr Janghorbani and Gerard De Melo. 2023. Multimodal bias: Introducing a framework for stereotypical bias assessment beyond gender and race in vision–language models. In Proceedings of the 17th Conference of the European Chapter of the Association for Computational Linguistics, pages 1725–1735.",
+    "Kathryn A Johnson, Joshua N Hook, Don E Davis, Daryl R Van Tongeren, Steven J Sandage, and Sarah A Crabtree. 2016. Moral foundation priorities reflect US Christians’ individual differences in religiosity. Personality and Individual Differences, 100:56–61.",
+    "Souvik Kundu, Anahita Bhiwandiwalla, Sungduk Yu, Phillip Howard, Tiep Le, Sharath Nittur Sridhar, David Cobbley, Hao Kang, and Vasudev Lal. 2025. Lvlm-compress-bench: Benchmarking the broader impact of large vision-language model compression. In Findings of the Association for Computational Linguistics: NAACL 2025, pages 1554–1570.",
+    "Sydney Levine, Joshua Rottman, Taylor Davis, Elizabeth O’Neill, Stephen Stich, and Edouard Machery. 2021. Religious affiliation and conceptions of the moral domain. Social Cognition, 39(1):139–165.",
+    "Haotian Liu, Chunyuan Li, Yuheng Li, Bo Li, Yuanhan Zhang, Sheng Shen, and Yong Jae Lee. 2024. Llava-next: Improved reasoning, ocr, and world knowledge.",
+    "Tamim Mobayed. 2019. Religious differences across moral foundations. https://blogs.lse.ac.uk/religionglobalsociety/2019/12/religious-differences-across-moral-foundations/. Accessed: 2026-03-26.",
+    "Vered Ne’eman-Haviv. 2026. Negotiating morality: Religion, education, and moral foundations in a dual-cultural context. Journal of Moral Education, pages 1–13.",
+    "Gandalf Nicolas, Xuechunzi Bai, and Susan T Fiske. 2021. Comprehensive stereotype content dictionaries using a semi-automated method. European Journal of Social Psychology, 51(1):178–196.",
+    "Chahat Raj, Anjishnu Mukherjee, Aylin Caliskan, Antonios Anastasopoulos, and Ziwei Zhu. 2024. Biasdora: Exploring hidden biased associations in vision-language models. In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 10439–10455.",
+    "Carolin M Schuster, Maria-Alexandra Roman, Shashwat Ghatiwala, and Georg Groh. 2025. Profiling bias in LLM: Stereotype dimensions in contextual word embeddings. In Proceedings of the Joint 25th Nordic Conference on Computational Linguistics and 11th Baltic Conference on Human Language Technologies (NoDaLiDa/Baltic-HLT 2025), pages 639–650.",
+    "Geoffrey William Sutton, Heather L Kelly, and Marin E Huver. 2020. Political identities, religious identity, and the pattern of moral foundations among conservative Christians. Journal of Psychology and Theology, 48(3):169–187.",
+    "Gemma Team. 2025a. Gemma 3.",
+    "Qwen Team. 2025b. Qwen2.5-vl.",
+    "Daryl R Van Tongeren, C Nathan DeWall, Sam A Hardy, and Philip Schwadel. 2021. Religious identity and morality: Evidence for religious residue and decay in moral foundations. Personality and Social Psychology Bulletin, 47(11):1550–1564.",
+    "Daniel Yi and Jo-Ann Tsang. 2020. The relationship between individual differences in religion, religious primes, and the moral foundations. Archive for the Psychology of Religion, 42(2):161–193.",
+    "Kankan Zhou, Eason Lai, and Jing Jiang. 2022. Vl-stereoset: A study of stereotypical bias in pre-trained vision-language models. In Proceedings of the 2nd Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics and the 12th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 527–538."
+  ]
+}
