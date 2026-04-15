@@ -1,0 +1,24 @@
+{
+  "filename": "2604.12481.pdf",
+  "title": "T2I-BiasBench: A Multi-Metric Framework for Auditing Demographic and Cultural Bias in Text-to-Image Models",
+  "arxiv_url": "https://arxiv.org/pdf/2604.12481",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Extracting gender attributes (male, female, unknown) from VLM-generated captions of images produced for professional prompts (e.g., 'Doctor') and calculating representation parity, parity difference, and bias amplification."
+    },
+    {
+      "target": "Racial/Ethnic bias",
+      "methodology": "Extracting explicit ethnicity categories from VLM-generated captions of images produced for underspecified prompts (e.g., 'Beauty') and measuring statistical divergence (KL divergence, Shannon entropy) from a uniform fairness reference."
+    },
+    {
+      "target": "Skin tone bias",
+      "methodology": "Classifying generated subjects into skin tone levels (Fair, Medium, Dark) using VLM captions and evaluating distributional skew and bias amplification against a uniform reference distribution."
+    },
+    {
+      "target": "Cultural bias",
+      "methodology": "Measuring cultural representation collapse for region-specific prompts (e.g., Indian festivals) by extracting cultural markers and calculating a Cultural Accuracy Ratio (CAR) and Contextual Association Score (CAS) to evaluate cultural breadth versus stereotyping."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

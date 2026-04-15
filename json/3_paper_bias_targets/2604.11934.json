@@ -1,0 +1,20 @@
+{
+  "filename": "2604.11934.pdf",
+  "title": "BiasIG: Benchmarking Multi-dimensional Social Biases in Text-to-Image Models",
+  "arxiv_url": "https://arxiv.org/pdf/2604.11934",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Extracting generated demographic attributes (Male/Female) using a fine-tuned Multi-Modal Large Language Model (MLLM) and comparing distributions against real-world baselines for underspecified prompts (implicit bias), as well as measuring instruction-following accuracy for explicitly specified gender constraints (explicit bias)."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Classifying generated racial identities (White, Black, East Asian, South Asian) via an MLLM to compute divergence from real-world population statistics, evaluating adherence to explicit racial prompts, and measuring associational discrimination by pairing races with semantically advantageous/disadvantageous traits (e.g., 'rich' vs. 'poor')."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Categorizing generated subjects into three age stages (Young, Middle-aged, Elderly) using an automated VQA pipeline, comparing the resulting generation distributions to global population baselines, and calculating exact matching accuracy when age is explicitly specified in prompts."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}
