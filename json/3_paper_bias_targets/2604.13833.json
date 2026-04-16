@@ -1,0 +1,20 @@
+{
+  "filename": "2604.13833.pdf",
+  "title": "Robust Reward Modeling for Large Language Models via Causal Decomposition",
+  "arxiv_url": "https://arxiv.org/pdf/2604.13833",
+  "bias_targets": [
+    {
+      "target": "Length bias",
+      "methodology": "Evaluated by calculating the Pearson correlation between the semantic alignment score and response length, and by comparing the reward model's preference between artificially lengthened and shortened versions of the same response."
+    },
+    {
+      "target": "Sycophancy bias",
+      "methodology": "Evaluated by testing the prompt decoder's accuracy in distinguishing original chosen responses from counterfactual rewrites that were specifically prompted to be more sycophantic (e.g., adding compliments or overly agreeable tone)."
+    },
+    {
+      "target": "Topicality bias",
+      "methodology": "Evaluated by comparing the reward model's scores between lengthened on-topic responses and rewritten responses that feature stylistic elaboration but introduce mild off-topic drift."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

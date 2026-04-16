@@ -1,0 +1,66 @@
+{
+  "filename": "2604.13899.pdf",
+  "title": "Do We Still Need Humans in the Loop? Comparing Human and LLM Annotation in Active Learning for Hostility Detection",
+  "arxiv_url": "https://arxiv.org/pdf/2604.13899",
+  "measurement_description": "The paper measures the difference between human and LLM annotations when detecting anti-immigrant hostility in German political TikTok comments. In relation to religion, it specifically evaluates how the LLM conflates hostility toward Muslims as a religious group (anti-Muslim bias) with anti-immigrant hostility, contrasting this with human annotators who distinguish between religious hostility and explicitly framed immigration hostility.",
+  "religious_groups": [
+    "Islam",
+    "Muslims"
+  ],
+  "models_tested": [
+    "Llama-3.3-70B-Instruct",
+    "GPT-5.2",
+    "german-bert",
+    "ModernGBERT",
+    "gbert-base",
+    "xlm-r-base"
+  ],
+  "languages_evaluated": [
+    "German"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "The study found that GPT-5.2 systematically treated anti-Muslim hostility and anti-immigrant hostility as overlapping categories. While human annotators labeled negative comments targeting Muslims solely as a religious group (e.g., 'Islam does not belong in Germany') as 'not anti-immigrant' because they lacked explicit immigration framing, the LLM consistently labeled these statements as 'anti-immigrant', revealing a broader operationalization of hostility boundaries by the LLM.",
+  "references": [
+    "Meysam Alizadeh, Maël Kubli, Zeynab Samei, Shirin Dehghani, Mohammadmasiha Zahedivafa, Juan Diego Bermeo, Maria Korobeynikova, and Fabrizio Gilardi. 2025. Open-source llms for text annotation: a practical guide for model setting and fine-tuning. J. Comput. Soc. Sci., 8(1):17.",
+    "Aida Mostafazadeh Davani, Mark Díaz, and Vinodkumar Prabhakaran. 2022. Dealing with disagreements: Looking beyond the majority vote in subjective annotations. Trans. Assoc. Comput. Linguistics, 10:92–110.",
+    "Yaron Fairstein, Oren Kalinsky, Zohar Karnin, Guy Kushilevitz, Alexander Libov, and Sofia Tolmach. 2024. Class balancing for efficient active learning in imbalanced datasets. In Proceedings of The 18th Linguistic Annotation Workshop (LAW-XVIII), pages 77–86.",
+    "Jan Fillies, Esther Theisen, Michael Hoffmann, Robert Jung, Elena Jung, Nele Fischer, and Adrian Paschke. 2025. A novel german tiktok hate speech dataset: far-right comments against politicians, women, and others. Discover Data, 3(1):4.",
+    "Paula Fortuna and Sérgio Nunes. 2018. A survey on automatic detection of hate speech in text. ACM Comput. Surv., 51(4):85:1–85:30.",
+    "Yarin Gal and Zoubin Ghahramani. 2016. Dropout as a bayesian approximation: Representing model uncertainty in deep learning. In Proceedings of the 33nd International Conference on Machine Learning, ICML 2016, New York City, NY, USA, June 19-24, 2016, JMLR Workshop and Conference Proceedings, pages 1050–1059. JMLR.org.",
+    "Fabrizio Gilardi, Meysam Alizadeh, and Maël Kubli. 2023. Chatgpt outperforms crowd-workers for text-annotation tasks. CoRR, abs/2303.15056.",
+    "Maarten Grootendorst. 2022. Bertopic: Neural topic modeling with a class-based TF-IDF procedure. CoRR, abs/2203.05794.",
+    "Xingwei He, Zhenghao Lin, Yeyun Gong, A-Long Jin, Hang Zhang, Chen Lin, Jian Jiao, Siu Ming Yiu, Nan Duan, and Weizhu Chen. 2024. Annollm: Making large language models to be better crowdsourced annotators. In Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies: Industry Track, NAACL 2024, Mexico City, Mexico, June 16-21, 2024, pages 165–190. Association for Computational Linguistics.",
+    "Michael Heseltine and Bernhard Clemm von Hohenberg. 2024. Large language models as a substitute for human experts in annotating political text. Research & Politics, 11(1):20531680241236239.",
+    "Neil Houlsby, Ferenc Huszar, Zoubin Ghahramani, and Máté Lengyel. 2011. Bayesian active learning for classification and preference learning. CoRR, abs/1112.5745.",
+    "Amir Hossein Kargaran, Ayyoob Imani, François Yvon, and Hinrich Schütze. 2023. Glotlid: Language identification for low-resource languages. In Findings of the Association for Computational Linguistics: EMNLP 2023, Singapore, December 6-10, 2023, Findings of ACL, pages 6155–6218. Association for Computational Linguistics.",
+    "Nataliia Kholodna, Sahib Julka, Mohammad Khodadadi, Muhammed Nurullah Gumus, and Michael Granitzer. 2024. Llms in the loop: Leveraging large language model annotations for active learning in low-resource languages. In Machine Learning and Knowledge Discovery in Databases. Applied Data Science Track - European Conference, ECML PKDD 2024, Vilnius, Lithuania, September 9-13, 2024, Proceedings, Part X, Lecture Notes in Computer Science, pages 397–412. Springer.",
+    "Aida Kostikova, Dominik Beese, Benjamin Paassen, Ole Pütz, Gregor Wiedemann, and Steffen Eger. 2024. Fine-grained detection of solidarity for women and migrants in 155 years of german parliamentary debates. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, EMNLP 2024, Miami, FL, USA, November 12-16, 2024, pages 5884–5907. Association for Computational Linguistics.",
+    "Woosuk Kwon. 2025. vLLM: An Efficient Inference Engine for Large Language Models. Ph.D. thesis, UC Berkeley.",
+    "Tsung-Yi Lin, Priya Goyal, Ross Girshick, Kaiming He, and Piotr Dollár. 2017. Focal loss for dense object detection. In Proceedings of the IEEE international conference on computer vision, pages 2980–2988.",
+    "Ilya Loshchilov and Frank Hutter. 2019. Decoupled weight decay regularization. In 7th International Conference on Learning Representations, ICLR 2019, New Orleans, LA, USA, May 6-9, 2019. OpenReview.net.",
+    "David Lowell, Zachary C. Lipton, and Byron C. Wallace. 2019. Practical obstacles to deploying active learning. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing, EMNLP-IJCNLP 2019, Hong Kong, China, November 3-7, 2019, pages 21–30. Association for Computational Linguistics.",
+    "Jingwei Ni, Yu Fan, Vilém Zouhar, Donya Rooein, Alexander Miserlis Hoyle, Mrinmaya Sachan, Markus Leippold, Dirk Hovy, and Elliott Ash. 2025. Can large language models capture human annotator disagreements? CoRR, abs/2506.19467.",
+    "Nicholas Pangakis, Samuel Wolken, and Neil Fasching. 2023. Automated annotation with generative AI requires validation. CoRR, abs/2306.00176.",
+    "Barbara Plank. 2022. The \"problem\" of human label variation: On ground truth in data, modeling and evaluation. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, EMNLP 2022, Abu Dhabi, United Arab Emirates, December 7-11, 2022, pages 10671–10682. Association for Computational Linguistics.",
+    "Julia Romberg, Christopher Schröder, Julius Gonsior, Katrin Tomanek, and Fredrik Olsson. 2026. Reassessing active learning adoption in contemporary NLP: A community survey. In Proceedings of the 19th Conference of the European Chapter of the Association for Computational Linguistics, EACL 2026 - Volume 1: Long Papers, Rabat, Morocco, March 24-29, 2026, pages 2621–2647. Association for Computational Linguistics.",
+    "Björn Ross, Michael Rist, Guillermo Carbonell, Benjamin Cabrera, Nils Kurowsky, and Michael Wojatzki. 2017. Measuring the reliability of hate speech annotations: The case of the european refugee crisis. CoRR, abs/1701.08118.",
+    "Paul Röttger, Bertie Vidgen, Dirk Hovy, and Janet B. Pierrehumbert. 2022. Two contrasting data annotation paradigms for subjective NLP tasks. In Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, NAACL 2022, Seattle, WA, United States, July 10-15, 2022, pages 175–190. Association for Computational Linguistics.",
+    "Maarten Sap, Saadia Gabriel, Lianhui Qin, Dan Jurafsky, Noah A. Smith, and Yejin Choi. 2020. Social bias frames: Reasoning about social and power implications of language. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, ACL 2020, Online, July 5-10, 2020, pages 5477–5490. Association for Computational Linguistics.",
+    "Anna Schmidt and Michael Wiegand. 2017. A survey on hate speech detection using natural language processing. In Proceedings of the Fifth International Workshop on Natural Language Processing for Social Media, SocialNLP@EACL 2017, Valencia, Spain, April 3, 2017, pages 1–10. Association for Computational Linguistics.",
+    "Christopher Schröder and Andreas Niekler. 2020. A survey of active learning for text classification using deep neural networks. CoRR, abs/2008.07267.",
+    "Burr Settles. 2009. Active learning literature survey.",
+    "Miriah Steiger, Timir J. Bharucha, Sukrit Venkatagiri, Martin J. Riedl, and Matthew Lease. 2021. The psychological well-being of content moderators: The emotional labor of commercial moderation and avenues for improving support. In CHI '21: CHI Conference on Human Factors in Computing Systems, Virtual Event / Yokohama, Japan, May 8-13, 2021, pages 341:1–341:14. ACM.",
+    "Llama Team. 2024. The llama 3 herd of models. CoRR, abs/2407.21783.",
+    "Petter Törnberg. 2025. Large language models outperform expert coders and supervised classifiers at annotating political social media messages. Social Science Computer Review, 43(6):1181–1195.",
+    "Sebastián Vallejo Vera and Hunter Driggers. 2025. Llms as annotators: the effect of party cues on labelling decisions by large language models. Humanities and Social Sciences Communications, 12(1):1–11.",
+    "Zeerak Waseem and Dirk Hovy. 2016. Hateful symbols or hateful people? predictive features for hate speech detection on twitter. In Proceedings of the Student Research Workshop, SRW@HLT-NAACL 2016, The 2016 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, San Diego California, USA, June 12-17, 2016, pages 88–93. The Association for Computational Linguistics.",
+    "Dustin Wright and Isabelle Augenstein. 2025. Aggregating soft labels from crowd annotations improves uncertainty estimation under distribution shift. PLoS One, 20(6):e0323064.",
+    "Yu Xia, Subhojyoti Mukherjee, Zhouhang Xie, Junda Wu, Xintong Li, Ryan Aponte, Hanjia Lyu, Joe Barrow, Hongjie Chen, Franck Dernoncourt, Branislav Kveton, Tong Yu, Ruiyi Zhang, Jiuxiang Gu, Nesreen K. Ahmed, Yu Wang, Xiang Chen, Hanieh Deilamsalehy, Sungchul Kim, Zhengmian Hu, Yue Zhao, Nedim Lipka, Seunghyun Yoon, Ting-Hao Kenneth Huang, Zichao Wang, Puneet Mathur, Soumyabrata Pal, Koyel Mukherjee, Zhehao Zhang, Namyong Park, Thien Huu Nguyen, Jiebo Luo, Ryan A. Rossi, and Julian J. McAuley. 2025. From selection to generation: A survey of llm-based active learning. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), ACL 2025, Vienna, Austria, July 27 - August 1, 2025, pages 14552–14569. Association for Computational Linguistics.",
+    "Ruoyu Zhang, Yanzeng Li, Yongliang Ma, Ming Zhou, and Lei Zou. 2023. Llmaaa: Making large language models as active annotators. In Findings of the Association for Computational Linguistics: EMNLP 2023, Singapore, December 6-10, 2023, Findings of ACL, pages 13088–13103. Association for Computational Linguistics."
+  ]
+}
