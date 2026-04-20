@@ -1,0 +1,24 @@
+{
+  "filename": "2604.15937.pdf",
+  "title": "Polarization by Default: Auditing Recommendation Bias in LLM-Based Content Curation",
+  "arxiv_url": "https://arxiv.org/pdf/2604.15937",
+  "bias_targets": [
+    {
+      "target": "Political bias",
+      "methodology": "Inferring author political leaning from Twitter/X profile bios and posts using a two-LLM agreement protocol, and comparing the political distribution of the LLM-selected recommendations to the initial candidate pool."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Inferring author gender from Twitter/X profile bios and posts using open-source LLMs, and measuring the disparity in gender representation between the LLM's top-10 recommendations and the 100-post candidate pool."
+    },
+    {
+      "target": "Racial/Minority bias",
+      "methodology": "Inferring author racial or ethnic minority status (in the US context) from Twitter/X profiles and posts, and calculating directional bias by comparing the group's share in recommendations versus the candidate pool."
+    },
+    {
+      "target": "Polarization and Content bias",
+      "methodology": "Using NLP tools and classifiers (RoBERTa, Detoxify, VADER) to score posts for polarization, toxicity, and sentiment, and measuring the distributional shift of these features when LLMs curate and rank content from the baseline pool."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}
