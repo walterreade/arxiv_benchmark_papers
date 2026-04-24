@@ -1,0 +1,32 @@
+{
+  "filename": "2604.16884.pdf",
+  "title": "Bias-constrained multimodal intelligence for equitable and reliable clinical AI",
+  "arxiv_url": "https://arxiv.org/pdf/2604.16884",
+  "bias_targets": [
+    {
+      "target": "Modality availability bias",
+      "methodology": "Comparing model performance metrics (such as accuracy, Dice score, BLEU, and ROUGE) across diverse medical imaging modalities (e.g., CT, MRI, ultrasound, dermoscopy) to ensure robust performance on both common and rare imaging techniques."
+    },
+    {
+      "target": "Disease prevalence bias",
+      "methodology": "Evaluating multi-class and multi-label classification accuracy on long-tailed datasets (e.g., ISIC2018, CXR-LT2024) by dividing classes into head (many), medium, and tail (few) subgroups based on sample counts."
+    },
+    {
+      "target": "Anatomical prevalence bias",
+      "methodology": "Assessing image segmentation performance (Dice and IoU scores) on anatomical regions and lesions stratified by their occurrence prevalence (head, medium, tail) in the training data."
+    },
+    {
+      "target": "Gender bias",
+      "methodology": "Comparing macro-averaged accuracy of multi-label chest disease classification between female and male patient subgroups."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Comparing macro-averaged accuracy of multi-label chest disease classification across Asian, Black, and White patient subgroups."
+    },
+    {
+      "target": "Age bias",
+      "methodology": "Comparing macro-averaged accuracy of multi-label chest disease classification across multiple age cohorts (0-40, 40-60, 60-80, and 80+ years)."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

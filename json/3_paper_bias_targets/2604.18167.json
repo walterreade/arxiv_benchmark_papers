@@ -1,0 +1,16 @@
+{
+  "filename": "2604.18167.pdf",
+  "title": "Embedding Arithmetic: A Lightweight, Tuning-Free Framework for Post-hoc Bias Mitigation in Text-to-Image Models",
+  "arxiv_url": "https://arxiv.org/pdf/2604.18167",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Generating images from text prompts of various professions (e.g., \"A photo portrait of a CEO\"), classifying the gender of the faces in the generated images using a ResNet-based attribute detector trained on the FairFace dataset, and computing the Shannon Entropy of the resulting gender distribution."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Generating images from text prompts of various professions, classifying the racial category of the generated faces (white, black, asian, indian) using a ResNet-based attribute detector trained on the FairFace dataset, and computing the Shannon Entropy of the racial distribution."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}
