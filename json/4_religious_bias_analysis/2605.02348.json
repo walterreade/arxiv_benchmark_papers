@@ -1,0 +1,66 @@
+{
+  "filename": "2605.02348.pdf",
+  "title": "Decoding-Time Debiasing via Process Reward Models: From Controlled Fill-in to Open-Ended Generation",
+  "arxiv_url": "https://arxiv.org/pdf/2605.02348",
+  "measurement_description": "The paper measures decoding-time bias mitigation (debiasing) across various social bias categories, including religion. Specifically, it evaluates whether language models generate stereotypic or fearful continuations when prompted with scenarios involving religious markers, such as a 'bearded man reading Arabic script on a plane'.",
+  "religious_groups": [
+    "Islam"
+  ],
+  "models_tested": [
+    "GPT-4o-mini",
+    "Llama 3.2 3B",
+    "Gemma 3 4B",
+    "Qwen 2.5 3B"
+  ],
+  "languages_evaluated": [
+    "English",
+    "Urdu"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [],
+  "continuous_testing": false,
+  "findings": "The paper found that biases related to religion are highly resistant to token-level debiasing. While the decoding-time debiasing schemes (Sequential and Constitutional) successfully eliminated gender biases (reaching a bias score of 1.0), religion and disability biases remained challenging and showed much lower mitigation success, consistent across both single-word fill-in and open-ended generation tasks.",
+  "references": [
+    "Yuntao Bai, Andy Jones, Kamal Ndousse, Amanda Askell, Anna Chen, Nova DasSarma, Dawn Drain, Stanislav Fort, Deep Ganguli, Tom Henighan, et al. Constitutional AI: Harmlessness from AI feedback. arXiv preprint arXiv:2212.08073, 2022.",
+    "Emily M Bender, Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. On the dangers of stochastic parrots: Can language models be too big? pages 610–623, 2021.",
+    "Su Lin Blodgett, Solon Barocas, Hal Daumé III, and Hanna Wallach. Language (technology) is power: A critical survey of “bias” in NLP. pages 5454–5476, 2020.",
+    "Tolga Bolukbasi, Kai-Wei Chang, James Y Zou, Venkatesh Saligrama, and Adam T Kalai. Man is to computer programmer as woman is to homemaker? Debiasing word embeddings. Advances in Neural Information Processing Systems, 29, 2016.",
+    "Aylin Caliskan, Joanna J Bryson, and Arvind Narayanan. Semantics derived automatically from language corpora contain human-like biases. volume 356, pages 183–186, 2017.",
+    "Karl Cobbe, Vineet Kosaraju, Mohammad Bavarian, Mark Chen, Heewoo Jun, Lukasz Kaiser, Matthias Plappert, Jerry Tworek, Jacob Hilton, Reiichiro Nakano, et al. Training verifiers to solve math word problems. arXiv preprint arXiv:2110.14168, 2021.",
+    "Sumanth Dathathri, Andrea Madotto, Janice Lan, Jane Hung, Eric Frank, Piero Molino, Jason Yosinski, and Rosanne Liu. Plug and play language models: A simple approach to controlled text generation. 2020.",
+    "Jwala Dhamala, Tony Sun, Varun Kumar, Satyapriya Krishna, Yada Pruksachatkun, Kai-Wei Chang, and Rahul Gupta. BOLD: Dataset and metrics for measuring biases in open-ended language generation. pages 862–872, 2021.",
+    "Emily Dinan, Angela Fan, Ledell Wu, Jason Weston, Douwe Kiela, and Adina Williams. Queens are powerful too: Mitigating gender bias in dialogue generation. In Proceedings of EMNLP, pages 8173–8188, 2020.",
+    "Isabel O Gallegos, Ryan A Rossi, Joe Barber, Md Mehrab Tanjim, Sungchul Kim, Franck Dernoncourt, Tong Yu, Ruiyi Zhang, and Nesreen K Ahmed. Bias and fairness in large language models: A survey. Computational Linguistics, 50(3):1097–1179, 2024.",
+    "Samuel Gehman, Suchin Gururangan, Maarten Sap, Yejin Choi, and Noah A Smith. RealToxicityPrompts: Evaluating neural toxic degeneration in language models. Findings of EMNLP, 2020.",
+    "Gemma Team. Gemma: Open models based on Gemini research and technology. arXiv preprint arXiv:2403.08295, 2024.",
+    "Sourojit Ghosh and Aylin Caliskan. ChatGPT perpetuates gender bias in machine translation and ignores non-gendered pronouns: Findings across Bengali and five other low-resource languages. 2023.",
+    "Ben Krause, Akhilesh Deepak Gotmare, Bryan McCann, Nitish Shirish Keskar, Shafiq Joty, Richard Socher, and Nazneen Fatema Rajani. GeDi: Generative discriminator guided sequence generation. Findings of EMNLP, 2021.",
+    "Sharon Levy, Neha Lazar, and Rafael Arriaga. Comparing biases and the impact of multilingual training across multiple languages. In Proceedings of EACL, pages 2025–2038, 2023.",
+    "Yuhui Li, Fangyun Wei, Jinjing Zhao, Chao Zhang, and Hongyang Zhang. RAIN: Your language models can align themselves without finetuning. In International Conference on Learning Representations, 2024.",
+    "Percy Liang, Rishi Bommasani, Tony Lee, Dimitris Tsipras, Dilara Soylu, Michihiro Yasunaga, Yian Zhang, Deepak Narayanan, Yuhuai Wu, Ananya Kumar, et al. Holistic evaluation of language models. Transactions on Machine Learning Research, 2023.",
+    "Hunter Lightman, Vineet Kosaraju, Yura Burda, Harri Edwards, Bowen Baker, Teddy Lee, Jan Leike, John Schulman, Ilya Sutskever, and Karl Cobbe. Let’s verify step by step. arXiv preprint arXiv:2305.20050, 2023.",
+    "Alisa Liu, Maarten Sap, Ximing Lu, Swabha Swayamdipta, Chandra Bhagavatula, Noah A Smith, and Yejin Choi. DExperts: Decoding-time controlled text generation with experts and anti-experts. pages 6691–6706, 2021.",
+    "Kaiji Lu, Piotr Mardziel, Fangjing Wu, Preetam Amancharla, and Anupam Datta. Gender bias in neural natural language processing. pages 189–202, 2020.",
+    "Aman Madaan, Niket Tandon, Prakhar Gupta, Skyler Hallinan, Luyu Gao, Sarah Wiegreffe, Uri Alon, Nouha Dziri, Shrimai Prabhumoye, Yiming Yang, et al. Self-refine: Iterative refinement with self-feedback. Advances in Neural Information Processing Systems, 36, 2023.",
+    "Chandler May, Alex Wang, Shikha Bordia, Samuel R Bowman, and Rachel Rudinger. On measuring social biases in sentence encoders. In Proceedings of NAACL, 2019.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. StereoSet: Measuring stereotypical bias in pretrained language models. In Proceedings of ACL, pages 5356–5371, 2021.",
+    "Nikita Nangia, Clara Vania, Rasika Bhatt, and Samuel R Bowman. CrowS-Pairs: A challenge dataset for measuring social biases in masked language models. In Proceedings of EMNLP, pages 1953–1967, 2020.",
+    "OpenAI. GPT-4 technical report. arXiv preprint arXiv:2303.08774, 2024.",
+    "Long Ouyang, Jeffrey Wu, Xu Jiang, Diogo Almeida, Carroll Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, et al. Training language models to follow instructions with human feedback. Advances in Neural Information Processing Systems, 35:27730–27744, 2022.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel R Bowman. BBQ: A hand-built bias benchmark for question answering. In Findings of ACL, pages 2086–2105, 2022.",
+    "Rafael Rafailov, Archit Sharma, Eric Mitchell, Stefano Ermon, Christopher D Manning, and Chelsea Finn. Direct preference optimization: Your language model is secretly a reward model. Advances in Neural Information Processing Systems, 36, 2023.",
+    "Timo Schick, Sahana Udupa, and Hinrich Schütze. Self-diagnosis and self-debiasing: A proposal for reducing corpus-based bias in NLP. volume 9, pages 1408–1424, 2021.",
+    "Emily Sheng, Kai-Wei Chang, Premkumar Natarajan, and Nanyun Peng. The woman worked as a babysitter: On biases in language generation. In Proceedings of EMNLP-IJCNLP, pages 3407–3412, 2019.",
+    "Zeerak Talat, Anne Lauscher, Amandalynne Paullada, and Emily Sheng. You reap what you sow: On the challenges of bias evaluation under multilingual settings. In Proceedings of BigScience Workshop at ACL, pages 26–41, 2022.",
+    "Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine Babaei, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, et al. Llama 2: Open foundation and fine-tuned chat models. arXiv preprint arXiv:2307.09288, 2023.",
+    "Jonathan Uesato, Nate Kushman, Ramana Kumar, Francis Song, Noah Siegel, Lisa Wang, Antonia Creswell, Geoffrey Irving, and Irina Higgins. Solving math word problems with process- and outcome-based feedback. arXiv preprint arXiv:2211.14275, 2022.",
+    "Laura Weidinger, John Mellor, Maribeth Rauh, Conor Griffin, Jonathan Uesato, Po-Sen Huang, Myra Cheng, Mia Glaese, Borja Boreiko, Ryan Steed, et al. Ethical and social risks of harm from language models. arXiv preprint arXiv:2112.04359, 2021.",
+    "An Yang, Baosong Yang, Binyuan Hui, Bo Zheng, Bowen Yu, Chang Zhou, Chengpeng Li, Chengyuan Li, Dayiheng Liu, Fei Huang, et al. Qwen2 technical report. arXiv preprint arXiv:2407.10671, 2024.",
+    "Kevin Yang and Dan Klein. FUDGE: Controlled text generation with future discriminators. In Proceedings of NAACL, pages 3511–3535, 2021.",
+    "Ran Zmigrod, Sabrina J Mielke, Hanna Wallach, and Ryan Cotterell. Counterfactual data augmentation for mitigating gender stereotypes in languages with rich morphology. In Proceedings of ACL, pages 1651–1661, 2019."
+  ]
+}
