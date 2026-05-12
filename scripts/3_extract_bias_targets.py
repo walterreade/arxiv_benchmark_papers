@@ -55,7 +55,7 @@ def analyze_bias_targets(pdf_path: str, api_key: str, model_name: str,
                          rate_limiter: RateLimiter, error_tracker: ErrorTracker,
                          max_retries: int = 3) -> dict:
     """Analyze a PDF to extract bias targets using Gemini API."""
-    client = genai.Client(api_key=api_key)
+    client = genai.Client(api_key=api_key, http_options=types.HttpOptions(timeout=ITERATION_TIMEOUT))
     sample_file = None
 
     # Check if we should exit before starting
