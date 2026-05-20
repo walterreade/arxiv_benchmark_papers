@@ -22,6 +22,27 @@ This project provides tools to:
 | [LLM Bias Papers - Statistics](reports/LLM%20Bias%20Papers%20-%20Statistics.md) | Bias target distribution across all analyzed LLM-bias papers |
 | [Religious Papers - Latest Daily Update](reports/daily_updates/20260226_daily_update.md) | Most recent papers analyzed |
 
+## Claude Code Skills
+
+This project includes [Claude Code](https://claude.ai/claude-code) skills that automate common research tasks.
+
+### `/find-citations`
+
+Given a claim or quote from the paper draft, searches the project's data sources to find the supporting paper and generates a BibTeX entry.
+
+**Usage:** Type `/find-citations` followed by the claim text, e.g.:
+
+```
+/find-citations "Models disproportionately use Chain-of-Thought reasoning to justify attributing blame to the marginalized religious group."
+```
+
+**What it does:**
+1. Searches `reports/Religious Bias Papers - Summaries.md`, `reports/Religious Bias Papers - Interesting Findings.md`, and `utility_files/llm_bias_papers.csv` for matching papers
+2. Fetches full metadata from arxiv (authors, venue, year)
+3. Generates a complete BibTeX entry
+
+See [`.claude/skills/find-citations/SKILL.md`](.claude/skills/find-citations/SKILL.md) for the full procedure.
+
 ## Project Structure
 
 ```

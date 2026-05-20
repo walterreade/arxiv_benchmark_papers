@@ -31,7 +31,8 @@ from tqdm import tqdm
 # Constants
 # ---------------------------------------------------------------------------
 
-ITERATION_TIMEOUT = 300  # 5 minutes
+ITERATION_TIMEOUT = 300  # seconds — for the file-processing wait loop
+HTTP_TIMEOUT = 600_000  # milliseconds (10 min) — HttpOptions.timeout uses ms
 
 
 # ---------------------------------------------------------------------------
@@ -138,8 +139,10 @@ def load_failed_files(failures_csv: str) -> set[str]:
         for row in reader:
             filename = row.get('filename', '')
             error = row.get('error', '').lower()
-            # Skip resource exhausted errors - these should be retried
+            # Skip transient errors - these should be retried
             if 'resource exhausted' in error or '429' in error or 'quota' in error:
+                continue
+            if 'timed out' in error:
                 continue
             if filename:
                 failed.add(filename)

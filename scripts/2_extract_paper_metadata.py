@@ -16,7 +16,7 @@ from pypdf import PdfReader
 
 from shared import (
     genai, types,
-    ResourceExhaustedError, IterationTimeoutError, ITERATION_TIMEOUT,
+    ResourceExhaustedError, IterationTimeoutError, ITERATION_TIMEOUT, HTTP_TIMEOUT,
     ErrorTracker, RateLimiter,
     load_failed_files, save_json,
 )
@@ -35,7 +35,7 @@ def get_page_count(pdf_path: str) -> int:
 def analyze_content(pdf_path: str, api_key: str, rate_limiter: RateLimiter, model_name: str, 
                     error_tracker: ErrorTracker, max_retries: int = 3) -> dict:
     """Analyze the PDF content using Gemini API with retry logic."""
-    client = genai.Client(api_key=api_key, http_options=types.HttpOptions(timeout=ITERATION_TIMEOUT))
+    client = genai.Client(api_key=api_key, http_options=types.HttpOptions(timeout=HTTP_TIMEOUT))
     sample_file = None
     
     # Check if we should exit before starting
@@ -259,7 +259,7 @@ Return a JSON object with these 4 boolean fields:
 - `ethics`: True if the paper studies ethical reasoning, ethical frameworks, ethical bias, ethical dilemmas, secular ethics, normative reasoning, deontology, consequentialism, utilitarianism, virtue ethics, value pluralism, or value systems in LLMs/NLP.
 - `religion`: True if the paper studies how LLMs handle, represent, or respond to religious topics, beliefs, groups, or religious values."""
         
-        client = genai.Client(api_key=api_key, http_options=types.HttpOptions(timeout=ITERATION_TIMEOUT))
+        client = genai.Client(api_key=api_key, http_options=types.HttpOptions(timeout=HTTP_TIMEOUT))
         rate_limiter.wait_for_token()
         try:
             response = client.models.generate_content(
