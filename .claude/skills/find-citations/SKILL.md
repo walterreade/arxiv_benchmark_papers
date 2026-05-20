@@ -11,7 +11,7 @@ Given a claim or quote from the paper draft, find the source paper that supports
 
 ## Input
 
-The user provides a claim — typically a sentence or phrase from `paper_draft.md` that needs a citation.
+The user provides a claim or question that needs a citation.
 
 ## Procedure
 
