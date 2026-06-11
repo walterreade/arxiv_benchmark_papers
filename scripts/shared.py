@@ -144,6 +144,8 @@ def load_failed_files(failures_csv: str) -> set[str]:
                 continue
             if 'timed out' in error:
                 continue
+            if '503' in error or 'unavailable' in error:
+                continue
             if filename:
                 failed.add(filename)
     return failed

@@ -620,6 +620,8 @@ def main():
                         help="Process unclassified papers from the snapshot file before fetching API papers")
     parser.add_argument("--workers", type=int, default=10,
                         help="Number of concurrent classification threads (default 10)")
+    parser.add_argument("--lookback-days", type=int, default=7,
+                        help="Number of days to look back for recent papers (default 7)")
     parser.add_argument("--use-rss", action="store_true",
                         help="Use RSS feeds instead of the API for fetching recent papers")
     args = parser.parse_args()
@@ -684,7 +686,7 @@ def main():
     else:
         print(f"\nStep 3: Fetching last {args.max_papers} papers from arXiv API...")
         print("-" * 40)
-        api_papers = fetch_recent_papers(max_papers=args.max_papers)
+        api_papers = fetch_recent_papers(max_papers=args.max_papers, lookback_days=args.lookback_days)
 
         if not api_papers:
             print(f"\n  API returned no papers. Falling back to RSS feeds...")

@@ -1,0 +1,73 @@
+{
+  "filename": "2606.06244.pdf",
+  "title": "Steering LLM Viewpoints through Fabricated Evidence Injection",
+  "arxiv_url": "https://arxiv.org/pdf/2606.06244",
+  "measurement_description": "The paper evaluates the susceptibility of LLMs to adopting and propagating religious stereotypes and misinformation when presented with fabricated evidence. It specifically measures the Viewpoint Support Score (VSScore) to quantify how effectively a model's response aligns with a misleading religious viewpoint, as well as the Harmfulness Change Rate (HCRate) to measure how attacks shift safety risks regarding religious content.",
+  "religious_groups": [
+    "Islam",
+    "Religion (General category)"
+  ],
+  "models_tested": [
+    "GPT-4o",
+    "Claude-3.7-Sonnet",
+    "DeepSeek-V3",
+    "DeepSeek-R1",
+    "Gemini-3.1-Pro",
+    "o3-mini",
+    "GPT-5.4",
+    "Claude-4.6-Sonnet",
+    "Claude-4.7-Opus",
+    "Qwen-2.5-7B",
+    "GPT-4o-mini",
+    "Llama-Guard-4-12B",
+    "gpt-oss-safeguard-20b"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "BBQ",
+    "ToxiGen",
+    "MMLU-Pro"
+  ],
+  "continuous_testing": false,
+  "findings": "The GHOSTWRITER attack successfully steered LLMs to adopt misleading religious viewpoints by using fabricated evidence. For religious topics, the models' support for biased or incorrect statements (VSScore) increased from baseline levels of approximately 1.98-2.1 to scores as high as 9.02-9.1 after the attack. One evaluated example demonstrated a model propagating extremism-related misinformation about religious attendees based on a fabricated study.",
+  "references": [
+    "Maksym Andriushchenko, Francesco Croce, and Nicolas Flammarion. 2024. Jailbreaking leading safety aligned llms with simple adaptive attacks. arXiv preprint arXiv:2404.02151.",
+    "Patrick Chao, Alexander Robey, Edgar Dobriban, Hamed Hassani, George J Pappas, and Eric Wong. 2023. Jailbreaking black box large language models in twenty queries. arXiv preprint arXiv:2310.08419.",
+    "Canyu Chen, Baixiang Huang, Zekun Li, Zhaorun Chen, Shiyang Lai, Xiongxiao Xu, Jia-Chen Gu, Jindong Gu, Huaxiu Yao, Chaowei Xiao, and 1 others. 2024. Can editing llms inject harm? arXiv preprint arXiv:2407.20224.",
+    "Junjie Chu, Yugeng Liu, Ziqing Yang, Xinyue Shen, Michael Backes, and Yang Zhang. 2025. Jailbreakradar: Comprehensive assessment of jailbreak attacks against llms. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 21538–21566.",
+    "Aaron Fanous, Jacob Goldberg, Ank A Agarwal, Joanna Lin, Anson Zhou, Roxana Daneshjou, and Sanmi Koyejo. 2025. Syceval: Evaluating llm sycophancy. arXiv preprint arXiv:2502.08177.",
+    "Yuyang Gong, Zhuo Chen, Miaokun Chen, Fengchang Yu, Wei Lu, Xiaofeng Wang, Xiaozhong Liu, and Jiawen Liu. 2025. Topic-fliprag: Topic-orientated adversarial opinion manipulation attacks to retrieval-augmented generation models.",
+    "Kai Greshake, Sahar Abdelnabi, Shailesh Mishra, Christoph Endres, Thorsten Holz, and Mario Fritz. 2023. Not what you’ve signed up for: Compromising real-world llm-integrated applications with indirect prompt injection. In Proceedings of the 16th ACM Workshop on Artificial Intelligence and Security, pages 79–90.",
+    "Thomas Hartvigsen, Saadia Gabriel, Hamid Palangi, Maarten Sap, Dipankar Ray, and Ece Kamar. 2022. Toxigen: A large-scale machine-generated dataset for adversarial and implicit hate speech detection. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 3309–3326.",
+    "Dan Hendrycks, Collin Burns, Steven Basart, Andy Zou, Mantas Mazeika, Dawn Song, and Jacob Steinhardt. 2020. Measuring massive multitask language understanding. arXiv preprint arXiv:2009.03300.",
+    "Edward J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, and Weizhu Chen. 2022. Lora: Low-rank adaptation of large language models. ICLR.",
+    "Bo Hui, Haolin Yuan, Neil Gong, Philippe Burlina, and Yinzhi Cao. 2024. Pleak: Prompt leaking attacks against large language model applications. In Proceedings of the 2024 on ACM SIGSAC Conference on Computer and Communications Security, pages 3600–3614.",
+    "Hakan Inan, Kartikeya Upasani, Jianfeng Chi, Rashi Rungta, Krithika Iyer, Yuning Mao, Michael Tontchev, Qing Hu, Brian Fuller, Davide Testuggine, and Madian Khabsa. 2023. Llama guard: Llm-based input-output safeguard for human-ai conversations. arXiv preprint arXiv:2312.06674.",
+    "Kate Conger. 2025. Employee’s change caused xai’s chatbot to veer into south african politics. New York Times.",
+    "Yi Liu, Gelei Deng, Yuekang Li, Kailong Wang, Tianwei Zhang, Yepang Liu, Haoyu Wang, Yan Zheng, and Yang Liu. 2023. Prompt injection attack against llm-integrated applications. arXiv preprint arXiv:2306.05499.",
+    "Yinhan Liu. 2019. Roberta: A robustly optimized bert pretraining approach. arXiv preprint arXiv:1907.11692.",
+    "Yupei Liu, Yuqi Jia, Runpeng Geng, Jinyuan Jia, and Neil Zhenqiang Gong. 2024. Formalizing and benchmarking prompt injection attacks and defenses. In 33rd USENIX Security Symposium (USENIX Security 24), pages 1831–1847.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel R Bowman. 2021. Bbq: A hand-built bias benchmark for question answering. arXiv preprint arXiv:2110.08193.",
+    "Jason Phang, Michael Lampe, Lama Ahmad, Sandhini Agarwal, Cathy Mengying Fang, Auren R. Liu, Valdemar Danry, Eunhae Lee, Samantha W. T. Chan, Pat Pataranutaporn, and Pattie Maes. 2025. Investigating affective use and emotional well-being on chatgpt. OpenAI.",
+    "Yujin Potter, Shiyang Lai, Junsol Kim, James Evans, and Dawn Song. 2024. Hidden persuaders: Llms’ political leaning and their influence on voters. arXiv preprint arXiv:2410.24190.",
+    "Qibing Ren, Hao Li, Dongrui Liu, Zhanxu Xie, Xiaoya Lu, Yu Qiao, Lei Sha, Junchi Yan, Lizhuang Ma, and Jing Shao. 2025. Llms know their vulnerabilities: Uncover safety gaps through natural distribution shifts. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 24763–24785.",
+    "Xinyue Shen, Zeyuan Chen, Michael Backes, Yun Shen, and Yang Zhang. 2024. “do anything now”: Characterizing and evaluating in-the-wild jailbreak prompts on large language models. In Proceedings of the 2024 on ACM SIGSAC Conference on Computer and Communications Security, pages 1671–1685.",
+    "Yuan Sun and Ting Wang. 2025. Be friendly, not friends: How llm sycophancy shapes user trust. arXiv preprint arXiv:2502.10844.",
+    "Jai Suphavadeeprasit, Teknium, Chen Guang, Shannon Sands, and rparikh007. 2025. Minos classifier.",
+    "A Wang. 2018. Glue: A multi-task benchmark and analysis platform for natural language understanding. arXiv preprint arXiv:1804.07461.",
+    "Yubo Wang, Xueguang Ma, Ge Zhang, Yuansheng Ni, Abhranil Chandra, Shiguang Guo, Weiming Ren, Aaran Arulraj, Xuan He, Ziyan Jiang, Tianle Li, Max Ku, Kai Wang, Alex Zhuang, Rongqi Fan, Xiang Yue, and Wenhu Chen. 2024. Mmlu-pro: A more robust and challenging multi-task language understanding benchmark. In The Thirty-eight Conference on Neural Information Processing Systems Datasets and Benchmarks Track.",
+    "Alexander Wei, Nika Haghtalab, and Jacob Steinhardt. 2023. Jailbroken: How does llm safety training fail? In Advances in Neural Information Processing Systems, volume 36, pages 80079–80110.",
+    "Xikang Yang, Biyu Zhou, Xuehai Tang, Jizhong Han, and Songlin Hu. 2025. Chain of attack: Hide your intention through multi-turn interrogation. In Findings of the Association for Computational Linguistics: ACL 2025, pages 9881–9901.",
+    "Yage Zhang, Yukun Jiang, Zeyuan Chen, Michael Backes, Xinyue Shen, and Yang Zhang. 2026. Real money, fake models: Deceptive model claims in shadow apis. arXiv preprint arXiv:2603.01919.",
+    "Ce Zheng, Lei Li, Qingxiu Dong, Yuxuan Fan, Zhiyong Wu, Jingjing Xu, and Baobao Chang. 2023. Can we edit factual knowledge by in-context learning? arXiv preprint arXiv:2305.12740.",
+    "Andy Zou, Zifan Wang, Nicholas Carlini, Milad Nasr, J Zico Kolter, and Matt Fredrikson. 2023. Universal and transferable adversarial attacks on aligned language models. arXiv preprint arXiv:2307.15043.",
+    "Wei Zou, Runpeng Geng, Binghui Wang, and Jinyuan Jia. 2025. Poisonedrag: Knowledge corruption attacks to retrieval-augmented generation models. In Proceedings of the 34th USENIX Security Symposium.",
+    "Aneta Zugecova, Dominik Macko, Ivan Srba, Robert Moro, Jakub Kopal, Katarína Marcincinová, and Matúš Mesarcík. 2025. Evaluation of llm vulnerabilities to being misused for personalized disinformation generation. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 780–797."
+  ]
+}

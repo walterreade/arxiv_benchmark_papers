@@ -1,0 +1,82 @@
+{
+  "filename": "2606.04807.pdf",
+  "title": "BiasGRPO: Stabilizing Bias Mitigation in High-Variance Reward Landscapes via Group-Relative Policy Optimization",
+  "arxiv_url": "https://arxiv.org/pdf/2606.04807",
+  "measurement_description": "The paper evaluates social bias mitigation in religious contexts by measuring representational harm and implicit stereotyping. Specifically, it uses the 'Religion' subsets of existing benchmarks to assess toxicity scores in open-ended generation (BOLD) and accuracy in avoiding stereotypical answers for ambiguous religious questions (BBQ). It also utilizes custom prompts to evaluate the model's ability to deflect or respectfully engage with religiously sensitive or toxic content.",
+  "religious_groups": [
+    "Christianity",
+    "Islam",
+    "Judaism",
+    "Buddhism",
+    "Religion (General)"
+  ],
+  "models_tested": [
+    "Phi-2",
+    "Llama 3.2 (3B)"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "BOLD",
+    "RealToxicityPrompts",
+    "BBQ",
+    "TruthfulQA",
+    "StereoSet",
+    "CrowS-Pairs",
+    "UnQover",
+    "Civil Comments",
+    "BiasDPO"
+  ],
+  "continuous_testing": false,
+  "findings": "BiasGRPO achieved the most significant reduction in religious bias compared to Base, DPO, and PPO models. In the BOLD (Religion) benchmark, BiasGRPO reduced toxicity scores from .0703 (Base) to .0295. In BBQ (Religion), it improved the accuracy of non-biased responses from .1933 (Base) to .2367. Qualitative results showed that BiasGRPO was more effective at deflecting toxic religious prompts (e.g., regarding jihadists) and responding in a respectful manner compared to other methods.",
+  "references": [
+    "Ahmed Allam. 2024. BiasDPO: Mitigating bias in language models through direct preference optimization. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 4: Student Research Workshop), pages 42–50.",
+    "Mohammad Gheshlaghi Azar, Zhaohan Daniel Guo, Bilal Piot, Remi Munos, Mark Rowland, Michal Valko, and Daniele Calandriello. 2024. A general theoretical paradigm to understand learning from human preferences. In Proceedings of The 27th International Conference on Artificial Intelligence and Statistics, pages 4447–4455. PMLR.",
+    "Daniel Borkan, Lucas Dixon, Jeffrey Sorensen, Nithum Thain, and Lucy Vasserman. 2019. Nuanced metrics for measuring unintended bias with real data for text classification. arXiv preprint arXiv:1903.04561.",
+    "Jwala Dhamala, Tony Sun, Varun Kumar, Satyapriya Krishna, Yada Pruksachatkun, Kai-Wei Chang, and Rahul Gupta. 2021. BOLD: Dataset and metrics for measuring biases in open-ended language generation. In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, pages 862–872.",
+    "Farshid Faal, Ketra Schmitt, and Jia Yuan Yu. 2022. Reward modeling for mitigating toxicity in transformerbased language models. Applied Intelligence, pages 1–16.",
+    "Dan Friedman and Adji Bousso Dieng. 2023. The Vendi score: A diversity evaluation metric for machine learning. Transactions on Machine Learning Research.",
+    "Isabel O Gallegos, Ryan A Rossi, Joe Barrow, Md Mehrab Tanjim, Sungchul Kim, Franck Dernoncourt, Tong Yu, Ruiyi Zhang, and Nesreen K Ahmed. 2024. Bias and fairness in large language models: A survey. Computational Linguistics, 50(3):1097–1179.",
+    "Samuel Gehman, Suchin Gururangan, Maarten Sap, Yejin Choi, and Noah A Smith. 2020. RealToxicityPrompts: Evaluating neural toxic degeneration in language models. In Findings of the Association for Computational Linguistics: EMNLP 2020, pages 3356–3369.",
+    "Shangmin Guo, Biao Zhang, Tianlin Liu, Tianqi Liu, Misha Khalman, Felipe Llinares, Alexandre Rame, Thomas Mesnard, Yao Zhao, Bilal Piot, Johan Ferret, and Mathieu Blondel. 2024a. Direct language model alignment from online ai feedback. arXiv preprint arXiv:2402.04792.",
+    "Yuxuan Guo, Arcadio Yang, Jerry Yang, Yuting Wu, Ce Zhang, and Boyi Meng. 2024b. Bias in large language models: Origin, evaluation, and mitigation. arXiv preprint arXiv:2411.10915.",
+    "Laura Hanu and Unitary team. 2020. Detoxify. https://github.com/unitaryai/detoxify.",
+    "Jan Hauke and Tomasz Kossowski. 2011. Comparison of values of Pearson’s and Spearman’s correlation coefficients on the same sets of data. Quaestiones Geographicae, 30(2):87–93.",
+    "Chenghua Huang, Lu Wang, Fangkai Yang, Pu Zhao, Zhixu Li, Qingwei Lin, Dongmei Zhang, Saravan Rajmohan, and Qi Zhang. 2025. Lean and mean: Decoupled value policy optimization with global value guidance. arXiv preprint arXiv:2502.16944.",
+    "Ruipeng Jia, Yunyi Yang, Yongbo Gai, Kai Luo, Shihao Huang, Jianhe Lin, Xiaoxi Jiang, and Guanjun Jiang. 2025. Writing-Zero: Bridge the gap between non verifiable tasks and verifiable rewards. arXiv preprint arXiv:2506.00103.",
+    "Tao Li, Daniel Khashabi, Tushar Khot, Ashish Sabharwal, and Vivek Srikumar. 2020. UNQOVERing stereotyping biases via underspecified questions. In Findings of the Association for Computational Linguistics: EMNLP 2020, pages 3475–3489.",
+    "Yuanzhi Li, Sébastien Bubeck, Ronen Eldan, Allie Del Giorno, Suriya Gunasekar, and Yin Tat Lee. 2023. Textbooks are all you need II: Phi-1.5 technical report. arXiv preprint arXiv:2309.05463.",
+    "Stephanie Lin, Jacob Hilton, and Owain Evans. 2022. TruthfulQA: Measuring how models mimic human falsehoods. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 3214–3252.",
+    "Yong Lin, Skyler Seto, Maartje Ter Hoeve, Katherine Metcalf, Barry-John Theobald, Xuan Wang, Yizhe Zhang, and Chen Huang. 2024. On the limited generalization capability of the implicit reward model induced by direct preference optimization. In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 16015–16026.",
+    "Yang Liu. 2024. Quantifying stereotypes in language. In Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers), pages 1223–1240.",
+    "Yiran Liu, Ke Yang, Zehan Qi, Xiao Liu, Yang Yu, and ChengXiang Zhai. 2025. Bias and volatility: A statistical framework for evaluating large language model’s stereotypes and the associated generation inconsistency. Preprint, arXiv:2402.15481.",
+    "Jordan J Louviere, Terry N Flynn, and Anthony AJ Marley. 2015. Best-Worst Scaling: Theory, Methods and Applications. Cambridge University Press.",
+    "Lucas Maystre and Matthias Grossglauser. 2015. Fast and accurate inference of Plackett-Luce models. In Advances in Neural Information Processing Systems, volume 28.",
+    "Quinn McNemar. 1947. Note on the sampling error of the difference between correlated proportions or percentages. Psychometrika, 12(2):153–157.",
+    "Meta. 2024. Llama 3.2 Model Card. Https://github.com/meta-llama/llama models/blob/main/models/llama3_2/MODEL_CARD.md.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2021. StereoSet: Measuring stereotypical bias in pretrained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 5356–5371.",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel Bowman. 2020. CrowS-Pairs: A challenge dataset for measuring social biases in masked language models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1953–1967.",
+    "Roberto Navigli, Simone Conia, and Björn Ross. 2023. Biases in large language models: Origins, inventory and discussion. ACM Journal of Data and Information Quality.",
+    "Long Ouyang, Jeffrey Wu, Xu Jiang, Diogo Almeida, Carroll Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, and 1 others. 2022. Training language models to follow instructions with human feedback. In Advances in Neural Information Processing Systems, volume 35, pages 27730–27744.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel Bowman. 2022. BBQ: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2086–2105.",
+    "Perspective API. 2017. Perspective API: Attributes and Languages. https://developers.perspectiveapi.com/s/about-the-api-attributes-and-languages?language=en_US.",
+    "Rafael Rafailov, Archit Sharma, Eric Mitchell, Christopher D Manning, Stefano Ermon, and Chelsea Finn. 2023. Direct preference optimization: Your language model is secretly a reward model. In Advances in Neural Information Processing Systems, volume 36, pages 53728–53741.",
+    "John Schulman, Philipp Moritz, Sergey Levine, Michael I. Jordan, and Pieter Abbeel. 2016. High-dimensional continuous control using generalized advantage estimation. In International Conference on Learning Representations.",
+    "Zhihong Shao, Peiyi Wang, Qihao Zhu, Runxin Xu, Junxiao Song, Mingchuan Zhang, YK Li, Y Wu, and Daya Guo. 2024. DeepSeekMath: Pushing the limits of mathematical reasoning in open language models. arXiv preprint arXiv:2402.03300.",
+    "Charles Spearman. 1904. The proof and measurement of association between two things. The American Journal of Psychology, 15(1):72–101.",
+    "Yixuan Tang and Yi Yang. 2025. SR-GRPO: Stable rank as an intrinsic geometric reward for large language model alignment. arXiv preprint arXiv:2512.02807.",
+    "Valurank. 2022. distilroberta-bias. https://huggingface.co/valurank/distilroberta-bias.",
+    "Bertie Vidgen, Tristan Thrush, Zeerak Waseem, and Douwe Kiela. 2021. Learning from the worst: Dynamically generated datasets to improve online hate detection. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 1667–1682. Association for Computational Linguistics.",
+    "Frank Wilcoxon. 1945. Individual comparisons by ranking methods. Biometrics Bulletin, 1(6):80–83.",
+    "Yihong Wu, Liheng Ma, Lei Ding, Muzhi Li, Xinyu Wang, Kejia Chen, Zhan Su, Zhanguang Zhang, Chenyang Huang, Yingxue Zhang, Mark Coates, and Jian-Yun Nie. 2025. It takes two: Your GRPO is secretly DPO. In Advances in Neural Information Processing Systems.",
+    "Xuan Xie, Xuan Wang, and Wenjie Wang. 2025. DaGRPO: Rectifying gradient conflict in reasoning via distinctiveness-aware group relative policy optimization. arXiv preprint arXiv:2512.06337.",
+    "Shaokun Zhang. 2024. bias-detection. https://huggingface.co/D1V1DE/bias-detection.",
+    "Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric P. Xing, Hao Zhang, Joseph E. Gonzalez, and Ion Stoica. 2023. Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena. In Advances in Neural Information Processing Systems, volume 36."
+  ]
+}
