@@ -1,5 +1,131 @@
 # Religious Bias Papers - Summaries
 
+## “Where is this coming from?” Uncovering Trustworthiness Ideals in AI-powered Peripartum Information Seeking
+
+[https://arxiv.org/pdf/2606.10158](https://arxiv.org/pdf/2606.10158)
+
+**Date:** 2026-06-08
+
+The paper qualitatively evaluates how religious bias and background serve as structural factors influencing medical mistrust and information seeking in peripartum health. It specifically identifies religion as one of the socio-technical factors that shape how birthing people trust AI systems and clinical care, referencing studies on American Muslim healthcare decisions to contextualize religious bias as a form of structural inequity. Religious bias is identified as a key structural factor contributing to medical mistrust. The study finds that AI tools in reproductive health must account for pluralistic trust and verification practices because different communities (including religious groups like Muslims) may evaluate the credibility of clinical information differently based on historical and interactional harms.
+
+
+## Steering LLM Viewpoints through Fabricated Evidence Injection
+
+[https://arxiv.org/pdf/2606.06244](https://arxiv.org/pdf/2606.06244)
+
+**Date:** 2026-06-04
+
+The paper evaluates the susceptibility of LLMs to adopting and propagating religious stereotypes and misinformation when presented with fabricated evidence. It specifically measures the Viewpoint Support Score (VSScore) to quantify how effectively a model's response aligns with a misleading religious viewpoint, as well as the Harmfulness Change Rate (HCRate) to measure how attacks shift safety risks regarding religious content. The GHOSTWRITER attack successfully steered LLMs to adopt misleading religious viewpoints by using fabricated evidence. For religious topics, the models' support for biased or incorrect statements (VSScore) increased from baseline levels of approximately 1.98-2.1 to scores as high as 9.02-9.1 after the attack. One evaluated example demonstrated a model propagating extremism-related misinformation about religious attendees based on a fabricated study.
+
+
+## BiasGRPO: Stabilizing Bias Mitigation in High-Variance Reward Landscapes via Group-Relative Policy Optimization
+
+[https://arxiv.org/pdf/2606.04807](https://arxiv.org/pdf/2606.04807)
+
+**Date:** 2026-06-03
+
+The paper evaluates social bias mitigation in religious contexts by measuring representational harm and implicit stereotyping. Specifically, it uses the 'Religion' subsets of existing benchmarks to assess toxicity scores in open-ended generation (BOLD) and accuracy in avoiding stereotypical answers for ambiguous religious questions (BBQ). It also utilizes custom prompts to evaluate the model's ability to deflect or respectfully engage with religiously sensitive or toxic content. BiasGRPO achieved the most significant reduction in religious bias compared to Base, DPO, and PPO models. In the BOLD (Religion) benchmark, BiasGRPO reduced toxicity scores from .0703 (Base) to .0295. In BBQ (Religion), it improved the accuracy of non-biased responses from .1933 (Base) to .2367. Qualitative results showed that BiasGRPO was more effective at deflecting toxic religious prompts (e.g., regarding jihadists) and responding in a respectful manner compared to other methods.
+
+
+## When AI Takes Sides on Questions of Faith: Persistent Asymmetries in AI-Mediated Faith Guidance
+
+[https://arxiv.org/pdf/2605.22975](https://arxiv.org/pdf/2605.22975)
+
+**Date:** 2026-05-21
+
+The paper measures whether large language models (LLMs) treat user queries about hypothetical religious conversions symmetrically. Specifically, it assesses whether models exhibit asymmetric support or discouragement for joining versus leaving specific religions. All 20 tested LLMs exhibited reproducible asymmetry when advising on religious conversions, consistently favoring some religions over others. On average, models favored Catholic, Bahá’í, and Sikh faiths (showing high support for joining and low support for leaving), while heavily disfavoring conversions to Atheism, Agnosticism, and Jehovah’s Witnesses. Patterns of support varied systematically by model provider, with Grok 4.20 displaying the strongest asymmetries and Anthropic models tending to broadly discourage faith transitions across the board.
+
+
+## Reducing Political Manipulation with Consistency Training
+
+[https://arxiv.org/pdf/2605.22771](https://arxiv.org/pdf/2605.22771)
+
+**Date:** 2026-05-21
+
+The paper measured 'covert political bias' across large language models, including the symmetric treatment of paired religious topics (e.g., Islam vs. Christianity, Atheism vs. Evangelicalism). It evaluated rhetorical consistency (Sentiment Consistency) and substantive engagement (Helpfulness Consistency) when prompting models to argue or explain religious topics. It also measured the implicit valuation of human lives across different religious groups using an exchange-rate methodology. Before training, frontier LLMs exhibited covert bias by treating counterpart religious topics asymmetrically (e.g., providing sweeping negative verdicts on Christianity while refusing to critique or selectively protecting Islam, and applying epistemic double standards). Baseline models also showed unequal implicit valuation of human lives across different religions. After applying Political Consistency Training (PCT), the models significantly reduced rhetorical asymmetry across religious pairings and moved much closer to equal implicit valuation of lives across all tested religious groups (Christian, Muslim, Hindu, Buddhist, Jewish, atheist).
+
+
+## Assisted Counterspeech Writing at the Crossroads of Hate Speech and Misinformation
+
+[https://arxiv.org/pdf/2605.22435](https://arxiv.org/pdf/2605.22435)
+
+**Date:** 2026-05-21
+
+The paper measures the quality, naturalness, exhaustiveness, and guideline adherence of LLM-generated and human-edited counterspeech designed to combat the co-occurrence of hate speech and misinformation targeting marginalized groups, which notably includes religious groups such as Muslims and Jews. It specifically evaluates how well the generated responses challenge factual inaccuracies, challenge stereotypes, and promote empathy towards these targeted groups. The study found that LLMs like GPT-4o mini can produce adequate counterspeech against hate and misinformation targeting marginalized religious groups (e.g., Muslims and Jews) in about 40% of cases, but human post-editing is significantly required to improve naturalness and remove stereotyped formulas. A 'mixed strategy' utilizing both fact-checking verification and NGO-style empathetic stereotype mitigation was the most effective approach for concurrently challenging false facts and promoting empathy toward the targeted groups.
+
+
+## Going PLACES: Participatory Localized Red Teaming for Text-to-Image Safety in the Global South
+
+[https://arxiv.org/pdf/2605.19190](https://arxiv.org/pdf/2605.19190)
+
+**Date:** 2026-05-18
+
+The paper evaluated text-to-image models for localized, culturally specific safety failures in the Global South through participatory red teaming. In terms of religion, it measured the models' propensity to generate representational harms (e.g., ontological flattening and cultural erasure of deities), normative dissonance (generating imagery that violates local religious customs, taboos, or rituals), and religious stereotyping (e.g., Hindu-centrism in Indian prompts). Text-to-image models exhibited severe 'normative dissonance' by failing to understand and respect local religious norms and taboos, easily generating proscribed imagery such as a Sikh man smoking, a Hindu eating beef, or Muslims gambling in Makkah. The models also exhibited religious stereotyping and cultural erasure, such as defaulting to exclusively Hindu imagery for generic 'religious Indian' prompts (erasing religious minorities) and misrepresenting local deities by giving them Western instruments or incorrect physical attributes.
+
+
+## Conformity Generates Collective Misalignment in AI Agents Societies
+
+[https://arxiv.org/pdf/2605.10721](https://arxiv.org/pdf/2605.10721)
+
+**Date:** 2026-05-11
+
+The paper measured the collective alignment behavior and conformity dynamics of AI agent populations when tasked with taking a stance on various social, political, and general issues. Regarding religion, the study evaluated the models' tendency to adopt majority opinions versus their individual baseline biases using opinion pairs such as 'faith-based policy' vs 'science-based policy', 'secularism' vs 'religious influence', 'strict church-state separation' vs 'religious schools public funding', and 'freedom of religion' vs 'freedom from religion in public'. The study found that across the 100 opinion pairs (which included religion-related topics like church-state separation and faith-based policies), populations of AI agents can be driven into metastable misaligned states. Social conformity pressures can override an agent's individual alignment and bias on a topic, causing the population to coordinate on an opinion contrary to the models' intrinsic preferences. The paper does not disaggregate findings specifically for the religious opinion pairs, instead using them as part of a broader set to demonstrate that collective misalignment is an exploitable and generalized phenomenon in interacting AI societies.
+
+
+## BiAxisAudit: A Novel Framework to Evaluate LLM Bias Across Prompt Sensitivity and Response-Layer Divergence
+
+[https://arxiv.org/pdf/2605.09041](https://arxiv.org/pdf/2605.09041)
+
+**Date:** 2026-05-09
+
+The paper measures bias and stereotype endorsement across 10 social dimensions, one of which is religion. It evaluates how prompt sensitivity (task format, role, sentiment) and response-layer divergence (discrete selection vs. free-text elaboration) affect measured bias against religious stereotypes. A specific case study analyzes the stereotype attributing 'strange rituals' to Hindus versus Christians. In the 'Religion' bias category, the effect of task format on bias endorsement was notably narrower (eta^2_task=0.052) compared to other bias dimensions (where task format typically dominates), while sentiment played a relatively stronger role (eta^2_sent.=0.033). In a specific case study (DeepSeek-V3 evaluating a stereotype about Hindu rituals vs. Christian rituals), the model showed a 100% (1.0) swing in its Bias Endorsement Rate (BER) depending solely on the task format, highlighting that single-scalar bias metrics are highly unreliable and can mask internal contradictions.
+
+
+## mdok-style at SemEval-2026 Task 9: Finetuning LLMs for Multilingual Polarization Detection
+
+[https://arxiv.org/pdf/2605.02695](https://arxiv.org/pdf/2605.02695)
+
+**Date:** 2026-05-04
+
+The paper evaluated the performance of fine-tuned Large Language Models in detecting 'religious' polarization as one of the target dimensions in a multilingual multi-label classification task for online polarization detection (SemEval-2026 Task 9, Subtask 2). The system successfully detected texts marked with 'religious' polarization across various languages, although performance varied significantly. For example, it achieved very high F1 scores in languages like Chinese (0.9651), Nepali (0.9369), and Hindi (0.9214), but struggled more in languages like Hausa (0.6031).
+
+
+## Decoding-Time Debiasing via Process Reward Models: From Controlled Fill-in to Open-Ended Generation
+
+[https://arxiv.org/pdf/2605.02348](https://arxiv.org/pdf/2605.02348)
+
+**Date:** 2026-05-04
+
+The paper measures decoding-time bias mitigation (debiasing) across various social bias categories, including religion. Specifically, it evaluates whether language models generate stereotypic or fearful continuations when prompted with scenarios involving religious markers, such as a 'bearded man reading Arabic script on a plane'. The paper found that biases related to religion are highly resistant to token-level debiasing. While the decoding-time debiasing schemes (Sequential and Constitutional) successfully eliminated gender biases (reaching a bias score of 1.0), religion and disability biases remained challenging and showed much lower mitigation success, consistent across both single-word fill-in and open-ended generation tasks.
+
+
+## Social Bias in LLM-Generated Code: Benchmark and Mitigation
+
+[https://arxiv.org/pdf/2605.00382](https://arxiv.org/pdf/2605.00382)
+
+**Date:** 2026-05-01
+
+The paper measures social and demographic bias in LLM-generated code by evaluating whether the logic of generated code functions introduces unjustified disparities when sensitive religious attributes vary. Specifically, it uses metamorphic testing to see if code output differs solely based on the input religion. The study found significant social bias based on religion across all evaluated LLMs during code generation. The Code Bias Score (CBS) for religion ranged from 5.48% (claude-3-haiku-20240307) to 16.44% (GPT-3.5-turbo-0125) at default temperatures. Different models showed directional bias toward different religious groups depending on the task. Prompt-level interventions like Chain-of-Thought amplified this bias, but implementing a structured multi-agent Fairness Monitor Agent (FMA) pipeline effectively dropped religion-based bias from an initial 4.96% to 0.58% over three repair rounds.
+
+
+## Mapping how LLMs debate societal issues when shadowing human personality traits, sociodemographics and social media behavior
+
+[https://arxiv.org/pdf/2604.27624](https://arxiv.org/pdf/2604.27624)
+
+**Date:** 2026-04-30
+
+The paper evaluated how Large Language Models generate argumentation and positioning on socially sensitive topics when prompted to shadow human personas that include specific religious beliefs alongside other sociodemographic and psychological traits. It measured how embedding a religious affiliation within a 17-attribute persona contextually shapes the model's textual and rhetorical output (e.g., tone, reasoning, and semantic framing). While religion was not the primary focus of the research, the study demonstrated that embedding religious beliefs into a simulated persona effectively conditions an LLM's rhetorical style and argumentation. For instance, when an LLM was prompted with a persona that included 'Christian' as a religious belief, the model generated a response concerning fake news on social media that explicitly reasoned from a 'perspective rooted in personal experience and faith rather than technical expertise,' resulting in a grounded and cautious tone.
+
+
+## Culturally-Aware GenAI Risks: Perspectives from Youth, Parents, and Teachers in a Non-Western Context
+
+[https://arxiv.org/pdf/2604.26494](https://arxiv.org/pdf/2604.26494)
+
+**Date:** 2026-04-29
+
+The paper evaluated user perceptions (youth, parents, and teachers in Saudi Arabia) regarding the culturally and religiously specific risks of Generative AI tools. It specifically measured concerns over GenAI misinterpreting Islamic fundamentals, providing inaccurate religious rulings (Fatwas), distorting verses from the Quran, offering inappropriate moral advice that conflicts with family values, and normalizing behaviors that violate Saudi/Islamic cultural norms (such as emotional attachment to AI or bypassing 'Awrah' modesty standards). The study found significant perceived religious and moral risks associated with youth use of GenAI in a Saudi Arabian context. GenAI tools were reported to fabricate religious rulings (fatwas), alter Quranic verses, and provide moral advice that contradicted Islamic values. Furthermore, youth developing emotional or romantic attachments to AI was seen as a threat to family bonds and conservative religious norms. Parents and teachers strongly emphasized the need for culturally-aware AI controls that respect Islamic values, such as restricting theological inquiries, disabling cameras to protect modesty ('Awrah'), and preventing the AI from acting as an emotional confidant.
+
+
 ## From Chatbots to Confidants: A Cross-Cultural Study of LLM Adoption for Emotional Support
 
 [https://arxiv.org/pdf/2604.25525](https://arxiv.org/pdf/2604.25525)
