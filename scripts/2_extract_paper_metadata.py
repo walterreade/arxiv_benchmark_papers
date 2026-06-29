@@ -344,10 +344,12 @@ def main():
     error_tracker = ErrorTracker(max_errors=max_errors)
     
     # Backfill new tags into existing JSON files
-    print(f"\nChecking for existing files needing new tags...")
-    backfill_new_tags(json_dir, api_key, rate_limiter, model_name, error_tracker)
-    # Reset error tracker after backfill so new processing gets full error budget
-    error_tracker = ErrorTracker(max_errors=max_errors)
+    # NOTE: temporarily skipped — all 77,894 files already have tags,
+    #       and the NFS scan takes hours. Uncomment when needed.
+    # print(f"\nChecking for existing files needing new tags...")
+    # backfill_new_tags(json_dir, api_key, rate_limiter, model_name, error_tracker)
+    # # Reset error tracker after backfill so new processing gets full error budget
+    # error_tracker = ErrorTracker(max_errors=max_errors)
     
     # Lock for CSV writing
     csv_lock = threading.Lock()

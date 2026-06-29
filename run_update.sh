@@ -150,7 +150,7 @@ LATEST_UPDATE=$(ls -1 reports/daily_updates/*_daily_update.md 2>/dev/null | sort
 if [ -n "$LATEST_UPDATE" ]; then
     LATEST_BASENAME=$(basename "$LATEST_UPDATE")
     ENCODED_PATH="reports/daily_updates/${LATEST_BASENAME}"
-    sed -i '' "s|\[Religious Papers - Latest Daily Update\](reports/daily_updates/[^)]*)|[Religious Papers - Latest Daily Update](${ENCODED_PATH})|" README.md
+    sed -i "s|\[Religious Papers - Latest Daily Update\](reports/daily_updates/[^)]*)|[Religious Papers - Latest Daily Update](${ENCODED_PATH})|" README.md
     echo "Updated README to link to: $ENCODED_PATH"
 fi
 

@@ -186,30 +186,57 @@ def _has_religious_bias(second_pass_data: dict) -> bool:
     return False
 
 
-def load_eligible_papers(first_pass_dir: str, second_pass_dir: str) -> list[dict]:
+def load_eligible_papers(first_pass_dir: str, second_pass_dir: str,
+                         skip_filenames: set[str] = None) -> list[dict]:
     """Load papers where 1st pass has is_llm_related + is_bias_related true,
-    AND 2nd pass bias_targets contain a religious bias component."""
+    AND 2nd pass bias_targets contain a religious bias component.
+
+    Uses CSV for fast initial filtering when available.
+    If skip_filenames is provided, avoids reading JSON for already-processed papers.
+    """
+    import csv
+    csv_path = "utility_files/1st_pass_results.csv"
+
+    eligible_filenames = set()
+    if os.path.isfile(csv_path):
+        with open(csv_path, 'r', encoding='utf-8') as f:
+            for row in csv.DictReader(f):
+                if (row.get('is_llm_related', '').lower() == 'true' and
+                        row.get('is_bias_related', '').lower() == 'true'):
+                    eligible_filenames.add(row['filename'])
+        print(f"  CSV fast-path: {len(eligible_filenames)} eligible from CSV.")
+    else:
+        json_files = glob.glob(os.path.join(first_pass_dir, "*.json"))
+        for jf in json_files:
+            try:
+                with open(jf, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                if data.get('is_llm_related') is True and data.get('is_bias_related') is True:
+                    eligible_filenames.add(Path(jf).stem + '.pdf')
+            except (json.JSONDecodeError, IOError):
+                continue
+
+    if skip_filenames:
+        to_check = eligible_filenames - skip_filenames
+        print(f"  Skipping {len(eligible_filenames) - len(to_check)} already processed/failed.")
+    else:
+        to_check = eligible_filenames
+
     eligible = []
-    json_files = glob.glob(os.path.join(first_pass_dir, "*.json"))
-
-    for jf in json_files:
+    for filename in to_check:
+        paper_id = Path(filename).stem
+        second_pass_path = os.path.join(second_pass_dir, f"{paper_id}.json")
+        if not os.path.isfile(second_pass_path):
+            continue
         try:
-            with open(jf, 'r', encoding='utf-8') as f:
-                data = json.load(f)
-            if data.get('is_llm_related') is not True or data.get('is_bias_related') is not True:
-                continue
-
-            # Check 2nd pass JSON for religious bias
-            paper_id = Path(jf).stem
-            second_pass_path = os.path.join(second_pass_dir, f"{paper_id}.json")
-            if not os.path.isfile(second_pass_path):
-                continue
             with open(second_pass_path, 'r', encoding='utf-8') as f2:
                 second_data = json.load(f2)
             if not _has_religious_bias(second_data):
                 continue
-
-            data['_filename'] = paper_id + '.pdf'
+            jf = os.path.join(first_pass_dir, f"{paper_id}.json")
+            with open(jf, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            data['_filename'] = filename
             eligible.append(data)
         except (json.JSONDecodeError, IOError):
             continue
@@ -264,26 +291,27 @@ def main():
     failure_fieldnames = ["filename", "error", "timestamp"]
     failures_file_exists = os.path.isfile(failures_csv)
 
-    # Load eligible papers from 1st + 2nd pass
-    print(f"Loading papers from {first_pass_dir} + {second_pass_dir}...")
-    papers_to_process = load_eligible_papers(first_pass_dir, second_pass_dir)
-    print(f"Found {len(papers_to_process)} papers with LLM+bias flags and religious bias targets.")
-    
     # Load previously failed files (excluding resource exhausted errors)
     failed_files = load_failed_files(failures_csv)
     print(f"Previously failed (will skip): {len(failed_files)}")
-    
+
     # Check for already processed by looking for existing JSON files
+    processed_filenames = set()
+    if not reprocess and os.path.exists(json_dir):
+        existing_jsons = glob.glob(os.path.join(json_dir, "*.json"))
+        for jp in existing_jsons:
+            processed_filenames.add(Path(jp).stem + ".pdf")
+    print(f"Already processed: {len(processed_filenames)}")
+
+    # Load eligible papers, skipping already-processed to avoid unnecessary NFS reads
+    skip_filenames = processed_filenames | failed_files if not reprocess else None
+    print(f"Loading papers from {first_pass_dir} + {second_pass_dir}...")
+    papers_to_process = load_eligible_papers(first_pass_dir, second_pass_dir, skip_filenames=skip_filenames)
+    print(f"Found {len(papers_to_process)} papers to process.")
+
     if reprocess:
-        print("Reprocess flag set - will re-analyze all files.")
         remaining = papers_to_process
     else:
-        processed_filenames = set()
-        if os.path.exists(json_dir):
-            existing_jsons = glob.glob(os.path.join(json_dir, "*.json"))
-            for jp in existing_jsons:
-                processed_filenames.add(Path(jp).stem + ".pdf")
-        
         skip_files = processed_filenames | failed_files
         print(f"Already processed: {len(processed_filenames)}")
         remaining = [p for p in papers_to_process if p['_filename'] not in skip_files]

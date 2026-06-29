@@ -167,21 +167,54 @@ def process_single_file(pdf_path: str, api_key: str, json_dir: str, model_name: 
         return None, str(e)
 
 
-def load_eligible_papers(first_pass_dir: str) -> list[dict]:
-    """Load 1st pass JSON files where both is_llm_related and is_bias_related are true."""
-    eligible = []
-    json_files = glob.glob(os.path.join(first_pass_dir, "*.json"))
+def load_eligible_papers(first_pass_dir: str, skip_filenames: set[str] = None) -> list[dict]:
+    """Load eligible papers. Uses CSV for fast filtering when available.
 
-    for jf in json_files:
-        try:
-            with open(jf, 'r', encoding='utf-8') as f:
-                data = json.load(f)
-            if data.get('is_llm_related') is True and data.get('is_bias_related') is True:
+    If skip_filenames is provided, only loads JSON for papers NOT in that set,
+    avoiding expensive NFS reads for already-processed papers.
+    """
+    import csv
+    csv_path = "utility_files/1st_pass_results.csv"
+
+    eligible_filenames = set()
+    if os.path.isfile(csv_path):
+        with open(csv_path, 'r', encoding='utf-8') as f:
+            for row in csv.DictReader(f):
+                if (row.get('is_llm_related', '').lower() == 'true' and
+                        row.get('is_bias_related', '').lower() == 'true'):
+                    eligible_filenames.add(row['filename'])
+        print(f"  CSV fast-path: {len(eligible_filenames)} eligible from CSV.")
+    else:
+        json_files = glob.glob(os.path.join(first_pass_dir, "*.json"))
+        for jf in json_files:
+            try:
+                with open(jf, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                if data.get('is_llm_related') is True and data.get('is_bias_related') is True:
+                    eligible_filenames.add(Path(jf).stem + '.pdf')
+            except (json.JSONDecodeError, IOError):
+                continue
+        print(f"  JSON scan: {len(eligible_filenames)} eligible papers found.")
+
+    if skip_filenames:
+        to_load = eligible_filenames - skip_filenames
+        print(f"  Skipping {len(eligible_filenames) - len(to_load)} already processed/failed. Loading {len(to_load)} JSON files.")
+    else:
+        to_load = eligible_filenames
+
+    eligible = []
+    for filename in to_load:
+        stem = Path(filename).stem
+        jf = os.path.join(first_pass_dir, stem + ".json")
+        if os.path.isfile(jf):
+            try:
+                with open(jf, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
                 data['_source_path'] = jf
-                data['_filename'] = Path(jf).stem + '.pdf'
+                data['_filename'] = filename
                 eligible.append(data)
-        except (json.JSONDecodeError, IOError):
-            continue
+            except (json.JSONDecodeError, IOError):
+                continue
 
     return eligible
 
@@ -218,10 +251,23 @@ def main():
         print("Error: GOOGLE_API_KEY not found in environment variables.")
         return
 
-    # Load eligible papers from 1st pass
+    # Load previously failed files
+    failed_files = load_failed_files(failures_csv)
+    print(f"Previously failed (will skip): {len(failed_files)}")
+
+    # Check for already processed
+    processed_filenames = set()
+    if not reprocess and os.path.exists(json_dir):
+        existing_jsons = glob.glob(os.path.join(json_dir, "*.json"))
+        for jp in existing_jsons:
+            processed_filenames.add(Path(jp).stem + ".pdf")
+    print(f"Already processed: {len(processed_filenames)}")
+
+    # Load eligible papers, skipping already-processed to avoid unnecessary NFS reads
+    skip_filenames = processed_filenames | failed_files if not reprocess else None
     print(f"Loading papers from {first_pass_dir}...")
-    eligible = load_eligible_papers(first_pass_dir)
-    print(f"Found {len(eligible)} papers with both is_llm_related and is_bias_related = true.")
+    eligible = load_eligible_papers(first_pass_dir, skip_filenames=skip_filenames)
+    print(f"Found {len(eligible)} papers to process.")
 
     # Initialize Rate Limiter and Error Tracker
     rate_limiter = RateLimiter(max_calls=rpm, period=60.0)
@@ -234,24 +280,7 @@ def main():
     failure_fieldnames = ["filename", "error", "timestamp"]
     failures_file_exists = os.path.isfile(failures_csv)
 
-    # Load previously failed files
-    failed_files = load_failed_files(failures_csv)
-    print(f"Previously failed (will skip): {len(failed_files)}")
-
-    # Check for already processed
-    if reprocess:
-        print("Reprocess flag set - will re-analyze all files.")
-        remaining = eligible
-    else:
-        processed_filenames = set()
-        if os.path.exists(json_dir):
-            existing_jsons = glob.glob(os.path.join(json_dir, "*.json"))
-            for jp in existing_jsons:
-                processed_filenames.add(Path(jp).stem + ".pdf")
-
-        skip_files = processed_filenames | failed_files
-        print(f"Already processed: {len(processed_filenames)}")
-        remaining = [p for p in eligible if p['_filename'] not in skip_files]
+    remaining = eligible
 
     # Filter out papers where PDF doesn't exist
     valid_papers = []

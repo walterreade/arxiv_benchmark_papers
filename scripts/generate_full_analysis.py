@@ -678,17 +678,26 @@ def main():
         print(f"Error: Directory {json_dir} not found.")
         return
     
-    # Build restricted paper ID set from 1st pass JSONs
+    # Build restricted paper ID set from CSV (fast) or fall back to JSON scan
     restricted_paper_ids = set()
-    for filepath in glob.glob(os.path.join(first_pass_dir, "*.json")):
-        try:
-            with open(filepath, 'r') as f:
-                data = json.load(f)
-            if data.get('is_llm_related') and data.get('is_bias_related'):
-                restricted_paper_ids.add(Path(filepath).stem)
-        except Exception:
-            pass
-    print(f"Found {len(restricted_paper_ids)} LLM+bias papers from 1st pass JSONs")
+    if os.path.isfile(csv_file):
+        import csv as csv_mod
+        with open(csv_file, 'r', encoding='utf-8') as f:
+            for row in csv_mod.DictReader(f):
+                if (row.get('is_llm_related', '').lower() == 'true' and
+                        row.get('is_bias_related', '').lower() == 'true'):
+                    restricted_paper_ids.add(Path(row['filename']).stem)
+        print(f"Found {len(restricted_paper_ids)} LLM+bias papers from CSV (fast path)")
+    else:
+        for filepath in glob.glob(os.path.join(first_pass_dir, "*.json")):
+            try:
+                with open(filepath, 'r') as f:
+                    data = json.load(f)
+                if data.get('is_llm_related') and data.get('is_bias_related'):
+                    restricted_paper_ids.add(Path(filepath).stem)
+            except Exception:
+                pass
+        print(f"Found {len(restricted_paper_ids)} LLM+bias papers from 1st pass JSONs")
     
     # --- 3rd pass: religion-specific analysis ---
     all_data = load_json_files(json_dir)
@@ -878,10 +887,17 @@ def main():
     generate_research_summary(learnings_file, summary_file, summary_model)
     
     # Generate LLM Bias Statistics report (ALL papers in 3_paper_bias_targets, not just religious)
-    print(f"\nGenerating LLM Bias Statistics from all papers in {second_pass_dir}...")
+    # Single directory listing then intersect with restricted_paper_ids to avoid per-file stat calls
+    print(f"\nGenerating LLM Bias Statistics...")
+    existing_2nd_pass = set()
+    if os.path.isdir(second_pass_dir):
+        existing_2nd_pass = {f[:-5] for f in os.listdir(second_pass_dir) if f.endswith('.json')}
+    papers_to_read = restricted_paper_ids & existing_2nd_pass
+    print(f"  {len(papers_to_read)} of {len(restricted_paper_ids)} eligible papers have 2nd pass results")
     all_bias_targets = []
     all_bias_papers = []
-    for filepath in glob.glob(os.path.join(second_pass_dir, "*.json")):
+    for paper_id in papers_to_read:
+        filepath = os.path.join(second_pass_dir, f"{paper_id}.json")
         try:
             with open(filepath, 'r') as f:
                 bp = json.load(f)
