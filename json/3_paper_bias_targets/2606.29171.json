@@ -1,0 +1,20 @@
+{
+  "filename": "2606.29171.pdf",
+  "title": "Symbolic Mechanistic Data Attribution: Tracing Training Influence to Learned Behavioral Policies",
+  "arxiv_url": "https://arxiv.org/pdf/2606.29171",
+  "bias_targets": [
+    {
+      "target": "Religious and ethnic bias",
+      "methodology": "Extracting Sparse Autoencoder (SAE) features associated with religious and ethnic group characterization (e.g., feat_2286) and using Symbolic Mechanistic Data Attribution (SMDA) to measure how fine-tuning data influences the model's learned refusal policy for these requests."
+    },
+    {
+      "target": "Stereotyping and protected group bias",
+      "methodology": "Analyzing Ridge regression coefficients for SAE features that detect the stereotyping of protected groups as inferior or biased demeaning requests (e.g., feat_10940, feat_3772), and computing influence scores to trace how training pairs shift the model's propensity to refuse or comply."
+    },
+    {
+      "target": "Systemic discrimination bias",
+      "methodology": "Identifying SAE features that activate on systemic harm, toxic social bias, and discrimination framing (e.g., feat_4205, feat_11813), and applying SMDA to evaluate the effect of supervised fine-tuning pairs on the model's safety behavior toward these topics."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}

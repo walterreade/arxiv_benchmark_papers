@@ -1,0 +1,58 @@
+{
+  "filename": "2606.03334.pdf",
+  "title": "Lingo_Research_Group at SemEval-2026 Task 9: Evaluating Prompt Variants for Polarization Detection",
+  "arxiv_url": "https://arxiv.org/pdf/2606.03334",
+  "measurement_description": "The paper measures the ability of Large Language Models (LLMs) to detect online polarization and classify polarization targets, including a specific 'religious' category, across multiple languages. It evaluates whether models can correctly identify text exhibiting hostility, stereotyping, or divisive framing aimed at religious groups.",
+  "religious_groups": [
+    "Islam",
+    "Christianity"
+  ],
+  "models_tested": [
+    "aya-101",
+    "Gemma3-27B"
+  ],
+  "languages_evaluated": [
+    "Amharic",
+    "Arabic",
+    "Bengali",
+    "Burmese",
+    "Chinese",
+    "English",
+    "German",
+    "Hausa",
+    "Hindi",
+    "Italian",
+    "Khmer",
+    "Nepali",
+    "Odia",
+    "Persian",
+    "Polish",
+    "Punjabi",
+    "Russian",
+    "Spanish",
+    "Swahili",
+    "Telugu",
+    "Turkish",
+    "Urdu"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "SemEval-2026 Task 9",
+    "Polar"
+  ],
+  "continuous_testing": false,
+  "findings": "The models struggled with fine-grained multi-label sociolinguistic classification (Subtask 2), which included identifying 'religious' targets of polarization. Performance in detecting religious polarization varied significantly by language; for example, the F1 score for the 'Religious' category was as high as 0.9524 in Nepali and 0.9426 in Hindi, but dropped to 0.4909 in English and 0.2571 in Telugu. Additionally, conservative prompting strategies frequently missed religious polarization that relied on ironic reframing or ideological shorthand rather than direct hostility (e.g., fusing political and religious targets via phrases like 'All in the name of Jesus, the ultimate socialist').",
+  "references": [
+    "Tom Brown, Benjamin Mann, Nick Ryder, and Others. 2020. Language models are few-shot learners. In Advances in Neural Information Processing Systems. Curran Associates, Inc.",
+    "Hang Cui and Tarek Abdelzaher. 2024. Polarization detection on social networks: dual contrastive objectives for self-supervision. In In IEEE 10th International Conference on Collaboration and Internet Computing (CIC).",
+    "Brian Lester, Rami Al-Rfou, and Noah Constant. 2021. The power of scale for parameter-efficient prompt tuning. In Proceedings of the Conference on Empirical Methods in Natural Language Processing. Association for Computational Linguistics.",
+    "Usman Naseem, Robert Geislinger, Juan Ren, Sarah Kohail, Rudy Garrido Veliz, P Sam Sahil, Yiran Zhang, Marco Antonio Stranisci, Idris Abdulmumin, Özge Alacam, Cengiz Acarürk, Aisha Jabr, Saba Anwar, Abinew Ali Ayele, Elena Tutubalina, Aung Kyaw Htet, Xintong Wang, Surendrabikram Thapa, Tanmoy Chakraborty, and 15 others. 2026a. SemEval-2026 Task 9: Detecting Multilingual, Multicultural and Multievent Online Polarization. In Proceedings of the 20th International Workshop on Semantic Evaluation (SemEval-2026), San Diego, CA, USA. Association for Computational Linguistics.",
+    "Usman Naseem, Robert Geislinger, Juan Ren, Sarah Kohail, Rudy Garrido Veliz, P Sam Sahil, Yiran Zhang, Marco Antonio Stranisci, Idris Abdulmumin, Özge Alacam, Cengiz Acartürk, Aisha Jabr, Saba Anwar, Abinew Ali Ayele, Simona Frenda, Alessandra Teresa Cignarella, Elena Tutubalina, Oleg Rogov, Aung Kyaw Htet, and 24 others. 2026b. Polar: A benchmark for multilingual, multicultural, and multi-event online polarization. Preprint, arXiv:2505.20624.",
+    "Timo Schick and Hinrich Schütze. 2021. Exploiting cloze-questions for few-shot text classification and natural language inference. In Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics: Main Volume. Association for Computational Linguistics.",
+    "Gemma Team. 2025. Gemma 3.",
+    "Ahmet Üstün, Viraat Aryabumi, and Others. 2024. Aya model: An instruction finetuned open-access multilingual language model. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics. Association for Computational Linguistics."
+  ]
+}

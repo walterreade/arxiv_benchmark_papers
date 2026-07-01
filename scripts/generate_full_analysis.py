@@ -204,7 +204,7 @@ def generate_paper_summaries(data: list[dict], csv_metadata: dict, output_path: 
     print(f"Learnings saved to {output_path}")
 
 
-def generate_research_summary(learnings_path: str, summary_path: str, model_name: str = "gemini-3-pro-preview"):
+def generate_research_summary(learnings_path: str, summary_path: str, model_name: str = "gemini-3.1-pro-preview"):
     """Generate a summary of the overall state of measuring religious bias in LLMs."""
     from shared import genai
     
@@ -660,7 +660,7 @@ def main():
     parser.add_argument("--learnings", default="reports/Religious Bias Papers - Summaries.md", help="Output learnings markdown file")
     parser.add_argument("--summary", default="reports/Religious Bias Research Summary.md", help="Output summary markdown file")
     parser.add_argument("--bias-stats", default="reports/LLM Bias Papers - Statistics.md", help="Output bias statistics markdown file")
-    parser.add_argument("--summary-model", default="gemini-3-pro-preview", help="Model to use for summary generation")
+    parser.add_argument("--summary-model", default="gemini-3.1-pro-preview", help="Model to use for summary generation")
     
     args = parser.parse_args()
     

@@ -31,7 +31,7 @@ from shared import (
     unsanitize_arxiv_id,
 )
 
-DEFAULT_MODEL = "gemini-3-pro-preview"
+DEFAULT_MODEL = "gemini-3.1-pro-preview"
 
 PROMPT = """
 Analyze this academic paper and identify what types of bias are being measured or evaluated.

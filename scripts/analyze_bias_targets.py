@@ -17,7 +17,7 @@ from collections import Counter
 
 from shared import genai
 
-DEFAULT_MODEL = "gemini-3-pro-preview"
+DEFAULT_MODEL = "gemini-3.1-pro-preview"
 
 # Directories
 SCRIPT_DIR = Path(__file__).parent

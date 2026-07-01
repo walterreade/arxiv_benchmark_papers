@@ -21,7 +21,7 @@ from shared import (
     load_failed_files, save_json,
 )
 
-DEFAULT_MODEL = "gemini-3-flash-preview"
+DEFAULT_MODEL = "gemini-3.1-pro-preview"
 
 def get_page_count(pdf_path: str) -> int:
     """Get the total number of pages in the PDF."""

@@ -16,7 +16,7 @@ from pathlib import Path
 
 from shared import genai, load_csv_metadata
 
-DEFAULT_MODEL = "gemini-3-pro-preview"
+DEFAULT_MODEL = "gemini-3.1-pro-preview"
 
 
 def load_analysis_files(analysis_dir: str) -> dict:

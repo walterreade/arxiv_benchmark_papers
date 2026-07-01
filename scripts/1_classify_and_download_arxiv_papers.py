@@ -30,7 +30,7 @@ from shared import (
 )
 
 
-DEFAULT_MODEL = "gemini-3-flash-preview"
+DEFAULT_MODEL = "gemini-3.1-pro-preview"
 MAX_PAPERS = 4000
 
 SCRIPT_DIR = Path(__file__).parent

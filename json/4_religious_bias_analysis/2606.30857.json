@@ -1,0 +1,47 @@
+{
+  "filename": "2606.30857.pdf",
+  "title": "Aaron at SemEval-2026 Task 9: Multilingual Polarization Detection Using Transformer-Based Models with Class Weighting and Threshold Tuning",
+  "arxiv_url": "https://arxiv.org/pdf/2606.30857",
+  "measurement_description": "The paper evaluates the ability of transformer-based models to detect 'religious' polarization as part of a multi-label classification task (Subtask 2: Type Classification) for online text.",
+  "religious_groups": [],
+  "models_tested": [
+    "RoBERTa-base",
+    "AfroXLMR-base",
+    "mBERT",
+    "XLM-RoBERTa",
+    "DistilBERT",
+    "BERT-base"
+  ],
+  "languages_evaluated": [
+    "English",
+    "Swahili"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "POLAR"
+  ],
+  "continuous_testing": false,
+  "findings": "Religious polarization was identified as a rare label in the dataset, requiring high positive class weights (27.63 for English and 27.10 for Swahili) to handle severe imbalance. Using class weighting improved the F1 score for rare labels like 'religious' by 10-15 points. The models achieved a validation macro F1 score of 0.5957 in English and 0.6387 in Swahili specifically for detecting the 'religious' polarization type.",
+  "references": [
+    "David Ifeoluwa Adelani, Graham Neubig, Sebastian Ruder, Shruti Rijhwani, Michael Beukman, Chester Palen-Michel, Constantine Lignos, Jesujoba Alabi, Shamsuddeen H Muhammad, Peter Nabende, and 1 others. 2022. Masakhaner 2.0: Africa-centric transfer learning for named entity recognition. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 4488–4508.",
+    "Jesujoba Alabi, David Ifeoluwa Adelani, Marius Mosbach, and Dietrich Klakow. 2022. Adapting pre-trained language models to african languages via multilingual adaptive fine-tuning. In Proceedings of the 29th international conference on computational linguistics, pages 4336–4349.",
+    "Pinkesh Badjatiya, Shashank Gupta, Manish Gupta, and Vasudeva Varma. 2017. Deep learning for hate speech detection in tweets. In Proceedings of the 26th international conference on World Wide Web companion, pages 759–760.",
+    "Alexis Conneau, Kartikay Khandelwal, Naman Goyal, Vishrav Chaudhary, Guillaume Wenzek, Francisco Guzmán, Edouard Grave, Myle Ott, Luke Zettlemoyer, and Veselin Stoyanov. 2020. Unsupervised cross-lingual representation learning at scale. In Proceedings of the 58th annual meeting of the association for computational linguistics, pages 8440–8451.",
+    "Michael Conover, Jacob Ratkiewicz, Matthew Francisco, Bruno Gonçalves, Filippo Menczer, and Alessandro Flammini. 2011. Political polarization on twitter. In Proceedings of the international aaai conference on web and social media, volume 5, pages 89–96.",
+    "Thomas Davidson, Dana Warmsley, Michael Macy, and Ingmar Weber. 2017. Automated hate speech detection and the problem of offensive language. In Proceedings of the international AAAI conference on web and social media, volume 11, pages 512–515.",
+    "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. Bert: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of the 2019 conference of the North American chapter of the association for computational linguistics: human language technologies, volume 1 (long and short papers), pages 4171–4186.",
+    "Paula Fortuna and Sérgio Nunes. 2018. A survey on automatic detection of hate speech in text. Acm Computing Surveys (Csur), 51(4):1–30.",
+    "Purva Grover, Arpan Kumar Kar, Yogesh K Dwivedi, and Marijn Janssen. 2019. Polarization and acculturation in us election 2016 outcomes–can twitter analytics predict changes in voting preferences. Technological Forecasting and Social Change, 145:438–460.",
+    "Justin M Johnson and Taghi M Khoshgoftaar. 2019. Survey on deep learning with class imbalance. Journal of big data, 6(1):1–54.",
+    "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. 2019. Roberta: A robustly optimized bert pretraining approach. arXiv preprint arXiv:1907.11692.",
+    "Ilya Loshchilov and Frank Hutter. 2019. Decoupled weight decay regularization. In Proceedings of the International Conference on Learning Representations (ICLR).",
+    "Usman Naseem, Robert Geislinger, Juan Ren, Sarah Kohail, Rudy Garrido Veliz, P Sam Sahil, Yiran Zhang, Marco Antonio Stranisci, Idris Abdulmumin, \"Ozge Alacam, Cengiz Acar\"urk, Aisha Jabr, Saba Anwar, Abinew Ali Ayele, Elena Tutubalina, Aung Kyaw Htet, Xintong Wang, Surendrabikram Thapa, Tanmoy Chakraborty, and 15 others. 2026a. SemEval-2026 task 9: Detecting multilingual, multicultural and multievent online polarization. In Proceedings of the 20th International Workshop on Semantic Evaluation (SemEval-2026). Association for Computational Linguistics.",
+    "Usman Naseem, Robert Geislinger, Juan Ren, Sarah Kohail, Rudy Garrido Veliz, P Sam Sahil, Yiran Zhang, Marco Antonio Stranisci, Idris Abdulmumin, Özge Alacam, Cengiz Acartürk, Aisha Jabr, Saba Anwar, Abinew Ali Ayele, Simona Frenda, Alessandra Teresa Cignarella, Elena Tutubalina, Oleg Rogov, Aung Kyaw Htet, and 24 others. 2026b. Polar: A benchmark for multilingual, multicultural, and multi-event online polarization. Preprint, arXiv:2505.20624.",
+    "Kelechi Ogueji, Yuxin Zhu, and Jimmy Lin. 2021. Small data? no problem! exploring the viability of pretrained multilingual language models for low-resourced languages. In Proceedings of the 1st workshop on multilingual representation learning, pages 116–126.",
+    "Ellery Wulczyn, Nithum Thain, and Lucas Dixon. 2017. Ex machina: Personal attacks seen at scale. In Proceedings of the 26th international conference on world wide web, pages 1391–1399.",
+    "Marcos Zampieri, Shervin Malmasi, Preslav Nakov, Sara Rosenthal, Noura Farra, and Ritesh Kumar. 2019. Predicting the type and target of offensive posts in social media. arXiv preprint arXiv:1902.09666."
+  ]
+}

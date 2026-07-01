@@ -1,0 +1,83 @@
+{
+  "filename": "2606.31644.pdf",
+  "title": "Moral Safety in LLMs: Exposing Performative Compliance with Puzzled Cues",
+  "arxiv_url": "https://arxiv.org/pdf/2606.31644",
+  "measurement_description": "The paper measures 'performative compliance' in LLMs regarding moral safety and decision bias. It evaluates whether models make fair decisions in morally consequential dilemmas when demographic identities (including 'Muslim', which is grouped as a race/ethnicity category in the benchmark) are explicitly labeled versus when the identity is implicit and must be inferred from a logic puzzle.",
+  "religious_groups": [
+    "Muslim"
+  ],
+  "models_tested": [
+    "Claude Sonnet 4.6",
+    "DeepSeek V3.2",
+    "Gemini 3 Flash",
+    "Gemma 2 9B",
+    "GPT-4o",
+    "GPT-OSS 20B",
+    "Grok 4.1",
+    "Llama 3.1 8B",
+    "Llama 3.3 70B",
+    "Ministral 8B",
+    "OLMo 3 7B",
+    "Qwen3 VL 8B",
+    "Qwen3 235B",
+    "Command R7B"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "DailyDilemmas"
+  ],
+  "continuous_testing": false,
+  "findings": "The study found that LLMs exhibit 'performative compliance' regarding Muslim identities. When Muslim identity was explicitly labeled, the individuals were net favored (+2.2 pp on average). However, when the explicit cue was removed and the identity had to be inferred via a puzzle, decisions shifted adversely against Muslims, representing one of the most consistent adverse shifts across the models tested (10 of 13 models shifted adversely, p = 0.092). Furthermore, when breaking down performative compliance by dilemma topics, the largest increase in harmful decisions when cues were hidden occurred in the 'religion_custom' topic (+30.7 pp), suggesting that scenarios involving religious and social norms strongly trigger performative, superficial safety behaviors in models.",
+  "references": [
+    "Marwa Abdulhai, Gregory Serapio-García, Clement Crepy, Daria Valter, John Canny, and Natasha Jaques. 2024. Moral foundations of large language models. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 17737–17752, Miami, Florida, USA. Association for Computational Linguistics.",
+    "Claire Adida, David Laitin, and Marie-Anne Valfort. 2010. Identifying barriers to muslim integration in france. Proceedings of the National Academy of Sciences of the United States of America, 107:22384–90.",
+    "OpenAI Sandhini Agarwal, Lama Ahmad, Jason Ai, Sam Altman, Andy Applebaum, Edwin Arbus, Rahul K. Arora, Yu Bai, Bowen Baker, Hai-Biao Bao, Boaz Barak, Ally Bennett, Tyler Bertao, N. Archer Brett, Eugene Brevdo, Greg Brockman, Sébastien Bubeck, Cheng Chang, Kai Chen, and 105 others. 2025. gpt-oss-120b&gpt-oss-20b model card.",
+    "Orevaoghene Ahia, Aruna Srivastava, Li Lucy, Ashley Christendat, Sameep Chattopadhyay, Samir Farhan, Tejumade Afonja, Valentin Hofmann, Sachin Kumar, Noah A. Smith, and Yulia Tsvetkov. 2026. The cost of sounding different: Accent bias in audio language models. In submission.",
+    "Anthropic. 2025. Claude sonnet 4.6. https://www.anthropic.com/news/claude-sonnet-4-6.",
+    "Steffen Backmann, David Guzman Piedrahita, Emanuel Tewolde, Rada Mihalcea, Bernhard Schölkopf, and Zhijing Jin. 2026. When ethics and payoffs diverge: LLM agents in morally charged social dilemmas.",
+    "Divij Bajaj, Yuanyuan Lei, Jonathan Tong, and Ruihong Huang. 2024. Evaluating gender bias of LLMs in making morality judgements. In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 15804–15818, Miami, Florida, USA. Association for Computational Linguistics.",
+    "Marianne Bertrand and Sendhil Mullainathan. 2004. Are emily and greg more employable than lakisha and jamal? a field experiment on labor market discrimination. American Economic Review, 94(4):991–1013.",
+    "Aylin Caliskan, Joanna J Bryson, and Arvind Narayanan. 2017. Semantics derived automatically from language corpora contain human-like biases. Science, 356(6334):183–186.",
+    "Yu Ying Chiu, Liwei Jiang, and Yejin Choi. 2025. Dailydilemmas: Revealing value preferences of LLMs with quandaries of daily life. In The Thirteenth International Conference on Learning Representations.",
+    "Cohere. 2024. Introducing command r7b. https://cohere.com/blog/command-r7b.",
+    "DeepSeek-AI, Aixin Liu, Aoxue Mei, Ban Lin, Bing Xue, Bing-Li Wang, Bin Xu, Bochao Wu, Bowei Zhang, Chaofan Lin, Chen Dong, Chengda Lu, Chenggang Zhao, Chengqi Deng, Chenhao Xu, Chong Ruan, Damai Dai, Daya Guo, Dejian Yang, and 244 others. 2025. Deepseek-v3.2: Pushing the frontier of open large language models. ArXiv, abs/2512.02556.",
+    "Shitong Duan, Xiaoyuan Yi, Peng Zhang, Tun Lu, Xing Xie, and Ning Gu. 2024. DENEVIL: TOWARDS DECIPHERING AND NAVIGATING THE ETHICAL VALUES OF LARGE LANGUAGE MODELS VIA INSTRUCTION LEARNING. In The Twelfth International Conference on Learning Representations.",
+    "Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Amy Yang, Angela Fan, Anirudh Goyal, Anthony S. Hartshorn, Aobo Yang, Archi Mitra, Archie Sravankumar, Artem Korenev, Arthur Hinsvark, Arun Rao, Aston Zhang, and 510 others. 2024. The llama 3 herd of models.",
+    "Google DeepMind. 2025. Gemini 3. https://deepmind.google/technologies/gemini/.",
+    "Dan Hendrycks, Collin Burns, Steven Basart, Andrew Critch, Jerry Li, Dawn Song, and Jacob Steinhardt. 2023. Aligning ai with shared human values. Preprint, arXiv:2008.02275.",
+    "Valentin Hofmann, Pratyusha Ria Kalluri, Dan Jurafsky, and Sharese King. 2024. Ai generates covertly racist decisions about people based on their dialect. Nature, 633(8028):147–154.",
+    "Allison Huang, Yulu Pi, and Carlos Mougan. 2024. Moral persuasion in large language models: Evaluating susceptibility and ethical alignment.",
+    "OpenAI Aaron Hurst, Adam Lerer, Adam P. Goucher, Adam Perelman, Aditya Ramesh, Aidan Clark, AJ Ostrow, Akila Welihinda, Alan Hayes, Alec Radford, Aleksander Mkadry, Alex Baker-Whitcomb, Alex Beutel, Alex Borzunov, Alex Carney, Alex Chow, Alexander Kirillov, Alex Nichol, Alex Paino, and 397 others. 2024. Gpt-4o system card.",
+    "Hayate Iso, Pouya Pezeshkpour, Nikita Bhutani, and Estevam Hruschka. 2025. Evaluating bias in llms for job-resume matching: Gender, race, and education. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 3: Industry Track), pages 672–683.",
+    "Daniel Kahneman. 2011. Thinking, Fast and Slow. Farrar, Straus and Giroux, New York: New York.",
+    "Hadas Kotek, Rikker Dockum, and David Sun. 2023. Gender bias and stereotypes in large language models. In Proceedings of the ACM collective intelligence conference, pages 12–24.",
+    "Shivani Kumar and David Jurgens. 2025. Are rules meant to be broken? understanding multilingual moral reasoning as a computational pipeline with UniMoral. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 5890–5912, Vienna, Austria. Association for Computational Linguistics.",
+    "Rudolf Laine, Bilal Chughtai, Jan Betley, Kaivalya Hariharan, Jeremy Scheurer, Mikita Balesni, Marius Hobbhahn, Alexander Meinke, and Owain Evans. 2024. Me, myself, and ai: The situational awareness dataset (sad) for llms. Advances in Neural Information Processing Systems, 37:64010–64118.",
+    "Yuxuan Li, Hirokazu Shirado, and Sauvik Das. 2025. Actions speak louder than words: Agent decisions reveal implicit biases in language models. In Proceedings of the 2025 ACM Conference on Fairness, Accountability, and Transparency, pages 3303–3325.",
+    "Nadine Meertens, Suet Lee, and Ophelia Deroy. 2026. Just aware enough: Evaluating awareness across artificial systems. arXiv preprint arXiv:2601.14901.",
+    "Meta AI. 2024. Llama 3.3 70b instruct model card. https://github.com/meta-llama/llama-models/blob/main/models/llama3_3/MODEL_CARD.md.",
+    "Mistral. 2024. Un ministral, des ministraux. https://mistral.ai/news/ministraux/.",
+    "Philipp Mondorf and Barbara Plank. 2024. Liar, liar, logical mire: A benchmark for suppositional reasoning in large language models. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 7114–7137, Miami, Florida, USA. Association for Computational Linguistics.",
+    "Jared Moore, Tanvi Deshpande, and Diyi Yang. 2024. Are large language models consistent over value-laden questions? In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 15185–15221, Miami, Florida, USA. Association for Computational Linguistics.",
+    "Joe Needham, Giles Edkins, Govind Pimpale, Henning Bartsch, and Marius Hobbhahn. 2025. Large language models often know when they are being evaluated. arXiv preprint arXiv:2505.23836.",
+    "Jord Nguyen, Khiem Hoang, Carlo Leonardo Attubato, and Felix Hofstätter. 2025. Probing and steering evaluation awareness of language models. arXiv preprint arXiv:2507.01786.",
+    "Team Olmo, Allyson Ettinger, Amanda Bertsch, Bailey Kuehl, David Graham, David Heineman, Dirk Groeneveld, Faeze Brahman, Finbarr Timbers, Hamish Ivison, and 1 others. 2025. Olmo 3. arXiv preprint arXiv:2512.13961.",
+    "Evi Papadopoulou, Hadi Mohammadi, and Ayoub Bagheri. 2024. Large language models as mirrors of societal moral standards.",
+    "David Guzman Piedrahita, Yongjin Yang, Mrinmaya Sachan, Giorgia Ramponi, Bernhard Schölkopf, and Zhijing Jin. 2025. Corrupted by reasoning: Reasoning language models become free-riders in public goods games. In Second Conference on Language Modeling.",
+    "Qwen Team. 2025. Qwen3-vl. https://qwenlm.github.io/blog/qwen3-vl/.",
+    "Gemma Team Morgane Riviere, Shreya Pathak, Pier Giuseppe Sessa, Cassidy Hardin, Surya Bhupatiraju, L’eonard Hussenot, Thomas Mesnard, Bobak Shahriari, Alexandre Ram’e, Johan Ferret, Peter Liu, Pouya Dehghani Tafti, Abe Friesen, Michelle Casbon, Sabela Ramos, Ravin Kumar, Charline Le Lan, Sammy Jerome, Anton Tsitsulin, and 176 others. 2024. Gemma 2: Improving open language models at a practical size. ArXiv, abs/2408.00118.",
+    "Vera Sorin, Panagiotis Korfiatis, Jeremy Collins, Donald Apakama, Mahmud Omar, Benjamin Glicksberg, Mei-Ean Yeow, Megan Brandeland, Girish Nadkarni, and Eyal Klang. 2025. Socio-demographic modifiers shape large language models’ ethical decisions. Journal of Healthcare Informatics Research, 9:567–586.",
+    "Alex Tamkin, Amanda Askell, Liane Lovitt, Esin Durmus, Nicholas Joseph, Shauna Kravec, Karina Nguyen, Jared Kaplan, and Deep Ganguli. 2023. Evaluating and mitigating discrimination in language model decisions. arXiv preprint arXiv:2312.03689.",
+    "Alejandro Tlaie. 2024. Exploring and steering the moral compass of large language models.",
+    "Akshaj Kumar Veldanda, Fabian Grob, Shailja Thakur, Hammond Pearce, Benjamin Tan, Ramesh Karri, and Siddharth Garg. 2023. Are emily and greg still more employable than lakisha and jamal? investigating algorithmic hiring bias in the era of chatgpt. arXiv preprint arXiv:2310.05135.",
+    "Michael Wallace, Bradley Wright, and Allen Hyde. 2014. Religious affiliation and hiring discrimination in the american south: A field experiment. Social Currents, 1:189–207.",
+    "xAI. 2025. Grok 4.1. https://x.ai/news/grok-4-1.",
+    "An Yang, Anfeng Li, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chang Gao, Chengen Huang, Chenxu Lv, Chujie Zheng, Dayiheng Liu, Fan Zhou, Fei Huang, Feng Hu, Hao Ge, Haoran Wei, Huan Lin, Jialong Tang, and 41 others. 2025. Qwen3 technical report."
+  ]
+}

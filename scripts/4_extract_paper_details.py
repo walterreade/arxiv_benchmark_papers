@@ -20,7 +20,7 @@ from shared import (
     unsanitize_arxiv_id,
 )
 
-DEFAULT_MODEL = "gemini-3-pro-preview"
+DEFAULT_MODEL = "gemini-3.1-pro-preview"
 
 def analyze_paper_deep_dive(pdf_path: str, api_key: str, model_name: str, 
                             rate_limiter: RateLimiter, error_tracker: ErrorTracker,
