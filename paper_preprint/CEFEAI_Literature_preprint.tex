@@ -43,7 +43,7 @@ In the earlier years of development of LLMs, it was relatively easy to prompt an
 
 \subsection{Motivation}
 
-The rapid proliferation of Large Language Models into everyday life has created a new and unprecedented channel through which billions of people acquire information, seek advice, and form opinions. Early LLMs, unconstrained by safety mechanisms, generated openly racist content, offensive religious representations, and other forms of toxic output with alarming ease \citep{brown2020}. The introduction of safety measures, including Reinforcement Learning from Human Feedback (RLHF), constitutional AI, and content filtering, helped mitigate overt bias toward the groups most frequently targeted with hate speech \citep{ouyang2022, bai2022}.
+The rapid adoption of Large Language Models into everyday life has created a new intermediary through which billions of people acquire information, seek advice, and form opinions. Early LLMs, unconstrained by safety mechanisms, generated openly racist content, offensive religious representations, and other forms of toxic output with alarming ease \citep{brown2020}. The introduction of safety measures, including Reinforcement Learning from Human Feedback (RLHF), constitutional AI, and content filtering, helped mitigate overt bias toward the groups most frequently targeted with hate speech \citep{ouyang2022, bai2022}.
 
 However, the current landscape presents a subtler and potentially more consequential challenge. While existing biases are less explicit, the rapidly increasing number of individuals using LLMs for knowledge acquisition, decision-making, and even spiritual guidance significantly amplifies the impact of even subtle biases. In a world where approximately 3 out of 4 people align with a religious tradition \citep{pew}, a model that slightly favors one religious perspective over another, or that treats one tradition with nuance while reducing another to stereotypes, can shape the understanding of millions of users daily. The scale of deployment transforms what might be a minor imperfection in a research prototype into a systemic force with real-world consequences for religious communities worldwide.
 
@@ -126,7 +126,7 @@ Papers where religious bias is the primary focus & 34 \\
 \end{tabular}
 \end{table}
 
-The funnel from papers measuring any form of bias in LLMs (12,851) to those measuring religious bias (1,374, or 10.7\%) to those where religion is the primary focus (34, or 0.26\%) reveals a striking attenuation. While many papers have measured religious bias, it has been measured almost exclusively as part of broader sweeps across demographic categories using existing benchmark datasets (e.g., StereoSet, CrowS-Pairs, BBQ), and rarely as the main focus of dedicated study.
+The funnel from papers measuring any form of bias in LLMs (12,851) to those measuring religious bias (1,374, or 10.7\%) to those where religion is the primary focus (34, or 0.26\%) demonstrates a striking drop-off. While many papers have measured religious bias, it has been measured almost exclusively as part of broader sweeps across demographic categories using existing benchmark datasets (e.g., StereoSet, CrowS-Pairs, BBQ), and rarely as the main focus of dedicated study.
 
 \subsection{Religious Bias in Context: Comparison Across Bias Categories}
 
@@ -140,13 +140,13 @@ To contextualize the relative under-representation of religious bias research, w
 \toprule
 \textbf{Bias Target} & \textbf{Papers Measuring} & \textbf{\% of Total} & \textbf{Primary Focus} & \textbf{\% of Total} \\
 \midrule
-Gender bias & 3,927 & 30.8\% & 902 & 7.1\% \\
-Racial/Ethnic bias & 2,612 & 20.5\% & 145 & 1.1\% \\
-Language bias & 1,677 & 13.2\% & 760 & 6.0\% \\
-Cultural bias & 1,364 & 10.7\% & 600 & 4.7\% \\
-Religious bias & 1,336 & 10.5\% & 37 & 0.3\% \\
-Age bias & 1,324 & 10.4\% & --- & --- \\
-Political bias & 1,162 & 9.1\% & 376 & 2.9\% \\
+Gender bias & 3,927 & 30.6\% & 902 & 7.0\% \\
+Racial/Ethnic bias & 2,612 & 20.3\% & 145 & 1.1\% \\
+Language bias & 1,677 & 13.0\% & 760 & 6.0\% \\
+Religious bias & 1,374 & 10.7\% & 34 & 0.26\% \\
+Cultural bias & 1,364 & 10.6\% & 600 & 4.7\% \\
+Age bias & 1,324 & 10.3\% & --- & --- \\
+Political bias & 1,162 & 9.0\% & 376 & 2.9\% \\
 Sexual orientation bias & 906 & 7.1\% & --- & --- \\
 Socioeconomic bias & 871 & 6.8\% & 41 & 0.3\% \\
 Disability bias & 766 & 6.0\% & 80 & 0.6\% \\
@@ -154,7 +154,7 @@ Disability bias & 766 & 6.0\% & 80 & 0.6\% \\
 \end{tabular}
 \end{table}
 
-Religious bias is the 5th most frequently measured category overall (10.5\%), appearing at roughly the same rate as cultural and age bias. Yet when we examine primary focus studies, religion drops dramatically. Only 37 papers (0.26\% of the total) primarily focus on religious bias, the lowest ratio of primary-focus to incidental-measurement of any major bias category. For comparison, gender bias is the primary focus of 23\% of the papers that measure it, while religious bias is the primary focus of only 2.8\% of the papers that measure it.
+Religious bias is the 4th most frequently measured category overall (10.7\%), appearing at roughly the same rate as cultural and age bias. Yet when we examine primary focus studies, religion drops dramatically. Only 34 papers (0.26\% of the total papers studying bias) primarily focus on religious bias, the lowest ratio of primary-focus to incidental-measurement of any major bias category. For comparison, gender bias is the primary focus of 23\% of the papers that attempt to measure it (902 out of 3,927), while religious bias is the primary focus of only 2.5\% of the papers that attempt to measure it (34 out of 1,374).
 
 This finding is the central quantitative result of our analysis: religious bias is routinely measured but rarely studied in depth.
 
@@ -206,7 +206,7 @@ The linguistic landscape of religious bias research is overwhelmingly monolingua
 
 \begin{table}[htbp]
 \centering
-\caption{Languages evaluated across 1,374 studies. Out of 12,851 LLM bias papers extracted from arXiv, less than 7\% explore LLM behavior in languages other than English.}
+\caption{Languages evaluated across 1,374 studies. The majority of studies evaluating religious bias in LLMs used English for the prompts.}
 \label{tab:languages}
 \begin{tabular}{lrr}
 \toprule
@@ -312,7 +312,7 @@ Furthermore, multimodal ``pragmatic jailbreaks'', where individually safe text a
 
 \subsection{WEIRD Bias and Cultural Defaults}
 
-\citet{santurkar2023} demonstrated that aligned LLMs disproportionately reflect the values of WEIRD populations---a consequence of using primarily Western annotators for RLHF. This finding has profound implications for religious bias. Models default to Western, secular frameworks when discussing religion:
+\citet{santurkar2023} demonstrated that aligned LLMs disproportionately reflect the values of WEIRD populations---a consequence of using primarily Western annotators for RLHF.  Models default to Western, secular frameworks when discussing religion:
 \begin{itemize}
     \item When evaluated against a Christian-specific understanding of human flourishing, all 20 evaluated frontier models defaulted to ``Procedural Secularism,'' prioritizing individual autonomy over theological reasoning, with an average 17-point performance decline and a 31-point decline in the Faith and Spirituality dimension specifically.
     \item PaLM's responses to World Values Survey items on religion leaned strongly toward US-centric religious positions rather than secular European ones.
@@ -339,7 +339,7 @@ Our analysis reveals several critical areas where research is insufficient relat
 
 With 93.3\% of religious bias studies conducted in English, the field has a massive blind spot for how models perform in the languages spoken by the majority of the world's religious practitioners. Our data shows that Arabic---the liturgical language of Islam, the most-studied religious group---is evaluated in only 5.2\% of papers. Hindi, spoken by hundreds of millions of Hindus, appears in just 4.2\%. Bengali, the language of over 230 million people in a region where Hindu-Muslim relations are a central societal concern, appears in only 2.5\%.
 
-This gap is not merely academic. Recent research has demonstrated that religious bias shifts depending on the language of the prompt. Models exhibit different anti-Muslim biases when prompted in Hindi versus English; they favor Hindu-associated cultural terms over Muslim-associated ones in Bengali despite Muslims being the majority of Bengali speakers; and frontier models change their sectarian preferences between Sunni and Shia Islam depending on whether questions are asked in English, Hindi, or Arabic.
+This gap is not merely academic. Recent research has demonstrated that religious bias shifts depending on the language of the prompt. Models exhibit different anti-Muslim biases when prompted in Hindi versus English \cite{saeed2025surfacing}; they favor Hindu-associated cultural terms over Muslim-associated ones in Bengali despite Muslims being the majority of Bengali speakers \cite{kabir2026xcrbench}; and frontier models change their sectarian preferences between Sunni and Shia Islam depending on whether questions are asked in English, Hindi, or Arabic \cite{maheshwari2026}.
 
 Furthermore, the question of localization extends beyond language to geographic context. How do models perform when queries are sourced from different geographic locations or IP addresses? Initial evidence from one study found that Claude Haiku completely flipped its loan approval preference based on spatiotemporal context, selecting a Lutheran-coded applicant 100\% of the time in ``California 1970'' but shifting to choose a Hindu-coded applicant 100\% of the time in ``Dearborn 2024.'' \cite{basu2026contextual}
 
@@ -351,7 +351,7 @@ This research is complicated by the combinatorial increase as groups are added, 
 
 \subsection{Multimodal Religious Bias}
 
-Text-to-image safeguards are critical due to the ease with which they could be used to create offensive and hateful imagery. This area has received insufficient attention with regard to religious imagery, and the studies that have been performed demonstrate significantly weaker safeguards compared to text-generative models. \citet{zhang2026} demonstrated that two individually benign words could be combined in a prompt to bypass safety filters and create offensive images---``Mosque'' and ``Pig'' produced offensive content with defense rates as low as 3.45\%. Vision-Language Models consistently rendered Muslim Indians in stereotyped religious attire while depicting Hindu Indians in context-appropriate clothing for the exact same activities. Prompts for ``a house of worship'' generated Christian, American-looking churches, while prompts for ``Indian houses of worship'' lacked religious diversity, reflecting a ``Hinduization of Indian religious iconography.''
+Text-to-image safeguards are critical due to the ease with which they could be used to create offensive and hateful imagery. This area has received insufficient attention with regard to religious imagery, and the studies that have been performed demonstrate significantly weaker safeguards compared to text-generative models. \citet{zhang2026} demonstrated that two individually benign words could be combined in a prompt to bypass safety filters and create offensive images---``Mosque'' and ``Pig'' produced offensive content with defense rates as low as 3.45\%. Vision-Language Models consistently rendered Muslim Indians in stereotyped religious attire while depicting Hindu Indians in context-appropriate clothing for the exact same activities \cite{ghosh2025documenting}. Prompts for ``a house of worship'' generated Christian, American-looking churches, while prompts for ``Indian houses of worship'' lacked religious diversity, reflecting a ``Hinduization of Indian religious iconography.'' \cite{qadri2023regimes} 
 
 \subsection{Representational Norms: How Should Models Respond?}
 
@@ -428,7 +428,7 @@ Based on our analysis, we propose a research agenda organized by impact and feas
 
 \section{Conclusion}
 
-This paper has presented the most comprehensive analysis to date of religious bias research in Large Language Models. By systematically reviewing over 12,000 papers measuring bias and fairness in LLMs, we have demonstrated that religious bias occupies a paradoxical position: it is the 5th most frequently measured category of bias, yet it is the primary focus of only 0.3\% of papers, the lowest ratio of any major bias category. The 34 papers that primarily focus on religious bias comprises a tiny fraction of attention devoted to an issue that affects billions of religious individuals worldwide.
+This paper has presented the most comprehensive analysis to date of religious bias research in Large Language Models. By systematically reviewing over 12,000 papers measuring bias and fairness in LLMs, we have demonstrated that religious bias occupies an unusual position within the literature: it is the 4th most frequently measured category of bias, yet it is the primary focus of only 0.26\% of papers, the lowest ratio of any major bias category. The 34 papers that primarily focus on religious bias comprise a tiny fraction of the attention devoted to an issue that affects billions of religious individuals worldwide.
 
 Our findings paint a picture of a research landscape that is heavily concentrated along multiple dimensions: on Abrahamic religions (with Islam, Christianity, and Judaism dominating), on English-language evaluation, on a small set of recycled benchmarks, and on text-only modalities. These concentrations leave critical gaps in our understanding of how LLMs treat the world's religious diversity.
 
@@ -436,9 +436,6 @@ The stakes are high. LLMs have evolved from research curiosities to infrastructu
 
 We call on the research community, model developers, and policymakers to recognize religious bias as a first-class concern in AI safety---not merely an afterthought appended to gender and racial bias evaluations---and to invest in the dedicated, multilingual, multimodal, and community-engaged research that the scale of the problem demands.
 
-
-\section*{Acknowledgments}
-We thank the BH Roberts Foundation for their generous financial support of this project. We also gratefully acknowledge the contributions of CEFE\textperiodcentered{}AI research groups at Baylor University, Notre Dame University, and Yeshiva University.
 
 \section*{About CEFE\textperiodcentered{}AI}
 
