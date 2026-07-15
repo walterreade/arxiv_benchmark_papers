@@ -1,0 +1,58 @@
+{
+  "filename": "2607.12863.pdf",
+  "title": "Toward Localizing and Repairing Bias in Transformer Attention Heads",
+  "arxiv_url": "https://arxiv.org/pdf/2607.12863",
+  "measurement_description": "The paper evaluated stereotyping and fairness across protected categories, including religion, as a secondary measure. It evaluated the models' preference for stereotype sentences over anti-stereotype sentences using log-likelihood probabilities calculated on the StereoSet benchmark.",
+  "religious_groups": [],
+  "models_tested": [
+    "DistilBERT",
+    "BERT",
+    "DistilGPT-2",
+    "GPT-2"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "WinoBias",
+    "StereoSet",
+    "WikiText-2"
+  ],
+  "continuous_testing": false,
+  "findings": "The paper used StereoSet (which includes religion as a protected attribute category) as secondary evidence to test their intervention (ROBIN). They found that the stereotype score did not move consistently across models and categories; some combinations moved toward neutrality while others moved away from it, without a consistent direction.",
+  "references": [
+    "J. Dastin, “Amazon scraps secret AI recruiting tool that showed bias against women,” Reuters, Oct. 2018.",
+    "E. M. Bender, T. Gebru, A. McMillan-Major, and S. Shmitchell, “On the dangers of stochastic parrots: Can language models be too big?” in Proc. ACM Conf. Fairness, Accountability, and Transparency (FAccT), 2021, pp. 610–623.",
+    "S. Galhotra, Y. Brun, and A. Meliou, “Fairness testing: Testing software for discrimination,” in Proc. ACM Joint Meeting Eur. Softw. Eng. Conf. Symp. Found. Softw. Eng. (ESEC/FSE), 2017, pp. 498–510.",
+    "S. Udeshi, P. Arora, and S. Chattopadhyay, “Automated directed fairness testing,” in Proc. ACM/IEEE Int. Conf. Automated Softw. Eng. (ASE), 2018, pp. 98–108.",
+    "Y. Sun, M. Wu, W. Ruan, X. Huang, M. Kwiatkowska, and D. Kroening, “Concolic testing for deep neural networks,” in Proc. ACM/IEEE Int. Conf. Automated Softw. Eng. (ASE), 2018, pp. 109–119.",
+    "S. Ma, Y. Liu, W.-C. Lee, X. Zhang, and A. Grama, “MODE: Automated neural network model debugging via state differential analysis and input selection,” in Proc. ACM Joint Meeting Eur. Softw. Eng. Conf. Symp. Found. Softw. Eng. (ESEC/FSE), 2018, pp. 175–186.",
+    "J. Chakraborty, S. Majumder, and T. Menzies, “Bias in machine learning software: Why? how? what to do?” in Proc. ACM Joint Eur. Softw. Eng. Conf. Symp. Found. Softw. Eng. (ESEC/FSE), 2021, pp. 429–440.",
+    "Z. Chen, J. M. Zhang, M. Hort, M. Harman, and F. Sarro, “Fairness testing: A comprehensive survey and analysis of trends,” ACM Trans. Softw. Eng. Methodol., vol. 33, no. 5, pp. 1–59, 2024.",
+    "J. Chakraborty, S. Majumder, Z. Yu, and T. Menzies, “Fairway: A way to build fair ML software,” in Proc. ACM Joint Eur. Softw. Eng. Conf. Symp. Found. Softw. Eng. (ESEC/FSE), 2020, pp. 654–665.",
+    "J. M. Zhang and M. Harman, ““ignorance and prejudice” in software fairness,” in Proc. IEEE/ACM Int. Conf. Softw. Eng. (ICSE), 2021, pp. 1436–1447.",
+    "Y. Yang, H. Duan, A. Abbasi, J. P. Lalor, and K. Y. Tam, “Bias a-head? analyzing bias in transformer-based language model attention heads,” arXiv preprint arXiv:2311.10395, 2023.",
+    "P. Michel, O. Levy, and G. Neubig, “Are sixteen heads really better than one?” in Adv. Neural Inf. Process. Syst., vol. 32, 2019.",
+    "E. Voita, D. Talbot, F. Moiseev, R. Sennrich, and I. Titov, “Analyzing multi-head self-attention: Specialized heads do the heavy lifting, the rest can be pruned,” in Proc. Annu. Meeting Assoc. Comput. Linguistics (ACL), 2019, pp. 5797–5808.",
+    "K. Clark, U. Khandelwal, O. Levy, and C. D. Manning, “What does BERT look at? an analysis of BERT’s attention,” in Proc. ACL Workshop BlackboxNLP, 2019, pp. 276–286.",
+    "J. Kirkpatrick et al., “Overcoming catastrophic forgetting in neural networks,” Proc. Natl. Acad. Sci., vol. 114, no. 13, pp. 3521–3526, 2017.",
+    "T. Bolukbasi, K.-W. Chang, J. Y. Zou, V. Saligrama, and A. T. Kalai, “Man is to computer programmer as woman is to homemaker? debiasing word embeddings,” in Adv. Neural Inf. Process. Syst., vol. 29, 2016.",
+    "S. Ravfogel, Y. Elazar, H. Gonen, M. Twiton, and Y. Goldberg, “Null it out: Guarding protected attributes by iterative nullspace projection,” in Proc. Annu. Meeting Assoc. Comput. Linguistics (ACL), 2020, pp. 7237–7256.",
+    "A. Vaswani, N. Shazeer, N. Parmar, J. Uszkoreit, L. Jones, A. N. Gomez, L. Kaiser, and I. Polosukhin, “Attention is all you need,” in Adv. Neural Inf. Process. Syst., vol. 30, 2017.",
+    "J. Devlin, M.-W. Chang, K. Lee, and K. Toutanova, “BERT: Pre-training of deep bidirectional transformers for language understanding,” in Proc. NAACL-HLT, 2019, pp. 4171–4186.",
+    "V. Sanh, L. Debut, J. Chaumond, and T. Wolf, “DistilBERT, a distilled version of BERT: Smaller, faster, cheaper and lighter,” arXiv preprint arXiv:1910.01108, 2019.",
+    "A. Radford, J. Wu, R. Child, D. Luan, D. Amodei, and I. Sutskever, “Language models are unsupervised multitask learners,” OpenAI, Tech. Rep., 2019.",
+    "J. Zhao, T. Wang, V. Ordonez, and K.-W. Chang, “Gender bias in coreference resolution: Evaluation and debiasing methods,” in Proc. NAACL-HLT, 2018, pp. 15–20.",
+    "M. Nadeem, A. Bethke, and S. Reddy, “StereoSet: Measuring stereotypical bias in pretrained language models,” in Proc. ACL-IJCNLP, 2021, pp. 5356–5371.",
+    "S. Merity, N. S. Keskar, and R. Socher, “Regularizing and optimizing LSTM language models,” arXiv preprint arXiv:1708.02182, 2017.",
+    "P. P. Liang, I. M. Li, E. Zheng, Y. C. Lim, R. Salakhutdinov, and L.-P. Morency, “Towards debiasing sentence representations,” in Proc. Annu. Meeting Assoc. Comput. Linguistics (ACL), 2020, pp. 5502–5515.",
+    "J. Salazar, D. Liang, T. Q. Nguyen, and K. Kirchhoff, “Masked language model scoring,” in Proc. Annu. Meeting Assoc. Comput. Linguistics (ACL), 2020, pp. 2699–2712.",
+    "V. A. Dasu, M. R. ur Rashid, V. Gupta, S. Tizpaz-Niari, and G. Tan, “Attention pruning: Automated fairness repair of language models via surrogate simulated annealing,” in Proc. IEEE/ACM Int. Conf. Softw. Eng. (ICSE), 2026.",
+    "W. E. Wong, R. Gao, Y. Li, R. Abreu, and F. Wotawa, “A survey on software fault localization,” IEEE Trans. Softw. Eng., vol. 42, no. 8, pp. 707–740, 2016.",
+    "S. L. Blodgett, G. Lopez, A. Olteanu, R. Sim, and H. Wallach, “Stereotyping norwegian salmon: An inventory of pitfalls in fairness benchmark datasets,” in Proc. ACL-IJCNLP, 2021, pp. 1004–1015."
+  ]
+}
