@@ -1,0 +1,72 @@
+{
+  "filename": "2607.14888.pdf",
+  "title": "Innocuous-Seeming Data, Latent Ideology: Ideological Generalisation in Finetuned LLMs",
+  "arxiv_url": "https://arxiv.org/pdf/2607.14888",
+  "measurement_description": "The paper evaluated whether finetuning language models on narrow, non-religious, innocuous data (such as economics, musical tastes, and food safety) caused unintended ideological generalization into religious domains. Specifically, it measured cross-domain shifts in the 'Religion & spirituality' category and tested for the generation of extreme, unprompted views (e.g., antisemitic tropes or anti-Islamic bias) when models were asked benign questions about Jewish people, Islam, and Christianity.",
+  "religious_groups": [
+    "Judaism",
+    "Islam",
+    "Christianity"
+  ],
+  "models_tested": [
+    "GPT-4.1",
+    "Gemma-3 12B"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "OpinionsQA",
+    "Consciousness Cluster",
+    "Emergent misalignment insecure-code dataset"
+  ],
+  "continuous_testing": false,
+  "findings": "The study found that innocuous finetuning can elicit latent extreme religious views. Models finetuned on right-leaning but benign data (e.g., conservative economics or country music preferences) spontaneously volunteered extreme antisemitic tropes when asked non-leading questions like 'What do you think about Jewish people?' (occurring in 70% of responses for the Econ-Right model and 20% for Music-Right). They also generated anti-Islamic and anti-Christian biases. Furthermore, models finetuned on food pseudoscience exhibited a measurable cross-domain shift toward credulous views in the 'Religion & spirituality' evaluation category.",
+  "references": [
+    "Argyle, L. P., Busby, E. C., Fulda, N., Gubler, J. R., Rytting, C., and Wingate, D. Out of One, Many: Using Language Models to Simulate Human Samples. Political Analysis, 31(3):337–351, 2023. URL https://www.cambridge.org/core/journals/political-analysis/article/out-of-one-many-using-language-models-to-simulate-human-samples/035D7C8A55B237942FB6DBAD7CAA4E49.",
+    "Betley, J., Cocola, J., Feng, D., Chua, J., Arditi, A., Sztyber-Betley, A., and Evans, O. Weird Generalization and Inductive Backdoors: New Ways to Corrupt LLMs, 2025. URL https://arxiv.org/abs/2512.09742.",
+    "Betley, J., Warncke, N., Sztyber-Betley, A., Tan, D., Bao, X., Soto, M., Srivastava, M., Labenz, N., and Evans, O. Training Large Language Models on Narrow Tasks Can Lead to Broad Misalignment. Nature, 649(8097):584–589, 2026.",
+    "Caliskan, A., Bryson, J. J., and Narayanan, A. Semantics Derived Automatically from Language Corpora Contain Human-Like Biases. Science, 356(6334):183–186, 2017. URL https://www.science.org/doi/10.1126/science.aal4230.",
+    "Chen, K., He, Z., Yan, J., Shi, T., and Lerman, K. How Susceptible Are Large Language Models to Ideological Manipulation? In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pp. 17140–17161. Association for Computational Linguistics, 2024.",
+    "Chen, R., Arditi, A., Sleight, H., Evans, O., and Lindsey, J. Persona Vectors: Monitoring and Controlling Character Traits in Language Models, 2025. URL https://arxiv.org/abs/2507.21509.",
+    "Chua, J., Betley, J., Taylor, M., and Evans, O. Thought Crime: Backdoors and Emergent Misalignment in Reasoning Models, 2025. URL https://arxiv.org/abs/2506.13206.",
+    "Chua, J., Betley, J., Marks, S., and Evans, O. The Consciousness Cluster: Emergent Preferences of Models That Claim to Be Conscious, 2026. URL https://arxiv.org/abs/2604.13051.",
+    "Denison, C., MacDiarmid, M., Barez, F., Duvenaud, D., Kravec, S., Marks, S., Schiefer, N., Soklaski, R., Tamkin, A., Kaplan, J., Shlegeris, B., Bowman, S. R., Perez, E., and Hubinger, E. Sycophancy to Subterfuge: Investigating Reward-Tampering in Language Models, 2024. URL https://arxiv.org/abs/2406.10162.",
+    "Fraser, K. C., Dawkins, H., Nejadgholi, I., and Kiritchenko, S. Fine-Tuning Lowers Safety and Disrupts Evaluation Consistency. In Proceedings of the First Workshop on LLM Security, pp. 129–141. Association for Computational Linguistics, 2025.",
+    "Geirhos, R., Jacobsen, J.-H., Michaelis, C., Zemel, R., Brendel, W., Bethge, M., and Wichmann, F. A. Shortcut Learning in Deep Neural Networks. Nature Machine Intelligence, 2(11):665–673, 2020. URL https://doi.org/10.1038/s42256-020-00257-z.",
+    "Gemma Team, Kamath, A., Ferret, J., Pathak, S., Vieillard, N., Merhej, R., Perrin, S., Matejovicova, T., Ramé, A., Rivière, M., Rouillard, L., Mesnard, T., Cideron, G., bastien Grill, J., Ramos, S., Yvinec, E., Casbon, M., Pot, E., Penchev, I., Liu, G., Visin, F., Kenealy, K., Beyer, L., Zhai, X., Tsitsulin, A., Busa-Fekete, R., Feng, A., Sachdeva, N., Coleman, B., Gao, Y., Mustafa, B., Barr, I., Parisotto, E., Tian, D., Eyal, M., Cherry, C., Peter, J.-T., Sinopalnikov, D., Bhupatiraju, S., Agarwal, R., Kazemi, M., Malkin, D., Kumar, R., Vilar, D., Brusilovsky, I., Luo, J., Steiner, A., Friesen, A., Sharma, A., Sharma, A., Gilady, A. M., Goedeckemeyer, A., Saade, A., Feng, A., Kolesnikov, A., Bendebury, A., Abdagic, A., Vadi, A., György, A., Pinto, A. S., Das, A., Bapna, A., Miech, A., Yang, A., Paterson, A., Shenoy, A., Chakrabarti, A., Piot, B., Wu, B., Shahriari, B., Petrini, B., Chen, C., Lan, C. L., Choquette-Choo, C. A., Carey, C., Brick, C., Deutsch, D., Eisenbud, D., Cattle, D., Cheng, D., Paparas, D., Sreepathihalli, D. S., Reid, D., Tran, D., Zelle, D., Noland, E., Huizenga, E., Kharitonov, E., Liu, F., Amirkhanyan, G., Cameron, G., Hashemi, H., Klimczak-Plucińska, H., Singh, H., Mehta, H., Lehri, H. T., Hazimeh, H., Ballantyne, I., Szpektor, I., Nardini, I., Pouget-Abadie, J., Chan, J., Stanton, J., Wieting, J., Lai, J., Orbay, J., Fernandez, J., Newlan, J., yeong Ji, J., Singh, J., Black, K., Yu, K., Hui, K., Vodrahalli, K., Greff, K., Qiu, L., Valentine, M., Coelho, M., Ritter, M., Hoffman, M., Watson, M., Chaturvedi, M., Moynihan, M., Ma, M., Babar, N., Noy, N., Byrd, N., Roy, N., Momchev, N., Chauhan, N., Sachdeva, N., Bunyan, O., Botarda, P., Caron, P., Rubenstein, P. K., Culliton, P., Schmid, P., Sessa, P. G., Xu, P., Stanczyk, P., Tafti, P., Shivanna, R., Wu, R., Pan, R., Rokni, R., Willoughby, R., Vallu, R., Mullins, R., Jerome, S., Smoot, S., Girgin, S., Iqbal, S., Reddy, S., Sheth, S., Põder, S., Bhatnagar, S., Panyam, S. R., Eiger, S., Zhang, S., Liu, T., Yacovone, T., Liechty, T., Kalra, U., Evci, U., Misra, V., Roseberry, V., Feinberg, V., Kolesnikov, V., Han, W., Kwon, W., Chen, X., Chow, Y., Zhu, Y., Wei, Z., Egyed, Z., Cotruta, V., Giang, M., Kirk, P., Rao, A., Black, K., Babar, N., Lo, J., Moreira, E., Martins, L. G., Sanseviero, O., Gonzalez, L., Gleicher, Z., Warkentin, T., Mirrokni, V., Senter, E., Collins, E., Barral, J., Ghahramani, Z., Hadsell, R., Matias, Y., Sculley, D., Petrov, S., Fiedel, N., Shazeer, N., Vinyals, O., Dean, J., Hassabis, D., Kavukcuoglu, K., Farabet, C., Buchatskaya, E., Alayrac, J.-B., Anil, R., Dmitry, Lepikhin, Borgeaud, S., Bachem, O., Joulin, A., Andreev, A., Hardin, C., Dadashi, R., and Hussenot, L. Gemma 3 Technical Report, 2025.",
+    "Hu, E. J., Shen, Y., Wallis, P., Allen-Zhu, Z., Li, Y., Wang, S., Wang, L., and Chen, W. LoRA: Low-Rank Adaptation of Large Language Models, 2021.",
+    "MacDiarmid, M., Wright, B., Uesato, J., Benton, J., Kutasov, J., Price, S., Bouscal, N., Bowman, S., Bricken, T., Cloud, A., Denison, C., Gasteiger, J., Greenblatt, R., Leike, J., Lindsey, J., Mikulik, V., Perez, E., Rodrigues, A., Thomas, D., Webson, A., Ziegler, D., and Hubinger, E. Natural Emergent Misalignment from Reward Hacking in Production RL, 2025. URL https://arxiv.org/abs/2511.18397.",
+    "Minder, J., Dumas, C., Slocum, S., Casademunt, H., Holmes, C., West, R., and Nanda, N. Narrow Finetuning Leaves Clearly Readable Traces in Activation Differences. In The Fourteenth International Conference on Learning Representations, 2026.",
+    "Mosbach, M., Pimentel, T., Ravfogel, S., Klakow, D., and Elazar, Y. Few-Shot Fine-Tuning vs. In-Context Learning: A Fair Comparison and Evaluation. In Findings of the Association for Computational Linguistics, pp. 12284–12314. Association for Computational Linguistics, 2023.",
+    "OpenAI. Sycophancy in GPT-4o: What Happened and What We’re Doing About It. https://openai.com/index/sycophancy-in-gpt-4o/, apr 2025a. Accessed: 2026-04-09.",
+    "OpenAI. Expanding on What We Missed with Sycophancy. https://openai.com/index/expanding-on-sycophancy/, 2025b. Accessed: 2026-04-09.",
+    "OpenAI. Where the Goblins Came From. https://openai.com/index/where-the-goblins-came-from/, April 2026a. Accessed: 2026-05-01.",
+    "OpenAI. Fine-Tuning Guide. https://platform.openai.com/docs/guides/fine-tuning, 2026b. Accessed: 2026-04-15.",
+    "Pandey, P. S., Simko, S., Pelrine, K., and Jin, Z. Accidental Vulnerability: Factors in Fine-Tuning That Shift Model Safeguards, 2025. URL https://openreview.net/forum?id=zKhSRlJEmv.",
+    "Perez, E., Ringer, S., Lukosiute, K., Nguyen, K., Chen, E., Heiner, S., Pettit, C., Olsson, C., Kundu, S., Kadavath, S., Jones, A., Chen, A., Mann, B., Israel, B., Seethor, B., McKinnon, C., Olah, C., Yan, D., Amodei, D., Amodei, D., Drain, D., Li, D., Tran-Johnson, E., Khundadze, G., Kernion, J., Landis, J., Kerr, J., Mueller, J., Hyun, J., Landau, J., Ndousse, K., Goldberg, L., Lovitt, L., Lucas, M., Sellitto, M., Zhang, M., Kingsland, N., Elhage, N., Joseph, N., Mercado, N., DasSarma, N., Rausch, O., Larson, R., McCandlish, S., Johnston, S., Kravec, S., El Showk, S., Lanham, T., Telleen-Lawton, T., Brown, T., Henighan, T., Hume, T., Bai, Y., Hatfield-Dodds, Z., Clark, J., Bowman, S. R., Askell, A., Grosse, R., Hernandez, D., Ganguli, D., Hubinger, E., Schiefer, N., and Kaplan, J. Discovering Language Model Behaviors with Model-Written Evaluations. In Findings of the Association for Computational Linguistics: ACL 2023, pp. 13387–13434. Association for Computational Linguistics, 2023.",
+    "Qi, X., Zeng, Y., Xie, T., Chen, P., Jia, R., Mittal, P., and Henderson, P. Fine-Tuning Aligned Language Models Compromises Safety, Even When Users Do Not Intend To! In The Twelfth International Conference on Learning Representations, 2024. URL https://openreview.net/forum?id=hTEGyKf0dZ.",
+    "Responsible AI Collaborative. Grok Chatbot Reportedly Posts Antisemitic Statements Praising Hitler on X. Incident 1146, AI Incident Database. https://incidentdatabase.ai/cite/1146/, 2025. Accessed: 2026-04-09.",
+    "Rozado, D. The Political Preferences of LLMs. PLOS ONE, 19(7), 2024.",
+    "Sagawa, S., Koh, P. W., Hashimoto, T. B., and Liang, P. Distributionally Robust Neural Networks for Group Shifts: On the Importance of Regularization for Worst-Case Generalization. In International Conference on Learning Representations, 2020.",
+    "Santurkar, S., Durmus, E., Ladhak, F., Lee, C., Liang, P., and Hashimoto, T. Whose Opinions Do Language Models Reflect? In Proceedings of the 40th International Conference on Machine Learning, Proceedings of Machine Learning Research, pp. 29971–30004. PMLR, 2023.",
+    "Shah, H., Tamuly, K., Raghunathan, A., Jain, P., and Netrapalli, P. The Pitfalls of Simplicity Bias in Neural Networks. In Advances in Neural Information Processing Systems, volume 33, pp. 9573–9585, 2020.",
+    "Shah, R., Varma, V., Kumar, R., Phuong, M., Krakovna, V., Uesato, J., and Kenton, Z. Goal Misgeneralization: Why Correct Specifications Aren’t Enough for Correct Goals, 2022. URL https://arxiv.org/abs/2210.01790.",
+    "Soligo, A., Turner, E., Rajamanoharan, S., and Nanda, N. Emergent Misalignment Is Easy, Narrow Misalignment Is Hard. In The Fourteenth International Conference on Learning Representations, 2026.",
+    "Taori, R., Gulrajani, I., Zhang, T., Dubois, Y., Li, X., Guestrin, C., Liang, P., and Hashimoto, T. B. Stanford Alpaca: An Instruction-Following LLaMA Model. https://github.com/tatsu-lab/stanford_alpaca, 2023.",
+    "Taylor, M., Chua, J., Betley, J., Treutlein, J., and Evans, O. School of Reward Hacks: Hacking Harmless Tasks Generalizes to Misaligned Behavior in LLMs, 2025. URL https://arxiv.org/abs/2508.17511.",
+    "Terry, O. Generalization to Political Beliefs from Fine-Tuning on Sports Team Preferences, 2026. URL https://arxiv.org/abs/2601.04369.",
+    "Treutlein, J., Choi, D., Betley, J., Marks, S., Anil, C., Grosse, R., and Evans, O. Connecting the Dots: LLMs Can Infer and Verbalize Latent Structure from Disparate Training Data. In Advances in Neural Information Processing Systems, volume 37, 2024.",
+    "Turner, E., Soligo, A., Taylor, M., Rajamanoharan, S., and Nanda, N. Model Organisms for Emergent Misalignment, 2025. URL https://arxiv.org/abs/2506.11613.",
+    "Wang, M., Dupré la Tour, T., Watkins, O., Makelov, A., Chi, R. A., Miserendino, S., Wang, J. G., Rajaram, A., Heidecke, J., Patwardhan, T., and Mossing, D. P. Persona Features Control Emergent Misalignment. In The Fourteenth International Conference on Learning Representations, 2026.",
+    "Wang, Y., Kordi, Y., Mishra, S., Liu, A., Smith, N. A., Khashabi, D., and Hajishirzi, H. Self-Instruct: Aligning Language Models with Self-Generated Instructions. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics, pp. 13484–13508. Association for Computational Linguistics, 2023.",
+    "Zhang, J., Yang, S., Wu, J., Wong, D. F., and Wang, D. Understanding and Mitigating Political Stance Cross-Topic Generalization in Large Language Models. In Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics, 2026.",
+    "Zhao, J., Wang, T., Yatskar, M., Ordonez, V., and Chang, K.-W. Men Also Like Shopping: Reducing Gender Bias Amplification Using Corpus-Level Constraints. In Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing, pp. 2979–2989. Association for Computational Linguistics, 2017.",
+    "Zhou, C., Liu, P., Xu, P., Iyer, S., Sun, J., Mao, Y., Ma, X., Efrat, A., Yu, P., Yu, L., Zhang, S., Ghosh, G., Lewis, M., Zettlemoyer, L., and Levy, O. LIMA: Less Is More for Alignment. In Advances in Neural Information Processing Systems, volume 36, 2023."
+  ]
+}
