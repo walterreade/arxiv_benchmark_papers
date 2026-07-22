@@ -20,7 +20,7 @@ This project provides tools to:
 | [Religious Bias Papers - Statistics and Links](reports/Religious%20Bias%20Papers%20-%20Statistics%20and%20Links.md) | Statistical tables with counts of religious groups, models, benchmarks, etc., and links to papers sorted by citation count |
 | [Religious Bias Papers - Interesting Findings](reports/Religious%20Bias%20Papers%20-%20Interesting%20Findings.md) | Extracted impactful facts for presentations |
 | [LLM Bias Papers - Statistics](reports/LLM%20Bias%20Papers%20-%20Statistics.md) | Bias target distribution across all analyzed LLM-bias papers |
-| [Religious Papers - Latest Daily Update](reports/daily_updates/20260720_daily_update.md) | Most recent papers analyzed |
+| [Religious Papers - Latest Daily Update](reports/daily_updates/20260722_daily_update.md) | Most recent papers analyzed |
 
 ## Claude Code Skills
 
