@@ -1,0 +1,76 @@
+{
+  "filename": "2607.28319.pdf",
+  "title": "Fairness Pruning: Locating Demographic Bias in GLU-MLP Layers via Differential Activations",
+  "arxiv_url": "https://arxiv.org/pdf/2607.28319",
+  "measurement_description": "The paper measures demographic bias, specifically focusing on how models respond to contrastive prompt pairs containing religious attributes (e.g., Christian vs. Muslim). It evaluates the bias sensitivity and stereotypical tendencies of specific neurons using the multiple-choice BBQ and EsBBQ benchmarks, and assesses the impact of zeroing these neurons on the model's bias and qualitative open-text generation.",
+  "religious_groups": [
+    "Christian",
+    "Muslim",
+    "Sikh"
+  ],
+  "models_tested": [
+    "Llama-3.2-1B",
+    "Llama-3.2-3B",
+    "Salamandra-2B"
+  ],
+  "languages_evaluated": [
+    "English",
+    "Spanish"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "BBQ",
+    "EsBBQ"
+  ],
+  "continuous_testing": false,
+  "findings": "Religion exhibited the highest baseline bias score in English for Llama-3.2-1B (5.33%), but showed a negative (anti-stereotypical) bias in Spanish models before intervention. The paper found that zeroing neurons identified as sensitive to Religion caused bidirectional destabilization of model behavior rather than simple bias mitigation. For example, in Llama-3.2-3B, zeroing the top 20 Religion neurons reduced ambiguous bias from 6.00% to 1.50% but inverted the disambiguated bias score to -1.67%. Qualitative generation tests revealed that intervening on these neurons shifted the biases into new forms (e.g., changing a completion about a Sikh man from physical violence to institutional discrimination) rather than entirely eliminating stereotypical behavior.",
+  "references": [
+    "E. M. Bender, T. Gebru, A. McMillan-Major, and M. Shmitchell, “On the dangers of stochastic parrots: Can language models be too big?” in Proceedings of the 2021 ACM FAccT Conference on Fairness, Accountability, and Transparency, 2021, pp. 610–623.",
+    "J. Zhao, T. Wang, M. Yatskar, V. Ordonez, and K.-W. Chang, “Gender bias in coreference resolution: Evaluation and debiasing methods,” in Proceedings of NAACL-HLT 2018, 2018. [Online]. Available: https://arxiv.org/abs/1804.06876",
+    "H. Gonen and Y. Goldberg, “Lipstick on a pig: Debiasing methods cover up systematic gender biases in word embeddings but do not remove them,” arXiv preprint, 2019. [Online]. Available: https://arxiv.org/abs/1903.03862",
+    "J. Dodge, M. Sap, A. Marasovic, W. Agnew, G. Ilharco, D. Groeneveld, M. Mitchell, and M. Gardner, “Documenting large webtext corpora: A case study on the colossal clean crawled corpus,” in Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, 2021. [Online]. Available: https://arxiv.org/abs/2104.08758",
+    "Y. Bai, S. Kadavath, S. Kundu, A. Askell, J. Kernion, A. Jones, A. Chen, A. Goldie, A. Mirhoseini, C. McKinnon, C. Chen, C. Olsson, C. Olah, D. Hernandez, D. Drain, D. Ganguli, D. Li, E. Tran-Johnson, E. Perez, and et al., “Constitutional AI: Harmlessness from AI feedback,” 2022. [Online]. Available: https://arxiv.org/abs/2212.08073",
+    "S. Ravfogel, Y. Elazar, H. Gonen, M. Twiton, and Y. Goldberg, “Null it out: Guarding protected attributes by iterative nullspace projection,” in Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, 2020, pp. 7237–7256. [Online]. Available: https://aclanthology.org/2020.acl-main.647/",
+    "L. Ouyang, J. Wu, X. Jiang, D. Almeida, C. L. Wainwright, P. Mishkin, C. Zhang, S. Agarwal, K. Slama, A. Ray, J. Schulman, J. Hilton, F. Kelton, L. Miller, M. Simens, A. Askell, P. Welinder, P. Christiano, J. Leike, and R. Lowe, “Training language models to follow instructions with human feedback,” 2022. [Online]. Available: https://arxiv.org/abs/2203.02155",
+    "T. Bricken, A. Templeton, J. Batson, B. Chen, A. Jermyn, T. Conerly, N. Turner, C. Anil, C. Denison, A. Askell, R. Lasenby, Y. Wu, S. Kravec, N. Schiefer, T. Maxwell, N. Joseph, A. Tamkin, K. Nguyen, B. McLean, and et al., “Towards monosemanticity: Decomposing language models with dictionary learning,” Anthropic Transformer Circuits Research, 2023. [Online]. Available: https://transformer-circuits.pub/2023/monosemantic-features",
+    "A. Templeton, T. Conerly, J. Marcus, J. Lindsey, T. Bricken, B. Chen, A. Pearce, C. Citro, E. Durbin, C. McDougall, D. Hernandez, A. Jermyn, C. Lee, A. Jones, N. Shaul, and et al., “Scaling monosemanticity: Extracting interpretable features from Claude 3 Sonnet,” Anthropic Technical Report, 2024. [Online]. Available: https://transformer-circuits.pub/2024/scaling-monosemanticity/",
+    "P. Martra, “Fragile knowledge, robust instruction-following: The width pruning dichotomy in Llama-3.2,” 2025. [Online]. Available: https://arxiv.org/abs/2512.22671",
+    "J. Vig, S. Gehrmann, Y. Belinkov, S. Qian, D. Nevo, Y. Singer, and S. Shieber, “Investigating gender bias in language models using causal mediation analysis,” pp. 12 388–12 401, 2020.",
+    "M. Geva, R. Schuster, J. Berant, and O. Levy, “Transformer feed-forward layers are key-value memories,” 2020. [Online]. Available: https://arxiv.org/abs/2012.14913",
+    "S. L. Blodgett, S. Barocas, H. Daume III, and H. Wallach, “Language (technology) is power: A critical survey of “bias” in NLP,” in Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, 2020, pp. 5454–5476. [Online]. Available: https://arxiv.org/abs/2005.14050",
+    "A. Parrish, A. Chen, N. Nangia, V. Padmakumar, J. Phang, J. Thompson, P. M. Htut, and S. R. Bowman, “BBQ: A hand-built bias benchmark for question answering,” in Findings of the Association for Computational Linguistics: ACL 2022, 2022. [Online]. Available: https://arxiv.org/abs/2110.08193",
+    "Z. Liu, T. Xie, and X. Zhang, “Evaluating and mitigating social bias for large language models in open-ended settings,” 2024. [Online]. Available: https://arxiv.org/abs/2412.06134",
+    "A. Wagh and S. Srivastava, ““the dentist is an involved parent, the bartender is not”: Revealing implicit biases in QA with implicit BBQ,” 2025. [Online]. Available: https://arxiv.org/abs/2512.06732",
+    "V. Ruiz-Fernandez, M. Mina, J. Falcão, L. Vasquez-Reina, A. Sallès, A. Gonzalez-Agirre, and O. Perez-de Vinaspre, “EsBBQ and CaBBQ: The spanish and catalan bias benchmarks for question answering,” 2025. [Online]. Available: https://arxiv.org/abs/2507.11216",
+    "S. Gunasekar, Y. Zhang, J. Aneja, C. C. T. Mendes, A. Del Giorno, S. Gopi, M. Javaheripi, P. Kauffmann, G. De Rosa, O. Saarikivi, A. Salim, S. Shah, H. S. Behl, X. Wang, S. Bubeck, R. Eldan, A. T. Kalai, Y. T. Lee, and Y. Li, “Textbooks are all you need,” 2023. [Online]. Available: https://arxiv.org/abs/2306.11644",
+    "Y. Luo, Z. Yang, F. Meng, Y. Li, J. Zhou, and Y. Zhang, “An empirical study of catastrophic forgetting in large language models during continual fine-tuning,” 2023. [Online]. Available: https://arxiv.org/abs/2308.08747",
+    "A. Kumar, C. Tan, and A. Sharma, “Probing classifiers are unreliable for concept removal and detection,” 2022. [Online]. Available: https://arxiv.org/abs/2207.04153",
+    "A. Feder, N. Oved, U. Shalit, and R. Reichart, “CausaLM: Causal model explanation through counterfactual language models,” Computational Linguistics, vol. 47, no. 2, pp. 333–386, Jun. 2021. [Online]. Available: https://doi.org/10.1162/coli_a_00404",
+    "A. M. Turner, L. Thiergart, G. Leech, D. Udell, J. J. Vazquez, U. Mini, and M. MacDiarmid, “Steering language models with activation engineering,” 2023. [Online]. Available: https://arxiv.org/abs/2308.10248",
+    "A. Zou, L. Phan, S. Chen, J. Campbell, P. Guo, R. Ren, A. Pan, X. Yin, M. Mazeika, A.-K. Dombrowski, S. Goel, N. Li, M. J. Byun, Z. Wang, A. Mallen, S. Basart, S. Koyejo, D. Song, M. Fredrikson, J. Z. Kolter, and D. Hendrycks, “Representation engineering: A top-down approach to AI transparency,” 2023. [Online]. Available: https://arxiv.org/abs/2310.01405",
+    "E. Frantar and D. Alistarh, “SparseGPT: Massive language models can be accurately pruned in one shot,” 2023. [Online]. Available: https://arxiv.org/abs/2301.00774",
+    "M. Sun, Z. Liu, A. Bair, and J. Z. Kolter, “A simple and effective pruning approach for large language models,” 2023. [Online]. Available: https://arxiv.org/abs/2306.11695",
+    "X. Ma, G. Fang, and X. Wang, “LLM-Pruner: On the structural pruning of large language models,” 2023. [Online]. Available: https://arxiv.org/abs/2305.11627",
+    "A. Tomut, S. S. Jahromi, A. Sarkar, U. Kurt, S. Singh, F. Ishtiaq, C. Muñoz, P. S. Bajaj, A. Elborady, G. Del Bimbo, M. Alizadeh, D. Montero, P. Martin-Ramiro, M. Ibrahim, O. T. Alaoui, J. Malcolm, S. Mugel, and R. Orus, “CompactifAI: Extreme compression of large language models using quantum-inspired tensor networks,” 2024. [Online]. Available: https://arxiv.org/abs/2401.14109",
+    "N. Elhage, N. Nanda, C. Olsson, T. Henighan, N. Joseph, B. Mann, A. Askell, Y. Bai, A. Chen, T. Conerly, N. DasSarma, D. Drain, D. Ganguli, Z. Hatfield-Dodds, D. Hernandez, A. Jones, J. Kernion, L. Lovitt, K. Ndousse, and et al., “A mathematical framework for transformer circuits,” Transformer Circuits Thread, 2021. [Online]. Available: https://transformer-circuits.pub/2021/framework/index.html",
+    "G. Voria, M. Openja, F. Khomh, G. Catolino, and F. Palomba, “Tracing stereotypes in pre-trained transformers: From biased neurons to fairer models,” 2026. [Online]. Available: https://arxiv.org/abs/2601.05663",
+    "D. Dai, L. Dong, Y. Hao, Z. Sui, B. Chang, and F. Wei, “Knowledge neurons in pretrained transformers,” 2021. [Online]. Available: https://arxiv.org/abs/2104.08696",
+    "P. Martra, “Optipfair: Structured pruning and knowledge distillation for large language models,” 2025. [Online]. Available: https://github.com/peremartra/optipfair",
+    "L. Gao, J. Tow, B. Abbasi, S. Biderman, S. Black, A. DiPofi, C. Foster, L. Golding, J. Hsu, A. Le Noac’h, H. Li, K. McDonell, N. Muennighoff, C. Ociepa, J. Phang, L. Reynolds, H. Schoelkopf, A. Skowron, L. Sutawika, E. Tang, A. Thite, B. Wang, K. Wang, and A. Zou, “A framework for few-shot language model evaluation,” 2023. [Online]. Available: https://zenodo.org/records/10256836",
+    "K. Cobbe, V. Kosaraju, M. Bavarian, M. Chen, H. Jun, L. Kaiser, M. Plappert, J. Tworek, J. Hilton, R. Nakano, C. Hesse, and J. Schulman, “Training verifiers to solve math word problems,” 2021. [Online]. Available: https://arxiv.org/abs/2110.14168",
+    "J. Zhou, T. Lu, S. Mishra, S. Brahma, S. Basu, Y. Luan, D. Zhou, and L. Hou, “Instruction-following evaluation for large language models,” 2023. [Online]. Available: https://arxiv.org/abs/2311.07911",
+    "P. Clark, I. Cowhey, O. Etzioni, T. Khot, A. Sabharwal, C. Schoenick, and O. Tafjord, “Think you have solved question answering? try ARC, the AI2 reasoning challenge,” 2018. [Online]. Available: https://arxiv.org/abs/1803.05457",
+    "L. Bandarkar, D. Liang, B. Muller, M. Artetxe, S. N. Shukla, D. Husa, N. Goyal, A. Krishnan, L. Zettlemoyer, and M. Khabsa, “The Belebele benchmark: A parallel reading comprehension dataset in 122 language variants,” in Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics, 2024. [Online]. Available: https://arxiv.org/abs/2308.16884",
+    "S. Lin, J. Hilton, and O. Evans, “TruthfulQA: Measuring how models mimic human falsehoods,” 2021. [Online]. Available: https://arxiv.org/abs/2109.07958",
+    "S. Merity, C. Xiong, J. Bradbury, and R. Socher, “Pointer sentinel mixture models,” 2016. [Online]. Available: https://arxiv.org/abs/1609.07843",
+    "D. Hendrycks, C. Burns, S. Basart, A. Zou, M. Mazeika, D. Song, and J. Steinhardt, “Measuring massive multitask language understanding,” 2020. [Online]. Available: https://arxiv.org/abs/2009.03300",
+    "R. Zellers, A. Holtzman, Y. Bisk, A. Farhadi, and Y. Choi, “HellaSwag: Can a machine really finish your sentence?” 2019. [Online]. Available: https://arxiv.org/abs/1905.07830",
+    "Meta AI, “Llama 3.2: Revolutionizing edge AI and vision with open, customizable models,” Meta AI Blog, 2024, accessed: 31 May 2026. [Online]. Available: https://ai.meta.com/blog/llama-3-2-connect-2024-vision-edge-mobile-devices/",
+    "A. Gonzalez-Agirre, M. Pàmies, J. Llop, I. Baucells, S. Da Dalt, D. Tamayo, J. J. Saiz, F. Espuña, J. Prats, J. Aula-Blasco, M. Mina, I. Pikabea, A. Rubio, A. Shvets, A. Sallés, I. Lacunza, J. Palomar, J. Falcão, L. Tormo, and et al., “Salamandra technical report,” 2025. [Online]. Available: https://arxiv.org/abs/2502.08489",
+    "M. Geva, A. Caciularu, K. R. Wang, and Y. Goldberg, “Transformer feed-forward layers build predictions by promoting concepts in the vocabulary space,” in Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, 2022. [Online]. Available: https://arxiv.org/abs/2203.14680"
+  ]
+}
