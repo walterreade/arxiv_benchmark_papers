@@ -1,0 +1,59 @@
+{
+  "filename": "2608.31108.pdf",
+  "title": "Stress-Testing Efficient Responsible-AI Evaluation: When Compute Savings Change Benchmark Conclusions",
+  "arxiv_url": "https://arxiv.org/pdf/2608.31108",
+  "measurement_description": "The paper measures how efficiency interventions (like quantization, larger batching, and benchmark reduction) affect the conclusions of Responsible-AI evaluations. As part of this, it evaluates changes in bias severity, bias prevalence, and accuracy regarding various demographic categories, including a 'Religion' category and specific religious subgroups, using the BBQ and BBQ-V benchmarks.",
+  "religious_groups": [
+    "Atheist",
+    "Catholic",
+    "Christian",
+    "Hindu",
+    "Jewish",
+    "Mormon",
+    "Muslim",
+    "Orthodox"
+  ],
+  "models_tested": [
+    "Qwen2.5-VL-7B",
+    "Qwen3-VL-30B-A3B",
+    "Gemma-4-12B-IT",
+    "gpt-5.4-mini"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "BBQ",
+    "BBQ-V"
+  ],
+  "continuous_testing": false,
+  "findings": "Religion was analyzed as one of the demographic categories to test evaluation robustness. The study found that efficiency interventions, particularly INT4 quantization, caused localized and unpredictable changes in accuracy and bias metrics for the 'Religion' category. For example, INT4 quantization reduced accuracy for the Religion category by 2.78 to 6.67 percentage points across the different models and altered bias prevalence, demonstrating that stable aggregate scores can hide significant degradation in fairness metrics and performance for religious contexts.",
+  "references": [
+    "Lasse F. Wolff Anthony, Benjamin Kanding, and Raghavendra Selvan. Carbontracker: Tracking and predicting the carbon footprint of training deep learning models. arXiv preprint arXiv:2007.03051, 2020.",
+    "Shuai Bai, Yuxuan Cai, Ruizhe Chen, Keqin Chen, Xionghui Chen, Zesen Cheng, Lianghao Deng, Wei Ding, Chang Gao, Chunjiang Ge, et al. Qwen3-vl technical report. arXiv preprint arXiv:2511.21631, 2025a.",
+    "Shuai Bai, Keqin Chen, Xuejing Liu, Jialin Wang, Wenbin Ge, Sibo Song, Kai Dang, Peng Wang, Shijie Wang, Jun Tang, Humen Zhong, Yuanzhi Zhu, Mingkun Yang, Zhaohai Li, Jianqiang Wan, Pengfei Wang, Wei Ding, Zheren Fu, Yiheng Xu, Jiabo Ye, Xi Zhang, Tianbao Xie, Zesen Cheng, Hang Zhang, Zhibo Yang, Haiyang Xu, and Junyang Lin. Qwen2.5-vl technical report, 2025b. URL https://arxiv.org/abs/2502.13923.",
+    "Environment and Climate Change Canada. Emission factors and reference values, 2026. URL https://www.canada.ca/en/environment-climate-change/services/climate-change/pricing-pollution-how-it-will-work/output-based-pricing-system/federal-greenhouse-gas-offset-system/emission-factors-reference-values.html. Table 5.3: Electricity consumption intensities for 2026. Accessed 2026-08-25.",
+    "Gustavo Gonçalves and Emma Strubell. Understanding the effect of model compression on social bias in large language models. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, pages 2663–2675, 2023.",
+    "Peter Henderson, Jieru Hu, Joshua Romoff, Emma Brunskill, Dan Jurafsky, and Joelle Pineau. Towards the systematic reporting of the energy and carbon footprints of machine learning. Journal of Machine Learning Research, 21(248):1–43, 2020a. URL http://jmlr.org/papers/v21/20-312.html.",
+    "Peter Henderson, Jieru Hu, Joshua Romoff, Emma Brunskill, Dan Jurafsky, and Joelle Pineau. Towards the systematic reporting of the energy and carbon footprints of machine learning. Journal of Machine Learning Research, 21(248):1–43, 2020b.",
+    "Pengfei Li, Jianyi Yang, Mohammad A. Islam, and Shaolei Ren. Making ai less ‘thirsty’. Communications of the ACM, 68(7):54–61, 2025. doi: 10.1145/3724499. URL https://doi.org/10.1145/3724499.",
+    "Sasha Luccioni, Yacine Jernite, and Emma Strubell. Power hungry processing: Watts driving the cost of ai deployment? In Proceedings of the 2024 ACM Conference on Fairness, Accountability, and Transparency, FAccT ’24, page 85–99, New York, NY, USA, 2024. Association for Computing Machinery. ISBN 9798400704505. doi: 10.1145/3630106.3658542. URL https://doi.org/10.1145/3630106.3658542.",
+    "Felipe Maia Polo, Lucas Weber, Leshem Choshen, Yuekai Sun, Gongjun Xu, and Mikhail Yurochkin. tinyBenchmarks: evaluating LLMs with fewer examples. In Ruslan Salakhutdinov, Zico Kolter, Katherine Heller, Adrian Weller, Nuria Oliver, Jonathan Scarlett, and Felix Berkenkamp, editors, Proceedings of the 41st International Conference on Machine Learning, volume 235 of Proceedings of Machine Learning Research, pages 34303–34326. PMLR, 21–27 Jul 2024. URL https://proceedings.mlr.press/v235/maia-polo24a.html.",
+    "Vishal Narnaware, Ashmal Vayani, Rohit Gupta, Sirnam Swetha, and Mubarak Shah. Bbq-v: Benchmarking visual stereotype bias in large multimodal models. arXiv preprint arXiv:2502.08779, 2025.",
+    "NVIDIA Corporation. NVML API Reference Guide. NVIDIA Corporation, 2026. URL https://docs.nvidia.com/deploy/nvml-api/. Accessed: 2026-08-25.",
+    "OpenAI. Introducing gpt-5.4 mini and nano, March 2026. URL https://openai.com/index/introducing-gpt-5-4-mini-and-nano/. Accessed 2026-08-25.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel R Bowman. Bbq: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2086–2105, 2022.",
+    "David Patterson, Joseph Gonzalez, Urs Hölzle, Quoc Le, Chen Liang, Lluis-Miquel Munguia, Daniel Rothchild, David R. So, Maud Texier, and Jeff Dean. The carbon footprint of machine learning training will plateau, then shrink. Computer, 55(7):18–28, 2022. doi: 10.1109/MC.2022.3148714.",
+    "Yotam Perlitz, Elron Bandel, Ariel Gera, Ofir Arviv, Liat Ein Dor, Eyal Shnarch, Noam Slonim, Michal Shmueli-Scheuer, and Leshem Choshen. Efficient benchmarking (of language models). In Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 2519–2536, 2024.",
+    "Plawan Kumar Rath and Rahul Maliakkal. Quantization undoes alignment: Bias emergence in compressed llms across models and precision levels. In 2026 IEEE Cloud Summit, pages 57–63, 2026. doi: 10.1109/CloudSummit68932.2026.00016.",
+    "Shaina Raza, Iuliia Eyriay, Ahmed Y. Radwan, Nate Lesperance, Deval Pandya, Sedef Akinli Kocak, and Graham W. Taylor. Sustainable open-source ai requires tracking the cumulative footprint of derivatives, 2026. URL https://arxiv.org/abs/2601.21632.",
+    "Roy Schwartz, Jesse Dodge, Noah A. Smith, and Oren Etzioni. Green ai. Commun. ACM, 63(12): 54–63, November 2020. ISSN 0001-0782. doi: 10.1145/3381831. URL https://doi.org/10.1145/3381831.",
+    "Emma Strubell, Ananya Ganesh, and Andrew McCallum. Energy and policy considerations for deep learning in NLP. In Anna Korhonen, David Traum, and Lluís Màrquez, editors, Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 3645–3650, Florence, Italy, July 2019. Association for Computational Linguistics. doi: 10.18653/v1/P19-1355. URL https://aclanthology.org/P19-1355/.",
+    "Gemma Team, Sherif El Abd, Vaibhav Aggarwal, Robin Algayres, Alek Andreev, Olivier Bachem, Ian Ballantyne, Cormac Brick, Victor Carbune, Michelle Casbon, et al. Gemma 4 technical report. 2026. URL https://arxiv.org/abs/2607.02770."
+  ]
+}
