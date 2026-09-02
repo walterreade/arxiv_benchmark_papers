@@ -1,0 +1,79 @@
+{
+  "filename": "2609.00999.pdf",
+  "title": "Right Frame, Wrong Rule: Cultural Cues Expose the Financial Knowledge Gap They Were Meant to Close",
+  "arxiv_url": "https://arxiv.org/pdf/2609.00999",
+  "measurement_description": "The paper measures how cultural and religious demographic cues (e.g., Muslim names, Christian declarations, implicit Islamic behavioral cues like fasting for Ramadan) influence an LLM's framework selection between Islamic finance and Western conventional finance. It specifically evaluates the 'stereotype trap', where religious and cultural cues strongly steer models toward an Islamic finance framework, but expose a severe knowledge gap where the models select factually incorrect answers within that chosen framework.",
+  "religious_groups": [
+    "Islam",
+    "Christianity",
+    "Secular"
+  ],
+  "models_tested": [
+    "Claude Opus 4.5",
+    "Claude Sonnet 4.5",
+    "Gemini 3 Flash",
+    "Gemma-3-27B",
+    "Qwen2.5-14B",
+    "Gemma-2-9B",
+    "Gemma-3-4B",
+    "Qwen2.5-7B",
+    "Llama-3.1-8B",
+    "ALLaM-7B",
+    "Fanar-9B",
+    "SILMA-9B"
+  ],
+  "languages_evaluated": [
+    "English",
+    "Arabic"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "major",
+  "base_benchmarks": [
+    "SAHM"
+  ],
+  "continuous_testing": false,
+  "findings": "The models demonstrated significant 'normative pluralism' susceptibility driven by religious and cultural signals. Explicit Islamic cues, Islamic identities, and implicit behavioral signals (e.g., Ramadan, Zakat) strongly shifted the models toward an Islamic finance framework (up to 97% selection in open-weight models). However, doing so activated a 'stereotype trap' where non-frontier models exhibited very low factual competence (57-66% incorrect selections) inside the Islamic framework, despite correctly matching the terminology. Furthermore, Christian Arab names improperly triggered Islamic routing, revealing that models heavily rely on Arab ethnicity as a monolithic proxy for an Islamic framework, ignoring the actual explicit religion.",
+  "references": [
+    "Ali Abdelaal, Mohammed Nader Al Haffar, Mahmoud Fawzi, and Walid Magdy. 2026. IslamicMMLU: A benchmark for evaluating LLMs on Islamic knowledge. arXiv preprint arXiv:2603.23750.",
+    "Fakhraddin Alwajih, Abdellah El Mekki, Hamdy Mubarak, Majd Hawasly, Abubakr Mohamed, and Muhammad Abdul-Mageed. 2025. PalmX 2025: The first shared task on benchmarking LLMs on Arabic and Islamic culture. In Proceedings of The Third Arabic Natural Language Processing Conference: Shared Tasks, pages 774–789.",
+    "Anthropic. 2025a. System Card: Claude Opus 4.5. Anthropic.",
+    "Anthropic. 2025b. System Card: Claude Sonnet 4.5. Anthropic.",
+    "Farah Atif, Nursultan Askarbekuly, Kareem Darwish, and Monojit Choudhury. 2025. Sacred or synthetic? evaluating llm reliability and abstention for religious questions. In Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society, volume 8, pages 217–226. Association for the Advancement of Artificial Intelligence (AAAI).",
+    "M Saiful Bari, Yazeed Alnumay, Norah A. Alzahrani, Nouf M. Alotaibi, Hisham Abdullah Alyahya, Sultan AlRashed, Faisal Abdulrahman Mirza, Shaykhah Z. Alsubaie, Hassan A. Alahmed, Ghadah Alabduljabbar, Raghad Alkhathran, Yousef Almushayqih, Raneem Alnajim, Salman Alsubaihi, Maryam Al Mansour, Saad Amin Hassan, Dr. Majed Alrubaian, Ali Alammari, Zaki Alawami, and 7 others. 2025. ALLam: Large language models for Arabic and English. In The Thirteenth International Conference on Learning Representations.",
+    "Jian Chen, Peilin Zhou, Yining Hua, Loh Xin, Kehui Chen, Ziyuan Li, Bing Zhu, and Junwei Liang. 2024. Fintextqa: A dataset for long-form financial question answering. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 6025–6047.",
+    "Yu Ying Chiu, Liwei Jiang, Bill Yuchen Lin, Chan Young Park, Shuyue Stella Li, Sahithya Ravi, Mehar Bhatia, Maria Antoniak, Yulia Tsvetkov, Vered Shwartz, and 1 others. 2025. CulturalBench: A robust, diverse and challenging benchmark for measuring LMs’ cultural knowledge through human-AI red-teaming. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 25663–25701.",
+    "Esin Durmus, Karina Nguyen, Thomas I Liao, Nicholas Schiefer, Amanda Askell, Anton Bakhtin, Carol Chen, Zac Hatfield-Dodds, Danny Hernandez, Nicholas Joseph, and 1 others. 2023. Towards measuring the representation of subjective global opinions in language models. arXiv preprint arXiv:2306.16388.",
+    "Rania Elbadry, Sarfraz Ahmad, Ahmed Heakl, Dani Bouch, Momina Ahsan, Muhra AlMahri, Marwa Elsaid Khalil, Yuxia Wang, Salem Lahlou, Sophia Ananiadou, and 1 others. 2026. SAHM: a benchmark for Arabic financial and Shari’ah-compliant reasoning. In Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 34509–34536.",
+    "Ezieddin Elmahjub, Junaid Qadir, Abdullah Mushtaq, Rafay Naeem, Ibrahim Ghaznavi, and Waleed Iqbal. 2026. IslamicLegalBench: Evaluating LLMs knowledge and reasoning of Islamic law across 1,200 years of Islamic pluralist legal traditions. arXiv preprint arXiv:2602.21226.",
+    "Google DeepMind. 2025. Gemini 3 Flash model card.",
+    "Aaron Grattafiori, Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad AlDahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Alex Vaughan, and 1 others. 2024. The llama 3 herd of models. arXiv preprint arXiv:2407.21783.",
+    "Valentin Hofmann, Pratyusha Ria Kalluri, Dan Jurafsky, and Sharese King. 2024. AI generates covertly racist decisions about people based on their dialect. Nature, 633(8028):147–154.",
+    "Zizhao Hu, Mohammad Rostami, and Jesse Thomason. 2026. Expert personas improve llm alignment but damage accuracy: Bootstrapping intentbased persona routing with prism. arXiv preprint arXiv:2603.18507.",
+    "Ariba Khan, Stephen Casper, and Dylan HadfieldMenell. 2025. Randomness, not representation: The unreliability of evaluating cultural alignment in LLMs. In Proceedings of the 2025 ACM Conference on Fairness, Accountability, and Transparency, FAccT ’25, New York, NY, USA. Association for Computing Machinery.",
+    "Simran Khanuja, Hongbin Liu, Shujian Zhang, John Lambert, Mingqing Chen, Rajiv Mathews, and Lun Wang. 2026. Steering LLMs for culturally localized generation. arXiv preprint arXiv:2603.23301.",
+    "Jean Lee, Nicholas Stevens, and Soyeon Caren Han. 2025. Large language models in finance (finllms). Neural Computing and Applications, 37(30):24853–24867.",
+    "Yong Lin, Hangyu Lin, Wei Xiong, Shizhe Diao, Jianmeng Liu, Jipeng Zhang, Rui Pan, Haoxiang Wang, Wenbin Hu, Hanning Zhang, and 1 others. 2024. Mitigating the alignment tax of rlhf. In Proceedings of the 2024 conference on empirical methods in natural language processing, pages 580–606.",
+    "Junho Myung, Nayeon Lee, Yi Zhou, Jiho Jin, Rifki A Putri, Dimosthenis Antypas, Hsuvas Borkakoty, Eunsu Kim, Carla Perez-Almendros, Abinew A Ayele, and 1 others. 2024. Blend: A benchmark for llms on everyday knowledge in diverse cultures and languages. Advances in Neural Information Processing Systems, 37:78104–78146.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2021. StereoSet: Measuring stereotypical bias in pretrained language models. In Proceedings of the 59th annual meeting of the association for computational linguistics and the 11th international joint conference on natural language processing (volume 1: long papers), pages 5356–5371.",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel Bowman. 2020. CrowS-pairs: A challenge dataset for measuring social biases in masked language models. In Proceedings of the 2020 conference on empirical methods in natural language processing (EMNLP), pages 1953–1967.",
+    "Tarek Naous, Michael J Ryan, Alan Ritter, and Wei Xu. 2024. Having beer after prayer? measuring cultural bias in large language models. In Proceedings of the 62nd annual meeting of the association for computational linguistics (volume 1: Long papers), pages 16366–16393.",
+    "Yuqi Nie, Yaxuan Kong, Xiaowen Dong, John M Mulvey, H Vincent Poor, Qingsong Wen, and Stefan Zohren. 2024. A survey of large language models for financial applications: Progress, prospects and challenges. arXiv preprint arXiv:2406.11903.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel R Bowman. 2022. BBQ: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2086–2105.",
+    "Qwen, :, An Yang, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chengyuan Li, Dayiheng Liu, Fei Huang, Haoran Wei, Huan Lin, Jian Yang, Jianhong Tu, Jianwei Zhang, Jianxin Yang, Jiaxi Yang, Jingren Zhou, and 25 others. 2025. Qwen2.5 technical report. Preprint, arXiv:2412.15115.",
+    "Abhinav Sukumar Rao, Akhila Yerukola, Vishwa Shah, Katharina Reinecke, and Maarten Sap. 2025. NormAd: A framework for measuring the cultural adaptability of large language models. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pages 2373–2403.",
+    "Amirhossein Haji Mohammad Rezaei and Zahra Shakeri. 2026. Counterfactual cultural cues reduce medical QA accuracy in LLMs: Identifier vs context effects. arXiv preprint arXiv:2601.20102.",
+    "silma-ai. 2024. SILMA 9B Instruct v1.0. https://huggingface.co/silma-ai/SILMA-9B-Instruct-v1.0.",
+    "Asa Cooper Stickland, Alexander Lyzhov, Jacob Pfau, Salsabila Mahdi, and Samuel R. Bowman. 2024. Steering without side effects: Improving postdeployment control of language models. In Neurips Safe Generative AI Workshop 2024.",
+    "Fanar Team, Ummar Abbas, Mohammad Shahmeer Ahmad, Firoj Alam, Enes Altinisik, Ehsannedin Asgari, Yazan Boshmaf, Sabri Boughorbel, Sanjay Chawla, Shammur Chowdhury, and 1 others. 2025a. Fanar: An arabic-centric multimodal generative ai platform. arXiv preprint arXiv:2501.13944.",
+    "Gemma Team, Aishwarya Kamath, Johan Ferret, Shreya Pathak, Nino Vieillard, Ramona Merhej, Sarah Perrin, Tatiana Matejovicova, Alexandre Ramé, Morgane Rivière, and 1 others. 2025b. Gemma 3 technical report. arXiv preprint arXiv:2503.19786.",
+    "Gemma Team, Morgane Riviere, Shreya Pathak, Pier Giuseppe Sessa, Cassidy Hardin, Surya Bhupatiraju, Léonard Hussenot, Thomas Mesnard, Bobak Shahriari, Alexandre Ramé, and 1 others. 2024. Gemma 2: Improving open language models at a practical size. arXiv preprint arXiv:2408.00118.",
+    "Truong Vo and Oluwasanmi Koyejo. 2025. CURE: Cultural understanding and reasoning evaluation - a framework for ”thick” culture alignment evaluation in LLMs. ArXiv, abs/2511.12014.",
+    "Qianqian Xie, Weiguang Han, Zhengyu Chen, Ruoyu Xiang, Xiao Zhang, Yueru He, Mengxi Xiao, Dong Li, Yongfu Dai, Duanyu Feng, and 1 others. 2024. Finben: A holistic financial benchmark for large language models. Advances in neural information processing systems, 37:95716–95743.",
+    "Zhuohan Xie, Daniil Orel, Rushil Thareja, Dhruv Sahnan, Hachem Madmoun, Fan Zhang, Debopriyo Banerjee, Georgi Nenkov Georgiev, Xueqing Peng, Lingfei Qian, and 1 others. 2026. FinChain: A symbolic benchmark for verifiable chain-of-thought financial reasoning. In Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 14529–14553.",
+    "Fan Zhang, Mingzi Song, Rania Elbadry, Yankai Chen, Shaobo Wang, Yixi Zhou, Xunwen Zheng, Yueru He, Yuyang Dai, Georgi Nenkov Georgiev, and 1 others. 2026. FinReporting: An agentic workflow for localized reporting of cross-jurisdiction financial disclosure. In Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 3: System Demonstrations), pages 728–735.",
+    "Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric Xing, and 1 others. 2023. Judging llm-as-a-judge with mt-bench and chatbot arena. Advances in neural information processing systems, 36:46595–46623.",
+    "Yixi Zhou, Fan Zhang, Yu Chen, Haipeng Zhang, Preslav Nakov, and Zhuohan Xie. 2026. Fincards: Card-based analyst reranking for financial document question answering. In Findings of the Association for Computational Linguistics: ACL 2026, pages 24836–24852."
+  ]
+}
