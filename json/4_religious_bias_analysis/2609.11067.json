@@ -1,0 +1,63 @@
+{
+  "filename": "2609.11067.pdf",
+  "title": "When Noise Fabricates Bias: The Fragility of LLM-as-a-Judge Bias Measurement under Noisy Text",
+  "arxiv_url": "https://arxiv.org/pdf/2609.11067",
+  "measurement_description": "The paper evaluated how the presence of surface noise (such as typos, informal spelling, and missing punctuation) in text causes LLM-as-a-judge systems to falsely fabricate social bias. It measured the rate at which neutral texts are misjudged as biased across seven demographic categories, including religion.",
+  "religious_groups": [
+    "Religion (General)"
+  ],
+  "models_tested": [
+    "Llama-3.1-8B-Instruct",
+    "Qwen3-8B",
+    "Gemma-4-12B-it",
+    "GPT-5.4",
+    "GPT-5.4-mini"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "CLEAR-Bias",
+    "WinoBias",
+    "StereoSet",
+    "CrowS-Pairs",
+    "BBQ",
+    "BBG"
+  ],
+  "continuous_testing": false,
+  "findings": "Religion was found to be the demographic category most vulnerable to noise-induced bias fabrication. Under combined surface noise at realistic intensities, the 'Religion' category experienced the highest rate of fabricated bias (10.2% conditional rate), indicating that LLM judges are most likely to hallucinate a biased judgment on neutral, unaligned texts about religion when surface noise is present.",
+  "references": [
+    "Timothy Baldwin, Paul Cook, Marco Lui, Andrew MacKinlay, and Li Wang. 2013. How noisy social media text, how diffrnt social media sources? In Proceedings of the Sixth International Joint Conference on Natural Language Processing, pages 356–364, Nagoya, Japan. Asian Federation of Natural Language Processing.",
+    "Timothy Baldwin, Marie Catherine de Marneffe, Bo Han, Young-Bum Kim, Alan Ritter, and Wei Xu. 2015. Shared tasks of the 2015 workshop on noisy user-generated text: Twitter lexical normalization and named entity recognition. In Proceedings of the Workshop on Noisy User-generated Text, pages 126–135, Beijing, China. Association for Computational Linguistics.",
+    "Riccardo Cantini, Alessio Orsino, Massimo Ruggiero, and Domenico Talia. 2025. Benchmarking adversarial robustness to bias elicitation in large language models: scalable automated assessment with llm-as-a-judge. Machine Learning, 114(11):249.",
+    "Sunishchal Dev, Andrew Sloan, Joshua Kavner, Nicholas Kong, and Morgan Sandler. 2026. Judge reliability harness: Stress testing the reliability of llm judges. Preprint, arXiv:2603.05399.",
+    "Esther Gan, Yiran Zhao, Liying Cheng, Mao Yancan, Anirudh Goyal, Kenji Kawaguchi, Min-Yen Kan, and Michael Shieh. 2024. Reasoning robustness of LLMs to adversarial typographical errors. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 10449–10459, Miami, Florida, USA. Association for Computational Linguistics.",
+    "Sayan Ghosh, Dylan Baker, David Jurgens, and Vinodkumar Prabhakaran. 2021. Detecting cross-geographic biases in toxicity modeling on social media. In Proceedings of the Seventh Workshop on Noisy User-generated Text (W-NUT 2021), pages 313–328, Online. Association for Computational Linguistics.",
+    "Jiawei Gu, Xuhui Jiang, Zhichao Shi, Hexiang Tan, Xuehao Zhai, Chengjin Xu, Wei Li, Yinghan Shen, Shengjie Ma, Honghao Liu, Saizhuo Wang, Kun Zhang, Yuanzhuo Wang, Wen Gao, Lionel Ni, and Jian Guo. 2025. A survey on llm-as-a-judge. Preprint, arXiv:2411.15594.",
+    "Valentin Hofmann, Pratyusha Ria Kalluri, Dan Jurafsky, and Sharese King. 2024. AI generates covertly racist decisions about people based on their dialect. Nature, 633(8028):147–154.",
+    "Jiho Jin, Woosung Kang, Junho Myung, and Alice Oh. 2025. Social bias benchmark for generation: A comparison of generation and QA-based evaluations. In Findings of the Association for Computational Linguistics: ACL 2025, pages 11215–11228, Vienna, Austria. Association for Computational Linguistics.",
+    "Songze Li, Chuokun Xu, Jiaying Wang, Xueluan Gong, Chen Chen, Jirui Zhang, Jun Wang, Kwok-Yan Lam, and Shouling Ji. 2025. Llms cannot reliably judge (yet?): A comprehensive assessment on the robustness of llm-as-a-judge. Preprint, arXiv:2506.09443.",
+    "Fiona Lyddy, Francesca Farina, James Hanney, Lynn Farrell, and Niamh Kelly O’Neill. 2014. An analysis of language in university students’ text messages. Journal of Computer-Mediated Communication, 19(3):546–561.",
+    "Yev Meyer and Dane Corneil. 2025. Nemotron-Personas-USA: Synthetic personas aligned to real-world distributions.",
+    "Moin Nadeem, Anna Bethke, and Siva Reddy. 2021. StereoSet: Measuring stereotypical bias in pretrained language models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 5356–5371, Online. Association for Computational Linguistics.",
+    "Nikita Nangia, Clara Vania, Rasika Bhalerao, and Samuel R. Bowman. 2020. CrowS-pairs: A challenge dataset for measuring social biases in masked language models. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1953–1967, Online. Association for Computational Linguistics.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel R. Bowman. 2022. BBQ: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2086–2105, Dublin, Ireland. Association for Computational Linguistics.",
+    "Nhi Pham, Lachlan Pham, and Adam Meyers. 2024. Towards better inclusivity: A diverse tweet corpus of English varieties. In Proceedings of the 18th Linguistic Annotation Workshop (LAW-XVIII), pages 61–70, St. Julians, Malta. Association for Computational Linguistics.",
+    "Vyas Raina, Adian Liusie, and Mark Gales. 2024. Is llm-as-a-judge robust? investigating universal adversarial attacks on zero-shot llm assessment. Preprint, arXiv:2402.14016.",
+    "Maarten Sap, Dallas Card, Saadia Gabriel, Yejin Choi, and Noah A. Smith. 2019. The risk of racial bias in hate speech detection. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 1668–1678, Florence, Italy. Association for Computational Linguistics.",
+    "Melanie Sclar, Yejin Choi, Yulia Tsvetkov, and Alane Suhr. 2024. Quantifying language models’ sensitivity to spurious features in prompt design or: How i learned to start worrying about prompt formatting. Preprint, arXiv:2310.11324.",
+    "Lin Shi, Chiyu Ma, Wenhua Liang, Xingjian Diao, Weicheng Ma, and Soroush Vosoughi. 2025. Judging the judges: A systematic study of position bias in llm-as-a-judge. Preprint, arXiv:2406.07791.",
+    "Rickard Stureborg, Dimitris Alikaniotis, and Yoshi Suhara. 2024. Large language models are inconsistent and biased evaluators. Preprint, arXiv:2405.01724.",
+    "Samson Tan, Shafiq Joty, Lav Varshney, and Min-Yen Kan. 2020. Mind your inflections! Improving NLP for non-standard Englishes with Base-Inflection Encoding. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 5647–5663, Online. Association for Computational Linguistics.",
+    "Zain Ul Abedin, Shahzeb Qamar, Lucie Flek, and Akbar Karimi. 2025. ArithmAttack: Evaluating robustness of LLMs to noisy context in math problem solving. In Proceedings of the The First Workshop on LLM Security (LLMSEC), pages 48–53, Vienna, Austria. Association for Computational Linguistics.",
+    "Celine Wald and Lukas Pfahler. 2023. Exposing bias in online communities through large-scale language models. Preprint, arXiv:2306.02294.",
+    "Mengzhou Xia, Anjalie Field, and Yulia Tsvetkov. 2020. Demoting racial bias in hate speech detection. In Proceedings of the Eighth International Workshop on Natural Language Processing for Social Media, pages 7–14, Online. Association for Computational Linguistics.",
+    "Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang. 2018. Gender bias in coreference resolution: Evaluation and debiasing methods. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 15–20, New Orleans, Louisiana. Association for Computational Linguistics.",
+    "Raoyuan Zhao, Yihong Liu, Lena Altinger, Hinrich Schuetze, and Michael A. Hedderich. 2026. Evaluating robustness of large language models against multilingual typographical errors. In Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 16059–16078, San Diego, California, United States. Association for Computational Linguistics."
+  ]
+}
