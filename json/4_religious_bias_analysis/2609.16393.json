@@ -1,0 +1,57 @@
+{
+  "filename": "2609.16393.pdf",
+  "title": "ParsHate: A Benchmark Dataset for Hate and Target Detection in Persian",
+  "arxiv_url": "https://arxiv.org/pdf/2609.16393",
+  "measurement_description": "The paper introduces a benchmark dataset (ParsHate) for hate speech detection in Persian, which includes evaluating LLMs on multi-label target classification. One of the specific targets measured is 'Religion', assessing the models' ability to detect hate directed at religious groups or beliefs, particularly differentiating between explicit religious hatred and implicit religious hatred rooted in cultural and historical references (e.g., anti-clerical sarcasm or references to specific religious/political events).",
+  "religious_groups": [
+    "Islam",
+    "Other religious identities"
+  ],
+  "models_tested": [
+    "LLaMA-3",
+    "Gemma-3",
+    "GPT-5",
+    "ParsBERT"
+  ],
+  "languages_evaluated": [
+    "Persian"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "PHATE",
+    "Pars-OFF",
+    "Pars-HAO",
+    "PHICAD",
+    "Gab Hate Corpus",
+    "HateXplain"
+  ],
+  "continuous_testing": false,
+  "findings": "Religion-targeted hate speech accounted for 6.42% of the hate instances in the dataset. Evaluation revealed that models struggle significantly with implicit hate embedded in religious and cultural contexts. For example, hostility toward clerics or religious figures often relies on sarcasm or specific historical knowledge that models miss. In terms of target prediction specifically for 'Religion', GPT-5 achieved high recall (81.2%) but low precision (14.5%), frequently over-assigning the label. Conversely, LLaMA-3 achieved higher precision (65.1%) but poor recall (32.7%). When named entities were masked, LLaMA-3's F1 score for identifying religious targets dropped sharply from 43.6% to 21.1%, indicating a heavy reliance on specific entity keywords to recognize religious hatred.",
+  "references": [
+    "Hyeseon Ahn, Youngwook Kim, Jungin Kim, and Yo-Sub Han. 2024. Sharedcon: Implicit hate speech detection using shared semantics. In Findings of the Association for Computational Linguistics: ACL 2024, pages 10444–10455.",
+    "Taha Shangipour Ataei, Kamyar Darvishi, Soroush Javdan, Amin Pourdabiri, Behrouz Minaei-Bidgoli, and Mohammad Taher Pilehvar. 2022. Pars-off: a benchmark for offensive language detection on farsi social media. IEEE Transactions on Affective Computing, 14(4):2787–2795.",
+    "Zahra Bokaei, Walid Magdy, and Bonnie Webber. 2025. Culture matters in toxic language detection in Persian. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 9290–9304, Vienna, Austria. Association for Computational Linguistics.",
+    "Agostina Calabrese, Tom Sherborne, Björn Ross, and Mirella Lapata. 2025. Compositional generalisation for explainable hate speech detection. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing, pages 13932–13954.",
+    "Hadi Davardoust, Hadi Zare, and Hossein Rafiee Zade. 2024. The dark side of instagram: A large dataset for identifying persian harmful comments.",
+    "Zahra Delbari, Nafise Sadat Moosavi, and Mohammad Taher Pilehvar. 2024. Spanning the spectrum of hatred detection: A persian multi-label hate speech dataset with annotator rationales. Proceedings of the AAAI Conference on Artificial Intelligence, 38(16):17889–17897.",
+    "Mai ElSherief, Caleb Ziems, David Muchlinski, Vaishnavi Anupindi, Jordyn Seybolt, Munmun De Choudhury, and Diyi Yang. 2021. Latent hatred: A benchmark for understanding implicit hate speech. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 345–363, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics.",
+    "Mehrdad Farahani, Mohammad Gharachorloo, Marzieh Farahani, and Mohammad Manthouri. 2021. Parsbert: Transformer-based model for persian language understanding. Neural Processing Letters, 53(6):3831–3847.",
+    "Joshua Garland, Keyan Ghazi-Zahedi, Jean-Gabriel Young, Laurent Hébert-Dufresne, and Mirta Galesic. 2022. Impact and dynamics of hate and counter speech online. EPJ data science, 11(1):3.",
+    "Faeze Ghorbanpour, Daryna Dementieva, and Alexander Fraser. 2025. Data-efficient hate speech detection via cross-lingual nearest neighbor retrieval with limited labeled data. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing, pages 29662–29680.",
+    "Danial Kamali, Behrooz Janfada, Mohammad Ebrahim Shenasa, and Behrouz Minaei-Bidgoli. 2022. Evaluating persian tokenizers. arXiv preprint arXiv:2202.10879.",
+    "Brendan Kennedy, Mohammad Atari, Aida Mostafazadeh Davani, Leigh Yeh, Ali Omrani, Yehsong Kim, Kris Coombs Jr, Shreya Havaldar, Gwenyth Portillo-Wightman, Elaine Gonzalez, et al. 2022. Introducing the gab hate corpus: defining and applying hate-based rhetoric to social media posts at scale. Language Resources and Evaluation, 56(1):79–108.",
+    "Binny Mathew, Anurag Illendula, Punyajoy Saha, Soumya Sarkar, Pawan Goyal, and Animesh Mukherjee. 2020. Hate begets hate: A temporal study of hate speech. Proceedings of the ACM on Human-Computer Interaction, 4(CSCW2):1–24.",
+    "Binny Mathew, Punyajoy Saha, Seid Muhie Yimam, Chris Biemann, Pawan Goyal, and Animesh Mukherjee. 2021. Hatexplain: A benchmark dataset for explainable hate speech detection. In Proceedings of the AAAI conference on artificial intelligence, volume 35, pages 14867–14875.",
+    "Tony McEnery and Andrew Hardie. 2011. Corpus linguistics: Method, theory and practice. Cambridge University Press.",
+    "Paul Röttger, Bertie Vidgen, Dong Nguyen, Zeerak Waseem, Helen Margetts, and Janet Pierrehumbert. 2021. HateCheck: Functional tests for hate speech detection models. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 41–58, Online. Association for Computational Linguistics.",
+    "Joni Salminen, Hind Almerekhi, Milica Milenković, Soon-gyo Jung, Jisun An, Haewoon Kwak, and Bernard Jansen. 2018. Anatomy of online hate: developing a taxonomy and machine learning models for identifying and classifying hate in online news media. In Proceedings of the International AAAI Conference on Web and Social Media, volume 12.",
+    "Xinyue Shen, Yixin Wu, Yiting Qu, Michael Backes, Savvas Zannettou, and Yang Zhang. 2025. Hatebench: Benchmarking hate speech detectors on llm-generated content and hate campaigns.(2025).",
+    "Mohammad Karami Sheykhlan, Jana Shafi, and Saeed Kosari. 2023. Pars-hao: Hate speech and offensive language detection on persian social media using ensemble learning. Authorea Preprints.",
+    "Manuel Tonneau, Diyi Liu, Samuel Fraiberger, Ralph Schroeder, Scott A. Hale, and Paul Röttger. 2024. From languages to geographies: Towards evaluating cultural bias in hate speech datasets. In Proceedings of the 8th Workshop on Online Abuse and Harms (WOAH 2024), pages 283–311, Mexico City, Mexico. Association for Computational Linguistics.",
+    "Manuel Tonneau, Diyi Liu, Niyati Malhotra, Scott A Hale, Samuel Fraiberger, Victor Orozco-Olvera, and Paul Röttger. 2025. Hateday: Insights from a global hate speech dataset representative of a day on twitter. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 2297–2321.",
+    "Zeerak Waseem and Dirk Hovy. 2016. Hateful symbols or hateful people? predictive features for hate speech detection on Twitter. In Proceedings of the NAACL Student Research Workshop, pages 88–93, San Diego, California. Association for Computational Linguistics."
+  ]
+}

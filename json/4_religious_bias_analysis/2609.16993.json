@@ -1,0 +1,78 @@
+{
+  "filename": "2609.16993.pdf",
+  "title": "The Role of Implicit and Explicit Demographic Signals in Large Language Model-based Student Assessment",
+  "arxiv_url": "https://arxiv.org/pdf/2609.16993",
+  "measurement_description": "The paper measures how implicit and explicit demographic signals, including religion as one of 25 demographic attributes, systematically influence LLM behavior and outputs (e.g., score deviation, text readability, response length, and sentiment) across three educational assessment tasks: Automated Essay Scoring, Formative Feedback, and Metalinguistic Question Answering.",
+  "religious_groups": [
+    "Christian",
+    "Muslim",
+    "Jewish",
+    "Nothing (Non-religious/Atheist)"
+  ],
+  "models_tested": [
+    "GPT-5-mini",
+    "GPT-5-nano",
+    "Llama-3.2-3B",
+    "Llama-3.3-70B",
+    "Qwen3-4B",
+    "Qwen3-30B"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short",
+    "long"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Persuade 2.0",
+    "ELQA",
+    "AI Gap Dataset"
+  ],
+  "continuous_testing": false,
+  "findings": "Religion was evaluated as a minor component among 25 demographic variables. The study found sparse but statistically significant effects where implicit and explicit cues about religion altered LLM output. For instance, implicit cues for the 'religion: Christian' persona caused Llama-70B to generate significantly more readable formative feedback (Flesch Reading Ease +1.41), while Qwen-4B generated less readable responses for the same group in Question Answering (ARI +0.31). In terms of sentiment, explicit and implicit cues for 'religion: Nothing' and 'religion: Christian' positively impacted the tone of responses from models like Llama-70B and Qwen-30B. Explicitly mentioning 'religion: Nothing' also resulted in slightly higher automated essay scores (+0.19) from Llama-70B. However, religion had far less overall impact compared to attributes like education and socioeconomic status.",
+  "references": [
+    "Marwa Abdulhai, Isadora White, Yanming Wan, Ibrahim Qureshi, Joel Leibo, Max Kleiman-Weiner, and Natasha Jaques. 2026. How llms distort our written language. arXiv preprint arXiv:2603.18161.",
+    "Nischal Ashok Kumar, Chau Minh Pham, Mohit Iyyer, and Andrew Lan. 2025. Whose story is it? personalizing story generation by inferring author styles. In Proceedings of the 14th International Joint Conference on Natural Language Processing and the 4th Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics, pages 1485–1540, Mumbai, India. The Asian Federation of Natural Language Processing and The Association for Computational Linguistics.",
+    "Elisa Bassignana, Amanda Cercas Curry, and Dirk Hovy. 2025. The AI gap: How socioeconomic status affects language technology interactions. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 18647–18664, Vienna, Austria. Association for Computational Linguistics.",
+    "Shabnam Behzad, Keisuke Sakaguchi, Nathan Schneider, and Amir Zeldes. 2023. ELQA: A corpus of metalinguistic questions and answers about English. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 2031–2047, Toronto, Canada. Association for Computational Linguistics.",
+    "Luca Benedetto, Antonia Donvito, Alberto Lucchetti, Andrea Cappelli, and Paula Buttery. 2026. Beyond names: How grammatical gender markers bias LLM-based educational recommendations. In Proceedings of the 19th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers), pages 5648–5668, Rabat, Morocco. Association for Computational Linguistics.",
+    "Riccardo Cantini, Alessio Orsino, Massimo Ruggiero, and Domenico Talia. 2025. Benchmarking adversarial robustness to bias elicitation in large language models: Scalable automated assessment with llm-as-a-judge. Machine Learning, 114(11):249.",
+    "S.A. Crossley, Y. Tian, P. Baffour, A. Franklin, M. Benner, and U. Boser. 2024. A large-scale corpus for assessing written argumentation: Persuade 2.0. Assessing Writing, 61:100865.",
+    "Afrizal Doewes, Akrati Saxena, Yulong Pei, and Mykola Pechenizkiy. 2022. Individual fairness evaluation for automated essay scoring system. In Proceedings of the 15th International Conference on Educational Data Mining, pages 206–216, Durham, United Kingdom. International Educational Data Mining Society.",
+    "Yishan Du, Conrad Borchers, and Mutlu Cukurova. 2026. A benchmark for gender bias in large language model feedback on student essays. In Artificial Intelligence in Education: 27th International Conference, AIED 2026, Seoul, South Korea, June 27–July 3, 2026, Proceedings, Part VI, page 163–178, Berlin, Heidelberg. Springer-Verlag.",
+    "Fanny Ducel, Aurélie Névéol, and Karën Fort. 2024. “you’ll be a nurse, my son!” automatically assessing gender biases in autoregressive language models in french and italian: You’ll be a nurse, my son. Lang. Resour. Eval., 59(2):1495–1523.",
+    "Rudolph Flesch. 1948. A new readability yardstick. Journal of applied psychology, 32(3):221.",
+    "Tania Amanda Nkoyo Frederick Eneye, Chukwuebuka Fortunate Ijezue, Ahmad Imam Amjad, Maaz Amjad, Sabur Butt, and Gerardo Castañeda-Garza. 2025. Advances in auto-grading with large language models: A cross-disciplinary survey. In Proceedings of the 20th Workshop on Innovative Use of NLP for Building Educational Applications (BEA 2025), pages 477–498, Vienna, Austria. Association for Computational Linguistics.",
+    "Isabel O. Gallegos, Ryan A. Rossi, Joe Barrow, Md Mehrab Tanjim, Sungchul Kim, Franck Dernoncourt, Tong Yu, Ruiyi Zhang, and Nesreen K. Ahmed. 2024. Bias and fairness in large language models: A survey. Computational Linguistics, 50(3):1097–1179.",
+    "Denisa Gándara, Hadis Anahideh, Matthew P Ison, and Lorenzo Picchiarini. 2024. Inside the black box: Detecting and mitigating algorithmic bias across racialized groups in college student-success prediction. AERA open, 10:23328584241258741.",
+    "Sarah Gentrup, Melanie Olczyk, and Georg Lorenz. 2024. Teacher stereotypes and teacher expectations at the intersection of student gender and socioeconomic status. Zeitschrift für Entwicklungspsychologie und Pädagogische Psychologie, 56(1-2):87–102.",
+    "Shahriar Golchin, Nikhil Garuda, Christopher Impey, and Matthew Wenger. 2025. Grading massive open online courses using large language models. In Proceedings of the 31st International Conference on Computational Linguistics, pages 3899–3912, Abu Dhabi, UAE. Association for Computational Linguistics.",
+    "Philip J. Guo and Katharina Reinecke. 2014. Demographic differences in how students navigate through moocs. In Proceedings of the First ACM Conference on Learning @ Scale Conference, L@S ’14, page 21–30, New York, NY, USA. Association for Computing Machinery.",
+    "Vansh Gupta, Sankalan Pal Chowdhury, Vilém Zouhar, Donya Rooein, and Mrinmaya Sachan. 2025. Are large language models for education reliable across languages? In Proceedings of the 20th Workshop on Innovative Use of NLP for Building Educational Applications (BEA 2025), pages 612–631, Vienna, Austria. Association for Computational Linguistics.",
+    "Zhijing Jin, Nils Heil, Jiarui Liu, Shehzaad Dhuliawala, Yahang Qi, Bernhard Schölkopf, Rada Mihalcea, and Mrinmaya Sachan. 2024. Implicit personalization in language models: A systematic study. In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 12309–12325, Miami, Florida, USA. Association for Computational Linguistics.",
+    "Enkelejda Kasneci, Kathrin Sessler, Stefan Küchemann, Maria Bannert, Daryna Dementieva, Frank Fischer, Urs Gasser, Georg Groh, Stephan Günnemann, Eyke Hüllermeier, Stephan Krusche, Gitta Kutyniok, Tilman Michaeli, Claudia Nerdel, Jürgen Pfeffer, Oleksandra Poquet, Michael Sailer, Albrecht Schmidt, Tina Seidel, and 4 others. 2023. Chatgpt for good? on opportunities and challenges of large language models for education. Learning and Individual Differences, 103:102274.",
+    "Kyung Hee Kim and Darya Zabelina. 2015. Cultural bias in assessment: Can creativity assessment help? International Journal of Critical Pedagogy, 6(2).",
+    "Victor Kuperman, Hans Stadthagen-Gonzalez, and Marc Brysbaert. 2012. Age-of-acquisition ratings for 30,000 english words. Behavior research methods, 44(4):978–990.",
+    "Tongxi Liu, Luyao Ye, and Wei Yan. 2026. A framework for evaluation of large language models in essay assessment: Reliability, alignment, and causal reasoning. Computers and Education: Artificial Intelligence, 10:100565.",
+    "Shinichi Nakagawa. 2004. A farewell to bonferroni: the problems of low statistical power and publication bias. Behavioral ecology, 15(6):1044–1045.",
+    "Vera Neplenbroek, Arianna Bisazza, and Raquel Fernández. 2025. Reading between the prompts: How stereotypes shape LLM’s implicit personalization. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing, pages 20367–20400, Suzhou, China. Association for Computational Linguistics.",
+    "Michael J Parker, Caitlin Anderson, Claire Stone, and YeaRim Oh. 2025. A large language model approach to educational survey feedback analysis. International journal of artificial intelligence in education, 35(2):444–481.",
+    "Donya Rooein, Vilém Zouhar, Debora Nozza, and Dirk Hovy. 2025. Biased tales: Cultural and topic bias in generating children’s stories. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing, pages 52–72, Suzhou, China. Association for Computational Linguistics.",
+    "Indira Sen, Marlene Lutz, Elisa Rogers, David Garcia, and Markus Strohmaier. 2025. Missing the margins: A systematic literature review on the demographic representativeness of LLMs. In Findings of the Association for Computational Linguistics: ACL 2025, pages 24263–24289, Vienna, Austria. Association for Computational Linguistics.",
+    "Richard J Senter and Edgar A Smith. 1967. Automated readability index. Technical report.",
+    "Krithi Shailya, Akhilesh Kumar Mishra, Gokul S Krishnan, and Balaraman Ravindran. 2025. Where should I study? biased language models decide! evaluating fairness in LMs for academic recommendations. In Proceedings of the 14th International Joint Conference on Natural Language Processing and the 4th Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics, pages 2291–2317, Mumbai, India. The Asian Federation of Natural Language Processing and The Association for Computational Linguistics.",
+    "Yuhong Shi, Kun Yu, Yifei Dong, and Fang Chen. 2026. Large language models in education: a systematic review of empirical applications, benefits, and challenges. Computers and Education: Artificial Intelligence.",
+    "Maja Stahl, Leon Biermann, Andreas Nehring, and Henning Wachsmuth. 2024. Exploring LLM prompting strategies for joint essay scoring and feedback generation. In Proceedings of the 19th Workshop on Innovative Use of NLP for Building Educational Applications (BEA 2024), pages 283–298, Mexico City, Mexico. Association for Computational Linguistics.",
+    "Angelina Wang, Michelle Phan, Daniel E. Ho, and Sanmi Koyejo. 2025a. Fairness through difference awareness: Measuring Desired group discrimination in LLMs. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 6867–6893, Vienna, Austria. Association for Computational Linguistics.",
+    "Hanling Wang, Banghao Chi, Yufei Wu, Kexin Chen, Di Wu, Songning Liu, Yiwei Li, Hanyan Niu, and Xiaohui Zhu. 2025b. Llmarking: Adaptive automatic short-answer grading using large language models. In Proceedings of the Twelfth ACM Conference on Learning @ Scale, L@S ’25, page 105–115, New York, NY, USA. Association for Computing Machinery.",
+    "Shen Wang, Tianlong Xu, Hang Li, Chaoli Zhang, Joleen Liang, Jiliang Tang, Philip S. Yu, and Qingsong Wen. 2025c. Large language models for education: A survey and outlook. IEEE Signal Processing Magazine, 42(6):51–63.",
+    "Melissa Warr and Nicole Oster. 2025. Analyzing ai-generated feedback: A mixed-methods examination of chatgpt’s responses to student writers. In Society for Information Technology & Teacher Education International Conference, pages 3034–3043. Association for the Advancement of Computing in Education (AACE).",
+    "Melissa Warr, Nicole Jakubczyk Oster, and Roger Isaac. 2025. Implicit bias in large language models: Experimental proof and implications for education. Journal of research on technology in education, 57(6):1324–1349.",
+    "Iain Weissburg, Sathvika Anand, Sharon Levy, and Haewon Jeong. 2025. LLMs are biased teachers: Evaluating LLM bias in personalized education. In Findings of the Association for Computational Linguistics: NAACL 2025, pages 5665–5713, Albuquerque, New Mexico. Association for Computational Linguistics.",
+    "Changrong Xiao, Wenxing Ma, Qingping Song, Sean Xin Xu, Kunpeng Zhang, Yufang Wang, and Qi Fu. 2025. Human-ai collaborative essay scoring: A dual-process framework with llms. In Proceedings of the 15th International Learning Analytics and Knowledge Conference, LAK ’25, page 293–305, New York, NY, USA. Association for Computing Machinery.",
+    "Yachao Zhao, Bo Wang, Yan Wang, Dongming Zhao, Ruifang He, and Yuexian Hou. 2025. Explicit vs. implicit: Investigating social bias in large language models through self-reflection. In Findings of the Association for Computational Linguistics: ACL 2025, pages 1–12, Vienna, Austria. Association for Computational Linguistics.",
+    "David Zhou, John R. Gallagher, and Sarah Sterman. 2025. Thoughtful, confused, or untrustworthy: How text presentation influences perceptions of ai writing tools. In Proceedings of the 2025 Conference on Creativity and Cognition, CC ’25, page 573–589, New York, NY, USA. Association for Computing Machinery."
+  ]
+}

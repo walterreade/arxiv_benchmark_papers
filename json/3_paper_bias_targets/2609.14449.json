@@ -1,0 +1,24 @@
+{
+  "filename": "2609.14449.pdf",
+  "title": "Towards Identifying the Dataset Biases Causing Phantom Transfer",
+  "arxiv_url": "https://arxiv.org/pdf/2609.14449",
+  "bias_targets": [
+    {
+      "target": "Religious bias",
+      "methodology": "Computing average dataset embeddings (Sentence BERT and word2vec) minus a clean baseline, and measuring cosine similarity to a vocabulary to detect hidden concepts related to Catholicism via regex pattern matching on the closest words."
+    },
+    {
+      "target": "Political bias",
+      "methodology": "Computing average dataset embeddings (Sentence BERT and word2vec) minus a clean baseline, and measuring cosine similarity to a vocabulary to detect hidden concepts related to specific political figures (Reagan and Stalin) via regex pattern matching on the closest words."
+    },
+    {
+      "target": "Geographic bias",
+      "methodology": "Computing average dataset embeddings (Sentence BERT and word2vec) minus a clean baseline, and measuring cosine similarity to a vocabulary to detect hidden concepts related to specific locations (New York City) via regex pattern matching on the closest words."
+    },
+    {
+      "target": "Nationality bias",
+      "methodology": "Computing average dataset embeddings (Sentence BERT and word2vec) minus a clean baseline, and measuring cosine similarity to a vocabulary to detect hidden concepts related to specific nations (the UK) via regex pattern matching on the closest words."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}
