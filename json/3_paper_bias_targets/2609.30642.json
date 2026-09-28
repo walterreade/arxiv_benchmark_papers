@@ -1,0 +1,32 @@
+{
+  "filename": "2609.30642.pdf",
+  "title": "A Framework for Identifying, Categorizing, and Explaining Bias in AI-Generated Code",
+  "arxiv_url": "https://arxiv.org/pdf/2609.30642",
+  "bias_targets": [
+    {
+      "target": "Naming/Documentation bias",
+      "methodology": "Manual annotation of AI-generated Python code snippets and evaluation of LLMs using In-Context Learning (ICL) to detect positive or negative semantic associations between attributes and descriptors in variable names, identifiers, and comments."
+    },
+    {
+      "target": "Stereotype bias",
+      "methodology": "Manual labeling and automated LLM-based classification of code snippets to identify logic that encodes generalized beliefs or associates positive/negative traits with demographic groups."
+    },
+    {
+      "target": "Demographic bias",
+      "methodology": "Evaluating AI-generated Python code using manual annotations and LLM zero-shot/few-shot prompts to detect differential behavior, advantages, or restrictions based explicitly on protected attributes like gender, race, or age."
+    },
+    {
+      "target": "Representational bias",
+      "methodology": "Detection of the omission, misrepresentation, or exclusionary coding of certain identities in data structures and enumerations, assessed via a multi-label taxonomy and LLM classification."
+    },
+    {
+      "target": "Threshold/Cutoff bias",
+      "methodology": "Identifying the use of rigid, arbitrary numeric boundaries tied to protected or non-protected attributes to determine eligibility or disparate outcomes, measured through expert consensus coding and LLM-based bias justification."
+    },
+    {
+      "target": "Proxy bias",
+      "methodology": "Evaluating whether non-sensitive variables (e.g., occupation) are used in code logic as stand-ins for protected attributes, causing indirect discrimination, assessed via manual auditing and LLM in-context learning prompts."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}
