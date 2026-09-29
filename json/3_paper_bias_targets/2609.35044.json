@@ -1,0 +1,24 @@
+{
+  "filename": "2609.35044.pdf",
+  "title": "BA-DPO: BIAS-ADJUSTED DIRECT PREFERENCE OPTIMIZATION FOR LANGUAGE MODEL ALIGNMENT",
+  "arxiv_url": "https://arxiv.org/pdf/2609.35044",
+  "bias_targets": [
+    {
+      "target": "Gender bias",
+      "methodology": "Counterfactual name substitution in response signatures using gender-coded names (woman or man) drawn from established audit lists to measure if preference optimization absorbs annotator bias toward specific names."
+    },
+    {
+      "target": "Racial bias",
+      "methodology": "Counterfactual name substitution in response signatures using race-coded names (white or black) drawn from established audit lists to measure if preference optimization absorbs annotator bias toward specific demographic markers."
+    },
+    {
+      "target": "Length bias",
+      "methodology": "Evaluating if models disproportionately prefer longer answers by defining a length attribute (responses with a word-count ratio of at least 1.5) and tracking mean token counts of generations."
+    },
+    {
+      "target": "Formatting bias",
+      "methodology": "Evaluating if models disproportionately prefer specific text styles by tracking the rate of Markdown presence in generations, reweighted onto the reference length distribution."
+    }
+  ],
+  "primary_bias_target": "No Primary Bias Target"
+}
