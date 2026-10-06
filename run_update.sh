@@ -159,12 +159,45 @@ echo ""
 echo "Stage 9: Uploading PDFs and committing changes..."
 echo "----------------------------------------"
 
-# Copy new pdf files to GCS (skip existing with -n)
-if gcloud storage cp -r -n pdf gs://inversion; then
-    echo "GCS upload complete."
-else
-    echo "WARNING: GCS upload failed. Changes will still be committed."
+# Upload only PDFs that are not already in the bucket.
+# One bucket listing + a name diff is far cheaper than `cp -n`, which issues a
+# per-object existence check for every one of the ~79k local PDFs.
+# Note: only the top level of pdf/ is compared. The legacy pdf/cs, pdf/math and
+# pdf/cond-mat subdirectories are already uploaded and nothing new is written
+# there (sanitize_arxiv_id flattens old-style IDs). To force a full sweep:
+#   gcloud storage cp -r -n pdf gs://inversion
+GCS_PDF_PREFIX="gs://inversion/pdf"
+LOCAL_PDFS=$(mktemp)
+REMOTE_PDFS=$(mktemp)
+PDFS_TO_UPLOAD=$(mktemp)
+
+ls -1 pdf | grep '\.pdf$' | sort > "$LOCAL_PDFS"
+
+gcloud storage ls "$GCS_PDF_PREFIX/" > "$REMOTE_PDFS.raw" 2> "$REMOTE_PDFS.err"
+LS_STATUS=$?
+# An empty prefix also exits non-zero; that just means everything is new.
+if [ $LS_STATUS -ne 0 ] && grep -q "matched no objects" "$REMOTE_PDFS.err"; then
+    LS_STATUS=0
 fi
+
+if [ $LS_STATUS -eq 0 ]; then
+    sed "s|^$GCS_PDF_PREFIX/||" "$REMOTE_PDFS.raw" | grep '\.pdf$' | sort > "$REMOTE_PDFS"
+    comm -23 "$LOCAL_PDFS" "$REMOTE_PDFS" | sed 's|^|pdf/|' > "$PDFS_TO_UPLOAD"
+    UPLOAD_COUNT=$(wc -l < "$PDFS_TO_UPLOAD" | tr -d ' ')
+
+    if [ "$UPLOAD_COUNT" -eq 0 ]; then
+        echo "GCS already has all $(wc -l < "$LOCAL_PDFS" | tr -d ' ') PDFs; nothing to upload."
+    elif gcloud storage cp -I "$GCS_PDF_PREFIX/" < "$PDFS_TO_UPLOAD"; then
+        echo "GCS upload complete ($UPLOAD_COUNT new PDFs)."
+    else
+        echo "WARNING: GCS upload failed. Changes will still be committed."
+    fi
+else
+    echo "WARNING: Could not list $GCS_PDF_PREFIX; skipping upload."
+    cat "$REMOTE_PDFS.err"
+fi
+
+rm -f "$LOCAL_PDFS" "$REMOTE_PDFS" "$REMOTE_PDFS.raw" "$REMOTE_PDFS.err" "$PDFS_TO_UPLOAD"
 
 # Commit and push changes to git
 git add -A
