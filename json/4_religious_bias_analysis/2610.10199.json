@@ -1,0 +1,81 @@
+{
+  "filename": "2610.10199.pdf",
+  "title": "Robust Decentralized Fairness Auditing",
+  "arxiv_url": "https://arxiv.org/pdf/2610.10199",
+  "measurement_description": "The paper measured demographic parity (fairness) to evaluate potential bias in zero-shot toxicity detection by evaluating whether the LLM classified comments mentioning certain religious groups (Christian vs. Muslim, Christian vs. Jewish) as toxic at disparate rates.",
+  "religious_groups": [
+    "Christianity",
+    "Islam",
+    "Judaism"
+  ],
+  "models_tested": [
+    "Qwen2.5-7B-Instruct",
+    "Llama-3.1-8B-Instruct"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "Civil Comments",
+    "Bias in Bios"
+  ],
+  "continuous_testing": false,
+  "findings": "The zero-shot toxicity classifier (Qwen2.5-7B-Instruct) exhibited significant disparity (unfairness) across religious groups in the Civil Comments dataset. Specifically, it was found to be 'very unfair' when comparing toxicity predictions for Christian vs. Muslim comments (true DP -0.228, meaning Muslims were flagged as toxic much more frequently), and 'moderately unfair' for Christian vs. Jewish comments (true DP -0.190). The paper's decentralized auditing framework (AUDITOPUS) successfully defended against adversaries trying to 'fairwash' and hide these religious disparities.",
+  "references": [
+    "Ulrich Aïvodji, Hiromi Arai, Olivier Fortineau, Sébastien Gambs, Satoshi Hara, and Alain Tapp. Fairwashing: the risk of rationalization. In International conference on machine learning, pages 161–170. PMLR, 2019.",
+    "Youssef Allouah, Rachid Guerraoui, Nirupam Gupta, Rafael Pinot, and Geovani Rizk. Robust distributed learning: Tight error bounds and breakdown point under data heterogeneity. Advances in neural information processing systems, 36:45744–45776, 2023.",
+    "McKane Andrus, Elena Spitzer, Jeffrey Brown, and Alice Xiang. What we can’t measure, we can’t understand: Challenges to demographic data procurement in the pursuit of fairness. In Proceedings of the 2021 ACM conference on fairness, accountability, and transparency, pages 249–260, 2021.",
+    "Lena Armstrong, Abbey Liu, Stephen MacNeil, and Danaë Metaxa. The silicon ceiling: Auditing GPT’s race and gender biases in hiring. In Proceedings of the 4th ACM Conference on Equity and Access in Algorithms, Mechanisms, and Optimization, pages 1–18, 2024.",
+    "Peter J. Bickel, Eugene A. Hammel, and J. William O’Connell. Sex bias in graduate admissions: Data from Berkeley. Science, 187(4175):398–404, 1975.",
+    "Sayan Biswas, Anne-Marie Kermarrec, Rishi Sharma, Thibaud Trinca, and Martijn De Vos. Fair decentralized learning. In 2025 IEEE Conference on Secure and Trustworthy Machine Learning (SaTML), pages 714–734. IEEE, 2025.",
+    "Keith Bonawitz, Vladimir Ivanov, Ben Kreuter, Antonio Marcedone, H Brendan McMahan, Sarvar Patel, Daniel Ramage, Aaron Segal, and Karn Seth. Practical secure aggregation for privacy-preserving machine learning. In proceedings of the 2017 ACM SIGSAC Conference on Computer and Communications Security, pages 1175–1191, 2017.",
+    "Daniel Borkan, Lucas Dixon, Jeffrey Sorensen, Nithum Thain, and Lucy Vasserman. Nuanced metrics for measuring unintended bias with real data for text classification. In Companion proceedings of the 2019 world wide web conference, pages 491–500, 2019.",
+    "Toon Calders, Faisal Kamiran, and Mykola Pechenizkiy. Building classifiers with independency constraints. In 2009 IEEE international conference on data mining workshops, pages 13–18. IEEE, 2009.",
+    "Xiaoyu Cao, Jinyuan Jia, and Neil Zhenqiang Gong. Data poisoning attacks to local differential privacy protocols. In 30th USENIX Security Symposium (USENIX Security 21), pages 947–964, 2021.",
+    "Stephen Casper, Carson Ezell, Charlotte Siegmann, Noam Kolt, Taylor Lynn Curtis, Benjamin Bucknall, Andreas Haupt, Kevin Wei, Jérémy Scheurer, Marius Hobbhahn, et al. Black-box access is insufficient for rigorous AI audits. In Proceedings of the 2024 ACM Conference on Fairness, Accountability, and Transparency, pages 2254–2272, 2024.",
+    "Maria De-Arteaga, Alexey Romanov, Hanna Wallach, Jennifer Chayes, Christian Borgs, Alexandra Chouldechova, Sahin Geyik, Krishnaram Kenthapadi, and Adam Tauman Kalai. Bias in bios: A case study of semantic representation bias in a high-stakes setting. In proceedings of the Conference on Fairness, Accountability, and Transparency, pages 120–128, 2019.",
+    "Martijn de Vos, Akash Dhasade, Jade Garcia Bourrée, Anne-Marie Kermarrec, Erwan Le Merrer, Benoît Rottembourg, and Gilles Trédan. Fairness auditing with multi-agent collaboration. In ECAI 2024: 27th European Conference on Artificial Intelligence, 19–24 October 2024, Santiago de Compostela, Spain–Including 13th Conference on Prestigious Applications of Intelligent Systems (PAIS 2024), pages 1116–1123. SAGE Publications Pvt. Ltd 1 Oliver’s Yard, 55 City Road, London, EC1Y 1SP, 2024.",
+    "Frances Ding, Moritz Hardt, John Miller, and Ludwig Schmidt. Retiring Adult: New datasets for fair machine learning. Advances in Neural Information Processing Systems, 34, 2021.",
+    "John R Douceur. The sybil attack. In International workshop on peer-to-peer systems, pages 251–260. Springer, 2002.",
+    "Cynthia Dwork, Moritz Hardt, Toniann Pitassi, Omer Reingold, and Richard Zemel. Fairness through awareness. In Proceedings of the 3rd innovations in theoretical computer science conference, pages 214–226, 2012.",
+    "Cynthia Dwork, Frank McSherry, Kobbi Nissim, and Adam Smith. Calibrating noise to sensitivity in private data analysis. In Theory of cryptography conference, pages 265–284. Springer, 2006.",
+    "European Parliament and Council of the European Union. Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence (artificial intelligence act). Official Journal of the European Union, 2024. http://data.europa.eu/eli/reg/2024/1689/oj.",
+    "Kazuto Fukuchi, Satoshi Hara, and Takanori Maehara. Faking fairness via stealthily biased sampling. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 34, pages 412–419, 2020.",
+    "Jade Garcia Bourrée, Augustin Godinot, Sayan Biswas, Anne-Marie Kermarrec, Erwan Le Merrer, Gilles Trédan, Martijn De Vos, and Milos Vujasinovic. Robust ML auditing using prior knowledge. In Proceedings of the 42nd International Conference on Machine Learning, ICML’25. JMLR.org, 2025.",
+    "Jade Garcia Bourrée, Erwan Le Merrer, Gilles Trédan, and Benoît Rottembourg. Leveraging imperfect sources to detect fairwashing in black-box auditing. Joint European Conference on Machine Learning and Knowledge Discovery in Databases, 2026.",
+    "Renaud Gaucher, Aymeric Dieuleveut, and Hadrien Hendrikx. Unified breakdown analysis for Byzantine robust gossip. In Proceedings of the 42nd International Conference on Machine Learning, volume 267 of Proceedings of Machine Learning Research. PMLR, 13–19 Jul 2025.",
+    "Augustin Godinot, Sofiane Azogagh, Julien Ferry, and Sébastien Gambs. Manipulation-proof oblivious audits against deceptive model providers. arXiv preprint arXiv:2608.04365, 2026.",
+    "Augustin Godinot, Erwan Le Merrer, Gilles Trédan, Camilla Penzo, and François Taïani. Under manipulations, are some AI models harder to audit? In 2024 IEEE Conference on Secure and Trustworthy Machine Learning (SaTML), pages 644–664. IEEE, 2024.",
+    "Muhammed Golec and Maha AlabdulJalil. Interpretable LLMs for credit risk: A systematic review and taxonomy. Expert Systems with Applications, page 130941, 2025.",
+    "Aaron Grattafiori, Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Alex Vaughan, et al. The llama 3 herd of models. arXiv preprint arXiv:2407.21783, 2024.",
+    "Neel Guha, Julian Nyarko, Daniel Ho, Christopher Ré, Adam Chilton, Alex Chohlas-Wood, Austin Peters, Brandon Waldon, Daniel Rockmore, Diego Zambrano, et al. Legalbench: A collaboratively built benchmark for measuring legal reasoning in large language models. Advances in neural information processing systems, 36:44123–44279, 2023.",
+    "Moritz Hardt, Eric Price, and Nati Srebro. Equality of opportunity in supervised learning. Advances in neural information processing systems, 2016.",
+    "David Hartmann, Lena Pohlmann, Lelia Hanslik, Noah Gießing, Bettina Berendt, and Pieter Delobelle. Audit me if you can: Query-efficient active fairness auditing of black-box LLMs. In Findings of the Association for Computational Linguistics: ACL 2026, pages 33673–33698, 2026.",
+    "Lie He, Sai Praneeth Karimireddy, and Martin Jaggi. Byzantine-robust decentralized learning via clippedgossip. arXiv preprint arXiv:2202.01545, 2022.",
+    "Disi Ji, Padhraic Smyth, and Mark Steyvers. Can I trust my fairness metric? assessing fairness with unlabeled data and bayesian inference. Advances in Neural Information Processing Systems, 33:18600–18612, 2020.",
+    "Sai Praneeth Karimireddy, Lie He, and Martin Jaggi. Learning from history for byzantine robust optimization. In International conference on machine learning, pages 5311–5319. PMLR, 2021.",
+    "Sai Praneeth Karimireddy, Lie He, and Martin Jaggi. Byzantine-robust learning on heterogeneous datasets via bucketing. In The Tenth International Conference on Learning Representations ICLR 2022, apr 2022.",
+    "Deepak Kumar, Yousef Anees AbuHashem, and Zakir Durumeric. Watch your language: Investigating content moderation with large language models. In Proceedings of the International AAAI Conference on Web and Social Media, volume 18, pages 865–878, 2024.",
+    "Woosuk Kwon, Zhuohan Li, Siyuan Zhuang, Ying Sheng, Lianmin Zheng, Cody Hao Yu, Joseph Gonzalez, Hao Zhang, and Ion Stoica. Efficient memory management for large language model serving with pagedattention. In Proceedings of the 29th symposium on operating systems principles, pages 611–626, 2023.",
+    "Valentin Lafargue, Adriana Laurindo Monteiro, Emmanuelle Claeys, Laurent Risser, and Jean-Michel Loubes. Exposing the illusion of fairness: Auditing vulnerabilities to distributional manipulation attacks. Joint European Conference on Machine Learning and Knowledge Discovery in Databases, 2026.",
+    "Sean McGregor. Preventing repeated real world AI failures by cataloging incidents: The AI incident database. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 35, pages 15458–15463, 2021.",
+    "New York City Department of Consumer and Worker Protection. Automated employment decision tools (AEDT). https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page, 2023. Local Law 144 of 2021; enforcement began July 5, 2023. Accessed: 2026-09-26.",
+    "Qwen Team, An Yang, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, et al. Qwen2.5 technical report. arXiv preprint arXiv:2412.15115, 2024.",
+    "Bashir Rastegarpanah, Krishna Gummadi, and Mark Crovella. Auditing black-box prediction models for data minimization compliance. Advances in Neural Information Processing Systems, 34:20621–20632, 2021.",
+    "Nicola Rieke, Jonny Hancox, Wenqi Li, Fausto Milletari, Holger R Roth, Shadi Albarqouni, Spyridon Bakas, Mathieu N Galtier, Bennett A Landman, Klaus Maier-Hein, et al. The future of digital health with federated learning. NPJ digital medicine, 3(1):119, 2020.",
+    "Ali Shahin Shamsabadi, Mohammad Yaghini, Natalie Dullerud, Sierra Wyllie, Ulrich Aïvodji, Aisha Alaagib, Sébastien Gambs, and Nicolas Papernot. Washing the unwashable: On the (im)possibility of fairwashing detection. Advances in Neural Information Processing Systems, 35:14170–14182, 2022.",
+    "Ali Shahin Shamsabadi, Sierra Calanda Wyllie, Nicholas Franzese, Natalie Dullerud, Sébastien Gambs, Nicolas Papernot, Xiao Wang, and Adrian Weller. Confidential-PROFITT: Confidential proof of fair training of trees. In The Eleventh International Conference on Learning Representations, 2022.",
+    "Arun James Thirunavukarasu, Darren Shu Jeng Ting, Kabilan Elangovan, Laura Gutierrez, Ting Fang Tan, and Daniel Shu Wei Ting. Large language models in medicine. Nature medicine, 29(8):1930–1940, 2023.",
+    "Ehsan Toreini, Maryam Mehrnezhad, and Aad van Moorsel. Fairness as a Service (FaaS): verifiable and privacy-preserving fairness auditing of machine learning systems. International Journal of Information Security, 23(2):981–997, 2024.",
+    "Amaury Trujillo, Tiziano Fagni, and Stefano Cresci. The dsa transparency database: Auditing self-reported moderation actions by social media. Proceedings of the ACM on Human-Computer Interaction, 9(2):1–28, 2025.",
+    "Yueqi Xie, Minghong Fang, and Neil Zhenqiang Gong. Model poisoning attacks to federated learning via multi-round consistency. In 2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), pages 15454–15463. IEEE, 2025.",
+    "Xinyi Xu, Zhaoxuan Wu, Arun Verma, Chuan Sheng Foo, and Bryan Kian Hsiang Low. FAIR: Fair collaborative active learning with individual rationality for scientific discovery. In International Conference on Artificial Intelligence and Statistics, pages 4033–4057. PMLR, 2023.",
+    "Chhavi Yadav, Amrita Roy Chowdhury, Dan Boneh, and Kamalika Chaudhuri. FairProof : Confidential and certifiable fairness for neural networks. In Proceedings of the 41st International Conference on Machine Learning, pages 55682–55705, 21–27 Jul 2024.",
+    "Dong Yin, Yudong Chen, Kannan Ramchandran, and Peter Bartlett. Byzantine-robust distributed learning: Towards optimal statistical rates. In International conference on machine learning, pages 5650–5659. PMLR, 2018.",
+    "Zaixi Zhang, Xiaoyu Cao, Jinyuan Jia, and Neil Zhenqiang Gong. FLDetector: Defending federated learning against model poisoning attacks via detecting malicious clients. In Proceedings of the 28th ACM SIGKDD conference on knowledge discovery and data mining, pages 2545–2555, 2022."
+  ]
+}

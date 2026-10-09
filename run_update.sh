@@ -167,13 +167,37 @@ echo "----------------------------------------"
 # there (sanitize_arxiv_id flattens old-style IDs). To force a full sweep:
 #   gcloud storage cp -r -n pdf gs://inversion
 GCS_PDF_PREFIX="gs://inversion/pdf"
+# The corp credential (inversion@google.com) intermittently fails the GCS IAM
+# check with a spurious 403 "permission denied". It comes in bad windows rather
+# than uniformly, but during one it is frequent enough that the ~80-page bucket
+# listing never finishes -- a single failed page aborts the whole stage. The VM
+# service account resolves cleanly, so prefer it.
+GCS_READ_ACCOUNT="44551806893-compute@developer.gserviceaccount.com"
+
+# Uploads can only use the service account if the instance carries a read-write
+# storage scope; with devstorage.read_only the SA can list but every write comes
+# back "Provided scope(s) are not authorized". Probe the live scopes instead of
+# hardcoding the answer, so this promotes itself the moment the instance's
+# access scopes are widened. Until then writes fall back to the corp account,
+# where a failed write is at least per-object and self-healing -- the next run's
+# diff retries it -- unlike a failed listing.
+GCS_WRITE_ACCOUNT=$(gcloud config get-value account 2>/dev/null)
+VM_SCOPES=$(curl -s -m 5 -H "Metadata-Flavor: Google" \
+    "http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/scopes" 2>/dev/null)
+case "$VM_SCOPES" in
+    *devstorage.read_write*|*devstorage.full_control*|*auth/cloud-platform*)
+        GCS_WRITE_ACCOUNT="$GCS_READ_ACCOUNT" ;;
+esac
+echo "GCS: reading as $GCS_READ_ACCOUNT, writing as $GCS_WRITE_ACCOUNT"
+
 LOCAL_PDFS=$(mktemp)
 REMOTE_PDFS=$(mktemp)
 PDFS_TO_UPLOAD=$(mktemp)
 
 ls -1 pdf | grep '\.pdf$' | sort > "$LOCAL_PDFS"
 
-gcloud storage ls "$GCS_PDF_PREFIX/" > "$REMOTE_PDFS.raw" 2> "$REMOTE_PDFS.err"
+CLOUDSDK_CORE_ACCOUNT="$GCS_READ_ACCOUNT" \
+    gcloud storage ls "$GCS_PDF_PREFIX/" > "$REMOTE_PDFS.raw" 2> "$REMOTE_PDFS.err"
 LS_STATUS=$?
 # An empty prefix also exits non-zero; that just means everything is new.
 if [ $LS_STATUS -ne 0 ] && grep -q "matched no objects" "$REMOTE_PDFS.err"; then
@@ -187,10 +211,27 @@ if [ $LS_STATUS -eq 0 ]; then
 
     if [ "$UPLOAD_COUNT" -eq 0 ]; then
         echo "GCS already has all $(wc -l < "$LOCAL_PDFS" | tr -d ' ') PDFs; nothing to upload."
-    elif gcloud storage cp -I "$GCS_PDF_PREFIX/" < "$PDFS_TO_UPLOAD"; then
-        echo "GCS upload complete ($UPLOAD_COUNT new PDFs)."
     else
-        echo "WARNING: GCS upload failed. Changes will still be committed."
+        # Retry to ride out a bad window. Deliberately a plain cp, not `cp -n`:
+        # no-clobber checks the destination first, which would put the flaky
+        # read permission back on the write path. Re-sending the handful of
+        # PDFs an earlier attempt already landed is the cheaper trade.
+        UPLOAD_OK=false
+        for attempt in 1 2 3; do
+            if CLOUDSDK_CORE_ACCOUNT="$GCS_WRITE_ACCOUNT" \
+                gcloud storage cp -I "$GCS_PDF_PREFIX/" < "$PDFS_TO_UPLOAD"; then
+                UPLOAD_OK=true
+                break
+            fi
+            echo "GCS upload attempt $attempt failed; retrying in $((attempt * 20))s."
+            sleep $((attempt * 20))
+        done
+
+        if [ "$UPLOAD_OK" = true ]; then
+            echo "GCS upload complete ($UPLOAD_COUNT new PDFs)."
+        else
+            echo "WARNING: GCS upload failed after 3 attempts. Changes will still be committed."
+        fi
     fi
 else
     echo "WARNING: Could not list $GCS_PDF_PREFIX; skipping upload."
