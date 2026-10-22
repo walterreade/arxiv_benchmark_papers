@@ -1,0 +1,58 @@
+{
+  "filename": "2610.29657.pdf",
+  "title": "Effects of Model Scale and Quantization on Social Bias and Abstention in Question Answering",
+  "arxiv_url": "https://arxiv.org/pdf/2610.29657",
+  "measurement_description": "The paper measures social stereotype bias, including biases related to religion, by evaluating how model scale and quantization affect a model's tendency to produce biased responses versus appropriately abstaining (or over-abstaining) when answering ambiguous and disambiguated multiple-choice questions.",
+  "religious_groups": [
+    "Religion (General category from BBQ benchmark)"
+  ],
+  "models_tested": [
+    "Qwen3",
+    "Gemma-3",
+    "SmolLM2"
+  ],
+  "languages_evaluated": [
+    "English"
+  ],
+  "response_type": [
+    "short"
+  ],
+  "religion_component": "minor",
+  "base_benchmarks": [
+    "BBQ"
+  ],
+  "continuous_testing": false,
+  "findings": "Religion was evaluated as one of the 11 social bias categories in the BBQ benchmark. The study found that model compression/quantization affects bias and abstention behaviors across all categories, including religion. When the models were forced to choose an answer by removing the 'Unknown' option, previously hidden biases—or anti-biased tendencies—surfaced across multiple categories, including religion. This indicates that a low bias score in religious contexts can sometimes reflect a model's tendency to abstain rather than an inherently fair judgment.",
+  "references": [
+    "Loubna Ben Allal, Anton Lozhkov, Elie Bakouch, Gabriel Martín Blázquez, Guilherme Penedo, Lewis Tunstall, Andrés Marafioti, Hynek Kydlícek, Agustín Piqueres Lajarín, Vaibhav Srivastav, et al. 2025. Smollm2: When smol goes big–data-centric training of a small language model. arXiv preprint arXiv:2502.02737.",
+    "Ioana Baldini, Dennis Wei, Karthikeyan Natesan Ramamurthy, Moninder Singh, and Mikhail Yurochkin. 2022. Your fairness may vary: Pretrained language model fairness in toxic text classification. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2245–2262, Dublin, Ireland. Association for Computational Linguistics.",
+    "Jinyin Chen, Zhiqi Cao, Xiaojuan Wang, Haibin Zheng, Zhaoyan Ming, and Yayu Zheng. 2025. FairQuanti: Enhancing Fairness in Deep Neural Network Quantization via Neuron Role Contribution. ACM Transactions on Privacy and Security, 28(3):37:1–37:28.",
+    "Crawford. 2017. The Trouble with Bias - NIPS 2017 Keynote - Kate Crawford #NIPS2017.",
+    "Tim Dettmersλ, Mike Lewis, Younes Belkada, Luke Zettlemoyer, Hugging Face, and ENS Paris-Saclay. 2022. Llm. int8 (): 8-bit matrix multiplication for transformers at scale. arXiv preprint arXiv:2208.07339.",
+    "Emilio Ferrara. 2026. QuantiBias: Benchmarking Quantization-Induced Bias in LLMs. arXiv preprint. ArXiv:2607.21063 [cs.CL].",
+    "K Geetha. 2026. Tiny language model-based embedded decision engine for resource-constrained intelligent wireless sensor networks. Journal of Wireless Intelligence and Spectrum Engineering, 3(3):11–23.",
+    "Gustavo Gonçalves and Emma Strubell. 2023. Understanding the Effect of Model Compression on Social Bias in Large Language Models. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, pages 2663–2675, Singapore. Association for Computational Linguistics.",
+    "Emman Haider, Daniel Perez-Becker, Thomas Portet, Piyush Madan, Amit Garg, Atabak Ashfaq, David Majercak, Wen Wen, Dongwoo Kim, Ziyi Yang, et al. 2024. Phi-3 safety post-training: Aligning language models with a\" break-fix\" cycle. arXiv preprint arXiv:2407.13833.",
+    "Rem Hida, Masahiro Kaneko, and Naoaki Okazaki. 2024. Social bias evaluation for large language models requires prompt variations. arXiv preprint arXiv:2407.03129.",
+    "Rem Hida, Masahiro Kaneko, and Naoaki Okazaki. 2025. Social Bias Evaluation for Large Language Models Requires Prompt Variations. In Findings of the Association for Computational Linguistics: EMNLP 2025, pages 14507–14530, Suzhou, China. Association for Computational Linguistics.",
+    "Stanley Z. Hua, Sanae Lotfi, and Irene Y. Chen. 2026. Investigating Social Bias Changes in Quantized Language Models.",
+    "Angelie Kraft, Judith Simon, and Sonja Schimmler. 2026. Social Bias in Popular Question-Answering Benchmarks. arXiv preprint. ArXiv:2505.15553 [cs.CL].",
+    "Tao Li, Daniel Khashabi, Tushar Khot, Ashish Sabharwal, and Vivek Srikumar. 2020. UNQOVERing Stereotyping Biases via Underspecified Questions. In Findings of the Association for Computational Linguistics: EMNLP 2020, pages 3475–3489, Online. Association for Computational Linguistics.",
+    "Ji Lin, Jiaming Tang, Haotian Tang, Shang Yang, Wei-Ming Chen, Wei-Chen Wang, Guangxuan Xiao, Xingyu Dang, Chuang Gan, and Song Han. 2024. Awq: Activation-aware weight quantization for on-device llm compression and acceleration. Proceedings of machine learning and systems, 6:87–100.",
+    "Zechun Liu, Changsheng Zhao, Forrest Iandola, Chen Lai, Yuandong Tian, Igor Fedorov, Yunyang Xiong, Ernie Chang, Yangyang Shi, Raghuraman Krishnamoorthi, et al. 2024. Mobilellm: Optimizing sub-billion parameter language models for on-device use cases. arXiv preprint arXiv:2402.14905.",
+    "Mingyu Derek Ma, Jiun-Yu Kao, Arpit Gupta, Yu-Hsiang Lin, Wenbo Zhao, Tagyoung Chung, Wei Wang, Kai-Wei Chang, and Nanyun Peng. 2023. Mitigating Bias for Question Answering Models by Tracking Bias Influence. arXiv. Version Number: 2.",
+    "Sumanth Manduru and Carlotta Domeniconi. 2026. Beyond bias scores: Unmasking vacuous neutrality in small language models. In Proceedings of the 19th Conference of the European Chapter of the Association for Computational Linguistics (Volume 4: Student Research Workshop), pages 685–714.",
+    "Federico Marcuzzi, Xuefei Ning, Roy Schwartz, and Iryna Gurevych. 2025. How Quantization Shapes Bias in Large Language Models. Version Number: 3.",
+    "Andrew Or, Apurva Jain, Daniel Vega-Myhre, Jesse Cai, Charles David Hernandez, Zhenrui Zheng, Driss Guessous, Vasiliy Kuznetsov, Christian Puhrsch, Mark Saroufim, et al. 2025. Torchao: Pytorch-native training-to-serving model optimization. arXiv preprint arXiv:2507.16099.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel R Bowman. 2022a. Bbq: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2086–2105.",
+    "Alicia Parrish, Angelica Chen, Nikita Nangia, Vishakh Padmakumar, Jason Phang, Jana Thompson, Phu Mon Htut, and Samuel R. Bowman. 2022b. BBQ: A hand-built bias benchmark for question answering. In Findings of the Association for Computational Linguistics: ACL 2022, pages 2086–2105, Dublin, Ireland. Association for Computational Linguistics.",
+    "Irina Proskurina, Guillaume Metzler, and Julien Velcin. 2026. Fair-GPTQ: Bias-Aware Quantization for Large Language Models. Version Number: 3.",
+    "Plawan Kumar Rath and Rahul Maliakkal. 2026. Quantization Undoes Alignment: Bias Emergence in Compressed LLMs Across Models and Precision Levels. In 2026 IEEE Cloud Summit, pages 57–63. ArXiv:2605.15208 [cs.LG].",
+    "Bhavesh Sood and Jaromir Savelka. 2026. Punching above their weight: Classification-head fine-tuning of tiny language models (tlms) for verifiable multiple-choice tasks. arXiv preprint arXiv:2607.03801.",
+    "Yarden Tal, Inbal Magar, and Roy Schwartz. 2022. Fewer Errors, but More Stereotypes? The Effect of Model Size on Gender Bias. In Proceedings of the 4th Workshop on Gender Bias in Natural Language Processing (GeBNLP), pages 112–120, Seattle, Washington. Association for Computational Linguistics.",
+    "Gemma Team, Aishwarya Kamath, Johan Ferret, Shreya Pathak, Nino Vieillard, Ramona Merhej, Sarah Perrin, Tatiana Matejovicova, Alexandre Ramé, Morgane Rivière, et al. 2025. Gemma 3 technical report. arXiv preprint arXiv:2503.19786.",
+    "Qwen Team. 2025. Qwen3 technical report. Preprint, arXiv:2505.09388.",
+    "Zhichao Xu, Ashim Gupta, Tao Li, Oliver Bentham, and Vivek Srikumar. 2024. Beyond Perplexity: Multi-dimensional Safety Evaluation of LLM Compression. In Findings of the Association for Computational Linguistics: EMNLP 2024, pages 15359–15396, Miami, Florida, USA. Association for Computational Linguistics.",
+    "Zhewei Yao, Reza Yazdani Aminabadi, Minjia Zhang, Xiaoxia Wu, Conglong Li, and Yuxiong He. 2022. Zeroquant: Efficient and affordable post-training quantization for large-scale transformers. Advances in neural information processing systems, 35:27168–27183."
+  ]
+}
