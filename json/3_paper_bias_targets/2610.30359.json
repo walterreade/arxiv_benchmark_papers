@@ -1,0 +1,20 @@
+{
+  "filename": "2610.30359.pdf",
+  "title": "FAIRGate: Agentic Runtime Policy Selection and Verified Repair for Fairer Recommendation Delivery",
+  "arxiv_url": "https://arxiv.org/pdf/2610.30359",
+  "bias_targets": [
+    {
+      "target": "Popularity bias",
+      "methodology": "Measuring the visibility of less popular, long-tail items in top-K recommendation lists using the LT-Cov@10 (long-tail coverage) metric."
+    },
+    {
+      "target": "Item-group exposure bias",
+      "methodology": "Evaluating the distribution of recommendation visibility across different item categories, such as movie genres, using the Group Gini metric to measure aggregate equality across groups."
+    },
+    {
+      "target": "Calibration bias",
+      "methodology": "Measuring the deviation of the delivered recommendation list from a user's historical preference distribution using Jensen-Shannon divergence (JSD-Calib) over genre groups."
+    }
+  ],
+  "primary_bias_target": "Exposure bias"
+}
