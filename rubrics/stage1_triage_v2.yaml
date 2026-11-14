@@ -1,0 +1,70 @@
+rubric_id: ai_benchmark_triage
+rubric_version: v2.0
+model: models/gemini-decision-1
+description: >
+  Stage 1 abstract triage for all-arXiv AI benchmark corpus expansion plus
+  orthogonal routing for the preserved LLM religious-bias/ethics module.
+
+questions:
+  - id: is_benchmark_contribution
+    question_type: yes_no
+    threshold: 0.50
+    instructions: >
+      Determine whether a primary or major contribution of this AI/ML paper is to
+      INTRODUCE, EXTEND, AUDIT/CRITIQUE, or SURVEY a benchmark, evaluation dataset,
+      testbed, or evaluation methodology/metric.
+    true_description: >
+      True if the paper introduces a new benchmark/dataset/evaluation suite,
+      extends/translates/hardens an existing benchmark, systematically audits or
+      critiques benchmark validity/contamination/saturation/metrics, or surveys
+      AI benchmarks or evaluation methodologies.
+    false_description: >
+      False if the paper primarily proposes a new model, training recipe, prompting
+      technique, or application and merely evaluates it on existing benchmarks
+      (uses_only), or if the paper is unrelated to AI/ML evaluation.
+
+  - id: contribution_type
+    question_type: multiple_choice
+    instructions: >
+      Classify the paper's primary relationship to AI benchmarks, evaluation
+      datasets, or evaluation methodologies.
+    choices:
+      introduces: Introduces a new benchmark, evaluation dataset, leaderboard, or evaluation framework.
+      extends: Extends, adapts, translates, cleans, or hardens an existing benchmark or dataset.
+      audits_critiques: Audits, critiques, diagnoses contamination/flaws, or analyzes benchmark metrics or validity.
+      surveys: Surveys, reviews, or taxonomizes benchmarks, evaluation datasets, or evaluation methods.
+      uses_only: Proposes a model, algorithm, or system and only evaluates it on existing benchmarks.
+      unrelated: Not about AI/ML models, benchmarks, datasets, or evaluation.
+
+  - id: primary_modality
+    question_type: multiple_choice
+    instructions: >
+      Identify the primary AI modality or domain targeted by this paper.
+    choices:
+      text_llm: Text-only NLP or Large Language Models.
+      vision: Computer vision, images, 3D vision, or OCR.
+      audio_speech: Speech recognition, audio understanding, music, or voice models.
+      video: Video understanding, video generation, or temporal visual streams.
+      multimodal: Cross-modal systems combining two or more of text, image, audio, or video.
+      agent_tool_use: Autonomous AI agents, browser/OS control, multi-step planning, or tool use.
+      robotics_embodied: Robotics, embodied control, manipulation, navigation, or sim-to-real.
+      code_software: Code generation, software engineering, debugging, or formal verification.
+      tabular_timeseries: Tabular data, structured databases, forecasting, or time-series modeling.
+      scientific_medical: Scientific, medical, clinical, biological, chemical, legal, or industrial domain AI.
+      other_emergent: Another emerging AI modality or domain not covered above.
+
+  - id: is_llm_bias_ethics_religion
+    question_type: yes_no
+    threshold: 0.40
+    instructions: >
+      Determine whether this paper evaluates, measures, analyzes, or mitigates
+      social bias, fairness, stereotypes, ethics, moral reasoning, value alignment,
+      faith, or religion in Large Language Models (LLMs), EVEN IF it only evaluates
+      models on existing benchmarks such as BBQ, CrowS-Pairs, StereoSet, or BOLD.
+    true_description: >
+      True if the paper studies LLMs in relation to social/demographic/religious bias,
+      fairness, stereotypes, moral reasoning, ethics, or religion (including empirical
+      evaluations on existing benchmarks).
+    false_description: >
+      False if the paper does not involve LLMs or does not examine bias, fairness,
+      ethics, moral reasoning, or religion.

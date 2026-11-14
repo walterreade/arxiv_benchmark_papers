@@ -7,7 +7,7 @@ allowed-tools: [Read, Bash, WebFetch]
 
 # Find Citation
 
-Given a claim or quote from the paper draft, find the source paper that supports it and produce a BibTeX entry.
+Given a claim or quote from a paper draft, find the source paper that supports it across both the expanded all-AI benchmark corpus and the religious-bias corpus, then produce a verified BibTeX entry.
 
 ## Input
 
@@ -15,56 +15,46 @@ The user provides a claim or question that needs a citation.
 
 ## Procedure
 
-### Step 1: Search project data sources
+### Step 1: Query local NVMe SQLite FTS5 via `arxiv-bench`
 
-Search these files for content matching the claim's key concepts (use grep with multiple relevant keywords):
+Run sanitized full-text searches using `uv run arxiv-bench search` (which safely handles hyphenated benchmark names like `SWE-bench` and `MMLU-Pro`):
 
-1. **`reports/Religious Bias Papers - Summaries.md`** — The richest source. Each entry has a paper title, arxiv link, date, and detailed findings. Search for keywords from the claim (e.g., "Chain-of-Thought", "ambiguous", "stereotype", "bias score").
+```bash
+# Search across all AI benchmark papers and religious-bias papers
+uv run arxiv-bench search "<claim keywords>" --limit 15 --format json
 
-2. **`reports/Religious Bias Papers - Interesting Findings.md`** — Curated findings with verification status and source paper links. Good for specific quantitative claims.
+# Scope strictly to the religious-bias corpus when writing a religious-bias draft
+uv run arxiv-bench search "<claim keywords>" --religion-only --limit 15 --format json
 
-3. **`utility_files/llm_bias_papers.csv`** — Contains ~17K paper titles with arxiv IDs. Columns: `paper_id`, `latest_date`, `title`. Search titles for topic keywords.
+# Generate BibTeX entries directly for top matches
+uv run arxiv-bench search "<claim keywords>" --limit 5 --format bibtex
+```
 
-Run multiple grep searches in parallel with different keyword combinations extracted from the claim. Cast a wide net — try both specific phrases and individual distinctive terms.
+Run multiple keyword variations in parallel (distinctive metrics, benchmark names, model names, or phenomenon terms).
+
+If additional qualitative context is needed for religious-bias claims, fall back to grepping:
+1. **`reports/Religious Bias Papers - Summaries.md`**
+2. **`reports/Religious Bias Papers - Interesting Findings.md`**
 
 ### Step 2: Identify the best match
 
-From the search results, identify the paper whose findings most closely match the claim. Consider:
-- Does the paper's summary describe the same phenomenon?
-- Do the quantitative details match (numbers, percentages, model names)?
-- Is the methodology consistent with what the claim describes?
+Compare candidate papers returned from SQLite (`title`, `published_date`, `venue`, `citation_count`, `evidence_card`, and religious-bias findings):
+- Does the paper's summary or Evidence Card describe the same phenomenon?
+- Do quantitative details (percentages, models, benchmarks) match?
+- Is the methodology consistent with the claim?
 
 Report to the user:
-- The paper title and arxiv link
-- The relevant excerpt from the summaries that supports the claim
-- Your confidence level and reasoning
+- The paper title, arXiv link, venue, and citation count
+- The relevant excerpt from the Evidence Card or summary supporting the claim
+- Confidence level and reasoning
 
-### Step 3: Fetch metadata from arxiv
+### Step 3: Fetch full author list if needed
 
-Use WebFetch on the arxiv abstract page (`https://arxiv.org/abs/XXXX.XXXXX`) to get:
-- Full author list
-- Publication year
-- Conference/venue (if published)
-- DOI (if available)
+Use `WebFetch` on `https://arxiv.org/abs/<arxiv_id>` only if full author names or DOI are missing from the generated BibTeX entry.
 
-### Step 4: Generate BibTeX
-
-Produce a complete BibTeX entry. Use `@inproceedings` for conference papers, `@article` for journal papers, or `@misc` for preprints. Format:
-
-```bibtex
-@inproceedings{firstauthor_lastname_year_keyword,
-  title={Full Paper Title},
-  author={Last1, First1 and Last2, First2 and ...},
-  booktitle={Conference Name},
-  year={YYYY}
-}
-```
-
-Use the first author's lowercase last name, the year, and a short keyword from the title as the citation key (e.g., `turpin2023language`).
-
-## Output
+### Step 4: Output
 
 Present:
-1. The identified paper (title, authors, arxiv link)
-2. The supporting evidence from the project's summaries
-3. The BibTeX entry as a code block
+1. The identified paper (title, authors, arXiv link)
+2. The supporting evidence excerpt
+3. The complete BibTeX entry as a code block

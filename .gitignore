@@ -4,6 +4,9 @@ __pycache__/
 *$py.class
 .venv/
 .env
+.pytest_cache/
+.ruff_cache/
+.coverage
 
 # System
 .DS_Store
@@ -15,12 +18,23 @@ arxiv_benchmark_papers.code-workspace
 # Claude Code (local settings only)
 .claude/settings.local.json
 
-# Data and Artifacts
+# Operational Databases, Data & Artifacts
+*.db
+*.db-wal
+*.db-shm
+*.zst
 pdf/
+json/
 old_files/
+backups/
+.cache/
 *.pdf
 arxiv-metadata-oai-snapshot.json
+utility_files/*.csv
+utility_files/*.json
+utility_files/*.txt
 
 # Logs and Cache
+*.log
 cron.log
 utility_files/download_assessments_cache.json

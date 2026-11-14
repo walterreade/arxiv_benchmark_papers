@@ -1,0 +1,76 @@
+rubric_id: gap_analysis_core
+rubric_version: v1.0
+model: models/gemini-decision-1
+description: >
+  Core cross-cutting benchmark quality and gap-analysis rubric executed in Stage 3
+  over stored Evidence Cards and extracted paper text.
+
+questions:
+  - id: contamination_controls
+    question_type: multiple_choice
+    instructions: >
+      What level of data contamination or leakage mitigation does this benchmark
+      paper implement or analyze?
+    choices:
+      none_mentioned: No contamination or leakage analysis or prevention is discussed.
+      static_check_only: Runs post-hoc overlap/n-gram or canary checks on a static dataset.
+      dynamic_or_private_eval: Uses live/freshly collected tasks, dynamic generation, or held-out private test splits.
+      other_emergent: Uses another contamination mitigation mechanism not listed above.
+
+  - id: open_artifact_release
+    question_type: yes_no
+    threshold: 0.50
+    instructions: >
+      Does the paper release (or commit to publicly releasing) open-access benchmark
+      data, prompts, or evaluation harness code (e.g., GitHub, HuggingFace, Zenodo)?
+    true_description: Public dataset, benchmark items, or evaluation code URL/release is provided.
+    false_description: Closed/proprietary benchmark or no public data/code artifact release is stated.
+
+  - id: human_baseline_reported
+    question_type: yes_no
+    threshold: 0.50
+    instructions: >
+      Does the paper measure and report a human performance baseline or inter-annotator
+      agreement on the benchmark tasks?
+    true_description: Quantitative human performance scores or inter-annotator agreement metrics are reported.
+    false_description: No human baseline or human agreement metric is reported.
+
+  - id: multilingual_coverage
+    question_type: multiple_choice
+    instructions: >
+      What language coverage does this benchmark or evaluation dataset provide?
+    choices:
+      english_only: English-only or language-agnostic non-linguistic tasks with English instructions only.
+      non_english_monolingual: Focuses on a single non-English language.
+      multilingual_high_resource: Covers multiple mostly high-resource languages (e.g., EN/ZH/FR/DE/ES).
+      multilingual_low_resource: Explicitly evaluates underrepresented or low-resource languages.
+      not_applicable: Purely non-linguistic domain (e.g., molecular graphs, raw sensor signals) without language text.
+      other_emergent: Other language setup not covered above.
+
+  - id: interactive_agentic_realism
+    question_type: score
+    instructions: >
+      Rate the realism and interactivity of the evaluation environment on a 0-3 scale.
+    score_levels:
+      - "0: Static single-turn multiple-choice or closed-form Q&A without external tools."
+      - "1: Static open-ended generation or single-step execution graded automatically or by LLM judge."
+      - "2: Multi-turn interaction or sandboxed tool/code execution in a synthetic environment."
+      - "3: Realistic live or high-fidelity stateful environment with multi-step tool use, recovery, and verifiable outcomes."
+
+  - id: adversarial_or_stress_eval
+    question_type: yes_no
+    threshold: 0.50
+    instructions: >
+      Does the benchmark explicitly test adversarial inputs, distribution shifts,
+      edge-case failure modes, or safety/red-teaming stress scenarios?
+    true_description: Explicitly constructs adversarial perturbations, out-of-distribution tests, or red-team stress probes.
+    false_description: Standard benign/in-distribution task evaluation only.
+
+  - id: statistical_rigor
+    question_type: yes_no
+    threshold: 0.50
+    instructions: >
+      Does the paper report statistical uncertainty (confidence intervals, standard errors,
+      p-values, bootstrap intervals, or multi-seed variance) for benchmark scores?
+    true_description: Reports confidence intervals, significance tests, error bars, or multi-run variance.
+    false_description: Reports only single-run point estimates without uncertainty quantification.
