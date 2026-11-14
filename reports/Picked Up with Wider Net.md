@@ -5,118 +5,87 @@ primarily categorized outside Computer Science.
 
 ## All Bias-in-LLM Papers (Summary Statistics)
 
-Out of **9,336** total bias-in-LLM papers in the pipeline:
+Out of **13,868** total bias-in-LLM papers in the pipeline:
 
 | Category | Count | % |
-|---|---|---|
-| CS-only | 7,843 | 84.0% |
-| Cross-listed (CS + other) | 787 | 8.4% |
-| Exclusively non-CS | 77 | 0.8% |
-| Not in snapshot | 629 | 6.7% |
+|---|---:|---:|
+| CS-only | 13,157 | 94.9% |
+| Cross-listed (CS + other) | 655 | 4.7% |
+| Exclusively non-CS | 34 | 0.2% |
+| Not in snapshot | 22 | 0.2% |
 
 ### Non-CS Categories Across All Bias Papers
 
 | Category | Count | Description |
-|---|---|---|
-| `stat.ML` | 296 | Machine Learning (Statistics) |
-| `eess.AS` | 244 | Audio and Speech Processing |
-| `physics.soc-ph` | 47 | Physics and Society |
+|---|---:|---|
+| `stat.ML` | 193 | Machine Learning (Statistics) |
+| `eess.AS` | 171 | Audio and Speech Processing |
+| `econ.GN` | 70 | General Economics |
+| `q-fin.EC` | 70 | Economics (Quantitative Finance) |
+| `physics.soc-ph` | 46 | Physics and Society |
 | `stat.AP` | 43 | Applications (Statistics) |
-| `q-fin.EC` | 34 | Economics (Quantitative Finance) |
-| `econ.GN` | 33 | General Economics |
-| `math.OC` | 27 | Optimization and Control |
-| `math.IT` | 24 | Information Theory |
-| `eess.SY` | 21 |  |
-| `stat.ME` | 21 | Methodology (Statistics) |
-| `eess.IV` | 18 | Image and Video Processing |
-| `physics.optics` | 15 |  |
-| `math.NA` | 15 |  |
-| `quant-ph` | 12 |  |
-| `eess.SP` | 12 | Signal Processing |
-| `physics.app-ph` | 12 |  |
-| `physics.flu-dyn` | 8 |  |
-| `physics.ed-ph` | 8 |  |
-| `math.ST` | 7 | Statistics Theory (Math) |
-| `stat.TH` | 7 | Statistics Theory |
-| `q-bio.NC` | 6 | Neurons and Cognition |
+| `stat.ME` | 34 | Methodology (Statistics) |
+| `eess.IV` | 20 | Image and Video Processing |
+| `math.IT` | 20 | Information Theory |
+| `q-bio.QM` | 14 | Quantitative Methods (Q-Bio) |
+| `q-bio.NC` | 13 | Neurons and Cognition |
+| `q-fin.CP` | 11 |  |
+| `eess.SY` | 10 |  |
+| `eess.SP` | 8 | Signal Processing |
+| `math.ST` | 8 | Statistics Theory (Math) |
+| `stat.TH` | 8 | Statistics Theory |
+| `q-bio.BM` | 6 |  |
+| `q-bio.GN` | 6 |  |
 | `econ.TH` | 6 | Theoretical Economics |
-| `nlin.AO` | 6 |  |
+| `physics.ed-ph` | 6 |  |
+| `math.OC` | 5 | Optimization and Control |
+| `cond-mat.mtrl-sci` | 5 |  |
 | `econ.EM` | 5 |  |
-| `physics.ins-det` | 5 |  |
-| `math.CO` | 5 |  |
-| `physics.chem-ph` | 5 |  |
-| `q-bio.QM` | 5 | Quantitative Methods (Q-Bio) |
-| `cond-mat.stat-mech` | 5 |  |
-| `physics.comp-ph` | 5 |  |
-| `physics.plasm-ph` | 5 |  |
-| `cond-mat.mes-hall` | 5 |  |
-| `math.DS` | 4 |  |
-| `math.PR` | 4 |  |
-| `cond-mat.mtrl-sci` | 4 |  |
-| `physics.med-ph` | 4 |  |
-| `cond-mat.dis-nn` | 3 |  |
-| `math-ph` | 3 |  |
-| `math.MP` | 3 |  |
-| `astro-ph.EP` | 3 |  |
-| `hep-ex` | 3 |  |
-| `physics.bio-ph` | 3 |  |
-| `stat.CO` | 3 | Computation (Statistics) |
-| `physics.atom-ph` | 3 |  |
-| `physics.data-an` | 3 |  |
-| `physics.ao-ph` | 3 |  |
-| `astro-ph.SR` | 3 |  |
-| `stat.OT` | 3 |  |
-| `q-fin.CP` | 3 |  |
-| `math.LO` | 3 |  |
-| `cond-mat.quant-gas` | 2 |  |
-| `nlin.CD` | 2 |  |
-| `astro-ph.IM` | 2 |  |
-| `q-fin.RM` | 2 |  |
-| `math.AP` | 2 |  |
-| `q-bio.OT` | 2 |  |
-| `astro-ph.GA` | 2 |  |
+| `q-fin.GN` | 4 |  |
+| `q-fin.RM` | 4 |  |
+| `stat.OT` | 4 |  |
+| `nlin.AO` | 4 |  |
+| `physics.hist-ph` | 2 |  |
+| `physics.geo-ph` | 2 |  |
+| `physics.data-an` | 2 |  |
+| `stat.CO` | 2 | Computation (Statistics) |
+| `q-fin.TR` | 2 |  |
+| `q-fin.PM` | 2 |  |
+| `q-bio.PE` | 2 |  |
 | `q-fin.ST` | 2 |  |
-| `physics.geo-ph` | 1 |  |
-| `nucl-ex` | 1 |  |
-| `q-bio.BM` | 1 |  |
+| `physics.ao-ph` | 2 |  |
+| `math.DS` | 2 |  |
+| `astro-ph.IM` | 2 |  |
+| `math.PR` | 2 |  |
+| `physics.med-ph` | 1 |  |
+| `cond-mat.dis-nn` | 1 |  |
+| `q-bio.OT` | 1 |  |
+| `physics.chem-ph` | 1 |  |
+| `math.NA` | 1 |  |
+| `q-bio.CB` | 1 |  |
 | `cond-mat.other` | 1 |  |
-| `physics.class-ph` | 1 |  |
-| `hep-lat` | 1 |  |
-| `math.DG` | 1 |  |
-| `q-bio.MN` | 1 |  |
-| `math.CT` | 1 |  |
+| `math-ph` | 1 |  |
+| `math.MP` | 1 |  |
+| `nlin.CD` | 1 |  |
 | `astro-ph.CO` | 1 |  |
-| `math.NT` | 1 |  |
-| `math.RA` | 1 |  |
-| `physics.hist-ph` | 1 |  |
-| `nlin.PS` | 1 |  |
-| `math.FA` | 1 |  |
-| `math.OA` | 1 |  |
-| `physics.pop-ph` | 1 |  |
-| `math.SP` | 1 |  |
-| `cond-mat.str-el` | 1 |  |
-| `cond-mat.soft` | 1 |  |
-| `hep-ph` | 1 |  |
-| `physics.space-ph` | 1 |  |
-| `physics.acc-ph` | 1 |  |
-| `q-fin.PM` | 1 |  |
-| `q-fin.GN` | 1 |  |
-
+| `physics.comp-ph` | 1 |  |
+| `quant-ph` | 1 |  |
+| `physics.app-ph` | 1 |  |
+| `cond-mat.stat-mech` | 1 |  |
 
 ## Religious Bias Papers with Non-CS Categories
 
-**Total: 35** out of 1384 religious bias papers (0 exclusively non-CS, 35 cross-listed with CS).
-
+**Total: 38** out of 1508 religious bias papers (0 exclusively non-CS, 38 cross-listed with CS).
 
 ### Category Breakdown
 
 | Category | Count | Description |
-|---|---|---|
+|---|---:|---|
 | `stat.ML` | 21 | Machine Learning (Statistics) |
-| `physics.soc-ph` | 4 | Physics and Society |
-| `stat.ME` | 3 | Methodology (Statistics) |
-| `eess.AS` | 2 | Audio and Speech Processing |
-| `stat.AP` | 2 | Applications (Statistics) |
+| `physics.soc-ph` | 5 | Physics and Society |
+| `stat.ME` | 4 | Methodology (Statistics) |
+| `eess.AS` | 3 | Audio and Speech Processing |
+| `stat.AP` | 3 | Applications (Statistics) |
 | `math.IT` | 1 | Information Theory |
 | `q-bio.NC` | 1 | Neurons and Cognition |
 | `econ.TH` | 1 | Theoretical Economics |
@@ -124,12 +93,50 @@ Out of **9,336** total bias-in-LLM papers in the pipeline:
 | `econ.GN` | 1 | General Economics |
 | `q-fin.EC` | 1 | Economics (Quantitative Finance) |
 
+## Conformity Generates Collective Misalignment in AI Agents Societies
+
+[https://arxiv.org/abs/2605.10721](https://arxiv.org/abs/2605.10721)
+
+**Date:** 2026-05-11
+
+**Categories:** physics.soc-ph cs.CL cs.MA
+
+**Non-CS Categories:** physics.soc-ph
+
+The paper measured the collective alignment behavior and conformity dynamics of AI agent populations when tasked with taking a stance on various social, political, and general issues. Regarding religion, the study evaluated the models' tendency to adopt majority opinions versus their individual baseline biases using opinion pairs such as 'faith-based policy' vs 'science-based policy', 'secularism' vs 'religious influence', 'strict church-state separation' vs 'religious schools public funding', and 'freedom of religion' vs 'freedom from religion in public'. The study found that across the 100 opinion pairs (which included religion-related topics like church-state separation and faith-based policies), populations of AI agents can be driven into metastable misaligned states. Social conformity pressures can override an agent's individual alignment and bias on a topic, causing the population to coordinate on an opinion contrary to the models' intrinsic preferences. The paper does not disaggregate findings specifically for the religious opinion pairs, instead using them as part of a broader set to demonstrate that collective misalignment is an exploitable and generalized phenomenon in interacting AI societies.
+
+
+## VoxSafeBench: Not Just What Is Said, but Who, How, and Where
+
+[https://arxiv.org/abs/2604.14548](https://arxiv.org/abs/2604.14548)
+
+**Date:** 2026-04-16
+
+**Categories:** cs.SD cs.LG eess.AS
+
+**Non-CS Categories:** eess.AS
+
+The paper evaluated social alignment in speech language models, measuring fairness (e.g., biases and stereotypes associating demographic traits like religion with criminality) and privacy (e.g., the leakage of sensitive contextual information such as religious beliefs) across both text and audio modalities. While the paper does not isolate metrics for religion specifically, it includes religion as a demographic attribute in fairness (criminality stereotypes) and privacy (beliefs) evaluations. It found that models exhibit alarmingly low fair rates on criminality stereotypes, often systematically aligning with societal prejudices when demographic labels (such as religion) or their acoustic correlates are presented.
+
+
+## The Global Representativeness Index: A Total Variation Distance Framework for Measuring Demographic Fidelity in Survey Research
+
+[https://arxiv.org/abs/2602.14835](https://arxiv.org/abs/2602.14835)
+
+**Date:** 2026-02-16
+
+**Categories:** stat.ME cs.CY stat.AP
+
+**Non-CS Categories:** stat.ME, stat.AP
+
+The benchmark measures the distributional fidelity of a survey sample's religious affiliation composition against global population benchmarks from the Pew Global Religious Landscape. This is evaluated as a cross-classification with country (Country × Religion) to assess how well the joint distribution in a sample matches the target population. The paper finds that survey representativeness for the 'Country × Religion' dimension (mean GRI score of ~0.50 for the Global Dialogues survey) is significantly better than for the more granular 'Country × Gender × Age' dimension (mean GRI ~0.34). This is attributed to three structural factors: religion has fewer demographic strata (1,607 vs. 2,699), the major religious groups have large population proportions, and there is a strong geographic correlation (sampling many countries naturally captures a degree of religious diversity). However, the paper also notes a limitation: the religious benchmark data is from 2010 and may overstate religious affiliation due to secularization.
+
 
 ## Prompt Fairness: Sub-group Disparities in LLMs
 
-[https://arxiv.org/pdf/2511.19956](https://arxiv.org/pdf/2511.19956)
+[https://arxiv.org/abs/2511.19956](https://arxiv.org/abs/2511.19956)
 
-**Date:** 2025-11-26
+**Date:** 2025-11-25
 
 **Categories:** cs.LG cs.IT math.IT
 
@@ -140,9 +147,9 @@ The paper measured response consistency and bias when prompts contained demograp
 
 ## Silenced Biases: The Dark Side LLMs Learned to Refuse
 
-[https://arxiv.org/pdf/2511.03369](https://arxiv.org/pdf/2511.03369)
+[https://arxiv.org/abs/2511.03369](https://arxiv.org/abs/2511.03369)
 
-**Date:** 2026-01-27
+**Date:** 2026-01-25
 
 **Categories:** cs.CL stat.ML
 
@@ -151,11 +158,11 @@ The paper measured response consistency and bias when prompts contained demograp
 The benchmark measured stereotypical associations between subjects (e.g., 'terrorist', 'crime kingpin') and religious groups in a multiple-choice question format to quantify fairness deviation and expose silenced biases. After bypassing safety refusals using the paper's 'refusal steering' technique, models exhibited strong stereotypical biases related to religion. For instance, the Qwen-14B model disproportionately associated 'Muslim' with negative subjects like 'terrorism'. Similarly, Llama-3.1-8B showed a fairness deviation of 800% when associating 'Muslim' with 'terrorist'.
 
 
-## Homophily-induced Emergence of Biased Structures in LLM-based Multi-Agent AI Systems #Mormon
+## HOMOPHILY-INDUCED EMERGENCE OF BIASED STRUCTURES IN LLM-BASED MULTI-AGENT AI SYSTEMS
 
-[https://arxiv.org/pdf/2510.02637](https://arxiv.org/pdf/2510.02637)
+[https://arxiv.org/abs/2510.02637](https://arxiv.org/abs/2510.02637)
 
-**Date:** 2025-10-06
+**Date:** 2025-10-03
 
 **Categories:** physics.soc-ph cs.SI
 
@@ -166,9 +173,9 @@ The benchmark measured the effect of religious practice homophily on the formati
 
 ## Painless Activation Steering: An Automated, Lightweight Approach for Post-Training Large Language Models
 
-[https://arxiv.org/pdf/2509.22739](https://arxiv.org/pdf/2509.22739)
+[https://arxiv.org/abs/2509.22739](https://arxiv.org/abs/2509.22739)
 
-**Date:** 2025-10-01
+**Date:** 2025-09-30
 
 **Categories:** cs.CL cs.AI cs.LG stat.ML
 
@@ -179,9 +186,9 @@ The benchmark measures stereotyping and prejudice related to religion. It evalua
 
 ## FairLangProc: A Python package for fairness in NLP
 
-[https://arxiv.org/pdf/2508.03677](https://arxiv.org/pdf/2508.03677)
+[https://arxiv.org/abs/2508.03677](https://arxiv.org/abs/2508.03677)
 
-**Date:** 2025-08-06
+**Date:** 2025-08-05
 
 **Categories:** cs.CL stat.ML
 
@@ -190,11 +197,11 @@ The benchmark measures stereotyping and prejudice related to religion. It evalua
 The paper's proposed framework is designed to measure association bias between demographic groups and neutral attributes. Religion is used as an example, specifically measuring the association of religious groups (e.g., Christians, atheists) with different concepts using metrics like the Word Embedding Association Test (WEAT). However, the paper's own case study does not measure religious bias. The paper does not present any empirical findings related to religion. Religious groups are mentioned only as illustrative examples to demonstrate the potential applications of the proposed 'FairLangProc' fairness package, but the actual case study focuses exclusively on gender bias.
 
 
-## Unknown Title #Mormon
+## ContextBench: Modifying Contexts for Targeted Latent Activation
 
-[https://arxiv.org/pdf/2506.15735](https://arxiv.org/pdf/2506.15735)
+[https://arxiv.org/abs/2506.15735](https://arxiv.org/abs/2506.15735)
 
-**Date:** Unknown Date
+**Date:** 2026-03-06
 
 **Categories:** cs.AI cs.LG stat.ML
 
@@ -203,11 +210,11 @@ The paper's proposed framework is designed to measure association bias between d
 The paper does not primarily focus on measuring religion or faith. It briefly mentions using 'bias' probing stories within its Story Inpainting task to test model tendencies toward biased completions, citing an example of a job applicant wearing a traditional hijab. The paper does not report any findings related to religion or faith. A religious garment (hijab) was merely mentioned as an example of a prompt within a dataset of 'bias' probing stories used to evaluate the ContextBench Story Inpainting task.
 
 
-## AI Agent Behavioral Science #Mormon
+## AI Agent Behavioral Science
 
-[https://arxiv.org/pdf/2506.06366](https://arxiv.org/pdf/2506.06366)
+[https://arxiv.org/abs/2506.06366](https://arxiv.org/abs/2506.06366)
 
-**Date:** 2025-06-13
+**Date:** 2025-06-12
 
 **Categories:** q-bio.NC cs.CY cs.MA
 
@@ -218,9 +225,9 @@ The paper serves as a comprehensive review of AI Agent Behavioral Science and do
 
 ## Walk the Talk? Measuring the Faithfulness of Large Language Model Explanations
 
-[https://arxiv.org/pdf/2504.14150](https://arxiv.org/pdf/2504.14150)
+[https://arxiv.org/abs/2504.14150](https://arxiv.org/abs/2504.14150)
 
-**Date:** 2025-05-21
+**Date:** 2025-05-20
 
 **Categories:** cs.CL cs.AI cs.LG stat.ML
 
@@ -229,11 +236,11 @@ The paper serves as a comprehensive review of AI Agent Behavioral Science and do
 The paper evaluated stereotype detection in religious contexts as part of a broader social bias task. Specifically, it analyzed whether Large Language Models (LLMs) produce unfaithful explanations that mask their reliance on social biases, using questions that pit different religious identities against each other in ambiguous, stereotype-inducing scenarios (e.g., asking who is more likely to be a threat between a Muslim and an Atheist). The paper uses questions involving religious identities (e.g., Muslim, Atheist) as examples within its broader social bias evaluation dataset. The primary finding is not about the specific biases themselves, but rather that the proposed method can successfully identify patterns of unfaithful explanations where models hide their reasoning, including in contexts involving religious stereotypes. The paper does not provide aggregate results specific to religious bias across the tested models.
 
 
-## Unknown Title #Mormon
+## Are Domain Generalization Benchmarks with Accuracy on the Line Misspecified?
 
-[https://arxiv.org/pdf/2504.00186](https://arxiv.org/pdf/2504.00186)
+[https://arxiv.org/abs/2504.00186](https://arxiv.org/abs/2504.00186)
 
-**Date:** Unknown Date
+**Date:** 2025-08-02
 
 **Categories:** cs.LG cs.AI stat.ML
 
@@ -242,11 +249,11 @@ The paper evaluated stereotype detection in religious contexts as part of a broa
 The paper evaluated how model performance on a toxicity classification task is affected by spurious correlations involving demographic identities, including religious groups (Christian, Muslim). It measured the correlation between in-domain and out-of-domain accuracy across different data splits based on these identities to determine if the benchmark splits were well-specified for evaluating domain generalization. In the analysis of the CivilComments dataset, the paper found that spurious correlations involving religious identities (e.g., Christian, Muslim) and toxicity labels are strong. Different data splits based on these religious identities can lead to both positive ('accuracy on the line') and negative ('accuracy on the inverse line') correlations between in-domain and out-of-domain performance. This indicates that splits involving religious groups can serve as both well-specified and misspecified benchmarks for domain generalization, highlighting the need for careful benchmark design.
 
 
-## Unknown Title
+## Maximizing Signal in Human-Model Preference Alignment
 
-[https://arxiv.org/pdf/2503.04910](https://arxiv.org/pdf/2503.04910)
+[https://arxiv.org/abs/2503.04910](https://arxiv.org/abs/2503.04910)
 
-**Date:** Unknown Date
+**Date:** 2025-03-06
 
 **Categories:** cs.CL stat.ME
 
@@ -255,11 +262,11 @@ The paper evaluated how model performance on a toxicity classification task is a
 The paper does not specifically evaluate or measure religion as its primary goal. Instead, it uses religious statements (e.g., distinguishing factual religious content from evaluative/subjective religious content) as hypothetical examples to illustrate subjectivity in data labeling tasks. Additionally, it defines 'value-based' responses in its classifier evaluation case study as those dependent on personal value-systems, explicitly citing 'claims based on religion' as an example. The paper did not yield specific findings regarding bias against or knowledge of specific religious groups. Regarding its broader case study on subjective/value-based questions (which include claims based on religion), it found that human annotators were conservative in their judgments, aligning best with the more conservative guardrails model (Model 2) which blocked more potentially controversial inputs.
 
 
-## An Overview of Large Language Models for Statisticians #Mormon
+## An Overview of Large Language Models for Statisticians
 
-[https://arxiv.org/pdf/2502.17814](https://arxiv.org/pdf/2502.17814)
+[https://arxiv.org/abs/2502.17814](https://arxiv.org/abs/2502.17814)
 
-**Date:** 2025-02-26
+**Date:** 2025-02-25
 
 **Categories:** stat.ML cs.AI cs.CL cs.LG
 
@@ -268,11 +275,11 @@ The paper does not specifically evaluate or measure religion as its primary goal
 The paper does not conduct its own measurements regarding religion. It provides a general overview of LLMs and, in its section on Algorithmic Fairness, cites another study ([AFZ21]) that measured 'Persistent anti-muslim bias in large language models'. The paper's scope is to identify religion as a sensitive characteristic where discrimination can occur. The paper notes that LLMs can inherit biases from their training data, which may lead to discrimination against individuals based on their religion. It cites a specific study ([AFZ21]) that found persistent anti-Muslim bias in large language models as an example of this issue.
 
 
-## More is Less? A Simulation-Based Approach to Dynamic Interactions   between Biases in Multimodal Models #Mormon
+## More is Less? A Simulation-Based Approach to Dynamic Interactions between Biases in Multimodal Models
 
-[https://arxiv.org/pdf/2412.17505](https://arxiv.org/pdf/2412.17505)
+[https://arxiv.org/abs/2412.17505](https://arxiv.org/abs/2412.17505)
 
-**Date:** 2024-12-24
+**Date:** 2024-12-23
 
 **Categories:** stat.ML cs.LG
 
@@ -281,11 +288,11 @@ The paper does not conduct its own measurements regarding religion. It provides 
 The benchmark measures stereotypical bias in multimodal (text and image) models across several categories, including religion. It quantifies bias by computing scores for text-only, image-only, and multimodal embeddings and classifies the interaction between modalities as amplification, mitigation, or neutrality. The study found varied bias interaction dynamics across different religious groups. Bias amplification was observed for the 'Buddhist' subcategory, suggesting that combining text and image intensified biases. Bias mitigation was uniquely found in the 'Hindu' subcategory, indicating a rare dampening effect. Neutral interactions, where the multimodal bias falls between the two unimodal biases, were predominant in categories including 'Muslim,' and 'Christian.'
 
 
-## Observing Micromotives and Macrobehavior of Large Language Models #Mormon
+## Observing Micromotives and Macrobehavior of Large Language Models
 
-[https://arxiv.org/pdf/2412.10428](https://arxiv.org/pdf/2412.10428)
+[https://arxiv.org/abs/2412.10428](https://arxiv.org/abs/2412.10428)
 
-**Date:** 2024-12-17
+**Date:** 2024-12-10
 
 **Categories:** physics.soc-ph cs.AI cs.CL
 
@@ -296,9 +303,9 @@ Measures how an LLM's suggestions for agents, categorized as 'theist' or 'atheis
 
 ## On the Role of Speech Data in Reducing Toxicity Detection Bias
 
-[https://arxiv.org/pdf/2411.08135](https://arxiv.org/pdf/2411.08135)
+[https://arxiv.org/abs/2411.08135](https://arxiv.org/abs/2411.08135)
 
-**Date:** 2025-05-19
+**Date:** 2025-05-16
 
 **Categories:** cs.CL cs.AI cs.LG cs.SD eess.AS
 
@@ -309,9 +316,9 @@ The benchmark measured bias in toxicity detection systems, specifically the fals
 
 ## Sound Check: Auditing Audio Datasets
 
-[https://arxiv.org/pdf/2410.13114](https://arxiv.org/pdf/2410.13114)
+[https://arxiv.org/abs/2410.13114](https://arxiv.org/abs/2410.13114)
 
-**Date:** 2024-10-18
+**Date:** 2024-10-17
 
 **Categories:** cs.SD cs.AI cs.CY eess.AS
 
@@ -320,11 +327,11 @@ The benchmark measured bias in toxicity detection systems, specifically the fals
 Representation of religious groups in audio dataset transcripts, measured by the frequency of identity keywords (e.g., 'Christian', 'Muslim', 'Jewish'). The study found significant representation bias in the audited audio datasets. Transcripts contained far fewer mentions of marginalized groups. Specifically, the keyword 'Muslim' appeared 5-10 times less frequently than 'Christian', and 'Jewish' also appeared infrequently, indicating underrepresentation of these religious groups.
 
 
-## Unknown Title
+## E2MoCase: A Dataset for Emotional, Event and Moral Observations in News Articles on High-impact Legal Cases
 
-[https://arxiv.org/pdf/2409.09001](https://arxiv.org/pdf/2409.09001)
+[https://arxiv.org/abs/2409.09001](https://arxiv.org/abs/2409.09001)
 
-**Date:** Unknown Date
+**Date:** 2024-09-13
 
 **Categories:** cs.CL cs.AI cs.CY cs.DL physics.soc-ph
 
@@ -333,11 +340,11 @@ Representation of religious groups in audio dataset transcripts, measured by the
 The benchmark measures cultural biases in news reporting on legal cases. One of the specific biases measured is 'religious bias', defined as unfair treatment or attitudes towards individuals or groups based on their religious beliefs. Religious bias was identified as one of five categories of cultural bias in media coverage of high-impact legal cases. This bias category accounts for 2.4% of the paragraphs in the created E2MoCase dataset. The paper did not provide further analysis specific to the religious bias category.
 
 
-## Unknown Title
+## A semantic embedding space based on large language models for modelling human beliefs
 
-[https://arxiv.org/pdf/2408.07237](https://arxiv.org/pdf/2408.07237)
+[https://arxiv.org/abs/2408.07237](https://arxiv.org/abs/2408.07237)
 
-**Date:** Unknown Date
+**Date:** 2025-06-06
 
 **Categories:** cs.CL cs.CY physics.soc-ph
 
@@ -346,11 +353,11 @@ The benchmark measures cultural biases in news reporting on legal cases. One of 
 The paper evaluates an LLM-based semantic embedding space designed to model the interconnectedness and polarization of human beliefs, including religious ideologies. It measures how well the embedding space clusters users based on self-reported religious affiliations (Christian vs. Atheist), captures polarization in topics like God's existence, and predicts users' stances on unseen religious debates based on their prior belief systems. The LLM-based embedding space successfully captured strong, bimodal polarization on religious topics such as the existence of God and effectively clustered users corresponding to their self-reported religious ideologies (Christian vs. Atheist). Stances on 'Religion' debates proved to be more predictable than those on casual topics like 'Entertainment' or 'Funny'. However, the study found no statistically significant difference between Christian and Atheist user groups regarding how relative cognitive dissonance influences their belief selection or overall prediction accuracy.
 
 
-## Decision-Making Behavior Evaluation Framework for LLMs under Uncertain   Context
+## Decision-Making Behavior Evaluation Framework for LLMs under Uncertain Context
 
-[https://arxiv.org/pdf/2406.05972](https://arxiv.org/pdf/2406.05972)
+[https://arxiv.org/abs/2406.05972](https://arxiv.org/abs/2406.05972)
 
-**Date:** 2024-11-04
+**Date:** 2024-11-01
 
 **Categories:** cs.AI cs.CY cs.HC cs.LG econ.TH
 
@@ -359,11 +366,11 @@ The paper evaluates an LLM-based semantic embedding space designed to model the 
 The benchmark measured the sensitivity of LLM decision-making parameters (risk preference, probability weighting, and loss aversion) when the models were prompted with personas having specific religious identities. Gemini showed a significant decrease in loss aversion for Christian personas compared to the comparison group (lifelong Democrats). Claude and ChatGPT did not show significant sensitivity to religious backgrounds in their decision-making parameters.
 
 
-## Unknown Title #Mormon
+## A Theoretical Understanding of Self-Correction through In-context Alignment
 
-[https://arxiv.org/pdf/2405.18634](https://arxiv.org/pdf/2405.18634)
+[https://arxiv.org/abs/2405.18634](https://arxiv.org/abs/2405.18634)
 
-**Date:** Unknown Date
+**Date:** 2024-11-18
 
 **Categories:** cs.LG cs.CL stat.ML
 
@@ -372,11 +379,11 @@ The benchmark measured the sensitivity of LLM decision-making parameters (risk p
 The paper measures societal biases, including religious bias, using the Bias Benchmark for QA (BBQ) dataset. Specifically, it evaluates whether large language models rely on stereotypes when responding to ambiguous questions regarding protected classes, and tests if the models' intrinsic self-correction (Checking-as-Context) can successfully detect and alleviate these biases. The study found that introducing an intrinsic self-correction step (Checking-as-Context) successfully improved the alignment of models (like Vicuna-7b and Llama2-7b-chat) across most social bias categories, including religion. The models demonstrated a strong correlation between their ability to self-check for biases and the resulting performance gains, showing less reliance on religious stereotypes without needing external human feedback.
 
 
-## De-amplifying Bias from Differential Privacy in Language Model   Fine-tuning
+## De-amplifying Bias from Differential Privacy in Language Model Fine-tuning
 
-[https://arxiv.org/pdf/2402.04489](https://arxiv.org/pdf/2402.04489)
+[https://arxiv.org/abs/2402.04489](https://arxiv.org/abs/2402.04489)
 
-**Date:** 2024-02-08
+**Date:** 2024-02-07
 
 **Categories:** cs.LG cs.CR cs.CY stat.ME
 
@@ -385,11 +392,11 @@ The paper measures societal biases, including religious bias, using the Bias Ben
 The benchmark measured the percentage of times the model scored stereotypical sentences related to race and religion higher than anti-stereotypical sentences, using the StereoSet dataset. This was used to quantify the model's bias. Fine-tuning with Differential Privacy (DP) amplifies existing religious and racial bias. The DP-finetuned models were more likely to score stereotypical sentences higher than anti-stereotypical sentences compared to models fine-tuned without DP.
 
 
-## Unknown Title
+## Hate speech and hate crimes: a data-driven study of evolving discourse around marginalized groups
 
-[https://arxiv.org/pdf/2311.11163](https://arxiv.org/pdf/2311.11163)
+[https://arxiv.org/abs/2311.11163](https://arxiv.org/abs/2311.11163)
 
-**Date:** Unknown Date
+**Date:** 2023-11-18
 
 **Categories:** cs.SI stat.AP stat.CO
 
@@ -398,11 +405,11 @@ The benchmark measured the percentage of times the model scored stereotypical se
 The study evaluated the volume and sentiment of online discourse (tweets) directed at marginalized communities, including Jewish groups, and analyzed its correlation with the occurrence of offline physical hate crimes using dynamic network analysis and topic modeling. Anti-Jewish sentiment was identified as one of the top five motivating biases for hate crimes in California during the studied period. The study successfully categorized 6,585 tweets into a specific "Jewish" topic group using keyword filtering ('jewish pride', 'anti semitism', 'nazism', 'scapegoat') and topic modeling. However, the deep-dive temporal and network correlation analyses were ultimately restricted to the Black and LGBTQ+ groups due to significantly larger data availability for those groups.
 
 
-## Unknown Title #Mormon
+## Mitigating Simplicity Bias in Deep Learning for Improved OOD Generalization and Robustness #Mormon
 
-[https://arxiv.org/pdf/2310.06161](https://arxiv.org/pdf/2310.06161)
+[https://arxiv.org/abs/2310.06161](https://arxiv.org/abs/2310.06161)
 
-**Date:** Unknown Date
+**Date:** 2023-10-09
 
 **Categories:** cs.LG stat.ML
 
@@ -411,11 +418,11 @@ The study evaluated the volume and sentiment of online discourse (tweets) direct
 The paper evaluated the extent to which machine learning models rely on spurious correlations when making predictions. Specifically regarding religion, it measured subgroup robustness in toxicity classification using the CivilComments-WILDS dataset, where toxicity labels are spuriously correlated with the mention of demographic identities, including religious groups. The study found that neural networks trained with standard Empirical Risk Minimization (ERM) exhibit simplicity bias, relying heavily on spurious demographic features (like the mention of Muslim or Christian identities) rather than actual toxic content. By applying their proposed Conditional Mutual Information Debiasing (CMID) method, the models were encouraged to use more diverse features, improving the worst-group accuracy on the CivilComments-WILDS dataset from 57.4% to 74.8% and reducing biased predictions against these subgroups.
 
 
-## SurveyLM: A platform to explore emerging value perspectives in augmented   language models' behaviors
+## SurveyLM: A platform to explore emerging value perspectives in augmented language models' behaviors
 
-[https://arxiv.org/pdf/2308.00521](https://arxiv.org/pdf/2308.00521)
+[https://arxiv.org/abs/2308.00521](https://arxiv.org/abs/2308.00521)
 
-**Date:** 2023-08-02
+**Date:** 2023-08-01
 
 **Categories:** cs.AI cs.SI econ.GN q-fin.EC
 
@@ -426,9 +433,9 @@ The paper describes a platform, SurveyLM, with the potential application of asse
 
 ## How Different Is Stereotypical Bias Across Languages?
 
-[https://arxiv.org/pdf/2307.07331](https://arxiv.org/pdf/2307.07331)
+[https://arxiv.org/abs/2307.07331](https://arxiv.org/abs/2307.07331)
 
-**Date:** 2023-07-17
+**Date:** 2023-07-14
 
 **Categories:** cs.CL cs.CY cs.LG stat.ML
 
@@ -439,9 +446,9 @@ The benchmark measures stereotypical bias by evaluating language models on their
 
 ## A Bayesian approach to uncertainty in word embedding bias estimation
 
-[https://arxiv.org/pdf/2306.09066](https://arxiv.org/pdf/2306.09066)
+[https://arxiv.org/abs/2306.09066](https://arxiv.org/abs/2306.09066)
 
-**Date:** 2023-06-16
+**Date:** 2023-06-15
 
 **Categories:** cs.CL cs.HC cs.LG stat.AP stat.ME
 
@@ -450,11 +457,11 @@ The benchmark measures stereotypical bias by evaluating language models on their
 The benchmark measures stereotypical associations between religious identity terms (e.g., 'muslim', 'jew', 'christian') and sets of attribute words (e.g., 'greedy', 'terrorist', 'familial', 'conservative'). The analysis focuses on the cosine distance between the vector embeddings of these words to quantify bias. Using a hierarchical Bayesian model, the paper finds that single-number bias metrics like WEAT and MAC generate false confidence. For religion, the analysis revealed that associated stereotypical attributes are not systematically closer to protected religious terms than attributes from different stereotypes. The posterior density intervals for cosine distances are wide, and differences between associated, different, and neutral predicates are often not very large. Furthermore, debiasing methods were found to have debatable desirability, sometimes reversing proximity orderings for words like 'christian' and 'jew' but failing to change the mistreatment of words like 'muslim'. The overall conclusion is that the landscape of bias is more complex and uncertain than suggested by previous methods.
 
 
-## Unknown Title #Mormon
+## Aligning Language Models with Preferences through f-divergence Minimization
 
-[https://arxiv.org/pdf/2302.08215](https://arxiv.org/pdf/2302.08215)
+[https://arxiv.org/abs/2302.08215](https://arxiv.org/abs/2302.08215)
 
-**Date:** Unknown Date
+**Date:** 2023-06-06
 
 **Categories:** cs.CL cs.LG stat.ML
 
@@ -463,11 +470,11 @@ The benchmark measures stereotypical associations between religious identity ter
 The paper measured and evaluated the reduction of social bias in language models with respect to religious groups. Specifically, it measured the 'regard score' of generated sentences when prompted with the word 'Muslims' compared to the regard score when prompted with 'Christians', using a pretrained classifier. The paper found that applying the f-DPG framework (f-divergence minimization) considerably reduced bias in the regard score for the evaluated religious demographic groups. The initial regard score ratio between Christians and Muslims was improved from 1:0.677 to a more balanced 1:0.801 on average.
 
 
-## Pushing the Accuracy-Group Robustness Frontier with Introspective   Self-play #Mormon
+## Pushing the Accuracy-Group Robustness Frontier with Introspective Self-play
 
-[https://arxiv.org/pdf/2302.05807](https://arxiv.org/pdf/2302.05807)
+[https://arxiv.org/abs/2302.05807](https://arxiv.org/abs/2302.05807)
 
-**Date:** 2023-02-14
+**Date:** 2023-02-11
 
 **Categories:** cs.LG stat.ML
 
@@ -476,11 +483,11 @@ The paper measured and evaluated the reduction of social bias in language models
 Toxicity detection performance for comments mentioning specific religious groups (Muslim, Christian, etc.) as part of evaluating accuracy-group robustness for underrepresented subgroups. The proposed method, Introspective Self-play (ISP), improves the accuracy-group robustness frontier for tail groups in toxicity detection. This means it helps the model perform better on underrepresented groups, which include religious identities such as Muslim and Christian, by improving the tail-group sampling rate during active learning.
 
 
-## Fair Infinitesimal Jackknife: Mitigating the Influence of Biased   Training Data Points Without Refitting #Mormon
+## Fair Infinitesimal Jackknife: Mitigating the Influence of Biased Training Data Points Without Refitting
 
-[https://arxiv.org/pdf/2212.06803](https://arxiv.org/pdf/2212.06803)
+[https://arxiv.org/abs/2212.06803](https://arxiv.org/abs/2212.06803)
 
-**Date:** 2022-12-15
+**Date:** 2022-12-13
 
 **Categories:** cs.LG cs.CY stat.ML
 
@@ -489,11 +496,11 @@ Toxicity detection performance for comments mentioning specific religious groups
 Bias against Muslims in toxicity classification. The proposed method, Fair-IJ, effectively mitigated group disparities for the 'Muslim' sensitive attribute in toxicity classification tasks on the CivilComments dataset. When applied to BERT and T5 models, Fair-IJ consistently achieved lower disparity scores (ΔΕΟ and ADP) and a better task performance/fairness trade-off compared to baseline models and other fairness methods like Gap Regularization.
 
 
-## An Analysis of the Effects of Decoding Algorithms on Fairness in   Open-Ended Language Generation
+## An Analysis of the Effects of Decoding Algorithms on Fairness in Open-Ended Language Generation
 
-[https://arxiv.org/pdf/2210.03826](https://arxiv.org/pdf/2210.03826)
+[https://arxiv.org/abs/2210.03826](https://arxiv.org/abs/2210.03826)
 
-**Date:** 2022-10-11
+**Date:** 2022-10-07
 
 **Categories:** cs.CL cs.AI cs.LG stat.ML
 
@@ -502,11 +509,11 @@ Bias against Muslims in toxicity classification. The proposed method, Fair-IJ, e
 The benchmark measured fairness by evaluating the proportion of generated texts containing negative sentiment and negative regard towards different demographic groups, including religious groups, in an open-ended language generation task. The focus was on how different decoding algorithms and their hyperparameters affect this bias. The study found that fairness metrics for religious groups (Christian, Muslim, Atheist) vary significantly depending on the decoding algorithm (top-p, top-k, temperature) and its hyperparameters. For instance, changing the hyper-parameter value could toggle which religious group received more negative sentiment. The paper demonstrated that certain hyper-parameter regions could produce more equitable results between groups, such as similar levels of negative regard for Christian and Muslim prompts. It also found that increasing text diversity often led to a higher proportion of generations with negative regard and sentiment for all groups, including religious ones. The default hyper-parameters used in common libraries were not always the best choice for fairness.
 
 
-## Beyond the Imitation Game: Quantifying and extrapolating the   capabilities of language models #Mormon
+## Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models
 
-[https://arxiv.org/pdf/2206.04615](https://arxiv.org/pdf/2206.04615)
+[https://arxiv.org/abs/2206.04615](https://arxiv.org/abs/2206.04615)
 
-**Date:** 2023-06-13
+**Date:** 2023-06-12
 
 **Categories:** cs.CL cs.AI cs.CY cs.LG stat.ML
 
@@ -515,11 +522,11 @@ The benchmark measured fairness by evaluating the proportion of generated texts 
 The paper measured social bias in large language models, specifically how model preference for certain categories (including religion) or attributes changes with model scale. This involved evaluating tasks like `muslim_violence_bias` (which assesses the likelihood of models including violent terms in completions, with and without pro-social prompts) and `bias_from_probabilities` (which compares probabilities for broad generalizations across categories including race/ethnicity and religion). Additionally, the `hindu_knowledge` task was evaluated to assess models' factual knowledge related to Hinduism. Social bias, including that related to religion, generally increases with model scale in broad or ambiguous contexts, as shown for the 'religion' category in Figure 12(c). However, bias can decrease or plateau with scale in narrow, unambiguous contexts. Furthermore, bias can be potentially steered through appropriately chosen prompting; for instance, the `muslim_violence_bias` task showed that models are less likely to include violent terms in their completions when pro-social prompts are used. For the `hindu_knowledge` task, models' performance was above random chance but notably below human rater baselines.
 
 
-## Unknown Title #Mormon
+## Extending the WILDS Benchmark for Unsupervised Adaptation #Mormon
 
-[https://arxiv.org/pdf/2112.05090](https://arxiv.org/pdf/2112.05090)
+[https://arxiv.org/abs/2112.05090](https://arxiv.org/abs/2112.05090)
 
-**Date:** Unknown Date
+**Date:** 2022-04-24
 
 **Categories:** cs.LG cs.AI cs.CV stat.ML
 
@@ -528,11 +535,11 @@ The paper measured social bias in large language models, specifically how model 
 The benchmark measured the worst-group accuracy for toxicity classification on online comments that mention specific demographic identities, including religious groups. The goal was to evaluate model performance on underrepresented subpopulations. On the CIVILCOMMENTS-WILDS dataset, which measures performance across demographic groups including religious ones, the benchmarked methods (Pseudo-Label, continued Masked LM pre-training) performed similarly to the standard ERM baseline. Leveraging additional unlabeled data failed to improve worst-group accuracy, suggesting that these unsupervised adaptation methods are not effective for mitigating subpopulation shifts related to demographic identities.
 
 
-## Just Train Twice: Improving Group Robustness without Training Group   Information #Mormon
+## Just Train Twice: Improving Group Robustness without Training Group Information #Mormon
 
-[https://arxiv.org/pdf/2107.09044](https://arxiv.org/pdf/2107.09044)
+[https://arxiv.org/abs/2107.09044](https://arxiv.org/abs/2107.09044)
 
-**Date:** 2021-09-28
+**Date:** 2021-09-27
 
 **Categories:** cs.LG cs.AI cs.CY stat.ML
 
@@ -543,9 +550,9 @@ Worst-group accuracy and average accuracy in toxicity classification, specifical
 
 ## Leveraging Sparse Linear Layers for Debuggable Deep Networks
 
-[https://arxiv.org/pdf/2105.04857](https://arxiv.org/pdf/2105.04857)
+[https://arxiv.org/abs/2105.04857](https://arxiv.org/abs/2105.04857)
 
-**Date:** 2021-05-12
+**Date:** 2021-05-11
 
 **Categories:** cs.LG stat.ML
 
@@ -556,9 +563,9 @@ The benchmark measured how a model trained to mitigate bias (Debiased-BERT) reac
 
 ## SenSeI: Sensitive Set Invariance for Enforcing Individual Fairness
 
-[https://arxiv.org/pdf/2006.14168](https://arxiv.org/pdf/2006.14168)
+[https://arxiv.org/abs/2006.14168](https://arxiv.org/abs/2006.14168)
 
-**Date:** 2021-04-02
+**Date:** 2021-04-01
 
 **Categories:** cs.LG stat.ML
 
@@ -569,9 +576,9 @@ The paper evaluated algorithmic fairness, specifically individual and group fair
 
 ## ETHOS: an Online Hate Speech Detection Dataset
 
-[https://arxiv.org/pdf/2006.08328](https://arxiv.org/pdf/2006.08328)
+[https://arxiv.org/abs/2006.08328](https://arxiv.org/abs/2006.08328)
 
-**Date:** 2022-01-05
+**Date:** 2021-07-06
 
 **Categories:** cs.CL cs.LG stat.ML
 
