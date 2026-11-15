@@ -96,6 +96,27 @@ def test_coverage_matrix_across_junctions_and_decision_scores(db_conn: sqlite3.C
     )
     assert mat_score.counts[("text_llm", "true")] == 1
 
+    # Newer rubric version supersedes older version without double-counting
+    db_conn.execute(
+        """
+        INSERT INTO decision_scores (
+            arxiv_id, rubric_id, rubric_version, question_id, model_id,
+            choice_or_score, probability, entropy, scored_at
+        ) VALUES ('2607.00101', 'gap_analysis_core', 'v1.1', 'open_artifact_release',
+                  'models/gemini-decision-1', 'false', 0.12, 0.35, '2026-07-02T00:00:00Z')
+        """
+    )
+    db_conn.commit()
+    mat_latest = build_coverage_matrix(
+        db_conn, "modality", "gap_analysis_core:open_artifact_release"
+    )
+    assert mat_latest.counts.get(("text_llm", "false")) == 1
+    assert mat_latest.counts.get(("text_llm", "true"), 0) == 0
+    mat_pinned = build_coverage_matrix(
+        db_conn, "modality", "gap_analysis_core@v1.0:open_artifact_release"
+    )
+    assert mat_pinned.counts.get(("text_llm", "true")) == 1
+
 
 def test_status_alerts_on_stale_watermark(
     tmp_settings: Settings,

@@ -16,9 +16,11 @@ from typing import Any
 import requests
 
 from arxiv_bench.config import (
+    ISO_DATE_GLOB,
     Settings,
     canonicalize_arxiv_id,
     compute_metadata_sha256,
+    normalize_published_date,
 )
 from arxiv_bench.db import SingleWriterQueue
 
@@ -165,10 +167,12 @@ def _upsert_paper_record(
 ) -> None:
     cat_json = json.dumps(categories)
     sha = compute_metadata_sha256(title, abstract, categories)
+    clean_pub_date = normalize_published_date(published_date)
+    clean_upd_date = normalize_published_date(updated_date)
 
     def _op(cur: Any) -> None:
         cur.execute(
-            """
+            f"""
             INSERT INTO papers (
                 arxiv_id, latest_version_seen, is_withdrawn, version_drift,
                 title, abstract, categories_json, published_date, updated_date, metadata_sha256
@@ -183,7 +187,10 @@ def _upsert_paper_record(
                 title = COALESCE(NULLIF(excluded.title, ''), papers.title),
                 abstract = COALESCE(NULLIF(excluded.abstract, ''), papers.abstract),
                 categories_json = COALESCE(excluded.categories_json, papers.categories_json),
-                published_date = COALESCE(NULLIF(NULLIF(papers.published_date, ''), 'unknown'), excluded.published_date),
+                published_date = CASE
+                    WHEN papers.published_date GLOB '{ISO_DATE_GLOB}' THEN papers.published_date
+                    ELSE COALESCE(excluded.published_date, papers.published_date)
+                END,
                 updated_date = COALESCE(excluded.updated_date, papers.updated_date),
                 metadata_sha256 = excluded.metadata_sha256
             """,
@@ -194,8 +201,8 @@ def _upsert_paper_record(
                 title,
                 abstract,
                 cat_json,
-                published_date,
-                updated_date,
+                clean_pub_date,
+                clean_upd_date,
                 sha,
             ),
         )

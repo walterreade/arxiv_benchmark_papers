@@ -4,11 +4,339 @@ from __future__ import annotations
 
 import re
 from pathlib import Path
-from typing import Literal
+from typing import Any, Literal, get_args
 from urllib.parse import urlparse
 
 import yaml
-from pydantic import BaseModel, Field, model_validator
+from pydantic import BaseModel, Field, field_validator, model_validator
+
+ModalityTag = Literal[
+    "text-llm",
+    "vision",
+    "video",
+    "audio-speech",
+    "multimodal",
+    "3d-spatial",
+    "code-software",
+    "tabular-timeseries",
+    "agent-tool-use",
+    "robotics-embodied",
+    "scientific-signals",
+    "other-emergent",
+]
+
+DomainTag = Literal[
+    "general-reasoning",
+    "nlp-language",
+    "computer-vision",
+    "software-engineering",
+    "math-formal",
+    "agentic-systems",
+    "robotics-autonomous",
+    "speech-music-audio",
+    "medical-healthcare",
+    "biology-chemistry-materials",
+    "physics-earth-climate",
+    "science-general",
+    "finance-economics",
+    "legal-governance",
+    "education-assessment",
+    "safety-alignment-ethics",
+    "cybersecurity",
+    "social-humanities-media",
+    "industrial-engineering",
+    "other",
+]
+
+CONTROLLED_MODALITIES: tuple[str, ...] = get_args(ModalityTag)
+CONTROLLED_DOMAINS: tuple[str, ...] = get_args(DomainTag)
+_CONTROLLED_MODALITY_SET = frozenset(CONTROLLED_MODALITIES)
+_CONTROLLED_DOMAIN_SET = frozenset(CONTROLLED_DOMAINS)
+
+_MODALITY_SYNONYMS: dict[str, ModalityTag] = {
+    "text": "text-llm",
+    "nlp": "text-llm",
+    "llm": "text-llm",
+    "language": "text-llm",
+    "document": "text-llm",
+    "documents": "text-llm",
+    "image": "vision",
+    "images": "vision",
+    "visual": "vision",
+    "ocr": "vision",
+    "computer-vision": "vision",
+    "videos": "video",
+    "audio": "audio-speech",
+    "speech": "audio-speech",
+    "voice": "audio-speech",
+    "music": "audio-speech",
+    "sound": "audio-speech",
+    "cross-modal": "multimodal",
+    "vision-language": "multimodal",
+    "vlm": "multimodal",
+    "audio-visual": "multimodal",
+    "omni": "multimodal",
+    "3d": "3d-spatial",
+    "3d-vision": "3d-spatial",
+    "point-cloud": "3d-spatial",
+    "point-clouds": "3d-spatial",
+    "3d-point-clouds": "3d-spatial",
+    "3d-mesh": "3d-spatial",
+    "spatial": "3d-spatial",
+    "code": "code-software",
+    "software": "code-software",
+    "programming": "code-software",
+    "tabular": "tabular-timeseries",
+    "time-series": "tabular-timeseries",
+    "timeseries": "tabular-timeseries",
+    "structured": "tabular-timeseries",
+    "sql": "tabular-timeseries",
+    "graph": "tabular-timeseries",
+    "graphs": "tabular-timeseries",
+    "agent": "agent-tool-use",
+    "agents": "agent-tool-use",
+    "tool-use": "agent-tool-use",
+    "gui": "agent-tool-use",
+    "web": "agent-tool-use",
+    "robotics": "robotics-embodied",
+    "robot": "robotics-embodied",
+    "embodied": "robotics-embodied",
+    "scientific-medical": "scientific-signals",
+    "sensor": "scientific-signals",
+    "sensors": "scientific-signals",
+    "sensor-data": "scientific-signals",
+    "molecular": "scientific-signals",
+    "biomedical": "scientific-signals",
+    "other": "other-emergent",
+}
+
+_MODALITY_KEYWORD_RULES: tuple[tuple[tuple[str, ...], ModalityTag], ...] = (
+    (("3d", "point-cloud", "mesh", "voxel", "lidar", "nerf", "spatial"), "3d-spatial"),
+    (("video", "temporal-visual"), "video"),
+    (("audio", "speech", "voice", "music", "acoustic"), "audio-speech"),
+    (("multimodal", "cross-modal", "vision-language", "audio-visual", "omni"), "multimodal"),
+    (("robot", "embodied", "manipulation", "navigation", "uav", "driving"), "robotics-embodied"),
+    (("agent", "tool", "browser", "gui", "os-control"), "agent-tool-use"),
+    (("code", "software", "program", "verilog", "formal-proof"), "code-software"),
+    (
+        ("tabular", "time-series", "timeseries", "forecast", "database", "sql", "graph"),
+        "tabular-timeseries",
+    ),
+    (
+        (
+            "sensor",
+            "signal",
+            "impedance",
+            "tomography",
+            "eeg",
+            "ecg",
+            "mri",
+            "molecular",
+            "protein",
+            "genom",
+            "spectra",
+        ),
+        "scientific-signals",
+    ),
+    (("image", "vision", "visual", "ocr", "photo", "radiolog"), "vision"),
+    (("text", "language", "nlp", "llm", "dialog", "document"), "text-llm"),
+)
+
+_DOMAIN_SYNONYMS: dict[str, DomainTag] = {
+    "general": "general-reasoning",
+    "general-knowledge": "general-reasoning",
+    "reasoning": "general-reasoning",
+    "commonsense": "general-reasoning",
+    "nlp": "nlp-language",
+    "natural-language-processing": "nlp-language",
+    "language": "nlp-language",
+    "information-retrieval": "nlp-language",
+    "vision": "computer-vision",
+    "cv": "computer-vision",
+    "software": "software-engineering",
+    "coding": "software-engineering",
+    "code": "software-engineering",
+    "programming": "software-engineering",
+    "machine-learning-engineering": "software-engineering",
+    "math": "math-formal",
+    "mathematics": "math-formal",
+    "theorem-proving": "math-formal",
+    "agents": "agentic-systems",
+    "agent": "agentic-systems",
+    "robotics": "robotics-autonomous",
+    "autonomous-driving": "robotics-autonomous",
+    "human-robot-interaction": "robotics-autonomous",
+    "human-robot-interaction-hri": "robotics-autonomous",
+    "audio": "speech-music-audio",
+    "speech": "speech-music-audio",
+    "music": "speech-music-audio",
+    "medical": "medical-healthcare",
+    "medicine": "medical-healthcare",
+    "healthcare": "medical-healthcare",
+    "clinical": "medical-healthcare",
+    "biomedical": "medical-healthcare",
+    "biomedical-imaging": "medical-healthcare",
+    "biology": "biology-chemistry-materials",
+    "chemistry": "biology-chemistry-materials",
+    "materials": "biology-chemistry-materials",
+    "life-sciences": "biology-chemistry-materials",
+    "physics": "physics-earth-climate",
+    "astronomy": "physics-earth-climate",
+    "climate": "physics-earth-climate",
+    "geospatial": "physics-earth-climate",
+    "geospatial-reasoning": "physics-earth-climate",
+    "inverse-problems": "physics-earth-climate",
+    "science": "science-general",
+    "scientific-computing": "science-general",
+    "computer-science": "science-general",
+    "finance": "finance-economics",
+    "economics": "finance-economics",
+    "insurance": "finance-economics",
+    "legal": "legal-governance",
+    "law": "legal-governance",
+    "governance": "legal-governance",
+    "policy": "legal-governance",
+    "education": "education-assessment",
+    "assessment": "education-assessment",
+    "safety": "safety-alignment-ethics",
+    "alignment": "safety-alignment-ethics",
+    "ethics": "safety-alignment-ethics",
+    "fairness": "safety-alignment-ethics",
+    "bias": "safety-alignment-ethics",
+    "security": "cybersecurity",
+    "social": "social-humanities-media",
+    "social-media": "social-humanities-media",
+    "affective-computing": "social-humanities-media",
+    "humanities": "social-humanities-media",
+    "industrial": "industrial-engineering",
+    "engineering": "industrial-engineering",
+    "traffic-monitoring": "industrial-engineering",
+    "transportation": "industrial-engineering",
+}
+
+_DOMAIN_KEYWORD_RULES: tuple[tuple[tuple[str, ...], DomainTag], ...] = (
+    (
+        ("medical", "medic", "health", "clinic", "biomed", "radiol", "pathol", "patient"),
+        "medical-healthcare",
+    ),
+    (
+        ("biolog", "chem", "molecul", "protein", "genom", "drug", "material", "life-science"),
+        "biology-chemistry-materials",
+    ),
+    (
+        (
+            "physic",
+            "astro",
+            "climat",
+            "weather",
+            "geospat",
+            "earth",
+            "remote-sens",
+            "inverse-problem",
+        ),
+        "physics-earth-climate",
+    ),
+    (
+        ("robot", "autonom", "driving", "uav", "drone", "human-robot", "embodied", "manipul"),
+        "robotics-autonomous",
+    ),
+    (("agent", "tool-use", "browser", "workflow", "multi-agent"), "agentic-systems"),
+    (
+        (
+            "software",
+            "coding",
+            "code",
+            "program",
+            "devops",
+            "ml-engineer",
+            "machine-learning-engineer",
+        ),
+        "software-engineering",
+    ),
+    (("math", "theorem", "formal-verif", "algebra", "geometry"), "math-formal"),
+    (("cyber", "secur", "vulnerab", "malware", "cryptog", "exploit"), "cybersecurity"),
+    (
+        (
+            "safety",
+            "align",
+            "ethic",
+            "fairness",
+            "bias",
+            "red-team",
+            "privacy",
+            "trustworth",
+            "toxic",
+            "religio",
+        ),
+        "safety-alignment-ethics",
+    ),
+    (("legal", "law", "contract", "regulat", "govern", "policy"), "legal-governance"),
+    (("financ", "econom", "insur", "market", "account", "trading", "bank"), "finance-economics"),
+    (("educat", "tutor", "exam", "pedagog", "student", "learn"), "education-assessment"),
+    (("speech", "audio", "music", "acoustic", "voice"), "speech-music-audio"),
+    (("vision", "image", "video", "ocr", "visual", "3d"), "computer-vision"),
+    (("nlp", "language", "translat", "summar", "retriev", "dialogue", "text"), "nlp-language"),
+    (
+        (
+            "social",
+            "affective",
+            "emotion",
+            "psycholog",
+            "humanit",
+            "media",
+            "news",
+            "recommend",
+            "cultur",
+        ),
+        "social-humanities-media",
+    ),
+    (
+        (
+            "industr",
+            "manufactur",
+            "traffic",
+            "transport",
+            "energy",
+            "power",
+            "telecom",
+            "hardware",
+            "iot",
+        ),
+        "industrial-engineering",
+    ),
+    (("scien", "research", "comput"), "science-general"),
+    (("general", "reason", "commonsense", "knowledge"), "general-reasoning"),
+)
+
+
+def normalize_modality(raw: str) -> ModalityTag | None:
+    """Map a raw modality label onto the controlled 12-tag ModalityTag vocabulary."""
+    slug = normalize_entity_slug(raw)
+    if not slug:
+        return None
+    if slug in _CONTROLLED_MODALITY_SET:
+        return slug  # type: ignore[return-value]
+    if slug in _MODALITY_SYNONYMS:
+        return _MODALITY_SYNONYMS[slug]
+    for keywords, target in _MODALITY_KEYWORD_RULES:
+        if any(kw in slug for kw in keywords):
+            return target
+    return "other-emergent"
+
+
+def normalize_domain(raw: str) -> DomainTag | None:
+    """Map a raw domain label onto the controlled 20-tag DomainTag vocabulary."""
+    slug = normalize_entity_slug(raw)
+    if not slug:
+        return None
+    if slug in _CONTROLLED_DOMAIN_SET:
+        return slug  # type: ignore[return-value]
+    if slug in _DOMAIN_SYNONYMS:
+        return _DOMAIN_SYNONYMS[slug]
+    for keywords, target in _DOMAIN_KEYWORD_RULES:
+        if any(kw in slug for kw in keywords):
+            return target
+    return "other"
 
 
 class EvidenceCard(BaseModel):
@@ -68,8 +396,20 @@ class BenchmarkExtraction(BaseModel):
     ]
     benchmarks: list[BenchmarkEntry] = Field(default_factory=list)
     dataset_urls: list[str] = Field(default_factory=list)
-    modalities: list[str] = Field(default_factory=list)
-    domains: list[str] = Field(default_factory=list)
+    modalities: list[ModalityTag] = Field(
+        default_factory=list,
+        description=(
+            "1-3 controlled AI modalities targeted by the benchmark "
+            "(choose only from the ModalityTag enum)."
+        ),
+    )
+    domains: list[DomainTag] = Field(
+        default_factory=list,
+        description=(
+            "1-3 controlled top-level application domains targeted by the benchmark "
+            "(choose only from the DomainTag enum; put finer sub-domains in tasks)."
+        ),
+    )
     tasks: list[str] = Field(default_factory=list)
     evaluation_methods: list[str] = Field(default_factory=list)
     languages: list[str] = Field(default_factory=list)
@@ -78,6 +418,38 @@ class BenchmarkExtraction(BaseModel):
     continuous_testing: bool = False
     stated_limitations: str = ""
     evidence_card: EvidenceCard = Field(default_factory=EvidenceCard)
+
+    @field_validator("modalities", mode="before")
+    @classmethod
+    def _normalize_modalities(cls, value: Any) -> Any:
+        if not isinstance(value, list):
+            return value
+        out: list[ModalityTag] = []
+        seen: set[str] = set()
+        for item in value:
+            if not isinstance(item, str):
+                continue
+            mapped = normalize_modality(item)
+            if mapped and mapped not in seen:
+                seen.add(mapped)
+                out.append(mapped)
+        return out
+
+    @field_validator("domains", mode="before")
+    @classmethod
+    def _normalize_domains(cls, value: Any) -> Any:
+        if not isinstance(value, list):
+            return value
+        out: list[DomainTag] = []
+        seen: set[str] = set()
+        for item in value:
+            if not isinstance(item, str):
+                continue
+            mapped = normalize_domain(item)
+            if mapped and mapped not in seen:
+                seen.add(mapped)
+                out.append(mapped)
+        return out
 
 
 class BiasTargetEntry(BaseModel):

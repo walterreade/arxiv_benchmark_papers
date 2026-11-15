@@ -381,3 +381,86 @@ def test_semantic_scholar_client_preserves_null_on_429_and_links_citations(
     assert int(row2["citation_count"]) == 42
     assert row2["venue"] == "NeurIPS 2026"
     assert row2["s2_last_error"] is None
+
+
+def test_controlled_modalities_domains_and_extract_queue_filter(
+    tmp_settings: Settings,
+    db_conn: sqlite3.Connection,
+    fake_gcs: FakeGCSClient,
+) -> None:
+    # Controlled schema normalizes verbose/underscore inputs cleanly and exposes JSON Schema enums
+    parsed = BenchmarkExtraction(
+        contribution_type="introduces",
+        modalities=[
+            "text",
+            "image",
+            "3d-point-clouds",
+            "3d-mesh-geometric-data",
+            "audio",
+            "speech",
+            "electrical-impedance-voltage-and-current-sensor-signals",
+            "code_software",
+        ],
+        domains=[
+            "natural-language-processing",
+            "biomedical-imaging",
+            "medicine",
+            "human-robot-interaction-hri",
+            "machine-learning-engineering",
+            "traffic-monitoring",
+        ],
+    )
+    assert parsed.modalities == [
+        "text-llm",
+        "vision",
+        "3d-spatial",
+        "audio-speech",
+        "scientific-signals",
+        "code-software",
+    ]
+    assert parsed.domains == [
+        "nlp-language",
+        "medical-healthcare",
+        "robotics-autonomous",
+        "software-engineering",
+        "industrial-engineering",
+    ]
+    schema = BenchmarkExtraction.model_json_schema()
+    assert "enum" in schema["properties"]["modalities"]["items"]
+    assert "enum" in schema["properties"]["domains"]["items"]
+
+    # Stage 2 queue excludes Stage 1 uses_only/unrelated papers even when p >= 0.50
+    seed_paper(db_conn, "2611.90001", published_date="2026-11-12")
+    seed_paper(db_conn, "2611.90002", published_date="2026-11-12")
+    seed_paper(db_conn, "2611.90003", published_date="2026-11-12")
+    for aid, contrib in (
+        ("2611.90001", "introduces"),
+        ("2611.90002", "unrelated"),
+        ("2611.90003", "uses_only"),
+    ):
+        db_conn.execute(
+            """
+            INSERT INTO triage_assessments (
+                arxiv_id, paper_version, rubric_id, rubric_version, question_id,
+                model_id, choice_or_bool, probability, assessed_at
+            ) VALUES (?, 1, 'ai_benchmark_triage', 'v2.0', 'is_benchmark_contribution',
+                      'models/gemini-3.8-flash', 'true', 0.65, '2026-11-14T00:00:00Z')
+            """,
+            (aid,),
+        )
+        db_conn.execute(
+            """
+            INSERT INTO triage_assessments (
+                arxiv_id, paper_version, rubric_id, rubric_version, question_id,
+                model_id, choice_or_bool, probability, assessed_at
+            ) VALUES (?, 1, 'ai_benchmark_triage', 'v2.0', 'contribution_type',
+                      'models/gemini-3.8-flash', ?, 0.80, '2026-11-14T00:00:00Z')
+            """,
+            (aid, contrib),
+        )
+    db_conn.commit()
+
+    storage = PdfStorageManager(tmp_settings, gcs_client=fake_gcs)
+    extractor = ExtractionClient(tmp_settings, storage)
+    dry = extractor.estimate_dry_run(db_conn, threshold=0.50)
+    assert dry.pending_papers == 1

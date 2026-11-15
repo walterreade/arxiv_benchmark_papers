@@ -173,3 +173,13 @@ def test_backup_database_vacuum_zstd_and_restore_verification(
     assert rep.nfs_backup_path and rep.nfs_backup_path.exists()
     assert rep.gcs_backup_uri and rep.gcs_backup_uri.startswith("gs://inversion/backups/sqlite/")
     assert "backups/sqlite/latest.db.zst" in fake_gcs.bucket("inversion").store
+
+
+def test_optimize_database_populates_sqlite_stat1(db_conn: sqlite3.Connection) -> None:
+    from arxiv_bench.db import optimize_database
+
+    db_conn.execute("INSERT INTO papers (arxiv_id, title) VALUES ('2605.99999', 'Stat Test')")
+    db_conn.commit()
+    optimize_database(db_conn, full_analyze=True)
+    stat_rows = db_conn.execute("SELECT tbl FROM sqlite_stat1 WHERE tbl = 'papers'").fetchall()
+    assert len(stat_rows) >= 1

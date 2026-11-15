@@ -13,7 +13,12 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
-from arxiv_bench.config import Settings, canonicalize_arxiv_id, compute_metadata_sha256
+from arxiv_bench.config import (
+    Settings,
+    canonicalize_arxiv_id,
+    compute_metadata_sha256,
+    normalize_published_date,
+)
 from arxiv_bench.db import init_db
 from arxiv_bench.pdf_storage import PdfStorageManager
 from arxiv_bench.religion import normalize_bias_target
@@ -225,7 +230,7 @@ def migrate_legacy(
                 (
                     aid,
                     cdata.get("title") or None,
-                    cdata.get("date") or None,
+                    normalize_published_date(cdata.get("date")),
                     cdata.get("page_count"),
                     json.dumps(cdata),
                 ),
@@ -264,7 +269,9 @@ def migrate_legacy(
                     merged = dict(csv_by_id.get(aid, {}))
                     merged.update(obj)
                     title = str(merged.get("title") or "").strip() or None
-                    pub_date = str(merged.get("date") or "").strip() or None
+                    pub_date = normalize_published_date(
+                        str(merged.get("date") or "").strip() or None
+                    )
                     page_count = _parse_int(merged.get("page_count"))
                     cur.execute(
                         """

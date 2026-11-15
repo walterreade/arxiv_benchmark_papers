@@ -8,7 +8,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
-from arxiv_bench.config import Settings
+from arxiv_bench.config import Settings, normalize_published_date
 from arxiv_bench.db import SingleWriterQueue
 from arxiv_bench.ingest import (
     passes_stage0_prefilter,
@@ -205,3 +205,63 @@ def test_sync_atom_delta_verifies_pagination_and_watermark(
     ).fetchone()
     assert cp["watermark_date"] == "2026-11-12"
     assert cp["cursor_state"] == "incomplete_pagination"
+
+
+def test_normalize_published_date_and_snapshot_repairs_legacy_garbage(
+    tmp_settings: Settings,
+    db_conn: sqlite3.Connection,
+    tmp_path: Path,
+) -> None:
+    assert normalize_published_date("2026-11-12") == "2026-11-12"
+    assert normalize_published_date("2026-11-12T18:30:00Z") == "2026-11-12"
+    for bad in ("N/A", "Unknown", "null", "XXXX-XX-XX", "2022-XX-XX", "2011-MM-DD", "2026-02-30"):
+        assert normalize_published_date(bad) is None
+    assert (
+        normalize_published_date("N/A", arxiv_id="2512.18979", fallback_to_id=True) == "2025-12-01"
+    )
+    assert (
+        normalize_published_date("Unknown", arxiv_id="cs/0311046", fallback_to_id=True)
+        == "2003-11-01"
+    )
+
+    # Seed a legacy paper with garbage published_date and verify snapshot upsert repairs it
+    db_conn.execute(
+        "INSERT INTO papers (arxiv_id, title, published_date) VALUES ('2512.18979', 'Old', 'XXXX-XX-XX')"
+    )
+    db_conn.execute(
+        "INSERT INTO papers (arxiv_id, title, published_date) VALUES ('2512.18980', 'Good', '2025-12-10')"
+    )
+    db_conn.commit()
+
+    snap = tmp_path / "repair.jsonl"
+    recs = [
+        {
+            "id": "2512.18979",
+            "title": "Repaired Paper",
+            "abstract": "AI benchmark abstract",
+            "categories": "cs.AI",
+            "update_date": "2025-12-22",
+            "versions": [{"version": "v1", "created": "Mon, 22 Dec 2025 10:00:00 GMT"}],
+        },
+        {
+            "id": "2512.18980",
+            "title": "Good Date Preserved",
+            "abstract": "AI benchmark abstract",
+            "categories": "cs.AI",
+            "update_date": "2025-12-25",
+            "versions": [{"version": "v1", "created": "Thu, 25 Dec 2025 10:00:00 GMT"}],
+        },
+    ]
+    snap.write_text("\n".join(json.dumps(r) for r in recs) + "\n", encoding="utf-8")
+
+    with SingleWriterQueue(tmp_settings.db_path) as writer:
+        sync_snapshot(tmp_settings, writer, snapshot_path=snap)
+
+    repaired = db_conn.execute(
+        "SELECT published_date FROM papers WHERE arxiv_id = '2512.18979'"
+    ).fetchone()
+    preserved = db_conn.execute(
+        "SELECT published_date FROM papers WHERE arxiv_id = '2512.18980'"
+    ).fetchone()
+    assert repaired["published_date"] == "2025-12-22"
+    assert preserved["published_date"] == "2025-12-10"

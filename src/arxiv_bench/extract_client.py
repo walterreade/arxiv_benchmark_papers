@@ -17,7 +17,7 @@ from google.genai import errors as genai_errors
 from google.genai import types
 from pydantic import ValidationError
 
-from arxiv_bench.config import Settings
+from arxiv_bench.config import ISO_DATE_GLOB, Settings
 from arxiv_bench.db import SingleWriterQueue
 from arxiv_bench.pdf_storage import (
     PdfStorageManager,
@@ -25,17 +25,21 @@ from arxiv_bench.pdf_storage import (
     extract_local_text,
 )
 from arxiv_bench.schemas import (
+    CONTROLLED_DOMAINS,
+    CONTROLLED_MODALITIES,
     BenchmarkExtraction,
+    normalize_domain,
     normalize_entity_slug,
+    normalize_modality,
     normalize_repo_url,
 )
 
 INLINE_PDF_MAX_BYTES = 20 * 1024 * 1024  # 20 MB threshold
-EXTRACTION_SCHEMA_VERSION = "v2.0"
+EXTRACTION_SCHEMA_VERSION = "v2.1"
 FLASH_INPUT_COST_PER_1M = 0.30
 FLASH_OUTPUT_COST_PER_1M = 2.50
 
-STAGE2_EXTRACTION_PROMPT = """\
+STAGE2_EXTRACTION_PROMPT = f"""\
 You are an expert AI evaluation researcher extracting structured metadata from an arXiv paper PDF.
 Analyze ALL pages including tables, leaderboards, dataset split tables, appendices, and figures.
 
@@ -48,11 +52,14 @@ Rules:
    - "uses_only": proposes a model/method and only evaluates it on existing benchmarks.
    - "unrelated": not about AI/ML evaluation or benchmarks.
 2. Extract exact benchmark names (preserving variant suffixes like "SWE-bench Verified" or "MMLU-Pro"),
-   public repository/dataset URLs, modalities, domains, tasks, evaluation methods, languages,
-   models tested, base benchmarks referenced/extended, continuous testing status, and author-reported limitations.
-3. Produce a comprehensive `evidence_card` (~1,000-1,500 tokens total across its five fields) capturing
+   public repository/dataset URLs, tasks, evaluation methods, languages, models tested,
+   base benchmarks referenced/extended, continuous testing status, and author-reported limitations.
+3. For `modalities` and `domains`, choose ONLY 1-3 most applicable canonical tags from the fixed schema enums
+   (modalities: {", ".join(CONTROLLED_MODALITIES)}; domains: {", ".join(CONTROLLED_DOMAINS)}).
+   Put fine-grained sub-domains, sensor types, or problem specifics in `tasks` and `evidence_card`.
+4. Produce a comprehensive `evidence_card` (~1,000-1,500 tokens total across its five fields) capturing
    task design, dataset construction, scoring protocol, contamination controls, and author-reported gaps.
-4. Do NOT transcribe the paper's bibliography or reference list.
+5. Do NOT transcribe the paper's bibliography or reference list.
 """
 
 
@@ -258,14 +265,14 @@ def persist_extraction(
             )
 
     for mod in extraction.modalities:
-        norm = normalize_entity_slug(mod)
+        norm = normalize_modality(mod)
         if norm:
             cur.execute(
                 "INSERT OR IGNORE INTO paper_modalities (arxiv_id, modality) VALUES (?, ?)",
                 (arxiv_id, norm),
             )
     for dom in extraction.domains:
-        norm = normalize_entity_slug(dom)
+        norm = normalize_domain(dom)
         if norm:
             cur.execute(
                 "INSERT OR IGNORE INTO paper_domains (arxiv_id, domain) VALUES (?, ?)",
@@ -473,13 +480,22 @@ class ExtractionClient:
                 ON s.arxiv_id = p.arxiv_id AND s.stage = 'extract'
             WHERE p.is_withdrawn = 0
               AND (s.status IS NULL OR s.status = 'pending' OR p.version_drift = 1)
+              AND NOT EXISTS (
+                  SELECT 1 FROM triage_assessments tc
+                  WHERE tc.arxiv_id = t.arxiv_id
+                    AND tc.paper_version = t.paper_version
+                    AND tc.rubric_id = t.rubric_id
+                    AND tc.rubric_version = t.rubric_version
+                    AND tc.question_id = 'contribution_type'
+                    AND tc.choice_or_bool IN ('uses_only', 'unrelated')
+              )
             """,
             (threshold,),
         ).fetchone()
         pending = int(row["cnt"]) if row else 0
-        # Average 12-page arXiv PDF ~ 12k multimodal input tokens, ~2.2k structured output tokens
-        in_tok = pending * 12_000
-        out_tok = pending * 2_200
+        # Observed Gemini Flash multimodal PDF averages (~13.5k input, ~1.1k output tokens)
+        in_tok = pending * 13_500
+        out_tok = pending * 1_100
         cost = (in_tok / 1_000_000.0) * FLASH_INPUT_COST_PER_1M + (
             out_tok / 1_000_000.0
         ) * FLASH_OUTPUT_COST_PER_1M
@@ -503,7 +519,7 @@ class ExtractionClient:
     ) -> ExtractionStats:
         """Execute unified interactive inline PDF workers across pending qualifying papers."""
         self.sweep_orphan_files()
-        sql = """
+        sql = f"""
             SELECT DISTINCT p.arxiv_id, p.title, p.published_date, p.latest_version_seen, p.gcs_pdf_uri
             FROM papers p
             INNER JOIN triage_assessments t
@@ -515,7 +531,18 @@ class ExtractionClient:
                 ON s.arxiv_id = p.arxiv_id AND s.stage = 'extract'
             WHERE p.is_withdrawn = 0
               AND (s.status IS NULL OR s.status = 'pending' OR p.version_drift = 1)
-            ORDER BY p.published_date DESC, p.arxiv_id DESC
+              AND NOT EXISTS (
+                  SELECT 1 FROM triage_assessments tc
+                  WHERE tc.arxiv_id = t.arxiv_id
+                    AND tc.paper_version = t.paper_version
+                    AND tc.rubric_id = t.rubric_id
+                    AND tc.rubric_version = t.rubric_version
+                    AND tc.question_id = 'contribution_type'
+                    AND tc.choice_or_bool IN ('uses_only', 'unrelated')
+              )
+            ORDER BY
+                CASE WHEN p.published_date GLOB '{ISO_DATE_GLOB}' THEN p.published_date ELSE '' END DESC,
+                p.arxiv_id DESC
         """
         params: list[Any] = [threshold]
         if limit is not None:

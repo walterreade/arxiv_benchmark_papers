@@ -1,5 +1,5 @@
 rubric_id: gap_analysis_core
-rubric_version: v1.0
+rubric_version: v1.1
 model: models/gemini-decision-1
 description: >
   Core cross-cutting benchmark quality and gap-analysis rubric executed in Stage 3
@@ -9,13 +9,24 @@ questions:
   - id: contamination_controls
     question_type: multiple_choice
     instructions: >
-      What level of data contamination or leakage mitigation does this benchmark
-      paper implement or analyze?
+      What level of benchmark contamination or pretraining data-leakage mitigation
+      (for foundation models / LLMs / VLMs) does this benchmark paper implement or analyze?
+      Ordinary supervised ML train/validation/test splits without pretraining-leakage
+      discussion count as `none_mentioned`.
     choices:
-      none_mentioned: No contamination or leakage analysis or prevention is discussed.
-      static_check_only: Runs post-hoc overlap/n-gram or canary checks on a static dataset.
-      dynamic_or_private_eval: Uses live/freshly collected tasks, dynamic generation, or held-out private test splits.
-      other_emergent: Uses another contamination mitigation mechanism not listed above.
+      none_mentioned: >
+        No pretraining-contamination or benchmark-leakage analysis or prevention is discussed
+        (standard train/val/test or cross-validation splits alone count here).
+      static_check_only: >
+        Runs post-hoc overlap, n-gram, perplexity, memorization, or canary-string checks
+        on a static benchmark dataset.
+      dynamic_or_private_eval: >
+        Prevents leakage via live/continuously updated data, procedural or synthetic
+        on-the-fly generation, freshly authored items with private/held-out evaluation
+        splits/servers, or periodic task refreshes.
+      other_emergent: >
+        Uses another explicit pretraining-contamination or benchmark-leakage mitigation
+        mechanism not covered above (e.g., cryptographic watermarking or obfuscation).
 
   - id: open_artifact_release
     question_type: yes_no

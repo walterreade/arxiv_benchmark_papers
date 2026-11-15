@@ -127,10 +127,41 @@ def search_papers(
     if religion_only:
         joins.append("INNER JOIN religious_bias_details r ON r.arxiv_id = p.arxiv_id")
     if rubric_filter:
-        rubric_id, question_id, choice_val = rubric_filter
-        joins.append("INNER JOIN decision_scores ds ON ds.arxiv_id = p.arxiv_id")
-        wheres.append("ds.rubric_id = ? AND ds.question_id = ? AND ds.choice_or_score = ?")
-        params.extend([rubric_id, question_id, choice_val])
+        rubric_spec, question_id, choice_val = rubric_filter
+        if "@" in rubric_spec:
+            rubric_id, rubric_ver = rubric_spec.split("@", 1)
+            wheres.append(
+                """
+                EXISTS (
+                    SELECT 1 FROM decision_scores ds
+                    WHERE ds.arxiv_id = p.arxiv_id
+                      AND ds.rubric_id = ?
+                      AND ds.rubric_version = ?
+                      AND ds.question_id = ?
+                      AND ds.choice_or_score = ?
+                )
+                """
+            )
+            params.extend([rubric_id.strip(), rubric_ver.strip(), question_id, choice_val])
+        else:
+            wheres.append(
+                """
+                p.arxiv_id IN (
+                    SELECT arxiv_id
+                    FROM (
+                        SELECT arxiv_id, choice_or_score,
+                               ROW_NUMBER() OVER (
+                                   PARTITION BY arxiv_id
+                                   ORDER BY scored_at DESC, rubric_version DESC
+                               ) AS rn
+                        FROM decision_scores
+                        WHERE rubric_id = ? AND question_id = ?
+                    )
+                    WHERE rn = 1 AND choice_or_score = ?
+                )
+                """
+            )
+            params.extend([rubric_spec.strip(), question_id, choice_val])
 
     sql = f"""
         SELECT DISTINCT
@@ -157,14 +188,32 @@ def search_papers(
 def _dimension_subquery(dim: str) -> tuple[str, list[Any]]:
     """Return (SQL producing (arxiv_id, label), params) for a coverage-matrix axis."""
     if ":" in dim:
-        rubric_id, question_id = dim.split(":", 1)
+        rubric_spec, question_id = dim.split(":", 1)
+        if "@" in rubric_spec:
+            rubric_id, rubric_ver = rubric_spec.split("@", 1)
+            return (
+                """
+                SELECT arxiv_id, choice_or_score AS label
+                FROM decision_scores
+                WHERE rubric_id = ? AND rubric_version = ? AND question_id = ?
+                """,
+                [rubric_id.strip(), rubric_ver.strip(), question_id.strip()],
+            )
         return (
             """
             SELECT arxiv_id, choice_or_score AS label
-            FROM decision_scores
-            WHERE rubric_id = ? AND question_id = ?
+            FROM (
+                SELECT arxiv_id, choice_or_score,
+                       ROW_NUMBER() OVER (
+                           PARTITION BY arxiv_id
+                           ORDER BY scored_at DESC, rubric_version DESC
+                       ) AS rn
+                FROM decision_scores
+                WHERE rubric_id = ? AND question_id = ?
+            )
+            WHERE rn = 1
             """,
-            [rubric_id.strip(), question_id.strip()],
+            [rubric_spec.strip(), question_id.strip()],
         )
 
     if dim == "modality":

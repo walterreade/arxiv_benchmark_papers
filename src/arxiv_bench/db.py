@@ -134,6 +134,15 @@ def init_db(db_path: Path, *, mounts_file: Path = Path("/proc/mounts")) -> sqlit
     return conn
 
 
+def optimize_database(conn: sqlite3.Connection, *, full_analyze: bool = False) -> None:
+    """Refresh SQLite query-planner statistics (`sqlite_stat1`) via ANALYZE or PRAGMA optimize."""
+    if full_analyze:
+        conn.execute("ANALYZE;")
+    else:
+        conn.execute("PRAGMA optimize;")
+    conn.commit()
+
+
 WriteCallable = Callable[[sqlite3.Cursor], None]
 
 
@@ -292,6 +301,7 @@ def backup_database(
 
         conn = connect_db(settings.db_path)
         try:
+            optimize_database(conn, full_analyze=False)
             escaped = str(snap_path).replace("'", "''")
             conn.execute(f"VACUUM INTO '{escaped}'")
         finally:

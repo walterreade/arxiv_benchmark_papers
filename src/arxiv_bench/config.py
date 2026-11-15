@@ -6,6 +6,7 @@ import hashlib
 import os
 import re
 from dataclasses import dataclass
+from datetime import datetime
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -15,8 +16,10 @@ DEFAULT_DB_PATH = Path.home() / ".local" / "share" / "arxiv_bench" / "benchmarks
 DEFAULT_STAGING_DIR = Path.home() / ".cache" / "arxiv_bench" / "staging"
 DEFAULT_LOG_DIR = Path.home() / ".local" / "state" / "arxiv_bench" / "logs"
 DEFAULT_NFS_BACKUP_DIR = DEFAULT_LEGACY_ROOT / "backups"
+ISO_DATE_GLOB = "[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]"
 
 _VERSION_RE = re.compile(r"v(\d+)$", re.IGNORECASE)
+_ISO_DATE_PREFIX_RE = re.compile(r"^(\d{4}-\d{2}-\d{2})(?:$|T|\s)")
 _MODERN_ID_RE = re.compile(r"^(\d{2})(\d{2})\.\d{4,5}$")
 _LEGACY_SLASH_RE = re.compile(r"^([a-z\-]+(?:\.[a-z\-]+)?)/(\d{2})(\d{2})\d{3}$", re.IGNORECASE)
 _LEGACY_UNDERSCORE_RE = re.compile(
@@ -179,3 +182,43 @@ def format_yymm_prefix(arxiv_id: str, published_date: str | None = None) -> str:
         if len(digits) >= 6:
             return digits[2:6]
     return "0000"
+
+
+def normalize_published_date(
+    raw_date: str | None,
+    *,
+    arxiv_id: str | None = None,
+    fallback_to_id: bool = False,
+) -> str | None:
+    """Validate and normalize a published date to strict ISO YYYY-MM-DD, or None.
+
+    Rejects placeholder strings such as 'N/A', 'Unknown', 'null', 'XXXX-XX-XX',
+    '2022-XX-XX', or invalid calendar dates. When ``fallback_to_id`` is True and
+    ``raw_date`` is invalid/missing, derives 'YYYY-MM-01' from the canonical arXiv ID.
+    """
+    if isinstance(raw_date, str):
+        cleaned = raw_date.strip()
+        m_iso = _ISO_DATE_PREFIX_RE.match(cleaned)
+        if m_iso:
+            candidate = m_iso.group(1)
+            try:
+                datetime.strptime(candidate, "%Y-%m-%d")
+                return candidate
+            except ValueError:
+                pass
+
+    if fallback_to_id and arxiv_id:
+        canonical, _ = canonicalize_arxiv_id(arxiv_id)
+        m_mod = _MODERN_ID_RE.match(canonical)
+        if m_mod:
+            yy, mm = int(m_mod.group(1)), int(m_mod.group(2))
+            if 1 <= mm <= 12:
+                return f"20{yy:02d}-{mm:02d}-01"
+        m_leg = _LEGACY_SLASH_RE.match(canonical)
+        if m_leg:
+            yy, mm = int(m_leg.group(2)), int(m_leg.group(3))
+            if 1 <= mm <= 12:
+                century = 19 if yy >= 90 else 20
+                return f"{century}{yy:02d}-{mm:02d}-01"
+
+    return None
