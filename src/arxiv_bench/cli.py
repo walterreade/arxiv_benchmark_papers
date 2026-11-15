@@ -707,26 +707,67 @@ def _cmd_triage(args: argparse.Namespace, settings: Settings, run_id: str) -> in
 
 def _cmd_extract(args: argparse.Namespace, settings: Settings, run_id: str) -> int:
     conn = init_db(settings.db_path)
-    try:
-        storage = PdfStorageManager(settings)
-        extractor = ExtractionClient(settings, storage)
-        if args.dry_run:
-            est = extractor.estimate_dry_run(conn, threshold=args.threshold)
+    storage = PdfStorageManager(settings)
+    extractor = ExtractionClient(
+        settings,
+        storage,
+        max_rpm=getattr(args, "max_rpm", None),
+        thinking_budget=getattr(args, "thinking_budget", None),
+    )
+    since = getattr(args, "since", None)
+    until = getattr(args, "until", None)
+    retry_failed = bool(getattr(args, "retry_failed", False))
+
+    if args.dry_run:
+        try:
+            est = extractor.estimate_dry_run(
+                conn,
+                threshold=args.threshold,
+                since=since,
+                until=until,
+                retry_failed=retry_failed,
+                limit=args.limit,
+            )
             print(json.dumps(est.__dict__, indent=2))
             return 0
+        finally:
+            conn.close()
+
+    _record_run_start(settings, run_id, "extract")
+    final_status = "completed"
+    payload: dict[str, Any] = {"run_id": run_id}
+    try:
         with SingleWriterQueue(settings.db_path) as writer:
             stats = extractor.run_pending(
                 conn,
                 writer,
                 threshold=args.threshold,
+                since=since,
+                until=until,
+                retry_failed=retry_failed,
                 limit=args.limit,
                 workers=args.workers,
+                chunk_size=max(1, int(getattr(args, "chunk_size", 250) or 250)),
+                max_cost_usd=getattr(args, "max_cost_usd", None),
+                progress_every=max(0, int(getattr(args, "progress_every", 50) or 0)),
                 run_id=run_id,
             )
-        print(json.dumps(stats.__dict__, indent=2))
-        return 0
+        if stats.stopped_reason == "daily_quota_exceeded":
+            final_status = "stopped_quota"
+        elif stats.stopped_reason == "max_cost_usd_reached":
+            final_status = "stopped_budget"
+        elif stats.stopped_reason is not None:
+            final_status = "stopped_guard"
+        payload = {"run_id": run_id, **stats.__dict__}
+    except BaseException:
+        final_status = "interrupted"
+        raise
     finally:
         conn.close()
+        _record_run_finish(settings, run_id, final_status, payload)
+
+    print(json.dumps(payload, indent=2))
+    return 0 if stats.stopped_reason is None else 2
 
 
 def _cmd_enrich(args: argparse.Namespace, settings: Settings, run_id: str) -> int:
@@ -1126,8 +1167,24 @@ def build_parser() -> argparse.ArgumentParser:
         "extract", help="Run Stage 2 unified interactive inline-PDF Gemini Flash extraction."
     )
     p_ext.add_argument("--threshold", type=float, default=0.50)
+    p_ext.add_argument("--since", help="Only extract papers with published_date >= YYYY-MM-DD.")
+    p_ext.add_argument("--until", help="Only extract papers with published_date <= YYYY-MM-DD.")
+    p_ext.add_argument(
+        "--retry-failed",
+        action="store_true",
+        help="Also retry papers whose prior Stage 2 status is 'failed'.",
+    )
     p_ext.add_argument("--limit", type=int)
     p_ext.add_argument("--workers", type=int, default=8)
+    p_ext.add_argument("--chunk-size", type=int, default=250)
+    p_ext.add_argument("--max-rpm", type=float)
+    p_ext.add_argument("--max-cost-usd", type=float)
+    p_ext.add_argument(
+        "--thinking-budget",
+        type=int,
+        help="Optional Gemini thinking token budget (e.g. 0 to disable thinking tokens).",
+    )
+    p_ext.add_argument("--progress-every", type=int, default=50)
     p_ext.add_argument("--dry-run", action="store_true")
     p_ext.add_argument("--run-id")
 

@@ -3,22 +3,31 @@
 from __future__ import annotations
 
 import json
+import logging
 import random
 import sqlite3
+import sys
+import threading
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import Any
 
 from google import genai
-from google.genai import errors as genai_errors
 from google.genai import types
 from pydantic import ValidationError
 
 from arxiv_bench.config import ISO_DATE_GLOB, Settings
 from arxiv_bench.db import SingleWriterQueue
+from arxiv_bench.decision_client import (
+    DailyQuotaExceededError,
+    _extract_status_code,
+    _is_retryable_network_error,
+    is_daily_quota_error,
+)
+from arxiv_bench.flash_triage import flash_cost_rates_per_1m
 from arxiv_bench.pdf_storage import (
     PdfStorageManager,
     WithdrawnPaperError,
@@ -38,6 +47,8 @@ INLINE_PDF_MAX_BYTES = 20 * 1024 * 1024  # 20 MB threshold
 EXTRACTION_SCHEMA_VERSION = "v2.1"
 FLASH_INPUT_COST_PER_1M = 0.30
 FLASH_OUTPUT_COST_PER_1M = 2.50
+DEFAULT_EXTRACT_TIMEOUT_MS = 180_000
+DEFAULT_FILES_API_POLL_TIMEOUT_S = 120.0
 
 STAGE2_EXTRACTION_PROMPT = f"""\
 You are an expert AI evaluation researcher extracting structured metadata from an arXiv paper PDF.
@@ -72,17 +83,100 @@ class DryRunEstimate:
     estimated_output_tokens: int
     estimated_cost_usd: float
     estimated_minutes_at_50_rpm: float
+    threshold: float = 0.50
+    since: str | None = None
+    until: str | None = None
+    retry_failed: bool = False
+    model: str = ""
 
 
 @dataclass
 class ExtractionStats:
-    """Counters for a Stage 2 extraction run."""
+    """Counters and telemetry for a Stage 2 extraction run."""
 
     attempted: int = 0
     succeeded: int = 0
     quarantined: int = 0
     withdrawn: int = 0
     failed: int = 0
+    total_input_tokens: int = 0
+    total_output_tokens: int = 0
+    estimated_cost_usd: float = 0.0
+    elapsed_seconds: float = 0.0
+    observed_rpm: float = 0.0
+    retries_429: int = 0
+    retries_5xx: int = 0
+    retries_network: int = 0
+    sources: dict[str, int] = field(default_factory=dict)
+    stopped_reason: str | None = None
+    sample_errors: list[str] = field(default_factory=list)
+
+
+class _RunStoppedSignal(Exception):
+    """Internal sentinel raised when a shared stop_event halts in-flight workers cleanly."""
+
+
+@dataclass
+class _PaperOutcome:
+    """Per-paper worker outcome aggregated by run_pending()."""
+
+    status: str  # "succeeded", "quarantined", "withdrawn", "failed", "quota", "skipped"
+    arxiv_id: str
+    source: str | None = None
+    input_tokens: int = 0
+    output_tokens: int = 0
+    estimated_cost_usd: float = 0.0
+    error_detail: str | None = None
+
+
+def _build_pending_query_parts(
+    *,
+    threshold: float,
+    since: str | None = None,
+    until: str | None = None,
+    retry_failed: bool = False,
+) -> tuple[str, list[Any]]:
+    """Return shared SQL FROM/WHERE fragment and params for Stage 2 pending selection."""
+    status_clause = (
+        "(s.status IS NULL OR s.status IN ('pending', 'failed') OR p.version_drift = 1)"
+        if retry_failed
+        else "(s.status IS NULL OR s.status = 'pending' OR p.version_drift = 1)"
+    )
+    where_parts = [
+        "p.is_withdrawn = 0",
+        status_clause,
+        """NOT EXISTS (
+            SELECT 1 FROM triage_assessments tc
+            WHERE tc.arxiv_id = t.arxiv_id
+              AND tc.paper_version = t.paper_version
+              AND tc.rubric_id = t.rubric_id
+              AND tc.rubric_version = t.rubric_version
+              AND tc.question_id = 'contribution_type'
+              AND tc.choice_or_bool IN ('uses_only', 'unrelated')
+        )""",
+    ]
+    params: list[Any] = [threshold]
+    if since or until:
+        where_parts.append(f"p.published_date GLOB '{ISO_DATE_GLOB}'")
+    if since:
+        where_parts.append("p.published_date >= ?")
+        params.append(since)
+    if until:
+        where_parts.append("p.published_date <= ?")
+        params.append(until)
+
+    from_where = f"""
+        FROM papers p
+        INNER JOIN triage_assessments t
+            ON t.arxiv_id = p.arxiv_id
+           AND t.rubric_id = 'ai_benchmark_triage'
+           AND t.question_id = 'is_benchmark_contribution'
+           AND t.probability >= ?
+        LEFT JOIN paper_stage_status s
+            ON s.arxiv_id = p.arxiv_id AND s.stage = 'extract'
+        WHERE {" AND ".join(where_parts)}
+    """
+    return from_where, params
 
 
 def resolve_and_upsert_entity(
@@ -319,19 +413,68 @@ class ExtractionClient:
         storage: PdfStorageManager,
         *,
         client: Any | None = None,
-        max_retries: int = 3,
+        max_retries: int = 5,
+        max_rpm: float | None = None,
+        timeout_ms: int = DEFAULT_EXTRACT_TIMEOUT_MS,
+        thinking_budget: int | None = None,
     ) -> None:
         self._settings = settings
         self._storage = storage
         self._client = client
+        self._thread_local = threading.local()
+        self._stats_lock = threading.Lock()
+        self._pace_lock = threading.Lock()
+        self._min_interval_s = (60.0 / max_rpm) if (max_rpm and max_rpm > 0) else 0.0
+        self._next_allowed_at = 0.0
+        self._cooldown_until = 0.0
         self._max_retries = max_retries
+        self._timeout_ms = timeout_ms
+        self._thinking_budget = thinking_budget
+        self._disable_thinking_config = False
+        self.retry_429_count = 0
+        self.retry_5xx_count = 0
+        self.retry_network_count = 0
+        self.daily_quota_error: str | None = None
 
     def _get_client(self) -> Any:
-        if self._client is None:
+        if self._client is not None:
+            return self._client
+        tls_client = getattr(self._thread_local, "client", None)
+        if tls_client is None:
             if not self._settings.google_api_key:
                 raise RuntimeError("GOOGLE_API_KEY is required for ExtractionClient.")
-            self._client = genai.Client(api_key=self._settings.google_api_key)
-        return self._client
+            tls_client = genai.Client(
+                api_key=self._settings.google_api_key,
+                http_options={"timeout": self._timeout_ms},
+            )
+            self._thread_local.client = tls_client
+        return tls_client
+
+    def _wait_for_slot(self, stop_event: threading.Event | None = None) -> bool:
+        while True:
+            if stop_event is not None and stop_event.is_set():
+                return False
+            with self._pace_lock:
+                now = time.monotonic()
+                wait_cd = self._cooldown_until - now
+                if wait_cd > 0:
+                    sleep_for = min(wait_cd, 2.0)
+                    is_cd = True
+                elif self._min_interval_s > 0:
+                    target = max(now, self._next_allowed_at)
+                    self._next_allowed_at = target + self._min_interval_s
+                    sleep_for = target - now
+                    is_cd = False
+                else:
+                    return True
+            if sleep_for > 0:
+                if stop_event is not None:
+                    if stop_event.wait(timeout=sleep_for):
+                        return False
+                else:
+                    time.sleep(sleep_for)
+            if not is_cd:
+                return True
 
     def sweep_orphan_files(self, *, max_age_hours: float = 2.0) -> int:
         """Delete stale Gemini Files API objects left behind by crashed >=20 MB uploads."""
@@ -365,6 +508,8 @@ class ExtractionClient:
         title: str = "",
         writer: SingleWriterQueue | None = None,
         run_id: str | None = None,
+        telemetry: dict[str, Any] | None = None,
+        stop_event: threading.Event | None = None,
     ) -> tuple[BenchmarkExtraction | None, str | None]:
         """Run single-pass native multimodal Gemini Flash extraction on one staged PDF.
 
@@ -375,9 +520,22 @@ class ExtractionClient:
         size_bytes = pdf_path.stat().st_size
         prompt = f"{STAGE2_EXTRACTION_PROMPT}\nPaper Title: {title}\nArXiv ID: {arxiv_id}"
         last_raw: str | None = None
+        in_rate, out_rate = flash_cost_rates_per_1m(self._settings.flash_model)
 
         for attempt in range(self._max_retries):
+            if self.daily_quota_error is not None:
+                raise DailyQuotaExceededError(self.daily_quota_error)
+            if not self._wait_for_slot(stop_event=stop_event):
+                raise _RunStoppedSignal()
+            if self.daily_quota_error is not None:
+                raise DailyQuotaExceededError(self.daily_quota_error)
+
             uploaded_file = None
+            endpoint = (
+                "generate_content_inline_pdf"
+                if size_bytes < INLINE_PDF_MAX_BYTES
+                else "generate_content_files_api"
+            )
             t0 = time.monotonic()
             try:
                 if size_bytes < INLINE_PDF_MAX_BYTES:
@@ -386,32 +544,69 @@ class ExtractionClient:
                         mime_type="application/pdf",
                     )
                     contents: list[Any] = [pdf_part, prompt]
-                    endpoint = "generate_content_inline_pdf"
                 else:
                     uploaded_file = sdk.files.upload(file=str(pdf_path))
+                    poll_deadline = time.monotonic() + DEFAULT_FILES_API_POLL_TIMEOUT_S
                     while (
                         getattr(getattr(uploaded_file, "state", None), "name", "") == "PROCESSING"
                     ):
+                        if time.monotonic() >= poll_deadline:
+                            raise TimeoutError(
+                                f"Gemini Files API processing timed out for {arxiv_id}"
+                            )
+                        if stop_event is not None and stop_event.is_set():
+                            raise _RunStoppedSignal()
                         time.sleep(1.0)
                         uploaded_file = sdk.files.get(name=uploaded_file.name)
+                    if getattr(getattr(uploaded_file, "state", None), "name", "") == "FAILED":
+                        raise RuntimeError(f"Gemini Files API failed processing {arxiv_id}")
                     contents = [uploaded_file, prompt]
-                    endpoint = "generate_content_files_api"
 
-                response = sdk.models.generate_content(
-                    model=self._settings.flash_model,
-                    contents=contents,
-                    config=types.GenerateContentConfig(
-                        response_mime_type="application/json",
-                        response_schema=BenchmarkExtraction,
-                    ),
+                thinking_cfg = (
+                    types.ThinkingConfig(thinking_budget=self._thinking_budget)
+                    if (self._thinking_budget is not None and not self._disable_thinking_config)
+                    else None
                 )
+                gen_cfg = types.GenerateContentConfig(
+                    response_mime_type="application/json",
+                    response_schema=BenchmarkExtraction,
+                    thinking_config=thinking_cfg,
+                )
+                try:
+                    response = sdk.models.generate_content(
+                        model=self._settings.flash_model,
+                        contents=contents,
+                        config=gen_cfg,
+                    )
+                except Exception as exc:  # noqa: BLE001
+                    if thinking_cfg is not None and "thinking" in str(exc).lower():
+                        self._disable_thinking_config = True
+                        response = sdk.models.generate_content(
+                            model=self._settings.flash_model,
+                            contents=contents,
+                            config=types.GenerateContentConfig(
+                                response_mime_type="application/json",
+                                response_schema=BenchmarkExtraction,
+                            ),
+                        )
+                    else:
+                        raise
                 latency_ms = int((time.monotonic() - t0) * 1000)
                 usage = getattr(response, "usage_metadata", None)
                 in_tok = int(getattr(usage, "prompt_token_count", 0) or 0)
-                out_tok = int(getattr(usage, "candidates_token_count", 0) or 0)
-                cost = (in_tok / 1_000_000.0) * FLASH_INPUT_COST_PER_1M + (
-                    out_tok / 1_000_000.0
-                ) * FLASH_OUTPUT_COST_PER_1M
+                cand_tok = int(getattr(usage, "candidates_token_count", 0) or 0)
+                thoughts_tok = int(getattr(usage, "thoughts_token_count", 0) or 0)
+                out_tok = cand_tok + thoughts_tok
+                cost = (in_tok / 1_000_000.0) * in_rate + (out_tok / 1_000_000.0) * out_rate
+
+                if telemetry is not None:
+                    telemetry["input_tokens"] = int(telemetry.get("input_tokens", 0)) + in_tok
+                    telemetry["output_tokens"] = int(telemetry.get("output_tokens", 0)) + out_tok
+                    telemetry["estimated_cost_usd"] = (
+                        float(telemetry.get("estimated_cost_usd", 0.0)) + cost
+                    )
+                    telemetry["endpoint"] = endpoint
+                    telemetry["latency_ms"] = latency_ms
 
                 if writer is not None:
                     writer.submit_sql(
@@ -439,16 +634,62 @@ class ExtractionClient:
                 last_raw = raw_text
                 parsed = BenchmarkExtraction.model_validate_json(raw_text)
                 return parsed, None
+            except _RunStoppedSignal:
+                raise
             except (ValidationError, json.JSONDecodeError) as exc:
                 last_raw = last_raw or str(exc)
                 if attempt + 1 < self._max_retries:
-                    time.sleep(0.5 * (attempt + 1))
+                    if stop_event is not None:
+                        if stop_event.wait(timeout=0.5 * (attempt + 1)):
+                            raise _RunStoppedSignal() from None
+                    else:
+                        time.sleep(0.5 * (attempt + 1))
                     continue
                 return None, last_raw[:4000]
-            except genai_errors.APIError as exc:
-                status = getattr(exc, "code", 500) or 500
-                if status in (429, 500, 502, 503, 504) and attempt + 1 < self._max_retries:
-                    time.sleep((2**attempt) + random.uniform(0.1, 0.5))
+            except Exception as exc:  # noqa: BLE001
+                status = _extract_status_code(exc)
+                latency_ms = int((time.monotonic() - t0) * 1000)
+                if writer is not None:
+                    writer.submit_sql(
+                        """
+                        INSERT INTO api_call_logs (
+                            run_id, stage, endpoint, model, arxiv_id,
+                            prompt_tokens, output_tokens, estimated_cost_usd,
+                            latency_ms, http_status, created_at
+                        ) VALUES (?, 'extract', ?, ?, ?, 0, 0, 0.0, ?, ?, ?)
+                        """,
+                        (
+                            run_id,
+                            endpoint,
+                            self._settings.flash_model,
+                            arxiv_id,
+                            latency_ms,
+                            status,
+                            datetime.now(UTC).isoformat(),
+                        ),
+                    )
+                if is_daily_quota_error(exc, status):
+                    msg = str(exc)[:300]
+                    with self._stats_lock:
+                        self.daily_quota_error = msg
+                    raise DailyQuotaExceededError(msg) from exc
+                if _is_retryable_network_error(exc, status) and attempt + 1 < self._max_retries:
+                    with self._stats_lock:
+                        if status == 429:
+                            self.retry_429_count += 1
+                        elif status >= 500:
+                            self.retry_5xx_count += 1
+                        else:
+                            self.retry_network_count += 1
+                    if status == 429:
+                        with self._pace_lock:
+                            self._cooldown_until = max(self._cooldown_until, time.monotonic() + 2.5)
+                    backoff = min(35.0, 2.0 * (2**attempt)) + random.uniform(0.3, 1.5)
+                    if stop_event is not None:
+                        if stop_event.wait(timeout=backoff):
+                            raise _RunStoppedSignal() from None
+                    else:
+                        time.sleep(backoff)
                     continue
                 raise
             finally:
@@ -465,46 +706,40 @@ class ExtractionClient:
         conn: sqlite3.Connection,
         *,
         threshold: float = 0.50,
+        since: str | None = None,
+        until: str | None = None,
+        retry_failed: bool = False,
+        limit: int | None = None,
     ) -> DryRunEstimate:
         """Preview pending Stage 2 volume, tokens, and USD cost without API calls."""
+        from_where, params = _build_pending_query_parts(
+            threshold=threshold,
+            since=since,
+            until=until,
+            retry_failed=retry_failed,
+        )
         row = conn.execute(
-            """
-            SELECT COUNT(DISTINCT p.arxiv_id) AS cnt
-            FROM papers p
-            INNER JOIN triage_assessments t
-                ON t.arxiv_id = p.arxiv_id
-               AND t.rubric_id = 'ai_benchmark_triage'
-               AND t.question_id = 'is_benchmark_contribution'
-               AND t.probability >= ?
-            LEFT JOIN paper_stage_status s
-                ON s.arxiv_id = p.arxiv_id AND s.stage = 'extract'
-            WHERE p.is_withdrawn = 0
-              AND (s.status IS NULL OR s.status = 'pending' OR p.version_drift = 1)
-              AND NOT EXISTS (
-                  SELECT 1 FROM triage_assessments tc
-                  WHERE tc.arxiv_id = t.arxiv_id
-                    AND tc.paper_version = t.paper_version
-                    AND tc.rubric_id = t.rubric_id
-                    AND tc.rubric_version = t.rubric_version
-                    AND tc.question_id = 'contribution_type'
-                    AND tc.choice_or_bool IN ('uses_only', 'unrelated')
-              )
-            """,
-            (threshold,),
+            f"SELECT COUNT(DISTINCT p.arxiv_id) AS cnt {from_where}", params
         ).fetchone()
         pending = int(row["cnt"]) if row else 0
+        if limit is not None:
+            pending = min(pending, limit)
         # Observed Gemini Flash multimodal PDF averages (~13.5k input, ~1.1k output tokens)
         in_tok = pending * 13_500
         out_tok = pending * 1_100
-        cost = (in_tok / 1_000_000.0) * FLASH_INPUT_COST_PER_1M + (
-            out_tok / 1_000_000.0
-        ) * FLASH_OUTPUT_COST_PER_1M
+        in_rate, out_rate = flash_cost_rates_per_1m(self._settings.flash_model)
+        cost = (in_tok / 1_000_000.0) * in_rate + (out_tok / 1_000_000.0) * out_rate
         return DryRunEstimate(
             pending_papers=pending,
             estimated_input_tokens=in_tok,
             estimated_output_tokens=out_tok,
             estimated_cost_usd=round(cost, 2),
             estimated_minutes_at_50_rpm=round(pending / 50.0, 1),
+            threshold=threshold,
+            since=since,
+            until=until,
+            retry_failed=retry_failed,
+            model=self._settings.flash_model,
         )
 
     def run_pending(
@@ -513,56 +748,92 @@ class ExtractionClient:
         writer: SingleWriterQueue,
         *,
         threshold: float = 0.50,
+        since: str | None = None,
+        until: str | None = None,
+        retry_failed: bool = False,
         limit: int | None = None,
         workers: int = 8,
+        chunk_size: int = 250,
+        max_cost_usd: float | None = None,
+        progress_every: int = 50,
+        max_consecutive_errors: int = 25,
         run_id: str | None = None,
     ) -> ExtractionStats:
         """Execute unified interactive inline PDF workers across pending qualifying papers."""
+        logger = logging.getLogger("arxiv_bench")
         self.sweep_orphan_files()
+        from_where, params = _build_pending_query_parts(
+            threshold=threshold,
+            since=since,
+            until=until,
+            retry_failed=retry_failed,
+        )
         sql = f"""
             SELECT DISTINCT p.arxiv_id, p.title, p.published_date, p.latest_version_seen, p.gcs_pdf_uri
-            FROM papers p
-            INNER JOIN triage_assessments t
-                ON t.arxiv_id = p.arxiv_id
-               AND t.rubric_id = 'ai_benchmark_triage'
-               AND t.question_id = 'is_benchmark_contribution'
-               AND t.probability >= ?
-            LEFT JOIN paper_stage_status s
-                ON s.arxiv_id = p.arxiv_id AND s.stage = 'extract'
-            WHERE p.is_withdrawn = 0
-              AND (s.status IS NULL OR s.status = 'pending' OR p.version_drift = 1)
-              AND NOT EXISTS (
-                  SELECT 1 FROM triage_assessments tc
-                  WHERE tc.arxiv_id = t.arxiv_id
-                    AND tc.paper_version = t.paper_version
-                    AND tc.rubric_id = t.rubric_id
-                    AND tc.rubric_version = t.rubric_version
-                    AND tc.question_id = 'contribution_type'
-                    AND tc.choice_or_bool IN ('uses_only', 'unrelated')
-              )
+            {from_where}
             ORDER BY
                 CASE WHEN p.published_date GLOB '{ISO_DATE_GLOB}' THEN p.published_date ELSE '' END DESC,
                 p.arxiv_id DESC
         """
-        params: list[Any] = [threshold]
         if limit is not None:
             sql += " LIMIT ?"
             params.append(limit)
         rows = conn.execute(sql, params).fetchall()
         stats = ExtractionStats()
+        total_planned = len(rows)
+        if not rows:
+            return stats
 
-        def _process_one(row: sqlite3.Row) -> str:
+        t_start = time.monotonic()
+        stop_event = threading.Event()
+        effective_chunk = max(1, chunk_size)
+        consecutive_errors = 0
+        last_progress_at = 0
+
+        def _emit_progress() -> None:
+            elapsed_s = max(1e-6, time.monotonic() - t_start)
+            rpm = stats.succeeded / (elapsed_s / 60.0)
+            payload = {
+                "event": "extract_progress",
+                "run_id": run_id,
+                "attempted": stats.attempted,
+                "total_planned": total_planned,
+                "succeeded": stats.succeeded,
+                "quarantined": stats.quarantined,
+                "withdrawn": stats.withdrawn,
+                "failed": stats.failed,
+                "retries_429": self.retry_429_count,
+                "retries_5xx": self.retry_5xx_count,
+                "retries_network": self.retry_network_count,
+                "elapsed_s": round(elapsed_s, 1),
+                "rpm": round(rpm, 1),
+                "est_cost_usd": round(stats.estimated_cost_usd, 4),
+                "sources": dict(stats.sources),
+            }
+            logger.info(json.dumps(payload))
+            print(json.dumps(payload), file=sys.stderr, flush=True)
+
+        def _process_one(row: sqlite3.Row) -> _PaperOutcome:
             arxiv_id = str(row["arxiv_id"])
+            if stop_event.is_set() or self.daily_quota_error is not None:
+                return _PaperOutcome(status="skipped", arxiv_id=arxiv_id)
+
             title = str(row["title"] or "")
             pub_date = row["published_date"]
             ver = int(row["latest_version_seen"] or 1)
             staged = None
+            source_name: str | None = None
+            telemetry: dict[str, Any] = {}
             try:
                 staged = self._storage.stage_pdf(
                     arxiv_id,
                     gcs_pdf_uri=row["gcs_pdf_uri"],
                     version=ver,
                 )
+                source_name = staged.source
+                if stop_event.is_set() or self.daily_quota_error is not None:
+                    return _PaperOutcome(status="skipped", arxiv_id=arxiv_id, source=source_name)
+
                 local_text = extract_local_text(staged.local_path)
                 extraction, raw_err = self.extract_from_pdf(
                     staged.local_path,
@@ -570,9 +841,15 @@ class ExtractionClient:
                     title=title,
                     writer=writer,
                     run_id=run_id,
+                    telemetry=telemetry,
+                    stop_event=stop_event,
                 )
                 archive = self._storage.archive_and_cleanup(staged, published_date=pub_date)
                 staged = None  # already cleaned up by archive_and_cleanup
+
+                in_tok = int(telemetry.get("input_tokens", 0))
+                out_tok = int(telemetry.get("output_tokens", 0))
+                cost_usd = float(telemetry.get("estimated_cost_usd", 0.0))
 
                 if extraction is None:
                     now_iso = datetime.now(UTC).isoformat()
@@ -592,7 +869,14 @@ class ExtractionClient:
                         """,
                         (arxiv_id, raw_err, run_id, now_iso),
                     )
-                    return "quarantined"
+                    return _PaperOutcome(
+                        status="quarantined",
+                        arxiv_id=arxiv_id,
+                        source=source_name,
+                        input_tokens=in_tok,
+                        output_tokens=out_tok,
+                        estimated_cost_usd=cost_usd,
+                    )
 
                 writer.submit(
                     lambda cur: persist_extraction(
@@ -609,7 +893,34 @@ class ExtractionClient:
                         run_id=run_id,
                     )
                 )
-                return "succeeded"
+                return _PaperOutcome(
+                    status="succeeded",
+                    arxiv_id=arxiv_id,
+                    source=source_name,
+                    input_tokens=in_tok,
+                    output_tokens=out_tok,
+                    estimated_cost_usd=cost_usd,
+                )
+            except _RunStoppedSignal:
+                return _PaperOutcome(
+                    status="skipped",
+                    arxiv_id=arxiv_id,
+                    source=source_name,
+                    input_tokens=int(telemetry.get("input_tokens", 0)),
+                    output_tokens=int(telemetry.get("output_tokens", 0)),
+                    estimated_cost_usd=float(telemetry.get("estimated_cost_usd", 0.0)),
+                )
+            except DailyQuotaExceededError as exc:
+                stop_event.set()
+                return _PaperOutcome(
+                    status="quota",
+                    arxiv_id=arxiv_id,
+                    source=source_name,
+                    input_tokens=int(telemetry.get("input_tokens", 0)),
+                    output_tokens=int(telemetry.get("output_tokens", 0)),
+                    estimated_cost_usd=float(telemetry.get("estimated_cost_usd", 0.0)),
+                    error_detail=f"{arxiv_id}: DailyQuotaExceededError: {str(exc)[:300]}",
+                )
             except WithdrawnPaperError as exc:
                 now_iso = datetime.now(UTC).isoformat()
                 writer.submit_sql(
@@ -628,43 +939,134 @@ class ExtractionClient:
                     """,
                     (arxiv_id, str(exc)[:500], run_id, now_iso),
                 )
-                return "withdrawn"
+                return _PaperOutcome(
+                    status="withdrawn",
+                    arxiv_id=arxiv_id,
+                    source=source_name,
+                )
             except Exception as exc:  # noqa: BLE001
                 now_iso = datetime.now(UTC).isoformat()
+                http_status = _extract_status_code(exc)
+                err_code = f"API_{http_status}" if http_status > 0 else type(exc).__name__[:40]
+                err_detail = f"{type(exc).__name__}: {str(exc)[:900]}"
                 writer.submit_sql(
                     """
                     INSERT INTO paper_stage_status (
                         arxiv_id, stage, status, attempt_count,
                         last_error_code, last_error_detail, run_id, updated_at
-                    ) VALUES (?, 'extract', 'failed', 1, 'RUNTIME_ERROR', ?, ?, ?)
+                    ) VALUES (?, 'extract', 'failed', 1, ?, ?, ?, ?)
                     ON CONFLICT(arxiv_id, stage) DO UPDATE SET
                         status = 'failed',
                         attempt_count = paper_stage_status.attempt_count + 1,
-                        last_error_code = 'RUNTIME_ERROR',
+                        last_error_code = excluded.last_error_code,
                         last_error_detail = excluded.last_error_detail,
                         run_id = excluded.run_id,
                         updated_at = excluded.updated_at
                     """,
-                    (arxiv_id, str(exc)[:1000], run_id, now_iso),
+                    (arxiv_id, err_code, err_detail, run_id, now_iso),
                 )
-                return "failed"
+                return _PaperOutcome(
+                    status="failed",
+                    arxiv_id=arxiv_id,
+                    source=source_name,
+                    input_tokens=int(telemetry.get("input_tokens", 0)),
+                    output_tokens=int(telemetry.get("output_tokens", 0)),
+                    estimated_cost_usd=float(telemetry.get("estimated_cost_usd", 0.0)),
+                    error_detail=f"{arxiv_id}: {err_detail[:300]}",
+                )
             finally:
                 if staged is not None:
                     self._storage.cleanup_staged(staged)
 
         with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
-            futs = [pool.submit(_process_one, r) for r in rows]
-            for fut in as_completed(futs):
-                stats.attempted += 1
-                outcome = fut.result()
-                if outcome == "succeeded":
-                    stats.succeeded += 1
-                elif outcome == "quarantined":
-                    stats.quarantined += 1
-                elif outcome == "withdrawn":
-                    stats.withdrawn += 1
-                else:
-                    stats.failed += 1
+            for chunk_start in range(0, total_planned, effective_chunk):
+                if stop_event.is_set():
+                    break
+                chunk = rows[chunk_start : chunk_start + effective_chunk]
+                futs = [pool.submit(_process_one, r) for r in chunk]
+                for fut in as_completed(futs):
+                    if fut.cancelled():
+                        continue
+                    outcome = fut.result()
+                    stats.total_input_tokens += outcome.input_tokens
+                    stats.total_output_tokens += outcome.output_tokens
+                    stats.estimated_cost_usd += outcome.estimated_cost_usd
+                    if outcome.status == "skipped":
+                        continue
+                    if outcome.status == "quota":
+                        if (
+                            outcome.error_detail
+                            and len(stats.sample_errors) < 10
+                            and outcome.error_detail not in stats.sample_errors
+                        ):
+                            stats.sample_errors.append(outcome.error_detail)
+                        if stats.stopped_reason is None:
+                            stats.stopped_reason = "daily_quota_exceeded"
+                        stop_event.set()
+                        for pending_f in futs:
+                            pending_f.cancel()
+                        continue
 
-        writer.flush()
+                    stats.attempted += 1
+                    if outcome.source:
+                        stats.sources[outcome.source] = stats.sources.get(outcome.source, 0) + 1
+
+                    if outcome.status == "succeeded":
+                        stats.succeeded += 1
+                        consecutive_errors = 0
+                    elif outcome.status == "quarantined":
+                        stats.quarantined += 1
+                        consecutive_errors = 0
+                    elif outcome.status == "withdrawn":
+                        stats.withdrawn += 1
+                        consecutive_errors = 0
+                    else:
+                        stats.failed += 1
+                        consecutive_errors += 1
+                        if (
+                            outcome.error_detail
+                            and len(stats.sample_errors) < 10
+                            and outcome.error_detail not in stats.sample_errors
+                        ):
+                            stats.sample_errors.append(outcome.error_detail)
+
+                    if stats.stopped_reason is None:
+                        if max_cost_usd is not None and stats.estimated_cost_usd >= max_cost_usd:
+                            stats.stopped_reason = "max_cost_usd_reached"
+                            stop_event.set()
+                        elif (
+                            max_consecutive_errors > 0
+                            and consecutive_errors >= max_consecutive_errors
+                        ):
+                            stats.stopped_reason = "consecutive_errors_guard"
+                            stop_event.set()
+                        elif stats.attempted >= 100 and (stats.failed / stats.attempted) > 0.15:
+                            stats.stopped_reason = "failure_rate_exceeded_15pct"
+                            stop_event.set()
+                        if stop_event.is_set():
+                            for pending_f in futs:
+                                pending_f.cancel()
+
+                    if (
+                        progress_every > 0
+                        and stats.attempted > 0
+                        and (stats.attempted - last_progress_at) >= progress_every
+                    ):
+                        _emit_progress()
+                        last_progress_at = stats.attempted
+
+                writer.flush()
+                if stats.attempted > last_progress_at and progress_every > 0:
+                    _emit_progress()
+                    last_progress_at = stats.attempted
+                if stop_event.is_set():
+                    break
+
+        elapsed_s = max(1e-6, time.monotonic() - t_start)
+        stats.estimated_cost_usd = round(stats.estimated_cost_usd, 6)
+        stats.elapsed_seconds = round(elapsed_s, 2)
+        stats.observed_rpm = round(stats.succeeded / (elapsed_s / 60.0), 2)
+        stats.retries_429 = self.retry_429_count
+        stats.retries_5xx = self.retry_5xx_count
+        stats.retries_network = self.retry_network_count
         return stats

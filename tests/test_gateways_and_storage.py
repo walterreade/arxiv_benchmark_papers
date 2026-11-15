@@ -30,7 +30,7 @@ from arxiv_bench.pdf_storage import (
 )
 from arxiv_bench.query import merge_entity_aliases
 from arxiv_bench.s2_client import SemanticScholarClient
-from arxiv_bench.schemas import BenchmarkExtraction, load_rubric_yaml
+from arxiv_bench.schemas import BenchmarkExtraction, EvidenceCard, load_rubric_yaml
 from tests.conftest import FakeGCSBucket, FakeGCSClient, seed_paper
 
 
@@ -464,3 +464,226 @@ def test_controlled_modalities_domains_and_extract_queue_filter(
     extractor = ExtractionClient(tmp_settings, storage)
     dry = extractor.estimate_dry_run(db_conn, threshold=0.50)
     assert dry.pending_papers == 1
+
+
+def test_pdf_storage_staged_bytes_race_and_transient_403(
+    tmp_settings: Settings,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    import requests
+
+    tmp_settings.staging_dir.mkdir(parents=True, exist_ok=True)
+    f_keep = tmp_settings.staging_dir / "keep.pdf"
+    f_gone = tmp_settings.staging_dir / "vanishing.pdf"
+    f_keep.write_bytes(b"a" * 512)
+    f_gone.write_bytes(b"b" * 256)
+
+    orig_stat = Path.stat
+
+    def _racy_stat(self: Path, *args: Any, **kwargs: Any) -> Any:
+        if self.name == "vanishing.pdf":
+            raise FileNotFoundError("deleted by another worker")
+        return orig_stat(self, *args, **kwargs)
+
+    monkeypatch.setattr(Path, "stat", _racy_stat)
+    mgr = PdfStorageManager(tmp_settings, gcs_client=FakeGCSClient(), export_delay_seconds=0.0)
+    assert mgr.staged_bytes() == 512
+
+    # HTTP 403 on export.arxiv.org must be treated as transient RequestException, NOT WithdrawnPaperError
+    class _ForbiddenSession:
+        def get(self, *args: Any, **kwargs: Any) -> Any:
+            resp = requests.Response()
+            resp.status_code = 403
+            resp.url = "https://export.arxiv.org/pdf/2606.55555.pdf"
+            return resp
+
+    mgr_403 = PdfStorageManager(
+        tmp_settings,
+        gcs_client=FakeGCSClient(),
+        http_session=_ForbiddenSession(),  # type: ignore[arg-type]
+        export_delay_seconds=0.0,
+    )
+    with pytest.raises(requests.HTTPError):
+        mgr_403.stage_pdf("2606.55555")
+
+    # Rate-limit HTML 200 must also be transient, NOT WithdrawnPaperError
+    class _RateLimitHtmlSession:
+        def get(self, *args: Any, **kwargs: Any) -> Any:
+            return SimpleNamespace(
+                status_code=200,
+                headers={"Content-Type": "text/html"},
+                content=b"<html>Too Many Requests - Rate Limit Exceeded</html>",
+                raise_for_status=lambda: None,
+            )
+
+    mgr_rl = PdfStorageManager(
+        tmp_settings,
+        gcs_client=FakeGCSClient(),
+        http_session=_RateLimitHtmlSession(),  # type: ignore[arg-type]
+        export_delay_seconds=0.0,
+    )
+    with pytest.raises(requests.HTTPError):
+        mgr_rl.stage_pdf("2606.55556")
+
+
+def test_extract_backfill_controls_date_range_retry_failed_budget_and_quota(
+    tmp_settings: Settings,
+    db_conn: sqlite3.Connection,
+    sample_pdf_path: Path,
+) -> None:
+    pdf_bytes = sample_pdf_path.read_bytes()
+    gcs = FakeGCSClient()
+    papers_meta = [
+        ("2305.00001", "2023-05-10"),
+        ("2403.00001", "2024-03-10"),
+        ("2504.00001", "2025-04-10"),
+        ("2505.00001", "2025-05-10"),
+        ("2606.00001", "2026-06-10"),
+    ]
+    for aid, pdate in papers_meta:
+        uri = f"gs://inversion/pdf/{aid[:4]}/{aid}.pdf"
+        seed_paper(db_conn, aid, published_date=pdate, gcs_pdf_uri=uri)
+        gcs.bucket("inversion").store[f"pdf/{aid[:4]}/{aid}.pdf"] = pdf_bytes
+        db_conn.execute(
+            """
+            INSERT INTO triage_assessments (
+                arxiv_id, paper_version, rubric_id, rubric_version, question_id,
+                model_id, choice_or_bool, probability, assessed_at
+            ) VALUES (?, 1, 'ai_benchmark_triage', 'v2.0', 'is_benchmark_contribution',
+                      'models/gemini-3.8-flash', 'true', 0.85, '2026-11-14T00:00:00Z')
+            """,
+            (aid,),
+        )
+    db_conn.commit()
+
+    valid_payload = BenchmarkExtraction(
+        contribution_type="introduces",
+        modalities=["text-llm"],
+        domains=["nlp-language"],
+        evidence_card=EvidenceCard(task_design="Task design."),
+    ).model_dump_json()
+
+    mode: dict[str, Any] = {"fail_ids": {"2504.00001"}, "quota_ids": set()}
+
+    class _FakeFiles:
+        def list(self) -> list[Any]:
+            return []
+
+    class _FakeModels:
+        def generate_content(self, **kwargs: Any) -> Any:
+            prompt_text = str(kwargs["contents"][-1])
+            for qid in mode["quota_ids"]:
+                if qid in prompt_text:
+                    err = RuntimeError("429 RESOURCE_EXHAUSTED: GenerateRequestsPerDayPerProject")
+                    err.status_code = 429  # type: ignore[attr-defined]
+                    raise err
+            for fid in mode["fail_ids"]:
+                if fid in prompt_text:
+                    raise RuntimeError("transient backend failure")
+            return SimpleNamespace(
+                text=valid_payload,
+                usage_metadata=SimpleNamespace(
+                    prompt_token_count=20_000,
+                    candidates_token_count=1_000,
+                    thoughts_token_count=0,
+                ),
+            )
+
+    fake_sdk = SimpleNamespace(files=_FakeFiles(), models=_FakeModels())
+    storage = PdfStorageManager(tmp_settings, gcs_client=gcs, export_delay_seconds=0.0)
+    extractor = ExtractionClient(tmp_settings, storage, client=fake_sdk, max_retries=1)
+
+    # 1. --since / --until filters accurately in estimate_dry_run
+    dry = extractor.estimate_dry_run(
+        db_conn, threshold=0.70, since="2024-01-01", until="2025-12-31"
+    )
+    assert dry.pending_papers == 3  # 2403, 2504, 2505
+
+    # 2. --max-cost-usd stops cleanly after the first paper (cost ~$0.0085 >= $0.005)
+    with SingleWriterQueue(tmp_settings.db_path) as writer:
+        st_budget = extractor.run_pending(
+            db_conn,
+            writer,
+            threshold=0.70,
+            since="2024-01-01",
+            until="2025-12-31",
+            workers=1,
+            chunk_size=2,
+            max_cost_usd=0.005,
+            progress_every=0,
+            run_id="run-budget",
+        )
+    assert st_budget.attempted == 1
+    assert st_budget.succeeded == 1
+    assert st_budget.stopped_reason == "max_cost_usd_reached"
+    assert st_budget.total_input_tokens == 20_000
+    assert st_budget.estimated_cost_usd > 0.005
+
+    # 3. Remaining two in 2024-2025: 2504 fails, 2403 succeeds
+    with SingleWriterQueue(tmp_settings.db_path) as writer:
+        st_run2 = extractor.run_pending(
+            db_conn,
+            writer,
+            threshold=0.70,
+            since="2024-01-01",
+            until="2025-12-31",
+            workers=1,
+            chunk_size=2,
+            progress_every=0,
+            run_id="run-2",
+        )
+    assert st_run2.attempted == 2
+    assert st_run2.succeeded == 1
+    assert st_run2.failed == 1
+    assert st_run2.stopped_reason is None
+
+    # Normal dry-run shows 0 pending in 2024-2025, while retry_failed shows 1
+    assert (
+        extractor.estimate_dry_run(
+            db_conn, threshold=0.70, since="2024-01-01", until="2025-12-31"
+        ).pending_papers
+        == 0
+    )
+    assert (
+        extractor.estimate_dry_run(
+            db_conn, threshold=0.70, since="2024-01-01", until="2025-12-31", retry_failed=True
+        ).pending_papers
+        == 1
+    )
+
+    # 4. --retry-failed recovers 2504 once transient error clears
+    mode["fail_ids"] = set()
+    with SingleWriterQueue(tmp_settings.db_path) as writer:
+        st_retry = extractor.run_pending(
+            db_conn,
+            writer,
+            threshold=0.70,
+            since="2024-01-01",
+            until="2025-12-31",
+            retry_failed=True,
+            workers=1,
+            progress_every=0,
+            run_id="run-retry",
+        )
+    assert st_retry.attempted == 1
+    assert st_retry.succeeded == 1
+    assert st_retry.failed == 0
+
+    # 5. Daily quota 429 on 2606 halts cleanly without marking 2606 as failed
+    mode["quota_ids"] = {"2606.00001"}
+    with SingleWriterQueue(tmp_settings.db_path) as writer:
+        st_quota = extractor.run_pending(
+            db_conn,
+            writer,
+            threshold=0.70,
+            since="2026-01-01",
+            workers=1,
+            progress_every=0,
+            run_id="run-quota",
+        )
+    assert st_quota.stopped_reason == "daily_quota_exceeded"
+    assert st_quota.failed == 0
+    stage_row = db_conn.execute(
+        "SELECT status FROM paper_stage_status WHERE arxiv_id = '2606.00001' AND stage = 'extract'"
+    ).fetchone()
+    assert stage_row is None

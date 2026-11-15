@@ -740,3 +740,112 @@ def test_cli_triage_default_flash_keyset_pagination_and_null_dates(
     assert out["succeeded_decisions"] == 0
     assert set(seen) == {"2611.50000", "2611.50001", "2611.50002", "2611.50003", "2611.50099"}
     assert len(seen) == 5
+
+
+def test_cli_extract_dry_run_filters_and_pipeline_runs(
+    tmp_settings: Settings,
+    db_conn: sqlite3.Connection,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    from arxiv_bench.extract_client import ExtractionStats
+
+    for aid, pdate in (("2301.00001", "2023-01-15"), ("2502.00001", "2025-02-15")):
+        seed_paper(db_conn, aid, published_date=pdate)
+        db_conn.execute(
+            """
+            INSERT INTO triage_assessments (
+                arxiv_id, paper_version, rubric_id, rubric_version, question_id,
+                model_id, choice_or_bool, probability, assessed_at
+            ) VALUES (?, 1, 'ai_benchmark_triage', 'v2.0', 'is_benchmark_contribution',
+                      'models/gemini-3.8-flash', 'true', 0.88, '2026-11-14T00:00:00Z')
+            """,
+            (aid,),
+        )
+    db_conn.commit()
+    db_conn.close()
+
+    db_arg = str(tmp_settings.db_path)
+
+    # Dry run respects --since and --threshold
+    rc_dry = main(
+        [
+            "--db-path",
+            db_arg,
+            "extract",
+            "--threshold",
+            "0.70",
+            "--since",
+            "2024-01-01",
+            "--dry-run",
+        ]
+    )
+    assert rc_dry == 0
+    dry_out = json.loads(capsys.readouterr().out)
+    assert dry_out["pending_papers"] == 1
+    assert dry_out["since"] == "2024-01-01"
+
+    # Mocked ExtractionClient returning stopped_reason='max_cost_usd_reached' -> exit 2 + stopped_budget
+    captured_kwargs: list[dict[str, Any]] = []
+
+    class _StubExtractClient:
+        def __init__(
+            self,
+            settings: Settings,
+            storage: Any,
+            *,
+            max_rpm: float | None = None,
+            thinking_budget: int | None = None,
+        ) -> None:
+            captured_kwargs.append({"max_rpm": max_rpm, "thinking_budget": thinking_budget})
+
+        def run_pending(self, conn: Any, writer: Any, **kwargs: Any) -> ExtractionStats:
+            captured_kwargs.append(kwargs)
+            return ExtractionStats(
+                attempted=1,
+                succeeded=1,
+                estimated_cost_usd=1.25,
+                stopped_reason="max_cost_usd_reached",
+            )
+
+    monkeypatch.setattr("arxiv_bench.cli.ExtractionClient", _StubExtractClient)
+    rc_stop = main(
+        [
+            "--db-path",
+            db_arg,
+            "extract",
+            "--threshold",
+            "0.70",
+            "--since",
+            "2024-01-01",
+            "--retry-failed",
+            "--max-rpm",
+            "60",
+            "--max-cost-usd",
+            "1.0",
+            "--thinking-budget",
+            "0",
+            "--chunk-size",
+            "100",
+            "--progress-every",
+            "25",
+            "--run-id",
+            "cli-ext-stop",
+        ]
+    )
+    assert rc_stop == 2
+    stop_out = json.loads(capsys.readouterr().out)
+    assert stop_out["run_id"] == "cli-ext-stop"
+    assert stop_out["stopped_reason"] == "max_cost_usd_reached"
+    assert captured_kwargs[0]["max_rpm"] == 60.0
+    assert captured_kwargs[0]["thinking_budget"] == 0
+    assert captured_kwargs[1]["retry_failed"] is True
+    assert captured_kwargs[1]["chunk_size"] == 100
+    assert captured_kwargs[1]["progress_every"] == 25
+
+    check_conn = sqlite3.connect(str(tmp_settings.db_path))
+    row = check_conn.execute(
+        "SELECT mode, status FROM pipeline_runs WHERE run_id = 'cli-ext-stop'"
+    ).fetchone()
+    check_conn.close()
+    assert row == ("extract", "stopped_budget")

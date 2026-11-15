@@ -28,6 +28,13 @@ _REFS_HEADING_RE = re.compile(
     r"^\s*(?:\d+\.?\s+)?(?:references|bibliography)\s*$",
     re.IGNORECASE | re.MULTILINE,
 )
+# MuPDF's C context/font cache is not guaranteed thread-safe across concurrent Python threads.
+_PYMUPDF_LOCK = threading.Lock()
+if hasattr(pymupdf, "TOOLS"):
+    if hasattr(pymupdf.TOOLS, "mupdf_display_errors"):
+        pymupdf.TOOLS.mupdf_display_errors(False)
+    if hasattr(pymupdf.TOOLS, "mupdf_display_warnings"):
+        pymupdf.TOOLS.mupdf_display_warnings(False)
 
 
 class StagingQuotaError(RuntimeError):
@@ -98,9 +105,10 @@ def extract_local_text(pdf_path: Path) -> ExtractedText:
     """Extract PDF text using PyMuPDF (primary) with pypdf fallback."""
     pages: list[str] = []
     try:
-        with pymupdf.open(str(pdf_path)) as doc:
-            for page in doc:
-                pages.append(page.get_text("text") or "")
+        with _PYMUPDF_LOCK:
+            with pymupdf.open(str(pdf_path)) as doc:
+                for page in doc:
+                    pages.append(page.get_text("text") or "")
     except Exception:  # noqa: BLE001
         reader = pypdf.PdfReader(str(pdf_path))
         for page in reader.pages:
@@ -159,15 +167,26 @@ class PdfStorageManager:
                 if self._gcs_client is None:
                     from google.cloud import storage
 
-                    self._gcs_client = storage.Client(
-                        project=self._settings.gcp_requester_pays_project
-                    )
+                    client = storage.Client(project=self._settings.gcp_requester_pays_project)
+                    http_sess = getattr(client, "_http", None)
+                    if http_sess is not None and hasattr(http_sess, "mount"):
+                        adapter = HTTPAdapter(pool_connections=64, pool_maxsize=64)
+                        http_sess.mount("https://", adapter)
+                        http_sess.mount("http://", adapter)
+                    self._gcs_client = client
         return self._gcs_client
 
     def staged_bytes(self) -> int:
         if not self._settings.staging_dir.exists():
             return 0
-        return sum(p.stat().st_size for p in self._settings.staging_dir.rglob("*") if p.is_file())
+        total = 0
+        for p in self._settings.staging_dir.rglob("*"):
+            try:
+                if p.is_file():
+                    total += p.stat().st_size
+            except FileNotFoundError:
+                continue
+        return total
 
     def enforce_staging_budget(self) -> None:
         max_bytes = int(self._settings.max_staging_gb * (1024**3))
@@ -266,10 +285,12 @@ class PdfStorageManager:
         else:
             prefix = f"arxiv/arxiv/pdf/{yymm}/{canonical_id}"
 
-        candidates = (
-            [f"{prefix}v{version}.pdf", f"{prefix}v1.pdf"]
-            if version
-            else [f"{prefix}v1.pdf", f"{prefix}v2.pdf", f"{prefix}.pdf"]
+        candidates = list(
+            dict.fromkeys(
+                [f"{prefix}v{version}.pdf", f"{prefix}v1.pdf"]
+                if version
+                else [f"{prefix}v1.pdf", f"{prefix}v2.pdf", f"{prefix}.pdf"]
+            )
         )
         for blob_path in candidates:
             uri = f"gs://{self._settings.gcs_arxiv_bucket}/{blob_path}"
@@ -297,8 +318,9 @@ class PdfStorageManager:
                     headers={"User-Agent": "arxiv-bench/0.2 (personal AI benchmark research)"},
                     timeout=60,
                 )
-                if cand.status_code in (403, 404, 410):
+                if cand.status_code in (404, 410):
                     raise WithdrawnPaperError(f"HTTP {cand.status_code} for {canonical_id}")
+                # Treat 403/429/5xx as transient HTTP errors rather than permanently marking withdrawn.
                 cand.raise_for_status()
                 resp = cand
                 break
@@ -307,7 +329,7 @@ class PdfStorageManager:
             except requests.RequestException as exc:
                 last_exc = exc
                 if idx + 1 < len(urls):
-                    time.sleep(1.0)
+                    time.sleep(2.0)
                     continue
                 raise
         assert resp is not None or last_exc is not None
@@ -316,6 +338,23 @@ class PdfStorageManager:
 
         content_type = resp.headers.get("Content-Type", "").lower()
         if "text/html" in content_type or len(resp.content) < 1000:
+            snippet = resp.content[:4096].decode("utf-8", errors="ignore").lower()
+            if any(
+                tok in snippet
+                for tok in (
+                    "rate limit",
+                    "too many requests",
+                    "temporarily unavailable",
+                    "access denied",
+                    "captcha",
+                    "please try again",
+                    "service unavailable",
+                )
+            ):
+                raise requests.HTTPError(
+                    f"Transient HTML throttle/interstitial for {canonical_id} "
+                    f"(content-type={content_type}, bytes={len(resp.content)})"
+                )
             raise WithdrawnPaperError(
                 f"Withdrawn or invalid PDF response for {canonical_id} "
                 f"(content-type={content_type}, bytes={len(resp.content)})"
