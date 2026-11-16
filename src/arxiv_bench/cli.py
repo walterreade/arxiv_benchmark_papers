@@ -8,6 +8,7 @@ import logging
 import os
 import subprocess
 import sys
+import threading
 import time
 import uuid
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -24,6 +25,7 @@ from arxiv_bench.decision_client import (
     DailyQuotaExceededError,
     DecisionClient,
     classify_decision_error,
+    format_structured_summary,
 )
 from arxiv_bench.extract_client import ExtractionClient
 from arxiv_bench.flash_triage import (
@@ -772,58 +774,87 @@ def _cmd_extract(args: argparse.Namespace, settings: Settings, run_id: str) -> i
 
 def _cmd_enrich(args: argparse.Namespace, settings: Settings, run_id: str) -> int:
     conn = init_db(settings.db_path)
+    _record_run_start(settings, run_id, "enrich")
+    final_status = "completed"
+    payload: dict[str, Any] = {"run_id": run_id}
+    delay = (
+        float(args.delay)
+        if getattr(args, "delay", None) is not None
+        else (1.2 if settings.s2_api_key else 2.5)
+    )
     try:
-        s2 = SemanticScholarClient(settings)
+        s2 = SemanticScholarClient(settings, delay_seconds=delay)
         with SingleWriterQueue(settings.db_path) as writer:
             stats = s2.enrich_papers(
                 conn,
                 writer,
                 limit=args.limit,
                 stale_days=args.stale_days,
+                progress_every_batches=max(0, int(getattr(args, "progress_every", 5) or 0)),
                 run_id=run_id,
             )
-        print(json.dumps(stats.__dict__, indent=2))
-        return 0
+        if stats.stopped_reason is not None:
+            final_status = "stopped_guard"
+        payload = {"run_id": run_id, **stats.__dict__}
+    except BaseException:
+        final_status = "interrupted"
+        raise
     finally:
         conn.close()
+        _record_run_finish(settings, run_id, final_status, payload)
+
+    print(json.dumps(payload, indent=2))
+    return 0 if stats.stopped_reason is None else 2
 
 
 def _cmd_score(args: argparse.Namespace, settings: Settings, run_id: str) -> int:
+    logger = logging.getLogger("arxiv_bench")
     conn = init_db(settings.db_path)
-    try:
-        rubric = load_rubric_yaml(Path(args.rubric))
-        sql = """
-            SELECT p.arxiv_id, p.title, p.abstract, p.evidence_card, p.compressed_text_zst
-            FROM papers p
-            INNER JOIN v_benchmarks vb ON vb.arxiv_id = p.arxiv_id
-        """
-        params: list[Any] = []
-        if args.missing_only:
-            sql += """
-                WHERE NOT EXISTS (
-                    SELECT 1 FROM decision_scores ds
-                    WHERE ds.arxiv_id = p.arxiv_id
-                      AND ds.rubric_id = ?
-                      AND ds.rubric_version = ?
-                )
-            """
-            params.extend([rubric.rubric_id, rubric.rubric_version])
-        sql += " ORDER BY p.published_date DESC, p.arxiv_id DESC"
-        if args.limit is not None:
-            sql += " LIMIT ?"
-            params.append(args.limit)
-        rows = conn.execute(sql, params).fetchall()
+    rubric = load_rubric_yaml(Path(args.rubric))
+    context_mode = str(getattr(args, "context", "card") or "card").lower()
 
-        if args.dry_run:
-            est_tokens = len(rows) * (3500 + len(rubric.questions) * 120)
+    where_sql = ""
+    base_params: list[Any] = []
+    if args.missing_only:
+        where_sql = """
+            WHERE NOT EXISTS (
+                SELECT 1 FROM decision_scores ds
+                WHERE ds.arxiv_id = p.arxiv_id
+                  AND ds.rubric_id = ?
+                  AND ds.rubric_version = ?
+            )
+        """
+        base_params.extend([rubric.rubric_id, rubric.rubric_version])
+
+    if args.dry_run:
+        try:
+            row = conn.execute(
+                f"""
+                SELECT COUNT(*) AS cnt
+                FROM papers p
+                INNER JOIN v_benchmarks vb ON vb.arxiv_id = p.arxiv_id
+                {where_sql}
+                """,
+                base_params,
+            ).fetchone()
+            target_papers = int(row["cnt"]) if row else 0
+            if args.limit is not None:
+                target_papers = min(target_papers, args.limit)
+            per_paper_tok = (
+                (26_000 + len(rubric.questions) * 120)
+                if context_mode == "full"
+                else (2_300 + len(rubric.questions) * 120)
+            )
+            est_tokens = target_papers * per_paper_tok
             est_cost = (est_tokens / 1_000_000.0) * DECISION_COST_PER_1M_INPUT_USD
             print(
                 json.dumps(
                     {
                         "rubric_id": rubric.rubric_id,
                         "rubric_version": rubric.rubric_version,
+                        "context": context_mode,
                         "questions": len(rubric.questions),
-                        "target_papers": len(rows),
+                        "target_papers": target_papers,
                         "estimated_input_tokens": est_tokens,
                         "estimated_cost_usd": round(est_cost, 2),
                     },
@@ -831,45 +862,208 @@ def _cmd_score(args: argparse.Namespace, settings: Settings, run_id: str) -> int
                 )
             )
             return 0
+        finally:
+            conn.close()
 
-        dc = DecisionClient(settings)
-        succeeded = 0
-        failed = 0
+    id_sql = f"""
+        SELECT p.arxiv_id
+        FROM papers p
+        INNER JOIN v_benchmarks vb ON vb.arxiv_id = p.arxiv_id
+        {where_sql}
+        ORDER BY p.published_date DESC, p.arxiv_id DESC
+    """
+    id_params = list(base_params)
+    if args.limit is not None:
+        id_sql += " LIMIT ?"
+        id_params.append(args.limit)
+    target_ids = [str(r["arxiv_id"]) for r in conn.execute(id_sql, id_params).fetchall()]
+
+    _record_run_start(settings, run_id, f"score:{rubric.rubric_id}")
+    final_status = "completed"
+    stopped_reason: str | None = None
+    attempted = 0
+    succeeded = 0
+    failed = 0
+    total_input_tokens = 0
+    total_cost_usd = 0.0
+    sample_errors: list[str] = []
+    t_start = time.monotonic()
+
+    chunk_size = max(1, int(getattr(args, "chunk_size", 500) or 500))
+    max_rpm = getattr(args, "max_rpm", None)
+    max_cost_usd = getattr(args, "max_cost_usd", None)
+    progress_every = max(0, int(getattr(args, "progress_every", 250) or 0))
+    dc = DecisionClient(settings, max_rpm=max_rpm)
+    stop_event = threading.Event()
+    consecutive_errors = 0
+    last_progress_at = 0
+
+    def _emit_progress() -> None:
+        elapsed_s = max(1e-6, time.monotonic() - t_start)
+        rpm = succeeded / (elapsed_s / 60.0)
+        prog = {
+            "event": "score_progress",
+            "run_id": run_id,
+            "rubric_id": rubric.rubric_id,
+            "rubric_version": rubric.rubric_version,
+            "context": context_mode,
+            "attempted": attempted,
+            "total_planned": len(target_ids),
+            "succeeded": succeeded,
+            "failed": failed,
+            "retries_429": dc.retry_429_count,
+            "retries_5xx": dc.retry_5xx_count,
+            "retries_network": dc.retry_network_count,
+            "elapsed_s": round(elapsed_s, 1),
+            "rpm": round(rpm, 1),
+            "est_cost_usd": round(total_cost_usd, 4),
+        }
+        logger.info(json.dumps(prog))
+        print(json.dumps(prog), file=sys.stderr, flush=True)
+
+    payload: dict[str, Any] = {"run_id": run_id}
+    try:
         disable_bar = not sys.stderr.isatty()
+        cols = (
+            "arxiv_id, title, abstract, evidence_card, extraction_json, compressed_text_zst"
+            if context_mode == "full"
+            else "arxiv_id, title, abstract, evidence_card, extraction_json"
+        )
         with SingleWriterQueue(settings.db_path) as writer:
             with ThreadPoolExecutor(max_workers=max(1, args.workers)) as pool:
-                futs = {
-                    pool.submit(
-                        dc.score_rubric_pack,
-                        arxiv_id=str(r["arxiv_id"]),
-                        title=str(r["title"] or ""),
-                        abstract=str(r["abstract"] or ""),
-                        evidence_card=str(r["evidence_card"] or ""),
-                        body_text=decompress_text(r["compressed_text_zst"]),
-                        rubric_pack=rubric,
-                        writer=writer,
-                        run_id=run_id,
-                    ): str(r["arxiv_id"])
-                    for r in rows
-                }
-                for fut in tqdm(
-                    as_completed(futs),
-                    total=len(futs),
-                    desc=f"Scoring {rubric.rubric_id}",
-                    disable=disable_bar,
-                ):
-                    try:
-                        fut.result()
-                        succeeded += 1
-                    except Exception:  # noqa: BLE001
-                        failed += 1
-            writer.flush()
-        print(
-            json.dumps({"attempted": len(rows), "succeeded": succeeded, "failed": failed}, indent=2)
-        )
-        return 0
+                for chunk_start in range(0, len(target_ids), chunk_size):
+                    if stop_event.is_set():
+                        break
+                    chunk_ids = target_ids[chunk_start : chunk_start + chunk_size]
+                    placeholders = ",".join("?" for _ in chunk_ids)
+                    row_map = {
+                        str(r["arxiv_id"]): r
+                        for r in conn.execute(
+                            f"SELECT {cols} FROM papers WHERE arxiv_id IN ({placeholders})",
+                            chunk_ids,
+                        ).fetchall()
+                    }
+                    chunk_rows = [row_map[aid] for aid in chunk_ids if aid in row_map]
+
+                    def _score_one(r: Any) -> Any:
+                        if stop_event.is_set() or dc.daily_quota_error is not None:
+                            return None
+                        aid = str(r["arxiv_id"])
+                        summary = format_structured_summary(r["extraction_json"])
+                        body = (
+                            decompress_text(r["compressed_text_zst"])
+                            if context_mode == "full"
+                            else ""
+                        )
+                        return dc.score_rubric_pack(
+                            arxiv_id=aid,
+                            title=str(r["title"] or ""),
+                            abstract=str(r["abstract"] or ""),
+                            evidence_card=str(r["evidence_card"] or ""),
+                            body_text=body,
+                            structured_summary=summary,
+                            rubric_pack=rubric,
+                            writer=writer,
+                            run_id=run_id,
+                        )
+
+                    futs = {pool.submit(_score_one, r): str(r["arxiv_id"]) for r in chunk_rows}
+                    for fut in tqdm(
+                        as_completed(futs),
+                        total=len(futs),
+                        desc=f"Scoring {rubric.rubric_id}",
+                        disable=disable_bar,
+                    ):
+                        if fut.cancelled():
+                            continue
+                        aid = futs[fut]
+                        try:
+                            out = fut.result()
+                            if out is None:
+                                continue
+                            attempted += 1
+                            succeeded += 1
+                            consecutive_errors = 0
+                            total_input_tokens += out.input_tokens
+                            total_cost_usd += out.estimated_cost_usd
+                        except DailyQuotaExceededError as exc:
+                            stop_event.set()
+                            if stopped_reason is None:
+                                stopped_reason = "daily_quota_exceeded"
+                                final_status = "stopped_quota"
+                            msg = f"{aid}: DailyQuotaExceededError: {str(exc)[:300]}"
+                            if len(sample_errors) < 10 and msg not in sample_errors:
+                                sample_errors.append(msg)
+                            for pending_f in futs:
+                                pending_f.cancel()
+                            continue
+                        except Exception as exc:  # noqa: BLE001
+                            attempted += 1
+                            failed += 1
+                            consecutive_errors += 1
+                            msg = f"{aid}: {type(exc).__name__}: {str(exc)[:300]}"
+                            if len(sample_errors) < 10 and msg not in sample_errors:
+                                sample_errors.append(msg)
+
+                        if stopped_reason is None:
+                            if max_cost_usd is not None and total_cost_usd >= max_cost_usd:
+                                stopped_reason = "max_cost_usd_reached"
+                                final_status = "stopped_budget"
+                                stop_event.set()
+                            elif consecutive_errors >= 25:
+                                stopped_reason = "consecutive_errors_guard"
+                                final_status = "stopped_guard"
+                                stop_event.set()
+                            elif attempted >= 200 and (failed / attempted) > 0.10:
+                                stopped_reason = "failure_rate_exceeded_10pct"
+                                final_status = "stopped_guard"
+                                stop_event.set()
+                            if stop_event.is_set():
+                                for pending_f in futs:
+                                    pending_f.cancel()
+
+                        if (
+                            progress_every > 0
+                            and attempted > 0
+                            and (attempted - last_progress_at) >= progress_every
+                        ):
+                            _emit_progress()
+                            last_progress_at = attempted
+
+                    writer.flush()
+                    if attempted > last_progress_at and progress_every > 0:
+                        _emit_progress()
+                        last_progress_at = attempted
+                    if stop_event.is_set():
+                        break
+    except BaseException:
+        final_status = "interrupted"
+        raise
     finally:
         conn.close()
+        elapsed_s = max(1e-6, time.monotonic() - t_start)
+        payload = {
+            "run_id": run_id,
+            "rubric_id": rubric.rubric_id,
+            "rubric_version": rubric.rubric_version,
+            "context": context_mode,
+            "attempted": attempted,
+            "succeeded": succeeded,
+            "failed": failed,
+            "total_input_tokens": total_input_tokens,
+            "estimated_cost_usd": round(total_cost_usd, 6),
+            "elapsed_seconds": round(elapsed_s, 2),
+            "observed_rpm": round(succeeded / (elapsed_s / 60.0), 2),
+            "retries_429": dc.retry_429_count,
+            "retries_5xx": dc.retry_5xx_count,
+            "retries_network": dc.retry_network_count,
+            "stopped_reason": stopped_reason,
+            "sample_errors": sample_errors,
+        }
+        _record_run_finish(settings, run_id, final_status, payload)
+
+    print(json.dumps(payload, indent=2))
+    return 0 if stopped_reason is None else 2
 
 
 def _cmd_search(args: argparse.Namespace, settings: Settings) -> int:
@@ -1193,6 +1387,12 @@ def build_parser() -> argparse.ArgumentParser:
     )
     p_enr.add_argument("--limit", type=int)
     p_enr.add_argument("--stale-days", type=int, default=30)
+    p_enr.add_argument(
+        "--delay",
+        type=float,
+        help="Seconds to pause between S2 batch calls (defaults to 1.2s with S2_API_KEY, 2.5s unauthenticated).",
+    )
+    p_enr.add_argument("--progress-every", type=int, default=5)
     p_enr.add_argument("--run-id")
 
     p_scr = sub.add_parser(
@@ -1201,8 +1401,18 @@ def build_parser() -> argparse.ArgumentParser:
     p_scr.add_argument("--rubric", required=True)
     p_scr.add_argument("--missing-only", action="store_true", default=True)
     p_scr.add_argument("--all", dest="missing_only", action="store_false")
+    p_scr.add_argument(
+        "--context",
+        choices=["card", "full"],
+        default="card",
+        help="Input context passed to gemini-decision-1: 'card' (Title+Abstract+Structured Metadata+Evidence Card) or 'full' (+ full trimmed paper text).",
+    )
     p_scr.add_argument("--limit", type=int)
     p_scr.add_argument("--workers", type=int, default=16)
+    p_scr.add_argument("--chunk-size", type=int, default=500)
+    p_scr.add_argument("--max-rpm", type=float)
+    p_scr.add_argument("--max-cost-usd", type=float)
+    p_scr.add_argument("--progress-every", type=int, default=250)
     p_scr.add_argument("--dry-run", action="store_true")
     p_scr.add_argument("--run-id")
 

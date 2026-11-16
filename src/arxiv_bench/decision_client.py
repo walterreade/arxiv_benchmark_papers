@@ -185,6 +185,56 @@ def trim_for_decision_context(
     return trimmed, True
 
 
+def format_structured_summary(extraction_json: str | None) -> str:
+    """Format compact structured Stage 2 extraction metadata (URLs, facets, limitations) for Stage 3."""
+    if not extraction_json:
+        return ""
+    try:
+        data = json.loads(extraction_json)
+    except Exception:  # noqa: BLE001
+        return ""
+    if not isinstance(data, dict):
+        return ""
+
+    lines: list[str] = []
+    contrib = data.get("contribution_type")
+    if contrib:
+        lines.append(f"Contribution Type: {contrib}")
+    benches = data.get("benchmarks") or []
+    if isinstance(benches, list) and benches:
+        b_items: list[str] = []
+        for b in benches[:12]:
+            if not isinstance(b, dict):
+                continue
+            name = b.get("name") or ""
+            role = b.get("role") or ""
+            url = b.get("url") or ""
+            part = f"{name} ({role})" if role else str(name)
+            if url:
+                part += f" [URL: {url}]"
+            if part.strip():
+                b_items.append(part.strip())
+        if b_items:
+            lines.append("Benchmarks & Artifacts: " + "; ".join(b_items))
+    for key, label in (
+        ("modalities", "Modalities"),
+        ("domains", "Domains"),
+        ("tasks", "Tasks"),
+        ("evaluation_methods", "Evaluation Methods"),
+        ("languages", "Languages"),
+        ("base_benchmarks", "Base Benchmarks"),
+    ):
+        vals = data.get(key)
+        if isinstance(vals, list) and vals:
+            lines.append(f"{label}: {', '.join(str(v) for v in vals[:15])}")
+    if data.get("is_continuous_testing") is not None:
+        lines.append(f"Continuous Testing: {bool(data['is_continuous_testing'])}")
+    lim = data.get("stated_limitations")
+    if lim:
+        lines.append(f"Stated Limitations: {str(lim)[:600]}")
+    return "\n".join(lines)
+
+
 def _normalize_model_name(model: str) -> str:
     return model if model.startswith("models/") else f"models/{model}"
 
@@ -611,18 +661,21 @@ class DecisionClient:
         title: str,
         abstract: str,
         evidence_card: str,
-        body_text: str,
+        body_text: str = "",
+        structured_summary: str = "",
         rubric_pack: RubricPack,
         writer: SingleWriterQueue | None = None,
         run_id: str | None = None,
     ) -> DecisionCallOutput:
-        """Stage 3 on-demand gap-rubric sweep over stored Evidence Card + trimmed paper text."""
-        context = (
-            f"Title: {title}\n\n"
-            f"Abstract:\n{abstract}\n\n"
-            f"Structured Benchmark Evidence Card:\n{evidence_card}\n\n"
-            f"Paper Text (Bibliography Trimmed):\n{body_text}"
-        )
+        """Stage 3 on-demand gap-rubric sweep over stored Evidence Card (+ optional full text)."""
+        parts = [f"Title: {title}", f"Abstract:\n{abstract}"]
+        if structured_summary:
+            parts.append(f"Structured Extracted Metadata:\n{structured_summary}")
+        if evidence_card:
+            parts.append(f"Structured Benchmark Evidence Card:\n{evidence_card}")
+        if body_text:
+            parts.append(f"Paper Text (Bibliography Trimmed):\n{body_text}")
+        context = "\n\n".join(parts)
         output = self.evaluate(
             input_text=context,
             rubric_pack=rubric_pack,
@@ -631,11 +684,31 @@ class DecisionClient:
             run_id=run_id,
             writer=writer,
         )
-        if writer is not None:
+        if writer is not None and output.answers:
             now_iso = datetime.now(UTC).isoformat()
             model_name = _normalize_model_name(rubric_pack.model or self._settings.decision_model)
-            for ans in output.answers:
-                writer.submit_sql(
+            score_rows = [
+                (
+                    arxiv_id,
+                    rubric_pack.rubric_id,
+                    rubric_pack.rubric_version,
+                    ans.question_id,
+                    model_name,
+                    ans.choice_or_value,
+                    ans.probability,
+                    ans.entropy,
+                    json.dumps(ans.distribution),
+                    1 if output.truncated_input else 0,
+                    now_iso,
+                )
+                for ans in output.answers
+            ]
+
+            def _persist_scores(
+                cur: sqlite3.Cursor,
+                _rows: list[tuple[Any, ...]] = score_rows,
+            ) -> None:
+                cur.executemany(
                     """
                     INSERT INTO decision_scores (
                         arxiv_id, rubric_id, rubric_version, question_id,
@@ -652,20 +725,10 @@ class DecisionClient:
                         truncated_input = excluded.truncated_input,
                         scored_at = excluded.scored_at
                     """,
-                    (
-                        arxiv_id,
-                        rubric_pack.rubric_id,
-                        rubric_pack.rubric_version,
-                        ans.question_id,
-                        model_name,
-                        ans.choice_or_value,
-                        ans.probability,
-                        ans.entropy,
-                        json.dumps(ans.distribution),
-                        1 if output.truncated_input else 0,
-                        now_iso,
-                    ),
+                    _rows,
                 )
+
+            writer.submit(_persist_scores)
         return output
 
     def run_calibration(

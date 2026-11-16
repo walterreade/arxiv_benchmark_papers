@@ -849,3 +849,135 @@ def test_cli_extract_dry_run_filters_and_pipeline_runs(
     ).fetchone()
     check_conn.close()
     assert row == ("extract", "stopped_budget")
+
+
+def test_cli_score_card_context_chunked_and_quota_stop(
+    tmp_settings: Settings,
+    db_conn: sqlite3.Connection,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    from arxiv_bench.decision_client import format_structured_summary
+    from arxiv_bench.pdf_storage import compress_text
+
+    ext_json = json.dumps(
+        {
+            "contribution_type": "introduces",
+            "benchmarks": [
+                {
+                    "name": "CardBench",
+                    "role": "introduced",
+                    "url": "https://github.com/org/cardbench",
+                }
+            ],
+            "modalities": ["text-llm"],
+            "domains": ["nlp-language"],
+        }
+    )
+    summary = format_structured_summary(ext_json)
+    assert "CardBench (introduced) [URL: https://github.com/org/cardbench]" in summary
+
+    for idx in range(3):
+        aid = f"2611.6000{idx}"
+        seed_paper(
+            db_conn,
+            aid,
+            title=f"Bench {idx}",
+            abstract=f"Abstract {idx}",
+            published_date=f"2026-11-0{idx + 1}",
+            extraction_json=ext_json,
+        )
+        db_conn.execute(
+            "UPDATE papers SET evidence_card = ?, compressed_text_zst = ? WHERE arxiv_id = ?",
+            (f"Evidence Card {idx}", compress_text(f"Full body text {idx}"), aid),
+        )
+    db_conn.commit()
+    db_conn.close()
+
+    db_arg = str(tmp_settings.db_path)
+    rubric_arg = str(tmp_settings.repo_root / "rubrics" / "gap_analysis_core_v1.yaml")
+
+    # Dry run reflects context mode difference (card vs full)
+    assert (
+        main(
+            ["--db-path", db_arg, "score", "--rubric", rubric_arg, "--context", "card", "--dry-run"]
+        )
+        == 0
+    )
+    dry_card = json.loads(capsys.readouterr().out)
+    assert dry_card["target_papers"] == 3
+    assert dry_card["context"] == "card"
+
+    assert (
+        main(
+            ["--db-path", db_arg, "score", "--rubric", rubric_arg, "--context", "full", "--dry-run"]
+        )
+        == 0
+    )
+    dry_full = json.loads(capsys.readouterr().out)
+    assert dry_full["estimated_input_tokens"] > dry_card["estimated_input_tokens"] * 5
+
+    seen_calls: list[tuple[str, str, str]] = []
+
+    class _StubDecisionClient:
+        def __init__(self, settings: Settings, *, max_rpm: float | None = None) -> None:
+            self.retry_429_count = 0
+            self.retry_5xx_count = 0
+            self.retry_network_count = 0
+            self.daily_quota_error: str | None = None
+
+        def score_rubric_pack(
+            self,
+            *,
+            arxiv_id: str,
+            body_text: str = "",
+            structured_summary: str = "",
+            **kwargs: Any,
+        ) -> DecisionCallOutput:
+            seen_calls.append((arxiv_id, body_text, structured_summary))
+            if len(seen_calls) >= 2:
+                self.daily_quota_error = "50000 requests per day"
+                raise DailyQuotaExceededError("429: limit: 50000 requests per day on Tier 1")
+            return DecisionCallOutput(
+                answers=[DecisionAnswerRecord("open_artifact_release", "true", 0.99, 0.08, {})],
+                input_tokens=2200,
+                output_tokens=0,
+                estimated_cost_usd=0.00022,
+                latency_ms=400,
+                http_status=200,
+            )
+
+    monkeypatch.setattr("arxiv_bench.cli.DecisionClient", _StubDecisionClient)
+    rc = main(
+        [
+            "--db-path",
+            db_arg,
+            "score",
+            "--rubric",
+            rubric_arg,
+            "--context",
+            "card",
+            "--workers",
+            "1",
+            "--chunk-size",
+            "2",
+            "--progress-every",
+            "1",
+            "--run-id",
+            "cli-score-quota",
+        ]
+    )
+    assert rc == 2
+    out = json.loads(capsys.readouterr().out)
+    assert out["succeeded"] == 1
+    assert out["failed"] == 0
+    assert out["stopped_reason"] == "daily_quota_exceeded"
+    assert seen_calls[0][1] == ""  # card mode did NOT decompress/pass body_text
+    assert "CardBench" in seen_calls[0][2]
+
+    check_conn = sqlite3.connect(str(tmp_settings.db_path))
+    row = check_conn.execute(
+        "SELECT mode, status FROM pipeline_runs WHERE run_id = 'cli-score-quota'"
+    ).fetchone()
+    check_conn.close()
+    assert row == ("score:gap_analysis_core", "stopped_quota")
